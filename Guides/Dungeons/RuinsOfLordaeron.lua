@@ -19,6 +19,7 @@ local MAP = {
 
 local HORDE = { faction = "Horde" }
 local ALLIANCE = { faction = "Alliance" }
+local BOTH_FACTIONS = { any = { ALLIANCE, HORDE } }
 local RUINS_OF_LORDAERON = 2999
 
 local function QuestState(questID, state)
@@ -56,6 +57,7 @@ ns:RegisterGuide({
     conditions = {
         all = {
             { level = { min = 16 } },
+            BOTH_FACTIONS,
         },
     },
     goals = {

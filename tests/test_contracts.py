@@ -36,6 +36,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/RuinsOfLordaeron.lua",
     "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
+    "Guides/Leveling/ZephrasIsle.lua",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
     "tests/lua/run.lua",
@@ -83,6 +84,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/RuinsOfLordaeron.lua",
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
+                "Guides/Leveling/ZephrasIsle.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -141,6 +143,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/RuinsOfLordaeron.lua",
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
+                "Guides/Leveling/ZephrasIsle.lua",
             )
         )
         for term in forbidden:
@@ -172,7 +175,8 @@ class ContractTests(unittest.TestCase):
         self.assertIn('category = "Dungeon Quest Guides"', guide)
         self.assertIn("level = { min = 15 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
-        self.assertNotIn('{ faction = "Alliance" }', guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn("BOTH_FACTIONS", guide)
 
     def test_ruins_of_lordaeron_guide_covers_listed_quests(self) -> None:
         guide = (ROOT / "Guides/Dungeons/RuinsOfLordaeron.lua").read_text(encoding="utf-8")
@@ -205,6 +209,22 @@ class ContractTests(unittest.TestCase):
         self.assertIn("level = { min = 10 }", guide)
         self.assertIn('{ faction = "Alliance" }', guide)
         self.assertIn("IRONFORGE = 1455", guide)
+
+    def test_zephras_isle_guide_covers_the_starter_path(self) -> None:
+        guide = (ROOT / "Guides/Leveling/ZephrasIsle.lua").read_text(encoding="utf-8")
+        for quest_id in (92460, 92472, 92579, 92701, 92640, 94490, 94946, 95349):
+            self.assertIn(str(quest_id), guide)
+        self.assertNotIn("78197", guide.split("Secrets of Undeath (78197)", 1)[-1])
+        self.assertIn('id = "leveling-zephras-isle"', guide)
+        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn("level = { min = 1 }", guide)
+        self.assertIn("ZEPHRAS = 2521", guide)
+        self.assertIn('{ faction = "Horde" }', guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn("{ class = 7 }", guide)
+        self.assertIn("RACE_ALLIANCE = 95", guide)
+        self.assertIn("RACE_HORDE = 96", guide)
+        self.assertNotIn("97963", guide)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")

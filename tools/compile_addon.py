@@ -27,6 +27,7 @@ SHIPPED = (
     "Guides/Dungeons/RuinsOfLordaeron.lua",
     "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
+    "Guides/Leveling/ZephrasIsle.lua",
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
