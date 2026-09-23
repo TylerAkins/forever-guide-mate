@@ -19,6 +19,10 @@ local _, ns = ...
 -- The Horde skycutter arrives in Mulgore (uiMap 1412, Wowhead area 215).
 -- The Alliance skycutter arrives on the Alterac Mountains map (uiMap 1416,
 -- Wowhead area 36); the quest text calls that arrival Dalaran.
+-- Horde then takes Welcome to Azeroth (95350) from Alana Stormwalker to
+-- Thrall in Orgrimmar, and finishes with Exploring the Horde (93739):
+-- Nazgrel, Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner.
+-- The Alliance path still ends at The Magical City of Dalaran.
 -- Coordinates have not been validated in the Forever client.
 -- UnitRace reports Alliance Skyborne as 95 and Horde Skyborne as 96.
 -- Wowhead's race bitmask does not use those client ids.
@@ -27,6 +31,9 @@ local MAP = {
     ZEPHRAS = 2521,
     MULGORE = 1412,
     ALTERAC = 1416,
+    ORGRIMMAR = 1454,
+    THUNDER_BLUFF = 1456,
+    UNDERCITY = 1458,
 }
 
 local RACE_ALLIANCE = 95
@@ -4961,6 +4968,105 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.334, 0.224, "Alana Stormwalker in Mulgore",
                     "Take the Valanaar zeppelin to Mulgore."),
+            },
+        },
+        {
+            id = "accept-welcome-to-azeroth",
+            kind = "accept",
+            priority = 3230,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Welcome to Azeroth from Alana Stormwalker.",
+            dependsOn = { "turnin-the-earthen-ring" },
+            complete = QuestState(95350, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.334, 0.224, "Alana Stormwalker in Mulgore",
+                    "Take the Valanaar zeppelin to Mulgore."),
+            },
+        },
+        {
+            id = "turnin-welcome-to-azeroth",
+            kind = "turnin",
+            priority = 3240,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Fly from the center of Thunder Bluff to Orgrimmar and turn in Welcome to Azeroth to Thrall.",
+            dependsOn = { "accept-welcome-to-azeroth" },
+            complete = QuestState(95350, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.468, 0.497, "Tal, the Thunder Bluff flight master",
+                    "Climb to Thunder Bluff and fly to Orgrimmar.",
+                    { map = MAP.ORGRIMMAR }),
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom",
+                    "Fly to Orgrimmar and speak with Thrall."),
+            },
+        },
+        {
+            id = "accept-exploring-the-horde",
+            kind = "accept",
+            priority = 3250,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Exploring the Horde from Thrall.",
+            dependsOn = { "turnin-welcome-to-azeroth" },
+            complete = QuestState(93739, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom",
+                    "Travel to Orgrimmar and enter the Valley of Wisdom."),
+            },
+        },
+        {
+            id = "objective-exploring-the-horde",
+            kind = "objective",
+            priority = 3260,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Nazgrel in Grommash Hold, then with Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner.",
+            dependsOn = { "accept-exploring-the-horde" },
+            complete = QuestState(93739, "complete"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.324, 0.360, "Nazgrel in Grommash Hold",
+                    "Travel to Orgrimmar and enter Grommash Hold."),
+                Point(MAP.ORGRIMMAR, 0.342, 0.366, "Vol'jin in Grommash Hold",
+                    "Travel to Orgrimmar and enter Grommash Hold."),
+                Point(MAP.THUNDER_BLUFF, 0.598, 0.516, "Cairne Bloodhoof on the High Rise",
+                    "Fly to Thunder Bluff and climb to Cairne's tent."),
+                Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
+                    "Take the zeppelin to the Undercity and enter the Royal Quarter."),
+            },
+        },
+        {
+            id = "turnin-exploring-the-horde",
+            kind = "turnin",
+            priority = 3270,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Finish Exploring the Horde with Lady Sylvanas Windrunner.",
+            dependsOn = { "objective-exploring-the-horde" },
+            complete = QuestState(93739, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
+                    "Take the zeppelin to the Undercity and enter the Royal Quarter."),
             },
         },
     },
