@@ -632,6 +632,35 @@ ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
     "The Way of the Hunter opens after Harmony in Balance is turned in")
+local followUps = {
+    { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
+    { "accept-the-warriors-path", "turnin-harmony-in-balance" },
+    { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
+    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
+    { "accept-the-adventurer", "turnin-foul-matriarch" },
+    { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
+    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
+}
+for _, pair in ipairs(followUps) do
+    local goal = ns.Engine:GetGoal(zephras, pair[1])
+    local linked = false
+    for _, dependency in ipairs(goal.dependsOn or {}) do
+        if dependency == pair[2] then linked = true end
+    end
+    Check(linked, pair[1] .. " waits for " .. pair[2])
+end
+local pinned = ns.Navigation:GetActiveLeg({
+    route = { { mapID = 2521, x = 0.420, y = 0.234, label = "Rorian the Dayseeker" } },
+}, { mapID = 2521, x = 0.420, y = 0.234 })
+Equal(pinned and pinned.label, "Rorian the Dayseeker", "an accept NPC keeps a pin while the player is standing there")
+local walked = ns.Navigation:GetActiveLeg({
+    route = {
+        { mapID = 2521, x = 0.420, y = 0.234, label = "First stop" },
+        { mapID = 2521, x = 0.800, y = 0.800, label = "Second stop" },
+    },
+}, { mapID = 2521, x = 0.420, y = 0.234 })
+Equal(walked and walked.label, "Second stop", "reaching an earlier route stop still advances to the next one")
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}

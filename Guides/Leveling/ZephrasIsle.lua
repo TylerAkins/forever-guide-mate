@@ -462,6 +462,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = { level = { min = 2 } },
             text = "Accept The Cirrusfly Queen from Elatrell Featherlight.",
+            dependsOn = { "turnin-infestation-investigation" },
             complete = QuestState(92463, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
@@ -538,6 +539,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = { level = { min = 2 } },
             text = "Accept Elemental Unrest from Rorian the Dayseeker.",
+            dependsOn = { "turnin-harmony-in-balance" },
             complete = QuestState(92464, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
@@ -1010,6 +1012,7 @@ ns:RegisterGuide({
             priority = 640,
             conditions = { level = { min = 4 } },
             text = "Accept The Adventurer from Aetheen of the Gales.",
+            dependsOn = { "turnin-foul-matriarch" },
             complete = QuestState(96638, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
@@ -1675,6 +1678,7 @@ ns:RegisterGuide({
             priority = 1100,
             conditions = { level = { min = 5 } },
             text = "Accept Infiltrating the Cult from Constable Aonda.",
+            dependsOn = { "turnin-the-criminal-element" },
             complete = QuestState(93036, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -1816,6 +1820,7 @@ ns:RegisterGuide({
             priority = 1210,
             conditions = { level = { min = 5 } },
             text = "Accept The Western Watch from Constable Aonda.",
+            dependsOn = { "turnin-havoc-in-the-highlands" },
             complete = QuestState(93926, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -2923,6 +2928,7 @@ ns:RegisterGuide({
             priority = 1930,
             conditions = { level = { min = 8 } },
             text = "Accept The Fate of a Loved One from Ealaane Nimbuswalker.",
+            dependsOn = { "turnin-aid-for-the-refugees" },
             complete = QuestState(94897, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
