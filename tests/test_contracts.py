@@ -25,6 +25,7 @@ REQUIRED_FILES = (
     "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
+    "QuestDialog.lua",
     "Navigation.lua",
     "MapPins.lua",
     "MapPins.xml",
@@ -71,6 +72,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestDialog.lua",
                 "Navigation.lua",
                 "TomTomWaypoints.lua",
                 "MapPins.lua",
@@ -143,6 +145,11 @@ class ContractTests(unittest.TestCase):
         )
         for term in forbidden:
             self.assertNotIn(term.lower(), source.lower())
+        dialog = (ROOT / "QuestDialog.lua").read_text(encoding="utf-8")
+        self.assertIn("autoQuest", dialog)
+        self.assertIn("AcceptQuest", dialog)
+        self.assertIn("CompleteQuest", dialog)
+        self.assertIn("GetQuestReward", dialog)
 
     def test_no_release_workflow_exists(self) -> None:
         workflow_names = [path.name.lower() for path in (ROOT / ".github/workflows").iterdir()]

@@ -29,13 +29,21 @@ function Waypoints:Sync(goal, state, api)
         self:Clear(api)
         return
     end
+    local mapID, x, y = leg.mapID, leg.x, leg.y
+    if state.mapID and state.mapID ~= mapID and ns.Navigation then
+        local projectedX, projectedY = ns.Navigation:ProjectToMap(mapID, x, y, state.mapID)
+        if projectedX and projectedY and projectedX >= 0 and projectedX <= 1
+            and projectedY >= 0 and projectedY <= 1 then
+            mapID, x, y = state.mapID, projectedX, projectedY
+        end
+    end
     local key = table.concat({
-        tostring(leg.mapID), tostring(leg.x), tostring(leg.y), tostring(leg.label),
+        tostring(mapID), tostring(x), tostring(y), tostring(leg.label),
     }, ":")
     if key == self.key then return end
     self:Clear(api)
     local title = leg.label or goal.text or "Forever GuideMate"
-    local ok, uid = pcall(api.AddWaypoint, api, leg.mapID, leg.x, leg.y, {
+    local ok, uid = pcall(api.AddWaypoint, api, mapID, x, y, {
         title = title,
         persistent = false,
         minimap = true,

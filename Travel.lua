@@ -348,6 +348,29 @@ function Travel:BestDock(state, destination)
     return best
 end
 
+function Travel:LocalExit(state, destination)
+    if not state or not state.mapID then return nil end
+    local best, bestScore
+    for index, dock in ipairs(self.docks) do
+        if self:Nearby(state.mapID, dock.mapID) then
+            for _, edge in ipairs(self.edges[index]) do
+                if not edge.walk and self:Allows(edge.faction, state) then
+                    local other = self.docks[edge.to]
+                    local score = 3
+                    if other.serves and other.serves[destination] then score = 0
+                    elseif self:SameContinent(other.mapID, destination) then score = 1
+                    end
+                    if edge.faction and state.faction == edge.faction then score = score - 0.1 end
+                    if not best or score < bestScore then
+                        best, bestScore = Waypoint(dock, edge.label), score
+                    end
+                end
+            end
+        end
+    end
+    return best
+end
+
 function Travel:Departure(state, destination, destinationLabel)
     if not state or not state.mapID or not destination or state.mapID == destination then return nil end
     if self:Paired(state.mapID, destination) then return nil end
@@ -362,10 +385,16 @@ function Travel:Departure(state, destination, destinationLabel)
         if not route.nearby then
             local point = self:FlightPoint(state, self:MapName(route.dock.mapID))
             if point then return point end
+            if not self:SameContinent(state.mapID, route.dock.mapID) then
+                local exit = self:LocalExit(state, destination)
+                if exit then return exit end
+            end
+            return Waypoint(route.dock, route.label)
         end
         return Waypoint(route.dock, route.label)
     end
-    if same then
-        return self:FlightPoint(state, destinationLabel or self:MapName(destination))
+    if not same then
+        return self:LocalExit(state, destination)
     end
+    return self:FlightPoint(state, destinationLabel or self:MapName(destination))
 end

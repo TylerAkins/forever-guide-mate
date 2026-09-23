@@ -248,6 +248,12 @@ local function CollectQuestIDs(value, found)
     end
 end
 
+function ns.GuideUsesQuest(guide, questID)
+    local found = {}
+    CollectQuestIDs(guide, found)
+    return found[questID] == true
+end
+
 function ns.GetTrackedQuestIDs()
     local found = {}
     for _, guide in pairs(ns.guides) do
