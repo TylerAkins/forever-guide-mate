@@ -374,13 +374,54 @@ function Engine:GetGuideProgress(guide, state)
     return { completed = completed, eligible = eligible, total = total, percentage = percentage }
 end
 
+local function HasPermanentFailure(condition, state)
+    if type(condition) ~= "table" then
+        return ns.EvaluateCondition(condition, state) == false
+    end
+    if condition.all then
+        for _, child in ipairs(condition.all) do
+            if HasPermanentFailure(child, state) then
+                return true
+            end
+        end
+        return false
+    end
+    if condition.any then
+        if #condition.any == 0 then
+            return false
+        end
+        for _, child in ipairs(condition.any) do
+            if not HasPermanentFailure(child, state) then
+                return false
+            end
+        end
+        return true
+    end
+    if condition["not"] then
+        return ns.EvaluateCondition(condition, state) == false
+    end
+    if condition.level and not condition.faction and not condition.class and not condition.race
+        and not condition.profession and not condition.quest and not condition.map and not condition.instance then
+        return false
+    end
+    local eligible, reason = ns.EvaluateCondition(condition, state)
+    if reason == "Level requirement not met." then
+        return false
+    end
+    return eligible == false
+end
+
 function Engine:IsDependencyDone(guide, dependencyID, state)
     local goal = self:GetGoal(guide, dependencyID)
     if not goal then
         return false
     end
-    local eligible = ns.EvaluateCondition(goal.conditions, state)
-    return eligible == false or self:IsGoalDone(goal, state, guide)
+    -- Faction, class, and race mismatches will never become available. A level
+    -- miss only means the character has not reached that step yet.
+    if HasPermanentFailure(goal.conditions, state) then
+        return true
+    end
+    return self:IsGoalDone(goal, state, guide)
 end
 
 function Engine:IsReady(guide, goal, state)
