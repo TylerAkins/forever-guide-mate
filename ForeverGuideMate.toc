@@ -32,3 +32,4 @@ Guides/Dungeons/WailingCaverns.lua
 Guides/Dungeons/RuinsOfLordaeron.lua
 Guides/Dungeons/Deadmines.lua
 Guides/Dungeons/HallOfThanes.lua
+Guides/Leveling/ZephrasIsle.lua

@@ -172,6 +172,21 @@ local function CreateIconButton(parent, texturePath, tooltip)
     return button
 end
 
+local function CreateCheckbox(parent, label, getter, setter)
+    local box = Create("CheckButton", nil, parent, "UICheckButtonTemplate")
+    box:SetSize(26, 26)
+    local text = box.Text or box:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    if not box.Text then text:SetPoint("LEFT", box, "RIGHT", 4, 0) end
+    text:SetText(label)
+    box:SetChecked(getter())
+    box:SetScript("OnClick", function(self)
+        setter(not not self:GetChecked())
+        UI:ApplySettings()
+    end)
+    box:SetScript("OnShow", function(self) self:SetChecked(getter()) end)
+    return box
+end
+
 local function CreateProgressBar(parent, height)
     local bar = Create("StatusBar", nil, parent)
     bar:SetHeight(height or 7)
@@ -294,24 +309,66 @@ local function GuideTypeLabel(guide)
     return nil
 end
 
+local FACTION_DISPLAY_ORDER = { "Alliance", "Horde" }
+
+local function GuideConditionFactions(guide)
+    local seen = {}
+    local function note(faction)
+        if faction == "Alliance" or faction == "Horde" then seen[faction] = true end
+    end
+    local function walk(condition)
+        if type(condition) ~= "table" then return end
+        note(condition.faction)
+        if condition.all then for _, child in ipairs(condition.all) do walk(child) end end
+        if condition.any then for _, child in ipairs(condition.any) do walk(child) end end
+    end
+    if type(guide) == "table" then walk(guide.conditions) end
+    local factions = {}
+    for _, faction in ipairs(FACTION_DISPLAY_ORDER) do
+        if seen[faction] then factions[#factions + 1] = faction end
+    end
+    return factions
+end
+
+local function DungeonFactionLabel(guide)
+    local factions = GuideConditionFactions(guide)
+    if #factions == 0 then return nil end
+    if #factions >= 2 then return "Both" end
+    return factions[1]
+end
+
 local function EligibilityText(guide, state)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state or {})
+    local isDungeon = GuideTypeLabel(guide) == "Dungeon"
     local requirements = {}
+    local levelRequirements = {}
     local function Collect(condition)
         if type(condition) ~= "table" then return end
         if condition.all then for _, child in ipairs(condition.all) do Collect(child) end end
-        if type(condition.faction) == "string" then requirements[#requirements + 1] = condition.faction end
+        if condition.any then for _, child in ipairs(condition.any) do Collect(child) end end
+        if not isDungeon and type(condition.faction) == "string" then
+            requirements[#requirements + 1] = condition.faction
+        end
         if condition.level then
             local minimum, maximum = condition.level.min, condition.level.max
-            if minimum and maximum then requirements[#requirements + 1] = ("Level %d-%d"):format(minimum, maximum)
-            elseif minimum then requirements[#requirements + 1] = ("Level %d+"):format(minimum)
-            elseif maximum then requirements[#requirements + 1] = ("Level %d or below"):format(maximum) end
+            if minimum and maximum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d-%d"):format(minimum, maximum)
+            elseif minimum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d+"):format(minimum)
+            elseif maximum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d or below"):format(maximum)
+            end
         end
     end
     Collect(guide.conditions)
+    if isDungeon then
+        local factionLabel = DungeonFactionLabel(guide)
+        if factionLabel then requirements[#requirements + 1] = factionLabel end
+    end
+    for _, levelText in ipairs(levelRequirements) do requirements[#requirements + 1] = levelText end
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
     local text
-    if eligible == false and GuideTypeLabel(guide) == "Dungeon" then text = "Ineligible"
+    if eligible == false and isDungeon then text = "Ineligible" .. suffix
     elseif eligible == false then text = (reason or "Not eligible") .. suffix
     elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
     else text = "Eligible" .. suffix end
@@ -653,18 +710,6 @@ function UI:ResetPositions()
     self:ApplySettings()
 end
 
-local function CreateCheckbox(parent, label, getter, setter)
-    local box = Create("CheckButton", nil, parent, "UICheckButtonTemplate")
-    box:SetSize(26, 26)
-    local text = box.Text or box:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    if not box.Text then text:SetPoint("LEFT", box, "RIGHT", 4, 0) end
-    text:SetText(label)
-    box:SetChecked(getter())
-    box:SetScript("OnClick", function(self) setter(not not self:GetChecked()); UI:ApplySettings() end)
-    box:SetScript("OnShow", function(self) self:SetChecked(getter()) end)
-    return box
-end
-
 function UI:RegisterSettings()
     local panel = Create("Frame", "ForeverGuideMateSettingsPanel")
     panel.name = "Forever GuideMate"
@@ -686,8 +731,16 @@ function UI:RegisterSettings()
         function(value) ns.db.autoQuest = value end)
     autoAdvance:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
     autoQuest:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 0, -4)
+    local hideIneligible = CreateCheckbox(panel, "Hide ineligible guides in the library",
+        function() return not not ns.db.browser.hideIneligible end,
+        function(value)
+            ns.db.browser.hideIneligible = value
+            UI.browserPage = 1
+            if UI.browser and UI.browser:IsShown() then UI:RefreshGuideBrowser() end
+        end)
+    hideIneligible:SetPoint("TOPLEFT", autoQuest, "BOTTOMLEFT", 0, -4)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
-    open:SetPoint("TOPLEFT", autoQuest, "BOTTOMLEFT", 4, -14)
+    open:SetPoint("TOPLEFT", hideIneligible, "BOTTOMLEFT", 4, -14)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
     local trackerScale = CreatePlainButton(panel, 180, "Cycle tracker scale")
     trackerScale:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
