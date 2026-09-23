@@ -236,6 +236,20 @@ ns.Engine.state = { faction = "Horde", level = 1 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
     "a low-level dungeon guide still lists faction and level")
+local hidePoint = ns.UI.browser.hideIneligible.points[#ns.UI.browser.hideIneligible.points]
+local labelPoint = ns.UI.browser.hideIneligibleLabel.points[1]
+Equal(hidePoint[1], "RIGHT", "hide ineligible sits in the title bar")
+Equal(hidePoint[2], ns.UI.browser.hideIneligibleLabel, "hide ineligible stays left of its label")
+Equal(labelPoint[1], "RIGHT", "hide ineligible label aligns toward the close button")
+Equal(labelPoint[2], ns.UI.browser.close, "hide ineligible label anchors to the close button")
+Equal(ns.db.browser.hideIneligible, false, "ineligible guides stay visible until hidden")
+ns.db.browser.hideIneligible = true
+ns.UI.browser.hideIneligible.scripts.OnShow()
+Equal(ns.UI.browser.hideIneligible.mark.shown, true, "the title-bar box shows a mark when hiding ineligible guides")
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm"), nil, "hide ineligible removes an ineligible dungeon guide")
+ns.db.browser.hideIneligible = false
+ns.UI:RefreshGuideBrowser()
 ns.Engine.state = { faction = "Horde", level = 9 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Eligible" .. RFC_REQUIREMENTS,

@@ -415,6 +415,33 @@ function UI:CreateGuideBrowser()
     local close = CreatePlainButton(frame, 26, "×")
     close:SetPoint("TOPRIGHT", -12, -10)
     close:SetScript("OnClick", function() frame:Hide() end)
+    local hideIneligibleLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    hideIneligibleLabel:SetText("Hide Ineligible")
+    hideIneligibleLabel:SetPoint("RIGHT", close, "LEFT", -10, 0)
+    local hideIneligible = Create("CheckButton", nil, frame)
+    hideIneligible:SetSize(16, 16)
+    hideIneligible:SetPoint("RIGHT", hideIneligibleLabel, "LEFT", -6, 0)
+    local hideBox = hideIneligible:CreateTexture(nil, "BACKGROUND")
+    hideBox:SetAllPoints()
+    SetSolidColor(hideBox, 0.09, 0.12, 0.16, 0.9)
+    local hideMark = hideIneligible:CreateTexture(nil, "ARTWORK")
+    hideMark:SetPoint("TOPLEFT", 3, -3)
+    hideMark:SetPoint("BOTTOMRIGHT", -3, 3)
+    SetSolidColor(hideMark, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
+    hideIneligible.mark = hideMark
+    local function SyncHideIneligible()
+        local hidden = ns.db.browser.hideIneligible == true
+        hideIneligible:SetChecked(hidden)
+        hideMark:SetShown(hidden)
+    end
+    hideIneligible:SetScript("OnClick", function(self)
+        ns.db.browser.hideIneligible = not not self:GetChecked()
+        SyncHideIneligible()
+        UI.browserPage = 1
+        UI:RefreshGuideBrowser()
+    end)
+    hideIneligible:SetScript("OnShow", SyncHideIneligible)
+    SyncHideIneligible()
     local search = Create("EditBox", nil, frame, "InputBoxTemplate")
     search:SetHeight(24)
     search:SetPoint("TOPLEFT", 174, -42)
@@ -422,14 +449,6 @@ function UI:CreateGuideBrowser()
     search:SetAutoFocus(false)
     search:SetTextInsets(8, 8, 0, 0)
     search:SetScript("OnTextChanged", function() UI.browserPage = 1; UI:RefreshGuideBrowser() end)
-    local hideIneligible = CreateCheckbox(frame, "Hide Ineligible", function()
-        return not not ns.db.browser.hideIneligible
-    end, function(value)
-        ns.db.browser.hideIneligible = value
-        UI.browserPage = 1
-        UI:RefreshGuideBrowser()
-    end)
-    hideIneligible:SetPoint("BOTTOMRIGHT", -14, 12)
     local categoryTitle = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     categoryTitle:SetPoint("TOPLEFT", 16, -52)
     categoryTitle:SetText("CATEGORIES")
@@ -460,7 +479,8 @@ function UI:CreateGuideBrowser()
         UI.browserPage = UI.browserPage + 1
         UI:RefreshGuideBrowser()
     end)
-    frame.search, frame.empty, frame.resultCount, frame.hideIneligible = search, empty, resultCount, hideIneligible
+    frame.search, frame.empty, frame.resultCount = search, empty, resultCount
+    frame.close, frame.hideIneligible, frame.hideIneligibleLabel = close, hideIneligible, hideIneligibleLabel
     frame.previousPage, frame.page, frame.nextPage = previousPage, page, nextPage
     self.browser = frame
     frame:Hide()
@@ -557,22 +577,14 @@ function UI:RefreshGuideBrowser()
     for _, guideID in ipairs(ns.guideOrder) do
         local guide = ns.guides[guideID]
         local haystack = string.lower(guide.title .. " " .. guide.category)
+        local ineligible = ns.EvaluateCondition(guide.conditions, ns.Engine.state or {}) == false
         if (self.browserCategory == "All Guides" or guide.category == self.browserCategory)
-            and (query == "" or string.find(haystack, query, 1, true)) then
+            and (query == "" or string.find(haystack, query, 1, true))
+            and not (ns.db.browser.hideIneligible and ineligible) then
             matches[#matches + 1] = guide
         end
     end
     table.sort(matches, GuideComesBefore)
-    if ns.db.browser.hideIneligible then
-        local filtered = {}
-        local state = ns.Engine.state or {}
-        for _, guide in ipairs(matches) do
-            if ns.EvaluateCondition(guide.conditions, state) ~= false then
-                filtered[#filtered + 1] = guide
-            end
-        end
-        matches = filtered
-    end
     local pageSize = 3
     local pageCount = math.max(1, math.ceil(#matches / pageSize))
     self.browserPage = math.max(1, math.min(self.browserPage, pageCount))
@@ -715,7 +727,10 @@ function UI:RegisterSettings()
     trackerLocked:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
     local autoAdvance = CreateCheckbox(panel, "Advance observable steps automatically", function() return ns.db.autoAdvance end,
         function(value) ns.db.autoAdvance = value; ns.ScheduleRefresh() end)
+    local autoQuest = CreateCheckbox(panel, "Automatically accept and turn in guide quests", function() return ns.db.autoQuest end,
+        function(value) ns.db.autoQuest = value end)
     autoAdvance:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
+    autoQuest:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 0, -4)
     local hideIneligible = CreateCheckbox(panel, "Hide ineligible guides in the library",
         function() return not not ns.db.browser.hideIneligible end,
         function(value)
@@ -723,7 +738,7 @@ function UI:RegisterSettings()
             UI.browserPage = 1
             if UI.browser and UI.browser:IsShown() then UI:RefreshGuideBrowser() end
         end)
-    hideIneligible:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 0, -4)
+    hideIneligible:SetPoint("TOPLEFT", autoQuest, "BOTTOMLEFT", 0, -4)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
     open:SetPoint("TOPLEFT", hideIneligible, "BOTTOMLEFT", 4, -14)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)

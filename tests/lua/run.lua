@@ -29,6 +29,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("QuestDialog.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
@@ -280,6 +281,11 @@ local zephrasGoal = { route = { { mapID = 2521, x = 0.6, y = 0.8, label = "Zephr
 local valanaar = ns.Navigation:GetActiveLeg(zephrasGoal, { mapID = 1412, x = 0.4, y = 0.3, faction = "Horde" })
 Equal(valanaar.mapID, 1412, "Mulgore boards the Valanaar zeppelin")
 Check(string.find(valanaar.label, "Valanaar", 1, true), "the Zephras zeppelin names Valanaar")
+local onZephras = ns.Navigation:GetActiveLeg(ns.guides["dungeons-ragefire-chasm-horde"].goals[1], {
+    mapID = 2521, x = 0.5, y = 0.5, faction = "Horde",
+})
+Equal(onZephras.mapID, 2521, "a guide step off Zephras Isle points at the island departure")
+Check(string.find(onZephras.label, "Thunder Bluff", 1, true), "Horde on Zephras Isle takes the Thunder Bluff zeppelin")
 
 local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
 ns.charDB.manualCompleted = {}
@@ -355,6 +361,19 @@ ns.charDB.deferred["progress-unknown"] = true
 local progress = ns.Engine:GetGuideProgress(progressGuide, progressState)
 Equal(progress.total, 4, "progress reports all authored steps")
 Equal(progress.eligible, 3, "progress excludes definitively ineligible steps")
+ns:RegisterGuide({
+    id = "progress-level", title = "Progress Level", category = "Test", revision = 1,
+    goals = {
+        { id = "progress-now", kind = "note", text = "Now" },
+        { id = "progress-later", kind = "note", text = "Later", conditions = { level = { min = 10 } } },
+        { id = "progress-other-class", kind = "note", text = "Mage", conditions = { class = 8 } },
+    },
+})
+local lowProgressState = {}
+for key, value in pairs(progressState) do lowProgressState[key] = value end
+lowProgressState.level = 1
+local levelProgress = ns.Engine:GetGuideProgress(ns.guides["progress-level"], lowProgressState)
+Equal(levelProgress.eligible, 2, "progress keeps steps the player will reach at a higher level")
 Equal(progress.completed, 2, "progress counts observed and manual completion")
 Equal(progress.percentage, 67, "progress percentage is rounded")
 ns.charDB.deferred["progress-manual"] = true
@@ -457,6 +476,68 @@ ns.charDB.completionLedger = {}
 ns.Engine:Refresh(hordeRuins)
 Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
 
+ForeverGuideMateDB = { autoQuest = true }
+ForeverGuideMateCharDB = { selectedGuide = "dungeons-ragefire-chasm-horde" }
+ns.InitializeStorage()
+Equal(ns.db.autoQuest, true, "guide quest turn-in starts enabled")
+local calls = {}
+local questAPI = {
+    GetQuestID = function() return 5722 end,
+    AcceptQuest = function() calls.accept = true end,
+    IsQuestCompletable = function() return true end,
+    CompleteQuest = function() calls.complete = true end,
+    GetNumQuestChoices = function() return 0 end,
+    GetQuestReward = function(index) calls.reward = index end,
+    C_GossipInfo = {
+        GetAvailableQuests = function()
+            return { { questID = 1 }, { questID = 5722 } }
+        end,
+        SelectAvailableQuest = function(questID) calls.gossip = questID end,
+        GetActiveQuests = function() return { { questID = 5723 } } end,
+        SelectActiveQuest = function(questID) calls.active = questID end,
+    },
+}
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5722, "gossip opens the guide quest and skips unrelated quests")
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, true, "the open guide quest is accepted")
+questAPI.GetQuestID = function() return 999 end
+calls.accept = nil
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, nil, "a quest outside the selected guide is left alone")
+questAPI.GetQuestID = function() return 5722 end
+ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
+Equal(calls.complete, true, "a completable guide quest is turned in")
+ns.QuestDialog:Handle("QUEST_COMPLETE", questAPI)
+Equal(calls.reward, 1, "a guide quest with no reward choice is completed")
+questAPI.GetNumQuestChoices = function() return 2 end
+calls.reward = nil
+ns.QuestDialog:Handle("QUEST_COMPLETE", questAPI)
+Equal(calls.reward, nil, "a guide quest with a reward choice waits for the player")
+ns.db.autoQuest = false
+calls.complete = nil
+ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
+Equal(calls.complete, nil, "turning the option off leaves the quest dialog alone")
+
+local tomtomCalls = {}
+local tomtom = {
+    AddWaypoint = function(_, mapID, x, y, options)
+        local uid = { mapID = mapID, x = x, y = y, crazy = options.crazy }
+        tomtomCalls[#tomtomCalls + 1] = uid
+        return uid
+    end,
+    RemoveWaypoint = function() end,
+    SetCrazyArrow = function(_, uid) uid.arrow = true end,
+}
+ns.db.uiOpen = true
+ns.TomTomWaypoints:Clear(tomtom)
+ns.TomTomWaypoints:Sync(ns.guides["dungeons-ragefire-chasm-horde"].goals[1], {
+    mapID = 2521, x = 0.5, y = 0.5, faction = "Horde",
+}, tomtom)
+Equal(tomtomCalls[1].mapID, 2521, "TomTom on Zephras Isle receives the island waypoint")
+Equal(tomtomCalls[1].crazy, true, "the Zephras Isle waypoint asks TomTom for the arrow")
+Equal(tomtomCalls[1].arrow, true, "TomTom aims the crazy arrow at the Zephras waypoint")
+
 local hot = ns.guides["dungeons-hall-of-thanes"]
 Check(hot ~= nil, "hall of thanes guide is registered")
 local hordeHot = {}
@@ -486,6 +567,8 @@ ns.charDB.completionLedger = {}
 ns.Engine:SelectGuide("leveling-zephras-isle")
 ns.Engine:Refresh(starter)
 Equal(ns.Engine.currentGoal.id, "accept-coming-of-age", "zephras starts with Coming of Age")
+local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
+Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}
 for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedZephras[questID] = true end
 Check(trackedZephras[92460], "coming of age is tracked")

@@ -21,6 +21,7 @@ local ACCOUNT_DEFAULTS = {
         hideIneligible = false,
     },
     autoAdvance = true,
+    autoQuest = true,
 }
 
 local CHARACTER_DEFAULTS = {
@@ -123,6 +124,7 @@ local function OnEvent(_, event, arg1)
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
     end
+    if ns.QuestDialog then ns.QuestDialog:Handle(event) end
     ns.ScheduleRefresh()
 end
 
@@ -139,6 +141,10 @@ if CreateFrame then
     eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     eventFrame:RegisterEvent("DISPLAY_SIZE_CHANGED")
     eventFrame:RegisterEvent("UI_SCALE_CHANGED")
+    eventFrame:RegisterEvent("GOSSIP_SHOW")
+    eventFrame:RegisterEvent("QUEST_DETAIL")
+    eventFrame:RegisterEvent("QUEST_PROGRESS")
+    eventFrame:RegisterEvent("QUEST_COMPLETE")
     eventFrame:SetScript("OnEvent", OnEvent)
     ns.eventFrame = eventFrame
 end
