@@ -19,6 +19,24 @@ local function Call(fn, ...)
     if ok then return value end
 end
 
+local function ReportedComplete(value)
+    return value == true or (type(value) == "number" and value > 0)
+end
+
+function QuestDialog:ActiveQuestReady(api, quest)
+    if type(quest) ~= "table" or not self:Uses(quest.questID) then return false end
+    if quest.isComplete == false or quest.isComplete == 0 then return false end
+    if ReportedComplete(quest.isComplete) then return true end
+    local questLog = type(api) == "table" and api.C_QuestLog or nil
+    if type(questLog) == "table" and type(questLog.ReadyForTurnIn) == "function" then
+        return ReportedComplete(Call(questLog.ReadyForTurnIn, quest.questID))
+    end
+    if type(questLog) == "table" and type(questLog.IsComplete) == "function" then
+        return ReportedComplete(Call(questLog.IsComplete, quest.questID))
+    end
+    return false
+end
+
 function QuestDialog:SelectGossip(api)
     local info = type(api) == "table" and api.C_GossipInfo or nil
     if type(info) ~= "table" then return end
@@ -38,9 +56,8 @@ function QuestDialog:SelectGossip(api)
         local quests = Call(info.GetActiveQuests)
         if type(quests) == "table" then
             for _, quest in ipairs(quests) do
-                local questID = type(quest) == "table" and quest.questID or nil
-                if self:Uses(questID) then
-                    Call(info.SelectActiveQuest, questID)
+                if self:ActiveQuestReady(api, quest) then
+                    Call(info.SelectActiveQuest, quest.questID)
                     return
                 end
             end
@@ -55,7 +72,13 @@ end
 
 function QuestDialog:Progress(api)
     local questID = Call(api.GetQuestID)
-    if self:Uses(questID) and Call(api.IsQuestCompletable) then Call(api.CompleteQuest) end
+    if not self:Uses(questID) or not Call(api.IsQuestCompletable) then return end
+    local questLog = type(api) == "table" and api.C_QuestLog or nil
+    if type(questLog) == "table" and type(questLog.IsComplete) == "function"
+        and not ReportedComplete(Call(questLog.IsComplete, questID)) then
+        return
+    end
+    Call(api.CompleteQuest)
 end
 
 function QuestDialog:Reward(api)

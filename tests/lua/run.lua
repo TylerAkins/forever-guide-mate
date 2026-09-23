@@ -514,6 +514,24 @@ questAPI.GetNumQuestChoices = function() return 2 end
 calls.reward = nil
 ns.QuestDialog:Handle("QUEST_COMPLETE", questAPI)
 Equal(calls.reward, nil, "a guide quest with a reward choice waits for the player")
+ns.db.autoQuest = true
+questAPI.C_GossipInfo.GetAvailableQuests = function() return {} end
+questAPI.C_GossipInfo.GetActiveQuests = function()
+    return { { questID = 5723, isComplete = false } }
+end
+calls.active = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.active, nil, "an incomplete guide quest leaves the gossip window alone")
+questAPI.C_GossipInfo.GetActiveQuests = function()
+    return { { questID = 5723, isComplete = true } }
+end
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.active, 5723, "a completed guide quest is selected from gossip")
+questAPI.C_QuestLog = { IsComplete = function() return false end }
+questAPI.IsQuestCompletable = function() return true end
+calls.complete = nil
+ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
+Equal(calls.complete, nil, "a quest the log says is incomplete is not turned in")
 ns.db.autoQuest = false
 calls.complete = nil
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
@@ -586,13 +604,8 @@ Equal(ns.Engine.currentGoal.id, "accept-infestation-investigation",
 grove.quests[92462] = { complete = false, objectives = {} }
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
-    "the class quest is accepted while still at Rorian")
-grove.quests[92482] = { complete = true, objectives = {} }
-grove.completedQuests[92482] = true
-ns.charDB.activeGoal = nil
-ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "objective-harmony-in-balance", "both grove quests are accepted before the kill step")
+Equal(ns.Engine.currentGoal.id, "objective-harmony-in-balance",
+    "the class breadcrumb waits until Harmony in Balance is turned in")
 grove.quests[92461] = {
     complete = true,
     objectives = { { finished = true, numRequired = 8, numFulfilled = 8 } },
@@ -609,6 +622,45 @@ ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "turnin-harmony-in-balance",
     "both grove objectives lead back to the Harmony turn-in")
+grove.completedQuests[92461] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
+    "Infestation Investigation is turned in before the class breadcrumb")
+grove.completedQuests[92462] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
+    "The Way of the Hunter opens after Harmony in Balance is turned in")
+local followUps = {
+    { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
+    { "accept-the-warriors-path", "turnin-harmony-in-balance" },
+    { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
+    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
+    { "accept-the-adventurer", "turnin-foul-matriarch" },
+    { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
+    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
+}
+for _, pair in ipairs(followUps) do
+    local goal = ns.Engine:GetGoal(zephras, pair[1])
+    local linked = false
+    for _, dependency in ipairs(goal.dependsOn or {}) do
+        if dependency == pair[2] then linked = true end
+    end
+    Check(linked, pair[1] .. " waits for " .. pair[2])
+end
+local pinned = ns.Navigation:GetActiveLeg({
+    route = { { mapID = 2521, x = 0.420, y = 0.234, label = "Rorian the Dayseeker" } },
+}, { mapID = 2521, x = 0.420, y = 0.234 })
+Equal(pinned and pinned.label, "Rorian the Dayseeker", "an accept NPC keeps a pin while the player is standing there")
+local walked = ns.Navigation:GetActiveLeg({
+    route = {
+        { mapID = 2521, x = 0.420, y = 0.234, label = "First stop" },
+        { mapID = 2521, x = 0.800, y = 0.800, label = "Second stop" },
+    },
+}, { mapID = 2521, x = 0.420, y = 0.234 })
+Equal(walked and walked.label, "Second stop", "reaching an earlier route stop still advances to the next one")
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}
@@ -785,6 +837,102 @@ local logged = ns.PlayerState:GetQuestLog({
 })
 Equal(logged[92461].complete, true, "a quest whose objectives are finished is ready to turn in")
 Equal(logged[92462].complete, false, "an unfinished quest objective stays incomplete")
+
+local function DependsOn(goal, dependencyID)
+    for _, dependency in ipairs(goal.dependsOn or {}) do
+        if dependency == dependencyID then return true end
+    end
+    return false
+end
+local welcome = ns.Engine:GetGoal(zephras, "accept-welcome-to-azeroth")
+local welcomeTurnin = ns.Engine:GetGoal(zephras, "turnin-welcome-to-azeroth")
+local exploring = ns.Engine:GetGoal(zephras, "accept-exploring-the-horde")
+local exploringObjective = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde")
+local exploringTurnin = ns.Engine:GetGoal(zephras, "turnin-exploring-the-horde")
+Check(DependsOn(welcome, "turnin-the-earthen-ring"), "Welcome to Azeroth waits for the Mulgore arrival")
+Check(DependsOn(welcomeTurnin, "accept-welcome-to-azeroth"), "Welcome to Azeroth is turned in after it is accepted")
+Check(DependsOn(exploring, "turnin-welcome-to-azeroth"), "Exploring the Horde waits until Thrall is met")
+Check(DependsOn(exploringObjective, "accept-exploring-the-horde"), "the Horde tour starts after Thrall gives it")
+Check(DependsOn(exploringTurnin, "objective-exploring-the-horde"), "Exploring the Horde turns in after the four visits")
+Equal(welcome.complete.quest.id, 95350, "Welcome to Azeroth is quest 95350")
+Equal(exploring.complete.quest.id, 93739, "Exploring the Horde is quest 93739")
+Equal(zephras.goals[#zephras.goals].id, "turnin-exploring-the-horde", "Exploring the Horde is the last Zephras step")
+Equal(ns.EvaluateCondition(welcome.conditions, { faction = "Alliance", level = 14 }), false,
+    "Alliance does not take Welcome to Azeroth")
+Equal(welcomeTurnin.route[1].mapID, 1456, "Welcome to Azeroth flies from Thunder Bluff")
+Equal(welcomeTurnin.route[1].x, 0.468, "the Thunder Bluff flight master pin is Tal")
+Equal(welcomeTurnin.route[2].mapID, 1454, "Welcome to Azeroth ends in Orgrimmar")
+Equal(welcomeTurnin.route[2].x, 0.320, "Thrall keeps the Valley of Wisdom pin")
+Equal(exploringObjective.route[1].mapID, 1454, "Nazgrel is in Orgrimmar")
+Equal(exploringObjective.route[2].x, 0.342, "Vol'jin is pinned in Grommash Hold")
+Equal(exploringObjective.route[3].mapID, 1456, "Cairne Bloodhoof is in Thunder Bluff")
+Equal(exploringObjective.route[4].mapID, 1458, "Lady Sylvanas is in the Undercity")
+local arrived = {}
+for key, value in pairs(starter) do arrived[key] = value end
+arrived.level = 14
+arrived.faction = "Horde"
+arrived.classID = 1
+arrived.quests = {}
+arrived.completedQuests = {}
+for _, goal in ipairs(zephras.goals) do
+    local quest = goal.complete and goal.complete.quest
+    if quest and quest.id ~= 95350 and quest.id ~= 93739 then
+        arrived.completedQuests[quest.id] = true
+    end
+end
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.Engine.reviewingGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "accept-welcome-to-azeroth",
+    "landing in Mulgore continues with Welcome to Azeroth")
+arrived.quests[95350] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "turnin-welcome-to-azeroth", "Welcome to Azeroth leads to Thrall")
+local flight = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1412, x = 0.334, y = 0.224, faction = "Horde",
+})
+Equal(flight and flight.mapID, 1456, "Mulgore points at the Thunder Bluff flight master")
+local thrall = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.45, y = 0.63, faction = "Horde",
+})
+Equal(thrall and thrall.label, "Thrall in the Valley of Wisdom", "Orgrimmar points at Thrall")
+arrived.completedQuests[95350] = true
+arrived.quests[95350] = nil
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "accept-exploring-the-horde", "Thrall offers Exploring the Horde next")
+arrived.quests[93739] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde", "Exploring the Horde is the final Horde tour")
+local nazgrel = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.320, y = 0.378, faction = "Horde",
+})
+Equal(nazgrel and nazgrel.label, "Nazgrel in Grommash Hold", "the tour starts with Nazgrel")
+local voljin = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.324, y = 0.360, faction = "Horde",
+})
+Equal(voljin and voljin.label, "Vol'jin in Grommash Hold", "Nazgrel leads on to Vol'jin")
+arrived.quests[93739] = { complete = true, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "turnin-exploring-the-horde", "the tour finishes with Lady Sylvanas")
+local allianceArrived = {}
+for key, value in pairs(arrived) do allianceArrived[key] = value end
+allianceArrived.faction = "Alliance"
+allianceArrived.quests = {}
+allianceArrived.completedQuests = {}
+for questID in pairs(arrived.completedQuests) do
+    allianceArrived.completedQuests[questID] = true
+end
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(allianceArrived)
+Check(not ns.Engine.currentGoal or (
+    ns.Engine.currentGoal.id ~= "accept-welcome-to-azeroth"
+    and ns.Engine.currentGoal.id ~= "accept-exploring-the-horde"
+), "Alliance keeps the Dalaran ending instead of the Horde capitals")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
