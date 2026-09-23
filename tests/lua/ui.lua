@@ -215,8 +215,7 @@ local function GuideRow(title)
     end
 end
 
-local HORDE_FACTION_ICON = "|TInterface\\GossipFrame\\BattlemasterHordeIcon:16:16|t"
-local RFC_REQUIREMENTS = "  •  " .. HORDE_FACTION_ICON .. "  •  Level 9+"
+local RFC_REQUIREMENTS = "  •  Horde  •  Level 9+"
 
 ns.UI.browserCategory = "All Guides"
 ns.UI.browserPage = 1
@@ -224,15 +223,15 @@ ns.UI.browser.search:SetText("ragefire")
 ns.Engine.state = { faction = "Alliance", level = 20 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
-    "an ineligible dungeon guide still lists faction icons and level")
+    "an ineligible dungeon guide still lists faction and level")
 ns.Engine.state = { faction = "Horde", level = 1 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
-    "a low-level dungeon guide still lists faction icons and level")
+    "a low-level dungeon guide still lists faction and level")
 ns.Engine.state = { faction = "Horde", level = 9 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Eligible" .. RFC_REQUIREMENTS,
-    "an eligible dungeon guide still lists faction icons and level")
+    "an eligible dungeon guide still lists faction and level")
 ns.Engine.state = { faction = "Horde" }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text,
