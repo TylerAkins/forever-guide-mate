@@ -248,6 +248,12 @@ local function CollectQuestIDs(value, found)
     end
 end
 
+function ns.GuideUsesQuest(guide, questID)
+    local found = {}
+    CollectQuestIDs(guide, found)
+    return found[questID] == true
+end
+
 function ns.GetTrackedQuestIDs()
     local found = {}
     for _, guide in pairs(ns.guides) do
@@ -353,27 +359,6 @@ function Engine:ReconcileGuide(guide, state)
     end
 end
 
-function Engine:GetGuideProgress(guide, state)
-    state = state or self.state or {}
-    self:ReconcileGuide(guide, state)
-    local completed, eligible, total = 0, 0, #guide.goals
-    local guideEligible = ns.EvaluateCondition(guide.conditions, state)
-    if guideEligible == false then
-        return { completed = 0, eligible = 0, total = total, percentage = 0 }
-    end
-    for _, goal in ipairs(guide.goals) do
-        local goalEligible = ns.EvaluateCondition(goal.conditions, state)
-        if goalEligible ~= false then
-            eligible = eligible + 1
-            if self:IsGoalDone(goal, state, guide) then
-                completed = completed + 1
-            end
-        end
-    end
-    local percentage = eligible > 0 and math.floor((completed * 100 / eligible) + 0.5) or 0
-    return { completed = completed, eligible = eligible, total = total, percentage = percentage }
-end
-
 local function HasPermanentFailure(condition, state)
     if type(condition) ~= "table" then
         return ns.EvaluateCondition(condition, state) == false
@@ -409,6 +394,26 @@ local function HasPermanentFailure(condition, state)
         return false
     end
     return eligible == false
+end
+
+function Engine:GetGuideProgress(guide, state)
+    state = state or self.state or {}
+    self:ReconcileGuide(guide, state)
+    local completed, eligible, total = 0, 0, #guide.goals
+    local guideEligible = ns.EvaluateCondition(guide.conditions, state)
+    if guideEligible == false then
+        return { completed = 0, eligible = 0, total = total, percentage = 0 }
+    end
+    for _, goal in ipairs(guide.goals) do
+        if not HasPermanentFailure(goal.conditions, state) then
+            eligible = eligible + 1
+            if self:IsGoalDone(goal, state, guide) then
+                completed = completed + 1
+            end
+        end
+    end
+    local percentage = eligible > 0 and math.floor((completed * 100 / eligible) + 0.5) or 0
+    return { completed = completed, eligible = eligible, total = total, percentage = percentage }
 end
 
 function Engine:IsDependencyDone(guide, dependencyID, state)

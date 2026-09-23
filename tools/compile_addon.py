@@ -16,6 +16,7 @@ SHIPPED = (
     "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
+    "QuestDialog.lua",
     "Navigation.lua",
     "TomTomWaypoints.lua",
     "MapPins.lua",
