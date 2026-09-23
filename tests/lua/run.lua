@@ -485,6 +485,83 @@ for key, value in pairs(starter) do shaman[key] = value end
 shaman.classID = 7
 shaman.level = 4
 Equal(ns.EvaluateCondition(callOfEarth.conditions, shaman), true, "horde shamans can take Call of Earth")
+local foulMatriarch = ns.Engine:GetGoal(zephras, "accept-foul-matriarch")
+local beforeAetheen = {}
+for key, value in pairs(starter) do beforeAetheen[key] = value end
+beforeAetheen.level = 2
+beforeAetheen.quests = {}
+beforeAetheen.completedQuests = {}
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
+    "Foul Matriarch waits until Aetheen of the Gales can be completed")
+beforeAetheen.level = 4
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
+    "Foul Matriarch stays locked until Aetheen of the Gales is turned in")
+beforeAetheen.completedQuests[92471] = true
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), true,
+    "Foul Matriarch opens after Aetheen of the Gales is turned in")
+
+ns:RegisterGuide({
+    id = "dependency-eligibility",
+    title = "Dependency Eligibility",
+    category = "Test Guides",
+    revision = 1,
+    goals = {
+        {
+            id = "later-prereq", kind = "note", text = "Later",
+            conditions = { level = { min = 4 } },
+            complete = { quest = { id = 900001, state = "completed" } },
+        },
+        {
+            id = "early-followup", kind = "note", text = "Early",
+            conditions = { level = { min = 2 } },
+            dependsOn = { "later-prereq" },
+            complete = { quest = { id = 900002, state = "completed" } },
+        },
+        {
+            id = "class-prereq", kind = "note", text = "Mage",
+            conditions = { class = 8 },
+            complete = { quest = { id = 900003, state = "completed" } },
+        },
+        {
+            id = "class-followup", kind = "note", text = "After mage",
+            dependsOn = { "class-prereq" },
+            complete = { quest = { id = 900004, state = "completed" } },
+        },
+        {
+            id = "horde-prereq", kind = "note", text = "Horde",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 6 } } } },
+            complete = { quest = { id = 900005, state = "completed" } },
+        },
+        {
+            id = "alliance-followup", kind = "note", text = "Alliance",
+            conditions = { faction = "Alliance" },
+            dependsOn = { "horde-prereq" },
+            complete = { quest = { id = 900006, state = "completed" } },
+        },
+    },
+})
+local dependencyGuide = ns.guides["dependency-eligibility"]
+local function DependencyState(overrides)
+    local state = {
+        faction = "Horde", classID = 1, level = 2,
+        quests = {}, questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+    }
+    for key, value in pairs(overrides or {}) do state[key] = value end
+    return state
+end
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 2 })), false, "a lower-level step waits for a higher-level prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 4 })), false, "reaching the level still waits for the prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 4, completedQuests = { [900001] = true } })), true,
+    "the follow-up starts after the higher-level prerequisite is done")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "class-followup"),
+    DependencyState({ classID = 1, level = 10 })), true, "another class does not wait on a class-only prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "alliance-followup"),
+    DependencyState({ faction = "Alliance", level = 1 })), true,
+    "the other faction does not wait on a faction-only prerequisite")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
