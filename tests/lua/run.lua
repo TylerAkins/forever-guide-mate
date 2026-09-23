@@ -838,6 +838,102 @@ local logged = ns.PlayerState:GetQuestLog({
 Equal(logged[92461].complete, true, "a quest whose objectives are finished is ready to turn in")
 Equal(logged[92462].complete, false, "an unfinished quest objective stays incomplete")
 
+local function DependsOn(goal, dependencyID)
+    for _, dependency in ipairs(goal.dependsOn or {}) do
+        if dependency == dependencyID then return true end
+    end
+    return false
+end
+local welcome = ns.Engine:GetGoal(zephras, "accept-welcome-to-azeroth")
+local welcomeTurnin = ns.Engine:GetGoal(zephras, "turnin-welcome-to-azeroth")
+local exploring = ns.Engine:GetGoal(zephras, "accept-exploring-the-horde")
+local exploringObjective = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde")
+local exploringTurnin = ns.Engine:GetGoal(zephras, "turnin-exploring-the-horde")
+Check(DependsOn(welcome, "turnin-the-earthen-ring"), "Welcome to Azeroth waits for the Mulgore arrival")
+Check(DependsOn(welcomeTurnin, "accept-welcome-to-azeroth"), "Welcome to Azeroth is turned in after it is accepted")
+Check(DependsOn(exploring, "turnin-welcome-to-azeroth"), "Exploring the Horde waits until Thrall is met")
+Check(DependsOn(exploringObjective, "accept-exploring-the-horde"), "the Horde tour starts after Thrall gives it")
+Check(DependsOn(exploringTurnin, "objective-exploring-the-horde"), "Exploring the Horde turns in after the four visits")
+Equal(welcome.complete.quest.id, 95350, "Welcome to Azeroth is quest 95350")
+Equal(exploring.complete.quest.id, 93739, "Exploring the Horde is quest 93739")
+Equal(zephras.goals[#zephras.goals].id, "turnin-exploring-the-horde", "Exploring the Horde is the last Zephras step")
+Equal(ns.EvaluateCondition(welcome.conditions, { faction = "Alliance", level = 14 }), false,
+    "Alliance does not take Welcome to Azeroth")
+Equal(welcomeTurnin.route[1].mapID, 1456, "Welcome to Azeroth flies from Thunder Bluff")
+Equal(welcomeTurnin.route[1].x, 0.468, "the Thunder Bluff flight master pin is Tal")
+Equal(welcomeTurnin.route[2].mapID, 1454, "Welcome to Azeroth ends in Orgrimmar")
+Equal(welcomeTurnin.route[2].x, 0.320, "Thrall keeps the Valley of Wisdom pin")
+Equal(exploringObjective.route[1].mapID, 1454, "Nazgrel is in Orgrimmar")
+Equal(exploringObjective.route[2].x, 0.342, "Vol'jin is pinned in Grommash Hold")
+Equal(exploringObjective.route[3].mapID, 1456, "Cairne Bloodhoof is in Thunder Bluff")
+Equal(exploringObjective.route[4].mapID, 1458, "Lady Sylvanas is in the Undercity")
+local arrived = {}
+for key, value in pairs(starter) do arrived[key] = value end
+arrived.level = 14
+arrived.faction = "Horde"
+arrived.classID = 1
+arrived.quests = {}
+arrived.completedQuests = {}
+for _, goal in ipairs(zephras.goals) do
+    local quest = goal.complete and goal.complete.quest
+    if quest and quest.id ~= 95350 and quest.id ~= 93739 then
+        arrived.completedQuests[quest.id] = true
+    end
+end
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.Engine.reviewingGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "accept-welcome-to-azeroth",
+    "landing in Mulgore continues with Welcome to Azeroth")
+arrived.quests[95350] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "turnin-welcome-to-azeroth", "Welcome to Azeroth leads to Thrall")
+local flight = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1412, x = 0.334, y = 0.224, faction = "Horde",
+})
+Equal(flight and flight.mapID, 1456, "Mulgore points at the Thunder Bluff flight master")
+local thrall = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.45, y = 0.63, faction = "Horde",
+})
+Equal(thrall and thrall.label, "Thrall in the Valley of Wisdom", "Orgrimmar points at Thrall")
+arrived.completedQuests[95350] = true
+arrived.quests[95350] = nil
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "accept-exploring-the-horde", "Thrall offers Exploring the Horde next")
+arrived.quests[93739] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde", "Exploring the Horde is the final Horde tour")
+local nazgrel = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.320, y = 0.378, faction = "Horde",
+})
+Equal(nazgrel and nazgrel.label, "Nazgrel in Grommash Hold", "the tour starts with Nazgrel")
+local voljin = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.324, y = 0.360, faction = "Horde",
+})
+Equal(voljin and voljin.label, "Vol'jin in Grommash Hold", "Nazgrel leads on to Vol'jin")
+arrived.quests[93739] = { complete = true, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "turnin-exploring-the-horde", "the tour finishes with Lady Sylvanas")
+local allianceArrived = {}
+for key, value in pairs(arrived) do allianceArrived[key] = value end
+allianceArrived.faction = "Alliance"
+allianceArrived.quests = {}
+allianceArrived.completedQuests = {}
+for questID in pairs(arrived.completedQuests) do
+    allianceArrived.completedQuests[questID] = true
+end
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(allianceArrived)
+Check(not ns.Engine.currentGoal or (
+    ns.Engine.currentGoal.id ~= "accept-welcome-to-azeroth"
+    and ns.Engine.currentGoal.id ~= "accept-exploring-the-horde"
+), "Alliance keeps the Dalaran ending instead of the Horde capitals")
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
