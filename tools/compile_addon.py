@@ -21,6 +21,7 @@ SHIPPED = (
     "UI.lua",
     "Media/NavigationArrow.tga",
     "Guides/Dungeons/RagefireChasm.lua",
+    "Guides/Dungeons/WailingCaverns.lua",
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
