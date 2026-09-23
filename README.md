@@ -1,6 +1,6 @@
 # Forever GuideMate
 
-Forever GuideMate is a local-development guide addon for World of Warcraft: Forever. Version `0.1.0` contains the first engine framework and dungeon quest guides for Ragefire Chasm and Wailing Caverns.
+Forever GuideMate is a local-development guide addon for World of Warcraft: Forever. Version `0.1.0` contains the first engine framework and dungeon quest guides for Ragefire Chasm, Wailing Caverns, and the Ruins of Lordaeron.
 
 The addon uses a compact Blizzard objective-style tracker, a searchable guide library, completion progress, a guide-specific navigation arrow, and a Blizzard map pin for the active route waypoint. Close the tracker to hide both guide surfaces, then reopen it from the AddOn compartment, the minimap fallback, or the AddOns settings panel. It observes player and quest state but does not accept quests, choose rewards, move the character, or perform protected gameplay actions. The included public Classic quest data and coordinates have not yet been validated in the Forever client.
 

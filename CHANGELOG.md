@@ -7,3 +7,5 @@ All notable changes to this project are documented here.
 - Created the initial repository and addon scaffold.
 - Added the guide engine, objective-style tracker, guide library, persistent completion progress, navigation arrow, active-route map pin, and the initial Ragefire Chasm quest guide.
 - Added the Wailing Caverns dungeon quest guide for level 15.
+- Added the Ruins of Lordaeron dungeon quest guide for level 16.
+- Guide library rows now show the guide type, such as Dungeon, before eligibility.
