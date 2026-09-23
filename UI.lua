@@ -11,6 +11,7 @@ ns.UI = UI
 
 local TRACKER_DEFAULTS = { point = "LEFT", relativePoint = "LEFT", x = 0, y = 0, scale = 1 }
 local BROWSER_DEFAULTS = { point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1 }
+local GOLD_BORDER = { 0.78, 0.58, 0.16, 0.95 }
 
 local function Create(kind, name, parent, template)
     if template then
@@ -318,6 +319,32 @@ local function EligibilityText(guide, state)
     return text
 end
 
+local function GuideMinimumLevel(guide)
+    local level
+    local function Collect(condition)
+        if type(condition) ~= "table" then return end
+        if condition.all then
+            for _, child in ipairs(condition.all) do Collect(child) end
+        end
+        if condition.any then
+            for _, child in ipairs(condition.any) do Collect(child) end
+        end
+        if condition.level and type(condition.level.min) == "number" then
+            level = condition.level.min
+        end
+    end
+    if type(guide) == "table" then Collect(guide.conditions) end
+    return level
+end
+
+local function GuideComesBefore(left, right)
+    local leftLevel, rightLevel = GuideMinimumLevel(left), GuideMinimumLevel(right)
+    if leftLevel and rightLevel and leftLevel ~= rightLevel then return leftLevel < rightLevel end
+    if leftLevel and not rightLevel then return true end
+    if rightLevel and not leftLevel then return false end
+    return (left.title or "") < (right.title or "")
+end
+
 function UI:CreateGuideBrowser()
     local frame = Create("Frame", "ForeverGuideMateBrowser", UIParent)
     frame:SetSize(560, 370)
@@ -394,7 +421,13 @@ function UI:CreateBrowserRow(index)
     progress:SetPoint("RIGHT", -92, 0)
     local open = CreatePlainButton(row, 70, "Open")
     open:SetPoint("BOTTOMRIGHT", -10, 5)
-    row.title, row.eligibility, row.counts, row.progress, row.open = title, eligibility, counts, progress, open
+    local divider = row:CreateTexture(nil, "ARTWORK")
+    divider:SetPoint("TOPLEFT", row, "BOTTOMLEFT", 0, -3)
+    divider:SetPoint("TOPRIGHT", row, "BOTTOMRIGHT", 0, -3)
+    divider:SetHeight(1)
+    SetSolidColor(divider, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
+    divider:Hide()
+    row.title, row.eligibility, row.counts, row.progress, row.open, row.divider = title, eligibility, counts, progress, open, divider
     self.browserRows[index] = row
     return row
 end
@@ -407,7 +440,7 @@ function UI:CreateBrowserCategory(index, name)
             local texture = button:CreateTexture(nil, "BORDER")
             texture:SetPoint(point, button, relativePoint, x, y)
             texture:SetSize(width, height)
-            SetSolidColor(texture, 0.78, 0.58, 0.16, 0.95)
+            SetSolidColor(texture, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
             texture:Hide()
             border[#border + 1] = texture
         end
@@ -463,6 +496,7 @@ function UI:RefreshGuideBrowser()
             matches[#matches + 1] = guide
         end
     end
+    table.sort(matches, GuideComesBefore)
     local pageSize = 3
     local pageCount = math.max(1, math.ceil(#matches / pageSize))
     self.browserPage = math.max(1, math.min(self.browserPage, pageCount))
@@ -484,6 +518,7 @@ function UI:RefreshGuideBrowser()
                 UI:OpenTracker()
                 UI.browser:Hide()
             end)
+            row.divider:SetShown(matchIndex < math.min(self.browserPage * pageSize, #matches))
             row:Show()
     end
     for index = visible + 1, #self.browserRows do self.browserRows[index]:Hide() end
