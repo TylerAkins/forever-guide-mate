@@ -358,6 +358,33 @@ function UI:CreateGuideBrowser()
     local close = CreatePlainButton(frame, 26, "×")
     close:SetPoint("TOPRIGHT", -12, -10)
     close:SetScript("OnClick", function() frame:Hide() end)
+    local hideIneligibleLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    hideIneligibleLabel:SetText("Hide Ineligible")
+    hideIneligibleLabel:SetPoint("RIGHT", close, "LEFT", -10, 0)
+    local hideIneligible = Create("CheckButton", nil, frame)
+    hideIneligible:SetSize(16, 16)
+    hideIneligible:SetPoint("RIGHT", hideIneligibleLabel, "LEFT", -6, 0)
+    local hideBox = hideIneligible:CreateTexture(nil, "BACKGROUND")
+    hideBox:SetAllPoints()
+    SetSolidColor(hideBox, 0.09, 0.12, 0.16, 0.9)
+    local hideMark = hideIneligible:CreateTexture(nil, "ARTWORK")
+    hideMark:SetPoint("TOPLEFT", 3, -3)
+    hideMark:SetPoint("BOTTOMRIGHT", -3, 3)
+    SetSolidColor(hideMark, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
+    hideIneligible.mark = hideMark
+    local function SyncHideIneligible()
+        local hidden = ns.db.browser.hideIneligible == true
+        hideIneligible:SetChecked(hidden)
+        hideMark:SetShown(hidden)
+    end
+    hideIneligible:SetScript("OnClick", function(self)
+        ns.db.browser.hideIneligible = not not self:GetChecked()
+        SyncHideIneligible()
+        UI.browserPage = 1
+        UI:RefreshGuideBrowser()
+    end)
+    hideIneligible:SetScript("OnShow", SyncHideIneligible)
+    SyncHideIneligible()
     local search = Create("EditBox", nil, frame, "InputBoxTemplate")
     search:SetHeight(24)
     search:SetPoint("TOPLEFT", 174, -42)
@@ -396,6 +423,7 @@ function UI:CreateGuideBrowser()
         UI:RefreshGuideBrowser()
     end)
     frame.search, frame.empty, frame.resultCount = search, empty, resultCount
+    frame.close, frame.hideIneligible, frame.hideIneligibleLabel = close, hideIneligible, hideIneligibleLabel
     frame.previousPage, frame.page, frame.nextPage = previousPage, page, nextPage
     self.browser = frame
     frame:Hide()
@@ -492,8 +520,10 @@ function UI:RefreshGuideBrowser()
     for _, guideID in ipairs(ns.guideOrder) do
         local guide = ns.guides[guideID]
         local haystack = string.lower(guide.title .. " " .. guide.category)
+        local ineligible = ns.EvaluateCondition(guide.conditions, ns.Engine.state or {}) == false
         if (self.browserCategory == "All Guides" or guide.category == self.browserCategory)
-            and (query == "" or string.find(haystack, query, 1, true)) then
+            and (query == "" or string.find(haystack, query, 1, true))
+            and not (ns.db.browser.hideIneligible and ineligible) then
             matches[#matches + 1] = guide
         end
     end

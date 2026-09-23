@@ -18,6 +18,7 @@ local ACCOUNT_DEFAULTS = {
     },
     browser = {
         scale = 1, point = "CENTER", relativePoint = "CENTER", x = 0, y = 0,
+        hideIneligible = false,
     },
     autoAdvance = true,
 }
