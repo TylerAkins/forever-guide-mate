@@ -22,6 +22,7 @@ REQUIRED_FILES = (
     "ForeverGuideMate.toc",
     "Core.lua",
     "PlayerState.lua",
+    "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
     "Navigation.lua",
@@ -65,6 +66,7 @@ class ContractTests(unittest.TestCase):
             [
                 "Core.lua",
                 "PlayerState.lua",
+                "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
                 "Navigation.lua",
@@ -120,6 +122,7 @@ class ContractTests(unittest.TestCase):
             for name in (
                 "Core.lua",
                 "PlayerState.lua",
+                "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
                 "Navigation.lua",

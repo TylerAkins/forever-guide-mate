@@ -75,6 +75,7 @@ end
 
 Load("Core.lua")
 Load("PlayerState.lua")
+Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
 Load("Navigation.lua")
@@ -140,7 +141,7 @@ ns.PlayerState.CapturePosition = function() return 1453, 0.4, 0.4 end
 ns.Engine.state.faction = "Horde"
 ns.Engine.state.mapID = 1453
 ns.UI:UpdateArrow()
-Equal(addedWaypoints[2].mapID, 1420, "an Eastern Kingdoms Horde player is sent to the zeppelin")
+Equal(addedWaypoints[2].mapID, 1434, "a southern Eastern Kingdoms Horde player is sent to the Grom'gol zeppelin")
 Equal(addedWaypoints[1].removed, true, "the previous TomTom waypoint is removed")
 
 ns.Engine.currentGoal = { id = "missing", kind = "note", text = "Read this" }

@@ -13,6 +13,7 @@ SHIPPED = (
     "ForeverGuideMate.toc",
     "Core.lua",
     "PlayerState.lua",
+    "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
     "Navigation.lua",
