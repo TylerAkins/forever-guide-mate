@@ -294,24 +294,79 @@ local function GuideTypeLabel(guide)
     return nil
 end
 
+local FACTION_ICON_TEXTURES = {
+    Alliance = "Interface\\GossipFrame\\BattlemasterAllianceIcon",
+    Horde = "Interface\\GossipFrame\\BattlemasterHordeIcon",
+}
+local FACTION_ICON_ORDER = { "Alliance", "Horde" }
+
+local function FactionIconMarkup(faction)
+    local texture = FACTION_ICON_TEXTURES[faction]
+    if not texture then return tostring(faction) end
+    return ("|T%s:16:16|t"):format(texture)
+end
+
+local function GuideFactions(guide)
+    local seen = {}
+    local function note(faction)
+        if faction == "Alliance" or faction == "Horde" then seen[faction] = true end
+    end
+    local function walk(condition)
+        if type(condition) ~= "table" then return end
+        note(condition.faction)
+        if condition.all then for _, child in ipairs(condition.all) do walk(child) end end
+        if condition.any then for _, child in ipairs(condition.any) do walk(child) end end
+    end
+    if type(guide) == "table" then
+        walk(guide.conditions)
+        if GuideTypeLabel(guide) == "Dungeon" and type(guide.goals) == "table" then
+            for _, goal in ipairs(guide.goals) do
+                if type(goal.conditions) == "table" then walk(goal.conditions) end
+            end
+        end
+    end
+    local factions = {}
+    for _, faction in ipairs(FACTION_ICON_ORDER) do
+        if seen[faction] then factions[#factions + 1] = faction end
+    end
+    return factions
+end
+
 local function EligibilityText(guide, state)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state or {})
+    local isDungeon = GuideTypeLabel(guide) == "Dungeon"
     local requirements = {}
+    local levelRequirements = {}
     local function Collect(condition)
         if type(condition) ~= "table" then return end
         if condition.all then for _, child in ipairs(condition.all) do Collect(child) end end
-        if type(condition.faction) == "string" then requirements[#requirements + 1] = condition.faction end
+        if condition.any then for _, child in ipairs(condition.any) do Collect(child) end end
+        if not isDungeon and type(condition.faction) == "string" then
+            requirements[#requirements + 1] = condition.faction
+        end
         if condition.level then
             local minimum, maximum = condition.level.min, condition.level.max
-            if minimum and maximum then requirements[#requirements + 1] = ("Level %d-%d"):format(minimum, maximum)
-            elseif minimum then requirements[#requirements + 1] = ("Level %d+"):format(minimum)
-            elseif maximum then requirements[#requirements + 1] = ("Level %d or below"):format(maximum) end
+            if minimum and maximum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d-%d"):format(minimum, maximum)
+            elseif minimum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d+"):format(minimum)
+            elseif maximum then
+                levelRequirements[#levelRequirements + 1] = ("Level %d or below"):format(maximum)
+            end
         end
     end
     Collect(guide.conditions)
+    if isDungeon then
+        local icons = {}
+        for _, faction in ipairs(GuideFactions(guide)) do
+            icons[#icons + 1] = FactionIconMarkup(faction)
+        end
+        if #icons > 0 then requirements[#requirements + 1] = table.concat(icons) end
+    end
+    for _, levelText in ipairs(levelRequirements) do requirements[#requirements + 1] = levelText end
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
     local text
-    if eligible == false and GuideTypeLabel(guide) == "Dungeon" then text = "Ineligible"
+    if eligible == false and isDungeon then text = "Ineligible" .. suffix
     elseif eligible == false then text = (reason or "Not eligible") .. suffix
     elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
     else text = "Eligible" .. suffix end
