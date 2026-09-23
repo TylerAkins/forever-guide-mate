@@ -311,7 +311,8 @@ local function EligibilityText(guide, state)
     Collect(guide.conditions)
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
     local text
-    if eligible == false then text = (reason or "Not eligible") .. suffix
+    if eligible == false and GuideTypeLabel(guide) == "Dungeon" then text = "Ineligible"
+    elseif eligible == false then text = (reason or "Not eligible") .. suffix
     elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
     else text = "Eligible" .. suffix end
     local label = GuideTypeLabel(guide)
@@ -589,7 +590,12 @@ function UI:Update(engine)
     else
         self.tracker.typeLabel:SetText("")
         self.tracker.typeIcon:Hide()
-        self.tracker.instruction:SetText(engine.status or "No active step.")
+        local instruction = engine.status or "No active step."
+        local guideEligible = guide and ns.EvaluateCondition(guide.conditions, engine.state or {})
+        if guideEligible == false and GuideTypeLabel(guide) == "Dungeon" then
+            instruction = "Ineligible"
+        end
+        self.tracker.instruction:SetText(instruction)
         self.tracker.nextStep:SetText("")
         self.tracker.status:SetText("")
     end
