@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import shutil
-import subprocess
 from pathlib import Path
 
 
@@ -13,6 +12,15 @@ OUTPUT = ROOT / ".compiled" / "ForeverGuideMate"
 SHIPPED = (
     "ForeverGuideMate.toc",
     "Core.lua",
+    "PlayerState.lua",
+    "Taxi.lua",
+    "GuideEngine.lua",
+    "Navigation.lua",
+    "MapPins.lua",
+    "MapPins.xml",
+    "UI.lua",
+    "Media/NavigationArrow.tga",
+    "Guides/Dungeons/RagefireChasm.lua",
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
@@ -20,17 +28,8 @@ SHIPPED = (
 
 
 def project_version() -> str:
-    """Return the base project version with useful Git context when available."""
-    base = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-    result = subprocess.run(
-        ["git", "describe", "--always", "--dirty"],
-        cwd=ROOT,
-        capture_output=True,
-        check=False,
-        text=True,
-    )
-    description = result.stdout.strip()
-    return f"{base}+{description}" if description else base
+    """Return the intentionally fixed local-development version."""
+    return (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
 
 def source_files() -> list[Path]:
@@ -45,7 +44,7 @@ def source_files() -> list[Path]:
 def compile_addon(output: Path = OUTPUT, *, dry_run: bool = False) -> list[Path]:
     """Copy exactly the shipped files into one compiled addon directory."""
     files = source_files()
-    destinations = [output / source.name for source in files]
+    destinations = [output / source.relative_to(ROOT) for source in files]
     if dry_run:
         return destinations
 
@@ -53,6 +52,7 @@ def compile_addon(output: Path = OUTPUT, *, dry_run: bool = False) -> list[Path]
         shutil.rmtree(output)
     output.mkdir(parents=True, exist_ok=False)
     for source, destination in zip(files, destinations, strict=True):
+        destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
 
     toc = output / "ForeverGuideMate.toc"

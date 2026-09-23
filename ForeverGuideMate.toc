@@ -8,5 +8,18 @@
 ## X-Website: https://github.com/TylerAkins/forever-guide-mate
 ## X-Source: https://github.com/TylerAkins/forever-guide-mate
 ## X-Issues: https://github.com/TylerAkins/forever-guide-mate/issues
+## SavedVariables: ForeverGuideMateDB
+## SavedVariablesPerCharacter: ForeverGuideMateCharDB
+## AddonCompartmentFunc: ForeverGuideMate_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: ForeverGuideMate_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: ForeverGuideMate_OnAddonCompartmentLeave
 
 Core.lua
+PlayerState.lua
+Taxi.lua
+GuideEngine.lua
+Navigation.lua
+MapPins.lua
+MapPins.xml
+UI.lua
+Guides/Dungeons/RagefireChasm.lua

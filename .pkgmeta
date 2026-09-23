@@ -1,5 +1,6 @@
 package-as: ForeverGuideMate
 ignore:
+  - .compiled
   - tests
   - tools
   - .github

@@ -1,4 +1,4 @@
-"""Project-contract tests for the minimal addon scaffold."""
+"""Project-contract tests for the Forever GuideMate engine."""
 from __future__ import annotations
 
 import importlib.util
@@ -21,8 +21,19 @@ REQUIRED_FILES = (
     "VERSION",
     "ForeverGuideMate.toc",
     "Core.lua",
+    "PlayerState.lua",
+    "Taxi.lua",
+    "GuideEngine.lua",
+    "Navigation.lua",
+    "MapPins.lua",
+    "MapPins.xml",
+    "UI.lua",
+    "Media/NavigationArrow.tga",
+    "Guides/Dungeons/RagefireChasm.lua",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
+    "tests/lua/run.lua",
+    "tests/lua/ui.lua",
     "tests/requirements.txt",
 )
 
@@ -47,29 +58,69 @@ class ContractTests(unittest.TestCase):
         self.assertIn("## X-Website: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Source: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Issues: https://github.com/TylerAkins/forever-guide-mate/issues", lines)
-        self.assertEqual([line for line in lines if line and not line.startswith("##")], ["Core.lua"])
-        self.assertFalse(any("SavedVariables" in line for line in lines))
+        self.assertEqual(
+            [line for line in lines if line and not line.startswith("##")],
+            [
+                "Core.lua",
+                "PlayerState.lua",
+                "Taxi.lua",
+                "GuideEngine.lua",
+                "Navigation.lua",
+                "MapPins.lua",
+                "MapPins.xml",
+                "UI.lua",
+                "Guides/Dungeons/RagefireChasm.lua",
+            ],
+        )
+        self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
+        self.assertIn("## SavedVariablesPerCharacter: ForeverGuideMateCharDB", lines)
         self.assertFalse(any("Dependencies" in line for line in lines))
 
-    def test_minimal_namespace_shell(self) -> None:
+    def test_namespace_and_registration_contract(self) -> None:
         core = (ROOT / "Core.lua").read_text(encoding="utf-8")
+        engine = (ROOT / "GuideEngine.lua").read_text(encoding="utf-8")
+        guide = (ROOT / "Guides/Dungeons/RagefireChasm.lua").read_text(encoding="utf-8")
         self.assertIn("local ADDON_NAME, ns = ...", core)
         self.assertIn("ForeverGuideMate = ns", core)
-        for forbidden in ("RegisterEvent", "CreateFrame", "SLASH_", "InterfaceOptions"):
-            self.assertNotIn(forbidden, core)
+        self.assertIn("function ns:RegisterGuide(guide)", engine)
+        self.assertIn('id = "dungeons-ragefire-chasm-horde"', guide)
+        self.assertIn('category = "Dungeon Quest Guides"', guide)
 
     def test_version_and_packaging_contract(self) -> None:
         self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.1.0")
-        self.assertIn("package-as: ForeverGuideMate", (ROOT / ".pkgmeta").read_text(encoding="utf-8"))
+        package = (ROOT / ".pkgmeta").read_text(encoding="utf-8")
+        self.assertIn("package-as: ForeverGuideMate", package)
+        for excluded in (".compiled", "tests", "tools", ".github"):
+            self.assertIn(f"  - {excluded}", package)
 
-    def test_readme_says_scaffold(self) -> None:
-        self.assertIn("only the initial addon scaffold", (ROOT / "README.md").read_text(encoding="utf-8").lower())
+    def test_readme_documents_local_engine(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+        self.assertIn("local-development guide addon", readme)
+        self.assertIn("no release or publishing automation", readme)
 
-    def test_no_guide_or_probe_data_exists(self) -> None:
-        forbidden = ("Probe", "ATT", "guide database")
+    def test_runtime_has_no_gameplay_automation_or_probe_code(self) -> None:
+        forbidden = (
+            "AcceptQuest",
+            "CompleteQuest",
+            "GetQuestReward",
+            "SelectGossipOption",
+            "ConfirmAcceptQuest",
+            "SLASH_",
+            "Probe",
+        )
         source = "\n".join(
             (ROOT / name).read_text(encoding="utf-8")
-            for name in ("ForeverGuideMate.toc", "Core.lua")
+            for name in (
+                "Core.lua",
+                "PlayerState.lua",
+                "Taxi.lua",
+                "GuideEngine.lua",
+                "Navigation.lua",
+                "MapPins.lua",
+                "MapPins.xml",
+                "UI.lua",
+                "Guides/Dungeons/RagefireChasm.lua",
+            )
         )
         for term in forbidden:
             self.assertNotIn(term.lower(), source.lower())
@@ -77,6 +128,49 @@ class ContractTests(unittest.TestCase):
     def test_no_release_workflow_exists(self) -> None:
         workflow_names = [path.name.lower() for path in (ROOT / ".github/workflows").iterdir()]
         self.assertEqual(workflow_names, ["ci.yml"])
+
+    def test_rfc_guide_covers_required_quests_and_conditions(self) -> None:
+        guide = (ROOT / "Guides/Dungeons/RagefireChasm.lua").read_text(encoding="utf-8")
+        for quest_id in (5722, 5723, 5724, 5725, 5726, 5727, 5728, 5729, 5730, 5761):
+            self.assertIn(str(quest_id), guide)
+        self.assertIn('{ faction = "Horde" }', guide)
+        self.assertIn("level = { min = 9 }", guide)
+        self.assertIn("BARRENS = 1413", guide)
+        self.assertIn("THUNDER_BLUFF = 1456", guide)
+
+    def test_lua_engine_tests_run_in_ci(self) -> None:
+        workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+        self.assertIn("lua5.1 tests/lua/run.lua", workflow)
+        self.assertIn("lua5.1 tests/lua/ui.lua", workflow)
+
+    def test_ux_contract(self) -> None:
+        core = (ROOT / "Core.lua").read_text(encoding="utf-8")
+        ui = (ROOT / "UI.lua").read_text(encoding="utf-8")
+        navigation = (ROOT / "Navigation.lua").read_text(encoding="utf-8")
+        map_pins = (ROOT / "MapPins.lua").read_text(encoding="utf-8")
+        toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
+        self.assertIn("schemaVersion = 2", core)
+        self.assertIn('point = "TOP", relativePoint = "TOP", x = 0, y = -90', core)
+        self.assertIn("function UI:OpenTracker()", ui)
+        self.assertIn("function UI:CloseTracker()", ui)
+        self.assertIn("function UI:OpenGuideBrowser()", ui)
+        self.assertIn("function UI:ToggleGuideBrowser()", ui)
+        self.assertIn("SetClampedToScreen(true)", ui)
+        self.assertNotIn("CreateLine", ui)
+        self.assertIn("NavigationArrow", ui)
+        self.assertIn("texture:SetRotation", ui)
+        self.assertNotIn("Interface\\\\Minimap\\\\MinimapArrow", ui)
+        self.assertIn("GetMapRectOnMap", navigation)
+        self.assertIn('"Waypoint-MapPin-Tracked"', map_pins)
+        self.assertIn("MapCanvasDataProviderMixin", map_pins)
+        self.assertIn("mapCanvas.AcquirePin", map_pins)
+        self.assertIn("## AddonCompartmentFunc: ForeverGuideMate_OnAddonCompartmentClick", toc)
+
+    def test_navigation_arrow_asset(self) -> None:
+        asset = (ROOT / "Media/NavigationArrow.tga").read_bytes()
+        self.assertLess(len(asset), 100_000)
+        self.assertEqual(asset[16], 32)
+        self.assertEqual(asset[17] & 0x0F, 8)
 
     def test_compiler_dry_run_and_build_output(self) -> None:
         compiler = compiler_module()
@@ -87,9 +181,14 @@ class ContractTests(unittest.TestCase):
             self.assertFalse(output.exists())
             built = compiler.compile_addon(output)
             self.assertEqual(built, expected)
-            self.assertEqual({path.name for path in output.iterdir()}, set(compiler.SHIPPED))
+            actual = {
+                path.relative_to(output).as_posix()
+                for path in output.rglob("*")
+                if path.is_file()
+            }
+            self.assertEqual(actual, set(compiler.SHIPPED))
             toc = (output / "ForeverGuideMate.toc").read_text(encoding="utf-8")
-            self.assertIn("0.1.0", toc)
+            self.assertIn("## Version: 0.1.0", toc.splitlines())
             self.assertNotIn("@project-version@", toc)
             for excluded in ("tests", "tools", ".github", "__pycache__"):
                 self.assertFalse((output / excluded).exists())

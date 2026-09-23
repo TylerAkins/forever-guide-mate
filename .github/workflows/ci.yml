@@ -17,12 +17,17 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
       - run: python3 -m pip install -r tests/requirements.txt
       - run: python3 -m unittest discover -s tests
+      - run: |
+          lua5.1 tests/lua/run.lua
+          lua5.1 tests/lua/ui.lua
       - run: |
           python3 tools/compile_addon.py
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
           test -f .compiled/ForeverGuideMate/Core.lua
+          test -f .compiled/ForeverGuideMate/Guides/Dungeons/RagefireChasm.lua
           test ! -e .compiled/ForeverGuideMate/tests
           test ! -e .compiled/ForeverGuideMate/tools
       - run: python3 tools/compile_addon.py --dry-run
