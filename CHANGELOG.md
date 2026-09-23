@@ -15,3 +15,4 @@ All notable changes to this project are documented here.
 - Added the Forever boat, zeppelin, and flight-master network from Wowhead's world map, including Riverglades and Zephras Isle.
 - The guide tracker starts on the left edge, vertically centered. No guide is selected until the player chooses one, and that choice is saved.
 - Added the Zephras Isle leveling guide for Skyborne characters, levels 1-14.
+- A quest step that is only behind a higher level requirement no longer counts as finished, so the guide does not send players to Foul Matriarch before they can meet Aetheen of the Gales.
