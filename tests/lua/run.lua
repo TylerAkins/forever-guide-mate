@@ -29,6 +29,7 @@ Load("PlayerState.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
 Load("Navigation.lua")
+Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
@@ -230,8 +231,26 @@ local transportGoal = { route = {
     { mapID = 1411, x = 0.5, y = 0.1, complete = { map = { 1420, 1458 } } },
     { mapID = 1420, x = 0.6, y = 0.5, complete = { map = 1458 } },
 } }
-local leg = ns.Navigation:GetActiveLeg(transportGoal, { mapID = 1420, x = 0.4, y = 0.4 })
+local leg = ns.Navigation:GetActiveLeg(transportGoal, { mapID = 1420, x = 0.4, y = 0.4, faction = "Horde" })
 Equal(leg.mapID, 1420, "transport route advances after map transition")
+
+local undercityGoal = { route = { { mapID = 1458, x = 0.56, y = 0.92, label = "Undercity" } } }
+local zeppelin = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" })
+Equal(zeppelin.mapID, 1411, "Horde on Kalimdor is directed to the Orgrimmar zeppelin")
+local localUndercity = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1420, x = 0.5, y = 0.4, faction = "Horde" })
+Equal(localUndercity.mapID, 1458, "same-continent travel keeps the authored destination")
+local barrensGoal = { route = { { mapID = 1413, x = 0.46, y = 0.36, label = "Wailing Caverns" } } }
+local theramoreBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
+Equal(theramoreBoat.mapID, 1437, "Alliance uses the Menethil dock for Kalimdor")
+Check(string.find(theramoreBoat.label, "Theramore", 1, true), "Barrens traffic uses the Theramore boat")
+local bootyBayBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1434, x = 0.26, y = 0.73, faction = "Alliance" })
+Equal(bootyBayBoat.mapID, 1434, "Alliance already at Booty Bay takes the Ratchet boat")
+local darnassusGoal = { route = { { mapID = 1457, x = 0.4, y = 0.4, label = "Darnassus" } } }
+local auberdineBoat = ns.Navigation:GetActiveLeg(darnassusGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
+Check(string.find(auberdineBoat.label, "Auberdine", 1, true), "northern Kalimdor uses the Auberdine boat")
+local duskwoodGoal = { route = { { mapID = 1431, x = 0.73, y = 0.45, label = "Duskwood" } } }
+local ratchetBoat = ns.Navigation:GetActiveLeg(duskwoodGoal, { mapID = 1413, x = 0.6, y = 0.4, faction = "Horde" })
+Check(string.find(ratchetBoat.label, "Ratchet", 1, true), "southern Eastern Kingdoms uses the Ratchet boat")
 
 local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
 ns.charDB.manualCompleted = {}

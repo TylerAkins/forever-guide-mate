@@ -28,7 +28,7 @@ REQUIRED_FILES = (
     "MapPins.lua",
     "MapPins.xml",
     "UI.lua",
-    "Media/NavigationArrow.tga",
+    "TomTomWaypoints.lua",
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",
     "Guides/Dungeons/RuinsOfLordaeron.lua",
@@ -68,6 +68,7 @@ class ContractTests(unittest.TestCase):
                 "Taxi.lua",
                 "GuideEngine.lua",
                 "Navigation.lua",
+                "TomTomWaypoints.lua",
                 "MapPins.lua",
                 "MapPins.xml",
                 "UI.lua",
@@ -78,7 +79,9 @@ class ContractTests(unittest.TestCase):
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
         self.assertIn("## SavedVariablesPerCharacter: ForeverGuideMateCharDB", lines)
-        self.assertFalse(any("Dependencies" in line for line in lines))
+        self.assertIn("## Dependencies: TomTom", lines)
+        self.assertIn("## RequiredDeps: TomTom", lines)
+        self.assertFalse(any("Dependencies:" in line and "TomTom" not in line for line in lines))
 
     def test_namespace_and_registration_contract(self) -> None:
         core = (ROOT / "Core.lua").read_text(encoding="utf-8")
@@ -120,6 +123,7 @@ class ContractTests(unittest.TestCase):
                 "Taxi.lua",
                 "GuideEngine.lua",
                 "Navigation.lua",
+                "TomTomWaypoints.lua",
                 "MapPins.lua",
                 "MapPins.xml",
                 "UI.lua",
@@ -184,20 +188,14 @@ class ContractTests(unittest.TestCase):
         self.assertIn("function UI:ToggleGuideBrowser()", ui)
         self.assertIn("SetClampedToScreen(true)", ui)
         self.assertNotIn("CreateLine", ui)
-        self.assertIn("NavigationArrow", ui)
-        self.assertIn("texture:SetRotation", ui)
-        self.assertNotIn("Interface\\\\Minimap\\\\MinimapArrow", ui)
+        self.assertIn("TomTomWaypoints", ui)
+        self.assertIn("AddWaypoint", (ROOT / "TomTomWaypoints.lua").read_text(encoding="utf-8"))
+        self.assertNotIn("NavigationArrow", ui)
         self.assertIn("GetMapRectOnMap", navigation)
         self.assertIn('"Waypoint-MapPin-Tracked"', map_pins)
         self.assertIn("MapCanvasDataProviderMixin", map_pins)
         self.assertIn("mapCanvas.AcquirePin", map_pins)
         self.assertIn("## AddonCompartmentFunc: ForeverGuideMate_OnAddonCompartmentClick", toc)
-
-    def test_navigation_arrow_asset(self) -> None:
-        asset = (ROOT / "Media/NavigationArrow.tga").read_bytes()
-        self.assertLess(len(asset), 100_000)
-        self.assertEqual(asset[16], 32)
-        self.assertEqual(asset[17] & 0x0F, 8)
 
     def test_compiler_dry_run_and_build_output(self) -> None:
         compiler = compiler_module()
