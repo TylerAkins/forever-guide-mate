@@ -57,8 +57,27 @@ function Navigation:ProjectToMap(sourceMapID, x, y, destinationMapID, api)
     return minX + ((maxX - minX) * x), minY + ((maxY - minY) * y)
 end
 
+function Navigation:SameZone(first, second, api)
+    if first == second then return true end
+    if type(first) ~= "number" or type(second) ~= "number" then return false end
+    api = api or C_Map
+    if not api or type(api.GetMapInfo) ~= "function" then return false end
+    local function ZoneName(mapID)
+        local ok, info = pcall(api.GetMapInfo, mapID)
+        if ok and type(info) == "table" and type(info.name) == "string" and info.name ~= "" then
+            return info.name
+        end
+    end
+    local left, right = ZoneName(first), ZoneName(second)
+    return left ~= nil and left == right
+end
+
+function Navigation:OnMap(stateMap, legMap)
+    return stateMap == legMap or self:SameZone(stateMap, legMap)
+end
+
 function Navigation:TransportLeg(leg, state)
-    if not ns.Travel or not leg or not state or not state.mapID or state.mapID == leg.mapID then return nil end
+    if not ns.Travel or not leg or not state or not state.mapID or self:OnMap(state.mapID, leg.mapID) then return nil end
     return ns.Travel:Departure(state, leg.mapID, leg.label)
 end
 
@@ -72,7 +91,7 @@ function Navigation:GetActiveLeg(goal, state)
         local complete = false
         if leg.complete then
             complete = ns.EvaluateCondition(leg.complete, state) == true
-        elseif state.mapID == leg.mapID then
+        elseif self:OnMap(state.mapID, leg.mapID) then
             local distance = self.Distance(state.x, state.y, leg.x, leg.y)
             complete = distance and distance <= (leg.radius or 0.015) or false
         end
@@ -82,7 +101,7 @@ function Navigation:GetActiveLeg(goal, state)
             local taxiLeg = ns.Taxi and ns.Taxi:GetSuggestedLeg(goal, state)
             if taxiLeg then return taxiLeg, taxiLeg.label end
             if transport then return transport, transport.label end
-            if state.mapID ~= leg.mapID then
+            if not self:OnMap(state.mapID, leg.mapID) then
                 return leg, leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
             if not state.x or not state.y then
@@ -103,7 +122,7 @@ function Navigation:GetDirection(goal, state, facing)
         return nil, nil, status or "Waiting for a reliable player position.", leg, "instruction"
     end
     local targetX, targetY = leg.x, leg.y
-    if state.mapID ~= leg.mapID then
+    if not self:OnMap(state.mapID, leg.mapID) then
         targetX, targetY = self:ProjectToMap(leg.mapID, leg.x, leg.y, state.mapID)
         if not targetX then
             return nil, nil, status or leg.offMapText or "Continue toward the next route transition.", leg,

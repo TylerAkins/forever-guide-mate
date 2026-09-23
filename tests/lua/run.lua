@@ -695,6 +695,36 @@ Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "all
     DependencyState({ faction = "Alliance", level = 1 })), true,
     "the other faction does not wait on a faction-only prerequisite")
 
+C_Map = {
+    GetMapInfo = function(mapID)
+        if mapID == 2521 or mapID == 4242 then
+            return { name = "Zephras Isle", mapType = 3, parentMapID = 0 }
+        end
+    end,
+}
+local zephrasStep = { route = { { mapID = 2521, x = 0.428, y = 0.234, label = "Ailee Farheart" } } }
+local clientZephras = { mapID = 4242, x = 0.2, y = 0.2, faction = "Horde" }
+local zephrasLeg = ns.Navigation:GetActiveLeg(zephrasStep, clientZephras)
+Equal(zephrasLeg.mapID, 2521, "a second Zephras map id still uses the guide point")
+Equal(zephrasLeg.x, 0.428, "the guide point keeps its Zephras coordinates")
+local aliasCalls = {}
+local aliasTomTom = {
+    AddWaypoint = function(_, mapID, x, y, options)
+        local uid = { mapID = mapID, x = x, y = y, crazy = options.crazy }
+        aliasCalls[#aliasCalls + 1] = uid
+        return uid
+    end,
+    RemoveWaypoint = function() end,
+    SetCrazyArrow = function(_, uid) uid.arrow = true end,
+}
+ns.db.uiOpen = true
+ns.TomTomWaypoints:Clear(aliasTomTom)
+ns.TomTomWaypoints:Sync(zephrasStep, clientZephras, aliasTomTom)
+Equal(aliasCalls[1].mapID, 4242, "TomTom gets the player's Zephras map instead of the authored id")
+Equal(aliasCalls[1].x, 0.428, "TomTom keeps the guide coordinate on the player's Zephras map")
+Equal(aliasCalls[1].arrow, true, "TomTom aims the arrow on the player's Zephras map")
+C_Map = nil
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
