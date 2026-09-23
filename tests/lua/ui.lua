@@ -75,9 +75,11 @@ end
 
 Load("Core.lua")
 Load("PlayerState.lua")
+Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
 Load("Navigation.lua")
+Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
@@ -87,10 +89,14 @@ ForeverGuideMateCharDB = nil
 ns.InitializeStorage()
 ns.UI:Initialize()
 
-Equal(ns.UI.arrow.points[1][1], "TOP", "arrow uses a top-relative anchor")
-Equal(ns.UI.arrow.points[1][5], -90, "arrow uses the requested top offset")
 Equal(ns.UI.tracker.clamped, true, "tracker is clamped to the screen")
-Equal(ns.UI.arrow.clamped, true, "arrow is clamped to the screen")
+local trackerPoint, _, trackerRelative, trackerX, trackerY = ns.UI.tracker:GetPoint()
+Equal(trackerPoint, "LEFT", "tracker defaults to the left edge")
+Equal(trackerRelative, "LEFT", "tracker anchors against the left edge")
+Equal(trackerX, 0, "tracker starts flush with the left edge")
+Equal(trackerY, 0, "tracker starts vertically centered")
+Equal(ns.charDB.selectedGuide, nil, "no guide is selected until the player chooses one")
+Equal(ns.UI.browser.shown, true, "startup opens the guide library until a guide is chosen")
 Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
 ns.UI.tracker.instruction:SetText(string.rep("A longer guide instruction needs room. ", 8))
 ns.UI.tracker.nextStep:SetText("")
@@ -111,30 +117,40 @@ Check(WorldMapFrame.provider ~= nil, "late world-map loading attaches the guide 
 WorldMapFrame, MapCanvasDataProviderMixin, CreateFromMixins = nil, nil, nil
 ns.MapPins.hooked, ns.MapPins.provider = false, nil
 
+local addedWaypoints = {}
+TomTom = {
+    AddWaypoint = function(_, mapID, x, y, options)
+        local uid = { mapID = mapID, x = x, y = y, title = options.title }
+        addedWaypoints[#addedWaypoints + 1] = uid
+        return uid
+    end,
+    RemoveWaypoint = function(_, uid) uid.removed = true end,
+    SetCrazyArrow = function(_, uid) uid.arrow = true end,
+}
 ns.Engine.currentGoal = { id = "test", kind = "travel", text = "Travel", route = {
     { mapID = 1454, x = 0.5, y = 0.5, label = "Destination" },
 } }
-ns.Engine.state = { mapID = 1454, x = 0.4, y = 0.4 }
+ns.Engine.state = { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" }
 ns.PlayerState.CapturePosition = function() return 1454, 0.4, 0.4 end
-GetPlayerFacing = function() return 0 end
 ns.UI:UpdateArrow()
-Equal(ns.UI.arrow.shown, true, "same-map navigation shows the arrow")
-Equal(ns.UI.arrow.texture.width, 64, "arrow asset renders at the intended size")
-Check(type(ns.UI.arrow.texture.rotation) == "number", "same-map navigation rotates the arrow texture")
+Equal(addedWaypoints[1].mapID, 1454, "TomTom receives the same-map guide waypoint")
+Equal(addedWaypoints[1].title, "Destination", "TomTom waypoint uses the route label")
+Equal(addedWaypoints[1].arrow, true, "TomTom crazy arrow is aimed at the waypoint")
 
-ns.PlayerState.CapturePosition = function() return 1456, 0.4, 0.4 end
+ns.PlayerState.CapturePosition = function() return 1453, 0.4, 0.4 end
+ns.Engine.state.faction = "Horde"
+ns.Engine.state.mapID = 1453
 ns.UI:UpdateArrow()
-Equal(ns.UI.arrow.shown, true, "off-map navigation keeps the navigation surface visible")
-Check(ns.UI.arrow.texture.alpha ~= 0, "off-map navigation keeps the indicator visible")
+Equal(addedWaypoints[2].mapID, 1434, "a southern Eastern Kingdoms Horde player is sent to the Grom'gol zeppelin")
+Equal(addedWaypoints[1].removed, true, "the previous TomTom waypoint is removed")
 
 ns.Engine.currentGoal = { id = "missing", kind = "note", text = "Read this" }
 ns.UI:UpdateArrow()
-Equal(ns.UI.arrow.status.text, "No waypoint for this step.", "missing coordinates show a clear fallback")
+Equal(addedWaypoints[2].removed, true, "a step without a route clears the TomTom waypoint")
 
 ns.UI:CloseTracker()
 Equal(ns.db.uiOpen, false, "closing persists the hidden state")
 Equal(ns.UI.tracker.shown, false, "closing hides the tracker")
-Equal(ns.UI.arrow.shown, false, "closing hides the arrow")
 ns.UI:OpenTracker()
 Equal(ns.db.uiOpen, true, "reopening persists the open state")
 Equal(ns.UI.tracker.shown, true, "reopening shows the tracker")
