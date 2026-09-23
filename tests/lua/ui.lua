@@ -38,6 +38,7 @@ local function NewRegion(parent)
     function methods:SetSize(width, height) self.width, self.height = width, height end
     function methods:SetHeight(height) self.height = height end
     function methods:SetTexture(value) self.texturePath = value end
+    function methods:SetColorTexture(red, green, blue, alpha) self.color = { red, green, blue, alpha } end
     function methods:GetStringHeight()
         if self.text == "" then return 0 end
         return math.ceil(#self.text / 42) * 14
@@ -173,6 +174,33 @@ Check(string.find(ns.UI.browserRows[1].eligibility.text, "Dungeon  •  ", 1, tr
     "all guides shows the dungeon type before eligibility")
 Check(string.find(ns.UI.browserRows[2].eligibility.text, "Dungeon", 1, true) == nil,
     "guides outside dungeon quest guides do not use the dungeon tag")
+Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm (Horde)", "leveled guides stay ahead of guides without a level")
+Equal(ns.UI.browserRows[1].divider.shown, true, "a divider separates the first guide row")
+Equal(ns.UI.browserRows[2].divider.shown, false, "the last visible guide row has no trailing divider")
+Equal(ns.UI.browserRows[1].divider.color[1], ns.UI.browserCategoryButtons[1].selectionBorder[1].color[1],
+    "guide dividers use the category gold border")
+ns:RegisterGuide({
+    id = "early-guide", title = "Early Guide", category = "Dungeon Quest Guides", revision = 1,
+    conditions = { all = { { level = { min = 8 } } } },
+    goals = { { id = "early-step", kind = "note", text = "Early step" } },
+})
+ns:RegisterGuide({
+    id = "late-guide", title = "Late Guide", category = "Dungeon Quest Guides", revision = 1,
+    conditions = { all = { { level = { min = 20 } } } },
+    goals = { { id = "late-step", kind = "note", text = "Late step" } },
+})
+ns.UI.browserCategory = "All Guides"
+ns.UI.browserPage = 1
+ns.UI:RefreshGuideBrowser()
+Equal(ns.UI.browserRows[1].title.text, "Early Guide", "the lowest level guide is first")
+Equal(ns.UI.browserRows[2].title.text, "Ragefire Chasm (Horde)", "level 9 follows level 8")
+Equal(ns.UI.browserRows[3].title.text, "Late Guide", "level 20 follows level 9")
+Equal(ns.UI.browserRows[2].divider.shown, true, "dividers continue between guides on the page")
+Equal(ns.UI.browserRows[3].divider.shown, false, "the last row on a full page has no trailing divider")
+ns.UI.browserPage = 2
+ns.UI:RefreshGuideBrowser()
+Equal(ns.UI.browserRows[1].title.text, "Second Guide", "a guide without a level follows leveled guides")
+Equal(ns.UI.browserRows[1].divider.shown, false, "a single guide on a page has no divider")
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
