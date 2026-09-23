@@ -26,6 +26,7 @@ CreateFrame = nil
 C_Timer = nil
 Load("Core.lua")
 Load("PlayerState.lua")
+Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
 Load("Navigation.lua")
@@ -147,8 +148,13 @@ Equal(rotation, 0, "an eastward target is straight ahead while facing east")
 local northGoal = { route = { { mapID = 1454, x = 0.4, y = 0.3, label = "North" } } }
 local northRotation = ns.Navigation:GetDirection(northGoal, baseState, math.pi / 2)
 Equal(northRotation, 0, "a northward target is straight ahead while facing north")
+local flightRotation, _, flightStatus, _, flightMode = ns.Navigation:GetDirection(navigationGoal,
+    { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" }, 0)
+Check(type(flightRotation) == "number", "same-continent travel points at the local flight master")
+Check(string.find(flightStatus, "Tal", 1, true), "Thunder Bluff uses Tal for an Orgrimmar step")
+Equal(flightMode, "bearing", "a flight master on the current map supplies a bearing")
 local noRotation, _, status, _, offMapMode = ns.Navigation:GetDirection(navigationGoal,
-    { mapID = 1456, x = 0.5, y = 0.5 }, 0)
+    { mapID = 1429, x = 0.5, y = 0.5, faction = "Alliance" }, 0)
 Equal(noRotation, nil, "cross-map destination has no unreliable bearing")
 Check(type(status) == "string", "cross-map destination has a status")
 Equal(offMapMode, "instruction", "cross-map destination keeps an instruction state")
@@ -248,16 +254,29 @@ local localUndercity = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1420,
 Equal(localUndercity.mapID, 1458, "same-continent travel keeps the authored destination")
 local barrensGoal = { route = { { mapID = 1413, x = 0.46, y = 0.36, label = "Wailing Caverns" } } }
 local theramoreBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
-Equal(theramoreBoat.mapID, 1437, "Alliance uses the Menethil dock for Kalimdor")
-Check(string.find(theramoreBoat.label, "Theramore", 1, true), "Barrens traffic uses the Theramore boat")
+Equal(theramoreBoat.mapID, 1453, "Alliance in Stormwind flies toward the Barrens boat")
+Check(string.find(theramoreBoat.label, "Stranglethorn", 1, true), "Barrens traffic uses the Booty Bay boat")
 local bootyBayBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1434, x = 0.26, y = 0.73, faction = "Alliance" })
 Equal(bootyBayBoat.mapID, 1434, "Alliance already at Booty Bay takes the Ratchet boat")
+Check(string.find(bootyBayBoat.label, "Ratchet", 1, true), "the Booty Bay boat is labeled for Ratchet")
 local darnassusGoal = { route = { { mapID = 1457, x = 0.4, y = 0.4, label = "Darnassus" } } }
 local auberdineBoat = ns.Navigation:GetActiveLeg(darnassusGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
+Equal(auberdineBoat.mapID, 1453, "Stormwind Harbor is the Darnassus departure")
 Check(string.find(auberdineBoat.label, "Auberdine", 1, true), "northern Kalimdor uses the Auberdine boat")
 local duskwoodGoal = { route = { { mapID = 1431, x = 0.73, y = 0.45, label = "Duskwood" } } }
 local ratchetBoat = ns.Navigation:GetActiveLeg(duskwoodGoal, { mapID = 1413, x = 0.6, y = 0.4, faction = "Horde" })
-Check(string.find(ratchetBoat.label, "Ratchet", 1, true), "southern Eastern Kingdoms uses the Ratchet boat")
+Check(string.find(ratchetBoat.label, "Booty Bay", 1, true), "southern Eastern Kingdoms uses the Booty Bay boat")
+local gromgol = ns.Navigation:GetActiveLeg(duskwoodGoal, { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" })
+Equal(gromgol.mapID, 1411, "Horde in Orgrimmar takes the Grom'gol zeppelin south")
+Check(string.find(gromgol.label, "Grom'gol", 1, true), "the southern zeppelin is labeled for Grom'gol")
+local rivergladesGoal = { route = { { mapID = 2548, x = 0.6, y = 0.5, label = "Riverglades" } } }
+local powderfuse = ns.Navigation:GetActiveLeg(rivergladesGoal, { mapID = 1446, x = 0.5, y = 0.3, faction = "Alliance" })
+Equal(powderfuse.mapID, 1446, "Tanaris boards the Powderfuse Port boat")
+Check(string.find(powderfuse.label, "Powderfuse", 1, true), "the Riverglades boat names Powderfuse Port")
+local zephrasGoal = { route = { { mapID = 2521, x = 0.6, y = 0.8, label = "Zephras" } } }
+local valanaar = ns.Navigation:GetActiveLeg(zephrasGoal, { mapID = 1412, x = 0.4, y = 0.3, faction = "Horde" })
+Equal(valanaar.mapID, 1412, "Mulgore boards the Valanaar zeppelin")
+Check(string.find(valanaar.label, "Valanaar", 1, true), "the Zephras zeppelin names Valanaar")
 
 local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
 ns.charDB.manualCompleted = {}
