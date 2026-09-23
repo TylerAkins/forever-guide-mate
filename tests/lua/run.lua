@@ -40,6 +40,7 @@ Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Leveling/ZephrasIsle.lua")
+Load("Guides/Leveling/TheBarrens.lua")
 
 local baseState = {
     faction = "Horde",
@@ -848,12 +849,18 @@ local welcome = ns.Engine:GetGoal(zephras, "accept-welcome-to-azeroth")
 local welcomeTurnin = ns.Engine:GetGoal(zephras, "turnin-welcome-to-azeroth")
 local exploring = ns.Engine:GetGoal(zephras, "accept-exploring-the-horde")
 local exploringObjective = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde")
+local exploringVoljin = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde-voljin")
+local exploringCairne = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde-cairne")
+local exploringSylvanas = ns.Engine:GetGoal(zephras, "objective-exploring-the-horde-sylvanas")
 local exploringTurnin = ns.Engine:GetGoal(zephras, "turnin-exploring-the-horde")
 Check(DependsOn(welcome, "turnin-the-earthen-ring"), "Welcome to Azeroth waits for the Mulgore arrival")
 Check(DependsOn(welcomeTurnin, "accept-welcome-to-azeroth"), "Welcome to Azeroth is turned in after it is accepted")
 Check(DependsOn(exploring, "turnin-welcome-to-azeroth"), "Exploring the Horde waits until Thrall is met")
 Check(DependsOn(exploringObjective, "accept-exploring-the-horde"), "the Horde tour starts after Thrall gives it")
-Check(DependsOn(exploringTurnin, "objective-exploring-the-horde"), "Exploring the Horde turns in after the four visits")
+Check(DependsOn(exploringVoljin, "objective-exploring-the-horde"), "Vol'jin waits until Nazgrel is done")
+Check(DependsOn(exploringCairne, "objective-exploring-the-horde-voljin"), "Cairne waits until Vol'jin is done")
+Check(DependsOn(exploringSylvanas, "objective-exploring-the-horde-cairne"), "Sylvanas waits until Cairne is done")
+Check(DependsOn(exploringTurnin, "objective-exploring-the-horde-sylvanas"), "Exploring the Horde turns in after the four visits")
 Equal(welcome.complete.quest.id, 95350, "Welcome to Azeroth is quest 95350")
 Equal(exploring.complete.quest.id, 93739, "Exploring the Horde is quest 93739")
 Equal(zephras.goals[#zephras.goals].id, "turnin-exploring-the-horde", "Exploring the Horde is the last Zephras step")
@@ -864,9 +871,12 @@ Equal(welcomeTurnin.route[1].x, 0.468, "the Thunder Bluff flight master pin is T
 Equal(welcomeTurnin.route[2].mapID, 1454, "Welcome to Azeroth ends in Orgrimmar")
 Equal(welcomeTurnin.route[2].x, 0.320, "Thrall keeps the Valley of Wisdom pin")
 Equal(exploringObjective.route[1].mapID, 1454, "Nazgrel is in Orgrimmar")
-Equal(exploringObjective.route[2].x, 0.342, "Vol'jin is pinned in Grommash Hold")
-Equal(exploringObjective.route[3].mapID, 1456, "Cairne Bloodhoof is in Thunder Bluff")
-Equal(exploringObjective.route[4].mapID, 1458, "Lady Sylvanas is in the Undercity")
+Equal(#exploringObjective.route, 1, "Nazgrel does not share a pin with the later visits")
+Equal(exploringVoljin.route[1].x, 0.342, "Vol'jin is pinned in Grommash Hold")
+Equal(#exploringVoljin.route, 1, "Vol'jin has his own step")
+Equal(exploringCairne.route[1].mapID, 1454, "Cairne's step starts at the Orgrimmar flight master")
+Equal(exploringCairne.route[2].mapID, 1456, "Cairne Bloodhoof is in Thunder Bluff")
+Equal(exploringSylvanas.route[1].mapID, 1458, "Lady Sylvanas is in the Undercity")
 local arrived = {}
 for key, value in pairs(starter) do arrived[key] = value end
 arrived.level = 14
@@ -904,17 +914,63 @@ ns.charDB.activeGoal = nil
 ns.Engine:Refresh(arrived)
 Equal(ns.Engine.currentGoal.id, "accept-exploring-the-horde", "Thrall offers Exploring the Horde next")
 arrived.quests[93739] = { complete = false, objectives = {} }
+arrived.questLogKnown = true
+arrived.questCompletionKnown = true
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(arrived)
 Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde", "Exploring the Horde is the final Horde tour")
 local nazgrel = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
-    mapID = 1454, x = 0.320, y = 0.378, faction = "Horde",
-})
-Equal(nazgrel and nazgrel.label, "Nazgrel in Grommash Hold", "the tour starts with Nazgrel")
-local voljin = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
     mapID = 1454, x = 0.324, y = 0.360, faction = "Horde",
 })
+Equal(nazgrel and nazgrel.label, "Nazgrel in Grommash Hold", "standing on Nazgrel keeps his pin")
+arrived.quests[93739] = {
+    complete = false,
+    objectives = {
+        { text = "Obtain Instructions from Nazgrel", finished = true, numRequired = 1, numFulfilled = 1 },
+        { text = "Speak with Vol'jin", finished = false, numRequired = 1, numFulfilled = 0 },
+    },
+}
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde-voljin", "a finished Nazgrel visit does not pin him again")
+local voljin = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.50, y = 0.70, faction = "Horde",
+})
 Equal(voljin and voljin.label, "Vol'jin in Grommash Hold", "Nazgrel leads on to Vol'jin")
+arrived.quests[93739].objectives[2].finished = true
+arrived.quests[93739].objectives[2].numFulfilled = 1
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde-cairne", "Vol'jin leads on to Cairne")
+local cairneFlight = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.342, y = 0.366, faction = "Horde",
+})
+Equal(cairneFlight and cairneFlight.label, "Doras, the Orgrimmar flight master",
+    "Cairne's step points at the Orgrimmar flight master")
+local cairne = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1456, x = 0.47, y = 0.50, faction = "Horde",
+})
+Equal(cairne and cairne.label, "Cairne Bloodhoof on the High Rise", "Thunder Bluff points at Cairne")
+arrived.quests[93739].objectives[3] = {
+    text = "Speak with Cairne Bloodhoof", finished = true, numRequired = 1, numFulfilled = 1,
+}
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(arrived)
+Equal(ns.Engine.currentGoal.id, "objective-exploring-the-horde-sylvanas", "Cairne leads on to Lady Sylvanas")
+local zeppelin = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 1454, x = 0.342, y = 0.366, faction = "Horde",
+})
+Equal(zeppelin and zeppelin.mapID, 1411, "Lady Sylvanas sends Horde to the Orgrimmar zeppelin")
+Check(zeppelin and string.find(zeppelin.label, "Undercity", 1, true) ~= nil,
+    "the Sylvanas step names the Undercity zeppelin")
+ns.Engine.state = {
+    mapID = 1454, x = 0.342, y = 0.366, faction = "Horde", level = 14,
+    quests = arrived.quests, completedQuests = arrived.completedQuests,
+    questLogKnown = true, questCompletionKnown = true,
+}
+local travelText = ns.UI:GoalInstruction(ns.Engine)
+Check(string.find(travelText, "zeppelin", 1, true) ~= nil,
+    "the tracker explains the Undercity zeppelin")
 arrived.quests[93739] = { complete = true, objectives = {} }
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(arrived)
@@ -933,6 +989,23 @@ Check(not ns.Engine.currentGoal or (
     ns.Engine.currentGoal.id ~= "accept-welcome-to-azeroth"
     and ns.Engine.currentGoal.id ~= "accept-exploring-the-horde"
 ), "Alliance keeps the Dalaran ending instead of the Horde capitals")
+
+local barrens = ns.guides["leveling-the-barrens"]
+Check(barrens ~= nil, "the Barrens guide is registered")
+local valveGoals = 0
+for _, goal in ipairs(barrens.goals) do
+    if string.find(goal.id, "objective-900-samophlange-", 1, true) then
+        valveGoals = valveGoals + 1
+        Equal(#goal.route, 1, "each Samophlange valve has its own pin")
+    end
+end
+Equal(valveGoals, 3, "Samophlange valves are separate steps")
+local disruption = ns.Engine:GetGoal(barrens, "objective-872-the-disruption-ends-3")
+Check(disruption and string.find(disruption.text, "Bring a group", 1, true) ~= nil,
+    "Kreenig tells the player to bring a group")
+local zhevra = ns.Engine:GetGoal(barrens, "accept-845-the-zhevra")
+Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
+    "The Zhevra waits until Plainstrider Menace is turned in")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)

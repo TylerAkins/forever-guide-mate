@@ -37,6 +37,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
     "Guides/Leveling/ZephrasIsle.lua",
+    "Guides/Leveling/TheBarrens.lua",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
     "tests/lua/run.lua",
@@ -85,6 +86,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
                 "Guides/Leveling/ZephrasIsle.lua",
+                "Guides/Leveling/TheBarrens.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -144,6 +146,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
                 "Guides/Leveling/ZephrasIsle.lua",
+                "Guides/Leveling/TheBarrens.lua",
             )
         )
         for term in forbidden:
@@ -225,6 +228,23 @@ class ContractTests(unittest.TestCase):
         self.assertIn("RACE_ALLIANCE = 95", guide)
         self.assertIn("RACE_HORDE = 96", guide)
         self.assertNotIn("97963", guide)
+
+    def test_barrens_guide_is_loremaster_without_dungeons(self) -> None:
+        guide = (ROOT / "Guides/Leveling/TheBarrens.lua").read_text(encoding="utf-8")
+        for quest_id in (844, 871, 894, 900, 906, 97003, 6543, 98024):
+            self.assertIn(str(quest_id), guide)
+        for dungeon_id in (3369, 3370, 914, 1489, 1491):
+            self.assertNotIn(str(dungeon_id), guide.split("goals = {", 1)[-1])
+        self.assertIn('id = "leveling-the-barrens"', guide)
+        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn("level = { min = 9 }", guide)
+        self.assertIn('{ faction = "Horde" }', guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn("This is an elite. Bring a group.", guide)
+        self.assertIn('id = "objective-900-samophlange-1"', guide)
+        self.assertIn('id = "objective-900-samophlange-2"', guide)
+        self.assertIn('id = "objective-900-samophlange-3"', guide)
+        self.assertIn("BARRENS = 1413", guide)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
