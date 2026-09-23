@@ -99,6 +99,8 @@ Equal(trackerY, 0, "tracker starts vertically centered")
 Equal(ns.charDB.selectedGuide, nil, "no guide is selected until the player chooses one")
 Equal(ns.UI.browser.shown, true, "startup opens the guide library until a guide is chosen")
 Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
+Equal(ns.db.browser.hideIneligible, false, "hide ineligible defaults off")
+Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts unchecked")
 ns.UI.tracker.instruction:SetText(string.rep("A longer guide instruction needs room. ", 8))
 ns.UI.tracker.nextStep:SetText("")
 ns.UI:ResizeTracker()
@@ -166,7 +168,7 @@ Equal(#ns.UI.browserCategoryButtons, 3, "the browser builds category choices fro
 Equal(ns.UI.browserCategoryButtons[1].selectionBorder[1].shown, true, "All Guides has a selected gold border")
 ns.UI.browserCategoryButtons[2].scripts.OnClick()
 Equal(#ns.UI.browserRows, 2, "category filtering reuses browser rows")
-Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm (Horde)", "dungeon category shows the RFC guide")
+Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm", "dungeon category shows the RFC guide")
 Equal(ns.UI.browserCategoryButtons[2].selectionBorder[1].shown, true, "selected category has a gold border")
 ns.UI.browserCategoryButtons[1].scripts.OnClick()
 Equal(ns.UI.browserRows[1].shown, true, "All Guides restores the dungeon guide")
@@ -174,7 +176,7 @@ Check(string.find(ns.UI.browserRows[1].eligibility.text, "Dungeon  •  ", 1, tr
     "all guides shows the dungeon type before eligibility")
 Check(string.find(ns.UI.browserRows[2].eligibility.text, "Dungeon", 1, true) == nil,
     "guides outside dungeon quest guides do not use the dungeon tag")
-Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm (Horde)", "leveled guides stay ahead of guides without a level")
+Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm", "leveled guides stay ahead of guides without a level")
 Equal(ns.UI.browserRows[1].divider.shown, true, "a divider separates the first guide row")
 Equal(ns.UI.browserRows[2].divider.shown, false, "the last visible guide row has no trailing divider")
 Equal(ns.UI.browserRows[1].divider.color[1], ns.UI.browserCategoryButtons[1].selectionBorder[1].color[1],
@@ -193,7 +195,7 @@ ns.UI.browserCategory = "All Guides"
 ns.UI.browserPage = 1
 ns.UI:RefreshGuideBrowser()
 Equal(ns.UI.browserRows[1].title.text, "Early Guide", "the lowest level guide is first")
-Equal(ns.UI.browserRows[2].title.text, "Ragefire Chasm (Horde)", "level 9 follows level 8")
+Equal(ns.UI.browserRows[2].title.text, "Ragefire Chasm", "level 9 follows level 8")
 Equal(ns.UI.browserRows[3].title.text, "Late Guide", "level 20 follows level 9")
 Equal(ns.UI.browserRows[2].divider.shown, true, "dividers continue between guides on the page")
 Equal(ns.UI.browserRows[3].divider.shown, false, "the last row on a full page has no trailing divider")
@@ -201,6 +203,66 @@ ns.UI.browserPage = 2
 ns.UI:RefreshGuideBrowser()
 Equal(ns.UI.browserRows[1].title.text, "Second Guide", "a guide without a level follows leveled guides")
 Equal(ns.UI.browserRows[1].divider.shown, false, "a single guide on a page has no divider")
+
+ns:RegisterGuide({
+    id = "alliance-only-leveling", title = "Alliance Only Leveling", category = "Leveling Quest Guides", revision = 1,
+    conditions = { all = { { faction = "Alliance" }, { level = { min = 1 } } } },
+    goals = { { id = "level-step", kind = "note", text = "Level step" } },
+})
+
+local function GuideRow(title)
+    for index = 1, #ns.UI.browserRows do
+        local row = ns.UI.browserRows[index]
+        if row.shown and row.title.text == title then return row end
+    end
+end
+
+local RFC_REQUIREMENTS = "  •  Horde  •  Level 9+"
+
+ns.UI.browserCategory = "All Guides"
+ns.UI.browserPage = 1
+ns.UI.browser.search:SetText("ragefire")
+ns.Engine.state = { faction = "Alliance", level = 20 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
+    "an ineligible dungeon guide still lists faction and level")
+ns.db.browser.hideIneligible = true
+ns.UI:RefreshGuideBrowser()
+Check(GuideRow("Ragefire Chasm") == nil, "hide ineligible removes ineligible guides from the browser")
+ns.db.browser.hideIneligible = false
+ns.UI:RefreshGuideBrowser()
+Check(GuideRow("Ragefire Chasm") ~= nil, "turning hide ineligible off restores filtered guides")
+ns.Engine.state = { faction = "Horde", level = 1 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
+    "a low-level dungeon guide still lists faction and level")
+ns.Engine.state = { faction = "Horde", level = 9 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Eligible" .. RFC_REQUIREMENTS,
+    "an eligible dungeon guide still lists faction and level")
+ns.Engine.state = { faction = "Horde" }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm").eligibility.text,
+    "Dungeon  •  Level is unavailable." .. RFC_REQUIREMENTS,
+    "unknown dungeon eligibility stays detailed")
+
+ns.UI.browser.search:SetText("alliance only")
+ns.Engine.state = { faction = "Horde", level = 10 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Alliance Only Leveling").eligibility.text, "Leveling  •  This step is for Alliance.  •  Alliance  •  Level 1+",
+    "leveling guides keep the faction reason")
+
+ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
+ns.Engine:Refresh({ faction = "Alliance", level = 20 })
+Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance dungeon guide")
+ns.Engine:Refresh({ faction = "Horde", level = 1 })
+Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible when the dungeon level is not met")
+ns.Engine:Refresh({ faction = "Horde", level = 9 })
+Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
+    "an eligible dungeon guide still shows its step")
+ns.charDB.selectedGuide = "alliance-only-leveling"
+ns.Engine:Refresh({ faction = "Horde", level = 10 })
+Equal(ns.UI.tracker.instruction.text, "This step is for Alliance.", "the tracker keeps a leveling guide's faction reason")
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

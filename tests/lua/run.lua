@@ -457,6 +457,18 @@ ns.charDB.completionLedger = {}
 ns.Engine:Refresh(hordeRuins)
 Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
 
+local hot = ns.guides["dungeons-hall-of-thanes"]
+Check(hot ~= nil, "hall of thanes guide is registered")
+local hordeHot = {}
+for key, value in pairs(baseState) do hordeHot[key] = value end
+hordeHot.faction = "Horde"
+hordeHot.level = 10
+Equal(ns.EvaluateCondition(hot.conditions, hordeHot), false, "horde cannot use the hall of thanes guide")
+local allianceHot = {}
+for key, value in pairs(hordeHot) do allianceHot[key] = value end
+allianceHot.faction = "Alliance"
+Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
+
 local zephras = ns.guides["leveling-zephras-isle"]
 Check(zephras ~= nil, "zephras isle guide is registered")
 Equal(zephras.conditions.all[1].level.min, 1, "zephras isle starts at level 1")

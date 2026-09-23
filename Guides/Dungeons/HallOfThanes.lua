@@ -54,6 +54,7 @@ ns:RegisterGuide({
     revision = 1,
     conditions = {
         all = {
+            { faction = "Alliance" },
             { level = { min = 10 } },
         },
     },
