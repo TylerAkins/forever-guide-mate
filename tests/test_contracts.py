@@ -168,7 +168,8 @@ class ContractTests(unittest.TestCase):
         self.assertIn('category = "Dungeon Quest Guides"', guide)
         self.assertIn("level = { min = 15 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
-        self.assertNotIn('{ faction = "Alliance" }', guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn("BOTH_FACTIONS", guide)
 
     def test_ruins_of_lordaeron_guide_covers_listed_quests(self) -> None:
         guide = (ROOT / "Guides/Dungeons/RuinsOfLordaeron.lua").read_text(encoding="utf-8")

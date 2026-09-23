@@ -32,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "dungeons-ragefire-chasm-horde",
-    title = "Ragefire Chasm (Horde)",
+    title = "Ragefire Chasm",
     category = "Dungeon Quest Guides",
     revision = 1,
     conditions = {
