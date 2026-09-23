@@ -682,9 +682,12 @@ function UI:RegisterSettings()
     trackerLocked:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
     local autoAdvance = CreateCheckbox(panel, "Advance observable steps automatically", function() return ns.db.autoAdvance end,
         function(value) ns.db.autoAdvance = value; ns.ScheduleRefresh() end)
+    local autoQuest = CreateCheckbox(panel, "Automatically accept and turn in guide quests", function() return ns.db.autoQuest end,
+        function(value) ns.db.autoQuest = value end)
     autoAdvance:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
+    autoQuest:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 0, -4)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
-    open:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 4, -14)
+    open:SetPoint("TOPLEFT", autoQuest, "BOTTOMLEFT", 4, -14)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
     local trackerScale = CreatePlainButton(panel, 180, "Cycle tracker scale")
     trackerScale:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
