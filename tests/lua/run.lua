@@ -26,9 +26,11 @@ CreateFrame = nil
 C_Timer = nil
 Load("Core.lua")
 Load("PlayerState.lua")
+Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
 Load("Navigation.lua")
+Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
@@ -106,16 +108,23 @@ ForeverGuideMateCharDB = {
     history = {},
 }
 ns.InitializeStorage()
-Equal(ns.db.schemaVersion, 2, "account schema migrated")
+Equal(ns.db.schemaVersion, 3, "account schema migrated")
 Equal(ns.charDB.schemaVersion, 2, "character schema migrated")
-Equal(ns.db.tracker.point, "TOPRIGHT", "schema migration resets obsolete tracker anchor")
-Equal(ns.db.tracker.x, -28, "schema migration resets obsolete tracker offset")
+Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
+Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
+Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
+Equal(ns.db.tracker.y, 0, "schema migration centers the tracker vertically")
 Equal(ns.db.tracker.locked, true, "schema migration preserves tracker lock")
 Equal(ns.db.tracker.scale, 1.2, "schema migration preserves tracker scale")
 Equal(ns.db.uiOpen, false, "schema migration preserves closed state")
 Equal(ns.charDB.deferred.later, true, "schema migration converts skipped steps to deferred")
 ns.InitializeStorage()
 Equal(ns.charDB.selectedGuide, "remember-me", "existing character progress is preserved")
+ns.charDB.selectedGuide = nil
+ns.Engine:Refresh(baseState)
+Equal(ns.Engine.currentGuide, nil, "startup does not auto-select a guide")
+Equal(ns.Engine.status, "Choose a guide.", "startup asks the player to choose a guide")
+Equal(ns.charDB.selectedGuide, nil, "declining to auto-select does not invent a saved guide")
 ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
 ns.charDB.activeGoal = nil
 ns.charDB.manualCompleted = {}
@@ -139,8 +148,13 @@ Equal(rotation, 0, "an eastward target is straight ahead while facing east")
 local northGoal = { route = { { mapID = 1454, x = 0.4, y = 0.3, label = "North" } } }
 local northRotation = ns.Navigation:GetDirection(northGoal, baseState, math.pi / 2)
 Equal(northRotation, 0, "a northward target is straight ahead while facing north")
+local flightRotation, _, flightStatus, _, flightMode = ns.Navigation:GetDirection(navigationGoal,
+    { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" }, 0)
+Check(type(flightRotation) == "number", "same-continent travel points at the local flight master")
+Check(string.find(flightStatus, "Tal", 1, true), "Thunder Bluff uses Tal for an Orgrimmar step")
+Equal(flightMode, "bearing", "a flight master on the current map supplies a bearing")
 local noRotation, _, status, _, offMapMode = ns.Navigation:GetDirection(navigationGoal,
-    { mapID = 1456, x = 0.5, y = 0.5 }, 0)
+    { mapID = 1429, x = 0.5, y = 0.5, faction = "Alliance" }, 0)
 Equal(noRotation, nil, "cross-map destination has no unreliable bearing")
 Check(type(status) == "string", "cross-map destination has a status")
 Equal(offMapMode, "instruction", "cross-map destination keeps an instruction state")
@@ -230,8 +244,39 @@ local transportGoal = { route = {
     { mapID = 1411, x = 0.5, y = 0.1, complete = { map = { 1420, 1458 } } },
     { mapID = 1420, x = 0.6, y = 0.5, complete = { map = 1458 } },
 } }
-local leg = ns.Navigation:GetActiveLeg(transportGoal, { mapID = 1420, x = 0.4, y = 0.4 })
+local leg = ns.Navigation:GetActiveLeg(transportGoal, { mapID = 1420, x = 0.4, y = 0.4, faction = "Horde" })
 Equal(leg.mapID, 1420, "transport route advances after map transition")
+
+local undercityGoal = { route = { { mapID = 1458, x = 0.56, y = 0.92, label = "Undercity" } } }
+local zeppelin = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" })
+Equal(zeppelin.mapID, 1411, "Horde on Kalimdor is directed to the Orgrimmar zeppelin")
+local localUndercity = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1420, x = 0.5, y = 0.4, faction = "Horde" })
+Equal(localUndercity.mapID, 1458, "same-continent travel keeps the authored destination")
+local barrensGoal = { route = { { mapID = 1413, x = 0.46, y = 0.36, label = "Wailing Caverns" } } }
+local theramoreBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
+Equal(theramoreBoat.mapID, 1453, "Alliance in Stormwind flies toward the Barrens boat")
+Check(string.find(theramoreBoat.label, "Stranglethorn", 1, true), "Barrens traffic uses the Booty Bay boat")
+local bootyBayBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1434, x = 0.26, y = 0.73, faction = "Alliance" })
+Equal(bootyBayBoat.mapID, 1434, "Alliance already at Booty Bay takes the Ratchet boat")
+Check(string.find(bootyBayBoat.label, "Ratchet", 1, true), "the Booty Bay boat is labeled for Ratchet")
+local darnassusGoal = { route = { { mapID = 1457, x = 0.4, y = 0.4, label = "Darnassus" } } }
+local auberdineBoat = ns.Navigation:GetActiveLeg(darnassusGoal, { mapID = 1453, x = 0.5, y = 0.5, faction = "Alliance" })
+Equal(auberdineBoat.mapID, 1453, "Stormwind Harbor is the Darnassus departure")
+Check(string.find(auberdineBoat.label, "Auberdine", 1, true), "northern Kalimdor uses the Auberdine boat")
+local duskwoodGoal = { route = { { mapID = 1431, x = 0.73, y = 0.45, label = "Duskwood" } } }
+local ratchetBoat = ns.Navigation:GetActiveLeg(duskwoodGoal, { mapID = 1413, x = 0.6, y = 0.4, faction = "Horde" })
+Check(string.find(ratchetBoat.label, "Booty Bay", 1, true), "southern Eastern Kingdoms uses the Booty Bay boat")
+local gromgol = ns.Navigation:GetActiveLeg(duskwoodGoal, { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" })
+Equal(gromgol.mapID, 1411, "Horde in Orgrimmar takes the Grom'gol zeppelin south")
+Check(string.find(gromgol.label, "Grom'gol", 1, true), "the southern zeppelin is labeled for Grom'gol")
+local rivergladesGoal = { route = { { mapID = 2548, x = 0.6, y = 0.5, label = "Riverglades" } } }
+local powderfuse = ns.Navigation:GetActiveLeg(rivergladesGoal, { mapID = 1446, x = 0.5, y = 0.3, faction = "Alliance" })
+Equal(powderfuse.mapID, 1446, "Tanaris boards the Powderfuse Port boat")
+Check(string.find(powderfuse.label, "Powderfuse", 1, true), "the Riverglades boat names Powderfuse Port")
+local zephrasGoal = { route = { { mapID = 2521, x = 0.6, y = 0.8, label = "Zephras" } } }
+local valanaar = ns.Navigation:GetActiveLeg(zephrasGoal, { mapID = 1412, x = 0.4, y = 0.3, faction = "Horde" })
+Equal(valanaar.mapID, 1412, "Mulgore boards the Valanaar zeppelin")
+Check(string.find(valanaar.label, "Valanaar", 1, true), "the Zephras zeppelin names Valanaar")
 
 local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
 ns.charDB.manualCompleted = {}

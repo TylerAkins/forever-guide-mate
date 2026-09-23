@@ -1,6 +1,8 @@
 ## Interface: 16001
 ## Title: Forever GuideMate
-## Notes: An open-source guide addon for World of Warcraft: Forever.
+## Notes: An open-source guide addon for World of Warcraft: Forever. Requires TomTom.
+## Dependencies: TomTom
+## RequiredDeps: TomTom
 ## Author: Tyler Akins
 ## Version: @project-version@
 ## X-License: GPL-3.0-or-later
@@ -16,9 +18,11 @@
 
 Core.lua
 PlayerState.lua
+Travel.lua
 Taxi.lua
 GuideEngine.lua
 Navigation.lua
+TomTomWaypoints.lua
 MapPins.lua
 MapPins.xml
 UI.lua
