@@ -24,3 +24,4 @@ MapPins.xml
 UI.lua
 Guides/Dungeons/RagefireChasm.lua
 Guides/Dungeons/WailingCaverns.lua
+Guides/Dungeons/RuinsOfLordaeron.lua

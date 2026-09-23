@@ -321,6 +321,14 @@ function UI:NextGoalText(engine)
     end
 end
 
+local function GuideTypeLabel(guide)
+    local category = type(guide) == "table" and guide.category or nil
+    if type(category) ~= "string" then return nil end
+    local label = category:match("^(.-) Quest Guides$")
+    if label and label ~= "" then return label end
+    return nil
+end
+
 local function EligibilityText(guide, state)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state or {})
     local requirements = {}
@@ -337,9 +345,13 @@ local function EligibilityText(guide, state)
     end
     Collect(guide.conditions)
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
-    if eligible == false then return (reason or "Not eligible") .. suffix end
-    if eligible == nil then return (reason or "Eligibility pending") .. suffix end
-    return "Eligible" .. suffix
+    local text
+    if eligible == false then text = (reason or "Not eligible") .. suffix
+    elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
+    else text = "Eligible" .. suffix end
+    local label = GuideTypeLabel(guide)
+    if label then return label .. "  •  " .. text end
+    return text
 end
 
 function UI:CreateGuideBrowser()

@@ -153,6 +153,10 @@ Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm (Horde)", "dungeon catego
 Equal(ns.UI.browserCategoryButtons[2].selectionBorder[1].shown, true, "selected category has a gold border")
 ns.UI.browserCategoryButtons[1].scripts.OnClick()
 Equal(ns.UI.browserRows[1].shown, true, "All Guides restores the dungeon guide")
+Check(string.find(ns.UI.browserRows[1].eligibility.text, "Dungeon  •  ", 1, true) == 1,
+    "all guides shows the dungeon type before eligibility")
+Check(string.find(ns.UI.browserRows[2].eligibility.text, "Dungeon", 1, true) == nil,
+    "guides outside dungeon quest guides do not use the dungeon tag")
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
