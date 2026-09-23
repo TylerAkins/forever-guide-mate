@@ -87,11 +87,11 @@ function Navigation:GetActiveLeg(goal, state)
     end
     local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
     if learnedLeg then return learnedLeg, learnedLeg.label end
-    for _, leg in ipairs(goal.route) do
+    for index, leg in ipairs(goal.route) do
         local complete = false
         if leg.complete then
             complete = ns.EvaluateCondition(leg.complete, state) == true
-        elseif self:OnMap(state.mapID, leg.mapID) then
+        elseif index < #goal.route and self:OnMap(state.mapID, leg.mapID) then
             local distance = self.Distance(state.x, state.y, leg.x, leg.y)
             complete = distance and distance <= (leg.radius or 0.015) or false
         end
