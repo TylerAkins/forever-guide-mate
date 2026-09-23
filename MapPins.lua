@@ -47,6 +47,7 @@ function MapPins:Refresh(mapCanvas)
     self:Clear(mapCanvas)
     if not mapCanvas or not mapCanvas.AcquirePin
         or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
+        or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
     local x, y, leg = self:GetLocation(ns.Engine.currentGoal, ns.Engine.state or {}, viewedMapID, C_Map)

@@ -10,7 +10,6 @@ local UI = {
 ns.UI = UI
 
 local TRACKER_DEFAULTS = { point = "TOPRIGHT", relativePoint = "TOPRIGHT", x = -28, y = -180, scale = 1 }
-local ARROW_DEFAULTS = { point = "TOP", relativePoint = "TOP", x = 0, y = -90, scale = 1 }
 local BROWSER_DEFAULTS = { point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1 }
 
 local function Create(kind, name, parent, template)
@@ -266,52 +265,14 @@ function UI:ResizeTracker()
     ClampAndSave(self.tracker, ns.db.tracker, TRACKER_DEFAULTS)
 end
 
-function UI:CreateArrow()
-    local frame = Create("Frame", "ForeverGuideMateArrow", UIParent)
-    frame:SetSize(210, 104)
-    frame:SetFrameStrata("HIGH")
-    ConfigureMovement(frame, ns.db.arrow, ARROW_DEFAULTS)
-    local arrow = frame:CreateTexture(nil, "ARTWORK")
-    arrow:SetSize(64, 64)
-    arrow:SetPoint("TOP", 0, -2)
-    arrow:SetTexture("Interface\\AddOns\\ForeverGuideMate\\Media\\NavigationArrow")
-    local fallback = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalHuge")
-    fallback:SetPoint("TOP", 0, -2)
-    fallback:SetText("↑")
-    fallback:SetTextColor(1, 0.78, 0.12)
-    fallback:SetShown(type(arrow.SetRotation) ~= "function")
-    local status = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    status:SetPoint("TOP", frame, "TOP", 0, -70)
-    status:SetWidth(210)
-    status:SetJustifyH("CENTER")
-    frame.texture, frame.fallback, frame.status = arrow, fallback, status
-    frame:SetScript("OnUpdate", function(_, elapsed)
-        UI.elapsed = UI.elapsed + elapsed
-        if UI.elapsed >= 0.03 then UI.elapsed = 0; UI:UpdateArrow() end
-    end)
-    self.arrow = frame
-end
-
-function UI:SetArrowRotation(rotation, hasBearing)
-    if self.arrow.texture.SetRotation then self.arrow.texture:SetRotation(hasBearing and (rotation or 0) or 0) end
-    local alpha = hasBearing and 1 or 0.55
-    self.arrow.texture:SetAlpha(alpha)
-    self.arrow.fallback:SetAlpha(alpha)
-end
-
 function UI:UpdateArrow()
-    if not self.arrow or not ns.db.uiOpen or not ns.db.arrow.enabled or not ns.Engine.currentGoal then
-        if self.arrow then self.arrow:Hide() end
-        return
-    end
-    self.arrow:Show()
+    if not ns.TomTomWaypoints then return end
     local mapID, x, y = ns.PlayerState:CapturePosition()
     local state = ns.Engine.state or {}
-    state.mapID, state.x, state.y = mapID, x, y
-    local facing = GetPlayerFacing and GetPlayerFacing() or nil
-    local rotation, _, status, _, mode = ns.Navigation:GetDirection(ns.Engine.currentGoal, state, facing)
-    self:SetArrowRotation(rotation, mode == "bearing")
-    self.arrow.status:SetText(status or "No waypoint for this step.")
+    if mapID then
+        state.mapID, state.x, state.y = mapID, x, y
+    end
+    ns.TomTomWaypoints:Sync(ns.db.uiOpen and ns.Engine.currentGoal or nil, state)
 end
 
 function UI:NextGoalText(engine)
@@ -540,6 +501,7 @@ end
 function UI:CloseTracker()
     ns.db.uiOpen = false
     if self.browser then self.browser:Hide() end
+    if ns.TomTomWaypoints then ns.TomTomWaypoints:Clear() end
     if ns.MapPins then ns.MapPins:Clear() end
     self:ApplySettings()
 end
@@ -600,10 +562,8 @@ end
 
 function UI:ApplySettings()
     ApplyPlacement(self.tracker, ns.db.tracker, TRACKER_DEFAULTS)
-    ApplyPlacement(self.arrow, ns.db.arrow, ARROW_DEFAULTS)
     if self.browser then ApplyPlacement(self.browser, ns.db.browser, BROWSER_DEFAULTS) end
     if ns.db.uiOpen and ns.db.tracker.enabled then self.tracker:Show() else self.tracker:Hide() end
-    if ns.db.uiOpen and ns.db.arrow.enabled and ns.Engine.currentGoal then self.arrow:Show() else self.arrow:Hide() end
     if self.launcher then
         if AddonCompartmentFrame then self.launcher:Hide() else self.launcher:Show() end
     end
@@ -615,7 +575,6 @@ end
 
 function UI:ResetPositions()
     for key, value in pairs(TRACKER_DEFAULTS) do ns.db.tracker[key] = value end
-    for key, value in pairs(ARROW_DEFAULTS) do ns.db.arrow[key] = value end
     for key, value in pairs(BROWSER_DEFAULTS) do ns.db.browser[key] = value end
     self:ApplySettings()
 end
@@ -647,15 +606,9 @@ function UI:RegisterSettings()
     local trackerLocked = CreateCheckbox(panel, "Lock guide tracker", function() return ns.db.tracker.locked end,
         function(value) ns.db.tracker.locked = value end)
     trackerLocked:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
-    local arrowEnabled = CreateCheckbox(panel, "Enable navigation arrow", function() return ns.db.arrow.enabled end,
-        function(value) ns.db.arrow.enabled = value end)
-    arrowEnabled:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
-    local arrowLocked = CreateCheckbox(panel, "Lock navigation arrow", function() return ns.db.arrow.locked end,
-        function(value) ns.db.arrow.locked = value end)
-    arrowLocked:SetPoint("TOPLEFT", arrowEnabled, "BOTTOMLEFT", 0, -4)
     local autoAdvance = CreateCheckbox(panel, "Advance observable steps automatically", function() return ns.db.autoAdvance end,
         function(value) ns.db.autoAdvance = value; ns.ScheduleRefresh() end)
-    autoAdvance:SetPoint("TOPLEFT", arrowLocked, "BOTTOMLEFT", 0, -4)
+    autoAdvance:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
     open:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 4, -14)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
@@ -665,14 +618,8 @@ function UI:RegisterSettings()
         ns.db.tracker.scale = ns.db.tracker.scale >= 1.2 and 0.8 or ns.db.tracker.scale + 0.1
         UI:ApplySettings()
     end)
-    local arrowScale = CreatePlainButton(panel, 180, "Cycle arrow scale")
-    arrowScale:SetPoint("TOPLEFT", trackerScale, "BOTTOMLEFT", 0, -6)
-    arrowScale:SetScript("OnClick", function()
-        ns.db.arrow.scale = ns.db.arrow.scale >= 1.2 and 0.8 or ns.db.arrow.scale + 0.1
-        UI:ApplySettings()
-    end)
     local reset = CreatePlainButton(panel, 180, "Reset frame positions")
-    reset:SetPoint("TOPLEFT", arrowScale, "BOTTOMLEFT", 0, -6)
+    reset:SetPoint("TOPLEFT", trackerScale, "BOTTOMLEFT", 0, -6)
     reset:SetScript("OnClick", function() UI:ResetPositions() end)
     if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
         local category = Settings.RegisterCanvasLayoutCategory(panel, "Forever GuideMate")
@@ -683,7 +630,6 @@ end
 
 function UI:Initialize()
     self:CreateTracker()
-    self:CreateArrow()
     self:CreateGuideBrowser()
     self:CreateLauncher()
     self:RegisterSettings()

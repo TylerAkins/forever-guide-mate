@@ -9,3 +9,4 @@ All notable changes to this project are documented here.
 - Added the Wailing Caverns dungeon quest guide for level 15.
 - Added the Ruins of Lordaeron dungeon quest guide for level 16.
 - Guide library rows now show the guide type, such as Dungeon, before eligibility.
+- Replaced the built-in navigation arrow with TomTom waypoints. TomTom is a required dependency. Cross-continent steps point at the boat or zeppelin that reaches the destination.
