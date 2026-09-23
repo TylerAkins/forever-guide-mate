@@ -202,6 +202,57 @@ ns.UI:RefreshGuideBrowser()
 Equal(ns.UI.browserRows[1].title.text, "Second Guide", "a guide without a level follows leveled guides")
 Equal(ns.UI.browserRows[1].divider.shown, false, "a single guide on a page has no divider")
 
+ns:RegisterGuide({
+    id = "alliance-only-leveling", title = "Alliance Only Leveling", category = "Leveling Quest Guides", revision = 1,
+    conditions = { all = { { faction = "Alliance" }, { level = { min = 1 } } } },
+    goals = { { id = "level-step", kind = "note", text = "Level step" } },
+})
+
+local function GuideRow(title)
+    for index = 1, #ns.UI.browserRows do
+        local row = ns.UI.browserRows[index]
+        if row.shown and row.title.text == title then return row end
+    end
+end
+
+ns.UI.browserCategory = "All Guides"
+ns.UI.browserPage = 1
+ns.UI.browser.search:SetText("ragefire")
+ns.Engine.state = { faction = "Alliance", level = 20 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm (Horde)").eligibility.text, "Dungeon  •  Ineligible",
+    "an Alliance player sees an ineligible dungeon guide as Ineligible")
+ns.Engine.state = { faction = "Horde", level = 1 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm (Horde)").eligibility.text, "Dungeon  •  Ineligible",
+    "a low-level Horde player sees an ineligible dungeon guide as Ineligible")
+ns.Engine.state = { faction = "Horde", level = 9 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm (Horde)").eligibility.text, "Dungeon  •  Eligible  •  Horde  •  Level 9+",
+    "an eligible dungeon guide still lists faction and level")
+ns.Engine.state = { faction = "Horde" }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Ragefire Chasm (Horde)").eligibility.text, "Dungeon  •  Level is unavailable.  •  Horde  •  Level 9+",
+    "unknown dungeon eligibility stays detailed")
+
+ns.UI.browser.search:SetText("alliance only")
+ns.Engine.state = { faction = "Horde", level = 10 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Alliance Only Leveling").eligibility.text, "Leveling  •  This step is for Alliance.  •  Alliance  •  Level 1+",
+    "leveling guides keep the faction reason")
+
+ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
+ns.Engine:Refresh({ faction = "Alliance", level = 20 })
+Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance dungeon guide")
+ns.Engine:Refresh({ faction = "Horde", level = 1 })
+Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible when the dungeon level is not met")
+ns.Engine:Refresh({ faction = "Horde", level = 9 })
+Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
+    "an eligible dungeon guide still shows its step")
+ns.charDB.selectedGuide = "alliance-only-leveling"
+ns.Engine:Refresh({ faction = "Horde", level = 10 })
+Equal(ns.UI.tracker.instruction.text, "This step is for Alliance.", "the tracker keeps a leveling guide's faction reason")
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
