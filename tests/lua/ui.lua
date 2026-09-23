@@ -99,6 +99,8 @@ Equal(trackerY, 0, "tracker starts vertically centered")
 Equal(ns.charDB.selectedGuide, nil, "no guide is selected until the player chooses one")
 Equal(ns.UI.browser.shown, true, "startup opens the guide library until a guide is chosen")
 Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
+Equal(ns.db.browser.hideIneligible, false, "hide ineligible defaults off")
+Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts unchecked")
 ns.UI.tracker.instruction:SetText(string.rep("A longer guide instruction needs room. ", 8))
 ns.UI.tracker.nextStep:SetText("")
 ns.UI:ResizeTracker()
@@ -224,6 +226,12 @@ ns.Engine.state = { faction = "Alliance", level = 20 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
     "an ineligible dungeon guide still lists faction and level")
+ns.db.browser.hideIneligible = true
+ns.UI:RefreshGuideBrowser()
+Check(GuideRow("Ragefire Chasm") == nil, "hide ineligible removes ineligible guides from the browser")
+ns.db.browser.hideIneligible = false
+ns.UI:RefreshGuideBrowser()
+Check(GuideRow("Ragefire Chasm") ~= nil, "turning hide ineligible off restores filtered guides")
 ns.Engine.state = { faction = "Horde", level = 1 }
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm").eligibility.text, "Dungeon  •  Ineligible" .. RFC_REQUIREMENTS,
