@@ -58,6 +58,32 @@ function PlayerState:GetProfessions(api)
     return professions, true
 end
 
+local function ObjectivesComplete(objectives)
+    if type(objectives) ~= "table" or #objectives == 0 then return false end
+    for _, objective in ipairs(objectives) do
+        if type(objective) ~= "table" then return false end
+        local counted = type(objective.numRequired) == "number" and objective.numRequired > 0
+            and type(objective.numFulfilled) == "number" and objective.numFulfilled >= objective.numRequired
+        if objective.finished ~= true and not counted then return false end
+    end
+    return true
+end
+
+local function LogQuestComplete(questLog, questID, info, objectives)
+    if info.isComplete == true or (type(info.isComplete) == "number" and info.isComplete > 0) then
+        return true
+    end
+    if type(questLog.IsComplete) == "function" then
+        local result, known = Call(questLog, "IsComplete", questID)
+        if known and result[1] then return true end
+    end
+    if type(questLog.ReadyForTurnIn) == "function" then
+        local result, known = Call(questLog, "ReadyForTurnIn", questID)
+        if known and result[1] then return true end
+    end
+    return ObjectivesComplete(objectives)
+end
+
 function PlayerState:GetQuestLog(api)
     local quests = {}
     local questLog = api.C_QuestLog
@@ -73,12 +99,12 @@ function PlayerState:GetQuestLog(api)
         local infoResult, infoKnown = Call(questLog, "GetInfo", index)
         local info = infoKnown and infoResult[1]
         if type(info) == "table" and info.questID and not info.isHeader then
-            local quest = { complete = info.isComplete and true or false, objectives = {} }
             local objectiveResult, objectiveKnown = Call(questLog, "GetQuestObjectives", info.questID)
-            if objectiveKnown and type(objectiveResult[1]) == "table" then
-                quest.objectives = objectiveResult[1]
-            end
-            quests[info.questID] = quest
+            local objectives = objectiveKnown and type(objectiveResult[1]) == "table" and objectiveResult[1] or {}
+            quests[info.questID] = {
+                complete = LogQuestComplete(questLog, info.questID, info, objectives),
+                objectives = objectives,
+            }
         end
     end
     return quests, true

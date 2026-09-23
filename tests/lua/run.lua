@@ -567,6 +567,48 @@ ns.charDB.completionLedger = {}
 ns.Engine:SelectGuide("leveling-zephras-isle")
 ns.Engine:Refresh(starter)
 Equal(ns.Engine.currentGoal.id, "accept-coming-of-age", "zephras starts with Coming of Age")
+local grove = {}
+for key, value in pairs(starter) do grove[key] = value end
+grove.level = 2
+grove.classID = 3
+grove.completedQuests = { [92460] = true }
+grove.quests = {}
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.Engine.reviewingGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "accept-harmony-in-balance", "after Coming of Age the grove quests start with Harmony")
+grove.quests[92461] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "accept-infestation-investigation",
+    "Infestation Investigation is accepted before leaving for the Vuldren")
+grove.quests[92462] = { complete = false, objectives = {} }
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
+    "the class quest is accepted while still at Rorian")
+grove.quests[92482] = { complete = true, objectives = {} }
+grove.completedQuests[92482] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "objective-harmony-in-balance", "both grove quests are accepted before the kill step")
+grove.quests[92461] = {
+    complete = true,
+    objectives = { { finished = true, numRequired = 8, numFulfilled = 8 } },
+}
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "objective-infestation-investigation",
+    "finished Vuldren advance to the other grove objective")
+grove.quests[92462] = {
+    complete = true,
+    objectives = { { finished = true, numRequired = 8, numFulfilled = 8 } },
+}
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "turnin-harmony-in-balance",
+    "both grove objectives lead back to the Harmony turn-in")
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}
@@ -724,6 +766,25 @@ Equal(aliasCalls[1].mapID, 4242, "TomTom gets the player's Zephras map instead o
 Equal(aliasCalls[1].x, 0.428, "TomTom keeps the guide coordinate on the player's Zephras map")
 Equal(aliasCalls[1].arrow, true, "TomTom aims the arrow on the player's Zephras map")
 C_Map = nil
+
+local logged = ns.PlayerState:GetQuestLog({
+    C_QuestLog = {
+        GetNumQuestLogEntries = function() return 2 end,
+        GetInfo = function(index)
+            if index == 1 then return { questID = 92461, title = "Harmony in Balance" } end
+            return { questID = 92462, title = "Infestation Investigation" }
+        end,
+        GetQuestObjectives = function(questID)
+            if questID == 92461 then
+                return { { finished = true, numRequired = 8, numFulfilled = 8 } }
+            end
+            return { { finished = false, numRequired = 8, numFulfilled = 3 } }
+        end,
+        IsComplete = function(questID) return questID == 92461 end,
+    },
+})
+Equal(logged[92461].complete, true, "a quest whose objectives are finished is ready to turn in")
+Equal(logged[92462].complete, false, "an unfinished quest objective stays incomplete")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
