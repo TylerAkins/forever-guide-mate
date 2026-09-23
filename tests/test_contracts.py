@@ -214,6 +214,8 @@ class ContractTests(unittest.TestCase):
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn('{ faction = "Alliance" }', guide)
         self.assertIn("{ class = 7 }", guide)
+        self.assertIn("RACE_ALLIANCE = 95", guide)
+        self.assertIn("RACE_HORDE = 96", guide)
         self.assertNotIn("97963", guide)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:

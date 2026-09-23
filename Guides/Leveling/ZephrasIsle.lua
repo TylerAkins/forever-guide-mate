@@ -20,12 +20,17 @@ local _, ns = ...
 -- The Alliance skycutter arrives on the Alterac Mountains map (uiMap 1416,
 -- Wowhead area 36); the quest text calls that arrival Dalaran.
 -- Coordinates have not been validated in the Forever client.
+-- UnitRace reports Alliance Skyborne as 95 and Horde Skyborne as 96.
+-- Wowhead's race bitmask does not use those client ids.
 
 local MAP = {
     ZEPHRAS = 2521,
     MULGORE = 1412,
     ALTERAC = 1416,
 }
+
+local RACE_ALLIANCE = 95
+local RACE_HORDE = 96
 
 local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
@@ -360,7 +365,12 @@ ns:RegisterGuide({
             id = "accept-falling-with-style",
             kind = "accept",
             priority = 210,
-            conditions = { level = { min = 2 } },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { level = { min = 2 } },
+                },
+            },
             text = "Accept Falling With Style from Myriaal Mistwake.",
             complete = QuestState(92474, "activeOrCompleted"),
             route = {
@@ -372,7 +382,12 @@ ns:RegisterGuide({
             id = "objective-falling-with-style",
             kind = "objective",
             priority = 220,
-            conditions = { level = { min = 2 } },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { level = { min = 2 } },
+                },
+            },
             text = "Jump from the Thendal Grove watchtower, use Walk on Air, and land near Rorian the Dayseeker.",
             dependsOn = { "accept-falling-with-style" },
             complete = QuestState(92474, "complete"),
@@ -385,7 +400,12 @@ ns:RegisterGuide({
             id = "turnin-falling-with-style",
             kind = "turnin",
             priority = 230,
-            conditions = { level = { min = 2 } },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { level = { min = 2 } },
+                },
+            },
             text = "Turn in Falling With Style to Rorian the Dayseeker.",
             dependsOn = { "objective-falling-with-style" },
             complete = QuestState(92474, "completed"),
@@ -628,6 +648,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { race = RACE_ALLIANCE },
                     { faction = "Alliance" },
                     { level = { min = 2 } },
                 },
@@ -645,6 +666,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { race = RACE_ALLIANCE },
                     { faction = "Alliance" },
                     { level = { min = 2 } },
                 },
@@ -663,6 +685,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { race = RACE_ALLIANCE },
                     { faction = "Alliance" },
                     { level = { min = 2 } },
                 },
@@ -681,6 +704,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { level = { min = 2 } },
                 },
@@ -698,6 +722,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { level = { min = 2 } },
                 },
@@ -716,6 +741,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { level = { min = 2 } },
                 },
@@ -3555,6 +3581,7 @@ ns:RegisterGuide({
             priority = 2400,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -3572,6 +3599,7 @@ ns:RegisterGuide({
             priority = 2410,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -3590,6 +3618,7 @@ ns:RegisterGuide({
             priority = 2420,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -3608,6 +3637,7 @@ ns:RegisterGuide({
             priority = 2430,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -3626,6 +3656,7 @@ ns:RegisterGuide({
             priority = 2440,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -3644,6 +3675,7 @@ ns:RegisterGuide({
             priority = 2450,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3661,6 +3693,7 @@ ns:RegisterGuide({
             priority = 2460,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3679,6 +3712,7 @@ ns:RegisterGuide({
             priority = 2470,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3697,6 +3731,7 @@ ns:RegisterGuide({
             priority = 2480,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3715,6 +3750,7 @@ ns:RegisterGuide({
             priority = 2490,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3733,6 +3769,7 @@ ns:RegisterGuide({
             priority = 2500,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3751,6 +3788,7 @@ ns:RegisterGuide({
             priority = 2510,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3769,6 +3807,7 @@ ns:RegisterGuide({
             priority = 2520,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3787,6 +3826,7 @@ ns:RegisterGuide({
             priority = 2530,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3805,6 +3845,7 @@ ns:RegisterGuide({
             priority = 2540,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 3 },
                     { level = { min = 10 } },
                 },
@@ -3823,6 +3864,7 @@ ns:RegisterGuide({
             priority = 2550,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3841,6 +3883,7 @@ ns:RegisterGuide({
             priority = 2560,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3860,6 +3903,7 @@ ns:RegisterGuide({
             priority = 2570,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3879,6 +3923,7 @@ ns:RegisterGuide({
             priority = 2580,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3898,6 +3943,7 @@ ns:RegisterGuide({
             priority = 2590,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3917,6 +3963,7 @@ ns:RegisterGuide({
             priority = 2600,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3936,6 +3983,7 @@ ns:RegisterGuide({
             priority = 2610,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3955,6 +4003,7 @@ ns:RegisterGuide({
             priority = 2620,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3974,6 +4023,7 @@ ns:RegisterGuide({
             priority = 2630,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -3993,6 +4043,7 @@ ns:RegisterGuide({
             priority = 2640,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -4012,6 +4063,7 @@ ns:RegisterGuide({
             priority = 2650,
             conditions = {
                 all = {
+                    { race = RACE_HORDE },
                     { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 10 } },
@@ -4495,6 +4547,7 @@ ns:RegisterGuide({
             priority = 2990,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 1 },
                     { level = { min = 10 } },
                 },
@@ -4512,6 +4565,7 @@ ns:RegisterGuide({
             priority = 3000,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 1 },
                     { level = { min = 10 } },
                 },
@@ -4530,6 +4584,7 @@ ns:RegisterGuide({
             priority = 3010,
             conditions = {
                 all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
                     { class = 1 },
                     { level = { min = 10 } },
                 },

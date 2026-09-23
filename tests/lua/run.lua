@@ -485,6 +485,43 @@ for key, value in pairs(starter) do shaman[key] = value end
 shaman.classID = 7
 shaman.level = 4
 Equal(ns.EvaluateCondition(callOfEarth.conditions, shaman), true, "horde shamans can take Call of Earth")
+local leyLines = ns.Engine:GetGoal(zephras, "accept-reading-the-ley-lines")
+local skysight = ns.Engine:GetGoal(zephras, "accept-the-gift-of-skysight")
+local falling = ns.Engine:GetGoal(zephras, "accept-falling-with-style")
+local callOfFire = ns.Engine:GetGoal(zephras, "accept-call-of-fire")
+local skybreaker = ns.Engine:GetGoal(zephras, "accept-the-skybreaker-bulwark")
+local allianceSkyborne = {}
+for key, value in pairs(starter) do allianceSkyborne[key] = value end
+allianceSkyborne.faction = "Alliance"
+allianceSkyborne.raceID = 95
+allianceSkyborne.level = 2
+Equal(ns.EvaluateCondition(leyLines.conditions, allianceSkyborne), true, "alliance skyborne can read the ley lines")
+Equal(ns.EvaluateCondition(skysight.conditions, allianceSkyborne), false, "alliance skyborne do not get Skysight")
+Equal(ns.EvaluateCondition(falling.conditions, allianceSkyborne), true, "alliance skyborne can take Falling With Style")
+local hordeSkyborne = {}
+for key, value in pairs(starter) do hordeSkyborne[key] = value end
+hordeSkyborne.faction = "Horde"
+hordeSkyborne.raceID = 96
+hordeSkyborne.level = 2
+Equal(ns.EvaluateCondition(leyLines.conditions, hordeSkyborne), false, "horde skyborne do not read the ley lines")
+Equal(ns.EvaluateCondition(skysight.conditions, hordeSkyborne), true, "horde skyborne can take Skysight")
+Equal(ns.EvaluateCondition(falling.conditions, hordeSkyborne), true, "horde skyborne can take Falling With Style")
+Equal(ns.EvaluateCondition(falling.conditions, starter), false, "other races do not take Falling With Style")
+local hordeShaman = {}
+for key, value in pairs(hordeSkyborne) do hordeShaman[key] = value end
+hordeShaman.classID = 7
+hordeShaman.level = 10
+Equal(ns.EvaluateCondition(callOfFire.conditions, hordeShaman), true, "horde skyborne shamans can take Call of Fire")
+local otherShaman = {}
+for key, value in pairs(shaman) do otherShaman[key] = value end
+otherShaman.level = 10
+Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), false, "other horde shamans do not take Call of Fire")
+local skyborneWarrior = {}
+for key, value in pairs(hordeSkyborne) do skyborneWarrior[key] = value end
+skyborneWarrior.classID = 1
+skyborneWarrior.level = 10
+Equal(ns.EvaluateCondition(skybreaker.conditions, skyborneWarrior), true, "skyborne warriors can take The Skybreaker Bulwark")
+Equal(ns.EvaluateCondition(skybreaker.conditions, starter), false, "other warriors do not take The Skybreaker Bulwark")
 local foulMatriarch = ns.Engine:GetGoal(zephras, "accept-foul-matriarch")
 local beforeAetheen = {}
 for key, value in pairs(starter) do beforeAetheen[key] = value end
