@@ -296,7 +296,7 @@ end
 
 local FACTION_DISPLAY_ORDER = { "Alliance", "Horde" }
 
-local function GuideFactions(guide)
+local function GuideConditionFactions(guide)
     local seen = {}
     local function note(faction)
         if faction == "Alliance" or faction == "Horde" then seen[faction] = true end
@@ -307,14 +307,7 @@ local function GuideFactions(guide)
         if condition.all then for _, child in ipairs(condition.all) do walk(child) end end
         if condition.any then for _, child in ipairs(condition.any) do walk(child) end end
     end
-    if type(guide) == "table" then
-        walk(guide.conditions)
-        if GuideTypeLabel(guide) == "Dungeon" and type(guide.goals) == "table" then
-            for _, goal in ipairs(guide.goals) do
-                if type(goal.conditions) == "table" then walk(goal.conditions) end
-            end
-        end
-    end
+    if type(guide) == "table" then walk(guide.conditions) end
     local factions = {}
     for _, faction in ipairs(FACTION_DISPLAY_ORDER) do
         if seen[faction] then factions[#factions + 1] = faction end
@@ -323,7 +316,7 @@ local function GuideFactions(guide)
 end
 
 local function DungeonFactionLabel(guide)
-    local factions = GuideFactions(guide)
+    local factions = GuideConditionFactions(guide)
     if #factions == 0 then return nil end
     if #factions >= 2 then return "Both" end
     return factions[1]
