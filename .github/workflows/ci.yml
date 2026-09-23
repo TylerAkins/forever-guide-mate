@@ -28,6 +28,7 @@ jobs:
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
           test -f .compiled/ForeverGuideMate/Core.lua
           test -f .compiled/ForeverGuideMate/Guides/Dungeons/RagefireChasm.lua
+          test -f .compiled/ForeverGuideMate/Guides/Dungeons/WailingCaverns.lua
           test ! -e .compiled/ForeverGuideMate/tests
           test ! -e .compiled/ForeverGuideMate/tools
       - run: python3 tools/compile_addon.py --dry-run
