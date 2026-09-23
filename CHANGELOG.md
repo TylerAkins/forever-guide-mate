@@ -14,3 +14,4 @@ All notable changes to this project are documented here.
 - Replaced the built-in navigation arrow with TomTom waypoints. TomTom is a required dependency. Cross-continent steps point at the boat or zeppelin that reaches the destination.
 - Added the Forever boat, zeppelin, and flight-master network from Wowhead's world map, including Riverglades and Zephras Isle.
 - The guide tracker starts on the left edge, vertically centered. No guide is selected until the player chooses one, and that choice is saved.
+- Dungeon guides that do not apply show Ineligible instead of a faction or level reason.
