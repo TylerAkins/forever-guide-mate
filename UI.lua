@@ -294,17 +294,7 @@ local function GuideTypeLabel(guide)
     return nil
 end
 
-local FACTION_ICON_TEXTURES = {
-    Alliance = "Interface\\GossipFrame\\BattlemasterAllianceIcon",
-    Horde = "Interface\\GossipFrame\\BattlemasterHordeIcon",
-}
-local FACTION_ICON_ORDER = { "Alliance", "Horde" }
-
-local function FactionIconMarkup(faction)
-    local texture = FACTION_ICON_TEXTURES[faction]
-    if not texture then return tostring(faction) end
-    return ("|T%s:16:16|t"):format(texture)
-end
+local FACTION_DISPLAY_ORDER = { "Alliance", "Horde" }
 
 local function GuideFactions(guide)
     local seen = {}
@@ -326,10 +316,17 @@ local function GuideFactions(guide)
         end
     end
     local factions = {}
-    for _, faction in ipairs(FACTION_ICON_ORDER) do
+    for _, faction in ipairs(FACTION_DISPLAY_ORDER) do
         if seen[faction] then factions[#factions + 1] = faction end
     end
     return factions
+end
+
+local function DungeonFactionLabel(guide)
+    local factions = GuideFactions(guide)
+    if #factions == 0 then return nil end
+    if #factions >= 2 then return "Both" end
+    return factions[1]
 end
 
 local function EligibilityText(guide, state)
@@ -357,11 +354,8 @@ local function EligibilityText(guide, state)
     end
     Collect(guide.conditions)
     if isDungeon then
-        local icons = {}
-        for _, faction in ipairs(GuideFactions(guide)) do
-            icons[#icons + 1] = FactionIconMarkup(faction)
-        end
-        if #icons > 0 then requirements[#requirements + 1] = table.concat(icons) end
+        local factionLabel = DungeonFactionLabel(guide)
+        if factionLabel then requirements[#requirements + 1] = factionLabel end
     end
     for _, levelText in ipairs(levelRequirements) do requirements[#requirements + 1] = levelText end
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
