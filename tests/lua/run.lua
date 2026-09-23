@@ -514,6 +514,24 @@ questAPI.GetNumQuestChoices = function() return 2 end
 calls.reward = nil
 ns.QuestDialog:Handle("QUEST_COMPLETE", questAPI)
 Equal(calls.reward, nil, "a guide quest with a reward choice waits for the player")
+ns.db.autoQuest = true
+questAPI.C_GossipInfo.GetAvailableQuests = function() return {} end
+questAPI.C_GossipInfo.GetActiveQuests = function()
+    return { { questID = 5723, isComplete = false } }
+end
+calls.active = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.active, nil, "an incomplete guide quest leaves the gossip window alone")
+questAPI.C_GossipInfo.GetActiveQuests = function()
+    return { { questID = 5723, isComplete = true } }
+end
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.active, 5723, "a completed guide quest is selected from gossip")
+questAPI.C_QuestLog = { IsComplete = function() return false end }
+questAPI.IsQuestCompletable = function() return true end
+calls.complete = nil
+ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
+Equal(calls.complete, nil, "a quest the log says is incomplete is not turned in")
 ns.db.autoQuest = false
 calls.complete = nil
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
