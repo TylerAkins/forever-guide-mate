@@ -32,6 +32,7 @@ Load("Navigation.lua")
 Load("MapPins.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
+Load("Guides/Dungeons/WailingCaverns.lua")
 
 local baseState = {
     faction = "Horde",
@@ -349,6 +350,37 @@ local professionAPI = {
 local professions, known = ns.PlayerState:GetProfessions(professionAPI)
 Equal(known, true, "profession API detected")
 Equal(professions[164], 80, "profession rank captured")
+
+local wc = ns.guides["dungeons-wailing-caverns"]
+Check(wc ~= nil, "wailing caverns guide is registered")
+Equal(wc.conditions.all[1].level.min, 15, "wailing caverns uses the highest quest required level")
+local allianceCaverns = {}
+for key, value in pairs(baseState) do allianceCaverns[key] = value end
+allianceCaverns.faction = "Alliance"
+allianceCaverns.level = 15
+allianceCaverns.quests = {}
+allianceCaverns.completedQuests = {}
+ns.Engine:SelectGuide("dungeons-wailing-caverns")
+ns.Engine:Refresh(allianceCaverns)
+Equal(ns.Engine.currentGoal.id, "accept-smart-drinks", "alliance starts on a shared wailing caverns pickup")
+Equal(ns.EvaluateCondition(wc.conditions, allianceCaverns), true, "level 15 alliance is eligible for wailing caverns")
+local belowCaverns = {}
+for key, value in pairs(allianceCaverns) do belowCaverns[key] = value end
+belowCaverns.level = 14
+Equal(ns.EvaluateCondition(wc.conditions, belowCaverns), false, "level 14 is below the wailing caverns guide")
+local hordeCaverns = {}
+for key, value in pairs(allianceCaverns) do hordeCaverns[key] = value end
+hordeCaverns.faction = "Horde"
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.charDB.deferred = {}
+ns.charDB.completionLedger = {}
+ns.Engine:Refresh(hordeCaverns)
+Equal(ns.Engine.currentGoal.id, "accept-hamuul-runetotem", "horde starts on the wailing caverns fang chain")
+local trackedCavernQuests = {}
+for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedCavernQuests[questID] = true end
+Check(trackedCavernQuests[1487], "deviate eradication is tracked")
+Check(trackedCavernQuests[3366], "the alternate glowing shard quest is tracked")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
