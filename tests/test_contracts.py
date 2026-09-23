@@ -31,6 +31,7 @@ REQUIRED_FILES = (
     "Media/NavigationArrow.tga",
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",
+    "Guides/Dungeons/RuinsOfLordaeron.lua",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
     "tests/lua/run.lua",
@@ -72,6 +73,7 @@ class ContractTests(unittest.TestCase):
                 "UI.lua",
                 "Guides/Dungeons/RagefireChasm.lua",
                 "Guides/Dungeons/WailingCaverns.lua",
+                "Guides/Dungeons/RuinsOfLordaeron.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -123,6 +125,7 @@ class ContractTests(unittest.TestCase):
                 "UI.lua",
                 "Guides/Dungeons/RagefireChasm.lua",
                 "Guides/Dungeons/WailingCaverns.lua",
+                "Guides/Dungeons/RuinsOfLordaeron.lua",
             )
         )
         for term in forbidden:
@@ -150,6 +153,17 @@ class ContractTests(unittest.TestCase):
         self.assertIn("level = { min = 15 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertNotIn('{ faction = "Alliance" }', guide)
+
+    def test_ruins_of_lordaeron_guide_covers_listed_quests(self) -> None:
+        guide = (ROOT / "Guides/Dungeons/RuinsOfLordaeron.lua").read_text(encoding="utf-8")
+        for quest_id in (92415, 92421, 92422, 95161, 95189, 95195, 95204, 95216, 95250, 97288, 97289, 97290, 97291, 97292):
+            self.assertIn(str(quest_id), guide)
+        self.assertIn('id = "dungeons-ruins-of-lordaeron"', guide)
+        self.assertIn("level = { min = 16 }", guide)
+        self.assertIn('{ faction = "Horde" }', guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        ui = (ROOT / "UI.lua").read_text(encoding="utf-8")
+        self.assertIn('category:match("^(.-) Quest Guides$")', ui)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
