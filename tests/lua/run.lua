@@ -36,6 +36,8 @@ Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 Load("Guides/Dungeons/WailingCaverns.lua")
 Load("Guides/Dungeons/RuinsOfLordaeron.lua")
+Load("Guides/Dungeons/Deadmines.lua")
+Load("Guides/Dungeons/HallOfThanes.lua")
 
 local baseState = {
     faction = "Horde",
