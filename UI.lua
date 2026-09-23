@@ -652,6 +652,22 @@ function UI:CreateLauncher()
     self.launcher = button
 end
 
+function UI:GoalInstruction(engine)
+    local goal = engine.currentGoal
+    if not goal then
+        return ""
+    end
+    local state = engine.state or {}
+    local leg, status = ns.Navigation:GetActiveLeg(goal, state)
+    if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID) then
+        return status or leg.offMapText or leg.label or goal.text
+    end
+    if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
+        return status or leg.label or goal.text
+    end
+    return goal.text
+end
+
 function UI:Update(engine)
     if not self.tracker then return end
     self:ApplySettings()
@@ -670,7 +686,7 @@ function UI:Update(engine)
         local color = colors[engine.currentGoal.kind] or colors.note
         SetSolidColor(self.tracker.typeIcon, color[1], color[2], color[3], 1)
         self.tracker.typeIcon:Show()
-        self.tracker.instruction:SetText(engine.currentGoal.text)
+        self.tracker.instruction:SetText(self:GoalInstruction(engine))
         local nextText = self:NextGoalText(engine)
         self.tracker.nextStep:SetText(nextText and ("Next: " .. nextText) or "")
         self.tracker.status:SetText(("%d/%d complete"):format(progress.completed, progress.eligible))

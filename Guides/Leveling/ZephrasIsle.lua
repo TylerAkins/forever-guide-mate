@@ -20,8 +20,9 @@ local _, ns = ...
 -- The Alliance skycutter arrives on the Alterac Mountains map (uiMap 1416,
 -- Wowhead area 36); the quest text calls that arrival Dalaran.
 -- Horde then takes Welcome to Azeroth (95350) from Alana Stormwalker to
--- Thrall in Orgrimmar, and finishes with Exploring the Horde (93739):
--- Nazgrel, Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner.
+-- Thrall in Orgrimmar, and finishes with Exploring the Horde (93739).
+-- Nazgrel, Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner are
+-- separate steps so a finished visit is not pinned again.
 -- The Alliance path still ends at The Magical City of Dalaran.
 -- Coordinates have not been validated in the Forever client.
 -- UnitRace reports Alliance Skyborne as 95 and Horde Skyborne as 96.
@@ -43,6 +44,10 @@ local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
 end
 
+local function QuestObjective(questID, index, text)
+    return { questObjective = { id = questID, index = index, text = text } }
+end
+
 local function Point(mapID, x, y, label, offMapText, complete)
     return {
         mapID = mapID,
@@ -58,7 +63,7 @@ ns:RegisterGuide({
     id = "leveling-zephras-isle",
     title = "Zephras Isle (Skyborne)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -2701,12 +2706,28 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Find Fillion Flamebreeze, then carry him to safety while avoiding enemies.",
+            text = "Find Fillion Flamebreeze.",
             dependsOn = { "accept-the-missing-scholar-92849" },
-            complete = QuestState(92849, "complete"),
+            complete = QuestObjective(92849, 1, "Find Fillion"),
             route = {
                 Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze",
                     "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-missing-scholar-92849-carry",
+            kind = "objective",
+            priority = 1795,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Carry Fillion Flamebreeze to safety while avoiding enemies.",
+            dependsOn = { "objective-the-missing-scholar-92849" },
+            complete = QuestObjective(92849, 2, "Carry Fillion"),
+            route = {
                 Point(MAP.ZEPHRAS, 0.520, 0.694, "Carry Fillion Flamebreeze to safety",
                     "Travel to Zephras Isle."),
             },
@@ -2722,7 +2743,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in The Missing Scholar to Fillion Flamebreeze.",
-            dependsOn = { "objective-the-missing-scholar-92849" },
+            dependsOn = { "objective-the-missing-scholar-92849-carry" },
             complete = QuestState(92849, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.520, 0.694, "Fillion Flamebreeze",
@@ -5037,16 +5058,67 @@ ns:RegisterGuide({
                     { level = { min = 7 } },
                 },
             },
-            text = "Speak with Nazgrel in Grommash Hold, then with Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner.",
+            text = "Speak with Nazgrel in Grommash Hold.",
             dependsOn = { "accept-exploring-the-horde" },
-            complete = QuestState(93739, "complete"),
+            complete = QuestObjective(93739, 1, "Nazgrel"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.324, 0.360, "Nazgrel in Grommash Hold",
                     "Travel to Orgrimmar and enter Grommash Hold."),
+            },
+        },
+        {
+            id = "objective-exploring-the-horde-voljin",
+            kind = "objective",
+            priority = 3262,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Vol'jin in Grommash Hold.",
+            dependsOn = { "objective-exploring-the-horde" },
+            complete = QuestObjective(93739, 2, "Vol'jin"),
+            route = {
                 Point(MAP.ORGRIMMAR, 0.342, 0.366, "Vol'jin in Grommash Hold",
                     "Travel to Orgrimmar and enter Grommash Hold."),
+            },
+        },
+        {
+            id = "objective-exploring-the-horde-cairne",
+            kind = "objective",
+            priority = 3264,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Fly to Thunder Bluff and speak with Cairne Bloodhoof on the High Rise.",
+            dependsOn = { "objective-exploring-the-horde-voljin" },
+            complete = QuestObjective(93739, 3, "Cairne"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.454, 0.639, "Doras, the Orgrimmar flight master",
+                    "Speak to Doras and fly to Thunder Bluff.",
+                    { map = { MAP.THUNDER_BLUFF, MAP.MULGORE } }),
                 Point(MAP.THUNDER_BLUFF, 0.598, 0.516, "Cairne Bloodhoof on the High Rise",
-                    "Fly to Thunder Bluff and climb to Cairne's tent."),
+                    "Climb to Cairne's tent on the High Rise."),
+            },
+        },
+        {
+            id = "objective-exploring-the-horde-sylvanas",
+            kind = "objective",
+            priority = 3266,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Take the zeppelin outside Orgrimmar to Tirisfal Glades, then speak with Lady Sylvanas Windrunner in the Royal Quarter.",
+            dependsOn = { "objective-exploring-the-horde-cairne" },
+            complete = QuestObjective(93739, 4, "Sylvanas"),
+            route = {
                 Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
                     "Take the zeppelin to the Undercity and enter the Royal Quarter."),
             },
@@ -5062,7 +5134,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Finish Exploring the Horde with Lady Sylvanas Windrunner.",
-            dependsOn = { "objective-exploring-the-horde" },
+            dependsOn = { "objective-exploring-the-horde-sylvanas" },
             complete = QuestState(93739, "completed"),
             route = {
                 Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
