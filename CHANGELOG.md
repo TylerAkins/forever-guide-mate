@@ -8,6 +8,7 @@ All notable changes to this project are documented here.
 - Added the guide engine, objective-style tracker, guide library, persistent completion progress, navigation arrow, active-route map pin, and the initial Ragefire Chasm quest guide.
 - Added the Wailing Caverns dungeon quest guide for level 15.
 - Added the Ruins of Lordaeron dungeon quest guide for level 16.
+- Added the Deadmines dungeon quest guide for level 15 and the Hall of Thanes dungeon quest guide for level 10.
 - Guide library rows now show the guide type, such as Dungeon, before eligibility.
 - Replaced the built-in navigation arrow with TomTom waypoints. TomTom is a required dependency. Cross-continent steps point at the boat or zeppelin that reaches the destination.
 - Added the Forever boat, zeppelin, and flight-master network from Wowhead's world map, including Riverglades and Zephras Isle.
