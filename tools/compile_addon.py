@@ -24,6 +24,8 @@ SHIPPED = (
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",
     "Guides/Dungeons/RuinsOfLordaeron.lua",
+    "Guides/Dungeons/Deadmines.lua",
+    "Guides/Dungeons/HallOfThanes.lua",
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
