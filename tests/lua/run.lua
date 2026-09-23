@@ -38,6 +38,7 @@ Load("Guides/Dungeons/WailingCaverns.lua")
 Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
+Load("Guides/Leveling/ZephrasIsle.lua")
 
 local baseState = {
     faction = "Horde",
@@ -467,6 +468,149 @@ local allianceHot = {}
 for key, value in pairs(hordeHot) do allianceHot[key] = value end
 allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
+
+local zephras = ns.guides["leveling-zephras-isle"]
+Check(zephras ~= nil, "zephras isle guide is registered")
+Equal(zephras.conditions.all[1].level.min, 1, "zephras isle starts at level 1")
+local starter = {}
+for key, value in pairs(baseState) do starter[key] = value end
+starter.level = 1
+starter.classID = 1
+starter.faction = "Horde"
+starter.quests = {}
+starter.completedQuests = {}
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.charDB.deferred = {}
+ns.charDB.completionLedger = {}
+ns.Engine:SelectGuide("leveling-zephras-isle")
+ns.Engine:Refresh(starter)
+Equal(ns.Engine.currentGoal.id, "accept-coming-of-age", "zephras starts with Coming of Age")
+local trackedZephras = {}
+for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedZephras[questID] = true end
+Check(trackedZephras[92460], "coming of age is tracked")
+Check(not trackedZephras[78197], "the level 22 priest quest is not part of the starter path")
+local callOfEarth = ns.Engine:GetGoal(zephras, "accept-call-of-earth")
+Equal(ns.EvaluateCondition(callOfEarth.conditions, starter), false, "warriors do not get Call of Earth")
+local shaman = {}
+for key, value in pairs(starter) do shaman[key] = value end
+shaman.classID = 7
+shaman.level = 4
+Equal(ns.EvaluateCondition(callOfEarth.conditions, shaman), true, "horde shamans can take Call of Earth")
+local leyLines = ns.Engine:GetGoal(zephras, "accept-reading-the-ley-lines")
+local skysight = ns.Engine:GetGoal(zephras, "accept-the-gift-of-skysight")
+local falling = ns.Engine:GetGoal(zephras, "accept-falling-with-style")
+local callOfFire = ns.Engine:GetGoal(zephras, "accept-call-of-fire")
+local skybreaker = ns.Engine:GetGoal(zephras, "accept-the-skybreaker-bulwark")
+local allianceSkyborne = {}
+for key, value in pairs(starter) do allianceSkyborne[key] = value end
+allianceSkyborne.faction = "Alliance"
+allianceSkyborne.raceID = 95
+allianceSkyborne.level = 2
+Equal(ns.EvaluateCondition(leyLines.conditions, allianceSkyborne), true, "alliance skyborne can read the ley lines")
+Equal(ns.EvaluateCondition(skysight.conditions, allianceSkyborne), false, "alliance skyborne do not get Skysight")
+Equal(ns.EvaluateCondition(falling.conditions, allianceSkyborne), true, "alliance skyborne can take Falling With Style")
+local hordeSkyborne = {}
+for key, value in pairs(starter) do hordeSkyborne[key] = value end
+hordeSkyborne.faction = "Horde"
+hordeSkyborne.raceID = 96
+hordeSkyborne.level = 2
+Equal(ns.EvaluateCondition(leyLines.conditions, hordeSkyborne), false, "horde skyborne do not read the ley lines")
+Equal(ns.EvaluateCondition(skysight.conditions, hordeSkyborne), true, "horde skyborne can take Skysight")
+Equal(ns.EvaluateCondition(falling.conditions, hordeSkyborne), true, "horde skyborne can take Falling With Style")
+Equal(ns.EvaluateCondition(falling.conditions, starter), false, "other races do not take Falling With Style")
+local hordeShaman = {}
+for key, value in pairs(hordeSkyborne) do hordeShaman[key] = value end
+hordeShaman.classID = 7
+hordeShaman.level = 10
+Equal(ns.EvaluateCondition(callOfFire.conditions, hordeShaman), true, "horde skyborne shamans can take Call of Fire")
+local otherShaman = {}
+for key, value in pairs(shaman) do otherShaman[key] = value end
+otherShaman.level = 10
+Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), false, "other horde shamans do not take Call of Fire")
+local skyborneWarrior = {}
+for key, value in pairs(hordeSkyborne) do skyborneWarrior[key] = value end
+skyborneWarrior.classID = 1
+skyborneWarrior.level = 10
+Equal(ns.EvaluateCondition(skybreaker.conditions, skyborneWarrior), true, "skyborne warriors can take The Skybreaker Bulwark")
+Equal(ns.EvaluateCondition(skybreaker.conditions, starter), false, "other warriors do not take The Skybreaker Bulwark")
+local foulMatriarch = ns.Engine:GetGoal(zephras, "accept-foul-matriarch")
+local beforeAetheen = {}
+for key, value in pairs(starter) do beforeAetheen[key] = value end
+beforeAetheen.level = 2
+beforeAetheen.quests = {}
+beforeAetheen.completedQuests = {}
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
+    "Foul Matriarch waits until Aetheen of the Gales can be completed")
+beforeAetheen.level = 4
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
+    "Foul Matriarch stays locked until Aetheen of the Gales is turned in")
+beforeAetheen.completedQuests[92471] = true
+Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), true,
+    "Foul Matriarch opens after Aetheen of the Gales is turned in")
+
+ns:RegisterGuide({
+    id = "dependency-eligibility",
+    title = "Dependency Eligibility",
+    category = "Test Guides",
+    revision = 1,
+    goals = {
+        {
+            id = "later-prereq", kind = "note", text = "Later",
+            conditions = { level = { min = 4 } },
+            complete = { quest = { id = 900001, state = "completed" } },
+        },
+        {
+            id = "early-followup", kind = "note", text = "Early",
+            conditions = { level = { min = 2 } },
+            dependsOn = { "later-prereq" },
+            complete = { quest = { id = 900002, state = "completed" } },
+        },
+        {
+            id = "class-prereq", kind = "note", text = "Mage",
+            conditions = { class = 8 },
+            complete = { quest = { id = 900003, state = "completed" } },
+        },
+        {
+            id = "class-followup", kind = "note", text = "After mage",
+            dependsOn = { "class-prereq" },
+            complete = { quest = { id = 900004, state = "completed" } },
+        },
+        {
+            id = "horde-prereq", kind = "note", text = "Horde",
+            conditions = { all = { { faction = "Horde" }, { level = { min = 6 } } } },
+            complete = { quest = { id = 900005, state = "completed" } },
+        },
+        {
+            id = "alliance-followup", kind = "note", text = "Alliance",
+            conditions = { faction = "Alliance" },
+            dependsOn = { "horde-prereq" },
+            complete = { quest = { id = 900006, state = "completed" } },
+        },
+    },
+})
+local dependencyGuide = ns.guides["dependency-eligibility"]
+local function DependencyState(overrides)
+    local state = {
+        faction = "Horde", classID = 1, level = 2,
+        quests = {}, questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+    }
+    for key, value in pairs(overrides or {}) do state[key] = value end
+    return state
+end
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 2 })), false, "a lower-level step waits for a higher-level prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 4 })), false, "reaching the level still waits for the prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "early-followup"),
+    DependencyState({ level = 4, completedQuests = { [900001] = true } })), true,
+    "the follow-up starts after the higher-level prerequisite is done")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "class-followup"),
+    DependencyState({ classID = 1, level = 10 })), true, "another class does not wait on a class-only prerequisite")
+Equal(ns.Engine:IsReady(dependencyGuide, ns.Engine:GetGoal(dependencyGuide, "alliance-followup"),
+    DependencyState({ faction = "Alliance", level = 1 })), true,
+    "the other faction does not wait on a faction-only prerequisite")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
