@@ -38,6 +38,7 @@ Load("Guides/Dungeons/WailingCaverns.lua")
 Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
+Load("Guides/Leveling/ZephrasIsle.lua")
 
 local baseState = {
     faction = "Horde",
@@ -455,6 +456,35 @@ ns.charDB.deferred = {}
 ns.charDB.completionLedger = {}
 ns.Engine:Refresh(hordeRuins)
 Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
+
+local zephras = ns.guides["leveling-zephras-isle"]
+Check(zephras ~= nil, "zephras isle guide is registered")
+Equal(zephras.conditions.all[1].level.min, 1, "zephras isle starts at level 1")
+local starter = {}
+for key, value in pairs(baseState) do starter[key] = value end
+starter.level = 1
+starter.classID = 1
+starter.faction = "Horde"
+starter.quests = {}
+starter.completedQuests = {}
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.charDB.deferred = {}
+ns.charDB.completionLedger = {}
+ns.Engine:SelectGuide("leveling-zephras-isle")
+ns.Engine:Refresh(starter)
+Equal(ns.Engine.currentGoal.id, "accept-coming-of-age", "zephras starts with Coming of Age")
+local trackedZephras = {}
+for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedZephras[questID] = true end
+Check(trackedZephras[92460], "coming of age is tracked")
+Check(not trackedZephras[78197], "the level 22 priest quest is not part of the starter path")
+local callOfEarth = ns.Engine:GetGoal(zephras, "accept-call-of-earth")
+Equal(ns.EvaluateCondition(callOfEarth.conditions, starter), false, "warriors do not get Call of Earth")
+local shaman = {}
+for key, value in pairs(starter) do shaman[key] = value end
+shaman.classID = 7
+shaman.level = 4
+Equal(ns.EvaluateCondition(callOfEarth.conditions, shaman), true, "horde shamans can take Call of Earth")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
