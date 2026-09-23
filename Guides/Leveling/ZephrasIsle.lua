@@ -120,7 +120,8 @@ ns:RegisterGuide({
         {
             id = "accept-the-warriors-path",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 1 },
@@ -137,7 +138,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-warriors-path",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 1 },
@@ -155,7 +156,8 @@ ns:RegisterGuide({
         {
             id = "accept-the-way-of-the-hunter",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 3 },
@@ -172,7 +174,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-way-of-the-hunter",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 3 },
@@ -190,7 +192,8 @@ ns:RegisterGuide({
         {
             id = "accept-at-home-in-the-shadows",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 4 },
@@ -207,7 +210,7 @@ ns:RegisterGuide({
         {
             id = "turnin-at-home-in-the-shadows",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 4 },
@@ -225,7 +228,8 @@ ns:RegisterGuide({
         {
             id = "accept-a-student-of-nature",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 11 },
@@ -242,7 +246,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-student-of-nature",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 11 },
@@ -260,7 +264,8 @@ ns:RegisterGuide({
         {
             id = "accept-embracing-the-elements",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 7 },
@@ -277,7 +282,7 @@ ns:RegisterGuide({
         {
             id = "turnin-embracing-the-elements",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 7 },
@@ -295,7 +300,8 @@ ns:RegisterGuide({
         {
             id = "accept-a-student-of-the-arcane",
             kind = "accept",
-            priority = 32,
+            priority = 52,
+            dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 8 },
@@ -312,7 +318,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-student-of-the-arcane",
             kind = "turnin",
-            priority = 36,
+            priority = 53,
             conditions = {
                 all = {
                     { class = 8 },

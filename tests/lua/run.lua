@@ -586,13 +586,8 @@ Equal(ns.Engine.currentGoal.id, "accept-infestation-investigation",
 grove.quests[92462] = { complete = false, objectives = {} }
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
-    "the class quest is accepted while still at Rorian")
-grove.quests[92482] = { complete = true, objectives = {} }
-grove.completedQuests[92482] = true
-ns.charDB.activeGoal = nil
-ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "objective-harmony-in-balance", "both grove quests are accepted before the kill step")
+Equal(ns.Engine.currentGoal.id, "objective-harmony-in-balance",
+    "the class breadcrumb waits until Harmony in Balance is turned in")
 grove.quests[92461] = {
     complete = true,
     objectives = { { finished = true, numRequired = 8, numFulfilled = 8 } },
@@ -609,6 +604,16 @@ ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "turnin-harmony-in-balance",
     "both grove objectives lead back to the Harmony turn-in")
+grove.completedQuests[92461] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
+    "Infestation Investigation is turned in before the class breadcrumb")
+grove.completedQuests[92462] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(grove)
+Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
+    "The Way of the Hunter opens after Harmony in Balance is turned in")
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}
