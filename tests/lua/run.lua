@@ -33,6 +33,7 @@ Load("MapPins.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 Load("Guides/Dungeons/WailingCaverns.lua")
+Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 
 local baseState = {
     faction = "Horde",
@@ -381,6 +382,32 @@ local trackedCavernQuests = {}
 for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedCavernQuests[questID] = true end
 Check(trackedCavernQuests[1487], "deviate eradication is tracked")
 Check(trackedCavernQuests[3366], "the alternate glowing shard quest is tracked")
+
+local ruins = ns.guides["dungeons-ruins-of-lordaeron"]
+Check(ruins ~= nil, "ruins of lordaeron guide is registered")
+Equal(ruins.conditions.all[1].level.min, 16, "ruins of lordaeron uses the highest quest required level")
+local allianceRuins = {}
+for key, value in pairs(baseState) do allianceRuins[key] = value end
+allianceRuins.faction = "Alliance"
+allianceRuins.level = 16
+allianceRuins.quests = {}
+allianceRuins.completedQuests = {}
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.charDB.deferred = {}
+ns.charDB.completionLedger = {}
+ns.Engine:SelectGuide("dungeons-ruins-of-lordaeron")
+ns.Engine:Refresh(allianceRuins)
+Equal(ns.Engine.currentGoal.id, "enter-ruins-of-lordaeron", "alliance starts at the ruins entrance")
+local hordeRuins = {}
+for key, value in pairs(allianceRuins) do hordeRuins[key] = value end
+hordeRuins.faction = "Horde"
+ns.charDB.activeGoal = nil
+ns.charDB.history = {}
+ns.charDB.deferred = {}
+ns.charDB.completionLedger = {}
+ns.Engine:Refresh(hordeRuins)
+Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
