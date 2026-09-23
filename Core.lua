@@ -6,11 +6,11 @@ ns.guides = ns.guides or {}
 ns.guideOrder = ns.guideOrder or {}
 
 local ACCOUNT_DEFAULTS = {
-    schemaVersion = 2,
+    schemaVersion = 3,
     uiOpen = true,
     tracker = {
         enabled = true, locked = false, scale = 1,
-        point = "TOPRIGHT", relativePoint = "TOPRIGHT", x = -28, y = -180,
+        point = "LEFT", relativePoint = "LEFT", x = 0, y = 0,
     },
     arrow = {
         enabled = true, locked = false, scale = 1,
@@ -24,7 +24,6 @@ local ACCOUNT_DEFAULTS = {
 
 local CHARACTER_DEFAULTS = {
     schemaVersion = 2,
-    selectedGuide = "dungeons-ragefire-chasm-horde",
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
@@ -53,12 +52,17 @@ local function MigrateStorage(account, character)
         account.uiOpen = tracker.shown ~= false
         tracker.enabled = tracker.shown ~= false
         tracker.shown = nil
-        tracker.point, tracker.relativePoint, tracker.x, tracker.y = "TOPRIGHT", "TOPRIGHT", -28, -180
         arrow.enabled = arrow.shown ~= false
         arrow.shown = nil
         arrow.point, arrow.relativePoint, arrow.x, arrow.y = "TOP", "TOP", 0, -90
         account.tracker, account.arrow = tracker, arrow
         account.schemaVersion = 2
+    end
+    if (tonumber(account.schemaVersion) or 1) < 3 then
+        local tracker = type(account.tracker) == "table" and account.tracker or {}
+        tracker.point, tracker.relativePoint, tracker.x, tracker.y = "LEFT", "LEFT", 0, 0
+        account.tracker = tracker
+        account.schemaVersion = 3
     end
     if (tonumber(character.schemaVersion) or 1) < 2 then
         character.deferred = type(character.skipped) == "table" and character.skipped or {}

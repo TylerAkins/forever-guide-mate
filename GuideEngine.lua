@@ -454,16 +454,19 @@ function Engine:Refresh(state)
     end
     state = state or ns.PlayerState:Capture()
     self.state = state
-    local guide = ns.guides[ns.charDB.selectedGuide] or ns.guides[ns.guideOrder[1]]
+    local guide = ns.guides[ns.charDB.selectedGuide]
     self.currentGuide = guide
     if not guide then
-        self.status = "No guide is registered."
+        self.currentGoal = nil
+        self.status = "Choose a guide."
+        if ns.UI and ns.UI.Update then
+            ns.UI:Update(self)
+        end
+        if ns.MapPins then
+            ns.MapPins:HookMap()
+            ns.MapPins:Refresh()
+        end
         return
-    end
-    if ns.charDB.selectedGuide ~= guide.id then
-        ns.charDB.selectedGuide = guide.id
-        ns.charDB.activeGoal = nil
-        ns.charDB.history = {}
     end
     self:ReconcileGuide(guide, state)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state)

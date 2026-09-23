@@ -9,7 +9,7 @@ local UI = {
 }
 ns.UI = UI
 
-local TRACKER_DEFAULTS = { point = "TOPRIGHT", relativePoint = "TOPRIGHT", x = -28, y = -180, scale = 1 }
+local TRACKER_DEFAULTS = { point = "LEFT", relativePoint = "LEFT", x = 0, y = 0, scale = 1 }
 local BROWSER_DEFAULTS = { point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1 }
 
 local function Create(kind, name, parent, template)
@@ -82,6 +82,9 @@ local function CanonicalPosition(frame, defaults)
     local left, right, bottom, top, screenLeft, screenRight, screenBottom, screenTop = GetBounds(frame)
     if not left then return nil, nil end
     if defaults.point == "TOPRIGHT" then return right - screenRight, top - screenTop end
+    if defaults.point == "LEFT" then
+        return left - screenLeft, ((bottom + top) / 2) - ((screenBottom + screenTop) / 2)
+    end
     if defaults.point == "TOP" then
         return ((left + right) / 2) - ((screenLeft + screenRight) / 2), top - screenTop
     end
@@ -634,6 +637,9 @@ function UI:Initialize()
     self:CreateLauncher()
     self:RegisterSettings()
     self:ApplySettings()
+    if not ns.guides[ns.charDB.selectedGuide] then
+        self:OpenGuideBrowser()
+    end
 end
 
 function ForeverGuideMate_OnAddonCompartmentClick() UI:OpenGuideBrowser() end

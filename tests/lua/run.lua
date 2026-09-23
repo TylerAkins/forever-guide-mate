@@ -107,16 +107,23 @@ ForeverGuideMateCharDB = {
     history = {},
 }
 ns.InitializeStorage()
-Equal(ns.db.schemaVersion, 2, "account schema migrated")
+Equal(ns.db.schemaVersion, 3, "account schema migrated")
 Equal(ns.charDB.schemaVersion, 2, "character schema migrated")
-Equal(ns.db.tracker.point, "TOPRIGHT", "schema migration resets obsolete tracker anchor")
-Equal(ns.db.tracker.x, -28, "schema migration resets obsolete tracker offset")
+Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
+Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
+Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
+Equal(ns.db.tracker.y, 0, "schema migration centers the tracker vertically")
 Equal(ns.db.tracker.locked, true, "schema migration preserves tracker lock")
 Equal(ns.db.tracker.scale, 1.2, "schema migration preserves tracker scale")
 Equal(ns.db.uiOpen, false, "schema migration preserves closed state")
 Equal(ns.charDB.deferred.later, true, "schema migration converts skipped steps to deferred")
 ns.InitializeStorage()
 Equal(ns.charDB.selectedGuide, "remember-me", "existing character progress is preserved")
+ns.charDB.selectedGuide = nil
+ns.Engine:Refresh(baseState)
+Equal(ns.Engine.currentGuide, nil, "startup does not auto-select a guide")
+Equal(ns.Engine.status, "Choose a guide.", "startup asks the player to choose a guide")
+Equal(ns.charDB.selectedGuide, nil, "declining to auto-select does not invent a saved guide")
 ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
 ns.charDB.activeGoal = nil
 ns.charDB.manualCompleted = {}
