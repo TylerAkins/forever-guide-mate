@@ -120,7 +120,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-warriors-path",
             kind = "accept",
-            priority = 60,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 1 },
@@ -137,7 +137,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-warriors-path",
             kind = "turnin",
-            priority = 70,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 1 },
@@ -155,7 +155,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-way-of-the-hunter",
             kind = "accept",
-            priority = 80,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 3 },
@@ -172,7 +172,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-way-of-the-hunter",
             kind = "turnin",
-            priority = 90,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 3 },
@@ -190,7 +190,7 @@ ns:RegisterGuide({
         {
             id = "accept-at-home-in-the-shadows",
             kind = "accept",
-            priority = 100,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 4 },
@@ -207,7 +207,7 @@ ns:RegisterGuide({
         {
             id = "turnin-at-home-in-the-shadows",
             kind = "turnin",
-            priority = 110,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 4 },
@@ -225,7 +225,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-student-of-nature",
             kind = "accept",
-            priority = 120,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 11 },
@@ -242,7 +242,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-student-of-nature",
             kind = "turnin",
-            priority = 130,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 11 },
@@ -260,7 +260,7 @@ ns:RegisterGuide({
         {
             id = "accept-embracing-the-elements",
             kind = "accept",
-            priority = 140,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 7 },
@@ -277,7 +277,7 @@ ns:RegisterGuide({
         {
             id = "turnin-embracing-the-elements",
             kind = "turnin",
-            priority = 150,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 7 },
@@ -295,7 +295,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-student-of-the-arcane",
             kind = "accept",
-            priority = 160,
+            priority = 32,
             conditions = {
                 all = {
                     { class = 8 },
@@ -312,7 +312,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-student-of-the-arcane",
             kind = "turnin",
-            priority = 170,
+            priority = 36,
             conditions = {
                 all = {
                     { class = 8 },
@@ -417,8 +417,9 @@ ns:RegisterGuide({
         {
             id = "accept-infestation-investigation",
             kind = "accept",
-            priority = 240,
+            priority = 31,
             text = "Accept Infestation Investigation from Elatrell Featherlight.",
+            dependsOn = { "turnin-coming-of-age" },
             complete = QuestState(92462, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
@@ -428,7 +429,7 @@ ns:RegisterGuide({
         {
             id = "objective-infestation-investigation",
             kind = "objective",
-            priority = 250,
+            priority = 41,
             text = "Slay 8 Pesky Cirrusflies in Thendal Grove.",
             dependsOn = { "accept-infestation-investigation" },
             complete = QuestState(92462, "complete"),
@@ -440,7 +441,7 @@ ns:RegisterGuide({
         {
             id = "turnin-infestation-investigation",
             kind = "turnin",
-            priority = 260,
+            priority = 51,
             text = "Turn in Infestation Investigation to Elatrell Featherlight.",
             dependsOn = { "objective-infestation-investigation" },
             complete = QuestState(92462, "completed"),
