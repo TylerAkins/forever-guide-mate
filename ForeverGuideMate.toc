@@ -1,0 +1,12 @@
+## Interface: 16001
+## Title: Forever GuideMate
+## Notes: An open-source guide addon for World of Warcraft: Forever.
+## Author: Tyler Akins
+## Version: @project-version@
+## X-License: GPL-3.0-or-later
+## X-Category: Quests
+## X-Website: https://github.com/TylerAkins/forever-guide-mate
+## X-Source: https://github.com/TylerAkins/forever-guide-mate
+## X-Issues: https://github.com/TylerAkins/forever-guide-mate/issues
+
+Core.lua

@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install -r tests/requirements.txt
+      - run: python3 -m unittest discover -s tests
+      - run: |
+          python3 tools/compile_addon.py
+          test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
+          test -f .compiled/ForeverGuideMate/Core.lua
+          test ! -e .compiled/ForeverGuideMate/tests
+          test ! -e .compiled/ForeverGuideMate/tools
+      - run: python3 tools/compile_addon.py --dry-run

@@ -1,0 +1,8 @@
+package-as: ForeverGuideMate
+ignore:
+  - tests
+  - tools
+  - .github
+  - .gitignore
+  - AGENTS.md
+  - VERSION

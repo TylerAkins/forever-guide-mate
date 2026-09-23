@@ -1,0 +1,48 @@
+name: Bug report
+description: Report an issue with Forever GuideMate.
+body:
+  - type: input
+    id: build
+    attributes:
+      label: Forever client version and build
+    validations:
+      required: true
+  - type: input
+    id: addon_version
+    attributes:
+      label: Addon version
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: lua_error
+    attributes:
+      label: Lua error text
+  - type: textarea
+    id: enabled_addons
+    attributes:
+      label: Other enabled addons, if relevant
+      description: Do not include account information or unrelated SavedVariables.
