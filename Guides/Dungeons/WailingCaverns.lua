@@ -15,6 +15,7 @@ local MAP = {
 }
 
 local HORDE = { faction = "Horde" }
+local BOTH_FACTIONS = { any = { { faction = "Alliance" }, { faction = "Horde" } } }
 local WAILING_CAVERNS = 43
 
 local function QuestState(questID, state)
@@ -57,6 +58,7 @@ ns:RegisterGuide({
     conditions = {
         all = {
             { level = { min = 15 } },
+            BOTH_FACTIONS,
         },
     },
     goals = {

@@ -456,6 +456,18 @@ ns.charDB.completionLedger = {}
 ns.Engine:Refresh(hordeRuins)
 Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
 
+local hot = ns.guides["dungeons-hall-of-thanes"]
+Check(hot ~= nil, "hall of thanes guide is registered")
+local hordeHot = {}
+for key, value in pairs(baseState) do hordeHot[key] = value end
+hordeHot.faction = "Horde"
+hordeHot.level = 10
+Equal(ns.EvaluateCondition(hot.conditions, hordeHot), false, "horde cannot use the hall of thanes guide")
+local allianceHot = {}
+for key, value in pairs(hordeHot) do allianceHot[key] = value end
+allianceHot.faction = "Alliance"
+Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
