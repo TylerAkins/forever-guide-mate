@@ -40,6 +40,7 @@ REQUIRED_FILES = (
     "Guides/Leveling/Durotar.lua",
     "Guides/Leveling/Mulgore.lua",
     "Guides/Leveling/TheBarrens.lua",
+    "Guides/Leveling/Teldrassil.lua",
     "docs/zone-loremaster-guides.md",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
@@ -92,6 +93,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/Durotar.lua",
                 "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
+                "Guides/Leveling/Teldrassil.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -154,6 +156,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/Durotar.lua",
                 "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
+                "Guides/Leveling/Teldrassil.lua",
             )
         )
         for term in forbidden:
@@ -292,6 +295,26 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-745-sharing-the-land-1"', guide)
         self.assertIn('id = "objective-745-sharing-the-land-3"', guide)
         self.assertIn("MULGORE = 1412", guide)
+
+    def test_teldrassil_guide_is_loremaster_without_dungeons(self) -> None:
+        guide = (ROOT / "Guides/Leveling/Teldrassil.lua").read_text(encoding="utf-8")
+        goals = guide.split("goals = {", 1)[-1]
+        for quest_id in (456, 921, 7383, 483, 2499, 3522, 490):
+            self.assertIn(f"QuestState({quest_id},", goals)
+        for omitted_id in (5842, 8734, 934):
+            self.assertNotIn(f"QuestState({omitted_id},", goals)
+            self.assertNotIn(f"QuestObjective({omitted_id},", goals)
+        self.assertIn('id = "leveling-teldrassil"', guide)
+        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn("level = { min = 1 }", guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn("This is an elite. Bring a group.", guide)
+        self.assertIn('id = "objective-456-the-balance-of-nature-1"', guide)
+        self.assertIn('id = "objective-456-the-balance-of-nature-2"', guide)
+        self.assertIn('id = "objective-483-the-relics-of-wakening-1"', guide)
+        self.assertIn('id = "objective-483-the-relics-of-wakening-4"', guide)
+        self.assertIn("TELDRASSIL = 1438", guide)
+        self.assertIn("DARNASSUS = 1457", guide)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")

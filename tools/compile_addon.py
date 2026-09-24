@@ -31,6 +31,7 @@ SHIPPED = (
     "Guides/Leveling/Durotar.lua",
     "Guides/Leveling/Mulgore.lua",
     "Guides/Leveling/TheBarrens.lua",
+    "Guides/Leveling/Teldrassil.lua",
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
