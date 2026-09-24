@@ -1167,16 +1167,56 @@ for _, goal in ipairs(durotar.goals) do
     if not questID and complete and complete.questObjective then
         questID = complete.questObjective.id
     end
-    if questID and questID ~= 96873 and questID ~= 785 and questID ~= 832
+    if questID and questID ~= 96873 and questID ~= 96874 and questID ~= 96875
+        and questID ~= 785 and questID ~= 832
         and questID ~= 96876 and questID ~= 96877 and questID ~= 97281 and questID ~= 97282 then
         durotarState.completedQuests[questID] = true
     end
 end
 local durotarProgress = ns.Engine:GetGuideProgress(durotar, durotarState)
 Equal(durotarProgress.percentage, 100,
-    "a hunter without enchanting reaches 100% after the offered Durotar quests")
+    "a hunter without a crafting profession reaches 100% after the offered Durotar quests")
 Check(durotarProgress.eligible < durotarProgress.total,
-    "enchanting and unstarted drop quests stay out of the Durotar percentage")
+    "crafting lessons and unstarted drop quests stay out of the Durotar percentage")
+
+-- A level 15 troll mage with herbalism and alchemy cannot take the Orgrimmar
+-- crafting lessons, so the guide must not stop on them.
+do
+    local herbalist = {
+        faction = "Horde", raceID = 8, classID = 8, level = 15,
+        professions = { [182] = 60, [171] = 55 }, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+        mapID = 1454, x = 0.80, y = 0.23,
+    }
+    for _, goalID in ipairs({
+        "accept-96873-a-pain-in-the-neck",
+        "accept-96874-this-is-spinal-axe",
+        "turnin-96874-this-is-spinal-axe",
+        "accept-96875-beasts-of-thunder-ridge",
+        "turnin-96875-beasts-of-thunder-ridge",
+    }) do
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, herbalist), false,
+            goalID .. " is not offered without the trainer's profession")
+    end
+    local smith = {}
+    for key, value in pairs(herbalist) do smith[key] = value end
+    smith.professions = { [164] = 1 }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96874-this-is-spinal-axe").conditions, smith), true,
+        "a blacksmith is offered This Is Spinal Axe")
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96875-beasts-of-thunder-ridge").conditions, smith), false,
+        "blacksmithing does not unlock the leatherworking lesson")
+    local tanner = {}
+    for key, value in pairs(herbalist) do tanner[key] = value end
+    tanner.professions = { [165] = 1 }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96875-beasts-of-thunder-ridge").conditions, tanner), true,
+        "a leatherworker is offered Beasts of Thunder Ridge")
+    local hoofFinder = {}
+    for key, value in pairs(herbalist) do hoofFinder[key] = value end
+    hoofFinder.quests = { [96877] = { complete = false, objectives = {} } }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "turnin-96877-halikors-hoof").conditions, hoofFinder), true,
+        "Halikor's Hoof still turns in without a crafting profession")
+end
 
 local mulgore = ns.guides["leveling-mulgore"]
 Check(mulgore ~= nil, "the Mulgore guide is registered")
