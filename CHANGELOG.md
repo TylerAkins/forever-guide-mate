@@ -40,3 +40,11 @@ All notable changes to this project are documented here.
 - Added tests/lua/lint.lua, a data lint over the shipped guides. Every step of a quest must carry the same conditions, so gating an accept without its objectives and turn-in fails CI.
 - Durotar's crafting lessons are only offered to the character who can take them. This Is Spinal Axe needs blacksmithing and Beasts of Thunder Ridge needs leatherworking, the same way A Pain in the Neck already needed enchanting. A level 15 troll mage with herbalism and alchemy is no longer sent to Ug'thok or Kamari, and still reaches 100%. Halikor's Hoof drops for anyone, so its turn-in is not gated.
 - Durotar, Mulgore, and the Barrens are listed under Loremaster Guides, and their row tag says Loremaster. Those guides finish the zone's quests; they are not written as a leveling route. Zephras Isle stays under Leveling Quest Guides.
+- Added Horde Era leveling routes from 1-12 through 34-36 under Leveling Quest Guides. Titles end in (Era). Alliance characters are not eligible. Grind stops and flight-point pickups are not included. These routes follow the classic path and are not rewritten for Forever yet.
+- Centaur Bracers now says to collect the bracers from Kolkar. Chen's Empty Keg is a barrel on the ground in the Barrens, not a Kolkar drop.
+- Added the next Horde Era leveling routes, 36-37 Alterac Mountains through 49-50 Feralas.
+- Added the remaining Horde Era leveling routes, 49-50 Tanaris through 59-60 Winterspring.
+- Added the first Alliance Era leveling routes, 1-12 Dun Morogh, Elwynn Forest, and Teldrassil through 32-33 Stranglethorn Vale. These routes are Alliance only.
+- Added the next Alliance Era leveling routes, 33-34 Thousand Needles through 50-50 Hinterlands.
+- Added the last Alliance Era leveling routes, 50-51 Blasted Lands through 59-60 Winterspring.
+- The Teldrassil Loremaster guide is Alliance only. Its title is Teldrassil. The library row already tags it Loremaster.

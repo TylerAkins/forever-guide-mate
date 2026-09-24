@@ -1,0 +1,2744 @@
+local _, ns = ...
+
+-- Horde Era leveling route for Durotar, levels 1-12.
+-- This follows the classic route and is not rewritten for Forever yet.
+-- Grind stops and flight-point pickups are not part of this route.
+-- Coordinates have not been validated in the Forever client.
+
+local MAP = {
+    DUROTAR = 1411,
+    ORGRIMMAR = 1454,
+}
+
+local function QuestState(questID, state)
+    return { quest = { id = questID, state = state } }
+end
+
+local function QuestObjective(questID, index)
+    return { questObjective = { id = questID, index = index } }
+end
+
+local function Point(mapID, x, y, label, offMapText)
+    return {
+        mapID = mapID,
+        x = x,
+        y = y,
+        label = label,
+        offMapText = offMapText,
+    }
+end
+
+ns:RegisterGuide({
+    id = "leveling-era-1-12-durotar",
+    title = "1-12 Durotar (Era)",
+    category = "Leveling Quest Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { faction = "Horde" },
+            { level = { min = 1 } },
+        },
+    },
+    goals = {
+        {
+            id = "accept-4641-your-place-in-the-world",
+            kind = "accept",
+            priority = 10,
+            text = "Accept Your Place In The World from Kaltunk in Valley of Trials.",
+            complete = QuestState(4641, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4329, 0.6861, "Kaltunk",
+                    "Travel to Kaltunk."),
+            },
+        },
+        {
+            id = "accept-1485-vile-familiars",
+            kind = "accept",
+            priority = 20,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Vile Familiars from Ruzan in Valley of Trials.",
+            complete = QuestState(1485, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4261, 0.6879, "Ruzan",
+                    "Travel to Ruzan."),
+            },
+        },
+        {
+            id = "turnin-4641-your-place-in-the-world",
+            kind = "turnin",
+            priority = 30,
+            text = "Turn in Your Place In The World to Gornek in The Den.",
+            dependsOn = { "accept-4641-your-place-in-the-world" },
+            complete = QuestState(4641, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-788-cutting-teeth",
+            kind = "accept",
+            priority = 40,
+            text = "Accept Cutting Teeth from Gornek in The Den.",
+            complete = QuestState(788, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "objective-788-cutting-teeth",
+            kind = "objective",
+            priority = 50,
+            text = "Kill 10 Mottled Boar in the Valley of Trials.",
+            dependsOn = { "accept-788-cutting-teeth" },
+            complete = QuestState(788, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4450, 0.6610, "Mottled Boar",
+                    "Travel to Mottled Boar."),
+            },
+        },
+        {
+            id = "objective-1485-vile-familiars",
+            kind = "objective",
+            priority = 60,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Kill Vile Familiar and collect 6 Vile Familiar Head in Valley of Trials.",
+            dependsOn = { "accept-1485-vile-familiars" },
+            complete = QuestState(1485, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4499, 0.5694, "Vile Familiar",
+                    "Travel to Vile Familiar."),
+            },
+        },
+        {
+            id = "turnin-1485-vile-familiars",
+            kind = "turnin",
+            priority = 70,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Vile Familiars to Ruzan in Valley of Trials.",
+            dependsOn = { "objective-1485-vile-familiars" },
+            complete = QuestState(1485, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4261, 0.6900, "Ruzan",
+                    "Travel to Ruzan."),
+            },
+        },
+        {
+            id = "accept-1499-vile-familiars",
+            kind = "accept",
+            priority = 80,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Vile Familiars from Ruzan in Valley of Trials.",
+            complete = QuestState(1499, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4261, 0.6900, "Ruzan",
+                    "Travel to Ruzan."),
+            },
+        },
+        {
+            id = "turnin-1499-vile-familiars",
+            kind = "turnin",
+            priority = 90,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Vile Familiars to Zureetha Fargaze in Valley of Trials.",
+            dependsOn = { "accept-1499-vile-familiars" },
+            complete = QuestState(1499, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6910, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "turnin-788-cutting-teeth",
+            kind = "turnin",
+            priority = 100,
+            text = "Turn in Cutting Teeth to Gornek in The Den.",
+            dependsOn = { "objective-788-cutting-teeth" },
+            complete = QuestState(788, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-789-sting-of-the-scorpid",
+            kind = "accept",
+            priority = 110,
+            text = "Accept Sting of the Scorpid from Gornek in The Den.",
+            complete = QuestState(789, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3087-etched-parchment",
+            kind = "accept",
+            priority = 120,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 2 },
+                },
+            },
+            text = "Accept Etched Parchment from Gornek in The Den.",
+            complete = QuestState(3087, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3082-etched-tablet",
+            kind = "accept",
+            priority = 130,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 8 },
+                },
+            },
+            text = "Accept Etched Tablet from Gornek in The Den.",
+            complete = QuestState(3082, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3084-rune-inscribed-tablet",
+            kind = "accept",
+            priority = 140,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 8 },
+                },
+            },
+            text = "Accept Rune-Inscribed Tablet from Gornek in The Den.",
+            complete = QuestState(3084, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3089-rune-inscribed-parchment",
+            kind = "accept",
+            priority = 150,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 2 },
+                },
+            },
+            text = "Accept Rune-Inscribed Parchment from Gornek in The Den.",
+            complete = QuestState(3089, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3086-glyphic-tablet",
+            kind = "accept",
+            priority = 160,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Accept Glyphic Tablet from Gornek in The Den.",
+            complete = QuestState(3086, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3088-encrypted-parchment",
+            kind = "accept",
+            priority = 170,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 2 },
+                },
+            },
+            text = "Accept Encrypted Parchment from Gornek in The Den.",
+            complete = QuestState(3088, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3083-encrypted-tablet",
+            kind = "accept",
+            priority = 180,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 8 },
+                },
+            },
+            text = "Accept Encrypted Tablet from Gornek in The Den.",
+            complete = QuestState(3083, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3085-hallowed-tablet",
+            kind = "accept",
+            priority = 190,
+            conditions = {
+                all = {
+                    { class = 5 },
+                },
+            },
+            text = "Accept Hallowed Tablet from Gornek in The Den.",
+            complete = QuestState(3085, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3065-simple-tablet",
+            kind = "accept",
+            priority = 200,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 8 },
+                },
+            },
+            text = "Accept Simple Tablet from Gornek in The Den.",
+            complete = QuestState(3065, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-2383-simple-parchment",
+            kind = "accept",
+            priority = 210,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 2 },
+                },
+            },
+            text = "Accept Simple Parchment from Gornek in The Den.",
+            complete = QuestState(2383, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-3090-tainted-parchment",
+            kind = "accept",
+            priority = 220,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Tainted Parchment from Gornek in The Den.",
+            complete = QuestState(3090, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-792-vile-familiars",
+            kind = "accept",
+            priority = 230,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 1485, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept Vile Familiars from Zureetha Fargaze in Valley of Trials.",
+            complete = QuestState(792, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6910, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "turnin-3087-etched-tablet",
+            kind = "turnin",
+            priority = 240,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 2 },
+                },
+            },
+            text = "Turn in Etched Tablet to Jen'shan in Valley of Trials.",
+            dependsOn = { "accept-3087-etched-parchment" },
+            complete = QuestState(3087, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4280, 0.6930, "Jen'shan",
+                    "Travel to Jen'shan."),
+            },
+        },
+        {
+            id = "turnin-3082-etched-tablet",
+            kind = "turnin",
+            priority = 250,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 8 },
+                },
+            },
+            text = "Turn in Etched Tablet to Jen'shan in Valley of Trials.",
+            dependsOn = { "accept-3082-etched-tablet" },
+            complete = QuestState(3082, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4280, 0.6930, "Jen'shan",
+                    "Travel to Jen'shan."),
+            },
+        },
+        {
+            id = "turnin-3084-rune-inscribed-tablet",
+            kind = "turnin",
+            priority = 260,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 8 },
+                },
+            },
+            text = "Turn in Rune-Inscribed Tablet.",
+            dependsOn = { "accept-3084-rune-inscribed-tablet" },
+            complete = QuestState(3084, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4240, 0.6900, "Rune-Inscribed Tablet",
+                    "Travel to Rune-Inscribed Tablet."),
+            },
+        },
+        {
+            id = "turnin-3089-rune-inscribed-parchment",
+            kind = "turnin",
+            priority = 270,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 2 },
+                },
+            },
+            text = "Turn in Rune-Inscribed Parchment.",
+            dependsOn = { "accept-3089-rune-inscribed-parchment" },
+            complete = QuestState(3089, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4240, 0.6900, "Rune-Inscribed Parchment",
+                    "Travel to Rune-Inscribed Parchment."),
+            },
+        },
+        {
+            id = "turnin-3086-glyphic-tablet",
+            kind = "turnin",
+            priority = 280,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Turn in Glyphic Tablet to Mai'ah in Valley of Trials.",
+            dependsOn = { "accept-3086-glyphic-tablet" },
+            complete = QuestState(3086, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4253, 0.6897, "Mai'ah",
+                    "Travel to Mai'ah."),
+            },
+        },
+        {
+            id = "turnin-3088-encrypted-parchment",
+            kind = "turnin",
+            priority = 290,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 2 },
+                },
+            },
+            text = "Turn in Encrypted Parchment.",
+            dependsOn = { "accept-3088-encrypted-parchment" },
+            complete = QuestState(3088, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4130, 0.6810, "Encrypted Parchment",
+                    "Travel to Encrypted Parchment."),
+            },
+        },
+        {
+            id = "turnin-3083-encrypted-tablet",
+            kind = "turnin",
+            priority = 300,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 8 },
+                },
+            },
+            text = "Turn in Encrypted Tablet.",
+            dependsOn = { "accept-3083-encrypted-tablet" },
+            complete = QuestState(3083, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4130, 0.6810, "Encrypted Tablet",
+                    "Travel to Encrypted Tablet."),
+            },
+        },
+        {
+            id = "turnin-3085-hallowed-tablet",
+            kind = "turnin",
+            priority = 310,
+            conditions = {
+                all = {
+                    { class = 5 },
+                },
+            },
+            text = "Turn in Hallowed Tablet.",
+            dependsOn = { "accept-3085-hallowed-tablet" },
+            complete = QuestState(3085, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4240, 0.6880, "Hallowed Tablet",
+                    "Travel to Hallowed Tablet."),
+            },
+        },
+        {
+            id = "turnin-3065-simple-tablet",
+            kind = "turnin",
+            priority = 320,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 8 },
+                },
+            },
+            text = "Turn in Simple Tablet.",
+            dependsOn = { "accept-3065-simple-tablet" },
+            complete = QuestState(3065, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4290, 0.6940, "Simple Tablet",
+                    "Travel to Simple Tablet."),
+            },
+        },
+        {
+            id = "turnin-2383-simple-parchment",
+            kind = "turnin",
+            priority = 330,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 2 },
+                },
+            },
+            text = "Turn in Simple Parchment.",
+            dependsOn = { "accept-2383-simple-parchment" },
+            complete = QuestState(2383, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4290, 0.6940, "Simple Parchment",
+                    "Travel to Simple Parchment."),
+            },
+        },
+        {
+            id = "turnin-3090-tainted-parchment",
+            kind = "turnin",
+            priority = 340,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Tainted Parchment.",
+            dependsOn = { "accept-3090-tainted-parchment" },
+            complete = QuestState(3090, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4060, 0.6840, "Tainted Parchment",
+                    "Travel to Tainted Parchment."),
+            },
+        },
+        {
+            id = "accept-4402-galgar-s-cactus-apple-surprise",
+            kind = "accept",
+            priority = 350,
+            text = "Accept Galgar's Cactus Apple Surprise from Galgar in Valley of Trials.",
+            complete = QuestState(4402, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4274, 0.6732, "Galgar",
+                    "Travel to Galgar."),
+            },
+        },
+        {
+            id = "accept-790-sarkoth",
+            kind = "accept",
+            priority = 360,
+            text = "Accept Sarkoth from Hana'zua in Valley of Trials.",
+            complete = QuestState(790, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4068, 0.6259, "Hana'zua",
+                    "Travel to Hana'zua."),
+            },
+        },
+        {
+            id = "objective-790-sarkoth",
+            kind = "objective",
+            priority = 370,
+            text = "Kill Sarkoth and collect Sarkoth's Mangled Claw.",
+            dependsOn = { "accept-790-sarkoth" },
+            complete = QuestState(790, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4060, 0.6710, "Sarkoth",
+                    "Travel to Sarkoth."),
+            },
+        },
+        {
+            id = "objective-789-sting-of-the-scorpid",
+            kind = "objective",
+            priority = 380,
+            text = "Kill Scorpid Worker and collect 10 Scorpid Worker Tail in Valley of Trials.",
+            dependsOn = { "accept-789-sting-of-the-scorpid" },
+            complete = QuestState(789, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4080, 0.6210, "Scorpid Worker",
+                    "Travel to Scorpid Worker."),
+            },
+        },
+        {
+            id = "turnin-790-sarkoth",
+            kind = "turnin",
+            priority = 390,
+            text = "Turn in Sarkoth to Hana'zua in Valley of Trials.",
+            dependsOn = { "objective-790-sarkoth" },
+            complete = QuestState(790, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4068, 0.6259, "Hana'zua",
+                    "Travel to Hana'zua."),
+            },
+        },
+        {
+            id = "accept-804-sarkoth",
+            kind = "accept",
+            priority = 400,
+            text = "Accept Sarkoth from Hana'zua in Valley of Trials.",
+            complete = QuestState(804, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4068, 0.6259, "Hana'zua",
+                    "Travel to Hana'zua."),
+            },
+        },
+        {
+            id = "turnin-804-sarkoth",
+            kind = "turnin",
+            priority = 410,
+            text = "Turn in Sarkoth to Gornek in The Den.",
+            dependsOn = { "accept-804-sarkoth" },
+            complete = QuestState(804, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "travel-792-valley-of-trials",
+            kind = "travel",
+            priority = 420,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 1485, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Valley of Trials.",
+            route = {
+                Point(MAP.DUROTAR, 0.4500, 0.5600, "Vile Familiar",
+                    "Travel to Vile Familiar."),
+            },
+        },
+        {
+            id = "objective-792-vile-familiars",
+            kind = "objective",
+            priority = 430,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 1485, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Kill 12 Vile Familiar near the cave in Valley of Trials.",
+            dependsOn = { "accept-792-vile-familiars" },
+            complete = QuestState(792, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4500, 0.5600, "Vile Familiar",
+                    "Travel to Vile Familiar."),
+            },
+        },
+        {
+            id = "objective-4402-galgar-s-cactus-apple-surprise",
+            kind = "objective",
+            priority = 440,
+            text = "Collect 10 Cactus Apple from the Cactus Plants in the Valley.",
+            dependsOn = { "accept-4402-galgar-s-cactus-apple-surprise" },
+            complete = QuestState(4402, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4600, 0.6300, "Galgar's Cactus Apple Surprise",
+                    "Travel to Galgar's Cactus Apple Surprise."),
+            },
+        },
+        {
+            id = "turnin-4402-galgar-s-cactus-apple-surprise",
+            kind = "turnin",
+            priority = 450,
+            text = "Turn in Galgar's Cactus Apple Surprise to Galgar in Valley of Trials.",
+            dependsOn = { "objective-4402-galgar-s-cactus-apple-surprise" },
+            complete = QuestState(4402, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4274, 0.6732, "Galgar",
+                    "Travel to Galgar."),
+            },
+        },
+        {
+            id = "turnin-789-sting-of-the-scorpid",
+            kind = "turnin",
+            priority = 460,
+            text = "Turn in Sting of the Scorpid to Gornek in The Den.",
+            dependsOn = { "objective-789-sting-of-the-scorpid" },
+            complete = QuestState(789, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-792-vile-familiars",
+            kind = "turnin",
+            priority = 470,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 1485, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Turn in Vile Familiars to Zureetha Fargaze in Valley of Trials.",
+            dependsOn = { "objective-792-vile-familiars" },
+            complete = QuestState(792, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6907, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "accept-794-burning-blade-medallion",
+            kind = "accept",
+            priority = 480,
+            text = "Accept Burning Blade Medallion from Zureetha Fargaze in Valley of Trials.",
+            complete = QuestState(794, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6910, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "accept-5441-lazy-peons",
+            kind = "accept",
+            priority = 490,
+            text = "Accept Lazy Peons from Foreman Thazz'ril in Valley of Trials.",
+            complete = QuestState(5441, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4456, 0.6865, "Foreman Thazz'ril",
+                    "Travel to Foreman Thazz'ril."),
+            },
+        },
+        {
+            id = "objective-5441-lazy-peons",
+            kind = "objective",
+            priority = 500,
+            text = "Use Foreman's Blackjack to wake 5 Lazy Peon in the Valley of Trials.",
+            dependsOn = { "accept-5441-lazy-peons" },
+            complete = QuestState(5441, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4129, 0.7270, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4235, 0.7320, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4471, 0.7275, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4509, 0.6907, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4752, 0.6934, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4568, 0.6566, "Continue toward Lazy Peons",
+                    "Continue toward Lazy Peons."),
+                Point(MAP.DUROTAR, 0.4713, 0.6542, "Lazy Peon",
+                    "Travel to Lazy Peon."),
+            },
+        },
+        {
+            id = "turnin-5441-lazy-peons",
+            kind = "turnin",
+            priority = 510,
+            text = "Turn in Lazy Peons to Foreman Thazz'ril in Valley of Trials.",
+            dependsOn = { "objective-5441-lazy-peons" },
+            complete = QuestState(5441, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4456, 0.6865, "Foreman Thazz'ril",
+                    "Travel to Foreman Thazz'ril."),
+            },
+        },
+        {
+            id = "accept-6394-thazz-ril-s-pick",
+            kind = "accept",
+            priority = 520,
+            text = "Accept Thazz'ril's Pick from Foreman Thazz'ril in Valley of Trials.",
+            complete = QuestState(6394, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4456, 0.6865, "Foreman Thazz'ril",
+                    "Travel to Foreman Thazz'ril."),
+            },
+        },
+        {
+            id = "accept-1516-call-of-earth",
+            kind = "accept",
+            priority = 530,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Earth from Canaga Earthcaller in Valley of Trials.",
+            complete = QuestState(1516, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4242, 0.6916, "Canaga Earthcaller",
+                    "Travel to Canaga Earthcaller."),
+            },
+        },
+        {
+            id = "travel-794-burning-blade-coven",
+            kind = "travel",
+            priority = 540,
+            text = "Travel to Burning Blade Coven.",
+            route = {
+                Point(MAP.DUROTAR, 0.4446, 0.6040, "Continue toward Burning Blade Coven",
+                    "Continue toward Burning Blade Coven."),
+                Point(MAP.DUROTAR, 0.4533, 0.5647, "Burning Blade Coven",
+                    "Travel to Burning Blade Coven."),
+            },
+        },
+        {
+            id = "objective-794-burning-blade-medallion",
+            kind = "objective",
+            priority = 550,
+            text = "Follow the waypoint and kill Yarrog Baneshadow and collect Burning Blade Medallion.",
+            dependsOn = { "accept-794-burning-blade-medallion" },
+            complete = QuestState(794, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4477, 0.5453, "Continue toward Burning Blade Medallion",
+                    "Continue toward Burning Blade Medallion."),
+                Point(MAP.DUROTAR, 0.4384, 0.5292, "Continue toward Burning Blade Medallion",
+                    "Continue toward Burning Blade Medallion."),
+                Point(MAP.DUROTAR, 0.4294, 0.5206, "Continue toward Burning Blade Medallion",
+                    "Continue toward Burning Blade Medallion."),
+                Point(MAP.DUROTAR, 0.4270, 0.5290, "Continue toward Burning Blade Medallion",
+                    "Continue toward Burning Blade Medallion."),
+                Point(MAP.DUROTAR, 0.4276, 0.5270, "Yarrog Baneshadow",
+                    "Travel to Yarrog Baneshadow."),
+            },
+        },
+        {
+            id = "objective-6394-thazz-ril-s-pick",
+            kind = "objective",
+            priority = 560,
+            text = "Collect Thazz'ril's Pick in Burning Blade Coven.",
+            dependsOn = { "accept-6394-thazz-ril-s-pick" },
+            complete = QuestState(6394, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4319, 0.5380, "Continue toward Thazz'ril's Pick",
+                    "Continue toward Thazz'ril's Pick."),
+                Point(MAP.DUROTAR, 0.4383, 0.5536, "Continue toward Thazz'ril's Pick",
+                    "Continue toward Thazz'ril's Pick."),
+                Point(MAP.DUROTAR, 0.4370, 0.5370, "Burning Blade Coven",
+                    "Travel to Burning Blade Coven."),
+            },
+        },
+        {
+            id = "objective-1516-call-of-earth",
+            kind = "objective",
+            priority = 570,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Kill Felstalker and collect 2 Felstalker Hoof in Burning Blade Coven.",
+            dependsOn = { "accept-1516-call-of-earth" },
+            complete = QuestState(1516, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4447, 0.5499, "Felstalker",
+                    "Travel to Felstalker."),
+            },
+        },
+        {
+            id = "travel-2161-valley-of-trials",
+            kind = "travel",
+            priority = 580,
+            text = "Hearth to Valley of Trials.",
+        },
+        {
+            id = "turnin-1516-call-of-earth",
+            kind = "turnin",
+            priority = 590,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Earth to Canaga Earthcaller in Valley of Trials.",
+            dependsOn = { "objective-1516-call-of-earth" },
+            complete = QuestState(1516, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4238, 0.6912, "Canaga Earthcaller",
+                    "Travel to Canaga Earthcaller."),
+            },
+        },
+        {
+            id = "accept-1517-call-of-earth",
+            kind = "accept",
+            priority = 600,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Earth from Canaga Earthcaller in Valley of Trials.",
+            complete = QuestState(1517, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4238, 0.6912, "Canaga Earthcaller",
+                    "Travel to Canaga Earthcaller."),
+            },
+        },
+        {
+            id = "turnin-794-burning-blade-medallion",
+            kind = "turnin",
+            priority = 610,
+            text = "Turn in Burning Blade Medallion to Zureetha Fargaze in Valley of Trials.",
+            dependsOn = { "objective-794-burning-blade-medallion" },
+            complete = QuestState(794, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6910, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "accept-805-report-to-sen-jin-village",
+            kind = "accept",
+            priority = 620,
+            text = "Accept Report to Sen'jin Village from Zureetha Fargaze in Valley of Trials.",
+            complete = QuestState(805, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4283, 0.6910, "Zureetha Fargaze",
+                    "Travel to Zureetha Fargaze."),
+            },
+        },
+        {
+            id = "turnin-6394-thazz-ril-s-pick",
+            kind = "turnin",
+            priority = 630,
+            text = "Turn in Thazz'ril's Pick to Foreman Thazz'ril in Valley of Trials.",
+            dependsOn = { "objective-6394-thazz-ril-s-pick" },
+            complete = QuestState(6394, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4456, 0.6865, "Foreman Thazz'ril",
+                    "Travel to Foreman Thazz'ril."),
+            },
+        },
+        {
+            id = "note-earth-sapta",
+            kind = "note",
+            priority = 640,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Get Earth Sapta from Canaga Earthcaller.",
+            route = {
+                Point(MAP.DUROTAR, 0.4238, 0.6912, "Canaga Earthcaller",
+                    "Travel to Canaga Earthcaller."),
+            },
+        },
+        {
+            id = "travel-spirit-rock",
+            kind = "travel",
+            priority = 650,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Spirit Rock.",
+            route = {
+                Point(MAP.DUROTAR, 0.4156, 0.7326, "Continue toward Spirit Rock",
+                    "Continue toward Spirit Rock."),
+                Point(MAP.DUROTAR, 0.4074, 0.7437, "Continue toward Spirit Rock",
+                    "Continue toward Spirit Rock."),
+                Point(MAP.DUROTAR, 0.4260, 0.7526, "Continue toward Spirit Rock",
+                    "Continue toward Spirit Rock."),
+                Point(MAP.DUROTAR, 0.4407, 0.7626, "Spirit Rock",
+                    "Travel to Spirit Rock."),
+            },
+        },
+        {
+            id = "note-earth-sapta-2",
+            kind = "note",
+            priority = 660,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Use Earth Sapta to gain the Sapta Sight buff.",
+        },
+        {
+            id = "turnin-1517-call-of-earth",
+            kind = "turnin",
+            priority = 670,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Earth to Minor Manifestation of Earth in Spirit Rock.",
+            dependsOn = { "accept-1517-call-of-earth" },
+            complete = QuestState(1517, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4400, 0.7614, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth."),
+            },
+        },
+        {
+            id = "accept-1518-call-of-earth",
+            kind = "accept",
+            priority = 680,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Earth from Minor Manifestation of Earth in Spirit Rock.",
+            complete = QuestState(1518, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4401, 0.7608, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth."),
+            },
+        },
+        {
+            id = "travel-valley-of-trials",
+            kind = "travel",
+            priority = 690,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Valley of Trials.",
+            route = {
+                Point(MAP.DUROTAR, 0.4260, 0.7526, "Continue toward Valley of Trials",
+                    "Continue toward Valley of Trials."),
+                Point(MAP.DUROTAR, 0.4077, 0.7406, "Continue toward Valley of Trials",
+                    "Continue toward Valley of Trials."),
+                Point(MAP.DUROTAR, 0.4242, 0.6917, "Valley of Trials",
+                    "Travel to Valley of Trials."),
+            },
+        },
+        {
+            id = "turnin-1518-call-of-earth",
+            kind = "turnin",
+            priority = 700,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Earth to Canaga Earthcaller in Valley of Trials.",
+            dependsOn = { "accept-1518-call-of-earth" },
+            complete = QuestState(1518, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4242, 0.6917, "Canaga Earthcaller",
+                    "Travel to Canaga Earthcaller."),
+            },
+        },
+        {
+            id = "accept-2161-a-peon-s-burden",
+            kind = "accept",
+            priority = 710,
+            text = "Accept A Peon's Burden from Ukor in Valley of Trials.",
+            complete = QuestState(2161, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.6830, "Ukor",
+                    "Travel to Ukor."),
+            },
+        },
+        {
+            id = "travel-786-sen-jin-village",
+            kind = "travel",
+            priority = 720,
+            text = "Travel to Sen'jin Village.",
+            route = {
+                Point(MAP.DUROTAR, 0.5450, 0.7500, "Sen'jin Village",
+                    "Travel to Sen'jin Village."),
+            },
+        },
+        {
+            id = "accept-786-thwarting-kolkar-aggression",
+            kind = "accept",
+            priority = 730,
+            text = "Accept Thwarting Kolkar Aggression from Lar Prowltusk in Sen'jin Village.",
+            complete = QuestState(786, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5459, 0.7522, "Lar Prowltusk",
+                    "Travel to Lar Prowltusk."),
+            },
+        },
+        {
+            id = "turnin-805-report-to-sen-jin-village",
+            kind = "turnin",
+            priority = 740,
+            text = "Turn in Report to Sen'jin Village to Master Gadrin in Sen'jin Village.",
+            dependsOn = { "accept-805-report-to-sen-jin-village" },
+            complete = QuestState(805, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "accept-808-minshina-s-skull",
+            kind = "accept",
+            priority = 750,
+            text = "Accept Minshina's Skull from Master Gadrin in Sen'jin Village.",
+            complete = QuestState(808, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "accept-823-report-to-orgnil",
+            kind = "accept",
+            priority = 760,
+            text = "Accept Report to Orgnil from Master Gadrin in Sen'jin Village.",
+            complete = QuestState(823, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "accept-826-zalazane",
+            kind = "accept",
+            priority = 770,
+            text = "Accept Zalazane from Master Gadrin in Sen'jin Village.",
+            complete = QuestState(826, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "accept-818-a-solvent-spirit",
+            kind = "accept",
+            priority = 780,
+            text = "Accept A Solvent Spirit from Master Vornal in Sen'jin Village.",
+            complete = QuestState(818, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5595, 0.7446, "Master Vornal",
+                    "Travel to Master Vornal."),
+            },
+        },
+        {
+            id = "accept-817-practical-prey",
+            kind = "accept",
+            priority = 790,
+            text = "Accept Practical Prey from Vel'rin Fang in Sen'jin Village.",
+            complete = QuestState(817, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7395, "Vel'rin Fang",
+                    "Travel to Vel'rin Fang."),
+            },
+        },
+        {
+            id = "travel-806-razor-hill",
+            kind = "travel",
+            priority = 800,
+            text = "Follow the road north to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5230, 0.4320, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "turnin-823-report-to-orgnil",
+            kind = "turnin",
+            priority = 810,
+            text = "Turn in Report to Orgnil to Orgnil Soulscar in Razor Hill.",
+            dependsOn = { "accept-823-report-to-orgnil" },
+            complete = QuestState(823, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5228, 0.4322, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-806-dark-storms",
+            kind = "accept",
+            priority = 820,
+            text = "Accept Dark Storms from Orgnil Soulscar in Razor Hill.",
+            complete = QuestState(806, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5228, 0.4322, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-784-vanquish-the-betrayers",
+            kind = "accept",
+            priority = 830,
+            text = "Accept Vanquish the Betrayers from Gar'Thok in Razor Hill.",
+            complete = QuestState(784, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "accept-837-encroachment",
+            kind = "accept",
+            priority = 840,
+            text = "Accept Encroachment from Gar'Thok in Razor Hill.",
+            complete = QuestState(837, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "accept-791-carry-your-weight",
+            kind = "accept",
+            priority = 850,
+            text = "Accept Carry Your Weight from Furl Scornbrow in Razor Hill.",
+            complete = QuestState(791, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4984, 0.4044, "Furl Scornbrow",
+                    "Travel to Furl Scornbrow."),
+            },
+        },
+        {
+            id = "accept-815-break-a-few-eggs",
+            kind = "accept",
+            priority = 860,
+            text = "Accept Break a Few Eggs from Cook Torka in Razor Hill.",
+            complete = QuestState(815, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5118, 0.4246, "Cook Torka",
+                    "Travel to Cook Torka."),
+            },
+        },
+        {
+            id = "turnin-2161-a-peon-s-burden",
+            kind = "turnin",
+            priority = 870,
+            text = "Turn in A Peon's Burden to Innkeeper Grosk in Razor Hill.",
+            dependsOn = { "accept-2161-a-peon-s-burden" },
+            complete = QuestState(2161, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5157, 0.4171, "Innkeeper Grosk",
+                    "Travel to Innkeeper Grosk."),
+            },
+        },
+        {
+            id = "note-791-razor-hill",
+            kind = "note",
+            priority = 880,
+            text = "Set your hearth in Razor Hill with Innkeeper Grosk.",
+            route = {
+                Point(MAP.DUROTAR, 0.5157, 0.4171, "Innkeeper Grosk",
+                    "Travel to Innkeeper Grosk."),
+            },
+        },
+        {
+            id = "objective-784-3-lieutenant-benedict",
+            kind = "objective",
+            priority = 890,
+            text = "Kill Lieutenant Benedict upstairs in Tiragarde Keep.",
+            dependsOn = { "accept-784-vanquish-the-betrayers" },
+            complete = QuestObjective(784, 3),
+            route = {
+                Point(MAP.DUROTAR, 0.5914, 0.5826, "Lieutenant Benedict",
+                    "Travel to Lieutenant Benedict."),
+            },
+        },
+        {
+            id = "objective-784-vanquish-the-betrayers",
+            kind = "objective",
+            priority = 900,
+            text = "Kill 10 Kul Tiras Sailor and 8 Kul Tiras Marine in Tiragarde Keep.",
+            dependsOn = { "accept-784-vanquish-the-betrayers" },
+            complete = QuestState(784, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5940, 0.5830, "Kul Tiras Sailor",
+                    "Travel to Kul Tiras Sailor."),
+            },
+        },
+        {
+            id = "objective-830-aged-envelope",
+            kind = "objective",
+            priority = 910,
+            text = "Collect Aged Envelope from Benedict's Chest upstair.",
+            dependsOn = { "accept-830-the-admiral-s-orders" },
+            complete = QuestState(830, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5930, 0.5770, "Aged Envelope",
+                    "Travel to Aged Envelope."),
+            },
+        },
+        {
+            id = "accept-830-the-admiral-s-orders",
+            kind = "accept",
+            priority = 920,
+            text = "Use the Aged Envelope to accept The Admiral's Orders.",
+            complete = QuestState(830, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5930, 0.5770, "The Admiral's Orders",
+                    "Travel to The Admiral's Orders."),
+            },
+        },
+        {
+            id = "objective-791-carry-your-weight",
+            kind = "objective",
+            priority = 930,
+            text = "Kill Kul Tiras Sailor and Kul Tiras Marine and collect 8 Canvas Scraps Tiragarde Keep.",
+            dependsOn = { "accept-791-carry-your-weight" },
+            complete = QuestState(791, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5700, 0.5500, "Kul Tiras Sailor",
+                    "Travel to Kul Tiras Sailor."),
+            },
+        },
+        {
+            id = "travel-831-razor-hill",
+            kind = "travel",
+            priority = 940,
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "turnin-784-vanquish-the-betrayers",
+            kind = "turnin",
+            priority = 950,
+            text = "Turn in Vanquish the Betrayers to Gar'Thok in Razor Hill.",
+            dependsOn = { "objective-784-3-lieutenant-benedict", "objective-784-vanquish-the-betrayers" },
+            complete = QuestState(784, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "accept-825-from-the-wreckage",
+            kind = "accept",
+            priority = 960,
+            text = "Accept From The Wreckage.... from Gar'Thok in Razor Hill.",
+            complete = QuestState(825, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "turnin-830-the-admiral-s-orders",
+            kind = "turnin",
+            priority = 970,
+            text = "Turn in The Admiral's Orders to Gar'Thok in Razor Hill.",
+            dependsOn = { "objective-830-aged-envelope" },
+            complete = QuestState(830, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "accept-831-the-admiral-s-orders",
+            kind = "accept",
+            priority = 980,
+            text = "Accept The Admiral's Orders from Gar'Thok in Razor Hill.",
+            complete = QuestState(831, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "turnin-791-carry-your-weight",
+            kind = "turnin",
+            priority = 990,
+            text = "Turn in Carry Your Weight to Furl Scornbrow in Durotar.",
+            dependsOn = { "objective-791-carry-your-weight" },
+            complete = QuestState(791, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5061, 0.4395, "Continue toward Carry Your Weight",
+                    "Continue toward Carry Your Weight."),
+                Point(MAP.DUROTAR, 0.4985, 0.4043, "Furl Scornbrow",
+                    "Travel to Furl Scornbrow."),
+            },
+        },
+        {
+            id = "travel-837-razormane-grounds",
+            kind = "travel",
+            priority = 1000,
+            text = "Travel to Razormane Grounds.",
+            route = {
+                Point(MAP.DUROTAR, 0.4723, 0.4909, "Razormane Grounds",
+                    "Travel to Razormane Grounds."),
+            },
+        },
+        {
+            id = "objective-837-encroachment",
+            kind = "objective",
+            priority = 1010,
+            text = "Kill 4 Razormane Quilboar, 4 Razormane Scout, 4 Razormane Dustrunner and 4 Razormane Battleguard in the camps west of Razor hill in Razormane Grounds.",
+            dependsOn = { "accept-837-encroachment" },
+            complete = QuestState(837, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4760, 0.4897, "Continue toward Encroachment",
+                    "Continue toward Encroachment."),
+                Point(MAP.DUROTAR, 0.4380, 0.4055, "Razormane Quilboar",
+                    "Travel to Razormane Quilboar."),
+            },
+        },
+        {
+            id = "travel-825-scuttle-coast",
+            kind = "travel",
+            priority = 1020,
+            text = "Travel to Scuttle Coast.",
+            route = {
+                Point(MAP.DUROTAR, 0.6177, 0.4577, "Scuttle Coast",
+                    "Travel to Scuttle Coast."),
+            },
+        },
+        {
+            id = "objective-825-from-the-wreckage",
+            kind = "objective",
+            priority = 1030,
+            text = "Collect the 3 Gnomish Tools from Gnomish Toolbox east of Razor Hill, off the coast.",
+            dependsOn = { "accept-825-from-the-wreckage" },
+            complete = QuestState(825, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6210, 0.6060, "Continue toward From The Wreckage....",
+                    "Continue toward From The Wreckage....."),
+                Point(MAP.DUROTAR, 0.6320, 0.5800, "Continue toward From The Wreckage....",
+                    "Continue toward From The Wreckage....."),
+                Point(MAP.DUROTAR, 0.6140, 0.5610, "From The Wreckage....",
+                    "Travel to From The Wreckage....."),
+            },
+        },
+        {
+            id = "objective-818-a-solvent-spirit",
+            kind = "objective",
+            priority = 1040,
+            text = "Kill Makrura Clacker for 4 Intact Makrura Eye and Surf Crawler for 4 Crawler Mucus along the eastern shore.",
+            dependsOn = { "accept-818-a-solvent-spirit" },
+            complete = QuestState(818, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6100, 0.6900, "Makrura Clacker",
+                    "Travel to Makrura Clacker."),
+            },
+        },
+        {
+            id = "travel-razor-hill",
+            kind = "travel",
+            priority = 1050,
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "turnin-825-from-the-wreckage",
+            kind = "turnin",
+            priority = 1060,
+            text = "Turn in From The Wreckage.... to Gar'Thok in Razor Hill.",
+            dependsOn = { "objective-825-from-the-wreckage" },
+            complete = QuestState(825, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "turnin-837-encroachment",
+            kind = "turnin",
+            priority = 1070,
+            text = "Turn in Encroachment to Gar'Thok in Razor Hill.",
+            dependsOn = { "objective-837-encroachment" },
+            complete = QuestState(837, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "travel-786-kolkar-crag",
+            kind = "travel",
+            priority = 1080,
+            text = "Travel to Kolkar Crag.",
+            route = {
+                Point(MAP.DUROTAR, 0.5254, 0.4435, "Continue toward Kolkar Crag",
+                    "Continue toward Kolkar Crag."),
+                Point(MAP.DUROTAR, 0.4984, 0.8128, "Kolkar Crag",
+                    "Travel to Kolkar Crag."),
+            },
+        },
+        {
+            id = "objective-786-1-attack-plan-valley-of-trials",
+            kind = "objective",
+            priority = 1090,
+            text = "Destroy Attack Plan: Valley of Trials in Kolkar Crag.",
+            dependsOn = { "accept-786-thwarting-kolkar-aggression" },
+            complete = QuestObjective(786, 1),
+            route = {
+                Point(MAP.DUROTAR, 0.4984, 0.8128, "Kolkar Crag",
+                    "Travel to Kolkar Crag."),
+            },
+        },
+        {
+            id = "objective-786-2-attack-plan-sen-jin-village",
+            kind = "objective",
+            priority = 1100,
+            text = "Destroy Attack Plan: Sen'jin Village in Kolkar Crag.",
+            dependsOn = { "accept-786-thwarting-kolkar-aggression" },
+            complete = QuestObjective(786, 2),
+            route = {
+                Point(MAP.DUROTAR, 0.4766, 0.7743, "Kolkar Crag",
+                    "Travel to Kolkar Crag."),
+            },
+        },
+        {
+            id = "objective-786-3-attack-plan-orgrimmar",
+            kind = "objective",
+            priority = 1110,
+            text = "Destroy Attack Plan: Orgrimmar in Kolkar Crag.",
+            dependsOn = { "accept-786-thwarting-kolkar-aggression" },
+            complete = QuestObjective(786, 3),
+            route = {
+                Point(MAP.DUROTAR, 0.4627, 0.7895, "Kolkar Crag",
+                    "Travel to Kolkar Crag."),
+            },
+        },
+        {
+            id = "travel-sen-jin-village",
+            kind = "travel",
+            priority = 1120,
+            text = "Travel to Sen'jin Village.",
+            route = {
+                Point(MAP.DUROTAR, 0.5459, 0.7522, "Sen'jin Village",
+                    "Travel to Sen'jin Village."),
+            },
+        },
+        {
+            id = "turnin-786-thwarting-kolkar-aggression",
+            kind = "turnin",
+            priority = 1130,
+            text = "Turn in Thwarting Kolkar Aggression to Lar Prowltusk in Sen'jin Village.",
+            dependsOn = { "objective-786-1-attack-plan-valley-of-trials", "objective-786-2-attack-plan-sen-jin-village", "objective-786-3-attack-plan-orgrimmar" },
+            complete = QuestState(786, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5459, 0.7522, "Lar Prowltusk",
+                    "Travel to Lar Prowltusk."),
+            },
+        },
+        {
+            id = "turnin-818-a-solvent-spirit",
+            kind = "turnin",
+            priority = 1140,
+            text = "Turn in A Solvent Spirit to Master Vornal in Sen'jin Village.",
+            dependsOn = { "objective-818-a-solvent-spirit" },
+            complete = QuestState(818, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5595, 0.7446, "Master Vornal",
+                    "Travel to Master Vornal."),
+            },
+        },
+        {
+            id = "travel-826-echo-isles",
+            kind = "travel",
+            priority = 1150,
+            text = "Travel to Echo Isles.",
+            route = {
+                Point(MAP.DUROTAR, 0.6004, 0.8155, "Echo Isles",
+                    "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "objective-826-3-zalazane",
+            kind = "objective",
+            priority = 1160,
+            text = "Kill Zalazane and collect Zalazane's Head in Echo Isles.",
+            dependsOn = { "accept-826-zalazane" },
+            complete = QuestObjective(826, 3),
+            route = {
+                Point(MAP.DUROTAR, 0.6759, 0.8654, "Zalazane",
+                    "Travel to Zalazane."),
+            },
+        },
+        {
+            id = "objective-808-minshina-s-skull",
+            kind = "objective",
+            priority = 1170,
+            text = "Collect Minshina's Skull from the Imprisoned Darkspear, looks like a glowing ritual circle above Zalazane.",
+            dependsOn = { "accept-808-minshina-s-skull" },
+            complete = QuestState(808, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6743, 0.8763, "Minshina's Skull",
+                    "Travel to Minshina's Skull."),
+            },
+        },
+        {
+            id = "travel-815-echo-isles",
+            kind = "travel",
+            priority = 1180,
+            text = "Travel to Echo Isles.",
+            route = {
+                Point(MAP.DUROTAR, 0.6000, 0.9000, "Echo Isles",
+                    "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "objective-815-break-a-few-eggs",
+            kind = "objective",
+            priority = 1190,
+            text = "Collect 3 Taillasher Egg from the raptor nests near the base of the tree and bushes in Echo Isles.",
+            dependsOn = { "accept-815-break-a-few-eggs" },
+            complete = QuestState(815, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5960, 0.8260, "Echo Isles",
+                    "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "objective-817-practical-prey",
+            kind = "objective",
+            priority = 1200,
+            text = "Kill Durotar Tiger and collect 4 Durotar Tiger Fur in Echo Isles.",
+            dependsOn = { "accept-817-practical-prey" },
+            complete = QuestState(817, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6000, 0.9000, "Durotar Tiger",
+                    "Travel to Durotar Tiger."),
+            },
+        },
+        {
+            id = "objective-826-zalazane",
+            kind = "objective",
+            priority = 1210,
+            text = "Kill 8 Hexed Troll and 8 Voodoo Troll in Echo Isles.",
+            dependsOn = { "accept-826-zalazane" },
+            complete = QuestState(826, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6755, 0.8667, "Hexed Troll",
+                    "Travel to Hexed Troll."),
+            },
+        },
+        {
+            id = "travel-sen-jin-village-2",
+            kind = "travel",
+            priority = 1220,
+            text = "Travel to Sen'jin Village.",
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7395, "Sen'jin Village",
+                    "Travel to Sen'jin Village."),
+            },
+        },
+        {
+            id = "turnin-808-minshina-s-skull",
+            kind = "turnin",
+            priority = 1230,
+            text = "Turn in Minshina's Skull to Master Gadrin in Sen'jin Village.",
+            dependsOn = { "objective-808-minshina-s-skull" },
+            complete = QuestState(808, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "turnin-826-zalazane",
+            kind = "turnin",
+            priority = 1240,
+            text = "Turn in Zalazane to Master Gadrin in Sen'jin Village.",
+            dependsOn = { "objective-826-3-zalazane", "objective-826-zalazane" },
+            complete = QuestState(826, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5595, 0.7464, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "turnin-817-practical-prey",
+            kind = "turnin",
+            priority = 1250,
+            text = "Turn in Practical Prey to Vel'rin Fang in Sen'jin Village.",
+            dependsOn = { "objective-817-practical-prey" },
+            complete = QuestState(817, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5593, 0.7395, "Vel'rin Fang",
+                    "Travel to Vel'rin Fang."),
+            },
+        },
+        {
+            id = "travel-razor-hill-2",
+            kind = "travel",
+            priority = 1260,
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5118, 0.4246, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "turnin-815-break-a-few-eggs",
+            kind = "turnin",
+            priority = 1270,
+            text = "Turn in Break a Few Eggs to Cook Torka in Razor Hill.",
+            dependsOn = { "objective-815-break-a-few-eggs" },
+            complete = QuestState(815, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5118, 0.4246, "Cook Torka",
+                    "Travel to Cook Torka."),
+            },
+        },
+        {
+            id = "travel-816-tor-kren-farm",
+            kind = "travel",
+            priority = 1280,
+            text = "Travel to Tor'kren Farm.",
+            route = {
+                Point(MAP.DUROTAR, 0.4311, 0.3030, "Tor'kren Farm",
+                    "Travel to Tor'kren Farm."),
+            },
+        },
+        {
+            id = "accept-816-lost-but-not-forgotten",
+            kind = "accept",
+            priority = 1290,
+            text = "Accept Lost But Not Forgotten from Misha Tor'kren in Tor'kren Farm.",
+            complete = QuestState(816, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4311, 0.3030, "Misha Tor'kren",
+                    "Travel to Misha Tor'kren."),
+            },
+        },
+        {
+            id = "accept-834-winds-in-the-desert",
+            kind = "accept",
+            priority = 1300,
+            text = "Accept Winds in the Desert from Rezlak in Durotar.",
+            complete = QuestState(834, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4631, 0.2291, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "objective-834-winds-in-the-desert",
+            kind = "objective",
+            priority = 1310,
+            text = "Collect 5 Sack of Supplies on the ground inside the Razorwind Canyon.",
+            dependsOn = { "accept-834-winds-in-the-desert" },
+            complete = QuestState(834, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4967, 0.3220, "Continue toward Winds in the Desert",
+                    "Continue toward Winds in the Desert."),
+                Point(MAP.DUROTAR, 0.4946, 0.3365, "Continue toward Winds in the Desert",
+                    "Continue toward Winds in the Desert."),
+                Point(MAP.DUROTAR, 0.4795, 0.3307, "Continue toward Winds in the Desert",
+                    "Continue toward Winds in the Desert."),
+                Point(MAP.DUROTAR, 0.4906, 0.3316, "Continue toward Winds in the Desert",
+                    "Continue toward Winds in the Desert."),
+                Point(MAP.DUROTAR, 0.4854, 0.3209, "Razorwind Canyon",
+                    "Travel to Razorwind Canyon."),
+            },
+        },
+        {
+            id = "turnin-834-winds-in-the-desert",
+            kind = "turnin",
+            priority = 1320,
+            text = "Turn in Winds in the Desert to Rezlak in Durotar.",
+            dependsOn = { "objective-834-winds-in-the-desert" },
+            complete = QuestState(834, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4639, 0.2303, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "accept-835-securing-the-lines",
+            kind = "accept",
+            priority = 1330,
+            text = "Accept Securing the Lines from Rezlak in Durotar.",
+            complete = QuestState(835, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4639, 0.2303, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "accept-812-need-for-a-cure",
+            kind = "accept",
+            priority = 1340,
+            text = "Accept Need for a Cure from Rhinag in Durotar.",
+            complete = QuestState(812, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4157, 0.1864, "Rhinag",
+                    "Travel to Rhinag."),
+            },
+        },
+        {
+            id = "travel-6062-razor-hill",
+            kind = "travel",
+            priority = 1350,
+            conditions = {
+                all = {
+                    { class = 3 },
+                },
+            },
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5192, 0.4345, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "accept-6062-taming-the-beast",
+            kind = "accept",
+            priority = 1360,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Taming the Beast from Thotar in Razor Hill.",
+            complete = QuestState(6062, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5192, 0.4345, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "objective-6062-taming-the-beast",
+            kind = "objective",
+            priority = 1370,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Use the Taming Rod to tame a Dire Mottled Boar.",
+            dependsOn = { "accept-6062-taming-the-beast" },
+            complete = QuestState(6062, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5186, 0.4596, "Dire Mottled Boar",
+                    "Travel to Dire Mottled Boar."),
+            },
+        },
+        {
+            id = "turnin-6062-taming-the-beast",
+            kind = "turnin",
+            priority = 1380,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Thotar in Razor Hill.",
+            dependsOn = { "objective-6062-taming-the-beast" },
+            complete = QuestState(6062, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5186, 0.4349, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "accept-6083-taming-the-beast",
+            kind = "accept",
+            priority = 1390,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Taming the Beast from Thotar in Razor Hill.",
+            complete = QuestState(6083, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5186, 0.4349, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "objective-6083-taming-the-beast",
+            kind = "objective",
+            priority = 1400,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Use the Taming Rod to tame a Mature Surf Crawler in Echo Isles.",
+            dependsOn = { "accept-6083-taming-the-beast" },
+            complete = QuestState(6083, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6201, 0.7927, "Mature Surf Crawler",
+                    "Travel to Mature Surf Crawler."),
+            },
+        },
+        {
+            id = "turnin-6083-taming-the-beast",
+            kind = "turnin",
+            priority = 1410,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Thotar in Razor Hill.",
+            dependsOn = { "objective-6083-taming-the-beast" },
+            complete = QuestState(6083, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5186, 0.4349, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "accept-6082-taming-the-beast",
+            kind = "accept",
+            priority = 1420,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Taming the Beast from Thotar in Razor Hill.",
+            complete = QuestState(6082, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5186, 0.4349, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "objective-6082-taming-the-beast",
+            kind = "objective",
+            priority = 1430,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Use the Taming Rod to tame an Armored Scorpid.",
+            dependsOn = { "accept-6082-taming-the-beast" },
+            complete = QuestState(6082, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5480, 0.3694, "Armored Scorpid",
+                    "Travel to Armored Scorpid."),
+            },
+        },
+        {
+            id = "turnin-6082-taming-the-beast",
+            kind = "turnin",
+            priority = 1440,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Thotar in Razor Hill.",
+            dependsOn = { "objective-6082-taming-the-beast" },
+            complete = QuestState(6082, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5187, 0.4349, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "accept-6081-training-the-beast",
+            kind = "accept",
+            priority = 1450,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Training the Beast from Thotar in Razor Hill.",
+            complete = QuestState(6081, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5201, 0.4348, "Thotar",
+                    "Travel to Thotar."),
+            },
+        },
+        {
+            id = "accept-1506-gan-rul-s-summons",
+            kind = "accept",
+            priority = 1460,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Gan'rul's Summons from Ophek in Razor Hill.",
+            complete = QuestState(1506, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5421, 0.4104, "Ophek",
+                    "Travel to Ophek."),
+            },
+        },
+        {
+            id = "travel-5726-orgrimmar",
+            kind = "travel",
+            priority = 1470,
+            text = "Travel to Orgrimmar.",
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3300, 0.3700, "Orgrimmar",
+                    "Travel to Orgrimmar."),
+            },
+        },
+        {
+            id = "accept-1883-speak-with-un-thuwa",
+            kind = "accept",
+            priority = 1480,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Accept Speak with Un'thuwa from Uthel'nay in Valley of Spirits.",
+            complete = QuestState(1883, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3886, 0.8628, "Uthel'nay",
+                    "Travel to Uthel'nay."),
+            },
+        },
+        {
+            id = "turnin-831-the-admiral-s-orders",
+            kind = "turnin",
+            priority = 1490,
+            text = "Turn in The Admiral's Orders to Nazgrel in Grommash Hold.",
+            dependsOn = { "accept-831-the-admiral-s-orders" },
+            complete = QuestState(831, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3240, 0.3603, "Nazgrel",
+                    "Travel to Nazgrel."),
+            },
+        },
+        {
+            id = "accept-5726-hidden-enemies",
+            kind = "accept",
+            priority = 1500,
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            complete = QuestState(5726, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3200, 0.3786, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "accept-813-finding-the-antidote",
+            kind = "accept",
+            priority = 1510,
+            text = "Accept Finding the Antidote from Kor'ghan in Cleft of Shadow.",
+            complete = QuestState(813, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4700, 0.5356, "Kor'ghan",
+                    "Travel to Kor'ghan."),
+            },
+        },
+        {
+            id = "turnin-6081-training-the-beast",
+            kind = "turnin",
+            priority = 1520,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Training the Beast to Ormak Grimshot in Valley of Honor.",
+            dependsOn = { "accept-6081-training-the-beast" },
+            complete = QuestState(6081, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6607, 0.1859, "Ormak Grimshot",
+                    "Travel to Ormak Grimshot."),
+            },
+        },
+        {
+            id = "travel-1501-cleft-of-shadow",
+            kind = "travel",
+            priority = 1530,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Travel to Cleft of Shadow.",
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Cleft of Shadow",
+                    "Travel to Cleft of Shadow."),
+            },
+        },
+        {
+            id = "turnin-1506-gan-rul-s-summons",
+            kind = "turnin",
+            priority = 1540,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Gan'rul's Summons to Mordak Darkfist in Cleft of Shadow.",
+            dependsOn = { "accept-1506-gan-rul-s-summons" },
+            complete = QuestState(1506, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Mordak Darkfist",
+                    "Travel to Mordak Darkfist."),
+            },
+        },
+        {
+            id = "accept-1501-creature-of-the-void",
+            kind = "accept",
+            priority = 1550,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Creature of the Void from Mordak Darkfist in Cleft of Shadow.",
+            complete = QuestState(1501, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Mordak Darkfist",
+                    "Travel to Mordak Darkfist."),
+            },
+        },
+        {
+            id = "travel-813-southfury-river",
+            kind = "travel",
+            priority = 1560,
+            text = "Travel to Southfury River.",
+            route = {
+                Point(MAP.DUROTAR, 0.3742, 0.1768, "Southfury River",
+                    "Travel to Southfury River."),
+            },
+        },
+        {
+            id = "objective-813-finding-the-antidote",
+            kind = "objective",
+            priority = 1570,
+            text = "Kill Venomtail Scorpid and collect 4 Venomtail Poison Sac.",
+            dependsOn = { "accept-813-finding-the-antidote" },
+            complete = QuestState(813, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4100, 0.1700, "Venomtail Scorpid",
+                    "Travel to Venomtail Scorpid."),
+            },
+        },
+        {
+            id = "travel-cleft-of-shadow",
+            kind = "travel",
+            priority = 1580,
+            text = "Travel to Cleft of Shadow in Orgrimmar.",
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4710, 0.5317, "Cleft of Shadow",
+                    "Travel to Cleft of Shadow."),
+            },
+        },
+        {
+            id = "turnin-813-finding-the-antidote",
+            kind = "turnin",
+            priority = 1590,
+            text = "Turn in Finding the Antidote to Kor'ghan in Cleft of Shadow.",
+            dependsOn = { "objective-813-finding-the-antidote" },
+            complete = QuestState(813, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4710, 0.5317, "Kor'ghan",
+                    "Travel to Kor'ghan."),
+            },
+        },
+        {
+            id = "turnin-812-need-for-a-cure",
+            kind = "turnin",
+            priority = 1600,
+            text = "Turn in Need for a Cure to Rhinag in Durotar.",
+            dependsOn = { "accept-812-need-for-a-cure" },
+            complete = QuestState(812, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4157, 0.1864, "Rhinag",
+                    "Travel to Rhinag."),
+            },
+        },
+        {
+            id = "travel-sen-jin-village-3",
+            kind = "travel",
+            priority = 1610,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Travel to Sen'jin Village.",
+            route = {
+                Point(MAP.DUROTAR, 0.5623, 0.7510, "Sen'jin Village",
+                    "Travel to Sen'jin Village."),
+            },
+        },
+        {
+            id = "turnin-1883-speak-with-un-thuwa",
+            kind = "turnin",
+            priority = 1620,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Turn in Speak with Un'thuwa to Un'Thuwa in Sen'jin Village.",
+            dependsOn = { "accept-1883-speak-with-un-thuwa" },
+            complete = QuestState(1883, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5623, 0.7510, "Un'Thuwa",
+                    "Travel to Un'Thuwa."),
+            },
+        },
+        {
+            id = "accept-1884-ju-ju-heaps",
+            kind = "accept",
+            priority = 1630,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Accept Ju-Ju Heaps from Un'Thuwa in Sen'jin Village.",
+            complete = QuestState(1884, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5623, 0.7510, "Un'Thuwa",
+                    "Travel to Un'Thuwa."),
+            },
+        },
+        {
+            id = "objective-1884-ju-ju-heaps",
+            kind = "objective",
+            priority = 1640,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Destroy 4 Ju-Ju Heaps in Echo Isles.",
+            dependsOn = { "accept-1884-ju-ju-heaps" },
+            complete = QuestState(1884, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5947, 0.8208, "Continue toward Ju-Ju Heaps",
+                    "Continue toward Ju-Ju Heaps."),
+                Point(MAP.DUROTAR, 0.6360, 0.8416, "Continue toward Ju-Ju Heaps",
+                    "Continue toward Ju-Ju Heaps."),
+                Point(MAP.DUROTAR, 0.6709, 0.8776, "Continue toward Ju-Ju Heaps",
+                    "Continue toward Ju-Ju Heaps."),
+                Point(MAP.DUROTAR, 0.6712, 0.8649, "Continue toward Ju-Ju Heaps",
+                    "Continue toward Ju-Ju Heaps."),
+                Point(MAP.DUROTAR, 0.6853, 0.8430, "Continue toward Ju-Ju Heaps",
+                    "Continue toward Ju-Ju Heaps."),
+                Point(MAP.DUROTAR, 0.6739, 0.8259, "Echo Isles",
+                    "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "turnin-1884-ju-ju-heaps",
+            kind = "turnin",
+            priority = 1650,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Turn in Ju-Ju Heaps to Un'Thuwa in Sen'jin Village.",
+            dependsOn = { "objective-1884-ju-ju-heaps" },
+            complete = QuestState(1884, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5625, 0.7515, "Un'Thuwa",
+                    "Travel to Un'Thuwa."),
+            },
+        },
+        {
+            id = "travel-835-drygulch-ravine",
+            kind = "travel",
+            priority = 1660,
+            text = "Travel to Drygulch Ravine.",
+            route = {
+                Point(MAP.DUROTAR, 0.4970, 0.2867, "Continue toward Drygulch Ravine",
+                    "Continue toward Drygulch Ravine."),
+                Point(MAP.DUROTAR, 0.5371, 0.2779, "Drygulch Ravine",
+                    "Travel to Drygulch Ravine."),
+            },
+        },
+        {
+            id = "objective-835-securing-the-lines",
+            kind = "objective",
+            priority = 1670,
+            text = "Kill 12 Dustwind Savage and 8 Dustwind Storm Witch near Drygulch Ravine.",
+            dependsOn = { "accept-835-securing-the-lines" },
+            complete = QuestState(835, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5391, 0.2325, "Continue toward Securing the Lines",
+                    "Continue toward Securing the Lines."),
+                Point(MAP.DUROTAR, 0.5193, 0.2052, "Dustwind Savage",
+                    "Travel to Dustwind Savage."),
+            },
+        },
+        {
+            id = "turnin-835-securing-the-lines",
+            kind = "turnin",
+            priority = 1680,
+            text = "Turn in Securing the Lines to Rezlak in Durotar.",
+            dependsOn = { "objective-835-securing-the-lines" },
+            complete = QuestState(835, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4639, 0.2303, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "objective-816-lost-but-not-forgotten",
+            kind = "objective",
+            priority = 1690,
+            text = "Kill Dreadmaw Crocolisk until you find Kron's Amulet in Southfury River.",
+            dependsOn = { "accept-816-lost-but-not-forgotten" },
+            complete = QuestState(816, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.3500, 0.4800, "Dreadmaw Crocolisk",
+                    "Travel to Dreadmaw Crocolisk."),
+            },
+        },
+        {
+            id = "travel-806-thunder-ridge",
+            kind = "travel",
+            priority = 1700,
+            text = "Travel to Thunder Ridge.",
+            route = {
+                Point(MAP.DUROTAR, 0.4181, 0.2453, "Thunder Ridge",
+                    "Travel to Thunder Ridge."),
+            },
+        },
+        {
+            id = "objective-806-dark-storms",
+            kind = "objective",
+            priority = 1710,
+            text = "Kill Fizzle Darkclaw and collect Fizzle's Claw in Thunder Ridge.",
+            dependsOn = { "accept-806-dark-storms" },
+            complete = QuestState(806, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4181, 0.2453, "Continue toward Dark Storms",
+                    "Continue toward Dark Storms."),
+                Point(MAP.DUROTAR, 0.4208, 0.2677, "Fizzle Darkclaw",
+                    "Travel to Fizzle Darkclaw."),
+            },
+        },
+        {
+            id = "travel-tor-kren-farm",
+            kind = "travel",
+            priority = 1720,
+            text = "Travel to Tor'kren Farm.",
+            route = {
+                Point(MAP.DUROTAR, 0.4311, 0.3030, "Tor'kren Farm",
+                    "Travel to Tor'kren Farm."),
+            },
+        },
+        {
+            id = "turnin-816-lost-but-not-forgotten",
+            kind = "turnin",
+            priority = 1730,
+            text = "Turn in Lost But Not Forgotten to Misha Tor'kren in Tor'kren Farm.",
+            dependsOn = { "objective-816-lost-but-not-forgotten" },
+            complete = QuestState(816, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4311, 0.3030, "Misha Tor'kren",
+                    "Travel to Misha Tor'kren."),
+            },
+        },
+        {
+            id = "travel-828-razor-hill",
+            kind = "travel",
+            priority = 1740,
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5228, 0.4322, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "turnin-806-dark-storms",
+            kind = "turnin",
+            priority = 1750,
+            text = "Turn in Dark Storms to Orgnil Soulscar in Razor Hill.",
+            dependsOn = { "objective-806-dark-storms" },
+            complete = QuestState(806, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5228, 0.4322, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-828-margoz",
+            kind = "accept",
+            priority = 1760,
+            text = "Accept Margoz from Orgnil Soulscar in Razor Hill.",
+            complete = QuestState(828, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5228, 0.4322, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-2983-call-of-fire",
+            kind = "accept",
+            priority = 1770,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Fire from Swart in Razor Hill Barracks.",
+            complete = QuestState(2983, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5441, 0.4258, "Swart",
+                    "Travel to Swart."),
+            },
+        },
+        {
+            id = "turnin-828-margoz",
+            kind = "turnin",
+            priority = 1780,
+            text = "Turn in Margoz to Margoz in Durotar.",
+            dependsOn = { "accept-828-margoz" },
+            complete = QuestState(828, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5638, 0.2015, "Margoz",
+                    "Travel to Margoz."),
+            },
+        },
+        {
+            id = "accept-827-skull-rock",
+            kind = "accept",
+            priority = 1790,
+            text = "Accept Skull Rock from Margoz in Durotar.",
+            complete = QuestState(827, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5638, 0.2015, "Margoz",
+                    "Travel to Margoz."),
+            },
+        },
+        {
+            id = "travel-827-skull-rock",
+            kind = "travel",
+            priority = 1800,
+            text = "Travel to Skull Rock.",
+            route = {
+                Point(MAP.DUROTAR, 0.5510, 0.0991, "Skull Rock",
+                    "Travel to Skull Rock."),
+            },
+        },
+        {
+            id = "objective-1501-creature-of-the-void",
+            kind = "objective",
+            priority = 1810,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Follow the path around the right side of the cave and collect Tablet of Verga from the chest in Skull Rock.",
+            dependsOn = { "accept-1501-creature-of-the-void" },
+            complete = QuestState(1501, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5283, 0.0784, "Continue toward Creature of the Void",
+                    "Continue toward Creature of the Void."),
+                Point(MAP.DUROTAR, 0.5141, 0.0850, "Continue toward Creature of the Void",
+                    "Continue toward Creature of the Void."),
+                Point(MAP.DUROTAR, 0.5161, 0.0971, "Skull Rock",
+                    "Travel to Skull Rock."),
+            },
+        },
+        {
+            id = "objective-827-skull-rock",
+            kind = "objective",
+            priority = 1820,
+            text = "Kill Burning Blade Apprentice, Burning Blade Fanatic and collect 6 Searing Collar in Skull Rock.",
+            dependsOn = { "accept-827-skull-rock" },
+            complete = QuestState(827, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5406, 0.0886, "Burning Blade Apprentice",
+                    "Travel to Burning Blade Apprentice."),
+            },
+        },
+        {
+            id = "objective-5726-hidden-enemies",
+            kind = "objective",
+            priority = 1830,
+            text = "Kill Burning Blade Apprentice until you find Lieutenant's Insignia in Skull Rock.",
+            dependsOn = { "accept-5726-hidden-enemies" },
+            complete = QuestState(5726, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5406, 0.0886, "Burning Blade Apprentice",
+                    "Travel to Burning Blade Apprentice."),
+            },
+        },
+        {
+            id = "objective-832-gazz-uz",
+            kind = "objective",
+            priority = 1840,
+            text = "Kill Gazz'uz to collect Eye of Burning Shadow to start a quest. Use the Faintly Glowing Skull on him to help if you still have this. Skip this if you fail.",
+            complete = QuestState(832, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5260, 0.0880, "Continue toward Gazz'uz",
+                    "Continue toward Gazz'uz."),
+                Point(MAP.DUROTAR, 0.5150, 0.0970, "Gazz'uz",
+                    "Travel to Gazz'uz."),
+            },
+        },
+        {
+            id = "turnin-827-skull-rock",
+            kind = "turnin",
+            priority = 1850,
+            text = "Turn in Skull Rock to Margoz in Durotar.",
+            dependsOn = { "objective-827-skull-rock" },
+            complete = QuestState(827, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5635, 0.2005, "Margoz",
+                    "Travel to Margoz."),
+            },
+        },
+        {
+            id = "accept-829-neeru-fireblade",
+            kind = "accept",
+            priority = 1860,
+            text = "Accept Neeru Fireblade from Margoz in Durotar.",
+            complete = QuestState(829, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5635, 0.2005, "Margoz",
+                    "Travel to Margoz."),
+            },
+        },
+        {
+            id = "travel-grommash-hold",
+            kind = "travel",
+            priority = 1870,
+            text = "Travel to Grommash Hold.",
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Grommash Hold",
+                    "Travel to Grommash Hold."),
+            },
+        },
+        {
+            id = "turnin-5726-hidden-enemies",
+            kind = "turnin",
+            priority = 1880,
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "objective-5726-hidden-enemies" },
+            complete = QuestState(5726, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "accept-5727-hidden-enemies",
+            kind = "accept",
+            priority = 1890,
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            complete = QuestState(5727, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "turnin-829-neeru-fireblade",
+            kind = "turnin",
+            priority = 1900,
+            text = "Turn in Neeru Fireblade to Arnak Fireblade in Cleft of Shadow.",
+            dependsOn = { "accept-829-neeru-fireblade" },
+            complete = QuestState(829, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4956, 0.5046, "Arnak Fireblade",
+                    "Travel to Arnak Fireblade."),
+            },
+        },
+        {
+            id = "accept-809-ak-zeloth",
+            kind = "accept",
+            priority = 1910,
+            text = "Accept Ak'Zeloth from Arnak Fireblade in Cleft of Shadow.",
+            complete = QuestState(809, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4956, 0.5046, "Arnak Fireblade",
+                    "Travel to Arnak Fireblade."),
+            },
+        },
+        {
+            id = "turnin-1501-creature-of-the-void",
+            kind = "turnin",
+            priority = 1920,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Creature of the Void to Mordak Darkfist in Cleft of Shadow.",
+            dependsOn = { "objective-1501-creature-of-the-void" },
+            complete = QuestState(1501, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Mordak Darkfist",
+                    "Travel to Mordak Darkfist."),
+            },
+        },
+        {
+            id = "accept-1504-the-binding",
+            kind = "accept",
+            priority = 1930,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept The Binding from Mordak Darkfist in Cleft of Shadow.",
+            complete = QuestState(1504, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Mordak Darkfist",
+                    "Travel to Mordak Darkfist."),
+            },
+        },
+        {
+            id = "objective-1504-the-binding",
+            kind = "objective",
+            priority = 1940,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Using the Glyphs of Summoning summon on the purple summoning circle and subdue a Summoned Voidwalker in Cleft of Shadow.",
+            dependsOn = { "accept-1504-the-binding" },
+            complete = QuestState(1504, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4560, 0.0007, "Summoned Voidwalker",
+                    "Travel to Summoned Voidwalker."),
+            },
+        },
+        {
+            id = "turnin-1504-the-binding",
+            kind = "turnin",
+            priority = 1950,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in The Binding to Mordak Darkfist in Cleft of Shadow.",
+            dependsOn = { "objective-1504-the-binding" },
+            complete = QuestState(1504, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4826, 0.4541, "Mordak Darkfist",
+                    "Travel to Mordak Darkfist."),
+            },
+        },
+        {
+            id = "objective-5727-hidden-enemies",
+            kind = "objective",
+            priority = 1960,
+            text = "Talk to Arnak Fireblade in Cleft of Shadow.",
+            dependsOn = { "accept-5727-hidden-enemies" },
+            complete = QuestState(5727, "complete"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4956, 0.5046, "Arnak Fireblade",
+                    "Travel to Arnak Fireblade."),
+            },
+        },
+        {
+            id = "turnin-5727-hidden-enemies",
+            kind = "turnin",
+            priority = 1970,
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "objective-5727-hidden-enemies" },
+            complete = QuestState(5727, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "travel-840-razor-hill",
+            kind = "travel",
+            priority = 1980,
+            text = "Travel to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5089, 0.4358, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "accept-840-conscript-of-the-horde",
+            kind = "accept",
+            priority = 1990,
+            text = "Accept Conscript of the Horde from Takrin Pathseeker in Razor Hill.",
+            complete = QuestState(840, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5089, 0.4358, "Takrin Pathseeker",
+                    "Travel to Takrin Pathseeker."),
+            },
+        },
+    },
+})
