@@ -41,7 +41,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-elwynn-forest",
-    title = "1-12 Elwynn Forest (Era)",
+    title = "1-12 Elwynn Forest",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {

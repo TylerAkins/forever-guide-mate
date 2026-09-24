@@ -32,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
-    title = "1-12 Tirisfal Glades (Era)",
+    title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {

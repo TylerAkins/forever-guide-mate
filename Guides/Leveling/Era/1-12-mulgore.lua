@@ -35,7 +35,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-mulgore",
-    title = "1-12 Mulgore (Era)",
+    title = "1-12 Mulgore",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
