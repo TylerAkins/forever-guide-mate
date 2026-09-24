@@ -64,7 +64,8 @@ local function ObjectivesComplete(objectives)
         if type(objective) ~= "table" then return false end
         local counted = type(objective.numRequired) == "number" and objective.numRequired > 0
             and type(objective.numFulfilled) == "number" and objective.numFulfilled >= objective.numRequired
-        if objective.finished ~= true and not counted then return false end
+        local finished = objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0)
+        if not finished and not counted then return false end
     end
     return true
 end
