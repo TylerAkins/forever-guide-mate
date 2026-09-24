@@ -1,6 +1,6 @@
 # Adding a zone Loremaster guide
 
-Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), and Mulgore (`Guides/Leveling/Mulgore.lua`) are the working examples.
+Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), Mulgore (`Guides/Leveling/Mulgore.lua`), and Teldrassil (`Guides/Leveling/Teldrassil.lua`) are the working examples. Alliance zones follow the same rules.
 
 These guides are for finishing a zone's quests. They are not a leveling route. A character can follow one while leveling, but the order and the stops are there to complete the zone.
 
@@ -117,7 +117,7 @@ The audit only reads. It matches the giver by the name on the step's last pin, s
 
 - Set `category = "Loremaster Guides"`. Leave Zephras Isle in `Leveling Quest Guides`.
 - Register the file in `ForeverGuideMate.toc` and `tools/compile_addon.py`.
-- Add the file to `tests/test_contracts.py` and load it from `tests/lua/run.lua`.
+- Add the file to `tests/test_contracts.py` and load it from `tests/lua/run.lua` and `tests/lua/lint.lua`.
 - Assert a real chain, one split multi-objective quest, the elite wording, and that omitted and dungeon quests are absent.
 - Add a short changelog note.
 - Do not accept quests, turn in quests, or move the character from the addon.

@@ -37,3 +37,4 @@ Guides/Leveling/ZephrasIsle.lua
 Guides/Leveling/Durotar.lua
 Guides/Leveling/Mulgore.lua
 Guides/Leveling/TheBarrens.lua
+Guides/Leveling/Teldrassil.lua
