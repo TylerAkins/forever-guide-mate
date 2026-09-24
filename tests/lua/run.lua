@@ -29,6 +29,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("QuestAudit.lua")
 Load("QuestDialog.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
@@ -640,6 +641,74 @@ ns.db.autoQuest = false
 calls.complete = nil
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
 Equal(calls.complete, nil, "turning the option off leaves the quest dialog alone")
+
+-- The quest audit is how a missing class, race, or profession requirement in
+-- the guide data surfaces without anyone walking the route by hand.
+function TestQuestAudit()
+    local durotarGuide = ns.guides["leveling-durotar"]
+    local spinalAxe = ns.Engine:GetGoal(durotarGuide, "accept-96874-this-is-spinal-axe")
+    local printed = {}
+    ns.QuestAudit.Announce = function(_, message) printed[#printed + 1] = message end
+    local function Fresh()
+        ForeverGuideMateCharDB = { selectedGuide = "leveling-durotar" }
+        ns.InitializeStorage()
+        ns.Engine.currentGoal = spinalAxe
+        ns.Engine.state = { quests = {}, completedQuests = {} }
+        printed = {}
+    end
+    local function API(unitName, available)
+        return {
+            UnitName = function() return unitName end,
+            C_GossipInfo = {
+                GetAvailableQuests = function() return available end,
+                GetActiveQuests = function() return {} end,
+            },
+        }
+    end
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96875 } }))
+    Equal(ns.charDB.deferred[spinalAxe.id], true,
+        "a step the quest giver does not offer is skipped instead of holding the tracker")
+    Equal(ns.charDB.notOffered[spinalAxe.id].quest, 96874, "the refused step is written to the report")
+    Equal(ns.charDB.notOffered[spinalAxe.id].npc, "Ug'thok", "the report names the quest giver")
+    Equal(#printed, 1, "the player is told once that the step was skipped")
+    Equal(#ns.QuestAudit:Lines(), 1, "the report reads back one line")
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96874 } }))
+    Equal(ns.charDB.deferred[spinalAxe.id], nil, "a step the giver does offer is left alone")
+    Equal(next(ns.charDB.notOffered), nil, "an offered step is not reported")
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Kamari", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a different NPC is not treated as a refusal")
+
+    Fresh()
+    ns.Engine.state.quests[96874] = { complete = false, objectives = {} }
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a quest already in the log is not reported")
+
+    Fresh()
+    ns.Engine.state.completedQuests[96874] = true
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a quest already finished is not reported")
+
+    Fresh()
+    ns.QuestAudit:Inspect({ UnitName = function() return "Ug'thok" end })
+    Equal(next(ns.charDB.notOffered), nil, "a client without the gossip API reports nothing")
+
+    Fresh()
+    ns.Engine.currentGoal = ns.Engine:GetGoal(durotarGuide, "turnin-96874-this-is-spinal-axe")
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "only accept steps are audited")
+
+    Check(ns.QuestAudit:NameMatches("Neeru Fireblade in the Cleft of Shadow", "Neeru Fireblade"),
+        "a pin that says where the NPC stands still matches the unit name")
+    Check(not ns.QuestAudit:NameMatches("Ug'thok", "Ug"),
+        "a partial name does not match a quest giver")
+end
+TestQuestAudit()
 
 local tomtomCalls = {}
 local tomtom = {

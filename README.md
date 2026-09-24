@@ -27,6 +27,12 @@ lua5.1 tests/lua/run.lua
 lua5.1 tests/lua/ui.lua
 ```
 
+Lint the shipped guide data:
+
+```sh
+lua5.1 tests/lua/lint.lua
+```
+
 Compile the addon:
 
 ```sh

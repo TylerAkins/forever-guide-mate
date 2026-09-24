@@ -29,6 +29,7 @@ local CHARACTER_DEFAULTS = {
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
+    notOffered = {},
     history = {},
     completionLedger = {},
     taxiRoutes = {},
@@ -118,6 +119,9 @@ local function OnEvent(_, event, arg1)
             ns.MapPins:HookMap()
             ns.MapPins:Refresh()
         end
+    elseif event == "PLAYER_ENTERING_WORLD" and not ns.questAuditPrinted then
+        ns.questAuditPrinted = true
+        ns.PrintQuestAudit()
     elseif event == "SKILL_LINES_CHANGED" and ns.PlayerState then
         ns.PlayerState:InvalidateProfessions()
     elseif event == "TAXIMAP_OPENED" and ns.Taxi then
@@ -129,6 +133,7 @@ local function OnEvent(_, event, arg1)
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
     end
+    if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
     ns.ScheduleRefresh()
 end
@@ -152,4 +157,14 @@ if CreateFrame then
     eventFrame:RegisterEvent("QUEST_COMPLETE")
     eventFrame:SetScript("OnEvent", OnEvent)
     ns.eventFrame = eventFrame
+end
+
+function ns.PrintQuestAudit()
+    if not ns.QuestAudit then return end
+    local lines = ns.QuestAudit:Lines()
+    if #lines == 0 then return end
+    ns.QuestAudit:Announce("these guide steps were not offered to this character:")
+    for _, line in ipairs(lines) do
+        ns.QuestAudit:Announce("  " .. line)
+    end
 end
