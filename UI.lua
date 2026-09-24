@@ -347,7 +347,7 @@ local function EligibilityText(guide, state)
         if type(condition) ~= "table" then return end
         if condition.all then for _, child in ipairs(condition.all) do Collect(child) end end
         if condition.any then for _, child in ipairs(condition.any) do Collect(child) end end
-        if not isDungeon and type(condition.faction) == "string" then
+        if not isDungeon and (condition.faction == "Alliance" or condition.faction == "Horde") then
             requirements[#requirements + 1] = condition.faction
         end
         if condition.level then
@@ -365,12 +365,26 @@ local function EligibilityText(guide, state)
     if isDungeon then
         local factionLabel = DungeonFactionLabel(guide)
         if factionLabel then requirements[#requirements + 1] = factionLabel end
+    else
+        local alliance, horde, others = false, false, {}
+        for _, requirement in ipairs(requirements) do
+            if requirement == "Alliance" then alliance = true
+            elseif requirement == "Horde" then horde = true
+            else others[#others + 1] = requirement end
+        end
+        requirements = others
+        if alliance and horde then
+            table.insert(requirements, 1, "Alliance and Horde")
+        elseif alliance then
+            table.insert(requirements, 1, "Alliance")
+        elseif horde then
+            table.insert(requirements, 1, "Horde")
+        end
     end
     for _, levelText in ipairs(levelRequirements) do requirements[#requirements + 1] = levelText end
     local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
     local text
-    if eligible == false and isDungeon then text = "Ineligible" .. suffix
-    elseif eligible == false then text = (reason or "Not eligible") .. suffix
+    if eligible == false then text = "Ineligible" .. suffix
     elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
     else text = "Eligible" .. suffix end
     local label = GuideTypeLabel(guide)
@@ -556,6 +570,7 @@ end
 
 function UI:RefreshGuideBrowser()
     if not self.browser then return end
+    ns:FinalizeGuides()
     local query = self.browser.search:GetText()
     query = type(query) == "string" and string.lower(query) or ""
     local categories, categorySeen = {}, {}
@@ -574,10 +589,27 @@ function UI:RefreshGuideBrowser()
     end
     for index = #categories + 2, #self.browserCategoryButtons do self.browserCategoryButtons[index]:Hide() end
 
+    local function RouteSearchText(guide, state)
+        local parts = { guide.title or "", guide.category or "" }
+        if guide.segments then
+            for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
+                parts[#parts + 1] = segment.title
+            end
+        end
+        return string.lower(table.concat(parts, " "))
+    end
+    local function MatchingSegment(guide, state)
+        if query == "" or not guide.segments then return nil end
+        for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
+            if string.find(string.lower(segment.title), query, 1, true) then
+                return segment
+            end
+        end
+    end
     local matches = {}
     for _, guideID in ipairs(ns.guideOrder) do
         local guide = ns.guides[guideID]
-        local haystack = string.lower(guide.title .. " " .. guide.category)
+        local haystack = RouteSearchText(guide, ns.Engine.state or {})
         local ineligible = ns.EvaluateCondition(guide.conditions, ns.Engine.state or {}) == false
         if (self.browserCategory == "All Guides" or guide.category == self.browserCategory)
             and (query == "" or string.find(haystack, query, 1, true))
@@ -595,15 +627,30 @@ function UI:RefreshGuideBrowser()
             visible = visible + 1
             local guide = matches[matchIndex]
             local row = self.browserRows[visible] or self:CreateBrowserRow(visible)
-            local progress = ns.Engine:GetGuideProgress(guide, ns.Engine.state or {})
-            row.title:SetText(guide.title)
+            local browserState = ns.Engine.state or {}
+            local matched = MatchingSegment(guide, browserState)
+            local segment = matched
+            if not segment and guide.segments then
+                segment = ns.Engine:ActiveSegment(guide, browserState)
+            end
+            local progress = ns.Engine:GetGuideProgress(guide, browserState, segment)
+            local title = (segment and segment.title) or guide.title
+            row.title:SetText(title)
             row.eligibility:SetText(EligibilityText(guide, ns.Engine.state))
             row.counts:SetText(("%d/%d  %d%%"):format(progress.completed, progress.eligible, progress.percentage))
             row.progress:SetValue(progress.percentage)
             row.open:SetText(ns.charDB.selectedGuide == guide.id and "Continue" or "Open")
             local selectedGuideID = guide.id
+            local chosenSegment = matched
             row.open:SetScript("OnClick", function()
                 ns.Engine:SelectGuide(selectedGuideID)
+                if chosenSegment then
+                    if chosenSegment.fork then
+                        ns.charDB.eraSegment = chosenSegment.id
+                    end
+                    ns.charDB.eraFloor = chosenSegment.id
+                    ns.Engine:Refresh(ns.Engine.state)
+                end
                 UI:OpenTracker()
                 UI.browser:Hide()
             end)
@@ -679,7 +726,11 @@ function UI:Update(engine)
     local guide = engine.currentGuide
     local progress = guide and engine:GetGuideProgress(guide, engine.state) or
         { completed = 0, eligible = 0, percentage = 0 }
-    self.tracker.title:SetText(guide and guide.title or "No guide selected")
+    local title = guide and guide.title or "No guide selected"
+    if engine.currentSegment and engine.currentSegment.title then
+        title = engine.currentSegment.title
+    end
+    self.tracker.title:SetText(title)
     self.tracker.percent:SetText(progress.percentage .. "%")
     self.tracker.progress:SetValue(progress.percentage)
     if engine.currentGoal then
@@ -700,7 +751,7 @@ function UI:Update(engine)
         self.tracker.typeIcon:Hide()
         local instruction = engine.status or "No active step."
         local guideEligible = guide and ns.EvaluateCondition(guide.conditions, engine.state or {})
-        if guideEligible == false and GuideTypeLabel(guide) == "Dungeon" then
+        if guideEligible == false then
             instruction = "Ineligible"
         end
         self.tracker.instruction:SetText(instruction)
