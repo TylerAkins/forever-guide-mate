@@ -817,7 +817,7 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "The Disruption Ends: Kreenig Snarlsnout's Tusk. This is an elite. Bring a group.",
+            text = "The Disruption Ends: Kreenig Snarlsnout's Tusk.",
             dependsOn = { "accept-872-the-disruption-ends" },
             complete = QuestObjective(872, 3, "Kreenig Snarlsnout's Tusk"),
             route = {
@@ -1173,7 +1173,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Accept Kolkar Leaders from Regthar Deathgate. This is an elite. Bring a group.",
+            text = "Accept Kolkar Leaders from Regthar Deathgate.",
             complete = QuestState(850, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.454, 0.284, "Regthar Deathgate",
@@ -1190,7 +1190,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Kolkar Leaders: Kodobane's Head. This is an elite. Bring a group.",
+            text = "Kolkar Leaders: Kodobane's Head.",
             dependsOn = { "accept-850-kolkar-leaders" },
             complete = QuestObjective(850, 1, "Kodobane's Head"),
             route = {
@@ -1528,7 +1528,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "Accept Harpy Lieutenants from Darsok Swiftdagger. This is an elite. Bring a group.",
+            text = "Accept Harpy Lieutenants from Darsok Swiftdagger.",
             dependsOn = { "turnin-867-harpy-raiders" },
             complete = QuestState(875, "activeOrCompleted"),
             route = {
@@ -1546,7 +1546,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "Harpy Lieutenants: Harpy Lieutenant Ring. This is an elite. Bring a group.",
+            text = "Harpy Lieutenants: Harpy Lieutenant Ring.",
             dependsOn = { "accept-875-harpy-lieutenants" },
             complete = QuestObjective(875, 1, "Harpy Lieutenant Ring"),
             route = {
@@ -1759,7 +1759,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 1000,
             conditions = { level = { min = 11 } },
-            text = "Accept WANTED: Baron Longshore from the wanted poster. This is an elite. Bring a group.",
+            text = "Accept WANTED: Baron Longshore from the wanted poster.",
             complete = QuestState(895, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.626, 0.375, "WANTED",
@@ -1771,7 +1771,7 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1010,
             conditions = { level = { min = 11 } },
-            text = "WANTED: Baron Longshore: Baron Longshore's Head. This is an elite. Bring a group.",
+            text = "WANTED: Baron Longshore: Baron Longshore's Head.",
             dependsOn = { "accept-895-wanted-baron-longshore" },
             complete = QuestObjective(895, 1, "Baron Longshore's Head"),
             route = {
@@ -2635,7 +2635,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Echeyakee from Sergra Darkthorn. This is an elite. Bring a group.",
+            text = "Accept Echeyakee from Sergra Darkthorn.",
             dependsOn = { "turnin-903-prowlers-of-the-barrens" },
             complete = QuestState(881, "activeOrCompleted"),
             route = {
@@ -2653,7 +2653,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Echeyakee: Echeyakee's Hide. This is an elite. Bring a group.",
+            text = "Echeyakee: Echeyakee's Hide.",
             dependsOn = { "accept-881-echeyakee" },
             complete = QuestObjective(881, 1, "Echeyakee's Hide"),
             route = {
@@ -2797,7 +2797,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "Accept Serena Bloodfeather from Darsok Swiftdagger. This is an elite. Bring a group.",
+            text = "Accept Serena Bloodfeather from Darsok Swiftdagger.",
             dependsOn = { "turnin-875-harpy-lieutenants" },
             complete = QuestState(876, "activeOrCompleted"),
             route = {
@@ -2815,7 +2815,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "Serena Bloodfeather: Serena's Head. This is an elite. Bring a group.",
+            text = "Serena Bloodfeather: Serena's Head.",
             dependsOn = { "accept-876-serena-bloodfeather" },
             complete = QuestObjective(876, 1, "Serena's Head"),
             route = {
@@ -2851,7 +2851,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Accept Verog the Dervish from Regthar Deathgate. This is an elite. Bring a group.",
+            text = "Accept Verog the Dervish from Regthar Deathgate.",
             complete = QuestState(851, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.454, 0.284, "Regthar Deathgate",
@@ -2868,7 +2868,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Verog the Dervish: Verog's Head. This is an elite. Bring a group.",
+            text = "Verog the Dervish: Verog's Head.",
             dependsOn = { "accept-851-verog-the-dervish" },
             complete = QuestObjective(851, 1, "Verog's Head"),
             route = {
@@ -2904,7 +2904,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Accept Hezrul Bloodmark from Regthar Deathgate. This is an elite. Bring a group.",
+            text = "Accept Hezrul Bloodmark from Regthar Deathgate.",
             dependsOn = { "turnin-851-verog-the-dervish" },
             complete = QuestState(852, "activeOrCompleted"),
             route = {
@@ -2922,7 +2922,7 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Hezrul Bloodmark: Hezrul's Head. This is an elite. Bring a group.",
+            text = "Hezrul Bloodmark: Hezrul's Head.",
             dependsOn = { "accept-852-hezrul-bloodmark" },
             complete = QuestObjective(852, 1, "Hezrul's Head"),
             route = {
@@ -3367,7 +3367,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Ishamuhale from Jorn Skyseer. This is an elite. Bring a group.",
+            text = "Accept Ishamuhale from Jorn Skyseer.",
             dependsOn = { "turnin-3261-jorn-skyseer" },
             complete = QuestState(882, "activeOrCompleted"),
             route = {
@@ -3385,7 +3385,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Ishamuhale: Ishamuhale's Fang. This is an elite. Bring a group.",
+            text = "Ishamuhale: Ishamuhale's Fang.",
             dependsOn = { "accept-882-ishamuhale" },
             complete = QuestObjective(882, 1, "Ishamuhale's Fang"),
             route = {
@@ -3403,7 +3403,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Ishamuhale: Fresh Zhevra Carcass. This is an elite. Bring a group.",
+            text = "Ishamuhale: Fresh Zhevra Carcass.",
             dependsOn = { "accept-882-ishamuhale" },
             complete = QuestObjective(882, 2, "Fresh Zhevra Carcass"),
             route = {
@@ -3457,7 +3457,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Enraged Thunder Lizards: Thunder Lizard Blood. Lakota'mani or Owatanka can drop the item that starts their quest. Use it. Both are elites. Bring a group.",
+            text = "Enraged Thunder Lizards: Thunder Lizard Blood. Lakota'mani or Owatanka can drop the item that starts their quest. Use it.",
             dependsOn = { "accept-907-enraged-thunder-lizards" },
             complete = QuestObjective(907, 1, "Thunder Lizard Blood"),
             route = {
@@ -3511,7 +3511,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Cry of the Thunderhawk: Thunderhawk Wings. Washte Pawne can drop Washte Pawne's Feather. Use it to start the quest. This is an elite. Bring a group.",
+            text = "Cry of the Thunderhawk: Thunderhawk Wings. Washte Pawne can drop Washte Pawne's Feather. Use it to start the quest.",
             dependsOn = { "accept-913-cry-of-the-thunderhawk" },
             complete = QuestObjective(913, 1, "Thunderhawk Wings"),
             route = {
@@ -3583,7 +3583,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Isha Awak from Mahren Skyseer. This is an elite. Bring a group.",
+            text = "Accept Isha Awak from Mahren Skyseer.",
             dependsOn = { "turnin-874-mahren-skyseer" },
             complete = QuestState(873, "activeOrCompleted"),
             route = {
@@ -3601,7 +3601,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Isha Awak: Heart of Isha Awak. This is an elite. Bring a group.",
+            text = "Isha Awak: Heart of Isha Awak.",
             dependsOn = { "accept-873-isha-awak" },
             complete = QuestObjective(873, 1, "Heart of Isha Awak"),
             route = {
@@ -3638,7 +3638,7 @@ ns:RegisterGuide({
                     { quest = { id = 883, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in Lakota'mani to Jorn Skyseer. This is an elite. Bring a group.",
+            text = "Turn in Lakota'mani to Jorn Skyseer.",
             complete = QuestState(883, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
@@ -3656,7 +3656,7 @@ ns:RegisterGuide({
                     { quest = { id = 884, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in Owatanka to Jorn Skyseer. This is an elite. Bring a group.",
+            text = "Turn in Owatanka to Jorn Skyseer.",
             complete = QuestState(884, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
@@ -3674,7 +3674,7 @@ ns:RegisterGuide({
                     { quest = { id = 885, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in Washte Pawne to Jorn Skyseer. This is an elite. Bring a group.",
+            text = "Turn in Washte Pawne to Jorn Skyseer.",
             complete = QuestState(885, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
@@ -3692,7 +3692,7 @@ ns:RegisterGuide({
                     { quest = { id = 897, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in The Harvester to Jorn Skyseer. This is an elite. Bring a group.",
+            text = "Turn in The Harvester to Jorn Skyseer.",
             complete = QuestState(897, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
@@ -4135,7 +4135,7 @@ ns:RegisterGuide({
                     { level = { min = 18 } },
                 },
             },
-            text = "Wrongly Blamed, Justly Corrected: Encroaching Soldier slain. This is an elite. Bring a group.",
+            text = "Wrongly Blamed, Justly Corrected: Encroaching Soldier slain.",
             dependsOn = { "accept-97250-wrongly-blamed-justly-corrected" },
             complete = QuestObjective(97250, 1, "Encroaching Soldier slain"),
             route = {
@@ -4535,7 +4535,7 @@ ns:RegisterGuide({
                     { level = { min = 17 } },
                 },
             },
-            text = "Egg Hunt: Silithid Egg. The Harvester can drop the Harvester's Head. Use it to start the quest. This is an elite. Bring a group.",
+            text = "Egg Hunt: Silithid Egg. The Harvester can drop the Harvester's Head. Use it to start the quest. The Harvester is a rare.",
             dependsOn = { "accept-868-egg-hunt" },
             complete = QuestObjective(868, 1, "Silithid Egg"),
             route = {

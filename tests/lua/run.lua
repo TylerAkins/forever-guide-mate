@@ -644,6 +644,75 @@ Equal(calls.complete, nil, "turning the option off leaves the quest dialog alone
 
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
+function TestEliteLabels()
+    local plain = {
+        "objective-872-the-disruption-ends-3",
+        "accept-850-kolkar-leaders",
+        "objective-850-kolkar-leaders-1",
+        "accept-875-harpy-lieutenants",
+        "objective-875-harpy-lieutenants-1",
+        "accept-895-wanted-baron-longshore",
+        "objective-895-wanted-baron-longshore-1",
+        "accept-881-echeyakee",
+        "objective-881-echeyakee-1",
+        "accept-876-serena-bloodfeather",
+        "objective-876-serena-bloodfeather-1",
+        "accept-851-verog-the-dervish",
+        "objective-851-verog-the-dervish-1",
+        "accept-852-hezrul-bloodmark",
+        "objective-852-hezrul-bloodmark-1",
+        "accept-882-ishamuhale",
+        "objective-882-ishamuhale-1",
+        "objective-882-ishamuhale-2",
+        "accept-873-isha-awak",
+        "objective-873-isha-awak-1",
+        "turnin-883-lakotamani",
+        "turnin-884-owatanka",
+        "turnin-885-washte-pawne",
+        "turnin-897-the-harvester",
+        "objective-907-enraged-thunder-lizards-1",
+        "objective-913-cry-of-the-thunderhawk-1",
+        "objective-97250-wrongly-blamed-justly-corrected-1",
+    }
+    local elites = {
+        "accept-97003-cholaruk-the-ravener",
+        "objective-97003-cholaruk-the-ravener-1",
+        "accept-97005-cholaruk-the-ravener",
+        "objective-97005-cholaruk-the-ravener-1",
+        "accept-92706-wanted-bruuz",
+        "objective-92706-wanted-bruuz-1",
+        "accept-4021-counterattack",
+        "objective-4021-counterattack-1",
+        "accept-97250-wrongly-blamed-justly-corrected",
+        "objective-97250-wrongly-blamed-justly-corrected-2",
+        "accept-3514-horde-presence",
+        "objective-3514-horde-presence-1",
+    }
+    local barrensGuide = ns.guides["leveling-the-barrens"]
+    for _, id in ipairs(plain) do
+        local goal = ns.Engine:GetGoal(barrensGuide, id)
+        Check(goal ~= nil and string.find(goal.text, "This is an elite", 1, true) == nil,
+            id .. " does not call a normal target an elite")
+    end
+    for _, id in ipairs(elites) do
+        local goal = ns.Engine:GetGoal(barrensGuide, id)
+        Check(goal ~= nil and string.find(goal.text, "This is an elite. Bring a group.", 1, true) ~= nil,
+            id .. " still warns that the target is elite")
+    end
+    local egg = ns.Engine:GetGoal(barrensGuide, "objective-868-egg-hunt-1")
+    Check(egg and string.find(egg.text, "The Harvester is a rare", 1, true) ~= nil,
+        "Egg Hunt calls the Harvester a rare")
+    Check(egg and string.find(egg.text, "This is an elite", 1, true) == nil,
+        "Egg Hunt does not call the Harvester an elite")
+    local aggorGoal = ns.Engine:GetGoal(ns.guides["leveling-durotar"], "objective-99052-threat-from-below-1")
+    Check(aggorGoal and string.find(aggorGoal.text, "This is an elite. Bring a group.", 1, true) ~= nil,
+        "Aggor the Young stays an elite warning")
+    local shredder = ns.Engine:GetGoal(ns.guides["leveling-mulgore"], "objective-98427-ceasing-operations-1")
+    Check(shredder and string.find(shredder.text, "This is an elite. Bring a group.", 1, true) ~= nil,
+        "the Venture Co. shredder stays an elite warning")
+end
+TestEliteLabels()
+
 function TestQuestAudit()
     local durotarGuide = ns.guides["leveling-durotar"]
     local spinalAxe = ns.Engine:GetGoal(durotarGuide, "accept-96874-this-is-spinal-axe")
@@ -1241,8 +1310,8 @@ for _, goal in ipairs(barrens.goals) do
 end
 Equal(valveGoals, 3, "Samophlange valves are separate steps")
 local disruption = ns.Engine:GetGoal(barrens, "objective-872-the-disruption-ends-3")
-Check(disruption and string.find(disruption.text, "Bring a group", 1, true) ~= nil,
-    "Kreenig tells the player to bring a group")
+Check(disruption and string.find(disruption.text, "This is an elite", 1, true) == nil,
+    "Kreenig Snarlsnout is not an elite on Forever")
 local zhevra = ns.Engine:GetGoal(barrens, "accept-845-the-zhevra")
 Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
     "The Zhevra waits until Plainstrider Menace is turned in")
