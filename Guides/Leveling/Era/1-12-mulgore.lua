@@ -1,7 +1,10 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Mulgore, levels 1-12.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Mulgore and Thunder Bluff lists are woven into this route.
+-- Left out: A Donation of Wool is a level 60 cloth turn-in. Never Coming Back and A Void Path are level 22.
+-- Stalk With The Earthmother was already a class trial and is not a new quest.
+-- Thunderhorn's Report stays on tauren, with the well chain. Fizsprocket's Notes appear only if the pages drop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -330,6 +333,29 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4253, 0.9208, "Seer Graytongue",
                     "Travel to Seer Graytongue."),
+            },
+        },
+        {
+            id = "accept-95805-grace-of-anshe-and-musha",
+            kind = "accept",
+            priority = 211,
+            text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
+            complete = QuestState(95805, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4260, 0.9200, "Seer Graytongue",
+                    "Travel to Seer Graytongue."),
+            },
+        },
+        {
+            id = "objective-95805-grace-of-anshe-and-musha",
+            kind = "objective",
+            priority = 212,
+            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. Wowhead has no shrine pin.",
+            dependsOn = { "accept-95805-grace-of-anshe-and-musha" },
+            complete = QuestState(95805, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.5000, 0.8100, "Southeastern hills",
+                    "Travel to Southeastern hills."),
             },
         },
         {
@@ -898,6 +924,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98430-the-longwalkers",
+            kind = "accept",
+            priority = 641,
+            text = "Accept The Longwalkers from Perith Stormhoof inside Palemane Rock.",
+            complete = QuestState(98430, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.3300, 0.6580, "Perith Stormhoof",
+                    "Travel to Perith Stormhoof."),
+            },
+        },
+        {
+            id = "objective-98430-the-longwalkers",
+            kind = "objective",
+            priority = 642,
+            text = "Escort Perith Stormhoof out of Palemane Rock.",
+            dependsOn = { "accept-98430-the-longwalkers" },
+            complete = QuestState(98430, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.3300, 0.6580, "Perith Stormhoof",
+                    "Travel to Perith Stormhoof."),
+            },
+        },
+        {
             id = "objective-745-sharing-the-land",
             kind = "objective",
             priority = 650,
@@ -1400,6 +1449,52 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99079-longwalker-malah",
+            kind = "accept",
+            priority = 1041,
+            text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
+            complete = QuestState(99079, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4720, 0.5960, "Brave Wildrunner",
+                    "Travel to Brave Wildrunner."),
+            },
+        },
+        {
+            id = "accept-99108-sparring-match",
+            kind = "accept",
+            priority = 1042,
+            text = "Accept Sparring Match from Krang Stonehoof in Bloodhoof Village.",
+            complete = QuestState(99108, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4940, 0.6040, "Krang Stonehoof",
+                    "Travel to Krang Stonehoof."),
+            },
+        },
+        {
+            id = "objective-99108-sparring-match",
+            kind = "objective",
+            priority = 1043,
+            text = "Win 3 duels, or defeat Novice Warriors, for Krang Stonehoof.",
+            dependsOn = { "accept-99108-sparring-match" },
+            complete = QuestState(99108, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.4940, 0.6040, "Krang Stonehoof",
+                    "Travel to Krang Stonehoof."),
+            },
+        },
+        {
+            id = "turnin-99108-sparring-match",
+            kind = "turnin",
+            priority = 1044,
+            text = "Turn in Sparring Match to Krang Stonehoof in Bloodhoof Village.",
+            dependsOn = { "objective-99108-sparring-match" },
+            complete = QuestState(99108, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4940, 0.6040, "Krang Stonehoof",
+                    "Travel to Krang Stonehoof."),
+            },
+        },
+        {
             id = "turnin-756-thunderhorn-totem",
             kind = "turnin",
             priority = 1050,
@@ -1479,6 +1574,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96130-chakuyak",
+            kind = "accept",
+            priority = 1091,
+            text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
+            complete = QuestState(96130, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
+                    "Travel to Yaw Sharpmane."),
+            },
+        },
+        {
+            id = "objective-96130-chakuyak",
+            kind = "objective",
+            priority = 1092,
+            text = "Kill Chakuyak.",
+            dependsOn = { "accept-96130-chakuyak" },
+            complete = QuestState(96130, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.3940, 0.6520, "Chakuyak",
+                    "Travel to Chakuyak."),
+            },
+        },
+        {
             id = "objective-6061-taming-the-beast",
             kind = "objective",
             priority = 1100,
@@ -1511,6 +1629,18 @@ ns:RegisterGuide({
             complete = QuestState(6061, "completed"),
             route = {
                 Point(MAP.MULGORE, 0.4772, 0.5564, "Yaw Sharpmane",
+                    "Travel to Yaw Sharpmane."),
+            },
+        },
+        {
+            id = "turnin-96130-chakuyak",
+            kind = "turnin",
+            priority = 1101,
+            text = "Turn in Chakuyak to Yaw Sharpmane in Bloodhoof Village.",
+            dependsOn = { "objective-96130-chakuyak" },
+            complete = QuestState(96130, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
                     "Travel to Yaw Sharpmane."),
             },
         },
@@ -1739,6 +1869,53 @@ ns:RegisterGuide({
                     "Continue toward Journey into Thunder Bluff."),
                 Point(MAP.THUNDER_BLUFF, 0.5991, 0.5178, "Cairne Bloodhoof",
                     "Travel to Cairne Bloodhoof."),
+            },
+        },
+        {
+            id = "turnin-98430-the-longwalkers",
+            kind = "turnin",
+            priority = 1251,
+            text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
+            dependsOn = { "objective-98430-the-longwalkers" },
+            complete = QuestState(98430, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.5980, 0.5160, "Cairne Bloodhoof",
+                    "Travel to Cairne Bloodhoof."),
+            },
+        },
+        {
+            id = "accept-97485-traditions-of-the-bluff",
+            kind = "accept",
+            priority = 1252,
+            text = "Accept Traditions of the Bluff from Eylah Sunhorn in Thunder Bluff.",
+            complete = QuestState(97485, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3820, 0.5620, "Eylah Sunhorn",
+                    "Travel to Eylah Sunhorn."),
+            },
+        },
+        {
+            id = "objective-97485-traditions-of-the-bluff",
+            kind = "objective",
+            priority = 1253,
+            text = "Buy a Bundle of Herbs from Nida, a Bundle of Cedar Twigs from Nata, Sinew Thread from Mahu, and Ceremonial Flint and Tinder from Naal. Combine them for Eylah Sunhorn.",
+            dependsOn = { "accept-97485-traditions-of-the-bluff" },
+            complete = QuestState(97485, "complete"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3820, 0.5620, "Eylah Sunhorn",
+                    "Travel to Eylah Sunhorn."),
+            },
+        },
+        {
+            id = "turnin-97485-traditions-of-the-bluff",
+            kind = "turnin",
+            priority = 1254,
+            text = "Turn in Traditions of the Bluff to Eylah Sunhorn in Thunder Bluff.",
+            dependsOn = { "objective-97485-traditions-of-the-bluff" },
+            complete = QuestState(97485, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3820, 0.5620, "Eylah Sunhorn",
+                    "Travel to Eylah Sunhorn."),
             },
         },
         {
@@ -1972,7 +2149,7 @@ ns:RegisterGuide({
             id = "objective-765-supervisor-fizsprocket",
             kind = "objective",
             priority = 1410,
-            text = "Kill Supervisor Fizsprocket inside The Venture Co. Mine.",
+            text = "Kill Supervisor Fizsprocket inside The Venture Co. Mine. If he drops Fizsprocket's Notes, use them.",
             dependsOn = { "accept-765-supervisor-fizsprocket" },
             complete = QuestState(765, "complete"),
             route = {
@@ -1980,6 +2157,39 @@ ns:RegisterGuide({
                     "Continue toward Supervisor Fizsprocket."),
                 Point(MAP.MULGORE, 0.6437, 0.4423, "Supervisor Fizsprocket",
                     "Travel to Supervisor Fizsprocket."),
+            },
+        },
+        {
+            id = "accept-98424-fizsprockets-notes",
+            kind = "accept",
+            priority = 1431,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Use Fizsprocket's Notes if Supervisor Fizsprocket drops them, then search the Venture Co. Mine for the operation pages.",
+            complete = QuestState(98424, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
+                    "Travel to Venture Co. Mine."),
+            },
+        },
+        {
+            id = "objective-98424-fizsprockets-notes",
+            kind = "objective",
+            priority = 1432,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Collect the Venture Co. pages in the mine. Wowhead has no page pin.",
+            dependsOn = { "accept-98424-fizsprockets-notes" },
+            complete = QuestState(98424, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
+                    "Travel to Venture Co. Mine."),
             },
         },
         {
@@ -2072,6 +2282,78 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-99079-longwalker-malah",
+            kind = "turnin",
+            priority = 1471,
+            text = "Turn in Longwalker Malah to Malah Longwind, east of Bloodhoof Village.",
+            dependsOn = { "accept-99079-longwalker-malah" },
+            complete = QuestState(99079, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.5760, 0.6320, "Malah Longwind",
+                    "Travel to Malah Longwind."),
+            },
+        },
+        {
+            id = "accept-99081-grim-tidings",
+            kind = "accept",
+            priority = 1472,
+            text = "Accept Grim Tidings from Malah Longwind.",
+            dependsOn = { "turnin-99079-longwalker-malah" },
+            complete = QuestState(99081, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.5760, 0.6320, "Malah Longwind",
+                    "Travel to Malah Longwind."),
+            },
+        },
+        {
+            id = "turnin-99081-grim-tidings",
+            kind = "turnin",
+            priority = 1473,
+            text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
+            dependsOn = { "accept-99081-grim-tidings" },
+            complete = QuestState(99081, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4720, 0.5960, "Brave Wildrunner",
+                    "Travel to Brave Wildrunner."),
+            },
+        },
+        {
+            id = "accept-99101-our-ancient-enemy",
+            kind = "accept",
+            priority = 1474,
+            text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
+            dependsOn = { "turnin-99081-grim-tidings" },
+            complete = QuestState(99101, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4720, 0.5960, "Brave Wildrunner",
+                    "Travel to Brave Wildrunner."),
+            },
+        },
+        {
+            id = "turnin-99101-our-ancient-enemy",
+            kind = "turnin",
+            priority = 1475,
+            text = "Turn in Our Ancient Enemy to Baine Bloodhoof in Bloodhoof Village.",
+            dependsOn = { "accept-99101-our-ancient-enemy" },
+            complete = QuestState(99101, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4740, 0.6020, "Baine Bloodhoof",
+                    "Travel to Baine Bloodhoof."),
+            },
+        },
+        {
+            id = "accept-99080-drive-them-out",
+            kind = "accept",
+            priority = 1476,
+            text = "Accept Drive Them Out from Baine Bloodhoof in Bloodhoof Village.",
+            dependsOn = { "turnin-99101-our-ancient-enemy" },
+            complete = QuestState(99080, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4740, 0.6020, "Baine Bloodhoof",
+                    "Travel to Baine Bloodhoof."),
+            },
+        },
+        {
             id = "accept-759-wildmane-totem",
             kind = "accept",
             priority = 1480,
@@ -2112,6 +2394,74 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98424-fizsprockets-notes",
+            kind = "turnin",
+            priority = 1501,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Fizsprocket's Notes to Morin Cloudstalker.",
+            dependsOn = { "objective-98424-fizsprockets-notes" },
+            complete = QuestState(98424, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.5300, 0.6020, "Morin Cloudstalker",
+                    "Travel to Morin Cloudstalker."),
+            },
+        },
+        {
+            id = "accept-98427-ceasing-operations",
+            kind = "accept",
+            priority = 1502,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "completed" } },
+                },
+            },
+            text = "Accept Ceasing Operations from Morin Cloudstalker. This is an elite. Bring a group.",
+            dependsOn = { "turnin-98424-fizsprockets-notes" },
+            complete = QuestState(98427, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.5300, 0.6020, "Morin Cloudstalker",
+                    "Travel to Morin Cloudstalker."),
+            },
+        },
+        {
+            id = "objective-98427-ceasing-operations",
+            kind = "objective",
+            priority = 1503,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "completed" } },
+                },
+            },
+            text = "Take the Clearcutter Key from the Venture Co. Clearclutter. This is an elite. Bring a group.",
+            dependsOn = { "accept-98427-ceasing-operations" },
+            complete = QuestState(98427, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.5700, 0.4300, "Venture Co. Clearclutter",
+                    "Travel to Venture Co. Clearclutter."),
+            },
+        },
+        {
+            id = "turnin-98427-ceasing-operations",
+            kind = "turnin",
+            priority = 1504,
+            conditions = {
+                all = {
+                    { quest = { id = 98424, state = "completed" } },
+                },
+            },
+            text = "Turn in Ceasing Operations to Morin Cloudstalker.",
+            dependsOn = { "objective-98427-ceasing-operations" },
+            complete = QuestState(98427, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.5300, 0.6020, "Morin Cloudstalker",
+                    "Travel to Morin Cloudstalker."),
+            },
+        },
+        {
             id = "travel-759-windfury-ridge",
             kind = "travel",
             priority = 1510,
@@ -2119,6 +2469,42 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.5176, 0.0546, "Windfury Ridge",
                     "Travel to Windfury Ridge."),
+            },
+        },
+        {
+            id = "objective-99080-drive-them-out-1",
+            kind = "objective",
+            priority = 1511,
+            text = "Drive Them Out: kill 6 Galak Centaurs.",
+            dependsOn = { "accept-99080-drive-them-out" },
+            complete = QuestObjective(99080, 1),
+            route = {
+                Point(MAP.MULGORE, 0.6720, 0.5940, "Galak Centaur",
+                    "Travel to Galak Centaur."),
+            },
+        },
+        {
+            id = "objective-99080-drive-them-out-2",
+            kind = "objective",
+            priority = 1512,
+            text = "Drive Them Out: kill 4 Galak Outrunners.",
+            dependsOn = { "accept-99080-drive-them-out" },
+            complete = QuestObjective(99080, 2),
+            route = {
+                Point(MAP.MULGORE, 0.6020, 0.6060, "Galak Outrunner",
+                    "Travel to Galak Outrunner."),
+            },
+        },
+        {
+            id = "objective-99080-drive-them-out-3",
+            kind = "objective",
+            priority = 1513,
+            text = "Drive Them Out: bring Herak the Pillager's head.",
+            dependsOn = { "accept-99080-drive-them-out" },
+            complete = QuestObjective(99080, 3),
+            route = {
+                Point(MAP.MULGORE, 0.6040, 0.5980, "Herak the Pillager",
+                    "Travel to Herak the Pillager."),
             },
         },
         {
@@ -2165,6 +2551,30 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-99080-drive-them-out",
+            kind = "turnin",
+            priority = 1531,
+            text = "Turn in Drive Them Out to Baine Bloodhoof in Bloodhoof Village.",
+            dependsOn = { "objective-99080-drive-them-out-1", "objective-99080-drive-them-out-2", "objective-99080-drive-them-out-3" },
+            complete = QuestState(99080, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4740, 0.6020, "Baine Bloodhoof",
+                    "Travel to Baine Bloodhoof."),
+            },
+        },
+        {
+            id = "accept-99082-the-high-chieftain",
+            kind = "accept",
+            priority = 1532,
+            text = "Accept The High Chieftain from Baine Bloodhoof.",
+            dependsOn = { "turnin-99080-drive-them-out" },
+            complete = QuestState(99082, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4740, 0.6020, "Baine Bloodhoof",
+                    "Travel to Baine Bloodhoof."),
+            },
+        },
+        {
             id = "turnin-6002-body-and-heart",
             kind = "turnin",
             priority = 1550,
@@ -2202,6 +2612,18 @@ ns:RegisterGuide({
             complete = QuestState(776, "completed"),
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.5991, 0.5178, "Cairne Bloodhoof",
+                    "Travel to Cairne Bloodhoof."),
+            },
+        },
+        {
+            id = "turnin-99082-the-high-chieftain",
+            kind = "turnin",
+            priority = 1565,
+            text = "Turn in The High Chieftain to Cairne Bloodhoof.",
+            dependsOn = { "accept-99082-the-high-chieftain" },
+            complete = QuestState(99082, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.5980, 0.5160, "Cairne Bloodhoof",
                     "Travel to Cairne Bloodhoof."),
             },
         },
@@ -2345,6 +2767,40 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4846, 0.6046, "Mull Thunderhorn",
                     "Travel to Mull Thunderhorn."),
+            },
+        },
+        {
+            id = "accept-98435-thunderhorns-report",
+            kind = "accept",
+            priority = 1671,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept Thunderhorn's Report from Mull Thunderhorn. This step is for tauren.",
+            dependsOn = { "turnin-760-wildmane-cleansing" },
+            complete = QuestState(98435, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4840, 0.6040, "Mull Thunderhorn",
+                    "Travel to Mull Thunderhorn."),
+            },
+        },
+        {
+            id = "turnin-98435-thunderhorns-report",
+            kind = "turnin",
+            priority = 1672,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Thunderhorn's Report to Arch Druid Hamuul Runetotem in Elder Rise. This step is for tauren.",
+            dependsOn = { "accept-98435-thunderhorns-report" },
+            complete = QuestState(98435, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7840, 0.2840, "Arch Druid Hamuul Runetotem",
+                    "Travel to Arch Druid Hamuul Runetotem."),
             },
         },
     },
