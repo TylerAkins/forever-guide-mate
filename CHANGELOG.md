@@ -55,3 +55,4 @@ All notable changes to this project are documented here.
 - Rewrote the README so it lists the shipped guides, the Era chapters that already include Forever quests, and the remaining Loremaster, dungeon, class-quest, and Forever-pass work.
 - Moved Era chapters to Guides/Era, Loremaster guides to Guides/Loremaster, and left Zephras Isle in Guides/Leveling.
 - A saved skip from an old Era chapter stays on that chapter when the same step id also exists in another chapter.
+- Era chapters whose titles still end in (Era) stay in the repo and are not loaded, so they do not show in the addon. Converted chapters remain in the 1-60 Era guide.
