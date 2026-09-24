@@ -38,6 +38,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/HallOfThanes.lua",
     "Guides/Leveling/ZephrasIsle.lua",
     "Guides/Leveling/Durotar.lua",
+    "Guides/Leveling/Mulgore.lua",
     "Guides/Leveling/TheBarrens.lua",
     "docs/zone-loremaster-guides.md",
     "tools/compile_addon.py",
@@ -89,6 +90,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/HallOfThanes.lua",
                 "Guides/Leveling/ZephrasIsle.lua",
                 "Guides/Leveling/Durotar.lua",
+                "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
             ],
         )
@@ -150,6 +152,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/HallOfThanes.lua",
                 "Guides/Leveling/ZephrasIsle.lua",
                 "Guides/Leveling/Durotar.lua",
+                "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
             )
         )
@@ -270,6 +273,25 @@ class ContractTests(unittest.TestCase):
         rules = (ROOT / "docs/zone-loremaster-guides.md").read_text(encoding="utf-8")
         self.assertIn("This is an elite. Bring a group.", rules)
         self.assertIn("activeOrCompleted", rules)
+
+    def test_mulgore_guide_is_loremaster_without_dungeons(self) -> None:
+        guide = (ROOT / "Guides/Leveling/Mulgore.lua").read_text(encoding="utf-8")
+        goals = guide.split("goals = {", 1)[-1]
+        for quest_id in (752, 747, 748, 754, 745, 772, 98427, 854):
+            self.assertIn(f"QuestState({quest_id},", goals)
+        for omitted_id in (774, 5844, 99196):
+            self.assertNotIn(f"QuestState({omitted_id},", goals)
+            self.assertNotIn(f"QuestObjective({omitted_id},", goals)
+        self.assertIn('id = "leveling-mulgore"', guide)
+        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn("level = { min = 1 }", guide)
+        self.assertIn('{ faction = "Horde" }', guide)
+        self.assertIn("{ race = 6 }", guide)
+        self.assertIn("{ class = 7 }", guide)
+        self.assertIn("This is an elite. Bring a group.", guide)
+        self.assertIn('id = "objective-745-sharing-the-land-1"', guide)
+        self.assertIn('id = "objective-745-sharing-the-land-3"', guide)
+        self.assertIn("MULGORE = 1412", guide)
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")

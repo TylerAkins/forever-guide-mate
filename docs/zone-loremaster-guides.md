@@ -1,6 +1,6 @@
 # Adding a zone Loremaster guide
 
-Use this when adding the next zone after Durotar. The Barrens (`Guides/Leveling/TheBarrens.lua`) and Durotar (`Guides/Leveling/Durotar.lua`) are the working examples.
+Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), and Mulgore (`Guides/Leveling/Mulgore.lua`) are the working examples.
 
 ## Source
 

@@ -41,6 +41,7 @@ Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Leveling/ZephrasIsle.lua")
 Load("Guides/Leveling/Durotar.lua")
+Load("Guides/Leveling/Mulgore.lua")
 Load("Guides/Leveling/TheBarrens.lua")
 
 local baseState = {
@@ -1166,6 +1167,54 @@ Equal(durotarProgress.percentage, 100,
     "a hunter without enchanting reaches 100% after the offered Durotar quests")
 Check(durotarProgress.eligible < durotarProgress.total,
     "enchanting and unstarted drop quests stay out of the Durotar percentage")
+
+local mulgore = ns.guides["leveling-mulgore"]
+Check(mulgore ~= nil, "the Mulgore guide is registered")
+local palemaneGoals = 0
+for _, goal in ipairs(mulgore.goals) do
+    if string.find(goal.id, "objective-745-sharing-the-land-", 1, true) then
+        palemaneGoals = palemaneGoals + 1
+        Equal(#goal.route, 1, "each Sharing the Land camp has its own pin")
+        Check(DependsOn(goal, "accept-745-sharing-the-land"),
+            "Sharing the Land objectives wait on the accept")
+        Check(not DependsOn(goal, "objective-745-sharing-the-land-1") or goal.id == "objective-745-sharing-the-land-1",
+            "Sharing the Land objectives do not wait on each other")
+    end
+end
+Equal(palemaneGoals, 3, "Sharing the Land camps are separate steps")
+local winterhoof = ns.Engine:GetGoal(mulgore, "accept-754-winterhoof-cleansing")
+Check(DependsOn(winterhoof, "turnin-748-poison-water"),
+    "Winterhoof Cleansing waits until Poison Water is turned in")
+local clearcutter = ns.Engine:GetGoal(mulgore, "objective-98427-ceasing-operations-1")
+Check(clearcutter and string.find(clearcutter.text, "Bring a group", 1, true) ~= nil,
+    "the Venture Co. shredder tells the player to bring a group")
+local mulgoreState = {}
+for key, value in pairs(baseState) do mulgoreState[key] = value end
+mulgoreState.level = 20
+mulgoreState.raceID = 2
+mulgoreState.classID = 3
+mulgoreState.completedQuests = {}
+mulgoreState.quests = {}
+local mulgoreSkip = {
+    [748] = true, [754] = true, [756] = true, [758] = true, [759] = true, [760] = true,
+    [854] = true, [98435] = true, [76156] = true, [76160] = true, [76240] = true,
+    [781] = true, [770] = true, [98424] = true, [98427] = true,
+}
+for _, goal in ipairs(mulgore.goals) do
+    local complete = goal.complete
+    local questID = complete and complete.quest and complete.quest.id
+    if not questID and complete and complete.questObjective then
+        questID = complete.questObjective.id
+    end
+    if questID and not mulgoreSkip[questID] then
+        mulgoreState.completedQuests[questID] = true
+    end
+end
+local mulgoreProgress = ns.Engine:GetGuideProgress(mulgore, mulgoreState)
+Equal(mulgoreProgress.percentage, 100,
+    "an orc hunter reaches 100% after the Mulgore quests that orc can do")
+Check(mulgoreProgress.eligible < mulgoreProgress.total,
+    "tauren, shaman, and unstarted drop quests stay out of the Mulgore percentage")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
