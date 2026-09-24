@@ -24,3 +24,4 @@ All notable changes to this project are documented here.
 - A known flight path says "Take the flight path to X." If that path has not been learned, the step walks instead of sending you to a flight master.
 - The Orgrimmar zeppelin to Undercity is the south platform. The north platform goes to Stranglethorn.
 - Added the Durotar Loremaster guide. The rules for the next zone are in docs/zone-loremaster-guides.md.
+- Added the Mulgore Loremaster guide. Camp quests are picked up together, and the tauren well chain stays on tauren characters.
