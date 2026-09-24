@@ -2455,7 +2455,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Take a Flawed Power Stone from the table beside Ak'Zeloth. It expires quickly.",
+            text = "Take a Flawed Power Stone from the table beside Ak'Zeloth. It expires in 30 minutes, so use it at the altar next.",
+            timer = { seconds = 30 * 60, quest = 924 },
             dependsOn = { "accept-924-the-demon-seed" },
             complete = QuestState(926, "activeOrCompleted"),
             route = {
@@ -2473,8 +2474,8 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "The Demon Seed: Destroy the Demon Seed. Use the Flawed Power Stone at the altar before it expires.",
-            dependsOn = { "accept-924-the-demon-seed" },
+            text = "The Demon Seed: Destroy the Demon Seed. Use the Flawed Power Stone at the altar before the 30 minute timer expires.",
+            dependsOn = { "accept-924-the-demon-seed", "accept-926-flawed-power-stone" },
             complete = QuestObjective(924, 1, "Destroy the Demon Seed"),
             route = {
                 Point(MAP.BARRENS, 0.480, 0.191, "Altar of Fire",
@@ -2887,7 +2888,8 @@ ns:RegisterGuide({
                     { level = { min = 7 } },
                 },
             },
-            text = "Accept Need for a Cure from Rhinag.",
+            text = "Accept Need for a Cure from Rhinag. The poison timer is 45 minutes, so get the antidote before other work.",
+            timer = 45 * 60,
             complete = QuestState(812, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.416, 0.186, "Rhinag",

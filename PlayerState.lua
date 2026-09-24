@@ -69,6 +69,24 @@ local function ObjectivesComplete(objectives)
     return true
 end
 
+local function PositiveNumber(value)
+    if type(value) == "number" and value > 0 then
+        return value
+    end
+end
+
+local function QuestTimer(questLog, questID, info)
+    local timeLeft = PositiveNumber(info.timeLeft) or PositiveNumber(info.timeRemaining)
+    local timeAllowed
+    if type(questLog.GetTimeAllowed) == "function" then
+        local result, known = Call(questLog, "GetTimeAllowed", questID)
+        if known then
+            timeAllowed = PositiveNumber(result[1])
+        end
+    end
+    return timeAllowed, timeLeft
+end
+
 local function LogQuestComplete(questLog, questID, info, objectives)
     if info.isComplete == true or (type(info.isComplete) == "number" and info.isComplete > 0) then
         return true
@@ -101,9 +119,12 @@ function PlayerState:GetQuestLog(api)
         if type(info) == "table" and info.questID and not info.isHeader then
             local objectiveResult, objectiveKnown = Call(questLog, "GetQuestObjectives", info.questID)
             local objectives = objectiveKnown and type(objectiveResult[1]) == "table" and objectiveResult[1] or {}
+            local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
             quests[info.questID] = {
                 complete = LogQuestComplete(questLog, info.questID, info, objectives),
                 objectives = objectives,
+                timeAllowed = timeAllowed,
+                timeLeft = timeLeft,
             }
         end
     end

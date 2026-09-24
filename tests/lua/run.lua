@@ -1216,6 +1216,124 @@ Equal(mulgoreProgress.percentage, 100,
 Check(mulgoreProgress.eligible < mulgoreProgress.total,
     "tauren, shaman, and unstarted drop quests stay out of the Mulgore percentage")
 
+function TestTimedQuests()
+local function QuestIDFromGoal(goal)
+    local complete = goal.complete
+    local questID = complete and complete.quest and complete.quest.id
+    if not questID and complete and complete.questObjective then
+        questID = complete.questObjective.id
+    end
+    return questID
+end
+
+local function SelectGuide(guide, keep, state)
+    ns.charDB.selectedGuide = guide.id
+    ns.charDB.activeGoal = nil
+    ns.charDB.manualCompleted = {}
+    ns.charDB.deferred = {}
+    ns.charDB.history = {}
+    ns.charDB.completionLedger = {}
+    ns.db.autoAdvance = true
+    ns.Engine.reviewingGoal = nil
+    state.completedQuests = {}
+    state.questLogKnown = true
+    state.questCompletionKnown = true
+    for _, goal in ipairs(guide.goals) do
+        local questID = QuestIDFromGoal(goal)
+        if questID and not keep[questID] then
+            state.completedQuests[questID] = true
+        end
+    end
+    ns.Engine:Refresh(state)
+end
+
+local cureState = {
+    faction = "Horde", raceID = 2, classID = 1, level = 12,
+    professions = {}, professionsKnown = true,
+    quests = { [812] = { complete = false, objectives = {} } },
+    mapID = 1411, x = 0.42, y = 0.19,
+}
+SelectGuide(durotar, { [812] = true, [813] = true, [816] = true }, cureState)
+Equal(ns.Engine.currentGoal.id, "accept-813-finding-the-antidote",
+    "Need for a Cure is the next step while its 45 minute timer is running")
+ns.charDB.activeGoal = "accept-816-lost-but-not-forgotten"
+ns.Engine.reviewingGoal = nil
+ns.Engine:Refresh(cureState)
+Equal(ns.Engine.currentGoal.id, "accept-816-lost-but-not-forgotten",
+    "a 45 minute timer finishes the current step before it takes over")
+local cureCandidates = ns.Engine:CandidateGoals(durotar, cureState)
+Equal(cureCandidates[1].id, "accept-813-finding-the-antidote",
+    "the antidote is the following step, ahead of other Durotar work")
+cureState.quests[812].timeLeft = 10 * 60
+ns.charDB.activeGoal = "accept-816-lost-but-not-forgotten"
+ns.Engine:Refresh(cureState)
+Equal(ns.Engine.currentGoal.id, "accept-813-finding-the-antidote",
+    "a short timer remaining takes the next step immediately")
+ns.charDB.deferred["accept-813-finding-the-antidote"] = true
+ns.charDB.activeGoal = nil
+ns.Engine:Refresh(cureState)
+Equal(ns.Engine.currentGoal.id, "accept-816-lost-but-not-forgotten",
+    "skipping a timed step still leaves it for later")
+
+local sporeState = {
+    faction = "Horde", raceID = 6, classID = 1, level = 20,
+    professions = {}, professionsKnown = true,
+    quests = { [853] = { complete = false, objectives = {} } },
+    mapID = 1413, x = 0.52, y = 0.30,
+}
+SelectGuide(barrens, { [853] = true, [3923] = true, [3924] = true }, sporeState)
+Equal(ns.Engine.currentGoal.id, "turnin-853-apothecary-zamah",
+    "Apothecary Zamah is turned in before other Barrens steps on its 45 minute timer")
+
+local seedState = {
+    faction = "Horde", raceID = 2, classID = 1, level = 14,
+    professions = {}, professionsKnown = true,
+    quests = {
+        [924] = { complete = false, objectives = { { text = "Destroy the Demon Seed", finished = false } } },
+        [926] = { complete = false, objectives = {} },
+    },
+    mapID = 1411, x = 0.46, y = 0.23,
+}
+SelectGuide(durotar, { [924] = true, [926] = true, [834] = true, [835] = true }, seedState)
+ns.charDB.activeGoal = "accept-834-winds-in-the-desert"
+ns.Engine:Refresh(seedState)
+Equal(ns.Engine.currentGoal.id, "objective-924-the-demon-seed-1",
+    "the 30 minute Flawed Power Stone makes the Demon Seed altar the next step")
+
+local timedLog = ns.PlayerState:GetQuestLog({
+    C_QuestLog = {
+        GetNumQuestLogEntries = function() return 1 end,
+        GetInfo = function() return { questID = 812, timeLeft = 600 } end,
+        GetQuestObjectives = function() return {} end,
+        GetTimeAllowed = function() return 2700 end,
+    },
+})
+Equal(timedLog[812].timeLeft, 600, "quest log time left is kept when the client reports it")
+Equal(timedLog[812].timeAllowed, 2700, "quest log time allowed is kept when the client reports it")
+local missingTimer = ns.PlayerState:GetQuestLog({
+    C_QuestLog = {
+        GetNumQuestLogEntries = function() return 1 end,
+        GetInfo = function() return { questID = 853 } end,
+        GetQuestObjectives = function() return {} end,
+        GetTimeAllowed = function() error("timer unavailable") end,
+    },
+})
+Equal(missingTimer[853].timeAllowed, nil, "a missing timer API leaves the quest untimed")
+Equal(missingTimer[853].timeLeft, nil, "a quest without a reported timer has no time left")
+
+local badTimerOK = pcall(function()
+    ns:RegisterGuide({
+        id = "bad-timer", title = "Bad Timer", category = "Test Guides", revision = 1,
+        goals = {
+            { id = "one", kind = "accept", text = "One", timer = 0,
+                complete = { quest = { id = 1, state = "activeOrCompleted" } } },
+        },
+    })
+end)
+Equal(badTimerOK, false, "a timer needs a positive duration")
+end
+TestTimedQuests()
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")

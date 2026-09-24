@@ -14,6 +14,7 @@ Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/f
 - Each quest objective is its own step. Those steps depend on the accept, not on each other, so a finished pin cannot become the active pin again. The turn-in depends on the objectives.
 - A provided item, such as a blackjack the quest gives you, is not its own step. Say how to use it on the objective that needs it.
 - Follow the Wowhead series. A follow-up accept depends on the previous turn-in.
+- A quest on a timer is finished within the next two or three steps. Put `timer` on the step that starts the clock, in seconds. A short timer, 30 minutes or less, is the next step, ahead of other same-zone work. A longer timer still leaves the current step, then finishes before other work. Name a different quest with `timer = { seconds = 1800, quest = 924 }` when the clock belongs to another step, such as the Flawed Power Stone.
 - Use uiMap IDs (Durotar `1411`, the Barrens `1413`, Orgrimmar `1454`). Wowhead area IDs are not map IDs.
 - Put a `flightTo` value only on a travel hop. A visit to a quest NPC keeps its own pin.
 - Say a flight path is available only when that character has learned it. The travel code already does this. Do not send the player to a flight master for an unknown path.

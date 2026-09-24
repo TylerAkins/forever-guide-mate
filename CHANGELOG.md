@@ -25,3 +25,4 @@ All notable changes to this project are documented here.
 - The Orgrimmar zeppelin to Undercity is the south platform. The north platform goes to Stranglethorn.
 - Added the Durotar Loremaster guide. The rules for the next zone are in docs/zone-loremaster-guides.md.
 - Added the Mulgore Loremaster guide. Camp quests are picked up together, and the tauren well chain stays on tauren characters.
+- Timed guide quests finish before other ready steps. Need for a Cure and Apothecary Zamah are 45 minute timers. The Flawed Power Stone is a 30 minute timer, so the Demon Seed altar is the next step.
