@@ -26,3 +26,4 @@ All notable changes to this project are documented here.
 - Added the Durotar Loremaster guide. The rules for the next zone are in docs/zone-loremaster-guides.md.
 - Added the Mulgore Loremaster guide. Camp quests are picked up together, and the tauren well chain stays on tauren characters.
 - Timed guide quests finish before other ready steps. Need for a Cure and Apothecary Zamah are 45 minute timers. The Flawed Power Stone is a 30 minute timer, so the Demon Seed altar is the next step.
+- Race-locked steps name the race on the accept, the objectives, and the turn-in. A Horde Skyborne at level 14 can finish the Barrens without the orc, troll, or tauren flight quests.
