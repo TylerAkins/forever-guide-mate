@@ -86,8 +86,8 @@ ns:RegisterGuide({
             text = "Accept The Power to Destroy... from Varimathras in the Undercity.",
             complete = QuestState(5725, "activeOrCompleted"),
             route = {
-                Point(MAP.DUROTAR, 0.506, 0.124, "Board the zeppelin for Tirisfal Glades.",
-                    "Travel to the Orgrimmar zeppelin tower in northern Durotar.",
+                Point(MAP.DUROTAR, 0.508, 0.136, "Board the south zeppelin to Tirisfal Glades.",
+                    "Use the south platform east of Orgrimmar. The north zeppelin goes to Stranglethorn.",
                     { map = { MAP.TIRISFAL, MAP.UNDERCITY } }),
                 Point(MAP.TIRISFAL, 0.607, 0.586, "Leave the zeppelin and enter the Undercity.",
                     "Take the Orgrimmar zeppelin to Tirisfal Glades.",
@@ -365,8 +365,8 @@ ns:RegisterGuide({
             dependsOn = { "complete-power-destroy" },
             complete = QuestState(5725, "completed"),
             route = {
-                Point(MAP.DUROTAR, 0.506, 0.124, "Board the zeppelin for Tirisfal Glades.",
-                    "Travel to the Orgrimmar zeppelin tower in northern Durotar.",
+                Point(MAP.DUROTAR, 0.508, 0.136, "Board the south zeppelin to Tirisfal Glades.",
+                    "Use the south platform east of Orgrimmar. The north zeppelin goes to Stranglethorn.",
                     { map = { MAP.TIRISFAL, MAP.UNDERCITY } }),
                 Point(MAP.TIRISFAL, 0.607, 0.586, "Enter the Undercity.",
                     "Take the Orgrimmar zeppelin to Tirisfal Glades.",
