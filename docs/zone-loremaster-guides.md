@@ -2,6 +2,10 @@
 
 Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), and Mulgore (`Guides/Leveling/Mulgore.lua`) are the working examples.
 
+These guides are for finishing a zone's quests. They are not a leveling route. A character can follow one while leveling, but the order and the stops are there to complete the zone.
+
+Register them as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle is the exception: it stays in `Leveling Quest Guides` with the `Leveling` tag, because that file is the Skyborne starter path.
+
 ## Source
 
 Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`. That page is the quest list. Open each quest for the chain, the objective text, and the map pins. Horde is the first route. Do a zone in real chain order, and pick up nearby work before running back across the zone.
@@ -99,6 +103,7 @@ A character who finishes every step they can actually take should reach 100%.
 
 ## Ship the guide
 
+- Set `category = "Loremaster Guides"`. Leave Zephras Isle in `Leveling Quest Guides`.
 - Register the file in `ForeverGuideMate.toc` and `tools/compile_addon.py`.
 - Add the file to `tests/test_contracts.py` and load it from `tests/lua/run.lua`.
 - Assert a real chain, one split multi-objective quest, the elite wording, and that omitted and dungeon quests are absent.
