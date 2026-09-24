@@ -29,6 +29,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("QuestAudit.lua")
 Load("QuestDialog.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
@@ -641,6 +642,74 @@ calls.complete = nil
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
 Equal(calls.complete, nil, "turning the option off leaves the quest dialog alone")
 
+-- The quest audit is how a missing class, race, or profession requirement in
+-- the guide data surfaces without anyone walking the route by hand.
+function TestQuestAudit()
+    local durotarGuide = ns.guides["leveling-durotar"]
+    local spinalAxe = ns.Engine:GetGoal(durotarGuide, "accept-96874-this-is-spinal-axe")
+    local printed = {}
+    ns.QuestAudit.Announce = function(_, message) printed[#printed + 1] = message end
+    local function Fresh()
+        ForeverGuideMateCharDB = { selectedGuide = "leveling-durotar" }
+        ns.InitializeStorage()
+        ns.Engine.currentGoal = spinalAxe
+        ns.Engine.state = { quests = {}, completedQuests = {} }
+        printed = {}
+    end
+    local function API(unitName, available)
+        return {
+            UnitName = function() return unitName end,
+            C_GossipInfo = {
+                GetAvailableQuests = function() return available end,
+                GetActiveQuests = function() return {} end,
+            },
+        }
+    end
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96875 } }))
+    Equal(ns.charDB.deferred[spinalAxe.id], true,
+        "a step the quest giver does not offer is skipped instead of holding the tracker")
+    Equal(ns.charDB.notOffered[spinalAxe.id].quest, 96874, "the refused step is written to the report")
+    Equal(ns.charDB.notOffered[spinalAxe.id].npc, "Ug'thok", "the report names the quest giver")
+    Equal(#printed, 1, "the player is told once that the step was skipped")
+    Equal(#ns.QuestAudit:Lines(), 1, "the report reads back one line")
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96874 } }))
+    Equal(ns.charDB.deferred[spinalAxe.id], nil, "a step the giver does offer is left alone")
+    Equal(next(ns.charDB.notOffered), nil, "an offered step is not reported")
+
+    Fresh()
+    ns.QuestAudit:Inspect(API("Kamari", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a different NPC is not treated as a refusal")
+
+    Fresh()
+    ns.Engine.state.quests[96874] = { complete = false, objectives = {} }
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a quest already in the log is not reported")
+
+    Fresh()
+    ns.Engine.state.completedQuests[96874] = true
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a quest already finished is not reported")
+
+    Fresh()
+    ns.QuestAudit:Inspect({ UnitName = function() return "Ug'thok" end })
+    Equal(next(ns.charDB.notOffered), nil, "a client without the gossip API reports nothing")
+
+    Fresh()
+    ns.Engine.currentGoal = ns.Engine:GetGoal(durotarGuide, "turnin-96874-this-is-spinal-axe")
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "only accept steps are audited")
+
+    Check(ns.QuestAudit:NameMatches("Neeru Fireblade in the Cleft of Shadow", "Neeru Fireblade"),
+        "a pin that says where the NPC stands still matches the unit name")
+    Check(not ns.QuestAudit:NameMatches("Ug'thok", "Ug"),
+        "a partial name does not match a quest giver")
+end
+TestQuestAudit()
+
 local tomtomCalls = {}
 local tomtom = {
     AddWaypoint = function(_, mapID, x, y, options)
@@ -673,6 +742,7 @@ allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
 
 local zephras = ns.guides["leveling-zephras-isle"]
+Equal(zephras.category, "Leveling Quest Guides", "Zephras Isle stays a leveling guide")
 Check(zephras ~= nil, "zephras isle guide is registered")
 Equal(zephras.conditions.all[1].level.min, 1, "zephras isle starts at level 1")
 local starter = {}
@@ -1116,6 +1186,7 @@ Check(not ns.Engine.currentGoal or (
 
 local barrens = ns.guides["leveling-the-barrens"]
 Check(barrens ~= nil, "the Barrens guide is registered")
+Equal(barrens.category, "Loremaster Guides", "the Barrens guide is a Loremaster guide")
 local valveGoals = 0
 for _, goal in ipairs(barrens.goals) do
     if string.find(goal.id, "objective-900-samophlange-", 1, true) then
@@ -1133,6 +1204,7 @@ Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
 
 local durotar = ns.guides["leveling-durotar"]
 Check(durotar ~= nil, "the Durotar guide is registered")
+Equal(durotar.category, "Loremaster Guides", "the Durotar guide is a Loremaster guide")
 local encroachmentGoals = 0
 for _, goal in ipairs(durotar.goals) do
     if string.find(goal.id, "objective-837-encroachment-", 1, true) then
@@ -1164,19 +1236,60 @@ for _, goal in ipairs(durotar.goals) do
     if not questID and complete and complete.questObjective then
         questID = complete.questObjective.id
     end
-    if questID and questID ~= 96873 and questID ~= 785 and questID ~= 832
+    if questID and questID ~= 96873 and questID ~= 96874 and questID ~= 96875
+        and questID ~= 785 and questID ~= 832
         and questID ~= 96876 and questID ~= 96877 and questID ~= 97281 and questID ~= 97282 then
         durotarState.completedQuests[questID] = true
     end
 end
 local durotarProgress = ns.Engine:GetGuideProgress(durotar, durotarState)
 Equal(durotarProgress.percentage, 100,
-    "a hunter without enchanting reaches 100% after the offered Durotar quests")
+    "a hunter without a crafting profession reaches 100% after the offered Durotar quests")
 Check(durotarProgress.eligible < durotarProgress.total,
-    "enchanting and unstarted drop quests stay out of the Durotar percentage")
+    "crafting lessons and unstarted drop quests stay out of the Durotar percentage")
+
+-- A level 15 troll mage with herbalism and alchemy cannot take the Orgrimmar
+-- crafting lessons, so the guide must not stop on them.
+do
+    local herbalist = {
+        faction = "Horde", raceID = 8, classID = 8, level = 15,
+        professions = { [182] = 60, [171] = 55 }, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+        mapID = 1454, x = 0.80, y = 0.23,
+    }
+    for _, goalID in ipairs({
+        "accept-96873-a-pain-in-the-neck",
+        "accept-96874-this-is-spinal-axe",
+        "turnin-96874-this-is-spinal-axe",
+        "accept-96875-beasts-of-thunder-ridge",
+        "turnin-96875-beasts-of-thunder-ridge",
+    }) do
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, herbalist), false,
+            goalID .. " is not offered without the trainer's profession")
+    end
+    local smith = {}
+    for key, value in pairs(herbalist) do smith[key] = value end
+    smith.professions = { [164] = 1 }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96874-this-is-spinal-axe").conditions, smith), true,
+        "a blacksmith is offered This Is Spinal Axe")
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96875-beasts-of-thunder-ridge").conditions, smith), false,
+        "blacksmithing does not unlock the leatherworking lesson")
+    local tanner = {}
+    for key, value in pairs(herbalist) do tanner[key] = value end
+    tanner.professions = { [165] = 1 }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "accept-96875-beasts-of-thunder-ridge").conditions, tanner), true,
+        "a leatherworker is offered Beasts of Thunder Ridge")
+    local hoofFinder = {}
+    for key, value in pairs(herbalist) do hoofFinder[key] = value end
+    hoofFinder.quests = { [96877] = { complete = false, objectives = {} } }
+    Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, "turnin-96877-halikors-hoof").conditions, hoofFinder), true,
+        "Halikor's Hoof still turns in without a crafting profession")
+end
 
 local mulgore = ns.guides["leveling-mulgore"]
 Check(mulgore ~= nil, "the Mulgore guide is registered")
+Equal(mulgore.category, "Loremaster Guides", "the Mulgore guide is a Loremaster guide")
 local palemaneGoals = 0
 for _, goal in ipairs(mulgore.goals) do
     if string.find(goal.id, "objective-745-sharing-the-land-", 1, true) then

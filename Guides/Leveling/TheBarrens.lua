@@ -1,6 +1,8 @@
 local _, ns = ...
 
 -- Horde-first Loremaster route for the Barrens.
+-- This is a zone quest-completion guide, not a leveling route. It can be
+-- followed while leveling, but the stops are there to finish the zone.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/the-barrens
 -- Chains stay in Wowhead series order. At the Crossroads, the quests offered
 -- on that visit are accepted before the route leaves: Plainstrider Menace,
@@ -60,7 +62,7 @@ end
 ns:RegisterGuide({
     id = "leveling-the-barrens",
     title = "The Barrens (Loremaster)",
-    category = "Leveling Quest Guides",
+    category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {
