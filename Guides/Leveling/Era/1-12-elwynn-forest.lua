@@ -1,0 +1,3227 @@
+local _, ns = ...
+
+-- Alliance Era leveling route for Elwynn Forest, levels 1-12.
+-- This follows the classic route and is not rewritten for Forever yet.
+-- Grind stops and flight-point pickups are not part of this route.
+-- Coordinates have not been validated in the Forever client.
+
+local MAP = {
+    ELWYNN = 1429,
+    WESTFALL = 1436,
+    STORMWIND = 1453,
+    REDRIDGE = 1433,
+    DUN_MOROGH = 1426,
+    LOCH_MODAN = 1432,
+}
+
+local function QuestState(questID, state)
+    return { quest = { id = questID, state = state } }
+end
+
+local function QuestObjective(questID, index)
+    return { questObjective = { id = questID, index = index } }
+end
+
+local function Point(mapID, x, y, label, offMapText)
+    return {
+        mapID = mapID,
+        x = x,
+        y = y,
+        label = label,
+        offMapText = offMapText,
+    }
+end
+
+ns:RegisterGuide({
+    id = "leveling-era-1-12-elwynn-forest",
+    title = "1-12 Elwynn Forest (Era)",
+    category = "Leveling Quest Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { faction = "Alliance" },
+            { level = { min = 1 } },
+        },
+    },
+    goals = {
+        {
+            id = "accept-783-a-threat-within",
+            kind = "accept",
+            priority = 10,
+            text = "Accept A Threat Within from Sergeant Willem in Northshire Valley.",
+            complete = QuestState(783, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "turnin-783-a-threat-within",
+            kind = "turnin",
+            priority = 20,
+            text = "Turn in A Threat Within to Marshal McBride in Northshire Abbey.",
+            dependsOn = { "accept-783-a-threat-within" },
+            complete = QuestState(783, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-7-kobold-camp-cleanup",
+            kind = "accept",
+            priority = 30,
+            text = "Accept Kobold Camp Cleanup from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(7, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-5261-eagan-peltskinner",
+            kind = "accept",
+            priority = 40,
+            text = "Accept Eagan Peltskinner from Sergeant Willem in Northshire Valley.",
+            complete = QuestState(5261, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "turnin-5261-eagan-peltskinner",
+            kind = "turnin",
+            priority = 50,
+            text = "Turn in Eagan Peltskinner to Eagan Peltskinner in Northshire Valley.",
+            dependsOn = { "accept-5261-eagan-peltskinner" },
+            complete = QuestState(5261, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4892, 0.4011, "Eagan Peltskinner",
+                    "Travel to Eagan Peltskinner."),
+            },
+        },
+        {
+            id = "accept-33-wolves-across-the-border",
+            kind = "accept",
+            priority = 60,
+            text = "Accept Wolves Across the Border from Eagan Peltskinner in Northshire Valley.",
+            complete = QuestState(33, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4892, 0.4011, "Eagan Peltskinner",
+                    "Travel to Eagan Peltskinner."),
+            },
+        },
+        {
+            id = "objective-7-kobold-camp-cleanup",
+            kind = "objective",
+            priority = 70,
+            text = "Kill 10 Kobold Vermin which can be found around the mine in Northshire Valley.",
+            dependsOn = { "accept-7-kobold-camp-cleanup" },
+            complete = QuestState(7, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4900, 0.3500, "Kobold Vermin",
+                    "Travel to Kobold Vermin."),
+            },
+        },
+        {
+            id = "objective-33-wolves-across-the-border",
+            kind = "objective",
+            priority = 80,
+            text = "Kill Young Wolf and Diseased Timber Wolf to collect 8 pieces of Tough Wolf Meat.",
+            dependsOn = { "accept-33-wolves-across-the-border" },
+            complete = QuestState(33, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4700, 0.3800, "Continue toward Wolves Across the Border",
+                    "Continue toward Wolves Across the Border."),
+                Point(MAP.ELWYNN, 0.4600, 0.3500, "Young Wolf",
+                    "Travel to Young Wolf."),
+            },
+        },
+        {
+            id = "turnin-33-wolves-across-the-border",
+            kind = "turnin",
+            priority = 90,
+            text = "Turn in Wolves Across the Border to Eagan Peltskinner in Northshire Valley.",
+            dependsOn = { "objective-33-wolves-across-the-border" },
+            complete = QuestState(33, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4892, 0.4011, "Eagan Peltskinner",
+                    "Travel to Eagan Peltskinner."),
+            },
+        },
+        {
+            id = "accept-18-brotherhood-of-thieves",
+            kind = "accept",
+            priority = 100,
+            text = "Accept Brotherhood of Thieves from Sergeant Willem in Northshire Valley.",
+            complete = QuestState(18, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "turnin-7-kobold-camp-cleanup",
+            kind = "turnin",
+            priority = 110,
+            text = "Turn in Kobold Camp Cleanup to Marshal McBride in Northshire Abbey.",
+            dependsOn = { "objective-7-kobold-camp-cleanup" },
+            complete = QuestState(7, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-15-investigate-echo-ridge",
+            kind = "accept",
+            priority = 120,
+            text = "Accept Investigate Echo Ridge from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(15, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3101-consecrated-letter",
+            kind = "accept",
+            priority = 130,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Consecrated Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3101, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3104-glyphic-letter",
+            kind = "accept",
+            priority = 140,
+            conditions = {
+                all = {
+                    { class = 8 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Glyphic Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3104, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3102-encrypted-letter",
+            kind = "accept",
+            priority = 150,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Encrypted Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3102, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3100-simple-letter",
+            kind = "accept",
+            priority = 160,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Simple Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3100, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3103-hallowed-letter",
+            kind = "accept",
+            priority = 170,
+            conditions = {
+                all = {
+                    { class = 5 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Hallowed Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3103, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-3105-tainted-letter",
+            kind = "accept",
+            priority = 180,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { race = 1 },
+                },
+            },
+            text = "Accept Tainted Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(3105, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "turnin-3101-consecrated-letter",
+            kind = "turnin",
+            priority = 190,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Consecrated Letter in Northshire Abbey.",
+            dependsOn = { "accept-3101-consecrated-letter" },
+            complete = QuestState(3101, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5040, 0.4210, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "turnin-3104-glyphic-letter",
+            kind = "turnin",
+            priority = 200,
+            conditions = {
+                all = {
+                    { class = 8 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Glyphic Letter to Khelden Bremen in Northshire Abbey.",
+            dependsOn = { "accept-3104-glyphic-letter" },
+            complete = QuestState(3104, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4966, 0.3938, "Khelden Bremen",
+                    "Travel to Khelden Bremen."),
+            },
+        },
+        {
+            id = "turnin-3102-encrypted-letter",
+            kind = "turnin",
+            priority = 210,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Encrypted Letter in Northshire Abbey.",
+            dependsOn = { "accept-3102-encrypted-letter" },
+            complete = QuestState(3102, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5040, 0.3990, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "turnin-3100-simple-letter",
+            kind = "turnin",
+            priority = 220,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Simple Letter in Northshire Abbey.",
+            dependsOn = { "accept-3100-simple-letter" },
+            complete = QuestState(3100, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5020, 0.4220, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "turnin-3103-hallowed-letter",
+            kind = "turnin",
+            priority = 230,
+            conditions = {
+                all = {
+                    { class = 5 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Hallowed Letter in Northshire Abbey.",
+            dependsOn = { "accept-3103-hallowed-letter" },
+            complete = QuestState(3103, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4980, 0.3960, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "turnin-3105-tainted-letter",
+            kind = "turnin",
+            priority = 240,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Tainted Letter in Northshire Abbey.",
+            dependsOn = { "accept-3105-tainted-letter" },
+            complete = QuestState(3105, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4990, 0.4270, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "accept-1598-the-stolen-tome",
+            kind = "accept",
+            priority = 250,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept The Stolen Tome from Drusilla La Salle in Northshire Valley.",
+            complete = QuestState(1598, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4987, 0.4265, "Drusilla La Salle",
+                    "Travel to Drusilla La Salle."),
+            },
+        },
+        {
+            id = "objective-1598-the-stolen-tome",
+            kind = "objective",
+            priority = 260,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Collect Powers of the Void from the ground near the tent in Northshire Valley.",
+            dependsOn = { "accept-1598-the-stolen-tome" },
+            complete = QuestState(1598, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5670, 0.4401, "Northshire Valley",
+                    "Travel to Northshire Valley."),
+            },
+        },
+        {
+            id = "objective-18-brotherhood-of-thieves",
+            kind = "objective",
+            priority = 270,
+            text = "Kill the Two-Bit Thug which surround the area to the Southeast across the river to collect 12 Red Burlap Bandana in Northshire Vineyards.",
+            dependsOn = { "accept-18-brotherhood-of-thieves" },
+            complete = QuestState(18, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5400, 0.4500, "Two-Bit Thug",
+                    "Travel to Two-Bit Thug."),
+            },
+        },
+        {
+            id = "turnin-1598-the-stolen-tome",
+            kind = "turnin",
+            priority = 280,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in The Stolen Tome to Drusilla La Salle in Northshire Valley.",
+            dependsOn = { "objective-1598-the-stolen-tome" },
+            complete = QuestState(1598, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4987, 0.4265, "Drusilla La Salle",
+                    "Travel to Drusilla La Salle."),
+            },
+        },
+        {
+            id = "travel-15-northshire-valley",
+            kind = "travel",
+            priority = 290,
+            text = "Travel to Northshire Valley.",
+            route = {
+                Point(MAP.ELWYNN, 0.5163, 0.3676, "Northshire Valley",
+                    "Travel to Northshire Valley."),
+            },
+        },
+        {
+            id = "objective-15-investigate-echo-ridge",
+            kind = "objective",
+            priority = 300,
+            text = "Kill 10 Kobold Worker which can be found in the mine in Northshire Valley.",
+            dependsOn = { "accept-15-investigate-echo-ridge" },
+            complete = QuestState(15, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5163, 0.3676, "Kobold Worker",
+                    "Travel to Kobold Worker."),
+            },
+        },
+        {
+            id = "travel-3904-northshire-valley",
+            kind = "travel",
+            priority = 310,
+            text = "Travel to Northshire Valley.",
+            route = {
+                Point(MAP.ELWYNN, 0.4775, 0.4197, "Northshire Valley",
+                    "Travel to Northshire Valley."),
+            },
+        },
+        {
+            id = "turnin-18-brotherhood-of-thieves",
+            kind = "turnin",
+            priority = 320,
+            text = "Turn in Brotherhood of Thieves to Sergeant Willem in Northshire Valley.",
+            dependsOn = { "objective-18-brotherhood-of-thieves" },
+            complete = QuestState(18, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "accept-6-bounty-on-garrick-padfoot",
+            kind = "accept",
+            priority = 330,
+            text = "Accept Bounty on Garrick Padfoot from Sergeant Willem in Northshire Valley.",
+            complete = QuestState(6, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "accept-3903-milly-osworth",
+            kind = "accept",
+            priority = 340,
+            text = "Accept Milly Osworth from Sergeant Willem in Northshire Valley.",
+            complete = QuestState(3903, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "turnin-15-investigate-echo-ridge",
+            kind = "turnin",
+            priority = 350,
+            text = "Turn in Investigate Echo Ridge to Marshal McBride in Northshire Abbey.",
+            dependsOn = { "objective-15-investigate-echo-ridge" },
+            complete = QuestState(15, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-21-skirmish-at-echo-ridge",
+            kind = "accept",
+            priority = 360,
+            text = "Accept Skirmish at Echo Ridge from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(21, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "turnin-3903-milly-osworth",
+            kind = "turnin",
+            priority = 370,
+            text = "Turn in Milly Osworth to Milly Osworth in Northshire Valley.",
+            dependsOn = { "accept-3903-milly-osworth" },
+            complete = QuestState(3903, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5069, 0.3932, "Milly Osworth",
+                    "Travel to Milly Osworth."),
+            },
+        },
+        {
+            id = "accept-3904-milly-s-harvest",
+            kind = "accept",
+            priority = 380,
+            text = "Accept Milly's Harvest from Milly Osworth in Northshire Valley.",
+            complete = QuestState(3904, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.5069, 0.3932, "Milly Osworth",
+                    "Travel to Milly Osworth."),
+            },
+        },
+        {
+            id = "objective-3904-milly-s-harvest",
+            kind = "objective",
+            priority = 390,
+            text = "Clear the area around each crate of Northshire Vineyardsto collect 8 of Milly's Harvest.",
+            dependsOn = { "accept-3904-milly-s-harvest" },
+            complete = QuestState(3904, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5500, 0.4700, "Northshire Vineyards",
+                    "Travel to Northshire Vineyards."),
+            },
+        },
+        {
+            id = "objective-6-bounty-on-garrick-padfoot",
+            kind = "objective",
+            priority = 400,
+            text = "Find and kill Garrick Padfoot and collect Garrick's Head. He is surrounded by two guards but both can easily be pulled seperately in Northshire Vineyards.",
+            dependsOn = { "accept-6-bounty-on-garrick-padfoot" },
+            complete = QuestState(6, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5700, 0.4800, "Garrick Padfoot",
+                    "Travel to Garrick Padfoot."),
+            },
+        },
+        {
+            id = "turnin-3904-milly-s-harvest",
+            kind = "turnin",
+            priority = 410,
+            text = "Turn in Milly's Harvest to Milly Osworth in Northshire Valley.",
+            dependsOn = { "objective-3904-milly-s-harvest" },
+            complete = QuestState(3904, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5069, 0.3932, "Milly Osworth",
+                    "Travel to Milly Osworth."),
+            },
+        },
+        {
+            id = "accept-3905-grape-manifest",
+            kind = "accept",
+            priority = 420,
+            text = "Accept Grape Manifest from Milly Osworth in Northshire Valley.",
+            complete = QuestState(3905, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.5069, 0.3932, "Milly Osworth",
+                    "Travel to Milly Osworth."),
+            },
+        },
+        {
+            id = "travel-21-echo-ridge-mine",
+            kind = "travel",
+            priority = 430,
+            text = "Travel to Echo Ridge Mine.",
+            route = {
+                Point(MAP.ELWYNN, 0.4871, 0.2781, "Echo Ridge Mine",
+                    "Travel to Echo Ridge Mine."),
+            },
+        },
+        {
+            id = "objective-21-skirmish-at-echo-ridge",
+            kind = "objective",
+            priority = 440,
+            text = "Kill 12 Kobold Laborer which can be found around the Echo Ridge Mine.",
+            dependsOn = { "accept-21-skirmish-at-echo-ridge" },
+            complete = QuestState(21, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4800, 0.2900, "Kobold Laborer",
+                    "Travel to Kobold Laborer."),
+            },
+        },
+        {
+            id = "travel-54-northshire-abbey",
+            kind = "travel",
+            priority = 450,
+            text = "Travel to Northshire Abbey.",
+            route = {
+                Point(MAP.ELWYNN, 0.4775, 0.4197, "Northshire Abbey",
+                    "Travel to Northshire Abbey."),
+            },
+        },
+        {
+            id = "turnin-6-bounty-on-garrick-padfoot",
+            kind = "turnin",
+            priority = 460,
+            text = "Turn in Bounty on Garrick Padfoot to Sergeant Willem in Northshire Valley.",
+            dependsOn = { "objective-6-bounty-on-garrick-padfoot" },
+            complete = QuestState(6, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4818, 0.4293, "Sergeant Willem",
+                    "Travel to Sergeant Willem."),
+            },
+        },
+        {
+            id = "turnin-21-skirmish-at-echo-ridge",
+            kind = "turnin",
+            priority = 470,
+            text = "Turn in Skirmish at Echo Ridge to Marshal McBride in Northshire Abbey.",
+            dependsOn = { "objective-21-skirmish-at-echo-ridge" },
+            complete = QuestState(21, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-54-report-to-goldshire",
+            kind = "accept",
+            priority = 480,
+            text = "Accept Report to Goldshire from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(54, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "turnin-3905-grape-manifest",
+            kind = "turnin",
+            priority = 490,
+            text = "Turn in Grape Manifest to Brother Neals in Northshire Abbey.",
+            dependsOn = { "accept-3905-grape-manifest" },
+            complete = QuestState(3905, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4946, 0.4156, "Brother Neals",
+                    "Travel to Brother Neals."),
+            },
+        },
+        {
+            id = "accept-2158-rest-and-relaxation",
+            kind = "accept",
+            priority = 500,
+            text = "Accept Rest and Relaxation from Falkhaan Isenstrider in Northshire Valley.",
+            complete = QuestState(2158, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4551, 0.4772, "Falkhaan Isenstrider",
+                    "Travel to Falkhaan Isenstrider."),
+            },
+        },
+        {
+            id = "travel-62-goldshire",
+            kind = "travel",
+            priority = 510,
+            text = "Travel to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "turnin-54-report-to-goldshire",
+            kind = "turnin",
+            priority = 520,
+            text = "Turn in Report to Goldshire to Marshal Dughan in Goldshire.",
+            dependsOn = { "accept-54-report-to-goldshire" },
+            complete = QuestState(54, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-62-the-fargodeep-mine",
+            kind = "accept",
+            priority = 530,
+            text = "Accept The Fargodeep Mine from Marshal Dughan in Goldshire.",
+            complete = QuestState(62, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-47-gold-dust-exchange",
+            kind = "accept",
+            priority = 540,
+            text = "Accept Gold Dust Exchange from Remy \"Two Times\" in Goldshire.",
+            complete = QuestState(47, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4219, 0.6705, "Remy 'Two Times'",
+                    "Travel to Remy 'Two Times'."),
+            },
+        },
+        {
+            id = "accept-60-kobold-candles",
+            kind = "accept",
+            priority = 550,
+            text = "Accept Kobold Candles from William Pestle in Goldshire.",
+            complete = QuestState(60, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "turnin-2158-rest-and-relaxation",
+            kind = "turnin",
+            priority = 560,
+            text = "Turn in Rest and Relaxation to Innkeeper Farley in Goldshire.",
+            dependsOn = { "accept-2158-rest-and-relaxation" },
+            complete = QuestState(2158, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4378, 0.6586, "Innkeeper Farley",
+                    "Travel to Innkeeper Farley."),
+            },
+        },
+        {
+            id = "note-60-goldshire",
+            kind = "note",
+            priority = 570,
+            text = "Set your hearth in Goldshire with Innkeeper Farley.",
+            route = {
+                Point(MAP.ELWYNN, 0.4378, 0.6586, "Innkeeper Farley",
+                    "Travel to Innkeeper Farley."),
+            },
+        },
+        {
+            id = "travel-85-the-stonefield-farm",
+            kind = "travel",
+            priority = 580,
+            text = "Travel to The Stonefield Farm.",
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "The Stonefield Farm",
+                    "Travel to The Stonefield Farm."),
+            },
+        },
+        {
+            id = "accept-85-lost-necklace",
+            kind = "accept",
+            priority = 590,
+            text = "Accept Lost Necklace from \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
+            complete = QuestState(85, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
+                    "Travel to 'Auntie' Bernice Stonefield."),
+            },
+        },
+        {
+            id = "travel-106-the-maclure-vineyards",
+            kind = "travel",
+            priority = 600,
+            text = "Travel to The Maclure Vineyards.",
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8955, "The Maclure Vineyards",
+                    "Travel to The Maclure Vineyards."),
+            },
+        },
+        {
+            id = "accept-106-young-lovers",
+            kind = "accept",
+            priority = 610,
+            text = "Accept Young Lovers from Maybell Maclure in The Maclure Vineyards.",
+            complete = QuestState(106, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8955, "Maybell Maclure",
+                    "Travel to Maybell Maclure."),
+            },
+        },
+        {
+            id = "turnin-85-lost-necklace",
+            kind = "turnin",
+            priority = 620,
+            text = "Turn in Lost Necklace to Billy Maclure in The Maclure Vineyards.",
+            dependsOn = { "accept-85-lost-necklace" },
+            complete = QuestState(85, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8577, "Billy Maclure",
+                    "Travel to Billy Maclure."),
+            },
+        },
+        {
+            id = "accept-86-pie-for-billy",
+            kind = "accept",
+            priority = 630,
+            text = "Accept Pie for Billy from Billy Maclure in The Maclure Vineyards.",
+            complete = QuestState(86, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8577, "Billy Maclure",
+                    "Travel to Billy Maclure."),
+            },
+        },
+        {
+            id = "objective-86-pie-for-billy",
+            kind = "objective",
+            priority = 640,
+            text = "Kill any of the boars surrounding Elywnn Forest to collect 4 Chunk of Boar Meat. Rockhide Boar are easily found around to the south of Goldshire.",
+            dependsOn = { "accept-86-pie-for-billy" },
+            complete = QuestState(86, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4700, 0.8100, "Rockhide Boar",
+                    "Travel to Rockhide Boar."),
+            },
+        },
+        {
+            id = "travel-84-the-stonefield-farm",
+            kind = "travel",
+            priority = 650,
+            text = "Travel to The Stonefield Farm.",
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "The Stonefield Farm",
+                    "Travel to The Stonefield Farm."),
+            },
+        },
+        {
+            id = "turnin-86-pie-for-billy",
+            kind = "turnin",
+            priority = 660,
+            text = "Turn in Pie for Billy to \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
+            dependsOn = { "objective-86-pie-for-billy" },
+            complete = QuestState(86, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
+                    "Travel to 'Auntie' Bernice Stonefield."),
+            },
+        },
+        {
+            id = "accept-84-back-to-billy",
+            kind = "accept",
+            priority = 670,
+            text = "Accept Back to Billy from \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
+            complete = QuestState(84, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
+                    "Travel to 'Auntie' Bernice Stonefield."),
+            },
+        },
+        {
+            id = "accept-88-princess-must-die",
+            kind = "accept",
+            priority = 680,
+            text = "Accept Princess Must Die! from Ma Stonefield in The Stonefield Farm.",
+            complete = QuestState(88, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.3461, 0.8443, "Ma Stonefield",
+                    "Travel to Ma Stonefield."),
+            },
+        },
+        {
+            id = "turnin-106-young-lovers",
+            kind = "turnin",
+            priority = 690,
+            text = "Turn in Young Lovers to Tommy Joe Stonefield in The Stonefield Farm.",
+            dependsOn = { "accept-106-young-lovers" },
+            complete = QuestState(106, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.2986, 0.8590, "Tommy Joe Stonefield",
+                    "Travel to Tommy Joe Stonefield."),
+            },
+        },
+        {
+            id = "accept-111-speak-with-gramma",
+            kind = "accept",
+            priority = 700,
+            text = "Accept Speak with Gramma from Tommy Joe Stonefield in The Stonefield Farm.",
+            complete = QuestState(111, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.2986, 0.8590, "Tommy Joe Stonefield",
+                    "Travel to Tommy Joe Stonefield."),
+            },
+        },
+        {
+            id = "turnin-111-speak-with-gramma",
+            kind = "turnin",
+            priority = 710,
+            text = "Turn in Speak with Gramma to Gramma Stonefield in The Stonefield Farm.",
+            dependsOn = { "accept-111-speak-with-gramma" },
+            complete = QuestState(111, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.3495, 0.8384, "Gramma Stonefield",
+                    "Travel to Gramma Stonefield."),
+            },
+        },
+        {
+            id = "accept-107-note-to-william",
+            kind = "accept",
+            priority = 720,
+            text = "Accept Note to William from Gramma Stonefield in The Stonefield Farm.",
+            complete = QuestState(107, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.3495, 0.8384, "Gramma Stonefield",
+                    "Travel to Gramma Stonefield."),
+            },
+        },
+        {
+            id = "travel-87-the-maclure-vineyards",
+            kind = "travel",
+            priority = 730,
+            text = "Travel to The Maclure Vineyards.",
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8577, "The Maclure Vineyards",
+                    "Travel to The Maclure Vineyards."),
+            },
+        },
+        {
+            id = "turnin-84-back-to-billy",
+            kind = "turnin",
+            priority = 740,
+            text = "Turn in Back to Billy to Billy Maclure in The Maclure Vineyards.",
+            dependsOn = { "accept-84-back-to-billy" },
+            complete = QuestState(84, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8577, "Billy Maclure",
+                    "Travel to Billy Maclure."),
+            },
+        },
+        {
+            id = "accept-87-goldtooth",
+            kind = "accept",
+            priority = 750,
+            text = "Accept Goldtooth from Billy Maclure in The Maclure Vineyards.",
+            complete = QuestState(87, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8577, "Billy Maclure",
+                    "Travel to Billy Maclure."),
+            },
+        },
+        {
+            id = "travel-87-fargodeep-mine",
+            kind = "travel",
+            priority = 760,
+            text = "Travel to Fargodeep Mine.",
+            route = {
+                Point(MAP.ELWYNN, 0.3894, 0.8185, "Fargodeep Mine",
+                    "Travel to Fargodeep Mine."),
+            },
+        },
+        {
+            id = "objective-87-goldtooth",
+            kind = "objective",
+            priority = 770,
+            text = "Kill Goldtooth and get Bernice's Necklace in Fargodeep Mine.",
+            dependsOn = { "accept-87-goldtooth" },
+            complete = QuestState(87, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4160, 0.7880, "Goldtooth",
+                    "Travel to Goldtooth."),
+            },
+        },
+        {
+            id = "objective-62-the-fargodeep-mine",
+            kind = "objective",
+            priority = 780,
+            text = "Travel inside The in Fargodeep Mine at to have it investigated.",
+            dependsOn = { "accept-62-the-fargodeep-mine" },
+            complete = QuestState(62, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4060, 0.8192, "Fargodeep Mine",
+                    "Travel to Fargodeep Mine."),
+            },
+        },
+        {
+            id = "objective-47-gold-dust-exchange",
+            kind = "objective",
+            priority = 790,
+            text = "Kill the Kobolds surrounding the Fargodeep Mineto collect 10 Gold Dust.",
+            dependsOn = { "accept-47-gold-dust-exchange" },
+            complete = QuestState(47, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.3900, 0.8000, "Kobold Tunneler",
+                    "Travel to Kobold Tunneler."),
+            },
+        },
+        {
+            id = "objective-60-kobold-candles",
+            kind = "objective",
+            priority = 800,
+            text = "Kill the Kobolds surrounding the in Fargodeep Mine to collect 8 Large Candle.",
+            dependsOn = { "accept-60-kobold-candles" },
+            complete = QuestState(60, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.3900, 0.8000, "Kobold Tunneler",
+                    "Travel to Kobold Tunneler."),
+            },
+        },
+        {
+            id = "travel-112-goldshire",
+            kind = "travel",
+            priority = 810,
+            text = "Travel or Hearthstone to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "turnin-47-gold-dust-exchange",
+            kind = "turnin",
+            priority = 820,
+            text = "Turn in Gold Dust Exchange to Remy \"Two Times\" in Goldshire.",
+            dependsOn = { "objective-47-gold-dust-exchange" },
+            complete = QuestState(47, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4219, 0.6705, "Remy 'Two Times'",
+                    "Travel to Remy 'Two Times'."),
+            },
+        },
+        {
+            id = "accept-40-a-fishy-peril",
+            kind = "accept",
+            priority = 830,
+            text = "Accept A Fishy Peril from Remy \"Two Times\" in Goldshire.",
+            complete = QuestState(40, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4219, 0.6705, "Remy 'Two Times'",
+                    "Travel to Remy 'Two Times'."),
+            },
+        },
+        {
+            id = "turnin-40-a-fishy-peril",
+            kind = "turnin",
+            priority = 840,
+            text = "Turn in A Fishy Peril to Marshal Dughan in Goldshire.",
+            dependsOn = { "accept-40-a-fishy-peril" },
+            complete = QuestState(40, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-35-further-concerns",
+            kind = "accept",
+            priority = 850,
+            text = "Accept Further Concerns from Marshal Dughan in Goldshire.",
+            complete = QuestState(35, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "turnin-62-the-fargodeep-mine",
+            kind = "turnin",
+            priority = 860,
+            text = "Turn in The Fargodeep Mine to Marshal Dughan in Goldshire.",
+            dependsOn = { "objective-62-the-fargodeep-mine" },
+            complete = QuestState(62, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-76-the-jasperlode-mine",
+            kind = "accept",
+            priority = 870,
+            text = "Accept The Jasperlode Mine from Marshal Dughan in Goldshire.",
+            complete = QuestState(76, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "turnin-60-kobold-candles",
+            kind = "turnin",
+            priority = 880,
+            text = "Turn in Kobold Candles to William Pestle in Goldshire.",
+            dependsOn = { "objective-60-kobold-candles" },
+            complete = QuestState(60, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "accept-61-shipment-to-stormwind",
+            kind = "accept",
+            priority = 890,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Accept Shipment to Stormwind from William Pestle in Goldshire.",
+            complete = QuestState(61, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "turnin-107-note-to-william",
+            kind = "turnin",
+            priority = 900,
+            text = "Turn in Note to William to William Pestle in Goldshire.",
+            dependsOn = { "accept-107-note-to-william" },
+            complete = QuestState(107, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "accept-112-collecting-kelp",
+            kind = "accept",
+            priority = 910,
+            text = "Accept Collecting Kelp from William Pestle in Goldshire.",
+            complete = QuestState(112, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "travel-112-crystal-lake",
+            kind = "travel",
+            priority = 920,
+            text = "Travel to Crystal Lake.",
+            route = {
+                Point(MAP.ELWYNN, 0.5400, 0.6600, "Crystal Lake",
+                    "Travel to Crystal Lake."),
+            },
+        },
+        {
+            id = "objective-112-collecting-kelp",
+            kind = "objective",
+            priority = 930,
+            text = "Kill Murloc and Murloc Streamrunner and collect 4 Crystal Kelp Frond around the Crystal Lake.",
+            dependsOn = { "accept-112-collecting-kelp" },
+            complete = QuestState(112, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.5400, 0.6600, "Murloc",
+                    "Travel to Murloc."),
+            },
+        },
+        {
+            id = "travel-76-jasperlode-mine",
+            kind = "travel",
+            priority = 940,
+            text = "Travel to Jasperlode Mine.",
+            route = {
+                Point(MAP.ELWYNN, 0.6170, 0.5376, "Jasperlode Mine",
+                    "Travel to Jasperlode Mine."),
+            },
+        },
+        {
+            id = "objective-76-the-jasperlode-mine",
+            kind = "objective",
+            priority = 950,
+            text = "Scout through the Jasperlode Mine.",
+            dependsOn = { "accept-76-the-jasperlode-mine" },
+            complete = QuestState(76, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.6045, 0.5035, "Jasperlode Mine",
+                    "Travel to Jasperlode Mine."),
+            },
+        },
+        {
+            id = "turnin-35-further-concerns",
+            kind = "turnin",
+            priority = 960,
+            text = "Turn in Further Concerns to Guard Thomas in Elwynn Forest.",
+            dependsOn = { "accept-35-further-concerns" },
+            complete = QuestState(35, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "accept-37-find-the-lost-guards",
+            kind = "accept",
+            priority = 970,
+            text = "Accept Find the Lost Guards from Guard Thomas in Elwynn Forest.",
+            complete = QuestState(37, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.6179, 0.5404, "Continue toward Find the Lost Guards",
+                    "Continue toward Find the Lost Guards."),
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "accept-52-protect-the-frontier",
+            kind = "accept",
+            priority = 980,
+            text = "Accept Protect the Frontier from Guard Thomas in Elwynn Forest.",
+            complete = QuestState(52, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "travel-83-eastvale-logging-camp",
+            kind = "travel",
+            priority = 990,
+            text = "Travel to Eastvale Logging Camp.",
+            route = {
+                Point(MAP.ELWYNN, 0.7947, 0.6875, "Eastvale Logging Camp",
+                    "Travel to Eastvale Logging Camp."),
+            },
+        },
+        {
+            id = "accept-83-red-linen-goods",
+            kind = "accept",
+            priority = 1000,
+            text = "Accept Red Linen Goods from Sara Timberlain in Eastvale Logging Camp.",
+            complete = QuestState(83, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7947, 0.6875, "Sara Timberlain",
+                    "Travel to Sara Timberlain."),
+            },
+        },
+        {
+            id = "accept-5545-a-bundle-of-trouble",
+            kind = "accept",
+            priority = 1010,
+            text = "Accept A Bundle of Trouble from Supervisor Raelen in Eastvale Logging Camp.",
+            complete = QuestState(5545, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.8145, 0.6619, "Supervisor Raelen",
+                    "Travel to Supervisor Raelen."),
+            },
+        },
+        {
+            id = "turnin-37-find-the-lost-guards",
+            kind = "turnin",
+            priority = 1020,
+            text = "Turn in Find the Lost Guards in Stone Cairn Lake.",
+            dependsOn = { "accept-37-find-the-lost-guards" },
+            complete = QuestState(37, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7270, 0.6050, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "accept-45-discover-rolf-s-fate",
+            kind = "accept",
+            priority = 1030,
+            text = "Accept Discover Rolf's Fate in Stone Cairn Lake.",
+            complete = QuestState(45, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7270, 0.6050, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "turnin-45-discover-rolf-s-fate",
+            kind = "turnin",
+            priority = 1040,
+            text = "Turn in Discover Rolf's Fate in Stone Cairn Lake.",
+            dependsOn = { "accept-45-discover-rolf-s-fate" },
+            complete = QuestState(45, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7980, 0.5560, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "accept-71-report-to-thomas",
+            kind = "accept",
+            priority = 1050,
+            text = "Accept Report to Thomas in Stone Cairn Lake.",
+            complete = QuestState(71, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7980, 0.5560, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "objective-5545-a-bundle-of-trouble",
+            kind = "objective",
+            priority = 1060,
+            text = "Collect 8 Bundle of Wood near the base of the trees in Stone Cairn Lake.",
+            dependsOn = { "accept-5545-a-bundle-of-trouble" },
+            complete = QuestState(5545, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.8025, 0.6011, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "objective-52-protect-the-frontier",
+            kind = "objective",
+            priority = 1070,
+            text = "Kill 8 Prowler and 5 Young Forest Bear which can both be found to the east around Eastvale Logging Camp as well as in the southern area across the bridge.",
+            dependsOn = { "accept-52-protect-the-frontier" },
+            complete = QuestState(52, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.8100, 0.6200, "Continue toward Protect the Frontier",
+                    "Continue toward Protect the Frontier."),
+                Point(MAP.ELWYNN, 0.8300, 0.7800, "Prowler",
+                    "Travel to Prowler."),
+            },
+        },
+        {
+            id = "travel-39-eastvale-logging-camp",
+            kind = "travel",
+            priority = 1080,
+            text = "Travel to Eastvale Logging Camp.",
+            route = {
+                Point(MAP.ELWYNN, 0.8145, 0.6619, "Eastvale Logging Camp",
+                    "Travel to Eastvale Logging Camp."),
+            },
+        },
+        {
+            id = "turnin-5545-a-bundle-of-trouble",
+            kind = "turnin",
+            priority = 1090,
+            text = "Turn in A Bundle of Trouble to Supervisor Raelen in Eastvale Logging Camp.",
+            dependsOn = { "objective-5545-a-bundle-of-trouble" },
+            complete = QuestState(5545, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.8145, 0.6619, "Supervisor Raelen",
+                    "Travel to Supervisor Raelen."),
+            },
+        },
+        {
+            id = "objective-83-red-linen-goods",
+            kind = "objective",
+            priority = 1100,
+            text = "Kill the Bandit in the area to collect 6 Linen Scrap.",
+            dependsOn = { "accept-83-red-linen-goods" },
+            complete = QuestState(83, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.9009, 0.8019, "Continue toward Red Linen Goods",
+                    "Continue toward Red Linen Goods."),
+                Point(MAP.ELWYNN, 0.6999, 0.8031, "Bandit",
+                    "Travel to Bandit."),
+            },
+        },
+        {
+            id = "objective-184-bandit",
+            kind = "objective",
+            priority = 1110,
+            text = "Keep killing Bandit until you find Westfall Deed to begin a quest.",
+            complete = QuestState(184, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.6999, 0.8031, "Bandit",
+                    "Travel to Bandit."),
+            },
+        },
+        {
+            id = "travel-46-stone-cairn-lake",
+            kind = "travel",
+            priority = 1120,
+            text = "Travel to Stone Cairn Lake.",
+            route = {
+                Point(MAP.ELWYNN, 0.7968, 0.5548, "Stone Cairn Lake",
+                    "Travel to Stone Cairn Lake."),
+            },
+        },
+        {
+            id = "turnin-71-report-to-thomas",
+            kind = "turnin",
+            priority = 1130,
+            text = "Turn in Report to Thomas to Guard Thomas in Elwynn Forest.",
+            dependsOn = { "accept-71-report-to-thomas" },
+            complete = QuestState(71, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "accept-39-deliver-thomas-report",
+            kind = "accept",
+            priority = 1140,
+            text = "Accept Deliver Thomas' Report from Guard Thomas in Elwynn Forest.",
+            complete = QuestState(39, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "turnin-52-protect-the-frontier",
+            kind = "turnin",
+            priority = 1150,
+            text = "Turn in Protect the Frontier to Guard Thomas in Elwynn Forest.",
+            dependsOn = { "objective-52-protect-the-frontier" },
+            complete = QuestState(52, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "accept-109-report-to-gryan-stoutmantle",
+            kind = "accept",
+            priority = 1160,
+            text = "Accept Report to Gryan Stoutmantle from Guard Thomas in Elwynn Forest.",
+            complete = QuestState(109, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7396, 0.7216, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "travel-eastvale-logging-camp",
+            kind = "travel",
+            priority = 1170,
+            text = "Travel to Eastvale Logging Camp.",
+            route = {
+                Point(MAP.ELWYNN, 0.7947, 0.6875, "Eastvale Logging Camp",
+                    "Travel to Eastvale Logging Camp."),
+            },
+        },
+        {
+            id = "turnin-83-red-linen-goods",
+            kind = "turnin",
+            priority = 1180,
+            text = "Turn in Red Linen Goods to Sara Timberlain in Eastvale Logging Camp.",
+            dependsOn = { "objective-83-red-linen-goods" },
+            complete = QuestState(83, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7947, 0.6875, "Sara Timberlain",
+                    "Travel to Sara Timberlain."),
+            },
+        },
+        {
+            id = "travel-1860-goldshire",
+            kind = "travel",
+            priority = 1190,
+            text = "Travel or Hearthstone to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4328, 0.6622, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "turnin-112-collecting-kelp",
+            kind = "turnin",
+            priority = 1200,
+            text = "Turn in Collecting Kelp to William Pestle in Goldshire.",
+            dependsOn = { "objective-112-collecting-kelp" },
+            complete = QuestState(112, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4328, 0.6622, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "accept-114-the-escape",
+            kind = "accept",
+            priority = 1210,
+            text = "Accept The Escape from William Pestle in Goldshire.",
+            complete = QuestState(114, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4343, 0.6605, "William Pestle",
+                    "Travel to William Pestle."),
+            },
+        },
+        {
+            id = "turnin-39-deliver-thomas-report",
+            kind = "turnin",
+            priority = 1220,
+            text = "Turn in Deliver Thomas' Report to Marshal Dughan in Goldshire.",
+            dependsOn = { "accept-39-deliver-thomas-report" },
+            complete = QuestState(39, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-59-cloth-and-leather-armor",
+            kind = "accept",
+            priority = 1230,
+            text = "Accept Cloth and Leather Armor from Marshal Dughan in Goldshire.",
+            complete = QuestState(59, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4211, 0.6597, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "turnin-76-the-jasperlode-mine",
+            kind = "turnin",
+            priority = 1240,
+            text = "Turn in The Jasperlode Mine to Marshal Dughan in Goldshire.",
+            dependsOn = { "objective-76-the-jasperlode-mine" },
+            complete = QuestState(76, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-239-westbrook-garrison-needs-help",
+            kind = "accept",
+            priority = 1250,
+            text = "Accept Westbrook Garrison Needs Help! from Marshal Dughan in Goldshire.",
+            complete = QuestState(239, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4214, 0.6590, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-1097-elmore-s-task",
+            kind = "accept",
+            priority = 1260,
+            text = "Accept Elmore's Task from Smith Argus in Goldshire.",
+            complete = QuestState(1097, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4201, 0.6560, "Smith Argus",
+                    "Travel to Smith Argus."),
+            },
+        },
+        {
+            id = "travel-the-maclure-vineyards",
+            kind = "travel",
+            priority = 1270,
+            text = "Travel to The Maclure Vineyards.",
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8955, "The Maclure Vineyards",
+                    "Travel to The Maclure Vineyards."),
+            },
+        },
+        {
+            id = "turnin-114-the-escape",
+            kind = "turnin",
+            priority = 1280,
+            text = "Turn in The Escape to Maybell Maclure in The Maclure Vineyards.",
+            dependsOn = { "accept-114-the-escape" },
+            complete = QuestState(114, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4312, 0.8955, "Maybell Maclure",
+                    "Travel to Maybell Maclure."),
+            },
+        },
+        {
+            id = "turnin-87-goldtooth",
+            kind = "turnin",
+            priority = 1290,
+            text = "Turn in Goldtooth to \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
+            dependsOn = { "objective-87-goldtooth" },
+            complete = QuestState(87, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
+                    "Travel to 'Auntie' Bernice Stonefield."),
+            },
+        },
+        {
+            id = "travel-1860-goldshire-2",
+            kind = "travel",
+            priority = 1300,
+            text = "Travel or Hearthstone to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4328, 0.6622, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "accept-1860-speak-with-jennea",
+            kind = "accept",
+            priority = 1310,
+            conditions = {
+                all = {
+                    { class = 8 },
+                },
+            },
+            text = "Accept Speak with Jennea from Zaldimar Wefhellt in Goldshire.",
+            complete = QuestState(1860, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4328, 0.6622, "Zaldimar Wefhellt",
+                    "Travel to Zaldimar Wefhellt."),
+            },
+        },
+        {
+            id = "accept-1638-a-warrior-s-training",
+            kind = "accept",
+            priority = 1320,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept A Warrior's Training from Lyria Du Lac in Goldshire.",
+            complete = QuestState(1638, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4110, 0.6580, "Lyria Du Lac",
+                    "Travel to Lyria Du Lac."),
+            },
+        },
+        {
+            id = "accept-2205-seek-out-si-7",
+            kind = "accept",
+            priority = 1330,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Accept Seek out SI: 7 from Keryn Sylvius in Goldshire.",
+            complete = QuestState(2205, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4380, 0.6590, "Keryn Sylvius",
+                    "Travel to Keryn Sylvius."),
+            },
+        },
+        {
+            id = "accept-1685-gakin-s-summons",
+            kind = "accept",
+            priority = 1340,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { ["not"] = { quest = { id = 1688, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept Gakin's Summons from Remen Marcot in Goldshire.",
+            complete = QuestState(1685, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4450, 0.6610, "Remen Marcot",
+                    "Travel to Remen Marcot."),
+            },
+        },
+        {
+            id = "travel-westbrook-garrison",
+            kind = "travel",
+            priority = 1350,
+            text = "Travel to Westbrook Garrison.",
+            route = {
+                Point(MAP.ELWYNN, 0.2426, 0.7454, "Westbrook Garrison",
+                    "Travel to Westbrook Garrison."),
+            },
+        },
+        {
+            id = "turnin-239-westbrook-garrison-needs-help",
+            kind = "turnin",
+            priority = 1360,
+            text = "Turn in Westbrook Garrison Needs Help! to Deputy Rainer in Westbrook Garrison.",
+            dependsOn = { "accept-239-westbrook-garrison-needs-help" },
+            complete = QuestState(239, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.2426, 0.7454, "Deputy Rainer",
+                    "Travel to Deputy Rainer."),
+            },
+        },
+        {
+            id = "accept-11-riverpaw-gnoll-bounty",
+            kind = "accept",
+            priority = 1370,
+            text = "Accept Riverpaw Gnoll Bounty from Deputy Rainer in Westbrook Garrison.",
+            complete = QuestState(11, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.2426, 0.7454, "Deputy Rainer",
+                    "Travel to Deputy Rainer."),
+            },
+        },
+        {
+            id = "accept-176-wanted-hogger",
+            kind = "accept",
+            priority = 1380,
+            text = "Accept Wanted: \"Hogger\" in Westbrook Garrison.",
+            complete = QuestState(176, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.2447, 0.7474, "Westbrook Garrison",
+                    "Travel to Westbrook Garrison."),
+            },
+        },
+        {
+            id = "travel-109-the-jansen-stead",
+            kind = "travel",
+            priority = 1390,
+            text = "Travel to The Jansen Stead.",
+            route = {
+                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
+                    "Travel to The Jansen Stead."),
+            },
+        },
+        {
+            id = "accept-64-the-forgotten-heirloom",
+            kind = "accept",
+            priority = 1400,
+            text = "Accept The Forgotten Heirloom from Farmer Furlbrow in The Jansen Stead.",
+            complete = QuestState(64, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.6000, 0.1937, "Farmer Furlbrow",
+                    "Travel to Farmer Furlbrow."),
+            },
+        },
+        {
+            id = "accept-36-westfall-stew",
+            kind = "accept",
+            priority = 1410,
+            text = "Accept Westfall Stew from Verna Furlbrow in The Jansen Stead.",
+            complete = QuestState(36, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5992, 0.1945, "Verna Furlbrow",
+                    "Travel to Verna Furlbrow."),
+            },
+        },
+        {
+            id = "accept-151-poor-old-blanchy",
+            kind = "accept",
+            priority = 1420,
+            text = "Accept Poor Old Blanchy from Verna Furlbrow in The Jansen Stead.",
+            complete = QuestState(151, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5992, 0.1945, "Verna Furlbrow",
+                    "Travel to Verna Furlbrow."),
+            },
+        },
+        {
+            id = "turnin-36-westfall-stew",
+            kind = "turnin",
+            priority = 1430,
+            text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
+            dependsOn = { "accept-36-westfall-stew" },
+            complete = QuestState(36, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5640, 0.3055, "Salma Saldean",
+                    "Travel to Salma Saldean."),
+            },
+        },
+        {
+            id = "accept-38-westfall-stew",
+            kind = "accept",
+            priority = 1440,
+            text = "Accept Westfall Stew from Salma Saldean in Saldean's Farm.",
+            complete = QuestState(38, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5640, 0.3051, "Salma Saldean",
+                    "Travel to Salma Saldean."),
+            },
+        },
+        {
+            id = "accept-22-goretusk-liver-pie",
+            kind = "accept",
+            priority = 1450,
+            text = "Accept Goretusk Liver Pie from Salma Saldean in Saldean's Farm.",
+            complete = QuestState(22, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5623, 0.3089, "Salma Saldean",
+                    "Travel to Salma Saldean."),
+            },
+        },
+        {
+            id = "accept-9-the-killing-fields",
+            kind = "accept",
+            priority = 1460,
+            text = "Accept The Killing Fields from Farmer Saldean in Saldean's Farm.",
+            complete = QuestState(9, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5609, 0.3155, "Farmer Saldean",
+                    "Travel to Farmer Saldean."),
+            },
+        },
+        {
+            id = "objective-151-poor-old-blanchy",
+            kind = "objective",
+            priority = 1470,
+            text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
+            dependsOn = { "accept-151-poor-old-blanchy" },
+            complete = QuestState(151, "complete"),
+        },
+        {
+            id = "travel-6181-sentinel-hill",
+            kind = "travel",
+            priority = 1480,
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5630, 0.4760, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
+            id = "accept-6181-a-swift-message",
+            kind = "accept",
+            priority = 1490,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Accept A Swift Message from Quartermaster Lewis in Sentinel Hill.",
+            complete = QuestState(6181, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5690, 0.4720, "Quartermaster Lewis",
+                    "Travel to Quartermaster Lewis."),
+            },
+        },
+        {
+            id = "turnin-6181-a-swift-message",
+            kind = "turnin",
+            priority = 1500,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Turn in A Swift Message to Thor in Sentinel Hill.",
+            dependsOn = { "accept-6181-a-swift-message" },
+            complete = QuestState(6181, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5654, 0.5264, "Thor",
+                    "Travel to Thor."),
+            },
+        },
+        {
+            id = "accept-6281-continue-to-stormwind",
+            kind = "accept",
+            priority = 1510,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Accept Continue to Stormwind from Thor in Sentinel Hill.",
+            complete = QuestState(6281, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5654, 0.5264, "Thor",
+                    "Travel to Thor."),
+            },
+        },
+        {
+            id = "travel-6261-stormwind-city",
+            kind = "travel",
+            priority = 1520,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Stormwind City.",
+            route = {
+                Point(MAP.STORMWIND, 0.5623, 0.6459, "Stormwind City",
+                    "Travel to Stormwind City."),
+            },
+        },
+        {
+            id = "turnin-61-shipment-to-stormwind",
+            kind = "turnin",
+            priority = 1530,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Shipment to Stormwind to Morgan Pestle in Trade District.",
+            dependsOn = { "accept-61-shipment-to-stormwind" },
+            complete = QuestState(61, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.5623, 0.6459, "Morgan Pestle",
+                    "Travel to Morgan Pestle."),
+            },
+        },
+        {
+            id = "turnin-6281-continue-to-stormwind",
+            kind = "turnin",
+            priority = 1540,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Continue to Stormwind to Osric Strang in Old Town.",
+            dependsOn = { "accept-6281-continue-to-stormwind" },
+            complete = QuestState(6281, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7421, 0.4753, "Osric Strang",
+                    "Travel to Osric Strang."),
+            },
+        },
+        {
+            id = "accept-6261-dungar-longdrink",
+            kind = "accept",
+            priority = 1550,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Accept Dungar Longdrink from Osric Strang in Old Town.",
+            complete = QuestState(6261, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7421, 0.4753, "Osric Strang",
+                    "Travel to Osric Strang."),
+            },
+        },
+        {
+            id = "turnin-6261-dungar-longdrink",
+            kind = "turnin",
+            priority = 1560,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Dungar Longdrink to Dungar Longdrink in Trade District.",
+            dependsOn = { "accept-6261-dungar-longdrink" },
+            complete = QuestState(6261, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.6631, 0.6219, "Dungar Longdrink",
+                    "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "accept-6285-return-to-lewis",
+            kind = "accept",
+            priority = 1570,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Accept Return to Lewis from Dungar Longdrink in Trade District.",
+            complete = QuestState(6285, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.6631, 0.6219, "Dungar Longdrink",
+                    "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "turnin-1685-gakin-s-summons",
+            kind = "turnin",
+            priority = 1580,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { ["not"] = { quest = { id = 1688, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Turn in Gakin's Summons to Gakin the Darkbinder in The Slaughtered Lamb.",
+            dependsOn = { "accept-1685-gakin-s-summons" },
+            complete = QuestState(1685, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.2929, 0.7399, "Continue toward Gakin's Summons",
+                    "Continue toward Gakin's Summons."),
+                Point(MAP.STORMWIND, 0.2532, 0.7847, "Gakin the Darkbinder",
+                    "Travel to Gakin the Darkbinder."),
+            },
+        },
+        {
+            id = "accept-1688-surena-caledon",
+            kind = "accept",
+            priority = 1590,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept Surena Caledon from Gakin the Darkbinder in The Slaughtered Lamb.",
+            complete = QuestState(1688, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.2532, 0.7847, "Gakin the Darkbinder",
+                    "Travel to Gakin the Darkbinder."),
+            },
+        },
+        {
+            id = "travel-1688-brackwell-pumpkin-patch",
+            kind = "travel",
+            priority = 1600,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Travel to Brackwell Pumpkin Patch.",
+            route = {
+                Point(MAP.ELWYNN, 0.7102, 0.8076, "Brackwell Pumpkin Patch",
+                    "Travel to Brackwell Pumpkin Patch."),
+            },
+        },
+        {
+            id = "objective-1688-surena-caledon",
+            kind = "objective",
+            priority = 1610,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Kill Surena Caledon and collect Surena's Choker in Brackwell Pumpkin Patch She is guarded by 2 other enemies, you will need to pull them away.",
+            dependsOn = { "accept-1688-surena-caledon" },
+            complete = QuestState(1688, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.7102, 0.8076, "Surena Caledon",
+                    "Travel to Surena Caledon."),
+            },
+        },
+        {
+            id = "turnin-2205-seek-out-si-7",
+            kind = "turnin",
+            priority = 1620,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Turn in Seek out SI: 7 to Master Mathias Shaw in SI:7.",
+            dependsOn = { "accept-2205-seek-out-si-7" },
+            complete = QuestState(2205, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7588, 0.5983, "Master Mathias Shaw",
+                    "Travel to Master Mathias Shaw."),
+            },
+        },
+        {
+            id = "accept-2206-snatch-and-grab",
+            kind = "accept",
+            priority = 1630,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Accept Snatch and Grab from Master Mathias Shaw in SI:7.",
+            complete = QuestState(2206, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7647, 0.6013, "Master Mathias Shaw",
+                    "Travel to Master Mathias Shaw."),
+            },
+        },
+        {
+            id = "turnin-1638-a-warrior-s-training",
+            kind = "turnin",
+            priority = 1640,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in A Warrior's Training to Harry Burlguard in Old Town.",
+            dependsOn = { "accept-1638-a-warrior-s-training" },
+            complete = QuestState(1638, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7424, 0.3726, "Harry Burlguard",
+                    "Travel to Harry Burlguard."),
+            },
+        },
+        {
+            id = "accept-1639-bartleby-the-drunk",
+            kind = "accept",
+            priority = 1650,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Bartleby the Drunk from Harry Burlguard in Old Town.",
+            complete = QuestState(1639, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7424, 0.3726, "Harry Burlguard",
+                    "Travel to Harry Burlguard."),
+            },
+        },
+        {
+            id = "turnin-1639-bartleby-the-drunk",
+            kind = "turnin",
+            priority = 1660,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Bartleby the Drunk in Old Town.",
+            dependsOn = { "accept-1639-bartleby-the-drunk" },
+            complete = QuestState(1639, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7379, 0.3631, "Old Town",
+                    "Travel to Old Town."),
+            },
+        },
+        {
+            id = "accept-1640-beat-bartleby",
+            kind = "accept",
+            priority = 1670,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Beat Bartleby from Bartleby in Old Town.",
+            complete = QuestState(1640, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7379, 0.3631, "Bartleby",
+                    "Travel to Bartleby."),
+            },
+        },
+        {
+            id = "objective-1640-beat-bartleby",
+            kind = "objective",
+            priority = 1680,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Beat Bartleby, then talk to him in Old Town.",
+            dependsOn = { "accept-1640-beat-bartleby" },
+            complete = QuestState(1640, "complete"),
+            route = {
+                Point(MAP.STORMWIND, 0.7379, 0.3631, "Bartleby",
+                    "Travel to Bartleby."),
+            },
+        },
+        {
+            id = "turnin-1640-beat-bartleby",
+            kind = "turnin",
+            priority = 1690,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Beat Bartleby to Bartleby in Old Town.",
+            dependsOn = { "objective-1640-beat-bartleby" },
+            complete = QuestState(1640, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7379, 0.3631, "Bartleby",
+                    "Travel to Bartleby."),
+            },
+        },
+        {
+            id = "accept-1665-bartleby-s-mug",
+            kind = "accept",
+            priority = 1700,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Bartleby's Mug from Bartleby in Old Town.",
+            complete = QuestState(1665, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7379, 0.3631, "Bartleby",
+                    "Travel to Bartleby."),
+            },
+        },
+        {
+            id = "turnin-1665-bartleby-s-mug",
+            kind = "turnin",
+            priority = 1710,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Bartleby's Mug to Harry Burlguard in Old Town.",
+            dependsOn = { "accept-1665-bartleby-s-mug" },
+            complete = QuestState(1665, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7415, 0.3725, "Harry Burlguard",
+                    "Travel to Harry Burlguard."),
+            },
+        },
+        {
+            id = "accept-1666-marshal-haggard",
+            kind = "accept",
+            priority = 1720,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Marshal Haggard from Harry Burlguard in Old Town.",
+            complete = QuestState(1666, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7406, 0.3740, "Harry Burlguard",
+                    "Travel to Harry Burlguard."),
+            },
+        },
+        {
+            id = "travel-2206-jerod-s-landing",
+            kind = "travel",
+            priority = 1730,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Travel to Jerod's Landing.",
+            route = {
+                Point(MAP.ELWYNN, 0.4808, 0.8730, "Jerod's Landing",
+                    "Travel to Jerod's Landing."),
+            },
+        },
+        {
+            id = "objective-2206-snatch-and-grab",
+            kind = "objective",
+            priority = 1740,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Find the Dockmaster use Pick Pocket to get Shipping Schedule in Jerod's Landing.",
+            dependsOn = { "accept-2206-snatch-and-grab" },
+            complete = QuestState(2206, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4808, 0.8730, "Dockmaster",
+                    "Travel to Dockmaster."),
+            },
+        },
+        {
+            id = "turnin-2206-snatch-and-grab",
+            kind = "turnin",
+            priority = 1750,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Turn in Snatch and Grab to Master Mathias Shaw in SI:7.",
+            dependsOn = { "objective-2206-snatch-and-grab" },
+            complete = QuestState(2206, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.7581, 0.5984, "Master Mathias Shaw",
+                    "Travel to Master Mathias Shaw."),
+            },
+        },
+        {
+            id = "travel-1689-the-slaughtered-lamb",
+            kind = "travel",
+            priority = 1760,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Travel to The Slaughtered Lamb.",
+            route = {
+                Point(MAP.STORMWIND, 0.2525, 0.7854, "The Slaughtered Lamb",
+                    "Travel to The Slaughtered Lamb."),
+            },
+        },
+        {
+            id = "turnin-1688-surena-caledon",
+            kind = "turnin",
+            priority = 1770,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Surena Caledon to Gakin the Darkbinder in The Slaughtered Lamb.",
+            dependsOn = { "objective-1688-surena-caledon" },
+            complete = QuestState(1688, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.2525, 0.7854, "Gakin the Darkbinder",
+                    "Travel to Gakin the Darkbinder."),
+            },
+        },
+        {
+            id = "accept-1689-the-binding",
+            kind = "accept",
+            priority = 1780,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Accept The Binding from Gakin the Darkbinder in The Slaughtered Lamb.",
+            complete = QuestState(1689, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.2525, 0.7854, "Gakin the Darkbinder",
+                    "Travel to Gakin the Darkbinder."),
+            },
+        },
+        {
+            id = "objective-1689-the-binding",
+            kind = "objective",
+            priority = 1790,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Keep going down the stair until you find the purple summoning circle and use Bloodstone Choker to summon and kill a Summoned Voidwalker in The Slaughtered Lamb.",
+            dependsOn = { "accept-1689-the-binding" },
+            complete = QuestState(1689, "complete"),
+            route = {
+                Point(MAP.STORMWIND, 0.2506, 0.7928, "Continue toward The Binding",
+                    "Continue toward The Binding."),
+                Point(MAP.STORMWIND, 0.2519, 0.7733, "Summoned Voidwalker",
+                    "Travel to Summoned Voidwalker."),
+            },
+        },
+        {
+            id = "turnin-1689-the-binding",
+            kind = "turnin",
+            priority = 1800,
+            conditions = {
+                all = {
+                    { class = 9 },
+                },
+            },
+            text = "Turn in The Binding to Gakin the Darkbinder in The Slaughtered Lamb.",
+            dependsOn = { "objective-1689-the-binding" },
+            complete = QuestState(1689, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.2530, 0.7860, "Gakin the Darkbinder",
+                    "Travel to Gakin the Darkbinder."),
+            },
+        },
+        {
+            id = "travel-353-sentinel-hill",
+            kind = "travel",
+            priority = 1810,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Sentinel Hill. Dungar Longdrink in Trade District.",
+            route = {
+                Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
+                    "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "turnin-6285-return-to-lewis",
+            kind = "turnin",
+            priority = 1820,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Turn in Return to Lewis to Dungar Longdrink.",
+            dependsOn = { "accept-6285-return-to-lewis" },
+            complete = QuestState(6285, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
+                    "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "travel-11-forest-s-edge",
+            kind = "travel",
+            priority = 1830,
+            text = "Travel to Forest's Edge.",
+            route = {
+                Point(MAP.ELWYNN, 0.6396, 0.2668, "Continue toward Forest's Edge",
+                    "Continue toward Forest's Edge."),
+                Point(MAP.ELWYNN, 0.2500, 0.8600, "Riverpaw Outrunner",
+                    "Travel to Riverpaw Outrunner."),
+            },
+        },
+        {
+            id = "objective-11-riverpaw-gnoll-bounty",
+            kind = "objective",
+            priority = 1840,
+            text = "Collect 8 Painted Gnoll Armband from the Riverpaw Outrunner and Riverpaw Runt which can be found to the South.",
+            dependsOn = { "accept-11-riverpaw-gnoll-bounty" },
+            complete = QuestState(11, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.2500, 0.8600, "Riverpaw Outrunner",
+                    "Travel to Riverpaw Outrunner."),
+            },
+        },
+        {
+            id = "objective-176-wanted-hogger",
+            kind = "objective",
+            priority = 1850,
+            text = "Kill Hogger and collect Huge Gnoll Claw in Forest's Edge This is a group quest and safe to skip.",
+            dependsOn = { "accept-176-wanted-hogger" },
+            complete = QuestState(176, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.2614, 0.9434, "Hogger",
+                    "Travel to Hogger."),
+            },
+        },
+        {
+            id = "objective-123-gold-pickup-schedule",
+            kind = "objective",
+            priority = 1860,
+            text = "Kill Gnolls until you find Gold Pickup Schedule to begin a new quest, you can skip this if you can't find it.",
+            complete = QuestState(123, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.2500, 0.8600, "Riverpaw Outrunner",
+                    "Travel to Riverpaw Outrunner."),
+            },
+        },
+        {
+            id = "travel-westbrook-garrison-2",
+            kind = "travel",
+            priority = 1870,
+            text = "Travel to Westbrook Garrison.",
+            route = {
+                Point(MAP.ELWYNN, 0.2426, 0.7454, "Westbrook Garrison",
+                    "Travel to Westbrook Garrison."),
+            },
+        },
+        {
+            id = "turnin-11-riverpaw-gnoll-bounty",
+            kind = "turnin",
+            priority = 1880,
+            text = "Turn in Riverpaw Gnoll Bounty to Deputy Rainer in Westbrook Garrison.",
+            dependsOn = { "objective-11-riverpaw-gnoll-bounty" },
+            complete = QuestState(11, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.2426, 0.7454, "Deputy Rainer",
+                    "Travel to Deputy Rainer."),
+            },
+        },
+        {
+            id = "travel-goldshire",
+            kind = "travel",
+            priority = 1890,
+            text = "Travel to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4212, 0.6596, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "turnin-176-wanted-hogger",
+            kind = "turnin",
+            priority = 1900,
+            text = "Turn in Wanted: \"Hogger\" to Marshal Dughan in Goldshire.",
+            dependsOn = { "objective-176-wanted-hogger" },
+            complete = QuestState(176, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4212, 0.6596, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "accept-147-manhunt",
+            kind = "accept",
+            priority = 1910,
+            text = "Accept Manhunt from Marshal Dughan in Goldshire.",
+            complete = QuestState(147, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4212, 0.6596, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "travel-147-brackwell-pumpkin-patch",
+            kind = "travel",
+            priority = 1920,
+            text = "Travel to Brackwell Pumpkin Patch.",
+            route = {
+                Point(MAP.ELWYNN, 0.7101, 0.8055, "Brackwell Pumpkin Patch",
+                    "Travel to Brackwell Pumpkin Patch."),
+            },
+        },
+        {
+            id = "objective-147-manhunt",
+            kind = "objective",
+            priority = 1930,
+            text = "Kill Morgan the Collector in Brackwell Pumpkin Patch, you will need to pull the enemies around her first otherwise it is difficult to solo.",
+            dependsOn = { "accept-147-manhunt" },
+            complete = QuestState(147, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.7101, 0.8055, "Morgan the Collector",
+                    "Travel to Morgan the Collector."),
+            },
+        },
+        {
+            id = "objective-88-princess-must-die",
+            kind = "objective",
+            priority = 1940,
+            text = "Kill Princess who patrols the area and loot the Brass Collar. She is a level 9 mob who is surrounded by two guards which are level 7 so grouping with another is recommended, you can skip it if you're unable to complete.",
+            dependsOn = { "accept-88-princess-must-die" },
+            complete = QuestState(88, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.6900, 0.7800, "Princess",
+                    "Travel to Princess."),
+            },
+        },
+        {
+            id = "accept-46-bounty-on-murlocs",
+            kind = "accept",
+            priority = 1950,
+            text = "Accept Bounty on Murlocs from Guard Thomas in Elwynn Forest.",
+            complete = QuestState(46, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "objective-46-bounty-on-murlocs",
+            kind = "objective",
+            priority = 1960,
+            text = "Kill Murlocs and collect 8 Torn Murloc Fin in Stone Cairn Lake.",
+            dependsOn = { "accept-46-bounty-on-murlocs" },
+            complete = QuestState(46, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.7968, 0.5548, "Murloc Forager",
+                    "Travel to Murloc Forager."),
+            },
+        },
+        {
+            id = "turnin-46-bounty-on-murlocs",
+            kind = "turnin",
+            priority = 1970,
+            text = "Turn in Bounty on Murlocs to Guard Thomas in Elwynn Forest.",
+            dependsOn = { "objective-46-bounty-on-murlocs" },
+            complete = QuestState(46, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
+                    "Travel to Guard Thomas."),
+            },
+        },
+        {
+            id = "travel-eastvale-logging-camp-2",
+            kind = "travel",
+            priority = 1980,
+            text = "Travel to Eastvale Logging Camp.",
+            route = {
+                Point(MAP.ELWYNN, 0.7950, 0.6869, "Eastvale Logging Camp",
+                    "Travel to Eastvale Logging Camp."),
+            },
+        },
+        {
+            id = "turnin-59-cloth-and-leather-armor",
+            kind = "turnin",
+            priority = 1990,
+            text = "Turn in Cloth and Leather Armor to Sara Timberlain in Eastvale Logging Camp.",
+            dependsOn = { "accept-59-cloth-and-leather-armor" },
+            complete = QuestState(59, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.7950, 0.6869, "Sara Timberlain",
+                    "Travel to Sara Timberlain."),
+            },
+        },
+        {
+            id = "turnin-1666-marshal-haggard",
+            kind = "turnin",
+            priority = 2000,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Marshal Haggard to Marshal Haggard in Eastvale Logging Camp.",
+            dependsOn = { "accept-1666-marshal-haggard" },
+            complete = QuestState(1666, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.8461, 0.6937, "Marshal Haggard",
+                    "Travel to Marshal Haggard."),
+            },
+        },
+        {
+            id = "accept-1667-dead-tooth-jack",
+            kind = "accept",
+            priority = 2010,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Dead-tooth Jack from Marshal Haggard in Eastvale Logging Camp.",
+            complete = QuestState(1667, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.8461, 0.6937, "Marshal Haggard",
+                    "Travel to Marshal Haggard."),
+            },
+        },
+        {
+            id = "objective-1667-dead-tooth-jack",
+            kind = "objective",
+            priority = 2020,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Kill Dead-Tooth Jack and collect Dead-Tooth's Key in Ridgepoint Tower.",
+            dependsOn = { "accept-1667-dead-tooth-jack" },
+            complete = QuestState(1667, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.8936, 0.7885, "Dead-Tooth Jack",
+                    "Travel to Dead-Tooth Jack."),
+            },
+        },
+        {
+            id = "objective-1667-dead-tooth-jack-2",
+            kind = "objective",
+            priority = 2030,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Collect Marshal Haggard's Badge from Dead-tooth Lockbox in Ridgepoint Tower.",
+            dependsOn = { "accept-1667-dead-tooth-jack" },
+            complete = QuestState(1667, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.8936, 0.7885, "Ridgepoint Tower",
+                    "Travel to Ridgepoint Tower."),
+            },
+        },
+        {
+            id = "turnin-1667-dead-tooth-jack",
+            kind = "turnin",
+            priority = 2040,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Dead-tooth Jack to Marshal Haggard in Eastvale Logging Camp.",
+            dependsOn = { "objective-1667-dead-tooth-jack", "objective-1667-dead-tooth-jack-2" },
+            complete = QuestState(1667, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.8458, 0.6939, "Marshal Haggard",
+                    "Travel to Marshal Haggard."),
+            },
+        },
+        {
+            id = "travel-goldshire-2",
+            kind = "travel",
+            priority = 2050,
+            text = "Travel to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4212, 0.6596, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
+            id = "turnin-147-manhunt",
+            kind = "turnin",
+            priority = 2060,
+            text = "Turn in Manhunt to Marshal Dughan in Goldshire.",
+            dependsOn = { "objective-147-manhunt" },
+            complete = QuestState(147, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4212, 0.6596, "Marshal Dughan",
+                    "Travel to Marshal Dughan."),
+            },
+        },
+        {
+            id = "travel-the-stonefield-farm",
+            kind = "travel",
+            priority = 2070,
+            text = "Travel to The Stonefield Farm.",
+            route = {
+                Point(MAP.ELWYNN, 0.3461, 0.8443, "The Stonefield Farm",
+                    "Travel to The Stonefield Farm."),
+            },
+        },
+        {
+            id = "turnin-88-princess-must-die",
+            kind = "turnin",
+            priority = 2080,
+            text = "Turn in Princess Must Die! to Ma Stonefield in The Stonefield Farm.",
+            dependsOn = { "objective-88-princess-must-die" },
+            complete = QuestState(88, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.3461, 0.8443, "Ma Stonefield",
+                    "Travel to Ma Stonefield."),
+            },
+        },
+        {
+            id = "travel-244-three-corners",
+            kind = "travel",
+            priority = 2090,
+            text = "Travel to Three Corners in (map:1433).",
+            route = {
+                Point(MAP.REDRIDGE, 0.1536, 0.7144, "Three Corners",
+                    "Travel to Three Corners."),
+            },
+        },
+        {
+            id = "accept-244-encroaching-gnolls",
+            kind = "accept",
+            priority = 2100,
+            text = "Accept Encroaching Gnolls from Watch Captain Parker in Three Corners.",
+            complete = QuestState(244, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.1536, 0.7144, "Watch Captain Parker",
+                    "Travel to Watch Captain Parker."),
+            },
+        },
+        {
+            id = "turnin-244-encroaching-gnolls",
+            kind = "turnin",
+            priority = 2110,
+            text = "Turn in Encroaching Gnolls to Deputy Feldon in Lakeshire.",
+            dependsOn = { "accept-244-encroaching-gnolls" },
+            complete = QuestState(244, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3074, 0.6006, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
+            id = "travel-dwarven-district",
+            kind = "travel",
+            priority = 2120,
+            text = "Travel to Dwarven District in Stormwind City.",
+            route = {
+                Point(MAP.STORMWIND, 0.5175, 0.1203, "Dwarven District",
+                    "Travel to Dwarven District."),
+            },
+        },
+        {
+            id = "turnin-1097-elmore-s-task",
+            kind = "turnin",
+            priority = 2130,
+            text = "Turn in Elmore's Task to Grimand Elmore in Dwarven District.",
+            dependsOn = { "accept-1097-elmore-s-task" },
+            complete = QuestState(1097, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.5175, 0.1203, "Grimand Elmore",
+                    "Travel to Grimand Elmore."),
+            },
+        },
+        {
+            id = "accept-353-stormpike-s-delivery",
+            kind = "accept",
+            priority = 2140,
+            text = "Accept Stormpike's Delivery from Grimand Elmore in Dwarven District.",
+            complete = QuestState(353, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.5175, 0.1203, "Grimand Elmore",
+                    "Travel to Grimand Elmore."),
+            },
+        },
+        {
+            id = "travel-6661-deeprun-tram",
+            kind = "travel",
+            priority = 2150,
+            text = "Travel to Deeprun Tram. In the Dwarven District.",
+            route = {
+                Point(MAP.STORMWIND, 0.7030, 0.2950, "Deeprun Tram",
+                    "Travel to Deeprun Tram."),
+            },
+        },
+        {
+            id = "accept-6661-deeprun-rat-roundup",
+            kind = "accept",
+            priority = 2160,
+            text = "Accept Deeprun Rat Roundup from Monty in Deeprun Tram.",
+            complete = QuestState(6661, "activeOrCompleted"),
+        },
+        {
+            id = "objective-6661-deeprun-rat-roundup",
+            kind = "objective",
+            priority = 2170,
+            text = "Capture 5 Deeprun Rat by using the Rat Catcher's Flute. Lead the rats back to Monty. Don't forget to turn in the flute when you're finished.",
+            dependsOn = { "accept-6661-deeprun-rat-roundup" },
+            complete = QuestState(6661, "complete"),
+        },
+        {
+            id = "turnin-6661-deeprun-rat-roundup",
+            kind = "turnin",
+            priority = 2180,
+            text = "Turn in Deeprun Rat Roundup to Monty in Deeprun Tram.",
+            dependsOn = { "objective-6661-deeprun-rat-roundup" },
+            complete = QuestState(6661, "completed"),
+        },
+        {
+            id = "travel-433-city-of-ironforge",
+            kind = "travel",
+            priority = 2190,
+            text = "Go through the portal to exit to City of Ironforge.",
+        },
+        {
+            id = "travel-433-dun-morogh",
+            kind = "travel",
+            priority = 2200,
+            text = "Run to Dun Morogh.",
+            route = {
+                Point(MAP.DUN_MOROGH, 0.1400, 0.8600, "Dun Morogh",
+                    "Travel to Dun Morogh."),
+            },
+        },
+        {
+            id = "travel-433-gol-bolar-quarry",
+            kind = "travel",
+            priority = 2210,
+            text = "Travel to Gol'Bolar Quarry.",
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5654, 0.4772, "Continue toward Gol'Bolar Quarry",
+                    "Continue toward Gol'Bolar Quarry."),
+                Point(MAP.DUN_MOROGH, 0.6339, 0.5487, "Continue toward Gol'Bolar Quarry",
+                    "Continue toward Gol'Bolar Quarry."),
+                Point(MAP.DUN_MOROGH, 0.6865, 0.5595, "Gol'Bolar Quarry",
+                    "Travel to Gol'Bolar Quarry."),
+            },
+        },
+        {
+            id = "accept-433-the-public-servant",
+            kind = "accept",
+            priority = 2220,
+            text = "Accept The Public Servant from Senator Mehr Stonehallow in Gol'Bolar Quarry.",
+            complete = QuestState(433, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6870, 0.5602, "Senator Mehr Stonehallow",
+                    "Travel to Senator Mehr Stonehallow."),
+            },
+        },
+        {
+            id = "accept-432-those-blasted-troggs",
+            kind = "accept",
+            priority = 2230,
+            text = "Accept Those Blasted Troggs! in Gol'Bolar Quarry.",
+            complete = QuestState(432, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6910, 0.5630, "Gol'Bolar Quarry",
+                    "Travel to Gol'Bolar Quarry."),
+            },
+        },
+        {
+            id = "objective-433-the-public-servant",
+            kind = "objective",
+            priority = 2240,
+            text = "Kill 10 Rockjaw Bonesnapper around the Gol'Bolar Quarry.",
+            dependsOn = { "accept-433-the-public-servant" },
+            complete = QuestState(433, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.7058, 0.5669, "Rockjaw Bonesnapper",
+                    "Travel to Rockjaw Bonesnapper."),
+            },
+        },
+        {
+            id = "objective-432-those-blasted-troggs",
+            kind = "objective",
+            priority = 2250,
+            text = "Kill 6 Rockjaw Skullthumper around the Gol'Bolar Quarry.",
+            dependsOn = { "accept-432-those-blasted-troggs" },
+            complete = QuestState(432, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.7058, 0.5669, "Rockjaw Skullthumper",
+                    "Travel to Rockjaw Skullthumper."),
+            },
+        },
+        {
+            id = "turnin-433-the-public-servant",
+            kind = "turnin",
+            priority = 2260,
+            text = "Turn in The Public Servant to Senator Mehr Stonehallow in Gol'Bolar Quarry.",
+            dependsOn = { "objective-433-the-public-servant" },
+            complete = QuestState(433, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6870, 0.5602, "Senator Mehr Stonehallow",
+                    "Travel to Senator Mehr Stonehallow."),
+            },
+        },
+        {
+            id = "turnin-432-those-blasted-troggs",
+            kind = "turnin",
+            priority = 2270,
+            text = "Turn in Those Blasted Troggs! to Foreman Stonebrow in Gol'Bolar Quarry.",
+            dependsOn = { "objective-432-those-blasted-troggs" },
+            complete = QuestState(432, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6912, 0.5630, "Foreman Stonebrow",
+                    "Travel to Foreman Stonebrow."),
+            },
+        },
+        {
+            id = "travel-224-loch-modan",
+            kind = "travel",
+            priority = 2280,
+            text = "Travel to Loch Modan.",
+            route = {
+                Point(MAP.DUN_MOROGH, 0.8113, 0.5298, "Continue toward Loch Modan",
+                    "Continue toward Loch Modan."),
+                Point(MAP.DUN_MOROGH, 0.8226, 0.5341, "Continue toward Loch Modan",
+                    "Continue toward Loch Modan."),
+                Point(MAP.DUN_MOROGH, 0.8442, 0.5106, "Continue toward Loch Modan",
+                    "Continue toward Loch Modan."),
+                Point(MAP.DUN_MOROGH, 0.8622, 0.5132, "Loch Modan",
+                    "Travel to Loch Modan."),
+            },
+        },
+        {
+            id = "travel-224-loch-modan-2",
+            kind = "travel",
+            priority = 2290,
+            text = "Travel to Loch Modan.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.1976, 0.6287, "Loch Modan",
+                    "Travel to Loch Modan."),
+            },
+        },
+        {
+            id = "accept-224-in-defense-of-the-king-s-lands",
+            kind = "accept",
+            priority = 2300,
+            text = "Accept In Defense of the King's Lands from Mountaineer Cobbleflint in Valley of Kings.",
+            complete = QuestState(224, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2200, 0.7310, "Mountaineer Cobbleflint",
+                    "Travel to Mountaineer Cobbleflint."),
+            },
+        },
+        {
+            id = "accept-267-the-trogg-threat",
+            kind = "accept",
+            priority = 2310,
+            text = "Accept The Trogg Threat from Captain Rugelfuss in Valley of Kings.",
+            complete = QuestState(267, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2321, 0.7359, "Captain Rugelfuss",
+                    "Travel to Captain Rugelfuss."),
+            },
+        },
+        {
+            id = "travel-224-stonesplinter-valley",
+            kind = "travel",
+            priority = 2320,
+            text = "Travel to Stonesplinter Valley.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2846, 0.6600, "Continue toward Stonesplinter Valley",
+                    "Continue toward Stonesplinter Valley."),
+                Point(MAP.LOCH_MODAN, 0.3092, 0.7058, "Stonesplinter Valley",
+                    "Travel to Stonesplinter Valley."),
+            },
+        },
+        {
+            id = "objective-224-in-defense-of-the-king-s-lands",
+            kind = "objective",
+            priority = 2330,
+            text = "Kill 10 Stonesplinter Trogg and 10 Stonesplinter Scout in Stonesplinter Valley.",
+            dependsOn = { "accept-224-in-defense-of-the-king-s-lands" },
+            complete = QuestState(224, "complete"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3100, 0.7050, "Continue toward In Defense of the King's Lands",
+                    "Continue toward In Defense of the King's Lands."),
+                Point(MAP.LOCH_MODAN, 0.2800, 0.5300, "Stonesplinter Trogg",
+                    "Travel to Stonesplinter Trogg."),
+            },
+        },
+        {
+            id = "objective-267-the-trogg-threat",
+            kind = "objective",
+            priority = 2340,
+            text = "Kill Stonesplinter Scout and Stonesplinter Trogg to collect 8 Trogg Stone Tooth in Stonesplinter Valley.",
+            dependsOn = { "accept-267-the-trogg-threat" },
+            complete = QuestState(267, "complete"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3300, 0.7200, "Stonesplinter Scout",
+                    "Travel to Stonesplinter Scout."),
+            },
+        },
+        {
+            id = "travel-valley-of-kings",
+            kind = "travel",
+            priority = 2350,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 237, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Valley of Kings.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2962, 0.6758, "Continue toward Valley of Kings",
+                    "Continue toward Valley of Kings."),
+                Point(MAP.LOCH_MODAN, 0.2321, 0.7359, "Valley of Kings",
+                    "Travel to Valley of Kings."),
+            },
+        },
+        {
+            id = "turnin-267-the-trogg-threat",
+            kind = "turnin",
+            priority = 2360,
+            text = "Turn in The Trogg Threat to Captain Rugelfuss in Valley of Kings.",
+            dependsOn = { "objective-267-the-trogg-threat" },
+            complete = QuestState(267, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2321, 0.7359, "Captain Rugelfuss",
+                    "Travel to Captain Rugelfuss."),
+            },
+        },
+        {
+            id = "turnin-224-in-defense-of-the-king-s-lands",
+            kind = "turnin",
+            priority = 2370,
+            text = "Turn in In Defense of the King's Lands to Mountaineer Cobbleflint in Valley of Kings.",
+            dependsOn = { "objective-224-in-defense-of-the-king-s-lands" },
+            complete = QuestState(224, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2200, 0.7310, "Mountaineer Cobbleflint",
+                    "Travel to Mountaineer Cobbleflint."),
+            },
+        },
+        {
+            id = "accept-237-in-defense-of-the-king-s-lands",
+            kind = "accept",
+            priority = 2380,
+            text = "Accept In Defense of the King's Lands from Mountaineer Gravelgaw in Valley of Kings.",
+            complete = QuestState(237, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2352, 0.7637, "Mountaineer Gravelgaw",
+                    "Travel to Mountaineer Gravelgaw."),
+            },
+        },
+        {
+            id = "travel-416-thelsamar",
+            kind = "travel",
+            priority = 2390,
+            text = "Travel to Thelsamar.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2527, 0.6741, "Continue toward Thelsamar",
+                    "Continue toward Thelsamar."),
+                Point(MAP.LOCH_MODAN, 0.2817, 0.6471, "Continue toward Thelsamar",
+                    "Continue toward Thelsamar."),
+                Point(MAP.LOCH_MODAN, 0.3390, 0.5098, "Thelsamar",
+                    "Travel to Thelsamar."),
+            },
+        },
+        {
+            id = "accept-416-rat-catching",
+            kind = "accept",
+            priority = 2400,
+            text = "Accept Rat Catching from Mountaineer Kadrell in Thelsamar.",
+            complete = QuestState(416, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3291, 0.4953, "Mountaineer Kadrell",
+                    "Travel to Mountaineer Kadrell."),
+            },
+        },
+        {
+            id = "accept-1339-mountaineer-stormpike-s-task",
+            kind = "accept",
+            priority = 2410,
+            text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell in Thelsamar.",
+            complete = QuestState(1339, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3291, 0.4953, "Mountaineer Kadrell",
+                    "Travel to Mountaineer Kadrell."),
+            },
+        },
+        {
+            id = "accept-418-thelsamar-blood-sausages",
+            kind = "accept",
+            priority = 2420,
+            text = "Accept Thelsamar Blood Sausages in Stoutlager Inn.",
+            complete = QuestState(418, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3488, 0.4913, "Stoutlager Inn",
+                    "Travel to Stoutlager Inn."),
+            },
+        },
+        {
+            id = "note-416-stoutlager-inn",
+            kind = "note",
+            priority = 2430,
+            text = "Set your hearth in Stoutlager Inn with Innkeeper Hearthstove.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3550, 0.4842, "Innkeeper Hearthstove",
+                    "Travel to Innkeeper Hearthstove."),
+            },
+        },
+        {
+            id = "objective-416-rat-catching",
+            kind = "objective",
+            priority = 2440,
+            text = "Kill any of the Tunnel Rat enemies collect 12 Tunnel Rat Ear in Silver Stream Mine.",
+            dependsOn = { "accept-416-rat-catching" },
+            complete = QuestState(416, "complete"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2900, 0.4300, "Tunnel Rat Kobold",
+                    "Travel to Tunnel Rat Kobold."),
+            },
+        },
+        {
+            id = "travel-1338-algaz-station",
+            kind = "travel",
+            priority = 2450,
+            text = "Travel to Algaz Station.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2478, 0.1845, "Algaz Station",
+                    "Travel to Algaz Station."),
+            },
+        },
+        {
+            id = "turnin-353-stormpike-s-delivery",
+            kind = "turnin",
+            priority = 2460,
+            text = "Turn in Stormpike's Delivery to Mountaineer Stormpike in Algaz Station.",
+            dependsOn = { "accept-353-stormpike-s-delivery" },
+            complete = QuestState(353, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2478, 0.1845, "Mountaineer Stormpike",
+                    "Travel to Mountaineer Stormpike."),
+            },
+        },
+        {
+            id = "turnin-1339-mountaineer-stormpike-s-task",
+            kind = "turnin",
+            priority = 2470,
+            text = "Turn in Mountaineer Stormpike's Task to Mountaineer Stormpike in Algaz Station.",
+            dependsOn = { "accept-1339-mountaineer-stormpike-s-task" },
+            complete = QuestState(1339, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2478, 0.1845, "Mountaineer Stormpike",
+                    "Travel to Mountaineer Stormpike."),
+            },
+        },
+        {
+            id = "accept-1338-stormpike-s-order",
+            kind = "accept",
+            priority = 2480,
+            text = "Accept Stormpike's Order from Mountaineer Stormpike in Algaz Station.",
+            complete = QuestState(1338, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.2478, 0.1845, "Mountaineer Stormpike",
+                    "Travel to Mountaineer Stormpike."),
+            },
+        },
+        {
+            id = "objective-418-thelsamar-blood-sausages",
+            kind = "objective",
+            priority = 2490,
+            text = "Kill any Bears, Spiders and Boars for 3 Boar Intestines, 3 Bear Meat and 3 Spider Ichor.",
+            dependsOn = { "accept-418-thelsamar-blood-sausages" },
+            complete = QuestState(418, "complete"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3242, 0.2997, "Continue toward Thelsamar Blood Sausages",
+                    "Continue toward Thelsamar Blood Sausages."),
+                Point(MAP.LOCH_MODAN, 0.3728, 0.3691, "Continue toward Thelsamar Blood Sausages",
+                    "Continue toward Thelsamar Blood Sausages."),
+                Point(MAP.LOCH_MODAN, 0.2730, 0.2824, "Black Bear",
+                    "Travel to Black Bear."),
+            },
+        },
+        {
+            id = "travel-thelsamar",
+            kind = "travel",
+            priority = 2500,
+            text = "Travel to Thelsamar.",
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3291, 0.4953, "Thelsamar",
+                    "Travel to Thelsamar."),
+            },
+        },
+        {
+            id = "turnin-418-thelsamar-blood-sausages",
+            kind = "turnin",
+            priority = 2510,
+            text = "Turn in Thelsamar Blood Sausages to Vidra Hearthstove in Stoutlager Inn.",
+            dependsOn = { "objective-418-thelsamar-blood-sausages" },
+            complete = QuestState(418, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3483, 0.4912, "Vidra Hearthstove",
+                    "Travel to Vidra Hearthstove."),
+            },
+        },
+        {
+            id = "turnin-416-a-rat-catching",
+            kind = "turnin",
+            priority = 2520,
+            text = "Turn in A Rat Catching to Mountaineer Kadrell in Thelsamar.",
+            dependsOn = { "objective-416-rat-catching" },
+            complete = QuestState(416, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3291, 0.4953, "Mountaineer Kadrell",
+                    "Travel to Mountaineer Kadrell."),
+            },
+        },
+        {
+            id = "accept-436-ironband-s-excavation",
+            kind = "accept",
+            priority = 2530,
+            text = "Accept Ironband's Excavation from Jern Hornhelm in Thelsamar.",
+            complete = QuestState(436, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3725, 0.4771, "Jern Hornhelm",
+                    "Travel to Jern Hornhelm."),
+            },
+        },
+    },
+})

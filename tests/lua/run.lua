@@ -45,6 +45,109 @@ Load("Guides/Leveling/Durotar.lua")
 Load("Guides/Leveling/Mulgore.lua")
 Load("Guides/Leveling/TheBarrens.lua")
 Load("Guides/Leveling/Teldrassil.lua")
+Load("Guides/Leveling/Era/1-12-durotar.lua")
+Load("Guides/Leveling/Era/1-12-mulgore.lua")
+Load("Guides/Leveling/Era/1-12-tirisfal-glades.lua")
+Load("Guides/Leveling/Era/12-20-barrens.lua")
+Load("Guides/Leveling/Era/12-20-silverpine-forest.lua")
+Load("Guides/Leveling/Era/20-22-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/22-23-southern-barrens.lua")
+Load("Guides/Leveling/Era/23-25-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/25-25-southern-barrens.lua")
+Load("Guides/Leveling/Era/25-26-thousand-needles.lua")
+Load("Guides/Leveling/Era/26-27-ashenvale.lua")
+Load("Guides/Leveling/Era/27-27-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/27-29-thousand-needles.lua")
+Load("Guides/Leveling/Era/29-30-hillsbrad-foothills.lua")
+Load("Guides/Leveling/Era/30-30-arathi-highlands.lua")
+Load("Guides/Leveling/Era/30-31-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/31-32-thousand-needles.lua")
+Load("Guides/Leveling/Era/32-34-desolace.lua")
+Load("Guides/Leveling/Era/34-36-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/36-37-alterac-mountains.lua")
+Load("Guides/Leveling/Era/37-38-arathi-highlands.lua")
+Load("Guides/Leveling/Era/37-38-thousand-needles.lua")
+Load("Guides/Leveling/Era/38-38-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/38-40-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/40-41-badlands.lua")
+Load("Guides/Leveling/Era/41-42-swamp-of-sorrows.lua")
+Load("Guides/Leveling/Era/42-43-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/43-44-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/44-44-desolace.lua")
+Load("Guides/Leveling/Era/44-45-tanaris.lua")
+Load("Guides/Leveling/Era/45-46-feralas.lua")
+Load("Guides/Leveling/Era/46-47-azshara.lua")
+Load("Guides/Leveling/Era/47-47-hinterlands.lua")
+Load("Guides/Leveling/Era/47-47-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/47-48-searing-gorge.lua")
+Load("Guides/Leveling/Era/48-49-swamp-of-sorrows.lua")
+Load("Guides/Leveling/Era/49-49-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/49-50-feralas.lua")
+Load("Guides/Leveling/Era/49-50-tanaris.lua")
+Load("Guides/Leveling/Era/50-50-azshara.lua")
+Load("Guides/Leveling/Era/50-51-hinterlands.lua")
+Load("Guides/Leveling/Era/51-51-blasted-lands.lua")
+Load("Guides/Leveling/Era/51-53-ungoro-crater.lua")
+Load("Guides/Leveling/Era/53-54-burning-steppes.lua")
+Load("Guides/Leveling/Era/54-54-felwood.lua")
+Load("Guides/Leveling/Era/54-55-winterspring.lua")
+Load("Guides/Leveling/Era/55-56-felwood.lua")
+Load("Guides/Leveling/Era/56-56-western-plaguelands.lua")
+Load("Guides/Leveling/Era/56-57-eastern-plaguelands.lua")
+Load("Guides/Leveling/Era/57-58-western-plaguelands.lua")
+Load("Guides/Leveling/Era/58-59-silithus.lua")
+Load("Guides/Leveling/Era/59-60-winterspring.lua")
+Load("Guides/Leveling/Era/1-12-dun-morogh.lua")
+Load("Guides/Leveling/Era/1-12-elwynn-forest.lua")
+Load("Guides/Leveling/Era/1-12-teldrassil.lua")
+Load("Guides/Leveling/Era/12-17-darkshore.lua")
+Load("Guides/Leveling/Era/12-17-westfall.lua")
+Load("Guides/Leveling/Era/17-18-loch-modan.lua")
+Load("Guides/Leveling/Era/18-20-redridge-mountains.lua")
+Load("Guides/Leveling/Era/20-21-darkshore.lua")
+Load("Guides/Leveling/Era/21-22-ashenvale.lua")
+Load("Guides/Leveling/Era/22-23-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/23-24-darkshore.lua")
+Load("Guides/Leveling/Era/24-24-ashenvale.lua")
+Load("Guides/Leveling/Era/24-27-wetlands.lua")
+Load("Guides/Leveling/Era/27-28-redridge-mountains.lua")
+Load("Guides/Leveling/Era/28-29-duskwood.lua")
+Load("Guides/Leveling/Era/29-30-ashenvale.lua")
+Load("Guides/Leveling/Era/30-31-wetlands.lua")
+Load("Guides/Leveling/Era/31-32-hillsbrad-foothills.lua")
+Load("Guides/Leveling/Era/32-33-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/33-34-thousand-needles.lua")
+Load("Guides/Leveling/Era/34-35-desolace.lua")
+Load("Guides/Leveling/Era/36-37-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/37-37-alterac-mountains.lua")
+Load("Guides/Leveling/Era/37-38-arathi-highlands-alliance.lua")
+Load("Guides/Leveling/Era/38-39-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/39-40-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/40-41-badlands-alliance.lua")
+Load("Guides/Leveling/Era/41-42-swamp-of-sorrows-alliance.lua")
+Load("Guides/Leveling/Era/42-43-stranglethorn-vale-alliance.lua")
+Load("Guides/Leveling/Era/43-43-desolace.lua")
+Load("Guides/Leveling/Era/43-44-tanaris.lua")
+Load("Guides/Leveling/Era/44-46-feralas.lua")
+Load("Guides/Leveling/Era/46-46-azshara.lua")
+Load("Guides/Leveling/Era/46-46-hinterlands.lua")
+Load("Guides/Leveling/Era/46-47-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/47-48-searing-gorge-alliance.lua")
+Load("Guides/Leveling/Era/48-49-feralas.lua")
+Load("Guides/Leveling/Era/49-50-tanaris-alliance.lua")
+Load("Guides/Leveling/Era/50-50-hinterlands.lua")
+Load("Guides/Leveling/Era/50-51-blasted-lands.lua")
+Load("Guides/Leveling/Era/51-52-ungoro-crater.lua")
+Load("Guides/Leveling/Era/52-53-azshara.lua")
+Load("Guides/Leveling/Era/53-54-felwood.lua")
+Load("Guides/Leveling/Era/54-55-winterspring-alliance.lua")
+Load("Guides/Leveling/Era/55-56-burning-steppes.lua")
+Load("Guides/Leveling/Era/55-56-felwood-alliance.lua")
+Load("Guides/Leveling/Era/56-57-western-plaguelands.lua")
+Load("Guides/Leveling/Era/57-58-eastern-plaguelands.lua")
+Load("Guides/Leveling/Era/57-58-western-plaguelands-alliance.lua")
+Load("Guides/Leveling/Era/58-59-silithus-alliance.lua")
+Load("Guides/Leveling/Era/59-60-winterspring-alliance.lua")
 
 local baseState = {
     faction = "Horde",
@@ -806,6 +909,11 @@ function TestItemStarts()
     local follow = ns.Engine:GetGoal(barrens, "accept-821-chens-empty-keg")
     Equal(ns.Engine:GetGoal(barrens, "accept-819-chens-empty-keg"), nil,
         "Chen's Empty Keg has no required loot step")
+    local bracers = ns.Engine:GetGoal(barrens, "objective-855-centaur-bracers-1")
+    Check(not string.find(bracers.text, "Kolkar can drop", 1, true),
+        "Centaur Bracers does not say Kolkar drop the keg")
+    Check(string.find(bracers.text, "barrel", 1, true) ~= nil,
+        "Centaur Bracers says the keg is a barrel on the ground")
     Equal(ns.Engine:IsReady(barrens, keg, empty), false,
         "the keg turn-in stays hidden until the item is used")
     Equal(ns.Engine:IsReady(barrens, follow, empty), false,
@@ -1908,7 +2016,12 @@ TestFlightMemory()
 function TestTeldrassil()
     local guide = ns.guides["leveling-teldrassil"]
     Check(guide ~= nil, "the Teldrassil guide is registered")
+    Equal(guide.title, "Teldrassil", "the Loremaster tag already names the guide type")
     Equal(guide.category, "Loremaster Guides", "the Teldrassil guide is a Loremaster guide")
+    Equal(ns.EvaluateCondition(guide.conditions, {
+        faction = "Horde", level = 20, raceID = 2, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    }), false, "Teldrassil is Alliance only")
     local balance = 0
     for _, goal in ipairs(guide.goals) do
         if string.find(goal.id, "objective-456-the-balance-of-nature-", 1, true) then
@@ -2005,6 +2118,63 @@ function TestTeldrassil()
         "the 5 minute antidote is the next step ahead of other Teldrassil work")
 end
 TestTeldrassil()
+
+function TestEraLeveling()
+    local guide = ns.guides["leveling-era-1-12-durotar"]
+    Check(guide ~= nil, "the Era Durotar guide is registered")
+    Equal(guide.title, "1-12 Durotar (Era)", "Era guides are labeled Era")
+    Equal(guide.category, "Leveling Quest Guides", "Era guides are leveling guides")
+    local horde = {
+        faction = "Horde", level = 60, raceID = 2, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+        mapID = 1411, x = 0.4, y = 0.4,
+    }
+    local alliance = {
+        faction = "Alliance", level = 60, raceID = 1, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    }
+    Equal(ns.EvaluateCondition(guide.conditions, horde), true, "a Horde character can use an Era guide")
+    Equal(ns.EvaluateCondition(guide.conditions, alliance), false, "an Alliance character cannot use an Era guide")
+    local plans = 0
+    local count = 0
+    local hordeCount = 0
+    local allianceCount = 0
+    for _, goal in ipairs(guide.goals) do
+        if string.find(goal.id, "objective-786-", 1, true) then plans = plans + 1 end
+        Check(not string.find(string.lower(goal.text), "flight path", 1, true),
+            "Era steps do not send you to learn a flight path")
+        Check(not string.find(string.lower(goal.text), "grind", 1, true),
+            "Era steps do not add grind stops")
+    end
+    Equal(plans, 3, "Thwarting Kolkar Aggression keeps its three plans")
+    for _, guideID in ipairs(ns.guideOrder) do
+        local eraGuide = ns.guides[guideID]
+        if string.find(eraGuide.title, "(Era)", 1, true) then
+            count = count + 1
+            Equal(eraGuide.category, "Leveling Quest Guides", "every Era guide is a leveling guide")
+            local faction = eraGuide.conditions.all[1].faction
+            if faction == "Horde" then
+                hordeCount = hordeCount + 1
+                Equal(ns.EvaluateCondition(eraGuide.conditions, horde), true,
+                    "a Horde character can use a Horde Era guide")
+                Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), false,
+                    "a Horde Era guide is hidden from Alliance")
+            elseif faction == "Alliance" then
+                allianceCount = allianceCount + 1
+                Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), true,
+                    "an Alliance character can use an Alliance Era guide")
+                Equal(ns.EvaluateCondition(eraGuide.conditions, horde), false,
+                    "an Alliance Era guide is hidden from Horde")
+            else
+                Check(false, "every Era guide names a faction")
+            end
+        end
+    end
+    Equal(count, 103, "the Era set is registered")
+    Equal(hordeCount, 52, "the Horde Era set is registered")
+    Equal(allianceCount, 51, "the Alliance Era set is registered")
+end
+TestEraLeveling()
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)

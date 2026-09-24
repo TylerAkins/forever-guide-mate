@@ -47,11 +47,12 @@ end
 
 ns:RegisterGuide({
     id = "leveling-teldrassil",
-    title = "Teldrassil (Loremaster)",
+    title = "Teldrassil",
     category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {
+            { faction = "Alliance" },
             { level = { min = 1 } },
         },
     },
