@@ -362,8 +362,11 @@ local ERA_STARTER_BY_RACE = {
 }
 
 local function IsEraGuide(guide)
-    return type(guide) == "table" and guide.series ~= "era"
-        and type(guide.title) == "string" and string.find(guide.title, "(Era)", 1, true) ~= nil
+    if type(guide) ~= "table" or guide.series == "era" then return false end
+    if type(guide.id) == "string" and string.sub(guide.id, 1, 13) == "leveling-era-" then
+        return true
+    end
+    return type(guide.title) == "string" and string.find(guide.title, "(Era)", 1, true) ~= nil
 end
 
 local function GuideFactionAndLevel(guide)

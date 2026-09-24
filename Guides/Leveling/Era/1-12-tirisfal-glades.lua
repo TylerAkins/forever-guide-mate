@@ -1,7 +1,9 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
+-- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
+-- Whispering Horror Residue is turned in only after the item starts the quest.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -30,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
-    title = "1-12 Tirisfal Glades (Era)",
+    title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -416,6 +418,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98389-a-light-in-the-darkness",
+            kind = "accept",
+            priority = 261,
+            text = "Accept A Light in the Darkness from Aramis Hammerhand in Deathknell.",
+            complete = QuestState(98389, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
             id = "accept-3902-scavenging-deathknell",
             kind = "accept",
             priority = 270,
@@ -480,6 +493,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.2680, 0.5990, "Young Night Web Spider",
                     "Travel to Young Night Web Spider."),
+            },
+        },
+        {
+            id = "objective-98389-a-light-in-the-darkness",
+            kind = "objective",
+            priority = 311,
+            text = "Free 6 Webbed Forsaken in Night Web's Hollow.",
+            dependsOn = { "accept-98389-a-light-in-the-darkness" },
+            complete = QuestState(98389, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2660, 0.5940, "Webbed Forsaken",
+                    "Travel to Webbed Forsaken."),
+            },
+        },
+        {
+            id = "turnin-98389-a-light-in-the-darkness",
+            kind = "turnin",
+            priority = 312,
+            text = "Turn in A Light in the Darkness to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "objective-98389-a-light-in-the-darkness" },
+            complete = QuestState(98389, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
             },
         },
         {
@@ -699,6 +736,63 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99134-discipline",
+            kind = "accept",
+            priority = 511,
+            text = "Accept Discipline from Executor Zygand in Brill.",
+            complete = QuestState(99134, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                    "Travel to Executor Zygand."),
+            },
+        },
+        {
+            id = "accept-86784-sticks-and-bones",
+            kind = "accept",
+            priority = 512,
+            text = "Accept Sticks and Bones from Deathguard Bartholomew in Brill. He gives you a Collecting Basket.",
+            complete = QuestState(86784, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5840, 0.5140, "Deathguard Bartholomew",
+                    "Travel to Deathguard Bartholomew."),
+            },
+        },
+        {
+            id = "objective-86784-sticks-and-bones",
+            kind = "objective",
+            priority = 513,
+            text = "Collect 6 Dry Branches in the hills west of Brill and bring them to Eleanor Shackleton.",
+            dependsOn = { "accept-86784-sticks-and-bones" },
+            complete = QuestState(86784, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                    "Travel to Eleanor Shackleton."),
+            },
+        },
+        {
+            id = "turnin-86784-sticks-and-bones",
+            kind = "turnin",
+            priority = 514,
+            text = "Turn in Sticks and Bones to Eleanor Shackleton.",
+            dependsOn = { "objective-86784-sticks-and-bones" },
+            complete = QuestState(86784, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                    "Travel to Eleanor Shackleton."),
+            },
+        },
+        {
+            id = "accept-95314-that-shadowvale-green-elixir",
+            kind = "accept",
+            priority = 515,
+            text = "Accept That Shadowvale Green Elixir from Carolai Anise in Brill.",
+            complete = QuestState(95314, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5940, 0.5220, "Carolai Anise",
+                    "Travel to Carolai Anise."),
+            },
+        },
+        {
             id = "accept-427-at-war-with-the-scarlet-crusade",
             kind = "accept",
             priority = 520,
@@ -892,6 +986,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99142-tomb-weed",
+            kind = "accept",
+            priority = 681,
+            text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
+            complete = QuestState(99142, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                    "Travel to Junior Apothecary Holland."),
+            },
+        },
+        {
+            id = "objective-99142-tomb-weed",
+            kind = "objective",
+            priority = 711,
+            text = "Collect 5 Tomb Weed around the graves north of Brill.",
+            dependsOn = { "accept-99142-tomb-weed" },
+            complete = QuestState(99142, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal graves",
+                    "Travel to Tirisfal graves."),
+            },
+        },
+        {
             id = "travel-398-tirisfal-glades",
             kind = "travel",
             priority = 690,
@@ -1012,6 +1129,78 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5830, 0.4977, "Junior Apothecary Holland",
                     "Travel to Junior Apothecary Holland."),
+            },
+        },
+        {
+            id = "turnin-99142-tomb-weed",
+            kind = "turnin",
+            priority = 791,
+            text = "Turn in Tomb Weed to Junior Apothecary Holland.",
+            dependsOn = { "objective-99142-tomb-weed" },
+            complete = QuestState(99142, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                    "Travel to Junior Apothecary Holland."),
+            },
+        },
+        {
+            id = "objective-99134-discipline",
+            kind = "objective",
+            priority = 792,
+            text = "Motivate the Deathguards Executor Zygand named. They stand in Brill and along the roads you are already riding, including Deathknell.",
+            dependsOn = { "accept-99134-discipline" },
+            complete = QuestState(99134, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                    "Travel to Executor Zygand."),
+            },
+        },
+        {
+            id = "turnin-99134-discipline",
+            kind = "turnin",
+            priority = 793,
+            text = "Turn in Discipline to Executor Zygand.",
+            dependsOn = { "objective-99134-discipline" },
+            complete = QuestState(99134, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                    "Travel to Executor Zygand."),
+            },
+        },
+        {
+            id = "accept-99141-patience",
+            kind = "accept",
+            priority = 794,
+            text = "Accept Patience from Executor Zygand.",
+            dependsOn = { "turnin-99134-discipline" },
+            complete = QuestState(99141, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                    "Travel to Executor Zygand."),
+            },
+        },
+        {
+            id = "objective-99141-patience",
+            kind = "objective",
+            priority = 795,
+            text = "Collect reports from Deathguard Dillinger, Deathguard Kristof, and Gordo.",
+            dependsOn = { "accept-99141-patience" },
+            complete = QuestState(99141, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5820, 0.5140, "Deathguard Dillinger",
+                    "Travel to Deathguard Dillinger."),
+            },
+        },
+        {
+            id = "turnin-99141-patience",
+            kind = "turnin",
+            priority = 796,
+            text = "Turn in Patience to Executor Zygand.",
+            dependsOn = { "objective-99141-patience" },
+            complete = QuestState(99141, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                    "Travel to Executor Zygand."),
             },
         },
         {
@@ -1452,6 +1641,64 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-97558-hides-for-the-forsaken",
+            kind = "accept",
+            priority = 1171,
+            text = "Accept Hides for the Forsaken from Shelene Rhobart.",
+            complete = QuestState(97558, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                    "Travel to Shelene Rhobart."),
+            },
+        },
+        {
+            id = "accept-99156-rear-guard-patrol",
+            kind = "accept",
+            priority = 1172,
+            text = "Accept Rear Guard Patrol from Deathguard Linnea.",
+            complete = QuestState(99156, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
+                    "Travel to Deathguard Linnea."),
+            },
+        },
+        {
+            id = "objective-99156-rear-guard-patrol",
+            kind = "objective",
+            priority = 1181,
+            text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
+            dependsOn = { "accept-99156-rear-guard-patrol" },
+            complete = QuestState(99156, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.8280, 0.4420, "Riptear",
+                    "Travel to Riptear."),
+            },
+        },
+        {
+            id = "objective-97558-hides-for-the-forsaken",
+            kind = "objective",
+            priority = 1182,
+            text = "Collect 8 Duskbat Wing Membranes, 6 Darkhound Hides, and 3 Vile Fin Murloc Skins.",
+            dependsOn = { "accept-97558-hides-for-the-forsaken" },
+            complete = QuestState(97558, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                    "Travel to Shelene Rhobart."),
+            },
+        },
+        {
+            id = "objective-95314-that-shadowvale-green-elixir",
+            kind = "objective",
+            priority = 1183,
+            text = "Collect 8 Bottles of Whispering Elixir in Shadowvale. A Whispering Horror may drop residue. Use it if it does.",
+            dependsOn = { "accept-95314-that-shadowvale-green-elixir" },
+            complete = QuestState(95314, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1100, 0.6600, "Shadowvale",
+                    "Travel to Shadowvale."),
+            },
+        },
+        {
             id = "travel-356-balnir-farmstead",
             kind = "travel",
             priority = 1180,
@@ -1481,6 +1728,29 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.7932, 0.5590, "Crusader Outpost",
                     "Travel to Crusader Outpost."),
+            },
+        },
+        {
+            id = "accept-99144-seeking-refuge",
+            kind = "accept",
+            priority = 1201,
+            text = "Accept Seeking Refuge from Bareth Dawnstone at Crusader's Outpost.",
+            complete = QuestState(99144, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                    "Travel to Bareth Dawnstone."),
+            },
+        },
+        {
+            id = "objective-99144-seeking-refuge",
+            kind = "objective",
+            priority = 1202,
+            text = "Escort Bareth Dawnstone out of Crusader's Outpost.",
+            dependsOn = { "accept-99144-seeking-refuge" },
+            complete = QuestState(99144, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                    "Travel to Bareth Dawnstone."),
             },
         },
         {
@@ -1765,6 +2035,54 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-99156-rear-guard-patrol",
+            kind = "turnin",
+            priority = 1411,
+            text = "Turn in Rear Guard Patrol to Deathguard Linnea.",
+            dependsOn = { "objective-99156-rear-guard-patrol" },
+            complete = QuestState(99156, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
+                    "Travel to Deathguard Linnea."),
+            },
+        },
+        {
+            id = "turnin-97558-hides-for-the-forsaken",
+            kind = "turnin",
+            priority = 1412,
+            text = "Turn in Hides for the Forsaken to Shelene Rhobart.",
+            dependsOn = { "objective-97558-hides-for-the-forsaken" },
+            complete = QuestState(97558, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                    "Travel to Shelene Rhobart."),
+            },
+        },
+        {
+            id = "turnin-99144-seeking-refuge",
+            kind = "turnin",
+            priority = 1413,
+            text = "Turn in Seeking Refuge to Shari Stilwell in Brill.",
+            dependsOn = { "objective-99144-seeking-refuge" },
+            complete = QuestState(99144, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell",
+                    "Travel to Shari Stilwell."),
+            },
+        },
+        {
+            id = "turnin-95314-that-shadowvale-green-elixir",
+            kind = "turnin",
+            priority = 1414,
+            text = "Turn in That Shadowvale Green Elixir to Carolai Anise in Brill.",
+            dependsOn = { "objective-95314-that-shadowvale-green-elixir" },
+            complete = QuestState(95314, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5940, 0.5220, "Carolai Anise",
+                    "Travel to Carolai Anise."),
+            },
+        },
+        {
             id = "travel-1821-scarlet-watch-post",
             kind = "travel",
             priority = 1420,
@@ -1837,9 +2155,192 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96895-the-argent-emissary",
+            kind = "accept",
+            priority = 1471,
+            text = "Accept The Argent Emissary from Deathguard Terrence in Brill.",
+            complete = QuestState(96895, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6140, 0.5340, "Deathguard Terrence",
+                    "Travel to Deathguard Terrence."),
+            },
+        },
+        {
+            id = "turnin-96895-the-argent-emissary",
+            kind = "turnin",
+            priority = 1472,
+            text = "Turn in The Argent Emissary to Hadric Harlson, on the road toward the Undercity.",
+            dependsOn = { "accept-96895-the-argent-emissary" },
+            complete = QuestState(96895, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "accept-96896-a-righteous-cause",
+            kind = "accept",
+            priority = 1473,
+            text = "Accept A Righteous Cause from Leonid Barthalomew the Revered.",
+            dependsOn = { "turnin-96899-bandarion-keep" },
+            complete = QuestState(96896, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                    "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
+            id = "objective-96896-a-righteous-cause",
+            kind = "objective",
+            priority = 1474,
+            text = "Observe the conversation between Danitha Morr and Leonid Barthalomew.",
+            dependsOn = { "accept-96896-a-righteous-cause" },
+            complete = QuestState(96896, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                    "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
+            id = "turnin-96896-a-righteous-cause",
+            kind = "turnin",
+            priority = 1475,
+            text = "Turn in A Righteous Cause to Leonid Barthalomew the Revered.",
+            dependsOn = { "objective-96896-a-righteous-cause" },
+            complete = QuestState(96896, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                    "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
+            id = "accept-96897-the-cult-of-the-damned",
+            kind = "accept",
+            priority = 1476,
+            text = "Accept The Cult of the Damned from Hadric Harlson.",
+            dependsOn = { "turnin-96895-the-argent-emissary" },
+            complete = QuestState(96897, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "accept-96898-remnants-of-war",
+            kind = "accept",
+            priority = 1477,
+            text = "Accept Remnants of War from Hadric Harlson.",
+            dependsOn = { "turnin-96895-the-argent-emissary" },
+            complete = QuestState(96898, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "objective-96897-the-cult-of-the-damned",
+            kind = "objective",
+            priority = 1478,
+            text = "Kill 8 Dark Neophytes and 8 Dark Enforcers.",
+            dependsOn = { "accept-96897-the-cult-of-the-damned" },
+            complete = QuestState(96897, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6660, 0.6540, "Dark Neophyte",
+                    "Travel to Dark Neophyte."),
+            },
+        },
+        {
+            id = "objective-96898-remnants-of-war",
+            kind = "objective",
+            priority = 1479,
+            text = "Gather 12 Necrotic Crystal Fragments.",
+            dependsOn = { "accept-96898-remnants-of-war" },
+            complete = QuestState(96898, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6660, 0.6540, "Dark Neophyte",
+                    "Travel to Dark Neophyte."),
+            },
+        },
+        {
+            id = "turnin-96897-the-cult-of-the-damned",
+            kind = "turnin",
+            priority = 1486,
+            text = "Turn in The Cult of the Damned to Hadric Harlson.",
+            dependsOn = { "objective-96897-the-cult-of-the-damned" },
+            complete = QuestState(96897, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "turnin-96898-remnants-of-war",
+            kind = "turnin",
+            priority = 1487,
+            text = "Turn in Remnants of War to Hadric Harlson.",
+            dependsOn = { "objective-96898-remnants-of-war" },
+            complete = QuestState(96898, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "accept-96899-bandarion-keep",
+            kind = "accept",
+            priority = 1475.5,
+            text = "Accept Bandarion Keep from Hadric Harlson.",
+            dependsOn = { "turnin-96895-the-argent-emissary" },
+            complete = QuestState(96899, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                    "Travel to Hadric Harlson."),
+            },
+        },
+        {
+            id = "turnin-96899-bandarion-keep",
+            kind = "turnin",
+            priority = 1489,
+            text = "Turn in Bandarion Keep to Leonid Barthalomew the Revered.",
+            dependsOn = { "accept-96899-bandarion-keep" },
+            complete = QuestState(96899, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                    "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
+            id = "turnin-98545-leonids-letter",
+            kind = "turnin",
+            priority = 1491,
+            text = "Accept Leonid's Letter from Leonid Barthalomew, then deliver it to Glix Xizzix in the Undercity.",
+            dependsOn = { "turnin-96896-a-righteous-cause" },
+            complete = QuestState(98545, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6980, 0.4700, "Glix Xizzix",
+                    "Travel to Glix Xizzix."),
+            },
+        },
+        {
+            id = "turnin-95328-whispering-horror-residue",
+            kind = "turnin",
+            priority = 1492,
+            conditions = {
+                all = {
+                    { quest = { id = 95328, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Whispering Horror Residue to Father Lankester in the War Quarter if you found it.",
+            complete = QuestState(95328, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.4960, 0.1560, "Father Lankester",
+                    "Travel to Father Lankester."),
+            },
+        },
+        {
             id = "turnin-374-proof-of-demise",
             kind = "turnin",
-            priority = 1480,
+            priority = 1470.5,
             text = "Turn in Proof of Demise to Deathguard Burgess in Brill.",
             dependsOn = { "objective-374-proof-of-demise" },
             complete = QuestState(374, "completed"),
@@ -1851,7 +2352,7 @@ ns:RegisterGuide({
         {
             id = "accept-1885-mennet-carkad",
             kind = "accept",
-            priority = 1490,
+            priority = 1470.6,
             conditions = {
                 all = {
                     { class = 4 },

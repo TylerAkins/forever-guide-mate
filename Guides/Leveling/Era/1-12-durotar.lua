@@ -1,13 +1,22 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Durotar, levels 1-12.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Durotar and Orgrimmar lists are woven into this route.
+-- Left out on purpose: Exploring the Horde and Welcome to Azeroth are Skyborne.
+-- Orgrimmar cooking quests are level 15, past this route.
+-- Crafting lessons stay on the profession. Drop quests appear only after the item starts them.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
     DUROTAR = 1411,
     ORGRIMMAR = 1454,
+}
+
+local SKILL = {
+    BLACKSMITHING = 164,
+    LEATHERWORKING = 165,
+    ENCHANTING = 333,
 }
 
 local function QuestState(questID, state)
@@ -30,7 +39,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-durotar",
-    title = "1-12 Durotar (Era)",
+    title = "1-12 Durotar",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -91,6 +100,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-97279-wayward-weapons",
+            kind = "accept",
+            priority = 41,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Wayward Weapons from Gornek in The Den.",
+            complete = QuestState(97279, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
+                    "Travel to Gornek."),
+            },
+        },
+        {
             id = "objective-788-cutting-teeth",
             kind = "objective",
             priority = 50,
@@ -100,6 +125,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4450, 0.6610, "Mottled Boar",
                     "Travel to Mottled Boar."),
+            },
+        },
+        {
+            id = "objective-97279-wayward-weapons",
+            kind = "objective",
+            priority = 51,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. Wowhead has no weapon pin, so this marks the Den.",
+            dependsOn = { "accept-97279-wayward-weapons" },
+            complete = QuestState(97279, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Valley of Trials",
+                    "Travel to Valley of Trials."),
             },
         },
         {
@@ -179,6 +221,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
                     "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-97279-wayward-weapons",
+            kind = "turnin",
+            priority = 105,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Wayward Weapons to Kzan Thornslash in The Den.",
+            dependsOn = { "objective-97279-wayward-weapons" },
+            complete = QuestState(97279, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4040, 0.6800, "Kzan Thornslash",
+                    "Travel to Kzan Thornslash."),
             },
         },
         {
@@ -1193,6 +1252,55 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96821-legging-it",
+            kind = "accept",
+            priority = 791,
+            text = "Accept Legging It from Vel'rin Fang in Sen'jin Village.",
+            complete = QuestState(96821, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5580, 0.7400, "Vel'rin Fang",
+                    "Travel to Vel'rin Fang."),
+            },
+        },
+        {
+            id = "accept-97225-forgotten-loa-idols",
+            kind = "accept",
+            priority = 792,
+            text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
+            complete = QuestState(97225, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5580, 0.7440, "Master Vornal",
+                    "Travel to Master Vornal."),
+            },
+        },
+        {
+            id = "accept-97223-bloodtalon-matriarch",
+            kind = "accept",
+            priority = 793,
+            text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
+            complete = QuestState(97223, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5520, 0.7540, "Xar'Ti",
+                    "Travel to Xar'Ti."),
+            },
+        },
+        {
+            id = "accept-96873-a-pain-in-the-neck",
+            kind = "accept",
+            priority = 794,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
+                },
+            },
+            text = "Accept A Pain in the Neck from Pa'zula in Sen'jin Village. This step is for enchanters.",
+            complete = QuestState(96873, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5660, 0.7360, "Pa'zula",
+                    "Travel to Pa'zula."),
+            },
+        },
+        {
             id = "travel-806-razor-hill",
             kind = "travel",
             priority = 800,
@@ -1200,6 +1308,46 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5230, 0.4320, "Razor Hill",
                     "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "objective-96821-legging-it-1",
+            kind = "objective",
+            priority = 801,
+            text = "Legging It: kill Ridgeshade Creepers on the way to Razor Hill.",
+            dependsOn = { "accept-96821-legging-it" },
+            complete = QuestObjective(96821, 1),
+            route = {
+                Point(MAP.DUROTAR, 0.5160, 0.5740, "Ridgeshade Creeper",
+                    "Travel to Ridgeshade Creeper."),
+            },
+        },
+        {
+            id = "objective-96821-legging-it-2",
+            kind = "objective",
+            priority = 802,
+            text = "Legging It: kill Ridgeshade Lurkers on the way to Razor Hill. A lost pack can drop for Ukor.",
+            dependsOn = { "accept-96821-legging-it" },
+            complete = QuestObjective(96821, 2),
+            route = {
+                Point(MAP.DUROTAR, 0.5040, 0.5180, "Ridgeshade Lurker",
+                    "Travel to Ridgeshade Lurker."),
+            },
+        },
+        {
+            id = "turnin-96876-ukors-lost-pack",
+            kind = "turnin",
+            priority = 803,
+            conditions = {
+                all = {
+                    { quest = { id = 96876, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Ukor's Lost Pack to Ukor in the Valley of Trials if you found the pack.",
+            complete = QuestState(96876, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.6820, "Ukor",
+                    "Travel to Ukor."),
             },
         },
         {
@@ -1237,6 +1385,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-96821-legging-it",
+            kind = "turnin",
+            priority = 831,
+            text = "Turn in Legging It to Gar'Thok in Razor Hill.",
+            dependsOn = { "objective-96821-legging-it-1", "objective-96821-legging-it-2" },
+            complete = QuestState(96821, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4340, "Gar'Thok",
+                    "Travel to Gar'Thok."),
+            },
+        },
+        {
+            id = "accept-96822-for-honor",
+            kind = "accept",
+            priority = 832,
+            text = "Accept For Honor from Turroc in Razor Hill Barracks.",
+            complete = QuestState(96822, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5400, 0.4260, "Turroc",
+                    "Travel to Turroc."),
+            },
+        },
+        {
             id = "accept-837-encroachment",
             kind = "accept",
             priority = 840,
@@ -1266,6 +1437,17 @@ ns:RegisterGuide({
             complete = QuestState(815, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.5118, 0.4246, "Cook Torka",
+                    "Travel to Cook Torka."),
+            },
+        },
+        {
+            id = "accept-96825-this-fruit-could-bite-back",
+            kind = "accept",
+            priority = 861,
+            text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
+            complete = QuestState(96825, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5120, 0.4240, "Cook Torka",
                     "Travel to Cook Torka."),
             },
         },
@@ -1373,6 +1555,30 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-96822-for-honor",
+            kind = "turnin",
+            priority = 951,
+            text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
+            dependsOn = { "objective-96822-for-honor" },
+            complete = QuestState(96822, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5400, 0.4260, "Turroc",
+                    "Travel to Turroc."),
+            },
+        },
+        {
+            id = "turnin-96825-this-fruit-could-bite-back",
+            kind = "turnin",
+            priority = 1071,
+            text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
+            dependsOn = { "objective-96825-this-fruit-could-bite-back" },
+            complete = QuestState(96825, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5120, 0.4240, "Cook Torka",
+                    "Travel to Cook Torka."),
+            },
+        },
+        {
             id = "accept-825-from-the-wreckage",
             kind = "accept",
             priority = 960,
@@ -1428,6 +1634,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4723, 0.4909, "Razormane Grounds",
                     "Travel to Razormane Grounds."),
+            },
+        },
+        {
+            id = "objective-96825-this-fruit-could-bite-back",
+            kind = "objective",
+            priority = 1001,
+            text = "Collect Prickly Pear Fruit on the Razormane grounds. Wowhead has no cactus pin.",
+            dependsOn = { "accept-96825-this-fruit-could-bite-back" },
+            complete = QuestState(96825, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4300, 0.3980, "Razormane grounds",
+                    "Travel to Razormane grounds."),
+            },
+        },
+        {
+            id = "objective-96822-for-honor",
+            kind = "objective",
+            priority = 931,
+            text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. Wowhead has no item pin.",
+            dependsOn = { "accept-96822-for-honor" },
+            complete = QuestState(96822, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5940, 0.5880, "Tiragarde Keep outskirts",
+                    "Travel to Tiragarde Keep outskirts."),
             },
         },
         {
@@ -1529,6 +1759,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99123-lost-in-the-shadows",
+            kind = "accept",
+            priority = 1081,
+            text = "Accept Lost in the Shadows from Pal'juh inside Kolkar Crag.",
+            complete = QuestState(99123, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4620, 0.7860, "Pal'juh",
+                    "Travel to Pal'juh."),
+            },
+        },
+        {
+            id = "objective-99123-lost-in-the-shadows",
+            kind = "objective",
+            priority = 1082,
+            text = "Escort Pal'juh out of Kolkar Crag.",
+            dependsOn = { "accept-99123-lost-in-the-shadows" },
+            complete = QuestState(99123, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.4620, 0.7860, "Pal'juh",
+                    "Travel to Pal'juh."),
+            },
+        },
+        {
             id = "objective-786-1-attack-plan-valley-of-trials",
             kind = "objective",
             priority = 1090,
@@ -1587,6 +1840,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-99123-lost-in-the-shadows",
+            kind = "turnin",
+            priority = 1121,
+            text = "Turn in Lost in the Shadows to Master Vornal in Sen'jin Village.",
+            dependsOn = { "objective-99123-lost-in-the-shadows" },
+            complete = QuestState(99123, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5580, 0.7440, "Master Vornal",
+                    "Travel to Master Vornal."),
+            },
+        },
+        {
             id = "turnin-818-a-solvent-spirit",
             kind = "turnin",
             priority = 1140,
@@ -1606,6 +1871,47 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.6004, 0.8155, "Echo Isles",
                     "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "objective-97225-forgotten-loa-idols",
+            kind = "objective",
+            priority = 1141,
+            text = "Collect Forgotten Loa Idols on the Echo Isles. Wowhead has no idol pin, so this marks the hexed trolls.",
+            dependsOn = { "accept-97225-forgotten-loa-idols" },
+            complete = QuestState(97225, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6760, 0.8340, "Echo Isles",
+                    "Travel to Echo Isles."),
+            },
+        },
+        {
+            id = "objective-97223-bloodtalon-matriarch",
+            kind = "objective",
+            priority = 1142,
+            text = "Collect Bloodtalon Matriarch Eggs.",
+            dependsOn = { "accept-97223-bloodtalon-matriarch" },
+            complete = QuestState(97223, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6860, 0.7160, "Bloodtalon Matriarch",
+                    "Travel to Bloodtalon Matriarch."),
+            },
+        },
+        {
+            id = "objective-96873-a-pain-in-the-neck",
+            kind = "objective",
+            priority = 1143,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
+                },
+            },
+            text = "A Pain in the Neck: disenchant Hexed Pendants from the Echo Isles trolls for Luminous Residue. This step is for enchanters.",
+            dependsOn = { "accept-96873-a-pain-in-the-neck" },
+            complete = QuestState(96873, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.6760, 0.8340, "Hexed Troll",
+                    "Travel to Hexed Troll."),
             },
         },
         {
@@ -1698,6 +2004,47 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5593, 0.7476, "Master Gadrin",
                     "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "turnin-97225-forgotten-loa-idols",
+            kind = "turnin",
+            priority = 1231,
+            text = "Turn in Forgotten Loa Idols to Master Gadrin in Sen'jin Village.",
+            dependsOn = { "objective-97225-forgotten-loa-idols" },
+            complete = QuestState(97225, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5600, 0.7460, "Master Gadrin",
+                    "Travel to Master Gadrin."),
+            },
+        },
+        {
+            id = "turnin-97223-bloodtalon-matriarch",
+            kind = "turnin",
+            priority = 1232,
+            text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
+            dependsOn = { "objective-97223-bloodtalon-matriarch" },
+            complete = QuestState(97223, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5520, 0.7540, "Xar'Ti",
+                    "Travel to Xar'Ti."),
+            },
+        },
+        {
+            id = "turnin-96873-a-pain-in-the-neck",
+            kind = "turnin",
+            priority = 1233,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
+                },
+            },
+            text = "Turn in A Pain in the Neck to Pa'zula in Sen'jin Village. This step is for enchanters.",
+            dependsOn = { "objective-96873-a-pain-in-the-neck" },
+            complete = QuestState(96873, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5660, 0.7360, "Pa'zula",
+                    "Travel to Pa'zula."),
             },
         },
         {
@@ -2050,6 +2397,38 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96874-this-is-spinal-axe",
+            kind = "accept",
+            priority = 1471,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
+                },
+            },
+            text = "Accept This Is Spinal Axe from Ug'thok in the Valley of Honor. This step is for blacksmiths.",
+            complete = QuestState(96874, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.8060, 0.2340, "Ug'thok",
+                    "Travel to Ug'thok."),
+            },
+        },
+        {
+            id = "accept-96875-beasts-of-thunder-ridge",
+            kind = "accept",
+            priority = 1472,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
+                },
+            },
+            text = "Accept Beasts of Thunder Ridge from Kamari in Orgrimmar. This step is for leatherworkers.",
+            complete = QuestState(96875, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6300, 0.4500, "Kamari",
+                    "Travel to Kamari."),
+            },
+        },
+        {
             id = "accept-1883-speak-with-un-thuwa",
             kind = "accept",
             priority = 1480,
@@ -2388,6 +2767,107 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-96874-this-is-spinal-axe-1",
+            kind = "objective",
+            priority = 1701,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
+                },
+            },
+            text = "This Is Spinal Axe: collect Weathered Spines from thunder lizards. Lightning Hide can also drop Halikor's Hoof. Use the hoof if it drops. This step is for blacksmiths.",
+            dependsOn = { "accept-96874-this-is-spinal-axe" },
+            complete = QuestObjective(96874, 1),
+            route = {
+                Point(MAP.DUROTAR, 0.3920, 0.2840, "Thunder Lizard",
+                    "Travel to Thunder Lizard."),
+            },
+        },
+        {
+            id = "objective-96875-beasts-of-thunder-ridge-1",
+            kind = "objective",
+            priority = 1702,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
+                },
+            },
+            text = "Beasts of Thunder Ridge: collect Rough Lizard Hides from Lightning Hide. This step is for leatherworkers.",
+            dependsOn = { "accept-96875-beasts-of-thunder-ridge" },
+            complete = QuestObjective(96875, 1),
+            route = {
+                Point(MAP.DUROTAR, 0.4140, 0.2440, "Lightning Hide",
+                    "Travel to Lightning Hide."),
+            },
+        },
+        {
+            id = "turnin-97281-a-simmering-storm",
+            kind = "turnin",
+            priority = 1703,
+            conditions = {
+                all = {
+                    { quest = { id = 97281, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in A Simmering Storm to Rezlak if a thunder lizard dropped the Dull Stormy Orb.",
+            complete = QuestState(97281, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4640, 0.2300, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "accept-97282-stormy-potential",
+            kind = "accept",
+            priority = 1704,
+            conditions = {
+                all = {
+                    { quest = { id = 97281, state = "completed" } },
+                },
+            },
+            text = "Accept Stormy Potential from Rezlak.",
+            dependsOn = { "turnin-97281-a-simmering-storm" },
+            complete = QuestState(97282, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4640, 0.2300, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
+            id = "objective-97282-stormy-potential",
+            kind = "objective",
+            priority = 1705,
+            conditions = {
+                all = {
+                    { quest = { id = 97281, state = "completed" } },
+                },
+            },
+            text = "Collect a Charged Thunder Lizard Organ from the thunder lizards on Thunder Ridge.",
+            dependsOn = { "accept-97282-stormy-potential" },
+            complete = QuestState(97282, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.3920, 0.2840, "Thunder Lizard",
+                    "Travel to Thunder Lizard."),
+            },
+        },
+        {
+            id = "turnin-97282-stormy-potential",
+            kind = "turnin",
+            priority = 1706,
+            conditions = {
+                all = {
+                    { quest = { id = 97281, state = "completed" } },
+                },
+            },
+            text = "Turn in Stormy Potential to Rezlak.",
+            dependsOn = { "objective-97282-stormy-potential" },
+            complete = QuestState(97282, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4640, 0.2300, "Rezlak",
+                    "Travel to Rezlak."),
+            },
+        },
+        {
             id = "travel-tor-kren-farm",
             kind = "travel",
             priority = 1720,
@@ -2428,6 +2908,113 @@ ns:RegisterGuide({
             complete = QuestState(806, "completed"),
             route = {
                 Point(MAP.DUROTAR, 0.5228, 0.4322, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-99048-a-missing-hand",
+            kind = "accept",
+            priority = 1751,
+            text = "Accept A Missing Hand from Orgnil Soulscar in Razor Hill.",
+            complete = QuestState(99048, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "turnin-99048-a-missing-hand",
+            kind = "turnin",
+            priority = 1752,
+            text = "Turn in A Missing Hand to Heglan Shadeeye, north of Tiragarde Keep.",
+            dependsOn = { "accept-99048-a-missing-hand" },
+            complete = QuestState(99048, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5860, 0.4560, "Heglan Shadeeye",
+                    "Travel to Heglan Shadeeye."),
+            },
+        },
+        {
+            id = "accept-99049-threat-from-below",
+            kind = "accept",
+            priority = 1753,
+            text = "Accept Threat from Below from Heglan Shadeeye.",
+            dependsOn = { "turnin-99048-a-missing-hand" },
+            complete = QuestState(99049, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5860, 0.4560, "Heglan Shadeeye",
+                    "Travel to Heglan Shadeeye."),
+            },
+        },
+        {
+            id = "objective-99049-threat-from-below",
+            kind = "objective",
+            priority = 1754,
+            text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
+            dependsOn = { "accept-99049-threat-from-below" },
+            complete = QuestState(99049, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5860, 0.4560, "Skirmish site",
+                    "Travel to Skirmish site."),
+            },
+        },
+        {
+            id = "turnin-99049-threat-from-below",
+            kind = "turnin",
+            priority = 1755,
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            dependsOn = { "objective-99049-threat-from-below" },
+            complete = QuestState(99049, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-99051-threat-from-below",
+            kind = "accept",
+            priority = 1756,
+            text = "Accept the next Threat from Below from Orgnil Soulscar.",
+            dependsOn = { "turnin-99049-threat-from-below" },
+            complete = QuestState(99051, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "objective-99051-threat-from-below",
+            kind = "objective",
+            priority = 1757,
+            text = "Collect 9 Naga Spinefins from Spitelash naga on the north coast.",
+            dependsOn = { "accept-99051-threat-from-below" },
+            complete = QuestState(99051, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5900, 0.2380, "Spitelash Scout",
+                    "Travel to Spitelash Scout."),
+            },
+        },
+        {
+            id = "turnin-99051-threat-from-below",
+            kind = "turnin",
+            priority = 1758,
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            dependsOn = { "objective-99051-threat-from-below" },
+            complete = QuestState(99051, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
+            },
+        },
+        {
+            id = "accept-99052-threat-from-below",
+            kind = "accept",
+            priority = 1759,
+            text = "Accept the next Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
+            dependsOn = { "turnin-99051-threat-from-below" },
+            complete = QuestState(99052, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
                     "Travel to Orgnil Soulscar."),
             },
         },
@@ -2489,6 +3076,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5510, 0.0991, "Skull Rock",
                     "Travel to Skull Rock."),
+            },
+        },
+        {
+            id = "objective-99052-threat-from-below",
+            kind = "objective",
+            priority = 1801,
+            text = "Kill Aggor the Young on the north coast and take Aggor's Belt. This is an elite. Bring a group.",
+            dependsOn = { "accept-99052-threat-from-below" },
+            complete = QuestState(99052, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.5900, 0.1740, "Aggor the Young",
+                    "Travel to Aggor the Young."),
             },
         },
         {
@@ -2559,6 +3158,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5635, 0.2005, "Margoz",
                     "Travel to Margoz."),
+            },
+        },
+        {
+            id = "turnin-99052-threat-from-below",
+            kind = "turnin",
+            priority = 1865,
+            text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
+            dependsOn = { "objective-99052-threat-from-below" },
+            complete = QuestState(99052, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5220, 0.4320, "Orgnil Soulscar",
+                    "Travel to Orgnil Soulscar."),
             },
         },
         {
@@ -2717,6 +3328,90 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Thrall",
                     "Travel to Thrall."),
+            },
+        },
+        {
+            id = "objective-96874-this-is-spinal-axe-2",
+            kind = "objective",
+            priority = 1971,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
+                },
+            },
+            text = "This Is Spinal Axe: buy or craft 5 of Ug'thok's coarse stone reagent. This step is for blacksmiths.",
+            dependsOn = { "accept-96874-this-is-spinal-axe" },
+            complete = QuestObjective(96874, 2),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.8060, 0.2340, "Ug'thok",
+                    "Travel to Ug'thok."),
+            },
+        },
+        {
+            id = "turnin-96874-this-is-spinal-axe",
+            kind = "turnin",
+            priority = 1972,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
+                },
+            },
+            text = "Turn in This Is Spinal Axe to Ug'thok. This step is for blacksmiths.",
+            dependsOn = { "objective-96874-this-is-spinal-axe-1", "objective-96874-this-is-spinal-axe-2" },
+            complete = QuestState(96874, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.8060, 0.2340, "Ug'thok",
+                    "Travel to Ug'thok."),
+            },
+        },
+        {
+            id = "objective-96875-beasts-of-thunder-ridge-2",
+            kind = "objective",
+            priority = 1973,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
+                },
+            },
+            text = "Beasts of Thunder Ridge: buy or craft 2 Cured Light Hides. This step is for leatherworkers.",
+            dependsOn = { "accept-96875-beasts-of-thunder-ridge" },
+            complete = QuestObjective(96875, 2),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6300, 0.4500, "Kamari",
+                    "Travel to Kamari."),
+            },
+        },
+        {
+            id = "turnin-96875-beasts-of-thunder-ridge",
+            kind = "turnin",
+            priority = 1974,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
+                },
+            },
+            text = "Turn in Beasts of Thunder Ridge to Kamari. This step is for leatherworkers.",
+            dependsOn = { "objective-96875-beasts-of-thunder-ridge-1", "objective-96875-beasts-of-thunder-ridge-2" },
+            complete = QuestState(96875, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6300, 0.4500, "Kamari",
+                    "Travel to Kamari."),
+            },
+        },
+        {
+            id = "turnin-96877-halikors-hoof",
+            kind = "turnin",
+            priority = 1975,
+            conditions = {
+                all = {
+                    { quest = { id = 96877, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Halikor's Hoof to Kamari if a thunder lizard dropped the hoof.",
+            complete = QuestState(96877, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6300, 0.4500, "Kamari",
+                    "Travel to Kamari."),
             },
         },
         {
