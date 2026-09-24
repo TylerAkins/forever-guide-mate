@@ -22,3 +22,4 @@ All notable changes to this project are documented here.
 - Added the Barrens Loremaster guide. Dungeon quests stay in their dungeon guides. Elite steps say to bring a group.
 - Thunder Bluff steps no longer send you to a flight master after you are already in Mulgore or Thunder Bluff. From Mulgore, the route points at the southwest elevator.
 - A known flight path says "Take the flight path to X." If that path has not been learned, the step walks instead of sending you to a flight master.
+- The Orgrimmar zeppelin to Undercity is the south platform. The north platform goes to Stranglethorn.
