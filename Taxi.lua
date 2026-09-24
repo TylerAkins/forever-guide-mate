@@ -14,14 +14,34 @@ local function IsReachable(state)
     return flightPathState and state == flightPathState.Reachable
 end
 
+local function IsCurrent(state)
+    if state == "CURRENT" or state == 0 then return true end
+    local flightPathState = Enum and Enum.FlightPathState
+    return flightPathState and state == flightPathState.Current
+end
+
 local function AddDestination(destinations, name, state)
     local normalized = NormalizeName(name)
     if normalized and IsReachable(state) then destinations[normalized] = name end
 end
 
+local function AddKnown(known, name, state)
+    local normalized = NormalizeName(name)
+    if normalized and (IsReachable(state) or IsCurrent(state)) then known[normalized] = name end
+end
+
+local function ReadNode(api, name, state, slotIndex, reachable, known)
+    if slotIndex and type(api.TaxiNodeGetType) == "function" then
+        local typeOK, nodeType = pcall(api.TaxiNodeGetType, slotIndex)
+        if typeOK then state = nodeType end
+    end
+    AddDestination(reachable, name, state)
+    AddKnown(known, name, state)
+end
+
 function Taxi:ReadDestinations(api, mapID)
     api = api or _G
-    local destinations = {}
+    local reachable, known = {}, {}
     local taxiMap = api.C_TaxiMap
     local reader = taxiMap and (taxiMap.GetAllTaxiNodes or taxiMap.GetTaxiNodesForMap)
     if type(reader) == "function" and mapID then
@@ -29,37 +49,45 @@ function Taxi:ReadDestinations(api, mapID)
         if ok and type(nodes) == "table" then
             for _, node in ipairs(nodes) do
                 if type(node) == "table" then
-                    local state = node.state
-                    if node.slotIndex and type(api.TaxiNodeGetType) == "function" then
-                        local typeOK, nodeType = pcall(api.TaxiNodeGetType, node.slotIndex)
-                        if typeOK then state = nodeType end
-                    end
-                    AddDestination(destinations, node.name, state)
+                    ReadNode(api, node.name, node.state, node.slotIndex, reachable, known)
                 end
             end
         end
     end
-    if next(destinations) == nil and type(api.NumTaxiNodes) == "function"
+    if next(known) == nil and type(api.NumTaxiNodes) == "function"
         and type(api.TaxiNodeName) == "function" and type(api.TaxiNodeGetType) == "function" then
         local countOK, count = pcall(api.NumTaxiNodes)
         if countOK then
             for index = 1, tonumber(count) or 0 do
                 local nameOK, name = pcall(api.TaxiNodeName, index)
                 local typeOK, nodeType = pcall(api.TaxiNodeGetType, index)
-                if nameOK and typeOK then AddDestination(destinations, name, nodeType) end
+                if nameOK and typeOK then ReadNode(api, name, nodeType, nil, reachable, known) end
             end
         end
     end
-    return destinations
+    return reachable, known
+end
+
+function Taxi:Remember(known)
+    if not ns.charDB or type(known) ~= "table" then return end
+    if type(ns.charDB.taxiNodes) ~= "table" then ns.charDB.taxiNodes = {} end
+    for normalized, displayName in pairs(known) do
+        if type(normalized) == "string" and type(displayName) == "string" then
+            ns.charDB.taxiNodes[normalized] = displayName
+        end
+    end
 end
 
 function Taxi:Capture(api)
     if not ns.charDB then return false end
     local mapID, x, y = ns.PlayerState:CapturePosition(api)
-    if not mapID or not x or not y then return false end
-    local destinations = self:ReadDestinations(api, mapID)
-    if next(destinations) == nil then return false end
-    ns.charDB.taxiRoutes[mapID] = { x = x, y = y, destinations = destinations }
+    local reachable, known = self:ReadDestinations(api, mapID)
+    if next(known) == nil then return false end
+    self:Remember(known)
+    if mapID and x and y and next(reachable) ~= nil then
+        if type(ns.charDB.taxiRoutes) ~= "table" then ns.charDB.taxiRoutes = {} end
+        ns.charDB.taxiRoutes[mapID] = { x = x, y = y, destinations = reachable }
+    end
     return true
 end
 
@@ -92,26 +120,40 @@ local function NamesMatch(wanted, node)
     return false
 end
 
-function Taxi:LearnedDestination(state, destinationName)
-    if not state or not state.mapID or type(destinationName) ~= "string" then return nil end
-    if not ns.charDB or type(ns.charDB.taxiRoutes) ~= "table" then return nil end
-    local route = ns.charDB.taxiRoutes[state.mapID]
-    if not route or type(route.destinations) ~= "table" then return nil end
-    local wanted = NormalizeName(destinationName)
-    for normalized, displayName in pairs(route.destinations) do
+local function FindDestination(destinations, wanted)
+    if type(destinations) ~= "table" then return nil end
+    for normalized, displayName in pairs(destinations) do
         if NamesMatch(wanted, normalized) then return displayName end
     end
+end
+
+function Taxi:LearnedDestination(state, destinationName)
+    if not state or not state.mapID or type(destinationName) ~= "string" or not ns.charDB then return nil end
+    local wanted = NormalizeName(destinationName)
+    if not wanted or wanted == "" then return nil end
+    local routes = ns.charDB.taxiRoutes
+    local route = type(routes) == "table" and routes[state.mapID] or nil
+    local found = route and FindDestination(route.destinations, wanted)
+    if found then return found end
+    return FindDestination(ns.charDB.taxiNodes, wanted)
 end
 
 function Taxi:GetLearnedLeg(goal, state)
     if self:AtDestination(goal, state) then return nil end
     if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID then return nil end
     if not self:LearnedDestination(state, goal.taxiDestination) then return nil end
-    local route = ns.charDB.taxiRoutes[state.mapID]
+    local routes = ns.charDB.taxiRoutes
+    local route = type(routes) == "table" and routes[state.mapID] or nil
+    local mapID, x, y = state.mapID, route and route.x, route and route.y
+    if not x or not y then
+        local master = ns.Travel and ns.Travel.FlightMaster and ns.Travel:FlightMaster(state)
+        if not master then return nil end
+        mapID, x, y = master.mapID, master.x, master.y
+    end
     return {
-        mapID = state.mapID,
-        x = route.x,
-        y = route.y,
+        mapID = mapID,
+        x = x,
+        y = y,
         radius = 0.02,
         label = "Take the flight path to " .. goal.taxiDestination .. ".",
         learnedTaxi = true,

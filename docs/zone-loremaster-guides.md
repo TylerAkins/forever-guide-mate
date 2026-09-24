@@ -13,12 +13,55 @@ Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/f
 - An elite step says `This is an elite. Bring a group.`
 - Each quest objective is its own step. Those steps depend on the accept, not on each other, so a finished pin cannot become the active pin again. The turn-in depends on the objectives.
 - A provided item, such as a blackjack the quest gives you, is not its own step. Say how to use it on the objective that needs it.
-- Follow the Wowhead series. A follow-up accept depends on the previous turn-in.
+- Follow the Wowhead series. A follow-up accept depends on the previous turn-in, except for a handoff. Handoffs are the next section.
 - Use uiMap IDs (Durotar `1411`, the Barrens `1413`, Orgrimmar `1454`). Wowhead area IDs are not map IDs.
 - Put a `flightTo` value only on a travel hop. A visit to a quest NPC keeps its own pin.
 - Say a flight path is available only when that character has learned it. The travel code already does this. Do not send the player to a flight master for an unknown path.
 - If Wowhead has no pin, say so in the step and mark the nearest named landmark. Do not invent a precise pin.
 - Coordinates in these guides have not been validated in the Forever client.
+
+## Handoffs
+
+A handoff is a follow-up whose only work is to reach another NPC: deliver an item, speak with them, report back, or turn the quest in there. Same-name parts are handoffs too. The Missing Shipment, Samophlange, and Hidden Enemies are the examples.
+
+The visit is one step. It depends on the previous turn-in. The text says to accept the follow-up, then names the visit. The pin is the NPC you still have to reach. There is no accept step on the giver.
+
+The Missing Shipment is turned in to Wharfmaster Dizzywig. Gazlowe offers it after Southsea Freebooters, and the step still depends on that turn-in:
+
+```lua
+{
+    id = "turnin-890-the-missing-shipment",
+    kind = "turnin",
+    text = "Accept The Missing Shipment from Gazlowe, then turn it in to Wharfmaster Dizzywig.",
+    dependsOn = { "turnin-887-southsea-freebooters" },
+    complete = QuestState(890, "completed"),
+    route = {
+        Point(MAP.BARRENS, 0.632, 0.384, "Wharfmaster Dizzywig",
+            "Travel to Wharfmaster Dizzywig."),
+    },
+},
+```
+
+A talk that finishes a quest log objective, and then sends you back to the giver, is an objective step. It completes when that quest is `complete`. Hidden Enemies after the Lieutenant's Insignia:
+
+```lua
+{
+    id = "gauge-neeru",
+    kind = "objective",
+    text = "Accept Thrall's next Hidden Enemies task, then show the insignia to Neeru Fireblade and exhaust his dialogue.",
+    dependsOn = { "turnin-hidden-enemies-1" },
+    complete = QuestState(5727, "complete"),
+    route = {
+        Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
+    },
+},
+```
+
+A talk that ends the quest is a turn-in and completes when that quest is `completed`.
+
+A kill or a collect still has its own accept step on the giver. The objective steps depend on that accept. The pin stays with the giver until the quest is in the log, then it moves to the camp. Folding that accept would send the player to the camp with nothing to do.
+
+An accept step on the giver, with the next pin on someone else, is the broken shape. The guide sits on "Accept the next quest" after the turn-in, including when the follow-up has the same name, until the player presses Next.
 
 ## Timers
 
