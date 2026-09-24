@@ -707,8 +707,53 @@ function TestQuestAudit()
         "a pin that says where the NPC stands still matches the unit name")
     Check(not ns.QuestAudit:NameMatches("Ug'thok", "Ug"),
         "a partial name does not match a quest giver")
+    Fresh()
+    ns.Engine.currentGoal = {
+        id = "use-the-keg", kind = "accept",
+        text = "Use the keg to accept Chen's Empty Keg.",
+        complete = { quest = { id = 819, state = "activeOrCompleted" } },
+        route = { { label = "Brewmaster Drohn" } },
+    }
+    ns.QuestAudit:Inspect(API("Brewmaster Drohn", {}))
+    Equal(next(ns.charDB.notOffered), nil,
+        "using an item to accept a quest is not a refusal from the turn-in NPC")
 end
 TestQuestAudit()
+
+function TestItemStarts()
+    local barrens = ns.guides["leveling-the-barrens"]
+    local function State(quests, completed)
+        return {
+            faction = "Horde", raceID = 8, classID = 8, level = 20,
+            professions = {}, professionsKnown = true,
+            quests = quests, questLogKnown = true,
+            completedQuests = completed, questCompletionKnown = true,
+            mapID = 1413, x = 0.45, y = 0.28,
+        }
+    end
+    local empty = State({}, {})
+    local keg = ns.Engine:GetGoal(barrens, "turnin-819-chens-empty-keg")
+    local follow = ns.Engine:GetGoal(barrens, "accept-821-chens-empty-keg")
+    Equal(ns.Engine:GetGoal(barrens, "accept-819-chens-empty-keg"), nil,
+        "Chen's Empty Keg has no required loot step")
+    Equal(ns.Engine:IsReady(barrens, keg, empty), false,
+        "the keg turn-in stays hidden until the item is used")
+    Equal(ns.Engine:IsReady(barrens, follow, empty), false,
+        "the keg follow-up stays hidden when the drop never comes")
+    local progress = ns.Engine:GetGuideProgress(barrens, empty)
+    local active = State({ [819] = { complete = false, objectives = {} } }, {})
+    local withKeg = ns.Engine:GetGuideProgress(barrens, active)
+    Check(withKeg.eligible > progress.eligible,
+        "using Chen's Empty Keg adds its steps to the Barrens percentage")
+    Equal(ns.Engine:IsReady(barrens, keg, active), true,
+        "the keg turn-in appears once the quest is in the log")
+    Equal(ns.Engine:IsReady(barrens, follow, active), false,
+        "Brewmaster Drohn's next keg quest waits for the turn-in")
+    local turnedIn = State({}, { [819] = true })
+    Equal(ns.Engine:IsReady(barrens, follow, turnedIn), true,
+        "the next keg quest opens after the first is turned in")
+end
+TestItemStarts()
 
 local tomtomCalls = {}
 local tomtom = {
@@ -1598,6 +1643,72 @@ function TestCampPickups()
     Open(durotarGuide, Horde(14, 1411, { [786] = Active(786) }))
     Equal(ns.Engine.currentGoal.id, "accept-817-practical-prey",
         "Sen'jin Village picks up Practical Prey with Thwarting Kolkar Aggression")
+
+    local function Counted(text, fulfilled, required, finished)
+        return {
+            text = text, finished = finished,
+            numFulfilled = fulfilled, numRequired = required,
+        }
+    end
+    local midDisrupt = Horde(15, 1413, {
+        [869] = { complete = true, objectives = { Counted("Raptor Head", 12, 12, true) } },
+        [871] = { complete = false, objectives = {
+            Counted("Razormane Water Seeker slain", 8, 8, true),
+            Counted("Razormane Thornweaver slain", 8, 8, true),
+            Counted("Razormane Hunter slain", 2, 3, true),
+        } },
+        [867] = { complete = false, objectives = { Counted("Witchwing Talon", 0, 8, false) } },
+    })
+    local keepOpen = { [869] = true, [871] = true, [867] = true }
+    for _, goal in ipairs(barrensGuide.goals) do
+        local complete = goal.complete
+        local questID = complete and complete.quest and complete.quest.id
+        if not questID and complete and complete.questObjective then
+            questID = complete.questObjective.id
+        end
+        if questID and goal.priority and goal.priority < 224 and not keepOpen[questID] then
+            midDisrupt.completedQuests[questID] = true
+        end
+    end
+    Equal(ns.EvaluateCondition({
+        questObjective = { id = 871, index = 3, text = "Razormane Hunter slain" },
+    }, midDisrupt), false, "2/3 Razormane Hunters stay incomplete when finished is set")
+    local partial = { text = "Razormane Hunter slain", finished = 2, numFulfilled = 2, numRequired = 3 }
+    Equal(ns.EvaluateCondition({
+        questObjective = { id = 871, index = 3, text = "Razormane Hunter slain" },
+    }, Horde(15, 1413, { [871] = { complete = false, objectives = {
+        Counted("Razormane Water Seeker slain", 8, 8, true),
+        Counted("Razormane Thornweaver slain", 8, 8, true),
+        partial,
+    } } })), false, "a finished number that matches the short count is still incomplete")
+    Open(barrensGuide, midDisrupt)
+    Equal(ns.Engine.currentGoal.id, "objective-871-disrupt-the-attacks-3",
+        "Harpy Raiders waits until the Razormane Hunters are slain")
+    ns.charDB.activeGoal = "objective-867-harpy-raiders-1"
+    ns.Engine:Refresh(midDisrupt)
+    Equal(ns.Engine.currentGoal.id, "objective-871-disrupt-the-attacks-3",
+        "an unfinished Razormane Hunter count returns from Harpy Raiders")
+    local logged = ns.PlayerState:GetQuestLog({
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return 1 end,
+            GetInfo = function()
+                return { questID = 871, title = "Disrupt the Attacks", isComplete = false }
+            end,
+            GetQuestObjectives = function()
+                return {
+                    Counted("Razormane Water Seeker slain", 8, 8, true),
+                    Counted("Razormane Thornweaver slain", 8, 8, true),
+                    Counted("Razormane Hunter slain", 2, 3, true),
+                }
+            end,
+        },
+    })
+    Equal(logged[871].complete, false, "2/3 hunters do not mark Disrupt the Attacks complete")
+    midDisrupt.quests[871].objectives[3].numFulfilled = 3
+    ns.charDB.activeGoal = "objective-867-harpy-raiders-1"
+    ns.Engine:Refresh(midDisrupt)
+    Equal(ns.Engine.currentGoal.id, "objective-867-harpy-raiders-1",
+        "Harpy Raiders resumes once the Razormane Hunters are slain")
 end
 TestCampPickups()
 
