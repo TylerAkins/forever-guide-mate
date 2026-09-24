@@ -46,6 +46,11 @@ local function ThunderBluffRoute(x, y, label, offMapText)
             "Open a nearby flight master so GuideMate can learn Forever's routes. " ..
             "If Thunder Bluff is available, fly there; otherwise travel toward Orgrimmar.",
             { map = { MAP.MULGORE, MAP.THUNDER_BLUFF } }),
+        -- Southwest elevator. Wowhead pins it at 32, 65 on the Thunder Bluff map.
+        -- Classic zone transforms put that shaft at about 36.3, 30.1 in Mulgore.
+        Point(MAP.MULGORE, 0.363, 0.301, "Ride the southwest elevator up to Thunder Bluff.",
+            "Travel through Mulgore and take the elevator up to Thunder Bluff.",
+            { map = MAP.THUNDER_BLUFF }),
         Point(MAP.THUNDER_BLUFF, x, y, label, offMapText),
     }
 end

@@ -21,6 +21,41 @@ local function Unknown(reason)
     return nil, reason or "Eligibility could not be verified."
 end
 
+local function ObjectiveFinished(objective)
+    if type(objective) ~= "table" then
+        return nil
+    end
+    if objective.finished == true then
+        return true
+    end
+    if type(objective.numRequired) == "number" and objective.numRequired > 0
+        and type(objective.numFulfilled) == "number" then
+        return objective.numFulfilled >= objective.numRequired
+    end
+    if objective.finished == false then
+        return false
+    end
+    return nil
+end
+
+local function FindObjective(objectives, spec)
+    if type(objectives) ~= "table" then
+        return nil
+    end
+    if type(spec.text) == "string" and spec.text ~= "" then
+        local needle = string.lower(spec.text)
+        for _, objective in ipairs(objectives) do
+            if type(objective) == "table" and type(objective.text) == "string"
+                and string.find(string.lower(objective.text), needle, 1, true) then
+                return objective
+            end
+        end
+    end
+    if type(spec.index) == "number" then
+        return objectives[spec.index]
+    end
+end
+
 function ns.EvaluateCondition(condition, state)
     if condition == nil then
         return true
@@ -110,6 +145,18 @@ function ns.EvaluateCondition(condition, state)
             return Unknown("Current map is unavailable.")
         end
         local matches = Contains(condition.map, state.mapID)
+        if not matches and ns.Navigation then
+            if type(condition.map) ~= "table" then
+                matches = ns.Navigation:OnMap(state.mapID, condition.map)
+            else
+                for _, value in ipairs(condition.map) do
+                    if ns.Navigation:OnMap(state.mapID, value) then
+                        matches = true
+                        break
+                    end
+                end
+            end
+        end
         return matches, matches and nil or "Travel to the required map."
     end
     if condition.instance then
@@ -160,6 +207,38 @@ function ns.EvaluateCondition(condition, state)
             return not completed, completed and "Quest is already complete." or nil
         end
         return false, "Unknown quest condition."
+    end
+    if condition.questObjective then
+        local spec = condition.questObjective
+        local questID = type(spec) == "table" and spec.id or nil
+        if type(questID) ~= "number" then
+            return false, "Invalid quest objective."
+        end
+        if state.completedQuests and state.completedQuests[questID] then
+            return true
+        end
+        local active = state.quests and state.quests[questID]
+        if active and active.complete then
+            return true
+        end
+        if not state.questLogKnown then
+            return Unknown("Quest log is unavailable.")
+        end
+        if not active then
+            if not state.questCompletionKnown then
+                return Unknown("Quest completion is unavailable.")
+            end
+            return false, "Quest objective is incomplete."
+        end
+        local objective = FindObjective(active.objectives, spec)
+        if objective == nil then
+            return Unknown("Quest objective is unavailable.")
+        end
+        local finished = ObjectiveFinished(objective)
+        if finished == nil then
+            return Unknown("Quest objective is unavailable.")
+        end
+        return finished, finished and nil or "Quest objective is incomplete."
     end
     return false, "Unknown condition type."
 end
