@@ -48,7 +48,7 @@ local function QuestObjective(questID, index, text)
     return { questObjective = { id = questID, index = index, text = text } }
 end
 
-local function Point(mapID, x, y, label, offMapText, complete)
+local function Point(mapID, x, y, label, offMapText, complete, flightTo)
     return {
         mapID = mapID,
         x = x,
@@ -56,6 +56,7 @@ local function Point(mapID, x, y, label, offMapText, complete)
         label = label,
         offMapText = offMapText,
         complete = complete,
+        flightTo = flightTo,
     }
 end
 
@@ -5019,15 +5020,15 @@ ns:RegisterGuide({
                     { level = { min = 7 } },
                 },
             },
-            text = "Fly from the center of Thunder Bluff to Orgrimmar and turn in Welcome to Azeroth to Thrall.",
+            text = "Turn in Welcome to Azeroth to Thrall in Orgrimmar.",
             dependsOn = { "accept-welcome-to-azeroth" },
             complete = QuestState(95350, "completed"),
             route = {
-                Point(MAP.THUNDER_BLUFF, 0.468, 0.497, "Tal, the Thunder Bluff flight master",
-                    "Climb to Thunder Bluff and fly to Orgrimmar.",
-                    { map = MAP.ORGRIMMAR }),
+                Point(MAP.THUNDER_BLUFF, 0.468, 0.497, "Take the flight path to Orgrimmar.",
+                    "Take the flight path to Orgrimmar.",
+                    { map = MAP.ORGRIMMAR }, "Orgrimmar"),
                 Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom",
-                    "Fly to Orgrimmar and speak with Thrall."),
+                    "Travel to Orgrimmar and speak with Thrall."),
             },
         },
         {
@@ -5094,15 +5095,15 @@ ns:RegisterGuide({
                     { level = { min = 7 } },
                 },
             },
-            text = "Fly to Thunder Bluff and speak with Cairne Bloodhoof on the High Rise.",
+            text = "Speak with Cairne Bloodhoof on the High Rise in Thunder Bluff.",
             dependsOn = { "objective-exploring-the-horde-voljin" },
             complete = QuestObjective(93739, 3, "Cairne"),
             route = {
-                Point(MAP.ORGRIMMAR, 0.454, 0.639, "Doras, the Orgrimmar flight master",
-                    "Speak to Doras and fly to Thunder Bluff.",
-                    { map = { MAP.THUNDER_BLUFF, MAP.MULGORE } }),
+                Point(MAP.ORGRIMMAR, 0.454, 0.639, "Take the flight path to Thunder Bluff.",
+                    "Take the flight path to Thunder Bluff.",
+                    { map = { MAP.THUNDER_BLUFF, MAP.MULGORE } }, "Thunder Bluff"),
                 Point(MAP.THUNDER_BLUFF, 0.598, 0.516, "Cairne Bloodhoof on the High Rise",
-                    "Climb to Cairne's tent on the High Rise."),
+                    "Travel to Thunder Bluff and climb to Cairne's tent on the High Rise."),
             },
         },
         {
