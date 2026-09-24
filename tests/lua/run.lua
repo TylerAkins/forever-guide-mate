@@ -1334,6 +1334,67 @@ Equal(badTimerOK, false, "a timer needs a positive duration")
 end
 TestTimedQuests()
 
+function TestRaceSteps()
+    local function Fresh(raceID)
+        return {
+            faction = "Horde", raceID = raceID, classID = 1, level = 14,
+            professions = {}, professionsKnown = true,
+            quests = {}, questLogKnown = true,
+            completedQuests = {}, questCompletionKnown = true,
+            mapID = 1413, x = 0.52, y = 0.30,
+        }
+    end
+    local function Open(guide, state)
+        ns.charDB.selectedGuide = guide.id
+        ns.charDB.activeGoal = nil
+        ns.charDB.manualCompleted = {}
+        ns.charDB.deferred = {}
+        ns.charDB.history = {}
+        ns.charDB.completionLedger = {}
+        ns.db.autoAdvance = true
+        ns.Engine.reviewingGoal = nil
+        ns.Engine:Refresh(state)
+    end
+    local skyborne = Fresh(96)
+    skyborne.mapID = 1454
+    Open(barrens, skyborne)
+    Equal(ns.Engine.currentGoal.id, "accept-98024-journey-to-the-crossroads",
+        "a level 14 Horde Skyborne in Orgrimmar starts the Barrens at Thrall")
+    skyborne.mapID = 1413
+    ns.charDB.activeGoal = nil
+    ns.Engine:Refresh(skyborne)
+    Equal(ns.Engine.currentGoal.id, "accept-844-plainstrider-menace",
+        "a level 14 Horde Skyborne in the Barrens starts at Plainstrider Menace")
+    skyborne.completedQuests[98024] = true
+    ns.charDB.activeGoal = nil
+    ns.Engine:Refresh(skyborne)
+    Equal(ns.Engine.currentGoal.id, "accept-844-plainstrider-menace",
+        "a Skyborne continues at Plainstrider Menace")
+    local meats = ns.Engine:GetGoal(barrens, "accept-6365-meats-to-orgrimmar")
+    Equal(ns.Engine:IsReady(barrens, meats, skyborne), false,
+        "Meats to Orgrimmar is not offered to a Skyborne")
+    local orc = Fresh(2)
+    orc.completedQuests[98024] = true
+    Open(barrens, orc)
+    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
+        "an orc still takes Meats to Orgrimmar")
+    local tauren = Fresh(6)
+    tauren.completedQuests[98024] = true
+    Open(barrens, tauren)
+    Equal(ns.Engine.currentGoal.id, "accept-6361-a-bundle-of-hides",
+        "a tauren takes A Bundle of Hides")
+    local durotarSkyborne = Fresh(96)
+    durotarSkyborne.mapID = 1411
+    durotarSkyborne.level = 14
+    Open(durotar, durotarSkyborne)
+    Equal(ns.Engine.currentGoal.id, "accept-786-thwarting-kolkar-aggression",
+        "a Skyborne starts Durotar at Sen'jin Village")
+    local huntersWay = ns.Engine:GetGoal(mulgore, "accept-861-the-hunters-way")
+    Equal(ns.Engine:IsReady(mulgore, huntersWay, skyborne), false,
+        "The Hunter's Way stays on tauren")
+end
+TestRaceSteps()
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
