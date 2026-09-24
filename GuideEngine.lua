@@ -346,17 +346,8 @@ function ns:RegisterGuide(guide)
     self.guideOrder[#self.guideOrder + 1] = guide.id
 end
 
--- Starter chapters are parallel. The next chapter is the handoff for that
--- race, and the route then follows the remaining chapters in guide order.
-local ERA_STARTER_NEXT = {
-    ["leveling-era-1-12-dun-morogh"] = "leveling-era-17-18-loch-modan",
-    ["leveling-era-1-12-elwynn-forest"] = "leveling-era-12-17-westfall",
-    ["leveling-era-1-12-teldrassil"] = "leveling-era-12-17-darkshore",
-    ["leveling-era-1-12-durotar"] = "leveling-era-12-20-barrens",
-    ["leveling-era-1-12-mulgore"] = "leveling-era-12-20-barrens",
-    ["leveling-era-1-12-tirisfal-glades"] = "leveling-era-12-20-silverpine-forest",
-}
-
+-- Starter chapters are parallel. After the chosen starter, every later chapter
+-- for that faction stays on the route in listed order.
 local ERA_STARTER_BY_RACE = {
     [1] = "leveling-era-1-12-elwynn-forest",
     [2] = "leveling-era-1-12-durotar",
@@ -466,10 +457,8 @@ function ns:FinalizeGuides()
     end
 
     local goals = {}
-    local searchTitles = {}
     local segmentByID = {}
     for _, segment in ipairs(segments) do
-        searchTitles[#searchTitles + 1] = segment.title
         segmentByID[segment.id] = segment
         for _, goal in ipairs(segment.sourceGoals) do
             local copy = CopyEraGoal(goal, segment, segment.gate)
@@ -485,6 +474,10 @@ function ns:FinalizeGuides()
         segment.gate = nil
     end
 
+    local goalByID = {}
+    for index, goal in ipairs(goals) do
+        goalByID[goal.id] = index
+    end
     local retired = {}
     for _, segment in ipairs(segments) do
         retired[segment.id] = true
@@ -497,9 +490,9 @@ function ns:FinalizeGuides()
         category = "Leveling Quest Guides",
         revision = 1,
         series = "era",
-        searchText = table.concat(searchTitles, " "),
         segments = segments,
         segmentByID = segmentByID,
+        goalByID = goalByID,
         conditions = {
             all = {
                 { level = { min = 1 } },
@@ -547,6 +540,12 @@ function ns.GetTrackedQuestIDs()
 end
 
 function Engine:GetGoal(guide, goalID)
+    local indexed = guide.goalByID
+    if indexed then
+        local index = indexed[goalID]
+        if index then return guide.goals[index], index end
+        return nil
+    end
     for index, goal in ipairs(guide.goals) do
         if goal.id == goalID then
             return goal, index
@@ -723,27 +722,27 @@ function Engine:RouteSegments(guide, state)
     if type(guide.segments) ~= "table" then return nil end
     state = state or {}
     local chosen = self:ChosenFork(guide, state)
-    local skipUntil = chosen and ERA_STARTER_NEXT[chosen] or nil
-    local started = chosen == nil
+    local passedStarter = chosen == nil
     local route = {}
     for _, segment in ipairs(guide.segments) do
         if segment.faction == state.faction then
             if segment.fork then
                 if segment.id == chosen then
                     route[#route + 1] = segment
-                    if not skipUntil then started = true end
+                    passedStarter = true
                 end
-            elseif not started then
-                if segment.id == skipUntil then
-                    started = true
-                    route[#route + 1] = segment
-                end
-            else
+            elseif passedStarter then
                 route[#route + 1] = segment
             end
         end
     end
     return route
+end
+
+function Engine:RouteIndex(route, segmentID)
+    for index, segment in ipairs(route or {}) do
+        if segment.id == segmentID then return index end
+    end
 end
 
 function Engine:SegmentHasProgress(segment, guide, state)
@@ -772,6 +771,23 @@ function Engine:LevelEntry(route, state)
             chosen = segment
         end
     end
+    -- Standing in an earlier chapter keeps that chapter. A city that appears
+    -- in several chapters does not, because those counts tie.
+    if state.mapID then
+        local bestMap, bestCount, tied
+        for _, segment in ipairs(route) do
+            local count = segment.maps[state.mapID] or 0
+            if count > 0 and (segment.levelMin or 1) <= level
+                and (not bestCount or count > bestCount) then
+                bestMap, bestCount, tied = segment, count, false
+            elseif bestCount and count == bestCount then
+                tied = true
+            end
+        end
+        if bestMap and not tied and (bestMap.levelMin or 1) <= (chosen.levelMin or 1) then
+            return bestMap
+        end
+    end
     return chosen
 end
 
@@ -780,21 +796,134 @@ function Engine:ActiveSegment(guide, state)
     state = state or {}
     local route = self:RouteSegments(guide, state)
     if not route or #route == 0 then return nil end
-    if not ns.charDB then return self:LevelEntry(route, state) end
-    local started = false
-    for _, segment in ipairs(route) do
-        if self:SegmentHasProgress(segment, guide, state) then
-            started = true
-            break
+    local floorID = ns.charDB and ns.charDB.eraFloor
+    local floorIndex = floorID and self:RouteIndex(route, floorID) or nil
+    local earlierProgress = false
+    if floorIndex and ns.charDB then
+        for index = 1, floorIndex - 1 do
+            if self:SegmentHasProgress(route[index], guide, state) then
+                earlierProgress = true
+                break
+            end
         end
     end
-    if not started then return self:LevelEntry(route, state) end
-    for _, segment in ipairs(route) do
-        if not self:IsSegmentComplete(segment, guide, state) then
-            return segment
+    local startIndex = 1
+    if earlierProgress then
+        startIndex = 1
+    elseif floorIndex then
+        startIndex = floorIndex
+    else
+        local started = false
+        if ns.charDB then
+            for _, segment in ipairs(route) do
+                if self:SegmentHasProgress(segment, guide, state) then
+                    started = true
+                    break
+                end
+            end
+        end
+        if not started then
+            local entry = self:LevelEntry(route, state)
+            startIndex = self:RouteIndex(route, entry.id) or 1
+        end
+    end
+    for index = startIndex, #route do
+        if not self:IsSegmentComplete(route[index], guide, state) then
+            return route[index]
         end
     end
     return nil
+end
+
+function Engine:LockEraFloor(guide, state)
+    if not ns.charDB or not self.currentSegment then return end
+    local route = self:RouteSegments(guide, state)
+    local index = self:RouteIndex(route, self.currentSegment.id)
+    if not index then return end
+    for earlier = 1, index - 1 do
+        if self:SegmentHasProgress(route[earlier], guide, state) then return end
+    end
+    local current = ns.charDB.eraFloor and self:RouteIndex(route, ns.charDB.eraFloor) or 0
+    if index > current then
+        ns.charDB.eraFloor = self.currentSegment.id
+    end
+end
+
+function Engine:MigrateEraProgress()
+    local retired = ns.retiredEraGuides
+    local guide = ns.guides["leveling-era"]
+    if not ns.charDB or ns.charDB.eraProgressMerged or not retired or not guide or not guide.goalByID then
+        return
+    end
+    ns.charDB.eraProgressMerged = true
+    local function Prefixed(ownerID, goalID)
+        if type(goalID) ~= "string" then return goalID end
+        if guide.goalByID[goalID] then return goalID end
+        if ownerID then
+            local combined = ownerID .. ":" .. goalID
+            if guide.goalByID[combined] then return combined end
+        end
+        return nil
+    end
+    local function UniquePrefix(goalID)
+        if type(goalID) ~= "string" then return goalID end
+        if guide.goalByID[goalID] then return goalID end
+        local found
+        for guideID in pairs(retired) do
+            if guide.goalByID[guideID .. ":" .. goalID] then
+                if found then return goalID end
+                found = guideID .. ":" .. goalID
+            end
+        end
+        return found or goalID
+    end
+    local oldID = ns.charDB.selectedGuide
+    if retired[oldID] then
+        local segment = guide.segmentByID[oldID]
+        if segment and segment.fork then
+            ns.charDB.eraSegment = oldID
+        end
+        ns.charDB.eraFloor = oldID
+        if ns.charDB.activeGoal then
+            ns.charDB.activeGoal = Prefixed(oldID, ns.charDB.activeGoal) or ns.charDB.activeGoal
+        end
+        local history = {}
+        for _, goalID in ipairs(ns.charDB.history or {}) do
+            history[#history + 1] = Prefixed(oldID, goalID) or goalID
+        end
+        ns.charDB.history = history
+        ns.charDB.selectedGuide = "leveling-era"
+    end
+    local merged = self:GetLedger(guide, true)
+    local ledgers = ns.charDB.completionLedger
+    if type(ledgers) == "table" then
+        for guideID in pairs(retired) do
+            local revisions = ledgers[guideID]
+            if type(revisions) == "table" then
+                for _, done in pairs(revisions) do
+                    if type(done) == "table" then
+                        for goalID, value in pairs(done) do
+                            local prefixed = Prefixed(guideID, goalID)
+                            if prefixed then merged[prefixed] = value end
+                        end
+                    end
+                end
+                ledgers[guideID] = nil
+            end
+        end
+    end
+    local function Rewrite(map)
+        if type(map) ~= "table" then return end
+        local copy = {}
+        for key, value in pairs(map) do
+            copy[UniquePrefix(key)] = value
+        end
+        for key in pairs(map) do map[key] = nil end
+        for key, value in pairs(copy) do map[key] = value end
+    end
+    Rewrite(ns.charDB.deferred)
+    Rewrite(ns.charDB.manualCompleted)
+    Rewrite(ns.charDB.notOffered)
 end
 
 function Engine:SegmentGoals(guide, state)
@@ -804,21 +933,27 @@ function Engine:SegmentGoals(guide, state)
     return segment and segment.goals or {}
 end
 
-function Engine:GetGuideProgress(guide, state)
+function Engine:GetGuideProgress(guide, state, segment)
     state = state or self.state or {}
     ns:FinalizeGuides()
     self:ReconcileGuide(guide, state)
     local goals = guide.goals
-    if guide.segments then
-        local segment = self:ActiveSegment(guide, state)
-        goals = segment and segment.goals or {}
+    if segment and segment.goals then
+        goals = segment.goals
+    elseif guide.segments then
+        local active = self:ActiveSegment(guide, state)
+        if active then
+            goals = active.goals
+        else
+            goals = {}
+            for _, part in ipairs(self:RouteSegments(guide, state) or {}) do
+                for _, goal in ipairs(part.goals) do
+                    goals[#goals + 1] = goal
+                end
+            end
+        end
     end
     local guideEligible = ns.EvaluateCondition(guide.conditions, state)
-    if guide.segments and #goals == 0 then
-        local finished = guideEligible ~= false and state.faction ~= nil
-        local count = finished and 1 or 0
-        return { completed = count, eligible = count, total = count, percentage = finished and 100 or 0 }
-    end
     local completed, eligible, total = 0, 0, #goals
     if guideEligible == false then
         return { completed = 0, eligible = 0, total = total, percentage = 0 }
@@ -1020,12 +1155,7 @@ function Engine:Refresh(state)
     if not ns.charDB then
         return
     end
-    if ns.retiredEraGuides and ns.retiredEraGuides[ns.charDB.selectedGuide] then
-        ns.charDB.eraSegment = ns.charDB.selectedGuide
-        ns.charDB.selectedGuide = "leveling-era"
-        ns.charDB.activeGoal = nil
-        ns.charDB.history = {}
-    end
+    self:MigrateEraProgress()
     state = state or ns.PlayerState:Capture()
     self.state = state
     local guide = ns.guides[ns.charDB.selectedGuide]
@@ -1103,6 +1233,12 @@ function Engine:Refresh(state)
                 self.status = eligible == nil and reason or "Guide complete."
             end
         end
+        if guide.segments and self.currentSegment and not self.reviewingGoal then
+            self:LockEraFloor(guide, state)
+        end
+        if self.currentGoal and guide.segmentByID and self.currentGoal.segmentID then
+            self.currentSegment = guide.segmentByID[self.currentGoal.segmentID] or self.currentSegment
+        end
     end
     if ns.UI and ns.UI.Update then
         ns.UI:Update(self)
@@ -1132,16 +1268,57 @@ end
 
 Engine.Next = Engine.SkipCurrent
 
+function Engine:PreviousRouteGoal(guide, goal)
+    local route = self:RouteSegments(guide, self.state or {})
+    if not route then return nil end
+    local startIndex = 1
+    local floorID = ns.charDB and ns.charDB.eraFloor
+    local floorIndex = floorID and self:RouteIndex(route, floorID) or nil
+    if floorIndex then
+        local earlier = false
+        for index = 1, floorIndex - 1 do
+            if self:SegmentHasProgress(route[index], guide, self.state or {}) then
+                earlier = true
+                break
+            end
+        end
+        if not earlier then startIndex = floorIndex end
+    end
+    local flat = {}
+    for index = startIndex, #route do
+        for _, candidate in ipairs(route[index].goals) do
+            flat[#flat + 1] = candidate
+        end
+    end
+    local current
+    for index, candidate in ipairs(flat) do
+        if candidate.id == goal.id then
+            current = index
+            break
+        end
+    end
+    if not current then return nil end
+    for index = current - 1, 1, -1 do
+        if ns.EvaluateCondition(flat[index].conditions, self.state or {}) ~= false then
+            return flat[index].id
+        end
+    end
+end
+
 function Engine:Previous()
     local history = ns.charDB.history
     local previousID = table.remove(history)
     if not previousID and self.currentGuide and self.currentGoal then
-        local _, currentIndex = self:GetGoal(self.currentGuide, self.currentGoal.id)
-        for index = (currentIndex or 1) - 1, 1, -1 do
-            local candidate = self.currentGuide.goals[index]
-            if ns.EvaluateCondition(candidate.conditions, self.state or {}) ~= false then
-                previousID = candidate.id
-                break
+        if self.currentGuide.segments then
+            previousID = self:PreviousRouteGoal(self.currentGuide, self.currentGoal)
+        else
+            local _, currentIndex = self:GetGoal(self.currentGuide, self.currentGoal.id)
+            for index = (currentIndex or 1) - 1, 1, -1 do
+                local candidate = self.currentGuide.goals[index]
+                if ns.EvaluateCondition(candidate.conditions, self.state or {}) ~= false then
+                    previousID = candidate.id
+                    break
+                end
             end
         end
     end
@@ -1158,8 +1335,14 @@ end
 
 function Engine:SelectGuide(guideID)
     ns:FinalizeGuides()
+    self:MigrateEraProgress()
     if ns.retiredEraGuides and ns.retiredEraGuides[guideID] then
-        ns.charDB.eraSegment = guideID
+        local merged = ns.guides["leveling-era"]
+        local segment = merged and merged.segmentByID[guideID]
+        if segment and segment.fork then
+            ns.charDB.eraSegment = guideID
+        end
+        ns.charDB.eraFloor = guideID
         guideID = "leveling-era"
     end
     if ns.guides[guideID] then

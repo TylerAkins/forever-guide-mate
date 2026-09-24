@@ -2159,6 +2159,8 @@ function TestEraLeveling()
     local function ResetEra()
         ns.charDB.selectedGuide = nil
         ns.charDB.eraSegment = nil
+        ns.charDB.eraFloor = nil
+        ns.charDB.eraProgressMerged = nil
         ns.charDB.activeGoal = nil
         ns.charDB.history = {}
         ns.charDB.manualCompleted = {}
@@ -2233,13 +2235,52 @@ function TestEraLeveling()
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(EraState("Horde", 12, 5, 1420))
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-tirisfal-glades",
+        "a level 12 undead standing in Tirisfal stays on that starter")
     CompleteSegment(guide.segmentByID["leveling-era-1-12-tirisfal-glades"])
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
     ns.Engine:Refresh(EraState("Horde", 12, 5, 1420))
-    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id,
-        "leveling-era-12-20-silverpine-forest:travel-445-brill",
-        "an undead who finishes Tirisfal hands off to Brill in Silverpine")
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+        "finishing Tirisfal hands off to the next Horde chapter, the Barrens")
+
+    ResetEra()
+    ns.Engine:SelectGuide("leveling-era")
+    ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+        "a level 12 orc with no progress opens the Barrens")
+    local barrensStep = ns.Engine.currentGoal
+    Check(barrensStep ~= nil, "the Barrens chapter has a step")
+    ns.Engine:GetLedger(guide, true)[barrensStep.id] = true
+    ns.charDB.activeGoal = nil
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+        "progress in a later chapter does not snap back to Durotar")
+    ns.Engine:Previous()
+    local previousSegment = ns.Engine.currentGoal and ns.Engine.currentGoal.segmentID
+    Check(previousSegment == nil or previousSegment == "leveling-era-12-20-barrens",
+        "previous stays in the Barrens instead of another starter")
+
+    ResetEra()
+    ns.charDB.selectedGuide = "leveling-era-1-12-durotar"
+    ns.charDB.activeGoal = "accept-4641-your-place-in-the-world"
+    ns.charDB.history = { "accept-4641-your-place-in-the-world" }
+    ns.charDB.deferred = { ["accept-4641-your-place-in-the-world"] = true }
+    ns.charDB.completionLedger = {
+        ["leveling-era-1-12-durotar"] = { ["1"] = { ["accept-4641-your-place-in-the-world"] = true } },
+    }
+    ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
+    Equal(ns.charDB.selectedGuide, "leveling-era", "a saved Era guide becomes the merged guide")
+    Equal(ns.charDB.eraFloor, "leveling-era-1-12-durotar", "the saved chapter stays the floor")
+    Equal(ns.Engine:GetLedger(guide, false)["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"],
+        true, "saved Era completion moves onto the merged guide")
+    Equal(ns.charDB.deferred["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"], true,
+        "a saved deferred step keeps its chapter")
+    Equal(ns.charDB.completionLedger["leveling-era-1-12-durotar"], nil,
+        "the old Era ledger is removed after it is copied")
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-durotar",
+        "saved Durotar progress is not replaced by the level 12 chapter")
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era-1-12-dun-morogh")

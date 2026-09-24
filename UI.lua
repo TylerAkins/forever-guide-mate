@@ -589,10 +589,27 @@ function UI:RefreshGuideBrowser()
     end
     for index = #categories + 2, #self.browserCategoryButtons do self.browserCategoryButtons[index]:Hide() end
 
+    local function RouteSearchText(guide, state)
+        local parts = { guide.title or "", guide.category or "" }
+        if guide.segments then
+            for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
+                parts[#parts + 1] = segment.title
+            end
+        end
+        return string.lower(table.concat(parts, " "))
+    end
+    local function MatchingSegment(guide, state)
+        if query == "" or not guide.segments then return nil end
+        for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
+            if string.find(string.lower(segment.title), query, 1, true) then
+                return segment
+            end
+        end
+    end
     local matches = {}
     for _, guideID in ipairs(ns.guideOrder) do
         local guide = ns.guides[guideID]
-        local haystack = string.lower(guide.title .. " " .. (guide.searchText or "") .. " " .. guide.category)
+        local haystack = RouteSearchText(guide, ns.Engine.state or {})
         local ineligible = ns.EvaluateCondition(guide.conditions, ns.Engine.state or {}) == false
         if (self.browserCategory == "All Guides" or guide.category == self.browserCategory)
             and (query == "" or string.find(haystack, query, 1, true))
@@ -610,20 +627,30 @@ function UI:RefreshGuideBrowser()
             visible = visible + 1
             local guide = matches[matchIndex]
             local row = self.browserRows[visible] or self:CreateBrowserRow(visible)
-            local progress = ns.Engine:GetGuideProgress(guide, ns.Engine.state or {})
-            local title = guide.title
-            if guide.segments then
-                local segment = ns.Engine:ActiveSegment(guide, ns.Engine.state or {})
-                if segment and segment.title then title = segment.title end
+            local browserState = ns.Engine.state or {}
+            local matched = MatchingSegment(guide, browserState)
+            local segment = matched
+            if not segment and guide.segments then
+                segment = ns.Engine:ActiveSegment(guide, browserState)
             end
+            local progress = ns.Engine:GetGuideProgress(guide, browserState, segment)
+            local title = (segment and segment.title) or guide.title
             row.title:SetText(title)
             row.eligibility:SetText(EligibilityText(guide, ns.Engine.state))
             row.counts:SetText(("%d/%d  %d%%"):format(progress.completed, progress.eligible, progress.percentage))
             row.progress:SetValue(progress.percentage)
             row.open:SetText(ns.charDB.selectedGuide == guide.id and "Continue" or "Open")
             local selectedGuideID = guide.id
+            local chosenSegment = matched
             row.open:SetScript("OnClick", function()
                 ns.Engine:SelectGuide(selectedGuideID)
+                if chosenSegment then
+                    if chosenSegment.fork then
+                        ns.charDB.eraSegment = chosenSegment.id
+                    end
+                    ns.charDB.eraFloor = chosenSegment.id
+                    ns.Engine:Refresh(ns.Engine.state)
+                end
                 UI:OpenTracker()
                 UI.browser:Hide()
             end)
