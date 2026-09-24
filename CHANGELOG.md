@@ -30,3 +30,4 @@ All notable changes to this project are documented here.
 - After the Lieutenant's Insignia is returned, Hidden Enemies points at Neeru Fireblade. Exhausting his dialogue finishes that step when the quest log marks the objective done.
 - A follow-up that only sends you to another NPC no longer stops on an accept step at the giver. Hidden Enemies, The Missing Shipment, Samophlange, and the Zephras delivery visits point at the next person. New zone guides follow the Handoffs section in docs/zone-loremaster-guides.md.
 - Flight points learned at a flight master stay known after the window closes, including from other flight masters.
+- The Crossroads and Sen'jin Village accept the quests offered on that visit before leaving camp. Plainstrider Menace, Raptor Thieves, Disrupt the Attacks, and Harpy Raiders are one trip. New zone guides follow the Camp pickups section in docs/zone-loremaster-guides.md.

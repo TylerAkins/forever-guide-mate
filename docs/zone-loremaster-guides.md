@@ -13,12 +13,26 @@ Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/f
 - An elite step says `This is an elite. Bring a group.`
 - Each quest objective is its own step. Those steps depend on the accept, not on each other, so a finished pin cannot become the active pin again. The turn-in depends on the objectives.
 - A provided item, such as a blackjack the quest gives you, is not its own step. Say how to use it on the objective that needs it.
-- Follow the Wowhead series. A follow-up accept depends on the previous turn-in, except for a handoff. Handoffs are the next section.
+- Follow the Wowhead series. A follow-up accept depends on the previous turn-in, except for a handoff. Camp pickups batch the accepts that are already offered. They do not start a follow-up early.
 - Use uiMap IDs (Durotar `1411`, the Barrens `1413`, Orgrimmar `1454`). Wowhead area IDs are not map IDs.
 - Put a `flightTo` value only on a travel hop. A visit to a quest NPC keeps its own pin.
 - Say a flight path is available only when that character has learned it. The travel code already does this. Do not send the player to a flight master for an unknown path.
 - If Wowhead has no pin, say so in the step and mark the nearest named landmark. Do not invent a precise pin.
 - Coordinates in these guides have not been validated in the Forever client.
+
+## Camp pickups
+
+The guide has one active step, and a lower priority runs first. A quest already offered at the same camp waits until every lower step is finished, including the far objectives of the quest accepted just before it. Each quest left behind is another trip across the zone.
+
+At a camp, accept every quest those NPCs will offer on that visit before any objective that leaves the camp. Do that wave of objectives, turn them in, then accept the follow-ups those turn-ins just unlocked, then leave again.
+
+- A follow-up that needs a turn-in keeps `dependsOn` on that turn-in. The Zhevra depends on Plainstrider Menace. The Disruption Ends and Supplies for the Crossroads depend on Disrupt the Attacks. Without that dependency, a low priority tries to accept a quest the NPC does not offer yet, and the step sticks.
+- A level gate stays on the step. Harpy Raiders is level 12. Below that level the step is skipped, and the next visit that meets the level picks it up.
+- A kill or a collect keeps its own accept step. A handoff stays one visit.
+- Leave a quest out of the first wave when the guide does not know it is offered yet. Fungal Spores stays with The Barrens Oases. Forgotten Pools stays behind that breadcrumb.
+- Priorities are unique. Put the wave in the numbers between the camp's first accept and the next chain, so a later hub does not jump ahead.
+
+The Barrens Crossroads is the example. Once Plainstrider Menace is available, also accept Raptor Thieves, Disrupt the Attacks, and Harpy Raiders before killing beaks. Turn those in together. Then accept The Zhevra, The Disruption Ends, Supplies for the Crossroads, and Harpy Lieutenants before the next trip. Sen'jin Village accepts Practical Prey, A Solvent Spirit, Zalazane, and Minshina's Skull with Thwarting Kolkar Aggression, before the Kolkar plans. Mulgore's Camp Narache already accepts its first quests together.
 
 ## Handoffs
 
