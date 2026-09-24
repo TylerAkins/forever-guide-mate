@@ -14,12 +14,20 @@ Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/f
 - Each quest objective is its own step. Those steps depend on the accept, not on each other, so a finished pin cannot become the active pin again. The turn-in depends on the objectives.
 - A provided item, such as a blackjack the quest gives you, is not its own step. Say how to use it on the objective that needs it.
 - Follow the Wowhead series. A follow-up accept depends on the previous turn-in.
-- A quest on a timer is finished within the next two or three steps. Put `timer` on the step that starts the clock, in seconds. A short timer, 30 minutes or less, is the next step, ahead of other same-zone work. A longer timer still leaves the current step, then finishes before other work. Name a different quest with `timer = { seconds = 1800, quest = 924 }` when the clock belongs to another step, such as the Flawed Power Stone.
 - Use uiMap IDs (Durotar `1411`, the Barrens `1413`, Orgrimmar `1454`). Wowhead area IDs are not map IDs.
 - Put a `flightTo` value only on a travel hop. A visit to a quest NPC keeps its own pin.
 - Say a flight path is available only when that character has learned it. The travel code already does this. Do not send the player to a flight master for an unknown path.
 - If Wowhead has no pin, say so in the step and mark the nearest named landmark. Do not invent a precise pin.
 - Coordinates in these guides have not been validated in the Forever client.
+
+## Timers
+
+A quest on a timer finishes within the next two or three steps. Put `timer` on the step that starts the clock. The value is seconds.
+
+- A timer of 30 minutes or less is the next step, ahead of other same-zone work. Any timer with 30 minutes or less remaining is treated the same way. The Flawed Power Stone is 30 minutes and belongs to The Demon Seed: `timer = { seconds = 30 * 60, quest = 924 }` on the stone step. The altar step depends on that stone step.
+- A longer timer finishes the step you are on, then the timed chain is next. Need for a Cure and Apothecary Zamah are 45 minutes: `timer = 45 * 60` on the accept.
+- When the quest log reports time allowed or time left, that clock is used. A client without those calls is left alone.
+- Skipping a timed step leaves it for later.
 
 ## Who can reach 100%
 
