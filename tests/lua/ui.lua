@@ -266,6 +266,23 @@ ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Alliance Only Leveling").eligibility.text, "Leveling  •  This step is for Alliance.  •  Alliance  •  Level 1+",
     "leveling guides keep the faction reason")
 
+ns:RegisterGuide({
+    id = "zone-loremaster", title = "Zone Loremaster", category = "Loremaster Guides", revision = 1,
+    conditions = { all = { { faction = "Horde" }, { level = { min = 1 } } } },
+    goals = { { id = "zone-step", kind = "note", text = "Zone step" } },
+})
+ns.UI.browser.search:SetText("zone loremaster")
+ns.Engine.state = { faction = "Horde", level = 10 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Zone Loremaster").eligibility.text, "Loremaster  •  Eligible  •  Horde  •  Level 1+",
+    "zone guides use the Loremaster tag")
+local sawLoremasterCategory = false
+for index = 1, #ns.UI.browserCategoryButtons do
+    local button = ns.UI.browserCategoryButtons[index]
+    if button.shown and button.label.text == "Loremaster Guides" then sawLoremasterCategory = true end
+end
+Check(sawLoremasterCategory, "the library lists Loremaster Guides as its own category")
+
 ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
 ns.Engine:Refresh({ faction = "Alliance", level = 20 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance dungeon guide")

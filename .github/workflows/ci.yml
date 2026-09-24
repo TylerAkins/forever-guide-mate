@@ -23,6 +23,7 @@ jobs:
       - run: |
           lua5.1 tests/lua/run.lua
           lua5.1 tests/lua/ui.lua
+          lua5.1 tests/lua/lint.lua
       - run: |
           python3 tools/compile_addon.py
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc

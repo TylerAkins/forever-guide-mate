@@ -1,6 +1,8 @@
 local _, ns = ...
 
 -- Horde Loremaster route for Durotar.
+-- This is a zone quest-completion guide, not a leveling route. It can be
+-- followed while leveling, but the stops are there to finish the zone.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/durotar
 -- Rules for the next zone: docs/zone-loremaster-guides.md
 -- Chains stay in Wowhead series order. At Sen'jin Village, Thwarting Kolkar
@@ -16,7 +18,11 @@ local _, ns = ...
 -- A Strategic Alliance (785), Burning Shadows (832), Ukor's Lost Pack (96876),
 -- Halikor's Hoof (96877), and A Simmering Storm (97281) have no world start.
 -- Those turn-ins appear only after the quest is in the log.
--- A Pain in the Neck (96873) is for enchanters. Other characters still reach 100%.
+-- The Orgrimmar and Sen'jin crafting lessons need the profession the trainer
+-- teaches: A Pain in the Neck (96873) enchanting, This Is Spinal Axe (96874)
+-- blacksmithing, and Beasts of Thunder Ridge (96875) leatherworking. Those
+-- steps are skipped without the profession, and the character still reaches
+-- 100%. Halikor's Hoof (96877) drops for anyone, so its turn-in is not gated.
 -- The Valley of Trials through Report to Sen'jin Village, Wayward Weapons,
 -- A Peon's Burden, and Conscript of the Horde are orc and troll.
 -- Other Horde races still reach 100%.
@@ -29,6 +35,12 @@ local MAP = {
     DUROTAR = 1411,
     ORGRIMMAR = 1454,
     BARRENS = 1413,
+}
+
+local SKILL = {
+    BLACKSMITHING = 164,
+    LEATHERWORKING = 165,
+    ENCHANTING = 333,
 }
 
 local function QuestState(questID, state)
@@ -52,7 +64,7 @@ end
 ns:RegisterGuide({
     id = "leveling-durotar",
     title = "Durotar (Loremaster)",
-    category = "Leveling Quest Guides",
+    category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {
@@ -1220,10 +1232,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 5 } },
-                    { profession = { skillLineID = 333 } },
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
-            text = "Accept A Pain in the Neck from Pa'zula.",
+            text = "Accept A Pain in the Neck from Pa'zula. This step is for enchanters.",
             complete = QuestState(96873, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.566, 0.736, "Pa'zula",
@@ -1238,7 +1250,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 5 } },
-                    { profession = { skillLineID = 333 } },
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
             text = "A Pain in the Neck: Luminous Residue. Disenchant Hexed Pendants from the Echo Isles trolls. This step is for enchanters.",
@@ -1257,7 +1269,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 5 } },
-                    { profession = { skillLineID = 333 } },
+                    { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
             text = "Turn in A Pain in the Neck to Pa'zula.",
@@ -2765,9 +2777,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
-            text = "Accept This Is Spinal Axe from Ug'thok in Orgrimmar.",
+            text = "Accept This Is Spinal Axe from Ug'thok in Orgrimmar. This step is for blacksmiths.",
             complete = QuestState(96874, "activeOrCompleted"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.806, 0.234, "Ug'thok",
@@ -2782,6 +2795,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
             text = "This Is Spinal Axe: Weathered Spine. Lightning Hide can also drop Halikor's Hoof.",
@@ -2800,6 +2814,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
             text = "This Is Spinal Axe: Rough Grinding Stone. Buy or craft 5 Rough Grinding Stones. They are not a Thunder Ridge drop.",
@@ -2818,6 +2833,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
             text = "Turn in This Is Spinal Axe to Ug'thok.",
@@ -2836,9 +2852,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
-            text = "Accept Beasts of Thunder Ridge from Kamari in Orgrimmar.",
+            text = "Accept Beasts of Thunder Ridge from Kamari in Orgrimmar. This step is for leatherworkers.",
             complete = QuestState(96875, "activeOrCompleted"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.630, 0.450, "Kamari",
@@ -2853,6 +2870,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
             text = "Beasts of Thunder Ridge: Rough Lizard Hide.",
@@ -2871,6 +2889,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
             text = "Beasts of Thunder Ridge: Cured Light Hide. Buy or craft 2 Cured Light Hides. They are not a Thunder Ridge drop.",
@@ -2889,6 +2908,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 6 } },
+                    { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
             text = "Turn in Beasts of Thunder Ridge to Kamari.",
