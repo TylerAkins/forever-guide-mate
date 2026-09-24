@@ -1,7 +1,9 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Loch Modan, levels 17-18.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Loch Modan list are woven into this route.
+-- Left out: Banner of the Fallen stands on the southern road past this loop. Snowbound ends on the north shore after the Algaz visit. Ingredients for the Forge is level 30.
+-- Drop turn-ins appear only after the item starts them.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -31,7 +33,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-17-18-loch-modan",
-    title = "17-18 Loch Modan (Era)",
+    title = "17-18 Loch Modan",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -223,6 +225,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-86613-excavation-tools",
+            kind = "turnin",
+            priority = 141,
+            conditions = {
+                all = {
+                    { quest = { id = 86613, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Excavation Tools to Prospector Ironband if you found them at the dig. Wowhead gives no separate pin for the tools.",
+            complete = QuestState(86613, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.6580, 0.6560, "Prospector Ironband",
+                    "Travel to Prospector Ironband."),
+            },
+        },
+        {
             id = "objective-297-gathering-idols",
             kind = "objective",
             priority = 150,
@@ -264,6 +282,17 @@ ns:RegisterGuide({
             complete = QuestState(385, "activeOrCompleted"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.8184, 0.6177, "Marek Ironheart",
+                    "Travel to Marek Ironheart."),
+            },
+        },
+        {
+            id = "accept-86758-twisting-the-knife",
+            kind = "accept",
+            priority = 181,
+            text = "Accept Twisting the Knife from Marek Ironheart at the Farstrider Lodge.",
+            complete = QuestState(86758, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.8180, 0.6180, "Marek Ironheart",
                     "Travel to Marek Ironheart."),
             },
         },
@@ -426,6 +455,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-86758-twisting-the-knife",
+            kind = "objective",
+            priority = 325,
+            text = "Twisting the Knife: defeat Daggerfang and bring back Marek's knife.",
+            dependsOn = { "accept-86758-twisting-the-knife" },
+            complete = QuestState(86758, "complete"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.6080, 0.4160, "Daggerfang",
+                    "Travel to Daggerfang."),
+            },
+        },
+        {
             id = "travel-250-stonewrought-dam",
             kind = "travel",
             priority = 330,
@@ -510,6 +551,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-86614-silver-of-the-waves",
+            kind = "turnin",
+            priority = 391,
+            conditions = {
+                all = {
+                    { quest = { id = 86614, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Silver of the Waves to Khara Deepwater in Thelsamar if you found the monogrammed silver hair clip.",
+            complete = QuestState(86614, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.4040, 0.3940, "Khara Deepwater",
+                    "Travel to Khara Deepwater."),
+            },
+        },
+        {
             id = "accept-301-report-to-ironforge",
             kind = "accept",
             priority = 400,
@@ -565,6 +622,18 @@ ns:RegisterGuide({
             complete = QuestState(385, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.8184, 0.6177, "Marek Ironheart",
+                    "Travel to Marek Ironheart."),
+            },
+        },
+        {
+            id = "turnin-86758-twisting-the-knife",
+            kind = "turnin",
+            priority = 445,
+            text = "Turn in Twisting the Knife to Marek Ironheart at the Farstrider Lodge.",
+            dependsOn = { "objective-86758-twisting-the-knife" },
+            complete = QuestState(86758, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.8180, 0.6180, "Marek Ironheart",
                     "Travel to Marek Ironheart."),
             },
         },

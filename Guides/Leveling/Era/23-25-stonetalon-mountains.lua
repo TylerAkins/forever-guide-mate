@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 23-25.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Stonetalon list that sit on this pass are woven in.
+-- Left out: Stonetalon Supply Run turns in at Freewind Post. Pigments for Paints starts in Thunder Bluff, and this chapter does not go there.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -30,7 +31,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-23-25-stonetalon-mountains",
-    title = "23-25 Stonetalon Mountains (Era)",
+    title = "23-25 Stonetalon Mountains",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -94,6 +95,17 @@ ns:RegisterGuide({
             complete = QuestState(6282, "activeOrCompleted"),
             route = {
                 Point(MAP.STONETALON, 0.4726, 0.6111, "Maggran Earthbinder",
+                    "Travel to Maggran Earthbinder."),
+            },
+        },
+        {
+            id = "accept-86576-bloodfury-trinkets",
+            kind = "accept",
+            priority = 51,
+            text = "Accept Bloodfury Trinkets from Maggran Earthbinder at Sun Rock Retreat.",
+            complete = QuestState(86576, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
                     "Travel to Maggran Earthbinder."),
             },
         },
@@ -376,6 +388,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-86576-bloodfury-trinkets",
+            kind = "objective",
+            priority = 291,
+            text = "Bloodfury Trinkets: collect 15 Glittering Sunstones from Bloodfury harpies in the Charred Vale. Wowhead gives no separate sunstone pin.",
+            dependsOn = { "accept-86576-bloodfury-trinkets" },
+            complete = QuestState(86576, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.3320, 0.6000, "Bloodfury Harpy",
+                    "Travel to Bloodfury Harpy."),
+            },
+        },
+        {
             id = "travel-sun-rock-retreat",
             kind = "travel",
             priority = 300,
@@ -394,6 +418,18 @@ ns:RegisterGuide({
             complete = QuestState(6282, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.4726, 0.6111, "Maggran Earthbinder",
+                    "Travel to Maggran Earthbinder."),
+            },
+        },
+        {
+            id = "turnin-86576-bloodfury-trinkets",
+            kind = "turnin",
+            priority = 311,
+            text = "Turn in Bloodfury Trinkets to Mor'rogal at Sun Rock Retreat. Wowhead gives no pin for Mor'rogal, so this marks Maggran Earthbinder beside him.",
+            dependsOn = { "objective-86576-bloodfury-trinkets" },
+            complete = QuestState(86576, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
                     "Travel to Maggran Earthbinder."),
             },
         },

@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Darkshore, levels 20-21.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Darkshore list that sit on this pass are woven in.
+-- A Peerless Eye from the Master's Glaive and the Clouded Water Globe turn in only after the item starts the quest. Swelling Forces is picked up at the grove and finished on the next northern pass.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -35,7 +36,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-20-21-darkshore",
-    title = "20-21 Darkshore (Era)",
+    title = "20-21 Darkshore",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -642,6 +643,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98028-baron-marinous",
+            kind = "turnin",
+            priority = 401,
+            conditions = {
+                all = {
+                    { quest = { id = 98028, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
+            complete = QuestState(98028, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
             id = "accept-944-the-master-s-glaive",
             kind = "accept",
             priority = 410,
@@ -656,7 +673,7 @@ ns:RegisterGuide({
             id = "objective-944-the-master-s-glaive",
             kind = "objective",
             priority = 420,
-            text = "Travel south from the Grove of Ancients into The Master's Glaive until you've completed the quest.",
+            text = "Travel south from the Grove of Ancients into The Master's Glaive until you've completed the quest. A Twilight Disciple or Thug may drop a Peerless Eye. Use it if one does.",
             dependsOn = { "accept-944-the-master-s-glaive" },
             complete = QuestState(944, "complete"),
             route = {
@@ -838,6 +855,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98042-its-all-fun-and-games",
+            kind = "turnin",
+            priority = 565,
+            conditions = {
+                all = {
+                    { quest = { id = 98042, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in It's All Fun and Games Until... to Thundris Windweaver in Auberdine if a Twilight cultist dropped a Peerless Eye.",
+            complete = QuestState(98042, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3740, 0.4020, "Thundris Windweaver",
+                    "Travel to Thundris Windweaver."),
+            },
+        },
+        {
             id = "travel-grove-of-the-ancients",
             kind = "travel",
             priority = 570,
@@ -868,6 +901,17 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.4357, 0.7634, "Onu",
                     "Travel to Onu."),
+            },
+        },
+        {
+            id = "accept-98013-swelling-forces",
+            kind = "accept",
+            priority = 591,
+            text = "Accept Swelling Forces from Arbal at the Grove of the Ancients.",
+            complete = QuestState(98013, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Arbal",
+                    "Travel to Arbal."),
             },
         },
         {

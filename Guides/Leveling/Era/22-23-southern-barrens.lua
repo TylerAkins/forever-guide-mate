@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Horde Era leveling route for the Southern Barrens, levels 22-23.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Barrens list that sit on this pass are woven in.
+-- Scout Support and Valuable Vantages are worked in Hillsbrad, past this southern loop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,7 +33,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-22-23-southern-barrens",
-    title = "22-23 Southern Barrens (Era)",
+    title = "22-23 Southern Barrens",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -636,6 +637,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-97250-wrongly-blamed",
+            kind = "accept",
+            priority = 415,
+            text = "Accept Wrongly Blamed, Justly Corrected from Grunt Logmar at Camp Taurajo. This is an elite. Bring a group.",
+            complete = QuestState(97250, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4460, 0.5920, "Grunt Logmar",
+                    "Travel to Grunt Logmar."),
+            },
+        },
+        {
             id = "objective-owatanka",
             kind = "objective",
             priority = 420,
@@ -676,6 +688,57 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4520, 0.7100, "Field of Giants",
                     "Travel to Field of Giants."),
+            },
+        },
+        {
+            id = "accept-98093-field-to-clear",
+            kind = "accept",
+            priority = 441,
+            text = "Accept Field to Clear from Sulhasa in the southern Barrens.",
+            complete = QuestState(98093, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4780, 0.7760, "Sulhasa",
+                    "Travel to Sulhasa."),
+            },
+        },
+        {
+            id = "objective-98093-field-to-clear",
+            kind = "objective",
+            priority = 442,
+            text = "Field to Clear: slay 7 Stormhide lizards and 7 Hecklefang Stalkers so Sulhasa can leave the tree.",
+            dependsOn = { "accept-98093-field-to-clear" },
+            complete = QuestState(98093, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4640, 0.7980, "Stormhide",
+                    "Travel to Stormhide."),
+                Point(MAP.BARRENS, 0.4580, 0.8280, "Hecklefang Stalker",
+                    "Travel to Hecklefang Stalker."),
+            },
+        },
+        {
+            id = "turnin-98093-field-to-clear",
+            kind = "turnin",
+            priority = 443,
+            text = "Turn in Field to Clear to Sulhasa.",
+            dependsOn = { "objective-98093-field-to-clear" },
+            complete = QuestState(98093, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4780, 0.7760, "Sulhasa",
+                    "Travel to Sulhasa."),
+            },
+        },
+        {
+            id = "objective-97250-wrongly-blamed",
+            kind = "objective",
+            priority = 444,
+            text = "Wrongly Blamed, Justly Corrected: slay the encroaching soldiers and the Outraged Pillager on the Dustwallow border. This is an elite. Bring a group.",
+            dependsOn = { "accept-97250-wrongly-blamed" },
+            complete = QuestState(97250, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4900, 0.7700, "Encroaching Soldier",
+                    "Travel to Encroaching Soldier."),
+                Point(MAP.BARRENS, 0.4900, 0.7720, "Outraged Pillager",
+                    "Travel to Outraged Pillager."),
             },
         },
         {
@@ -897,6 +960,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4511, 0.5772, "Camp Taurajo",
                     "Travel to Camp Taurajo."),
+            },
+        },
+        {
+            id = "turnin-97250-wrongly-blamed",
+            kind = "turnin",
+            priority = 625,
+            text = "Turn in Wrongly Blamed, Justly Corrected to Grunt Logmar at Camp Taurajo.",
+            dependsOn = { "objective-97250-wrongly-blamed" },
+            complete = QuestState(97250, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4460, 0.5920, "Grunt Logmar",
+                    "Travel to Grunt Logmar."),
             },
         },
         {
