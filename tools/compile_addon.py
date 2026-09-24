@@ -28,6 +28,7 @@ SHIPPED = (
     "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
     "Guides/Leveling/ZephrasIsle.lua",
+    "Guides/Leveling/Durotar.lua",
     "Guides/Leveling/TheBarrens.lua",
     "README.md",
     "CHANGELOG.md",

@@ -40,6 +40,7 @@ Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Leveling/ZephrasIsle.lua")
+Load("Guides/Leveling/Durotar.lua")
 Load("Guides/Leveling/TheBarrens.lua")
 
 local baseState = {
@@ -1121,6 +1122,50 @@ Check(disruption and string.find(disruption.text, "Bring a group", 1, true) ~= n
 local zhevra = ns.Engine:GetGoal(barrens, "accept-845-the-zhevra")
 Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
     "The Zhevra waits until Plainstrider Menace is turned in")
+
+local durotar = ns.guides["leveling-durotar"]
+Check(durotar ~= nil, "the Durotar guide is registered")
+local encroachmentGoals = 0
+for _, goal in ipairs(durotar.goals) do
+    if string.find(goal.id, "objective-837-encroachment-", 1, true) then
+        encroachmentGoals = encroachmentGoals + 1
+        Equal(#goal.route, 1, "each Encroachment camp has its own pin")
+    end
+end
+Equal(encroachmentGoals, 4, "Encroachment camps are separate steps")
+local antidote = ns.Engine:GetGoal(durotar, "accept-813-finding-the-antidote")
+Check(DependsOn(antidote, "accept-812-need-for-a-cure"),
+    "Finding the Antidote waits until Need for a Cure is accepted")
+local cure = ns.Engine:GetGoal(durotar, "turnin-812-need-for-a-cure")
+Check(DependsOn(cure, "turnin-813-finding-the-antidote"),
+    "Need for a Cure turns in after the antidote")
+local aggor = ns.Engine:GetGoal(durotar, "objective-99052-threat-from-below-1")
+Check(aggor and string.find(aggor.text, "Bring a group", 1, true) ~= nil,
+    "Aggor tells the player to bring a group")
+local durotarState = {}
+for key, value in pairs(baseState) do durotarState[key] = value end
+durotarState.level = 20
+durotarState.classID = 3
+durotarState.professionsKnown = true
+durotarState.professions = {}
+durotarState.completedQuests = {}
+durotarState.quests = {}
+for _, goal in ipairs(durotar.goals) do
+    local complete = goal.complete
+    local questID = complete and complete.quest and complete.quest.id
+    if not questID and complete and complete.questObjective then
+        questID = complete.questObjective.id
+    end
+    if questID and questID ~= 96873 and questID ~= 785 and questID ~= 832
+        and questID ~= 96876 and questID ~= 96877 and questID ~= 97281 and questID ~= 97282 then
+        durotarState.completedQuests[questID] = true
+    end
+end
+local durotarProgress = ns.Engine:GetGuideProgress(durotar, durotarState)
+Equal(durotarProgress.percentage, 100,
+    "a hunter without enchanting reaches 100% after the offered Durotar quests")
+Check(durotarProgress.eligible < durotarProgress.total,
+    "enchanting and unstarted drop quests stay out of the Durotar percentage")
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
