@@ -92,6 +92,7 @@ A character who finishes every step they can actually take should reach 100%.
 
 - Put faction, class, race, and profession requirements on the steps that have them. A permanent mismatch is left out of the percentage.
 - Put the race on every step of that quest: the accept, each objective, and the turn-in. A mismatch counts as that step being finished, so a later shared quest can open. The client race ids are Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gnome 7, Alliance Skyborne 95, and Horde Skyborne 96. Orc and troll together are `race = { 2, 8 }`.
+- A breadcrumb that names the elemental plane, or that rewards Windshapers reputation, is Skyborne. Journey to the Crossroads from Thrall (98024) is Horde Skyborne. Orcs and trolls reach the Crossroads through Meats to Orgrimmar. Tauren take Kirge Sternhorn's Journey to the Crossroads (854).
 - A level requirement stays in the percentage until the character reaches it.
 - Omit unused quests, repeatable class buffs, and promo quests that are not offered to every character. Name them in the header.
 - Include shared and side-unknown quests when the zone page lists them and a Horde character can take them.

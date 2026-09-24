@@ -1385,6 +1385,17 @@ function TestRaceSteps()
     Open(barrens, orc)
     Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
         "an orc still takes Meats to Orgrimmar")
+    local troll = Fresh(8)
+    troll.level = 15
+    troll.classID = 8
+    troll.mapID = 1454
+    Open(barrens, troll)
+    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
+        "a level 15 troll in Orgrimmar is not sent to Thrall for Journey to the Crossroads")
+    ns.charDB.activeGoal = "accept-98024-journey-to-the-crossroads"
+    ns.Engine:Refresh(troll)
+    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
+        "a troll leaves Journey to the Crossroads once the guide refreshes")
     local tauren = Fresh(6)
     tauren.completedQuests[98024] = true
     Open(barrens, tauren)
