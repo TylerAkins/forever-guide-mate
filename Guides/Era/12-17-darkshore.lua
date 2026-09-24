@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Darkshore, levels 12-17.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Darkshore list that sit on this pass are woven in.
+-- Left out: Business in Auberdine and Making Do start in Stormwind, off this road.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -37,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-17-darkshore",
-    title = "12-17 Darkshore (Era)",
+    title = "12-17 Darkshore",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -1016,6 +1017,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98025-wanted-jaivhanel",
+            kind = "accept",
+            priority = 581,
+            text = "Accept WANTED: Jai'vhanel from the poster beside Sentinel Glynda Nal'Shea in Auberdine.",
+            complete = QuestState(98025, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3720, 0.4420, "WANTED: Jai'vhanel",
+                    "Travel to WANTED: Jai'vhanel."),
+            },
+        },
+        {
             id = "note-963-auberdine",
             kind = "note",
             priority = 590,
@@ -1458,6 +1470,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98025-wanted-jaivhanel",
+            kind = "objective",
+            priority = 975,
+            text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
+            dependsOn = { "accept-98025-wanted-jaivhanel" },
+            complete = QuestState(98025, "complete"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4500, 0.5820, "Jai'vhanel",
+                    "Travel to Jai'vhanel."),
+            },
+        },
+        {
             id = "objective-953-1-read-the-lay-of-ameth-aran",
             kind = "objective",
             priority = 980,
@@ -1582,6 +1606,18 @@ ns:RegisterGuide({
             complete = QuestState(4811, "completed"),
             route = {
                 Point(MAP.DARKSHORE, 0.3764, 0.4336, "Sentinel Glynda Nal'Shea",
+                    "Travel to Sentinel Glynda Nal'Shea."),
+            },
+        },
+        {
+            id = "turnin-98025-wanted-jaivhanel",
+            kind = "turnin",
+            priority = 1081,
+            text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea in Auberdine.",
+            dependsOn = { "objective-98025-wanted-jaivhanel" },
+            complete = QuestState(98025, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3760, 0.4340, "Sentinel Glynda Nal'Shea",
                     "Travel to Sentinel Glynda Nal'Shea."),
             },
         },

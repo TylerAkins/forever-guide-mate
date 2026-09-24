@@ -1,7 +1,7 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Duskwood, levels 28-29.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Duskwood list are woven into the Darkshire and Raven Hill loop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-28-29-duskwood",
-    title = "28-29 Duskwood (Era)",
+    title = "28-29 Duskwood",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -163,6 +163,39 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96139-the-valor-family",
+            kind = "accept",
+            priority = 111,
+            text = "Accept The Valor Family from Sirra Von'Indi in Darkshire.",
+            complete = QuestState(96139, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
+            id = "accept-96137-iras-dagger",
+            kind = "accept",
+            priority = 112,
+            text = "Accept Ira's Dagger from Sirra Von'Indi in Darkshire.",
+            complete = QuestState(96137, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
+            id = "accept-96138-merricks-bow",
+            kind = "accept",
+            priority = 113,
+            text = "Accept Merrick's Bow from Sirra Von'Indi in Darkshire.",
+            complete = QuestState(96138, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
             id = "accept-174-look-to-the-stars",
             kind = "accept",
             priority = 120,
@@ -241,6 +274,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7800, 0.7000, "Insane Ghoul",
                     "Travel to Insane Ghoul."),
+            },
+        },
+        {
+            id = "objective-96137-black-ravager",
+            kind = "objective",
+            priority = 185,
+            text = "Ira's Dagger: slay 7 Black Ravagers.",
+            dependsOn = { "accept-96137-iras-dagger" },
+            complete = QuestObjective(96137, 2),
+            route = {
+                Point(MAP.DUSKWOOD, 0.6940, 0.3580, "Black Ravager",
+                    "Travel to Black Ravager."),
             },
         },
         {
@@ -466,10 +511,34 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-96137-young-black-ravager",
+            kind = "objective",
+            priority = 381,
+            text = "Ira's Dagger: slay 10 Young Black Ravagers.",
+            dependsOn = { "accept-96137-iras-dagger" },
+            complete = QuestObjective(96137, 1),
+            route = {
+                Point(MAP.DUSKWOOD, 0.2380, 0.7900, "Young Black Ravager",
+                    "Travel to Young Black Ravager."),
+            },
+        },
+        {
             id = "travel-5-raven-hill",
             kind = "travel",
             priority = 390,
             text = "Travel to Raven Hill.",
+            route = {
+                Point(MAP.DUSKWOOD, 0.1833, 0.5625, "Raven Hill",
+                    "Travel to Raven Hill."),
+            },
+        },
+        {
+            id = "objective-96139-the-valor-family",
+            kind = "objective",
+            priority = 395,
+            text = "The Valor Family: search Raven Hill. Wowhead gives no search pin, so this marks Raven Hill.",
+            dependsOn = { "accept-96139-the-valor-family" },
+            complete = QuestState(96139, "complete"),
             route = {
                 Point(MAP.DUSKWOOD, 0.1833, 0.5625, "Raven Hill",
                     "Travel to Raven Hill."),
@@ -570,6 +639,20 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-96138-merricks-bow",
+            kind = "objective",
+            priority = 471,
+            text = "Merrick's Bow: slay 8 Splinter Fist Warriors and 4 Splinter Fist Taskmasters in Raven Hill Cemetery.",
+            dependsOn = { "accept-96138-merricks-bow" },
+            complete = QuestState(96138, "complete"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.3420, 0.7740, "Splinter Fist Warrior",
+                    "Travel to Splinter Fist Warrior."),
+                Point(MAP.DUSKWOOD, 0.3400, 0.7380, "Splinter Fist Taskmaster",
+                    "Travel to Splinter Fist Taskmaster."),
+            },
+        },
+        {
             id = "travel-225-forlorn-rowe",
             kind = "travel",
             priority = 480,
@@ -631,6 +714,54 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7360, 0.4685, "Darkshire",
                     "Travel to Darkshire."),
+            },
+        },
+        {
+            id = "turnin-96139-the-valor-family",
+            kind = "turnin",
+            priority = 535,
+            text = "Turn in The Valor Family to Sirra Von'Indi in Darkshire.",
+            dependsOn = { "objective-96139-the-valor-family" },
+            complete = QuestState(96139, "completed"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
+            id = "turnin-96137-iras-dagger",
+            kind = "turnin",
+            priority = 536,
+            text = "Turn in Ira's Dagger to Sirra Von'Indi in Darkshire.",
+            dependsOn = { "objective-96137-young-black-ravager", "objective-96137-black-ravager" },
+            complete = QuestState(96137, "completed"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
+            id = "turnin-96138-merricks-bow",
+            kind = "turnin",
+            priority = 537,
+            text = "Turn in Merrick's Bow to Sirra Von'Indi in Darkshire.",
+            dependsOn = { "objective-96138-merricks-bow" },
+            complete = QuestState(96138, "completed"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
+            },
+        },
+        {
+            id = "accept-98447-the-valor-family",
+            kind = "accept",
+            priority = 538,
+            text = "Accept The Valor Family from Sirra Von'Indi in Darkshire.",
+            dependsOn = { "turnin-96139-the-valor-family" },
+            complete = QuestState(98447, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
             },
         },
         {
@@ -920,6 +1051,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98447-the-valor-family",
+            kind = "objective",
+            priority = 781,
+            text = "The Valor Family: find the cause of the ghosts at Ol' Sandy in Raven Hill.",
+            dependsOn = { "accept-98447-the-valor-family" },
+            complete = QuestState(98447, "complete"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.1720, 0.5380, "Ol' Sandy",
+                    "Travel to Ol' Sandy."),
+            },
+        },
+        {
             id = "turnin-240-return-to-jitters",
             kind = "turnin",
             priority = 790,
@@ -1079,6 +1222,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7572, 0.4534, "Darkshire",
                     "Travel to Darkshire."),
+            },
+        },
+        {
+            id = "turnin-98447-the-valor-family",
+            kind = "turnin",
+            priority = 921,
+            text = "Turn in The Valor Family to Sirra Von'Indi in Darkshire.",
+            dependsOn = { "objective-98447-the-valor-family" },
+            complete = QuestState(98447, "completed"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7260, 0.4760, "Sirra Von'Indi",
+                    "Travel to Sirra Von'Indi."),
             },
         },
         {
