@@ -2162,7 +2162,7 @@ ns:RegisterGuide({
         {
             id = "accept-98424-fizsprockets-notes",
             kind = "accept",
-            priority = 1431,
+            priority = 1411,
             conditions = {
                 all = {
                     { quest = { id = 98424, state = "activeOrCompleted" } },
@@ -2178,7 +2178,7 @@ ns:RegisterGuide({
         {
             id = "objective-98424-fizsprockets-notes",
             kind = "objective",
-            priority = 1432,
+            priority = 1412,
             conditions = {
                 all = {
                     { quest = { id = 98424, state = "activeOrCompleted" } },
@@ -2474,7 +2474,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-1",
             kind = "objective",
-            priority = 1511,
+            priority = 1505,
             text = "Drive Them Out: kill 6 Galak Centaurs.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 1),
@@ -2486,7 +2486,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-2",
             kind = "objective",
-            priority = 1512,
+            priority = 1506,
             text = "Drive Them Out: kill 4 Galak Outrunners.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 2),
@@ -2498,7 +2498,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-3",
             kind = "objective",
-            priority = 1513,
+            priority = 1507,
             text = "Drive Them Out: bring Herak the Pillager's head.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 3),
