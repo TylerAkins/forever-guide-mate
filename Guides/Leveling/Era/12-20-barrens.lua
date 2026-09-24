@@ -1,7 +1,9 @@
 local _, ns = ...
 
 -- Horde Era leveling route for the Barrens, levels 12-20.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Barrens list that sit on this pass are woven in.
+-- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter.
+-- Journey to the Crossroads from Thrall is for Horde Skyborne.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -36,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-20-barrens",
-    title = "12-20 Barrens (Era)",
+    title = "12-20 Barrens",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -160,6 +162,39 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5090, 0.4360, "Takrin Pathseeker",
                     "Travel to Takrin Pathseeker."),
+            },
+        },
+        {
+            id = "accept-98024-journey-to-the-crossroads",
+            kind = "accept",
+            priority = 65,
+            conditions = {
+                all = {
+                    { race = 96 },
+                },
+            },
+            text = "Accept Journey to the Crossroads from Thrall in Orgrimmar. This step is for Horde Skyborne.",
+            complete = QuestState(98024, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3200, 0.3780, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "turnin-98024-journey-to-the-crossroads",
+            kind = "turnin",
+            priority = 105,
+            conditions = {
+                all = {
+                    { race = 96 },
+                },
+            },
+            text = "Turn in Journey to the Crossroads to Thork at the Crossroads. This step is for Horde Skyborne.",
+            dependsOn = { "accept-98024-journey-to-the-crossroads" },
+            complete = QuestState(98024, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5140, 0.3080, "Thork",
+                    "Travel to Thork."),
             },
         },
         {
@@ -1519,6 +1554,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-97253-parts-and-pieces",
+            kind = "accept",
+            priority = 941,
+            text = "Accept Parts and Pieces from Wrenix the Wretched in Ratchet.",
+            complete = QuestState(97253, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6300, 0.3640, "Wrenix the Wretched",
+                    "Travel to Wrenix the Wretched."),
+            },
+        },
+        {
             id = "accept-895-wanted-baron-longshore",
             kind = "accept",
             priority = 950,
@@ -1527,6 +1573,17 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6260, 0.3750, "Ratchet",
                     "Travel to Ratchet."),
+            },
+        },
+        {
+            id = "accept-92706-wanted-bruuz",
+            kind = "accept",
+            priority = 951,
+            text = "Accept WANTED: Bruuz from the poster in Ratchet. This is an elite. Bring a group.",
+            complete = QuestState(92706, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3750, "WANTED",
+                    "Travel to WANTED."),
             },
         },
         {
@@ -1575,10 +1632,34 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92706-wanted-bruuz",
+            kind = "objective",
+            priority = 995,
+            text = "WANTED: Bruuz: bring Bruuz's Dorsal Fin to Gazlowe. This is an elite. Bring a group.",
+            dependsOn = { "accept-92706-wanted-bruuz" },
+            complete = QuestState(92706, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6440, 0.3900, "Bruuz",
+                    "Travel to Bruuz."),
+            },
+        },
+        {
             id = "travel-895-the-merchant-coast",
             kind = "travel",
             priority = 1000,
             text = "Travel to The Merchant Coast.",
+            route = {
+                Point(MAP.BARRENS, 0.6270, 0.4980, "The Merchant Coast",
+                    "Travel to The Merchant Coast."),
+            },
+        },
+        {
+            id = "objective-97253-parts-and-pieces",
+            kind = "objective",
+            priority = 1005,
+            text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet. Wowhead gives no parts pin, so this marks the Merchant Coast.",
+            dependsOn = { "accept-97253-parts-and-pieces" },
+            complete = QuestState(97253, "complete"),
             route = {
                 Point(MAP.BARRENS, 0.6270, 0.4980, "The Merchant Coast",
                     "Travel to The Merchant Coast."),
@@ -1653,6 +1734,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
                     "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-92706-wanted-bruuz",
+            kind = "turnin",
+            priority = 1061,
+            text = "Turn in WANTED: Bruuz to Gazlowe in Ratchet.",
+            dependsOn = { "objective-92706-wanted-bruuz" },
+            complete = QuestState(92706, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3620, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-97253-parts-and-pieces",
+            kind = "turnin",
+            priority = 1062,
+            text = "Turn in Parts and Pieces to Wrenix the Wretched in Ratchet.",
+            dependsOn = { "objective-97253-parts-and-pieces" },
+            complete = QuestState(97253, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6300, 0.3640, "Wrenix the Wretched",
+                    "Travel to Wrenix the Wretched."),
             },
         },
         {
@@ -2035,6 +2140,28 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95507-vrangs-game",
+            kind = "accept",
+            priority = 1351,
+            text = "Accept Vrang's Game from Vrang Wildgore.",
+            complete = QuestState(95507, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
+            id = "accept-95494-bruised-pride-and-lion-hides",
+            kind = "accept",
+            priority = 1352,
+            text = "Accept Bruised Pride and Lion Hides from Vrang Wildgore.",
+            complete = QuestState(95494, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
             id = "objective-867-harpy-raiders",
             kind = "objective",
             priority = 1360,
@@ -2044,6 +2171,152 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.3800, 0.1700, "Witchwing Roguefeather",
                     "Travel to Witchwing Roguefeather."),
+            },
+        },
+        {
+            id = "objective-95507-vrangs-game",
+            kind = "objective",
+            priority = 1361,
+            text = "Vrang's Game: collect 8 Trapped Game from sprung traps in the valley. Wowhead gives no trap pin, so this marks Vrang Wildgore.",
+            dependsOn = { "accept-95507-vrangs-game" },
+            complete = QuestState(95507, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
+            id = "turnin-95507-vrangs-game",
+            kind = "turnin",
+            priority = 1362,
+            text = "Turn in Vrang's Game to Vrang Wildgore.",
+            dependsOn = { "objective-95507-vrangs-game" },
+            complete = QuestState(95507, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
+            id = "objective-95494-bruised-pride-and-lion-hides",
+            kind = "objective",
+            priority = 1363,
+            text = "Bruised Pride and Lion Hides: collect 6 Savannah Lion Hides from Savannah Patriarchs and Savannah Matriarchs.",
+            dependsOn = { "accept-95494-bruised-pride-and-lion-hides" },
+            complete = QuestState(95494, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4300, 0.1500, "Savannah Patriarch",
+                    "Travel to Savannah Patriarch."),
+                Point(MAP.BARRENS, 0.6040, 0.3360, "Savannah Matriarch",
+                    "Travel to Savannah Matriarch."),
+            },
+        },
+        {
+            id = "turnin-95494-bruised-pride-and-lion-hides",
+            kind = "turnin",
+            priority = 1364,
+            text = "Turn in Bruised Pride and Lion Hides to Vrang Wildgore.",
+            dependsOn = { "objective-95494-bruised-pride-and-lion-hides" },
+            complete = QuestState(95494, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
+            id = "accept-95495-the-hermit-tanner",
+            kind = "accept",
+            priority = 1365,
+            text = "Accept The Hermit Tanner from Vrang Wildgore.",
+            dependsOn = { "turnin-95494-bruised-pride-and-lion-hides" },
+            complete = QuestState(95495, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4380, 0.1220, "Vrang Wildgore",
+                    "Travel to Vrang Wildgore."),
+            },
+        },
+        {
+            id = "turnin-95495-the-hermit-tanner",
+            kind = "turnin",
+            priority = 1366,
+            text = "Turn in The Hermit Tanner to Walton on the ridge.",
+            dependsOn = { "accept-95495-the-hermit-tanner" },
+            complete = QuestState(95495, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4200, 0.1140, "Walton",
+                    "Travel to Walton."),
+            },
+        },
+        {
+            id = "accept-95621-trouble-in-the-valley",
+            kind = "accept",
+            priority = 1367,
+            text = "Accept Trouble in the Valley from Walton.",
+            dependsOn = { "turnin-95495-the-hermit-tanner" },
+            complete = QuestState(95621, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4200, 0.1140, "Walton",
+                    "Travel to Walton."),
+            },
+        },
+        {
+            id = "objective-95621-trouble-in-the-valley",
+            kind = "objective",
+            priority = 1368,
+            text = "Trouble in the Valley: take Benedict's Orders from Corporal Adamore at the wrecked caravan.",
+            dependsOn = { "accept-95621-trouble-in-the-valley" },
+            complete = QuestState(95621, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4240, 0.1600, "Corporal Adamore",
+                    "Travel to Corporal Adamore."),
+            },
+        },
+        {
+            id = "turnin-95621-trouble-in-the-valley",
+            kind = "turnin",
+            priority = 1369,
+            text = "Turn in Trouble in the Valley to Walton.",
+            dependsOn = { "objective-95621-trouble-in-the-valley" },
+            complete = QuestState(95621, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4200, 0.1140, "Walton",
+                    "Travel to Walton."),
+            },
+        },
+        {
+            id = "accept-95508-unwelcome-guests",
+            kind = "accept",
+            priority = 1369.2,
+            text = "Accept Unwelcome Guests from Walton.",
+            dependsOn = { "turnin-95621-trouble-in-the-valley" },
+            complete = QuestState(95508, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4200, 0.1140, "Walton",
+                    "Travel to Walton."),
+            },
+        },
+        {
+            id = "objective-95508-unwelcome-guests",
+            kind = "objective",
+            priority = 1369.4,
+            text = "Unwelcome Guests: help Walton survive Terry Longdrink and the Kul Tiras marines.",
+            dependsOn = { "accept-95508-unwelcome-guests" },
+            complete = QuestState(95508, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4180, 0.1140, "Terry Longdrink",
+                    "Travel to Terry Longdrink."),
+            },
+        },
+        {
+            id = "turnin-95508-unwelcome-guests",
+            kind = "turnin",
+            priority = 1369.6,
+            text = "Turn in Unwelcome Guests to Walton.",
+            dependsOn = { "objective-95508-unwelcome-guests" },
+            complete = QuestState(95508, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4200, 0.1140, "Walton",
+                    "Travel to Walton."),
             },
         },
         {
@@ -3450,6 +3723,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95774-her-name-is-olgra",
+            kind = "accept",
+            priority = 2451,
+            text = "Accept Her Name Is Olgra from Mankrik at the Crossroads.",
+            dependsOn = { "accept-4921-lost-in-battle" },
+            complete = QuestState(95774, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.3160, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
             id = "travel-880-the-stagnant-oasis",
             kind = "travel",
             priority = 2460,
@@ -3699,6 +3984,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-95774-her-name-is-olgra",
+            kind = "objective",
+            priority = 2655,
+            text = "Her Name Is Olgra: collect 4 of Olgra's Adornments from quilboars.",
+            dependsOn = { "accept-95774-her-name-is-olgra" },
+            complete = QuestState(95774, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4920, 0.5040, "Razormane Raider",
+                    "Travel to Razormane Raider."),
+            },
+        },
+        {
             id = "travel-5052-camp-taurajo",
             kind = "travel",
             priority = 2660,
@@ -3821,6 +4118,53 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
                     "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "turnin-95774-her-name-is-olgra",
+            kind = "turnin",
+            priority = 2761,
+            text = "Turn in Her Name Is Olgra to Mankrik at the Crossroads.",
+            dependsOn = { "objective-95774-her-name-is-olgra" },
+            complete = QuestState(95774, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.3160, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "accept-97003-cholaruk-the-ravener",
+            kind = "accept",
+            priority = 2772,
+            text = "Accept Chol'aruk the Ravener from Gur'ak at the Crossroads. This is an elite. Bring a group.",
+            complete = QuestState(97003, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5260, 0.2900, "Gur'ak",
+                    "Travel to Gur'ak."),
+            },
+        },
+        {
+            id = "objective-97003-cholaruk-the-ravener",
+            kind = "objective",
+            priority = 2773,
+            text = "Chol'aruk the Ravener: bring Chol'aruk's Head from the cave at Thorn Hill. This is an elite. Bring a group.",
+            dependsOn = { "accept-97003-cholaruk-the-ravener" },
+            complete = QuestState(97003, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5740, 0.2720, "Chol'aruk",
+                    "Travel to Chol'aruk."),
+            },
+        },
+        {
+            id = "turnin-97003-cholaruk-the-ravener",
+            kind = "turnin",
+            priority = 2774,
+            text = "Turn in Chol'aruk the Ravener to Gur'ak at the Crossroads.",
+            dependsOn = { "objective-97003-cholaruk-the-ravener" },
+            complete = QuestState(97003, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5260, 0.2900, "Gur'ak",
+                    "Travel to Gur'ak."),
             },
         },
         {

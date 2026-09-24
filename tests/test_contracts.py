@@ -554,6 +554,18 @@ class ContractTests(unittest.TestCase):
             "Guides/Leveling/Era/1-12-dun-morogh.lua",
             "Guides/Leveling/Era/1-12-elwynn-forest.lua",
             "Guides/Leveling/Era/1-12-teldrassil.lua",
+            "Guides/Leveling/Era/12-17-westfall.lua",
+            "Guides/Leveling/Era/12-17-darkshore.lua",
+            "Guides/Leveling/Era/12-20-barrens.lua",
+            "Guides/Leveling/Era/12-20-silverpine-forest.lua",
+            "Guides/Leveling/Era/17-18-loch-modan.lua",
+            "Guides/Leveling/Era/18-20-redridge-mountains.lua",
+            "Guides/Leveling/Era/20-21-darkshore.lua",
+            "Guides/Leveling/Era/22-23-southern-barrens.lua",
+            "Guides/Leveling/Era/23-24-darkshore.lua",
+            "Guides/Leveling/Era/23-25-stonetalon-mountains.lua",
+            "Guides/Leveling/Era/27-28-redridge-mountains.lua",
+            "Guides/Leveling/Era/28-29-duskwood.lua",
         }
         for relative in era_files:
             guide = (ROOT / relative).read_text(encoding="utf-8")
@@ -594,7 +606,40 @@ class ContractTests(unittest.TestCase):
         self.assertIn("QuestObjective(786, 1)", durotar)
         self.assertIn("QuestObjective(786, 3)", durotar)
         self.assertIn("QuestState(752,", (ROOT / "Guides/Leveling/Era/1-12-mulgore.lua").read_text(encoding="utf-8"))
-        self.assertIn("QuestState(844,", (ROOT / "Guides/Leveling/Era/12-20-barrens.lua").read_text(encoding="utf-8"))
+        barrens = (ROOT / "Guides/Leveling/Era/12-20-barrens.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(844,", barrens)
+        self.assertIn("QuestState(98024,", barrens)
+        self.assertIn("QuestState(97003,", barrens)
+        self.assertNotIn("QuestState(97005,", barrens)
+        self.assertNotIn("QuestState(95819,", barrens)
+        self.assertNotIn("QuestState(98094,", barrens)
+        westfall = (ROOT / "Guides/Leveling/Era/12-17-westfall.lua").read_text(encoding="utf-8")
+        self.assertIn('title = "12-17 Westfall"', westfall)
+        self.assertIn("QuestState(92742,", westfall)
+        self.assertIn("QuestState(98021,", westfall)
+        self.assertNotIn("QuestState(92753,", westfall)
+        self.assertNotIn("QuestState(93928,", westfall)
+        silverpine = (ROOT / "Guides/Leveling/Era/12-20-silverpine-forest.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(91920,", silverpine)
+        self.assertNotIn("QuestState(95885,", silverpine)
+        loch = (ROOT / "Guides/Leveling/Era/17-18-loch-modan.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(86758,", loch)
+        self.assertNotIn("QuestState(86776,", loch)
+        redridge = (ROOT / "Guides/Leveling/Era/27-28-redridge-mountains.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(98386,", redridge)
+        self.assertNotIn("QuestState(95999,", redridge)
+        duskwood = (ROOT / "Guides/Leveling/Era/28-29-duskwood.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(96139,", duskwood)
+        darkshore = (ROOT / "Guides/Leveling/Era/12-17-darkshore.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(98025,", darkshore)
+        self.assertNotIn("QuestState(97894,", darkshore)
+        stonetalon = (ROOT / "Guides/Leveling/Era/23-25-stonetalon-mountains.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(86576,", stonetalon)
+        self.assertNotIn("QuestState(86574,", stonetalon)
+        self.assertNotIn("QuestState(97538,", stonetalon)
+        southern = (ROOT / "Guides/Leveling/Era/22-23-southern-barrens.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(97250,", southern)
+        self.assertIn("QuestState(98093,", southern)
         self.assertIn("QuestState(97279,", durotar)
         self.assertIn("QuestState(99052,", durotar)
         self.assertNotIn("QuestState(93739,", durotar)

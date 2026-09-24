@@ -1,7 +1,9 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Westfall, levels 12-17.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Westfall list are woven into this route.
+-- Left out: Of Mice and Milk ends in Stranglethorn. The dynamite chain is a second Stormwind trip. Destruction in Deadmines is a dungeon quest. The harvester follow-up that needs parts from Gnomeregan stays out.
+-- Journey to Sentinel Hill is for Alliance Skyborne. The barn alchemy lessons stay on alchemists.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -36,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-17-westfall",
-    title = "12-17 Westfall (Era)",
+    title = "12-17 Westfall",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -981,6 +983,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92909-harvesting-the-harvesters",
+            kind = "accept",
+            priority = 561,
+            text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket at Saldean's Farm.",
+            complete = QuestState(92909, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
+            },
+        },
+        {
             id = "objective-151-poor-old-blanchy",
             kind = "objective",
             priority = 570,
@@ -1007,6 +1020,39 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5637, 0.4764, "Marshal Gryan Stoutmantle",
                     "Travel to Marshal Gryan Stoutmantle."),
+            },
+        },
+        {
+            id = "accept-92742-testing-the-wells",
+            kind = "accept",
+            priority = 591,
+            text = "Accept Testing the Wells from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92742, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92744-murloc-gills",
+            kind = "accept",
+            priority = 592,
+            text = "Accept Murloc Gills from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92744, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92745-the-state-of-the-mines",
+            kind = "accept",
+            priority = 593,
+            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92745, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
             },
         },
         {
@@ -1178,6 +1224,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98021-journey-to-sentinel-hill",
+            kind = "accept",
+            priority = 705,
+            conditions = {
+                all = {
+                    { race = 95 },
+                },
+            },
+            text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon in Stormwind Keep. This step is for Alliance Skyborne.",
+            complete = QuestState(98021, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7800, 0.1800, "Highlord Bolvar Fordragon",
+                    "Travel to Highlord Bolvar Fordragon."),
+            },
+        },
+        {
             id = "travel-353-sentinel-hill",
             kind = "travel",
             priority = 710,
@@ -1190,6 +1252,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
                     "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "turnin-98021-journey-to-sentinel-hill",
+            kind = "turnin",
+            priority = 715,
+            conditions = {
+                all = {
+                    { race = 95 },
+                },
+            },
+            text = "Turn in Journey to Sentinel Hill to Gryan Stoutmantle in Sentinel Hill. This step is for Alliance Skyborne.",
+            dependsOn = { "accept-98021-journey-to-sentinel-hill" },
+            complete = QuestState(98021, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5620, 0.4760, "Gryan Stoutmantle",
+                    "Travel to Gryan Stoutmantle."),
             },
         },
         {
@@ -1223,6 +1302,18 @@ ns:RegisterGuide({
                     "Continue toward The People's Militia."),
                 Point(MAP.WESTFALL, 0.4681, 0.3949, "Defias Smuggler",
                     "Travel to Defias Smuggler."),
+            },
+        },
+        {
+            id = "objective-92745-kobold-digger",
+            kind = "objective",
+            priority = 735,
+            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
+            dependsOn = { "accept-92745-the-state-of-the-mines" },
+            complete = QuestObjective(92745, 1),
+            route = {
+                Point(MAP.WESTFALL, 0.4460, 0.2340, "Kobold Digger",
+                    "Travel to Kobold Digger."),
             },
         },
         {
@@ -1304,6 +1395,20 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92742-testing-the-wells",
+            kind = "objective",
+            priority = 795,
+            text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. Wowhead gives no well pin, so this marks the farms you are already walking.",
+            dependsOn = { "accept-92742-testing-the-wells" },
+            complete = QuestState(92742, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
+                    "Travel to The Jansen Stead."),
+                Point(MAP.WESTFALL, 0.5600, 0.3120, "Saldean's Farm",
+                    "Travel to Saldean's Farm."),
+            },
+        },
+        {
             id = "turnin-151-poor-old-blanchy",
             kind = "turnin",
             priority = 800,
@@ -1364,6 +1469,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92744-murloc-gills",
+            kind = "objective",
+            priority = 845,
+            text = "Murloc Gills: collect 7 Longshore Murloc Gills from murlocs along the shore.",
+            dependsOn = { "accept-92744-murloc-gills" },
+            complete = QuestState(92744, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.2600, 0.5040, "Murloc Warrior",
+                    "Travel to Murloc Warrior."),
+            },
+        },
+        {
             id = "objective-136-captain-sanders-treasure-map",
             kind = "objective",
             priority = 850,
@@ -1382,6 +1499,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5636, 0.4759, "Sentinel Hill",
                     "Travel to Sentinel Hill."),
+            },
+        },
+        {
+            id = "turnin-92742-testing-the-wells",
+            kind = "turnin",
+            priority = 865,
+            text = "Turn in Testing the Wells to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92742-testing-the-wells" },
+            complete = QuestState(92742, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "turnin-92744-murloc-gills",
+            kind = "turnin",
+            priority = 866,
+            text = "Turn in Murloc Gills to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92744-murloc-gills" },
+            complete = QuestState(92744, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
             },
         },
         {
@@ -1507,6 +1648,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92909-harvesting-the-harvesters",
+            kind = "objective",
+            priority = 955,
+            text = "Harvesting the Harvesters: collect 14 Golem Isosprings and 5 Harvester Gyrostabilizers from the harvest golems.",
+            dependsOn = { "accept-92909-harvesting-the-harvesters" },
+            complete = QuestState(92909, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.5640, 0.3500, "Harvest Golem",
+                    "Travel to Harvest Golem."),
+            },
+        },
+        {
             id = "turnin-9-the-killing-fields",
             kind = "turnin",
             priority = 960,
@@ -1516,6 +1669,34 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5599, 0.3128, "Farmer Saldean",
                     "Travel to Farmer Saldean."),
+            },
+        },
+        {
+            id = "turnin-92909-harvesting-the-harvesters",
+            kind = "turnin",
+            priority = 965,
+            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket at Saldean's Farm.",
+            dependsOn = { "objective-92909-harvesting-the-harvesters" },
+            complete = QuestState(92909, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
+            },
+        },
+        {
+            id = "turnin-92910-harvesting-the-harvesters",
+            kind = "turnin",
+            priority = 966,
+            conditions = {
+                all = {
+                    { quest = { id = 92910, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket if a harvester dropped a Precessive Autocognition Assembly.",
+            complete = QuestState(92910, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
             },
         },
         {
@@ -1529,6 +1710,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92745-riverpaw-miner",
+            kind = "objective",
+            priority = 969,
+            text = "The State of the Mines: slay 6 Riverpaw Miners in the Gold Coast Quarry.",
+            dependsOn = { "accept-92745-the-state-of-the-mines" },
+            complete = QuestObjective(92745, 2),
+            route = {
+                Point(MAP.WESTFALL, 0.3000, 0.4740, "Riverpaw Miner",
+                    "Travel to Riverpaw Miner."),
+            },
+        },
+        {
             id = "objective-13-the-people-s-militia",
             kind = "objective",
             priority = 980,
@@ -1538,6 +1731,107 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.4401, 0.6947, "Defias Pillager",
                     "Travel to Defias Pillager."),
+            },
+        },
+        {
+            id = "accept-92109-my-first-alchemy-set",
+            kind = "accept",
+            priority = 981,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Accept My First Alchemy Set from the young alchemist in the Moonbrook barn. Wowhead gives no pin for the child, so this marks Moonbrook. This step is for alchemists.",
+            complete = QuestState(92109, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "objective-92109-my-first-alchemy-set",
+            kind = "objective",
+            priority = 982,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "My First Alchemy Set: gather 5 Empty Vials, 5 Peacebloom, and 5 Silverleaf for the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "accept-92109-my-first-alchemy-set" },
+            complete = QuestState(92109, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "turnin-92109-my-first-alchemy-set",
+            kind = "turnin",
+            priority = 983,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Turn in My First Alchemy Set to the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "objective-92109-my-first-alchemy-set" },
+            complete = QuestState(92109, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "accept-92110-my-first-real-potion",
+            kind = "accept",
+            priority = 984,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Accept My First Real Potion from the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "turnin-92109-my-first-alchemy-set" },
+            complete = QuestState(92110, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "objective-92110-my-first-real-potion",
+            kind = "objective",
+            priority = 985,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "My First Real Potion: gather 3 Murloc Eyes for the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "accept-92110-my-first-real-potion" },
+            complete = QuestState(92110, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "turnin-92110-my-first-real-potion",
+            kind = "turnin",
+            priority = 986,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Turn in My First Real Potion to the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "objective-92110-my-first-real-potion" },
+            complete = QuestState(92110, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
             },
         },
         {
@@ -1565,6 +1859,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5632, 0.4755, "Marshal Gryan Stoutmantle",
                     "Travel to Marshal Gryan Stoutmantle."),
+            },
+        },
+        {
+            id = "turnin-92745-the-state-of-the-mines",
+            kind = "turnin",
+            priority = 1005,
+            text = "Turn in The State of the Mines to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92745-kobold-digger", "objective-92745-riverpaw-miner" },
+            complete = QuestState(92745, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92747-moonbrook-espionage",
+            kind = "accept",
+            priority = 1006,
+            text = "Accept Moonbrook Espionage from Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "turnin-92745-the-state-of-the-mines" },
+            complete = QuestState(92747, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
             },
         },
         {
@@ -1630,6 +1948,17 @@ ns:RegisterGuide({
             complete = QuestState(246, "activeOrCompleted"),
             route = {
                 Point(MAP.REDRIDGE, 0.3068, 0.5981, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
+            id = "accept-98407-show-of-force",
+            kind = "accept",
+            priority = 1065,
+            text = "Accept Show of Force from Deputy Feldon.",
+            complete = QuestState(98407, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
                     "Travel to Deputy Feldon."),
             },
         },
@@ -2051,6 +2380,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92747-moonbrook-espionage",
+            kind = "objective",
+            priority = 1425,
+            text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. Wowhead gives no supply pin, so this marks Moonbrook.",
+            dependsOn = { "accept-92747-moonbrook-espionage" },
+            complete = QuestState(92747, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
             id = "travel-103-westfall-lighthouse",
             kind = "travel",
             priority = 1430,
@@ -2213,6 +2554,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
                     "Travel to Sentinel Hill."),
+            },
+        },
+        {
+            id = "turnin-92747-moonbrook-espionage",
+            kind = "turnin",
+            priority = 1565,
+            text = "Turn in Moonbrook Espionage to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92747-moonbrook-espionage" },
+            complete = QuestState(92747, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
             },
         },
         {
@@ -2398,6 +2751,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98407-show-of-force",
+            kind = "objective",
+            priority = 1715,
+            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
+            dependsOn = { "accept-98407-show-of-force" },
+            complete = QuestState(98407, "complete"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3000, 0.8120, "Redridge Thrasher",
+                    "Travel to Redridge Thrasher."),
+            },
+        },
+        {
             id = "travel-three-corners",
             kind = "travel",
             priority = 1720,
@@ -2476,6 +2841,18 @@ ns:RegisterGuide({
             complete = QuestState(246, "completed"),
             route = {
                 Point(MAP.REDRIDGE, 0.3075, 0.5999, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
+            id = "turnin-98407-show-of-force",
+            kind = "turnin",
+            priority = 1785,
+            text = "Turn in Show of Force to Deputy Feldon.",
+            dependsOn = { "objective-98407-show-of-force" },
+            complete = QuestState(98407, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
                     "Travel to Deputy Feldon."),
             },
         },
