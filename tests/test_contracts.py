@@ -547,11 +547,22 @@ class ContractTests(unittest.TestCase):
         )
         toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
         shipped = (ROOT / "tools/compile_addon.py").read_text(encoding="utf-8")
+        rewritten_starters = {
+            "Guides/Leveling/Era/1-12-durotar.lua",
+            "Guides/Leveling/Era/1-12-mulgore.lua",
+            "Guides/Leveling/Era/1-12-tirisfal-glades.lua",
+            "Guides/Leveling/Era/1-12-dun-morogh.lua",
+            "Guides/Leveling/Era/1-12-elwynn-forest.lua",
+            "Guides/Leveling/Era/1-12-teldrassil.lua",
+        }
         for relative in era_files:
             guide = (ROOT / relative).read_text(encoding="utf-8")
             head, goals = guide.split("goals = {", 1)
             self.assertIn('category = "Leveling Quest Guides"', head)
-            self.assertIn("(Era)", head)
+            if relative in rewritten_starters:
+                self.assertNotIn("(Era)", head)
+            else:
+                self.assertIn("(Era)", head)
             self.assertIn('{ faction = "Horde" }', head)
             self.assertNotIn("Alliance", head)
             self.assertNotIn("flight path", goals.lower())
@@ -564,7 +575,10 @@ class ContractTests(unittest.TestCase):
             guide = (ROOT / relative).read_text(encoding="utf-8")
             head, goals = guide.split("goals = {", 1)
             self.assertIn('category = "Leveling Quest Guides"', head)
-            self.assertIn("(Era)", head)
+            if relative in rewritten_starters:
+                self.assertNotIn("(Era)", head)
+            else:
+                self.assertIn("(Era)", head)
             self.assertIn('{ faction = "Alliance" }', head)
             self.assertNotIn("Horde", head)
             self.assertNotIn("flight path", goals.lower())
@@ -575,7 +589,7 @@ class ContractTests(unittest.TestCase):
             self.assertIn(relative, shipped)
         durotar = (ROOT / "Guides/Leveling/Era/1-12-durotar.lua").read_text(encoding="utf-8")
         self.assertIn('id = "leveling-era-1-12-durotar"', durotar)
-        self.assertIn('title = "1-12 Durotar (Era)"', durotar)
+        self.assertIn('title = "1-12 Durotar"', durotar)
         self.assertIn("QuestState(4641,", durotar)
         self.assertIn("QuestObjective(786, 1)", durotar)
         self.assertIn("QuestObjective(786, 3)", durotar)

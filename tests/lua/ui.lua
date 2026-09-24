@@ -263,8 +263,8 @@ Equal(GuideRow("Ragefire Chasm").eligibility.text,
 ns.UI.browser.search:SetText("alliance only")
 ns.Engine.state = { faction = "Horde", level = 10 }
 ns.UI:RefreshGuideBrowser()
-Equal(GuideRow("Alliance Only Leveling").eligibility.text, "Leveling  •  This step is for Alliance.  •  Alliance  •  Level 1+",
-    "leveling guides keep the faction reason")
+Equal(GuideRow("Alliance Only Leveling").eligibility.text, "Leveling  •  Ineligible  •  Alliance  •  Level 1+",
+    "an ineligible leveling guide names the faction without a step reason")
 
 ns:RegisterGuide({
     id = "zone-loremaster", title = "Zone Loremaster", category = "Loremaster Guides", revision = 1,
@@ -293,7 +293,7 @@ Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel fro
     "an eligible dungeon guide still shows its step")
 ns.charDB.selectedGuide = "alliance-only-leveling"
 ns.Engine:Refresh({ faction = "Horde", level = 10 })
-Equal(ns.UI.tracker.instruction.text, "This step is for Alliance.", "the tracker keeps a leveling guide's faction reason")
+Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance leveling guide")
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
