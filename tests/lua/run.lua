@@ -330,8 +330,52 @@ ns.Engine:Refresh(thunderBluffState)
 Equal(ns.Engine.currentGoal.id, "accept-searching-satchel", "Thunder Bluff uses the local RFC pickup first")
 local thunderBluffLeg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, thunderBluffState)
 Equal(thunderBluffLeg.mapID, 1456, "Thunder Bluff route skips the obsolete Orgrimmar transport leg")
+Equal(thunderBluffLeg.label, "Rahauro on Elder Rise", "Thunder Bluff points at Rahauro, not the flight master")
+Equal(thunderBluffLeg.x, 0.706, "Thunder Bluff pickup stays on Elder Rise")
+Check(not thunderBluffLeg.fallbackTaxi, "an arrived Thunder Bluff step does not suggest another flight")
 local thunderBluffPinX = ns.MapPins:GetLocation(ns.Engine.currentGoal, thunderBluffState, 1456)
 Check(type(thunderBluffPinX) == "number", "Thunder Bluff pickup supplies a same-map pin")
+local mulgoreState = { mapID = 1412, x = 0.40, y = 0.30, faction = "Horde" }
+local mulgoreLeg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, mulgoreState)
+Equal(mulgoreLeg.mapID, 1412, "Mulgore keeps the Thunder Bluff approach on the Mulgore map")
+Equal(mulgoreLeg.x, 0.363, "Mulgore points at the southwest elevator")
+Check(string.find(mulgoreLeg.label, "elevator", 1, true) ~= nil, "Mulgore tells you to ride the elevator")
+Check(not mulgoreLeg.fallbackTaxi, "Mulgore does not send you back to a flight master")
+ns.Engine.state = mulgoreState
+local mulgoreText = ns.UI:GoalInstruction(ns.Engine)
+Check(string.find(mulgoreText, "elevator", 1, true) ~= nil, "the tracker says to take the elevator in Mulgore")
+ns.Engine.state = thunderBluffState
+local thunderBluffText = ns.UI:GoalInstruction(ns.Engine)
+Check(string.find(thunderBluffText, "Rahauro", 1, true) ~= nil, "the tracker names Rahauro once you are in Thunder Bluff")
+C_Map = {
+    GetMapInfo = function(mapID)
+        if mapID == 4242 then return { name = "Mulgore" } end
+    end,
+}
+Equal(ns.EvaluateCondition({ map = 1412 }, { mapID = 4242 }), true,
+    "a Mulgore map with a different id still counts as Mulgore")
+local aliasLeg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
+    mapID = 4242, x = 0.40, y = 0.30, faction = "Horde",
+})
+Equal(aliasLeg.mapID, 1412, "a renamed Mulgore map still uses the Mulgore elevator point")
+Check(string.find(aliasLeg.label, "elevator", 1, true) ~= nil, "a renamed Mulgore map still walks to the elevator")
+local mulgoreCalls = {}
+local mulgoreTomTom = {
+    AddWaypoint = function(_, mapID, x, y)
+        mulgoreCalls[#mulgoreCalls + 1] = { mapID = mapID, x = x, y = y }
+        return { mapID = mapID }
+    end,
+    RemoveWaypoint = function() end,
+}
+local savedOpen = ns.db.uiOpen
+ns.db.uiOpen = true
+ns.TomTomWaypoints:Clear(mulgoreTomTom)
+ns.TomTomWaypoints:Sync(ns.Engine.currentGoal, { mapID = 4242, x = 0.40, y = 0.30, faction = "Horde" }, mulgoreTomTom)
+Equal(mulgoreCalls[1].mapID, 4242, "TomTom draws the elevator on the player's Mulgore map")
+Equal(mulgoreCalls[1].x, 0.363, "TomTom keeps the Mulgore elevator coordinate")
+ns.TomTomWaypoints:Clear(mulgoreTomTom)
+ns.db.uiOpen = savedOpen
+C_Map = nil
 
 ns.Engine.currentGuide = rfc
 ns.Engine.currentGoal = ns.Engine:GetGoal(rfc, "complete-testing-strength")

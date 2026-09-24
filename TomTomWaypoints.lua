@@ -35,7 +35,7 @@ function Waypoints:Sync(goal, state, api)
         if projectedX and projectedY and projectedX >= 0 and projectedX <= 1
             and projectedY >= 0 and projectedY <= 1 then
             mapID, x, y = state.mapID, projectedX, projectedY
-        elseif ns.Navigation:SameZone(state.mapID, mapID) then
+        elseif ns.Navigation:OnMap(state.mapID, mapID) then
             mapID = state.mapID
         end
     end

@@ -63,7 +63,24 @@ function Taxi:Capture(api)
     return true
 end
 
+function Taxi:AtDestination(goal, state)
+    if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID or not ns.Travel then
+        return false
+    end
+    local wanted = NormalizeName(goal.taxiDestination)
+    if not wanted or wanted == "" then return false end
+    local function Matches(mapID)
+        if not mapID then return false end
+        local name = NormalizeName(ns.Travel:MapName(mapID))
+        if not name or name == "the next zone" then return false end
+        return name == wanted or string.find(name, wanted, 1, true) or string.find(wanted, name, 1, true)
+    end
+    if Matches(state.mapID) then return true end
+    return ns.Travel.PairedMap and Matches(ns.Travel:PairedMap(state.mapID)) or false
+end
+
 function Taxi:GetLearnedLeg(goal, state)
+    if self:AtDestination(goal, state) then return nil end
     if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID
         or not ns.charDB or type(ns.charDB.taxiRoutes) ~= "table" then return nil end
     local route = ns.charDB.taxiRoutes[state.mapID]
@@ -84,6 +101,7 @@ function Taxi:GetLearnedLeg(goal, state)
 end
 
 function Taxi:GetSuggestedLeg(goal, state)
+    if self:AtDestination(goal, state) then return nil end
     local learned = self:GetLearnedLeg(goal, state)
     if learned then return learned end
     if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID then return nil end

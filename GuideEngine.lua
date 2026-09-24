@@ -145,6 +145,18 @@ function ns.EvaluateCondition(condition, state)
             return Unknown("Current map is unavailable.")
         end
         local matches = Contains(condition.map, state.mapID)
+        if not matches and ns.Navigation then
+            if type(condition.map) ~= "table" then
+                matches = ns.Navigation:OnMap(state.mapID, condition.map)
+            else
+                for _, value in ipairs(condition.map) do
+                    if ns.Navigation:OnMap(state.mapID, value) then
+                        matches = true
+                        break
+                    end
+                end
+            end
+        end
         return matches, matches and nil or "Travel to the required map."
     end
     if condition.instance then
