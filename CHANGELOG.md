@@ -18,3 +18,6 @@ All notable changes to this project are documented here.
 - Added the Zephras Isle leveling guide for Skyborne characters, levels 1-14.
 - A quest step that is only behind a higher level requirement no longer counts as finished, so the guide does not send players to Foul Matriarch before they can meet Aetheen of the Gales.
 - Skyborne racial steps use the client race ids: Alliance 95 and Horde 96.
+- Exploring the Horde now visits Nazgrel, Vol'jin, Cairne, and Sylvanas as separate steps. A finished visit stays finished, and the Undercity leg names the zeppelin.
+- Added the Barrens Loremaster guide. Dungeon quests stay in their dungeon guides. Elite steps say to bring a group.
+- Thunder Bluff steps no longer send you to a flight master after you are already in Mulgore or Thunder Bluff. From Mulgore, the route points at the southwest elevator.

@@ -57,6 +57,11 @@ ns:RegisterGuide({
                     "Open a nearby flight master so GuideMate can learn Forever's routes. " ..
                     "If Thunder Bluff is available, fly there; otherwise travel toward Orgrimmar.",
                     { map = { MAP.MULGORE, MAP.THUNDER_BLUFF } }),
+                -- Southwest elevator. Wowhead pins it at 32, 65 on the Thunder Bluff map.
+                -- Classic zone transforms put that shaft at about 36.3, 30.1 in Mulgore.
+                Point(MAP.MULGORE, 0.363, 0.301, "Ride the southwest elevator up to Thunder Bluff.",
+                    "Travel through Mulgore and take the elevator up to Thunder Bluff.",
+                    { map = MAP.THUNDER_BLUFF }),
                 Point(MAP.THUNDER_BLUFF, 0.706, 0.314, "Rahauro on Elder Rise",
                     "Travel to Thunder Bluff and climb Elder Rise."),
             },
@@ -328,6 +333,9 @@ ns:RegisterGuide({
             dependsOn = { "complete-testing-strength" },
             complete = QuestState(5723, "completed"),
             route = {
+                Point(MAP.MULGORE, 0.363, 0.301, "Ride the southwest elevator up to Thunder Bluff.",
+                    "Travel through Mulgore and take the elevator up to Thunder Bluff.",
+                    { map = MAP.THUNDER_BLUFF }),
                 Point(MAP.THUNDER_BLUFF, 0.706, 0.314, "Rahauro on Elder Rise",
                     "Travel to Thunder Bluff and climb Elder Rise."),
             },
@@ -340,6 +348,9 @@ ns:RegisterGuide({
             dependsOn = { "accept-returning-satchel" },
             complete = QuestState(5724, "completed"),
             route = {
+                Point(MAP.MULGORE, 0.363, 0.301, "Ride the southwest elevator up to Thunder Bluff.",
+                    "Travel through Mulgore and take the elevator up to Thunder Bluff.",
+                    { map = MAP.THUNDER_BLUFF }),
                 Point(MAP.THUNDER_BLUFF, 0.706, 0.314, "Rahauro on Elder Rise",
                     "Travel to Thunder Bluff and climb Elder Rise."),
             },
