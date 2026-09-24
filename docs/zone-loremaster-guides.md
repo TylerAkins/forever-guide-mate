@@ -95,6 +95,7 @@ A quest on a timer finishes within the next two or three steps. Put `timer` on t
 A character who finishes every step they can actually take should reach 100%.
 
 - Put faction, class, race, and profession requirements on the steps that have them. A permanent mismatch is left out of the percentage.
+- A trainer's crafting lesson needs that profession. Read the quest description: "as part of your smithing lessons" and "let's see your skill with leather" are the requirement. Gate the accept, each objective, and the turn-in with `profession`, and say who the step is for. Durotar's Ug'thok (blacksmithing), Kamari (leatherworking), and Pa'zula (enchanting) are the examples. An item that drops for anyone is not gated, even when it turns in to the same trainer.
 - Put the race on every step of that quest: the accept, each objective, and the turn-in. A mismatch counts as that step being finished, so a later shared quest can open. The client race ids are Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gnome 7, Alliance Skyborne 95, and Horde Skyborne 96. Orc and troll together are `race = { 2, 8 }`.
 - A level requirement stays in the percentage until the character reaches it.
 - Omit unused quests, repeatable class buffs, and promo quests that are not offered to every character. Name them in the header.

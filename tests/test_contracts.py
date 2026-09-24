@@ -266,7 +266,16 @@ class ContractTests(unittest.TestCase):
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn("skillLineID = 333", guide)
+        self.assertIn("BLACKSMITHING = 164", guide)
+        self.assertIn("LEATHERWORKING = 165", guide)
+        self.assertIn("ENCHANTING = 333", guide)
+        for goal_id, skill in (
+            ("accept-96873-a-pain-in-the-neck", "SKILL.ENCHANTING"),
+            ("accept-96874-this-is-spinal-axe", "SKILL.BLACKSMITHING"),
+            ("accept-96875-beasts-of-thunder-ridge", "SKILL.LEATHERWORKING"),
+        ):
+            block = goals.split(f'id = "{goal_id}"', 1)[1].split("route = {", 1)[0]
+            self.assertIn(f"profession = {{ skillLineID = {skill} }}", block)
         self.assertIn('id = "objective-837-encroachment-1"', guide)
         self.assertIn('id = "objective-837-encroachment-4"', guide)
         self.assertIn("DUROTAR = 1411", guide)
