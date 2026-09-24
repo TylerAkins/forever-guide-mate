@@ -1395,6 +1395,68 @@ function TestRaceSteps()
 end
 TestRaceSteps()
 
+function TestHiddenEnemies()
+    local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
+    local function Open(state)
+        ns.charDB.selectedGuide = rfc.id
+        ns.charDB.activeGoal = nil
+        ns.charDB.manualCompleted = {}
+        ns.charDB.deferred = {}
+        ns.charDB.history = {}
+        ns.charDB.completionLedger = {}
+        ns.db.autoAdvance = true
+        ns.Engine.reviewingGoal = nil
+        ns.Engine:Refresh(state)
+    end
+    local function State(quests, completed)
+        return {
+            faction = "Horde", raceID = 2, classID = 1, level = 13,
+            professions = {}, professionsKnown = true,
+            quests = quests, questLogKnown = true,
+            completedQuests = completed, questCompletionKnown = true,
+            mapID = 1454, x = 0.32, y = 0.38,
+        }
+    end
+    Open(State({}, { [5726] = true }))
+    Equal(ns.Engine.currentGoal.id, "gauge-neeru", "returning the insignia points at Neeru")
+    local leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.496, "the insignia follow-up marks Neeru Fireblade")
+    local talking = State({
+        [5727] = { complete = false, objectives = {
+            { text = "Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade", finished = 1 },
+        } },
+    }, { [5726] = true })
+    Equal(ns.EvaluateCondition({
+        questObjective = { id = 5727, index = 1, text = "Gauge Neeru" },
+    }, talking), true, "Neeru's dialogue objective counts when finished is 1")
+    local logged = ns.PlayerState:GetQuestLog({
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return 1 end,
+            GetInfo = function()
+                return { questID = 5727, title = "Hidden Enemies", isComplete = false }
+            end,
+            GetQuestObjectives = function()
+                return { { text = "Gauge Neeru Fireblade's reaction", finished = 1 } }
+            end,
+        },
+    })
+    Equal(logged[5727].complete, true, "a dialogue objective flagged with 1 is ready to turn in")
+    talking.quests[5727].complete = true
+    ns.charDB.activeGoal = "gauge-neeru"
+    ns.Engine:Refresh(talking)
+    Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-2",
+        "exhausting Neeru's dialogue reports back to Thrall")
+    local unfinished = State({
+        [5727] = { complete = false, objectives = {
+            { text = "Gauge Neeru Fireblade's reaction", finished = 0 },
+        } },
+    }, { [5726] = true })
+    ns.charDB.activeGoal = "gauge-neeru"
+    ns.Engine:Refresh(unfinished)
+    Equal(ns.Engine.currentGoal.id, "gauge-neeru", "an unfinished talk with Neeru stays on that step")
+end
+TestHiddenEnemies()
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")

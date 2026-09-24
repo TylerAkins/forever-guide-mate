@@ -132,22 +132,11 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-hidden-enemies-2",
-            kind = "accept",
-            priority = 33,
-            text = "Accept the next Hidden Enemies task from Thrall.",
-            dependsOn = { "turnin-hidden-enemies-1" },
-            complete = QuestState(5727, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom"),
-            },
-        },
-        {
             id = "gauge-neeru",
             kind = "objective",
-            priority = 34,
-            text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
-            dependsOn = { "accept-hidden-enemies-2" },
+            priority = 33,
+            text = "Accept Thrall's next Hidden Enemies task, then show the insignia to Neeru Fireblade and exhaust his dialogue.",
+            dependsOn = { "turnin-hidden-enemies-1" },
             complete = QuestState(5727, "complete"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
