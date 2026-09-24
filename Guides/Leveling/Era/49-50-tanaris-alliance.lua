@@ -108,7 +108,7 @@ ns:RegisterGuide({
             id = "travel-626-theramore-isle",
             kind = "travel",
             priority = 60,
-            text = "You can die and ressurect in front of Theramore Isle.",
+            text = "Travel to Theramore Isle.",
             route = {
                 Point(MAP.DUSTWALLOW, 0.6884, 0.5321, "Theramore Isle",
                     "Travel to Theramore Isle."),

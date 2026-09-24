@@ -291,7 +291,7 @@ ns:RegisterGuide({
             id = "travel-2871-feathermoon-stronghold",
             kind = "travel",
             priority = 230,
-            text = "Travel or Hearthstone to Feathermoon Stronghold, or die and ressurect.",
+            text = "Travel to Feathermoon Stronghold.",
             route = {
                 Point(MAP.FERALAS, 0.2590, 0.6713, "Continue toward Feathermoon Stronghold",
                     "Continue toward Feathermoon Stronghold."),

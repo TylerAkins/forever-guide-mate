@@ -1275,7 +1275,7 @@ ns:RegisterGuide({
             id = "travel-311-thunderbrew-distillery",
             kind = "travel",
             priority = 950,
-            text = "Travel to Thunderbrew Distillery You can die on purpose and resurrect to get there quicker.",
+            text = "Travel to Thunderbrew Distillery.",
             route = {
                 Point(MAP.DUN_MOROGH, 0.4740, 0.5250, "Thunderbrew Distillery",
                     "Travel to Thunderbrew Distillery."),
@@ -1390,7 +1390,7 @@ ns:RegisterGuide({
             id = "travel-291-kharanos",
             kind = "travel",
             priority = 1050,
-            text = "Travel to Kharanos You can die on purpose and resurrect to get there quicker.",
+            text = "Travel to Kharanos.",
             route = {
                 Point(MAP.DUN_MOROGH, 0.4666, 0.5383, "Kharanos",
                     "Travel to Kharanos."),
@@ -1551,7 +1551,7 @@ ns:RegisterGuide({
                     { race = { 3, 7 } },
                 },
             },
-            text = "Travel to Thunderbrew Distillery Level 10 required You can die on purpose and resurrect to get there quicker.",
+            text = "Travel to Thunderbrew Distillery.",
             route = {
                 Point(MAP.DUN_MOROGH, 0.4735, 0.5264, "Thunderbrew Distillery",
                     "Travel to Thunderbrew Distillery."),
@@ -1958,7 +1958,7 @@ ns:RegisterGuide({
                     { race = { 3, 7 } },
                 },
             },
-            text = "Travel to The Great Forge You can die on purpose and resurrect to get there quicker.",
+            text = "Travel to The Great Forge.",
             route = {
                 Point(MAP.IRONFORGE, 0.4720, 0.4218, "Continue toward The Great Forge",
                     "Continue toward The Great Forge."),
@@ -1980,7 +1980,7 @@ ns:RegisterGuide({
                     { race = { 3, 7 } },
                 },
             },
-            text = "Travel to The Great Forge You can die on purpose and resurrect to get there quicker.",
+            text = "Travel to The Great Forge.",
             route = {
                 Point(MAP.IRONFORGE, 0.4720, 0.4218, "Continue toward The Great Forge",
                     "Continue toward The Great Forge."),

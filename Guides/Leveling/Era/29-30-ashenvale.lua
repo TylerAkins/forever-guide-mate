@@ -976,7 +976,7 @@ ns:RegisterGuide({
             id = "travel-astranaar-2",
             kind = "travel",
             priority = 730,
-            text = "Travel or Hearthstone to Astranaar, you can die and ressurect for a shortcut.",
+            text = "Travel to Astranaar.",
             route = {
                 Point(MAP.ASHENVALE, 0.3661, 0.4958, "Astranaar",
                     "Travel to Astranaar."),

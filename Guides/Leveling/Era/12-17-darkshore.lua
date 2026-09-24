@@ -719,7 +719,7 @@ ns:RegisterGuide({
                     { race = 3 },
                 },
             },
-            text = "Use Symbol of Life to ressurect Narm Faulk.",
+            text = "Use the Symbol of Life to resurrect Narm Faulk.",
             dependsOn = { "accept-1783-the-tome-of-divinity" },
             complete = QuestState(1783, "complete"),
         },
@@ -854,7 +854,7 @@ ns:RegisterGuide({
                     { race = { 1, 3, 7 } },
                 },
             },
-            text = "Travel to The Great Sea, this is a shortcut but requires dying and ressurecting in Menethil Harbor.",
+            text = "Travel along the coast toward Menethil Harbor.",
             route = {
                 Point(MAP.DUN_MOROGH, 0.4657, 0.4143, "Continue toward The Great Sea",
                     "Continue toward The Great Sea."),
@@ -885,7 +885,7 @@ ns:RegisterGuide({
                     { race = { 1, 3, 7 } },
                 },
             },
-            text = "You will need to jump off the cliff and resurrect in Menethil Harbor, make sure your character is deep enough that you see Wetlands when you open your World Map.",
+            text = "Travel to Menethil Harbor.",
         },
         {
             id = "travel-3524-auberdine",
