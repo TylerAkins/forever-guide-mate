@@ -97,6 +97,25 @@ Load("Guides/Leveling/Era/56-57-eastern-plaguelands.lua")
 Load("Guides/Leveling/Era/57-58-western-plaguelands.lua")
 Load("Guides/Leveling/Era/58-59-silithus.lua")
 Load("Guides/Leveling/Era/59-60-winterspring.lua")
+Load("Guides/Leveling/Era/1-12-dun-morogh.lua")
+Load("Guides/Leveling/Era/1-12-elwynn-forest.lua")
+Load("Guides/Leveling/Era/1-12-teldrassil.lua")
+Load("Guides/Leveling/Era/12-17-darkshore.lua")
+Load("Guides/Leveling/Era/12-17-westfall.lua")
+Load("Guides/Leveling/Era/17-18-loch-modan.lua")
+Load("Guides/Leveling/Era/18-20-redridge-mountains.lua")
+Load("Guides/Leveling/Era/20-21-darkshore.lua")
+Load("Guides/Leveling/Era/21-22-ashenvale.lua")
+Load("Guides/Leveling/Era/22-23-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/23-24-darkshore.lua")
+Load("Guides/Leveling/Era/24-24-ashenvale.lua")
+Load("Guides/Leveling/Era/24-27-wetlands.lua")
+Load("Guides/Leveling/Era/27-28-redridge-mountains.lua")
+Load("Guides/Leveling/Era/28-29-duskwood.lua")
+Load("Guides/Leveling/Era/29-30-ashenvale.lua")
+Load("Guides/Leveling/Era/30-31-wetlands.lua")
+Load("Guides/Leveling/Era/31-32-hillsbrad-foothills.lua")
+Load("Guides/Leveling/Era/32-33-stranglethorn-vale.lua")
 
 local baseState = {
     faction = "Horde",
@@ -1965,7 +1984,12 @@ TestFlightMemory()
 function TestTeldrassil()
     local guide = ns.guides["leveling-teldrassil"]
     Check(guide ~= nil, "the Teldrassil guide is registered")
+    Equal(guide.title, "Teldrassil", "the Loremaster tag already names the guide type")
     Equal(guide.category, "Loremaster Guides", "the Teldrassil guide is a Loremaster guide")
+    Equal(ns.EvaluateCondition(guide.conditions, {
+        faction = "Horde", level = 20, raceID = 2, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    }), false, "Teldrassil is Alliance only")
     local balance = 0
     for _, goal in ipairs(guide.goals) do
         if string.find(goal.id, "objective-456-the-balance-of-nature-", 1, true) then
@@ -2069,18 +2093,20 @@ function TestEraLeveling()
     Equal(guide.title, "1-12 Durotar (Era)", "Era guides are labeled Era")
     Equal(guide.category, "Leveling Quest Guides", "Era guides are leveling guides")
     local horde = {
-        faction = "Horde", level = 1, raceID = 2, classID = 1,
+        faction = "Horde", level = 60, raceID = 2, classID = 1,
         quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
         mapID = 1411, x = 0.4, y = 0.4,
     }
     local alliance = {
-        faction = "Alliance", level = 20, raceID = 1, classID = 1,
+        faction = "Alliance", level = 60, raceID = 1, classID = 1,
         quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
     }
     Equal(ns.EvaluateCondition(guide.conditions, horde), true, "a Horde character can use an Era guide")
     Equal(ns.EvaluateCondition(guide.conditions, alliance), false, "an Alliance character cannot use an Era guide")
     local plans = 0
     local count = 0
+    local hordeCount = 0
+    local allianceCount = 0
     for _, goal in ipairs(guide.goals) do
         if string.find(goal.id, "objective-786-", 1, true) then plans = plans + 1 end
         Check(not string.find(string.lower(goal.text), "flight path", 1, true),
@@ -2094,11 +2120,27 @@ function TestEraLeveling()
         if string.find(eraGuide.title, "(Era)", 1, true) then
             count = count + 1
             Equal(eraGuide.category, "Leveling Quest Guides", "every Era guide is a leveling guide")
-            Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), false,
-                "every Era guide is hidden from Alliance")
+            local faction = eraGuide.conditions.all[1].faction
+            if faction == "Horde" then
+                hordeCount = hordeCount + 1
+                Equal(ns.EvaluateCondition(eraGuide.conditions, horde), true,
+                    "a Horde character can use a Horde Era guide")
+                Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), false,
+                    "a Horde Era guide is hidden from Alliance")
+            elseif faction == "Alliance" then
+                allianceCount = allianceCount + 1
+                Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), true,
+                    "an Alliance character can use an Alliance Era guide")
+                Equal(ns.EvaluateCondition(eraGuide.conditions, horde), false,
+                    "an Alliance Era guide is hidden from Horde")
+            else
+                Check(false, "every Era guide names a faction")
+            end
         end
     end
-    Equal(count, 52, "the Era set is registered")
+    Equal(count, 71, "the Era set is registered")
+    Equal(hordeCount, 52, "the Horde Era set is registered")
+    Equal(allianceCount, 19, "the Alliance Era set is registered")
 end
 TestEraLeveling()
 

@@ -1,0 +1,2802 @@
+local _, ns = ...
+
+-- Alliance Era leveling route for Teldrassil, levels 1-12.
+-- This follows the classic route and is not rewritten for Forever yet.
+-- Grind stops and flight-point pickups are not part of this route.
+-- Coordinates have not been validated in the Forever client.
+
+local MAP = {
+    TELDRASSIL = 1438,
+    DARNASSUS = 1457,
+    THUNDER_BLUFF = 1456,
+    MOONGLADE = 1450,
+    DARKSHORE = 1439,
+}
+
+local function QuestState(questID, state)
+    return { quest = { id = questID, state = state } }
+end
+
+local function QuestObjective(questID, index)
+    return { questObjective = { id = questID, index = index } }
+end
+
+local function Point(mapID, x, y, label, offMapText)
+    return {
+        mapID = mapID,
+        x = x,
+        y = y,
+        label = label,
+        offMapText = offMapText,
+    }
+end
+
+ns:RegisterGuide({
+    id = "leveling-era-1-12-teldrassil",
+    title = "1-12 Teldrassil (Era)",
+    category = "Leveling Quest Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { faction = "Alliance" },
+            { level = { min = 1 } },
+        },
+    },
+    goals = {
+        {
+            id = "accept-456-the-balance-of-nature",
+            kind = "accept",
+            priority = 10,
+            text = "Accept The Balance of Nature from Ilthalaine in Shadowglen.",
+            complete = QuestState(456, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "objective-456-the-balance-of-nature",
+            kind = "objective",
+            priority = 20,
+            text = "Kill 7 Young Nightsaber and 4 Young Thistle Boar in Shadowglen.",
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            complete = QuestState(456, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6100, 0.4300, "Young Nightsaber",
+                    "Travel to Young Nightsaber."),
+            },
+        },
+        {
+            id = "turnin-456-the-balance-of-nature",
+            kind = "turnin",
+            priority = 30,
+            text = "Turn in The Balance of Nature to Ilthalaine in Shadowglen.",
+            dependsOn = { "objective-456-the-balance-of-nature" },
+            complete = QuestState(456, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-457-the-balance-of-nature",
+            kind = "accept",
+            priority = 40,
+            text = "Accept The Balance of Nature from Ilthalaine in Shadowglen.",
+            complete = QuestState(457, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-3118-encrypted-sigil",
+            kind = "accept",
+            priority = 50,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Accept Encrypted Sigil from Ilthalaine in Shadowglen.",
+            complete = QuestState(3118, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-3117-etched-sigil",
+            kind = "accept",
+            priority = 60,
+            conditions = {
+                all = {
+                    { class = 3 },
+                },
+            },
+            text = "Accept Etched Sigil from Ilthalaine in Shadowglen.",
+            complete = QuestState(3117, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-3119-hallowed-sigil",
+            kind = "accept",
+            priority = 70,
+            conditions = {
+                all = {
+                    { class = 5 },
+                },
+            },
+            text = "Accept Hallowed Sigil from Ilthalaine in Shadowglen.",
+            complete = QuestState(3119, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-3116-simple-sigil",
+            kind = "accept",
+            priority = 80,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Simple Sigil from Ilthalaine in Shadowglen.",
+            complete = QuestState(3116, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "accept-3120-verdant-sigil",
+            kind = "accept",
+            priority = 90,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Verdant Sigil from Ilthalaine in Shadowglen.",
+            complete = QuestState(3120, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "turnin-3118-encrypted-sigil",
+            kind = "turnin",
+            priority = 100,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Turn in Encrypted Sigil to Frahun Shadewhisper in Aldrassil.",
+            dependsOn = { "accept-3118-encrypted-sigil" },
+            complete = QuestState(3118, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5962, 0.3869, "Frahun Shadewhisper",
+                    "Travel to Frahun Shadewhisper."),
+            },
+        },
+        {
+            id = "turnin-3117-etched-sigil",
+            kind = "turnin",
+            priority = 110,
+            conditions = {
+                all = {
+                    { class = 3 },
+                },
+            },
+            text = "Turn in Etched Sigil to Ayanna Everstride in Aldrassil.",
+            dependsOn = { "accept-3117-etched-sigil" },
+            complete = QuestState(3117, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5860, 0.4050, "Ayanna Everstride",
+                    "Travel to Ayanna Everstride."),
+            },
+        },
+        {
+            id = "turnin-3119-hallowed-sigil",
+            kind = "turnin",
+            priority = 120,
+            conditions = {
+                all = {
+                    { class = 5 },
+                },
+            },
+            text = "Turn in Hallowed Sigil to Shanda in Aldrassil.",
+            dependsOn = { "accept-3119-hallowed-sigil" },
+            complete = QuestState(3119, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5920, 0.4050, "Shanda",
+                    "Travel to Shanda."),
+            },
+        },
+        {
+            id = "turnin-3116-simple-sigil",
+            kind = "turnin",
+            priority = 130,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Simple Sigil to Alyissia in Aldrassil.",
+            dependsOn = { "accept-3116-simple-sigil" },
+            complete = QuestState(3116, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5960, 0.3850, "Alyissia",
+                    "Travel to Alyissia."),
+            },
+        },
+        {
+            id = "turnin-3120-verdant-sigil",
+            kind = "turnin",
+            priority = 140,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Verdant Sigil to Mardant Strongoak in Aldrassil.",
+            dependsOn = { "accept-3120-verdant-sigil" },
+            complete = QuestState(3120, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5860, 0.4040, "Mardant Strongoak",
+                    "Travel to Mardant Strongoak."),
+            },
+        },
+        {
+            id = "accept-458-the-woodland-protector",
+            kind = "accept",
+            priority = 150,
+            text = "Accept The Woodland Protector from Melithar Staghelm in Aldrassil.",
+            complete = QuestState(458, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5990, 0.4251, "Melithar Staghelm",
+                    "Travel to Melithar Staghelm."),
+            },
+        },
+        {
+            id = "accept-4495-a-good-friend",
+            kind = "accept",
+            priority = 160,
+            text = "Accept A Good Friend from Dirania Silvershine in Shadowglen.",
+            complete = QuestState(4495, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6083, 0.4201, "Dirania Silvershine",
+                    "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "turnin-458-the-woodland-protector",
+            kind = "turnin",
+            priority = 170,
+            text = "Turn in The Woodland Protector to Tarindrella in Shadowglen.",
+            dependsOn = { "accept-458-the-woodland-protector" },
+            complete = QuestState(458, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5775, 0.4521, "Tarindrella",
+                    "Travel to Tarindrella."),
+            },
+        },
+        {
+            id = "accept-459-the-woodland-protector",
+            kind = "accept",
+            priority = 180,
+            text = "Accept The Woodland Protector from Tarindrella in Shadowglen.",
+            complete = QuestState(459, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5775, 0.4521, "Tarindrella",
+                    "Travel to Tarindrella."),
+            },
+        },
+        {
+            id = "objective-459-the-woodland-protector",
+            kind = "objective",
+            priority = 190,
+            text = "Kill Grell located in Shadowglen and collect 8 Fel Moss.",
+            dependsOn = { "accept-459-the-woodland-protector" },
+            complete = QuestState(459, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5600, 0.4590, "Continue toward The Woodland Protector",
+                    "Continue toward The Woodland Protector."),
+                Point(MAP.TELDRASSIL, 0.6120, 0.4590, "Continue toward The Woodland Protector",
+                    "Continue toward The Woodland Protector."),
+                Point(MAP.TELDRASSIL, 0.5640, 0.4160, "Grell",
+                    "Travel to Grell."),
+            },
+        },
+        {
+            id = "turnin-459-the-woodland-protector",
+            kind = "turnin",
+            priority = 200,
+            text = "Turn in The Woodland Protector to Tarindrella in Shadowglen.",
+            dependsOn = { "objective-459-the-woodland-protector" },
+            complete = QuestState(459, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5775, 0.4521, "Tarindrella",
+                    "Travel to Tarindrella."),
+            },
+        },
+        {
+            id = "accept-916-webwood-venom",
+            kind = "accept",
+            priority = 210,
+            text = "Accept Webwood Venom from Gilshalan Windwalker in Aldrassil.",
+            complete = QuestState(916, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "objective-457-the-balance-of-nature",
+            kind = "objective",
+            priority = 220,
+            text = "Kill 7 Mangy Nightsaber and 7 Thistle Boar in Shadowglen.",
+            dependsOn = { "accept-457-the-balance-of-nature" },
+            complete = QuestState(457, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6000, 0.3700, "Mangy Nightsaber",
+                    "Travel to Mangy Nightsaber."),
+            },
+        },
+        {
+            id = "objective-916-webwood-venom",
+            kind = "objective",
+            priority = 230,
+            text = "Kill Webwood Spider and collect 10 Webwood Venom Sac north in Shadowglen.",
+            dependsOn = { "accept-916-webwood-venom" },
+            complete = QuestState(916, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5700, 0.3400, "Webwood Spider",
+                    "Travel to Webwood Spider."),
+            },
+        },
+        {
+            id = "turnin-4495-a-good-friend",
+            kind = "turnin",
+            priority = 240,
+            text = "Turn in A Good Friend to Iverron in Shadowglen.",
+            dependsOn = { "accept-4495-a-good-friend" },
+            complete = QuestState(4495, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5460, 0.3298, "Iverron",
+                    "Travel to Iverron."),
+            },
+        },
+        {
+            id = "accept-3519-a-friend-in-need",
+            kind = "accept",
+            priority = 250,
+            text = "Accept A Friend in Need from Iverron in Shadowglen.",
+            complete = QuestState(3519, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5460, 0.3298, "Iverron",
+                    "Travel to Iverron."),
+            },
+        },
+        {
+            id = "turnin-916-webwood-venom",
+            kind = "turnin",
+            priority = 260,
+            text = "Turn in Webwood Venom to Gilshalan Windwalker in Aldrassil.",
+            dependsOn = { "objective-916-webwood-venom" },
+            complete = QuestState(916, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "accept-917-webwood-egg",
+            kind = "accept",
+            priority = 270,
+            text = "Accept Webwood Egg from Gilshalan Windwalker in Aldrassil.",
+            complete = QuestState(917, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "turnin-457-the-balance-of-nature",
+            kind = "turnin",
+            priority = 280,
+            text = "Turn in The Balance of Nature to Ilthalaine in Shadowglen.",
+            dependsOn = { "objective-457-the-balance-of-nature" },
+            complete = QuestState(457, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5869, 0.4435, "Ilthalaine",
+                    "Travel to Ilthalaine."),
+            },
+        },
+        {
+            id = "turnin-3519-a-friend-in-need",
+            kind = "turnin",
+            priority = 290,
+            text = "Turn in A Friend in Need to Dirania Silvershine in Shadowglen.",
+            dependsOn = { "accept-3519-a-friend-in-need" },
+            complete = QuestState(3519, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6084, 0.4198, "Dirania Silvershine",
+                    "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "accept-3521-iverron-s-antidote",
+            kind = "accept",
+            priority = 300,
+            text = "Accept Iverron's Antidote from Dirania Silvershine in Shadowglen.",
+            complete = QuestState(3521, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6084, 0.4198, "Dirania Silvershine",
+                    "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "objective-3521-2-4-item-10641",
+            kind = "objective",
+            priority = 310,
+            text = "Collect 4 Moonpetal Lily found around the edge of the pond in Shadowglen.",
+            dependsOn = { "accept-3521-iverron-s-antidote" },
+            complete = QuestObjective(3521, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5700, 0.3700, "Shadowglen",
+                    "Travel to Shadowglen."),
+            },
+        },
+        {
+            id = "objective-3521-1-7-item-10639",
+            kind = "objective",
+            priority = 320,
+            text = "Collect 7 Hyacinth Mushroom found around the bottom of trees or dropped from Grellkin in Shadowglen.",
+            dependsOn = { "accept-3521-iverron-s-antidote" },
+            complete = QuestObjective(3521, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5700, 0.3700, "Grellkin",
+                    "Travel to Grellkin."),
+            },
+        },
+        {
+            id = "travel-917-shadowthread-cave",
+            kind = "travel",
+            priority = 330,
+            text = "Enter Shadowthread Cave.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5680, 0.3165, "Shadowthread Cave",
+                    "Travel to Shadowthread Cave."),
+            },
+        },
+        {
+            id = "objective-917-webwood-egg",
+            kind = "objective",
+            priority = 340,
+            text = "Follow the path inside Shadowthread Cave and and collect Webwood Egg near the giant spider.",
+            dependsOn = { "accept-917-webwood-egg" },
+            complete = QuestState(917, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5682, 0.2735, "Continue toward Webwood Egg",
+                    "Continue toward Webwood Egg."),
+                Point(MAP.TELDRASSIL, 0.5585, 0.2493, "Continue toward Webwood Egg",
+                    "Continue toward Webwood Egg."),
+                Point(MAP.TELDRASSIL, 0.5665, 0.2648, "Shadowthread Cave",
+                    "Travel to Shadowthread Cave."),
+            },
+        },
+        {
+            id = "objective-3521-3-webwood-ichor",
+            kind = "objective",
+            priority = 350,
+            text = "Collect Webwood Ichor from Webwood Spider in Shadowglen cave.",
+            dependsOn = { "accept-3521-iverron-s-antidote" },
+            complete = QuestObjective(3521, 3),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5731, 0.3425, "Webwood Spider",
+                    "Travel to Webwood Spider."),
+            },
+        },
+        {
+            id = "turnin-917-webwood-egg",
+            kind = "turnin",
+            priority = 360,
+            text = "Turn in Webwood Egg to Gilshalan Windwalker in Aldrassil.",
+            dependsOn = { "objective-917-webwood-egg" },
+            complete = QuestState(917, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "accept-920-tenaron-s-summons",
+            kind = "accept",
+            priority = 370,
+            text = "Accept Tenaron's Summons from Gilshalan Windwalker in Aldrassil.",
+            complete = QuestState(920, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "turnin-920-tenaron-s-summons",
+            kind = "turnin",
+            priority = 380,
+            text = "Turn in Tenaron's Summons to Tenaron Stormgrip in Aldrassil.",
+            dependsOn = { "accept-920-tenaron-s-summons" },
+            complete = QuestState(920, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5819, 0.3904, "Continue toward Tenaron's Summons",
+                    "Continue toward Tenaron's Summons."),
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
+            id = "accept-921-crown-of-the-earth",
+            kind = "accept",
+            priority = 390,
+            text = "Accept Crown of the Earth from Tenaron Stormgrip in Aldrassil.",
+            complete = QuestState(921, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
+            id = "turnin-3521-iverron-s-antidote",
+            kind = "turnin",
+            priority = 400,
+            text = "Turn in Iverron's Antidote to Dirania Silvershine in Shadowglen.",
+            dependsOn = { "objective-3521-2-4-item-10641", "objective-3521-1-7-item-10639", "objective-3521-3-webwood-ichor" },
+            complete = QuestState(3521, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6084, 0.4198, "Dirania Silvershine",
+                    "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "accept-3522-iverron-s-antidote",
+            kind = "accept",
+            priority = 410,
+            text = "Accept Iverron's Antidote from Dirania Silvershine in Shadowglen.",
+            complete = QuestState(3522, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6084, 0.4198, "Dirania Silvershine",
+                    "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "objective-921-crown-of-the-earth",
+            kind = "objective",
+            priority = 420,
+            text = "Use the Crystal Phial at the moonwell in Shadowglen.",
+            dependsOn = { "accept-921-crown-of-the-earth" },
+            complete = QuestState(921, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5990, 0.3310, "Shadowglen",
+                    "Travel to Shadowglen."),
+            },
+        },
+        {
+            id = "turnin-3522-iverron-s-antidote",
+            kind = "turnin",
+            priority = 430,
+            text = "Turn in Iverron's Antidote to Iverron in Shadowglen.",
+            dependsOn = { "accept-3522-iverron-s-antidote" },
+            complete = QuestState(3522, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5460, 0.3298, "Iverron",
+                    "Travel to Iverron."),
+            },
+        },
+        {
+            id = "turnin-921-crown-of-the-earth",
+            kind = "turnin",
+            priority = 440,
+            text = "Turn in Crown of the Earth to Tenaron Stormgrip in Aldrassil.",
+            dependsOn = { "objective-921-crown-of-the-earth" },
+            complete = QuestState(921, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5819, 0.3904, "Continue toward Crown of the Earth",
+                    "Continue toward Crown of the Earth."),
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
+            id = "accept-928-crown-of-the-earth",
+            kind = "accept",
+            priority = 450,
+            text = "Accept Crown of the Earth from Tenaron Stormgrip in Aldrassil.",
+            complete = QuestState(928, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
+            id = "accept-2159-dolanaar-delivery",
+            kind = "accept",
+            priority = 460,
+            text = "Accept Dolanaar Delivery from Porthannius in Shadowglen.",
+            complete = QuestState(2159, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6120, 0.4771, "Porthannius",
+                    "Travel to Porthannius."),
+            },
+        },
+        {
+            id = "accept-488-zenn-s-bidding",
+            kind = "accept",
+            priority = 470,
+            text = "Accept Zenn's Bidding from Zenn Foulhoof in Dolanaar.",
+            complete = QuestState(488, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6041, 0.5626, "Zenn Foulhoof",
+                    "Travel to Zenn Foulhoof."),
+            },
+        },
+        {
+            id = "travel-929-dolanaar",
+            kind = "travel",
+            priority = 480,
+            text = "Travel to Dolanaar.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5570, 0.5980, "Dolanaar",
+                    "Travel to Dolanaar."),
+            },
+        },
+        {
+            id = "turnin-2159-dolanaar-delivery",
+            kind = "turnin",
+            priority = 490,
+            text = "Turn in Dolanaar Delivery to Innkeeper Keldamyr in Dolanaar.",
+            dependsOn = { "accept-2159-dolanaar-delivery" },
+            complete = QuestState(2159, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5570, 0.5980, "Innkeeper Keldamyr",
+                    "Travel to Innkeeper Keldamyr."),
+            },
+        },
+        {
+            id = "note-929-dolanaar",
+            kind = "note",
+            priority = 500,
+            text = "Set your hearth in Dolanaar with Innkeeper Keldamyr.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5570, 0.5980, "Innkeeper Keldamyr",
+                    "Travel to Innkeeper Keldamyr."),
+            },
+        },
+        {
+            id = "turnin-928-crown-of-the-earth",
+            kind = "turnin",
+            priority = 510,
+            text = "Turn in Crown of the Earth to Corithras Moonrage in Dolanaar.",
+            dependsOn = { "accept-928-crown-of-the-earth" },
+            complete = QuestState(928, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "accept-929-crown-of-the-earth",
+            kind = "accept",
+            priority = 520,
+            text = "Accept Crown of the Earth from Corithras Moonrage in Dolanaar.",
+            complete = QuestState(929, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "accept-997-denalan-s-earth",
+            kind = "accept",
+            priority = 530,
+            text = "Accept Denalan's Earth from Syral Bladeleaf in Dolanaar.",
+            complete = QuestState(997, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5610, 0.5774, "Syral Bladeleaf",
+                    "Travel to Syral Bladeleaf."),
+            },
+        },
+        {
+            id = "accept-475-a-troubling-breeze",
+            kind = "accept",
+            priority = 540,
+            text = "Accept A Troubling Breeze from Athridas Bearmantle in Dolanaar.",
+            complete = QuestState(475, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "accept-2438-the-emerald-dreamcatcher",
+            kind = "accept",
+            priority = 550,
+            text = "Accept The Emerald Dreamcatcher from Tallonkai Swiftroot in Dolanaar.",
+            complete = QuestState(2438, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "accept-932-twisted-hatred",
+            kind = "accept",
+            priority = 560,
+            text = "Accept Twisted Hatred from Tallonkai Swiftroot in Dolanaar.",
+            complete = QuestState(932, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "travel-918-lake-al-ameth",
+            kind = "travel",
+            priority = 570,
+            text = "Travel to Lake Al'Ameth.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Lake Al'Ameth",
+                    "Travel to Lake Al'Ameth."),
+            },
+        },
+        {
+            id = "turnin-997-denalan-s-earth",
+            kind = "turnin",
+            priority = 580,
+            text = "Turn in Denalan's Earth to Denalan in Lake Al'Ameth.",
+            dependsOn = { "accept-997-denalan-s-earth" },
+            complete = QuestState(997, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "accept-918-timberling-seeds",
+            kind = "accept",
+            priority = 590,
+            text = "Accept Timberling Seeds from Denalan in Lake Al'Ameth.",
+            complete = QuestState(918, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "accept-919-timberling-sprouts",
+            kind = "accept",
+            priority = 600,
+            text = "Accept Timberling Sprouts from Denalan in Lake Al'Ameth.",
+            complete = QuestState(919, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "objective-929-crown-of-the-earth",
+            kind = "objective",
+            priority = 610,
+            text = "Use Jade Phial at the moonwell in Starbreeze Village.",
+            dependsOn = { "accept-929-crown-of-the-earth" },
+            complete = QuestState(929, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6337, 0.5809, "Starbreeze Village",
+                    "Travel to Starbreeze Village."),
+            },
+        },
+        {
+            id = "turnin-475-a-troubling-breeze",
+            kind = "turnin",
+            priority = 620,
+            text = "Turn in A Troubling Breeze to Gaerolas Talvethren in Starbreeze Village.",
+            dependsOn = { "accept-475-a-troubling-breeze" },
+            complete = QuestState(475, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6627, 0.5857, "Gaerolas Talvethren",
+                    "Travel to Gaerolas Talvethren."),
+            },
+        },
+        {
+            id = "accept-476-gnarlpine-corruption",
+            kind = "accept",
+            priority = 630,
+            text = "Accept Gnarlpine Corruption from Gaerolas Talvethren in Starbreeze Village.",
+            complete = QuestState(476, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6627, 0.5857, "Gaerolas Talvethren",
+                    "Travel to Gaerolas Talvethren."),
+            },
+        },
+        {
+            id = "objective-2438-the-emerald-dreamcatcher",
+            kind = "objective",
+            priority = 640,
+            text = "Click on Tallonkai's Dresser and collect the Emerald Dreamcatcher.",
+            dependsOn = { "accept-2438-the-emerald-dreamcatcher" },
+            complete = QuestState(2438, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6800, 0.5960, "The Emerald Dreamcatcher",
+                    "Travel to The Emerald Dreamcatcher."),
+            },
+        },
+        {
+            id = "turnin-929-crown-of-the-earth",
+            kind = "turnin",
+            priority = 650,
+            text = "Turn in Crown of the Earth to Corithras Moonrage in Dolanaar.",
+            dependsOn = { "objective-929-crown-of-the-earth" },
+            complete = QuestState(929, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "accept-933-crown-of-the-earth",
+            kind = "accept",
+            priority = 660,
+            text = "Accept Crown of the Earth from Corithras Moonrage in Dolanaar.",
+            complete = QuestState(933, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "turnin-476-gnarlpine-corruption",
+            kind = "turnin",
+            priority = 670,
+            text = "Turn in Gnarlpine Corruption to Athridas Bearmantle in Dolanaar.",
+            dependsOn = { "accept-476-gnarlpine-corruption" },
+            complete = QuestState(476, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "accept-483-the-relics-of-wakening",
+            kind = "accept",
+            priority = 680,
+            text = "Accept The Relics of Wakening from Athridas Bearmantle in Dolanaar.",
+            complete = QuestState(483, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "turnin-2438-the-emerald-dreamcatcher",
+            kind = "turnin",
+            priority = 690,
+            text = "Turn in The Emerald Dreamcatcher to Tallonkai Swiftroot in Dolanaar.",
+            dependsOn = { "objective-2438-the-emerald-dreamcatcher" },
+            complete = QuestState(2438, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "accept-2459-ferocitas-the-dream-eater",
+            kind = "accept",
+            priority = 700,
+            text = "Accept Ferocitas the Dream Eater from Tallonkai Swiftroot in Dolanaar.",
+            complete = QuestState(2459, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "objective-918-timberling-seeds",
+            kind = "objective",
+            priority = 710,
+            text = "Kill Timberling and collect 8 Timberling Seed around Lake Al'Ameth.",
+            dependsOn = { "accept-918-timberling-seeds" },
+            complete = QuestState(918, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5900, 0.7200, "Continue toward Timberling Seeds",
+                    "Continue toward Timberling Seeds."),
+                Point(MAP.TELDRASSIL, 0.5600, 0.6500, "Timberling",
+                    "Travel to Timberling."),
+            },
+        },
+        {
+            id = "objective-919-timberling-sprouts",
+            kind = "objective",
+            priority = 720,
+            text = "Collect 12 Timberling Sprout from the ground around Lake Al'Ameth.",
+            dependsOn = { "accept-919-timberling-sprouts" },
+            complete = QuestState(919, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5900, 0.7100, "Lake Al'Ameth",
+                    "Travel to Lake Al'Ameth."),
+            },
+        },
+        {
+            id = "objective-488-1-nightsaber",
+            kind = "objective",
+            priority = 730,
+            text = "Kill Nightsaber for 3 Nightsaber Fang.",
+            dependsOn = { "accept-488-zenn-s-bidding" },
+            complete = QuestObjective(488, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6302, 0.6045, "Nightsaber",
+                    "Travel to Nightsaber."),
+            },
+        },
+        {
+            id = "turnin-918-timberling-seeds",
+            kind = "turnin",
+            priority = 740,
+            text = "Turn in Timberling Seeds to Denalan in Lake Al'Ameth.",
+            dependsOn = { "objective-918-timberling-seeds" },
+            complete = QuestState(918, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "accept-922-rellian-greenspyre",
+            kind = "accept",
+            priority = 750,
+            text = "Accept Rellian Greenspyre from Denalan in Lake Al'Ameth.",
+            complete = QuestState(922, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "turnin-919-timberling-sprouts",
+            kind = "turnin",
+            priority = 760,
+            text = "Turn in Timberling Sprouts to Denalan in Lake Al'Ameth.",
+            dependsOn = { "objective-919-timberling-sprouts" },
+            complete = QuestState(919, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "objective-488-2-webwood-lurker",
+            kind = "objective",
+            priority = 770,
+            text = "Kill Strigid Owl for 3 Strigid Owl Feather.",
+            dependsOn = { "accept-488-zenn-s-bidding" },
+            complete = QuestObjective(488, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5880, 0.6028, "Strigid Owl",
+                    "Travel to Strigid Owl."),
+            },
+        },
+        {
+            id = "objective-488-3-strigid-owl",
+            kind = "objective",
+            priority = 780,
+            text = "Kill Webwood Lurker for 3 Webwood Spider Silk in Lake Al'Ameth.",
+            dependsOn = { "accept-488-zenn-s-bidding" },
+            complete = QuestObjective(488, 3),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5283, 0.6736, "Webwood Lurker",
+                    "Travel to Webwood Lurker."),
+            },
+        },
+        {
+            id = "turnin-488-zenn-s-bidding",
+            kind = "turnin",
+            priority = 790,
+            text = "Turn in Zenn's Bidding to Zenn Foulhoof.",
+            dependsOn = { "objective-488-1-nightsaber", "objective-488-2-webwood-lurker", "objective-488-3-strigid-owl" },
+            complete = QuestState(488, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6041, 0.5626, "Zenn Foulhoof",
+                    "Travel to Zenn Foulhoof."),
+            },
+        },
+        {
+            id = "accept-489-seek-redemption",
+            kind = "accept",
+            priority = 800,
+            text = "Accept Seek Redemption! from Syral Bladeleaf in Dolanaar.",
+            complete = QuestState(489, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5610, 0.5774, "Syral Bladeleaf",
+                    "Travel to Syral Bladeleaf."),
+            },
+        },
+        {
+            id = "objective-2459-2-ferocitas-the-dream-eater",
+            kind = "objective",
+            priority = 810,
+            text = "Kill Ferocitas the Dream Eater north of Starbreeze Village and collect Gnarlpine Necklace. Open the item to collect Tallonkai's Jewel.",
+            dependsOn = { "accept-2459-ferocitas-the-dream-eater" },
+            complete = QuestObjective(2459, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6980, 0.5300, "Ferocitas the Dream Eater",
+                    "Travel to Ferocitas the Dream Eater."),
+            },
+        },
+        {
+            id = "objective-2459-1-ferocitas-the-dream-eater",
+            kind = "objective",
+            priority = 820,
+            text = "Kill 7 Gnarlpine Mystic north of Starbreeze Village.",
+            dependsOn = { "accept-2459-ferocitas-the-dream-eater" },
+            complete = QuestObjective(2459, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6980, 0.5300, "Gnarlpine Mystic",
+                    "Travel to Gnarlpine Mystic."),
+            },
+        },
+        {
+            id = "travel-932-fel-rock",
+            kind = "travel",
+            priority = 830,
+            text = "Travel to Fel Rock cave north of Dolanaar.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5374, 0.5362, "Continue toward Fel Rock",
+                    "Continue toward Fel Rock."),
+                Point(MAP.TELDRASSIL, 0.5461, 0.5262, "Fel Rock",
+                    "Travel to Fel Rock."),
+            },
+        },
+        {
+            id = "objective-932-twisted-hatred",
+            kind = "objective",
+            priority = 840,
+            text = "Kill Lord Melenas and collect Melenas' Head in Fel Rock.",
+            dependsOn = { "accept-932-twisted-hatred" },
+            complete = QuestState(932, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5127, 0.5077, "Lord Melenas",
+                    "Travel to Lord Melenas."),
+            },
+        },
+        {
+            id = "travel-dolanaar",
+            kind = "travel",
+            priority = 850,
+            text = "Exit to Dolanaar.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5461, 0.5262, "Continue toward Dolanaar",
+                    "Continue toward Dolanaar."),
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Dolanaar",
+                    "Travel to Dolanaar."),
+            },
+        },
+        {
+            id = "turnin-932-twisted-hatred",
+            kind = "turnin",
+            priority = 860,
+            text = "Turn in Twisted Hatred to Tallonkai Swiftroot in Dolanaar.",
+            dependsOn = { "objective-932-twisted-hatred" },
+            complete = QuestState(932, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "turnin-2459-ferocitas-the-dream-eater",
+            kind = "turnin",
+            priority = 870,
+            text = "Turn in Ferocitas the Dream Eater to Tallonkai Swiftroot in Dolanaar.",
+            dependsOn = { "objective-2459-2-ferocitas-the-dream-eater", "objective-2459-1-ferocitas-the-dream-eater" },
+            complete = QuestState(2459, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "accept-487-the-road-to-darnassus",
+            kind = "accept",
+            priority = 880,
+            text = "Accept The Road to Darnassus from Moon Priestess Amara in Dolanaar.",
+            complete = QuestState(487, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5000, 0.5400, "Continue toward The Road to Darnassus",
+                    "Continue toward The Road to Darnassus."),
+                Point(MAP.TELDRASSIL, 0.5500, 0.5800, "Moon Priestess Amara",
+                    "Travel to Moon Priestess Amara."),
+            },
+        },
+        {
+            id = "objective-487-the-road-to-darnassus",
+            kind = "objective",
+            priority = 890,
+            text = "Kill 6 Gnarlpine Ambusher in in Ban'ethil Hollow.",
+            dependsOn = { "accept-487-the-road-to-darnassus" },
+            complete = QuestState(487, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4592, 0.5280, "Gnarlpine Ambusher",
+                    "Travel to Gnarlpine Ambusher."),
+            },
+        },
+        {
+            id = "travel-930-gnarlpine-hold",
+            kind = "travel",
+            priority = 900,
+            text = "Travel to Gnarlpine Hold.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.4267, 0.7616, "Gnarlpine Hold",
+                    "Travel to Gnarlpine Hold."),
+            },
+        },
+        {
+            id = "accept-930-the-glowing-fruit",
+            kind = "accept",
+            priority = 910,
+            text = "Accept The Glowing Fruit in Gnarlpine Hold.",
+            complete = QuestState(930, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4267, 0.7616, "Gnarlpine Hold",
+                    "Travel to Gnarlpine Hold."),
+            },
+        },
+        {
+            id = "travel-933-pools-of-arlithrien",
+            kind = "travel",
+            priority = 920,
+            text = "Travel to Pools of Arlithrien.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.4237, 0.6712, "Pools of Arlithrien",
+                    "Travel to Pools of Arlithrien."),
+            },
+        },
+        {
+            id = "objective-933-crown-of-the-earth",
+            kind = "objective",
+            priority = 930,
+            text = "Use Tourmaline Phial in Pools of Arlithrien.",
+            dependsOn = { "accept-933-crown-of-the-earth" },
+            complete = QuestState(933, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4237, 0.6712, "Pools of Arlithrien",
+                    "Travel to Pools of Arlithrien."),
+            },
+        },
+        {
+            id = "objective-489-seek-redemption",
+            kind = "objective",
+            priority = 940,
+            text = "Collect 3 Fel Cone from around the bottom area of large trees.",
+            dependsOn = { "accept-489-seek-redemption" },
+            complete = QuestState(489, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5700, 0.6300, "Seek Redemption!",
+                    "Travel to Seek Redemption!."),
+            },
+        },
+        {
+            id = "travel-483-ban-ethil-barrow-den",
+            kind = "travel",
+            priority = 950,
+            text = "Travel to Ban'ethil Barrow Den.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.4428, 0.5808, "Ban'ethil Barrow Den",
+                    "Travel to Ban'ethil Barrow Den."),
+            },
+        },
+        {
+            id = "objective-483-4-rune-of-nesting",
+            kind = "objective",
+            priority = 960,
+            text = "Head down into the Ban'ethil Barrow Den at the first set of bridges take the left bridge and collect Rune of Nesting from the chest.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
+            complete = QuestObjective(483, 4),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4440, 0.6062, "Rune of Nesting",
+                    "Travel to Rune of Nesting."),
+            },
+        },
+        {
+            id = "objective-483-2-black-feather-quill",
+            kind = "objective",
+            priority = 970,
+            text = "Collect Black Feather Quill from the chest across the other bridge.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
+            complete = QuestObjective(483, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4376, 0.6120, "Black Feather Quill",
+                    "Travel to Black Feather Quill."),
+            },
+        },
+        {
+            id = "accept-2541-the-sleeping-druid",
+            kind = "accept",
+            priority = 980,
+            text = "Accept The Sleeping Druid from Oben Rageclaw in Ban'ethil Barrow Den.",
+            complete = QuestState(2541, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4496, 0.6146, "Oben Rageclaw",
+                    "Travel to Oben Rageclaw."),
+            },
+        },
+        {
+            id = "objective-483-1-raven-claw-talisman",
+            kind = "objective",
+            priority = 990,
+            text = "Collect Raven Claw Talisman from the chest.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
+            complete = QuestObjective(483, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4551, 0.5896, "Continue toward Raven Claw Talisman",
+                    "Continue toward Raven Claw Talisman."),
+                Point(MAP.TELDRASSIL, 0.4622, 0.5821, "Continue toward Raven Claw Talisman",
+                    "Continue toward Raven Claw Talisman."),
+                Point(MAP.TELDRASSIL, 0.4571, 0.5733, "Raven Claw Talisman",
+                    "Travel to Raven Claw Talisman."),
+            },
+        },
+        {
+            id = "objective-483-3-sapphire-of-sky",
+            kind = "objective",
+            priority = 1000,
+            text = "Collect Sapphire of Sky from the small chest.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
+            complete = QuestObjective(483, 3),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4465, 0.6250, "Sapphire of Sky",
+                    "Travel to Sapphire of Sky."),
+            },
+        },
+        {
+            id = "objective-2541-the-sleeping-druid",
+            kind = "objective",
+            priority = 1010,
+            text = "Kill Gnarlpine Shamans until you find a Voodoo Charm. Only shamans drop it.",
+            dependsOn = { "accept-2541-the-sleeping-druid" },
+            complete = QuestState(2541, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4400, 0.5900, "Gnarlpine Shaman",
+                    "Travel to Gnarlpine Shaman."),
+            },
+        },
+        {
+            id = "turnin-2541-the-sleeping-druid",
+            kind = "turnin",
+            priority = 1020,
+            text = "Turn in The Sleeping Druid to Oben Rageclaw in Ban'ethil Barrow Den.",
+            dependsOn = { "objective-2541-the-sleeping-druid" },
+            complete = QuestState(2541, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4496, 0.6146, "Oben Rageclaw",
+                    "Travel to Oben Rageclaw."),
+            },
+        },
+        {
+            id = "accept-2561-druid-of-the-claw",
+            kind = "accept",
+            priority = 1030,
+            text = "Accept Druid of the Claw from Oben Rageclaw in Ban'ethil Barrow Den.",
+            complete = QuestState(2561, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4496, 0.6146, "Oben Rageclaw",
+                    "Travel to Oben Rageclaw."),
+            },
+        },
+        {
+            id = "objective-2561-druid-of-the-claw",
+            kind = "objective",
+            priority = 1040,
+            text = "Kill Rageclaw and then use the Voodoo Charm on the body.",
+            dependsOn = { "accept-2561-druid-of-the-claw" },
+            complete = QuestState(2561, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4490, 0.6150, "Rageclaw",
+                    "Travel to Rageclaw."),
+            },
+        },
+        {
+            id = "turnin-2561-druid-of-the-claw",
+            kind = "turnin",
+            priority = 1050,
+            text = "Turn in Druid of the Claw to Oben Rageclaw in Ban'ethil Barrow Den.",
+            dependsOn = { "objective-2561-druid-of-the-claw" },
+            complete = QuestState(2561, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4496, 0.6146, "Oben Rageclaw",
+                    "Travel to Oben Rageclaw."),
+            },
+        },
+        {
+            id = "travel-dolanaar-2",
+            kind = "travel",
+            priority = 1060,
+            text = "Travel to Dolanaar.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Dolanaar",
+                    "Travel to Dolanaar."),
+            },
+        },
+        {
+            id = "turnin-933-crown-of-the-earth",
+            kind = "turnin",
+            priority = 1070,
+            text = "Turn in Crown of the Earth to Corithras Moonrage in Dolanaar.",
+            dependsOn = { "objective-933-crown-of-the-earth" },
+            complete = QuestState(933, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "accept-7383-crown-of-the-earth",
+            kind = "accept",
+            priority = 1080,
+            text = "Accept Crown of the Earth from Corithras Moonrage in Dolanaar.",
+            complete = QuestState(7383, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "turnin-483-the-relics-of-wakening",
+            kind = "turnin",
+            priority = 1090,
+            text = "Turn in The Relics of Wakening to Athridas Bearmantle in Dolanaar.",
+            dependsOn = { "objective-483-4-rune-of-nesting", "objective-483-2-black-feather-quill", "objective-483-1-raven-claw-talisman", "objective-483-3-sapphire-of-sky" },
+            complete = QuestState(483, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "accept-486-ursal-the-mauler",
+            kind = "accept",
+            priority = 1100,
+            text = "Accept Ursal the Mauler from Athridas Bearmantle in Dolanaar.",
+            complete = QuestState(486, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "turnin-489-seek-redemption",
+            kind = "turnin",
+            priority = 1110,
+            text = "Turn in Seek Redemption! to Zenn Foulhoof in Teldrassil.",
+            dependsOn = { "objective-489-seek-redemption" },
+            complete = QuestState(489, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6041, 0.5626, "Zenn Foulhoof",
+                    "Travel to Zenn Foulhoof."),
+            },
+        },
+        {
+            id = "accept-2241-the-apple-falls",
+            kind = "accept",
+            priority = 1120,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Accept The Apple Falls from Jannok Breezesong in Dolanaar.",
+            complete = QuestState(2241, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5636, 0.6017, "Jannok Breezesong",
+                    "Travel to Jannok Breezesong."),
+            },
+        },
+        {
+            id = "accept-5923-heeding-the-call",
+            kind = "accept",
+            priority = 1130,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Heeding the Call from Kal in Dolanaar.",
+            complete = QuestState(5923, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.6156, "Kal",
+                    "Travel to Kal."),
+            },
+        },
+        {
+            id = "accept-1684-elanaria",
+            kind = "accept",
+            priority = 1140,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Elanaria from Kyra Windblade in Dolanaar.",
+            complete = QuestState(1684, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.5920, "Kyra Windblade",
+                    "Travel to Kyra Windblade."),
+            },
+        },
+        {
+            id = "accept-6063-taming-the-beast",
+            kind = "accept",
+            priority = 1150,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Accept Taming the Beast from Dazalar in Dolanaar.",
+            complete = QuestState(6063, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5668, 0.5950, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "objective-6063-taming-the-beast",
+            kind = "objective",
+            priority = 1160,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Use the Taming Rod to tame a Webwood Lurker.",
+            dependsOn = { "accept-6063-taming-the-beast" },
+            complete = QuestState(6063, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5963, 0.6023, "Webwood Lurker",
+                    "Travel to Webwood Lurker."),
+            },
+        },
+        {
+            id = "turnin-6063-taming-the-beast",
+            kind = "turnin",
+            priority = 1170,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Turn in Taming the Beast to Dazalar in Dolanaar.",
+            dependsOn = { "objective-6063-taming-the-beast" },
+            complete = QuestState(6063, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5669, 0.5950, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "accept-6101-taming-the-beast",
+            kind = "accept",
+            priority = 1180,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Accept Taming the Beast from Dazalar in Dolanaar.",
+            complete = QuestState(6101, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5680, 0.5986, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "turnin-487-the-road-to-darnassus",
+            kind = "turnin",
+            priority = 1190,
+            text = "Turn in The Road to Darnassus to Moon Priestess Amara.",
+            dependsOn = { "objective-487-the-road-to-darnassus" },
+            complete = QuestState(487, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5000, 0.5400, "Continue toward The Road to Darnassus",
+                    "Continue toward The Road to Darnassus."),
+                Point(MAP.TELDRASSIL, 0.5500, 0.5800, "Moon Priestess Amara",
+                    "Travel to Moon Priestess Amara."),
+            },
+        },
+        {
+            id = "objective-6101-taming-the-beast",
+            kind = "objective",
+            priority = 1200,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Use the Taming Rod to tame a Nightsaber Stalker.",
+            dependsOn = { "accept-6101-taming-the-beast" },
+            complete = QuestState(6101, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4014, 0.5588, "Nightsaber Stalker",
+                    "Travel to Nightsaber Stalker."),
+            },
+        },
+        {
+            id = "turnin-6101-taming-the-beast",
+            kind = "turnin",
+            priority = 1210,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Turn in Taming the Beast to Dazalar in Dolanaar.",
+            dependsOn = { "objective-6101-taming-the-beast" },
+            complete = QuestState(6101, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5667, 0.5948, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "accept-6102-taming-the-beast",
+            kind = "accept",
+            priority = 1220,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Accept Taming the Beast from Dazalar in Dolanaar.",
+            complete = QuestState(6102, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5667, 0.5948, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "objective-6102-taming-the-beast",
+            kind = "objective",
+            priority = 1230,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Use the Taming Rod to tame a Strigid Screecher.",
+            dependsOn = { "accept-6102-taming-the-beast" },
+            complete = QuestState(6102, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4257, 0.5231, "Strigid Screecher",
+                    "Travel to Strigid Screecher."),
+            },
+        },
+        {
+            id = "turnin-6102-taming-the-beast",
+            kind = "turnin",
+            priority = 1240,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Turn in Taming the Beast to Dazalar in Dolanaar.",
+            dependsOn = { "objective-6102-taming-the-beast" },
+            complete = QuestState(6102, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5668, 0.5950, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "accept-6103-training-the-beast",
+            kind = "accept",
+            priority = 1250,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Accept Training the Beast from Dazalar in Dolanaar.",
+            complete = QuestState(6103, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5641, 0.5857, "Dazalar",
+                    "Travel to Dazalar."),
+            },
+        },
+        {
+            id = "travel-923-darnassus",
+            kind = "travel",
+            priority = 1260,
+            text = "Travel to Darnassus.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.2700, 0.5500, "Darnassus",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "accept-6344-nessa-shadowsong",
+            kind = "accept",
+            priority = 1270,
+            conditions = {
+                all = {
+                    { race = 4 },
+                    { ["not"] = { quest = { id = 6341, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept Nessa Shadowsong from Mydrannul in Warrior's Terrace.",
+            complete = QuestState(6344, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.7050, 0.4380, "Mydrannul",
+                    "Travel to Mydrannul."),
+            },
+        },
+        {
+            id = "turnin-922-rellian-greenspyre",
+            kind = "turnin",
+            priority = 1280,
+            text = "Turn in Rellian Greenspyre to Rellian Greenspyre in Cenarion Enclave.",
+            dependsOn = { "accept-922-rellian-greenspyre" },
+            complete = QuestState(922, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3826, 0.2127, "Rellian Greenspyre",
+                    "Travel to Rellian Greenspyre."),
+            },
+        },
+        {
+            id = "accept-923-tumors",
+            kind = "accept",
+            priority = 1290,
+            text = "Accept Tumors from Rellian Greenspyre in Cenarion Enclave.",
+            complete = QuestState(923, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3826, 0.2127, "Rellian Greenspyre",
+                    "Travel to Rellian Greenspyre."),
+            },
+        },
+        {
+            id = "turnin-2241-the-apple-falls",
+            kind = "turnin",
+            priority = 1300,
+            conditions = {
+                all = {
+                    { class = 4 },
+                },
+            },
+            text = "Turn in The Apple Falls to Syurna in Cenarion Enclave.",
+            dependsOn = { "accept-2241-the-apple-falls" },
+            complete = QuestState(2241, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3263, 0.1616, "Continue toward The Apple Falls",
+                    "Continue toward The Apple Falls."),
+                Point(MAP.DARNASSUS, 0.3686, 0.2188, "Syurna",
+                    "Travel to Syurna."),
+            },
+        },
+        {
+            id = "accept-2242-destiny-calls",
+            kind = "accept",
+            priority = 1310,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { quest = { id = 2241, state = "completed" } },
+                },
+            },
+            text = "Accept Destiny Calls from Syurna in Cenarion Enclave.",
+            complete = QuestState(2242, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3686, 0.2188, "Syurna",
+                    "Travel to Syurna."),
+            },
+        },
+        {
+            id = "accept-2519-the-temple-of-the-moon",
+            kind = "accept",
+            priority = 1320,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept The Temple of the Moon from Sister Aquinne in The Temple Gardens.",
+            complete = QuestState(2519, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.2900, 0.4550, "Sister Aquinne",
+                    "Travel to Sister Aquinne."),
+            },
+        },
+        {
+            id = "turnin-6103-training-the-beast",
+            kind = "turnin",
+            priority = 1330,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = 4 },
+                },
+            },
+            text = "Turn in Training the Beast to Jocaste in Cenarion Enclave.",
+            dependsOn = { "accept-6103-training-the-beast" },
+            complete = QuestState(6103, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.4039, 0.0860, "Jocaste",
+                    "Travel to Jocaste."),
+            },
+        },
+        {
+            id = "turnin-5923-heeding-the-call",
+            kind = "turnin",
+            priority = 1340,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Heeding the Call to Mathrengyl Bearwalker in Cenarion Enclave.",
+            dependsOn = { "accept-5923-heeding-the-call" },
+            complete = QuestState(5923, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3538, 0.0842, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker."),
+            },
+        },
+        {
+            id = "accept-5921-moonglade",
+            kind = "accept",
+            priority = 1350,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Moonglade from Mathrengyl Bearwalker in Cenarion Enclave.",
+            complete = QuestState(5921, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3538, 0.0842, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker."),
+            },
+        },
+        {
+            id = "travel-5929-nighthaven",
+            kind = "travel",
+            priority = 1360,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use Teleport: Moonglade to get to Nighthaven in Moonglade.",
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.5623, 0.3060, "Nighthaven",
+                    "Travel to Nighthaven."),
+            },
+        },
+        {
+            id = "turnin-5921-moonglade",
+            kind = "turnin",
+            priority = 1370,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Moonglade to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-5921-moonglade" },
+            complete = QuestState(5921, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5624, 0.3064, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-5929-great-bear-spirit",
+            kind = "accept",
+            priority = 1380,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Great Bear Spirit from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(5929, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5624, 0.3064, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "objective-5929-1-great-bear-spirit",
+            kind = "objective",
+            priority = 1390,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Speak to Great Bear Spirit in Moonglade.",
+            dependsOn = { "accept-5929-great-bear-spirit" },
+            complete = QuestObjective(5929, 1),
+            route = {
+                Point(MAP.MOONGLADE, 0.3909, 0.2754, "Great Bear Spirit",
+                    "Travel to Great Bear Spirit."),
+            },
+        },
+        {
+            id = "turnin-5929-great-bear-spirit",
+            kind = "turnin",
+            priority = 1400,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Great Bear Spirit to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "objective-5929-1-great-bear-spirit" },
+            complete = QuestState(5929, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5624, 0.3064, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-5931-back-to-darnassus",
+            kind = "accept",
+            priority = 1410,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Back to Darnassus from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(5931, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3064, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "travel-rut-theran-village",
+            kind = "travel",
+            priority = 1420,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Fly to Rut'theran Village.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5833, 0.9389, "Silva Fil'naveth",
+                    "Travel to Silva Fil'naveth."),
+            },
+        },
+        {
+            id = "turnin-5931-back-to-darnassus",
+            kind = "turnin",
+            priority = 1430,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Back to Darnassus to Mathrengyl Bearwalker in Cenarion Enclave.",
+            dependsOn = { "accept-5931-back-to-darnassus" },
+            complete = QuestState(5931, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3490, 0.0825, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker."),
+            },
+        },
+        {
+            id = "accept-6001-body-and-heart",
+            kind = "accept",
+            priority = 1440,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Body and Heart from Mathrengyl Bearwalker in Cenarion Enclave.",
+            complete = QuestState(6001, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3490, 0.0825, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker."),
+            },
+        },
+        {
+            id = "turnin-1684-elanaria",
+            kind = "turnin",
+            priority = 1450,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Elanaria to Elanaria in Darnassus.",
+            dependsOn = { "accept-1684-elanaria" },
+            complete = QuestState(1684, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5730, 0.3457, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "accept-1683-vorlus-vilehoof",
+            kind = "accept",
+            priority = 1460,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Vorlus Vilehoof from Elanaria in Darnassus.",
+            complete = QuestState(1683, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5730, 0.3457, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "turnin-2519-the-temple-of-the-moon",
+            kind = "turnin",
+            priority = 1470,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Turn in The Temple of the Moon to Priestess A'moora in Temple of the Moon.",
+            dependsOn = { "accept-2519-the-temple-of-the-moon" },
+            complete = QuestState(2519, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3655, 0.8611, "Priestess A'moora",
+                    "Travel to Priestess A'moora."),
+            },
+        },
+        {
+            id = "accept-2518-tears-of-the-moon",
+            kind = "accept",
+            priority = 1480,
+            text = "Accept Tears of the Moon from Priestess A'moora in Temple of the Moon.",
+            complete = QuestState(2518, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3655, 0.8611, "Priestess A'moora",
+                    "Travel to Priestess A'moora."),
+            },
+        },
+        {
+            id = "travel-923-teldrassil",
+            kind = "travel",
+            priority = 1490,
+            text = "Travel to Teldrassil.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.3800, 0.5470, "Teldrassil",
+                    "Travel to Teldrassil."),
+            },
+        },
+        {
+            id = "objective-486-ursal-the-mauler",
+            kind = "objective",
+            priority = 1500,
+            text = "Kill Ursal the Mauler, consider skipping (x) this quest if the quest rewards Defender Axe or Thornroot Club is useless for your character.",
+            dependsOn = { "accept-486-ursal-the-mauler" },
+            complete = QuestState(486, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3880, 0.7890, "Ursal the Mauler",
+                    "Travel to Ursal the Mauler."),
+            },
+        },
+        {
+            id = "objective-1683-1-vorlus-vilehoof",
+            kind = "objective",
+            priority = 1510,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Follow the path up and kill Vorlus Vilehoof and collect Horn of Vorlus near the Moonwell in Teldrassil.",
+            dependsOn = { "accept-1683-vorlus-vilehoof" },
+            complete = QuestObjective(1683, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4911, 0.6180, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
+                Point(MAP.TELDRASSIL, 0.4875, 0.6284, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
+                Point(MAP.TELDRASSIL, 0.4905, 0.6500, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
+                Point(MAP.TELDRASSIL, 0.4731, 0.6365, "Vorlus Vilehoof",
+                    "Travel to Vorlus Vilehoof."),
+            },
+        },
+        {
+            id = "travel-923-wellspring-river",
+            kind = "travel",
+            priority = 1520,
+            text = "Travel to Wellspring River.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.4365, 0.3446, "Wellspring River",
+                    "Travel to Wellspring River."),
+            },
+        },
+        {
+            id = "objective-923-tumors",
+            kind = "objective",
+            priority = 1530,
+            text = "Kill Timberling Mire Beast or Timberling Trampler collect 5 Mossy Tumor in Wellspring River.",
+            dependsOn = { "accept-923-tumors" },
+            complete = QuestState(923, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4365, 0.3446, "Timberling Mire Beast",
+                    "Travel to Timberling Mire Beast."),
+            },
+        },
+        {
+            id = "objective-7383-crown-of-the-earth",
+            kind = "objective",
+            priority = 1540,
+            text = "Use Amethyst Phial at the moonwell.",
+            dependsOn = { "accept-7383-crown-of-the-earth" },
+            complete = QuestState(7383, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3800, 0.3400, "Crown of the Earth",
+                    "Travel to Crown of the Earth."),
+            },
+        },
+        {
+            id = "objective-927-blackmoss-the-fetid",
+            kind = "objective",
+            priority = 1550,
+            text = "Kill Blackmoss the Fetid and collect Moss-Twined Heart to accept a quest and He is a rare npc skip the quest if you can't find him.",
+            complete = QuestState(927, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4270, 0.3680, "Continue toward Blackmoss the Fetid",
+                    "Continue toward Blackmoss the Fetid."),
+                Point(MAP.TELDRASSIL, 0.4250, 0.2600, "Blackmoss the Fetid",
+                    "Travel to Blackmoss the Fetid."),
+            },
+        },
+        {
+            id = "travel-937-the-oracle-glade",
+            kind = "travel",
+            priority = 1560,
+            text = "Travel to The Oracle Glade.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "accept-937-the-enchanted-glade",
+            kind = "accept",
+            priority = 1570,
+            text = "Accept The Enchanted Glade from Sentinel Arynia Cloudsbreak in The Oracle Glade.",
+            complete = QuestState(937, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "accept-938-mist",
+            kind = "accept",
+            priority = 1580,
+            text = "Accept Mist from Mist in The Oracle Glade.",
+            complete = QuestState(938, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3154, 0.3161, "Mist",
+                    "Travel to Mist."),
+            },
+        },
+        {
+            id = "accept-931-the-shimmering-frond",
+            kind = "accept",
+            priority = 1590,
+            text = "Accept The Shimmering Frond in The Oracle Glade.",
+            complete = QuestState(931, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3480, 0.2890, "The Oracle Glade",
+                    "Travel to The Oracle Glade."),
+            },
+        },
+        {
+            id = "objective-938-mist",
+            kind = "objective",
+            priority = 1600,
+            text = "Escort Mist to Sentinel Arynia Cloudsbreak at the moon well near the Oracle Tree.",
+            dependsOn = { "accept-938-mist" },
+            complete = QuestState(938, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3140, 0.3160, "Continue toward Mist",
+                    "Continue toward Mist."),
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Mist",
+                    "Travel to Mist."),
+            },
+        },
+        {
+            id = "objective-937-the-enchanted-glade",
+            kind = "objective",
+            priority = 1610,
+            text = "Kill Bloodfeather mobs and collect 6 Bloodfeather Belt in The Oracle Glade.",
+            dependsOn = { "accept-937-the-enchanted-glade" },
+            complete = QuestState(937, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3500, 0.3800, "Bloodfeather Harpy",
+                    "Travel to Bloodfeather Harpy."),
+            },
+        },
+        {
+            id = "turnin-938-mist",
+            kind = "turnin",
+            priority = 1620,
+            text = "Turn in Mist to Sentinel Arynia Cloudsbreak in The Oracle Glade.",
+            dependsOn = { "objective-938-mist" },
+            complete = QuestState(938, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "turnin-937-the-enchanted-glade",
+            kind = "turnin",
+            priority = 1630,
+            text = "Turn in The Enchanted Glade to Sentinel Arynia Cloudsbreak in The Oracle Glade.",
+            dependsOn = { "objective-937-the-enchanted-glade" },
+            complete = QuestState(937, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "accept-940-teldrassil",
+            kind = "accept",
+            priority = 1640,
+            text = "Accept Teldrassil from Sentinel Arynia Cloudsbreak in The Oracle Glade.",
+            complete = QuestState(940, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "objective-2518-tears-of-the-moon",
+            kind = "objective",
+            priority = 1650,
+            text = "Kill Lady Sathrah and collect Silvery Spinnerets north of The Oracle Glade.",
+            dependsOn = { "accept-2518-tears-of-the-moon" },
+            complete = QuestState(2518, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3928, 0.2570, "Lady Sathrah",
+                    "Travel to Lady Sathrah."),
+            },
+        },
+        {
+            id = "objective-2242-destiny-calls",
+            kind = "objective",
+            priority = 1660,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { quest = { id = 2241, state = "completed" } },
+                },
+            },
+            text = "Find Sethir the Ancient north of the The Oracle Glade and use the Pick Pocket ability on him from behind while stealth to get a book from him.",
+            dependsOn = { "accept-2242-destiny-calls" },
+            complete = QuestState(2242, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3721, 0.2324, "Sethir the Ancient",
+                    "Travel to Sethir the Ancient."),
+            },
+        },
+        {
+            id = "travel-2498-cenarion-enclave",
+            kind = "travel",
+            priority = 1670,
+            text = "Travel to Darnassus.",
+            route = {
+                Point(MAP.DARNASSUS, 0.3688, 0.2197, "Darnassus",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-2242-destiny-calls",
+            kind = "turnin",
+            priority = 1680,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { quest = { id = 2241, state = "completed" } },
+                },
+            },
+            text = "Turn in Destiny Calls to Syurna in Cenarion Enclave.",
+            dependsOn = { "objective-2242-destiny-calls" },
+            complete = QuestState(2242, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3688, 0.2197, "Syurna",
+                    "Travel to Syurna."),
+            },
+        },
+        {
+            id = "turnin-1683-vorlus-vilehoof",
+            kind = "turnin",
+            priority = 1690,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Vorlus Vilehoof to Elanaria in Darnassus.",
+            dependsOn = { "objective-1683-1-vorlus-vilehoof" },
+            complete = QuestState(1683, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "accept-1686-the-shade-of-elura",
+            kind = "accept",
+            priority = 1700,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept The Shade of Elura from Elanaria in Darnassus.",
+            complete = QuestState(1686, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "turnin-923-tumors",
+            kind = "turnin",
+            priority = 1710,
+            text = "Turn in Tumors to Rellian Greenspyre in Cenarion Enclave.",
+            dependsOn = { "objective-923-tumors" },
+            complete = QuestState(923, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3826, 0.2127, "Rellian Greenspyre",
+                    "Travel to Rellian Greenspyre."),
+            },
+        },
+        {
+            id = "accept-2498-return-to-denalan",
+            kind = "accept",
+            priority = 1720,
+            text = "Accept Return to Denalan from Rellian Greenspyre in Cenarion Enclave.",
+            complete = QuestState(2498, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3826, 0.2127, "Rellian Greenspyre",
+                    "Travel to Rellian Greenspyre."),
+            },
+        },
+        {
+            id = "turnin-2518-tears-of-the-moon",
+            kind = "turnin",
+            priority = 1730,
+            text = "Turn in Tears of the Moon to Priestess A'moora in Temple of the Moon.",
+            dependsOn = { "objective-2518-tears-of-the-moon" },
+            complete = QuestState(2518, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3655, 0.8611, "Priestess A'moora",
+                    "Travel to Priestess A'moora."),
+            },
+        },
+        {
+            id = "accept-2520-sathrah-s-sacrifice",
+            kind = "accept",
+            priority = 1740,
+            text = "Accept Sathrah's Sacrifice from Priestess A'moora in Temple of the Moon.",
+            complete = QuestState(2520, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3655, 0.8611, "Priestess A'moora",
+                    "Travel to Priestess A'moora."),
+            },
+        },
+        {
+            id = "objective-2520-sathrah-s-sacrifice",
+            kind = "objective",
+            priority = 1750,
+            text = "Use Sathrah's Sacrifice at the fountain inside the temple.",
+            dependsOn = { "accept-2520-sathrah-s-sacrifice" },
+            complete = QuestState(2520, "complete"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3900, 0.8650, "Sathrah's Sacrifice",
+                    "Travel to Sathrah's Sacrifice."),
+            },
+        },
+        {
+            id = "turnin-2520-sathrah-s-sacrifice",
+            kind = "turnin",
+            priority = 1760,
+            text = "Turn in Sathrah's Sacrifice to Priestess A'moora in Temple of the Moon.",
+            dependsOn = { "objective-2520-sathrah-s-sacrifice" },
+            complete = QuestState(2520, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3655, 0.8611, "Priestess A'moora",
+                    "Travel to Priestess A'moora."),
+            },
+        },
+        {
+            id = "travel-935-dolanaar",
+            kind = "travel",
+            priority = 1770,
+            text = "Travel to Dolanaar.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.4050, 0.5470, "Continue toward Dolanaar",
+                    "Continue toward Dolanaar."),
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Dolanaar",
+                    "Travel to Dolanaar."),
+            },
+        },
+        {
+            id = "turnin-486-ursal-the-mauler",
+            kind = "turnin",
+            priority = 1780,
+            text = "Turn in Ursal the Mauler to Athridas Bearmantle in Dolanaar.",
+            dependsOn = { "objective-486-ursal-the-mauler" },
+            complete = QuestState(486, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
+                    "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "turnin-7383-crown-of-the-earth",
+            kind = "turnin",
+            priority = 1790,
+            text = "Turn in Crown of the Earth to Corithras Moonrage in Dolanaar.",
+            dependsOn = { "objective-7383-crown-of-the-earth" },
+            complete = QuestState(7383, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "accept-935-crown-of-the-earth",
+            kind = "accept",
+            priority = 1800,
+            text = "Accept Crown of the Earth from Corithras Moonrage in Dolanaar.",
+            complete = QuestState(935, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Corithras Moonrage",
+                    "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "turnin-2498-return-to-denalan",
+            kind = "turnin",
+            priority = 1810,
+            text = "Turn in Return to Denalan to Denalan in Lake Al'Ameth.",
+            dependsOn = { "accept-2498-return-to-denalan" },
+            complete = QuestState(2498, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "accept-2499-oakenscowl",
+            kind = "accept",
+            priority = 1820,
+            text = "Accept Oakenscowl from Denalan in Lake Al'Ameth.",
+            complete = QuestState(2499, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "turnin-930-the-glowing-fruit",
+            kind = "turnin",
+            priority = 1830,
+            text = "Turn in The Glowing Fruit to Denalan in Lake Al'Ameth.",
+            dependsOn = { "accept-930-the-glowing-fruit" },
+            complete = QuestState(930, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "turnin-931-the-shimmering-frond",
+            kind = "turnin",
+            priority = 1840,
+            text = "Turn in The Shimmering Frond to Denalan in Lake Al'Ameth.",
+            dependsOn = { "accept-931-the-shimmering-frond" },
+            complete = QuestState(931, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "objective-2499-oakenscowl",
+            kind = "objective",
+            priority = 1850,
+            text = "Kill Oakenscowl and collect Gargantuan Tumor in Lake Al'Ameth This is a group quest but can be soloed for good XP but you can safely skip this quest if it's too hard.",
+            dependsOn = { "accept-2499-oakenscowl" },
+            complete = QuestState(2499, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5355, 0.7499, "Oakenscowl",
+                    "Travel to Oakenscowl."),
+            },
+        },
+        {
+            id = "turnin-2499-oakenscowl",
+            kind = "turnin",
+            priority = 1860,
+            text = "Turn in Oakenscowl to Denalan in Lake Al'Ameth.",
+            dependsOn = { "objective-2499-oakenscowl" },
+            complete = QuestState(2499, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Denalan",
+                    "Travel to Denalan."),
+            },
+        },
+        {
+            id = "travel-952-darnassus",
+            kind = "travel",
+            priority = 1870,
+            text = "Travel to Darnassus.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.2700, 0.5500, "Darnassus",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-935-crown-of-the-earth",
+            kind = "turnin",
+            priority = 1880,
+            text = "Turn in Crown of the Earth to Archdruid Fandral Staghelm in Cenarion Enclave.",
+            dependsOn = { "accept-935-crown-of-the-earth" },
+            complete = QuestState(935, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3486, 0.0897, "Archdruid Fandral Staghelm",
+                    "Travel to Archdruid Fandral Staghelm."),
+            },
+        },
+        {
+            id = "turnin-940-teldrassil",
+            kind = "turnin",
+            priority = 1890,
+            text = "Turn in Teldrassil to Archdruid Fandral Staghelm in Cenarion Enclave.",
+            dependsOn = { "accept-940-teldrassil" },
+            complete = QuestState(940, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3486, 0.0897, "Archdruid Fandral Staghelm",
+                    "Travel to Archdruid Fandral Staghelm."),
+            },
+        },
+        {
+            id = "accept-952-grove-of-the-ancients",
+            kind = "accept",
+            priority = 1900,
+            text = "Accept Grove of the Ancients from Archdruid Fandral Staghelm in Cenarion Enclave.",
+            complete = QuestState(952, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3486, 0.0897, "Archdruid Fandral Staghelm",
+                    "Travel to Archdruid Fandral Staghelm."),
+            },
+        },
+        {
+            id = "travel-6341-rut-theran-village",
+            kind = "travel",
+            priority = 1910,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Travel to Rut'theran Village. Run thru the portal west of the bank.",
+            route = {
+                Point(MAP.DARNASSUS, 0.3050, 0.4140, "Rut'theran Village",
+                    "Travel to Rut'theran Village."),
+            },
+        },
+        {
+            id = "turnin-6344-nessa-shadowsong",
+            kind = "turnin",
+            priority = 1920,
+            conditions = {
+                all = {
+                    { race = 4 },
+                    { ["not"] = { quest = { id = 6341, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Turn in Nessa Shadowsong to Nessa Shadowsong in Rut'theran Village.",
+            dependsOn = { "accept-6344-nessa-shadowsong" },
+            complete = QuestState(6344, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5625, 0.9236, "Nessa Shadowsong",
+                    "Travel to Nessa Shadowsong."),
+            },
+        },
+        {
+            id = "accept-6341-the-bounty-of-teldrassil",
+            kind = "accept",
+            priority = 1930,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Accept The Bounty of Teldrassil from Nessa Shadowsong in Rut'theran Village.",
+            complete = QuestState(6341, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5625, 0.9236, "Nessa Shadowsong",
+                    "Travel to Nessa Shadowsong."),
+            },
+        },
+        {
+            id = "turnin-6341-the-bounty-of-teldrassil",
+            kind = "turnin",
+            priority = 1940,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Turn in The Bounty of Teldrassil to Vesprystus in Rut'theran Village.",
+            dependsOn = { "accept-6341-the-bounty-of-teldrassil" },
+            complete = QuestState(6341, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5839, 0.9400, "Vesprystus",
+                    "Travel to Vesprystus."),
+            },
+        },
+        {
+            id = "accept-6342-flight-to-auberdine",
+            kind = "accept",
+            priority = 1950,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Accept Flight to Auberdine from Vesprystus in Rut'theran Village.",
+            complete = QuestState(6342, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5839, 0.9400, "Vesprystus",
+                    "Travel to Vesprystus."),
+            },
+        },
+        {
+            id = "travel-6342-auberdine",
+            kind = "travel",
+            priority = 1960,
+            text = "Fly to Auberdine.",
+            route = {
+                Point(MAP.TELDRASSIL, 0.5839, 0.9400, "Vesprystus",
+                    "Travel to Vesprystus."),
+            },
+        },
+        {
+            id = "turnin-6342-flight-to-auberdine",
+            kind = "turnin",
+            priority = 1970,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Turn in Flight to Auberdine to Laird in Auberdine.",
+            dependsOn = { "accept-6342-flight-to-auberdine" },
+            complete = QuestState(6342, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3677, 0.4432, "Laird",
+                    "Travel to Laird."),
+            },
+        },
+        {
+            id = "objective-6001-body-and-heart",
+            kind = "objective",
+            priority = 1980,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use the Cenarion Lunardust on the on the Moonkin Stone of Auberdine to summon Turak Runetotem.",
+            dependsOn = { "accept-6001-body-and-heart" },
+            complete = QuestState(6001, "complete"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4348, 0.4595, "Turak Runetotem",
+                    "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "objective-1686-2-shade-of-elura",
+            kind = "objective",
+            priority = 1990,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Kill Shade of Elura and collect Elura's Medallion in The Long Wash.",
+            dependsOn = { "accept-1686-the-shade-of-elura" },
+            complete = QuestObjective(1686, 2),
+            route = {
+                Point(MAP.DARKSHORE, 0.3156, 0.4487, "Shade of Elura",
+                    "Travel to Shade of Elura."),
+            },
+        },
+        {
+            id = "objective-1686-1-elunite-ore",
+            kind = "objective",
+            priority = 2000,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Collect 8 Elunite Ore from the crates underwater in The Long Wash.",
+            dependsOn = { "accept-1686-the-shade-of-elura" },
+            complete = QuestObjective(1686, 1),
+            route = {
+                Point(MAP.DARKSHORE, 0.3200, 0.4634, "The Long Wash",
+                    "Travel to The Long Wash."),
+            },
+        },
+        {
+            id = "objective-1686-the-shade-of-elura",
+            kind = "objective",
+            priority = 2010,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Bring 8 Elunite Ore and the Elura's Medallion to Elanaria in The Long Wash.",
+            dependsOn = { "accept-1686-the-shade-of-elura" },
+            complete = QuestState(1686, "complete"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3200, 0.4634, "The Long Wash",
+                    "Travel to The Long Wash."),
+            },
+        },
+        {
+            id = "travel-cenarion-enclave",
+            kind = "travel",
+            priority = 2020,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Cenarion Enclave.",
+            route = {
+                Point(MAP.DARNASSUS, 0.3490, 0.0825, "Cenarion Enclave",
+                    "Travel to Cenarion Enclave."),
+            },
+        },
+        {
+            id = "turnin-6001-body-and-heart",
+            kind = "turnin",
+            priority = 2030,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Body and Heart to Mathrengyl Bearwalker in Cenarion Enclave.",
+            dependsOn = { "objective-6001-body-and-heart" },
+            complete = QuestState(6001, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3490, 0.0825, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker."),
+            },
+        },
+        {
+            id = "travel-darnassus",
+            kind = "travel",
+            priority = 2040,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Travel to Darnassus.",
+            route = {
+                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Darnassus",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-1686-the-shade-of-elura",
+            kind = "turnin",
+            priority = 2050,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in The Shade of Elura to Elanaria in Darnassus.",
+            dependsOn = { "objective-1686-2-shade-of-elura", "objective-1686-1-elunite-ore", "objective-1686-the-shade-of-elura" },
+            complete = QuestState(1686, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "accept-1692-smith-mathiel",
+            kind = "accept",
+            priority = 2060,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Smith Mathiel from Elanaria in Darnassus.",
+            complete = QuestState(1692, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Elanaria",
+                    "Travel to Elanaria."),
+            },
+        },
+        {
+            id = "turnin-1692-smith-mathiel",
+            kind = "turnin",
+            priority = 2070,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Smith Mathiel to Mathiel in Darnassus.",
+            dependsOn = { "accept-1692-smith-mathiel" },
+            complete = QuestState(1692, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5944, 0.4536, "Mathiel",
+                    "Travel to Mathiel."),
+            },
+        },
+        {
+            id = "turnin-1693-weapons-of-elunite",
+            kind = "turnin",
+            priority = 2080,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Weapons of Elunite to Mathiel in Darnassus. This is an elite. Bring a group.",
+            complete = QuestState(1693, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.5944, 0.4536, "Mathiel",
+                    "Travel to Mathiel."),
+            },
+        },
+    },
+})
