@@ -64,6 +64,25 @@ Load("Guides/Leveling/Era/30-31-stranglethorn-vale.lua")
 Load("Guides/Leveling/Era/31-32-thousand-needles.lua")
 Load("Guides/Leveling/Era/32-34-desolace.lua")
 Load("Guides/Leveling/Era/34-36-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/36-37-alterac-mountains.lua")
+Load("Guides/Leveling/Era/37-38-arathi-highlands.lua")
+Load("Guides/Leveling/Era/37-38-thousand-needles.lua")
+Load("Guides/Leveling/Era/38-38-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/38-40-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/40-41-badlands.lua")
+Load("Guides/Leveling/Era/41-42-swamp-of-sorrows.lua")
+Load("Guides/Leveling/Era/42-43-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/43-44-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/44-44-desolace.lua")
+Load("Guides/Leveling/Era/44-45-tanaris.lua")
+Load("Guides/Leveling/Era/45-46-feralas.lua")
+Load("Guides/Leveling/Era/46-47-azshara.lua")
+Load("Guides/Leveling/Era/47-47-hinterlands.lua")
+Load("Guides/Leveling/Era/47-47-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/47-48-searing-gorge.lua")
+Load("Guides/Leveling/Era/48-49-swamp-of-sorrows.lua")
+Load("Guides/Leveling/Era/49-49-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/49-50-feralas.lua")
 
 local baseState = {
     faction = "Horde",
@@ -825,6 +844,11 @@ function TestItemStarts()
     local follow = ns.Engine:GetGoal(barrens, "accept-821-chens-empty-keg")
     Equal(ns.Engine:GetGoal(barrens, "accept-819-chens-empty-keg"), nil,
         "Chen's Empty Keg has no required loot step")
+    local bracers = ns.Engine:GetGoal(barrens, "objective-855-centaur-bracers-1")
+    Check(not string.find(bracers.text, "Kolkar can drop", 1, true),
+        "Centaur Bracers does not say Kolkar drop the keg")
+    Check(string.find(bracers.text, "barrel", 1, true) ~= nil,
+        "Centaur Bracers says the keg is a barrel on the ground")
     Equal(ns.Engine:IsReady(barrens, keg, empty), false,
         "the keg turn-in stays hidden until the item is used")
     Equal(ns.Engine:IsReady(barrens, follow, empty), false,
@@ -2060,7 +2084,7 @@ function TestEraLeveling()
                 "every Era guide is hidden from Alliance")
         end
     end
-    Equal(count, 19, "the Era set is registered")
+    Equal(count, 38, "the Era set is registered")
 end
 TestEraLeveling()
 
