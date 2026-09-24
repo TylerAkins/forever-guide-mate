@@ -2,9 +2,11 @@ local _, ns = ...
 
 -- Horde-first Loremaster route for the Barrens.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/the-barrens
--- Chains stay in Wowhead series order. Nearby quests are picked up together
--- before the route leaves that camp. Each quest objective is its own step
--- so a finished pin cannot become active again.
+-- Chains stay in Wowhead series order. At the Crossroads, the quests offered
+-- on that visit are accepted before the route leaves: Plainstrider Menace,
+-- Raptor Thieves, Disrupt the Attacks, and Harpy Raiders, then the follow-ups
+-- those turn-ins unlock. Each quest objective is its own step so a finished
+-- pin cannot become active again.
 -- Omitted from this run:
 -- In Nightmares (3369, 3370) starts from the Wailing Caverns shard.
 -- Sign Me Up! (95819) is turned in in Durotar.
@@ -604,7 +606,7 @@ ns:RegisterGuide({
         {
             id = "accept-869-raptor-thieves",
             kind = "accept",
-            priority = 300,
+            priority = 211,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -621,7 +623,7 @@ ns:RegisterGuide({
         {
             id = "objective-869-raptor-thieves-1",
             kind = "objective",
-            priority = 310,
+            priority = 221,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -639,7 +641,7 @@ ns:RegisterGuide({
         {
             id = "turnin-869-raptor-thieves",
             kind = "turnin",
-            priority = 320,
+            priority = 231,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -657,7 +659,7 @@ ns:RegisterGuide({
         {
             id = "accept-871-disrupt-the-attacks",
             kind = "accept",
-            priority = 330,
+            priority = 212,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -674,7 +676,7 @@ ns:RegisterGuide({
         {
             id = "objective-871-disrupt-the-attacks-1",
             kind = "objective",
-            priority = 340,
+            priority = 222,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -692,7 +694,7 @@ ns:RegisterGuide({
         {
             id = "objective-871-disrupt-the-attacks-2",
             kind = "objective",
-            priority = 350,
+            priority = 223,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -710,7 +712,7 @@ ns:RegisterGuide({
         {
             id = "objective-871-disrupt-the-attacks-3",
             kind = "objective",
-            priority = 360,
+            priority = 224,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -728,7 +730,7 @@ ns:RegisterGuide({
         {
             id = "turnin-871-disrupt-the-attacks",
             kind = "turnin",
-            priority = 370,
+            priority = 232,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -746,7 +748,7 @@ ns:RegisterGuide({
         {
             id = "accept-872-the-disruption-ends",
             kind = "accept",
-            priority = 380,
+            priority = 241,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -754,6 +756,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept The Disruption Ends from Thork.",
+            dependsOn = { "turnin-871-disrupt-the-attacks" },
             complete = QuestState(872, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.514, 0.308, "Thork",
@@ -763,7 +766,7 @@ ns:RegisterGuide({
         {
             id = "objective-872-the-disruption-ends-1",
             kind = "objective",
-            priority = 390,
+            priority = 244,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -781,7 +784,7 @@ ns:RegisterGuide({
         {
             id = "objective-872-the-disruption-ends-2",
             kind = "objective",
-            priority = 400,
+            priority = 245,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -799,7 +802,7 @@ ns:RegisterGuide({
         {
             id = "objective-872-the-disruption-ends-3",
             kind = "objective",
-            priority = 410,
+            priority = 246,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -817,7 +820,7 @@ ns:RegisterGuide({
         {
             id = "turnin-872-the-disruption-ends",
             kind = "turnin",
-            priority = 420,
+            priority = 251,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -835,7 +838,7 @@ ns:RegisterGuide({
         {
             id = "accept-5041-supplies-for-the-crossroads",
             kind = "accept",
-            priority = 430,
+            priority = 242,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -843,6 +846,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Supplies for the Crossroads from Thork.",
+            dependsOn = { "turnin-871-disrupt-the-attacks" },
             complete = QuestState(5041, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.514, 0.308, "Thork",
@@ -852,7 +856,7 @@ ns:RegisterGuide({
         {
             id = "objective-5041-supplies-for-the-crossroads-1",
             kind = "objective",
-            priority = 440,
+            priority = 247,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -870,7 +874,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5041-supplies-for-the-crossroads",
             kind = "turnin",
-            priority = 450,
+            priority = 252,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1048,7 +1052,7 @@ ns:RegisterGuide({
         {
             id = "accept-867-harpy-raiders",
             kind = "accept",
-            priority = 550,
+            priority = 213,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1065,7 +1069,7 @@ ns:RegisterGuide({
         {
             id = "objective-867-harpy-raiders-1",
             kind = "objective",
-            priority = 560,
+            priority = 225,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1083,7 +1087,7 @@ ns:RegisterGuide({
         {
             id = "turnin-867-harpy-raiders",
             kind = "turnin",
-            priority = 570,
+            priority = 233,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1509,7 +1513,7 @@ ns:RegisterGuide({
         {
             id = "accept-875-harpy-lieutenants",
             kind = "accept",
-            priority = 810,
+            priority = 243,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1527,7 +1531,7 @@ ns:RegisterGuide({
         {
             id = "objective-875-harpy-lieutenants-1",
             kind = "objective",
-            priority = 820,
+            priority = 248,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1545,7 +1549,7 @@ ns:RegisterGuide({
         {
             id = "turnin-875-harpy-lieutenants",
             kind = "turnin",
-            priority = 830,
+            priority = 253,
             conditions = {
                 all = {
                     { faction = "Horde" },
