@@ -26,7 +26,7 @@ local function ObjectiveFinished(objective)
     if type(objective) ~= "table" then
         return nil
     end
-    if objective.finished == true then
+    if objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0) then
         return true
     end
     if type(objective.numRequired) == "number" and objective.numRequired > 0
