@@ -48,3 +48,5 @@ All notable changes to this project are documented here.
 - Added the next Alliance Era leveling routes, 33-34 Thousand Needles through 50-50 Hinterlands.
 - Added the last Alliance Era leveling routes, 50-51 Blasted Lands through 59-60 Winterspring.
 - The Teldrassil Loremaster guide is Alliance only. Its title is Teldrassil. The library row already tags it Loremaster.
+- A guide the character cannot use says Ineligible. The faction stays listed beside that. The row no longer says "This step is for Alliance."
+- Alliance and Horde Era routes are one guide, 1-60 Era. Steps for the other faction are skipped, so they do not block the route. A starter follows your race, or the starter zone you are standing in. If you have not started, the guide opens the chapter for your level. Finishing a chapter hands off to the next one: Dun Morogh to Loch Modan, Elwynn to Westfall, Teldrassil to Darkshore, Durotar and Mulgore to the Barrens, and Tirisfal to Silverpine. The library row shows that chapter.
