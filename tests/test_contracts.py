@@ -97,6 +97,25 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
                 "Guides/Leveling/Teldrassil.lua",
+                "Guides/Leveling/Era/1-12-durotar.lua",
+                "Guides/Leveling/Era/1-12-mulgore.lua",
+                "Guides/Leveling/Era/1-12-tirisfal-glades.lua",
+                "Guides/Leveling/Era/12-20-barrens.lua",
+                "Guides/Leveling/Era/12-20-silverpine-forest.lua",
+                "Guides/Leveling/Era/20-22-stonetalon-mountains.lua",
+                "Guides/Leveling/Era/22-23-southern-barrens.lua",
+                "Guides/Leveling/Era/23-25-stonetalon-mountains.lua",
+                "Guides/Leveling/Era/25-25-southern-barrens.lua",
+                "Guides/Leveling/Era/25-26-thousand-needles.lua",
+                "Guides/Leveling/Era/26-27-ashenvale.lua",
+                "Guides/Leveling/Era/27-27-stonetalon-mountains.lua",
+                "Guides/Leveling/Era/27-29-thousand-needles.lua",
+                "Guides/Leveling/Era/29-30-hillsbrad-foothills.lua",
+                "Guides/Leveling/Era/30-30-arathi-highlands.lua",
+                "Guides/Leveling/Era/30-31-stranglethorn-vale.lua",
+                "Guides/Leveling/Era/31-32-thousand-needles.lua",
+                "Guides/Leveling/Era/32-34-desolace.lua",
+                "Guides/Leveling/Era/34-36-stranglethorn-vale.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -331,6 +350,52 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-483-the-relics-of-wakening-4"', guide)
         self.assertIn("TELDRASSIL = 1438", guide)
         self.assertIn("DARNASSUS = 1457", guide)
+
+    def test_era_leveling_guides_are_horde_routes(self) -> None:
+        era_files = (
+            "Guides/Leveling/Era/1-12-durotar.lua",
+            "Guides/Leveling/Era/1-12-mulgore.lua",
+            "Guides/Leveling/Era/1-12-tirisfal-glades.lua",
+            "Guides/Leveling/Era/12-20-barrens.lua",
+            "Guides/Leveling/Era/12-20-silverpine-forest.lua",
+            "Guides/Leveling/Era/20-22-stonetalon-mountains.lua",
+            "Guides/Leveling/Era/22-23-southern-barrens.lua",
+            "Guides/Leveling/Era/23-25-stonetalon-mountains.lua",
+            "Guides/Leveling/Era/25-25-southern-barrens.lua",
+            "Guides/Leveling/Era/25-26-thousand-needles.lua",
+            "Guides/Leveling/Era/26-27-ashenvale.lua",
+            "Guides/Leveling/Era/27-27-stonetalon-mountains.lua",
+            "Guides/Leveling/Era/27-29-thousand-needles.lua",
+            "Guides/Leveling/Era/29-30-hillsbrad-foothills.lua",
+            "Guides/Leveling/Era/30-30-arathi-highlands.lua",
+            "Guides/Leveling/Era/30-31-stranglethorn-vale.lua",
+            "Guides/Leveling/Era/31-32-thousand-needles.lua",
+            "Guides/Leveling/Era/32-34-desolace.lua",
+            "Guides/Leveling/Era/34-36-stranglethorn-vale.lua",
+        )
+        toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
+        shipped = (ROOT / "tools/compile_addon.py").read_text(encoding="utf-8")
+        for relative in era_files:
+            guide = (ROOT / relative).read_text(encoding="utf-8")
+            head, goals = guide.split("goals = {", 1)
+            self.assertIn('category = "Leveling Quest Guides"', head)
+            self.assertIn("(Era)", head)
+            self.assertIn('{ faction = "Horde" }', head)
+            self.assertNotIn("Alliance", head)
+            self.assertNotIn("flight path", goals.lower())
+            self.assertNotIn("grind", goals.lower())
+            self.assertNotIn("npc:", goals.lower())
+            self.assertNotIn("item:", goals.lower())
+            self.assertIn(relative, toc)
+            self.assertIn(relative, shipped)
+        durotar = (ROOT / "Guides/Leveling/Era/1-12-durotar.lua").read_text(encoding="utf-8")
+        self.assertIn('id = "leveling-era-1-12-durotar"', durotar)
+        self.assertIn('title = "1-12 Durotar (Era)"', durotar)
+        self.assertIn("QuestState(4641,", durotar)
+        self.assertIn("QuestObjective(786, 1)", durotar)
+        self.assertIn("QuestObjective(786, 3)", durotar)
+        self.assertIn("QuestState(752,", (ROOT / "Guides/Leveling/Era/1-12-mulgore.lua").read_text(encoding="utf-8"))
+        self.assertIn("QuestState(844,", (ROOT / "Guides/Leveling/Era/12-20-barrens.lua").read_text(encoding="utf-8"))
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")

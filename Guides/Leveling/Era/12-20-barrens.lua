@@ -1,0 +1,4075 @@
+local _, ns = ...
+
+-- Horde Era leveling route for the Barrens, levels 12-20.
+-- This follows the classic route and is not rewritten for Forever yet.
+-- Grind stops and flight-point pickups are not part of this route.
+-- Coordinates have not been validated in the Forever client.
+
+local MAP = {
+    BARRENS = 1413,
+    MULGORE = 1412,
+    DUROTAR = 1411,
+    ORGRIMMAR = 1454,
+    THUNDER_BLUFF = 1456,
+    MOONGLADE = 1450,
+    STONETALON = 1442,
+    SILVERPINE = 1421,
+}
+
+local function QuestState(questID, state)
+    return { quest = { id = questID, state = state } }
+end
+
+local function QuestObjective(questID, index)
+    return { questObjective = { id = questID, index = index } }
+end
+
+local function Point(mapID, x, y, label, offMapText)
+    return {
+        mapID = mapID,
+        x = x,
+        y = y,
+        label = label,
+        offMapText = offMapText,
+    }
+end
+
+ns:RegisterGuide({
+    id = "leveling-era-12-20-barrens",
+    title = "12-20 Barrens (Era)",
+    category = "Leveling Quest Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { faction = "Horde" },
+            { level = { min = 12 } },
+        },
+    },
+    goals = {
+        {
+            id = "accept-1505-veteran-uzzek",
+            kind = "accept",
+            priority = 10,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 6 },
+                    { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept Veteran Uzzek from Krang Stonehoof in Bloodhoof Village.",
+            complete = QuestState(1505, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4952, 0.6060, "Krang Stonehoof",
+                    "Travel to Krang Stonehoof."),
+            },
+        },
+        {
+            id = "accept-1505-veteran-uzzek-2",
+            kind = "accept",
+            priority = 20,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 6 },
+                    { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept Veteran Uzzek from Tarshaw Jaggedscar in Razor Hill Barracks.",
+            complete = QuestState(1505, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.7341, 0.1944, "Tarshaw Jaggedscar",
+                    "Travel to Tarshaw Jaggedscar."),
+            },
+        },
+        {
+            id = "accept-2983-call-of-fire",
+            kind = "accept",
+            priority = 30,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Call of Fire from Swart in Razor Hill Barracks.",
+            complete = QuestState(2983, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5441, 0.4258, "Swart",
+                    "Travel to Swart."),
+            },
+        },
+        {
+            id = "accept-2984-call-of-fire",
+            kind = "accept",
+            priority = 40,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 6 },
+                },
+            },
+            text = "Accept Call of Fire from Swart in Bloodhoof Village.",
+            complete = QuestState(2984, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4840, 0.5920, "Swart",
+                    "Travel to Swart."),
+            },
+        },
+        {
+            id = "travel-840-orgimmar",
+            kind = "travel",
+            priority = 50,
+            conditions = {
+                all = {
+                    { race = 5 },
+                },
+            },
+            text = "Travel to Orgimmar.",
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4523, 0.6384, "Orgimmar",
+                    "Travel to Orgimmar."),
+            },
+        },
+        {
+            id = "travel-840-razor-hill",
+            kind = "travel",
+            priority = 60,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                },
+            },
+            text = "Run South to Razor Hill.",
+            route = {
+                Point(MAP.DUROTAR, 0.5090, 0.4360, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "accept-840-conscript-of-the-horde",
+            kind = "accept",
+            priority = 70,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                },
+            },
+            text = "Accept Conscript of the Horde from Takrin Pathseeker in Razor Hill.",
+            complete = QuestState(840, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5090, 0.4360, "Takrin Pathseeker",
+                    "Travel to Takrin Pathseeker."),
+            },
+        },
+        {
+            id = "travel-854-camp-taurajo",
+            kind = "travel",
+            priority = 80,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Run east to Camp Taurajo.",
+            route = {
+                Point(MAP.BARRENS, 0.4490, 0.5870, "Camp Taurajo",
+                    "Travel to Camp Taurajo."),
+            },
+        },
+        {
+            id = "accept-854-journey-to-the-crossroads",
+            kind = "accept",
+            priority = 90,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept Journey to the Crossroads from Kirge Sternhorn.",
+            complete = QuestState(854, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4490, 0.5870, "Kirge Sternhorn",
+                    "Travel to Kirge Sternhorn."),
+            },
+        },
+        {
+            id = "travel-6361-the-crossroads",
+            kind = "travel",
+            priority = 100,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-854-journey-to-the-crossroads",
+            kind = "turnin",
+            priority = 110,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Journey to the Crossroads to Thork in The Crossroads.",
+            dependsOn = { "accept-854-journey-to-the-crossroads" },
+            complete = QuestState(854, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "accept-6361-a-bundle-of-hides",
+            kind = "accept",
+            priority = 120,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept A Bundle of Hides from Jahan Hawkwing in The Crossroads.",
+            complete = QuestState(6361, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5119, 0.2909, "Jahan Hawkwing",
+                    "Travel to Jahan Hawkwing."),
+            },
+        },
+        {
+            id = "turnin-6361-a-bundle-of-hides",
+            kind = "turnin",
+            priority = 130,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in A Bundle of Hides to Devrak in The Crossroads.",
+            dependsOn = { "accept-6361-a-bundle-of-hides" },
+            complete = QuestState(6361, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5152, 0.3036, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "accept-6362-ride-to-thunder-bluff",
+            kind = "accept",
+            priority = 140,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept Ride to Thunder Bluff from Devrak in The Crossroads.",
+            complete = QuestState(6362, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5152, 0.3036, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "note-6363-the-crossroads",
+            kind = "note",
+            priority = 150,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Set your hearth in The Crossroads with Innkeeper Boorand Plainswind.",
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.2990, "Innkeeper Boorand Plainswind",
+                    "Travel to Innkeeper Boorand Plainswind."),
+            },
+        },
+        {
+            id = "turnin-840-conscript-of-the-horde",
+            kind = "turnin",
+            priority = 160,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                },
+            },
+            text = "Turn in Conscript of the Horde to Kargal Battlescar in Far Watch Post.",
+            dependsOn = { "accept-840-conscript-of-the-horde" },
+            complete = QuestState(840, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6227, 0.1937, "Kargal Battlescar",
+                    "Travel to Kargal Battlescar."),
+            },
+        },
+        {
+            id = "accept-842-crossroads-conscription",
+            kind = "accept",
+            priority = 170,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                    { quest = { id = 840, state = "completed" } },
+                },
+            },
+            text = "Accept Crossroads Conscription from Kargal Battlescar in Far Watch Post.",
+            complete = QuestState(842, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6227, 0.1937, "Kargal Battlescar",
+                    "Travel to Kargal Battlescar."),
+            },
+        },
+        {
+            id = "accept-924-the-demon-seed",
+            kind = "accept",
+            priority = 180,
+            conditions = {
+                all = {
+                    { quest = { id = 809, state = "completed" } },
+                },
+            },
+            text = "Accept The Demon Seed from Ak'Zeloth in Far Watch Post.",
+            complete = QuestState(924, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6235, 0.2008, "Ak'Zeloth",
+                    "Travel to Ak'Zeloth."),
+            },
+        },
+        {
+            id = "travel-6363-thunder-bluff",
+            kind = "travel",
+            priority = 190,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Fly to Thunder Bluff.",
+            route = {
+                Point(MAP.BARRENS, 0.5150, 0.3030, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "turnin-6362-ride-to-thunder-bluff",
+            kind = "turnin",
+            priority = 200,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Ride to Thunder Bluff to Ahanu in Thunder Bluff.",
+            dependsOn = { "accept-6362-ride-to-thunder-bluff" },
+            complete = QuestState(6362, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.4560, 0.5590, "Ahanu",
+                    "Travel to Ahanu."),
+            },
+        },
+        {
+            id = "accept-6363-tal-the-wind-rider-master",
+            kind = "accept",
+            priority = 210,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept Tal the Wind Rider Master from Ahanu in Thunder Bluff.",
+            complete = QuestState(6363, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.4560, 0.5590, "Ahanu",
+                    "Travel to Ahanu."),
+            },
+        },
+        {
+            id = "turnin-6363-tal-the-wind-rider-master",
+            kind = "turnin",
+            priority = 220,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Tal the Wind Rider Master to Tal in Thunder Bluff.",
+            dependsOn = { "accept-6363-tal-the-wind-rider-master" },
+            complete = QuestState(6363, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.4680, 0.5020, "Tal",
+                    "Travel to Tal."),
+            },
+        },
+        {
+            id = "accept-6364-return-to-jahan",
+            kind = "accept",
+            priority = 230,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Accept Return to Jahan from Tal in Thunder Bluff.",
+            complete = QuestState(6364, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.4680, 0.5020, "Tal",
+                    "Travel to Tal."),
+            },
+        },
+        {
+            id = "travel-844-the-crossroads",
+            kind = "travel",
+            priority = 240,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Fly to The Crossroads.",
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.4680, 0.5020, "Tal",
+                    "Travel to Tal."),
+            },
+        },
+        {
+            id = "turnin-6364-return-to-jahan",
+            kind = "turnin",
+            priority = 250,
+            conditions = {
+                all = {
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Return to Jahan to Jahan Hawkwing in The Crossroads.",
+            dependsOn = { "accept-6364-return-to-jahan" },
+            complete = QuestState(6364, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5119, 0.2909, "Jahan Hawkwing",
+                    "Travel to Jahan Hawkwing."),
+            },
+        },
+        {
+            id = "travel-844-the-crossroads-2",
+            kind = "travel",
+            priority = 260,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                },
+            },
+            text = "Follow the road, taking a left turn to the Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.3000, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-842-crossroads-conscription",
+            kind = "turnin",
+            priority = 270,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                    { quest = { id = 840, state = "completed" } },
+                },
+            },
+            text = "Turn in Crossroads Conscription to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "accept-842-crossroads-conscription" },
+            complete = QuestState(842, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-6365-meats-to-orgrimmar",
+            kind = "accept",
+            priority = 280,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Meats to Orgrimmar from Zargh in The Crossroads.",
+            complete = QuestState(6365, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5258, 0.2986, "Zargh",
+                    "Travel to Zargh."),
+            },
+        },
+        {
+            id = "turnin-6365-meats-to-orgrimmar",
+            kind = "turnin",
+            priority = 290,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Meats to Orgrimmar to Devrak in The Crossroads.",
+            dependsOn = { "accept-6365-meats-to-orgrimmar" },
+            complete = QuestState(6365, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5152, 0.3036, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "accept-6384-ride-to-orgrimmar",
+            kind = "accept",
+            priority = 300,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Ride to Orgrimmar from Devrak in The Crossroads.",
+            complete = QuestState(6384, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5152, 0.3036, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "note-871-the-crossroads",
+            kind = "note",
+            priority = 310,
+            conditions = {
+                all = {
+                    { race = { 2, 8, 5 } },
+                },
+            },
+            text = "Set your hearth in The Crossroads with Innkeeper Boorand Plainswind.",
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.2990, "Innkeeper Boorand Plainswind",
+                    "Travel to Innkeeper Boorand Plainswind."),
+            },
+        },
+        {
+            id = "travel-6385-orgrimmar",
+            kind = "travel",
+            priority = 320,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Fly to Orgrimmar.",
+            route = {
+                Point(MAP.BARRENS, 0.5150, 0.3030, "Devrak",
+                    "Travel to Devrak."),
+            },
+        },
+        {
+            id = "turnin-6384-ride-to-orgrimmar",
+            kind = "turnin",
+            priority = 330,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Ride to Orgrimmar to Innkeeper Gryshka in Valley of Strength.",
+            dependsOn = { "accept-6384-ride-to-orgrimmar" },
+            complete = QuestState(6384, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.5421, 0.6841, "Innkeeper Gryshka",
+                    "Travel to Innkeeper Gryshka."),
+            },
+        },
+        {
+            id = "accept-6385-doras-the-wind-rider-master",
+            kind = "accept",
+            priority = 340,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Doras the Wind Rider Master from Innkeeper Gryshka in Valley of Strength.",
+            complete = QuestState(6385, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.5421, 0.6841, "Innkeeper Gryshka",
+                    "Travel to Innkeeper Gryshka."),
+            },
+        },
+        {
+            id = "turnin-6385-doras-the-wind-rider-master",
+            kind = "turnin",
+            priority = 350,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Doras the Wind Rider Master to Doras in Valley of Strength.",
+            dependsOn = { "accept-6385-doras-the-wind-rider-master" },
+            complete = QuestState(6385, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4540, 0.6389, "Doras",
+                    "Travel to Doras."),
+            },
+        },
+        {
+            id = "accept-6386-return-to-the-crossroads",
+            kind = "accept",
+            priority = 360,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Accept Return to the Crossroads. from Doras in Valley of Strength.",
+            complete = QuestState(6386, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4540, 0.6389, "Doras",
+                    "Travel to Doras."),
+            },
+        },
+        {
+            id = "travel-844-the-crossroads-3",
+            kind = "travel",
+            priority = 370,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Travel to The Crossroads. Doras in Valley of Strength.",
+            route = {
+                Point(MAP.BARRENS, 0.5258, 0.2986, "Doras",
+                    "Travel to Doras."),
+            },
+        },
+        {
+            id = "turnin-6386-return-to-the-crossroads",
+            kind = "turnin",
+            priority = 380,
+            conditions = {
+                all = {
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Return to the Crossroads. to Zargh in The Crossroads.",
+            dependsOn = { "accept-6386-return-to-the-crossroads" },
+            complete = QuestState(6386, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5258, 0.2986, "Zargh",
+                    "Travel to Zargh."),
+            },
+        },
+        {
+            id = "accept-869-raptor-thieves",
+            kind = "accept",
+            priority = 390,
+            text = "Accept Raptor Thieves from Gazrog in The Crossroads.",
+            complete = QuestState(869, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5195, 0.3032, "Gazrog",
+                    "Travel to Gazrog."),
+            },
+        },
+        {
+            id = "accept-871-disrupt-the-attacks",
+            kind = "accept",
+            priority = 400,
+            text = "Accept Disrupt the Attacks from Thork in The Crossroads.",
+            complete = QuestState(871, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "accept-5041-supplies-for-the-crossroads",
+            kind = "accept",
+            priority = 410,
+            text = "Accept Supplies for the Crossroads from Thork in The Crossroads.",
+            complete = QuestState(5041, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "accept-867-harpy-raiders",
+            kind = "accept",
+            priority = 420,
+            text = "Accept Harpy Raiders from Darsok Swiftdagger in The Crossroads.",
+            complete = QuestState(867, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-848-fungal-spores",
+            kind = "accept",
+            priority = 430,
+            text = "Accept Fungal Spores from Apothecary Helbrim in The Crossroads.",
+            complete = QuestState(848, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5147, 0.3017, "Apothecary Helbrim",
+                    "Travel to Apothecary Helbrim."),
+            },
+        },
+        {
+            id = "accept-1492-wharfmaster-dizzywig",
+            kind = "accept",
+            priority = 440,
+            text = "Accept Wharfmaster Dizzywig from Apothecary Helbrim in The Crossroads.",
+            complete = QuestState(1492, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5147, 0.3017, "Apothecary Helbrim",
+                    "Travel to Apothecary Helbrim."),
+            },
+        },
+        {
+            id = "accept-844-plainstrider-menace",
+            kind = "accept",
+            priority = 450,
+            text = "Accept Plainstrider Menace from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(844, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-870-the-forgotten-pools",
+            kind = "accept",
+            priority = 460,
+            text = "Accept The Forgotten Pools from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(870, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "turnin-1505-veteran-uzzek",
+            kind = "turnin",
+            priority = 470,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { race = 6 },
+                    { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Turn in Veteran Uzzek to Uzzek in Far Watch Post.",
+            dependsOn = { "accept-1505-veteran-uzzek" },
+            complete = QuestState(1505, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6139, 0.2111, "Uzzek",
+                    "Travel to Uzzek."),
+            },
+        },
+        {
+            id = "accept-1498-path-of-defense",
+            kind = "accept",
+            priority = 480,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Path of Defense from Uzzek in Far Watch Post.",
+            complete = QuestState(1498, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6139, 0.2111, "Uzzek",
+                    "Travel to Uzzek."),
+            },
+        },
+        {
+            id = "travel-1498-thunder-ridge",
+            kind = "travel",
+            priority = 490,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Travel to Thunder Ridge.",
+            route = {
+                Point(MAP.DUROTAR, 0.3917, 0.3262, "Thunder Ridge",
+                    "Travel to Thunder Ridge."),
+            },
+        },
+        {
+            id = "objective-1498-path-of-defense",
+            kind = "objective",
+            priority = 500,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Kill Thunder Lizard and collect 5 Singed Scale in Thunder Ridge.",
+            dependsOn = { "accept-1498-path-of-defense" },
+            complete = QuestState(1498, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.3917, 0.3262, "Continue toward Path of Defense",
+                    "Continue toward Path of Defense."),
+                Point(MAP.DUROTAR, 0.3912, 0.2850, "Thunder Lizard",
+                    "Travel to Thunder Lizard."),
+            },
+        },
+        {
+            id = "turnin-1498-path-of-defense",
+            kind = "turnin",
+            priority = 510,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Path of Defense to Uzzek in Far Watch Post.",
+            dependsOn = { "objective-1498-path-of-defense" },
+            complete = QuestState(1498, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6139, 0.2111, "Uzzek",
+                    "Travel to Uzzek."),
+            },
+        },
+        {
+            id = "accept-1502-thun-grim-firegaze",
+            kind = "accept",
+            priority = 520,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Thun'grim Firegaze from Uzzek in Far Watch Post.",
+            complete = QuestState(1502, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6139, 0.2111, "Uzzek",
+                    "Travel to Uzzek."),
+            },
+        },
+        {
+            id = "turnin-1502-thun-grim-firegaze",
+            kind = "turnin",
+            priority = 530,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Thun'grim Firegaze to Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "accept-1502-thun-grim-firegaze" },
+            complete = QuestState(1502, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5890, 0.3255, "Continue toward Thun'grim Firegaze",
+                    "Continue toward Thun'grim Firegaze."),
+                Point(MAP.BARRENS, 0.5722, 0.3032, "Thun'grim Firegaze",
+                    "Travel to Thun'grim Firegaze."),
+            },
+        },
+        {
+            id = "accept-1503-forged-steel",
+            kind = "accept",
+            priority = 540,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Accept Forged Steel from Thun'grim Firegaze in The Barrens.",
+            complete = QuestState(1503, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5722, 0.3032, "Thun'grim Firegaze",
+                    "Travel to Thun'grim Firegaze."),
+            },
+        },
+        {
+            id = "objective-1503-forged-steel",
+            kind = "objective",
+            priority = 550,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Collect Forged Steel Bars from the Stolen Iron Chest in Thorn Hill.",
+            dependsOn = { "accept-1503-forged-steel" },
+            complete = QuestState(1503, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5506, 0.2664, "Thorn Hill",
+                    "Travel to Thorn Hill."),
+            },
+        },
+        {
+            id = "turnin-1503-forged-steel",
+            kind = "turnin",
+            priority = 560,
+            conditions = {
+                all = {
+                    { class = 1 },
+                },
+            },
+            text = "Turn in Forged Steel to Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "objective-1503-forged-steel" },
+            complete = QuestState(1503, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5456, 0.2796, "Continue toward Forged Steel",
+                    "Continue toward Forged Steel."),
+                Point(MAP.BARRENS, 0.5723, 0.3033, "Thun'grim Firegaze",
+                    "Travel to Thun'grim Firegaze."),
+            },
+        },
+        {
+            id = "travel-1524-grol-dom-farm",
+            kind = "travel",
+            priority = 570,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Grol'dom Farm.",
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1988, "Grol'dom Farm",
+                    "Travel to Grol'dom Farm."),
+            },
+        },
+        {
+            id = "turnin-2984-call-of-fire",
+            kind = "turnin",
+            priority = 580,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Call of Fire to Kranal Fiss in Grol'dom Farm.",
+            dependsOn = { "accept-2984-call-of-fire" },
+            complete = QuestState(2984, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1988, "Kranal Fiss",
+                    "Travel to Kranal Fiss."),
+            },
+        },
+        {
+            id = "turnin-2983-call-of-fire",
+            kind = "turnin",
+            priority = 590,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { race = { 2, 8 } },
+                },
+            },
+            text = "Turn in Call of Fire to Kranal Fiss in Grol'dom Farm.",
+            dependsOn = { "accept-2983-call-of-fire" },
+            complete = QuestState(2983, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1988, "Kranal Fiss",
+                    "Travel to Kranal Fiss."),
+            },
+        },
+        {
+            id = "accept-1524-call-of-fire",
+            kind = "accept",
+            priority = 600,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Fire from Kranal Fiss in Grol'dom Farm.",
+            complete = QuestState(1524, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1988, "Kranal Fiss",
+                    "Travel to Kranal Fiss."),
+            },
+        },
+        {
+            id = "travel-shrine-of-the-dormant-flame",
+            kind = "travel",
+            priority = 610,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { ["not"] = { quest = { id = 1525, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Shrine of the Dormant Flame.",
+            route = {
+                Point(MAP.DUROTAR, 0.3660, 0.5710, "Continue toward Shrine of the Dormant Flame",
+                    "Continue toward Shrine of the Dormant Flame."),
+                Point(MAP.DUROTAR, 0.3658, 0.5825, "Continue toward Shrine of the Dormant Flame",
+                    "Continue toward Shrine of the Dormant Flame."),
+                Point(MAP.DUROTAR, 0.3686, 0.5905, "Shrine of the Dormant Flame",
+                    "Travel to Shrine of the Dormant Flame."),
+            },
+        },
+        {
+            id = "turnin-1524-call-of-fire",
+            kind = "turnin",
+            priority = 620,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Fire to Telf Joolam in Shrine of the Dormant Flame.",
+            dependsOn = { "accept-1524-call-of-fire" },
+            complete = QuestState(1524, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.3686, 0.5905, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3701, 0.5814, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3895, 0.5756, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3917, 0.5866, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3857, 0.5896, "Telf Joolam",
+                    "Travel to Telf Joolam."),
+            },
+        },
+        {
+            id = "accept-1525-call-of-fire",
+            kind = "accept",
+            priority = 630,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Fire from Telf Joolam in Shrine of the Dormant Flame.",
+            complete = QuestState(1525, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.3857, 0.5896, "Telf Joolam",
+                    "Travel to Telf Joolam."),
+            },
+        },
+        {
+            id = "travel-1525-1-thorn-hill",
+            kind = "travel",
+            priority = 640,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Thorn Hill.",
+            complete = QuestObjective(1525, 1),
+            route = {
+                Point(MAP.BARRENS, 0.5694, 0.2433, "Thorn Hill",
+                    "Travel to Thorn Hill."),
+            },
+        },
+        {
+            id = "objective-1525-1-razormane-geomancer",
+            kind = "objective",
+            priority = 650,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Kill Razormane Geomancer and collect Fire Tar in Thorn Hill.",
+            dependsOn = { "accept-1525-call-of-fire" },
+            complete = QuestObjective(1525, 1),
+            route = {
+                Point(MAP.BARRENS, 0.5694, 0.2433, "Razormane Geomancer",
+                    "Travel to Razormane Geomancer."),
+            },
+        },
+        {
+            id = "travel-1525-2-razor-hill",
+            kind = "travel",
+            priority = 660,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Razor Hill.",
+            complete = QuestObjective(1525, 2),
+            route = {
+                Point(MAP.DUROTAR, 0.5410, 0.4078, "Razor Hill",
+                    "Travel to Razor Hill."),
+            },
+        },
+        {
+            id = "travel-1525-2-dustwind-cave",
+            kind = "travel",
+            priority = 670,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Dustwind Cave.",
+            complete = QuestObjective(1525, 2),
+            route = {
+                Point(MAP.DUROTAR, 0.5410, 0.4078, "Continue toward Dustwind Cave",
+                    "Continue toward Dustwind Cave."),
+                Point(MAP.DUROTAR, 0.5405, 0.3728, "Continue toward Dustwind Cave",
+                    "Continue toward Dustwind Cave."),
+                Point(MAP.DUROTAR, 0.5287, 0.2904, "Dustwind Cave",
+                    "Travel to Dustwind Cave."),
+            },
+        },
+        {
+            id = "objective-1525-2-burning-blade-cultist",
+            kind = "objective",
+            priority = 680,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Kill Burning Blade Cultist and collect a Reagent Pouch in Dustwind Cave.",
+            dependsOn = { "accept-1525-call-of-fire" },
+            complete = QuestObjective(1525, 2),
+            route = {
+                Point(MAP.DUROTAR, 0.5255, 0.2665, "Burning Blade Cultist",
+                    "Travel to Burning Blade Cultist."),
+            },
+        },
+        {
+            id = "travel-1526-shrine-of-the-dormant-flame",
+            kind = "travel",
+            priority = 690,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Shrine of the Dormant Flame.",
+            route = {
+                Point(MAP.DUROTAR, 0.3660, 0.5710, "Continue toward Shrine of the Dormant Flame",
+                    "Continue toward Shrine of the Dormant Flame."),
+                Point(MAP.DUROTAR, 0.3658, 0.5825, "Continue toward Shrine of the Dormant Flame",
+                    "Continue toward Shrine of the Dormant Flame."),
+                Point(MAP.DUROTAR, 0.3686, 0.5905, "Shrine of the Dormant Flame",
+                    "Travel to Shrine of the Dormant Flame."),
+            },
+        },
+        {
+            id = "turnin-1525-call-of-fire",
+            kind = "turnin",
+            priority = 700,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Fire to Telf Joolam in Shrine of the Dormant Flame.",
+            dependsOn = { "objective-1525-1-razormane-geomancer", "objective-1525-2-burning-blade-cultist" },
+            complete = QuestState(1525, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.3686, 0.5905, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3701, 0.5814, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3895, 0.5756, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3917, 0.5866, "Continue toward Call of Fire",
+                    "Continue toward Call of Fire."),
+                Point(MAP.DUROTAR, 0.3855, 0.5896, "Telf Joolam",
+                    "Travel to Telf Joolam."),
+            },
+        },
+        {
+            id = "accept-1526-call-of-fire",
+            kind = "accept",
+            priority = 710,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Fire from Telf Joolam in Shrine of the Dormant Flame.",
+            complete = QuestState(1526, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.3855, 0.5896, "Telf Joolam",
+                    "Travel to Telf Joolam."),
+            },
+        },
+        {
+            id = "objective-1526-1-fire-sapta",
+            kind = "objective",
+            priority = 720,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Use Fire Sapta to gain the Sapta Sight buff.",
+            dependsOn = { "accept-1526-call-of-fire" },
+            complete = QuestObjective(1526, 1),
+            route = {
+                Point(MAP.DUROTAR, 0.3867, 0.5832, "Fire Sapta",
+                    "Travel to Fire Sapta."),
+            },
+        },
+        {
+            id = "objective-1526-call-of-fire",
+            kind = "objective",
+            priority = 730,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Defeat the Minor Manifestation of Fire n Shrine of the Dormant Flame.",
+            dependsOn = { "accept-1526-call-of-fire" },
+            complete = QuestState(1526, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.3867, 0.5832, "Minor Manifestation of Fire",
+                    "Travel to Minor Manifestation of Fire."),
+            },
+        },
+        {
+            id = "turnin-1526-call-of-fire",
+            kind = "turnin",
+            priority = 740,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Fire in Shrine of the Dormant Flame.",
+            dependsOn = { "objective-1526-1-fire-sapta", "objective-1526-call-of-fire" },
+            complete = QuestState(1526, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.3892, 0.5824, "Shrine of the Dormant Flame",
+                    "Travel to Shrine of the Dormant Flame."),
+            },
+        },
+        {
+            id = "accept-1527-call-of-fire",
+            kind = "accept",
+            priority = 750,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Accept Call of Fire in Shrine of the Dormant Flame.",
+            complete = QuestState(1527, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.3892, 0.5824, "Shrine of the Dormant Flame",
+                    "Travel to Shrine of the Dormant Flame."),
+            },
+        },
+        {
+            id = "travel-1527-grol-dom-farm",
+            kind = "travel",
+            priority = 760,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Travel to Grol'dom Farm.",
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1989, "Grol'dom Farm",
+                    "Travel to Grol'dom Farm."),
+            },
+        },
+        {
+            id = "turnin-1527-call-of-fire",
+            kind = "turnin",
+            priority = 770,
+            conditions = {
+                all = {
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Call of Fire to Kranal Fiss in Grol'dom Farm.",
+            dependsOn = { "accept-1527-call-of-fire" },
+            complete = QuestState(1527, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5604, 0.1989, "Kranal Fiss",
+                    "Travel to Kranal Fiss."),
+            },
+        },
+        {
+            id = "travel-924-dreadmist-den",
+            kind = "travel",
+            priority = 780,
+            conditions = {
+                all = {
+                    { quest = { id = 809, state = "completed" } },
+                },
+            },
+            text = "Travel to Dreadmist Den.",
+            route = {
+                Point(MAP.BARRENS, 0.5110, 0.2270, "Continue toward Dreadmist Den",
+                    "Continue toward Dreadmist Den."),
+                Point(MAP.BARRENS, 0.5042, 0.2196, "Continue toward Dreadmist Den",
+                    "Continue toward Dreadmist Den."),
+                Point(MAP.BARRENS, 0.4796, 0.1912, "Dreadmist Den",
+                    "Travel to Dreadmist Den."),
+            },
+        },
+        {
+            id = "objective-924-the-demon-seed",
+            kind = "objective",
+            priority = 790,
+            conditions = {
+                all = {
+                    { quest = { id = 809, state = "completed" } },
+                },
+            },
+            text = "Grab a Flawed Power Stone on the table next to the quest giver and bring it to the Altar of Fire before the stone expires, in Dreadmist Den.",
+            dependsOn = { "accept-924-the-demon-seed" },
+            complete = QuestState(924, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4796, 0.1912, "Dreadmist Den",
+                    "Travel to Dreadmist Den."),
+            },
+        },
+        {
+            id = "travel-871-thorn-hill",
+            kind = "travel",
+            priority = 800,
+            text = "Travel to Thorn Hill.",
+            route = {
+                Point(MAP.BARRENS, 0.5400, 0.2600, "Thorn Hill",
+                    "Travel to Thorn Hill."),
+            },
+        },
+        {
+            id = "objective-871-disrupt-the-attacks",
+            kind = "objective",
+            priority = 810,
+            text = "Kill 8 Razormane Plunderer, 8 Razormane Thornweaver and 3 Razormane Hunter in Thorn Hill.",
+            dependsOn = { "accept-871-disrupt-the-attacks" },
+            complete = QuestState(871, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5400, 0.2600, "Razormane Plunderer",
+                    "Travel to Razormane Plunderer."),
+            },
+        },
+        {
+            id = "travel-871-thorn-hill-2",
+            kind = "travel",
+            priority = 820,
+            text = "Travel to Thorn Hill.",
+            route = {
+                Point(MAP.BARRENS, 0.5400, 0.2600, "Thorn Hill",
+                    "Travel to Thorn Hill."),
+            },
+        },
+        {
+            id = "objective-844-plainstrider-menace",
+            kind = "objective",
+            priority = 830,
+            text = "Kill Greater Plainstrider and collect 7 Plainstrider Beak around The Crossroads.",
+            dependsOn = { "accept-844-plainstrider-menace" },
+            complete = QuestState(844, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5311, 0.3237, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5301, 0.2804, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5132, 0.2743, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.4935, 0.3003, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5128, 0.3334, "Greater Plainstrider",
+                    "Travel to Greater Plainstrider."),
+            },
+        },
+        {
+            id = "travel-the-crossroads",
+            kind = "travel",
+            priority = 840,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 872, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-844-plainstrider-menace",
+            kind = "turnin",
+            priority = 850,
+            text = "Turn in Plainstrider Menace to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-844-plainstrider-menace" },
+            complete = QuestState(844, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-845-the-zhevra",
+            kind = "accept",
+            priority = 860,
+            text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(845, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "turnin-871-disrupt-the-attacks",
+            kind = "turnin",
+            priority = 870,
+            text = "Turn in Disrupt the Attacks to Thork in The Crossroads.",
+            dependsOn = { "objective-871-disrupt-the-attacks" },
+            complete = QuestState(871, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "accept-872-the-disruption-ends",
+            kind = "accept",
+            priority = 880,
+            text = "Accept The Disruption Ends from Thork in The Crossroads.",
+            complete = QuestState(872, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "objective-872-3-kreenig-snarlsnout",
+            kind = "objective",
+            priority = 890,
+            text = "Kill Kreenig Snarlsnout and collect Kreenig Snarlsnout's Tusk in Thorn Hill.",
+            dependsOn = { "accept-872-the-disruption-ends" },
+            complete = QuestObjective(872, 3),
+            route = {
+                Point(MAP.BARRENS, 0.5860, 0.2720, "Kreenig Snarlsnout",
+                    "Travel to Kreenig Snarlsnout."),
+            },
+        },
+        {
+            id = "objective-5041-supplies-for-the-crossroads",
+            kind = "objective",
+            priority = 900,
+            text = "Collect Crossroads Supply Crate from the ground in Thorn Hill.",
+            dependsOn = { "accept-5041-supplies-for-the-crossroads" },
+            complete = QuestState(5041, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5884, 0.2737, "Thorn Hill",
+                    "Travel to Thorn Hill."),
+            },
+        },
+        {
+            id = "objective-872-the-disruption-ends",
+            kind = "objective",
+            priority = 910,
+            text = "Kill 8 Razormane Geomancer, 8 Razormane Defender in Thorn Hill.",
+            dependsOn = { "accept-872-the-disruption-ends" },
+            complete = QuestState(872, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5884, 0.2373, "Razormane Geomancer",
+                    "Travel to Razormane Geomancer."),
+            },
+        },
+        {
+            id = "travel-895-ratchet",
+            kind = "travel",
+            priority = 920,
+            text = "Travel to Ratchet.",
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3750, "Ratchet",
+                    "Travel to Ratchet."),
+            },
+        },
+        {
+            id = "accept-821-chen-s-empty-keg",
+            kind = "accept",
+            priority = 930,
+            conditions = {
+                all = {
+                    { quest = { id = 819, state = "completed" } },
+                },
+            },
+            text = "Accept Chen's Empty Keg from Brewmaster Drohn in Ratchet.",
+            complete = QuestState(821, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6229, 0.3837, "Brewmaster Drohn",
+                    "Travel to Brewmaster Drohn."),
+            },
+        },
+        {
+            id = "accept-865-raptor-horns",
+            kind = "accept",
+            priority = 940,
+            text = "Accept Raptor Horns from Mebok Mizzyrix in Ratchet.",
+            complete = QuestState(865, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6236, 0.3767, "Mebok Mizzyrix",
+                    "Travel to Mebok Mizzyrix."),
+            },
+        },
+        {
+            id = "accept-895-wanted-baron-longshore",
+            kind = "accept",
+            priority = 950,
+            text = "Accept WANTED: Baron Longshore in Ratchet.",
+            complete = QuestState(895, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3750, "Ratchet",
+                    "Travel to Ratchet."),
+            },
+        },
+        {
+            id = "accept-894-samophlange",
+            kind = "accept",
+            priority = 960,
+            text = "Accept Samophlange from Sputtervalve in Ratchet.",
+            complete = QuestState(894, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6295, 0.3723, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
+            id = "accept-887-southsea-freebooters",
+            kind = "accept",
+            priority = 970,
+            text = "Accept Southsea Freebooters from Gazlowe in Ratchet.",
+            complete = QuestState(887, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-1492-wharfmaster-dizzywig",
+            kind = "turnin",
+            priority = 980,
+            text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig in Ratchet.",
+            dependsOn = { "accept-1492-wharfmaster-dizzywig" },
+            complete = QuestState(1492, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6334, 0.3844, "Wharfmaster Dizzywig",
+                    "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "accept-896-miner-s-fortune",
+            kind = "accept",
+            priority = 990,
+            text = "Accept Miner's Fortune from Wharfmaster Dizzywig in Ratchet.",
+            complete = QuestState(896, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6334, 0.3844, "Wharfmaster Dizzywig",
+                    "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "travel-895-the-merchant-coast",
+            kind = "travel",
+            priority = 1000,
+            text = "Travel to The Merchant Coast.",
+            route = {
+                Point(MAP.BARRENS, 0.6270, 0.4980, "The Merchant Coast",
+                    "Travel to The Merchant Coast."),
+            },
+        },
+        {
+            id = "objective-895-wanted-baron-longshore",
+            kind = "objective",
+            priority = 1010,
+            text = "Kill Baron Longshore and collect Cap'n Garvey's Head in The Merchant Coast.",
+            dependsOn = { "accept-895-wanted-baron-longshore" },
+            complete = QuestState(895, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6420, 0.4720, "Continue toward WANTED: Baron Longshore",
+                    "Continue toward WANTED: Baron Longshore."),
+                Point(MAP.BARRENS, 0.6270, 0.4980, "Baron Longshore",
+                    "Travel to Baron Longshore."),
+            },
+        },
+        {
+            id = "objective-887-southsea-freebooters",
+            kind = "objective",
+            priority = 1020,
+            text = "Kill 12 Southsea Brigand and 6 Southsea Cannoneer along The Merchant Coast.",
+            dependsOn = { "accept-887-southsea-freebooters" },
+            complete = QuestState(887, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6400, 0.4500, "Southsea Brigand",
+                    "Travel to Southsea Brigand."),
+            },
+        },
+        {
+            id = "travel-890-ratchet",
+            kind = "travel",
+            priority = 1030,
+            text = "Travel to Ratchet.",
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Ratchet",
+                    "Travel to Ratchet."),
+            },
+        },
+        {
+            id = "turnin-887-southsea-freebooters",
+            kind = "turnin",
+            priority = 1040,
+            text = "Turn in Southsea Freebooters to Gazlowe in Ratchet.",
+            dependsOn = { "objective-887-southsea-freebooters" },
+            complete = QuestState(887, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "accept-890-the-missing-shipment",
+            kind = "accept",
+            priority = 1050,
+            text = "Accept The Missing Shipment from Gazlowe in Ratchet.",
+            complete = QuestState(890, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-895-wanted-baron-longshore",
+            kind = "turnin",
+            priority = 1060,
+            text = "Turn in WANTED: Baron Longshore to Gazlowe in Ratchet.",
+            dependsOn = { "objective-895-wanted-baron-longshore" },
+            complete = QuestState(895, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-890-the-missing-shipment",
+            kind = "turnin",
+            priority = 1070,
+            text = "Turn in The Missing Shipment to Wharfmaster Dizzywig in Ratchet.",
+            dependsOn = { "accept-890-the-missing-shipment" },
+            complete = QuestState(890, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6334, 0.3844, "Wharfmaster Dizzywig",
+                    "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "accept-892-the-missing-shipment",
+            kind = "accept",
+            priority = 1080,
+            text = "Accept The Missing Shipment from Wharfmaster Dizzywig in Ratchet.",
+            complete = QuestState(892, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6334, 0.3844, "Wharfmaster Dizzywig",
+                    "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "turnin-892-the-missing-shipment",
+            kind = "turnin",
+            priority = 1090,
+            text = "Turn in The Missing Shipment to Gazlowe in Ratchet.",
+            dependsOn = { "accept-892-the-missing-shipment" },
+            complete = QuestState(892, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "accept-888-stolen-booty",
+            kind = "accept",
+            priority = 1100,
+            text = "Accept Stolen Booty from Gazlowe in Ratchet.",
+            complete = QuestState(888, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "travel-888-the-merchant-coast",
+            kind = "travel",
+            priority = 1110,
+            text = "Travel to The Merchant Coast.",
+            route = {
+                Point(MAP.BARRENS, 0.6359, 0.4928, "The Merchant Coast",
+                    "Travel to The Merchant Coast."),
+            },
+        },
+        {
+            id = "objective-888-2-telescopic-lens",
+            kind = "objective",
+            priority = 1120,
+            text = "Click on Fragile - Do Not Drop to collect Telescopic Lens in The Merchant Coast.",
+            dependsOn = { "accept-888-stolen-booty" },
+            complete = QuestObjective(888, 2),
+            route = {
+                Point(MAP.BARRENS, 0.6359, 0.4928, "Continue toward Telescopic Lens",
+                    "Continue toward Telescopic Lens."),
+                Point(MAP.BARRENS, 0.6359, 0.4928, "The Merchant Coast",
+                    "Travel to The Merchant Coast."),
+            },
+        },
+        {
+            id = "objective-888-1-shipment-of-boots",
+            kind = "objective",
+            priority = 1130,
+            text = "Click on Drizzlik's Emporium to collect Shipment of Boots in The Merchant Coast.",
+            dependsOn = { "accept-888-stolen-booty" },
+            complete = QuestObjective(888, 1),
+            route = {
+                Point(MAP.BARRENS, 0.6261, 0.4974, "Continue toward Shipment of Boots",
+                    "Continue toward Shipment of Boots."),
+                Point(MAP.BARRENS, 0.6261, 0.4962, "The Merchant Coast",
+                    "Travel to The Merchant Coast."),
+            },
+        },
+        {
+            id = "travel-870-the-crossroads",
+            kind = "travel",
+            priority = 1140,
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-872-the-disruption-ends",
+            kind = "turnin",
+            priority = 1150,
+            text = "Turn in The Disruption Ends to Thork in The Crossroads.",
+            dependsOn = { "objective-872-3-kreenig-snarlsnout", "objective-872-the-disruption-ends" },
+            complete = QuestState(872, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "turnin-5041-supplies-for-the-crossroads",
+            kind = "turnin",
+            priority = 1160,
+            text = "Turn in Supplies for the Crossroads to Thork in The Crossroads.",
+            dependsOn = { "objective-5041-supplies-for-the-crossroads" },
+            complete = QuestState(5041, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "travel-thunder-bluff",
+            kind = "travel",
+            priority = 1170,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { ["not"] = { quest = { id = 6126, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Thunder Bluff.",
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7649, 0.2748, "Thunder Bluff",
+                    "Travel to Thunder Bluff."),
+            },
+        },
+        {
+            id = "accept-6126-lessons-anew",
+            kind = "accept",
+            priority = 1180,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Lessons Anew from Turak Runetotem in Elder Rise.",
+            complete = QuestState(6126, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7649, 0.2748, "Turak Runetotem",
+                    "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "travel-nighthaven",
+            kind = "travel",
+            priority = 1190,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { ["not"] = { quest = { id = 6127, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Nighthaven.",
+            route = {
+                Point(MAP.MOONGLADE, 0.5617, 0.3062, "Nighthaven",
+                    "Travel to Nighthaven."),
+            },
+        },
+        {
+            id = "turnin-6126-lessons-anew",
+            kind = "turnin",
+            priority = 1200,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Lessons Anew to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-6126-lessons-anew" },
+            complete = QuestState(6126, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5617, 0.3062, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-6127-the-principal-source",
+            kind = "accept",
+            priority = 1210,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept The Principal Source from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(6127, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5617, 0.3062, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "travel-6127-dreadmist-peak",
+            kind = "travel",
+            priority = 1220,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Dreadmist Peak.",
+            route = {
+                Point(MAP.BARRENS, 0.4840, 0.1890, "Dreadmist Peak",
+                    "Travel to Dreadmist Peak."),
+            },
+        },
+        {
+            id = "objective-6127-the-principal-source",
+            kind = "objective",
+            priority = 1230,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use the Empty Dreadmist Peak Sampler to draw a sample of water from a pool at the top of Dreadmist Peak.",
+            dependsOn = { "accept-6127-the-principal-source" },
+            complete = QuestState(6127, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4840, 0.1890, "Dreadmist Peak",
+                    "Travel to Dreadmist Peak."),
+            },
+        },
+        {
+            id = "travel-6128-the-crossroads",
+            kind = "travel",
+            priority = 1240,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5225, 0.3192, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-6127-the-principal-source",
+            kind = "turnin",
+            priority = 1250,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in The Principal Source to Tonga Runetotem in The Crossroads.",
+            dependsOn = { "objective-6127-the-principal-source" },
+            complete = QuestState(6127, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5225, 0.3192, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-6128-gathering-the-cure",
+            kind = "accept",
+            priority = 1260,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Gathering the Cure from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(6128, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5225, 0.3192, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-850-kolkar-leaders",
+            kind = "accept",
+            priority = 1270,
+            text = "Accept Kolkar Leaders from Regthar Deathgate in The Barrens.",
+            complete = QuestState(850, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "accept-855-centaur-bracers",
+            kind = "accept",
+            priority = 1280,
+            text = "Accept Centaur Bracers from Regthar Deathgate in The Barrens.",
+            complete = QuestState(855, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "travel-870-the-forgotten-pools",
+            kind = "travel",
+            priority = 1290,
+            text = "Travel to The Forgotten Pools.",
+            route = {
+                Point(MAP.BARRENS, 0.4499, 0.2409, "The Forgotten Pools",
+                    "Travel to The Forgotten Pools."),
+            },
+        },
+        {
+            id = "objective-870-the-forgotten-pools",
+            kind = "objective",
+            priority = 1300,
+            text = "Swim to the bubble in the middle of the pool in The Forgotten Pools.",
+            dependsOn = { "accept-870-the-forgotten-pools" },
+            complete = QuestState(870, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4499, 0.2250, "The Forgotten Pools",
+                    "Travel to The Forgotten Pools."),
+            },
+        },
+        {
+            id = "objective-848-fungal-spores",
+            kind = "objective",
+            priority = 1310,
+            text = "Collect 4 Fungal Spores from Laden Mushroom in The Forgotten Pools.",
+            dependsOn = { "accept-848-fungal-spores" },
+            complete = QuestState(848, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4476, 0.2190, "The Forgotten Pools",
+                    "Travel to The Forgotten Pools."),
+            },
+        },
+        {
+            id = "travel-848-the-barrens",
+            kind = "travel",
+            priority = 1320,
+            text = "Travel to The Barrens.",
+            route = {
+                Point(MAP.BARRENS, 0.4287, 0.2352, "The Barrens",
+                    "Travel to The Barrens."),
+            },
+        },
+        {
+            id = "objective-850-kolkar-leaders",
+            kind = "objective",
+            priority = 1330,
+            text = "Kill Barak Kodobane and collect Kodobane's Head.",
+            dependsOn = { "accept-850-kolkar-leaders" },
+            complete = QuestState(850, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4287, 0.2352, "Barak Kodobane",
+                    "Travel to Barak Kodobane."),
+            },
+        },
+        {
+            id = "objective-855-centaur-bracers",
+            kind = "objective",
+            priority = 1340,
+            text = "Kill Kolkar enemies and collect 15 Centaur Bracers near in The Forgotten Pools.",
+            dependsOn = { "accept-855-centaur-bracers" },
+            complete = QuestState(855, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4510, 0.2072, "Kolkar Stormer",
+                    "Travel to Kolkar Stormer."),
+            },
+        },
+        {
+            id = "travel-867-the-dry-hills",
+            kind = "travel",
+            priority = 1350,
+            text = "Travel to The Dry Hills.",
+            route = {
+                Point(MAP.BARRENS, 0.4038, 0.1787, "The Dry Hills",
+                    "Travel to The Dry Hills."),
+            },
+        },
+        {
+            id = "objective-867-harpy-raiders",
+            kind = "objective",
+            priority = 1360,
+            text = "Kill Witchwing enemies and collect 8 Witchwing Talon in the northwest corner of the Barrens.",
+            dependsOn = { "accept-867-harpy-raiders" },
+            complete = QuestState(867, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.3800, 0.1700, "Witchwing Roguefeather",
+                    "Travel to Witchwing Roguefeather."),
+            },
+        },
+        {
+            id = "turnin-850-kolkar-leaders",
+            kind = "turnin",
+            priority = 1370,
+            text = "Turn in Kolkar Leaders to Regthar Deathgate in The Barrens.",
+            dependsOn = { "objective-850-kolkar-leaders" },
+            complete = QuestState(850, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "accept-851-verog-the-dervish",
+            kind = "accept",
+            priority = 1380,
+            text = "Accept Verog the Dervish from Regthar Deathgate in The Barrens.",
+            complete = QuestState(851, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "turnin-855-centaur-bracers",
+            kind = "turnin",
+            priority = 1390,
+            text = "Turn in Centaur Bracers to Regthar Deathgate in The Barrens.",
+            dependsOn = { "objective-855-centaur-bracers" },
+            complete = QuestState(855, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "travel-867-the-barrens",
+            kind = "travel",
+            priority = 1400,
+            text = "Travel to The Barrens.",
+            route = {
+                Point(MAP.BARRENS, 0.4287, 0.2352, "The Barrens",
+                    "Travel to The Barrens."),
+            },
+        },
+        {
+            id = "objective-845-the-zhevra",
+            kind = "objective",
+            priority = 1410,
+            text = "Kill Zhevra Runner for 4 Zhevra Hooves in The Barrens.",
+            dependsOn = { "accept-845-the-zhevra" },
+            complete = QuestState(845, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4579, 0.3002, "Zhevra Runner",
+                    "Travel to Zhevra Runner."),
+            },
+        },
+        {
+            id = "objective-821-2-greater-plainstrider",
+            kind = "objective",
+            priority = 1420,
+            conditions = {
+                all = {
+                    { quest = { id = 819, state = "completed" } },
+                },
+            },
+            text = "Kill Greater Plainstrider and collect 5 Plainstrider Kidney in The Barrens.",
+            dependsOn = { "accept-821-chen-s-empty-keg" },
+            complete = QuestObjective(821, 2),
+            route = {
+                Point(MAP.BARRENS, 0.4727, 0.1420, "Greater Plainstrider",
+                    "Travel to Greater Plainstrider."),
+            },
+        },
+        {
+            id = "objective-821-1-savannah-prowler",
+            kind = "objective",
+            priority = 1430,
+            conditions = {
+                all = {
+                    { quest = { id = 819, state = "completed" } },
+                },
+            },
+            text = "Kill Savannah Prowler and collect 5 Savannah Lion Tusk in The Barrens.",
+            dependsOn = { "accept-821-chen-s-empty-keg" },
+            complete = QuestObjective(821, 1),
+            route = {
+                Point(MAP.BARRENS, 0.4080, 0.2639, "Savannah Prowler",
+                    "Travel to Savannah Prowler."),
+            },
+        },
+        {
+            id = "objective-6128-2-lost-barrens-kodo",
+            kind = "objective",
+            priority = 1440,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Find and kill Lost Barrens Kodo and collect 5 Kodo Horn, the Kodos are very scattered around The Barrens it will take a while to complete this quest Gather 5 Earthroot with Herb Gathering in The Barrens or purchase from the auction house.",
+            dependsOn = { "accept-6128-gathering-the-cure" },
+            complete = QuestObjective(6128, 2),
+            route = {
+                Point(MAP.BARRENS, 0.5446, 0.4042, "Continue toward Lost Barrens Kodo",
+                    "Continue toward Lost Barrens Kodo."),
+                Point(MAP.BARRENS, 0.5474, 0.3969, "Continue toward Lost Barrens Kodo",
+                    "Continue toward Lost Barrens Kodo."),
+                Point(MAP.BARRENS, 0.5260, 0.4336, "Continue toward Lost Barrens Kodo",
+                    "Continue toward Lost Barrens Kodo."),
+                Point(MAP.BARRENS, 0.4238, 0.3763, "Lost Barrens Kodo",
+                    "Travel to Lost Barrens Kodo."),
+            },
+        },
+        {
+            id = "objective-6123-1-5-item-2449",
+            kind = "objective",
+            priority = 1450,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Gather 5 Earthroot with Herb Gathering in The Barrens or purchase from the auction house.",
+            complete = QuestObjective(6123, 1),
+        },
+        {
+            id = "travel-1062-honor-s-stand",
+            kind = "travel",
+            priority = 1460,
+            text = "Travel to Honor's Stand. Take the road west out of the Crossroads to the edge of Stonetalon Mountains.",
+            route = {
+                Point(MAP.BARRENS, 0.3529, 0.2787, "Honor's Stand",
+                    "Travel to Honor's Stand."),
+            },
+        },
+        {
+            id = "accept-1062-goblin-invaders",
+            kind = "accept",
+            priority = 1470,
+            text = "Accept Goblin Invaders from Seereth Stonebreak in The Barrens.",
+            complete = QuestState(1062, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.3529, 0.2787, "Seereth Stonebreak",
+                    "Travel to Seereth Stonebreak."),
+            },
+        },
+        {
+            id = "accept-6548-avenge-my-village",
+            kind = "accept",
+            priority = 1480,
+            text = "Accept Avenge My Village from Makaba Flathoof in The Barrens.",
+            complete = QuestState(6548, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "objective-6548-avenge-my-village",
+            kind = "objective",
+            priority = 1490,
+            text = "Kill 8 Grimtotem Ruffian and 6 Grimtotem Mercenary in the Greatwood Vale.",
+            dependsOn = { "accept-6548-avenge-my-village" },
+            complete = QuestState(6548, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.8100, 0.9100, "Grimtotem Ruffian",
+                    "Travel to Grimtotem Ruffian."),
+            },
+        },
+        {
+            id = "turnin-6548-avenge-my-village",
+            kind = "turnin",
+            priority = 1500,
+            text = "Turn in Avenge My Village to Makaba Flathoof in The Barrens.",
+            dependsOn = { "objective-6548-avenge-my-village" },
+            complete = QuestState(6548, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "accept-6629-kill-grundig-darkcloud",
+            kind = "accept",
+            priority = 1510,
+            text = "Accept Kill Grundig Darkcloud from Makaba Flathoof in The Barrens.",
+            complete = QuestState(6629, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "objective-6629-1-grundig-darkcloud",
+            kind = "objective",
+            priority = 1520,
+            text = "Kill Grundig Darkcloud and 6 Grimtotem Brute at the Grimtotem Post.",
+            dependsOn = { "accept-6629-kill-grundig-darkcloud" },
+            complete = QuestObjective(6629, 1),
+            route = {
+                Point(MAP.STONETALON, 0.7150, 0.8708, "Continue toward Grundig Darkcloud",
+                    "Continue toward Grundig Darkcloud."),
+                Point(MAP.STONETALON, 0.7360, 0.8610, "Grundig Darkcloud",
+                    "Travel to Grundig Darkcloud."),
+            },
+        },
+        {
+            id = "accept-6523-protect-kaya",
+            kind = "accept",
+            priority = 1530,
+            text = "Accept Protect Kaya from Kaya Flathoof in Grimtotem Post.",
+            complete = QuestState(6523, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.7349, 0.8565, "Kaya Flathoof",
+                    "Travel to Kaya Flathoof."),
+            },
+        },
+        {
+            id = "objective-6523-protect-kaya",
+            kind = "objective",
+            priority = 1540,
+            text = "Escort Kaya Flathoof until objective is complete in Camp Aparaje 3 Mobs will ambush near the end of the escort, Kaya Flathoof will be able to solo 1 mob on her own.",
+            dependsOn = { "accept-6523-protect-kaya" },
+            complete = QuestState(6523, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.7150, 0.8708, "Continue toward Protect Kaya",
+                    "Continue toward Protect Kaya."),
+                Point(MAP.STONETALON, 0.7755, 0.9073, "Kaya Flathoof",
+                    "Travel to Kaya Flathoof."),
+            },
+        },
+        {
+            id = "objective-6629-grimtotem-brute",
+            kind = "objective",
+            priority = 1550,
+            text = "Kill 6 Grimtotem Brute at the Grimtotem Post.",
+            dependsOn = { "accept-6629-kill-grundig-darkcloud" },
+            complete = QuestState(6629, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.7755, 0.9073, "Grimtotem Brute",
+                    "Travel to Grimtotem Brute."),
+            },
+        },
+        {
+            id = "turnin-6523-protect-kaya",
+            kind = "turnin",
+            priority = 1560,
+            text = "Turn in Protect Kaya to Makaba Flathoof in The Barrens.",
+            dependsOn = { "objective-6523-protect-kaya" },
+            complete = QuestState(6523, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "accept-6401-kaya-s-alive",
+            kind = "accept",
+            priority = 1570,
+            text = "Accept Kaya's Alive from Makaba Flathoof in The Barrens.",
+            complete = QuestState(6401, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "turnin-6629-kill-grundig-darkcloud",
+            kind = "turnin",
+            priority = 1580,
+            text = "Turn in Kill Grundig Darkcloud to Makaba Flathoof in The Barrens.",
+            dependsOn = { "objective-6629-1-grundig-darkcloud", "objective-6629-grimtotem-brute" },
+            complete = QuestState(6629, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
+                    "Travel to Makaba Flathoof."),
+            },
+        },
+        {
+            id = "travel-851-the-barrens",
+            kind = "travel",
+            priority = 1590,
+            text = "Travel to The Barrens.",
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "The Barrens",
+                    "Travel to The Barrens."),
+            },
+        },
+        {
+            id = "travel-903-the-crossroads",
+            kind = "travel",
+            priority = 1600,
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-848-fungal-spores",
+            kind = "turnin",
+            priority = 1610,
+            text = "Turn in Fungal Spores to Apothecary Helbrim in The Crossroads.",
+            dependsOn = { "objective-848-fungal-spores" },
+            complete = QuestState(848, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5147, 0.3017, "Apothecary Helbrim",
+                    "Travel to Apothecary Helbrim."),
+            },
+        },
+        {
+            id = "turnin-867-harpy-raiders",
+            kind = "turnin",
+            priority = 1620,
+            text = "Turn in Harpy Raiders to Darsok Swiftdagger in The Crossroads.",
+            dependsOn = { "objective-867-harpy-raiders" },
+            complete = QuestState(867, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-875-harpy-lieutenants",
+            kind = "accept",
+            priority = 1630,
+            text = "Accept Harpy Lieutenants from Darsok Swiftdagger in The Crossroads.",
+            complete = QuestState(875, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-3281-stolen-silver",
+            kind = "accept",
+            priority = 1640,
+            text = "Accept Stolen Silver from Gazrog in The Crossroads.",
+            complete = QuestState(3281, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5195, 0.3032, "Gazrog",
+                    "Travel to Gazrog."),
+            },
+        },
+        {
+            id = "turnin-845-the-zhevra",
+            kind = "turnin",
+            priority = 1650,
+            text = "Turn in The Zhevra to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-845-the-zhevra" },
+            complete = QuestState(845, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-903-prowlers-of-the-barrens",
+            kind = "accept",
+            priority = 1660,
+            text = "Accept Prowlers of the Barrens from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(903, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "turnin-870-the-forgotten-pools",
+            kind = "turnin",
+            priority = 1670,
+            text = "Turn in The Forgotten Pools to Tonga Runetotem in The Crossroads.",
+            dependsOn = { "objective-870-the-forgotten-pools" },
+            complete = QuestState(870, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-877-the-stagnant-oasis",
+            kind = "accept",
+            priority = 1680,
+            text = "Accept The Stagnant Oasis from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(877, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "turnin-6128-gathering-the-cure",
+            kind = "turnin",
+            priority = 1690,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Gathering the Cure to Tonga Runetotem in The Crossroads.",
+            dependsOn = { "objective-6128-2-lost-barrens-kodo" },
+            complete = QuestState(6128, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5224, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-6129-curing-the-sick",
+            kind = "accept",
+            priority = 1700,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Curing the Sick from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(6129, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5224, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "objective-903-prowlers-of-the-barrens",
+            kind = "objective",
+            priority = 1710,
+            text = "Kill Savannah Prowler and collect 7 Huntress Claws in The Barrens.",
+            dependsOn = { "accept-903-prowlers-of-the-barrens" },
+            complete = QuestState(903, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4090, 0.2340, "Savannah Prowler",
+                    "Travel to Savannah Prowler."),
+            },
+        },
+        {
+            id = "travel-875-the-dry-hills",
+            kind = "travel",
+            priority = 1720,
+            text = "Travel to The Dry Hills.",
+            route = {
+                Point(MAP.BARRENS, 0.3974, 0.1729, "The Dry Hills",
+                    "Travel to The Dry Hills."),
+            },
+        },
+        {
+            id = "objective-875-harpy-lieutenants",
+            kind = "objective",
+            priority = 1730,
+            text = "Kill Witchwing Slayer and collect 6 Harpy Lieutenant Ring in The Dry Hills.",
+            dependsOn = { "accept-875-harpy-lieutenants" },
+            complete = QuestState(875, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.3974, 0.1729, "Witchwing Slayer",
+                    "Travel to Witchwing Slayer."),
+            },
+        },
+        {
+            id = "travel-875-the-barrens",
+            kind = "travel",
+            priority = 1740,
+            text = "Travel to The Barrens.",
+        },
+        {
+            id = "objective-6129-curing-the-sick",
+            kind = "objective",
+            priority = 1750,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use the Curative Animal Salve on 10 Sickly Gazelle that are located throughout the northern part of the Barrens.",
+            dependsOn = { "accept-6129-curing-the-sick" },
+            complete = QuestState(6129, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5000, 0.2320, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.4560, 0.2660, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.4880, 0.2960, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5040, 0.3600, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5460, 0.3180, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5360, 0.2680, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5420, 0.2180, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5040, 0.1520, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5360, 0.1240, "Continue toward Curing the Sick",
+                    "Continue toward Curing the Sick."),
+                Point(MAP.BARRENS, 0.5680, 0.1680, "Sickly Gazelle",
+                    "Travel to Sickly Gazelle."),
+            },
+        },
+        {
+            id = "travel-6130-nighthaven",
+            kind = "travel",
+            priority = 1760,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Nighthaven.",
+            route = {
+                Point(MAP.MOONGLADE, 0.5627, 0.3062, "Nighthaven",
+                    "Travel to Nighthaven."),
+            },
+        },
+        {
+            id = "turnin-6129-curing-the-sick",
+            kind = "turnin",
+            priority = 1770,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Curing the Sick to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "objective-6129-curing-the-sick" },
+            complete = QuestState(6129, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5627, 0.3062, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-6130-power-over-poison",
+            kind = "accept",
+            priority = 1780,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Power over Poison from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(6130, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5627, 0.3062, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "travel-elder-rise",
+            kind = "travel",
+            priority = 1790,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Elder Rise.",
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7636, 0.2720, "Elder Rise",
+                    "Travel to Elder Rise."),
+            },
+        },
+        {
+            id = "turnin-6130-power-over-poison",
+            kind = "turnin",
+            priority = 1800,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Power over Poison to Dendrite Starblaze in Elder Rise.",
+            dependsOn = { "accept-6130-power-over-poison" },
+            complete = QuestState(6130, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7636, 0.2720, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-27-a-lesson-to-learn",
+            kind = "accept",
+            priority = 1810,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept A Lesson to Learn from Turak Runetotem in Elder Rise.",
+            complete = QuestState(27, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7652, 0.2745, "Turak Runetotem",
+                    "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "travel-28-nighthaven",
+            kind = "travel",
+            priority = 1820,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Nighthaven.",
+            route = {
+                Point(MAP.MOONGLADE, 0.5622, 0.3065, "Nighthaven",
+                    "Travel to Nighthaven."),
+            },
+        },
+        {
+            id = "turnin-27-a-lesson-to-learn",
+            kind = "turnin",
+            priority = 1830,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in A Lesson to Learn to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-27-a-lesson-to-learn" },
+            complete = QuestState(27, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5622, 0.3065, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-28-trial-of-the-lake",
+            kind = "accept",
+            priority = 1840,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Trial of the Lake from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(28, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5622, 0.3065, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "travel-28-shrine-of-remulos",
+            kind = "travel",
+            priority = 1850,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Shrine of Remulos.",
+            route = {
+                Point(MAP.MOONGLADE, 0.3622, 0.4135, "Shrine of Remulos",
+                    "Travel to Shrine of Remulos."),
+            },
+        },
+        {
+            id = "objective-28-trial-of-the-lake",
+            kind = "objective",
+            priority = 1860,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use Spirit Ichor in Shrine of Remulos.",
+            dependsOn = { "accept-28-trial-of-the-lake" },
+            complete = QuestState(28, "complete"),
+            route = {
+                Point(MAP.MOONGLADE, 0.3622, 0.4135, "Shrine of Remulos",
+                    "Travel to Shrine of Remulos."),
+            },
+        },
+        {
+            id = "turnin-28-trial-of-the-lake",
+            kind = "turnin",
+            priority = 1870,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Trial of the Lake to Dendrite Starblaze in Shrine of Remulos.",
+            dependsOn = { "objective-28-trial-of-the-lake" },
+            complete = QuestState(28, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.3651, 0.4016, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-30-trial-of-the-sea-lion",
+            kind = "accept",
+            priority = 1880,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Trial of the Sea Lion from Tajarri in Shrine of Remulos.",
+            complete = QuestState(30, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.3651, 0.4016, "Tajarri",
+                    "Travel to Tajarri."),
+            },
+        },
+        {
+            id = "travel-858-the-sludge-fen",
+            kind = "travel",
+            priority = 1890,
+            text = "Travel to The Sludge Fen.",
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "turnin-894-samophlange",
+            kind = "turnin",
+            priority = 1900,
+            text = "Turn in Samophlange in The Sludge Fen.",
+            dependsOn = { "accept-894-samophlange" },
+            complete = QuestState(894, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "accept-900-samophlange",
+            kind = "accept",
+            priority = 1910,
+            text = "Accept Samophlange in The Sludge Fen.",
+            complete = QuestState(900, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "objective-900-2-shut-off-fuel-control-valve",
+            kind = "objective",
+            priority = 1920,
+            text = "Click Regulator Valve in The Sludge Fen.",
+            dependsOn = { "accept-900-samophlange" },
+            complete = QuestObjective(900, 2),
+            route = {
+                Point(MAP.BARRENS, 0.5239, 0.1137, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "objective-900-3-shut-off-regulator-valve",
+            kind = "objective",
+            priority = 1930,
+            text = "Click Regulator Valve in The Sludge Fen.",
+            dependsOn = { "accept-900-samophlange" },
+            complete = QuestObjective(900, 3),
+            route = {
+                Point(MAP.BARRENS, 0.5229, 0.1139, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "objective-900-1-shut-off-main-control-valve",
+            kind = "objective",
+            priority = 1940,
+            text = "Click Main Control Valve in The Sludge Fen.",
+            dependsOn = { "accept-900-samophlange" },
+            complete = QuestObjective(900, 1),
+            route = {
+                Point(MAP.BARRENS, 0.5231, 0.1161, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "turnin-900-samophlange",
+            kind = "turnin",
+            priority = 1950,
+            text = "Turn in Samophlange in The Sludge Fen.",
+            dependsOn = { "objective-900-2-shut-off-fuel-control-valve", "objective-900-3-shut-off-regulator-valve", "objective-900-1-shut-off-main-control-valve" },
+            complete = QuestState(900, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "accept-901-samophlange",
+            kind = "accept",
+            priority = 1960,
+            text = "Accept Samophlange in The Sludge Fen.",
+            complete = QuestState(901, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "objective-901-samophlange",
+            kind = "objective",
+            priority = 1970,
+            text = "Kill Tinkerer Sniggles in the hut on the hill.",
+            dependsOn = { "accept-901-samophlange" },
+            complete = QuestState(901, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5290, 0.1060, "Tinkerer Sniggles",
+                    "Travel to Tinkerer Sniggles."),
+            },
+        },
+        {
+            id = "turnin-901-samophlange",
+            kind = "turnin",
+            priority = 1980,
+            text = "Turn in Samophlange in The Sludge Fen.",
+            dependsOn = { "objective-901-samophlange" },
+            complete = QuestState(901, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "accept-902-samophlange",
+            kind = "accept",
+            priority = 1990,
+            text = "Accept Samophlange in The Sludge Fen.",
+            complete = QuestState(902, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5250, 0.1170, "The Sludge Fen",
+                    "Travel to The Sludge Fen."),
+            },
+        },
+        {
+            id = "accept-858-ignition",
+            kind = "accept",
+            priority = 2000,
+            text = "Accept Ignition from Wizzlecrank's Shredder in The Sludge Fen.",
+            complete = QuestState(858, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5648, 0.0745, "Wizzlecrank's Shredder",
+                    "Travel to Wizzlecrank's Shredder."),
+            },
+        },
+        {
+            id = "objective-858-ignition",
+            kind = "objective",
+            priority = 2010,
+            text = "Go up the ramp of the big structure in the water, kill Supervisor Lugwizzle and collect Ignition Key in The Sludge Fen.",
+            dependsOn = { "accept-858-ignition" },
+            complete = QuestState(858, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5617, 0.0825, "Supervisor Lugwizzle",
+                    "Travel to Supervisor Lugwizzle."),
+            },
+        },
+        {
+            id = "turnin-858-ignition",
+            kind = "turnin",
+            priority = 2020,
+            text = "Turn in Ignition to Wizzlecrank's Shredder in The Sludge Fen.",
+            dependsOn = { "objective-858-ignition" },
+            complete = QuestState(858, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5648, 0.0745, "Wizzlecrank's Shredder",
+                    "Travel to Wizzlecrank's Shredder."),
+            },
+        },
+        {
+            id = "accept-863-the-escape",
+            kind = "accept",
+            priority = 2030,
+            text = "Accept The Escape from Wizzlecrank's Shredder in The Sludge Fen.",
+            complete = QuestState(863, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5648, 0.0745, "Wizzlecrank's Shredder",
+                    "Travel to Wizzlecrank's Shredder."),
+            },
+        },
+        {
+            id = "objective-863-the-escape",
+            kind = "objective",
+            priority = 2040,
+            text = "Protect Wizzlecrank's Shredder on the way to Sputtervalve in Ratchet.",
+            dependsOn = { "accept-863-the-escape" },
+            complete = QuestState(863, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5650, 0.0750, "Wizzlecrank's Shredder",
+                    "Travel to Wizzlecrank's Shredder."),
+            },
+        },
+        {
+            id = "objective-896-miner-s-fortune",
+            kind = "objective",
+            priority = 2050,
+            text = "Collect the Cats Eye Emerald from one of the Venture Co. Overseer or Venture Co. Enforcer.",
+            dependsOn = { "accept-896-miner-s-fortune" },
+            complete = QuestState(896, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6150, 0.0620, "Venture Co. Overseer",
+                    "Travel to Venture Co. Overseer."),
+            },
+        },
+        {
+            id = "travel-891-ratchet",
+            kind = "travel",
+            priority = 2060,
+            text = "Travel to Ratchet.",
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3750, "Ratchet",
+                    "Travel to Ratchet."),
+            },
+        },
+        {
+            id = "turnin-888-stolen-booty",
+            kind = "turnin",
+            priority = 2070,
+            text = "Turn in Stolen Booty to Gazlowe in Ratchet.",
+            dependsOn = { "objective-888-2-telescopic-lens", "objective-888-1-shipment-of-boots" },
+            complete = QuestState(888, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-863-the-escape",
+            kind = "turnin",
+            priority = 2080,
+            text = "Turn in The Escape to Sputtervalve in Ratchet.",
+            dependsOn = { "objective-863-the-escape" },
+            complete = QuestState(863, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6295, 0.3723, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
+            id = "turnin-902-samophlange",
+            kind = "turnin",
+            priority = 2090,
+            text = "Turn in Samophlange to Sputtervalve in Ratchet.",
+            dependsOn = { "accept-902-samophlange" },
+            complete = QuestState(902, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6295, 0.3723, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
+            id = "accept-1483-ziz-fizziks",
+            kind = "accept",
+            priority = 2100,
+            text = "Accept Ziz Fizziks from Sputtervalve in Ratchet.",
+            complete = QuestState(1483, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6295, 0.3723, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
+            id = "accept-3921-wenikee-boltbucket",
+            kind = "accept",
+            priority = 2110,
+            text = "Accept Wenikee Boltbucket from Sputtervalve in Ratchet.",
+            complete = QuestState(3921, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6298, 0.3717, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
+            id = "turnin-896-miner-s-fortune",
+            kind = "turnin",
+            priority = 2120,
+            text = "Turn in Miner's Fortune to Wharfmaster Dizzywig in Ratchet.",
+            dependsOn = { "objective-896-miner-s-fortune" },
+            complete = QuestState(896, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6334, 0.3844, "Wharfmaster Dizzywig",
+                    "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "accept-1069-deepmoss-spider-eggs",
+            kind = "accept",
+            priority = 2130,
+            text = "Accept Deepmoss Spider Eggs from Mebok Mizzyrix in Ratchet.",
+            complete = QuestState(1069, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6236, 0.3767, "Mebok Mizzyrix",
+                    "Travel to Mebok Mizzyrix."),
+            },
+        },
+        {
+            id = "accept-891-the-guns-of-northwatch",
+            kind = "accept",
+            priority = 2140,
+            text = "Accept The Guns of Northwatch from Captain Thalo'thas Brightsun in Ratchet.",
+            complete = QuestState(891, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6225, 0.3902, "Captain Thalo'thas Brightsun",
+                    "Travel to Captain Thalo'thas Brightsun."),
+            },
+        },
+        {
+            id = "turnin-821-chen-s-empty-keg",
+            kind = "turnin",
+            priority = 2150,
+            conditions = {
+                all = {
+                    { quest = { id = 819, state = "completed" } },
+                },
+            },
+            text = "Turn in Chen's Empty Keg to Brewmaster Drohn in Ratchet.",
+            dependsOn = { "objective-821-2-greater-plainstrider", "objective-821-1-savannah-prowler", "objective-821-3-stormsnout" },
+            complete = QuestState(821, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6228, 0.3835, "Brewmaster Drohn",
+                    "Travel to Brewmaster Drohn."),
+            },
+        },
+        {
+            id = "accept-822-chen-s-empty-keg",
+            kind = "accept",
+            priority = 2160,
+            conditions = {
+                all = {
+                    { quest = { id = 821, state = "completed" } },
+                },
+            },
+            text = "Accept Chen's Empty Keg from Brewmaster Drohn in Ratchet.",
+            complete = QuestState(822, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6228, 0.3835, "Brewmaster Drohn",
+                    "Travel to Brewmaster Drohn."),
+            },
+        },
+        {
+            id = "travel-30-silverpine-forest",
+            kind = "travel",
+            priority = 2170,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Silverpine Forest.",
+            route = {
+                Point(MAP.SILVERPINE, 0.2960, 0.2950, "Silverpine Forest",
+                    "Travel to Silverpine Forest."),
+            },
+        },
+        {
+            id = "travel-30-shrine-of-remulos",
+            kind = "travel",
+            priority = 2180,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Travel to Shrine of Remulos.",
+            route = {
+                Point(MAP.MOONGLADE, 0.3622, 0.4135, "Shrine of Remulos",
+                    "Travel to Shrine of Remulos."),
+            },
+        },
+        {
+            id = "objective-30-trial-of-the-sea-lion",
+            kind = "objective",
+            priority = 2190,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Use Half Pendant of Aquatic Agility to combine into Pendant of the Sea Lion in Shrine of Remulos.",
+            dependsOn = { "accept-30-trial-of-the-sea-lion" },
+            complete = QuestState(30, "complete"),
+            route = {
+                Point(MAP.MOONGLADE, 0.3625, 0.4124, "Shrine of Remulos",
+                    "Travel to Shrine of Remulos."),
+            },
+        },
+        {
+            id = "turnin-30-trial-of-the-sea-lion",
+            kind = "turnin",
+            priority = 2200,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Trial of the Sea Lion to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "objective-30-trial-of-the-sea-lion" },
+            complete = QuestState(30, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5618, 0.3065, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "accept-31-aquatic-form",
+            kind = "accept",
+            priority = 2210,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Accept Aquatic Form from Dendrite Starblaze in Nighthaven.",
+            complete = QuestState(31, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5618, 0.3065, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
+            id = "turnin-31-aquatic-form",
+            kind = "turnin",
+            priority = 2220,
+            conditions = {
+                all = {
+                    { class = 11 },
+                },
+            },
+            text = "Turn in Aquatic Form to Turak Runetotem in Elder Rise.",
+            dependsOn = { "accept-31-aquatic-form" },
+            complete = QuestState(31, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7646, 0.2732, "Turak Runetotem",
+                    "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "travel-877-the-stagnant-oasis",
+            kind = "travel",
+            priority = 2230,
+            text = "Travel to The Stagnant Oasis.",
+            route = {
+                Point(MAP.BARRENS, 0.5562, 0.4270, "The Stagnant Oasis",
+                    "Travel to The Stagnant Oasis."),
+            },
+        },
+        {
+            id = "objective-877-the-stagnant-oasis",
+            kind = "objective",
+            priority = 2240,
+            text = "Go to the fissure at the bottom of the lake at The Stagnant Oasis.",
+            dependsOn = { "accept-877-the-stagnant-oasis" },
+            complete = QuestState(877, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5562, 0.4270, "The Stagnant Oasis",
+                    "Travel to The Stagnant Oasis."),
+            },
+        },
+        {
+            id = "objective-851-verog-the-dervish",
+            kind = "objective",
+            priority = 2250,
+            text = "Kill the other Centaurs around the command tent until Verog the Dervish spawn. Kill Verog the Dervish when he appears and collect Verog's Head.",
+            dependsOn = { "accept-851-verog-the-dervish" },
+            complete = QuestState(851, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5278, 0.4179, "Verog the Dervish",
+                    "Travel to Verog the Dervish."),
+            },
+        },
+        {
+            id = "travel-852-the-crossroads",
+            kind = "travel",
+            priority = 2260,
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-877-the-stagnant-oasis",
+            kind = "turnin",
+            priority = 2270,
+            text = "Turn in The Stagnant Oasis to Tonga Runetotem in The Crossroads.",
+            dependsOn = { "objective-877-the-stagnant-oasis" },
+            complete = QuestState(877, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-880-altered-beings",
+            kind = "accept",
+            priority = 2280,
+            text = "Accept Altered Beings from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(880, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "turnin-903-prowlers-of-the-barrens",
+            kind = "turnin",
+            priority = 2290,
+            text = "Turn in Prowlers of the Barrens to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-903-prowlers-of-the-barrens" },
+            complete = QuestState(903, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-881-echeyakee",
+            kind = "accept",
+            priority = 2300,
+            text = "Accept Echeyakee from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(881, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-6541-report-to-kadrak",
+            kind = "accept",
+            priority = 2310,
+            text = "Accept Report to Kadrak from Thork in The Crossroads.",
+            complete = QuestState(6541, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
+                    "Travel to Thork."),
+            },
+        },
+        {
+            id = "turnin-875-harpy-lieutenants",
+            kind = "turnin",
+            priority = 2320,
+            text = "Turn in Harpy Lieutenants to Darsok Swiftdagger in The Crossroads.",
+            dependsOn = { "objective-875-harpy-lieutenants" },
+            complete = QuestState(875, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-876-serena-bloodfeather",
+            kind = "accept",
+            priority = 2330,
+            text = "Accept Serena Bloodfeather from Darsok Swiftdagger in The Crossroads.",
+            complete = QuestState(876, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "turnin-851-verog-the-dervish",
+            kind = "turnin",
+            priority = 2340,
+            text = "Turn in Verog the Dervish to Regthar Deathgate in The Barrens.",
+            dependsOn = { "objective-851-verog-the-dervish" },
+            complete = QuestState(851, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "accept-852-hezrul-bloodmark",
+            kind = "accept",
+            priority = 2350,
+            text = "Accept Hezrul Bloodmark from Regthar Deathgate in The Barrens.",
+            complete = QuestState(852, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2845, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+        {
+            id = "travel-876-the-dry-hills",
+            kind = "travel",
+            priority = 2360,
+            text = "Travel to The Dry Hills.",
+            route = {
+                Point(MAP.BARRENS, 0.3946, 0.1238, "The Dry Hills",
+                    "Travel to The Dry Hills."),
+            },
+        },
+        {
+            id = "objective-876-serena-bloodfeather",
+            kind = "objective",
+            priority = 2370,
+            text = "Kill Serena Bloodfeather in the northwest part of the Barrens in The Dry Hills.",
+            dependsOn = { "accept-876-serena-bloodfeather" },
+            complete = QuestState(876, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.3946, 0.1238, "Serena Bloodfeather",
+                    "Travel to Serena Bloodfeather."),
+            },
+        },
+        {
+            id = "objective-881-echeyakee",
+            kind = "objective",
+            priority = 2380,
+            text = "Go to Echeyakee's lair and use Horn of Echeyakee to summon kill Echeyakee and collect Echeyakee's Hide.",
+            dependsOn = { "accept-881-echeyakee" },
+            complete = QuestState(881, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5581, 0.1701, "Continue toward Echeyakee",
+                    "Continue toward Echeyakee."),
+                Point(MAP.BARRENS, 0.5580, 0.1706, "Echeyakee",
+                    "Travel to Echeyakee."),
+            },
+        },
+        {
+            id = "travel-the-crossroads-2",
+            kind = "travel",
+            priority = 2390,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 1060, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-881-echeyakee",
+            kind = "turnin",
+            priority = 2400,
+            text = "Turn in Echeyakee to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-881-echeyakee" },
+            complete = QuestState(881, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-905-the-angry-scytheclaws",
+            kind = "accept",
+            priority = 2410,
+            text = "Accept The Angry Scytheclaws from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(905, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "turnin-876-serena-bloodfeather",
+            kind = "turnin",
+            priority = 2420,
+            text = "Turn in Serena Bloodfeather to Darsok Swiftdagger in The Crossroads.",
+            dependsOn = { "objective-876-serena-bloodfeather" },
+            complete = QuestState(876, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-1060-letter-to-jin-zil",
+            kind = "accept",
+            priority = 2430,
+            text = "Accept Letter to Jin'Zil from Darsok Swiftdagger in The Crossroads.",
+            complete = QuestState(1060, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-899-consumed-by-hatred",
+            kind = "accept",
+            priority = 2440,
+            text = "Accept Consumed by Hatred from Mankrik in The Crossroads.",
+            complete = QuestState(899, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "accept-4921-lost-in-battle",
+            kind = "accept",
+            priority = 2450,
+            text = "Accept Lost in Battle from Mankrik in The Crossroads.",
+            complete = QuestState(4921, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "travel-880-the-stagnant-oasis",
+            kind = "travel",
+            priority = 2460,
+            text = "Travel to Lushwater Oasis.",
+            route = {
+                Point(MAP.BARRENS, 0.4818, 0.4016, "Lushwater Oasis",
+                    "Travel to Lushwater Oasis."),
+            },
+        },
+        {
+            id = "objective-880-altered-beings",
+            kind = "objective",
+            priority = 2470,
+            text = "Kill Oasis Snapjaw and collect Altered Snapjaw Shell in Lushwater Oasis.",
+            dependsOn = { "accept-880-altered-beings" },
+            complete = QuestState(880, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4818, 0.4016, "Oasis Snapjaw",
+                    "Travel to Oasis Snapjaw."),
+            },
+        },
+        {
+            id = "objective-852-hezrul-bloodmark",
+            kind = "objective",
+            priority = 2480,
+            text = "Kill Hezrul Bloodmark by the oasis and collect Hezrul's Head, he patrols around the oasis clockwise so run counter clockwise to find him. He has two patrol with him, just focus on killing him first to complete the quest the graveyard is close if you die Safe to skip.",
+            dependsOn = { "accept-852-hezrul-bloodmark" },
+            complete = QuestState(852, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4600, 0.4110, "Hezrul Bloodmark",
+                    "Travel to Hezrul Bloodmark."),
+            },
+        },
+        {
+            id = "travel-3281-raptor-grounds",
+            kind = "travel",
+            priority = 2490,
+            text = "Travel to Raptor Grounds.",
+            route = {
+                Point(MAP.BARRENS, 0.5802, 0.5390, "Raptor Grounds",
+                    "Travel to Raptor Grounds."),
+            },
+        },
+        {
+            id = "objective-3281-stolen-silver",
+            kind = "objective",
+            priority = 2500,
+            text = "Collect the Stolen Silver from the Stolen Silver Chest in Raptor Grounds.",
+            dependsOn = { "accept-3281-stolen-silver" },
+            complete = QuestState(3281, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5802, 0.5390, "Raptor Grounds",
+                    "Travel to Raptor Grounds."),
+            },
+        },
+        {
+            id = "objective-905-1-visit-blue-raptor-nest",
+            kind = "objective",
+            priority = 2510,
+            text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Blue Raptor Nest in Raptor Grounds.",
+            dependsOn = { "accept-905-the-angry-scytheclaws" },
+            complete = QuestObjective(905, 1),
+            route = {
+                Point(MAP.BARRENS, 0.5262, 0.4614, "Sunscale Scytheclaw",
+                    "Travel to Sunscale Scytheclaw."),
+            },
+        },
+        {
+            id = "objective-905-3-visit-red-raptor-nest",
+            kind = "objective",
+            priority = 2520,
+            text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Red Raptor Nest in Raptor Grounds.",
+            dependsOn = { "accept-905-the-angry-scytheclaws" },
+            complete = QuestObjective(905, 3),
+            route = {
+                Point(MAP.BARRENS, 0.5247, 0.4660, "Sunscale Scytheclaw",
+                    "Travel to Sunscale Scytheclaw."),
+            },
+        },
+        {
+            id = "objective-905-2-visit-yellow-raptor-nest",
+            kind = "objective",
+            priority = 2530,
+            text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Yellow Raptor Nest in Raptor Grounds.",
+            dependsOn = { "accept-905-the-angry-scytheclaws" },
+            complete = QuestObjective(905, 2),
+            route = {
+                Point(MAP.BARRENS, 0.5203, 0.4653, "Sunscale Scytheclaw",
+                    "Travel to Sunscale Scytheclaw."),
+            },
+        },
+        {
+            id = "travel-865-the-barrens",
+            kind = "travel",
+            priority = 2540,
+            text = "Travel to The Barrens.",
+            route = {
+                Point(MAP.BARRENS, 0.5203, 0.4653, "The Barrens",
+                    "Travel to The Barrens."),
+            },
+        },
+        {
+            id = "objective-865-raptor-horns",
+            kind = "objective",
+            priority = 2550,
+            text = "Kill Sunscale Scytheclaw and collect 5 Intact Raptor Horn at the Raptor Grounds.",
+            dependsOn = { "accept-865-raptor-horns" },
+            complete = QuestState(865, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5203, 0.4653, "Sunscale Scytheclaw",
+                    "Travel to Sunscale Scytheclaw."),
+            },
+        },
+        {
+            id = "objective-4921-lost-in-battle",
+            kind = "objective",
+            priority = 2560,
+            text = "Find Beaten Corpse in Southern Barrens.",
+            dependsOn = { "accept-4921-lost-in-battle" },
+            complete = QuestState(4921, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4934, 0.5037, "Beaten Corpse",
+                    "Travel to Beaten Corpse."),
+            },
+        },
+        {
+            id = "objective-821-3-stormsnout",
+            kind = "objective",
+            priority = 2570,
+            conditions = {
+                all = {
+                    { quest = { id = 819, state = "completed" } },
+                },
+            },
+            text = "Kill Stormsnout and collect Thunder Lizard Horn in Southern Barrens.",
+            dependsOn = { "accept-821-chen-s-empty-keg" },
+            complete = QuestObjective(821, 3),
+            route = {
+                Point(MAP.BARRENS, 0.4827, 0.5053, "Stormsnout",
+                    "Travel to Stormsnout."),
+            },
+        },
+        {
+            id = "travel-878-camp-taurajo",
+            kind = "travel",
+            priority = 2580,
+            text = "Travel to Camp Taurajo.",
+            route = {
+                Point(MAP.BARRENS, 0.4460, 0.5920, "Camp Taurajo",
+                    "Travel to Camp Taurajo."),
+            },
+        },
+        {
+            id = "accept-893-weapons-of-choice",
+            kind = "accept",
+            priority = 2590,
+            text = "Accept Weapons of Choice from Tatternack Steelforge in Camp Taurajo.",
+            complete = QuestState(893, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4510, 0.5774, "Tatternack Steelforge",
+                    "Travel to Tatternack Steelforge."),
+            },
+        },
+        {
+            id = "accept-878-tribes-at-war",
+            kind = "accept",
+            priority = 2600,
+            text = "Accept Tribes at War from Mangletooth in Camp Taurajo.",
+            complete = QuestState(878, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5922, "Mangletooth",
+                    "Travel to Mangletooth."),
+            },
+        },
+        {
+            id = "travel-878-agama-gor",
+            kind = "travel",
+            priority = 2610,
+            text = "Travel to Agama'gor.",
+            route = {
+                Point(MAP.BARRENS, 0.4543, 0.5411, "Agama'gor",
+                    "Travel to Agama'gor."),
+            },
+        },
+        {
+            id = "objective-878-tribes-at-war",
+            kind = "objective",
+            priority = 2620,
+            text = "Kill 6 Bristleback Water Seeker, 12 Bristleback Thornweaver and 12 Bristleback Geomancer in Agama'gor.",
+            dependsOn = { "accept-878-tribes-at-war" },
+            complete = QuestState(878, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4543, 0.5411, "Continue toward Tribes at War",
+                    "Continue toward Tribes at War."),
+                Point(MAP.BARRENS, 0.4680, 0.5363, "Continue toward Tribes at War",
+                    "Continue toward Tribes at War."),
+                Point(MAP.BARRENS, 0.4484, 0.5164, "Continue toward Tribes at War",
+                    "Continue toward Tribes at War."),
+                Point(MAP.BARRENS, 0.4330, 0.4855, "Bristleback Water Seeker",
+                    "Travel to Bristleback Water Seeker."),
+            },
+        },
+        {
+            id = "objective-5052-blood-shard",
+            kind = "objective",
+            priority = 2630,
+            text = "Collect Blood Shard from Bristleback enemies in Agama'gor.",
+            dependsOn = { "accept-5052-blood-shards-of-agamaggan" },
+            complete = QuestState(5052, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4543, 0.5411, "Continue toward Blood Shard",
+                    "Continue toward Blood Shard."),
+                Point(MAP.BARRENS, 0.4680, 0.5363, "Continue toward Blood Shard",
+                    "Continue toward Blood Shard."),
+                Point(MAP.BARRENS, 0.4484, 0.5164, "Continue toward Blood Shard",
+                    "Continue toward Blood Shard."),
+                Point(MAP.BARRENS, 0.4330, 0.4855, "Bristleback Water Seeker",
+                    "Travel to Bristleback Water Seeker."),
+            },
+        },
+        {
+            id = "travel-878-agama-gor-2",
+            kind = "travel",
+            priority = 2640,
+            text = "Travel to Agama'gor.",
+            route = {
+                Point(MAP.BARRENS, 0.5000, 0.5700, "Agama'gor",
+                    "Travel to Agama'gor."),
+            },
+        },
+        {
+            id = "objective-899-consumed-by-hatred",
+            kind = "objective",
+            priority = 2650,
+            text = "Kill Bristleback Quilboars for 60 Quilboar Tusk in Bramblescar.",
+            dependsOn = { "accept-899-consumed-by-hatred" },
+            complete = QuestState(899, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4543, 0.5411, "Continue toward Consumed by Hatred",
+                    "Continue toward Consumed by Hatred."),
+                Point(MAP.BARRENS, 0.4680, 0.5363, "Continue toward Consumed by Hatred",
+                    "Continue toward Consumed by Hatred."),
+                Point(MAP.BARRENS, 0.4484, 0.5164, "Continue toward Consumed by Hatred",
+                    "Continue toward Consumed by Hatred."),
+                Point(MAP.BARRENS, 0.4330, 0.4855, "Bristleback Geomancer",
+                    "Travel to Bristleback Geomancer."),
+            },
+        },
+        {
+            id = "travel-5052-camp-taurajo",
+            kind = "travel",
+            priority = 2660,
+            text = "Travel to Camp Taurajo.",
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5922, "Camp Taurajo",
+                    "Travel to Camp Taurajo."),
+            },
+        },
+        {
+            id = "turnin-878-tribes-at-war",
+            kind = "turnin",
+            priority = 2670,
+            text = "Turn in Tribes at War to Mangletooth in Camp Taurajo.",
+            dependsOn = { "objective-878-tribes-at-war" },
+            complete = QuestState(878, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5923, "Mangletooth",
+                    "Travel to Mangletooth."),
+            },
+        },
+        {
+            id = "accept-5052-blood-shards-of-agamaggan",
+            kind = "accept",
+            priority = 2680,
+            text = "Accept Blood Shards of Agamaggan from Mangletooth in Camp Taurajo.",
+            complete = QuestState(5052, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5922, "Mangletooth",
+                    "Travel to Mangletooth."),
+            },
+        },
+        {
+            id = "turnin-5052-blood-shards-of-agamaggan",
+            kind = "turnin",
+            priority = 2690,
+            text = "Turn in Blood Shards of Agamaggan to Mangletooth in Camp Taurajo.",
+            dependsOn = { "objective-5052-blood-shard" },
+            complete = QuestState(5052, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5922, "Mangletooth",
+                    "Travel to Mangletooth."),
+            },
+        },
+        {
+            id = "accept-879-betrayal-from-within",
+            kind = "accept",
+            priority = 2700,
+            text = "Accept Betrayal from Within from Mangletooth in Camp Taurajo.",
+            complete = QuestState(879, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.4456, 0.5923, "Mangletooth",
+                    "Travel to Mangletooth."),
+            },
+        },
+        {
+            id = "travel-the-crossroads-3",
+            kind = "travel",
+            priority = 2710,
+            text = "Travel to The Crossroads.",
+            route = {
+                Point(MAP.BARRENS, 0.5195, 0.3032, "The Crossroads",
+                    "Travel to The Crossroads."),
+            },
+        },
+        {
+            id = "turnin-3281-stolen-silver",
+            kind = "turnin",
+            priority = 2720,
+            text = "Turn in Stolen Silver to Gazrog in The Crossroads.",
+            dependsOn = { "objective-3281-stolen-silver" },
+            complete = QuestState(3281, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5195, 0.3032, "Gazrog",
+                    "Travel to Gazrog."),
+            },
+        },
+        {
+            id = "turnin-905-the-angry-scytheclaws",
+            kind = "turnin",
+            priority = 2730,
+            text = "Turn in The Angry Scytheclaws to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-905-1-visit-blue-raptor-nest", "objective-905-3-visit-red-raptor-nest", "objective-905-2-visit-yellow-raptor-nest" },
+            complete = QuestState(905, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "accept-3261-jorn-skyseer",
+            kind = "accept",
+            priority = 2740,
+            text = "Accept Jorn Skyseer from Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(3261, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "turnin-899-consumed-by-hatred",
+            kind = "turnin",
+            priority = 2750,
+            text = "Turn in Consumed by Hatred to Mankrik in The Crossroads.",
+            dependsOn = { "objective-899-consumed-by-hatred" },
+            complete = QuestState(899, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "turnin-4921-lost-in-battle",
+            kind = "turnin",
+            priority = 2760,
+            text = "Turn in Lost in Battle to Mankrik in The Crossroads.",
+            dependsOn = { "objective-4921-lost-in-battle" },
+            complete = QuestState(4921, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "turnin-880-altered-beings",
+            kind = "turnin",
+            priority = 2770,
+            text = "Turn in Altered Beings to Tonga Runetotem in The Crossroads.",
+            dependsOn = { "objective-880-altered-beings" },
+            complete = QuestState(880, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-1489-hamuul-runetotem",
+            kind = "accept",
+            priority = 2780,
+            text = "Accept Hamuul Runetotem from Tonga Runetotem in The Crossroads.",
+            complete = QuestState(1489, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5226, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
+            id = "accept-853-apothecary-zamah",
+            kind = "accept",
+            priority = 2790,
+            text = "Accept Apothecary Zamah from Apothecary Helbrim in The Crossroads.",
+            complete = QuestState(853, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5147, 0.3017, "Apothecary Helbrim",
+                    "Travel to Apothecary Helbrim."),
+            },
+        },
+        {
+            id = "turnin-865-raptor-horns",
+            kind = "turnin",
+            priority = 2800,
+            text = "Turn in Raptor Horns to Mebok Mizzyrix in Ratchet.",
+            dependsOn = { "objective-865-raptor-horns" },
+            complete = QuestState(865, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6236, 0.3767, "Mebok Mizzyrix",
+                    "Travel to Mebok Mizzyrix."),
+            },
+        },
+        {
+            id = "travel-camp-taurajo",
+            kind = "travel",
+            priority = 2810,
+            text = "Travel to Camp Taurajo.",
+            route = {
+                Point(MAP.BARRENS, 0.4484, 0.5909, "Camp Taurajo",
+                    "Travel to Camp Taurajo."),
+            },
+        },
+        {
+            id = "turnin-3261-jorn-skyseer",
+            kind = "turnin",
+            priority = 2820,
+            text = "Turn in Jorn Skyseer to Jorn Skyseer in Camp Taurajo.",
+            dependsOn = { "accept-3261-jorn-skyseer" },
+            complete = QuestState(3261, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4484, 0.5909, "Jorn Skyseer",
+                    "Travel to Jorn Skyseer."),
+            },
+        },
+        {
+            id = "travel-spirit-rise",
+            kind = "travel",
+            priority = 2830,
+            text = "Travel to Spirit Rise in Thunder Bluff (22.9, 20.9.",
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3004, 0.2979, "Spirit Rise",
+                    "Travel to Spirit Rise."),
+            },
+        },
+        {
+            id = "turnin-853-apothecary-zamah",
+            kind = "turnin",
+            priority = 2840,
+            text = "Turn in Apothecary Zamah to Apothecary Zamah in Spirit Rise.",
+            dependsOn = { "accept-853-apothecary-zamah" },
+            complete = QuestState(853, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3004, 0.2979, "Continue toward Apothecary Zamah",
+                    "Continue toward Apothecary Zamah."),
+                Point(MAP.THUNDER_BLUFF, 0.2290, 0.2090, "Apothecary Zamah",
+                    "Travel to Apothecary Zamah."),
+            },
+        },
+        {
+            id = "turnin-1489-hamuul-runetotem",
+            kind = "turnin",
+            priority = 2850,
+            text = "Turn in Hamuul Runetotem to Archdruid Hamuul Runetotem in Elder Rise.",
+            dependsOn = { "accept-1489-hamuul-runetotem" },
+            complete = QuestState(1489, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7853, 0.2862, "Archdruid Hamuul Runetotem",
+                    "Travel to Archdruid Hamuul Runetotem."),
+            },
+        },
+        {
+            id = "accept-1490-nara-wildmane",
+            kind = "accept",
+            priority = 2860,
+            text = "Accept Nara Wildmane from Archdruid Hamuul Runetotem in Elder Rise.",
+            complete = QuestState(1490, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7853, 0.2862, "Archdruid Hamuul Runetotem",
+                    "Travel to Archdruid Hamuul Runetotem."),
+            },
+        },
+        {
+            id = "turnin-1490-nara-wildmane",
+            kind = "turnin",
+            priority = 2870,
+            text = "Turn in Nara Wildmane to Archdruid Hamuul Runetotem in Elder Rise.",
+            dependsOn = { "accept-1490-nara-wildmane" },
+            complete = QuestState(1490, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7569, 0.3153, "Archdruid Hamuul Runetotem",
+                    "Travel to Archdruid Hamuul Runetotem."),
+            },
+        },
+        {
+            id = "travel-northwatch-hold",
+            kind = "travel",
+            priority = 2880,
+            text = "Travel to Northwatch Hold.",
+            route = {
+                Point(MAP.BARRENS, 0.6567, 0.4645, "Continue toward Northwatch Hold",
+                    "Continue toward Northwatch Hold."),
+                Point(MAP.BARRENS, 0.6223, 0.5337, "Northwatch Hold",
+                    "Travel to Northwatch Hold."),
+            },
+        },
+        {
+            id = "objective-891-1-captain-fairmount",
+            kind = "objective",
+            priority = 2890,
+            text = "Kill Captain Fairmount in Northwatch Hold.",
+            dependsOn = { "accept-891-the-guns-of-northwatch" },
+            complete = QuestObjective(891, 1),
+            route = {
+                Point(MAP.BARRENS, 0.6131, 0.5394, "Continue toward Captain Fairmount",
+                    "Continue toward Captain Fairmount."),
+                Point(MAP.BARRENS, 0.6200, 0.5499, "Captain Fairmount",
+                    "Travel to Captain Fairmount."),
+            },
+        },
+        {
+            id = "objective-891-3-cannoneer-smythe",
+            kind = "objective",
+            priority = 2900,
+            text = "Kill Cannoneer Smythe in Northwatch Hold.",
+            dependsOn = { "accept-891-the-guns-of-northwatch" },
+            complete = QuestObjective(891, 3),
+            route = {
+                Point(MAP.BARRENS, 0.6303, 0.5668, "Cannoneer Smythe",
+                    "Travel to Cannoneer Smythe."),
+            },
+        },
+        {
+            id = "objective-891-2-cannoneer-whessan",
+            kind = "objective",
+            priority = 2910,
+            text = "Kill Cannoneer Whessan in Northwatch Hold.",
+            dependsOn = { "accept-891-the-guns-of-northwatch" },
+            complete = QuestObjective(891, 2),
+            route = {
+                Point(MAP.BARRENS, 0.6049, 0.5479, "Cannoneer Whessan",
+                    "Travel to Cannoneer Whessan."),
+            },
+        },
+        {
+            id = "objective-891-4-the-guns-of-northwatch",
+            kind = "objective",
+            priority = 2920,
+            text = "Kill Theramore Marine or Theramore Preserver and collect 10 Theramore Medal from in Northwatch Hold.",
+            dependsOn = { "accept-891-the-guns-of-northwatch" },
+            complete = QuestObjective(891, 4),
+            route = {
+                Point(MAP.BARRENS, 0.6144, 0.5370, "Theramore Marine",
+                    "Travel to Theramore Marine."),
+            },
+        },
+        {
+            id = "accept-898-free-from-the-hold",
+            kind = "accept",
+            priority = 2930,
+            text = "Accept Free From the Hold from Gilthares Firebough in Northwatch Hold.",
+            complete = QuestState(898, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6194, 0.5492, "Gilthares Firebough",
+                    "Travel to Gilthares Firebough."),
+            },
+        },
+        {
+            id = "objective-898-free-from-the-hold",
+            kind = "objective",
+            priority = 2940,
+            text = "Safely escort Gilthares Firebough back to Captain Brightsun in Ratchet This can be difficult to solo. Safe to skip if you fail.",
+            dependsOn = { "accept-898-free-from-the-hold" },
+            complete = QuestState(898, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6232, 0.3920, "Gilthares Firebough",
+                    "Travel to Gilthares Firebough."),
+            },
+        },
+        {
+            id = "turnin-898-free-from-the-hold",
+            kind = "turnin",
+            priority = 2950,
+            text = "Turn in Free From the Hold to Captain Thalo'thas Brightsun in Ratchet.",
+            dependsOn = { "objective-898-free-from-the-hold" },
+            complete = QuestState(898, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6229, 0.3907, "Captain Thalo'thas Brightsun",
+                    "Travel to Captain Thalo'thas Brightsun."),
+            },
+        },
+        {
+            id = "turnin-891-the-guns-of-northwatch",
+            kind = "turnin",
+            priority = 2960,
+            text = "Turn in The Guns of Northwatch to Captain Thalo'thas Brightsun in Ratchet.",
+            dependsOn = { "objective-891-1-captain-fairmount", "objective-891-3-cannoneer-smythe", "objective-891-2-cannoneer-whessan", "objective-891-4-the-guns-of-northwatch" },
+            complete = QuestState(891, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6228, 0.3907, "Captain Thalo'thas Brightsun",
+                    "Travel to Captain Thalo'thas Brightsun."),
+            },
+        },
+        {
+            id = "turnin-852-hezrul-bloodmark",
+            kind = "turnin",
+            priority = 2970,
+            text = "Turn in Hezrul Bloodmark to Regthar Deathgate in The Barrens.",
+            dependsOn = { "objective-852-hezrul-bloodmark" },
+            complete = QuestState(852, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4533, 0.2844, "Regthar Deathgate",
+                    "Travel to Regthar Deathgate."),
+            },
+        },
+    },
+})

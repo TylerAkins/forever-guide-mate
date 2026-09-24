@@ -45,6 +45,25 @@ Load("Guides/Leveling/Durotar.lua")
 Load("Guides/Leveling/Mulgore.lua")
 Load("Guides/Leveling/TheBarrens.lua")
 Load("Guides/Leveling/Teldrassil.lua")
+Load("Guides/Leveling/Era/1-12-durotar.lua")
+Load("Guides/Leveling/Era/1-12-mulgore.lua")
+Load("Guides/Leveling/Era/1-12-tirisfal-glades.lua")
+Load("Guides/Leveling/Era/12-20-barrens.lua")
+Load("Guides/Leveling/Era/12-20-silverpine-forest.lua")
+Load("Guides/Leveling/Era/20-22-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/22-23-southern-barrens.lua")
+Load("Guides/Leveling/Era/23-25-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/25-25-southern-barrens.lua")
+Load("Guides/Leveling/Era/25-26-thousand-needles.lua")
+Load("Guides/Leveling/Era/26-27-ashenvale.lua")
+Load("Guides/Leveling/Era/27-27-stonetalon-mountains.lua")
+Load("Guides/Leveling/Era/27-29-thousand-needles.lua")
+Load("Guides/Leveling/Era/29-30-hillsbrad-foothills.lua")
+Load("Guides/Leveling/Era/30-30-arathi-highlands.lua")
+Load("Guides/Leveling/Era/30-31-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/31-32-thousand-needles.lua")
+Load("Guides/Leveling/Era/32-34-desolace.lua")
+Load("Guides/Leveling/Era/34-36-stranglethorn-vale.lua")
 
 local baseState = {
     faction = "Horde",
@@ -2005,6 +2024,45 @@ function TestTeldrassil()
         "the 5 minute antidote is the next step ahead of other Teldrassil work")
 end
 TestTeldrassil()
+
+function TestEraLeveling()
+    local guide = ns.guides["leveling-era-1-12-durotar"]
+    Check(guide ~= nil, "the Era Durotar guide is registered")
+    Equal(guide.title, "1-12 Durotar (Era)", "Era guides are labeled Era")
+    Equal(guide.category, "Leveling Quest Guides", "Era guides are leveling guides")
+    local horde = {
+        faction = "Horde", level = 1, raceID = 2, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+        mapID = 1411, x = 0.4, y = 0.4,
+    }
+    local alliance = {
+        faction = "Alliance", level = 20, raceID = 1, classID = 1,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    }
+    Equal(ns.EvaluateCondition(guide.conditions, horde), true, "a Horde character can use an Era guide")
+    Equal(ns.EvaluateCondition(guide.conditions, alliance), false, "an Alliance character cannot use an Era guide")
+    local plans = 0
+    local count = 0
+    for _, goal in ipairs(guide.goals) do
+        if string.find(goal.id, "objective-786-", 1, true) then plans = plans + 1 end
+        Check(not string.find(string.lower(goal.text), "flight path", 1, true),
+            "Era steps do not send you to learn a flight path")
+        Check(not string.find(string.lower(goal.text), "grind", 1, true),
+            "Era steps do not add grind stops")
+    end
+    Equal(plans, 3, "Thwarting Kolkar Aggression keeps its three plans")
+    for _, guideID in ipairs(ns.guideOrder) do
+        local eraGuide = ns.guides[guideID]
+        if string.find(eraGuide.title, "(Era)", 1, true) then
+            count = count + 1
+            Equal(eraGuide.category, "Leveling Quest Guides", "every Era guide is a leveling guide")
+            Equal(ns.EvaluateCondition(eraGuide.conditions, alliance), false,
+                "every Era guide is hidden from Alliance")
+        end
+    end
+    Equal(count, 19, "the Era set is registered")
+end
+TestEraLeveling()
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
