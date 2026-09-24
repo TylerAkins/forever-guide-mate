@@ -26,12 +26,16 @@ local function ObjectiveFinished(objective)
     if type(objective) ~= "table" then
         return nil
     end
-    if objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0) then
-        return true
-    end
+    -- A counted kill is done only when the count is met. Forever can set
+    -- finished while the count is still short, and a finished number can be
+    -- the progress so far rather than a boolean. Dialogue objectives have no
+    -- count, so a finished flag of true or a number above 0 still means done.
     if type(objective.numRequired) == "number" and objective.numRequired > 0
         and type(objective.numFulfilled) == "number" then
         return objective.numFulfilled >= objective.numRequired
+    end
+    if objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0) then
+        return true
     end
     if objective.finished == false then
         return false
@@ -750,11 +754,17 @@ function Engine:Refresh(state)
         local shortPreempt = nextSeconds and nextSeconds <= SHORT_TIMER_SECONDS
             and candidates[1] ~= active
             and (not activeSeconds or nextSeconds < activeSeconds)
+        local nextGoal = candidates[1]
+        local earlierObjective = nextGoal and active and nextGoal.kind == "objective"
+            and not ns.charDB.deferred[nextGoal.id]
+            and type(nextGoal.priority) == "number" and type(active.priority) == "number"
+            and nextGoal.priority < active.priority
         if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
         elseif active and ready and not permanentlyDone and not ns.charDB.deferred[active.id]
-            and (not observedDone or not ns.db.autoAdvance) and not shortPreempt then
+            and (not observedDone or not ns.db.autoAdvance) and not shortPreempt
+            and not earlierObjective then
             self.currentGoal = active
         elseif candidates[1] then
             self:SetActiveGoal(candidates[1], active ~= nil)

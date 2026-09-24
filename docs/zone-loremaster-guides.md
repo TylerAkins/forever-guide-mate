@@ -101,7 +101,7 @@ A character who finishes every step they can actually take should reach 100%.
 - A level requirement stays in the percentage until the character reaches it.
 - Omit unused quests, repeatable class buffs, and promo quests that are not offered to every character. Name them in the header.
 - Include shared and side-unknown quests when the zone page lists them and a Horde character can take them.
-- A drop that starts an optional quest does not get a required step. Gate the turn-in with `quest` state `activeOrCompleted`, so a missing drop does not block 100%.
+- A drop that starts an optional quest does not get a required step. Say to use the item on a step the player is already doing. Gate the turn-in, and every later step in that chain, with `quest` state `activeOrCompleted`. A missing drop stays out of the percentage. Gating only the turn-in would open the follow-up, because a step the character cannot take yet counts as finished for the next step. Chen's Empty Keg and the Camp Taurajo rares are the examples.
 
 ## Catching a requirement that was missed
 

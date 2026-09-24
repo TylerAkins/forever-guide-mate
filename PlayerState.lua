@@ -58,14 +58,18 @@ function PlayerState:GetProfessions(api)
     return professions, true
 end
 
+local function ObjectiveSatisfied(objective)
+    if type(objective.numRequired) == "number" and objective.numRequired > 0
+        and type(objective.numFulfilled) == "number" then
+        return objective.numFulfilled >= objective.numRequired
+    end
+    return objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0)
+end
+
 local function ObjectivesComplete(objectives)
     if type(objectives) ~= "table" or #objectives == 0 then return false end
     for _, objective in ipairs(objectives) do
-        if type(objective) ~= "table" then return false end
-        local counted = type(objective.numRequired) == "number" and objective.numRequired > 0
-            and type(objective.numFulfilled) == "number" and objective.numFulfilled >= objective.numRequired
-        local finished = objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0)
-        if not finished and not counted then return false end
+        if type(objective) ~= "table" or not ObjectiveSatisfied(objective) then return false end
     end
     return true
 end
