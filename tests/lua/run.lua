@@ -266,6 +266,8 @@ Equal(leg.mapID, 1420, "transport route advances after map transition")
 local undercityGoal = { route = { { mapID = 1458, x = 0.56, y = 0.92, label = "Undercity" } } }
 local zeppelin = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1454, x = 0.4, y = 0.4, faction = "Horde" })
 Equal(zeppelin.mapID, 1411, "Horde on Kalimdor is directed to the Orgrimmar zeppelin")
+Equal(zeppelin.x, 0.508, "the Undercity zeppelin uses Frezza's south platform")
+Equal(zeppelin.y, 0.136, "the Undercity zeppelin is south of the Stranglethorn platform")
 local localUndercity = ns.Navigation:GetActiveLeg(undercityGoal, { mapID = 1420, x = 0.5, y = 0.4, faction = "Horde" })
 Equal(localUndercity.mapID, 1458, "same-continent travel keeps the authored destination")
 local barrensGoal = { route = { { mapID = 1413, x = 0.46, y = 0.36, label = "Wailing Caverns" } } }
@@ -371,6 +373,8 @@ local powerDestroy = ns.Engine:GetGoal(rfc, "accept-power-destroy")
 ns.charDB.taxiRoutes = {}
 local walkZeppelin = ns.Navigation:GetActiveLeg(powerDestroy, { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" })
 Equal(walkZeppelin.mapID, 1411, "without the Orgrimmar flight, the zeppelin step stays on the tower")
+Equal(walkZeppelin.x, 0.508, "the Tirisfal zeppelin pin is the south platform")
+Equal(walkZeppelin.y, 0.136, "the Tirisfal zeppelin pin is not the Stranglethorn tower")
 ns.Engine.currentGoal = powerDestroy
 ns.Engine.state = { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" }
 local walkZeppelinText = ns.UI:GoalInstruction(ns.Engine)
@@ -380,7 +384,7 @@ ns.charDB.taxiRoutes = {
     [1456] = { x = 0.468, y = 0.497, destinations = { ["orgrimmar, durotar"] = "Orgrimmar, Durotar" } },
 }
 local flyZeppelin = ns.Navigation:GetActiveLeg(powerDestroy, { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" })
-Equal(flyZeppelin.label, "Take the flight path to Orgrimmar, then board the zeppelin for Tirisfal Glades.",
+Equal(flyZeppelin.label, "Take the flight path to Orgrimmar, then board the south zeppelin to Tirisfal Glades.",
     "a known Orgrimmar flight names the zeppelin afterward")
 ns.charDB.taxiRoutes = {}
 local barrensWalk = ns.Navigation:GetActiveLeg(ns.Engine:GetGoal(rfc, "accept-searching-satchel"),

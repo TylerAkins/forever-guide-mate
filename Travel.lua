@@ -144,11 +144,15 @@ Travel.links = {
     { faction = nil, vessel = "boat",
         a = Dock(1413, 0.638, 0.388, "Booty Bay", SOUTH_KALIMDOR),
         b = Dock(1434, 0.257, 0.731, "Ratchet", SOUTH_EK) },
+    -- Durotar tower east of Orgrimmar. Snurk Bucksquick's north platform is
+    -- Grom'gol. Frezza's south platform is Tirisfal Glades.
+    -- https://www.wowhead.com/classic/npc=12136/snurk-bucksquick
+    -- https://www.wowhead.com/classic/npc=9564/frezza
     { faction = "Horde", vessel = "zeppelin",
-        a = Dock(1411, 0.505, 0.127, "Grom'gol Base Camp", HORDE_KALIMDOR),
+        a = Dock(1411, 0.506, 0.128, "Grom'gol Base Camp", HORDE_KALIMDOR),
         b = Dock(1434, 0.312, 0.304, "Orgrimmar", SOUTH_EK) },
     { faction = "Horde", vessel = "zeppelin",
-        a = Dock(1411, 0.510, 0.139, "the Undercity", HORDE_KALIMDOR),
+        a = Dock(1411, 0.508, 0.136, "the Undercity", HORDE_KALIMDOR),
         b = Dock(1420, 0.606, 0.589, "Orgrimmar", NORTH_EK) },
     { faction = "Horde", vessel = "zeppelin",
         a = Dock(1434, 0.315, 0.291, "the Undercity", SOUTH_EK),
