@@ -76,6 +76,20 @@ for _, path in ipairs({
     "Guides/Leveling/Era/48-49-swamp-of-sorrows.lua",
     "Guides/Leveling/Era/49-49-dustwallow-marsh.lua",
     "Guides/Leveling/Era/49-50-feralas.lua",
+    "Guides/Leveling/Era/49-50-tanaris.lua",
+    "Guides/Leveling/Era/50-50-azshara.lua",
+    "Guides/Leveling/Era/50-51-hinterlands.lua",
+    "Guides/Leveling/Era/51-51-blasted-lands.lua",
+    "Guides/Leveling/Era/51-53-ungoro-crater.lua",
+    "Guides/Leveling/Era/53-54-burning-steppes.lua",
+    "Guides/Leveling/Era/54-54-felwood.lua",
+    "Guides/Leveling/Era/54-55-winterspring.lua",
+    "Guides/Leveling/Era/55-56-felwood.lua",
+    "Guides/Leveling/Era/56-56-western-plaguelands.lua",
+    "Guides/Leveling/Era/56-57-eastern-plaguelands.lua",
+    "Guides/Leveling/Era/57-58-western-plaguelands.lua",
+    "Guides/Leveling/Era/58-59-silithus.lua",
+    "Guides/Leveling/Era/59-60-winterspring.lua",
 }) do Load(path) end
 
 local function Serialize(value)

@@ -43,3 +43,4 @@ All notable changes to this project are documented here.
 - Added Horde Era leveling routes from 1-12 through 34-36 under Leveling Quest Guides. Titles end in (Era). Alliance characters are not eligible. Grind stops and flight-point pickups are not included. These routes follow the classic path and are not rewritten for Forever yet.
 - Centaur Bracers now says to collect the bracers from Kolkar. Chen's Empty Keg is a barrel on the ground in the Barrens, not a Kolkar drop.
 - Added the next Horde Era leveling routes, 36-37 Alterac Mountains through 49-50 Feralas.
+- Added the remaining Horde Era leveling routes, 49-50 Tanaris through 59-60 Winterspring.
