@@ -304,6 +304,7 @@ end
 local function GuideTypeLabel(guide)
     local category = type(guide) == "table" and guide.category or nil
     if type(category) ~= "string" then return nil end
+    if category == "Loremaster Guides" then return "Loremaster" end
     local label = category:match("^(.-) Quest Guides$")
     if label and label ~= "" then return label end
     return nil

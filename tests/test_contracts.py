@@ -25,6 +25,7 @@ REQUIRED_FILES = (
     "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
+    "QuestAudit.lua",
     "QuestDialog.lua",
     "Navigation.lua",
     "MapPins.lua",
@@ -45,6 +46,7 @@ REQUIRED_FILES = (
     "tests/test_contracts.py",
     "tests/lua/run.lua",
     "tests/lua/ui.lua",
+    "tests/lua/lint.lua",
     "tests/requirements.txt",
 )
 
@@ -77,6 +79,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestAudit.lua",
                 "QuestDialog.lua",
                 "Navigation.lua",
                 "TomTomWaypoints.lua",
@@ -140,6 +143,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestAudit.lua",
                 "Navigation.lua",
                 "TomTomWaypoints.lua",
                 "MapPins.lua",
@@ -243,7 +247,7 @@ class ContractTests(unittest.TestCase):
         for dungeon_id in (3369, 3370, 914, 1489, 1491):
             self.assertNotIn(str(dungeon_id), guide.split("goals = {", 1)[-1])
         self.assertIn('id = "leveling-the-barrens"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 9 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn('{ faction = "Alliance" }', guide)
@@ -262,17 +266,29 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn(f"QuestState({omitted_id},", goals)
             self.assertNotIn(f"QuestObjective({omitted_id},", goals)
         self.assertIn('id = "leveling-durotar"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn("skillLineID = 333", guide)
+        self.assertIn("BLACKSMITHING = 164", guide)
+        self.assertIn("LEATHERWORKING = 165", guide)
+        self.assertIn("ENCHANTING = 333", guide)
+        for goal_id, skill in (
+            ("accept-96873-a-pain-in-the-neck", "SKILL.ENCHANTING"),
+            ("accept-96874-this-is-spinal-axe", "SKILL.BLACKSMITHING"),
+            ("accept-96875-beasts-of-thunder-ridge", "SKILL.LEATHERWORKING"),
+        ):
+            block = goals.split(f'id = "{goal_id}"', 1)[1].split("route = {", 1)[0]
+            self.assertIn(f"profession = {{ skillLineID = {skill} }}", block)
         self.assertIn('id = "objective-837-encroachment-1"', guide)
         self.assertIn('id = "objective-837-encroachment-4"', guide)
         self.assertIn("DUROTAR = 1411", guide)
         rules = (ROOT / "docs/zone-loremaster-guides.md").read_text(encoding="utf-8")
         self.assertIn("This is an elite. Bring a group.", rules)
         self.assertIn("activeOrCompleted", rules)
+        self.assertIn('category = "Loremaster Guides"', rules)
+        self.assertIn("not a leveling route", rules)
+        self.assertIn("Zephras Isle", rules)
 
     def test_mulgore_guide_is_loremaster_without_dungeons(self) -> None:
         guide = (ROOT / "Guides/Leveling/Mulgore.lua").read_text(encoding="utf-8")
@@ -283,7 +299,7 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn(f"QuestState({omitted_id},", goals)
             self.assertNotIn(f"QuestObjective({omitted_id},", goals)
         self.assertIn('id = "leveling-mulgore"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn("{ race = 6 }", guide)
@@ -297,6 +313,7 @@ class ContractTests(unittest.TestCase):
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
         self.assertIn("lua5.1 tests/lua/run.lua", workflow)
         self.assertIn("lua5.1 tests/lua/ui.lua", workflow)
+        self.assertIn("lua5.1 tests/lua/lint.lua", workflow)
 
     def test_ux_contract(self) -> None:
         core = (ROOT / "Core.lua").read_text(encoding="utf-8")
