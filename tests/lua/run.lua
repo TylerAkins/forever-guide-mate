@@ -735,10 +735,10 @@ local followUps = {
     { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
     { "accept-the-warriors-path", "turnin-harmony-in-balance" },
     { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
-    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
-    { "accept-the-adventurer", "turnin-foul-matriarch" },
-    { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
-    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "turnin-elemental-unrest", "turnin-harmony-in-balance" },
+    { "turnin-the-adventurer", "turnin-foul-matriarch" },
+    { "turnin-infiltrating-the-cult", "turnin-the-criminal-element" },
+    { "turnin-the-western-watch", "turnin-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
 }
 for _, pair in ipairs(followUps) do
@@ -1454,6 +1454,27 @@ function TestHiddenEnemies()
     ns.charDB.activeGoal = "gauge-neeru"
     ns.Engine:Refresh(unfinished)
     Equal(ns.Engine.currentGoal.id, "gauge-neeru", "an unfinished talk with Neeru stays on that step")
+    Open(State({}, {
+        [5726] = true, [5727] = true, [5728] = true, [5761] = true,
+    }))
+    Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-4",
+        "the dungeon report sends you to Neeru")
+    leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.496, "the Searing Blade report marks Neeru Fireblade")
+    Open(State({}, {
+        [5726] = true, [5727] = true, [5728] = true, [5729] = true, [5761] = true,
+    }))
+    Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-5",
+        "Neeru's message goes back to Thrall")
+    leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.320, "the final Hidden Enemies step marks Thrall")
+    local barrens = ns.guides["leveling-the-barrens"]
+    Check(ns.Engine:GetGoal(barrens, "accept-890-the-missing-shipment") == nil,
+        "The Missing Shipment is not a separate accept step")
+    local shipment = ns.Engine:GetGoal(barrens, "turnin-890-the-missing-shipment")
+    Equal(shipment.route[1].x, 0.632, "The Missing Shipment points at Dizzywig")
+    local valve = ns.Engine:GetGoal(barrens, "objective-900-samophlange-1")
+    Equal(valve.dependsOn[1], "turnin-894-samophlange", "the next Samophlange starts at the valves")
 end
 TestHiddenEnemies()
 

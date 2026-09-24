@@ -28,3 +28,4 @@ All notable changes to this project are documented here.
 - Timed guide quests finish before other ready steps. Need for a Cure and Apothecary Zamah are 45 minute timers. The Flawed Power Stone is a 30 minute timer, so the Demon Seed altar is the next step.
 - Race-locked steps name the race on the accept, the objectives, and the turn-in. A Horde Skyborne at level 14 can finish the Barrens without the orc, troll, or tauren flight quests.
 - After the Lieutenant's Insignia is returned, Hidden Enemies points at Neeru Fireblade. Exhausting his dialogue finishes that step when the quest log marks the objective done.
+- A follow-up that only sends you to another NPC no longer stops on an accept step at the giver. Hidden Enemies, The Missing Shipment, Samophlange, and the Zephras delivery visits point at the next person.
