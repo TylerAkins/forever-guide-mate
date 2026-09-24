@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Teldrassil, levels 1-12.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Teldrassil and Darnassus lists are woven into this route.
+-- Left out: Tyrande and Remulos is a level 60 Moonglade handoff. Fang of Githyiss appears only if the fang drops.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -33,7 +34,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-teldrassil",
-    title = "1-12 Teldrassil (Era)",
+    title = "1-12 Teldrassil",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -328,6 +329,42 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-97977-natures-call",
+            kind = "accept",
+            priority = 201,
+            text = "Accept Nature's Call from Tarindrella.",
+            dependsOn = { "turnin-459-the-woodland-protector" },
+            complete = QuestState(97977, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5780, 0.4500, "Tarindrella",
+                    "Travel to Tarindrella."),
+            },
+        },
+        {
+            id = "objective-97977-natures-call",
+            kind = "objective",
+            priority = 202,
+            text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. Wowhead has no totem pin, so this marks the grells.",
+            dependsOn = { "accept-97977-natures-call" },
+            complete = QuestState(97977, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5500, 0.4460, "Grell camps",
+                    "Travel to Grell camps."),
+            },
+        },
+        {
+            id = "turnin-97977-natures-call",
+            kind = "turnin",
+            priority = 203,
+            text = "Turn in Nature's Call to Tarindrella.",
+            dependsOn = { "objective-97977-natures-call" },
+            complete = QuestState(97977, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5780, 0.4500, "Tarindrella",
+                    "Travel to Tarindrella."),
+            },
+        },
+        {
             id = "accept-916-webwood-venom",
             kind = "accept",
             priority = 210,
@@ -481,7 +518,7 @@ ns:RegisterGuide({
             id = "objective-917-webwood-egg",
             kind = "objective",
             priority = 340,
-            text = "Follow the path inside Shadowthread Cave and and collect Webwood Egg near the giant spider.",
+            text = "Follow the path inside Shadowthread Cave and collect the Webwood Egg near the giant spider. Githyiss the Vile can drop a fang. Use it to start Fang of Githyiss.",
             dependsOn = { "accept-917-webwood-egg" },
             complete = QuestState(917, "complete"),
             route = {
@@ -514,6 +551,22 @@ ns:RegisterGuide({
             complete = QuestState(917, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.5781, 0.4163, "Gilshalan Windwalker",
+                    "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "turnin-97236-fang-of-githyiss",
+            kind = "turnin",
+            priority = 361,
+            conditions = {
+                all = {
+                    { quest = { id = 97236, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Fang of Githyiss to Gilshalan Windwalker if Githyiss the Vile dropped the fang.",
+            complete = QuestState(97236, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5780, 0.4160, "Gilshalan Windwalker",
                     "Travel to Gilshalan Windwalker."),
             },
         },
@@ -725,6 +778,39 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-87288-soft-saber-pelts",
+            kind = "accept",
+            priority = 541,
+            text = "Accept Soft Saber Pelts from Aldia in Dolanaar.",
+            complete = QuestState(87288, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5540, 0.5720, "Aldia",
+                    "Travel to Aldia."),
+            },
+        },
+        {
+            id = "accept-99046-the-lost-runner",
+            kind = "accept",
+            priority = 542,
+            text = "Accept The Lost Runner from Sentinel Kyra Starsong in Dolanaar.",
+            complete = QuestState(99046, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5600, 0.5940, "Sentinel Kyra Starsong",
+                    "Travel to Sentinel Kyra Starsong."),
+            },
+        },
+        {
+            id = "accept-98391-the-sisterhood-of-elune",
+            kind = "accept",
+            priority = 543,
+            text = "Accept The Sisterhood of Elune from Laurna Morninglight in Dolanaar.",
+            complete = QuestState(98391, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
+                    "Travel to Laurna Morninglight."),
+            },
+        },
+        {
             id = "accept-2438-the-emerald-dreamcatcher",
             kind = "accept",
             priority = 550,
@@ -754,6 +840,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Lake Al'Ameth",
                     "Travel to Lake Al'Ameth."),
+            },
+        },
+        {
+            id = "objective-87288-soft-saber-pelts",
+            kind = "objective",
+            priority = 571,
+            text = "Skin Nightsabers for 6 Soft Nightsaber Pelts.",
+            dependsOn = { "accept-87288-soft-saber-pelts" },
+            complete = QuestState(87288, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.6140, 0.5880, "Nightsaber",
+                    "Travel to Nightsaber."),
             },
         },
         {
@@ -957,6 +1055,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-87288-soft-saber-pelts",
+            kind = "turnin",
+            priority = 741,
+            text = "Turn in Soft Saber Pelts to Aldia in Dolanaar.",
+            dependsOn = { "objective-87288-soft-saber-pelts" },
+            complete = QuestState(87288, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5540, 0.5720, "Aldia",
+                    "Travel to Aldia."),
+            },
+        },
+        {
             id = "accept-922-rellian-greenspyre",
             kind = "accept",
             priority = 750,
@@ -1099,6 +1209,42 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98403-twisted-hatred",
+            kind = "accept",
+            priority = 861,
+            text = "Accept Twisted Hatred from Tallonkai Swiftroot. This is an elite. Bring a group.",
+            dependsOn = { "turnin-932-twisted-hatred" },
+            complete = QuestState(98403, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5540, 0.5680, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
+            id = "objective-98403-twisted-hatred",
+            kind = "objective",
+            priority = 862,
+            text = "Kill Xethorr the Wicked in the Cleft northwest of Dolanaar and collect Mature Fel Moss. This is an elite. Bring a group.",
+            dependsOn = { "accept-98403-twisted-hatred" },
+            complete = QuestState(98403, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5140, 0.4420, "Xethorr the Wicked",
+                    "Travel to Xethorr the Wicked."),
+            },
+        },
+        {
+            id = "turnin-98403-twisted-hatred",
+            kind = "turnin",
+            priority = 863,
+            text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
+            dependsOn = { "objective-98403-twisted-hatred" },
+            complete = QuestState(98403, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5540, 0.5680, "Tallonkai Swiftroot",
+                    "Travel to Tallonkai Swiftroot."),
+            },
+        },
+        {
             id = "turnin-2459-ferocitas-the-dream-eater",
             kind = "turnin",
             priority = 870,
@@ -1198,6 +1344,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.4428, 0.5808, "Ban'ethil Barrow Den",
                     "Travel to Ban'ethil Barrow Den."),
+            },
+        },
+        {
+            id = "accept-99053-escaping-banethil",
+            kind = "accept",
+            priority = 951,
+            text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom in the Ban'ethil Barrow Den.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
+            complete = QuestState(99053, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4460, 0.5880, "Sentinel Lynessa Duskblossom",
+                    "Travel to Sentinel Lynessa Duskblossom."),
+            },
+        },
+        {
+            id = "objective-99053-escaping-banethil",
+            kind = "objective",
+            priority = 952,
+            text = "Escort Sentinel Lynessa Duskblossom out of the Ban'ethil Barrow Den.",
+            dependsOn = { "accept-99053-escaping-banethil" },
+            complete = QuestState(99053, "complete"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.4460, 0.5880, "Sentinel Lynessa Duskblossom",
+                    "Travel to Sentinel Lynessa Duskblossom."),
             },
         },
         {
@@ -1365,6 +1535,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Athridas Bearmantle",
                     "Travel to Athridas Bearmantle."),
+            },
+        },
+        {
+            id = "turnin-99053-escaping-banethil",
+            kind = "turnin",
+            priority = 1091,
+            text = "Turn in Escaping Ban'ethil to Sentinel Kyra Starsong in Dolanaar.",
+            dependsOn = { "objective-99053-escaping-banethil" },
+            complete = QuestState(99053, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5600, 0.5940, "Sentinel Kyra Starsong",
+                    "Travel to Sentinel Kyra Starsong."),
             },
         },
         {
@@ -1731,6 +1913,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98391-the-sisterhood-of-elune",
+            kind = "turnin",
+            priority = 1321,
+            text = "Turn in The Sisterhood of Elune to Sister Aquinne in the Temple Garden.",
+            dependsOn = { "accept-98391-the-sisterhood-of-elune" },
+            complete = QuestState(98391, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.2900, 0.4540, "Sister Aquinne",
+                    "Travel to Sister Aquinne."),
+            },
+        },
+        {
             id = "turnin-6103-training-the-beast",
             kind = "turnin",
             priority = 1330,
@@ -2091,6 +2285,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-99046-the-lost-runner",
+            kind = "turnin",
+            priority = 1551,
+            text = "Turn in The Lost Runner to Sentinel Eralya Leafshadow on the road to the Oracle Glade.",
+            dependsOn = { "accept-99046-the-lost-runner" },
+            complete = QuestState(99046, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3760, 0.3680, "Sentinel Eralya Leafshadow",
+                    "Travel to Sentinel Eralya Leafshadow."),
+            },
+        },
+        {
+            id = "turnin-99047-not-dead-yet",
+            kind = "turnin",
+            priority = 1851,
+            text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow, then tell Byancie in Dolanaar.",
+            dependsOn = { "turnin-99046-the-lost-runner" },
+            complete = QuestState(99047, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5520, 0.5680, "Byancie",
+                    "Travel to Byancie."),
+            },
+        },
+        {
+            id = "accept-99050-the-great-tree-provides",
+            kind = "accept",
+            priority = 1852,
+            text = "Accept The Great Tree Provides from Byancie in Dolanaar.",
+            dependsOn = { "turnin-99047-not-dead-yet" },
+            complete = QuestState(99050, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5520, 0.5680, "Byancie",
+                    "Travel to Byancie."),
+            },
+        },
+        {
+            id = "objective-99050-the-great-tree-provides-2",
+            kind = "objective",
+            priority = 1853,
+            text = "Buy an Empty Vial in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
+            dependsOn = { "accept-99050-the-great-tree-provides" },
+            complete = QuestObjective(99050, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5520, 0.5680, "Dolanaar vendor",
+                    "Travel to Dolanaar vendor."),
+            },
+        },
+        {
+            id = "objective-99050-the-great-tree-provides-3",
+            kind = "objective",
+            priority = 1854,
+            text = "Buy a Refreshing Spring Water in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
+            dependsOn = { "accept-99050-the-great-tree-provides" },
+            complete = QuestObjective(99050, 3),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5520, 0.5680, "Dolanaar vendor",
+                    "Travel to Dolanaar vendor."),
+            },
+        },
+        {
             id = "accept-937-the-enchanted-glade",
             kind = "accept",
             priority = 1570,
@@ -2171,6 +2425,78 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
                     "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "accept-98392-darkness-in-the-glade",
+            kind = "accept",
+            priority = 1631,
+            text = "Accept Darkness in the Glade from Sentinel Arynia Cloudsbreak.",
+            dependsOn = { "turnin-937-the-enchanted-glade" },
+            complete = QuestState(98392, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3820, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "objective-98392-darkness-in-the-glade-1",
+            kind = "objective",
+            priority = 1632,
+            text = "Darkness in the Glade: take Hatescreech's Amulet.",
+            dependsOn = { "accept-98392-darkness-in-the-glade" },
+            complete = QuestObjective(98392, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3500, 0.3920, "Hatescreech",
+                    "Travel to Hatescreech."),
+            },
+        },
+        {
+            id = "objective-98392-darkness-in-the-glade-2",
+            kind = "objective",
+            priority = 1633,
+            text = "Darkness in the Glade: take Windmistress Gaedress' Amulet.",
+            dependsOn = { "accept-98392-darkness-in-the-glade" },
+            complete = QuestObjective(98392, 2),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3320, 0.3600, "Windmistress Gaedress",
+                    "Travel to Windmistress Gaedress."),
+            },
+        },
+        {
+            id = "objective-98392-darkness-in-the-glade-3",
+            kind = "objective",
+            priority = 1634,
+            text = "Darkness in the Glade: take Witchmother Arysa's Amulet.",
+            dependsOn = { "accept-98392-darkness-in-the-glade" },
+            complete = QuestObjective(98392, 3),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3420, 0.2800, "Witchmother Arysa",
+                    "Travel to Witchmother Arysa."),
+            },
+        },
+        {
+            id = "turnin-98392-darkness-in-the-glade",
+            kind = "turnin",
+            priority = 1635,
+            text = "Turn in Darkness in the Glade to Sentinel Arynia Cloudsbreak.",
+            dependsOn = { "objective-98392-darkness-in-the-glade-1", "objective-98392-darkness-in-the-glade-2", "objective-98392-darkness-in-the-glade-3" },
+            complete = QuestState(98392, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3820, 0.3440, "Sentinel Arynia Cloudsbreak",
+                    "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "turnin-98398-the-oracle-tree",
+            kind = "turnin",
+            priority = 1636,
+            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. Wowhead has no tree pin, so this marks Sentinel Arynia Cloudsbreak beside it.",
+            dependsOn = { "turnin-98392-darkness-in-the-glade" },
+            complete = QuestState(98398, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3820, 0.3440, "Oracle Tree",
+                    "Travel to Oracle Tree."),
             },
         },
         {
@@ -2464,6 +2790,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-99050-the-great-tree-provides-1",
+            kind = "objective",
+            priority = 1861,
+            text = "Collect 6 Dewy Lasher Fronds from lashers around Lake Al'Ameth.",
+            dependsOn = { "accept-99050-the-great-tree-provides" },
+            complete = QuestObjective(99050, 1),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5900, 0.6400, "Lasher Sproutling",
+                    "Travel to Lasher Sproutling."),
+            },
+        },
+        {
             id = "travel-952-darnassus",
             kind = "travel",
             priority = 1870,
@@ -2471,6 +2809,30 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.2700, 0.5500, "Darnassus",
                     "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-99050-the-great-tree-provides",
+            kind = "turnin",
+            priority = 1865,
+            text = "Turn in The Great Tree Provides to Byancie in Dolanaar.",
+            dependsOn = { "objective-99050-the-great-tree-provides-1", "objective-99050-the-great-tree-provides-2", "objective-99050-the-great-tree-provides-3" },
+            complete = QuestState(99050, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5520, 0.5680, "Byancie",
+                    "Travel to Byancie."),
+            },
+        },
+        {
+            id = "turnin-99073-easing-suffering",
+            kind = "turnin",
+            priority = 1866,
+            text = "Accept Easing Suffering from Byancie, then take the salve to Sentinel Eralya Leafshadow.",
+            dependsOn = { "turnin-99050-the-great-tree-provides" },
+            complete = QuestState(99073, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.3760, 0.3680, "Sentinel Eralya Leafshadow",
+                    "Travel to Sentinel Eralya Leafshadow."),
             },
         },
         {
@@ -2483,6 +2845,69 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3486, 0.0897, "Archdruid Fandral Staghelm",
                     "Travel to Archdruid Fandral Staghelm."),
+            },
+        },
+        {
+            id = "turnin-98046-crown-of-the-earth",
+            kind = "turnin",
+            priority = 1881,
+            text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm, then bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
+            dependsOn = { "turnin-935-crown-of-the-earth" },
+            complete = QuestState(98046, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.4000, 0.8740, "Priestess Lariia",
+                    "Travel to Priestess Lariia."),
+            },
+        },
+        {
+            id = "turnin-98065-crown-of-the-earth",
+            kind = "turnin",
+            priority = 1882,
+            text = "Accept Crown of the Earth from Priestess Lariia, then bring the moonwell remnants to Tyrande Whisperwind.",
+            dependsOn = { "turnin-98046-crown-of-the-earth" },
+            complete = QuestState(98065, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3900, 0.8120, "Tyrande Whisperwind",
+                    "Travel to Tyrande Whisperwind."),
+            },
+        },
+        {
+            id = "accept-98067-eyes-of-the-sentinels",
+            kind = "accept",
+            priority = 1883,
+            text = "Accept Eyes of the Sentinels from Sentinel Dalia Sunblade in the Temple of the Moon.",
+            complete = QuestState(98067, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3980, 0.8920, "Sentinel Dalia Sunblade",
+                    "Travel to Sentinel Dalia Sunblade."),
+            },
+        },
+        {
+            id = "objective-98067-eyes-of-the-sentinels",
+            kind = "objective",
+            priority = 1884,
+            text = "Place Sentinel Owls at the Cenarion Hold depths entrance, the Darnassus Bank, the Craftsmen's Terrace Inn, and the City Gate.",
+            dependsOn = { "accept-98067-eyes-of-the-sentinels" },
+            complete = QuestState(98067, "complete"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3380, 0.1580, "Cenarion Hold depths",
+                    "Travel to Cenarion Hold depths."),
+                Point(MAP.DARNASSUS, 0.4140, 0.4320, "Darnassus Bank",
+                    "Travel to Darnassus Bank."),
+                Point(MAP.DARNASSUS, 0.6640, 0.1540, "Craftsmen's Terrace",
+                    "Travel to Craftsmen's Terrace."),
+            },
+        },
+        {
+            id = "turnin-98067-eyes-of-the-sentinels",
+            kind = "turnin",
+            priority = 1885,
+            text = "Turn in Eyes of the Sentinels to Sentinel Dalia Sunblade.",
+            dependsOn = { "objective-98067-eyes-of-the-sentinels" },
+            complete = QuestState(98067, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3980, 0.8920, "Sentinel Dalia Sunblade",
+                    "Travel to Sentinel Dalia Sunblade."),
             },
         },
         {

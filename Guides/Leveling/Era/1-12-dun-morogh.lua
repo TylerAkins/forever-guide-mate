@@ -1,7 +1,11 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Dun Morogh, levels 1-12.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Dun Morogh and Ironforge lists are woven into this route.
+-- Left out: Data Hoarders sends you back into Gnomeregan after this road has left.
+-- The Quarry's Smith is a copper-bar delivery. Nip 'Em in the Bud, Farsen's Watch, A Visitor to Dun Morogh,
+-- Underground Map, and The Treaty of Understanding are level 13 to 16, past this route.
+-- Your Package Has Arrived and Stolen Blasting Powder appear only after the item is in the log.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -33,7 +37,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-dun-morogh",
-    title = "1-12 Dun Morogh (Era)",
+    title = "1-12 Dun Morogh",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -822,6 +826,28 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98322-secure-the-mountain",
+            kind = "accept",
+            priority = 551,
+            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
+            complete = QuestState(98322, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
+                    "Travel to Senir Whitebeard."),
+            },
+        },
+        {
+            id = "accept-98321-flintfires-shipment",
+            kind = "accept",
+            priority = 552,
+            text = "Accept Flintfire's Shipment from Tognus Flintfire in Kharanos.",
+            complete = QuestState(98321, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4520, 0.5200, "Tognus Flintfire",
+                    "Travel to Tognus Flintfire."),
+            },
+        },
+        {
             id = "accept-384-beer-basted-boar-ribs",
             kind = "accept",
             priority = 560,
@@ -955,6 +981,78 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98322-secure-the-mountain",
+            kind = "turnin",
+            priority = 661,
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
+            dependsOn = { "accept-98322-secure-the-mountain" },
+            complete = QuestState(98322, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
+            id = "accept-98319-secure-the-mountain",
+            kind = "accept",
+            priority = 662,
+            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
+            dependsOn = { "turnin-98322-secure-the-mountain" },
+            complete = QuestState(98319, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
+            id = "objective-98319-secure-the-mountain",
+            kind = "objective",
+            priority = 663,
+            text = "Find Mountaineer Cornelius in the Grizzled Den.",
+            dependsOn = { "accept-98319-secure-the-mountain" },
+            complete = QuestState(98319, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4200, 0.5400, "Grizzled Den",
+                    "Travel to Grizzled Den."),
+            },
+        },
+        {
+            id = "turnin-98319-secure-the-mountain",
+            kind = "turnin",
+            priority = 664,
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen.",
+            dependsOn = { "objective-98319-secure-the-mountain" },
+            complete = QuestState(98319, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
+            id = "accept-98323-secure-the-mountain",
+            kind = "accept",
+            priority = 665,
+            text = "Accept Secure the Mountain from Mountaineer Gretchen.",
+            dependsOn = { "turnin-98319-secure-the-mountain" },
+            complete = QuestState(98323, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
+            id = "objective-98321-flintfires-shipment",
+            kind = "objective",
+            priority = 666,
+            text = "Collect 8 Flintfire Shipments in the Grizzled Den.",
+            dependsOn = { "accept-98321-flintfires-shipment" },
+            complete = QuestState(98321, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4200, 0.5400, "Grizzled Den",
+                    "Travel to Grizzled Den."),
+            },
+        },
+        {
             id = "turnin-5541-ammo-for-rumbleshot",
             kind = "turnin",
             priority = 680,
@@ -1071,9 +1169,200 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98323-secure-the-mountain",
+            kind = "turnin",
+            priority = 771,
+            text = "Turn in Secure the Mountain to Senir Whitebeard in Kharanos.",
+            dependsOn = { "accept-98323-secure-the-mountain" },
+            complete = QuestState(98323, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
+                    "Travel to Senir Whitebeard."),
+            },
+        },
+        {
+            id = "turnin-98321-flintfires-shipment",
+            kind = "turnin",
+            priority = 772,
+            text = "Turn in Flintfire's Shipment to Tognus Flintfire in Kharanos.",
+            dependsOn = { "objective-98321-flintfires-shipment" },
+            complete = QuestState(98321, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4520, 0.5200, "Tognus Flintfire",
+                    "Travel to Tognus Flintfire."),
+            },
+        },
+        {
+            id = "accept-99158-dawn-in-the-mountains",
+            kind = "accept",
+            priority = 773,
+            text = "Accept Dawn in the Mountains from Maxan Anvol in Kharanos.",
+            complete = QuestState(99158, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4720, 0.5220, "Maxan Anvol",
+                    "Travel to Maxan Anvol."),
+            },
+        },
+        {
+            id = "turnin-99158-dawn-in-the-mountains",
+            kind = "turnin",
+            priority = 774,
+            text = "Turn in Dawn in the Mountains to Father Gavin.",
+            dependsOn = { "accept-99158-dawn-in-the-mountains" },
+            complete = QuestState(99158, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "accept-99159-finding-warmth",
+            kind = "accept",
+            priority = 775,
+            text = "Accept Finding Warmth from Father Gavin.",
+            dependsOn = { "turnin-99158-dawn-in-the-mountains" },
+            complete = QuestState(99159, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "accept-99160-rimes-wrath",
+            kind = "accept",
+            priority = 776,
+            text = "Accept Rime's Wrath from Father Gavin.",
+            dependsOn = { "turnin-99158-dawn-in-the-mountains" },
+            complete = QuestState(99160, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "accept-99162-treacherous-cold",
+            kind = "accept",
+            priority = 777,
+            text = "Accept Treacherous Cold from Father Gavin.",
+            dependsOn = { "turnin-99158-dawn-in-the-mountains" },
+            complete = QuestState(99162, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "objective-99159-finding-warmth",
+            kind = "objective",
+            priority = 778,
+            text = "Collect 14 pieces of Mostly Dry Firewood.",
+            dependsOn = { "accept-99159-finding-warmth" },
+            complete = QuestState(99159, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "objective-99160-rimes-wrath",
+            kind = "objective",
+            priority = 779,
+            text = "Destroy 10 minor ice elementals.",
+            dependsOn = { "accept-99160-rimes-wrath" },
+            complete = QuestState(99160, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5700, 0.4520, "Minor Ice Elemental",
+                    "Travel to Minor Ice Elemental."),
+            },
+        },
+        {
+            id = "objective-99162-treacherous-cold",
+            kind = "objective",
+            priority = 779.5,
+            text = "Collect Stoneanvil's Rifle, Sunhammer's Rifle, and Coalbeard's Rifle.",
+            dependsOn = { "accept-99162-treacherous-cold" },
+            complete = QuestState(99162, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "turnin-99159-finding-warmth",
+            kind = "turnin",
+            priority = 781,
+            text = "Turn in Finding Warmth to Father Gavin.",
+            dependsOn = { "objective-99159-finding-warmth" },
+            complete = QuestState(99159, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "turnin-99160-rimes-wrath",
+            kind = "turnin",
+            priority = 782,
+            text = "Turn in Rime's Wrath to Father Gavin.",
+            dependsOn = { "objective-99160-rimes-wrath" },
+            complete = QuestState(99160, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "accept-99161-rimes-wrath",
+            kind = "accept",
+            priority = 783,
+            text = "Accept the next Rime's Wrath from Father Gavin.",
+            dependsOn = { "turnin-99160-rimes-wrath" },
+            complete = QuestState(99161, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "objective-99161-rimes-wrath",
+            kind = "objective",
+            priority = 784,
+            text = "Kill Avala and take Avala's Core.",
+            dependsOn = { "accept-99161-rimes-wrath" },
+            complete = QuestState(99161, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5820, 0.4200, "Avala",
+                    "Travel to Avala."),
+            },
+        },
+        {
+            id = "turnin-99161-rimes-wrath",
+            kind = "turnin",
+            priority = 785,
+            text = "Turn in Rime's Wrath to Father Gavin.",
+            dependsOn = { "objective-99161-rimes-wrath" },
+            complete = QuestState(99161, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
+            id = "turnin-99162-treacherous-cold",
+            kind = "turnin",
+            priority = 786,
+            text = "Turn in Treacherous Cold to Father Gavin.",
+            dependsOn = { "objective-99162-treacherous-cold" },
+            complete = QuestState(99162, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5760, 0.4480, "Father Gavin",
+                    "Travel to Father Gavin."),
+            },
+        },
+        {
             id = "accept-412-operation-recombobulation",
             kind = "accept",
-            priority = 780,
+            priority = 788,
             text = "Accept Operation Recombobulation from Razzle Sprysprocket in Kharanos.",
             complete = QuestState(412, "activeOrCompleted"),
             route = {
@@ -1156,6 +1445,41 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.3020, 0.4562, "Rejold Barleybrew",
                     "Travel to Rejold Barleybrew."),
+            },
+        },
+        {
+            id = "accept-98326-frosthowl",
+            kind = "accept",
+            priority = 841,
+            text = "Accept Frosthowl from Gretta Ganter in Brewnall Village.",
+            complete = QuestState(98326, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.3140, 0.4460, "Gretta Ganter",
+                    "Travel to Gretta Ganter."),
+            },
+        },
+        {
+            id = "objective-98326-frosthowl",
+            kind = "objective",
+            priority = 842,
+            text = "Slay Frosthowl and take the Sack of Fish.",
+            dependsOn = { "accept-98326-frosthowl" },
+            complete = QuestState(98326, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.3140, 0.4460, "Frosthowl",
+                    "Travel to Frosthowl."),
+            },
+        },
+        {
+            id = "turnin-98326-frosthowl",
+            kind = "turnin",
+            priority = 843,
+            text = "Turn in Frosthowl to Gretta Ganter.",
+            dependsOn = { "objective-98326-frosthowl" },
+            complete = QuestState(98326, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.3140, 0.4460, "Gretta Ganter",
+                    "Travel to Gretta Ganter."),
             },
         },
         {
@@ -1495,6 +1819,108 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95212-never-saddle-on-quality",
+            kind = "accept",
+            priority = 1131,
+            text = "Accept Never Saddle on Quality from Rudra Amberstill.",
+            complete = QuestState(95212, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6300, 0.4980, "Rudra Amberstill",
+                    "Travel to Rudra Amberstill."),
+            },
+        },
+        {
+            id = "objective-95212-never-saddle-on-quality",
+            kind = "objective",
+            priority = 1132,
+            text = "Collect 6 Pristine Leopard Pelts from Elder Snow Leopards.",
+            dependsOn = { "accept-95212-never-saddle-on-quality" },
+            complete = QuestState(95212, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.7140, 0.6200, "Elder Snow Leopard",
+                    "Travel to Elder Snow Leopard."),
+            },
+        },
+        {
+            id = "turnin-95212-never-saddle-on-quality",
+            kind = "turnin",
+            priority = 1133,
+            text = "Turn in Never Saddle on Quality to Rudra Amberstill.",
+            dependsOn = { "objective-95212-never-saddle-on-quality" },
+            complete = QuestState(95212, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6300, 0.4980, "Rudra Amberstill",
+                    "Travel to Rudra Amberstill."),
+            },
+        },
+        {
+            id = "turnin-95213-stolen-blasting-powder",
+            kind = "turnin",
+            priority = 1134,
+            conditions = {
+                all = {
+                    { quest = { id = 95213, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Use the Empty Powder Keg if a trogg drops it, then turn in Stolen Blasting Powder to Quarrymaster Thesten.",
+            complete = QuestState(95213, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6900, 0.5480, "Quarrymaster Thesten",
+                    "Travel to Quarrymaster Thesten."),
+            },
+        },
+        {
+            id = "accept-95214-stolen-blasting-powder",
+            kind = "accept",
+            priority = 1135,
+            conditions = {
+                all = {
+                    { quest = { id = 95213, state = "completed" } },
+                },
+            },
+            text = "Accept Stolen Blasting Powder from Quarrymaster Thesten.",
+            dependsOn = { "turnin-95213-stolen-blasting-powder" },
+            complete = QuestState(95214, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6900, 0.5480, "Quarrymaster Thesten",
+                    "Travel to Quarrymaster Thesten."),
+            },
+        },
+        {
+            id = "objective-95214-stolen-blasting-powder",
+            kind = "objective",
+            priority = 1136,
+            conditions = {
+                all = {
+                    { quest = { id = 95213, state = "completed" } },
+                },
+            },
+            text = "Collect 16 Stolen Blasting Powder from the troggs east of Gol'Bolar Quarry.",
+            dependsOn = { "accept-95214-stolen-blasting-powder" },
+            complete = QuestState(95214, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.7380, 0.5120, "Rockjaw Ambusher",
+                    "Travel to Rockjaw Ambusher."),
+            },
+        },
+        {
+            id = "turnin-95214-stolen-blasting-powder",
+            kind = "turnin",
+            priority = 1137,
+            conditions = {
+                all = {
+                    { quest = { id = 95213, state = "completed" } },
+                },
+            },
+            text = "Turn in Stolen Blasting Powder to Quarrymaster Thesten.",
+            dependsOn = { "objective-95214-stolen-blasting-powder" },
+            complete = QuestState(95214, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.6900, 0.5480, "Quarrymaster Thesten",
+                    "Travel to Quarrymaster Thesten."),
+            },
+        },
+        {
             id = "objective-433-the-public-servant",
             kind = "objective",
             priority = 1140,
@@ -1796,6 +2222,22 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.7076, 0.9048, "Muren Stormpike",
                     "Travel to Muren Stormpike."),
+            },
+        },
+        {
+            id = "turnin-97263-your-package-has-arrived",
+            kind = "turnin",
+            priority = 1321,
+            conditions = {
+                all = {
+                    { quest = { id = 97263, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Your Package Has Arrived to Eldrun Stormbreaker in Ironforge if you are carrying Eldrun's package.",
+            complete = QuestState(97263, "completed"),
+            route = {
+                Point(MAP.IRONFORGE, 0.4740, 0.1360, "Eldrun Stormbreaker",
+                    "Travel to Eldrun Stormbreaker."),
             },
         },
         {
