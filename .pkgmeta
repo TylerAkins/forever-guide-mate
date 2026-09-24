@@ -4,6 +4,7 @@ ignore:
   - tests
   - tools
   - .github
+  - docs
   - .gitignore
   - AGENTS.md
   - VERSION
