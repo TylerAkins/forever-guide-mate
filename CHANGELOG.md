@@ -48,3 +48,4 @@ All notable changes to this project are documented here.
 - Added the next Alliance Era leveling routes, 33-34 Thousand Needles through 50-50 Hinterlands.
 - Added the last Alliance Era leveling routes, 50-51 Blasted Lands through 59-60 Winterspring.
 - The Teldrassil Loremaster guide is Alliance only. Its title is Teldrassil. The library row already tags it Loremaster.
+- Wove Forever quests into the 1-12 Durotar, Mulgore, Tirisfal Glades, Dun Morogh, Elwynn Forest, and Teldrassil routes, including the capital stops those routes already make. Classic quests that were left off the route stay off. Skyborne city tours, cloth donations, and quests past the route's level stay off. Drop quests appear only after the item is in the log.
