@@ -3,8 +3,9 @@ local _, ns = ...
 -- Horde Loremaster route for Durotar.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/durotar
 -- Rules for the next zone: docs/zone-loremaster-guides.md
--- Chains stay in Wowhead series order. Nearby quests are picked up together
--- before the route leaves that camp. Each quest objective is its own step
+-- Chains stay in Wowhead series order. At Sen'jin Village, Thwarting Kolkar
+-- Aggression, Practical Prey, A Solvent Spirit, Zalazane, and Minshina's Skull
+-- are accepted before the route leaves. Each quest objective is its own step
 -- so a finished pin cannot become active again.
 -- Omitted from this run:
 -- The New Horde (787) is an alternate of Your Place In The World and has no giver.
@@ -842,7 +843,7 @@ ns:RegisterGuide({
         {
             id = "accept-817-practical-prey",
             kind = "accept",
-            priority = 430,
+            priority = 351,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -859,7 +860,7 @@ ns:RegisterGuide({
         {
             id = "objective-817-practical-prey-1",
             kind = "objective",
-            priority = 440,
+            priority = 381,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -877,7 +878,7 @@ ns:RegisterGuide({
         {
             id = "turnin-817-practical-prey",
             kind = "turnin",
-            priority = 450,
+            priority = 391,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -895,7 +896,7 @@ ns:RegisterGuide({
         {
             id = "accept-818-a-solvent-spirit",
             kind = "accept",
-            priority = 460,
+            priority = 352,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -912,7 +913,7 @@ ns:RegisterGuide({
         {
             id = "objective-818-a-solvent-spirit-1",
             kind = "objective",
-            priority = 470,
+            priority = 382,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -930,7 +931,7 @@ ns:RegisterGuide({
         {
             id = "objective-818-a-solvent-spirit-2",
             kind = "objective",
-            priority = 480,
+            priority = 383,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -948,7 +949,7 @@ ns:RegisterGuide({
         {
             id = "turnin-818-a-solvent-spirit",
             kind = "turnin",
-            priority = 490,
+            priority = 392,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -966,7 +967,7 @@ ns:RegisterGuide({
         {
             id = "accept-826-zalazane",
             kind = "accept",
-            priority = 500,
+            priority = 353,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -983,7 +984,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-1",
             kind = "objective",
-            priority = 510,
+            priority = 384,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1001,7 +1002,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-2",
             kind = "objective",
-            priority = 520,
+            priority = 385,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1019,7 +1020,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-3",
             kind = "objective",
-            priority = 530,
+            priority = 386,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1037,7 +1038,7 @@ ns:RegisterGuide({
         {
             id = "turnin-826-zalazane",
             kind = "turnin",
-            priority = 540,
+            priority = 393,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1055,7 +1056,7 @@ ns:RegisterGuide({
         {
             id = "accept-808-minshinas-skull",
             kind = "accept",
-            priority = 550,
+            priority = 354,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1072,7 +1073,7 @@ ns:RegisterGuide({
         {
             id = "objective-808-minshinas-skull-1",
             kind = "objective",
-            priority = 560,
+            priority = 387,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1090,7 +1091,7 @@ ns:RegisterGuide({
         {
             id = "turnin-808-minshinas-skull",
             kind = "turnin",
-            priority = 570,
+            priority = 394,
             conditions = {
                 all = {
                     { faction = "Horde" },

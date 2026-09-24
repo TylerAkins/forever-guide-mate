@@ -1402,6 +1402,81 @@ function TestRaceSteps()
 end
 TestRaceSteps()
 
+function TestCampPickups()
+    local function Open(guide, state)
+        ns.charDB.selectedGuide = guide.id
+        ns.charDB.activeGoal = nil
+        ns.charDB.manualCompleted = {}
+        ns.charDB.deferred = {}
+        ns.charDB.history = {}
+        ns.charDB.completionLedger = {}
+        ns.db.autoAdvance = true
+        ns.Engine.reviewingGoal = nil
+        ns.Engine:Refresh(state)
+    end
+    local function Horde(level, mapID, quests)
+        return {
+            faction = "Horde", raceID = 96, classID = 1, level = level,
+            professions = {}, professionsKnown = true,
+            quests = quests, questLogKnown = true,
+            completedQuests = {}, questCompletionKnown = true,
+            mapID = mapID, x = 0.52, y = 0.30,
+        }
+    end
+    local function Active(questID)
+        return { complete = false, objectives = {
+            { text = "unfinished", finished = false, numFulfilled = 0, numRequired = 1 },
+        } }
+    end
+    local barrensGuide = ns.guides["leveling-the-barrens"]
+    local seen = {}
+    for _, goal in ipairs(barrensGuide.goals) do
+        Check(seen[goal.priority] == nil, "Barrens priorities stay unique")
+        seen[goal.priority] = goal.id
+    end
+    Open(barrensGuide, Horde(14, 1413, { [844] = Active(844) }))
+    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
+        "Plainstrider Menace is picked up with Raptor Thieves")
+    Open(barrensGuide, Horde(14, 1413, {
+        [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
+    }))
+    Equal(ns.Engine.currentGoal.id, "objective-844-plainstrider-menace-1",
+        "Crossroads quests leave camp together")
+    local zhevra = ns.Engine:GetGoal(barrensGuide, "accept-845-the-zhevra")
+    Equal(ns.Engine:IsReady(barrensGuide, zhevra, Horde(14, 1413, {
+        [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
+    })), false, "The Zhevra waits until Plainstrider Menace is turned in")
+    local harpies = ns.Engine:GetGoal(barrensGuide, "accept-867-harpy-raiders")
+    Equal(ns.Engine:IsReady(barrensGuide, harpies, Horde(10, 1413, {})), false,
+        "Harpy Raiders stays level 12")
+    local ends = ns.Engine:GetGoal(barrensGuide, "accept-872-the-disruption-ends")
+    Check(DependsOn(ends, "turnin-871-disrupt-the-attacks"),
+        "The Disruption Ends waits until Disrupt the Attacks is turned in")
+    local supplies = ns.Engine:GetGoal(barrensGuide, "accept-5041-supplies-for-the-crossroads")
+    Check(DependsOn(supplies, "turnin-871-disrupt-the-attacks"),
+        "Supplies for the Crossroads waits until Disrupt the Attacks is turned in")
+    Open(barrensGuide, {
+        faction = "Horde", raceID = 96, classID = 1, level = 14,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [844] = true, [869] = true, [871] = true, [867] = true },
+        questCompletionKnown = true,
+        mapID = 1413, x = 0.52, y = 0.30,
+    })
+    Equal(ns.Engine.currentGoal.id, "accept-845-the-zhevra",
+        "the next Crossroads wave starts with The Zhevra")
+    local durotarGuide = ns.guides["leveling-durotar"]
+    local durotarSeen = {}
+    for _, goal in ipairs(durotarGuide.goals) do
+        Check(durotarSeen[goal.priority] == nil, "Durotar priorities stay unique")
+        durotarSeen[goal.priority] = goal.id
+    end
+    Open(durotarGuide, Horde(14, 1411, { [786] = Active(786) }))
+    Equal(ns.Engine.currentGoal.id, "accept-817-practical-prey",
+        "Sen'jin Village picks up Practical Prey with Thwarting Kolkar Aggression")
+end
+TestCampPickups()
+
 function TestHiddenEnemies()
     local rfc = ns.guides["dungeons-ragefire-chasm-horde"]
     local function Open(state)
