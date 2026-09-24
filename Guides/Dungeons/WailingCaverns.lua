@@ -26,7 +26,7 @@ local function EitherQuest(state, firstQuestID, secondQuestID)
     return { any = { QuestState(firstQuestID, state), QuestState(secondQuestID, state) } }
 end
 
-local function Point(mapID, x, y, label, offMapText, complete)
+local function Point(mapID, x, y, label, offMapText, complete, flightTo)
     return {
         mapID = mapID,
         x = x,
@@ -34,18 +34,20 @@ local function Point(mapID, x, y, label, offMapText, complete)
         label = label,
         offMapText = offMapText,
         complete = complete,
+        flightTo = flightTo,
     }
 end
 
 local function ThunderBluffRoute(x, y, label, offMapText)
     return {
-        Point(MAP.BARRENS, 0.515, 0.303, "Devrak, the Crossroads flight master",
-            "Travel to the Crossroads flight master and check flights to Thunder Bluff.",
-            { map = { MAP.ORGRIMMAR, MAP.MULGORE, MAP.THUNDER_BLUFF } }),
-        Point(MAP.ORGRIMMAR, 0.451, 0.639, "Use the Orgrimmar flight master for Thunder Bluff.",
-            "Open a nearby flight master so GuideMate can learn Forever's routes. " ..
-            "If Thunder Bluff is available, fly there; otherwise travel toward Orgrimmar.",
-            { map = { MAP.MULGORE, MAP.THUNDER_BLUFF } }),
+        Point(MAP.BARRENS, 0.515, 0.303, "Take the flight path to Thunder Bluff.",
+            "Take the flight path to Thunder Bluff.",
+            { map = { MAP.ORGRIMMAR, MAP.MULGORE, MAP.THUNDER_BLUFF } },
+            "Thunder Bluff"),
+        Point(MAP.ORGRIMMAR, 0.451, 0.639, "Take the flight path to Thunder Bluff.",
+            "Take the flight path to Thunder Bluff.",
+            { map = { MAP.MULGORE, MAP.THUNDER_BLUFF } },
+            "Thunder Bluff"),
         -- Southwest elevator. Wowhead pins it at 32, 65 on the Thunder Bluff map.
         -- Classic zone transforms put that shaft at about 36.3, 30.1 in Mulgore.
         Point(MAP.MULGORE, 0.363, 0.301, "Ride the southwest elevator up to Thunder Bluff.",
