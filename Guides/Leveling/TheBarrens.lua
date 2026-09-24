@@ -20,6 +20,9 @@ local _, ns = ...
 -- Blood Shards of Agamaggan unlocks those buffs. Buy the one for your class
 -- if you want it, then leave the repeatable turn-ins.
 -- Stepping Stones requires ...and that note you found when that quest is up.
+-- Chen's Empty Keg, the four Camp Taurajo rares, and The Runed Scroll start
+-- from an item. Use the item. The turn-in stays out of the route until the
+-- quest is in the log, and a missing drop does not block 100%.
 -- Warsong Reports, the Hillsbrad vial sites, Deepmoss eggs, and a few
 -- object spawns have no Wowhead pin. Those steps name the landmark.
 -- Journey to the Crossroads from Thrall (98024) is Horde Skyborne.
@@ -1134,7 +1137,7 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "Centaur Bracers: Centaur Bracers.",
+            text = "Centaur Bracers: Centaur Bracers. Kolkar can drop Chen's Empty Keg. Use it to start the quest.",
             dependsOn = { "accept-855-centaur-bracers" },
             complete = QuestObjective(855, 1, "Centaur Bracers"),
             route = {
@@ -1570,23 +1573,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-819-chens-empty-keg",
-            kind = "accept",
-            priority = 840,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 11 } },
-                },
-            },
-            text = "Loot the item that starts Chen's Empty Keg.",
-            complete = QuestState(819, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.622, 0.384, "Brewmaster Drohn",
-                    "Travel to Brewmaster Drohn."),
-            },
-        },
-        {
             id = "turnin-819-chens-empty-keg",
             kind = "turnin",
             priority = 850,
@@ -1594,10 +1580,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Chen's Empty Keg to Brewmaster Drohn.",
-            dependsOn = { "accept-819-chens-empty-keg" },
             complete = QuestState(819, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.622, 0.384, "Brewmaster Drohn",
@@ -1890,6 +1876,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Accept Chen's Empty Keg from Brewmaster Drohn.",
@@ -1908,6 +1895,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Savannah Lion Tusk.",
@@ -1926,6 +1914,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Plainstrider Kidney.",
@@ -1944,6 +1933,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Thunder Lizard Horn.",
@@ -1962,6 +1952,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Chen's Empty Keg to Brewmaster Drohn.",
@@ -1980,6 +1971,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Accept Chen's Empty Keg from Brewmaster Drohn.",
@@ -1998,6 +1990,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Lightning Gland.",
@@ -2016,6 +2009,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Thunderhawk Saliva Gland.",
@@ -2034,6 +2028,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Chen's Empty Keg: Kodo Liver.",
@@ -2052,6 +2047,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 11 } },
+                    { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Chen's Empty Keg to Brewmaster Drohn.",
@@ -3461,7 +3457,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Enraged Thunder Lizards: Thunder Lizard Blood.",
+            text = "Enraged Thunder Lizards: Thunder Lizard Blood. Lakota'mani or Owatanka can drop the item that starts their quest. Use it. Both are elites. Bring a group.",
             dependsOn = { "accept-907-enraged-thunder-lizards" },
             complete = QuestObjective(907, 1, "Thunder Lizard Blood"),
             route = {
@@ -3515,7 +3511,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Cry of the Thunderhawk: Thunderhawk Wings.",
+            text = "Cry of the Thunderhawk: Thunderhawk Wings. Washte Pawne can drop Washte Pawne's Feather. Use it to start the quest. This is an elite. Bring a group.",
             dependsOn = { "accept-913-cry-of-the-thunderhawk" },
             complete = QuestObjective(913, 1, "Thunderhawk Wings"),
             route = {
@@ -3632,23 +3628,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-883-lakotamani",
-            kind = "accept",
-            priority = 2160,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Loot the item that starts Lakota'mani. This is an elite. Bring a group.",
-            complete = QuestState(883, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
-                    "Travel to Jorn Skyseer."),
-            },
-        },
-        {
             id = "turnin-883-lakotamani",
             kind = "turnin",
             priority = 2170,
@@ -3656,28 +3635,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 10 } },
+                    { quest = { id = 883, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Lakota'mani to Jorn Skyseer. This is an elite. Bring a group.",
-            dependsOn = { "accept-883-lakotamani" },
             complete = QuestState(883, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
-                    "Travel to Jorn Skyseer."),
-            },
-        },
-        {
-            id = "accept-884-owatanka",
-            kind = "accept",
-            priority = 2180,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Loot the item that starts Owatanka. This is an elite. Bring a group.",
-            complete = QuestState(884, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
                     "Travel to Jorn Skyseer."),
@@ -3691,28 +3653,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 10 } },
+                    { quest = { id = 884, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Owatanka to Jorn Skyseer. This is an elite. Bring a group.",
-            dependsOn = { "accept-884-owatanka" },
             complete = QuestState(884, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
-                    "Travel to Jorn Skyseer."),
-            },
-        },
-        {
-            id = "accept-885-washte-pawne",
-            kind = "accept",
-            priority = 2200,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Loot the item that starts Washte Pawne. This is an elite. Bring a group.",
-            complete = QuestState(885, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
                     "Travel to Jorn Skyseer."),
@@ -3726,28 +3671,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 10 } },
+                    { quest = { id = 885, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Washte Pawne to Jorn Skyseer. This is an elite. Bring a group.",
-            dependsOn = { "accept-885-washte-pawne" },
             complete = QuestState(885, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
-                    "Travel to Jorn Skyseer."),
-            },
-        },
-        {
-            id = "accept-897-the-harvester",
-            kind = "accept",
-            priority = 2220,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Loot the item that starts The Harvester. This is an elite. Bring a group.",
-            complete = QuestState(897, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
                     "Travel to Jorn Skyseer."),
@@ -3761,10 +3689,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 10 } },
+                    { quest = { id = 897, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in The Harvester to Jorn Skyseer. This is an elite. Bring a group.",
-            dependsOn = { "accept-897-the-harvester" },
             complete = QuestState(897, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.448, 0.590, "Jorn Skyseer",
@@ -4607,7 +4535,7 @@ ns:RegisterGuide({
                     { level = { min = 17 } },
                 },
             },
-            text = "Egg Hunt: Silithid Egg.",
+            text = "Egg Hunt: Silithid Egg. The Harvester can drop the Harvester's Head. Use it to start the quest. This is an elite. Bring a group.",
             dependsOn = { "accept-868-egg-hunt" },
             complete = QuestObjective(868, 1, "Silithid Egg"),
             route = {
@@ -4811,7 +4739,7 @@ ns:RegisterGuide({
                     { level = { min = 17 } },
                 },
             },
-            text = "Accept The Warsong Reports from Kadrak.",
+            text = "Accept The Warsong Reports from Kadrak. Burning Blade in the northern Barrens can drop a Runed Scroll. Use it to start the quest.",
             dependsOn = { "turnin-6541-report-to-kadrak" },
             complete = QuestState(6543, "activeOrCompleted"),
             route = {
@@ -4892,23 +4820,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-3513-the-runed-scroll",
-            kind = "accept",
-            priority = 2890,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Loot the item that starts The Runed Scroll.",
-            complete = QuestState(3513, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.480, 0.054, "Kadrak",
-                    "Travel to Kadrak."),
-            },
-        },
-        {
             id = "turnin-3513-the-runed-scroll",
             kind = "turnin",
             priority = 2900,
@@ -4916,10 +4827,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 15 } },
+                    { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in The Runed Scroll to Kadrak.",
-            dependsOn = { "accept-3513-the-runed-scroll" },
             complete = QuestState(3513, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.480, 0.054, "Kadrak",
@@ -4934,6 +4845,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 15 } },
+                    { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
             text = "Accept Horde Presence from Kadrak. This is an elite. Bring a group.",
@@ -4952,6 +4864,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 15 } },
+                    { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
             text = "Horde Presence: Rynthariel the Keymaster slain. This is an elite. Bring a group.",
@@ -4970,6 +4883,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 15 } },
+                    { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Horde Presence to Kadrak.",
@@ -5274,11 +5188,12 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "Loot the item that starts Valuable Vantages.",
+            text = "Accept Valuable Vantages from Deathstalker Masoj. He gives you the vials.",
+            dependsOn = { "turnin-98094-scout-support" },
             complete = QuestState(98095, "activeOrCompleted"),
             route = {
-                Point(MAP.HILLSBRAD, 0.660, 0.720, "Hills bordering Dun Garok",
-                    "Travel to the next zone, then continue to Hills bordering Dun Garok."),
+                Point(MAP.HILLSBRAD, 0.635, 0.545, "Deathstalker Masoj, north of Nethander Stead",
+                    "Travel to the next zone, then continue to Deathstalker Masoj, north of Nethander Stead."),
             },
         },
         {

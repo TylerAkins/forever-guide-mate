@@ -61,6 +61,15 @@ function QuestAudit:NameMatches(label, name)
     return label == name or label:sub(1, #name + 1) == name .. " "
 end
 
+function QuestAudit:StartsFromItem(goal)
+    local text = type(goal) == "table" and goal.text or nil
+    if type(text) ~= "string" then return false end
+    local lower = text:lower()
+    return lower:find("use the", 1, true) ~= nil
+        or lower:find("use it to start", 1, true) ~= nil
+        or lower:find("loot the item that starts", 1, true) ~= nil
+end
+
 function QuestAudit:AlreadyTaken(questID)
     local state = ns.Engine and ns.Engine.state or nil
     if type(state) ~= "table" then return false end
@@ -107,6 +116,7 @@ function QuestAudit:Inspect(api)
     if type(goal) ~= "table" or goal.kind ~= "accept" then return end
     local questID = self:GoalQuestID(goal)
     if not questID or self:AlreadyTaken(questID) then return end
+    if self:StartsFromItem(goal) then return end
     if not self:NameMatches(self:GoalNPC(goal), Call(api.UnitName, "npc")) then return end
     local offered = OfferedQuestIDs(api)
     if type(offered) ~= "table" then return end

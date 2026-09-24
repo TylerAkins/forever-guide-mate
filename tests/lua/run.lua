@@ -707,8 +707,53 @@ function TestQuestAudit()
         "a pin that says where the NPC stands still matches the unit name")
     Check(not ns.QuestAudit:NameMatches("Ug'thok", "Ug"),
         "a partial name does not match a quest giver")
+    Fresh()
+    ns.Engine.currentGoal = {
+        id = "use-the-keg", kind = "accept",
+        text = "Use the keg to accept Chen's Empty Keg.",
+        complete = { quest = { id = 819, state = "activeOrCompleted" } },
+        route = { { label = "Brewmaster Drohn" } },
+    }
+    ns.QuestAudit:Inspect(API("Brewmaster Drohn", {}))
+    Equal(next(ns.charDB.notOffered), nil,
+        "using an item to accept a quest is not a refusal from the turn-in NPC")
 end
 TestQuestAudit()
+
+function TestItemStarts()
+    local barrens = ns.guides["leveling-the-barrens"]
+    local function State(quests, completed)
+        return {
+            faction = "Horde", raceID = 8, classID = 8, level = 20,
+            professions = {}, professionsKnown = true,
+            quests = quests, questLogKnown = true,
+            completedQuests = completed, questCompletionKnown = true,
+            mapID = 1413, x = 0.45, y = 0.28,
+        }
+    end
+    local empty = State({}, {})
+    local keg = ns.Engine:GetGoal(barrens, "turnin-819-chens-empty-keg")
+    local follow = ns.Engine:GetGoal(barrens, "accept-821-chens-empty-keg")
+    Equal(ns.Engine:GetGoal(barrens, "accept-819-chens-empty-keg"), nil,
+        "Chen's Empty Keg has no required loot step")
+    Equal(ns.Engine:IsReady(barrens, keg, empty), false,
+        "the keg turn-in stays hidden until the item is used")
+    Equal(ns.Engine:IsReady(barrens, follow, empty), false,
+        "the keg follow-up stays hidden when the drop never comes")
+    local progress = ns.Engine:GetGuideProgress(barrens, empty)
+    local active = State({ [819] = { complete = false, objectives = {} } }, {})
+    local withKeg = ns.Engine:GetGuideProgress(barrens, active)
+    Check(withKeg.eligible > progress.eligible,
+        "using Chen's Empty Keg adds its steps to the Barrens percentage")
+    Equal(ns.Engine:IsReady(barrens, keg, active), true,
+        "the keg turn-in appears once the quest is in the log")
+    Equal(ns.Engine:IsReady(barrens, follow, active), false,
+        "Brewmaster Drohn's next keg quest waits for the turn-in")
+    local turnedIn = State({}, { [819] = true })
+    Equal(ns.Engine:IsReady(barrens, follow, turnedIn), true,
+        "the next keg quest opens after the first is turned in")
+end
+TestItemStarts()
 
 local tomtomCalls = {}
 local tomtom = {
