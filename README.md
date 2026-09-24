@@ -17,7 +17,7 @@ Guide files are split by job. `Guides/Era/` holds the 1–60 Era chapters. `Guid
 | Zephras Isle (Skyborne) | Alliance and Horde Skyborne | Levels 1–14. Written from the Forever quest list. |
 | 1–60 Era | Alliance and Horde | One library row. Alliance and Horde chapters share it. A step the other faction cannot take is skipped. The starter follows your race, or the starter zone you are standing in. Later chapters follow in listed order. The row shows the chapter you are on. |
 
-Chapters whose titles still end in `(Era)` are the classic route. They have not had a Forever pass yet.
+Chapters whose titles still end in `(Era)` stay in `Guides/Era` as reference. They are not loaded, so they do not show in the addon. Drop `(Era)` from the title and add the file to `ForeverGuideMate.toc` when that chapter is converted.
 
 ### Era chapters with Forever quests
 
@@ -161,7 +161,7 @@ Class quests will be a new guide section, separate from the zone routes. None of
 
 ### Era chapters that still need Forever support
 
-Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title.
+Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title and add the file to `ForeverGuideMate.toc` and `tools/compile_addon.py` so it loads.
 
 **Alliance**
 

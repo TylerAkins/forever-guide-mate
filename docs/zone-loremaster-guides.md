@@ -4,7 +4,7 @@ Use this when adding the next zone. The Barrens (`Guides/Loremaster/TheBarrens.l
 
 These guides are for finishing a zone's quests. They are not a leveling route. A character can follow one while leveling, but the order and the stops are there to complete the zone.
 
-Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path. Era chapters live in `Guides/Era/`.
+Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path. Era chapters live in `Guides/Era/`. A chapter whose title still ends in `(Era)` is reference only and is left out of `ForeverGuideMate.toc`.
 
 ## Source
 
