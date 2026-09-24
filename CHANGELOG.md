@@ -21,3 +21,4 @@ All notable changes to this project are documented here.
 - Exploring the Horde now visits Nazgrel, Vol'jin, Cairne, and Sylvanas as separate steps. A finished visit stays finished, and the Undercity leg names the zeppelin.
 - Added the Barrens Loremaster guide. Dungeon quests stay in their dungeon guides. Elite steps say to bring a group.
 - Thunder Bluff steps no longer send you to a flight master after you are already in Mulgore or Thunder Bluff. From Mulgore, the route points at the southwest elevator.
+- A known flight path says "Take the flight path to X." If that path has not been learned, the step walks instead of sending you to a flight master.

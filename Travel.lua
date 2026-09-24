@@ -274,12 +274,40 @@ function Travel:FlightMaster(state)
     return best
 end
 
-function Travel:FlightPoint(state, destination)
+function Travel:ZoneHasFlightMaster(mapID)
+    for _, master in ipairs(self.flightMasters) do
+        if master.mapID == mapID then return true end
+    end
+    return false
+end
+
+function Travel:FlightHubName(mapID)
+    if self:ZoneHasFlightMaster(mapID) then return self:MapName(mapID) end
+    local paired = PAIRED[mapID]
+    if paired and self:ZoneHasFlightMaster(paired) then return self:MapName(paired) end
+end
+
+local function BoardingFollowUp(label)
+    if type(label) ~= "string" then return nil end
+    local text = (label:gsub("%.$", ""))
+    if string.lower(string.sub(text, 1, 10)) ~= "board the " then return nil end
+    return string.lower(string.sub(text, 1, 1)) .. string.sub(text, 2)
+end
+
+function Travel:FlightPoint(state, destination, followUp)
+    if type(destination) ~= "string" or destination == "" then return nil end
+    if not ns.Taxi or not ns.Taxi.LearnedDestination or not ns.Taxi:LearnedDestination(state, destination) then
+        return nil
+    end
     local master = self:FlightMaster(state)
     if not master then return nil end
+    local label = "Take the flight path to " .. destination .. "."
+    if followUp then
+        label = "Take the flight path to " .. destination .. ", then " .. followUp .. "."
+    end
     return {
-        mapID = master.mapID, x = master.x, y = master.y, radius = 0.02, flight = true,
-        label = "Speak to " .. master.name .. " and fly toward " .. (destination or self:MapName(state.mapID)) .. ".",
+        mapID = master.mapID, x = master.x, y = master.y, radius = 0.02,
+        flight = true, learnedTaxi = true, label = label,
     }
 end
 
@@ -402,6 +430,7 @@ function Travel:Departure(state, destination, destinationLabel)
         if not route.nearby then
             local point = self:FlightPoint(state, self:MapName(route.dock.mapID))
             if point then return point end
+            if self:FlightMaster(state) then return nil end
             if not self:SameContinent(state.mapID, route.dock.mapID) then
                 local exit = self:LocalExit(state, destination)
                 if exit then return exit end
@@ -413,5 +442,7 @@ function Travel:Departure(state, destination, destinationLabel)
     if not same then
         return self:LocalExit(state, destination)
     end
-    return self:FlightPoint(state, destinationLabel or self:MapName(destination))
+    local hub = self:FlightHubName(destination)
+    if not hub then return nil end
+    return self:FlightPoint(state, hub, BoardingFollowUp(destinationLabel))
 end
