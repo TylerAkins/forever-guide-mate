@@ -881,7 +881,8 @@ function Engine:MigrateEraProgress()
         return found or goalID
     end
     local oldID = ns.charDB.selectedGuide
-    if retired[oldID] then
+    local savedOwner = retired[oldID] and oldID or nil
+    if savedOwner then
         local segment = guide.segmentByID[oldID]
         if segment and segment.fork then
             ns.charDB.eraSegment = oldID
@@ -919,7 +920,8 @@ function Engine:MigrateEraProgress()
         if type(map) ~= "table" then return end
         local copy = {}
         for key, value in pairs(map) do
-            copy[UniquePrefix(key)] = value
+            local owned = savedOwner and Prefixed(savedOwner, key) or nil
+            copy[owned or UniquePrefix(key)] = value
         end
         for key in pairs(map) do map[key] = nil end
         for key, value in pairs(copy) do map[key] = value end
