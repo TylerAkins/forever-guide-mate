@@ -20,6 +20,15 @@ Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/f
 - If Wowhead has no pin, say so in the step and mark the nearest named landmark. Do not invent a precise pin.
 - Coordinates in these guides have not been validated in the Forever client.
 
+## Timers
+
+A quest on a timer finishes within the next two or three steps. Put `timer` on the step that starts the clock. The value is seconds.
+
+- A timer of 30 minutes or less is the next step, ahead of other same-zone work. Any timer with 30 minutes or less remaining is treated the same way. The Flawed Power Stone is 30 minutes and belongs to The Demon Seed: `timer = { seconds = 30 * 60, quest = 924 }` on the stone step. The altar step depends on that stone step.
+- A longer timer finishes the step you are on, then the timed chain is next. Need for a Cure and Apothecary Zamah are 45 minutes: `timer = 45 * 60` on the accept.
+- When the quest log reports time allowed or time left, that clock is used. A client without those calls is left alone.
+- Skipping a timed step leaves it for later.
+
 ## Who can reach 100%
 
 A character who finishes every step they can actually take should reach 100%.
