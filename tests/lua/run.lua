@@ -43,6 +43,7 @@ Load("Guides/Leveling/ZephrasIsle.lua")
 Load("Guides/Leveling/Durotar.lua")
 Load("Guides/Leveling/Mulgore.lua")
 Load("Guides/Leveling/TheBarrens.lua")
+Load("Guides/Leveling/Teldrassil.lua")
 
 local baseState = {
     faction = "Horde",
@@ -1610,6 +1611,106 @@ function TestFlightMemory()
     Enum = nil
 end
 TestFlightMemory()
+
+function TestTeldrassil()
+    local guide = ns.guides["leveling-teldrassil"]
+    Check(guide ~= nil, "the Teldrassil guide is registered")
+    local balance = 0
+    for _, goal in ipairs(guide.goals) do
+        if string.find(goal.id, "objective-456-the-balance-of-nature-", 1, true) then
+            balance = balance + 1
+            Equal(#goal.route, 1, "each Balance of Nature kill has its own pin")
+            Check(DependsOn(goal, "accept-456-the-balance-of-nature"),
+                "Balance of Nature objectives wait on the accept")
+        end
+    end
+    Equal(balance, 2, "Balance of Nature kills are separate steps")
+    local relics = 0
+    for _, goal in ipairs(guide.goals) do
+        if string.find(goal.id, "objective-483-the-relics-of-wakening-", 1, true) then
+            relics = relics + 1
+            Check(DependsOn(goal, "accept-483-the-relics-of-wakening"),
+                "Relics of Wakening objectives wait on the accept")
+            Check(not DependsOn(goal, "objective-483-the-relics-of-wakening-1")
+                or goal.id == "objective-483-the-relics-of-wakening-1",
+                "Relics of Wakening objectives do not wait on each other")
+        end
+    end
+    Equal(relics, 4, "Relics of Wakening are separate steps")
+    local crown = ns.Engine:GetGoal(guide, "accept-929-crown-of-the-earth")
+    Check(DependsOn(crown, "turnin-928-crown-of-the-earth"),
+        "the Starbreeze phial waits until the Shadowglen vessel is delivered")
+    local vessel = ns.Engine:GetGoal(guide, "turnin-928-crown-of-the-earth")
+    Check(DependsOn(vessel, "turnin-921-crown-of-the-earth"),
+        "Corithras waits until Tenaron's phial is filled")
+    local oak = ns.Engine:GetGoal(guide, "objective-2499-oakenscowl-1")
+    Check(oak and string.find(oak.text, "Bring a group", 1, true) ~= nil,
+        "Oakenscowl tells the player to bring a group")
+    local xethorr = ns.Engine:GetGoal(guide, "accept-98403-twisted-hatred")
+    Check(DependsOn(xethorr, "turnin-932-twisted-hatred"),
+        "the elite Twisted Hatred waits until Lord Melenas is turned in")
+    local seen = {}
+    for _, goal in ipairs(guide.goals) do
+        Check(seen[goal.priority] == nil, "Teldrassil priorities stay unique")
+        seen[goal.priority] = goal.id
+    end
+
+    local function Alliance(level, quests, completed)
+        return {
+            faction = "Alliance", raceID = 4, classID = 1, level = level,
+            professions = {}, professionsKnown = true,
+            quests = quests or {}, questLogKnown = true,
+            completedQuests = completed or {}, questCompletionKnown = true,
+            mapID = 1438, x = 0.58, y = 0.44,
+        }
+    end
+    ns.charDB.selectedGuide = guide.id
+    ns.charDB.activeGoal = nil
+    ns.charDB.manualCompleted = {}
+    ns.charDB.deferred = {}
+    ns.charDB.history = {}
+    ns.charDB.completionLedger = {}
+    ns.db.autoAdvance = true
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(Alliance(1))
+    Equal(ns.Engine.currentGoal.id, "accept-456-the-balance-of-nature",
+        "Shadowglen starts with The Balance of Nature")
+    ns.charDB.activeGoal = nil
+    ns.Engine:Refresh(Alliance(1, { [456] = { complete = false, objectives = {} } }))
+    Equal(ns.Engine.currentGoal.id, "accept-458-the-woodland-protector",
+        "Shadowglen also picks up The Woodland Protector before the kills")
+
+    local skip = { [97236] = true, [927] = true, [941] = true }
+    local done = {}
+    for _, goal in ipairs(guide.goals) do
+        local complete = goal.complete
+        local questID = complete and complete.quest and complete.quest.id
+        if not questID and complete and complete.questObjective then
+            questID = complete.questObjective.id
+        end
+        if questID and not skip[questID] then
+            done[questID] = true
+        end
+    end
+    local progress = ns.Engine:GetGuideProgress(guide, Alliance(12, {}, done))
+    Equal(progress.percentage, 100,
+        "a night elf reaches 100% after the Teldrassil quests they can take")
+    Check(progress.eligible < progress.total,
+        "unstarted drop quests stay out of the Teldrassil percentage")
+
+    done[3522] = nil
+    done[935] = nil
+    local antidote = Alliance(12, {
+        [3522] = { complete = false, objectives = {}, timeLeft = 4 * 60 },
+    }, done)
+    ns.charDB.activeGoal = "turnin-935-crown-of-the-earth"
+    ns.charDB.completionLedger = {}
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(antidote)
+    Equal(ns.Engine.currentGoal.id, "turnin-3522-iverrons-antidote",
+        "the 5 minute antidote is the next step ahead of other Teldrassil work")
+end
+TestTeldrassil()
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)

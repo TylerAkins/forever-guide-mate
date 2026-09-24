@@ -32,3 +32,4 @@ All notable changes to this project are documented here.
 - Flight points learned at a flight master stay known after the window closes, including from other flight masters.
 - The Crossroads and Sen'jin Village accept the quests offered on that visit before leaving camp. Plainstrider Menace, Raptor Thieves, Disrupt the Attacks, and Harpy Raiders are one trip. New zone guides follow the Camp pickups section in docs/zone-loremaster-guides.md.
 - Journey to the Crossroads from Thrall is Horde Skyborne. A troll or orc is no longer sent there for a quest Thrall does not offer.
+- Added the Teldrassil Loremaster guide. Tyrande and Remulos stays out: it is a level 60 Moonglade handoff, not a Teldrassil quest. The offered Crown of the Earth part is 7383.
