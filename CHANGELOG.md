@@ -45,4 +45,5 @@ All notable changes to this project are documented here.
 - Added the next Horde Era leveling routes, 36-37 Alterac Mountains through 49-50 Feralas.
 - Added the remaining Horde Era leveling routes, 49-50 Tanaris through 59-60 Winterspring.
 - Added the first Alliance Era leveling routes, 1-12 Dun Morogh, Elwynn Forest, and Teldrassil through 32-33 Stranglethorn Vale. These routes are Alliance only.
+- Added the next Alliance Era leveling routes, 33-34 Thousand Needles through 50-50 Hinterlands.
 - The Teldrassil Loremaster guide is Alliance only. Its title is Teldrassil. The library row already tags it Loremaster.

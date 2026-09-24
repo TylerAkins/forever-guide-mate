@@ -116,6 +116,26 @@ Load("Guides/Leveling/Era/29-30-ashenvale.lua")
 Load("Guides/Leveling/Era/30-31-wetlands.lua")
 Load("Guides/Leveling/Era/31-32-hillsbrad-foothills.lua")
 Load("Guides/Leveling/Era/32-33-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/33-34-thousand-needles.lua")
+Load("Guides/Leveling/Era/34-35-desolace.lua")
+Load("Guides/Leveling/Era/36-37-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/37-37-alterac-mountains.lua")
+Load("Guides/Leveling/Era/37-38-arathi-highlands-alliance.lua")
+Load("Guides/Leveling/Era/38-39-dustwallow-marsh.lua")
+Load("Guides/Leveling/Era/39-40-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/40-41-badlands-alliance.lua")
+Load("Guides/Leveling/Era/41-42-swamp-of-sorrows-alliance.lua")
+Load("Guides/Leveling/Era/42-43-stranglethorn-vale-alliance.lua")
+Load("Guides/Leveling/Era/43-43-desolace.lua")
+Load("Guides/Leveling/Era/43-44-tanaris.lua")
+Load("Guides/Leveling/Era/44-46-feralas.lua")
+Load("Guides/Leveling/Era/46-46-azshara.lua")
+Load("Guides/Leveling/Era/46-46-hinterlands.lua")
+Load("Guides/Leveling/Era/46-47-stranglethorn-vale.lua")
+Load("Guides/Leveling/Era/47-48-searing-gorge-alliance.lua")
+Load("Guides/Leveling/Era/48-49-feralas.lua")
+Load("Guides/Leveling/Era/49-50-tanaris-alliance.lua")
+Load("Guides/Leveling/Era/50-50-hinterlands.lua")
 
 local baseState = {
     faction = "Horde",
@@ -2138,9 +2158,9 @@ function TestEraLeveling()
             end
         end
     end
-    Equal(count, 71, "the Era set is registered")
+    Equal(count, 91, "the Era set is registered")
     Equal(hordeCount, 52, "the Horde Era set is registered")
-    Equal(allianceCount, 19, "the Alliance Era set is registered")
+    Equal(allianceCount, 39, "the Alliance Era set is registered")
 end
 TestEraLeveling()
 
