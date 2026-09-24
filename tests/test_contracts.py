@@ -149,6 +149,25 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/Era/57-58-western-plaguelands.lua",
                 "Guides/Leveling/Era/58-59-silithus.lua",
                 "Guides/Leveling/Era/59-60-winterspring.lua",
+                "Guides/Leveling/Era/1-12-dun-morogh.lua",
+                "Guides/Leveling/Era/1-12-elwynn-forest.lua",
+                "Guides/Leveling/Era/1-12-teldrassil.lua",
+                "Guides/Leveling/Era/12-17-darkshore.lua",
+                "Guides/Leveling/Era/12-17-westfall.lua",
+                "Guides/Leveling/Era/17-18-loch-modan.lua",
+                "Guides/Leveling/Era/18-20-redridge-mountains.lua",
+                "Guides/Leveling/Era/20-21-darkshore.lua",
+                "Guides/Leveling/Era/21-22-ashenvale.lua",
+                "Guides/Leveling/Era/22-23-stonetalon-mountains.lua",
+                "Guides/Leveling/Era/23-24-darkshore.lua",
+                "Guides/Leveling/Era/24-24-ashenvale.lua",
+                "Guides/Leveling/Era/24-27-wetlands.lua",
+                "Guides/Leveling/Era/27-28-redridge-mountains.lua",
+                "Guides/Leveling/Era/28-29-duskwood.lua",
+                "Guides/Leveling/Era/29-30-ashenvale.lua",
+                "Guides/Leveling/Era/30-31-wetlands.lua",
+                "Guides/Leveling/Era/31-32-hillsbrad-foothills.lua",
+                "Guides/Leveling/Era/32-33-stranglethorn-vale.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -373,6 +392,8 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn(f"QuestState({omitted_id},", goals)
             self.assertNotIn(f"QuestObjective({omitted_id},", goals)
         self.assertIn('id = "leveling-teldrassil"', guide)
+        self.assertIn('title = "Teldrassil"', guide)
+        self.assertNotIn("(Loremaster)", guide.split("goals = {", 1)[0])
         self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Alliance" }', guide)
@@ -439,6 +460,27 @@ class ContractTests(unittest.TestCase):
             "Guides/Leveling/Era/58-59-silithus.lua",
             "Guides/Leveling/Era/59-60-winterspring.lua",
         )
+        alliance_files = (
+            "Guides/Leveling/Era/1-12-dun-morogh.lua",
+            "Guides/Leveling/Era/1-12-elwynn-forest.lua",
+            "Guides/Leveling/Era/1-12-teldrassil.lua",
+            "Guides/Leveling/Era/12-17-darkshore.lua",
+            "Guides/Leveling/Era/12-17-westfall.lua",
+            "Guides/Leveling/Era/17-18-loch-modan.lua",
+            "Guides/Leveling/Era/18-20-redridge-mountains.lua",
+            "Guides/Leveling/Era/20-21-darkshore.lua",
+            "Guides/Leveling/Era/21-22-ashenvale.lua",
+            "Guides/Leveling/Era/22-23-stonetalon-mountains.lua",
+            "Guides/Leveling/Era/23-24-darkshore.lua",
+            "Guides/Leveling/Era/24-24-ashenvale.lua",
+            "Guides/Leveling/Era/24-27-wetlands.lua",
+            "Guides/Leveling/Era/27-28-redridge-mountains.lua",
+            "Guides/Leveling/Era/28-29-duskwood.lua",
+            "Guides/Leveling/Era/29-30-ashenvale.lua",
+            "Guides/Leveling/Era/30-31-wetlands.lua",
+            "Guides/Leveling/Era/31-32-hillsbrad-foothills.lua",
+            "Guides/Leveling/Era/32-33-stranglethorn-vale.lua",
+        )
         toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
         shipped = (ROOT / "tools/compile_addon.py").read_text(encoding="utf-8")
         for relative in era_files:
@@ -448,6 +490,19 @@ class ContractTests(unittest.TestCase):
             self.assertIn("(Era)", head)
             self.assertIn('{ faction = "Horde" }', head)
             self.assertNotIn("Alliance", head)
+            self.assertNotIn("flight path", goals.lower())
+            self.assertNotIn("grind", goals.lower())
+            self.assertNotIn("npc:", goals.lower())
+            self.assertNotIn("item:", goals.lower())
+            self.assertIn(relative, toc)
+            self.assertIn(relative, shipped)
+        for relative in alliance_files:
+            guide = (ROOT / relative).read_text(encoding="utf-8")
+            head, goals = guide.split("goals = {", 1)
+            self.assertIn('category = "Leveling Quest Guides"', head)
+            self.assertIn("(Era)", head)
+            self.assertIn('{ faction = "Alliance" }', head)
+            self.assertNotIn("Horde", head)
             self.assertNotIn("flight path", goals.lower())
             self.assertNotIn("grind", goals.lower())
             self.assertNotIn("npc:", goals.lower())
