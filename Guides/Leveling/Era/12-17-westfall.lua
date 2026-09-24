@@ -718,7 +718,7 @@ ns:RegisterGuide({
                     { race = 3 },
                 },
             },
-            text = "Use Symbol of Life to ressurect Narm Faulk.",
+            text = "Use the Symbol of Life to resurrect Narm Faulk.",
             dependsOn = { "accept-1783-the-tome-of-divinity" },
             complete = QuestState(1783, "complete"),
         },

@@ -971,7 +971,7 @@ ns:RegisterGuide({
             id = "travel-feathermoon-stronghold-2",
             kind = "travel",
             priority = 820,
-            text = "Travel to Feathermoon Stronghold Take the boat if it's available but it is faster to swim if the boat just left You can also die and ressurect to Feathermoon Stronghold.",
+            text = "Travel to Feathermoon Stronghold. Take the boat if it is there, or swim if it just left.",
             route = {
                 Point(MAP.FERALAS, 0.4640, 0.1495, "Continue toward Feathermoon Stronghold",
                     "Continue toward Feathermoon Stronghold."),

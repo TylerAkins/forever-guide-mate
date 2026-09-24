@@ -676,7 +676,7 @@ ns:RegisterGuide({
             id = "travel-refuge-pointe",
             kind = "travel",
             priority = 530,
-            text = "Travel to Refuge Pointe You can die and ressurect near Refuge Pointe but you will have 10 minutes sickness.",
+            text = "Travel to Refuge Pointe.",
             route = {
                 Point(MAP.ARATHI, 0.2209, 0.7973, "Continue toward Refuge Pointe",
                     "Continue toward Refuge Pointe."),

@@ -2957,7 +2957,7 @@ ns:RegisterGuide({
             id = "objective-852-hezrul-bloodmark",
             kind = "objective",
             priority = 2400,
-            text = "Kill Hezrul Bloodmark by the oasis and collect Hezrul's Head, he patrols around the oasis clockwise so run counter clockwise to find him. He has two patrol with him, just focus on killing him first to complete the quest the graveyard is close if you die Safe to skip.",
+            text = "Kill Hezrul Bloodmark by the oasis and collect Hezrul's Head. He patrols clockwise with two guards. This is an elite. Bring a group.",
             dependsOn = { "accept-852-hezrul-bloodmark" },
             complete = QuestState(852, "complete"),
             route = {

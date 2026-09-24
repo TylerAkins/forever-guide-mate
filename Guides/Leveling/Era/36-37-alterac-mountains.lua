@@ -76,7 +76,7 @@ ns:RegisterGuide({
             id = "travel-556-dalaran",
             kind = "travel",
             priority = 40,
-            text = "Travel to {in Dalaran.",
+            text = "Travel to Dalaran.",
             route = {
                 Point(MAP.ALTERAC, 0.2033, 0.8479, "Dalaran",
                     "Travel to Dalaran."),
@@ -226,7 +226,7 @@ ns:RegisterGuide({
             id = "travel-tarren-mill-2",
             kind = "travel",
             priority = 170,
-            text = "Travel to Tarren Mill You can die on purpose and ressurect at Tarren Mill.",
+            text = "Travel to Tarren Mill.",
             route = {
                 Point(MAP.HILLSBRAD, 0.6158, 0.2080, "Tarren Mill",
                     "Travel to Tarren Mill."),
