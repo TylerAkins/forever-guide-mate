@@ -5113,7 +5113,8 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Apothecary Zamah from Apothecary Helbrim.",
+            text = "Accept Apothecary Zamah from Apothecary Helbrim. The rendered spores last 45 minutes, so take them to Thunder Bluff before other work.",
+            timer = 45 * 60,
             complete = QuestState(853, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.514, 0.302, "Apothecary Helbrim",
