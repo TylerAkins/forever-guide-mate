@@ -1737,7 +1737,7 @@ ns:RegisterGuide({
             text = "Accept Seeking Refuge from Bareth Dawnstone at Crusader's Outpost.",
             complete = QuestState(99144, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3200, 0.4620, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
@@ -1749,7 +1749,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-99144-seeking-refuge" },
             complete = QuestState(99144, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.3200, 0.4620, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },

@@ -1351,6 +1351,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 951,
             text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom in the Ban'ethil Barrow Den.",
+            dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestState(99053, "activeOrCompleted"),
             route = {
                 Point(MAP.TELDRASSIL, 0.4460, 0.5880, "Sentinel Lynessa Duskblossom",
@@ -2298,7 +2299,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99047-not-dead-yet",
             kind = "turnin",
-            priority = 1552,
+            priority = 1851,
             text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow, then tell Byancie in Dolanaar.",
             dependsOn = { "turnin-99046-the-lost-runner" },
             complete = QuestState(99047, "completed"),
@@ -2310,7 +2311,7 @@ ns:RegisterGuide({
         {
             id = "accept-99050-the-great-tree-provides",
             kind = "accept",
-            priority = 1553,
+            priority = 1852,
             text = "Accept The Great Tree Provides from Byancie in Dolanaar.",
             dependsOn = { "turnin-99047-not-dead-yet" },
             complete = QuestState(99050, "activeOrCompleted"),
@@ -2322,7 +2323,7 @@ ns:RegisterGuide({
         {
             id = "objective-99050-the-great-tree-provides-2",
             kind = "objective",
-            priority = 1554,
+            priority = 1853,
             text = "Buy an Empty Vial in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 2),
@@ -2334,7 +2335,7 @@ ns:RegisterGuide({
         {
             id = "objective-99050-the-great-tree-provides-3",
             kind = "objective",
-            priority = 1555,
+            priority = 1854,
             text = "Buy a Refreshing Spring Water in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 3),

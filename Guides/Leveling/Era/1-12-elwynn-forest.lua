@@ -1735,7 +1735,7 @@ ns:RegisterGuide({
         {
             id = "accept-91723-delicate-instruments",
             kind = "accept",
-            priority = 991,
+            priority = 955,
             text = "Accept Delicate Instruments from Hamish Bergwort in the Tower of Azora.",
             complete = QuestState(91723, "activeOrCompleted"),
             route = {
@@ -1746,7 +1746,7 @@ ns:RegisterGuide({
         {
             id = "accept-91725-stolen-enchanting-supplies",
             kind = "accept",
-            priority = 992,
+            priority = 956,
             text = "Accept Stolen Enchanting Supplies from Blixie Fitzwink near the Tower of Azora.",
             complete = QuestState(91725, "activeOrCompleted"),
             route = {
@@ -1757,7 +1757,7 @@ ns:RegisterGuide({
         {
             id = "accept-91753-an-enchanting-lesson",
             kind = "accept",
-            priority = 993,
+            priority = 957,
             conditions = {
                 all = {
                     { profession = { skillLineID = SKILL.ENCHANTING } },
@@ -2040,7 +2040,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-91724-delicate-instruments" },
             complete = QuestState(91724, "complete"),
             route = {
-                Point(MAP.ELWYNN, 0.2840, 0.5960, "Defias Rogue Wizard",
+                Point(MAP.ELWYNN, 0.7968, 0.5548, "Defias Rogue Wizard",
                     "Travel to Defias Rogue Wizard."),
             },
         },
@@ -2052,7 +2052,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-91725-stolen-enchanting-supplies" },
             complete = QuestState(91725, "complete"),
             route = {
-                Point(MAP.ELWYNN, 0.2840, 0.5960, "Stone Cairn Lake",
+                Point(MAP.ELWYNN, 0.7968, 0.5548, "Stone Cairn Lake",
                     "Travel to Stone Cairn Lake."),
             },
         },
