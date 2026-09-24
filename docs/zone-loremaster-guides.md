@@ -2,6 +2,10 @@
 
 Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), Mulgore (`Guides/Leveling/Mulgore.lua`), and Teldrassil (`Guides/Leveling/Teldrassil.lua`) are the working examples. Alliance zones follow the same rules.
 
+These guides are for finishing a zone's quests. They are not a leveling route. A character can follow one while leveling, but the order and the stops are there to complete the zone.
+
+Register them as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle is the exception: it stays in `Leveling Quest Guides` with the `Leveling` tag, because that file is the Skyborne starter path.
+
 ## Source
 
 Start from the Wowhead Forever zone page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`. That page is the quest list. Open each quest for the chain, the objective text, and the map pins. Horde is the first route. Do a zone in real chain order, and pick up nearby work before running back across the zone.
@@ -91,17 +95,29 @@ A quest on a timer finishes within the next two or three steps. Put `timer` on t
 A character who finishes every step they can actually take should reach 100%.
 
 - Put faction, class, race, and profession requirements on the steps that have them. A permanent mismatch is left out of the percentage.
+- A trainer's crafting lesson needs that profession. Read the quest description: "as part of your smithing lessons" and "let's see your skill with leather" are the requirement. Gate the accept, each objective, and the turn-in with `profession`, and say who the step is for. Durotar's Ug'thok (blacksmithing), Kamari (leatherworking), and Pa'zula (enchanting) are the examples. An item that drops for anyone is not gated, even when it turns in to the same trainer.
 - Put the race on every step of that quest: the accept, each objective, and the turn-in. A mismatch counts as that step being finished, so a later shared quest can open. The client race ids are Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gnome 7, Alliance Skyborne 95, and Horde Skyborne 96. Orc and troll together are `race = { 2, 8 }`.
 - A breadcrumb that names the elemental plane, or that rewards Windshapers reputation, is Skyborne. Journey to the Crossroads from Thrall (98024) is Horde Skyborne. Orcs and trolls reach the Crossroads through Meats to Orgrimmar. Tauren take Kirge Sternhorn's Journey to the Crossroads (854).
 - A level requirement stays in the percentage until the character reaches it.
 - Omit unused quests, repeatable class buffs, and promo quests that are not offered to every character. Name them in the header.
 - Include shared and side-unknown quests when the zone page lists them and a Horde character can take them.
-- A drop that starts an optional quest does not get a required step. Gate the turn-in with `quest` state `activeOrCompleted`, so a missing drop does not block 100%.
+- A drop that starts an optional quest does not get a required step. Say to use the item on a step the player is already doing. Gate the turn-in, and every later step in that chain, with `quest` state `activeOrCompleted`. A missing drop stays out of the percentage. Gating only the turn-in would open the follow-up, because a step the character cannot take yet counts as finished for the next step. Chen's Empty Keg and the Camp Taurajo rares are the examples.
+
+## Catching a requirement that was missed
+
+A requirement nobody noticed reads as correct data. Wowhead's quest pages do not expose requirements in a form CI can fetch, so no test can tell you that a quest needs blacksmithing when the guide never said so. Two things cover it instead, and neither needs anyone to walk a route by hand.
+
+`tests/lua/lint.lua` checks the invariants that are true of the data on its own. The one that matters here: every step of a quest carries the same conditions. A character who cannot accept a quest cannot finish its objectives or turn it in either, so gating part of a chain is always a bug. Add an invariant here when it holds for every shipped guide, and leave it out when it does not. A check that has to be suppressed teaches people to ignore the lint. A keyword scan of step text was tried and dropped: "enchanted skyhoppers", "Palemane Tanner", and "Seaforium Mining Charge" all trip it, and nothing real did.
+
+`QuestAudit.lua` covers the rest at runtime, where the client is the authority. When the guide sends a character to a quest giver, the audit compares the step's quest against the quests that NPC is actually offering. A quest the character is never offered means a requirement the guide does not know about, whatever the cause: class, race, profession, reputation, or a prerequisite in the wrong order. The step is deferred rather than completed, so it comes back if it becomes available, and it is written to a per-character report that prints on login. Play normally and the report fills itself in.
+
+The audit only reads. It matches the giver by the name on the step's last pin, so an accept step whose pin does not name the giver is simply not audited.
 
 ## Ship the guide
 
+- Set `category = "Loremaster Guides"`. Leave Zephras Isle in `Leveling Quest Guides`.
 - Register the file in `ForeverGuideMate.toc` and `tools/compile_addon.py`.
-- Add the file to `tests/test_contracts.py` and load it from `tests/lua/run.lua`.
+- Add the file to `tests/test_contracts.py` and load it from `tests/lua/run.lua` and `tests/lua/lint.lua`.
 - Assert a real chain, one split multi-objective quest, the elite wording, and that omitted and dungeon quests are absent.
 - Add a short changelog note.
 - Do not accept quests, turn in quests, or move the character from the addon.

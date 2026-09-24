@@ -11,7 +11,7 @@ local _, ns = ...
 -- Crown of the Earth (934) has no giver. The offered part is Crown of the Earth (7383).
 -- Tyrande and Remulos (8734) is a level 60 Scepter of the Shifting Sands
 -- handoff. A Forest Wisp in Teldrassil sends you to Keeper Remulos in
--- Moonglade. It is not part of the Teldrassil leveling route.
+-- Moonglade. It is not part of finishing Teldrassil.
 -- The zone list still titles Bounty: Gnarlpine Furbolg (490) as unused.
 -- The quest page gives the bounty, so this route includes it.
 -- Fang of Githyiss (97236) and The Moss-twined Heart (927) appear only
@@ -48,7 +48,7 @@ end
 ns:RegisterGuide({
     id = "leveling-teldrassil",
     title = "Teldrassil (Loremaster)",
-    category = "Leveling Quest Guides",
+    category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {
@@ -494,7 +494,7 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Webwood Egg. The egg is in a nest deep in Shadowthread Cave. Wowhead has no egg pin. Githyiss the Vile in this cave can drop a fang that starts Fang of Githyiss.",
+            text = "Webwood Egg. The egg is in a nest deep in Shadowthread Cave. Wowhead has no egg pin. Githyiss the Vile in this cave can drop a fang. Use it to start Fang of Githyiss.",
             dependsOn = { "accept-917-webwood-egg" },
             complete = QuestObjective(917, 1, "Webwood Egg"),
             route = {
@@ -1996,7 +1996,7 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Timberling Seeds: Timberling Seed.",
+            text = "Timberling Seeds: Timberling Seed. Blackmoss the Fetid can drop a Moss-twined Heart. Use it to start The Moss-twined Heart.",
             dependsOn = { "accept-918-timberling-seeds" },
             complete = QuestObjective(918, 1, "Timberling Seed"),
             route = {
@@ -2496,7 +2496,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { level = { min = 9 } },
-                    { quest = { id = 927, state = "completed" } },
+                    { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
             text = "Accept Planting the Heart from Denalan.",
@@ -2515,7 +2515,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { level = { min = 9 } },
-                    { quest = { id = 927, state = "completed" } },
+                    { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
             text = "Planting the Heart: plant the Tainted Heart in Denalan's Planter.",
@@ -2534,7 +2534,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { level = { min = 9 } },
-                    { quest = { id = 927, state = "completed" } },
+                    { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
             text = "Turn in Planting the Heart to Denalan's Planter.",
