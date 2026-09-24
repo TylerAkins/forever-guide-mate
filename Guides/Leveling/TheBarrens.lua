@@ -20,6 +20,7 @@ local _, ns = ...
 -- Stepping Stones requires ...and that note you found when that quest is up.
 -- Warsong Reports, the Hillsbrad vial sites, Deepmoss eggs, and a few
 -- object spawns have no Wowhead pin. Those steps name the landmark.
+-- Journey to the Crossroads from Thrall (98024) is Horde Skyborne.
 -- Meats to Orgrimmar through Return to the Crossroads is orc and troll.
 -- A Bundle of Hides through Return to Jahan, and Sergra Darkthorn, are tauren.
 -- Other Horde races still reach 100%.
@@ -74,6 +75,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 7 } },
                 },
             },
@@ -91,6 +93,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 7 } },
                 },
             },
