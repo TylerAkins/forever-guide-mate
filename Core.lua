@@ -32,6 +32,7 @@ local CHARACTER_DEFAULTS = {
     history = {},
     completionLedger = {},
     taxiRoutes = {},
+    taxiNodes = {},
 }
 
 local function ApplyDefaults(target, defaults)
@@ -120,7 +121,11 @@ local function OnEvent(_, event, arg1)
     elseif event == "SKILL_LINES_CHANGED" and ns.PlayerState then
         ns.PlayerState:InvalidateProfessions()
     elseif event == "TAXIMAP_OPENED" and ns.Taxi then
-        ns.Taxi:Capture()
+        if not ns.Taxi:Capture() and C_Timer and type(C_Timer.After) == "function" then
+            C_Timer.After(0.2, function()
+                if ns.Taxi then ns.Taxi:Capture() end
+            end)
+        end
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
     end

@@ -170,6 +170,7 @@ Check(string.find(flightStatus, "Take the flight path to Orgrimmar", 1, true) ~=
     "a known flight path names the destination")
 Equal(flightMode, "bearing", "a known flight path on the current map supplies a bearing")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local noRotation, _, status, _, offMapMode = ns.Navigation:GetDirection(navigationGoal,
     { mapID = 1429, x = 0.5, y = 0.5, faction = "Alliance" }, 0)
 Equal(noRotation, nil, "cross-map destination has no unreliable bearing")
@@ -285,6 +286,7 @@ Equal(knownBoatFlight.mapID, 1453, "a known Booty Bay flight leaves from Stormwi
 Equal(knownBoatFlight.label, "Take the flight path to Stranglethorn Vale.",
     "a known dock flight names Stranglethorn Vale")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local bootyBayBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1434, x = 0.26, y = 0.73, faction = "Alliance" })
 Equal(bootyBayBoat.mapID, 1434, "Alliance already at Booty Bay takes the Ratchet boat")
 Check(string.find(bootyBayBoat.label, "Ratchet", 1, true), "the Booty Bay boat is labeled for Ratchet")
@@ -373,6 +375,7 @@ local thunderBluffText = ns.UI:GoalInstruction(ns.Engine)
 Check(string.find(thunderBluffText, "Rahauro", 1, true) ~= nil, "the tracker names Rahauro once you are in Thunder Bluff")
 local powerDestroy = ns.Engine:GetGoal(rfc, "accept-power-destroy")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local walkZeppelin = ns.Navigation:GetActiveLeg(powerDestroy, { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" })
 Equal(walkZeppelin.mapID, 1411, "without the Orgrimmar flight, the zeppelin step stays on the tower")
 Equal(walkZeppelin.x, 0.508, "the Tirisfal zeppelin pin is the south platform")
@@ -389,6 +392,7 @@ local flyZeppelin = ns.Navigation:GetActiveLeg(powerDestroy, { mapID = 1456, x =
 Equal(flyZeppelin.label, "Take the flight path to Orgrimmar, then board the south zeppelin to Tirisfal Glades.",
     "a known Orgrimmar flight names the zeppelin afterward")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local barrensWalk = ns.Navigation:GetActiveLeg(ns.Engine:GetGoal(rfc, "accept-searching-satchel"),
     { mapID = 1413, x = 0.5, y = 0.3, faction = "Horde" })
 Equal(barrensWalk.mapID, 1412, "without the Thunder Bluff flight, the Barrens walks toward the elevator")
@@ -400,6 +404,7 @@ local barrensFly = ns.Navigation:GetActiveLeg(ns.Engine:GetGoal(rfc, "accept-sea
 Equal(barrensFly.label, "Take the flight path to Thunder Bluff.",
     "a known Thunder Bluff flight is offered from the Barrens")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 ns.Engine.currentGoal = ns.Engine:GetGoal(rfc, "accept-searching-satchel")
 C_Map = {
     GetMapInfo = function(mapID)
@@ -735,10 +740,10 @@ local followUps = {
     { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
     { "accept-the-warriors-path", "turnin-harmony-in-balance" },
     { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
-    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
-    { "accept-the-adventurer", "turnin-foul-matriarch" },
-    { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
-    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "turnin-elemental-unrest", "turnin-harmony-in-balance" },
+    { "turnin-the-adventurer", "turnin-foul-matriarch" },
+    { "turnin-infiltrating-the-cult", "turnin-the-criminal-element" },
+    { "turnin-the-western-watch", "turnin-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
 }
 for _, pair in ipairs(followUps) do
@@ -1012,6 +1017,7 @@ local knownOrgFlight = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
 Equal(knownOrgFlight and knownOrgFlight.label, "Take the flight path to Orgrimmar.",
     "Thunder Bluff with the Orgrimmar flight uses the flight path")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local thrall = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
     mapID = 1454, x = 0.45, y = 0.63, faction = "Horde",
 })
@@ -1064,6 +1070,7 @@ local knownCairneFlight = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
 Equal(knownCairneFlight and knownCairneFlight.label, "Take the flight path to Thunder Bluff.",
     "a known Thunder Bluff flight is offered before the walk to Cairne")
 ns.charDB.taxiRoutes = {}
+ns.charDB.taxiNodes = nil
 local cairne = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
     mapID = 1456, x = 0.47, y = 0.50, faction = "Horde",
 })
@@ -1454,8 +1461,69 @@ function TestHiddenEnemies()
     ns.charDB.activeGoal = "gauge-neeru"
     ns.Engine:Refresh(unfinished)
     Equal(ns.Engine.currentGoal.id, "gauge-neeru", "an unfinished talk with Neeru stays on that step")
+    Open(State({}, {
+        [5726] = true, [5727] = true, [5728] = true, [5761] = true,
+    }))
+    Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-4",
+        "the dungeon report sends you to Neeru")
+    leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.496, "the Searing Blade report marks Neeru Fireblade")
+    Open(State({}, {
+        [5726] = true, [5727] = true, [5728] = true, [5729] = true, [5761] = true,
+    }))
+    Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-5",
+        "Neeru's message goes back to Thrall")
+    leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.320, "the final Hidden Enemies step marks Thrall")
+    local barrens = ns.guides["leveling-the-barrens"]
+    Check(ns.Engine:GetGoal(barrens, "accept-890-the-missing-shipment") == nil,
+        "The Missing Shipment is not a separate accept step")
+    local shipment = ns.Engine:GetGoal(barrens, "turnin-890-the-missing-shipment")
+    Equal(shipment.route[1].x, 0.632, "The Missing Shipment points at Dizzywig")
+    local valve = ns.Engine:GetGoal(barrens, "objective-900-samophlange-1")
+    Equal(valve.dependsOn[1], "turnin-894-samophlange", "the next Samophlange starts at the valves")
 end
 TestHiddenEnemies()
+
+function TestFlightMemory()
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    Enum = { FlightPathState = { Reachable = 2, Current = 0 } }
+    local remembered = ns.Taxi:Capture({
+        C_Map = {
+            GetBestMapForUnit = function() return 1454 end,
+            GetPlayerMapPosition = function() return { GetXY = function() return 0.45, 0.64 end } end,
+        },
+        C_TaxiMap = {
+            GetAllTaxiNodes = function()
+                return {
+                    { name = "Orgrimmar, Durotar", state = 0 },
+                    { name = "Thunder Bluff, Mulgore", state = 2 },
+                    { name = "Silvermoon City", state = 3 },
+                }
+            end,
+        },
+    })
+    Equal(remembered, true, "opening a flight master remembers its flight points")
+    ns.charDB.taxiRoutes = {}
+    local horde = { mapID = 1413, x = 0.50, y = 0.32, faction = "Horde" }
+    local goal = {
+        taxiDestination = "Thunder Bluff",
+        route = { { mapID = 1456, x = 0.47, y = 0.50, label = "Tal" } },
+    }
+    local leg = ns.Navigation:GetActiveLeg(goal, horde)
+    Equal(leg and leg.label, "Take the flight path to Thunder Bluff.",
+        "a flight point learned in Orgrimmar is still known in the Barrens")
+    Check(leg and leg.learnedTaxi, "the remembered flight points at a flight master")
+    Check(ns.Taxi:LearnedDestination(horde, "Orgrimmar") ~= nil,
+        "the flight master that was open is remembered too")
+    Equal(ns.Taxi:LearnedDestination(horde, "Silvermoon City"), nil,
+        "an unlearned flight point stays unknown after the window closes")
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    Enum = nil
+end
+TestFlightMemory()
 
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
