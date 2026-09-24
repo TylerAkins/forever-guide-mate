@@ -665,6 +665,10 @@ function UI:GoalInstruction(engine)
     if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
         return status or leg.label or goal.text
     end
+    local finalLeg = goal.route and goal.route[#goal.route]
+    if leg and finalLeg and state.mapID and (leg.mapID ~= finalLeg.mapID or leg.x ~= finalLeg.x or leg.y ~= finalLeg.y) then
+        return status or leg.label or goal.text
+    end
     return goal.text
 end
 

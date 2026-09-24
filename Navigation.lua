@@ -73,7 +73,12 @@ function Navigation:SameZone(first, second, api)
 end
 
 function Navigation:OnMap(stateMap, legMap)
-    return stateMap == legMap or self:SameZone(stateMap, legMap)
+    if stateMap == legMap then return true end
+    if self:SameZone(stateMap, legMap) then return true end
+    if not ns.Travel or not ns.Travel.MapName then return false end
+    local left = ns.Travel:MapName(stateMap)
+    local right = ns.Travel:MapName(legMap)
+    return type(left) == "string" and left ~= "the next zone" and left == right
 end
 
 function Navigation:TransportLeg(leg, state)
@@ -85,8 +90,6 @@ function Navigation:GetActiveLeg(goal, state)
     if not goal or not goal.route then
         return nil, "No waypoint for this step."
     end
-    local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
-    if learnedLeg then return learnedLeg, learnedLeg.label end
     for index, leg in ipairs(goal.route) do
         local complete = false
         if leg.complete then
@@ -96,18 +99,25 @@ function Navigation:GetActiveLeg(goal, state)
             complete = distance and distance <= (leg.radius or 0.015) or false
         end
         if not complete then
+            if self:OnMap(state.mapID, leg.mapID) then
+                if not state.x or not state.y then
+                    return leg, "Waiting for a reliable player position."
+                end
+                return leg, leg.label
+            end
+            local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
+            if not arrived then
+                local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
+                if learnedLeg then return learnedLeg, learnedLeg.label end
+            end
             local transport = self:TransportLeg(leg, state)
             if transport and transport.transport then return transport, transport.label end
-            local taxiLeg = ns.Taxi and ns.Taxi:GetSuggestedLeg(goal, state)
-            if taxiLeg then return taxiLeg, taxiLeg.label end
+            if not arrived then
+                local taxiLeg = ns.Taxi and ns.Taxi:GetSuggestedLeg(goal, state)
+                if taxiLeg then return taxiLeg, taxiLeg.label end
+            end
             if transport then return transport, transport.label end
-            if not self:OnMap(state.mapID, leg.mapID) then
-                return leg, leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
-            end
-            if not state.x or not state.y then
-                return leg, "Waiting for a reliable player position."
-            end
-            return leg, leg.label
+            return leg, leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
         end
     end
     return nil, "Destination reached."

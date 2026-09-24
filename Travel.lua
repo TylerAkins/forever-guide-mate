@@ -239,8 +239,25 @@ function Travel:Nearby(origin, mapID)
     return origin == mapID or self:Paired(origin, mapID)
 end
 
-function Travel:MapName(mapID)
-    return MAP_NAMES[mapID] or "the next zone"
+function Travel:MapName(mapID, api)
+    if MAP_NAMES[mapID] then return MAP_NAMES[mapID] end
+    api = api or C_Map
+    if mapID and api and type(api.GetMapInfo) == "function" then
+        local ok, info = pcall(api.GetMapInfo, mapID)
+        if ok and type(info) == "table" and type(info.name) == "string" and info.name ~= "" then
+            return info.name
+        end
+    end
+    return "the next zone"
+end
+
+function Travel:PairedMap(mapID)
+    if PAIRED[mapID] then return PAIRED[mapID] end
+    local name = self:MapName(mapID)
+    if name == "the next zone" then return nil end
+    for id, known in pairs(MAP_NAMES) do
+        if known == name and PAIRED[id] then return PAIRED[id] end
+    end
 end
 
 function Travel:FlightMaster(state)
