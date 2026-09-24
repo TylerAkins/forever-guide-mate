@@ -346,6 +346,170 @@ function ns:RegisterGuide(guide)
     self.guideOrder[#self.guideOrder + 1] = guide.id
 end
 
+-- Starter chapters are parallel. The next chapter is the handoff for that
+-- race, and the route then follows the remaining chapters in guide order.
+local ERA_STARTER_NEXT = {
+    ["leveling-era-1-12-dun-morogh"] = "leveling-era-17-18-loch-modan",
+    ["leveling-era-1-12-elwynn-forest"] = "leveling-era-12-17-westfall",
+    ["leveling-era-1-12-teldrassil"] = "leveling-era-12-17-darkshore",
+    ["leveling-era-1-12-durotar"] = "leveling-era-12-20-barrens",
+    ["leveling-era-1-12-mulgore"] = "leveling-era-12-20-barrens",
+    ["leveling-era-1-12-tirisfal-glades"] = "leveling-era-12-20-silverpine-forest",
+}
+
+local ERA_STARTER_BY_RACE = {
+    [1] = "leveling-era-1-12-elwynn-forest",
+    [2] = "leveling-era-1-12-durotar",
+    [3] = "leveling-era-1-12-dun-morogh",
+    [4] = "leveling-era-1-12-teldrassil",
+    [5] = "leveling-era-1-12-tirisfal-glades",
+    [6] = "leveling-era-1-12-mulgore",
+    [7] = "leveling-era-1-12-dun-morogh",
+    [8] = "leveling-era-1-12-durotar",
+    [95] = "leveling-era-1-12-elwynn-forest",
+    [96] = "leveling-era-1-12-durotar",
+}
+
+local function IsEraGuide(guide)
+    return type(guide) == "table" and guide.series ~= "era"
+        and type(guide.title) == "string" and string.find(guide.title, "(Era)", 1, true) ~= nil
+end
+
+local function GuideFactionAndLevel(guide)
+    local faction, level
+    local function Walk(condition)
+        if type(condition) ~= "table" then return end
+        if condition.faction == "Alliance" or condition.faction == "Horde" then
+            faction = condition.faction
+        end
+        if type(condition.level) == "table" and type(condition.level.min) == "number" then
+            level = condition.level.min
+        end
+        for _, key in ipairs({ "all", "any" }) do
+            if type(condition[key]) == "table" then
+                for _, child in ipairs(condition[key]) do Walk(child) end
+            end
+        end
+    end
+    Walk(guide.conditions)
+    return faction, level or 1
+end
+
+local function AndCondition(left, right)
+    if left == nil then return right end
+    if right == nil then return left end
+    return { all = { left, right } }
+end
+
+local function CopyEraGoal(goal, segment, gate)
+    local copy = {}
+    for key, value in pairs(goal) do
+        copy[key] = value
+    end
+    copy.id = segment.id .. ":" .. goal.id
+    copy.segmentID = segment.id
+    if type(goal.dependsOn) == "table" then
+        local dependsOn = {}
+        for index, dependency in ipairs(goal.dependsOn) do
+            dependsOn[index] = segment.id .. ":" .. dependency
+        end
+        copy.dependsOn = dependsOn
+    end
+    copy.conditions = AndCondition(goal.conditions, gate)
+    return copy
+end
+
+local function RemoveGuide(id)
+    ns.guides[id] = nil
+    for index = #ns.guideOrder, 1, -1 do
+        if ns.guideOrder[index] == id then
+            table.remove(ns.guideOrder, index)
+        end
+    end
+end
+
+function ns:FinalizeGuides()
+    if self.guidesFinalized then return end
+    self.guidesFinalized = true
+    local sources = {}
+    for _, guideID in ipairs(self.guideOrder) do
+        local guide = self.guides[guideID]
+        if IsEraGuide(guide) then
+            sources[#sources + 1] = guide
+        end
+    end
+    if #sources == 0 then return end
+
+    local segments = {}
+    local levelOneCount = { Alliance = 0, Horde = 0 }
+    for _, source in ipairs(sources) do
+        local faction, levelMin = GuideFactionAndLevel(source)
+        local segment = {
+            id = source.id,
+            title = source.title,
+            faction = faction,
+            levelMin = levelMin,
+            maps = {},
+            goals = {},
+            gate = source.conditions,
+            sourceGoals = source.goals,
+        }
+        segments[#segments + 1] = segment
+        if levelMin == 1 and levelOneCount[faction] then
+            levelOneCount[faction] = levelOneCount[faction] + 1
+        end
+    end
+    for _, segment in ipairs(segments) do
+        if segment.levelMin == 1 and (levelOneCount[segment.faction] or 0) > 1 then
+            segment.fork = true
+        end
+    end
+
+    local goals = {}
+    local searchTitles = {}
+    local segmentByID = {}
+    for _, segment in ipairs(segments) do
+        searchTitles[#searchTitles + 1] = segment.title
+        segmentByID[segment.id] = segment
+        for _, goal in ipairs(segment.sourceGoals) do
+            local copy = CopyEraGoal(goal, segment, segment.gate)
+            for _, leg in ipairs(copy.route or {}) do
+                if type(leg.mapID) == "number" then
+                    segment.maps[leg.mapID] = (segment.maps[leg.mapID] or 0) + 1
+                end
+            end
+            segment.goals[#segment.goals + 1] = copy
+            goals[#goals + 1] = copy
+        end
+        segment.sourceGoals = nil
+        segment.gate = nil
+    end
+
+    local retired = {}
+    for _, segment in ipairs(segments) do
+        retired[segment.id] = true
+        RemoveGuide(segment.id)
+    end
+    self.retiredEraGuides = retired
+    self:RegisterGuide({
+        id = "leveling-era",
+        title = "1-60 Era",
+        category = "Leveling Quest Guides",
+        revision = 1,
+        series = "era",
+        searchText = table.concat(searchTitles, " "),
+        segments = segments,
+        segmentByID = segmentByID,
+        conditions = {
+            all = {
+                { level = { min = 1 } },
+                { any = { { faction = "Alliance" }, { faction = "Horde" } } },
+            },
+        },
+        goals = goals,
+    })
+end
+
 local function CollectQuestIDs(value, found)
     if type(value) ~= "table" then
         return
@@ -511,15 +675,155 @@ local function HasPermanentFailure(condition, state)
     return eligible == false
 end
 
+function Engine:ChosenFork(guide, state)
+    local forks = {}
+    for _, segment in ipairs(guide.segments or {}) do
+        if segment.fork and segment.faction == state.faction then
+            forks[#forks + 1] = segment
+        end
+    end
+    if #forks == 0 then return nil end
+    local saved = ns.charDB and ns.charDB.eraSegment
+    if saved then
+        for _, segment in ipairs(forks) do
+            if segment.id == saved then return segment.id end
+        end
+    end
+    if ns.charDB then
+        for _, segment in ipairs(forks) do
+            for _, goal in ipairs(segment.goals) do
+                if self:IsGoalDone(goal, state, guide) then
+                    return segment.id
+                end
+            end
+        end
+    end
+    if state.mapID then
+        local bestID, bestCount, tied
+        for _, segment in ipairs(forks) do
+            local count = segment.maps[state.mapID] or 0
+            if count > 0 and (not bestCount or count > bestCount) then
+                bestID, bestCount, tied = segment.id, count, false
+            elseif bestCount and count == bestCount then
+                tied = true
+            end
+        end
+        if bestID and not tied then return bestID end
+    end
+    local byRace = state.raceID and ERA_STARTER_BY_RACE[state.raceID]
+    if byRace then
+        for _, segment in ipairs(forks) do
+            if segment.id == byRace then return segment.id end
+        end
+    end
+    return forks[1].id
+end
+
+function Engine:RouteSegments(guide, state)
+    if type(guide.segments) ~= "table" then return nil end
+    state = state or {}
+    local chosen = self:ChosenFork(guide, state)
+    local skipUntil = chosen and ERA_STARTER_NEXT[chosen] or nil
+    local started = chosen == nil
+    local route = {}
+    for _, segment in ipairs(guide.segments) do
+        if segment.faction == state.faction then
+            if segment.fork then
+                if segment.id == chosen then
+                    route[#route + 1] = segment
+                    if not skipUntil then started = true end
+                end
+            elseif not started then
+                if segment.id == skipUntil then
+                    started = true
+                    route[#route + 1] = segment
+                end
+            else
+                route[#route + 1] = segment
+            end
+        end
+    end
+    return route
+end
+
+function Engine:SegmentHasProgress(segment, guide, state)
+    for _, goal in ipairs(segment.goals) do
+        if self:IsGoalDone(goal, state, guide) then return true end
+    end
+    return false
+end
+
+function Engine:IsSegmentComplete(segment, guide, state)
+    for _, goal in ipairs(segment.goals) do
+        if not HasPermanentFailure(goal.conditions, state) and not self:IsGoalDone(goal, state, guide) then
+            return false
+        end
+    end
+    return true
+end
+
+function Engine:LevelEntry(route, state)
+    local level = type(state.level) == "number" and state.level or 1
+    local bestMin, chosen = -1, route[1]
+    for _, segment in ipairs(route) do
+        local minimum = segment.levelMin or 1
+        if minimum <= level and minimum > bestMin then
+            bestMin = minimum
+            chosen = segment
+        end
+    end
+    return chosen
+end
+
+function Engine:ActiveSegment(guide, state)
+    if type(guide.segments) ~= "table" then return nil end
+    state = state or {}
+    local route = self:RouteSegments(guide, state)
+    if not route or #route == 0 then return nil end
+    if not ns.charDB then return self:LevelEntry(route, state) end
+    local started = false
+    for _, segment in ipairs(route) do
+        if self:SegmentHasProgress(segment, guide, state) then
+            started = true
+            break
+        end
+    end
+    if not started then return self:LevelEntry(route, state) end
+    for _, segment in ipairs(route) do
+        if not self:IsSegmentComplete(segment, guide, state) then
+            return segment
+        end
+    end
+    return nil
+end
+
+function Engine:SegmentGoals(guide, state)
+    if type(guide.segments) ~= "table" then return guide.goals end
+    local segment = self:ActiveSegment(guide, state)
+    self.currentSegment = segment
+    return segment and segment.goals or {}
+end
+
 function Engine:GetGuideProgress(guide, state)
     state = state or self.state or {}
+    ns:FinalizeGuides()
     self:ReconcileGuide(guide, state)
-    local completed, eligible, total = 0, 0, #guide.goals
+    local goals = guide.goals
+    if guide.segments then
+        local segment = self:ActiveSegment(guide, state)
+        goals = segment and segment.goals or {}
+    end
     local guideEligible = ns.EvaluateCondition(guide.conditions, state)
+    if guide.segments and #goals == 0 then
+        local finished = guideEligible ~= false and state.faction ~= nil
+        local count = finished and 1 or 0
+        return { completed = count, eligible = count, total = count, percentage = finished and 100 or 0 }
+    end
+    local completed, eligible, total = 0, 0, #goals
     if guideEligible == false then
         return { completed = 0, eligible = 0, total = total, percentage = 0 }
     end
-    for _, goal in ipairs(guide.goals) do
+    for _, goal in ipairs(goals) do
         if not HasPermanentFailure(goal.conditions, state) then
             eligible = eligible + 1
             if self:IsGoalDone(goal, state, guide) then
@@ -657,7 +961,7 @@ function Engine:CandidateGoals(guide, state)
     local others = {}
     local deferred = {}
     self.eligibilityReasons = {}
-    for index, goal in ipairs(guide.goals) do
+    for index, goal in ipairs(self:SegmentGoals(guide, state)) do
         local ready, reason, ineligible = self:IsReady(guide, goal, state)
         if reason and (ineligible or ready) then
             self.eligibilityReasons[goal.id] = reason
@@ -712,13 +1016,21 @@ function Engine:SetActiveGoal(goal, remember)
 end
 
 function Engine:Refresh(state)
+    ns:FinalizeGuides()
     if not ns.charDB then
         return
+    end
+    if ns.retiredEraGuides and ns.retiredEraGuides[ns.charDB.selectedGuide] then
+        ns.charDB.eraSegment = ns.charDB.selectedGuide
+        ns.charDB.selectedGuide = "leveling-era"
+        ns.charDB.activeGoal = nil
+        ns.charDB.history = {}
     end
     state = state or ns.PlayerState:Capture()
     self.state = state
     local guide = ns.guides[ns.charDB.selectedGuide]
     self.currentGuide = guide
+    self.currentSegment = nil
     if not guide then
         self.currentGoal = nil
         self.status = "Choose a guide."
@@ -759,10 +1071,12 @@ function Engine:Refresh(state)
             and not ns.charDB.deferred[nextGoal.id]
             and type(nextGoal.priority) == "number" and type(active.priority) == "number"
             and nextGoal.priority < active.priority
+        local onChapter = not self.currentSegment or not active or not active.segmentID
+            or active.segmentID == self.currentSegment.id
         if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
-        elseif active and ready and not permanentlyDone and not ns.charDB.deferred[active.id]
+        elseif onChapter and active and ready and not permanentlyDone and not ns.charDB.deferred[active.id]
             and (not observedDone or not ns.db.autoAdvance) and not shortPreempt
             and not earlierObjective then
             self.currentGoal = active
@@ -771,7 +1085,23 @@ function Engine:Refresh(state)
             self.status = eligible == nil and reason or nil
         else
             self.currentGoal = nil
-            self.status = "Guide complete."
+            local segment = self.currentSegment
+            if segment and type(state.level) == "number" and segment.levelMin and state.level < segment.levelMin then
+                self.status = "Level requirement not met."
+            elseif segment then
+                local blocked
+                for _, goal in ipairs(segment.goals) do
+                    if not HasPermanentFailure(goal.conditions, state)
+                        and not self:IsGoalDone(goal, state, guide) then
+                        local _, goalReason = self:IsReady(guide, goal, state)
+                        blocked = goalReason
+                        break
+                    end
+                end
+                self.status = blocked or "No active step."
+            else
+                self.status = eligible == nil and reason or "Guide complete."
+            end
         end
     end
     if ns.UI and ns.UI.Update then
@@ -827,6 +1157,11 @@ function Engine:Previous()
 end
 
 function Engine:SelectGuide(guideID)
+    ns:FinalizeGuides()
+    if ns.retiredEraGuides and ns.retiredEraGuides[guideID] then
+        ns.charDB.eraSegment = guideID
+        guideID = "leveling-era"
+    end
     if ns.guides[guideID] then
         ns.charDB.selectedGuide = guideID
         ns.charDB.activeGoal = nil
