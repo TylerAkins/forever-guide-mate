@@ -21,8 +21,9 @@ local _, ns = ...
 -- if you want it, then leave the repeatable turn-ins.
 -- Stepping Stones requires ...and that note you found when that quest is up.
 -- Chen's Empty Keg, the four Camp Taurajo rares, and The Runed Scroll start
--- from an item. Use the item. The turn-in stays out of the route until the
--- quest is in the log, and a missing drop does not block 100%.
+-- from an item. The keg is a barrel on the ground, not a centaur drop. Use
+-- the item. The turn-in stays out of the route until the quest is in the log,
+-- and a missing item does not block 100%.
 -- Warsong Reports, the Hillsbrad vial sites, Deepmoss eggs, and a few
 -- object spawns have no Wowhead pin. Those steps name the landmark.
 -- Journey to the Crossroads from Thrall (98024) is Horde Skyborne.
@@ -1137,7 +1138,7 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "Centaur Bracers: Centaur Bracers. Kolkar can drop Chen's Empty Keg. Use it to start the quest.",
+            text = "Collect 15 Centaur Bracers from Kolkar. Chen's Empty Keg is a barrel on the ground in the Barrens, not a Kolkar drop. Use it to start the quest if you find one.",
             dependsOn = { "accept-855-centaur-bracers" },
             complete = QuestObjective(855, 1, "Centaur Bracers"),
             route = {
