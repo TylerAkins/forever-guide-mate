@@ -4,6 +4,7 @@ local Engine = { state = nil, currentGuide = nil, currentGoal = nil, status = ni
 ns.Engine = Engine
 
 local VALID_KINDS = { accept = true, objective = true, turnin = true, travel = true, note = true }
+local SHORT_TIMER_SECONDS = 30 * 60
 
 local function Contains(values, expected)
     if type(values) ~= "table" then
@@ -258,6 +259,33 @@ local function ValidateDeclarative(value, path)
     return true
 end
 
+local function TimerQuestID(goal)
+    local timer = goal.timer
+    if type(timer) == "table" and type(timer.quest) == "number" then
+        return timer.quest
+    end
+    local quest = goal.complete and goal.complete.quest
+    return type(quest) == "table" and quest.id or nil
+end
+
+local function ValidateTimer(goal)
+    local timer = goal.timer
+    if timer == nil then
+        return true
+    end
+    local seconds = type(timer) == "number" and timer or type(timer) == "table" and timer.seconds
+    if type(seconds) ~= "number" or seconds <= 0 then
+        return false, "Goal " .. goal.id .. " has an invalid timer."
+    end
+    if type(timer) == "table" and timer.quest ~= nil and type(timer.quest) ~= "number" then
+        return false, "Goal " .. goal.id .. " has an invalid timer."
+    end
+    if type(TimerQuestID(goal)) ~= "number" then
+        return false, "Goal " .. goal.id .. " has a timer without a quest."
+    end
+    return true
+end
+
 local function ValidateGuide(guide)
     if type(guide) ~= "table" or type(guide.id) ~= "string" or guide.id == "" then
         return false, "Guide id is required."
@@ -279,6 +307,10 @@ local function ValidateGuide(guide)
         end
         if not VALID_KINDS[goal.kind] or type(goal.text) ~= "string" then
             return false, "Goal " .. goal.id .. " has an invalid kind or text."
+        end
+        local timerValid, timerReason = ValidateTimer(goal)
+        if not timerValid then
+            return false, timerReason
         end
         goalIDs[goal.id] = index
         for _, leg in ipairs(goal.route or {}) do
@@ -314,7 +346,7 @@ local function CollectQuestIDs(value, found)
     if type(value) ~= "table" then
         return
     end
-    if value.quest and type(value.quest.id) == "number" then
+    if type(value.quest) == "table" and type(value.quest.id) == "number" then
         found[value.quest.id] = true
     end
     if type(value.questID) == "number" then
@@ -521,7 +553,102 @@ function Engine:IsReady(guide, goal, state)
     return true, eligible == nil and reason or nil, false
 end
 
+local function ConditionQuestIDs(condition, found)
+    if type(condition) ~= "table" then
+        return
+    end
+    local quest = condition.quest
+    if type(quest) == "table" and type(quest.id) == "number" then
+        found[quest.id] = true
+    end
+    local objective = condition.questObjective
+    if type(objective) == "table" and type(objective.id) == "number" then
+        found[objective.id] = true
+    end
+    for _, key in ipairs({ "all", "any" }) do
+        if type(condition[key]) == "table" then
+            for _, child in ipairs(condition[key]) do
+                ConditionQuestIDs(child, found)
+            end
+        end
+    end
+    if condition["not"] then
+        ConditionQuestIDs(condition["not"], found)
+    end
+end
+
+local function ConsiderTimer(timers, questID, seconds)
+    if type(questID) ~= "number" or type(seconds) ~= "number" or seconds <= 0 then
+        return
+    end
+    local current = timers[questID]
+    if not current or seconds < current then
+        timers[questID] = seconds
+    end
+end
+
+function Engine:ActiveTimers(guide, state)
+    local timers = {}
+    local completed = state.completedQuests or {}
+    for _, goal in ipairs(guide.goals) do
+        local questID = TimerQuestID(goal)
+        local seconds = type(goal.timer) == "number" and goal.timer
+            or type(goal.timer) == "table" and goal.timer.seconds
+        if type(questID) == "number" and type(seconds) == "number" and seconds > 0
+            and not completed[questID] and self:IsGoalDone(goal, state, guide) then
+            ConsiderTimer(timers, questID, seconds)
+        end
+    end
+    for questID, info in pairs(state.quests or {}) do
+        if type(info) == "table" and not completed[questID] then
+            ConsiderTimer(timers, questID, info.timeLeft)
+            if type(info.timeLeft) ~= "number" then
+                ConsiderTimer(timers, questID, info.timeAllowed)
+            end
+        end
+    end
+    return timers
+end
+
+function Engine:UrgentGoals(guide, state)
+    local timers = self:ActiveTimers(guide, state)
+    local urgent = {}
+    local function Mark(goalID, inherited)
+        local goal = self:GetGoal(guide, goalID)
+        if not goal or self:IsGoalDone(goal, state, guide) then
+            return
+        end
+        local seconds = inherited
+        local questIDs = {}
+        ConditionQuestIDs(goal.complete, questIDs)
+        for questID in pairs(questIDs) do
+            local remaining = timers[questID]
+            if remaining and (not seconds or remaining < seconds) then
+                seconds = remaining
+            end
+        end
+        if not seconds then
+            return
+        end
+        local existing = urgent[goalID]
+        if existing and existing.seconds <= seconds then
+            return
+        end
+        urgent[goalID] = { seconds = seconds }
+        for _, dependencyID in ipairs(goal.dependsOn or {}) do
+            Mark(dependencyID, seconds)
+        end
+    end
+    for _, goal in ipairs(guide.goals) do
+        Mark(goal.id)
+    end
+    return urgent
+end
+
 function Engine:CandidateGoals(guide, state)
+    local urgentGoals = self:UrgentGoals(guide, state)
+    self.urgentGoals = urgentGoals
+    local urgent = {}
     local sameMap = {}
     local others = {}
     local deferred = {}
@@ -536,6 +663,8 @@ function Engine:CandidateGoals(guide, state)
             local candidate = { goal = goal, index = index }
             if ns.charDB.deferred[goal.id] then
                 deferred[#deferred + 1] = candidate
+            elseif urgentGoals[goal.id] then
+                urgent[#urgent + 1] = candidate
             else
                 local bucket = destination and destination.mapID == state.mapID and sameMap or others
                 bucket[#bucket + 1] = candidate
@@ -543,21 +672,26 @@ function Engine:CandidateGoals(guide, state)
         end
     end
     local function Sort(a, b)
+        local aUrgent = urgentGoals[a.goal.id]
+        local bUrgent = urgentGoals[b.goal.id]
+        if aUrgent and bUrgent and aUrgent.seconds ~= bUrgent.seconds then
+            return aUrgent.seconds < bUrgent.seconds
+        end
         local aPriority = a.goal.priority or a.index
         local bPriority = b.goal.priority or b.index
         return aPriority < bPriority
     end
+    table.sort(urgent, Sort)
     table.sort(sameMap, Sort)
     table.sort(others, Sort)
     table.sort(deferred, Sort)
-    for _, candidate in ipairs(others) do
-        sameMap[#sameMap + 1] = candidate
-    end
-    for _, candidate in ipairs(deferred) do
-        sameMap[#sameMap + 1] = candidate
+    for _, bucket in ipairs({ sameMap, others, deferred }) do
+        for _, candidate in ipairs(bucket) do
+            urgent[#urgent + 1] = candidate
+        end
     end
     local goals = {}
-    for _, candidate in ipairs(sameMap) do
+    for _, candidate in ipairs(urgent) do
         goals[#goals + 1] = candidate.goal
     end
     return goals
@@ -606,21 +740,28 @@ function Engine:Refresh(state)
         local inferred = self:GetInferred(guide)
         local permanentlyDone = active and (ns.charDB.manualCompleted[active.id]
             or (ledger and ledger[active.id]) or (inferred and inferred[active.id]))
-        if active and self.reviewingGoal == active.id then
+        local candidates = self:CandidateGoals(guide, state)
+        local function Remaining(goal)
+            local info = goal and self.urgentGoals[goal.id]
+            return info and info.seconds or nil
+        end
+        local nextSeconds = Remaining(candidates[1])
+        local activeSeconds = Remaining(active)
+        local shortPreempt = nextSeconds and nextSeconds <= SHORT_TIMER_SECONDS
+            and candidates[1] ~= active
+            and (not activeSeconds or nextSeconds < activeSeconds)
+        if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
         elseif active and ready and not permanentlyDone and not ns.charDB.deferred[active.id]
-            and (not observedDone or not ns.db.autoAdvance) then
+            and (not observedDone or not ns.db.autoAdvance) and not shortPreempt then
             self.currentGoal = active
+        elseif candidates[1] then
+            self:SetActiveGoal(candidates[1], active ~= nil)
+            self.status = eligible == nil and reason or nil
         else
-            local candidates = self:CandidateGoals(guide, state)
-            if candidates[1] then
-                self:SetActiveGoal(candidates[1], active ~= nil)
-                self.status = eligible == nil and reason or nil
-            else
-                self.currentGoal = nil
-                self.status = "Guide complete."
-            end
+            self.currentGoal = nil
+            self.status = "Guide complete."
         end
     end
     if ns.UI and ns.UI.Update then
