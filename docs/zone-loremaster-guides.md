@@ -1,10 +1,10 @@
 # Adding a zone Loremaster guide
 
-Use this when adding the next zone. The Barrens (`Guides/Leveling/TheBarrens.lua`), Durotar (`Guides/Leveling/Durotar.lua`), Mulgore (`Guides/Leveling/Mulgore.lua`), and Teldrassil (`Guides/Leveling/Teldrassil.lua`) are the working examples. Alliance zones follow the same rules.
+Use this when adding the next zone. The Barrens (`Guides/Loremaster/TheBarrens.lua`), Durotar (`Guides/Loremaster/Durotar.lua`), Mulgore (`Guides/Loremaster/Mulgore.lua`), and Teldrassil (`Guides/Loremaster/Teldrassil.lua`) are the working examples. Alliance zones follow the same rules.
 
 These guides are for finishing a zone's quests. They are not a leveling route. A character can follow one while leveling, but the order and the stops are there to complete the zone.
 
-Register them as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle is the exception: it stays in `Leveling Quest Guides` with the `Leveling` tag, because that file is the Skyborne starter path.
+Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path. Era chapters live in `Guides/Era/`. A chapter whose title still ends in `(Era)` is reference only and is left out of `ForeverGuideMate.toc`.
 
 ## Source
 

@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Darkshore, levels 23-24.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Darkshore list that sit on this pass are woven in.
+-- Swelling Forces is finished here if it was picked up at the grove. Holy Diver and Baron Marinous turn in only after the item starts them.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -30,7 +31,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-23-24-darkshore",
-    title = "23-24 Darkshore (Era)",
+    title = "23-24 Darkshore",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -101,11 +102,47 @@ ns:RegisterGuide({
                     { quest = { id = 950, state = "completed" } },
                 },
             },
-            text = "Collect 6 Mathystra Relic from the ground in Ruins of Mathystra.",
+            text = "Collect 6 Mathystra Relic from the ground in Ruins of Mathystra. A Stormscale Beastmistress on the northern shore may drop a Rod of Deep Dominion. Use it if she does.",
             complete = QuestState(951, "complete"),
             route = {
                 Point(MAP.DARKSHORE, 0.5850, 0.2431, "Ruins of Mathystra",
                     "Travel to Ruins of Mathystra."),
+            },
+        },
+        {
+            id = "objective-98013-swelling-forces",
+            kind = "objective",
+            priority = 51,
+            conditions = {
+                all = {
+                    { quest = { id = 98013, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Swelling Forces: slay 12 Stormscale Myrmidons, 8 Stormscale Sorceresses, and 6 Stormscale Warriors.",
+            complete = QuestState(98013, "complete"),
+            route = {
+                Point(MAP.DARKSHORE, 0.5840, 0.2120, "Stormscale Myrmidon",
+                    "Travel to Stormscale Myrmidon."),
+                Point(MAP.DARKSHORE, 0.5860, 0.2040, "Stormscale Sorceress",
+                    "Travel to Stormscale Sorceress."),
+                Point(MAP.DARKSHORE, 0.6120, 0.1980, "Stormscale Warrior",
+                    "Travel to Stormscale Warrior."),
+            },
+        },
+        {
+            id = "turnin-87760-holy-diver",
+            kind = "turnin",
+            priority = 165,
+            conditions = {
+                all = {
+                    { quest = { id = 87760, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Holy Diver to Gwennyth Bly'Leggonde in Auberdine if you took the Rod of Deep Dominion from a Stormscale Beastmistress.",
+            complete = QuestState(87760, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3660, 0.4540, "Gwennyth Bly'Leggonde",
+                    "Travel to Gwennyth Bly'Leggonde."),
             },
         },
         {
@@ -296,6 +333,38 @@ ns:RegisterGuide({
             complete = QuestState(951, "completed"),
             route = {
                 Point(MAP.DARKSHORE, 0.4357, 0.7634, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
+            id = "turnin-98013-swelling-forces",
+            kind = "turnin",
+            priority = 201,
+            conditions = {
+                all = {
+                    { quest = { id = 98013, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Swelling Forces to Arbal at the Grove of the Ancients.",
+            complete = QuestState(98013, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Arbal",
+                    "Travel to Arbal."),
+            },
+        },
+        {
+            id = "turnin-98028-baron-marinous",
+            kind = "turnin",
+            priority = 202,
+            conditions = {
+                all = {
+                    { quest = { id = 98028, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
+            complete = QuestState(98028, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
                     "Travel to Onu."),
             },
         },

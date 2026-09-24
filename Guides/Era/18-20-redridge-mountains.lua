@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Redridge Mountains, levels 18-20.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Redridge list that sit on this pass are woven in.
+-- Alther's Mill and Blackrock Blockade wait for the later Redridge chapter, where the route clears the Blackrock camp. Level 60 signs stay out.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -35,7 +36,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-18-20-redridge-mountains",
-    title = "18-20 Redridge Mountains (Era)",
+    title = "18-20 Redridge Mountains",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -325,6 +326,17 @@ ns:RegisterGuide({
             complete = QuestState(246, "activeOrCompleted"),
             route = {
                 Point(MAP.REDRIDGE, 0.3074, 0.6015, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
+            id = "accept-98407-show-of-force",
+            kind = "accept",
+            priority = 191,
+            text = "Accept Show of Force from Deputy Feldon.",
+            complete = QuestState(98407, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
                     "Travel to Deputy Feldon."),
             },
         },
@@ -723,6 +735,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98407-show-of-force",
+            kind = "objective",
+            priority = 535,
+            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
+            dependsOn = { "accept-98407-show-of-force" },
+            complete = QuestState(98407, "complete"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3000, 0.8120, "Redridge Thrasher",
+                    "Travel to Redridge Thrasher."),
+            },
+        },
+        {
             id = "objective-92-2-dire-condor",
             kind = "objective",
             priority = 540,
@@ -765,6 +789,18 @@ ns:RegisterGuide({
             complete = QuestState(246, "completed"),
             route = {
                 Point(MAP.REDRIDGE, 0.3074, 0.6015, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
+            id = "turnin-98407-show-of-force",
+            kind = "turnin",
+            priority = 575,
+            text = "Turn in Show of Force to Deputy Feldon.",
+            dependsOn = { "objective-98407-show-of-force" },
+            complete = QuestState(98407, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
                     "Travel to Deputy Feldon."),
             },
         },
