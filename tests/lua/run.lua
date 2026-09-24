@@ -673,6 +673,7 @@ allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
 
 local zephras = ns.guides["leveling-zephras-isle"]
+Equal(zephras.category, "Leveling Quest Guides", "Zephras Isle stays a leveling guide")
 Check(zephras ~= nil, "zephras isle guide is registered")
 Equal(zephras.conditions.all[1].level.min, 1, "zephras isle starts at level 1")
 local starter = {}
@@ -1116,6 +1117,7 @@ Check(not ns.Engine.currentGoal or (
 
 local barrens = ns.guides["leveling-the-barrens"]
 Check(barrens ~= nil, "the Barrens guide is registered")
+Equal(barrens.category, "Loremaster Guides", "the Barrens guide is a Loremaster guide")
 local valveGoals = 0
 for _, goal in ipairs(barrens.goals) do
     if string.find(goal.id, "objective-900-samophlange-", 1, true) then
@@ -1133,6 +1135,7 @@ Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
 
 local durotar = ns.guides["leveling-durotar"]
 Check(durotar ~= nil, "the Durotar guide is registered")
+Equal(durotar.category, "Loremaster Guides", "the Durotar guide is a Loremaster guide")
 local encroachmentGoals = 0
 for _, goal in ipairs(durotar.goals) do
     if string.find(goal.id, "objective-837-encroachment-", 1, true) then
@@ -1177,6 +1180,7 @@ Check(durotarProgress.eligible < durotarProgress.total,
 
 local mulgore = ns.guides["leveling-mulgore"]
 Check(mulgore ~= nil, "the Mulgore guide is registered")
+Equal(mulgore.category, "Loremaster Guides", "the Mulgore guide is a Loremaster guide")
 local palemaneGoals = 0
 for _, goal in ipairs(mulgore.goals) do
     if string.find(goal.id, "objective-745-sharing-the-land-", 1, true) then

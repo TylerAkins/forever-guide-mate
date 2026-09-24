@@ -243,7 +243,7 @@ class ContractTests(unittest.TestCase):
         for dungeon_id in (3369, 3370, 914, 1489, 1491):
             self.assertNotIn(str(dungeon_id), guide.split("goals = {", 1)[-1])
         self.assertIn('id = "leveling-the-barrens"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 9 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn('{ faction = "Alliance" }', guide)
@@ -262,7 +262,7 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn(f"QuestState({omitted_id},", goals)
             self.assertNotIn(f"QuestObjective({omitted_id},", goals)
         self.assertIn('id = "leveling-durotar"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn("This is an elite. Bring a group.", guide)
@@ -273,6 +273,9 @@ class ContractTests(unittest.TestCase):
         rules = (ROOT / "docs/zone-loremaster-guides.md").read_text(encoding="utf-8")
         self.assertIn("This is an elite. Bring a group.", rules)
         self.assertIn("activeOrCompleted", rules)
+        self.assertIn('category = "Loremaster Guides"', rules)
+        self.assertIn("not a leveling route", rules)
+        self.assertIn("Zephras Isle", rules)
 
     def test_mulgore_guide_is_loremaster_without_dungeons(self) -> None:
         guide = (ROOT / "Guides/Leveling/Mulgore.lua").read_text(encoding="utf-8")
@@ -283,7 +286,7 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn(f"QuestState({omitted_id},", goals)
             self.assertNotIn(f"QuestObjective({omitted_id},", goals)
         self.assertIn('id = "leveling-mulgore"', guide)
-        self.assertIn('category = "Leveling Quest Guides"', guide)
+        self.assertIn('category = "Loremaster Guides"', guide)
         self.assertIn("level = { min = 1 }", guide)
         self.assertIn('{ faction = "Horde" }', guide)
         self.assertIn("{ race = 6 }", guide)

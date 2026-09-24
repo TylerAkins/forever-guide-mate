@@ -1,6 +1,8 @@
 local _, ns = ...
 
 -- Horde Loremaster route for Mulgore.
+-- This is a zone quest-completion guide, not a leveling route. It can be
+-- followed while leveling, but the stops are there to finish the zone.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/mulgore
 -- Rules for the next zone: docs/zone-loremaster-guides.md
 -- A camp's quests are picked up together. Chains still wait on the real turn-in.
@@ -48,7 +50,7 @@ end
 ns:RegisterGuide({
     id = "leveling-mulgore",
     title = "Mulgore (Loremaster)",
-    category = "Leveling Quest Guides",
+    category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {

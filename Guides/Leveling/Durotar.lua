@@ -1,6 +1,8 @@
 local _, ns = ...
 
 -- Horde Loremaster route for Durotar.
+-- This is a zone quest-completion guide, not a leveling route. It can be
+-- followed while leveling, but the stops are there to finish the zone.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/durotar
 -- Rules for the next zone: docs/zone-loremaster-guides.md
 -- Chains stay in Wowhead series order. At Sen'jin Village, Thwarting Kolkar
@@ -52,7 +54,7 @@ end
 ns:RegisterGuide({
     id = "leveling-durotar",
     title = "Durotar (Loremaster)",
-    category = "Leveling Quest Guides",
+    category = "Loremaster Guides",
     revision = 1,
     conditions = {
         all = {
