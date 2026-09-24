@@ -18,6 +18,9 @@ local _, ns = ...
 -- Stepping Stones requires ...and that note you found when that quest is up.
 -- Warsong Reports, the Hillsbrad vial sites, Deepmoss eggs, and a few
 -- object spawns have no Wowhead pin. Those steps name the landmark.
+-- Meats to Orgrimmar through Return to the Crossroads is orc and troll.
+-- A Bundle of Hides through Return to Jahan, and Sergra Darkthorn, are tauren.
+-- Other Horde races still reach 100%.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -104,6 +107,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -121,6 +125,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -139,6 +144,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -157,6 +163,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -175,6 +182,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -193,6 +201,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -211,6 +220,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -229,6 +239,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = { 2, 8 } },
                     { level = { min = 10 } },
                 },
             },
@@ -247,6 +258,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -264,6 +276,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -282,6 +295,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -300,6 +314,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -318,6 +333,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -335,6 +351,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -353,6 +370,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -371,6 +389,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -389,6 +408,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
@@ -407,6 +427,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
