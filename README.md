@@ -6,6 +6,8 @@ A guide the character cannot use says Ineligible. The faction stays listed besid
 
 The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
+Guide files are split by job. `Guides/Era/` holds the 1–60 Era chapters. `Guides/Leveling/` holds leveling routes, which today is Zephras Isle. `Guides/Loremaster/` holds the zone-completion guides. `Guides/Dungeons/` holds dungeon quest guides.
+
 ## Current guides
 
 ### Leveling
