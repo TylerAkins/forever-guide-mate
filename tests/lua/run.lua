@@ -136,6 +136,18 @@ Load("Guides/Leveling/Era/47-48-searing-gorge-alliance.lua")
 Load("Guides/Leveling/Era/48-49-feralas.lua")
 Load("Guides/Leveling/Era/49-50-tanaris-alliance.lua")
 Load("Guides/Leveling/Era/50-50-hinterlands.lua")
+Load("Guides/Leveling/Era/50-51-blasted-lands.lua")
+Load("Guides/Leveling/Era/51-52-ungoro-crater.lua")
+Load("Guides/Leveling/Era/52-53-azshara.lua")
+Load("Guides/Leveling/Era/53-54-felwood.lua")
+Load("Guides/Leveling/Era/54-55-winterspring-alliance.lua")
+Load("Guides/Leveling/Era/55-56-burning-steppes.lua")
+Load("Guides/Leveling/Era/55-56-felwood-alliance.lua")
+Load("Guides/Leveling/Era/56-57-western-plaguelands.lua")
+Load("Guides/Leveling/Era/57-58-eastern-plaguelands.lua")
+Load("Guides/Leveling/Era/57-58-western-plaguelands-alliance.lua")
+Load("Guides/Leveling/Era/58-59-silithus-alliance.lua")
+Load("Guides/Leveling/Era/59-60-winterspring-alliance.lua")
 
 local baseState = {
     faction = "Horde",
@@ -2158,9 +2170,9 @@ function TestEraLeveling()
             end
         end
     end
-    Equal(count, 91, "the Era set is registered")
+    Equal(count, 103, "the Era set is registered")
     Equal(hordeCount, 52, "the Horde Era set is registered")
-    Equal(allianceCount, 39, "the Alliance Era set is registered")
+    Equal(allianceCount, 51, "the Alliance Era set is registered")
 end
 TestEraLeveling()
 
