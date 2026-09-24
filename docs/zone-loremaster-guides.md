@@ -102,6 +102,16 @@ A character who finishes every step they can actually take should reach 100%.
 - Include shared and side-unknown quests when the zone page lists them and a Horde character can take them.
 - A drop that starts an optional quest does not get a required step. Gate the turn-in with `quest` state `activeOrCompleted`, so a missing drop does not block 100%.
 
+## Catching a requirement that was missed
+
+A requirement nobody noticed reads as correct data. Wowhead's quest pages do not expose requirements in a form CI can fetch, so no test can tell you that a quest needs blacksmithing when the guide never said so. Two things cover it instead, and neither needs anyone to walk a route by hand.
+
+`tests/lua/lint.lua` checks the invariants that are true of the data on its own. The one that matters here: every step of a quest carries the same conditions. A character who cannot accept a quest cannot finish its objectives or turn it in either, so gating part of a chain is always a bug. Add an invariant here when it holds for every shipped guide, and leave it out when it does not. A check that has to be suppressed teaches people to ignore the lint. A keyword scan of step text was tried and dropped: "enchanted skyhoppers", "Palemane Tanner", and "Seaforium Mining Charge" all trip it, and nothing real did.
+
+`QuestAudit.lua` covers the rest at runtime, where the client is the authority. When the guide sends a character to a quest giver, the audit compares the step's quest against the quests that NPC is actually offering. A quest the character is never offered means a requirement the guide does not know about, whatever the cause: class, race, profession, reputation, or a prerequisite in the wrong order. The step is deferred rather than completed, so it comes back if it becomes available, and it is written to a per-character report that prints on login. Play normally and the report fills itself in.
+
+The audit only reads. It matches the giver by the name on the step's last pin, so an accept step whose pin does not name the giver is simply not audited.
+
 ## Ship the guide
 
 - Set `category = "Loremaster Guides"`. Leave Zephras Isle in `Leveling Quest Guides`.

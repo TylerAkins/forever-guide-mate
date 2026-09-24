@@ -25,6 +25,7 @@ REQUIRED_FILES = (
     "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
+    "QuestAudit.lua",
     "QuestDialog.lua",
     "Navigation.lua",
     "MapPins.lua",
@@ -45,6 +46,7 @@ REQUIRED_FILES = (
     "tests/test_contracts.py",
     "tests/lua/run.lua",
     "tests/lua/ui.lua",
+    "tests/lua/lint.lua",
     "tests/requirements.txt",
 )
 
@@ -77,6 +79,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestAudit.lua",
                 "QuestDialog.lua",
                 "Navigation.lua",
                 "TomTomWaypoints.lua",
@@ -140,6 +143,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestAudit.lua",
                 "Navigation.lua",
                 "TomTomWaypoints.lua",
                 "MapPins.lua",
@@ -309,6 +313,7 @@ class ContractTests(unittest.TestCase):
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
         self.assertIn("lua5.1 tests/lua/run.lua", workflow)
         self.assertIn("lua5.1 tests/lua/ui.lua", workflow)
+        self.assertIn("lua5.1 tests/lua/lint.lua", workflow)
 
     def test_ux_contract(self) -> None:
         core = (ROOT / "Core.lua").read_text(encoding="utf-8")
