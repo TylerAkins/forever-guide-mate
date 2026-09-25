@@ -88,7 +88,10 @@ python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
+python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
 ```
+
+If the change should publish (guides, engine, or TOC), bump `VERSION` by exactly one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` (current release only). Merging that reviewed PR tags and publishes the GitHub Release and CurseForge package. Release mechanics are in [DEVELOPMENT.md](DEVELOPMENT.md).
 
 Add focused assertions in `tests/lua/run.lua` when you fix a chain that broke in game (wrong quest id, early turn-in, and similar).
 

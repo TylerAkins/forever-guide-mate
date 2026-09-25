@@ -4,6 +4,13 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.1 - 2026-09-25
+
+- Logging in with a started guide no longer opens the guide library; it opens only when no guide has been chosen yet.
+- Added stable release automation: numbered GitHub Releases from `v*` tags, preview builds for `main` merges, and `RELEASE_NOTES.md` as the CurseForge changelog.
+- Added the Wednesday Forever interface compatibility updater and its release tooling.
+- Documented the release process in `docs/DEVELOPMENT.md` and the README.
+
 ## 0.1.0 - 2026-09-23
 
 - Created the initial repository and addon scaffold.

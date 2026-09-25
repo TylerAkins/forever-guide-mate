@@ -1,10 +1,21 @@
+# https://github.com/BigWigsMods/packager
 package-as: ForeverGuideMate
+
+manual-changelog:
+  filename: RELEASE_NOTES.md
+  markup-type: markdown
+
 ignore:
-  - .compiled
+  - .git
+  - .github
+  - .cursor
+  - .gitignore
+  - .pkgmeta
+  - VERSION
+  - docs
   - tests
   - tools
-  - .github
-  - docs
-  - .gitignore
   - AGENTS.md
-  - VERSION
+  - "**/.DS_Store"
+  - "**/Thumbs.db"
+  - "**/__pycache__"
