@@ -868,6 +868,65 @@ function TestLostBarrensKodo()
 end
 TestLostBarrensKodo()
 
+function TestGatheringTheCureLedger()
+    local guide = ns.guides["leveling-the-barrens"]
+    local base = {
+        faction = "Horde", raceID = 6, classID = 11, level = 16,
+        professions = {}, professionsKnown = true,
+        mapID = 1413, x = 0.52, y = 0.32,
+        quests = {
+            [6128] = {
+                complete = false,
+                objectives = {
+                    { text = "Earthroot", finished = false, numFulfilled = 0, numRequired = 5 },
+                    { text = "Kodo Horn", finished = true, numFulfilled = 5, numRequired = 5 },
+                },
+            },
+        },
+        completedQuests = {},
+        questLogKnown = true,
+        questCompletionKnown = true,
+    }
+    ns.charDB.selectedGuide = guide.id
+    ns.charDB.activeGoal = nil
+    ns.charDB.manualCompleted = {}
+    ns.charDB.deferred = {}
+    ns.charDB.history = {}
+    ns.charDB.completionLedger = {}
+    ns.db.autoAdvance = true
+    ns.Engine.reviewingGoal = nil
+    local ledger = ns.Engine:GetLedger(guide, true)
+    ledger["turnin-6128-gathering-the-cure"] = true
+    ledger["objective-6128-2-lost-barrens-kodo"] = true
+    ns.Engine:Refresh(base)
+    local candidates = ns.Engine:CandidateGoals(guide, base)
+    local earthrootReady
+    for _, goal in ipairs(candidates) do
+        if goal.id == "objective-6128-1-earthroot" then
+            earthrootReady = true
+            break
+        end
+    end
+    Check(earthrootReady, "a stale turn-in ledger does not drop earthroot from the route")
+    Check(not ns.Engine:IsGoalDone(ns.Engine:GetGoal(guide, "objective-6128-1-earthroot"), base, guide),
+        "earthroot stays open while herbs are missing")
+    Check(not ledger["turnin-6128-gathering-the-cure"],
+        "stale turn-in ledger entries are cleared when the quest is still open")
+    local missingLog = {
+        faction = "Horde", raceID = 6, classID = 11, level = 16,
+        professions = {}, professionsKnown = true,
+        mapID = 1413, x = 0.52, y = 0.32,
+        quests = {},
+        completedQuests = {},
+        questLogKnown = true,
+        questCompletionKnown = true,
+    }
+    local kodo = ns.Engine:GetGoal(guide, "objective-6128-2-lost-barrens-kodo")
+    Equal(ns.EvaluateCondition(kodo.complete, missingLog), nil,
+        "a missing quest log entry is unknown, not treated as incomplete")
+end
+TestGatheringTheCureLedger()
+
 function TestBreadcrumbSkip()
     local function Point(x, y, label)
         return { mapID = 1413, x = x, y = y, label = label, offMapText = label }

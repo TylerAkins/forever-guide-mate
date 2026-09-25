@@ -74,3 +74,4 @@ All notable changes to this project are documented here.
 - A step with no saved location follows the pin in your quest log. Saved coordinates stay where the guide already has them.
 - The tracker reads the objective while the arrow follows the route. A path dot is not the step, and it is skipped when you are already closer to a later pin.
 - Horde Gathering the Cure (6128) tracks kodo horns and earthroot on separate steps with matching quest ids; turn-in waits for both.
+- Saved step completion no longer overrides the quest log for accept, objective, and turn-in steps, so a route change cannot mark earthroot done because an old turn-in was checked off early.
