@@ -30,7 +30,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 
 ## Shape of a quest
 
-- One step per objective. Those steps depend on the accept, not on each other. The turn-in depends on the objectives.
+- One step per objective. Those steps depend on the accept, not on each other. The turn-in depends on every objective step for that quest. See [docs/guide-authoring.md](../../docs/guide-authoring.md) for quest ids, `QuestObjective` text, and parallel turn-ins.
 - A handoff only sends you to another NPC (deliver, report, or turn in there). One step. It depends on the previous turn-in. The text says to accept the follow-up, then names the visit. The pin is the NPC you still have to reach. No accept step on the giver.
 - A kill or a collect still has its own accept step.
 - A provided item, such as a quest item the giver hands you, is not its own step. Say how to use it on the objective that needs it.
@@ -42,6 +42,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 - Use uiMap IDs. Wowhead area IDs are not map IDs.
 - `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
 - If there is no saved pin, keep the nearest named landmark and say the guide follows the pin in the quest log. Do not invent a precise pin. Mark that step `useClientPin` so the addon uses the quest log pin while the quest is accepted.
+- For a counted objective on a quest with two or more parts, pass the quest log label into `QuestObjective(questID, index, "label")` so completion stays correct if the client reorders objectives.
 - Coordinates in these guides have not been validated in the Forever client.
 - Priorities are unique. Number the route in order so a later hub cannot jump ahead.
 

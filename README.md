@@ -4,7 +4,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 A guide the character cannot use says Ineligible. The faction stays listed beside that. Coordinates in the shipped guides have not been validated in the Forever client.
 
-The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
+The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md). Shared quest-step rules (quest ids, multi-objective chains, pins) are in [docs/guide-authoring.md](docs/guide-authoring.md).
 
 Guide files are split by job. `Guides/Leveling/` holds Zephras Isle and the Era chapters whose titles no longer end in `(Era)`. `Guides/Era/` holds the chapters that still say `(Era)`. `Guides/Loremaster/` holds the zone-completion guides. `Guides/Dungeons/` holds dungeon quest guides.
 
