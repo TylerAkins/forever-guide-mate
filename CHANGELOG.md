@@ -65,3 +65,4 @@ All notable changes to this project are documented here.
 - Each converted Era chapter has its own Leveling library row, so 12-20 Barrens is listed with Zephras Isle and 1-12 Durotar. Opening a chapter stays on that chapter.
 - Removed travel steps from the leveling, Loremaster, and Era guides. TomTom already points at the next pin, and those steps did not auto-clear. Dungeon entrance steps stay.
 - Kept the travel steps that are the quest: The Forgotten Pools, Boulderslide Cavern, Frostmane Hold, the Altar of Zul, and the Gaping Chasm. Those clear when the discovery objective is done.
+- Automatic quest accept takes only the quest on the current accept step. Other quests in the same guide stay in the gossip window, so opening one giver does not fill the quest log. Turn-in still covers completed quests from the selected guide.

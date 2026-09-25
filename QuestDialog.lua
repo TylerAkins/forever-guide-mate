@@ -13,6 +13,22 @@ function QuestDialog:Uses(questID)
     return guide and ns.GuideUsesQuest(guide, questID) or false
 end
 
+-- Accept only the quest the tracker is asking for right now. Later steps in
+-- the same guide stay in the gossip window so they do not fill the quest log.
+function QuestDialog:CurrentAcceptQuestID()
+    local goal = ns.Engine and ns.Engine.currentGoal or nil
+    if type(goal) ~= "table" or goal.kind ~= "accept" then return nil end
+    local complete = goal.complete
+    local quest = type(complete) == "table" and complete.quest or nil
+    local questID = type(quest) == "table" and quest.id or nil
+    if type(questID) ~= "number" then return nil end
+    return questID
+end
+
+function QuestDialog:Accepts(questID)
+    return self:Enabled() and type(questID) == "number" and questID == self:CurrentAcceptQuestID()
+end
+
 local function Call(fn, ...)
     if type(fn) ~= "function" then return nil end
     local ok, value = pcall(fn, ...)
@@ -45,7 +61,7 @@ function QuestDialog:SelectGossip(api)
         if type(quests) == "table" then
             for _, quest in ipairs(quests) do
                 local questID = type(quest) == "table" and quest.questID or nil
-                if self:Uses(questID) then
+                if self:Accepts(questID) then
                     Call(info.SelectAvailableQuest, questID)
                     return
                 end
@@ -67,7 +83,7 @@ end
 
 function QuestDialog:Accept(api)
     local questID = Call(api.GetQuestID)
-    if self:Uses(questID) then Call(api.AcceptQuest) end
+    if self:Accepts(questID) then Call(api.AcceptQuest) end
 end
 
 function QuestDialog:Progress(api)
