@@ -856,7 +856,7 @@ function UI:RegisterSettings()
     trackerLocked:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
     local autoAdvance = CreateCheckbox(panel, "Advance observable steps automatically", function() return ns.db.autoAdvance end,
         function(value) ns.db.autoAdvance = value; ns.ScheduleRefresh() end)
-    local autoQuest = CreateCheckbox(panel, "Automatically accept and turn in guide quests", function() return ns.db.autoQuest end,
+    local autoQuest = CreateCheckbox(panel, "Automatically accept the current step and turn in guide quests", function() return ns.db.autoQuest end,
         function(value) ns.db.autoQuest = value end)
     autoAdvance:SetPoint("TOPLEFT", trackerLocked, "BOTTOMLEFT", 0, -4)
     autoQuest:SetPoint("TOPLEFT", autoAdvance, "BOTTOMLEFT", 0, -4)
