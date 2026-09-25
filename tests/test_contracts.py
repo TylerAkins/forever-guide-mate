@@ -59,6 +59,7 @@ REQUIRED_FILES = (
     "docs/zone-loremaster-guides.md",
     "docs/DEVELOPMENT.md",
     ".cursor/skills/zone-loremaster-guide/SKILL.md",
+    ".cursor/skills/era-forever-weave/SKILL.md",
     "tools/compile_addon.py",
     "tools/guide_release.py",
     "tools/update_forever_interface.py",
