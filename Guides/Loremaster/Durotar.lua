@@ -1,12 +1,10 @@
 local _, ns = ...
 
 -- Horde Loremaster route for Durotar.
--- The step order is the leveling route. Zone quests that route skips are woven in.
+-- The step order follows the leveling route. Zone quests that route skips are woven in.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/durotar
 -- Rules for the next zone: docs/zone-loremaster-guides.md
--- Chains stay in Wowhead series order. At Sen'jin Village, Thwarting Kolkar
--- Aggression, Practical Prey, A Solvent Spirit, Zalazane, and Minshina's Skull
--- are accepted before the route leaves. Each quest objective is its own step
+-- The leveling route's order stays. Each quest objective is its own step
 -- so a finished pin cannot become active again.
 -- Omitted from this run:
 -- The New Horde (787) is an alternate of Your Place In The World and has no giver.
@@ -30,8 +28,6 @@ local _, ns = ...
 -- north-coast clues have no Wowhead pin. Those steps name the landmark.
 -- Coordinates have not been validated in the Forever client.
 
--- Step order follows the leveling route. Zone quests that are not on
--- that route are woven in at the same giver, or after their series quest.
 local MAP = {
     DUROTAR = 1411,
     ORGRIMMAR = 1454,
