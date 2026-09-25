@@ -817,6 +817,83 @@ function TestEliteLabels()
 end
 TestEliteLabels()
 
+function TestLostBarrensKodo()
+    local function CheckStep(guideID)
+        local goal = ns.Engine:GetGoal(ns.guides[guideID], "objective-6128-2-lost-barrens-kodo")
+        Check(goal and goal.route and #goal.route > 1, guideID .. " keeps the era kodo route")
+        Check(goal and goal.route[#goal.route].label == "Lost Barrens Kodo", guideID .. " ends at the kodo camp")
+        Check(goal and goal.complete.questObjective.text == "Kodo Horn", guideID .. " completes on the horn")
+        local state = {
+            mapID = 1413, x = 0.53, y = 0.43,
+            quests = {
+                [6128] = { complete = false, objectives = {
+                    { text = "Earthroot", finished = false, numFulfilled = 0, numRequired = 5 },
+                    { text = "Kodo Horn", finished = true, numFulfilled = 5, numRequired = 5 },
+                } },
+            },
+            completedQuests = {},
+            questLogKnown = true,
+            questCompletionKnown = true,
+        }
+        Equal(ns.EvaluateCondition(goal.complete, state), true, guideID .. " horn objective finishes the step")
+        state.quests[6128].objectives[2].finished = false
+        state.quests[6128].objectives[2].numFulfilled = 2
+        Equal(ns.EvaluateCondition(goal.complete, state), false, guideID .. " stays up until five horns")
+        state.quests[6128].objectives = {
+            { text = "Kodo Horn", finished = true, numFulfilled = 5, numRequired = 5 },
+            { text = "Earthroot", finished = false, numFulfilled = 0, numRequired = 5 },
+        }
+        Equal(ns.EvaluateCondition(goal.complete, state), true, guideID .. " finds the horn when it is not objective 2")
+    end
+    CheckStep("leveling-the-barrens")
+    local eraGuide = ns.guides["leveling-era-12-20-barrens"] or ns.guides["leveling-era"]
+    local eraID = ns.guides["leveling-era-12-20-barrens"] and "objective-6128-2-lost-barrens-kodo"
+        or "leveling-era-12-20-barrens:objective-6128-2-lost-barrens-kodo"
+    local eraGoal = ns.Engine:GetGoal(eraGuide, eraID)
+    Check(eraGoal and eraGoal.route and #eraGoal.route > 1, "era barrens keeps the kodo route")
+    local shown = ns.UI:GoalInstruction({
+        currentGoal = eraGoal,
+        state = { mapID = 1413, x = 0.5446, y = 0.4042 },
+    })
+    Check(shown and string.find(shown, "Continue toward", 1, true) == nil, "the step does not read Continue toward")
+    Check(shown and string.find(shown, "Kodo Horn", 1, true) ~= nil, "the step reads the kodo objective")
+    Check(eraGoal and eraGoal.complete.questObjective.text == "Kodo Horn", "era barrens completes on the horn")
+end
+TestLostBarrensKodo()
+
+function TestBreadcrumbSkip()
+    local function Point(x, y, label)
+        return { mapID = 1413, x = x, y = y, label = label, offMapText = label }
+    end
+    local goal = {
+        route = {
+            Point(0.50, 0.20, "Continue toward Curing the Sick"),
+            Point(0.55, 0.30, "Continue toward Curing the Sick"),
+            Point(0.45, 0.40, "Curing the Sick"),
+        },
+    }
+    local leg = ns.Navigation:GetActiveLeg(goal, { mapID = 1413, x = 0.45, y = 0.40 })
+    Equal(leg and leg.label, "Curing the Sick", "a later camp wins over earlier breadcrumbs")
+    leg = ns.Navigation:GetActiveLeg(goal, { mapID = 1413, x = 0.50, y = 0.20 })
+    Equal(leg and leg.x, 0.55, "standing on a breadcrumb advances to the next pin")
+    local ordered = {
+        route = {
+            Point(0.20, 0.20, "Crossroads"),
+            Point(0.80, 0.80, "Camp Taurajo"),
+        },
+    }
+    leg = ns.Navigation:GetActiveLeg(ordered, { mapID = 1413, x = 0.78, y = 0.78 })
+    Equal(leg and leg.label, "Crossroads", "a real stop is not skipped just because the next stop is closer")
+    local offMap = ns.UI:GoalInstruction({
+        currentGoal = { text = "Cure the sick gazelles.", route = goal.route },
+        state = { mapID = 1454, x = 0.5, y = 0.5 },
+    })
+    Check(offMap and string.find(offMap, "Continue toward", 1, true) ~= nil, "off the map the path dot still points the way")
+    leg = ns.Navigation:GetActiveLeg(goal, {})
+    Equal(leg and leg.label, "Continue toward Curing the Sick", "a missing position keeps the first pin")
+end
+TestBreadcrumbSkip()
+
 function TestQuestAudit()
     local durotarGuide = ns.guides["leveling-durotar"]
     local spinalAxe = ns.Engine:GetGoal(durotarGuide, "accept-96874-this-is-spinal-axe")

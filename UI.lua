@@ -757,6 +757,11 @@ function UI:CreateLauncher()
     self.launcher = button
 end
 
+local function PathDot(leg)
+    return type(leg) == "table" and type(leg.label) == "string"
+        and string.find(leg.label, "Continue toward", 1, true) == 1
+end
+
 function UI:GoalInstruction(engine)
     local goal = engine.currentGoal
     if not goal then
@@ -764,6 +769,11 @@ function UI:GoalInstruction(engine)
     end
     local state = engine.state or {}
     local leg, status = ns.Navigation:GetActiveLeg(goal, state)
+    -- Era routes keep their path dots. On the map the step reads as the
+    -- objective. Off the map the travel text still has to point the way.
+    if PathDot(leg) and leg and state.mapID and ns.Navigation:OnMap(state.mapID, leg.mapID) then
+        return goal.text
+    end
     if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID) then
         return status or leg.offMapText or leg.label or goal.text
     end
