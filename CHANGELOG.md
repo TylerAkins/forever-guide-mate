@@ -66,3 +66,4 @@ All notable changes to this project are documented here.
 - Removed travel steps from the leveling, Loremaster, and Era guides. TomTom already points at the next pin, and those steps did not auto-clear. Dungeon entrance steps stay.
 - Kept the travel steps that are the quest: The Forgotten Pools, Boulderslide Cavern, Frostmane Hold, the Altar of Zul, and the Gaping Chasm. Those clear when the discovery objective is done.
 - Automatic quest accept takes only the quest on the current accept step. Other quests in the same guide stay in the gossip window, so opening one giver does not fill the quest log. Turn-in still covers completed quests from the selected guide.
+- A quest giver that lists several quests is selected for you. The current accept or turn-in opens without clicking the quest in that list.

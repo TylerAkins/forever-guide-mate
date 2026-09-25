@@ -152,6 +152,7 @@ if CreateFrame then
     eventFrame:RegisterEvent("DISPLAY_SIZE_CHANGED")
     eventFrame:RegisterEvent("UI_SCALE_CHANGED")
     eventFrame:RegisterEvent("GOSSIP_SHOW")
+    eventFrame:RegisterEvent("QUEST_GREETING")
     eventFrame:RegisterEvent("QUEST_DETAIL")
     eventFrame:RegisterEvent("QUEST_PROGRESS")
     eventFrame:RegisterEvent("QUEST_COMPLETE")
