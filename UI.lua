@@ -410,12 +410,95 @@ local function GuideMinimumLevel(guide)
     return level
 end
 
-local function GuideComesBefore(left, right)
-    local leftLevel, rightLevel = GuideMinimumLevel(left), GuideMinimumLevel(right)
+local function EntryComesBefore(left, right)
+    local leftLevel, rightLevel = left.levelMin, right.levelMin
     if leftLevel and rightLevel and leftLevel ~= rightLevel then return leftLevel < rightLevel end
     if leftLevel and not rightLevel then return true end
     if rightLevel and not leftLevel then return false end
     return (left.title or "") < (right.title or "")
+end
+
+local function SegmentIsIneligible(segment, state)
+    state = state or {}
+    if segment.faction and state.faction and segment.faction ~= state.faction then
+        return true
+    end
+    if type(state.level) == "number" and segment.levelMin and state.level < segment.levelMin then
+        return true
+    end
+    return false
+end
+
+local function SegmentEligibilityText(guide, segment, state)
+    state = state or {}
+    local eligible, reason
+    if segment.faction and state.faction and segment.faction ~= state.faction then
+        eligible = false
+    elseif type(state.level) ~= "number" then
+        eligible, reason = nil, "Level is unavailable."
+    elseif segment.levelMin and state.level < segment.levelMin then
+        eligible = false
+    else
+        eligible = true
+    end
+    local requirements = {}
+    if segment.faction == "Alliance" or segment.faction == "Horde" then
+        requirements[#requirements + 1] = segment.faction
+    end
+    if segment.levelMin then
+        requirements[#requirements + 1] = ("Level %d+"):format(segment.levelMin)
+    end
+    local suffix = #requirements > 0 and ("  •  " .. table.concat(requirements, "  •  ")) or ""
+    local text
+    if eligible == false then text = "Ineligible" .. suffix
+    elseif eligible == nil then text = (reason or "Eligibility pending") .. suffix
+    else text = "Eligible" .. suffix end
+    local label = GuideTypeLabel(guide)
+    if label then return label .. "  •  " .. text end
+    return text
+end
+
+function ns.LibraryEntries(state, query, category, hideIneligible)
+    ns:FinalizeGuides()
+    state = state or {}
+    query = type(query) == "string" and string.lower(query) or ""
+    category = category or "All Guides"
+    local entries = {}
+    for _, guideID in ipairs(ns.guideOrder) do
+        local guide = ns.guides[guideID]
+        if category == "All Guides" or guide.category == category then
+            local route = guide.segments and ns.Engine:RouteSegments(guide, state) or nil
+            if route and #route > 0 then
+                for _, segment in ipairs(route) do
+                    local haystack = string.lower(table.concat({
+                        segment.title or "", guide.title or "", guide.category or "",
+                    }, " "))
+                    if (query == "" or string.find(haystack, query, 1, true))
+                        and not (hideIneligible and SegmentIsIneligible(segment, state)) then
+                        entries[#entries + 1] = {
+                            guide = guide,
+                            segment = segment,
+                            title = segment.title,
+                            levelMin = segment.levelMin,
+                        }
+                    end
+                end
+            else
+                local haystack = string.lower((guide.title or "") .. " " .. (guide.category or ""))
+                local ineligible = ns.EvaluateCondition(guide.conditions, state) == false
+                if (query == "" or string.find(haystack, query, 1, true))
+                    and not (hideIneligible and ineligible) then
+                    entries[#entries + 1] = {
+                        guide = guide,
+                        title = guide.title,
+                        levelMin = GuideMinimumLevel(guide),
+                    }
+                end
+            end
+        end
+    end
+    table.sort(entries, EntryComesBefore)
+    return entries
 end
 
 function UI:CreateGuideBrowser()
@@ -589,35 +672,7 @@ function UI:RefreshGuideBrowser()
     end
     for index = #categories + 2, #self.browserCategoryButtons do self.browserCategoryButtons[index]:Hide() end
 
-    local function RouteSearchText(guide, state)
-        local parts = { guide.title or "", guide.category or "" }
-        if guide.segments then
-            for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
-                parts[#parts + 1] = segment.title
-            end
-        end
-        return string.lower(table.concat(parts, " "))
-    end
-    local function MatchingSegment(guide, state)
-        if query == "" or not guide.segments then return nil end
-        for _, segment in ipairs(ns.Engine:RouteSegments(guide, state) or {}) do
-            if string.find(string.lower(segment.title), query, 1, true) then
-                return segment
-            end
-        end
-    end
-    local matches = {}
-    for _, guideID in ipairs(ns.guideOrder) do
-        local guide = ns.guides[guideID]
-        local haystack = RouteSearchText(guide, ns.Engine.state or {})
-        local ineligible = ns.EvaluateCondition(guide.conditions, ns.Engine.state or {}) == false
-        if (self.browserCategory == "All Guides" or guide.category == self.browserCategory)
-            and (query == "" or string.find(haystack, query, 1, true))
-            and not (ns.db.browser.hideIneligible and ineligible) then
-            matches[#matches + 1] = guide
-        end
-    end
-    table.sort(matches, GuideComesBefore)
+    local matches = ns.LibraryEntries(ns.Engine.state or {}, query, self.browserCategory, ns.db.browser.hideIneligible)
     local pageSize = 3
     local pageCount = math.max(1, math.ceil(#matches / pageSize))
     self.browserPage = math.max(1, math.min(self.browserPage, pageCount))
@@ -625,32 +680,34 @@ function UI:RefreshGuideBrowser()
     for matchIndex = ((self.browserPage - 1) * pageSize) + 1,
         math.min(self.browserPage * pageSize, #matches) do
             visible = visible + 1
-            local guide = matches[matchIndex]
+            local entry = matches[matchIndex]
+            local guide = entry.guide
+            local segment = entry.segment
             local row = self.browserRows[visible] or self:CreateBrowserRow(visible)
             local browserState = ns.Engine.state or {}
-            local matched = MatchingSegment(guide, browserState)
-            local segment = matched
-            if not segment and guide.segments then
-                segment = ns.Engine:ActiveSegment(guide, browserState)
-            end
             local progress = ns.Engine:GetGuideProgress(guide, browserState, segment)
-            local title = (segment and segment.title) or guide.title
-            row.title:SetText(title)
-            row.eligibility:SetText(EligibilityText(guide, ns.Engine.state))
+            row.title:SetText(entry.title)
+            if segment then
+                row.eligibility:SetText(SegmentEligibilityText(guide, segment, browserState))
+            else
+                row.eligibility:SetText(EligibilityText(guide, browserState))
+            end
             row.counts:SetText(("%d/%d  %d%%"):format(progress.completed, progress.eligible, progress.percentage))
             row.progress:SetValue(progress.percentage)
-            row.open:SetText(ns.charDB.selectedGuide == guide.id and "Continue" or "Open")
+            local onThisRow = ns.charDB.selectedGuide == guide.id
+                and (not segment or (ns.Engine.currentSegment and ns.Engine.currentSegment.id == segment.id))
+            row.open:SetText(onThisRow and "Continue" or "Open")
             local selectedGuideID = guide.id
-            local chosenSegment = matched
+            local chosenSegment = segment
             row.open:SetScript("OnClick", function()
-                ns.Engine:SelectGuide(selectedGuideID)
                 if chosenSegment then
+                    ns.charDB.eraChapterPick = chosenSegment.id
                     if chosenSegment.fork then
                         ns.charDB.eraSegment = chosenSegment.id
                     end
                     ns.charDB.eraFloor = chosenSegment.id
-                    ns.Engine:Refresh(ns.Engine.state)
                 end
+                ns.Engine:SelectGuide(selectedGuideID)
                 UI:OpenTracker()
                 UI.browser:Hide()
             end)

@@ -2115,6 +2115,7 @@ function TestEraLeveling()
         ns.charDB.selectedGuide = nil
         ns.charDB.eraSegment = nil
         ns.charDB.eraFloor = nil
+        ns.charDB.eraChapterPick = nil
         ns.charDB.eraProgressMerged = nil
         ns.charDB.activeGoal = nil
         ns.charDB.history = {}
@@ -2250,6 +2251,43 @@ function TestEraLeveling()
     ns.Engine:Refresh(EraState("Alliance", 1, 1, 1429))
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-dun-morogh",
         "the saved starter wins over the human default")
+
+    ResetEra()
+    local hordeLevel = EraState("Horde", 14, 2, 1411)
+    local titles = {}
+    for _, entry in ipairs(ns.LibraryEntries(hordeLevel, "", "Leveling Quest Guides", false)) do
+        titles[#titles + 1] = entry.title
+    end
+    Equal(titles[1], "1-12 Durotar", "the Horde leveling library starts with the starter chapter")
+    Equal(titles[2], "Zephras Isle (Skyborne)", "Zephras Isle stays in the Leveling library")
+    Equal(titles[3], "12-20 Barrens", "12-20 Barrens is its own Leveling library row")
+    local sawElwynn = false
+    for _, title in ipairs(titles) do
+        if title == "1-12 Elwynn Forest" then sawElwynn = true end
+    end
+    Check(not sawElwynn, "a Horde leveling library leaves out Alliance chapters")
+    local barrensEntry
+    for _, entry in ipairs(ns.LibraryEntries(hordeLevel, "barrens", "Leveling Quest Guides", false)) do
+        if entry.title == "12-20 Barrens" then barrensEntry = entry end
+    end
+    Check(barrensEntry ~= nil, "searching Barrens finds the Barrens chapter")
+    Equal(barrensEntry and barrensEntry.segment.levelMin, 12, "the Barrens row uses the chapter level")
+
+    ResetEra()
+    ns.Engine:SelectGuide("leveling-era")
+    ns.Engine:Refresh(hordeLevel)
+    local durotarGoal = guide.segmentByID["leveling-era-1-12-durotar"].goals[1]
+    ns.Engine:GetLedger(guide, true)[durotarGoal.id] = true
+    ns.charDB.eraChapterPick = "leveling-era-12-20-barrens"
+    ns.charDB.eraFloor = "leveling-era-12-20-barrens"
+    ns.Engine:SelectGuide("leveling-era")
+    ns.Engine:Refresh(hordeLevel)
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+        "opening the Barrens stays there when Durotar already has progress")
+    ns.Engine:Previous()
+    local openedPrevious = ns.Engine.currentGoal and ns.Engine.currentGoal.segmentID
+    Check(openedPrevious == nil or openedPrevious == "leveling-era-12-20-barrens",
+        "previous from an opened Barrens chapter stays in the Barrens")
 end
 TestEraLeveling()
 
