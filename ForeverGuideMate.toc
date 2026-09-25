@@ -38,6 +38,16 @@ Guides/Loremaster/Durotar.lua
 Guides/Loremaster/Mulgore.lua
 Guides/Loremaster/TheBarrens.lua
 Guides/Loremaster/Teldrassil.lua
+Guides/Loremaster/LochModan.lua
+Guides/Loremaster/Westfall.lua
+Guides/Loremaster/DunMorogh.lua
+Guides/Loremaster/Duskwood.lua
+Guides/Loremaster/RedridgeMountains.lua
+Guides/Loremaster/SilverpineForest.lua
+Guides/Loremaster/ElwynnForest.lua
+Guides/Loremaster/Ashenvale.lua
+Guides/Loremaster/Darkshore.lua
+Guides/Loremaster/StonetalonMountains.lua
 Guides/Era/1-12-durotar.lua
 Guides/Era/1-12-mulgore.lua
 Guides/Era/1-12-tirisfal-glades.lua

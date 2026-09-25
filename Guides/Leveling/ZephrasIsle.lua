@@ -1,6 +1,10 @@
 local _, ns = ...
 
 -- Skyborne starter path for Zephras Isle, levels 1-14.
+-- Hub order follows the north-to-south Skyborne route: Shen'dar side
+-- quests before Welcome to Shen'dar Village, High Order work after the
+-- cult chain, and Bugged after the Shadowgale den. Quests that route
+-- does not list stay on this path.
 -- Quest list, chains, and coordinates:
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#quests
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#starts-quest
@@ -107,9 +111,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-infestation-investigation",
+            kind = "accept",
+            priority = 40,
+            text = "Accept Infestation Investigation from Elatrell Featherlight.",
+            dependsOn = { "turnin-coming-of-age" },
+            complete = QuestState(92462, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "objective-harmony-in-balance",
             kind = "objective",
-            priority = 40,
+            priority = 50,
             text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
             dependsOn = { "accept-harmony-in-balance" },
             complete = QuestState(92461, "complete"),
@@ -119,9 +135,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-infestation-investigation",
+            kind = "objective",
+            priority = 60,
+            text = "Slay 8 Pesky Cirrusflies in Thendal Grove.",
+            dependsOn = { "accept-infestation-investigation" },
+            complete = QuestState(92462, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.450, 0.256, "Pesky Cirrusfly",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-harmony-in-balance",
             kind = "turnin",
-            priority = 50,
+            priority = 70,
             text = "Turn in Harmony in Balance to Rorian the Dayseeker.",
             dependsOn = { "objective-harmony-in-balance" },
             complete = QuestState(92461, "completed"),
@@ -131,117 +159,21 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-warriors-path",
-            kind = "accept",
-            priority = 52,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept The Warrior's Path from Rorian the Dayseeker.",
-            complete = QuestState(92532, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-warriors-path",
+            id = "turnin-infestation-investigation",
             kind = "turnin",
-            priority = 53,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Crumpled Note you've been given, then seek out Blademaster Ren inside the Thendal Village watchtower.",
-            dependsOn = { "accept-the-warriors-path" },
-            complete = QuestState(92532, "completed"),
+            priority = 80,
+            text = "Turn in Infestation Investigation to Elatrell Featherlight.",
+            dependsOn = { "objective-infestation-investigation" },
+            complete = QuestState(92462, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.242, "Blademaster Ren",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-way-of-the-hunter",
-            kind = "accept",
-            priority = 52,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept The Way of the Hunter from Rorian the Dayseeker.",
-            complete = QuestState(92482, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-way-of-the-hunter",
-            kind = "turnin",
-            priority = 53,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Scribbled Note and then speak with Tai'ree Farsight in Thendal Grove.",
-            dependsOn = { "accept-the-way-of-the-hunter" },
-            complete = QuestState(92482, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.236, "Tai'ree Farsight",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-at-home-in-the-shadows",
-            kind = "accept",
-            priority = 52,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 4 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept At Home in the Shadows from Rorian the Dayseeker.",
-            complete = QuestState(92483, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-at-home-in-the-shadows",
-            kind = "turnin",
-            priority = 53,
-            conditions = {
-                all = {
-                    { class = 4 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Simple Note then speak with Akeri Duskblade within the watchtower in Thendal Grove.",
-            dependsOn = { "accept-at-home-in-the-shadows" },
-            complete = QuestState(92483, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.242, "Akeri Duskblade",
+                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-a-student-of-nature",
             kind = "accept",
-            priority = 52,
+            priority = 90,
             dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
@@ -257,63 +189,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-a-student-of-nature",
-            kind = "turnin",
-            priority = 53,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Folded Parchment then speak with Xyton Silverwind in Thendal Grove.",
-            dependsOn = { "accept-a-student-of-nature" },
-            complete = QuestState(92485, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.234, "Xyton Silverwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-embracing-the-elements",
-            kind = "accept",
-            priority = 52,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept Embracing the Elements from Rorian the Dayseeker.",
-            complete = QuestState(92484, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-embracing-the-elements",
-            kind = "turnin",
-            priority = 53,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Examine the Humming Recall Crystal then speak with Windshaper Boro in Thendal Grove.",
-            dependsOn = { "accept-embracing-the-elements" },
-            complete = QuestState(92484, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-a-student-of-the-arcane",
             kind = "accept",
-            priority = 52,
+            priority = 100,
             dependsOn = { "turnin-harmony-in-balance" },
             conditions = {
                 all = {
@@ -329,9 +207,99 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-at-home-in-the-shadows",
+            kind = "accept",
+            priority = 110,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept At Home in the Shadows from Rorian the Dayseeker.",
+            complete = QuestState(92483, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-embracing-the-elements",
+            kind = "accept",
+            priority = 120,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Embracing the Elements from Rorian the Dayseeker.",
+            complete = QuestState(92484, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-warriors-path",
+            kind = "accept",
+            priority = 130,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept The Warrior's Path from Rorian the Dayseeker.",
+            complete = QuestState(92532, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-way-of-the-hunter",
+            kind = "accept",
+            priority = 140,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept The Way of the Hunter from Rorian the Dayseeker.",
+            complete = QuestState(92482, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-student-of-nature",
+            kind = "turnin",
+            priority = 150,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Folded Parchment then speak with Xyton Silverwind in Thendal Grove.",
+            dependsOn = { "accept-a-student-of-nature" },
+            complete = QuestState(92485, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.234, "Xyton Silverwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-a-student-of-the-arcane",
             kind = "turnin",
-            priority = 53,
+            priority = 160,
             conditions = {
                 all = {
                     { class = 8 },
@@ -347,9 +315,81 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-at-home-in-the-shadows",
+            kind = "turnin",
+            priority = 170,
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Simple Note then speak with Akeri Duskblade within the watchtower in Thendal Grove.",
+            dependsOn = { "accept-at-home-in-the-shadows" },
+            complete = QuestState(92483, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.242, "Akeri Duskblade",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-embracing-the-elements",
+            kind = "turnin",
+            priority = 180,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Examine the Humming Recall Crystal then speak with Windshaper Boro in Thendal Grove.",
+            dependsOn = { "accept-embracing-the-elements" },
+            complete = QuestState(92484, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-warriors-path",
+            kind = "turnin",
+            priority = 190,
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Crumpled Note you've been given, then seek out Blademaster Ren inside the Thendal Village watchtower.",
+            dependsOn = { "accept-the-warriors-path" },
+            complete = QuestState(92532, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.242, "Blademaster Ren",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-way-of-the-hunter",
+            kind = "turnin",
+            priority = 200,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Scribbled Note and then speak with Tai'ree Farsight in Thendal Grove.",
+            dependsOn = { "accept-the-way-of-the-hunter" },
+            complete = QuestState(92482, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.236, "Tai'ree Farsight",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-the-anchors-of-zephras",
             kind = "accept",
-            priority = 180,
+            priority = 210,
             conditions = { level = { min = 2 } },
             text = "Accept The Anchors of Zephras from Halaan Hawk-Eye.",
             complete = QuestState(94414, "activeOrCompleted"),
@@ -361,7 +401,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-anchors-of-zephras",
             kind = "objective",
-            priority = 190,
+            priority = 220,
             conditions = { level = { min = 2 } },
             text = "Ask Halaan Hawk-Eye to lend you his gift, then view the Anchor Pylon.",
             dependsOn = { "accept-the-anchors-of-zephras" },
@@ -370,7 +410,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-anchors-of-zephras",
             kind = "turnin",
-            priority = 200,
+            priority = 230,
             conditions = { level = { min = 2 } },
             text = "Turn in The Anchors of Zephras to Halaan Hawk-Eye.",
             dependsOn = { "objective-the-anchors-of-zephras" },
@@ -383,7 +423,7 @@ ns:RegisterGuide({
         {
             id = "accept-falling-with-style",
             kind = "accept",
-            priority = 210,
+            priority = 240,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -400,7 +440,7 @@ ns:RegisterGuide({
         {
             id = "objective-falling-with-style",
             kind = "objective",
-            priority = 220,
+            priority = 250,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -418,7 +458,7 @@ ns:RegisterGuide({
         {
             id = "turnin-falling-with-style",
             kind = "turnin",
-            priority = 230,
+            priority = 260,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -430,42 +470,6 @@ ns:RegisterGuide({
             complete = QuestState(92474, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-infestation-investigation",
-            kind = "accept",
-            priority = 31,
-            text = "Accept Infestation Investigation from Elatrell Featherlight.",
-            dependsOn = { "turnin-coming-of-age" },
-            complete = QuestState(92462, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-infestation-investigation",
-            kind = "objective",
-            priority = 41,
-            text = "Slay 8 Pesky Cirrusflies in Thendal Grove.",
-            dependsOn = { "accept-infestation-investigation" },
-            complete = QuestState(92462, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.450, 0.256, "Pesky Cirrusfly",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-infestation-investigation",
-            kind = "turnin",
-            priority = 51,
-            text = "Turn in Infestation Investigation to Elatrell Featherlight.",
-            dependsOn = { "objective-infestation-investigation" },
-            complete = QuestState(92462, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
                     "Travel to Zephras Isle."),
             },
         },
@@ -562,7 +566,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-earth",
             kind = "accept",
-            priority = 350,
+            priority = 340,
             conditions = {
                 all = {
                     { class = 7 },
@@ -579,7 +583,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-earth",
             kind = "objective",
-            priority = 360,
+            priority = 350,
             conditions = {
                 all = {
                     { class = 7 },
@@ -597,7 +601,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-earth",
             kind = "turnin",
-            priority = 370,
+            priority = 360,
             conditions = {
                 all = {
                     { class = 7 },
@@ -615,7 +619,7 @@ ns:RegisterGuide({
         {
             id = "accept-agitators",
             kind = "accept",
-            priority = 380,
+            priority = 370,
             conditions = { level = { min = 2 } },
             text = "Accept Agitators from Yala Windwatcher.",
             dependsOn = { "turnin-elemental-unrest" },
@@ -628,7 +632,7 @@ ns:RegisterGuide({
         {
             id = "objective-agitators",
             kind = "objective",
-            priority = 390,
+            priority = 380,
             conditions = { level = { min = 2 } },
             text = "Slay 6 Roiling Winds and 7 Al'Aketh Converts in Thendal Grove.",
             dependsOn = { "accept-agitators" },
@@ -641,7 +645,7 @@ ns:RegisterGuide({
         {
             id = "turnin-agitators",
             kind = "turnin",
-            priority = 400,
+            priority = 390,
             conditions = { level = { min = 2 } },
             text = "Turn in Agitators to Yala Windwatcher.",
             dependsOn = { "objective-agitators" },
@@ -654,7 +658,7 @@ ns:RegisterGuide({
         {
             id = "accept-reading-the-ley-lines",
             kind = "accept",
-            priority = 410,
+            priority = 400,
             conditions = {
                 all = {
                     { race = RACE_ALLIANCE },
@@ -672,7 +676,7 @@ ns:RegisterGuide({
         {
             id = "objective-reading-the-ley-lines",
             kind = "objective",
-            priority = 420,
+            priority = 410,
             conditions = {
                 all = {
                     { race = RACE_ALLIANCE },
@@ -691,7 +695,7 @@ ns:RegisterGuide({
         {
             id = "turnin-reading-the-ley-lines",
             kind = "turnin",
-            priority = 430,
+            priority = 420,
             conditions = {
                 all = {
                     { race = RACE_ALLIANCE },
@@ -710,7 +714,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-gift-of-skysight",
             kind = "accept",
-            priority = 440,
+            priority = 430,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -728,7 +732,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-gift-of-skysight",
             kind = "objective",
-            priority = 450,
+            priority = 440,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -747,7 +751,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-gift-of-skysight",
             kind = "turnin",
-            priority = 460,
+            priority = 450,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -766,7 +770,7 @@ ns:RegisterGuide({
         {
             id = "turnin-return-to-rorian",
             kind = "turnin",
-            priority = 470,
+            priority = 460,
             conditions = { level = { min = 3 } },
             text = "Accept Return to Rorian from Yala Windwatcher, then bring word of the Al'Aketh to Rorian the Dayseeker in Thendal Grove.",
             dependsOn = { "turnin-agitators" },
@@ -779,7 +783,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-earth-92467",
             kind = "accept",
-            priority = 490,
+            priority = 470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -798,7 +802,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-earth-92467",
             kind = "turnin",
-            priority = 500,
+            priority = 480,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -817,7 +821,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-earth-92468",
             kind = "accept",
-            priority = 510,
+            priority = 490,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -836,7 +840,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-earth-92468",
             kind = "turnin",
-            priority = 520,
+            priority = 500,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -855,7 +859,7 @@ ns:RegisterGuide({
         {
             id = "turnin-aetheen-of-the-gales",
             kind = "turnin",
-            priority = 530,
+            priority = 510,
             conditions = { level = { min = 4 } },
             text = "Accept Aetheen of the Gales from Rorian the Dayseeker, then speak with Aetheen of the Gales in Thendal Grove.",
             dependsOn = { "turnin-return-to-rorian" },
@@ -868,7 +872,7 @@ ns:RegisterGuide({
         {
             id = "accept-aggressive-encroachment",
             kind = "accept",
-            priority = 550,
+            priority = 520,
             conditions = { level = { min = 3 } },
             text = "Accept Aggressive Encroachment from Valreaa Valewind.",
             complete = QuestState(92473, "activeOrCompleted"),
@@ -880,7 +884,7 @@ ns:RegisterGuide({
         {
             id = "accept-foul-matriarch",
             kind = "accept",
-            priority = 560,
+            priority = 530,
             conditions = { level = { min = 2 } },
             text = "Accept Foul Matriarch from Aetheen of the Gales.",
             dependsOn = { "turnin-aetheen-of-the-gales" },
@@ -893,7 +897,7 @@ ns:RegisterGuide({
         {
             id = "objective-aggressive-encroachment",
             kind = "objective",
-            priority = 570,
+            priority = 540,
             conditions = { level = { min = 3 } },
             text = "Collect 6 Scrawny Ursera Claws from Scrawny Ursera in Thendal Grove.",
             dependsOn = { "accept-aggressive-encroachment" },
@@ -906,7 +910,7 @@ ns:RegisterGuide({
         {
             id = "objective-foul-matriarch",
             kind = "objective",
-            priority = 580,
+            priority = 550,
             conditions = { level = { min = 2 } },
             text = "Slay 8 Ursera Scavengers and collect the head of the den mother, Urs'anah in Thendal Grove.",
             dependsOn = { "accept-foul-matriarch" },
@@ -919,7 +923,7 @@ ns:RegisterGuide({
         {
             id = "turnin-aggressive-encroachment",
             kind = "turnin",
-            priority = 590,
+            priority = 560,
             conditions = { level = { min = 3 } },
             text = "Turn in Aggressive Encroachment to Valreaa Valewind.",
             dependsOn = { "objective-aggressive-encroachment" },
@@ -932,7 +936,7 @@ ns:RegisterGuide({
         {
             id = "turnin-foul-matriarch",
             kind = "turnin",
-            priority = 600,
+            priority = 570,
             conditions = { level = { min = 2 } },
             text = "Turn in Foul Matriarch to Aetheen of the Gales.",
             dependsOn = { "objective-foul-matriarch" },
@@ -945,7 +949,7 @@ ns:RegisterGuide({
         {
             id = "accept-alaketh-thugs",
             kind = "accept",
-            priority = 610,
+            priority = 580,
             conditions = { level = { min = 2 } },
             text = "Accept Al'Aketh Thugs from Hanaa Nightwind.",
             complete = QuestState(92544, "activeOrCompleted"),
@@ -957,7 +961,7 @@ ns:RegisterGuide({
         {
             id = "objective-alaketh-thugs",
             kind = "objective",
-            priority = 620,
+            priority = 590,
             conditions = { level = { min = 2 } },
             text = "Slay 6 Al'Aketh Brutes, 4 Al'Aketh Neophytes, and Malduko Cloudcrush in Thendal Grove.",
             dependsOn = { "accept-alaketh-thugs" },
@@ -970,7 +974,7 @@ ns:RegisterGuide({
         {
             id = "turnin-alaketh-thugs",
             kind = "turnin",
-            priority = 630,
+            priority = 600,
             conditions = { level = { min = 2 } },
             text = "Turn in Al'Aketh Thugs to Hanaa Nightwind.",
             dependsOn = { "objective-alaketh-thugs" },
@@ -983,7 +987,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-adventurer",
             kind = "turnin",
-            priority = 640,
+            priority = 610,
             conditions = { level = { min = 4 } },
             text = "Accept The Adventurer from Aetheen of the Gales, then speak to Raan Wildwind near Shen'dar Village.",
             dependsOn = { "turnin-foul-matriarch" },
@@ -996,7 +1000,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-next-step",
             kind = "turnin",
-            priority = 660,
+            priority = 620,
             conditions = { level = { min = 3 } },
             text = "Accept The Next Step from Aetheen of the Gales, then report to Constable Aonda in Shen'dar Village.",
             dependsOn = { "turnin-foul-matriarch" },
@@ -1009,7 +1013,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-great-outdoors",
             kind = "accept",
-            priority = 680,
+            priority = 630,
             conditions = { level = { min = 4 } },
             text = "Accept The Great Outdoors from Raan Wildwind.",
             dependsOn = { "turnin-the-adventurer" },
@@ -1022,7 +1026,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-great-outdoors",
             kind = "objective",
-            priority = 690,
+            priority = 640,
             conditions = { level = { min = 4 } },
             text = "Type /sit at Raan Wildwind's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-the-great-outdoors" },
@@ -1031,7 +1035,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-great-outdoors",
             kind = "turnin",
-            priority = 700,
+            priority = 650,
             conditions = { level = { min = 4 } },
             text = "Turn in The Great Outdoors to Raan Wildwind.",
             dependsOn = { "objective-the-great-outdoors" },
@@ -1044,7 +1048,7 @@ ns:RegisterGuide({
         {
             id = "turnin-camping-101-cooking",
             kind = "turnin",
-            priority = 710,
+            priority = 660,
             conditions = { level = { min = 4 } },
             text = "Accept Camping 101: Cooking from Raan Wildwind, then speak with Zerril Softbreeze in Shen'dar Village to learn to become a cook.",
             dependsOn = { "turnin-the-great-outdoors" },
@@ -1055,9 +1059,262 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-the-problem-with-prideclaws",
+            kind = "accept",
+            priority = 670,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Problem With Prideclaws from Indari Sunseam.",
+            complete = QuestState(92515, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-restocking-the-larders",
+            kind = "accept",
+            priority = 680,
+            conditions = { level = { min = 4 } },
+            text = "Accept Restocking the Larders from Zerril Softbreeze.",
+            complete = QuestState(92553, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-pilfered-windstones",
+            kind = "accept",
+            priority = 690,
+            conditions = { level = { min = 4 } },
+            text = "Accept Pilfered Windstones from Teeri Wellwind.",
+            complete = QuestState(93319, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-hippogryph-harrassment",
+            kind = "accept",
+            priority = 700,
+            conditions = { level = { min = 4 } },
+            text = "Accept Hippogryph Harrassment from Teeri Wellwind.",
+            complete = QuestState(92516, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-little-beauty",
+            kind = "accept",
+            priority = 710,
+            conditions = { level = { min = 4 } },
+            text = "Accept A Little Beauty from Taleen Shimmerthread.",
+            complete = QuestState(93951, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-wanted-vulgara-the-insatiable",
+            kind = "accept",
+            priority = 720,
+            conditions = { level = { min = 4 } },
+            text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
+            complete = QuestState(93318, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-problem-with-prideclaws",
+            kind = "objective",
+            priority = 730,
+            conditions = { level = { min = 4 } },
+            text = "Collect 10 Prideclaw Pelts from the Prideclaws in Shen'dar Highlands.",
+            dependsOn = { "accept-the-problem-with-prideclaws" },
+            complete = QuestState(92515, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.412, 0.456, "Prideclaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-restocking-the-larders",
+            kind = "objective",
+            priority = 740,
+            conditions = { level = { min = 4 } },
+            text = "Collect 3 Small Eggs and 8 Strider Meat from creatures found throughout the Shen'dar Highlands.",
+            dependsOn = { "accept-restocking-the-larders" },
+            complete = QuestState(92553, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.452, "Galestriders near Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-pilfered-windstones",
+            kind = "objective",
+            priority = 750,
+            conditions = { level = { min = 4 } },
+            text = "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
+            dependsOn = { "accept-pilfered-windstones" },
+            complete = QuestState(93319, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.430, 0.464, "Captured Bandit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-hippogryph-harrassment",
+            kind = "objective",
+            priority = 760,
+            conditions = { level = { min = 4 } },
+            text = "Slay 8 Hippogryph Youths, 6 Hippogryph Protectors and a Hippogryph Matriarch in the Shen'dar Highlands.",
+            dependsOn = { "accept-hippogryph-harrassment" },
+            complete = QuestState(92516, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph Youth",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-a-little-beauty",
+            kind = "objective",
+            priority = 770,
+            conditions = { level = { min = 4 } },
+            text = "Collect 8 Hippogryph Down feathers around the nesting grounds southwest of Shen'dar Village.",
+            dependsOn = { "accept-a-little-beauty" },
+            complete = QuestState(93951, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph nesting grounds",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-wanted-vulgara-the-insatiable",
+            kind = "objective",
+            priority = 780,
+            conditions = { level = { min = 4 } },
+            text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
+            dependsOn = { "accept-wanted-vulgara-the-insatiable" },
+            complete = QuestState(93318, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-problem-with-prideclaws",
+            kind = "turnin",
+            priority = 790,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Problem With Prideclaws to Indari Sunseam. The reward is a Simple Leather Satchel.",
+            dependsOn = { "objective-the-problem-with-prideclaws" },
+            complete = QuestState(92515, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-restocking-the-larders",
+            kind = "turnin",
+            priority = 800,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Restocking the Larders to Zerril Softbreeze.",
+            dependsOn = { "objective-restocking-the-larders" },
+            complete = QuestState(92553, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-pilfered-windstones",
+            kind = "turnin",
+            priority = 810,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Pilfered Windstones to Teeri Wellwind.",
+            dependsOn = { "objective-pilfered-windstones" },
+            complete = QuestState(93319, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-hippogryph-harrassment",
+            kind = "turnin",
+            priority = 820,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Hippogryph Harrassment to Teeri Wellwind.",
+            dependsOn = { "objective-hippogryph-harrassment" },
+            complete = QuestState(92516, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-little-beauty",
+            kind = "turnin",
+            priority = 830,
+            conditions = { level = { min = 4 } },
+            text = "Turn in A Little Beauty to Taleen Shimmerthread.",
+            dependsOn = { "objective-a-little-beauty" },
+            complete = QuestState(93951, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-wanted-vulgara-the-insatiable",
+            kind = "turnin",
+            priority = 840,
+            conditions = { level = { min = 4 } },
+            text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
+            dependsOn = { "objective-wanted-vulgara-the-insatiable" },
+            complete = QuestState(93318, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-stolen-supplies",
+            kind = "accept",
+            priority = 850,
+            conditions = { level = { min = 5 } },
+            text = "Accept Stolen Supplies from Danarii Bellowveil.",
+            complete = QuestState(92551, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-stolen-supplies",
+            kind = "turnin",
+            priority = 860,
+            conditions = { level = { min = 5 } },
+            text = "Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
+            dependsOn = { "accept-stolen-supplies" },
+            complete = QuestState(92551, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-welcome-to-shendar-village",
             kind = "accept",
-            priority = 730,
+            priority = 870,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1074,7 +1331,7 @@ ns:RegisterGuide({
         {
             id = "objective-welcome-to-shendar-village",
             kind = "objective",
-            priority = 740,
+            priority = 880,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1092,7 +1349,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-shendar-village",
             kind = "turnin",
-            priority = 750,
+            priority = 890,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1110,7 +1367,7 @@ ns:RegisterGuide({
         {
             id = "accept-welcome-to-shendar-village-93461",
             kind = "accept",
-            priority = 760,
+            priority = 900,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1127,7 +1384,7 @@ ns:RegisterGuide({
         {
             id = "objective-welcome-to-shendar-village-93461",
             kind = "objective",
-            priority = 770,
+            priority = 910,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1145,7 +1402,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-shendar-village-93461",
             kind = "turnin",
-            priority = 780,
+            priority = 920,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1161,9 +1418,178 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-the-criminal-element",
+            kind = "accept",
+            priority = 930,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Criminal Element from Constable Aonda.",
+            dependsOn = { "turnin-welcome-to-shendar-village", "turnin-welcome-to-shendar-village-93461" },
+            complete = QuestState(92517, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-criminal-element",
+            kind = "objective",
+            priority = 940,
+            conditions = { level = { min = 4 } },
+            text = "Kill 10 Highlands Bandits and their leader, \"Badwind\" Bennic in the Shen'dar Highlands.",
+            dependsOn = { "accept-the-criminal-element" },
+            complete = QuestState(92517, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.508, 0.340, "\"Badwind\" Bennic",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-criminal-element",
+            kind = "turnin",
+            priority = 950,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Criminal Element to Constable Aonda.",
+            dependsOn = { "objective-the-criminal-element" },
+            complete = QuestState(92517, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-infiltrating-the-cult",
+            kind = "turnin",
+            priority = 960,
+            conditions = { level = { min = 5 } },
+            text = "Accept Infiltrating the Cult from Constable Aonda, then speak with Sania Silverstream in Shen'dar Village.",
+            dependsOn = { "turnin-the-criminal-element" },
+            complete = QuestState(93036, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-falaath-village",
+            kind = "turnin",
+            priority = 970,
+            conditions = { level = { min = 5 } },
+            text = "Accept Falaath Village from Sania Silverstream, then report to Missionary Jasaan near the entrance to Falaath Village.",
+            dependsOn = { "turnin-infiltrating-the-cult" },
+            complete = QuestState(92529, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-among-the-faithful",
+            kind = "turnin",
+            priority = 980,
+            conditions = { level = { min = 5 } },
+            text = "Accept Among the Faithful from Missionary Jasaan, then look around Falaath Village to learn about the cult's intentions in the Shen'dar Highlands.",
+            dependsOn = { "turnin-falaath-village" },
+            complete = QuestState(92528, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-havoc-in-the-highlands",
+            kind = "accept",
+            priority = 990,
+            conditions = { level = { min = 5 } },
+            text = "Accept Havoc in the Highlands from Constable Aonda.",
+            dependsOn = { "turnin-among-the-faithful" },
+            complete = QuestState(92550, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-havoc-in-the-highlands",
+            kind = "objective",
+            priority = 1000,
+            conditions = { level = { min = 5 } },
+            text = "Travel to the ruins of Falaath Village and slay 6 Al'Aketh Stormcallers, 4 Living Lightning and take the head of Commander Cyclas.",
+            dependsOn = { "accept-havoc-in-the-highlands" },
+            complete = QuestState(92550, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.502, 0.568, "Commander Cyclas",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-havoc-in-the-highlands",
+            kind = "turnin",
+            priority = 1010,
+            conditions = { level = { min = 5 } },
+            text = "Turn in Havoc in the Highlands to Constable Aonda.",
+            dependsOn = { "objective-havoc-in-the-highlands" },
+            complete = QuestState(92550, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-western-watch",
+            kind = "turnin",
+            priority = 1020,
+            conditions = { level = { min = 5 } },
+            text = "Accept The Western Watch from Constable Aonda, then find Peacekeeper Vaaniel at the western watchtower.",
+            dependsOn = { "turnin-havoc-in-the-highlands" },
+            complete = QuestState(93926, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-last-request",
+            kind = "accept",
+            priority = 1030,
+            conditions = { level = { min = 5 } },
+            text = "Accept A Last Request from Peacekeeper Vaaniel.",
+            dependsOn = { "turnin-the-western-watch" },
+            complete = QuestState(93927, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-a-last-request",
+            kind = "objective",
+            priority = 1040,
+            conditions = { level = { min = 5 } },
+            text = "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
+            dependsOn = { "accept-a-last-request" },
+            complete = QuestState(93927, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.410, 0.640, "Skypriest Aanders",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-last-request",
+            kind = "turnin",
+            priority = 1050,
+            conditions = { level = { min = 5 } },
+            text = "Turn in A Last Request to Constable Aonda.",
+            dependsOn = { "objective-a-last-request" },
+            complete = QuestState(93927, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-the-windshapers",
             kind = "accept",
-            priority = 790,
+            priority = 1060,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1181,7 +1607,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-windshapers",
             kind = "turnin",
-            priority = 800,
+            priority = 1070,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1199,7 +1625,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-high-order",
             kind = "accept",
-            priority = 810,
+            priority = 1080,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1217,7 +1643,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-high-order",
             kind = "turnin",
-            priority = 820,
+            priority = 1090,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1235,7 +1661,7 @@ ns:RegisterGuide({
         {
             id = "accept-meddlesome-mages",
             kind = "accept",
-            priority = 830,
+            priority = 1100,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1253,7 +1679,7 @@ ns:RegisterGuide({
         {
             id = "objective-meddlesome-mages",
             kind = "objective",
-            priority = 840,
+            priority = 1110,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1271,7 +1697,7 @@ ns:RegisterGuide({
         {
             id = "turnin-meddlesome-mages",
             kind = "turnin",
-            priority = 850,
+            priority = 1120,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1289,7 +1715,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-magical-affront",
             kind = "accept",
-            priority = 860,
+            priority = 1130,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1307,7 +1733,7 @@ ns:RegisterGuide({
         {
             id = "objective-a-magical-affront",
             kind = "objective",
-            priority = 870,
+            priority = 1140,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1325,7 +1751,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-magical-affront",
             kind = "turnin",
-            priority = 880,
+            priority = 1150,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1341,431 +1767,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-problem-with-prideclaws",
-            kind = "accept",
-            priority = 890,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Problem With Prideclaws from Indari Sunseam.",
-            complete = QuestState(92515, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-restocking-the-larders",
-            kind = "accept",
-            priority = 900,
-            conditions = { level = { min = 4 } },
-            text = "Accept Restocking the Larders from Zerril Softbreeze.",
-            complete = QuestState(92553, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-pilfered-windstones",
-            kind = "accept",
-            priority = 910,
-            conditions = { level = { min = 4 } },
-            text = "Accept Pilfered Windstones from Teeri Wellwind.",
-            complete = QuestState(93319, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-criminal-element",
-            kind = "accept",
-            priority = 920,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Criminal Element from Constable Aonda.",
-            dependsOn = { "turnin-welcome-to-shendar-village", "turnin-welcome-to-shendar-village-93461" },
-            complete = QuestState(92517, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-hippogryph-harrassment",
-            kind = "accept",
-            priority = 930,
-            conditions = { level = { min = 4 } },
-            text = "Accept Hippogryph Harrassment from Teeri Wellwind.",
-            complete = QuestState(92516, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-little-beauty",
-            kind = "accept",
-            priority = 940,
-            conditions = { level = { min = 4 } },
-            text = "Accept A Little Beauty from Taleen Shimmerthread.",
-            complete = QuestState(93951, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-wanted-vulgara-the-insatiable",
-            kind = "accept",
-            priority = 950,
-            conditions = { level = { min = 4 } },
-            text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
-            complete = QuestState(93318, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-problem-with-prideclaws",
-            kind = "objective",
-            priority = 960,
-            conditions = { level = { min = 4 } },
-            text = "Collect 10 Prideclaw Pelts from the Prideclaws in Shen'dar Highlands.",
-            dependsOn = { "accept-the-problem-with-prideclaws" },
-            complete = QuestState(92515, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.412, 0.456, "Prideclaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-restocking-the-larders",
-            kind = "objective",
-            priority = 970,
-            conditions = { level = { min = 4 } },
-            text = "Collect 3 Small Eggs and 8 Strider Meat from creatures found throughout the Shen'dar Highlands.",
-            dependsOn = { "accept-restocking-the-larders" },
-            complete = QuestState(92553, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.452, "Galestriders near Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-pilfered-windstones",
-            kind = "objective",
-            priority = 980,
-            conditions = { level = { min = 4 } },
-            text = "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
-            dependsOn = { "accept-pilfered-windstones" },
-            complete = QuestState(93319, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.430, 0.464, "Captured Bandit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-criminal-element",
-            kind = "objective",
-            priority = 990,
-            conditions = { level = { min = 4 } },
-            text = "Kill 10 Highlands Bandits and their leader, \"Badwind\" Bennic in the Shen'dar Highlands.",
-            dependsOn = { "accept-the-criminal-element" },
-            complete = QuestState(92517, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.508, 0.340, "\"Badwind\" Bennic",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-hippogryph-harrassment",
-            kind = "objective",
-            priority = 1000,
-            conditions = { level = { min = 4 } },
-            text = "Slay 8 Hippogryph Youths, 6 Hippogryph Protectors and a Hippogryph Matriarch in the Shen'dar Highlands.",
-            dependsOn = { "accept-hippogryph-harrassment" },
-            complete = QuestState(92516, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph Youth",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-a-little-beauty",
-            kind = "objective",
-            priority = 1010,
-            conditions = { level = { min = 4 } },
-            text = "Collect 8 Hippogryph Down feathers around the nesting grounds southwest of Shen'dar Village.",
-            dependsOn = { "accept-a-little-beauty" },
-            complete = QuestState(93951, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph nesting grounds",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-wanted-vulgara-the-insatiable",
-            kind = "objective",
-            priority = 1020,
-            conditions = { level = { min = 4 } },
-            text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
-            dependsOn = { "accept-wanted-vulgara-the-insatiable" },
-            complete = QuestState(93318, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-problem-with-prideclaws",
-            kind = "turnin",
-            priority = 1030,
-            conditions = { level = { min = 4 } },
-            text = "Turn in The Problem With Prideclaws to Indari Sunseam. The reward is a Simple Leather Satchel.",
-            dependsOn = { "objective-the-problem-with-prideclaws" },
-            complete = QuestState(92515, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-restocking-the-larders",
-            kind = "turnin",
-            priority = 1040,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Restocking the Larders to Zerril Softbreeze.",
-            dependsOn = { "objective-restocking-the-larders" },
-            complete = QuestState(92553, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-pilfered-windstones",
-            kind = "turnin",
-            priority = 1050,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Pilfered Windstones to Teeri Wellwind.",
-            dependsOn = { "objective-pilfered-windstones" },
-            complete = QuestState(93319, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-criminal-element",
-            kind = "turnin",
-            priority = 1060,
-            conditions = { level = { min = 4 } },
-            text = "Turn in The Criminal Element to Constable Aonda.",
-            dependsOn = { "objective-the-criminal-element" },
-            complete = QuestState(92517, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-hippogryph-harrassment",
-            kind = "turnin",
-            priority = 1070,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Hippogryph Harrassment to Teeri Wellwind.",
-            dependsOn = { "objective-hippogryph-harrassment" },
-            complete = QuestState(92516, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-little-beauty",
-            kind = "turnin",
-            priority = 1080,
-            conditions = { level = { min = 4 } },
-            text = "Turn in A Little Beauty to Taleen Shimmerthread.",
-            dependsOn = { "objective-a-little-beauty" },
-            complete = QuestState(93951, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-wanted-vulgara-the-insatiable",
-            kind = "turnin",
-            priority = 1090,
-            conditions = { level = { min = 4 } },
-            text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
-            dependsOn = { "objective-wanted-vulgara-the-insatiable" },
-            complete = QuestState(93318, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-infiltrating-the-cult",
-            kind = "turnin",
-            priority = 1100,
-            conditions = { level = { min = 5 } },
-            text = "Accept Infiltrating the Cult from Constable Aonda, then speak with Sania Silverstream in Shen'dar Village.",
-            dependsOn = { "turnin-the-criminal-element" },
-            complete = QuestState(93036, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-falaath-village",
-            kind = "turnin",
-            priority = 1120,
-            conditions = { level = { min = 5 } },
-            text = "Accept Falaath Village from Sania Silverstream, then report to Missionary Jasaan near the entrance to Falaath Village.",
-            dependsOn = { "turnin-infiltrating-the-cult" },
-            complete = QuestState(92529, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-among-the-faithful",
-            kind = "turnin",
-            priority = 1140,
-            conditions = { level = { min = 5 } },
-            text = "Accept Among the Faithful from Missionary Jasaan, then look around Falaath Village to learn about the cult's intentions in the Shen'dar Highlands.",
-            dependsOn = { "turnin-falaath-village" },
-            complete = QuestState(92528, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-havoc-in-the-highlands",
-            kind = "accept",
-            priority = 1160,
-            conditions = { level = { min = 5 } },
-            text = "Accept Havoc in the Highlands from Constable Aonda.",
-            dependsOn = { "turnin-among-the-faithful" },
-            complete = QuestState(92550, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-stolen-supplies",
-            kind = "accept",
-            priority = 1170,
-            conditions = { level = { min = 5 } },
-            text = "Accept Stolen Supplies from Danarii Bellowveil.",
-            complete = QuestState(92551, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-havoc-in-the-highlands",
-            kind = "objective",
-            priority = 1180,
-            conditions = { level = { min = 5 } },
-            text = "Travel to the ruins of Falaath Village and slay 6 Al'Aketh Stormcallers, 4 Living Lightning and take the head of Commander Cyclas.",
-            dependsOn = { "accept-havoc-in-the-highlands" },
-            complete = QuestState(92550, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.502, 0.568, "Commander Cyclas",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-havoc-in-the-highlands",
-            kind = "turnin",
-            priority = 1190,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Havoc in the Highlands to Constable Aonda.",
-            dependsOn = { "objective-havoc-in-the-highlands" },
-            complete = QuestState(92550, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-stolen-supplies",
-            kind = "turnin",
-            priority = 1200,
-            conditions = { level = { min = 5 } },
-            text = "Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
-            dependsOn = { "accept-stolen-supplies" },
-            complete = QuestState(92551, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-western-watch",
-            kind = "turnin",
-            priority = 1210,
-            conditions = { level = { min = 5 } },
-            text = "Accept The Western Watch from Constable Aonda, then find Peacekeeper Vaaniel at the western watchtower.",
-            dependsOn = { "turnin-havoc-in-the-highlands" },
-            complete = QuestState(93926, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-last-request",
-            kind = "accept",
-            priority = 1230,
-            conditions = { level = { min = 5 } },
-            text = "Accept A Last Request from Peacekeeper Vaaniel.",
-            dependsOn = { "turnin-the-western-watch" },
-            complete = QuestState(93927, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-a-last-request",
-            kind = "objective",
-            priority = 1240,
-            conditions = { level = { min = 5 } },
-            text = "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
-            dependsOn = { "accept-a-last-request" },
-            complete = QuestState(93927, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.410, 0.640, "Skypriest Aanders",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-last-request",
-            kind = "turnin",
-            priority = 1250,
-            conditions = { level = { min = 5 } },
-            text = "Turn in A Last Request to Constable Aonda.",
-            dependsOn = { "objective-a-last-request" },
-            complete = QuestState(93927, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-to-valanaar",
             kind = "accept",
-            priority = 1260,
+            priority = 1160,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1783,7 +1787,7 @@ ns:RegisterGuide({
         {
             id = "turnin-to-valanaar",
             kind = "turnin",
-            priority = 1270,
+            priority = 1170,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1801,7 +1805,7 @@ ns:RegisterGuide({
         {
             id = "accept-to-valanaar-92701",
             kind = "accept",
-            priority = 1280,
+            priority = 1180,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1819,7 +1823,7 @@ ns:RegisterGuide({
         {
             id = "turnin-to-valanaar-92701",
             kind = "turnin",
-            priority = 1290,
+            priority = 1190,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1837,7 +1841,7 @@ ns:RegisterGuide({
         {
             id = "turnin-deliver-the-signet",
             kind = "turnin",
-            priority = 1300,
+            priority = 1200,
             conditions = { level = { min = 6 } },
             text = "Accept Deliver the Signet from Constable Aonda, then deliver the Shadowsong Family Signet to Talaanis Shadowsong in Valanaar.",
             dependsOn = { "turnin-a-last-request" },
@@ -1848,21 +1852,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-bugged",
-            kind = "accept",
-            priority = 1320,
-            conditions = { level = { min = 6 } },
-            text = "Accept Bugged from Valennia Stormfist.",
-            complete = QuestState(93949, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-crab-season",
             kind = "accept",
-            priority = 1330,
+            priority = 1210,
             conditions = { level = { min = 4 } },
             text = "Accept Crab Season from Nyalah Brightfire.",
             complete = QuestState(93317, "activeOrCompleted"),
@@ -1872,22 +1864,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-bugged",
-            kind = "objective",
-            priority = 1340,
-            conditions = { level = { min = 6 } },
-            text = "Exterminate 8 enchanted skyhoppers in the Gustberry Lowlands.",
-            dependsOn = { "accept-bugged" },
-            complete = QuestState(93949, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.620, 0.732, "Gustberry Lowlands outside Valanaar",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "objective-crab-season",
             kind = "objective",
-            priority = 1350,
+            priority = 1220,
             conditions = { level = { min = 4 } },
             text = "Collect 6 pieces of Windsong Crawler Meat.",
             dependsOn = { "accept-crab-season" },
@@ -1898,22 +1877,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-bugged",
-            kind = "turnin",
-            priority = 1360,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Bugged to Valennia Stormfist.",
-            dependsOn = { "objective-bugged" },
-            complete = QuestState(93949, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-crab-season",
             kind = "turnin",
-            priority = 1370,
+            priority = 1230,
             conditions = { level = { min = 4 } },
             text = "Turn in Crab Season to Nyalah Brightfire.",
             dependsOn = { "objective-crab-season" },
@@ -1926,7 +1892,7 @@ ns:RegisterGuide({
         {
             id = "accept-blood-tithe",
             kind = "accept",
-            priority = 1380,
+            priority = 1240,
             conditions = { level = { min = 5 } },
             text = "Accept Blood Tithe from Alvarion Windfield.",
             complete = QuestState(92679, "activeOrCompleted"),
@@ -1938,7 +1904,7 @@ ns:RegisterGuide({
         {
             id = "turnin-blood-tithe",
             kind = "turnin",
-            priority = 1390,
+            priority = 1250,
             conditions = { level = { min = 5 } },
             text = "Listen to what Alvarion Windfield has to say and find Aamelia Windfield at the Windfield Orchard.",
             dependsOn = { "accept-blood-tithe" },
@@ -1951,7 +1917,7 @@ ns:RegisterGuide({
         {
             id = "accept-what-is-my-purpose",
             kind = "accept",
-            priority = 1400,
+            priority = 1260,
             conditions = { level = { min = 5 } },
             text = "Accept What Is My Purpose? from Malfunctioning Cyclone Construct.",
             complete = QuestState(92698, "activeOrCompleted"),
@@ -1963,7 +1929,7 @@ ns:RegisterGuide({
         {
             id = "accept-make-yourself-useful",
             kind = "accept",
-            priority = 1410,
+            priority = 1270,
             conditions = { level = { min = 5 } },
             text = "Accept Make Yourself Useful from Aamelia Windfield.",
             dependsOn = { "turnin-blood-tithe" },
@@ -1976,7 +1942,7 @@ ns:RegisterGuide({
         {
             id = "accept-ornery-ornery-galestriders",
             kind = "accept",
-            priority = 1420,
+            priority = 1280,
             conditions = { level = { min = 5 } },
             text = "Accept Ornery Ornery Galestriders from Aamelia Windfield.",
             dependsOn = { "turnin-blood-tithe" },
@@ -1989,7 +1955,7 @@ ns:RegisterGuide({
         {
             id = "accept-flutterfly-dust",
             kind = "accept",
-            priority = 1430,
+            priority = 1290,
             conditions = { level = { min = 5 } },
             text = "Accept Flutterfly Dust from Aamelia Windfield.",
             dependsOn = { "turnin-blood-tithe" },
@@ -2002,7 +1968,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-hills-have-eyes",
             kind = "accept",
-            priority = 1440,
+            priority = 1300,
             conditions = { level = { min = 5 } },
             text = "Accept The Hills Have Eyes from Aamelia Windfield.",
             dependsOn = { "turnin-blood-tithe" },
@@ -2015,7 +1981,7 @@ ns:RegisterGuide({
         {
             id = "objective-make-yourself-useful",
             kind = "objective",
-            priority = 1450,
+            priority = 1310,
             conditions = { level = { min = 5 } },
             text = "Gather 10 Ripe Stormapples and slay 5 Hungry Bandits at the Windfield Orchard.",
             dependsOn = { "accept-make-yourself-useful" },
@@ -2028,7 +1994,7 @@ ns:RegisterGuide({
         {
             id = "objective-ornery-ornery-galestriders",
             kind = "objective",
-            priority = 1460,
+            priority = 1320,
             conditions = { level = { min = 5 } },
             text = "Gather 7 Lowlands Galestrider Tenderloins from the Ornery Galestriders found throughout the Gustberry Lowlands.",
             dependsOn = { "accept-ornery-ornery-galestriders" },
@@ -2041,7 +2007,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-hills-have-eyes",
             kind = "objective",
-            priority = 1470,
+            priority = 1330,
             conditions = { level = { min = 5 } },
             text = "Loot 7 Blood-Stained Bandit Masks from Highwayman Bandits in the Gustberry Lowlands.",
             dependsOn = { "accept-the-hills-have-eyes" },
@@ -2054,7 +2020,7 @@ ns:RegisterGuide({
         {
             id = "turnin-what-is-my-purpose",
             kind = "turnin",
-            priority = 1480,
+            priority = 1340,
             conditions = { level = { min = 5 } },
             text = "Speak with Aamelia Windfield about the Malfunctioning Cyclone Construct.",
             dependsOn = { "accept-what-is-my-purpose" },
@@ -2067,7 +2033,7 @@ ns:RegisterGuide({
         {
             id = "turnin-make-yourself-useful",
             kind = "turnin",
-            priority = 1490,
+            priority = 1350,
             conditions = { level = { min = 5 } },
             text = "Turn in Make Yourself Useful to Aamelia Windfield.",
             dependsOn = { "objective-make-yourself-useful" },
@@ -2080,7 +2046,7 @@ ns:RegisterGuide({
         {
             id = "turnin-ornery-ornery-galestriders",
             kind = "turnin",
-            priority = 1500,
+            priority = 1360,
             conditions = { level = { min = 5 } },
             text = "Turn in Ornery Ornery Galestriders to Aamelia Windfield.",
             dependsOn = { "objective-ornery-ornery-galestriders" },
@@ -2093,7 +2059,7 @@ ns:RegisterGuide({
         {
             id = "turnin-flutterfly-dust",
             kind = "turnin",
-            priority = 1510,
+            priority = 1370,
             conditions = { level = { min = 5 } },
             text = "Gather 5 Flutterfly Dust from the Flutterflies around the Gustberry Lowlands.",
             dependsOn = { "accept-flutterfly-dust" },
@@ -2106,7 +2072,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-hills-have-eyes",
             kind = "turnin",
-            priority = 1520,
+            priority = 1380,
             conditions = { level = { min = 5 } },
             text = "Turn in The Hills Have Eyes to Aamelia Windfield.",
             dependsOn = { "objective-the-hills-have-eyes" },
@@ -2119,7 +2085,7 @@ ns:RegisterGuide({
         {
             id = "accept-standing-our-ground",
             kind = "accept",
-            priority = 1530,
+            priority = 1390,
             conditions = { level = { min = 5 } },
             text = "Accept Standing Our Ground from Aamelia Windfield.",
             dependsOn = { "turnin-blood-tithe" },
@@ -2132,7 +2098,7 @@ ns:RegisterGuide({
         {
             id = "objective-standing-our-ground",
             kind = "objective",
-            priority = 1540,
+            priority = 1400,
             conditions = { level = { min = 5 } },
             text = "Speak with Aamelia Windfield when you are ready to confront the bandit leader.",
             dependsOn = { "accept-standing-our-ground" },
@@ -2145,7 +2111,7 @@ ns:RegisterGuide({
         {
             id = "turnin-standing-our-ground",
             kind = "turnin",
-            priority = 1550,
+            priority = 1410,
             conditions = { level = { min = 5 } },
             text = "Turn in Standing Our Ground to Aamelia Windfield.",
             dependsOn = { "objective-standing-our-ground" },
@@ -2158,7 +2124,7 @@ ns:RegisterGuide({
         {
             id = "turnin-deliver-the-news",
             kind = "turnin",
-            priority = 1560,
+            priority = 1420,
             conditions = { level = { min = 5 } },
             text = "Accept Deliver the News from Aamelia Windfield, then speak with Alvarion Windfield in Valanaar.",
             dependsOn = { "turnin-standing-our-ground" },
@@ -2171,7 +2137,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-supreme-magister",
             kind = "accept",
-            priority = 1580,
+            priority = 1430,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2188,7 +2154,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-supreme-magister",
             kind = "turnin",
-            priority = 1590,
+            priority = 1440,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2206,7 +2172,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-grand-adventure",
             kind = "accept",
-            priority = 1600,
+            priority = 1450,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2223,7 +2189,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-grand-adventure",
             kind = "turnin",
-            priority = 1610,
+            priority = 1460,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2241,7 +2207,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-grand-skyseer",
             kind = "accept",
-            priority = 1620,
+            priority = 1470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2258,7 +2224,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-grand-skyseer",
             kind = "turnin",
-            priority = 1630,
+            priority = 1480,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2276,7 +2242,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-grand-adventure-92708",
             kind = "accept",
-            priority = 1640,
+            priority = 1490,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2293,7 +2259,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-grand-adventure-92708",
             kind = "turnin",
-            priority = 1650,
+            priority = 1500,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2311,7 +2277,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-broken-construct",
             kind = "accept",
-            priority = 1660,
+            priority = 1510,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2329,7 +2295,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-broken-construct",
             kind = "turnin",
-            priority = 1670,
+            priority = 1520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2347,7 +2313,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-broken-construct-93737",
             kind = "accept",
-            priority = 1680,
+            priority = 1530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2365,7 +2331,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-broken-construct-93737",
             kind = "objective",
-            priority = 1690,
+            priority = 1540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2383,7 +2349,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-broken-construct-93737",
             kind = "turnin",
-            priority = 1700,
+            priority = 1550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2401,7 +2367,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-broken-construct-93738",
             kind = "accept",
-            priority = 1710,
+            priority = 1560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2419,7 +2385,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-broken-construct-93738",
             kind = "turnin",
-            priority = 1720,
+            priority = 1570,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2437,7 +2403,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-firm-response",
             kind = "accept",
-            priority = 1730,
+            priority = 1580,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2455,7 +2421,7 @@ ns:RegisterGuide({
         {
             id = "objective-a-firm-response",
             kind = "objective",
-            priority = 1740,
+            priority = 1590,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2473,7 +2439,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-firm-response",
             kind = "turnin",
-            priority = 1750,
+            priority = 1600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2491,7 +2457,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-missing-scholar",
             kind = "accept",
-            priority = 1760,
+            priority = 1610,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2508,7 +2474,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-missing-scholar",
             kind = "turnin",
-            priority = 1770,
+            priority = 1620,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2526,7 +2492,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-missing-scholar-92849",
             kind = "accept",
-            priority = 1780,
+            priority = 1630,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2544,7 +2510,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-missing-scholar-92849",
             kind = "objective",
-            priority = 1790,
+            priority = 1640,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2562,7 +2528,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-missing-scholar-92849-carry",
             kind = "objective",
-            priority = 1795,
+            priority = 1650,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2580,7 +2546,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-missing-scholar-92849",
             kind = "turnin",
-            priority = 1800,
+            priority = 1660,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2598,7 +2564,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-missing-scholar-92850",
             kind = "accept",
-            priority = 1810,
+            priority = 1670,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2616,7 +2582,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-missing-scholar-92850",
             kind = "objective",
-            priority = 1820,
+            priority = 1680,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2634,7 +2600,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-missing-scholar-92850",
             kind = "turnin",
-            priority = 1830,
+            priority = 1690,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2652,7 +2618,7 @@ ns:RegisterGuide({
         {
             id = "accept-catching-wind",
             kind = "accept",
-            priority = 1840,
+            priority = 1700,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2670,7 +2636,7 @@ ns:RegisterGuide({
         {
             id = "objective-catching-wind",
             kind = "objective",
-            priority = 1850,
+            priority = 1710,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2688,7 +2654,7 @@ ns:RegisterGuide({
         {
             id = "turnin-catching-wind",
             kind = "turnin",
-            priority = 1860,
+            priority = 1720,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2706,7 +2672,7 @@ ns:RegisterGuide({
         {
             id = "accept-avenged-tenfold",
             kind = "accept",
-            priority = 1870,
+            priority = 1730,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2724,7 +2690,7 @@ ns:RegisterGuide({
         {
             id = "objective-avenged-tenfold",
             kind = "objective",
-            priority = 1880,
+            priority = 1740,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2742,7 +2708,7 @@ ns:RegisterGuide({
         {
             id = "turnin-avenged-tenfold",
             kind = "turnin",
-            priority = 1890,
+            priority = 1750,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2760,7 +2726,7 @@ ns:RegisterGuide({
         {
             id = "accept-aid-for-the-refugees",
             kind = "accept",
-            priority = 1900,
+            priority = 1760,
             conditions = { level = { min = 8 } },
             text = "Accept Aid For The Refugees from Ealaane Nimbuswalker.",
             complete = QuestState(94896, "activeOrCompleted"),
@@ -2772,7 +2738,7 @@ ns:RegisterGuide({
         {
             id = "objective-aid-for-the-refugees",
             kind = "objective",
-            priority = 1910,
+            priority = 1770,
             conditions = { level = { min = 8 } },
             text = "Collect 8 Abandoned Belongings in the Ruins of Ban'aethal.",
             dependsOn = { "accept-aid-for-the-refugees" },
@@ -2785,7 +2751,7 @@ ns:RegisterGuide({
         {
             id = "turnin-aid-for-the-refugees",
             kind = "turnin",
-            priority = 1920,
+            priority = 1780,
             conditions = { level = { min = 8 } },
             text = "Turn in Aid For The Refugees to Ealaane Nimbuswalker.",
             dependsOn = { "objective-aid-for-the-refugees" },
@@ -2798,7 +2764,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-fate-of-a-loved-one",
             kind = "accept",
-            priority = 1930,
+            priority = 1790,
             conditions = { level = { min = 8 } },
             text = "Accept The Fate of a Loved One from Ealaane Nimbuswalker.",
             dependsOn = { "turnin-aid-for-the-refugees" },
@@ -2811,7 +2777,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-fate-of-a-loved-one",
             kind = "objective",
-            priority = 1940,
+            priority = 1800,
             conditions = { level = { min = 8 } },
             text = "Find Resaan in the Ruins of Ban'aethal.",
             dependsOn = { "accept-the-fate-of-a-loved-one" },
@@ -2824,7 +2790,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-fate-of-a-loved-one",
             kind = "turnin",
-            priority = 1950,
+            priority = 1810,
             conditions = { level = { min = 8 } },
             text = "Turn in The Fate of a Loved One to Ealaane Nimbuswalker.",
             dependsOn = { "objective-the-fate-of-a-loved-one" },
@@ -2837,7 +2803,7 @@ ns:RegisterGuide({
         {
             id = "accept-unwelcome-visitors",
             kind = "accept",
-            priority = 1960,
+            priority = 1820,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2854,7 +2820,7 @@ ns:RegisterGuide({
         {
             id = "objective-unwelcome-visitors",
             kind = "objective",
-            priority = 1970,
+            priority = 1830,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2872,7 +2838,7 @@ ns:RegisterGuide({
         {
             id = "turnin-unwelcome-visitors",
             kind = "turnin",
-            priority = 1980,
+            priority = 1840,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2890,7 +2856,7 @@ ns:RegisterGuide({
         {
             id = "accept-unnerving-silence",
             kind = "accept",
-            priority = 1990,
+            priority = 1850,
             conditions = { level = { min = 8 } },
             text = "Accept Unnerving Silence from Lotheluum Starbreeze.",
             complete = QuestState(94484, "activeOrCompleted"),
@@ -2902,7 +2868,7 @@ ns:RegisterGuide({
         {
             id = "turnin-unnerving-silence",
             kind = "turnin",
-            priority = 2000,
+            priority = 1860,
             conditions = { level = { min = 8 } },
             text = "Find and speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
             dependsOn = { "accept-unnerving-silence" },
@@ -2915,7 +2881,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-strange-hermit",
             kind = "accept",
-            priority = 2010,
+            priority = 1870,
             conditions = { level = { min = 8 } },
             text = "Accept The Strange Hermit from Strange Hermit.",
             complete = QuestState(93159, "activeOrCompleted"),
@@ -2927,7 +2893,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-strange-hermit",
             kind = "turnin",
-            priority = 2020,
+            priority = 1880,
             conditions = { level = { min = 8 } },
             text = "Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
             dependsOn = { "accept-the-strange-hermit" },
@@ -2940,7 +2906,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-forests-bounty",
             kind = "accept",
-            priority = 2030,
+            priority = 1890,
             conditions = { level = { min = 8 } },
             text = "Accept The Forest's Bounty from Strange Hermit.",
             dependsOn = { "turnin-the-strange-hermit" },
@@ -2953,7 +2919,7 @@ ns:RegisterGuide({
         {
             id = "accept-free-the-hollows",
             kind = "accept",
-            priority = 2040,
+            priority = 1900,
             conditions = { level = { min = 8 } },
             text = "Accept Free the Hollows from Strange Hermit.",
             dependsOn = { "turnin-the-strange-hermit" },
@@ -2966,7 +2932,7 @@ ns:RegisterGuide({
         {
             id = "accept-unwelcome-spirits",
             kind = "accept",
-            priority = 2050,
+            priority = 1910,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2984,7 +2950,7 @@ ns:RegisterGuide({
         {
             id = "objective-free-the-hollows",
             kind = "objective",
-            priority = 2060,
+            priority = 1920,
             conditions = { level = { min = 8 } },
             text = "Destroy 10 Wind Hollows in the Ruins of Ban'aethal. They can also drop a Rusty Gadget, which starts a quest.",
             dependsOn = { "accept-free-the-hollows" },
@@ -2997,7 +2963,7 @@ ns:RegisterGuide({
         {
             id = "objective-unwelcome-spirits",
             kind = "objective",
-            priority = 2070,
+            priority = 1930,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3015,7 +2981,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-forests-bounty",
             kind = "turnin",
-            priority = 2080,
+            priority = 1940,
             conditions = { level = { min = 8 } },
             text = "Gather 8 Shadowgale Acorns in Shadowgale Forest.",
             dependsOn = { "accept-the-forests-bounty" },
@@ -3028,7 +2994,7 @@ ns:RegisterGuide({
         {
             id = "turnin-free-the-hollows",
             kind = "turnin",
-            priority = 2090,
+            priority = 1950,
             conditions = { level = { min = 8 } },
             text = "Turn in Free the Hollows to Strange Hermit.",
             dependsOn = { "objective-free-the-hollows" },
@@ -3041,7 +3007,7 @@ ns:RegisterGuide({
         {
             id = "turnin-unwelcome-spirits",
             kind = "turnin",
-            priority = 2100,
+            priority = 1960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3059,7 +3025,7 @@ ns:RegisterGuide({
         {
             id = "accept-feathers-for-binding",
             kind = "accept",
-            priority = 2110,
+            priority = 1970,
             conditions = { level = { min = 8 } },
             text = "Accept Feathers for Binding from Elegael Thornpaw.",
             dependsOn = { "turnin-unnerving-silence" },
@@ -3072,7 +3038,7 @@ ns:RegisterGuide({
         {
             id = "accept-tears-of-the-lady",
             kind = "accept",
-            priority = 2120,
+            priority = 1980,
             conditions = { level = { min = 8 } },
             text = "Accept Tears of the Lady from Elegael Thornpaw.",
             dependsOn = { "turnin-unnerving-silence" },
@@ -3085,7 +3051,7 @@ ns:RegisterGuide({
         {
             id = "accept-unwanted-and-unworthy",
             kind = "accept",
-            priority = 2130,
+            priority = 1990,
             conditions = { level = { min = 8 } },
             text = "Accept Unwanted and Unworthy from Elegael Thornpaw.",
             dependsOn = { "turnin-unnerving-silence" },
@@ -3098,7 +3064,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-ties-that-bind",
             kind = "accept",
-            priority = 2140,
+            priority = 2000,
             conditions = { level = { min = 8 } },
             text = "Accept The Ties That Bind from Elegael Thornpaw.",
             dependsOn = { "turnin-unnerving-silence" },
@@ -3111,7 +3077,7 @@ ns:RegisterGuide({
         {
             id = "objective-feathers-for-binding",
             kind = "objective",
-            priority = 2150,
+            priority = 2010,
             conditions = { level = { min = 8 } },
             text = "Collect 20 feathers from the Shadowgale Shrieklings in Shadowgale Forest.",
             dependsOn = { "accept-feathers-for-binding" },
@@ -3124,7 +3090,7 @@ ns:RegisterGuide({
         {
             id = "objective-tears-of-the-lady",
             kind = "objective",
-            priority = 2160,
+            priority = 2020,
             conditions = { level = { min = 8 } },
             text = "Collect 8 Lady's Tear Moss from the bases of trees around Elegael Thornpaw.",
             dependsOn = { "accept-tears-of-the-lady" },
@@ -3137,7 +3103,7 @@ ns:RegisterGuide({
         {
             id = "objective-unwanted-and-unworthy",
             kind = "objective",
-            priority = 2170,
+            priority = 2030,
             conditions = { level = { min = 8 } },
             text = "Collect 10 Bloodied Heirlooms from Al'Aketh Footsoldiers and Al'Aketh Stormchasers in the Shadowgale Forest.",
             dependsOn = { "accept-unwanted-and-unworthy" },
@@ -3150,7 +3116,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-ties-that-bind",
             kind = "objective",
-            priority = 2180,
+            priority = 2040,
             conditions = { level = { min = 8 } },
             text = "Kill Commander Haalien and bring his head to Elegael Thornpaw in the Shadowgale Forest.",
             dependsOn = { "accept-the-ties-that-bind" },
@@ -3163,7 +3129,7 @@ ns:RegisterGuide({
         {
             id = "turnin-feathers-for-binding",
             kind = "turnin",
-            priority = 2190,
+            priority = 2050,
             conditions = { level = { min = 8 } },
             text = "Turn in Feathers for Binding to Elegael Thornpaw.",
             dependsOn = { "objective-feathers-for-binding" },
@@ -3176,7 +3142,7 @@ ns:RegisterGuide({
         {
             id = "turnin-tears-of-the-lady",
             kind = "turnin",
-            priority = 2200,
+            priority = 2060,
             conditions = { level = { min = 8 } },
             text = "Turn in Tears of the Lady to Elegael Thornpaw.",
             dependsOn = { "objective-tears-of-the-lady" },
@@ -3189,7 +3155,7 @@ ns:RegisterGuide({
         {
             id = "turnin-unwanted-and-unworthy",
             kind = "turnin",
-            priority = 2210,
+            priority = 2070,
             conditions = { level = { min = 8 } },
             text = "Turn in Unwanted and Unworthy to Elegael Thornpaw.",
             dependsOn = { "objective-unwanted-and-unworthy" },
@@ -3202,7 +3168,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-ties-that-bind",
             kind = "turnin",
-            priority = 2220,
+            priority = 2080,
             conditions = { level = { min = 8 } },
             text = "Turn in The Ties That Bind to Elegael Thornpaw.",
             dependsOn = { "objective-the-ties-that-bind" },
@@ -3215,7 +3181,7 @@ ns:RegisterGuide({
         {
             id = "accept-ripped-missive",
             kind = "accept",
-            priority = 2230,
+            priority = 2090,
             conditions = { level = { min = 9 } },
             text = "Accept Ripped Missive from the missive dropped by Commander Haalien.",
             dependsOn = { "turnin-the-ties-that-bind" },
@@ -3228,7 +3194,7 @@ ns:RegisterGuide({
         {
             id = "turnin-ripped-missive",
             kind = "turnin",
-            priority = 2240,
+            priority = 2100,
             conditions = { level = { min = 9 } },
             text = "Bring the Ripped Missive to Elegael Thornpaw in the Shadowgale Forest.",
             dependsOn = { "accept-ripped-missive" },
@@ -3241,7 +3207,7 @@ ns:RegisterGuide({
         {
             id = "accept-a-sacrifice-in-vain",
             kind = "accept",
-            priority = 2250,
+            priority = 2110,
             conditions = { level = { min = 8 } },
             text = "Accept A Sacrifice in Vain from Elegael Thornpaw.",
             dependsOn = { "turnin-unnerving-silence" },
@@ -3254,7 +3220,7 @@ ns:RegisterGuide({
         {
             id = "turnin-a-sacrifice-in-vain",
             kind = "turnin",
-            priority = 2260,
+            priority = 2120,
             conditions = { level = { min = 8 } },
             text = "Speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
             dependsOn = { "accept-a-sacrifice-in-vain" },
@@ -3267,7 +3233,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-wounds-of-betrayal",
             kind = "accept",
-            priority = 2270,
+            priority = 2130,
             conditions = { level = { min = 8 } },
             text = "Accept The Wounds of Betrayal from Elegael Thornpaw.",
             dependsOn = { "turnin-tears-of-the-lady", "turnin-feathers-for-binding", "turnin-a-sacrifice-in-vain" },
@@ -3280,7 +3246,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-wounds-of-betrayal",
             kind = "objective",
-            priority = 2280,
+            priority = 2140,
             conditions = { level = { min = 8 } },
             text = "Enter the Nightfang Den and heal 7 druids and find Jorel Windsinger in Shadowgale Forest.",
             dependsOn = { "accept-the-wounds-of-betrayal" },
@@ -3293,7 +3259,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-wounds-of-betrayal",
             kind = "turnin",
-            priority = 2290,
+            priority = 2150,
             conditions = { level = { min = 8 } },
             text = "Turn in The Wounds of Betrayal to Elegael Thornpaw.",
             dependsOn = { "objective-the-wounds-of-betrayal" },
@@ -3306,7 +3272,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-fate-of-the-den",
             kind = "turnin",
-            priority = 2300,
+            priority = 2160,
             conditions = { level = { min = 8 } },
             text = "Accept The Fate of the Den from Elegael Thornpaw, then give the missive to Lotheluum in Valannar and tell him what has transpired.",
             dependsOn = { "turnin-the-wounds-of-betrayal" },
@@ -3317,9 +3283,47 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-bugged",
+            kind = "accept",
+            priority = 2170,
+            conditions = { level = { min = 6 } },
+            text = "Accept Bugged from Valennia Stormfist.",
+            complete = QuestState(93949, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-bugged",
+            kind = "objective",
+            priority = 2180,
+            conditions = { level = { min = 6 } },
+            text = "Exterminate 8 enchanted skyhoppers in the Gustberry Lowlands.",
+            dependsOn = { "accept-bugged" },
+            complete = QuestState(93949, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.620, 0.732, "Gustberry Lowlands outside Valanaar",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-bugged",
+            kind = "turnin",
+            priority = 2190,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Bugged to Valennia Stormfist.",
+            dependsOn = { "objective-bugged" },
+            complete = QuestState(93949, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-mercy-falls-on-deaf-ears",
             kind = "accept",
-            priority = 2320,
+            priority = 2200,
             conditions = { level = { min = 8 } },
             text = "Accept Mercy Falls on Deaf Ears from Vayn Moongaze.",
             complete = QuestState(93165, "activeOrCompleted"),
@@ -3331,7 +3335,7 @@ ns:RegisterGuide({
         {
             id = "objective-mercy-falls-on-deaf-ears",
             kind = "objective",
-            priority = 2330,
+            priority = 2210,
             conditions = { level = { min = 8 } },
             text = "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
             dependsOn = { "accept-mercy-falls-on-deaf-ears" },
@@ -3344,7 +3348,7 @@ ns:RegisterGuide({
         {
             id = "turnin-mercy-falls-on-deaf-ears",
             kind = "turnin",
-            priority = 2340,
+            priority = 2220,
             conditions = { level = { min = 8 } },
             text = "Turn in Mercy Falls on Deaf Ears to Vayn Moongaze.",
             dependsOn = { "objective-mercy-falls-on-deaf-ears" },
@@ -3357,7 +3361,7 @@ ns:RegisterGuide({
         {
             id = "accept-speak-with-belann",
             kind = "accept",
-            priority = 2350,
+            priority = 2230,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -3375,7 +3379,7 @@ ns:RegisterGuide({
         {
             id = "turnin-speak-with-belann",
             kind = "turnin",
-            priority = 2360,
+            priority = 2240,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -3394,7 +3398,7 @@ ns:RegisterGuide({
         {
             id = "accept-boughs-in-the-wind",
             kind = "accept",
-            priority = 2370,
+            priority = 2250,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -3413,7 +3417,7 @@ ns:RegisterGuide({
         {
             id = "objective-boughs-in-the-wind",
             kind = "objective",
-            priority = 2380,
+            priority = 2260,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -3432,7 +3436,7 @@ ns:RegisterGuide({
         {
             id = "turnin-boughs-in-the-wind",
             kind = "turnin",
-            priority = 2390,
+            priority = 2270,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -3451,7 +3455,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-great-ursera-spirit",
             kind = "accept",
-            priority = 2400,
+            priority = 2280,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3469,7 +3473,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-great-ursera-spirit",
             kind = "turnin",
-            priority = 2410,
+            priority = 2290,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3488,7 +3492,7 @@ ns:RegisterGuide({
         {
             id = "accept-strength-and-mercy",
             kind = "accept",
-            priority = 2420,
+            priority = 2300,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3507,7 +3511,7 @@ ns:RegisterGuide({
         {
             id = "objective-strength-and-mercy",
             kind = "objective",
-            priority = 2430,
+            priority = 2310,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3526,7 +3530,7 @@ ns:RegisterGuide({
         {
             id = "turnin-strength-and-mercy",
             kind = "turnin",
-            priority = 2440,
+            priority = 2320,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3545,7 +3549,7 @@ ns:RegisterGuide({
         {
             id = "accept-taming-the-beast",
             kind = "accept",
-            priority = 2450,
+            priority = 2330,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3563,7 +3567,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast",
             kind = "turnin",
-            priority = 2460,
+            priority = 2340,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3582,7 +3586,7 @@ ns:RegisterGuide({
         {
             id = "accept-taming-the-beast-94013",
             kind = "accept",
-            priority = 2470,
+            priority = 2350,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3601,7 +3605,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast-94013",
             kind = "turnin",
-            priority = 2480,
+            priority = 2360,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3620,7 +3624,7 @@ ns:RegisterGuide({
         {
             id = "accept-taming-the-beast-94978",
             kind = "accept",
-            priority = 2490,
+            priority = 2370,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3639,7 +3643,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast-94978",
             kind = "turnin",
-            priority = 2500,
+            priority = 2380,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3658,7 +3662,7 @@ ns:RegisterGuide({
         {
             id = "accept-taming-the-beast-94979",
             kind = "accept",
-            priority = 2510,
+            priority = 2390,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3677,7 +3681,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast-94979",
             kind = "turnin",
-            priority = 2520,
+            priority = 2400,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3696,7 +3700,7 @@ ns:RegisterGuide({
         {
             id = "accept-training-the-beast",
             kind = "accept",
-            priority = 2530,
+            priority = 2410,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3715,7 +3719,7 @@ ns:RegisterGuide({
         {
             id = "turnin-training-the-beast",
             kind = "turnin",
-            priority = 2540,
+            priority = 2420,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -3734,7 +3738,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire",
             kind = "accept",
-            priority = 2550,
+            priority = 2430,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3753,7 +3757,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire",
             kind = "turnin",
-            priority = 2560,
+            priority = 2440,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3773,7 +3777,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire-97244",
             kind = "accept",
-            priority = 2570,
+            priority = 2450,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3793,7 +3797,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97244",
             kind = "objective",
-            priority = 2580,
+            priority = 2460,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3813,7 +3817,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97244",
             kind = "turnin",
-            priority = 2590,
+            priority = 2470,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3833,7 +3837,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire-97245",
             kind = "accept",
-            priority = 2600,
+            priority = 2480,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3853,7 +3857,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97245",
             kind = "objective",
-            priority = 2610,
+            priority = 2490,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3873,7 +3877,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97245",
             kind = "turnin",
-            priority = 2620,
+            priority = 2500,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3893,7 +3897,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire-97257",
             kind = "accept",
-            priority = 2630,
+            priority = 2510,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3913,7 +3917,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97257",
             kind = "objective",
-            priority = 2640,
+            priority = 2520,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3933,7 +3937,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97257",
             kind = "turnin",
-            priority = 2650,
+            priority = 2530,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3953,7 +3957,7 @@ ns:RegisterGuide({
         {
             id = "accept-blood-for-blood",
             kind = "accept",
-            priority = 2660,
+            priority = 2540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3971,7 +3975,7 @@ ns:RegisterGuide({
         {
             id = "objective-blood-for-blood",
             kind = "objective",
-            priority = 2670,
+            priority = 2550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3989,7 +3993,7 @@ ns:RegisterGuide({
         {
             id = "turnin-blood-for-blood",
             kind = "turnin",
-            priority = 2680,
+            priority = 2560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4007,7 +4011,7 @@ ns:RegisterGuide({
         {
             id = "accept-in-service-of-zephras",
             kind = "accept",
-            priority = 2690,
+            priority = 2570,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4025,7 +4029,7 @@ ns:RegisterGuide({
         {
             id = "turnin-in-service-of-zephras",
             kind = "turnin",
-            priority = 2700,
+            priority = 2580,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4043,7 +4047,7 @@ ns:RegisterGuide({
         {
             id = "accept-in-service-of-zephras-92871",
             kind = "accept",
-            priority = 2710,
+            priority = 2590,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4061,7 +4065,7 @@ ns:RegisterGuide({
         {
             id = "turnin-in-service-of-zephras-92871",
             kind = "turnin",
-            priority = 2720,
+            priority = 2600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4079,7 +4083,7 @@ ns:RegisterGuide({
         {
             id = "accept-tower-defense",
             kind = "accept",
-            priority = 2730,
+            priority = 2610,
             conditions = { level = { min = 6 } },
             text = "Accept Tower Defense from Valennia Stormfist.",
             dependsOn = { "turnin-to-valanaar", "turnin-to-valanaar-92701" },
@@ -4092,7 +4096,7 @@ ns:RegisterGuide({
         {
             id = "turnin-tower-defense",
             kind = "turnin",
-            priority = 2740,
+            priority = 2620,
             conditions = { level = { min = 6 } },
             text = "Report to Yorana Windyreed at the eastern watchtower in the Gustberry Lowlands.",
             dependsOn = { "accept-tower-defense" },
@@ -4105,7 +4109,7 @@ ns:RegisterGuide({
         {
             id = "accept-disrupting-logistics",
             kind = "accept",
-            priority = 2750,
+            priority = 2630,
             conditions = { level = { min = 6 } },
             text = "Accept Disrupting Logistics from Yorana Windyreed.",
             dependsOn = { "turnin-tower-defense" },
@@ -4118,7 +4122,7 @@ ns:RegisterGuide({
         {
             id = "objective-disrupting-logistics",
             kind = "objective",
-            priority = 2760,
+            priority = 2640,
             conditions = { level = { min = 6 } },
             text = "Slay 4 Al'Aketh Healers and 8 Al'Aketh Brawlers in the Gustberry Lowlands.",
             dependsOn = { "accept-disrupting-logistics" },
@@ -4131,7 +4135,7 @@ ns:RegisterGuide({
         {
             id = "turnin-disrupting-logistics",
             kind = "turnin",
-            priority = 2770,
+            priority = 2650,
             conditions = { level = { min = 6 } },
             text = "Turn in Disrupting Logistics to Yorana Windyreed.",
             dependsOn = { "objective-disrupting-logistics" },
@@ -4144,7 +4148,7 @@ ns:RegisterGuide({
         {
             id = "accept-breaking-the-breaker",
             kind = "accept",
-            priority = 2780,
+            priority = 2660,
             conditions = { level = { min = 6 } },
             text = "Accept Breaking the Breaker from Yorana Windyreed.",
             dependsOn = { "turnin-tower-defense" },
@@ -4157,7 +4161,7 @@ ns:RegisterGuide({
         {
             id = "objective-breaking-the-breaker",
             kind = "objective",
-            priority = 2790,
+            priority = 2670,
             conditions = { level = { min = 6 } },
             text = "Slay Commander Belguilos in the Gustberry Lowlands.",
             dependsOn = { "accept-breaking-the-breaker" },
@@ -4170,7 +4174,7 @@ ns:RegisterGuide({
         {
             id = "turnin-breaking-the-breaker",
             kind = "turnin",
-            priority = 2800,
+            priority = 2680,
             conditions = { level = { min = 6 } },
             text = "Turn in Breaking the Breaker to Yorana Windyreed.",
             dependsOn = { "objective-breaking-the-breaker" },
@@ -4183,7 +4187,7 @@ ns:RegisterGuide({
         {
             id = "turnin-return-to-valanaar",
             kind = "turnin",
-            priority = 2810,
+            priority = 2690,
             conditions = { level = { min = 6 } },
             text = "Accept Return to Valanaar from Yorana Windyreed, then bring Yorna's Report to Valennia Stormfist in Valanaar.",
             dependsOn = { "turnin-disrupting-logistics", "turnin-breaking-the-breaker" },
@@ -4196,7 +4200,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-high-elders-request",
             kind = "accept",
-            priority = 2830,
+            priority = 2700,
             conditions = { level = { min = 6 } },
             text = "Accept The High Elder's Request from Valennia Stormfist.",
             dependsOn = { "turnin-return-to-valanaar" },
@@ -4209,7 +4213,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-high-elders-request",
             kind = "turnin",
-            priority = 2840,
+            priority = 2710,
             conditions = { level = { min = 6 } },
             text = "Speak with Talaanis Shadowsong in Valanaar.",
             dependsOn = { "accept-the-high-elders-request" },
@@ -4222,7 +4226,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-turncoat",
             kind = "turnin",
-            priority = 2850,
+            priority = 2720,
             conditions = { level = { min = 6 } },
             text = "Accept The Turncoat from Talaanis Shadowsong, then find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
             dependsOn = { "turnin-the-high-elders-request" },
@@ -4235,7 +4239,7 @@ ns:RegisterGuide({
         {
             id = "accept-alaketh-assassins",
             kind = "accept",
-            priority = 2870,
+            priority = 2730,
             conditions = { level = { min = 6 } },
             text = "Accept Al'Aketh Assassins from Fendaal Windstone.",
             dependsOn = { "turnin-the-turncoat" },
@@ -4248,7 +4252,7 @@ ns:RegisterGuide({
         {
             id = "objective-alaketh-assassins",
             kind = "objective",
-            priority = 2880,
+            priority = 2740,
             conditions = { level = { min = 6 } },
             text = "Kill 10 Al'Aketh Assassins in the Shen'dar Highlands.",
             dependsOn = { "accept-alaketh-assassins" },
@@ -4261,7 +4265,7 @@ ns:RegisterGuide({
         {
             id = "turnin-alaketh-assassins",
             kind = "turnin",
-            priority = 2890,
+            priority = 2750,
             conditions = { level = { min = 6 } },
             text = "Turn in Al'Aketh Assassins to Fendaal Windstone.",
             dependsOn = { "objective-alaketh-assassins" },
@@ -4274,7 +4278,7 @@ ns:RegisterGuide({
         {
             id = "turnin-unfortunate-news",
             kind = "turnin",
-            priority = 2900,
+            priority = 2760,
             conditions = { level = { min = 6 } },
             text = "Accept Unfortunate News from Dead Cultist, then deliver the glowing crystal to Talanaanis Shadowsong in Valanaar.",
             dependsOn = { "turnin-the-turncoat" },
@@ -4287,7 +4291,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-cults-true-plans",
             kind = "accept",
-            priority = 2920,
+            priority = 2770,
             conditions = { level = { min = 6 } },
             text = "Accept The Cult's True Plans from Talaanis Shadowsong.",
             dependsOn = { "turnin-unfortunate-news" },
@@ -4300,7 +4304,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-cults-true-plans",
             kind = "turnin",
-            priority = 2930,
+            priority = 2780,
             conditions = { level = { min = 6 } },
             text = "Speak with Talaanis Shadowsong and observe the conversation.",
             dependsOn = { "accept-the-cults-true-plans" },
@@ -4313,7 +4317,7 @@ ns:RegisterGuide({
         {
             id = "accept-desperate-times",
             kind = "accept",
-            priority = 2940,
+            priority = 2790,
             conditions = { level = { min = 6 } },
             text = "Accept Desperate Times from Talaanis Shadowsong.",
             dependsOn = { "turnin-the-cults-true-plans", "turnin-in-service-of-zephras", "turnin-in-service-of-zephras-92871" },
@@ -4326,7 +4330,7 @@ ns:RegisterGuide({
         {
             id = "objective-desperate-times",
             kind = "objective",
-            priority = 2950,
+            priority = 2800,
             conditions = { level = { min = 6 } },
             text = "Speak with Valennia Stormfist in Valanaar and follow her instructions.",
             dependsOn = { "accept-desperate-times" },
@@ -4339,7 +4343,7 @@ ns:RegisterGuide({
         {
             id = "turnin-desperate-times",
             kind = "turnin",
-            priority = 2960,
+            priority = 2810,
             conditions = { level = { min = 6 } },
             text = "Turn in Desperate Times to Valennia Stormfist.",
             dependsOn = { "objective-desperate-times" },
@@ -4352,7 +4356,7 @@ ns:RegisterGuide({
         {
             id = "turnin-prepare-for-battle",
             kind = "turnin",
-            priority = 2970,
+            priority = 2820,
             conditions = { level = { min = 7 } },
             text = "Accept Prepare for Battle from Valennia Stormfist, then speak with Valennia Stormfist in the Gustberry Lowlands.",
             dependsOn = { "turnin-desperate-times" },
@@ -4365,7 +4369,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-skybreaker-bulwark",
             kind = "accept",
-            priority = 2990,
+            priority = 2830,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4383,7 +4387,7 @@ ns:RegisterGuide({
         {
             id = "objective-the-skybreaker-bulwark",
             kind = "objective",
-            priority = 3000,
+            priority = 2840,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4402,7 +4406,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-skybreaker-bulwark",
             kind = "turnin",
-            priority = 3010,
+            priority = 2850,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4421,7 +4425,7 @@ ns:RegisterGuide({
         {
             id = "accept-making-our-move",
             kind = "accept",
-            priority = 3020,
+            priority = 2860,
             conditions = { level = { min = 7 } },
             text = "Accept Making Our Move from Valennia Stormfist.",
             dependsOn = { "turnin-prepare-for-battle" },
@@ -4434,7 +4438,7 @@ ns:RegisterGuide({
         {
             id = "objective-making-our-move",
             kind = "objective",
-            priority = 3030,
+            priority = 2870,
             conditions = { level = { min = 7 } },
             text = "Slay 8 Al'Aketh Guardians, 6 Al'Aketh Spiritcallers, and 6 Al'Aketh Blademasters, then report to Hyusaa Quickbreeze at the Shrine of Akir.",
             dependsOn = { "accept-making-our-move" },
@@ -4447,7 +4451,7 @@ ns:RegisterGuide({
         {
             id = "turnin-making-our-move",
             kind = "turnin",
-            priority = 3040,
+            priority = 2880,
             conditions = { level = { min = 7 } },
             text = "Turn in Making Our Move to Hyusaa Quickbreeze.",
             dependsOn = { "objective-making-our-move" },
@@ -4460,7 +4464,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-inner-sanctum",
             kind = "turnin",
-            priority = 3050,
+            priority = 2890,
             conditions = { level = { min = 7 } },
             text = "Accept The Inner Sanctum from Hyusaa Quickbreeze, then speak with Valennia Stormfist inside the inner sanctum at the Shrine of Akir.",
             dependsOn = { "turnin-making-our-move" },
@@ -4473,7 +4477,7 @@ ns:RegisterGuide({
         {
             id = "accept-confront-lorthuna",
             kind = "accept",
-            priority = 3070,
+            priority = 2900,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4491,7 +4495,7 @@ ns:RegisterGuide({
         {
             id = "turnin-confront-lorthuna",
             kind = "turnin",
-            priority = 3080,
+            priority = 2910,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4509,7 +4513,7 @@ ns:RegisterGuide({
         {
             id = "accept-confront-lorthuna-93835",
             kind = "accept",
-            priority = 3090,
+            priority = 2920,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4527,7 +4531,7 @@ ns:RegisterGuide({
         {
             id = "turnin-confront-lorthuna-93835",
             kind = "turnin",
-            priority = 3100,
+            priority = 2930,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4545,7 +4549,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-fate-of-zephras",
             kind = "accept",
-            priority = 3110,
+            priority = 2940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4563,7 +4567,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-fate-of-zephras",
             kind = "turnin",
-            priority = 3120,
+            priority = 2950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4581,7 +4585,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-fate-of-zephras-94369",
             kind = "accept",
-            priority = 3130,
+            priority = 2960,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4599,7 +4603,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-fate-of-zephras-94369",
             kind = "turnin",
-            priority = 3140,
+            priority = 2970,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4617,7 +4621,7 @@ ns:RegisterGuide({
         {
             id = "accept-what-comes-next",
             kind = "accept",
-            priority = 3150,
+            priority = 2980,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4635,7 +4639,7 @@ ns:RegisterGuide({
         {
             id = "turnin-what-comes-next",
             kind = "turnin",
-            priority = 3160,
+            priority = 2990,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4653,7 +4657,7 @@ ns:RegisterGuide({
         {
             id = "accept-what-comes-next-93090",
             kind = "accept",
-            priority = 3170,
+            priority = 3000,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4671,7 +4675,7 @@ ns:RegisterGuide({
         {
             id = "turnin-what-comes-next-93090",
             kind = "turnin",
-            priority = 3180,
+            priority = 3010,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4689,7 +4693,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-magical-city-of-dalaran",
             kind = "accept",
-            priority = 3190,
+            priority = 3020,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4707,7 +4711,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-magical-city-of-dalaran",
             kind = "turnin",
-            priority = 3200,
+            priority = 3030,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4725,7 +4729,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-earthen-ring",
             kind = "accept",
-            priority = 3210,
+            priority = 3040,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4743,7 +4747,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-earthen-ring",
             kind = "turnin",
-            priority = 3220,
+            priority = 3050,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4761,7 +4765,7 @@ ns:RegisterGuide({
         {
             id = "accept-welcome-to-azeroth",
             kind = "accept",
-            priority = 3230,
+            priority = 3060,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4779,7 +4783,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-azeroth",
             kind = "turnin",
-            priority = 3240,
+            priority = 3070,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4800,7 +4804,7 @@ ns:RegisterGuide({
         {
             id = "accept-exploring-the-horde",
             kind = "accept",
-            priority = 3250,
+            priority = 3080,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4818,7 +4822,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde",
             kind = "objective",
-            priority = 3260,
+            priority = 3090,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4836,7 +4840,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-voljin",
             kind = "objective",
-            priority = 3262,
+            priority = 3100,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4854,7 +4858,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-cairne",
             kind = "objective",
-            priority = 3264,
+            priority = 3110,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4875,7 +4879,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-sylvanas",
             kind = "objective",
-            priority = 3266,
+            priority = 3120,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4893,7 +4897,7 @@ ns:RegisterGuide({
         {
             id = "turnin-exploring-the-horde",
             kind = "turnin",
-            priority = 3270,
+            priority = 3130,
             conditions = {
                 all = {
                     { faction = "Horde" },

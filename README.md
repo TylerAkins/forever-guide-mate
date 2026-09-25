@@ -48,9 +48,19 @@ These finish a zone’s quests. They can be followed while leveling, but that is
 | Guide | Faction |
 | --- | --- |
 | Teldrassil | Alliance |
+| Dun Morogh | Alliance |
+| Elwynn Forest | Alliance |
+| Darkshore | Alliance |
+| Loch Modan | Alliance |
+| Westfall | Alliance |
+| Duskwood | Alliance and Horde |
+| Redridge Mountains | Alliance and Horde |
 | Durotar | Horde |
 | Mulgore | Horde |
 | The Barrens | Horde |
+| Silverpine Forest | Horde |
+| Ashenvale | Alliance and Horde |
+| Stonetalon Mountains | Alliance and Horde |
 
 ### Dungeon quests
 
@@ -76,24 +86,14 @@ Write a Loremaster guide for every remaining questing zone. Cover the Wowhead Fo
 
 **Alliance**
 
-- Elwynn Forest
-- Dun Morogh
-- Westfall
-- Loch Modan
-- Darkshore
-- Redridge Mountains
-- Duskwood
 - Wetlands
 
 **Horde**
 
 - Tirisfal Glades
-- Silverpine Forest
 
 **Both factions**
 
-- Ashenvale
-- Stonetalon Mountains
 - Thousand Needles
 - Hillsbrad Foothills
 - Alterac Mountains
