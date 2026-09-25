@@ -6,6 +6,7 @@
 
 local failures = 0
 local checks = 0
+local guideData = dofile("tests/lua/guide_data_checks.lua")
 
 local function Check(value, message)
     checks = checks + 1
@@ -235,6 +236,14 @@ local function ObjectiveQuestIDFromGoalID(goalID)
     return questID and tonumber(questID) or nil
 end
 
+local function TurninQuestID(goalID)
+    return guideData.TurninQuestID(goalID)
+end
+
+local function DependsOnTurnin(goal, questID)
+    return guideData.DependsOnTurnin(goal, questID)
+end
+
 local function QuestObjectiveSpec(goal)
     local complete = goal.complete
     if type(complete) ~= "table" or type(complete.questObjective) ~= "table" then
@@ -270,6 +279,14 @@ for _, guideID in ipairs(ns.guideOrder) do
             if fromID and fromID ~= spec.id then
                 Check(false, ("%s %s uses quest %d in the step id but QuestObjective(%d, ...)")
                     :format(guideID, tostring(goal.id), fromID, spec.id))
+            end
+        end
+        if goal.kind == "accept" and guide.category ~= "Dungeon Quest Guides" then
+            local acceptQuest = guideData.AcceptQuestIDFromGoal(goal)
+            local needTurnin = acceptQuest and guideData.CHAIN_ACCEPT_AFTER_TURNIN[acceptQuest]
+            if needTurnin and not DependsOnTurnin(goal, needTurnin) then
+                Check(false, ("%s %s accept for quest %d must dependOn turnin for quest %d")
+                    :format(guideID, tostring(goal.id), acceptQuest, needTurnin))
             end
         end
     end
