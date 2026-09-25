@@ -291,22 +291,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1786-heroes-vigil",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Heroes' Vigil.",
-            route = {
-                Point(MAP.ELWYNN, 0.7253, 0.5140, "Heroes' Vigil",
-                    "Travel to Heroes' Vigil."),
-            },
-        },
-        {
             id = "objective-1786-the-tome-of-divinity",
             kind = "objective",
             priority = 160,
@@ -375,22 +359,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7361, 0.5114, "Rogue Wizard",
                     "Travel to Rogue Wizard."),
-            },
-        },
-        {
-            id = "travel-1788-cathedral-of-light",
-            kind = "travel",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Cathedral of Light.",
-            route = {
-                Point(MAP.STORMWIND, 0.3849, 0.2638, "Cathedral of Light",
-                    "Travel to Cathedral of Light."),
             },
         },
         {
@@ -693,24 +661,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1783-ironband-s-compound",
-            kind = "travel",
-            priority = 380,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Ironband's Compound.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5154, 0.4012, "Continue toward Ironband's Compound",
-                    "Continue toward Ironband's Compound."),
-                Point(MAP.DUN_MOROGH, 0.7833, 0.5806, "Ironband's Compound",
-                    "Travel to Ironband's Compound."),
-            },
-        },
-        {
             id = "objective-1783-narm-faulk",
             kind = "objective",
             priority = 390,
@@ -778,22 +728,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1785-hall-of-mysteries",
-            kind = "travel",
-            priority = 430,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Hall of Mysteries.",
-            route = {
-                Point(MAP.IRONFORGE, 0.2356, 0.0838, "Hall of Mysteries",
-                    "Travel to Hall of Mysteries."),
-            },
-        },
-        {
             id = "turnin-1784-the-tome-of-divinity",
             kind = "turnin",
             priority = 440,
@@ -847,58 +781,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3524-the-great-sea",
-            kind = "travel",
-            priority = 470,
-            conditions = {
-                all = {
-                    { race = { 1, 3, 7 } },
-                },
-            },
-            text = "Travel along the coast toward Menethil Harbor.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4657, 0.4143, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.4323, 0.3180, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3083, 0.3484, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3101, 0.3243, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3148, 0.3230, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3142, 0.3083, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3088, 0.3023, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3262, 0.2912, "Continue toward The Great Sea",
-                    "Continue toward The Great Sea."),
-                Point(MAP.DUN_MOROGH, 0.3273, 0.2605, "The Great Sea",
-                    "Travel to The Great Sea."),
-            },
-        },
-        {
-            id = "travel-3524-menethil-harbor",
-            kind = "travel",
-            priority = 480,
-            conditions = {
-                all = {
-                    { race = { 1, 3, 7 } },
-                },
-            },
-            text = "Travel to Menethil Harbor.",
-        },
-        {
-            id = "travel-3524-auberdine",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3661, 0.4559, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "accept-3524-washed-ashore",
             kind = "accept",
             priority = 500,
@@ -942,21 +824,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-rut-theran-village",
-            kind = "travel",
-            priority = 530,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Travel to Rut'theran Village.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5629, 0.9245, "Nessa Shadowsong",
-                    "Travel to Nessa Shadowsong."),
-            },
-        },
-        {
             id = "turnin-6343-return-to-nessa",
             kind = "turnin",
             priority = 540,
@@ -971,16 +838,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5629, 0.9245, "Nessa Shadowsong",
                     "Travel to Nessa Shadowsong."),
-            },
-        },
-        {
-            id = "travel-983-auberdine",
-            kind = "travel",
-            priority = 550,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3576, 0.4368, "Auberdine",
-                    "Travel to Auberdine."),
             },
         },
         {
@@ -1164,16 +1021,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-983-auberdine-2",
-            kind = "travel",
-            priority = 710,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3660, 0.4627, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "objective-983-buzzbox-827",
             kind = "objective",
             priority = 720,
@@ -1244,16 +1091,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1001-mist-s-edge",
-            kind = "travel",
-            priority = 780,
-            text = "Travel to Mist's Edge.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4195, 0.2864, "Mist's Edge",
-                    "Travel to Mist's Edge."),
-            },
-        },
-        {
             id = "objective-1001-buzzbox-411",
             kind = "objective",
             priority = 790,
@@ -1266,16 +1103,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-auberdine",
-            kind = "travel",
-            priority = 800,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3661, 0.4559, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "turnin-4681-washed-ashore",
             kind = "turnin",
             priority = 810,
@@ -1285,16 +1112,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3661, 0.4559, "Gwennyth Bly'Leggonde",
                     "Travel to Gwennyth Bly'Leggonde."),
-            },
-        },
-        {
-            id = "travel-4723-mist-s-edge",
-            kind = "travel",
-            priority = 820,
-            text = "Travel to Mist's Edge.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4189, 0.3161, "Mist's Edge",
-                    "Travel to Mist's Edge."),
             },
         },
         {
@@ -1449,16 +1266,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-953-twilight-vale",
-            kind = "travel",
-            priority = 960,
-            text = "Travel to Twilight Vale.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4030, 0.5968, "Twilight Vale",
-                    "Travel to Twilight Vale."),
-            },
-        },
-        {
             id = "accept-953-the-fall-of-ameth-aran",
             kind = "accept",
             priority = 970,
@@ -1530,16 +1337,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-twilight-vale",
-            kind = "travel",
-            priority = 1020,
-            text = "Travel to Twilight Vale.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4030, 0.5968, "Twilight Vale",
-                    "Travel to Twilight Vale."),
-            },
-        },
-        {
             id = "turnin-953-the-fall-of-ameth-aran",
             kind = "turnin",
             priority = 1030,
@@ -1573,16 +1370,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3900, 0.6600, "Rabid Thistle Bear",
                     "Travel to Rabid Thistle Bear."),
-            },
-        },
-        {
-            id = "travel-2138-auberdine",
-            kind = "travel",
-            priority = 1060,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3661, 0.4559, "Auberdine",
-                    "Travel to Auberdine."),
             },
         },
         {
@@ -1771,22 +1558,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-cenarion-enclave",
-            kind = "travel",
-            priority = 1220,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { ["not"] = { quest = { id = 6121, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3538, 0.0828, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
-            },
-        },
-        {
             id = "accept-6121-lessons-anew",
             kind = "accept",
             priority = 1230,
@@ -1800,22 +1571,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3538, 0.0828, "Mathrengyl Bearwalker",
                     "Travel to Mathrengyl Bearwalker."),
-            },
-        },
-        {
-            id = "travel-nighthaven",
-            kind = "travel",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { ["not"] = { quest = { id = 6122, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Nighthaven.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5626, 0.3064, "Nighthaven",
-                    "Travel to Nighthaven."),
             },
         },
         {
@@ -1885,16 +1640,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3960, 0.2750, "Mist Veil's Lockbox",
                     "Travel to Mist Veil's Lockbox."),
-            },
-        },
-        {
-            id = "travel-4725-mist-s-edge",
-            kind = "travel",
-            priority = 1300,
-            text = "Travel to Mist's Edge.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4423, 0.2066, "Mist's Edge",
-                    "Travel to Mist's Edge."),
             },
         },
         {
@@ -2078,16 +1823,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-twilight-vale-2",
-            kind = "travel",
-            priority = 1450,
-            text = "Travel to Twilight Vale.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4138, 0.8053, "Twilight Vale",
-                    "Travel to Twilight Vale."),
-            },
-        },
-        {
             id = "turnin-1003-buzzbox-525",
             kind = "turnin",
             priority = 1460,
@@ -2097,16 +1832,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.4138, 0.8053, "Twilight Vale",
                     "Travel to Twilight Vale."),
-            },
-        },
-        {
-            id = "travel-1138-auberdine",
-            kind = "travel",
-            priority = 1470,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3661, 0.4559, "Auberdine",
-                    "Travel to Auberdine."),
             },
         },
         {
@@ -2399,16 +2124,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4727-mist-s-edge",
-            kind = "travel",
-            priority = 1720,
-            text = "Travel to Mist's Edge.",
-            route = {
-                Point(MAP.DARKSHORE, 0.5310, 0.1820, "Mist's Edge",
-                    "Travel to Mist's Edge."),
-            },
-        },
-        {
             id = "accept-4727-beached-sea-turtle",
             kind = "accept",
             priority = 1730,
@@ -2429,16 +2144,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.5100, 0.2200, "Encrusted Tide Crawler",
                     "Travel to Encrusted Tide Crawler."),
-            },
-        },
-        {
-            id = "travel-auberdine-2",
-            kind = "travel",
-            priority = 1750,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3661, 0.4559, "Auberdine",
-                    "Travel to Auberdine."),
             },
         },
         {
@@ -2594,22 +2299,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-nighthaven-2",
-            kind = "travel",
-            priority = 1850,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { ["not"] = { quest = { id = 6125, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Nighthaven.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5626, 0.3064, "Nighthaven",
-                    "Travel to Nighthaven."),
-            },
-        },
-        {
             id = "turnin-6124-curing-the-sick",
             kind = "turnin",
             priority = 1860,
@@ -2640,21 +2329,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MOONGLADE, 0.5625, 0.3059, "Dendrite Starblaze",
                     "Travel to Dendrite Starblaze."),
-            },
-        },
-        {
-            id = "travel-cenarion-enclave-2",
-            kind = "travel",
-            priority = 1880,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3536, 0.0831, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
             },
         },
         {
@@ -2691,22 +2365,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-cenarion-enclave-3",
-            kind = "travel",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { ["not"] = { quest = { id = 26, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3536, 0.0831, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
-            },
-        },
-        {
             id = "accept-26-a-lesson-to-learn-2",
             kind = "accept",
             priority = 1920,
@@ -2720,22 +2378,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3536, 0.0831, "Mathrengyl Bearwalker",
                     "Travel to Mathrengyl Bearwalker."),
-            },
-        },
-        {
-            id = "travel-nighthaven-3",
-            kind = "travel",
-            priority = 1930,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { ["not"] = { quest = { id = 29, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Nighthaven.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5626, 0.3064, "Nighthaven",
-                    "Travel to Nighthaven."),
             },
         },
         {
@@ -2769,21 +2411,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MOONGLADE, 0.5591, 0.3132, "Dendrite Starblaze",
                     "Travel to Dendrite Starblaze."),
-            },
-        },
-        {
-            id = "travel-29-shrine-of-remulos",
-            kind = "travel",
-            priority = 1960,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Shrine of Remulos.",
-            route = {
-                Point(MAP.MOONGLADE, 0.3622, 0.4135, "Shrine of Remulos",
-                    "Travel to Shrine of Remulos."),
             },
         },
         {
@@ -2837,51 +2464,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-272-darkshore",
-            kind = "travel",
-            priority = 2000,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Darkshore.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4886, 0.1128, "Darkshore",
-                    "Travel to Darkshore."),
-            },
-        },
-        {
-            id = "travel-272-westfall",
-            kind = "travel",
-            priority = 2010,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Westfall.",
-            route = {
-                Point(MAP.WESTFALL, 0.1786, 0.3316, "Westfall",
-                    "Travel to Westfall."),
-            },
-        },
-        {
-            id = "travel-272-shrine-of-remulos",
-            kind = "travel",
-            priority = 2020,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Shrine of Remulos.",
-            route = {
-                Point(MAP.MOONGLADE, 0.3625, 0.4124, "Shrine of Remulos",
-                    "Travel to Shrine of Remulos."),
-            },
-        },
-        {
             id = "objective-272-trial-of-the-sea-lion",
             kind = "objective",
             priority = 2030,
@@ -2896,21 +2478,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MOONGLADE, 0.3625, 0.4124, "Shrine of Remulos",
                     "Travel to Shrine of Remulos."),
-            },
-        },
-        {
-            id = "travel-5061-nighthaven",
-            kind = "travel",
-            priority = 2040,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Nighthaven.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3063, "Nighthaven",
-                    "Travel to Nighthaven."),
             },
         },
         {
@@ -2944,21 +2511,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MOONGLADE, 0.5620, 0.3063, "Dendrite Starblaze",
                     "Travel to Dendrite Starblaze."),
-            },
-        },
-        {
-            id = "travel-cenarion-enclave-4",
-            kind = "travel",
-            priority = 2070,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3534, 0.0836, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
             },
         },
         {

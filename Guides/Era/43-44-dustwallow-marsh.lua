@@ -57,21 +57,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1205-hunter-rise",
-            kind = "travel",
-            priority = 20,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1205, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Hunter Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.6141, 0.8057, "Hunter Rise",
-                    "Travel to Hunter Rise."),
-            },
-        },
-        {
             id = "accept-1205-deadmire",
             kind = "accept",
             priority = 30,
@@ -80,16 +65,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.6141, 0.8057, "Melor Stonehoof",
                     "Travel to Melor Stonehoof."),
-            },
-        },
-        {
-            id = "travel-1268-dustwallow-marsh",
-            kind = "travel",
-            priority = 40,
-            text = "Run east to Dustwallow Marsh.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.2970, 0.4770, "Dustwallow Marsh",
-                    "Travel to Dustwallow Marsh."),
             },
         },
         {
@@ -123,20 +98,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.2980, 0.4810, "Shady Rest Inn",
                     "Travel to Shady Rest Inn."),
-            },
-        },
-        {
-            id = "travel-1321-brackenwall-village",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3349, 0.3876, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3439, 0.3068, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3500, 0.2900, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
             },
         },
         {
@@ -221,16 +182,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1201-dustwallow-marsh",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3526, 0.3063, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
-            },
-        },
-        {
             id = "accept-1322-the-black-shield",
             kind = "accept",
             priority = 170,
@@ -262,16 +213,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.4208, 0.1158, "Darkfang Spider",
                     "Travel to Darkfang Spider."),
-            },
-        },
-        {
-            id = "travel-1177-dreadmurk-shore",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Dreadmurk Shore.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5746, 0.1647, "Dreadmurk Shore",
-                    "Travel to Dreadmurk Shore."),
             },
         },
         {
@@ -357,16 +298,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1205-the-quagmire",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to The Quagmire.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.4758, 0.5460, "The Quagmire",
-                    "Travel to The Quagmire."),
-            },
-        },
-        {
             id = "objective-1205-deadmire",
             kind = "objective",
             priority = 290,
@@ -376,28 +307,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.4758, 0.5460, "Deadmire",
                     "Travel to Deadmire."),
-            },
-        },
-        {
-            id = "travel-1187-beezil-s-wreck",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Beezil's Wreck.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5406, 0.5653, "Beezil's Wreck",
-                    "Travel to Beezil's Wreck."),
-            },
-        },
-        {
-            id = "travel-1261-tidefury-cove",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Tidefury Cove.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5521, 0.5879, "Continue toward Tidefury Cove",
-                    "Continue toward Tidefury Cove."),
-                Point(MAP.DUSTWALLOW, 0.5537, 0.6412, "Tidefury Cove",
-                    "Travel to Tidefury Cove."),
             },
         },
         {
@@ -418,16 +327,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1169-stonemaul-ruins",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Stonemaul Ruins.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.4460, 0.6619, "Stonemaul Ruins",
-                    "Travel to Stonemaul Ruins."),
-            },
-        },
-        {
             id = "objective-1169-identifying-the-brood",
             kind = "objective",
             priority = 340,
@@ -437,16 +336,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.4700, 0.6619, "Searing Hatchling",
                     "Travel to Searing Hatchling."),
-            },
-        },
-        {
-            id = "travel-1262-brackenwall-village",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3522, 0.3063, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
             },
         },
         {
@@ -538,16 +427,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.3631, 0.3144, "Nazeer Bloodpike",
                     "Travel to Nazeer Bloodpike."),
-            },
-        },
-        {
-            id = "travel-hunter-rise",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Hunter Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.5422, 0.8066, "Hunter Rise",
-                    "Travel to Hunter Rise."),
             },
         },
         {

@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-4101-morlos-aran",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Morlos'Aran in Felwood.",
-            route = {
-                Point(MAP.FELWOOD, 0.5415, 0.8684, "Morlos'Aran",
-                    "Travel to Morlos'Aran."),
-            },
-        },
-        {
             id = "accept-4101-cleansing-felwood",
             kind = "accept",
             priority = 20,
@@ -59,16 +49,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.5415, 0.8684, "Arathandris Silversky",
                     "Travel to Arathandris Silversky."),
-            },
-        },
-        {
-            id = "travel-6131-emerald-sanctuary",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.5098, 0.8176, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -167,16 +147,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4512-ruins-of-constellas",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Ruins of Constellas.",
-            route = {
-                Point(MAP.FELWOOD, 0.4014, 0.6791, "Ruins of Constellas",
-                    "Travel to Ruins of Constellas."),
-            },
-        },
-        {
             id = "objective-4512-1-cursed-ooze",
             kind = "objective",
             priority = 130,
@@ -218,18 +188,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4512-jaedenar",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Jaedenar.",
-            route = {
-                Point(MAP.FELWOOD, 0.4222, 0.6474, "Continue toward Jaedenar",
-                    "Continue toward Jaedenar."),
-                Point(MAP.FELWOOD, 0.3994, 0.5520, "Jaedenar",
-                    "Travel to Jaedenar."),
-            },
-        },
-        {
             id = "objective-4512-2-tainted-ooze",
             kind = "objective",
             priority = 170,
@@ -254,18 +212,6 @@ ns:RegisterGuide({
                     "Continue toward Forces of Jaedenar."),
                 Point(MAP.FELWOOD, 0.3540, 0.6027, "Jaedenar Guardian",
                     "Travel to Jaedenar Guardian."),
-            },
-        },
-        {
-            id = "travel-4906-emerald-sanctuary",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.4136, 0.5832, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.5135, 0.8152, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -315,18 +261,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5157-jaedenar",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Jaedenar.",
-            route = {
-                Point(MAP.FELWOOD, 0.4381, 0.7542, "Continue toward Jaedenar",
-                    "Continue toward Jaedenar."),
-                Point(MAP.FELWOOD, 0.4130, 0.5984, "Jaedenar",
-                    "Travel to Jaedenar."),
-            },
-        },
-        {
             id = "objective-5157-collection-of-the-corrupt-water",
             kind = "objective",
             priority = 250,
@@ -338,16 +272,6 @@ ns:RegisterGuide({
                     "Continue toward Collection of the Corrupt Water."),
                 Point(MAP.FELWOOD, 0.3516, 0.5974, "Jaedenar",
                     "Travel to Jaedenar."),
-            },
-        },
-        {
-            id = "travel-5158-emerald-sanctuary",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.5121, 0.8211, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -374,18 +298,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5156-shatter-scar-vale",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Shatter Scar Vale.",
-            route = {
-                Point(MAP.FELWOOD, 0.4332, 0.7451, "Continue toward Shatter Scar Vale",
-                    "Continue toward Shatter Scar Vale."),
-                Point(MAP.FELWOOD, 0.4055, 0.4280, "Shatter Scar Vale",
-                    "Travel to Shatter Scar Vale."),
-            },
-        },
-        {
             id = "objective-5156-verifying-the-corruption",
             kind = "objective",
             priority = 300,
@@ -395,16 +307,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.4055, 0.4280, "Maeva Snowbraid",
                     "Travel to Maeva Snowbraid."),
-            },
-        },
-        {
-            id = "travel-4906-jadefire-run",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Jadefire Run.",
-            route = {
-                Point(MAP.FELWOOD, 0.4321, 0.2185, "Jadefire Run",
-                    "Travel to Jadefire Run."),
             },
         },
         {
@@ -459,18 +361,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4101-irontree-woods",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Irontree Woods.",
-            route = {
-                Point(MAP.FELWOOD, 0.5112, 0.1521, "Continue toward Irontree Woods",
-                    "Continue toward Irontree Woods."),
-                Point(MAP.FELWOOD, 0.5519, 0.1772, "Irontree Woods",
-                    "Travel to Irontree Woods."),
-            },
-        },
-        {
             id = "objective-4101-cleansing-felwood",
             kind = "objective",
             priority = 370,
@@ -482,18 +372,6 @@ ns:RegisterGuide({
                     "Continue toward Cleansing Felwood."),
                 Point(MAP.FELWOOD, 0.5519, 0.1772, "Warpwood Moss Flayer",
                     "Travel to Warpwood Moss Flayer."),
-            },
-        },
-        {
-            id = "travel-8461-talonbranch-glade",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Talonbranch Glade.",
-            route = {
-                Point(MAP.FELWOOD, 0.6071, 0.1665, "Continue toward Talonbranch Glade",
-                    "Continue toward Talonbranch Glade."),
-                Point(MAP.FELWOOD, 0.6248, 0.2424, "Talonbranch Glade",
-                    "Travel to Talonbranch Glade."),
             },
         },
         {
@@ -561,16 +439,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6245, 0.3874, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
             id = "note-5159-ratchet",
             kind = "note",
             priority = 450,
@@ -578,16 +446,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6205, 0.3941, "Innkeeper Wiley",
                     "Travel to Innkeeper Wiley."),
-            },
-        },
-        {
-            id = "travel-5159-the-tidus-stair",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to The Tidus Stair.",
-            route = {
-                Point(MAP.BARRENS, 0.6584, 0.4378, "The Tidus Stair",
-                    "Travel to The Tidus Stair."),
             },
         },
         {
@@ -639,16 +497,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.5415, 0.8685, "Arathandris Silversky",
                     "Travel to Arathandris Silversky."),
-            },
-        },
-        {
-            id = "travel-5165-emerald-sanctuary",
-            kind = "travel",
-            priority = 510,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.5121, 0.8210, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -722,24 +570,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5165-shadow-hold",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Shadow Hold.",
-            route = {
-                Point(MAP.FELWOOD, 0.4741, 0.8314, "Continue toward Shadow Hold",
-                    "Continue toward Shadow Hold."),
-                Point(MAP.FELWOOD, 0.4358, 0.7498, "Continue toward Shadow Hold",
-                    "Continue toward Shadow Hold."),
-                Point(MAP.FELWOOD, 0.4137, 0.6026, "Continue toward Shadow Hold",
-                    "Continue toward Shadow Hold."),
-                Point(MAP.FELWOOD, 0.3635, 0.6141, "Continue toward Shadow Hold",
-                    "Continue toward Shadow Hold."),
-                Point(MAP.FELWOOD, 0.3543, 0.5877, "Shadow Hold",
-                    "Travel to Shadow Hold."),
-            },
-        },
-        {
             id = "objective-5165-1-extinguish-the-brazier-of-pain",
             kind = "objective",
             priority = 590,
@@ -785,16 +615,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.3764, 0.5269, "Shadow Hold",
                     "Travel to Shadow Hold."),
-            },
-        },
-        {
-            id = "travel-5242-jaedenar",
-            kind = "travel",
-            priority = 630,
-            text = "Travel to the Jaedenar exit.",
-            route = {
-                Point(MAP.FELWOOD, 0.3541, 0.5886, "Jaedenar",
-                    "Travel to Jaedenar."),
             },
         },
         {

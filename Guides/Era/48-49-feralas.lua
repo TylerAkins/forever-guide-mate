@@ -59,16 +59,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3763-ironforge",
-            kind = "travel",
-            priority = 20,
-            text = "Travel to Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.1841, 0.5149, "Ironforge",
-                    "Travel to Ironforge."),
-            },
-        },
-        {
             id = "accept-3763-assisting-arch-druid-staghelm",
             kind = "accept",
             priority = 30,
@@ -91,21 +81,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-rut-theran-village",
-            kind = "travel",
-            priority = 50,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2943, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Rut'theran Village in Teldrassil.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5550, 0.9206, "Rut'theran Village",
-                    "Travel to Rut'theran Village."),
-            },
-        },
-        {
             id = "accept-2943-return-to-troyas",
             kind = "accept",
             priority = 60,
@@ -122,16 +97,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2821-feathermoon-stronghold",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3058, 0.4274, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
-            },
-        },
-        {
             id = "accept-2821-the-mark-of-quality",
             kind = "accept",
             priority = 80,
@@ -140,22 +105,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.3063, 0.4272, "Pratt McGrubben",
                     "Travel to Pratt McGrubben."),
-            },
-        },
-        {
-            id = "travel-2821-feral-scar-vale",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Feral Scar Vale.",
-            route = {
-                Point(MAP.FERALAS, 0.4721, 0.4463, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.4882, 0.4562, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.5471, 0.5276, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.5554, 0.5712, "Feral Scar Vale",
-                    "Travel to Feral Scar Vale."),
             },
         },
         {
@@ -168,16 +117,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.5540, 0.5636, "Feral Scar Yeti",
                     "Travel to Feral Scar Yeti."),
-            },
-        },
-        {
-            id = "travel-7733-feathermoon-stronghold",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3058, 0.4274, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
         {
@@ -248,16 +187,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7003-the-forgotten-coast",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to The Forgotten Coast.",
-            route = {
-                Point(MAP.FERALAS, 0.4480, 0.4345, "The Forgotten Coast",
-                    "Travel to The Forgotten Coast."),
-            },
-        },
-        {
             id = "accept-7003-zapped-giants",
             kind = "accept",
             priority = 180,
@@ -301,22 +230,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.4482, 0.4342, "Zorbin Fandazzle",
                     "Travel to Zorbin Fandazzle."),
-            },
-        },
-        {
-            id = "travel-7733-rage-scar-hold",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Rage Scar Hold.",
-            route = {
-                Point(MAP.FERALAS, 0.4829, 0.4462, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.4843, 0.3773, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.5146, 0.3234, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.5324, 0.3183, "Rage Scar Hold",
-                    "Travel to Rage Scar Hold."),
             },
         },
         {
@@ -371,16 +284,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.3842, 0.2151, "Land Walker",
                     "Travel to Land Walker."),
-            },
-        },
-        {
-            id = "travel-2879-ruins-of-ravenwind",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Ruins of Ravenwind.",
-            route = {
-                Point(MAP.FERALAS, 0.3853, 0.1575, "Ruins of Ravenwind",
-                    "Travel to Ruins of Ravenwind."),
             },
         },
         {
@@ -481,18 +384,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-forgotten-coast",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to The Forgotten Coast.",
-            route = {
-                Point(MAP.FERALAS, 0.4841, 0.3322, "Continue toward The Forgotten Coast",
-                    "Continue toward The Forgotten Coast."),
-                Point(MAP.FERALAS, 0.4482, 0.4343, "The Forgotten Coast",
-                    "Travel to The Forgotten Coast."),
-            },
-        },
-        {
             id = "turnin-7003-zapped-giants",
             kind = "turnin",
             priority = 370,
@@ -502,25 +393,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.4482, 0.4343, "Zorbin Fandazzle",
                     "Travel to Zorbin Fandazzle."),
-            },
-        },
-        {
-            id = "travel-verdantis-river",
-            kind = "travel",
-            priority = 380,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 3841, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Verdantis River.",
-            route = {
-                Point(MAP.FERALAS, 0.4883, 0.4563, "Continue toward Verdantis River",
-                    "Continue toward Verdantis River."),
-                Point(MAP.FERALAS, 0.5070, 0.4991, "Continue toward Verdantis River",
-                    "Continue toward Verdantis River."),
-                Point(MAP.FERALAS, 0.6340, 0.5243, "Verdantis River",
-                    "Travel to Verdantis River."),
             },
         },
         {
@@ -534,18 +406,6 @@ ns:RegisterGuide({
                     "Continue toward An Orphan Looking For a Home."),
                 Point(MAP.FERALAS, 0.6595, 0.4565, "Kindal Moonweaver",
                     "Travel to Kindal Moonweaver."),
-            },
-        },
-        {
-            id = "travel-2741-ruins-of-isildien",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to Ruins of Isildien.",
-            route = {
-                Point(MAP.FERALAS, 0.5489, 0.6890, "Continue toward Ruins of Isildien",
-                    "Continue toward Ruins of Isildien."),
-                Point(MAP.FERALAS, 0.5859, 0.7555, "Ruins of Isildien",
-                    "Travel to Ruins of Isildien."),
             },
         },
         {
@@ -594,16 +454,6 @@ ns:RegisterGuide({
                     "Continue toward Rescue OOX-22/FE!."),
                 Point(MAP.FERALAS, 0.4553, 0.4334, "Homing Robot OOX-22/FE",
                     "Travel to Homing Robot OOX-22/FE."),
-            },
-        },
-        {
-            id = "travel-2942-feathermoon-stronghold",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3178, 0.4553, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
         {

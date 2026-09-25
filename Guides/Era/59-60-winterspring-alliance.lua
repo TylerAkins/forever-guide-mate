@@ -133,16 +133,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4809-everlook",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6089, 0.3764, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
             id = "accept-4809-chillwind-horns",
             kind = "accept",
             priority = 70,
@@ -182,16 +172,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.6133, 0.3885, "Innkeeper Vizzie",
                     "Travel to Innkeeper Vizzie."),
-            },
-        },
-        {
-            id = "travel-4970-frostsaber-rock",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Frostsaber Rock.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.4857, 0.1037, "Frostsaber Rock",
-                    "Travel to Frostsaber Rock."),
             },
         },
         {
@@ -246,21 +226,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.4993, 0.0984, "Rivern Frostwind",
                     "Travel to Rivern Frostwind."),
-            },
-        },
-        {
-            id = "travel-4810-everlook",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { quest = { id = 4808, state = "completed" } },
-                },
-            },
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6160, 0.3861, "Everlook",
-                    "Travel to Everlook."),
             },
         },
         {
@@ -363,21 +328,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-975-everlook",
-            kind = "travel",
-            priority = 210,
-            conditions = {
-                all = {
-                    { quest = { id = 6606, state = "completed" } },
-                },
-            },
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6192, 0.3829, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
             id = "turnin-969-luck-be-with-you",
             kind = "turnin",
             priority = 220,
@@ -428,21 +378,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-frostfire-hot-springs",
-            kind = "travel",
-            priority = 250,
-            conditions = {
-                all = {
-                    { quest = { id = 5086, state = "completed" } },
-                },
-            },
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
-            },
-        },
-        {
             id = "turnin-5087-winterfall-runners",
             kind = "turnin",
             priority = 260,
@@ -473,21 +408,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Donova Snowden",
                     "Travel to Donova Snowden."),
-            },
-        },
-        {
-            id = "travel-5121-winterfall-village",
-            kind = "travel",
-            priority = 280,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Winterfall Village.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6969, 0.3826, "Winterfall Village",
-                    "Travel to Winterfall Village."),
             },
         },
         {
@@ -537,21 +457,6 @@ ns:RegisterGuide({
             complete = QuestState(5123, "activeOrCompleted"),
         },
         {
-            id = "travel-frostfire-hot-springs-2",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
-            },
-        },
-        {
             id = "turnin-5123-the-final-piece",
             kind = "turnin",
             priority = 330,
@@ -585,21 +490,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-emerald-sanctuary",
-            kind = "travel",
-            priority = 350,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Emerald Sanctuary in Felwood.",
-            route = {
-                Point(MAP.FELWOOD, 0.5114, 0.8176, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
-            },
-        },
-        {
             id = "turnin-5128-words-of-the-high-chief",
             kind = "turnin",
             priority = 360,
@@ -614,21 +504,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.5114, 0.8176, "Kelek Skykeeper",
                     "Travel to Kelek Skykeeper."),
-            },
-        },
-        {
-            id = "travel-4902-rut-theran-village",
-            kind = "travel",
-            priority = 370,
-            conditions = {
-                all = {
-                    { quest = { id = 979, state = "completed" } },
-                },
-            },
-            text = "Travel to Rut'theran Village.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5550, 0.9207, "Rut'theran Village",
-                    "Travel to Rut'theran Village."),
             },
         },
         {
@@ -679,21 +554,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3475, 0.0908, "Archdruid Fandral Staghelm",
                     "Travel to Archdruid Fandral Staghelm."),
-            },
-        },
-        {
-            id = "travel-4810-flame-crest",
-            kind = "travel",
-            priority = 410,
-            conditions = {
-                all = {
-                    { quest = { id = 4809, state = "completed" } },
-                },
-            },
-            text = "Travel to Flame Crest.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6523, 0.2395, "Flame Crest",
-                    "Travel to Flame Crest."),
             },
         },
         {

@@ -44,16 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-710-undercity",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.6400, 0.3600, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "objective-710-frost-oil",
             kind = "objective",
             priority = 20,
@@ -111,48 +101,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.6400, 0.3600, "Auctioneer Naxxremis",
                     "Travel to Auctioneer Naxxremis."),
-            },
-        },
-        {
-            id = "travel-710-wetlands",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Wetlands.",
-            route = {
-                Point(MAP.ARATHI, 0.4540, 0.9660, "Wetlands",
-                    "Travel to Wetlands."),
-            },
-        },
-        {
-            id = "travel-710-loch-modan",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Loch Modan through the tunnel.",
-            route = {
-                Point(MAP.WETLANDS, 0.5370, 0.7220, "Continue toward Loch Modan",
-                    "Continue toward Loch Modan."),
-                Point(MAP.WETLANDS, 0.5500, 0.9500, "Loch Modan",
-                    "Travel to Loch Modan."),
-            },
-        },
-        {
-            id = "travel-710-badlands",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Badlands.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.4720, 0.9490, "Badlands",
-                    "Travel to Badlands."),
-            },
-        },
-        {
-            id = "travel-valley-of-fangs",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Valley of Fangs.",
-            route = {
-                Point(MAP.BADLANDS, 0.4225, 0.5270, "Valley of Fangs",
-                    "Travel to Valley of Fangs."),
             },
         },
         {
@@ -228,16 +176,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-710-the-dustbowl",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to The Dustbowl.",
-            route = {
-                Point(MAP.BADLANDS, 0.2591, 0.4491, "The Dustbowl",
-                    "Travel to The Dustbowl."),
-            },
-        },
-        {
             id = "accept-710-study-of-the-elements-rock",
             kind = "accept",
             priority = 170,
@@ -258,16 +196,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.1312, 0.3886, "Lesser Rock Elemental",
                     "Travel to Lesser Rock Elemental."),
-            },
-        },
-        {
-            id = "travel-1419-kargath",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Kargath.",
-            route = {
-                Point(MAP.BADLANDS, 0.0400, 0.4490, "Kargath",
-                    "Travel to Kargath."),
             },
         },
         {
@@ -431,16 +359,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-712-camp-cagg",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Camp Cagg.",
-            route = {
-                Point(MAP.BADLANDS, 0.1703, 0.8440, "Camp Cagg",
-                    "Travel to Camp Cagg."),
-            },
-        },
-        {
             id = "objective-712-study-of-the-elements-rock",
             kind = "objective",
             priority = 350,
@@ -472,16 +390,6 @@ ns:RegisterGuide({
                     "Continue toward Broken Alliances."),
                 Point(MAP.BADLANDS, 0.2300, 0.5200, "Boss Tho'grun",
                     "Travel to Boss Tho'grun."),
-            },
-        },
-        {
-            id = "travel-782-badlands",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Badlands.",
-            route = {
-                Point(MAP.BADLANDS, 0.1300, 0.3600, "Badlands",
-                    "Travel to Badlands."),
             },
         },
         {
@@ -517,16 +425,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-710-the-dustbowl-2",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to The Dustbowl.",
-            route = {
-                Point(MAP.BADLANDS, 0.2591, 0.4491, "The Dustbowl",
-                    "Travel to The Dustbowl."),
-            },
-        },
-        {
             id = "turnin-712-study-of-the-elements-rock",
             kind = "turnin",
             priority = 410,
@@ -536,16 +434,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.2590, 0.4500, "Lotwil Veriatus",
                     "Travel to Lotwil Veriatus."),
-            },
-        },
-        {
-            id = "travel-kargath",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Kargath.",
-            route = {
-                Point(MAP.BADLANDS, 0.2590, 0.4500, "Kargath",
-                    "Travel to Kargath."),
             },
         },
         {
@@ -582,16 +470,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.0250, 0.4610, "Jarkal Mossmeld",
                     "Travel to Jarkal Mossmeld."),
-            },
-        },
-        {
-            id = "travel-valley-of-fangs-2",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to Valley of Fangs.",
-            route = {
-                Point(MAP.BADLANDS, 0.4238, 0.5283, "Valley of Fangs",
-                    "Travel to Valley of Fangs."),
             },
         },
         {

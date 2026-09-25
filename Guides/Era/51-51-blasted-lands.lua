@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2601-blasted-lands",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Blasted Lands.",
-            route = {
-                Point(MAP.BLASTED_LANDS, 0.5065, 0.1427, "Blasted Lands",
-                    "Travel to Blasted Lands."),
-            },
-        },
-        {
             id = "objective-2603-black-slayer",
             kind = "objective",
             priority = 20,

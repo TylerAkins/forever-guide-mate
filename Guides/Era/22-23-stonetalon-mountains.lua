@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1483-ratchet",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6295, 0.3723, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
             id = "accept-1483-ziz-fizziks",
             kind = "accept",
             priority = 20,
@@ -60,16 +50,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6295, 0.3723, "Sputtervalve",
                     "Travel to Sputtervalve."),
-            },
-        },
-        {
-            id = "travel-1070-astranaar",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3450, 0.4800, "Astranaar",
-                    "Travel to Astranaar."),
             },
         },
         {
@@ -92,30 +72,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3578, 0.4916, "Faldreas Goeth'Shael",
                     "Travel to Faldreas Goeth'Shael."),
-            },
-        },
-        {
-            id = "travel-1093-the-talondeep-path",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to The Talondeep Path.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4208, 0.5783, "Continue toward The Talondeep Path",
-                    "Continue toward The Talondeep Path."),
-                Point(MAP.ASHENVALE, 0.4172, 0.6595, "Continue toward The Talondeep Path",
-                    "Continue toward The Talondeep Path."),
-                Point(MAP.ASHENVALE, 0.4238, 0.7090, "The Talondeep Path",
-                    "Travel to The Talondeep Path."),
-            },
-        },
-        {
-            id = "travel-1093-windshear-crag",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Windshear Crag.",
-            route = {
-                Point(MAP.STONETALON, 0.5900, 0.6250, "Windshear Crag",
-                    "Travel to Windshear Crag."),
             },
         },
         {
@@ -214,16 +170,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-webwinder-path",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Webwinder Path.",
-            route = {
-                Point(MAP.STONETALON, 0.6000, 0.6998, "Webwinder Path",
-                    "Travel to Webwinder Path."),
-            },
-        },
-        {
             id = "turnin-1071-a-gnome-s-respite",
             kind = "turnin",
             priority = 170,
@@ -244,28 +190,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.5950, 0.6716, "Gaxim Rustfizzle",
                     "Travel to Gaxim Rustfizzle."),
-            },
-        },
-        {
-            id = "travel-1134-mirkfallon-lake",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Mirkfallon Lake.",
-            route = {
-                Point(MAP.STONETALON, 0.5184, 0.5184, "Continue toward Mirkfallon Lake",
-                    "Continue toward Mirkfallon Lake."),
-                Point(MAP.STONETALON, 0.5154, 0.4863, "Mirkfallon Lake",
-                    "Travel to Mirkfallon Lake."),
-            },
-        },
-        {
-            id = "travel-stonetalon-peak",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Stonetalon Peak.",
-            route = {
-                Point(MAP.STONETALON, 0.3710, 0.0810, "Stonetalon Peak",
-                    "Travel to Stonetalon Peak."),
             },
         },
         {

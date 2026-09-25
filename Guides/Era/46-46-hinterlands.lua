@@ -76,27 +76,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-667-faldir-s-cove",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { quest = { id = 669, state = "completed" } },
-                },
-            },
-            text = "Travel to Faldir's Cove.",
-            route = {
-                Point(MAP.ARATHI, 0.3108, 0.6563, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2158, 0.7295, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2159, 0.7559, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2209, 0.7973, "Faldir's Cove",
-                    "Travel to Faldir's Cove."),
-            },
-        },
-        {
             id = "turnin-670-sunken-treasure",
             kind = "turnin",
             priority = 40,
@@ -201,16 +180,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2877-wildhammer-keep",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Wildhammer Keep.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1482, 0.4457, "Wildhammer Keep",
-                    "Travel to Wildhammer Keep."),
-            },
-        },
-        {
             id = "accept-2877-skulk-rock-clean-up",
             kind = "accept",
             priority = 110,
@@ -305,18 +274,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1452-shindigger-s-camp",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Shindigger's Camp.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.2000, 0.4833, "Continue toward Shindigger's Camp",
-                    "Continue toward Shindigger's Camp."),
-                Point(MAP.HINTERLANDS, 0.2693, 0.4860, "Shindigger's Camp",
-                    "Travel to Shindigger's Camp."),
-            },
-        },
-        {
             id = "turnin-1451-rhapsody-shindigger",
             kind = "turnin",
             priority = 200,
@@ -388,16 +345,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2877-agol-watha",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Agol'watha.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.4654, 0.4046, "Agol'watha",
-                    "Travel to Agol'watha."),
-            },
-        },
-        {
             id = "accept-836-rescue-oox-09-hl",
             kind = "accept",
             priority = 270,
@@ -426,16 +373,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2944-the-overlook-cliffs",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to The Overlook Cliffs.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7236, 0.6607, "The Overlook Cliffs",
-                    "Travel to The Overlook Cliffs."),
-            },
-        },
-        {
             id = "objective-2944-1-the-super-snapper-fx",
             kind = "objective",
             priority = 300,
@@ -456,16 +393,6 @@ ns:RegisterGuide({
             priority = 310,
             text = "Collect 15 Wildkin Feather scattered around The Hinterlands.",
             complete = QuestState(3661, "complete"),
-        },
-        {
-            id = "travel-wildhammer-keep",
-            kind = "travel",
-            priority = 320,
-            text = "Travel or Hearthstone to Wildhammer Keep.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1482, 0.4458, "Wildhammer Keep",
-                    "Travel to Wildhammer Keep."),
-            },
         },
         {
             id = "turnin-2877-skulk-rock-clean-up",
@@ -512,16 +439,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.0974, 0.4450, "Gryphon Master Talonaxe",
                     "Travel to Gryphon Master Talonaxe."),
-            },
-        },
-        {
-            id = "travel-3448-city-of-ironforge",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Hall of Explorers in City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.6600, 0.4520, "Hall of Explorers",
-                    "Travel to Hall of Explorers."),
             },
         },
         {

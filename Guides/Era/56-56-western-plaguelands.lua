@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1004-undercity",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.6774, 0.3791, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "note-1004-undercity",
             kind = "note",
             priority = 20,
@@ -100,16 +90,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5096-the-bulwark",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8314, 0.6892, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "accept-5096-scarlet-diversions",
             kind = "accept",
             priority = 70,
@@ -151,16 +131,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.8328, 0.7236, "Mickey Levine",
                     "Travel to Mickey Levine."),
-            },
-        },
-        {
-            id = "travel-5021-felstone-field",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Felstone Field.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3841, 0.5406, "Felstone Field",
-                    "Travel to Felstone Field."),
             },
         },
         {
@@ -291,16 +261,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5231-the-bulwark",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8303, 0.7192, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "turnin-5230-return-to-the-bulwark",
             kind = "turnin",
             priority = 240,
@@ -321,16 +281,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.8296, 0.7182, "Shadow Priestess Vandis",
                     "Travel to Shadow Priestess Vandis."),
-            },
-        },
-        {
-            id = "travel-5231-dalson-s-tears",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Dalson's Tears.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4780, 0.5070, "Dalson's Tears",
-                    "Travel to Dalson's Tears."),
             },
         },
         {
@@ -425,16 +375,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5233-the-bulwark",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8303, 0.7192, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "turnin-5232-return-to-the-bulwark",
             kind = "turnin",
             priority = 360,
@@ -455,16 +395,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.8303, 0.7192, "Shadow Priestess Vandis",
                     "Travel to Shadow Priestess Vandis."),
-            },
-        },
-        {
-            id = "travel-5233-the-writhing-haunt",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to The Writhing Haunt.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5301, 0.6603, "The Writhing Haunt",
-                    "Travel to The Writhing Haunt."),
             },
         },
         {
@@ -514,16 +444,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5235-the-bulwark",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8303, 0.7192, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "turnin-5234-return-to-the-bulwark",
             kind = "turnin",
             priority = 440,
@@ -544,16 +464,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.8303, 0.7190, "Shadow Priestess Vandis",
                     "Travel to Shadow Priestess Vandis."),
-            },
-        },
-        {
-            id = "travel-5235-gahrron-s-withering",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to Gahrron's Withering.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.6266, 0.5878, "Gahrron's Withering",
-                    "Travel to Gahrron's Withering."),
             },
         },
         {
@@ -589,18 +499,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.6257, 0.5865, "Gahrron's Withering",
                     "Travel to Gahrron's Withering."),
-            },
-        },
-        {
-            id = "travel-thondroril-river",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Thondroril River.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.6658, 0.3976, "Continue toward Thondroril River",
-                    "Continue toward Thondroril River."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.6712, 0.3767, "Thondroril River",
-                    "Travel to Thondroril River."),
             },
         },
     },

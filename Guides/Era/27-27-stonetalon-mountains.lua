@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1087-sun-rock-retreat",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Sun Rock Retreat.",
-            route = {
-                Point(MAP.STONETALON, 0.4596, 0.6036, "Sun Rock Retreat",
-                    "Travel to Sun Rock Retreat."),
-            },
-        },
-        {
             id = "accept-1087-cenarius-legacy",
             kind = "accept",
             priority = 20,
@@ -209,16 +199,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1096-cragpool-lake",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Cragpool Lake.",
-            route = {
-                Point(MAP.STONETALON, 0.6900, 0.4010, "Cragpool Lake",
-                    "Travel to Cragpool Lake."),
-            },
-        },
-        {
             id = "objective-1096-gerenzo-wrenchwhistle",
             kind = "objective",
             priority = 170,
@@ -232,16 +212,6 @@ ns:RegisterGuide({
                     "Continue toward Gerenzo Wrenchwhistle."),
                 Point(MAP.STONETALON, 0.6400, 0.3900, "Gerenzo Wrenchwhistle",
                     "Travel to Gerenzo Wrenchwhistle."),
-            },
-        },
-        {
-            id = "travel-1068-windshear-crag",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Windshear Crag.",
-            route = {
-                Point(MAP.STONETALON, 0.6540, 0.5720, "Windshear Crag",
-                    "Travel to Windshear Crag."),
             },
         },
         {
@@ -303,22 +273,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6381-the-charred-vale",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to The Charred Vale, use the shortcut through the mountain.",
-            route = {
-                Point(MAP.STONETALON, 0.4470, 0.6140, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.4350, 0.6530, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.4100, 0.7060, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.3200, 0.6700, "The Charred Vale",
-                    "Travel to The Charred Vale."),
-            },
-        },
-        {
             id = "objective-6381-new-life",
             kind = "objective",
             priority = 250,
@@ -352,20 +306,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.3200, 0.7600, "Bloodfury Harpy",
                     "Travel to Bloodfury Harpy."),
-            },
-        },
-        {
-            id = "travel-6283-sun-rock-retreat",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Sun Rock Retreat.",
-            route = {
-                Point(MAP.STONETALON, 0.4100, 0.7060, "Continue toward Sun Rock Retreat",
-                    "Continue toward Sun Rock Retreat."),
-                Point(MAP.STONETALON, 0.4350, 0.6530, "Continue toward Sun Rock Retreat",
-                    "Continue toward Sun Rock Retreat."),
-                Point(MAP.STONETALON, 0.4470, 0.6140, "Sun Rock Retreat",
-                    "Travel to Sun Rock Retreat."),
             },
         },
         {

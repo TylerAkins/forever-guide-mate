@@ -42,20 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-6461-malaka-jin",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Malaka'jin.",
-            route = {
-                Point(MAP.STONETALON, 0.8298, 0.9858, "Continue toward Malaka'jin",
-                    "Continue toward Malaka'jin."),
-                Point(MAP.STONETALON, 0.7828, 0.9843, "Continue toward Malaka'jin",
-                    "Continue toward Malaka'jin."),
-                Point(MAP.STONETALON, 0.7455, 0.9784, "Malaka'jin",
-                    "Travel to Malaka'jin."),
-            },
-        },
-        {
             id = "accept-1058-jin-zil-s-forest-magic",
             kind = "accept",
             priority = 20,
@@ -64,16 +50,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.7455, 0.9784, "Witch Doctor Jin'Zil",
                     "Travel to Witch Doctor Jin'Zil."),
-            },
-        },
-        {
-            id = "travel-6301-sun-rock-retreat",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Sun Rock Retreat.",
-            route = {
-                Point(MAP.STONETALON, 0.4596, 0.6036, "Sun Rock Retreat",
-                    "Travel to Sun Rock Retreat."),
             },
         },
         {
@@ -153,16 +129,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6301-mirkfallon-lake",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Mirkfallon Lake.",
-            route = {
-                Point(MAP.STONETALON, 0.4800, 0.4100, "Mirkfallon Lake",
-                    "Travel to Mirkfallon Lake."),
-            },
-        },
-        {
             id = "objective-6301-cycle-of-rebirth",
             kind = "objective",
             priority = 110,
@@ -172,16 +138,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.4800, 0.4100, "Mirkfallon Lake",
                     "Travel to Mirkfallon Lake."),
-            },
-        },
-        {
-            id = "travel-1058-stonetalon-peak",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Stonetalon Peak.",
-            route = {
-                Point(MAP.STONETALON, 0.3200, 0.1000, "Stonetalon Peak",
-                    "Travel to Stonetalon Peak."),
             },
         },
         {
@@ -340,18 +296,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6282-the-charred-vale",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to The Charred Vale.",
-            route = {
-                Point(MAP.STONETALON, 0.4450, 0.6340, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.3200, 0.6700, "The Charred Vale",
-                    "Travel to The Charred Vale."),
-            },
-        },
-        {
             id = "objective-6381-new-life",
             kind = "objective",
             priority = 270,
@@ -397,16 +341,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.3320, 0.6000, "Bloodfury Harpy",
                     "Travel to Bloodfury Harpy."),
-            },
-        },
-        {
-            id = "travel-sun-rock-retreat",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Sun Rock Retreat.",
-            route = {
-                Point(MAP.STONETALON, 0.4726, 0.6111, "Sun Rock Retreat",
-                    "Travel to Sun Rock Retreat."),
             },
         },
         {

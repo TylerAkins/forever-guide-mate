@@ -41,21 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-the-crossroads",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 868, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5110, 0.2962, "The Crossroads",
-                    "Travel to The Crossroads."),
-            },
-        },
-        {
             id = "accept-868-egg-hunt",
             kind = "accept",
             priority = 20,
@@ -64,16 +49,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5110, 0.2962, "Korran",
                     "Travel to Korran."),
-            },
-        },
-        {
-            id = "travel-897-camp-taurajo",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4483, 0.5909, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -156,18 +131,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-879-blackthorn-ridge",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Blackthorn Ridge.",
-            route = {
-                Point(MAP.BARRENS, 0.4674, 0.7963, "Continue toward Blackthorn Ridge",
-                    "Continue toward Blackthorn Ridge."),
-                Point(MAP.BARRENS, 0.4383, 0.8196, "Blackthorn Ridge",
-                    "Travel to Blackthorn Ridge."),
-            },
-        },
-        {
             id = "objective-879-2-nak",
             kind = "objective",
             priority = 110,
@@ -241,16 +204,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-843-southern-gold-road",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to Southern Gold Road.",
-            route = {
-                Point(MAP.BARRENS, 0.4612, 0.7540, "Southern Gold Road",
-                    "Travel to Southern Gold Road."),
-            },
-        },
-        {
             id = "accept-843-gann-s-reclamation",
             kind = "accept",
             priority = 180,
@@ -288,16 +241,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-846-southern-gold-road",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Southern Gold Road.",
-            route = {
-                Point(MAP.BARRENS, 0.4612, 0.7540, "Southern Gold Road",
-                    "Travel to Southern Gold Road."),
-            },
-        },
-        {
             id = "turnin-843-gann-s-reclamation",
             kind = "turnin",
             priority = 220,
@@ -322,16 +265,6 @@ ns:RegisterGuide({
                     "Continue toward Revenge of Gann."),
                 Point(MAP.BARRENS, 0.4610, 0.8130, "Gann Stonespire",
                     "Travel to Gann Stonespire."),
-            },
-        },
-        {
-            id = "travel-camp-taurajo",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4511, 0.5772, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -367,16 +300,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5924, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-the-crossroads-2",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5149, 0.3083, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -454,16 +377,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-907-camp-taurajo",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4484, 0.5912, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
-            },
-        },
-        {
             id = "accept-907-enraged-thunder-lizards",
             kind = "accept",
             priority = 350,
@@ -520,21 +433,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5000, 0.6000, "Thunderhead",
                     "Travel to Thunderhead."),
-            },
-        },
-        {
-            id = "travel-camp-taurajo-2",
-            kind = "travel",
-            priority = 390,
-            conditions = {
-                all = {
-                    { quest = { id = 893, state = "completed" } },
-                },
-            },
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4486, 0.5913, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -598,16 +496,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-846-bael-dun-keep",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Bael'dun Keep.",
-            route = {
-                Point(MAP.BARRENS, 0.4897, 0.8434, "Bael'dun Keep",
-                    "Travel to Bael'dun Keep."),
-            },
-        },
-        {
             id = "objective-846-revenge-of-gann",
             kind = "objective",
             priority = 440,
@@ -617,23 +505,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4900, 0.8400, "Bael'dun Rifleman",
                     "Travel to Bael'dun Rifleman."),
-            },
-        },
-        {
-            id = "travel-southern-gold-road",
-            kind = "travel",
-            priority = 450,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 849, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Southern Gold Road.",
-            route = {
-                Point(MAP.BARRENS, 0.4600, 0.7500, "Continue toward Southern Gold Road",
-                    "Continue toward Southern Gold Road."),
-                Point(MAP.BARRENS, 0.4600, 0.8100, "Southern Gold Road",
-                    "Travel to Southern Gold Road."),
             },
         },
         {
@@ -661,16 +532,6 @@ ns:RegisterGuide({
                     "Continue toward Revenge of Gann."),
                 Point(MAP.BARRENS, 0.4600, 0.8100, "Gann Stonespire",
                     "Travel to Gann Stonespire."),
-            },
-        },
-        {
-            id = "travel-bael-modan",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Bael Modan.",
-            route = {
-                Point(MAP.BARRENS, 0.4666, 0.8545, "Bael Modan",
-                    "Travel to Bael Modan."),
             },
         },
         {
@@ -718,16 +579,6 @@ ns:RegisterGuide({
                     "Continue toward Washte Pawne."),
                 Point(MAP.BARRENS, 0.4760, 0.7940, "Washte Pawne",
                     "Travel to Washte Pawne."),
-            },
-        },
-        {
-            id = "travel-4542-the-great-lift",
-            kind = "travel",
-            priority = 520,
-            text = "Run to The Great Lift.",
-            route = {
-                Point(MAP.BARRENS, 0.4400, 0.9200, "The Great Lift",
-                    "Travel to The Great Lift."),
             },
         },
         {

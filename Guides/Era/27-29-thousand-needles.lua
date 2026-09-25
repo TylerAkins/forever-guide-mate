@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1130-camp-taurajo",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4484, 0.5909, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
-            },
-        },
-        {
             id = "accept-1130-melor-sends-word",
             kind = "accept",
             priority = 20,
@@ -76,21 +66,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4509, 0.5772, "Tatternack Steelforge",
                     "Travel to Tatternack Steelforge."),
-            },
-        },
-        {
-            id = "travel-thunder-bluff",
-            kind = "travel",
-            priority = 40,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1131, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.6136, 0.8067, "Thunder Bluff",
-                    "Travel to Thunder Bluff."),
             },
         },
         {
@@ -163,16 +138,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.2300, 0.2100, "Apothecary Zamah",
                     "Travel to Apothecary Zamah."),
-            },
-        },
-        {
-            id = "travel-4841-freewind-post",
-            kind = "travel",
-            priority = 100,
-            text = "Run to Freewind Post use the Elevator at.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4700, 0.4820, "Freewind Post",
-                    "Travel to Freewind Post."),
             },
         },
         {
@@ -323,16 +288,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5064-freewind-post",
-            kind = "travel",
-            priority = 230,
-            text = "Run to Freewind Post use the Elevator at.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4700, 0.4820, "Freewind Post",
-                    "Travel to Freewind Post."),
-            },
-        },
-        {
             id = "turnin-4841-pacify-the-centaur",
             kind = "turnin",
             priority = 240,
@@ -446,16 +401,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1197-freewind-post",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Freewind Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4610, 0.5150, "Freewind Post",
-                    "Travel to Freewind Post."),
-            },
-        },
-        {
             id = "note-1197-freewind-post",
             kind = "note",
             priority = 330,
@@ -493,16 +438,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1197-splithoof-hold",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Splithoof Hold cave.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4403, 0.3740, "Splithoof Hold",
-                    "Travel to Splithoof Hold."),
-            },
-        },
-        {
             id = "objective-1197-the-sacred-flame",
             kind = "objective",
             priority = 370,
@@ -537,20 +472,6 @@ ns:RegisterGuide({
                     "Continue toward Galak Messenger."),
                 Point(MAP.THOUSAND_NEEDLES, 0.1890, 0.2710, "Galak Messenger",
                     "Travel to Galak Messenger."),
-            },
-        },
-        {
-            id = "travel-5151-whitereach-post",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Whitereach Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.3267, 0.2442, "Continue toward Whitereach Post",
-                    "Continue toward Whitereach Post."),
-                Point(MAP.THOUSAND_NEEDLES, 0.2926, 0.3394, "Continue toward Whitereach Post",
-                    "Continue toward Whitereach Post."),
-                Point(MAP.THOUSAND_NEEDLES, 0.2146, 0.3252, "Wizlo Bearingshiner",
-                    "Travel to Wizlo Bearingshiner."),
             },
         },
         {
@@ -600,18 +521,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4767-highperch",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Highperch.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.1462, 0.3260, "Continue toward Highperch",
-                    "Continue toward Highperch."),
-                Point(MAP.THOUSAND_NEEDLES, 0.1738, 0.4200, "Highperch",
-                    "Travel to Highperch."),
-            },
-        },
-        {
             id = "objective-4767-wind-rider",
             kind = "objective",
             priority = 450,
@@ -646,21 +555,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.1515, 0.3270, "Pao'ka Swiftmountain",
                     "Travel to Pao'ka Swiftmountain."),
-            },
-        },
-        {
-            id = "travel-hunter-rise",
-            kind = "travel",
-            priority = 480,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1136, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Hunter Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.6131, 0.8077, "Hunter Rise",
-                    "Travel to Hunter Rise."),
             },
         },
         {
@@ -710,16 +604,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-freewind-post",
-            kind = "travel",
-            priority = 530,
-            text = "Travel to Freewind Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4612, 0.5162, "Freewind Post",
-                    "Travel to Freewind Post."),
-            },
-        },
-        {
             id = "turnin-4767-wind-rider",
             kind = "turnin",
             priority = 540,
@@ -746,16 +630,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.4612, 0.5162, "Rau Cliffrunner",
                     "Travel to Rau Cliffrunner."),
-            },
-        },
-        {
-            id = "travel-5064-darkcloud-pinnacle",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Darkcloud Pinnacle.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.3183, 0.3264, "Darkcloud Pinnacle",
-                    "Travel to Darkcloud Pinnacle."),
             },
         },
         {
@@ -837,16 +711,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5147-darkcloud-pinnacle",
-            kind = "travel",
-            priority = 630,
-            text = "Travel to Darkcloud Pinnacle.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.3913, 0.2937, "Darkcloud Pinnacle",
-                    "Travel to Darkcloud Pinnacle."),
-            },
-        },
-        {
             id = "objective-5147-wanted-arnak-grimtotem",
             kind = "objective",
             priority = 640,
@@ -884,16 +748,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5151-whitereach-post-2",
-            kind = "travel",
-            priority = 670,
-            text = "Travel to Whitereach Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.2160, 0.3232, "Whitereach Post",
-                    "Travel to Whitereach Post."),
-            },
-        },
-        {
             id = "turnin-5088-arikara",
             kind = "turnin",
             priority = 680,
@@ -927,16 +781,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.2257, 0.2323, "Enraged Panther",
                     "Travel to Enraged Panther."),
-            },
-        },
-        {
-            id = "travel-4966-whitereach-post",
-            kind = "travel",
-            priority = 710,
-            text = "Travel to Whitereach Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.2160, 0.3232, "Whitereach Post",
-                    "Travel to Whitereach Post."),
             },
         },
         {
@@ -984,16 +828,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.2134, 0.3205, "Kanati Greycloud",
                     "Travel to Kanati Greycloud."),
-            },
-        },
-        {
-            id = "travel-freewind-post-2",
-            kind = "travel",
-            priority = 760,
-            text = "Travel to Freewind Post.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4600, 0.5153, "Freewind Post",
-                    "Travel to Freewind Post."),
             },
         },
         {

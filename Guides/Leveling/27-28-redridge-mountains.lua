@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-128-redridge-mountains",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to in Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3152, 0.5790, "Lakeshire",
-                    "Travel to Lakeshire."),
-            },
-        },
-        {
             id = "accept-128-blackrock-bounty",
             kind = "accept",
             priority = 20,
@@ -364,16 +354,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-180-galardell-valley",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Galardell Valley.",
-            route = {
-                Point(MAP.REDRIDGE, 0.7910, 0.3719, "Galardell Valley",
-                    "Travel to Galardell Valley."),
-            },
-        },
-        {
             id = "objective-180-wanted-lieutenant-fangore",
             kind = "objective",
             priority = 220,
@@ -395,16 +375,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.7400, 0.4700, "Shadowhide Warrior",
                     "Travel to Shadowhide Warrior."),
-            },
-        },
-        {
-            id = "travel-lakeshire",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2964, 0.4435, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {

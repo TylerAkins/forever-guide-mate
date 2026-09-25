@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-4102-emerald-sanctuary",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.5106, 0.8191, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
-            },
-        },
-        {
             id = "accept-5155-forces-of-jaedenar",
             kind = "accept",
             priority = 20,
@@ -131,16 +121,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4293-ruins-of-constellas",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Ruins of Constellas.",
-            route = {
-                Point(MAP.FELWOOD, 0.4041, 0.7154, "Ruins of Constellas",
-                    "Travel to Ruins of Constellas."),
-            },
-        },
-        {
             id = "objective-4293-cursed-ooze",
             kind = "objective",
             priority = 100,
@@ -151,16 +131,6 @@ ns:RegisterGuide({
                     "Continue toward Cursed Ooze."),
                 Point(MAP.FELWOOD, 0.4067, 0.6691, "Cursed Ooze",
                     "Travel to Cursed Ooze."),
-            },
-        },
-        {
-            id = "travel-5155-jaedenar",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Jaedenar.",
-            route = {
-                Point(MAP.FELWOOD, 0.3936, 0.5817, "Jaedenar",
-                    "Travel to Jaedenar."),
             },
         },
         {
@@ -193,18 +163,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5156-bloodvenom-post",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3995, 0.5072, "Continue toward Bloodvenom Post",
-                    "Continue toward Bloodvenom Post."),
-                Point(MAP.FELWOOD, 0.3497, 0.5046, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "accept-6162-a-husband-s-last-battle",
             kind = "accept",
             priority = 150,
@@ -227,18 +185,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5156-shatter-scar-vale",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to Shatter Scar Vale.",
-            route = {
-                Point(MAP.FELWOOD, 0.4332, 0.7451, "Continue toward Shatter Scar Vale",
-                    "Continue toward Shatter Scar Vale."),
-                Point(MAP.FELWOOD, 0.4055, 0.4280, "Shatter Scar Vale",
-                    "Travel to Shatter Scar Vale."),
-            },
-        },
-        {
             id = "objective-5156-verifying-the-corruption",
             kind = "objective",
             priority = 180,
@@ -248,22 +194,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.4055, 0.4280, "Maeva Snowbraid",
                     "Travel to Maeva Snowbraid."),
-            },
-        },
-        {
-            id = "travel-4102-irontree-woods",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Irontree Woods.",
-            route = {
-                Point(MAP.FELWOOD, 0.3997, 0.3423, "Continue toward Irontree Woods",
-                    "Continue toward Irontree Woods."),
-                Point(MAP.FELWOOD, 0.4117, 0.2488, "Continue toward Irontree Woods",
-                    "Continue toward Irontree Woods."),
-                Point(MAP.FELWOOD, 0.5017, 0.1410, "Continue toward Irontree Woods",
-                    "Continue toward Irontree Woods."),
-                Point(MAP.FELWOOD, 0.5507, 0.1771, "Irontree Woods",
-                    "Travel to Irontree Woods."),
             },
         },
         {
@@ -279,16 +209,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4102-irontree-woods-2",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Irontree Woods.",
-            route = {
-                Point(MAP.FELWOOD, 0.5507, 0.1771, "Irontree Woods",
-                    "Travel to Irontree Woods."),
-            },
-        },
-        {
             id = "objective-4120-the-strength-of-corruption",
             kind = "objective",
             priority = 220,
@@ -301,16 +221,6 @@ ns:RegisterGuide({
                     "Continue toward The Strength of Corruption."),
                 Point(MAP.FELWOOD, 0.5676, 0.2496, "Angerclaw Grizzly",
                     "Travel to Angerclaw Grizzly."),
-            },
-        },
-        {
-            id = "travel-8461-timbermaw-hold",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Timbermaw Hold.",
-            route = {
-                Point(MAP.FELWOOD, 0.6475, 0.0814, "Timbermaw Hold",
-                    "Travel to Timbermaw Hold."),
             },
         },
         {
@@ -378,26 +288,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-moonglade",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Moonglade.",
-            route = {
-                Point(MAP.MOONGLADE, 0.3576, 0.7241, "Moonglade",
-                    "Travel to Moonglade."),
-            },
-        },
-        {
-            id = "travel-5157-bloodvenom-post",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3472, 0.5275, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "accept-4505-well-of-corruption",
             kind = "accept",
             priority = 310,
@@ -406,29 +296,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.3421, 0.5234, "Winna Hazzard",
                     "Travel to Winna Hazzard."),
-            },
-        },
-        {
-            id = "travel-emerald-sanctuary",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5157, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.3715, 0.4969, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4133, 0.5144, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4330, 0.6713, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4355, 0.7498, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4675, 0.8313, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -475,16 +342,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4505-ruins-of-constellas",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Ruins of Constellas.",
-            route = {
-                Point(MAP.FELWOOD, 0.3884, 0.6679, "Ruins of Constellas",
-                    "Travel to Ruins of Constellas."),
-            },
-        },
-        {
             id = "objective-4505-well-of-corruption",
             kind = "objective",
             priority = 370,
@@ -496,20 +353,6 @@ ns:RegisterGuide({
                     "Continue toward Well of Corruption."),
                 Point(MAP.FELWOOD, 0.3228, 0.6656, "Ruins of Constellas",
                     "Travel to Ruins of Constellas."),
-            },
-        },
-        {
-            id = "travel-5157-jaedenar",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Jaedenar.",
-            route = {
-                Point(MAP.FELWOOD, 0.3907, 0.6756, "Continue toward Jaedenar",
-                    "Continue toward Jaedenar."),
-                Point(MAP.FELWOOD, 0.4212, 0.6344, "Continue toward Jaedenar",
-                    "Continue toward Jaedenar."),
-                Point(MAP.FELWOOD, 0.4127, 0.5993, "Jaedenar",
-                    "Travel to Jaedenar."),
             },
         },
         {
@@ -563,20 +406,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4506-bloodvenom-post",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3861, 0.5904, "Continue toward Bloodvenom Post",
-                    "Continue toward Bloodvenom Post."),
-                Point(MAP.FELWOOD, 0.3737, 0.4965, "Continue toward Bloodvenom Post",
-                    "Continue toward Bloodvenom Post."),
-                Point(MAP.FELWOOD, 0.3473, 0.5068, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "turnin-4505-well-of-corruption",
             kind = "turnin",
             priority = 430,
@@ -612,22 +441,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-emerald-sanctuary-2",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to Emerald Sanctuary.",
-            route = {
-                Point(MAP.FELWOOD, 0.3547, 0.4986, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4137, 0.5165, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.4361, 0.7506, "Continue toward Emerald Sanctuary",
-                    "Continue toward Emerald Sanctuary."),
-                Point(MAP.FELWOOD, 0.5121, 0.8210, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
-            },
-        },
-        {
             id = "turnin-5157-collection-of-the-corrupt-water",
             kind = "turnin",
             priority = 470,
@@ -642,18 +455,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.5121, 0.8210, "Greta Mosshoof",
                     "Travel to Greta Mosshoof."),
-            },
-        },
-        {
-            id = "travel-4506-ruins-of-constellas",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Ruins of Constellas.",
-            route = {
-                Point(MAP.FELWOOD, 0.4326, 0.7027, "Continue toward Ruins of Constellas",
-                    "Continue toward Ruins of Constellas."),
-                Point(MAP.FELWOOD, 0.3820, 0.6671, "Ruins of Constellas",
-                    "Travel to Ruins of Constellas."),
             },
         },
         {
@@ -689,24 +490,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5085-felpaw-village",
-            kind = "travel",
-            priority = 510,
-            text = "Travel to Felpaw Village.",
-            route = {
-                Point(MAP.FELWOOD, 0.3953, 0.4563, "Continue toward Felpaw Village",
-                    "Continue toward Felpaw Village."),
-                Point(MAP.FELWOOD, 0.4123, 0.2413, "Continue toward Felpaw Village",
-                    "Continue toward Felpaw Village."),
-                Point(MAP.FELWOOD, 0.5153, 0.1357, "Continue toward Felpaw Village",
-                    "Continue toward Felpaw Village."),
-                Point(MAP.FELWOOD, 0.6181, 0.1480, "Continue toward Felpaw Village",
-                    "Continue toward Felpaw Village."),
-                Point(MAP.FELWOOD, 0.6020, 0.0588, "Felpaw Village",
-                    "Travel to Felpaw Village."),
-            },
-        },
-        {
             id = "turnin-5084-falling-to-corruption",
             kind = "turnin",
             priority = 520,
@@ -726,16 +509,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.6020, 0.0588, "Felpaw Village",
                     "Travel to Felpaw Village."),
-            },
-        },
-        {
-            id = "travel-frostfire-hot-springs",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Frostfire Hot Springs in Winterspring.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.2775, 0.3458, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
             },
         },
         {

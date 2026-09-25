@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1164-undercity",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.6480, 0.4960, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "accept-1164-to-steal-from-thieves",
             kind = "accept",
             priority = 20,
@@ -61,21 +51,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.6376, 0.4917, "Genavie Callow",
                     "Travel to Genavie Callow."),
-            },
-        },
-        {
-            id = "travel-grom-gol-base-camp",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 638, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3218, 0.2882, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
             },
         },
         {
@@ -90,22 +65,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-tarren-mill",
-            kind = "travel",
-            priority = 50,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 676, state = "activeOrCompleted" } } },
-                    { ["not"] = { quest = { id = 676, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.ARATHI, 0.6190, 0.1970, "Tarren Mill",
-                    "Travel to Tarren Mill."),
-            },
-        },
-        {
             id = "accept-676-the-hammer-may-fall",
             kind = "accept",
             priority = 60,
@@ -114,22 +73,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.6190, 0.1970, "Tallow",
                     "Travel to Tallow."),
-            },
-        },
-        {
-            id = "travel-655-hammerfall",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Hammerfall in Arathi Highlands.",
-            route = {
-                Point(MAP.ARATHI, 0.3077, 0.5166, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.4549, 0.5900, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.5173, 0.5786, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.7298, 0.4335, "Hammerfall",
-                    "Travel to Hammerfall."),
             },
         },
         {
@@ -333,17 +276,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-651-3-circle-of-outer-binding",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Circle of Outer Binding.",
-            complete = QuestObjective(651, 3),
-            route = {
-                Point(MAP.ARATHI, 0.6680, 0.2970, "Circle of Outer Binding",
-                    "Travel to Circle of Outer Binding."),
-            },
-        },
-        {
             id = "objective-651-3-cresting-key",
             kind = "objective",
             priority = 260,
@@ -353,17 +285,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.6680, 0.2970, "Circle of Outer Binding",
                     "Travel to Circle of Outer Binding."),
-            },
-        },
-        {
-            id = "travel-651-2-circle-of-east-binding",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Circle of East Binding.",
-            complete = QuestObjective(651, 2),
-            route = {
-                Point(MAP.ARATHI, 0.5210, 0.5070, "Circle of East Binding",
-                    "Travel to Circle of East Binding."),
             },
         },
         {
@@ -403,16 +324,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-671-northfold-manor",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Northfold Manor.",
-            route = {
-                Point(MAP.ARATHI, 0.3340, 0.2697, "Northfold Manor",
-                    "Travel to Northfold Manor."),
-            },
-        },
-        {
             id = "objective-671-foul-magics",
             kind = "objective",
             priority = 320,
@@ -425,16 +336,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-651-circle-of-west-binding",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Circle of West Binding.",
-            route = {
-                Point(MAP.ARATHI, 0.2540, 0.3030, "Circle of West Binding",
-                    "Travel to Circle of West Binding."),
-            },
-        },
-        {
             id = "objective-651-1-burning-key",
             kind = "objective",
             priority = 340,
@@ -444,21 +345,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.2540, 0.3030, "Circle of West Binding",
                     "Travel to Circle of West Binding."),
-            },
-        },
-        {
-            id = "travel-639-stromgarde-keep",
-            kind = "travel",
-            priority = 350,
-            conditions = {
-                all = {
-                    { quest = { id = 638, state = "completed" } },
-                },
-            },
-            text = "Travel to Stromgarde Keep.",
-            route = {
-                Point(MAP.ARATHI, 0.2628, 0.6259, "Stromgarde Keep",
-                    "Travel to Stromgarde Keep."),
             },
         },
         {
@@ -476,16 +362,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.2628, 0.6259, "Syndicate Prowler",
                     "Travel to Syndicate Prowler."),
-            },
-        },
-        {
-            id = "travel-circle-of-inner-binding",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Circle of Inner Binding.",
-            route = {
-                Point(MAP.ARATHI, 0.3613, 0.5742, "Circle of Inner Binding",
-                    "Travel to Circle of Inner Binding."),
             },
         },
         {
@@ -533,16 +409,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.3611, 0.5793, "Circle of Inner Binding",
                     "Travel to Circle of Inner Binding."),
-            },
-        },
-        {
-            id = "travel-677-hammerfall",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Hammerfall.",
-            route = {
-                Point(MAP.ARATHI, 0.7461, 0.3632, "Hammerfall",
-                    "Travel to Hammerfall."),
             },
         },
         {
@@ -651,16 +517,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-678-hammerfall",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to Hammerfall.",
-            route = {
-                Point(MAP.ARATHI, 0.7420, 0.3386, "Hammerfall",
-                    "Travel to Hammerfall."),
-            },
-        },
-        {
             id = "turnin-677-call-to-arms",
             kind = "turnin",
             priority = 530,
@@ -684,16 +540,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-678-boulderfist-hall",
-            kind = "travel",
-            priority = 550,
-            text = "Travel to Boulderfist Hall.",
-            route = {
-                Point(MAP.ARATHI, 0.5368, 0.7408, "Boulderfist Hall",
-                    "Travel to Boulderfist Hall."),
-            },
-        },
-        {
             id = "objective-678-call-to-arms",
             kind = "objective",
             priority = 560,
@@ -706,16 +552,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-679-hammerfall",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Hammerfall.",
-            route = {
-                Point(MAP.ARATHI, 0.7422, 0.3377, "Hammerfall",
-                    "Travel to Hammerfall."),
-            },
-        },
-        {
             id = "turnin-678-call-to-arms",
             kind = "turnin",
             priority = 580,
@@ -725,20 +561,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.7422, 0.3377, "Drum Fel",
                     "Travel to Drum Fel."),
-            },
-        },
-        {
-            id = "travel-663-faldir-s-cove",
-            kind = "travel",
-            priority = 590,
-            text = "Travel to Faldir's Cove.",
-            route = {
-                Point(MAP.ARATHI, 0.3148, 0.6388, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2142, 0.7506, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.3172, 0.8267, "Faldir's Cove",
-                    "Travel to Faldir's Cove."),
             },
         },
         {
@@ -923,22 +745,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-668-faldir-s-cove",
-            kind = "travel",
-            priority = 750,
-            text = "Travel to Faldir's Cove.",
-            route = {
-                Point(MAP.ARATHI, 0.3108, 0.6563, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2158, 0.7295, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2159, 0.7559, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2209, 0.7973, "Faldir's Cove",
-                    "Travel to Faldir's Cove."),
-            },
-        },
-        {
             id = "turnin-662-deep-sea-salvage",
             kind = "turnin",
             priority = 760,
@@ -1098,16 +904,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.1890, 0.6750, "Boulderfist Shaman",
                     "Travel to Boulderfist Shaman."),
-            },
-        },
-        {
-            id = "travel-hammerfall",
-            kind = "travel",
-            priority = 900,
-            text = "Travel to Hammerfall.",
-            route = {
-                Point(MAP.ARATHI, 0.7416, 0.3382, "Hammerfall",
-                    "Travel to Hammerfall."),
             },
         },
         {

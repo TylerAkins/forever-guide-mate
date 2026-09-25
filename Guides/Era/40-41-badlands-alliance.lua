@@ -128,16 +128,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-713-city-of-ironforge",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.2400, 0.7000, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "objective-713-frost-oil",
             kind = "objective",
             priority = 70,
@@ -204,16 +194,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2500-loch-modan",
-            kind = "travel",
-            priority = 130,
-            text = "Travek to Loch Modan.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3700, 0.4920, "Loch Modan",
-                    "Travel to Loch Modan."),
-            },
-        },
-        {
             id = "accept-2500-badlands-reagent-run",
             kind = "accept",
             priority = 140,
@@ -222,16 +202,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.3706, 0.4936, "Ghak Healtouch",
                     "Travel to Ghak Healtouch."),
-            },
-        },
-        {
-            id = "travel-738-ironband-s-excavation-site",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to Ironband's Excavation Site.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.6594, 0.6562, "Ironband's Excavation Site",
-                    "Travel to Ironband's Excavation Site."),
             },
         },
         {
@@ -260,16 +230,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.6594, 0.6562, "Prospector Ironband",
                     "Travel to Prospector Ironband."),
-            },
-        },
-        {
-            id = "travel-706-badlands",
-            kind = "travel",
-            priority = 180,
-            text = "Travel south to Badlands.",
-            route = {
-                Point(MAP.BADLANDS, 0.5370, 0.4330, "Badlands",
-                    "Travel to Badlands."),
             },
         },
         {
@@ -306,16 +266,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-703-valley-of-fangs",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Valley of Fangs.",
-            route = {
-                Point(MAP.BADLANDS, 0.4237, 0.5294, "Valley of Fangs",
-                    "Travel to Valley of Fangs."),
-            },
-        },
-        {
             id = "accept-1108-indurium",
             kind = "accept",
             priority = 230,
@@ -343,16 +293,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-718-camp-kosh",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Camp Kosh.",
-            route = {
-                Point(MAP.BADLANDS, 0.6690, 0.2346, "Camp Kosh",
-                    "Travel to Camp Kosh."),
-            },
-        },
-        {
             id = "objective-718-mirages",
             kind = "objective",
             priority = 260,
@@ -362,16 +302,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.6690, 0.2346, "Camp Kosh",
                     "Travel to Camp Kosh."),
-            },
-        },
-        {
-            id = "travel-719-hammertoe-s-digsite",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Hammertoe's Digsite.",
-            route = {
-                Point(MAP.BADLANDS, 0.5300, 0.3410, "Hammertoe's Digsite",
-                    "Travel to Hammertoe's Digsite."),
             },
         },
         {
@@ -557,16 +487,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-739-agmond-s-end",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to Agmond's End.",
-            route = {
-                Point(MAP.BADLANDS, 0.5092, 0.6236, "Agmond's End",
-                    "Travel to Agmond's End."),
-            },
-        },
-        {
             id = "objective-732-tremors-of-the-earth",
             kind = "objective",
             priority = 420,
@@ -586,16 +506,6 @@ ns:RegisterGuide({
                     "Continue toward Tremors of the Earth."),
                 Point(MAP.BADLANDS, 0.2300, 0.5200, "Boss Tho'grun",
                     "Travel to Boss Tho'grun."),
-            },
-        },
-        {
-            id = "travel-732-agmond-s-end",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Agmond's End.",
-            route = {
-                Point(MAP.BADLANDS, 0.5092, 0.6236, "Agmond's End",
-                    "Travel to Agmond's End."),
             },
         },
         {
@@ -636,16 +546,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.4217, 0.5310, "Martek the Exiled",
                     "Travel to Martek the Exiled."),
-            },
-        },
-        {
-            id = "travel-710-the-dustbowl",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to The Dustbowl.",
-            route = {
-                Point(MAP.BADLANDS, 0.2591, 0.4491, "The Dustbowl",
-                    "Travel to The Dustbowl."),
             },
         },
         {
@@ -742,16 +642,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-733-camp-cagg",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Camp Cagg.",
-            route = {
-                Point(MAP.BADLANDS, 0.1058, 0.7772, "Camp Cagg",
-                    "Travel to Camp Cagg."),
-            },
-        },
-        {
             id = "objective-733-scrounging",
             kind = "objective",
             priority = 570,
@@ -773,16 +663,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.1703, 0.8440, "Greater Rock Elemental",
                     "Travel to Greater Rock Elemental."),
-            },
-        },
-        {
-            id = "travel-734-the-dustbowl",
-            kind = "travel",
-            priority = 590,
-            text = "Travel to The Dustbowl.",
-            route = {
-                Point(MAP.BADLANDS, 0.2591, 0.4491, "The Dustbowl",
-                    "Travel to The Dustbowl."),
             },
         },
         {
@@ -927,16 +807,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ironband-s-excavation-site",
-            kind = "travel",
-            priority = 720,
-            text = "Travel to Ironband's Excavation Site in Loch Modan.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.6588, 0.6559, "Ironband's Excavation Site",
-                    "Travel to Ironband's Excavation Site."),
-            },
-        },
-        {
             id = "turnin-739-murdaloc",
             kind = "turnin",
             priority = 730,
@@ -967,16 +837,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.6588, 0.6559, "Prospector Ironband",
                     "Travel to Prospector Ironband."),
-            },
-        },
-        {
-            id = "travel-thelsamar",
-            kind = "travel",
-            priority = 750,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3706, 0.4936, "Thelsamar",
-                    "Travel to Thelsamar."),
             },
         },
         {

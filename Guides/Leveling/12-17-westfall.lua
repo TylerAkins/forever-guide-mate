@@ -291,22 +291,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1786-heroes-vigil",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Heroes' Vigil.",
-            route = {
-                Point(MAP.ELWYNN, 0.7253, 0.5140, "Heroes' Vigil",
-                    "Travel to Heroes' Vigil."),
-            },
-        },
-        {
             id = "objective-1786-the-tome-of-divinity",
             kind = "objective",
             priority = 160,
@@ -375,22 +359,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7361, 0.5114, "Rogue Wizard",
                     "Travel to Rogue Wizard."),
-            },
-        },
-        {
-            id = "travel-1788-cathedral-of-light",
-            kind = "travel",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Cathedral of Light.",
-            route = {
-                Point(MAP.STORMWIND, 0.3849, 0.2638, "Cathedral of Light",
-                    "Travel to Cathedral of Light."),
             },
         },
         {
@@ -693,24 +661,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1783-ironband-s-compound",
-            kind = "travel",
-            priority = 380,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Ironband's Compound.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5154, 0.4012, "Continue toward Ironband's Compound",
-                    "Continue toward Ironband's Compound."),
-                Point(MAP.DUN_MOROGH, 0.7833, 0.5806, "Ironband's Compound",
-                    "Travel to Ironband's Compound."),
-            },
-        },
-        {
             id = "objective-1783-narm-faulk",
             kind = "objective",
             priority = 390,
@@ -778,22 +728,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1785-hall-of-mysteries",
-            kind = "travel",
-            priority = 430,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Hall of Mysteries.",
-            route = {
-                Point(MAP.IRONFORGE, 0.2356, 0.0838, "Hall of Mysteries",
-                    "Travel to Hall of Mysteries."),
-            },
-        },
-        {
             id = "turnin-1784-the-tome-of-divinity",
             kind = "turnin",
             priority = 440,
@@ -844,64 +778,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.2751, 0.1218, "Tiza Battleforge",
                     "Travel to Tiza Battleforge."),
-            },
-        },
-        {
-            id = "travel-307-menethil-harbor",
-            kind = "travel",
-            priority = 470,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Travel to Menethil Harbor.",
-            route = {
-                Point(MAP.WETLANDS, 0.0960, 0.5960, "Menethil Harbor",
-                    "Travel to Menethil Harbor."),
-            },
-        },
-        {
-            id = "travel-307-algaz-station",
-            kind = "travel",
-            priority = 480,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Follow the road to Algaz Station in Loch Modan.",
-            route = {
-                Point(MAP.WETLANDS, 0.1129, 0.5352, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.1444, 0.4560, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.2313, 0.4343, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.3216, 0.3921, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.3735, 0.3679, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.4979, 0.3921, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5626, 0.5275, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5788, 0.6170, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5771, 0.6911, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5439, 0.7204, "Algaz Station",
-                    "Travel to Algaz Station."),
-            },
-        },
-        {
-            id = "travel-109-the-jansen-stead",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to The Jansen Stead.",
-            route = {
-                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
-                    "Travel to The Jansen Stead."),
             },
         },
         {
@@ -1000,16 +876,6 @@ ns:RegisterGuide({
             text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
-        },
-        {
-            id = "travel-6181-sentinel-hill",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5630, 0.4760, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
         },
         {
             id = "accept-12-the-people-s-militia",
@@ -1127,21 +993,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6261-stormwind-city",
-            kind = "travel",
-            priority = 650,
-            conditions = {
-                all = {
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.5623, 0.6459, "Stormwind City",
-                    "Travel to Stormwind City."),
-            },
-        },
-        {
             id = "turnin-61-shipment-to-stormwind",
             kind = "turnin",
             priority = 660,
@@ -1240,21 +1091,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-353-sentinel-hill",
-            kind = "travel",
-            priority = 710,
-            conditions = {
-                all = {
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Sentinel Hill. Dungar Longdrink in Trade District.",
-            route = {
-                Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
-                    "Travel to Dungar Longdrink."),
-            },
-        },
-        {
             id = "turnin-98021-journey-to-sentinel-hill",
             kind = "turnin",
             priority = 715,
@@ -1330,21 +1166,6 @@ ns:RegisterGuide({
                     "Continue toward Red Leather Bandanas."),
                 Point(MAP.WESTFALL, 0.4681, 0.3949, "Defias Smuggler",
                     "Travel to Defias Smuggler."),
-            },
-        },
-        {
-            id = "travel-sentinel-hill",
-            kind = "travel",
-            priority = 750,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 13, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5399, 0.5298, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
             },
         },
         {
@@ -1492,16 +1313,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-sentinel-hill-2",
-            kind = "travel",
-            priority = 860,
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5636, 0.4759, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
-        },
-        {
             id = "turnin-92742-testing-the-wells",
             kind = "turnin",
             priority = 865,
@@ -1571,16 +1382,6 @@ ns:RegisterGuide({
                     "Continue toward Goretusk Liver Pie."),
                 Point(MAP.WESTFALL, 0.4656, 0.1945, "Young Goretusk",
                     "Travel to Young Goretusk."),
-            },
-        },
-        {
-            id = "travel-64-saldean-s-farm",
-            kind = "travel",
-            priority = 900,
-            text = "Travel to Saldean's Farm.",
-            route = {
-                Point(MAP.WESTFALL, 0.5642, 0.3048, "Saldean's Farm",
-                    "Travel to Saldean's Farm."),
             },
         },
         {
@@ -1697,16 +1498,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
                     "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "travel-13-moonbrook",
-            kind = "travel",
-            priority = 970,
-            text = "Travel to Moonbrook.",
-            route = {
-                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
-                    "Travel to Moonbrook."),
             },
         },
         {
@@ -1835,21 +1626,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-sentinel-hill-3",
-            kind = "travel",
-            priority = 990,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 14, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
-        },
-        {
             id = "turnin-13-the-people-s-militia",
             kind = "turnin",
             priority = 1000,
@@ -1905,16 +1681,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5633, 0.4752, "Marshal Gryan Stoutmantle",
                     "Travel to Marshal Gryan Stoutmantle."),
-            },
-        },
-        {
-            id = "travel-244-three-corners",
-            kind = "travel",
-            priority = 1030,
-            text = "Travel to Three Corners in Redridge Mountains.",
-            route = {
-                Point(MAP.REDRIDGE, 0.1532, 0.7142, "Three Corners",
-                    "Travel to Three Corners."),
             },
         },
         {
@@ -2085,16 +1851,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-135-sentinel-hill",
-            kind = "travel",
-            priority = 1170,
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5628, 0.4753, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
-        },
-        {
             id = "turnin-132-the-defias-brotherhood",
             kind = "turnin",
             priority = 1180,
@@ -2115,21 +1871,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5628, 0.4753, "Marshal Gryan Stoutmantle",
                     "Travel to Marshal Gryan Stoutmantle."),
-            },
-        },
-        {
-            id = "travel-stormwind-city",
-            kind = "travel",
-            priority = 1200,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 121, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.6404, 0.7531, "Stormwind City",
-                    "Travel to Stormwind City."),
             },
         },
         {
@@ -2191,16 +1932,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-119-goldshire",
-            kind = "travel",
-            priority = 1260,
-            text = "Travel to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4170, 0.6553, "Goldshire",
-                    "Travel to Goldshire."),
-            },
-        },
-        {
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
             priority = 1270,
@@ -2233,16 +1964,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4380, 0.6580, "Barkeep Dobbins",
                     "Travel to Barkeep Dobbins."),
-            },
-        },
-        {
-            id = "travel-122-lakeshire",
-            kind = "travel",
-            priority = 1300,
-            text = "Travel or Hearthstone to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3090, 0.4730, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {
@@ -2289,16 +2010,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.3000, 0.4441, "Magistrate Solomon",
                     "Travel to Magistrate Solomon."),
-            },
-        },
-        {
-            id = "travel-144-sentinel-hill",
-            kind = "travel",
-            priority = 1350,
-            text = "Travel or Hearthstone to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5633, 0.4752, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
             },
         },
         {
@@ -2358,16 +2069,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-142-moonbrook",
-            kind = "travel",
-            priority = 1410,
-            text = "Travel to Moonbrook.",
-            route = {
-                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
-                    "Travel to Moonbrook."),
-            },
-        },
-        {
             id = "objective-142-the-defias-brotherhood",
             kind = "objective",
             priority = 1420,
@@ -2389,16 +2090,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
                     "Travel to Moonbrook."),
-            },
-        },
-        {
-            id = "travel-103-westfall-lighthouse",
-            kind = "travel",
-            priority = 1430,
-            text = "Travel to Westfall Lighthouse.",
-            route = {
-                Point(MAP.WESTFALL, 0.3002, 0.8600, "Westfall Lighthouse",
-                    "Travel to Westfall Lighthouse."),
             },
         },
         {
@@ -2438,16 +2129,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.2997, 0.8598, "Captain Grayson",
                     "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "travel-138-longshore",
-            kind = "travel",
-            priority = 1470,
-            text = "Travel to Longshore.",
-            route = {
-                Point(MAP.WESTFALL, 0.2591, 0.4772, "Longshore",
-                    "Travel to Longshore."),
             },
         },
         {
@@ -2520,16 +2201,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-longshore",
-            kind = "travel",
-            priority = 1540,
-            text = "Travel to Longshore.",
-            route = {
-                Point(MAP.WESTFALL, 0.2600, 0.1694, "Longshore",
-                    "Travel to Longshore."),
-            },
-        },
-        {
             id = "turnin-140-captain-sander-s-hidden-treasure",
             kind = "turnin",
             priority = 1550,
@@ -2539,21 +2210,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.2600, 0.1694, "Longshore",
                     "Travel to Longshore."),
-            },
-        },
-        {
-            id = "travel-sentinel-hill-4",
-            kind = "travel",
-            priority = 1560,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 14, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel or Hearthstone to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
             },
         },
         {
@@ -2610,20 +2266,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-14-the-dagger-hills",
-            kind = "travel",
-            priority = 1600,
-            text = "Travel to The Dagger Hills.",
-            route = {
-                Point(MAP.WESTFALL, 0.5287, 0.7129, "Continue toward The Dagger Hills",
-                    "Continue toward The Dagger Hills."),
-                Point(MAP.WESTFALL, 0.4960, 0.7719, "Continue toward The Dagger Hills",
-                    "Continue toward The Dagger Hills."),
-                Point(MAP.WESTFALL, 0.4465, 0.8027, "The Dagger Hills",
-                    "Travel to The Dagger Hills."),
-            },
-        },
-        {
             id = "turnin-117-thunderbrew",
             kind = "turnin",
             priority = 1610,
@@ -2659,16 +2301,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-sentinel-hill-5",
-            kind = "travel",
-            priority = 1640,
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
-        },
-        {
             id = "turnin-14-the-people-s-militia",
             kind = "turnin",
             priority = 1650,
@@ -2693,16 +2325,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-145-lakeshire",
-            kind = "travel",
-            priority = 1670,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2651, 0.4533, "Lakeshire",
-                    "Travel to Lakeshire."),
-            },
-        },
-        {
             id = "turnin-144-messenger-to-westfall",
             kind = "turnin",
             priority = 1680,
@@ -2712,16 +2334,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.3000, 0.4441, "Magistrate Solomon",
                     "Travel to Magistrate Solomon."),
-            },
-        },
-        {
-            id = "travel-246-lakeridge-highway",
-            kind = "travel",
-            priority = 1690,
-            text = "Travel to Lakeridge Highway.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3337, 0.6713, "Lakeridge Highway",
-                    "Travel to Lakeridge Highway."),
             },
         },
         {
@@ -2763,21 +2375,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-three-corners",
-            kind = "travel",
-            priority = 1720,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 130, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Three Corners.",
-            route = {
-                Point(MAP.REDRIDGE, 0.1543, 0.7132, "Three Corners",
-                    "Travel to Three Corners."),
-            },
-        },
-        {
             id = "turnin-129-a-free-lunch",
             kind = "turnin",
             priority = 1730,
@@ -2801,16 +2398,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-116-darkshire",
-            kind = "travel",
-            priority = 1750,
-            text = "Travel to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7750, 0.4440, "Darkshire",
-                    "Travel to Darkshire."),
-            },
-        },
-        {
             id = "objective-116-3-bottle-of-moonshine",
             kind = "objective",
             priority = 1760,
@@ -2820,16 +2407,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7368, 0.4408, "Barkeep Hann",
                     "Travel to Barkeep Hann."),
-            },
-        },
-        {
-            id = "travel-lakeshire",
-            kind = "travel",
-            priority = 1770,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3075, 0.5999, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {

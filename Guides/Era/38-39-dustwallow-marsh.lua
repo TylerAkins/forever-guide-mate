@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1260-mage-quarter",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Mage Quarter in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.4149, 0.8945, "Mage Quarter",
-                    "Travel to Mage Quarter."),
-            },
-        },
-        {
             id = "accept-1260-morgan-stern",
             kind = "accept",
             priority = 20,
@@ -61,16 +51,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.4149, 0.8945, "Angus Stern",
                     "Travel to Angus Stern."),
-            },
-        },
-        {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5160, 0.2540, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {
@@ -172,16 +152,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1282-theramore-isle",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6614, 0.4604, "Theramore Isle",
-                    "Travel to Theramore Isle."),
-            },
-        },
-        {
             id = "note-1282-theramore-isle",
             kind = "note",
             priority = 110,
@@ -243,16 +213,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1282-foothold-citadel",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Foothold Citadel.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6790, 0.4795, "Foothold Citadel",
-                    "Travel to Foothold Citadel."),
-            },
-        },
-        {
             id = "turnin-1282-they-call-him-smiling-jim",
             kind = "turnin",
             priority = 170,
@@ -289,16 +249,6 @@ ns:RegisterGuide({
                     "Continue toward Mudrock Soup and Bugs."),
                 Point(MAP.DUSTWALLOW, 0.6173, 0.2148, "Mudrock Tortoise",
                     "Travel to Mudrock Tortoise."),
-            },
-        },
-        {
-            id = "travel-1218-swamplight-manor",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Swamplight Manor.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5543, 0.2627, "Swamplight Manor",
-                    "Travel to Swamplight Manor."),
             },
         },
         {
@@ -359,16 +309,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1206-darkmist-cavern",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Darkmist Cavern.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3405, 0.2139, "Darkmist Cavern",
-                    "Travel to Darkmist Cavern."),
-            },
-        },
-        {
             id = "objective-1206-jarl-needs-eyes",
             kind = "objective",
             priority = 260,
@@ -391,16 +331,6 @@ ns:RegisterGuide({
                     "Continue toward Hungry!."),
                 Point(MAP.DUSTWALLOW, 0.3514, 0.3826, "Mudcrush Durtfeet",
                     "Travel to Mudcrush Durtfeet."),
-            },
-        },
-        {
-            id = "travel-1253-shady-rest-inn",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Shady Rest Inn.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.2964, 0.4857, "Shady Rest Inn",
-                    "Travel to Shady Rest Inn."),
             },
         },
         {
@@ -437,21 +367,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1187-beezil-s-wreck",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { quest = { id = 1183, state = "completed" } },
-                },
-            },
-            text = "Travel to Beezil's Wreck.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5405, 0.5653, "Beezil's Wreck",
-                    "Travel to Beezil's Wreck."),
-            },
-        },
-        {
             id = "objective-1187-razzeric-s-tweaking",
             kind = "objective",
             priority = 330,
@@ -466,16 +381,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.5405, 0.5653, "Beezil's Wreck",
                     "Travel to Beezil's Wreck."),
-            },
-        },
-        {
-            id = "travel-1219-theramore-isle",
-            kind = "travel",
-            priority = 340,
-            text = "Travel or Hearthstone to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6506, 0.4713, "Theramore Isle",
-                    "Travel to Theramore Isle."),
             },
         },
         {
@@ -499,16 +404,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.6506, 0.4713, "Theramore Lieutenant",
                     "Travel to Theramore Lieutenant."),
-            },
-        },
-        {
-            id = "travel-1259-foothold-citadel",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Foothold Citadel.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6790, 0.4795, "Foothold Citadel",
-                    "Travel to Foothold Citadel."),
             },
         },
         {
@@ -628,16 +523,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1286-foothold-citadel",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Foothold Citadel.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6790, 0.4795, "Foothold Citadel",
-                    "Travel to Foothold Citadel."),
-            },
-        },
-        {
             id = "turnin-1320-the-black-shield",
             kind = "turnin",
             priority = 490,
@@ -670,16 +555,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.6821, 0.4856, "Captain Garran Vimes",
                     "Travel to Captain Garran Vimes."),
-            },
-        },
-        {
-            id = "travel-swamplight-manor",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to Swamplight Manor.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5542, 0.2628, "Swamplight Manor",
-                    "Travel to Swamplight Manor."),
             },
         },
         {
@@ -773,16 +648,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1287-lost-point",
-            kind = "travel",
-            priority = 590,
-            text = "Travel to Lost Point.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3590, 0.5400, "Lost Point",
-                    "Travel to Lost Point."),
-            },
-        },
-        {
             id = "turnin-1286-the-deserters",
             kind = "turnin",
             priority = 600,
@@ -803,16 +668,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.3590, 0.5400, "Balos Jacken",
                     "Travel to Balos Jacken."),
-            },
-        },
-        {
-            id = "travel-theramore-isle",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6634, 0.4549, "Theramore Isle",
-                    "Travel to Theramore Isle."),
             },
         },
         {

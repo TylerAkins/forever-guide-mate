@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1205-thunder-bluff",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.4020, 0.2750, "Thunder Bluff",
-                    "Travel to Thunder Bluff."),
-            },
-        },
-        {
             id = "objective-1218-soothing-spices",
             kind = "objective",
             priority = 20,
@@ -77,16 +67,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.6140, 0.8060, "Melor Stonehoof",
                     "Travel to Melor Stonehoof."),
-            },
-        },
-        {
-            id = "travel-1268-dustwallow-marsh",
-            kind = "travel",
-            priority = 40,
-            text = "Run east to Dustwallow Marsh.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.2970, 0.4770, "Dustwallow Marsh",
-                    "Travel to Dustwallow Marsh."),
             },
         },
         {
@@ -120,20 +100,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.2980, 0.4810, "Shady Rest Inn",
                     "Travel to Shady Rest Inn."),
-            },
-        },
-        {
-            id = "travel-1321-brackenwall-village",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3349, 0.3876, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3439, 0.3068, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3500, 0.2900, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
             },
         },
         {
@@ -196,16 +162,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1201-dustwallow-marsh",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3526, 0.3063, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
-            },
-        },
-        {
             id = "accept-1201-theramore-spies",
             kind = "accept",
             priority = 150,
@@ -251,16 +207,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1177-dreadmurk-shore",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Dreadmurk Shore.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5746, 0.1647, "Dreadmurk Shore",
-                    "Travel to Dreadmurk Shore."),
-            },
-        },
-        {
             id = "objective-1177-hungry",
             kind = "objective",
             priority = 200,
@@ -270,20 +216,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.5746, 0.1647, "Mirefin Warrior",
                     "Travel to Mirefin Warrior."),
-            },
-        },
-        {
-            id = "travel-1218-swamplight-manor",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Swamplight Manor.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5402, 0.1881, "Continue toward Swamplight Manor",
-                    "Continue toward Swamplight Manor."),
-                Point(MAP.DUSTWALLOW, 0.5613, 0.2352, "Continue toward Swamplight Manor",
-                    "Continue toward Swamplight Manor."),
-                Point(MAP.DUSTWALLOW, 0.5543, 0.2633, "Swamplight Manor",
-                    "Travel to Swamplight Manor."),
             },
         },
         {
@@ -383,16 +315,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1206-brackenwall-village",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.4300, 0.3000, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
-            },
-        },
-        {
             id = "objective-1201-theramore-spies",
             kind = "objective",
             priority = 310,
@@ -487,18 +409,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1239-swamplight-manor",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Swamplight Manor.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5538, 0.2591, "Continue toward Swamplight Manor",
-                    "Continue toward Swamplight Manor."),
-                Point(MAP.DUSTWALLOW, 0.5550, 0.2600, "Swamplight Manor",
-                    "Travel to Swamplight Manor."),
-            },
-        },
-        {
             id = "accept-1239-the-severed-head",
             kind = "accept",
             priority = 400,
@@ -524,20 +434,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1202-theramore-isle",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.5767, 0.3266, "Continue toward Theramore Isle",
-                    "Continue toward Theramore Isle."),
-                Point(MAP.DUSTWALLOW, 0.6078, 0.3959, "Continue toward Theramore Isle",
-                    "Continue toward Theramore Isle."),
-                Point(MAP.DUSTWALLOW, 0.6891, 0.4468, "Theramore Isle",
-                    "Travel to Theramore Isle."),
-            },
-        },
-        {
             id = "objective-1202-the-theramore-docks",
             kind = "objective",
             priority = 430,
@@ -547,21 +443,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.7100, 0.5100, "The Theramore Docks",
                     "Travel to The Theramore Docks."),
-            },
-        },
-        {
-            id = "travel-brackenwall-village",
-            kind = "travel",
-            priority = 440,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1240, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3656, 0.3088, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
             },
         },
         {
@@ -598,12 +479,6 @@ ns:RegisterGuide({
                 Point(MAP.DUSTWALLOW, 0.3526, 0.3063, "Nazeer Bloodpike",
                     "Travel to Nazeer Bloodpike."),
             },
-        },
-        {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Ratchet.",
         },
         {
             id = "turnin-1270-stinky-s-escape",

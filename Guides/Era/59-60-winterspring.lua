@@ -44,21 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-4741-bloodvenom-post",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { quest = { id = 4521, state = "completed" } },
-                },
-            },
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3472, 0.5277, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "accept-4741-wild-guardians",
             kind = "accept",
             priority = 20,
@@ -160,16 +145,6 @@ ns:RegisterGuide({
                     "Continue toward Winterfall Runners."),
                 Point(MAP.WINTERSPRING, 0.5339, 0.3442, "Winterfall Runner",
                     "Travel to Winterfall Runner."),
-            },
-        },
-        {
-            id = "travel-5054-everlook",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6089, 0.3764, "Everlook",
-                    "Travel to Everlook."),
             },
         },
         {
@@ -278,21 +253,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5054-everlook-2",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { quest = { id = 6606, state = "completed" } },
-                },
-            },
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6192, 0.3830, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
             id = "turnin-969-luck-be-with-you",
             kind = "turnin",
             priority = 160,
@@ -376,16 +336,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4741-owl-wing-thicket",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Owl Wing Thicket.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6383, 0.5932, "Owl Wing Thicket",
-                    "Travel to Owl Wing Thicket."),
-            },
-        },
-        {
             id = "objective-4741-wild-guardians",
             kind = "objective",
             priority = 230,
@@ -458,16 +408,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4721-bloodvenom-post",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3472, 0.5276, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "turnin-4741-wild-guardians",
             kind = "turnin",
             priority = 290,
@@ -501,16 +441,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4882-owl-wing-thicket",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Owl Wing Thicket.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6383, 0.5932, "Owl Wing Thicket",
-                    "Travel to Owl Wing Thicket."),
-            },
-        },
-        {
             id = "objective-4882-blue-feathered-necklace",
             kind = "objective",
             priority = 320,
@@ -519,16 +449,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.6383, 0.5932, "Moontouched Owlbeast",
                     "Travel to Moontouched Owlbeast."),
-            },
-        },
-        {
-            id = "travel-4721-the-hidden-grove",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to The Hidden Grove.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6492, 0.2030, "The Hidden Grove",
-                    "Travel to The Hidden Grove."),
             },
         },
         {
@@ -600,21 +520,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-everlook",
-            kind = "travel",
-            priority = 380,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4810, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6158, 0.3859, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
             id = "turnin-4809-chillwind-horns",
             kind = "turnin",
             priority = 390,
@@ -646,21 +551,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.6158, 0.3859, "Felnok Steelspring",
                     "Travel to Felnok Steelspring."),
-            },
-        },
-        {
-            id = "travel-5121-winterfall-village",
-            kind = "travel",
-            priority = 410,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Winterfall Village.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6969, 0.3826, "Winterfall Village",
-                    "Travel to Winterfall Village."),
             },
         },
         {
@@ -710,21 +600,6 @@ ns:RegisterGuide({
             complete = QuestState(5123, "activeOrCompleted"),
         },
         {
-            id = "travel-frostfire-hot-springs",
-            kind = "travel",
-            priority = 450,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
-            },
-        },
-        {
             id = "turnin-5123-the-final-piece",
             kind = "turnin",
             priority = 460,
@@ -758,21 +633,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-bloodvenom-post",
-            kind = "travel",
-            priority = 480,
-            conditions = {
-                all = {
-                    { quest = { id = 4521, state = "completed" } },
-                },
-            },
-            text = "Travel to Bloodvenom Post.",
-            route = {
-                Point(MAP.FELWOOD, 0.3474, 0.5276, "Bloodvenom Post",
-                    "Travel to Bloodvenom Post."),
-            },
-        },
-        {
             id = "turnin-4721-wild-guardians",
             kind = "turnin",
             priority = 490,
@@ -787,21 +647,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.3474, 0.5276, "Trull Failbane",
                     "Travel to Trull Failbane."),
-            },
-        },
-        {
-            id = "travel-emerald-sanctuary",
-            kind = "travel",
-            priority = 500,
-            conditions = {
-                all = {
-                    { quest = { id = 5087, state = "completed" } },
-                },
-            },
-            text = "Travel to Emerald Sanctuary in Felwood.",
-            route = {
-                Point(MAP.FELWOOD, 0.5114, 0.8176, "Emerald Sanctuary",
-                    "Travel to Emerald Sanctuary."),
             },
         },
         {
@@ -822,16 +667,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-thunder-bluff",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to Elder Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.7564, 0.3151, "Elder Rise",
-                    "Travel to Elder Rise."),
-            },
-        },
-        {
             id = "turnin-4883-guarding-secrets",
             kind = "turnin",
             priority = 530,
@@ -840,21 +675,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.7564, 0.3151, "Nara Wildmane",
                     "Travel to Nara Wildmane."),
-            },
-        },
-        {
-            id = "travel-4810-flame-crest",
-            kind = "travel",
-            priority = 540,
-            conditions = {
-                all = {
-                    { quest = { id = 4809, state = "completed" } },
-                },
-            },
-            text = "Travel to Flame Crest.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6523, 0.2395, "Flame Crest",
-                    "Travel to Flame Crest."),
             },
         },
         {
