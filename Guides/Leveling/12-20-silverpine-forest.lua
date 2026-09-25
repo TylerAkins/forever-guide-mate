@@ -2591,6 +2591,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 2500,
             text = "Accept Nara Wildmane from Archdruid Hamuul Runetotem in Elder Rise.",
+            dependsOn = { "turnin-1489-hamuul-runetotem" },
             complete = QuestState(1490, "activeOrCompleted"),
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.7853, 0.2862, "Archdruid Hamuul Runetotem",
@@ -2601,12 +2602,12 @@ ns:RegisterGuide({
             id = "turnin-1490-nara-wildmane",
             kind = "turnin",
             priority = 2510,
-            text = "Turn in Nara Wildmane to Archdruid Hamuul Runetotem in Elder Rise.",
+            text = "Speak with Nara Wildmane in the tent beside Hamuul on Elder Rise.",
             dependsOn = { "accept-1490-nara-wildmane" },
             complete = QuestState(1490, "completed"),
             route = {
-                Point(MAP.THUNDER_BLUFF, 0.7569, 0.3153, "Archdruid Hamuul Runetotem",
-                    "Travel to Archdruid Hamuul Runetotem."),
+                Point(MAP.THUNDER_BLUFF, 0.7569, 0.3153, "Nara Wildmane",
+                    "Travel to Nara Wildmane."),
             },
         },
         {
