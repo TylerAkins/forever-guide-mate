@@ -295,6 +295,15 @@ ns.charDB.selectedGuide = "alliance-only-leveling"
 ns.Engine:Refresh({ faction = "Horde", level = 10 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance leveling guide")
 
+Check(ns.UI:HasStartedGuide(), "a selected guide counts as started")
+ns.UI.browser:Hide()
+ns.UI:Initialize()
+Equal(ns.UI.browser.shown, false, "login with a started guide keeps the library closed")
+ns.charDB.selectedGuide = nil
+ns.UI.browser:Hide()
+ns.UI:Initialize()
+Equal(ns.UI.browser.shown, true, "login without a started guide still opens the library")
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)

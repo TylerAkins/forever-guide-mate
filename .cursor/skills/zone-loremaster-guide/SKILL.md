@@ -60,10 +60,12 @@ Keep the leveling route's order when it already visits the camp. The Barrens rou
 - Add the file to `ForeverGuideMate.toc`, `tools/compile_addon.py`, `tests/test_contracts.py`, `tests/lua/run.lua`, and `tests/lua/lint.lua`.
 - Assert one real chain, one quest split into objectives, the elite wording if the zone has an elite, and that omitted and dungeon quests are absent.
 - Add a changelog line.
+- If the change should publish (guides, engine, or TOC), bump `VERSION` by exactly one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` (current release only, no email addresses). Merging that reviewed PR tags and publishes the GitHub Release and CurseForge package. See [docs/DEVELOPMENT.md](../../docs/DEVELOPMENT.md).
 - Do not accept quests, turn in quests, or move the character from the addon.
 
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
 lua5.1 tests/lua/lint.lua
+python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
 ```
