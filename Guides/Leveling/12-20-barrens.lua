@@ -1695,7 +1695,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1361,
             conditions = { level = { min = 18 } },
-            text = "Vrang's Game: collect 8 Trapped Game from sprung traps in the valley. Wowhead gives no trap pin, so this marks Vrang Wildgore.",
+            useClientPin = true,
+            text = "Vrang's Game: collect 8 Trapped Game from sprung traps in the valley. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-95507-vrangs-game" },
             complete = QuestState(95507, "complete"),
             route = {

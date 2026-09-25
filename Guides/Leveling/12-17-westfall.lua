@@ -1227,7 +1227,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 795,
             conditions = { level = { min = 12 } },
-            text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. Wowhead gives no well pin, so this marks the farms you are already walking.",
+            useClientPin = true,
+            text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-92742-testing-the-wells" },
             complete = QuestState(92742, "complete"),
             route = {
@@ -1549,7 +1550,8 @@ ns:RegisterGuide({
                     { profession = { skillLineID = 171 } },
                 },
             },
-            text = "Accept My First Alchemy Set from the young alchemist in the Moonbrook barn. Wowhead gives no pin for the child, so this marks Moonbrook. This step is for alchemists.",
+            useClientPin = true,
+            text = "Accept My First Alchemy Set from the young alchemist in the Moonbrook barn. This step is for alchemists. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestState(92109, "activeOrCompleted"),
             route = {
                 Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
@@ -2109,7 +2111,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1425,
             conditions = { level = { min = 16 } },
-            text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. Wowhead gives no supply pin, so this marks Moonbrook.",
+            useClientPin = true,
+            text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-92747-moonbrook-espionage" },
             complete = QuestState(92747, "complete"),
             route = {

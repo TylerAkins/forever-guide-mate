@@ -352,7 +352,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 212,
             conditions = { level = { min = 4 } },
-            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. Wowhead has no shrine pin.",
+            useClientPin = true,
+            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-95805-grace-of-anshe-and-musha" },
             complete = QuestState(95805, "completed"),
             route = {
@@ -2016,7 +2017,8 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Collect the Venture Co. pages in the mine. Wowhead has no page pin.",
+            useClientPin = true,
+            text = "Collect the Venture Co. pages in the mine. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98424-fizsprockets-notes" },
             complete = QuestState(98424, "complete"),
             route = {
