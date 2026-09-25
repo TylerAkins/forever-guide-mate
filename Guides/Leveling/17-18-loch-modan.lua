@@ -156,7 +156,8 @@ ns:RegisterGuide({
                     { quest = { id = 86613, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in Excavation Tools to Prospector Ironband if you found them at the dig. Wowhead gives no separate pin for the tools.",
+            useClientPin = true,
+            text = "Turn in Excavation Tools to Prospector Ironband if you found them at the dig. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestState(86613, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.6580, 0.6560, "Prospector Ironband",

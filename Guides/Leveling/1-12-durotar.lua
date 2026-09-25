@@ -138,7 +138,8 @@ ns:RegisterGuide({
                     { race = { 2, 8 } },
                 },
             },
-            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. Wowhead has no weapon pin, so this marks the Den.",
+            useClientPin = true,
+            text = "Collect 6 Abandoned Training Weapons around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97279-wayward-weapons" },
             complete = QuestState(97279, "complete"),
             route = {
@@ -1543,7 +1544,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1001,
             conditions = { level = { min = 6 } },
-            text = "Collect Prickly Pear Fruit on the Razormane grounds. Wowhead has no cactus pin.",
+            useClientPin = true,
+            text = "Collect Prickly Pear Fruit on the Razormane grounds. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96825-this-fruit-could-bite-back" },
             complete = QuestState(96825, "complete"),
             route = {
@@ -1556,7 +1558,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 931,
             conditions = { level = { min = 6 } },
-            text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96822-for-honor" },
             complete = QuestState(96822, "complete"),
             route = {
@@ -1733,7 +1736,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1141,
             conditions = { level = { min = 9 } },
-            text = "Collect Forgotten Loa Idols on the Echo Isles. Wowhead has no idol pin, so this marks the hexed trolls.",
+            useClientPin = true,
+            text = "Collect Forgotten Loa Idols on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97225-forgotten-loa-idols" },
             complete = QuestState(97225, "complete"),
             route = {
@@ -2666,7 +2670,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1754,
             conditions = { level = { min = 11 } },
-            text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99049-threat-from-below" },
             complete = QuestState(99049, "complete"),
             route = {

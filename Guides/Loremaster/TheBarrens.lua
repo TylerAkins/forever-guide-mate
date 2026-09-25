@@ -22,7 +22,8 @@ local _, ns = ...
 -- the item. The turn-in stays out of the route until the quest is in the log,
 -- and a missing item does not block 100%.
 -- Warsong Reports, the Hillsbrad vial sites, Deepmoss eggs, and a few
--- object spawns have no Wowhead pin. Those steps name the landmark.
+-- object spawns have no saved pin. Those steps follow the quest log pin
+-- and keep a landmark until the quest is accepted.
 -- Journey to the Crossroads from Thrall (98024) is Horde Skyborne.
 -- Meats to Orgrimmar through Return to the Crossroads is orc and troll.
 -- A Bundle of Hides through Return to Jahan, and Sergra Darkthorn, are tauren.
@@ -3685,7 +3686,8 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "The Warsong Reports: Warsong Scout Update. Wowhead has no map pin. Find the named Warsong NPC.",
+            useClientPin = true,
+            text = "The Warsong Reports: Warsong Scout Update. Find the named Warsong NPC. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-6543-the-warsong-reports" },
             complete = QuestObjective(6543, 1, "Warsong Scout Update"),
             route = {
@@ -3703,7 +3705,8 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "The Warsong Reports: Warsong Runner Update. Wowhead has no map pin. Find the named Warsong NPC.",
+            useClientPin = true,
+            text = "The Warsong Reports: Warsong Runner Update. Find the named Warsong NPC. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-6543-the-warsong-reports" },
             complete = QuestObjective(6543, 2, "Warsong Runner Update"),
             route = {
@@ -3721,7 +3724,8 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "The Warsong Reports: Warsong Outrider Update. Wowhead has no map pin. Find the named Warsong NPC.",
+            useClientPin = true,
+            text = "The Warsong Reports: Warsong Outrider Update. Find the named Warsong NPC. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-6543-the-warsong-reports" },
             complete = QuestObjective(6543, 3, "Warsong Outrider Update"),
             route = {
@@ -6612,7 +6616,8 @@ ns:RegisterGuide({
                     { level = { min = 25 } },
                 },
             },
-            text = "Accept Scout Support from the Horde officer north of Nethander Stead. Wowhead does not pin the giver.",
+            useClientPin = true,
+            text = "Accept Scout Support from the Horde officer north of Nethander Stead. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestState(98094, "activeOrCompleted"),
             route = {
                 Point(MAP.HILLSBRAD, 0.623, 0.205, "Tarren Mill, north of Nethander Stead",
@@ -6665,7 +6670,8 @@ ns:RegisterGuide({
                     { level = { min = 25 } },
                 },
             },
-            text = "Valuable Vantages: Western vial placed. Wowhead has no map pin. Use the landmark in the step.",
+            useClientPin = true,
+            text = "Valuable Vantages: Western vial placed. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98095-valuable-vantages" },
             complete = QuestObjective(98095, 1, "Western vial placed"),
             route = {
@@ -6683,7 +6689,8 @@ ns:RegisterGuide({
                     { level = { min = 25 } },
                 },
             },
-            text = "Valuable Vantages: Northern vial placed. Wowhead has no map pin. Use the landmark in the step.",
+            useClientPin = true,
+            text = "Valuable Vantages: Northern vial placed. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98095-valuable-vantages" },
             complete = QuestObjective(98095, 2, "Northern vial placed"),
             route = {
@@ -6701,7 +6708,8 @@ ns:RegisterGuide({
                     { level = { min = 25 } },
                 },
             },
-            text = "Valuable Vantages: Southern vial placed. Wowhead has no map pin. Use the landmark in the step.",
+            useClientPin = true,
+            text = "Valuable Vantages: Southern vial placed. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98095-valuable-vantages" },
             complete = QuestObjective(98095, 3, "Southern vial placed"),
             route = {
@@ -6820,7 +6828,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 3983,
             conditions = { level = { min = 60 } },
-            text = "Sign Me Up!: Advertising License Application. Wowhead has no pin, so follow the quest text.",
+            useClientPin = true,
+            text = "Sign Me Up!: Advertising License Application. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestObjective(95819, 1, "Advertising License Application"),
             route = {},
         },
@@ -6829,7 +6838,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 3984,
             conditions = { level = { min = 60 } },
-            text = "Sign Me Up!: Massive Pile of Completed Forms. Wowhead has no pin, so follow the quest text.",
+            useClientPin = true,
+            text = "Sign Me Up!: Massive Pile of Completed Forms. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestObjective(95819, 2, "Massive Pile of Completed Forms"),
             route = {},
         },
@@ -6838,7 +6848,8 @@ ns:RegisterGuide({
             kind = "turnin",
             priority = 3985,
             conditions = { level = { min = 60 } },
-            text = "Turn in Sign Me Up! to . Wowhead has no pin, so follow the quest text.",
+            useClientPin = true,
+            text = "Turn in Sign Me Up! No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "objective-95819-sign-me-up-2" },
             complete = QuestState(95819, "completed"),
             route = {},

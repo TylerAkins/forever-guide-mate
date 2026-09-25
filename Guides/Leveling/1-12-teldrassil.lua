@@ -346,7 +346,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 202,
             conditions = { level = { min = 3 } },
-            text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. Wowhead has no totem pin, so this marks the grells.",
+            useClientPin = true,
+            text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97977-natures-call" },
             complete = QuestState(97977, "complete"),
             route = {
@@ -2178,7 +2179,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1853,
             conditions = { level = { min = 10 } },
-            text = "Buy an Empty Vial in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
+            useClientPin = true,
+            text = "Buy an Empty Vial in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 2),
             route = {
@@ -2191,7 +2193,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1854,
             conditions = { level = { min = 10 } },
-            text = "Buy a Refreshing Spring Water in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
+            useClientPin = true,
+            text = "Buy a Refreshing Spring Water in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 3),
             route = {
@@ -2352,7 +2355,8 @@ ns:RegisterGuide({
             kind = "turnin",
             priority = 1636,
             conditions = { level = { min = 12 } },
-            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. Wowhead has no tree pin, so this marks Sentinel Arynia Cloudsbreak beside it.",
+            useClientPin = true,
+            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "turnin-98392-darkness-in-the-glade" },
             complete = QuestState(98398, "completed"),
             route = {

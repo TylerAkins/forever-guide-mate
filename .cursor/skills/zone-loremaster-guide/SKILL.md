@@ -41,7 +41,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 - A level requirement uses Wowhead's recommended level, the Level line, not the level the quest can be started. It stays in the percentage until the character reaches it.
 - Use uiMap IDs. Wowhead area IDs are not map IDs.
 - `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
-- If Wowhead has no pin, say so and mark the nearest named landmark. Do not invent a precise pin.
+- If there is no saved pin, keep the nearest named landmark and say the guide follows the pin in the quest log. Do not invent a precise pin. Mark that step `useClientPin` so the addon uses the quest log pin while the quest is accepted.
 - Coordinates in these guides have not been validated in the Forever client.
 - Priorities are unique. Number the route in order so a later hub cannot jump ahead.
 
