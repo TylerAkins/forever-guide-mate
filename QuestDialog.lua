@@ -15,14 +15,27 @@ end
 
 -- Accept only the quest the tracker is asking for right now. Later steps in
 -- the same guide stay in the gossip window so they do not fill the quest log.
-function QuestDialog:CurrentAcceptQuestID()
+function QuestDialog:CurrentQuestID(kind)
     local goal = ns.Engine and ns.Engine.currentGoal or nil
-    if type(goal) ~= "table" or goal.kind ~= "accept" then return nil end
+    if type(goal) ~= "table" or goal.kind ~= kind then return nil end
     local complete = goal.complete
     local quest = type(complete) == "table" and complete.quest or nil
     local questID = type(quest) == "table" and quest.id or nil
     if type(questID) ~= "number" then return nil end
     return questID
+end
+
+function QuestDialog:CurrentAcceptQuestID()
+    return self:CurrentQuestID("accept")
+end
+
+-- Quest names are not a separate field. Accept and turn-in steps lead with them.
+function QuestDialog:TitleMatches(title, kind)
+    if type(title) ~= "string" or title == "" then return false end
+    local goal = ns.Engine and ns.Engine.currentGoal or nil
+    if type(goal) ~= "table" or goal.kind ~= kind or type(goal.text) ~= "string" then return false end
+    local pattern = kind == "accept" and "^Accept (.-) from " or "^Turn in (.-) to "
+    return goal.text:match(pattern) == title
 end
 
 function QuestDialog:Accepts(questID)
@@ -31,8 +44,8 @@ end
 
 local function Call(fn, ...)
     if type(fn) ~= "function" then return nil end
-    local ok, value = pcall(fn, ...)
-    if ok then return value end
+    local ok, a, b, c, d, e, f, g, h = pcall(fn, ...)
+    if ok then return a, b, c, d, e, f, g, h end
 end
 
 local function ReportedComplete(value)
@@ -63,7 +76,7 @@ function QuestDialog:SelectGossip(api)
                 local questID = type(quest) == "table" and quest.questID or nil
                 if self:Accepts(questID) then
                     Call(info.SelectAvailableQuest, questID)
-                    return
+                    return true
                 end
             end
         end
@@ -74,11 +87,100 @@ function QuestDialog:SelectGossip(api)
             for _, quest in ipairs(quests) do
                 if self:ActiveQuestReady(api, quest) then
                     Call(info.SelectActiveQuest, quest.questID)
-                    return
+                    return true
                 end
             end
         end
     end
+    return false
+end
+
+function QuestDialog:GreetingAvailable(api, index)
+    local title
+    if type(api.GetAvailableTitle) == "function" then
+        local value = Call(api.GetAvailableTitle, index)
+        if type(value) == "string" then title = value end
+    end
+    local questID
+    if type(api.GetAvailableQuestInfo) == "function" then
+        local first, _, _, _, fifth, _, _, eighth = Call(api.GetAvailableQuestInfo, index)
+        if type(first) == "string" and not title then title = first end
+        if type(eighth) == "number" then questID = eighth
+        elseif type(fifth) == "number" then questID = fifth
+        end
+    end
+    return title, questID
+end
+
+function QuestDialog:GreetingActive(api, index)
+    local title, isComplete = Call(api.GetActiveTitle, index)
+    if type(title) ~= "string" then title = nil end
+    local questID
+    if type(api.GetActiveQuestID) == "function" then
+        local value = Call(api.GetActiveQuestID, index)
+        if type(value) == "number" then questID = value end
+    end
+    if isComplete ~= true and isComplete ~= false and isComplete ~= 1 and isComplete ~= 0 then
+        isComplete = nil
+    end
+    return title, questID, isComplete
+end
+
+function QuestDialog:SelectGreetingAvailable(api)
+    if type(api.GetNumAvailableQuests) ~= "function" or type(api.SelectAvailableQuest) ~= "function" then
+        return false
+    end
+    local num = Call(api.GetNumAvailableQuests)
+    if type(num) ~= "number" or num < 1 then return false end
+    for index = 1, num do
+        local title, questID = self:GreetingAvailable(api, index)
+        local matches = type(questID) == "number" and self:Accepts(questID)
+            or (questID == nil and self:TitleMatches(title, "accept"))
+        if matches then
+            Call(api.SelectAvailableQuest, index)
+            return true
+        end
+    end
+    return false
+end
+
+function QuestDialog:SelectGreetingActive(api)
+    if type(api.GetNumActiveQuests) ~= "function" or type(api.SelectActiveQuest) ~= "function" then
+        return false
+    end
+    local num = Call(api.GetNumActiveQuests)
+    if type(num) ~= "number" or num < 1 then return false end
+    local turnIn = self:CurrentQuestID("turnin")
+    for index = 1, num do
+        local title, questID, isComplete = self:GreetingActive(api, index)
+        if isComplete ~= false and isComplete ~= 0 then
+            local matches
+            if type(questID) == "number" then
+                if turnIn then matches = questID == turnIn
+                else matches = self:ActiveQuestReady(api, { questID = questID, isComplete = isComplete })
+                end
+            else
+                matches = self:TitleMatches(title, "turnin")
+            end
+            if matches then
+                Call(api.SelectActiveQuest, index)
+                return true
+            end
+        end
+    end
+    return false
+end
+
+-- Several quests at one NPC open a greeting list instead of gossip. Select the
+-- current step there; otherwise the player has to click it before accept or
+-- turn-in can run.
+function QuestDialog:SelectGreeting(api)
+    if not self:Enabled() or type(api) ~= "table" then return false end
+    local goal = ns.Engine and ns.Engine.currentGoal or nil
+    local kind = type(goal) == "table" and goal.kind or nil
+    if kind == "accept" and self:SelectGreetingAvailable(api) then return true end
+    if self:SelectGreetingActive(api) then return true end
+    return false
 end
 
 function QuestDialog:Accept(api)
@@ -107,7 +209,9 @@ end
 
 function QuestDialog:Handle(event, api)
     api = api or _G
-    if event == "GOSSIP_SHOW" then self:SelectGossip(api)
+    if event == "GOSSIP_SHOW" then
+        if not self:SelectGossip(api) then self:SelectGreeting(api) end
+    elseif event == "QUEST_GREETING" then self:SelectGreeting(api)
     elseif event == "QUEST_DETAIL" then self:Accept(api)
     elseif event == "QUEST_PROGRESS" then self:Progress(api)
     elseif event == "QUEST_COMPLETE" then self:Reward(api)

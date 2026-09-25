@@ -693,6 +693,58 @@ ns.db.autoQuest = false
 calls.complete = nil
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
 Equal(calls.complete, nil, "turning the option off leaves the quest dialog alone")
+ns.db.autoQuest = true
+local greeting = {
+    GetNumAvailableQuests = function() return 2 end,
+    GetAvailableTitle = function(index)
+        if index == 1 then return "Testing an Enemy's Strength" end
+        return "Searching for the Lost Satchel"
+    end,
+    SelectAvailableQuest = function(index) calls.greeting = index end,
+    GetNumActiveQuests = function() return 1 end,
+    GetActiveTitle = function() return "Searching for the Lost Satchel", true end,
+    SelectActiveQuest = function(index) calls.greetingActive = index end,
+}
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, 2, "a quest list opens the current accept step without a click")
+greeting.GetAvailableTitle = function() return "Testing an Enemy's Strength" end
+calls.greeting = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, nil, "a quest list does not open a different guide quest")
+greeting.GetAvailableTitle = function(index)
+    if index == 1 then return "Searching for the Lost Satchel" end
+    return "Testing an Enemy's Strength"
+end
+greeting.GetAvailableQuestInfo = function(index)
+    if index == 1 then return "Searching for the Lost Satchel", 9, false, 1, false, false, false, 5723 end
+    return "Testing an Enemy's Strength", 9, false, 1, false, false, false, 5722
+end
+calls.greeting = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, 2, "a quest list follows the quest id when the client provides one")
+greeting.GetAvailableQuestInfo = function(index)
+    if index == 1 then return false, nil, false, nil, 5723 end
+    return false, nil, false, nil, 5722
+end
+greeting.GetAvailableTitle = function() return "Not the step title" end
+calls.greeting = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, 2, "a quest list reads the quest id from the shorter client return")
+ns.Engine.currentGoal = ns.Engine:GetGoal(ragefire, "turnin-searching-satchel")
+calls.greeting = nil
+calls.greetingActive = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, nil, "a turn-in step does not accept another quest from the list")
+Equal(calls.greetingActive, 1, "a quest list opens the current turn-in without a click")
+greeting.GetActiveTitle = function() return "Searching for the Lost Satchel", false end
+calls.greetingActive = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greetingActive, nil, "an incomplete quest in the list stays closed")
+greeting.GetActiveTitle = function() return "Testing an Enemy's Strength" end
+greeting.GetActiveQuestID = function() return 5723 end
+calls.greetingActive = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greetingActive, nil, "a quest list does not turn in a different guide quest")
 
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
