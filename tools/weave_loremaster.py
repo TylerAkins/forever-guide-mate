@@ -941,13 +941,17 @@ def build_extra_quest(summary: dict, primary_zone: str, primary_key: str, previo
         if point and point.get("zone") and point["zone"] not in {primary_zone, ""}:
             note = "Travel to %s in %s." % (label, point["zone"])
         route = ""
+        client_pin = False
+        client_note = " No saved spot for this, so the guide follows the pin in your quest log."
         if point and ZONE_UIMAP.get(point.get("zone") or primary_zone):
             route = point_lua(point, label, note)
         elif start and ZONE_UIMAP.get(start.get("zone") or primary_zone):
-            route = point_lua(start, label, "Wowhead has no pin for this objective, so this marks %s." % (giver or primary_zone))
-            text = text + " Wowhead has no pin, so this marks the nearest named landmark."
+            route = point_lua(start, label, "Travel to %s." % (giver or label))
+            text = text + client_note
+            client_pin = True
         else:
-            text = text + " Wowhead has no pin, so follow the quest text."
+            text = text + client_note
+            client_pin = True
         dep = ""
         if depends:
             dep = "dependsOn = { %s },\n            " % ", ".join(f'"{dep_id}"' for dep_id in depends)
@@ -960,9 +964,10 @@ def build_extra_quest(summary: dict, primary_zone: str, primary_key: str, previo
             f'            kind = "{kind}",\n'
             f"            priority = 0,\n"
             f"            {condition_lua()}"
-            f'text = "{lua_escape(elite_text)}",\n'
-            f"            {dep}"
-            f"complete = {complete},\n"
+            + ("useClientPin = true,\n            " if client_pin else "")
+            + f'text = "{lua_escape(elite_text)}",\n'
+            + f"            {dep}"
+            + f"complete = {complete},\n"
             + (
                 f"            route = {{\n                {route},\n            }},\n"
                 if route

@@ -18,7 +18,8 @@ local _, ns = ...
 -- A character who never loots them still reaches 100%.
 -- The moonwells, Webwood egg, timberling sprouts, fel cones, moonpetal
 -- lilies, the Starbreeze dresser, the Ban'ethil chests, the Gnarlpine
--- totems, and the Oracle Tree have no Wowhead pin.
+-- totems, and the Oracle Tree have no saved pin. Those steps follow the
+-- quest log pin and keep a landmark until the quest is accepted.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -447,7 +448,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Nature's Call: Gnarlpine Totem. The abandoned camps are along the western edge of Shadowglen. Wowhead has no totem pin, so this marks the grells who scatter them.",
+            useClientPin = true,
+            text = "Nature's Call: Gnarlpine Totem. The abandoned camps are along the western edge of Shadowglen. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97977-natures-call" },
             complete = QuestObjective(97977, 1, "Gnarlpine Totem"),
             route = {
@@ -680,7 +682,8 @@ ns:RegisterGuide({
                     { level = { min = 2 } },
                 },
             },
-            text = "Iverron's Antidote: Moonpetal Lily. Lilies grow around pools. Wowhead has no lily pin, so this marks Iverron by the northern cave.",
+            useClientPin = true,
+            text = "Iverron's Antidote: Moonpetal Lily. Lilies grow around pools. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-3521-iverrons-antidote" },
             complete = QuestObjective(3521, 2, "Moonpetal Lily"),
             route = {
@@ -716,7 +719,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Webwood Egg. The egg is in a nest deep in Shadowthread Cave. Wowhead has no egg pin. Githyiss the Vile in this cave can drop a fang. Use it to start Fang of Githyiss.",
+            useClientPin = true,
+            text = "Webwood Egg. The egg is in a nest deep in Shadowthread Cave. Githyiss the Vile in this cave can drop a fang. Use it to start Fang of Githyiss. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-917-webwood-egg" },
             complete = QuestObjective(917, 1, "Webwood Egg"),
             route = {
@@ -824,7 +828,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Crown of the Earth: Filled Crystal Phial. Use the phial at the moonwell north of Aldrassil. Wowhead has no moonwell pin, so this marks Iverron by the northern cave.",
+            useClientPin = true,
+            text = "Crown of the Earth: Filled Crystal Phial. Use the phial at the moonwell north of Aldrassil. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-921-crown-of-the-earth" },
             complete = QuestObjective(921, 1, "Filled Crystal Phial"),
             route = {
@@ -1227,7 +1232,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Crown of the Earth: Filled Jade Phial. Fill it at the moonwell outside Starbreeze Village. Wowhead has no moonwell pin, so this marks Gaerolas Talvethren in the village.",
+            useClientPin = true,
+            text = "Crown of the Earth: Filled Jade Phial. Fill it at the moonwell outside Starbreeze Village. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-929-crown-of-the-earth" },
             complete = QuestObjective(929, 1, "Filled Jade Phial"),
             route = {
@@ -1263,7 +1269,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "The Emerald Dreamcatcher. It is in Tallonkai's dresser in Starbreeze Village. Wowhead has no dresser pin, so this marks Gaerolas Talvethren.",
+            useClientPin = true,
+            text = "The Emerald Dreamcatcher. It is in Tallonkai's dresser in Starbreeze Village. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-2438-the-emerald-dreamcatcher" },
             complete = QuestObjective(2438, 1, "Emerald Dreamcatcher"),
             route = {
@@ -1407,7 +1414,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Timberling Sprouts: Timberling Sprout. Sprouts grow around Lake Al'Ameth. Wowhead has no sprout pin, so this marks the timberlings.",
+            useClientPin = true,
+            text = "Timberling Sprouts: Timberling Sprout. Sprouts grow around Lake Al'Ameth. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-919-timberling-sprouts" },
             complete = QuestObjective(919, 1, "Timberling Sprout"),
             route = {
@@ -1801,7 +1809,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Crown of the Earth: Filled Tourmaline Phial. The moonwell is on the shores of the Pools of Arlithrien, southeast of the Darnassus entrance. Wowhead has no moonwell pin, so this marks Sentinel Shayla Nightbreeze outside Darnassus.",
+            useClientPin = true,
+            text = "Crown of the Earth: Filled Tourmaline Phial. The moonwell is on the shores of the Pools of Arlithrien, southeast of the Darnassus entrance. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-933-crown-of-the-earth" },
             complete = QuestObjective(933, 1, "Filled Tourmaline Phial"),
             route = {
@@ -1872,7 +1881,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Seek Redemption!: Fel Cone. Fel cones fall from the trees around Dolanaar. Wowhead has no cone pin, so this marks Zenn Foulhoof.",
+            useClientPin = true,
+            text = "Seek Redemption!: Fel Cone. Fel cones fall from the trees around Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-489-seek-redemption" },
             complete = QuestObjective(489, 1, "Fel Cone"),
             route = {
@@ -1926,7 +1936,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "The Relics of Wakening: Raven Claw Talisman. The druids store the relics in sacred chests inside the Ban'ethil Barrow Den. Wowhead has no chest pin.",
+            useClientPin = true,
+            text = "The Relics of Wakening: Raven Claw Talisman. The druids store the relics in sacred chests inside the Ban'ethil Barrow Den. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 1, "Raven Claw Talisman"),
             route = {
@@ -1944,7 +1955,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "The Relics of Wakening: Black Feather Quill. Wowhead has no chest pin, so this marks Oben Rageclaw in the Ban'ethil Barrow Den.",
+            useClientPin = true,
+            text = "The Relics of Wakening: Black Feather Quill. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 2, "Black Feather Quill"),
             route = {
@@ -1962,7 +1974,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "The Relics of Wakening: Sapphire of Sky. Wowhead has no chest pin, so this marks Oben Rageclaw in the Ban'ethil Barrow Den.",
+            useClientPin = true,
+            text = "The Relics of Wakening: Sapphire of Sky. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 3, "Sapphire of Sky"),
             route = {
@@ -1980,7 +1993,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "The Relics of Wakening: Rune of Nesting. Wowhead has no chest pin, so this marks Oben Rageclaw in the Ban'ethil Barrow Den.",
+            useClientPin = true,
+            text = "The Relics of Wakening: Rune of Nesting. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 4, "Rune of Nesting"),
             route = {
@@ -2860,7 +2874,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Crown of the Earth: Filled Amethyst Phial. Fill it at the moonwell under the Oracle Tree. Wowhead has no moonwell pin, so this marks Sentinel Arynia Cloudsbreak.",
+            useClientPin = true,
+            text = "Crown of the Earth: Filled Amethyst Phial. Fill it at the moonwell under the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-7383-crown-of-the-earth" },
             complete = QuestObjective(7383, 1, "Filled Amethyst Phial"),
             route = {
@@ -2932,7 +2947,8 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "The Great Tree Provides: Empty Vial. Buy it from a Dolanaar vendor. Wowhead has no vendor pin, so this marks Byancie.",
+            useClientPin = true,
+            text = "The Great Tree Provides: Empty Vial. Buy it from a Dolanaar vendor. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 2, "Empty Vial"),
             route = {
@@ -2950,7 +2966,8 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "The Great Tree Provides: Refreshing Spring Water. Buy it in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
+            useClientPin = true,
+            text = "The Great Tree Provides: Refreshing Spring Water. Buy it in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 3, "Refreshing Spring Water"),
             route = {
@@ -3200,7 +3217,8 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. Wowhead has no tree pin, so this marks Sentinel Arynia Cloudsbreak beside it.",
+            useClientPin = true,
+            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "turnin-98392-darkness-in-the-glade" },
             complete = QuestState(98398, "completed"),
             route = {

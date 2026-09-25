@@ -220,7 +220,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 131,
             conditions = { level = { min = 21 } },
-            text = "Blackrock Blockade: collect 10 Battleworn Axes from the Blackrock camp you are already clearing. Wowhead gives no axe pin.",
+            useClientPin = true,
+            text = "Blackrock Blockade: collect 10 Battleworn Axes from the Blackrock camp you are already clearing. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98387-blackrock-blockade" },
             complete = QuestState(98387, "complete"),
             route = {

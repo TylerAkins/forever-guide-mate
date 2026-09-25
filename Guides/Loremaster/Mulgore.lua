@@ -19,7 +19,8 @@ local _, ns = ...
 -- Notes (98424) appear only after the quest is in the log. Ceasing Operations
 -- waits until those notes are turned in.
 -- The water wells, Arra'chea, the An'she shrine, well stones, ambercorn, the
--- forge, the mine pages, and the blasting carts have no Wowhead pin.
+-- forge, the mine pages, and the blasting carts have no saved pin. Those
+-- steps follow the quest log pin and keep a landmark until the quest is accepted.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -358,7 +359,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "A Humble Task: Water Pitcher. The pitcher is in the well beside Greatmother Hawkwind. Wowhead has no pitcher pin.",
+            useClientPin = true,
+            text = "A Humble Task: Water Pitcher. The pitcher is in the well beside Greatmother Hawkwind. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-753-a-humble-task" },
             complete = QuestObjective(753, 1, "Water Pitcher"),
             route = {
@@ -483,7 +485,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha before it burns out. The shrine is in the southeastern hills. Wowhead has no shrine pin, so this marks the well southeast of Camp Narache.",
+            useClientPin = true,
+            text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha before it burns out. The shrine is in the southeastern hills. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-95805-grace-of-anshe-and-musha" },
             complete = QuestState(95805, "completed"),
             route = {
@@ -1039,7 +1042,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Rite of Vision: Ambercorn. Ambercorn is under the trees in Bloodhoof Village. Wowhead has no pin.",
+            useClientPin = true,
+            text = "Rite of Vision: Ambercorn. Ambercorn is under the trees in Bloodhoof Village. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-771-rite-of-vision" },
             complete = QuestObjective(771, 2, "Ambercorn"),
             route = {
@@ -1057,7 +1061,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Rite of Vision: Well Stone. Well stones sit around the water wells. Wowhead has no stone pin.",
+            useClientPin = true,
+            text = "Rite of Vision: Well Stone. Well stones sit around the water wells. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-771-rite-of-vision" },
             complete = QuestObjective(771, 1, "Well Stone"),
             route = {
@@ -1076,7 +1081,8 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Poison Water: Prairie Wolf Paw. Ghost Howl's cloak starts The Demon Scarred Cloak. Wowhead has no spawn pin for him.",
+            useClientPin = true,
+            text = "Poison Water: Prairie Wolf Paw. Ghost Howl's cloak starts The Demon Scarred Cloak. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-748-poison-water" },
             complete = QuestObjective(748, 1, "Prairie Wolf Paw"),
             route = {
@@ -1563,7 +1569,8 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Winterhoof Cleansing: Cleanse the Winterhoof Water Well. Use the Winterhoof Cleansing Totem. The well is southeast of Bloodhoof among the palemane. Wowhead has no well pin.",
+            useClientPin = true,
+            text = "Winterhoof Cleansing: Cleanse the Winterhoof Water Well. Use the Winterhoof Cleansing Totem. The well is southeast of Bloodhoof among the palemane. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-754-winterhoof-cleansing" },
             complete = QuestObjective(754, 1, "Cleanse the Winterhoof Water Well"),
             route = {
@@ -1637,7 +1644,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "Dwarven Digging: Broken Tools. Smash the Prospector's Picks at a forge. Wowhead has no forge pin, so this marks Bloodhoof Village.",
+            useClientPin = true,
+            text = "Dwarven Digging: Broken Tools. Smash the Prospector's Picks at a forge. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-746-dwarven-digging" },
             complete = QuestObjective(746, 1, "Broken Tools"),
             route = {
@@ -1888,7 +1896,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "Defeat 3 duelists or Novice Warriors in the Bloodhoof arena, then return to Krang Stonehoof. Wowhead has no warrior pin.",
+            useClientPin = true,
+            text = "Defeat 3 duelists or Novice Warriors in the Bloodhoof arena, then return to Krang Stonehoof. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99108-sparring-match" },
             complete = QuestState(99108, "completed"),
             route = {
@@ -2238,7 +2247,8 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Thunderhorn Cleansing: Cleanse the Thunderhorn Water Well. Use the Thunderhorn Cleansing Totem. The well is north of Bloodhoof. Wowhead has no well pin, so this marks the swoops there.",
+            useClientPin = true,
+            text = "Thunderhorn Cleansing: Cleanse the Thunderhorn Water Well. Use the Thunderhorn Cleansing Totem. The well is north of Bloodhoof. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-758-thunderhorn-cleansing" },
             complete = QuestObjective(758, 1, "Cleanse the Thunderhorn Water Well"),
             route = {
@@ -2618,7 +2628,8 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Fizsprocket's Notes: Shredder Operation Instructions. Wowhead has no page pin. Search the mine.",
+            useClientPin = true,
+            text = "Fizsprocket's Notes: Shredder Operation Instructions. Search the mine. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98424-fizsprockets-notes" },
             complete = QuestObjective(98424, 1, "Shredder Operation Instructions"),
             route = {
@@ -2637,7 +2648,8 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Fizsprocket's Notes: Barrens Operations Best Practices. Wowhead has no page pin. Search the mine.",
+            useClientPin = true,
+            text = "Fizsprocket's Notes: Barrens Operations Best Practices. Search the mine. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98424-fizsprockets-notes" },
             complete = QuestObjective(98424, 2, "Barrens Operations Best Practices"),
             route = {
@@ -2656,7 +2668,8 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Fizsprocket's Notes: One \"Gerenzo\", of Stonetalon. Wowhead has no page pin. Search the mine.",
+            useClientPin = true,
+            text = "Fizsprocket's Notes: One \"Gerenzo\", of Stonetalon. Search the mine. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98424-fizsprockets-notes" },
             complete = QuestObjective(98424, 3, "One \"Gerenzo\", of Stonetalon"),
             route = {
@@ -2675,7 +2688,8 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Fizsprocket's Notes: Mulgore Expansion Plans. Wowhead has no page pin. Search the mine.",
+            useClientPin = true,
+            text = "Fizsprocket's Notes: Mulgore Expansion Plans. Search the mine. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98424-fizsprockets-notes" },
             complete = QuestObjective(98424, 4, "Mulgore Expansion Plans"),
             route = {
@@ -2729,7 +2743,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Rites of the Earthmother: Horn of Arra'chea. Arra'chea roams the northern plains. Wowhead has no pin, so this marks Red Rocks.",
+            useClientPin = true,
+            text = "Rites of the Earthmother: Horn of Arra'chea. Arra'chea roams the northern plains. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-776-rites-of-the-earthmother" },
             complete = QuestObjective(776, 1, "Horn of Arra'chea"),
             route = {
@@ -3312,7 +3327,8 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Wildmane Cleansing: Cleanse the Wildmane Well. Use the Wildmane Cleansing Totem. The well is north of Thunder Bluff. Wowhead has no well pin, so this marks the taloned swoops on the northern plains.",
+            useClientPin = true,
+            text = "Wildmane Cleansing: Cleanse the Wildmane Well. Use the Wildmane Cleansing Totem. The well is north of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-760-wildmane-cleansing" },
             complete = QuestObjective(760, 1, "Cleanse the Wildmane Well"),
             route = {
@@ -3408,7 +3424,8 @@ ns:RegisterGuide({
                     { class = { 1, 7 } },
                 },
             },
-            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. Wowhead has no cart pin.",
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-76156-stalk-with-the-earthmother" },
             complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
             route = {
@@ -3465,7 +3482,8 @@ ns:RegisterGuide({
                     { class = 7 },
                 },
             },
-            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. Wowhead has no cone pin.",
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-76160-stalk-with-the-earthmother" },
             complete = QuestObjective(76160, 1, "Pine Salve"),
             route = {
@@ -3559,7 +3577,7 @@ ns:RegisterGuide({
                     { race = 6 },
                 },
             },
-            text = "Accept Journey to the Crossroads from Kirge Sternhorn. Wowhead files him under the Barrens area, and these coordinates are Bloodhoof Village.",
+            text = "Accept Journey to the Crossroads from Kirge Sternhorn in Bloodhoof Village.",
             complete = QuestState(854, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.448, 0.586, "Kirge Sternhorn",

@@ -86,7 +86,109 @@ function Navigation:TransportLeg(leg, state)
     return ns.Travel:Departure(state, leg.mapID, leg.label)
 end
 
-function Navigation:GetActiveLeg(goal, state)
+local function PlainCoord(value)
+    if type(value) ~= "number" or value < 0 or value > 1 then
+        return nil
+    end
+    if type(issecretvalue) == "function" then
+        local ok, secret = pcall(issecretvalue, value)
+        if ok and secret then
+            return nil
+        end
+    end
+    return value
+end
+
+local function QuestID(goal)
+    local complete = goal and goal.complete
+    if type(complete) ~= "table" then
+        return nil
+    end
+    local quest = complete.quest
+    if type(quest) == "table" and type(quest.id) == "number" then
+        return quest.id
+    end
+    local objective = complete.questObjective
+    if type(objective) == "table" and type(objective.id) == "number" then
+        return objective.id
+    end
+end
+
+function Navigation:ClientPin(goal, mapID, api)
+    if not goal or goal.useClientPin ~= true then
+        return nil
+    end
+    local questID = QuestID(goal)
+    if not questID then
+        return nil
+    end
+    local questLog = api
+    if questLog == nil then
+        questLog = C_QuestLog
+    end
+    if type(questLog) ~= "table" or type(questLog.GetQuestsOnMap) ~= "function" then
+        return nil
+    end
+    local function OnMap(uiMapID)
+        if type(uiMapID) ~= "number" then
+            return nil
+        end
+        local ok, quests = pcall(questLog.GetQuestsOnMap, uiMapID)
+        if not ok or type(quests) ~= "table" then
+            return nil
+        end
+        for _, info in ipairs(quests) do
+            if type(info) == "table" and info.questID == questID and not info.isMapIndicatorQuest then
+                local x, y = PlainCoord(info.x), PlainCoord(info.y)
+                if x and y then
+                    return uiMapID, x, y
+                end
+            end
+        end
+    end
+    local pinMap, x, y = OnMap(mapID)
+    if x then
+        return pinMap, x, y
+    end
+    if type(questLog.GetMapForQuestPOIs) == "function" then
+        local ok, poiMap = pcall(questLog.GetMapForQuestPOIs)
+        if ok then
+            return OnMap(poiMap)
+        end
+    end
+end
+
+function Navigation:ApplyClientPin(goal, leg, api)
+    if not leg then
+        return nil
+    end
+    local pinMap, x, y = self:ClientPin(goal, leg.mapID, api)
+    if not x or (pinMap == leg.mapID and x == leg.x and y == leg.y) then
+        return leg
+    end
+    local copy = {}
+    for key, value in pairs(leg) do
+        copy[key] = value
+    end
+    copy.mapID = pinMap
+    copy.x = x
+    copy.y = y
+    return copy
+end
+
+function Navigation:GetActiveLeg(goal, state, api)
+    if goal and goal.useClientPin == true and (type(goal.route) ~= "table" or #goal.route == 0) then
+        local pinMap, x, y = self:ClientPin(goal, state and state.mapID, api)
+        if x then
+            return {
+                mapID = pinMap,
+                x = x,
+                y = y,
+                label = "Quest log pin",
+                offMapText = "Travel to the pin in your quest log.",
+            }, "Quest log pin"
+        end
+    end
     if not goal or not goal.route then
         return nil, "No waypoint for this step."
     end
@@ -105,9 +207,9 @@ function Navigation:GetActiveLeg(goal, state)
             else
                 if self:OnMap(state.mapID, leg.mapID) then
                     if not state.x or not state.y then
-                        return leg, "Waiting for a reliable player position."
+                        return self:ApplyClientPin(goal, leg, api), "Waiting for a reliable player position."
                     end
-                    return leg, leg.label
+                    return self:ApplyClientPin(goal, leg, api), leg.label
                 end
                 local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
                 if not arrived then
@@ -117,7 +219,7 @@ function Navigation:GetActiveLeg(goal, state)
                 local transport = self:TransportLeg(leg, state)
                 if transport and transport.transport then return transport, transport.label end
                 if transport then return transport, transport.label end
-                return leg, leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
+                return self:ApplyClientPin(goal, leg, api), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
         end
     end
