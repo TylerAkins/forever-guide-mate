@@ -30,7 +30,7 @@ end
 CreateFrame = nil
 C_Timer = nil
 for _, path in ipairs({
-    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua",
+    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua", "QuestPrerequisites.lua",
     "QuestAudit.lua", "QuestDialog.lua", "Navigation.lua", "TomTomWaypoints.lua",
     "MapPins.lua", "UI.lua",
     "Guides/Dungeons/RagefireChasm.lua", "Guides/Dungeons/WailingCaverns.lua",
@@ -281,12 +281,30 @@ for _, guideID in ipairs(ns.guideOrder) do
                     :format(guideID, tostring(goal.id), fromID, spec.id))
             end
         end
-        if goal.kind == "accept" and guide.category ~= "Dungeon Quest Guides" then
-            local acceptQuest = guideData.AcceptQuestIDFromGoal(goal)
-            local needTurnin = acceptQuest and guideData.CHAIN_ACCEPT_AFTER_TURNIN[acceptQuest]
-            if needTurnin and not DependsOnTurnin(goal, needTurnin) then
-                Check(false, ("%s %s accept for quest %d must dependOn turnin for quest %d")
-                    :format(guideID, tostring(goal.id), acceptQuest, needTurnin))
+    end
+    for _, issue in ipairs(guideData.ChainViolations(guide, guideID)) do
+        Check(false, ("%s %s accept for quest %d has an invalid prerequisite turn-in for quest %d")
+            :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
+    end
+
+    local objectivesByQuest = {}
+    for _, goal in ipairs(guide.goals) do
+        local spec = QuestObjectiveSpec(goal)
+        if spec and type(spec.id) == "number" then
+            objectivesByQuest[spec.id] = objectivesByQuest[spec.id] or {}
+            objectivesByQuest[spec.id][#objectivesByQuest[spec.id] + 1] = goal.id
+        end
+    end
+    for _, goal in ipairs(guide.goals) do
+        if goal.kind == "turnin" then
+            local questID = guideData.AcceptQuestIDFromGoal(goal)
+            for _, objectiveID in ipairs(objectivesByQuest[questID] or {}) do
+                local found = false
+                for _, dependency in ipairs(goal.dependsOn or {}) do
+                    if dependency == objectiveID then found = true end
+                end
+                Check(found, ("%s %s must dependOn objective %s")
+                    :format(guideID, tostring(goal.id), objectiveID))
             end
         end
     end

@@ -5158,6 +5158,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1489-hamuul-runetotem",
+            kind = "accept",
+            priority = 3035,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Hamuul Runetotem from Tonga Runetotem.",
+            dependsOn = { "turnin-880-altered-beings" },
+            complete = QuestState(1489, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.522, 0.318, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
+            },
+        },
+        {
             id = "accept-853-apothecary-zamah",
             kind = "accept",
             priority = 3040,
@@ -5492,6 +5510,60 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.230, 0.210, "Apothecary Zamah",
                     "Travel to the next zone, then continue to Apothecary Zamah."),
+            },
+        },
+        {
+            id = "turnin-1489-hamuul-runetotem",
+            kind = "turnin",
+            priority = 3221,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Hamuul Runetotem to Archdruid Hamuul Runetotem on Elder Rise.",
+            dependsOn = { "accept-1489-hamuul-runetotem" },
+            complete = QuestState(1489, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7853, 0.2862, "Archdruid Hamuul Runetotem",
+                    "Travel to Archdruid Hamuul Runetotem."),
+            },
+        },
+        {
+            id = "accept-1490-nara-wildmane",
+            kind = "accept",
+            priority = 3222,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Nara Wildmane from Archdruid Hamuul Runetotem on Elder Rise.",
+            dependsOn = { "turnin-1489-hamuul-runetotem" },
+            complete = QuestState(1490, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7853, 0.2862, "Archdruid Hamuul Runetotem",
+                    "Travel to Archdruid Hamuul Runetotem."),
+            },
+        },
+        {
+            id = "turnin-1490-nara-wildmane",
+            kind = "turnin",
+            priority = 3223,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Nara Wildmane to Nara Wildmane on Elder Rise.",
+            dependsOn = { "accept-1490-nara-wildmane" },
+            complete = QuestState(1490, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7569, 0.3153, "Nara Wildmane",
+                    "Travel to Nara Wildmane."),
             },
         },
         {

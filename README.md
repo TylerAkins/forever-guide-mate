@@ -4,6 +4,8 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 A guide the character cannot use says Ineligible. The faction stays listed beside that. Coordinates in the shipped guides have not been validated in the Forever client.
 
+Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. Completed quest history is reconciled from the client, and verified quest prerequisites are followed automatically. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
+
 The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md). Shared quest-step rules (quest ids, multi-objective chains, pins) are in [docs/guide-authoring.md](docs/guide-authoring.md).
 
 Guide files are split by job. `Guides/Leveling/` holds Zephras Isle and the Era chapters whose titles no longer end in `(Era)`. `Guides/Era/` holds the chapters that still say `(Era)`. `Guides/Loremaster/` holds the zone-completion guides. `Guides/Dungeons/` holds dungeon quest guides.
@@ -43,7 +45,7 @@ Ashenvale’s Forever list had no new quests when it was checked. Those chapters
 
 ### Loremaster
 
-These finish a zone’s quests. The walk is the leveling route, and a zone quest that route skips is woven in. Dungeon quests stay in the dungeon guides. The procedure is in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
+These finish a zone’s quests. The walk is the leveling route, and a zone quest that route skips is woven in. Shared prerequisite handoffs stay aligned with leveling; dungeon-only quests stay in the dungeon guides. The procedure is in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
 | Guide | Faction |
 | --- | --- |

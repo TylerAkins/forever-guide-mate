@@ -6,6 +6,25 @@ ns.Engine = Engine
 local VALID_KINDS = { accept = true, objective = true, turnin = true, travel = true, note = true }
 local SHORT_TIMER_SECONDS = 30 * 60
 
+ns.questPrerequisites = ns.questPrerequisites or {}
+
+function ns:RegisterQuestPrerequisite(spec)
+    if type(spec) ~= "table" or type(spec.quest) ~= "number"
+        or (spec.mode ~= "all" and spec.mode ~= "any")
+        or type(spec.quests) ~= "table" or #spec.quests == 0 then
+        error("Forever GuideMate: invalid quest prerequisite", 2)
+    end
+    local seen = {}
+    for _, questID in ipairs(spec.quests) do
+        if type(questID) ~= "number" or questID == spec.quest or seen[questID] then
+            error("Forever GuideMate: invalid quest prerequisite for " .. spec.quest, 2)
+        end
+        seen[questID] = true
+    end
+    self.questPrerequisites[spec.quest] = self.questPrerequisites[spec.quest] or {}
+    self.questPrerequisites[spec.quest][#self.questPrerequisites[spec.quest] + 1] = spec
+end
+
 local function Contains(values, expected)
     if type(values) ~= "table" then
         return values == expected
@@ -291,6 +310,65 @@ local function ValidateTimer(goal)
     return true
 end
 
+local function GoalQuestID(goal)
+    local complete = type(goal) == "table" and goal.complete or nil
+    local quest = type(complete) == "table" and complete.quest or nil
+    local objective = type(complete) == "table" and complete.questObjective or nil
+    return type(quest) == "table" and quest.id or type(objective) == "table" and objective.id or nil
+end
+
+local function ApplyQuestPrerequisites(guide)
+    local turnins, objectives = {}, {}
+    for index, goal in ipairs(guide.goals) do
+        if goal.kind == "turnin" then
+            local questID = GoalQuestID(goal)
+            if questID then turnins[questID] = turnins[questID] or { id = goal.id, index = index } end
+        elseif goal.kind == "objective" then
+            local questID = GoalQuestID(goal)
+            if questID then
+                objectives[questID] = objectives[questID] or {}
+                objectives[questID][#objectives[questID] + 1] = goal.id
+            end
+        end
+    end
+    -- A turn-in is never ready until every objective authored for that quest is
+    -- complete. Augmenting legacy data here keeps the public guide format
+    -- backward compatible while the lint enforces the finalized invariant.
+    for _, goal in ipairs(guide.goals) do
+        if goal.kind == "turnin" then
+            local questID = GoalQuestID(goal)
+            local present = {}
+            goal.dependsOn = goal.dependsOn or {}
+            for _, dependency in ipairs(goal.dependsOn) do present[dependency] = true end
+            for _, objectiveID in ipairs(objectives[questID] or {}) do
+                if not present[objectiveID] then goal.dependsOn[#goal.dependsOn + 1] = objectiveID end
+            end
+        end
+    end
+    if guide.category == "Dungeon Quest Guides" then return end
+    for goalIndex, goal in ipairs(guide.goals) do
+        if goal.kind == "accept" then
+            local rules = ns.questPrerequisites[GoalQuestID(goal)]
+            if rules then
+                goal.questPrerequisites = goal.questPrerequisites or {}
+                for _, rule in ipairs(rules) do
+                    local group = { mode = rule.mode, conditions = rule.conditions, questIDs = {}, goalIDs = {} }
+                    for _, questID in ipairs(rule.quests) do
+                        local turnin = turnins[questID]
+                        if not turnin or turnin.index >= goalIndex then
+                            error(("Forever GuideMate: guide %s accept %s needs turn-in quest %d")
+                                :format(guide.id, goal.id, questID), 3)
+                        end
+                        group.questIDs[#group.questIDs + 1] = questID
+                        group.goalIDs[#group.goalIDs + 1] = turnin.id
+                    end
+                    goal.questPrerequisites[#goal.questPrerequisites + 1] = group
+                end
+            end
+        end
+    end
+end
+
 local function ValidateGuide(guide)
     if type(guide) ~= "table" or type(guide.id) ~= "string" or guide.id == "" then
         return false, "Guide id is required."
@@ -332,10 +410,32 @@ local function ValidateGuide(guide)
             end
         end
     end
+    local visiting, visited = {}, {}
+    local function Visit(goalID)
+        if visiting[goalID] then return false end
+        if visited[goalID] then return true end
+        visiting[goalID] = true
+        local goal = guide.goals[goalIDs[goalID]]
+        local dependencies = {}
+        for _, dependency in ipairs(goal.dependsOn or {}) do dependencies[#dependencies + 1] = dependency end
+        for _, group in ipairs(goal.questPrerequisites or {}) do
+            for _, dependency in ipairs(group.goalIDs or {}) do dependencies[#dependencies + 1] = dependency end
+        end
+        for _, dependency in ipairs(dependencies) do
+            if not goalIDs[dependency] or not Visit(dependency) then return false end
+        end
+        visiting[goalID] = nil
+        visited[goalID] = true
+        return true
+    end
+    for goalID in pairs(goalIDs) do
+        if not Visit(goalID) then return false, "Guide dependencies must be acyclic." end
+    end
     return true
 end
 
 function ns:RegisterGuide(guide)
+    ApplyQuestPrerequisites(guide)
     local valid, reason = ValidateGuide(guide)
     if not valid then
         error("Forever GuideMate: " .. reason, 2)
@@ -409,6 +509,18 @@ local function CopyEraGoal(goal, segment, gate)
             dependsOn[index] = segment.id .. ":" .. dependency
         end
         copy.dependsOn = dependsOn
+    end
+    if type(goal.questPrerequisites) == "table" then
+        copy.questPrerequisites = {}
+        for groupIndex, group in ipairs(goal.questPrerequisites) do
+            local groupCopy = {}
+            for key, value in pairs(group) do groupCopy[key] = value end
+            groupCopy.goalIDs = {}
+            for index, dependency in ipairs(group.goalIDs or {}) do
+                groupCopy.goalIDs[index] = segment.id .. ":" .. dependency
+            end
+            copy.questPrerequisites[groupIndex] = groupCopy
+        end
     end
     copy.conditions = AndCondition(goal.conditions, gate)
     return copy
@@ -613,20 +725,11 @@ function Engine:IsGoalDone(goal, state, guide)
         if evaluation == true then
             return true
         end
-        if evaluation == false and QuestObservableCompletion(goal.complete) then
-            local quest = goal.complete.quest
-            if type(quest) == "table" and quest.state == "completed" then
-                local questID = quest.id
-                if state.quests and state.quests[questID] then
-                    return false
-                end
-            end
-            if goal.complete.questObjective then
-                local inferred = guide and self:GetInferred(guide)
-                if inferred and inferred[goal.id] then
-                    return false
-                end
-            end
+        -- Once both quest APIs have answered, their negative result is more
+        -- trustworthy than old manual, ledger, or inferred state.
+        if evaluation == false and QuestObservableCompletion(goal.complete)
+            and state.questLogKnown and state.questCompletionKnown then
+            return false
         end
     end
     local ledger = guide and self:GetLedger(guide, false)
@@ -657,17 +760,16 @@ function Engine:ReconcileGuide(guide, state)
         end
         local evaluation = goal.complete and ns.EvaluateCondition(goal.complete, state)
         local observed = evaluation == true
-        local staleTurnIn = evaluation == false and goal.complete and goal.complete.quest
-            and goal.complete.quest.state == "completed"
-        local questID = staleTurnIn and goal.complete.quest.id
-        local questStillOpen = type(questID) == "number" and state.quests and state.quests[questID]
-        if staleTurnIn and ledger[goal.id] and questStillOpen then
+        local observedIncomplete = evaluation == false and QuestObservableCompletion(goal.complete)
+            and state.questLogKnown and state.questCompletionKnown
+        if observedIncomplete then
             ledger[goal.id] = nil
+            ns.charDB.manualCompleted[goal.id] = nil
         end
         if observed and goal.persistCompletion then
             ledger[goal.id] = true
         end
-        local ledgerDone = ledger[goal.id] and not staleTurnIn
+        local ledgerDone = ledger[goal.id] and not observedIncomplete
         if observed or ledgerDone or ns.charDB.manualCompleted[goal.id] then
             done[goal.id] = true
         end
@@ -683,6 +785,17 @@ function Engine:ReconcileGuide(guide, state)
             local dependency = self:GetGoal(guide, dependencyID)
             if dependency and dependency.kind ~= "travel" and dependency.kind ~= "note" then
                 InferDependencies(dependencyID, visiting)
+            end
+        end
+        for _, group in ipairs(goal.questPrerequisites or {}) do
+            local applies = ns.EvaluateCondition(group.conditions, state)
+            if applies ~= false then
+                for _, dependencyID in ipairs(group.goalIDs or {}) do
+                    if group.mode == "all" or self:IsDependencyDone(guide, dependencyID, state) then
+                        inferred[dependencyID] = true
+                        InferDependencies(dependencyID, visiting)
+                    end
+                end
             end
         end
         visiting[goalID] = nil
@@ -1058,6 +1171,20 @@ function Engine:IsReady(guide, goal, state)
             return false, "Waiting for " .. dependencyID .. ".", false
         end
     end
+    for _, group in ipairs(goal.questPrerequisites or {}) do
+        local applies, conditionReason = ns.EvaluateCondition(group.conditions, state)
+        if applies == nil then return false, conditionReason, false end
+        if applies ~= false then
+            local done = 0
+            for _, dependencyID in ipairs(group.goalIDs or {}) do
+                if self:IsDependencyDone(guide, dependencyID, state) then done = done + 1 end
+            end
+            local satisfied = group.mode == "all" and done == #(group.goalIDs or {}) or done > 0
+            if not satisfied then
+                return false, "Waiting for quest prerequisite " .. table.concat(group.questIDs or {}, ", ") .. ".", false
+            end
+        end
+    end
     return true, eligible == nil and reason or nil, false
 end
 
@@ -1157,9 +1284,7 @@ function Engine:CandidateGoals(guide, state)
     local urgentGoals = self:UrgentGoals(guide, state)
     self.urgentGoals = urgentGoals
     local urgent = {}
-    local sameMap = {}
-    local others = {}
-    local deferred = {}
+    local candidates = {}
     self.eligibilityReasons = {}
     for index, goal in ipairs(self:SegmentGoals(guide, state)) do
         local ready, reason, ineligible = self:IsReady(guide, goal, state)
@@ -1168,14 +1293,15 @@ function Engine:CandidateGoals(guide, state)
         end
         if ready and not self:IsGoalDone(goal, state, guide) then
             local destination = goal.route and goal.route[#goal.route]
-            local candidate = { goal = goal, index = index }
-            if ns.charDB.deferred[goal.id] then
-                deferred[#deferred + 1] = candidate
-            elseif urgentGoals[goal.id] then
+            local candidate = {
+                goal = goal, index = index,
+                deferred = ns.charDB.deferred[goal.id] == true,
+                sameMap = destination and destination.mapID == state.mapID or false,
+            }
+            if urgentGoals[goal.id] and not candidate.deferred then
                 urgent[#urgent + 1] = candidate
             else
-                local bucket = destination and destination.mapID == state.mapID and sameMap or others
-                bucket[#bucket + 1] = candidate
+                candidates[#candidates + 1] = candidate
             end
         end
     end
@@ -1185,24 +1311,43 @@ function Engine:CandidateGoals(guide, state)
         if aUrgent and bUrgent and aUrgent.seconds ~= bUrgent.seconds then
             return aUrgent.seconds < bUrgent.seconds
         end
+        if a.deferred ~= b.deferred then return not a.deferred end
+        if guide.category == "Dungeon Quest Guides" and a.sameMap ~= b.sameMap then
+            return a.sameMap
+        end
         local aPriority = a.goal.priority or a.index
         local bPriority = b.goal.priority or b.index
-        return aPriority < bPriority
+        if aPriority ~= bPriority then return aPriority < bPriority end
+        if a.sameMap ~= b.sameMap then return a.sameMap end
+        return a.index < b.index
     end
     table.sort(urgent, Sort)
-    table.sort(sameMap, Sort)
-    table.sort(others, Sort)
-    table.sort(deferred, Sort)
-    for _, bucket in ipairs({ sameMap, others, deferred }) do
-        for _, candidate in ipairs(bucket) do
-            urgent[#urgent + 1] = candidate
-        end
-    end
+    table.sort(candidates, Sort)
+    for _, candidate in ipairs(candidates) do urgent[#urgent + 1] = candidate end
     local goals = {}
     for _, candidate in ipairs(urgent) do
         goals[#goals + 1] = candidate.goal
     end
     return goals
+end
+
+function Engine:BlockedAuditGoal(guide, state)
+    local report = ns.charDB and ns.charDB.notOffered
+    if type(report) ~= "table" then return nil end
+    for goalID, entry in pairs(report) do
+        if entry.guide == ns.charDB.selectedGuide then
+            local goal = self:GetGoal(guide, goalID)
+            if not goal or self:IsGoalDone(goal, state, guide) then
+                report[goalID] = nil
+            else
+                local ready = self:IsReady(guide, goal, state)
+                if ready then return goal, entry end
+                -- A newly catalogued prerequisite can now recover this old
+                -- refusal. Remove the stale report and let routing rewind.
+                report[goalID] = nil
+            end
+        end
+    end
 end
 
 local function ActiveGoalStorageKey(guide, goalOrID)
@@ -1297,6 +1442,7 @@ function Engine:Refresh(state)
         local observedUnknown = activeEvaluation == nil
         local activeFinished = active and self:IsGoalDone(active, state, guide)
         local candidates = self:CandidateGoals(guide, state)
+        local blockedGoal, blockedEntry = self:BlockedAuditGoal(guide, state)
         local function Remaining(goal)
             local info = goal and self.urgentGoals[goal.id]
             return info and info.seconds or nil
@@ -1313,7 +1459,11 @@ function Engine:Refresh(state)
             and nextGoal.priority < active.priority
         local onChapter = not self.currentSegment or not active or not active.segmentID
             or active.segmentID == self.currentSegment.id
-        if active and self.reviewingGoal == active.id and not shortPreempt then
+        if blockedGoal then
+            self:SetActiveGoal(blockedGoal, active ~= nil)
+            self.status = ("Blocked: %s does not offer quest %d. No verified prerequisite path is registered.")
+                :format(tostring(blockedEntry.npc), tonumber(blockedEntry.quest) or 0)
+        elseif active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
         elseif onChapter and active and ready and not activeFinished and not ns.charDB.deferred[active.id]
