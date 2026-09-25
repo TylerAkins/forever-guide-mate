@@ -505,16 +505,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-917-shadowthread-cave",
-            kind = "travel",
-            priority = 330,
-            text = "Enter Shadowthread Cave.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5680, 0.3165, "Shadowthread Cave",
-                    "Travel to Shadowthread Cave."),
-            },
-        },
-        {
             id = "objective-917-webwood-egg",
             kind = "objective",
             priority = 340,
@@ -701,16 +691,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-929-dolanaar",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Dolanaar.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5570, 0.5980, "Dolanaar",
-                    "Travel to Dolanaar."),
-            },
-        },
-        {
             id = "turnin-2159-dolanaar-delivery",
             kind = "turnin",
             priority = 490,
@@ -830,16 +810,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Tallonkai Swiftroot",
                     "Travel to Tallonkai Swiftroot."),
-            },
-        },
-        {
-            id = "travel-918-lake-al-ameth",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Lake Al'Ameth.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.6091, 0.6845, "Lake Al'Ameth",
-                    "Travel to Lake Al'Ameth."),
             },
         },
         {
@@ -1161,18 +1131,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-932-fel-rock",
-            kind = "travel",
-            priority = 830,
-            text = "Travel to Fel Rock cave north of Dolanaar.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5374, 0.5362, "Continue toward Fel Rock",
-                    "Continue toward Fel Rock."),
-                Point(MAP.TELDRASSIL, 0.5461, 0.5262, "Fel Rock",
-                    "Travel to Fel Rock."),
-            },
-        },
-        {
             id = "objective-932-twisted-hatred",
             kind = "objective",
             priority = 840,
@@ -1182,18 +1140,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5127, 0.5077, "Lord Melenas",
                     "Travel to Lord Melenas."),
-            },
-        },
-        {
-            id = "travel-dolanaar",
-            kind = "travel",
-            priority = 850,
-            text = "Exit to Dolanaar.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5461, 0.5262, "Continue toward Dolanaar",
-                    "Continue toward Dolanaar."),
-                Point(MAP.TELDRASSIL, 0.5550, 0.5690, "Dolanaar",
-                    "Travel to Dolanaar."),
             },
         },
         {
@@ -1282,16 +1228,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-930-gnarlpine-hold",
-            kind = "travel",
-            priority = 900,
-            text = "Travel to Gnarlpine Hold.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.4267, 0.7616, "Gnarlpine Hold",
-                    "Travel to Gnarlpine Hold."),
-            },
-        },
-        {
             id = "accept-930-the-glowing-fruit",
             kind = "accept",
             priority = 910,
@@ -1300,16 +1236,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.4267, 0.7616, "Gnarlpine Hold",
                     "Travel to Gnarlpine Hold."),
-            },
-        },
-        {
-            id = "travel-933-pools-of-arlithrien",
-            kind = "travel",
-            priority = 920,
-            text = "Travel to Pools of Arlithrien.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.4237, 0.6712, "Pools of Arlithrien",
-                    "Travel to Pools of Arlithrien."),
             },
         },
         {
@@ -1334,16 +1260,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5700, 0.6300, "Seek Redemption!",
                     "Travel to Seek Redemption!."),
-            },
-        },
-        {
-            id = "travel-483-ban-ethil-barrow-den",
-            kind = "travel",
-            priority = 950,
-            text = "Travel to Ban'ethil Barrow Den.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.4428, 0.5808, "Ban'ethil Barrow Den",
-                    "Travel to Ban'ethil Barrow Den."),
             },
         },
         {
@@ -1490,16 +1406,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.4496, 0.6146, "Oben Rageclaw",
                     "Travel to Oben Rageclaw."),
-            },
-        },
-        {
-            id = "travel-dolanaar-2",
-            kind = "travel",
-            priority = 1060,
-            text = "Travel to Dolanaar.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5620, 0.6163, "Dolanaar",
-                    "Travel to Dolanaar."),
             },
         },
         {
@@ -1811,16 +1717,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-923-darnassus",
-            kind = "travel",
-            priority = 1260,
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.2700, 0.5500, "Darnassus",
-                    "Travel to Darnassus."),
-            },
-        },
-        {
             id = "accept-6344-nessa-shadowsong",
             kind = "accept",
             priority = 1270,
@@ -1976,21 +1872,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5929-nighthaven",
-            kind = "travel",
-            priority = 1360,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Use Teleport: Moonglade to get to Nighthaven in Moonglade.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.5623, 0.3060, "Nighthaven",
-                    "Travel to Nighthaven."),
-            },
-        },
-        {
             id = "turnin-5921-moonglade",
             kind = "turnin",
             priority = 1370,
@@ -2071,21 +1952,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MOONGLADE, 0.5620, 0.3064, "Dendrite Starblaze",
                     "Travel to Dendrite Starblaze."),
-            },
-        },
-        {
-            id = "travel-rut-theran-village",
-            kind = "travel",
-            priority = 1420,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Fly to Rut'theran Village.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5833, 0.9389, "Silva Fil'naveth",
-                    "Travel to Silva Fil'naveth."),
             },
         },
         {
@@ -2183,16 +2049,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-923-teldrassil",
-            kind = "travel",
-            priority = 1490,
-            text = "Travel to Teldrassil.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.3800, 0.5470, "Teldrassil",
-                    "Travel to Teldrassil."),
-            },
-        },
-        {
             id = "objective-486-ursal-the-mauler",
             kind = "objective",
             priority = 1500,
@@ -2225,16 +2081,6 @@ ns:RegisterGuide({
                     "Continue toward Vorlus Vilehoof."),
                 Point(MAP.TELDRASSIL, 0.4731, 0.6365, "Vorlus Vilehoof",
                     "Travel to Vorlus Vilehoof."),
-            },
-        },
-        {
-            id = "travel-923-wellspring-river",
-            kind = "travel",
-            priority = 1520,
-            text = "Travel to Wellspring River.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.4365, 0.3446, "Wellspring River",
-                    "Travel to Wellspring River."),
             },
         },
         {
@@ -2272,16 +2118,6 @@ ns:RegisterGuide({
                     "Continue toward Blackmoss the Fetid."),
                 Point(MAP.TELDRASSIL, 0.4250, 0.2600, "Blackmoss the Fetid",
                     "Travel to Blackmoss the Fetid."),
-            },
-        },
-        {
-            id = "travel-937-the-oracle-glade",
-            kind = "travel",
-            priority = 1560,
-            text = "Travel to The Oracle Glade.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Sentinel Arynia Cloudsbreak",
-                    "Travel to Sentinel Arynia Cloudsbreak."),
             },
         },
         {
@@ -2541,16 +2377,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2498-cenarion-enclave",
-            kind = "travel",
-            priority = 1670,
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3688, 0.2197, "Darnassus",
-                    "Travel to Darnassus."),
-            },
-        },
-        {
             id = "turnin-2242-destiny-calls",
             kind = "turnin",
             priority = 1680,
@@ -2672,18 +2498,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-935-dolanaar",
-            kind = "travel",
-            priority = 1770,
-            text = "Travel to Dolanaar.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.4050, 0.5470, "Continue toward Dolanaar",
-                    "Continue toward Dolanaar."),
-                Point(MAP.TELDRASSIL, 0.5595, 0.5728, "Dolanaar",
-                    "Travel to Dolanaar."),
-            },
-        },
-        {
             id = "turnin-486-ursal-the-mauler",
             kind = "turnin",
             priority = 1780,
@@ -2799,16 +2613,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5900, 0.6400, "Lasher Sproutling",
                     "Travel to Lasher Sproutling."),
-            },
-        },
-        {
-            id = "travel-952-darnassus",
-            kind = "travel",
-            priority = 1870,
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.2700, 0.5500, "Darnassus",
-                    "Travel to Darnassus."),
             },
         },
         {
@@ -2934,21 +2738,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6341-rut-theran-village",
-            kind = "travel",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Travel to Rut'theran Village. Run thru the portal west of the bank.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3050, 0.4140, "Rut'theran Village",
-                    "Travel to Rut'theran Village."),
-            },
-        },
-        {
             id = "turnin-6344-nessa-shadowsong",
             kind = "turnin",
             priority = 1920,
@@ -3010,16 +2799,6 @@ ns:RegisterGuide({
             },
             text = "Accept Flight to Auberdine from Vesprystus in Rut'theran Village.",
             complete = QuestState(6342, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5839, 0.9400, "Vesprystus",
-                    "Travel to Vesprystus."),
-            },
-        },
-        {
-            id = "travel-6342-auberdine",
-            kind = "travel",
-            priority = 1960,
-            text = "Fly to Auberdine.",
             route = {
                 Point(MAP.TELDRASSIL, 0.5839, 0.9400, "Vesprystus",
                     "Travel to Vesprystus."),
@@ -3111,21 +2890,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-cenarion-enclave",
-            kind = "travel",
-            priority = 2020,
-            conditions = {
-                all = {
-                    { class = 11 },
-                },
-            },
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3490, 0.0825, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
-            },
-        },
-        {
             id = "turnin-6001-body-and-heart",
             kind = "turnin",
             priority = 2030,
@@ -3140,21 +2904,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3490, 0.0825, "Mathrengyl Bearwalker",
                     "Travel to Mathrengyl Bearwalker."),
-            },
-        },
-        {
-            id = "travel-darnassus",
-            kind = "travel",
-            priority = 2040,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.5731, 0.3462, "Darnassus",
-                    "Travel to Darnassus."),
             },
         },
         {

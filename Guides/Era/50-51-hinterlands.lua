@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-7815-revantusk-village",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Revantusk Village in The Hinterlands.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.8034, 0.8148, "Revantusk Village",
-                    "Travel to Revantusk Village."),
-            },
-        },
-        {
             id = "accept-7815-snapjaws-mon",
             kind = "accept",
             priority = 20,
@@ -165,20 +155,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2641-valorwind-lake",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Valorwind Lake.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7636, 0.6093, "Continue toward Valorwind Lake",
-                    "Continue toward Valorwind Lake."),
-                Point(MAP.HINTERLANDS, 0.7174, 0.6536, "Continue toward Valorwind Lake",
-                    "Continue toward Valorwind Lake."),
-                Point(MAP.HINTERLANDS, 0.4004, 0.5993, "Valorwind Lake",
-                    "Travel to Valorwind Lake."),
-            },
-        },
-        {
             id = "objective-2641-violet-tragan",
             kind = "objective",
             priority = 120,
@@ -187,21 +163,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.4005, 0.5989, "Valorwind Lake",
                     "Travel to Valorwind Lake."),
-            },
-        },
-        {
-            id = "travel-7843-aerie-peak",
-            kind = "travel",
-            priority = 130,
-            conditions = {
-                all = {
-                    { quest = { id = 7842, state = "completed" } },
-                },
-            },
-            text = "Travel to Aerie Peak.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1400, 0.4800, "Aerie Peak",
-                    "Travel to Aerie Peak."),
             },
         },
         {
@@ -271,16 +232,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-revantusk-village",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to Revantusk Village.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7938, 0.7908, "Revantusk Village",
-                    "Travel to Revantusk Village."),
-            },
-        },
-        {
             id = "turnin-7843-the-final-message-to-the-wildhammer",
             kind = "turnin",
             priority = 180,
@@ -334,16 +285,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-valormok",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Valormok in Azshara.",
-            route = {
-                Point(MAP.AZSHARA, 0.2256, 0.5141, "Valormok",
-                    "Travel to Valormok."),
-            },
-        },
-        {
             id = "turnin-3562-magatha-s-payment-to-jediga",
             kind = "turnin",
             priority = 230,
@@ -374,21 +315,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.2256, 0.5141, "Jediga",
                     "Travel to Jediga."),
-            },
-        },
-        {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 260,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4502, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6254, 0.3850, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {

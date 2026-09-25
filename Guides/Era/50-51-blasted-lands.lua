@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2783-nethergarde-keep",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Nethergarde Keep.",
-            route = {
-                Point(MAP.BLASTED_LANDS, 0.6691, 0.1946, "Nethergarde Keep",
-                    "Travel to Nethergarde Keep."),
-            },
-        },
-        {
             id = "accept-2783-petty-squabbles",
             kind = "accept",
             priority = 20,
@@ -59,16 +49,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BLASTED_LANDS, 0.6757, 0.1929, "Ambassador Ardalan",
                     "Travel to Ambassador Ardalan."),
-            },
-        },
-        {
-            id = "travel-2801-swamp-of-sorrows",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Swamp of Sorrows.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.3424, 0.6611, "Swamp of Sorrows",
-                    "Travel to Swamp of Sorrows."),
             },
         },
         {

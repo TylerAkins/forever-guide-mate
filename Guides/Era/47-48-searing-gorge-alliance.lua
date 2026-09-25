@@ -44,58 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-4449-burning-steppes",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Burning Steppes from North of Redridge Mountains.",
-            route = {
-                Point(MAP.REDRIDGE, 0.4723, 0.2580, "Continue toward Burning Steppes",
-                    "Continue toward Burning Steppes."),
-                Point(MAP.REDRIDGE, 0.4670, 0.1085, "Continue toward Burning Steppes",
-                    "Continue toward Burning Steppes."),
-                Point(MAP.REDRIDGE, 0.4644, 0.0639, "Burning Steppes",
-                    "Travel to Burning Steppes."),
-            },
-        },
-        {
-            id = "travel-4449-morgan-s-vigil",
-            kind = "travel",
-            priority = 20,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8270, 0.6331, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
-            },
-        },
-        {
-            id = "travel-4449-draco-dar",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Draco'dar for the XP.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6780, 0.4842, "Continue toward Draco'dar",
-                    "Continue toward Draco'dar."),
-                Point(MAP.BURNING_STEPPES, 0.5639, 0.5255, "Continue toward Draco'dar",
-                    "Continue toward Draco'dar."),
-                Point(MAP.BURNING_STEPPES, 0.5855, 0.5026, "Continue toward Draco'dar",
-                    "Continue toward Draco'dar."),
-                Point(MAP.BURNING_STEPPES, 0.2560, 0.5151, "Draco'dar",
-                    "Travel to Draco'dar."),
-            },
-        },
-        {
-            id = "travel-4449-grimesilt-dig-site",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Grimesilt Dig Site.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3620, 0.7344, "Continue toward Grimesilt Dig Site",
-                    "Continue toward Grimesilt Dig Site."),
-                Point(MAP.SEARING_GORGE, 0.6551, 0.6214, "Grimesilt Dig Site",
-                    "Travel to Grimesilt Dig Site."),
-            },
-        },
-        {
             id = "accept-4449-caught",
             kind = "accept",
             priority = 50,
@@ -227,18 +175,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3441-thorium-point",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.6698, 0.4168, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.3905, 0.3895, "Thorium Point",
-                    "Travel to Thorium Point."),
-            },
-        },
-        {
             id = "accept-3441-divine-retribution",
             kind = "accept",
             priority = 170,
@@ -284,16 +220,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.3851, 0.3885, "Velarok Windblade",
                     "Travel to Velarok Windblade."),
-            },
-        },
-        {
-            id = "travel-7723-thorium-point",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3225, 0.3310, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -374,21 +300,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3368-city-of-ironforge",
-            kind = "travel",
-            priority = 290,
-            conditions = {
-                all = {
-                    { quest = { id = 3181, state = "completed" } },
-                },
-            },
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.7151, 0.1605, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "turnin-3368-suntara-stones",
             kind = "turnin",
             priority = 300,
@@ -438,21 +349,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3368-city-of-ironforge-2",
-            kind = "travel",
-            priority = 340,
-            conditions = {
-                all = {
-                    { quest = { id = 3181, state = "completed" } },
-                },
-            },
-            text = "Travel or Hearthstone to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.7151, 0.1605, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "turnin-3182-proof-of-deed",
             kind = "turnin",
             priority = 350,
@@ -486,21 +382,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-valley-of-kings",
-            kind = "travel",
-            priority = 370,
-            conditions = {
-                all = {
-                    { quest = { id = 3181, state = "completed" } },
-                },
-            },
-            text = "Travel to Valley of Kings in Loch Modan.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.1818, 0.8397, "Valley of Kings",
-                    "Travel to Valley of Kings."),
-            },
-        },
-        {
             id = "turnin-3201-at-last",
             kind = "turnin",
             priority = 380,
@@ -515,16 +396,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.1821, 0.8399, "Mountaineer Pebblebitty",
                     "Travel to Mountaineer Pebblebitty."),
-            },
-        },
-        {
-            id = "travel-7728-thorium-point",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3225, 0.3310, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -629,16 +500,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7727-the-slag-pit",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to The Slag Pit.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.4423, 0.3172, "The Slag Pit",
-                    "Travel to The Slag Pit."),
-            },
-        },
-        {
             id = "objective-7701-wanted-overseer-maltorius",
             kind = "objective",
             priority = 490,
@@ -699,20 +560,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3452-thorium-point",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.4987, 0.4588, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.6361, 0.3846, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.3902, 0.3901, "Thorium Point",
-                    "Travel to Thorium Point."),
-            },
-        },
-        {
             id = "turnin-3443-forging-the-shaft",
             kind = "turnin",
             priority = 550,
@@ -733,16 +580,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.3848, 0.3799, "Velarok Windblade",
                     "Travel to Velarok Windblade."),
-            },
-        },
-        {
-            id = "travel-3452-thorium-point-2",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3225, 0.3310, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -830,16 +667,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3452-firewatch-ridge",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to Firewatch Ridge.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.2195, 0.3618, "Firewatch Ridge",
-                    "Travel to Firewatch Ridge."),
-            },
-        },
-        {
             id = "objective-3452-the-flame-s-casing",
             kind = "objective",
             priority = 660,
@@ -849,16 +676,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.2195, 0.3618, "Twilight Fire Guard",
                     "Travel to Twilight Fire Guard."),
-            },
-        },
-        {
-            id = "travel-3453-thorium-point",
-            kind = "travel",
-            priority = 670,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3904, 0.3897, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -1073,21 +890,6 @@ ns:RegisterGuide({
                     "Continue toward Eastern Tower Ablaze."),
                 Point(MAP.SEARING_GORGE, 0.5007, 0.5486, "The Cauldron",
                     "Travel to The Cauldron."),
-            },
-        },
-        {
-            id = "travel-3453-thorium-point-2",
-            kind = "travel",
-            priority = 810,
-            conditions = {
-                all = {
-                    { quest = { id = 3452, state = "completed" } },
-                },
-            },
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3917, 0.3899, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {

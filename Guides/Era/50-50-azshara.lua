@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-3517-orgrimmar",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5410, 0.6860, "Orgrimmar",
-                    "Travel to Orgrimmar."),
-            },
-        },
-        {
             id = "note-3517-orgrimmar",
             kind = "note",
             priority = 20,
@@ -60,16 +50,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.5410, 0.6860, "Innkeeper Gryshka",
                     "Travel to Innkeeper Gryshka."),
-            },
-        },
-        {
-            id = "travel-3517-valormok",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Valormok.",
-            route = {
-                Point(MAP.AZSHARA, 0.2253, 0.5140, "Valormok",
-                    "Travel to Valormok."),
             },
         },
         {
@@ -173,16 +153,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.4738, 0.4628, "The Shattered Strand",
                     "Travel to The Shattered Strand."),
-            },
-        },
-        {
-            id = "travel-valormok",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Valormok.",
-            route = {
-                Point(MAP.AZSHARA, 0.2256, 0.5141, "Valormok",
-                    "Travel to Valormok."),
             },
         },
         {
@@ -291,16 +261,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-valormok-2",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Valormok.",
-            route = {
-                Point(MAP.AZSHARA, 0.2258, 0.5143, "Valormok",
-                    "Travel to Valormok."),
-            },
-        },
-        {
             id = "turnin-3565-xylem-s-payment-to-jediga",
             kind = "turnin",
             priority = 240,
@@ -310,16 +270,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.2258, 0.5143, "Jediga",
                     "Travel to Jediga."),
-            },
-        },
-        {
-            id = "travel-elder-rise",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Elder Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.6984, 0.3088, "Elder Rise",
-                    "Travel to Elder Rise."),
             },
         },
         {
@@ -343,16 +293,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.6984, 0.3088, "Magatha Grimtotem",
                     "Travel to Magatha Grimtotem."),
-            },
-        },
-        {
-            id = "travel-the-drag",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to The Drag in Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5639, 0.4654, "The Drag",
-                    "Travel to The Drag."),
             },
         },
         {
@@ -403,21 +343,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.5567, 0.3421, "Jes'rimon",
                     "Travel to Jes'rimon."),
-            },
-        },
-        {
-            id = "travel-the-apothecarium",
-            kind = "travel",
-            priority = 330,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4133, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Apothecarium in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.5484, 0.7631, "The Apothecarium",
-                    "Travel to The Apothecarium."),
             },
         },
         {

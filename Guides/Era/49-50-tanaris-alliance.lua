@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-623-theramore-isle",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6884, 0.5321, "Theramore Isle",
-                    "Travel to Theramore Isle."),
-            },
-        },
-        {
             id = "turnin-623-akiris-by-the-bundle",
             kind = "turnin",
             priority = 20,
@@ -60,21 +50,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.6884, 0.5321, "Privateer Groy",
                     "Travel to Privateer Groy."),
-            },
-        },
-        {
-            id = "travel-4450-3-beezil-s-wreck",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Beezil's Wreck.",
-            complete = QuestObjective(4450, 3),
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6750, 0.5475, "Continue toward Beezil's Wreck",
-                    "Continue toward Beezil's Wreck."),
-                Point(MAP.DUSTWALLOW, 0.5574, 0.5002, "Continue toward Beezil's Wreck",
-                    "Continue toward Beezil's Wreck."),
-                Point(MAP.DUSTWALLOW, 0.5434, 0.5164, "Beezil's Wreck",
-                    "Travel to Beezil's Wreck."),
             },
         },
         {
@@ -102,26 +77,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.3113, 0.6613, "Bloodfen Burrow",
                     "Travel to Bloodfen Burrow."),
-            },
-        },
-        {
-            id = "travel-626-theramore-isle",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6884, 0.5321, "Theramore Isle",
-                    "Travel to Theramore Isle."),
-            },
-        },
-        {
-            id = "travel-5863-gadgetzan",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5250, 0.2790, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {
@@ -157,16 +112,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-992-sandsorrow-watch",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Sandsorrow Watch.",
-            route = {
-                Point(MAP.TANARIS, 0.3940, 0.2926, "Sandsorrow Watch",
-                    "Travel to Sandsorrow Watch."),
-            },
-        },
-        {
             id = "objective-992-gadgetzan-water-survey",
             kind = "objective",
             priority = 120,
@@ -176,16 +121,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.3940, 0.2926, "Sandsorrow Watch",
                     "Travel to Sandsorrow Watch."),
-            },
-        },
-        {
-            id = "travel-992-gadgetzan",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5247, 0.2843, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {
@@ -234,16 +169,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3444-broken-pillar",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Broken Pillar.",
-            route = {
-                Point(MAP.TANARIS, 0.5272, 0.4592, "Broken Pillar",
-                    "Travel to Broken Pillar."),
-            },
-        },
-        {
             id = "turnin-3445-the-sunken-temple",
             kind = "turnin",
             priority = 190,
@@ -285,16 +210,6 @@ ns:RegisterGuide({
             complete = QuestState(3161, "complete"),
         },
         {
-            id = "travel-5863-dunemaul-compound",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Dunemaul Compound.",
-            route = {
-                Point(MAP.TANARIS, 0.4109, 0.5739, "Dunemaul Compound",
-                    "Travel to Dunemaul Compound."),
-            },
-        },
-        {
             id = "objective-5863-3-gor-marok-the-ravager",
             kind = "objective",
             priority = 240,
@@ -334,16 +249,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5863-dunemaul-compound-2",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Dunemaul Compound.",
-            route = {
-                Point(MAP.TANARIS, 0.4109, 0.5739, "Dunemaul Compound",
-                    "Travel to Dunemaul Compound."),
-            },
-        },
-        {
             id = "objective-3161-gahz-ridian",
             kind = "objective",
             priority = 280,
@@ -360,16 +265,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-82-the-noxious-lair",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to The Noxious Lair.",
-            route = {
-                Point(MAP.TANARIS, 0.3481, 0.4360, "The Noxious Lair",
-                    "Travel to The Noxious Lair."),
-            },
-        },
-        {
             id = "objective-82-noxious-lair-investigation",
             kind = "objective",
             priority = 300,
@@ -379,16 +274,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.3400, 0.4700, "Centipaar Swarmer",
                     "Travel to Centipaar Swarmer."),
-            },
-        },
-        {
-            id = "travel-2605-thistleshrub-valley",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Thistleshrub Valley.",
-            route = {
-                Point(MAP.TANARIS, 0.2818, 0.6386, "Thistleshrub Valley",
-                    "Travel to Thistleshrub Valley."),
             },
         },
         {
@@ -546,16 +431,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3161-broken-pillar",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Broken Pillar.",
-            route = {
-                Point(MAP.TANARIS, 0.5272, 0.4592, "Broken Pillar",
-                    "Travel to Broken Pillar."),
-            },
-        },
-        {
             id = "turnin-3161-gahz-ridian",
             kind = "turnin",
             priority = 460,
@@ -565,16 +440,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.5272, 0.4592, "Marvon Rivetseeker",
                     "Travel to Marvon Rivetseeker."),
-            },
-        },
-        {
-            id = "travel-10-the-gaping-chasm",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to The Gaping Chasm.",
-            route = {
-                Point(MAP.TANARIS, 0.5577, 0.6909, "The Gaping Chasm",
-                    "Travel to The Gaping Chasm."),
             },
         },
         {
@@ -632,16 +497,6 @@ ns:RegisterGuide({
                     "Continue toward Rescue OOX-17/TN!."),
                 Point(MAP.TANARIS, 0.6660, 0.2376, "Homing Robot OOX-17/TN",
                     "Travel to Homing Robot OOX-17/TN."),
-            },
-        },
-        {
-            id = "travel-110-gadgetzan",
-            kind = "travel",
-            priority = 510,
-            text = "Travel or Hearthstone to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5020, 0.2746, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {

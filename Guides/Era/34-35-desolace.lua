@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1453-city-of-ironforge",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.6795, 0.1761, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "accept-1453-reclaimers-business-in-desolace",
             kind = "accept",
             priority = 20,
@@ -72,26 +62,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.7270, 0.9397, "Pilot Longbeard",
                     "Travel to Pilot Longbeard."),
-            },
-        },
-        {
-            id = "travel-1437-desolace",
-            kind = "travel",
-            priority = 40,
-            text = "Run South to Desolace.",
-            route = {
-                Point(MAP.STONETALON, 0.2700, 0.8590, "Desolace",
-                    "Travel to Desolace."),
-            },
-        },
-        {
-            id = "travel-1437-nijel-s-point",
-            kind = "travel",
-            priority = 50,
-            text = "Nijel's Point is along the northern edge of Desolace.",
-            route = {
-                Point(MAP.DESOLACE, 0.6400, 0.1000, "Nijel's Point",
-                    "Travel to Nijel's Point."),
             },
         },
         {
@@ -208,16 +178,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1458-sargeron",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Sargeron.",
-            route = {
-                Point(MAP.DESOLACE, 0.7092, 0.1677, "Sargeron",
-                    "Travel to Sargeron."),
-            },
-        },
-        {
             id = "objective-1458-reagents-for-reclaimers-inc",
             kind = "objective",
             priority = 170,
@@ -227,16 +187,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.7092, 0.1677, "Hatefury Rogue",
                     "Travel to Hatefury Rogue."),
-            },
-        },
-        {
-            id = "travel-1438-nijel-s-point",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Nijel's Point.",
-            route = {
-                Point(MAP.DESOLACE, 0.6750, 0.1553, "Nijel's Point",
-                    "Travel to Nijel's Point."),
             },
         },
         {
@@ -297,16 +247,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1382-kolkar-village",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Kolkar Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.7200, 0.4500, "Kolkar Village",
-                    "Travel to Kolkar Village."),
-            },
-        },
-        {
             id = "objective-1387-centaur-bounty",
             kind = "objective",
             priority = 250,
@@ -328,16 +268,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6983, 0.7713, "Magram Mauler",
                     "Travel to Magram Mauler."),
-            },
-        },
-        {
-            id = "travel-5561-scrabblescrew-s-camp",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Scrabblescrew's Camp.",
-            route = {
-                Point(MAP.DESOLACE, 0.6089, 0.6189, "Scrabblescrew's Camp",
-                    "Travel to Scrabblescrew's Camp."),
             },
         },
         {
@@ -392,17 +322,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1459-2-kodo-graveyard",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Kodo Graveyard.",
-            complete = QuestObjective(1459, 2),
-            route = {
-                Point(MAP.DESOLACE, 0.5100, 0.5900, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "objective-5501-bone-collector",
             kind = "objective",
             priority = 330,
@@ -427,16 +346,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1384-gelkis-village",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Gelkis Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.3619, 0.7928, "Gelkis Village",
-                    "Travel to Gelkis Village."),
-            },
-        },
-        {
             id = "turnin-1382-strange-alliance",
             kind = "turnin",
             priority = 360,
@@ -457,16 +366,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3619, 0.7928, "Uthek the Wise",
                     "Travel to Uthek the Wise."),
-            },
-        },
-        {
-            id = "travel-6161-ethel-rethor",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.3611, 0.3044, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
             },
         },
         {
@@ -516,16 +415,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5741-ethel-rethor",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.3889, 0.2717, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
-            },
-        },
-        {
             id = "accept-5741-sceptre-of-light",
             kind = "accept",
             priority = 440,
@@ -536,16 +425,6 @@ ns:RegisterGuide({
                     "Continue toward Sceptre of Light."),
                 Point(MAP.DESOLACE, 0.3889, 0.2717, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
-            },
-        },
-        {
-            id = "travel-1439-thunder-axe-fortress",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Thunder Axe Fortress.",
-            route = {
-                Point(MAP.DESOLACE, 0.5487, 0.2619, "Thunder Axe Fortress",
-                    "Travel to Thunder Axe Fortress."),
             },
         },
         {
@@ -627,16 +506,6 @@ ns:RegisterGuide({
             complete = QuestState(1440, "complete"),
         },
         {
-            id = "travel-nijel-s-point",
-            kind = "travel",
-            priority = 530,
-            text = "Travel to Nijel's Point.",
-            route = {
-                Point(MAP.DESOLACE, 0.6620, 0.0964, "Nijel's Point",
-                    "Travel to Nijel's Point."),
-            },
-        },
-        {
             id = "turnin-1455-the-karnitol-shipwreck",
             kind = "turnin",
             priority = 540,
@@ -672,20 +541,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6027-ethel-rethor",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.5676, 0.3113, "Continue toward Ethel Rethor",
-                    "Continue toward Ethel Rethor."),
-                Point(MAP.DESOLACE, 0.4105, 0.2894, "Continue toward Ethel Rethor",
-                    "Continue toward Ethel Rethor."),
-                Point(MAP.DESOLACE, 0.4107, 0.2895, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
-            },
-        },
-        {
             id = "turnin-5741-sceptre-of-light",
             kind = "turnin",
             priority = 580,
@@ -708,16 +563,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3889, 0.2717, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
-            },
-        },
-        {
-            id = "travel-6027-ranazjar-isle",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Ranazjar Isle.",
-            route = {
-                Point(MAP.DESOLACE, 0.3002, 0.0869, "Ranazjar Isle",
-                    "Travel to Ranazjar Isle."),
             },
         },
         {
@@ -769,16 +614,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6027-ethel-rethor-2",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.4107, 0.2895, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
-            },
-        },
-        {
             id = "turnin-6027-book-of-the-ancients",
             kind = "turnin",
             priority = 660,
@@ -816,16 +651,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.7167, 0.4156, "Magram Mauler",
                     "Travel to Magram Mauler."),
-            },
-        },
-        {
-            id = "travel-nijel-s-point-2",
-            kind = "travel",
-            priority = 690,
-            text = "Travel or Hearthstone to Nijel's Point.",
-            route = {
-                Point(MAP.DESOLACE, 0.6620, 0.0964, "Nijel's Point",
-                    "Travel to Nijel's Point."),
             },
         },
         {
@@ -876,16 +701,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1370-gelkis-village",
-            kind = "travel",
-            priority = 740,
-            text = "Travel to Gelkis Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.3628, 0.7926, "Gelkis Village",
-                    "Travel to Gelkis Village."),
-            },
-        },
-        {
             id = "turnin-1384-raid-on-the-kolkar",
             kind = "turnin",
             priority = 750,
@@ -906,18 +721,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3628, 0.7926, "Uthek the Wise",
                     "Travel to Uthek the Wise."),
-            },
-        },
-        {
-            id = "travel-1370-magram-village",
-            kind = "travel",
-            priority = 770,
-            text = "Travel to Magram Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.4861, 0.7582, "Continue toward Magram Village",
-                    "Continue toward Magram Village."),
-                Point(MAP.DESOLACE, 0.7361, 0.7435, "Magram Village",
-                    "Travel to Magram Village."),
             },
         },
         {
@@ -953,38 +756,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3621, 0.7924, "Uthek the Wise",
                     "Travel to Uthek the Wise."),
-            },
-        },
-        {
-            id = "travel-feathermoon-stronghold",
-            kind = "travel",
-            priority = 810,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.DESOLACE, 0.4086, 0.9019, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.DESOLACE, 0.4174, 0.9544, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
-            },
-        },
-        {
-            id = "travel-feathermoon-stronghold-2",
-            kind = "travel",
-            priority = 820,
-            text = "Travel to Feathermoon Stronghold. Take the boat if it is there, or swim if it just left.",
-            route = {
-                Point(MAP.FERALAS, 0.4640, 0.1495, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.4820, 0.2325, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.4696, 0.2830, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.4788, 0.3700, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.4483, 0.4235, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.3024, 0.4325, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
     },

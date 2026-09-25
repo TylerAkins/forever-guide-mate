@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-5535-talrendis-point",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Talrendis Point in Azshara.",
-            route = {
-                Point(MAP.AZSHARA, 0.1140, 0.7813, "Talrendis Point",
-                    "Travel to Talrendis Point."),
-            },
-        },
-        {
             id = "accept-5535-spiritual-unrest",
             kind = "accept",
             priority = 20,
@@ -85,16 +75,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5536-haldarr-encampment",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Haldarr Encampment.",
-            route = {
-                Point(MAP.AZSHARA, 0.2058, 0.6167, "Haldarr Encampment",
-                    "Travel to Haldarr Encampment."),
-            },
-        },
-        {
             id = "objective-5536-a-land-filled-with-hatred",
             kind = "objective",
             priority = 60,
@@ -104,16 +84,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.2058, 0.6167, "Haldarr Trickster",
                     "Travel to Haldarr Trickster."),
-            },
-        },
-        {
-            id = "travel-talrendis-point",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Talrendis Point.",
-            route = {
-                Point(MAP.AZSHARA, 0.1137, 0.7815, "Talrendis Point",
-                    "Travel to Talrendis Point."),
             },
         },
         {
@@ -138,21 +108,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.1137, 0.7815, "Loh'atu",
                     "Travel to Loh'atu."),
-            },
-        },
-        {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 100,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2944, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5235, 0.2691, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {

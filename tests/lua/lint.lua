@@ -205,6 +205,18 @@ for _, guideID in ipairs(ns.guideOrder) do
     end
 end
 
+-- Travel steps do not auto-clear, and TomTom already points at the next pin.
+-- Dungeon entrance steps stay: they complete on entering the instance.
+for _, guideID in ipairs(ns.guideOrder) do
+    local guide = ns.guides[guideID]
+    for _, goal in ipairs(guide.goals) do
+        local entrance = type(goal.id) == "string" and goal.id:sub(1, 6) == "enter-"
+        Check(goal.kind ~= "travel" or entrance,
+            ("%s %s is a travel step; TomTom already points at the next pin")
+                :format(guideID, tostring(goal.id)))
+    end
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d guide data checks failed\n"):format(failures, checks))
     os.exit(1)

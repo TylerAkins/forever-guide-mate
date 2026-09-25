@@ -41,21 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1195-thunder-bluff",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1195, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Zangen Stonehoof in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.5479, 0.5129, "Zangen Stonehoof",
-                    "Travel to Zangen Stonehoof."),
-            },
-        },
-        {
             id = "accept-1195-the-sacred-flame",
             kind = "accept",
             priority = 20,
@@ -64,16 +49,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.5479, 0.5129, "Zangen Stonehoof",
                     "Travel to Zangen Stonehoof."),
-            },
-        },
-        {
-            id = "travel-25-splintertree-post",
-            kind = "travel",
-            priority = 30,
-            text = "Follow the road north east to Splintertree Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7300, 0.6500, "Splintertree Post",
-                    "Travel to Splintertree Post."),
             },
         },
         {
@@ -131,16 +106,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6503-nightsong-woods",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Nightsong Woods.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7000, 0.7600, "Nightsong Woods",
-                    "Travel to Nightsong Woods."),
-            },
-        },
-        {
             id = "objective-6503-ashenvale-outrunners",
             kind = "objective",
             priority = 100,
@@ -153,16 +118,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-splintertree-post",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Splintertree Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7116, 0.6819, "Splintertree Post",
-                    "Travel to Splintertree Post."),
-            },
-        },
-        {
             id = "turnin-6503-ashenvale-outrunners",
             kind = "turnin",
             priority = 120,
@@ -172,16 +127,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.7116, 0.6819, "Kuray'bin",
                     "Travel to Kuray'bin."),
-            },
-        },
-        {
-            id = "travel-6544-nightsong-woods",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Nightsong Woods.",
-            route = {
-                Point(MAP.ASHENVALE, 0.6836, 0.7538, "Nightsong Woods",
-                    "Travel to Nightsong Woods."),
             },
         },
         {
@@ -205,16 +150,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.6800, 0.7500, "Torek",
                     "Travel to Torek."),
-            },
-        },
-        {
-            id = "travel-1918-mystral-lake",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Mystral Lake.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4844, 0.6892, "Mystral Lake",
-                    "Travel to Mystral Lake."),
             },
         },
         {
@@ -281,16 +216,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1918-splintertree-post",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Splintertree Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7380, 0.6150, "Splintertree Post",
-                    "Travel to Splintertree Post."),
-            },
-        },
-        {
             id = "turnin-25-stonetalon-standstill",
             kind = "turnin",
             priority = 220,
@@ -323,16 +248,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.7305, 0.6251, "Ertog Ragetusk",
                     "Travel to Ertog Ragetusk."),
-            },
-        },
-        {
-            id = "travel-6641-zoram-gar-outpost",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Zoram'gar Outpost.",
-            route = {
-                Point(MAP.ASHENVALE, 0.1160, 0.3428, "Zoram'gar Outpost",
-                    "Travel to Zoram'gar Outpost."),
             },
         },
         {
@@ -393,20 +308,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-216-thistlefur-village",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Thistlefur Village.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2566, 0.3483, "Continue toward Thistlefur Village",
-                    "Continue toward Thistlefur Village."),
-                Point(MAP.ASHENVALE, 0.3125, 0.4470, "Continue toward Thistlefur Village",
-                    "Continue toward Thistlefur Village."),
-                Point(MAP.ASHENVALE, 0.3637, 0.3277, "Thistlefur Village",
-                    "Travel to Thistlefur Village."),
-            },
-        },
-        {
             id = "objective-216-between-a-rock-and-a-thistlefur",
             kind = "objective",
             priority = 320,
@@ -453,18 +354,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.4150, 0.3460, "Ruul Snowhoof",
                     "Travel to Ruul Snowhoof."),
-            },
-        },
-        {
-            id = "travel-zoram-gar-outpost",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Zoram'gar Outpost.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2552, 0.3848, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.1188, 0.3456, "Zoram'gar Outpost",
-                    "Travel to Zoram'gar Outpost."),
             },
         },
         {
@@ -536,20 +425,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.8000, 0.5200, "Bleakheart Satyr",
                     "Travel to Bleakheart Satyr."),
-            },
-        },
-        {
-            id = "travel-splintertree-post-2",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Splintertree Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.6824, 0.5482, "Continue toward Splintertree Post",
-                    "Continue toward Splintertree Post."),
-                Point(MAP.ASHENVALE, 0.7167, 0.6366, "Continue toward Splintertree Post",
-                    "Continue toward Splintertree Post."),
-                Point(MAP.ASHENVALE, 0.7309, 0.6149, "Splintertree Post",
-                    "Travel to Splintertree Post."),
             },
         },
         {

@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-324-deepwater-tavern",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Deepwater Tavern in Wetlands.",
-            route = {
-                Point(MAP.WETLANDS, 0.1060, 0.6055, "Deepwater Tavern",
-                    "Travel to Deepwater Tavern."),
-            },
-        },
-        {
             id = "accept-321-lightforge-iron",
             kind = "accept",
             priority = 20,
@@ -151,16 +141,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4581-astranaar",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Astranaar, take the boat to Auberdine then fly to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3466, 0.4885, "Shindrell Swiftfire",
-                    "Travel to Shindrell Swiftfire."),
-            },
-        },
-        {
             id = "accept-4581-kayneth-stillwind",
             kind = "accept",
             priority = 90,
@@ -209,21 +189,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-shrine-of-aessina",
-            kind = "travel",
-            priority = 130,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1021, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Shrine of Aessina.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2220, 0.5280, "The Shrine of Aessina",
-                    "Travel to The Shrine of Aessina."),
-            },
-        },
-        {
             id = "accept-1022-the-howling-vale",
             kind = "accept",
             priority = 140,
@@ -243,16 +208,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.2160, 0.5320, "Illiyana",
                     "Travel to Illiyana."),
-            },
-        },
-        {
-            id = "travel-1023-lake-falathim",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Lake Falathim.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2032, 0.4239, "Lake Falathim",
-                    "Travel to Lake Falathim."),
             },
         },
         {
@@ -291,16 +246,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1024-astranaar",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3659, 0.4959, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "turnin-1023-raene-s-cleansing",
             kind = "turnin",
             priority = 210,
@@ -321,18 +266,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3659, 0.4959, "Raene Wolfrunner",
                     "Travel to Raene Wolfrunner."),
-            },
-        },
-        {
-            id = "travel-1026-moonwell",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Moonwell.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4800, 0.4700, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5349, 0.4630, "Moonwell",
-                    "Travel to Moonwell."),
             },
         },
         {
@@ -385,20 +318,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1022-the-howling-vale",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to The Howling Vale.",
-            route = {
-                Point(MAP.ASHENVALE, 0.5389, 0.3241, "Continue toward The Howling Vale",
-                    "Continue toward The Howling Vale."),
-                Point(MAP.ASHENVALE, 0.5280, 0.3479, "Continue toward The Howling Vale",
-                    "Continue toward The Howling Vale."),
-                Point(MAP.ASHENVALE, 0.5299, 0.3760, "The Howling Vale",
-                    "Travel to The Howling Vale."),
-            },
-        },
-        {
             id = "objective-1022-the-howling-vale",
             kind = "objective",
             priority = 290,
@@ -408,33 +327,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.5048, 0.3916, "The Howling Vale",
                     "Travel to The Howling Vale."),
-            },
-        },
-        {
-            id = "travel-moonwell",
-            kind = "travel",
-            priority = 300,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1027, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Moonwell.",
-            route = {
-                Point(MAP.ASHENVALE, 0.5339, 0.3753, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5782, 0.4274, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.6104, 0.4757, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.6022, 0.5267, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5254, 0.5405, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5115, 0.4524, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5351, 0.4622, "Moonwell",
-                    "Travel to Moonwell."),
             },
         },
         {
@@ -458,24 +350,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.5351, 0.4622, "Shael'dryn",
                     "Travel to Shael'dryn."),
-            },
-        },
-        {
-            id = "travel-1031-xavian",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Xavian.",
-            route = {
-                Point(MAP.ASHENVALE, 0.6377, 0.5459, "Continue toward Xavian",
-                    "Continue toward Xavian."),
-                Point(MAP.ASHENVALE, 0.6589, 0.6056, "Continue toward Xavian",
-                    "Continue toward Xavian."),
-                Point(MAP.ASHENVALE, 0.6901, 0.5993, "Continue toward Xavian",
-                    "Continue toward Xavian."),
-                Point(MAP.ASHENVALE, 0.7510, 0.4877, "Continue toward Xavian",
-                    "Continue toward Xavian."),
-                Point(MAP.ASHENVALE, 0.7832, 0.4483, "Xavian",
-                    "Travel to Xavian."),
             },
         },
         {
@@ -514,21 +388,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-forest-song",
-            kind = "travel",
-            priority = 370,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1011, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Forest Song.",
-            route = {
-                Point(MAP.ASHENVALE, 0.8520, 0.4477, "Forest Song",
-                    "Travel to Forest Song."),
-            },
-        },
-        {
             id = "turnin-4581-kayneth-stillwind",
             kind = "turnin",
             priority = 380,
@@ -549,20 +408,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.8520, 0.4477, "Kayneth Stillwind",
                     "Travel to Kayneth Stillwind."),
-            },
-        },
-        {
-            id = "travel-1011-the-dor-danil-barrow-den",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to The Dor'Danil Barrow Den.",
-            route = {
-                Point(MAP.ASHENVALE, 0.8616, 0.5042, "Continue toward The Dor'Danil Barrow Den",
-                    "Continue toward The Dor'Danil Barrow Den."),
-                Point(MAP.ASHENVALE, 0.7800, 0.5619, "Continue toward The Dor'Danil Barrow Den",
-                    "Continue toward The Dor'Danil Barrow Den."),
-                Point(MAP.ASHENVALE, 0.7529, 0.7219, "The Dor'Danil Barrow Den",
-                    "Travel to The Dor'Danil Barrow Den."),
             },
         },
         {
@@ -594,21 +439,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1035-fallen-sky-lake",
-            kind = "travel",
-            priority = 430,
-            conditions = {
-                all = {
-                    { quest = { id = 1034, state = "completed" } },
-                },
-            },
-            text = "Travel to Fallen Sky Lake.",
-            route = {
-                Point(MAP.ASHENVALE, 0.6676, 0.8203, "Fallen Sky Lake",
-                    "Travel to Fallen Sky Lake."),
-            },
-        },
-        {
             id = "objective-1035-fallen-sky-lake",
             kind = "objective",
             priority = 440,
@@ -623,23 +453,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.6676, 0.8203, "Shadethicket Oracle",
                     "Travel to Shadethicket Oracle."),
-            },
-        },
-        {
-            id = "travel-forest-song-2",
-            kind = "travel",
-            priority = 450,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1012, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Forest Song.",
-            route = {
-                Point(MAP.ASHENVALE, 0.6739, 0.7140, "Continue toward Forest Song",
-                    "Continue toward Forest Song."),
-                Point(MAP.ASHENVALE, 0.8523, 0.4470, "Kayneth Stillwind",
-                    "Travel to Kayneth Stillwind."),
             },
         },
         {
@@ -663,16 +476,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.8523, 0.4470, "Kayneth Stillwind",
                     "Travel to Kayneth Stillwind."),
-            },
-        },
-        {
-            id = "travel-1012-the-dor-danil-barrow-den",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to The Dor'Danil Barrow Den for the quest Insane Druids.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7596, 0.7535, "The Dor'Danil Barrow Den",
-                    "Travel to The Dor'Danil Barrow Den."),
             },
         },
         {
@@ -726,16 +529,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-astranaar",
-            kind = "travel",
-            priority = 530,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3735, 0.5179, "Pelturas Whitemoon",
-                    "Travel to Pelturas Whitemoon."),
-            },
-        },
-        {
             id = "turnin-1035-fallen-sky-lake",
             kind = "turnin",
             priority = 540,
@@ -750,22 +543,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3735, 0.5179, "Pelturas Whitemoon",
                     "Travel to Pelturas Whitemoon."),
-            },
-        },
-        {
-            id = "travel-1028-moonwell",
-            kind = "travel",
-            priority = 550,
-            text = "Travel to Moonwell.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4500, 0.5538, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5005, 0.5625, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5135, 0.4550, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5356, 0.4621, "Shael'dryn",
-                    "Travel to Shael'dryn."),
             },
         },
         {
@@ -821,20 +598,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1029-moonwell",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Moonwell.",
-            route = {
-                Point(MAP.ASHENVALE, 0.5059, 0.5093, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5059, 0.5093, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5355, 0.4620, "Moonwell",
-                    "Travel to Moonwell."),
-            },
-        },
-        {
             id = "turnin-1055-raene-s-cleansing",
             kind = "turnin",
             priority = 610,
@@ -858,16 +621,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1030-astranaar",
-            kind = "travel",
-            priority = 630,
-            text = "Travel or Hearthstone to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3662, 0.4958, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "turnin-1029-raene-s-cleansing",
             kind = "turnin",
             priority = 640,
@@ -888,18 +641,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3662, 0.4958, "Raene Wolfrunner",
                     "Travel to Raene Wolfrunner."),
-            },
-        },
-        {
-            id = "travel-1045-mystral-lake",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to Mystral Lake.",
-            route = {
-                Point(MAP.ASHENVALE, 0.5785, 0.6653, "Continue toward Mystral Lake",
-                    "Continue toward Mystral Lake."),
-                Point(MAP.ASHENVALE, 0.5400, 0.7244, "Mystral Lake",
-                    "Travel to Mystral Lake."),
             },
         },
         {
@@ -973,16 +714,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-astranaar-2",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3661, 0.4958, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "turnin-1046-raene-s-cleansing",
             kind = "turnin",
             priority = 740,
@@ -992,21 +723,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3661, 0.4958, "Raene Wolfrunner",
                     "Travel to Raene Wolfrunner."),
-            },
-        },
-        {
-            id = "travel-the-shrine-of-aessina-2",
-            kind = "travel",
-            priority = 750,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1037, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Shrine of Aessina.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2220, 0.5280, "The Shrine of Aessina",
-                    "Travel to The Shrine of Aessina."),
             },
         },
         {
@@ -1042,16 +758,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.2160, 0.5320, "Illiyana",
                     "Travel to Illiyana."),
-            },
-        },
-        {
-            id = "travel-1038-darnassus",
-            kind = "travel",
-            priority = 790,
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.6171, 0.3912, "Darnassus",
-                    "Travel to Darnassus."),
             },
         },
         {

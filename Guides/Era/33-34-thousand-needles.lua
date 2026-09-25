@@ -44,16 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1179-city-of-ironforge",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.6795, 0.1761, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "accept-1453-reclaimers-business-in-desolace",
             kind = "accept",
             priority = 20,
@@ -76,60 +66,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1100-ratchet",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6336, 0.3844, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
-            id = "travel-the-great-lift",
-            kind = "travel",
-            priority = 50,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1100, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Great Lift.",
-            route = {
-                Point(MAP.BARRENS, 0.5577, 0.4414, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.5112, 0.4916, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4810, 0.5407, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4743, 0.6259, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4613, 0.6756, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4597, 0.8435, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4414, 0.9119, "Continue toward The Great Lift",
-                    "Continue toward The Great Lift."),
-                Point(MAP.BARRENS, 0.4414, 0.9119, "The Great Lift",
-                    "Travel to The Great Lift."),
-            },
-        },
-        {
-            id = "travel-the-great-lift-2",
-            kind = "travel",
-            priority = 60,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1100, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Great Lift.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.3071, 0.2439, "The Great Lift",
-                    "Travel to The Great Lift."),
-            },
-        },
-        {
             id = "objective-1100-henrig-lonebrow-s-journal",
             kind = "objective",
             priority = 70,
@@ -149,16 +85,6 @@ ns:RegisterGuide({
             complete = QuestState(1100, "activeOrCompleted"),
         },
         {
-            id = "travel-thalanaar",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Thalanaar.",
-            route = {
-                Point(MAP.FERALAS, 0.8963, 0.4656, "Thalanaar",
-                    "Travel to Thalanaar."),
-            },
-        },
-        {
             id = "turnin-1100-lonebrow-s-journal",
             kind = "turnin",
             priority = 100,
@@ -168,34 +94,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.8963, 0.4656, "Falfindel Waywarder",
                     "Travel to Falfindel Waywarder."),
-            },
-        },
-        {
-            id = "travel-1110-mirage-raceway",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.1549, 0.2595, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.2089, 0.2826, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.2650, 0.3421, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.2956, 0.3425, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.3613, 0.4346, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.4371, 0.5284, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.4590, 0.5522, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.5103, 0.5278, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.6698, 0.6184, "Continue toward Mirage Raceway",
-                    "Continue toward Mirage Raceway."),
-                Point(MAP.THOUSAND_NEEDLES, 0.7813, 0.7710, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
             },
         },
         {
@@ -328,16 +226,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1175-the-shimmering-flats",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to The Shimmering Flats.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.8800, 0.7500, "The Shimmering Flats",
-                    "Travel to The Shimmering Flats."),
-            },
-        },
-        {
             id = "objective-1110-rocket-car-parts",
             kind = "objective",
             priority = 240,
@@ -357,16 +245,6 @@ ns:RegisterGuide({
                     "Continue toward Rocket Car Parts."),
                 Point(MAP.THOUSAND_NEEDLES, 0.7800, 0.8500, "The Shimmering Flats",
                     "Travel to The Shimmering Flats."),
-            },
-        },
-        {
-            id = "travel-mirage-raceway",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.8162, 0.7793, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
             },
         },
         {
@@ -460,28 +338,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.7807, 0.7711, "Fizzle Brassbolts",
                     "Travel to Fizzle Brassbolts."),
-            },
-        },
-        {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.7433, 0.9367, "Continue toward Gadgetzan",
-                    "Continue toward Gadgetzan."),
-                Point(MAP.THOUSAND_NEEDLES, 0.7550, 0.9726, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
-        },
-        {
-            id = "travel-gadgetzan-2",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5100, 0.2935, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
     },

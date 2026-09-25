@@ -65,16 +65,6 @@ ns:RegisterGuide({
             text = "Switch and complete #1423(56-57)#1423(56-57)\") before starting this guide.",
         },
         {
-            id = "travel-the-bulwark",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8305, 0.7191, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "turnin-5236-return-to-the-bulwark",
             kind = "turnin",
             priority = 40,
@@ -194,16 +184,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.3840, 0.5404, "Janice Felstone",
                     "Travel to Janice Felstone."),
-            },
-        },
-        {
-            id = "travel-5902-northridge-lumber-camp",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Northridge Lumber Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4832, 0.3191, "Northridge Lumber Camp",
-                    "Travel to Northridge Lumber Camp."),
             },
         },
         {
@@ -373,22 +353,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6025-hearthglen",
-            kind = "travel",
-            priority = 270,
-            text = "Follow the waypoint for a shortcut to Hearthglen.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5007, 0.2907, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5052, 0.2736, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5062, 0.2472, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4577, 0.1831, "Hearthglen",
-                    "Travel to Hearthglen."),
-            },
-        },
-        {
             id = "objective-6025-unfinished-business",
             kind = "objective",
             priority = 280,
@@ -401,16 +365,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-northridge-lumber-camp",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Northridge Lumber Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5194, 0.2806, "Northridge Lumber Camp",
-                    "Travel to Northridge Lumber Camp."),
-            },
-        },
-        {
             id = "turnin-6025-unfinished-business",
             kind = "turnin",
             priority = 300,
@@ -420,21 +374,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.5194, 0.2806, "Kirsta Deepshadow",
                     "Travel to Kirsta Deepshadow."),
-            },
-        },
-        {
-            id = "travel-the-writhing-haunt",
-            kind = "travel",
-            priority = 310,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4984, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Writhing Haunt.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5367, 0.6476, "The Writhing Haunt",
-                    "Travel to The Writhing Haunt."),
             },
         },
         {
@@ -530,16 +469,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.5370, 0.6470, "Mulgris Deepriver",
                     "Travel to Mulgris Deepriver."),
-            },
-        },
-        {
-            id = "travel-5153-sorrow-hill",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Sorrow Hill.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4919, 0.7861, "Sorrow Hill",
-                    "Travel to Sorrow Hill."),
             },
         },
         {
@@ -769,16 +698,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-838-the-bulwark",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to The Bulwark.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8328, 0.7234, "The Bulwark",
-                    "Travel to The Bulwark."),
-            },
-        },
-        {
             id = "turnin-6390-a-plague-upon-thee",
             kind = "turnin",
             priority = 590,
@@ -837,16 +756,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-964-felstone-field",
-            kind = "travel",
-            priority = 640,
-            text = "Travel to Felstone Field.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3691, 0.5719, "Felstone Field",
-                    "Travel to Felstone Field."),
-            },
-        },
-        {
             id = "objective-964-skeletal-fragments",
             kind = "objective",
             priority = 650,
@@ -871,16 +780,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-orgrimmar",
-            kind = "travel",
-            priority = 670,
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5410, 0.6860, "Orgrimmar",
-                    "Travel to Orgrimmar."),
-            },
-        },
-        {
             id = "note-orgrimmar",
             kind = "note",
             priority = 680,
@@ -888,16 +787,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.5410, 0.6860, "Innkeeper Gryshka",
                     "Travel to Innkeeper Gryshka."),
-            },
-        },
-        {
-            id = "travel-1123-thunder-bluff",
-            kind = "travel",
-            priority = 690,
-            text = "Travel to Elder Rise.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.7570, 0.3154, "Elder Rise",
-                    "Travel to Elder Rise."),
             },
         },
         {

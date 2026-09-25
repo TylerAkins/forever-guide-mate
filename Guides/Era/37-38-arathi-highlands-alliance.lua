@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-690-stormwind-city",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Mage Quarter in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.3982, 0.8153, "Mage Quarter",
-                    "Travel to Mage Quarter."),
-            },
-        },
-        {
             id = "accept-690-malin-s-request",
             kind = "accept",
             priority = 20,
@@ -63,16 +53,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-659-southshore",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.5022, 0.5799, "Southshore",
-                    "Travel to Southshore."),
-            },
-        },
-        {
             id = "accept-659-hints-of-a-new-plague",
             kind = "accept",
             priority = 40,
@@ -81,16 +61,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.5022, 0.5799, "Phin Odelic",
                     "Travel to Phin Odelic."),
-            },
-        },
-        {
-            id = "travel-690-refuge-pointe",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Refuge Pointe.",
-            route = {
-                Point(MAP.ARATHI, 0.4650, 0.4700, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
             },
         },
         {
@@ -118,16 +88,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.6241, 0.3373, "Arathi Highlands",
                     "Travel to Arathi Highlands."),
-            },
-        },
-        {
-            id = "travel-642-drywhisker-gorge",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Drywhisker Gorge.",
-            route = {
-                Point(MAP.ARATHI, 0.7951, 0.4033, "Drywhisker Gorge",
-                    "Travel to Drywhisker Gorge."),
             },
         },
         {
@@ -172,20 +132,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-651-circle-of-east-binding",
-            kind = "travel",
-            priority = 120,
-            text = "Exit the cave and travel to Circle of East Binding.",
-            route = {
-                Point(MAP.ARATHI, 0.7954, 0.3993, "Continue toward Circle of East Binding",
-                    "Continue toward Circle of East Binding."),
-                Point(MAP.ARATHI, 0.6993, 0.3780, "Continue toward Circle of East Binding",
-                    "Continue toward Circle of East Binding."),
-                Point(MAP.ARATHI, 0.6666, 0.2966, "Circle of East Binding",
-                    "Travel to Circle of East Binding."),
-            },
-        },
-        {
             id = "objective-651-2-cresting-key",
             kind = "objective",
             priority = 130,
@@ -195,16 +141,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.6670, 0.2964, "Circle of East Binding",
                     "Travel to Circle of East Binding."),
-            },
-        },
-        {
-            id = "travel-658-go-shek-farm",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Go'Shek Farm.",
-            route = {
-                Point(MAP.ARATHI, 0.6017, 0.5384, "Go'Shek Farm",
-                    "Travel to Go'Shek Farm."),
             },
         },
         {
@@ -228,21 +164,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.6017, 0.5384, "Quae",
                     "Travel to Quae."),
-            },
-        },
-        {
-            id = "travel-691-witherbark-village",
-            kind = "travel",
-            priority = 170,
-            conditions = {
-                all = {
-                    { quest = { id = 690, state = "completed" } },
-                },
-            },
-            text = "Travel to Witherbark Village.",
-            route = {
-                Point(MAP.ARATHI, 0.6829, 0.7452, "Witherbark Village",
-                    "Travel to Witherbark Village."),
             },
         },
         {
@@ -292,16 +213,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-693-refuge-pointe",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Refuge Pointe.",
-            route = {
-                Point(MAP.ARATHI, 0.4618, 0.4771, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
-            },
-        },
-        {
             id = "turnin-691-worth-its-weight-in-gold",
             kind = "turnin",
             priority = 220,
@@ -330,20 +241,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-651-circle-of-west-binding",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Circle of West Binding.",
-            route = {
-                Point(MAP.ARATHI, 0.3468, 0.5217, "Continue toward Circle of West Binding",
-                    "Continue toward Circle of West Binding."),
-                Point(MAP.ARATHI, 0.2336, 0.4204, "Continue toward Circle of West Binding",
-                    "Continue toward Circle of West Binding."),
-                Point(MAP.ARATHI, 0.2543, 0.3007, "Circle of West Binding",
-                    "Travel to Circle of West Binding."),
-            },
-        },
-        {
             id = "objective-651-1-burning-key",
             kind = "objective",
             priority = 250,
@@ -353,16 +250,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.5209, 0.5068, "Circle of West Binding",
                     "Travel to Circle of West Binding."),
-            },
-        },
-        {
-            id = "travel-circle-of-inner-binding",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Circle of Inner Binding.",
-            route = {
-                Point(MAP.ARATHI, 0.3624, 0.5723, "Circle of Inner Binding",
-                    "Travel to Circle of Inner Binding."),
             },
         },
         {
@@ -378,16 +265,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-693-boulderfist-hall",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Boulderfist Hall.",
-            route = {
-                Point(MAP.ARATHI, 0.5372, 0.7728, "Boulderfist Hall",
-                    "Travel to Boulderfist Hall."),
-            },
-        },
-        {
             id = "objective-693-wand-over-fist",
             kind = "objective",
             priority = 290,
@@ -397,22 +274,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.5473, 0.8175, "Kor'gresh Coldrage",
                     "Travel to Kor'gresh Coldrage."),
-            },
-        },
-        {
-            id = "travel-663-faldir-s-cove",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Faldir's Cove.",
-            route = {
-                Point(MAP.ARATHI, 0.3108, 0.6563, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2158, 0.7295, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2159, 0.7559, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2209, 0.7973, "Faldir's Cove",
-                    "Travel to Faldir's Cove."),
             },
         },
         {
@@ -587,22 +448,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-faldir-s-cove",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to Faldir's Cove.",
-            route = {
-                Point(MAP.ARATHI, 0.3108, 0.6563, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2158, 0.7295, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2159, 0.7559, "Continue toward Faldir's Cove",
-                    "Continue toward Faldir's Cove."),
-                Point(MAP.ARATHI, 0.2209, 0.7973, "Faldir's Cove",
-                    "Travel to Faldir's Cove."),
-            },
-        },
-        {
             id = "turnin-662-deep-sea-salvage",
             kind = "turnin",
             priority = 470,
@@ -670,24 +515,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.3234, 0.8134, "Shakes O'Breen",
                     "Travel to Shakes O'Breen."),
-            },
-        },
-        {
-            id = "travel-refuge-pointe",
-            kind = "travel",
-            priority = 530,
-            text = "Travel to Refuge Pointe.",
-            route = {
-                Point(MAP.ARATHI, 0.2209, 0.7973, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.2159, 0.7559, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.2158, 0.7295, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.3108, 0.6563, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.4664, 0.4701, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
             },
         },
         {
@@ -833,21 +660,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.6020, 0.5381, "Quae",
                     "Travel to Quae."),
-            },
-        },
-        {
-            id = "travel-southshore",
-            kind = "travel",
-            priority = 630,
-            conditions = {
-                all = {
-                    { quest = { id = 658, state = "completed" } },
-                },
-            },
-            text = "Travel to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.5034, 0.5903, "Southshore",
-                    "Travel to Southshore."),
             },
         },
         {

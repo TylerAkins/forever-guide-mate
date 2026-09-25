@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1040-ratchet",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6268, 0.3624, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
             id = "accept-1180-goblin-sponsorship",
             kind = "accept",
             priority = 20,
@@ -97,16 +87,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6335, 0.3846, "Wharfmaster Dizzywig",
                     "Travel to Wharfmaster Dizzywig."),
-            },
-        },
-        {
-            id = "travel-578-booty-bay",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2720, 0.7689, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
@@ -276,16 +256,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-583-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3567, 0.1052, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
-            },
-        },
-        {
             id = "accept-583-welcome-to-the-jungle",
             kind = "accept",
             priority = 200,
@@ -351,16 +321,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3500, 0.1210, "Young Stranglethorn Tiger",
                     "Travel to Young Stranglethorn Tiger."),
-            },
-        },
-        {
-            id = "travel-186-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3563, 0.1065, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -564,18 +524,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-192-the-cape-of-stranglethorn",
-            kind = "travel",
-            priority = 440,
-            text = "Exit to The Cape of Stranglethorn.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2802, 0.7339, "Continue toward The Cape of Stranglethorn",
-                    "Continue toward The Cape of Stranglethorn."),
-                Point(MAP.STRANGLETHORN, 0.2976, 0.7220, "The Cape of Stranglethorn",
-                    "Travel to The Cape of Stranglethorn."),
-            },
-        },
-        {
             id = "objective-192-panther-mastery",
             kind = "objective",
             priority = 450,
@@ -587,21 +535,6 @@ ns:RegisterGuide({
                     "Continue toward Panther Mastery."),
                 Point(MAP.STRANGLETHORN, 0.3908, 0.3302, "Shadowmaw Panther",
                     "Travel to Shadowmaw Panther."),
-            },
-        },
-        {
-            id = "travel-1182-venture-co-operations-center",
-            kind = "travel",
-            priority = 460,
-            conditions = {
-                all = {
-                    { quest = { id = 1180, state = "completed" } },
-                },
-            },
-            text = "Travel to Venture Co. Operations Center.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4260, 0.1852, "Venture Co. Operations Center",
-                    "Travel to Venture Co. Operations Center."),
             },
         },
         {
@@ -651,16 +584,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-195-stranglethorn-vale",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Stranglethorn Vale.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3827, 0.2699, "Stranglethorn Vale",
-                    "Travel to Stranglethorn Vale."),
-            },
-        },
-        {
             id = "objective-195-raptor-mastery",
             kind = "objective",
             priority = 510,
@@ -670,16 +593,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3827, 0.2699, "Lashtail Raptor",
                     "Travel to Lashtail Raptor."),
-            },
-        },
-        {
-            id = "travel-188-stranglethorn-vale",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to Stranglethorn Vale.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3221, 0.1734, "Stranglethorn Vale",
-                    "Travel to Stranglethorn Vale."),
             },
         },
         {
@@ -800,16 +713,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-189-tkashi-ruins",
-            kind = "travel",
-            priority = 630,
-            text = "Travel to Tkashi Ruins.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3390, 0.1548, "Tkashi Ruins",
-                    "Travel to Tkashi Ruins."),
-            },
-        },
-        {
             id = "objective-189-bloodscalp-ears",
             kind = "objective",
             priority = 640,
@@ -821,16 +724,6 @@ ns:RegisterGuide({
                     "Continue toward Bloodscalp Ears."),
                 Point(MAP.STRANGLETHORN, 0.2955, 0.1953, "Bloodscalp Axe Thrower",
                     "Travel to Bloodscalp Axe Thrower."),
-            },
-        },
-        {
-            id = "travel-578-the-savage-coast",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to The Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2177, 0.2204, "The Savage Coast",
-                    "Travel to The Savage Coast."),
             },
         },
         {
@@ -855,20 +748,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2422, 0.1765, "Crystal Spine Basilisk",
                     "Travel to Crystal Spine Basilisk."),
-            },
-        },
-        {
-            id = "travel-200-rebel-camp",
-            kind = "travel",
-            priority = 680,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4065, 0.0348, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.4056, 0.0463, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.3824, 0.0486, "Rebel Camp",
-                    "Travel to Rebel Camp."),
             },
         },
         {
@@ -918,18 +797,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3804, 0.0301, "Lieutenant Doren",
                     "Travel to Lieutenant Doren."),
-            },
-        },
-        {
-            id = "travel-204-kurzen-s-compound",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to Kurzen's Compound.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3943, 0.0736, "Continue toward Kurzen's Compound",
-                    "Continue toward Kurzen's Compound."),
-                Point(MAP.STRANGLETHORN, 0.4411, 0.0958, "Kurzen's Compound",
-                    "Travel to Kurzen's Compound."),
             },
         },
         {
@@ -1002,18 +869,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-574-rebel-camp",
-            kind = "travel",
-            priority = 790,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3985, 0.0790, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.3802, 0.0336, "Sergeant Yohwa",
-                    "Travel to Sergeant Yohwa."),
-            },
-        },
-        {
             id = "turnin-203-the-second-rebellion",
             kind = "turnin",
             priority = 800,
@@ -1046,16 +901,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3802, 0.0336, "Sergeant Yohwa",
                     "Travel to Sergeant Yohwa."),
-            },
-        },
-        {
-            id = "travel-574-the-stockpile",
-            kind = "travel",
-            priority = 830,
-            text = "Travel to The Stockpile.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4556, 0.0832, "The Stockpile",
-                    "Travel to The Stockpile."),
             },
         },
         {
@@ -1115,18 +960,6 @@ ns:RegisterGuide({
                     "Continue toward Singing Blue Shards."),
                 Point(MAP.STRANGLETHORN, 0.2422, 0.1765, "Crystal Spine Basilisk",
                     "Travel to Crystal Spine Basilisk."),
-            },
-        },
-        {
-            id = "travel-331-rebel-camp",
-            kind = "travel",
-            priority = 880,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3944, 0.0708, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.3799, 0.0343, "Private Thorsen",
-                    "Travel to Private Thorsen."),
             },
         },
         {
@@ -1245,16 +1078,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3805, 0.0305, "Lieutenant Doren",
                     "Travel to Lieutenant Doren."),
-            },
-        },
-        {
-            id = "travel-209-the-salty-sailor-tavern",
-            kind = "travel",
-            priority = 970,
-            text = "Travel or Hearthstone to The Salty Sailor Tavern in Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2695, 0.7723, "The Salty Sailor Tavern",
-                    "Travel to The Salty Sailor Tavern."),
             },
         },
         {
@@ -1382,16 +1205,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2712, 0.7721, "Crank Fizzlebub",
                     "Travel to Crank Fizzlebub."),
-            },
-        },
-        {
-            id = "travel-707-hall-of-explorers",
-            kind = "travel",
-            priority = 1080,
-            text = "Travel to Hall of Explorers in City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.6799, 0.1761, "Hall of Explorers",
-                    "Travel to Hall of Explorers."),
             },
         },
         {

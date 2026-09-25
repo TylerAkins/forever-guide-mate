@@ -1025,22 +1025,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1525-1-thorn-hill",
-            kind = "travel",
-            priority = 540,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Thorn Hill.",
-            complete = QuestObjective(1525, 1),
-            route = {
-                Point(MAP.BARRENS, 0.5694, 0.2433, "Thorn Hill",
-                    "Travel to Thorn Hill."),
-            },
-        },
-        {
             id = "objective-1525-1-razormane-geomancer",
             kind = "objective",
             priority = 550,
@@ -1055,42 +1039,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5694, 0.2433, "Razormane Geomancer",
                     "Travel to Razormane Geomancer."),
-            },
-        },
-        {
-            id = "travel-1525-2-razor-hill",
-            kind = "travel",
-            priority = 560,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Razor Hill.",
-            complete = QuestObjective(1525, 2),
-            route = {
-                Point(MAP.DUROTAR, 0.5410, 0.4078, "Razor Hill",
-                    "Travel to Razor Hill."),
-            },
-        },
-        {
-            id = "travel-1525-2-dustwind-cave",
-            kind = "travel",
-            priority = 570,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Dustwind Cave.",
-            complete = QuestObjective(1525, 2),
-            route = {
-                Point(MAP.DUROTAR, 0.5410, 0.4078, "Continue toward Dustwind Cave",
-                    "Continue toward Dustwind Cave."),
-                Point(MAP.DUROTAR, 0.5405, 0.3728, "Continue toward Dustwind Cave",
-                    "Continue toward Dustwind Cave."),
-                Point(MAP.DUROTAR, 0.5287, 0.2904, "Dustwind Cave",
-                    "Travel to Dustwind Cave."),
             },
         },
         {

@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-menethil-keep",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Menethil Keep.",
-            route = {
-                Point(MAP.WETLANDS, 0.0990, 0.5745, "Menethil Keep",
-                    "Travel to Menethil Keep."),
-            },
-        },
-        {
             id = "accept-472-fall-of-dun-modr",
             kind = "accept",
             priority = 20,
@@ -61,16 +51,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1083, 0.5585, "Harlo Barnaby",
                     "Travel to Harlo Barnaby."),
-            },
-        },
-        {
-            id = "travel-631-dun-modr",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Dun Modr.",
-            route = {
-                Point(MAP.WETLANDS, 0.4992, 0.1823, "Dun Modr",
-                    "Travel to Dun Modr."),
             },
         },
         {
@@ -265,22 +245,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-9435-refuge-pointe",
-            kind = "travel",
-            priority = 200,
-            text = "Follow the waypoint to go back up the hill and run to Refuge Pointe quickly as this is a timed quest.",
-            route = {
-                Point(MAP.ARATHI, 0.4832, 0.8808, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.4589, 0.8813, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.4523, 0.5924, "Continue toward Refuge Pointe",
-                    "Continue toward Refuge Pointe."),
-                Point(MAP.ARATHI, 0.4443, 0.4870, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
-            },
-        },
-        {
             id = "turnin-634-plea-to-the-alliance",
             kind = "turnin",
             priority = 210,
@@ -290,16 +254,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.4585, 0.4759, "Captain Nials",
                     "Travel to Captain Nials."),
-            },
-        },
-        {
-            id = "travel-9435-southshore",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.5214, 0.5871, "Brewmeister Bilger",
-                    "Travel to Brewmeister Bilger."),
             },
         },
         {
@@ -558,16 +512,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-511-sofera-s-naze",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Sofera's Naze.",
-            route = {
-                Point(MAP.ALTERAC, 0.5830, 0.6780, "Sofera's Naze",
-                    "Travel to Sofera's Naze."),
-            },
-        },
-        {
             id = "accept-511-encrypted-letter",
             kind = "accept",
             priority = 460,
@@ -613,16 +557,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ALTERAC, 0.4300, 0.8000, "Mountain Lion",
                     "Travel to Mountain Lion."),
-            },
-        },
-        {
-            id = "travel-514-southshore",
-            kind = "travel",
-            priority = 500,
-            text = "Travel or Hearthstone back to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4900, 0.5510, "Southshore",
-                    "Travel to Southshore."),
             },
         },
         {
@@ -714,16 +648,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-681-refuge-pointe",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Refuge Pointe.",
-            route = {
-                Point(MAP.ARATHI, 0.4583, 0.4757, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
-            },
-        },
-        {
             id = "accept-681-northfold-manor",
             kind = "accept",
             priority = 590,
@@ -744,16 +668,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ARATHI, 0.3274, 0.2863, "Syndicate Highwayman",
                     "Travel to Syndicate Highwayman."),
-            },
-        },
-        {
-            id = "travel-refuge-pointe",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Refuge Pointe.",
-            route = {
-                Point(MAP.ARATHI, 0.4583, 0.4757, "Refuge Pointe",
-                    "Travel to Refuge Pointe."),
             },
         },
         {

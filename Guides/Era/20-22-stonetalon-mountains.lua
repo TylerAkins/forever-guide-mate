@@ -541,16 +541,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1483-ratchet",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3750, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
             id = "accept-1069-deepmoss-spider-eggs",
             kind = "accept",
             priority = 300,
@@ -573,21 +563,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1530-the-tidus-stair",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to The Tidus Stair.",
-            route = {
-                Point(MAP.BARRENS, 0.6582, 0.4377, "The Tidus Stair",
-                    "Travel to The Tidus Stair."),
-            },
-        },
-        {
             id = "accept-1530-call-of-water",
             kind = "accept",
             priority = 330,
@@ -601,22 +576,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6582, 0.4378, "Islen Waterseer",
                     "Travel to Islen Waterseer."),
-            },
-        },
-        {
-            id = "travel-blackthorn-ridge",
-            kind = "travel",
-            priority = 340,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { ["not"] = { quest = { id = 1536, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Blackthorn Ridge.",
-            route = {
-                Point(MAP.BARRENS, 0.4342, 0.7740, "Blackthorn Ridge",
-                    "Travel to Blackthorn Ridge."),
             },
         },
         {
@@ -703,23 +662,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1536-the-sepulcher",
-            kind = "travel",
-            priority = 400,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4974, 0.2935, "Continue toward The Sepulcher",
-                    "Continue toward The Sepulcher."),
-                Point(MAP.SILVERPINE, 0.4566, 0.4253, "The Sepulcher",
-                    "Travel to The Sepulcher."),
-            },
-        },
-        {
             id = "accept-493-journey-to-hillsbrad-foothills",
             kind = "accept",
             priority = 410,
@@ -733,21 +675,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4290, 0.4090, "Apothecary Renferrel",
                     "Travel to Apothecary Renferrel."),
-            },
-        },
-        {
-            id = "travel-1536-tarren-mill",
-            kind = "travel",
-            priority = 420,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6230, 0.2030, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -785,22 +712,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-blackthorn-ridge-2",
-            kind = "travel",
-            priority = 450,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { ["not"] = { quest = { id = 1534, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Blackthorn Ridge.",
-            route = {
-                Point(MAP.BARRENS, 0.4342, 0.7740, "Blackthorn Ridge",
-                    "Travel to Blackthorn Ridge."),
-            },
-        },
-        {
             id = "turnin-1536-call-of-water",
             kind = "turnin",
             priority = 460,
@@ -831,16 +742,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4342, 0.7741, "Brine",
                     "Travel to Brine."),
-            },
-        },
-        {
-            id = "travel-6523-honor-s-stand",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Honor's Stand. Take the road west out of the Crossroads to the edge of Stonetalon Mountains.",
-            route = {
-                Point(MAP.BARRENS, 0.3960, 0.2990, "Honor's Stand",
-                    "Travel to Honor's Stand."),
             },
         },
         {
@@ -971,20 +872,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6461-malaka-jin",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Malaka'jin.",
-            route = {
-                Point(MAP.STONETALON, 0.8298, 0.9858, "Continue toward Malaka'jin",
-                    "Continue toward Malaka'jin."),
-                Point(MAP.STONETALON, 0.7828, 0.9843, "Continue toward Malaka'jin",
-                    "Continue toward Malaka'jin."),
-                Point(MAP.STONETALON, 0.7455, 0.9784, "Malaka'jin",
-                    "Travel to Malaka'jin."),
-            },
-        },
-        {
             id = "accept-1058-jin-zil-s-forest-magic",
             kind = "accept",
             priority = 610,
@@ -1004,20 +891,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.7126, 0.9495, "Xen'Zilla",
                     "Travel to Xen'Zilla."),
-            },
-        },
-        {
-            id = "travel-6284-webwinder-path",
-            kind = "travel",
-            priority = 630,
-            text = "Travel to Webwinder Path.",
-            route = {
-                Point(MAP.STONETALON, 0.7128, 0.9265, "Continue toward Webwinder Path",
-                    "Continue toward Webwinder Path."),
-                Point(MAP.STONETALON, 0.7082, 0.8932, "Continue toward Webwinder Path",
-                    "Continue toward Webwinder Path."),
-                Point(MAP.STONETALON, 0.5910, 0.7575, "Webwinder Path",
-                    "Travel to Webwinder Path."),
             },
         },
         {
@@ -1053,18 +926,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.5333, 0.7404, "Deepmoss Creeper",
                     "Travel to Deepmoss Creeper."),
-            },
-        },
-        {
-            id = "travel-1093-windshear-crag",
-            kind = "travel",
-            priority = 670,
-            text = "Travel to Windshear Crag.",
-            route = {
-                Point(MAP.STONETALON, 0.5886, 0.7513, "Continue toward Windshear Crag",
-                    "Continue toward Windshear Crag."),
-                Point(MAP.STONETALON, 0.5898, 0.6250, "Windshear Crag",
-                    "Travel to Windshear Crag."),
             },
         },
         {
@@ -1126,22 +987,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6421-sun-rock-retreat",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to Sun Rock Retreat.",
-            route = {
-                Point(MAP.STONETALON, 0.6063, 0.6966, "Continue toward Sun Rock Retreat",
-                    "Continue toward Sun Rock Retreat."),
-                Point(MAP.STONETALON, 0.5978, 0.7126, "Continue toward Sun Rock Retreat",
-                    "Continue toward Sun Rock Retreat."),
-                Point(MAP.STONETALON, 0.5310, 0.6159, "Continue toward Sun Rock Retreat",
-                    "Continue toward Sun Rock Retreat."),
-                Point(MAP.STONETALON, 0.4520, 0.5990, "Sun Rock Retreat",
-                    "Travel to Sun Rock Retreat."),
-            },
-        },
-        {
             id = "turnin-6284-arachnophobia",
             kind = "turnin",
             priority = 740,
@@ -1189,36 +1034,11 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6421-boulderslide-cavern",
-            kind = "travel",
-            priority = 780,
-            text = "Travel to Boulderslide Cavern.",
-            route = {
-                Point(MAP.STONETALON, 0.4956, 0.6106, "Continue toward Boulderslide Cavern",
-                    "Continue toward Boulderslide Cavern."),
-                Point(MAP.STONETALON, 0.6689, 0.8883, "Continue toward Boulderslide Cavern",
-                    "Continue toward Boulderslide Cavern."),
-                Point(MAP.STONETALON, 0.6180, 0.9306, "Boulderslide Cavern",
-                    "Travel to Boulderslide Cavern."),
-            },
-        },
-        {
             id = "objective-6421-2-investigate-cave",
             kind = "objective",
             priority = 790,
             text = "Investigate Cave in Boulderslide Cavern.",
             dependsOn = { "accept-6421-boulderslide-ravine" },
-            complete = QuestObjective(6421, 2),
-            route = {
-                Point(MAP.STONETALON, 0.5888, 0.9037, "Boulderslide Cavern",
-                    "Travel to Boulderslide Cavern."),
-            },
-        },
-        {
-            id = "travel-6421-2-boulderslide-cavern",
-            kind = "travel",
-            priority = 800,
-            text = "Travel to Boulderslide Cavern.",
             complete = QuestObjective(6421, 2),
             route = {
                 Point(MAP.STONETALON, 0.5888, 0.9037, "Boulderslide Cavern",
@@ -1235,21 +1055,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.6100, 0.9100, "Boulderslide Cavern",
                     "Travel to Boulderslide Cavern."),
-            },
-        },
-        {
-            id = "travel-greatwood-vale",
-            kind = "travel",
-            priority = 820,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1068, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Greatwood Vale.",
-            route = {
-                Point(MAP.STONETALON, 0.7187, 0.9030, "Greatwood Vale",
-                    "Travel to Greatwood Vale."),
             },
         },
         {
@@ -1359,21 +1164,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1534-the-ruins-of-stardust",
-            kind = "travel",
-            priority = 910,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to The Ruins of Stardust.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3355, 0.6744, "The Ruins of Stardust",
-                    "Travel to The Ruins of Stardust."),
-            },
-        },
-        {
             id = "objective-1534-call-of-water",
             kind = "objective",
             priority = 920,
@@ -1388,36 +1178,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3355, 0.6744, "The Ruins of Stardust",
                     "Travel to The Ruins of Stardust."),
-            },
-        },
-        {
-            id = "travel-splintertree-post",
-            kind = "travel",
-            priority = 930,
-            text = "Travel to Splintertree Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.7300, 0.6500, "Splintertree Post",
-                    "Travel to Splintertree Post."),
-            },
-        },
-        {
-            id = "travel-6442-zoram-gar-outpost",
-            kind = "travel",
-            priority = 940,
-            text = "Travel to Zoram'gar Outpost.",
-            route = {
-                Point(MAP.ASHENVALE, 0.5665, 0.6023, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.3884, 0.5792, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.3236, 0.5248, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.2550, 0.3958, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.1347, 0.3226, "Continue toward Zoram'gar Outpost",
-                    "Continue toward Zoram'gar Outpost."),
-                Point(MAP.ASHENVALE, 0.1162, 0.3430, "Zoram'gar Outpost",
-                    "Travel to Zoram'gar Outpost."),
             },
         },
         {

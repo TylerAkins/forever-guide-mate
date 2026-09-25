@@ -728,21 +728,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-792-valley-of-trials",
-            kind = "travel",
-            priority = 420,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1485, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Valley of Trials.",
-            route = {
-                Point(MAP.DUROTAR, 0.4500, 0.5600, "Vile Familiar",
-                    "Travel to Vile Familiar."),
-            },
-        },
-        {
             id = "objective-792-vile-familiars",
             kind = "objective",
             priority = 430,
@@ -898,18 +883,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-794-burning-blade-coven",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Burning Blade Coven.",
-            route = {
-                Point(MAP.DUROTAR, 0.4446, 0.6040, "Continue toward Burning Blade Coven",
-                    "Continue toward Burning Blade Coven."),
-                Point(MAP.DUROTAR, 0.4533, 0.5647, "Burning Blade Coven",
-                    "Travel to Burning Blade Coven."),
-            },
-        },
-        {
             id = "objective-794-burning-blade-medallion",
             kind = "objective",
             priority = 550,
@@ -961,12 +934,6 @@ ns:RegisterGuide({
                 Point(MAP.DUROTAR, 0.4447, 0.5499, "Felstalker",
                     "Travel to Felstalker."),
             },
-        },
-        {
-            id = "travel-2161-valley-of-trials",
-            kind = "travel",
-            priority = 580,
-            text = "Hearth to Valley of Trials.",
         },
         {
             id = "turnin-1516-call-of-earth",
@@ -1052,27 +1019,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-spirit-rock",
-            kind = "travel",
-            priority = 650,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Spirit Rock.",
-            route = {
-                Point(MAP.DUROTAR, 0.4156, 0.7326, "Continue toward Spirit Rock",
-                    "Continue toward Spirit Rock."),
-                Point(MAP.DUROTAR, 0.4074, 0.7437, "Continue toward Spirit Rock",
-                    "Continue toward Spirit Rock."),
-                Point(MAP.DUROTAR, 0.4260, 0.7526, "Continue toward Spirit Rock",
-                    "Continue toward Spirit Rock."),
-                Point(MAP.DUROTAR, 0.4407, 0.7626, "Spirit Rock",
-                    "Travel to Spirit Rock."),
-            },
-        },
-        {
             id = "note-earth-sapta-2",
             kind = "note",
             priority = 660,
@@ -1117,25 +1063,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-valley-of-trials",
-            kind = "travel",
-            priority = 690,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to Valley of Trials.",
-            route = {
-                Point(MAP.DUROTAR, 0.4260, 0.7526, "Continue toward Valley of Trials",
-                    "Continue toward Valley of Trials."),
-                Point(MAP.DUROTAR, 0.4077, 0.7406, "Continue toward Valley of Trials",
-                    "Continue toward Valley of Trials."),
-                Point(MAP.DUROTAR, 0.4242, 0.6917, "Valley of Trials",
-                    "Travel to Valley of Trials."),
-            },
-        },
-        {
             id = "turnin-1518-call-of-earth",
             kind = "turnin",
             priority = 700,
@@ -1161,16 +1088,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5200, 0.6830, "Ukor",
                     "Travel to Ukor."),
-            },
-        },
-        {
-            id = "travel-786-sen-jin-village",
-            kind = "travel",
-            priority = 720,
-            text = "Travel to Sen'jin Village.",
-            route = {
-                Point(MAP.DUROTAR, 0.5450, 0.7500, "Sen'jin Village",
-                    "Travel to Sen'jin Village."),
             },
         },
         {
@@ -1298,16 +1215,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5660, 0.7360, "Pa'zula",
                     "Travel to Pa'zula."),
-            },
-        },
-        {
-            id = "travel-806-razor-hill",
-            kind = "travel",
-            priority = 800,
-            text = "Follow the road north to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5230, 0.4320, "Razor Hill",
-                    "Travel to Razor Hill."),
             },
         },
         {
@@ -1533,16 +1440,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-831-razor-hill",
-            kind = "travel",
-            priority = 940,
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5190, 0.4348, "Razor Hill",
-                    "Travel to Razor Hill."),
-            },
-        },
-        {
             id = "turnin-784-vanquish-the-betrayers",
             kind = "turnin",
             priority = 950,
@@ -1627,16 +1524,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-837-razormane-grounds",
-            kind = "travel",
-            priority = 1000,
-            text = "Travel to Razormane Grounds.",
-            route = {
-                Point(MAP.DUROTAR, 0.4723, 0.4909, "Razormane Grounds",
-                    "Travel to Razormane Grounds."),
-            },
-        },
-        {
             id = "objective-96825-this-fruit-could-bite-back",
             kind = "objective",
             priority = 1001,
@@ -1675,16 +1562,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-825-scuttle-coast",
-            kind = "travel",
-            priority = 1020,
-            text = "Travel to Scuttle Coast.",
-            route = {
-                Point(MAP.DUROTAR, 0.6177, 0.4577, "Scuttle Coast",
-                    "Travel to Scuttle Coast."),
-            },
-        },
-        {
             id = "objective-825-from-the-wreckage",
             kind = "objective",
             priority = 1030,
@@ -1713,16 +1590,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-razor-hill",
-            kind = "travel",
-            priority = 1050,
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5190, 0.4348, "Razor Hill",
-                    "Travel to Razor Hill."),
-            },
-        },
-        {
             id = "turnin-825-from-the-wreckage",
             kind = "turnin",
             priority = 1060,
@@ -1744,18 +1611,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5190, 0.4348, "Gar'Thok",
                     "Travel to Gar'Thok."),
-            },
-        },
-        {
-            id = "travel-786-kolkar-crag",
-            kind = "travel",
-            priority = 1080,
-            text = "Travel to Kolkar Crag.",
-            route = {
-                Point(MAP.DUROTAR, 0.5254, 0.4435, "Continue toward Kolkar Crag",
-                    "Continue toward Kolkar Crag."),
-                Point(MAP.DUROTAR, 0.4984, 0.8128, "Kolkar Crag",
-                    "Travel to Kolkar Crag."),
             },
         },
         {
@@ -1818,16 +1673,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-sen-jin-village",
-            kind = "travel",
-            priority = 1120,
-            text = "Travel to Sen'jin Village.",
-            route = {
-                Point(MAP.DUROTAR, 0.5459, 0.7522, "Sen'jin Village",
-                    "Travel to Sen'jin Village."),
-            },
-        },
-        {
             id = "turnin-786-thwarting-kolkar-aggression",
             kind = "turnin",
             priority = 1130,
@@ -1861,16 +1706,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5595, 0.7446, "Master Vornal",
                     "Travel to Master Vornal."),
-            },
-        },
-        {
-            id = "travel-826-echo-isles",
-            kind = "travel",
-            priority = 1150,
-            text = "Travel to Echo Isles.",
-            route = {
-                Point(MAP.DUROTAR, 0.6004, 0.8155, "Echo Isles",
-                    "Travel to Echo Isles."),
             },
         },
         {
@@ -1939,16 +1774,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-815-echo-isles",
-            kind = "travel",
-            priority = 1180,
-            text = "Travel to Echo Isles.",
-            route = {
-                Point(MAP.DUROTAR, 0.6000, 0.9000, "Echo Isles",
-                    "Travel to Echo Isles."),
-            },
-        },
-        {
             id = "objective-815-break-a-few-eggs",
             kind = "objective",
             priority = 1190,
@@ -1982,16 +1807,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.6755, 0.8667, "Hexed Troll",
                     "Travel to Hexed Troll."),
-            },
-        },
-        {
-            id = "travel-sen-jin-village-2",
-            kind = "travel",
-            priority = 1220,
-            text = "Travel to Sen'jin Village.",
-            route = {
-                Point(MAP.DUROTAR, 0.5593, 0.7395, "Sen'jin Village",
-                    "Travel to Sen'jin Village."),
             },
         },
         {
@@ -2072,16 +1887,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-razor-hill-2",
-            kind = "travel",
-            priority = 1260,
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5118, 0.4246, "Razor Hill",
-                    "Travel to Razor Hill."),
-            },
-        },
-        {
             id = "turnin-815-break-a-few-eggs",
             kind = "turnin",
             priority = 1270,
@@ -2091,16 +1896,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5118, 0.4246, "Cook Torka",
                     "Travel to Cook Torka."),
-            },
-        },
-        {
-            id = "travel-816-tor-kren-farm",
-            kind = "travel",
-            priority = 1280,
-            text = "Travel to Tor'kren Farm.",
-            route = {
-                Point(MAP.DUROTAR, 0.4311, 0.3030, "Tor'kren Farm",
-                    "Travel to Tor'kren Farm."),
             },
         },
         {
@@ -2177,21 +1972,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4157, 0.1864, "Rhinag",
                     "Travel to Rhinag."),
-            },
-        },
-        {
-            id = "travel-6062-razor-hill",
-            kind = "travel",
-            priority = 1350,
-            conditions = {
-                all = {
-                    { class = 3 },
-                },
-            },
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5192, 0.4345, "Razor Hill",
-                    "Travel to Razor Hill."),
             },
         },
         {
@@ -2387,16 +2167,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5726-orgrimmar",
-            kind = "travel",
-            priority = 1470,
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3300, 0.3700, "Orgrimmar",
-                    "Travel to Orgrimmar."),
-            },
-        },
-        {
             id = "accept-96874-this-is-spinal-axe",
             kind = "accept",
             priority = 1471,
@@ -2497,21 +2267,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1501-cleft-of-shadow",
-            kind = "travel",
-            priority = 1530,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Cleft of Shadow.",
-            route = {
-                Point(MAP.DUROTAR, 0.4826, 0.4541, "Cleft of Shadow",
-                    "Travel to Cleft of Shadow."),
-            },
-        },
-        {
             id = "turnin-1506-gan-rul-s-summons",
             kind = "turnin",
             priority = 1540,
@@ -2545,16 +2300,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-813-southfury-river",
-            kind = "travel",
-            priority = 1560,
-            text = "Travel to Southfury River.",
-            route = {
-                Point(MAP.DUROTAR, 0.3742, 0.1768, "Southfury River",
-                    "Travel to Southfury River."),
-            },
-        },
-        {
             id = "objective-813-finding-the-antidote",
             kind = "objective",
             priority = 1570,
@@ -2564,16 +2309,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4100, 0.1700, "Venomtail Scorpid",
                     "Travel to Venomtail Scorpid."),
-            },
-        },
-        {
-            id = "travel-cleft-of-shadow",
-            kind = "travel",
-            priority = 1580,
-            text = "Travel to Cleft of Shadow in Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4710, 0.5317, "Cleft of Shadow",
-                    "Travel to Cleft of Shadow."),
             },
         },
         {
@@ -2598,21 +2333,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4157, 0.1864, "Rhinag",
                     "Travel to Rhinag."),
-            },
-        },
-        {
-            id = "travel-sen-jin-village-3",
-            kind = "travel",
-            priority = 1610,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Travel to Sen'jin Village.",
-            route = {
-                Point(MAP.DUROTAR, 0.5623, 0.7510, "Sen'jin Village",
-                    "Travel to Sen'jin Village."),
             },
         },
         {
@@ -2693,18 +2413,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-835-drygulch-ravine",
-            kind = "travel",
-            priority = 1660,
-            text = "Travel to Drygulch Ravine.",
-            route = {
-                Point(MAP.DUROTAR, 0.4970, 0.2867, "Continue toward Drygulch Ravine",
-                    "Continue toward Drygulch Ravine."),
-                Point(MAP.DUROTAR, 0.5371, 0.2779, "Drygulch Ravine",
-                    "Travel to Drygulch Ravine."),
-            },
-        },
-        {
             id = "objective-835-securing-the-lines",
             kind = "objective",
             priority = 1670,
@@ -2740,16 +2448,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.3500, 0.4800, "Dreadmaw Crocolisk",
                     "Travel to Dreadmaw Crocolisk."),
-            },
-        },
-        {
-            id = "travel-806-thunder-ridge",
-            kind = "travel",
-            priority = 1700,
-            text = "Travel to Thunder Ridge.",
-            route = {
-                Point(MAP.DUROTAR, 0.4181, 0.2453, "Thunder Ridge",
-                    "Travel to Thunder Ridge."),
             },
         },
         {
@@ -2868,16 +2566,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-tor-kren-farm",
-            kind = "travel",
-            priority = 1720,
-            text = "Travel to Tor'kren Farm.",
-            route = {
-                Point(MAP.DUROTAR, 0.4311, 0.3030, "Tor'kren Farm",
-                    "Travel to Tor'kren Farm."),
-            },
-        },
-        {
             id = "turnin-816-lost-but-not-forgotten",
             kind = "turnin",
             priority = 1730,
@@ -2887,16 +2575,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4311, 0.3030, "Misha Tor'kren",
                     "Travel to Misha Tor'kren."),
-            },
-        },
-        {
-            id = "travel-828-razor-hill",
-            kind = "travel",
-            priority = 1740,
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5228, 0.4322, "Razor Hill",
-                    "Travel to Razor Hill."),
             },
         },
         {
@@ -3069,16 +2747,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-827-skull-rock",
-            kind = "travel",
-            priority = 1800,
-            text = "Travel to Skull Rock.",
-            route = {
-                Point(MAP.DUROTAR, 0.5510, 0.0991, "Skull Rock",
-                    "Travel to Skull Rock."),
-            },
-        },
-        {
             id = "objective-99052-threat-from-below",
             kind = "objective",
             priority = 1801,
@@ -3181,16 +2849,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5635, 0.2005, "Margoz",
                     "Travel to Margoz."),
-            },
-        },
-        {
-            id = "travel-grommash-hold",
-            kind = "travel",
-            priority = 1870,
-            text = "Travel to Grommash Hold.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3198, 0.3783, "Grommash Hold",
-                    "Travel to Grommash Hold."),
             },
         },
         {
@@ -3412,16 +3070,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.6300, 0.4500, "Kamari",
                     "Travel to Kamari."),
-            },
-        },
-        {
-            id = "travel-840-razor-hill",
-            kind = "travel",
-            priority = 1980,
-            text = "Travel to Razor Hill.",
-            route = {
-                Point(MAP.DUROTAR, 0.5089, 0.4358, "Razor Hill",
-                    "Travel to Razor Hill."),
             },
         },
         {
