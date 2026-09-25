@@ -614,6 +614,8 @@ ForeverGuideMateDB = { autoQuest = true }
 ForeverGuideMateCharDB = { selectedGuide = "dungeons-ragefire-chasm-horde" }
 ns.InitializeStorage()
 Equal(ns.db.autoQuest, true, "guide quest turn-in starts enabled")
+local ragefire = ns.guides["dungeons-ragefire-chasm-horde"]
+ns.Engine.currentGoal = ns.Engine:GetGoal(ragefire, "accept-searching-satchel")
 local calls = {}
 local questAPI = {
     GetQuestID = function() return 5722 end,
@@ -632,13 +634,34 @@ local questAPI = {
     },
 }
 ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
-Equal(calls.gossip, 5722, "gossip opens the guide quest and skips unrelated quests")
+Equal(calls.gossip, 5722, "gossip opens the current accept step and skips unrelated quests")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { { questID = 5723 }, { questID = 5722 } }
+end
+calls.gossip = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5722, "a later guide quest is left in the gossip window")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { { questID = 1 }, { questID = 5722 } }
+end
 ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
-Equal(calls.accept, true, "the open guide quest is accepted")
-questAPI.GetQuestID = function() return 999 end
+Equal(calls.accept, true, "the open current-step quest is accepted")
+questAPI.GetQuestID = function() return 5723 end
 calls.accept = nil
 ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, nil, "another quest in the same guide is not accepted")
+questAPI.GetQuestID = function() return 999 end
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
 Equal(calls.accept, nil, "a quest outside the selected guide is left alone")
+ns.Engine.currentGoal = ns.Engine:GetGoal(ragefire, "recover-lieutenants-insignia")
+questAPI.GetQuestID = function() return 5722 end
+calls.accept = nil
+calls.gossip = nil
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.accept, nil, "an objective step does not accept a guide quest")
+Equal(calls.gossip, nil, "an objective step does not open a guide quest from gossip")
+ns.Engine.currentGoal = ns.Engine:GetGoal(ragefire, "accept-searching-satchel")
 questAPI.GetQuestID = function() return 5722 end
 ns.QuestDialog:Handle("QUEST_PROGRESS", questAPI)
 Equal(calls.complete, true, "a completable guide quest is turned in")
