@@ -205,14 +205,16 @@ for _, guideID in ipairs(ns.guideOrder) do
     end
 end
 
--- Travel steps do not auto-clear, and TomTom already points at the next pin.
--- Dungeon entrance steps stay: they complete on entering the instance.
+-- A travel step with no completion condition never finishes on its own.
+-- Keep one when the quest is to discover that place: it carries the same
+-- complete condition as the discovery, so it clears when the objective does.
+-- Dungeon entrance steps complete on entering the instance.
 for _, guideID in ipairs(ns.guideOrder) do
     local guide = ns.guides[guideID]
     for _, goal in ipairs(guide.goals) do
         local entrance = type(goal.id) == "string" and goal.id:sub(1, 6) == "enter-"
-        Check(goal.kind ~= "travel" or entrance,
-            ("%s %s is a travel step; TomTom already points at the next pin")
+        Check(goal.kind ~= "travel" or entrance or goal.complete ~= nil,
+            ("%s %s is a travel step with nothing to complete it")
                 :format(guideID, tostring(goal.id)))
     end
 end

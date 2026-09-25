@@ -1034,6 +1034,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-6421-boulderslide-cavern",
+            kind = "travel",
+            priority = 780,
+            text = "Travel to Boulderslide Cavern. Investigate Cave in Boulderslide Cavern.",
+            complete = QuestObjective(6421, 2),
+            dependsOn = { "accept-6421-boulderslide-ravine" },
+            route = {
+                Point(MAP.STONETALON, 0.4956, 0.6106, "Continue toward Boulderslide Cavern",
+                    "Continue toward Boulderslide Cavern."),
+                Point(MAP.STONETALON, 0.6689, 0.8883, "Continue toward Boulderslide Cavern",
+                    "Continue toward Boulderslide Cavern."),
+                Point(MAP.STONETALON, 0.6180, 0.9306, "Boulderslide Cavern",
+                    "Travel to Boulderslide Cavern."),
+            },
+        },
+        {
             id = "objective-6421-2-investigate-cave",
             kind = "objective",
             priority = 790,

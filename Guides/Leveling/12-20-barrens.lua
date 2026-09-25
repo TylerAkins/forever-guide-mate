@@ -1625,6 +1625,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-870-the-forgotten-pools",
+            kind = "travel",
+            priority = 1290,
+            text = "Travel to The Forgotten Pools. Swim to the bubble in the middle of the pool in The Forgotten Pools.",
+            complete = QuestState(870, "complete"),
+            dependsOn = { "accept-870-the-forgotten-pools" },
+            route = {
+                Point(MAP.BARRENS, 0.4499, 0.2409, "The Forgotten Pools",
+                    "Travel to The Forgotten Pools."),
+            },
+        },
+        {
             id = "objective-870-the-forgotten-pools",
             kind = "objective",
             priority = 1300,

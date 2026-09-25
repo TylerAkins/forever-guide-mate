@@ -11,7 +11,7 @@ Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
 
 ## Do this
 
-1. Open the zone's leveling chapters, lowest level first. Converted chapters are in `Guides/Leveling/`. A chapter whose title still ends in `(Era)` is in `Guides/Era/`. That step list is the spine. Keep its accepts, objectives, and turn-ins in that order. Leave travel steps out. TomTom already points at the next pin, and a travel step does not auto-clear.
+1. Open the zone's leveling chapters, lowest level first. Converted chapters are in `Guides/Leveling/`. A chapter whose title still ends in `(Era)` is in `Guides/Era/`. That step list is the spine. Keep its accepts, objectives, and turn-ins in that order. Leave hub-to-hub travel steps out. TomTom already points at the next pin, and those steps do not auto-clear. Keep a travel step when the quest is to discover or investigate that place, and give it the same `complete` condition as that objective so it clears when the discovery is done.
 2. Open the Wowhead Forever zone quest page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`.
 3. Every quest on that page that is not already on the spine gets woven in. Do not drop a quest the spine already runs.
 4. Register the guide, then run the checks at the bottom.

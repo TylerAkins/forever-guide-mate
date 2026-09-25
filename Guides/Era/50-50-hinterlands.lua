@@ -97,6 +97,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-2989-the-altar-of-zul",
+            kind = "travel",
+            priority = 80,
+            text = "Travel to The Altar of Zul. Go up to the top of the stair to search The Altar of Zul.",
+            complete = QuestState(2989, "complete"),
+            route = {
+                Point(MAP.HINTERLANDS, 0.4876, 0.6835, "The Altar of Zul",
+                    "Travel to The Altar of Zul."),
+            },
+        },
+        {
             id = "objective-2989-the-altar-of-zul",
             kind = "objective",
             priority = 90,

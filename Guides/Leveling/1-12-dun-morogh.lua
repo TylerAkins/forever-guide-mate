@@ -1559,6 +1559,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-287-frostmane-hold",
+            kind = "travel",
+            priority = 1010,
+            text = "Travel to Frostmane Hold. Go inside the cave to explore Frostmane Hold and kill 5 Frostmane Headhunter.",
+            complete = QuestState(287, "complete"),
+            dependsOn = { "accept-287-frostmane-hold" },
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2490, 0.5094, "Frostmane Hold",
+                    "Travel to Frostmane Hold."),
+            },
+        },
+        {
             id = "objective-287-frostmane-hold",
             kind = "objective",
             priority = 1020,
