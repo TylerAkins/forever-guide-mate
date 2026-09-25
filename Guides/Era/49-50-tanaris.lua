@@ -500,6 +500,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-10-the-gaping-chasm",
+            kind = "travel",
+            priority = 470,
+            text = "Travel to The Gaping Chasm. Go the the Gaping Chasm, enter the cave, go straight through the tunnel until you reach a large butterfly-shaped room where you can loot Scrimshank's Surveying Gear.",
+            complete = QuestState(10, "complete"),
+            dependsOn = { "accept-10-the-scrimshank-redemption" },
+            route = {
+                Point(MAP.TANARIS, 0.5577, 0.6909, "The Gaping Chasm",
+                    "Travel to The Gaping Chasm."),
+            },
+        },
+        {
             id = "objective-10-the-scrimshank-redemption",
             kind = "objective",
             priority = 480,
