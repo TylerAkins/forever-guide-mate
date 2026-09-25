@@ -2366,6 +2366,51 @@ function TestEraLeveling()
 end
 TestEraLeveling()
 
+function TestQuestCreditSkipsRepeatLookups()
+    ns.PlayerState:InvalidateQuestCache()
+    local log = { 100, 999 }
+    local flagged, objectives, bulk = 0, 0, 0
+    local api = {
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return #log end,
+            GetInfo = function(index)
+                return { questID = log[index], isComplete = false }
+            end,
+            GetQuestObjectives = function(questID)
+                objectives = objectives + 1
+                return { { text = "Slay", numRequired = 1, numFulfilled = questID == 100 and 1 or 0 } }
+            end,
+            IsQuestFlaggedCompleted = function(questID)
+                flagged = flagged + 1
+                return questID == 200
+            end,
+        },
+        GetQuestsCompleted = function()
+            bulk = bulk + 1
+        end,
+    }
+    local watched = { 100, 200, 300 }
+    local first = ns.PlayerState:Capture(api, watched)
+    Equal(first.quests[100] ~= nil, true, "quest credit reads the watched quest in the log")
+    Equal(first.quests[999], nil, "quest credit ignores a log quest the guide does not use")
+    Equal(objectives, 1, "quest credit reads objectives for the watched quest only")
+    Equal(flagged, 2, "a quest still in the log is not asked if it was turned in")
+    Equal(first.completedQuests[200], true, "a turned-in quest outside the log is recorded")
+    Equal(first.completedQuests[100], false, "the active kill quest is not treated as turned in")
+    Equal(bulk, 0, "a per-quest completion API replaces the full completed-quest dump")
+    local flaggedAfter = flagged
+    local objectivesAfter = objectives
+    log = { 100, 999 }
+    local second = ns.PlayerState:Capture(api, watched)
+    Equal(flagged, flaggedAfter, "another kill does not ask about completion again")
+    Equal(objectives, objectivesAfter + 1, "another kill still reads the open objective")
+    Equal(second.completedQuests[200], true, "the cached turn-in still counts after the next kill")
+    log = { 999 }
+    ns.PlayerState:Capture(api, watched)
+    Equal(flagged, flaggedAfter + 1, "turning the quest in checks that quest once")
+end
+TestQuestCreditSkipsRepeatLookups()
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")

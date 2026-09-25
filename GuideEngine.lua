@@ -542,6 +542,25 @@ function ns.GetTrackedQuestIDs()
     return ids
 end
 
+function ns.QuestIDsForGuide(guide)
+    if type(guide) ~= "table" then
+        return {}
+    end
+    local cached = guide.trackedQuestIDs
+    if cached then
+        return cached
+    end
+    local found = {}
+    CollectQuestIDs(guide, found)
+    local ids = {}
+    for questID in pairs(found) do
+        ids[#ids + 1] = questID
+    end
+    table.sort(ids)
+    guide.trackedQuestIDs = ids
+    return ids
+end
+
 function Engine:GetGoal(guide, goalID)
     local indexed = guide.goalByID
     if indexed then
@@ -1166,9 +1185,9 @@ function Engine:Refresh(state)
         return
     end
     self:MigrateEraProgress()
-    state = state or ns.PlayerState:Capture()
-    self.state = state
     local guide = ns.guides[ns.charDB.selectedGuide]
+    state = state or ns.PlayerState:Capture(nil, guide and ns.QuestIDsForGuide(guide) or {})
+    self.state = state
     self.currentGuide = guide
     self.currentSegment = nil
     if not guide then
