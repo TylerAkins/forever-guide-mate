@@ -219,6 +219,62 @@ for _, guideID in ipairs(ns.guideOrder) do
     end
 end
 
+local function AcceptQuestID(goalID)
+    if type(goalID) ~= "string" then
+        return nil
+    end
+    local questID = goalID:match("^accept%-(%d+)%-")
+    return questID and tonumber(questID) or nil
+end
+
+local function ObjectiveQuestIDFromGoalID(goalID)
+    if type(goalID) ~= "string" then
+        return nil
+    end
+    local questID = goalID:match("^objective%-(%d+)%-")
+    return questID and tonumber(questID) or nil
+end
+
+local function QuestObjectiveSpec(goal)
+    local complete = goal.complete
+    if type(complete) ~= "table" or type(complete.questObjective) ~= "table" then
+        return nil
+    end
+    return complete.questObjective
+end
+
+-- An objective tied to an accept must track that same quest id. A mismatched id
+-- (for example Horde 6128 using Alliance 6123) never completes in the log.
+for _, guideID in ipairs(ns.guideOrder) do
+    local guide = ns.guides[guideID]
+    for _, goal in ipairs(guide.goals) do
+        local spec = QuestObjectiveSpec(goal)
+        if spec and type(spec.id) == "number" then
+            if type(goal.dependsOn) == "table" then
+                local matchedAccept = false
+                for _, dep in ipairs(goal.dependsOn) do
+                    local acceptQuest = AcceptQuestID(dep)
+                    if acceptQuest == spec.id then
+                        matchedAccept = true
+                    end
+                end
+                for _, dep in ipairs(goal.dependsOn) do
+                    local acceptQuest = AcceptQuestID(dep)
+                    if acceptQuest and acceptQuest ~= spec.id and not matchedAccept then
+                        Check(false, ("%s %s tracks quest %d but depends on accept for quest %d")
+                            :format(guideID, tostring(goal.id), spec.id, acceptQuest))
+                    end
+                end
+            end
+            local fromID = ObjectiveQuestIDFromGoalID(goal.id)
+            if fromID and fromID ~= spec.id then
+                Check(false, ("%s %s uses quest %d in the step id but QuestObjective(%d, ...)")
+                    :format(guideID, tostring(goal.id), fromID, spec.id))
+            end
+        end
+    end
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d guide data checks failed\n"):format(failures, checks))
     os.exit(1)
