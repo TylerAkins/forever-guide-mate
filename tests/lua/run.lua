@@ -855,6 +855,32 @@ function TestLostBarrensKodo()
 end
 TestLostBarrensKodo()
 
+function TestBreadcrumbSkip()
+    local function Point(x, y, label)
+        return { mapID = 1413, x = x, y = y, label = label, offMapText = label }
+    end
+    local goal = {
+        route = {
+            Point(0.50, 0.20, "Continue toward Curing the Sick"),
+            Point(0.55, 0.30, "Continue toward Curing the Sick"),
+            Point(0.45, 0.40, "Curing the Sick"),
+        },
+    }
+    local leg = ns.Navigation:GetActiveLeg(goal, { mapID = 1413, x = 0.45, y = 0.40 })
+    Equal(leg and leg.label, "Curing the Sick", "a later camp wins over earlier breadcrumbs")
+    leg = ns.Navigation:GetActiveLeg(goal, { mapID = 1413, x = 0.50, y = 0.20 })
+    Equal(leg and leg.x, 0.55, "standing on a breadcrumb advances to the next pin")
+    local ordered = {
+        route = {
+            Point(0.20, 0.20, "Crossroads"),
+            Point(0.80, 0.80, "Camp Taurajo"),
+        },
+    }
+    leg = ns.Navigation:GetActiveLeg(ordered, { mapID = 1413, x = 0.78, y = 0.78 })
+    Equal(leg and leg.label, "Crossroads", "a real stop is not skipped just because the next stop is closer")
+end
+TestBreadcrumbSkip()
+
 function TestQuestAudit()
     local durotarGuide = ns.guides["leveling-durotar"]
     local spinalAxe = ns.Engine:GetGoal(durotarGuide, "accept-96874-this-is-spinal-axe")

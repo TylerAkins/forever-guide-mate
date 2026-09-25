@@ -176,6 +176,30 @@ function Navigation:ApplyClientPin(goal, leg, api)
     return copy
 end
 
+local function BreadcrumbPassed(route, index, state)
+    local leg = route[index]
+    if type(leg.label) ~= "string" or string.find(leg.label, "Continue toward", 1, true) ~= 1 then
+        return false
+    end
+    if not Navigation:OnMap(state.mapID, leg.mapID) or not state.x or not state.y then
+        return false
+    end
+    local here = Navigation.Distance(state.x, state.y, leg.x, leg.y)
+    if not here then
+        return false
+    end
+    for later = index + 1, #route do
+        local nextLeg = route[later]
+        if nextLeg.mapID == leg.mapID then
+            local there = Navigation.Distance(state.x, state.y, nextLeg.x, nextLeg.y)
+            if there and there < here then
+                return true
+            end
+        end
+    end
+    return false
+end
+
 function Navigation:GetActiveLeg(goal, state, api)
     if goal and goal.useClientPin == true and (type(goal.route) ~= "table" or #goal.route == 0) then
         local pinMap, x, y = self:ClientPin(goal, state and state.mapID, api)
@@ -199,6 +223,9 @@ function Navigation:GetActiveLeg(goal, state, api)
         elseif index < #goal.route and self:OnMap(state.mapID, leg.mapID) then
             local distance = self.Distance(state.x, state.y, leg.x, leg.y)
             complete = distance and distance <= (leg.radius or 0.015) or false
+        end
+        if not complete and BreadcrumbPassed(goal.route, index, state) then
+            complete = true
         end
         if not complete then
             if leg.flightTo then
