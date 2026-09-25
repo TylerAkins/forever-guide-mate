@@ -417,6 +417,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-289-the-cursed-crew" },
             complete = QuestState(289, "complete"),
             route = {
+                Point(MAP.WETLANDS, 0.1300, 0.2700, "Continue toward The Cursed Crew",
+                    "Continue toward The Cursed Crew."),
                 Point(MAP.WETLANDS, 0.1400, 0.3000, "Cursed Sailor",
                     "Travel to Cursed Sailor."),
             },

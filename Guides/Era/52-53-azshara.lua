@@ -151,6 +151,10 @@ ns:RegisterGuide({
             text = "Accept Kim'jael Indeed! from Kim'jael in Legash Encampment.",
             complete = QuestState(3601, "activeOrCompleted"),
             route = {
+                Point(MAP.AZSHARA, 0.5328, 0.2015, "Continue toward Kim'jael Indeed!",
+                    "Continue toward Kim'jael Indeed!."),
+                Point(MAP.AZSHARA, 0.5316, 0.2146, "Continue toward Kim'jael Indeed!",
+                    "Continue toward Kim'jael Indeed!."),
                 Point(MAP.AZSHARA, 0.5346, 0.2181, "Kim'jael",
                     "Travel to Kim'jael."),
             },
@@ -175,6 +179,10 @@ ns:RegisterGuide({
             dependsOn = { "objective-3601-kim-jael-indeed" },
             complete = QuestState(3601, "completed"),
             route = {
+                Point(MAP.AZSHARA, 0.5332, 0.2020, "Continue toward Kim'jael Indeed!",
+                    "Continue toward Kim'jael Indeed!."),
+                Point(MAP.AZSHARA, 0.5326, 0.2153, "Continue toward Kim'jael Indeed!",
+                    "Continue toward Kim'jael Indeed!."),
                 Point(MAP.AZSHARA, 0.5346, 0.2180, "Kim'jael",
                     "Travel to Kim'jael."),
             },
@@ -210,6 +218,10 @@ ns:RegisterGuide({
             dependsOn = { "objective-5534-kim-jael-s-missing-equipment" },
             complete = QuestState(5534, "completed"),
             route = {
+                Point(MAP.AZSHARA, 0.5328, 0.2015, "Continue toward Kim'jael's \"Missing\" Equipment",
+                    "Continue toward Kim'jael's \"Missing\" Equipment."),
+                Point(MAP.AZSHARA, 0.5316, 0.2146, "Continue toward Kim'jael's \"Missing\" Equipment",
+                    "Continue toward Kim'jael's \"Missing\" Equipment."),
                 Point(MAP.AZSHARA, 0.5346, 0.2182, "Kim'jael",
                     "Travel to Kim'jael."),
             },

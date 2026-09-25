@@ -57,6 +57,8 @@ ns:RegisterGuide({
             text = "Accept Fall From Grace from Fallen Hero of the Horde in Stonard.",
             complete = QuestState(2784, "activeOrCompleted"),
             route = {
+                Point(MAP.SWAMP_OF_SORROWS, 0.3666, 0.6001, "Continue toward Fall From Grace",
+                    "Continue toward Fall From Grace."),
                 Point(MAP.SWAMP_OF_SORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
                     "Travel to Fallen Hero of the Horde."),
             },
@@ -201,6 +203,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-2623-the-swamp-talker" },
             complete = QuestState(2623, "completed"),
             route = {
+                Point(MAP.SWAMP_OF_SORROWS, 0.3666, 0.6001, "Continue toward The Swamp Talker",
+                    "Continue toward The Swamp Talker."),
                 Point(MAP.SWAMP_OF_SORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
                     "Travel to Fallen Hero of the Horde."),
             },

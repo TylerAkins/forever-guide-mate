@@ -449,6 +449,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4014, 0.4257, "Continue toward Venture Company Mining",
+                    "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Foreman",
                     "Travel to Venture Co. Foreman."),
             },

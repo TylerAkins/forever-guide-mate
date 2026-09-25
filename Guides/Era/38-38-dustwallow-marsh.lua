@@ -282,6 +282,10 @@ ns:RegisterGuide({
             text = "Accept Stinky's Escape from \"Stinky\" Ignatz in Dustwallow Marsh.",
             complete = QuestState(1270, "activeOrCompleted"),
             route = {
+                Point(MAP.DUSTWALLOW, 0.5322, 0.2600, "Continue toward Stinky's Escape",
+                    "Continue toward Stinky's Escape."),
+                Point(MAP.DUSTWALLOW, 0.4686, 0.2281, "Continue toward Stinky's Escape",
+                    "Continue toward Stinky's Escape."),
                 Point(MAP.DUSTWALLOW, 0.4691, 0.1753, "'Stinky' Ignatz",
                     "Travel to 'Stinky' Ignatz."),
             },
@@ -411,6 +415,8 @@ ns:RegisterGuide({
             text = "Accept The Severed Head in Swamplight Manor.",
             complete = QuestState(1239, "activeOrCompleted"),
             route = {
+                Point(MAP.DUSTWALLOW, 0.5538, 0.2591, "Continue toward The Severed Head",
+                    "Continue toward The Severed Head."),
                 Point(MAP.DUSTWALLOW, 0.5550, 0.2600, "Swamplight Manor",
                     "Travel to Swamplight Manor."),
             },

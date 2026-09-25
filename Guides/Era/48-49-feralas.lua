@@ -402,6 +402,8 @@ ns:RegisterGuide({
             text = "Accept An Orphan Looking For a Home from Kindal Moonweaver.",
             complete = QuestState(3841, "activeOrCompleted"),
             route = {
+                Point(MAP.FERALAS, 0.6560, 0.4683, "Continue toward An Orphan Looking For a Home",
+                    "Continue toward An Orphan Looking For a Home."),
                 Point(MAP.FERALAS, 0.6595, 0.4565, "Kindal Moonweaver",
                     "Travel to Kindal Moonweaver."),
             },
@@ -446,6 +448,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-2767-rescue-oox-22-fe" },
             complete = QuestState(2767, "complete"),
             route = {
+                Point(MAP.FERALAS, 0.5541, 0.5538, "Continue toward Rescue OOX-22/FE!",
+                    "Continue toward Rescue OOX-22/FE!."),
+                Point(MAP.FERALAS, 0.4859, 0.4504, "Continue toward Rescue OOX-22/FE!",
+                    "Continue toward Rescue OOX-22/FE!."),
                 Point(MAP.FERALAS, 0.4553, 0.4334, "Homing Robot OOX-22/FE",
                     "Travel to Homing Robot OOX-22/FE."),
             },

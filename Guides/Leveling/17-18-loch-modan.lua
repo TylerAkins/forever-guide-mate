@@ -73,6 +73,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-307-filthy-paws" },
             complete = QuestState(307, "complete"),
             route = {
+                Point(MAP.LOCH_MODAN, 0.3500, 0.2000, "Continue toward Filthy Paws",
+                    "Continue toward Filthy Paws."),
                 Point(MAP.LOCH_MODAN, 0.3600, 0.2400, "Filthy Paws",
                     "Travel to Filthy Paws."),
             },
@@ -381,6 +383,10 @@ ns:RegisterGuide({
             text = "Accept A Dark Threat Looms from Chief Engineer Hinderweir VII in Stonewrought Dam.",
             complete = QuestState(250, "activeOrCompleted"),
             route = {
+                Point(MAP.LOCH_MODAN, 0.5536, 0.1491, "Continue toward A Dark Threat Looms",
+                    "Continue toward A Dark Threat Looms."),
+                Point(MAP.LOCH_MODAN, 0.5294, 0.1099, "Continue toward A Dark Threat Looms",
+                    "Continue toward A Dark Threat Looms."),
                 Point(MAP.LOCH_MODAN, 0.4606, 0.1372, "Chief Engineer Hinderweir VII",
                     "Travel to Chief Engineer Hinderweir VII."),
             },
@@ -451,6 +457,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-271-vyrin-s-revenge" },
             complete = QuestState(271, "complete"),
             route = {
+                Point(MAP.LOCH_MODAN, 0.3998, 0.6687, "Continue toward Vyrin's Revenge",
+                    "Continue toward Vyrin's Revenge."),
+                Point(MAP.LOCH_MODAN, 0.4089, 0.6306, "Continue toward Vyrin's Revenge",
+                    "Continue toward Vyrin's Revenge."),
                 Point(MAP.LOCH_MODAN, 0.4006, 0.6155, "Ol' Sooty",
                     "Travel to Ol' Sooty."),
             },

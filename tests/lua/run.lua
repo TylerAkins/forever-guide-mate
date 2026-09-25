@@ -820,8 +820,8 @@ TestEliteLabels()
 function TestLostBarrensKodo()
     local function CheckStep(guideID)
         local goal = ns.Engine:GetGoal(ns.guides[guideID], "objective-6128-2-lost-barrens-kodo")
-        Check(goal and goal.route and #goal.route == 1, guideID .. " points at the kodo camp")
-        Check(goal and goal.route[1].label == "Lost Barrens Kodo", guideID .. " names the kodo camp")
+        Check(goal and goal.route and #goal.route > 1, guideID .. " keeps the era kodo route")
+        Check(goal and goal.route[#goal.route].label == "Lost Barrens Kodo", guideID .. " ends at the kodo camp")
         Check(goal and goal.complete.questObjective.text == "Kodo Horn", guideID .. " completes on the horn")
         local state = {
             mapID = 1413, x = 0.53, y = 0.43,
@@ -850,7 +850,13 @@ function TestLostBarrensKodo()
     local eraID = ns.guides["leveling-era-12-20-barrens"] and "objective-6128-2-lost-barrens-kodo"
         or "leveling-era-12-20-barrens:objective-6128-2-lost-barrens-kodo"
     local eraGoal = ns.Engine:GetGoal(eraGuide, eraID)
-    Check(eraGoal and eraGoal.route and #eraGoal.route == 1, "era barrens points at the kodo camp")
+    Check(eraGoal and eraGoal.route and #eraGoal.route > 1, "era barrens keeps the kodo route")
+    local shown = ns.UI:GoalInstruction({
+        currentGoal = eraGoal,
+        state = { mapID = 1413, x = 0.5446, y = 0.4042 },
+    })
+    Check(shown and string.find(shown, "Continue toward", 1, true) == nil, "the step does not read Continue toward")
+    Check(shown and string.find(shown, "Kodo Horn", 1, true) ~= nil, "the step reads the kodo objective")
     Check(eraGoal and eraGoal.complete.questObjective.text == "Kodo Horn", "era barrens completes on the horn")
 end
 TestLostBarrensKodo()

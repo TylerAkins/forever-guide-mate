@@ -130,6 +130,8 @@ ns:RegisterGuide({
             text = "Accept Are We There, Yeti? from Umi Rumplesnicker in Everlook.",
             complete = QuestState(3783, "activeOrCompleted"),
             route = {
+                Point(MAP.WINTERSPRING, 0.6052, 0.3818, "Continue toward Are We There, Yeti?",
+                    "Continue toward Are We There, Yeti?."),
                 Point(MAP.WINTERSPRING, 0.6090, 0.3760, "Umi Rumplesnicker",
                     "Travel to Umi Rumplesnicker."),
             },
@@ -275,6 +277,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-4842-strange-sources" },
             complete = QuestState(4842, "complete"),
             route = {
+                Point(MAP.WINTERSPRING, 0.6240, 0.6717, "Continue toward Strange Sources",
+                    "Continue toward Strange Sources."),
+                Point(MAP.WINTERSPRING, 0.6182, 0.7063, "Continue toward Strange Sources",
+                    "Continue toward Strange Sources."),
                 Point(MAP.WINTERSPRING, 0.6006, 0.7349, "Darkwhisper Gorge",
                     "Travel to Darkwhisper Gorge."),
             },
@@ -342,6 +348,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-5082-threat-of-the-winterfall" },
             complete = QuestObjective(5082, 1),
             route = {
+                Point(MAP.WINTERSPRING, 0.4069, 0.4287, "Continue toward Threat of the Winterfall",
+                    "Continue toward Threat of the Winterfall."),
                 Point(MAP.WINTERSPRING, 0.3076, 0.3653, "Winterfall Pathfinder",
                     "Travel to Winterfall Pathfinder."),
             },

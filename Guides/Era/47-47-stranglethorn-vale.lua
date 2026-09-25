@@ -181,6 +181,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-8551-the-captain-s-chest" },
             complete = QuestState(8551, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3377, 0.7485, "Continue toward The Captain's Chest",
+                    "Continue toward The Captain's Chest."),
+                Point(MAP.STRANGLETHORN, 0.3919, 0.6070, "Continue toward The Captain's Chest",
+                    "Continue toward The Captain's Chest."),
                 Point(MAP.STRANGLETHORN, 0.3695, 0.6973, "Gorlash",
                     "Travel to Gorlash."),
             },
@@ -193,6 +197,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-594-message-in-a-bottle" },
             complete = QuestState(594, "activeOrCompleted"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3460, 0.7300, "Continue toward Carefully Folded Note",
+                    "Continue toward Carefully Folded Note."),
+                Point(MAP.STRANGLETHORN, 0.3390, 0.7670, "Continue toward Carefully Folded Note",
+                    "Continue toward Carefully Folded Note."),
                 Point(MAP.STRANGLETHORN, 0.3973, 0.7739, "Carefully Folded Note",
                     "Travel to Carefully Folded Note."),
             },
@@ -269,6 +277,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-608-the-bloodsail-buccaneers" },
             complete = QuestObjective(608, 3),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3017, 0.8940, "Continue toward Fleet Master Firallon",
+                    "Continue toward Fleet Master Firallon."),
                 Point(MAP.STRANGLETHORN, 0.3063, 0.9057, "Garr Salthoof",
                     "Travel to Garr Salthoof."),
             },
@@ -286,6 +296,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-608-the-bloodsail-buccaneers" },
             complete = QuestObjective(608, 2),
             route = {
+                Point(MAP.STRANGLETHORN, 0.2987, 0.8935, "Continue toward Captain Keelhaul",
+                    "Continue toward Captain Keelhaul."),
                 Point(MAP.STRANGLETHORN, 0.2920, 0.8838, "Captain Keelhaul",
                     "Travel to Captain Keelhaul."),
             },

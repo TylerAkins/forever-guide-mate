@@ -424,6 +424,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-194-raptor-mastery" },
             complete = QuestState(194, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3072, 0.0825, "Continue toward Raptor Mastery",
+                    "Continue toward Raptor Mastery."),
                 Point(MAP.STRANGLETHORN, 0.2452, 0.1586, "Stranglethorn Raptor",
                     "Travel to Stranglethorn Raptor."),
             },
@@ -529,6 +531,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-192-panther-mastery" },
             complete = QuestState(192, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3989, 0.3338, "Continue toward Panther Mastery",
+                    "Continue toward Panther Mastery."),
                 Point(MAP.STRANGLETHORN, 0.3908, 0.3302, "Shadowmaw Panther",
                     "Travel to Shadowmaw Panther."),
             },
@@ -716,6 +720,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-189-bloodscalp-ears" },
             complete = QuestState(189, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3390, 0.1548, "Continue toward Bloodscalp Ears",
+                    "Continue toward Bloodscalp Ears."),
                 Point(MAP.STRANGLETHORN, 0.2955, 0.1953, "Bloodscalp Axe Thrower",
                     "Travel to Bloodscalp Axe Thrower."),
             },
@@ -950,6 +956,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-605-singing-blue-shards" },
             complete = QuestState(605, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3700, 0.0800, "Continue toward Singing Blue Shards",
+                    "Continue toward Singing Blue Shards."),
                 Point(MAP.STRANGLETHORN, 0.2422, 0.1765, "Crystal Spine Basilisk",
                     "Travel to Crystal Spine Basilisk."),
             },

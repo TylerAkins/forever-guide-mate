@@ -385,6 +385,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-672-raising-spirits" },
             complete = QuestState(672, "complete"),
             route = {
+                Point(MAP.ARATHI, 0.5336, 0.4456, "Continue toward Raising Spirits",
+                    "Continue toward Raising Spirits."),
                 Point(MAP.ARATHI, 0.6400, 0.3700, "Highland Strider",
                     "Travel to Highland Strider."),
             },

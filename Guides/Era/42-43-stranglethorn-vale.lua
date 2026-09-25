@@ -543,6 +543,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4014, 0.4257, "Continue toward Venture Company Mining",
+                    "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Foreman",
                     "Travel to Venture Co. Foreman."),
             },
@@ -752,6 +754,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-598-split-bone-necklace" },
             complete = QuestState(598, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4255, 0.3534, "Continue toward Split Bone Necklace",
+                    "Continue toward Split Bone Necklace."),
                 Point(MAP.STRANGLETHORN, 0.4542, 0.3046, "Skullsplitter Mystic",
                     "Travel to Skullsplitter Mystic."),
             },
