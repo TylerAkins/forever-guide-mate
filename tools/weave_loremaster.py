@@ -137,7 +137,7 @@ class Goal:
     raw: str
     id: str
     kind: str
-    priority: int
+    priority: int | float
     quest_id: int | None
     text: str
     labels: list[str]
@@ -220,7 +220,7 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
     for raw in split_top_tables(text[open_at + 1 : end]):
         ident = re.search(r'\bid = "([^"]+)"', raw)
         kind = re.search(r'\bkind = "([^"]+)"', raw)
-        priority = re.search(r"\bpriority = (\d+)", raw)
+        priority = re.search(r"\bpriority = (\d+(?:\.\d+)?)", raw)
         quest = re.search(r"(?:QuestState|QuestObjective)\((\d+)", raw)
         step_text = re.search(r'\btext = "((?:\\.|[^"\\])*)"', raw)
         labels = re.findall(r',\s*"((?:\\.|[^"\\])*)"', raw)
@@ -236,7 +236,7 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
                 raw=raw,
                 id=ident.group(1) if ident else f"step-{len(goals)}",
                 kind=kind.group(1) if kind else "travel",
-                priority=int(priority.group(1)) if priority else 0,
+                priority=parse_priority(priority.group(1)) if priority else 0,
                 quest_id=int(quest.group(1)) if quest else None,
                 text=step_text.group(1) if step_text else "",
                 labels=point_labels or labels[:1],
@@ -306,12 +306,32 @@ def stamp_faction(raw: str, faction: str | None) -> str:
     )
 
 
-def set_priority(raw: str, priority: int) -> str:
+def tidy_priority(value: int | float) -> int | float:
+    if isinstance(value, float):
+        value = round(value, 4)
+        if value == int(value):
+            return int(value)
+    return value
+
+
+def parse_priority(text: str) -> int | float:
+    if "." not in text:
+        return int(text)
+    return tidy_priority(float(text))
+
+
+def format_priority(priority: int | float) -> str:
+    priority = tidy_priority(priority)
+    return str(priority)
+
+
+def set_priority(raw: str, priority: int | float) -> str:
+    rendered = format_priority(priority)
     if re.search(r"\bpriority = \d+(?:\.\d+)?", raw):
-        return re.sub(r"\bpriority = \d+(?:\.\d+)?", f"priority = {priority}", raw, count=1)
+        return re.sub(r"\bpriority = \d+(?:\.\d+)?", f"priority = {rendered}", raw, count=1)
     return raw.replace(
         "kind = ",
-        f"priority = {priority},\n            kind = ",
+        f"priority = {rendered},\n            kind = ",
         1,
     )
 
@@ -539,17 +559,40 @@ def recommended_level(summary: dict | None = None, meta: dict | None = None, htm
     return 1
 
 
-def route_levels(goals: list[Goal], levels: dict[int, int]) -> list[int | None]:
+def chapter_ceiling(path: str) -> int | None:
+    """Highest level a leveling chapter is written for, from its file name."""
+    match = re.search(r"(?:^|/)(\d+)-(\d+)-", path.replace("\\", "/"))
+    if not match:
+        return None
+    return int(match.group(2))
+
+
+def capped_level(level: int, ceiling: int | None) -> int:
+    if ceiling is not None and level > ceiling:
+        return ceiling
+    return level
+
+
+def route_levels(
+    goals: list[Goal],
+    levels: dict[int, int],
+    ceiling: int | None = None,
+) -> list[int | None]:
     carried = None
     result = []
     for goal in goals:
         if goal.quest_id is not None and goal.quest_id in levels:
-            carried = levels[goal.quest_id]
+            carried = capped_level(levels[goal.quest_id], ceiling)
         result.append(carried)
     return result
 
 
-def insert_quest(output: list[Goal], steps: list[Goal], levels: dict[int, int] | None = None) -> list[Goal]:
+def insert_quest(
+    output: list[Goal],
+    steps: list[Goal],
+    levels: dict[int, int] | None = None,
+    ceiling: int | None = None,
+) -> list[Goal]:
     if not steps:
         return output
     for dep in steps[0].depends:
@@ -560,7 +603,7 @@ def insert_quest(output: list[Goal], steps: list[Goal], levels: dict[int, int] |
     if levels and steps[0].quest_id is not None:
         recommended = levels.get(steps[0].quest_id)
     giver = giver_name(steps[0])
-    route = route_levels(output, levels or {})
+    route = route_levels(output, levels or {}, ceiling)
 
     def place_at(pos: int) -> list[Goal]:
         if steps[0].kind == "accept":
@@ -632,18 +675,28 @@ def fit_priorities(goals: list[Goal], moved_ids: set[int]) -> None:
         else:
             next_priority = prev_priority + need + 1
         if next_priority - prev_priority - 1 < need:
-            shift = need - (next_priority - prev_priority - 1)
+            shift = tidy_priority(need - (next_priority - prev_priority - 1))
             for goal in goals[end:]:
-                goal.priority += shift
+                goal.priority = tidy_priority(goal.priority + shift)
                 goal.raw = set_priority(goal.raw, goal.priority)
-            next_priority += shift
+            next_priority = tidy_priority(next_priority + shift)
         for offset, goal in enumerate(goals[start:end], start=1):
-            goal.priority = prev_priority + offset
+            goal.priority = tidy_priority(prev_priority + offset)
             goal.raw = set_priority(goal.raw, goal.priority)
 
 
-def place_woven(goals: list[Goal], woven_ids: set[int], levels: dict[int, int]) -> list[Goal]:
-    """Gate woven quests at their recommended level, and move the ones that sit too early."""
+def place_woven(
+    goals: list[Goal],
+    woven_ids: set[int],
+    levels: dict[int, int],
+    ceiling: int | None = None,
+) -> list[Goal]:
+    """Gate woven quests at their recommended level, and move the ones that sit too early.
+
+    A leveling chapter's file name is the level that route is written for.
+    Wowhead often rates a spine quest above that, and one such rating must
+    not count as the route having reached a woven quest's recommended level.
+    """
     for goal in goals:
         if goal.quest_id in woven_ids and goal.quest_id in levels:
             goal.raw = set_min_level(goal.raw, levels[goal.quest_id])
@@ -658,28 +711,38 @@ def place_woven(goals: list[Goal], woven_ids: set[int], levels: dict[int, int]) 
         if steps and steps[0].depends:
             continue
         recommended = levels[quest_id]
+        # Quests inside the chapter were already woven. Repair only slides a
+        # quest the chapter never reaches, so a second pass cannot reshuffle
+        # the stops that are already in place.
+        if ceiling is None or recommended <= ceiling:
+            continue
         carried = None
         ready_at = len(goals)
         for pos, step in enumerate(goals):
             if step.quest_id and step.quest_id != quest_id and step.quest_id in levels:
-                carried = levels[step.quest_id]
+                carried = capped_level(levels[step.quest_id], ceiling)
             if carried is not None and carried >= recommended:
                 ready_at = pos
                 break
         if index < ready_at:
             early_ids.append(quest_id)
-    if not early_ids:
-        return goals
-    blocks = []
+    moved_ids = set()
     for quest_id in early_ids:
         steps = [step for step in goals if step.quest_id == quest_id]
-        blocks.append((levels[quest_id], quest_id, steps))
-    blocks.sort()
-    remaining = [goal for goal in goals if goal.quest_id not in early_ids]
-    for _, _, steps in blocks:
-        remaining = insert_quest(remaining, steps, levels)
-    fit_priorities(remaining, set(early_ids))
-    return remaining
+        first = next(index for index, step in enumerate(goals) if step.quest_id == quest_id)
+        remaining = [step for step in goals if step.quest_id != quest_id]
+        placed = insert_quest(remaining, steps, levels, ceiling)
+        new_at = next(index for index, step in enumerate(placed) if step.quest_id == quest_id)
+        # Only slide a quest later. Re-inserting a block that is already at
+        # its stop would reorder it against the other quests parked there.
+        if new_at <= first:
+            continue
+        goals = placed
+        moved_ids.add(quest_id)
+    if not moved_ids:
+        return goals
+    fit_priorities(goals, moved_ids)
+    return goals
 
 
 def zone_quest_summaries(url: str) -> list[dict]:
@@ -1492,7 +1555,7 @@ def repair_woven_levels() -> None:
             levels[quest_id] = recommended_level(None, detail["meta"])
         original_raw = {goal.id: goal.raw for goal in goals}
         original_at = {goal.id: index for index, goal in enumerate(goals)}
-        updated = place_woven(goals, woven, levels)
+        updated = place_woven(goals, woven, levels, chapter_ceiling(relative))
         changed_ids = [
             goal.id
             for index, goal in enumerate(updated)

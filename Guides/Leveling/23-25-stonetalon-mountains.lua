@@ -75,18 +75,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-86576-bloodfury-trinkets",
-            kind = "accept",
-            priority = 51,
-            conditions = { level = { min = 26 } },
-            text = "Accept Bloodfury Trinkets from Maggran Earthbinder at Sun Rock Retreat.",
-            complete = QuestState(86576, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
-                    "Travel to Maggran Earthbinder."),
-            },
-        },
-        {
             id = "accept-6393-elemental-war",
             kind = "accept",
             priority = 60,
@@ -333,19 +321,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-86576-bloodfury-trinkets",
-            kind = "objective",
-            priority = 291,
-            conditions = { level = { min = 26 } },
-            text = "Bloodfury Trinkets: collect 15 Glittering Sunstones from Bloodfury harpies in the Charred Vale. Wowhead gives no separate sunstone pin.",
-            dependsOn = { "accept-86576-bloodfury-trinkets" },
-            complete = QuestState(86576, "complete"),
-            route = {
-                Point(MAP.STONETALON, 0.3320, 0.6000, "Bloodfury Harpy",
-                    "Travel to Bloodfury Harpy."),
-            },
-        },
-        {
             id = "turnin-6282-harpies-threaten",
             kind = "turnin",
             priority = 310,
@@ -354,19 +329,6 @@ ns:RegisterGuide({
             complete = QuestState(6282, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.4726, 0.6111, "Maggran Earthbinder",
-                    "Travel to Maggran Earthbinder."),
-            },
-        },
-        {
-            id = "turnin-86576-bloodfury-trinkets",
-            kind = "turnin",
-            priority = 311,
-            conditions = { level = { min = 26 } },
-            text = "Turn in Bloodfury Trinkets to Mor'rogal at Sun Rock Retreat. Wowhead gives no pin for Mor'rogal, so this marks Maggran Earthbinder beside him.",
-            dependsOn = { "objective-86576-bloodfury-trinkets" },
-            complete = QuestState(86576, "completed"),
-            route = {
-                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
                     "Travel to Maggran Earthbinder."),
             },
         },
@@ -402,6 +364,44 @@ ns:RegisterGuide({
             complete = QuestState(5881, "activeOrCompleted"),
             route = {
                 Point(MAP.STONETALON, 0.4726, 0.6111, "Maggran Earthbinder",
+                    "Travel to Maggran Earthbinder."),
+            },
+        },
+        {
+            id = "accept-86576-bloodfury-trinkets",
+            kind = "accept",
+            priority = 341,
+            conditions = { level = { min = 26 } },
+            text = "Accept Bloodfury Trinkets from Maggran Earthbinder at Sun Rock Retreat.",
+            complete = QuestState(86576, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
+                    "Travel to Maggran Earthbinder."),
+            },
+        },
+        {
+            id = "objective-86576-bloodfury-trinkets",
+            kind = "objective",
+            priority = 342,
+            conditions = { level = { min = 26 } },
+            text = "Bloodfury Trinkets: collect 15 Glittering Sunstones from Bloodfury harpies in the Charred Vale. Wowhead gives no separate sunstone pin.",
+            dependsOn = { "accept-86576-bloodfury-trinkets" },
+            complete = QuestState(86576, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.3320, 0.6000, "Bloodfury Harpy",
+                    "Travel to Bloodfury Harpy."),
+            },
+        },
+        {
+            id = "turnin-86576-bloodfury-trinkets",
+            kind = "turnin",
+            priority = 343,
+            conditions = { level = { min = 26 } },
+            text = "Turn in Bloodfury Trinkets to Mor'rogal at Sun Rock Retreat. Wowhead gives no pin for Mor'rogal, so this marks Maggran Earthbinder beside him.",
+            dependsOn = { "objective-86576-bloodfury-trinkets" },
+            complete = QuestState(86576, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.4720, 0.6100, "Maggran Earthbinder",
                     "Travel to Maggran Earthbinder."),
             },
         },
