@@ -163,7 +163,7 @@ Class quests will be a new guide section, separate from the zone routes. None of
 
 ### Era chapters that still need Forever support
 
-Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title, move the file from `Guides/Era/` to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py` so it loads.
+Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title, move the file from `Guides/Era/` to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py` so it loads. The full procedure is the Era Forever weave skill in `.cursor/skills/era-forever-weave/SKILL.md`.
 
 **Alliance**
 
