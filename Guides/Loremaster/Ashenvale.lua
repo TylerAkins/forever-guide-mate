@@ -775,7 +775,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             dependsOn = { "turnin-1016-elemental-bracers" },
@@ -793,7 +793,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Mage Summoner: Sarilus Foulborne's Head.",
@@ -811,7 +811,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Mage Summoner to Sentinel Velene Starstrike.",
@@ -903,30 +903,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-2-sharptalons-claw",
-            kind = "accept",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Sharptalon's Claw from Senani Thunderheart.",
-            complete = QuestState(2, "activeOrCompleted"),
-            route = {
-                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
-                    "Travel to Senani Thunderheart."),
-            },
-        },
-        {
             id = "accept-23-ursangouss-paw",
             kind = "accept",
             priority = 530,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Accept Ursangous's Paw from Senani Thunderheart.",
@@ -943,7 +926,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Shadumbra's Head from Senani Thunderheart.",
@@ -960,7 +943,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept The Hunt Completed from Senani Thunderheart.",
@@ -977,7 +960,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Warsong Saw Blades from Pixel.",
@@ -994,7 +977,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept The Befouled Element from Mastok Wrilehiss.",
@@ -1005,13 +988,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-2-sharptalons-claw",
+            kind = "accept",
+            priority = 571,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Accept Sharptalon's Claw from Senani Thunderheart.",
+            complete = QuestState(2, "activeOrCompleted"),
+            route = {
+                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
+                    "Travel to Senani Thunderheart."),
+            },
+        },
+        {
+            id = "objective-2-sharptalons-claw-1",
+            kind = "objective",
+            priority = 572,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Sharptalon's Claw: Sharptalon's Claw.",
+            dependsOn = { "accept-2-sharptalons-claw" },
+            complete = QuestObjective(2, 1, "Sharptalon's Claw"),
+            route = {
+                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
+                    "Travel to Senani Thunderheart."),
+            },
+        },
+        {
+            id = "turnin-2-sharptalons-claw",
+            kind = "turnin",
+            priority = 573,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Turn in Sharptalon's Claw to Senani Thunderheart.",
+            dependsOn = { "objective-2-sharptalons-claw-1" },
+            complete = QuestState(2, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
+                    "Travel to Senani Thunderheart."),
+            },
+        },
+        {
             id = "objective-1918-the-befouled-element-1",
             kind = "objective",
             priority = 580,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "The Befouled Element: Befouled Water Globe.",
@@ -1029,7 +1065,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in The Befouled Element to Mastok Wrilehiss.",
@@ -1047,7 +1083,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Warsong Saw Blades: Deadly Blunderbuss.",
@@ -1065,7 +1101,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Warsong Saw Blades to Pixel.",
@@ -1083,7 +1119,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Hunt Completed: The Hunt Completed.",
@@ -1101,7 +1137,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in The Hunt Completed to Senani Thunderheart.",
@@ -1119,7 +1155,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Shadumbra's Head: Shadumbra's Head.",
@@ -1137,7 +1173,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Shadumbra's Head to Senani Thunderheart.",
@@ -1155,7 +1191,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Ursangous's Paw: Ursangous's Paw.",
@@ -1173,48 +1209,12 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Turn in Ursangous's Paw to Senani Thunderheart.",
             dependsOn = { "objective-23-ursangouss-paw-1" },
             complete = QuestState(23, "completed"),
-            route = {
-                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
-                    "Travel to Senani Thunderheart."),
-            },
-        },
-        {
-            id = "objective-2-sharptalons-claw-1",
-            kind = "objective",
-            priority = 680,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Sharptalon's Claw: Sharptalon's Claw.",
-            dependsOn = { "accept-2-sharptalons-claw" },
-            complete = QuestObjective(2, 1, "Sharptalon's Claw"),
-            route = {
-                Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
-                    "Travel to Senani Thunderheart."),
-            },
-        },
-        {
-            id = "turnin-2-sharptalons-claw",
-            kind = "turnin",
-            priority = 690,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Sharptalon's Claw to Senani Thunderheart.",
-            dependsOn = { "objective-2-sharptalons-claw-1" },
-            complete = QuestState(2, "completed"),
             route = {
                 Point(MAP.ASHENVALE, 0.736, 0.614, "Senani Thunderheart",
                     "Travel to Senani Thunderheart."),
@@ -1430,7 +1430,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept King of the Foulweald from Karang Amakkar.",
@@ -1447,7 +1447,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept Baron Aquanis from Je'neu Sancrea.",
@@ -1482,7 +1482,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Baron Aquanis: Strange Water Globe. Wowhead has no pin, so follow the quest text. This is an elite. Bring a group.",
@@ -1496,7 +1496,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in Baron Aquanis to . Wowhead has no pin, so follow the quest text.",
@@ -1511,7 +1511,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Baron Aquanis: Strange Water Globe.",
@@ -1529,7 +1529,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in Baron Aquanis to Je'neu Sancrea.",
@@ -1547,7 +1547,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "King of the Foulweald: Murgut's Totem.",
@@ -1565,7 +1565,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 21 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in King of the Foulweald to Karang Amakkar.",
@@ -1720,7 +1720,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Warsong Runner Update from Warsong Runner.",
@@ -1737,7 +1737,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Warsong Runner Update: Warsong Report.",
@@ -1755,7 +1755,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Warsong Runner Update to Warsong Runner.",
@@ -2010,7 +2010,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 26 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Accept Satyr Slaying! from Illiyana.",
@@ -2027,7 +2027,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 26 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Satyr Slaying!: Satyr Horns.",
@@ -2045,7 +2045,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 26 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Turn in Satyr Slaying! to Illiyana.",
@@ -2764,7 +2764,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Naga at the Zoram Strand from Marukai.",
@@ -2781,7 +2781,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Naga at the Zoram Strand: Wrathtail Head.",
@@ -2799,7 +2799,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Naga at the Zoram Strand to Marukai.",
@@ -2817,7 +2817,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Trek to Ashenvale from Sentinel Selarin, then turn it in to Raene Wolfrunner.",
@@ -2834,7 +2834,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept On Guard in Stonetalon from Kaela Shadowspear, then turn it in to Gaxim Rustfizzle.",
@@ -2851,7 +2851,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept Warsong Outrider Update from Warsong Outrider.",
@@ -2868,7 +2868,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Warsong Outrider Update: Warsong Report.",
@@ -2886,7 +2886,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Warsong Outrider Update to Warsong Outrider.",
@@ -2904,7 +2904,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Warsong Scout Update from Warsong Scout.",
@@ -2921,7 +2921,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Warsong Scout Update: Warsong Report.",
@@ -2939,7 +2939,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Warsong Scout Update to Warsong Scout.",
@@ -2948,59 +2948,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.710, 0.682, "Warsong Scout",
                     "Travel to Warsong Scout."),
-            },
-        },
-        {
-            id = "accept-79090-repelling-invaders",
-            kind = "accept",
-            priority = 1710,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 18 } },
-                },
-            },
-            text = "Accept Repelling Invaders from Felore Moonray.",
-            complete = QuestState(79090, "activeOrCompleted"),
-            route = {
-                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
-                    "Travel to Felore Moonray."),
-            },
-        },
-        {
-            id = "objective-79090-repelling-invaders-1",
-            kind = "objective",
-            priority = 1720,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 18 } },
-                },
-            },
-            text = "Repelling Invaders: Warsong Outrider Mark.",
-            dependsOn = { "accept-79090-repelling-invaders" },
-            complete = QuestObjective(79090, 1, "Warsong Outrider Mark"),
-            route = {
-                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
-                    "Travel to Felore Moonray."),
-            },
-        },
-        {
-            id = "turnin-79090-repelling-invaders",
-            kind = "turnin",
-            priority = 1730,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 18 } },
-                },
-            },
-            text = "Turn in Repelling Invaders to Felore Moonray.",
-            dependsOn = { "objective-79090-repelling-invaders-1" },
-            complete = QuestState(79090, "completed"),
-            route = {
-                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
-                    "Travel to Felore Moonray."),
             },
         },
         {
@@ -3063,7 +3010,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 19 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Accept Supplies to Auberdine from Feero Ironhand, then turn it in to Delgren the Purifier.",
@@ -3080,7 +3027,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Warsong Supplies from Locke Okarr.",
@@ -3097,7 +3044,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Warsong Supplies: Warsong Saw Blades.",
@@ -3115,7 +3062,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Warsong Supplies: Warsong Axe Shipment.",
@@ -3133,7 +3080,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Warsong Supplies: Warsong Oil.",
@@ -3151,7 +3098,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Warsong Supplies: Logging Rope.",
@@ -3169,7 +3116,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Warsong Supplies to Locke Okarr.",
@@ -3187,7 +3134,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept The Lost Pages from Gurda Ragescar.",
@@ -3204,7 +3151,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Lost Pages: Shredder Operating Manual - Chapter 1.",
@@ -3222,7 +3169,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Lost Pages: Shredder Operating Manual - Chapter 2.",
@@ -3240,7 +3187,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Lost Pages: Shredder Operating Manual - Chapter 3.",
@@ -3258,7 +3205,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 23 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in The Lost Pages to Gurda Ragescar.",
@@ -3275,7 +3222,7 @@ ns:RegisterGuide({
             priority = 1890,
             conditions = {
                 all = {
-                    { level = { min = 25 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Amongst the Ruins: Fathom Core. Wowhead has no pin, so follow the quest text. This is an elite. Bring a group.",
@@ -3288,7 +3235,7 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = {
                 all = {
-                    { level = { min = 25 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Amongst the Ruins to . Wowhead has no pin, so follow the quest text.",
@@ -3303,7 +3250,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept Passage to Booty Bay from Wharfmaster Dizzywig, then turn it in to Caravaneer Ruzzgot.",
@@ -3320,7 +3267,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             dependsOn = { "turnin-1040-passage-to-booty-bay" },
@@ -3338,7 +3285,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             dependsOn = { "turnin-1041-the-caravan-road" },
@@ -3356,7 +3303,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             dependsOn = { "turnin-1042-the-carevin-family" },
@@ -3374,7 +3321,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Scythe of Elune: Find evidence of the Scythe of Elune.",
@@ -3392,7 +3339,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in The Scythe of Elune to Jonathan Carevin.",
@@ -3410,7 +3357,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 30 } },
                 },
             },
             dependsOn = { "turnin-1043-the-scythe-of-elune" },
@@ -3428,7 +3375,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Accept Sentinel Basic Care Package from Illiyana Moonblaze.",
@@ -3445,7 +3392,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Accept Sentinel Standard Care Package from Illiyana Moonblaze.",
@@ -3456,13 +3403,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-79090-repelling-invaders",
+            kind = "accept",
+            priority = 1991,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 60 } },
+                },
+            },
+            text = "Accept Repelling Invaders from Felore Moonray.",
+            complete = QuestState(79090, "activeOrCompleted"),
+            route = {
+                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
+                    "Travel to Felore Moonray."),
+            },
+        },
+        {
+            id = "objective-79090-repelling-invaders-1",
+            kind = "objective",
+            priority = 1992,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 60 } },
+                },
+            },
+            text = "Repelling Invaders: Warsong Outrider Mark.",
+            dependsOn = { "accept-79090-repelling-invaders" },
+            complete = QuestObjective(79090, 1, "Warsong Outrider Mark"),
+            route = {
+                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
+                    "Travel to Felore Moonray."),
+            },
+        },
+        {
+            id = "turnin-79090-repelling-invaders",
+            kind = "turnin",
+            priority = 1993,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 60 } },
+                },
+            },
+            text = "Turn in Repelling Invaders to Felore Moonray.",
+            dependsOn = { "objective-79090-repelling-invaders-1" },
+            complete = QuestState(79090, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.600, 0.726, "Felore Moonray",
+                    "Travel to Felore Moonray."),
+            },
+        },
+        {
             id = "accept-7865-sentinel-advanced-care-package",
             kind = "accept",
             priority = 2000,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Accept Sentinel Advanced Care Package from Illiyana Moonblaze.",
@@ -3479,7 +3479,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Sentinel Advanced Care Package: Sentinel Advanced Care Package.",
@@ -3497,7 +3497,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Turn in Sentinel Advanced Care Package to Illiyana Moonblaze.",
@@ -3515,7 +3515,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sentinel Standard Care Package: Sentinel Standard Care Package.",
@@ -3533,7 +3533,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sentinel Standard Care Package to Illiyana Moonblaze.",
@@ -3551,7 +3551,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Sentinel Basic Care Package: Sentinel Basic Care Package.",
@@ -3569,7 +3569,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Turn in Sentinel Basic Care Package to Illiyana Moonblaze.",
@@ -3587,7 +3587,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Accept Outrider Basic Care Package from Kelm Hargunth.",
@@ -3604,7 +3604,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Accept Outrider Standard Care Package from Kelm Hargunth.",
@@ -3621,7 +3621,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Accept Outrider Advanced Care Package from Kelm Hargunth.",
@@ -3638,7 +3638,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Outrider Advanced Care Package: Outrider Advanced Care Package.",
@@ -3656,7 +3656,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 45 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Turn in Outrider Advanced Care Package to Kelm Hargunth.",
@@ -3674,7 +3674,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Outrider Standard Care Package: Outrider Standard Care Package.",
@@ -3692,7 +3692,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 35 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Outrider Standard Care Package to Kelm Hargunth.",
@@ -3710,7 +3710,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Outrider Basic Care Package: Outrider Basic Care Package.",
@@ -3728,7 +3728,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 34 } },
                 },
             },
             text = "Turn in Outrider Basic Care Package to Kelm Hargunth.",

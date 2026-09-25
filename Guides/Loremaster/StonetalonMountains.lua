@@ -1220,7 +1220,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Earthen Arise from Mor'rogal.",
@@ -1237,7 +1237,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Earthen Arise: Goggeroc. This is an elite. Bring a group.",
@@ -1255,7 +1255,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Earthen Arise to Mor'rogal.",
@@ -1574,64 +1574,11 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Enraged Spirits from Kaela Shadowspear.",
             complete = QuestState(1083, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALON, 0.598, 0.668, "Kaela Shadowspear",
-                    "Travel to Kaela Shadowspear."),
-            },
-        },
-        {
-            id = "accept-1084-wounded-ancients",
-            kind = "accept",
-            priority = 900,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 22 } },
-                },
-            },
-            text = "Accept Wounded Ancients from Kaela Shadowspear.",
-            complete = QuestState(1084, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALON, 0.598, 0.668, "Kaela Shadowspear",
-                    "Travel to Kaela Shadowspear."),
-            },
-        },
-        {
-            id = "objective-1084-wounded-ancients-1",
-            kind = "objective",
-            priority = 910,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 22 } },
-                },
-            },
-            text = "Wounded Ancients: Corroded Shrapnel.",
-            dependsOn = { "accept-1084-wounded-ancients" },
-            complete = QuestObjective(1084, 1, "Corroded Shrapnel"),
-            route = {
-                Point(MAP.STONETALON, 0.338, 0.634, "Charred Ancient",
-                    "Travel to Charred Ancient."),
-            },
-        },
-        {
-            id = "turnin-1084-wounded-ancients",
-            kind = "turnin",
-            priority = 920,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 22 } },
-                },
-            },
-            text = "Turn in Wounded Ancients to Kaela Shadowspear.",
-            dependsOn = { "objective-1084-wounded-ancients-1" },
-            complete = QuestState(1084, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.598, 0.668, "Kaela Shadowspear",
                     "Travel to Kaela Shadowspear."),
@@ -1644,7 +1591,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Enraged Spirits: Smoldering Embers.",
@@ -1662,7 +1609,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Enraged Spirits to Kaela Shadowspear.",
@@ -1713,7 +1660,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Covert Ops - Alpha from Gaxim Rustfizzle.",
@@ -1730,7 +1677,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Covert Ops - Beta from Gaxim Rustfizzle.",
@@ -1747,7 +1694,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Kaela's Update from Gaxim Rustfizzle.",
@@ -1764,7 +1711,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Kaela's Update: Venture Co. Letters.",
@@ -1782,7 +1729,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Kaela's Update to Kaela Shadowspear.",
@@ -1800,7 +1747,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Beta: Venture Co. Letters.",
@@ -1818,7 +1765,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Covert Ops - Beta to Gaxim Rustfizzle.",
@@ -1836,7 +1783,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Alpha: Venture Co. Engineering Plans.",
@@ -1854,7 +1801,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Alpha: NG-5 Explosives (Blue).",
@@ -1872,7 +1819,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Alpha: NG-5 Explosives (Red).",
@@ -1890,7 +1837,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Alpha: Remote Detonator (Blue).",
@@ -1908,7 +1855,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Covert Ops - Alpha: Remote Detonator (Red).",
@@ -1926,7 +1873,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Covert Ops - Alpha to Gaxim Rustfizzle.",
@@ -2061,7 +2008,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Bloodfury Trinkets from Maggran Earthbinder.",
@@ -2078,7 +2025,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Reclaiming the Charred Vale from Keeper Albagorm.",
@@ -2089,120 +2036,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-1089-the-den",
-            kind = "accept",
-            priority = 1190,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Den from Braelyn Firehand.",
-            complete = QuestState(1089, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
-                    "Travel to Braelyn Firehand."),
-            },
-        },
-        {
-            id = "objective-1089-the-den-1",
-            kind = "objective",
-            priority = 1200,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "The Den: Sleepers' Key. This is an elite. Bring a group.",
-            dependsOn = { "accept-1089-the-den" },
-            complete = QuestObjective(1089, 1, "Sleepers' Key"),
-            route = {
-                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
-                    "Travel to Braelyn Firehand."),
-            },
-        },
-        {
-            id = "objective-1089-the-den-2",
-            kind = "objective",
-            priority = 1210,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "The Den: Claw Key. This is an elite. Bring a group.",
-            dependsOn = { "accept-1089-the-den" },
-            complete = QuestObjective(1089, 2, "Claw Key"),
-            route = {
-                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
-                    "Travel to Braelyn Firehand."),
-            },
-        },
-        {
-            id = "objective-1089-the-den-3",
-            kind = "objective",
-            priority = 1220,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "The Den: Barrow Key. This is an elite. Bring a group.",
-            dependsOn = { "accept-1089-the-den" },
-            complete = QuestObjective(1089, 3, "Barrow Key"),
-            route = {
-                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
-                    "Travel to Braelyn Firehand."),
-            },
-        },
-        {
-            id = "objective-1089-the-den-4",
-            kind = "objective",
-            priority = 1230,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "The Den: Gatekeeper's Key. This is an elite. Bring a group.",
-            dependsOn = { "accept-1089-the-den" },
-            complete = QuestObjective(1089, 4, "Gatekeeper's Key"),
-            route = {
-                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
-                    "Travel to Braelyn Firehand."),
-            },
-        },
-        {
-            id = "turnin-1089-the-den",
-            kind = "turnin",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Den to Talon Den Hoard.",
-            dependsOn = { "objective-1089-the-den-4" },
-            complete = QuestState(1089, "completed"),
-            route = {
-                Point(MAP.STONETALON, 0.267, 0.109, "Talon Den Hoard",
-                    "Travel to Talon Den Hoard."),
-            },
-        },
-        {
             id = "objective-1057-reclaiming-the-charred-vale-1",
             kind = "objective",
             priority = 1250,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Reclaiming the Charred Vale: Bloodfury Harpy.",
@@ -2220,7 +2060,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Reclaiming the Charred Vale: Bloodfury Ambusher.",
@@ -2238,7 +2078,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Reclaiming the Charred Vale: Bloodfury Slayer.",
@@ -2256,7 +2096,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Reclaiming the Charred Vale: Bloodfury Roguefeather.",
@@ -2274,7 +2114,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Reclaiming the Charred Vale to Keeper Albagorm.",
@@ -2292,7 +2132,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             dependsOn = { "turnin-1057-reclaiming-the-charred-vale" },
@@ -2310,7 +2150,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Bloodfury Trinkets: Glittering Sunstone.",
@@ -2328,7 +2168,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Bloodfury Trinkets to Maggran Earthbinder.",
@@ -2390,6 +2230,59 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1084-wounded-ancients",
+            kind = "accept",
+            priority = 1351,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            text = "Accept Wounded Ancients from Kaela Shadowspear.",
+            complete = QuestState(1084, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.598, 0.668, "Kaela Shadowspear",
+                    "Travel to Kaela Shadowspear."),
+            },
+        },
+        {
+            id = "objective-1084-wounded-ancients-1",
+            kind = "objective",
+            priority = 1352,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            text = "Wounded Ancients: Corroded Shrapnel.",
+            dependsOn = { "accept-1084-wounded-ancients" },
+            complete = QuestObjective(1084, 1, "Corroded Shrapnel"),
+            route = {
+                Point(MAP.STONETALON, 0.338, 0.634, "Charred Ancient",
+                    "Travel to Charred Ancient."),
+            },
+        },
+        {
+            id = "turnin-1084-wounded-ancients",
+            kind = "turnin",
+            priority = 1353,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            text = "Turn in Wounded Ancients to Kaela Shadowspear.",
+            dependsOn = { "objective-1084-wounded-ancients-1" },
+            complete = QuestState(1084, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.598, 0.668, "Kaela Shadowspear",
+                    "Travel to Kaela Shadowspear."),
+            },
+        },
+        {
             id = "accept-1088-ordanus",
             kind = "accept",
             priority = 1360,
@@ -2403,6 +2296,113 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.4596, 0.6036, "Braelyn Firehand",
                     "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "accept-1089-the-den",
+            kind = "accept",
+            priority = 1361,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "Accept The Den from Braelyn Firehand.",
+            complete = QuestState(1089, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
+                    "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "objective-1089-the-den-1",
+            kind = "objective",
+            priority = 1362,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "The Den: Sleepers' Key. This is an elite. Bring a group.",
+            dependsOn = { "accept-1089-the-den" },
+            complete = QuestObjective(1089, 1, "Sleepers' Key"),
+            route = {
+                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
+                    "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "objective-1089-the-den-2",
+            kind = "objective",
+            priority = 1363,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "The Den: Claw Key. This is an elite. Bring a group.",
+            dependsOn = { "accept-1089-the-den" },
+            complete = QuestObjective(1089, 2, "Claw Key"),
+            route = {
+                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
+                    "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "objective-1089-the-den-3",
+            kind = "objective",
+            priority = 1364,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "The Den: Barrow Key. This is an elite. Bring a group.",
+            dependsOn = { "accept-1089-the-den" },
+            complete = QuestObjective(1089, 3, "Barrow Key"),
+            route = {
+                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
+                    "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "objective-1089-the-den-4",
+            kind = "objective",
+            priority = 1365,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "The Den: Gatekeeper's Key. This is an elite. Bring a group.",
+            dependsOn = { "accept-1089-the-den" },
+            complete = QuestObjective(1089, 4, "Gatekeeper's Key"),
+            route = {
+                Point(MAP.STONETALON, 0.460, 0.604, "Braelyn Firehand",
+                    "Travel to Braelyn Firehand."),
+            },
+        },
+        {
+            id = "turnin-1089-the-den",
+            kind = "turnin",
+            priority = 1366,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "Turn in The Den to Talon Den Hoard.",
+            dependsOn = { "objective-1089-the-den-4" },
+            complete = QuestState(1089, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.267, 0.109, "Talon Den Hoard",
+                    "Travel to Talon Den Hoard."),
             },
         },
         {
@@ -2661,60 +2661,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-80001-rekindle",
-            kind = "accept",
-            priority = 1520,
-            text = "Accept Rekindle from Firepit.",
-            complete = QuestState(80001, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
-                    "Travel to Firepit."),
-            },
-        },
-        {
-            id = "objective-80001-rekindle-1",
-            kind = "objective",
-            priority = 1530,
-            text = "Rekindle: Simple Wood.",
-            dependsOn = { "accept-80001-rekindle" },
-            complete = QuestObjective(80001, 1, "Simple Wood"),
-            route = {
-                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
-                    "Travel to Firepit."),
-            },
-        },
-        {
-            id = "objective-80001-rekindle-2",
-            kind = "objective",
-            priority = 1540,
-            text = "Rekindle: Flint and Tinder.",
-            dependsOn = { "accept-80001-rekindle" },
-            complete = QuestObjective(80001, 2, "Flint and Tinder"),
-            route = {
-                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
-                    "Travel to Firepit."),
-            },
-        },
-        {
-            id = "turnin-80001-rekindle",
-            kind = "turnin",
-            priority = 1550,
-            text = "Turn in Rekindle to Firepit.",
-            dependsOn = { "objective-80001-rekindle-2" },
-            complete = QuestState(80001, "completed"),
-            route = {
-                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
-                    "Travel to Firepit."),
-            },
-        },
-        {
             id = "turnin-1061-the-spirits-of-stonetalon",
             kind = "turnin",
             priority = 1560,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 13 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept The Spirits of Stonetalon from Zor Lonetree, then turn it in to Seereth Stonebreak.",
@@ -2730,7 +2683,7 @@ ns:RegisterGuide({
             priority = 1570,
             conditions = {
                 all = {
-                    { level = { min = 14 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Accept Scramble from Pocket Litter, then turn it in to Mound of Dirt.",
@@ -2746,7 +2699,7 @@ ns:RegisterGuide({
             priority = 1580,
             conditions = {
                 all = {
-                    { level = { min = 14 } },
+                    { level = { min = 32 } },
                 },
             },
             dependsOn = { "turnin-79980-scramble" },
@@ -2764,7 +2717,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Ineptitude + Chemicals = Fun from Lomac Gearstrip.",
@@ -2781,7 +2734,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Ineptitude + Chemicals = Fun: Minor Mana Potion.",
@@ -2799,7 +2752,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Ineptitude + Chemicals = Fun: Elixir of Minor Fortitude.",
@@ -2817,7 +2770,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Ineptitude + Chemicals = Fun to Lomac Gearstrip.",
@@ -2835,7 +2788,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             dependsOn = { "turnin-1073-ineptitude-chemicals-fun" },
@@ -2853,7 +2806,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Ineptitude + Chemicals = Fun: NG-5.",
@@ -2871,7 +2824,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Ineptitude + Chemicals = Fun to Gaxim Rustfizzle.",
@@ -2889,7 +2842,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept A Scroll from Mauren from Gaxim Rustfizzle, then turn it in to Collin Mauren.",
@@ -2906,7 +2859,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             dependsOn = { "turnin-1075-a-scroll-from-mauren" },
@@ -2924,7 +2877,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Special Delivery for Gaxim from Collin Mauren.",
@@ -2941,7 +2894,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Retrieval for Mauren from Collin Mauren.",
@@ -2958,7 +2911,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Retrieval for Mauren: Crystalized Scales.",
@@ -2976,7 +2929,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Retrieval for Mauren to Collin Mauren.",
@@ -2994,7 +2947,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Special Delivery for Gaxim: Scroll of Messaging.",
@@ -3012,7 +2965,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Special Delivery for Gaxim to Gaxim Rustfizzle.",
@@ -3030,7 +2983,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Devils in Westfall: Dust Devil Debris.",
@@ -3048,7 +3001,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Devils in Westfall to Collin Mauren.",
@@ -3066,7 +3019,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Update for Sentinel Thenysil from Kaela Shadowspear, then turn it in to Sentinel Thenysil.",
@@ -3083,7 +3036,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-1082-update-for-sentinel-thenysil" },
@@ -3100,7 +3053,7 @@ ns:RegisterGuide({
             priority = 1780,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Gerenzo's Orders from Piznik.",
@@ -3116,7 +3069,7 @@ ns:RegisterGuide({
             priority = 1790,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Gerenzo's Orders: Gerenzo's Orders.",
@@ -3133,7 +3086,7 @@ ns:RegisterGuide({
             priority = 1800,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Gerenzo's Orders to Piznik.",
@@ -3150,7 +3103,7 @@ ns:RegisterGuide({
             priority = 1810,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             dependsOn = { "turnin-1090-gerenzos-orders" },
@@ -3167,7 +3120,7 @@ ns:RegisterGuide({
             priority = 1820,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Gerenzo's Orders: Unidentified Ore.",
@@ -3184,7 +3137,7 @@ ns:RegisterGuide({
             priority = 1830,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Gerenzo's Orders to Ziz Fizziks.",
@@ -3202,7 +3155,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Report to Kadrak from Darn Talongrip, then turn it in to Kadrak.",
@@ -3219,7 +3172,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Stonetalon Supply Run: Stonetalon Supply Bundle.",
@@ -3236,7 +3189,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Stonetalon Supply Run: Stonetalon Supply Satchel.",
@@ -3253,7 +3206,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Turn in Stonetalon Supply Run to . Wowhead has no pin, so follow the quest text.",
@@ -3268,7 +3221,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Pigments for Paints from Tah Winterhoof.",
@@ -3285,7 +3238,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Pigments for Paints: Mirkweed Pods.",
@@ -3303,7 +3256,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 20 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Pigments for Paints to Tah Winterhoof.",
@@ -3312,6 +3265,57 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.540, 0.474, "Tah Winterhoof",
                     "Travel to Tah Winterhoof in Thunder Bluff."),
+            },
+        },
+        {
+            id = "accept-80001-rekindle",
+            kind = "accept",
+            priority = 1901,
+            conditions = { level = { min = 40 } },
+            text = "Accept Rekindle from Firepit.",
+            complete = QuestState(80001, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
+                    "Travel to Firepit."),
+            },
+        },
+        {
+            id = "objective-80001-rekindle-1",
+            kind = "objective",
+            priority = 1902,
+            conditions = { level = { min = 40 } },
+            text = "Rekindle: Simple Wood.",
+            dependsOn = { "accept-80001-rekindle" },
+            complete = QuestObjective(80001, 1, "Simple Wood"),
+            route = {
+                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
+                    "Travel to Firepit."),
+            },
+        },
+        {
+            id = "objective-80001-rekindle-2",
+            kind = "objective",
+            priority = 1903,
+            conditions = { level = { min = 40 } },
+            text = "Rekindle: Flint and Tinder.",
+            dependsOn = { "accept-80001-rekindle" },
+            complete = QuestObjective(80001, 2, "Flint and Tinder"),
+            route = {
+                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
+                    "Travel to Firepit."),
+            },
+        },
+        {
+            id = "turnin-80001-rekindle",
+            kind = "turnin",
+            priority = 1904,
+            conditions = { level = { min = 40 } },
+            text = "Turn in Rekindle to Firepit.",
+            dependsOn = { "objective-80001-rekindle-2" },
+            complete = QuestState(80001, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.406, 0.524, "Firepit",
+                    "Travel to Firepit."),
             },
         },
     },

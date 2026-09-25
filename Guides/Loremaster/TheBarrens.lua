@@ -745,7 +745,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Mura Runetotem from Tonga Runetotem.",
@@ -762,7 +762,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Mura Runetotem to Mura Runetotem.",
@@ -1442,7 +1442,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 15 } },
                     { quest = { id = 819, state = "activeOrCompleted" } },
                 },
             },
@@ -1496,44 +1496,6 @@ ns:RegisterGuide({
             conditions = { level = { min = 9 } },
             text = "Accept Southsea Freebooters from Gazlowe.",
             complete = QuestState(887, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.626, 0.362, "Gazlowe",
-                    "Travel to Gazlowe."),
-            },
-        },
-        {
-            id = "accept-92706-wanted-bruuz",
-            kind = "accept",
-            priority = 850,
-            conditions = { level = { min = 15 } },
-            text = "Accept WANTED: Bruuz from the wanted poster. This is an elite. Bring a group.",
-            complete = QuestState(92706, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.626, 0.375, "WANTED",
-                    "Travel to WANTED."),
-            },
-        },
-        {
-            id = "objective-92706-wanted-bruuz-1",
-            kind = "objective",
-            priority = 860,
-            conditions = { level = { min = 15 } },
-            text = "WANTED: Bruuz: Bruuz's Dorsal Fin. This is an elite. Bring a group.",
-            dependsOn = { "accept-92706-wanted-bruuz" },
-            complete = QuestObjective(92706, 1, "Bruuz's Dorsal Fin"),
-            route = {
-                Point(MAP.BARRENS, 0.644, 0.390, "Bruuz",
-                    "Travel to Bruuz."),
-            },
-        },
-        {
-            id = "turnin-92706-wanted-bruuz",
-            kind = "turnin",
-            priority = 870,
-            conditions = { level = { min = 15 } },
-            text = "Turn in WANTED: Bruuz to Gazlowe.",
-            dependsOn = { "objective-92706-wanted-bruuz-1" },
-            complete = QuestState(92706, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.626, 0.362, "Gazlowe",
                     "Travel to Gazlowe."),
@@ -1869,13 +1831,51 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92706-wanted-bruuz",
+            kind = "accept",
+            priority = 1091,
+            conditions = { level = { min = 20 } },
+            text = "Accept WANTED: Bruuz from the wanted poster. This is an elite. Bring a group.",
+            complete = QuestState(92706, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.626, 0.375, "WANTED",
+                    "Travel to WANTED."),
+            },
+        },
+        {
+            id = "objective-92706-wanted-bruuz-1",
+            kind = "objective",
+            priority = 1092,
+            conditions = { level = { min = 20 } },
+            text = "WANTED: Bruuz: Bruuz's Dorsal Fin. This is an elite. Bring a group.",
+            dependsOn = { "accept-92706-wanted-bruuz" },
+            complete = QuestObjective(92706, 1, "Bruuz's Dorsal Fin"),
+            route = {
+                Point(MAP.BARRENS, 0.644, 0.390, "Bruuz",
+                    "Travel to Bruuz."),
+            },
+        },
+        {
+            id = "turnin-92706-wanted-bruuz",
+            kind = "turnin",
+            priority = 1093,
+            conditions = { level = { min = 20 } },
+            text = "Turn in WANTED: Bruuz to Gazlowe.",
+            dependsOn = { "objective-92706-wanted-bruuz-1" },
+            complete = QuestState(92706, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.626, 0.362, "Gazlowe",
+                    "Travel to Gazlowe."),
+            },
+        },
+        {
             id = "accept-4021-counterattack",
             kind = "accept",
             priority = 1100,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Counterattack! from Regthar Deathgate. This is an elite. Bring a group.",
@@ -1892,7 +1892,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Counterattack!: Piece of Krom'zar's Banner. This is an elite. Bring a group.",
@@ -1910,7 +1910,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Counterattack! to Regthar Deathgate.",
@@ -3000,7 +3000,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Rilli Greasygob from Wenikee Boltbucket.",
@@ -3017,7 +3017,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Rilli Greasygob to Rilli Greasygob.",
@@ -3035,7 +3035,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Samophlange Manual from Rilli Greasygob.",
@@ -3053,7 +3053,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Samophlange Manual: Samophlange Manual.",
@@ -3071,7 +3071,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Samophlange Manual: Samophlange Manual Cover.",
@@ -3089,7 +3089,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Samophlange Manual: Samophlange Manual Page.",
@@ -3107,7 +3107,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Samophlange Manual to Rilli Greasygob.",
@@ -3143,7 +3143,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Nugget Slugs from Wenikee Boltbucket.",
@@ -3161,7 +3161,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Nugget Slugs: Nugget Slug.",
@@ -3179,7 +3179,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Nugget Slugs to Wenikee Boltbucket.",
@@ -3565,31 +3565,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-3513-the-runed-scroll",
-            kind = "turnin",
-            priority = 2150,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 15 } },
-                    { quest = { id = 3513, state = "activeOrCompleted" } },
-                },
-            },
-            text = "Turn in The Runed Scroll to Kadrak.",
-            complete = QuestState(3513, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.480, 0.054, "Kadrak",
-                    "Travel to Kadrak."),
-            },
-        },
-        {
             id = "accept-3514-horde-presence",
             kind = "accept",
             priority = 2160,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 29 } },
                     { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
@@ -3602,13 +3584,31 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-3513-the-runed-scroll",
+            kind = "turnin",
+            priority = 2161,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 25 } },
+                    { quest = { id = 3513, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in The Runed Scroll to Kadrak.",
+            complete = QuestState(3513, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.480, 0.054, "Kadrak",
+                    "Travel to Kadrak."),
+            },
+        },
+        {
             id = "objective-3514-horde-presence-1",
             kind = "objective",
             priority = 2170,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 29 } },
                     { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
@@ -3627,7 +3627,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 29 } },
                     { quest = { id = 3513, state = "activeOrCompleted" } },
                 },
             },
@@ -3664,7 +3664,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept The Warsong Reports from Kadrak. Burning Blade in the northern Barrens can drop a Runed Scroll. Use it to start the quest.",
@@ -3682,7 +3682,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "The Warsong Reports: Warsong Scout Update. Wowhead has no map pin. Find the named Warsong NPC.",
@@ -3700,7 +3700,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "The Warsong Reports: Warsong Runner Update. Wowhead has no map pin. Find the named Warsong NPC.",
@@ -3718,7 +3718,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "The Warsong Reports: Warsong Outrider Update. Wowhead has no map pin. Find the named Warsong NPC.",
@@ -3736,7 +3736,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in The Warsong Reports to Kadrak.",
@@ -4159,7 +4159,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Accept A New Ore Sample from Tatternack Steelforge.",
@@ -4176,7 +4176,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "A New Ore Sample: Unrefined Ore Sample.",
@@ -4194,7 +4194,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 25 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Turn in A New Ore Sample to Tatternack Steelforge.",
@@ -4301,7 +4301,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Spirit of the Wind from Mangletooth.",
@@ -4318,7 +4318,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Agamaggan's Strength from Mangletooth.",
@@ -4335,7 +4335,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Agamaggan's Agility from Mangletooth.",
@@ -4352,7 +4352,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Wisdom of Agamaggan from Mangletooth.",
@@ -4369,7 +4369,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Rising Spirit from Mangletooth.",
@@ -4386,7 +4386,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Razorhide from Mangletooth.",
@@ -4403,7 +4403,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Razorhide: Blood Shard.",
@@ -4421,7 +4421,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Razorhide to Mangletooth.",
@@ -4439,7 +4439,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Rising Spirit: Blood Shard.",
@@ -4457,7 +4457,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Rising Spirit to Mangletooth.",
@@ -4475,7 +4475,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Wisdom of Agamaggan: Blood Shard.",
@@ -4493,7 +4493,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Wisdom of Agamaggan to Mangletooth.",
@@ -4511,7 +4511,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Agamaggan's Agility: Blood Shard.",
@@ -4529,7 +4529,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Agamaggan's Agility to Mangletooth.",
@@ -4547,7 +4547,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Agamaggan's Strength: Blood Shard.",
@@ -4565,7 +4565,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Agamaggan's Strength to Mangletooth.",
@@ -4583,7 +4583,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Spirit of the Wind: Blood Shard.",
@@ -4601,7 +4601,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Spirit of the Wind to Mangletooth.",
@@ -4851,7 +4851,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept Betrayal from Within from Mangletooth.",
@@ -4869,7 +4869,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Betrayal from Within to Thork.",
@@ -4976,7 +4976,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 24 } },
                     { quest = { id = 897, state = "activeOrCompleted" } },
                 },
             },
@@ -4994,7 +4994,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 25 } },
                     { quest = { id = 885, state = "activeOrCompleted" } },
                 },
             },
@@ -5012,7 +5012,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 24 } },
                     { quest = { id = 884, state = "activeOrCompleted" } },
                 },
             },
@@ -5030,7 +5030,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 22 } },
                     { quest = { id = 883, state = "activeOrCompleted" } },
                 },
             },
@@ -5084,7 +5084,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Her Name Is Olgra from Mankrik.",
@@ -5102,7 +5102,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Her Name Is Olgra: Olgra's Adornments.",
@@ -5120,7 +5120,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Her Name Is Olgra to Mankrik.",
@@ -5205,7 +5205,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Ishamuhale from Jorn Skyseer.",
@@ -5223,7 +5223,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Ishamuhale: Ishamuhale's Fang.",
@@ -5241,7 +5241,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Ishamuhale: Fresh Zhevra Carcass.",
@@ -5259,7 +5259,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Ishamuhale to Jorn Skyseer.",
@@ -5277,7 +5277,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Enraged Thunder Lizards from Jorn Skyseer.",
@@ -5295,7 +5295,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Enraged Thunder Lizards: Thunder Lizard Blood. Lakota'mani or Owatanka can drop the item that starts their quest. Use it.",
@@ -5313,7 +5313,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Enraged Thunder Lizards to Jorn Skyseer.",
@@ -5331,7 +5331,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Cry of the Thunderhawk from Jorn Skyseer.",
@@ -5349,7 +5349,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Cry of the Thunderhawk: Thunderhawk Wings. Washte Pawne can drop Washte Pawne's Feather. Use it to start the quest.",
@@ -5367,7 +5367,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Cry of the Thunderhawk to Jorn Skyseer.",
@@ -5385,7 +5385,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Mahren Skyseer from Jorn Skyseer.",
@@ -5403,7 +5403,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Mahren Skyseer to Mahren Skyseer.",
@@ -5421,7 +5421,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Isha Awak from Mahren Skyseer.",
@@ -5439,7 +5439,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Isha Awak: Heart of Isha Awak.",
@@ -5457,7 +5457,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Isha Awak to Mahren Skyseer.",
@@ -5655,7 +5655,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = 96 },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Journey to the Crossroads from Thrall.",
@@ -5673,7 +5673,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = 96 },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Journey to the Crossroads to Thork.",
@@ -5763,7 +5763,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Chol'aruk the Ravener from Gur'ak. This is an elite. Bring a group.",
@@ -5780,7 +5780,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Chol'aruk the Ravener: Chol'aruk's Head. This is an elite. Bring a group.",
@@ -5798,7 +5798,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Chol'aruk the Ravener to Gur'ak.",
@@ -5816,7 +5816,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Vrang's Game from Vrang Wildgore.",
@@ -5833,7 +5833,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Bruised Pride and Lion Hides from Vrang Wildgore.",
@@ -5850,7 +5850,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Bruised Pride and Lion Hides: Savannah Lion Hide.",
@@ -5868,7 +5868,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Bruised Pride and Lion Hides to Vrang Wildgore.",
@@ -5886,7 +5886,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept The Hermit Tanner from Vrang Wildgore.",
@@ -5904,7 +5904,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in The Hermit Tanner to Walton.",
@@ -5922,7 +5922,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Trouble in the Valley from Walton.",
@@ -5940,7 +5940,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Unwelcome Guests from Walton.",
@@ -5957,7 +5957,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Unwelcome Guests: Assist Walton.",
@@ -5975,7 +5975,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Unwelcome Guests to Walton.",
@@ -5993,7 +5993,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Trouble in the Valley: Benedict's Orders.",
@@ -6011,7 +6011,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Trouble in the Valley to Walton.",
@@ -6029,7 +6029,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Vrang's Game: Trapped Game.",
@@ -6047,7 +6047,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 14 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Vrang's Game to Vrang Wildgore.",
@@ -6062,7 +6062,7 @@ ns:RegisterGuide({
             id = "accept-97253-parts-and-pieces",
             kind = "accept",
             priority = 3550,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Parts and Pieces from Wrenix the Wretched.",
             complete = QuestState(97253, "activeOrCompleted"),
             route = {
@@ -6074,7 +6074,7 @@ ns:RegisterGuide({
             id = "objective-97253-parts-and-pieces-1",
             kind = "objective",
             priority = 3560,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 14 } },
             text = "Parts and Pieces: Handful of Complicated Parts.",
             dependsOn = { "accept-97253-parts-and-pieces" },
             complete = QuestObjective(97253, 1, "Handful of Complicated Parts"),
@@ -6087,7 +6087,7 @@ ns:RegisterGuide({
             id = "turnin-97253-parts-and-pieces",
             kind = "turnin",
             priority = 3570,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Parts and Pieces to Wrenix the Wretched.",
             dependsOn = { "objective-97253-parts-and-pieces-1" },
             complete = QuestState(97253, "completed"),
@@ -6103,7 +6103,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Accept Wrongly Blamed, Justly Corrected from Grunt Logmar. This is an elite. Bring a group.",
@@ -6120,7 +6120,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Wrongly Blamed, Justly Corrected: Encroaching Soldier slain.",
@@ -6138,7 +6138,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Wrongly Blamed, Justly Corrected: Outraged Pillager slain. This is an elite. Bring a group.",
@@ -6156,7 +6156,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in Wrongly Blamed, Justly Corrected to Grunt Logmar.",
@@ -6174,7 +6174,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Accept Field to Clear from [UNUSED] Sulhasa.",
@@ -6191,7 +6191,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Field to Clear: Hecklefang Stalker slain.",
@@ -6209,7 +6209,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Field to Clear: Stormhide slain.",
@@ -6227,7 +6227,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in Field to Clear to [UNUSED] Sulhasa.",
@@ -6245,7 +6245,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Accept Gann's Reclamation from Gann Stonespire.",
@@ -6262,7 +6262,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Gann's Reclamation: Bael'dun Excavator slain.",
@@ -6280,7 +6280,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Gann's Reclamation: Bael'dun Foreman slain.",
@@ -6298,7 +6298,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Gann's Reclamation: Khazgorm's Journal.",
@@ -6316,7 +6316,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in Gann's Reclamation to Gann Stonespire.",
@@ -6334,7 +6334,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Revenge of Gann from Gann Stonespire.",
@@ -6352,7 +6352,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Revenge of Gann: Nitroglycerin.",
@@ -6370,7 +6370,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Revenge of Gann: Wood Pulp.",
@@ -6388,7 +6388,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Revenge of Gann: Sodium Nitrate.",
@@ -6406,7 +6406,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Revenge of Gann to Gann Stonespire.",
@@ -6424,7 +6424,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Accept Revenge of Gann from Gann Stonespire.",
@@ -6442,7 +6442,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Revenge of Gann: Bael Modan Flying Machine destroyed.",
@@ -6460,7 +6460,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 26 } },
                 },
             },
             text = "Turn in Revenge of Gann to Gann Stonespire.",
@@ -6475,7 +6475,7 @@ ns:RegisterGuide({
             id = "accept-79192-stepping-stones",
             kind = "accept",
             priority = 3790,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 24 } },
             text = "Accept Stepping Stones from Burned-Out Remains. If it is not offered, finish ...and that note you found first.",
             complete = QuestState(79192, "activeOrCompleted"),
             route = {
@@ -6487,7 +6487,7 @@ ns:RegisterGuide({
             id = "turnin-79192-stepping-stones",
             kind = "turnin",
             priority = 3800,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 24 } },
             text = "Turn in Stepping Stones to Pocket Litter.",
             dependsOn = { "accept-79192-stepping-stones" },
             complete = QuestState(79192, "completed"),
@@ -6503,7 +6503,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept Egg Hunt from Korran.",
@@ -6514,48 +6514,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-1145-the-swarm-grows",
-            kind = "accept",
-            priority = 3820,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 29 } },
-                },
-            },
-            text = "Accept The Swarm Grows from Korran.",
-            complete = QuestState(1145, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.510, 0.296, "Korran",
-                    "Travel to Korran."),
-            },
-        },
-        {
-            id = "turnin-1145-the-swarm-grows",
-            kind = "turnin",
-            priority = 3830,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 29 } },
-                },
-            },
-            text = "Turn in The Swarm Grows to Belgrom Rockmaul.",
-            dependsOn = { "accept-1145-the-swarm-grows" },
-            complete = QuestState(1145, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.750, 0.342, "Belgrom Rockmaul",
-                    "Travel to the next zone, then continue to Belgrom Rockmaul."),
-            },
-        },
-        {
             id = "objective-868-egg-hunt-1",
             kind = "objective",
             priority = 3840,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Egg Hunt: Silithid Egg. The Harvester can drop the Harvester's Head. Use it to start the quest. The Harvester is a rare.",
@@ -6573,7 +6538,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Egg Hunt to Korran.",
@@ -6591,7 +6556,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept The Tear of the Moons from Feegly the Exiled.",
@@ -6608,7 +6573,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "The Tear of the Moons: Tear of the Moons.",
@@ -6626,7 +6591,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 22 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in The Tear of the Moons to Feegly the Exiled.",
@@ -6644,7 +6609,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept Scout Support from the Horde officer north of Nethander Stead. Wowhead does not pin the giver.",
@@ -6661,7 +6626,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Scout Support to Deathstalker Masoj, north of Nethander Stead.",
@@ -6679,7 +6644,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept Valuable Vantages from Deathstalker Masoj. He gives you the vials.",
@@ -6697,7 +6662,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Valuable Vantages: Western vial placed. Wowhead has no map pin. Use the landmark in the step.",
@@ -6715,7 +6680,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Valuable Vantages: Northern vial placed. Wowhead has no map pin. Use the landmark in the step.",
@@ -6733,7 +6698,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Valuable Vantages: Southern vial placed. Wowhead has no map pin. Use the landmark in the step.",
@@ -6751,7 +6716,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 19 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Valuable Vantages to Deathstalker Masoj, north of Nethander Stead.",
@@ -6769,7 +6734,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Chol'aruk the Ravener from Bainham. This is an elite. Bring a group.",
@@ -6786,7 +6751,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Chol'aruk the Ravener: Chol'aruk's Head. This is an elite. Bring a group.",
@@ -6804,7 +6769,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Chol'aruk the Ravener to Bainham.",
@@ -6816,9 +6781,45 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1145-the-swarm-grows",
+            kind = "accept",
+            priority = 3981,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 33 } },
+                },
+            },
+            text = "Accept The Swarm Grows from Korran.",
+            complete = QuestState(1145, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.510, 0.296, "Korran",
+                    "Travel to Korran."),
+            },
+        },
+        {
+            id = "turnin-1145-the-swarm-grows",
+            kind = "turnin",
+            priority = 3982,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 33 } },
+                },
+            },
+            text = "Turn in The Swarm Grows to Belgrom Rockmaul.",
+            dependsOn = { "accept-1145-the-swarm-grows" },
+            complete = QuestState(1145, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.750, 0.342, "Belgrom Rockmaul",
+                    "Travel to the next zone, then continue to Belgrom Rockmaul."),
+            },
+        },
+        {
             id = "objective-95819-sign-me-up-1",
             kind = "objective",
-            priority = 3990,
+            priority = 3983,
+            conditions = { level = { min = 60 } },
             text = "Sign Me Up!: Advertising License Application. Wowhead has no pin, so follow the quest text.",
             complete = QuestObjective(95819, 1, "Advertising License Application"),
             route = {},
@@ -6826,7 +6827,8 @@ ns:RegisterGuide({
         {
             id = "objective-95819-sign-me-up-2",
             kind = "objective",
-            priority = 4000,
+            priority = 3984,
+            conditions = { level = { min = 60 } },
             text = "Sign Me Up!: Massive Pile of Completed Forms. Wowhead has no pin, so follow the quest text.",
             complete = QuestObjective(95819, 2, "Massive Pile of Completed Forms"),
             route = {},
@@ -6834,7 +6836,8 @@ ns:RegisterGuide({
         {
             id = "turnin-95819-sign-me-up",
             kind = "turnin",
-            priority = 4010,
+            priority = 3985,
+            conditions = { level = { min = 60 } },
             text = "Turn in Sign Me Up! to . Wowhead has no pin, so follow the quest text.",
             dependsOn = { "objective-95819-sign-me-up-2" },
             complete = QuestState(95819, "completed"),
@@ -6847,7 +6850,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Accept Mending Old Wounds from Mupsi Shacklefridd.",
@@ -6864,7 +6867,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Mending Old Wounds: Linen Cloth.",
@@ -6882,7 +6885,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Mending Old Wounds: Empty Vial.",
@@ -6900,7 +6903,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 15 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Turn in Mending Old Wounds to Mupsi Shacklefridd.",

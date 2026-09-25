@@ -105,6 +105,7 @@ ns:RegisterGuide({
             priority = 51,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },
@@ -125,6 +126,7 @@ ns:RegisterGuide({
             priority = 165,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 87760, state = "activeOrCompleted" } },
                 },
             },
@@ -302,6 +304,7 @@ ns:RegisterGuide({
             priority = 201,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },
@@ -310,22 +313,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.4360, 0.7640, "Arbal",
                     "Travel to Arbal."),
-            },
-        },
-        {
-            id = "turnin-98028-baron-marinous",
-            kind = "turnin",
-            priority = 202,
-            conditions = {
-                all = {
-                    { quest = { id = 98028, state = "activeOrCompleted" } },
-                },
-            },
-            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
-            complete = QuestState(98028, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
-                    "Travel to Onu."),
             },
         },
         {
@@ -355,6 +342,23 @@ ns:RegisterGuide({
                 },
             },
             text = "Volcor in Blackwood Den Select either 'Escape Through Force' for Steadfast Cinch (hard) or 'Escape Through Stealth' for Scarab Trousers (easy).",
+        },
+        {
+            id = "turnin-98028-baron-marinous",
+            kind = "turnin",
+            priority = 231,
+            conditions = {
+                all = {
+                    { level = { min = 21 } },
+                    { quest = { id = 98028, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
+            complete = QuestState(98028, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
+                    "Travel to Onu."),
+            },
         },
         {
             id = "accept-994-escape-through-force",

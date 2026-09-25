@@ -67,3 +67,5 @@ All notable changes to this project are documented here.
 - Kept the travel steps that are the quest: The Forgotten Pools, Boulderslide Cavern, Frostmane Hold, the Altar of Zul, and the Gaping Chasm. Those clear when the discovery objective is done.
 - Automatic quest accept takes only the quest on the current accept step. Other quests in the same guide stay in the gossip window, so opening one giver does not fill the quest log. Turn-in still covers completed quests from the selected guide.
 - A quest giver that lists several quests is selected for you. The current accept or turn-in opens without clicking the quest in that list.
+- Woven quests use Wowhead's recommended level, not the level they can be started. A level 20 elite such as WANTED: Bruuz is no longer picked up on the level 13 Ratchet visit.
+- A Wowhead level above a leveling chapter's end does not count as that chapter having reached it. Bloodfury Trinkets waits at the end of 23-25 Stonetalon instead of the opening Sun Rock visit. Repairing a route keeps fractional priorities.
