@@ -2167,7 +2167,7 @@ ns:RegisterGuide({
                     { class = 11 },
                 },
             },
-            text = "Find and kill Lost Barrens Kodo and collect 5 Kodo Horn, the Kodos are very scattered around The Barrens it will take a while to complete this quest Gather 5 Earthroot with Herb Gathering in The Barrens or purchase from the auction house.",
+            text = "Find and kill Lost Barrens Kodo and collect 5 Kodo Horn. The kodos are scattered around The Barrens and can take a while to find.",
             dependsOn = { "accept-6128-gathering-the-cure" },
             complete = QuestObjective(6128, 2, "Kodo Horn"),
             route = {
@@ -2182,7 +2182,7 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-6123-1-5-item-2449",
+            id = "objective-6128-1-earthroot",
             kind = "objective",
             priority = 1270,
             conditions = {
@@ -2191,7 +2191,8 @@ ns:RegisterGuide({
                 },
             },
             text = "Gather 5 Earthroot with Herb Gathering in The Barrens or purchase from the auction house.",
-            complete = QuestObjective(6123, 1),
+            dependsOn = { "accept-6128-gathering-the-cure" },
+            complete = QuestObjective(6128, 1, "Earthroot"),
         },
         {
             id = "accept-1062-goblin-invaders",
@@ -2490,7 +2491,10 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Gathering the Cure to Tonga Runetotem in The Crossroads.",
-            dependsOn = { "objective-6128-2-lost-barrens-kodo" },
+            dependsOn = {
+                "objective-6128-2-lost-barrens-kodo",
+                "objective-6128-1-earthroot",
+            },
             complete = QuestState(6128, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.5224, 0.3193, "Tonga Runetotem",

@@ -844,6 +844,13 @@ function TestLostBarrensKodo()
             { text = "Earthroot", finished = false, numFulfilled = 0, numRequired = 5 },
         }
         Equal(ns.EvaluateCondition(goal.complete, state), true, guideID .. " finds the horn when it is not objective 2")
+        local earthroot = ns.Engine:GetGoal(ns.guides[guideID], "objective-6128-1-earthroot")
+        Check(earthroot and earthroot.complete.questObjective.id == 6128, guideID .. " earthroot tracks quest 6128")
+        Check(earthroot and earthroot.complete.questObjective.text == "Earthroot", guideID .. " earthroot uses text match")
+        Check(earthroot and earthroot.dependsOn[1] == "accept-6128-gathering-the-cure", guideID .. " earthroot waits on accept")
+        local turnin = ns.Engine:GetGoal(ns.guides[guideID], "turnin-6128-gathering-the-cure")
+        Check(turnin and turnin.dependsOn[1] == "objective-6128-2-lost-barrens-kodo"
+            and turnin.dependsOn[2] == "objective-6128-1-earthroot", guideID .. " turn-in waits on both parts")
     end
     CheckStep("leveling-the-barrens")
     local eraGuide = ns.guides["leveling-era-12-20-barrens"] or ns.guides["leveling-era"]

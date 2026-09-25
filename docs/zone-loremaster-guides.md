@@ -1,6 +1,6 @@
 # Zone Loremaster guides
 
-The procedure for adding or updating a zone lives in the repo skill [`.cursor/skills/zone-loremaster-guide/SKILL.md`](../.cursor/skills/zone-loremaster-guide/SKILL.md). Use that when writing the next zone. The files in `Guides/Loremaster/` are the working copies.
+The procedure for adding or updating a zone lives in the repo skill [`.cursor/skills/zone-loremaster-guide/SKILL.md`](../.cursor/skills/zone-loremaster-guide/SKILL.md). Use that when writing the next zone. The files in `Guides/Loremaster/` are the working copies. Quest id, multi-objective, and pin rules are in [guide-authoring.md](guide-authoring.md).
 
 Loremaster finishes the zone. The walk is the leveling route. Converted chapters are in `Guides/Leveling/`. A chapter whose title still ends in `(Era)` is in `Guides/Era/` and is still part of that walk. A quest on the Wowhead Forever zone page that is not already on that route is woven in:
 
