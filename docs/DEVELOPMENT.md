@@ -23,7 +23,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 ## Guides
 
-Quest-step rules are in [guide-authoring.md](guide-authoring.md). Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`.
+Quest-step rules are in [guide-authoring.md](guide-authoring.md). Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
 ```sh
 python3 -m unittest discover -s tests
