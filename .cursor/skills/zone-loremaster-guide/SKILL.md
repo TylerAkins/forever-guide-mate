@@ -14,7 +14,8 @@ Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
 1. Open the zone's leveling chapters, lowest level first. Converted chapters are in `Guides/Leveling/`. A chapter whose title still ends in `(Era)` is in `Guides/Era/`. That step list is the spine. Keep its accepts, objectives, and turn-ins in that order. Leave hub-to-hub travel steps out. TomTom already points at the next pin, and those steps do not auto-clear. Keep a travel step when the quest is to discover or investigate that place, and give it the same `complete` condition as that objective so it clears when the discovery is done.
 2. Open the Wowhead Forever zone quest page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`.
 3. Every quest on that page that is not already on the spine gets woven in. Do not drop a quest the spine already runs.
-4. Register the guide, then run the checks at the bottom.
+4. Compare shared quest-chain edges with the leveling route. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
+5. Register the guide, then run the checks at the bottom.
 
 `tools/weave_loremaster.py` does steps 1-3 for the zones it lists. Read its output before shipping. A quest it could not read is named in the guide header. Fix that by hand rather than inventing a pin.
 
@@ -36,7 +37,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 - A provided item, such as a quest item the giver hands you, is not its own step. Say how to use it on the objective that needs it.
 - An item that starts an optional quest is not a required step. Mention it on a step the player is already doing. Gate the turn-in, and every later step, with `quest` state `activeOrCompleted`.
 - An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.
-- Dungeon quests stay in the dungeon guides. Record every other intentional omission in the header.
+- Keep prerequisite handoffs already present in the leveling route. Dungeon-only quests stay in the dungeon guides. Record every other intentional omission in the header.
 - Put faction, class, race, and profession requirements on every step of that quest. A mismatch is left out of the percentage. The same quest's steps must carry the same conditions.
 - A level requirement uses Wowhead's recommended level, the Level line, not the level the quest can be started. It stays in the percentage until the character reaches it.
 - Use uiMap IDs. Wowhead area IDs are not map IDs.

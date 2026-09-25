@@ -1,5 +1,7 @@
 # Changelog
 
+- Mid-guide recovery now follows route order, trusts known client quest state over stale saved progress, rewinds through registered quest prerequisites, and blocks with a diagnostic instead of silently skipping an unavailable quest. The Barrens leveling and Loremaster routes now both include the Altered Beings, Hamuul Runetotem, and Nara Wildmane chain.
+
 All notable changes to this project are documented here.
 
 ## 0.1.0 - 2026-09-23

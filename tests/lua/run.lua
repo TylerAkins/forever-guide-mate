@@ -29,6 +29,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("QuestPrerequisites.lua")
 Load("QuestAudit.lua")
 Load("QuestDialog.lua")
 Load("Navigation.lua")
@@ -125,6 +126,41 @@ local badReferenceOK = pcall(function()
         goals = { { id = "one", kind = "note", text = "One", dependsOn = { "missing" } } } })
 end)
 Equal(badReferenceOK, false, "unknown dependency rejected")
+
+Check(not pcall(function()
+    ns:RegisterGuide({ id = "dependency-cycle", title = "Bad", category = "Test", revision = 1,
+        goals = {
+            { id = "one", kind = "note", text = "One", dependsOn = { "two" } },
+            { id = "two", kind = "note", text = "Two", dependsOn = { "one" } },
+        } })
+end), "dependency cycles are rejected")
+
+function TestAlternativePrerequisites()
+    local previousCharDB = ns.charDB
+    ns.charDB = { selectedGuide = nil, manualCompleted = {}, completionLedger = {}, deferred = {} }
+    ns:RegisterQuestPrerequisite({ quest = 900001, mode = "any", quests = { 900002, 900003 } })
+    ns:RegisterGuide({
+        id = "alternative-prerequisites", title = "Alternatives", category = "Test", revision = 1,
+        goals = {
+            { id = "turnin-900002-left", kind = "turnin", text = "Left",
+                complete = { quest = { id = 900002, state = "completed" } } },
+            { id = "turnin-900003-right", kind = "turnin", text = "Right",
+                complete = { quest = { id = 900003, state = "completed" } } },
+            { id = "accept-900001-target", kind = "accept", text = "Target",
+                complete = { quest = { id = 900001, state = "activeOrCompleted" } } },
+        },
+    })
+    local guide = ns.guides["alternative-prerequisites"]
+    local accept = ns.Engine:GetGoal(guide, "accept-900001-target")
+    local state = { quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    Equal(ns.Engine:IsReady(guide, accept, state), false,
+        "an any prerequisite waits while every alternative is unfinished")
+    state.completedQuests[900003] = true
+    Equal(ns.Engine:IsReady(guide, accept, state), true,
+        "an any prerequisite accepts one completed alternative")
+    ns.charDB = previousCharDB
+end
+TestAlternativePrerequisites()
 
 local badCoordinateOK = pcall(function()
     ns:RegisterGuide({ id = "bad-coordinate", title = "Bad", category = "Test", revision = 1,
@@ -528,8 +564,8 @@ Equal(ns.charDB.deferred[skippedID], true, "skip defers the current step")
 Equal(ns.Engine:GetGuideProgress(rfc, baseState).completed, beforeSkip, "skip does not count as completion")
 local completedID = ns.Engine.currentGoal.id
 ns.Engine:CompleteCurrent()
-Check(ns.Engine:GetGuideProgress(rfc, baseState).completed > beforeSkip,
-    "manual complete increases completion")
+Equal(ns.Engine:GetGuideProgress(rfc, baseState).completed, beforeSkip,
+    "known quest truth overrides a contradictory manual completion")
 ns.Engine:Previous()
 Equal(ns.Engine.currentGoal.id, completedID, "back returns to viewed-step history")
 Equal(ns.Engine.status, "Reviewing a previous step.", "back keeps a completed prior step available for review")
@@ -989,8 +1025,8 @@ function TestActiveGoalReload()
         mapID = 1413, x = 0.52, y = 0.32,
         quests = {},
         completedQuests = {},
-        questLogKnown = true,
-        questCompletionKnown = true,
+        questLogKnown = false,
+        questCompletionKnown = false,
     }
     ns.Engine:Refresh(loading)
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
@@ -1073,12 +1109,15 @@ function TestQuestAudit()
 
     Fresh()
     ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96875 } }))
-    Equal(ns.charDB.deferred[spinalAxe.id], true,
-        "a step the quest giver does not offer is skipped instead of holding the tracker")
+    Equal(ns.charDB.deferred[spinalAxe.id], nil,
+        "a step the quest giver does not offer is not silently deferred")
     Equal(ns.charDB.notOffered[spinalAxe.id].quest, 96874, "the refused step is written to the report")
     Equal(ns.charDB.notOffered[spinalAxe.id].npc, "Ug'thok", "the report names the quest giver")
-    Equal(#printed, 1, "the player is told once that the step was skipped")
+    Equal(#printed, 1, "the player is told once that the step is blocked")
     Equal(#ns.QuestAudit:Lines(), 1, "the report reads back one line")
+    local blocked, blockedEntry = ns.Engine:BlockedAuditGoal(durotarGuide, ns.Engine.state)
+    Equal(blocked and blocked.id, spinalAxe.id, "an unresolved unavailable quest blocks routing")
+    Equal(blockedEntry and blockedEntry.quest, 96874, "the routing blocker retains the quest id")
 
     Fresh()
     ns.QuestAudit:Inspect(API("Ug'thok", { { questID = 96874 } }))
@@ -1997,8 +2036,8 @@ function TestRaceSteps()
     local skyborne = Fresh(96)
     skyborne.mapID = 1454
     Open(barrens, skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-98024-journey-to-the-crossroads",
-        "a level 14 Horde Skyborne in Orgrimmar starts the Barrens at Thrall")
+    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
+        "a level 14 Horde Skyborne starts at the earliest unfinished eligible Barrens step")
     skyborne.mapID = 1413
     ns.charDB.activeGoal = nil
     ns.Engine:Refresh(skyborne)
@@ -2015,8 +2054,8 @@ function TestRaceSteps()
     local orc = Fresh(2)
     orc.completedQuests[98024] = true
     Open(barrens, orc)
-    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
-        "an orc still takes Meats to Orgrimmar")
+    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
+        "an orc starts at the earliest unfinished eligible route step")
     local troll = Fresh(8)
     troll.level = 15
     troll.classID = 8
@@ -2540,7 +2579,10 @@ function TestEraLeveling()
     ns.Engine:Refresh(horde)
     CompleteSegment(ns.Engine.currentSegment)
     ns.charDB.activeGoal = nil
-    ns.Engine:Refresh(EraState("Horde", 1, 2, 1411))
+    local unknownDurotar = EraState("Horde", 1, 2, 1411)
+    unknownDurotar.questLogKnown = false
+    unknownDurotar.questCompletionKnown = false
+    ns.Engine:Refresh(unknownDurotar)
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
         "finishing Durotar hands off to the Barrens")
     Equal(ns.Engine.currentGoal, nil, "the Barrens handoff waits until level 12")
@@ -2549,11 +2591,14 @@ function TestEraLeveling()
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
-    ns.Engine:Refresh(EraState("Horde", 12, 2, 1411))
+    local unknownBarrens = EraState("Horde", 12, 2, 1411)
+    unknownBarrens.questLogKnown = false
+    unknownBarrens.questCompletionKnown = false
+    ns.Engine:Refresh(unknownBarrens)
     CompleteSegment(guide.segmentByID["leveling-era-1-12-durotar"])
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
-    ns.Engine:Refresh(EraState("Horde", 12, 2, 1411))
+    ns.Engine:Refresh(unknownBarrens)
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
         "a level 12 orc continues in the Barrens")
     Check(ns.Engine.currentGoal ~= nil and ns.Engine.currentGoal.segmentID == "leveling-era-12-20-barrens",
@@ -2561,13 +2606,16 @@ function TestEraLeveling()
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
-    ns.Engine:Refresh(EraState("Horde", 12, 5, 1420))
+    local unknownTirisfal = EraState("Horde", 12, 5, 1420)
+    unknownTirisfal.questLogKnown = false
+    unknownTirisfal.questCompletionKnown = false
+    ns.Engine:Refresh(unknownTirisfal)
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-tirisfal-glades",
         "a level 12 undead standing in Tirisfal stays on that starter")
     CompleteSegment(guide.segmentByID["leveling-era-1-12-tirisfal-glades"])
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
-    ns.Engine:Refresh(EraState("Horde", 12, 5, 1420))
+    ns.Engine:Refresh(unknownTirisfal)
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
         "finishing Tirisfal hands off to the next Horde chapter, the Barrens")
 
@@ -2604,7 +2652,7 @@ function TestEraLeveling()
     Equal(ns.charDB.selectedGuide, "leveling-era", "a saved Era guide becomes the merged guide")
     Equal(ns.charDB.eraFloor, "leveling-era-1-12-durotar", "the saved chapter stays the floor")
     Equal(ns.Engine:GetLedger(guide, false)["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"],
-        true, "saved Era completion moves onto the merged guide")
+        nil, "known quest truth clears migrated stale completion")
     Equal(ns.charDB.deferred["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"], true,
         "a saved deferred step keeps its chapter")
     Equal(ns.charDB.deferred["leveling-era-1-12-durotar:accept-840-conscript-of-the-horde"], true,

@@ -1,17 +1,9 @@
 -- Shared guide data rules for lint.lua and audit_accept_chains.lua.
 --
--- CHAIN_ACCEPT_AFTER_TURNIN: accept quest key must dependOn the turn-in for value
--- before the tracker shows that accept in leveling/Loremaster guides. Add a row
--- when you weave a dungeon or zone chain into a route (see docs/guide-authoring.md).
+-- Catalog-driven prerequisite checks shared by lint.lua and
+-- audit_accept_chains.lua.
 
 local M = {}
-
--- accept quest id => must depend on turn-in for this quest id first
-M.CHAIN_ACCEPT_AFTER_TURNIN = {
-    [1490] = 1489, -- Nara Wildmane after Hamuul Runetotem (Wailing Caverns intro)
-    -- [914] = 1490,  -- Leaders of the Fang — add when woven outside Dungeon guides
-    -- [1491] = 914,
-}
 
 function M.TurninQuestID(goalID)
     if type(goalID) ~= "string" then
@@ -47,14 +39,18 @@ function M.ChainViolations(guide, guideID)
     for _, goal in ipairs(guide.goals or {}) do
         if goal.kind == "accept" then
             local acceptQuest = M.AcceptQuestIDFromGoal(goal)
-            local needTurnin = acceptQuest and M.CHAIN_ACCEPT_AFTER_TURNIN[acceptQuest]
-            if needTurnin and not M.DependsOnTurnin(goal, needTurnin) then
-                issues[#issues + 1] = {
-                    guideID = guideID,
-                    goalID = goal.id,
-                    acceptQuest = acceptQuest,
-                    needTurnin = needTurnin,
-                }
+            for _, group in ipairs(goal.questPrerequisites or {}) do
+                for index, needTurnin in ipairs(group.questIDs or {}) do
+                    if not group.goalIDs or not group.goalIDs[index]
+                        or M.TurninQuestID(group.goalIDs[index]) ~= needTurnin then
+                        issues[#issues + 1] = {
+                            guideID = guideID,
+                            goalID = goal.id,
+                            acceptQuest = acceptQuest,
+                            needTurnin = needTurnin,
+                        }
+                    end
+                end
             end
         end
     end
