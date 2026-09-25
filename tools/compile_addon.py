@@ -64,6 +64,7 @@ SHIPPED = (
     "Guides/Leveling/28-29-duskwood.lua",
     "README.md",
     "CHANGELOG.md",
+    "RELEASE_NOTES.md",
     "LICENSE",
 )
 

@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -21,16 +23,49 @@ jobs:
       - run: python3 -m pip install -r tests/requirements.txt
       - run: python3 -m unittest discover -s tests
       - run: |
+          python3 tests/test_guide_release.py
+          python3 tests/test_update_forever_interface.py
+      - run: |
           lua5.1 tests/lua/run.lua
           lua5.1 tests/lua/ui.lua
           lua5.1 tests/lua/lint.lua
       - run: |
+          python3 tools/guide_release.py validate-notes \
+            --version "$(tr -d '[:space:]' < VERSION)"
+      - name: Validate automated release intent
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          GUIDE_CONTENT_CHANGED=false
+          if ! git diff --quiet "$BASE_SHA" HEAD -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml UI.lua ForeverGuideMate.toc; then
+            GUIDE_CONTENT_CHANGED=true
+          fi
+          PREVIOUS_INTERFACE="$(git show "${BASE_SHA}:ForeverGuideMate.toc" | sed -n 's/^## Interface: //p')"
+          CURRENT_INTERFACE="$(sed -n 's/^## Interface: //p' ForeverGuideMate.toc)"
+          if [[ "$GUIDE_CONTENT_CHANGED" == false && "$PREVIOUS_INTERFACE" == "$CURRENT_INTERFACE" ]]; then
+            exit 0
+          fi
+          PREVIOUS_VERSION="$(git show "${BASE_SHA}:VERSION" | tr -d '[:space:]')"
+          CURRENT_VERSION="$(tr -d '[:space:]' < VERSION)"
+          python3 tools/guide_release.py validate \
+            --previous-version "$PREVIOUS_VERSION" \
+            --current-version "$CURRENT_VERSION" \
+            --release-content-changed
+          grep -qF "## ${CURRENT_VERSION} " CHANGELOG.md
+      - run: |
           python3 tools/compile_addon.py
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
           test -f .compiled/ForeverGuideMate/Core.lua
+          test -f .compiled/ForeverGuideMate/RELEASE_NOTES.md
           test -f .compiled/ForeverGuideMate/Guides/Dungeons/RagefireChasm.lua
           test -f .compiled/ForeverGuideMate/Guides/Dungeons/WailingCaverns.lua
           test -f .compiled/ForeverGuideMate/Guides/Dungeons/RuinsOfLordaeron.lua
           test ! -e .compiled/ForeverGuideMate/tests
           test ! -e .compiled/ForeverGuideMate/tools
       - run: python3 tools/compile_addon.py --dry-run
+      - name: Dry-run package
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -d

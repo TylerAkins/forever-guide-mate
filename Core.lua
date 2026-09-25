@@ -25,7 +25,7 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 2,
+    schemaVersion = 3,
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},

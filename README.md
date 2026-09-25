@@ -260,7 +260,9 @@ python3 tools/compile_addon.py
 
 The compiled addon appears at `.compiled/ForeverGuideMate`. Copy that `ForeverGuideMate` folder into your World of Warcraft AddOns directory to install it manually.
 
-No release or publishing automation is configured.
+## Releases
+
+Stable releases are numbered GitHub Releases from annotated `v*` tags, with CurseForge packages built from the same tag via its native automatic packager. Merges to `main` produce a commit-specific preview artifact for testing. `RELEASE_NOTES.md` holds the CurseForge changelog for the current version only. The repo, guide, and interface update procedures are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## License
 

@@ -1,0 +1,179 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Numbered GitHub Release from an annotated v* tag (v0.1.0, etc.).
+  versioned:
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
+    runs-on: ubuntu-24.04
+    concurrency:
+      group: versioned-${{ github.ref }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    env:
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate release version
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          VERSION="$(tr -d '[:space:]' < VERSION)"
+          if [[ "v${VERSION}" != "$GITHUB_REF_NAME" ]]; then
+            echo "VERSION ${VERSION} does not match tag ${GITHUB_REF_NAME}" >&2
+            exit 1
+          fi
+          python3 tools/guide_release.py validate-notes --version "$VERSION"
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Package and publish GitHub Release
+        if: steps.release.outputs.exists != 'true'
+        uses: BigWigsMods/packager@v2
+
+  # Reviewed guide and interface PRs carry their patch version in VERSION.
+  # On merge, create that tag and explicitly dispatch the tag build because
+  # GITHUB_TOKEN tag pushes do not start another Actions workflow.
+  auto-versioned:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: preview
+    runs-on: ubuntu-24.04
+    concurrency:
+      group: automated-release
+      cancel-in-progress: false
+    permissions:
+      actions: write
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Plan automated release
+        id: release
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [[ "$BEFORE_SHA" =~ ^0+$ ]]; then
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          GUIDE_CONTENT_CHANGED=false
+          if ! git diff --quiet "$BEFORE_SHA" "$GITHUB_SHA" -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml UI.lua ForeverGuideMate.toc; then
+            GUIDE_CONTENT_CHANGED=true
+          fi
+          PREVIOUS_INTERFACE="$(git show "${BEFORE_SHA}:ForeverGuideMate.toc" | sed -n 's/^## Interface: //p')"
+          CURRENT_INTERFACE="$(sed -n 's/^## Interface: //p' ForeverGuideMate.toc)"
+          INTERFACE_CHANGED=false
+          if [[ "$PREVIOUS_INTERFACE" != "$CURRENT_INTERFACE" ]]; then
+            INTERFACE_CHANGED=true
+          fi
+          if [[ "$GUIDE_CONTENT_CHANGED" == false && "$INTERFACE_CHANGED" == false ]]; then
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ! git cat-file -e "${BEFORE_SHA}:VERSION" 2>/dev/null; then
+            echo "Release content changed but the previous commit has no VERSION file" >&2
+            exit 1
+          fi
+          PREVIOUS_VERSION="$(git show "${BEFORE_SHA}:VERSION" | tr -d '[:space:]')"
+          CURRENT_VERSION="$(tr -d '[:space:]' < VERSION)"
+          TAG="$(python3 tools/guide_release.py validate \
+            --previous-version "$PREVIOUS_VERSION" \
+            --current-version "$CURRENT_VERSION" \
+            --release-content-changed)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create tag and dispatch release
+        if: steps.release.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git fetch --force --tags origin
+          if git show-ref --verify --quiet "refs/tags/${RELEASE_TAG}"; then
+            EXISTING_SHA="$(git rev-list -n 1 "$RELEASE_TAG")"
+            TAG_ACTION="$(python3 tools/guide_release.py validate-tag \
+              --existing-sha "$EXISTING_SHA" \
+              --target-sha "$GITHUB_SHA")"
+          else
+            TAG_ACTION="$(python3 tools/guide_release.py validate-tag \
+              --target-sha "$GITHUB_SHA")"
+          fi
+
+          if [[ "$TAG_ACTION" == "create" ]]; then
+            git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              tag -a "$RELEASE_TAG" "$GITHUB_SHA" -m "Release ${RELEASE_TAG}"
+            git push origin "refs/tags/${RELEASE_TAG}"
+          fi
+
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release ${RELEASE_TAG} already exists; nothing to dispatch."
+          else
+            gh workflow run release.yml --ref "$RELEASE_TAG"
+          fi
+
+  # Downloadable test build for every merge to main. This deliberately avoids
+  # pushing a moving tag that CurseForge could mistake for a stable release.
+  preview:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Python tests
+        run: |
+          python3 -m pip install -r tests/requirements.txt
+          python3 -m unittest discover -s tests
+          python3 tests/test_guide_release.py
+          python3 tests/test_update_forever_interface.py
+
+      - name: Package addon zip
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -d -n "{package-name}-preview{classic}"
+
+      - name: Upload test build
+        uses: actions/upload-artifact@v7
+        with:
+          name: ForeverGuideMate-${{ github.sha }}
+          path: .release/ForeverGuideMate-preview*.zip
+          if-no-files-found: error
+          include-hidden-files: true
