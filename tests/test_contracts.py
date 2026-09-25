@@ -42,7 +42,18 @@ REQUIRED_FILES = (
     "Guides/Leveling/Mulgore.lua",
     "Guides/Leveling/TheBarrens.lua",
     "Guides/Leveling/Teldrassil.lua",
+    "Guides/Leveling/LochModan.lua",
+    "Guides/Leveling/Westfall.lua",
+    "Guides/Leveling/DunMorogh.lua",
+    "Guides/Leveling/Duskwood.lua",
+    "Guides/Leveling/RedridgeMountains.lua",
+    "Guides/Leveling/SilverpineForest.lua",
+    "Guides/Leveling/ElwynnForest.lua",
+    "Guides/Leveling/Ashenvale.lua",
+    "Guides/Leveling/Darkshore.lua",
+    "Guides/Leveling/StonetalonMountains.lua",
     "docs/zone-loremaster-guides.md",
+    ".cursor/skills/zone-loremaster-guide/SKILL.md",
     "tools/compile_addon.py",
     "tests/test_contracts.py",
     "tests/lua/run.lua",
@@ -97,6 +108,16 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/Mulgore.lua",
                 "Guides/Leveling/TheBarrens.lua",
                 "Guides/Leveling/Teldrassil.lua",
+                "Guides/Leveling/LochModan.lua",
+                "Guides/Leveling/Westfall.lua",
+                "Guides/Leveling/DunMorogh.lua",
+                "Guides/Leveling/Duskwood.lua",
+                "Guides/Leveling/RedridgeMountains.lua",
+                "Guides/Leveling/SilverpineForest.lua",
+                "Guides/Leveling/ElwynnForest.lua",
+                "Guides/Leveling/Ashenvale.lua",
+                "Guides/Leveling/Darkshore.lua",
+                "Guides/Leveling/StonetalonMountains.lua",
                 "Guides/Leveling/Era/1-12-durotar.lua",
                 "Guides/Leveling/Era/1-12-mulgore.lua",
                 "Guides/Leveling/Era/1-12-tirisfal-glades.lua",
@@ -389,12 +410,13 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-837-encroachment-1"', guide)
         self.assertIn('id = "objective-837-encroachment-4"', guide)
         self.assertIn("DUROTAR = 1411", guide)
-        rules = (ROOT / "docs/zone-loremaster-guides.md").read_text(encoding="utf-8")
+        rules = (ROOT / ".cursor/skills/zone-loremaster-guide/SKILL.md").read_text(encoding="utf-8")
         self.assertIn("This is an elite. Bring a group.", rules)
         self.assertIn("activeOrCompleted", rules)
         self.assertIn('category = "Loremaster Guides"', rules)
-        self.assertIn("not a leveling route", rules)
+        self.assertIn("leveling route", rules)
         self.assertIn("Zephras Isle", rules)
+        self.assertIn("woven", rules)
 
     def test_mulgore_guide_is_loremaster_without_dungeons(self) -> None:
         guide = (ROOT / "Guides/Leveling/Mulgore.lua").read_text(encoding="utf-8")
@@ -436,6 +458,24 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-483-the-relics-of-wakening-4"', guide)
         self.assertIn("TELDRASSIL = 1438", guide)
         self.assertIn("DARNASSUS = 1457", guide)
+
+    def test_loremaster_routes_follow_leveling_and_keep_zone_quests(self) -> None:
+        durotar = (ROOT / "Guides/Leveling/Durotar.lua").read_text(encoding="utf-8")
+        goals = durotar.split("goals = {", 1)[-1]
+        self.assertIn("QuestState(1485,", goals)
+        self.assertIn("QuestState(924,", goals)
+        self.assertIn("follows the leveling route", durotar)
+        loch = (ROOT / "Guides/Leveling/LochModan.lua").read_text(encoding="utf-8")
+        self.assertIn('category = "Loremaster Guides"', loch)
+        self.assertIn('title = "Loch Modan"', loch)
+        self.assertIn("QuestState(307,", loch)
+        self.assertIn("QuestState(278,", loch)
+        self.assertNotIn("QuestState(167,", loch.split("goals = {", 1)[-1])
+        ashenvale = (ROOT / "Guides/Leveling/Ashenvale.lua").read_text(encoding="utf-8")
+        self.assertIn('{ faction = "Alliance" }', ashenvale)
+        self.assertIn('{ faction = "Horde" }', ashenvale)
+        westfall = (ROOT / "Guides/Leveling/Westfall.lua").read_text(encoding="utf-8")
+        self.assertNotIn("QuestState(167,", westfall.split("goals = {", 1)[-1])
 
     def test_era_leveling_guides_are_horde_routes(self) -> None:
         era_files = (

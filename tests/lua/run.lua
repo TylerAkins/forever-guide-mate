@@ -45,6 +45,16 @@ Load("Guides/Leveling/Durotar.lua")
 Load("Guides/Leveling/Mulgore.lua")
 Load("Guides/Leveling/TheBarrens.lua")
 Load("Guides/Leveling/Teldrassil.lua")
+Load("Guides/Leveling/LochModan.lua")
+Load("Guides/Leveling/Westfall.lua")
+Load("Guides/Leveling/DunMorogh.lua")
+Load("Guides/Leveling/Duskwood.lua")
+Load("Guides/Leveling/RedridgeMountains.lua")
+Load("Guides/Leveling/SilverpineForest.lua")
+Load("Guides/Leveling/ElwynnForest.lua")
+Load("Guides/Leveling/Ashenvale.lua")
+Load("Guides/Leveling/Darkshore.lua")
+Load("Guides/Leveling/StonetalonMountains.lua")
 Load("Guides/Leveling/Era/1-12-durotar.lua")
 Load("Guides/Leveling/Era/1-12-mulgore.lua")
 Load("Guides/Leveling/Era/1-12-tirisfal-glades.lua")
@@ -1706,13 +1716,13 @@ function TestRaceSteps()
     skyborne.mapID = 1413
     ns.charDB.activeGoal = nil
     ns.Engine:Refresh(skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-844-plainstrider-menace",
-        "a level 14 Horde Skyborne in the Barrens starts at Plainstrider Menace")
+    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
+        "a level 14 Horde Skyborne in the Barrens starts at Raptor Thieves")
     skyborne.completedQuests[98024] = true
     ns.charDB.activeGoal = nil
     ns.Engine:Refresh(skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-844-plainstrider-menace",
-        "a Skyborne continues at Plainstrider Menace")
+    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
+        "a Skyborne continues at Raptor Thieves")
     local meats = ns.Engine:GetGoal(barrens, "accept-6365-meats-to-orgrimmar")
     Equal(ns.Engine:IsReady(barrens, meats, skyborne), false,
         "Meats to Orgrimmar is not offered to a Skyborne")
@@ -1726,17 +1736,26 @@ function TestRaceSteps()
     troll.classID = 8
     troll.mapID = 1454
     Open(barrens, troll)
-    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
-        "a level 15 troll in Orgrimmar is not sent to Thrall for Journey to the Crossroads")
+    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
+        "a level 15 troll in Orgrimmar starts at Conscript of the Horde")
+    local thrall = ns.Engine:GetGoal(barrens, "accept-98024-journey-to-the-crossroads")
+    Equal(ns.Engine:IsReady(barrens, thrall, troll), false,
+        "a troll is not sent to Thrall for Journey to the Crossroads")
     ns.charDB.activeGoal = "accept-98024-journey-to-the-crossroads"
     ns.Engine:Refresh(troll)
-    Equal(ns.Engine.currentGoal.id, "accept-6365-meats-to-orgrimmar",
+    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
         "a troll leaves Journey to the Crossroads once the guide refreshes")
     local tauren = Fresh(6)
+    tauren.classID = 3
     tauren.completedQuests[98024] = true
     Open(barrens, tauren)
-    Equal(ns.Engine.currentGoal.id, "accept-6361-a-bundle-of-hides",
-        "a tauren takes A Bundle of Hides")
+    Equal(ns.Engine.currentGoal.id, "accept-854-journey-to-the-crossroads",
+        "a tauren starts with Journey to the Crossroads")
+    local hides = ns.Engine:GetGoal(barrens, "accept-6361-a-bundle-of-hides")
+    Equal(ns.Engine:IsReady(barrens, hides, tauren), true,
+        "a tauren still takes A Bundle of Hides")
+    Equal(ns.Engine:IsReady(barrens, meats, tauren), false,
+        "Meats to Orgrimmar is not offered to a tauren")
     local durotarSkyborne = Fresh(96)
     durotarSkyborne.mapID = 1411
     durotarSkyborne.level = 14
@@ -1787,8 +1806,8 @@ function TestCampPickups()
     Open(barrensGuide, Horde(14, 1413, {
         [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
     }))
-    Equal(ns.Engine.currentGoal.id, "objective-844-plainstrider-menace-1",
-        "Crossroads quests leave camp together")
+    Equal(ns.Engine.currentGoal.id, "objective-869-raptor-thieves-1",
+        "Crossroads quests leave on Raptor Thieves first")
     local zhevra = ns.Engine:GetGoal(barrensGuide, "accept-845-the-zhevra")
     Equal(ns.Engine:IsReady(barrensGuide, zhevra, Horde(14, 1413, {
         [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
@@ -1810,8 +1829,8 @@ function TestCampPickups()
         questCompletionKnown = true,
         mapID = 1413, x = 0.52, y = 0.30,
     })
-    Equal(ns.Engine.currentGoal.id, "accept-845-the-zhevra",
-        "the next Crossroads wave starts with The Zhevra")
+    Equal(ns.Engine.currentGoal.id, "accept-5041-supplies-for-the-crossroads",
+        "the next Crossroads wave starts with Supplies for the Crossroads")
     local durotarGuide = ns.guides["leveling-durotar"]
     local durotarSeen = {}
     for _, goal in ipairs(durotarGuide.goals) do
@@ -1819,8 +1838,8 @@ function TestCampPickups()
         durotarSeen[goal.priority] = goal.id
     end
     Open(durotarGuide, Horde(14, 1411, { [786] = Active(786) }))
-    Equal(ns.Engine.currentGoal.id, "accept-817-practical-prey",
-        "Sen'jin Village picks up Practical Prey with Thwarting Kolkar Aggression")
+    Equal(ns.Engine.currentGoal.id, "accept-808-minshinas-skull",
+        "Sen'jin Village picks up Minshina's Skull with Thwarting Kolkar Aggression")
 
     local function Counted(text, fulfilled, required, finished)
         return {
@@ -1837,14 +1856,35 @@ function TestCampPickups()
         } },
         [867] = { complete = false, objectives = { Counted("Witchwing Talon", 0, 8, false) } },
     })
-    local keepOpen = { [869] = true, [871] = true, [867] = true }
-    for _, goal in ipairs(barrensGuide.goals) do
+    local function QuestIDFromGoal(goal)
         local complete = goal.complete
         local questID = complete and complete.quest and complete.quest.id
         if not questID and complete and complete.questObjective then
             questID = complete.questObjective.id
         end
-        if questID and goal.priority and goal.priority < 224 and not keepOpen[questID] then
+        return questID
+    end
+    local keepOpen = { [871] = true, [867] = true }
+    local changed = true
+    while changed do
+        changed = false
+        for _, goal in ipairs(barrensGuide.goals) do
+            local questID = QuestIDFromGoal(goal)
+            if questID and not keepOpen[questID] then
+                for _, dependencyID in ipairs(goal.dependsOn or {}) do
+                    local dependency = ns.Engine:GetGoal(barrensGuide, dependencyID)
+                    local dependencyQuest = dependency and QuestIDFromGoal(dependency)
+                    if dependencyQuest and keepOpen[dependencyQuest] then
+                        keepOpen[questID] = true
+                        changed = true
+                    end
+                end
+            end
+        end
+    end
+    for _, goal in ipairs(barrensGuide.goals) do
+        local questID = QuestIDFromGoal(goal)
+        if questID and not keepOpen[questID] then
             midDisrupt.completedQuests[questID] = true
         end
     end
@@ -2084,8 +2124,8 @@ function TestTeldrassil()
         "Shadowglen starts with The Balance of Nature")
     ns.charDB.activeGoal = nil
     ns.Engine:Refresh(Alliance(1, { [456] = { complete = false, objectives = {} } }))
-    Equal(ns.Engine.currentGoal.id, "accept-458-the-woodland-protector",
-        "Shadowglen also picks up The Woodland Protector before the kills")
+    Equal(ns.Engine.currentGoal.id, "objective-456-the-balance-of-nature-1",
+        "Balance of Nature kills come before The Woodland Protector")
 
     local skip = { [97236] = true, [927] = true, [941] = true }
     local done = {}
