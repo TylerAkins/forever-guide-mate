@@ -73,3 +73,4 @@ All notable changes to this project are documented here.
 - Parts and Pieces points at 61.39, 45.72 for the Complicated Parts in the upper pirate camp south of Ratchet.
 - A step with no saved location follows the pin in your quest log. Saved coordinates stay where the guide already has them.
 - Gathering the Cure points at the Lost Barrens Kodo camp by the Stagnant Oasis and finishes when you have the Kodo Horns.
+- A "Continue toward" pin is skipped when you are already closer to a later pin on that step. Named stops still have to be visited in order.
