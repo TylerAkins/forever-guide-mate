@@ -1143,7 +1143,7 @@ ZONES = [
         "zone": "Durotar",
         "map_key": "DUROTAR",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/durotar",
-        "leveling": ["Guides/Era/1-12-durotar.lua"],
+        "leveling": ["Guides/Leveling/1-12-durotar.lua"],
     },
     {
         "title": "Mulgore",
@@ -1154,7 +1154,7 @@ ZONES = [
         "zone": "Mulgore",
         "map_key": "MULGORE",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/mulgore",
-        "leveling": ["Guides/Era/1-12-mulgore.lua"],
+        "leveling": ["Guides/Leveling/1-12-mulgore.lua"],
     },
     {
         "title": "The Barrens",
@@ -1164,7 +1164,7 @@ ZONES = [
         "zone": "The Barrens",
         "map_key": "BARRENS",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/the-barrens",
-        "leveling": ["Guides/Era/12-20-barrens.lua"],
+        "leveling": ["Guides/Leveling/12-20-barrens.lua"],
     },
     {
         "title": "Teldrassil",
@@ -1174,7 +1174,7 @@ ZONES = [
         "zone": "Teldrassil",
         "map_key": "TELDRASSIL",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/teldrassil",
-        "leveling": ["Guides/Era/1-12-teldrassil.lua"],
+        "leveling": ["Guides/Leveling/1-12-teldrassil.lua"],
     },
     {
         "title": "Loch Modan",
@@ -1183,7 +1183,7 @@ ZONES = [
         "zone": "Loch Modan",
         "map_key": "LOCH_MODAN",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/loch-modan",
-        "leveling": ["Guides/Era/17-18-loch-modan.lua"],
+        "leveling": ["Guides/Leveling/17-18-loch-modan.lua"],
     },
     {
         "title": "Westfall",
@@ -1192,7 +1192,7 @@ ZONES = [
         "zone": "Westfall",
         "map_key": "WESTFALL",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/westfall",
-        "leveling": ["Guides/Era/12-17-westfall.lua"],
+        "leveling": ["Guides/Leveling/12-17-westfall.lua"],
     },
     {
         "title": "Dun Morogh",
@@ -1201,7 +1201,7 @@ ZONES = [
         "zone": "Dun Morogh",
         "map_key": "DUN_MOROGH",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/dun-morogh",
-        "leveling": ["Guides/Era/1-12-dun-morogh.lua"],
+        "leveling": ["Guides/Leveling/1-12-dun-morogh.lua"],
     },
     {
         "title": "Duskwood",
@@ -1210,7 +1210,7 @@ ZONES = [
         "zone": "Duskwood",
         "map_key": "DUSKWOOD",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/duskwood",
-        "leveling": ["Guides/Era/28-29-duskwood.lua"],
+        "leveling": ["Guides/Leveling/28-29-duskwood.lua"],
     },
     {
         "title": "Redridge Mountains",
@@ -1220,8 +1220,8 @@ ZONES = [
         "map_key": "REDRIDGE",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/redridge-mountains",
         "leveling": [
-            "Guides/Era/18-20-redridge-mountains.lua",
-            "Guides/Era/27-28-redridge-mountains.lua",
+            "Guides/Leveling/18-20-redridge-mountains.lua",
+            "Guides/Leveling/27-28-redridge-mountains.lua",
         ],
     },
     {
@@ -1231,7 +1231,7 @@ ZONES = [
         "zone": "Silverpine Forest",
         "map_key": "SILVERPINE",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/silverpine-forest",
-        "leveling": ["Guides/Era/12-20-silverpine-forest.lua"],
+        "leveling": ["Guides/Leveling/12-20-silverpine-forest.lua"],
     },
     {
         "title": "Elwynn Forest",
@@ -1240,7 +1240,7 @@ ZONES = [
         "zone": "Elwynn Forest",
         "map_key": "ELWYNN",
         "url": "https://www.wowhead.com/forever/quests/eastern-kingdoms/elwynn-forest",
-        "leveling": ["Guides/Era/1-12-elwynn-forest.lua"],
+        "leveling": ["Guides/Leveling/1-12-elwynn-forest.lua"],
     },
     {
         "title": "Ashenvale",
@@ -1265,9 +1265,9 @@ ZONES = [
         "map_key": "DARKSHORE",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/darkshore",
         "leveling": [
-            "Guides/Era/12-17-darkshore.lua",
-            "Guides/Era/20-21-darkshore.lua",
-            "Guides/Era/23-24-darkshore.lua",
+            "Guides/Leveling/12-17-darkshore.lua",
+            "Guides/Leveling/20-21-darkshore.lua",
+            "Guides/Leveling/23-24-darkshore.lua",
         ],
     },
     {
@@ -1281,7 +1281,7 @@ ZONES = [
         "leveling": [
             "Guides/Era/20-22-stonetalon-mountains.lua",
             "Guides/Era/22-23-stonetalon-mountains.lua",
-            "Guides/Era/23-25-stonetalon-mountains.lua",
+            "Guides/Leveling/23-25-stonetalon-mountains.lua",
             "Guides/Era/27-27-stonetalon-mountains.lua",
         ],
     },

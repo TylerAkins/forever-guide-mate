@@ -6,7 +6,7 @@ A guide the character cannot use says Ineligible. The faction stays listed besid
 
 The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
-Guide files are split by job. `Guides/Era/` holds the 1–60 Era chapters. `Guides/Leveling/` holds leveling routes, which today is Zephras Isle. `Guides/Loremaster/` holds the zone-completion guides. `Guides/Dungeons/` holds dungeon quest guides.
+Guide files are split by job. `Guides/Leveling/` holds Zephras Isle and the Era chapters whose titles no longer end in `(Era)`. `Guides/Era/` holds the chapters that still say `(Era)`. `Guides/Loremaster/` holds the zone-completion guides. `Guides/Dungeons/` holds dungeon quest guides.
 
 ## Current guides
 
@@ -17,7 +17,7 @@ Guide files are split by job. `Guides/Era/` holds the 1–60 Era chapters. `Guid
 | Zephras Isle (Skyborne) | Alliance and Horde Skyborne | Levels 1–14. Written from the Forever quest list. |
 | 1–60 Era | Alliance and Horde | One library row. Alliance and Horde chapters share it. A step the other faction cannot take is skipped. The starter follows your race, or the starter zone you are standing in. Later chapters follow in listed order. The row shows the chapter you are on. |
 
-Chapters whose titles still end in `(Era)` stay in `Guides/Era` as reference. They are not loaded, so they do not show in the addon. Drop `(Era)` from the title and add the file to `ForeverGuideMate.toc` when that chapter is converted.
+Converted chapters live in `Guides/Leveling`. Chapters whose titles still end in `(Era)` stay in `Guides/Era` as reference. They are not loaded, so they do not show in the addon. Drop `(Era)` from the title, move the file to `Guides/Leveling`, and add it to `ForeverGuideMate.toc` when that chapter is converted.
 
 ### Era chapters with Forever quests
 
