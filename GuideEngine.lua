@@ -1205,12 +1205,57 @@ function Engine:CandidateGoals(guide, state)
     return goals
 end
 
+local function ActiveGoalStorageKey(guide, goalOrID)
+    if not guide or guide.id ~= "leveling-era" then
+        return guide and guide.id
+    end
+    if type(goalOrID) == "table" and type(goalOrID.segmentID) == "string" then
+        return goalOrID.segmentID
+    end
+    if type(goalOrID) == "string" then
+        local chapter = goalOrID:match("^([^:]+):")
+        if chapter then
+            return chapter
+        end
+    end
+    if ns.charDB and type(ns.charDB.eraChapterPick) == "string" then
+        return ns.charDB.eraChapterPick
+    end
+    if ns.charDB and type(ns.charDB.eraFloor) == "string" then
+        return ns.charDB.eraFloor
+    end
+    return guide.id
+end
+
+local function ValidateActiveGoal(engine, guide)
+    if not guide or not ns.charDB or not ns.charDB.activeGoal then
+        return
+    end
+    if engine:GetGoal(guide, ns.charDB.activeGoal) then
+        return
+    end
+    ns.charDB.activeGoalByGuide = ns.charDB.activeGoalByGuide or {}
+    local storeKey = ActiveGoalStorageKey(guide, ns.charDB.activeGoal)
+        or ActiveGoalStorageKey(guide, ns.charDB.eraChapterPick)
+    local saved = storeKey and ns.charDB.activeGoalByGuide[storeKey]
+    if saved and engine:GetGoal(guide, saved) then
+        ns.charDB.activeGoal = saved
+    else
+        ns.charDB.activeGoal = nil
+    end
+end
+
 function Engine:SetActiveGoal(goal, remember)
     local oldID = ns.charDB.activeGoal
     if remember and oldID and oldID ~= goal.id then
         ns.charDB.history[#ns.charDB.history + 1] = oldID
     end
     ns.charDB.activeGoal = goal.id
+    ns.charDB.activeGoalByGuide = ns.charDB.activeGoalByGuide or {}
+    local storeKey = ActiveGoalStorageKey(self.currentGuide or ns.guides[ns.charDB.selectedGuide], goal)
+    if storeKey then
+        ns.charDB.activeGoalByGuide[storeKey] = goal.id
+    end
     self.currentGoal = goal
     self.reviewingGoal = nil
 end
@@ -1239,6 +1284,7 @@ function Engine:Refresh(state)
         return
     end
     self:ReconcileGuide(guide, state)
+    ValidateActiveGoal(self, guide)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state)
     if eligible == false then
         self.currentGoal = nil
@@ -1246,11 +1292,10 @@ function Engine:Refresh(state)
     else
         local active = self:GetGoal(guide, ns.charDB.activeGoal)
         local ready = active and self:IsReady(guide, active, state)
-        local observedDone = active and active.complete and ns.EvaluateCondition(active.complete, state) == true
-        local ledger = self:GetLedger(guide, false)
-        local inferred = self:GetInferred(guide)
-        local permanentlyDone = active and (ns.charDB.manualCompleted[active.id]
-            or (ledger and ledger[active.id]) or (inferred and inferred[active.id]))
+        local activeEvaluation = active and active.complete and ns.EvaluateCondition(active.complete, state)
+        local observedDone = activeEvaluation == true
+        local observedUnknown = activeEvaluation == nil
+        local activeFinished = active and self:IsGoalDone(active, state, guide)
         local candidates = self:CandidateGoals(guide, state)
         local function Remaining(goal)
             local info = goal and self.urgentGoals[goal.id]
@@ -1271,8 +1316,8 @@ function Engine:Refresh(state)
         if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
-        elseif onChapter and active and ready and not permanentlyDone and not ns.charDB.deferred[active.id]
-            and (not observedDone or not ns.db.autoAdvance) and not shortPreempt
+        elseif onChapter and active and ready and not activeFinished and not ns.charDB.deferred[active.id]
+            and (not observedDone or not ns.db.autoAdvance or observedUnknown) and not shortPreempt
             and not earlierObjective then
             self.currentGoal = active
         elseif candidates[1] then
@@ -1389,7 +1434,9 @@ end
 function Engine:SelectGuide(guideID)
     ns:FinalizeGuides()
     self:MigrateEraProgress()
+    local chapterID
     if ns.retiredEraGuides and ns.retiredEraGuides[guideID] then
+        chapterID = guideID
         local merged = ns.guides["leveling-era"]
         local segment = merged and merged.segmentByID[guideID]
         if segment and segment.fork then
@@ -1400,8 +1447,23 @@ function Engine:SelectGuide(guideID)
         guideID = "leveling-era"
     end
     if ns.guides[guideID] then
+        local guide = ns.guides[guideID]
+        ns.charDB.activeGoalByGuide = ns.charDB.activeGoalByGuide or {}
+        if ns.charDB.selectedGuide and ns.charDB.activeGoal then
+            local currentGuide = ns.guides[ns.charDB.selectedGuide]
+            local storeKey = ActiveGoalStorageKey(currentGuide, ns.charDB.activeGoal)
+            if storeKey then
+                ns.charDB.activeGoalByGuide[storeKey] = ns.charDB.activeGoal
+            end
+        end
         ns.charDB.selectedGuide = guideID
-        ns.charDB.activeGoal = nil
+        local restoreKey = chapterID or guideID
+        local saved = ns.charDB.activeGoalByGuide[restoreKey]
+        if saved and self:GetGoal(guide, saved) then
+            ns.charDB.activeGoal = saved
+        else
+            ns.charDB.activeGoal = nil
+        end
         ns.charDB.history = {}
         self.inferredCompletedByGuide = nil
         self.reviewingGoal = nil
