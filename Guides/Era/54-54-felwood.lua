@@ -126,8 +126,6 @@ ns:RegisterGuide({
             text = "Kill Cursed Ooze and start collecting Felwood Slime Sample, you will need about 35 total Clear both pool area and collect 20 Felwood Slime Sample for now.",
             complete = QuestState(4293, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.4041, 0.7154, "Continue toward Cursed Ooze",
-                    "Continue toward Cursed Ooze."),
                 Point(MAP.FELWOOD, 0.4067, 0.6691, "Cursed Ooze",
                     "Travel to Cursed Ooze."),
             },
@@ -140,10 +138,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5155-forces-of-jaedenar" },
             complete = QuestState(5155, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.3887, 0.5876, "Continue toward Forces of Jaedenar",
-                    "Continue toward Forces of Jaedenar."),
-                Point(MAP.FELWOOD, 0.3766, 0.6112, "Continue toward Forces of Jaedenar",
-                    "Continue toward Forces of Jaedenar."),
                 Point(MAP.FELWOOD, 0.3540, 0.6027, "Jaedenar Guardian",
                     "Travel to Jaedenar Guardian."),
             },
@@ -155,8 +149,6 @@ ns:RegisterGuide({
             text = "Kill Tainted Ooze and finish collecting 35 Felwood Slime Sample in Jaedenar.",
             complete = QuestState(4293, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.4000, 0.5502, "Continue toward Tainted Ooze",
-                    "Continue toward Tainted Ooze."),
                 Point(MAP.FELWOOD, 0.4057, 0.5906, "Tainted Ooze",
                     "Travel to Tainted Ooze."),
             },
@@ -214,10 +206,6 @@ ns:RegisterGuide({
             text = "Kill 12 Angerclaw Grizzly and 12 Felpaw Ravager in Irontree Woods.",
             complete = QuestState(4120, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.5130, 0.1229, "Continue toward The Strength of Corruption",
-                    "Continue toward The Strength of Corruption."),
-                Point(MAP.FELWOOD, 0.5576, 0.2200, "Continue toward The Strength of Corruption",
-                    "Continue toward The Strength of Corruption."),
                 Point(MAP.FELWOOD, 0.5676, 0.2496, "Angerclaw Grizzly",
                     "Travel to Angerclaw Grizzly."),
             },
@@ -241,10 +229,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.6289, 0.1129, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
-                Point(MAP.FELWOOD, 0.6269, 0.0786, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
                 Point(MAP.FELWOOD, 0.6137, 0.0742, "Deadwood Shaman",
                     "Travel to Deadwood Shaman."),
             },
@@ -257,8 +241,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "completed"),
             route = {
-                Point(MAP.FELWOOD, 0.6440, 0.1479, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
                 Point(MAP.FELWOOD, 0.6476, 0.0819, "Nafien",
                     "Travel to Nafien."),
             },

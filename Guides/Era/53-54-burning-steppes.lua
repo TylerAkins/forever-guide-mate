@@ -212,8 +212,6 @@ ns:RegisterGuide({
             text = "Accept A Taste of Flame from Cyrus Therepentous in Slither Rock.",
             complete = QuestState(4022, "activeOrCompleted"),
             route = {
-                Point(MAP.BURNING_STEPPES, 0.9366, 0.3210, "Continue toward A Taste of Flame",
-                    "Continue toward A Taste of Flame."),
                 Point(MAP.BURNING_STEPPES, 0.9505, 0.3157, "Cyrus Therepentous",
                     "Travel to Cyrus Therepentous."),
             },
@@ -260,12 +258,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3821-dreadmaul-rock" },
             complete = QuestState(3821, "completed"),
             route = {
-                Point(MAP.BURNING_STEPPES, 0.7685, 0.3288, "Continue toward Dreadmaul Rock",
-                    "Continue toward Dreadmaul Rock."),
-                Point(MAP.BURNING_STEPPES, 0.7587, 0.3804, "Continue toward Dreadmaul Rock",
-                    "Continue toward Dreadmaul Rock."),
-                Point(MAP.BURNING_STEPPES, 0.7788, 0.3834, "Continue toward Dreadmaul Rock",
-                    "Continue toward Dreadmaul Rock."),
                 Point(MAP.BURNING_STEPPES, 0.7986, 0.4550, "Cyrus Therepentous",
                     "Travel to Cyrus Therepentous."),
             },

@@ -630,8 +630,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-194-raptor-mastery" },
             complete = QuestState(194, "complete"),
             route = {
-                Point(MAP.STRANGLETHORN, 0.3072, 0.0825, "Continue toward Raptor Mastery",
-                    "Continue toward Raptor Mastery."),
                 Point(MAP.STRANGLETHORN, 0.2452, 0.1586, "Stranglethorn Raptor",
                     "Travel to Stranglethorn Raptor."),
             },

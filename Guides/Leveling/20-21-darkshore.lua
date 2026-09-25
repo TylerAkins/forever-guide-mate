@@ -325,10 +325,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1650-tome-of-valor", "objective-1650-tome-of-valor-2" },
             complete = QuestState(1650, "completed"),
             route = {
-                Point(MAP.WESTFALL, 0.3849, 0.8262, "Continue toward The Tome of Valor",
-                    "Continue toward The Tome of Valor."),
-                Point(MAP.WESTFALL, 0.3992, 0.8668, "Continue toward The Tome of Valor",
-                    "Continue toward The Tome of Valor."),
                 Point(MAP.WESTFALL, 0.4148, 0.8885, "Daphne Stilwell",
                     "Travel to Daphne Stilwell."),
             },
@@ -508,12 +504,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-947-cave-mushrooms" },
             complete = QuestState(947, "complete"),
             route = {
-                Point(MAP.DARKSHORE, 0.5426, 0.3183, "Continue toward Cave Mushrooms",
-                    "Continue toward Cave Mushrooms."),
-                Point(MAP.DARKSHORE, 0.5499, 0.3294, "Continue toward Cave Mushrooms",
-                    "Continue toward Cave Mushrooms."),
-                Point(MAP.DARKSHORE, 0.5496, 0.3337, "Continue toward Cave Mushrooms",
-                    "Continue toward Cave Mushrooms."),
                 Point(MAP.DARKSHORE, 0.5600, 0.3500, "Cave Mushrooms",
                     "Travel to Cave Mushrooms."),
             },
@@ -526,8 +516,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-985-how-big-a-threat" },
             complete = QuestState(985, "complete"),
             route = {
-                Point(MAP.DARKSHORE, 0.3900, 0.5400, "Continue toward How Big a Threat?",
-                    "Continue toward How Big a Threat?."),
                 Point(MAP.DARKSHORE, 0.3900, 0.5200, "Blackwood Pathfinder",
                     "Travel to Blackwood Pathfinder."),
             },
@@ -892,8 +880,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5321-the-sleeper-has-awakened" },
             complete = QuestState(5321, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.2901, 0.2566, "Continue toward The Sleeper Has Awakened",
-                    "Continue toward The Sleeper Has Awakened."),
                 Point(MAP.ASHENVALE, 0.2725, 0.3562, "Kerlonian Evershade",
                     "Travel to Kerlonian Evershade."),
             },

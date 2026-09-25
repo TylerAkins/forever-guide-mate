@@ -233,8 +233,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3126-treant-muisek" },
             complete = QuestState(3126, "complete"),
             route = {
-                Point(MAP.FERALAS, 0.7363, 0.3977, "Continue toward Treant Muisek",
-                    "Continue toward Treant Muisek."),
                 Point(MAP.FERALAS, 0.7339, 0.5440, "Wandering Forest Walker",
                     "Travel to Wandering Forest Walker."),
             },

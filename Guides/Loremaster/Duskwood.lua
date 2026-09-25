@@ -516,8 +516,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-222-worgen-in-the-woods" },
             complete = QuestState(222, "complete"),
             route = {
-                Point(MAP.DUSKWOOD, 0.7400, 0.6700, "Continue toward Worgen in the Woods",
-                    "Continue toward Worgen in the Woods."),
                 Point(MAP.DUSKWOOD, 0.7400, 0.7400, "Nightbane Vile Fang",
                     "Travel to Nightbane Vile Fang."),
             },
@@ -1303,8 +1301,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-58-the-night-watch" },
             complete = QuestState(58, "complete"),
             route = {
-                Point(MAP.DUSKWOOD, 0.2370, 0.3523, "Continue toward The Night Watch",
-                    "Continue toward The Night Watch."),
                 Point(MAP.DUSKWOOD, 0.2566, 0.3432, "Plague Spreader",
                     "Travel to Plague Spreader."),
             },

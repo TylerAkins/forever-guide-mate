@@ -308,10 +308,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-459-the-woodland-protector" },
             complete = QuestState(459, "complete"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5600, 0.4590, "Continue toward The Woodland Protector",
-                    "Continue toward The Woodland Protector."),
-                Point(MAP.TELDRASSIL, 0.6120, 0.4590, "Continue toward The Woodland Protector",
-                    "Continue toward The Woodland Protector."),
                 Point(MAP.TELDRASSIL, 0.5640, 0.4160, "Grell",
                     "Travel to Grell."),
             },
@@ -516,10 +512,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-917-webwood-egg" },
             complete = QuestState(917, "complete"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5682, 0.2735, "Continue toward Webwood Egg",
-                    "Continue toward Webwood Egg."),
-                Point(MAP.TELDRASSIL, 0.5585, 0.2493, "Continue toward Webwood Egg",
-                    "Continue toward Webwood Egg."),
                 Point(MAP.TELDRASSIL, 0.5665, 0.2648, "Shadowthread Cave",
                     "Travel to Shadowthread Cave."),
             },
@@ -584,8 +576,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-920-tenaron-s-summons" },
             complete = QuestState(920, "completed"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5819, 0.3904, "Continue toward Tenaron's Summons",
-                    "Continue toward Tenaron's Summons."),
                 Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
                     "Travel to Tenaron Stormgrip."),
             },
@@ -656,8 +646,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-921-crown-of-the-earth" },
             complete = QuestState(921, "completed"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5819, 0.3904, "Continue toward Crown of the Earth",
-                    "Continue toward Crown of the Earth."),
                 Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
                     "Travel to Tenaron Stormgrip."),
             },
@@ -991,8 +979,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-918-timberling-seeds" },
             complete = QuestState(918, "complete"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5900, 0.7200, "Continue toward Timberling Seeds",
-                    "Continue toward Timberling Seeds."),
                 Point(MAP.TELDRASSIL, 0.5600, 0.6500, "Timberling",
                     "Travel to Timberling."),
             },
@@ -1209,8 +1195,6 @@ ns:RegisterGuide({
             text = "Accept The Road to Darnassus from Moon Priestess Amara in Dolanaar.",
             complete = QuestState(487, "activeOrCompleted"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5000, 0.5400, "Continue toward The Road to Darnassus",
-                    "Continue toward The Road to Darnassus."),
                 Point(MAP.TELDRASSIL, 0.5500, 0.5800, "Moon Priestess Amara",
                     "Travel to Moon Priestess Amara."),
             },
@@ -1331,10 +1315,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 1),
             route = {
-                Point(MAP.TELDRASSIL, 0.4551, 0.5896, "Continue toward Raven Claw Talisman",
-                    "Continue toward Raven Claw Talisman."),
-                Point(MAP.TELDRASSIL, 0.4622, 0.5821, "Continue toward Raven Claw Talisman",
-                    "Continue toward Raven Claw Talisman."),
                 Point(MAP.TELDRASSIL, 0.4571, 0.5733, "Raven Claw Talisman",
                     "Travel to Raven Claw Talisman."),
             },
@@ -1632,8 +1612,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-487-the-road-to-darnassus" },
             complete = QuestState(487, "completed"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5000, 0.5400, "Continue toward The Road to Darnassus",
-                    "Continue toward The Road to Darnassus."),
                 Point(MAP.TELDRASSIL, 0.5500, 0.5800, "Moon Priestess Amara",
                     "Travel to Moon Priestess Amara."),
             },
@@ -1797,8 +1775,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2241-the-apple-falls" },
             complete = QuestState(2241, "completed"),
             route = {
-                Point(MAP.DARNASSUS, 0.3263, 0.1616, "Continue toward The Apple Falls",
-                    "Continue toward The Apple Falls."),
                 Point(MAP.DARNASSUS, 0.3686, 0.2188, "Syurna",
                     "Travel to Syurna."),
             },
@@ -2101,12 +2077,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1683-vorlus-vilehoof" },
             complete = QuestObjective(1683, 1),
             route = {
-                Point(MAP.TELDRASSIL, 0.4911, 0.6180, "Continue toward Vorlus Vilehoof",
-                    "Continue toward Vorlus Vilehoof."),
-                Point(MAP.TELDRASSIL, 0.4875, 0.6284, "Continue toward Vorlus Vilehoof",
-                    "Continue toward Vorlus Vilehoof."),
-                Point(MAP.TELDRASSIL, 0.4905, 0.6500, "Continue toward Vorlus Vilehoof",
-                    "Continue toward Vorlus Vilehoof."),
                 Point(MAP.TELDRASSIL, 0.4731, 0.6365, "Vorlus Vilehoof",
                     "Travel to Vorlus Vilehoof."),
             },
@@ -2142,8 +2112,6 @@ ns:RegisterGuide({
             text = "Kill Blackmoss the Fetid and collect Moss-Twined Heart to accept a quest and He is a rare npc skip the quest if you can't find him.",
             complete = QuestState(927, "complete"),
             route = {
-                Point(MAP.TELDRASSIL, 0.4270, 0.3680, "Continue toward Blackmoss the Fetid",
-                    "Continue toward Blackmoss the Fetid."),
                 Point(MAP.TELDRASSIL, 0.4250, 0.2600, "Blackmoss the Fetid",
                     "Travel to Blackmoss the Fetid."),
             },
@@ -2243,8 +2211,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-938-mist" },
             complete = QuestState(938, "complete"),
             route = {
-                Point(MAP.TELDRASSIL, 0.3140, 0.3160, "Continue toward Mist",
-                    "Continue toward Mist."),
                 Point(MAP.TELDRASSIL, 0.3830, 0.3440, "Mist",
                     "Travel to Mist."),
             },

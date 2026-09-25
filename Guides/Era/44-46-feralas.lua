@@ -241,8 +241,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2870-against-lord-shalzaru" },
             complete = QuestState(2870, "complete"),
             route = {
-                Point(MAP.FERALAS, 0.2740, 0.6976, "Continue toward Against Lord Shalzaru",
-                    "Continue toward Against Lord Shalzaru."),
                 Point(MAP.FERALAS, 0.2847, 0.7044, "Lord Shalzaru",
                     "Travel to Lord Shalzaru."),
             },
@@ -289,8 +287,6 @@ ns:RegisterGuide({
             text = "Kill Rogue Vale Screecher and use Yeh'kinya's Bramble, then interact with the spirit in The Forgotten Coast.",
             complete = QuestState(3520, "complete"),
             route = {
-                Point(MAP.FERALAS, 0.4632, 0.4978, "Continue toward Screecher Spirits",
-                    "Continue toward Screecher Spirits."),
                 Point(MAP.FERALAS, 0.4643, 0.4908, "Rogue Vale Screecher",
                     "Travel to Rogue Vale Screecher."),
             },
@@ -407,10 +403,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2982-the-high-wilderness" },
             complete = QuestState(2982, "complete"),
             route = {
-                Point(MAP.FERALAS, 0.6108, 0.5565, "Continue toward The High Wilderness",
-                    "Continue toward The High Wilderness."),
-                Point(MAP.FERALAS, 0.5891, 0.6477, "Continue toward The High Wilderness",
-                    "Continue toward The High Wilderness."),
                 Point(MAP.FERALAS, 0.6017, 0.6691, "Gordunni Warlock",
                     "Travel to Gordunni Warlock."),
             },
@@ -422,10 +414,6 @@ ns:RegisterGuide({
             text = "Accept Freedom for All Creatures from Kindal Moonweaver in Feralas.",
             complete = QuestState(2969, "activeOrCompleted"),
             route = {
-                Point(MAP.FERALAS, 0.6561, 0.4675, "Continue toward Freedom for All Creatures",
-                    "Continue toward Freedom for All Creatures."),
-                Point(MAP.FERALAS, 0.6582, 0.4621, "Continue toward Freedom for All Creatures",
-                    "Continue toward Freedom for All Creatures."),
                 Point(MAP.FERALAS, 0.6596, 0.4566, "Kindal Moonweaver",
                     "Travel to Kindal Moonweaver."),
             },
@@ -450,10 +438,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-2969-freedom-for-all-creatures" },
             complete = QuestState(2969, "completed"),
             route = {
-                Point(MAP.FERALAS, 0.6561, 0.4675, "Continue toward Freedom for All Creatures",
-                    "Continue toward Freedom for All Creatures."),
-                Point(MAP.FERALAS, 0.6582, 0.4621, "Continue toward Freedom for All Creatures",
-                    "Continue toward Freedom for All Creatures."),
                 Point(MAP.FERALAS, 0.6595, 0.4569, "Homing Robot OOX-22/FE",
                     "Travel to Homing Robot OOX-22/FE."),
             },
@@ -477,10 +461,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2970-doling-justice" },
             complete = QuestState(2970, "complete"),
             route = {
-                Point(MAP.FERALAS, 0.6594, 0.4766, "Continue toward Doling Justice",
-                    "Continue toward Doling Justice."),
-                Point(MAP.FERALAS, 0.6672, 0.4632, "Continue toward Doling Justice",
-                    "Continue toward Doling Justice."),
                 Point(MAP.FERALAS, 0.6792, 0.4637, "Grimtotem Raider",
                     "Travel to Grimtotem Raider."),
             },
@@ -493,10 +473,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-2970-doling-justice" },
             complete = QuestState(2970, "completed"),
             route = {
-                Point(MAP.FERALAS, 0.6561, 0.4675, "Continue toward Doling Justice",
-                    "Continue toward Doling Justice."),
-                Point(MAP.FERALAS, 0.6582, 0.4621, "Continue toward Doling Justice",
-                    "Continue toward Doling Justice."),
                 Point(MAP.FERALAS, 0.6593, 0.4560, "Jer'kai Moonweaver",
                     "Travel to Jer'kai Moonweaver."),
             },
@@ -550,8 +526,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4135-the-writhing-deep" },
             complete = QuestState(4135, "completed"),
             route = {
-                Point(MAP.FERALAS, 0.7307, 0.6397, "Continue toward The Writhing Deep",
-                    "Continue toward The Writhing Deep."),
                 Point(MAP.FERALAS, 0.7209, 0.6370, "The Writhing Deep",
                     "Travel to The Writhing Deep."),
             },

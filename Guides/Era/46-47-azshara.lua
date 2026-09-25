@@ -139,8 +139,6 @@ ns:RegisterGuide({
             text = "Accept Seeping Corruption from Chemist Cuely in The Apothecarium.",
             complete = QuestState(3568, "activeOrCompleted"),
             route = {
-                Point(MAP.UNDERCITY, 0.5186, 0.8041, "Continue toward Seeping Corruption",
-                    "Continue toward Seeping Corruption."),
                 Point(MAP.UNDERCITY, 0.4990, 0.6972, "Chemist Cuely",
                     "Travel to Chemist Cuely."),
             },
@@ -187,8 +185,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-238-errand-for-apothecary-zinge" },
             complete = QuestState(238, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.5186, 0.8041, "Continue toward Errand for Apothecary Zinge",
-                    "Continue toward Errand for Apothecary Zinge."),
                 Point(MAP.UNDERCITY, 0.5012, 0.6831, "Apothecary Zinge",
                     "Travel to Apothecary Zinge."),
             },

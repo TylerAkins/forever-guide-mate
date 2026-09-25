@@ -1191,8 +1191,6 @@ ns:RegisterGuide({
             text = "Accept Boulderslide Ravine from Mor'rogal in Sun Rock Retreat.",
             complete = QuestState(6421, "activeOrCompleted"),
             route = {
-                Point(MAP.STONETALON, 0.4463, 0.6179, "Continue toward Boulderslide Ravine",
-                    "Continue toward Boulderslide Ravine."),
                 Point(MAP.STONETALON, 0.4719, 0.6416, "Mor'rogal",
                     "Travel to Mor'rogal."),
             },
@@ -1897,8 +1895,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1071-a-gnome-s-respite" },
             complete = QuestState(1071, "complete"),
             route = {
-                Point(MAP.STONETALON, 0.6790, 0.5144, "Continue toward Gnome's Respite",
-                    "Continue toward Gnome's Respite."),
                 Point(MAP.STONETALON, 0.6899, 0.5677, "Venture Co. Deforester",
                     "Travel to Venture Co. Deforester."),
             },
@@ -2450,10 +2446,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1096-gerenzo-wrenchwhistle" },
             complete = QuestState(1096, "complete"),
             route = {
-                Point(MAP.STONETALON, 0.6900, 0.4010, "Continue toward Gerenzo Wrenchwhistle",
-                    "Continue toward Gerenzo Wrenchwhistle."),
-                Point(MAP.STONETALON, 0.6790, 0.3770, "Continue toward Gerenzo Wrenchwhistle",
-                    "Continue toward Gerenzo Wrenchwhistle."),
                 Point(MAP.STONETALON, 0.6400, 0.3900, "Gerenzo Wrenchwhistle",
                     "Travel to Gerenzo Wrenchwhistle."),
             },

@@ -269,8 +269,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-170-a-new-threat" },
             complete = QuestState(170, "complete"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.3100, 0.7400, "Continue toward A New Threat",
-                    "Continue toward A New Threat."),
                 Point(MAP.DUN_MOROGH, 0.3000, 0.7400, "Rockjaw Trogg",
                     "Travel to Rockjaw Trogg."),
             },
@@ -648,12 +646,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1599-beginnings" },
             complete = QuestState(1599, "complete"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.2679, 0.7971, "Continue toward Beginnings",
-                    "Continue toward Beginnings."),
-                Point(MAP.DUN_MOROGH, 0.2810, 0.8012, "Continue toward Beginnings",
-                    "Continue toward Beginnings."),
-                Point(MAP.DUN_MOROGH, 0.3037, 0.7971, "Continue toward Beginnings",
-                    "Continue toward Beginnings."),
                 Point(MAP.DUN_MOROGH, 0.2941, 0.8107, "Frostmane Novice",
                     "Travel to Frostmane Novice."),
             },
@@ -718,12 +710,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-218-the-stolen-journal" },
             complete = QuestState(218, "complete"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.2676, 0.7975, "Continue toward The Stolen Journal",
-                    "Continue toward The Stolen Journal."),
-                Point(MAP.DUN_MOROGH, 0.2756, 0.8092, "Continue toward The Stolen Journal",
-                    "Continue toward The Stolen Journal."),
-                Point(MAP.DUN_MOROGH, 0.2912, 0.7884, "Continue toward The Stolen Journal",
-                    "Continue toward The Stolen Journal."),
                 Point(MAP.DUN_MOROGH, 0.3049, 0.8010, "Grik'nir the Cold",
                     "Travel to Grik'nir the Cold."),
             },
@@ -759,8 +745,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3361-1-felix-s-box", "objective-3361-2-felix-s-chest", "objective-3361-3-felix-s-bucket-of-bolts" },
             complete = QuestState(3361, "completed"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.2880, 0.6899, "Continue toward A Refugee's Quandary",
-                    "Continue toward A Refugee's Quandary."),
                 Point(MAP.DUN_MOROGH, 0.2856, 0.6774, "Felix Whindlebolt",
                     "Travel to Felix Whindlebolt."),
             },
@@ -1347,10 +1331,6 @@ ns:RegisterGuide({
             text = "Accept Tundra MacGrann's Stolen Stash from Tundra MacGrann in Chill Breeze Valley.",
             complete = QuestState(312, "activeOrCompleted"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.3670, 0.5213, "Continue toward Tundra MacGrann's Stolen Stash",
-                    "Continue toward Tundra MacGrann's Stolen Stash."),
-                Point(MAP.DUN_MOROGH, 0.3516, 0.5183, "Continue toward Tundra MacGrann's Stolen Stash",
-                    "Continue toward Tundra MacGrann's Stolen Stash."),
                 Point(MAP.DUN_MOROGH, 0.3457, 0.5163, "Tundra MacGrann",
                     "Travel to Tundra MacGrann."),
             },
@@ -1587,8 +1567,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-287-frostmane-hold" },
             complete = QuestState(287, "complete"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.2490, 0.5094, "Continue toward Frostmane Hold",
-                    "Continue toward Frostmane Hold."),
                 Point(MAP.DUN_MOROGH, 0.2288, 0.5207, "Frostmane Headhunter",
                     "Travel to Frostmane Headhunter."),
             },
@@ -2530,8 +2508,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1689-the-binding" },
             complete = QuestState(1689, "complete"),
             route = {
-                Point(MAP.STORMWIND, 0.2506, 0.7928, "Continue toward The Binding",
-                    "Continue toward The Binding."),
                 Point(MAP.STORMWIND, 0.2519, 0.7733, "Summoned Voidwalker",
                     "Travel to Summoned Voidwalker."),
             },
@@ -2627,8 +2603,6 @@ ns:RegisterGuide({
             text = "Accept The Lost Pilot from Pilot Hammerfoot in North Gate Outpost.",
             complete = QuestState(419, "activeOrCompleted"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.8096, 0.4295, "Continue toward The Lost Pilot",
-                    "Continue toward The Lost Pilot."),
                 Point(MAP.DUN_MOROGH, 0.8390, 0.3910, "Pilot Hammerfoot",
                     "Travel to Pilot Hammerfoot."),
             },
@@ -2688,10 +2662,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-413-shimmer-stout" },
             complete = QuestState(413, "completed"),
             route = {
-                Point(MAP.DUN_MOROGH, 0.7906, 0.5155, "Continue toward Shimmer Stout",
-                    "Continue toward Shimmer Stout."),
-                Point(MAP.DUN_MOROGH, 0.8230, 0.5340, "Continue toward Shimmer Stout",
-                    "Continue toward Shimmer Stout."),
                 Point(MAP.DUN_MOROGH, 0.8629, 0.4886, "Mountaineer Barleybrew",
                     "Travel to Mountaineer Barleybrew."),
             },
