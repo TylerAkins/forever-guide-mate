@@ -44,12 +44,43 @@ Use a substring that appears in the quest log text for that objective.
 - A handoff step depends on the previous turn-in. A turn-in depends on all objective steps for that quest.
 - Do not point `dependsOn` at a step the player has not reached yet unless that is intentional gating.
 
+### When an accept may have no `dependsOn`
+
+Many **camp pickup** accepts intentionally have an empty `dependsOn`: the route visits an NPC and several quests are picked up together. That is fine.
+
+An accept must **not** use empty `dependsOn` when the client only offers the quest **after another quest is turned in**. Example: **Nara Wildmane (1490)** only appears after **Hamuul Runetotem (1489)** at Elder Rise. The accept must `dependsOn` the **1489 turn-in** step. Copying a step from a dungeon guide without copying its `dependsOn` chain is a common mistake.
+
+The engine treats any accept with no `dependsOn` as **always ready** for routing. A bad chain lets the tracker jump to that accept early (especially after reload or stale saved progress).
+
+### Documented follow-up accepts (`CHAIN_ACCEPT_AFTER_TURNIN`)
+
+`tests/lua/guide_data_checks.lua` lists accept quests that must depend on a prior turn-in in leveling/Loremaster guides (not dungeon guides). **Add a row** when you weave a multi-step storyline into a zone route. CI enforces this in `tests/lua/lint.lua`.
+
+When copying WC / RFC / other dungeon chains into a leveling chapter, compare the **dungeon guide** `dependsOn` and turn-in NPC pins, not just the accept text.
+
+## Data checks beyond CI
+
+| Check | Command | What it catches |
+|--------|---------|----------------|
+| CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions on quest steps, **chain accepts** in `CHAIN_ACCEPT_AFTER_TURNIN`, and more |
+| Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces `CHAIN_ACCEPT_AFTER_TURNIN` (same rules as lint, quick standalone pass) |
+| Quest giver audit | in game on gossip | Step deferred if the NPC does not offer that quest (see `QuestAudit.lua`) |
+
+### Known gaps (not fully linted yet)
+
+- **Turn-in `dependsOn` all objectives** when objectives only depend on accept — many older guides still omit this; see multi-objective section above.
+- **Wrong turn-in NPC** on the last route pin (1490 was turning in at Hamuul instead of Nara) — compare dungeon guides and Wowhead; no automated check.
+- **Alliance vs Horde quest id mix-ups** — partially covered by objective/accept id lint (6128 vs 6123).
+
+After editing chains, run lint and the chain audit. Add a row to `CHAIN_ACCEPT_AFTER_TURNIN` when you fix a woven prerequisite.
+
 ## Before you ship
 
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
 lua5.1 tests/lua/lint.lua
+lua5.1 tests/lua/audit_accept_chains.lua
 ```
 
 Add focused assertions in `tests/lua/run.lua` when you fix a chain that broke in game (wrong quest id, early turn-in, and similar).

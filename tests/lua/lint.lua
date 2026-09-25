@@ -6,6 +6,7 @@
 
 local failures = 0
 local checks = 0
+local guideData = dofile("tests/lua/guide_data_checks.lua")
 
 local function Check(value, message)
     checks = checks + 1
@@ -236,23 +237,11 @@ local function ObjectiveQuestIDFromGoalID(goalID)
 end
 
 local function TurninQuestID(goalID)
-    if type(goalID) ~= "string" then
-        return nil
-    end
-    local questID = goalID:match("^turnin%-(%d+)%-")
-    return questID and tonumber(questID) or nil
+    return guideData.TurninQuestID(goalID)
 end
 
 local function DependsOnTurnin(goal, questID)
-    if type(goal.dependsOn) ~= "table" then
-        return false
-    end
-    for _, dep in ipairs(goal.dependsOn) do
-        if TurninQuestID(dep) == questID then
-            return true
-        end
-    end
-    return false
+    return guideData.DependsOnTurnin(goal, questID)
 end
 
 local function QuestObjectiveSpec(goal)
@@ -292,12 +281,13 @@ for _, guideID in ipairs(ns.guideOrder) do
                     :format(guideID, tostring(goal.id), fromID, spec.id))
             end
         end
-        if goal.kind == "accept" and type(goal.complete) == "table"
-            and type(goal.complete.quest) == "table" and goal.complete.quest.id == 1490
-            and guide.category ~= "Dungeon Quest Guides" then
-            Check(DependsOnTurnin(goal, 1489),
-                ("%s %s must wait on the Hamuul Runetotem turn-in before Nara Wildmane")
-                    :format(guideID, tostring(goal.id)))
+        if goal.kind == "accept" and guide.category ~= "Dungeon Quest Guides" then
+            local acceptQuest = guideData.AcceptQuestIDFromGoal(goal)
+            local needTurnin = acceptQuest and guideData.CHAIN_ACCEPT_AFTER_TURNIN[acceptQuest]
+            if needTurnin and not DependsOnTurnin(goal, needTurnin) then
+                Check(false, ("%s %s accept for quest %d must dependOn turnin for quest %d")
+                    :format(guideID, tostring(goal.id), acceptQuest, needTurnin))
+            end
         end
     end
 end
