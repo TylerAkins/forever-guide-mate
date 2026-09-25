@@ -812,20 +812,10 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-98322-secure-the-mountain",
-            kind = "accept",
-            priority = 550,
-            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
-            complete = QuestState(98322, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
-                    "Travel to Senir Whitebeard."),
-            },
-        },
-        {
             id = "accept-98321-flintfires-shipment",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 7 } },
             text = "Accept Flintfire's Shipment from Tognus Flintfire in Kharanos.",
             complete = QuestState(98321, "activeOrCompleted"),
             route = {
@@ -937,21 +927,10 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98322-secure-the-mountain",
-            kind = "turnin",
-            priority = 660,
-            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
-            dependsOn = { "accept-98322-secure-the-mountain" },
-            complete = QuestState(98322, "completed"),
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
-                    "Travel to Mountaineer Gretchen."),
-            },
-        },
-        {
             id = "accept-98319-secure-the-mountain",
             kind = "accept",
             priority = 670,
+            conditions = { level = { min = 8 } },
             text = "Accept Secure the Mountain from Mountaineer Gretchen.",
             dependsOn = { "turnin-98322-secure-the-mountain" },
             complete = QuestState(98319, "activeOrCompleted"),
@@ -964,6 +943,7 @@ ns:RegisterGuide({
             id = "objective-98319-secure-the-mountain",
             kind = "objective",
             priority = 680,
+            conditions = { level = { min = 8 } },
             text = "Find Mountaineer Cornelius in the Grizzled Den.",
             dependsOn = { "accept-98319-secure-the-mountain" },
             complete = QuestState(98319, "complete"),
@@ -976,6 +956,7 @@ ns:RegisterGuide({
             id = "turnin-98319-secure-the-mountain",
             kind = "turnin",
             priority = 690,
+            conditions = { level = { min = 8 } },
             text = "Turn in Secure the Mountain to Mountaineer Gretchen.",
             dependsOn = { "objective-98319-secure-the-mountain" },
             complete = QuestState(98319, "completed"),
@@ -988,6 +969,7 @@ ns:RegisterGuide({
             id = "accept-98323-secure-the-mountain",
             kind = "accept",
             priority = 700,
+            conditions = { level = { min = 8 } },
             text = "Accept Secure the Mountain from Mountaineer Gretchen.",
             dependsOn = { "turnin-98319-secure-the-mountain" },
             complete = QuestState(98323, "activeOrCompleted"),
@@ -1000,6 +982,7 @@ ns:RegisterGuide({
             id = "objective-98321-flintfires-shipment",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 7 } },
             text = "Collect 8 Flintfire Shipments in the Grizzled Den.",
             dependsOn = { "accept-98321-flintfires-shipment" },
             complete = QuestState(98321, "complete"),
@@ -1115,9 +1098,35 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98322-secure-the-mountain",
+            kind = "accept",
+            priority = 801,
+            conditions = { level = { min = 8 } },
+            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
+            complete = QuestState(98322, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
+                    "Travel to Senir Whitebeard."),
+            },
+        },
+        {
+            id = "turnin-98322-secure-the-mountain",
+            kind = "turnin",
+            priority = 802,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
+            dependsOn = { "accept-98322-secure-the-mountain" },
+            complete = QuestState(98322, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
             id = "turnin-98323-secure-the-mountain",
             kind = "turnin",
             priority = 810,
+            conditions = { level = { min = 8 } },
             text = "Turn in Secure the Mountain to Senir Whitebeard in Kharanos.",
             dependsOn = { "accept-98323-secure-the-mountain" },
             complete = QuestState(98323, "completed"),
@@ -1130,6 +1139,7 @@ ns:RegisterGuide({
             id = "turnin-98321-flintfires-shipment",
             kind = "turnin",
             priority = 820,
+            conditions = { level = { min = 7 } },
             text = "Turn in Flintfire's Shipment to Tognus Flintfire in Kharanos.",
             dependsOn = { "objective-98321-flintfires-shipment" },
             complete = QuestState(98321, "completed"),
@@ -1142,6 +1152,7 @@ ns:RegisterGuide({
             id = "accept-99158-dawn-in-the-mountains",
             kind = "accept",
             priority = 830,
+            conditions = { level = { min = 8 } },
             text = "Accept Dawn in the Mountains from Maxan Anvol in Kharanos.",
             complete = QuestState(99158, "activeOrCompleted"),
             route = {
@@ -1153,6 +1164,7 @@ ns:RegisterGuide({
             id = "turnin-99158-dawn-in-the-mountains",
             kind = "turnin",
             priority = 840,
+            conditions = { level = { min = 8 } },
             text = "Turn in Dawn in the Mountains to Father Gavin.",
             dependsOn = { "accept-99158-dawn-in-the-mountains" },
             complete = QuestState(99158, "completed"),
@@ -1165,6 +1177,7 @@ ns:RegisterGuide({
             id = "accept-99159-finding-warmth",
             kind = "accept",
             priority = 850,
+            conditions = { level = { min = 8 } },
             text = "Accept Finding Warmth from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99159, "activeOrCompleted"),
@@ -1177,6 +1190,7 @@ ns:RegisterGuide({
             id = "accept-99160-rimes-wrath",
             kind = "accept",
             priority = 860,
+            conditions = { level = { min = 8 } },
             text = "Accept Rime's Wrath from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99160, "activeOrCompleted"),
@@ -1189,6 +1203,7 @@ ns:RegisterGuide({
             id = "accept-99162-treacherous-cold",
             kind = "accept",
             priority = 870,
+            conditions = { level = { min = 8 } },
             text = "Accept Treacherous Cold from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99162, "activeOrCompleted"),
@@ -1201,6 +1216,7 @@ ns:RegisterGuide({
             id = "objective-99159-finding-warmth",
             kind = "objective",
             priority = 880,
+            conditions = { level = { min = 8 } },
             text = "Collect 14 pieces of Mostly Dry Firewood.",
             dependsOn = { "accept-99159-finding-warmth" },
             complete = QuestState(99159, "complete"),
@@ -1213,6 +1229,7 @@ ns:RegisterGuide({
             id = "objective-99160-rimes-wrath",
             kind = "objective",
             priority = 890,
+            conditions = { level = { min = 8 } },
             text = "Destroy 10 minor ice elementals.",
             dependsOn = { "accept-99160-rimes-wrath" },
             complete = QuestState(99160, "complete"),
@@ -1225,6 +1242,7 @@ ns:RegisterGuide({
             id = "objective-99162-treacherous-cold",
             kind = "objective",
             priority = 900.5,
+            conditions = { level = { min = 8 } },
             text = "Collect Stoneanvil's Rifle, Sunhammer's Rifle, and Coalbeard's Rifle.",
             dependsOn = { "accept-99162-treacherous-cold" },
             complete = QuestState(99162, "complete"),
@@ -1237,6 +1255,7 @@ ns:RegisterGuide({
             id = "turnin-99159-finding-warmth",
             kind = "turnin",
             priority = 910,
+            conditions = { level = { min = 8 } },
             text = "Turn in Finding Warmth to Father Gavin.",
             dependsOn = { "objective-99159-finding-warmth" },
             complete = QuestState(99159, "completed"),
@@ -1249,6 +1268,7 @@ ns:RegisterGuide({
             id = "turnin-99160-rimes-wrath",
             kind = "turnin",
             priority = 920,
+            conditions = { level = { min = 8 } },
             text = "Turn in Rime's Wrath to Father Gavin.",
             dependsOn = { "objective-99160-rimes-wrath" },
             complete = QuestState(99160, "completed"),
@@ -1261,6 +1281,7 @@ ns:RegisterGuide({
             id = "accept-99161-rimes-wrath",
             kind = "accept",
             priority = 930,
+            conditions = { level = { min = 8 } },
             text = "Accept the next Rime's Wrath from Father Gavin.",
             dependsOn = { "turnin-99160-rimes-wrath" },
             complete = QuestState(99161, "activeOrCompleted"),
@@ -1273,6 +1294,7 @@ ns:RegisterGuide({
             id = "objective-99161-rimes-wrath",
             kind = "objective",
             priority = 940,
+            conditions = { level = { min = 8 } },
             text = "Kill Avala and take Avala's Core.",
             dependsOn = { "accept-99161-rimes-wrath" },
             complete = QuestState(99161, "complete"),
@@ -1285,6 +1307,7 @@ ns:RegisterGuide({
             id = "turnin-99161-rimes-wrath",
             kind = "turnin",
             priority = 950,
+            conditions = { level = { min = 8 } },
             text = "Turn in Rime's Wrath to Father Gavin.",
             dependsOn = { "objective-99161-rimes-wrath" },
             complete = QuestState(99161, "completed"),
@@ -1297,6 +1320,7 @@ ns:RegisterGuide({
             id = "turnin-99162-treacherous-cold",
             kind = "turnin",
             priority = 960,
+            conditions = { level = { min = 8 } },
             text = "Turn in Treacherous Cold to Father Gavin.",
             dependsOn = { "objective-99162-treacherous-cold" },
             complete = QuestState(99162, "completed"),
@@ -1371,6 +1395,7 @@ ns:RegisterGuide({
             id = "accept-98326-frosthowl",
             kind = "accept",
             priority = 1020,
+            conditions = { level = { min = 9 } },
             text = "Accept Frosthowl from Gretta Ganter in Brewnall Village.",
             complete = QuestState(98326, "activeOrCompleted"),
             route = {
@@ -1382,6 +1407,7 @@ ns:RegisterGuide({
             id = "objective-98326-frosthowl",
             kind = "objective",
             priority = 1030,
+            conditions = { level = { min = 9 } },
             text = "Slay Frosthowl and take the Sack of Fish.",
             dependsOn = { "accept-98326-frosthowl" },
             complete = QuestState(98326, "complete"),
@@ -1394,6 +1420,7 @@ ns:RegisterGuide({
             id = "turnin-98326-frosthowl",
             kind = "turnin",
             priority = 1040,
+            conditions = { level = { min = 9 } },
             text = "Turn in Frosthowl to Gretta Ganter.",
             dependsOn = { "objective-98326-frosthowl" },
             complete = QuestState(98326, "completed"),
@@ -1656,6 +1683,7 @@ ns:RegisterGuide({
             id = "accept-95212-never-saddle-on-quality",
             kind = "accept",
             priority = 1260,
+            conditions = { level = { min = 10 } },
             text = "Accept Never Saddle on Quality from Rudra Amberstill.",
             complete = QuestState(95212, "activeOrCompleted"),
             route = {
@@ -1670,7 +1698,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Protecting the Herd from Rudra Amberstill.",
@@ -1687,7 +1715,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Protecting the Herd: Fang of Vagash. This is an elite. Bring a group.",
@@ -1705,7 +1733,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Protecting the Herd to Rudra Amberstill.",
@@ -1720,6 +1748,7 @@ ns:RegisterGuide({
             id = "objective-95212-never-saddle-on-quality",
             kind = "objective",
             priority = 1300,
+            conditions = { level = { min = 10 } },
             text = "Collect 6 Pristine Leopard Pelts from Elder Snow Leopards.",
             dependsOn = { "accept-95212-never-saddle-on-quality" },
             complete = QuestState(95212, "complete"),
@@ -1732,6 +1761,7 @@ ns:RegisterGuide({
             id = "turnin-95212-never-saddle-on-quality",
             kind = "turnin",
             priority = 1310,
+            conditions = { level = { min = 10 } },
             text = "Turn in Never Saddle on Quality to Rudra Amberstill.",
             dependsOn = { "objective-95212-never-saddle-on-quality" },
             complete = QuestState(95212, "completed"),
@@ -1746,6 +1776,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "activeOrCompleted" } },
                 },
             },
@@ -1762,6 +1793,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -1779,6 +1811,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -1796,6 +1829,7 @@ ns:RegisterGuide({
             priority = 1350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -2977,6 +3011,7 @@ ns:RegisterGuide({
             priority = 2130,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Alliance" },
                 },
             },
@@ -2993,6 +3028,7 @@ ns:RegisterGuide({
             priority = 2140,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Alliance" },
                 },
             },
@@ -3010,6 +3046,7 @@ ns:RegisterGuide({
             priority = 2150,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Alliance" },
                 },
             },
@@ -3077,7 +3114,7 @@ ns:RegisterGuide({
             priority = 2190,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept Data Hoarders from Jemma Quikswitch.",
@@ -3093,7 +3130,7 @@ ns:RegisterGuide({
             priority = 2200,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Data Hoarders: Gnomeregan Archival Data.",
@@ -3110,7 +3147,7 @@ ns:RegisterGuide({
             priority = 2210,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in Data Hoarders to Jemma Quikswitch.",
@@ -3127,7 +3164,7 @@ ns:RegisterGuide({
             priority = 2220,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept The Quarry's Smith from Frast Dokner.",
@@ -3143,7 +3180,7 @@ ns:RegisterGuide({
             priority = 2230,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "The Quarry's Smith: Copper Bar.",
@@ -3160,7 +3197,7 @@ ns:RegisterGuide({
             priority = 2240,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "The Quarry's Smith: Toughened Boar Hide.",
@@ -3177,7 +3214,7 @@ ns:RegisterGuide({
             priority = 2250,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in The Quarry's Smith to Frast Dokner.",
@@ -3195,7 +3232,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept Rejold's New Brew from Pilot Bellowfiz, then turn it in to Rejold Barleybrew.",
@@ -3212,7 +3249,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept A Visitor to Dun Morogh from Beldin Steelgrill, then turn it in to Earthseer Farsen.",
@@ -3228,7 +3265,7 @@ ns:RegisterGuide({
             priority = 2280,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             dependsOn = { "turnin-96408-a-visitor-to-dun-morogh" },
@@ -3245,7 +3282,7 @@ ns:RegisterGuide({
             priority = 2290,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Farsen's Watch: Use Farsen's Farsight.",
@@ -3262,7 +3299,7 @@ ns:RegisterGuide({
             priority = 2300,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Farsen's Watch to Earthseer Farsen.",
@@ -3279,7 +3316,7 @@ ns:RegisterGuide({
             priority = 2310,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             dependsOn = { "turnin-96392-farsens-watch" },
@@ -3296,7 +3333,7 @@ ns:RegisterGuide({
             priority = 2320,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Nip 'Em in the Bud: Dark Iron Spy.",
@@ -3313,7 +3350,7 @@ ns:RegisterGuide({
             priority = 2330,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Nip 'Em in the Bud to Earthseer Farsen.",
@@ -3325,30 +3362,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-467-stonegears-search",
-            kind = "turnin",
-            priority = 2340,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Stonegear's Search from Mountaineer Kadrell, then turn it in to Pilot Stonegear.",
-            complete = QuestState(467, "completed"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.496, 0.484, "Pilot Stonegear",
-                    "Travel to Pilot Stonegear in Loch Modan."),
-            },
-        },
-        {
             id = "accept-466-search-for-incendicite",
             kind = "accept",
             priority = 2350,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             dependsOn = { "turnin-467-stonegears-search" },
@@ -3366,7 +3386,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Search for Incendicite: Incendicite Ore.",
@@ -3384,7 +3404,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Search for Incendicite to Pilot Stonegear.",
@@ -3393,6 +3413,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.496, 0.484, "Pilot Stonegear",
                     "Travel to Pilot Stonegear."),
+            },
+        },
+        {
+            id = "turnin-467-stonegears-search",
+            kind = "turnin",
+            priority = 2371,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 23 } },
+                },
+            },
+            text = "Accept Stonegear's Search from Mountaineer Kadrell, then turn it in to Pilot Stonegear.",
+            complete = QuestState(467, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.496, 0.484, "Pilot Stonegear",
+                    "Travel to Pilot Stonegear in Loch Modan."),
             },
         },
     },

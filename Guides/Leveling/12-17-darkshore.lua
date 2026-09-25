@@ -877,6 +877,7 @@ ns:RegisterGuide({
             id = "accept-98025-wanted-jaivhanel",
             kind = "accept",
             priority = 581,
+            conditions = { level = { min = 13 } },
             text = "Accept WANTED: Jai'vhanel from the poster beside Sentinel Glynda Nal'Shea in Auberdine.",
             complete = QuestState(98025, "activeOrCompleted"),
             route = {
@@ -1280,6 +1281,7 @@ ns:RegisterGuide({
             id = "objective-98025-wanted-jaivhanel",
             kind = "objective",
             priority = 975,
+            conditions = { level = { min = 13 } },
             text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
             dependsOn = { "accept-98025-wanted-jaivhanel" },
             complete = QuestState(98025, "complete"),
@@ -1400,6 +1402,7 @@ ns:RegisterGuide({
             id = "turnin-98025-wanted-jaivhanel",
             kind = "turnin",
             priority = 1081,
+            conditions = { level = { min = 13 } },
             text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea in Auberdine.",
             dependsOn = { "objective-98025-wanted-jaivhanel" },
             complete = QuestState(98025, "completed"),

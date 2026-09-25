@@ -591,22 +591,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98028-baron-marinous",
-            kind = "turnin",
-            priority = 401,
-            conditions = {
-                all = {
-                    { quest = { id = 98028, state = "activeOrCompleted" } },
-                },
-            },
-            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
-            complete = QuestState(98028, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
-                    "Travel to Onu."),
-            },
-        },
-        {
             id = "accept-944-the-master-s-glaive",
             kind = "accept",
             priority = 410,
@@ -808,6 +792,7 @@ ns:RegisterGuide({
             priority = 565,
             conditions = {
                 all = {
+                    { level = { min = 17 } },
                     { quest = { id = 98042, state = "activeOrCompleted" } },
                 },
             },
@@ -845,6 +830,7 @@ ns:RegisterGuide({
             id = "accept-98013-swelling-forces",
             kind = "accept",
             priority = 591,
+            conditions = { level = { min = 20 } },
             text = "Accept Swelling Forces from Arbal at the Grove of the Ancients.",
             complete = QuestState(98013, "activeOrCompleted"),
             route = {
@@ -922,6 +908,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.2725, 0.3562, "Liladris Moonriver",
                     "Travel to Liladris Moonriver."),
+            },
+        },
+        {
+            id = "turnin-98028-baron-marinous",
+            kind = "turnin",
+            priority = 651,
+            conditions = {
+                all = {
+                    { level = { min = 21 } },
+                    { quest = { id = 98028, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Baron Marinous to Onu at the Grove of the Ancients if you have the Clouded Water Globe.",
+            complete = QuestState(98028, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
+                    "Travel to Onu."),
             },
         },
     },

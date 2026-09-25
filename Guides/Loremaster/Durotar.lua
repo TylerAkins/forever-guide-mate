@@ -150,7 +150,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 1 } },
+                    { level = { min = 2 } },
                 },
             },
             text = "Accept Wayward Weapons from Gornek.",
@@ -187,7 +187,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 1 } },
+                    { level = { min = 2 } },
                 },
             },
             text = "Wayward Weapons: Abandoned Training Weapon. The weapons are abandoned around the Valley of Trials. Wowhead has no weapon pin, so this marks the Den.",
@@ -296,7 +296,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 1 } },
+                    { level = { min = 2 } },
                 },
             },
             text = "Turn in Wayward Weapons to Kzan Thornslash.",
@@ -1324,7 +1324,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { quest = { id = 785, state = "activeOrCompleted" } },
                 },
             },
@@ -1446,7 +1446,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept Legging It from Vel'rin Fang.",
@@ -1463,7 +1463,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Forgotten Loa Idols from Master Vornal.",
@@ -1480,7 +1480,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Accept Bloodtalon Matriarch from Xar'Ti.",
@@ -1497,7 +1497,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1515,7 +1515,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Legging It: Ridgeshade Creeper.",
@@ -1533,7 +1533,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Legging It: Ridgeshade Lurker.",
@@ -1551,7 +1551,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { quest = { id = 96876, state = "activeOrCompleted" } },
                 },
             },
@@ -1622,7 +1622,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in Legging It to Gar'Thok.",
@@ -1640,7 +1640,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept For Honor from Turroc.",
@@ -1708,7 +1708,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept This Fruit Could Bite Back from Cook Torka.",
@@ -1852,7 +1852,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in For Honor to Turroc.",
@@ -1870,7 +1870,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in This Fruit Could Bite Back to Cook Torka.",
@@ -1960,7 +1960,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "This Fruit Could Bite Back: Prickly Pear Fruit. The fruit grows on the Razormane grounds west of Razor Hill. Wowhead has no cactus pin.",
@@ -1978,7 +1978,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "For Honor: Raider's Bow. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
@@ -1996,7 +1996,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "For Honor: Raider's Battleaxe. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
@@ -2014,7 +2014,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "For Honor: Raider's Shield. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
@@ -2194,7 +2194,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Accept Lost in the Shadows from Pal'juh.",
@@ -2211,7 +2211,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Lost in the Shadows: Escort Pal'juh. Pal'juh starts inside Kolkar Crag.",
@@ -2301,7 +2301,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Turn in Lost in the Shadows to Master Vornal.",
@@ -2337,7 +2337,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Forgotten Loa Idols: Forgotten Loa Idol. The idols are on the Echo Isles. Wowhead has no idol pin, so this marks the hexed trolls.",
@@ -2355,7 +2355,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Bloodtalon Matriarch: Bloodtalon Martriarch Eggs.",
@@ -2373,7 +2373,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2518,7 +2518,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Forgotten Loa Idols to Master Gadrin.",
@@ -2536,7 +2536,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Turn in Bloodtalon Matriarch to Xar'Ti.",
@@ -2554,7 +2554,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2936,7 +2936,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -2954,7 +2954,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3304,7 +3304,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3323,7 +3323,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3342,7 +3342,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3361,7 +3361,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3380,7 +3380,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3398,7 +3398,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3417,7 +3417,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3436,7 +3436,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3491,7 +3491,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept A Missing Hand from Orgnil Soulscar.",
@@ -3508,7 +3508,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in A Missing Hand to Heglan Shadeeye.",
@@ -3526,7 +3526,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Threat from Below from Heglan Shadeeye.",
@@ -3544,7 +3544,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Threat from Below: Orcish Dagger. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
@@ -3562,7 +3562,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Threat from Below: Banner Scrap. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
@@ -3580,7 +3580,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Threat from Below: Broken Bone Trident. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
@@ -3598,7 +3598,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -3616,7 +3616,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Threat from Below from Orgnil Soulscar.",
@@ -3634,7 +3634,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Threat from Below: Naga Spinefin.",
@@ -3652,7 +3652,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -3670,7 +3670,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
@@ -3758,7 +3758,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Threat from Below: Aggor's Belt. This is an elite. Bring a group.",
@@ -3853,7 +3853,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -3943,7 +3943,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Accept The Demon Seed from Ak'Zeloth.",
@@ -3961,7 +3961,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "The Demon Seed: Destroy the Demon Seed. Use the Flawed Power Stone at the altar before the 30 minute timer expires.",
@@ -3979,7 +3979,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Turn in The Demon Seed to Ak'Zeloth.",
@@ -3997,7 +3997,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Take a Flawed Power Stone from the table beside Ak'Zeloth. It expires in 30 minutes, so use it at the altar next.",
@@ -4016,7 +4016,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Turn in Flawed Power Stone to Flawed Power Stones.",
@@ -4105,7 +4105,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -4124,7 +4124,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -4143,7 +4143,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                     { quest = { id = 96877, state = "activeOrCompleted" } },
                 },
             },
@@ -4199,7 +4199,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Crossroads Conscription from Kargal Battlescar.",
@@ -4218,7 +4218,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Crossroads Conscription to Sergra Darkthorn at the Crossroads.",

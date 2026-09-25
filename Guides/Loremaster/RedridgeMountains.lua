@@ -376,7 +376,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 11 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept Show of Force from Deputy Feldon.",
@@ -387,66 +387,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-95999-wanted-incinerator-garim",
-            kind = "accept",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 16 } },
-                },
-            },
-            text = "Accept WANTED: Incinerator Gar'im from Magistrate Solomon.",
-            complete = QuestState(95999, "activeOrCompleted"),
-            route = {
-                Point(MAP.REDRIDGE, 0.300, 0.442, "Magistrate Solomon",
-                    "Travel to Magistrate Solomon."),
-            },
-        },
-        {
-            id = "objective-95999-wanted-incinerator-garim-1",
-            kind = "objective",
-            priority = 220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 16 } },
-                },
-            },
-            text = "WANTED: Incinerator Gar'im: Broken Staff of Incinerator Gar'im. This is an elite. Bring a group.",
-            dependsOn = { "accept-95999-wanted-incinerator-garim" },
-            complete = QuestObjective(95999, 1, "Broken Staff of Incinerator Gar'im"),
-            route = {
-                Point(MAP.REDRIDGE, 0.778, 0.862, "Incinerator Gar'im",
-                    "Travel to Incinerator Gar'im."),
-            },
-        },
-        {
-            id = "turnin-95999-wanted-incinerator-garim",
-            kind = "turnin",
-            priority = 230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 16 } },
-                },
-            },
-            text = "Turn in WANTED: Incinerator Gar'im to Magistrate Solomon.",
-            dependsOn = { "objective-95999-wanted-incinerator-garim-1" },
-            complete = QuestState(95999, "completed"),
-            route = {
-                Point(MAP.REDRIDGE, 0.300, 0.442, "Magistrate Solomon",
-                    "Travel to Magistrate Solomon."),
-            },
-        },
-        {
             id = "objective-98407-show-of-force-1",
             kind = "objective",
             priority = 240,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 11 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Show of Force: Spiked Collar.",
@@ -464,7 +411,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 11 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Turn in Show of Force to Deputy Feldon.",
@@ -1532,7 +1479,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Accept Shadow Magic from Marshal Marris.",
@@ -1549,7 +1496,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Shadow Magic: Midnight Orb. This is an elite. Bring a group.",
@@ -1567,7 +1514,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in Shadow Magic to Marshal Marris.",
@@ -1722,7 +1669,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             dependsOn = { "turnin-20-blackrock-menace" },
@@ -1740,7 +1687,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Tharil'zun: Tharil'zun's Head. This is an elite. Bring a group.",
@@ -1758,7 +1705,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Tharil'zun to Marshal Marris.",
@@ -1776,7 +1723,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             dependsOn = { "turnin-20-blackrock-menace" },
@@ -1794,7 +1741,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Alther's Mill: Greater Tarantula.",
@@ -1812,7 +1759,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Alther's Mill: Greater Tarantula.",
@@ -1830,7 +1777,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Alther's Mill: Greater Tarantula.",
@@ -1848,7 +1795,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Alther's Mill to Foreman Oslow.",
@@ -1866,7 +1813,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 21 } },
                 },
             },
             dependsOn = { "turnin-98386-althers-mill" },
@@ -1884,7 +1831,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Blackrock Blockade: Stolen Supplies.",
@@ -1902,7 +1849,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Blackrock Blockade: Stolen Weapon.",
@@ -1920,7 +1867,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Blackrock Blockade to Marshal Marris.",
@@ -2019,9 +1966,10 @@ ns:RegisterGuide({
         {
             id = "objective-95816-sign-me-up-1",
             kind = "objective",
-            priority = 1150,
+            priority = 1141,
             conditions = {
                 all = {
+                    { level = { min = 60 } },
                     { faction = "Alliance" },
                 },
             },
@@ -2032,9 +1980,10 @@ ns:RegisterGuide({
         {
             id = "objective-95816-sign-me-up-2",
             kind = "objective",
-            priority = 1160,
+            priority = 1142,
             conditions = {
                 all = {
+                    { level = { min = 60 } },
                     { faction = "Alliance" },
                 },
             },
@@ -2045,9 +1994,10 @@ ns:RegisterGuide({
         {
             id = "turnin-95816-sign-me-up",
             kind = "turnin",
-            priority = 1170,
+            priority = 1143,
             conditions = {
                 all = {
+                    { level = { min = 60 } },
                     { faction = "Alliance" },
                 },
             },
@@ -2063,7 +2013,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Accept Shipping Label from Marcy Baker.",
@@ -2074,13 +2024,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95999-wanted-incinerator-garim",
+            kind = "accept",
+            priority = 1181,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 25 } },
+                },
+            },
+            text = "Accept WANTED: Incinerator Gar'im from Magistrate Solomon.",
+            complete = QuestState(95999, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.300, 0.442, "Magistrate Solomon",
+                    "Travel to Magistrate Solomon."),
+            },
+        },
+        {
+            id = "objective-95999-wanted-incinerator-garim-1",
+            kind = "objective",
+            priority = 1182,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 25 } },
+                },
+            },
+            text = "WANTED: Incinerator Gar'im: Broken Staff of Incinerator Gar'im. This is an elite. Bring a group.",
+            dependsOn = { "accept-95999-wanted-incinerator-garim" },
+            complete = QuestObjective(95999, 1, "Broken Staff of Incinerator Gar'im"),
+            route = {
+                Point(MAP.REDRIDGE, 0.778, 0.862, "Incinerator Gar'im",
+                    "Travel to Incinerator Gar'im."),
+            },
+        },
+        {
+            id = "turnin-95999-wanted-incinerator-garim",
+            kind = "turnin",
+            priority = 1183,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 25 } },
+                },
+            },
+            text = "Turn in WANTED: Incinerator Gar'im to Magistrate Solomon.",
+            dependsOn = { "objective-95999-wanted-incinerator-garim-1" },
+            complete = QuestState(95999, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.300, 0.442, "Magistrate Solomon",
+                    "Travel to Magistrate Solomon."),
+            },
+        },
+        {
             id = "objective-98247-shipping-label-1",
             kind = "objective",
             priority = 1190,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Shipping Label: Shipping Label.",
@@ -2098,7 +2101,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Turn in Shipping Label to Marcy Baker.",
@@ -2116,7 +2119,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Accept Shipping Label from Dokimi.",
@@ -2133,7 +2136,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Shipping Label: Shipping Label.",
@@ -2151,7 +2154,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 60 } },
                 },
             },
             text = "Turn in Shipping Label to Dokimi.",
@@ -2169,7 +2172,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Dry Times from Barkeep Daniels.",
@@ -2186,7 +2189,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Dry Times: Keg of Thunderbrew.",
@@ -2204,7 +2207,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Dry Times: Cask of Merlot.",
@@ -2222,7 +2225,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Dry Times: Bottle of Moonshine.",
@@ -2240,7 +2243,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Dry Times: Skin of Sweet Rum.",
@@ -2258,7 +2261,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Dry Times to Barkeep Daniels.",
@@ -2383,7 +2386,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Accept Theocritus' Retrieval from Theocritus.",
@@ -2400,7 +2403,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept A Watchful Eye from Theocritus.",
@@ -2417,7 +2420,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Accept Morganth from Theocritus.",
@@ -2434,7 +2437,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Morganth: Pendant of Shadow. This is an elite. Bring a group.",
@@ -2452,7 +2455,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in Morganth to Theocritus.",
@@ -2470,7 +2473,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "A Watchful Eye: Glyph of Azora.",
@@ -2488,7 +2491,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in A Watchful Eye to Old Lion Statue.",
@@ -2506,7 +2509,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             dependsOn = { "turnin-94-a-watchful-eye" },
@@ -2524,7 +2527,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Looking Further: Glyph of Azora. This is an elite. Bring a group.",
@@ -2542,7 +2545,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in Looking Further to An Empty Jar.",
@@ -2560,7 +2563,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Theocritus' Retrieval: Faded Shadowhide Pendant.",
@@ -2578,7 +2581,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in Theocritus' Retrieval to Theocritus.",

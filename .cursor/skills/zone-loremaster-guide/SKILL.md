@@ -23,8 +23,8 @@ Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
 Use the first rule that fits.
 
 1. **Series follow-up.** It continues a quest already on the route. Put it immediately after that quest's turn-in. The accept or handoff `dependsOn` that turn-in.
-2. **Same giver.** The route already stops at this NPC. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins.
-3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower required level.
+2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins. A giver you met earlier does not count when this quest's recommended level is still ahead.
+3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower recommended level.
 
 Leave it out of the first wave when the guide does not know the NPC offers it yet. A follow-up that needs a turn-in keeps `dependsOn` on that turn-in.
 
@@ -38,7 +38,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 - An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.
 - Dungeon quests stay in the dungeon guides. Record every other intentional omission in the header.
 - Put faction, class, race, and profession requirements on every step of that quest. A mismatch is left out of the percentage. The same quest's steps must carry the same conditions.
-- A level requirement stays in the percentage until the character reaches it.
+- A level requirement uses Wowhead's recommended level, the Level line, not the level the quest can be started. It stays in the percentage until the character reaches it.
 - Use uiMap IDs. Wowhead area IDs are not map IDs.
 - `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
 - If Wowhead has no pin, say so and mark the nearest named landmark. Do not invent a precise pin.

@@ -105,6 +105,7 @@ ns:RegisterGuide({
             priority = 41,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -133,6 +134,7 @@ ns:RegisterGuide({
             priority = 51,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -229,6 +231,7 @@ ns:RegisterGuide({
             priority = 105,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -1172,6 +1175,7 @@ ns:RegisterGuide({
             id = "accept-96821-legging-it",
             kind = "accept",
             priority = 791,
+            conditions = { level = { min = 6 } },
             text = "Accept Legging It from Vel'rin Fang in Sen'jin Village.",
             complete = QuestState(96821, "activeOrCompleted"),
             route = {
@@ -1183,6 +1187,7 @@ ns:RegisterGuide({
             id = "accept-97225-forgotten-loa-idols",
             kind = "accept",
             priority = 792,
+            conditions = { level = { min = 9 } },
             text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
             complete = QuestState(97225, "activeOrCompleted"),
             route = {
@@ -1194,6 +1199,7 @@ ns:RegisterGuide({
             id = "accept-97223-bloodtalon-matriarch",
             kind = "accept",
             priority = 793,
+            conditions = { level = { min = 8 } },
             text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
             complete = QuestState(97223, "activeOrCompleted"),
             route = {
@@ -1207,6 +1213,7 @@ ns:RegisterGuide({
             priority = 794,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1221,6 +1228,7 @@ ns:RegisterGuide({
             id = "objective-96821-legging-it-1",
             kind = "objective",
             priority = 801,
+            conditions = { level = { min = 6 } },
             text = "Legging It: kill Ridgeshade Creepers on the way to Razor Hill.",
             dependsOn = { "accept-96821-legging-it" },
             complete = QuestObjective(96821, 1),
@@ -1233,6 +1241,7 @@ ns:RegisterGuide({
             id = "objective-96821-legging-it-2",
             kind = "objective",
             priority = 802,
+            conditions = { level = { min = 6 } },
             text = "Legging It: kill Ridgeshade Lurkers on the way to Razor Hill. A lost pack can drop for Ukor.",
             dependsOn = { "accept-96821-legging-it" },
             complete = QuestObjective(96821, 2),
@@ -1247,6 +1256,7 @@ ns:RegisterGuide({
             priority = 803,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { quest = { id = 96876, state = "activeOrCompleted" } },
                 },
             },
@@ -1295,6 +1305,7 @@ ns:RegisterGuide({
             id = "turnin-96821-legging-it",
             kind = "turnin",
             priority = 831,
+            conditions = { level = { min = 6 } },
             text = "Turn in Legging It to Gar'Thok in Razor Hill.",
             dependsOn = { "objective-96821-legging-it-1", "objective-96821-legging-it-2" },
             complete = QuestState(96821, "completed"),
@@ -1307,6 +1318,7 @@ ns:RegisterGuide({
             id = "accept-96822-for-honor",
             kind = "accept",
             priority = 832,
+            conditions = { level = { min = 6 } },
             text = "Accept For Honor from Turroc in Razor Hill Barracks.",
             complete = QuestState(96822, "activeOrCompleted"),
             route = {
@@ -1351,6 +1363,7 @@ ns:RegisterGuide({
             id = "accept-96825-this-fruit-could-bite-back",
             kind = "accept",
             priority = 861,
+            conditions = { level = { min = 6 } },
             text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
             complete = QuestState(96825, "activeOrCompleted"),
             route = {
@@ -1455,6 +1468,7 @@ ns:RegisterGuide({
             id = "turnin-96822-for-honor",
             kind = "turnin",
             priority = 951,
+            conditions = { level = { min = 6 } },
             text = "Turn in For Honor to Turroc in Razor Hill Barracks.",
             dependsOn = { "objective-96822-for-honor" },
             complete = QuestState(96822, "completed"),
@@ -1467,6 +1481,7 @@ ns:RegisterGuide({
             id = "turnin-96825-this-fruit-could-bite-back",
             kind = "turnin",
             priority = 1071,
+            conditions = { level = { min = 6 } },
             text = "Turn in This Fruit Could Bite Back to Cook Torka in Razor Hill.",
             dependsOn = { "objective-96825-this-fruit-could-bite-back" },
             complete = QuestState(96825, "completed"),
@@ -1527,6 +1542,7 @@ ns:RegisterGuide({
             id = "objective-96825-this-fruit-could-bite-back",
             kind = "objective",
             priority = 1001,
+            conditions = { level = { min = 6 } },
             text = "Collect Prickly Pear Fruit on the Razormane grounds. Wowhead has no cactus pin.",
             dependsOn = { "accept-96825-this-fruit-could-bite-back" },
             complete = QuestState(96825, "complete"),
@@ -1539,6 +1555,7 @@ ns:RegisterGuide({
             id = "objective-96822-for-honor",
             kind = "objective",
             priority = 931,
+            conditions = { level = { min = 6 } },
             text = "For Honor: collect the Raider's Bow, Battleaxe, and Shield on the Tiragarde Keep outskirts. Wowhead has no item pin.",
             dependsOn = { "accept-96822-for-honor" },
             complete = QuestState(96822, "complete"),
@@ -1617,6 +1634,7 @@ ns:RegisterGuide({
             id = "accept-99123-lost-in-the-shadows",
             kind = "accept",
             priority = 1081,
+            conditions = { level = { min = 8 } },
             text = "Accept Lost in the Shadows from Pal'juh inside Kolkar Crag.",
             complete = QuestState(99123, "activeOrCompleted"),
             route = {
@@ -1628,6 +1646,7 @@ ns:RegisterGuide({
             id = "objective-99123-lost-in-the-shadows",
             kind = "objective",
             priority = 1082,
+            conditions = { level = { min = 8 } },
             text = "Escort Pal'juh out of Kolkar Crag.",
             dependsOn = { "accept-99123-lost-in-the-shadows" },
             complete = QuestState(99123, "complete"),
@@ -1688,6 +1707,7 @@ ns:RegisterGuide({
             id = "turnin-99123-lost-in-the-shadows",
             kind = "turnin",
             priority = 1121,
+            conditions = { level = { min = 8 } },
             text = "Turn in Lost in the Shadows to Master Vornal in Sen'jin Village.",
             dependsOn = { "objective-99123-lost-in-the-shadows" },
             complete = QuestState(99123, "completed"),
@@ -1712,6 +1732,7 @@ ns:RegisterGuide({
             id = "objective-97225-forgotten-loa-idols",
             kind = "objective",
             priority = 1141,
+            conditions = { level = { min = 9 } },
             text = "Collect Forgotten Loa Idols on the Echo Isles. Wowhead has no idol pin, so this marks the hexed trolls.",
             dependsOn = { "accept-97225-forgotten-loa-idols" },
             complete = QuestState(97225, "complete"),
@@ -1724,6 +1745,7 @@ ns:RegisterGuide({
             id = "objective-97223-bloodtalon-matriarch",
             kind = "objective",
             priority = 1142,
+            conditions = { level = { min = 8 } },
             text = "Collect Bloodtalon Matriarch Eggs.",
             dependsOn = { "accept-97223-bloodtalon-matriarch" },
             complete = QuestState(97223, "complete"),
@@ -1738,6 +1760,7 @@ ns:RegisterGuide({
             priority = 1143,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1825,6 +1848,7 @@ ns:RegisterGuide({
             id = "turnin-97225-forgotten-loa-idols",
             kind = "turnin",
             priority = 1231,
+            conditions = { level = { min = 9 } },
             text = "Turn in Forgotten Loa Idols to Master Gadrin in Sen'jin Village.",
             dependsOn = { "objective-97225-forgotten-loa-idols" },
             complete = QuestState(97225, "completed"),
@@ -1837,6 +1861,7 @@ ns:RegisterGuide({
             id = "turnin-97223-bloodtalon-matriarch",
             kind = "turnin",
             priority = 1232,
+            conditions = { level = { min = 8 } },
             text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
             dependsOn = { "objective-97223-bloodtalon-matriarch" },
             complete = QuestState(97223, "completed"),
@@ -1851,6 +1876,7 @@ ns:RegisterGuide({
             priority = 1233,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2172,6 +2198,7 @@ ns:RegisterGuide({
             priority = 1471,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -2188,6 +2215,7 @@ ns:RegisterGuide({
             priority = 1472,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -2470,6 +2498,7 @@ ns:RegisterGuide({
             priority = 1701,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -2487,6 +2516,7 @@ ns:RegisterGuide({
             priority = 1702,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -2504,6 +2534,7 @@ ns:RegisterGuide({
             priority = 1703,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -2520,6 +2551,7 @@ ns:RegisterGuide({
             priority = 1704,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "completed" } },
                 },
             },
@@ -2537,6 +2569,7 @@ ns:RegisterGuide({
             priority = 1705,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "completed" } },
                 },
             },
@@ -2554,6 +2587,7 @@ ns:RegisterGuide({
             priority = 1706,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "completed" } },
                 },
             },
@@ -2593,6 +2627,7 @@ ns:RegisterGuide({
             id = "accept-99048-a-missing-hand",
             kind = "accept",
             priority = 1751,
+            conditions = { level = { min = 11 } },
             text = "Accept A Missing Hand from Orgnil Soulscar in Razor Hill.",
             complete = QuestState(99048, "activeOrCompleted"),
             route = {
@@ -2604,6 +2639,7 @@ ns:RegisterGuide({
             id = "turnin-99048-a-missing-hand",
             kind = "turnin",
             priority = 1752,
+            conditions = { level = { min = 11 } },
             text = "Turn in A Missing Hand to Heglan Shadeeye, north of Tiragarde Keep.",
             dependsOn = { "accept-99048-a-missing-hand" },
             complete = QuestState(99048, "completed"),
@@ -2616,6 +2652,7 @@ ns:RegisterGuide({
             id = "accept-99049-threat-from-below",
             kind = "accept",
             priority = 1753,
+            conditions = { level = { min = 11 } },
             text = "Accept Threat from Below from Heglan Shadeeye.",
             dependsOn = { "turnin-99048-a-missing-hand" },
             complete = QuestState(99049, "activeOrCompleted"),
@@ -2628,6 +2665,7 @@ ns:RegisterGuide({
             id = "objective-99049-threat-from-below",
             kind = "objective",
             priority = 1754,
+            conditions = { level = { min = 11 } },
             text = "Collect the Orcish Dagger, Banner Scrap, and Broken Bone Trident on the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
             dependsOn = { "accept-99049-threat-from-below" },
             complete = QuestState(99049, "complete"),
@@ -2640,6 +2678,7 @@ ns:RegisterGuide({
             id = "turnin-99049-threat-from-below",
             kind = "turnin",
             priority = 1755,
+            conditions = { level = { min = 11 } },
             text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
             dependsOn = { "objective-99049-threat-from-below" },
             complete = QuestState(99049, "completed"),
@@ -2652,6 +2691,7 @@ ns:RegisterGuide({
             id = "accept-99051-threat-from-below",
             kind = "accept",
             priority = 1756,
+            conditions = { level = { min = 11 } },
             text = "Accept the next Threat from Below from Orgnil Soulscar.",
             dependsOn = { "turnin-99049-threat-from-below" },
             complete = QuestState(99051, "activeOrCompleted"),
@@ -2664,6 +2704,7 @@ ns:RegisterGuide({
             id = "objective-99051-threat-from-below",
             kind = "objective",
             priority = 1757,
+            conditions = { level = { min = 11 } },
             text = "Collect 9 Naga Spinefins from Spitelash naga on the north coast.",
             dependsOn = { "accept-99051-threat-from-below" },
             complete = QuestState(99051, "complete"),
@@ -2676,6 +2717,7 @@ ns:RegisterGuide({
             id = "turnin-99051-threat-from-below",
             kind = "turnin",
             priority = 1758,
+            conditions = { level = { min = 11 } },
             text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
             dependsOn = { "objective-99051-threat-from-below" },
             complete = QuestState(99051, "completed"),
@@ -2688,6 +2730,7 @@ ns:RegisterGuide({
             id = "accept-99052-threat-from-below",
             kind = "accept",
             priority = 1759,
+            conditions = { level = { min = 12 } },
             text = "Accept the next Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
             dependsOn = { "turnin-99051-threat-from-below" },
             complete = QuestState(99052, "activeOrCompleted"),
@@ -2750,6 +2793,7 @@ ns:RegisterGuide({
             id = "objective-99052-threat-from-below",
             kind = "objective",
             priority = 1801,
+            conditions = { level = { min = 12 } },
             text = "Kill Aggor the Young on the north coast and take Aggor's Belt. This is an elite. Bring a group.",
             dependsOn = { "accept-99052-threat-from-below" },
             complete = QuestState(99052, "complete"),
@@ -2832,6 +2876,7 @@ ns:RegisterGuide({
             id = "turnin-99052-threat-from-below",
             kind = "turnin",
             priority = 1865,
+            conditions = { level = { min = 12 } },
             text = "Turn in Threat from Below to Orgnil Soulscar in Razor Hill.",
             dependsOn = { "objective-99052-threat-from-below" },
             complete = QuestState(99052, "completed"),
@@ -2994,6 +3039,7 @@ ns:RegisterGuide({
             priority = 1971,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3011,6 +3057,7 @@ ns:RegisterGuide({
             priority = 1972,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3028,6 +3075,7 @@ ns:RegisterGuide({
             priority = 1973,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3045,6 +3093,7 @@ ns:RegisterGuide({
             priority = 1974,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3062,6 +3111,7 @@ ns:RegisterGuide({
             priority = 1975,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 96877, state = "activeOrCompleted" } },
                 },
             },

@@ -808,20 +808,10 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-98322-secure-the-mountain",
-            kind = "accept",
-            priority = 551,
-            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
-            complete = QuestState(98322, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
-                    "Travel to Senir Whitebeard."),
-            },
-        },
-        {
             id = "accept-98321-flintfires-shipment",
             kind = "accept",
             priority = 552,
+            conditions = { level = { min = 7 } },
             text = "Accept Flintfire's Shipment from Tognus Flintfire in Kharanos.",
             complete = QuestState(98321, "activeOrCompleted"),
             route = {
@@ -943,21 +933,10 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98322-secure-the-mountain",
-            kind = "turnin",
-            priority = 661,
-            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
-            dependsOn = { "accept-98322-secure-the-mountain" },
-            complete = QuestState(98322, "completed"),
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
-                    "Travel to Mountaineer Gretchen."),
-            },
-        },
-        {
             id = "accept-98319-secure-the-mountain",
             kind = "accept",
             priority = 662,
+            conditions = { level = { min = 8 } },
             text = "Accept Secure the Mountain from Mountaineer Gretchen.",
             dependsOn = { "turnin-98322-secure-the-mountain" },
             complete = QuestState(98319, "activeOrCompleted"),
@@ -970,6 +949,7 @@ ns:RegisterGuide({
             id = "objective-98319-secure-the-mountain",
             kind = "objective",
             priority = 663,
+            conditions = { level = { min = 8 } },
             text = "Find Mountaineer Cornelius in the Grizzled Den.",
             dependsOn = { "accept-98319-secure-the-mountain" },
             complete = QuestState(98319, "complete"),
@@ -982,6 +962,7 @@ ns:RegisterGuide({
             id = "turnin-98319-secure-the-mountain",
             kind = "turnin",
             priority = 664,
+            conditions = { level = { min = 8 } },
             text = "Turn in Secure the Mountain to Mountaineer Gretchen.",
             dependsOn = { "objective-98319-secure-the-mountain" },
             complete = QuestState(98319, "completed"),
@@ -994,6 +975,7 @@ ns:RegisterGuide({
             id = "accept-98323-secure-the-mountain",
             kind = "accept",
             priority = 665,
+            conditions = { level = { min = 8 } },
             text = "Accept Secure the Mountain from Mountaineer Gretchen.",
             dependsOn = { "turnin-98319-secure-the-mountain" },
             complete = QuestState(98323, "activeOrCompleted"),
@@ -1006,6 +988,7 @@ ns:RegisterGuide({
             id = "objective-98321-flintfires-shipment",
             kind = "objective",
             priority = 666,
+            conditions = { level = { min = 7 } },
             text = "Collect 8 Flintfire Shipments in the Grizzled Den.",
             dependsOn = { "accept-98321-flintfires-shipment" },
             complete = QuestState(98321, "complete"),
@@ -1121,9 +1104,35 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98322-secure-the-mountain",
+            kind = "accept",
+            priority = 771,
+            conditions = { level = { min = 8 } },
+            text = "Accept Secure the Mountain from Senir Whitebeard in Kharanos.",
+            complete = QuestState(98322, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Senir Whitebeard",
+                    "Travel to Senir Whitebeard."),
+            },
+        },
+        {
+            id = "turnin-98322-secure-the-mountain",
+            kind = "turnin",
+            priority = 772,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Secure the Mountain to Mountaineer Gretchen, west of Kharanos.",
+            dependsOn = { "accept-98322-secure-the-mountain" },
+            complete = QuestState(98322, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4400, 0.5700, "Mountaineer Gretchen",
+                    "Travel to Mountaineer Gretchen."),
+            },
+        },
+        {
             id = "turnin-98323-secure-the-mountain",
             kind = "turnin",
-            priority = 771,
+            priority = 773,
+            conditions = { level = { min = 8 } },
             text = "Turn in Secure the Mountain to Senir Whitebeard in Kharanos.",
             dependsOn = { "accept-98323-secure-the-mountain" },
             complete = QuestState(98323, "completed"),
@@ -1135,7 +1144,8 @@ ns:RegisterGuide({
         {
             id = "turnin-98321-flintfires-shipment",
             kind = "turnin",
-            priority = 772,
+            priority = 774,
+            conditions = { level = { min = 7 } },
             text = "Turn in Flintfire's Shipment to Tognus Flintfire in Kharanos.",
             dependsOn = { "objective-98321-flintfires-shipment" },
             complete = QuestState(98321, "completed"),
@@ -1147,7 +1157,8 @@ ns:RegisterGuide({
         {
             id = "accept-99158-dawn-in-the-mountains",
             kind = "accept",
-            priority = 773,
+            priority = 775,
+            conditions = { level = { min = 8 } },
             text = "Accept Dawn in the Mountains from Maxan Anvol in Kharanos.",
             complete = QuestState(99158, "activeOrCompleted"),
             route = {
@@ -1158,7 +1169,8 @@ ns:RegisterGuide({
         {
             id = "turnin-99158-dawn-in-the-mountains",
             kind = "turnin",
-            priority = 774,
+            priority = 776,
+            conditions = { level = { min = 8 } },
             text = "Turn in Dawn in the Mountains to Father Gavin.",
             dependsOn = { "accept-99158-dawn-in-the-mountains" },
             complete = QuestState(99158, "completed"),
@@ -1170,7 +1182,8 @@ ns:RegisterGuide({
         {
             id = "accept-99159-finding-warmth",
             kind = "accept",
-            priority = 775,
+            priority = 777,
+            conditions = { level = { min = 8 } },
             text = "Accept Finding Warmth from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99159, "activeOrCompleted"),
@@ -1182,7 +1195,8 @@ ns:RegisterGuide({
         {
             id = "accept-99160-rimes-wrath",
             kind = "accept",
-            priority = 776,
+            priority = 778,
+            conditions = { level = { min = 8 } },
             text = "Accept Rime's Wrath from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99160, "activeOrCompleted"),
@@ -1194,7 +1208,8 @@ ns:RegisterGuide({
         {
             id = "accept-99162-treacherous-cold",
             kind = "accept",
-            priority = 777,
+            priority = 779,
+            conditions = { level = { min = 8 } },
             text = "Accept Treacherous Cold from Father Gavin.",
             dependsOn = { "turnin-99158-dawn-in-the-mountains" },
             complete = QuestState(99162, "activeOrCompleted"),
@@ -1206,7 +1221,8 @@ ns:RegisterGuide({
         {
             id = "objective-99159-finding-warmth",
             kind = "objective",
-            priority = 778,
+            priority = 780,
+            conditions = { level = { min = 8 } },
             text = "Collect 14 pieces of Mostly Dry Firewood.",
             dependsOn = { "accept-99159-finding-warmth" },
             complete = QuestState(99159, "complete"),
@@ -1218,7 +1234,8 @@ ns:RegisterGuide({
         {
             id = "objective-99160-rimes-wrath",
             kind = "objective",
-            priority = 779,
+            priority = 781,
+            conditions = { level = { min = 8 } },
             text = "Destroy 10 minor ice elementals.",
             dependsOn = { "accept-99160-rimes-wrath" },
             complete = QuestState(99160, "complete"),
@@ -1230,7 +1247,8 @@ ns:RegisterGuide({
         {
             id = "objective-99162-treacherous-cold",
             kind = "objective",
-            priority = 779.5,
+            priority = 781.5,
+            conditions = { level = { min = 8 } },
             text = "Collect Stoneanvil's Rifle, Sunhammer's Rifle, and Coalbeard's Rifle.",
             dependsOn = { "accept-99162-treacherous-cold" },
             complete = QuestState(99162, "complete"),
@@ -1242,7 +1260,8 @@ ns:RegisterGuide({
         {
             id = "turnin-99159-finding-warmth",
             kind = "turnin",
-            priority = 781,
+            priority = 783,
+            conditions = { level = { min = 8 } },
             text = "Turn in Finding Warmth to Father Gavin.",
             dependsOn = { "objective-99159-finding-warmth" },
             complete = QuestState(99159, "completed"),
@@ -1254,7 +1273,8 @@ ns:RegisterGuide({
         {
             id = "turnin-99160-rimes-wrath",
             kind = "turnin",
-            priority = 782,
+            priority = 784,
+            conditions = { level = { min = 8 } },
             text = "Turn in Rime's Wrath to Father Gavin.",
             dependsOn = { "objective-99160-rimes-wrath" },
             complete = QuestState(99160, "completed"),
@@ -1266,7 +1286,8 @@ ns:RegisterGuide({
         {
             id = "accept-99161-rimes-wrath",
             kind = "accept",
-            priority = 783,
+            priority = 785,
+            conditions = { level = { min = 8 } },
             text = "Accept the next Rime's Wrath from Father Gavin.",
             dependsOn = { "turnin-99160-rimes-wrath" },
             complete = QuestState(99161, "activeOrCompleted"),
@@ -1278,7 +1299,8 @@ ns:RegisterGuide({
         {
             id = "objective-99161-rimes-wrath",
             kind = "objective",
-            priority = 784,
+            priority = 786,
+            conditions = { level = { min = 8 } },
             text = "Kill Avala and take Avala's Core.",
             dependsOn = { "accept-99161-rimes-wrath" },
             complete = QuestState(99161, "complete"),
@@ -1290,7 +1312,8 @@ ns:RegisterGuide({
         {
             id = "turnin-99161-rimes-wrath",
             kind = "turnin",
-            priority = 785,
+            priority = 787,
+            conditions = { level = { min = 8 } },
             text = "Turn in Rime's Wrath to Father Gavin.",
             dependsOn = { "objective-99161-rimes-wrath" },
             complete = QuestState(99161, "completed"),
@@ -1302,7 +1325,8 @@ ns:RegisterGuide({
         {
             id = "turnin-99162-treacherous-cold",
             kind = "turnin",
-            priority = 786,
+            priority = 788,
+            conditions = { level = { min = 8 } },
             text = "Turn in Treacherous Cold to Father Gavin.",
             dependsOn = { "objective-99162-treacherous-cold" },
             complete = QuestState(99162, "completed"),
@@ -1314,7 +1338,7 @@ ns:RegisterGuide({
         {
             id = "accept-412-operation-recombobulation",
             kind = "accept",
-            priority = 788,
+            priority = 790,
             text = "Accept Operation Recombobulation from Razzle Sprysprocket in Kharanos.",
             complete = QuestState(412, "activeOrCompleted"),
             route = {
@@ -1325,7 +1349,7 @@ ns:RegisterGuide({
         {
             id = "accept-312-tundra-macgrann-s-stolen-stash",
             kind = "accept",
-            priority = 800,
+            priority = 802,
             text = "Accept Tundra MacGrann's Stolen Stash from Tundra MacGrann in Chill Breeze Valley.",
             complete = QuestState(312, "activeOrCompleted"),
             route = {
@@ -1340,7 +1364,7 @@ ns:RegisterGuide({
         {
             id = "objective-312-tundra-macgrann-s-stolen-stash",
             kind = "objective",
-            priority = 810,
+            priority = 812,
             text = "Find MacGrann's Meat Locker in the cave guarded by Old Icebeard. Wait until he patrols out away from the chest and quickly run in and loot MacGrann's Dried Meats and run back out.",
             dependsOn = { "accept-312-tundra-macgrann-s-stolen-stash" },
             complete = QuestState(312, "complete"),
@@ -1352,7 +1376,7 @@ ns:RegisterGuide({
         {
             id = "turnin-312-tundra-macgrann-s-stolen-stash",
             kind = "turnin",
-            priority = 820,
+            priority = 822,
             text = "Turn in Tundra MacGrann's Stolen Stash to Tundra MacGrann in Chill Breeze Valley.",
             dependsOn = { "objective-312-tundra-macgrann-s-stolen-stash" },
             complete = QuestState(312, "completed"),
@@ -1364,7 +1388,7 @@ ns:RegisterGuide({
         {
             id = "turnin-318-evershine",
             kind = "turnin",
-            priority = 840,
+            priority = 842,
             text = "Turn in Evershine to Rejold Barleybrew in Brewnall Village.",
             dependsOn = { "accept-318-evershine" },
             complete = QuestState(318, "completed"),
@@ -1376,7 +1400,8 @@ ns:RegisterGuide({
         {
             id = "accept-98326-frosthowl",
             kind = "accept",
-            priority = 841,
+            priority = 843,
+            conditions = { level = { min = 9 } },
             text = "Accept Frosthowl from Gretta Ganter in Brewnall Village.",
             complete = QuestState(98326, "activeOrCompleted"),
             route = {
@@ -1387,7 +1412,8 @@ ns:RegisterGuide({
         {
             id = "objective-98326-frosthowl",
             kind = "objective",
-            priority = 842,
+            priority = 844,
+            conditions = { level = { min = 9 } },
             text = "Slay Frosthowl and take the Sack of Fish.",
             dependsOn = { "accept-98326-frosthowl" },
             complete = QuestState(98326, "complete"),
@@ -1399,7 +1425,8 @@ ns:RegisterGuide({
         {
             id = "turnin-98326-frosthowl",
             kind = "turnin",
-            priority = 843,
+            priority = 845,
+            conditions = { level = { min = 9 } },
             text = "Turn in Frosthowl to Gretta Ganter.",
             dependsOn = { "objective-98326-frosthowl" },
             complete = QuestState(98326, "completed"),
@@ -1411,7 +1438,7 @@ ns:RegisterGuide({
         {
             id = "accept-319-a-favor-for-evershine",
             kind = "accept",
-            priority = 850,
+            priority = 852,
             text = "Accept A Favor for Evershine from Rejold Barleybrew in Brewnall Village.",
             complete = QuestState(319, "activeOrCompleted"),
             route = {
@@ -1422,7 +1449,7 @@ ns:RegisterGuide({
         {
             id = "accept-315-the-perfect-stout",
             kind = "accept",
-            priority = 860,
+            priority = 862,
             text = "Accept The Perfect Stout from Rejold Barleybrew in Brewnall Village.",
             complete = QuestState(315, "activeOrCompleted"),
             route = {
@@ -1433,7 +1460,7 @@ ns:RegisterGuide({
         {
             id = "accept-310-bitter-rivals",
             kind = "accept",
-            priority = 870,
+            priority = 872,
             text = "Accept Bitter Rivals from Marleth Barleybrew in Brewnall Village.",
             complete = QuestState(310, "activeOrCompleted"),
             route = {
@@ -1444,7 +1471,7 @@ ns:RegisterGuide({
         {
             id = "objective-315-the-perfect-stout",
             kind = "objective",
-            priority = 880,
+            priority = 882,
             text = "Collect 6 Shimmerweed dropped by Frostmane Seer and from the Shimmerweed Baskets in the area.",
             dependsOn = { "accept-315-the-perfect-stout" },
             complete = QuestState(315, "complete"),
@@ -1456,7 +1483,7 @@ ns:RegisterGuide({
         {
             id = "objective-319-a-favor-for-evershine",
             kind = "objective",
-            priority = 890,
+            priority = 892,
             text = "Kill 6 Ice Claw Bear, 8 Elder Crag Boar and 8 Snow Leopard found west of Brewnall Village.",
             dependsOn = { "accept-319-a-favor-for-evershine" },
             complete = QuestState(319, "complete"),
@@ -1468,7 +1495,7 @@ ns:RegisterGuide({
         {
             id = "turnin-315-the-perfect-stout",
             kind = "turnin",
-            priority = 910,
+            priority = 912,
             text = "Turn in The Perfect Stout to Rejold Barleybrew in Brewnall Village.",
             dependsOn = { "objective-315-the-perfect-stout" },
             complete = QuestState(315, "completed"),
@@ -1480,7 +1507,7 @@ ns:RegisterGuide({
         {
             id = "turnin-319-a-favor-for-evershine",
             kind = "turnin",
-            priority = 920,
+            priority = 922,
             text = "Turn in A Favor for Evershine to Rejold Barleybrew in Brewnall Village.",
             dependsOn = { "objective-319-a-favor-for-evershine" },
             complete = QuestState(319, "completed"),
@@ -1492,7 +1519,7 @@ ns:RegisterGuide({
         {
             id = "accept-320-return-to-bellowfiz",
             kind = "accept",
-            priority = 930,
+            priority = 932,
             text = "Accept Return to Bellowfiz from Rejold Barleybrew in Brewnall Village.",
             complete = QuestState(320, "activeOrCompleted"),
             route = {
@@ -1503,7 +1530,7 @@ ns:RegisterGuide({
         {
             id = "accept-413-shimmer-stout",
             kind = "accept",
-            priority = 940,
+            priority = 942,
             text = "Accept Shimmer Stout from Rejold Barleybrew in Brewnall Village.",
             complete = QuestState(413, "activeOrCompleted"),
             route = {
@@ -1514,7 +1541,7 @@ ns:RegisterGuide({
         {
             id = "objective-311-thunder-ale",
             kind = "objective",
-            priority = 960,
+            priority = 962,
             text = "Buy Thunder Ale from Innkeeper Belm in Thunderbrew Distillery.",
             dependsOn = { "accept-311-return-to-marleth" },
             complete = QuestState(311, "complete"),
@@ -1526,7 +1553,7 @@ ns:RegisterGuide({
         {
             id = "turnin-310-bitter-rivals",
             kind = "turnin",
-            priority = 970,
+            priority = 972,
             text = "Turn in Bitter Rivals. This is an elite. Bring a group.",
             dependsOn = { "accept-310-bitter-rivals" },
             complete = QuestState(310, "completed"),
@@ -1538,7 +1565,7 @@ ns:RegisterGuide({
         {
             id = "accept-311-return-to-marleth",
             kind = "accept",
-            priority = 980,
+            priority = 982,
             text = "Accept Return to Marleth.",
             complete = QuestState(311, "activeOrCompleted"),
             route = {
@@ -1549,7 +1576,7 @@ ns:RegisterGuide({
         {
             id = "turnin-311-return-to-marleth",
             kind = "turnin",
-            priority = 1000,
+            priority = 1002,
             text = "Turn in Return to Marleth to Marleth Barleybrew in Brewnall Village.",
             dependsOn = { "objective-311-thunder-ale" },
             complete = QuestState(311, "completed"),
@@ -1561,7 +1588,7 @@ ns:RegisterGuide({
         {
             id = "travel-287-frostmane-hold",
             kind = "travel",
-            priority = 1010,
+            priority = 1012,
             text = "Travel to Frostmane Hold. Go inside the cave to explore Frostmane Hold and kill 5 Frostmane Headhunter.",
             complete = QuestState(287, "complete"),
             dependsOn = { "accept-287-frostmane-hold" },
@@ -1573,7 +1600,7 @@ ns:RegisterGuide({
         {
             id = "objective-287-frostmane-hold",
             kind = "objective",
-            priority = 1020,
+            priority = 1022,
             text = "Go inside the cave to explore Frostmane Hold and kill 5 Frostmane Headhunter.",
             dependsOn = { "accept-287-frostmane-hold" },
             complete = QuestState(287, "complete"),
@@ -1587,7 +1614,7 @@ ns:RegisterGuide({
         {
             id = "objective-412-operation-recombobulation",
             kind = "objective",
-            priority = 1040,
+            priority = 1042,
             text = "Kill Leper Gnome and collect 8 Restabilization Cog and 8 Gyromechanic Gear in Gnomeregan.",
             dependsOn = { "accept-412-operation-recombobulation" },
             complete = QuestState(412, "complete"),
@@ -1599,7 +1626,7 @@ ns:RegisterGuide({
         {
             id = "turnin-287-frostmane-hold",
             kind = "turnin",
-            priority = 1060,
+            priority = 1062,
             text = "Turn in Frostmane Hold to Senir Whitebeard in Kharanos.",
             dependsOn = { "objective-287-frostmane-hold" },
             complete = QuestState(287, "completed"),
@@ -1611,7 +1638,7 @@ ns:RegisterGuide({
         {
             id = "accept-291-the-reports",
             kind = "accept",
-            priority = 1070,
+            priority = 1072,
             conditions = {
                 all = {
                     { race = 3 },
@@ -1627,7 +1654,7 @@ ns:RegisterGuide({
         {
             id = "turnin-412-operation-recombobulation",
             kind = "turnin",
-            priority = 1080,
+            priority = 1082,
             text = "Turn in Operation Recombobulation to Razzle Sprysprocket in Kharanos.",
             dependsOn = { "objective-412-operation-recombobulation" },
             complete = QuestState(412, "completed"),
@@ -1639,7 +1666,7 @@ ns:RegisterGuide({
         {
             id = "turnin-320-return-to-bellowfiz",
             kind = "turnin",
-            priority = 1100,
+            priority = 1102,
             text = "Turn in Return to Bellowfiz to Pilot Bellowfiz in Steelgrill's Depot.",
             dependsOn = { "accept-320-return-to-bellowfiz" },
             complete = QuestState(320, "completed"),
@@ -1651,7 +1678,7 @@ ns:RegisterGuide({
         {
             id = "accept-433-the-public-servant",
             kind = "accept",
-            priority = 1120,
+            priority = 1122,
             text = "Accept The Public Servant from Senator Mehr Stonehallow in Gol'Bolar Quarry.",
             complete = QuestState(433, "activeOrCompleted"),
             route = {
@@ -1662,7 +1689,7 @@ ns:RegisterGuide({
         {
             id = "accept-432-those-blasted-troggs",
             kind = "accept",
-            priority = 1130,
+            priority = 1132,
             text = "Accept Those Blasted Troggs! in Gol'Bolar Quarry.",
             complete = QuestState(432, "activeOrCompleted"),
             route = {
@@ -1673,7 +1700,8 @@ ns:RegisterGuide({
         {
             id = "accept-95212-never-saddle-on-quality",
             kind = "accept",
-            priority = 1131,
+            priority = 1133,
+            conditions = { level = { min = 10 } },
             text = "Accept Never Saddle on Quality from Rudra Amberstill.",
             complete = QuestState(95212, "activeOrCompleted"),
             route = {
@@ -1684,7 +1712,8 @@ ns:RegisterGuide({
         {
             id = "objective-95212-never-saddle-on-quality",
             kind = "objective",
-            priority = 1132,
+            priority = 1134,
+            conditions = { level = { min = 10 } },
             text = "Collect 6 Pristine Leopard Pelts from Elder Snow Leopards.",
             dependsOn = { "accept-95212-never-saddle-on-quality" },
             complete = QuestState(95212, "complete"),
@@ -1696,7 +1725,8 @@ ns:RegisterGuide({
         {
             id = "turnin-95212-never-saddle-on-quality",
             kind = "turnin",
-            priority = 1133,
+            priority = 1135,
+            conditions = { level = { min = 10 } },
             text = "Turn in Never Saddle on Quality to Rudra Amberstill.",
             dependsOn = { "objective-95212-never-saddle-on-quality" },
             complete = QuestState(95212, "completed"),
@@ -1708,9 +1738,10 @@ ns:RegisterGuide({
         {
             id = "turnin-95213-stolen-blasting-powder",
             kind = "turnin",
-            priority = 1134,
+            priority = 1136,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "activeOrCompleted" } },
                 },
             },
@@ -1724,9 +1755,10 @@ ns:RegisterGuide({
         {
             id = "accept-95214-stolen-blasting-powder",
             kind = "accept",
-            priority = 1135,
+            priority = 1137,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -1741,9 +1773,10 @@ ns:RegisterGuide({
         {
             id = "objective-95214-stolen-blasting-powder",
             kind = "objective",
-            priority = 1136,
+            priority = 1138,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -1758,9 +1791,10 @@ ns:RegisterGuide({
         {
             id = "turnin-95214-stolen-blasting-powder",
             kind = "turnin",
-            priority = 1137,
+            priority = 1139,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 95213, state = "completed" } },
                 },
             },
@@ -1775,7 +1809,7 @@ ns:RegisterGuide({
         {
             id = "objective-433-the-public-servant",
             kind = "objective",
-            priority = 1140,
+            priority = 1142,
             text = "Kill 10 Rockjaw Bonesnapper around the Gol'Bolar Quarry.",
             dependsOn = { "accept-433-the-public-servant" },
             complete = QuestState(433, "complete"),
@@ -1787,7 +1821,7 @@ ns:RegisterGuide({
         {
             id = "objective-432-those-blasted-troggs",
             kind = "objective",
-            priority = 1150,
+            priority = 1152,
             text = "Kill 6 Rockjaw Skullthumper around the Gol'Bolar Quarry.",
             dependsOn = { "accept-432-those-blasted-troggs" },
             complete = QuestState(432, "complete"),
@@ -1799,7 +1833,7 @@ ns:RegisterGuide({
         {
             id = "turnin-433-the-public-servant",
             kind = "turnin",
-            priority = 1160,
+            priority = 1162,
             text = "Turn in The Public Servant to Senator Mehr Stonehallow in Gol'Bolar Quarry.",
             dependsOn = { "objective-433-the-public-servant" },
             complete = QuestState(433, "completed"),
@@ -1811,7 +1845,7 @@ ns:RegisterGuide({
         {
             id = "turnin-432-those-blasted-troggs",
             kind = "turnin",
-            priority = 1170,
+            priority = 1172,
             text = "Turn in Those Blasted Troggs! to Foreman Stonebrow in Gol'Bolar Quarry.",
             dependsOn = { "objective-432-those-blasted-troggs" },
             complete = QuestState(432, "completed"),
@@ -1823,7 +1857,7 @@ ns:RegisterGuide({
         {
             id = "accept-1879-speak-with-bink",
             kind = "accept",
-            priority = 1190,
+            priority = 1192,
             conditions = {
                 all = {
                     { class = 8 },
@@ -1839,7 +1873,7 @@ ns:RegisterGuide({
         {
             id = "accept-2218-road-to-salvation",
             kind = "accept",
-            priority = 1200,
+            priority = 1202,
             conditions = {
                 all = {
                     { class = 4 },
@@ -1855,7 +1889,7 @@ ns:RegisterGuide({
         {
             id = "accept-6064-taming-the-beast",
             kind = "accept",
-            priority = 1210,
+            priority = 1212,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1872,7 +1906,7 @@ ns:RegisterGuide({
         {
             id = "objective-6064-taming-the-beast",
             kind = "objective",
-            priority = 1220,
+            priority = 1222,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1890,7 +1924,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6064-taming-the-beast",
             kind = "turnin",
-            priority = 1230,
+            priority = 1232,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1908,7 +1942,7 @@ ns:RegisterGuide({
         {
             id = "accept-6084-taming-the-beast",
             kind = "accept",
-            priority = 1240,
+            priority = 1242,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1925,7 +1959,7 @@ ns:RegisterGuide({
         {
             id = "objective-6084-taming-the-beast",
             kind = "objective",
-            priority = 1250,
+            priority = 1252,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1943,7 +1977,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6084-taming-the-beast",
             kind = "turnin",
-            priority = 1260,
+            priority = 1262,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1961,7 +1995,7 @@ ns:RegisterGuide({
         {
             id = "accept-6085-taming-the-beast",
             kind = "accept",
-            priority = 1270,
+            priority = 1272,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1978,7 +2012,7 @@ ns:RegisterGuide({
         {
             id = "objective-6085-taming-the-beast",
             kind = "objective",
-            priority = 1280,
+            priority = 1282,
             conditions = {
                 all = {
                     { class = 3 },
@@ -1996,7 +2030,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6085-taming-the-beast",
             kind = "turnin",
-            priority = 1290,
+            priority = 1292,
             conditions = {
                 all = {
                     { class = 3 },
@@ -2014,7 +2048,7 @@ ns:RegisterGuide({
         {
             id = "accept-6086-training-the-beast",
             kind = "accept",
-            priority = 1300,
+            priority = 1302,
             conditions = {
                 all = {
                     { class = 3 },
@@ -2031,7 +2065,7 @@ ns:RegisterGuide({
         {
             id = "accept-1679-muren-stormpike",
             kind = "accept",
-            priority = 1310,
+            priority = 1312,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2047,7 +2081,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1679-muren-stormpike",
             kind = "turnin",
-            priority = 1320,
+            priority = 1322,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2064,7 +2098,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97263-your-package-has-arrived",
             kind = "turnin",
-            priority = 1321,
+            priority = 1323,
             conditions = {
                 all = {
                     { quest = { id = 97263, state = "activeOrCompleted" } },
@@ -2080,7 +2114,7 @@ ns:RegisterGuide({
         {
             id = "accept-1678-vejrek",
             kind = "accept",
-            priority = 1330,
+            priority = 1332,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2096,7 +2130,7 @@ ns:RegisterGuide({
         {
             id = "objective-1678-vejrek",
             kind = "objective",
-            priority = 1350,
+            priority = 1352,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2113,7 +2147,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1678-vejrek",
             kind = "turnin",
-            priority = 1360,
+            priority = 1362,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2130,7 +2164,7 @@ ns:RegisterGuide({
         {
             id = "accept-1680-tormus-deepforge",
             kind = "accept",
-            priority = 1370,
+            priority = 1372,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2146,7 +2180,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1680-tormus-deepforge",
             kind = "turnin",
-            priority = 1380,
+            priority = 1382,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2163,7 +2197,7 @@ ns:RegisterGuide({
         {
             id = "accept-1681-ironband-s-compound",
             kind = "accept",
-            priority = 1390,
+            priority = 1392,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2179,7 +2213,7 @@ ns:RegisterGuide({
         {
             id = "objective-1681-ironband-s-compound",
             kind = "objective",
-            priority = 1410,
+            priority = 1412,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2196,7 +2230,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1681-ironband-s-compound",
             kind = "turnin",
-            priority = 1440,
+            priority = 1442,
             conditions = {
                 all = {
                     { class = 1 },
@@ -2213,7 +2247,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6086-training-the-beast",
             kind = "turnin",
-            priority = 1450,
+            priority = 1452,
             conditions = {
                 all = {
                     { class = 3 },
@@ -2231,7 +2265,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2218-road-to-salvation",
             kind = "turnin",
-            priority = 1460,
+            priority = 1462,
             conditions = {
                 all = {
                     { class = 4 },
@@ -2248,7 +2282,7 @@ ns:RegisterGuide({
         {
             id = "accept-2238-simple-subterfugin",
             kind = "accept",
-            priority = 1470,
+            priority = 1472,
             conditions = {
                 all = {
                     { class = 4 },
@@ -2264,7 +2298,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2238-simple-subterfugin",
             kind = "turnin",
-            priority = 1490,
+            priority = 1492,
             conditions = {
                 all = {
                     { class = 4 },
@@ -2281,7 +2315,7 @@ ns:RegisterGuide({
         {
             id = "accept-2239-onin-s-report",
             kind = "accept",
-            priority = 1500,
+            priority = 1502,
             conditions = {
                 all = {
                     { class = 4 },
@@ -2297,7 +2331,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2239-onin-s-report",
             kind = "turnin",
-            priority = 1520,
+            priority = 1522,
             conditions = {
                 all = {
                     { class = 4 },
@@ -2314,7 +2348,7 @@ ns:RegisterGuide({
         {
             id = "accept-1715-the-slaughtered-lamb",
             kind = "accept",
-            priority = 1530,
+            priority = 1532,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2330,7 +2364,7 @@ ns:RegisterGuide({
         {
             id = "accept-6661-deeprun-rat-roundup",
             kind = "accept",
-            priority = 1550,
+            priority = 1552,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2342,7 +2376,7 @@ ns:RegisterGuide({
         {
             id = "objective-6661-deeprun-rat-roundup",
             kind = "objective",
-            priority = 1560,
+            priority = 1562,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2355,7 +2389,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6661-deeprun-rat-roundup",
             kind = "turnin",
-            priority = 1570,
+            priority = 1572,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2368,7 +2402,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1715-the-slaughtered-lamb",
             kind = "turnin",
-            priority = 1590,
+            priority = 1592,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2385,7 +2419,7 @@ ns:RegisterGuide({
         {
             id = "accept-1688-surena-caledon",
             kind = "accept",
-            priority = 1600,
+            priority = 1602,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2401,7 +2435,7 @@ ns:RegisterGuide({
         {
             id = "objective-1688-surena-caledon",
             kind = "objective",
-            priority = 1620,
+            priority = 1622,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2418,7 +2452,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1688-surena-caledon",
             kind = "turnin",
-            priority = 1640,
+            priority = 1642,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2435,7 +2469,7 @@ ns:RegisterGuide({
         {
             id = "accept-1689-the-binding",
             kind = "accept",
-            priority = 1650,
+            priority = 1652,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2451,7 +2485,7 @@ ns:RegisterGuide({
         {
             id = "objective-1689-the-binding",
             kind = "objective",
-            priority = 1660,
+            priority = 1662,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2470,7 +2504,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1689-the-binding",
             kind = "turnin",
-            priority = 1670,
+            priority = 1672,
             conditions = {
                 all = {
                     { class = 9 },
@@ -2487,7 +2521,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1879-speak-with-bink",
             kind = "turnin",
-            priority = 1680,
+            priority = 1682,
             conditions = {
                 all = {
                     { class = 8 },
@@ -2504,7 +2538,7 @@ ns:RegisterGuide({
         {
             id = "accept-1880-mage-tastic-gizmonitor",
             kind = "accept",
-            priority = 1690,
+            priority = 1692,
             conditions = {
                 all = {
                     { class = 8 },
@@ -2520,7 +2554,7 @@ ns:RegisterGuide({
         {
             id = "objective-1880-mage-tastic-gizmonitor",
             kind = "objective",
-            priority = 1710,
+            priority = 1712,
             conditions = {
                 all = {
                     { class = 8 },
@@ -2537,7 +2571,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1880-mage-tastic-gizmonitor",
             kind = "turnin",
-            priority = 1720,
+            priority = 1722,
             conditions = {
                 all = {
                     { class = 8 },
@@ -2554,7 +2588,7 @@ ns:RegisterGuide({
         {
             id = "accept-419-the-lost-pilot",
             kind = "accept",
-            priority = 1740,
+            priority = 1742,
             text = "Accept The Lost Pilot from Pilot Hammerfoot in North Gate Outpost.",
             complete = QuestState(419, "activeOrCompleted"),
             route = {
@@ -2567,7 +2601,7 @@ ns:RegisterGuide({
         {
             id = "turnin-419-the-lost-pilot",
             kind = "turnin",
-            priority = 1750,
+            priority = 1752,
             text = "Turn in The Lost Pilot in North Gate Outpost.",
             dependsOn = { "accept-419-the-lost-pilot" },
             complete = QuestState(419, "completed"),
@@ -2579,7 +2613,7 @@ ns:RegisterGuide({
         {
             id = "accept-417-a-pilot-s-revenge",
             kind = "accept",
-            priority = 1760,
+            priority = 1762,
             text = "Accept A Pilot's Revenge in North Gate Outpost.",
             complete = QuestState(417, "activeOrCompleted"),
             route = {
@@ -2590,7 +2624,7 @@ ns:RegisterGuide({
         {
             id = "objective-417-a-pilot-s-revenge",
             kind = "objective",
-            priority = 1770,
+            priority = 1772,
             text = "Kill Mangeclaw and collect Mangy Claw.",
             dependsOn = { "accept-417-a-pilot-s-revenge" },
             complete = QuestState(417, "complete"),
@@ -2602,7 +2636,7 @@ ns:RegisterGuide({
         {
             id = "turnin-417-a-pilot-s-revenge",
             kind = "turnin",
-            priority = 1780,
+            priority = 1782,
             text = "Turn in A Pilot's Revenge to Pilot Hammerfoot in North Gate Outpost.",
             dependsOn = { "objective-417-a-pilot-s-revenge" },
             complete = QuestState(417, "completed"),
@@ -2614,7 +2648,7 @@ ns:RegisterGuide({
         {
             id = "turnin-413-shimmer-stout",
             kind = "turnin",
-            priority = 1790,
+            priority = 1792,
             text = "Turn in Shimmer Stout to Mountaineer Barleybrew in South Gate Outpost.",
             dependsOn = { "accept-413-shimmer-stout" },
             complete = QuestState(413, "completed"),
@@ -2630,7 +2664,7 @@ ns:RegisterGuide({
         {
             id = "accept-414-stout-to-kadrell",
             kind = "accept",
-            priority = 1800,
+            priority = 1802,
             text = "Accept Stout to Kadrell from Mountaineer Barleybrew in South Gate Outpost.",
             complete = QuestState(414, "activeOrCompleted"),
             route = {
@@ -2641,7 +2675,7 @@ ns:RegisterGuide({
         {
             id = "accept-224-in-defense-of-the-king-s-lands",
             kind = "accept",
-            priority = 1820,
+            priority = 1822,
             text = "Accept In Defense of the King's Lands from Mountaineer Cobbleflint in Valley of Kings.",
             complete = QuestState(224, "activeOrCompleted"),
             route = {
@@ -2652,7 +2686,7 @@ ns:RegisterGuide({
         {
             id = "accept-267-the-trogg-threat",
             kind = "accept",
-            priority = 1830,
+            priority = 1832,
             text = "Accept The Trogg Threat from Captain Rugelfuss in Valley of Kings.",
             complete = QuestState(267, "activeOrCompleted"),
             route = {
@@ -2663,7 +2697,7 @@ ns:RegisterGuide({
         {
             id = "objective-224-in-defense-of-the-king-s-lands",
             kind = "objective",
-            priority = 1840,
+            priority = 1842,
             text = "Kill 10 Stonesplinter Trogg and 10 Stonesplinter Scout which can be found in the area west of Thelsammar.",
             dependsOn = { "accept-224-in-defense-of-the-king-s-lands" },
             complete = QuestState(224, "complete"),
@@ -2675,7 +2709,7 @@ ns:RegisterGuide({
         {
             id = "objective-267-the-trogg-threat",
             kind = "objective",
-            priority = 1850,
+            priority = 1852,
             text = "Kill Stonesplinter Scout and Stonesplinter Trogg in the area west of Thelsammar to collect 8 Trogg Stone Tooth.",
             dependsOn = { "accept-267-the-trogg-threat" },
             complete = QuestState(267, "complete"),
@@ -2687,7 +2721,7 @@ ns:RegisterGuide({
         {
             id = "turnin-267-the-trogg-threat",
             kind = "turnin",
-            priority = 1860,
+            priority = 1862,
             text = "Turn in The Trogg Threat to Captain Rugelfuss in Valley of Kings.",
             dependsOn = { "objective-267-the-trogg-threat" },
             complete = QuestState(267, "completed"),
@@ -2699,7 +2733,7 @@ ns:RegisterGuide({
         {
             id = "turnin-224-in-defense-of-the-king-s-lands",
             kind = "turnin",
-            priority = 1870,
+            priority = 1872,
             text = "Turn in In Defense of the King's Lands to Mountaineer Cobbleflint in Valley of Kings.",
             dependsOn = { "objective-224-in-defense-of-the-king-s-lands" },
             complete = QuestState(224, "completed"),
@@ -2711,7 +2745,7 @@ ns:RegisterGuide({
         {
             id = "accept-237-in-defense-of-the-king-s-lands",
             kind = "accept",
-            priority = 1880,
+            priority = 1882,
             text = "Accept In Defense of the King's Lands from Mountaineer Gravelgaw in Valley of Kings.",
             complete = QuestState(237, "activeOrCompleted"),
             route = {
@@ -2722,7 +2756,7 @@ ns:RegisterGuide({
         {
             id = "turnin-414-stout-to-kadrell",
             kind = "turnin",
-            priority = 1900,
+            priority = 1902,
             text = "Turn in Stout to Kadrell to Mountaineer Kadrell in Thelsamar.",
             dependsOn = { "accept-414-stout-to-kadrell" },
             complete = QuestState(414, "completed"),
@@ -2734,7 +2768,7 @@ ns:RegisterGuide({
         {
             id = "accept-416-rat-catching",
             kind = "accept",
-            priority = 1910,
+            priority = 1912,
             text = "Accept Rat Catching from Mountaineer Kadrell in Thelsamar.",
             complete = QuestState(416, "activeOrCompleted"),
             route = {
@@ -2745,7 +2779,7 @@ ns:RegisterGuide({
         {
             id = "accept-1339-mountaineer-stormpike-s-task",
             kind = "accept",
-            priority = 1920,
+            priority = 1922,
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell in Thelsamar.",
             complete = QuestState(1339, "activeOrCompleted"),
             route = {
@@ -2756,7 +2790,7 @@ ns:RegisterGuide({
         {
             id = "accept-418-thelsamar-blood-sausages",
             kind = "accept",
-            priority = 1930,
+            priority = 1932,
             text = "Accept Thelsamar Blood Sausages in Stoutlager Inn.",
             complete = QuestState(418, "activeOrCompleted"),
             route = {
@@ -2767,7 +2801,7 @@ ns:RegisterGuide({
         {
             id = "accept-6387-honor-students",
             kind = "accept",
-            priority = 1940,
+            priority = 1942,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2783,7 +2817,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1339-mountaineer-stormpike-s-task",
             kind = "turnin",
-            priority = 1960,
+            priority = 1962,
             text = "Turn in Mountaineer Stormpike's Task to Mountaineer Stormpike in Algaz Station.",
             dependsOn = { "accept-1339-mountaineer-stormpike-s-task" },
             complete = QuestState(1339, "completed"),
@@ -2795,7 +2829,7 @@ ns:RegisterGuide({
         {
             id = "accept-1338-stormpike-s-order",
             kind = "accept",
-            priority = 1970,
+            priority = 1972,
             text = "Accept Stormpike's Order from Mountaineer Stormpike in Algaz Station.",
             complete = QuestState(1338, "activeOrCompleted"),
             route = {
@@ -2806,7 +2840,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6387-honor-students",
             kind = "turnin",
-            priority = 1990,
+            priority = 1992,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2823,7 +2857,7 @@ ns:RegisterGuide({
         {
             id = "accept-6391-ride-to-ironforge",
             kind = "accept",
-            priority = 2000,
+            priority = 2002,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2839,7 +2873,7 @@ ns:RegisterGuide({
         {
             id = "turnin-291-the-reports",
             kind = "turnin",
-            priority = 2020,
+            priority = 2022,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2856,7 +2890,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6391-ride-to-ironforge",
             kind = "turnin",
-            priority = 2030,
+            priority = 2032,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2873,7 +2907,7 @@ ns:RegisterGuide({
         {
             id = "accept-6388-gryth-thurden",
             kind = "accept",
-            priority = 2040,
+            priority = 2042,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2889,7 +2923,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6388-gryth-thurden",
             kind = "turnin",
-            priority = 2050,
+            priority = 2052,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2906,7 +2940,7 @@ ns:RegisterGuide({
         {
             id = "accept-6392-return-to-brock",
             kind = "accept",
-            priority = 2060,
+            priority = 2062,
             conditions = {
                 all = {
                     { race = 3 },
@@ -2922,7 +2956,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6392-return-to-brock",
             kind = "turnin",
-            priority = 2080,
+            priority = 2082,
             conditions = {
                 all = {
                     { race = 3 },

@@ -862,6 +862,7 @@ ns:RegisterGuide({
             id = "accept-92909-harvesting-the-harvesters",
             kind = "accept",
             priority = 561,
+            conditions = { level = { min = 15 } },
             text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket at Saldean's Farm.",
             complete = QuestState(92909, "activeOrCompleted"),
             route = {
@@ -892,6 +893,7 @@ ns:RegisterGuide({
             id = "accept-92742-testing-the-wells",
             kind = "accept",
             priority = 591,
+            conditions = { level = { min = 12 } },
             text = "Accept Testing the Wells from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92742, "activeOrCompleted"),
             route = {
@@ -903,6 +905,7 @@ ns:RegisterGuide({
             id = "accept-92744-murloc-gills",
             kind = "accept",
             priority = 592,
+            conditions = { level = { min = 12 } },
             text = "Accept Murloc Gills from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92744, "activeOrCompleted"),
             route = {
@@ -914,6 +917,7 @@ ns:RegisterGuide({
             id = "accept-92745-the-state-of-the-mines",
             kind = "accept",
             priority = 593,
+            conditions = { level = { min = 14 } },
             text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92745, "activeOrCompleted"),
             route = {
@@ -1080,6 +1084,7 @@ ns:RegisterGuide({
             priority = 705,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { race = 95 },
                 },
             },
@@ -1096,6 +1101,7 @@ ns:RegisterGuide({
             priority = 715,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { race = 95 },
                 },
             },
@@ -1144,6 +1150,7 @@ ns:RegisterGuide({
             id = "objective-92745-kobold-digger",
             kind = "objective",
             priority = 735,
+            conditions = { level = { min = 14 } },
             text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
             dependsOn = { "accept-92745-the-state-of-the-mines" },
             complete = QuestObjective(92745, 1),
@@ -1219,6 +1226,7 @@ ns:RegisterGuide({
             id = "objective-92742-testing-the-wells",
             kind = "objective",
             priority = 795,
+            conditions = { level = { min = 12 } },
             text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. Wowhead gives no well pin, so this marks the farms you are already walking.",
             dependsOn = { "accept-92742-testing-the-wells" },
             complete = QuestState(92742, "complete"),
@@ -1293,6 +1301,7 @@ ns:RegisterGuide({
             id = "objective-92744-murloc-gills",
             kind = "objective",
             priority = 845,
+            conditions = { level = { min = 12 } },
             text = "Murloc Gills: collect 7 Longshore Murloc Gills from murlocs along the shore.",
             dependsOn = { "accept-92744-murloc-gills" },
             complete = QuestState(92744, "complete"),
@@ -1316,6 +1325,7 @@ ns:RegisterGuide({
             id = "turnin-92742-testing-the-wells",
             kind = "turnin",
             priority = 865,
+            conditions = { level = { min = 12 } },
             text = "Turn in Testing the Wells to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92742-testing-the-wells" },
             complete = QuestState(92742, "completed"),
@@ -1328,6 +1338,7 @@ ns:RegisterGuide({
             id = "turnin-92744-murloc-gills",
             kind = "turnin",
             priority = 866,
+            conditions = { level = { min = 12 } },
             text = "Turn in Murloc Gills to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92744-murloc-gills" },
             complete = QuestState(92744, "completed"),
@@ -1452,6 +1463,7 @@ ns:RegisterGuide({
             id = "objective-92909-harvesting-the-harvesters",
             kind = "objective",
             priority = 955,
+            conditions = { level = { min = 15 } },
             text = "Harvesting the Harvesters: collect 14 Golem Isosprings and 5 Harvester Gyrostabilizers from the harvest golems.",
             dependsOn = { "accept-92909-harvesting-the-harvesters" },
             complete = QuestState(92909, "complete"),
@@ -1476,6 +1488,7 @@ ns:RegisterGuide({
             id = "turnin-92909-harvesting-the-harvesters",
             kind = "turnin",
             priority = 965,
+            conditions = { level = { min = 15 } },
             text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket at Saldean's Farm.",
             dependsOn = { "objective-92909-harvesting-the-harvesters" },
             complete = QuestState(92909, "completed"),
@@ -1490,6 +1503,7 @@ ns:RegisterGuide({
             priority = 966,
             conditions = {
                 all = {
+                    { level = { min = 15 } },
                     { quest = { id = 92910, state = "activeOrCompleted" } },
                 },
             },
@@ -1504,6 +1518,7 @@ ns:RegisterGuide({
             id = "objective-92745-riverpaw-miner",
             kind = "objective",
             priority = 969,
+            conditions = { level = { min = 14 } },
             text = "The State of the Mines: slay 6 Riverpaw Miners in the Gold Coast Quarry.",
             dependsOn = { "accept-92745-the-state-of-the-mines" },
             complete = QuestObjective(92745, 2),
@@ -1530,6 +1545,7 @@ ns:RegisterGuide({
             priority = 981,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1546,6 +1562,7 @@ ns:RegisterGuide({
             priority = 982,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1563,6 +1580,7 @@ ns:RegisterGuide({
             priority = 983,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1580,6 +1598,7 @@ ns:RegisterGuide({
             priority = 984,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1597,6 +1616,7 @@ ns:RegisterGuide({
             priority = 985,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1614,6 +1634,7 @@ ns:RegisterGuide({
             priority = 986,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { profession = { skillLineID = 171 } },
                 },
             },
@@ -1641,6 +1662,7 @@ ns:RegisterGuide({
             id = "turnin-92745-the-state-of-the-mines",
             kind = "turnin",
             priority = 1005,
+            conditions = { level = { min = 14 } },
             text = "Turn in The State of the Mines to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92745-kobold-digger", "objective-92745-riverpaw-miner" },
             complete = QuestState(92745, "completed"),
@@ -1653,6 +1675,7 @@ ns:RegisterGuide({
             id = "accept-92747-moonbrook-espionage",
             kind = "accept",
             priority = 1006,
+            conditions = { level = { min = 16 } },
             text = "Accept Moonbrook Espionage from Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "turnin-92745-the-state-of-the-mines" },
             complete = QuestState(92747, "activeOrCompleted"),
@@ -1721,6 +1744,7 @@ ns:RegisterGuide({
             id = "accept-98407-show-of-force",
             kind = "accept",
             priority = 1065,
+            conditions = { level = { min = 17 } },
             text = "Accept Show of Force from Deputy Feldon.",
             complete = QuestState(98407, "activeOrCompleted"),
             route = {
@@ -2084,6 +2108,7 @@ ns:RegisterGuide({
             id = "objective-92747-moonbrook-espionage",
             kind = "objective",
             priority = 1425,
+            conditions = { level = { min = 16 } },
             text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. Wowhead gives no supply pin, so this marks Moonbrook.",
             dependsOn = { "accept-92747-moonbrook-espionage" },
             complete = QuestState(92747, "complete"),
@@ -2216,6 +2241,7 @@ ns:RegisterGuide({
             id = "turnin-92747-moonbrook-espionage",
             kind = "turnin",
             priority = 1565,
+            conditions = { level = { min = 16 } },
             text = "Turn in Moonbrook Espionage to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92747-moonbrook-espionage" },
             complete = QuestState(92747, "completed"),
@@ -2366,6 +2392,7 @@ ns:RegisterGuide({
             id = "objective-98407-show-of-force",
             kind = "objective",
             priority = 1715,
+            conditions = { level = { min = 17 } },
             text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
             dependsOn = { "accept-98407-show-of-force" },
             complete = QuestState(98407, "complete"),
@@ -2425,6 +2452,7 @@ ns:RegisterGuide({
             id = "turnin-98407-show-of-force",
             kind = "turnin",
             priority = 1785,
+            conditions = { level = { min = 17 } },
             text = "Turn in Show of Force to Deputy Feldon.",
             dependsOn = { "objective-98407-show-of-force" },
             complete = QuestState(98407, "completed"),

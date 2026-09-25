@@ -233,6 +233,7 @@ ns:RegisterGuide({
             id = "accept-98407-show-of-force",
             kind = "accept",
             priority = 191,
+            conditions = { level = { min = 17 } },
             text = "Accept Show of Force from Deputy Feldon.",
             complete = QuestState(98407, "activeOrCompleted"),
             route = {
@@ -573,6 +574,7 @@ ns:RegisterGuide({
             id = "objective-98407-show-of-force",
             kind = "objective",
             priority = 535,
+            conditions = { level = { min = 17 } },
             text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
             dependsOn = { "accept-98407-show-of-force" },
             complete = QuestState(98407, "complete"),
@@ -621,6 +623,7 @@ ns:RegisterGuide({
             id = "turnin-98407-show-of-force",
             kind = "turnin",
             priority = 575,
+            conditions = { level = { min = 17 } },
             text = "Turn in Show of Force to Deputy Feldon.",
             dependsOn = { "objective-98407-show-of-force" },
             complete = QuestState(98407, "completed"),
