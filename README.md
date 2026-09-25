@@ -21,7 +21,7 @@ Converted chapters live in `Guides/Leveling`. Chapters whose titles still end in
 
 ### Era chapters with Forever quests
 
-These chapters already include the new Forever quests that sit on the existing route. Their titles no longer end in `(Era)`.
+These chapters live in `Guides/Leveling/`. They already include the new Forever quests that sit on the existing route. Their titles no longer end in `(Era)`.
 
 **Alliance**
 
@@ -43,7 +43,7 @@ Ashenvale’s Forever list had no new quests when it was checked. Those chapters
 
 ### Loremaster
 
-These finish a zone’s quests. They can be followed while leveling, but that is not what they are written for. Dungeon quests stay in the dungeon guides.
+These finish a zone’s quests. The walk is the leveling route, and a zone quest that route skips is woven in. Dungeon quests stay in the dungeon guides. The procedure is in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
 | Guide | Faction |
 | --- | --- |
@@ -161,7 +161,7 @@ Class quests will be a new guide section, separate from the zone routes. None of
 
 ### Era chapters that still need Forever support
 
-Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title and add the file to `ForeverGuideMate.toc` and `tools/compile_addon.py` so it loads.
+Walk each chapter against the Wowhead Forever zone page. Add a new quest only when the route is already there, the quest is low-level and right there, or it is the first quest to accept. Leave classic quests that were left off the route off, unless a new quest requires them. Drop and item starts appear only after the item is in the log. When a chapter is done, drop `(Era)` from its title, move the file from `Guides/Era/` to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py` so it loads.
 
 **Alliance**
 

@@ -4,7 +4,7 @@ local _, ns = ...
 -- The step order is the leveling route. Zone quests that route skips are woven in.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/mulgore
 -- Rules for the next zone: docs/zone-loremaster-guides.md
--- A camp's quests are picked up together. Chains still wait on the real turn-in.
+-- The leveling route's order stays. Chains still wait on the real turn-in.
 -- Each objective is its own step and depends only on its accept.
 -- Omitted from this run:
 -- <UNUSED> (774) has no quest text.
@@ -22,8 +22,6 @@ local _, ns = ...
 -- forge, the mine pages, and the blasting carts have no Wowhead pin.
 -- Coordinates have not been validated in the Forever client.
 
--- Step order follows the leveling route. Zone quests that are not on
--- that route are woven in at the same giver, or after their series quest.
 local MAP = {
     MOONGLADE = 1450,
     MULGORE = 1412,
