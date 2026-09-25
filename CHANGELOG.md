@@ -56,3 +56,7 @@ All notable changes to this project are documented here.
 - Moved Era chapters to Guides/Era, Loremaster guides to Guides/Loremaster, and left Zephras Isle in Guides/Leveling.
 - A saved skip from an old Era chapter stays on that chapter when the same step id also exists in another chapter.
 - Era chapters whose titles still end in (Era) stay in the repo and are not loaded, so they do not show in the addon. Converted chapters remain in the 1-60 Era guide.
+- Loremaster routes now follow the leveling path. A zone quest that is not on that path is woven in at the same giver, or after the quest it continues. The rules are the zone Loremaster skill.
+- Added Loremaster guides for Loch Modan, Westfall, Dun Morogh, Duskwood, Redridge Mountains, Silverpine Forest, Elwynn Forest, Ashenvale, Darkshore, and Stonetalon Mountains.
+- Zephras Isle keeps the north-to-south Skyborne hub order: Shen'dar side quests before Welcome to Shen'dar Village, High Order work after the cult chain, and Bugged after the Shadowgale den. Quests that list does not include stay on the path.
+- Redridge Mountains and Duskwood are open to both factions. Alliance steps stay on Alliance. The Horde quests in those zones are no longer hidden by an Alliance-only guide.
