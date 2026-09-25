@@ -47,6 +47,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-2603-vulture-s-vigor" },
             complete = QuestState(2603, "complete"),
             route = {
+                Point(MAP.BLASTED_LANDS, 0.5300, 0.3800, "Continue toward Black Slayer",
+                    "Continue toward Black Slayer."),
                 Point(MAP.BLASTED_LANDS, 0.5900, 0.2700, "Black Slayer",
                     "Travel to Black Slayer."),
             },
@@ -59,6 +61,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-2601-the-basilisk-s-bite" },
             complete = QuestState(2601, "complete"),
             route = {
+                Point(MAP.BLASTED_LANDS, 0.6000, 0.4000, "Continue toward Redstone Basilisk",
+                    "Continue toward Redstone Basilisk."),
                 Point(MAP.BLASTED_LANDS, 0.5700, 0.3100, "Redstone Basilisk",
                     "Travel to Redstone Basilisk."),
             },
@@ -71,6 +75,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-2583-a-boar-s-vitality" },
             complete = QuestState(2583, "complete"),
             route = {
+                Point(MAP.BLASTED_LANDS, 0.5250, 0.5400, "Continue toward Helboar",
+                    "Continue toward Helboar."),
                 Point(MAP.BLASTED_LANDS, 0.5700, 0.3100, "Helboar",
                     "Travel to Helboar."),
             },
@@ -95,6 +101,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-2581-snickerfang-jowls" },
             complete = QuestState(2581, "complete"),
             route = {
+                Point(MAP.BLASTED_LANDS, 0.4700, 0.2000, "Continue toward Snickerfang Hyena",
+                    "Continue toward Snickerfang Hyena."),
                 Point(MAP.BLASTED_LANDS, 0.5000, 0.3800, "Snickerfang Hyena",
                     "Travel to Snickerfang Hyena."),
             },

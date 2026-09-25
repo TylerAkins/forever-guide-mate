@@ -118,6 +118,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-303-the-dark-iron-war" },
             complete = QuestState(303, "complete"),
             route = {
+                Point(MAP.WETLANDS, 0.4780, 0.1730, "Continue toward The Dark Iron War",
+                    "Continue toward The Dark Iron War."),
                 Point(MAP.WETLANDS, 0.6070, 0.2170, "Dark Iron Dwarf",
                     "Travel to Dark Iron Dwarf."),
             },
@@ -200,6 +202,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-633-the-thandol-span" },
             complete = QuestState(633, "complete"),
             route = {
+                Point(MAP.ARATHI, 0.4564, 0.8821, "Continue toward The Thandol Span",
+                    "Continue toward The Thandol Span."),
                 Point(MAP.ARATHI, 0.4871, 0.8798, "The Thandol Span",
                     "Travel to The Thandol Span."),
             },
@@ -234,6 +238,8 @@ ns:RegisterGuide({
             text = "Accept MacKreel's Moonshine from Foggy MacKreel in Thandol Span.",
             complete = QuestState(647, "activeOrCompleted"),
             route = {
+                Point(MAP.ARATHI, 0.4313, 0.9119, "Continue toward MacKreel's Moonshine",
+                    "Continue toward MacKreel's Moonshine."),
                 Point(MAP.ARATHI, 0.4325, 0.9260, "Foggy MacKreel",
                     "Travel to Foggy MacKreel."),
             },
@@ -497,6 +503,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-555-soothing-turtle-bisque" },
             complete = QuestObjective(555, 1),
             route = {
+                Point(MAP.HILLSBRAD, 0.5579, 0.5439, "Continue toward Soothing Turtle Bisque",
+                    "Continue toward Soothing Turtle Bisque."),
+                Point(MAP.HILLSBRAD, 0.6400, 0.4000, "Continue toward Soothing Turtle Bisque",
+                    "Continue toward Soothing Turtle Bisque."),
                 Point(MAP.HILLSBRAD, 0.6860, 0.2820, "Snapjaw",
                     "Travel to Snapjaw."),
             },
@@ -531,6 +541,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-505-syndicate-assassins" },
             complete = QuestState(505, "complete"),
             route = {
+                Point(MAP.ALTERAC, 0.5700, 0.6600, "Continue toward Syndicate Assassins",
+                    "Continue toward Syndicate Assassins."),
                 Point(MAP.ALTERAC, 0.4800, 0.7700, "Syndicate Footpad",
                     "Travel to Syndicate Footpad."),
             },

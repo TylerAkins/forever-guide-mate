@@ -193,6 +193,12 @@ ns:RegisterGuide({
             dependsOn = { "accept-126-howling-in-the-hills" },
             complete = QuestState(126, "complete"),
             route = {
+                Point(MAP.REDRIDGE, 0.3920, 0.3380, "Continue toward Howling in the Hills",
+                    "Continue toward Howling in the Hills."),
+                Point(MAP.REDRIDGE, 0.3240, 0.2500, "Continue toward Howling in the Hills",
+                    "Continue toward Howling in the Hills."),
+                Point(MAP.REDRIDGE, 0.2780, 0.2300, "Continue toward Howling in the Hills",
+                    "Continue toward Howling in the Hills."),
                 Point(MAP.REDRIDGE, 0.2380, 0.2900, "Yowler",
                     "Travel to Yowler."),
             },
@@ -254,6 +260,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-219-missing-in-action" },
             complete = QuestState(219, "complete"),
             route = {
+                Point(MAP.REDRIDGE, 0.3122, 0.1504, "Continue toward Missing In Action",
+                    "Continue toward Missing In Action."),
                 Point(MAP.REDRIDGE, 0.3341, 0.4852, "Corporal Keeshan",
                     "Travel to Corporal Keeshan."),
             },

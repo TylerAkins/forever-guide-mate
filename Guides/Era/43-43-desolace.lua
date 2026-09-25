@@ -157,6 +157,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-1466-reagents-for-reclaimers-inc" },
             complete = QuestState(1466, "complete"),
             route = {
+                Point(MAP.DESOLACE, 0.5600, 0.7500, "Continue toward Reagents for Reclaimers Inc.",
+                    "Continue toward Reagents for Reclaimers Inc.."),
                 Point(MAP.DESOLACE, 0.5100, 0.8200, "Ley Hunter",
                     "Travel to Ley Hunter."),
             },

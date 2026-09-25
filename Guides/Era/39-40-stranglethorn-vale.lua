@@ -158,6 +158,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4014, 0.4257, "Continue toward Venture Company Mining",
+                    "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Surveyor",
                     "Travel to Venture Co. Surveyor."),
             },
@@ -192,6 +194,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-209-skullsplitter-tusks" },
             complete = QuestState(209, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4572, 0.4219, "Continue toward Skullsplitter Tusks",
+                    "Continue toward Skullsplitter Tusks."),
                 Point(MAP.STRANGLETHORN, 0.4486, 0.4070, "Skullsplitter Witch Doctor",
                     "Travel to Skullsplitter Witch Doctor."),
             },
@@ -250,6 +254,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-601-water-elementals" },
             complete = QuestState(601, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.2743, 0.1973, "Continue toward Water Elementals",
+                    "Continue toward Water Elementals."),
                 Point(MAP.STRANGLETHORN, 0.2108, 0.2320, "Lesser Water Elemental",
                     "Travel to Lesser Water Elemental."),
             },
@@ -332,6 +338,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.4014, 0.4257, "Continue toward Venture Company Mining",
+                    "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Surveyor",
                     "Travel to Venture Co. Surveyor."),
             },
@@ -436,6 +444,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-628-excelsior" },
             complete = QuestState(628, "complete"),
             route = {
+                Point(MAP.STRANGLETHORN, 0.3327, 0.3231, "Continue toward Excelsior",
+                    "Continue toward Excelsior."),
+                Point(MAP.STRANGLETHORN, 0.3085, 0.2981, "Continue toward Excelsior",
+                    "Continue toward Excelsior."),
                 Point(MAP.STRANGLETHORN, 0.2984, 0.2561, "Elder Snapjaw Crocolisk",
                     "Travel to Elder Snapjaw Crocolisk."),
             },

@@ -1016,6 +1016,8 @@ ns:RegisterGuide({
             text = "Accept Boulderslide Ravine from Mor'rogal in Sun Rock Retreat.",
             complete = QuestState(6421, "activeOrCompleted"),
             route = {
+                Point(MAP.STONETALON, 0.4463, 0.6179, "Continue toward Boulderslide Ravine",
+                    "Continue toward Boulderslide Ravine."),
                 Point(MAP.STONETALON, 0.4719, 0.6416, "Mor'rogal",
                     "Travel to Mor'rogal."),
             },
@@ -1039,6 +1041,10 @@ ns:RegisterGuide({
             complete = QuestObjective(6421, 2),
             dependsOn = { "accept-6421-boulderslide-ravine" },
             route = {
+                Point(MAP.STONETALON, 0.4956, 0.6106, "Continue toward Boulderslide Cavern",
+                    "Continue toward Boulderslide Cavern."),
+                Point(MAP.STONETALON, 0.6689, 0.8883, "Continue toward Boulderslide Cavern",
+                    "Continue toward Boulderslide Cavern."),
                 Point(MAP.STONETALON, 0.6180, 0.9306, "Boulderslide Cavern",
                     "Travel to Boulderslide Cavern."),
             },

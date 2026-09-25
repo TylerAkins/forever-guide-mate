@@ -109,6 +109,12 @@ ns:RegisterGuide({
             dependsOn = { "accept-537-dark-council" },
             complete = QuestObjective(537, 1),
             route = {
+                Point(MAP.ALTERAC, 0.5843, 0.3095, "Continue toward Argus Shadow Mage",
+                    "Continue toward Argus Shadow Mage."),
+                Point(MAP.ALTERAC, 0.5543, 0.2703, "Continue toward Argus Shadow Mage",
+                    "Continue toward Argus Shadow Mage."),
+                Point(MAP.ALTERAC, 0.5297, 0.2091, "Continue toward Argus Shadow Mage",
+                    "Continue toward Argus Shadow Mage."),
                 Point(MAP.ALTERAC, 0.4767, 0.1858, "Argus Shadow Mage",
                     "Travel to Argus Shadow Mage."),
             },

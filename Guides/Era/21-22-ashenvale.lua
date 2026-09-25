@@ -421,6 +421,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-1033-elune-s-tear" },
             complete = QuestState(1033, "complete"),
             route = {
+                Point(MAP.ASHENVALE, 0.4348, 0.4576, "Continue toward Elune's Tear",
+                    "Continue toward Elune's Tear."),
                 Point(MAP.ASHENVALE, 0.4625, 0.4593, "Iris Lake",
                     "Travel to Iris Lake."),
             },

@@ -206,6 +206,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-1096-gerenzo-wrenchwhistle" },
             complete = QuestState(1096, "complete"),
             route = {
+                Point(MAP.STONETALON, 0.6900, 0.4010, "Continue toward Gerenzo Wrenchwhistle",
+                    "Continue toward Gerenzo Wrenchwhistle."),
+                Point(MAP.STONETALON, 0.6790, 0.3770, "Continue toward Gerenzo Wrenchwhistle",
+                    "Continue toward Gerenzo Wrenchwhistle."),
                 Point(MAP.STONETALON, 0.6400, 0.3900, "Gerenzo Wrenchwhistle",
                     "Travel to Gerenzo Wrenchwhistle."),
             },

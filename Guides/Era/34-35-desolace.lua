@@ -137,6 +137,8 @@ ns:RegisterGuide({
             priority = 120,
             text = "Set your hearth in Nijel's Point with Innkeeper Lyshaerya.",
             route = {
+                Point(MAP.DESOLACE, 0.6628, 0.0655, "Continue toward Nijel's Point",
+                    "Continue toward Nijel's Point."),
                 Point(MAP.DESOLACE, 0.6630, 0.0670, "Innkeeper Lyshaerya",
                     "Travel to Innkeeper Lyshaerya."),
             },
@@ -311,6 +313,10 @@ ns:RegisterGuide({
             dependsOn = { "accept-1459-reagents-for-reclaimers-inc" },
             complete = QuestObjective(1459, 2),
             route = {
+                Point(MAP.DESOLACE, 0.5837, 0.3452, "Continue toward Aged Kodo",
+                    "Continue toward Aged Kodo."),
+                Point(MAP.DESOLACE, 0.4940, 0.4020, "Continue toward Aged Kodo",
+                    "Continue toward Aged Kodo."),
                 Point(MAP.DESOLACE, 0.5050, 0.5660, "Aged Kodo",
                     "Travel to Aged Kodo."),
             },
@@ -415,6 +421,8 @@ ns:RegisterGuide({
             text = "Accept Sceptre of Light from Azore Aldamort in Ethel Rethor.",
             complete = QuestState(5741, "activeOrCompleted"),
             route = {
+                Point(MAP.DESOLACE, 0.4107, 0.2895, "Continue toward Sceptre of Light",
+                    "Continue toward Sceptre of Light."),
                 Point(MAP.DESOLACE, 0.3889, 0.2717, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
             },
@@ -540,6 +548,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-5741-sceptre-of-light" },
             complete = QuestState(5741, "completed"),
             route = {
+                Point(MAP.DESOLACE, 0.4107, 0.2895, "Continue toward Sceptre of Light",
+                    "Continue toward Sceptre of Light."),
                 Point(MAP.DESOLACE, 0.3889, 0.2717, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
             },
@@ -611,6 +621,8 @@ ns:RegisterGuide({
             dependsOn = { "objective-6027-book-of-the-ancients" },
             complete = QuestState(6027, "completed"),
             route = {
+                Point(MAP.DESOLACE, 0.4107, 0.2895, "Continue toward Book of the Ancients",
+                    "Continue toward Book of the Ancients."),
                 Point(MAP.DESOLACE, 0.3889, 0.2717, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
             },
@@ -623,6 +635,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-1459-reagents-for-reclaimers-inc" },
             complete = QuestState(1459, "complete"),
             route = {
+                Point(MAP.DESOLACE, 0.6980, 0.2570, "Continue toward Reagents for Reclaimers Inc.",
+                    "Continue toward Reagents for Reclaimers Inc.."),
                 Point(MAP.DESOLACE, 0.7350, 0.3010, "Scorpashi Snapper",
                     "Travel to Scorpashi Snapper."),
             },

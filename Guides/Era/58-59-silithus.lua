@@ -362,6 +362,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-6136-the-corpulent-one" },
             complete = QuestState(6136, "complete"),
             route = {
+                Point(MAP.EASTERN_PLAGUELANDS, 0.5362, 0.3189, "Continue toward The Corpulent One",
+                    "Continue toward The Corpulent One."),
                 Point(MAP.EASTERN_PLAGUELANDS, 0.6224, 0.3317, "Borelgore",
                     "Travel to Borelgore."),
             },

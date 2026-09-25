@@ -2526,6 +2526,8 @@ ns:RegisterGuide({
             dependsOn = { "accept-2241-the-apple-falls" },
             complete = QuestState(2241, "completed"),
             route = {
+                Point(MAP.DARNASSUS, 0.3263, 0.1616, "Continue toward The Apple Falls",
+                    "Continue toward The Apple Falls."),
                 Point(MAP.DARNASSUS, 0.3686, 0.2188, "Syurna",
                     "Travel to Syurna."),
             },
@@ -2834,6 +2836,12 @@ ns:RegisterGuide({
             dependsOn = { "accept-1683-vorlus-vilehoof" },
             complete = QuestObjective(1683, 1),
             route = {
+                Point(MAP.TELDRASSIL, 0.4911, 0.6180, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
+                Point(MAP.TELDRASSIL, 0.4875, 0.6284, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
+                Point(MAP.TELDRASSIL, 0.4905, 0.6500, "Continue toward Vorlus Vilehoof",
+                    "Continue toward Vorlus Vilehoof."),
                 Point(MAP.TELDRASSIL, 0.4731, 0.6365, "Vorlus Vilehoof",
                     "Travel to Vorlus Vilehoof."),
             },
