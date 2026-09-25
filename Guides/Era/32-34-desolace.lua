@@ -265,8 +265,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5561-kodo-roundup" },
             complete = QuestState(5561, "complete"),
             route = {
-                Point(MAP.DESOLACE, 0.5100, 0.5900, "Continue toward Kodo Roundup",
-                    "Continue toward Kodo Roundup."),
                 Point(MAP.DESOLACE, 0.6080, 0.6190, "Dying Kodo",
                     "Travel to Dying Kodo."),
             },
@@ -411,10 +409,6 @@ ns:RegisterGuide({
             text = "Accept Sceptre of Light from Azore Aldamort in Ethel Rethor.",
             complete = QuestState(5741, "activeOrCompleted"),
             route = {
-                Point(MAP.DESOLACE, 0.3804, 0.2457, "Continue toward Sceptre of Light",
-                    "Continue toward Sceptre of Light."),
-                Point(MAP.DESOLACE, 0.4122, 0.2905, "Continue toward Sceptre of Light",
-                    "Continue toward Sceptre of Light."),
                 Point(MAP.DESOLACE, 0.3889, 0.2721, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
             },
@@ -763,8 +757,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1482-the-corrupter" },
             complete = QuestState(1482, "completed"),
             route = {
-                Point(MAP.DESOLACE, 0.5589, 0.5340, "Continue toward The Corrupter",
-                    "Continue toward The Corrupter."),
                 Point(MAP.DESOLACE, 0.5224, 0.5350, "Maurin Bonesplitter",
                     "Travel to Maurin Bonesplitter."),
             },
@@ -812,10 +804,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1370-stealing-supplies" },
             complete = QuestState(1370, "complete"),
             route = {
-                Point(MAP.DESOLACE, 0.6650, 0.8050, "Continue toward Stealing Supplies",
-                    "Continue toward Stealing Supplies."),
-                Point(MAP.DESOLACE, 0.6920, 0.7720, "Continue toward Stealing Supplies",
-                    "Continue toward Stealing Supplies."),
                 Point(MAP.DESOLACE, 0.7360, 0.7440, "Magram Village",
                     "Travel to Magram Village."),
             },

@@ -584,16 +584,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3741-hilary-s-necklace" },
             complete = QuestState(3741, "complete"),
             route = {
-                Point(MAP.REDRIDGE, 0.1930, 0.5180, "Continue toward Hilary's Necklace",
-                    "Continue toward Hilary's Necklace."),
-                Point(MAP.REDRIDGE, 0.2410, 0.5460, "Continue toward Hilary's Necklace",
-                    "Continue toward Hilary's Necklace."),
-                Point(MAP.REDRIDGE, 0.2660, 0.5140, "Continue toward Hilary's Necklace",
-                    "Continue toward Hilary's Necklace."),
-                Point(MAP.REDRIDGE, 0.2800, 0.5600, "Continue toward Hilary's Necklace",
-                    "Continue toward Hilary's Necklace."),
-                Point(MAP.REDRIDGE, 0.3370, 0.5540, "Continue toward Hilary's Necklace",
-                    "Continue toward Hilary's Necklace."),
                 Point(MAP.REDRIDGE, 0.3670, 0.5430, "Hilary's Necklace",
                     "Travel to Hilary's Necklace."),
             },
@@ -758,8 +748,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-246-assessing-the-threat" },
             complete = QuestState(246, "complete"),
             route = {
-                Point(MAP.REDRIDGE, 0.3088, 0.8320, "Continue toward Assessing the Threat",
-                    "Continue toward Assessing the Threat."),
                 Point(MAP.REDRIDGE, 0.4198, 0.7288, "Redridge Mongrel",
                     "Travel to Redridge Mongrel."),
             },
@@ -912,8 +900,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-124-a-baying-of-gnolls" },
             complete = QuestState(124, "complete"),
             route = {
-                Point(MAP.REDRIDGE, 0.2595, 0.3577, "Continue toward A Baying of Gnolls",
-                    "Continue toward A Baying of Gnolls."),
                 Point(MAP.REDRIDGE, 0.2164, 0.3616, "Redridge Mystic",
                     "Travel to Redridge Mystic."),
             },
@@ -931,8 +917,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-89-the-everstill-bridge" },
             complete = QuestState(89, "complete"),
             route = {
-                Point(MAP.REDRIDGE, 0.3879, 0.3167, "Continue toward The Everstill Bridge",
-                    "Continue toward The Everstill Bridge."),
                 Point(MAP.REDRIDGE, 0.3118, 0.2270, "Redridge Mystic",
                     "Travel to Redridge Mystic."),
             },
@@ -1244,8 +1228,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2609-the-touch-of-zanzil" },
             complete = QuestObjective(2609, 1),
             route = {
-                Point(MAP.STORMWIND, 0.6513, 0.6005, "Continue toward Simple Wildflowers",
-                    "Continue toward Simple Wildflowers."),
                 Point(MAP.STORMWIND, 0.6419, 0.6112, "Bernard Gump",
                     "Travel to Bernard Gump."),
             },
@@ -1622,8 +1604,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-219-missing-in-action" },
             complete = QuestState(219, "complete"),
             route = {
-                Point(MAP.REDRIDGE, 0.3122, 0.1504, "Continue toward Missing In Action",
-                    "Continue toward Missing In Action."),
                 Point(MAP.REDRIDGE, 0.3341, 0.4852, "Corporal Keeshan",
                     "Travel to Corporal Keeshan."),
             },

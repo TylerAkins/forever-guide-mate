@@ -295,8 +295,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-294-ormer-s-revenge" },
             complete = QuestState(294, "completed"),
             route = {
-                Point(MAP.WETLANDS, 0.3685, 0.4308, "Continue toward Ormer's Revenge",
-                    "Continue toward Ormer's Revenge."),
                 Point(MAP.WETLANDS, 0.3797, 0.5135, "Ormer Ironbraid",
                     "Travel to Ormer Ironbraid."),
             },
@@ -616,8 +614,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-471-apprentice-s-duties" },
             complete = QuestState(471, "complete"),
             route = {
-                Point(MAP.WETLANDS, 0.1776, 0.2768, "Continue toward Apprentice's Duties",
-                    "Continue toward Apprentice's Duties."),
                 Point(MAP.WETLANDS, 0.2298, 0.2297, "Giant Wetlands Crocolisk",
                     "Travel to Giant Wetlands Crocolisk."),
             },
@@ -630,8 +626,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-275-blisters-on-the-land" },
             complete = QuestState(275, "complete"),
             route = {
-                Point(MAP.WETLANDS, 0.1776, 0.2768, "Continue toward Blisters on The Land",
-                    "Continue toward Blisters on The Land."),
                 Point(MAP.WETLANDS, 0.5624, 0.4030, "Fen Creeper",
                     "Travel to Fen Creeper."),
             },
@@ -655,8 +649,6 @@ ns:RegisterGuide({
             text = "Accept Uncovering the Past from Prospector Whelgar in Whelgar's Excavation Site.",
             complete = QuestState(299, "activeOrCompleted"),
             route = {
-                Point(MAP.WETLANDS, 0.3685, 0.4308, "Continue toward Uncovering the Past",
-                    "Continue toward Uncovering the Past."),
                 Point(MAP.WETLANDS, 0.3880, 0.5230, "Prospector Whelgar",
                     "Travel to Prospector Whelgar."),
             },
@@ -764,8 +756,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-299-4-neru-fragment", "objective-299-3-golm-fragment", "objective-299-2-modr-fragment", "objective-299-1-ados-fragment" },
             complete = QuestState(299, "completed"),
             route = {
-                Point(MAP.WETLANDS, 0.3685, 0.4308, "Continue toward Uncovering the Past",
-                    "Continue toward Uncovering the Past."),
                 Point(MAP.WETLANDS, 0.3880, 0.5230, "Prospector Whelgar",
                     "Travel to Prospector Whelgar."),
             },
@@ -790,8 +780,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-464-war-banners" },
             complete = QuestState(464, "complete"),
             route = {
-                Point(MAP.WETLANDS, 0.4400, 0.4400, "Continue toward War Banners",
-                    "Continue toward War Banners."),
                 Point(MAP.WETLANDS, 0.4122, 0.4617, "Dragonmaw Swamprunner",
                     "Travel to Dragonmaw Swamprunner."),
             },
@@ -863,8 +851,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-289-the-cursed-crew" },
             complete = QuestState(289, "complete"),
             route = {
-                Point(MAP.WETLANDS, 0.1300, 0.2700, "Continue toward The Cursed Crew",
-                    "Continue toward The Cursed Crew."),
                 Point(MAP.WETLANDS, 0.1400, 0.3000, "Cursed Sailor",
                     "Travel to Cursed Sailor."),
             },

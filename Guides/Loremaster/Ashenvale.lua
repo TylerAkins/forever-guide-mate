@@ -561,8 +561,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1033-elune-s-tear" },
             complete = QuestState(1033, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.4348, 0.4576, "Continue toward Elune's Tear",
-                    "Continue toward Elune's Tear."),
                 Point(MAP.ASHENVALE, 0.4625, 0.4593, "Iris Lake",
                     "Travel to Iris Lake."),
             },
@@ -1300,10 +1298,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-25-stonetalon-standstill" },
             complete = QuestState(25, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.6158, 0.7051, "Continue toward Stonetalon Standstill",
-                    "Continue toward Stonetalon Standstill."),
-                Point(MAP.ASHENVALE, 0.5585, 0.7092, "Continue toward Stonetalon Standstill",
-                    "Continue toward Stonetalon Standstill."),
                 Point(MAP.ASHENVALE, 0.4890, 0.6940, "Befouled Water Elemental",
                     "Travel to Befouled Water Elemental."),
             },
@@ -1625,8 +1619,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-6462-troll-charm" },
             complete = QuestState(6462, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.3887, 0.3064, "Continue toward Troll Charm",
-                    "Continue toward Troll Charm."),
                 Point(MAP.ASHENVALE, 0.3800, 0.3000, "Troll Charm",
                     "Travel to Troll Charm."),
             },
@@ -2187,10 +2179,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1011-forsaken-diseases" },
             complete = QuestState(1011, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.8616, 0.5042, "Continue toward Forsaken Diseases",
-                    "Continue toward Forsaken Diseases."),
-                Point(MAP.ASHENVALE, 0.7800, 0.5619, "Continue toward Forsaken Diseases",
-                    "Continue toward Forsaken Diseases."),
                 Point(MAP.ASHENVALE, 0.7529, 0.7219, "The Dor'Danil Barrow Den",
                     "Travel to The Dor'Danil Barrow Den."),
             },
@@ -2276,8 +2264,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1012-insane-druids" },
             complete = QuestObjective(1012, 1),
             route = {
-                Point(MAP.ASHENVALE, 0.7596, 0.7535, "Continue toward Taneel Darkwood",
-                    "Continue toward Taneel Darkwood."),
                 Point(MAP.ASHENVALE, 0.7725, 0.7474, "Taneel Darkwood",
                     "Travel to Taneel Darkwood."),
             },
@@ -2397,12 +2383,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1028-raene-s-cleansing" },
             complete = QuestState(1028, "completed"),
             route = {
-                Point(MAP.ASHENVALE, 0.5297, 0.5456, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
-                Point(MAP.ASHENVALE, 0.5563, 0.5129, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
-                Point(MAP.ASHENVALE, 0.5743, 0.5144, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
                 Point(MAP.ASHENVALE, 0.5635, 0.4928, "Raene's Cleansing",
                     "Travel to Raene's Cleansing."),
             },
@@ -2514,8 +2494,6 @@ ns:RegisterGuide({
             text = "Accept Raene's Cleansing from Krolg in Mystral Lake.",
             complete = QuestState(1045, "activeOrCompleted"),
             route = {
-                Point(MAP.ASHENVALE, 0.5264, 0.7430, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
                 Point(MAP.ASHENVALE, 0.5084, 0.7506, "Krolg",
                     "Travel to Krolg."),
             },
@@ -2533,8 +2511,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1045-raene-s-cleansing" },
             complete = QuestState(1045, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.5445, 0.7459, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
                 Point(MAP.ASHENVALE, 0.5470, 0.7950, "Ran Bloodtooth",
                     "Travel to Ran Bloodtooth."),
             },
@@ -2565,10 +2541,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-1045-dartol-s-rod-of-transformation", "objective-1045-raene-s-cleansing" },
             complete = QuestState(1045, "completed"),
             route = {
-                Point(MAP.ASHENVALE, 0.5557, 0.7580, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
-                Point(MAP.ASHENVALE, 0.5469, 0.7477, "Continue toward Raene's Cleansing",
-                    "Continue toward Raene's Cleansing."),
                 Point(MAP.ASHENVALE, 0.5088, 0.7504, "Krolg",
                     "Travel to Krolg."),
             },
@@ -2718,10 +2690,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1038-velinde-s-effects" },
             complete = QuestObjective(1038, 1),
             route = {
-                Point(MAP.DARNASSUS, 0.5601, 0.7941, "Continue toward Velinde's Journal",
-                    "Continue toward Velinde's Journal."),
-                Point(MAP.DARNASSUS, 0.5730, 0.7660, "Continue toward Velinde's Journal",
-                    "Continue toward Velinde's Journal."),
                 Point(MAP.DARNASSUS, 0.6237, 0.8325, "Tradesmen's Terrace",
                     "Travel to Tradesmen's Terrace."),
             },

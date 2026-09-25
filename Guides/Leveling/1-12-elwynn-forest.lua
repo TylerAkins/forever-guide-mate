@@ -139,8 +139,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-33-wolves-across-the-border" },
             complete = QuestState(33, "complete"),
             route = {
-                Point(MAP.ELWYNN, 0.4700, 0.3800, "Continue toward Wolves Across the Border",
-                    "Continue toward Wolves Across the Border."),
                 Point(MAP.ELWYNN, 0.4600, 0.3500, "Young Wolf",
                     "Travel to Young Wolf."),
             },
@@ -1618,8 +1616,6 @@ ns:RegisterGuide({
             text = "Accept Find the Lost Guards from Guard Thomas in Elwynn Forest.",
             complete = QuestState(37, "activeOrCompleted"),
             route = {
-                Point(MAP.ELWYNN, 0.6179, 0.5404, "Continue toward Find the Lost Guards",
-                    "Continue toward Find the Lost Guards."),
                 Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
                     "Travel to Guard Thomas."),
             },
@@ -1884,8 +1880,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-52-protect-the-frontier" },
             complete = QuestState(52, "complete"),
             route = {
-                Point(MAP.ELWYNN, 0.8100, 0.6200, "Continue toward Protect the Frontier",
-                    "Continue toward Protect the Frontier."),
                 Point(MAP.ELWYNN, 0.8300, 0.7800, "Prowler",
                     "Travel to Prowler."),
             },
@@ -1910,8 +1904,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-83-red-linen-goods" },
             complete = QuestState(83, "complete"),
             route = {
-                Point(MAP.ELWYNN, 0.9009, 0.8019, "Continue toward Red Linen Goods",
-                    "Continue toward Red Linen Goods."),
                 Point(MAP.ELWYNN, 0.6999, 0.8031, "Bandit",
                     "Travel to Bandit."),
             },
@@ -2675,8 +2667,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1685-gakin-s-summons" },
             complete = QuestState(1685, "completed"),
             route = {
-                Point(MAP.STORMWIND, 0.2929, 0.7399, "Continue toward Gakin's Summons",
-                    "Continue toward Gakin's Summons."),
                 Point(MAP.STORMWIND, 0.2532, 0.7847, "Gakin the Darkbinder",
                     "Travel to Gakin the Darkbinder."),
             },
@@ -2976,8 +2966,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1689-the-binding" },
             complete = QuestState(1689, "complete"),
             route = {
-                Point(MAP.STORMWIND, 0.2506, 0.7928, "Continue toward The Binding",
-                    "Continue toward The Binding."),
                 Point(MAP.STORMWIND, 0.2519, 0.7733, "Summoned Voidwalker",
                     "Travel to Summoned Voidwalker."),
             },
@@ -3451,8 +3439,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-224-in-defense-of-the-king-s-lands" },
             complete = QuestState(224, "complete"),
             route = {
-                Point(MAP.LOCH_MODAN, 0.3100, 0.7050, "Continue toward In Defense of the King's Lands",
-                    "Continue toward In Defense of the King's Lands."),
                 Point(MAP.LOCH_MODAN, 0.2800, 0.5300, "Stonesplinter Trogg",
                     "Travel to Stonesplinter Trogg."),
             },
@@ -3602,10 +3588,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-418-thelsamar-blood-sausages" },
             complete = QuestState(418, "complete"),
             route = {
-                Point(MAP.LOCH_MODAN, 0.3242, 0.2997, "Continue toward Thelsamar Blood Sausages",
-                    "Continue toward Thelsamar Blood Sausages."),
-                Point(MAP.LOCH_MODAN, 0.3728, 0.3691, "Continue toward Thelsamar Blood Sausages",
-                    "Continue toward Thelsamar Blood Sausages."),
                 Point(MAP.LOCH_MODAN, 0.2730, 0.2824, "Black Bear",
                     "Travel to Black Bear."),
             },

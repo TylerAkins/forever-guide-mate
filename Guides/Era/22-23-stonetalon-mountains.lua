@@ -151,8 +151,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1071-a-gnome-s-respite" },
             complete = QuestState(1071, "complete"),
             route = {
-                Point(MAP.STONETALON, 0.6790, 0.5144, "Continue toward Gnome's Respite",
-                    "Continue toward Gnome's Respite."),
                 Point(MAP.STONETALON, 0.6899, 0.5677, "Venture Co. Deforester",
                     "Travel to Venture Co. Deforester."),
             },

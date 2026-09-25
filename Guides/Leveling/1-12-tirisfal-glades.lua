@@ -1179,8 +1179,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-426-the-mills-overrun" },
             complete = QuestState(426, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.5000, 0.3698, "Continue toward The Mills Overrun",
-                    "Continue toward The Mills Overrun."),
                 Point(MAP.TIRISFAL, 0.4802, 0.3454, "Darkeye Bonecaster",
                     "Travel to Darkeye Bonecaster."),
             },
@@ -2425,10 +2423,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1886-the-deathstalkers" },
             complete = QuestState(1886, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.5899, 0.6396, "Continue toward The Deathstalkers",
-                    "Continue toward The Deathstalkers."),
-                Point(MAP.TIRISFAL, 0.5481, 0.7288, "Continue toward The Deathstalkers",
-                    "Continue toward The Deathstalkers."),
                 Point(MAP.TIRISFAL, 0.5475, 0.7335, "Astor Hadren",
                     "Travel to Astor Hadren."),
             },

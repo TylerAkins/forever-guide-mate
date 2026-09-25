@@ -106,8 +106,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4450-ledger-from-tanaris" },
             complete = QuestObjective(4450, 2),
             route = {
-                Point(MAP.SEARING_GORGE, 0.6000, 0.7026, "Continue toward Glassweb Spider",
-                    "Continue toward Glassweb Spider."),
                 Point(MAP.SEARING_GORGE, 0.6195, 0.5154, "Glassweb Spider",
                     "Travel to Glassweb Spider."),
             },
@@ -119,8 +117,6 @@ ns:RegisterGuide({
             text = "Accept Divine Retribution from Velarok Windblade in Thorium Point.",
             complete = QuestState(3441, "activeOrCompleted"),
             route = {
-                Point(MAP.SEARING_GORGE, 0.6698, 0.4168, "Continue toward Divine Retribution",
-                    "Continue toward Divine Retribution."),
                 Point(MAP.SEARING_GORGE, 0.3905, 0.3895, "Velarok Windblade",
                     "Travel to Velarok Windblade."),
             },
@@ -269,10 +265,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3442-the-flawless-flame" },
             complete = QuestState(3442, "complete"),
             route = {
-                Point(MAP.SEARING_GORGE, 0.3909, 0.4174, "Continue toward The Flawless Flame",
-                    "Continue toward The Flawless Flame."),
-                Point(MAP.SEARING_GORGE, 0.3134, 0.4375, "Continue toward The Flawless Flame",
-                    "Continue toward The Flawless Flame."),
                 Point(MAP.SEARING_GORGE, 0.4268, 0.3859, "Blazing Elemental",
                     "Travel to Blazing Elemental."),
             },
@@ -332,8 +324,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-it" },
             complete = QuestState(7727, "complete"),
             route = {
-                Point(MAP.SEARING_GORGE, 0.4767, 0.4739, "Continue toward Incendosaurs? Whateverosaur is More Like It",
-                    "Continue toward Incendosaurs? Whateverosaur is More Like It."),
                 Point(MAP.SEARING_GORGE, 0.4853, 0.2821, "Incendosaur",
                     "Travel to Incendosaur."),
             },
@@ -713,8 +703,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3463-set-them-ablaze" },
             complete = QuestObjective(3463, 3),
             route = {
-                Point(MAP.SEARING_GORGE, 0.5271, 0.5769, "Continue toward Eastern Tower Ablaze",
-                    "Continue toward Eastern Tower Ablaze."),
                 Point(MAP.SEARING_GORGE, 0.5007, 0.5486, "The Cauldron",
                     "Travel to The Cauldron."),
             },

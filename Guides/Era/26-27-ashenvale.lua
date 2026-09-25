@@ -175,10 +175,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-25-stonetalon-standstill" },
             complete = QuestState(25, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.6158, 0.7051, "Continue toward Stonetalon Standstill",
-                    "Continue toward Stonetalon Standstill."),
-                Point(MAP.ASHENVALE, 0.5585, 0.7092, "Continue toward Stonetalon Standstill",
-                    "Continue toward Stonetalon Standstill."),
                 Point(MAP.ASHENVALE, 0.4890, 0.6940, "Befouled Water Elemental",
                     "Travel to Befouled Water Elemental."),
             },
@@ -209,8 +205,6 @@ ns:RegisterGuide({
             },
             text = "Find Shadumbra patrolling the area between the path towards Astranaar and the path towards Felwood.",
             route = {
-                Point(MAP.ASHENVALE, 0.5610, 0.5740, "Continue toward Shadumbra",
-                    "Continue toward Shadumbra."),
                 Point(MAP.ASHENVALE, 0.6310, 0.4860, "Shadumbra",
                     "Travel to Shadumbra."),
             },
@@ -327,8 +321,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-6462-troll-charm" },
             complete = QuestState(6462, "complete"),
             route = {
-                Point(MAP.ASHENVALE, 0.3887, 0.3064, "Continue toward Troll Charm",
-                    "Continue toward Troll Charm."),
                 Point(MAP.ASHENVALE, 0.3800, 0.3000, "Troll Charm",
                     "Travel to Troll Charm."),
             },

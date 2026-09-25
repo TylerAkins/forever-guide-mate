@@ -231,8 +231,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3561-delivery-to-archmage-xylem" },
             complete = QuestState(3561, "completed"),
             route = {
-                Point(MAP.AZSHARA, 0.2689, 0.4302, "Continue toward Delivery to Archmage Xylem",
-                    "Continue toward Delivery to Archmage Xylem."),
                 Point(MAP.AZSHARA, 0.2972, 0.4049, "Archmage Xylem",
                     "Travel to Archmage Xylem."),
             },
@@ -376,10 +374,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-3568-1-filled-vial-labeled-1", "objective-3568-2-filled-vial-labeled-2", "objective-3568-3-filled-vial-labeled-3", "objective-3568-4-filled-vial-labeled-4" },
             complete = QuestState(3568, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.5209, 0.8040, "Continue toward Seeping Corruption",
-                    "Continue toward Seeping Corruption."),
-                Point(MAP.UNDERCITY, 0.4751, 0.7573, "Continue toward Seeping Corruption",
-                    "Continue toward Seeping Corruption."),
                 Point(MAP.UNDERCITY, 0.4870, 0.7160, "Chemist Cuely",
                     "Travel to Chemist Cuely."),
             },

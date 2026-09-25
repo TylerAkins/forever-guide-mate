@@ -165,8 +165,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4421-the-corruption-of-the-jadefire" },
             complete = QuestObjective(4421, 4),
             route = {
-                Point(MAP.FELWOOD, 0.3662, 0.6846, "Continue toward Xavathras",
-                    "Continue toward Xavathras."),
                 Point(MAP.FELWOOD, 0.3360, 0.6660, "Xavathras",
                     "Travel to Xavathras."),
             },
@@ -179,10 +177,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4421-the-corruption-of-the-jadefire" },
             complete = QuestState(4421, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.3716, 0.6688, "Continue toward The Corruption of the Jadefire",
-                    "Continue toward The Corruption of the Jadefire."),
-                Point(MAP.FELWOOD, 0.3779, 0.6924, "Continue toward The Corruption of the Jadefire",
-                    "Continue toward The Corruption of the Jadefire."),
                 Point(MAP.FELWOOD, 0.3662, 0.6846, "Jadefire Rogue",
                     "Travel to Jadefire Rogue."),
             },
@@ -206,10 +200,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5155-forces-of-jaedenar" },
             complete = QuestState(5155, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.3887, 0.5876, "Continue toward Forces of Jaedenar",
-                    "Continue toward Forces of Jaedenar."),
-                Point(MAP.FELWOOD, 0.3766, 0.6112, "Continue toward Forces of Jaedenar",
-                    "Continue toward Forces of Jaedenar."),
                 Point(MAP.FELWOOD, 0.3540, 0.6027, "Jaedenar Guardian",
                     "Travel to Jaedenar Guardian."),
             },
@@ -268,8 +258,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5157-collection-of-the-corrupt-water" },
             complete = QuestState(5157, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.4130, 0.5984, "Continue toward Collection of the Corrupt Water",
-                    "Continue toward Collection of the Corrupt Water."),
                 Point(MAP.FELWOOD, 0.3516, 0.5974, "Jaedenar",
                     "Travel to Jaedenar."),
             },
@@ -317,10 +305,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4906-further-corruption" },
             complete = QuestObjective(4906, 4),
             route = {
-                Point(MAP.FELWOOD, 0.4268, 0.1834, "Continue toward Xavaric",
-                    "Continue toward Xavaric."),
-                Point(MAP.FELWOOD, 0.4305, 0.1526, "Continue toward Xavaric",
-                    "Continue toward Xavaric."),
                 Point(MAP.FELWOOD, 0.3915, 0.2170, "Xavaric",
                     "Travel to Xavaric."),
             },
@@ -352,10 +336,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4906-further-corruption" },
             complete = QuestState(4906, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.4268, 0.1834, "Continue toward Further Corruption",
-                    "Continue toward Further Corruption."),
-                Point(MAP.FELWOOD, 0.4305, 0.1526, "Continue toward Further Corruption",
-                    "Continue toward Further Corruption."),
                 Point(MAP.FELWOOD, 0.4165, 0.1977, "Jadefire Hellcaller",
                     "Travel to Jadefire Hellcaller."),
             },
@@ -368,8 +348,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4101-cleansing-felwood" },
             complete = QuestState(4101, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.5112, 0.1521, "Continue toward Cleansing Felwood",
-                    "Continue toward Cleansing Felwood."),
                 Point(MAP.FELWOOD, 0.5519, 0.1772, "Warpwood Moss Flayer",
                     "Travel to Warpwood Moss Flayer."),
             },
@@ -405,10 +383,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "complete"),
             route = {
-                Point(MAP.FELWOOD, 0.6289, 0.1129, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
-                Point(MAP.FELWOOD, 0.6269, 0.0786, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
                 Point(MAP.FELWOOD, 0.6137, 0.0742, "Deadwood Shaman",
                     "Travel to Deadwood Shaman."),
             },
@@ -421,8 +395,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "completed"),
             route = {
-                Point(MAP.FELWOOD, 0.6440, 0.1479, "Continue toward Deadwood of the North",
-                    "Continue toward Deadwood of the North."),
                 Point(MAP.FELWOOD, 0.6477, 0.0817, "Nafien",
                     "Travel to Nafien."),
             },

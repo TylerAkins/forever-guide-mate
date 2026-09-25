@@ -218,8 +218,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1066-blood-of-innocents" },
             complete = QuestState(1066, "complete"),
             route = {
-                Point(MAP.HILLSBRAD, 0.7639, 0.4669, "Continue toward Blood of Innocents",
-                    "Continue toward Blood of Innocents."),
                 Point(MAP.HILLSBRAD, 0.7891, 0.4283, "Syndicate Watchman",
                     "Travel to Syndicate Watchman."),
             },
@@ -256,14 +254,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-7321-soothing-turtle-bisque" },
             complete = QuestObjective(7321, 1),
             route = {
-                Point(MAP.HILLSBRAD, 0.5520, 0.5400, "Continue toward Snapjaw",
-                    "Continue toward Snapjaw."),
-                Point(MAP.HILLSBRAD, 0.5880, 0.4500, "Continue toward Snapjaw",
-                    "Continue toward Snapjaw."),
-                Point(MAP.HILLSBRAD, 0.6700, 0.3540, "Continue toward Snapjaw",
-                    "Continue toward Snapjaw."),
-                Point(MAP.HILLSBRAD, 0.6800, 0.3220, "Continue toward Snapjaw",
-                    "Continue toward Snapjaw."),
                 Point(MAP.HILLSBRAD, 0.6781, 0.2062, "Snapjaw",
                     "Travel to Snapjaw."),
             },
@@ -380,10 +370,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-501-elixir-of-pain" },
             complete = QuestState(501, "complete"),
             route = {
-                Point(MAP.HILLSBRAD, 0.4583, 0.3430, "Continue toward Elixir of Pain",
-                    "Continue toward Elixir of Pain."),
-                Point(MAP.HILLSBRAD, 0.5356, 0.3156, "Continue toward Elixir of Pain",
-                    "Continue toward Elixir of Pain."),
                 Point(MAP.HILLSBRAD, 0.3920, 0.3857, "Starving Mountain Lion",
                     "Travel to Starving Mountain Lion."),
             },
@@ -442,8 +428,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-553-helcular-s-revenge" },
             complete = QuestObjective(553, 1),
             route = {
-                Point(MAP.HILLSBRAD, 0.4627, 0.3191, "Continue toward Charge Flame of Azel",
-                    "Continue toward Charge Flame of Azel."),
                 Point(MAP.HILLSBRAD, 0.4385, 0.2793, "Darrow Hill",
                     "Travel to Darrow Hill."),
             },
@@ -552,8 +536,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-567-dangerous" },
             complete = QuestObjective(567, 3),
             route = {
-                Point(MAP.HILLSBRAD, 0.2644, 0.5868, "Continue toward Miner Hackett",
-                    "Continue toward Miner Hackett."),
                 Point(MAP.HILLSBRAD, 0.3049, 0.5835, "Miner Hackett",
                     "Travel to Miner Hackett."),
             },

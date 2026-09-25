@@ -541,10 +541,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2781-wanted-caliph-scorpidsting" },
             complete = QuestState(2781, "complete"),
             route = {
-                Point(MAP.TANARIS, 0.6257, 0.3304, "Continue toward WANTED: Caliph Scorpidsting",
-                    "Continue toward WANTED: Caliph Scorpidsting."),
-                Point(MAP.TANARIS, 0.5881, 0.3997, "Continue toward WANTED: Caliph Scorpidsting",
-                    "Continue toward WANTED: Caliph Scorpidsting."),
                 Point(MAP.TANARIS, 0.6117, 0.3876, "Caliph Scorpidsting",
                     "Travel to Caliph Scorpidsting."),
             },
