@@ -152,6 +152,7 @@ ns:RegisterGuide({
             priority = 141,
             conditions = {
                 all = {
+                    { level = { min = 18 } },
                     { quest = { id = 86613, state = "activeOrCompleted" } },
                 },
             },
@@ -201,6 +202,7 @@ ns:RegisterGuide({
             id = "accept-86758-twisting-the-knife",
             kind = "accept",
             priority = 181,
+            conditions = { level = { min = 16 } },
             text = "Accept Twisting the Knife from Marek Ironheart at the Farstrider Lodge.",
             complete = QuestState(86758, "activeOrCompleted"),
             route = {
@@ -364,6 +366,7 @@ ns:RegisterGuide({
             id = "objective-86758-twisting-the-knife",
             kind = "objective",
             priority = 325,
+            conditions = { level = { min = 16 } },
             text = "Twisting the Knife: defeat Daggerfang and bring back Marek's knife.",
             dependsOn = { "accept-86758-twisting-the-knife" },
             complete = QuestState(86758, "complete"),
@@ -440,6 +443,7 @@ ns:RegisterGuide({
             priority = 391,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 86614, state = "activeOrCompleted" } },
                 },
             },
@@ -493,6 +497,7 @@ ns:RegisterGuide({
             id = "turnin-86758-twisting-the-knife",
             kind = "turnin",
             priority = 445,
+            conditions = { level = { min = 16 } },
             text = "Turn in Twisting the Knife to Marek Ironheart at the Farstrider Lodge.",
             dependsOn = { "objective-86758-twisting-the-knife" },
             complete = QuestState(86758, "completed"),

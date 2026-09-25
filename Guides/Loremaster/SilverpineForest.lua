@@ -124,73 +124,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-98299-stop-the-spread",
-            kind = "accept",
-            priority = 70,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Stop the Spread from Dalar Dawnweaver.",
-            complete = QuestState(98299, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "objective-98299-stop-the-spread-1",
-            kind = "objective",
-            priority = 80,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Stop the Spread: Haggard Refugee.",
-            dependsOn = { "accept-98299-stop-the-spread" },
-            complete = QuestObjective(98299, 1, "Haggard Refugee"),
-            route = {
-                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "objective-98299-stop-the-spread-2",
-            kind = "objective",
-            priority = 90,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Stop the Spread: Sickly Refugee.",
-            dependsOn = { "accept-98299-stop-the-spread" },
-            complete = QuestObjective(98299, 2, "Sickly Refugee"),
-            route = {
-                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "turnin-98299-stop-the-spread",
-            kind = "turnin",
-            priority = 100,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Stop the Spread to Dalar Dawnweaver.",
-            dependsOn = { "objective-98299-stop-the-spread-2" },
-            complete = QuestState(98299, "completed"),
-            route = {
-                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
             id = "objective-429-wild-hearts",
             kind = "objective",
             priority = 110,
@@ -604,7 +537,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             dependsOn = { "turnin-430-return-to-quinn" },
@@ -621,7 +554,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Wild Eyes: Murloc Eye.",
@@ -638,7 +571,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Wild Eyes to Apothecary Renferrel.",
@@ -655,7 +588,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             dependsOn = { "turnin-91920-wild-eyes" },
@@ -672,7 +605,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Return to Quinn (Again): Quinn's Potion.",
@@ -689,7 +622,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Return to Quinn (Again) to Quinn Yorick.",
@@ -1005,13 +938,80 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98299-stop-the-spread",
+            kind = "accept",
+            priority = 711,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Stop the Spread from Dalar Dawnweaver.",
+            complete = QuestState(98299, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "objective-98299-stop-the-spread-1",
+            kind = "objective",
+            priority = 712,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Stop the Spread: Haggard Refugee.",
+            dependsOn = { "accept-98299-stop-the-spread" },
+            complete = QuestObjective(98299, 1, "Haggard Refugee"),
+            route = {
+                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "objective-98299-stop-the-spread-2",
+            kind = "objective",
+            priority = 713,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Stop the Spread: Sickly Refugee.",
+            dependsOn = { "accept-98299-stop-the-spread" },
+            complete = QuestObjective(98299, 2, "Sickly Refugee"),
+            route = {
+                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "turnin-98299-stop-the-spread",
+            kind = "turnin",
+            priority = 714,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Stop the Spread to Dalar Dawnweaver.",
+            dependsOn = { "objective-98299-stop-the-spread-2" },
+            complete = QuestState(98299, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.442, 0.398, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
             id = "accept-95981-watching-the-roads",
             kind = "accept",
             priority = 720,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             dependsOn = { "turnin-479-ambermill-investigations" },
@@ -1029,7 +1029,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Watching the Roads: Dalaran Watcher.",
@@ -1047,7 +1047,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Watching the Roads: Dalaran Wizard.",
@@ -1065,7 +1065,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Watching the Roads to Shadow Priest Allister.",
@@ -2753,7 +2753,7 @@ ns:RegisterGuide({
             priority = 2130,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             dependsOn = { "turnin-99-arugal-s-folly" },
@@ -2770,7 +2770,7 @@ ns:RegisterGuide({
             priority = 2140,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Arugal's Folly: Worgen Bits.",
@@ -2787,7 +2787,7 @@ ns:RegisterGuide({
             priority = 2150,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in Arugal's Folly to Dalar Dawnweaver.",
@@ -3073,7 +3073,7 @@ ns:RegisterGuide({
             priority = 2390,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "The Offering Stone: Note Scrap.",
@@ -3089,7 +3089,7 @@ ns:RegisterGuide({
             priority = 2400,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in The Offering Stone to . Wowhead has no pin, so follow the quest text.",
@@ -3103,7 +3103,7 @@ ns:RegisterGuide({
             priority = 2410,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             dependsOn = { "turnin-95884-the-offering-stone" },
@@ -3120,7 +3120,7 @@ ns:RegisterGuide({
             priority = 2420,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in The Tortured Soul to . Wowhead has no pin, so follow the quest text.",
@@ -3134,7 +3134,7 @@ ns:RegisterGuide({
             priority = 2430,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             dependsOn = { "turnin-95883-the-tortured-soul" },
@@ -3148,7 +3148,7 @@ ns:RegisterGuide({
             priority = 2440,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 23 } },
                 },
             },
             text = "Turn in The Offering of Blood to . Wowhead has no pin, so follow the quest text.",
@@ -3246,7 +3246,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Pyrewood Ambush from Deathstalker Faerleia.",
@@ -3263,7 +3263,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Pyrewood Ambush: Pyrewood Ambush. This is an elite. Bring a group.",
@@ -3281,7 +3281,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Pyrewood Ambush to Deathstalker Faerleia.",

@@ -822,7 +822,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Furlbrow's Deed from Farmer Furlbrow.",
@@ -839,7 +839,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Furlbrow's Deed: Furlbrow's Deed.",
@@ -857,7 +857,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Furlbrow's Deed to Farmer Furlbrow.",
@@ -1800,157 +1800,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-152-the-coast-isnt-clear",
-            kind = "accept",
-            priority = 1230,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Coast Isn't Clear from Captain Grayson.",
-            complete = QuestState(152, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "accept-104-the-coastal-menace",
-            kind = "accept",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Accept The Coastal Menace from Captain Grayson.",
-            complete = QuestState(104, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-104-the-coastal-menace-1",
-            kind = "objective",
-            priority = 1250,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "The Coastal Menace: Scale of Old Murk-Eye.",
-            dependsOn = { "accept-104-the-coastal-menace" },
-            complete = QuestObjective(104, 1, "Scale of Old Murk-Eye"),
-            route = {
-                Point(MAP.WESTFALL, 0.342, 0.838, "Old Murk-Eye",
-                    "Travel to Old Murk-Eye."),
-            },
-        },
-        {
-            id = "turnin-104-the-coastal-menace",
-            kind = "turnin",
-            priority = 1260,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Turn in The Coastal Menace to Captain Grayson.",
-            dependsOn = { "objective-104-the-coastal-menace-1" },
-            complete = QuestState(104, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-1",
-            kind = "objective",
-            priority = 1270,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Coastrunner.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 1, "Murloc Coastrunner"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-2",
-            kind = "objective",
-            priority = 1280,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Warrior.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 2, "Murloc Warrior"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-3",
-            kind = "objective",
-            priority = 1290,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Tidehunter.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 3, "Murloc Tidehunter"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-4",
-            kind = "objective",
-            priority = 1300,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Oracle.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 4, "Murloc Oracle"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "turnin-152-the-coast-isnt-clear",
-            kind = "turnin",
-            priority = 1310,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Coast Isn't Clear to Captain Grayson.",
-            dependsOn = { "objective-152-the-coast-isnt-clear-4" },
-            complete = QuestState(152, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
             id = "objective-103-keeper-of-the-flame",
             kind = "objective",
             priority = 1320,
@@ -2124,13 +1973,182 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-48-sweet-amber",
+            id = "accept-152-the-coast-isnt-clear",
             kind = "accept",
-            priority = 1460,
+            priority = 1451,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "Accept The Coast Isn't Clear from Captain Grayson.",
+            complete = QuestState(152, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "objective-152-the-coast-isnt-clear-1",
+            kind = "objective",
+            priority = 1452,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "The Coast Isn't Clear: Murloc Coastrunner.",
+            dependsOn = { "accept-152-the-coast-isnt-clear" },
+            complete = QuestObjective(152, 1, "Murloc Coastrunner"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "objective-152-the-coast-isnt-clear-2",
+            kind = "objective",
+            priority = 1453,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "The Coast Isn't Clear: Murloc Warrior.",
+            dependsOn = { "accept-152-the-coast-isnt-clear" },
+            complete = QuestObjective(152, 2, "Murloc Warrior"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "objective-152-the-coast-isnt-clear-3",
+            kind = "objective",
+            priority = 1454,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "The Coast Isn't Clear: Murloc Tidehunter.",
+            dependsOn = { "accept-152-the-coast-isnt-clear" },
+            complete = QuestObjective(152, 3, "Murloc Tidehunter"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "objective-152-the-coast-isnt-clear-4",
+            kind = "objective",
+            priority = 1455,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "The Coast Isn't Clear: Murloc Oracle.",
+            dependsOn = { "accept-152-the-coast-isnt-clear" },
+            complete = QuestObjective(152, 4, "Murloc Oracle"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "turnin-152-the-coast-isnt-clear",
+            kind = "turnin",
+            priority = 1456,
+            conditions = {
+                all = {
+                    { level = { min = 19 } },
+                },
+            },
+            text = "Turn in The Coast Isn't Clear to Captain Grayson.",
+            dependsOn = { "objective-152-the-coast-isnt-clear-4" },
+            complete = QuestState(152, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "accept-104-the-coastal-menace",
+            kind = "accept",
+            priority = 1457,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Coastal Menace from Captain Grayson.",
+            complete = QuestState(104, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "objective-104-the-coastal-menace-1",
+            kind = "objective",
+            priority = 1458,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "The Coastal Menace: Scale of Old Murk-Eye.",
+            dependsOn = { "accept-104-the-coastal-menace" },
+            complete = QuestObjective(104, 1, "Scale of Old Murk-Eye"),
+            route = {
+                Point(MAP.WESTFALL, 0.342, 0.838, "Old Murk-Eye",
+                    "Travel to Old Murk-Eye."),
+            },
+        },
+        {
+            id = "turnin-104-the-coastal-menace",
+            kind = "turnin",
+            priority = 1459,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Coastal Menace to Captain Grayson.",
+            dependsOn = { "objective-104-the-coastal-menace-1" },
+            complete = QuestState(104, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
+                    "Travel to Captain Grayson."),
+            },
+        },
+        {
+            id = "accept-49-sweet-amber",
+            kind = "accept",
+            priority = 1490,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
+                },
+            },
+            dependsOn = { "turnin-48-sweet-amber" },
+            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
+            complete = QuestState(49, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
+                    "Travel to Grimbooze Thunderbrew."),
+            },
+        },
+        {
+            id = "accept-48-sweet-amber",
+            kind = "accept",
+            priority = 1491,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 44 } },
                 },
             },
             text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
@@ -2143,11 +2161,11 @@ ns:RegisterGuide({
         {
             id = "objective-48-sweet-amber-1",
             kind = "objective",
-            priority = 1470,
+            priority = 1492,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Holy Spring Water.",
@@ -2161,34 +2179,16 @@ ns:RegisterGuide({
         {
             id = "turnin-48-sweet-amber",
             kind = "turnin",
-            priority = 1480,
+            priority = 1493,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
             dependsOn = { "objective-48-sweet-amber-1" },
             complete = QuestState(48, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-49-sweet-amber",
-            kind = "accept",
-            priority = 1490,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            dependsOn = { "turnin-48-sweet-amber" },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(49, "activeOrCompleted"),
             route = {
                 Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
                     "Travel to Grimbooze Thunderbrew."),
@@ -2201,7 +2201,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Sack of Barley.",
@@ -2219,7 +2219,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Sack of Corn.",
@@ -2237,7 +2237,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Sack of Rye.",
@@ -2255,7 +2255,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
@@ -2273,7 +2273,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             dependsOn = { "turnin-49-sweet-amber" },
@@ -2291,7 +2291,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Truesilver Bar.",
@@ -2309,7 +2309,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
@@ -2327,7 +2327,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             dependsOn = { "turnin-50-sweet-amber" },
@@ -2345,7 +2345,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: A Sycamore Branch.",
@@ -2363,7 +2363,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
@@ -2381,7 +2381,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             dependsOn = { "turnin-51-sweet-amber" },
@@ -2399,7 +2399,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Sweet Amber: Bundle of Charred Oak.",
@@ -2417,7 +2417,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
                 },
             },
             text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
@@ -2615,7 +2615,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon, then turn it in to Gryan Stoutmantle.",
@@ -2632,7 +2632,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
@@ -2649,7 +2649,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
@@ -2666,7 +2666,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
@@ -2683,7 +2683,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Golem Isospring.",
@@ -2701,7 +2701,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Copper Modulator.",
@@ -2719,7 +2719,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Crude Scope.",
@@ -2737,7 +2737,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
@@ -2755,7 +2755,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Precessive Autocognition Assembly.",
@@ -2773,7 +2773,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
@@ -2791,7 +2791,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Golem Isospring.",
@@ -2809,7 +2809,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Harvesting the Harvesters: Harvester Gyrostabilizer.",
@@ -2827,7 +2827,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
@@ -2845,7 +2845,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Testing the Wells from Alba Fairmoon.",
@@ -2862,7 +2862,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Murloc Gills from Alba Fairmoon.",
@@ -2879,7 +2879,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Accept The State of the Mines from Alba Fairmoon.",
@@ -2896,7 +2896,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Moonbrook Espionage from Alba Fairmoon.",
@@ -2913,7 +2913,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Destruction in Deadmines from Alba Fairmoon.",
@@ -2930,7 +2930,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Destruction in Deadmines from Alba Fairmoon.",
@@ -2947,7 +2947,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Destruction in Deadmines: Detonator used.",
@@ -2965,7 +2965,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Destruction in Deadmines to Alba Fairmoon.",
@@ -2983,7 +2983,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Destruction in Deadmines: Explosives placed.",
@@ -3001,7 +3001,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Destruction in Deadmines: Extra-Destructive Explosives.",
@@ -3019,7 +3019,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Destruction in Deadmines to Alba Fairmoon.",
@@ -3037,7 +3037,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Moonbrook Espionage: Suspicious Industrial Supplies.",
@@ -3055,7 +3055,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in Moonbrook Espionage to Alba Fairmoon.",
@@ -3073,7 +3073,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "The State of the Mines: Kobold Digger.",
@@ -3091,7 +3091,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "The State of the Mines: Riverpaw Miner.",
@@ -3109,7 +3109,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 14 } },
                 },
             },
             text = "Turn in The State of the Mines to Alba Fairmoon.",
@@ -3127,7 +3127,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Murloc Gills: Longshore Murloc Gill.",
@@ -3145,7 +3145,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Murloc Gills to Alba Fairmoon.",
@@ -3163,7 +3163,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Testing the Wells: Jansen Stead Water Sample.",
@@ -3181,7 +3181,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Testing the Wells: Molsen Farm Water Sample.",
@@ -3199,7 +3199,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Testing the Wells: Well Water Sample Kit.",
@@ -3217,7 +3217,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Testing the Wells to Alba Fairmoon.",
@@ -3235,7 +3235,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Explosive Consultation from Alba Fairmoon, then turn it in to Sprite Jumpsprocket.",
@@ -3252,7 +3252,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept A Dynamite Plan from Sprite Jumpsprocket.",
@@ -3269,7 +3269,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Explosive Consultation from Sprite Jumpsprocket.",
@@ -3286,7 +3286,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Explosive Consultation: Extra-Destructive Explosives.",
@@ -3304,7 +3304,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in Explosive Consultation to Alba Fairmoon.",
@@ -3322,7 +3322,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "A Dynamite Plan: Coarse Dynamite.",
@@ -3340,7 +3340,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in A Dynamite Plan to Sprite Jumpsprocket.",
@@ -3358,7 +3358,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Detonation at a Distance from Sprite Jumpsprocket, then turn it in to Jasper Fel.",
@@ -3375,7 +3375,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Detonation at a Distance from Jasper Fel.",
@@ -3392,7 +3392,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Detonation at a Distance: Remote Detonator Kit.",
@@ -3410,7 +3410,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in Detonation at a Distance to Sprite Jumpsprocket.",
@@ -3515,7 +3515,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 14 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept ...and that note you found from Burned-Out Remains.",
@@ -3532,7 +3532,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 14 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "...and that note you found: ...and that note you found.",
@@ -3550,7 +3550,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 14 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in ...and that note you found to Burned-Out Remains.",

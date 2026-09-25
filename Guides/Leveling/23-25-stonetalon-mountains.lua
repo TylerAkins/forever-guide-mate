@@ -78,6 +78,7 @@ ns:RegisterGuide({
             id = "accept-86576-bloodfury-trinkets",
             kind = "accept",
             priority = 51,
+            conditions = { level = { min = 26 } },
             text = "Accept Bloodfury Trinkets from Maggran Earthbinder at Sun Rock Retreat.",
             complete = QuestState(86576, "activeOrCompleted"),
             route = {
@@ -335,6 +336,7 @@ ns:RegisterGuide({
             id = "objective-86576-bloodfury-trinkets",
             kind = "objective",
             priority = 291,
+            conditions = { level = { min = 26 } },
             text = "Bloodfury Trinkets: collect 15 Glittering Sunstones from Bloodfury harpies in the Charred Vale. Wowhead gives no separate sunstone pin.",
             dependsOn = { "accept-86576-bloodfury-trinkets" },
             complete = QuestState(86576, "complete"),
@@ -359,6 +361,7 @@ ns:RegisterGuide({
             id = "turnin-86576-bloodfury-trinkets",
             kind = "turnin",
             priority = 311,
+            conditions = { level = { min = 26 } },
             text = "Turn in Bloodfury Trinkets to Mor'rogal at Sun Rock Retreat. Wowhead gives no pin for Mor'rogal, so this marks Maggran Earthbinder beside him.",
             dependsOn = { "objective-86576-bloodfury-trinkets" },
             complete = QuestState(86576, "completed"),

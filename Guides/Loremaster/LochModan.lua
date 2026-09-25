@@ -145,7 +145,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Accept Excavation Tools from Prospector Ironband.",
@@ -162,7 +162,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Excavation Tools: Excavation Tools.",
@@ -180,7 +180,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in Excavation Tools to Prospector Ironband.",
@@ -244,7 +244,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Accept Twisting the Knife from Marek Ironheart.",
@@ -261,7 +261,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Twisting the Knife: Marek's Croc-Hunting Knife.",
@@ -279,7 +279,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 12 } },
+                    { level = { min = 16 } },
                 },
             },
             text = "Turn in Twisting the Knife to Marek Ironheart.",
@@ -488,7 +488,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             dependsOn = { "turnin-199-a-dark-threat-looms" },
@@ -506,7 +506,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Strange Smelling Powder.",
@@ -524,7 +524,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in A Dark Threat Looms to Ashlan Stonesmirk.",
@@ -542,7 +542,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             dependsOn = { "turnin-161-a-dark-threat-looms" },
@@ -560,7 +560,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Disarming Colloid.",
@@ -578,7 +578,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in A Dark Threat Looms to Chief Engineer Hinderweir VII.",
@@ -596,7 +596,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             dependsOn = { "turnin-274-a-dark-threat-looms" },
@@ -614,7 +614,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Lurker Venom. This is an elite. Bring a group.",
@@ -632,7 +632,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Mo'grosh Crystal. This is an elite. Bring a group.",
@@ -650,7 +650,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Crocolisk Tear. This is an elite. Bring a group.",
@@ -668,7 +668,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in A Dark Threat Looms to Chief Engineer Hinderweir VII.",
@@ -686,7 +686,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             dependsOn = { "turnin-278-a-dark-threat-looms" },
@@ -704,7 +704,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "A Dark Threat Looms: Disarming Mixture.",
@@ -722,7 +722,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 18 } },
                 },
             },
             text = "Turn in A Dark Threat Looms to Explosive Charge.",
@@ -740,7 +740,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 16 } },
+                    { level = { min = 20 } },
                 },
             },
             dependsOn = { "turnin-280-a-dark-threat-looms" },
@@ -879,7 +879,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             dependsOn = { "turnin-301-report-to-ironforge" },
@@ -897,7 +897,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             dependsOn = { "turnin-302-powder-to-ironband" },
@@ -915,7 +915,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             dependsOn = { "turnin-273-resupplying-the-excavation" },
@@ -933,7 +933,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Thelsamar Blood Sausages from Vidra Hearthstove.",
@@ -950,7 +950,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Thelsamar Blood Sausages: Boar Intestines.",
@@ -968,7 +968,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Thelsamar Blood Sausages: Bear Meat.",
@@ -986,7 +986,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Thelsamar Blood Sausages: Spider Ichor.",
@@ -1004,7 +1004,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Thelsamar Blood Sausages to Vidra Hearthstove.",
@@ -1022,7 +1022,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell, then turn it in to Mountaineer Stormpike.",
@@ -1039,7 +1039,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept In Defense of the King's Lands from Captain Rugelfuss.",
@@ -1056,7 +1056,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept The Trogg Threat from Captain Rugelfuss.",
@@ -1073,7 +1073,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Rat Catching from Mountaineer Kadrell.",
@@ -1090,7 +1090,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Rat Catching: Tunnel Rat Ear.",
@@ -1108,7 +1108,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Rat Catching to Mountaineer Kadrell.",
@@ -1126,7 +1126,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "The Trogg Threat: Trogg Stone Tooth.",
@@ -1144,7 +1144,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in The Trogg Threat to Captain Rugelfuss.",
@@ -1162,7 +1162,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "In Defense of the King's Lands: Grawmug.",
@@ -1180,7 +1180,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "In Defense of the King's Lands: Gnasher.",
@@ -1198,7 +1198,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "In Defense of the King's Lands: Brawler.",
@@ -1216,7 +1216,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Turn in In Defense of the King's Lands to Captain Rugelfuss.",
@@ -1234,7 +1234,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept In Defense of the King's Lands from Mountaineer Cobbleflint.",
@@ -1251,7 +1251,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Trogg.",
@@ -1269,7 +1269,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Scout.",
@@ -1287,7 +1287,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in In Defense of the King's Lands to Mountaineer Cobbleflint.",
@@ -1305,7 +1305,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept In Defense of the King's Lands from Mountaineer Gravelgaw.",
@@ -1322,7 +1322,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Skullthumper.",
@@ -1340,7 +1340,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Seer.",
@@ -1358,7 +1358,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in In Defense of the King's Lands to Mountaineer Gravelgaw.",
@@ -1376,7 +1376,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept In Defense of the King's Lands from Mountaineer Wallbang.",
@@ -1393,7 +1393,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Shaman.",
@@ -1411,7 +1411,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "In Defense of the King's Lands: Stonesplinter Bonesnapper.",
@@ -1429,7 +1429,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in In Defense of the King's Lands to Mountaineer Wallbang.",
@@ -1447,7 +1447,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Protecting the Shipment from Miran, then turn it in to Prospector Ironband.",
@@ -1463,7 +1463,7 @@ ns:RegisterGuide({
             priority = 930,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Stonesplinter Trogg Disguise: Stonesplinter Trogg Disguise. Wowhead has no pin, so follow the quest text.",
@@ -1476,7 +1476,7 @@ ns:RegisterGuide({
             priority = 940,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Stonesplinter Trogg Disguise to . Wowhead has no pin, so follow the quest text.",
@@ -1706,7 +1706,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept Banner of the Fallen from Mountaineer Ylva.",
@@ -1723,7 +1723,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Banner of the Fallen: Banner of Ironforge.",
@@ -1741,7 +1741,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Banner of the Fallen: Headsplitter.",
@@ -1759,7 +1759,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Turn in Banner of the Fallen to Captain Rugelfuss.",
@@ -1777,7 +1777,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Snowbound from Grenhild Darktalon.",
@@ -1794,7 +1794,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Snowbound: Jar of Snow.",
@@ -1812,7 +1812,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Snowbound to Norric Lochthane.",
@@ -1830,7 +1830,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Silver of the Waves from Khara Deepwater.",
@@ -1847,7 +1847,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Silver of the Waves: Monogrammed Silver Hair Clip.",
@@ -1865,7 +1865,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Silver of the Waves to Khara Deepwater.",
@@ -1883,7 +1883,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Mercenaries from Magistrate Bluntnose.",
@@ -1900,7 +1900,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Mercenaries: Mo'grosh Ogre. This is an elite. Bring a group.",
@@ -1918,7 +1918,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Mercenaries: Mo'grosh Brute. This is an elite. Bring a group.",
@@ -1936,7 +1936,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Mercenaries: Mo'grosh Enforcer. This is an elite. Bring a group.",
@@ -1954,7 +1954,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Mercenaries to Magistrate Bluntnose.",
@@ -1966,66 +1966,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-86776-ingredients-for-the-forge",
-            kind = "accept",
-            priority = 1220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Accept Ingredients for the Forge from Morhan Coppertongue.",
-            complete = QuestState(86776, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
-                    "Travel to Morhan Coppertongue."),
-            },
-        },
-        {
-            id = "objective-86776-ingredients-for-the-forge-1",
-            kind = "objective",
-            priority = 1230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Ingredients for the Forge: Bronze Bar.",
-            dependsOn = { "accept-86776-ingredients-for-the-forge" },
-            complete = QuestObjective(86776, 1, "Bronze Bar"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
-                    "Travel to Morhan Coppertongue."),
-            },
-        },
-        {
-            id = "turnin-86776-ingredients-for-the-forge",
-            kind = "turnin",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Turn in Ingredients for the Forge to Morhan Coppertongue.",
-            dependsOn = { "objective-86776-ingredients-for-the-forge-1" },
-            complete = QuestState(86776, "completed"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
-                    "Travel to Morhan Coppertongue."),
-            },
-        },
-        {
             id = "accept-256-wanted-choksul",
             kind = "accept",
             priority = 1250,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept WANTED: Chok'sul from WANTED.",
@@ -2042,7 +1989,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "WANTED: Chok'sul: Chok'sul's Head. This is an elite. Bring a group.",
@@ -2060,7 +2007,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in WANTED: Chok'sul to Magistrate Bluntnose.",
@@ -2072,13 +2019,66 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-2500-badlands-reagent-run",
+            id = "accept-86776-ingredients-for-the-forge",
             kind = "accept",
-            priority = 1280,
+            priority = 1271,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 36 } },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Accept Ingredients for the Forge from Morhan Coppertongue.",
+            complete = QuestState(86776, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
+                    "Travel to Morhan Coppertongue."),
+            },
+        },
+        {
+            id = "objective-86776-ingredients-for-the-forge-1",
+            kind = "objective",
+            priority = 1272,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Ingredients for the Forge: Bronze Bar.",
+            dependsOn = { "accept-86776-ingredients-for-the-forge" },
+            complete = QuestObjective(86776, 1, "Bronze Bar"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
+                    "Travel to Morhan Coppertongue."),
+            },
+        },
+        {
+            id = "turnin-86776-ingredients-for-the-forge",
+            kind = "turnin",
+            priority = 1273,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Turn in Ingredients for the Forge to Morhan Coppertongue.",
+            dependsOn = { "objective-86776-ingredients-for-the-forge-1" },
+            complete = QuestState(86776, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.340, 0.466, "Morhan Coppertongue",
+                    "Travel to Morhan Coppertongue."),
+            },
+        },
+        {
+            id = "accept-2500-badlands-reagent-run",
+            kind = "accept",
+            priority = 1274,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 39 } },
                 },
             },
             text = "Accept Badlands Reagent Run from Ghak Healtouch.",
@@ -2089,66 +2089,13 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-2501-badlands-reagent-run-ii",
-            kind = "accept",
-            priority = 1290,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Accept Badlands Reagent Run II from Ghak Healtouch.",
-            complete = QuestState(2501, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
-                    "Travel to Ghak Healtouch."),
-            },
-        },
-        {
-            id = "objective-2501-badlands-reagent-run-ii-1",
-            kind = "objective",
-            priority = 1300,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Badlands Reagent Run II: Vessel of Dragon's Blood. This is an elite. Bring a group.",
-            dependsOn = { "accept-2501-badlands-reagent-run-ii" },
-            complete = QuestObjective(2501, 1, "Vessel of Dragon's Blood"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
-                    "Travel to Ghak Healtouch."),
-            },
-        },
-        {
-            id = "turnin-2501-badlands-reagent-run-ii",
-            kind = "turnin",
-            priority = 1310,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Badlands Reagent Run II to Ghak Healtouch.",
-            dependsOn = { "objective-2501-badlands-reagent-run-ii-1" },
-            complete = QuestState(2501, "completed"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
-                    "Travel to Ghak Healtouch."),
-            },
-        },
-        {
             id = "objective-2500-badlands-reagent-run-1",
             kind = "objective",
-            priority = 1320,
+            priority = 1275,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 36 } },
+                    { level = { min = 39 } },
                 },
             },
             text = "Badlands Reagent Run: Buzzard Gizzard.",
@@ -2162,11 +2109,11 @@ ns:RegisterGuide({
         {
             id = "objective-2500-badlands-reagent-run-2",
             kind = "objective",
-            priority = 1330,
+            priority = 1276,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 36 } },
+                    { level = { min = 39 } },
                 },
             },
             text = "Badlands Reagent Run: Crag Coyote Fang.",
@@ -2180,11 +2127,11 @@ ns:RegisterGuide({
         {
             id = "objective-2500-badlands-reagent-run-3",
             kind = "objective",
-            priority = 1340,
+            priority = 1277,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 36 } },
+                    { level = { min = 39 } },
                 },
             },
             text = "Badlands Reagent Run: Rock Elemental Shard.",
@@ -2198,11 +2145,11 @@ ns:RegisterGuide({
         {
             id = "turnin-2500-badlands-reagent-run",
             kind = "turnin",
-            priority = 1350,
+            priority = 1278,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 36 } },
+                    { level = { min = 39 } },
                 },
             },
             text = "Turn in Badlands Reagent Run to Ghak Healtouch.",
@@ -2214,13 +2161,66 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-3182-proof-of-deed",
+            id = "accept-2501-badlands-reagent-run-ii",
             kind = "accept",
-            priority = 1360,
+            priority = 1279,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 44 } },
+                },
+            },
+            text = "Accept Badlands Reagent Run II from Ghak Healtouch.",
+            complete = QuestState(2501, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
+                    "Travel to Ghak Healtouch."),
+            },
+        },
+        {
+            id = "objective-2501-badlands-reagent-run-ii-1",
+            kind = "objective",
+            priority = 1280,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 44 } },
+                },
+            },
+            text = "Badlands Reagent Run II: Vessel of Dragon's Blood. This is an elite. Bring a group.",
+            dependsOn = { "accept-2501-badlands-reagent-run-ii" },
+            complete = QuestObjective(2501, 1, "Vessel of Dragon's Blood"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
+                    "Travel to Ghak Healtouch."),
+            },
+        },
+        {
+            id = "turnin-2501-badlands-reagent-run-ii",
+            kind = "turnin",
+            priority = 1281,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 44 } },
+                },
+            },
+            text = "Turn in Badlands Reagent Run II to Ghak Healtouch.",
+            dependsOn = { "objective-2501-badlands-reagent-run-ii-1" },
+            complete = QuestState(2501, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.370, 0.492, "Ghak Healtouch",
+                    "Travel to Ghak Healtouch."),
+            },
+        },
+        {
+            id = "accept-3182-proof-of-deed",
+            kind = "accept",
+            priority = 1282,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 48 } },
                 },
             },
             text = "Accept Proof of Deed from Mountaineer Pebblebitty.",
@@ -2233,11 +2233,11 @@ ns:RegisterGuide({
         {
             id = "objective-3182-proof-of-deed-1",
             kind = "objective",
-            priority = 1370,
+            priority = 1283,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 48 } },
                 },
             },
             text = "Proof of Deed: Margol's Gigantic Horn. This is an elite. Bring a group.",
@@ -2251,11 +2251,11 @@ ns:RegisterGuide({
         {
             id = "turnin-3182-proof-of-deed",
             kind = "turnin",
-            priority = 1380,
+            priority = 1284,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 48 } },
                 },
             },
             text = "Turn in Proof of Deed to Curator Thorius.",

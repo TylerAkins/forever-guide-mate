@@ -426,7 +426,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 3 } },
                 },
             },
             text = "Accept Nature's Call from Tarindrella.",
@@ -444,7 +444,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 3 } },
                 },
             },
             text = "Nature's Call: Gnarlpine Totem. The abandoned camps are along the western edge of Shadowglen. Wowhead has no totem pin, so this marks the grells who scatter them.",
@@ -462,7 +462,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 3 } },
                 },
             },
             text = "Turn in Nature's Call to Tarindrella.",
@@ -749,7 +749,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 5 } },
                     { quest = { id = 97236, state = "activeOrCompleted" } },
                 },
             },
@@ -999,7 +999,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                     { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
@@ -1018,7 +1018,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                     { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
@@ -1037,7 +1037,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 9 } },
+                    { level = { min = 12 } },
                     { quest = { id = 927, state = "activeOrCompleted" } },
                 },
             },
@@ -1073,7 +1073,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 7 } },
                 },
             },
             text = "Accept Soft Saber Pelts from Aldia.",
@@ -1090,7 +1090,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Lost Runner from Sentinel Kyra Starsong.",
@@ -1152,7 +1152,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 7 } },
                 },
             },
             text = "Soft Saber Pelts: Soft Nightsaber Pelt.",
@@ -1494,7 +1494,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 7 } },
                 },
             },
             text = "Turn in Soft Saber Pelts to Aldia.",
@@ -1656,7 +1656,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Twisted Hatred from Tallonkai Swiftroot. This is an elite. Bring a group.",
@@ -1674,7 +1674,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Twisted Hatred: Befouled Webwood slain. Xethorr the Wicked is in the Cleft, northwest of Dolanaar. This is an elite. Bring a group.",
@@ -1692,7 +1692,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Twisted Hatred: Mature Fel Moss. This is an elite. Bring a group.",
@@ -1710,7 +1710,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
@@ -1816,7 +1816,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Accept Bounty: Gnarlpine Furbolg from Sentinel Shayla Nightbreeze.",
@@ -1833,7 +1833,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Bounty: Gnarlpine Furbolg: Gnarlpine Fang. Any Gnarlpine furbolg drops them, including the ones in the Ban'ethil Barrow Den.",
@@ -1851,7 +1851,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Turn in Bounty: Gnarlpine Furbolg to Sentinel Shayla Nightbreeze. She stands outside Darnassus, on the way into the city.",
@@ -1887,7 +1887,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom.",
@@ -1905,7 +1905,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Escaping Ban'ethil: Escort Lynessa Duskblossom out of the Ban'ethil Barrow Den.",
@@ -2157,7 +2157,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Escaping Ban'ethil to Sentinel Kyra Starsong.",
@@ -2875,7 +2875,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in The Lost Runner to Sentinel Eralya Leafshadow.",
@@ -2893,7 +2893,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow, then tell Byancie in Dolanaar.",
@@ -2911,7 +2911,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept The Great Tree Provides from Byancie.",
@@ -2929,7 +2929,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "The Great Tree Provides: Empty Vial. Buy it from a Dolanaar vendor. Wowhead has no vendor pin, so this marks Byancie.",
@@ -2947,7 +2947,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "The Great Tree Provides: Refreshing Spring Water. Buy it in Dolanaar. Wowhead has no vendor pin, so this marks Byancie.",
@@ -2965,7 +2965,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "The Great Tree Provides: Dewy Lasher Frond. Lashers grow around Lake Al'Ameth and along Wellspring Lake.",
@@ -3107,7 +3107,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Darkness in the Glade from Sentinel Arynia Cloudsbreak.",
@@ -3125,7 +3125,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Darkness in the Glade: Hatescreech's Amulet.",
@@ -3143,7 +3143,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Darkness in the Glade: Windmistress Gaedress' Amulet.",
@@ -3161,7 +3161,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Darkness in the Glade: Witchmother Arysa's Amulet.",
@@ -3179,7 +3179,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Darkness in the Glade to Sentinel Arynia Cloudsbreak.",
@@ -3197,7 +3197,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. Wowhead has no tree pin, so this marks Sentinel Arynia Cloudsbreak beside it.",
@@ -3469,7 +3469,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept The Sprouted Fronds from the Sprouted Frond in Denalan's planter.",
@@ -3487,7 +3487,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in The Sprouted Fronds to the Sprouted Frond.",
@@ -3559,7 +3559,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in The Great Tree Provides to Byancie.",
@@ -3577,7 +3577,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept Easing Suffering from Byancie, then take the salve to Sentinel Eralya Leafshadow.",
@@ -3613,7 +3613,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm, then bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
@@ -3631,7 +3631,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 1 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Crown of the Earth from Priestess Lariia, then bring the moonwell remnants to Tyrande Whisperwind.",

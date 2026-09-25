@@ -339,6 +339,7 @@ ns:RegisterGuide({
             id = "accept-95805-grace-of-anshe-and-musha",
             kind = "accept",
             priority = 211,
+            conditions = { level = { min = 4 } },
             text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
             complete = QuestState(95805, "activeOrCompleted"),
             route = {
@@ -350,6 +351,7 @@ ns:RegisterGuide({
             id = "objective-95805-grace-of-anshe-and-musha",
             kind = "objective",
             priority = 212,
+            conditions = { level = { min = 4 } },
             text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. Wowhead has no shrine pin.",
             dependsOn = { "accept-95805-grace-of-anshe-and-musha" },
             complete = QuestState(95805, "completed"),
@@ -866,6 +868,7 @@ ns:RegisterGuide({
             id = "accept-98430-the-longwalkers",
             kind = "accept",
             priority = 641,
+            conditions = { level = { min = 8 } },
             text = "Accept The Longwalkers from Perith Stormhoof inside Palemane Rock.",
             complete = QuestState(98430, "activeOrCompleted"),
             route = {
@@ -877,6 +880,7 @@ ns:RegisterGuide({
             id = "objective-98430-the-longwalkers",
             kind = "objective",
             priority = 642,
+            conditions = { level = { min = 8 } },
             text = "Escort Perith Stormhoof out of Palemane Rock.",
             dependsOn = { "accept-98430-the-longwalkers" },
             complete = QuestState(98430, "complete"),
@@ -1341,6 +1345,7 @@ ns:RegisterGuide({
             id = "accept-99079-longwalker-malah",
             kind = "accept",
             priority = 1041,
+            conditions = { level = { min = 9 } },
             text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
             complete = QuestState(99079, "activeOrCompleted"),
             route = {
@@ -1352,6 +1357,7 @@ ns:RegisterGuide({
             id = "accept-99108-sparring-match",
             kind = "accept",
             priority = 1042,
+            conditions = { level = { min = 6 } },
             text = "Accept Sparring Match from Krang Stonehoof in Bloodhoof Village.",
             complete = QuestState(99108, "activeOrCompleted"),
             route = {
@@ -1363,6 +1369,7 @@ ns:RegisterGuide({
             id = "objective-99108-sparring-match",
             kind = "objective",
             priority = 1043,
+            conditions = { level = { min = 6 } },
             text = "Win 3 duels, or defeat Novice Warriors, for Krang Stonehoof.",
             dependsOn = { "accept-99108-sparring-match" },
             complete = QuestState(99108, "complete"),
@@ -1375,6 +1382,7 @@ ns:RegisterGuide({
             id = "turnin-99108-sparring-match",
             kind = "turnin",
             priority = 1044,
+            conditions = { level = { min = 6 } },
             text = "Turn in Sparring Match to Krang Stonehoof in Bloodhoof Village.",
             dependsOn = { "objective-99108-sparring-match" },
             complete = QuestState(99108, "completed"),
@@ -1466,6 +1474,7 @@ ns:RegisterGuide({
             id = "accept-96130-chakuyak",
             kind = "accept",
             priority = 1091,
+            conditions = { level = { min = 8 } },
             text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(96130, "activeOrCompleted"),
             route = {
@@ -1477,6 +1486,7 @@ ns:RegisterGuide({
             id = "objective-96130-chakuyak",
             kind = "objective",
             priority = 1092,
+            conditions = { level = { min = 8 } },
             text = "Kill Chakuyak.",
             dependsOn = { "accept-96130-chakuyak" },
             complete = QuestState(96130, "complete"),
@@ -1525,6 +1535,7 @@ ns:RegisterGuide({
             id = "turnin-96130-chakuyak",
             kind = "turnin",
             priority = 1101,
+            conditions = { level = { min = 8 } },
             text = "Turn in Chakuyak to Yaw Sharpmane in Bloodhoof Village.",
             dependsOn = { "objective-96130-chakuyak" },
             complete = QuestState(96130, "completed"),
@@ -1739,6 +1750,7 @@ ns:RegisterGuide({
             id = "turnin-98430-the-longwalkers",
             kind = "turnin",
             priority = 1251,
+            conditions = { level = { min = 8 } },
             text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
             dependsOn = { "objective-98430-the-longwalkers" },
             complete = QuestState(98430, "completed"),
@@ -1983,6 +1995,7 @@ ns:RegisterGuide({
             priority = 1411,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -1999,6 +2012,7 @@ ns:RegisterGuide({
             priority = 1412,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2077,6 +2091,7 @@ ns:RegisterGuide({
             id = "turnin-99079-longwalker-malah",
             kind = "turnin",
             priority = 1471,
+            conditions = { level = { min = 9 } },
             text = "Turn in Longwalker Malah to Malah Longwind, east of Bloodhoof Village.",
             dependsOn = { "accept-99079-longwalker-malah" },
             complete = QuestState(99079, "completed"),
@@ -2089,6 +2104,7 @@ ns:RegisterGuide({
             id = "accept-99081-grim-tidings",
             kind = "accept",
             priority = 1472,
+            conditions = { level = { min = 9 } },
             text = "Accept Grim Tidings from Malah Longwind.",
             dependsOn = { "turnin-99079-longwalker-malah" },
             complete = QuestState(99081, "activeOrCompleted"),
@@ -2101,6 +2117,7 @@ ns:RegisterGuide({
             id = "turnin-99081-grim-tidings",
             kind = "turnin",
             priority = 1473,
+            conditions = { level = { min = 9 } },
             text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
             dependsOn = { "accept-99081-grim-tidings" },
             complete = QuestState(99081, "completed"),
@@ -2113,6 +2130,7 @@ ns:RegisterGuide({
             id = "accept-99101-our-ancient-enemy",
             kind = "accept",
             priority = 1474,
+            conditions = { level = { min = 9 } },
             text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
             dependsOn = { "turnin-99081-grim-tidings" },
             complete = QuestState(99101, "activeOrCompleted"),
@@ -2125,6 +2143,7 @@ ns:RegisterGuide({
             id = "turnin-99101-our-ancient-enemy",
             kind = "turnin",
             priority = 1475,
+            conditions = { level = { min = 9 } },
             text = "Turn in Our Ancient Enemy to Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "accept-99101-our-ancient-enemy" },
             complete = QuestState(99101, "completed"),
@@ -2137,6 +2156,7 @@ ns:RegisterGuide({
             id = "accept-99080-drive-them-out",
             kind = "accept",
             priority = 1476,
+            conditions = { level = { min = 9 } },
             text = "Accept Drive Them Out from Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "turnin-99101-our-ancient-enemy" },
             complete = QuestState(99080, "activeOrCompleted"),
@@ -2191,6 +2211,7 @@ ns:RegisterGuide({
             priority = 1501,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2208,6 +2229,7 @@ ns:RegisterGuide({
             priority = 1502,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2225,6 +2247,7 @@ ns:RegisterGuide({
             priority = 1503,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2242,6 +2265,7 @@ ns:RegisterGuide({
             priority = 1504,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2257,6 +2281,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-1",
             kind = "objective",
             priority = 1505,
+            conditions = { level = { min = 9 } },
             text = "Drive Them Out: kill 6 Galak Centaurs.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 1),
@@ -2269,6 +2294,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-2",
             kind = "objective",
             priority = 1506,
+            conditions = { level = { min = 9 } },
             text = "Drive Them Out: kill 4 Galak Outrunners.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 2),
@@ -2281,6 +2307,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-3",
             kind = "objective",
             priority = 1507,
+            conditions = { level = { min = 9 } },
             text = "Drive Them Out: bring Herak the Pillager's head.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 3),
@@ -2326,6 +2353,7 @@ ns:RegisterGuide({
             id = "turnin-99080-drive-them-out",
             kind = "turnin",
             priority = 1531,
+            conditions = { level = { min = 9 } },
             text = "Turn in Drive Them Out to Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "objective-99080-drive-them-out-1", "objective-99080-drive-them-out-2", "objective-99080-drive-them-out-3" },
             complete = QuestState(99080, "completed"),
@@ -2338,6 +2366,7 @@ ns:RegisterGuide({
             id = "accept-99082-the-high-chieftain",
             kind = "accept",
             priority = 1532,
+            conditions = { level = { min = 9 } },
             text = "Accept The High Chieftain from Baine Bloodhoof.",
             dependsOn = { "turnin-99080-drive-them-out" },
             complete = QuestState(99082, "activeOrCompleted"),
@@ -2391,6 +2420,7 @@ ns:RegisterGuide({
             id = "turnin-99082-the-high-chieftain",
             kind = "turnin",
             priority = 1565,
+            conditions = { level = { min = 9 } },
             text = "Turn in The High Chieftain to Cairne Bloodhoof.",
             dependsOn = { "accept-99082-the-high-chieftain" },
             complete = QuestState(99082, "completed"),
@@ -2507,6 +2537,7 @@ ns:RegisterGuide({
             priority = 1671,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -2524,6 +2555,7 @@ ns:RegisterGuide({
             priority = 1672,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
