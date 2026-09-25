@@ -1,12 +1,10 @@
 local _, ns = ...
 
--- Westfall Loremaster route.
--- The step order follows the leveling route. Quests that are on the
--- Wowhead zone page and not on that route are woven in at the giver
--- the route already visits, or after the series quest they follow.
--- Leveling route: Guides/Leveling/Era/12-17-westfall.lua
--- Quest list: https://www.wowhead.com/forever/quests/eastern-kingdoms/westfall
--- Dungeon quests stay in the dungeon guides.
+-- Alliance Era leveling route for Westfall, levels 12-17.
+-- Forever quests from the Westfall list are woven into this route.
+-- Left out: Of Mice and Milk ends in Stranglethorn. The dynamite chain is a second Stormwind trip. Destruction in Deadmines is a dungeon quest. The harvester follow-up that needs parts from Gnomeregan stays out.
+-- Journey to Sentinel Hill is for Alliance Skyborne. The barn alchemy lessons stay on alchemists.
+-- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -24,8 +22,8 @@ local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
 end
 
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
+local function QuestObjective(questID, index)
+    return { questObjective = { id = questID, index = index } }
 end
 
 local function Point(mapID, x, y, label, offMapText)
@@ -39,9 +37,9 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-westfall",
-    title = "Westfall",
-    category = "Loremaster Guides",
+    id = "leveling-era-12-17-westfall",
+    title = "12-17 Westfall",
+    category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
         all = {
@@ -293,9 +291,25 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-1786-heroes-vigil",
+            kind = "travel",
+            priority = 150,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Heroes' Vigil.",
+            route = {
+                Point(MAP.ELWYNN, 0.7253, 0.5140, "Heroes' Vigil",
+                    "Travel to Heroes' Vigil."),
+            },
+        },
+        {
             id = "objective-1786-the-tome-of-divinity",
             kind = "objective",
-            priority = 150,
+            priority = 160,
             conditions = {
                 all = {
                     { class = 2 },
@@ -313,7 +327,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1786-the-tome-of-divinity",
             kind = "turnin",
-            priority = 160,
+            priority = 170,
             conditions = {
                 all = {
                     { class = 2 },
@@ -331,7 +345,7 @@ ns:RegisterGuide({
         {
             id = "accept-1787-the-tome-of-divinity",
             kind = "accept",
-            priority = 170,
+            priority = 180,
             conditions = {
                 all = {
                     { class = 2 },
@@ -348,7 +362,7 @@ ns:RegisterGuide({
         {
             id = "objective-1787-the-tome-of-divinity",
             kind = "objective",
-            priority = 180,
+            priority = 190,
             conditions = {
                 all = {
                     { class = 2 },
@@ -364,9 +378,25 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-1788-cathedral-of-light",
+            kind = "travel",
+            priority = 200,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Cathedral of Light.",
+            route = {
+                Point(MAP.STORMWIND, 0.3849, 0.2638, "Cathedral of Light",
+                    "Travel to Cathedral of Light."),
+            },
+        },
+        {
             id = "turnin-1787-the-tome-of-divinity",
             kind = "turnin",
-            priority = 190,
+            priority = 210,
             conditions = {
                 all = {
                     { class = 2 },
@@ -384,7 +414,7 @@ ns:RegisterGuide({
         {
             id = "accept-1788-the-tome-of-divinity",
             kind = "accept",
-            priority = 200,
+            priority = 220,
             conditions = {
                 all = {
                     { class = 2 },
@@ -401,7 +431,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1788-the-tome-of-divinity",
             kind = "turnin",
-            priority = 210,
+            priority = 230,
             conditions = {
                 all = {
                     { class = 2 },
@@ -419,7 +449,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1645-the-tome-of-divinity",
             kind = "turnin",
-            priority = 220,
+            priority = 240,
             conditions = {
                 all = {
                     { class = 2 },
@@ -437,7 +467,7 @@ ns:RegisterGuide({
         {
             id = "objective-1646-tome-of-divinity",
             kind = "objective",
-            priority = 230,
+            priority = 250,
             conditions = {
                 all = {
                     { class = 2 },
@@ -455,7 +485,7 @@ ns:RegisterGuide({
         {
             id = "accept-1646-the-tome-of-divinity",
             kind = "accept",
-            priority = 240,
+            priority = 260,
             conditions = {
                 all = {
                     { class = 2 },
@@ -472,7 +502,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1646-the-tome-of-divinity",
             kind = "turnin",
-            priority = 250,
+            priority = 270,
             conditions = {
                 all = {
                     { class = 2 },
@@ -490,7 +520,7 @@ ns:RegisterGuide({
         {
             id = "accept-1647-the-tome-of-divinity",
             kind = "accept",
-            priority = 260,
+            priority = 280,
             conditions = {
                 all = {
                     { class = 2 },
@@ -507,7 +537,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1647-the-tome-of-divinity",
             kind = "turnin",
-            priority = 270,
+            priority = 290,
             conditions = {
                 all = {
                     { class = 2 },
@@ -525,7 +555,7 @@ ns:RegisterGuide({
         {
             id = "accept-1648-the-tome-of-divinity",
             kind = "accept",
-            priority = 280,
+            priority = 300,
             conditions = {
                 all = {
                     { class = 2 },
@@ -542,7 +572,7 @@ ns:RegisterGuide({
         {
             id = "objective-1648-the-tome-of-divinity",
             kind = "objective",
-            priority = 290,
+            priority = 310,
             conditions = {
                 all = {
                     { class = 2 },
@@ -560,7 +590,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1648-the-tome-of-divinity",
             kind = "turnin",
-            priority = 300,
+            priority = 320,
             conditions = {
                 all = {
                     { class = 2 },
@@ -578,7 +608,7 @@ ns:RegisterGuide({
         {
             id = "accept-1778-the-tome-of-divinity",
             kind = "accept",
-            priority = 310,
+            priority = 330,
             conditions = {
                 all = {
                     { class = 2 },
@@ -595,7 +625,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1778-the-tome-of-divinity",
             kind = "turnin",
-            priority = 320,
+            priority = 340,
             conditions = {
                 all = {
                     { class = 2 },
@@ -613,7 +643,7 @@ ns:RegisterGuide({
         {
             id = "accept-1779-the-tome-of-divinity",
             kind = "accept",
-            priority = 330,
+            priority = 350,
             conditions = {
                 all = {
                     { class = 2 },
@@ -630,7 +660,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1779-the-tome-of-divinity",
             kind = "turnin",
-            priority = 340,
+            priority = 360,
             conditions = {
                 all = {
                     { class = 2 },
@@ -648,7 +678,7 @@ ns:RegisterGuide({
         {
             id = "accept-1783-the-tome-of-divinity",
             kind = "accept",
-            priority = 350,
+            priority = 370,
             conditions = {
                 all = {
                     { class = 2 },
@@ -663,9 +693,27 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-1783-ironband-s-compound",
+            kind = "travel",
+            priority = 380,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 3 },
+                },
+            },
+            text = "Travel to Ironband's Compound.",
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5154, 0.4012, "Continue toward Ironband's Compound",
+                    "Continue toward Ironband's Compound."),
+                Point(MAP.DUN_MOROGH, 0.7833, 0.5806, "Ironband's Compound",
+                    "Travel to Ironband's Compound."),
+            },
+        },
+        {
             id = "objective-1783-narm-faulk",
             kind = "objective",
-            priority = 360,
+            priority = 390,
             conditions = {
                 all = {
                     { class = 2 },
@@ -679,7 +727,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1783-the-tome-of-divinity",
             kind = "turnin",
-            priority = 370,
+            priority = 400,
             conditions = {
                 all = {
                     { class = 2 },
@@ -697,7 +745,7 @@ ns:RegisterGuide({
         {
             id = "accept-1784-the-tome-of-divinity",
             kind = "accept",
-            priority = 380,
+            priority = 410,
             conditions = {
                 all = {
                     { class = 2 },
@@ -714,7 +762,7 @@ ns:RegisterGuide({
         {
             id = "objective-1784-the-tome-of-divinity",
             kind = "objective",
-            priority = 390,
+            priority = 420,
             conditions = {
                 all = {
                     { class = 2 },
@@ -730,9 +778,25 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-1785-hall-of-mysteries",
+            kind = "travel",
+            priority = 430,
+            conditions = {
+                all = {
+                    { class = 2 },
+                    { race = 3 },
+                },
+            },
+            text = "Travel to Hall of Mysteries.",
+            route = {
+                Point(MAP.IRONFORGE, 0.2356, 0.0838, "Hall of Mysteries",
+                    "Travel to Hall of Mysteries."),
+            },
+        },
+        {
             id = "turnin-1784-the-tome-of-divinity",
             kind = "turnin",
-            priority = 400,
+            priority = 440,
             conditions = {
                 all = {
                     { class = 2 },
@@ -750,7 +814,7 @@ ns:RegisterGuide({
         {
             id = "accept-1785-the-tome-of-divinity",
             kind = "accept",
-            priority = 410,
+            priority = 450,
             conditions = {
                 all = {
                     { class = 2 },
@@ -767,7 +831,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1785-the-tome-of-divinity",
             kind = "turnin",
-            priority = 420,
+            priority = 460,
             conditions = {
                 all = {
                     { class = 2 },
@@ -783,9 +847,67 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-307-menethil-harbor",
+            kind = "travel",
+            priority = 470,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Travel to Menethil Harbor.",
+            route = {
+                Point(MAP.WETLANDS, 0.0960, 0.5960, "Menethil Harbor",
+                    "Travel to Menethil Harbor."),
+            },
+        },
+        {
+            id = "travel-307-algaz-station",
+            kind = "travel",
+            priority = 480,
+            conditions = {
+                all = {
+                    { race = 4 },
+                },
+            },
+            text = "Follow the road to Algaz Station in Loch Modan.",
+            route = {
+                Point(MAP.WETLANDS, 0.1129, 0.5352, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.1444, 0.4560, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.2313, 0.4343, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.3216, 0.3921, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.3735, 0.3679, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.4979, 0.3921, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.5626, 0.5275, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.5788, 0.6170, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.5771, 0.6911, "Continue toward Algaz Station",
+                    "Continue toward Algaz Station."),
+                Point(MAP.WETLANDS, 0.5439, 0.7204, "Algaz Station",
+                    "Travel to Algaz Station."),
+            },
+        },
+        {
+            id = "travel-109-the-jansen-stead",
+            kind = "travel",
+            priority = 490,
+            text = "Travel to The Jansen Stead.",
+            route = {
+                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
+                    "Travel to The Jansen Stead."),
+            },
+        },
+        {
             id = "accept-64-the-forgotten-heirloom",
             kind = "accept",
-            priority = 430,
+            priority = 500,
             text = "Accept The Forgotten Heirloom from Farmer Furlbrow in The Jansen Stead.",
             complete = QuestState(64, "activeOrCompleted"),
             route = {
@@ -796,7 +918,7 @@ ns:RegisterGuide({
         {
             id = "accept-36-westfall-stew",
             kind = "accept",
-            priority = 440,
+            priority = 510,
             text = "Accept Westfall Stew from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(36, "activeOrCompleted"),
             route = {
@@ -807,7 +929,7 @@ ns:RegisterGuide({
         {
             id = "accept-151-poor-old-blanchy",
             kind = "accept",
-            priority = 450,
+            priority = 520,
             text = "Accept Poor Old Blanchy from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(151, "activeOrCompleted"),
             route = {
@@ -816,62 +938,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-184-furlbrows-deed",
-            kind = "accept",
-            priority = 460,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Furlbrow's Deed from Farmer Furlbrow.",
-            complete = QuestState(184, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.600, 0.194, "Farmer Furlbrow",
-                    "Travel to Farmer Furlbrow."),
-            },
-        },
-        {
-            id = "objective-184-furlbrows-deed-1",
-            kind = "objective",
-            priority = 470,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Furlbrow's Deed: Furlbrow's Deed.",
-            dependsOn = { "accept-184-furlbrows-deed" },
-            complete = QuestObjective(184, 1, "Furlbrow's Deed"),
-            route = {
-                Point(MAP.WESTFALL, 0.600, 0.194, "Farmer Furlbrow",
-                    "Travel to Farmer Furlbrow."),
-            },
-        },
-        {
-            id = "turnin-184-furlbrows-deed",
-            kind = "turnin",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Furlbrow's Deed to Farmer Furlbrow.",
-            dependsOn = { "objective-184-furlbrows-deed-1" },
-            complete = QuestState(184, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.600, 0.194, "Farmer Furlbrow",
-                    "Travel to Farmer Furlbrow."),
-            },
-        },
-        {
             id = "turnin-36-westfall-stew",
             kind = "turnin",
-            priority = 490,
+            priority = 530,
             text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
             dependsOn = { "accept-36-westfall-stew" },
             complete = QuestState(36, "completed"),
@@ -883,7 +952,7 @@ ns:RegisterGuide({
         {
             id = "accept-38-westfall-stew",
             kind = "accept",
-            priority = 500,
+            priority = 540,
             text = "Accept Westfall Stew from Salma Saldean in Saldean's Farm.",
             complete = QuestState(38, "activeOrCompleted"),
             route = {
@@ -894,7 +963,7 @@ ns:RegisterGuide({
         {
             id = "accept-22-goretusk-liver-pie",
             kind = "accept",
-            priority = 510,
+            priority = 550,
             text = "Accept Goretusk Liver Pie from Salma Saldean in Saldean's Farm.",
             complete = QuestState(22, "activeOrCompleted"),
             route = {
@@ -905,7 +974,7 @@ ns:RegisterGuide({
         {
             id = "accept-9-the-killing-fields",
             kind = "accept",
-            priority = 520,
+            priority = 560,
             text = "Accept The Killing Fields from Farmer Saldean in Saldean's Farm.",
             complete = QuestState(9, "activeOrCompleted"),
             route = {
@@ -914,17 +983,38 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92909-harvesting-the-harvesters",
+            kind = "accept",
+            priority = 561,
+            text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket at Saldean's Farm.",
+            complete = QuestState(92909, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
+            },
+        },
+        {
             id = "objective-151-poor-old-blanchy",
             kind = "objective",
-            priority = 530,
+            priority = 570,
             text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
         },
         {
+            id = "travel-6181-sentinel-hill",
+            kind = "travel",
+            priority = 580,
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5630, 0.4760, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "accept-12-the-people-s-militia",
             kind = "accept",
-            priority = 540,
+            priority = 590,
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(12, "activeOrCompleted"),
             route = {
@@ -933,9 +1023,42 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92742-testing-the-wells",
+            kind = "accept",
+            priority = 591,
+            text = "Accept Testing the Wells from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92742, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92744-murloc-gills",
+            kind = "accept",
+            priority = 592,
+            text = "Accept Murloc Gills from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92744, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92745-the-state-of-the-mines",
+            kind = "accept",
+            priority = 593,
+            text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
+            complete = QuestState(92745, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
             id = "accept-102-patrolling-westfall",
             kind = "accept",
-            priority = 550,
+            priority = 600,
             text = "Accept Patrolling Westfall from Captain Danuvin in Sentinel Hill.",
             complete = QuestState(102, "activeOrCompleted"),
             route = {
@@ -946,7 +1069,7 @@ ns:RegisterGuide({
         {
             id = "accept-6181-a-swift-message",
             kind = "accept",
-            priority = 560,
+            priority = 610,
             conditions = {
                 all = {
                     { race = 1 },
@@ -962,7 +1085,7 @@ ns:RegisterGuide({
         {
             id = "accept-153-red-leather-bandanas",
             kind = "accept",
-            priority = 570,
+            priority = 620,
             text = "Accept Red Leather Bandanas from Scout Galiaan in Sentinel Hill.",
             complete = QuestState(153, "activeOrCompleted"),
             route = {
@@ -973,7 +1096,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6181-a-swift-message",
             kind = "turnin",
-            priority = 580,
+            priority = 630,
             conditions = {
                 all = {
                     { race = 1 },
@@ -990,7 +1113,7 @@ ns:RegisterGuide({
         {
             id = "accept-6281-continue-to-stormwind",
             kind = "accept",
-            priority = 590,
+            priority = 640,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1004,9 +1127,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-6261-stormwind-city",
+            kind = "travel",
+            priority = 650,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Stormwind City.",
+            route = {
+                Point(MAP.STORMWIND, 0.5623, 0.6459, "Stormwind City",
+                    "Travel to Stormwind City."),
+            },
+        },
+        {
             id = "turnin-61-shipment-to-stormwind",
             kind = "turnin",
-            priority = 600,
+            priority = 660,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1022,7 +1160,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6281-continue-to-stormwind",
             kind = "turnin",
-            priority = 610,
+            priority = 670,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1039,7 +1177,7 @@ ns:RegisterGuide({
         {
             id = "accept-6261-dungar-longdrink",
             kind = "accept",
-            priority = 620,
+            priority = 680,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1055,7 +1193,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6261-dungar-longdrink",
             kind = "turnin",
-            priority = 630,
+            priority = 690,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1072,7 +1210,7 @@ ns:RegisterGuide({
         {
             id = "accept-6285-return-to-lewis",
             kind = "accept",
-            priority = 640,
+            priority = 700,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1086,9 +1224,57 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98021-journey-to-sentinel-hill",
+            kind = "accept",
+            priority = 705,
+            conditions = {
+                all = {
+                    { race = 95 },
+                },
+            },
+            text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon in Stormwind Keep. This step is for Alliance Skyborne.",
+            complete = QuestState(98021, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.7800, 0.1800, "Highlord Bolvar Fordragon",
+                    "Travel to Highlord Bolvar Fordragon."),
+            },
+        },
+        {
+            id = "travel-353-sentinel-hill",
+            kind = "travel",
+            priority = 710,
+            conditions = {
+                all = {
+                    { race = 1 },
+                },
+            },
+            text = "Travel to Sentinel Hill. Dungar Longdrink in Trade District.",
+            route = {
+                Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
+                    "Travel to Dungar Longdrink."),
+            },
+        },
+        {
+            id = "turnin-98021-journey-to-sentinel-hill",
+            kind = "turnin",
+            priority = 715,
+            conditions = {
+                all = {
+                    { race = 95 },
+                },
+            },
+            text = "Turn in Journey to Sentinel Hill to Gryan Stoutmantle in Sentinel Hill. This step is for Alliance Skyborne.",
+            dependsOn = { "accept-98021-journey-to-sentinel-hill" },
+            complete = QuestState(98021, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5620, 0.4760, "Gryan Stoutmantle",
+                    "Travel to Gryan Stoutmantle."),
+            },
+        },
+        {
             id = "turnin-6285-return-to-lewis",
             kind = "turnin",
-            priority = 650,
+            priority = 720,
             conditions = {
                 all = {
                     { race = 1 },
@@ -1105,7 +1291,7 @@ ns:RegisterGuide({
         {
             id = "objective-12-the-people-s-militia",
             kind = "objective",
-            priority = 660,
+            priority = 730,
             text = "Kill 15 Defias Smuggler and 15 Defias Trapper in Jangolode Mine.",
             dependsOn = { "accept-12-the-people-s-militia" },
             complete = QuestState(12, "complete"),
@@ -1119,9 +1305,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92745-kobold-digger",
+            kind = "objective",
+            priority = 735,
+            text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
+            dependsOn = { "accept-92745-the-state-of-the-mines" },
+            complete = QuestObjective(92745, 1),
+            route = {
+                Point(MAP.WESTFALL, 0.4460, 0.2340, "Kobold Digger",
+                    "Travel to Kobold Digger."),
+            },
+        },
+        {
             id = "objective-153-red-leather-bandanas",
             kind = "objective",
-            priority = 670,
+            priority = 740,
             text = "Collect Red Leather Bandana from Defias enemies.",
             dependsOn = { "accept-153-red-leather-bandanas" },
             complete = QuestState(153, "complete"),
@@ -1135,9 +1333,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-sentinel-hill",
+            kind = "travel",
+            priority = 750,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 13, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5399, 0.5298, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "turnin-153-red-leather-bandanas",
             kind = "turnin",
-            priority = 680,
+            priority = 760,
             text = "Turn in Red Leather Bandanas to Scout Galiaan in Sentinel Hill.",
             dependsOn = { "objective-153-red-leather-bandanas" },
             complete = QuestState(153, "completed"),
@@ -1149,7 +1362,7 @@ ns:RegisterGuide({
         {
             id = "turnin-12-the-people-s-militia",
             kind = "turnin",
-            priority = 690,
+            priority = 770,
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-12-the-people-s-militia" },
             complete = QuestState(12, "completed"),
@@ -1161,7 +1374,7 @@ ns:RegisterGuide({
         {
             id = "accept-13-the-people-s-militia",
             kind = "accept",
-            priority = 700,
+            priority = 780,
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(13, "activeOrCompleted"),
             route = {
@@ -1172,7 +1385,7 @@ ns:RegisterGuide({
         {
             id = "objective-151-poor-old-blanchy-2",
             kind = "objective",
-            priority = 710,
+            priority = 790,
             text = "Collect 8 Handful of Oats from Sack of Oats on the ground in Saldean's Farm and The Molsen Farm (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
@@ -1182,9 +1395,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92742-testing-the-wells",
+            kind = "objective",
+            priority = 795,
+            text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. Wowhead gives no well pin, so this marks the farms you are already walking.",
+            dependsOn = { "accept-92742-testing-the-wells" },
+            complete = QuestState(92742, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
+                    "Travel to The Jansen Stead."),
+                Point(MAP.WESTFALL, 0.5600, 0.3120, "Saldean's Farm",
+                    "Travel to Saldean's Farm."),
+            },
+        },
+        {
             id = "turnin-151-poor-old-blanchy",
             kind = "turnin",
-            priority = 720,
+            priority = 800,
             text = "Turn in Poor Old Blanchy to Verna Furlbrow in The Jansen Stead.",
             dependsOn = { "objective-151-poor-old-blanchy", "objective-151-poor-old-blanchy-2" },
             complete = QuestState(151, "completed"),
@@ -1196,7 +1423,7 @@ ns:RegisterGuide({
         {
             id = "objective-38-4-harvest-golem",
             kind = "objective",
-            priority = 730,
+            priority = 810,
             text = "Kill Harvest Golem and collect 3 Ripe Okra in Saldean's Farm Also collect 5 Hops for a later quest.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestObjective(38, 4),
@@ -1208,7 +1435,7 @@ ns:RegisterGuide({
         {
             id = "objective-116-harvest-golem",
             kind = "objective",
-            priority = 740,
+            priority = 820,
             text = "Kill Harvest Golem and collect 5 Ripe Okra for a later quest in Saldean's Farm.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestState(116, "complete"),
@@ -1220,7 +1447,7 @@ ns:RegisterGuide({
         {
             id = "objective-102-1-patrolling-westfall",
             kind = "objective",
-            priority = 750,
+            priority = 830,
             text = "Kill Gnolls near The Jansen Stead and collect 8 Gnoll Paw.",
             dependsOn = { "accept-102-patrolling-westfall" },
             complete = QuestObjective(102, 1),
@@ -1232,7 +1459,7 @@ ns:RegisterGuide({
         {
             id = "objective-38-2-3-item-730",
             kind = "objective",
-            priority = 760,
+            priority = 840,
             text = "Kill Murlocs in Longshore and collect 3 Murloc Eye.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestObjective(38, 2),
@@ -1242,9 +1469,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92744-murloc-gills",
+            kind = "objective",
+            priority = 845,
+            text = "Murloc Gills: collect 7 Longshore Murloc Gills from murlocs along the shore.",
+            dependsOn = { "accept-92744-murloc-gills" },
+            complete = QuestState(92744, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.2600, 0.5040, "Murloc Warrior",
+                    "Travel to Murloc Warrior."),
+            },
+        },
+        {
             id = "objective-136-captain-sanders-treasure-map",
             kind = "objective",
-            priority = 770,
+            priority = 850,
             text = "Kill Murlocs until you find Captain Sanders' Treasure Map in Longshore.",
             complete = QuestState(136, "complete"),
             route = {
@@ -1253,9 +1492,43 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-sentinel-hill-2",
+            kind = "travel",
+            priority = 860,
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5636, 0.4759, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
+            id = "turnin-92742-testing-the-wells",
+            kind = "turnin",
+            priority = 865,
+            text = "Turn in Testing the Wells to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92742-testing-the-wells" },
+            complete = QuestState(92742, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "turnin-92744-murloc-gills",
+            kind = "turnin",
+            priority = 866,
+            text = "Turn in Murloc Gills to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92744-murloc-gills" },
+            complete = QuestState(92744, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
             id = "turnin-102-patrolling-westfall",
             kind = "turnin",
-            priority = 780,
+            priority = 870,
             text = "Turn in Patrolling Westfall to Captain Danuvin in Sentinel Hill.",
             dependsOn = { "objective-102-1-patrolling-westfall" },
             complete = QuestState(102, "completed"),
@@ -1267,7 +1540,7 @@ ns:RegisterGuide({
         {
             id = "objective-38-westfall-stew",
             kind = "objective",
-            priority = 790,
+            priority = 880,
             text = "Kill Young Goretusk and Young Fleshripper and collect 3 Goretusk Snout and 3 Stringy Vulture Meat scatterred in Westfall.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestState(38, "complete"),
@@ -1285,7 +1558,7 @@ ns:RegisterGuide({
         {
             id = "objective-22-goretusk-liver-pie",
             kind = "objective",
-            priority = 800,
+            priority = 890,
             text = "Kill Young Goretusk and collect 8 Goretusk Liver scatterred in Westfall.",
             dependsOn = { "accept-22-goretusk-liver-pie" },
             complete = QuestState(22, "complete"),
@@ -1301,9 +1574,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-64-saldean-s-farm",
+            kind = "travel",
+            priority = 900,
+            text = "Travel to Saldean's Farm.",
+            route = {
+                Point(MAP.WESTFALL, 0.5642, 0.3048, "Saldean's Farm",
+                    "Travel to Saldean's Farm."),
+            },
+        },
+        {
             id = "turnin-38-westfall-stew",
             kind = "turnin",
-            priority = 810,
+            priority = 910,
             text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
             dependsOn = { "objective-38-4-harvest-golem", "objective-38-2-3-item-730", "objective-38-westfall-stew" },
             complete = QuestState(38, "completed"),
@@ -1315,7 +1598,7 @@ ns:RegisterGuide({
         {
             id = "turnin-22-goretusk-liver-pie",
             kind = "turnin",
-            priority = 820,
+            priority = 920,
             text = "Turn in Goretusk Liver Pie to Salma Saldean in Saldean's Farm.",
             dependsOn = { "objective-22-goretusk-liver-pie" },
             complete = QuestState(22, "completed"),
@@ -1327,7 +1610,7 @@ ns:RegisterGuide({
         {
             id = "objective-64-the-forgotten-heirloom",
             kind = "objective",
-            priority = 830,
+            priority = 930,
             text = "Collect Furlbrow's Pocket Watch from Furlbrow's Wardrobe. Benny Blanco guards the house. You do not need to kill him to loot the watch.",
             dependsOn = { "accept-64-the-forgotten-heirloom" },
             complete = QuestState(64, "complete"),
@@ -1339,7 +1622,7 @@ ns:RegisterGuide({
         {
             id = "turnin-64-the-forgotten-heirloom",
             kind = "turnin",
-            priority = 840,
+            priority = 940,
             text = "Turn in The Forgotten Heirloom to Farmer Furlbrow in The Jansen Stead.",
             dependsOn = { "objective-64-the-forgotten-heirloom" },
             complete = QuestState(64, "completed"),
@@ -1351,7 +1634,7 @@ ns:RegisterGuide({
         {
             id = "objective-9-the-killing-fields",
             kind = "objective",
-            priority = 850,
+            priority = 950,
             text = "Kill 20 Harvest Watcher in the 3 farms and also collect 5 Flask of Oil for a later quest.",
             dependsOn = { "accept-9-the-killing-fields" },
             complete = QuestState(9, "complete"),
@@ -1365,9 +1648,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92909-harvesting-the-harvesters",
+            kind = "objective",
+            priority = 955,
+            text = "Harvesting the Harvesters: collect 14 Golem Isosprings and 5 Harvester Gyrostabilizers from the harvest golems.",
+            dependsOn = { "accept-92909-harvesting-the-harvesters" },
+            complete = QuestState(92909, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.5640, 0.3500, "Harvest Golem",
+                    "Travel to Harvest Golem."),
+            },
+        },
+        {
             id = "turnin-9-the-killing-fields",
             kind = "turnin",
-            priority = 860,
+            priority = 960,
             text = "Turn in The Killing Fields to Farmer Saldean in Saldean's Farm.",
             dependsOn = { "objective-9-the-killing-fields" },
             complete = QuestState(9, "completed"),
@@ -1377,9 +1672,59 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-92909-harvesting-the-harvesters",
+            kind = "turnin",
+            priority = 965,
+            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket at Saldean's Farm.",
+            dependsOn = { "objective-92909-harvesting-the-harvesters" },
+            complete = QuestState(92909, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
+            },
+        },
+        {
+            id = "turnin-92910-harvesting-the-harvesters",
+            kind = "turnin",
+            priority = 966,
+            conditions = {
+                all = {
+                    { quest = { id = 92910, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket if a harvester dropped a Precessive Autocognition Assembly.",
+            complete = QuestState(92910, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5160, 0.3220, "Ozwin Ironsprocket",
+                    "Travel to Ozwin Ironsprocket."),
+            },
+        },
+        {
+            id = "travel-13-moonbrook",
+            kind = "travel",
+            priority = 970,
+            text = "Travel to Moonbrook.",
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "objective-92745-riverpaw-miner",
+            kind = "objective",
+            priority = 969,
+            text = "The State of the Mines: slay 6 Riverpaw Miners in the Gold Coast Quarry.",
+            dependsOn = { "accept-92745-the-state-of-the-mines" },
+            complete = QuestObjective(92745, 2),
+            route = {
+                Point(MAP.WESTFALL, 0.3000, 0.4740, "Riverpaw Miner",
+                    "Travel to Riverpaw Miner."),
+            },
+        },
+        {
             id = "objective-13-the-people-s-militia",
             kind = "objective",
-            priority = 870,
+            priority = 980,
             text = "Kill 15 Defias Pillager and Defias Looter in Moonbrook.",
             dependsOn = { "accept-13-the-people-s-militia" },
             complete = QuestState(13, "complete"),
@@ -1389,9 +1734,125 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92109-my-first-alchemy-set",
+            kind = "accept",
+            priority = 981,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Accept My First Alchemy Set from the young alchemist in the Moonbrook barn. Wowhead gives no pin for the child, so this marks Moonbrook. This step is for alchemists.",
+            complete = QuestState(92109, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "objective-92109-my-first-alchemy-set",
+            kind = "objective",
+            priority = 982,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "My First Alchemy Set: gather 5 Empty Vials, 5 Peacebloom, and 5 Silverleaf for the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "accept-92109-my-first-alchemy-set" },
+            complete = QuestState(92109, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "turnin-92109-my-first-alchemy-set",
+            kind = "turnin",
+            priority = 983,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Turn in My First Alchemy Set to the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "objective-92109-my-first-alchemy-set" },
+            complete = QuestState(92109, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "accept-92110-my-first-real-potion",
+            kind = "accept",
+            priority = 984,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Accept My First Real Potion from the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "turnin-92109-my-first-alchemy-set" },
+            complete = QuestState(92110, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "objective-92110-my-first-real-potion",
+            kind = "objective",
+            priority = 985,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "My First Real Potion: gather 3 Murloc Eyes for the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "accept-92110-my-first-real-potion" },
+            complete = QuestState(92110, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "turnin-92110-my-first-real-potion",
+            kind = "turnin",
+            priority = 986,
+            conditions = {
+                all = {
+                    { profession = { skillLineID = 171 } },
+                },
+            },
+            text = "Turn in My First Real Potion to the young alchemist in the Moonbrook barn. This step is for alchemists.",
+            dependsOn = { "objective-92110-my-first-real-potion" },
+            complete = QuestState(92110, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "travel-sentinel-hill-3",
+            kind = "travel",
+            priority = 990,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 14, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "turnin-13-the-people-s-militia",
             kind = "turnin",
-            priority = 880,
+            priority = 1000,
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-13-the-people-s-militia" },
             complete = QuestState(13, "completed"),
@@ -1401,9 +1862,33 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-92745-the-state-of-the-mines",
+            kind = "turnin",
+            priority = 1005,
+            text = "Turn in The State of the Mines to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92745-kobold-digger", "objective-92745-riverpaw-miner" },
+            complete = QuestState(92745, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "accept-92747-moonbrook-espionage",
+            kind = "accept",
+            priority = 1006,
+            text = "Accept Moonbrook Espionage from Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "turnin-92745-the-state-of-the-mines" },
+            complete = QuestState(92747, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
             id = "accept-14-the-people-s-militia",
             kind = "accept",
-            priority = 890,
+            priority = 1010,
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(14, "activeOrCompleted"),
             route = {
@@ -1414,7 +1899,7 @@ ns:RegisterGuide({
         {
             id = "accept-65-the-defias-brotherhood",
             kind = "accept",
-            priority = 900,
+            priority = 1020,
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(65, "activeOrCompleted"),
             route = {
@@ -1423,9 +1908,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-244-three-corners",
+            kind = "travel",
+            priority = 1030,
+            text = "Travel to Three Corners in Redridge Mountains.",
+            route = {
+                Point(MAP.REDRIDGE, 0.1532, 0.7142, "Three Corners",
+                    "Travel to Three Corners."),
+            },
+        },
+        {
             id = "accept-244-encroaching-gnolls",
             kind = "accept",
-            priority = 910,
+            priority = 1040,
             text = "Accept Encroaching Gnolls from Watch Captain Parker in Three Corners.",
             complete = QuestState(244, "activeOrCompleted"),
             route = {
@@ -1436,7 +1931,7 @@ ns:RegisterGuide({
         {
             id = "turnin-244-encroaching-gnolls",
             kind = "turnin",
-            priority = 920,
+            priority = 1050,
             text = "Turn in Encroaching Gnolls to Deputy Feldon in Redridge Mountains.",
             dependsOn = { "accept-244-encroaching-gnolls" },
             complete = QuestState(244, "completed"),
@@ -1448,7 +1943,7 @@ ns:RegisterGuide({
         {
             id = "accept-246-assessing-the-threat",
             kind = "accept",
-            priority = 930,
+            priority = 1060,
             text = "Accept Assessing the Threat from Deputy Feldon in Redridge Mountains.",
             complete = QuestState(246, "activeOrCompleted"),
             route = {
@@ -1457,9 +1952,20 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98407-show-of-force",
+            kind = "accept",
+            priority = 1065,
+            text = "Accept Show of Force from Deputy Feldon.",
+            complete = QuestState(98407, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
             id = "accept-3741-hilary-s-necklace",
             kind = "accept",
-            priority = 940,
+            priority = 1070,
             text = "Accept Hilary's Necklace from Shawn in Lake Everstill.",
             complete = QuestState(3741, "activeOrCompleted"),
             route = {
@@ -1470,7 +1976,7 @@ ns:RegisterGuide({
         {
             id = "objective-3741-hilary-s-necklace",
             kind = "objective",
-            priority = 950,
+            priority = 1080,
             text = "Find Nida's Necklace inside a mud pile underwater in the lake, check around each waypoint.",
             dependsOn = { "accept-3741-hilary-s-necklace" },
             complete = QuestState(3741, "complete"),
@@ -1492,7 +1998,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3741-hilary-s-necklace",
             kind = "turnin",
-            priority = 960,
+            priority = 1090,
             text = "Turn in Hilary's Necklace to Nida in Lake Everstill.",
             dependsOn = { "objective-3741-hilary-s-necklace" },
             complete = QuestState(3741, "completed"),
@@ -1504,7 +2010,7 @@ ns:RegisterGuide({
         {
             id = "accept-118-the-price-of-shoes",
             kind = "accept",
-            priority = 970,
+            priority = 1100,
             text = "Accept The Price of Shoes from Verner Osgood in Lakeshire.",
             complete = QuestState(118, "activeOrCompleted"),
             route = {
@@ -1515,7 +2021,7 @@ ns:RegisterGuide({
         {
             id = "accept-120-messenger-to-stormwind",
             kind = "accept",
-            priority = 980,
+            priority = 1110,
             text = "Accept Messenger to Stormwind from Magistrate Solomon in Lakeshire.",
             complete = QuestState(120, "activeOrCompleted"),
             route = {
@@ -1526,7 +2032,7 @@ ns:RegisterGuide({
         {
             id = "accept-129-a-free-lunch",
             kind = "accept",
-            priority = 990,
+            priority = 1120,
             text = "Accept A Free Lunch from Darcy Parker in Lakeshire.",
             complete = QuestState(129, "activeOrCompleted"),
             route = {
@@ -1537,7 +2043,7 @@ ns:RegisterGuide({
         {
             id = "accept-116-dry-times",
             kind = "accept",
-            priority = 1000,
+            priority = 1130,
             text = "Accept Dry Times from Barkeep Daniels in Lakeshire.",
             complete = QuestState(116, "activeOrCompleted"),
             route = {
@@ -1548,7 +2054,7 @@ ns:RegisterGuide({
         {
             id = "turnin-65-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1010,
+            priority = 1140,
             text = "Turn in The Defias Brotherhood to Wiley the Black in Lakeshire.",
             dependsOn = { "accept-65-the-defias-brotherhood" },
             complete = QuestState(65, "completed"),
@@ -1560,7 +2066,7 @@ ns:RegisterGuide({
         {
             id = "accept-132-the-defias-brotherhood",
             kind = "accept",
-            priority = 1020,
+            priority = 1150,
             text = "Accept The Defias Brotherhood from Wiley the Black in Lakeshire.",
             complete = QuestState(132, "activeOrCompleted"),
             route = {
@@ -1569,9 +2075,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "note-129-lakeshire",
+            kind = "note",
+            priority = 1160,
+            text = "Set your hearth in Lakeshire with Innkeeper Brianna.",
+            route = {
+                Point(MAP.REDRIDGE, 0.2701, 0.4490, "Innkeeper Brianna",
+                    "Travel to Innkeeper Brianna."),
+            },
+        },
+        {
+            id = "travel-135-sentinel-hill",
+            kind = "travel",
+            priority = 1170,
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5628, 0.4753, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "turnin-132-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1030,
+            priority = 1180,
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-132-the-defias-brotherhood" },
             complete = QuestState(132, "completed"),
@@ -1583,7 +2109,7 @@ ns:RegisterGuide({
         {
             id = "accept-135-the-defias-brotherhood",
             kind = "accept",
-            priority = 1040,
+            priority = 1190,
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(135, "activeOrCompleted"),
             route = {
@@ -1592,9 +2118,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-stormwind-city",
+            kind = "travel",
+            priority = 1200,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 121, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Stormwind City.",
+            route = {
+                Point(MAP.STORMWIND, 0.6404, 0.7531, "Stormwind City",
+                    "Travel to Stormwind City."),
+            },
+        },
+        {
             id = "objective-116-2-cask-of-merlot",
             kind = "objective",
-            priority = 1050,
+            priority = 1210,
             text = "Buy Cask of Merlot from Roberto Pupellyverbos in Valley Of Heroes.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 2),
@@ -1606,7 +2147,7 @@ ns:RegisterGuide({
         {
             id = "turnin-135-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1060,
+            priority = 1220,
             text = "Turn in The Defias Brotherhood to Master Mathias Shaw in SI:7.",
             dependsOn = { "accept-135-the-defias-brotherhood" },
             complete = QuestState(135, "completed"),
@@ -1618,7 +2159,7 @@ ns:RegisterGuide({
         {
             id = "accept-141-the-defias-brotherhood",
             kind = "accept",
-            priority = 1070,
+            priority = 1230,
             text = "Accept The Defias Brotherhood from Master Mathias Shaw in SI:7.",
             complete = QuestState(141, "activeOrCompleted"),
             route = {
@@ -1629,7 +2170,7 @@ ns:RegisterGuide({
         {
             id = "turnin-120-messenger-to-stormwind",
             kind = "turnin",
-            priority = 1080,
+            priority = 1240,
             text = "Turn in Messenger to Stormwind to General Marcus Jonathan in Valley Of Heroes.",
             dependsOn = { "accept-120-messenger-to-stormwind" },
             complete = QuestState(120, "completed"),
@@ -1641,7 +2182,7 @@ ns:RegisterGuide({
         {
             id = "accept-121-messenger-to-stormwind",
             kind = "accept",
-            priority = 1090,
+            priority = 1250,
             text = "Accept Messenger to Stormwind from General Marcus Jonathan in Valley Of Heroes.",
             complete = QuestState(121, "activeOrCompleted"),
             route = {
@@ -1650,9 +2191,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-119-goldshire",
+            kind = "travel",
+            priority = 1260,
+            text = "Travel to Goldshire.",
+            route = {
+                Point(MAP.ELWYNN, 0.4170, 0.6553, "Goldshire",
+                    "Travel to Goldshire."),
+            },
+        },
+        {
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
-            priority = 1100,
+            priority = 1270,
             text = "Turn in The Price of Shoes to Smith Argus in Goldshire.",
             dependsOn = { "accept-118-the-price-of-shoes" },
             complete = QuestState(118, "completed"),
@@ -1664,7 +2215,7 @@ ns:RegisterGuide({
         {
             id = "accept-119-return-to-verner",
             kind = "accept",
-            priority = 1110,
+            priority = 1280,
             text = "Accept Return to Verner from Smith Argus in Goldshire.",
             complete = QuestState(119, "activeOrCompleted"),
             route = {
@@ -1675,7 +2226,7 @@ ns:RegisterGuide({
         {
             id = "objective-116-4-skin-of-sweet-rum",
             kind = "objective",
-            priority = 1120,
+            priority = 1290,
             text = "Buy Skin of Sweet Rum from Barkeep Dobbins in Goldshire.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 4),
@@ -1685,9 +2236,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-122-lakeshire",
+            kind = "travel",
+            priority = 1300,
+            text = "Travel or Hearthstone to Lakeshire.",
+            route = {
+                Point(MAP.REDRIDGE, 0.3090, 0.4730, "Lakeshire",
+                    "Travel to Lakeshire."),
+            },
+        },
+        {
             id = "turnin-119-return-to-verner",
             kind = "turnin",
-            priority = 1130,
+            priority = 1310,
             text = "Turn in Return to Verner to Verner Osgood in Lakeshire.",
             dependsOn = { "accept-119-return-to-verner" },
             complete = QuestState(119, "completed"),
@@ -1699,7 +2260,7 @@ ns:RegisterGuide({
         {
             id = "accept-122-underbelly-scales",
             kind = "accept",
-            priority = 1140,
+            priority = 1320,
             text = "Accept Underbelly Scales from Verner Osgood in Lakeshire.",
             complete = QuestState(122, "activeOrCompleted"),
             route = {
@@ -1710,7 +2271,7 @@ ns:RegisterGuide({
         {
             id = "turnin-121-messenger-to-stormwind",
             kind = "turnin",
-            priority = 1150,
+            priority = 1330,
             text = "Turn in Messenger to Stormwind to Magistrate Solomon in Lakeshire.",
             dependsOn = { "accept-121-messenger-to-stormwind" },
             complete = QuestState(121, "completed"),
@@ -1722,7 +2283,7 @@ ns:RegisterGuide({
         {
             id = "accept-143-messenger-to-westfall",
             kind = "accept",
-            priority = 1160,
+            priority = 1340,
             text = "Accept Messenger to Westfall from Magistrate Solomon in Lakeshire.",
             complete = QuestState(143, "activeOrCompleted"),
             route = {
@@ -1731,9 +2292,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-144-sentinel-hill",
+            kind = "travel",
+            priority = 1350,
+            text = "Travel or Hearthstone to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5633, 0.4752, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "turnin-143-messenger-to-westfall",
             kind = "turnin",
-            priority = 1170,
+            priority = 1360,
             text = "Turn in Messenger to Westfall to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-143-messenger-to-westfall" },
             complete = QuestState(143, "completed"),
@@ -1745,7 +2316,7 @@ ns:RegisterGuide({
         {
             id = "accept-144-messenger-to-westfall",
             kind = "accept",
-            priority = 1180,
+            priority = 1370,
             text = "Accept Messenger to Westfall from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(144, "activeOrCompleted"),
             route = {
@@ -1756,7 +2327,7 @@ ns:RegisterGuide({
         {
             id = "turnin-141-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1190,
+            priority = 1380,
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-141-the-defias-brotherhood" },
             complete = QuestState(141, "completed"),
@@ -1768,7 +2339,7 @@ ns:RegisterGuide({
         {
             id = "accept-142-the-defias-brotherhood",
             kind = "accept",
-            priority = 1200,
+            priority = 1390,
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(142, "activeOrCompleted"),
             route = {
@@ -1777,9 +2348,29 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "note-13-sentinel-hill",
+            kind = "note",
+            priority = 1400,
+            text = "Set your hearth in Sentinel Hill with Innkeeper Heather.",
+            route = {
+                Point(MAP.WESTFALL, 0.5284, 0.5369, "Innkeeper Heather",
+                    "Travel to Innkeeper Heather."),
+            },
+        },
+        {
+            id = "travel-142-moonbrook",
+            kind = "travel",
+            priority = 1410,
+            text = "Travel to Moonbrook.",
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
             id = "objective-142-the-defias-brotherhood",
             kind = "objective",
-            priority = 1210,
+            priority = 1420,
             text = "Kill Defias Messenger and collect A Mysterious Message, he should be near the road entrance to Moonbrook.",
             dependsOn = { "accept-142-the-defias-brotherhood" },
             complete = QuestState(142, "complete"),
@@ -1789,9 +2380,31 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-92747-moonbrook-espionage",
+            kind = "objective",
+            priority = 1425,
+            text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. Wowhead gives no supply pin, so this marks Moonbrook.",
+            dependsOn = { "accept-92747-moonbrook-espionage" },
+            complete = QuestState(92747, "complete"),
+            route = {
+                Point(MAP.WESTFALL, 0.4401, 0.6947, "Moonbrook",
+                    "Travel to Moonbrook."),
+            },
+        },
+        {
+            id = "travel-103-westfall-lighthouse",
+            kind = "travel",
+            priority = 1430,
+            text = "Travel to Westfall Lighthouse.",
+            route = {
+                Point(MAP.WESTFALL, 0.3002, 0.8600, "Westfall Lighthouse",
+                    "Travel to Westfall Lighthouse."),
+            },
+        },
+        {
             id = "accept-103-keeper-of-the-flame",
             kind = "accept",
-            priority = 1220,
+            priority = 1440,
             text = "Accept Keeper of the Flame from Captain Grayson in Westfall Lighthouse.",
             complete = QuestState(103, "activeOrCompleted"),
             route = {
@@ -1800,160 +2413,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-152-the-coast-isnt-clear",
-            kind = "accept",
-            priority = 1230,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Coast Isn't Clear from Captain Grayson.",
-            complete = QuestState(152, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "accept-104-the-coastal-menace",
-            kind = "accept",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Accept The Coastal Menace from Captain Grayson.",
-            complete = QuestState(104, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-104-the-coastal-menace-1",
-            kind = "objective",
-            priority = 1250,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "The Coastal Menace: Scale of Old Murk-Eye.",
-            dependsOn = { "accept-104-the-coastal-menace" },
-            complete = QuestObjective(104, 1, "Scale of Old Murk-Eye"),
-            route = {
-                Point(MAP.WESTFALL, 0.342, 0.838, "Old Murk-Eye",
-                    "Travel to Old Murk-Eye."),
-            },
-        },
-        {
-            id = "turnin-104-the-coastal-menace",
-            kind = "turnin",
-            priority = 1260,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Turn in The Coastal Menace to Captain Grayson.",
-            dependsOn = { "objective-104-the-coastal-menace-1" },
-            complete = QuestState(104, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-1",
-            kind = "objective",
-            priority = 1270,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Coastrunner.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 1, "Murloc Coastrunner"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-2",
-            kind = "objective",
-            priority = 1280,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Warrior.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 2, "Murloc Warrior"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-3",
-            kind = "objective",
-            priority = 1290,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Tidehunter.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 3, "Murloc Tidehunter"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "objective-152-the-coast-isnt-clear-4",
-            kind = "objective",
-            priority = 1300,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "The Coast Isn't Clear: Murloc Oracle.",
-            dependsOn = { "accept-152-the-coast-isnt-clear" },
-            complete = QuestObjective(152, 4, "Murloc Oracle"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
-            id = "turnin-152-the-coast-isnt-clear",
-            kind = "turnin",
-            priority = 1310,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Coast Isn't Clear to Captain Grayson.",
-            dependsOn = { "objective-152-the-coast-isnt-clear-4" },
-            complete = QuestState(152, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.300, 0.860, "Captain Grayson",
-                    "Travel to Captain Grayson."),
-            },
-        },
-        {
             id = "objective-103-keeper-of-the-flame",
             kind = "objective",
-            priority = 1320,
+            priority = 1450,
             text = "Kill 20 Harvest Watcher in the 3 farms and collect 5 Flask of Oil for a later quest.",
             dependsOn = { "accept-103-keeper-of-the-flame" },
             complete = QuestState(103, "complete"),
@@ -1969,7 +2431,7 @@ ns:RegisterGuide({
         {
             id = "turnin-103-keeper-of-the-flame",
             kind = "turnin",
-            priority = 1330,
+            priority = 1460,
             text = "Turn in Keeper of the Flame to Captain Grayson in Westfall Lighthouse.",
             dependsOn = { "objective-103-keeper-of-the-flame" },
             complete = QuestState(103, "completed"),
@@ -1979,9 +2441,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-138-longshore",
+            kind = "travel",
+            priority = 1470,
+            text = "Travel to Longshore.",
+            route = {
+                Point(MAP.WESTFALL, 0.2591, 0.4772, "Longshore",
+                    "Travel to Longshore."),
+            },
+        },
+        {
             id = "turnin-136-captain-sander-s-hidden-treasure",
             kind = "turnin",
-            priority = 1340,
+            priority = 1480,
             text = "Turn in Captain Sander's Hidden Treasure in Longshore.",
             dependsOn = { "objective-136-captain-sanders-treasure-map" },
             complete = QuestState(136, "completed"),
@@ -1993,7 +2465,7 @@ ns:RegisterGuide({
         {
             id = "accept-138-captain-sander-s-hidden-treasure",
             kind = "accept",
-            priority = 1350,
+            priority = 1490,
             text = "Accept Captain Sander's Hidden Treasure in Longshore.",
             complete = QuestState(138, "activeOrCompleted"),
             route = {
@@ -2004,7 +2476,7 @@ ns:RegisterGuide({
         {
             id = "turnin-138-captain-sander-s-hidden-treasure",
             kind = "turnin",
-            priority = 1360,
+            priority = 1500,
             text = "Turn in Captain Sander's Hidden Treasure.",
             dependsOn = { "accept-138-captain-sander-s-hidden-treasure" },
             complete = QuestState(138, "completed"),
@@ -2016,7 +2488,7 @@ ns:RegisterGuide({
         {
             id = "accept-139-captain-sander-s-hidden-treasure",
             kind = "accept",
-            priority = 1370,
+            priority = 1510,
             text = "Accept Captain Sander's Hidden Treasure.",
             complete = QuestState(139, "activeOrCompleted"),
             route = {
@@ -2027,7 +2499,7 @@ ns:RegisterGuide({
         {
             id = "turnin-139-captain-sander-s-hidden-treasure",
             kind = "turnin",
-            priority = 1380,
+            priority = 1520,
             text = "Turn in Captain Sander's Hidden Treasure in Jangolode Mine.",
             dependsOn = { "accept-139-captain-sander-s-hidden-treasure" },
             complete = QuestState(139, "completed"),
@@ -2039,7 +2511,7 @@ ns:RegisterGuide({
         {
             id = "accept-140-captain-sander-s-hidden-treasure",
             kind = "accept",
-            priority = 1390,
+            priority = 1530,
             text = "Accept Captain Sander's Hidden Treasure in Jangolode Mine.",
             complete = QuestState(140, "activeOrCompleted"),
             route = {
@@ -2048,9 +2520,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-longshore",
+            kind = "travel",
+            priority = 1540,
+            text = "Travel to Longshore.",
+            route = {
+                Point(MAP.WESTFALL, 0.2600, 0.1694, "Longshore",
+                    "Travel to Longshore."),
+            },
+        },
+        {
             id = "turnin-140-captain-sander-s-hidden-treasure",
             kind = "turnin",
-            priority = 1400,
+            priority = 1550,
             text = "Turn in Captain Sander's Hidden Treasure in Longshore.",
             dependsOn = { "accept-140-captain-sander-s-hidden-treasure" },
             complete = QuestState(140, "completed"),
@@ -2060,9 +2542,36 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-sentinel-hill-4",
+            kind = "travel",
+            priority = 1560,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 14, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel or Hearthstone to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
+            id = "turnin-92747-moonbrook-espionage",
+            kind = "turnin",
+            priority = 1565,
+            text = "Turn in Moonbrook Espionage to Alba Fairmoon in Sentinel Hill.",
+            dependsOn = { "objective-92747-moonbrook-espionage" },
+            complete = QuestState(92747, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5240, 0.5300, "Alba Fairmoon",
+                    "Travel to Alba Fairmoon."),
+            },
+        },
+        {
             id = "turnin-142-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1410,
+            priority = 1570,
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-142-the-defias-brotherhood" },
             complete = QuestState(142, "completed"),
@@ -2074,7 +2583,7 @@ ns:RegisterGuide({
         {
             id = "accept-155-the-defias-brotherhood",
             kind = "accept",
-            priority = 1420,
+            priority = 1580,
             text = "Accept The Defias Brotherhood from The Defias Traitor in Sentinel Hill.",
             complete = QuestState(155, "activeOrCompleted"),
             route = {
@@ -2085,7 +2594,7 @@ ns:RegisterGuide({
         {
             id = "objective-155-the-defias-brotherhood",
             kind = "objective",
-            priority = 1430,
+            priority = 1590,
             text = "Escort the Defias Traitor to discover where VanCleef is hiding. Near the fountain in Moonbrook he pulls several enemies. This is an elite. Bring a group.",
             dependsOn = { "accept-155-the-defias-brotherhood" },
             complete = QuestState(155, "complete"),
@@ -2101,9 +2610,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-14-the-dagger-hills",
+            kind = "travel",
+            priority = 1600,
+            text = "Travel to The Dagger Hills.",
+            route = {
+                Point(MAP.WESTFALL, 0.5287, 0.7129, "Continue toward The Dagger Hills",
+                    "Continue toward The Dagger Hills."),
+                Point(MAP.WESTFALL, 0.4960, 0.7719, "Continue toward The Dagger Hills",
+                    "Continue toward The Dagger Hills."),
+                Point(MAP.WESTFALL, 0.4465, 0.8027, "The Dagger Hills",
+                    "Travel to The Dagger Hills."),
+            },
+        },
+        {
             id = "turnin-117-thunderbrew",
             kind = "turnin",
-            priority = 1440,
+            priority = 1610,
             text = "Turn in Thunderbrew to Grimbooze Thunderbrew in The Dagger Hills. This is an elite. Bring a group.",
             complete = QuestState(117, "completed"),
             route = {
@@ -2114,317 +2637,12 @@ ns:RegisterGuide({
         {
             id = "objective-116-1-keg-of-thunderbrew-lager",
             kind = "objective",
-            priority = 1450,
+            priority = 1620,
             text = "You should receive from Grimbooze Thunderbrew by turning in 'Thunderbrew' quest. This is an elite. Bring a group.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 1),
             route = {
                 Point(MAP.WESTFALL, 0.4465, 0.8027, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-48-sweet-amber",
-            kind = "accept",
-            priority = 1460,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(48, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-48-sweet-amber-1",
-            kind = "objective",
-            priority = 1470,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Holy Spring Water.",
-            dependsOn = { "accept-48-sweet-amber" },
-            complete = QuestObjective(48, 1, "Holy Spring Water"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "turnin-48-sweet-amber",
-            kind = "turnin",
-            priority = 1480,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
-            dependsOn = { "objective-48-sweet-amber-1" },
-            complete = QuestState(48, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-49-sweet-amber",
-            kind = "accept",
-            priority = 1490,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            dependsOn = { "turnin-48-sweet-amber" },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(49, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-49-sweet-amber-1",
-            kind = "objective",
-            priority = 1500,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Sack of Barley.",
-            dependsOn = { "accept-49-sweet-amber" },
-            complete = QuestObjective(49, 1, "Sack of Barley"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-49-sweet-amber-2",
-            kind = "objective",
-            priority = 1510,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Sack of Corn.",
-            dependsOn = { "accept-49-sweet-amber" },
-            complete = QuestObjective(49, 2, "Sack of Corn"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-49-sweet-amber-3",
-            kind = "objective",
-            priority = 1520,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Sack of Rye.",
-            dependsOn = { "accept-49-sweet-amber" },
-            complete = QuestObjective(49, 3, "Sack of Rye"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "turnin-49-sweet-amber",
-            kind = "turnin",
-            priority = 1530,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
-            dependsOn = { "objective-49-sweet-amber-3" },
-            complete = QuestState(49, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-50-sweet-amber",
-            kind = "accept",
-            priority = 1540,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            dependsOn = { "turnin-49-sweet-amber" },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(50, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-50-sweet-amber-1",
-            kind = "objective",
-            priority = 1550,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Truesilver Bar.",
-            dependsOn = { "accept-50-sweet-amber" },
-            complete = QuestObjective(50, 1, "Truesilver Bar"),
-            route = {
-                Point(MAP.WESTFALL, 0.622, 0.390, "Fel Interloper",
-                    "Travel to Fel Interloper."),
-            },
-        },
-        {
-            id = "turnin-50-sweet-amber",
-            kind = "turnin",
-            priority = 1560,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
-            dependsOn = { "objective-50-sweet-amber-1" },
-            complete = QuestState(50, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-51-sweet-amber",
-            kind = "accept",
-            priority = 1570,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            dependsOn = { "turnin-50-sweet-amber" },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(51, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-51-sweet-amber-1",
-            kind = "objective",
-            priority = 1580,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: A Sycamore Branch.",
-            dependsOn = { "accept-51-sweet-amber" },
-            complete = QuestObjective(51, 1, "A Sycamore Branch"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "turnin-51-sweet-amber",
-            kind = "turnin",
-            priority = 1590,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
-            dependsOn = { "objective-51-sweet-amber-1" },
-            complete = QuestState(51, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "accept-53-sweet-amber",
-            kind = "accept",
-            priority = 1600,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            dependsOn = { "turnin-51-sweet-amber" },
-            text = "Accept Sweet Amber from Grimbooze Thunderbrew.",
-            complete = QuestState(53, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "objective-53-sweet-amber-1",
-            kind = "objective",
-            priority = 1610,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Sweet Amber: Bundle of Charred Oak.",
-            dependsOn = { "accept-53-sweet-amber" },
-            complete = QuestObjective(53, 1, "Bundle of Charred Oak"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
-                    "Travel to Grimbooze Thunderbrew."),
-            },
-        },
-        {
-            id = "turnin-53-sweet-amber",
-            kind = "turnin",
-            priority = 1620,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Sweet Amber to Grimbooze Thunderbrew.",
-            dependsOn = { "objective-53-sweet-amber-1" },
-            complete = QuestState(53, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.446, 0.802, "Grimbooze Thunderbrew",
                     "Travel to Grimbooze Thunderbrew."),
             },
         },
@@ -2441,9 +2659,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-sentinel-hill-5",
+            kind = "travel",
+            priority = 1640,
+            text = "Travel to Sentinel Hill.",
+            route = {
+                Point(MAP.WESTFALL, 0.5632, 0.4755, "Sentinel Hill",
+                    "Travel to Sentinel Hill."),
+            },
+        },
+        {
             id = "turnin-14-the-people-s-militia",
             kind = "turnin",
-            priority = 1640,
+            priority = 1650,
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-14-the-people-s-militia" },
             complete = QuestState(14, "completed"),
@@ -2455,7 +2683,7 @@ ns:RegisterGuide({
         {
             id = "turnin-155-the-defias-brotherhood",
             kind = "turnin",
-            priority = 1650,
+            priority = 1660,
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hil.",
             dependsOn = { "objective-155-the-defias-brotherhood" },
             complete = QuestState(155, "completed"),
@@ -2465,9 +2693,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-145-lakeshire",
+            kind = "travel",
+            priority = 1670,
+            text = "Travel to Lakeshire.",
+            route = {
+                Point(MAP.REDRIDGE, 0.2651, 0.4533, "Lakeshire",
+                    "Travel to Lakeshire."),
+            },
+        },
+        {
             id = "turnin-144-messenger-to-westfall",
             kind = "turnin",
-            priority = 1660,
+            priority = 1680,
             text = "Turn in Messenger to Westfall to Magistrate Solomon in Lakeshire.",
             dependsOn = { "accept-144-messenger-to-westfall" },
             complete = QuestState(144, "completed"),
@@ -2477,9 +2715,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-246-lakeridge-highway",
+            kind = "travel",
+            priority = 1690,
+            text = "Travel to Lakeridge Highway.",
+            route = {
+                Point(MAP.REDRIDGE, 0.3337, 0.6713, "Lakeridge Highway",
+                    "Travel to Lakeridge Highway."),
+            },
+        },
+        {
             id = "objective-122-underbelly-scales",
             kind = "objective",
-            priority = 1670,
+            priority = 1700,
             text = "Kill Black Dragon Whelp and collect 6 Underbelly Whelp Scale in Lakeridge Highway.",
             dependsOn = { "accept-122-underbelly-scales" },
             complete = QuestState(122, "complete"),
@@ -2491,7 +2739,7 @@ ns:RegisterGuide({
         {
             id = "objective-246-assessing-the-threat",
             kind = "objective",
-            priority = 1680,
+            priority = 1710,
             text = "Kill 10 Redridge Mongrel and 6 Redridge Poacher which can be found to the south in Lakeridge Highway.",
             dependsOn = { "accept-246-assessing-the-threat" },
             complete = QuestState(246, "complete"),
@@ -2503,9 +2751,36 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98407-show-of-force",
+            kind = "objective",
+            priority = 1715,
+            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
+            dependsOn = { "accept-98407-show-of-force" },
+            complete = QuestState(98407, "complete"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3000, 0.8120, "Redridge Thrasher",
+                    "Travel to Redridge Thrasher."),
+            },
+        },
+        {
+            id = "travel-three-corners",
+            kind = "travel",
+            priority = 1720,
+            conditions = {
+                all = {
+                    { ["not"] = { quest = { id = 130, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Travel to Three Corners.",
+            route = {
+                Point(MAP.REDRIDGE, 0.1543, 0.7132, "Three Corners",
+                    "Travel to Three Corners."),
+            },
+        },
+        {
             id = "turnin-129-a-free-lunch",
             kind = "turnin",
-            priority = 1690,
+            priority = 1730,
             text = "Turn in A Free Lunch to Watch Captain Parker in Three Corners.",
             dependsOn = { "accept-129-a-free-lunch" },
             complete = QuestState(129, "completed"),
@@ -2517,7 +2792,7 @@ ns:RegisterGuide({
         {
             id = "accept-130-visit-the-herbalist",
             kind = "accept",
-            priority = 1700,
+            priority = 1740,
             text = "Accept Visit the Herbalist from Tarantula in Three Corners.",
             complete = QuestState(130, "activeOrCompleted"),
             route = {
@@ -2526,9 +2801,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-116-darkshire",
+            kind = "travel",
+            priority = 1750,
+            text = "Travel to Darkshire.",
+            route = {
+                Point(MAP.DUSKWOOD, 0.7750, 0.4440, "Darkshire",
+                    "Travel to Darkshire."),
+            },
+        },
+        {
             id = "objective-116-3-bottle-of-moonshine",
             kind = "objective",
-            priority = 1710,
+            priority = 1760,
             text = "Buy Bottle of Moonshine from Barkeep Hann in Darkshire.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 3),
@@ -2538,9 +2823,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "travel-lakeshire",
+            kind = "travel",
+            priority = 1770,
+            text = "Travel to Lakeshire.",
+            route = {
+                Point(MAP.REDRIDGE, 0.3075, 0.5999, "Lakeshire",
+                    "Travel to Lakeshire."),
+            },
+        },
+        {
             id = "turnin-246-assessing-the-threat",
             kind = "turnin",
-            priority = 1720,
+            priority = 1780,
             text = "Turn in Assessing the Threat to Deputy Feldon in Redridge Mountains.",
             dependsOn = { "objective-246-assessing-the-threat" },
             complete = QuestState(246, "completed"),
@@ -2550,9 +2845,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-98407-show-of-force",
+            kind = "turnin",
+            priority = 1785,
+            text = "Turn in Show of Force to Deputy Feldon.",
+            dependsOn = { "objective-98407-show-of-force" },
+            complete = QuestState(98407, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3080, 0.6000, "Deputy Feldon",
+                    "Travel to Deputy Feldon."),
+            },
+        },
+        {
             id = "turnin-122-underbelly-scales",
             kind = "turnin",
-            priority = 1730,
+            priority = 1790,
             text = "Turn in Underbelly Scales to Verner Osgood in Lakeshire.",
             dependsOn = { "objective-122-underbelly-scales" },
             complete = QuestState(122, "completed"),
@@ -2564,7 +2871,7 @@ ns:RegisterGuide({
         {
             id = "turnin-116-dry-times",
             kind = "turnin",
-            priority = 1740,
+            priority = 1800,
             text = "Turn in Dry Times to Barkeep Daniels in Lakeshire.",
             dependsOn = { "objective-116-harvest-golem", "objective-116-2-cask-of-merlot", "objective-116-4-skin-of-sweet-rum", "objective-116-1-keg-of-thunderbrew-lager", "objective-116-3-bottle-of-moonshine" },
             complete = QuestState(116, "completed"),
@@ -2576,7 +2883,7 @@ ns:RegisterGuide({
         {
             id = "turnin-130-visit-the-herbalist",
             kind = "turnin",
-            priority = 1750,
+            priority = 1810,
             text = "Turn in Visit the Herbalist to Martie Jainrose in Lakeshire.",
             dependsOn = { "accept-130-visit-the-herbalist" },
             complete = QuestState(130, "completed"),
@@ -2588,7 +2895,7 @@ ns:RegisterGuide({
         {
             id = "accept-131-delivering-daffodils",
             kind = "accept",
-            priority = 1760,
+            priority = 1820,
             text = "Accept Delivering Daffodils from Martie Jainrose in Lakeshire.",
             complete = QuestState(131, "activeOrCompleted"),
             route = {
@@ -2599,982 +2906,13 @@ ns:RegisterGuide({
         {
             id = "turnin-131-delivering-daffodils",
             kind = "turnin",
-            priority = 1770,
+            priority = 1830,
             text = "Turn in Delivering Daffodils to Darcy Parker in Lakeshire.",
             dependsOn = { "accept-131-delivering-daffodils" },
             complete = QuestState(131, "completed"),
             route = {
                 Point(MAP.REDRIDGE, 0.2677, 0.4431, "Darcy Parker",
                     "Travel to Darcy Parker."),
-            },
-        },
-        {
-            id = "turnin-98021-journey-to-sentinel-hill",
-            kind = "turnin",
-            priority = 1780,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon, then turn it in to Gryan Stoutmantle.",
-            complete = QuestState(98021, "completed"),
-            route = {
-                Point(MAP.STORMWIND, 0.562, 0.476, "Gryan Stoutmantle",
-                    "Travel to Gryan Stoutmantle in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-92909-harvesting-the-harvesters",
-            kind = "accept",
-            priority = 1790,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
-            complete = QuestState(92909, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "accept-92910-harvesting-the-harvesters",
-            kind = "accept",
-            priority = 1800,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
-            complete = QuestState(92910, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "accept-92911-harvesting-the-harvesters",
-            kind = "accept",
-            priority = 1810,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket.",
-            complete = QuestState(92911, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "objective-92911-harvesting-the-harvesters-1",
-            kind = "objective",
-            priority = 1820,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Golem Isospring.",
-            dependsOn = { "accept-92911-harvesting-the-harvesters" },
-            complete = QuestObjective(92911, 1, "Golem Isospring"),
-            route = {
-                Point(MAP.WESTFALL, 0.564, 0.350, "Harvest Golem",
-                    "Travel to Harvest Golem."),
-            },
-        },
-        {
-            id = "objective-92911-harvesting-the-harvesters-2",
-            kind = "objective",
-            priority = 1830,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Copper Modulator.",
-            dependsOn = { "accept-92911-harvesting-the-harvesters" },
-            complete = QuestObjective(92911, 2, "Copper Modulator"),
-            route = {
-                Point(MAP.WESTFALL, 0.564, 0.350, "Harvest Golem",
-                    "Travel to Harvest Golem."),
-            },
-        },
-        {
-            id = "objective-92911-harvesting-the-harvesters-3",
-            kind = "objective",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Crude Scope.",
-            dependsOn = { "accept-92911-harvesting-the-harvesters" },
-            complete = QuestObjective(92911, 3, "Crude Scope"),
-            route = {
-                Point(MAP.WESTFALL, 0.564, 0.350, "Harvest Golem",
-                    "Travel to Harvest Golem."),
-            },
-        },
-        {
-            id = "turnin-92911-harvesting-the-harvesters",
-            kind = "turnin",
-            priority = 1850,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
-            dependsOn = { "objective-92911-harvesting-the-harvesters-3" },
-            complete = QuestState(92911, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "objective-92910-harvesting-the-harvesters-1",
-            kind = "objective",
-            priority = 1860,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Precessive Autocognition Assembly.",
-            dependsOn = { "accept-92910-harvesting-the-harvesters" },
-            complete = QuestObjective(92910, 1, "Precessive Autocognition Assembly"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "turnin-92910-harvesting-the-harvesters",
-            kind = "turnin",
-            priority = 1870,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
-            dependsOn = { "objective-92910-harvesting-the-harvesters-1" },
-            complete = QuestState(92910, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "objective-92909-harvesting-the-harvesters-1",
-            kind = "objective",
-            priority = 1880,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Golem Isospring.",
-            dependsOn = { "accept-92909-harvesting-the-harvesters" },
-            complete = QuestObjective(92909, 1, "Golem Isospring"),
-            route = {
-                Point(MAP.WESTFALL, 0.564, 0.350, "Harvest Golem",
-                    "Travel to Harvest Golem."),
-            },
-        },
-        {
-            id = "objective-92909-harvesting-the-harvesters-2",
-            kind = "objective",
-            priority = 1890,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Harvesting the Harvesters: Harvester Gyrostabilizer.",
-            dependsOn = { "accept-92909-harvesting-the-harvesters" },
-            complete = QuestObjective(92909, 2, "Harvester Gyrostabilizer"),
-            route = {
-                Point(MAP.WESTFALL, 0.522, 0.556, "Decrepit Harvester",
-                    "Travel to Decrepit Harvester."),
-            },
-        },
-        {
-            id = "turnin-92909-harvesting-the-harvesters",
-            kind = "turnin",
-            priority = 1900,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket.",
-            dependsOn = { "objective-92909-harvesting-the-harvesters-2" },
-            complete = QuestState(92909, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.516, 0.322, "Ozwin Ironsprocket",
-                    "Travel to Ozwin Ironsprocket."),
-            },
-        },
-        {
-            id = "accept-92742-testing-the-wells",
-            kind = "accept",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Testing the Wells from Alba Fairmoon.",
-            complete = QuestState(92742, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "accept-92744-murloc-gills",
-            kind = "accept",
-            priority = 1920,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Murloc Gills from Alba Fairmoon.",
-            complete = QuestState(92744, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "accept-92745-the-state-of-the-mines",
-            kind = "accept",
-            priority = 1930,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept The State of the Mines from Alba Fairmoon.",
-            complete = QuestState(92745, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "accept-92747-moonbrook-espionage",
-            kind = "accept",
-            priority = 1940,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Moonbrook Espionage from Alba Fairmoon.",
-            complete = QuestState(92747, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "accept-92753-destruction-in-deadmines",
-            kind = "accept",
-            priority = 1950,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Destruction in Deadmines from Alba Fairmoon.",
-            complete = QuestState(92753, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "accept-92819-destruction-in-deadmines",
-            kind = "accept",
-            priority = 1960,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Destruction in Deadmines from Alba Fairmoon.",
-            complete = QuestState(92819, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.386, 0.836, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92819-destruction-in-deadmines-1",
-            kind = "objective",
-            priority = 1970,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Destruction in Deadmines: Detonator used.",
-            dependsOn = { "accept-92819-destruction-in-deadmines" },
-            complete = QuestObjective(92819, 1, "Detonator used"),
-            route = {
-                Point(MAP.WESTFALL, 0.386, 0.836, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92819-destruction-in-deadmines",
-            kind = "turnin",
-            priority = 1980,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Destruction in Deadmines to Alba Fairmoon.",
-            dependsOn = { "objective-92819-destruction-in-deadmines-1" },
-            complete = QuestState(92819, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.386, 0.836, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92753-destruction-in-deadmines-1",
-            kind = "objective",
-            priority = 1990,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Destruction in Deadmines: Explosives placed.",
-            dependsOn = { "accept-92753-destruction-in-deadmines" },
-            complete = QuestObjective(92753, 1, "Explosives placed"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92753-destruction-in-deadmines-2",
-            kind = "objective",
-            priority = 2000,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Destruction in Deadmines: Extra-Destructive Explosives.",
-            dependsOn = { "accept-92753-destruction-in-deadmines" },
-            complete = QuestObjective(92753, 2, "Extra-Destructive Explosives"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92753-destruction-in-deadmines",
-            kind = "turnin",
-            priority = 2010,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Destruction in Deadmines to Alba Fairmoon.",
-            dependsOn = { "objective-92753-destruction-in-deadmines-2" },
-            complete = QuestState(92753, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.386, 0.836, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92747-moonbrook-espionage-1",
-            kind = "objective",
-            priority = 2020,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Moonbrook Espionage: Suspicious Industrial Supplies.",
-            dependsOn = { "accept-92747-moonbrook-espionage" },
-            complete = QuestObjective(92747, 1, "Suspicious Industrial Supplies"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92747-moonbrook-espionage",
-            kind = "turnin",
-            priority = 2030,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Moonbrook Espionage to Alba Fairmoon.",
-            dependsOn = { "objective-92747-moonbrook-espionage-1" },
-            complete = QuestState(92747, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92745-the-state-of-the-mines-1",
-            kind = "objective",
-            priority = 2040,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "The State of the Mines: Kobold Digger.",
-            dependsOn = { "accept-92745-the-state-of-the-mines" },
-            complete = QuestObjective(92745, 1, "Kobold Digger"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92745-the-state-of-the-mines-2",
-            kind = "objective",
-            priority = 2050,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "The State of the Mines: Riverpaw Miner.",
-            dependsOn = { "accept-92745-the-state-of-the-mines" },
-            complete = QuestObjective(92745, 2, "Riverpaw Miner"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92745-the-state-of-the-mines",
-            kind = "turnin",
-            priority = 2060,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in The State of the Mines to Alba Fairmoon.",
-            dependsOn = { "objective-92745-the-state-of-the-mines-2" },
-            complete = QuestState(92745, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92744-murloc-gills-1",
-            kind = "objective",
-            priority = 2070,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Murloc Gills: Longshore Murloc Gill.",
-            dependsOn = { "accept-92744-murloc-gills" },
-            complete = QuestObjective(92744, 1, "Longshore Murloc Gill"),
-            route = {
-                Point(MAP.WESTFALL, 0.562, 0.094, "Murloc Coastrunner",
-                    "Travel to Murloc Coastrunner."),
-            },
-        },
-        {
-            id = "turnin-92744-murloc-gills",
-            kind = "turnin",
-            priority = 2080,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Murloc Gills to Alba Fairmoon.",
-            dependsOn = { "objective-92744-murloc-gills-1" },
-            complete = QuestState(92744, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92742-testing-the-wells-1",
-            kind = "objective",
-            priority = 2090,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Testing the Wells: Jansen Stead Water Sample.",
-            dependsOn = { "accept-92742-testing-the-wells" },
-            complete = QuestObjective(92742, 1, "Jansen Stead Water Sample"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92742-testing-the-wells-2",
-            kind = "objective",
-            priority = 2100,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Testing the Wells: Molsen Farm Water Sample.",
-            dependsOn = { "accept-92742-testing-the-wells" },
-            complete = QuestObjective(92742, 2, "Molsen Farm Water Sample"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "objective-92742-testing-the-wells-3",
-            kind = "objective",
-            priority = 2110,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Testing the Wells: Well Water Sample Kit.",
-            dependsOn = { "accept-92742-testing-the-wells" },
-            complete = QuestObjective(92742, 3, "Well Water Sample Kit"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92742-testing-the-wells",
-            kind = "turnin",
-            priority = 2120,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Testing the Wells to Alba Fairmoon.",
-            dependsOn = { "objective-92742-testing-the-wells-3" },
-            complete = QuestState(92742, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon."),
-            },
-        },
-        {
-            id = "turnin-92748-explosive-consultation",
-            kind = "turnin",
-            priority = 2130,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Explosive Consultation from Alba Fairmoon, then turn it in to Sprite Jumpsprocket.",
-            complete = QuestState(92748, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket."),
-            },
-        },
-        {
-            id = "accept-92749-a-dynamite-plan",
-            kind = "accept",
-            priority = 2140,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept A Dynamite Plan from Sprite Jumpsprocket.",
-            complete = QuestState(92749, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-92752-explosive-consultation",
-            kind = "accept",
-            priority = 2150,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Explosive Consultation from Sprite Jumpsprocket.",
-            complete = QuestState(92752, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "objective-92752-explosive-consultation-1",
-            kind = "objective",
-            priority = 2160,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Explosive Consultation: Extra-Destructive Explosives.",
-            dependsOn = { "accept-92752-explosive-consultation" },
-            complete = QuestObjective(92752, 1, "Extra-Destructive Explosives"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-92752-explosive-consultation",
-            kind = "turnin",
-            priority = 2170,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Explosive Consultation to Alba Fairmoon.",
-            dependsOn = { "objective-92752-explosive-consultation-1" },
-            complete = QuestState(92752, "completed"),
-            route = {
-                Point(MAP.STORMWIND, 0.524, 0.530, "Alba Fairmoon",
-                    "Travel to Alba Fairmoon in Stormwind City."),
-            },
-        },
-        {
-            id = "objective-92749-a-dynamite-plan-1",
-            kind = "objective",
-            priority = 2180,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "A Dynamite Plan: Coarse Dynamite.",
-            dependsOn = { "accept-92749-a-dynamite-plan" },
-            complete = QuestObjective(92749, 1, "Coarse Dynamite"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-92749-a-dynamite-plan",
-            kind = "turnin",
-            priority = 2190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in A Dynamite Plan to Sprite Jumpsprocket.",
-            dependsOn = { "objective-92749-a-dynamite-plan-1" },
-            complete = QuestState(92749, "completed"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-92750-detonation-at-a-distance",
-            kind = "turnin",
-            priority = 2200,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Detonation at a Distance from Sprite Jumpsprocket, then turn it in to Jasper Fel.",
-            complete = QuestState(92750, "completed"),
-            route = {
-                Point(MAP.STORMWIND, 0.782, 0.588, "Jasper Fel",
-                    "Travel to Jasper Fel in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-92751-detonation-at-a-distance",
-            kind = "accept",
-            priority = 2210,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept Detonation at a Distance from Jasper Fel.",
-            complete = QuestState(92751, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWIND, 0.782, 0.588, "Jasper Fel",
-                    "Travel to Jasper Fel in Stormwind City."),
-            },
-        },
-        {
-            id = "objective-92751-detonation-at-a-distance-1",
-            kind = "objective",
-            priority = 2220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Detonation at a Distance: Remote Detonator Kit.",
-            dependsOn = { "accept-92751-detonation-at-a-distance" },
-            complete = QuestObjective(92751, 1, "Remote Detonator Kit"),
-            route = {
-                Point(MAP.STORMWIND, 0.782, 0.588, "Jasper Fel",
-                    "Travel to Jasper Fel in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-92751-detonation-at-a-distance",
-            kind = "turnin",
-            priority = 2230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in Detonation at a Distance to Sprite Jumpsprocket.",
-            dependsOn = { "objective-92751-detonation-at-a-distance-1" },
-            complete = QuestState(92751, "completed"),
-            route = {
-                Point(MAP.STORMWIND, 0.546, 0.080, "Sprite Jumpsprocket",
-                    "Travel to Sprite Jumpsprocket in Stormwind City."),
-            },
-        },
-        {
-            id = "objective-92109-my-first-alchemy-set-1",
-            kind = "objective",
-            priority = 2240,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "My First Alchemy Set: Empty Vial. Wowhead has no pin, so follow the quest text.",
-            complete = QuestObjective(92109, 1, "Empty Vial"),
-            route = {},
-        },
-        {
-            id = "objective-92109-my-first-alchemy-set-2",
-            kind = "objective",
-            priority = 2250,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "My First Alchemy Set: Peacebloom. Wowhead has no pin, so follow the quest text.",
-            complete = QuestObjective(92109, 2, "Peacebloom"),
-            route = {},
-        },
-        {
-            id = "objective-92109-my-first-alchemy-set-3",
-            kind = "objective",
-            priority = 2260,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "My First Alchemy Set: Silverleaf. Wowhead has no pin, so follow the quest text.",
-            complete = QuestObjective(92109, 3, "Silverleaf"),
-            route = {},
-        },
-        {
-            id = "turnin-92109-my-first-alchemy-set",
-            kind = "turnin",
-            priority = 2270,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in My First Alchemy Set to . Wowhead has no pin, so follow the quest text.",
-            dependsOn = { "objective-92109-my-first-alchemy-set-3" },
-            complete = QuestState(92109, "completed"),
-            route = {},
-        },
-        {
-            id = "objective-92110-my-first-real-potion-1",
-            kind = "objective",
-            priority = 2280,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            dependsOn = { "turnin-92109-my-first-alchemy-set" },
-            text = "My First Real Potion: Murloc Eye. Wowhead has no pin, so follow the quest text.",
-            complete = QuestObjective(92110, 1, "Murloc Eye"),
-            route = {},
-        },
-        {
-            id = "turnin-92110-my-first-real-potion",
-            kind = "turnin",
-            priority = 2290,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in My First Real Potion to . Wowhead has no pin, so follow the quest text.",
-            dependsOn = { "objective-92110-my-first-real-potion-1" },
-            complete = QuestState(92110, "completed"),
-            route = {},
-        },
-        {
-            id = "accept-79008-and-that-note-you-found",
-            kind = "accept",
-            priority = 2300,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 14 } },
-                },
-            },
-            text = "Accept ...and that note you found from Burned-Out Remains.",
-            complete = QuestState(79008, "activeOrCompleted"),
-            route = {
-                Point(MAP.WESTFALL, 0.375, 0.507, "Burned-Out Remains",
-                    "Travel to Burned-Out Remains."),
-            },
-        },
-        {
-            id = "objective-79008-and-that-note-you-found-1",
-            kind = "objective",
-            priority = 2310,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 14 } },
-                },
-            },
-            text = "...and that note you found: ...and that note you found.",
-            dependsOn = { "accept-79008-and-that-note-you-found" },
-            complete = QuestObjective(79008, 1, "...and that note you found"),
-            route = {
-                Point(MAP.WESTFALL, 0.375, 0.507, "Burned-Out Remains",
-                    "Travel to Burned-Out Remains."),
-            },
-        },
-        {
-            id = "turnin-79008-and-that-note-you-found",
-            kind = "turnin",
-            priority = 2320,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 14 } },
-                },
-            },
-            text = "Turn in ...and that note you found to Burned-Out Remains.",
-            dependsOn = { "objective-79008-and-that-note-you-found-1" },
-            complete = QuestState(79008, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.375, 0.507, "Burned-Out Remains",
-                    "Travel to Burned-Out Remains."),
-            },
-        },
-        {
-            id = "turnin-93928-of-mice-and-milk",
-            kind = "turnin",
-            priority = 2330,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Accept Of Mice and Milk from Mouse, then turn it in to Hemet Nesingwary.",
-            complete = QuestState(93928, "completed"),
-            route = {
-                Point(MAP.WESTFALL, 0.356, 0.108, "Hemet Nesingwary",
-                    "Travel to Hemet Nesingwary."),
             },
         },
     },

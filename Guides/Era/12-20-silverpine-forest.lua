@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Silverpine Forest, levels 12-20.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Silverpine list are woven into this route.
+-- Left out: The Tortured Soul chain is level 23, past this route.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -36,7 +37,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-20-silverpine-forest",
-    title = "12-20 Silverpine Forest (Era)",
+    title = "12-20 Silverpine Forest",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -659,6 +660,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-91920-wild-eyes",
+            kind = "accept",
+            priority = 461,
+            text = "Accept Wild Eyes from Quinn Yorick at the Ivar Patch.",
+            complete = QuestState(91920, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5340, 0.1260, "Quinn Yorick",
+                    "Travel to Quinn Yorick."),
+            },
+        },
+        {
             id = "accept-425-ivar-the-foul",
             kind = "accept",
             priority = 470,
@@ -679,6 +691,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.5161, 0.1388, "Ivar the Foul",
                     "Travel to Ivar the Foul."),
+            },
+        },
+        {
+            id = "objective-91920-wild-eyes",
+            kind = "objective",
+            priority = 481,
+            text = "Wild Eyes: gather 3 Murloc Eyes from the Vile Fin murlocs around the lake.",
+            dependsOn = { "accept-91920-wild-eyes" },
+            complete = QuestState(91920, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5980, 0.1540, "Vile Fin Shredder",
+                    "Travel to Vile Fin Shredder."),
             },
         },
         {
@@ -742,6 +766,42 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4421, 0.3979, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "turnin-91920-wild-eyes",
+            kind = "turnin",
+            priority = 531,
+            text = "Turn in Wild Eyes to Apothecary Renferrel in the Sepulcher.",
+            dependsOn = { "objective-91920-wild-eyes" },
+            complete = QuestState(91920, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4280, 0.4080, "Apothecary Renferrel",
+                    "Travel to Apothecary Renferrel."),
+            },
+        },
+        {
+            id = "accept-91921-return-to-quinn-again",
+            kind = "accept",
+            priority = 531.5,
+            text = "Accept Return to Quinn (Again) from Apothecary Renferrel in the Sepulcher.",
+            dependsOn = { "turnin-91920-wild-eyes" },
+            complete = QuestState(91921, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4280, 0.4080, "Apothecary Renferrel",
+                    "Travel to Apothecary Renferrel."),
+            },
+        },
+        {
+            id = "turnin-91921-return-to-quinn-again",
+            kind = "turnin",
+            priority = 532,
+            text = "Return to Quinn (Again): bring Quinn's potion to Quinn Yorick at the Ivar Patch.",
+            dependsOn = { "accept-91921-return-to-quinn-again" },
+            complete = QuestState(91921, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5340, 0.1260, "Quinn Yorick",
+                    "Travel to Quinn Yorick."),
             },
         },
         {
@@ -926,6 +986,17 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95981-watching-the-roads",
+            kind = "accept",
+            priority = 691,
+            text = "Accept Watching the Roads from Shadow Priest Allister in the Sepulcher.",
+            complete = QuestState(95981, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4400, 0.4100, "Shadow Priest Allister",
+                    "Travel to Shadow Priest Allister."),
+            },
+        },
+        {
             id = "travel-439-the-decrepit-ferry",
             kind = "travel",
             priority = 700,
@@ -1007,6 +1078,20 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-95981-watching-the-roads",
+            kind = "objective",
+            priority = 761,
+            text = "Watching the Roads: slay 8 Dalaran Watchers and 8 Dalaran Wizards in Ambermill.",
+            dependsOn = { "accept-95981-watching-the-roads" },
+            complete = QuestState(95981, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.6040, 0.7460, "Dalaran Watcher",
+                    "Travel to Dalaran Watcher."),
+                Point(MAP.SILVERPINE, 0.6320, 0.6520, "Dalaran Wizard",
+                    "Travel to Dalaran Wizard."),
+            },
+        },
+        {
             id = "travel-the-sepulcher-4",
             kind = "travel",
             priority = 770,
@@ -1045,6 +1130,28 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98298-arugals-folly",
+            kind = "accept",
+            priority = 791,
+            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
+            complete = QuestState(98298, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "accept-98299-stop-the-spread",
+            kind = "accept",
+            priority = 792,
+            text = "Accept Stop the Spread from Dalar Dawnweaver in the Sepulcher.",
+            complete = QuestState(98299, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
             id = "turnin-479-ambermill-investigations",
             kind = "turnin",
             priority = 800,
@@ -1053,6 +1160,18 @@ ns:RegisterGuide({
             complete = QuestState(479, "completed"),
             route = {
                 Point(MAP.SILVERPINE, 0.4398, 0.4096, "Shadow Priest Allister",
+                    "Travel to Shadow Priest Allister."),
+            },
+        },
+        {
+            id = "turnin-95981-watching-the-roads",
+            kind = "turnin",
+            priority = 801,
+            text = "Turn in Watching the Roads to Shadow Priest Allister in the Sepulcher.",
+            dependsOn = { "objective-95981-watching-the-roads" },
+            complete = QuestState(95981, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4400, 0.4100, "Shadow Priest Allister",
                     "Travel to Shadow Priest Allister."),
             },
         },
@@ -3235,6 +3354,32 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98298-arugals-folly",
+            kind = "objective",
+            priority = 2621,
+            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
+            dependsOn = { "accept-98298-arugals-folly" },
+            complete = QuestState(98298, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5000, 0.7400, "Moonrage Bloodhowler",
+                    "Travel to Moonrage Bloodhowler."),
+            },
+        },
+        {
+            id = "objective-98299-stop-the-spread",
+            kind = "objective",
+            priority = 2622,
+            text = "Stop the Spread: slay 5 Sickly Refugees and 5 Haggard Refugees in Pyrewood.",
+            dependsOn = { "accept-98299-stop-the-spread" },
+            complete = QuestState(98299, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4540, 0.8320, "Sickly Refugee",
+                    "Travel to Sickly Refugee."),
+                Point(MAP.SILVERPINE, 0.4620, 0.8640, "Haggard Refugee",
+                    "Travel to Haggard Refugee."),
+            },
+        },
+        {
             id = "travel-the-sepulcher-5",
             kind = "travel",
             priority = 2630,
@@ -3258,6 +3403,30 @@ ns:RegisterGuide({
             complete = QuestState(99, "completed"),
             route = {
                 Point(MAP.SILVERPINE, 0.4421, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "turnin-98298-arugals-folly",
+            kind = "turnin",
+            priority = 2641,
+            text = "Turn in Arugal's Folly to Dalar Dawnweaver in the Sepulcher.",
+            dependsOn = { "objective-98298-arugals-folly" },
+            complete = QuestState(98298, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "turnin-98299-stop-the-spread",
+            kind = "turnin",
+            priority = 2642,
+            text = "Turn in Stop the Spread to Dalar Dawnweaver in the Sepulcher.",
+            dependsOn = { "objective-98299-stop-the-spread" },
+            complete = QuestState(98299, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
             },
         },

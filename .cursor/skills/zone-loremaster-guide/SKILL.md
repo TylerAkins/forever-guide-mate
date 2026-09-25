@@ -11,7 +11,7 @@ Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
 
 ## Do this
 
-1. Open the zone's leveling files in `Guides/Leveling/Era/`, lowest level first. That step list is the spine. Keep its accepts, objectives, turn-ins, and travel in that order.
+1. Open the zone's leveling files in `Guides/Era/`, lowest level first. That step list is the spine. Keep its accepts, objectives, turn-ins, and travel in that order.
 2. Open the Wowhead Forever zone quest page, for example `https://www.wowhead.com/forever/quests/kalimdor/durotar`.
 3. Every quest on that page that is not already on the spine gets woven in. Do not drop a quest the spine already runs.
 4. Register the guide, then run the checks at the bottom.
@@ -53,7 +53,7 @@ Keep the leveling route's order when it already visits the camp. The Barrens rou
 
 ## Ship it
 
-- `category = "Loremaster Guides"`. The library tag is already `Loremaster`, so the title is the zone name.
+- Put the file in `Guides/Loremaster/` with `category = "Loremaster Guides"`. The library tag is already `Loremaster`, so the title is the zone name.
 - One faction on the guide when the whole zone is that faction. Both factions in one file when the zone has both; put the faction on every step from that route.
 - Add the file to `ForeverGuideMate.toc`, `tools/compile_addon.py`, `tests/test_contracts.py`, `tests/lua/run.lua`, and `tests/lua/lint.lua`.
 - Assert one real chain, one quest split into objectives, the elite wording if the zone has an elite, and that omitted and dungeon quests are absent.
