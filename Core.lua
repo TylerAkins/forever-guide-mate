@@ -32,6 +32,7 @@ local CHARACTER_DEFAULTS = {
     notOffered = {},
     history = {},
     completionLedger = {},
+    activeGoalByGuide = {},
     taxiRoutes = {},
     taxiNodes = {},
 }
@@ -73,6 +74,13 @@ local function MigrateStorage(account, character)
         character.skipped = nil
         character.completionLedger = type(character.completionLedger) == "table" and character.completionLedger or {}
         character.schemaVersion = 2
+    end
+    if (tonumber(character.schemaVersion) or 1) < 3 then
+        character.activeGoalByGuide = type(character.activeGoalByGuide) == "table" and character.activeGoalByGuide or {}
+        if character.selectedGuide and character.activeGoal then
+            character.activeGoalByGuide[character.selectedGuide] = character.activeGoal
+        end
+        character.schemaVersion = 3
     end
 end
 

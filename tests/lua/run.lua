@@ -146,7 +146,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 3, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 2, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 3, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -926,6 +926,83 @@ function TestGatheringTheCureLedger()
         "a missing quest log entry is unknown, not treated as incomplete")
 end
 TestGatheringTheCureLedger()
+
+function TestActiveGoalReload()
+    local chapterID = "leveling-era-12-20-barrens"
+    local guide = ns.guides["leveling-era"]
+    local earthrootID = chapterID .. ":objective-6128-1-earthroot"
+    local base = {
+        faction = "Horde", raceID = 6, classID = 11, level = 16,
+        professions = {}, professionsKnown = true,
+        mapID = 1413, x = 0.52, y = 0.32,
+        quests = {
+            [6128] = {
+                complete = false,
+                objectives = {
+                    { text = "Earthroot", finished = false, numFulfilled = 0, numRequired = 5 },
+                    { text = "Kodo Horn", finished = true, numFulfilled = 5, numRequired = 5 },
+                },
+            },
+        },
+        completedQuests = {},
+        questLogKnown = true,
+        questCompletionKnown = true,
+    }
+    ns.charDB.manualCompleted = {}
+    ns.charDB.deferred = {}
+    ns.charDB.history = {}
+    ns.charDB.completionLedger = {}
+    ns.db.autoAdvance = true
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:SelectGuide(chapterID)
+    ns.charDB.activeGoal = earthrootID
+    ns.charDB.activeGoalByGuide = { [chapterID] = earthrootID }
+    ns.Engine:Refresh(base)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
+        "the earthroot step stays pinned when horns are already done")
+    ns.Engine:SelectGuide(chapterID)
+    ns.Engine:Refresh(base)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
+        "reopening the same guide restores the last active step")
+    ns.Engine:SelectGuide("leveling-era-1-12-durotar")
+    ns.Engine:Refresh({
+        faction = "Horde", raceID = 2, classID = 1, level = 5,
+        mapID = 1411, x = 0.42, y = 0.19,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    })
+    Check(ns.charDB.activeGoalByGuide[chapterID] == earthrootID,
+        "switching guides keeps the Barrens step saved under its chapter")
+    Check(ns.charDB.activeGoalByGuide["leveling-era-1-12-durotar"] ~= nil,
+        "switching guides remembers the Durotar step separately from Barrens")
+    ns.Engine:SelectGuide(chapterID)
+    ns.Engine:Refresh(base)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
+        "switching back restores the Barrens step instead of the first open quest")
+    ns.charDB.activeGoal = earthrootID
+    ns.charDB.activeGoalByGuide[chapterID] = earthrootID
+    local ledger = ns.Engine:GetLedger(guide, true)
+    ledger[chapterID .. ":accept-6128-gathering-the-cure"] = true
+    local loading = {
+        faction = "Horde", raceID = 6, classID = 11, level = 16,
+        professions = {}, professionsKnown = true,
+        mapID = 1413, x = 0.52, y = 0.32,
+        quests = {},
+        completedQuests = {},
+        questLogKnown = true,
+        questCompletionKnown = true,
+    }
+    ns.Engine:Refresh(loading)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
+        "reload keeps the saved step while quest log rows are still loading")
+    ns.charDB.activeGoalByGuide = {}
+    ns.charDB.activeGoal = nil
+    ns.charDB.selectedGuide = nil
+    ns.charDB.eraChapterPick = nil
+    ns.charDB.eraFloor = nil
+    ns.charDB.eraSegment = nil
+end
+TestActiveGoalReload()
 
 function TestBreadcrumbSkip()
     local function Point(x, y, label)
