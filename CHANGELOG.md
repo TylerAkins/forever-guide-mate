@@ -62,3 +62,4 @@ All notable changes to this project are documented here.
 - Redridge Mountains and Duskwood are open to both factions. Alliance steps stay on Alliance. The Horde quests in those zones are no longer hidden by an Alliance-only guide.
 - Converted Era chapters, the ones whose titles no longer end in (Era), live in Guides/Leveling. Chapters that still say (Era) stay in Guides/Era and stay unloaded.
 - The README and the zone Loremaster notes match that layout. A converted chapter moves from Guides/Era to Guides/Leveling. A Loremaster route follows the leveling walk.
+- Each converted Era chapter has its own Leveling library row, so 12-20 Barrens is listed with Zephras Isle and 1-12 Durotar. Opening a chapter stays on that chapter.

@@ -794,42 +794,47 @@ function Engine:LevelEntry(route, state)
     return chosen
 end
 
+function Engine:RouteStartIndex(guide, route, state)
+    state = state or {}
+    local pickID = ns.charDB and ns.charDB.eraChapterPick
+    local pickIndex = pickID and self:RouteIndex(route, pickID) or nil
+    if pickIndex then return pickIndex end
+    local floorID = ns.charDB and ns.charDB.eraFloor
+    local floorIndex = floorID and self:RouteIndex(route, floorID) or nil
+    if floorIndex then
+        local earlierProgress = false
+        if ns.charDB then
+            for index = 1, floorIndex - 1 do
+                if self:SegmentHasProgress(route[index], guide, state) then
+                    earlierProgress = true
+                    break
+                end
+            end
+        end
+        if not earlierProgress then return floorIndex end
+    end
+    local started = false
+    if ns.charDB then
+        for _, segment in ipairs(route) do
+            if self:SegmentHasProgress(segment, guide, state) then
+                started = true
+                break
+            end
+        end
+    end
+    if not started then
+        local entry = self:LevelEntry(route, state)
+        return self:RouteIndex(route, entry.id) or 1
+    end
+    return 1
+end
+
 function Engine:ActiveSegment(guide, state)
     if type(guide.segments) ~= "table" then return nil end
     state = state or {}
     local route = self:RouteSegments(guide, state)
     if not route or #route == 0 then return nil end
-    local floorID = ns.charDB and ns.charDB.eraFloor
-    local floorIndex = floorID and self:RouteIndex(route, floorID) or nil
-    local earlierProgress = false
-    if floorIndex and ns.charDB then
-        for index = 1, floorIndex - 1 do
-            if self:SegmentHasProgress(route[index], guide, state) then
-                earlierProgress = true
-                break
-            end
-        end
-    end
-    local startIndex = 1
-    if earlierProgress then
-        startIndex = 1
-    elseif floorIndex then
-        startIndex = floorIndex
-    else
-        local started = false
-        if ns.charDB then
-            for _, segment in ipairs(route) do
-                if self:SegmentHasProgress(segment, guide, state) then
-                    started = true
-                    break
-                end
-            end
-        end
-        if not started then
-            local entry = self:LevelEntry(route, state)
-            startIndex = self:RouteIndex(route, entry.id) or 1
-        end
-    end
+    local startIndex = self:RouteStartIndex(guide, route, state)
     for index = startIndex, #route do
         if not self:IsSegmentComplete(route[index], guide, state) then
             return route[index]
@@ -1276,19 +1281,7 @@ Engine.Next = Engine.SkipCurrent
 function Engine:PreviousRouteGoal(guide, goal)
     local route = self:RouteSegments(guide, self.state or {})
     if not route then return nil end
-    local startIndex = 1
-    local floorID = ns.charDB and ns.charDB.eraFloor
-    local floorIndex = floorID and self:RouteIndex(route, floorID) or nil
-    if floorIndex then
-        local earlier = false
-        for index = 1, floorIndex - 1 do
-            if self:SegmentHasProgress(route[index], guide, self.state or {}) then
-                earlier = true
-                break
-            end
-        end
-        if not earlier then startIndex = floorIndex end
-    end
+    local startIndex = self:RouteStartIndex(guide, route, self.state or {})
     local flat = {}
     for index = startIndex, #route do
         for _, candidate in ipairs(route[index].goals) do
@@ -1347,6 +1340,7 @@ function Engine:SelectGuide(guideID)
         if segment and segment.fork then
             ns.charDB.eraSegment = guideID
         end
+        ns.charDB.eraChapterPick = guideID
         ns.charDB.eraFloor = guideID
         guideID = "leveling-era"
     end
