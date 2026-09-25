@@ -1293,12 +1293,12 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 1005,
             conditions = { level = { min = 14 } },
-            text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet. Wowhead gives no parts pin, so this marks the Merchant Coast.",
+            text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet.",
             dependsOn = { "accept-97253-parts-and-pieces" },
             complete = QuestState(97253, "complete"),
             route = {
-                Point(MAP.BARRENS, 0.6270, 0.4980, "The Merchant Coast",
-                    "Travel to The Merchant Coast."),
+                Point(MAP.BARRENS, 0.6139, 0.4572, "Complicated Parts",
+                    "Travel to Complicated Parts."),
             },
         },
         {

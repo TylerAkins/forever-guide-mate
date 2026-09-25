@@ -6079,7 +6079,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-97253-parts-and-pieces" },
             complete = QuestObjective(97253, 1, "Handful of Complicated Parts"),
             route = {
-                Point(MAP.BARRENS, 0.626, 0.450, "Complicated Parts among the Southsea wreckage",
+                Point(MAP.BARRENS, 0.6139, 0.4572, "Complicated Parts among the Southsea wreckage",
                     "Travel to Complicated Parts among the Southsea wreckage."),
             },
         },
