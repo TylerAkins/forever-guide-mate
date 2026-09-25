@@ -72,3 +72,4 @@ All notable changes to this project are documented here.
 - Quest credit no longer asks the client about every quest in every guide. A kill, a quest loot, or an objective update reads the selected guide only, and a turned-in quest is not asked again.
 - Parts and Pieces points at 61.39, 45.72 for the Complicated Parts in the upper pirate camp south of Ratchet.
 - A step with no saved location follows the pin in your quest log. Saved coordinates stay where the guide already has them.
+- Gathering the Cure points at the Lost Barrens Kodo camp by the Stagnant Oasis and finishes when you have the Kodo Horns.

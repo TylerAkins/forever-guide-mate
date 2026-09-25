@@ -22,8 +22,8 @@ local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
 end
 
-local function QuestObjective(questID, index)
-    return { questObjective = { id = questID, index = index } }
+local function QuestObjective(questID, index, text)
+    return { questObjective = { id = questID, index = index, text = text } }
 end
 
 local function Point(mapID, x, y, label, offMapText)
@@ -1941,15 +1941,9 @@ ns:RegisterGuide({
             },
             text = "Find and kill Lost Barrens Kodo and collect 5 Kodo Horn, the Kodos are very scattered around The Barrens it will take a while to complete this quest Gather 5 Earthroot with Herb Gathering in The Barrens or purchase from the auction house.",
             dependsOn = { "accept-6128-gathering-the-cure" },
-            complete = QuestObjective(6128, 2),
+            complete = QuestObjective(6128, 2, "Kodo Horn"),
             route = {
-                Point(MAP.BARRENS, 0.5446, 0.4042, "Continue toward Lost Barrens Kodo",
-                    "Continue toward Lost Barrens Kodo."),
-                Point(MAP.BARRENS, 0.5474, 0.3969, "Continue toward Lost Barrens Kodo",
-                    "Continue toward Lost Barrens Kodo."),
-                Point(MAP.BARRENS, 0.5260, 0.4336, "Continue toward Lost Barrens Kodo",
-                    "Continue toward Lost Barrens Kodo."),
-                Point(MAP.BARRENS, 0.4238, 0.3763, "Lost Barrens Kodo",
+                Point(MAP.BARRENS, 0.5260, 0.4336, "Lost Barrens Kodo",
                     "Travel to Lost Barrens Kodo."),
             },
         },
