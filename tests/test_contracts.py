@@ -674,6 +674,13 @@ class ContractTests(unittest.TestCase):
             }
             self.assertEqual(actual, set(compiler.SHIPPED))
             toc = (output / "ForeverGuideMate.toc").read_text(encoding="utf-8")
+            loaded = [
+                line.strip()
+                for line in toc.splitlines()
+                if line.strip() and not line.startswith("##")
+            ]
+            for name in loaded:
+                self.assertTrue((output / name).is_file(), name)
             self.assertIn("## Version: 0.1.0", toc.splitlines())
             self.assertNotIn("@project-version@", toc)
             for excluded in ("tests", "tools", ".github", "__pycache__"):
