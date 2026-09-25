@@ -809,7 +809,11 @@ function UI:Update(engine)
         local color = colors[engine.currentGoal.kind] or colors.note
         SetSolidColor(self.tracker.typeIcon, color[1], color[2], color[3], 1)
         self.tracker.typeIcon:Show()
-        self.tracker.instruction:SetText(self:GoalInstruction(engine))
+        local instruction = self:GoalInstruction(engine)
+        if type(engine.status) == "string" and string.sub(engine.status, 1, 8) == "Blocked:" then
+            instruction = engine.status
+        end
+        self.tracker.instruction:SetText(instruction)
         local nextText = self:NextGoalText(engine)
         self.tracker.nextStep:SetText(nextText and ("Next: " .. nextText) or "")
         self.tracker.status:SetText(("%d/%d complete"):format(progress.completed, progress.eligible))

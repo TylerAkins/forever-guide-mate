@@ -1164,6 +1164,75 @@ function TestQuestAudit()
 end
 TestQuestAudit()
 
+function TestNaraRefusalRewinds()
+    local previousCharDB = ns.charDB
+    ns:RegisterQuestPrerequisite({ quest = 9101490, mode = "all", quests = { 9101489 } })
+    ns:RegisterGuide({
+        id = "refusal-rewind", title = "Refusal", category = "Test", revision = 1,
+        goals = {
+            { id = "accept-9101489", kind = "accept", text = "Accept Hamuul",
+                complete = { quest = { id = 9101489, state = "activeOrCompleted" } } },
+            { id = "turnin-9101489", kind = "turnin", text = "Turn in Hamuul",
+                dependsOn = { "accept-9101489" },
+                complete = { quest = { id = 9101489, state = "completed" } } },
+            { id = "accept-9101490", kind = "accept", text = "Accept Nara Wildmane",
+                dependsOn = { "turnin-9101489" },
+                complete = { quest = { id = 9101490, state = "activeOrCompleted" } } },
+            { id = "accept-9101062", kind = "accept", text = "Accept Goblin Invaders", priority = 1,
+                complete = { quest = { id = 9101062, state = "activeOrCompleted" } } },
+        },
+    })
+    local guide = ns.guides["refusal-rewind"]
+    local accept = ns.Engine:GetGoal(guide, "accept-9101490")
+    Check(type(accept.questPrerequisites) == "table", "the refused accept has a catalog prerequisite")
+    local state = {
+        faction = "Horde", raceID = 6, classID = 1, level = 18,
+        quests = { [9101489] = { complete = false, objectives = {} } },
+        completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    }
+    ForeverGuideMateCharDB = { selectedGuide = "refusal-rewind" }
+    ns.InitializeStorage()
+    ns.Engine:GetLedger(guide, true)["turnin-9101489"] = true
+    ns.charDB.notOffered["accept-9101490"] = {
+        guide = "refusal-rewind", quest = 9101490, npc = "Archdruid Hamuul Runetotem", text = accept.text,
+    }
+    ns.charDB.activeGoal = "accept-9101490"
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, "accept-9101062",
+        "a refused accept gives the route back to other unfinished steps")
+    Equal(ns.Engine:IsReady(guide, accept, state), false,
+        "Nara is not ready again until Hamuul is turned in")
+    Equal(ns.Engine:GetLedger(guide, true)["turnin-9101489"], nil,
+        "refusing the follow-up clears turn-in credit the client does not confirm")
+    ns.charDB.activeGoal = "accept-9101490"
+    ns.charDB.history = { "missing-step", "accept-9101490" }
+    ns.Engine.currentGuide = guide
+    ns.Engine.currentGoal = accept
+    ns.Engine.state = state
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Previous()
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, "turnin-9101489",
+        "back skips a stale history entry and leaves the refused accept")
+
+    state.quests[9101489] = nil
+    state.completedQuests[9101489] = true
+    ns.charDB.notOffered["accept-9101490"] = {
+        guide = "refusal-rewind", quest = 9101490, npc = "Archdruid Hamuul Runetotem", text = accept.text,
+    }
+    ns.charDB.activeGoal = "accept-9101490"
+    ns.charDB.history = {}
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, "accept-9101490",
+        "the accept stays when its prerequisite is already turned in")
+    Check(type(ns.Engine.status) == "string" and string.find(ns.Engine.status, "Blocked:", 1, true) == 1,
+        "a confirmed chain with no offer explains why the step cannot be completed")
+    ns.charDB = previousCharDB
+end
+TestNaraRefusalRewinds()
+
 function TestItemStarts()
     local barrens = ns.guides["leveling-the-barrens"]
     local function State(quests, completed)
