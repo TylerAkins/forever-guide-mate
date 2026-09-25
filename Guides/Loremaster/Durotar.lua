@@ -25,7 +25,8 @@ local _, ns = ...
 -- Other Horde races still reach 100%.
 -- Cactus apples, training weapons, Thazz'ril's Pick, Minshina's skull, loa idols,
 -- gnomish tools, Tiragarde relics, prickly pears, taillasher eggs, and the
--- north-coast clues have no Wowhead pin. Those steps name the landmark.
+-- north-coast clues have no saved pin. Those steps follow the quest log pin
+-- and keep a landmark until the quest is accepted.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -190,7 +191,8 @@ ns:RegisterGuide({
                     { level = { min = 2 } },
                 },
             },
-            text = "Wayward Weapons: Abandoned Training Weapon. The weapons are abandoned around the Valley of Trials. Wowhead has no weapon pin, so this marks the Den.",
+            useClientPin = true,
+            text = "Wayward Weapons: Abandoned Training Weapon. The weapons are abandoned around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97279-wayward-weapons" },
             complete = QuestObjective(97279, 1, "Abandoned Training Weapon"),
             route = {
@@ -905,7 +907,8 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Galgar's Cactus Apple Surprise: Cactus Apple. Cactuses stand around the Valley of Trials. Wowhead has no cactus pin, so this marks Galgar's camp.",
+            useClientPin = true,
+            text = "Galgar's Cactus Apple Surprise: Cactus Apple. Cactuses stand around the Valley of Trials. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-4402-galgars-cactus-apple-surprise" },
             complete = QuestObjective(4402, 1, "Cactus Apple"),
             route = {
@@ -1111,7 +1114,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "Thazz'ril's Pick: Thazz'ril's Pick. The pick is inside the Burning Blade cave with the Vile Familiars. Wowhead has no pick pin.",
+            useClientPin = true,
+            text = "Thazz'ril's Pick: Thazz'ril's Pick. The pick is inside the Burning Blade cave with the Vile Familiars. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-6394-thazzrils-pick" },
             complete = QuestObjective(6394, 1, "Thazz'ril's Pick"),
             route = {
@@ -1328,7 +1332,8 @@ ns:RegisterGuide({
                     { quest = { id = 785, state = "activeOrCompleted" } },
                 },
             },
-            text = "Turn in A Strategic Alliance to Lar Prowltusk if it is in your log. Wowhead has no giver for this breadcrumb.",
+            useClientPin = true,
+            text = "Turn in A Strategic Alliance to Lar Prowltusk if it is in your log. No saved spot for this, so the guide follows the pin in your quest log.",
             complete = QuestState(785, "completed"),
             route = {
                 Point(MAP.DUROTAR, 0.542, 0.732, "Lar Prowltusk",
@@ -1963,7 +1968,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "This Fruit Could Bite Back: Prickly Pear Fruit. The fruit grows on the Razormane grounds west of Razor Hill. Wowhead has no cactus pin.",
+            useClientPin = true,
+            text = "This Fruit Could Bite Back: Prickly Pear Fruit. The fruit grows on the Razormane grounds west of Razor Hill. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96825-this-fruit-could-bite-back" },
             complete = QuestObjective(96825, 1, "Prickly Pear Fruit"),
             route = {
@@ -1981,7 +1987,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "For Honor: Raider's Bow. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "For Honor: Raider's Bow. Search the outskirts of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96822-for-honor" },
             complete = QuestObjective(96822, 1, "Raider's Bow"),
             route = {
@@ -1999,7 +2006,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "For Honor: Raider's Battleaxe. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "For Honor: Raider's Battleaxe. Search the outskirts of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96822-for-honor" },
             complete = QuestObjective(96822, 2, "Raider's Battleaxe"),
             route = {
@@ -2017,7 +2025,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "For Honor: Raider's Shield. Search the outskirts of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "For Honor: Raider's Shield. Search the outskirts of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96822-for-honor" },
             complete = QuestObjective(96822, 3, "Raider's Shield"),
             route = {
@@ -2107,7 +2116,8 @@ ns:RegisterGuide({
                     { level = { min = 3 } },
                 },
             },
-            text = "From The Wreckage....: Gnomish Tools. The tools are in the wreckage off the coast east of Tiragarde Keep. Wowhead has no wreckage pin.",
+            useClientPin = true,
+            text = "From The Wreckage....: Gnomish Tools. The tools are in the wreckage off the coast east of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-825-from-the-wreckage" },
             complete = QuestObjective(825, 1, "Gnomish Tools"),
             route = {
@@ -2340,7 +2350,8 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "Forgotten Loa Idols: Forgotten Loa Idol. The idols are on the Echo Isles. Wowhead has no idol pin, so this marks the hexed trolls.",
+            useClientPin = true,
+            text = "Forgotten Loa Idols: Forgotten Loa Idol. The idols are on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97225-forgotten-loa-idols" },
             complete = QuestObjective(97225, 1, "Forgotten Loa Idol"),
             route = {
@@ -2449,7 +2460,8 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Minshina's Skull: Minshina's Skull. The skull is in the circle of power on the Echo Isles. Wowhead has no skull pin, so this marks Zalazane's camp.",
+            useClientPin = true,
+            text = "Minshina's Skull: Minshina's Skull. The skull is in the circle of power on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-808-minshinas-skull" },
             complete = QuestObjective(808, 1, "Minshina's Skull"),
             route = {
@@ -2467,7 +2479,8 @@ ns:RegisterGuide({
                     { level = { min = 6 } },
                 },
             },
-            text = "Break a Few Eggs: Taillasher Egg. Eggs sit near bloodtalon taillasher nests. Wowhead has no egg pin, so this marks the taillasher spawn.",
+            useClientPin = true,
+            text = "Break a Few Eggs: Taillasher Egg. Eggs sit near bloodtalon taillasher nests. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-815-break-a-few-eggs" },
             complete = QuestObjective(815, 1, "Taillasher Egg"),
             route = {
@@ -3082,7 +3095,8 @@ ns:RegisterGuide({
                     { level = { min = 7 } },
                 },
             },
-            text = "Finding the Antidote: Venomtail Poison Sac. Venomtail scorpids hunt the northwestern hills. Wowhead does not pin them on this quest.",
+            useClientPin = true,
+            text = "Finding the Antidote: Venomtail Poison Sac. Venomtail scorpids hunt the northwestern hills. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-813-finding-the-antidote" },
             complete = QuestObjective(813, 1, "Venomtail Poison Sac"),
             route = {
@@ -3547,7 +3561,8 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Threat from Below: Orcish Dagger. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "Threat from Below: Orcish Dagger. Search the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99049-threat-from-below" },
             complete = QuestObjective(99049, 1, "Orcish Dagger"),
             route = {
@@ -3565,7 +3580,8 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Threat from Below: Banner Scrap. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "Threat from Below: Banner Scrap. Search the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99049-threat-from-below" },
             complete = QuestObjective(99049, 2, "Banner Scrap"),
             route = {
@@ -3583,7 +3599,8 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Threat from Below: Broken Bone Trident. Search the destroyed ground north of Tiragarde Keep. Wowhead has no item pin.",
+            useClientPin = true,
+            text = "Threat from Below: Broken Bone Trident. Search the destroyed ground north of Tiragarde Keep. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99049-threat-from-below" },
             complete = QuestObjective(99049, 3, "Broken Bone Trident"),
             route = {

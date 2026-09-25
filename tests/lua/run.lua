@@ -1058,6 +1058,70 @@ local walked = ns.Navigation:GetActiveLeg({
     },
 }, { mapID = 2521, x = 0.420, y = 0.234 })
 Equal(walked and walked.label, "Second stop", "reaching an earlier route stop still advances to the next one")
+
+function TestClientQuestPin()
+local questLogPins = {
+    GetQuestsOnMap = function(mapID)
+        if mapID == 1413 then
+            return {
+                { questID = 887, x = 0.10, y = 0.20, isMapIndicatorQuest = true },
+                { questID = 887, x = 0.6372, y = 0.4663 },
+            }
+        end
+        if mapID == 1424 then
+            return { { questID = 50, x = 0.25, y = 0.75 } }
+        end
+    end,
+    GetMapForQuestPOIs = function() return 1424 end,
+}
+local here = { mapID = 1413, x = 0.5, y = 0.5 }
+local savedPin = ns.Navigation:GetActiveLeg({
+    complete = { quest = { id = 887, state = "complete" } },
+    route = { { mapID = 1413, x = 0.64, y = 0.45, label = "Southsea Brigand" } },
+}, here, questLogPins)
+Equal(savedPin and savedPin.x, 0.64, "a saved coordinate ignores the quest log pin")
+Equal(savedPin and savedPin.y, 0.45, "a saved coordinate keeps its y")
+local clientPin = ns.Navigation:GetActiveLeg({
+    useClientPin = true,
+    complete = { quest = { id = 887, state = "complete" } },
+    route = { { mapID = 1413, x = 0.64, y = 0.45, label = "Southsea Brigand" } },
+}, here, questLogPins)
+Equal(clientPin and clientPin.x, 0.6372, "a step with no saved spot uses the quest log pin")
+Equal(clientPin and clientPin.y, 0.4663, "a step with no saved spot uses the quest log pin y")
+Equal(clientPin and clientPin.label, "Southsea Brigand", "the quest log pin keeps the step label")
+local landmarkPin = ns.Navigation:GetActiveLeg({
+    useClientPin = true,
+    complete = { questObjective = { id = 1, index = 1 } },
+    route = { { mapID = 1413, x = 0.44, y = 0.12, label = "Vrang Wildgore" } },
+}, here, questLogPins)
+Equal(landmarkPin and landmarkPin.x, 0.44, "a missing quest log pin keeps the landmark")
+local emptyPin = ns.Navigation:GetActiveLeg({
+    useClientPin = true,
+    complete = { quest = { id = 50, state = "activeOrCompleted" } },
+    route = {},
+}, here, questLogPins)
+Equal(emptyPin and emptyPin.mapID, 1424, "an empty route uses the quest log map")
+Equal(emptyPin and emptyPin.x, 0.25, "an empty route uses the quest log pin")
+local previousSecret = issecretvalue
+issecretvalue = function(value) return value == 0.2 end
+local secretPin = ns.Navigation:GetActiveLeg({
+    useClientPin = true,
+    complete = { quest = { id = 887, state = "complete" } },
+    route = { { mapID = 1413, x = 0.64, y = 0.45, label = "Southsea Brigand" } },
+}, here, {
+    GetQuestsOnMap = function() return { { questID = 887, x = 0.2, y = 0.3 } } end,
+})
+issecretvalue = previousSecret
+Equal(secretPin and secretPin.x, 0.64, "a secret quest log coordinate keeps the landmark")
+local barrensGuide = ns.guides["leveling-the-barrens"]
+local warsong = ns.Engine:GetGoal(barrensGuide, "objective-6543-the-warsong-reports-1")
+Equal(warsong and warsong.useClientPin, true, "Warsong Reports follows the quest log pin")
+Check(warsong and string.find(warsong.text, "No saved spot for this", 1, true) ~= nil,
+    "Warsong Reports says the guide follows the quest log pin")
+Check(warsong and string.find(warsong.text, "Wowhead", 1, true) == nil,
+    "Warsong Reports no longer mentions Wowhead")
+end
+TestClientQuestPin()
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
 Check(zephrasProgress.eligible > 8, "a level 1 Zephras character still counts later steps")
 local trackedZephras = {}

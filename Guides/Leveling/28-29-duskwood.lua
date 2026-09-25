@@ -462,7 +462,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 395,
             conditions = { level = { min = 22 } },
-            text = "The Valor Family: search Raven Hill. Wowhead gives no search pin, so this marks Raven Hill.",
+            useClientPin = true,
+            text = "The Valor Family: search Raven Hill. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-96139-the-valor-family" },
             complete = QuestState(96139, "complete"),
             route = {
