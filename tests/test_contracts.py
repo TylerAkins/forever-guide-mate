@@ -10,12 +10,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = (
     ".github/workflows/ci.yml",
+    ".github/workflows/release.yml",
+    ".github/workflows/update-forever-interface.yml",
     ".github/ISSUE_TEMPLATE/bug_report.yml",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".gitignore",
     ".pkgmeta",
     "AGENTS.md",
     "CHANGELOG.md",
+    "RELEASE_NOTES.md",
     "LICENSE",
     "README.md",
     "VERSION",
@@ -52,10 +55,16 @@ REQUIRED_FILES = (
     "Guides/Loremaster/Ashenvale.lua",
     "Guides/Loremaster/Darkshore.lua",
     "Guides/Loremaster/StonetalonMountains.lua",
+    "docs/guide-authoring.md",
     "docs/zone-loremaster-guides.md",
+    "docs/DEVELOPMENT.md",
     ".cursor/skills/zone-loremaster-guide/SKILL.md",
     "tools/compile_addon.py",
+    "tools/guide_release.py",
+    "tools/update_forever_interface.py",
     "tests/test_contracts.py",
+    "tests/test_guide_release.py",
+    "tests/test_update_forever_interface.py",
     "tests/lua/run.lua",
     "tests/lua/ui.lua",
     "tests/lua/lint.lua",
@@ -156,16 +165,20 @@ class ContractTests(unittest.TestCase):
         self.assertIn('category = "Dungeon Quest Guides"', guide)
 
     def test_version_and_packaging_contract(self) -> None:
-        self.assertEqual((ROOT / "VERSION").read_text(encoding="utf-8").strip(), "0.1.0")
+        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertRegex(version, r"^\d+\.\d+\.\d+$")
         package = (ROOT / ".pkgmeta").read_text(encoding="utf-8")
         self.assertIn("package-as: ForeverGuideMate", package)
-        for excluded in (".compiled", "tests", "tools", ".github"):
+        self.assertIn("manual-changelog:", package)
+        self.assertIn("filename: RELEASE_NOTES.md", package)
+        for excluded in ("tests", "tools", ".github", "docs"):
             self.assertIn(f"  - {excluded}", package)
 
     def test_readme_documents_local_engine(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
         self.assertIn("local-development guide addon", readme)
-        self.assertIn("no release or publishing automation", readme)
+        self.assertIn("github release", readme)
+        self.assertIn("curseforge", readme)
 
     def test_runtime_has_no_gameplay_automation_or_probe_code(self) -> None:
         forbidden = (
@@ -211,9 +224,15 @@ class ContractTests(unittest.TestCase):
         self.assertIn("CompleteQuest", dialog)
         self.assertIn("GetQuestReward", dialog)
 
-    def test_no_release_workflow_exists(self) -> None:
-        workflow_names = [path.name.lower() for path in (ROOT / ".github/workflows").iterdir()]
-        self.assertEqual(workflow_names, ["ci.yml"])
+    def test_release_workflows_exist(self) -> None:
+        workflow_names = sorted(path.name.lower() for path in (ROOT / ".github/workflows").iterdir())
+        self.assertEqual(workflow_names, ["ci.yml", "release.yml", "update-forever-interface.yml"])
+
+    def test_release_notes_match_version(self) -> None:
+        version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        notes = (ROOT / "RELEASE_NOTES.md").read_text(encoding="utf-8")
+        self.assertIn(f"## {version} ", notes)
+        self.assertEqual(1, notes.count("## "))
 
     def test_rfc_guide_covers_required_quests_and_conditions(self) -> None:
         guide = (ROOT / "Guides/Dungeons/RagefireChasm.lua").read_text(encoding="utf-8")
@@ -632,6 +651,14 @@ class ContractTests(unittest.TestCase):
         self.assertIn("lua5.1 tests/lua/run.lua", workflow)
         self.assertIn("lua5.1 tests/lua/ui.lua", workflow)
         self.assertIn("lua5.1 tests/lua/lint.lua", workflow)
+        self.assertIn("tools/guide_release.py validate-notes", workflow)
+        self.assertIn("BigWigsMods/packager", workflow)
+        release = (ROOT / ".github/workflows/release.yml").read_text(encoding="utf-8")
+        self.assertIn("BigWigsMods/packager@v2", release)
+        self.assertIn("tools/guide_release.py validate", release)
+        interface = (ROOT / ".github/workflows/update-forever-interface.yml").read_text(encoding="utf-8")
+        self.assertIn('cron: "0 12 * * 3"', interface)
+        self.assertIn("tools/update_forever_interface.py", interface)
 
     def test_ux_contract(self) -> None:
         core = (ROOT / "Core.lua").read_text(encoding="utf-8")
@@ -681,7 +708,8 @@ class ContractTests(unittest.TestCase):
             ]
             for name in loaded:
                 self.assertTrue((output / name).is_file(), name)
-            self.assertIn("## Version: 0.1.0", toc.splitlines())
+            version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+            self.assertIn(f"## Version: {version}", toc.splitlines())
             self.assertNotIn("@project-version@", toc)
             for excluded in ("tests", "tools", ".github", "__pycache__"):
                 self.assertFalse((output / excluded).exists())

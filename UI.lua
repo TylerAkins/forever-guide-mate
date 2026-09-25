@@ -901,13 +901,22 @@ function UI:RegisterSettings()
     self.settingsPanel = panel
 end
 
+function UI:HasStartedGuide()
+    local selected = ns.charDB and ns.charDB.selectedGuide
+    if type(selected) ~= "string" or selected == "" then return false end
+    if ns.guides[selected] then return true end
+    if ns.retiredEraGuides and ns.retiredEraGuides[selected] then return true end
+    return false
+end
+
 function UI:Initialize()
     self:CreateTracker()
     self:CreateGuideBrowser()
     self:CreateLauncher()
     self:RegisterSettings()
     self:ApplySettings()
-    if not ns.guides[ns.charDB.selectedGuide] then
+    if ns.FinalizeGuides then ns:FinalizeGuides() end
+    if not self:HasStartedGuide() then
         self:OpenGuideBrowser()
     end
 end
