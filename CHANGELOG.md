@@ -61,3 +61,4 @@ All notable changes to this project are documented here.
 - Zephras Isle keeps the north-to-south Skyborne hub order: Shen'dar side quests before Welcome to Shen'dar Village, High Order work after the cult chain, and Bugged after the Shadowgale den. Quests that list does not include stay on the path.
 - Redridge Mountains and Duskwood are open to both factions. Alliance steps stay on Alliance. The Horde quests in those zones are no longer hidden by an Alliance-only guide.
 - Converted Era chapters, the ones whose titles no longer end in (Era), live in Guides/Leveling. Chapters that still say (Era) stay in Guides/Era and stay unloaded.
+- The README and the zone Loremaster notes match that layout. A converted chapter moves from Guides/Era to Guides/Leveling. A Loremaster route follows the leveling walk.

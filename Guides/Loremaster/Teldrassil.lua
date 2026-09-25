@@ -3,8 +3,7 @@ local _, ns = ...
 -- Alliance Loremaster route for Teldrassil.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/teldrassil
 -- Rules for the next zone: docs/zone-loremaster-guides.md
--- Shadowglen, Dolanaar, and the Oracle Glade pick up the quests offered
--- on that visit before the route leaves. Chains still wait on the real turn-in.
+-- The leveling route's order stays. Chains still wait on the real turn-in.
 -- Each objective is its own step and depends only on its accept.
 -- Omitted from this run:
 -- Welcome! (5842) is the Collector's Edition gift voucher.
@@ -22,8 +21,6 @@ local _, ns = ...
 -- totems, and the Oracle Tree have no Wowhead pin.
 -- Coordinates have not been validated in the Forever client.
 
--- Step order follows the leveling route. Zone quests that are not on
--- that route are woven in at the same giver, or after their series quest.
 local MAP = {
     THUNDER_BLUFF = 1456,
     MOONGLADE = 1450,

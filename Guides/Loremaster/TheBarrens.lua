@@ -1,8 +1,6 @@
 local _, ns = ...
 
 -- Horde-first Loremaster route for the Barrens.
--- This is a zone quest-completion guide, not a leveling route. It can be
--- followed while leveling, but the stops are there to finish the zone.
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/the-barrens
 -- Step order follows the leveling route. Raptor Thieves is worked before
 -- Plainstrider Menace. Zone quests that route skips are woven in at the same
