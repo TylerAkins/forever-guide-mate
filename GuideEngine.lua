@@ -1331,6 +1331,74 @@ function Engine:CandidateGoals(guide, state)
     return goals
 end
 
+local function QuestTurnedIn(state, questID)
+    return state.questCompletionKnown == true
+        and type(state.completedQuests) == "table"
+        and state.completedQuests[questID] == true
+end
+
+-- A gossip refusal means the catalog chain is not actually finished unless the
+-- client has flagged every prerequisite quest turned in. Ledger and inferred
+-- credit are not enough, because that is what parked the player on the accept.
+function Engine:PrerequisitesConfirmed(goal, state)
+    local groups = type(goal) == "table" and goal.questPrerequisites or nil
+    if type(groups) ~= "table" or #groups == 0 then return true end
+    state = state or {}
+    for _, group in ipairs(groups) do
+        local applies = ns.EvaluateCondition(group.conditions, state)
+        if applies ~= false then
+            local confirmed = 0
+            for _, questID in ipairs(group.questIDs or {}) do
+                if QuestTurnedIn(state, questID) then confirmed = confirmed + 1 end
+            end
+            local satisfied = group.mode == "all" and confirmed == #(group.questIDs or {}) or confirmed > 0
+            if not satisfied then return false end
+        end
+    end
+    return true
+end
+
+function Engine:InvalidateChainCredit(guide, goal, state)
+    local seen = {}
+    local function Walk(goalID)
+        if type(goalID) ~= "string" or seen[goalID] then return end
+        seen[goalID] = true
+        local target = self:GetGoal(guide, goalID)
+        if not target then return end
+        local evaluation = target.complete and ns.EvaluateCondition(target.complete, state)
+        if evaluation ~= true then
+            local ledger = self:GetLedger(guide, false)
+            if ledger then ledger[target.id] = nil end
+            if type(ns.charDB.manualCompleted) == "table" then
+                ns.charDB.manualCompleted[target.id] = nil
+            end
+            for _, dependencyID in ipairs(target.dependsOn or {}) do Walk(dependencyID) end
+            for _, group in ipairs(target.questPrerequisites or {}) do
+                for _, dependencyID in ipairs(group.goalIDs or {}) do Walk(dependencyID) end
+            end
+        end
+    end
+    Walk(goal.id)
+end
+
+function Engine:ReleaseUnconfirmedRefusals(guide, state)
+    local report = ns.charDB and ns.charDB.notOffered
+    if type(report) ~= "table" then return false end
+    local released = false
+    for goalID, entry in pairs(report) do
+        if type(entry) == "table" and entry.guide == ns.charDB.selectedGuide then
+            local goal = self:GetGoal(guide, goalID)
+            if goal and not self:IsGoalDone(goal, state, guide)
+                and not self:PrerequisitesConfirmed(goal, state) then
+                self:InvalidateChainCredit(guide, goal, state)
+                report[goalID] = nil
+                released = true
+            end
+        end
+    end
+    return released
+end
+
 function Engine:BlockedAuditGoal(guide, state)
     local report = ns.charDB and ns.charDB.notOffered
     if type(report) ~= "table" then return nil end
@@ -1339,11 +1407,10 @@ function Engine:BlockedAuditGoal(guide, state)
             local goal = self:GetGoal(guide, goalID)
             if not goal or self:IsGoalDone(goal, state, guide) then
                 report[goalID] = nil
+            elseif self:IsReady(guide, goal, state) and self:PrerequisitesConfirmed(goal, state) then
+                return goal, entry
             else
-                local ready = self:IsReady(guide, goal, state)
-                if ready then return goal, entry end
-                -- A newly catalogued prerequisite can now recover this old
-                -- refusal. Remove the stale report and let routing rewind.
+                -- The prerequisite can now be routed. Drop the stale refusal.
                 report[goalID] = nil
             end
         end
@@ -1429,6 +1496,9 @@ function Engine:Refresh(state)
         return
     end
     self:ReconcileGuide(guide, state)
+    if self:ReleaseUnconfirmedRefusals(guide, state) then
+        self:ReconcileGuide(guide, state)
+    end
     ValidateActiveGoal(self, guide)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state)
     if eligible == false then
@@ -1459,13 +1529,13 @@ function Engine:Refresh(state)
             and nextGoal.priority < active.priority
         local onChapter = not self.currentSegment or not active or not active.segmentID
             or active.segmentID == self.currentSegment.id
-        if blockedGoal then
-            self:SetActiveGoal(blockedGoal, active ~= nil)
-            self.status = ("Blocked: %s does not offer quest %d. No verified prerequisite path is registered.")
-                :format(tostring(blockedEntry.npc), tonumber(blockedEntry.quest) or 0)
-        elseif active and self.reviewingGoal == active.id and not shortPreempt then
+        if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
+        elseif blockedGoal then
+            self:SetActiveGoal(blockedGoal, active ~= nil)
+            self.status = ("Blocked: %s does not offer quest %d. Its prerequisites are already turned in, so this step stays until the quest is offered or you check it off.")
+                :format(tostring(blockedEntry.npc), tonumber(blockedEntry.quest) or 0)
         elseif onChapter and active and ready and not activeFinished and not ns.charDB.deferred[active.id]
             and (not observedDone or not ns.db.autoAdvance or observedUnknown) and not shortPreempt
             and not earlierObjective then
@@ -1556,6 +1626,12 @@ end
 function Engine:Previous()
     local history = ns.charDB.history
     local previousID = table.remove(history)
+    while previousID and self.currentGuide and (
+        previousID == (self.currentGoal and self.currentGoal.id)
+        or not self:GetGoal(self.currentGuide, previousID)
+    ) do
+        previousID = table.remove(history)
+    end
     if not previousID and self.currentGuide and self.currentGoal then
         if self.currentGuide.segments then
             previousID = self:PreviousRouteGoal(self.currentGuide, self.currentGoal)
