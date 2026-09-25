@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Redridge Mountains, levels 27-28.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Redridge list that sit on this pass are woven in.
+-- Left out: WANTED: Incinerator Gar'im is in Render's Valley, while this chapter goes to Galardell Valley. Level 60 signs stay out.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -29,7 +30,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-27-28-redridge-mountains",
-    title = "27-28 Redridge Mountains (Era)",
+    title = "27-28 Redridge Mountains",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
@@ -69,6 +70,28 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.3340, 0.4890, "Marshal Marris",
                     "Travel to Marshal Marris."),
+            },
+        },
+        {
+            id = "accept-98387-blackrock-blockade",
+            kind = "accept",
+            priority = 31,
+            text = "Accept Blackrock Blockade from Marshal Marris in Lakeshire.",
+            complete = QuestState(98387, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3340, 0.4880, "Marshal Marris",
+                    "Travel to Marshal Marris."),
+            },
+        },
+        {
+            id = "accept-98386-althers-mill",
+            kind = "accept",
+            priority = 35,
+            text = "Accept Alther's Mill from Foreman Oslow in Lakeshire.",
+            complete = QuestState(98386, "activeOrCompleted"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3220, 0.4860, "Foreman Oslow",
+                    "Travel to Foreman Oslow."),
             },
         },
         {
@@ -201,6 +224,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-98387-blackrock-blockade",
+            kind = "objective",
+            priority = 131,
+            text = "Blackrock Blockade: collect 10 Battleworn Axes from the Blackrock camp you are already clearing. Wowhead gives no axe pin.",
+            dependsOn = { "accept-98387-blackrock-blockade" },
+            complete = QuestState(98387, "complete"),
+            route = {
+                Point(MAP.REDRIDGE, 0.2920, 0.1160, "Blackrock Grunt",
+                    "Travel to Blackrock Grunt."),
+            },
+        },
+        {
             id = "objective-128-blackrock-bounty",
             kind = "objective",
             priority = 140,
@@ -259,6 +294,44 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.3340, 0.4890, "Marshal Marris",
                     "Travel to Marshal Marris."),
+            },
+        },
+        {
+            id = "turnin-98387-blackrock-blockade",
+            kind = "turnin",
+            priority = 181,
+            text = "Turn in Blackrock Blockade to Marshal Marris in Lakeshire.",
+            dependsOn = { "objective-98387-blackrock-blockade" },
+            complete = QuestState(98387, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3340, 0.4880, "Marshal Marris",
+                    "Travel to Marshal Marris."),
+            },
+        },
+        {
+            id = "objective-98386-althers-mill",
+            kind = "objective",
+            priority = 185,
+            text = "Alther's Mill: slay 12 Greater Tarantulas and destroy 6 Tarantula Eggs.",
+            dependsOn = { "accept-98386-althers-mill" },
+            complete = QuestState(98386, "complete"),
+            route = {
+                Point(MAP.REDRIDGE, 0.5200, 0.4520, "Greater Tarantula",
+                    "Travel to Greater Tarantula."),
+                Point(MAP.REDRIDGE, 0.4720, 0.4080, "Greater Tarantula",
+                    "Travel to Greater Tarantula."),
+            },
+        },
+        {
+            id = "turnin-98386-althers-mill",
+            kind = "turnin",
+            priority = 186,
+            text = "Turn in Alther's Mill to Foreman Oslow in Lakeshire.",
+            dependsOn = { "objective-98386-althers-mill" },
+            complete = QuestState(98386, "completed"),
+            route = {
+                Point(MAP.REDRIDGE, 0.3220, 0.4860, "Foreman Oslow",
+                    "Travel to Foreman Oslow."),
             },
         },
         {

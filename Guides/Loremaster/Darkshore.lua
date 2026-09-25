@@ -4,7 +4,7 @@ local _, ns = ...
 -- The step order follows the leveling route. Quests that are on the
 -- Wowhead zone page and not on that route are woven in at the giver
 -- the route already visits, or after the series quest they follow.
--- Leveling route: Guides/Leveling/Era/12-17-darkshore.lua, Guides/Leveling/Era/20-21-darkshore.lua, Guides/Leveling/Era/23-24-darkshore.lua
+-- Leveling route: Guides/Era/12-17-darkshore.lua, Guides/Era/20-21-darkshore.lua, Guides/Era/23-24-darkshore.lua
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/darkshore
 -- Dungeon quests stay in the dungeon guides.
 -- Coordinates have not been validated in the Forever client.
