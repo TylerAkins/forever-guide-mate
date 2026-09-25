@@ -57,16 +57,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1175-mirage-raceway",
-            kind = "travel",
-            priority = 20,
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.7782, 0.7718, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
-            },
-        },
-        {
             id = "accept-1175-a-bump-in-the-road",
             kind = "accept",
             priority = 30,
@@ -171,16 +161,6 @@ ns:RegisterGuide({
                     "Continue toward A Bump in the Road."),
                 Point(MAP.THOUSAND_NEEDLES, 0.7300, 0.5900, "Saltstone Gazer",
                     "Travel to Saltstone Gazer."),
-            },
-        },
-        {
-            id = "travel-1175-the-shimmering-flats",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to The Shimmering Flats.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.8800, 0.7500, "The Shimmering Flats",
-                    "Travel to The Shimmering Flats."),
             },
         },
         {
@@ -451,21 +431,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-mirage-raceway",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { quest = { id = 1146, state = "completed" } },
-                },
-            },
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.6760, 0.6400, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
-            },
-        },
-        {
             id = "turnin-1147-the-swarm-grows",
             kind = "turnin",
             priority = 330,
@@ -480,21 +445,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.6760, 0.6400, "Moktar Krin",
                     "Travel to Moktar Krin."),
-            },
-        },
-        {
-            id = "travel-the-crossroads",
-            kind = "travel",
-            priority = 340,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1184, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.5110, 0.2960, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {

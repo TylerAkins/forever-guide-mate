@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-978-rut-theran-village",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Rut'theran Village in Teldrassil.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.5549, 0.9205, "Rut'theran Village",
-                    "Travel to Rut'theran Village."),
-            },
-        },
-        {
             id = "accept-978-moontouched-wildkin",
             kind = "accept",
             priority = 20,
@@ -60,16 +50,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.5549, 0.9205, "Erelas Ambersky",
                     "Travel to Erelas Ambersky."),
-            },
-        },
-        {
-            id = "travel-cenarion-enclave",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Cenarion Enclave in Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3483, 0.0921, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
             },
         },
         {
@@ -132,16 +112,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3449-temple-of-zin-malor",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Temple of Zin-Malor in Azshara.",
-            route = {
-                Point(MAP.AZSHARA, 0.3954, 0.5012, "Temple of Zin-Malor",
-                    "Travel to Temple of Zin-Malor."),
-            },
-        },
-        {
             id = "objective-3449-2-rubbing-rune-of-jin-yael",
             kind = "objective",
             priority = 90,
@@ -172,20 +142,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.3936, 0.5559, "Temple of Zin-Malor",
                     "Travel to Temple of Zin-Malor."),
-            },
-        },
-        {
-            id = "travel-3601-legash-encampment",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Legash Encampment.",
-            route = {
-                Point(MAP.AZSHARA, 0.4622, 0.3947, "Continue toward Legash Encampment",
-                    "Continue toward Legash Encampment."),
-                Point(MAP.AZSHARA, 0.4489, 0.3656, "Continue toward Legash Encampment",
-                    "Continue toward Legash Encampment."),
-                Point(MAP.AZSHARA, 0.5328, 0.2015, "Legash Encampment",
-                    "Travel to Legash Encampment."),
             },
         },
         {
@@ -243,16 +199,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5534-the-shattered-strand",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to The Shattered Strand.",
-            route = {
-                Point(MAP.AZSHARA, 0.4542, 0.3715, "The Shattered Strand",
-                    "Travel to The Shattered Strand."),
-            },
-        },
-        {
             id = "objective-5534-kim-jael-s-missing-equipment",
             kind = "objective",
             priority = 180,
@@ -262,20 +208,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.4868, 0.4270, "Spitelash Siren",
                     "Travel to Spitelash Siren."),
-            },
-        },
-        {
-            id = "travel-5534-legash-encampment",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Legash Encampment.",
-            route = {
-                Point(MAP.AZSHARA, 0.4622, 0.3947, "Continue toward Legash Encampment",
-                    "Continue toward Legash Encampment."),
-                Point(MAP.AZSHARA, 0.4489, 0.3656, "Continue toward Legash Encampment",
-                    "Continue toward Legash Encampment."),
-                Point(MAP.AZSHARA, 0.5328, 0.2015, "Legash Encampment",
-                    "Travel to Legash Encampment."),
             },
         },
         {
@@ -295,16 +227,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3449-ruins-of-eldarath",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Ruins of Eldarath.",
-            route = {
-                Point(MAP.AZSHARA, 0.4235, 0.6412, "Ruins of Eldarath",
-                    "Travel to Ruins of Eldarath."),
-            },
-        },
-        {
             id = "objective-3449-4-rubbing-rune-of-sael-hai",
             kind = "objective",
             priority = 220,
@@ -313,31 +235,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.4235, 0.6412, "Ruins of Eldarath",
                     "Travel to Ruins of Eldarath."),
-            },
-        },
-        {
-            id = "travel-the-ruined-reaches",
-            kind = "travel",
-            priority = 230,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 3461, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Ruined Reaches.",
-            route = {
-                Point(MAP.AZSHARA, 0.4391, 0.6886, "Continue toward The Ruined Reaches",
-                    "Continue toward The Ruined Reaches."),
-                Point(MAP.AZSHARA, 0.6228, 0.8198, "Continue toward The Ruined Reaches",
-                    "Continue toward The Ruined Reaches."),
-                Point(MAP.AZSHARA, 0.6371, 0.8155, "Continue toward The Ruined Reaches",
-                    "Continue toward The Ruined Reaches."),
-                Point(MAP.AZSHARA, 0.6504, 0.8226, "Continue toward The Ruined Reaches",
-                    "Continue toward The Ruined Reaches."),
-                Point(MAP.AZSHARA, 0.6703, 0.8295, "Continue toward The Ruined Reaches",
-                    "Continue toward The Ruined Reaches."),
-                Point(MAP.AZSHARA, 0.7780, 0.9132, "The Ruined Reaches",
-                    "Travel to The Ruined Reaches."),
             },
         },
         {
@@ -371,21 +268,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.7781, 0.9145, "Pilot Xiggs Fuselighter",
                     "Travel to Pilot Xiggs Fuselighter."),
-            },
-        },
-        {
-            id = "travel-cenarion-enclave-2",
-            kind = "travel",
-            priority = 270,
-            conditions = {
-                all = {
-                    { quest = { id = 3764, state = "completed" } },
-                },
-            },
-            text = "Travel or Hearthstone to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3535, 0.0829, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
             },
         },
         {

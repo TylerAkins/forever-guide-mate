@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-astranaar",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3465, 0.4884, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "accept-1054-culling-the-threat",
             kind = "accept",
             priority = 20,
@@ -58,18 +48,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3659, 0.4959, "Raene Wolfrunner",
                     "Travel to Raene Wolfrunner."),
-            },
-        },
-        {
-            id = "travel-1054-thistlefur-village",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Thistlefur Village.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3125, 0.4618, "Continue toward Thistlefur Village",
-                    "Continue toward Thistlefur Village."),
-                Point(MAP.ASHENVALE, 0.3411, 0.3538, "Thistlefur Village",
-                    "Travel to Thistlefur Village."),
             },
         },
         {
@@ -101,16 +79,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-astranaar-2",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3659, 0.4959, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "turnin-1054-culling-the-threat",
             kind = "turnin",
             priority = 70,
@@ -120,16 +88,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3659, 0.4959, "Raene Wolfrunner",
                     "Travel to Raene Wolfrunner."),
-            },
-        },
-        {
-            id = "travel-1016-silverwind-refuge",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Silverwind Refuge.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4981, 0.6720, "Sentinel Velene Starstrike",
-                    "Travel to Sentinel Velene Starstrike."),
             },
         },
         {

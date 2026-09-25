@@ -75,21 +75,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1719-fray-island",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Fray Island.",
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4910, "Fray Island",
-                    "Travel to Fray Island."),
-            },
-        },
-        {
             id = "turnin-1718-the-islander",
             kind = "turnin",
             priority = 40,
@@ -357,16 +342,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-288-deepwater-tavern",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Deepwater Tavern.",
-            route = {
-                Point(MAP.WETLANDS, 0.1068, 0.6092, "Deepwater Tavern",
-                    "Travel to Deepwater Tavern."),
-            },
-        },
-        {
             id = "note-288-deepwater-tavern",
             kind = "note",
             priority = 210,
@@ -423,16 +398,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-289-the-lost-fleet",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to The Lost Fleet.",
-            route = {
-                Point(MAP.WETLANDS, 0.1391, 0.3103, "The Lost Fleet",
-                    "Travel to The Lost Fleet."),
-            },
-        },
-        {
             id = "objective-289-3-first-mate-snellig",
             kind = "objective",
             priority = 270,
@@ -479,16 +444,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1091, 0.5953, "First Mate Fitzsimmons",
                     "Travel to First Mate Fitzsimmons."),
-            },
-        },
-        {
-            id = "travel-290-the-lost-fleet",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to The Lost Fleet.",
-            route = {
-                Point(MAP.WETLANDS, 0.1520, 0.2363, "The Lost Fleet",
-                    "Travel to The Lost Fleet."),
             },
         },
         {
@@ -560,21 +515,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-deepwater-tavern",
-            kind = "travel",
-            priority = 370,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 293, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel or Hearthstone to Deepwater Tavern.",
-            route = {
-                Point(MAP.WETLANDS, 0.1060, 0.6061, "Deepwater Tavern",
-                    "Travel to Deepwater Tavern."),
-            },
-        },
-        {
             id = "turnin-292-the-eye-of-paleth",
             kind = "turnin",
             priority = 380,
@@ -595,16 +535,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1060, 0.6061, "Glorin Steelbrow",
                     "Travel to Glorin Steelbrow."),
-            },
-        },
-        {
-            id = "travel-menethil-keep",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to Menethil Keep.",
-            route = {
-                Point(MAP.WETLANDS, 0.0990, 0.5745, "Menethil Keep",
-                    "Travel to Menethil Keep."),
             },
         },
         {

@@ -43,36 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-493-undercity",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6190, 0.6810, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
-            id = "travel-493-tirisfal-glades",
-            kind = "travel",
-            priority = 20,
-            text = "Exit through the sewers to Tirisfal Glades.",
-            route = {
-                Point(MAP.UNDERCITY, 0.1520, 0.3240, "Tirisfal Glades",
-                    "Travel to Tirisfal Glades."),
-            },
-        },
-        {
-            id = "travel-493-silverpine-forest",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Silverpine Forest.",
-            route = {
-                Point(MAP.TIRISFAL, 0.5000, 0.7930, "Silverpine Forest",
-                    "Travel to Silverpine Forest."),
-            },
-        },
-        {
             id = "accept-493-journey-to-hillsbrad-foothills",
             kind = "accept",
             priority = 40,
@@ -84,16 +54,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-494-hillsbrad-foothills",
-            kind = "travel",
-            priority = 50,
-            text = "Travel down through Silverpine then east to Hillsbrad Foothills.",
-            route = {
-                Point(MAP.SILVERPINE, 0.7130, 0.8050, "Hillsbrad Foothills",
-                    "Travel to Hillsbrad Foothills."),
-            },
-        },
-        {
             id = "accept-494-time-to-strike",
             kind = "accept",
             priority = 60,
@@ -102,16 +62,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.2080, 0.4740, "Deathstalker Lesh",
                     "Travel to Deathstalker Lesh."),
-            },
-        },
-        {
-            id = "travel-1361-tarren-mill",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6230, 0.2030, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -244,16 +194,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-496-durnholde-keep",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Durnholde Keep.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.8367, 0.3461, "Durnholde Keep",
-                    "Travel to Durnholde Keep."),
-            },
-        },
-        {
             id = "objective-496-2-forest-creeper",
             kind = "objective",
             priority = 200,
@@ -285,18 +225,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-509-nethander-stead",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Nethander Stead.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.8858, 0.4084, "Continue toward Nethander Stead",
-                    "Continue toward Nethander Stead."),
-                Point(MAP.HILLSBRAD, 0.6404, 0.6015, "Nethander Stead",
-                    "Travel to Nethander Stead."),
-            },
-        },
-        {
             id = "objective-509-elixir-of-agony",
             kind = "objective",
             priority = 230,
@@ -321,17 +249,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-496-1-hillsbrad-foothills",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Hillsbrad Foothills.",
-            complete = QuestObjective(496, 1),
-            route = {
-                Point(MAP.HILLSBRAD, 0.5520, 0.5400, "Hillsbrad Foothills",
-                    "Travel to Hillsbrad Foothills."),
-            },
-        },
-        {
             id = "objective-7321-1-snapjaw",
             kind = "objective",
             priority = 260,
@@ -349,16 +266,6 @@ ns:RegisterGuide({
                     "Continue toward Snapjaw."),
                 Point(MAP.HILLSBRAD, 0.6781, 0.2062, "Snapjaw",
                     "Travel to Snapjaw."),
-            },
-        },
-        {
-            id = "travel-499-tarren-mill",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6147, 0.1920, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -454,16 +361,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-552-darrow-hill",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Darrow Hill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4600, 0.3260, "Darrow Hill",
-                    "Travel to Darrow Hill."),
-            },
-        },
-        {
             id = "objective-552-helcular-s-revenge",
             kind = "objective",
             priority = 360,
@@ -473,16 +370,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.4600, 0.3260, "Cave Yeti",
                     "Travel to Cave Yeti."),
-            },
-        },
-        {
-            id = "travel-501-hillsbrad-fields",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Hillsbrad Fields.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4583, 0.3430, "Hillsbrad Fields",
-                    "Travel to Hillsbrad Fields."),
             },
         },
         {
@@ -499,16 +386,6 @@ ns:RegisterGuide({
                     "Continue toward Elixir of Pain."),
                 Point(MAP.HILLSBRAD, 0.3920, 0.3857, "Starving Mountain Lion",
                     "Travel to Starving Mountain Lion."),
-            },
-        },
-        {
-            id = "travel-502-tarren-mill",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6147, 0.1915, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -558,16 +435,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-553-darrow-hill",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Darrow Hill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4627, 0.3191, "Darrow Hill",
-                    "Travel to Darrow Hill."),
-            },
-        },
-        {
             id = "objective-553-1-charge-flame-of-azel",
             kind = "objective",
             priority = 450,
@@ -591,18 +458,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.4394, 0.2662, "Darrow Hill",
                     "Travel to Darrow Hill."),
-            },
-        },
-        {
-            id = "travel-527-hillsbrad-fields",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Hillsbrad Fields.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4636, 0.3195, "Continue toward Hillsbrad Fields",
-                    "Continue toward Hillsbrad Fields."),
-                Point(MAP.HILLSBRAD, 0.3268, 0.3551, "Hillsbrad Fields",
-                    "Travel to Hillsbrad Fields."),
             },
         },
         {
@@ -690,16 +545,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-567-azurelode-mine",
-            kind = "travel",
-            priority = 550,
-            text = "Travel to Azurelode Mine.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.2644, 0.5868, "Azurelode Mine",
-                    "Travel to Azurelode Mine."),
-            },
-        },
-        {
             id = "objective-567-3-miner-hackett",
             kind = "objective",
             priority = 560,
@@ -711,18 +556,6 @@ ns:RegisterGuide({
                     "Continue toward Miner Hackett."),
                 Point(MAP.HILLSBRAD, 0.3049, 0.5835, "Miner Hackett",
                     "Travel to Miner Hackett."),
-            },
-        },
-        {
-            id = "travel-tarren-mill",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.2644, 0.5868, "Continue toward Tarren Mill",
-                    "Continue toward Tarren Mill."),
-                Point(MAP.HILLSBRAD, 0.6239, 0.2033, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {

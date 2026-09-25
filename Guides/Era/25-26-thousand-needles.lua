@@ -80,16 +80,6 @@ ns:RegisterGuide({
             complete = QuestState(4881, "activeOrCompleted"),
         },
         {
-            id = "travel-4841-freewind-post",
-            kind = "travel",
-            priority = 40,
-            text = "Run to Freewind Post use the Elevator at.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4700, 0.4820, "Freewind Post",
-                    "Travel to Freewind Post."),
-            },
-        },
-        {
             id = "accept-4841-pacify-the-centaur",
             kind = "accept",
             priority = 50,
@@ -224,16 +214,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5064-freewind-post",
-            kind = "travel",
-            priority = 150,
-            text = "Run to Freewind Post use the Elevator at.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.4700, 0.4820, "Freewind Post",
-                    "Travel to Freewind Post."),
-            },
-        },
-        {
             id = "turnin-4841-pacify-the-centaur",
             kind = "turnin",
             priority = 160,
@@ -277,21 +257,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.4471, 0.5026, "Hagar Lightninghoof",
                     "Travel to Hagar Lightninghoof."),
-            },
-        },
-        {
-            id = "travel-camp-taurajo",
-            kind = "travel",
-            priority = 200,
-            conditions = {
-                all = {
-                    { quest = { id = 893, state = "completed" } },
-                },
-            },
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4486, 0.5913, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {

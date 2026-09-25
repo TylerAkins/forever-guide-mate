@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-741-auberdine",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3721, 0.4427, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "note-741-auberdine",
             kind = "note",
             priority = 20,
@@ -143,16 +133,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3660, 0.4540, "Gwennyth Bly'Leggonde",
                     "Travel to Gwennyth Bly'Leggonde."),
-            },
-        },
-        {
-            id = "travel-2098-mist-s-edge",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Mist's Edge.",
-            route = {
-                Point(MAP.DARKSHORE, 0.5668, 0.1353, "Mist's Edge",
-                    "Travel to Mist's Edge."),
             },
         },
         {
@@ -267,16 +247,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-auberdine",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3721, 0.4427, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "turnin-986-a-lost-master",
             kind = "turnin",
             priority = 170,
@@ -307,16 +277,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3934, 0.4349, "Terenthis",
                     "Travel to Terenthis."),
-            },
-        },
-        {
-            id = "travel-951-grove-of-the-ancients",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Grove of the Ancients.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4357, 0.7634, "Grove of the Ancients",
-                    "Travel to Grove of the Ancients."),
             },
         },
         {
@@ -366,21 +326,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.4360, 0.7640, "Onu",
                     "Travel to Onu."),
-            },
-        },
-        {
-            id = "travel-blackwood-den",
-            kind = "travel",
-            priority = 210,
-            conditions = {
-                all = {
-                    { quest = { id = 985, state = "completed" } },
-                },
-            },
-            text = "Travel to Blackwood Den.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4496, 0.8533, "Blackwood Den",
-                    "Travel to Blackwood Den."),
             },
         },
         {
@@ -482,21 +427,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-auberdine-2",
-            kind = "travel",
-            priority = 280,
-            conditions = {
-                all = {
-                    { quest = { id = 985, state = "completed" } },
-                },
-            },
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3934, 0.4348, "Auberdine",
-                    "Travel to Auberdine."),
-            },
-        },
-        {
             id = "turnin-995-escape-through-stealth",
             kind = "turnin",
             priority = 290,
@@ -530,21 +460,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3934, 0.4348, "Terenthis",
                     "Travel to Terenthis."),
-            },
-        },
-        {
-            id = "travel-darnassus",
-            kind = "travel",
-            priority = 310,
-            conditions = {
-                all = {
-                    { quest = { id = 731, state = "completed" } },
-                },
-            },
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3137, 0.8414, "Darnassus",
-                    "Travel to Darnassus."),
             },
         },
         {

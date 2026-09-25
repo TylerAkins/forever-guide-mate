@@ -43,16 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-66-darkshire",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7750, 0.4440, "Darkshire",
-                    "Travel to Darkshire."),
-            },
-        },
-        {
             id = "accept-66-the-legend-of-stalvan",
             kind = "accept",
             priority = 20,
@@ -309,16 +299,6 @@ ns:RegisterGuide({
             complete = QuestState(56, "complete"),
         },
         {
-            id = "travel-173-the-rotting-orchard",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to The Rotting Orchard.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.6300, 0.7000, "The Rotting Orchard",
-                    "Travel to The Rotting Orchard."),
-            },
-        },
-        {
             id = "objective-173-worgen-in-the-woods",
             kind = "objective",
             priority = 220,
@@ -328,16 +308,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.6300, 0.7000, "Nightbane Shadow Weaver",
                     "Travel to Nightbane Shadow Weaver."),
-            },
-        },
-        {
-            id = "travel-221-darkshire",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7524, 0.4800, "Darkshire",
-                    "Travel to Darkshire."),
             },
         },
         {
@@ -410,16 +380,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-221-the-rotting-orchard",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to The Rotting Orchard.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.6300, 0.7000, "Nightbane Dark Runner",
-                    "Travel to Nightbane Dark Runner."),
-            },
-        },
-        {
             id = "objective-221-worgen-in-the-woods",
             kind = "objective",
             priority = 310,
@@ -429,16 +389,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.6300, 0.7000, "Nightbane Dark Runner",
                     "Travel to Nightbane Dark Runner."),
-            },
-        },
-        {
-            id = "travel-222-darkshire",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7524, 0.4800, "Darkshire",
-                    "Travel to Darkshire."),
             },
         },
         {
@@ -465,16 +415,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-222-roland-s-doom",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Roland's Doom.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7423, 0.7755, "Roland's Doom",
-                    "Travel to Roland's Doom."),
-            },
-        },
-        {
             id = "objective-222-worgen-in-the-woods",
             kind = "objective",
             priority = 360,
@@ -486,16 +426,6 @@ ns:RegisterGuide({
                     "Continue toward Worgen in the Woods."),
                 Point(MAP.DUSKWOOD, 0.7400, 0.7400, "Nightbane Vile Fang",
                     "Travel to Nightbane Vile Fang."),
-            },
-        },
-        {
-            id = "travel-181-vul-gol-ogre-mound",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Vul'Gol Ogre Mound.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.3403, 0.7659, "Vul'Gol Ogre Mound",
-                    "Travel to Vul'Gol Ogre Mound."),
             },
         },
         {
@@ -520,16 +450,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.2380, 0.7900, "Young Black Ravager",
                     "Travel to Young Black Ravager."),
-            },
-        },
-        {
-            id = "travel-5-raven-hill",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Raven Hill.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.1833, 0.5625, "Raven Hill",
-                    "Travel to Raven Hill."),
             },
         },
         {
@@ -653,16 +573,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-225-forlorn-rowe",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Forlorn Rowe.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.1768, 0.2915, "Forlorn Rowe",
-                    "Travel to Forlorn Rowe."),
-            },
-        },
-        {
             id = "accept-225-the-weathered-grave",
             kind = "accept",
             priority = 490,
@@ -671,16 +581,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.1768, 0.2915, "Forlorn Rowe",
                     "Travel to Forlorn Rowe."),
-            },
-        },
-        {
-            id = "travel-95-the-hushed-bank",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to The Hushed Bank.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.0782, 0.3406, "The Hushed Bank",
-                    "Travel to The Hushed Bank."),
             },
         },
         {
@@ -704,16 +604,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.0782, 0.3406, "Sven Yorgen",
                     "Travel to Sven Yorgen."),
-            },
-        },
-        {
-            id = "travel-58-darkshire",
-            kind = "travel",
-            priority = 530,
-            text = "Travel or Hearthstone to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7360, 0.4685, "Darkshire",
-                    "Travel to Darkshire."),
             },
         },
         {
@@ -1008,16 +898,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-230-the-yorgen-farmstead",
-            kind = "travel",
-            priority = 750,
-            text = "Travel to The Yorgen Farmstead.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.4979, 0.7786, "The Yorgen Farmstead",
-                    "Travel to The Yorgen Farmstead."),
-            },
-        },
-        {
             id = "turnin-95-sven-s-revenge",
             kind = "turnin",
             priority = 760,
@@ -1038,16 +918,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.4979, 0.7786, "The Yorgen Farmstead",
                     "Travel to The Yorgen Farmstead."),
-            },
-        },
-        {
-            id = "travel-158-raven-hill",
-            kind = "travel",
-            priority = 780,
-            text = "Travel to Raven Hill.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.1840, 0.5644, "Raven Hill",
-                    "Travel to Raven Hill."),
             },
         },
         {
@@ -1098,16 +968,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-58-dawning-wood-catacombs",
-            kind = "travel",
-            priority = 820,
-            text = "Go down to Dawning Wood Catacombs.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.2370, 0.3523, "Dawning Wood Catacombs",
-                    "Travel to Dawning Wood Catacombs."),
-            },
-        },
-        {
             id = "objective-58-the-night-watch",
             kind = "objective",
             priority = 830,
@@ -1134,16 +994,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-262-the-hushed-bank",
-            kind = "travel",
-            priority = 850,
-            text = "Travel to The Hushed Bank.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.0782, 0.3406, "The Hushed Bank",
-                    "Travel to The Hushed Bank."),
-            },
-        },
-        {
             id = "turnin-230-sven-s-camp",
             kind = "turnin",
             priority = 860,
@@ -1167,31 +1017,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-265-sentinel-hill",
-            kind = "travel",
-            priority = 880,
-            conditions = {
-                all = {
-                    { race = { 3, 7, 4 } },
-                },
-            },
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5654, 0.5264, "Thor",
-                    "Travel to Thor."),
-            },
-        },
-        {
-            id = "travel-68-moonbrook",
-            kind = "travel",
-            priority = 890,
-            text = "Travel to Moonbrook.",
-            route = {
-                Point(MAP.WESTFALL, 0.4152, 0.6672, "Moonbrook",
-                    "Travel to Moonbrook."),
-            },
-        },
-        {
             id = "turnin-67-the-legend-of-stalvan",
             kind = "turnin",
             priority = 900,
@@ -1212,16 +1037,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.4152, 0.6674, "Moonbrook",
                     "Travel to Moonbrook."),
-            },
-        },
-        {
-            id = "travel-265-darkshire",
-            kind = "travel",
-            priority = 920,
-            text = "Travel or Hearthstone to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7572, 0.4534, "Darkshire",
-                    "Travel to Darkshire."),
             },
         },
         {
@@ -1430,16 +1245,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-268-raven-hill",
-            kind = "travel",
-            priority = 1080,
-            text = "Travel to Raven Hill.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.1840, 0.5644, "Raven Hill",
-                    "Travel to Raven Hill."),
-            },
-        },
-        {
             id = "turnin-453-finding-the-shadowy-figure",
             kind = "turnin",
             priority = 1090,
@@ -1460,16 +1265,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.1840, 0.5644, "Jitters",
                     "Travel to Jitters."),
-            },
-        },
-        {
-            id = "travel-the-hushed-bank",
-            kind = "travel",
-            priority = 1110,
-            text = "Travel to The Hushed Bank.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.0783, 0.3402, "The Hushed Bank",
-                    "Travel to The Hushed Bank."),
             },
         },
         {
@@ -1560,16 +1355,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-159-darkshire",
-            kind = "travel",
-            priority = 1190,
-            text = "Travel or Hearthstone to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7524, 0.4800, "Darkshire",
-                    "Travel to Darkshire."),
-            },
-        },
-        {
             id = "turnin-156-gather-rot-blossoms",
             kind = "turnin",
             priority = 1200,
@@ -1590,18 +1375,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7382, 0.4449, "Tavernkeep Smitts",
                     "Travel to Tavernkeep Smitts."),
-            },
-        },
-        {
-            id = "travel-134-raven-hill-cemetery",
-            kind = "travel",
-            priority = 1220,
-            text = "Travel to Raven Hill Cemetery.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.4858, 0.1880, "Continue toward Raven Hill Cemetery",
-                    "Continue toward Raven Hill Cemetery."),
-                Point(MAP.DUSKWOOD, 0.2424, 0.3770, "Raven Hill Cemetery",
-                    "Travel to Raven Hill Cemetery."),
             },
         },
         {
@@ -1663,16 +1436,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-134-vul-gol-ogre-mound",
-            kind = "travel",
-            priority = 1280,
-            text = "Travel to Vul'Gol Ogre Mound.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.3345, 0.7631, "Vul'Gol Ogre Mound",
-                    "Travel to Vul'Gol Ogre Mound."),
-            },
-        },
-        {
             id = "objective-134-ogre-thieves",
             kind = "objective",
             priority = 1290,
@@ -1682,16 +1445,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.3345, 0.7631, "Vul'Gol Ogre Mound",
                     "Travel to Vul'Gol Ogre Mound."),
-            },
-        },
-        {
-            id = "travel-160-raven-hill-cemetery",
-            kind = "travel",
-            priority = 1300,
-            text = "Travel to Raven Hill Cemetery.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.2806, 0.3147, "Raven Hill Cemetery",
-                    "Travel to Raven Hill Cemetery."),
             },
         },
         {
@@ -1715,16 +1468,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.2806, 0.3147, "Abercrombie",
                     "Travel to Abercrombie."),
-            },
-        },
-        {
-            id = "travel-251-darkshire",
-            kind = "travel",
-            priority = 1330,
-            text = "Travel to Darkshire.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7195, 0.4642, "Darkshire",
-                    "Travel to Darkshire."),
             },
         },
         {
@@ -1806,26 +1549,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7196, 0.4643, "Lord Ello Ebonlocke",
                     "Travel to Lord Ello Ebonlocke."),
-            },
-        },
-        {
-            id = "travel-1274-trade-district",
-            kind = "travel",
-            priority = 1410,
-            text = "Travel to Trade District.",
-            route = {
-                Point(MAP.STORMWIND, 0.5700, 0.7281, "Trade District",
-                    "Travel to Trade District."),
-            },
-        },
-        {
-            id = "travel-1274-cathedral-of-light",
-            kind = "travel",
-            priority = 1420,
-            text = "Travel to Cathedral of Light.",
-            route = {
-                Point(MAP.STORMWIND, 0.3953, 0.2813, "Cathedral of Light",
-                    "Travel to Cathedral of Light."),
             },
         },
         {

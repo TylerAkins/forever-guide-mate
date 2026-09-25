@@ -42,21 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-the-crossroads",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1362, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5109, 0.2959, "The Crossroads",
-                    "Travel to The Crossroads."),
-            },
-        },
-        {
             id = "accept-1145-the-swarm-grows",
             kind = "accept",
             priority = 20,
@@ -81,16 +66,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4534, 0.2843, "Regthar Deathgate",
                     "Travel to Regthar Deathgate."),
-            },
-        },
-        {
-            id = "travel-1175-mirage-raceway",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.7782, 0.7718, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
             },
         },
         {
@@ -198,16 +173,6 @@ ns:RegisterGuide({
                     "Continue toward A Bump in the Road."),
                 Point(MAP.THOUSAND_NEEDLES, 0.7300, 0.5900, "Saltstone Gazer",
                     "Travel to Saltstone Gazer."),
-            },
-        },
-        {
-            id = "travel-1175-the-shimmering-flats",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to The Shimmering Flats.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.8800, 0.7500, "The Shimmering Flats",
-                    "Travel to The Shimmering Flats."),
             },
         },
         {
@@ -345,16 +310,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.7814, 0.7707, "Wizzle Brassbolts",
                     "Travel to Wizzle Brassbolts."),
-            },
-        },
-        {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 260,
-            text = "Run South to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5160, 0.2550, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
     },

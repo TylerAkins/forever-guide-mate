@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-970-maestra-s-post",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Maestra's Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2725, 0.3562, "Maestra's Post",
-                    "Travel to Maestra's Post."),
-            },
-        },
-        {
             id = "accept-970-the-tower-of-althalaxx",
             kind = "accept",
             priority = 20,
@@ -106,16 +96,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-973-maestra-s-post",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Maestra's Post.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2620, 0.3866, "Maestra's Post",
-                    "Travel to Maestra's Post."),
-            },
-        },
-        {
             id = "turnin-970-the-tower-of-althalaxx",
             kind = "turnin",
             priority = 70,
@@ -169,16 +149,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.2642, 0.3856, "Orendil Broadleaf",
                     "Travel to Orendil Broadleaf."),
-            },
-        },
-        {
-            id = "travel-1008-astranaar",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3450, 0.4800, "Astranaar",
-                    "Travel to Astranaar."),
             },
         },
         {
@@ -352,16 +322,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1023-lake-falathim",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Lake Falathim.",
-            route = {
-                Point(MAP.ASHENVALE, 0.2032, 0.4239, "Lake Falathim",
-                    "Travel to Lake Falathim."),
-            },
-        },
-        {
             id = "turnin-991-raene-s-cleansing",
             kind = "turnin",
             priority = 280,
@@ -394,16 +354,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.1900, 0.4300, "Saltspittle Oracle",
                     "Travel to Saltspittle Oracle."),
-            },
-        },
-        {
-            id = "travel-1024-astranaar",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3659, 0.4959, "Astranaar",
-                    "Travel to Astranaar."),
             },
         },
         {
@@ -464,18 +414,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1033-iris-lake",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Iris Lake.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4418, 0.5629, "Continue toward Iris Lake",
-                    "Continue toward Iris Lake."),
-                Point(MAP.ASHENVALE, 0.4356, 0.4923, "Iris Lake",
-                    "Travel to Iris Lake."),
-            },
-        },
-        {
             id = "objective-1033-elune-s-tear",
             kind = "objective",
             priority = 380,
@@ -487,18 +425,6 @@ ns:RegisterGuide({
                     "Continue toward Elune's Tear."),
                 Point(MAP.ASHENVALE, 0.4625, 0.4593, "Iris Lake",
                     "Travel to Iris Lake."),
-            },
-        },
-        {
-            id = "travel-1026-moonwell",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Moonwell.",
-            route = {
-                Point(MAP.ASHENVALE, 0.4800, 0.4700, "Continue toward Moonwell",
-                    "Continue toward Moonwell."),
-                Point(MAP.ASHENVALE, 0.5349, 0.4630, "Moonwell",
-                    "Travel to Moonwell."),
             },
         },
         {
@@ -537,16 +463,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-astranaar",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Astranaar.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3659, 0.4959, "Astranaar",
-                    "Travel to Astranaar."),
-            },
-        },
-        {
             id = "turnin-1025-an-aggressive-defense",
             kind = "turnin",
             priority = 440,
@@ -579,16 +495,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3737, 0.5178, "Pelturas Whitemoon",
                     "Travel to Pelturas Whitemoon."),
-            },
-        },
-        {
-            id = "travel-1034-ruins-of-stardust",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Ruins of Stardust.",
-            route = {
-                Point(MAP.ASHENVALE, 0.3361, 0.6749, "Ruins of Stardust",
-                    "Travel to Ruins of Stardust."),
             },
         },
         {

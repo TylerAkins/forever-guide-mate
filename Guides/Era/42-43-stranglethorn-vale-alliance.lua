@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2864-booty-bay",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2700, 0.7720, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "accept-2864-tran-rek",
             kind = "accept",
             priority = 20,
@@ -315,18 +305,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-587-wild-shore",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Wild Shore.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3085, 0.7237, "Continue toward Wild Shore",
-                    "Continue toward Wild Shore."),
-                Point(MAP.STRANGLETHORN, 0.3293, 0.7427, "Wild Shore",
-                    "Travel to Wild Shore."),
-            },
-        },
-        {
             id = "objective-604-2-bloodsail-charts",
             kind = "objective",
             priority = 260,
@@ -387,16 +365,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-booty-bay",
-            kind = "travel",
-            priority = 310,
-            text = "Travel or Hearthstone to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2710, 0.7730, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "turnin-587-up-to-snuff",
             kind = "turnin",
             priority = 320,
@@ -433,18 +401,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-617-southern-savage-coast",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Southern Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3085, 0.7237, "Continue toward Southern Savage Coast",
-                    "Continue toward Southern Savage Coast."),
-                Point(MAP.STRANGLETHORN, 0.2888, 0.5810, "Southern Savage Coast",
-                    "Travel to Southern Savage Coast."),
-            },
-        },
-        {
             id = "objective-617-akiris-by-the-bundle",
             kind = "objective",
             priority = 360,
@@ -454,22 +410,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2400, 0.6500, "Naga Explorer",
                     "Travel to Naga Explorer."),
-            },
-        },
-        {
-            id = "travel-609-ruins-of-jubuwal",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Ruins of Jubuwal.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2716, 0.5898, "Continue toward Ruins of Jubuwal",
-                    "Continue toward Ruins of Jubuwal."),
-                Point(MAP.STRANGLETHORN, 0.2981, 0.5660, "Continue toward Ruins of Jubuwal",
-                    "Continue toward Ruins of Jubuwal."),
-                Point(MAP.STRANGLETHORN, 0.3088, 0.5361, "Continue toward Ruins of Jubuwal",
-                    "Continue toward Ruins of Jubuwal."),
-                Point(MAP.STRANGLETHORN, 0.3475, 0.5182, "Ruins of Jubuwal",
-                    "Travel to Ruins of Jubuwal."),
             },
         },
         {
@@ -497,13 +437,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-609-1-stranglethorn-vale",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to Stranglethorn Vale.",
-            complete = QuestObjective(609, 1),
-        },
-        {
             id = "objective-600-venture-company-mining",
             kind = "objective",
             priority = 410,
@@ -520,18 +453,6 @@ ns:RegisterGuide({
                     "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Foreman",
                     "Travel to Venture Co. Foreman."),
-            },
-        },
-        {
-            id = "travel-621-ruins-of-aboraz",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Ruins of Aboraz.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3390, 0.5400, "Continue toward Ruins of Aboraz",
-                    "Continue toward Ruins of Aboraz."),
-                Point(MAP.STRANGLETHORN, 0.3834, 0.5671, "Ruins of Aboraz",
-                    "Travel to Ruins of Aboraz."),
             },
         },
         {
@@ -589,21 +510,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3800, 0.3500, "King Bangalash",
                     "Travel to King Bangalash."),
-            },
-        },
-        {
-            id = "travel-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 470,
-            conditions = {
-                all = {
-                    { quest = { id = 197, state = "completed" } },
-                },
-            },
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3570, 0.1080, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -676,16 +582,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3565, 0.1051, "Barnil Stonepot",
                     "Travel to Barnil Stonepot."),
-            },
-        },
-        {
-            id = "travel-booty-bay-2",
-            kind = "travel",
-            priority = 540,
-            text = "Travel or Hearthstone to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2710, 0.7730, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {

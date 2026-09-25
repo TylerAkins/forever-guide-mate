@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-3062-camp-mojache",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7442, 0.4335, "Camp Mojache",
-                    "Travel to Camp Mojache."),
-            },
-        },
-        {
             id = "accept-3124-hippogryph-muisek",
             kind = "accept",
             priority = 20,
@@ -131,16 +121,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3124-high-wilderness",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to High Wilderness.",
-            route = {
-                Point(MAP.FERALAS, 0.5584, 0.6326, "High Wilderness",
-                    "Travel to High Wilderness."),
-            },
-        },
-        {
             id = "objective-3124-hippogryph-muisek",
             kind = "objective",
             priority = 100,
@@ -155,21 +135,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.5584, 0.6326, "Frayfeather Hippogryph",
                     "Travel to Frayfeather Hippogryph."),
-            },
-        },
-        {
-            id = "travel-3125-camp-mojache",
-            kind = "travel",
-            priority = 110,
-            conditions = {
-                all = {
-                    { quest = { id = 3123, state = "completed" } },
-                },
-            },
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7441, 0.4337, "Camp Mojache",
-                    "Travel to Camp Mojache."),
             },
         },
         {
@@ -308,16 +273,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7003-the-forgotten-coast",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to The Forgotten Coast.",
-            route = {
-                Point(MAP.FERALAS, 0.4480, 0.4345, "The Forgotten Coast",
-                    "Travel to The Forgotten Coast."),
-            },
-        },
-        {
             id = "accept-7003-zapped-giants",
             kind = "accept",
             priority = 210,
@@ -364,22 +319,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7734-rage-scar-hold",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Rage Scar Hold.",
-            route = {
-                Point(MAP.FERALAS, 0.4829, 0.4462, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.4843, 0.3773, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.5146, 0.3234, "Continue toward Rage Scar Hold",
-                    "Continue toward Rage Scar Hold."),
-                Point(MAP.FERALAS, 0.5324, 0.3183, "Rage Scar Hold",
-                    "Travel to Rage Scar Hold."),
-            },
-        },
-        {
             id = "objective-7734-improved-quality",
             kind = "objective",
             priority = 260,
@@ -400,20 +339,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.5238, 0.3174, "Rage Scar Yeti",
                     "Travel to Rage Scar Yeti."),
-            },
-        },
-        {
-            id = "travel-3062-ruins-of-ravenwind",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Ruins of Ravenwind.",
-            route = {
-                Point(MAP.FERALAS, 0.4833, 0.2382, "Continue toward Ruins of Ravenwind",
-                    "Continue toward Ruins of Ravenwind."),
-                Point(MAP.FERALAS, 0.4435, 0.2214, "Continue toward Ruins of Ravenwind",
-                    "Continue toward Ruins of Ravenwind."),
-                Point(MAP.FERALAS, 0.4001, 0.1358, "Ruins of Ravenwind",
-                    "Travel to Ruins of Ravenwind."),
             },
         },
         {
@@ -453,16 +378,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7003-the-twin-colossals",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to The Twin Colossals.",
-            route = {
-                Point(MAP.FERALAS, 0.3794, 0.2200, "The Twin Colossals",
-                    "Travel to The Twin Colossals."),
-            },
-        },
-        {
             id = "objective-7003-zapped-giants",
             kind = "objective",
             priority = 330,
@@ -472,16 +387,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.3842, 0.2151, "Land Walker",
                     "Travel to Land Walker."),
-            },
-        },
-        {
-            id = "travel-7003-the-twin-colossals-2",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to The Twin Colossals.",
-            route = {
-                Point(MAP.FERALAS, 0.3794, 0.2200, "The Twin Colossals",
-                    "Travel to The Twin Colossals."),
             },
         },
         {
@@ -499,20 +404,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.4447, 0.4687, "Land Walker",
                     "Travel to Land Walker."),
-            },
-        },
-        {
-            id = "travel-7003-the-forgotten-coast-2",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to The Forgotten Coast.",
-            route = {
-                Point(MAP.FERALAS, 0.4757, 0.2580, "Continue toward The Forgotten Coast",
-                    "Continue toward The Forgotten Coast."),
-                Point(MAP.FERALAS, 0.4843, 0.3336, "Continue toward The Forgotten Coast",
-                    "Continue toward The Forgotten Coast."),
-                Point(MAP.FERALAS, 0.4480, 0.4345, "The Forgotten Coast",
-                    "Travel to The Forgotten Coast."),
             },
         },
         {
@@ -536,16 +427,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.4481, 0.4340, "Zorbin Fandazzle",
                     "Travel to Zorbin Fandazzle."),
-            },
-        },
-        {
-            id = "travel-3062-camp-mojache-2",
-            kind = "travel",
-            priority = 390,
-            text = "Travel or Hearthstone to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7441, 0.4336, "Camp Mojache",
-                    "Travel to Camp Mojache."),
             },
         },
         {

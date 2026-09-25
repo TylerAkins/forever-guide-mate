@@ -44,16 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1145-the-crossroads",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5109, 0.2959, "The Crossroads",
-                    "Travel to The Crossroads."),
-            },
-        },
-        {
             id = "accept-1145-the-swarm-grows",
             kind = "accept",
             priority = 20,
@@ -62,16 +52,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5109, 0.2959, "Korran",
                     "Travel to Korran."),
-            },
-        },
-        {
-            id = "travel-1146-orgrimmar",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.7500, 0.3400, "Orgrimmar",
-                    "Travel to Orgrimmar."),
             },
         },
         {
@@ -132,21 +112,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1362-the-barrens",
-            kind = "travel",
-            priority = 90,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1362, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.4534, 0.2843, "The Barrens",
-                    "Travel to The Barrens."),
-            },
-        },
-        {
             id = "accept-1362-the-kolkar-of-desolace",
             kind = "accept",
             priority = 100,
@@ -163,44 +128,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-charred-vale",
-            kind = "travel",
-            priority = 110,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5561, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Charred Vale.",
-            route = {
-                Point(MAP.STONETALON, 0.4463, 0.6175, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.3951, 0.7228, "Continue toward The Charred Vale",
-                    "Continue toward The Charred Vale."),
-                Point(MAP.STONETALON, 0.2995, 0.7738, "The Charred Vale",
-                    "Travel to The Charred Vale."),
-            },
-        },
-        {
-            id = "travel-scrabblescrew-s-camp",
-            kind = "travel",
-            priority = 120,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5561, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Scrabblescrew's Camp.",
-            route = {
-                Point(MAP.DESOLACE, 0.6221, 0.3222, "Continue toward Scrabblescrew's Camp",
-                    "Continue toward Scrabblescrew's Camp."),
-                Point(MAP.DESOLACE, 0.6554, 0.3325, "Continue toward Scrabblescrew's Camp",
-                    "Continue toward Scrabblescrew's Camp."),
-                Point(MAP.DESOLACE, 0.6085, 0.6192, "Smeed Scrabblescrew",
-                    "Travel to Smeed Scrabblescrew."),
-            },
-        },
-        {
             id = "accept-5561-kodo-roundup",
             kind = "accept",
             priority = 130,
@@ -209,16 +136,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6085, 0.6192, "Smeed Scrabblescrew",
                     "Travel to Smeed Scrabblescrew."),
-            },
-        },
-        {
-            id = "travel-1365-ghost-walker-post",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Ghost Walker Post. Follow the road northwest from Scrabblescrew's Camp.",
-            route = {
-                Point(MAP.DESOLACE, 0.5600, 0.5900, "Scrabblescrew's Camp",
-                    "Travel to Scrabblescrew's Camp."),
             },
         },
         {
@@ -312,22 +229,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1365-kolkar-village",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Kolkar Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.5068, 0.5315, "Continue toward Kolkar Village",
-                    "Continue toward Kolkar Village."),
-                Point(MAP.DESOLACE, 0.4933, 0.4892, "Continue toward Kolkar Village",
-                    "Continue toward Kolkar Village."),
-                Point(MAP.DESOLACE, 0.5568, 0.3741, "Continue toward Kolkar Village",
-                    "Continue toward Kolkar Village."),
-                Point(MAP.DESOLACE, 0.7397, 0.4916, "Kolkar Village",
-                    "Travel to Kolkar Village."),
-            },
-        },
-        {
             id = "objective-1365-khan-dez-hepah",
             kind = "objective",
             priority = 230,
@@ -380,16 +281,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6085, 0.6192, "Smeed Scrabblescrew",
                     "Travel to Smeed Scrabblescrew."),
-            },
-        },
-        {
-            id = "travel-1366-ghost-walker-post",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5622, 0.5953, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
             },
         },
         {
@@ -449,16 +340,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5763-shadowprey-village",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Shadowprey Village. Follow the road west, down on the shore.",
-            route = {
-                Point(MAP.DESOLACE, 0.2400, 0.7100, "Shadowprey Village",
-                    "Travel to Shadowprey Village."),
-            },
-        },
-        {
             id = "accept-5381-hand-of-iruxos",
             kind = "accept",
             priority = 330,
@@ -513,16 +394,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6161-ethel-rethor",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.3603, 0.3041, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
-            },
-        },
-        {
             id = "accept-6161-claim-rackmore-s-treasure",
             kind = "accept",
             priority = 390,
@@ -549,18 +420,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5741-thunder-axe-fortress",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to Thunder Axe Fortress.",
-            route = {
-                Point(MAP.DESOLACE, 0.3926, 0.2807, "Continue toward Thunder Axe Fortress",
-                    "Continue toward Thunder Axe Fortress."),
-                Point(MAP.DESOLACE, 0.5259, 0.2938, "Thunder Axe Fortress",
-                    "Travel to Thunder Axe Fortress."),
-            },
-        },
-        {
             id = "objective-5741-sceptre-of-light",
             kind = "objective",
             priority = 420,
@@ -573,16 +432,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5741-thunder-axe-fortress-2",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Thunder Axe Fortress.",
-            route = {
-                Point(MAP.DESOLACE, 0.5400, 0.2900, "Thunder Axe Fortress",
-                    "Travel to Thunder Axe Fortress."),
-            },
-        },
-        {
             id = "objective-5381-hand-of-iruxos",
             kind = "objective",
             priority = 440,
@@ -592,16 +441,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.5600, 0.2900, "Demon Spirit",
                     "Travel to Demon Spirit."),
-            },
-        },
-        {
-            id = "travel-5381-thunder-axe-fortress",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Thunder Axe Fortress.",
-            route = {
-                Point(MAP.DESOLACE, 0.5400, 0.2900, "Thunder Axe Fortress",
-                    "Travel to Thunder Axe Fortress."),
             },
         },
         {
@@ -634,16 +473,6 @@ ns:RegisterGuide({
             priority = 480,
             text = "Use the Flayed Demon Skin [Depricated] to accept The Corrupter.",
             complete = QuestState(1480, "activeOrCompleted"),
-        },
-        {
-            id = "travel-5386-ghost-walker-post",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5224, 0.5350, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
-            },
         },
         {
             id = "turnin-1435-the-burning-of-spirits",
@@ -727,16 +556,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1481-sargeron",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Sargeron.",
-            route = {
-                Point(MAP.DESOLACE, 0.7399, 0.2293, "Sargeron",
-                    "Travel to Sargeron."),
-            },
-        },
-        {
             id = "objective-1481-the-corrupter",
             kind = "objective",
             priority = 580,
@@ -761,16 +580,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5501-kormek-s-hut",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Kormek's Hut.",
-            route = {
-                Point(MAP.DESOLACE, 0.6233, 0.3897, "Kormek's Hut",
-                    "Travel to Kormek's Hut."),
-            },
-        },
-        {
             id = "accept-5501-bone-collector",
             kind = "accept",
             priority = 610,
@@ -779,16 +588,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6233, 0.3897, "Bibbly F'utzbuckle",
                     "Travel to Bibbly F'utzbuckle."),
-            },
-        },
-        {
-            id = "travel-1436-ghost-walker-post",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5259, 0.5432, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
             },
         },
         {
@@ -835,16 +634,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.5224, 0.5350, "Maurin Bonesplitter",
                     "Travel to Maurin Bonesplitter."),
-            },
-        },
-        {
-            id = "travel-6027-ethel-rethor",
-            kind = "travel",
-            priority = 670,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.3889, 0.2719, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
             },
         },
         {
@@ -895,16 +684,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6161-sar-theris-strand",
-            kind = "travel",
-            priority = 720,
-            text = "Travel to Sar'theris Strand.",
-            route = {
-                Point(MAP.DESOLACE, 0.3201, 0.3060, "Sar'theris Strand",
-                    "Travel to Sar'theris Strand."),
-            },
-        },
-        {
             id = "objective-6142-clam-bait",
             kind = "objective",
             priority = 730,
@@ -914,16 +693,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3201, 0.3060, "Sar'theris Strand",
                     "Travel to Sar'theris Strand."),
-            },
-        },
-        {
-            id = "travel-6027-ranazjar-isle",
-            kind = "travel",
-            priority = 740,
-            text = "Travel to Ranazjar Isle.",
-            route = {
-                Point(MAP.DESOLACE, 0.2818, 0.0664, "Ranazjar Isle",
-                    "Travel to Ranazjar Isle."),
             },
         },
         {
@@ -951,16 +720,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6143-sar-theris-strand",
-            kind = "travel",
-            priority = 770,
-            text = "Travel to Sar'theris Strand.",
-            route = {
-                Point(MAP.DESOLACE, 0.3200, 0.2400, "Sar'theris Strand",
-                    "Travel to Sar'theris Strand."),
-            },
-        },
-        {
             id = "objective-6143-other-fish-to-fry",
             kind = "objective",
             priority = 780,
@@ -985,16 +744,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ethel-rethor",
-            kind = "travel",
-            priority = 800,
-            text = "Travel to Ethel Rethor.",
-            route = {
-                Point(MAP.DESOLACE, 0.3889, 0.2719, "Ethel Rethor",
-                    "Travel to Ethel Rethor."),
-            },
-        },
-        {
             id = "turnin-6027-book-of-the-ancients",
             kind = "turnin",
             priority = 810,
@@ -1004,16 +753,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3889, 0.2719, "Azore Aldamort",
                     "Travel to Azore Aldamort."),
-            },
-        },
-        {
-            id = "travel-1484-ghost-walker-post",
-            kind = "travel",
-            priority = 820,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5589, 0.5340, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
             },
         },
         {
@@ -1054,16 +793,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5501-kodo-graveyard",
-            kind = "travel",
-            priority = 860,
-            text = "Travel to Kodo Graveyard.",
-            route = {
-                Point(MAP.DESOLACE, 0.5600, 0.5800, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "objective-5501-bone-collector",
             kind = "objective",
             priority = 870,
@@ -1073,16 +802,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.5100, 0.5900, "Kodo Graveyard",
                     "Travel to Kodo Graveyard."),
-            },
-        },
-        {
-            id = "travel-1370-magram-village",
-            kind = "travel",
-            priority = 880,
-            text = "Travel to Magram Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.6661, 0.8050, "Magram Village",
-                    "Travel to Magram Village."),
             },
         },
         {
@@ -1119,21 +838,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ghost-walker-post",
-            kind = "travel",
-            priority = 910,
-            conditions = {
-                all = {
-                    { quest = { id = 1361, state = "completed" } },
-                },
-            },
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5622, 0.5953, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
-            },
-        },
-        {
             id = "turnin-1366-centaur-bounty",
             kind = "turnin",
             priority = 920,
@@ -1151,16 +855,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-kormek-s-hut",
-            kind = "travel",
-            priority = 930,
-            text = "Travel to Kormek's Hut.",
-            route = {
-                Point(MAP.DESOLACE, 0.6233, 0.3901, "Kormek's Hut",
-                    "Travel to Kormek's Hut."),
-            },
-        },
-        {
             id = "turnin-5501-bone-collector",
             kind = "turnin",
             priority = 940,
@@ -1170,16 +864,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6233, 0.3901, "Bibbly F'utzbuckle",
                     "Travel to Bibbly F'utzbuckle."),
-            },
-        },
-        {
-            id = "travel-shadowprey-village",
-            kind = "travel",
-            priority = 950,
-            text = "Travel to Shadowprey Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.2579, 0.6828, "Shadowprey Village",
-                    "Travel to Shadowprey Village."),
             },
         },
         {
@@ -1242,26 +926,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1268-camp-taurajo",
-            kind = "travel",
-            priority = 1010,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4507, 0.5850, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
-            },
-        },
-        {
-            id = "travel-1268-dustwallow-marsh",
-            kind = "travel",
-            priority = 1020,
-            text = "Run east to Dustwallow Marsh.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.2970, 0.4770, "Dustwallow Marsh",
-                    "Travel to Dustwallow Marsh."),
-            },
-        },
-        {
             id = "accept-1268-suspicious-hoofprints",
             kind = "accept",
             priority = 1030,
@@ -1292,20 +956,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.2980, 0.4810, "Shady Rest Inn",
                     "Travel to Shady Rest Inn."),
-            },
-        },
-        {
-            id = "travel-1321-brackenwall-village",
-            kind = "travel",
-            priority = 1060,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3349, 0.3876, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3439, 0.3068, "Continue toward Brackenwall Village",
-                    "Continue toward Brackenwall Village."),
-                Point(MAP.DUSTWALLOW, 0.3500, 0.2900, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
             },
         },
         {
@@ -1365,21 +1015,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.3654, 0.3086, "Do'gol",
                     "Travel to Do'gol."),
-            },
-        },
-        {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 1120,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1112, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6267, 0.3627, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {

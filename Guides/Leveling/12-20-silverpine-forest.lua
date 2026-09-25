@@ -48,16 +48,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-445-brill",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.5950, 0.5222, "Brill",
-                    "Travel to Brill."),
-            },
-        },
-        {
             id = "accept-445-delivery-to-silverpine-forest",
             kind = "accept",
             priority = 20,
@@ -66,26 +56,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5950, 0.5222, "Apothecary Johaan",
                     "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "travel-435-silverpine-forest",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Silverpine Forest.",
-            route = {
-                Point(MAP.SILVERPINE, 0.6492, 0.0844, "Silverpine Forest",
-                    "Travel to Silverpine Forest."),
-            },
-        },
-        {
-            id = "travel-435-malden-s-orchard",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Malden's Orchard.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5621, 0.0918, "Malden's Orchard",
-                    "Travel to Malden's Orchard."),
             },
         },
         {
@@ -151,16 +121,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-429-malden-s-orchard",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Malden's Orchard.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5839, 0.1133, "Malden's Orchard",
-                    "Travel to Malden's Orchard."),
-            },
-        },
-        {
             id = "objective-429-wild-hearts",
             kind = "objective",
             priority = 110,
@@ -175,23 +135,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.5839, 0.1133, "Rabid Worg",
                     "Travel to Rabid Worg."),
-            },
-        },
-        {
-            id = "travel-the-sepulcher",
-            kind = "travel",
-            priority = 120,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 6323, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4974, 0.2935, "Continue toward The Sepulcher",
-                    "Continue toward The Sepulcher."),
-                Point(MAP.SILVERPINE, 0.4566, 0.4253, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -405,21 +348,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6322-undercity",
-            kind = "travel",
-            priority = 290,
-            conditions = {
-                all = {
-                    { race = 5 },
-                },
-            },
-            text = "Fly to Undercity.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4566, 0.4253, "Karos Razok",
-                    "Travel to Karos Razok."),
-            },
-        },
-        {
             id = "turnin-6323-ride-to-the-undercity",
             kind = "turnin",
             priority = 300,
@@ -521,21 +449,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-sepulcher-2",
-            kind = "travel",
-            priority = 360,
-            conditions = {
-                all = {
-                    { race = 5 },
-                },
-            },
-            text = "Fly to The Sepulcher.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4344, 0.4168, "Michael Garrett",
-                    "Travel to Michael Garrett."),
-            },
-        },
-        {
             id = "turnin-6324-return-to-podrig",
             kind = "turnin",
             priority = 370,
@@ -588,20 +501,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-437-the-dead-field",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to The Dead Field.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4422, 0.3752, "Continue toward The Dead Field",
-                    "Continue toward The Dead Field."),
-                Point(MAP.SILVERPINE, 0.4462, 0.3087, "Continue toward The Dead Field",
-                    "Continue toward The Dead Field."),
-                Point(MAP.SILVERPINE, 0.4537, 0.2119, "The Dead Field",
-                    "Travel to The Dead Field."),
-            },
-        },
-        {
             id = "objective-437-nightlash",
             kind = "objective",
             priority = 420,
@@ -611,16 +510,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4537, 0.2119, "Nightlash",
                     "Travel to Nightlash."),
-            },
-        },
-        {
-            id = "travel-447-the-skittering-dark",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to The Skittering Dark.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4240, 0.1823, "The Skittering Dark",
-                    "Travel to The Skittering Dark."),
             },
         },
         {
@@ -635,16 +524,6 @@ ns:RegisterGuide({
                     "Continue toward A Recipe For Death."),
                 Point(MAP.SILVERPINE, 0.3544, 0.1266, "Giant Rabid Bear",
                     "Travel to Giant Rabid Bear."),
-            },
-        },
-        {
-            id = "travel-425-the-ivar-patch",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to The Ivar Patch.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5344, 0.1340, "The Ivar Patch",
-                    "Travel to The Ivar Patch."),
             },
         },
         {
@@ -718,16 +597,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-422-valgan-s-field",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Valgan's Field.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5283, 0.2855, "Valgan's Field",
-                    "Travel to Valgan's Field."),
-            },
-        },
-        {
             id = "objective-422-arugal-s-folly",
             kind = "objective",
             priority = 510,
@@ -737,23 +606,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.5283, 0.2855, "Valgan's Field",
                     "Travel to Valgan's Field."),
-            },
-        },
-        {
-            id = "travel-the-sepulcher-3",
-            kind = "travel",
-            priority = 520,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 438, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4907, 0.3817, "Continue toward The Sepulcher",
-                    "Continue toward The Sepulcher."),
-                Point(MAP.SILVERPINE, 0.4421, 0.3979, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -839,16 +691,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-423-deep-elem-mine",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Deep Elem Mine.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5660, 0.4459, "Deep Elem Mine",
-                    "Travel to Deep Elem Mine."),
-            },
-        },
-        {
             id = "objective-423-arugal-s-folly",
             kind = "objective",
             priority = 580,
@@ -881,16 +723,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4989, 0.6036, "Silverpine Forest",
                     "Travel to Silverpine Forest."),
-            },
-        },
-        {
-            id = "travel-424-the-sepulcher",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4420, 0.3982, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -997,16 +829,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-439-the-decrepit-ferry",
-            kind = "travel",
-            priority = 700,
-            text = "Travel to The Decrepit Ferry.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5822, 0.3484, "The Decrepit Ferry",
-                    "Travel to The Decrepit Ferry."),
-            },
-        },
-        {
             id = "turnin-438-the-decrepit-ferry",
             kind = "turnin",
             priority = 710,
@@ -1030,16 +852,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-423-deep-elem-mine-2",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to Deep Elem Mine.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5660, 0.4459, "Deep Elem Mine",
-                    "Travel to Deep Elem Mine."),
-            },
-        },
-        {
             id = "objective-424-arugal-s-folly",
             kind = "objective",
             priority = 740,
@@ -1051,18 +863,6 @@ ns:RegisterGuide({
                     "Continue toward Arugal's Folly."),
                 Point(MAP.SILVERPINE, 0.5854, 0.4487, "Grimson the Pale",
                     "Travel to Grimson the Pale."),
-            },
-        },
-        {
-            id = "travel-479-ambermill",
-            kind = "travel",
-            priority = 750,
-            text = "Travel to Ambermill.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5428, 0.6441, "Continue toward Ambermill",
-                    "Continue toward Ambermill."),
-                Point(MAP.SILVERPINE, 0.6007, 0.6562, "Ambermill",
-                    "Travel to Ambermill."),
             },
         },
         {
@@ -1089,21 +889,6 @@ ns:RegisterGuide({
                     "Travel to Dalaran Watcher."),
                 Point(MAP.SILVERPINE, 0.6320, 0.6520, "Dalaran Wizard",
                     "Travel to Dalaran Wizard."),
-            },
-        },
-        {
-            id = "travel-the-sepulcher-4",
-            kind = "travel",
-            priority = 770,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 440, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4421, 0.3984, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -1221,16 +1006,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-450-undercity",
-            kind = "travel",
-            priority = 850,
-            text = "Travel to The Apothecarium in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4888, 0.6945, "The Apothecarium",
-                    "Travel to The Apothecarium."),
-            },
-        },
-        {
             id = "turnin-447-a-recipe-for-death",
             kind = "turnin",
             priority = 860,
@@ -1254,16 +1029,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-441-brill-town-hall",
-            kind = "travel",
-            priority = 880,
-            text = "Travel to Brill Town Hall.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6126, 0.5085, "Brill Town Hall",
-                    "Travel to Brill Town Hall."),
-            },
-        },
-        {
             id = "turnin-440-the-engraved-ring",
             kind = "turnin",
             priority = 890,
@@ -1284,37 +1049,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.6121, 0.5085, "Magistrate Sevren",
                     "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "travel-840-orgimmar",
-            kind = "travel",
-            priority = 910,
-            conditions = {
-                all = {
-                    { race = 5 },
-                },
-            },
-            text = "Travel to Orgimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4523, 0.6384, "Orgimmar",
-                    "Travel to Orgimmar."),
-            },
-        },
-        {
-            id = "travel-840-razor-hill",
-            kind = "travel",
-            priority = 920,
-            text = "Travel to Razor Hill in Durotar.",
-            route = {
-                Point(MAP.DUROTAR, 0.4708, 0.2236, "Continue toward Razor Hill",
-                    "Continue toward Razor Hill."),
-                Point(MAP.DUROTAR, 0.4955, 0.2937, "Continue toward Razor Hill",
-                    "Continue toward Razor Hill."),
-                Point(MAP.DUROTAR, 0.5228, 0.3928, "Continue toward Razor Hill",
-                    "Continue toward Razor Hill."),
-                Point(MAP.DUROTAR, 0.5075, 0.4416, "Razor Hill",
-                    "Travel to Razor Hill."),
             },
         },
         {
@@ -1365,23 +1099,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6139, 0.2111, "Uzzek",
                     "Travel to Uzzek."),
-            },
-        },
-        {
-            id = "travel-the-crossroads",
-            kind = "travel",
-            priority = 970,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 870, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5268, 0.2439, "Continue toward The Crossroads",
-                    "Continue toward The Crossroads."),
-                Point(MAP.BARRENS, 0.5146, 0.3015, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -1517,16 +1234,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-871-thorn-hill",
-            kind = "travel",
-            priority = 1090,
-            text = "Travel to Thorn Hill.",
-            route = {
-                Point(MAP.BARRENS, 0.5456, 0.2796, "Thorn Hill",
-                    "Travel to Thorn Hill."),
-            },
-        },
-        {
             id = "turnin-1502-thun-grim-firegaze",
             kind = "turnin",
             priority = 1100,
@@ -1610,26 +1317,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-871-thorn-hill-2",
-            kind = "travel",
-            priority = 1150,
-            text = "Travel to Thorn Hill.",
-            route = {
-                Point(MAP.BARRENS, 0.5400, 0.2600, "Thorn Hill",
-                    "Travel to Thorn Hill."),
-            },
-        },
-        {
-            id = "travel-845-the-crossroads",
-            kind = "travel",
-            priority = 1160,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5221, 0.3099, "The Crossroads",
-                    "Travel to The Crossroads."),
-            },
-        },
-        {
             id = "accept-845-the-zhevra",
             kind = "accept",
             priority = 1170,
@@ -1661,16 +1348,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5153, 0.3085, "Thork",
                     "Travel to Thork."),
-            },
-        },
-        {
-            id = "travel-872-thorn-hill",
-            kind = "travel",
-            priority = 1200,
-            text = "Travel to Thorn Hill.",
-            route = {
-                Point(MAP.BARRENS, 0.5909, 0.2682, "Thorn Hill",
-                    "Travel to Thorn Hill."),
             },
         },
         {
@@ -1710,16 +1387,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-845-southfury-river",
-            kind = "travel",
-            priority = 1240,
-            text = "Travel to Southfury River.",
-            route = {
-                Point(MAP.BARRENS, 0.6441, 0.3298, "Zhevra Runner",
-                    "Travel to Zhevra Runner."),
-            },
-        },
-        {
             id = "objective-845-the-zhevra",
             kind = "objective",
             priority = 1250,
@@ -1729,16 +1396,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6441, 0.3298, "Zhevra Runner",
                     "Travel to Zhevra Runner."),
-            },
-        },
-        {
-            id = "travel-887-ratchet",
-            kind = "travel",
-            priority = 1260,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6274, 0.3632, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {
@@ -1787,16 +1444,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-845-southfury-river-2",
-            kind = "travel",
-            priority = 1310,
-            text = "Travel to Southfury River.",
-            route = {
-                Point(MAP.BARRENS, 0.6441, 0.3298, "Southfury River",
-                    "Travel to Southfury River."),
-            },
-        },
-        {
             id = "objective-845-the-zhevra-2",
             kind = "objective",
             priority = 1320,
@@ -1806,16 +1453,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6441, 0.3298, "Zhevra Runner",
                     "Travel to Zhevra Runner."),
-            },
-        },
-        {
-            id = "travel-895-the-merchant-coast",
-            kind = "travel",
-            priority = 1330,
-            text = "Travel to The Merchant Coast.",
-            route = {
-                Point(MAP.BARRENS, 0.6270, 0.4980, "The Merchant Coast",
-                    "Travel to The Merchant Coast."),
             },
         },
         {
@@ -1842,16 +1479,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6400, 0.4500, "Southsea Brigand",
                     "Travel to Southsea Brigand."),
-            },
-        },
-        {
-            id = "travel-890-ratchet",
-            kind = "travel",
-            priority = 1360,
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6266, 0.3626, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {
@@ -1922,21 +1549,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6266, 0.3626, "Gazlowe",
                     "Travel to Gazlowe."),
-            },
-        },
-        {
-            id = "travel-the-crossroads-2",
-            kind = "travel",
-            priority = 1430,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 872, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5193, 0.3033, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -2032,16 +1644,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-870-the-forgotten-pools",
-            kind = "travel",
-            priority = 1520,
-            text = "Travel to The Forgotten Pools.",
-            route = {
-                Point(MAP.BARRENS, 0.4499, 0.2409, "The Forgotten Pools",
-                    "Travel to The Forgotten Pools."),
-            },
-        },
-        {
             id = "objective-870-the-forgotten-pools",
             kind = "objective",
             priority = 1530,
@@ -2063,16 +1665,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4476, 0.2190, "The Forgotten Pools",
                     "Travel to The Forgotten Pools."),
-            },
-        },
-        {
-            id = "travel-848-the-barrens",
-            kind = "travel",
-            priority = 1550,
-            text = "Travel to The Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.4287, 0.2352, "The Barrens",
-                    "Travel to The Barrens."),
             },
         },
         {
@@ -2106,16 +1698,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-867-the-dry-hills",
-            kind = "travel",
-            priority = 1580,
-            text = "Travel to The Dry Hills.",
-            route = {
-                Point(MAP.BARRENS, 0.4038, 0.1787, "The Dry Hills",
-                    "Travel to The Dry Hills."),
-            },
-        },
-        {
             id = "objective-867-harpy-raiders",
             kind = "objective",
             priority = 1590,
@@ -2125,16 +1707,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.3800, 0.1700, "Witchwing Roguefeather",
                     "Travel to Witchwing Roguefeather."),
-            },
-        },
-        {
-            id = "travel-4921-the-crossroads",
-            kind = "travel",
-            priority = 1600,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5146, 0.3015, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -2265,16 +1837,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-875-the-dry-hills",
-            kind = "travel",
-            priority = 1720,
-            text = "Travel to The Dry Hills.",
-            route = {
-                Point(MAP.BARRENS, 0.3974, 0.1729, "The Dry Hills",
-                    "Travel to The Dry Hills."),
-            },
-        },
-        {
             id = "objective-875-harpy-lieutenants",
             kind = "objective",
             priority = 1730,
@@ -2284,16 +1846,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.3974, 0.1729, "Witchwing Slayer",
                     "Travel to Witchwing Slayer."),
-            },
-        },
-        {
-            id = "travel-6523-honor-s-stand",
-            kind = "travel",
-            priority = 1740,
-            text = "Travel to Honor's Stand. Take the road west out of the Crossroads to the edge of Stonetalon Mountains.",
-            route = {
-                Point(MAP.BARRENS, 0.3960, 0.2990, "Honor's Stand",
-                    "Travel to Honor's Stand."),
             },
         },
         {
@@ -2405,21 +1957,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6401-the-barrens",
-            kind = "travel",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 6401, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.3523, 0.2779, "The Barrens",
-                    "Travel to The Barrens."),
-            },
-        },
-        {
             id = "turnin-6523-protect-kaya",
             kind = "turnin",
             priority = 1850,
@@ -2452,21 +1989,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.3523, 0.2779, "Makaba Flathoof",
                     "Travel to Makaba Flathoof."),
-            },
-        },
-        {
-            id = "travel-876-the-crossroads",
-            kind = "travel",
-            priority = 1880,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 876, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5223, 0.3193, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -2516,16 +2038,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-876-the-dry-hills",
-            kind = "travel",
-            priority = 1930,
-            text = "Travel to The Dry Hills.",
-            route = {
-                Point(MAP.BARRENS, 0.3946, 0.1238, "The Dry Hills",
-                    "Travel to The Dry Hills."),
-            },
-        },
-        {
             id = "objective-876-serena-bloodfeather",
             kind = "objective",
             priority = 1940,
@@ -2549,21 +2061,6 @@ ns:RegisterGuide({
                     "Continue toward Echeyakee."),
                 Point(MAP.BARRENS, 0.5580, 0.1706, "Echeyakee",
                     "Travel to Echeyakee."),
-            },
-        },
-        {
-            id = "travel-the-crossroads-3",
-            kind = "travel",
-            priority = 1960,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1060, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5221, 0.3099, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -2602,16 +2099,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-877-the-stagnant-oasis",
-            kind = "travel",
-            priority = 2000,
-            text = "Travel to The Stagnant Oasis.",
-            route = {
-                Point(MAP.BARRENS, 0.5562, 0.4270, "The Stagnant Oasis",
-                    "Travel to The Stagnant Oasis."),
-            },
-        },
-        {
             id = "objective-877-the-stagnant-oasis",
             kind = "objective",
             priority = 2010,
@@ -2633,16 +2120,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5278, 0.4179, "Verog the Dervish",
                     "Travel to Verog the Dervish."),
-            },
-        },
-        {
-            id = "travel-3281-raptor-grounds",
-            kind = "travel",
-            priority = 2030,
-            text = "Travel to Raptor Grounds.",
-            route = {
-                Point(MAP.BARRENS, 0.5802, 0.5390, "Raptor Grounds",
-                    "Travel to Raptor Grounds."),
             },
         },
         {
@@ -2694,16 +2171,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-865-the-barrens",
-            kind = "travel",
-            priority = 2080,
-            text = "Travel to The Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.5203, 0.4653, "The Barrens",
-                    "Travel to The Barrens."),
-            },
-        },
-        {
             id = "objective-865-raptor-horns",
             kind = "objective",
             priority = 2090,
@@ -2728,16 +2195,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4921-southern-barrens",
-            kind = "travel",
-            priority = 2110,
-            text = "Travel to Southern Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.4934, 0.5037, "Southern Barrens",
-                    "Travel to Southern Barrens."),
-            },
-        },
-        {
             id = "objective-4921-lost-in-battle",
             kind = "objective",
             priority = 2120,
@@ -2747,16 +2204,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4934, 0.5037, "Beaten Corpse",
                     "Travel to Beaten Corpse."),
-            },
-        },
-        {
-            id = "travel-878-camp-taurajo",
-            kind = "travel",
-            priority = 2130,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5920, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -2779,16 +2226,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5922, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-878-agama-gor",
-            kind = "travel",
-            priority = 2160,
-            text = "Travel to Agama'gor.",
-            route = {
-                Point(MAP.BARRENS, 0.4543, 0.5411, "Agama'gor",
-                    "Travel to Agama'gor."),
             },
         },
         {
@@ -2828,16 +2265,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-878-agama-gor-2",
-            kind = "travel",
-            priority = 2190,
-            text = "Travel to Agama'gor.",
-            route = {
-                Point(MAP.BARRENS, 0.5000, 0.5700, "Agama'gor",
-                    "Travel to Agama'gor."),
-            },
-        },
-        {
             id = "objective-899-consumed-by-hatred",
             kind = "objective",
             priority = 2200,
@@ -2853,16 +2280,6 @@ ns:RegisterGuide({
                     "Continue toward Consumed by Hatred."),
                 Point(MAP.BARRENS, 0.4330, 0.4855, "Bristleback Geomancer",
                     "Travel to Bristleback Geomancer."),
-            },
-        },
-        {
-            id = "travel-5052-camp-taurajo",
-            kind = "travel",
-            priority = 2210,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4456, 0.5922, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -2909,16 +2326,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5923, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-880-the-crossroads",
-            kind = "travel",
-            priority = 2260,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5226, 0.3193, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -3051,16 +2458,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-880-the-stagnant-oasis",
-            kind = "travel",
-            priority = 2380,
-            text = "Travel to Lushwater Oasis.",
-            route = {
-                Point(MAP.BARRENS, 0.4818, 0.4016, "Lushwater Oasis",
-                    "Travel to Lushwater Oasis."),
-            },
-        },
-        {
             id = "objective-880-altered-beings",
             kind = "objective",
             priority = 2390,
@@ -3094,21 +2491,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4532, 0.2842, "Regthar Deathgate",
                     "Travel to Regthar Deathgate."),
-            },
-        },
-        {
-            id = "travel-the-crossroads-4",
-            kind = "travel",
-            priority = 2420,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 3301, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5226, 0.3193, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -3154,16 +2536,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5149, 0.3018, "Apothecary Helbrim",
                     "Travel to Apothecary Helbrim."),
-            },
-        },
-        {
-            id = "travel-spirit-rise",
-            kind = "travel",
-            priority = 2470,
-            text = "Travel to Spirit Rise in Thunder Bluff (22.9, 20.9.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.3004, 0.2979, "Spirit Rise",
-                    "Travel to Spirit Rise."),
             },
         },
         {
@@ -3216,21 +2588,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-undercity",
-            kind = "travel",
-            priority = 2520,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 530, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Trade Quarter in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.6207, 0.4279, "Trade Quarter",
-                    "Travel to Trade Quarter."),
-            },
-        },
-        {
             id = "turnin-441-raleigh-and-the-undercity",
             kind = "turnin",
             priority = 2530,
@@ -3251,16 +2608,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.6220, 0.4344, "Raleigh Andrean",
                     "Travel to Raleigh Andrean."),
-            },
-        },
-        {
-            id = "travel-516-the-sepulcher",
-            kind = "travel",
-            priority = 2550,
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4295, 0.4198, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -3305,16 +2652,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4316, 0.4130, "Innkeeper Bates",
                     "Travel to Innkeeper Bates."),
-            },
-        },
-        {
-            id = "travel-450-pyrewood-village",
-            kind = "travel",
-            priority = 2600,
-            text = "Travel to Pyrewood Village.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4875, 0.7459, "Pyrewood Village",
-                    "Travel to Pyrewood Village."),
             },
         },
         {
@@ -3380,21 +2717,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-sepulcher-5",
-            kind = "travel",
-            priority = 2630,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 451, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4295, 0.4198, "The Sepulcher",
-                    "Travel to The Sepulcher."),
-            },
-        },
-        {
             id = "turnin-99-arugal-s-folly",
             kind = "turnin",
             priority = 2640,
@@ -3454,20 +2776,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-451-fenris-isle",
-            kind = "travel",
-            priority = 2670,
-            text = "Travel to Fenris Isle.",
-            route = {
-                Point(MAP.SILVERPINE, 0.6002, 0.3434, "Continue toward Fenris Isle",
-                    "Continue toward Fenris Isle."),
-                Point(MAP.SILVERPINE, 0.6462, 0.3337, "Continue toward Fenris Isle",
-                    "Continue toward Fenris Isle."),
-                Point(MAP.SILVERPINE, 0.6567, 0.3380, "Fenris Isle",
-                    "Travel to Fenris Isle."),
-            },
-        },
-        {
             id = "objective-451-1-lake-skulker-moss",
             kind = "objective",
             priority = 2680,
@@ -3501,16 +2809,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.7810, 0.2338, "Lake Creeper",
                     "Travel to Lake Creeper."),
-            },
-        },
-        {
-            id = "travel-460-fenris-isle",
-            kind = "travel",
-            priority = 2710,
-            text = "Travel to Fenris Isle.",
-            route = {
-                Point(MAP.SILVERPINE, 0.6591, 0.2724, "Fenris Isle",
-                    "Travel to Fenris Isle."),
             },
         },
         {
@@ -3583,16 +2881,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-460-fenris-isle-2",
-            kind = "travel",
-            priority = 2780,
-            text = "Travel to Fenris Isle.",
-            route = {
-                Point(MAP.SILVERPINE, 0.6591, 0.2724, "Fenris Isle",
-                    "Travel to Fenris Isle."),
-            },
-        },
-        {
             id = "objective-443-rot-hide-ichor",
             kind = "objective",
             priority = 2790,
@@ -3602,21 +2890,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.6591, 0.2724, "Rot Hide Brute",
                     "Travel to Rot Hide Brute."),
-            },
-        },
-        {
-            id = "travel-the-sepulcher-6",
-            kind = "travel",
-            priority = 2800,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 444, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel or Hearthstone to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4279, 0.4090, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {
@@ -3640,21 +2913,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4279, 0.4090, "Apothecary Renferrel",
                     "Travel to Apothecary Renferrel."),
-            },
-        },
-        {
-            id = "travel-undercity-2",
-            kind = "travel",
-            priority = 2830,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 446, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Apothecarium in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4872, 0.6930, "The Apothecarium",
-                    "Travel to The Apothecarium."),
             },
         },
         {
@@ -3705,21 +2963,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-sepulcher-7",
-            kind = "travel",
-            priority = 2880,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 442, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel or Hearthstone to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4279, 0.4090, "The Sepulcher",
-                    "Travel to The Sepulcher."),
-            },
-        },
-        {
             id = "turnin-446-thule-ravenclaw",
             kind = "turnin",
             priority = 2890,
@@ -3755,16 +2998,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-480-ambermill",
-            kind = "travel",
-            priority = 2920,
-            text = "Travel to Ambermill.",
-            route = {
-                Point(MAP.SILVERPINE, 0.6334, 0.6421, "Ambermill",
-                    "Travel to Ambermill."),
-            },
-        },
-        {
             id = "objective-480-the-weaver",
             kind = "objective",
             priority = 2930,
@@ -3774,18 +3007,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.6334, 0.6421, "Archmage Ataeric",
                     "Travel to Archmage Ataeric."),
-            },
-        },
-        {
-            id = "travel-516-beren-s-peril",
-            kind = "travel",
-            priority = 2940,
-            text = "Travel to Beren's Peril.",
-            route = {
-                Point(MAP.SILVERPINE, 0.5289, 0.4080, "Continue toward Beren's Peril",
-                    "Continue toward Beren's Peril."),
-                Point(MAP.SILVERPINE, 0.6046, 0.7504, "Beren's Peril",
-                    "Travel to Beren's Peril."),
             },
         },
         {
@@ -3801,16 +3022,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-530-the-greymane-wall",
-            kind = "travel",
-            priority = 2960,
-            text = "Travel to The Greymane Wall.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4464, 0.8470, "The Greymane Wall",
-                    "Travel to The Greymane Wall."),
-            },
-        },
-        {
             id = "objective-530-a-husband-s-revenge",
             kind = "objective",
             priority = 2970,
@@ -3820,16 +3031,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4464, 0.8470, "Valdred Moray",
                     "Travel to Valdred Moray."),
-            },
-        },
-        {
-            id = "travel-the-sepulcher-8",
-            kind = "travel",
-            priority = 2980,
-            text = "Travel to The Sepulcher.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4398, 0.4092, "The Sepulcher",
-                    "Travel to The Sepulcher."),
             },
         },
         {

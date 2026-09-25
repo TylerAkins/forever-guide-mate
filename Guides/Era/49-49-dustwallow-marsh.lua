@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1171-brackenwall-village",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Brackenwall Village.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.3633, 0.3148, "Brackenwall Village",
-                    "Travel to Brackenwall Village."),
-            },
-        },
-        {
             id = "accept-1171-the-brood-of-onyxia",
             kind = "accept",
             priority = 20,
@@ -81,16 +71,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.3704, 0.3293, "Draz'Zilb",
                     "Travel to Draz'Zilb."),
-            },
-        },
-        {
-            id = "travel-1172-wyrmbog",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Wyrmbog.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.4843, 0.7591, "Wyrmbog",
-                    "Travel to Wyrmbog."),
             },
         },
         {

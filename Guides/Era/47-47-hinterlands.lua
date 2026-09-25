@@ -43,21 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-grom-gol-base-camp",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2932, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3216, 0.2777, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
-            },
-        },
-        {
             id = "accept-2932-grim-message",
             kind = "accept",
             priority = 20,
@@ -69,21 +54,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-undercity",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2995, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Magic Quarter in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.7315, 0.3280, "Magic Quarter",
-                    "Travel to Magic Quarter."),
-            },
-        },
-        {
             id = "accept-2995-lines-of-communication",
             kind = "accept",
             priority = 40,
@@ -92,16 +62,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.7315, 0.3280, "Oran Snakewrithe",
                     "Travel to Oran Snakewrithe."),
-            },
-        },
-        {
-            id = "travel-77-tarren-mill",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6276, 0.1904, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -123,20 +83,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.2670, 0.4852, "Gilveradin Sunchaser",
                     "Travel to Gilveradin Sunchaser."),
-            },
-        },
-        {
-            id = "travel-7844-revantusk-village",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Revantusk Village.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.5583, 0.5315, "Continue toward Revantusk Village",
-                    "Continue toward Revantusk Village."),
-                Point(MAP.HINTERLANDS, 0.7246, 0.6620, "Continue toward Revantusk Village",
-                    "Continue toward Revantusk Village."),
-                Point(MAP.HINTERLANDS, 0.7719, 0.7801, "Revantusk Village",
-                    "Travel to Revantusk Village."),
             },
         },
         {
@@ -206,16 +152,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7828-the-overlook-cliffs",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to The Overlook Cliffs.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7592, 0.6167, "The Overlook Cliffs",
-                    "Travel to The Overlook Cliffs."),
-            },
-        },
-        {
             id = "objective-7828-1-silvermane-stalker",
             kind = "objective",
             priority = 160,
@@ -244,16 +180,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7839-skulk-rock",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Skulk Rock.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.5744, 0.4262, "Skulk Rock",
-                    "Travel to Skulk Rock."),
-            },
-        },
-        {
             id = "objective-7839-vilebranch-hooligans",
             kind = "objective",
             priority = 190,
@@ -277,16 +203,6 @@ ns:RegisterGuide({
                     "Continue toward A Sticky Situation."),
                 Point(MAP.HINTERLANDS, 0.5728, 0.4117, "Skulk Rock",
                     "Travel to Skulk Rock."),
-            },
-        },
-        {
-            id = "travel-7830-valorwind-lake",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Valorwind Lake.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.5417, 0.4939, "Valorwind Lake",
-                    "Travel to Valorwind Lake."),
             },
         },
         {
@@ -342,18 +258,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.4000, 0.5000, "Silvermane Howler",
                     "Travel to Silvermane Howler."),
-            },
-        },
-        {
-            id = "travel-81-shindigger-s-camp",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Shindigger's Camp.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.2071, 0.4824, "Continue toward Shindigger's Camp",
-                    "Continue toward Shindigger's Camp."),
-                Point(MAP.HINTERLANDS, 0.2672, 0.4860, "Shindigger's Camp",
-                    "Travel to Shindigger's Camp."),
             },
         },
         {
@@ -451,18 +355,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-81-shindigger-s-camp-2",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Shindigger's Camp.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.2071, 0.4824, "Continue toward Shindigger's Camp",
-                    "Continue toward Shindigger's Camp."),
-                Point(MAP.HINTERLANDS, 0.2672, 0.4860, "Shindigger's Camp",
-                    "Travel to Shindigger's Camp."),
-            },
-        },
-        {
             id = "turnin-77-a-sticky-situation-2",
             kind = "turnin",
             priority = 360,
@@ -483,16 +375,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.2672, 0.4861, "Gilveradin Sunchaser",
                     "Travel to Gilveradin Sunchaser."),
-            },
-        },
-        {
-            id = "travel-2933-hiri-watha",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Zun'watha.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.2352, 0.5891, "Zun'watha",
-                    "Travel to Zun'watha."),
             },
         },
         {
@@ -563,16 +445,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2782-the-overlook-cliffs",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to The Overlook Cliffs.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.8629, 0.5906, "The Overlook Cliffs",
-                    "Travel to The Overlook Cliffs."),
-            },
-        },
-        {
             id = "turnin-2742-rin-ji-is-trapped",
             kind = "turnin",
             priority = 460,
@@ -593,18 +465,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HINTERLANDS, 0.8625, 0.5921, "The Overlook Cliffs",
                     "Travel to The Overlook Cliffs."),
-            },
-        },
-        {
-            id = "travel-7842-revantusk-village",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Revantusk Village.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7246, 0.6620, "Continue toward Revantusk Village",
-                    "Continue toward Revantusk Village."),
-                Point(MAP.HINTERLANDS, 0.7878, 0.7839, "Revantusk Village",
-                    "Travel to Revantusk Village."),
             },
         },
         {
@@ -715,16 +575,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2934-tarren-mill",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6146, 0.1915, "Tarren Mill",
-                    "Travel to Tarren Mill."),
-            },
-        },
-        {
             id = "turnin-2933-venom-bottles",
             kind = "turnin",
             priority = 590,
@@ -745,22 +595,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.6146, 0.1915, "Apothecary Lydon",
                     "Travel to Apothecary Lydon."),
-            },
-        },
-        {
-            id = "travel-2934-shadra-alor",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Shadra'Alor.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1031, 0.5481, "Continue toward Shadra'Alor",
-                    "Continue toward Shadra'Alor."),
-                Point(MAP.HINTERLANDS, 0.2377, 0.5650, "Continue toward Shadra'Alor",
-                    "Continue toward Shadra'Alor."),
-                Point(MAP.HINTERLANDS, 0.3581, 0.6358, "Continue toward Shadra'Alor",
-                    "Continue toward Shadra'Alor."),
-                Point(MAP.HINTERLANDS, 0.3496, 0.6843, "Shadra'Alor",
-                    "Travel to Shadra'Alor."),
             },
         },
         {
@@ -809,16 +643,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2934-tarren-mill-2",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6146, 0.1915, "Tarren Mill",
-                    "Travel to Tarren Mill."),
-            },
-        },
-        {
             id = "turnin-2934-undamaged-venom-sac",
             kind = "turnin",
             priority = 670,
@@ -828,16 +652,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.6147, 0.1910, "Apothecary Lydon",
                     "Travel to Apothecary Lydon."),
-            },
-        },
-        {
-            id = "travel-2782-undercity",
-            kind = "travel",
-            priority = 680,
-            text = "Travel to Magic Quarter in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.7309, 0.3277, "Magic Quarter",
-                    "Travel to Magic Quarter."),
             },
         },
         {

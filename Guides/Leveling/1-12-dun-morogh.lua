@@ -796,24 +796,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-384-kharanos",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Kharanos.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.3564, 0.6568, "Continue toward Kharanos",
-                    "Continue toward Kharanos."),
-                Point(MAP.DUN_MOROGH, 0.3627, 0.6200, "Continue toward Kharanos",
-                    "Continue toward Kharanos."),
-                Point(MAP.DUN_MOROGH, 0.4519, 0.6340, "Continue toward Kharanos",
-                    "Continue toward Kharanos."),
-                Point(MAP.DUN_MOROGH, 0.4702, 0.5848, "Continue toward Kharanos",
-                    "Continue toward Kharanos."),
-                Point(MAP.DUN_MOROGH, 0.4666, 0.5383, "Kharanos",
-                    "Travel to Kharanos."),
-            },
-        },
-        {
             id = "turnin-420-senir-s-observations",
             kind = "turnin",
             priority = 550,
@@ -859,16 +841,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-400-thunderbrew-distillery",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Thunderbrew Distillery.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4724, 0.5215, "Thunderbrew Distillery",
-                    "Travel to Thunderbrew Distillery."),
-            },
-        },
-        {
             id = "turnin-2160-supplies-to-tannok",
             kind = "turnin",
             priority = 580,
@@ -899,16 +871,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.4603, 0.5175, "Tharek Blackstone",
                     "Travel to Tharek Blackstone."),
-            },
-        },
-        {
-            id = "travel-5541-steelgrill-s-depot",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Steelgrill's Depot.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5042, 0.4913, "Steelgrill's Depot",
-                    "Travel to Steelgrill's Depot."),
             },
         },
         {
@@ -1086,16 +1048,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.4522, 0.4527, "Elder Crag Boar",
                     "Travel to Elder Crag Boar."),
-            },
-        },
-        {
-            id = "travel-318-steelgrill-s-depot",
-            kind = "travel",
-            priority = 710,
-            text = "Travel to Steelgrill's Depot.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4966, 0.4857, "Steelgrill's Depot",
-                    "Travel to Steelgrill's Depot."),
             },
         },
         {
@@ -1371,22 +1323,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-312-chill-breeze-valley",
-            kind = "travel",
-            priority = 790,
-            text = "Travel to Chill Breeze Valley.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4352, 0.5665, "Continue toward Chill Breeze Valley",
-                    "Continue toward Chill Breeze Valley."),
-                Point(MAP.DUN_MOROGH, 0.3754, 0.6037, "Continue toward Chill Breeze Valley",
-                    "Continue toward Chill Breeze Valley."),
-                Point(MAP.DUN_MOROGH, 0.3487, 0.5814, "Continue toward Chill Breeze Valley",
-                    "Continue toward Chill Breeze Valley."),
-                Point(MAP.DUN_MOROGH, 0.3474, 0.5654, "Chill Breeze Valley",
-                    "Travel to Chill Breeze Valley."),
-            },
-        },
-        {
             id = "accept-312-tundra-macgrann-s-stolen-stash",
             kind = "accept",
             priority = 800,
@@ -1423,16 +1359,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.3457, 0.5163, "Tundra MacGrann",
                     "Travel to Tundra MacGrann."),
-            },
-        },
-        {
-            id = "travel-319-brewnall-village",
-            kind = "travel",
-            priority = 830,
-            text = "Travel to Brewnall Village.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.3020, 0.4562, "Brewnall Village",
-                    "Travel to Brewnall Village."),
             },
         },
         {
@@ -1540,16 +1466,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-319-brewnall-village-2",
-            kind = "travel",
-            priority = 900,
-            text = "Travel to Brewnall Village.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.3020, 0.4562, "Brewnall Village",
-                    "Travel to Brewnall Village."),
-            },
-        },
-        {
             id = "turnin-315-the-perfect-stout",
             kind = "turnin",
             priority = 910,
@@ -1596,16 +1512,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-311-thunderbrew-distillery",
-            kind = "travel",
-            priority = 950,
-            text = "Travel to Thunderbrew Distillery.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4740, 0.5250, "Thunderbrew Distillery",
-                    "Travel to Thunderbrew Distillery."),
-            },
-        },
-        {
             id = "objective-311-thunder-ale",
             kind = "objective",
             priority = 960,
@@ -1641,16 +1547,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-287-brewnall-village",
-            kind = "travel",
-            priority = 990,
-            text = "Travel to Brewnall Village.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.3022, 0.4554, "Brewnall Village",
-                    "Travel to Brewnall Village."),
-            },
-        },
-        {
             id = "turnin-311-return-to-marleth",
             kind = "turnin",
             priority = 1000,
@@ -1660,16 +1556,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.3022, 0.4554, "Marleth Barleybrew",
                     "Travel to Marleth Barleybrew."),
-            },
-        },
-        {
-            id = "travel-287-frostmane-hold",
-            kind = "travel",
-            priority = 1010,
-            text = "Travel to Frostmane Hold.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.2490, 0.5094, "Frostmane Hold",
-                    "Travel to Frostmane Hold."),
             },
         },
         {
@@ -1687,18 +1573,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-412-gnomeregan",
-            kind = "travel",
-            priority = 1030,
-            text = "Travel to Gnomeregan.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.2490, 0.5094, "Continue toward Gnomeregan",
-                    "Continue toward Gnomeregan."),
-                Point(MAP.DUN_MOROGH, 0.2505, 0.4290, "Gnomeregan",
-                    "Travel to Gnomeregan."),
-            },
-        },
-        {
             id = "objective-412-operation-recombobulation",
             kind = "objective",
             priority = 1040,
@@ -1708,16 +1582,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.2505, 0.4290, "Leper Gnome",
                     "Travel to Leper Gnome."),
-            },
-        },
-        {
-            id = "travel-291-kharanos",
-            kind = "travel",
-            priority = 1050,
-            text = "Travel to Kharanos.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4666, 0.5383, "Kharanos",
-                    "Travel to Kharanos."),
             },
         },
         {
@@ -1761,16 +1625,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-steelgrill-s-depot",
-            kind = "travel",
-            priority = 1090,
-            text = "Travel to Steelgrill's Depot.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4949, 0.4837, "Steelgrill's Depot",
-                    "Travel to Steelgrill's Depot."),
-            },
-        },
-        {
             id = "turnin-320-return-to-bellowfiz",
             kind = "turnin",
             priority = 1100,
@@ -1780,20 +1634,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.4949, 0.4837, "Pilot Bellowfiz",
                     "Travel to Pilot Bellowfiz."),
-            },
-        },
-        {
-            id = "travel-433-gol-bolar-quarry",
-            kind = "travel",
-            priority = 1110,
-            text = "Travel to Gol'Bolar Quarry.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5654, 0.4772, "Continue toward Gol'Bolar Quarry",
-                    "Continue toward Gol'Bolar Quarry."),
-                Point(MAP.DUN_MOROGH, 0.6339, 0.5487, "Continue toward Gol'Bolar Quarry",
-                    "Continue toward Gol'Bolar Quarry."),
-                Point(MAP.DUN_MOROGH, 0.6865, 0.5595, "Gol'Bolar Quarry",
-                    "Travel to Gol'Bolar Quarry."),
             },
         },
         {
@@ -1966,21 +1806,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.6912, 0.5630, "Foreman Stonebrow",
                     "Travel to Foreman Stonebrow."),
-            },
-        },
-        {
-            id = "travel-1679-thunderbrew-distillery",
-            kind = "travel",
-            priority = 1180,
-            conditions = {
-                all = {
-                    { race = { 3, 7 } },
-                },
-            },
-            text = "Travel to Thunderbrew Distillery.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4735, 0.5264, "Thunderbrew Distillery",
-                    "Travel to Thunderbrew Distillery."),
             },
         },
         {
@@ -2257,21 +2082,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1678-frostmane-hold",
-            kind = "travel",
-            priority = 1340,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Frostmane Hold.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.2478, 0.5088, "Frostmane Hold",
-                    "Travel to Frostmane Hold."),
-            },
-        },
-        {
             id = "objective-1678-vejrek",
             kind = "objective",
             priority = 1350,
@@ -2355,25 +2165,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1681-ironband-s-compound",
-            kind = "travel",
-            priority = 1400,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Ironband's Compound.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5732, 0.5183, "Continue toward Ironband's Compound",
-                    "Continue toward Ironband's Compound."),
-                Point(MAP.DUN_MOROGH, 0.7479, 0.5602, "Continue toward Ironband's Compound",
-                    "Continue toward Ironband's Compound."),
-                Point(MAP.DUN_MOROGH, 0.7795, 0.6221, "Ironband's Compound",
-                    "Travel to Ironband's Compound."),
-            },
-        },
-        {
             id = "objective-1681-ironband-s-compound",
             kind = "objective",
             priority = 1410,
@@ -2388,50 +2179,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.7795, 0.6221, "Ironband's Compound",
                     "Travel to Ironband's Compound."),
-            },
-        },
-        {
-            id = "travel-2238-the-great-forge",
-            kind = "travel",
-            priority = 1420,
-            conditions = {
-                all = {
-                    { class = { 1, 3, 4 } },
-                    { race = { 3, 7 } },
-                },
-            },
-            text = "Travel to The Great Forge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.4720, 0.4218, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.5148, 0.3974, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.5387, 0.3444, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.4865, 0.4307, "The Great Forge",
-                    "Travel to The Great Forge."),
-            },
-        },
-        {
-            id = "travel-2238-the-great-forge-2",
-            kind = "travel",
-            priority = 1430,
-            conditions = {
-                all = {
-                    { class = { 9, 8 } },
-                    { race = { 3, 7 } },
-                },
-            },
-            text = "Travel to The Great Forge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.4720, 0.4218, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.5148, 0.3974, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.5387, 0.3444, "Continue toward The Great Forge",
-                    "Continue toward The Great Forge."),
-                Point(MAP.IRONFORGE, 0.4865, 0.4307, "The Great Forge",
-                    "Travel to The Great Forge."),
             },
         },
         {
@@ -2503,21 +2250,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2239-gnomeregan",
-            kind = "travel",
-            priority = 1480,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Gnomeregan.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.2518, 0.4444, "Gnomeregan",
-                    "Travel to Gnomeregan."),
-            },
-        },
-        {
             id = "turnin-2238-simple-subterfugin",
             kind = "turnin",
             priority = 1490,
@@ -2551,21 +2283,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-forlorn-cavern",
-            kind = "travel",
-            priority = 1510,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to The Forlorn Cavern.",
-            route = {
-                Point(MAP.IRONFORGE, 0.5189, 0.1485, "The Forlorn Cavern",
-                    "Travel to The Forlorn Cavern."),
-            },
-        },
-        {
             id = "turnin-2239-onin-s-report",
             kind = "turnin",
             priority = 1520,
@@ -2596,21 +2313,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.4764, 0.0976, "Lago Blackwrench",
                     "Travel to Lago Blackwrench."),
-            },
-        },
-        {
-            id = "travel-6661-deeprun-tram",
-            kind = "travel",
-            priority = 1540,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Deeprun Tram. In the Dwarven District.",
-            route = {
-                Point(MAP.IRONFORGE, 0.7631, 0.5113, "Deeprun Tram",
-                    "Travel to Deeprun Tram."),
             },
         },
         {
@@ -2652,17 +2354,6 @@ ns:RegisterGuide({
             complete = QuestState(6661, "completed"),
         },
         {
-            id = "travel-1688-stormwind-city",
-            kind = "travel",
-            priority = 1580,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Take the portal to Stormwind City.",
-        },
-        {
             id = "turnin-1715-the-slaughtered-lamb",
             kind = "turnin",
             priority = 1590,
@@ -2696,21 +2387,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1688-brackwell-pumpkin-patch",
-            kind = "travel",
-            priority = 1610,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Brackwell Pumpkin Patch.",
-            route = {
-                Point(MAP.ELWYNN, 0.7102, 0.8076, "Brackwell Pumpkin Patch",
-                    "Travel to Brackwell Pumpkin Patch."),
-            },
-        },
-        {
             id = "objective-1688-surena-caledon",
             kind = "objective",
             priority = 1620,
@@ -2725,21 +2401,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7102, 0.8076, "Surena Caledon",
                     "Travel to Surena Caledon."),
-            },
-        },
-        {
-            id = "travel-1689-the-slaughtered-lamb",
-            kind = "travel",
-            priority = 1630,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to The Slaughtered Lamb.",
-            route = {
-                Point(MAP.STORMWIND, 0.3960, 0.8460, "The Slaughtered Lamb",
-                    "Travel to The Slaughtered Lamb."),
             },
         },
         {
@@ -2845,21 +2506,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1880-gnomeregan",
-            kind = "travel",
-            priority = 1700,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Travel to Gnomeregan.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.2769, 0.3642, "Gnomeregan",
-                    "Travel to Gnomeregan."),
-            },
-        },
-        {
             id = "objective-1880-mage-tastic-gizmonitor",
             kind = "objective",
             priority = 1710,
@@ -2891,16 +2537,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.2724, 0.0831, "Bink",
                     "Travel to Bink."),
-            },
-        },
-        {
-            id = "travel-417-north-gate-pass",
-            kind = "travel",
-            priority = 1730,
-            text = "Travel to North Gate Pass.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.8096, 0.4295, "North Gate Pass",
-                    "Travel to North Gate Pass."),
             },
         },
         {
@@ -2991,18 +2627,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-224-valley-of-kings",
-            kind = "travel",
-            priority = 1810,
-            text = "Travel to Valley of Kings.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.1675, 0.5894, "Continue toward Valley of Kings",
-                    "Continue toward Valley of Kings."),
-                Point(MAP.LOCH_MODAN, 0.2185, 0.7343, "Valley of Kings",
-                    "Travel to Valley of Kings."),
-            },
-        },
-        {
             id = "accept-224-in-defense-of-the-king-s-lands",
             kind = "accept",
             priority = 1820,
@@ -3084,20 +2708,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1339-thelsamar",
-            kind = "travel",
-            priority = 1890,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2827, 0.6568, "Continue toward Thelsamar",
-                    "Continue toward Thelsamar."),
-                Point(MAP.LOCH_MODAN, 0.3115, 0.7099, "Continue toward Thelsamar",
-                    "Continue toward Thelsamar."),
-                Point(MAP.LOCH_MODAN, 0.3390, 0.5090, "Thelsamar",
-                    "Travel to Thelsamar."),
-            },
-        },
-        {
             id = "turnin-414-stout-to-kadrell",
             kind = "turnin",
             priority = 1900,
@@ -3159,21 +2769,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-algaz-station",
-            kind = "travel",
-            priority = 1950,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1338, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Algaz Station.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2479, 0.1840, "Algaz Station",
-                    "Travel to Algaz Station."),
-            },
-        },
-        {
             id = "turnin-1339-mountaineer-stormpike-s-task",
             kind = "turnin",
             priority = 1960,
@@ -3194,21 +2789,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.2479, 0.1840, "Mountaineer Stormpike",
                     "Travel to Mountaineer Stormpike."),
-            },
-        },
-        {
-            id = "travel-6391-thelsamar",
-            kind = "travel",
-            priority = 1980,
-            conditions = {
-                all = {
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3388, 0.5095, "Thelsamar",
-                    "Travel to Thelsamar."),
             },
         },
         {
@@ -3242,21 +2822,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.3388, 0.5095, "Thorgrum Borrelson",
                     "Travel to Thorgrum Borrelson."),
-            },
-        },
-        {
-            id = "travel-6388-the-great-forge",
-            kind = "travel",
-            priority = 2010,
-            conditions = {
-                all = {
-                    { race = 3 },
-                },
-            },
-            text = "Travel to The Great Forge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.5150, 0.2630, "The Great Forge",
-                    "Travel to The Great Forge."),
             },
         },
         {
@@ -3340,21 +2905,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.5548, 0.4787, "Gryth Thurden",
                     "Travel to Gryth Thurden."),
-            },
-        },
-        {
-            id = "travel-thelsamar",
-            kind = "travel",
-            priority = 2070,
-            conditions = {
-                all = {
-                    { race = 3 },
-                },
-            },
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3707, 0.4779, "Thelsamar",
-                    "Travel to Thelsamar."),
             },
         },
         {

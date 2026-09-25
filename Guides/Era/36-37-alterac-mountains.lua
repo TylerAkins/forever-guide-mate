@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-544-tarren-mill",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6159, 0.2071, "Tarren Mill",
-                    "Travel to Tarren Mill."),
-            },
-        },
-        {
             id = "accept-544-prison-break-in",
             kind = "accept",
             priority = 20,
@@ -70,16 +60,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.6159, 0.2071, "Keeper Bel'varil",
                     "Travel to Keeper Bel'varil."),
-            },
-        },
-        {
-            id = "travel-556-dalaran",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Dalaran.",
-            route = {
-                Point(MAP.ALTERAC, 0.2033, 0.8479, "Dalaran",
-                    "Travel to Dalaran."),
             },
         },
         {
@@ -140,16 +120,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ALTERAC, 0.1819, 0.8359, "Kegan Darkmar",
                     "Travel to Kegan Darkmar."),
-            },
-        },
-        {
-            id = "travel-tarren-mill",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6159, 0.2071, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -220,16 +190,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ALTERAC, 0.1994, 0.7400, "Dalaran Summoner",
                     "Travel to Dalaran Summoner."),
-            },
-        },
-        {
-            id = "travel-tarren-mill-2",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6158, 0.2080, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {

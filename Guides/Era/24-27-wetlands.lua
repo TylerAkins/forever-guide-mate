@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-279-menethil-harbor",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Menethil Harbor.",
-            route = {
-                Point(MAP.WETLANDS, 0.0831, 0.5854, "Menethil Harbor",
-                    "Travel to Menethil Harbor."),
-            },
-        },
-        {
             id = "accept-279-claws-from-the-deep",
             kind = "accept",
             priority = 20,
@@ -269,20 +259,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-294-black-channel-marsh",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Black Channel Marsh.",
-            route = {
-                Point(MAP.WETLANDS, 0.3697, 0.4726, "Continue toward Black Channel Marsh",
-                    "Continue toward Black Channel Marsh."),
-                Point(MAP.WETLANDS, 0.3395, 0.4093, "Continue toward Black Channel Marsh",
-                    "Continue toward Black Channel Marsh."),
-                Point(MAP.WETLANDS, 0.2338, 0.5352, "Black Channel Marsh",
-                    "Travel to Black Channel Marsh."),
-            },
-        },
-        {
             id = "objective-294-ormer-s-revenge",
             kind = "objective",
             priority = 210,
@@ -312,16 +288,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-295-whelgar-s-excavation-site",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Whelgar's Excavation Site.",
-            route = {
-                Point(MAP.WETLANDS, 0.3685, 0.4308, "Whelgar's Excavation Site",
-                    "Travel to Whelgar's Excavation Site."),
-            },
-        },
-        {
             id = "turnin-294-ormer-s-revenge",
             kind = "turnin",
             priority = 240,
@@ -344,16 +310,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.3797, 0.5135, "Ormer Ironbraid",
                     "Travel to Ormer Ironbraid."),
-            },
-        },
-        {
-            id = "travel-469-the-green-belt",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to The Green Belt.",
-            route = {
-                Point(MAP.WETLANDS, 0.4993, 0.3938, "The Green Belt",
-                    "Travel to The Green Belt."),
             },
         },
         {
@@ -450,16 +406,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-470-the-green-belt",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to The Green Belt.",
-            route = {
-                Point(MAP.WETLANDS, 0.3800, 0.3100, "The Green Belt",
-                    "Travel to The Green Belt."),
-            },
-        },
-        {
             id = "objective-277-fire-taboo",
             kind = "objective",
             priority = 360,
@@ -492,16 +438,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.5624, 0.4030, "Rethiel the Greenwarden",
                     "Travel to Rethiel the Greenwarden."),
-            },
-        },
-        {
-            id = "travel-281-menethil-harbor",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Menethil Harbor.",
-            route = {
-                Point(MAP.WETLANDS, 0.0831, 0.5854, "Menethil Harbor",
-                    "Travel to Menethil Harbor."),
             },
         },
         {
@@ -713,16 +649,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-299-whelgar-s-excavation-site",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Whelgar's Excavation Site.",
-            route = {
-                Point(MAP.WETLANDS, 0.3685, 0.4308, "Whelgar's Excavation Site",
-                    "Travel to Whelgar's Excavation Site."),
-            },
-        },
-        {
             id = "accept-299-uncovering-the-past",
             kind = "accept",
             priority = 580,
@@ -857,18 +783,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-464-angerfang-encampment",
-            kind = "travel",
-            priority = 690,
-            text = "Travel to Angerfang Encampment.",
-            route = {
-                Point(MAP.WETLANDS, 0.4400, 0.4400, "Continue toward Angerfang Encampment",
-                    "Continue toward Angerfang Encampment."),
-                Point(MAP.WETLANDS, 0.4122, 0.4617, "Angerfang Encampment",
-                    "Travel to Angerfang Encampment."),
-            },
-        },
-        {
             id = "objective-464-war-banners",
             kind = "objective",
             priority = 700,
@@ -880,16 +794,6 @@ ns:RegisterGuide({
                     "Continue toward War Banners."),
                 Point(MAP.WETLANDS, 0.4122, 0.4617, "Dragonmaw Swamprunner",
                     "Travel to Dragonmaw Swamprunner."),
-            },
-        },
-        {
-            id = "travel-289-menethil-harbor",
-            kind = "travel",
-            priority = 710,
-            text = "Travel to Menethil Harbor.",
-            route = {
-                Point(MAP.WETLANDS, 0.1091, 0.5953, "Menethil Harbor",
-                    "Travel to Menethil Harbor."),
             },
         },
         {
@@ -937,16 +841,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.0831, 0.5854, "Karl Boran",
                     "Travel to Karl Boran."),
-            },
-        },
-        {
-            id = "travel-289-the-lost-fleet",
-            kind = "travel",
-            priority = 760,
-            text = "Travel to The Lost Fleet.",
-            route = {
-                Point(MAP.WETLANDS, 0.1391, 0.3103, "The Lost Fleet",
-                    "Travel to The Lost Fleet."),
             },
         },
         {

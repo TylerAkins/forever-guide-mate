@@ -52,21 +52,6 @@ ns:RegisterGuide({
             text = "Switch and complete #1422(56-57)#1422(56-57)\") before starting this guide.",
         },
         {
-            id = "travel-thondroril-river",
-            kind = "travel",
-            priority = 20,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5542, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Thondroril River.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.0757, 0.4372, "Thondroril River",
-                    "Travel to Thondroril River."),
-            },
-        },
-        {
             id = "accept-5542-demon-dogs",
             kind = "accept",
             priority = 30,
@@ -100,16 +85,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6024-the-undercroft",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to The Undercroft.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.2791, 0.8546, "The Undercroft",
-                    "Travel to The Undercroft."),
-            },
-        },
-        {
             id = "accept-6024-hameya-s-plea",
             kind = "accept",
             priority = 70,
@@ -120,23 +95,6 @@ ns:RegisterGuide({
                     "Continue toward Hameya's Plea."),
                 Point(MAP.EASTERN_PLAGUELANDS, 0.2727, 0.8519, "The Undercroft",
                     "Travel to The Undercroft."),
-            },
-        },
-        {
-            id = "travel-darrowshire",
-            kind = "travel",
-            priority = 80,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5241, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Darrowshire.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.2789, 0.8541, "Continue toward Darrowshire",
-                    "Continue toward Darrowshire."),
-                Point(MAP.EASTERN_PLAGUELANDS, 0.3661, 0.8659, "Darrowshire",
-                    "Travel to Darrowshire."),
             },
         },
         {
@@ -288,16 +246,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5281-light-s-hope-chapel",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.7955, 0.6407, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
-            },
-        },
-        {
             id = "accept-5281-the-restless-souls",
             kind = "accept",
             priority = 210,
@@ -391,12 +339,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5544-eastern-plaguelands",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Eastern Plaguelands.",
-        },
-        {
             id = "objective-5211-1-diseased-flayer",
             kind = "objective",
             priority = 290,
@@ -406,16 +348,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.6596, 0.3986, "Diseased Flayer",
                     "Travel to Diseased Flayer."),
-            },
-        },
-        {
-            id = "travel-6024-zul-mashar",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Zul'Mashar.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.6432, 0.2256, "Zul'Mashar",
-                    "Travel to Zul'Mashar."),
             },
         },
         {
@@ -432,23 +364,6 @@ ns:RegisterGuide({
                     "Continue toward Infiltrator Hameya."),
                 Point(MAP.EASTERN_PLAGUELANDS, 0.7077, 0.1607, "Infiltrator Hameya",
                     "Travel to Infiltrator Hameya."),
-            },
-        },
-        {
-            id = "travel-quel-lithien-lodge",
-            kind = "travel",
-            priority = 320,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5246, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Quel'Lithien Lodge.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.6432, 0.2256, "Continue toward Quel'Lithien Lodge",
-                    "Continue toward Quel'Lithien Lodge."),
-                Point(MAP.EASTERN_PLAGUELANDS, 0.5354, 0.2204, "Quel'Lithien Lodge",
-                    "Travel to Quel'Lithien Lodge."),
             },
         },
         {
@@ -489,16 +404,6 @@ ns:RegisterGuide({
                     "Continue toward Defenders of Darrowshire."),
                 Point(MAP.EASTERN_PLAGUELANDS, 0.3000, 0.2295, "Cannibal Ghoul",
                     "Travel to Cannibal Ghoul."),
-            },
-        },
-        {
-            id = "travel-5282-terrordale",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Terrordale.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.1446, 0.3375, "Terrordale",
-                    "Travel to Terrordale."),
             },
         },
         {
@@ -557,16 +462,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.1446, 0.3351, "Augustus the Touched",
                     "Travel to Augustus the Touched."),
-            },
-        },
-        {
-            id = "travel-terrorweb-tunnel",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Terrorweb Tunnel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.1538, 0.2925, "Terrorweb Tunnel",
-                    "Travel to Terrorweb Tunnel."),
             },
         },
         {
@@ -665,16 +560,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6021-the-undercroft",
-            kind = "travel",
-            priority = 510,
-            text = "Travel to The Undercroft.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.2785, 0.8537, "The Undercroft",
-                    "Travel to The Undercroft."),
-            },
-        },
-        {
             id = "objective-6021-zaeldarr-the-outcast",
             kind = "objective",
             priority = 520,
@@ -711,21 +596,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-thondroril-river-2",
-            kind = "travel",
-            priority = 550,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5845, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Thondroril River.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.0756, 0.4369, "Thondroril River",
-                    "Travel to Thondroril River."),
-            },
-        },
-        {
             id = "turnin-5781-of-forgotten-memories",
             kind = "turnin",
             priority = 560,
@@ -746,16 +616,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.0756, 0.4369, "Tirion Fordring",
                     "Travel to Tirion Fordring."),
-            },
-        },
-        {
-            id = "travel-light-s-hope-chapel",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.7966, 0.6362, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {
@@ -780,16 +640,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.8150, 0.5979, "Carlin Redpath",
                     "Travel to Carlin Redpath."),
-            },
-        },
-        {
-            id = "travel-5845-northdale",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Northdale.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.7128, 0.3397, "Northdale",
-                    "Travel to Northdale."),
             },
         },
         {
@@ -825,16 +675,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.0758, 0.4372, "Tirion Fordring",
                     "Travel to Tirion Fordring."),
-            },
-        },
-        {
-            id = "travel-caer-darrow",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to Caer Darrow.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.6576, 0.7536, "Caer Darrow",
-                    "Travel to Caer Darrow."),
             },
         },
         {

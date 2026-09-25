@@ -40,26 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-583-grom-gol-base-camp",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3250, 0.2930, "Thysta",
-                    "Travel to Thysta."),
-            },
-        },
-        {
-            id = "travel-583-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 20,
-            text = "Travel to Nesingwary's Expedition. Follow the road north, look for a little camp by the river.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3500, 0.1000, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
-            },
-        },
-        {
             id = "accept-583-welcome-to-the-jungle",
             kind = "accept",
             priority = 30,
@@ -280,16 +260,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1181-booty-bay",
-            kind = "travel",
-            priority = 220,
-            text = "Take the boat to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2633, 0.7349, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "accept-1181-goblin-sponsorship",
             kind = "accept",
             priority = 230,
@@ -482,16 +452,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-581-bal-lal-ruins",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Bal'lal Ruins.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2952, 0.2087, "Bal'lal Ruins",
-                    "Travel to Bal'lal Ruins."),
-            },
-        },
-        {
             id = "objective-189-bloodscalp-ears",
             kind = "objective",
             priority = 400,
@@ -513,16 +473,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2900, 0.1961, "Bloodscalp Warrior",
                     "Travel to Bloodscalp Warrior."),
-            },
-        },
-        {
-            id = "travel-581-stranglethorn-vale",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Stranglethorn Vale.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3400, 0.1900, "Stranglethorn Vale",
-                    "Travel to Stranglethorn Vale."),
             },
         },
         {
@@ -559,21 +509,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3800, 0.2300, "Lashtail Raptor",
                     "Travel to Lashtail Raptor."),
-            },
-        },
-        {
-            id = "travel-grom-gol-base-camp",
-            kind = "travel",
-            priority = 460,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 582, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3216, 0.2778, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
             },
         },
         {
@@ -656,16 +591,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.1900, 0.1400, "Bloodscalp Axe Thrower",
                     "Travel to Bloodscalp Axe Thrower."),
-            },
-        },
-        {
-            id = "travel-201-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 530,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3526, 0.1112, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -763,16 +688,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-213-venture-co-operations-center",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Venture Co. Operations Center.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4248, 0.1847, "Venture Co. Operations Center",
-                    "Travel to Venture Co. Operations Center."),
-            },
-        },
-        {
             id = "objective-1182-foreman-cozzle",
             kind = "objective",
             priority = 630,
@@ -807,21 +722,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1182-venture-co-base-camp",
-            kind = "travel",
-            priority = 650,
-            conditions = {
-                all = {
-                    { quest = { id = 1180, state = "completed" } },
-                },
-            },
-            text = "Travel to Venture Co. Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4457, 0.2058, "Venture Co. Base Camp",
-                    "Travel to Venture Co. Base Camp."),
-            },
-        },
-        {
             id = "objective-213-hostile-takeover",
             kind = "objective",
             priority = 660,
@@ -843,18 +743,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.4800, 0.2100, "Shadowmaw Panther",
                     "Travel to Shadowmaw Panther."),
-            },
-        },
-        {
-            id = "travel-570-stranglethorn-vale",
-            kind = "travel",
-            priority = 680,
-            text = "Travel to Stranglethorn Vale.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4800, 0.2100, "Continue toward Stranglethorn Vale",
-                    "Continue toward Stranglethorn Vale."),
-                Point(MAP.STRANGLETHORN, 0.3800, 0.3700, "Stranglethorn Vale",
-                    "Travel to Stranglethorn Vale."),
             },
         },
         {
@@ -886,16 +774,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-569-mizjah-ruins",
-            kind = "travel",
-            priority = 710,
-            text = "Travel to Mizjah Ruins.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3693, 0.3082, "Mizjah Ruins",
-                    "Travel to Mizjah Ruins."),
-            },
-        },
-        {
             id = "objective-569-the-defense-of-grom-gol",
             kind = "objective",
             priority = 720,
@@ -905,16 +783,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3600, 0.3000, "Mosh'Ogg Brute",
                     "Travel to Mosh'Ogg Brute."),
-            },
-        },
-        {
-            id = "travel-193-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3553, 0.1056, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -938,21 +806,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3553, 0.1056, "Sir S. J. Erlgadin",
                     "Travel to Sir S. J. Erlgadin."),
-            },
-        },
-        {
-            id = "travel-the-salty-sailor-tavern",
-            kind = "travel",
-            priority = 760,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1183, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Salty Sailor Tavern.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2710, 0.7729, "The Salty Sailor Tavern",
-                    "Travel to The Salty Sailor Tavern."),
             },
         },
         {
@@ -1060,21 +913,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 850,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 188, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3561, 0.1066, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
-            },
-        },
-        {
             id = "turnin-187-tiger-mastery",
             kind = "turnin",
             priority = 860,
@@ -1095,16 +933,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3561, 0.1066, "Ajeck Rouack",
                     "Travel to Ajeck Rouack."),
-            },
-        },
-        {
-            id = "travel-572-grom-gol-base-camp",
-            kind = "travel",
-            priority = 880,
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3218, 0.2882, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
             },
         },
         {
@@ -1175,16 +1003,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3217, 0.2771, "Nimboya",
                     "Travel to Nimboya."),
-            },
-        },
-        {
-            id = "travel-595-booty-bay",
-            kind = "travel",
-            priority = 950,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2811, 0.7613, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
@@ -1268,16 +1086,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-572-gurubashi-arena",
-            kind = "travel",
-            priority = 1020,
-            text = "Travel to Gurubashi Arena.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3100, 0.4100, "Gurubashi Arena",
-                    "Travel to Gurubashi Arena."),
-            },
-        },
-        {
             id = "objective-572-mok-thardin-s-enchantment",
             kind = "objective",
             priority = 1030,
@@ -1299,16 +1107,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3151, 0.4233, "Jungle Stalker",
                     "Travel to Jungle Stalker."),
-            },
-        },
-        {
-            id = "travel-571-grom-gol-base-camp",
-            kind = "travel",
-            priority = 1050,
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3216, 0.2918, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
             },
         },
         {
@@ -1335,16 +1133,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-209-ziata-jai-ruins",
-            kind = "travel",
-            priority = 1080,
-            text = "Travel to Ziata'jai Ruins.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4217, 0.3616, "Ziata'jai Ruins",
-                    "Travel to Ziata'jai Ruins."),
-            },
-        },
-        {
             id = "objective-209-skullsplitter-tusks",
             kind = "objective",
             priority = 1090,
@@ -1356,16 +1144,6 @@ ns:RegisterGuide({
                     "Continue toward Skullsplitter Tusks."),
                 Point(MAP.STRANGLETHORN, 0.4486, 0.4070, "Skullsplitter Witch Doctor",
                     "Travel to Skullsplitter Witch Doctor."),
-            },
-        },
-        {
-            id = "travel-197-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 1100,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3558, 0.1059, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -1404,16 +1182,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-597-southern-savage-coast",
-            kind = "travel",
-            priority = 1140,
-            text = "Travel to Southern Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2723, 0.6954, "Southern Savage Coast",
-                    "Travel to Southern Savage Coast."),
-            },
-        },
-        {
             id = "turnin-595-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 1150,
@@ -1434,18 +1202,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2723, 0.6954, "Southern Savage Coast",
                     "Travel to Southern Savage Coast."),
-            },
-        },
-        {
-            id = "travel-606-mistvale-valley",
-            kind = "travel",
-            priority = 1170,
-            text = "Travel to Mistvale Valley.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3094, 0.7169, "Continue toward Mistvale Valley",
-                    "Continue toward Mistvale Valley."),
-                Point(MAP.STRANGLETHORN, 0.3306, 0.6708, "Mistvale Valley",
-                    "Travel to Mistvale Valley."),
             },
         },
         {
@@ -1470,16 +1226,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3400, 0.6400, "Elder Mistvale Gorilla",
                     "Travel to Elder Mistvale Gorilla."),
-            },
-        },
-        {
-            id = "travel-607-booty-bay",
-            kind = "travel",
-            priority = 1200,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2690, 0.7362, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
@@ -1565,16 +1311,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-573-grom-gol-base-camp",
-            kind = "travel",
-            priority = 1280,
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3216, 0.2918, "Grom'gol Base Camp",
-                    "Travel to Grom'gol Base Camp."),
-            },
-        },
-        {
             id = "turnin-571-mok-thardin-s-enchantment",
             kind = "turnin",
             priority = 1290,
@@ -1616,16 +1352,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3150, 0.2970, "Innkeeper Thulbek",
                     "Travel to Innkeeper Thulbek."),
-            },
-        },
-        {
-            id = "travel-338-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 1330,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3565, 0.1051, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {

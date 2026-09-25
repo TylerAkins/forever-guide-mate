@@ -44,16 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1453-city-of-ironforge",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.6795, 0.1761, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
             id = "accept-1453-reclaimers-business-in-desolace",
             kind = "accept",
             priority = 20,
@@ -73,16 +63,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.7270, 0.9397, "Pilot Longbeard",
                     "Travel to Pilot Longbeard."),
-            },
-        },
-        {
-            id = "travel-690-stormwind-city",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Mage Quarter in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.3982, 0.8153, "Mage Quarter",
-                    "Travel to Mage Quarter."),
             },
         },
         {
@@ -329,30 +309,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-203-rebel-camp",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.4457, 0.6681, "Rebel Camp",
-                    "Travel to Rebel Camp."),
-            },
-        },
-        {
-            id = "travel-203-rebel-camp-2",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4065, 0.0348, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.4056, 0.0463, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.3824, 0.0486, "Rebel Camp",
-                    "Travel to Rebel Camp."),
-            },
-        },
-        {
             id = "accept-203-the-second-rebellion",
             kind = "accept",
             priority = 220,
@@ -399,18 +355,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3804, 0.0301, "Lieutenant Doren",
                     "Travel to Lieutenant Doren."),
-            },
-        },
-        {
-            id = "travel-204-kurzen-s-compound",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Kurzen's Compound.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3943, 0.0736, "Continue toward Kurzen's Compound",
-                    "Continue toward Kurzen's Compound."),
-                Point(MAP.STRANGLETHORN, 0.4411, 0.0958, "Kurzen's Compound",
-                    "Travel to Kurzen's Compound."),
             },
         },
         {
@@ -483,18 +427,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-574-rebel-camp",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Rebel Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3985, 0.0790, "Continue toward Rebel Camp",
-                    "Continue toward Rebel Camp."),
-                Point(MAP.STRANGLETHORN, 0.3802, 0.0336, "Sergeant Yohwa",
-                    "Travel to Sergeant Yohwa."),
-            },
-        },
-        {
             id = "turnin-203-the-second-rebellion",
             kind = "turnin",
             priority = 330,
@@ -527,16 +459,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3802, 0.0336, "Sergeant Yohwa",
                     "Travel to Sergeant Yohwa."),
-            },
-        },
-        {
-            id = "travel-583-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3567, 0.1052, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -605,16 +527,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3500, 0.1210, "Young Stranglethorn Tiger",
                     "Travel to Young Stranglethorn Tiger."),
-            },
-        },
-        {
-            id = "travel-186-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3563, 0.1065, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -815,36 +727,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3556, 0.1056, "Sir S. J. Erlgadin",
                     "Travel to Sir S. J. Erlgadin."),
-            },
-        },
-        {
-            id = "travel-616-booty-bay",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3549, 0.1666, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3722, 0.2199, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.4190, 0.2352, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3918, 0.2588, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3843, 0.3042, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.4071, 0.3356, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.4045, 0.3785, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3679, 0.4887, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3358, 0.5125, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.3067, 0.7237, "Continue toward Booty Bay",
-                    "Continue toward Booty Bay."),
-                Point(MAP.STRANGLETHORN, 0.2823, 0.7310, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {

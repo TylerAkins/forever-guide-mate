@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-5535-talrendis-point",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Talrendis Point in Azshara.",
-            route = {
-                Point(MAP.AZSHARA, 0.1137, 0.7814, "Talrendis Point",
-                    "Travel to Talrendis Point."),
-            },
-        },
-        {
             id = "accept-5535-spiritual-unrest",
             kind = "accept",
             priority = 20,
@@ -97,16 +87,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-talrendis-point",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Talrendis Point.",
-            route = {
-                Point(MAP.AZSHARA, 0.1137, 0.7814, "Talrendis Point",
-                    "Travel to Talrendis Point."),
-            },
-        },
-        {
             id = "turnin-5535-spiritual-unrest",
             kind = "turnin",
             priority = 70,
@@ -131,16 +111,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3568-valormok",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Valormok. North of the road, on the mountain's edge.",
-            route = {
-                Point(MAP.AZSHARA, 0.2100, 0.5200, "Valormok",
-                    "Travel to Valormok."),
-            },
-        },
-        {
             id = "turnin-3504-betrayed",
             kind = "turnin",
             priority = 100,
@@ -160,16 +130,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.2254, 0.5138, "Jediga",
                     "Travel to Jediga."),
-            },
-        },
-        {
-            id = "travel-3568-undercity",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.5186, 0.8041, "Undercity",
-                    "Travel to Undercity."),
             },
         },
         {

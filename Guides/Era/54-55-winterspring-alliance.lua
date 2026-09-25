@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-8464-frostfire-hot-springs",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.2774, 0.3453, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
-            },
-        },
-        {
             id = "accept-8464-winterfall-activity",
             kind = "accept",
             priority = 20,
@@ -59,16 +49,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.2774, 0.3453, "Salfa",
                     "Travel to Salfa."),
-            },
-        },
-        {
-            id = "travel-4842-frostfire-hot-springs",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.3127, 0.4517, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
             },
         },
         {
@@ -96,16 +76,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Donova Snowden",
                     "Travel to Donova Snowden."),
-            },
-        },
-        {
-            id = "travel-5244-starfall-village",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Starfall Village.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.5197, 0.3039, "Starfall Village",
-                    "Travel to Starfall Village."),
             },
         },
         {
@@ -154,16 +124,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3783-everlook",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6233, 0.3660, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
             id = "accept-3783-are-we-there-yeti",
             kind = "accept",
             priority = 120,
@@ -184,16 +144,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.6136, 0.3883, "Innkeeper Vizzie",
                     "Travel to Innkeeper Vizzie."),
-            },
-        },
-        {
-            id = "travel-5245-lake-kel-theril",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Lake Kel'Theril.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.5516, 0.4294, "Lake Kel'Theril",
-                    "Travel to Lake Kel'Theril."),
             },
         },
         {
@@ -242,16 +192,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.5096, 0.4175, "Lake Kel'Theril",
                     "Travel to Lake Kel'Theril."),
-            },
-        },
-        {
-            id = "travel-4863-dun-mandarr",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Dun Mandarr.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.5899, 0.5976, "Dun Mandarr",
-                    "Travel to Dun Mandarr."),
             },
         },
         {
@@ -346,26 +286,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-8464-everlook",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6233, 0.3660, "Everlook",
-                    "Travel to Everlook."),
-            },
-        },
-        {
-            id = "travel-8464-winterfall-village",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Winterfall Village.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6713, 0.3593, "Winterfall Village",
-                    "Travel to Winterfall Village."),
-            },
-        },
-        {
             id = "objective-8464-winterfall-activity",
             kind = "objective",
             priority = 290,
@@ -409,16 +329,6 @@ ns:RegisterGuide({
             complete = QuestState(5083, "activeOrCompleted"),
         },
         {
-            id = "travel-starfall-village",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Starfall Village.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.5214, 0.3043, "Starfall Village",
-                    "Travel to Starfall Village."),
-            },
-        },
-        {
             id = "turnin-4864-enraged-wildkin",
             kind = "turnin",
             priority = 340,
@@ -428,16 +338,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.5214, 0.3043, "Jaron Stoneshaper",
                     "Travel to Jaron Stoneshaper."),
-            },
-        },
-        {
-            id = "travel-5082-timbermaw-post",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Timbermaw Post.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.4069, 0.4287, "Timbermaw Post",
-                    "Travel to Timbermaw Post."),
             },
         },
         {
@@ -464,16 +364,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.3076, 0.3653, "Winterfall Pathfinder",
                     "Travel to Winterfall Pathfinder."),
-            },
-        },
-        {
-            id = "travel-5082-frostfire-hot-springs",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Frostfire Hot Springs.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.3128, 0.4517, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
             },
         },
         {
@@ -529,16 +419,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3783-ice-thistle-hills",
-            kind = "travel",
-            priority = 430,
-            text = "Travel or Hearthstone to Ice Thistle Hills.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.7157, 0.3908, "Ice Thistle Hills",
-                    "Travel to Ice Thistle Hills."),
-            },
-        },
-        {
             id = "objective-3783-are-we-there-yeti",
             kind = "objective",
             priority = 440,
@@ -548,16 +428,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.7157, 0.3908, "Ice Thistle Yeti",
                     "Travel to Ice Thistle Yeti."),
-            },
-        },
-        {
-            id = "travel-977-everlook",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6089, 0.3764, "Everlook",
-                    "Travel to Everlook."),
             },
         },
         {
@@ -584,16 +454,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-977-ice-thistle-hills",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Ice Thistle Hills.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6888, 0.4100, "Ice Thistle Hills",
-                    "Travel to Ice Thistle Hills."),
-            },
-        },
-        {
             id = "objective-977-are-we-there-yeti",
             kind = "objective",
             priority = 490,
@@ -603,16 +463,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.6888, 0.4100, "Ice Thistle Matriarch",
                     "Travel to Ice Thistle Matriarch."),
-            },
-        },
-        {
-            id = "travel-5163-everlook",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Everlook.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.6089, 0.3764, "Everlook",
-                    "Travel to Everlook."),
             },
         },
         {
@@ -684,21 +534,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-felpaw-village",
-            kind = "travel",
-            priority = 570,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5085, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Felpaw Village.",
-            route = {
-                Point(MAP.FELWOOD, 0.6023, 0.0586, "Felpaw Village",
-                    "Travel to Felpaw Village."),
-            },
-        },
-        {
             id = "turnin-5084-falling-to-corruption",
             kind = "turnin",
             priority = 580,
@@ -719,16 +554,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.6020, 0.0588, "Felpaw Village",
                     "Travel to Felpaw Village."),
-            },
-        },
-        {
-            id = "travel-frostfire-hot-springs",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Frostfire Hot Springs in Winterspring.",
-            route = {
-                Point(MAP.WINTERSPRING, 0.2775, 0.3458, "Frostfire Hot Springs",
-                    "Travel to Frostfire Hot Springs."),
             },
         },
         {

@@ -131,16 +131,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1477-stormwind-city",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.3748, 0.8172, "Stormwind City",
-                    "Travel to Stormwind City."),
-            },
-        },
-        {
             id = "accept-1477-vital-supplies",
             kind = "accept",
             priority = 70,
@@ -190,16 +180,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1396-darkshire",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Darkshire in Duskwood.",
-            route = {
-                Point(MAP.DUSKWOOD, 0.7390, 0.4440, "Darkshire",
-                    "Travel to Darkshire."),
-            },
-        },
-        {
             id = "turnin-1477-vital-supplies",
             kind = "turnin",
             priority = 120,
@@ -219,16 +199,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSKWOOD, 0.7390, 0.4440, "Innkeeper Trelayne",
                     "Travel to Innkeeper Trelayne."),
-            },
-        },
-        {
-            id = "travel-1396-swamp-of-sorrows",
-            kind = "travel",
-            priority = 140,
-            text = "Travel through Deadwind Pass to Swamp of Sorrows.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.1664, 0.5629, "Deadwind Pass",
-                    "Travel to Deadwind Pass."),
             },
         },
         {
@@ -312,16 +282,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-harborage",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to The Harborage.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.2599, 0.3144, "The Harborage",
-                    "Travel to The Harborage."),
-            },
-        },
-        {
             id = "accept-1389-draenethyst-crystals",
             kind = "accept",
             priority = 220,
@@ -330,16 +290,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.2599, 0.3144, "Magtoor",
                     "Travel to Magtoor."),
-            },
-        },
-        {
-            id = "travel-1393-fallow-sanctuary",
-            kind = "travel",
-            priority = 230,
-            text = "Travel Fallow Sanctuary.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6540, 0.1829, "Fallow Sanctuary",
-                    "Travel to Fallow Sanctuary."),
             },
         },
         {
@@ -377,16 +327,6 @@ ns:RegisterGuide({
                     "Continue toward Galen's Escape."),
                 Point(MAP.SWAMP_OF_SORROWS, 0.5262, 0.2983, "Galen Goodward",
                     "Travel to Galen Goodward."),
-            },
-        },
-        {
-            id = "travel-1393-fallow-sanctuary-2",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Fallow Sanctuary.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6200, 0.2400, "Fallow Sanctuary",
-                    "Travel to Fallow Sanctuary."),
             },
         },
         {
@@ -449,25 +389,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-nethergarde-keep",
-            kind = "travel",
-            priority = 330,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1395, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Nethergarde Keep.",
-            route = {
-                Point(MAP.BLASTED_LANDS, 0.5324, 0.1227, "Continue toward Nethergarde Keep",
-                    "Continue toward Nethergarde Keep."),
-                Point(MAP.BLASTED_LANDS, 0.6275, 0.1975, "Continue toward Nethergarde Keep",
-                    "Continue toward Nethergarde Keep."),
-                Point(MAP.BLASTED_LANDS, 0.6553, 0.2436, "Nethergarde Keep",
-                    "Travel to Nethergarde Keep."),
-            },
-        },
-        {
             id = "turnin-1395-supplies-for-nethergarde",
             kind = "turnin",
             priority = 340,
@@ -489,16 +410,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.6780, 0.4440, "Pool of Tears",
                     "Travel to Pool of Tears."),
-            },
-        },
-        {
-            id = "travel-1258-misty-reed-strand",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Misty Reed Strand.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.7598, 0.0496, "Misty Reed Strand",
-                    "Travel to Misty Reed Strand."),
             },
         },
         {
@@ -558,16 +469,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-nethergarde-keep-2",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to Nethergarde Keep.",
-            route = {
-                Point(MAP.BLASTED_LANDS, 0.6648, 0.2136, "Nethergarde Keep",
-                    "Travel to Nethergarde Keep."),
-            },
-        },
-        {
             id = "turnin-1425-deliver-the-shipment",
             kind = "turnin",
             priority = 420,
@@ -577,16 +478,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BLASTED_LANDS, 0.6648, 0.2136, "Quartermaster Lungertz",
                     "Travel to Quartermaster Lungertz."),
-            },
-        },
-        {
-            id = "travel-1477-stormwind-city-2",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.3748, 0.8172, "Stormwind City",
-                    "Travel to Stormwind City."),
             },
         },
         {
@@ -610,16 +501,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.6427, 0.2074, "Brohann Caskbelly",
                     "Travel to Brohann Caskbelly."),
-            },
-        },
-        {
-            id = "travel-1117-the-salty-sailor-tavern",
-            kind = "travel",
-            priority = 460,
-            text = "Travel to The Salty Sailor Tavern in Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2695, 0.7721, "The Salty Sailor Tavern",
-                    "Travel to The Salty Sailor Tavern."),
             },
         },
         {
@@ -653,16 +534,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2695, 0.7721, "Krazek",
                     "Travel to Krazek."),
-            },
-        },
-        {
-            id = "travel-theramore-isle",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6635, 0.4548, "Theramore Isle",
-                    "Travel to Theramore Isle."),
             },
         },
         {
