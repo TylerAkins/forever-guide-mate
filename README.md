@@ -15,7 +15,7 @@ Guide files are split by job. `Guides/Leveling/` holds Zephras Isle and the Era 
 | Guide | Who | Notes |
 | --- | --- | --- |
 | Zephras Isle (Skyborne) | Alliance and Horde Skyborne | Levels 1–14. Written from the Forever quest list. |
-| 1–60 Era | Alliance and Horde | One library row. Alliance and Horde chapters share it. A step the other faction cannot take is skipped. The starter follows your race, or the starter zone you are standing in. Later chapters follow in listed order. The row shows the chapter you are on. |
+| 1–60 Era | Alliance and Horde | Each chapter on your route is its own library row, including 1–12 Durotar and 12–20 Barrens. Zephras Isle stays a separate guide. Opening a chapter stays on that chapter. A step the other faction cannot take is skipped. The starter follows your race, or the starter zone you are standing in, until you open another chapter. Later chapters follow in listed order. |
 
 Converted chapters live in `Guides/Leveling`. Chapters whose titles still end in `(Era)` stay in `Guides/Era` as reference. They are not loaded, so they do not show in the addon. Drop `(Era)` from the title, move the file to `Guides/Leveling`, and add it to `ForeverGuideMate.toc` when that chapter is converted.
 
