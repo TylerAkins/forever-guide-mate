@@ -18,7 +18,7 @@ end
 CreateFrame = nil
 C_Timer = nil
 for _, path in ipairs({
-    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua",
+    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua", "QuestPrerequisites.lua",
     "QuestAudit.lua", "QuestDialog.lua", "Navigation.lua", "TomTomWaypoints.lua",
     "MapPins.lua", "UI.lua",
 }) do
@@ -49,4 +49,4 @@ if violations > 0 then
     os.exit(1)
 end
 
-print("Chain audit passed (CHAIN_ACCEPT_AFTER_TURNIN). See docs/guide-authoring.md for manual review when adding accepts.")
+print("Chain audit passed (registered quest prerequisites). See docs/guide-authoring.md for manual review when adding accepts.")

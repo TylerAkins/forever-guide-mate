@@ -52,9 +52,11 @@ An accept must **not** use empty `dependsOn` when the client only offers the que
 
 The engine treats any accept with no `dependsOn` as **always ready** for routing. A bad chain lets the tracker jump to that accept early (especially after reload or stale saved progress).
 
-### Documented follow-up accepts (`CHAIN_ACCEPT_AFTER_TURNIN`)
+### Registered quest prerequisites
 
-`tests/lua/guide_data_checks.lua` lists accept quests that must depend on a prior turn-in in leveling/Loremaster guides (not dungeon guides). **Add a row** when you weave a multi-step storyline into a zone route. CI enforces this in `tests/lua/lint.lua`.
+`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. The engine attaches matching turn-in goals to leveling and Loremaster accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Dungeon guides retain their focused pickup behavior.
+
+Use `all` when every listed quest must be turned in. Use `any` only for true alternative breadcrumbs where one completed branch unlocks the quest. Conditions belong on the catalog entry when the chain differs by faction, race, or class. Do not copy prerequisite data from another add-on; verify it independently.
 
 When copying WC / RFC / other dungeon chains into a leveling chapter, compare the **dungeon guide** `dependsOn` and turn-in NPC pins, not just the accept text.
 
@@ -62,17 +64,22 @@ When copying WC / RFC / other dungeon chains into a leveling chapter, compare th
 
 | Check | Command | What it catches |
 |--------|---------|----------------|
-| CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions on quest steps, **chain accepts** in `CHAIN_ACCEPT_AFTER_TURNIN`, and more |
-| Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces `CHAIN_ACCEPT_AFTER_TURNIN` (same rules as lint, quick standalone pass) |
-| Quest giver audit | in game on gossip | Step deferred if the NPC does not offer that quest (see `QuestAudit.lua`) |
+| CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions, incomplete turn-in dependencies, registered prerequisite errors, and more |
+| Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces registered prerequisite references (same rules as lint, quick standalone pass) |
+| Quest giver audit | in game on gossip | Rewinds through a registered prerequisite or blocks with a diagnostic; it never silently skips (see `QuestAudit.lua`) |
 
-### Known gaps (not fully linted yet)
+### Data requiring manual review
 
-- **Turn-in `dependsOn` all objectives** when objectives only depend on accept — many older guides still omit this; see multi-objective section above.
 - **Wrong turn-in NPC** on the last route pin (1490 was turning in at Hamuul instead of Nara) — compare dungeon guides and Wowhead; no automated check.
 - **Alliance vs Horde quest id mix-ups** — partially covered by objective/accept id lint (6128 vs 6123).
 
-After editing chains, run lint and the chain audit. Add a row to `CHAIN_ACCEPT_AFTER_TURNIN` when you fix a woven prerequisite.
+After editing chains, run lint and the chain audit. Add a verified catalog entry when a quest requires an earlier quest turn-in.
+
+## Mid-guide recovery
+
+Leveling and Loremaster guides are exhaustive chapters. When opened midway, the engine keeps a valid saved step; otherwise it selects the earliest unfinished eligible route goal. Map proximity breaks ties only and cannot jump over earlier work. Completed or active quests come from client truth, which overrides stale manual, ledger, inferred, or deferred completion. While the quest APIs are still loading, the saved step remains in place.
+
+If a giver does not offer an accept, do not add a skip workaround. Register and include the verified prerequisite chain. If no verified chain exists, the tracker deliberately stops and reports the quest ID and NPC so the route can be corrected.
 
 ## Before you ship
 

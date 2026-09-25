@@ -4,8 +4,9 @@ local _, ns = ...
 -- Guide conditions are authored by hand from Wowhead, so a missing class,
 -- race, or profession requirement looks fine in the data and only shows up in
 -- game. This watches the quests an NPC actually offers. When the guide sends
--- the character to a giver who does not offer that quest, the step is deferred
--- and written to a per-character report instead of holding the tracker.
+-- the character to a giver who does not offer that quest, the step is blocked
+-- and written to a per-character report. The engine either rewinds through a
+-- registered prerequisite or stops with an actionable diagnostic.
 --
 -- The audit only observes. It never accepts, selects, or turns in a quest.
 
@@ -92,16 +93,15 @@ end
 function QuestAudit:Record(goal, questID, npc)
     local report = self:Report()
     if not report or report[goal.id] then return end
-    if type(ns.charDB.deferred) ~= "table" then ns.charDB.deferred = {} end
     report[goal.id] = {
         guide = ns.charDB.selectedGuide,
         quest = questID,
         npc = npc,
         text = goal.text,
     }
-    ns.charDB.deferred[goal.id] = true
-    self:Announce(("%s does not offer this quest to you, so the step was skipped: %s")
-        :format(npc, tostring(goal.text)))
+    if type(ns.charDB.deferred) == "table" then ns.charDB.deferred[goal.id] = nil end
+    self:Announce(("%s does not offer quest %d. Progress is blocked until its prerequisite is known: %s")
+        :format(npc, questID, tostring(goal.text)))
 end
 
 function QuestAudit:Clear(goalID)
