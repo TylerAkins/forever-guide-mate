@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2973-camp-mojache",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7595, 0.4274, "Camp Mojache",
-                    "Travel to Camp Mojache."),
-            },
-        },
-        {
             id = "accept-2973-a-new-cloak-s-sheen",
             kind = "accept",
             priority = 20,
@@ -141,18 +131,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2987-gordunni-outpost",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Gordunni Outpost.",
-            route = {
-                Point(MAP.FERALAS, 0.7485, 0.3531, "Continue toward Gordunni Outpost",
-                    "Continue toward Gordunni Outpost."),
-                Point(MAP.FERALAS, 0.7555, 0.2975, "Gordunni Outpost",
-                    "Travel to Gordunni Outpost."),
-            },
-        },
-        {
             id = "objective-2987-gordunni-cobalt",
             kind = "objective",
             priority = 110,
@@ -204,16 +182,6 @@ ns:RegisterGuide({
             priority = 140,
             text = "Use the Gordunni Scroll to accept The Gordunni Scroll.",
             complete = QuestState(2978, "activeOrCompleted"),
-        },
-        {
-            id = "travel-2980-camp-mojache",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7614, 0.4348, "Camp Mojache",
-                    "Travel to Camp Mojache."),
-            },
         },
         {
             id = "turnin-2975-the-ogres-of-feralas",
@@ -313,16 +281,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2902-camp-mojache",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7491, 0.4252, "Camp Mojache",
-                    "Travel to Camp Mojache."),
-            },
-        },
-        {
             id = "turnin-2863-alpha-strike",
             kind = "turnin",
             priority = 240,
@@ -355,21 +313,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.6952, 0.4723, "Sprite Darter",
                     "Travel to Sprite Darter."),
-            },
-        },
-        {
-            id = "travel-camp-mojache",
-            kind = "travel",
-            priority = 270,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2974, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7593, 0.4275, "Camp Mojache",
-                    "Travel to Camp Mojache."),
             },
         },
         {
@@ -408,16 +351,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2903-woodpaw-hills",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Woodpaw Hills.",
-            route = {
-                Point(MAP.FERALAS, 0.7162, 0.5592, "Krueg Skullsplitter",
-                    "Travel to Krueg Skullsplitter."),
-            },
-        },
-        {
             id = "turnin-2902-woodpaw-investigation",
             kind = "turnin",
             priority = 320,
@@ -438,16 +371,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.7160, 0.5590, "Woodpaw Hills",
                     "Travel to Woodpaw Hills."),
-            },
-        },
-        {
-            id = "travel-2976-camp-mojache",
-            kind = "travel",
-            priority = 340,
-            text = "Travel or Hearthstone to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7595, 0.4274, "Camp Mojache",
-                    "Travel to Camp Mojache."),
             },
         },
         {
@@ -508,16 +431,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7731-the-writhing-deep",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to The Writhing Deep.",
-            route = {
-                Point(MAP.FERALAS, 0.7691, 0.6152, "The Writhing Deep",
-                    "Travel to The Writhing Deep."),
-            },
-        },
-        {
             id = "objective-7731-stinglasher",
             kind = "objective",
             priority = 410,
@@ -544,16 +457,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3520-verdantis-river",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Verdantis River.",
-            route = {
-                Point(MAP.FERALAS, 0.6370, 0.5117, "Verdantis River",
-                    "Travel to Verdantis River."),
-            },
-        },
-        {
             id = "objective-3520-screecher-spirits",
             kind = "objective",
             priority = 440,
@@ -566,16 +469,6 @@ ns:RegisterGuide({
                     "Continue toward Screecher Spirits."),
                 Point(MAP.FERALAS, 0.5690, 0.4784, "Rogue Vale Screecher",
                     "Travel to Rogue Vale Screecher."),
-            },
-        },
-        {
-            id = "travel-2980-ruins-of-isildien",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Ruins of Isildien.",
-            route = {
-                Point(MAP.FERALAS, 0.6099, 0.5676, "Ruins of Isildien",
-                    "Travel to Ruins of Isildien."),
             },
         },
         {
@@ -603,16 +496,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2822-feral-scar-vale",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Feral Scar Vale.",
-            route = {
-                Point(MAP.FERALAS, 0.5540, 0.5636, "Feral Scar Vale",
-                    "Travel to Feral Scar Vale."),
-            },
-        },
-        {
             id = "objective-2822-the-mark-of-quality",
             kind = "objective",
             priority = 490,
@@ -622,16 +505,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.5540, 0.5636, "Feral Scar Yeti",
                     "Travel to Feral Scar Yeti."),
-            },
-        },
-        {
-            id = "travel-2980-camp-mojache-2",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7446, 0.4287, "Camp Mojache",
-                    "Travel to Camp Mojache."),
             },
         },
         {
@@ -714,16 +587,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.7652, 0.4320, "Rok Orhan",
                     "Travel to Rok Orhan."),
-            },
-        },
-        {
-            id = "travel-649-orgrimmar",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5636, 0.4660, "Orgrimmar",
-                    "Travel to Orgrimmar."),
             },
         },
         {
@@ -847,16 +710,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3122-camp-mojache",
-            kind = "travel",
-            priority = 690,
-            text = "Travel or Hearthstone to Camp Mojache.",
-            route = {
-                Point(MAP.FERALAS, 0.7441, 0.4338, "Camp Mojache",
-                    "Travel to Camp Mojache."),
-            },
-        },
-        {
             id = "turnin-3122-return-to-witch-doctor-uzer-i",
             kind = "turnin",
             priority = 700,
@@ -903,20 +756,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3128-high-wilderness",
-            kind = "travel",
-            priority = 740,
-            text = "Travel to High Wilderness.",
-            route = {
-                Point(MAP.FERALAS, 0.6779, 0.4972, "Continue toward High Wilderness",
-                    "Continue toward High Wilderness."),
-                Point(MAP.FERALAS, 0.6481, 0.5010, "Continue toward High Wilderness",
-                    "Continue toward High Wilderness."),
-                Point(MAP.FERALAS, 0.5684, 0.6587, "High Wilderness",
-                    "Travel to High Wilderness."),
-            },
-        },
-        {
             id = "objective-3128-1-wandering-forest-walker",
             kind = "objective",
             priority = 750,
@@ -939,17 +778,6 @@ ns:RegisterGuide({
                     "Continue toward Hippogryph Egg."),
                 Point(MAP.FERALAS, 0.5858, 0.7555, "Ruins of Isildien",
                     "Travel to Ruins of Isildien."),
-            },
-        },
-        {
-            id = "travel-3128-1-high-wilderness",
-            kind = "travel",
-            priority = 770,
-            text = "Travel to High Wilderness.",
-            complete = QuestObjective(3128, 1),
-            route = {
-                Point(MAP.FERALAS, 0.5450, 0.6838, "High Wilderness",
-                    "Travel to High Wilderness."),
             },
         },
         {

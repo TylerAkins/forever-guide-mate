@@ -78,26 +78,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-583-grom-gol-base-camp",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Grom'gol Base Camp.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3250, 0.2930, "Thysta",
-                    "Travel to Thysta."),
-            },
-        },
-        {
-            id = "travel-583-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Nesingwary's Expedition. Follow the road north, look for a little camp by the river.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3500, 0.1000, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
-            },
-        },
-        {
             id = "accept-583-welcome-to-the-jungle",
             kind = "accept",
             priority = 50,

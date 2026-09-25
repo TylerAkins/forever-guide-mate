@@ -43,26 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2948-city-of-ironforge",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.3000, 0.6600, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
-            id = "travel-3702-the-high-seat",
-            kind = "travel",
-            priority = 20,
-            text = "Travel to The High Seat.",
-            route = {
-                Point(MAP.IRONFORGE, 0.3843, 0.5522, "The High Seat",
-                    "Travel to The High Seat."),
-            },
-        },
-        {
             id = "accept-3702-the-smoldering-ruins-of-thaurissan",
             kind = "accept",
             priority = 30,
@@ -122,16 +102,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.7583, 0.2338, "Laris Geardawdle",
                     "Travel to Laris Geardawdle."),
-            },
-        },
-        {
-            id = "travel-4283-morgan-s-vigil",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8455, 0.6870, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
             },
         },
         {
@@ -199,21 +169,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BURNING_STEPPES, 0.7849, 0.2751, "Scalding Broodling",
                     "Travel to Scalding Broodling."),
-            },
-        },
-        {
-            id = "travel-4023-slither-rock",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4022, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Slither Rock.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.9366, 0.3210, "Slither Rock",
-                    "Travel to Slither Rock."),
             },
         },
         {
@@ -287,16 +242,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3823-dreadmaul-rock",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Dreadmaul Rock.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8520, 0.4389, "Dreadmaul Rock",
-                    "Travel to Dreadmaul Rock."),
-            },
-        },
-        {
             id = "objective-3823-extinguish-the-firegut",
             kind = "objective",
             priority = 210,
@@ -316,16 +261,6 @@ ns:RegisterGuide({
                     "Continue toward Extinguish the Firegut."),
                 Point(MAP.BURNING_STEPPES, 0.7999, 0.4334, "Firegut Brute",
                     "Travel to Firegut Brute."),
-            },
-        },
-        {
-            id = "travel-3701-ruins-of-thaurissan",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Ruins of Thaurissan.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6603, 0.4075, "Ruins of Thaurissan",
-                    "Travel to Ruins of Thaurissan."),
             },
         },
         {
@@ -350,16 +285,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BURNING_STEPPES, 0.5403, 0.4069, "Ruins of Thaurissan",
                     "Travel to Ruins of Thaurissan."),
-            },
-        },
-        {
-            id = "travel-4808-flame-crest",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Flame Crest.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6525, 0.2401, "Flame Crest",
-                    "Travel to Flame Crest."),
             },
         },
         {
@@ -395,16 +320,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BURNING_STEPPES, 0.6515, 0.2391, "Maxwort Uberglint",
                     "Travel to Maxwort Uberglint."),
-            },
-        },
-        {
-            id = "travel-3824-morgan-s-vigil",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8278, 0.6318, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
             },
         },
         {
@@ -455,16 +370,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3825-morgan-s-vigil",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8455, 0.6870, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
-            },
-        },
-        {
             id = "turnin-3824-gor-tesh-the-brute-lord",
             kind = "turnin",
             priority = 350,
@@ -500,16 +405,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3825-dreadmaul-rock",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Dreadmaul Rock.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.7534, 0.3861, "Dreadmaul Rock",
-                    "Travel to Dreadmaul Rock."),
-            },
-        },
-        {
             id = "objective-3825-ogre-head-on-a-stick-party",
             kind = "objective",
             priority = 390,
@@ -541,16 +436,6 @@ ns:RegisterGuide({
                     "Continue toward Dragonkin Menace."),
                 Point(MAP.BURNING_STEPPES, 0.9147, 0.5508, "Black Drake",
                     "Travel to Black Drake."),
-            },
-        },
-        {
-            id = "travel-4183-morgan-s-vigil",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8455, 0.6870, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
             },
         },
         {
@@ -589,21 +474,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-lakeshire",
-            kind = "travel",
-            priority = 450,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4184, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Lakeshire in Redridge Mountains.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2999, 0.4442, "Lakeshire",
-                    "Travel to Lakeshire."),
-            },
-        },
-        {
             id = "turnin-4183-the-true-masters",
             kind = "turnin",
             priority = 460,
@@ -624,16 +494,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.2999, 0.4442, "Magistrate Solomon",
                     "Travel to Magistrate Solomon."),
-            },
-        },
-        {
-            id = "travel-4185-stormwind-city",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Stormwind Keep in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.4671, 0.6525, "Stormwind Keep",
-                    "Travel to Stormwind Keep."),
             },
         },
         {
@@ -695,21 +555,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-lakeshire-2",
-            kind = "travel",
-            priority = 540,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4223, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Lakeshire in Redridge Mountains.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2999, 0.4442, "Lakeshire",
-                    "Travel to Lakeshire."),
-            },
-        },
-        {
             id = "turnin-4186-the-true-masters",
             kind = "turnin",
             priority = 550,
@@ -730,21 +575,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.2998, 0.4442, "Magistrate Solomon",
                     "Travel to Magistrate Solomon."),
-            },
-        },
-        {
-            id = "travel-morgan-s-vigil",
-            kind = "travel",
-            priority = 570,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4224, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8475, 0.6901, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
             },
         },
         {
@@ -771,16 +601,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4224-flame-crest",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Flame Crest.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.6502, 0.2373, "Flame Crest",
-                    "Travel to Flame Crest."),
-            },
-        },
-        {
             id = "objective-4224-the-true-masters",
             kind = "objective",
             priority = 610,
@@ -793,16 +613,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-morgan-s-vigil-2",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Morgan's Vigil.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.8475, 0.6901, "Morgan's Vigil",
-                    "Travel to Morgan's Vigil."),
-            },
-        },
-        {
             id = "turnin-4224-the-true-masters",
             kind = "turnin",
             priority = 630,
@@ -812,16 +622,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BURNING_STEPPES, 0.8473, 0.6903, "Marshal Maxwell",
                     "Travel to Marshal Maxwell."),
-            },
-        },
-        {
-            id = "travel-the-high-seat",
-            kind = "travel",
-            priority = 640,
-            text = "Travel to The High Seat in Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.3834, 0.5533, "The High Seat",
-                    "Travel to The High Seat."),
             },
         },
         {

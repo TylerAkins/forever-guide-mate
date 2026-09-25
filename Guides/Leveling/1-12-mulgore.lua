@@ -422,16 +422,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-757-brambleblade-ravine",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Brambleblade Ravine.",
-            route = {
-                Point(MAP.MULGORE, 0.5819, 0.8497, "Brambleblade Ravine",
-                    "Travel to Brambleblade Ravine."),
-            },
-        },
-        {
             id = "objective-3376-break-sharptusk",
             kind = "objective",
             priority = 280,
@@ -494,16 +484,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.5800, 0.8100, "Bristleback Invaders",
                     "Travel to Bristleback Invaders."),
-            },
-        },
-        {
-            id = "travel-763-camp-narache",
-            kind = "travel",
-            priority = 330,
-            text = "Hearth to Camp Narache.",
-            route = {
-                Point(MAP.MULGORE, 0.4491, 0.7715, "Camp Narache",
-                    "Travel to Camp Narache."),
             },
         },
         {
@@ -613,22 +593,6 @@ ns:RegisterGuide({
             text = "Get Earth Sapta from Seer Ravenfeather.",
         },
         {
-            id = "travel-kodo-rock",
-            kind = "travel",
-            priority = 420,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { race = 6 },
-                },
-            },
-            text = "Travel to Kodo Rock.",
-            route = {
-                Point(MAP.MULGORE, 0.5387, 0.8064, "Kodo Rock",
-                    "Travel to Kodo Rock."),
-            },
-        },
-        {
             id = "note-earth-sapta-2",
             kind = "note",
             priority = 430,
@@ -702,21 +666,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.3858, 0.8169, "Antur Fallow",
                     "Travel to Antur Fallow."),
-            },
-        },
-        {
-            id = "travel-bloodhoof-village",
-            kind = "travel",
-            priority = 480,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 766, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4750, 0.6020, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
             },
         },
         {
@@ -914,16 +863,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-745-mulgore",
-            kind = "travel",
-            priority = 640,
-            text = "Travel to Mulgore.",
-            route = {
-                Point(MAP.MULGORE, 0.5337, 0.7168, "Mulgore",
-                    "Travel to Mulgore."),
-            },
-        },
-        {
             id = "accept-98430-the-longwalkers",
             kind = "accept",
             priority = 641,
@@ -958,16 +897,6 @@ ns:RegisterGuide({
                     "Continue toward Sharing the Land."),
                 Point(MAP.MULGORE, 0.5416, 0.7243, "Palemane Tanner",
                     "Travel to Palemane Tanner."),
-            },
-        },
-        {
-            id = "travel-761-the-rolling-plains",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to The Rolling Plains.",
-            route = {
-                Point(MAP.MULGORE, 0.6001, 0.7062, "The Rolling Plains",
-                    "Travel to The Rolling Plains."),
             },
         },
         {
@@ -1078,16 +1007,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.5376, 0.4828, "Grawl",
                     "Travel to Grawl."),
-            },
-        },
-        {
-            id = "travel-754-bloodhoof-village",
-            kind = "travel",
-            priority = 750,
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4747, 0.6026, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
             },
         },
         {
@@ -1257,16 +1176,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-756-bloodhoof-village",
-            kind = "travel",
-            priority = 890,
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4850, 0.6046, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
-            },
-        },
-        {
             id = "turnin-754-winterhoof-cleansing",
             kind = "turnin",
             priority = 900,
@@ -1343,16 +1252,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-833-red-rocks",
-            kind = "travel",
-            priority = 960,
-            text = "Travel to Red Rocks.",
-            route = {
-                Point(MAP.MULGORE, 0.5990, 0.2556, "Red Rocks",
-                    "Travel to Red Rocks."),
-            },
-        },
-        {
             id = "accept-833-a-sacred-burial",
             kind = "accept",
             priority = 970,
@@ -1425,16 +1324,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4328, 0.4081, "Prairie Stalker",
                     "Travel to Prairie Stalker."),
-            },
-        },
-        {
-            id = "travel-861-bloodhoof-village",
-            kind = "travel",
-            priority = 1030,
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4678, 0.6017, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
             },
         },
         {
@@ -1785,21 +1674,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-758-thunderhorn-water-well",
-            kind = "travel",
-            priority = 1200,
-            conditions = {
-                all = {
-                    { race = 6 },
-                },
-            },
-            text = "Travel to Thunderhorn Water Well.",
-            route = {
-                Point(MAP.MULGORE, 0.4446, 0.4559, "Thunderhorn Water Well",
-                    "Travel to Thunderhorn Water Well."),
-            },
-        },
-        {
             id = "objective-758-thunderhorn-cleansing",
             kind = "objective",
             priority = 1210,
@@ -1814,16 +1688,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4446, 0.4559, "Thunderhorn Water Well",
                     "Travel to Thunderhorn Water Well."),
-            },
-        },
-        {
-            id = "travel-744-thunder-bluff",
-            kind = "travel",
-            priority = 1220,
-            text = "Travel to Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.3760, 0.6010, "Thunder Bluff",
-                    "Travel to Thunder Bluff."),
             },
         },
         {
@@ -1965,22 +1829,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5930-nighthaven",
-            kind = "travel",
-            priority = 1290,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 6 },
-                },
-            },
-            text = "Use Teleport: Moonglade to get to Nighthaven in Moonglade.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.5623, 0.3060, "Nighthaven",
-                    "Travel to Nighthaven."),
-            },
-        },
-        {
             id = "turnin-5922-moonglade",
             kind = "turnin",
             priority = 1300,
@@ -2069,16 +1917,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-thunder-bluff",
-            kind = "travel",
-            priority = 1350,
-            text = "Fly to Thunder Bluff.",
-            route = {
-                Point(MAP.MOONGLADE, 0.4434, 0.4578, "Bunthen Plainswind",
-                    "Travel to Bunthen Plainswind."),
-            },
-        },
-        {
             id = "turnin-5932-back-to-thunder-bluff",
             kind = "turnin",
             priority = 1360,
@@ -2114,16 +1952,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-861-the-golden-plains",
-            kind = "travel",
-            priority = 1380,
-            text = "Travel to The Golden Plains.",
-            route = {
-                Point(MAP.MULGORE, 0.5411, 0.3375, "The Golden Plains",
-                    "Travel to The Golden Plains."),
-            },
-        },
-        {
             id = "objective-861-the-hunter-s-way",
             kind = "objective",
             priority = 1390,
@@ -2133,16 +1961,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.5411, 0.3375, "Flatland Prowler",
                     "Travel to Flatland Prowler."),
-            },
-        },
-        {
-            id = "travel-765-the-venture-co-mine",
-            kind = "travel",
-            priority = 1400,
-            text = "Travel to The Venture Co. Mine.",
-            route = {
-                Point(MAP.MULGORE, 0.6143, 0.4728, "The Venture Co. Mine",
-                    "Travel to The Venture Co. Mine."),
             },
         },
         {
@@ -2221,22 +2039,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6002-southern-barrens",
-            kind = "travel",
-            priority = 1440,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 6 },
-                },
-            },
-            text = "Travel to Southern Barrens.",
-            route = {
-                Point(MAP.BARRENS, 0.4200, 0.6084, "Southern Barrens",
-                    "Travel to Southern Barrens."),
-            },
-        },
-        {
             id = "objective-6002-body-and-heart",
             kind = "objective",
             priority = 1450,
@@ -2252,16 +2054,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4200, 0.6084, "Turak Runetotem",
                     "Travel to Turak Runetotem."),
-            },
-        },
-        {
-            id = "travel-759-bloodhoof-village",
-            kind = "travel",
-            priority = 1460,
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4850, 0.6046, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
             },
         },
         {
@@ -2462,16 +2254,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-759-windfury-ridge",
-            kind = "travel",
-            priority = 1510,
-            text = "Travel to Windfury Ridge.",
-            route = {
-                Point(MAP.MULGORE, 0.5176, 0.0546, "Windfury Ridge",
-                    "Travel to Windfury Ridge."),
-            },
-        },
-        {
             id = "objective-99080-drive-them-out-1",
             kind = "objective",
             priority = 1505,
@@ -2538,16 +2320,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.3766, 0.0993, "Windfury Sorceress",
                     "Travel to Windfury Sorceress."),
-            },
-        },
-        {
-            id = "travel-886-elder-rise",
-            kind = "travel",
-            priority = 1540,
-            text = "Travel to Elder Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.7844, 0.2891, "Elder Rise",
-                    "Travel to Elder Rise."),
             },
         },
         {
@@ -2663,21 +2435,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-760-bloodhoof-village",
-            kind = "travel",
-            priority = 1610,
-            conditions = {
-                all = {
-                    { race = 6 },
-                },
-            },
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4848, 0.6048, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
-            },
-        },
-        {
             id = "turnin-759-wildmane-totem",
             kind = "turnin",
             priority = 1620,
@@ -2711,21 +2468,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-760-wildmane-water-well",
-            kind = "travel",
-            priority = 1640,
-            conditions = {
-                all = {
-                    { race = 6 },
-                },
-            },
-            text = "Travel to Wildmane Water Well.",
-            route = {
-                Point(MAP.MULGORE, 0.4267, 0.1442, "Wildmane Water Well",
-                    "Travel to Wildmane Water Well."),
-            },
-        },
-        {
             id = "objective-760-wildmane-cleansing",
             kind = "objective",
             priority = 1650,
@@ -2740,16 +2482,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4267, 0.1442, "Wildmane Water Well",
                     "Travel to Wildmane Water Well."),
-            },
-        },
-        {
-            id = "travel-bloodhoof-village-2",
-            kind = "travel",
-            priority = 1660,
-            text = "Travel to Bloodhoof Village.",
-            route = {
-                Point(MAP.MULGORE, 0.4848, 0.6048, "Bloodhoof Village",
-                    "Travel to Bloodhoof Village."),
             },
         },
         {

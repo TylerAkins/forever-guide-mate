@@ -47,21 +47,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-kharanos",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Kharanos in Dun Morogh.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.4760, 0.5260, "Kharanos",
-                    "Travel to Kharanos."),
-            },
-        },
-        {
             id = "accept-2299-to-hulfdan",
             kind = "accept",
             priority = 20,
@@ -75,21 +60,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.4760, 0.5260, "Hogral Bakkan",
                     "Travel to Hogral Bakkan."),
-            },
-        },
-        {
-            id = "travel-2298-the-forlorn-cavern",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to The Forlorn Cavern in Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.5159, 0.1468, "The Forlorn Cavern",
-                    "Travel to The Forlorn Cavern."),
             },
         },
         {
@@ -159,21 +129,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2281-lake-everstill",
-            kind = "travel",
-            priority = 80,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Lake Everstill.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2810, 0.5213, "Lake Everstill",
-                    "Travel to Lake Everstill."),
-            },
-        },
-        {
             id = "turnin-2281-redridge-rendezvous",
             kind = "turnin",
             priority = 90,
@@ -207,21 +162,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2282-alther-s-mill",
-            kind = "travel",
-            priority = 110,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Alther's Mill.",
-            route = {
-                Point(MAP.REDRIDGE, 0.5199, 0.4492, "Alther's Mill",
-                    "Travel to Alther's Mill."),
-            },
-        },
-        {
             id = "objective-2282-alther-s-mill",
             kind = "objective",
             priority = 120,
@@ -239,21 +179,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-lake-everstill",
-            kind = "travel",
-            priority = 130,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Lake Everstill.",
-            route = {
-                Point(MAP.REDRIDGE, 0.2817, 0.5208, "Lake Everstill",
-                    "Travel to Lake Everstill."),
-            },
-        },
-        {
             id = "turnin-2282-alther-s-mill",
             kind = "turnin",
             priority = 140,
@@ -268,31 +193,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.2817, 0.5208, "Lucius",
                     "Travel to Lucius."),
-            },
-        },
-        {
-            id = "travel-stormwind-city",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { race = { 4, 7, 3 } },
-                },
-            },
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.5801, 0.1657, "Stormwind City",
-                    "Travel to Stormwind City."),
-            },
-        },
-        {
-            id = "travel-244-three-corners",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Three Corners in Redridge Mountains.",
-            route = {
-                Point(MAP.REDRIDGE, 0.1532, 0.7142, "Three Corners",
-                    "Travel to Three Corners."),
             },
         },
         {
@@ -428,21 +328,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-stormwind-city-2",
-            kind = "travel",
-            priority = 280,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 121, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.6404, 0.7531, "Stormwind City",
-                    "Travel to Stormwind City."),
-            },
-        },
-        {
             id = "turnin-120-messenger-to-stormwind",
             kind = "turnin",
             priority = 290,
@@ -466,16 +351,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-119-goldshire",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4170, 0.6553, "Goldshire",
-                    "Travel to Goldshire."),
-            },
-        },
-        {
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
             priority = 320,
@@ -496,16 +371,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4170, 0.6553, "Smith Argus",
                     "Travel to Smith Argus."),
-            },
-        },
-        {
-            id = "travel-lakeshire",
-            kind = "travel",
-            priority = 340,
-            text = "Travel or Hearthstone to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3090, 0.4730, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {
@@ -609,16 +474,6 @@ ns:RegisterGuide({
             complete = QuestState(127, "complete"),
         },
         {
-            id = "travel-125-lakeshire",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3218, 0.4884, "Lakeshire",
-                    "Travel to Lakeshire."),
-            },
-        },
-        {
             id = "turnin-125-the-lost-tools",
             kind = "turnin",
             priority = 440,
@@ -689,16 +544,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-92-three-corners",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to Three Corners.",
-            route = {
-                Point(MAP.REDRIDGE, 0.1220, 0.7799, "Three Corners",
-                    "Travel to Three Corners."),
-            },
-        },
-        {
             id = "objective-92-3-tarantula",
             kind = "objective",
             priority = 510,
@@ -708,16 +553,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.1220, 0.7799, "Tarantula",
                     "Travel to Tarantula."),
-            },
-        },
-        {
-            id = "travel-92-lakeridge-highway",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to Lakeridge Highway.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3088, 0.8320, "Lakeridge Highway",
-                    "Travel to Lakeridge Highway."),
             },
         },
         {
@@ -768,16 +603,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.REDRIDGE, 0.3337, 0.6713, "Black Dragon Whelp",
                     "Travel to Black Dragon Whelp."),
-            },
-        },
-        {
-            id = "travel-131-lakeshire",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3074, 0.6015, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {
@@ -864,18 +689,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-89-redridge-canyons",
-            kind = "travel",
-            priority = 630,
-            text = "Travel to Redridge Canyons.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3172, 0.4124, "Continue toward Redridge Canyons",
-                    "Continue toward Redridge Canyons."),
-                Point(MAP.REDRIDGE, 0.2595, 0.3577, "Redridge Canyons",
-                    "Travel to Redridge Canyons."),
-            },
-        },
-        {
             id = "objective-124-a-baying-of-gnolls",
             kind = "objective",
             priority = 640,
@@ -901,16 +714,6 @@ ns:RegisterGuide({
                     "Continue toward The Everstill Bridge."),
                 Point(MAP.REDRIDGE, 0.3118, 0.2270, "Redridge Mystic",
                     "Travel to Redridge Mystic."),
-            },
-        },
-        {
-            id = "travel-lakeshire-2",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to Lakeshire.",
-            route = {
-                Point(MAP.REDRIDGE, 0.3218, 0.4884, "Lakeshire",
-                    "Travel to Lakeshire."),
             },
         },
         {
@@ -984,21 +787,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2360-si-7",
-            kind = "travel",
-            priority = 730,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to SI:7 in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.7591, 0.5995, "SI:7",
-                    "Travel to SI:7."),
-            },
-        },
-        {
             id = "accept-2360-mathias-and-the-defias",
             kind = "accept",
             priority = 740,
@@ -1012,21 +800,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.7591, 0.5995, "Master Mathias Shaw",
                     "Travel to Master Mathias Shaw."),
-            },
-        },
-        {
-            id = "travel-2360-the-dust-plains",
-            kind = "travel",
-            priority = 750,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to The Dust Plains in Westfall.",
-            route = {
-                Point(MAP.WESTFALL, 0.6845, 0.7008, "The Dust Plains",
-                    "Travel to The Dust Plains."),
             },
         },
         {
@@ -1077,21 +850,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.6951, 0.7482, "Malformed Defias Drone",
                     "Travel to Malformed Defias Drone."),
-            },
-        },
-        {
-            id = "travel-2607-si-7",
-            kind = "travel",
-            priority = 790,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to SI:7 in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.7591, 0.5995, "SI:7",
-                    "Travel to SI:7."),
             },
         },
         {

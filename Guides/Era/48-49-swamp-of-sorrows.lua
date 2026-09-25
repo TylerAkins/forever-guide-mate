@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2784-stonard",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Stonard.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.4513, 0.5664, "Stonard",
-                    "Travel to Stonard."),
-            },
-        },
-        {
             id = "note-2784-stonard",
             kind = "note",
             priority = 20,
@@ -125,16 +115,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2622-stonard",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Stonard.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.4785, 0.5497, "Stonard",
-                    "Travel to Stonard."),
-            },
-        },
-        {
             id = "turnin-2621-the-disgraced-one",
             kind = "turnin",
             priority = 90,
@@ -181,16 +161,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1428-misty-reed-strand",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Misty Reed Strand.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.8375, 0.8044, "Misty Reed Strand",
-                    "Travel to Misty Reed Strand."),
-            },
-        },
-        {
             id = "accept-1428-continued-threat",
             kind = "accept",
             priority = 140,
@@ -199,16 +169,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.8375, 0.8044, "Katar",
                     "Travel to Katar."),
-            },
-        },
-        {
-            id = "travel-2623-stagalbog-cave",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to Stagalbog Cave.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6652, 0.7636, "Stagalbog Cave",
-                    "Travel to Stagalbog Cave."),
             },
         },
         {
@@ -282,21 +242,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.3424, 0.6611, "Thadius Grimshade",
                     "Travel to Thadius Grimshade."),
-            },
-        },
-        {
-            id = "travel-booty-bay",
-            kind = "travel",
-            priority = 220,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 580, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Salty Sailor Tavern in Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2713, 0.7744, "The Salty Sailor Tavern",
-                    "Travel to The Salty Sailor Tavern."),
             },
         },
         {

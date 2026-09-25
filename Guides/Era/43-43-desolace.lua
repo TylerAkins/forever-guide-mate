@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1437-nijel-s-point",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Nijel's Point.",
-            route = {
-                Point(MAP.DESOLACE, 0.6640, 0.0974, "Nijel's Point",
-                    "Travel to Nijel's Point."),
-            },
-        },
-        {
             id = "accept-1466-reagents-for-reclaimers-inc",
             kind = "accept",
             priority = 20,
@@ -87,16 +77,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6134-kodo-graveyard",
-            kind = "travel",
-            priority = 50,
-            text = "Travel to Kodo Graveyard.",
-            route = {
-                Point(MAP.DESOLACE, 0.4786, 0.6179, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "accept-6134-ghost-o-plasm-round-up",
             kind = "accept",
             priority = 60,
@@ -124,21 +104,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1374-magram-village",
-            kind = "travel",
-            priority = 80,
-            conditions = {
-                all = {
-                    { quest = { id = 1374, state = "completed" } },
-                },
-            },
-            text = "Travel to Magram Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.6643, 0.7993, "Magram Village",
-                    "Travel to Magram Village."),
-            },
-        },
-        {
             id = "objective-1374-khan-jehn",
             kind = "objective",
             priority = 90,
@@ -153,16 +118,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6643, 0.7993, "Khan Jehn",
                     "Travel to Khan Jehn."),
-            },
-        },
-        {
-            id = "travel-261-valley-of-bones",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Valley of Bones.",
-            route = {
-                Point(MAP.DESOLACE, 0.6391, 0.9074, "Valley of Bones",
-                    "Travel to Valley of Bones."),
             },
         },
         {
@@ -209,16 +164,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-kodo-graveyard",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Kodo Graveyard.",
-            route = {
-                Point(MAP.DESOLACE, 0.4783, 0.6183, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "turnin-6134-ghost-o-plasm-round-up",
             kind = "turnin",
             priority = 150,
@@ -228,16 +173,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.4783, 0.6183, "Hornizz Brimbuzzle",
                     "Travel to Hornizz Brimbuzzle."),
-            },
-        },
-        {
-            id = "travel-gelkis-village",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Gelkis Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.3625, 0.7927, "Gelkis Village",
-                    "Travel to Gelkis Village."),
             },
         },
         {
@@ -255,16 +190,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3625, 0.7927, "Uthek the Wise",
                     "Travel to Uthek the Wise."),
-            },
-        },
-        {
-            id = "travel-nijel-s-point",
-            kind = "travel",
-            priority = 180,
-            text = "Travel or Hearthstone to Nijel's Point.",
-            route = {
-                Point(MAP.DESOLACE, 0.6620, 0.0964, "Nijel's Point",
-                    "Travel to Nijel's Point."),
             },
         },
         {

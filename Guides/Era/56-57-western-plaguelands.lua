@@ -43,21 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-ironforge",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5903, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The High Seat in Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.3834, 0.5533, "The High Seat",
-                    "Travel to The High Seat."),
-            },
-        },
-        {
             id = "accept-1019-the-new-frontier",
             kind = "accept",
             priority = 20,
@@ -92,40 +77,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.1850, 0.5161, "Innkeeper Firebrew",
                     "Travel to Innkeeper Firebrew."),
-            },
-        },
-        {
-            id = "travel-chillwind-camp",
-            kind = "travel",
-            priority = 50,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5903, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6724, 0.3080, "Continue toward Chillwind Camp",
-                    "Continue toward Chillwind Camp."),
-                Point(MAP.HILLSBRAD, 0.6828, 0.1482, "Continue toward Chillwind Camp",
-                    "Continue toward Chillwind Camp."),
-                Point(MAP.HILLSBRAD, 0.7158, 0.0798, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
-            },
-        },
-        {
-            id = "travel-chillwind-camp-2",
-            kind = "travel",
-            priority = 60,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 5903, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4293, 0.8507, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
             },
         },
         {
@@ -171,16 +122,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.5043, 0.7868, "Skeletal Flayer",
                     "Travel to Skeletal Flayer."),
-            },
-        },
-        {
-            id = "travel-5097-chillwind-camp",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4271, 0.8404, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
             },
         },
         {
@@ -238,20 +179,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.4298, 0.8451, "High Priestess MacDonnell",
                     "Travel to High Priestess MacDonnell."),
-            },
-        },
-        {
-            id = "travel-5097-ruins-of-andorhal",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to Ruins of Andorhal.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4180, 0.8012, "Continue toward Ruins of Andorhal",
-                    "Continue toward Ruins of Andorhal."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3626, 0.7813, "Continue toward Ruins of Andorhal",
-                    "Continue toward Ruins of Andorhal."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3867, 0.7144, "Ruins of Andorhal",
-                    "Travel to Ruins of Andorhal."),
             },
         },
         {
@@ -389,16 +316,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5216-felstone-field",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Felstone Field.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3714, 0.5735, "Felstone Field",
-                    "Travel to Felstone Field."),
-            },
-        },
-        {
             id = "objective-5216-target-felstone-field",
             kind = "objective",
             priority = 290,
@@ -465,21 +382,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.3873, 0.5525, "Felstone Field",
                     "Travel to Felstone Field."),
-            },
-        },
-        {
-            id = "travel-stormwind-city",
-            kind = "travel",
-            priority = 350,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 6184, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Use Hearthstone and fly to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.4848, 0.3050, "Stormwind City",
-                    "Travel to Stormwind City."),
             },
         },
         {
@@ -590,16 +492,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6185-chillwind-camp",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4362, 0.8451, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
-            },
-        },
-        {
             id = "turnin-6184-flint-shadowmore",
             kind = "turnin",
             priority = 460,
@@ -692,16 +584,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5021-felstone-field",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Felstone Field.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3839, 0.5405, "Felstone Field",
-                    "Travel to Felstone Field."),
-            },
-        },
-        {
             id = "turnin-5050-good-luck-charm",
             kind = "turnin",
             priority = 550,
@@ -758,16 +640,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.3840, 0.5404, "Janice Felstone",
                     "Travel to Janice Felstone."),
-            },
-        },
-        {
-            id = "travel-5219-dalson-s-tears",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to Dalson's Tears.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4780, 0.5070, "Dalson's Tears",
-                    "Travel to Dalson's Tears."),
             },
         },
         {
@@ -874,16 +746,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5222-chillwind-camp",
-            kind = "travel",
-            priority = 700,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4296, 0.8448, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
-            },
-        },
-        {
             id = "turnin-5220-return-to-chillwind-camp",
             kind = "turnin",
             priority = 710,
@@ -916,16 +778,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.4267, 0.8377, "Alchemist Arbington",
                     "Travel to Alchemist Arbington."),
-            },
-        },
-        {
-            id = "travel-5222-the-writhing-haunt",
-            kind = "travel",
-            priority = 740,
-            text = "Travel to The Writhing Haunt.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5301, 0.6605, "The Writhing Haunt",
-                    "Travel to The Writhing Haunt."),
             },
         },
         {
@@ -987,16 +839,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-5225-gahrron-s-withering",
-            kind = "travel",
-            priority = 800,
-            text = "Travel to Gahrron's Withering.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.6269, 0.5887, "Gahrron's Withering",
-                    "Travel to Gahrron's Withering."),
-            },
-        },
-        {
             id = "objective-5225-target-gahrron-s-withering",
             kind = "objective",
             priority = 810,
@@ -1029,16 +871,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.6258, 0.5857, "Gahrron's Withering",
                     "Travel to Gahrron's Withering."),
-            },
-        },
-        {
-            id = "travel-5533-chillwind-camp",
-            kind = "travel",
-            priority = 840,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4296, 0.8447, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
             },
         },
         {

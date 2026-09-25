@@ -1284,22 +1284,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6421-2-boulderslide-cavern",
-            kind = "travel",
-            priority = 710,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                },
-            },
-            text = "Travel to Boulderslide Cavern.",
-            complete = QuestObjective(6421, 2),
-            route = {
-                Point(MAP.STONETALON, 0.5888, 0.9037, "Boulderslide Cavern",
-                    "Travel to Boulderslide Cavern."),
-            },
-        },
-        {
             id = "objective-6421-boulderslide-ravine",
             kind = "objective",
             priority = 720,

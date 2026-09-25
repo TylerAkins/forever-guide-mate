@@ -82,21 +82,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1718-orgrimmar",
-            kind = "travel",
-            priority = 30,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Orgrimmar",
-                    "Travel to Orgrimmar."),
-            },
-        },
-        {
             id = "accept-1718-the-islander",
             kind = "accept",
             priority = 40,
@@ -110,21 +95,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
                     "Travel to Sorek."),
-            },
-        },
-        {
-            id = "travel-1719-fray-island",
-            kind = "travel",
-            priority = 50,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Travel to Fray Island.",
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4910, "Fray Island",
-                    "Travel to Fray Island."),
             },
         },
         {
@@ -195,22 +165,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 100,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { ["not"] = { quest = { id = 1801, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3550, "Ratchet",
-                    "Travel to Ratchet."),
-            },
-        },
-        {
             id = "accept-1801-tome-of-cabal",
             kind = "accept",
             priority = 110,
@@ -224,22 +178,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6260, 0.3550, "Strahad Farsan",
                     "Travel to Strahad Farsan."),
-            },
-        },
-        {
-            id = "travel-undercity",
-            kind = "travel",
-            priority = 120,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { ["not"] = { quest = { id = 1803, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.7700, 0.3560, "Undercity",
-                    "Travel to Undercity."),
             },
         },
         {
@@ -293,22 +231,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-undercity-2",
-            kind = "travel",
-            priority = 160,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { ["not"] = { quest = { id = 1805, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.7700, 0.3560, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "turnin-1803-tome-of-cabal",
             kind = "turnin",
             priority = 170,
@@ -353,21 +275,6 @@ ns:RegisterGuide({
             text = "Kill Dragonmaw Bonewarder and Dragonmaw Shadowwarder to collect 3 Rod of Channeling (49.7.4, 46.6).",
             dependsOn = { "accept-1805-tome-of-cabal" },
             complete = QuestState(1805, "complete"),
-        },
-        {
-            id = "travel-1795-ratchet",
-            kind = "travel",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3550, "Ratchet",
-                    "Travel to Ratchet."),
-            },
         },
         {
             id = "turnin-1805-tome-of-cabal",
@@ -434,22 +341,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6260, 0.3550, "Strahad Farsan",
                     "Travel to Strahad Farsan."),
-            },
-        },
-        {
-            id = "travel-655-hammerfall",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Hammerfall in Arathi Highlands.",
-            route = {
-                Point(MAP.ARATHI, 0.3077, 0.5166, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.4549, 0.5900, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.5173, 0.5786, "Continue toward Hammerfall",
-                    "Continue toward Hammerfall."),
-                Point(MAP.ARATHI, 0.7298, 0.4335, "Hammerfall",
-                    "Travel to Hammerfall."),
             },
         },
         {

@@ -42,21 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-booty-bay",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 2872, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2778, 0.7705, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "accept-2872-stoley-s-debt",
             kind = "accept",
             priority = 20,
@@ -76,16 +61,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2694, 0.7732, "Krazek",
                     "Travel to Krazek."),
-            },
-        },
-        {
-            id = "travel-992-gadgetzan",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5022, 0.2749, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {
@@ -151,16 +126,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.5249, 0.2791, "Innkeeper Fizzgrimble",
                     "Travel to Innkeeper Fizzgrimble."),
-            },
-        },
-        {
-            id = "travel-1118-mirage-raceway",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Mirage Raceway.",
-            route = {
-                Point(MAP.THOUSAND_NEEDLES, 0.7780, 0.7723, "Mirage Raceway",
-                    "Travel to Mirage Raceway."),
             },
         },
         {
@@ -275,16 +240,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1690-gadgetzan",
-            kind = "travel",
-            priority = 210,
-            text = "Travel or Hearthstone to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5211, 0.2763, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
-        },
-        {
             id = "turnin-1188-safety-first",
             kind = "turnin",
             priority = 220,
@@ -311,16 +266,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.5982, 0.2465, "Wastewander Thief",
                     "Travel to Wastewander Thief."),
-            },
-        },
-        {
-            id = "travel-8365-steamwheedle-port",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Steamwheedle Port.",
-            route = {
-                Point(MAP.TANARIS, 0.6651, 0.2243, "Steamwheedle Port",
-                    "Travel to Steamwheedle Port."),
             },
         },
         {
@@ -404,16 +349,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2876-lost-rigger-cove",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Lost Rigger Cove.",
-            route = {
-                Point(MAP.TANARIS, 0.6855, 0.4148, "Lost Rigger Cove",
-                    "Travel to Lost Rigger Cove."),
-            },
-        },
-        {
             id = "objective-2875-wanted-andre-firebeard",
             kind = "objective",
             priority = 330,
@@ -434,16 +369,6 @@ ns:RegisterGuide({
             complete = QuestState(2873, "complete"),
             route = {
                 Point(MAP.TANARIS, 0.7217, 0.4677, "Lost Rigger Cove",
-                    "Travel to Lost Rigger Cove."),
-            },
-        },
-        {
-            id = "travel-2873-lost-rigger-cove",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to Lost Rigger Cove.",
-            route = {
-                Point(MAP.TANARIS, 0.7275, 0.4711, "Lost Rigger Cove",
                     "Travel to Lost Rigger Cove."),
             },
         },
@@ -477,16 +402,6 @@ ns:RegisterGuide({
             priority = 380,
             text = "Kill pirates and check for Pirate's Footlocker and open it until you find Water-Damaged Ship Schedule to start a new quest.",
             complete = QuestState(2876, "complete"),
-        },
-        {
-            id = "travel-1691-gadgetzan",
-            kind = "travel",
-            priority = 390,
-            text = "Travel or Hearthstone to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5247, 0.2843, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
         },
         {
             id = "turnin-1707-water-pouch-bounty",
@@ -524,16 +439,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-992-sandsorrow-watch",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Sandsorrow Watch.",
-            route = {
-                Point(MAP.TANARIS, 0.3940, 0.2926, "Sandsorrow Watch",
-                    "Travel to Sandsorrow Watch."),
-            },
-        },
-        {
             id = "objective-992-gadgetzan-water-survey",
             kind = "objective",
             priority = 440,
@@ -546,16 +451,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1691-gadgetzan-2",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5247, 0.2843, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
-        },
-        {
             id = "turnin-992-gadgetzan-water-survey",
             kind = "turnin",
             priority = 460,
@@ -565,16 +460,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.5021, 0.2747, "Senior Surveyor Fizzledowser",
                     "Travel to Senior Surveyor Fizzledowser."),
-            },
-        },
-        {
-            id = "travel-1691-steamwheedle-port",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Steamwheedle Port.",
-            route = {
-                Point(MAP.TANARIS, 0.6655, 0.2226, "Steamwheedle Port",
-                    "Travel to Steamwheedle Port."),
             },
         },
         {
@@ -674,16 +559,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.6100, 0.3749, "Wastewander Shadow Mage",
                     "Travel to Wastewander Shadow Mage."),
-            },
-        },
-        {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5247, 0.2843, "Gadgetzan",
-                    "Travel to Gadgetzan."),
             },
         },
         {

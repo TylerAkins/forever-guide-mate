@@ -63,3 +63,5 @@ All notable changes to this project are documented here.
 - Converted Era chapters, the ones whose titles no longer end in (Era), live in Guides/Leveling. Chapters that still say (Era) stay in Guides/Era and stay unloaded.
 - The README and the zone Loremaster notes match that layout. A converted chapter moves from Guides/Era to Guides/Leveling. A Loremaster route follows the leveling walk.
 - Each converted Era chapter has its own Leveling library row, so 12-20 Barrens is listed with Zephras Isle and 1-12 Durotar. Opening a chapter stays on that chapter.
+- Removed travel steps from the leveling, Loremaster, and Era guides. TomTom already points at the next pin, and those steps did not auto-clear. Dungeon entrance steps stay.
+- Kept the travel steps that are the quest: The Forgotten Pools, Boulderslide Cavern, Frostmane Hold, the Altar of Zul, and the Gaping Chasm. Those clear when the discovery objective is done.

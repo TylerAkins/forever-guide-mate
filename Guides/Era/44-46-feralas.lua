@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2821-feathermoon-stronghold",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3063, 0.4272, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
-            },
-        },
-        {
             id = "accept-2821-the-mark-of-quality",
             kind = "accept",
             priority = 20,
@@ -140,16 +130,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2867-ruins-of-solarsal",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Ruins of Solarsal.",
-            route = {
-                Point(MAP.FERALAS, 0.2640, 0.5220, "Ruins of Solarsal",
-                    "Travel to Ruins of Solarsal."),
-            },
-        },
-        {
             id = "turnin-2866-the-ruins-of-solarsal",
             kind = "turnin",
             priority = 110,
@@ -170,16 +150,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.2640, 0.5220, "Ruins of Solarsal",
                     "Travel to Ruins of Solarsal."),
-            },
-        },
-        {
-            id = "travel-3130-feathermoon-stronghold",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3027, 0.4616, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
         {
@@ -264,16 +234,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2870-shalzaru-s-lair",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Shalzaru's Lair.",
-            route = {
-                Point(MAP.FERALAS, 0.2590, 0.6713, "Shalzaru's Lair",
-                    "Travel to Shalzaru's Lair."),
-            },
-        },
-        {
             id = "objective-2870-against-lord-shalzaru",
             kind = "objective",
             priority = 220,
@@ -285,18 +245,6 @@ ns:RegisterGuide({
                     "Continue toward Against Lord Shalzaru."),
                 Point(MAP.FERALAS, 0.2847, 0.7044, "Lord Shalzaru",
                     "Travel to Lord Shalzaru."),
-            },
-        },
-        {
-            id = "travel-2871-feathermoon-stronghold",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.2590, 0.6713, "Continue toward Feathermoon Stronghold",
-                    "Continue toward Feathermoon Stronghold."),
-                Point(MAP.FERALAS, 0.3039, 0.4618, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
         {
@@ -332,16 +280,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.3008, 0.4507, "Vestia Moonspear",
                     "Travel to Vestia Moonspear."),
-            },
-        },
-        {
-            id = "travel-3520-the-forgotten-coast",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to The Forgotten Coast.",
-            route = {
-                Point(MAP.FERALAS, 0.4400, 0.3637, "The Forgotten Coast",
-                    "Travel to The Forgotten Coast."),
             },
         },
         {
@@ -450,22 +388,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2821-feral-scar-vale",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Feral Scar Vale.",
-            route = {
-                Point(MAP.FERALAS, 0.4721, 0.4463, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.4882, 0.4562, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.5471, 0.5276, "Continue toward Feral Scar Vale",
-                    "Continue toward Feral Scar Vale."),
-                Point(MAP.FERALAS, 0.5554, 0.5712, "Feral Scar Vale",
-                    "Travel to Feral Scar Vale."),
-            },
-        },
-        {
             id = "objective-2821-the-mark-of-quality",
             kind = "objective",
             priority = 380,
@@ -475,16 +397,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.5540, 0.5636, "Feral Scar Yeti",
                     "Travel to Feral Scar Yeti."),
-            },
-        },
-        {
-            id = "travel-2982-ruins-of-isildien",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Ruins of Isildien.",
-            route = {
-                Point(MAP.FERALAS, 0.6141, 0.5541, "Ruins of Isildien",
-                    "Travel to Ruins of Isildien."),
             },
         },
         {
@@ -601,16 +513,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4135-woodpaw-hills",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Woodpaw Hills.",
-            route = {
-                Point(MAP.FERALAS, 0.7330, 0.5631, "Woodpaw Hills",
-                    "Travel to Woodpaw Hills."),
-            },
-        },
-        {
             id = "turnin-4131-the-woodpaw-gnolls",
             kind = "turnin",
             priority = 490,
@@ -639,16 +541,6 @@ ns:RegisterGuide({
             priority = 510,
             text = "Use the Undelivered Parcel to accept Thalanaar Delivery.",
             complete = QuestState(4281, "activeOrCompleted"),
-        },
-        {
-            id = "travel-4265-the-writhing-deep",
-            kind = "travel",
-            priority = 520,
-            text = "Travel to The Writhing Deep.",
-            route = {
-                Point(MAP.FERALAS, 0.7307, 0.6397, "The Writhing Deep",
-                    "Travel to The Writhing Deep."),
-            },
         },
         {
             id = "turnin-4135-the-writhing-deep",
@@ -688,16 +580,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-thalanaar",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Thalanaar.",
-            route = {
-                Point(MAP.FERALAS, 0.8965, 0.4658, "Thalanaar",
-                    "Travel to Thalanaar."),
-            },
-        },
-        {
             id = "turnin-4281-thalanaar-delivery",
             kind = "turnin",
             priority = 570,
@@ -707,16 +589,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.8965, 0.4658, "Falfindel Waywarder",
                     "Travel to Falfindel Waywarder."),
-            },
-        },
-        {
-            id = "travel-4266-feathermoon-stronghold",
-            kind = "travel",
-            priority = 580,
-            text = "Travel or Hearthstone to Feathermoon Stronghold.",
-            route = {
-                Point(MAP.FERALAS, 0.3062, 0.4272, "Feathermoon Stronghold",
-                    "Travel to Feathermoon Stronghold."),
             },
         },
         {
@@ -790,26 +662,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3022-darnassus",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to Darnassus.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3988, 0.4221, "Darnassus",
-                    "Travel to Darnassus."),
-            },
-        },
-        {
-            id = "travel-temple-of-the-moon",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to Temple of the Moon.",
-            route = {
-                Point(MAP.DARNASSUS, 0.4176, 0.8552, "Temple of the Moon",
-                    "Travel to Temple of the Moon."),
-            },
-        },
-        {
             id = "turnin-4267-rise-of-the-silithid",
             kind = "turnin",
             priority = 670,
@@ -831,18 +683,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.3902, 0.8155, "Tyrande Whisperwind",
                     "Travel to Tyrande Whisperwind."),
-            },
-        },
-        {
-            id = "travel-3661-rut-theran-village",
-            kind = "travel",
-            priority = 690,
-            text = "Travel to Rut'theran Village.",
-            route = {
-                Point(MAP.TELDRASSIL, 0.2935, 0.4142, "Continue toward Rut'theran Village",
-                    "Continue toward Rut'theran Village."),
-                Point(MAP.TELDRASSIL, 0.5550, 0.9205, "Rut'theran Village",
-                    "Travel to Rut'theran Village."),
             },
         },
         {

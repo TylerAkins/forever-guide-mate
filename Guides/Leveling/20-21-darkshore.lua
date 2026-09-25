@@ -277,22 +277,6 @@ ns:RegisterGuide({
             complete = QuestState(1649, "activeOrCompleted"),
         },
         {
-            id = "travel-cathedral-of-light",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { quest = { id = 1649, state = "completed" } },
-                },
-            },
-            text = "Travel to Cathedral of Light.",
-            route = {
-                Point(MAP.STORMWIND, 0.3985, 0.2991, "Cathedral of Light",
-                    "Travel to Cathedral of Light."),
-            },
-        },
-        {
             id = "turnin-1649-the-tome-of-valor",
             kind = "turnin",
             priority = 160,
@@ -420,22 +404,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-cathedral-of-light-2",
-            kind = "travel",
-            priority = 230,
-            conditions = {
-                all = {
-                    { class = 2 },
-                    { quest = { id = 1649, state = "completed" } },
-                },
-            },
-            text = "Travel to Cathedral of Light.",
-            route = {
-                Point(MAP.STORMWIND, 0.3985, 0.2991, "Cathedral of Light",
-                    "Travel to Cathedral of Light."),
-            },
-        },
-        {
             id = "turnin-1652-the-tome-of-valor",
             kind = "turnin",
             priority = 240,
@@ -451,16 +419,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.3982, 0.2978, "Duthorian Rall",
                     "Travel to Duthorian Rall."),
-            },
-        },
-        {
-            id = "travel-4740-auberdine",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Auberdine.",
-            route = {
-                Point(MAP.DARKSHORE, 0.3721, 0.4427, "Auberdine",
-                    "Travel to Auberdine."),
             },
         },
         {
@@ -618,16 +576,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3932, 0.4345, "Terenthis",
                     "Travel to Terenthis."),
-            },
-        },
-        {
-            id = "travel-944-grove-of-the-ancients",
-            kind = "travel",
-            priority = 390,
-            text = "Travel to Grove of the Ancients.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4355, 0.7632, "Grove of the Ancients",
-                    "Travel to Grove of the Ancients."),
             },
         },
         {
@@ -868,16 +816,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3740, 0.4020, "Thundris Windweaver",
                     "Travel to Thundris Windweaver."),
-            },
-        },
-        {
-            id = "travel-grove-of-the-ancients",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Grove of the Ancients.",
-            route = {
-                Point(MAP.DARKSHORE, 0.4355, 0.7632, "Grove of the Ancients",
-                    "Travel to Grove of the Ancients."),
             },
         },
         {

@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-5581-shadowprey-village",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Shadowprey Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.2578, 0.6820, "Shadowprey Village",
-                    "Travel to Shadowprey Village."),
-            },
-        },
-        {
             id = "accept-5381-hand-of-iruxos",
             kind = "accept",
             priority = 20,
@@ -58,16 +48,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.2579, 0.6828, "Taiga Wisemane",
                     "Travel to Taiga Wisemane."),
-            },
-        },
-        {
-            id = "travel-5381-thunder-axe-fortress",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Thunder Axe Fortress.",
-            route = {
-                Point(MAP.DESOLACE, 0.5400, 0.2900, "Thunder Axe Fortress",
-                    "Travel to Thunder Axe Fortress."),
             },
         },
         {
@@ -122,16 +102,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6134-kodo-graveyard",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Kodo Graveyard.",
-            route = {
-                Point(MAP.DESOLACE, 0.4783, 0.6174, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "accept-6134-ghost-o-plasm-round-up",
             kind = "accept",
             priority = 90,
@@ -140,16 +110,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.4783, 0.6174, "Hornizz Brimbuzzle",
                     "Travel to Hornizz Brimbuzzle."),
-            },
-        },
-        {
-            id = "travel-1488-ghost-walker-post",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5257, 0.5437, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
             },
         },
         {
@@ -166,16 +126,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.5257, 0.5437, "Takata Steelblade",
                     "Travel to Takata Steelblade."),
-            },
-        },
-        {
-            id = "travel-1374-magram-village",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Magram Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.6624, 0.8028, "Magram Village",
-                    "Travel to Magram Village."),
             },
         },
         {
@@ -196,16 +146,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-261-valley-of-bones",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Valley of Bones.",
-            route = {
-                Point(MAP.DESOLACE, 0.6391, 0.9074, "Valley of Bones",
-                    "Travel to Valley of Bones."),
-            },
-        },
-        {
             id = "objective-6134-ghost-o-plasm-round-up",
             kind = "objective",
             priority = 150,
@@ -215,16 +155,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.6387, 0.9171, "Magrami Spectre",
                     "Travel to Magrami Spectre."),
-            },
-        },
-        {
-            id = "travel-1488-mannoroc-coven",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Mannoroc Coven.",
-            route = {
-                Point(MAP.DESOLACE, 0.5585, 0.7773, "Mannoroc Coven",
-                    "Travel to Mannoroc Coven."),
             },
         },
         {
@@ -274,16 +204,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-ghost-walker-post",
-            kind = "travel",
-            priority = 200,
-            text = "Travel to Ghost Walker Post.",
-            route = {
-                Point(MAP.DESOLACE, 0.5257, 0.5434, "Ghost Walker Post",
-                    "Travel to Ghost Walker Post."),
-            },
-        },
-        {
             id = "turnin-1488-the-corrupter",
             kind = "turnin",
             priority = 210,
@@ -301,16 +221,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-kodo-graveyard",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Kodo Graveyard.",
-            route = {
-                Point(MAP.DESOLACE, 0.4783, 0.6174, "Kodo Graveyard",
-                    "Travel to Kodo Graveyard."),
-            },
-        },
-        {
             id = "turnin-6134-ghost-o-plasm-round-up",
             kind = "turnin",
             priority = 230,
@@ -320,16 +230,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.4783, 0.6174, "Hornizz Brimbuzzle",
                     "Travel to Hornizz Brimbuzzle."),
-            },
-        },
-        {
-            id = "travel-gelkis-village",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Gelkis Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.3623, 0.7922, "Gelkis Village",
-                    "Travel to Gelkis Village."),
             },
         },
         {
@@ -347,16 +247,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DESOLACE, 0.3623, 0.7922, "Uthek the Wise",
                     "Travel to Uthek the Wise."),
-            },
-        },
-        {
-            id = "travel-shadowprey-village",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Shadowprey Village.",
-            route = {
-                Point(MAP.DESOLACE, 0.2581, 0.6821, "Shadowprey Village",
-                    "Travel to Shadowprey Village."),
             },
         },
         {

@@ -45,16 +45,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-1123-thunder-bluff",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Elder Rise in Thunder Bluff.",
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.7570, 0.3154, "Elder Rise",
-                    "Travel to Elder Rise."),
-            },
-        },
-        {
             id = "accept-1000-the-new-frontier",
             kind = "accept",
             priority = 20,
@@ -122,16 +112,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1124-nighthaven",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Nighthaven in.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5172, 0.4507, "Nighthaven",
-                    "Travel to Nighthaven."),
-            },
-        },
-        {
             id = "turnin-1123-rabine-saturna",
             kind = "turnin",
             priority = 90,
@@ -166,28 +146,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1125-silithus",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Silithus.",
-            route = {
-                Point(MAP.SILITHUS, 0.2912, 0.2211, "Continue toward Silithus",
-                    "Continue toward Silithus."),
-                Point(MAP.SILITHUS, 0.3006, 0.1041, "Silithus",
-                    "Travel to Silithus."),
-            },
-        },
-        {
-            id = "travel-1125-valor-s-rest",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Valor's Rest in Silithus.",
-            route = {
-                Point(MAP.SILITHUS, 0.8183, 0.1883, "Valor's Rest",
-                    "Travel to Valor's Rest."),
-            },
-        },
-        {
             id = "turnin-1124-wasteland",
             kind = "turnin",
             priority = 140,
@@ -208,16 +166,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.8179, 0.1874, "Layo Starstrike",
                     "Travel to Layo Starstrike."),
-            },
-        },
-        {
-            id = "travel-1125-southwind-village",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Southwind Village.",
-            route = {
-                Point(MAP.SILITHUS, 0.6022, 0.5248, "Southwind Village",
-                    "Travel to Southwind Village."),
             },
         },
         {
@@ -245,16 +193,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1125-valor-s-rest-2",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Valor's Rest.",
-            route = {
-                Point(MAP.SILITHUS, 0.8187, 0.1888, "Valor's Rest",
-                    "Travel to Valor's Rest."),
-            },
-        },
-        {
             id = "accept-1126-hive-in-the-tower",
             kind = "accept",
             priority = 200,
@@ -263,16 +201,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.8187, 0.1893, "Layo Starstrike",
                     "Travel to Layo Starstrike."),
-            },
-        },
-        {
-            id = "travel-1126-southwind-village",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Southwind Village.",
-            route = {
-                Point(MAP.SILITHUS, 0.6022, 0.5248, "Southwind Village",
-                    "Travel to Southwind Village."),
             },
         },
         {
@@ -285,16 +213,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.6022, 0.5248, "Hive'Ashi Ambusher",
                     "Travel to Hive'Ashi Ambusher."),
-            },
-        },
-        {
-            id = "travel-6844-valor-s-rest",
-            kind = "travel",
-            priority = 230,
-            text = "Travel to Valor's Rest.",
-            route = {
-                Point(MAP.SILITHUS, 0.8187, 0.1888, "Valor's Rest",
-                    "Travel to Valor's Rest."),
             },
         },
         {
@@ -321,16 +239,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-undercity",
-            kind = "travel",
-            priority = 260,
-            text = "Travel to Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4749, 0.7340, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "turnin-4642-melding-of-influences",
             kind = "turnin",
             priority = 270,
@@ -340,16 +248,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.4749, 0.7340, "Chemist Fuely",
                     "Travel to Chemist Fuely."),
-            },
-        },
-        {
-            id = "travel-5181-light-s-hope-chapel",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8151, 0.5977, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {
@@ -399,16 +297,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-light-s-hope-chapel",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8152, 0.5975, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
-            },
-        },
-        {
             id = "turnin-5181-villains-of-darrowshire",
             kind = "turnin",
             priority = 340,
@@ -418,16 +306,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.8152, 0.5975, "Carlin Redpath",
                     "Travel to Carlin Redpath."),
-            },
-        },
-        {
-            id = "travel-6135-the-marris-stead",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to The Marris Stead.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.2656, 0.7472, "The Marris Stead",
-                    "Travel to The Marris Stead."),
             },
         },
         {

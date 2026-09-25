@@ -42,16 +42,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-606-booty-bay",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2808, 0.7619, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "accept-595-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 20,
@@ -149,20 +139,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-606-mistvale-valley",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Mistvale Valley.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2798, 0.7357, "Continue toward Mistvale Valley",
-                    "Continue toward Mistvale Valley."),
-                Point(MAP.STRANGLETHORN, 0.2969, 0.7234, "Continue toward Mistvale Valley",
-                    "Continue toward Mistvale Valley."),
-                Point(MAP.STRANGLETHORN, 0.3303, 0.6566, "Mistvale Valley",
-                    "Travel to Mistvale Valley."),
-            },
-        },
-        {
             id = "objective-606-scaring-shaky",
             kind = "objective",
             priority = 110,
@@ -173,12 +149,6 @@ ns:RegisterGuide({
                 Point(MAP.STRANGLETHORN, 0.3303, 0.6566, "Elder Mistvale Gorilla",
                     "Travel to Elder Mistvale Gorilla."),
             },
-        },
-        {
-            id = "travel-606-stranglethorn-vale",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Stranglethorn Vale.",
         },
         {
             id = "objective-600-venture-company-mining",
@@ -195,12 +165,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-600-stranglethorn-vale",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Stranglethorn Vale.",
-        },
-        {
             id = "objective-196-raptor-mastery",
             kind = "objective",
             priority = 150,
@@ -212,12 +176,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-196-stranglethorn-vale",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Stranglethorn Vale.",
-        },
-        {
             id = "objective-577-some-assembly-required",
             kind = "objective",
             priority = 170,
@@ -226,16 +184,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.4075, 0.2467, "Snapjaw Crocolisk",
                     "Travel to Snapjaw Crocolisk."),
-            },
-        },
-        {
-            id = "travel-209-ziata-jai-ruins",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Ziata'jai Ruins.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4217, 0.3616, "Ziata'jai Ruins",
-                    "Travel to Ziata'jai Ruins."),
             },
         },
         {
@@ -261,16 +209,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.4952, 0.2382, "Bhag'thera",
                     "Travel to Bhag'thera."),
-            },
-        },
-        {
-            id = "travel-197-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3565, 0.1079, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -309,16 +247,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-601-the-savage-coast",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to The Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2743, 0.1973, "The Savage Coast",
-                    "Travel to The Savage Coast."),
-            },
-        },
-        {
             id = "objective-601-water-elementals",
             kind = "objective",
             priority = 260,
@@ -330,16 +258,6 @@ ns:RegisterGuide({
                     "Continue toward Water Elementals."),
                 Point(MAP.STRANGLETHORN, 0.2108, 0.2320, "Lesser Water Elemental",
                     "Travel to Lesser Water Elemental."),
-            },
-        },
-        {
-            id = "travel-628-the-salty-sailor-tavern",
-            kind = "travel",
-            priority = 270,
-            text = "Travel or Hearthstone to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2720, 0.7690, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
@@ -390,20 +308,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-597-southern-savage-coast",
-            kind = "travel",
-            priority = 320,
-            text = "Travel to Southern Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2798, 0.7357, "Continue toward Southern Savage Coast",
-                    "Continue toward Southern Savage Coast."),
-                Point(MAP.STRANGLETHORN, 0.2969, 0.7234, "Continue toward Southern Savage Coast",
-                    "Continue toward Southern Savage Coast."),
-                Point(MAP.STRANGLETHORN, 0.2729, 0.6951, "Southern Savage Coast",
-                    "Travel to Southern Savage Coast."),
-            },
-        },
-        {
             id = "turnin-595-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 330,
@@ -438,16 +342,6 @@ ns:RegisterGuide({
                     "Continue toward Venture Company Mining."),
                 Point(MAP.STRANGLETHORN, 0.4172, 0.4457, "Venture Co. Surveyor",
                     "Travel to Venture Co. Surveyor."),
-            },
-        },
-        {
-            id = "travel-607-booty-bay",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2830, 0.7294, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
@@ -543,16 +437,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-628-the-savage-coast",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to The Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3327, 0.3231, "The Savage Coast",
-                    "Travel to The Savage Coast."),
-            },
-        },
-        {
             id = "objective-628-excelsior",
             kind = "objective",
             priority = 460,
@@ -566,16 +450,6 @@ ns:RegisterGuide({
                     "Continue toward Excelsior."),
                 Point(MAP.STRANGLETHORN, 0.2984, 0.2561, "Elder Snapjaw Crocolisk",
                     "Travel to Elder Snapjaw Crocolisk."),
-            },
-        },
-        {
-            id = "travel-338-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3565, 0.1051, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
             },
         },
         {
@@ -631,16 +505,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3565, 0.1051, "Barnil Stonepot",
                     "Travel to Barnil Stonepot."),
-            },
-        },
-        {
-            id = "travel-booty-bay",
-            kind = "travel",
-            priority = 530,
-            text = "Travel or Hearthstone to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2829, 0.7760, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {

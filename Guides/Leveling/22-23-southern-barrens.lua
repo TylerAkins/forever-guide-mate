@@ -44,21 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-2460-cleft-of-shadow",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Cleft of Shadow.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4304, 0.5367, "Cleft of Shadow",
-                    "Travel to Cleft of Shadow."),
-            },
-        },
-        {
             id = "accept-2460-the-shattered-salute",
             kind = "accept",
             priority = 20,
@@ -122,23 +107,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.4304, 0.5367, "Shenthul",
                     "Travel to Shenthul."),
-            },
-        },
-        {
-            id = "travel-sludge-fen",
-            kind = "travel",
-            priority = 60,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Sludge Fen.",
-            route = {
-                Point(MAP.BARRENS, 0.6365, 0.0613, "Continue toward Sludge Fen",
-                    "Continue toward Sludge Fen."),
-                Point(MAP.BARRENS, 0.5585, 0.0575, "Sludge Fen",
-                    "Travel to Sludge Fen."),
             },
         },
         {
@@ -273,21 +241,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-cleft-of-shadow",
-            kind = "travel",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Cleft of Shadow.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4306, 0.5370, "Cleft of Shadow",
-                    "Travel to Cleft of Shadow."),
-            },
-        },
-        {
             id = "turnin-2478-mission-possible-but-not-probable",
             kind = "turnin",
             priority = 160,
@@ -318,21 +271,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.4306, 0.5370, "Shenthul",
                     "Travel to Shenthul."),
-            },
-        },
-        {
-            id = "travel-2480-tarren-mill",
-            kind = "travel",
-            priority = 180,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Tarren Mill.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.6159, 0.1918, "Tarren Mill",
-                    "Travel to Tarren Mill."),
             },
         },
         {
@@ -403,21 +341,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-868-the-crossroads",
-            kind = "travel",
-            priority = 230,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 868, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5110, 0.2962, "The Crossroads",
-                    "Travel to The Crossroads."),
-            },
-        },
-        {
             id = "accept-868-egg-hunt",
             kind = "accept",
             priority = 240,
@@ -426,16 +349,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5110, 0.2962, "Korran",
                     "Travel to Korran."),
-            },
-        },
-        {
-            id = "travel-878-camp-taurajo",
-            kind = "travel",
-            priority = 250,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5920, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -458,16 +371,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5922, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-878-agama-gor",
-            kind = "travel",
-            priority = 280,
-            text = "Travel to Agama'gor.",
-            route = {
-                Point(MAP.BARRENS, 0.4543, 0.5411, "Agama'gor",
-                    "Travel to Agama'gor."),
             },
         },
         {
@@ -507,16 +410,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-878-agama-gor-2",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Agama'gor.",
-            route = {
-                Point(MAP.BARRENS, 0.5000, 0.5700, "Agama'gor",
-                    "Travel to Agama'gor."),
-            },
-        },
-        {
             id = "objective-899-consumed-by-hatred",
             kind = "objective",
             priority = 320,
@@ -531,16 +424,6 @@ ns:RegisterGuide({
                     "Continue toward Consumed by Hatred."),
                 Point(MAP.BARRENS, 0.4330, 0.4855, "Bristleback Geomancer",
                     "Travel to Bristleback Geomancer."),
-            },
-        },
-        {
-            id = "travel-5052-camp-taurajo",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4456, 0.5922, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -587,16 +470,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5923, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-884-camp-taurajo",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4483, 0.5909, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -742,16 +615,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-843-southern-gold-road",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Southern Gold Road.",
-            route = {
-                Point(MAP.BARRENS, 0.4612, 0.7540, "Southern Gold Road",
-                    "Travel to Southern Gold Road."),
-            },
-        },
-        {
             id = "accept-843-gann-s-reclamation",
             kind = "accept",
             priority = 460,
@@ -762,18 +625,6 @@ ns:RegisterGuide({
                     "Continue toward Gann's Reclamation."),
                 Point(MAP.BARRENS, 0.4610, 0.8130, "Gann Stonespire",
                     "Travel to Gann Stonespire."),
-            },
-        },
-        {
-            id = "travel-879-blackthorn-ridge",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Blackthorn Ridge.",
-            route = {
-                Point(MAP.BARRENS, 0.4674, 0.7963, "Continue toward Blackthorn Ridge",
-                    "Continue toward Blackthorn Ridge."),
-                Point(MAP.BARRENS, 0.4383, 0.8196, "Blackthorn Ridge",
-                    "Travel to Blackthorn Ridge."),
             },
         },
         {
@@ -881,16 +732,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-843-bael-modan",
-            kind = "travel",
-            priority = 560,
-            text = "Travel to Bael Modan.",
-            route = {
-                Point(MAP.BARRENS, 0.4758, 0.8615, "Bael Modan",
-                    "Travel to Bael Modan."),
-            },
-        },
-        {
             id = "objective-843-3-prospector-khazgorm",
             kind = "objective",
             priority = 570,
@@ -915,21 +756,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-846-southern-gold-road",
-            kind = "travel",
-            priority = 590,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 846, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Southern Gold Road.",
-            route = {
-                Point(MAP.BARRENS, 0.4615, 0.7540, "Southern Gold Road",
-                    "Travel to Southern Gold Road."),
-            },
-        },
-        {
             id = "turnin-843-gann-s-reclamation",
             kind = "turnin",
             priority = 600,
@@ -950,16 +776,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4615, 0.7540, "Gann Stonespire",
                     "Travel to Gann Stonespire."),
-            },
-        },
-        {
-            id = "travel-camp-taurajo",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4511, 0.5772, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -1007,16 +823,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4456, 0.5924, "Mangletooth",
                     "Travel to Mangletooth."),
-            },
-        },
-        {
-            id = "travel-the-crossroads",
-            kind = "travel",
-            priority = 660,
-            text = "Travel to The Crossroads.",
-            route = {
-                Point(MAP.BARRENS, 0.5149, 0.3083, "The Crossroads",
-                    "Travel to The Crossroads."),
             },
         },
         {
@@ -1094,22 +900,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-tidus-stair",
-            kind = "travel",
-            priority = 720,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { ["not"] = { quest = { id = 63, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Tidus Stair.",
-            route = {
-                Point(MAP.BARRENS, 0.6584, 0.4378, "The Tidus Stair",
-                    "Travel to The Tidus Stair."),
-            },
-        },
-        {
             id = "turnin-220-call-of-water",
             kind = "turnin",
             priority = 730,
@@ -1140,27 +930,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6584, 0.4378, "Islen Waterseer",
                     "Travel to Islen Waterseer."),
-            },
-        },
-        {
-            id = "travel-63-north-tide-s-run",
-            kind = "travel",
-            priority = 750,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to North Tide's Run in Silverpine Forest.",
-            route = {
-                Point(MAP.SILVERPINE, 0.4432, 0.3718, "Continue toward North Tide's Run",
-                    "Continue toward North Tide's Run."),
-                Point(MAP.SILVERPINE, 0.4494, 0.3231, "Continue toward North Tide's Run",
-                    "Continue toward North Tide's Run."),
-                Point(MAP.SILVERPINE, 0.3934, 0.3129, "Continue toward North Tide's Run",
-                    "Continue toward North Tide's Run."),
-                Point(MAP.SILVERPINE, 0.3708, 0.4284, "North Tide's Run",
-                    "Travel to North Tide's Run."),
             },
         },
         {
@@ -1247,21 +1016,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-tidus-stair-2",
-            kind = "travel",
-            priority = 810,
-            conditions = {
-                all = {
-                    { class = 7 },
-                },
-            },
-            text = "Travel to The Tidus Stair.",
-            route = {
-                Point(MAP.BARRENS, 0.6584, 0.4378, "The Tidus Stair",
-                    "Travel to The Tidus Stair."),
-            },
-        },
-        {
             id = "turnin-96-call-of-water",
             kind = "turnin",
             priority = 820,
@@ -1276,16 +1030,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6583, 0.4377, "Islen Waterseer",
                     "Travel to Islen Waterseer."),
-            },
-        },
-        {
-            id = "travel-907-camp-taurajo",
-            kind = "travel",
-            priority = 830,
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4484, 0.5912, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {
@@ -1319,21 +1063,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5000, 0.6000, "Thunderhead",
                     "Travel to Thunderhead."),
-            },
-        },
-        {
-            id = "travel-913-camp-taurajo",
-            kind = "travel",
-            priority = 860,
-            conditions = {
-                all = {
-                    { quest = { id = 893, state = "completed" } },
-                },
-            },
-            text = "Travel to Camp Taurajo.",
-            route = {
-                Point(MAP.BARRENS, 0.4486, 0.5913, "Camp Taurajo",
-                    "Travel to Camp Taurajo."),
             },
         },
         {

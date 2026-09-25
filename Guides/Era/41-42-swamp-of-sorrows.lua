@@ -59,16 +59,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1372-duskwood",
-            kind = "travel",
-            priority = 20,
-            text = "Travel north to Duskwood.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.4170, 0.0030, "Duskwood",
-                    "Travel to Duskwood."),
-            },
-        },
-        {
             id = "accept-1372-nothing-but-the-truth",
             kind = "accept",
             priority = 30,
@@ -92,26 +82,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1389-swamp-of-sorrows",
-            kind = "travel",
-            priority = 50,
-            text = "Travel east through Deadwind Pass to Swamp of Sorrows.",
-            route = {
-                Point(MAP.DEADWIND_PASS, 0.6380, 0.4070, "Deadwind Pass",
-                    "Travel to Deadwind Pass."),
-            },
-        },
-        {
-            id = "travel-1389-the-harborage",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to The Harborage.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.2599, 0.3144, "The Harborage",
-                    "Travel to The Harborage."),
-            },
-        },
-        {
             id = "accept-1389-draenethyst-crystals",
             kind = "accept",
             priority = 70,
@@ -120,16 +90,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.2599, 0.3144, "Magtoor",
                     "Travel to Magtoor."),
-            },
-        },
-        {
-            id = "travel-698-stonard",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Stonard.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.4600, 0.5470, "Stonard",
-                    "Travel to Stonard."),
             },
         },
         {
@@ -196,16 +156,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1424-pool-of-tears",
-            kind = "travel",
-            priority = 140,
-            text = "Travel to Pool of Tears.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6647, 0.5914, "Pool of Tears",
-                    "Travel to Pool of Tears."),
-            },
-        },
-        {
             id = "objective-1424-pool-of-tears",
             kind = "objective",
             priority = 150,
@@ -231,16 +181,6 @@ ns:RegisterGuide({
                     "Continue toward Pool of Tears."),
                 Point(MAP.SWAMP_OF_SORROWS, 0.7152, 0.5942, "Pool of Tears",
                     "Travel to Pool of Tears."),
-            },
-        },
-        {
-            id = "travel-misty-reed-post",
-            kind = "travel",
-            priority = 160,
-            text = "Travel to Misty Reed Post.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.8140, 0.8090, "Misty Reed Post",
-                    "Travel to Misty Reed Post."),
             },
         },
         {
@@ -376,16 +316,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1393-fallow-sanctuary",
-            kind = "travel",
-            priority = 280,
-            text = "Travel Fallow Sanctuary.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6540, 0.1829, "Fallow Sanctuary",
-                    "Travel to Fallow Sanctuary."),
-            },
-        },
-        {
             id = "accept-1393-galen-s-escape",
             kind = "accept",
             priority = 290,
@@ -408,16 +338,6 @@ ns:RegisterGuide({
                     "Continue toward Galen's Escape."),
                 Point(MAP.SWAMP_OF_SORROWS, 0.5262, 0.2983, "Galen Goodward",
                     "Travel to Galen Goodward."),
-            },
-        },
-        {
-            id = "travel-1393-fallow-sanctuary-2",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Fallow Sanctuary.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.6200, 0.2400, "Fallow Sanctuary",
-                    "Travel to Fallow Sanctuary."),
             },
         },
         {
@@ -456,16 +376,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-harborage",
-            kind = "travel",
-            priority = 350,
-            text = "Travel to The Harborage.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.2599, 0.3144, "The Harborage",
-                    "Travel to The Harborage."),
-            },
-        },
-        {
             id = "turnin-1389-draenethyst-crystals",
             kind = "turnin",
             priority = 360,
@@ -492,21 +402,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.1267, 0.6710, "Dreaming Whelp",
                     "Travel to Dreaming Whelp."),
-            },
-        },
-        {
-            id = "travel-stonard",
-            kind = "travel",
-            priority = 380,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 1429, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel or Hearthstone to Stonard.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.4790, 0.5490, "Stonard",
-                    "Travel to Stonard."),
             },
         },
         {

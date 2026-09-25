@@ -44,64 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-307-menethil-harbor",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Travel to Menethil Harbor.",
-            route = {
-                Point(MAP.WETLANDS, 0.0960, 0.5960, "Menethil Harbor",
-                    "Travel to Menethil Harbor."),
-            },
-        },
-        {
-            id = "travel-307-algaz-station",
-            kind = "travel",
-            priority = 20,
-            conditions = {
-                all = {
-                    { race = 4 },
-                },
-            },
-            text = "Follow the road to Algaz Station in Loch Modan.",
-            route = {
-                Point(MAP.WETLANDS, 0.1129, 0.5352, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.1444, 0.4560, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.2313, 0.4343, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.3216, 0.3921, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.3735, 0.3679, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.4979, 0.3921, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5626, 0.5275, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5788, 0.6170, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5771, 0.6911, "Continue toward Algaz Station",
-                    "Continue toward Algaz Station."),
-                Point(MAP.WETLANDS, 0.5439, 0.7204, "Algaz Station",
-                    "Travel to Algaz Station."),
-            },
-        },
-        {
-            id = "travel-307-algaz-station-2",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Algaz Station in Loch Modan.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2467, 0.1825, "Algaz Station",
-                    "Travel to Algaz Station."),
-            },
-        },
-        {
             id = "accept-307-filthy-paws",
             kind = "accept",
             priority = 40,
@@ -150,16 +92,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-436-thelsamar",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3390, 0.5090, "Thorgrum Borrelson",
-                    "Travel to Thorgrum Borrelson."),
-            },
-        },
-        {
             id = "accept-436-ironband-s-excavation",
             kind = "accept",
             priority = 90,
@@ -178,16 +110,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.3553, 0.4841, "Miran",
                     "Travel to Miran."),
-            },
-        },
-        {
-            id = "travel-298-ironband-s-excavation-site",
-            kind = "travel",
-            priority = 110,
-            text = "Travel to Ironband's Excavation Site.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.6483, 0.6659, "Ironband's Excavation Site",
-                    "Travel to Ironband's Excavation Site."),
             },
         },
         {
@@ -262,16 +184,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.6483, 0.6659, "Magmar Fellhew",
                     "Travel to Magmar Fellhew."),
-            },
-        },
-        {
-            id = "travel-385-the-farstrider-lodge",
-            kind = "travel",
-            priority = 170,
-            text = "Travel to The Farstrider Lodge. East of Excavation site.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.8380, 0.6240, "The Farstrider Lodge",
-                    "Travel to The Farstrider Lodge."),
             },
         },
         {
@@ -437,12 +349,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2038-loch-modan",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Loch Modan.",
-        },
-        {
             id = "objective-385-crocolisk-hunting",
             kind = "objective",
             priority = 320,
@@ -464,16 +370,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.6080, 0.4160, "Daggerfang",
                     "Travel to Daggerfang."),
-            },
-        },
-        {
-            id = "travel-250-stonewrought-dam",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Stonewrought Dam.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.5536, 0.1491, "Stonewrought Dam",
-                    "Travel to Stonewrought Dam."),
             },
         },
         {
@@ -527,18 +423,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-301-thelsamar",
-            kind = "travel",
-            priority = 380,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.4260, 0.1097, "Continue toward Thelsamar",
-                    "Continue toward Thelsamar."),
-                Point(MAP.LOCH_MODAN, 0.3717, 0.4755, "Thelsamar",
-                    "Travel to Thelsamar."),
-            },
-        },
-        {
             id = "turnin-298-excavation-progress-report",
             kind = "turnin",
             priority = 390,
@@ -578,16 +462,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-271-grizzlepaw-ridge",
-            kind = "travel",
-            priority = 410,
-            text = "Travel to Grizzlepaw Ridge.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3998, 0.6687, "Grizzlepaw Ridge",
-                    "Travel to Grizzlepaw Ridge."),
-            },
-        },
-        {
             id = "objective-271-vyrin-s-revenge",
             kind = "objective",
             priority = 420,
@@ -601,16 +475,6 @@ ns:RegisterGuide({
                     "Continue toward Vyrin's Revenge."),
                 Point(MAP.LOCH_MODAN, 0.4006, 0.6155, "Ol' Sooty",
                     "Travel to Ol' Sooty."),
-            },
-        },
-        {
-            id = "travel-531-the-farstrider-lodge",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to The Farstrider Lodge.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.8184, 0.6177, "The Farstrider Lodge",
-                    "Travel to The Farstrider Lodge."),
             },
         },
         {
@@ -682,26 +546,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.6344, 0.4778, "Bingles Blastenheimer",
                     "Travel to Bingles Blastenheimer."),
-            },
-        },
-        {
-            id = "travel-valley-of-kings",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to Valley of Kings.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2352, 0.7637, "Valley of Kings",
-                    "Travel to Valley of Kings."),
-            },
-        },
-        {
-            id = "travel-city-of-ironforge",
-            kind = "travel",
-            priority = 500,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.5560, 0.4794, "City of Ironforge",
-                    "Travel to City of Ironforge."),
             },
         },
         {

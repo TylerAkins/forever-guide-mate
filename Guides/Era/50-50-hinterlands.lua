@@ -43,21 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-the-salty-sailor-tavern",
-            kind = "travel",
-            priority = 10,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 580, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Salty Sailor Tavern.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2712, 0.7743, "The Salty Sailor Tavern",
-                    "Travel to The Salty Sailor Tavern."),
-            },
-        },
-        {
             id = "accept-580-whiskey-slim-s-lost-grog",
             kind = "accept",
             priority = 20,
@@ -66,16 +51,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2712, 0.7743, "Whiskey Slim",
                     "Travel to Whiskey Slim."),
-            },
-        },
-        {
-            id = "travel-3661-wildhammer-keep",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Wildhammer Keep.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1409, 0.4156, "Wildhammer Keep",
-                    "Travel to Wildhammer Keep."),
             },
         },
         {
@@ -111,16 +86,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2641-valorwind-lake",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Valorwind Lake.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.4005, 0.5989, "Valorwind Lake",
-                    "Travel to Valorwind Lake."),
-            },
-        },
-        {
             id = "objective-2641-violet-tragan",
             kind = "objective",
             priority = 70,
@@ -135,7 +100,8 @@ ns:RegisterGuide({
             id = "travel-2989-the-altar-of-zul",
             kind = "travel",
             priority = 80,
-            text = "Travel to The Altar of Zul.",
+            text = "Travel to The Altar of Zul. Go up to the top of the stair to search The Altar of Zul.",
+            complete = QuestState(2989, "complete"),
             route = {
                 Point(MAP.HINTERLANDS, 0.4876, 0.6835, "The Altar of Zul",
                     "Travel to The Altar of Zul."),
@@ -202,16 +168,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-580-the-overlook-cliffs",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to The Overlook Cliffs.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.7188, 0.6544, "The Overlook Cliffs",
-                    "Travel to The Overlook Cliffs."),
-            },
-        },
-        {
             id = "turnin-626-cortello-s-riddle",
             kind = "turnin",
             priority = 130,
@@ -239,16 +195,6 @@ ns:RegisterGuide({
                     "Continue toward Food for Baby."),
                 Point(MAP.HINTERLANDS, 0.6917, 0.5407, "Silvermane Stalker",
                     "Travel to Silvermane Stalker."),
-            },
-        },
-        {
-            id = "travel-wildhammer-keep",
-            kind = "travel",
-            priority = 150,
-            text = "Travel or Hearthstone to Wildhammer Keep.",
-            route = {
-                Point(MAP.HINTERLANDS, 0.1415, 0.4361, "Wildhammer Keep",
-                    "Travel to Wildhammer Keep."),
             },
         },
         {
@@ -325,16 +271,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4502-theramore-isle",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Theramore Isle.",
-            route = {
-                Point(MAP.DUSTWALLOW, 0.6659, 0.4522, "Theramore Isle",
-                    "Travel to Theramore Isle."),
-            },
-        },
-        {
             id = "note-4502-theramore-isle",
             kind = "note",
             priority = 220,
@@ -342,21 +278,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW, 0.6659, 0.4522, "Innkeeper Janene",
                     "Travel to Innkeeper Janene."),
-            },
-        },
-        {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 230,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4502, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6254, 0.3850, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {

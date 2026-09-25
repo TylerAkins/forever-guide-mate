@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-4449-grimesilt-dig-site",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Grimesilt Dig Site.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.6551, 0.6214, "Grimesilt Dig Site",
-                    "Travel to Grimesilt Dig Site."),
-            },
-        },
-        {
             id = "accept-4449-caught",
             kind = "accept",
             priority = 20,
@@ -123,18 +113,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3441-thorium-point",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.6698, 0.4168, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.3905, 0.3895, "Thorium Point",
-                    "Travel to Thorium Point."),
-            },
-        },
-        {
             id = "accept-3441-divine-retribution",
             kind = "accept",
             priority = 90,
@@ -180,16 +158,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.3851, 0.3885, "Velarok Windblade",
                     "Travel to Velarok Windblade."),
-            },
-        },
-        {
-            id = "travel-7723-thorium-point",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3225, 0.3310, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -371,16 +339,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-7727-the-slag-pit",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to The Slag Pit.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.4423, 0.3172, "The Slag Pit",
-                    "Travel to The Slag Pit."),
-            },
-        },
-        {
             id = "objective-7701-wanted-overseer-maltorius",
             kind = "objective",
             priority = 300,
@@ -429,20 +387,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3452-thorium-point",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.4987, 0.4588, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.6361, 0.3846, "Continue toward Thorium Point",
-                    "Continue toward Thorium Point."),
-                Point(MAP.SEARING_GORGE, 0.3902, 0.3901, "Thorium Point",
-                    "Travel to Thorium Point."),
-            },
-        },
-        {
             id = "turnin-3443-forging-the-shaft",
             kind = "turnin",
             priority = 350,
@@ -463,16 +407,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.3848, 0.3799, "Velarok Windblade",
                     "Travel to Velarok Windblade."),
-            },
-        },
-        {
-            id = "travel-3452-thorium-point-2",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3225, 0.3310, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -560,16 +494,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3452-firewatch-ridge",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Firewatch Ridge.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.2195, 0.3618, "Firewatch Ridge",
-                    "Travel to Firewatch Ridge."),
-            },
-        },
-        {
             id = "objective-3452-the-flame-s-casing",
             kind = "objective",
             priority = 460,
@@ -579,16 +503,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.2195, 0.3618, "Twilight Fire Guard",
                     "Travel to Twilight Fire Guard."),
-            },
-        },
-        {
-            id = "travel-3453-thorium-point",
-            kind = "travel",
-            priority = 470,
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3904, 0.3897, "Thorium Point",
-                    "Travel to Thorium Point."),
             },
         },
         {
@@ -806,21 +720,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3453-thorium-point-2",
-            kind = "travel",
-            priority = 610,
-            conditions = {
-                all = {
-                    { quest = { id = 3452, state = "completed" } },
-                },
-            },
-            text = "Travel to Thorium Point.",
-            route = {
-                Point(MAP.SEARING_GORGE, 0.3917, 0.3899, "Thorium Point",
-                    "Travel to Thorium Point."),
-            },
-        },
-        {
             id = "turnin-3463-set-them-ablaze",
             kind = "turnin",
             priority = 620,
@@ -868,18 +767,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.3916, 0.3900, "Thorium Point",
                     "Travel to Thorium Point."),
-            },
-        },
-        {
-            id = "travel-flame-crest",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to Flame Crest.",
-            route = {
-                Point(MAP.BURNING_STEPPES, 0.3362, 0.4856, "Continue toward Flame Crest",
-                    "Continue toward Flame Crest."),
-                Point(MAP.BURNING_STEPPES, 0.6561, 0.2414, "Flame Crest",
-                    "Travel to Flame Crest."),
             },
         },
     },

@@ -64,16 +64,6 @@ ns:RegisterGuide({
             text = "Switch and complete #1423(57-58)#1423(57-58)\") before starting this guide.",
         },
         {
-            id = "travel-5153-sorrow-hill",
-            kind = "travel",
-            priority = 30,
-            text = "Travel to Sorrow Hill.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4917, 0.7859, "Sorrow Hill",
-                    "Travel to Sorrow Hill."),
-            },
-        },
-        {
             id = "turnin-5152-auntie-marlene",
             kind = "turnin",
             priority = 40,
@@ -105,16 +95,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.4970, 0.7668, "Sorrow Hill",
                     "Travel to Sorrow Hill."),
-            },
-        },
-        {
-            id = "travel-6186-chillwind-camp",
-            kind = "travel",
-            priority = 70,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4362, 0.8451, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
             },
         },
         {
@@ -159,18 +139,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.4349, 0.8484, "Nathaniel Dumah",
                     "Travel to Nathaniel Dumah."),
-            },
-        },
-        {
-            id = "travel-5154-ruins-of-andorhal",
-            kind = "travel",
-            priority = 120,
-            text = "Travel to Ruins of Andorhal.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3673, 0.7464, "Continue toward Ruins of Andorhal",
-                    "Continue toward Ruins of Andorhal."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.3945, 0.6678, "Ruins of Andorhal",
-                    "Travel to Ruins of Andorhal."),
             },
         },
         {
@@ -231,16 +199,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.3946, 0.6680, "Chromie",
                     "Travel to Chromie."),
-            },
-        },
-        {
-            id = "travel-5904-northridge-lumber-camp",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to Northridge Lumber Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4832, 0.3191, "Northridge Lumber Camp",
-                    "Travel to Northridge Lumber Camp."),
             },
         },
         {
@@ -410,22 +368,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6025-hearthglen",
-            kind = "travel",
-            priority = 320,
-            text = "Follow the waypoint for a shortcut to Hearthglen.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5007, 0.2907, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5052, 0.2736, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5062, 0.2472, "Continue toward Hearthglen",
-                    "Continue toward Hearthglen."),
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4577, 0.1831, "Hearthglen",
-                    "Travel to Hearthglen."),
-            },
-        },
-        {
             id = "objective-6025-unfinished-business",
             kind = "objective",
             priority = 330,
@@ -438,16 +380,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-northridge-lumber-camp",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Northridge Lumber Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5194, 0.2806, "Northridge Lumber Camp",
-                    "Travel to Northridge Lumber Camp."),
-            },
-        },
-        {
             id = "turnin-6025-unfinished-business",
             kind = "turnin",
             priority = 350,
@@ -457,16 +389,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.5194, 0.2806, "Kirsta Deepshadow",
                     "Travel to Kirsta Deepshadow."),
-            },
-        },
-        {
-            id = "travel-4984-the-writhing-haunt",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to The Writhing Haunt.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.5364, 0.6476, "The Writhing Haunt",
-                    "Travel to The Writhing Haunt."),
             },
         },
         {
@@ -565,16 +487,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6186-chillwind-camp-2",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Chillwind Camp.",
-            route = {
-                Point(MAP.WESTERN_PLAGUELANDS, 0.4342, 0.8484, "Chillwind Camp",
-                    "Travel to Chillwind Camp."),
-            },
-        },
-        {
             id = "turnin-6185-the-eastern-plagues-2",
             kind = "turnin",
             priority = 450,
@@ -606,26 +518,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.4342, 0.8484, "Nathaniel Dumah",
                     "Travel to Nathaniel Dumah."),
-            },
-        },
-        {
-            id = "travel-4441-city-of-ironforge",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.7581, 0.2343, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
-            id = "travel-5181-light-s-hope-chapel",
-            kind = "travel",
-            priority = 490,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8151, 0.5977, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {
@@ -673,16 +565,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.5389, 0.6578, "The Infectis Scar",
                     "Travel to The Infectis Scar."),
-            },
-        },
-        {
-            id = "travel-light-s-hope-chapel",
-            kind = "travel",
-            priority = 540,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8152, 0.5975, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {

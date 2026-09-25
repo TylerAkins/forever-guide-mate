@@ -452,16 +452,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3902-deathknell",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Deathknell.",
-            route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.6600, "Deathknell",
-                    "Travel to Deathknell."),
-            },
-        },
-        {
             id = "objective-6395-samuel-fipps",
             kind = "objective",
             priority = 300,
@@ -471,16 +461,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.3660, 0.6160, "Samuel Fipps",
                     "Travel to Samuel Fipps."),
-            },
-        },
-        {
-            id = "travel-380-night-web-s-hollow",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Night Web's Hollow.",
-            route = {
-                Point(MAP.TIRISFAL, 0.2750, 0.5800, "Night Web's Hollow",
-                    "Travel to Night Web's Hollow."),
             },
         },
         {
@@ -517,16 +497,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
-            },
-        },
-        {
-            id = "travel-6395-deathknell",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Deathknell.",
-            route = {
-                Point(MAP.TIRISFAL, 0.3117, 0.6505, "Deathknell",
-                    "Travel to Deathknell."),
             },
         },
         {
@@ -692,16 +662,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-404-brill",
-            kind = "travel",
-            priority = 480,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5150, "Brill",
-                    "Travel to Brill."),
-            },
-        },
-        {
             id = "accept-404-a-putrid-task",
             kind = "accept",
             priority = 490,
@@ -848,16 +808,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-398-garren-s-haunt",
-            kind = "travel",
-            priority = 570,
-            text = "Travel to Garren's Haunt.",
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.3053, "Garren's Haunt",
-                    "Travel to Garren's Haunt."),
-            },
-        },
-        {
             id = "objective-398-wanted-maggot-eye",
             kind = "objective",
             priority = 580,
@@ -903,16 +853,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5100, 0.5500, "Rotting Dead",
                     "Travel to Rotting Dead."),
-            },
-        },
-        {
-            id = "travel-brill",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Brill",
-                    "Travel to Brill."),
             },
         },
         {
@@ -1009,16 +949,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-398-tirisfal-glades",
-            kind = "travel",
-            priority = 690,
-            text = "Travel to Tirisfal Glades.",
-            route = {
-                Point(MAP.TIRISFAL, 0.5800, 0.6000, "Tirisfal Glades",
-                    "Travel to Tirisfal Glades."),
-            },
-        },
-        {
             id = "objective-367-a-new-plague",
             kind = "objective",
             priority = 700,
@@ -1040,16 +970,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal Glades",
                     "Travel to Tirisfal Glades."),
-            },
-        },
-        {
-            id = "travel-354-gallows-end-tavern",
-            kind = "travel",
-            priority = 720,
-            text = "Travel to Gallows' End Tavern in Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Gallows' End Tavern",
-                    "Travel to Gallows' End Tavern."),
             },
         },
         {
@@ -1204,16 +1124,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-362-agamand-mills",
-            kind = "travel",
-            priority = 800,
-            text = "Travel to Agamand Mills.",
-            route = {
-                Point(MAP.TIRISFAL, 0.4692, 0.4102, "Agamand Mills",
-                    "Travel to Agamand Mills."),
-            },
-        },
-        {
             id = "objective-362-the-haunted-mills",
             kind = "objective",
             priority = 810,
@@ -1276,16 +1186,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-365-solliden-farmstead",
-            kind = "travel",
-            priority = 860,
-            text = "Travel to Solliden Farmstead.",
-            route = {
-                Point(MAP.TIRISFAL, 0.3452, 0.4923, "Solliden Farmstead",
-                    "Travel to Solliden Farmstead."),
-            },
-        },
-        {
             id = "objective-365-fields-of-grief",
             kind = "objective",
             priority = 870,
@@ -1310,16 +1210,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-368-whispering-shore",
-            kind = "travel",
-            priority = 890,
-            text = "Travel to Whispering Shore.",
-            route = {
-                Point(MAP.TIRISFAL, 0.3624, 0.4129, "Whispering Shore",
-                    "Travel to Whispering Shore."),
-            },
-        },
-        {
             id = "objective-368-a-new-plague",
             kind = "objective",
             priority = 900,
@@ -1329,16 +1219,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.3624, 0.4129, "Vile Fin Puddlejumper",
                     "Travel to Vile Fin Puddlejumper."),
-            },
-        },
-        {
-            id = "travel-gallows-end-tavern",
-            kind = "travel",
-            priority = 910,
-            text = "Travel to Gallows' End Tavern in Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Gallows' End Tavern",
-                    "Travel to Gallows' End Tavern."),
             },
         },
         {
@@ -1516,16 +1396,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-gallows-end-tavern-2",
-            kind = "travel",
-            priority = 1070,
-            text = "Travel to Gallows' End Tavern in Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Gallows' End Tavern",
-                    "Travel to Gallows' End Tavern."),
-            },
-        },
-        {
             id = "turnin-375-the-chill-of-death",
             kind = "turnin",
             priority = 1080,
@@ -1594,16 +1464,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
                     "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "travel-brill-2",
-            kind = "travel",
-            priority = 1140,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Brill",
-                    "Travel to Brill."),
             },
         },
         {
@@ -1699,16 +1559,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-356-balnir-farmstead",
-            kind = "travel",
-            priority = 1180,
-            text = "Travel to Balnir Farmstead.",
-            route = {
-                Point(MAP.TIRISFAL, 0.7629, 0.6039, "Balnir Farmstead",
-                    "Travel to Balnir Farmstead."),
-            },
-        },
-        {
             id = "objective-356-rear-guard-patrol",
             kind = "objective",
             priority = 1190,
@@ -1718,16 +1568,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.7500, 0.6000, "Bleeding Horror",
                     "Travel to Bleeding Horror."),
-            },
-        },
-        {
-            id = "travel-371-crusader-outpost",
-            kind = "travel",
-            priority = 1200,
-            text = "Travel to Crusader Outpost.",
-            route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Crusader Outpost",
-                    "Travel to Crusader Outpost."),
             },
         },
         {
@@ -1778,16 +1618,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-369-venomweb-vale",
-            kind = "travel",
-            priority = 1230,
-            text = "Travel to Venomweb Vale.",
-            route = {
-                Point(MAP.TIRISFAL, 0.8508, 0.5255, "Venomweb Vale",
-                    "Travel to Venomweb Vale."),
-            },
-        },
-        {
             id = "objective-369-a-new-plague",
             kind = "objective",
             priority = 1240,
@@ -1797,16 +1627,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.8600, 0.5150, "Vicious Night Web Spider",
                     "Travel to Vicious Night Web Spider."),
-            },
-        },
-        {
-            id = "travel-372-brill",
-            kind = "travel",
-            priority = 1250,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Brill",
-                    "Travel to Brill."),
             },
         },
         {
@@ -2083,20 +1903,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1821-scarlet-watch-post",
-            kind = "travel",
-            priority = 1420,
-            text = "Travel to Scarlet Watch Post.",
-            route = {
-                Point(MAP.TIRISFAL, 0.7690, 0.4942, "Continue toward Scarlet Watch Post",
-                    "Continue toward Scarlet Watch Post."),
-                Point(MAP.TIRISFAL, 0.8126, 0.3948, "Continue toward Scarlet Watch Post",
-                    "Continue toward Scarlet Watch Post."),
-                Point(MAP.TIRISFAL, 0.7822, 0.3532, "Scarlet Watch Post",
-                    "Travel to Scarlet Watch Post."),
-            },
-        },
-        {
             id = "objective-372-1-captain-melrache",
             kind = "objective",
             priority = 1430,
@@ -2130,16 +1936,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5100, 0.6700, "Scarlet Bodyguard",
                     "Travel to Scarlet Bodyguard."),
-            },
-        },
-        {
-            id = "travel-brill-3",
-            kind = "travel",
-            priority = 1460,
-            text = "Travel to Brill.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Brill",
-                    "Travel to Brill."),
             },
         },
         {
@@ -2399,21 +2195,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1473-magic-quarter",
-            kind = "travel",
-            priority = 1520,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Magic Quarter in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.8502, 0.2589, "Magic Quarter",
-                    "Travel to Magic Quarter."),
-            },
-        },
-        {
             id = "turnin-1478-halgar-s-summons",
             kind = "turnin",
             priority = 1530,
@@ -2447,36 +2228,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1473-sewers",
-            kind = "travel",
-            priority = 1550,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Exit from the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4533, 0.4364, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
-            id = "travel-1473-tirisfal-glades",
-            kind = "travel",
-            priority = 1560,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Tirisfal Glades. Exit from the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.3976, 0.2405, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
             id = "objective-1473-creature-of-the-void",
             kind = "objective",
             priority = 1570,
@@ -2491,38 +2242,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5110, 0.6757, "Creature of the Void",
                     "Travel to Creature of the Void."),
-            },
-        },
-        {
-            id = "travel-1471-sewers",
-            kind = "travel",
-            priority = 1580,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Enter through the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.1471, 0.3426, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
-            id = "travel-1471-magic-quarter",
-            kind = "travel",
-            priority = 1590,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Magic Quarter.",
-            route = {
-                Point(MAP.UNDERCITY, 0.3467, 0.3321, "Continue toward Magic Quarter",
-                    "Continue toward Magic Quarter."),
-                Point(MAP.UNDERCITY, 0.8509, 0.2606, "Magic Quarter",
-                    "Travel to Magic Quarter."),
             },
         },
         {
@@ -2593,21 +2312,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1882-magic-quarter",
-            kind = "travel",
-            priority = 1640,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Travel to Magic Quarter.",
-            route = {
-                Point(MAP.UNDERCITY, 0.8509, 0.1014, "Magic Quarter",
-                    "Travel to Magic Quarter."),
-            },
-        },
-        {
             id = "turnin-1881-speak-with-anastasia",
             kind = "turnin",
             priority = 1650,
@@ -2639,21 +2343,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.8509, 0.1014, "Anastasia Hartwell",
                     "Travel to Anastasia Hartwell."),
-            },
-        },
-        {
-            id = "travel-1882-balnir-farmstead",
-            kind = "travel",
-            priority = 1670,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Travel to Balnir Farmstead.",
-            route = {
-                Point(MAP.TIRISFAL, 0.7752, 0.6171, "Balnir Farmstead",
-                    "Travel to Balnir Farmstead."),
             },
         },
         {
@@ -2691,21 +2380,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1886-rogues-quarter",
-            kind = "travel",
-            priority = 1700,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Rogues' Quarter.",
-            route = {
-                Point(MAP.UNDERCITY, 0.8353, 0.6906, "Rogues' Quarter",
-                    "Travel to Rogues' Quarter."),
-            },
-        },
-        {
             id = "turnin-1885-mennet-carkad",
             kind = "turnin",
             priority = 1710,
@@ -2739,36 +2413,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1886-sewers",
-            kind = "travel",
-            priority = 1730,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Exit from the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.4533, 0.4364, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
-            id = "travel-1886-tirisfal-glades",
-            kind = "travel",
-            priority = 1740,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Tirisfal Glades. Exit from the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.3976, 0.2405, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
             id = "objective-1886-the-deathstalkers",
             kind = "objective",
             priority = 1750,
@@ -2787,38 +2431,6 @@ ns:RegisterGuide({
                     "Continue toward The Deathstalkers."),
                 Point(MAP.TIRISFAL, 0.5475, 0.7335, "Astor Hadren",
                     "Travel to Astor Hadren."),
-            },
-        },
-        {
-            id = "travel-1898-sewers",
-            kind = "travel",
-            priority = 1760,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Enter through the Sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.1471, 0.3426, "Sewers",
-                    "Travel to Sewers."),
-            },
-        },
-        {
-            id = "travel-1898-rogues-quarter",
-            kind = "travel",
-            priority = 1770,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Rogues' Quarter.",
-            route = {
-                Point(MAP.UNDERCITY, 0.3467, 0.3321, "Continue toward Rogues' Quarter",
-                    "Continue toward Rogues' Quarter."),
-                Point(MAP.UNDERCITY, 0.8351, 0.6906, "Rogues' Quarter",
-                    "Travel to Rogues' Quarter."),
             },
         },
         {
@@ -2938,23 +2550,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-royal-quarter",
-            kind = "travel",
-            priority = 1850,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Royal Quarter.",
-            route = {
-                Point(MAP.UNDERCITY, 0.5224, 0.6411, "Continue toward Royal Quarter",
-                    "Continue toward Royal Quarter."),
-                Point(MAP.UNDERCITY, 0.5014, 0.6710, "Royal Quarter",
-                    "Travel to Royal Quarter."),
-            },
-        },
-        {
             id = "turnin-1978-the-deathstalkers",
             kind = "turnin",
             priority = 1860,
@@ -2969,20 +2564,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.5624, 0.9216, "Varimathras",
                     "Travel to Varimathras."),
-            },
-        },
-        {
-            id = "travel-1821-agamand-family-crypt",
-            kind = "travel",
-            priority = 1870,
-            text = "Travel to Agamand Family Crypt.",
-            route = {
-                Point(MAP.TIRISFAL, 0.4764, 0.4877, "Continue toward Agamand Family Crypt",
-                    "Continue toward Agamand Family Crypt."),
-                Point(MAP.TIRISFAL, 0.5033, 0.3321, "Continue toward Agamand Family Crypt",
-                    "Continue toward Agamand Family Crypt."),
-                Point(MAP.TIRISFAL, 0.5225, 0.2688, "Agamand Family Crypt",
-                    "Travel to Agamand Family Crypt."),
             },
         },
         {
@@ -3078,16 +2659,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-brill-town-hall",
-            kind = "travel",
-            priority = 1940,
-            text = "Travel to Brill Town Hall.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Brill Town Hall",
-                    "Travel to Brill Town Hall."),
-            },
-        },
-        {
             id = "turnin-408-the-family-crypt",
             kind = "turnin",
             priority = 1950,
@@ -3133,16 +2704,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-357-undercity",
-            kind = "travel",
-            priority = 1980,
-            text = "Run to Undercity.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6160, 0.6870, "Undercity",
-                    "Travel to Undercity."),
-            },
-        },
-        {
             id = "turnin-405-the-prodigal-lich",
             kind = "turnin",
             priority = 1990,
@@ -3165,16 +2726,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-371-tirisfal-glades",
-            kind = "travel",
-            priority = 2010,
-            text = "Travel to Tirisfal Glades. Exit through to the sewers.",
-            route = {
-                Point(MAP.UNDERCITY, 0.1520, 0.3140, "Tirisfal Glades",
-                    "Travel to Tirisfal Glades."),
-            },
-        },
-        {
             id = "objective-357-the-lich-s-identity",
             kind = "objective",
             priority = 2020,
@@ -3184,16 +2735,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.6793, 0.4215, "The Lich's Identity",
                     "Travel to The Lich's Identity."),
-            },
-        },
-        {
-            id = "travel-366-undercity",
-            kind = "travel",
-            priority = 2030,
-            text = "Run to Undercity.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6160, 0.6870, "Undercity",
-                    "Travel to Undercity."),
             },
         },
         {

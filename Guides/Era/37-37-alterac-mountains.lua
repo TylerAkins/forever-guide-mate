@@ -41,16 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-504-southshore",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4812, 0.5906, "Southshore",
-                    "Travel to Southshore."),
-            },
-        },
-        {
             id = "accept-500-crushridge-bounty",
             kind = "accept",
             priority = 20,
@@ -94,16 +84,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-500-gallows-corner",
-            kind = "travel",
-            priority = 60,
-            text = "Travel to Gallows' Corner.",
-            route = {
-                Point(MAP.ALTERAC, 0.4882, 0.5487, "Gallows' Corner",
-                    "Travel to Gallows' Corner."),
-            },
-        },
-        {
             id = "objective-500-crushridge-bounty",
             kind = "objective",
             priority = 70,
@@ -113,16 +93,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ALTERAC, 0.4882, 0.5487, "Crushridge Ogre",
                     "Travel to Crushridge Ogre."),
-            },
-        },
-        {
-            id = "travel-512-the-uplands",
-            kind = "travel",
-            priority = 80,
-            text = "Travel to The Uplands.",
-            route = {
-                Point(MAP.ALTERAC, 0.4767, 0.1858, "The Uplands",
-                    "Travel to The Uplands."),
             },
         },
         {
@@ -182,16 +152,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ALTERAC, 0.4767, 0.1858, "Syndicate Spy",
                     "Travel to Syndicate Spy."),
-            },
-        },
-        {
-            id = "travel-southshore",
-            kind = "travel",
-            priority = 140,
-            text = "Travel or Hearthstone to Southshore.",
-            route = {
-                Point(MAP.HILLSBRAD, 0.4967, 0.5873, "Marshal Redpath",
-                    "Travel to Marshal Redpath."),
             },
         },
         {

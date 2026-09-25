@@ -51,21 +51,6 @@ ns:RegisterGuide({
             complete = QuestState(4244, "complete"),
         },
         {
-            id = "travel-the-drag",
-            kind = "travel",
-            priority = 20,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4300, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to The Drag in Orgrimmar.",
-            route = {
-                Point(MAP.ORGRIMMAR, 0.5567, 0.3421, "The Drag",
-                    "Travel to The Drag."),
-            },
-        },
-        {
             id = "accept-4300-bone-bladed-weapons",
             kind = "accept",
             priority = 30,
@@ -74,16 +59,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.5567, 0.3421, "Jes'rimon",
                     "Travel to Jes'rimon."),
-            },
-        },
-        {
-            id = "travel-4294-the-apothecarium",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to The Apothecarium in Undercity.",
-            route = {
-                Point(MAP.UNDERCITY, 0.5294, 0.7723, "The Apothecarium",
-                    "Travel to The Apothecarium."),
             },
         },
         {
@@ -106,21 +81,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.4746, 0.7330, "Chemist Fuely",
                     "Travel to Chemist Fuely."),
-            },
-        },
-        {
-            id = "travel-ratchet",
-            kind = "travel",
-            priority = 70,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4502, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Ratchet.",
-            route = {
-                Point(MAP.BARRENS, 0.6254, 0.3850, "Ratchet",
-                    "Travel to Ratchet."),
             },
         },
         {
@@ -228,16 +188,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4290-un-goro",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to Un'Goro.",
-            route = {
-                Point(MAP.UNGORO, 0.7163, 0.7595, "Un'Goro",
-                    "Travel to Un'Goro."),
-            },
-        },
-        {
             id = "accept-4289-the-apes-of-un-goro",
             kind = "accept",
             priority = 160,
@@ -269,16 +219,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.6864, 0.5657, "The Marshlands",
                     "Travel to The Marshlands."),
-            },
-        },
-        {
-            id = "travel-4504-marshal-s-refuge",
-            kind = "travel",
-            priority = 190,
-            text = "Travel to Marshal's Refuge.",
-            route = {
-                Point(MAP.UNGORO, 0.4578, 0.1310, "Marshal's Refuge",
-                    "Travel to Marshal's Refuge."),
             },
         },
         {
@@ -404,16 +344,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4504-lakkari-tar-pits",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Lakkari Tar Pits.",
-            route = {
-                Point(MAP.UNGORO, 0.3975, 0.2237, "Lakkari Tar Pits",
-                    "Travel to Lakkari Tar Pits."),
-            },
-        },
-        {
             id = "objective-4501-1-pterrordax",
             kind = "objective",
             priority = 310,
@@ -435,16 +365,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.5721, 0.1737, "Bloodpetal Flayer",
                     "Travel to Bloodpetal Flayer."),
-            },
-        },
-        {
-            id = "travel-4289-fungal-rock",
-            kind = "travel",
-            priority = 330,
-            text = "Travel to Fungal Rock.",
-            route = {
-                Point(MAP.UNGORO, 0.6386, 0.1644, "Fungal Rock",
-                    "Travel to Fungal Rock."),
             },
         },
         {
@@ -540,18 +460,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4145-the-marshlands",
-            kind = "travel",
-            priority = 400,
-            text = "Travel to The Marshlands.",
-            route = {
-                Point(MAP.UNGORO, 0.5947, 0.4444, "Continue toward The Marshlands",
-                    "Continue toward The Marshlands."),
-                Point(MAP.UNGORO, 0.5847, 0.4605, "The Marshlands",
-                    "Travel to The Marshlands."),
-            },
-        },
-        {
             id = "objective-3881-1-crate-of-foodstuffs",
             kind = "objective",
             priority = 410,
@@ -585,16 +493,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.6790, 0.3086, "Muculent Ooze",
                     "Travel to Muculent Ooze."),
-            },
-        },
-        {
-            id = "travel-4145-un-goro",
-            kind = "travel",
-            priority = 440,
-            text = "Travel to Un'Goro.",
-            route = {
-                Point(MAP.UNGORO, 0.5823, 0.5634, "Un'Goro",
-                    "Travel to Un'Goro."),
             },
         },
         {
@@ -765,16 +663,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-3883-the-slithering-scar",
-            kind = "travel",
-            priority = 590,
-            text = "Travel to The Slithering Scar.",
-            route = {
-                Point(MAP.UNGORO, 0.5009, 0.8092, "The Slithering Scar",
-                    "Travel to The Slithering Scar."),
-            },
-        },
-        {
             id = "objective-3883-alien-ecology",
             kind = "objective",
             priority = 600,
@@ -788,28 +676,6 @@ ns:RegisterGuide({
                     "Continue toward Alien Ecology."),
                 Point(MAP.UNGORO, 0.4873, 0.8526, "The Slithering Scar",
                     "Travel to The Slithering Scar."),
-            },
-        },
-        {
-            id = "travel-3881-exit-slithering-scar",
-            kind = "travel",
-            priority = 610,
-            text = "Travel to Exit Slithering Scar. Exit The Slithering Scar.",
-            route = {
-                Point(MAP.UNGORO, 0.5003, 0.8102, "Continue toward Exit Slithering Scar",
-                    "Continue toward Exit Slithering Scar."),
-                Point(MAP.UNGORO, 0.5127, 0.7812, "The Slithering Scar",
-                    "Travel to The Slithering Scar."),
-            },
-        },
-        {
-            id = "travel-3881-terror-run",
-            kind = "travel",
-            priority = 620,
-            text = "Travel to Terror Run.",
-            route = {
-                Point(MAP.UNGORO, 0.3842, 0.6611, "Terror Run",
-                    "Travel to Terror Run."),
             },
         },
         {
@@ -869,16 +735,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.3450, 0.3680, "Glutinous Ooze",
                     "Travel to Glutinous Ooze."),
-            },
-        },
-        {
-            id = "travel-974-fire-plume-ridge",
-            kind = "travel",
-            priority = 680,
-            text = "Travel to Fire Plume Ridge.",
-            route = {
-                Point(MAP.UNGORO, 0.5277, 0.4224, "Fire Plume Ridge",
-                    "Travel to Fire Plume Ridge."),
             },
         },
         {
@@ -1161,16 +1017,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4301-fungal-rock",
-            kind = "travel",
-            priority = 920,
-            text = "Travel to Fungal Rock.",
-            route = {
-                Point(MAP.UNGORO, 0.6377, 0.1645, "Fungal Rock",
-                    "Travel to Fungal Rock."),
-            },
-        },
-        {
             id = "objective-4301-the-mighty-u-cha",
             kind = "objective",
             priority = 930,
@@ -1187,16 +1033,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4287-exit-fungal-rock",
-            kind = "travel",
-            priority = 940,
-            text = "Travel to Exit Fungal Rock.",
-            route = {
-                Point(MAP.UNGORO, 0.6343, 0.1670, "Fungal Rock",
-                    "Travel to Fungal Rock."),
-            },
-        },
-        {
             id = "objective-4287-the-eastern-pylon",
             kind = "objective",
             priority = 950,
@@ -1206,16 +1042,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.7724, 0.5002, "The Marshlands",
                     "Travel to The Marshlands."),
-            },
-        },
-        {
-            id = "travel-4292-un-goro-flat-rock",
-            kind = "travel",
-            priority = 960,
-            text = "Find the Un'Goro Flat Rock.",
-            route = {
-                Point(MAP.UNGORO, 0.7999, 0.4984, "Un'Goro Flat Rock",
-                    "Travel to Un'Goro Flat Rock."),
             },
         },
         {
@@ -1287,21 +1113,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNGORO, 0.3093, 0.5045, "Krakle",
                     "Travel to Krakle."),
-            },
-        },
-        {
-            id = "travel-marshal-s-refuge",
-            kind = "travel",
-            priority = 1030,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 4321, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Marshal's Refuge.",
-            route = {
-                Point(MAP.UNGORO, 0.4350, 0.0697, "Marshal's Refuge",
-                    "Travel to Marshal's Refuge."),
             },
         },
         {

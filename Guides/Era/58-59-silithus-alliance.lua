@@ -92,16 +92,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-6761-cenarion-enclave",
-            kind = "travel",
-            priority = 40,
-            text = "Travel to Cenarion Enclave.",
-            route = {
-                Point(MAP.DARNASSUS, 0.3539, 0.0846, "Cenarion Enclave",
-                    "Travel to Cenarion Enclave."),
-            },
-        },
-        {
             id = "accept-6761-the-new-frontier",
             kind = "accept",
             priority = 50,
@@ -155,16 +145,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARNASSUS, 0.4183, 0.8562, "Gracina Spiritmight",
                     "Travel to Gracina Spiritmight."),
-            },
-        },
-        {
-            id = "travel-5527-nighthaven",
-            kind = "travel",
-            priority = 100,
-            text = "Travel to Nighthaven in Moonglade.",
-            route = {
-                Point(MAP.MOONGLADE, 0.5168, 0.4505, "Nighthaven",
-                    "Travel to Nighthaven."),
             },
         },
         {
@@ -224,16 +204,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4496-gadgetzan",
-            kind = "travel",
-            priority = 150,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5088, 0.2695, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
-        },
-        {
             id = "turnin-4493-march-of-the-silithid",
             kind = "turnin",
             priority = 160,
@@ -257,16 +227,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-4496-the-slithering-scar",
-            kind = "travel",
-            priority = 180,
-            text = "Travel to The Slithering Scar in Un'Goro.",
-            route = {
-                Point(MAP.UNGORO, 0.5144, 0.7774, "The Slithering Scar",
-                    "Travel to The Slithering Scar."),
-            },
-        },
-        {
             id = "objective-4496-1-gorishi-scent-gland",
             kind = "objective",
             priority = 190,
@@ -285,18 +245,6 @@ ns:RegisterGuide({
             text = "Collect 5 Un'Goro Soil from any npc or from Un'Goro Dirt Pile on the ground in Un'Goro.",
             dependsOn = { "accept-4496-bungle-in-the-jungle" },
             complete = QuestObjective(4496, 2),
-        },
-        {
-            id = "travel-1125-valor-s-rest",
-            kind = "travel",
-            priority = 210,
-            text = "Travel to Valor's Rest.",
-            route = {
-                Point(MAP.SILITHUS, 0.2930, 0.2240, "Continue toward Valor's Rest",
-                    "Continue toward Valor's Rest."),
-                Point(MAP.SILITHUS, 0.8187, 0.1888, "Valor's Rest",
-                    "Travel to Valor's Rest."),
-            },
         },
         {
             id = "turnin-1124-wasteland",
@@ -319,16 +267,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.8183, 0.1878, "Layo Starstrike",
                     "Travel to Layo Starstrike."),
-            },
-        },
-        {
-            id = "travel-1125-southwind-village",
-            kind = "travel",
-            priority = 240,
-            text = "Travel to Southwind Village.",
-            route = {
-                Point(MAP.SILITHUS, 0.6022, 0.5248, "Southwind Village",
-                    "Travel to Southwind Village."),
             },
         },
         {
@@ -356,16 +294,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1125-valor-s-rest-2",
-            kind = "travel",
-            priority = 270,
-            text = "Travel to Valor's Rest.",
-            route = {
-                Point(MAP.SILITHUS, 0.8187, 0.1888, "Valor's Rest",
-                    "Travel to Valor's Rest."),
-            },
-        },
-        {
             id = "accept-1126-hive-in-the-tower",
             kind = "accept",
             priority = 280,
@@ -374,16 +302,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.8187, 0.1893, "Layo Starstrike",
                     "Travel to Layo Starstrike."),
-            },
-        },
-        {
-            id = "travel-1126-southwind-village",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Southwind Village.",
-            route = {
-                Point(MAP.SILITHUS, 0.6022, 0.5248, "Southwind Village",
-                    "Travel to Southwind Village."),
             },
         },
         {
@@ -396,16 +314,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILITHUS, 0.6022, 0.5248, "Hive'Ashi Ambusher",
                     "Travel to Hive'Ashi Ambusher."),
-            },
-        },
-        {
-            id = "travel-6844-valor-s-rest",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Valor's Rest.",
-            route = {
-                Point(MAP.SILITHUS, 0.8187, 0.1888, "Valor's Rest",
-                    "Travel to Valor's Rest."),
             },
         },
         {
@@ -432,16 +340,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-gadgetzan",
-            kind = "travel",
-            priority = 340,
-            text = "Travel to Gadgetzan.",
-            route = {
-                Point(MAP.TANARIS, 0.5090, 0.2697, "Gadgetzan",
-                    "Travel to Gadgetzan."),
-            },
-        },
-        {
             id = "turnin-4496-bungle-in-the-jungle",
             kind = "turnin",
             priority = 350,
@@ -451,26 +349,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.5090, 0.2697, "Alchemist Pestlezugg",
                     "Travel to Alchemist Pestlezugg."),
-            },
-        },
-        {
-            id = "travel-5181-city-of-ironforge",
-            kind = "travel",
-            priority = 360,
-            text = "Travel to City of Ironforge.",
-            route = {
-                Point(MAP.IRONFORGE, 0.7581, 0.2343, "City of Ironforge",
-                    "Travel to City of Ironforge."),
-            },
-        },
-        {
-            id = "travel-5181-light-s-hope-chapel",
-            kind = "travel",
-            priority = 370,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8151, 0.5977, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {
@@ -517,16 +395,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.5389, 0.6578, "The Infectis Scar",
                     "Travel to The Infectis Scar."),
-            },
-        },
-        {
-            id = "travel-light-s-hope-chapel",
-            kind = "travel",
-            priority = 420,
-            text = "Travel to Light's Hope Chapel.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.8152, 0.5975, "Light's Hope Chapel",
-                    "Travel to Light's Hope Chapel."),
             },
         },
         {

@@ -497,16 +497,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-15-northshire-valley",
-            kind = "travel",
-            priority = 290,
-            text = "Travel to Northshire Valley.",
-            route = {
-                Point(MAP.ELWYNN, 0.5163, 0.3676, "Northshire Valley",
-                    "Travel to Northshire Valley."),
-            },
-        },
-        {
             id = "objective-91743-rascally-rodents",
             kind = "objective",
             priority = 291,
@@ -533,16 +523,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.5163, 0.3676, "Kobold Worker",
                     "Travel to Kobold Worker."),
-            },
-        },
-        {
-            id = "travel-3904-northshire-valley",
-            kind = "travel",
-            priority = 310,
-            text = "Travel to Northshire Valley.",
-            route = {
-                Point(MAP.ELWYNN, 0.4775, 0.4197, "Northshire Valley",
-                    "Travel to Northshire Valley."),
             },
         },
         {
@@ -741,16 +721,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-21-echo-ridge-mine",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Echo Ridge Mine.",
-            route = {
-                Point(MAP.ELWYNN, 0.4871, 0.2781, "Echo Ridge Mine",
-                    "Travel to Echo Ridge Mine."),
-            },
-        },
-        {
             id = "turnin-91745-mining-consultant",
             kind = "turnin",
             priority = 431,
@@ -811,16 +781,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4800, 0.2900, "Kobold Laborer",
                     "Travel to Kobold Laborer."),
-            },
-        },
-        {
-            id = "travel-54-northshire-abbey",
-            kind = "travel",
-            priority = 450,
-            text = "Travel to Northshire Abbey.",
-            route = {
-                Point(MAP.ELWYNN, 0.4775, 0.4197, "Northshire Abbey",
-                    "Travel to Northshire Abbey."),
             },
         },
         {
@@ -947,16 +907,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4551, 0.4772, "Falkhaan Isenstrider",
                     "Travel to Falkhaan Isenstrider."),
-            },
-        },
-        {
-            id = "travel-62-goldshire",
-            kind = "travel",
-            priority = 510,
-            text = "Travel to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4214, 0.6590, "Goldshire",
-                    "Travel to Goldshire."),
             },
         },
         {
@@ -1089,16 +1039,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-85-the-stonefield-farm",
-            kind = "travel",
-            priority = 580,
-            text = "Travel to The Stonefield Farm.",
-            route = {
-                Point(MAP.ELWYNN, 0.3450, 0.8430, "The Stonefield Farm",
-                    "Travel to The Stonefield Farm."),
-            },
-        },
-        {
             id = "accept-85-lost-necklace",
             kind = "accept",
             priority = 590,
@@ -1107,16 +1047,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
                     "Travel to 'Auntie' Bernice Stonefield."),
-            },
-        },
-        {
-            id = "travel-106-the-maclure-vineyards",
-            kind = "travel",
-            priority = 600,
-            text = "Travel to The Maclure Vineyards.",
-            route = {
-                Point(MAP.ELWYNN, 0.4312, 0.8955, "The Maclure Vineyards",
-                    "Travel to The Maclure Vineyards."),
             },
         },
         {
@@ -1163,16 +1093,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4700, 0.8100, "Rockhide Boar",
                     "Travel to Rockhide Boar."),
-            },
-        },
-        {
-            id = "travel-84-the-stonefield-farm",
-            kind = "travel",
-            priority = 650,
-            text = "Travel to The Stonefield Farm.",
-            route = {
-                Point(MAP.ELWYNN, 0.3450, 0.8430, "The Stonefield Farm",
-                    "Travel to The Stonefield Farm."),
             },
         },
         {
@@ -1256,16 +1176,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-87-the-maclure-vineyards",
-            kind = "travel",
-            priority = 730,
-            text = "Travel to The Maclure Vineyards.",
-            route = {
-                Point(MAP.ELWYNN, 0.4312, 0.8577, "The Maclure Vineyards",
-                    "Travel to The Maclure Vineyards."),
-            },
-        },
-        {
             id = "turnin-84-back-to-billy",
             kind = "turnin",
             priority = 740,
@@ -1286,16 +1196,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4312, 0.8577, "Billy Maclure",
                     "Travel to Billy Maclure."),
-            },
-        },
-        {
-            id = "travel-87-fargodeep-mine",
-            kind = "travel",
-            priority = 760,
-            text = "Travel to Fargodeep Mine.",
-            route = {
-                Point(MAP.ELWYNN, 0.3894, 0.8185, "Fargodeep Mine",
-                    "Travel to Fargodeep Mine."),
             },
         },
         {
@@ -1373,16 +1273,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.3900, 0.8000, "Kobold Tunneler",
                     "Travel to Kobold Tunneler."),
-            },
-        },
-        {
-            id = "travel-112-goldshire",
-            kind = "travel",
-            priority = 810,
-            text = "Travel or Hearthstone to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4343, 0.6605, "Goldshire",
-                    "Travel to Goldshire."),
             },
         },
         {
@@ -1573,16 +1463,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-112-crystal-lake",
-            kind = "travel",
-            priority = 920,
-            text = "Travel to Crystal Lake.",
-            route = {
-                Point(MAP.ELWYNN, 0.5400, 0.6600, "Crystal Lake",
-                    "Travel to Crystal Lake."),
-            },
-        },
-        {
             id = "objective-99127-a-net-disaster",
             kind = "objective",
             priority = 921,
@@ -1628,16 +1508,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.5400, 0.6600, "Murloc",
                     "Travel to Murloc."),
-            },
-        },
-        {
-            id = "travel-76-jasperlode-mine",
-            kind = "travel",
-            priority = 940,
-            text = "Travel to Jasperlode Mine.",
-            route = {
-                Point(MAP.ELWYNN, 0.6170, 0.5376, "Jasperlode Mine",
-                    "Travel to Jasperlode Mine."),
             },
         },
         {
@@ -1720,16 +1590,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
                     "Travel to Guard Thomas."),
-            },
-        },
-        {
-            id = "travel-83-eastvale-logging-camp",
-            kind = "travel",
-            priority = 990,
-            text = "Travel to Eastvale Logging Camp.",
-            route = {
-                Point(MAP.ELWYNN, 0.7947, 0.6875, "Eastvale Logging Camp",
-                    "Travel to Eastvale Logging Camp."),
             },
         },
         {
@@ -1976,16 +1836,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-39-eastvale-logging-camp",
-            kind = "travel",
-            priority = 1080,
-            text = "Travel to Eastvale Logging Camp.",
-            route = {
-                Point(MAP.ELWYNN, 0.8145, 0.6619, "Eastvale Logging Camp",
-                    "Travel to Eastvale Logging Camp."),
-            },
-        },
-        {
             id = "turnin-5545-a-bundle-of-trouble",
             kind = "turnin",
             priority = 1090,
@@ -2020,16 +1870,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.6999, 0.8031, "Bandit",
                     "Travel to Bandit."),
-            },
-        },
-        {
-            id = "travel-46-stone-cairn-lake",
-            kind = "travel",
-            priority = 1120,
-            text = "Travel to Stone Cairn Lake.",
-            route = {
-                Point(MAP.ELWYNN, 0.7968, 0.5548, "Stone Cairn Lake",
-                    "Travel to Stone Cairn Lake."),
             },
         },
         {
@@ -2103,16 +1943,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-eastvale-logging-camp",
-            kind = "travel",
-            priority = 1170,
-            text = "Travel to Eastvale Logging Camp.",
-            route = {
-                Point(MAP.ELWYNN, 0.7947, 0.6875, "Eastvale Logging Camp",
-                    "Travel to Eastvale Logging Camp."),
-            },
-        },
-        {
             id = "turnin-91724-delicate-instruments",
             kind = "turnin",
             priority = 1171,
@@ -2175,16 +2005,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7947, 0.6875, "Sara Timberlain",
                     "Travel to Sara Timberlain."),
-            },
-        },
-        {
-            id = "travel-1860-goldshire",
-            kind = "travel",
-            priority = 1190,
-            text = "Travel or Hearthstone to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4328, 0.6622, "Goldshire",
-                    "Travel to Goldshire."),
             },
         },
         {
@@ -2376,16 +2196,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-maclure-vineyards",
-            kind = "travel",
-            priority = 1270,
-            text = "Travel to The Maclure Vineyards.",
-            route = {
-                Point(MAP.ELWYNN, 0.4312, 0.8955, "The Maclure Vineyards",
-                    "Travel to The Maclure Vineyards."),
-            },
-        },
-        {
             id = "turnin-114-the-escape",
             kind = "turnin",
             priority = 1280,
@@ -2407,16 +2217,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.3450, 0.8430, "'Auntie' Bernice Stonefield",
                     "Travel to 'Auntie' Bernice Stonefield."),
-            },
-        },
-        {
-            id = "travel-1860-goldshire-2",
-            kind = "travel",
-            priority = 1300,
-            text = "Travel or Hearthstone to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4328, 0.6622, "Goldshire",
-                    "Travel to Goldshire."),
             },
         },
         {
@@ -2513,16 +2313,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-westbrook-garrison",
-            kind = "travel",
-            priority = 1350,
-            text = "Travel to Westbrook Garrison.",
-            route = {
-                Point(MAP.ELWYNN, 0.2426, 0.7454, "Westbrook Garrison",
-                    "Travel to Westbrook Garrison."),
-            },
-        },
-        {
             id = "turnin-239-westbrook-garrison-needs-help",
             kind = "turnin",
             priority = 1360,
@@ -2589,16 +2379,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.2447, 0.7474, "Westbrook Garrison",
                     "Travel to Westbrook Garrison."),
-            },
-        },
-        {
-            id = "travel-109-the-jansen-stead",
-            kind = "travel",
-            priority = 1390,
-            text = "Travel to The Jansen Stead.",
-            route = {
-                Point(MAP.WESTFALL, 0.6000, 0.1937, "The Jansen Stead",
-                    "Travel to The Jansen Stead."),
             },
         },
         {
@@ -2688,16 +2468,6 @@ ns:RegisterGuide({
             complete = QuestState(151, "complete"),
         },
         {
-            id = "travel-6181-sentinel-hill",
-            kind = "travel",
-            priority = 1480,
-            text = "Travel to Sentinel Hill.",
-            route = {
-                Point(MAP.WESTFALL, 0.5630, 0.4760, "Sentinel Hill",
-                    "Travel to Sentinel Hill."),
-            },
-        },
-        {
             id = "accept-6181-a-swift-message",
             kind = "accept",
             priority = 1490,
@@ -2744,21 +2514,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5654, 0.5264, "Thor",
                     "Travel to Thor."),
-            },
-        },
-        {
-            id = "travel-6261-stormwind-city",
-            kind = "travel",
-            priority = 1520,
-            conditions = {
-                all = {
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.5623, 0.6459, "Stormwind City",
-                    "Travel to Stormwind City."),
             },
         },
         {
@@ -2878,21 +2633,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.2532, 0.7847, "Gakin the Darkbinder",
                     "Travel to Gakin the Darkbinder."),
-            },
-        },
-        {
-            id = "travel-1688-brackwell-pumpkin-patch",
-            kind = "travel",
-            priority = 1600,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to Brackwell Pumpkin Patch.",
-            route = {
-                Point(MAP.ELWYNN, 0.7102, 0.8076, "Brackwell Pumpkin Patch",
-                    "Travel to Brackwell Pumpkin Patch."),
             },
         },
         {
@@ -3095,21 +2835,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-2206-jerod-s-landing",
-            kind = "travel",
-            priority = 1730,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Travel to Jerod's Landing.",
-            route = {
-                Point(MAP.ELWYNN, 0.4808, 0.8730, "Jerod's Landing",
-                    "Travel to Jerod's Landing."),
-            },
-        },
-        {
             id = "objective-2206-snatch-and-grab",
             kind = "objective",
             priority = 1740,
@@ -3141,21 +2866,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.7581, 0.5984, "Master Mathias Shaw",
                     "Travel to Master Mathias Shaw."),
-            },
-        },
-        {
-            id = "travel-1689-the-slaughtered-lamb",
-            kind = "travel",
-            priority = 1760,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Travel to The Slaughtered Lamb.",
-            route = {
-                Point(MAP.STORMWIND, 0.2525, 0.7854, "The Slaughtered Lamb",
-                    "Travel to The Slaughtered Lamb."),
             },
         },
         {
@@ -3228,21 +2938,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-353-sentinel-hill",
-            kind = "travel",
-            priority = 1810,
-            conditions = {
-                all = {
-                    { race = 1 },
-                },
-            },
-            text = "Travel to Sentinel Hill. Dungar Longdrink in Trade District.",
-            route = {
-                Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
-                    "Travel to Dungar Longdrink."),
-            },
-        },
-        {
             id = "turnin-6285-return-to-lewis",
             kind = "turnin",
             priority = 1820,
@@ -3257,18 +2952,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTFALL, 0.5690, 0.4720, "Dungar Longdrink",
                     "Travel to Dungar Longdrink."),
-            },
-        },
-        {
-            id = "travel-11-forest-s-edge",
-            kind = "travel",
-            priority = 1830,
-            text = "Travel to Forest's Edge.",
-            route = {
-                Point(MAP.ELWYNN, 0.6396, 0.2668, "Continue toward Forest's Edge",
-                    "Continue toward Forest's Edge."),
-                Point(MAP.ELWYNN, 0.2500, 0.8600, "Riverpaw Outrunner",
-                    "Travel to Riverpaw Outrunner."),
             },
         },
         {
@@ -3323,16 +3006,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-westbrook-garrison-2",
-            kind = "travel",
-            priority = 1870,
-            text = "Travel to Westbrook Garrison.",
-            route = {
-                Point(MAP.ELWYNN, 0.2426, 0.7454, "Westbrook Garrison",
-                    "Travel to Westbrook Garrison."),
-            },
-        },
-        {
             id = "turnin-11-riverpaw-gnoll-bounty",
             kind = "turnin",
             priority = 1880,
@@ -3342,16 +3015,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.2426, 0.7454, "Deputy Rainer",
                     "Travel to Deputy Rainer."),
-            },
-        },
-        {
-            id = "travel-goldshire",
-            kind = "travel",
-            priority = 1890,
-            text = "Travel to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4212, 0.6596, "Goldshire",
-                    "Travel to Goldshire."),
             },
         },
         {
@@ -3375,16 +3038,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4212, 0.6596, "Marshal Dughan",
                     "Travel to Marshal Dughan."),
-            },
-        },
-        {
-            id = "travel-147-brackwell-pumpkin-patch",
-            kind = "travel",
-            priority = 1920,
-            text = "Travel to Brackwell Pumpkin Patch.",
-            route = {
-                Point(MAP.ELWYNN, 0.7101, 0.8055, "Brackwell Pumpkin Patch",
-                    "Travel to Brackwell Pumpkin Patch."),
             },
         },
         {
@@ -3444,16 +3097,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.7389, 0.7218, "Guard Thomas",
                     "Travel to Guard Thomas."),
-            },
-        },
-        {
-            id = "travel-eastvale-logging-camp-2",
-            kind = "travel",
-            priority = 1980,
-            text = "Travel to Eastvale Logging Camp.",
-            route = {
-                Point(MAP.ELWYNN, 0.7950, 0.6869, "Eastvale Logging Camp",
-                    "Travel to Eastvale Logging Camp."),
             },
         },
         {
@@ -3553,16 +3196,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-goldshire-2",
-            kind = "travel",
-            priority = 2050,
-            text = "Travel to Goldshire.",
-            route = {
-                Point(MAP.ELWYNN, 0.4212, 0.6596, "Goldshire",
-                    "Travel to Goldshire."),
-            },
-        },
-        {
             id = "turnin-147-manhunt",
             kind = "turnin",
             priority = 2060,
@@ -3575,16 +3208,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-the-stonefield-farm",
-            kind = "travel",
-            priority = 2070,
-            text = "Travel to The Stonefield Farm.",
-            route = {
-                Point(MAP.ELWYNN, 0.3461, 0.8443, "The Stonefield Farm",
-                    "Travel to The Stonefield Farm."),
-            },
-        },
-        {
             id = "turnin-88-princess-must-die",
             kind = "turnin",
             priority = 2080,
@@ -3594,16 +3217,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.3461, 0.8443, "Ma Stonefield",
                     "Travel to Ma Stonefield."),
-            },
-        },
-        {
-            id = "travel-244-three-corners",
-            kind = "travel",
-            priority = 2090,
-            text = "Travel to Three Corners in (map:1433).",
-            route = {
-                Point(MAP.REDRIDGE, 0.1536, 0.7144, "Three Corners",
-                    "Travel to Three Corners."),
             },
         },
         {
@@ -3630,16 +3243,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-dwarven-district",
-            kind = "travel",
-            priority = 2120,
-            text = "Travel to Dwarven District in Stormwind City.",
-            route = {
-                Point(MAP.STORMWIND, 0.5175, 0.1203, "Dwarven District",
-                    "Travel to Dwarven District."),
-            },
-        },
-        {
             id = "turnin-1097-elmore-s-task",
             kind = "turnin",
             priority = 2130,
@@ -3660,16 +3263,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND, 0.5175, 0.1203, "Grimand Elmore",
                     "Travel to Grimand Elmore."),
-            },
-        },
-        {
-            id = "travel-6661-deeprun-tram",
-            kind = "travel",
-            priority = 2150,
-            text = "Travel to Deeprun Tram. In the Dwarven District.",
-            route = {
-                Point(MAP.STORMWIND, 0.7030, 0.2950, "Deeprun Tram",
-                    "Travel to Deeprun Tram."),
             },
         },
         {
@@ -3694,36 +3287,6 @@ ns:RegisterGuide({
             text = "Turn in Deeprun Rat Roundup to Monty in Deeprun Tram.",
             dependsOn = { "objective-6661-deeprun-rat-roundup" },
             complete = QuestState(6661, "completed"),
-        },
-        {
-            id = "travel-433-city-of-ironforge",
-            kind = "travel",
-            priority = 2190,
-            text = "Go through the portal to exit to City of Ironforge.",
-        },
-        {
-            id = "travel-433-dun-morogh",
-            kind = "travel",
-            priority = 2200,
-            text = "Run to Dun Morogh.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.1400, 0.8600, "Dun Morogh",
-                    "Travel to Dun Morogh."),
-            },
-        },
-        {
-            id = "travel-433-gol-bolar-quarry",
-            kind = "travel",
-            priority = 2210,
-            text = "Travel to Gol'Bolar Quarry.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.5654, 0.4772, "Continue toward Gol'Bolar Quarry",
-                    "Continue toward Gol'Bolar Quarry."),
-                Point(MAP.DUN_MOROGH, 0.6339, 0.5487, "Continue toward Gol'Bolar Quarry",
-                    "Continue toward Gol'Bolar Quarry."),
-                Point(MAP.DUN_MOROGH, 0.6865, 0.5595, "Gol'Bolar Quarry",
-                    "Travel to Gol'Bolar Quarry."),
-            },
         },
         {
             id = "accept-433-the-public-servant",
@@ -3796,32 +3359,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-224-loch-modan",
-            kind = "travel",
-            priority = 2280,
-            text = "Travel to Loch Modan.",
-            route = {
-                Point(MAP.DUN_MOROGH, 0.8113, 0.5298, "Continue toward Loch Modan",
-                    "Continue toward Loch Modan."),
-                Point(MAP.DUN_MOROGH, 0.8226, 0.5341, "Continue toward Loch Modan",
-                    "Continue toward Loch Modan."),
-                Point(MAP.DUN_MOROGH, 0.8442, 0.5106, "Continue toward Loch Modan",
-                    "Continue toward Loch Modan."),
-                Point(MAP.DUN_MOROGH, 0.8622, 0.5132, "Loch Modan",
-                    "Travel to Loch Modan."),
-            },
-        },
-        {
-            id = "travel-224-loch-modan-2",
-            kind = "travel",
-            priority = 2290,
-            text = "Travel to Loch Modan.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.1976, 0.6287, "Loch Modan",
-                    "Travel to Loch Modan."),
-            },
-        },
-        {
             id = "accept-224-in-defense-of-the-king-s-lands",
             kind = "accept",
             priority = 2300,
@@ -3841,18 +3378,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.2321, 0.7359, "Captain Rugelfuss",
                     "Travel to Captain Rugelfuss."),
-            },
-        },
-        {
-            id = "travel-224-stonesplinter-valley",
-            kind = "travel",
-            priority = 2320,
-            text = "Travel to Stonesplinter Valley.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2846, 0.6600, "Continue toward Stonesplinter Valley",
-                    "Continue toward Stonesplinter Valley."),
-                Point(MAP.LOCH_MODAN, 0.3092, 0.7058, "Stonesplinter Valley",
-                    "Travel to Stonesplinter Valley."),
             },
         },
         {
@@ -3879,23 +3404,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.3300, 0.7200, "Stonesplinter Scout",
                     "Travel to Stonesplinter Scout."),
-            },
-        },
-        {
-            id = "travel-valley-of-kings",
-            kind = "travel",
-            priority = 2350,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 237, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Travel to Valley of Kings.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2962, 0.6758, "Continue toward Valley of Kings",
-                    "Continue toward Valley of Kings."),
-                Point(MAP.LOCH_MODAN, 0.2321, 0.7359, "Valley of Kings",
-                    "Travel to Valley of Kings."),
             },
         },
         {
@@ -3931,20 +3439,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.LOCH_MODAN, 0.2352, 0.7637, "Mountaineer Gravelgaw",
                     "Travel to Mountaineer Gravelgaw."),
-            },
-        },
-        {
-            id = "travel-416-thelsamar",
-            kind = "travel",
-            priority = 2390,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2527, 0.6741, "Continue toward Thelsamar",
-                    "Continue toward Thelsamar."),
-                Point(MAP.LOCH_MODAN, 0.2817, 0.6471, "Continue toward Thelsamar",
-                    "Continue toward Thelsamar."),
-                Point(MAP.LOCH_MODAN, 0.3390, 0.5098, "Thelsamar",
-                    "Travel to Thelsamar."),
             },
         },
         {
@@ -4003,16 +3497,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-1338-algaz-station",
-            kind = "travel",
-            priority = 2450,
-            text = "Travel to Algaz Station.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.2478, 0.1845, "Algaz Station",
-                    "Travel to Algaz Station."),
-            },
-        },
-        {
             id = "turnin-353-stormpike-s-delivery",
             kind = "turnin",
             priority = 2460,
@@ -4061,16 +3545,6 @@ ns:RegisterGuide({
                     "Continue toward Thelsamar Blood Sausages."),
                 Point(MAP.LOCH_MODAN, 0.2730, 0.2824, "Black Bear",
                     "Travel to Black Bear."),
-            },
-        },
-        {
-            id = "travel-thelsamar",
-            kind = "travel",
-            priority = 2500,
-            text = "Travel to Thelsamar.",
-            route = {
-                Point(MAP.LOCH_MODAN, 0.3291, 0.4953, "Thelsamar",
-                    "Travel to Thelsamar."),
             },
         },
         {

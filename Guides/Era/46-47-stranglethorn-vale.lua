@@ -40,16 +40,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "travel-348-booty-bay",
-            kind = "travel",
-            priority = 10,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2778, 0.7707, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "accept-610-pretty-boy-duncan",
             kind = "accept",
             priority = 20,
@@ -114,23 +104,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-610-southern-savage-coast",
-            kind = "travel",
-            priority = 70,
-            conditions = {
-                all = {
-                    { quest = { id = 603, state = "completed" } },
-                },
-            },
-            text = "Travel to Southern Savage Coast.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2963, 0.7236, "Continue toward Southern Savage Coast",
-                    "Continue toward Southern Savage Coast."),
-                Point(MAP.STRANGLETHORN, 0.2742, 0.6943, "Southern Savage Coast",
-                    "Travel to Southern Savage Coast."),
-            },
-        },
-        {
             id = "objective-610-pretty-boy-duncan",
             kind = "objective",
             priority = 80,
@@ -145,16 +118,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.2742, 0.6943, "'Pretty Boy' Duncan",
                     "Travel to 'Pretty Boy' Duncan."),
-            },
-        },
-        {
-            id = "travel-614-wild-shore",
-            kind = "travel",
-            priority = 90,
-            text = "Travel to Wild Shore.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3377, 0.7485, "Wild Shore",
-                    "Travel to Wild Shore."),
             },
         },
         {
@@ -195,16 +158,6 @@ ns:RegisterGuide({
             priority = 120,
             text = "Use the Carefully Folded Note to accept Message in a Bottle.",
             complete = QuestState(594, "activeOrCompleted"),
-        },
-        {
-            id = "travel-jaguero-isle",
-            kind = "travel",
-            priority = 130,
-            text = "Travel to Jaguero Isle.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3851, 0.8058, "Jaguero Isle",
-                    "Travel to Jaguero Isle."),
-            },
         },
         {
             id = "turnin-594-message-in-a-bottle",
@@ -320,16 +273,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-611-booty-bay",
-            kind = "travel",
-            priority = 220,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2727, 0.7752, "Booty Bay",
-                    "Travel to Booty Bay."),
-            },
-        },
-        {
             id = "turnin-610-pretty-boy-duncan",
             kind = "turnin",
             priority = 230,
@@ -426,16 +369,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-348-mistvale-valley",
-            kind = "travel",
-            priority = 300,
-            text = "Travel to Mistvale Valley.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3369, 0.6508, "Mistvale Valley",
-                    "Travel to Mistvale Valley."),
-            },
-        },
-        {
             id = "turnin-349-stranglethorn-fever",
             kind = "turnin",
             priority = 310,
@@ -509,21 +442,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "travel-nesingwary-s-expedition",
-            kind = "travel",
-            priority = 360,
-            conditions = {
-                all = {
-                    { quest = { id = 197, state = "completed" } },
-                },
-            },
-            text = "Travel to Nesingwary's Expedition.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.3570, 0.1080, "Nesingwary's Expedition",
-                    "Travel to Nesingwary's Expedition."),
-            },
-        },
-        {
             id = "turnin-208-big-game-hunter",
             kind = "turnin",
             priority = 370,
@@ -593,16 +511,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STRANGLETHORN, 0.3565, 0.1051, "Barnil Stonepot",
                     "Travel to Barnil Stonepot."),
-            },
-        },
-        {
-            id = "travel-booty-bay",
-            kind = "travel",
-            priority = 430,
-            text = "Travel to Booty Bay.",
-            route = {
-                Point(MAP.STRANGLETHORN, 0.2764, 0.7675, "Booty Bay",
-                    "Travel to Booty Bay."),
             },
         },
         {
