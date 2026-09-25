@@ -233,7 +233,8 @@ function ns.EvaluateCondition(condition, state)
             if not state.questCompletionKnown then
                 return Unknown("Quest completion is unavailable.")
             end
-            return false, "Quest objective is incomplete."
+            -- The log can lag on login while the quest is still in progress.
+            return Unknown("Quest is not in the quest log.")
         end
         local objective = FindObjective(active.objectives, spec)
         if objective == nil then
@@ -597,10 +598,36 @@ function Engine:GetInferred(guide)
     return byRevision and byRevision[tostring(guide.revision)] or nil
 end
 
+local function QuestObservableCompletion(condition)
+    return type(condition) == "table" and (condition.quest or condition.questObjective)
+end
+
 function Engine:IsGoalDone(goal, state, guide)
     guide = guide or self.currentGuide
     if guide and guide.id == ns.charDB.selectedGuide and ns.charDB.manualCompleted[goal.id] then
         return true
+    end
+    local evaluation
+    if goal.complete then
+        evaluation = ns.EvaluateCondition(goal.complete, state)
+        if evaluation == true then
+            return true
+        end
+        if evaluation == false and QuestObservableCompletion(goal.complete) then
+            local quest = goal.complete.quest
+            if type(quest) == "table" and quest.state == "completed" then
+                local questID = quest.id
+                if state.quests and state.quests[questID] then
+                    return false
+                end
+            end
+            if goal.complete.questObjective then
+                local inferred = guide and self:GetInferred(guide)
+                if inferred and inferred[goal.id] then
+                    return false
+                end
+            end
+        end
     end
     local ledger = guide and self:GetLedger(guide, false)
     if ledger and ledger[goal.id] then
@@ -613,7 +640,7 @@ function Engine:IsGoalDone(goal, state, guide)
     if not goal.complete then
         return false
     end
-    return ns.EvaluateCondition(goal.complete, state) == true
+    return evaluation == true
 end
 
 function Engine:ReconcileGuide(guide, state)
@@ -628,11 +655,20 @@ function Engine:ReconcileGuide(guide, state)
             ledger[goal.id] = true
             ns.charDB.manualCompleted[goal.id] = nil
         end
-        local observed = goal.complete and ns.EvaluateCondition(goal.complete, state) == true
+        local evaluation = goal.complete and ns.EvaluateCondition(goal.complete, state)
+        local observed = evaluation == true
+        local staleTurnIn = evaluation == false and goal.complete and goal.complete.quest
+            and goal.complete.quest.state == "completed"
+        local questID = staleTurnIn and goal.complete.quest.id
+        local questStillOpen = type(questID) == "number" and state.quests and state.quests[questID]
+        if staleTurnIn and ledger[goal.id] and questStillOpen then
+            ledger[goal.id] = nil
+        end
         if observed and goal.persistCompletion then
             ledger[goal.id] = true
         end
-        if observed or ledger[goal.id] or ns.charDB.manualCompleted[goal.id] then
+        local ledgerDone = ledger[goal.id] and not staleTurnIn
+        if observed or ledgerDone or ns.charDB.manualCompleted[goal.id] then
             done[goal.id] = true
         end
     end
