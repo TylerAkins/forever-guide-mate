@@ -438,23 +438,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-86614-silver-of-the-waves",
-            kind = "turnin",
-            priority = 391,
-            conditions = {
-                all = {
-                    { level = { min = 20 } },
-                    { quest = { id = 86614, state = "activeOrCompleted" } },
-                },
-            },
-            text = "Turn in Silver of the Waves to Khara Deepwater in Thelsamar if you found the monogrammed silver hair clip.",
-            complete = QuestState(86614, "completed"),
-            route = {
-                Point(MAP.LOCH_MODAN, 0.4040, 0.3940, "Khara Deepwater",
-                    "Travel to Khara Deepwater."),
-            },
-        },
-        {
             id = "accept-301-report-to-ironforge",
             kind = "accept",
             priority = 400,
@@ -574,6 +557,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.IRONFORGE, 0.7431, 0.1216, "Prospector Stormpike",
                     "Travel to Prospector Stormpike."),
+            },
+        },
+        {
+            id = "turnin-86614-silver-of-the-waves",
+            kind = "turnin",
+            priority = 521,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { quest = { id = 86614, state = "activeOrCompleted" } },
+                },
+            },
+            text = "Turn in Silver of the Waves to Khara Deepwater in Thelsamar if you found the monogrammed silver hair clip.",
+            complete = QuestState(86614, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.4040, 0.3940, "Khara Deepwater",
+                    "Travel to Khara Deepwater."),
             },
         },
     },

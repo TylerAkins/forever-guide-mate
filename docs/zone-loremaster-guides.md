@@ -6,7 +6,7 @@ Loremaster finishes the zone. The walk is the leveling route. Converted chapters
 
 1. A series follow-up goes immediately after the previous turn-in.
 2. A quest from a giver the route already visits at that quest's recommended level is accepted with that visit, before anyone leaves. An earlier visit does not count when the recommended level is still ahead.
-3. Anything else goes beside the closest pin, after quests of a lower recommended level. The recommended level is Wowhead's Level line, not the level the quest can be started.
+3. Anything else goes beside the closest pin, after quests of a lower recommended level. The recommended level is Wowhead's Level line, not the level the quest can be started. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
 
 Keep every quest the leveling route already runs. Dungeon quests stay in the dungeon guides. Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`, so the title is the zone name. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path. A chapter whose title still ends in `(Era)` stays unloaded until it is converted and moved to `Guides/Leveling/`.
 

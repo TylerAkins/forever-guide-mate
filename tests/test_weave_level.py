@@ -1,6 +1,14 @@
 import unittest
 
-from tools.weave_loremaster import Goal, insert_quest, place_woven, recommended_level, set_min_level
+from tools.weave_loremaster import (
+    Goal,
+    fit_priorities,
+    insert_quest,
+    parse_goals,
+    place_woven,
+    recommended_level,
+    set_min_level,
+)
 
 
 def step(ident, quest_id, kind="accept", text="", priority=0, depends=None, raw=None):
@@ -102,6 +110,88 @@ class PlaceWovenTests(unittest.TestCase):
         placed = place_woven([poster], set(), {895: 16})
         self.assertEqual(placed[0].id, "accept-poster")
         self.assertIn("level = { min = 11 }", placed[0].raw)
+
+
+class ChapterCeilingTests(unittest.TestCase):
+    def test_a_spine_rating_above_the_chapter_does_not_count(self):
+        opener = step(
+            "accept-harpies",
+            6282,
+            text="Accept Harpies Threaten from Maggran Earthbinder.",
+            priority=50,
+        )
+        trinkets = step(
+            "accept-trinkets",
+            86576,
+            text="Accept Bloodfury Trinkets from Maggran Earthbinder.",
+            priority=51,
+        )
+        later = step("accept-later", 6393, text="Accept Elemental War from Tsunaman.", priority=200)
+        levels = {6282: 26, 86576: 26, 6393: 25}
+        placed = place_woven([opener, trinkets, later], {86576}, levels, ceiling=25)
+        self.assertEqual([goal.id for goal in placed], ["accept-harpies", "accept-later", "accept-trinkets"])
+        self.assertIn("level = { min = 26 }", placed[-1].raw)
+
+    def test_a_second_pass_does_not_reorder_quests_already_at_the_stop(self):
+        opener = step("accept-opener", 100, text="Accept First from Gazlowe.", priority=10)
+        low = step("accept-low", 200, text="Accept Low from Gazlowe.", priority=20)
+        high = step("accept-high", 300, text="Accept High from Gazlowe.", priority=21)
+        later = step("accept-later", 400, text="Accept Later from Gazlowe.", priority=30)
+        levels = {100: 12, 200: 20, 300: 21, 400: 21}
+        once = place_woven([opener, low, high, later], {200, 300}, levels)
+        twice = place_woven(once, {200, 300}, levels)
+        self.assertEqual([goal.id for goal in twice], [goal.id for goal in once])
+
+    def test_the_same_rating_keeps_the_quest_when_the_chapter_reaches_it(self):
+        opener = step(
+            "accept-harpies",
+            6282,
+            text="Accept Harpies Threaten from Maggran Earthbinder.",
+            priority=50,
+        )
+        trinkets = step(
+            "accept-trinkets",
+            86576,
+            text="Accept Bloodfury Trinkets from Maggran Earthbinder.",
+            priority=51,
+        )
+        levels = {6282: 26, 86576: 26}
+        placed = place_woven([opener, trinkets], {86576}, levels, ceiling=26)
+        self.assertEqual([goal.id for goal in placed], ["accept-harpies", "accept-trinkets"])
+
+
+class PriorityTests(unittest.TestCase):
+    def test_fractional_priority_survives_parsing(self):
+        text = """
+        ns:RegisterGuide({
+            goals = {
+                {
+                    id = "objective-cold",
+                    kind = "objective",
+                    priority = 781.5,
+                    text = "Collect the rifles.",
+                },
+            },
+        })
+        """
+        goals = parse_goals(text, "guide", "Guides/Leveling/1-12-dun-morogh.lua", None)
+        self.assertEqual(goals[0].priority, 781.5)
+
+    def test_a_repair_shift_keeps_the_fraction(self):
+        before = step("before", 1, priority=780, raw='{\n            id = "before",\n            priority = 780,\n            kind = "accept",\n            text = "Before.",\n        }')
+        moved = step("moved", 9, priority=100, raw='{\n            id = "moved",\n            priority = 100,\n            kind = "accept",\n            text = "Moved.",\n        }')
+        neighbor = step("neighbor", 2, priority=781, raw='{\n            id = "neighbor",\n            priority = 781,\n            kind = "objective",\n            text = "Neighbor.",\n        }')
+        fraction = step(
+            "fraction",
+            3,
+            priority=781.5,
+            raw='{\n            id = "fraction",\n            priority = 781.5,\n            kind = "objective",\n            text = "Fraction.",\n        }',
+        )
+        fit_priorities([before, moved, neighbor, fraction], {9})
+        priorities = [goal.priority for goal in (before, moved, neighbor, fraction)]
+        self.assertEqual(len(priorities), len(set(priorities)))
+        self.assertEqual(fraction.priority, 782.5)
+        self.assertIn("priority = 782.5", fraction.raw)
 
 
 class SetMinLevelTests(unittest.TestCase):
