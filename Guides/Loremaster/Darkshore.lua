@@ -798,56 +798,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-87760-holy-diver",
-            kind = "accept",
-            priority = 440,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Accept Holy Diver from Gwennyth Bly'Leggonde.",
-            complete = QuestState(87760, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARKSHORE, 0.366, 0.454, "Gwennyth Bly'Leggonde",
-                    "Travel to Gwennyth Bly'Leggonde."),
-            },
-        },
-        {
-            id = "objective-87760-holy-diver-1",
-            kind = "objective",
-            priority = 450,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Holy Diver: Rod of Deep Dominion.",
-            dependsOn = { "accept-87760-holy-diver" },
-            complete = QuestObjective(87760, 1, "Rod of Deep Dominion"),
-            route = {
-                Point(MAP.DARKSHORE, 0.500, 0.136, "Stormscale Beastmistress",
-                    "Travel to Stormscale Beastmistress."),
-            },
-        },
-        {
-            id = "turnin-87760-holy-diver",
-            kind = "turnin",
-            priority = 460,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                },
-            },
-            text = "Turn in Holy Diver to Gwennyth Bly'Leggonde.",
-            dependsOn = { "objective-87760-holy-diver-1" },
-            complete = QuestState(87760, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.366, 0.454, "Gwennyth Bly'Leggonde",
-                    "Travel to Gwennyth Bly'Leggonde."),
-            },
-        },
-        {
             id = "turnin-6342-flight-to-auberdine",
             kind = "turnin",
             priority = 470,
@@ -1102,7 +1052,7 @@ ns:RegisterGuide({
             priority = 660,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept It's All Fun and Games Until... from Thundris Windweaver.",
@@ -1118,7 +1068,7 @@ ns:RegisterGuide({
             priority = 670,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "It's All Fun and Games Until...: Peerless Eye.",
@@ -1135,7 +1085,7 @@ ns:RegisterGuide({
             priority = 680,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Turn in It's All Fun and Games Until... to Thundris Windweaver.",
@@ -1270,7 +1220,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Beached Sea Creature from Beached Sea Creature.",
@@ -1287,7 +1237,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Beached Sea Creature: Sea Creature Bones.",
@@ -1305,7 +1255,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Beached Sea Creature to Gwennyth Bly'Leggonde.",
@@ -1827,7 +1777,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Beached Sea Turtle from Beached Sea Turtle.",
@@ -1844,7 +1794,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Beached Sea Turtle from Beached Sea Turtle.",
@@ -1861,7 +1811,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Beached Sea Turtle: Sea Turtle Remains.",
@@ -1879,7 +1829,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde.",
@@ -1897,7 +1847,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Beached Sea Turtle: Strangely Marked Box.",
@@ -1915,7 +1865,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde.",
@@ -2210,59 +2160,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-98028-baron-marinous",
-            kind = "accept",
-            priority = 1520,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 17 } },
-                },
-            },
-            text = "Accept Baron Marinous from Onu.",
-            complete = QuestState(98028, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
-                    "Travel to Onu."),
-            },
-        },
-        {
-            id = "objective-98028-baron-marinous-1",
-            kind = "objective",
-            priority = 1530,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 17 } },
-                },
-            },
-            text = "Baron Marinous: Clouded Water Globe.",
-            dependsOn = { "accept-98028-baron-marinous" },
-            complete = QuestObjective(98028, 1, "Clouded Water Globe"),
-            route = {
-                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
-                    "Travel to Onu."),
-            },
-        },
-        {
-            id = "turnin-98028-baron-marinous",
-            kind = "turnin",
-            priority = 1540,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 17 } },
-                },
-            },
-            text = "Turn in Baron Marinous to Onu.",
-            dependsOn = { "objective-98028-baron-marinous-1" },
-            complete = QuestState(98028, "completed"),
-            route = {
-                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
-                    "Travel to Onu."),
-            },
-        },
-        {
             id = "objective-961-onu-is-meditating-1",
             kind = "objective",
             priority = 1550,
@@ -2340,6 +2237,56 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DARKSHORE, 0.3764, 0.4336, "Sentinel Glynda Nal'Shea",
                     "Travel to Sentinel Glynda Nal'Shea."),
+            },
+        },
+        {
+            id = "accept-87760-holy-diver",
+            kind = "accept",
+            priority = 1591,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Holy Diver from Gwennyth Bly'Leggonde.",
+            complete = QuestState(87760, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.366, 0.454, "Gwennyth Bly'Leggonde",
+                    "Travel to Gwennyth Bly'Leggonde."),
+            },
+        },
+        {
+            id = "objective-87760-holy-diver-1",
+            kind = "objective",
+            priority = 1592,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Holy Diver: Rod of Deep Dominion.",
+            dependsOn = { "accept-87760-holy-diver" },
+            complete = QuestObjective(87760, 1, "Rod of Deep Dominion"),
+            route = {
+                Point(MAP.DARKSHORE, 0.500, 0.136, "Stormscale Beastmistress",
+                    "Travel to Stormscale Beastmistress."),
+            },
+        },
+        {
+            id = "turnin-87760-holy-diver",
+            kind = "turnin",
+            priority = 1593,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Holy Diver to Gwennyth Bly'Leggonde.",
+            dependsOn = { "objective-87760-holy-diver-1" },
+            complete = QuestState(87760, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.366, 0.454, "Gwennyth Bly'Leggonde",
+                    "Travel to Gwennyth Bly'Leggonde."),
             },
         },
         {
@@ -3360,7 +3307,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept WANTED: Jai'vhanel from WANTED: Murkdeep!.",
@@ -3377,7 +3324,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "WANTED: Jai'vhanel: Feather of Jai'vhanel.",
@@ -3395,7 +3342,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea.",
@@ -3818,6 +3765,59 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98028-baron-marinous",
+            kind = "accept",
+            priority = 2611,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 21 } },
+                },
+            },
+            text = "Accept Baron Marinous from Onu.",
+            complete = QuestState(98028, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
+            id = "objective-98028-baron-marinous-1",
+            kind = "objective",
+            priority = 2612,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 21 } },
+                },
+            },
+            text = "Baron Marinous: Clouded Water Globe.",
+            dependsOn = { "accept-98028-baron-marinous" },
+            complete = QuestObjective(98028, 1, "Clouded Water Globe"),
+            route = {
+                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
+            id = "turnin-98028-baron-marinous",
+            kind = "turnin",
+            priority = 2613,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 21 } },
+                },
+            },
+            text = "Turn in Baron Marinous to Onu.",
+            dependsOn = { "objective-98028-baron-marinous-1" },
+            complete = QuestState(98028, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.436, 0.764, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
             id = "accept-994-escape-through-force",
             kind = "accept",
             priority = 2620,
@@ -3963,7 +3963,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept The Powers Below from Gerrig Bonegrip.",
@@ -3980,7 +3980,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "The Powers Below: Book: The Powers Below.",
@@ -3998,7 +3998,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 10 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in The Powers Below to Gerrig Bonegrip.",
@@ -4015,7 +4015,7 @@ ns:RegisterGuide({
             priority = 2730,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Accept Swelling Forces from Arbal.",
@@ -4031,7 +4031,7 @@ ns:RegisterGuide({
             priority = 2740,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Swelling Forces: Stormscale Myrmidon.",
@@ -4048,7 +4048,7 @@ ns:RegisterGuide({
             priority = 2750,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Swelling Forces: Stormscale Sorceress.",
@@ -4065,7 +4065,7 @@ ns:RegisterGuide({
             priority = 2760,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Swelling Forces: Stormscale Warrior.",
@@ -4082,7 +4082,7 @@ ns:RegisterGuide({
             priority = 2770,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                 },
             },
             text = "Turn in Swelling Forces to Arbal.",
@@ -4100,7 +4100,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept The Tower of Althalaxx from Delgren the Purifier.",
@@ -4111,13 +4111,31 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-973-the-tower-of-althalaxx",
+            id = "accept-1140-the-tower-of-althalaxx",
             kind = "accept",
-            priority = 2790,
+            priority = 2820,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 28 } },
+                },
+            },
+            dependsOn = { "turnin-973-the-tower-of-althalaxx" },
+            text = "Accept The Tower of Althalaxx from Delgren the Purifier.",
+            complete = QuestState(1140, "activeOrCompleted"),
+            route = {
+                Point(MAP.ASHENVALE, 0.262, 0.386, "Delgren the Purifier",
+                    "Travel to Delgren the Purifier in Ashenvale."),
+            },
+        },
+        {
+            id = "accept-973-the-tower-of-althalaxx",
+            kind = "accept",
+            priority = 2821,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 24 } },
                 },
             },
             text = "Accept The Tower of Althalaxx from Delgren the Purifier.",
@@ -4130,11 +4148,11 @@ ns:RegisterGuide({
         {
             id = "objective-973-the-tower-of-althalaxx-1",
             kind = "objective",
-            priority = 2800,
+            priority = 2822,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "The Tower of Althalaxx: Ilkrud Magthrull's Tome.",
@@ -4148,34 +4166,16 @@ ns:RegisterGuide({
         {
             id = "turnin-973-the-tower-of-althalaxx",
             kind = "turnin",
-            priority = 2810,
+            priority = 2823,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
             dependsOn = { "objective-973-the-tower-of-althalaxx-1" },
             complete = QuestState(973, "completed"),
-            route = {
-                Point(MAP.ASHENVALE, 0.262, 0.386, "Delgren the Purifier",
-                    "Travel to Delgren the Purifier in Ashenvale."),
-            },
-        },
-        {
-            id = "accept-1140-the-tower-of-althalaxx",
-            kind = "accept",
-            priority = 2820,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 13 } },
-                },
-            },
-            dependsOn = { "turnin-973-the-tower-of-althalaxx" },
-            text = "Accept The Tower of Althalaxx from Delgren the Purifier.",
-            complete = QuestState(1140, "activeOrCompleted"),
             route = {
                 Point(MAP.ASHENVALE, 0.262, 0.386, "Delgren the Purifier",
                     "Travel to Delgren the Purifier in Ashenvale."),
@@ -4188,7 +4188,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Tower of Althalaxx: Free the Highborne soul in Night Run.",
@@ -4206,7 +4206,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Tower of Althalaxx: Free the Highborne soul in Satyrnaar.",
@@ -4224,7 +4224,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
@@ -4242,7 +4242,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-1140-the-tower-of-althalaxx" },
@@ -4260,7 +4260,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 31 } },
                 },
             },
             dependsOn = { "turnin-1167-the-tower-of-althalaxx" },
@@ -4278,7 +4278,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 31 } },
                 },
             },
             text = "The Tower of Althalaxx: Athrikus Narassin's Head.",
@@ -4296,7 +4296,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 31 } },
                 },
             },
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
@@ -4314,7 +4314,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 31 } },
                 },
             },
             dependsOn = { "turnin-1143-the-tower-of-althalaxx" },
@@ -4332,7 +4332,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "The Tower of Althalaxx: Glowing Soul Gem.",
@@ -4350,7 +4350,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
@@ -4368,7 +4368,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept Business in Auberdine from Borgus Steelhand, then turn it in to Gorbold Steelhand.",
@@ -4385,7 +4385,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Accept Making Do from Baros Alexston.",
@@ -4402,7 +4402,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Making Do: Alexston's Reply.",
@@ -4420,7 +4420,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 13 } },
+                    { level = { min = 17 } },
                 },
             },
             text = "Turn in Making Do to Thundris Windweaver.",
@@ -4438,7 +4438,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Accept The Absent Minded Prospector from Archaeologist Flagongut.",
@@ -4455,7 +4455,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "The Absent Minded Prospector: Stone of Relu.",
@@ -4473,7 +4473,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "The Absent Minded Prospector: Flagongut's Fossil.",
@@ -4491,7 +4491,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 15 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Turn in The Absent Minded Prospector to Archaeologist Flagongut.",

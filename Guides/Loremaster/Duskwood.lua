@@ -762,7 +762,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept Seasoned Wolf Kabobs from Chef Grual.",
@@ -779,7 +779,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Seasoned Wolf Kabobs: Lean Wolf Flank.",
@@ -797,7 +797,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in Seasoned Wolf Kabobs to Chef Grual.",
@@ -914,7 +914,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Accept The Valor Family from Sirra Von'Indi.",
@@ -931,7 +931,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "The Valor Family: Raven Hill investigated. Wowhead has no pin, so follow the quest text.",
@@ -945,7 +945,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 27 } },
                 },
             },
             text = "Turn in The Valor Family to . Wowhead has no pin, so follow the quest text.",
@@ -960,7 +960,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "The Valor Family: Raven Hill Tome.",
@@ -978,7 +978,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 22 } },
                 },
             },
             text = "Turn in The Valor Family to Sirra Von'Indi.",
@@ -1999,7 +1999,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Accept Bride of the Embalmer from Lord Ello Ebonlocke.",
@@ -2016,7 +2016,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Bride of the Embalmer: The Embalmer's Heart. This is an elite. Bring a group.",
@@ -2034,7 +2034,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 30 } },
                 },
             },
             text = "Turn in Bride of the Embalmer to Lord Ello Ebonlocke.",
@@ -2251,7 +2251,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Accept An Old History Book from Milton Sheaf.",
@@ -2268,7 +2268,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "An Old History Book: An Old History Book.",
@@ -2286,7 +2286,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 25 } },
                 },
             },
             text = "Turn in An Old History Book to Milton Sheaf.",
@@ -2497,7 +2497,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Eight-Legged Menaces from Watcher Dodds.",
@@ -2514,7 +2514,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Eight-Legged Menaces: Pygmy Venom Web Spider.",
@@ -2532,7 +2532,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Eight-Legged Menaces to Watcher Dodds.",
@@ -2550,7 +2550,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Ira's Dagger: Young Black Ravager. Wowhead has no pin, so follow the quest text.",
@@ -2564,7 +2564,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Ira's Dagger: Black Ravager. Wowhead has no pin, so follow the quest text.",
@@ -2578,7 +2578,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Ira's Dagger: Ira's Dagger. Wowhead has no pin, so follow the quest text.",
@@ -2592,7 +2592,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 24 } },
                 },
             },
             text = "Turn in Ira's Dagger to . Wowhead has no pin, so follow the quest text.",
@@ -2607,7 +2607,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Merrick's Bow: Splinter Fist Warrior. Wowhead has no pin, so follow the quest text.",
@@ -2621,7 +2621,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Merrick's Bow: Splinter Fist Taskmaster. Wowhead has no pin, so follow the quest text.",
@@ -2635,7 +2635,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Merrick's Bow: Merrick's Bow. Wowhead has no pin, so follow the quest text.",
@@ -2649,7 +2649,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 18 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in Merrick's Bow to . Wowhead has no pin, so follow the quest text.",
@@ -2664,7 +2664,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 19 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Accept Wolves at Our Heels from Lars.",
@@ -2681,7 +2681,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 19 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Wolves at Our Heels: Starving Dire Wolf.",
@@ -2699,7 +2699,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 19 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Wolves at Our Heels: Rabid Dire Wolf.",
@@ -2717,7 +2717,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 19 } },
+                    { level = { min = 21 } },
                 },
             },
             text = "Turn in Wolves at Our Heels to Lars.",
@@ -2735,7 +2735,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 35 } },
                 },
             },
             text = "Accept Digging Through the Dirt from Eliza's Grave Dirt.",
@@ -2752,7 +2752,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 35 } },
                 },
             },
             text = "Digging Through the Dirt: Digging Through the Dirt.",
@@ -2770,7 +2770,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 35 } },
                 },
             },
             text = "Turn in Digging Through the Dirt to Eliza's Grave Dirt.",
@@ -2788,7 +2788,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Accept Lightforge Iron from Glorin Steelbrow, then turn it in to Waterlogged Chest.",
@@ -2805,7 +2805,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             dependsOn = { "turnin-321-lightforge-iron" },
@@ -2823,7 +2823,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "The Lost Ingots: Lightforge Ingot.",
@@ -2841,7 +2841,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Turn in The Lost Ingots to Glorin Steelbrow.",
@@ -2859,7 +2859,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             dependsOn = { "turnin-324-the-lost-ingots" },
@@ -2877,7 +2877,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Lightforge Ingots: Lightforge Ingot.",
@@ -2895,7 +2895,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Turn in Lightforge Ingots to Glorin Steelbrow.",
@@ -2913,7 +2913,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             dependsOn = { "turnin-526-lightforge-ingots" },
@@ -2931,7 +2931,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Blessed Arm: Crate of Lightforge Ingots.",
@@ -2949,7 +2949,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Turn in Blessed Arm to Grimand Elmore.",
@@ -2967,7 +2967,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             dependsOn = { "turnin-322-blessed-arm" },
@@ -2985,7 +2985,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Armed and Ready: Morbent's Bane.",
@@ -3003,7 +3003,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 29 } },
                 },
             },
             text = "Turn in Armed and Ready to Sven Yorgen.",
@@ -3021,7 +3021,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 32 } },
                 },
             },
             dependsOn = { "turnin-325-armed-and-ready" },
@@ -3039,7 +3039,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Morbent Fel: Morbent Fel. This is an elite. Bring a group.",
@@ -3057,7 +3057,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Morbent Fel: Morbent's Bane. This is an elite. Bring a group.",
@@ -3075,7 +3075,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 20 } },
+                    { level = { min = 32 } },
                 },
             },
             text = "Turn in Morbent Fel to Sven Yorgen.",
@@ -3093,7 +3093,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Accept The Legend of Stalvan from Marshal Haggard.",
@@ -3110,7 +3110,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Legend of Stalvan: A Faded Journal Page.",
@@ -3128,7 +3128,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in The Legend of Stalvan to Marshal Haggard.",
@@ -3146,7 +3146,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-75-the-legend-of-stalvan" },
@@ -3164,7 +3164,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Legend of Stalvan: A Faded Journal Page.",
@@ -3182,7 +3182,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in The Legend of Stalvan to Tavernkeep Smitts.",
@@ -3200,7 +3200,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-78-the-legend-of-stalvan" },
@@ -3218,7 +3218,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Legend of Stalvan: Muddy Journal Pages.",
@@ -3236,7 +3236,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in The Legend of Stalvan to Commander Althea Ebonlocke.",
@@ -3254,7 +3254,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-79-the-legend-of-stalvan" },
@@ -3272,7 +3272,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "The Legend of Stalvan: A Bloodstained Journal Page.",
@@ -3290,7 +3290,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             text = "Turn in The Legend of Stalvan to Clerk Daltry.",
@@ -3308,7 +3308,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 28 } },
                 },
             },
             dependsOn = { "turnin-80-the-legend-of-stalvan" },
@@ -3326,7 +3326,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 35 } },
                 },
             },
             dependsOn = { "turnin-97-the-legend-of-stalvan" },
@@ -3344,7 +3344,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 35 } },
                 },
             },
             text = "The Legend of Stalvan: Mistmantle Family Ring.",
@@ -3362,7 +3362,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 22 } },
+                    { level = { min = 35 } },
                 },
             },
             text = "Turn in The Legend of Stalvan to Madame Eva.",
@@ -4330,11 +4330,11 @@ ns:RegisterGuide({
         {
             id = "turnin-1372-nothing-but-the-truth",
             kind = "turnin",
-            priority = 2520,
+            priority = 2511,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Accept Nothing But The Truth from Deathstalker Zraedus, then turn it in to Apothecary Faustin.",
@@ -4351,7 +4351,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             dependsOn = { "turnin-1372-nothing-but-the-truth" },
@@ -4369,7 +4369,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Accept Nothing But The Truth from Apothecary Faustin.",
@@ -4386,7 +4386,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Nothing But The Truth: Faustin's Truth Serum.",
@@ -4404,7 +4404,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Turn in Nothing But The Truth to Deathstalker Zraedus.",
@@ -4422,7 +4422,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             dependsOn = { "turnin-1388-nothing-but-the-truth" },
@@ -4440,7 +4440,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Nothing But The Truth: Zraedus's Brew.",
@@ -4458,7 +4458,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Turn in Nothing But The Truth to Infiltrator Marksen.",
@@ -4476,7 +4476,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Nothing But The Truth: Shadow Panther Heart. This is an elite. Bring a group.",
@@ -4494,7 +4494,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Nothing But The Truth: Mire Lord Fungus. This is an elite. Bring a group.",
@@ -4512,7 +4512,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Nothing But The Truth: Deepstrider Tumor. This is an elite. Bring a group.",
@@ -4530,7 +4530,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 37 } },
+                    { level = { min = 42 } },
                 },
             },
             text = "Turn in Nothing But The Truth to Apothecary Faustin.",
@@ -4544,11 +4544,11 @@ ns:RegisterGuide({
         {
             id = "accept-1395-supplies-for-nethergarde",
             kind = "accept",
-            priority = 2640,
+            priority = 2631,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 45 } },
                 },
             },
             text = "Accept Supplies for Nethergarde from Watchmaster Sorigal.",
@@ -4561,11 +4561,11 @@ ns:RegisterGuide({
         {
             id = "objective-1395-supplies-for-nethergarde-1",
             kind = "objective",
-            priority = 2650,
+            priority = 2632,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 45 } },
                 },
             },
             text = "Supplies for Nethergarde: Crate of Power Stones.",
@@ -4579,11 +4579,11 @@ ns:RegisterGuide({
         {
             id = "turnin-1395-supplies-for-nethergarde",
             kind = "turnin",
-            priority = 2660,
+            priority = 2633,
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 40 } },
+                    { level = { min = 45 } },
                 },
             },
             text = "Turn in Supplies for Nethergarde to Quartermaster Lungertz.",
