@@ -884,6 +884,13 @@ function TestBreadcrumbSkip()
     }
     leg = ns.Navigation:GetActiveLeg(ordered, { mapID = 1413, x = 0.78, y = 0.78 })
     Equal(leg and leg.label, "Crossroads", "a real stop is not skipped just because the next stop is closer")
+    local offMap = ns.UI:GoalInstruction({
+        currentGoal = { text = "Cure the sick gazelles.", route = goal.route },
+        state = { mapID = 1454, x = 0.5, y = 0.5 },
+    })
+    Check(offMap and string.find(offMap, "Continue toward", 1, true) ~= nil, "off the map the path dot still points the way")
+    leg = ns.Navigation:GetActiveLeg(goal, {})
+    Equal(leg and leg.label, "Continue toward Curing the Sick", "a missing position keeps the first pin")
 end
 TestBreadcrumbSkip()
 

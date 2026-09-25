@@ -178,6 +178,9 @@ end
 
 local function BreadcrumbPassed(route, index, state)
     local leg = route[index]
+    if type(leg) ~= "table" or type(state) ~= "table" then
+        return false
+    end
     if type(leg.label) ~= "string" or string.find(leg.label, "Continue toward", 1, true) ~= 1 then
         return false
     end
