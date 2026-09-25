@@ -1004,6 +1004,18 @@ function TestActiveGoalReload()
 end
 TestActiveGoalReload()
 
+function TestNaraWildmaneChain()
+    ns:FinalizeGuides()
+    local era = ns.guides["leveling-era"]
+    local accept = ns.Engine:GetGoal(era, "leveling-era-12-20-barrens:accept-1490-nara-wildmane")
+    Check(accept and accept.dependsOn[1] == "leveling-era-12-20-barrens:turnin-1489-hamuul-runetotem",
+        "Nara Wildmane waits until Hamuul Runetotem is turned in at Elder Rise")
+    local turnin = ns.Engine:GetGoal(era, "leveling-era-12-20-barrens:turnin-1490-nara-wildmane")
+    Check(turnin and turnin.route[#turnin.route].label == "Nara Wildmane",
+        "Nara Wildmane is turned in at Nara, not Hamuul")
+end
+TestNaraWildmaneChain()
+
 function TestBreadcrumbSkip()
     local function Point(x, y, label)
         return { mapID = 1413, x = x, y = y, label = label, offMapText = label }

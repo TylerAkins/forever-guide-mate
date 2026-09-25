@@ -235,6 +235,26 @@ local function ObjectiveQuestIDFromGoalID(goalID)
     return questID and tonumber(questID) or nil
 end
 
+local function TurninQuestID(goalID)
+    if type(goalID) ~= "string" then
+        return nil
+    end
+    local questID = goalID:match("^turnin%-(%d+)%-")
+    return questID and tonumber(questID) or nil
+end
+
+local function DependsOnTurnin(goal, questID)
+    if type(goal.dependsOn) ~= "table" then
+        return false
+    end
+    for _, dep in ipairs(goal.dependsOn) do
+        if TurninQuestID(dep) == questID then
+            return true
+        end
+    end
+    return false
+end
+
 local function QuestObjectiveSpec(goal)
     local complete = goal.complete
     if type(complete) ~= "table" or type(complete.questObjective) ~= "table" then
@@ -271,6 +291,13 @@ for _, guideID in ipairs(ns.guideOrder) do
                 Check(false, ("%s %s uses quest %d in the step id but QuestObjective(%d, ...)")
                     :format(guideID, tostring(goal.id), fromID, spec.id))
             end
+        end
+        if goal.kind == "accept" and type(goal.complete) == "table"
+            and type(goal.complete.quest) == "table" and goal.complete.quest.id == 1490
+            and guide.category ~= "Dungeon Quest Guides" then
+            Check(DependsOnTurnin(goal, 1489),
+                ("%s %s must wait on the Hamuul Runetotem turn-in before Nara Wildmane")
+                    :format(guideID, tostring(goal.id)))
         end
     end
 end
