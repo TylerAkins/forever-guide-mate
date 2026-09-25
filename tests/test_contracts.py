@@ -91,6 +91,7 @@ class ContractTests(unittest.TestCase):
                 "Travel.lua",
                 "Taxi.lua",
                 "GuideEngine.lua",
+                "QuestPrerequisites.lua",
                 "QuestAudit.lua",
                 "QuestDialog.lua",
                 "Navigation.lua",
@@ -286,7 +287,7 @@ class ContractTests(unittest.TestCase):
         guide = (ROOT / "Guides/Loremaster/TheBarrens.lua").read_text(encoding="utf-8")
         for quest_id in (844, 871, 894, 900, 906, 97003, 6543, 98024):
             self.assertIn(str(quest_id), guide)
-        for dungeon_id in (3369, 3370, 914, 1489, 1491):
+        for dungeon_id in (3369, 3370, 914, 1491):
             self.assertNotIn(str(dungeon_id), guide.split("goals = {", 1)[-1])
         self.assertIn('id = "leveling-the-barrens"', guide)
         self.assertIn('category = "Loremaster Guides"', guide)

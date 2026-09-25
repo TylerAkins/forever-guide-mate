@@ -3433,6 +3433,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 2780,
             text = "Accept Hamuul Runetotem from Tonga Runetotem in The Crossroads.",
+            dependsOn = { "turnin-880-altered-beings" },
             complete = QuestState(1489, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5226, 0.3193, "Tonga Runetotem",
