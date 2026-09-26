@@ -86,6 +86,65 @@ function Navigation:TransportLeg(leg, state)
     return ns.Travel:Departure(state, leg.mapID, leg.label)
 end
 
+local function MapAncestors(mapID, api)
+    local ancestors = {}
+    local seen = {}
+    while type(mapID) == "number" and not seen[mapID] do
+        ancestors[#ancestors + 1] = mapID
+        seen[mapID] = true
+        if not api or type(api.GetMapInfo) ~= "function" then break end
+        local ok, info = pcall(api.GetMapInfo, mapID)
+        mapID = ok and type(info) == "table" and info.parentMapID or nil
+    end
+    return ancestors
+end
+
+local function CommonMap(first, second, api)
+    local firstAncestors = {}
+    for _, mapID in ipairs(MapAncestors(first, api)) do
+        firstAncestors[mapID] = true
+    end
+    for _, mapID in ipairs(MapAncestors(second, api)) do
+        if firstAncestors[mapID] then return mapID end
+    end
+end
+
+local function PointOnMap(mapID, x, y, destinationMapID, api)
+    if mapID == destinationMapID then return x, y end
+    return Navigation:ProjectToMap(mapID, x, y, destinationMapID, api)
+end
+
+function Navigation:DistanceToLeg(state, leg, api)
+    if not state or not leg or not state.mapID or not leg.mapID then return nil end
+    if not state.x or not state.y or not leg.x or not leg.y then return nil end
+    if self:OnMap(state.mapID, leg.mapID) then
+        return self.Distance(state.x, state.y, leg.x, leg.y)
+    end
+    api = api or C_Map
+    local commonMap = CommonMap(state.mapID, leg.mapID, api)
+    if not commonMap then return nil end
+    local stateX, stateY = PointOnMap(state.mapID, state.x, state.y, commonMap, api)
+    local legX, legY = PointOnMap(leg.mapID, leg.x, leg.y, commonMap, api)
+    return self.Distance(stateX, stateY, legX, legY)
+end
+
+function Navigation:PreferDirectWalk(destination, flight, state, api)
+    if not flight or not flight.flight then return false end
+    if not state or not destination or not state.mapID or not destination.mapID or not flight.mapID then return false end
+    if not state.x or not state.y or not destination.x or not destination.y or not flight.x or not flight.y then
+        return false
+    end
+    api = api or C_Map
+    local commonMap = CommonMap(state.mapID, destination.mapID, api)
+    if not commonMap then return false end
+    local stateX, stateY = PointOnMap(state.mapID, state.x, state.y, commonMap, api)
+    local destinationX, destinationY = PointOnMap(destination.mapID, destination.x, destination.y, commonMap, api)
+    local flightX, flightY = PointOnMap(flight.mapID, flight.x, flight.y, commonMap, api)
+    local directDistance = self.Distance(stateX, stateY, destinationX, destinationY)
+    local boardingDistance = self.Distance(stateX, stateY, flightX, flightY)
+    return directDistance ~= nil and boardingDistance ~= nil and directDistance < boardingDistance
+end
+
 local function PlainCoord(value)
     if type(value) ~= "number" or value < 0 or value > 1 then
         return nil
@@ -244,11 +303,14 @@ function Navigation:GetActiveLeg(goal, state, api)
                 local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
                 if not arrived then
                     local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
-                    if learnedLeg then return learnedLeg, learnedLeg.label end
+                    if learnedLeg and not self:PreferDirectWalk(leg, learnedLeg, state) then
+                        return learnedLeg, learnedLeg.label
+                    end
                 end
                 local transport = self:TransportLeg(leg, state)
-                if transport and transport.transport then return transport, transport.label end
-                if transport then return transport, transport.label end
+                if transport and not self:PreferDirectWalk(leg, transport, state) then
+                    return transport, transport.label
+                end
                 return self:ApplyClientPin(goal, leg, api), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
         end
