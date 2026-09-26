@@ -1897,8 +1897,26 @@ ns:RegisterGuide({
                 },
             },
             useClientPin = true,
-            text = "Defeat 3 duelists or Novice Warriors in the Bloodhoof arena, then return to Krang Stonehoof. No saved spot for this, so the guide follows the pin in your quest log.",
+            text = "Defeat 3 duelists or Novice Warriors in the Bloodhoof arena. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99108-sparring-match" },
+            complete = QuestState(99108, "complete"),
+            route = {
+                Point(MAP.MULGORE, 0.494, 0.604, "Krang Stonehoof",
+                    "Travel to Krang Stonehoof."),
+            },
+        },
+        {
+            id = "turnin-99108-sparring-match",
+            kind = "turnin",
+            priority = 1020.1,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Turn in Sparring Match to Krang Stonehoof.",
+            dependsOn = { "objective-99108-sparring-match-1" },
             complete = QuestState(99108, "completed"),
             route = {
                 Point(MAP.MULGORE, 0.494, 0.604, "Krang Stonehoof",

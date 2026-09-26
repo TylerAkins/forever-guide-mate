@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-loch-modan",
     title = "Loch Modan",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -734,8 +734,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-283-a-dark-threat-looms",
-            kind = "turnin",
+            id = "accept-283-a-dark-threat-looms",
+            kind = "accept",
             priority = 490,
             conditions = {
                 all = {
@@ -743,8 +743,26 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                 },
             },
+            text = "Accept A Dark Threat Looms from Explosive Charge.",
             dependsOn = { "turnin-280-a-dark-threat-looms" },
-            text = "Accept A Dark Threat Looms from Explosive Charge, then turn it in to Chief Engineer Hinderweir VII.",
+            complete = QuestState(283, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.506, 0.144, "Explosive Charge",
+                "Travel to Explosive Charge."),
+            },
+        },
+        {
+            id = "turnin-283-a-dark-threat-looms",
+            kind = "turnin",
+            priority = 490.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 20 } },
+                },
+            },
+            dependsOn = { "accept-283-a-dark-threat-looms" },
+            text = "Turn it in to Chief Engineer Hinderweir VII.",
             complete = QuestState(283, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.460, 0.136, "Chief Engineer Hinderweir VII",
@@ -873,8 +891,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-302-powder-to-ironband",
-            kind = "turnin",
+            id = "accept-302-powder-to-ironband",
+            kind = "accept",
             priority = 600,
             conditions = {
                 all = {
@@ -882,8 +900,26 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
+            text = "Accept Powder to Ironband from Prospector Stormpike.",
             dependsOn = { "turnin-301-report-to-ironforge" },
-            text = "Accept Powder to Ironband from Prospector Stormpike, then turn it in to Jern Hornhelm.",
+            complete = QuestState(302, "activeOrCompleted"),
+            route = {
+                Point(MAP.IRONFORGE, 0.7431, 0.1216, "Prospector Stormpike",
+                "Travel to Prospector Stormpike."),
+            },
+        },
+        {
+            id = "turnin-302-powder-to-ironband",
+            kind = "turnin",
+            priority = 600.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 15 } },
+                },
+            },
+            dependsOn = { "accept-302-powder-to-ironband" },
+            text = "Turn it in to Jern Hornhelm.",
             complete = QuestState(302, "completed"),
             route = {
                 Point(MAP.IRONFORGE, 0.372, 0.474, "Jern Hornhelm",
@@ -891,8 +927,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-273-resupplying-the-excavation",
-            kind = "turnin",
+            id = "accept-273-resupplying-the-excavation",
+            kind = "accept",
             priority = 610,
             conditions = {
                 all = {
@@ -900,8 +936,26 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
+            text = "Accept Resupplying the Excavation from Jern Hornhelm.",
             dependsOn = { "turnin-302-powder-to-ironband" },
-            text = "Accept Resupplying the Excavation from Jern Hornhelm, then turn it in to Huldar.",
+            complete = QuestState(273, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3717, 0.4755, "Jern Hornhelm",
+                "Travel to Jern Hornhelm."),
+            },
+        },
+        {
+            id = "turnin-273-resupplying-the-excavation",
+            kind = "turnin",
+            priority = 610.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 15 } },
+                },
+            },
+            dependsOn = { "accept-273-resupplying-the-excavation" },
+            text = "Turn it in to Huldar.",
             complete = QuestState(273, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.522, 0.692, "Huldar",
@@ -909,8 +963,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-454-after-the-ambush",
-            kind = "turnin",
+            id = "accept-454-after-the-ambush",
+            kind = "accept",
             priority = 620,
             conditions = {
                 all = {
@@ -918,8 +972,26 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
+            text = "Accept After the Ambush from Huldar.",
             dependsOn = { "turnin-273-resupplying-the-excavation" },
-            text = "Accept After the Ambush from Huldar, then turn it in to Miran.",
+            complete = QuestState(454, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.522, 0.692, "Huldar",
+                "Travel to Huldar."),
+            },
+        },
+        {
+            id = "turnin-454-after-the-ambush",
+            kind = "turnin",
+            priority = 620.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 15 } },
+                },
+            },
+            dependsOn = { "accept-454-after-the-ambush" },
+            text = "Turn it in to Miran.",
             complete = QuestState(454, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.522, 0.694, "Miran",
@@ -1016,8 +1088,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1339-mountaineer-stormpikes-task",
-            kind = "turnin",
+            id = "accept-1339-mountaineer-stormpike-s-task",
+            kind = "accept",
             priority = 680,
             conditions = {
                 all = {
@@ -1025,7 +1097,25 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell, then turn it in to Mountaineer Stormpike.",
+            text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell.",
+            complete = QuestState(1339, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.328, 0.496, "Mountaineer Kadrell",
+                "Travel to Mountaineer Kadrell."),
+            },
+        },
+        {
+            id = "turnin-1339-mountaineer-stormpikes-task",
+            kind = "turnin",
+            priority = 680.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Turn it in to Mountaineer Stormpike.",
+            dependsOn = { "accept-1339-mountaineer-stormpike-s-task" },
             complete = QuestState(1339, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.248, 0.182, "Mountaineer Stormpike",
@@ -1441,8 +1531,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-309-protecting-the-shipment",
-            kind = "turnin",
+            id = "accept-309-protecting-the-shipment",
+            kind = "accept",
             priority = 920,
             conditions = {
                 all = {
@@ -1450,7 +1540,25 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Accept Protecting the Shipment from Miran, then turn it in to Prospector Ironband.",
+            text = "Accept Protecting the Shipment from Miran.",
+            complete = QuestState(309, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.522, 0.694, "Miran",
+                "Travel to Miran."),
+            },
+        },
+        {
+            id = "turnin-309-protecting-the-shipment",
+            kind = "turnin",
+            priority = 920.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Turn it in to Prospector Ironband.",
+            dependsOn = { "accept-309-protecting-the-shipment" },
             complete = QuestState(309, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.658, 0.656, "Prospector Ironband",

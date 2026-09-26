@@ -43,7 +43,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-elwynn-forest",
     title = "1-12 Elwynn Forest",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -602,12 +602,12 @@ ns:RegisterGuide({
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
-            text = "Accept Book Inventory from Brother Paxton, then speak with Daniel in the library.",
+            text = "Accept Book Inventory from Brother Paxton.",
             dependsOn = { "turnin-91743-rascally-rodents" },
             complete = QuestState(92124, "activeOrCompleted"),
             route = {
-                Point(MAP.ELWYNN, 0.4940, 0.4060, "Daniel",
-                    "Travel to Daniel."),
+                Point(MAP.ELWYNN, 0.4940, 0.4040, "Brother Paxton",
+                "Travel to Brother Paxton."),
             },
         },
         {
@@ -933,7 +933,8 @@ ns:RegisterGuide({
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
-            text = "Follow the kobold tracks with the Kobold Tracking Kit, then report to Marshal Dughan.",
+            useClientPin = true,
+            text = "Follow the kobold tracks with the Kobold Tracking Kit.",
             dependsOn = { "accept-91772-shhh-were-hunting-kobolds" },
             complete = QuestState(91772, "complete"),
             route = {
@@ -2124,12 +2125,12 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 1194,
             conditions = { level = { min = 7 } },
-            text = "Accept A Man About a Murloc from Jason Mathers, then speak with Remy Two Times.",
+            text = "Accept A Man About a Murloc from Jason Mathers.",
             dependsOn = { "turnin-99128-slimy-menace" },
             complete = QuestState(99129, "activeOrCompleted"),
             route = {
-                Point(MAP.ELWYNN, 0.4220, 0.6720, "Remy Two Times",
-                    "Travel to Remy Two Times."),
+                Point(MAP.ELWYNN, 0.4740, 0.6220, "Jason Mathers",
+                "Travel to Jason Mathers."),
             },
         },
         {
@@ -2185,12 +2186,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-99131-baited-for-success",
-            kind = "turnin",
+            id = "accept-99131-baited-for-success",
+            kind = "accept",
             priority = 1199,
             conditions = { level = { min = 7 } },
-            text = "Accept Baited for Success from Remy Two Times, then return to Jason Mathers.",
+            text = "Accept Baited for Success from Remy Two Times.",
             dependsOn = { "turnin-99130-an-enticing-offer" },
+            complete = QuestState(99131, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4220, 0.6720, "Remy Two Times",
+                "Travel to Remy Two Times."),
+            },
+        },
+        {
+            id = "turnin-99131-baited-for-success",
+            kind = "turnin",
+            priority = 1199.1,
+            conditions = { level = { min = 7 } },
+            text = "Return to Jason Mathers.",
+            dependsOn = { "accept-99131-baited-for-success" },
             complete = QuestState(99131, "completed"),
             route = {
                 Point(MAP.ELWYNN, 0.4740, 0.6220, "Jason Mathers",
@@ -2822,7 +2836,7 @@ ns:RegisterGuide({
                     { class = 1 },
                 },
             },
-            text = "Beat Bartleby, then talk to him in Old Town.",
+            text = "Beat Bartleby in Old Town.",
             dependsOn = { "accept-1640-beat-bartleby" },
             complete = QuestState(1640, "complete"),
             route = {

@@ -68,7 +68,7 @@ ns:RegisterGuide({
     id = "leveling-the-barrens",
     title = "The Barrens (Loremaster)",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 9 } },
@@ -1598,12 +1598,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-890-the-missing-shipment",
-            kind = "turnin",
+            id = "accept-890-the-missing-shipment",
+            kind = "accept",
             priority = 950,
             conditions = { level = { min = 9 } },
-            text = "Accept The Missing Shipment from Gazlowe, then turn in The Missing Shipment to Wharfmaster Dizzywig.",
+            text = "Accept The Missing Shipment from Gazlowe.",
             dependsOn = { "turnin-887-southsea-freebooters" },
+            complete = QuestState(890, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.626, 0.362, "Gazlowe",
+                "Travel to Gazlowe."),
+            },
+        },
+        {
+            id = "turnin-890-the-missing-shipment",
+            kind = "turnin",
+            priority = 950.1,
+            conditions = { level = { min = 9 } },
+            text = "Turn in The Missing Shipment to Wharfmaster Dizzywig.",
+            dependsOn = { "accept-890-the-missing-shipment" },
             complete = QuestState(890, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.632, 0.384, "Wharfmaster Dizzywig",
@@ -1611,12 +1624,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-892-the-missing-shipment",
-            kind = "turnin",
+            id = "accept-892-the-missing-shipment",
+            kind = "accept",
             priority = 960,
             conditions = { level = { min = 9 } },
-            text = "Accept The Missing Shipment from Wharfmaster Dizzywig, then turn in The Missing Shipment to Gazlowe.",
+            text = "Accept The Missing Shipment from Wharfmaster Dizzywig.",
             dependsOn = { "turnin-890-the-missing-shipment" },
+            complete = QuestState(892, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.632, 0.384, "Wharfmaster Dizzywig",
+                "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "turnin-892-the-missing-shipment",
+            kind = "turnin",
+            priority = 960.1,
+            conditions = { level = { min = 9 } },
+            text = "Turn in The Missing Shipment to Gazlowe.",
+            dependsOn = { "accept-892-the-missing-shipment" },
             complete = QuestState(892, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.626, 0.362, "Gazlowe",
@@ -2764,12 +2790,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-900-samophlange-1",
-            kind = "objective",
+            id = "accept-900-samophlange",
+            kind = "accept",
             priority = 1640,
             conditions = { level = { min = 10 } },
-            text = "Accept Samophlange from Control Console, then shut off the Main Control Valve.",
+            text = "Accept Samophlange from Control Console.",
             dependsOn = { "turnin-894-samophlange" },
+            complete = QuestState(900, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.524, 0.117, "Control Console",
+                "Travel to Control Console."),
+            },
+        },
+        {
+            id = "objective-900-samophlange-1",
+            kind = "objective",
+            priority = 1640.1,
+            conditions = { level = { min = 10 } },
+            text = "Shut off the Main Control Valve.",
+            dependsOn = { "accept-900-samophlange" },
             complete = QuestObjective(900, 1, "Shut off Main Control Valve"),
             route = {
                 Point(MAP.BARRENS, 0.523, 0.116, "Main Control Valve",
@@ -2816,12 +2855,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-901-samophlange-1",
-            kind = "objective",
+            id = "accept-901-samophlange",
+            kind = "accept",
             priority = 1680,
             conditions = { level = { min = 10 } },
-            text = "Accept Samophlange from Control Console, then recover the Console Key.",
+            text = "Accept Samophlange from Control Console.",
             dependsOn = { "turnin-900-samophlange" },
+            complete = QuestState(901, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.524, 0.117, "Control Console",
+                "Travel to Control Console."),
+            },
+        },
+        {
+            id = "objective-901-samophlange-1",
+            kind = "objective",
+            priority = 1680.1,
+            conditions = { level = { min = 10 } },
+            text = "Recover the Console Key.",
+            dependsOn = { "accept-901-samophlange" },
             complete = QuestObjective(901, 1, "Console Key"),
             route = {
                 Point(MAP.BARRENS, 0.528, 0.104, "Tinkerer Sniggles",
@@ -2944,12 +2996,25 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-902-samophlange",
-            kind = "turnin",
+            id = "accept-902-samophlange",
+            kind = "accept",
             priority = 1780,
             conditions = { level = { min = 10 } },
-            text = "Accept Samophlange from Control Console, then turn in Samophlange to Sputtervalve.",
+            text = "Accept Samophlange from Control Console.",
             dependsOn = { "turnin-901-samophlange" },
+            complete = QuestState(902, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.524, 0.117, "Control Console",
+                "Travel to Control Console."),
+            },
+        },
+        {
+            id = "turnin-902-samophlange",
+            kind = "turnin",
+            priority = 1780.1,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Samophlange to Sputtervalve.",
+            dependsOn = { "accept-902-samophlange" },
             complete = QuestState(902, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.630, 0.372, "Sputtervalve",
@@ -6683,8 +6748,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-78681-the-conjuring",
-            kind = "turnin",
+            id = "accept-78681-the-conjuring",
+            kind = "accept",
             priority = 4100,
             conditions = {
                 all = {
@@ -6692,7 +6757,25 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Conjuring from Doan Karhan, then turn it in to Dark Ritual Stone.",
+            text = "Accept The Conjuring from Doan Karhan.",
+            complete = QuestState(78681, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.492, 0.572, "Doan Karhan",
+                "Travel to Doan Karhan."),
+            },
+        },
+        {
+            id = "turnin-78681-the-conjuring",
+            kind = "turnin",
+            priority = 4100.1,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn it in to Dark Ritual Stone.",
+            dependsOn = { "accept-78681-the-conjuring" },
             complete = QuestState(78681, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.790, 0.803, "Dark Ritual Stone",
@@ -6700,15 +6783,32 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-78684-mysterious-traveler",
-            kind = "turnin",
+            id = "accept-78684-mysterious-traveler",
+            kind = "accept",
             priority = 4110,
             conditions = {
                 all = {
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept Mysterious Traveler from Mysterious Traveler, then turn it in to Doan Karhan.",
+            text = "Accept Mysterious Traveler from Mysterious Traveler.",
+            complete = QuestState(78684, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.790, 0.803, "Dark Ritual Stone",
+                "Travel to Dark Ritual Stone."),
+            },
+        },
+        {
+            id = "turnin-78684-mysterious-traveler",
+            kind = "turnin",
+            priority = 4110.1,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn it in to Doan Karhan.",
+            dependsOn = { "accept-78684-mysterious-traveler" },
             complete = QuestState(78684, "completed"),
             route = {
                 Point(MAP.ASHENVALE, 0.492, 0.572, "Doan Karhan",

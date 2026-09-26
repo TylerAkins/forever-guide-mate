@@ -52,7 +52,7 @@ ns:RegisterGuide({
     id = "leveling-teldrassil",
     title = "Teldrassil",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -619,8 +619,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-3519-a-friend-in-need",
-            kind = "turnin",
+            id = "accept-3519-a-friend-in-need",
+            kind = "accept",
             priority = 330,
             conditions = {
                 all = {
@@ -628,8 +628,26 @@ ns:RegisterGuide({
                     { level = { min = 2 } },
                 },
             },
-            text = "Accept A Friend in Need from Iverron, then tell Dirania Silvershine.",
+            text = "Accept A Friend in Need from Iverron.",
             dependsOn = { "turnin-4495-a-good-friend" },
+            complete = QuestState(3519, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.546, 0.330, "Iverron",
+                "Travel to Iverron."),
+            },
+        },
+        {
+            id = "turnin-3519-a-friend-in-need",
+            kind = "turnin",
+            priority = 330.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Tell Dirania Silvershine.",
+            dependsOn = { "accept-3519-a-friend-in-need" },
             complete = QuestState(3519, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.608, 0.420, "Dirania Silvershine",
@@ -765,8 +783,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-920-tenarons-summons",
-            kind = "turnin",
+            id = "accept-920-tenaron-s-summons",
+            kind = "accept",
             priority = 410,
             conditions = {
                 all = {
@@ -774,8 +792,26 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Accept Tenaron's Summons from Gilshalan Windwalker, then speak with Tenaron Stormgrip atop Aldrassil.",
+            text = "Accept Tenaron's Summons from Gilshalan Windwalker.",
             dependsOn = { "turnin-917-webwood-egg" },
+            complete = QuestState(920, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.578, 0.416, "Gilshalan Windwalker",
+                "Travel to Gilshalan Windwalker."),
+            },
+        },
+        {
+            id = "turnin-920-tenarons-summons",
+            kind = "turnin",
+            priority = 410.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 1 } },
+                },
+            },
+            text = "Speak with Tenaron Stormgrip atop Aldrassil.",
+            dependsOn = { "accept-920-tenaron-s-summons" },
             complete = QuestState(920, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.590, 0.394, "Tenaron Stormgrip",
@@ -838,8 +874,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-3522-iverrons-antidote",
-            kind = "turnin",
+            id = "accept-3522-iverron-s-antidote",
+            kind = "accept",
             priority = 450,
             conditions = {
                 all = {
@@ -847,8 +883,26 @@ ns:RegisterGuide({
                     { level = { min = 2 } },
                 },
             },
-            text = "Accept Iverron's Antidote from Dirania Silvershine, then bring it to Iverron before the 5 minute timer expires.",
+            text = "Accept Iverron's Antidote from Dirania Silvershine.",
             dependsOn = { "turnin-3521-iverrons-antidote" },
+            complete = QuestState(3522, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.608, 0.420, "Dirania Silvershine",
+                "Travel to Dirania Silvershine."),
+            },
+        },
+        {
+            id = "turnin-3522-iverrons-antidote",
+            kind = "turnin",
+            priority = 450.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Bring it to Iverron before the 5 minute timer expires.",
+            dependsOn = { "accept-3522-iverron-s-antidote" },
             timer = { seconds = 300, quest = 3522 },
             complete = QuestState(3522, "completed"),
             route = {
@@ -927,8 +981,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-928-crown-of-the-earth",
-            kind = "turnin",
+            id = "accept-928-crown-of-the-earth",
+            kind = "accept",
             priority = 500,
             conditions = {
                 all = {
@@ -936,8 +990,26 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Accept Crown of the Earth from Tenaron Stormgrip, then bring the vessel to Corithras Moonrage in Dolanaar.",
+            text = "Accept Crown of the Earth from Tenaron Stormgrip.",
             dependsOn = { "turnin-921-crown-of-the-earth" },
+            complete = QuestState(928, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.590, 0.394, "Tenaron Stormgrip",
+                "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
+            id = "turnin-928-crown-of-the-earth",
+            kind = "turnin",
+            priority = 500.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 1 } },
+                },
+            },
+            text = "Bring the vessel to Corithras Moonrage in Dolanaar.",
+            dependsOn = { "accept-928-crown-of-the-earth" },
             complete = QuestState(928, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.562, 0.616, "Corithras Moonrage",
@@ -1315,8 +1387,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-476-gnarlpine-corruption",
-            kind = "turnin",
+            id = "accept-476-gnarlpine-corruption",
+            kind = "accept",
             priority = 720,
             conditions = {
                 all = {
@@ -1324,8 +1396,26 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Gnarlpine Corruption from Gaerolas Talvethren, then report to Athridas Bearmantle.",
+            text = "Accept Gnarlpine Corruption from Gaerolas Talvethren.",
             dependsOn = { "turnin-475-a-troubling-breeze" },
+            complete = QuestState(476, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.662, 0.586, "Gaerolas Talvethren",
+                "Travel to Gaerolas Talvethren."),
+            },
+        },
+        {
+            id = "turnin-476-gnarlpine-corruption",
+            kind = "turnin",
+            priority = 720.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Report to Athridas Bearmantle.",
+            dependsOn = { "accept-476-gnarlpine-corruption" },
             complete = QuestState(476, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.560, 0.574, "Athridas Bearmantle",
@@ -2902,8 +2992,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-99047-not-dead-yet",
-            kind = "turnin",
+            id = "accept-99047-not-dead-yet",
+            kind = "accept",
             priority = 1620,
             conditions = {
                 all = {
@@ -2911,8 +3001,26 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow, then tell Byancie in Dolanaar.",
+            text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow.",
             dependsOn = { "turnin-99046-the-lost-runner" },
+            complete = QuestState(99047, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.376, 0.368, "Sentinel Eralya Leafshadow",
+                "Travel to Sentinel Eralya Leafshadow."),
+            },
+        },
+        {
+            id = "turnin-99047-not-dead-yet",
+            kind = "turnin",
+            priority = 1620.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Tell Byancie in Dolanaar.",
+            dependsOn = { "accept-99047-not-dead-yet" },
             complete = QuestState(99047, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.552, 0.568, "Byancie",
@@ -3208,8 +3316,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98398-the-oracle-tree",
-            kind = "turnin",
+            id = "accept-98398-the-oracle-tree",
+            kind = "accept",
             priority = 1790,
             conditions = {
                 all = {
@@ -3217,9 +3325,27 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            useClientPin = true,
-            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak, then speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
+            text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak.",
             dependsOn = { "turnin-98392-darkness-in-the-glade" },
+            complete = QuestState(98398, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.382, 0.344, "Sentinel Arynia Cloudsbreak",
+                "Travel to Sentinel Arynia Cloudsbreak."),
+            },
+        },
+        {
+            id = "turnin-98398-the-oracle-tree",
+            kind = "turnin",
+            priority = 1790.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 12 } },
+                },
+            },
+            useClientPin = true,
+            text = "Speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-98398-the-oracle-tree" },
             complete = QuestState(98398, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.382, 0.344, "Oracle Tree",
@@ -3427,8 +3553,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-2498-return-to-denalan",
-            kind = "turnin",
+            id = "accept-2498-return-to-denalan",
+            kind = "accept",
             priority = 1930,
             conditions = {
                 all = {
@@ -3436,8 +3562,26 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Return to Denalan from Rellian Greenspyre, then speak with Denalan at Lake Al'Ameth.",
+            text = "Accept Return to Denalan from Rellian Greenspyre.",
             dependsOn = { "turnin-923-tumors" },
+            complete = QuestState(2498, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.384, 0.216, "Rellian Greenspyre",
+                "Travel to Rellian Greenspyre."),
+            },
+        },
+        {
+            id = "turnin-2498-return-to-denalan",
+            kind = "turnin",
+            priority = 1930.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Speak with Denalan at Lake Al'Ameth.",
+            dependsOn = { "accept-2498-return-to-denalan" },
             complete = QuestState(2498, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.608, 0.684, "Denalan",
@@ -3589,8 +3733,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-99073-easing-suffering",
-            kind = "turnin",
+            id = "accept-99073-easing-suffering",
+            kind = "accept",
             priority = 2020,
             conditions = {
                 all = {
@@ -3598,8 +3742,26 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Easing Suffering from Byancie, then take the salve to Sentinel Eralya Leafshadow.",
+            text = "Accept Easing Suffering from Byancie.",
             dependsOn = { "turnin-99050-the-great-tree-provides" },
+            complete = QuestState(99073, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.552, 0.568, "Byancie",
+                "Travel to Byancie."),
+            },
+        },
+        {
+            id = "turnin-99073-easing-suffering",
+            kind = "turnin",
+            priority = 2020.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Take the salve to Sentinel Eralya Leafshadow.",
+            dependsOn = { "accept-99073-easing-suffering" },
             complete = QuestState(99073, "completed"),
             route = {
                 Point(MAP.TELDRASSIL, 0.376, 0.368, "Sentinel Eralya Leafshadow",
@@ -3607,8 +3769,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-935-crown-of-the-earth",
-            kind = "turnin",
+            id = "accept-935-crown-of-the-earth",
+            kind = "accept",
             priority = 2030,
             conditions = {
                 all = {
@@ -3616,8 +3778,26 @@ ns:RegisterGuide({
                     { level = { min = 1 } },
                 },
             },
-            text = "Accept Crown of the Earth from Corithras Moonrage, then bring the filled vessel to Arch Druid Fandral Staghelm in Darnassus.",
+            text = "Accept Crown of the Earth from Corithras Moonrage.",
             dependsOn = { "turnin-7383-crown-of-the-earth" },
+            complete = QuestState(935, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.562, 0.616, "Corithras Moonrage",
+                "Travel to Corithras Moonrage."),
+            },
+        },
+        {
+            id = "turnin-935-crown-of-the-earth",
+            kind = "turnin",
+            priority = 2030.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 1 } },
+                },
+            },
+            text = "Bring the filled vessel to Arch Druid Fandral Staghelm in Darnassus.",
+            dependsOn = { "accept-935-crown-of-the-earth" },
             complete = QuestState(935, "completed"),
             route = {
                 Point(MAP.DARNASSUS, 0.348, 0.088, "Arch Druid Fandral Staghelm",
@@ -3625,8 +3805,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98046-crown-of-the-earth",
-            kind = "turnin",
+            id = "accept-98046-crown-of-the-earth",
+            kind = "accept",
             priority = 2040,
             conditions = {
                 all = {
@@ -3634,8 +3814,26 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm, then bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
+            text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm.",
             dependsOn = { "turnin-935-crown-of-the-earth" },
+            complete = QuestState(98046, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.348, 0.088, "Arch Druid Fandral Staghelm",
+                "Travel to Arch Druid Fandral Staghelm."),
+            },
+        },
+        {
+            id = "turnin-98046-crown-of-the-earth",
+            kind = "turnin",
+            priority = 2040.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            text = "Bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
+            dependsOn = { "accept-98046-crown-of-the-earth" },
             complete = QuestState(98046, "completed"),
             route = {
                 Point(MAP.DARNASSUS, 0.400, 0.874, "Lariia",
@@ -3643,8 +3841,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98065-crown-of-the-earth",
-            kind = "turnin",
+            id = "accept-98065-crown-of-the-earth",
+            kind = "accept",
             priority = 2050,
             conditions = {
                 all = {
@@ -3652,8 +3850,26 @@ ns:RegisterGuide({
                     { level = { min = 11 } },
                 },
             },
-            text = "Accept Crown of the Earth from Priestess Lariia, then bring the moonwell remnants to Tyrande Whisperwind.",
+            text = "Accept Crown of the Earth from Priestess Lariia.",
             dependsOn = { "turnin-98046-crown-of-the-earth" },
+            complete = QuestState(98065, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.400, 0.874, "Lariia",
+                "Travel to Lariia."),
+            },
+        },
+        {
+            id = "turnin-98065-crown-of-the-earth",
+            kind = "turnin",
+            priority = 2050.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            text = "Bring the moonwell remnants to Tyrande Whisperwind.",
+            dependsOn = { "accept-98065-crown-of-the-earth" },
             complete = QuestState(98065, "completed"),
             route = {
                 Point(MAP.DARNASSUS, 0.390, 0.812, "Tyrande Whisperwind",

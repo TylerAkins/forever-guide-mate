@@ -46,7 +46,7 @@ ns:RegisterGuide({
     id = "leveling-stonetalon-mountains",
     title = "Stonetalon Mountains",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 20 } },
@@ -2126,8 +2126,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1059-reclaiming-the-charred-vale",
-            kind = "turnin",
+            id = "accept-1059-reclaiming-the-charred-vale",
+            kind = "accept",
             priority = 1300,
             conditions = {
                 all = {
@@ -2135,8 +2135,26 @@ ns:RegisterGuide({
                     { level = { min = 27 } },
                 },
             },
+            text = "Accept Reclaiming the Charred Vale from Keeper Albagorm.",
             dependsOn = { "turnin-1057-reclaiming-the-charred-vale" },
-            text = "Accept Reclaiming the Charred Vale from Keeper Albagorm, then turn it in to Falfindel Waywarder.",
+            complete = QuestState(1059, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.3710, 0.0810, "Keeper Albagorm",
+                "Travel to Keeper Albagorm."),
+            },
+        },
+        {
+            id = "turnin-1059-reclaiming-the-charred-vale",
+            kind = "turnin",
+            priority = 1300.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 27 } },
+                },
+            },
+            dependsOn = { "accept-1059-reclaiming-the-charred-vale" },
+            text = "Turn it in to Falfindel Waywarder.",
             complete = QuestState(1059, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.896, 0.464, "Falfindel Waywarder",
@@ -2661,8 +2679,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1061-the-spirits-of-stonetalon",
-            kind = "turnin",
+            id = "accept-1061-the-spirits-of-stonetalon",
+            kind = "accept",
             priority = 1560,
             conditions = {
                 all = {
@@ -2670,7 +2688,25 @@ ns:RegisterGuide({
                     { level = { min = 17 } },
                 },
             },
-            text = "Accept The Spirits of Stonetalon from Zor Lonetree, then turn it in to Seereth Stonebreak.",
+            text = "Accept The Spirits of Stonetalon from Zor Lonetree.",
+            complete = QuestState(1061, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.390, 0.380, "Zor Lonetree",
+                "Travel to Zor Lonetree."),
+            },
+        },
+        {
+            id = "turnin-1061-the-spirits-of-stonetalon",
+            kind = "turnin",
+            priority = 1560.1,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 17 } },
+                },
+            },
+            text = "Turn it in to Seereth Stonebreak.",
+            dependsOn = { "accept-1061-the-spirits-of-stonetalon" },
             complete = QuestState(1061, "completed"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.352, 0.278, "Seereth Stonebreak",
@@ -2678,15 +2714,32 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-79980-scramble",
-            kind = "turnin",
+            id = "accept-79980-scramble",
+            kind = "accept",
             priority = 1570,
             conditions = {
                 all = {
                     { level = { min = 24 } },
                 },
             },
-            text = "Accept Scramble from Pocket Litter, then turn it in to Mound of Dirt.",
+            text = "Accept Scramble from Pocket Litter.",
+            complete = QuestState(79980, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.408, 0.525, "Pocket Litter",
+                "Travel to Pocket Litter."),
+            },
+        },
+        {
+            id = "turnin-79980-scramble",
+            kind = "turnin",
+            priority = 1570.1,
+            conditions = {
+                all = {
+                    { level = { min = 24 } },
+                },
+            },
+            text = "Turn it in to Mound of Dirt.",
+            dependsOn = { "accept-79980-scramble" },
             complete = QuestState(79980, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.396, 0.499, "Mound of Dirt",
@@ -2694,16 +2747,33 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-79974-wet-job",
-            kind = "turnin",
+            id = "accept-79974-wet-job",
+            kind = "accept",
             priority = 1580,
             conditions = {
                 all = {
                     { level = { min = 32 } },
                 },
             },
+            text = "Accept Wet Job from Mound of Dirt.",
             dependsOn = { "turnin-79980-scramble" },
-            text = "Accept Wet Job from Mound of Dirt, then turn it in to Carved Figurine.",
+            complete = QuestState(79974, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.396, 0.499, "Mound of Dirt",
+                "Travel to Mound of Dirt."),
+            },
+        },
+        {
+            id = "turnin-79974-wet-job",
+            kind = "turnin",
+            priority = 1580.1,
+            conditions = {
+                all = {
+                    { level = { min = 32 } },
+                },
+            },
+            dependsOn = { "accept-79974-wet-job" },
+            text = "Turn it in to Carved Figurine.",
             complete = QuestState(79974, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.495, 0.128, "Carved Figurine",
@@ -2836,8 +2906,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1075-a-scroll-from-mauren",
-            kind = "turnin",
+            id = "accept-1075-a-scroll",
+            kind = "accept",
             priority = 1660,
             conditions = {
                 all = {
@@ -2845,7 +2915,25 @@ ns:RegisterGuide({
                     { level = { min = 21 } },
                 },
             },
-            text = "Accept A Scroll from Mauren from Gaxim Rustfizzle, then turn it in to Collin Mauren.",
+            text = "Accept A Scroll from Mauren from Gaxim Rustfizzle.",
+            complete = QuestState(1075, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1455, 0.594, 0.672, "Gaxim Rustfizzle",
+                "Travel to Gaxim Rustfizzle in Ironforge."),
+            },
+        },
+        {
+            id = "turnin-1075-a-scroll-from-mauren",
+            kind = "turnin",
+            priority = 1660.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 21 } },
+                },
+            },
+            text = "Turn it in to Collin Mauren.",
+            dependsOn = { "accept-1075-a-scroll" },
             complete = QuestState(1075, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.430, 0.802, "Collin Mauren",
@@ -3013,8 +3101,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1082-update-for-sentinel-thenysil",
-            kind = "turnin",
+            id = "accept-1082-update-for-sentinel-thenysil",
+            kind = "accept",
             priority = 1760,
             conditions = {
                 all = {
@@ -3022,7 +3110,25 @@ ns:RegisterGuide({
                     { level = { min = 22 } },
                 },
             },
-            text = "Accept Update for Sentinel Thenysil from Kaela Shadowspear, then turn it in to Sentinel Thenysil.",
+            text = "Accept Update for Sentinel Thenysil from Kaela Shadowspear.",
+            complete = QuestState(1082, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.5987, 0.6686, "Kaela Shadowspear",
+                "Travel to Kaela Shadowspear."),
+            },
+        },
+        {
+            id = "turnin-1082-update-for-sentinel-thenysil",
+            kind = "turnin",
+            priority = 1760.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 22 } },
+                },
+            },
+            text = "Turn it in to Sentinel Thenysil.",
+            dependsOn = { "accept-1082-update-for-sentinel-thenysil" },
             complete = QuestState(1082, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.348, 0.498, "Sentinel Thenysil",
@@ -3030,8 +3136,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1081-reception-from-tyrande",
-            kind = "turnin",
+            id = "accept-1081-reception",
+            kind = "accept",
             priority = 1770,
             conditions = {
                 all = {
@@ -3039,8 +3145,26 @@ ns:RegisterGuide({
                     { level = { min = 28 } },
                 },
             },
+            text = "Accept Reception from Tyrande from Sentinel Thenysil.",
             dependsOn = { "turnin-1082-update-for-sentinel-thenysil" },
-            text = "Accept Reception from Tyrande from Sentinel Thenysil, then turn it in to Tyrande Whisperwind.",
+            complete = QuestState(1081, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.348, 0.498, "Sentinel Thenysil",
+                "Travel to Sentinel Thenysil."),
+            },
+        },
+        {
+            id = "turnin-1081-reception-from-tyrande",
+            kind = "turnin",
+            priority = 1770.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            dependsOn = { "accept-1081-reception" },
+            text = "Turn it in to Tyrande Whisperwind.",
             complete = QuestState(1081, "completed"),
             route = {
                 Point(MAP.ASHENVALE, 0.390, 0.812, "Tyrande Whisperwind",
@@ -3149,8 +3273,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-6542-report-to-kadrak",
-            kind = "turnin",
+            id = "accept-6542-report-to-kadrak",
+            kind = "accept",
             priority = 1840,
             conditions = {
                 all = {
@@ -3158,7 +3282,25 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "Accept Report to Kadrak from Darn Talongrip, then turn it in to Kadrak.",
+            text = "Accept Report to Kadrak from Darn Talongrip.",
+            complete = QuestState(6542, "activeOrCompleted"),
+            route = {
+                Point(MAP.STONETALON, 0.732, 0.948, "Darn Talongrip",
+                "Travel to Darn Talongrip."),
+            },
+        },
+        {
+            id = "turnin-6542-report-to-kadrak",
+            kind = "turnin",
+            priority = 1840.1,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 19 } },
+                },
+            },
+            text = "Turn it in to Kadrak.",
+            dependsOn = { "accept-6542-report-to-kadrak" },
             complete = QuestState(6542, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.480, 0.054, "Kadrak",

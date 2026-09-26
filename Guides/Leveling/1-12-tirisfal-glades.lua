@@ -34,7 +34,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -2106,11 +2106,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98545-leonid-s-letter",
+            kind = "accept",
+            priority = 1491,
+            text = "Accept Leonid's Letter from Leonid Barthalomew.",
+            dependsOn = { "turnin-96896-a-righteous-cause" },
+            complete = QuestState(98545, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
             id = "turnin-98545-leonids-letter",
             kind = "turnin",
-            priority = 1491,
-            text = "Accept Leonid's Letter from Leonid Barthalomew, then deliver it to Glix Xizzix in the Undercity.",
-            dependsOn = { "turnin-96896-a-righteous-cause" },
+            priority = 1491.1,
+            text = "Deliver it to Glix Xizzix in the Undercity.",
+            dependsOn = { "accept-98545-leonid-s-letter" },
             complete = QuestState(98545, "completed"),
             route = {
                 Point(MAP.UNDERCITY, 0.6980, 0.4700, "Glix Xizzix",
