@@ -5,6 +5,8 @@ local _, ns = ...
 -- Left out on purpose: Exploring the Horde and Welcome to Azeroth are Skyborne.
 -- Orgrimmar cooking quests are level 15, past this route.
 -- Crafting lessons stay on the profession. Drop quests appear only after the item starts them.
+-- Finding the Antidote (813) is repeatable. It stays on the route only while
+-- Need for a Cure (812) is still open.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -2273,6 +2275,11 @@ ns:RegisterGuide({
             id = "accept-813-finding-the-antidote",
             kind = "accept",
             priority = 1510,
+            conditions = {
+                all = {
+                    { quest = { id = 812, state = "notCompleted" } },
+                },
+            },
             text = "Accept Finding the Antidote from Kor'ghan in Cleft of Shadow.",
             complete = QuestState(813, "activeOrCompleted"),
             route = {
@@ -2335,6 +2342,11 @@ ns:RegisterGuide({
             id = "objective-813-finding-the-antidote",
             kind = "objective",
             priority = 1570,
+            conditions = {
+                all = {
+                    { quest = { id = 812, state = "notCompleted" } },
+                },
+            },
             text = "Kill Venomtail Scorpid and collect 4 Venomtail Poison Sac.",
             dependsOn = { "accept-813-finding-the-antidote" },
             complete = QuestState(813, "complete"),
@@ -2347,6 +2359,11 @@ ns:RegisterGuide({
             id = "turnin-813-finding-the-antidote",
             kind = "turnin",
             priority = 1590,
+            conditions = {
+                all = {
+                    { quest = { id = 812, state = "notCompleted" } },
+                },
+            },
             text = "Turn in Finding the Antidote to Kor'ghan in Cleft of Shadow.",
             dependsOn = { "objective-813-finding-the-antidote" },
             complete = QuestState(813, "completed"),
