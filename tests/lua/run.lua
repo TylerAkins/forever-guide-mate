@@ -1853,6 +1853,32 @@ Check(DependsOn(antidote, "accept-812-need-for-a-cure"),
 local cure = ns.Engine:GetGoal(durotar, "turnin-812-need-for-a-cure")
 Check(DependsOn(cure, "turnin-813-finding-the-antidote"),
     "Need for a Cure turns in after the antidote")
+function TestRepeatableAntidote()
+    local poisoned = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = { [812] = { complete = false, objectives = {} } },
+        questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+    }
+    local cured = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [812] = true }, questCompletionKnown = true,
+    }
+    for _, goalID in ipairs({
+        "accept-813-finding-the-antidote",
+        "objective-813-finding-the-antidote-1",
+        "turnin-813-finding-the-antidote",
+    }) do
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, poisoned), true,
+            goalID .. " stays while Need for a Cure is still open")
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, cured), false,
+            goalID .. " drops out once Need for a Cure is turned in")
+    end
+end
+TestRepeatableAntidote()
 local aggor = ns.Engine:GetGoal(durotar, "objective-99052-threat-from-below-1")
 Check(aggor and string.find(aggor.text, "Bring a group", 1, true) ~= nil,
     "Aggor tells the player to bring a group")
