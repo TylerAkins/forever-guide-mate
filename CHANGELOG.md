@@ -4,6 +4,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.6 - 2026-09-26
+
+- Repeatable quests no longer stay on the route after you are done with them. That covers Finding the Antidote in the Durotar leveling chapter, the Mangletooth buffs and Mending Old Wounds in Barrens Loremaster, Bone Collector, the Blasted Lands bloodmage buffs, Again With the Zapped Giants, and the Witch Doctor Unbagwa turn-in in Stranglethorn Vale.
+
 ## 0.1.5 - 2026-09-26
 
 - Durotar Loremaster no longer asks you to accept Finding the Antidote again after Need for a Cure is already turned in. That antidote quest is repeatable and does not stay complete.

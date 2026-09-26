@@ -3,6 +3,8 @@ local _, ns = ...
 -- Alliance Era leveling route for Stranglethorn Vale, levels 46-47.
 -- This follows the classic route and is not rewritten for Forever yet.
 -- Grind stops and flight-point pickups are not part of this route.
+-- The turn-in at Witch Doctor Unbagwa (349) is repeatable. It clears when
+-- Stranglethorn Fever (348) is ready to turn in, and drops out after that.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -350,6 +352,11 @@ ns:RegisterGuide({
             id = "accept-348-stranglethorn-fever",
             kind = "accept",
             priority = 280,
+            conditions = {
+                all = {
+                    { quest = { id = 348, state = "notCompleted" } },
+                },
+            },
             text = "Accept Stranglethorn Fever from Fin Fizracket in Booty Bay.",
             complete = QuestState(348, "activeOrCompleted"),
             route = {
@@ -372,8 +379,14 @@ ns:RegisterGuide({
             id = "turnin-349-stranglethorn-fever",
             kind = "turnin",
             priority = 310,
+            conditions = {
+                all = {
+                    { quest = { id = 348, state = "notCompleted" } },
+                },
+            },
             text = "Turn in Stranglethorn Fever to Witch Doctor Unbagwa in Spirit Den. This is an elite. Bring a group.",
-            complete = QuestState(349, "completed"),
+            dependsOn = { "accept-348-stranglethorn-fever" },
+            complete = QuestState(348, "complete"),
             route = {
                 Point(MAP.STRANGLETHORN, 0.3528, 0.6039, "Witch Doctor Unbagwa",
                     "Travel to Witch Doctor Unbagwa."),
@@ -383,6 +396,11 @@ ns:RegisterGuide({
             id = "objective-348-stranglethorn-fever",
             kind = "objective",
             priority = 320,
+            conditions = {
+                all = {
+                    { quest = { id = 348, state = "notCompleted" } },
+                },
+            },
             text = "Survive the wave of attack until Mokk the Savage spawn, kill him for Heart of Mokk in Spirit Den.",
             dependsOn = { "accept-348-stranglethorn-fever" },
             complete = QuestState(348, "complete"),
@@ -534,6 +552,11 @@ ns:RegisterGuide({
             id = "turnin-348-stranglethorn-fever",
             kind = "turnin",
             priority = 450,
+            conditions = {
+                all = {
+                    { quest = { id = 348, state = "notCompleted" } },
+                },
+            },
             text = "Turn in Stranglethorn Fever to Fin Fizracket in Booty Bay.",
             dependsOn = { "objective-348-stranglethorn-fever" },
             complete = QuestState(348, "completed"),

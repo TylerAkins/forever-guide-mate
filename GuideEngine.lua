@@ -1144,7 +1144,8 @@ function Engine:GetGuideProgress(guide, state, segment)
             end
         end
     end
-    local percentage = eligible > 0 and math.floor((completed * 100 / eligible) + 0.5) or 0
+    -- Every remaining step is permanently ineligible, so this character is finished.
+    local percentage = eligible > 0 and math.floor((completed * 100 / eligible) + 0.5) or (total > 0 and 100 or 0)
     return { completed = completed, eligible = eligible, total = total, percentage = percentage }
 end
 
