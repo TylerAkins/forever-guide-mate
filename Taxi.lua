@@ -9,7 +9,12 @@ local function NormalizeName(value)
 end
 
 local function IsReachable(state)
-    if state == "REACHABLE" or state == "DISTANT" then return true end
+    -- Only a directly reachable node proves the character has learned that
+    -- flight point. A DISTANT node is ambiguous: the client lists it for
+    -- flight masters that cannot fly there, which includes paths the
+    -- character has never discovered. Treating it as learned is what sent
+    -- players to a flight master for a route they did not have.
+    if state == "REACHABLE" then return true end
     local flightPathState = Enum and Enum.FlightPathState
     return flightPathState and state == flightPathState.Reachable
 end
@@ -68,14 +73,32 @@ function Taxi:ReadDestinations(api, mapID)
     return reachable, known
 end
 
-function Taxi:Remember(known)
+function Taxi:Remember(known, continent)
     if not ns.charDB or type(known) ~= "table" then return end
     if type(ns.charDB.taxiNodes) ~= "table" then ns.charDB.taxiNodes = {} end
+    -- One known set per land mass (Kalimdor, Eastern Kingdoms, ...). Opening
+    -- any flight master refreshes only that land mass, so a Kalimdor visit
+    -- never clobbers what is known on the Eastern Kingdoms. Entries merge:
+    -- flight points are never unlearned, and a single opening may list only
+    -- part of the land mass.
+    if type(ns.charDB.taxiNodesByContinent) ~= "table" then ns.charDB.taxiNodesByContinent = {} end
+    local key = type(continent) == "string" and continent ~= "" and continent or "Unknown"
+    if type(ns.charDB.taxiNodesByContinent[key]) ~= "table" then ns.charDB.taxiNodesByContinent[key] = {} end
+    local scoped = ns.charDB.taxiNodesByContinent[key]
     for normalized, displayName in pairs(known) do
         if type(normalized) == "string" and type(displayName) == "string" then
             ns.charDB.taxiNodes[normalized] = displayName
+            scoped[normalized] = displayName
         end
     end
+end
+
+function Taxi:ContinentFor(mapID)
+    if ns.Travel and type(ns.Travel.Continent) == "function" and type(mapID) == "number" then
+        local ok, continent = pcall(ns.Travel.Continent, ns.Travel, mapID)
+        if ok and type(continent) == "string" and continent ~= "" then return continent end
+    end
+    return nil
 end
 
 function Taxi:Capture(api)
@@ -83,7 +106,7 @@ function Taxi:Capture(api)
     local mapID, x, y = ns.PlayerState:CapturePosition(api)
     local reachable, known = self:ReadDestinations(api, mapID)
     if next(known) == nil then return false end
-    self:Remember(known)
+    self:Remember(known, self:ContinentFor(mapID))
     if mapID and x and y and next(reachable) ~= nil then
         if type(ns.charDB.taxiRoutes) ~= "table" then ns.charDB.taxiRoutes = {} end
         ns.charDB.taxiRoutes[mapID] = { x = x, y = y, destinations = reachable }
@@ -135,6 +158,13 @@ function Taxi:LearnedDestination(state, destinationName)
     local route = type(routes) == "table" and routes[state.mapID] or nil
     local found = route and FindDestination(route.destinations, wanted)
     if found then return found end
+    local byContinent = ns.charDB.taxiNodesByContinent
+    if type(byContinent) == "table" then
+        local continent = self:ContinentFor(state.mapID)
+        local scoped = continent and byContinent[continent] or nil
+        found = scoped and FindDestination(scoped, wanted)
+        if found then return found end
+    end
     return FindDestination(ns.charDB.taxiNodes, wanted)
 end
 

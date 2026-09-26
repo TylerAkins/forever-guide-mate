@@ -4,6 +4,11 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.2 - 2026-09-26
+
+- Flight memory is stored per land mass: opening any flight master refreshes only that land mass (Kalimdor, Eastern Kingdoms, and so on). A distant listing no longer counts as a learned flight, so an unlearned trip such as the Barrens run to Stonetalon keeps the road instead of sending you to a flight master.
+- Added the addon-list icon, so the addon no longer shows a red question mark in the addon list.
+
 ## 0.1.1 - 2026-09-25
 
 - Logging in with a started guide no longer opens the guide library; it opens only when no guide has been chosen yet.
