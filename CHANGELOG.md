@@ -4,6 +4,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.7 - 2026-09-26
+
+- An objective with no saved spot shows the quest log objective under the quest title. The tracker no longer uses the landmark NPC name once the quest log pin moves.
+
 ## 0.1.6 - 2026-09-26
 
 - Auto navigation now walks directly to a nearby cross-zone objective when reaching the flight master would already be farther. The comparison uses the client map hierarchy, so it applies dynamically to current and future zones.

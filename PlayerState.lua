@@ -80,6 +80,34 @@ local function PositiveNumber(value)
     end
 end
 
+local function CleanText(value)
+    if type(value) ~= "string" or value == "" then
+        return nil
+    end
+    return value
+end
+
+-- The line under the quest title is the objective summary. Progress rows
+-- such as "2/8 Trapped Game" are a different field and are not this text.
+local function ObjectiveSummary(api, questLog, questID, logIndex)
+    if type(logIndex) == "number" then
+        if type(questLog.GetQuestLogQuestText) == "function" then
+            local result, known = Call(questLog, "GetQuestLogQuestText", logIndex)
+            local text = known and CleanText(result[2])
+            if text then return text end
+        end
+        if type(api.GetQuestLogQuestText) == "function" then
+            local result, known = Call(api, "GetQuestLogQuestText", logIndex)
+            local text = known and CleanText(result[2])
+            if text then return text end
+        end
+    end
+    if type(questLog.GetNextWaypointText) == "function" then
+        local result, known = Call(questLog, "GetNextWaypointText", questID)
+        return known and CleanText(result[1]) or nil
+    end
+end
+
 local function QuestTimer(questLog, questID, info)
     local timeLeft = PositiveNumber(info.timeLeft) or PositiveNumber(info.timeRemaining)
     local timeAllowed
@@ -143,6 +171,7 @@ function PlayerState:GetQuestLog(api, questIDs)
             quests[info.questID] = {
                 complete = LogQuestComplete(questLog, info.questID, info, objectives),
                 objectives = objectives,
+                summary = ObjectiveSummary(api, questLog, info.questID, index),
                 timeAllowed = timeAllowed,
                 timeLeft = timeLeft,
             }
