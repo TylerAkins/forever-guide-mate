@@ -1,3 +1,3 @@
-## 0.1.4 - 2026-09-26
+## 0.1.5 - 2026-09-26
 
-- A flight path is suggested only when you know a flight point in that zone on the same land mass. A shared word such as "Mountains" no longer counts, so knowing an Alterac or Redridge flight point no longer sends you to fly to Stonetalon.
+- Repeatable quests no longer stay on the route after you are done with them. Finding the Antidote drops out once Need for a Cure is turned in. The Mangletooth buffs and Mending Old Wounds are left off the Barrens Loremaster route. Bone Collector and the Blasted Lands bloodmage buffs appear only while they are in your log. Again With the Zapped Giants is not tracked, and the Witch Doctor Unbagwa turn-in clears with Stranglethorn Fever.

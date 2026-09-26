@@ -1853,6 +1853,103 @@ Check(DependsOn(antidote, "accept-812-need-for-a-cure"),
 local cure = ns.Engine:GetGoal(durotar, "turnin-812-need-for-a-cure")
 Check(DependsOn(cure, "turnin-813-finding-the-antidote"),
     "Need for a Cure turns in after the antidote")
+function TestRepeatableRoutes()
+    Load("Guides/Era/32-34-desolace.lua")
+    Load("Guides/Era/51-51-blasted-lands.lua")
+    Load("Guides/Era/46-47-stranglethorn-vale.lua")
+    Load("Guides/Era/49-50-feralas.lua")
+    local openCure = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = { [812] = { complete = false, objectives = {} } },
+        questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+    }
+    local cured = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [812] = true }, questCompletionKnown = true,
+    }
+    local era = ns.guides["leveling-era"]
+    local antidote = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-813-finding-the-antidote")
+    Equal(ns.EvaluateCondition(antidote.conditions, openCure), true,
+        "the Durotar chapter still offers the antidote while Need for a Cure is open")
+    Equal(ns.EvaluateCondition(antidote.conditions, cured), false,
+        "the Durotar chapter drops the antidote after Need for a Cure is turned in")
+
+    local barrens = ns.guides["leveling-the-barrens"]
+    for _, goalID in ipairs({
+        "accept-889-spirit-of-the-wind",
+        "accept-5042-agamaggans-strength",
+        "accept-9267-mending-old-wounds",
+    }) do
+        Equal(ns.Engine:GetGoal(barrens, goalID), nil, goalID .. " is not on the Barrens route")
+    end
+
+    local idle = {
+        faction = "Horde", raceID = 2, classID = 1, level = 51,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [348] = true }, questCompletionKnown = true,
+    }
+    local bones = ns.Engine:GetGoal(ns.guides["leveling-era-32-34-desolace"], "accept-5501-bone-collector")
+    Equal(ns.EvaluateCondition(bones.conditions, idle), false,
+        "Bone Collector stays off the route until it is in the log")
+    local collecting = {}
+    for key, value in pairs(idle) do collecting[key] = value end
+    collecting.quests = { [5501] = { complete = false, objectives = {} } }
+    Equal(ns.EvaluateCondition(bones.conditions, collecting), true,
+        "Bone Collector returns while it is in the log")
+
+    local hordeBlasted = ns.guides["leveling-era-51-51-blasted-lands"]
+    local buff = ns.Engine:GetGoal(hordeBlasted, "accept-2581-snickerfang-jowls")
+    Equal(ns.EvaluateCondition(buff.conditions, idle), false,
+        "a finished bloodmage buff does not stay on the Blasted Lands route")
+    local buffProgress = ns.Engine:GetGuideProgress(hordeBlasted, idle)
+    Equal(buffProgress.percentage, 100,
+        "Blasted Lands is finished when none of the repeatable buffs are in the log")
+
+    local unbagwa = ns.Engine:GetGoal(ns.guides["leveling-era-46-47-stranglethorn-vale"], "turnin-349-stranglethorn-fever")
+    Equal(ns.EvaluateCondition(unbagwa.conditions, idle), false,
+        "Witch Doctor Unbagwa drops out after Stranglethorn Fever is turned in")
+    local fever = {}
+    for key, value in pairs(idle) do fever[key] = value end
+    fever.completedQuests = {}
+    fever.quests = { [348] = { complete = true, objectives = {} } }
+    Equal(ns.EvaluateCondition(unbagwa.complete, fever), true,
+        "Witch Doctor Unbagwa clears once the Heart of Mokk is collected")
+    Equal(ns.Engine:GetGoal(ns.guides["leveling-era-49-50-feralas"], "accept-7725-again-with-the-zapped-giants"), nil,
+        "Again With the Zapped Giants is not on the Feralas route")
+end
+TestRepeatableRoutes()
+
+function TestRepeatableAntidote()
+    local poisoned = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = { [812] = { complete = false, objectives = {} } },
+        questLogKnown = true,
+        completedQuests = {}, questCompletionKnown = true,
+    }
+    local cured = {
+        faction = "Horde", raceID = 2, classID = 1, level = 12,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [812] = true }, questCompletionKnown = true,
+    }
+    for _, goalID in ipairs({
+        "accept-813-finding-the-antidote",
+        "objective-813-finding-the-antidote-1",
+        "turnin-813-finding-the-antidote",
+    }) do
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, poisoned), true,
+            goalID .. " stays while Need for a Cure is still open")
+        Equal(ns.EvaluateCondition(ns.Engine:GetGoal(durotar, goalID).conditions, cured), false,
+            goalID .. " drops out once Need for a Cure is turned in")
+    end
+end
+TestRepeatableAntidote()
 local aggor = ns.Engine:GetGoal(durotar, "objective-99052-threat-from-below-1")
 Check(aggor and string.find(aggor.text, "Bring a group", 1, true) ~= nil,
     "Aggor tells the player to bring a group")
