@@ -10,7 +10,7 @@ An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It 
 ## Do this
 
 1. Open the chapter in `Guides/Era/`. That step list is the spine. Keep its accepts, objectives, and turn-ins in that order. Leave hub-to-hub travel steps out. TomTom already points at the next pin, and those steps do not auto-clear. Keep a travel step when the quest is to discover or investigate that place, and give it the same `complete` condition as that objective so it clears when the discovery is done.
-2. Open the Wowhead Forever zone quest page for the chapter's zone, for example `https://www.wowhead.com/forever/quests/eastern-kingdoms/westfall`.
+2. Open the Wowhead Forever zone quest page for the chapter's zone, for example `https://www.wowhead.com/forever/quests/eastern-kingdoms/westfall`. Read quest facts from [wow-database](https://github.com/TylerAkins/wow-database), the compiled Forever zone files under `data/forever/compiled/zones/`. A Forever quest has `firstseenpatch` 16001. The recommended level is the Wowhead Level line in `infoboxMarkup` (`Level: N`). When `index.list.level` disagrees with that line, use the Level line. A quest the bundle could not place (no start pin) is named in the guide header. Do not invent a pin.
 3. Every quest on that page that the spine already runs stays as-is. Classic quests the spine left off stay off, unless a new quest requires them.
 4. A new quest is woven in only when the route is already there, the quest is low-level and right there, or it is the first quest the route should accept. Anything else stays out (see below).
 5. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
@@ -58,7 +58,7 @@ Race ids: Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gno
 
 ## Converted example
 
-The Westfall chapter (`Guides/Leveling/12-17-westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/28-29-duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/21-22-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
+The Westfall chapter (`Guides/Leveling/12-17-westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/28-29-duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/24-24-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
 
 ## Ship it
 

@@ -25,6 +25,8 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 Quest-step rules are in [guide-authoring.md](guide-authoring.md). Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
+Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database). Use the compiled zone files in `data/forever/compiled/zones/`. A quest added in Forever has `firstseenpatch` 16001. The recommended level is the Wowhead Level line in that bundle (`Level: N` in `infoboxMarkup`).
+
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua

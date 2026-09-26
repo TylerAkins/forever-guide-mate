@@ -4,6 +4,11 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.8 - 2026-09-26
+
+- Converted the 20-22 Stonetalon, 21-22 Ashenvale, and 22-23 Stonetalon chapters onto the 1-60 route. Forever quests on those zone lists are past each chapter's level, start in another zone, or have no giver on the route, so the classic steps stay as they are.
+- Forever quest facts for guide work now come from the wow-database zone bundles.
+
 ## 0.1.7 - 2026-09-26
 
 - An objective with no saved spot shows the quest log objective under the quest title. The tracker no longer uses the landmark NPC name once the quest log pin moves.

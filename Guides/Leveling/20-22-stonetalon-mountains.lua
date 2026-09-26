@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 20-22.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Stonetalon list that sit on this pass are woven in.
+-- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter. Pigments for Paints starts in Thunder Bluff. Scramble is level 24. Wet Job is level 32. Rekindle is level 40.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -37,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-20-22-stonetalon-mountains",
-    title = "20-22 Stonetalon Mountains (Era)",
+    title = "20-22 Stonetalon Mountains",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {

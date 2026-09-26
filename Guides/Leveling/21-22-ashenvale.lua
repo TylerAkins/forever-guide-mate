@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Ashenvale, levels 21-22.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Ashenvale list that sit on this pass are woven in.
+-- Left out: Repelling Invaders is a level 60 daily.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -29,7 +30,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-21-22-ashenvale",
-    title = "21-22 Ashenvale (Era)",
+    title = "21-22 Ashenvale",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {

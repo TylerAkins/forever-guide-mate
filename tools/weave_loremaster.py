@@ -1476,7 +1476,7 @@ ZONES = [
         "map_key": "ASHENVALE",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/ashenvale",
         "leveling": [
-            "Guides/Era/21-22-ashenvale.lua",
+            "Guides/Leveling/21-22-ashenvale.lua",
             "Guides/Era/24-24-ashenvale.lua",
             "Guides/Era/26-27-ashenvale.lua",
             "Guides/Era/29-30-ashenvale.lua",
@@ -1504,8 +1504,8 @@ ZONES = [
         "map_key": "STONETALON",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/stonetalon-mountains",
         "leveling": [
-            "Guides/Era/20-22-stonetalon-mountains.lua",
-            "Guides/Era/22-23-stonetalon-mountains.lua",
+            "Guides/Leveling/20-22-stonetalon-mountains.lua",
+            "Guides/Leveling/22-23-stonetalon-mountains.lua",
             "Guides/Leveling/23-25-stonetalon-mountains.lua",
             "Guides/Era/27-27-stonetalon-mountains.lua",
         ],
