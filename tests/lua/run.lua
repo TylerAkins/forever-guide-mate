@@ -275,6 +275,58 @@ local learnedTaxiLeg = ns.Navigation:GetActiveLeg(learnedTaxiGoal, { mapID = 141
 Equal(learnedTaxiLeg.mapID, 1413, "learned flight route targets the local flight master")
 Check(learnedTaxiLeg.learnedTaxi, "learned flight route supersedes the walking pin")
 Equal(learnedTaxiLeg.label, "Take the flight path to Thunder Bluff.", "a known flight path uses the flight instruction")
+
+function TestNearbyCrossZoneWalkBeatsFlight()
+    local savedMapAPI = C_Map
+    C_Map = {
+        GetMapInfo = function(mapID)
+            local maps = {
+                [1413] = { name = "The Barrens", parentMapID = 1414 },
+                [1442] = { name = "Stonetalon Mountains", parentMapID = 1414 },
+                [1414] = { name = "Kalimdor" },
+                [9001] = { name = "Future Origin", parentMapID = 9999 },
+                [9002] = { name = "Future Destination", parentMapID = 9999 },
+                [9999] = { name = "Future Continent" },
+            }
+            return maps[mapID]
+        end,
+        GetMapRectOnMap = function(sourceMapID, destinationMapID)
+            if destinationMapID == 1414 then
+                if sourceMapID == 1413 then return 0.4, 0.6, 0.4, 0.8 end
+                if sourceMapID == 1442 then return 0.3, 0.4, 0.3, 0.4 end
+            elseif destinationMapID == 9999 then
+                if sourceMapID == 9001 then return 0.4, 0.6, 0.4, 0.8 end
+                if sourceMapID == 9002 then return 0.3, 0.4, 0.3, 0.4 end
+            end
+        end,
+    }
+    ns.charDB.taxiRoutes = {
+        [1413] = { x = 0.515, y = 0.303, destinations = {
+            ["sun rock retreat, stonetalon mountains"] = "Sun Rock Retreat, Stonetalon Mountains",
+        } },
+    }
+    local goal = {
+        route = { { mapID = 1442, x = 0.99, y = 0.99, label = "Kaya Flathoof" } },
+    }
+    local nearbyLeg = ns.Navigation:GetActiveLeg(goal,
+        { mapID = 1413, x = 0.01, y = 0.01, faction = "Horde" })
+    Equal(nearbyLeg.mapID, 1442,
+        "a nearby cross-zone objective stays on the direct walking route")
+    Check(not nearbyLeg.flight,
+        "a farther flight master does not supersede a nearby cross-zone objective")
+    local farLeg = ns.Navigation:GetActiveLeg(goal,
+        { mapID = 1413, x = 0.515, y = 0.303, faction = "Horde" })
+    Check(farLeg.flight,
+        "a flight remains available when its flight master is closer than the cross-zone objective")
+    Check(ns.Navigation:PreferDirectWalk(
+        { mapID = 9002, x = 0.99, y = 0.99 },
+        { mapID = 9001, x = 0.515, y = 0.303, flight = true },
+        { mapID = 9001, x = 0.01, y = 0.01 }),
+        "walking comparison discovers arbitrary future zones from the map hierarchy")
+    C_Map = savedMapAPI
+    ns.charDB.taxiRoutes = {}
+end
+TestNearbyCrossZoneWalkBeatsFlight()
 Enum = nil
 
 local mapAPI = {
