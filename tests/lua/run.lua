@@ -2560,6 +2560,33 @@ function TestStaleFlightRoutesPurged()
 end
 TestStaleFlightRoutesPurged()
 
+function TestFlightNamesNeedADistinctiveMatch()
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = {
+        ["crossroads, the barrens"] = "Crossroads, The Barrens",
+        ["tarren mill, alterac mountains"] = "Tarren Mill, Alterac Mountains",
+    }
+    ns.charDB.taxiNodesByContinent = {
+        Kalimdor = { ["crossroads, the barrens"] = "Crossroads, The Barrens" },
+        ["Eastern Kingdoms"] = { ["tarren mill, alterac mountains"] = "Tarren Mill, Alterac Mountains" },
+    }
+    local barrens = { mapID = 1413, x = 0.5, y = 0.3, faction = "Horde" }
+    Equal(ns.Taxi:LearnedDestination(barrens, "Stonetalon Mountains"), nil,
+        "a shared word such as Mountains does not count as knowing Stonetalon")
+    local goal = { route = { { mapID = 1442, x = 0.736, y = 0.861, label = "Grundig Darkcloud" } } }
+    local leg = ns.Navigation:GetActiveLeg(goal, barrens)
+    Check(string.find(leg.label or "", "flight path", 1, true) == nil,
+        "an Eastern Kingdoms node does not suggest a Kalimdor flight")
+    ns.charDB.taxiNodesByContinent.Kalimdor["sun rock retreat, stonetalon mountains"] =
+        "Sun Rock Retreat, Stonetalon Mountains"
+    Check(ns.Taxi:LearnedDestination(barrens, "Stonetalon Mountains") ~= nil,
+        "the real Stonetalon flight point still matches")
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
+end
+TestFlightNamesNeedADistinctiveMatch()
+
 function TestTeldrassil()
     local guide = ns.guides["leveling-teldrassil"]
     Check(guide ~= nil, "the Teldrassil guide is registered")
