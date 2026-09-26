@@ -3,6 +3,8 @@ local _, ns = ...
 -- Alliance Era leveling route for Desolace, levels 34-35.
 -- This follows the classic route and is not rewritten for Forever yet.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Bone Collector (5501) is repeatable and does not stay complete. It stays off
+-- the route until the quest is in your log.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -239,6 +241,11 @@ ns:RegisterGuide({
             id = "accept-5501-bone-collector",
             kind = "accept",
             priority = 230,
+            conditions = {
+                all = {
+                    { quest = { id = 5501, state = "active" } },
+                },
+            },
             text = "Accept Bone Collector from Bibbly F'utzbuckle in Kormek's Hut.",
             complete = QuestState(5501, "activeOrCompleted"),
             route = {
@@ -325,6 +332,11 @@ ns:RegisterGuide({
             id = "objective-5501-bone-collector",
             kind = "objective",
             priority = 330,
+            conditions = {
+                all = {
+                    { quest = { id = 5501, state = "active" } },
+                },
+            },
             text = "Collect 10 Kodo Bone lying around in Kodo Graveyard.",
             dependsOn = { "accept-5501-bone-collector" },
             complete = QuestState(5501, "complete"),
@@ -337,6 +349,11 @@ ns:RegisterGuide({
             id = "turnin-5501-bone-collector",
             kind = "turnin",
             priority = 340,
+            conditions = {
+                all = {
+                    { quest = { id = 5501, state = "active" } },
+                },
+            },
             text = "Turn in Bone Collector to Bibbly F'utzbuckle in Kormek's Hut.",
             dependsOn = { "objective-5501-bone-collector" },
             complete = QuestState(5501, "completed"),

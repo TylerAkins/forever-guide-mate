@@ -3,6 +3,8 @@ local _, ns = ...
 -- Horde Era leveling route for Feralas, levels 49-50.
 -- This follows the classic route and is not rewritten for Forever yet.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Again With the Zapped Giants (7725) is the repeatable follow-up to Zapped Giants
+-- and is not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -413,17 +415,6 @@ ns:RegisterGuide({
             text = "Turn in Zapped Giants to Zorbin Fandazzle in The Forgotten Coast.",
             dependsOn = { "objective-7003-zapped-giants" },
             complete = QuestState(7003, "completed"),
-            route = {
-                Point(MAP.FERALAS, 0.4481, 0.4340, "Zorbin Fandazzle",
-                    "Travel to Zorbin Fandazzle."),
-            },
-        },
-        {
-            id = "accept-7725-again-with-the-zapped-giants",
-            kind = "accept",
-            priority = 380,
-            text = "Accept Again With the Zapped Giants from Zorbin Fandazzle in The Forgotten Coast.",
-            complete = QuestState(7725, "activeOrCompleted"),
             route = {
                 Point(MAP.FERALAS, 0.4481, 0.4340, "Zorbin Fandazzle",
                     "Travel to Zorbin Fandazzle."),
