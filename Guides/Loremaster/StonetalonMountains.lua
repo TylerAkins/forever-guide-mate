@@ -4,7 +4,7 @@ local _, ns = ...
 -- The step order follows the leveling route. Quests that are on the
 -- Wowhead zone page and not on that route are woven in at the giver
 -- the route already visits, or after the series quest they follow.
--- Leveling route: Guides/Era/20-22-stonetalon-mountains.lua, Guides/Era/22-23-stonetalon-mountains.lua, Guides/Leveling/23-25-stonetalon-mountains.lua, Guides/Era/27-27-stonetalon-mountains.lua
+-- Leveling route: Guides/Leveling/20-22-stonetalon-mountains.lua, Guides/Leveling/22-23-stonetalon-mountains.lua, Guides/Leveling/23-25-stonetalon-mountains.lua, Guides/Era/27-27-stonetalon-mountains.lua
 -- Quest list: https://www.wowhead.com/forever/quests/kalimdor/stonetalon-mountains
 -- Dungeon quests stay in the dungeon guides.
 -- Coordinates have not been validated in the Forever client.

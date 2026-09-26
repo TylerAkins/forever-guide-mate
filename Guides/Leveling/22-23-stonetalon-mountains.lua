@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Alliance Era leveling route for Stonetalon Mountains, levels 22-23.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Forever quests from the Stonetalon list that sit on this pass are woven in.
+-- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble is level 24. Wet Job is level 32. Rekindle is level 40.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -31,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-22-23-stonetalon-mountains",
-    title = "22-23 Stonetalon Mountains (Era)",
+    title = "22-23 Stonetalon Mountains",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
