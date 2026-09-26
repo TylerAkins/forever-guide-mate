@@ -777,18 +777,69 @@ local function GoalQuestID(goal)
     end
 end
 
--- A step with no saved spot keeps the quest NPC as its landmark. Once the
--- quest log pin moves, that name is not the objective. Use the summary
--- printed under the quest title, and the step text when the log has none.
-local function UnpinnedObjective(goal, state)
-    if not goal or goal.useClientPin ~= true or goal.kind ~= "objective" then
+local function ObjectiveFinished(objective)
+    if type(objective) ~= "table" then return false end
+    if type(objective.numRequired) == "number" and objective.numRequired > 0
+        and type(objective.numFulfilled) == "number" then
+        return objective.numFulfilled >= objective.numRequired
+    end
+    return objective.finished == true
+        or (type(objective.finished) == "number" and objective.finished > 0)
+end
+
+local function ObjectiveForGoal(goal, objectives)
+    if type(objectives) ~= "table" then return nil end
+    local complete = type(goal.complete) == "table" and goal.complete or nil
+    local spec = type(complete) == "table" and complete.questObjective or nil
+    if type(spec) == "table" and type(spec.text) == "string" and spec.text ~= "" then
+        local needle = string.lower(spec.text)
+        for _, objective in ipairs(objectives) do
+            if type(objective) == "table" and type(objective.text) == "string"
+                and string.find(string.lower(objective.text), needle, 1, true) then
+                return objective
+            end
+        end
+    end
+    if type(spec) == "table" and type(spec.index) == "number" then
+        return objectives[spec.index]
+    end
+    for _, objective in ipairs(objectives) do
+        if not ObjectiveFinished(objective) then return objective end
+    end
+end
+
+-- Navigation labels describe the route, not the work. Show the current
+-- unfinished objective row from the quest log, then fall back to the quest
+-- summary and finally the authored step text.
+local function ClientObjective(goal, state)
+    if not goal or (goal.useClientText ~= true and goal.useClientPin ~= true)
+        or (goal.kind ~= "objective" and goal.kind ~= "gossip") then
         return nil
     end
     local quests = state and state.quests
     local entry = type(quests) == "table" and quests[GoalQuestID(goal)]
+    local objective = type(entry) == "table" and ObjectiveForGoal(goal, entry.objectives)
+    if type(objective) == "table" and type(objective.text) == "string" and objective.text ~= "" then
+        return objective.text
+    end
     local summary = type(entry) == "table" and entry.summary
     if type(summary) == "string" and summary ~= "" then
         return summary
+    end
+    return goal.text
+end
+
+local function TurnInInstruction(goal, state)
+    if not goal or goal.kind ~= "turnin" then return nil end
+    local quests = state and state.quests
+    local entry = type(quests) == "table" and quests[GoalQuestID(goal)]
+    local title = type(entry) == "table" and entry.title
+    local route = goal.route
+    local destination = type(route) == "table" and route[#route]
+    destination = type(destination) == "table" and destination.label
+    if type(title) == "string" and title ~= ""
+        and type(destination) == "string" and destination ~= "" then
+        return title .. " @ " .. destination
     end
     return goal.text
 end
@@ -803,6 +854,9 @@ function UI:GoalInstruction(engine)
     -- Era routes keep their path dots. On the map the step reads as the
     -- objective. Off the map the travel text still has to point the way.
     if PathDot(leg) and leg and state.mapID and ns.Navigation:OnMap(state.mapID, leg.mapID) then
+        if goal.kind == "objective" or goal.kind == "gossip" then
+            return ClientObjective(goal, state)
+        end
         return goal.text
     end
     if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID) then
@@ -813,13 +867,23 @@ function UI:GoalInstruction(engine)
     end
     local finalLeg = goal.route and goal.route[#goal.route]
     if leg and finalLeg and state.mapID and (leg.mapID ~= finalLeg.mapID or leg.x ~= finalLeg.x or leg.y ~= finalLeg.y) then
-        if goal.useClientPin == true and goal.kind == "objective" and (not status or status == leg.label) then
-            return UnpinnedObjective(goal, state)
+        if (goal.useClientText == true or goal.useClientPin == true)
+            and (goal.kind == "objective" or goal.kind == "gossip")
+            and (not status or status == leg.label) then
+            return ClientObjective(goal, state)
+        end
+        if goal.useClientPin == true and goal.kind == "turnin"
+            and (not status or status == leg.label) then
+            return TurnInInstruction(goal, state)
         end
         return status or leg.label or goal.text
     end
-    if goal.useClientPin == true and goal.kind == "objective" then
-        return UnpinnedObjective(goal, state)
+    if (goal.useClientText == true or goal.useClientPin == true)
+        and (goal.kind == "objective" or goal.kind == "gossip") then
+        return ClientObjective(goal, state)
+    end
+    if (goal.useClientText == true or goal.useClientPin == true) and goal.kind == "turnin" then
+        return TurnInInstruction(goal, state)
     end
     return goal.text
 end
@@ -838,10 +902,12 @@ function UI:Update(engine)
     self.tracker.percent:SetText(progress.percentage .. "%")
     self.tracker.progress:SetValue(progress.percentage)
     if engine.currentGoal then
-        self.tracker.typeLabel:SetText(string.upper(engine.currentGoal.kind or "step"))
+        local kindLabels = { turnin = "TURN IN" }
+        self.tracker.typeLabel:SetText(kindLabels[engine.currentGoal.kind]
+            or string.upper(engine.currentGoal.kind or "step"))
         local colors = {
             accept = { 0.2, 0.75, 0.35 }, objective = { 0.92, 0.72, 0.2 }, turnin = { 0.25, 0.65, 1 },
-            travel = { 0.7, 0.45, 0.95 }, note = { 0.65, 0.7, 0.75 },
+            gossip = { 0.9, 0.5, 0.9 }, travel = { 0.7, 0.45, 0.95 }, note = { 0.65, 0.7, 0.75 },
         }
         local color = colors[engine.currentGoal.kind] or colors.note
         SetSolidColor(self.tracker.typeIcon, color[1], color[2], color[3], 1)

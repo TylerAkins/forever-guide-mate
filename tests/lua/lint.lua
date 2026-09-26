@@ -181,6 +181,22 @@ for _, guideID in ipairs(ns.guideOrder) do
     local guide = ns.guides[guideID]
     local byQuest, questOrder = {}, {}
     for _, goal in ipairs(guide.goals) do
+        local startsWithAccept = type(goal.text) == "string" and goal.text:sub(1, 7) == "Accept "
+        Check(not startsWithAccept or goal.kind == "accept",
+            ("%s %s starts with Accept but is a %s step")
+                :format(guideID, tostring(goal.id), tostring(goal.kind)))
+        Check(goal.kind ~= "accept" or type(goal.text) ~= "string"
+                or not goal.text:lower():find(", then ", 1, true),
+            ("%s %s combines acceptance with another action")
+                :format(guideID, tostring(goal.id)))
+        local lowerText = type(goal.text) == "string" and goal.text:lower() or ""
+        local bundledTurnin = lowerText:find("then report to", 1, true)
+            or lowerText:find("then return to", 1, true)
+            or lowerText:find("then turn in", 1, true)
+            or lowerText:find("and turn in", 1, true)
+        Check((goal.kind ~= "objective" and goal.kind ~= "gossip") or not bundledTurnin,
+            ("%s %s combines an objective with its turn-in")
+                :format(guideID, tostring(goal.id)))
         local questID = GoalQuestID(goal)
         if questID then
             if not byQuest[questID] then

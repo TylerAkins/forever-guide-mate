@@ -42,7 +42,7 @@ ns:RegisterGuide({
     id = "leveling-westfall",
     title = "Westfall",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -2609,8 +2609,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-98021-journey-to-sentinel-hill",
-            kind = "turnin",
+            id = "accept-98021-journey-to-sentinel-hill",
+            kind = "accept",
             priority = 1780,
             conditions = {
                 all = {
@@ -2618,7 +2618,25 @@ ns:RegisterGuide({
                     { level = { min = 13 } },
                 },
             },
-            text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon, then turn it in to Gryan Stoutmantle.",
+            text = "Accept Journey to Sentinel Hill from Highlord Bolvar Fordragon.",
+            complete = QuestState(98021, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                "Travel to Highlord Bolvar Fordragon."),
+            },
+        },
+        {
+            id = "turnin-98021-journey-to-sentinel-hill",
+            kind = "turnin",
+            priority = 1780.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 13 } },
+                },
+            },
+            text = "Turn it in to Gryan Stoutmantle.",
+            dependsOn = { "accept-98021-journey-to-sentinel-hill" },
             complete = QuestState(98021, "completed"),
             route = {
                 Point(MAP.STORMWIND, 0.562, 0.476, "Gryan Stoutmantle",
@@ -3229,8 +3247,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-92748-explosive-consultation",
-            kind = "turnin",
+            id = "accept-92748-explosive-consultation",
+            kind = "accept",
             priority = 2130,
             conditions = {
                 all = {
@@ -3238,7 +3256,25 @@ ns:RegisterGuide({
                     { level = { min = 16 } },
                 },
             },
-            text = "Accept Explosive Consultation from Alba Fairmoon, then turn it in to Sprite Jumpsprocket.",
+            text = "Accept Explosive Consultation from Alba Fairmoon.",
+            complete = QuestState(92748, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.524, 0.530, "Alba Fairmoon",
+                "Travel to Alba Fairmoon."),
+            },
+        },
+        {
+            id = "turnin-92748-explosive-consultation",
+            kind = "turnin",
+            priority = 2130.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 16 } },
+                },
+            },
+            text = "Turn it in to Sprite Jumpsprocket.",
+            dependsOn = { "accept-92748-explosive-consultation" },
             complete = QuestState(92748, "completed"),
             route = {
                 Point(MAP.WESTFALL, 0.546, 0.080, "Sprite Jumpsprocket",
@@ -3352,8 +3388,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-92750-detonation-at-a-distance",
-            kind = "turnin",
+            id = "accept-92750-detonation-at-a-distance",
+            kind = "accept",
             priority = 2200,
             conditions = {
                 all = {
@@ -3361,7 +3397,25 @@ ns:RegisterGuide({
                     { level = { min = 16 } },
                 },
             },
-            text = "Accept Detonation at a Distance from Sprite Jumpsprocket, then turn it in to Jasper Fel.",
+            text = "Accept Detonation at a Distance from Sprite Jumpsprocket.",
+            complete = QuestState(92750, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.546, 0.080, "Sprite Jumpsprocket",
+                "Travel to Sprite Jumpsprocket."),
+            },
+        },
+        {
+            id = "turnin-92750-detonation-at-a-distance",
+            kind = "turnin",
+            priority = 2200.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 16 } },
+                },
+            },
+            text = "Turn it in to Jasper Fel.",
+            dependsOn = { "accept-92750-detonation-at-a-distance" },
             complete = QuestState(92750, "completed"),
             route = {
                 Point(MAP.STORMWIND, 0.782, 0.588, "Jasper Fel",
@@ -3568,15 +3622,32 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-93928-of-mice-and-milk",
-            kind = "turnin",
+            id = "accept-93928-of-mice-and-milk",
+            kind = "accept",
             priority = 2330,
             conditions = {
                 all = {
                     { level = { min = 15 } },
                 },
             },
-            text = "Accept Of Mice and Milk from Mouse, then turn it in to Hemet Nesingwary.",
+            text = "Accept Of Mice and Milk from Mouse.",
+            complete = QuestState(93928, "activeOrCompleted"),
+            route = {
+                Point(MAP.WESTFALL, 0.528, 0.542, "Mouse",
+                "Travel to Mouse."),
+            },
+        },
+        {
+            id = "turnin-93928-of-mice-and-milk",
+            kind = "turnin",
+            priority = 2330.1,
+            conditions = {
+                all = {
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Turn it in to Hemet Nesingwary.",
+            dependsOn = { "accept-93928-of-mice-and-milk" },
             complete = QuestState(93928, "completed"),
             route = {
                 Point(MAP.WESTFALL, 0.356, 0.108, "Hemet Nesingwary",

@@ -16,7 +16,9 @@ Every objective step that `dependsOn` an accept must use `QuestObjective` for **
 
 ## Multiple requirements on one quest
 
-When a quest needs more than one item or kill count, split it into **one step per objective**. Each step `dependsOn` the accept, not on the other objectives. The turn-in `dependsOn` **every** objective step for that quest.
+An objective step that completes on `QuestState(questID, "complete")` stays active until the whole quest is ready and displays the first unfinished objective row from the client. Use this for quests whose objectives belong to the same outing.
+
+Split a quest into **one step per objective** only when the route needs to visit those objectives separately. Each split step `dependsOn` the accept, not on the other objectives. The turn-in `dependsOn` **every** objective step for that quest.
 
 Example (Horde Barrens, quest 6128):
 
@@ -37,6 +39,14 @@ Use a substring that appears in the quest log text for that objective.
 - The **tracker** shows the step’s `text` (the objective). On the map, `Continue toward …` pins are path dots only; they must not read as the step title while you are on that map.
 - Keep **named** destination pins (`Travel to …`, NPC names, mob names). Era routes may still use `Continue toward …` coordinates between them; do not delete those pins to “simplify” a step.
 - If there is **no saved pin**, set `useClientPin = true` and say the guide follows the quest log pin. Do not invent coordinates. The tracker shows the objective summary under the quest title when the client provides it, so the step does not read as only the landmark NPC.
+- Registered guides prefer quest-log pins for objectives, gossip, and turn-ins. Objective steps show the first unfinished objective row reported by the client, advancing through those rows as they complete. Authored routes and text remain fallbacks when the client API or a quest POI is unavailable. Accept steps stay authored because an unaccepted quest is not in the quest log; item-started quests also need an authored source.
+- Turn-in steps display `Quest Name @ NPC or Object`, using the client quest title and the final authored destination label. Keep that final label limited to the NPC or object name.
+
+## Step structure
+
+Use `accept`, `objective`, `turnin`, and `gossip` as distinct steps. An ordinary quest has one accept, one API-driven objective step, and one turn-in. Use `gossip` instead of `objective` when progress requires choosing dialogue, then complete it with the matching `QuestObjective` or quest-complete condition. Do not combine acceptance, objectives, gossip, or turn-in into one step.
+
+Delivery and breadcrumb quests still use separate records. The accept points at the giver and completes on `activeOrCompleted`; the turn-in points at the recipient and depends on the accept. Never write `Accept ..., then ...` in one record. The all-guide lint enforces this for active, Loremaster, Dungeon, and Era source guides.
 
 ## `dependsOn` and conditions
 

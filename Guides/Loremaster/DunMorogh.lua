@@ -43,7 +43,7 @@ ns:RegisterGuide({
     id = "leveling-dun-morogh",
     title = "Dun Morogh",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -3226,8 +3226,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-415-rejolds-new-brew",
-            kind = "turnin",
+            id = "accept-415-rejold-s-new-brew",
+            kind = "accept",
             priority = 2260,
             conditions = {
                 all = {
@@ -3235,7 +3235,25 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Rejold's New Brew from Pilot Bellowfiz, then turn it in to Rejold Barleybrew.",
+            text = "Accept Rejold's New Brew from Pilot Bellowfiz.",
+            complete = QuestState(415, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4949, 0.4837, "Pilot Bellowfiz",
+                "Travel to Pilot Bellowfiz."),
+            },
+        },
+        {
+            id = "turnin-415-rejolds-new-brew",
+            kind = "turnin",
+            priority = 2260.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn it in to Rejold Barleybrew.",
+            dependsOn = { "accept-415-rejold-s-new-brew" },
             complete = QuestState(415, "completed"),
             route = {
                 Point(MAP.DUN_MOROGH, 0.302, 0.458, "Rejold Barleybrew",
@@ -3243,8 +3261,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-96408-a-visitor-to-dun-morogh",
-            kind = "turnin",
+            id = "accept-96408-a-visitor-to-dun-morogh",
+            kind = "accept",
             priority = 2270,
             conditions = {
                 all = {
@@ -3252,7 +3270,25 @@ ns:RegisterGuide({
                     { level = { min = 13 } },
                 },
             },
-            text = "Accept A Visitor to Dun Morogh from Beldin Steelgrill, then turn it in to Earthseer Farsen.",
+            text = "Accept A Visitor to Dun Morogh from Beldin Steelgrill.",
+            complete = QuestState(96408, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.5042, 0.4913, "Beldin Steelgrill",
+                "Travel to Beldin Steelgrill."),
+            },
+        },
+        {
+            id = "turnin-96408-a-visitor-to-dun-morogh",
+            kind = "turnin",
+            priority = 2270.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 13 } },
+                },
+            },
+            text = "Turn it in to Earthseer Farsen.",
+            dependsOn = { "accept-96408-a-visitor-to-dun-morogh" },
             complete = QuestState(96408, "completed"),
             route = {
                 Point(MAP.DUN_MOROGH, 0.648, 0.584, "Earthseer Farsen",
@@ -3416,8 +3452,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-467-stonegears-search",
-            kind = "turnin",
+            id = "accept-467-stonegear-s-search",
+            kind = "accept",
             priority = 2371,
             conditions = {
                 all = {
@@ -3425,7 +3461,25 @@ ns:RegisterGuide({
                     { level = { min = 23 } },
                 },
             },
-            text = "Accept Stonegear's Search from Mountaineer Kadrell, then turn it in to Pilot Stonegear.",
+            text = "Accept Stonegear's Search from Mountaineer Kadrell.",
+            complete = QuestState(467, "activeOrCompleted"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3510, 0.4702, "Mountaineer Kadrell",
+                "Travel to Mountaineer Kadrell."),
+            },
+        },
+        {
+            id = "turnin-467-stonegears-search",
+            kind = "turnin",
+            priority = 2371.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 23 } },
+                },
+            },
+            text = "Turn it in to Pilot Stonegear.",
+            dependsOn = { "accept-467-stonegear-s-search" },
             complete = QuestState(467, "completed"),
             route = {
                 Point(MAP.LOCH_MODAN, 0.496, 0.484, "Pilot Stonegear",
