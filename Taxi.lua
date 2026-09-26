@@ -130,13 +130,22 @@ function Taxi:AtDestination(goal, state)
     return ns.Travel.PairedMap and Matches(ns.Travel:PairedMap(state.mapID)) or false
 end
 
+-- Zone suffixes shared by many places. Matching on one of these alone made
+-- "Stonetalon Mountains" match any known "... Mountains" flight point.
+local GENERIC_WORDS = {
+    mountains = true, forest = true, highlands = true, plaguelands = true,
+    foothills = true, glades = true, marsh = true, crater = true, village = true,
+    retreat = true, harbor = true, island = true, valley = true,
+}
+
 local function NamesMatch(wanted, node)
     if not wanted or not node or wanted == "" or node == "" then return false end
     if node == wanted or string.find(node, wanted, 1, true) or string.find(wanted, node, 1, true) then
         return true
     end
     for word in string.gmatch(wanted, "%a+") do
-        if string.len(word) >= 6 and string.find(node, string.lower(word), 1, true) then
+        if string.len(word) >= 6 and not GENERIC_WORDS[word]
+            and string.find(node, word, 1, true) then
             return true
         end
     end
@@ -158,13 +167,14 @@ function Taxi:LearnedDestination(state, destinationName)
     local route = type(routes) == "table" and routes[state.mapID] or nil
     local found = route and FindDestination(route.destinations, wanted)
     if found then return found end
+    local continent = self:ContinentFor(state.mapID)
     local byContinent = ns.charDB.taxiNodesByContinent
-    if type(byContinent) == "table" then
-        local continent = self:ContinentFor(state.mapID)
-        local scoped = continent and byContinent[continent] or nil
-        found = scoped and FindDestination(scoped, wanted)
-        if found then return found end
+    if continent and type(byContinent) == "table" and type(byContinent[continent]) == "table" then
+        -- Flights never cross land masses, so another continent's nodes are
+        -- not evidence for this one.
+        return FindDestination(byContinent[continent], wanted)
     end
+    if continent then return nil end
     return FindDestination(ns.charDB.taxiNodes, wanted)
 end
 
