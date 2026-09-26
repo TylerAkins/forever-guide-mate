@@ -35,7 +35,7 @@ ns:RegisterGuide({
     id = "dungeons-ragefire-chasm-horde",
     title = "Ragefire Chasm",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -132,11 +132,22 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "gauge-neeru",
-            kind = "objective",
+            id = "accept-hidden-enemies-2",
+            kind = "accept",
             priority = 33,
-            text = "Accept Thrall's next Hidden Enemies task, then show the insignia to Neeru Fireblade and exhaust his dialogue.",
+            text = "Accept Hidden Enemies from Thrall.",
             dependsOn = { "turnin-hidden-enemies-1" },
+            complete = QuestState(5727, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom"),
+            },
+        },
+        {
+            id = "gauge-neeru",
+            kind = "gossip",
+            priority = 34,
+            text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
+            dependsOn = { "accept-hidden-enemies-2" },
             complete = QuestState(5727, "complete"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
@@ -273,12 +284,34 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-hidden-enemies-4",
+            kind = "accept",
+            priority = 52,
+            text = "Accept Hidden Enemies from Thrall.",
+            dependsOn = { "turnin-hidden-enemies-3" },
+            complete = QuestState(5729, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom"),
+            },
+        },
+        {
             id = "turnin-hidden-enemies-4",
             kind = "turnin",
-            priority = 52,
-            text = "Accept Thrall's follow-up Hidden Enemies task, then speak with Neeru Fireblade about the Searing Blade leaders.",
-            dependsOn = { "turnin-hidden-enemies-3" },
+            priority = 53,
+            text = "Speak with Neeru Fireblade about the Searing Blade leaders.",
+            dependsOn = { "accept-hidden-enemies-4" },
             complete = QuestState(5729, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
+            },
+        },
+        {
+            id = "accept-hidden-enemies-5",
+            kind = "accept",
+            priority = 54,
+            text = "Accept Hidden Enemies from Neeru Fireblade.",
+            dependsOn = { "turnin-hidden-enemies-4" },
+            complete = QuestState(5730, "activeOrCompleted"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
             },
@@ -286,9 +319,9 @@ ns:RegisterGuide({
         {
             id = "turnin-hidden-enemies-5",
             kind = "turnin",
-            priority = 54,
-            text = "Accept Neeru's final Hidden Enemies message for Thrall, then deliver Neeru's message to Thrall and finish Hidden Enemies.",
-            dependsOn = { "turnin-hidden-enemies-4" },
+            priority = 55,
+            text = "Deliver Neeru's message to Thrall and finish Hidden Enemies.",
+            dependsOn = { "accept-hidden-enemies-5" },
             complete = QuestState(5730, "completed"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom"),

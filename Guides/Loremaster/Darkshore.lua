@@ -46,7 +46,7 @@ ns:RegisterGuide({
     id = "leveling-darkshore",
     title = "Darkshore",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -4236,8 +4236,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1167-the-tower-of-althalaxx",
-            kind = "turnin",
+            id = "accept-1167-the-tower-of-althalaxx",
+            kind = "accept",
             priority = 2860,
             conditions = {
                 all = {
@@ -4245,8 +4245,26 @@ ns:RegisterGuide({
                     { level = { min = 28 } },
                 },
             },
+            text = "Accept The Tower of Althalaxx from Delgren the Purifier.",
             dependsOn = { "turnin-1140-the-tower-of-althalaxx" },
-            text = "Accept The Tower of Althalaxx from Delgren the Purifier, then turn it in to Balthule Shadowstrike.",
+            complete = QuestState(1167, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.262, 0.386, "Delgren the Purifier",
+                "Travel to Delgren the Purifier."),
+            },
+        },
+        {
+            id = "turnin-1167-the-tower-of-althalaxx",
+            kind = "turnin",
+            priority = 2860.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            dependsOn = { "accept-1167-the-tower-of-althalaxx" },
+            text = "Turn it in to Balthule Shadowstrike.",
             complete = QuestState(1167, "completed"),
             route = {
                 Point(MAP.ASHENVALE, 0.550, 0.248, "Balthule Shadowstrike",
@@ -4308,8 +4326,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-981-the-tower-of-althalaxx",
-            kind = "turnin",
+            id = "accept-981-the-tower-of-althalaxx",
+            kind = "accept",
             priority = 2900,
             conditions = {
                 all = {
@@ -4317,8 +4335,26 @@ ns:RegisterGuide({
                     { level = { min = 31 } },
                 },
             },
+            text = "Accept The Tower of Althalaxx from Balthule Shadowstrike.",
             dependsOn = { "turnin-1143-the-tower-of-althalaxx" },
-            text = "Accept The Tower of Althalaxx from Balthule Shadowstrike, then turn it in to Delgren the Purifier.",
+            complete = QuestState(981, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.550, 0.248, "Balthule Shadowstrike",
+                "Travel to Balthule Shadowstrike."),
+            },
+        },
+        {
+            id = "turnin-981-the-tower-of-althalaxx",
+            kind = "turnin",
+            priority = 2900.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 31 } },
+                },
+            },
+            dependsOn = { "accept-981-the-tower-of-althalaxx" },
+            text = "Turn it in to Delgren the Purifier.",
             complete = QuestState(981, "completed"),
             route = {
                 Point(MAP.DARKSHORE, 0.262, 0.386, "Delgren the Purifier",
@@ -4362,8 +4398,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-97894-business-in-auberdine",
-            kind = "turnin",
+            id = "accept-97894-business-in-auberdine",
+            kind = "accept",
             priority = 2930,
             conditions = {
                 all = {
@@ -4371,7 +4407,25 @@ ns:RegisterGuide({
                     { level = { min = 17 } },
                 },
             },
-            text = "Accept Business in Auberdine from Borgus Steelhand, then turn it in to Gorbold Steelhand.",
+            text = "Accept Business in Auberdine from Borgus Steelhand.",
+            complete = QuestState(97894, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.380, 0.412, "Gorbold Steelhand",
+                "Travel to Gorbold Steelhand in Stormwind City."),
+            },
+        },
+        {
+            id = "turnin-97894-business-in-auberdine",
+            kind = "turnin",
+            priority = 2930.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 17 } },
+                },
+            },
+            text = "Turn it in to Gorbold Steelhand.",
+            dependsOn = { "accept-97894-business-in-auberdine" },
             complete = QuestState(97894, "completed"),
             route = {
                 Point(MAP.STORMWIND, 0.380, 0.412, "Gorbold Steelhand",

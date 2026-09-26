@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-mulgore",
     title = "1-12 Mulgore",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -2000,7 +2000,7 @@ ns:RegisterGuide({
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
-            text = "Use Fizsprocket's Notes if Supervisor Fizsprocket drops them, then search the Venture Co. Mine for the operation pages.",
+            text = "Use Fizsprocket's Notes if Supervisor Fizsprocket drops them.",
             complete = QuestState(98424, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",

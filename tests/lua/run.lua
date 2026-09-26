@@ -1433,10 +1433,10 @@ local followUps = {
     { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
     { "accept-the-warriors-path", "turnin-harmony-in-balance" },
     { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
-    { "turnin-elemental-unrest", "turnin-harmony-in-balance" },
-    { "turnin-the-adventurer", "turnin-foul-matriarch" },
-    { "turnin-infiltrating-the-cult", "turnin-the-criminal-element" },
-    { "turnin-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
+    { "accept-the-adventurer", "turnin-foul-matriarch" },
+    { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
+    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
 }
 for _, pair in ipairs(followUps) do
@@ -1447,6 +1447,37 @@ for _, pair in ipairs(followUps) do
     end
     Check(linked, pair[1] .. " waits for " .. pair[2])
 end
+function TestZephrasClientQuestData()
+local zephrasObjective = ns.Engine:GetGoal(zephras, "objective-harmony-in-balance")
+local zephrasTurnin = ns.Engine:GetGoal(zephras, "turnin-harmony-in-balance")
+local zephrasAccept = ns.Engine:GetGoal(zephras, "accept-harmony-in-balance")
+local zephrasGossip = ns.Engine:GetGoal(zephras, "gossip-the-anchors-of-zephras")
+Equal(zephrasObjective.useClientPin, true, "Zephras objectives prefer client pins")
+Equal(zephrasObjective.useClientText, true, "Zephras objectives prefer client text")
+Equal(zephrasTurnin.useClientPin, true, "Zephras turn-ins prefer client pins")
+Equal(zephrasAccept.useClientPin, nil, "Zephras accepts keep authored pins")
+Equal(zephrasGossip.kind, "gossip", "The Anchors of Zephras identifies its dialogue interaction")
+Equal(zephrasGossip.useClientPin, true, "gossip steps prefer client pins")
+local elementalAccept = ns.Engine:GetGoal(zephras, "accept-elemental-unrest")
+local elementalTurnin = ns.Engine:GetGoal(zephras, "turnin-elemental-unrest")
+local function HasDependency(goal, dependencyID)
+    for _, dependency in ipairs(goal.dependsOn or {}) do
+        if dependency == dependencyID then return true end
+    end
+    return false
+end
+Check(HasDependency(elementalAccept, "turnin-harmony-in-balance"),
+    "Elemental Unrest routes to its giver after Harmony in Balance")
+Check(HasDependency(elementalTurnin, "accept-elemental-unrest"),
+    "Elemental Unrest routes onward only after acceptance")
+Equal(elementalAccept.route[1].label, "Rorian the Dayseeker", "Elemental Unrest starts at Rorian")
+Equal(elementalTurnin.route[1].label, "Yala Windwatcher", "Elemental Unrest ends at Yala")
+Check(HasDependency(ns.Engine:GetGoal(zephras, "accept-aggressive-encroachment"),
+    "turnin-aetheen-of-the-gales"), "Aggressive Encroachment waits until the route reaches Valreaa")
+Check(HasDependency(ns.Engine:GetGoal(zephras, "accept-alaketh-thugs"), "turnin-the-next-step"),
+    "Al'Aketh Thugs waits until the route leaves Aetheen")
+end
+TestZephrasClientQuestData()
 local pinned = ns.Navigation:GetActiveLeg({
     route = { { mapID = 2521, x = 0.420, y = 0.234, label = "Rorian the Dayseeker" } },
 }, { mapID = 2521, x = 0.420, y = 0.234 })
@@ -1714,6 +1745,7 @@ local vrangLog = ns.PlayerState:GetQuestLog({
     },
 })
 Equal(vrangLog[95507].summary, vrangSummary, "the quest log keeps the objective under the quest title")
+Equal(vrangLog[95507].title, "Vrang's Game", "the quest log keeps the quest title")
 local waypointOnly = ns.PlayerState:GetQuestLog({
     C_QuestLog = {
         GetNumQuestLogEntries = function() return 1 end,
@@ -1752,6 +1784,30 @@ local vrangShown = ns.UI:GoalInstruction({
     },
 })
 Equal(vrangShown, vrangSummary, "an unpinned objective shows the quest log objective instead of the npc")
+local cycledObjective = ns.UI:GoalInstruction({
+    currentGoal = vrangGoal,
+    state = {
+        mapID = 1413, x = 0.50, y = 0.40,
+        quests = { [95507] = { objectives = {
+            { text = "First objective complete", finished = true },
+            { text = "Second objective still active", finished = false },
+        } } },
+    },
+})
+Equal(cycledObjective, "Second objective still active",
+    "an objective step advances to the first unfinished client objective")
+vrangGoal.kind = "gossip"
+local gossipObjective = ns.UI:GoalInstruction({
+    currentGoal = vrangGoal,
+    state = {
+        mapID = 1413, x = 0.50, y = 0.40,
+        quests = { [95507] = { objectives = {
+            { text = "Ask about the missing traps", finished = false },
+        } } },
+    },
+})
+Equal(gossipObjective, "Ask about the missing traps", "gossip displays the client objective text")
+vrangGoal.kind = "objective"
 local vrangFallback = ns.UI:GoalInstruction({
     currentGoal = vrangGoal,
     state = { mapID = 1413, x = 0.50, y = 0.40, quests = {} },
@@ -1768,6 +1824,32 @@ Equal(vrangTravel, "Travel to Vrang Wildgore.", "travel to an unpinned objective
 C_QuestLog = previousQuestLog
 end
 TestUnpinnedObjectiveText()
+
+function TestTurnInInstruction()
+    local savedQuestLog = C_QuestLog
+    C_QuestLog = {
+        GetQuestsOnMap = function()
+            return { { questID = 95246, x = 0.6, y = 0.6 } }
+        end,
+    }
+    local shown = ns.UI:GoalInstruction({
+        currentGoal = {
+            kind = "turnin",
+            useClientPin = true,
+            text = "Turn in Aggressive Encroachment to Valreaa Valewind.",
+            complete = { quest = { id = 95246, state = "completed" } },
+            route = { { mapID = 2472, x = 0.4, y = 0.4, label = "Valreaa Valewind" } },
+        },
+        state = {
+            mapID = 2472, x = 0.5, y = 0.5,
+            quests = { [95246] = { title = "Aggressive Encroachment" } },
+        },
+    })
+    Equal(shown, "Aggressive Encroachment @ Valreaa Valewind",
+        "a client-pinned turn-in shows the quest title and destination instead of only the npc")
+    C_QuestLog = savedQuestLog
+end
+TestTurnInInstruction()
 
 local function DependsOn(goal, dependencyID)
     for _, dependency in ipairs(goal.dependsOn or {}) do
@@ -2576,8 +2658,12 @@ function TestHiddenEnemies()
         }
     end
     Open(State({}, { [5726] = true }))
-    Equal(ns.Engine.currentGoal.id, "gauge-neeru", "returning the insignia points at Neeru")
+    Equal(ns.Engine.currentGoal.id, "accept-hidden-enemies-2", "the next Hidden Enemies starts at Thrall")
     local leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
+    Equal(leg.x, 0.320, "the Hidden Enemies accept marks Thrall")
+    Open(State({ [5727] = { complete = false } }, { [5726] = true }))
+    Equal(ns.Engine.currentGoal.id, "gauge-neeru", "accepting the insignia follow-up points at Neeru")
+    leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
     Equal(leg.x, 0.496, "the insignia follow-up marks Neeru Fireblade")
     local talking = State({
         [5727] = { complete = false, objectives = {
@@ -2615,6 +2701,11 @@ function TestHiddenEnemies()
     Open(State({}, {
         [5726] = true, [5727] = true, [5728] = true, [5761] = true,
     }))
+    Equal(ns.Engine.currentGoal.id, "accept-hidden-enemies-4",
+        "the dungeon report is accepted from Thrall")
+    Open(State({ [5729] = { complete = false } }, {
+        [5726] = true, [5727] = true, [5728] = true, [5761] = true,
+    }))
     Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-4",
         "the dungeon report sends you to Neeru")
     leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
@@ -2622,17 +2713,22 @@ function TestHiddenEnemies()
     Open(State({}, {
         [5726] = true, [5727] = true, [5728] = true, [5729] = true, [5761] = true,
     }))
+    Equal(ns.Engine.currentGoal.id, "accept-hidden-enemies-5",
+        "Neeru offers the final Hidden Enemies message")
+    Open(State({ [5730] = { complete = false } }, {
+        [5726] = true, [5727] = true, [5728] = true, [5729] = true, [5761] = true,
+    }))
     Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-5",
         "Neeru's message goes back to Thrall")
     leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
     Equal(leg.x, 0.320, "the final Hidden Enemies step marks Thrall")
     local barrens = ns.guides["leveling-the-barrens"]
-    Check(ns.Engine:GetGoal(barrens, "accept-890-the-missing-shipment") == nil,
-        "The Missing Shipment is not a separate accept step")
+    Check(ns.Engine:GetGoal(barrens, "accept-890-the-missing-shipment") ~= nil,
+        "The Missing Shipment has a separate accept step")
     local shipment = ns.Engine:GetGoal(barrens, "turnin-890-the-missing-shipment")
     Equal(shipment.route[1].x, 0.632, "The Missing Shipment points at Dizzywig")
     local valve = ns.Engine:GetGoal(barrens, "objective-900-samophlange-1")
-    Equal(valve.dependsOn[1], "turnin-894-samophlange", "the next Samophlange starts at the valves")
+    Equal(valve.dependsOn[1], "accept-900-samophlange", "the next Samophlange waits on its accept")
 end
 TestHiddenEnemies()
 
@@ -2843,9 +2939,12 @@ function TestTeldrassil()
     local crown = ns.Engine:GetGoal(guide, "accept-929-crown-of-the-earth")
     Check(DependsOn(crown, "turnin-928-crown-of-the-earth"),
         "the Starbreeze phial waits until the Shadowglen vessel is delivered")
+    local vesselAccept = ns.Engine:GetGoal(guide, "accept-928-crown-of-the-earth")
+    Check(DependsOn(vesselAccept, "turnin-921-crown-of-the-earth"),
+        "Tenaron's follow-up waits until the phial is filled")
     local vessel = ns.Engine:GetGoal(guide, "turnin-928-crown-of-the-earth")
-    Check(DependsOn(vessel, "turnin-921-crown-of-the-earth"),
-        "Corithras waits until Tenaron's phial is filled")
+    Check(DependsOn(vessel, "accept-928-crown-of-the-earth"),
+        "Corithras waits until Tenaron's follow-up is accepted")
     local oak = ns.Engine:GetGoal(guide, "objective-2499-oakenscowl-1")
     Check(oak and string.find(oak.text, "Bring a group", 1, true) ~= nil,
         "Oakenscowl tells the player to bring a group")

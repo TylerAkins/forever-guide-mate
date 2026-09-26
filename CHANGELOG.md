@@ -4,6 +4,14 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.9 - 2026-09-26
+
+- Every guide now prefers live quest-log pins for objectives, gossip, and turn-ins. Objective steps show the first unfinished client objective and advance through the API rows as each one completes; authored data remains the fallback.
+- Added a distinct gossip step for quest dialogue, starting with The Anchors of Zephras.
+- Turn-ins now display `Quest Name @ NPC or Object`, using the live client title and the authored destination name.
+- Split bundled accept-and-deliver records across the active Leveling, Loremaster, and Dungeon guides, including Zephras Isle. Every Era source guide is covered by the same lint rule so future handoffs must keep accept, objective or gossip, and turn-in actions separate.
+- Chained Aggressive Encroachment and Al'Aketh Thugs to the point where the Zephras route reaches their quest givers.
+
 ## 0.1.8 - 2026-09-26
 
 - Converted the 20-22 Stonetalon, 21-22 Ashenvale, and 22-23 Stonetalon chapters onto the 1-60 route. Forever quests on those zone lists are past each chapter's level, start in another zone, or have no giver on the route, so the classic steps stay as they are.

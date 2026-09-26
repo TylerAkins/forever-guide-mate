@@ -43,7 +43,7 @@ ns:RegisterGuide({
     id = "leveling-ashenvale",
     title = "Ashenvale",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 21 } },
@@ -2813,8 +2813,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-990-trek-to-ashenvale",
-            kind = "turnin",
+            id = "accept-990-trek-to-ashenvale",
+            kind = "accept",
             priority = 1630,
             conditions = {
                 all = {
@@ -2822,7 +2822,25 @@ ns:RegisterGuide({
                     { level = { min = 19 } },
                 },
             },
-            text = "Accept Trek to Ashenvale from Sentinel Selarin, then turn it in to Raene Wolfrunner.",
+            text = "Accept Trek to Ashenvale from Sentinel Selarin.",
+            complete = QuestState(990, "activeOrCompleted"),
+            route = {
+                Point(MAP.ASHENVALE, 0.392, 0.434, "Sentinel Selarin",
+                "Travel to Sentinel Selarin."),
+            },
+        },
+        {
+            id = "turnin-990-trek-to-ashenvale",
+            kind = "turnin",
+            priority = 1630.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 19 } },
+                },
+            },
+            text = "Turn it in to Raene Wolfrunner.",
+            dependsOn = { "accept-990-trek-to-ashenvale" },
             complete = QuestState(990, "completed"),
             route = {
                 Point(MAP.ZONE_1439, 0.366, 0.496, "Raene Wolfrunner",
@@ -2830,8 +2848,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1085-on-guard-in-stonetalon",
-            kind = "turnin",
+            id = "accept-1085-on-guard-in-stonetalon",
+            kind = "accept",
             priority = 1640,
             conditions = {
                 all = {
@@ -2839,7 +2857,25 @@ ns:RegisterGuide({
                     { level = { min = 21 } },
                 },
             },
-            text = "Accept On Guard in Stonetalon from Kaela Shadowspear, then turn it in to Gaxim Rustfizzle.",
+            text = "Accept On Guard in Stonetalon from Kaela Shadowspear.",
+            complete = QuestState(1085, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1442, 0.598, 0.668, "Kaela Shadowspear",
+                "Travel to Kaela Shadowspear."),
+            },
+        },
+        {
+            id = "turnin-1085-on-guard-in-stonetalon",
+            kind = "turnin",
+            priority = 1640.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 21 } },
+                },
+            },
+            text = "Turn it in to Gaxim Rustfizzle.",
+            dependsOn = { "accept-1085-on-guard-in-stonetalon" },
             complete = QuestState(1085, "completed"),
             route = {
                 Point(MAP.ZONE_1442, 0.594, 0.672, "Gaxim Rustfizzle",
@@ -3006,8 +3042,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-976-supplies-to-auberdine",
-            kind = "turnin",
+            id = "accept-976-supplies-to-auberdine",
+            kind = "accept",
             priority = 1770,
             conditions = {
                 all = {
@@ -3015,7 +3051,25 @@ ns:RegisterGuide({
                     { level = { min = 24 } },
                 },
             },
-            text = "Accept Supplies to Auberdine from Feero Ironhand, then turn it in to Delgren the Purifier.",
+            text = "Accept Supplies to Auberdine from Feero Ironhand.",
+            complete = QuestState(976, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1439, 0.436, 0.944, "Feero Ironhand",
+                "Travel to Feero Ironhand."),
+            },
+        },
+        {
+            id = "turnin-976-supplies-to-auberdine",
+            kind = "turnin",
+            priority = 1770.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 24 } },
+                },
+            },
+            text = "Turn it in to Delgren the Purifier.",
+            dependsOn = { "accept-976-supplies-to-auberdine" },
             complete = QuestState(976, "completed"),
             route = {
                 Point(MAP.ZONE_1439, 0.262, 0.386, "Delgren the Purifier",
@@ -3248,8 +3302,8 @@ ns:RegisterGuide({
             route = {},
         },
         {
-            id = "turnin-1040-passage-to-booty-bay",
-            kind = "turnin",
+            id = "accept-1040-passage-to-booty-bay",
+            kind = "accept",
             priority = 1910,
             conditions = {
                 all = {
@@ -3257,7 +3311,25 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
-            text = "Accept Passage to Booty Bay from Wharfmaster Dizzywig, then turn it in to Caravaneer Ruzzgot.",
+            text = "Accept Passage to Booty Bay from Wharfmaster Dizzywig.",
+            complete = QuestState(1040, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1413, 0.632, 0.384, "Wharfmaster Dizzywig",
+                "Travel to Wharfmaster Dizzywig."),
+            },
+        },
+        {
+            id = "turnin-1040-passage-to-booty-bay",
+            kind = "turnin",
+            priority = 1910.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            text = "Turn it in to Caravaneer Ruzzgot.",
+            dependsOn = { "accept-1040-passage-to-booty-bay" },
             complete = QuestState(1040, "completed"),
             route = {
                 Point(MAP.ZONE_1413, 0.272, 0.740, "Caravaneer Ruzzgot",
@@ -3265,8 +3337,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1041-the-caravan-road",
-            kind = "turnin",
+            id = "accept-1041-the-caravan-road",
+            kind = "accept",
             priority = 1920,
             conditions = {
                 all = {
@@ -3274,8 +3346,26 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
+            text = "Accept The Caravan Road from Caravaneer Ruzzgot.",
             dependsOn = { "turnin-1040-passage-to-booty-bay" },
-            text = "Accept The Caravan Road from Caravaneer Ruzzgot, then turn it in to Clerk Daltry.",
+            complete = QuestState(1041, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1413, 0.272, 0.740, "Caravaneer Ruzzgot",
+                "Travel to Caravaneer Ruzzgot in The Barrens."),
+            },
+        },
+        {
+            id = "turnin-1041-the-caravan-road",
+            kind = "turnin",
+            priority = 1920.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            dependsOn = { "accept-1041-the-caravan-road" },
+            text = "Turn it in to Clerk Daltry.",
             complete = QuestState(1041, "completed"),
             route = {
                 Point(MAP.ZONE_1434, 0.726, 0.468, "Clerk Daltry",
@@ -3283,8 +3373,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1042-the-carevin-family",
-            kind = "turnin",
+            id = "accept-1042-the-carevin-family",
+            kind = "accept",
             priority = 1930,
             conditions = {
                 all = {
@@ -3292,8 +3382,26 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
+            text = "Accept The Carevin Family from Clerk Daltry.",
             dependsOn = { "turnin-1041-the-caravan-road" },
-            text = "Accept The Carevin Family from Clerk Daltry, then turn it in to Jonathan Carevin.",
+            complete = QuestState(1042, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1434, 0.726, 0.468, "Clerk Daltry",
+                "Travel to Clerk Daltry in Stranglethorn Vale."),
+            },
+        },
+        {
+            id = "turnin-1042-the-carevin-family",
+            kind = "turnin",
+            priority = 1930.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            dependsOn = { "accept-1042-the-carevin-family" },
+            text = "Turn it in to Jonathan Carevin.",
             complete = QuestState(1042, "completed"),
             route = {
                 Point(MAP.ZONE_1431, 0.752, 0.488, "Jonathan Carevin",
@@ -3355,8 +3463,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1044-answered-questions",
-            kind = "turnin",
+            id = "accept-1044-answered-questions",
+            kind = "accept",
             priority = 1970,
             conditions = {
                 all = {
@@ -3364,8 +3472,26 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
+            text = "Accept Answered Questions from Jonathan Carevin.",
             dependsOn = { "turnin-1043-the-scythe-of-elune" },
-            text = "Accept Answered Questions from Jonathan Carevin, then turn it in to Thyn'tel Bladeweaver.",
+            complete = QuestState(1044, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1431, 0.752, 0.488, "Jonathan Carevin",
+                "Travel to Jonathan Carevin in Duskwood."),
+            },
+        },
+        {
+            id = "turnin-1044-answered-questions",
+            kind = "turnin",
+            priority = 1970.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 30 } },
+                },
+            },
+            dependsOn = { "accept-1044-answered-questions" },
+            text = "Turn it in to Thyn'tel Bladeweaver.",
             complete = QuestState(1044, "completed"),
             route = {
                 Point(MAP.ZONE_1431, 0.618, 0.394, "Thyn'tel Bladeweaver",
@@ -4644,15 +4770,32 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-82017-an-amalagamation-of-nightmares",
-            kind = "turnin",
+            id = "accept-82017-an-amalagamation-of-nightmares",
+            kind = "accept",
             priority = 2700,
             conditions = {
                 all = {
                     { level = { min = 40 } },
                 },
             },
-            text = "Accept An Amalagamation of Nightmares from Field Captain Hannalah, then turn it in to Loganaar.",
+            text = "Accept An Amalagamation of Nightmares from Field Captain Hannalah.",
+            complete = QuestState(82017, "activeOrCompleted"),
+            route = {
+                Point(MAP.ASHENVALE, 0.896, 0.406, "Field Captain Hannalah",
+                "Travel to Field Captain Hannalah."),
+            },
+        },
+        {
+            id = "turnin-82017-an-amalagamation-of-nightmares",
+            kind = "turnin",
+            priority = 2700.1,
+            conditions = {
+                all = {
+                    { level = { min = 40 } },
+                },
+            },
+            text = "Turn it in to Loganaar.",
+            dependsOn = { "accept-82017-an-amalagamation-of-nightmares" },
             complete = QuestState(82017, "completed"),
             route = {
                 Point(MAP.ASHENVALE, 0.524, 0.404, "Loganaar",

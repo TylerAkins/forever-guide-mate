@@ -3,7 +3,9 @@ local _, ns = ...
 local Engine = { state = nil, currentGuide = nil, currentGoal = nil, status = nil }
 ns.Engine = Engine
 
-local VALID_KINDS = { accept = true, objective = true, turnin = true, travel = true, note = true }
+local VALID_KINDS = {
+    accept = true, objective = true, turnin = true, gossip = true, travel = true, note = true,
+}
 local SHORT_TIMER_SECONDS = 30 * 60
 
 ns.questPrerequisites = ns.questPrerequisites or {}
@@ -317,13 +319,25 @@ local function GoalQuestID(goal)
     return type(quest) == "table" and quest.id or type(objective) == "table" and objective.id or nil
 end
 
+local function ApplyClientQuestData(guide)
+    if guide.clientQuestData == false then return end
+    for _, goal in ipairs(guide.goals) do
+        if goal.kind == "objective" or goal.kind == "gossip" or goal.kind == "turnin" then
+            if goal.useClientPin == nil then goal.useClientPin = true end
+        end
+        if goal.kind == "objective" and goal.useClientText == nil then
+            goal.useClientText = true
+        end
+    end
+end
+
 local function ApplyQuestPrerequisites(guide)
     local turnins, objectives = {}, {}
     for index, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
             local questID = GoalQuestID(goal)
             if questID then turnins[questID] = turnins[questID] or { id = goal.id, index = index } end
-        elseif goal.kind == "objective" then
+        elseif goal.kind == "objective" or goal.kind == "gossip" then
             local questID = GoalQuestID(goal)
             if questID then
                 objectives[questID] = objectives[questID] or {}
@@ -435,6 +449,7 @@ local function ValidateGuide(guide)
 end
 
 function ns:RegisterGuide(guide)
+    ApplyClientQuestData(guide)
     ApplyQuestPrerequisites(guide)
     local valid, reason = ValidateGuide(guide)
     if not valid then
@@ -1524,7 +1539,8 @@ function Engine:Refresh(state)
             and candidates[1] ~= active
             and (not activeSeconds or nextSeconds < activeSeconds)
         local nextGoal = candidates[1]
-        local earlierObjective = nextGoal and active and nextGoal.kind == "objective"
+        local earlierObjective = nextGoal and active
+            and (nextGoal.kind == "objective" or nextGoal.kind == "gossip")
             and not ns.charDB.deferred[nextGoal.id]
             and type(nextGoal.priority) == "number" and type(active.priority) == "number"
             and nextGoal.priority < active.priority

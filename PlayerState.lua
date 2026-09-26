@@ -169,6 +169,7 @@ function PlayerState:GetQuestLog(api, questIDs)
             local objectives = objectiveKnown and type(objectiveResult[1]) == "table" and objectiveResult[1] or {}
             local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
             quests[info.questID] = {
+                title = info.title,
                 complete = LogQuestComplete(questLog, info.questID, info, objectives),
                 objectives = objectives,
                 summary = ObjectiveSummary(api, questLog, info.questID, index),
