@@ -4,6 +4,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.4 - 2026-09-26
+
+- A flight path is suggested only when you know a flight point in that zone on the same land mass. A shared word such as "Mountains" no longer counts, so knowing an Alterac or Redridge flight point no longer sends you to fly to Stonetalon.
+
 ## 0.1.3 - 2026-09-26
 
 - Logging in purges flight routes saved by older releases that were never learned, so an undiscovered trip such as the Barrens run to Stonetalon no longer suggests its flight path.
