@@ -237,6 +237,7 @@ Check(string.find(flightStatus, "Take the flight path to Orgrimmar", 1, true) ~=
 Equal(flightMode, "bearing", "a known flight path on the current map supplies a bearing")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local noRotation, _, status, _, offMapMode = ns.Navigation:GetDirection(navigationGoal,
     { mapID = 1429, x = 0.5, y = 0.5, faction = "Alliance" }, 0)
 Equal(noRotation, nil, "cross-map destination has no unreliable bearing")
@@ -353,6 +354,7 @@ Equal(knownBoatFlight.label, "Take the flight path to Stranglethorn Vale.",
     "a known dock flight names Stranglethorn Vale")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local bootyBayBoat = ns.Navigation:GetActiveLeg(barrensGoal, { mapID = 1434, x = 0.26, y = 0.73, faction = "Alliance" })
 Equal(bootyBayBoat.mapID, 1434, "Alliance already at Booty Bay takes the Ratchet boat")
 Check(string.find(bootyBayBoat.label, "Ratchet", 1, true), "the Booty Bay boat is labeled for Ratchet")
@@ -442,6 +444,7 @@ Check(string.find(thunderBluffText, "Rahauro", 1, true) ~= nil, "the tracker nam
 local powerDestroy = ns.Engine:GetGoal(rfc, "accept-power-destroy")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local walkZeppelin = ns.Navigation:GetActiveLeg(powerDestroy, { mapID = 1456, x = 0.5, y = 0.5, faction = "Horde" })
 Equal(walkZeppelin.mapID, 1411, "without the Orgrimmar flight, the zeppelin step stays on the tower")
 Equal(walkZeppelin.x, 0.508, "the Tirisfal zeppelin pin is the south platform")
@@ -459,6 +462,7 @@ Equal(flyZeppelin.label, "Take the flight path to Orgrimmar, then board the sout
     "a known Orgrimmar flight names the zeppelin afterward")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local barrensWalk = ns.Navigation:GetActiveLeg(ns.Engine:GetGoal(rfc, "accept-searching-satchel"),
     { mapID = 1413, x = 0.5, y = 0.3, faction = "Horde" })
 Equal(barrensWalk.mapID, 1412, "without the Thunder Bluff flight, the Barrens walks toward the elevator")
@@ -471,6 +475,7 @@ Equal(barrensFly.label, "Take the flight path to Thunder Bluff.",
     "a known Thunder Bluff flight is offered from the Barrens")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 ns.Engine.currentGoal = ns.Engine:GetGoal(rfc, "accept-searching-satchel")
 C_Map = {
     GetMapInfo = function(mapID)
@@ -1715,6 +1720,7 @@ Equal(knownOrgFlight and knownOrgFlight.label, "Take the flight path to Orgrimma
     "Thunder Bluff with the Orgrimmar flight uses the flight path")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local thrall = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
     mapID = 1454, x = 0.45, y = 0.63, faction = "Horde",
 })
@@ -1768,6 +1774,7 @@ Equal(knownCairneFlight and knownCairneFlight.label, "Take the flight path to Th
     "a known Thunder Bluff flight is offered before the walk to Cairne")
 ns.charDB.taxiRoutes = {}
 ns.charDB.taxiNodes = nil
+ns.charDB.taxiNodesByContinent = nil
 local cairne = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, {
     mapID = 1456, x = 0.47, y = 0.50, faction = "Horde",
 })
@@ -2410,6 +2417,7 @@ TestHiddenEnemies()
 function TestFlightMemory()
     ns.charDB.taxiRoutes = {}
     ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
     Enum = { FlightPathState = { Reachable = 2, Current = 0 } }
     local remembered = ns.Taxi:Capture({
         C_Map = {
@@ -2443,9 +2451,88 @@ function TestFlightMemory()
         "an unlearned flight point stays unknown after the window closes")
     ns.charDB.taxiRoutes = {}
     ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
     Enum = nil
 end
 TestFlightMemory()
+
+function TestFlightMemoryByLandmass()
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
+    Enum = { FlightPathState = { Reachable = 2, Current = 0, Distant = 3 } }
+    local kalimdorAPI = {
+        C_Map = {
+            GetBestMapForUnit = function() return 1413 end,
+            GetPlayerMapPosition = function() return { GetXY = function() return 0.52, 0.30 end } end,
+        },
+        C_TaxiMap = {
+            GetAllTaxiNodes = function()
+                return {
+                    { name = "Crossroads, Barrens", state = 0 },
+                    { name = "Thunder Bluff, Mulgore", state = 2 },
+                    { name = "Sun Rock Retreat, Stonetalon Mountains", state = 3 },
+                }
+            end,
+        },
+    }
+    Equal(ns.Taxi:Capture(kalimdorAPI), true, "opening a Kalimdor flight master records its land mass")
+    local kalimdor = ns.charDB.taxiNodesByContinent and ns.charDB.taxiNodesByContinent["Kalimdor"]
+    Check(type(kalimdor) == "table", "the Kalimdor flight memory is stored per land mass")
+    Check(kalimdor["thunder bluff, mulgore"] ~= nil, "a reachable Kalimdor flight is remembered for its land mass")
+    Check(kalimdor["crossroads, barrens"] ~= nil, "the open flight master is remembered for its land mass")
+    Equal(ns.Taxi:LearnedDestination({ mapID = 1413 }, "Sun Rock Retreat"), nil,
+        "a distant flight point is not treated as learned")
+    local easternAPI = {
+        C_Map = {
+            GetBestMapForUnit = function() return 1453 end,
+            GetPlayerMapPosition = function() return { GetXY = function() return 0.66, 0.62 end } end,
+        },
+        C_TaxiMap = {
+            GetAllTaxiNodes = function()
+                return {
+                    { name = "Stormwind, Elwynn", state = 0 },
+                    { name = "Lakeshire, Redridge", state = 2 },
+                }
+            end,
+        },
+    }
+    Equal(ns.Taxi:Capture(easternAPI), true, "opening an Eastern Kingdoms flight master records its land mass")
+    Check(ns.charDB.taxiNodesByContinent["Kalimdor"]["thunder bluff, mulgore"] ~= nil,
+        "an Eastern Kingdoms visit keeps the Kalimdor memory")
+    Check(ns.charDB.taxiNodesByContinent["Eastern Kingdoms"]["lakeshire, redridge"] ~= nil,
+        "an Eastern Kingdoms flight is remembered for its land mass")
+    ns.charDB.taxiRoutes = {}
+    Check(ns.Taxi:LearnedDestination({ mapID = 1442 }, "Thunder Bluff") ~= nil,
+        "a Kalimdor flight learned at one master is known at another")
+    local stonetalonGoal = { route = { { mapID = 1442, x = 0.736, y = 0.861, label = "Grundig Darkcloud" } } }
+    local walkLeg = ns.Navigation:GetActiveLeg(stonetalonGoal, { mapID = 1413, x = 0.4, y = 0.4, faction = "Horde" })
+    Check(string.find(walkLeg.label or "", "flight path", 1, true) == nil,
+        "an unlearned Stonetalon flight keeps the road instead of the flight master")
+    local sunRockAPI = {
+        C_Map = {
+            GetBestMapForUnit = function() return 1413 end,
+            GetPlayerMapPosition = function() return { GetXY = function() return 0.52, 0.30 end } end,
+        },
+        C_TaxiMap = {
+            GetAllTaxiNodes = function()
+                return {
+                    { name = "Crossroads, Barrens", state = 0 },
+                    { name = "Sun Rock Retreat, Stonetalon Mountains", state = 2 },
+                }
+            end,
+        },
+    }
+    Equal(ns.Taxi:Capture(sunRockAPI), true, "learning Sun Rock Retreat refreshes the Kalimdor memory")
+    local flightLeg = ns.Navigation:GetActiveLeg(stonetalonGoal, { mapID = 1413, x = 0.4, y = 0.4, faction = "Horde" })
+    Equal(flightLeg.label, "Take the flight path to Stonetalon Mountains.",
+        "a learned Stonetalon flight says to take the flight path")
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
+    Enum = nil
+end
+TestFlightMemoryByLandmass()
 
 function TestTeldrassil()
     local guide = ns.guides["leveling-teldrassil"]

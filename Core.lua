@@ -35,6 +35,7 @@ local CHARACTER_DEFAULTS = {
     activeGoalByGuide = {},
     taxiRoutes = {},
     taxiNodes = {},
+    taxiNodesByContinent = {},
 }
 
 local function ApplyDefaults(target, defaults)
