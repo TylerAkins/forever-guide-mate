@@ -762,6 +762,37 @@ local function PathDot(leg)
         and string.find(leg.label, "Continue toward", 1, true) == 1
 end
 
+local function GoalQuestID(goal)
+    local complete = goal and goal.complete
+    if type(complete) ~= "table" then
+        return nil
+    end
+    local quest = complete.quest
+    if type(quest) == "table" and type(quest.id) == "number" then
+        return quest.id
+    end
+    local objective = complete.questObjective
+    if type(objective) == "table" and type(objective.id) == "number" then
+        return objective.id
+    end
+end
+
+-- A step with no saved spot keeps the quest NPC as its landmark. Once the
+-- quest log pin moves, that name is not the objective. Use the summary
+-- printed under the quest title, and the step text when the log has none.
+local function UnpinnedObjective(goal, state)
+    if not goal or goal.useClientPin ~= true or goal.kind ~= "objective" then
+        return nil
+    end
+    local quests = state and state.quests
+    local entry = type(quests) == "table" and quests[GoalQuestID(goal)]
+    local summary = type(entry) == "table" and entry.summary
+    if type(summary) == "string" and summary ~= "" then
+        return summary
+    end
+    return goal.text
+end
+
 function UI:GoalInstruction(engine)
     local goal = engine.currentGoal
     if not goal then
@@ -782,7 +813,13 @@ function UI:GoalInstruction(engine)
     end
     local finalLeg = goal.route and goal.route[#goal.route]
     if leg and finalLeg and state.mapID and (leg.mapID ~= finalLeg.mapID or leg.x ~= finalLeg.x or leg.y ~= finalLeg.y) then
+        if goal.useClientPin == true and goal.kind == "objective" and (not status or status == leg.label) then
+            return UnpinnedObjective(goal, state)
+        end
         return status or leg.label or goal.text
+    end
+    if goal.useClientPin == true and goal.kind == "objective" then
+        return UnpinnedObjective(goal, state)
     end
     return goal.text
 end

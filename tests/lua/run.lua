@@ -1696,6 +1696,76 @@ local logged = ns.PlayerState:GetQuestLog({
 Equal(logged[92461].complete, true, "a quest whose objectives are finished is ready to turn in")
 Equal(logged[92462].complete, false, "an unfinished quest objective stays incomplete")
 
+function TestUnpinnedObjectiveText()
+local vrangSummary = "Collect 8 Trapped Game from traps found in Sprung Traps in the Barrens."
+local vrangLog = ns.PlayerState:GetQuestLog({
+    C_QuestLog = {
+        GetNumQuestLogEntries = function() return 1 end,
+        GetInfo = function() return { questID = 95507, title = "Vrang's Game" } end,
+        GetQuestObjectives = function()
+            return { { text = "Trapped Game", finished = false, numFulfilled = 2, numRequired = 8 } }
+        end,
+        GetQuestLogQuestText = function()
+            return "While you are out there, check on my traps.", vrangSummary
+        end,
+    },
+})
+Equal(vrangLog[95507].summary, vrangSummary, "the quest log keeps the objective under the quest title")
+local waypointOnly = ns.PlayerState:GetQuestLog({
+    C_QuestLog = {
+        GetNumQuestLogEntries = function() return 1 end,
+        GetInfo = function() return { questID = 95507, title = "Vrang's Game" } end,
+        GetQuestObjectives = function() return {} end,
+        GetNextWaypointText = function() return vrangSummary end,
+    },
+})
+Equal(waypointOnly[95507].summary, vrangSummary, "a missing quest text falls back to the waypoint objective")
+
+local previousQuestLog = C_QuestLog
+C_QuestLog = {
+    GetQuestsOnMap = function(mapID)
+        if mapID == 1413 then
+            return { { questID = 95507, x = 0.50, y = 0.40 } }
+        end
+    end,
+}
+local vrangGoal = {
+    kind = "objective",
+    useClientPin = true,
+    text = "Vrang's Game: collect 8 Trapped Game from sprung traps in the valley.",
+    complete = { quest = { id = 95507, state = "complete" } },
+    route = {
+        {
+            mapID = 1413, x = 0.438, y = 0.122, label = "Vrang Wildgore",
+            offMapText = "Travel to Vrang Wildgore.",
+        },
+    },
+}
+local vrangShown = ns.UI:GoalInstruction({
+    currentGoal = vrangGoal,
+    state = {
+        mapID = 1413, x = 0.50, y = 0.40,
+        quests = { [95507] = { summary = vrangSummary } },
+    },
+})
+Equal(vrangShown, vrangSummary, "an unpinned objective shows the quest log objective instead of the npc")
+local vrangFallback = ns.UI:GoalInstruction({
+    currentGoal = vrangGoal,
+    state = { mapID = 1413, x = 0.50, y = 0.40, quests = {} },
+})
+Equal(vrangFallback, vrangGoal.text, "an unpinned objective uses the step text when the log has no summary")
+local vrangTravel = ns.UI:GoalInstruction({
+    currentGoal = vrangGoal,
+    state = {
+        mapID = 1454, x = 0.50, y = 0.40,
+        quests = { [95507] = { summary = vrangSummary } },
+    },
+})
+Equal(vrangTravel, "Travel to Vrang Wildgore.", "travel to an unpinned objective still names the landmark")
+C_QuestLog = previousQuestLog
+end
+TestUnpinnedObjectiveText()
+
 local function DependsOn(goal, dependencyID)
     for _, dependency in ipairs(goal.dependsOn or {}) do
         if dependency == dependencyID then return true end
