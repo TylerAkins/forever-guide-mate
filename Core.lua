@@ -25,7 +25,7 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 3,
+    schemaVersion = 4,
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
@@ -82,6 +82,33 @@ local function MigrateStorage(account, character)
             character.activeGoalByGuide[character.selectedGuide] = character.activeGoal
         end
         character.schemaVersion = 3
+    end
+    if (tonumber(character.schemaVersion) or 1) < 4 then
+        -- Releases before 0.1.2 recorded DISTANT taxi listings as reachable
+        -- routes. Drop any route destination never observed as a known flight
+        -- point; a fresh capture rebuilds the entry when the route is real.
+        local known = type(character.taxiNodes) == "table" and character.taxiNodes or {}
+        local scoped = type(character.taxiNodesByContinent) == "table" and character.taxiNodesByContinent or {}
+        local function IsKnown(normalized)
+            if known[normalized] ~= nil then return true end
+            for _, set in pairs(scoped) do
+                if type(set) == "table" and set[normalized] ~= nil then return true end
+            end
+            return false
+        end
+        if type(character.taxiRoutes) == "table" then
+            for mapID, route in pairs(character.taxiRoutes) do
+                if type(route) == "table" and type(route.destinations) == "table" then
+                    for normalized in pairs(route.destinations) do
+                        if not IsKnown(normalized) then route.destinations[normalized] = nil end
+                    end
+                    if next(route.destinations) == nil then character.taxiRoutes[mapID] = nil end
+                else
+                    character.taxiRoutes[mapID] = nil
+                end
+            end
+        end
+        character.schemaVersion = 4
     end
 end
 
