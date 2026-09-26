@@ -1,6 +1,8 @@
 # Changelog
 
 - Mid-guide recovery now follows route order, trusts known client quest state over stale saved progress, rewinds through registered quest prerequisites, and blocks with a diagnostic instead of silently skipping an unavailable quest. The Barrens leveling and Loremaster routes now both include the Altered Beings, Hamuul Runetotem, and Nara Wildmane chain.
+- Flight memory is stored per land mass: opening any flight master refreshes only that land mass (Kalimdor, Eastern Kingdoms, and so on). A distant listing no longer counts as a learned flight, so an unlearned trip such as the Barrens run to Stonetalon keeps the road instead of sending you to a flight master.
+- Added the addon-list icon, so the addon no longer shows a red question mark in the addon list.
 
 All notable changes to this project are documented here.
 
