@@ -182,7 +182,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 3, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 3, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 4, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -2533,6 +2533,32 @@ function TestFlightMemoryByLandmass()
     Enum = nil
 end
 TestFlightMemoryByLandmass()
+
+function TestStaleFlightRoutesPurged()
+    local previousDB, previousCharDB = ForeverGuideMateDB, ForeverGuideMateCharDB
+    ForeverGuideMateDB = { schemaVersion = 3 }
+    ForeverGuideMateCharDB = {
+        schemaVersion = 3,
+        taxiRoutes = {
+            [1413] = { x = 0.52, y = 0.30, destinations = {
+                ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore",
+                ["sun rock retreat, stonetalon mountains"] = "Sun Rock Retreat, Stonetalon Mountains",
+            } },
+        },
+        taxiNodes = { ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore" },
+    }
+    ns.InitializeStorage()
+    Equal(ns.charDB.schemaVersion, 4, "stale flight storage migrates forward")
+    local survivors = ns.charDB.taxiRoutes[1413] and ns.charDB.taxiRoutes[1413].destinations or {}
+    Check(survivors["thunder bluff, mulgore"] ~= nil, "a learned flight survives the route purge")
+    Equal(survivors["sun rock retreat, stonetalon mountains"], nil,
+        "a distant listing from an old release is not kept as a known route")
+    Equal(ns.Taxi:LearnedDestination({ mapID = 1413 }, "Stonetalon Mountains"), nil,
+        "the purged listing no longer suggests its flight path")
+    ForeverGuideMateDB, ForeverGuideMateCharDB = previousDB, previousCharDB
+    ns.InitializeStorage()
+end
+TestStaleFlightRoutesPurged()
 
 function TestTeldrassil()
     local guide = ns.guides["leveling-teldrassil"]
