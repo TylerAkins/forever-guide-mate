@@ -40,8 +40,9 @@ Record every intentional omission in the guide header, for example: `Destruction
 
 ## Shape of a quest
 
-- One step per objective. Those steps depend on the accept, not on each other. The turn-in depends on every objective step for that quest. See [docs/guide-authoring.md](../../docs/guide-authoring.md) for quest ids, `QuestObjective` text, and parallel turn-ins.
-- A handoff only sends you to another NPC (deliver, report, or turn in there). One step. It depends on the previous turn-in. The text says to accept the follow-up, then names the visit. The pin is the NPC you still have to reach. No accept step on the giver.
+- Prefer one API-driven objective step when all client objectives belong to the same outing; it cycles through unfinished objective rows. Split objectives only when the route needs separate locations. Split objective steps depend on the accept, not on each other, and the turn-in depends on every split objective. See [docs/guide-authoring.md](../../docs/guide-authoring.md).
+- A handoff has a separate accept at the giver and turn-in at the recipient. The accept depends on the previous turn-in and completes on `activeOrCompleted`; the turn-in depends on that accept and completes on `completed`. Never combine them as `Accept ..., then ...`.
+- Use `gossip` for a dialogue action required between acceptance and turn-in. It depends on the accept and completes from the matching client objective or quest-complete state.
 - A kill or a collect still has its own accept step.
 - A provided item, such as a quest item the giver hands you, is not its own step. Say how to use it on the objective that needs it.
 - An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.

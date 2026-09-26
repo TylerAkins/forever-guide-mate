@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-duskwood",
     title = "Duskwood",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 28 } },
@@ -2792,8 +2792,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-321-lightforge-iron",
-            kind = "turnin",
+            id = "accept-321-lightforge-iron",
+            kind = "accept",
             priority = 1650,
             conditions = {
                 all = {
@@ -2801,7 +2801,25 @@ ns:RegisterGuide({
                     { level = { min = 29 } },
                 },
             },
-            text = "Accept Lightforge Iron from Glorin Steelbrow, then turn it in to Waterlogged Chest.",
+            text = "Accept Lightforge Iron from Glorin Steelbrow.",
+            complete = QuestState(321, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZONE_1437, 0.106, 0.604, "Glorin Steelbrow",
+                "Travel to Glorin Steelbrow in Wetlands."),
+            },
+        },
+        {
+            id = "turnin-321-lightforge-iron",
+            kind = "turnin",
+            priority = 1650.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 29 } },
+                },
+            },
+            text = "Turn it in to Waterlogged Chest.",
+            dependsOn = { "accept-321-lightforge-iron" },
             complete = QuestState(321, "completed"),
             route = {
                 Point(MAP.ZONE_1437, 0.121, 0.641, "Waterlogged Chest",
@@ -3312,8 +3330,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-97-the-legend-of-stalvan",
-            kind = "turnin",
+            id = "accept-97-the-legend-of-stalvan",
+            kind = "accept",
             priority = 1940,
             conditions = {
                 all = {
@@ -3321,8 +3339,26 @@ ns:RegisterGuide({
                     { level = { min = 28 } },
                 },
             },
+            text = "Accept The Legend of Stalvan from Clerk Daltry.",
             dependsOn = { "turnin-80-the-legend-of-stalvan" },
-            text = "Accept The Legend of Stalvan from Clerk Daltry, then turn it in to Commander Althea Ebonlocke.",
+            complete = QuestState(97, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.7264, 0.4684, "Clerk Daltry",
+                "Travel to Clerk Daltry."),
+            },
+        },
+        {
+            id = "turnin-97-the-legend-of-stalvan",
+            kind = "turnin",
+            priority = 1940.1,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 28 } },
+                },
+            },
+            dependsOn = { "accept-97-the-legend-of-stalvan" },
+            text = "Turn it in to Commander Althea Ebonlocke.",
             complete = QuestState(97, "completed"),
             route = {
                 Point(MAP.DUSKWOOD, 0.736, 0.468, "Commander Althea Ebonlocke",
@@ -4338,8 +4374,8 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-1372-nothing-but-the-truth",
-            kind = "turnin",
+            id = "accept-1372-nothing-but-the-truth",
+            kind = "accept",
             priority = 2511,
             conditions = {
                 all = {
@@ -4347,7 +4383,25 @@ ns:RegisterGuide({
                     { level = { min = 42 } },
                 },
             },
-            text = "Accept Nothing But The Truth from Deathstalker Zraedus, then turn it in to Apothecary Faustin.",
+            text = "Accept Nothing But The Truth from Deathstalker Zraedus.",
+            complete = QuestState(1372, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUSKWOOD, 0.876, 0.356, "Deathstalker Zraedus",
+                "Travel to Deathstalker Zraedus."),
+            },
+        },
+        {
+            id = "turnin-1372-nothing-but-the-truth",
+            kind = "turnin",
+            priority = 2511.1,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 42 } },
+                },
+            },
+            text = "Turn it in to Apothecary Faustin.",
+            dependsOn = { "accept-1372-nothing-but-the-truth" },
             complete = QuestState(1372, "completed"),
             route = {
                 Point(MAP.DUSKWOOD, 0.874, 0.354, "Apothecary Faustin",
