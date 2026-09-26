@@ -23,6 +23,9 @@ local _, ns = ...
 -- The Valley of Trials through Report to Sen'jin Village, Wayward Weapons,
 -- A Peon's Burden, and Conscript of the Horde are orc and troll.
 -- Other Horde races still reach 100%.
+-- Finding the Antidote (813) is repeatable and does not stay complete after you
+-- turn it in. Those steps stay on the route only while Need for a Cure (812)
+-- is still open, so a finished cure does not ask for another antidote.
 -- Cactus apples, training weapons, Thazz'ril's Pick, Minshina's skull, loa idols,
 -- gnomish tools, Tiragarde relics, prickly pears, taillasher eggs, and the
 -- north-coast clues have no saved pin. Those steps follow the quest log pin
@@ -3021,6 +3024,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 7 } },
+                    { quest = { id = 812, state = "notCompleted" } },
                 },
             },
             text = "Accept Finding the Antidote from Kor'ghan in Orgrimmar.",
@@ -3093,6 +3097,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 7 } },
+                    { quest = { id = 812, state = "notCompleted" } },
                 },
             },
             useClientPin = true,
@@ -3112,6 +3117,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 7 } },
+                    { quest = { id = 812, state = "notCompleted" } },
                 },
             },
             text = "Turn in Finding the Antidote to Kor'ghan.",
