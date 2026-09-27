@@ -1,7 +1,4 @@
-## 0.1.9 - 2026-09-26
+## 0.1.10 - 2026-09-26
 
-- Every guide now follows live quest-log pins for objectives, gossip, and turn-ins when the client provides one. Objective steps display the first unfinished client objective and advance as each objective completes.
-- Added a distinct gossip step for quest dialogue, starting with The Anchors of Zephras.
-- Turn-ins now display `Quest Name @ NPC or Object`, using the live client title and the destination name.
-- Delivery and breadcrumb quests now visit the giver in a separate accept step before routing to the destination. This cleanup covers active Leveling, Loremaster, and Dungeon guides, while the same rule now protects every Era source guide.
-- Aggressive Encroachment and Al'Aketh Thugs now wait until the Zephras route reaches their givers.
+- Mid-guide recovery now follows route order, trusts known client quest state over stale saved progress, rewinds through registered quest prerequisites, and blocks with a diagnostic instead of silently skipping an unavailable quest. The Barrens leveling and Loremaster routes now both include the Altered Beings, Hamuul Runetotem, and Nara Wildmane chain.
+- The Zephras route now accepts both Aetheen breadcrumbs before leaving Thendal Grove, then completes Al'Aketh Thugs on the southbound trip into Shen'dar Village instead of backtracking.
