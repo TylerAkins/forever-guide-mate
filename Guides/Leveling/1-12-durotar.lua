@@ -1341,6 +1341,7 @@ ns:RegisterGuide({
             id = "accept-837-encroachment",
             kind = "accept",
             priority = 840,
+            conditions = { level = { min = 6 } },
             text = "Accept Encroachment from Gar'Thok in Razor Hill.",
             complete = QuestState(837, "activeOrCompleted"),
             route = {
@@ -1584,6 +1585,7 @@ ns:RegisterGuide({
             id = "objective-837-encroachment",
             kind = "objective",
             priority = 1010,
+            conditions = { level = { min = 6 } },
             text = "Kill 4 Razormane Quilboar, 4 Razormane Scout, 4 Razormane Dustrunner and 4 Razormane Battleguard in the camps west of Razor hill in Razormane Grounds.",
             dependsOn = { "accept-837-encroachment" },
             complete = QuestState(837, "complete"),
@@ -1638,6 +1640,7 @@ ns:RegisterGuide({
             id = "turnin-837-encroachment",
             kind = "turnin",
             priority = 1070,
+            conditions = { level = { min = 6 } },
             text = "Turn in Encroachment to Gar'Thok in Razor Hill.",
             dependsOn = { "objective-837-encroachment" },
             complete = QuestState(837, "completed"),
