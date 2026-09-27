@@ -223,15 +223,23 @@ function TestGuideResync()
         activeGoalByGuide = { [guide.id] = "resync-late" },
         guideRevisions = {},
         manualCompleted = {}, completionLedger = {}, deferred = {}, history = {},
+        notOffered = {
+            ["other-guide-step"] = { guide = "other-guide", quest = 900099, npc = "Other NPC" },
+        },
     }
     ns.Engine:Refresh(state)
     Equal(ns.Engine.currentGoal.id, "resync-late", "first revision observation preserves the saved step")
     Equal(ns.charDB.guideRevisions[guide.id], 2, "first revision observation records the current revision")
 
+    ns.charDB.notOffered["resync-early"] = { guide = guide.id, quest = 900010, npc = "Test NPC" }
     Equal(ns.Engine:ResyncCurrent(state), true, "manual resync runs with complete player state")
     Equal(ns.Engine.currentGoal.id, "resync-early", "manual resync finds the earliest unfinished step")
     Equal(ns.charDB.activeGoalByGuide[guide.id], "resync-early", "manual resync replaces the saved step")
     Equal(#ns.charDB.history, 0, "manual resync clears review history")
+    Equal(ns.charDB.notOffered["resync-early"], nil,
+        "manual resync clears stale quest availability observations for the guide")
+    Check(ns.charDB.notOffered["other-guide-step"] ~= nil,
+        "manual resync preserves quest availability observations for other guides")
 
     ns.charDB.deferred["resync-early"] = true
     ns.charDB.activeGoal = "resync-late"
@@ -257,9 +265,12 @@ function TestGuideResync()
     ns.Engine:Refresh(loading)
     Equal(ns.Engine.currentGoal.id, "resync-late", "revision resync waits for complete quest state")
     Equal(ns.charDB.guideRevisions[guide.id], 2, "an incomplete refresh does not consume the new revision")
+    ns.charDB.notOffered["resync-early"] = { guide = guide.id, quest = 900010, npc = "Test NPC" }
     ns.Engine:Refresh(state)
     Equal(ns.Engine.currentGoal.id, "resync-early", "a changed guide revision recalculates the saved step")
     Equal(ns.charDB.guideRevisions[guide.id], 3, "automatic resync records the new revision")
+    Equal(ns.charDB.notOffered["resync-early"], nil,
+        "a changed guide revision clears stale quest availability observations")
     ns.charDB.activeGoal = "resync-late"
     ns.Engine.currentGoal = guide.goals[2]
     ns.Engine:Refresh(state)
@@ -1566,6 +1577,10 @@ local nextStepAccept = ns.Engine:GetGoal(zephras, "accept-the-next-step")
 local alakethAccept = ns.Engine:GetGoal(zephras, "accept-alaketh-thugs")
 local adventurerTurnin = ns.Engine:GetGoal(zephras, "turnin-the-adventurer")
 local nextStepTurnin = ns.Engine:GetGoal(zephras, "turnin-the-next-step")
+local hordeWelcomeAccept = ns.Engine:GetGoal(zephras, "accept-welcome-to-shendar-village")
+local allianceWelcomeAccept = ns.Engine:GetGoal(zephras, "accept-welcome-to-shendar-village-93461")
+local criminalElementAccept = ns.Engine:GetGoal(zephras, "accept-the-criminal-element")
+local prideclawsAccept = ns.Engine:GetGoal(zephras, "accept-the-problem-with-prideclaws")
 Equal(adventurerAccept.route[1].label, "Aetheen of the Gales", "The Adventurer starts at Aetheen")
 Equal(nextStepAccept.route[1].label, "Aetheen of the Gales", "The Next Step starts at Aetheen")
 Check(nextStepAccept.priority < adventurerAccept.priority,
@@ -1578,6 +1593,16 @@ Check(HasDependency(alakethAccept, "accept-the-next-step"),
     "Al'Aketh Thugs waits for The Next Step pickup")
 Check(alakethAccept.priority < adventurerTurnin.priority,
     "Al'Aketh Thugs is handled on the southbound route before entering Shen'dar")
+Check(HasDependency(hordeWelcomeAccept, "turnin-the-next-step"),
+    "the Horde Shen'dar introduction waits for The Next Step")
+Check(HasDependency(allianceWelcomeAccept, "turnin-the-next-step"),
+    "the Alliance Shen'dar introduction waits for The Next Step")
+Check(hordeWelcomeAccept.priority < criminalElementAccept.priority,
+    "the Horde Shen'dar introduction opens the village quest batch")
+Check(allianceWelcomeAccept.priority < criminalElementAccept.priority,
+    "the Alliance Shen'dar introduction opens the village quest batch")
+Check(criminalElementAccept.priority < prideclawsAccept.priority,
+    "The Criminal Element is picked up before the Shen'dar side quests")
 
 local thendalDeparture = {
     id = "test-zephras-thendal-departure",
