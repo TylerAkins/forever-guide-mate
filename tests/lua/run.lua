@@ -2915,6 +2915,27 @@ function TestFlightMemoryByLandmass()
 end
 TestFlightMemoryByLandmass()
 
+function TestEncroachmentWaitsUntilGarThokOffersIt()
+    ns:FinalizeGuides()
+    local era = ns.guides["leveling-era"]
+    local ids = {
+        "leveling-era-1-12-durotar:accept-837-encroachment",
+        "leveling-era-1-12-durotar:objective-837-encroachment",
+        "leveling-era-1-12-durotar:turnin-837-encroachment",
+    }
+    for _, goalID in ipairs(ids) do
+        local goal = ns.Engine:GetGoal(era, goalID)
+        local levelGate = goal and goal.conditions and goal.conditions.all and goal.conditions.all[1]
+        Check(levelGate and levelGate.level and levelGate.level.min == 6,
+            goalID .. " waits until level 6")
+        Equal(ns.EvaluateCondition(goal.conditions, { level = 5, faction = "Horde", classID = 9 }), false,
+            "a level 5 warlock is not sent to accept Encroachment")
+        Equal(ns.EvaluateCondition(goal.conditions, { level = 6, faction = "Horde", classID = 9 }), true,
+            "Encroachment is offered from level 6")
+    end
+end
+TestEncroachmentWaitsUntilGarThokOffersIt()
+
 function TestStaleFlightRoutesPurged()
     local previousDB, previousCharDB = ForeverGuideMateDB, ForeverGuideMateCharDB
     ForeverGuideMateDB = { schemaVersion = 3 }
