@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.18 - 2026-09-27
+
+- Sync reopens skipped accept steps when that quest is not in your log, so warlock Vile Familiars can surface again instead of staying behind Lazy Peons or Thazz'ril's Pick.
+- Lazy Peons waits for the Vile Familiars Zureetha turn-in (warlock) or the standard cave turn-in (other classes).
+- Prerequisite inference no longer marks quest steps complete when the quest log shows they are still unfinished.
+
 ## 0.1.17 - 2026-09-27
 
 - Era Durotar, Mulgore, and Crossroads Conscription accepts now wait for the prior turn-in (or objective) that unlocks them in the client, including the warlock Vile Familiars handoff before Burning Blade Medallion.
