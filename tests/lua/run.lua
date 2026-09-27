@@ -3459,6 +3459,33 @@ function TestQuestCreditSkipsRepeatLookups()
 end
 TestQuestCreditSkipsRepeatLookups()
 
+function TestLibraryProgressReadsEveryGuide()
+    local savedCapture = ns.PlayerState.Capture
+    local asked
+    ns.PlayerState.Capture = function(_, _, questIDs)
+        asked = questIDs
+        return {
+            faction = "Horde", raceID = 2, classID = 1, level = 12,
+            professions = {}, professionsKnown = true,
+            quests = {}, completedQuests = {},
+            questLogKnown = true, questCompletionKnown = true,
+        }
+    end
+    local savedGuide = ns.charDB.selectedGuide
+    ns.charDB.selectedGuide = "leveling-era-1-12-durotar"
+    ns.Engine:Refresh()
+    ns.PlayerState.Capture = savedCapture
+    ns.charDB.selectedGuide = savedGuide
+    local durotarQuest, westfallQuest = false, false
+    for _, questID in ipairs(asked or {}) do
+        if questID == 788 then durotarQuest = true end
+        if questID == 783 then westfallQuest = true end
+    end
+    Check(durotarQuest, "login reads Durotar quest completion")
+    Check(westfallQuest, "login reads quest completion for guides that are not open")
+end
+TestLibraryProgressReadsEveryGuide()
+
 ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
