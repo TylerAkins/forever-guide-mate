@@ -21,6 +21,20 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 91209,
+    mode = "all",
+    quests = { 91208 },
+    conditions = {
+        all = {
+            { faction = "Horde" },
+            { race = 5 },
+            { class = 2 },
+        },
+    },
+    note = "Continue Your Training is offered after Coming to Terms.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 5727,
     mode = "all",
     quests = { 5726 },

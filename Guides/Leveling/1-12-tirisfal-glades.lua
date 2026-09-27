@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
 -- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
+-- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
 -- Grind stops and flight-point pickups are not part of this route.
@@ -34,7 +35,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -264,6 +265,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98601-a-difficult-path",
+            kind = "accept",
+            priority = 151,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                },
+            },
+            text = "Accept A Difficult Path from Shadow Priest Sarvis in Deathknell.",
+            complete = QuestState(98601, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
+                    "Travel to Shadow Priest Sarvis."),
+            },
+        },
+        {
             id = "turnin-3096-encrypted-scroll",
             kind = "turnin",
             priority = 160,
@@ -346,6 +364,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.3110, 0.6610, "Dark Cleric Duesten",
                     "Travel to Dark Cleric Duesten."),
+            },
+        },
+        {
+            id = "turnin-98601-a-difficult-path",
+            kind = "turnin",
+            priority = 201,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                },
+            },
+            text = "Turn in A Difficult Path to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "accept-98601-a-difficult-path" },
+            complete = QuestState(98601, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
             },
         },
         {
@@ -435,6 +471,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-90902-rediscovering-the-light",
+            kind = "accept",
+            priority = 262,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Rediscovering the Light from Aramis Hammerhand in Deathknell.",
+            complete = QuestState(90902, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
             id = "accept-3902-scavenging-deathknell",
             kind = "accept",
             priority = 270,
@@ -506,6 +560,44 @@ ns:RegisterGuide({
             text = "Turn in A Light in the Darkness to Aramis Hammerhand in Deathknell.",
             dependsOn = { "objective-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "objective-90902-rediscovering-the-light",
+            kind = "objective",
+            priority = 313,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Heal 5 Injured Deathguard with Holy Light in Deathknell.",
+            dependsOn = { "accept-90902-rediscovering-the-light" },
+            complete = QuestState(90902, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3160, 0.6480, "Injured Deathguard",
+                    "Travel to Injured Deathguard."),
+            },
+        },
+        {
+            id = "turnin-90902-rediscovering-the-light",
+            kind = "turnin",
+            priority = 314,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Turn in Rediscovering the Light to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "objective-90902-rediscovering-the-light" },
+            complete = QuestState(90902, "completed"),
             route = {
                 Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
@@ -640,6 +732,81 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-91208-coming-to-terms",
+            kind = "accept",
+            priority = 431,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Coming to Terms from Aramis Hammerhand in Deathknell.",
+            complete = QuestState(91208, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "objective-91208-coming-to-terms",
+            kind = "objective",
+            priority = 432,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Find the Frightened Paladin in the hills west of the Deathknell chapel.",
+            dependsOn = { "accept-91208-coming-to-terms" },
+            complete = QuestState(91208, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2760, 0.6380, "Frightened Paladin",
+                    "Travel to Frightened Paladin."),
+            },
+        },
+        {
+            id = "turnin-91208-coming-to-terms",
+            kind = "turnin",
+            priority = 433,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Coming to Terms to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "objective-91208-coming-to-terms" },
+            complete = QuestState(91208, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "accept-91209-continue-your-training",
+            kind = "accept",
+            priority = 434,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Continue Your Training from Aramis Hammerhand in Deathknell.",
+            dependsOn = { "turnin-91208-coming-to-terms" },
+            complete = QuestState(91209, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
             id = "accept-383-vital-intelligence",
             kind = "accept",
             priority = 440,
@@ -696,6 +863,25 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5820, 0.5146, "Deathguard Dillinger",
                     "Travel to Deathguard Dillinger."),
+            },
+        },
+        {
+            id = "turnin-91209-continue-your-training",
+            kind = "turnin",
+            priority = 491,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Continue Your Training to Shari Stilwell in Brill.",
+            dependsOn = { "accept-91209-continue-your-training" },
+            complete = QuestState(91209, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell",
+                    "Travel to Shari Stilwell."),
             },
         },
         {
