@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.12 - 2026-09-27
+
+- Reordered the Zephras Isle route to the 1-14 Skyborne speedrun: grove kills, the watchtower, then the southbound Shen'dar and Valanaar loops. Accepts that had no earlier step now wait for the previous open step, so the tracker stays on the route.
+
 ## 0.1.11 - 2026-09-26
 
 - Added a tracker Sync button that recalculates the current position from live quest and profession state while preserving completed and intentionally skipped steps.

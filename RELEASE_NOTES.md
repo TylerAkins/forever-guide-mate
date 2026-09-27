@@ -1,4 +1,3 @@
-## 0.1.11 - 2026-09-26
+## 0.1.12 - 2026-09-27
 
-- Added a tracker Sync button that recalculates the current position from live quest and profession state while preserving completed and intentionally skipped steps.
-- A changed guide revision now performs the same resync once client state is fully available. Ordinary login, quest updates, and guide switching still preserve the saved step.
+- Reordered the Zephras Isle route to the 1-14 Skyborne speedrun: grove kills, the watchtower, then the southbound Shen'dar and Valanaar loops. Accepts that had no earlier step now wait for the previous open step, so the tracker stays on the route.

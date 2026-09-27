@@ -1495,14 +1495,18 @@ grove.quests[92462] = {
 }
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "turnin-harmony-in-balance",
-    "both grove objectives lead back to the Harmony turn-in")
-grove.completedQuests[92461] = true
+Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
+    "both grove objectives lead back to the Infestation Investigation turn-in")
+grove.completedQuests[92462] = true
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
-    "Infestation Investigation is turned in before the class breadcrumb")
-grove.completedQuests[92462] = true
+Equal(ns.Engine.currentGoal.id, "accept-the-cirrusfly-queen",
+    "The Cirrusfly Queen is accepted before the watchtower")
+grove.quests[92463] = { complete = false, objectives = {} }
+grove.quests[92464] = { complete = false, objectives = {} }
+grove.completedQuests[94414] = true
+grove.completedQuests[92474] = true
+grove.completedQuests[92461] = true
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
@@ -1559,8 +1563,8 @@ local adventurerTurnin = ns.Engine:GetGoal(zephras, "turnin-the-adventurer")
 local nextStepTurnin = ns.Engine:GetGoal(zephras, "turnin-the-next-step")
 Equal(adventurerAccept.route[1].label, "Aetheen of the Gales", "The Adventurer starts at Aetheen")
 Equal(nextStepAccept.route[1].label, "Aetheen of the Gales", "The Next Step starts at Aetheen")
-Check(adventurerAccept.priority < nextStepAccept.priority,
-    "The Adventurer is accepted before the other Aetheen quest")
+Check(nextStepAccept.priority < adventurerAccept.priority,
+    "The Next Step is accepted before The Adventurer")
 Check(nextStepAccept.priority < alakethAccept.priority,
     "both Aetheen quests are accepted before leaving Thendal Grove")
 Check(HasDependency(alakethAccept, "accept-the-adventurer"),
@@ -1593,12 +1597,12 @@ local departureState = {
 }
 local savedDeferred = ns.charDB.deferred
 ns.charDB.deferred = {}
-Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-adventurer",
-    "the Thendal departure first accepts The Adventurer")
-departureState.quests[96638] = { complete = false, objectives = {} }
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-next-step",
-    "the Thendal departure accepts The Next Step before moving")
+    "the Thendal departure first accepts The Next Step")
 departureState.quests[92472] = { complete = false, objectives = {} }
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-adventurer",
+    "the Thendal departure accepts The Adventurer before moving")
+departureState.quests[96638] = { complete = false, objectives = {} }
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-alaketh-thugs",
     "the southbound route stops at Hanaa before entering Shen'dar")
 departureState.quests[92544] = { complete = false, objectives = {} }
@@ -1609,12 +1613,12 @@ Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-
     "Al'Aketh Thugs turns in before entering Shen'dar")
 departureState.quests[92544] = nil
 departureState.completedQuests[92544] = true
-Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-adventurer",
-    "The Adventurer turns in after the Al'Aketh detour")
-departureState.quests[96638] = nil
-departureState.completedQuests[96638] = true
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-next-step",
-    "The Next Step turns in during the same Shen'dar arrival")
+    "The Next Step turns in before entering Shen'dar")
+departureState.quests[92472] = nil
+departureState.completedQuests[92472] = true
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-adventurer",
+    "The Adventurer turns in at Raan Wildwind after the Al'Aketh detour")
 ns.charDB.deferred = savedDeferred
 end
 TestZephrasClientQuestData()
