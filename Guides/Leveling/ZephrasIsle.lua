@@ -84,7 +84,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-zephras-isle",
-    title = "Zephras Isle (Skyborne)",
+    title = "1-14 Zephras Isle",
     category = "Leveling Quest Guides",
     revision = 6,
     conditions = {

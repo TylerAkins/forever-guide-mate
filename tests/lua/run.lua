@@ -3382,7 +3382,7 @@ function TestEraLeveling()
         titles[#titles + 1] = entry.title
     end
     Equal(titles[1], "1-12 Durotar", "the Horde leveling library starts with the starter chapter")
-    Equal(titles[2], "Zephras Isle (Skyborne)", "Zephras Isle stays in the Leveling library")
+    Equal(titles[2], "1-14 Zephras Isle", "Zephras Isle stays in the Leveling library")
     Equal(titles[3], "12-20 Barrens", "12-20 Barrens is its own Leveling library row")
     local sawElwynn = false
     for _, title in ipairs(titles) do
