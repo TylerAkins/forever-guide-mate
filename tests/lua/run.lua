@@ -825,7 +825,29 @@ questAPI.C_GossipInfo.GetAvailableQuests = function()
 end
 calls.gossip = nil
 ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
-Equal(calls.gossip, 5722, "a later guide quest is left in the gossip window")
+Equal(calls.gossip, 5722, "the current accept is chosen when that giver also offers a later quest")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { 1, 5722 }
+end
+calls.gossip = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5722, "gossip selects the current accept when the list is quest ids")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { { questID = 5723, title = "Testing an Enemy's Strength" } }
+end
+calls.gossip = nil
+calls.accept = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5723, "a giver list opens the next ready quest when the current one is absent")
+questAPI.GetQuestID = function() return 5723 end
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, true, "the quest selected from the giver list is accepted")
+questAPI.C_GossipInfo.GetAvailableQuests = function() return {} end
+calls.accept = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, nil, "opening a later quest without selecting it from the list does not accept it")
+questAPI.GetQuestID = function() return 5722 end
 questAPI.C_GossipInfo.GetAvailableQuests = function()
     return { { questID = 1 }, { questID = 5722 } }
 end
@@ -895,7 +917,11 @@ Equal(calls.greeting, 2, "a quest list opens the current accept step without a c
 greeting.GetAvailableTitle = function() return "Testing an Enemy's Strength" end
 calls.greeting = nil
 ns.QuestDialog:Handle("QUEST_GREETING", greeting)
-Equal(calls.greeting, nil, "a quest list does not open a different guide quest")
+Equal(calls.greeting, 1, "a quest list opens the next quest that same giver is offering")
+greeting.GetAvailableTitle = function() return "Hidden Enemies" end
+calls.greeting = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, nil, "a quest list leaves a different giver's quest alone")
 greeting.GetAvailableTitle = function(index)
     if index == 1 then return "Searching for the Lost Satchel" end
     return "Testing an Enemy's Strength"
@@ -930,6 +956,50 @@ greeting.GetActiveQuestID = function() return 5723 end
 calls.greetingActive = nil
 ns.QuestDialog:Handle("QUEST_GREETING", greeting)
 Equal(calls.greetingActive, nil, "a quest list does not turn in a different guide quest")
+function TestForgottenLoaIdols()
+    local durotar = ns.guides["leveling-era"]
+    local idols = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-97225-forgotten-loa-idols")
+    Check(idols ~= nil, "Durotar accepts Forgotten Loa Idols")
+    Equal(idols.complete.quest.id, 97225, "Forgotten Loa Idols is quest 97225")
+    Equal(idols.route[#idols.route].label, "Master Vornal", "Forgotten Loa Idols is accepted from Master Vornal")
+    local solvent = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-818-a-solvent-spirit")
+    local savedGuide = ns.charDB.selectedGuide
+    local savedGoal = ns.Engine.currentGoal
+    local savedState = ns.Engine.state
+    local savedSegment = ns.Engine.currentSegment
+    ns.charDB.selectedGuide = "leveling-era"
+    ns.Engine.currentSegment = nil
+    ns.Engine.currentGoal = solvent
+    ns.Engine.state = {
+        faction = "Horde", level = 10, mapID = 1411,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    }
+    questAPI.C_GossipInfo.GetAvailableQuests = function()
+        return {
+            { questID = 97225, title = "Forgotten Loa Idols" },
+            { questID = 818, title = "A Solvent Spirit" },
+        }
+    end
+    calls.gossip = nil
+    ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+    Equal(calls.gossip, 818, "Master Vornal's list accepts the current quest first")
+    questAPI.C_GossipInfo.GetAvailableQuests = function()
+        return { { questID = 97225, title = "Forgotten Loa Idols" } }
+    end
+    calls.gossip = nil
+    calls.accept = nil
+    ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+    Equal(calls.gossip, 97225, "Master Vornal's list still accepts Forgotten Loa Idols")
+    questAPI.GetQuestID = function() return 97225 end
+    ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+    Equal(calls.accept, true, "Forgotten Loa Idols is accepted after the list selects it")
+    ns.charDB.selectedGuide = savedGuide
+    ns.Engine.currentGoal = savedGoal
+    ns.Engine.state = savedState
+    ns.Engine.currentSegment = savedSegment
+end
+TestForgottenLoaIdols()
 
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
