@@ -154,11 +154,26 @@ class ContractTests(unittest.TestCase):
         for excluded in ("tests", "tools", ".github", "docs"):
             self.assertIn(f"  - {excluded}", package)
 
-    def test_readme_documents_local_engine(self) -> None:
+    def test_readme_documents_project_and_distribution(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
-        self.assertIn("local-development guide addon", readme)
+        self.assertIn("open-source", readme)
+        self.assertIn("world of warcraft: forever", readme)
         self.assertIn("github release", readme)
         self.assertIn("curseforge", readme)
+        development = (ROOT / "docs/DEVELOPMENT.md").read_text(encoding="utf-8").lower()
+        self.assertIn("local-development guide addon", development)
+
+    def test_docs_only_changes_skip_release_version_gate(self) -> None:
+        workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+        self.assertIn("GUIDE_CONTENT_CHANGED=false", workflow)
+        guide_diff = workflow.split("git diff --quiet", 1)[1].split(";", 1)[0]
+        shipping_tokens = guide_diff.replace('"', "").replace("$BASE_SHA", "").replace("HEAD --", "").split()
+        for docs_only in ("README.md", "docs/", "RELEASE_NOTES.md", "CHANGELOG.md"):
+            self.assertNotIn(
+                docs_only,
+                shipping_tokens,
+                f"{docs_only} must not require a VERSION bump by itself",
+            )
 
     def test_runtime_has_no_gameplay_automation_or_probe_code(self) -> None:
         forbidden = (
