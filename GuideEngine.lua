@@ -7,6 +7,7 @@ local VALID_KINDS = {
     accept = true, objective = true, turnin = true, gossip = true, travel = true, note = true,
 }
 local SHORT_TIMER_SECONDS = 30 * 60
+local trackedQuestIDs
 
 ns.questPrerequisites = ns.questPrerequisites or {}
 
@@ -460,6 +461,7 @@ function ns:RegisterGuide(guide)
     end
     self.guides[guide.id] = guide
     self.guideOrder[#self.guideOrder + 1] = guide.id
+    trackedQuestIDs = nil
 end
 
 -- Starter chapters are parallel. After the chosen starter, every later chapter
@@ -561,6 +563,7 @@ function ns:FinalizeGuides()
         end
     end
     if #sources == 0 then return end
+    trackedQuestIDs = nil
 
     local segments = {}
     local levelOneCount = { Alliance = 0, Horde = 0 }
@@ -658,6 +661,9 @@ function ns.GuideUsesQuest(guide, questID)
 end
 
 function ns.GetTrackedQuestIDs()
+    if trackedQuestIDs then
+        return trackedQuestIDs
+    end
     local found = {}
     for _, guide in pairs(ns.guides) do
         CollectQuestIDs(guide, found)
@@ -667,6 +673,7 @@ function ns.GetTrackedQuestIDs()
         ids[#ids + 1] = questID
     end
     table.sort(ids)
+    trackedQuestIDs = ids
     return ids
 end
 
@@ -1620,6 +1627,9 @@ function Engine:Refresh(state)
             ns.MapPins:HookMap()
             ns.MapPins:Refresh()
         end
+        if self.state and ns.PlayerState and ns.PlayerState.QuestLogFingerprint then
+            self.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(self.state)
+        end
         return
     end
     if self.resyncPending == guide.id and StateReadyForResync(state) then
@@ -1711,6 +1721,16 @@ function Engine:Refresh(state)
         ns.MapPins:HookMap()
         ns.MapPins:Refresh()
     end
+    if self.state and ns.PlayerState and ns.PlayerState.QuestLogFingerprint then
+        self.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(self.state)
+    end
+end
+
+function Engine:SameQuestLog(state)
+    if self.questLogFingerprint == nil or not ns.PlayerState or not ns.PlayerState.QuestLogFingerprint then
+        return false
+    end
+    return self.questLogFingerprint == ns.PlayerState:QuestLogFingerprint(state)
 end
 
 function Engine:CompleteCurrent()
