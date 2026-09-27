@@ -243,6 +243,7 @@ ns:RegisterGuide({
             id = "accept-1499-vile-familiars",
             kind = "accept",
             priority = 100,
+            dependsOn = { "turnin-1485-vile-familiars" },
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -988,7 +989,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Burning Blade Medallion from Zureetha Fargaze.",
-            dependsOn = { "turnin-792-vile-familiars" },
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
             complete = QuestState(794, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.428, 0.690, "Zureetha Fargaze",

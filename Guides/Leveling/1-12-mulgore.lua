@@ -152,6 +152,7 @@ ns:RegisterGuide({
             id = "accept-750-the-hunt-continues",
             kind = "accept",
             priority = 80,
+            dependsOn = { "turnin-747-the-hunt-begins" },
             text = "Accept The Hunt Continues from Grull Hawkwind in Camp Narache.",
             complete = QuestState(750, "activeOrCompleted"),
             route = {
@@ -258,6 +259,7 @@ ns:RegisterGuide({
             id = "accept-753-a-humble-task",
             kind = "accept",
             priority = 150,
+            dependsOn = { "turnin-752-a-humble-task" },
             text = "Accept A Humble Task from Greatmother Hawkwind in Camp Narache.",
             complete = QuestState(753, "activeOrCompleted"),
             route = {
@@ -293,6 +295,7 @@ ns:RegisterGuide({
             id = "accept-755-rites-of-the-earthmother",
             kind = "accept",
             priority = 180,
+            dependsOn = { "turnin-753-a-humble-task" },
             text = "Accept Rites of the Earthmother from Chief Hawkwind in Camp Narache.",
             complete = QuestState(755, "activeOrCompleted"),
             route = {
@@ -328,6 +331,7 @@ ns:RegisterGuide({
             id = "accept-757-rite-of-strength",
             kind = "accept",
             priority = 210,
+            dependsOn = { "turnin-755-rites-of-the-earthmother" },
             text = "Accept Rite of Strength from Seer Graytongue in Red Cloud Mesa.",
             complete = QuestState(757, "activeOrCompleted"),
             route = {
@@ -377,6 +381,7 @@ ns:RegisterGuide({
             id = "accept-780-the-battleboars",
             kind = "accept",
             priority = 230,
+            dependsOn = { "turnin-750-the-hunt-continues" },
             text = "Accept The Battleboars from Grull Hawkwind in Camp Narache.",
             complete = QuestState(780, "activeOrCompleted"),
             route = {
@@ -541,6 +546,7 @@ ns:RegisterGuide({
             id = "accept-763-rites-of-the-earthmother",
             kind = "accept",
             priority = 380,
+            dependsOn = { "turnin-757-rite-of-strength" },
             text = "Accept Rites of the Earthmother from Chief Hawkwind in Camp Narache.",
             complete = QuestState(763, "activeOrCompleted"),
             route = {
@@ -698,6 +704,7 @@ ns:RegisterGuide({
             id = "accept-767-rite-of-vision",
             kind = "accept",
             priority = 510,
+            dependsOn = { "turnin-763-rites-of-the-earthmother" },
             text = "Accept Rite of Vision from Baine Bloodhoof in Bloodhoof Village.",
             complete = QuestState(767, "activeOrCompleted"),
             route = {
@@ -786,6 +793,7 @@ ns:RegisterGuide({
             id = "accept-771-rite-of-vision",
             kind = "accept",
             priority = 580,
+            dependsOn = { "turnin-767-rite-of-vision" },
             text = "Accept Rite of Vision from Zarlman Two-Moons in Bloodhoof Village.",
             complete = QuestState(771, "activeOrCompleted"),
             route = {
@@ -1047,6 +1055,7 @@ ns:RegisterGuide({
             id = "accept-754-winterhoof-cleansing",
             kind = "accept",
             priority = 780,
+            dependsOn = { "turnin-748-poison-water" },
             conditions = {
                 all = {
                     { race = 6 },
@@ -1087,6 +1096,7 @@ ns:RegisterGuide({
             id = "accept-772-rite-of-vision",
             kind = "accept",
             priority = 810,
+            dependsOn = { "turnin-771-rite-of-vision" },
             text = "Accept Rite of Vision from Zarlman Two-Moons in Bloodhoof Village.",
             complete = QuestState(772, "activeOrCompleted"),
             route = {
@@ -1145,6 +1155,7 @@ ns:RegisterGuide({
             id = "accept-764-the-venture-co",
             kind = "accept",
             priority = 860,
+            dependsOn = { "turnin-751-the-ravaged-caravan" },
             text = "Accept The Venture Co. from Morin Cloudstalker in Mulgore.",
             complete = QuestState(764, "activeOrCompleted"),
             route = {
@@ -1156,6 +1167,7 @@ ns:RegisterGuide({
             id = "accept-765-supervisor-fizsprocket",
             kind = "accept",
             priority = 870,
+            dependsOn = { "turnin-751-the-ravaged-caravan" },
             text = "Accept Supervisor Fizsprocket from Morin Cloudstalker in Mulgore.",
             complete = QuestState(765, "activeOrCompleted"),
             route = {
@@ -1201,6 +1213,7 @@ ns:RegisterGuide({
             id = "accept-756-thunderhorn-totem",
             kind = "accept",
             priority = 910,
+            dependsOn = { "turnin-754-winterhoof-cleansing" },
             conditions = {
                 all = {
                     { race = 6 },
@@ -1249,6 +1262,7 @@ ns:RegisterGuide({
             id = "accept-773-rite-of-wisdom",
             kind = "accept",
             priority = 950,
+            dependsOn = { "turnin-772-rite-of-vision" },
             text = "Accept Rite of Wisdom from Seer Wiserunner in Mulgore.",
             complete = QuestState(773, "activeOrCompleted"),
             route = {
@@ -1295,6 +1309,7 @@ ns:RegisterGuide({
             id = "accept-775-journey-into-thunder-bluff",
             kind = "accept",
             priority = 1000,
+            dependsOn = { "turnin-773-rite-of-wisdom" },
             text = "Accept Journey into Thunder Bluff from Ancestral Spirit in Red Rocks.",
             complete = QuestState(775, "activeOrCompleted"),
             route = {
@@ -1425,6 +1440,7 @@ ns:RegisterGuide({
             id = "accept-758-thunderhorn-cleansing",
             kind = "accept",
             priority = 1070,
+            dependsOn = { "turnin-756-thunderhorn-totem" },
             conditions = {
                 all = {
                     { race = 6 },
@@ -1799,6 +1815,7 @@ ns:RegisterGuide({
             id = "accept-776-rites-of-the-earthmother",
             kind = "accept",
             priority = 1260,
+            dependsOn = { "turnin-775-journey-into-thunder-bluff" },
             text = "Accept Rites of the Earthmother from Cairne Bloodhoof in Thunder Bluff.",
             complete = QuestState(776, "activeOrCompleted"),
             route = {
@@ -2171,6 +2188,7 @@ ns:RegisterGuide({
             id = "accept-759-wildmane-totem",
             kind = "accept",
             priority = 1480,
+            dependsOn = { "turnin-758-thunderhorn-cleansing" },
             conditions = {
                 all = {
                     { race = 6 },
@@ -2487,6 +2505,7 @@ ns:RegisterGuide({
             id = "accept-760-wildmane-cleansing",
             kind = "accept",
             priority = 1630,
+            dependsOn = { "turnin-759-wildmane-totem" },
             conditions = {
                 all = {
                     { race = 6 },

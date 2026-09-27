@@ -1088,6 +1088,7 @@ ns:RegisterGuide({
             id = "accept-842-crossroads-conscription",
             kind = "accept",
             priority = 950,
+            dependsOn = { "turnin-840-conscript-of-the-horde" },
             text = "Accept Crossroads Conscription from Kargal Battlescar in Far Watch Post.",
             complete = QuestState(842, "activeOrCompleted"),
             route = {
