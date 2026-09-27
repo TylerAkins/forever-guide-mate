@@ -315,6 +315,16 @@ for _, guideID in ipairs(ns.guideOrder) do
     end
 end
 
+for _, issue in ipairs(guideData.LevelingLoremasterAcceptGateDrift(ns.guides)) do
+    Check(false, ("%s %s Loremaster gate drift: %s"):format(
+        issue.eraID, issue.goalID, issue.detail))
+end
+
+for _, issue in ipairs(guideData.ClassBranchTurninViolations(ns.guides)) do
+    Check(false, ("%s %s class-branch gate: %s"):format(
+        issue.guideID, issue.goalID, issue.detail))
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d guide data checks failed\n"):format(failures, checks))
     os.exit(1)
