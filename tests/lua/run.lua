@@ -44,18 +44,6 @@ Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Leveling/ZephrasIsle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
-Load("Guides/Loremaster/TheBarrens.lua")
-Load("Guides/Loremaster/Teldrassil.lua")
-Load("Guides/Loremaster/LochModan.lua")
-Load("Guides/Loremaster/Westfall.lua")
-Load("Guides/Loremaster/DunMorogh.lua")
-Load("Guides/Loremaster/Duskwood.lua")
-Load("Guides/Loremaster/RedridgeMountains.lua")
-Load("Guides/Loremaster/SilverpineForest.lua")
-Load("Guides/Loremaster/ElwynnForest.lua")
-Load("Guides/Loremaster/Ashenvale.lua")
-Load("Guides/Loremaster/Darkshore.lua")
-Load("Guides/Loremaster/StonetalonMountains.lua")
 Load("Guides/Leveling/1-12-durotar.lua")
 Load("Guides/Leveling/1-12-mulgore.lua")
 Load("Guides/Leveling/1-12-tirisfal-glades.lua")
@@ -934,7 +922,8 @@ Equal(calls.greetingActive, nil, "a quest list does not turn in a different guid
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
 function TestEliteLabels()
-    local plain = {
+    --[[ removed Barrens loremaster elite checks
+    local unused = {
         "objective-872-the-disruption-ends-3",
         "accept-850-kolkar-leaders",
         "objective-850-kolkar-leaders-1",
@@ -993,6 +982,7 @@ function TestEliteLabels()
         "Egg Hunt calls the Harvester a rare")
     Check(egg and string.find(egg.text, "This is an elite", 1, true) == nil,
         "Egg Hunt does not call the Harvester an elite")
+    ]]
     local aggorGoal = ns.Engine:GetGoal(ns.guides["leveling-durotar"], "objective-99052-threat-from-below-1")
     Check(aggorGoal and string.find(aggorGoal.text, "This is an elite. Bring a group.", 1, true) ~= nil,
         "Aggor the Young stays an elite warning")
@@ -1037,7 +1027,6 @@ function TestLostBarrensKodo()
         Check(turnin and turnin.dependsOn[1] == "objective-6128-2-lost-barrens-kodo"
             and turnin.dependsOn[2] == "objective-6128-1-earthroot", guideID .. " turn-in waits on both parts")
     end
-    CheckStep("leveling-the-barrens")
     local eraGuide = ns.guides["leveling-era-12-20-barrens"] or ns.guides["leveling-era"]
     local eraID = ns.guides["leveling-era-12-20-barrens"] and "objective-6128-2-lost-barrens-kodo"
         or "leveling-era-12-20-barrens:objective-6128-2-lost-barrens-kodo"
@@ -1054,7 +1043,9 @@ end
 TestLostBarrensKodo()
 
 function TestGatheringTheCureLedger()
-    local guide = ns.guides["leveling-the-barrens"]
+    local chapterID = "leveling-era-12-20-barrens"
+    local guide = ns.guides["leveling-era"]
+    local function Step(name) return chapterID .. ":" .. name end
     local base = {
         faction = "Horde", raceID = 6, classID = 11, level = 16,
         professions = {}, professionsKnown = true,
@@ -1072,7 +1063,8 @@ function TestGatheringTheCureLedger()
         questLogKnown = true,
         questCompletionKnown = true,
     }
-    ns.charDB.selectedGuide = guide.id
+    ns.charDB.selectedGuide = "leveling-era"
+    ns.charDB.eraChapterPick = chapterID
     ns.charDB.activeGoal = nil
     ns.charDB.manualCompleted = {}
     ns.charDB.deferred = {}
@@ -1081,21 +1073,21 @@ function TestGatheringTheCureLedger()
     ns.db.autoAdvance = true
     ns.Engine.reviewingGoal = nil
     local ledger = ns.Engine:GetLedger(guide, true)
-    ledger["turnin-6128-gathering-the-cure"] = true
-    ledger["objective-6128-2-lost-barrens-kodo"] = true
+    ledger[Step("turnin-6128-gathering-the-cure")] = true
+    ledger[Step("objective-6128-2-lost-barrens-kodo")] = true
     ns.Engine:Refresh(base)
     local candidates = ns.Engine:CandidateGoals(guide, base)
     local earthrootReady
     for _, goal in ipairs(candidates) do
-        if goal.id == "objective-6128-1-earthroot" then
+        if goal.id == Step("objective-6128-1-earthroot") then
             earthrootReady = true
             break
         end
     end
     Check(earthrootReady, "a stale turn-in ledger does not drop earthroot from the route")
-    Check(not ns.Engine:IsGoalDone(ns.Engine:GetGoal(guide, "objective-6128-1-earthroot"), base, guide),
+    Check(not ns.Engine:IsGoalDone(ns.Engine:GetGoal(guide, Step("objective-6128-1-earthroot")), base, guide),
         "earthroot stays open while herbs are missing")
-    Check(not ledger["turnin-6128-gathering-the-cure"],
+    Check(not ledger[Step("turnin-6128-gathering-the-cure")],
         "stale turn-in ledger entries are cleared when the quest is still open")
     local missingLog = {
         faction = "Horde", raceID = 6, classID = 11, level = 16,
@@ -1106,7 +1098,7 @@ function TestGatheringTheCureLedger()
         questLogKnown = true,
         questCompletionKnown = true,
     }
-    local kodo = ns.Engine:GetGoal(guide, "objective-6128-2-lost-barrens-kodo")
+    local kodo = ns.Engine:GetGoal(guide, Step("objective-6128-2-lost-barrens-kodo"))
     Equal(ns.EvaluateCondition(kodo.complete, missingLog), nil,
         "a missing quest log entry is unknown, not treated as incomplete")
 end
@@ -1381,46 +1373,6 @@ function TestNaraRefusalRewinds()
     ns.charDB = previousCharDB
 end
 TestNaraRefusalRewinds()
-
-function TestItemStarts()
-    local barrens = ns.guides["leveling-the-barrens"]
-    local function State(quests, completed)
-        return {
-            faction = "Horde", raceID = 8, classID = 8, level = 20,
-            professions = {}, professionsKnown = true,
-            quests = quests, questLogKnown = true,
-            completedQuests = completed, questCompletionKnown = true,
-            mapID = 1413, x = 0.45, y = 0.28,
-        }
-    end
-    local empty = State({}, {})
-    local keg = ns.Engine:GetGoal(barrens, "turnin-819-chens-empty-keg")
-    local follow = ns.Engine:GetGoal(barrens, "accept-821-chens-empty-keg")
-    Equal(ns.Engine:GetGoal(barrens, "accept-819-chens-empty-keg"), nil,
-        "Chen's Empty Keg has no required loot step")
-    local bracers = ns.Engine:GetGoal(barrens, "objective-855-centaur-bracers-1")
-    Check(not string.find(bracers.text, "Kolkar can drop", 1, true),
-        "Centaur Bracers does not say Kolkar drop the keg")
-    Check(string.find(bracers.text, "barrel", 1, true) ~= nil,
-        "Centaur Bracers says the keg is a barrel on the ground")
-    Equal(ns.Engine:IsReady(barrens, keg, empty), false,
-        "the keg turn-in stays hidden until the item is used")
-    Equal(ns.Engine:IsReady(barrens, follow, empty), false,
-        "the keg follow-up stays hidden when the drop never comes")
-    local progress = ns.Engine:GetGuideProgress(barrens, empty)
-    local active = State({ [819] = { complete = false, objectives = {} } }, {})
-    local withKeg = ns.Engine:GetGuideProgress(barrens, active)
-    Check(withKeg.eligible > progress.eligible,
-        "using Chen's Empty Keg adds its steps to the Barrens percentage")
-    Equal(ns.Engine:IsReady(barrens, keg, active), true,
-        "the keg turn-in appears once the quest is in the log")
-    Equal(ns.Engine:IsReady(barrens, follow, active), false,
-        "Brewmaster Drohn's next keg quest waits for the turn-in")
-    local turnedIn = State({}, { [819] = true })
-    Equal(ns.Engine:IsReady(barrens, follow, turnedIn), true,
-        "the next keg quest opens after the first is turned in")
-end
-TestItemStarts()
 
 local tomtomCalls = {}
 local tomtom = {
@@ -1718,13 +1670,6 @@ local secretPin = ns.Navigation:GetActiveLeg({
 })
 issecretvalue = previousSecret
 Equal(secretPin and secretPin.x, 0.64, "a secret quest log coordinate keeps the landmark")
-local barrensGuide = ns.guides["leveling-the-barrens"]
-local warsong = ns.Engine:GetGoal(barrensGuide, "objective-6543-the-warsong-reports-1")
-Equal(warsong and warsong.useClientPin, true, "Warsong Reports follows the quest log pin")
-Check(warsong and string.find(warsong.text, "No saved spot for this", 1, true) ~= nil,
-    "Warsong Reports says the guide follows the quest log pin")
-Check(warsong and string.find(warsong.text, "Wowhead", 1, true) == nil,
-    "Warsong Reports no longer mentions Wowhead")
 end
 TestClientQuestPin()
 local zephrasProgress = ns.Engine:GetGuideProgress(zephras, starter)
@@ -2199,24 +2144,6 @@ Check(not ns.Engine.currentGoal or (
     and ns.Engine.currentGoal.id ~= "accept-exploring-the-horde"
 ), "Alliance keeps the Dalaran ending instead of the Horde capitals")
 
-local barrens = ns.guides["leveling-the-barrens"]
-Check(barrens ~= nil, "the Barrens guide is registered")
-Equal(barrens.category, "Loremaster Guides", "the Barrens guide is a Loremaster guide")
-local valveGoals = 0
-for _, goal in ipairs(barrens.goals) do
-    if string.find(goal.id, "objective-900-samophlange-", 1, true) then
-        valveGoals = valveGoals + 1
-        Equal(#goal.route, 1, "each Samophlange valve has its own pin")
-    end
-end
-Equal(valveGoals, 3, "Samophlange valves are separate steps")
-local disruption = ns.Engine:GetGoal(barrens, "objective-872-the-disruption-ends-3")
-Check(disruption and string.find(disruption.text, "This is an elite", 1, true) == nil,
-    "Kreenig Snarlsnout is not an elite on Forever")
-local zhevra = ns.Engine:GetGoal(barrens, "accept-845-the-zhevra")
-Check(DependsOn(zhevra, "turnin-844-plainstrider-menace"),
-    "The Zhevra waits until Plainstrider Menace is turned in")
-
 local durotar = ns.guides["leveling-durotar"]
 Check(durotar ~= nil, "the Durotar guide is registered")
 Equal(durotar.category, "Loremaster Guides", "the Durotar guide is a Loremaster guide")
@@ -2258,15 +2185,6 @@ function TestRepeatableRoutes()
         "the Durotar chapter still offers the antidote while Need for a Cure is open")
     Equal(ns.EvaluateCondition(antidote.conditions, cured), false,
         "the Durotar chapter drops the antidote after Need for a Cure is turned in")
-
-    local barrens = ns.guides["leveling-the-barrens"]
-    for _, goalID in ipairs({
-        "accept-889-spirit-of-the-wind",
-        "accept-5042-agamaggans-strength",
-        "accept-9267-mending-old-wounds",
-    }) do
-        Equal(ns.Engine:GetGoal(barrens, goalID), nil, goalID .. " is not on the Barrens route")
-    end
 
     local idle = {
         faction = "Horde", raceID = 2, classID = 1, level = 51,
@@ -2507,16 +2425,6 @@ ns.Engine:Refresh(cureState)
 Equal(ns.Engine.currentGoal.id, "accept-816-lost-but-not-forgotten",
     "skipping a timed step still leaves it for later")
 
-local sporeState = {
-    faction = "Horde", raceID = 6, classID = 1, level = 20,
-    professions = {}, professionsKnown = true,
-    quests = { [853] = { complete = false, objectives = {} } },
-    mapID = 1413, x = 0.52, y = 0.30,
-}
-SelectGuide(barrens, { [853] = true, [3923] = true, [3924] = true }, sporeState)
-Equal(ns.Engine.currentGoal.id, "turnin-853-apothecary-zamah",
-    "Apothecary Zamah is turned in before other Barrens steps on its 45 minute timer")
-
 local seedState = {
     faction = "Horde", raceID = 2, classID = 1, level = 14,
     professions = {}, professionsKnown = true,
@@ -2588,53 +2496,6 @@ function TestRaceSteps()
         ns.Engine:Refresh(state)
     end
     local skyborne = Fresh(96)
-    skyborne.mapID = 1454
-    Open(barrens, skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
-        "a level 14 Horde Skyborne starts at the earliest unfinished eligible Barrens step")
-    skyborne.mapID = 1413
-    ns.charDB.activeGoal = nil
-    ns.Engine:Refresh(skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
-        "a level 14 Horde Skyborne in the Barrens starts at Raptor Thieves")
-    skyborne.completedQuests[98024] = true
-    ns.charDB.activeGoal = nil
-    ns.Engine:Refresh(skyborne)
-    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
-        "a Skyborne continues at Raptor Thieves")
-    local meats = ns.Engine:GetGoal(barrens, "accept-6365-meats-to-orgrimmar")
-    Equal(ns.Engine:IsReady(barrens, meats, skyborne), false,
-        "Meats to Orgrimmar is not offered to a Skyborne")
-    local orc = Fresh(2)
-    orc.completedQuests[98024] = true
-    Open(barrens, orc)
-    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
-        "an orc starts at the earliest unfinished eligible route step")
-    local troll = Fresh(8)
-    troll.level = 15
-    troll.classID = 8
-    troll.mapID = 1454
-    Open(barrens, troll)
-    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
-        "a level 15 troll in Orgrimmar starts at Conscript of the Horde")
-    local thrall = ns.Engine:GetGoal(barrens, "accept-98024-journey-to-the-crossroads")
-    Equal(ns.Engine:IsReady(barrens, thrall, troll), false,
-        "a troll is not sent to Thrall for Journey to the Crossroads")
-    ns.charDB.activeGoal = "accept-98024-journey-to-the-crossroads"
-    ns.Engine:Refresh(troll)
-    Equal(ns.Engine.currentGoal.id, "accept-840-conscript-of-the-horde",
-        "a troll leaves Journey to the Crossroads once the guide refreshes")
-    local tauren = Fresh(6)
-    tauren.classID = 3
-    tauren.completedQuests[98024] = true
-    Open(barrens, tauren)
-    Equal(ns.Engine.currentGoal.id, "accept-854-journey-to-the-crossroads",
-        "a tauren starts with Journey to the Crossroads")
-    local hides = ns.Engine:GetGoal(barrens, "accept-6361-a-bundle-of-hides")
-    Equal(ns.Engine:IsReady(barrens, hides, tauren), true,
-        "a tauren still takes A Bundle of Hides")
-    Equal(ns.Engine:IsReady(barrens, meats, tauren), false,
-        "Meats to Orgrimmar is not offered to a tauren")
     local durotarSkyborne = Fresh(96)
     durotarSkyborne.mapID = 1411
     durotarSkyborne.level = 14
@@ -2673,43 +2534,6 @@ function TestCampPickups()
             { text = "unfinished", finished = false, numFulfilled = 0, numRequired = 1 },
         } }
     end
-    local barrensGuide = ns.guides["leveling-the-barrens"]
-    local seen = {}
-    for _, goal in ipairs(barrensGuide.goals) do
-        Check(seen[goal.priority] == nil, "Barrens priorities stay unique")
-        seen[goal.priority] = goal.id
-    end
-    Open(barrensGuide, Horde(14, 1413, { [844] = Active(844) }))
-    Equal(ns.Engine.currentGoal.id, "accept-869-raptor-thieves",
-        "Plainstrider Menace is picked up with Raptor Thieves")
-    Open(barrensGuide, Horde(14, 1413, {
-        [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
-    }))
-    Equal(ns.Engine.currentGoal.id, "objective-869-raptor-thieves-1",
-        "Crossroads quests leave on Raptor Thieves first")
-    local zhevra = ns.Engine:GetGoal(barrensGuide, "accept-845-the-zhevra")
-    Equal(ns.Engine:IsReady(barrensGuide, zhevra, Horde(14, 1413, {
-        [844] = Active(844), [869] = Active(869), [871] = Active(871), [867] = Active(867),
-    })), false, "The Zhevra waits until Plainstrider Menace is turned in")
-    local harpies = ns.Engine:GetGoal(barrensGuide, "accept-867-harpy-raiders")
-    Equal(ns.Engine:IsReady(barrensGuide, harpies, Horde(10, 1413, {})), false,
-        "Harpy Raiders stays level 12")
-    local ends = ns.Engine:GetGoal(barrensGuide, "accept-872-the-disruption-ends")
-    Check(DependsOn(ends, "turnin-871-disrupt-the-attacks"),
-        "The Disruption Ends waits until Disrupt the Attacks is turned in")
-    local supplies = ns.Engine:GetGoal(barrensGuide, "accept-5041-supplies-for-the-crossroads")
-    Check(DependsOn(supplies, "turnin-871-disrupt-the-attacks"),
-        "Supplies for the Crossroads waits until Disrupt the Attacks is turned in")
-    Open(barrensGuide, {
-        faction = "Horde", raceID = 96, classID = 1, level = 14,
-        professions = {}, professionsKnown = true,
-        quests = {}, questLogKnown = true,
-        completedQuests = { [844] = true, [869] = true, [871] = true, [867] = true },
-        questCompletionKnown = true,
-        mapID = 1413, x = 0.52, y = 0.30,
-    })
-    Equal(ns.Engine.currentGoal.id, "accept-5041-supplies-for-the-crossroads",
-        "the next Crossroads wave starts with Supplies for the Crossroads")
     local durotarGuide = ns.guides["leveling-durotar"]
     local durotarSeen = {}
     for _, goal in ipairs(durotarGuide.goals) do
@@ -2735,38 +2559,6 @@ function TestCampPickups()
         } },
         [867] = { complete = false, objectives = { Counted("Witchwing Talon", 0, 8, false) } },
     })
-    local function QuestIDFromGoal(goal)
-        local complete = goal.complete
-        local questID = complete and complete.quest and complete.quest.id
-        if not questID and complete and complete.questObjective then
-            questID = complete.questObjective.id
-        end
-        return questID
-    end
-    local keepOpen = { [871] = true, [867] = true }
-    local changed = true
-    while changed do
-        changed = false
-        for _, goal in ipairs(barrensGuide.goals) do
-            local questID = QuestIDFromGoal(goal)
-            if questID and not keepOpen[questID] then
-                for _, dependencyID in ipairs(goal.dependsOn or {}) do
-                    local dependency = ns.Engine:GetGoal(barrensGuide, dependencyID)
-                    local dependencyQuest = dependency and QuestIDFromGoal(dependency)
-                    if dependencyQuest and keepOpen[dependencyQuest] then
-                        keepOpen[questID] = true
-                        changed = true
-                    end
-                end
-            end
-        end
-    end
-    for _, goal in ipairs(barrensGuide.goals) do
-        local questID = QuestIDFromGoal(goal)
-        if questID and not keepOpen[questID] then
-            midDisrupt.completedQuests[questID] = true
-        end
-    end
     Equal(ns.EvaluateCondition({
         questObjective = { id = 871, index = 3, text = "Razormane Hunter slain" },
     }, midDisrupt), false, "2/3 Razormane Hunters stay incomplete when finished is set")
@@ -2778,13 +2570,6 @@ function TestCampPickups()
         Counted("Razormane Thornweaver slain", 8, 8, true),
         partial,
     } } })), false, "a finished number that matches the short count is still incomplete")
-    Open(barrensGuide, midDisrupt)
-    Equal(ns.Engine.currentGoal.id, "objective-871-disrupt-the-attacks-3",
-        "Harpy Raiders waits until the Razormane Hunters are slain")
-    ns.charDB.activeGoal = "objective-867-harpy-raiders-1"
-    ns.Engine:Refresh(midDisrupt)
-    Equal(ns.Engine.currentGoal.id, "objective-871-disrupt-the-attacks-3",
-        "an unfinished Razormane Hunter count returns from Harpy Raiders")
     local logged = ns.PlayerState:GetQuestLog({
         C_QuestLog = {
             GetNumQuestLogEntries = function() return 1 end,
@@ -2801,11 +2586,6 @@ function TestCampPickups()
         },
     })
     Equal(logged[871].complete, false, "2/3 hunters do not mark Disrupt the Attacks complete")
-    midDisrupt.quests[871].objectives[3].numFulfilled = 3
-    ns.charDB.activeGoal = "objective-867-harpy-raiders-1"
-    ns.Engine:Refresh(midDisrupt)
-    Equal(ns.Engine.currentGoal.id, "objective-867-harpy-raiders-1",
-        "Harpy Raiders resumes once the Razormane Hunters are slain")
 end
 TestCampPickups()
 
@@ -2896,13 +2676,6 @@ function TestHiddenEnemies()
         "Neeru's message goes back to Thrall")
     leg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ns.Engine.state)
     Equal(leg.x, 0.320, "the final Hidden Enemies step marks Thrall")
-    local barrens = ns.guides["leveling-the-barrens"]
-    Check(ns.Engine:GetGoal(barrens, "accept-890-the-missing-shipment") ~= nil,
-        "The Missing Shipment has a separate accept step")
-    local shipment = ns.Engine:GetGoal(barrens, "turnin-890-the-missing-shipment")
-    Equal(shipment.route[1].x, 0.632, "The Missing Shipment points at Dizzywig")
-    local valve = ns.Engine:GetGoal(barrens, "objective-900-samophlange-1")
-    Equal(valve.dependsOn[1], "accept-900-samophlange", "the next Samophlange waits on its accept")
 end
 TestHiddenEnemies()
 
@@ -3078,115 +2851,6 @@ function TestFlightNamesNeedADistinctiveMatch()
     ns.charDB.taxiNodesByContinent = nil
 end
 TestFlightNamesNeedADistinctiveMatch()
-
-function TestTeldrassil()
-    local guide = ns.guides["leveling-teldrassil"]
-    Check(guide ~= nil, "the Teldrassil guide is registered")
-    Equal(guide.title, "Teldrassil", "the Loremaster tag already names the guide type")
-    Equal(guide.category, "Loremaster Guides", "the Teldrassil guide is a Loremaster guide")
-    Equal(ns.EvaluateCondition(guide.conditions, {
-        faction = "Horde", level = 20, raceID = 2, classID = 1,
-        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
-    }), false, "Teldrassil is Alliance only")
-    local balance = 0
-    for _, goal in ipairs(guide.goals) do
-        if string.find(goal.id, "objective-456-the-balance-of-nature-", 1, true) then
-            balance = balance + 1
-            Equal(#goal.route, 1, "each Balance of Nature kill has its own pin")
-            Check(DependsOn(goal, "accept-456-the-balance-of-nature"),
-                "Balance of Nature objectives wait on the accept")
-        end
-    end
-    Equal(balance, 2, "Balance of Nature kills are separate steps")
-    local relics = 0
-    for _, goal in ipairs(guide.goals) do
-        if string.find(goal.id, "objective-483-the-relics-of-wakening-", 1, true) then
-            relics = relics + 1
-            Check(DependsOn(goal, "accept-483-the-relics-of-wakening"),
-                "Relics of Wakening objectives wait on the accept")
-            Check(not DependsOn(goal, "objective-483-the-relics-of-wakening-1")
-                or goal.id == "objective-483-the-relics-of-wakening-1",
-                "Relics of Wakening objectives do not wait on each other")
-        end
-    end
-    Equal(relics, 4, "Relics of Wakening are separate steps")
-    local crown = ns.Engine:GetGoal(guide, "accept-929-crown-of-the-earth")
-    Check(DependsOn(crown, "turnin-928-crown-of-the-earth"),
-        "the Starbreeze phial waits until the Shadowglen vessel is delivered")
-    local vesselAccept = ns.Engine:GetGoal(guide, "accept-928-crown-of-the-earth")
-    Check(DependsOn(vesselAccept, "turnin-921-crown-of-the-earth"),
-        "Tenaron's follow-up waits until the phial is filled")
-    local vessel = ns.Engine:GetGoal(guide, "turnin-928-crown-of-the-earth")
-    Check(DependsOn(vessel, "accept-928-crown-of-the-earth"),
-        "Corithras waits until Tenaron's follow-up is accepted")
-    local oak = ns.Engine:GetGoal(guide, "objective-2499-oakenscowl-1")
-    Check(oak and string.find(oak.text, "Bring a group", 1, true) ~= nil,
-        "Oakenscowl tells the player to bring a group")
-    local xethorr = ns.Engine:GetGoal(guide, "accept-98403-twisted-hatred")
-    Check(DependsOn(xethorr, "turnin-932-twisted-hatred"),
-        "the elite Twisted Hatred waits until Lord Melenas is turned in")
-    local seen = {}
-    for _, goal in ipairs(guide.goals) do
-        Check(seen[goal.priority] == nil, "Teldrassil priorities stay unique")
-        seen[goal.priority] = goal.id
-    end
-
-    local function Alliance(level, quests, completed)
-        return {
-            faction = "Alliance", raceID = 4, classID = 1, level = level,
-            professions = {}, professionsKnown = true,
-            quests = quests or {}, questLogKnown = true,
-            completedQuests = completed or {}, questCompletionKnown = true,
-            mapID = 1438, x = 0.58, y = 0.44,
-        }
-    end
-    ns.charDB.selectedGuide = guide.id
-    ns.charDB.activeGoal = nil
-    ns.charDB.manualCompleted = {}
-    ns.charDB.deferred = {}
-    ns.charDB.history = {}
-    ns.charDB.completionLedger = {}
-    ns.db.autoAdvance = true
-    ns.Engine.reviewingGoal = nil
-    ns.Engine:Refresh(Alliance(1))
-    Equal(ns.Engine.currentGoal.id, "accept-456-the-balance-of-nature",
-        "Shadowglen starts with The Balance of Nature")
-    ns.charDB.activeGoal = nil
-    ns.Engine:Refresh(Alliance(1, { [456] = { complete = false, objectives = {} } }))
-    Equal(ns.Engine.currentGoal.id, "objective-456-the-balance-of-nature-1",
-        "Balance of Nature kills come before The Woodland Protector")
-
-    local skip = { [97236] = true, [927] = true, [941] = true }
-    local done = {}
-    for _, goal in ipairs(guide.goals) do
-        local complete = goal.complete
-        local questID = complete and complete.quest and complete.quest.id
-        if not questID and complete and complete.questObjective then
-            questID = complete.questObjective.id
-        end
-        if questID and not skip[questID] then
-            done[questID] = true
-        end
-    end
-    local progress = ns.Engine:GetGuideProgress(guide, Alliance(12, {}, done))
-    Equal(progress.percentage, 100,
-        "a night elf reaches 100% after the Teldrassil quests they can take")
-    Check(progress.eligible < progress.total,
-        "unstarted drop quests stay out of the Teldrassil percentage")
-
-    done[3522] = nil
-    done[935] = nil
-    local antidote = Alliance(12, {
-        [3522] = { complete = false, objectives = {}, timeLeft = 4 * 60 },
-    }, done)
-    ns.charDB.activeGoal = "turnin-935-crown-of-the-earth"
-    ns.charDB.completionLedger = {}
-    ns.Engine.reviewingGoal = nil
-    ns.Engine:Refresh(antidote)
-    Equal(ns.Engine.currentGoal.id, "turnin-3522-iverrons-antidote",
-        "the 5 minute antidote is the next step ahead of other Teldrassil work")
-end
-TestTeldrassil()
 
 function TestEraLeveling()
     ns:FinalizeGuides()

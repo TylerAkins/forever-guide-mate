@@ -45,24 +45,12 @@ Ashenvale’s Forever list had no new quests when it was checked. Those chapters
 
 ### Loremaster
 
-These finish a zone’s quests. The walk is the leveling route, and a zone quest that route skips is woven in. Shared prerequisite handoffs stay aligned with leveling; dungeon-only quests stay in the dungeon guides. The procedure is in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
+These finish a zone’s quests. The walk is the leveling route, and a zone quest that route skips is woven in. Shared prerequisite handoffs stay aligned with leveling; dungeon-only quests stay in the dungeon guides. Only Durotar and Mulgore are shipped. The procedure for the next zone is in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
 | Guide | Faction |
 | --- | --- |
-| Teldrassil | Alliance |
-| Dun Morogh | Alliance |
-| Elwynn Forest | Alliance |
-| Darkshore | Alliance |
-| Loch Modan | Alliance |
-| Westfall | Alliance |
-| Duskwood | Alliance and Horde |
-| Redridge Mountains | Alliance and Horde |
 | Durotar | Horde |
 | Mulgore | Horde |
-| The Barrens | Horde |
-| Silverpine Forest | Horde |
-| Ashenvale | Alliance and Horde |
-| Stonetalon Mountains | Alliance and Horde |
 
 ### Dungeon quests
 
