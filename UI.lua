@@ -154,13 +154,7 @@ local function CreatePlainButton(parent, width, label)
     return button
 end
 
-local function CreateIconButton(parent, texturePath, tooltip)
-    local button = CreatePlainButton(parent, 25, "")
-    button:SetSize(25, 22)
-    local icon = button:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(15, 15)
-    icon:SetPoint("CENTER")
-    icon:SetTexture(texturePath)
+local function SetButtonTooltip(button, tooltip)
     button:SetScript("OnEnter", function(self)
         if GameTooltip then
             GameTooltip:SetOwner(self, "ANCHOR_TOP")
@@ -169,6 +163,16 @@ local function CreateIconButton(parent, texturePath, tooltip)
         end
     end)
     button:SetScript("OnLeave", function() if GameTooltip then GameTooltip:Hide() end end)
+end
+
+local function CreateIconButton(parent, texturePath, tooltip)
+    local button = CreatePlainButton(parent, 25, "")
+    button:SetSize(25, 22)
+    local icon = button:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(15, 15)
+    icon:SetPoint("CENTER")
+    icon:SetTexture(texturePath)
+    SetButtonTooltip(button, tooltip)
     return button
 end
 
@@ -254,6 +258,10 @@ function UI:CreateTracker()
     local previous = CreateIconButton(frame, "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up", "Back")
     previous:SetPoint("BOTTOMRIGHT", -73, 7)
     previous:SetScript("OnClick", function() ns.Engine:Previous() end)
+    local sync = CreatePlainButton(frame, 38, "Sync")
+    sync:SetPoint("RIGHT", previous, "LEFT", -4, 0)
+    SetButtonTooltip(sync, "Resync guide from your quest log and completed quests")
+    sync:SetScript("OnClick", function() ns.Engine:ResyncCurrent() end)
     local skip = CreateIconButton(frame, "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up", "Skip for now")
     skip:SetPoint("LEFT", previous, "RIGHT", 4, 0)
     skip:SetScript("OnClick", function() ns.Engine:SkipCurrent() end)
@@ -262,7 +270,7 @@ function UI:CreateTracker()
     complete:SetScript("OnClick", function() ns.Engine:CompleteCurrent() end)
     frame.title, frame.percent, frame.progress = title, percent, progress
     frame.typeIcon, frame.typeLabel = typeIcon, typeLabel
-    frame.instruction, frame.nextStep, frame.status = instruction, nextStep, status
+    frame.instruction, frame.nextStep, frame.status, frame.sync = instruction, nextStep, status, sync
     self.tracker = frame
 end
 

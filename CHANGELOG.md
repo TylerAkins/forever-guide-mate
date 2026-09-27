@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.11 - 2026-09-26
+
+- Added a tracker Sync button that recalculates the current position from live quest and profession state while preserving completed and intentionally skipped steps.
+- A changed guide revision now performs the same resync once client state is fully available. Ordinary login, quest updates, and guide switching still preserve the saved step.
+
 ## 0.1.10 - 2026-09-26
 
 - Mid-guide recovery now follows route order, trusts known client quest state over stale saved progress, rewinds through registered quest prerequisites, and blocks with a diagnostic instead of silently skipping an unavailable quest. The Barrens leveling and Loremaster routes now both include the Altered Beings, Hamuul Runetotem, and Nara Wildmane chain.
