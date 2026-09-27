@@ -1505,7 +1505,7 @@ end
 function Engine:ResyncCurrent(state)
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     if not guide then return false end
-    state = state or ns.PlayerState:Capture(nil, ns.QuestIDsForGuide(guide))
+    state = state or ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
     if not StateReadyForResync(state) then
         self.resyncPending = guide.id
         return false
@@ -1553,7 +1553,7 @@ function Engine:Refresh(state)
     end
     self:MigrateEraProgress()
     local guide = ns.guides[ns.charDB.selectedGuide]
-    state = state or ns.PlayerState:Capture(nil, guide and ns.QuestIDsForGuide(guide) or {})
+    state = state or ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
     self.state = state
     self.currentGuide = guide
     self.currentSegment = nil
