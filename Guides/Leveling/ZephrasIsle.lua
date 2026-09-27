@@ -71,7 +71,7 @@ ns:RegisterGuide({
     id = "leveling-zephras-isle",
     title = "Zephras Isle (Skyborne)",
     category = "Leveling Quest Guides",
-    revision = 5,
+    revision = 6,
     conditions = {
         all = {
             { level = { min = 1 } },
