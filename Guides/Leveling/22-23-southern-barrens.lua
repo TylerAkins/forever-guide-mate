@@ -49,6 +49,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -65,6 +66,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -82,6 +84,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -99,6 +102,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -145,6 +149,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -162,6 +167,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -178,6 +184,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -195,6 +202,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -212,6 +220,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -229,6 +238,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -246,6 +256,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -263,6 +274,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -279,6 +291,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -296,6 +309,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -312,6 +326,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -329,6 +344,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -344,6 +360,7 @@ ns:RegisterGuide({
             id = "accept-868-egg-hunt",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 17 } },
             text = "Accept Egg Hunt from Korran in The Crossroads.",
             complete = QuestState(868, "activeOrCompleted"),
             route = {
@@ -355,6 +372,7 @@ ns:RegisterGuide({
             id = "accept-893-weapons-of-choice",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 17 } },
             text = "Accept Weapons of Choice from Tatternack Steelforge in Camp Taurajo.",
             complete = QuestState(893, "activeOrCompleted"),
             route = {
@@ -366,6 +384,7 @@ ns:RegisterGuide({
             id = "accept-878-tribes-at-war",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 14 } },
             text = "Accept Tribes at War from Mangletooth in Camp Taurajo.",
             complete = QuestState(878, "activeOrCompleted"),
             route = {
@@ -377,6 +396,7 @@ ns:RegisterGuide({
             id = "objective-878-tribes-at-war",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 14 } },
             text = "Kill 6 Bristleback Water Seeker, 12 Bristleback Thornweaver and 12 Bristleback Geomancer in Agama'gor.",
             dependsOn = { "accept-878-tribes-at-war" },
             complete = QuestState(878, "complete"),
@@ -395,6 +415,7 @@ ns:RegisterGuide({
             id = "objective-5052-blood-shard",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 14 } },
             text = "Collect Blood Shard from Bristleback enemies in Agama'gor.",
             dependsOn = { "accept-5052-blood-shards-of-agamaggan" },
             complete = QuestState(5052, "activeOrCompleted"),
@@ -413,6 +434,7 @@ ns:RegisterGuide({
             id = "objective-899-consumed-by-hatred",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 14 } },
             text = "Kill Bristleback Quilboars for 60 Quilboar Tusk in Bramblescar.",
             complete = QuestState(899, "complete"),
             route = {
@@ -430,6 +452,7 @@ ns:RegisterGuide({
             id = "turnin-878-tribes-at-war",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 14 } },
             text = "Turn in Tribes at War to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-878-tribes-at-war" },
             complete = QuestState(878, "completed"),
@@ -442,6 +465,7 @@ ns:RegisterGuide({
             id = "accept-5052-blood-shards-of-agamaggan",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 14 } },
             text = "Accept Blood Shards of Agamaggan from Mangletooth in Camp Taurajo.",
             complete = QuestState(5052, "activeOrCompleted"),
             route = {
@@ -453,6 +477,7 @@ ns:RegisterGuide({
             id = "turnin-5052-blood-shards-of-agamaggan",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 14 } },
             text = "Turn in Blood Shards of Agamaggan to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-5052-blood-shard" },
             complete = QuestState(5052, "completed"),
@@ -465,6 +490,7 @@ ns:RegisterGuide({
             id = "accept-879-betrayal-from-within",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 17 } },
             text = "Accept Betrayal from Within from Mangletooth in Camp Taurajo.",
             complete = QuestState(879, "activeOrCompleted"),
             route = {
@@ -478,6 +504,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -502,6 +529,7 @@ ns:RegisterGuide({
             id = "accept-893-weapons-of-choice-2",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 17 } },
             text = "Accept Weapons of Choice from Tatternack Steelforge in Camp Taurajo.",
             complete = QuestState(893, "activeOrCompleted"),
             route = {
@@ -513,7 +541,7 @@ ns:RegisterGuide({
             id = "accept-97250-wrongly-blamed",
             kind = "accept",
             priority = 415,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Accept Wrongly Blamed, Justly Corrected from Grunt Logmar at Camp Taurajo. This is an elite. Bring a group.",
             complete = QuestState(97250, "activeOrCompleted"),
             route = {
@@ -542,6 +570,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { ["not"] = { quest = { id = 897, state = "activeOrCompleted" } } },
                 },
             },
@@ -556,6 +585,7 @@ ns:RegisterGuide({
             id = "objective-868-egg-hunt",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 17 } },
             text = "Use Digging Claw on the mounds and collect 12 Silithid Egg at the Field of Giants.",
             dependsOn = { "accept-868-egg-hunt" },
             complete = QuestState(868, "complete"),
@@ -568,7 +598,7 @@ ns:RegisterGuide({
             id = "accept-98093-field-to-clear",
             kind = "accept",
             priority = 441,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Accept Field to Clear from Sulhasa in the southern Barrens.",
             complete = QuestState(98093, "activeOrCompleted"),
             route = {
@@ -580,7 +610,7 @@ ns:RegisterGuide({
             id = "objective-98093-field-to-clear",
             kind = "objective",
             priority = 442,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Field to Clear: slay 7 Stormhide lizards and 7 Hecklefang Stalkers so Sulhasa can leave the tree.",
             dependsOn = { "accept-98093-field-to-clear" },
             complete = QuestState(98093, "complete"),
@@ -595,7 +625,7 @@ ns:RegisterGuide({
             id = "turnin-98093-field-to-clear",
             kind = "turnin",
             priority = 443,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Turn in Field to Clear to Sulhasa.",
             dependsOn = { "objective-98093-field-to-clear" },
             complete = QuestState(98093, "completed"),
@@ -608,7 +638,7 @@ ns:RegisterGuide({
             id = "objective-97250-wrongly-blamed",
             kind = "objective",
             priority = 444,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Wrongly Blamed, Justly Corrected: slay the encroaching soldiers and the Outraged Pillager on the Dustwallow border. This is an elite. Bring a group.",
             dependsOn = { "accept-97250-wrongly-blamed" },
             complete = QuestState(97250, "complete"),
@@ -623,6 +653,7 @@ ns:RegisterGuide({
             id = "accept-843-gann-s-reclamation",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 17 } },
             text = "Accept Gann's Reclamation from Gann Stonespire in Southern Gold Road.",
             complete = QuestState(843, "activeOrCompleted"),
             route = {
@@ -638,6 +669,7 @@ ns:RegisterGuide({
             priority = 480,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -654,6 +686,7 @@ ns:RegisterGuide({
             priority = 490,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -668,6 +701,7 @@ ns:RegisterGuide({
             id = "objective-879-2-nak",
             kind = "objective",
             priority = 500,
+            conditions = { level = { min = 17 } },
             text = "Kill Nak and collect Nak's Skull in Blackthorn Ridge.",
             dependsOn = { "accept-879-betrayal-from-within" },
             complete = QuestObjective(879, 2),
@@ -680,6 +714,7 @@ ns:RegisterGuide({
             id = "objective-893-2-razormane-seer",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Seer and collect Charred Razormane Wand in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 2),
@@ -692,6 +727,7 @@ ns:RegisterGuide({
             id = "objective-879-1-kuz",
             kind = "objective",
             priority = 520,
+            conditions = { level = { min = 17 } },
             text = "Kill Kuz and collect Kuz's Skull in Blackthorn Ridge.",
             dependsOn = { "accept-879-betrayal-from-within" },
             complete = QuestObjective(879, 1),
@@ -704,6 +740,7 @@ ns:RegisterGuide({
             id = "objective-893-3-razormane-warfrenzy",
             kind = "objective",
             priority = 530,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Warfrenzy and collect Razormane War Shield in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 3),
@@ -716,6 +753,7 @@ ns:RegisterGuide({
             id = "objective-879-3-lok-orcbane",
             kind = "objective",
             priority = 540,
+            conditions = { level = { min = 17 } },
             text = "Kill Lok Orcbane and collect Lok's Skull in Blackthorn Ridge.",
             dependsOn = { "accept-879-betrayal-from-within" },
             complete = QuestObjective(879, 3),
@@ -728,6 +766,7 @@ ns:RegisterGuide({
             id = "objective-893-1-weapons-of-choice",
             kind = "objective",
             priority = 550,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Pathfinder or Razormane Stalker and collect Razormane Backstabber in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 1),
@@ -740,6 +779,7 @@ ns:RegisterGuide({
             id = "objective-843-3-prospector-khazgorm",
             kind = "objective",
             priority = 570,
+            conditions = { level = { min = 17 } },
             text = "Kill Prospector Khazgorm collect Khazgorm's Journal in Bael Modan.",
             dependsOn = { "accept-843-gann-s-reclamation" },
             complete = QuestObjective(843, 3),
@@ -752,6 +792,7 @@ ns:RegisterGuide({
             id = "objective-843-gann-s-reclamation",
             kind = "objective",
             priority = 580,
+            conditions = { level = { min = 17 } },
             text = "Kill 15 Bael'dun Excavator and 5 Bael'dun Foreman in Bael Modan.",
             dependsOn = { "accept-843-gann-s-reclamation" },
             complete = QuestState(843, "complete"),
@@ -764,6 +805,7 @@ ns:RegisterGuide({
             id = "turnin-843-gann-s-reclamation",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 17 } },
             text = "Turn in Gann's Reclamation to Gann Stonespire in Southern Gold Road.",
             dependsOn = { "objective-843-3-prospector-khazgorm", "objective-843-gann-s-reclamation" },
             complete = QuestState(843, "completed"),
@@ -776,6 +818,7 @@ ns:RegisterGuide({
             id = "accept-846-revenge-of-gann",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 17 } },
             text = "Accept Revenge of Gann from Gann Stonespire in Southern Gold Road.",
             complete = QuestState(846, "activeOrCompleted"),
             route = {
@@ -787,7 +830,7 @@ ns:RegisterGuide({
             id = "turnin-97250-wrongly-blamed",
             kind = "turnin",
             priority = 625,
-            conditions = { level = { min = 23 } },
+            conditions = { level = { min = 18 } },
             text = "Turn in Wrongly Blamed, Justly Corrected to Grunt Logmar at Camp Taurajo.",
             dependsOn = { "objective-97250-wrongly-blamed" },
             complete = QuestState(97250, "completed"),
@@ -800,6 +843,7 @@ ns:RegisterGuide({
             id = "turnin-893-weapons-of-choice",
             kind = "turnin",
             priority = 630,
+            conditions = { level = { min = 17 } },
             text = "Turn in Weapons of Choice to Tatternack Steelforge in Camp Taurajo.",
             dependsOn = { "objective-893-2-razormane-seer", "objective-893-3-razormane-warfrenzy", "objective-893-1-weapons-of-choice" },
             complete = QuestState(893, "completed"),
@@ -812,6 +856,7 @@ ns:RegisterGuide({
             id = "turnin-879-betrayal-from-within",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 17 } },
             text = "Turn in Betrayal from Within to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-879-2-nak", "objective-879-1-kuz", "objective-879-3-lok-orcbane" },
             complete = QuestState(879, "completed"),
@@ -824,6 +869,7 @@ ns:RegisterGuide({
             id = "accept-906-betrayal-from-within",
             kind = "accept",
             priority = 650,
+            conditions = { level = { min = 17 } },
             text = "Accept Betrayal from Within from Mangletooth in Camp Taurajo.",
             complete = QuestState(906, "activeOrCompleted"),
             route = {
@@ -835,6 +881,7 @@ ns:RegisterGuide({
             id = "turnin-868-egg-hunt",
             kind = "turnin",
             priority = 670,
+            conditions = { level = { min = 17 } },
             text = "Turn in Egg Hunt to Korran in The Crossroads.",
             dependsOn = { "objective-868-egg-hunt" },
             complete = QuestState(868, "completed"),
@@ -847,6 +894,7 @@ ns:RegisterGuide({
             id = "turnin-906-betrayal-from-within",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 17 } },
             text = "Turn in Betrayal from Within to Thork in The Crossroads.",
             dependsOn = { "accept-906-betrayal-from-within" },
             complete = QuestState(906, "completed"),
@@ -861,6 +909,7 @@ ns:RegisterGuide({
             priority = 690,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -878,6 +927,7 @@ ns:RegisterGuide({
             priority = 700,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -895,6 +945,7 @@ ns:RegisterGuide({
             priority = 710,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { quest = { id = 1094, state = "completed" } },
                 },
             },
@@ -911,6 +962,7 @@ ns:RegisterGuide({
             priority = 730,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -928,6 +980,7 @@ ns:RegisterGuide({
             priority = 740,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -944,6 +997,7 @@ ns:RegisterGuide({
             priority = 760,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -961,6 +1015,7 @@ ns:RegisterGuide({
             priority = 770,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -978,6 +1033,7 @@ ns:RegisterGuide({
             priority = 780,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -994,6 +1050,7 @@ ns:RegisterGuide({
             priority = 790,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -1011,6 +1068,7 @@ ns:RegisterGuide({
             priority = 800,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -1027,6 +1085,7 @@ ns:RegisterGuide({
             priority = 820,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -1044,6 +1103,7 @@ ns:RegisterGuide({
             priority = 840,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 882, state = "completed" } },
                 },
             },
@@ -1060,6 +1120,7 @@ ns:RegisterGuide({
             priority = 850,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 882, state = "completed" } },
                 },
             },
@@ -1077,6 +1138,7 @@ ns:RegisterGuide({
             priority = 870,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -1093,6 +1155,7 @@ ns:RegisterGuide({
             priority = 880,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -1120,6 +1183,7 @@ ns:RegisterGuide({
             priority = 890,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },

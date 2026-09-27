@@ -49,6 +49,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -65,6 +66,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 601, state = "completed" } },
                 },
             },
@@ -81,6 +83,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -98,6 +101,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -114,6 +118,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -135,6 +140,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -152,6 +158,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 601, state = "completed" } },
                 },
             },
@@ -169,6 +176,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 601, state = "completed" } },
                 },
             },
@@ -183,6 +191,7 @@ ns:RegisterGuide({
             id = "accept-2877-skulk-rock-clean-up",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 40 } },
             text = "Accept Skulk Rock Clean-up from Fraggar Thundermantle in Wildhammer Keep.",
             complete = QuestState(2877, "activeOrCompleted"),
             route = {
@@ -194,6 +203,7 @@ ns:RegisterGuide({
             id = "accept-2880-troll-necklace-bounty",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 40 } },
             text = "Accept Troll Necklace Bounty from Fraggar Thundermantle in Wildhammer Keep.",
             complete = QuestState(2880, "activeOrCompleted"),
             route = {
@@ -205,6 +215,7 @@ ns:RegisterGuide({
             id = "turnin-1449-to-the-hinterlands",
             kind = "turnin",
             priority = 130,
+            conditions = { level = { min = 38 } },
             text = "Turn in To The Hinterlands to Archmage Ansirem Runeweaver in Aerie Peak.",
             complete = QuestState(1449, "completed"),
             route = {
@@ -216,6 +227,7 @@ ns:RegisterGuide({
             id = "accept-1450-gryphon-master-talonaxe",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 38 } },
             text = "Accept Gryphon Master Talonaxe from Falstad Wildhammer in Aerie Peak.",
             complete = QuestState(1450, "activeOrCompleted"),
             route = {
@@ -227,6 +239,7 @@ ns:RegisterGuide({
             id = "turnin-1450-gryphon-master-talonaxe",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 38 } },
             text = "Turn in Gryphon Master Talonaxe to Archmage Ansirem Runeweaver in Aerie Peak.",
             dependsOn = { "accept-1450-gryphon-master-talonaxe" },
             complete = QuestState(1450, "completed"),
@@ -239,6 +252,7 @@ ns:RegisterGuide({
             id = "accept-1451-rhapsody-shindigger",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 38 } },
             text = "Accept Rhapsody Shindigger from Gryphon Master Talonaxe in Aerie Peak.",
             complete = QuestState(1451, "activeOrCompleted"),
             route = {
@@ -250,6 +264,7 @@ ns:RegisterGuide({
             id = "accept-2988-witherbark-cages",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 40 } },
             text = "Accept Witherbark Cages from Gryphon Master Talonaxe in Aerie Peak.",
             complete = QuestState(2988, "activeOrCompleted"),
             route = {
@@ -277,6 +292,7 @@ ns:RegisterGuide({
             id = "turnin-1451-rhapsody-shindigger",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 38 } },
             text = "Turn in Rhapsody Shindigger to Rhapsody Shindigger in Shindigger's Camp.",
             dependsOn = { "accept-1451-rhapsody-shindigger" },
             complete = QuestState(1451, "completed"),
@@ -289,6 +305,7 @@ ns:RegisterGuide({
             id = "accept-1452-rhapsody-s-kalimdor-kocktail",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 38 } },
             text = "Accept Rhapsody's Kalimdor Kocktail from Rhapsody Shindigger in Shindigger's Camp.",
             complete = QuestState(1452, "activeOrCompleted"),
             route = {
@@ -300,6 +317,7 @@ ns:RegisterGuide({
             id = "objective-2988-1-check-first-cage",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 40 } },
             text = "Click First Witherbark Cage in Zun'watha.",
             dependsOn = { "accept-2988-witherbark-cages" },
             complete = QuestObjective(2988, 1),
@@ -312,6 +330,7 @@ ns:RegisterGuide({
             id = "objective-2988-2-check-second-cage",
             kind = "objective",
             priority = 230,
+            conditions = { level = { min = 40 } },
             text = "Click Second Witherbark Cage in Zun'watha.",
             dependsOn = { "accept-2988-witherbark-cages" },
             complete = QuestObjective(2988, 2),
@@ -324,6 +343,7 @@ ns:RegisterGuide({
             id = "objective-2988-3-check-third-cage",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 40 } },
             text = "Click Third Witherbark Cage in Hiri'watha.",
             dependsOn = { "accept-2988-witherbark-cages" },
             complete = QuestObjective(2988, 3),
@@ -336,6 +356,7 @@ ns:RegisterGuide({
             id = "objective-2880-troll-necklace-bounty",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 40 } },
             text = "Kill Witherbark Scalper or Witherbark Zealot collect 5 Troll Tribal Necklace in Hiri'watha.",
             dependsOn = { "accept-2880-troll-necklace-bounty" },
             complete = QuestState(2880, "complete"),
@@ -350,6 +371,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 836, state = "completed" } },
                 },
             },
@@ -364,6 +386,7 @@ ns:RegisterGuide({
             id = "objective-2877-skulk-rock-clean-up",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 40 } },
             text = "Kill 10 Green Sludge and 10 Jade Ooze in Agol'watha.",
             dependsOn = { "accept-2877-skulk-rock-clean-up" },
             complete = QuestState(2877, "complete"),
@@ -376,6 +399,7 @@ ns:RegisterGuide({
             id = "objective-2944-1-the-super-snapper-fx",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 42 } },
             text = "Use Super Snapper FX on Saltwater Snapjaw in The Overlook Cliffs, you don't need to kill the turtle.",
             complete = QuestObjective(2944, 1),
             route = {
@@ -391,6 +415,7 @@ ns:RegisterGuide({
             id = "objective-3661-favored-of-elune",
             kind = "objective",
             priority = 310,
+            conditions = { level = { min = 42 } },
             text = "Collect 15 Wildkin Feather scattered around The Hinterlands.",
             complete = QuestState(3661, "complete"),
         },
@@ -398,6 +423,7 @@ ns:RegisterGuide({
             id = "turnin-2877-skulk-rock-clean-up",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 40 } },
             text = "Turn in Skulk Rock Clean-up to Fraggar Thundermantle in Wildhammer Keep.",
             dependsOn = { "objective-2877-skulk-rock-clean-up" },
             complete = QuestState(2877, "completed"),
@@ -410,6 +436,7 @@ ns:RegisterGuide({
             id = "turnin-2880-troll-necklace-bounty",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 40 } },
             text = "Turn in Troll Necklace Bounty to Fraggar Thundermantle in Wildhammer Keep.",
             dependsOn = { "objective-2880-troll-necklace-bounty" },
             complete = QuestState(2880, "completed"),
@@ -422,6 +449,7 @@ ns:RegisterGuide({
             id = "turnin-2988-witherbark-cages",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 40 } },
             text = "Turn in Witherbark Cages to Gryphon Master Talonaxe in Aerie Peak.",
             dependsOn = { "objective-2988-1-check-first-cage", "objective-2988-2-check-second-cage", "objective-2988-3-check-third-cage" },
             complete = QuestState(2988, "completed"),
@@ -434,6 +462,7 @@ ns:RegisterGuide({
             id = "accept-2989-the-altar-of-zul",
             kind = "accept",
             priority = 360,
+            conditions = { level = { min = 40 } },
             text = "Accept The Altar of Zul from Gryphon Master Talonaxe in Aerie Peak.",
             complete = QuestState(2989, "activeOrCompleted"),
             route = {
@@ -445,6 +474,7 @@ ns:RegisterGuide({
             id = "turnin-1467-reagents-for-reclaimers-inc",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Turn in Reagents for Reclaimers Inc. to Roetten Stonehammer in Hall of Explorers.",
             complete = QuestState(1467, "completed"),
             route = {
@@ -456,6 +486,7 @@ ns:RegisterGuide({
             id = "accept-3448-passing-the-burden",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 45 } },
             text = "Accept Passing the Burden from Historian Karnik in The Library.",
             complete = QuestState(3448, "activeOrCompleted"),
             route = {
@@ -467,6 +498,7 @@ ns:RegisterGuide({
             id = "turnin-3448-passing-the-burden",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 45 } },
             text = "Turn in Passing the Burden to Tymor in The Mystic Ward.",
             dependsOn = { "accept-3448-passing-the-burden" },
             complete = QuestState(3448, "completed"),
@@ -479,6 +511,7 @@ ns:RegisterGuide({
             id = "accept-3449-arcane-runes",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 45 } },
             text = "Accept Arcane Runes from Tymor in The Mystic Ward.",
             complete = QuestState(3449, "activeOrCompleted"),
             route = {
@@ -490,6 +523,7 @@ ns:RegisterGuide({
             id = "accept-3450-an-easy-pickup",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 45 } },
             text = "Accept An Easy Pickup from Tymor in The Mystic Ward.",
             complete = QuestState(3450, "activeOrCompleted"),
             route = {
@@ -501,6 +535,7 @@ ns:RegisterGuide({
             id = "turnin-3450-an-easy-pickup",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 45 } },
             text = "Turn in An Easy Pickup to Xiggs Fuselighter in Hall of Arms.",
             dependsOn = { "accept-3450-an-easy-pickup" },
             complete = QuestState(3450, "completed"),
@@ -513,6 +548,7 @@ ns:RegisterGuide({
             id = "accept-3451-signal-for-pickup",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 45 } },
             text = "Accept Signal for Pickup from Xiggs Fuselighter in Hall of Arms.",
             complete = QuestState(3451, "activeOrCompleted"),
             route = {
@@ -524,6 +560,7 @@ ns:RegisterGuide({
             id = "turnin-3451-signal-for-pickup",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 45 } },
             text = "Turn in Signal for Pickup to Xiggs Fuselighter in Hall of Arms.",
             dependsOn = { "accept-3451-signal-for-pickup" },
             complete = QuestState(3451, "completed"),
@@ -536,6 +573,7 @@ ns:RegisterGuide({
             id = "objective-3483-standard-issue-flare-gun",
             kind = "objective",
             priority = 460,
+            conditions = { level = { min = 45 } },
             text = "Get Standard Issue Flare Gun from Xiggs Fuselighter in Hall of Arms.",
             complete = QuestState(3483, "complete"),
             route = {

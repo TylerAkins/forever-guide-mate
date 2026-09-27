@@ -51,6 +51,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3761, state = "completed" } },
                 },
             },
@@ -67,6 +68,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3761, state = "completed" } },
                 },
             },
@@ -84,6 +86,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3761, state = "completed" } },
                 },
             },
@@ -100,6 +103,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 4147, state = "completed" } },
                 },
             },
@@ -114,6 +118,7 @@ ns:RegisterGuide({
             id = "accept-3504-betrayed",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 44 } },
             text = "Accept Betrayed from Belgrom Rockmaul in Valley of Honor.",
             complete = QuestState(3504, "activeOrCompleted"),
             route = {
@@ -125,6 +130,7 @@ ns:RegisterGuide({
             id = "accept-4133-vivian-lagrave",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 50 } },
             text = "Accept Vivian Lagrave from Apothecary Zinge in The Apothecarium.",
             complete = QuestState(4133, "activeOrCompleted"),
             route = {
@@ -136,6 +142,7 @@ ns:RegisterGuide({
             id = "turnin-4133-vivian-lagrave",
             kind = "turnin",
             priority = 100,
+            conditions = { level = { min = 50 } },
             text = "Turn in Vivian Lagrave to Shadowmage Vivian Lagrave in Kargath.",
             dependsOn = { "accept-4133-vivian-lagrave" },
             complete = QuestState(4133, "completed"),
@@ -148,6 +155,7 @@ ns:RegisterGuide({
             id = "accept-4061-the-rise-of-the-machines",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 52 } },
             text = "Accept The Rise of the Machines from Hierophant Theodora Mulvadania in Kargath.",
             complete = QuestState(4061, "activeOrCompleted"),
             route = {
@@ -159,6 +167,7 @@ ns:RegisterGuide({
             id = "accept-3821-dreadmaul-rock",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 48 } },
             text = "Accept Dreadmaul Rock from Thal'trak Proudtusk in Kargath.",
             complete = QuestState(3821, "activeOrCompleted"),
             route = {
@@ -170,6 +179,7 @@ ns:RegisterGuide({
             id = "accept-4726-broodling-essence",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 50 } },
             text = "Accept Broodling Essence from Tinkee Steamboil in Flame Crest.",
             complete = QuestState(4726, "activeOrCompleted"),
             route = {
@@ -181,6 +191,7 @@ ns:RegisterGuide({
             id = "accept-4296-tablet-of-the-seven",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 50 } },
             text = "Accept Tablet of the Seven from Maxwort Uberglint in Flame Crest.",
             complete = QuestState(4296, "activeOrCompleted"),
             route = {
@@ -192,6 +203,7 @@ ns:RegisterGuide({
             id = "objective-4726-broodling-essence",
             kind = "objective",
             priority = 160,
+            conditions = { level = { min = 50 } },
             text = "Use Draco-Incarcinatrix 900 on 8 Black Broodling before you kill them in Dreadmaul Rock.",
             dependsOn = { "accept-4726-broodling-essence" },
             complete = QuestState(4726, "complete"),
@@ -206,6 +218,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { ["not"] = { quest = { id = 4023, state = "activeOrCompleted" } } },
                 },
             },
@@ -224,6 +237,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { ["not"] = { quest = { id = 4023, state = "activeOrCompleted" } } },
                 },
             },
@@ -241,6 +255,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { ["not"] = { quest = { id = 4023, state = "activeOrCompleted" } } },
                 },
             },
@@ -256,6 +271,7 @@ ns:RegisterGuide({
             id = "turnin-3821-dreadmaul-rock",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 48 } },
             text = "Turn in Dreadmaul Rock to Cyrus Therepentous in Dreadmaul Rock.",
             dependsOn = { "accept-3821-dreadmaul-rock" },
             complete = QuestState(3821, "completed"),
@@ -274,6 +290,7 @@ ns:RegisterGuide({
             id = "accept-3822-krom-grul",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 48 } },
             text = "Accept Krom'Grul from Sha'ni Proudtusk in Dreadmaul Rock.",
             complete = QuestState(3822, "activeOrCompleted"),
             route = {
@@ -285,6 +302,7 @@ ns:RegisterGuide({
             id = "objective-3822-krom-grul",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 48 } },
             text = "Kill Krom'Grul and collect Sha'ni's Nose-Ring in Dreadmaul Rock, he spawns in 1 of 3 cave in Dreadmaul Rock You can see the cave entrances on your world map.",
             dependsOn = { "accept-3822-krom-grul" },
             complete = QuestState(3822, "complete"),
@@ -297,6 +315,7 @@ ns:RegisterGuide({
             id = "objective-4061-the-rise-of-the-machines",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 52 } },
             text = "Kill War Reaver and collect Fractured Elemental Shard in Ruins of Thaurissan.",
             dependsOn = { "accept-4061-the-rise-of-the-machines" },
             complete = QuestState(4061, "complete"),
@@ -309,6 +328,7 @@ ns:RegisterGuide({
             id = "objective-4296-tablet-of-the-seven",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 50 } },
             text = "Collect Tablet Transcript from the tablet in Ruins of Thaurissan.",
             dependsOn = { "accept-4296-tablet-of-the-seven" },
             complete = QuestState(4296, "complete"),
@@ -321,6 +341,7 @@ ns:RegisterGuide({
             id = "turnin-4726-broodling-essence",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 50 } },
             text = "Turn in Broodling Essence to Tinkee Steamboil in Flame Crest.",
             dependsOn = { "objective-4726-broodling-essence" },
             complete = QuestState(4726, "completed"),
@@ -333,6 +354,7 @@ ns:RegisterGuide({
             id = "accept-4808-felnok-steelspring",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 50 } },
             text = "Accept Felnok Steelspring from Tinkee Steamboil in Flame Crest.",
             complete = QuestState(4808, "activeOrCompleted"),
             route = {
@@ -344,6 +366,7 @@ ns:RegisterGuide({
             id = "turnin-4296-tablet-of-the-seven",
             kind = "turnin",
             priority = 310,
+            conditions = { level = { min = 50 } },
             text = "Turn in Tablet of the Seven to Maxwort Uberglint in Flame Crest.",
             dependsOn = { "objective-4296-tablet-of-the-seven" },
             complete = QuestState(4296, "completed"),
@@ -356,6 +379,7 @@ ns:RegisterGuide({
             id = "turnin-3822-krom-grul",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 48 } },
             text = "Turn in Krom'Grul to Thal'trak Proudtusk in Kargath.",
             dependsOn = { "objective-3822-krom-grul" },
             complete = QuestState(3822, "completed"),
@@ -368,6 +392,7 @@ ns:RegisterGuide({
             id = "turnin-4061-the-rise-of-the-machines",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 52 } },
             text = "Turn in The Rise of the Machines to Hierophant Theodora Mulvadania in Kargath.",
             dependsOn = { "objective-4061-the-rise-of-the-machines" },
             complete = QuestState(4061, "completed"),
@@ -380,6 +405,7 @@ ns:RegisterGuide({
             id = "accept-4062-the-rise-of-the-machines",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 52 } },
             text = "Accept The Rise of the Machines from Hierophant Theodora Mulvadania in Kargath.",
             complete = QuestState(4062, "activeOrCompleted"),
             route = {
@@ -391,6 +417,7 @@ ns:RegisterGuide({
             id = "turnin-4062-the-rise-of-the-machines",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 52 } },
             text = "Turn in The Rise of the Machines to Lotwil Veriatus in The Dustbowl.",
             dependsOn = { "accept-4062-the-rise-of-the-machines" },
             complete = QuestState(4062, "completed"),
@@ -403,6 +430,7 @@ ns:RegisterGuide({
             id = "turnin-3504-betrayed",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 44 } },
             text = "Turn in Betrayed to Ag'tor Bloodfist in Valormok.",
             dependsOn = { "accept-3504-betrayed" },
             complete = QuestState(3504, "completed"),
@@ -415,6 +443,7 @@ ns:RegisterGuide({
             id = "accept-3505-betrayed",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 44 } },
             text = "Accept Betrayed from Ag'tor Bloodfist in Valormok.",
             complete = QuestState(3505, "activeOrCompleted"),
             route = {
@@ -426,6 +455,7 @@ ns:RegisterGuide({
             id = "accept-3601-kim-jael-indeed",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 47 } },
             text = "Accept Kim'jael Indeed! from Kim'jael in Legash Encampment.",
             complete = QuestState(3601, "activeOrCompleted"),
             route = {
@@ -437,6 +467,7 @@ ns:RegisterGuide({
             id = "objective-3505-1-find-magus-rimtori-s-camp",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 44 } },
             text = "Find Magus Rimtori's camp in Thalassian Base Camp.",
             dependsOn = { "accept-3505-betrayed" },
             complete = QuestObjective(3505, 1),
@@ -449,6 +480,7 @@ ns:RegisterGuide({
             id = "objective-3601-kim-jael-indeed",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 47 } },
             text = "Collect all the required parts from the crates in Thalassian Base Camp.",
             dependsOn = { "accept-3601-kim-jael-indeed" },
             complete = QuestState(3601, "complete"),
@@ -461,6 +493,7 @@ ns:RegisterGuide({
             id = "objective-3505-betrayed",
             kind = "objective",
             priority = 430,
+            conditions = { level = { min = 44 } },
             text = "Kill 10 Blood Elf Reclaimer and 10 Blood Elf Surveyor in Thalassian Base Camp.",
             dependsOn = { "accept-3505-betrayed" },
             complete = QuestState(3505, "complete"),
@@ -473,6 +506,7 @@ ns:RegisterGuide({
             id = "turnin-3505-betrayed",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 44 } },
             text = "Turn in Betrayed in Thalassian Base Camp.",
             dependsOn = { "objective-3505-1-find-magus-rimtori-s-camp", "objective-3505-betrayed" },
             complete = QuestState(3505, "completed"),
@@ -485,6 +519,7 @@ ns:RegisterGuide({
             id = "accept-3506-betrayed",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 44 } },
             text = "Accept Betrayed in Thalassian Base Camp.",
             complete = QuestState(3506, "activeOrCompleted"),
             route = {
@@ -496,6 +531,7 @@ ns:RegisterGuide({
             id = "objective-3506-betrayed",
             kind = "objective",
             priority = 460,
+            conditions = { level = { min = 44 } },
             text = "Destroy the 3 Arcane Focusing Crystal to summon Magus Rimtori, kill her and collect Head of Magus Rimtori in Thalassian Base Camp.",
             dependsOn = { "accept-3506-betrayed" },
             complete = QuestState(3506, "complete"),
@@ -508,6 +544,7 @@ ns:RegisterGuide({
             id = "turnin-3601-kim-jael-indeed",
             kind = "turnin",
             priority = 480,
+            conditions = { level = { min = 47 } },
             text = "Turn in Kim'jael Indeed! to Kim'jael in Legash Encampment.",
             dependsOn = { "objective-3601-kim-jael-indeed" },
             complete = QuestState(3601, "completed"),
@@ -520,6 +557,7 @@ ns:RegisterGuide({
             id = "accept-5534-kim-jael-s-missing-equipment",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 47 } },
             text = "Accept Kim'jael's \"Missing\" Equipment from Kim'jael in Legash Encampment.",
             complete = QuestState(5534, "activeOrCompleted"),
             route = {
@@ -531,6 +569,7 @@ ns:RegisterGuide({
             id = "objective-5534-kim-jael-s-missing-equipment",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 47 } },
             text = "Kill Nagas in The Shattered Strand until you collect Some Rune.",
             dependsOn = { "accept-5534-kim-jael-s-missing-equipment" },
             complete = QuestState(5534, "complete"),
@@ -543,6 +582,7 @@ ns:RegisterGuide({
             id = "turnin-3506-betrayed",
             kind = "turnin",
             priority = 530,
+            conditions = { level = { min = 44 } },
             text = "Turn in Betrayed to Ag'tor Bloodfist in Valormok.",
             dependsOn = { "objective-3506-betrayed" },
             complete = QuestState(3506, "completed"),
@@ -555,6 +595,7 @@ ns:RegisterGuide({
             id = "accept-3507-betrayed",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 44 } },
             text = "Accept Betrayed from Ag'tor Bloodfist in Valormok.",
             complete = QuestState(3507, "activeOrCompleted"),
             route = {
@@ -566,6 +607,7 @@ ns:RegisterGuide({
             id = "turnin-5534-kim-jael-s-missing-equipment",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 47 } },
             text = "Turn in Kim'jael's \"Missing\" Equipment to Kim'jael in Legash Encampment.",
             dependsOn = { "objective-5534-kim-jael-s-missing-equipment" },
             complete = QuestState(5534, "completed"),
@@ -578,6 +620,7 @@ ns:RegisterGuide({
             id = "turnin-3507-betrayed",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 44 } },
             text = "Turn in Betrayed to Belgrom Rockmaul in Valley of Honor.",
             dependsOn = { "accept-3507-betrayed" },
             complete = QuestState(3507, "completed"),

@@ -175,6 +175,7 @@ ns:RegisterGuide({
             id = "accept-376-the-damned",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 2 } },
             text = "Accept The Damned from Novice Elreth in Deathknell.",
             complete = QuestState(376, "activeOrCompleted"),
             route = {
@@ -351,6 +352,7 @@ ns:RegisterGuide({
             id = "objective-376-the-damned",
             kind = "objective",
             priority = 210,
+            conditions = { level = { min = 2 } },
             text = "Kill Ragged Scavenger and Duskbat to the south for 6 Scavenger Paw and 6 Duskbat Wing in Deathknell.",
             dependsOn = { "accept-376-the-damned" },
             complete = QuestState(376, "complete"),
@@ -375,6 +377,7 @@ ns:RegisterGuide({
             id = "turnin-376-the-damned",
             kind = "turnin",
             priority = 230,
+            conditions = { level = { min = 2 } },
             text = "Turn in The Damned to Novice Elreth in Deathknell.",
             dependsOn = { "objective-376-the-damned" },
             complete = QuestState(376, "completed"),
@@ -399,6 +402,7 @@ ns:RegisterGuide({
             id = "accept-6395-marla-s-last-wish",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 3 } },
             text = "Accept Marla's Last Wish from Novice Elreth in Deathknell.",
             complete = QuestState(6395, "activeOrCompleted"),
             route = {
@@ -410,6 +414,7 @@ ns:RegisterGuide({
             id = "accept-380-night-web-s-hollow",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 2 } },
             text = "Accept Night Web's Hollow from Executor Arren in Deathknell.",
             complete = QuestState(380, "activeOrCompleted"),
             route = {
@@ -421,6 +426,7 @@ ns:RegisterGuide({
             id = "accept-98389-a-light-in-the-darkness",
             kind = "accept",
             priority = 261,
+            conditions = { level = { min = 2 } },
             text = "Accept A Light in the Darkness from Aramis Hammerhand in Deathknell.",
             complete = QuestState(98389, "activeOrCompleted"),
             route = {
@@ -432,6 +438,7 @@ ns:RegisterGuide({
             id = "accept-3902-scavenging-deathknell",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 2 } },
             text = "Accept Scavenging Deathknell from Deathguard Saltain in Deathknell.",
             complete = QuestState(3902, "activeOrCompleted"),
             route = {
@@ -443,6 +450,7 @@ ns:RegisterGuide({
             id = "objective-3902-scavenging-deathknell",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 2 } },
             text = "Collect 6 Scavenged Goods around or inside the buildings in Deathknell.",
             dependsOn = { "accept-3902-scavenging-deathknell" },
             complete = QuestState(3902, "complete"),
@@ -455,6 +463,7 @@ ns:RegisterGuide({
             id = "objective-6395-samuel-fipps",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 3 } },
             text = "Kill Samuel Fipps and collect Samuel's Remains.",
             dependsOn = { "accept-6395-marla-s-last-wish" },
             complete = QuestState(6395, "complete"),
@@ -467,6 +476,7 @@ ns:RegisterGuide({
             id = "objective-380-night-web-s-hollow",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 2 } },
             text = "Kill 8 Young Night Web Spider outside the cave and 5 Night Web Spider inside the cave in Night Web's Hollow.",
             dependsOn = { "accept-380-night-web-s-hollow" },
             complete = QuestState(380, "complete"),
@@ -479,6 +489,7 @@ ns:RegisterGuide({
             id = "objective-98389-a-light-in-the-darkness",
             kind = "objective",
             priority = 311,
+            conditions = { level = { min = 2 } },
             text = "Free 6 Webbed Forsaken in Night Web's Hollow.",
             dependsOn = { "accept-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "complete"),
@@ -491,6 +502,7 @@ ns:RegisterGuide({
             id = "turnin-98389-a-light-in-the-darkness",
             kind = "turnin",
             priority = 312,
+            conditions = { level = { min = 2 } },
             text = "Turn in A Light in the Darkness to Aramis Hammerhand in Deathknell.",
             dependsOn = { "objective-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "completed"),
@@ -503,6 +515,7 @@ ns:RegisterGuide({
             id = "objective-6395-marla-s-last-wish",
             kind = "objective",
             priority = 340,
+            conditions = { level = { min = 3 } },
             text = "Use Samuel's Remains at Marla's Grave in Deathknell.",
             dependsOn = { "accept-6395-marla-s-last-wish" },
             complete = QuestState(6395, "complete"),
@@ -515,6 +528,7 @@ ns:RegisterGuide({
             id = "turnin-3902-scavenging-deathknell",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 2 } },
             text = "Turn in Scavenging Deathknell to Deathguard Saltain in Deathknell.",
             dependsOn = { "objective-3902-scavenging-deathknell" },
             complete = QuestState(3902, "completed"),
@@ -527,6 +541,7 @@ ns:RegisterGuide({
             id = "turnin-380-night-web-s-hollow",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 2 } },
             text = "Turn in Night Web's Hollow to Executor Arren in Deathknell.",
             dependsOn = { "objective-380-night-web-s-hollow" },
             complete = QuestState(380, "completed"),
@@ -539,6 +554,7 @@ ns:RegisterGuide({
             id = "accept-381-the-scarlet-crusade",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 2 } },
             text = "Accept The Scarlet Crusade from Executor Arren in Deathknell.",
             complete = QuestState(381, "activeOrCompleted"),
             route = {
@@ -550,6 +566,7 @@ ns:RegisterGuide({
             id = "turnin-6395-marla-s-last-wish",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 3 } },
             text = "Turn in Marla's Last Wish to Novice Elreth in Deathknell.",
             dependsOn = { "objective-6395-samuel-fipps", "objective-6395-marla-s-last-wish" },
             complete = QuestState(6395, "completed"),
@@ -562,6 +579,7 @@ ns:RegisterGuide({
             id = "objective-381-the-scarlet-crusade",
             kind = "objective",
             priority = 390,
+            conditions = { level = { min = 2 } },
             text = "Kill Scarlet Convert, Scarlet Initiate and collect 12 Scarlet Armband in a camp east of town in Deathknell.",
             dependsOn = { "accept-381-the-scarlet-crusade" },
             complete = QuestState(381, "complete"),
@@ -574,6 +592,7 @@ ns:RegisterGuide({
             id = "turnin-381-the-scarlet-crusade",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 2 } },
             text = "Turn in The Scarlet Crusade to Executor Arren in Deathknell.",
             dependsOn = { "objective-381-the-scarlet-crusade" },
             complete = QuestState(381, "completed"),
@@ -586,6 +605,7 @@ ns:RegisterGuide({
             id = "accept-382-the-red-messenger",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 2 } },
             text = "Accept The Red Messenger from Executor Arren in Deathknell.",
             complete = QuestState(382, "activeOrCompleted"),
             route = {
@@ -597,6 +617,7 @@ ns:RegisterGuide({
             id = "objective-382-the-red-messenger",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 2 } },
             text = "Kill Meven Korgal and collect Scarlet Crusade Documents in Deathknell.",
             dependsOn = { "accept-382-the-red-messenger" },
             complete = QuestState(382, "complete"),
@@ -609,6 +630,7 @@ ns:RegisterGuide({
             id = "turnin-382-the-red-messenger",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 2 } },
             text = "Turn in The Red Messenger to Executor Arren in Deathknell.",
             dependsOn = { "objective-382-the-red-messenger" },
             complete = QuestState(382, "completed"),
@@ -621,6 +643,7 @@ ns:RegisterGuide({
             id = "accept-383-vital-intelligence",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 2 } },
             text = "Accept Vital Intelligence from Executor Arren in Deathknell.",
             complete = QuestState(383, "activeOrCompleted"),
             route = {
@@ -643,6 +666,7 @@ ns:RegisterGuide({
             id = "accept-365-fields-of-grief",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 4 } },
             text = "Accept Fields of Grief from Deathguard Simmer in Deathknell.",
             complete = QuestState(365, "activeOrCompleted"),
             route = {
@@ -654,6 +678,7 @@ ns:RegisterGuide({
             id = "accept-5481-gordo-s-task",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 5 } },
             text = "Accept Gordo's Task from Gordo in Nightmare Vale.",
             complete = QuestState(5481, "activeOrCompleted"),
             route = {
@@ -665,6 +690,7 @@ ns:RegisterGuide({
             id = "accept-404-a-putrid-task",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 4 } },
             text = "Accept A Putrid Task from Deathguard Dillinger in Brill.",
             complete = QuestState(404, "activeOrCompleted"),
             route = {
@@ -676,6 +702,7 @@ ns:RegisterGuide({
             id = "accept-367-a-new-plague",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 6 } },
             text = "Accept A New Plague from Apothecary Johaan in Brill.",
             complete = QuestState(367, "activeOrCompleted"),
             route = {
@@ -687,6 +714,7 @@ ns:RegisterGuide({
             id = "turnin-383-vital-intelligence",
             kind = "turnin",
             priority = 510,
+            conditions = { level = { min = 2 } },
             text = "Turn in Vital Intelligence to Executor Zygand in Brill.",
             dependsOn = { "accept-383-vital-intelligence" },
             complete = QuestState(383, "completed"),
@@ -699,6 +727,7 @@ ns:RegisterGuide({
             id = "accept-99134-discipline",
             kind = "accept",
             priority = 511,
+            conditions = { level = { min = 4 } },
             text = "Accept Discipline from Executor Zygand in Brill.",
             complete = QuestState(99134, "activeOrCompleted"),
             route = {
@@ -710,6 +739,7 @@ ns:RegisterGuide({
             id = "accept-86784-sticks-and-bones",
             kind = "accept",
             priority = 512,
+            conditions = { level = { min = 4 } },
             text = "Accept Sticks and Bones from Deathguard Bartholomew in Brill. He gives you a Collecting Basket.",
             complete = QuestState(86784, "activeOrCompleted"),
             route = {
@@ -721,6 +751,7 @@ ns:RegisterGuide({
             id = "objective-86784-sticks-and-bones",
             kind = "objective",
             priority = 513,
+            conditions = { level = { min = 4 } },
             text = "Collect 6 Dry Branches in the hills west of Brill and bring them to Eleanor Shackleton.",
             dependsOn = { "accept-86784-sticks-and-bones" },
             complete = QuestState(86784, "complete"),
@@ -733,6 +764,7 @@ ns:RegisterGuide({
             id = "turnin-86784-sticks-and-bones",
             kind = "turnin",
             priority = 514,
+            conditions = { level = { min = 4 } },
             text = "Turn in Sticks and Bones to Eleanor Shackleton.",
             dependsOn = { "objective-86784-sticks-and-bones" },
             complete = QuestState(86784, "completed"),
@@ -745,6 +777,7 @@ ns:RegisterGuide({
             id = "accept-95314-that-shadowvale-green-elixir",
             kind = "accept",
             priority = 515,
+            conditions = { level = { min = 7 } },
             text = "Accept That Shadowvale Green Elixir from Carolai Anise in Brill.",
             complete = QuestState(95314, "activeOrCompleted"),
             route = {
@@ -756,6 +789,7 @@ ns:RegisterGuide({
             id = "accept-427-at-war-with-the-scarlet-crusade",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 5 } },
             text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
             complete = QuestState(427, "activeOrCompleted"),
             route = {
@@ -767,6 +801,7 @@ ns:RegisterGuide({
             id = "accept-398-wanted-maggot-eye",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 6 } },
             text = "Accept Wanted: Maggot Eye in Brill.",
             complete = QuestState(398, "activeOrCompleted"),
             route = {
@@ -778,6 +813,7 @@ ns:RegisterGuide({
             id = "accept-358-graverobbers",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 4 } },
             text = "Accept Graverobbers from Magistrate Sevren in Brill Town Hall.",
             complete = QuestState(358, "activeOrCompleted"),
             route = {
@@ -811,6 +847,7 @@ ns:RegisterGuide({
             id = "objective-398-wanted-maggot-eye",
             kind = "objective",
             priority = 580,
+            conditions = { level = { min = 6 } },
             text = "Kill Maggot Eye and collect Maggot Eye's Paw in the house at the north end of Garren's Haunt.",
             dependsOn = { "accept-398-wanted-maggot-eye" },
             complete = QuestState(398, "complete"),
@@ -823,6 +860,7 @@ ns:RegisterGuide({
             id = "objective-358-graverobbers",
             kind = "objective",
             priority = 590,
+            conditions = { level = { min = 4 } },
             text = "Kill 8 Rot Hide Graverobber and 5 Rot Hide Mongrel and loot them for 8 Embalming Ichor in the area.",
             dependsOn = { "accept-358-graverobbers" },
             complete = QuestState(358, "complete"),
@@ -835,6 +873,7 @@ ns:RegisterGuide({
             id = "objective-5481-gordo-s-task",
             kind = "objective",
             priority = 600,
+            conditions = { level = { min = 5 } },
             text = "Collect Gloom Weed find in the area between Deathknell and Brill.",
             dependsOn = { "accept-5481-gordo-s-task" },
             complete = QuestState(5481, "complete"),
@@ -847,6 +886,7 @@ ns:RegisterGuide({
             id = "objective-404-a-putrid-task",
             kind = "objective",
             priority = 610,
+            conditions = { level = { min = 4 } },
             text = "Kill Rotting Dead and Ravaged Corpse west of Brill for 7 Putrid Claw.",
             dependsOn = { "accept-404-a-putrid-task" },
             complete = QuestState(404, "complete"),
@@ -859,6 +899,7 @@ ns:RegisterGuide({
             id = "turnin-398-wanted-maggot-eye",
             kind = "turnin",
             priority = 630,
+            conditions = { level = { min = 6 } },
             text = "Turn in Wanted: Maggot Eye to Executor Zygand in Brill.",
             dependsOn = { "objective-398-wanted-maggot-eye" },
             complete = QuestState(398, "completed"),
@@ -871,6 +912,7 @@ ns:RegisterGuide({
             id = "turnin-358-graverobbers",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 4 } },
             text = "Turn in Graverobbers to Magistrate Sevren in Brill Town Hall.",
             dependsOn = { "objective-358-graverobbers" },
             complete = QuestState(358, "completed"),
@@ -883,6 +925,7 @@ ns:RegisterGuide({
             id = "turnin-404-a-putrid-task",
             kind = "turnin",
             priority = 650,
+            conditions = { level = { min = 4 } },
             text = "Turn in A Putrid Task to Deathguard Dillinger in Brill.",
             dependsOn = { "objective-404-a-putrid-task" },
             complete = QuestState(404, "completed"),
@@ -895,6 +938,7 @@ ns:RegisterGuide({
             id = "accept-426-the-mills-overrun",
             kind = "accept",
             priority = 660,
+            conditions = { level = { min = 6 } },
             text = "Accept The Mills Overrun from Deathguard Dillinger in Brill.",
             complete = QuestState(426, "activeOrCompleted"),
             route = {
@@ -906,6 +950,7 @@ ns:RegisterGuide({
             id = "turnin-5481-gordo-s-task",
             kind = "turnin",
             priority = 670,
+            conditions = { level = { min = 5 } },
             text = "Turn in Gordo's Task to Junior Apothecary Holland in Brill.",
             dependsOn = { "objective-5481-gordo-s-task" },
             complete = QuestState(5481, "completed"),
@@ -918,6 +963,7 @@ ns:RegisterGuide({
             id = "accept-5482-doom-weed",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 5 } },
             text = "Accept Doom Weed from Junior Apothecary Holland in Brill.",
             complete = QuestState(5482, "activeOrCompleted"),
             route = {
@@ -929,6 +975,7 @@ ns:RegisterGuide({
             id = "accept-99142-tomb-weed",
             kind = "accept",
             priority = 681,
+            conditions = { level = { min = 5 } },
             text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
             complete = QuestState(99142, "activeOrCompleted"),
             route = {
@@ -940,6 +987,7 @@ ns:RegisterGuide({
             id = "objective-99142-tomb-weed",
             kind = "objective",
             priority = 711,
+            conditions = { level = { min = 5 } },
             text = "Collect 5 Tomb Weed around the graves north of Brill.",
             dependsOn = { "accept-99142-tomb-weed" },
             complete = QuestState(99142, "complete"),
@@ -952,6 +1000,7 @@ ns:RegisterGuide({
             id = "objective-367-a-new-plague",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 6 } },
             text = "Kill any Darkhounds for 5 Darkhound Blood around.",
             dependsOn = { "accept-367-a-new-plague" },
             complete = QuestState(367, "complete"),
@@ -964,6 +1013,7 @@ ns:RegisterGuide({
             id = "objective-5482-doom-weed",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 5 } },
             text = "Collect 10 Doom Weed from the ground around Tirisfal Glades.",
             dependsOn = { "accept-5482-doom-weed" },
             complete = QuestState(5482, "complete"),
@@ -976,6 +1026,7 @@ ns:RegisterGuide({
             id = "accept-354-deaths-in-the-family",
             kind = "accept",
             priority = 730,
+            conditions = { level = { min = 7 } },
             text = "Accept Deaths in the Family from Coleman Farthing in Gallows' End Tavern.",
             complete = QuestState(354, "activeOrCompleted"),
             route = {
@@ -987,6 +1038,7 @@ ns:RegisterGuide({
             id = "accept-362-the-haunted-mills",
             kind = "accept",
             priority = 740,
+            conditions = { level = { min = 7 } },
             text = "Accept The Haunted Mills from Coleman Farthing in Gallows' End Tavern.",
             complete = QuestState(362, "activeOrCompleted"),
             route = {
@@ -998,6 +1050,7 @@ ns:RegisterGuide({
             id = "accept-375-the-chill-of-death",
             kind = "accept",
             priority = 750,
+            conditions = { level = { min = 7 } },
             text = "Accept The Chill of Death from Gretchen Dedmar in Gallows' End Tavern.",
             complete = QuestState(375, "activeOrCompleted"),
             route = {
@@ -1009,6 +1062,7 @@ ns:RegisterGuide({
             id = "accept-359-forsaken-duties",
             kind = "accept",
             priority = 760,
+            conditions = { level = { min = 6 } },
             text = "Accept Forsaken Duties from Magistrate Sevren in Brill Town Hall.",
             complete = QuestState(359, "activeOrCompleted"),
             route = {
@@ -1020,6 +1074,7 @@ ns:RegisterGuide({
             id = "turnin-367-a-new-plague",
             kind = "turnin",
             priority = 770,
+            conditions = { level = { min = 6 } },
             text = "Turn in A New Plague to Apothecary Johaan in Brill.",
             dependsOn = { "objective-367-a-new-plague" },
             complete = QuestState(367, "completed"),
@@ -1032,6 +1087,7 @@ ns:RegisterGuide({
             id = "accept-368-a-new-plague",
             kind = "accept",
             priority = 780,
+            conditions = { level = { min = 6 } },
             text = "Accept A New Plague from Apothecary Johaan in Brill.",
             complete = QuestState(368, "activeOrCompleted"),
             route = {
@@ -1043,6 +1099,7 @@ ns:RegisterGuide({
             id = "turnin-5482-doom-weed",
             kind = "turnin",
             priority = 790,
+            conditions = { level = { min = 5 } },
             text = "Turn in Doom Weed to Junior Apothecary Holland in Brill.",
             dependsOn = { "objective-5482-doom-weed" },
             complete = QuestState(5482, "completed"),
@@ -1055,6 +1112,7 @@ ns:RegisterGuide({
             id = "turnin-99142-tomb-weed",
             kind = "turnin",
             priority = 791,
+            conditions = { level = { min = 5 } },
             text = "Turn in Tomb Weed to Junior Apothecary Holland.",
             dependsOn = { "objective-99142-tomb-weed" },
             complete = QuestState(99142, "completed"),
@@ -1067,6 +1125,7 @@ ns:RegisterGuide({
             id = "objective-99134-discipline",
             kind = "objective",
             priority = 792,
+            conditions = { level = { min = 4 } },
             text = "Motivate the Deathguards Executor Zygand named. They stand in Brill and along the roads you are already riding, including Deathknell.",
             dependsOn = { "accept-99134-discipline" },
             complete = QuestState(99134, "complete"),
@@ -1079,6 +1138,7 @@ ns:RegisterGuide({
             id = "turnin-99134-discipline",
             kind = "turnin",
             priority = 793,
+            conditions = { level = { min = 4 } },
             text = "Turn in Discipline to Executor Zygand.",
             dependsOn = { "objective-99134-discipline" },
             complete = QuestState(99134, "completed"),
@@ -1091,6 +1151,7 @@ ns:RegisterGuide({
             id = "accept-99141-patience",
             kind = "accept",
             priority = 794,
+            conditions = { level = { min = 4 } },
             text = "Accept Patience from Executor Zygand.",
             dependsOn = { "turnin-99134-discipline" },
             complete = QuestState(99141, "activeOrCompleted"),
@@ -1103,6 +1164,7 @@ ns:RegisterGuide({
             id = "objective-99141-patience",
             kind = "objective",
             priority = 795,
+            conditions = { level = { min = 4 } },
             text = "Collect reports from Deathguard Dillinger, Deathguard Kristof, and Gordo.",
             dependsOn = { "accept-99141-patience" },
             complete = QuestState(99141, "complete"),
@@ -1115,6 +1177,7 @@ ns:RegisterGuide({
             id = "turnin-99141-patience",
             kind = "turnin",
             priority = 796,
+            conditions = { level = { min = 4 } },
             text = "Turn in Patience to Executor Zygand.",
             dependsOn = { "objective-99141-patience" },
             complete = QuestState(99141, "completed"),
@@ -1127,6 +1190,7 @@ ns:RegisterGuide({
             id = "objective-362-the-haunted-mills",
             kind = "objective",
             priority = 810,
+            conditions = { level = { min = 7 } },
             text = "Kill Devlin Agamand and collect Devlin's Remains in Agamand Mills.",
             dependsOn = { "accept-362-the-haunted-mills" },
             complete = QuestState(362, "complete"),
@@ -1139,6 +1203,7 @@ ns:RegisterGuide({
             id = "objective-354-2-nissa-agamand",
             kind = "objective",
             priority = 820,
+            conditions = { level = { min = 7 } },
             text = "Kill Nissa Agamand and collect Nissa's Remains in Agamand Mills.",
             dependsOn = { "accept-354-deaths-in-the-family" },
             complete = QuestObjective(354, 2),
@@ -1151,6 +1216,7 @@ ns:RegisterGuide({
             id = "objective-354-1-gregor-agamand",
             kind = "objective",
             priority = 830,
+            conditions = { level = { min = 7 } },
             text = "Kill Gregor Agamand and collect Gregor's Remains in Agamand Mills.",
             dependsOn = { "accept-354-deaths-in-the-family" },
             complete = QuestObjective(354, 1),
@@ -1163,6 +1229,7 @@ ns:RegisterGuide({
             id = "objective-354-3-thurman-agamand",
             kind = "objective",
             priority = 840,
+            conditions = { level = { min = 7 } },
             text = "Kill Thurman Agamand and collect Thurman's Remains in Agamand Mills.",
             dependsOn = { "accept-354-deaths-in-the-family" },
             complete = QuestObjective(354, 3),
@@ -1175,6 +1242,7 @@ ns:RegisterGuide({
             id = "objective-426-the-mills-overrun",
             kind = "objective",
             priority = 850,
+            conditions = { level = { min = 6 } },
             text = "Kill the Scourge at Agamand Mills and gather 5 Notched Rib and 3 Blackened Skull from Darkeye Bonecaster around.",
             dependsOn = { "accept-426-the-mills-overrun" },
             complete = QuestState(426, "complete"),
@@ -1189,6 +1257,7 @@ ns:RegisterGuide({
             id = "objective-365-fields-of-grief",
             kind = "objective",
             priority = 870,
+            conditions = { level = { min = 4 } },
             text = "Collect 10 Tirisfal Pumpkin from the ground in Solliden Farmstead.",
             dependsOn = { "accept-365-fields-of-grief" },
             complete = QuestState(365, "complete"),
@@ -1201,6 +1270,7 @@ ns:RegisterGuide({
             id = "objective-427-at-war-with-the-scarlet-crusade",
             kind = "objective",
             priority = 880,
+            conditions = { level = { min = 5 } },
             text = "Kill 10 Scarlet Warrior in Solliden Farmstead.",
             dependsOn = { "accept-427-at-war-with-the-scarlet-crusade" },
             complete = QuestState(427, "complete"),
@@ -1213,6 +1283,7 @@ ns:RegisterGuide({
             id = "objective-368-a-new-plague",
             kind = "objective",
             priority = 900,
+            conditions = { level = { min = 6 } },
             text = "Kill Murlocs and collect 5 Vile Fin Scale along the shore in Whispering Shore.",
             dependsOn = { "accept-368-a-new-plague" },
             complete = QuestState(368, "complete"),
@@ -1225,6 +1296,7 @@ ns:RegisterGuide({
             id = "turnin-354-deaths-in-the-family",
             kind = "turnin",
             priority = 920,
+            conditions = { level = { min = 7 } },
             text = "Turn in Deaths in the Family to Coleman Farthing in Gallows' End Tavern.",
             dependsOn = { "objective-354-2-nissa-agamand", "objective-354-1-gregor-agamand", "objective-354-3-thurman-agamand" },
             complete = QuestState(354, "completed"),
@@ -1237,6 +1309,7 @@ ns:RegisterGuide({
             id = "turnin-362-the-haunted-mills",
             kind = "turnin",
             priority = 930,
+            conditions = { level = { min = 7 } },
             text = "Turn in The Haunted Mills to Coleman Farthing in Gallows' End Tavern.",
             dependsOn = { "objective-362-the-haunted-mills" },
             complete = QuestState(362, "completed"),
@@ -1249,6 +1322,7 @@ ns:RegisterGuide({
             id = "accept-355-speak-with-sevren",
             kind = "accept",
             priority = 940,
+            conditions = { level = { min = 7 } },
             text = "Accept Speak with Sevren from Coleman Farthing in Gallows' End Tavern.",
             complete = QuestState(355, "activeOrCompleted"),
             route = {
@@ -1260,6 +1334,7 @@ ns:RegisterGuide({
             id = "turnin-427-at-war-with-the-scarlet-crusade",
             kind = "turnin",
             priority = 950,
+            conditions = { level = { min = 5 } },
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
             dependsOn = { "objective-427-at-war-with-the-scarlet-crusade" },
             complete = QuestState(427, "completed"),
@@ -1272,6 +1347,7 @@ ns:RegisterGuide({
             id = "accept-370-at-war-with-the-scarlet-crusade",
             kind = "accept",
             priority = 960,
+            conditions = { level = { min = 5 } },
             text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
             complete = QuestState(370, "activeOrCompleted"),
             route = {
@@ -1283,6 +1359,7 @@ ns:RegisterGuide({
             id = "accept-374-proof-of-demise",
             kind = "accept",
             priority = 970,
+            conditions = { level = { min = 5 } },
             text = "Accept Proof of Demise from Deathguard Burgess in Brill.",
             complete = QuestState(374, "activeOrCompleted"),
             route = {
@@ -1294,6 +1371,7 @@ ns:RegisterGuide({
             id = "turnin-355-speak-with-sevren",
             kind = "turnin",
             priority = 980,
+            conditions = { level = { min = 7 } },
             text = "Turn in Speak with Sevren to Magistrate Sevren in Brill Town Hall.",
             dependsOn = { "accept-355-speak-with-sevren" },
             complete = QuestState(355, "completed"),
@@ -1306,6 +1384,7 @@ ns:RegisterGuide({
             id = "accept-408-the-family-crypt",
             kind = "accept",
             priority = 990,
+            conditions = { level = { min = 7 } },
             text = "Accept The Family Crypt from Magistrate Sevren in Brill Town Hall.",
             complete = QuestState(408, "activeOrCompleted"),
             route = {
@@ -1317,6 +1396,7 @@ ns:RegisterGuide({
             id = "turnin-365-fields-of-grief",
             kind = "turnin",
             priority = 1000,
+            conditions = { level = { min = 4 } },
             text = "Turn in Fields of Grief to Apothecary Johaan in Brill.",
             dependsOn = { "objective-365-fields-of-grief" },
             complete = QuestState(365, "completed"),
@@ -1329,6 +1409,7 @@ ns:RegisterGuide({
             id = "accept-407-fields-of-grief",
             kind = "accept",
             priority = 1010,
+            conditions = { level = { min = 4 } },
             text = "Accept Fields of Grief from Apothecary Johaan in Brill.",
             complete = QuestState(407, "activeOrCompleted"),
             route = {
@@ -1340,6 +1421,7 @@ ns:RegisterGuide({
             id = "turnin-368-a-new-plague",
             kind = "turnin",
             priority = 1020,
+            conditions = { level = { min = 6 } },
             text = "Turn in A New Plague to Apothecary Johaan in Brill.",
             dependsOn = { "objective-368-a-new-plague" },
             complete = QuestState(368, "completed"),
@@ -1352,6 +1434,7 @@ ns:RegisterGuide({
             id = "accept-369-a-new-plague",
             kind = "accept",
             priority = 1030,
+            conditions = { level = { min = 6 } },
             text = "Accept A New Plague from Apothecary Johaan in Brill.",
             complete = QuestState(369, "activeOrCompleted"),
             route = {
@@ -1363,6 +1446,7 @@ ns:RegisterGuide({
             id = "turnin-426-the-mills-overrun",
             kind = "turnin",
             priority = 1040,
+            conditions = { level = { min = 6 } },
             text = "Turn in The Mills Overrun to Deathguard Dillinger in Brill.",
             dependsOn = { "objective-426-the-mills-overrun" },
             complete = QuestState(426, "completed"),
@@ -1375,6 +1459,7 @@ ns:RegisterGuide({
             id = "objective-369-coarse-thread",
             kind = "objective",
             priority = 1050,
+            conditions = { level = { min = 6 } },
             text = "Buy Coarse Thread from Abigail Shiel in Brill.",
             dependsOn = { "accept-369-a-new-plague" },
             complete = QuestState(369, "complete"),
@@ -1387,6 +1472,7 @@ ns:RegisterGuide({
             id = "objective-375-the-chill-of-death",
             kind = "objective",
             priority = 1060,
+            conditions = { level = { min = 7 } },
             text = "Collect 6 Duskbat Pelt drop from the Greater Duskbat just outside town.",
             dependsOn = { "accept-375-the-chill-of-death" },
             complete = QuestState(375, "complete"),
@@ -1399,6 +1485,7 @@ ns:RegisterGuide({
             id = "turnin-375-the-chill-of-death",
             kind = "turnin",
             priority = 1080,
+            conditions = { level = { min = 7 } },
             text = "Turn in The Chill of Death to Gretchen Dedmar in Gallows' End Tavern.",
             dependsOn = { "objective-375-the-chill-of-death" },
             complete = QuestState(375, "completed"),
@@ -1411,6 +1498,7 @@ ns:RegisterGuide({
             id = "turnin-407-fields-of-grief",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 4 } },
             text = "Turn in Fields of Grief to Captured Scarlet Zealot.",
             dependsOn = { "accept-407-fields-of-grief" },
             complete = QuestState(407, "completed"),
@@ -1423,6 +1511,7 @@ ns:RegisterGuide({
             id = "objective-370-1-captain-perrine",
             kind = "objective",
             priority = 1100,
+            conditions = { level = { min = 5 } },
             text = "Kill Captain Perrine inside the keep in Tirisfal Glades.",
             dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
             complete = QuestObjective(370, 1),
@@ -1435,6 +1524,7 @@ ns:RegisterGuide({
             id = "objective-370-at-war-with-the-scarlet-crusade",
             kind = "objective",
             priority = 1110,
+            conditions = { level = { min = 5 } },
             text = "Kill 3 Scarlet Zealot and 3 Scarlet Missionary near the keep in Tirisfal Glades.",
             dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
             complete = QuestState(370, "complete"),
@@ -1447,6 +1537,7 @@ ns:RegisterGuide({
             id = "turnin-370-at-war-with-the-scarlet-crusade",
             kind = "turnin",
             priority = 1120,
+            conditions = { level = { min = 5 } },
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
             dependsOn = { "objective-370-1-captain-perrine", "objective-370-at-war-with-the-scarlet-crusade" },
             complete = QuestState(370, "completed"),
@@ -1459,6 +1550,7 @@ ns:RegisterGuide({
             id = "accept-371-at-war-with-the-scarlet-crusade",
             kind = "accept",
             priority = 1130,
+            conditions = { level = { min = 5 } },
             text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
             complete = QuestState(371, "activeOrCompleted"),
             route = {
@@ -1470,6 +1562,7 @@ ns:RegisterGuide({
             id = "turnin-359-forsaken-duties",
             kind = "turnin",
             priority = 1150,
+            conditions = { level = { min = 6 } },
             text = "Turn in Forsaken Duties to Deathguard Linnea in Tirisfal Glades.",
             dependsOn = { "accept-359-forsaken-duties" },
             complete = QuestState(359, "completed"),
@@ -1482,6 +1575,7 @@ ns:RegisterGuide({
             id = "accept-360-return-to-the-magistrate",
             kind = "accept",
             priority = 1160,
+            conditions = { level = { min = 6 } },
             text = "Accept Return to the Magistrate from Deathguard Linnea in Tirisfal Glades.",
             complete = QuestState(360, "activeOrCompleted"),
             route = {
@@ -1493,6 +1587,7 @@ ns:RegisterGuide({
             id = "accept-356-rear-guard-patrol",
             kind = "accept",
             priority = 1170,
+            conditions = { level = { min = 6 } },
             text = "Accept Rear Guard Patrol from Deathguard Linnea in Tirisfal Glades.",
             complete = QuestState(356, "activeOrCompleted"),
             route = {
@@ -1504,6 +1599,7 @@ ns:RegisterGuide({
             id = "accept-97558-hides-for-the-forsaken",
             kind = "accept",
             priority = 1171,
+            conditions = { level = { min = 6 } },
             text = "Accept Hides for the Forsaken from Shelene Rhobart.",
             complete = QuestState(97558, "activeOrCompleted"),
             route = {
@@ -1515,6 +1611,7 @@ ns:RegisterGuide({
             id = "accept-99156-rear-guard-patrol",
             kind = "accept",
             priority = 1172,
+            conditions = { level = { min = 6 } },
             text = "Accept Rear Guard Patrol from Deathguard Linnea.",
             complete = QuestState(99156, "activeOrCompleted"),
             route = {
@@ -1526,6 +1623,7 @@ ns:RegisterGuide({
             id = "objective-99156-rear-guard-patrol",
             kind = "objective",
             priority = 1181,
+            conditions = { level = { min = 6 } },
             text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
             dependsOn = { "accept-99156-rear-guard-patrol" },
             complete = QuestState(99156, "complete"),
@@ -1538,6 +1636,7 @@ ns:RegisterGuide({
             id = "objective-97558-hides-for-the-forsaken",
             kind = "objective",
             priority = 1182,
+            conditions = { level = { min = 6 } },
             text = "Collect 8 Duskbat Wing Membranes, 6 Darkhound Hides, and 3 Vile Fin Murloc Skins.",
             dependsOn = { "accept-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "complete"),
@@ -1550,6 +1649,7 @@ ns:RegisterGuide({
             id = "objective-95314-that-shadowvale-green-elixir",
             kind = "objective",
             priority = 1183,
+            conditions = { level = { min = 7 } },
             text = "Collect 8 Bottles of Whispering Elixir in Shadowvale. A Whispering Horror may drop residue. Use it if it does.",
             dependsOn = { "accept-95314-that-shadowvale-green-elixir" },
             complete = QuestState(95314, "complete"),
@@ -1562,6 +1662,7 @@ ns:RegisterGuide({
             id = "objective-356-rear-guard-patrol",
             kind = "objective",
             priority = 1190,
+            conditions = { level = { min = 6 } },
             text = "Kill 8 Bleeding Horror and 8 Wandering Spirit at the farm further east down the road in Balnir Farmstead.",
             dependsOn = { "accept-356-rear-guard-patrol" },
             complete = QuestState(356, "complete"),
@@ -1574,6 +1675,7 @@ ns:RegisterGuide({
             id = "accept-99144-seeking-refuge",
             kind = "accept",
             priority = 1201,
+            conditions = { level = { min = 5 } },
             text = "Accept Seeking Refuge from Bareth Dawnstone at Crusader's Outpost.",
             complete = QuestState(99144, "activeOrCompleted"),
             route = {
@@ -1585,6 +1687,7 @@ ns:RegisterGuide({
             id = "objective-99144-seeking-refuge",
             kind = "objective",
             priority = 1202,
+            conditions = { level = { min = 5 } },
             text = "Escort Bareth Dawnstone out of Crusader's Outpost.",
             dependsOn = { "accept-99144-seeking-refuge" },
             complete = QuestState(99144, "complete"),
@@ -1597,6 +1700,7 @@ ns:RegisterGuide({
             id = "objective-371-1-captain-vachon",
             kind = "objective",
             priority = 1210,
+            conditions = { level = { min = 5 } },
             text = "Kill Captain Vachon in Crusader Outpost.",
             dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
             complete = QuestObjective(371, 1),
@@ -1609,6 +1713,7 @@ ns:RegisterGuide({
             id = "objective-371-2-scarlet-friar",
             kind = "objective",
             priority = 1220,
+            conditions = { level = { min = 5 } },
             text = "Kill 5 Scarlet Friar in Crusader Outpost.",
             dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
             complete = QuestObjective(371, 2),
@@ -1621,6 +1726,7 @@ ns:RegisterGuide({
             id = "objective-369-a-new-plague",
             kind = "objective",
             priority = 1240,
+            conditions = { level = { min = 6 } },
             text = "Kill Vicious Night Web Spider and collect 4 Vicious Night Web Spider Venom in Venomweb Vale.",
             dependsOn = { "accept-369-a-new-plague" },
             complete = QuestState(369, "complete"),
@@ -1633,6 +1739,7 @@ ns:RegisterGuide({
             id = "turnin-371-at-war-with-the-scarlet-crusade",
             kind = "turnin",
             priority = 1260,
+            conditions = { level = { min = 5 } },
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
             dependsOn = { "objective-371-1-captain-vachon", "objective-371-2-scarlet-friar" },
             complete = QuestState(371, "completed"),
@@ -1645,6 +1752,7 @@ ns:RegisterGuide({
             id = "accept-372-at-war-with-the-scarlet-crusade",
             kind = "accept",
             priority = 1270,
+            conditions = { level = { min = 5 } },
             text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
             complete = QuestState(372, "activeOrCompleted"),
             route = {
@@ -1656,6 +1764,7 @@ ns:RegisterGuide({
             id = "turnin-369-a-new-plague",
             kind = "turnin",
             priority = 1280,
+            conditions = { level = { min = 6 } },
             text = "Turn in A New Plague to Apothecary Johaan in Brill.",
             dependsOn = { "objective-369-coarse-thread", "objective-369-a-new-plague" },
             complete = QuestState(369, "completed"),
@@ -1668,6 +1777,7 @@ ns:RegisterGuide({
             id = "accept-492-a-new-plague",
             kind = "accept",
             priority = 1290,
+            conditions = { level = { min = 6 } },
             text = "Accept A New Plague from Apothecary Johaan in Brill.",
             complete = QuestState(492, "activeOrCompleted"),
             route = {
@@ -1679,6 +1789,7 @@ ns:RegisterGuide({
             id = "accept-445-delivery-to-silverpine-forest",
             kind = "accept",
             priority = 1300,
+            conditions = { level = { min = 9 } },
             text = "Accept Delivery to Silverpine Forest from Apothecary Johaan in Brill.",
             complete = QuestState(445, "activeOrCompleted"),
             route = {
@@ -1692,6 +1803,7 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1708,6 +1820,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1725,6 +1838,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1741,6 +1855,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1758,6 +1873,7 @@ ns:RegisterGuide({
             priority = 1350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1775,6 +1891,7 @@ ns:RegisterGuide({
             priority = 1360,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1791,6 +1908,7 @@ ns:RegisterGuide({
             priority = 1370,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1808,6 +1926,7 @@ ns:RegisterGuide({
             priority = 1380,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1822,6 +1941,7 @@ ns:RegisterGuide({
             id = "turnin-492-a-new-plague",
             kind = "turnin",
             priority = 1390,
+            conditions = { level = { min = 6 } },
             text = "Turn in A New Plague to Captured Mountaineer in Gallows' End Tavern.",
             dependsOn = { "accept-492-a-new-plague" },
             complete = QuestState(492, "completed"),
@@ -1834,6 +1954,7 @@ ns:RegisterGuide({
             id = "turnin-360-return-to-the-magistrate",
             kind = "turnin",
             priority = 1400,
+            conditions = { level = { min = 6 } },
             text = "Turn in Return to the Magistrate to Magistrate Sevren in Brill Town Hall.",
             dependsOn = { "accept-360-return-to-the-magistrate" },
             complete = QuestState(360, "completed"),
@@ -1846,6 +1967,7 @@ ns:RegisterGuide({
             id = "turnin-356-rear-guard-patrol",
             kind = "turnin",
             priority = 1410,
+            conditions = { level = { min = 6 } },
             text = "Turn in Rear Guard Patrol to Deathguard Linnea in Tirisfal Glades.",
             dependsOn = { "objective-356-rear-guard-patrol" },
             complete = QuestState(356, "completed"),
@@ -1858,6 +1980,7 @@ ns:RegisterGuide({
             id = "turnin-99156-rear-guard-patrol",
             kind = "turnin",
             priority = 1411,
+            conditions = { level = { min = 6 } },
             text = "Turn in Rear Guard Patrol to Deathguard Linnea.",
             dependsOn = { "objective-99156-rear-guard-patrol" },
             complete = QuestState(99156, "completed"),
@@ -1870,6 +1993,7 @@ ns:RegisterGuide({
             id = "turnin-97558-hides-for-the-forsaken",
             kind = "turnin",
             priority = 1412,
+            conditions = { level = { min = 6 } },
             text = "Turn in Hides for the Forsaken to Shelene Rhobart.",
             dependsOn = { "objective-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "completed"),
@@ -1882,6 +2006,7 @@ ns:RegisterGuide({
             id = "turnin-99144-seeking-refuge",
             kind = "turnin",
             priority = 1413,
+            conditions = { level = { min = 5 } },
             text = "Turn in Seeking Refuge to Shari Stilwell in Brill.",
             dependsOn = { "objective-99144-seeking-refuge" },
             complete = QuestState(99144, "completed"),
@@ -1894,6 +2019,7 @@ ns:RegisterGuide({
             id = "turnin-95314-that-shadowvale-green-elixir",
             kind = "turnin",
             priority = 1414,
+            conditions = { level = { min = 7 } },
             text = "Turn in That Shadowvale Green Elixir to Carolai Anise in Brill.",
             dependsOn = { "objective-95314-that-shadowvale-green-elixir" },
             complete = QuestState(95314, "completed"),
@@ -1906,6 +2032,7 @@ ns:RegisterGuide({
             id = "objective-372-1-captain-melrache",
             kind = "objective",
             priority = 1430,
+            conditions = { level = { min = 5 } },
             text = "Kill Captain Melrache in Scarlet Watch Post.",
             dependsOn = { "accept-372-at-war-with-the-scarlet-crusade" },
             complete = QuestObjective(372, 1),
@@ -1918,6 +2045,7 @@ ns:RegisterGuide({
             id = "objective-372-2-scarlet-bodyguard",
             kind = "objective",
             priority = 1440,
+            conditions = { level = { min = 5 } },
             text = "Kill 2 Scarlet Bodyguard in Scarlet Watch Post.",
             dependsOn = { "accept-372-at-war-with-the-scarlet-crusade" },
             complete = QuestObjective(372, 2),
@@ -1930,6 +2058,7 @@ ns:RegisterGuide({
             id = "objective-374-proof-of-demise",
             kind = "objective",
             priority = 1450,
+            conditions = { level = { min = 5 } },
             text = "Collect 10 Scarlet Insignia Ring dropped by the Scarlet Crusade enemies in Scarlet Watch Post.",
             dependsOn = { "accept-374-proof-of-demise" },
             complete = QuestState(374, "complete"),
@@ -1942,6 +2071,7 @@ ns:RegisterGuide({
             id = "turnin-372-at-war-with-the-scarlet-crusade",
             kind = "turnin",
             priority = 1470,
+            conditions = { level = { min = 5 } },
             text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
             dependsOn = { "objective-372-1-captain-melrache", "objective-372-2-scarlet-bodyguard" },
             complete = QuestState(372, "completed"),
@@ -1954,6 +2084,7 @@ ns:RegisterGuide({
             id = "accept-96895-the-argent-emissary",
             kind = "accept",
             priority = 1471,
+            conditions = { level = { min = 10 } },
             text = "Accept The Argent Emissary from Deathguard Terrence in Brill.",
             complete = QuestState(96895, "activeOrCompleted"),
             route = {
@@ -1965,6 +2096,7 @@ ns:RegisterGuide({
             id = "turnin-96895-the-argent-emissary",
             kind = "turnin",
             priority = 1472,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Argent Emissary to Hadric Harlson, on the road toward the Undercity.",
             dependsOn = { "accept-96895-the-argent-emissary" },
             complete = QuestState(96895, "completed"),
@@ -1977,6 +2109,7 @@ ns:RegisterGuide({
             id = "accept-96896-a-righteous-cause",
             kind = "accept",
             priority = 1473,
+            conditions = { level = { min = 10 } },
             text = "Accept A Righteous Cause from Leonid Barthalomew the Revered.",
             dependsOn = { "turnin-96899-bandarion-keep" },
             complete = QuestState(96896, "activeOrCompleted"),
@@ -1989,6 +2122,7 @@ ns:RegisterGuide({
             id = "objective-96896-a-righteous-cause",
             kind = "objective",
             priority = 1474,
+            conditions = { level = { min = 10 } },
             text = "Observe the conversation between Danitha Morr and Leonid Barthalomew.",
             dependsOn = { "accept-96896-a-righteous-cause" },
             complete = QuestState(96896, "complete"),
@@ -2001,6 +2135,7 @@ ns:RegisterGuide({
             id = "turnin-96896-a-righteous-cause",
             kind = "turnin",
             priority = 1475,
+            conditions = { level = { min = 10 } },
             text = "Turn in A Righteous Cause to Leonid Barthalomew the Revered.",
             dependsOn = { "objective-96896-a-righteous-cause" },
             complete = QuestState(96896, "completed"),
@@ -2013,6 +2148,7 @@ ns:RegisterGuide({
             id = "accept-96897-the-cult-of-the-damned",
             kind = "accept",
             priority = 1476,
+            conditions = { level = { min = 10 } },
             text = "Accept The Cult of the Damned from Hadric Harlson.",
             dependsOn = { "turnin-96895-the-argent-emissary" },
             complete = QuestState(96897, "activeOrCompleted"),
@@ -2025,6 +2161,7 @@ ns:RegisterGuide({
             id = "accept-96898-remnants-of-war",
             kind = "accept",
             priority = 1477,
+            conditions = { level = { min = 10 } },
             text = "Accept Remnants of War from Hadric Harlson.",
             dependsOn = { "turnin-96895-the-argent-emissary" },
             complete = QuestState(96898, "activeOrCompleted"),
@@ -2037,6 +2174,7 @@ ns:RegisterGuide({
             id = "objective-96897-the-cult-of-the-damned",
             kind = "objective",
             priority = 1478,
+            conditions = { level = { min = 10 } },
             text = "Kill 8 Dark Neophytes and 8 Dark Enforcers.",
             dependsOn = { "accept-96897-the-cult-of-the-damned" },
             complete = QuestState(96897, "complete"),
@@ -2049,6 +2187,7 @@ ns:RegisterGuide({
             id = "objective-96898-remnants-of-war",
             kind = "objective",
             priority = 1479,
+            conditions = { level = { min = 10 } },
             text = "Gather 12 Necrotic Crystal Fragments.",
             dependsOn = { "accept-96898-remnants-of-war" },
             complete = QuestState(96898, "complete"),
@@ -2061,6 +2200,7 @@ ns:RegisterGuide({
             id = "turnin-96897-the-cult-of-the-damned",
             kind = "turnin",
             priority = 1486,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Cult of the Damned to Hadric Harlson.",
             dependsOn = { "objective-96897-the-cult-of-the-damned" },
             complete = QuestState(96897, "completed"),
@@ -2073,6 +2213,7 @@ ns:RegisterGuide({
             id = "turnin-96898-remnants-of-war",
             kind = "turnin",
             priority = 1487,
+            conditions = { level = { min = 10 } },
             text = "Turn in Remnants of War to Hadric Harlson.",
             dependsOn = { "objective-96898-remnants-of-war" },
             complete = QuestState(96898, "completed"),
@@ -2085,6 +2226,7 @@ ns:RegisterGuide({
             id = "accept-96899-bandarion-keep",
             kind = "accept",
             priority = 1475.5,
+            conditions = { level = { min = 10 } },
             text = "Accept Bandarion Keep from Hadric Harlson.",
             dependsOn = { "turnin-96895-the-argent-emissary" },
             complete = QuestState(96899, "activeOrCompleted"),
@@ -2097,6 +2239,7 @@ ns:RegisterGuide({
             id = "turnin-96899-bandarion-keep",
             kind = "turnin",
             priority = 1489,
+            conditions = { level = { min = 10 } },
             text = "Turn in Bandarion Keep to Leonid Barthalomew the Revered.",
             dependsOn = { "accept-96899-bandarion-keep" },
             complete = QuestState(96899, "completed"),
@@ -2109,6 +2252,7 @@ ns:RegisterGuide({
             id = "accept-98545-leonid-s-letter",
             kind = "accept",
             priority = 1491,
+            conditions = { level = { min = 10 } },
             text = "Accept Leonid's Letter from Leonid Barthalomew.",
             dependsOn = { "turnin-96896-a-righteous-cause" },
             complete = QuestState(98545, "activeOrCompleted"),
@@ -2121,6 +2265,7 @@ ns:RegisterGuide({
             id = "turnin-98545-leonids-letter",
             kind = "turnin",
             priority = 1491.1,
+            conditions = { level = { min = 10 } },
             text = "Deliver it to Glix Xizzix in the Undercity.",
             dependsOn = { "accept-98545-leonid-s-letter" },
             complete = QuestState(98545, "completed"),
@@ -2135,6 +2280,7 @@ ns:RegisterGuide({
             priority = 1492,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 95328, state = "activeOrCompleted" } },
                 },
             },
@@ -2149,6 +2295,7 @@ ns:RegisterGuide({
             id = "turnin-374-proof-of-demise",
             kind = "turnin",
             priority = 1470.5,
+            conditions = { level = { min = 5 } },
             text = "Turn in Proof of Demise to Deathguard Burgess in Brill.",
             dependsOn = { "objective-374-proof-of-demise" },
             complete = QuestState(374, "completed"),
@@ -2163,6 +2310,7 @@ ns:RegisterGuide({
             priority = 1470.6,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2179,6 +2327,7 @@ ns:RegisterGuide({
             priority = 1500,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                     { ["not"] = { quest = { id = 1882, state = "activeOrCompleted" } } },
                 },
@@ -2196,6 +2345,7 @@ ns:RegisterGuide({
             priority = 1510,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2212,6 +2362,7 @@ ns:RegisterGuide({
             priority = 1530,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2229,6 +2380,7 @@ ns:RegisterGuide({
             priority = 1540,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2245,6 +2397,7 @@ ns:RegisterGuide({
             priority = 1570,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2262,6 +2415,7 @@ ns:RegisterGuide({
             priority = 1600,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2279,6 +2433,7 @@ ns:RegisterGuide({
             priority = 1610,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2295,6 +2450,7 @@ ns:RegisterGuide({
             priority = 1620,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2312,6 +2468,7 @@ ns:RegisterGuide({
             priority = 1630,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2329,6 +2486,7 @@ ns:RegisterGuide({
             priority = 1650,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                     { ["not"] = { quest = { id = 1882, state = "activeOrCompleted" } } },
                 },
@@ -2347,6 +2505,7 @@ ns:RegisterGuide({
             priority = 1660,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                 },
             },
@@ -2363,6 +2522,7 @@ ns:RegisterGuide({
             priority = 1680,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                 },
             },
@@ -2380,6 +2540,7 @@ ns:RegisterGuide({
             priority = 1690,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                 },
             },
@@ -2397,6 +2558,7 @@ ns:RegisterGuide({
             priority = 1710,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2414,6 +2576,7 @@ ns:RegisterGuide({
             priority = 1720,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2430,6 +2593,7 @@ ns:RegisterGuide({
             priority = 1750,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2451,6 +2615,7 @@ ns:RegisterGuide({
             priority = 1780,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2468,6 +2633,7 @@ ns:RegisterGuide({
             priority = 1790,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2484,6 +2650,7 @@ ns:RegisterGuide({
             priority = 1800,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2501,6 +2668,7 @@ ns:RegisterGuide({
             priority = 1810,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2517,6 +2685,7 @@ ns:RegisterGuide({
             priority = 1820,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2534,6 +2703,7 @@ ns:RegisterGuide({
             priority = 1830,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2551,6 +2721,7 @@ ns:RegisterGuide({
             priority = 1840,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2567,6 +2738,7 @@ ns:RegisterGuide({
             priority = 1860,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2584,6 +2756,7 @@ ns:RegisterGuide({
             priority = 1880,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2601,6 +2774,7 @@ ns:RegisterGuide({
             priority = 1890,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2618,6 +2792,7 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2635,6 +2810,7 @@ ns:RegisterGuide({
             priority = 1910,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2650,6 +2826,7 @@ ns:RegisterGuide({
             id = "objective-408-3-captain-dargol",
             kind = "objective",
             priority = 1920,
+            conditions = { level = { min = 7 } },
             text = "Kill Captain Dargol and collect Dargol's Skull in Agamand Family Crypt.",
             dependsOn = { "accept-408-the-family-crypt" },
             complete = QuestObjective(408, 3),
@@ -2662,6 +2839,7 @@ ns:RegisterGuide({
             id = "objective-408-the-family-crypt",
             kind = "objective",
             priority = 1930,
+            conditions = { level = { min = 7 } },
             text = "Kill 8 Wailing Ancestor and 8 Rotting Ancestor Agamand Mills.",
             dependsOn = { "accept-408-the-family-crypt" },
             complete = QuestState(408, "complete"),
@@ -2674,6 +2852,7 @@ ns:RegisterGuide({
             id = "turnin-408-the-family-crypt",
             kind = "turnin",
             priority = 1950,
+            conditions = { level = { min = 7 } },
             text = "Turn in The Family Crypt to Magistrate Sevren in Brill Town Hall.",
             dependsOn = { "objective-408-3-captain-dargol", "objective-408-the-family-crypt" },
             complete = QuestState(408, "completed"),
@@ -2688,6 +2867,7 @@ ns:RegisterGuide({
             priority = 1960,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2705,6 +2885,7 @@ ns:RegisterGuide({
             priority = 1970,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2719,6 +2900,7 @@ ns:RegisterGuide({
             id = "turnin-405-the-prodigal-lich",
             kind = "turnin",
             priority = 1990,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Prodigal Lich.",
             complete = QuestState(405, "completed"),
             route = {
@@ -2730,6 +2912,7 @@ ns:RegisterGuide({
             id = "accept-357-the-lich-s-identity",
             kind = "accept",
             priority = 2000,
+            conditions = { level = { min = 5 } },
             text = "Accept The Lich's Identity.",
             complete = QuestState(357, "activeOrCompleted"),
             route = {
@@ -2741,6 +2924,7 @@ ns:RegisterGuide({
             id = "objective-357-the-lich-s-identity",
             kind = "objective",
             priority = 2020,
+            conditions = { level = { min = 5 } },
             text = "Loot [The Lich's Spellbook] on the island.",
             dependsOn = { "accept-357-the-lich-s-identity" },
             complete = QuestState(357, "complete"),
@@ -2753,6 +2937,7 @@ ns:RegisterGuide({
             id = "turnin-357-the-lich-s-identity",
             kind = "turnin",
             priority = 2040,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Lich's Identity.",
             dependsOn = { "objective-357-the-lich-s-identity" },
             complete = QuestState(357, "completed"),
@@ -2765,6 +2950,7 @@ ns:RegisterGuide({
             id = "accept-366-return-the-book",
             kind = "accept",
             priority = 2050,
+            conditions = { level = { min = 5 } },
             text = "Accept Return the Book.",
             complete = QuestState(366, "activeOrCompleted"),
             route = {
@@ -2776,6 +2962,7 @@ ns:RegisterGuide({
             id = "turnin-366-return-the-book",
             kind = "turnin",
             priority = 2060,
+            conditions = { level = { min = 5 } },
             text = "Turn in Return the Book.",
             dependsOn = { "accept-366-return-the-book" },
             complete = QuestState(366, "completed"),
@@ -2788,6 +2975,7 @@ ns:RegisterGuide({
             id = "accept-409-proving-allegiance",
             kind = "accept",
             priority = 2070,
+            conditions = { level = { min = 5 } },
             text = "Accept Proving Allegiance.",
             complete = QuestState(409, "activeOrCompleted"),
             route = {
@@ -2799,6 +2987,7 @@ ns:RegisterGuide({
             id = "objective-409-proving-allegiance",
             kind = "objective",
             priority = 2080,
+            conditions = { level = { min = 5 } },
             text = "Grab a candle from the crate, then summon Lillith at the table on the island to the south.",
             dependsOn = { "accept-409-proving-allegiance" },
             complete = QuestState(409, "complete"),
@@ -2811,6 +3000,7 @@ ns:RegisterGuide({
             id = "turnin-409-proving-allegiance",
             kind = "turnin",
             priority = 2090,
+            conditions = { level = { min = 5 } },
             text = "Turn in Proving Allegiance.",
             dependsOn = { "objective-409-proving-allegiance" },
             complete = QuestState(409, "completed"),
@@ -2823,6 +3013,7 @@ ns:RegisterGuide({
             id = "accept-411-the-prodigal-lich-returns",
             kind = "accept",
             priority = 2100,
+            conditions = { level = { min = 5 } },
             text = "Accept The Prodigal Lich Returns.",
             complete = QuestState(411, "activeOrCompleted"),
             route = {
@@ -2834,6 +3025,7 @@ ns:RegisterGuide({
             id = "turnin-411-the-prodigal-lich-returns",
             kind = "turnin",
             priority = 2110,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Prodigal Lich Returns.",
             dependsOn = { "accept-411-the-prodigal-lich-returns" },
             complete = QuestState(411, "completed"),

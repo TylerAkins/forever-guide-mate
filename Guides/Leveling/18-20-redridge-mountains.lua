@@ -52,6 +52,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -68,6 +69,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -85,6 +87,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -101,6 +104,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -118,6 +122,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -134,6 +139,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -151,6 +157,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -167,6 +174,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -184,6 +192,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 4 },
                 },
             },
@@ -199,6 +208,7 @@ ns:RegisterGuide({
             id = "accept-244-encroaching-gnolls",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 11 } },
             text = "Accept Encroaching Gnolls from Watch Captain Parker in Three Corners.",
             complete = QuestState(244, "activeOrCompleted"),
             route = {
@@ -210,6 +220,7 @@ ns:RegisterGuide({
             id = "turnin-244-encroaching-gnolls",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 11 } },
             text = "Turn in Encroaching Gnolls to Deputy Feldon in Redridge Mountains.",
             dependsOn = { "accept-244-encroaching-gnolls" },
             complete = QuestState(244, "completed"),
@@ -222,6 +233,7 @@ ns:RegisterGuide({
             id = "accept-246-assessing-the-threat",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 11 } },
             text = "Accept Assessing the Threat from Deputy Feldon in Redridge Mountains.",
             complete = QuestState(246, "activeOrCompleted"),
             route = {
@@ -233,7 +245,7 @@ ns:RegisterGuide({
             id = "accept-98407-show-of-force",
             kind = "accept",
             priority = 191,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Show of Force from Deputy Feldon.",
             complete = QuestState(98407, "activeOrCompleted"),
             route = {
@@ -245,6 +257,7 @@ ns:RegisterGuide({
             id = "accept-125-the-lost-tools",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 15 } },
             text = "Accept The Lost Tools from Foreman Oslow in Lakeshire.",
             complete = QuestState(125, "activeOrCompleted"),
             route = {
@@ -256,6 +269,7 @@ ns:RegisterGuide({
             id = "accept-3741-hilary-s-necklace",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 12 } },
             text = "Accept Hilary's Necklace from Shawn in Lake Everstill.",
             complete = QuestState(3741, "activeOrCompleted"),
             route = {
@@ -267,6 +281,7 @@ ns:RegisterGuide({
             id = "accept-127-selling-fish",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 16 } },
             text = "Accept Selling Fish from Dockmaster Baren in Lakeshire.",
             complete = QuestState(127, "activeOrCompleted"),
             route = {
@@ -278,6 +293,7 @@ ns:RegisterGuide({
             id = "accept-129-a-free-lunch",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 12 } },
             text = "Accept A Free Lunch from Darcy Parker in Redridge Mountains.",
             complete = QuestState(129, "activeOrCompleted"),
             route = {
@@ -299,6 +315,7 @@ ns:RegisterGuide({
             id = "accept-92-redridge-goulash",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 15 } },
             text = "Accept Redridge Goulash from Chef Breanna in Lakeshire.",
             complete = QuestState(92, "activeOrCompleted"),
             route = {
@@ -310,6 +327,7 @@ ns:RegisterGuide({
             id = "accept-118-the-price-of-shoes",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 14 } },
             text = "Accept The Price of Shoes from Verner Osgood in Lakeshire.",
             complete = QuestState(118, "activeOrCompleted"),
             route = {
@@ -321,6 +339,7 @@ ns:RegisterGuide({
             id = "accept-120-messenger-to-stormwind",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Stormwind from Magistrate Solomon in Lakeshire.",
             complete = QuestState(120, "activeOrCompleted"),
             route = {
@@ -332,6 +351,7 @@ ns:RegisterGuide({
             id = "turnin-120-messenger-to-stormwind",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Stormwind to General Marcus Jonathan in Valley Of Heroes.",
             dependsOn = { "accept-120-messenger-to-stormwind" },
             complete = QuestState(120, "completed"),
@@ -344,6 +364,7 @@ ns:RegisterGuide({
             id = "accept-121-messenger-to-stormwind",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Stormwind from General Marcus Jonathan in Valley Of Heroes.",
             complete = QuestState(121, "activeOrCompleted"),
             route = {
@@ -355,6 +376,7 @@ ns:RegisterGuide({
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Price of Shoes to Smith Argus in Goldshire.",
             dependsOn = { "accept-118-the-price-of-shoes" },
             complete = QuestState(118, "completed"),
@@ -367,6 +389,7 @@ ns:RegisterGuide({
             id = "accept-119-return-to-verner",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 13 } },
             text = "Accept Return to Verner from Smith Argus in Goldshire.",
             complete = QuestState(119, "activeOrCompleted"),
             route = {
@@ -378,6 +401,7 @@ ns:RegisterGuide({
             id = "turnin-119-return-to-verner",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 13 } },
             text = "Turn in Return to Verner to Verner Osgood in Lakeshire.",
             dependsOn = { "accept-119-return-to-verner" },
             complete = QuestState(119, "completed"),
@@ -390,6 +414,7 @@ ns:RegisterGuide({
             id = "accept-122-underbelly-scales",
             kind = "accept",
             priority = 360,
+            conditions = { level = { min = 14 } },
             text = "Accept Underbelly Scales from Verner Osgood in Lakeshire.",
             complete = QuestState(122, "activeOrCompleted"),
             route = {
@@ -401,6 +426,7 @@ ns:RegisterGuide({
             id = "accept-124-a-baying-of-gnolls",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 15 } },
             text = "Accept A Baying of Gnolls from Verner Osgood in Lakeshire.",
             complete = QuestState(124, "activeOrCompleted"),
             route = {
@@ -412,6 +438,7 @@ ns:RegisterGuide({
             id = "turnin-121-messenger-to-stormwind",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Stormwind to Magistrate Solomon in Lakeshire.",
             dependsOn = { "accept-121-messenger-to-stormwind" },
             complete = QuestState(121, "completed"),
@@ -424,6 +451,7 @@ ns:RegisterGuide({
             id = "objective-92-1-great-goretusk",
             kind = "objective",
             priority = 390,
+            conditions = { level = { min = 15 } },
             text = "Kill Great Goretusk and collect 5 Great Goretusk Snout to the west of the lake.",
             dependsOn = { "accept-92-redridge-goulash" },
             complete = QuestObjective(92, 1),
@@ -436,6 +464,7 @@ ns:RegisterGuide({
             id = "objective-3741-hilary-s-necklace",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 12 } },
             text = "Find Nida's Necklace inside a mud pile underwater in the lake, check around each waypoint.",
             dependsOn = { "accept-3741-hilary-s-necklace" },
             complete = QuestState(3741, "complete"),
@@ -458,6 +487,7 @@ ns:RegisterGuide({
             id = "objective-125-the-lost-tools",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 15 } },
             text = "You can find Oslow's Toolbox in the Sunken Chest underwater.",
             dependsOn = { "accept-125-the-lost-tools" },
             complete = QuestState(125, "complete"),
@@ -470,6 +500,7 @@ ns:RegisterGuide({
             id = "objective-127-selling-fish",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 16 } },
             text = "Kill the Murloc Shorestriker, Murloc Minor Tidecaller and Murloc Flesheater in the water, collect 10 Spotted Sunfish Also keep all Murloc Fin that you find.",
             dependsOn = { "accept-127-selling-fish" },
             complete = QuestState(127, "complete"),
@@ -478,6 +509,7 @@ ns:RegisterGuide({
             id = "turnin-125-the-lost-tools",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 15 } },
             text = "Turn in The Lost Tools to Foreman Oslow in Lakeshire.",
             dependsOn = { "objective-125-the-lost-tools" },
             complete = QuestState(125, "completed"),
@@ -490,6 +522,7 @@ ns:RegisterGuide({
             id = "accept-89-the-everstill-bridge",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 15 } },
             text = "Accept The Everstill Bridge from Foreman Oslow in Lakeshire.",
             complete = QuestState(89, "activeOrCompleted"),
             route = {
@@ -501,6 +534,7 @@ ns:RegisterGuide({
             id = "turnin-3741-hilary-s-necklace",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 12 } },
             text = "Turn in Hilary's Necklace to Nida in Lake Everstill.",
             dependsOn = { "objective-3741-hilary-s-necklace" },
             complete = QuestState(3741, "completed"),
@@ -513,6 +547,7 @@ ns:RegisterGuide({
             id = "turnin-127-selling-fish",
             kind = "turnin",
             priority = 470,
+            conditions = { level = { min = 16 } },
             text = "Turn in Selling Fish to Dockmaster Baren in Lakeshire.",
             dependsOn = { "objective-127-selling-fish" },
             complete = QuestState(127, "completed"),
@@ -525,6 +560,7 @@ ns:RegisterGuide({
             id = "turnin-129-a-free-lunch",
             kind = "turnin",
             priority = 480,
+            conditions = { level = { min = 12 } },
             text = "Turn in A Free Lunch to Watch Captain Parker in Three Corners.",
             dependsOn = { "accept-129-a-free-lunch" },
             complete = QuestState(129, "completed"),
@@ -537,6 +573,7 @@ ns:RegisterGuide({
             id = "accept-130-visit-the-herbalist",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 12 } },
             text = "Accept Visit the Herbalist from Watch Captain Parker in Three Corners.",
             complete = QuestState(130, "activeOrCompleted"),
             route = {
@@ -548,6 +585,7 @@ ns:RegisterGuide({
             id = "objective-92-3-tarantula",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 15 } },
             text = "Kill Tarantula and collect 5 Crisp Spider Meat in Three Corners.",
             dependsOn = { "accept-92-redridge-goulash" },
             complete = QuestObjective(92, 3),
@@ -560,6 +598,7 @@ ns:RegisterGuide({
             id = "objective-246-assessing-the-threat",
             kind = "objective",
             priority = 530,
+            conditions = { level = { min = 11 } },
             text = "Kill 10 Redridge Mongrel and 6 Redridge Poacher which can be found to the south in Lakeridge Highway.",
             dependsOn = { "accept-246-assessing-the-threat" },
             complete = QuestState(246, "complete"),
@@ -574,7 +613,7 @@ ns:RegisterGuide({
             id = "objective-98407-show-of-force",
             kind = "objective",
             priority = 535,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
             dependsOn = { "accept-98407-show-of-force" },
             complete = QuestState(98407, "complete"),
@@ -587,6 +626,7 @@ ns:RegisterGuide({
             id = "objective-92-2-dire-condor",
             kind = "objective",
             priority = 540,
+            conditions = { level = { min = 15 } },
             text = "Kill Dire Condor and get 5 pieces of Tough Condor Meat Tip: also kill Black Dragon Whelp in the area for easy XP.",
             dependsOn = { "accept-92-redridge-goulash" },
             complete = QuestObjective(92, 2),
@@ -599,6 +639,7 @@ ns:RegisterGuide({
             id = "objective-122-underbelly-scales",
             kind = "objective",
             priority = 550,
+            conditions = { level = { min = 14 } },
             text = "Kill Black Dragon Whelp and collect 6 Underbelly Whelp Scale in Lakeridge Highway.",
             dependsOn = { "accept-122-underbelly-scales" },
             complete = QuestState(122, "complete"),
@@ -611,6 +652,7 @@ ns:RegisterGuide({
             id = "turnin-246-assessing-the-threat",
             kind = "turnin",
             priority = 570,
+            conditions = { level = { min = 11 } },
             text = "Turn in Assessing the Threat to Deputy Feldon in Lakeshire.",
             dependsOn = { "objective-246-assessing-the-threat" },
             complete = QuestState(246, "completed"),
@@ -623,7 +665,7 @@ ns:RegisterGuide({
             id = "turnin-98407-show-of-force",
             kind = "turnin",
             priority = 575,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Show of Force to Deputy Feldon.",
             dependsOn = { "objective-98407-show-of-force" },
             complete = QuestState(98407, "completed"),
@@ -636,6 +678,7 @@ ns:RegisterGuide({
             id = "turnin-130-visit-the-herbalist",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 12 } },
             text = "Turn in Visit the Herbalist to Martie Jainrose in Lakeshire.",
             dependsOn = { "accept-130-visit-the-herbalist" },
             complete = QuestState(130, "completed"),
@@ -648,6 +691,7 @@ ns:RegisterGuide({
             id = "accept-131-delivering-daffodils",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 12 } },
             text = "Accept Delivering Daffodils from Martie Jainrose in Lakeshire.",
             complete = QuestState(131, "activeOrCompleted"),
             route = {
@@ -659,6 +703,7 @@ ns:RegisterGuide({
             id = "turnin-92-redridge-goulash",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 15 } },
             text = "Turn in Redridge Goulash to Chef Breanna in Lakeshire.",
             dependsOn = { "objective-92-1-great-goretusk", "objective-92-3-tarantula", "objective-92-2-dire-condor" },
             complete = QuestState(92, "completed"),
@@ -671,6 +716,7 @@ ns:RegisterGuide({
             id = "turnin-131-delivering-daffodils",
             kind = "turnin",
             priority = 610,
+            conditions = { level = { min = 12 } },
             text = "Turn in Delivering Daffodils to Darcy Parker in Lakeshire.",
             dependsOn = { "accept-131-delivering-daffodils" },
             complete = QuestState(131, "completed"),
@@ -683,6 +729,7 @@ ns:RegisterGuide({
             id = "turnin-122-underbelly-scales",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 14 } },
             text = "Turn in Underbelly Scales to Verner Osgood in Lakeshire.",
             dependsOn = { "objective-122-underbelly-scales" },
             complete = QuestState(122, "completed"),
@@ -695,6 +742,7 @@ ns:RegisterGuide({
             id = "objective-124-a-baying-of-gnolls",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 15 } },
             text = "Kill 8 Redridge Mystic and 10 Redridge Brute in Redridge Canyons.",
             dependsOn = { "accept-124-a-baying-of-gnolls" },
             complete = QuestState(124, "complete"),
@@ -709,6 +757,7 @@ ns:RegisterGuide({
             id = "objective-89-the-everstill-bridge",
             kind = "objective",
             priority = 650,
+            conditions = { level = { min = 15 } },
             text = "Collect 5 Iron Pike and 5 Iron Rivet dropped by any Gnolls in Redridge Canyons.",
             dependsOn = { "accept-89-the-everstill-bridge" },
             complete = QuestState(89, "complete"),
@@ -723,6 +772,7 @@ ns:RegisterGuide({
             id = "turnin-89-the-everstill-bridge",
             kind = "turnin",
             priority = 670,
+            conditions = { level = { min = 15 } },
             text = "Turn in The Everstill Bridge to Foreman Oslow in Lakeshire.",
             dependsOn = { "objective-89-the-everstill-bridge" },
             complete = QuestState(89, "completed"),
@@ -735,6 +785,7 @@ ns:RegisterGuide({
             id = "turnin-124-a-baying-of-gnolls",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 15 } },
             text = "Turn in A Baying of Gnolls to Verner Osgood in Lakeshire.",
             dependsOn = { "objective-124-a-baying-of-gnolls" },
             complete = QuestState(124, "completed"),
@@ -747,6 +798,7 @@ ns:RegisterGuide({
             id = "accept-126-howling-in-the-hills",
             kind = "accept",
             priority = 690,
+            conditions = { level = { min = 15 } },
             text = "Accept Howling in the Hills from Verner Osgood in Lakeshire.",
             complete = QuestState(126, "activeOrCompleted"),
             route = {
@@ -758,6 +810,7 @@ ns:RegisterGuide({
             id = "accept-150-murloc-poachers",
             kind = "accept",
             priority = 700,
+            conditions = { level = { min = 20 } },
             text = "Accept Murloc Poachers from Dockmaster Baren in Lakeshire.",
             complete = QuestState(150, "activeOrCompleted"),
             route = {
@@ -769,6 +822,7 @@ ns:RegisterGuide({
             id = "objective-150-murloc-poachers",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 20 } },
             text = "Kill Murloc Scout for 8 Murloc Fin you can find them throughout the lake in Redridge Mountains.",
             dependsOn = { "accept-150-murloc-poachers" },
             complete = QuestState(150, "complete"),
@@ -781,6 +835,7 @@ ns:RegisterGuide({
             id = "turnin-150-murloc-poachers",
             kind = "turnin",
             priority = 720,
+            conditions = { level = { min = 20 } },
             text = "Turn in Murloc Poachers to Dockmaster Baren in Lakeshire.",
             dependsOn = { "objective-150-murloc-poachers" },
             complete = QuestState(150, "completed"),
@@ -795,6 +850,7 @@ ns:RegisterGuide({
             priority = 740,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -811,6 +867,7 @@ ns:RegisterGuide({
             priority = 760,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -828,6 +885,7 @@ ns:RegisterGuide({
             priority = 770,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -844,6 +902,7 @@ ns:RegisterGuide({
             priority = 780,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -861,6 +920,7 @@ ns:RegisterGuide({
             priority = 800,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -878,6 +938,7 @@ ns:RegisterGuide({
             priority = 810,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -894,6 +955,7 @@ ns:RegisterGuide({
             priority = 820,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -911,6 +973,7 @@ ns:RegisterGuide({
             priority = 830,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -927,6 +990,7 @@ ns:RegisterGuide({
             priority = 840,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -944,6 +1008,7 @@ ns:RegisterGuide({
             priority = 850,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -961,6 +1026,7 @@ ns:RegisterGuide({
             priority = 860,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -977,6 +1043,7 @@ ns:RegisterGuide({
             priority = 870,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -996,6 +1063,7 @@ ns:RegisterGuide({
             priority = 880,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1013,6 +1081,7 @@ ns:RegisterGuide({
             priority = 890,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1030,6 +1099,7 @@ ns:RegisterGuide({
             priority = 900,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1047,6 +1117,7 @@ ns:RegisterGuide({
             priority = 910,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1064,6 +1135,7 @@ ns:RegisterGuide({
             priority = 920,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1081,6 +1153,7 @@ ns:RegisterGuide({
             priority = 930,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },
@@ -1098,6 +1171,7 @@ ns:RegisterGuide({
             priority = 940,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 4 },
                 },
             },

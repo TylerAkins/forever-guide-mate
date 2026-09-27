@@ -46,6 +46,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -60,6 +61,7 @@ ns:RegisterGuide({
             id = "objective-4881-galak-messenger",
             kind = "objective",
             priority = 20,
+            conditions = { level = { min = 23 } },
             text = "Find and kill the patroling Galak Messenger to start new quest in Darkcloud Pinnacle.",
             dependsOn = { "accept-4881-assassination-plot" },
             complete = QuestState(4881, "complete"),
@@ -76,6 +78,7 @@ ns:RegisterGuide({
             id = "accept-4881-assassination-plot",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 23 } },
             text = "Use the Assassination Note to accept Assassination Plot.",
             complete = QuestState(4881, "activeOrCompleted"),
         },
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-4841-pacify-the-centaur",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 23 } },
             text = "Accept Pacify the Centaur from Cliffwatcher Longhorn in Freewind Post.",
             complete = QuestState(4841, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-5147-wanted-arnak-grimtotem",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 25 } },
             text = "Accept Wanted - Arnak Grimtotem.",
             complete = QuestState(5147, "activeOrCompleted"),
             route = {
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "accept-4821-alien-egg",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 24 } },
             text = "Accept Alien Egg from Hagar Lightninghoof in Freewind Post.",
             complete = QuestState(4821, "activeOrCompleted"),
             route = {
@@ -116,6 +122,7 @@ ns:RegisterGuide({
             id = "accept-4767-wind-rider",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 25 } },
             text = "Accept Wind Rider from Elu in Freewind Post.",
             complete = QuestState(4767, "activeOrCompleted"),
             route = {
@@ -127,6 +134,7 @@ ns:RegisterGuide({
             id = "objective-4841-pacify-the-centaur",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 23 } },
             text = "Kill 12 Galak Scout, 10 Galak Wrangler and 6 Galak Windchaser just north of Freewind.",
             dependsOn = { "accept-4841-pacify-the-centaur" },
             complete = QuestState(4841, "complete"),
@@ -139,6 +147,7 @@ ns:RegisterGuide({
             id = "accept-1149-test-of-faith",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 25 } },
             text = "Accept Test of Faith from Dorn Plainstalker in The Weathered Nook.",
             complete = QuestState(1149, "activeOrCompleted"),
             route = {
@@ -152,6 +161,7 @@ ns:RegisterGuide({
             id = "objective-1149-test-of-faith",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 25 } },
             text = "Run off the platform, Make sure you only jump off of the wooden plank! If you jump off of anywhere else you will fall to your death.",
             dependsOn = { "accept-1149-test-of-faith" },
             complete = QuestState(1149, "complete"),
@@ -164,6 +174,7 @@ ns:RegisterGuide({
             id = "turnin-1149-test-of-faith",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 25 } },
             text = "Turn in Test of Faith to Dorn Plainstalker in The Weathered Nook.",
             dependsOn = { "objective-1149-test-of-faith" },
             complete = QuestState(1149, "completed"),
@@ -178,6 +189,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -201,6 +213,7 @@ ns:RegisterGuide({
             id = "objective-4821-alien-egg",
             kind = "objective",
             priority = 140,
+            conditions = { level = { min = 24 } },
             text = "The Alien Egg can spawn around 3 possible spots.",
             dependsOn = { "accept-4821-alien-egg" },
             complete = QuestState(4821, "complete"),
@@ -217,6 +230,7 @@ ns:RegisterGuide({
             id = "turnin-4841-pacify-the-centaur",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 23 } },
             text = "Turn in Pacify the Centaur to Cliffwatcher Longhorn in Freewind Post.",
             dependsOn = { "objective-4841-pacify-the-centaur" },
             complete = QuestState(4841, "completed"),
@@ -229,6 +243,7 @@ ns:RegisterGuide({
             id = "accept-5064-grimtotem-spying",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 24 } },
             text = "Accept Grimtotem Spying from Cliffwatcher Longhorn in Freewind Post.",
             complete = QuestState(5064, "activeOrCompleted"),
             route = {
@@ -240,6 +255,7 @@ ns:RegisterGuide({
             id = "turnin-4821-alien-egg",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 24 } },
             text = "Turn in Alien Egg to Hagar Lightninghoof in Freewind Post.",
             dependsOn = { "objective-4821-alien-egg" },
             complete = QuestState(4821, "completed"),
@@ -252,6 +268,7 @@ ns:RegisterGuide({
             id = "accept-4865-serpent-wild",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 24 } },
             text = "Accept Serpent Wild from Hagar Lightninghoof in Freewind Post.",
             complete = QuestState(4865, "activeOrCompleted"),
             route = {
@@ -265,6 +282,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -281,6 +299,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -298,6 +317,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -325,6 +345,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },

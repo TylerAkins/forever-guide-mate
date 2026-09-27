@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-5155-forces-of-jaedenar",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 48 } },
             text = "Accept Forces of Jaedenar from Greta Mosshoof in Emerald Sanctuary.",
             complete = QuestState(5155, "activeOrCompleted"),
             route = {
@@ -56,6 +57,7 @@ ns:RegisterGuide({
             id = "accept-5156-verifying-the-corruption",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 48 } },
             text = "Accept Verifying the Corruption from Taronn Redfeather in Emerald Sanctuary.",
             complete = QuestState(5156, "activeOrCompleted"),
             route = {
@@ -67,6 +69,7 @@ ns:RegisterGuide({
             id = "accept-4102-cleansing-felwood",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 48 } },
             text = "Accept Cleansing Felwood from Maybess Riverbreeze in Felwood.",
             complete = QuestState(4102, "activeOrCompleted"),
             route = {
@@ -78,6 +81,7 @@ ns:RegisterGuide({
             id = "accept-8460-timbermaw-ally",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 45 } },
             text = "Accept Timbermaw Ally from Grazle in Emerald Sanctuary.",
             complete = QuestState(8460, "activeOrCompleted"),
             route = {
@@ -89,6 +93,7 @@ ns:RegisterGuide({
             id = "objective-8460-timbermaw-ally",
             kind = "objective",
             priority = 60,
+            conditions = { level = { min = 45 } },
             text = "Kill the required Deadwood furbolg mobs in Deadwood Village.",
             dependsOn = { "accept-8460-timbermaw-ally" },
             complete = QuestState(8460, "complete"),
@@ -101,6 +106,7 @@ ns:RegisterGuide({
             id = "turnin-8460-timbermaw-ally",
             kind = "turnin",
             priority = 70,
+            conditions = { level = { min = 45 } },
             text = "Turn in Timbermaw Ally to Grazle in Emerald Sanctuary.",
             dependsOn = { "objective-8460-timbermaw-ally" },
             complete = QuestState(8460, "completed"),
@@ -113,6 +119,7 @@ ns:RegisterGuide({
             id = "accept-8462-speak-to-nafien",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 45 } },
             text = "Accept Speak to Nafien from Grazle in Emerald Sanctuary.",
             complete = QuestState(8462, "activeOrCompleted"),
             route = {
@@ -124,6 +131,7 @@ ns:RegisterGuide({
             id = "objective-4293-cursed-ooze",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 48 } },
             text = "Kill Cursed Ooze and start collecting Felwood Slime Sample, you will need about 35 total Clear both pool area and collect 20 Felwood Slime Sample for now.",
             complete = QuestState(4293, "complete"),
             route = {
@@ -137,6 +145,7 @@ ns:RegisterGuide({
             id = "objective-5155-forces-of-jaedenar",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 48 } },
             text = "Kill the required Jaedenar Satrys in Jaedenar.",
             dependsOn = { "accept-5155-forces-of-jaedenar" },
             complete = QuestState(5155, "complete"),
@@ -153,6 +162,7 @@ ns:RegisterGuide({
             id = "objective-4293-tainted-ooze",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 48 } },
             text = "Kill Tainted Ooze and finish collecting 35 Felwood Slime Sample in Jaedenar.",
             complete = QuestState(4293, "complete"),
             route = {
@@ -166,6 +176,7 @@ ns:RegisterGuide({
             id = "accept-6162-a-husband-s-last-battle",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 46 } },
             text = "Accept A Husband's Last Battle from Dreka'Sur in Bloodvenom Post.",
             complete = QuestState(6162, "activeOrCompleted"),
             route = {
@@ -177,6 +188,7 @@ ns:RegisterGuide({
             id = "accept-4521-wild-guardians",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 52 } },
             text = "Accept Wild Guardians from Trull Failbane in Bloodvenom Post.",
             complete = QuestState(4521, "activeOrCompleted"),
             route = {
@@ -188,6 +200,7 @@ ns:RegisterGuide({
             id = "objective-5156-verifying-the-corruption",
             kind = "objective",
             priority = 180,
+            conditions = { level = { min = 48 } },
             text = "Kill 2 Maeva Snowbraid and 2 Entropic Beast in Shatter Scar Vale.",
             dependsOn = { "accept-5156-verifying-the-corruption" },
             complete = QuestState(5156, "complete"),
@@ -200,6 +213,7 @@ ns:RegisterGuide({
             id = "objective-4102-cleansing-felwood",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 48 } },
             text = "Kill Warpwood Moss Flayer and collect 15 Blood Amber in Irontree Woods, (low drop rate).",
             dependsOn = { "accept-4102-cleansing-felwood" },
             complete = QuestState(4102, "complete"),
@@ -212,6 +226,7 @@ ns:RegisterGuide({
             id = "objective-4120-the-strength-of-corruption",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 47 } },
             text = "Kill 12 Angerclaw Grizzly and 12 Felpaw Ravager in Irontree Woods.",
             complete = QuestState(4120, "complete"),
             route = {
@@ -227,6 +242,7 @@ ns:RegisterGuide({
             id = "accept-8461-deadwood-of-the-north",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 45 } },
             text = "Accept Deadwood of the North from Nafien in Timbermaw Hold.",
             complete = QuestState(8461, "activeOrCompleted"),
             route = {
@@ -238,6 +254,7 @@ ns:RegisterGuide({
             id = "objective-8461-deadwood-of-the-north",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 45 } },
             text = "Kill the required Deadwood Timbermaw in Felpaw Village.",
             dependsOn = { "accept-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "complete"),
@@ -254,6 +271,7 @@ ns:RegisterGuide({
             id = "turnin-8461-deadwood-of-the-north",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 45 } },
             text = "Turn in Deadwood of the North to Nafien in Timbermaw Hold.",
             dependsOn = { "objective-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "completed"),
@@ -266,6 +284,7 @@ ns:RegisterGuide({
             id = "turnin-8461-deadwood-of-the-north-2",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 45 } },
             text = "Turn in Deadwood of the North to Nafien in Timbermaw Hold.",
             dependsOn = { "objective-8461-deadwood-of-the-north" },
             complete = QuestState(8461, "completed"),
@@ -280,6 +299,7 @@ ns:RegisterGuide({
             id = "accept-8465-speak-to-salfa",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 45 } },
             text = "Accept Speak to Salfa from Nafien in Timbermaw Hold.",
             complete = QuestState(8465, "activeOrCompleted"),
             route = {
@@ -291,6 +311,7 @@ ns:RegisterGuide({
             id = "accept-4505-well-of-corruption",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 49 } },
             text = "Accept Well of Corruption from Winna Hazzard in Bloodvenom Post.",
             complete = QuestState(4505, "activeOrCompleted"),
             route = {
@@ -304,6 +325,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 4102, state = "completed" } },
                 },
             },
@@ -320,6 +342,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 5155, state = "completed" } },
                 },
             },
@@ -334,6 +357,7 @@ ns:RegisterGuide({
             id = "accept-8462-speak-to-nafien-2",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 45 } },
             text = "Accept Speak to Nafien from Grazle in Emerald Sanctuary.",
             complete = QuestState(8462, "activeOrCompleted"),
             route = {
@@ -345,6 +369,7 @@ ns:RegisterGuide({
             id = "objective-4505-well-of-corruption",
             kind = "objective",
             priority = 370,
+            conditions = { level = { min = 49 } },
             text = "Use Hardened Flasket next to the Jadefire Satyrs' moonwell in Ruins of Constellas.",
             dependsOn = { "accept-4505-well-of-corruption" },
             complete = QuestState(4505, "complete"),
@@ -361,6 +386,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 5155, state = "completed" } },
                 },
             },
@@ -382,6 +408,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 4102, state = "completed" } },
                 },
             },
@@ -394,6 +421,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 4102, state = "completed" } },
                 },
             },
@@ -409,6 +437,7 @@ ns:RegisterGuide({
             id = "turnin-4505-well-of-corruption",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 49 } },
             text = "Turn in Well of Corruption to Winna Hazzard in Bloodvenom Post.",
             dependsOn = { "objective-4505-well-of-corruption" },
             complete = QuestState(4505, "completed"),
@@ -421,6 +450,7 @@ ns:RegisterGuide({
             id = "accept-4506-corrupted-sabers",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 49 } },
             text = "Accept Corrupted Sabers from Winna Hazzard in Bloodvenom Post.",
             complete = QuestState(4506, "activeOrCompleted"),
             route = {
@@ -432,6 +462,7 @@ ns:RegisterGuide({
             id = "turnin-6162-a-husband-s-last-battle",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 46 } },
             text = "Turn in A Husband's Last Battle to Dreka'Sur in Bloodvenom Post.",
             dependsOn = { "accept-6162-a-husband-s-last-battle" },
             complete = QuestState(6162, "completed"),
@@ -446,6 +477,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 5155, state = "completed" } },
                 },
             },
@@ -461,6 +493,7 @@ ns:RegisterGuide({
             id = "objective-4506-corrupted-sabers",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 49 } },
             text = "Bring Corrupted Saber back to Winna Hazzard in Bloodvenom Post.",
             dependsOn = { "accept-4506-corrupted-sabers" },
             complete = QuestState(4506, "complete"),
@@ -481,6 +514,7 @@ ns:RegisterGuide({
             id = "turnin-4506-corrupted-sabers",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 49 } },
             text = "Turn in Corrupted Sabers to Winna Hazzard in Bloodvenom Post.",
             dependsOn = { "objective-4506-corrupted-sabers" },
             complete = QuestState(4506, "completed"),
@@ -493,6 +527,7 @@ ns:RegisterGuide({
             id = "turnin-5084-falling-to-corruption",
             kind = "turnin",
             priority = 520,
+            conditions = { level = { min = 52 } },
             text = "Turn in Falling to Corruption in Felpaw Village.",
             complete = QuestState(5084, "completed"),
             route = {
@@ -504,6 +539,7 @@ ns:RegisterGuide({
             id = "accept-5085-mystery-goo",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 52 } },
             text = "Accept Mystery Goo in Felpaw Village.",
             complete = QuestState(5085, "activeOrCompleted"),
             route = {
@@ -515,6 +551,7 @@ ns:RegisterGuide({
             id = "turnin-8464-winterfall-activity",
             kind = "turnin",
             priority = 550,
+            conditions = { level = { min = 45 } },
             text = "Turn in Winterfall Activity to Salfa in Frostfire Hot Springs.",
             complete = QuestState(8464, "completed"),
             route = {
@@ -526,6 +563,7 @@ ns:RegisterGuide({
             id = "turnin-5085-mystery-goo",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 52 } },
             text = "Turn in Mystery Goo to Donova Snowden in Frostfire Hot Springs.",
             dependsOn = { "accept-5085-mystery-goo" },
             complete = QuestState(5085, "completed"),
@@ -538,6 +576,7 @@ ns:RegisterGuide({
             id = "accept-5086-toxic-horrors",
             kind = "accept",
             priority = 570,
+            conditions = { level = { min = 52 } },
             text = "Accept Toxic Horrors from Donova Snowden in Frostfire Hot Springs.",
             complete = QuestState(5086, "activeOrCompleted"),
             route = {

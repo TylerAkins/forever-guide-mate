@@ -43,6 +43,7 @@ ns:RegisterGuide({
             id = "accept-1054-culling-the-threat",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 18 } },
             text = "Accept Culling the Threat from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1054, "activeOrCompleted"),
             route = {
@@ -54,6 +55,7 @@ ns:RegisterGuide({
             id = "objective-1054-culling-the-threat",
             kind = "objective",
             priority = 40,
+            conditions = { level = { min = 18 } },
             text = "Find and kill Dal Bloodclaw and collect Bloodclaw's Collection. He patrols around this area. If you can pull him solo it will be an easy quest.",
             dependsOn = { "accept-1054-culling-the-threat" },
             complete = QuestState(1054, "complete"),
@@ -68,6 +70,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 973, state = "completed" } },
                 },
             },
@@ -82,6 +85,7 @@ ns:RegisterGuide({
             id = "turnin-1054-culling-the-threat",
             kind = "turnin",
             priority = 70,
+            conditions = { level = { min = 18 } },
             text = "Turn in Culling the Threat to Raene Wolfrunner in Astranaar.",
             dependsOn = { "objective-1054-culling-the-threat" },
             complete = QuestState(1054, "completed"),
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-1016-elemental-bracers",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 20 } },
             text = "Accept Elemental Bracers from Sentinel Velene Starstrike in Silverwind Refuge.",
             complete = QuestState(1016, "activeOrCompleted"),
             route = {
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "objective-1016-befouled-water-elemental",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 20 } },
             text = "Kill Befouled Water Elemental until you collect 5 Intact Elemental Bracer in Mystral Lake.",
             dependsOn = { "accept-1016-elemental-bracers" },
             complete = QuestState(1016, "complete"),
@@ -117,6 +123,7 @@ ns:RegisterGuide({
             id = "objective-1016-elemental-bracers",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 20 } },
             text = "Use the Divining Scroll after collect 5 Intact Elemental Bracer from Befouled Water Elemental in Mystral Lake.",
             dependsOn = { "accept-1016-elemental-bracers" },
             complete = QuestState(1016, "complete"),
@@ -129,6 +136,7 @@ ns:RegisterGuide({
             id = "turnin-1016-elemental-bracers",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 20 } },
             text = "Turn in Elemental Bracers to Sentinel Velene Starstrike in Silverwind Refuge.",
             dependsOn = { "objective-1016-befouled-water-elemental", "objective-1016-elemental-bracers" },
             complete = QuestState(1016, "completed"),

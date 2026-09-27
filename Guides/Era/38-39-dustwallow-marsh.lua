@@ -46,6 +46,7 @@ ns:RegisterGuide({
             id = "accept-1260-morgan-stern",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 33 } },
             text = "Accept Morgan Stern from Angus Stern in Mage Quarter.",
             complete = QuestState(1260, "activeOrCompleted"),
             route = {
@@ -59,6 +60,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1112, state = "completed" } },
                 },
             },
@@ -75,6 +77,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1112, state = "completed" } },
                 },
             },
@@ -92,6 +95,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1112, state = "completed" } },
                 },
             },
@@ -108,6 +112,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1183, state = "completed" } },
                 },
             },
@@ -124,6 +129,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1183, state = "completed" } },
                 },
             },
@@ -141,6 +147,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1183, state = "completed" } },
                 },
             },
@@ -165,6 +172,7 @@ ns:RegisterGuide({
             id = "accept-1282-they-call-him-smiling-jim",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 30 } },
             text = "Accept They Call Him Smiling Jim from Guard Byron in Theramore Isle.",
             complete = QuestState(1282, "activeOrCompleted"),
             route = {
@@ -176,6 +184,7 @@ ns:RegisterGuide({
             id = "turnin-1260-morgan-stern",
             kind = "turnin",
             priority = 130,
+            conditions = { level = { min = 33 } },
             text = "Turn in Morgan Stern to Morgan Stern in Theramore Isle.",
             dependsOn = { "accept-1260-morgan-stern" },
             complete = QuestState(1260, "completed"),
@@ -190,6 +199,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 1260, state = "completed" } },
                 },
             },
@@ -204,6 +214,7 @@ ns:RegisterGuide({
             id = "objective-1218-soothing-spices",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 30 } },
             text = "Buy Soothing Spices from Helenia Olden in Theramore Isle.",
             dependsOn = { "accept-1218-soothing-spices" },
             complete = QuestState(1218, "complete"),
@@ -216,6 +227,7 @@ ns:RegisterGuide({
             id = "turnin-1282-they-call-him-smiling-jim",
             kind = "turnin",
             priority = 170,
+            conditions = { level = { min = 30 } },
             text = "Turn in They Call Him Smiling Jim to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1282-they-call-him-smiling-jim" },
             complete = QuestState(1282, "completed"),
@@ -230,6 +242,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 1260, state = "completed" } },
                 },
             },
@@ -255,6 +268,7 @@ ns:RegisterGuide({
             id = "accept-1218-soothing-spices",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 30 } },
             text = "Accept Soothing Spices from \"Swamp Eye\" Jarl in Swamplight Manor.",
             complete = QuestState(1218, "activeOrCompleted"),
             route = {
@@ -266,6 +280,7 @@ ns:RegisterGuide({
             id = "objective-1218-soothing-spices-2",
             kind = "objective",
             priority = 210,
+            conditions = { level = { min = 30 } },
             text = "Buy 3 Soothing Spices from Helenia Olden in Theramore Isle.",
             dependsOn = { "accept-1218-soothing-spices" },
             complete = QuestState(1218, "complete"),
@@ -278,6 +293,7 @@ ns:RegisterGuide({
             id = "turnin-1218-soothing-spices",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 30 } },
             text = "Turn in Soothing Spices to \"Swamp Eye\" Jarl in Swamplight Manor.",
             dependsOn = { "objective-1218-soothing-spices", "objective-1218-soothing-spices-2" },
             complete = QuestState(1218, "completed"),
@@ -290,6 +306,7 @@ ns:RegisterGuide({
             id = "accept-1206-jarl-needs-eyes",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 30 } },
             text = "Accept Jarl Needs Eyes from \"Swamp Eye\" Jarl in Swamplight Manor.",
             complete = QuestState(1206, "activeOrCompleted"),
             route = {
@@ -301,6 +318,7 @@ ns:RegisterGuide({
             id = "accept-1219-the-orc-report",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 30 } },
             text = "Accept The Orc Report in Swamplight Manor.",
             complete = QuestState(1219, "activeOrCompleted"),
             route = {
@@ -312,6 +330,7 @@ ns:RegisterGuide({
             id = "objective-1206-jarl-needs-eyes",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 30 } },
             text = "Kill Darkmist spiders and collect 40 Unpopped Darkmist Eye in Darkmist Cavern.",
             dependsOn = { "accept-1206-jarl-needs-eyes" },
             complete = QuestState(1206, "complete"),
@@ -324,6 +343,7 @@ ns:RegisterGuide({
             id = "accept-1177-hungry",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 32 } },
             text = "Accept Hungry! from Mudcrush Durtfeet in Dustwallow Marsh.",
             complete = QuestState(1177, "activeOrCompleted"),
             route = {
@@ -337,6 +357,7 @@ ns:RegisterGuide({
             id = "accept-1253-the-black-shield",
             kind = "accept",
             priority = 290,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield in Shady Rest Inn.",
             complete = QuestState(1253, "activeOrCompleted"),
             route = {
@@ -348,6 +369,7 @@ ns:RegisterGuide({
             id = "accept-1284-suspicious-hoofprints",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 30 } },
             text = "Accept Suspicious Hoofprints in Shady Rest Inn.",
             complete = QuestState(1284, "activeOrCompleted"),
             route = {
@@ -359,6 +381,7 @@ ns:RegisterGuide({
             id = "accept-1252-lieutenant-paval-reethe",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 30 } },
             text = "Accept Lieutenant Paval Reethe in Shady Rest Inn.",
             complete = QuestState(1252, "activeOrCompleted"),
             route = {
@@ -372,6 +395,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1183, state = "completed" } },
                 },
             },
@@ -387,6 +411,7 @@ ns:RegisterGuide({
             id = "turnin-1219-the-orc-report",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Orc Report to Theramore Lieutenant in Theramore Isle.",
             dependsOn = { "accept-1219-the-orc-report" },
             complete = QuestState(1219, "completed"),
@@ -399,6 +424,7 @@ ns:RegisterGuide({
             id = "accept-1220-captain-vimes",
             kind = "accept",
             priority = 360,
+            conditions = { level = { min = 30 } },
             text = "Accept Captain Vimes from Theramore Lieutenant in Theramore Isle.",
             complete = QuestState(1220, "activeOrCompleted"),
             route = {
@@ -410,6 +436,7 @@ ns:RegisterGuide({
             id = "turnin-1220-captain-vimes",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Turn in Captain Vimes to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1220-captain-vimes" },
             complete = QuestState(1220, "completed"),
@@ -422,6 +449,7 @@ ns:RegisterGuide({
             id = "turnin-1252-lieutenant-paval-reethe",
             kind = "turnin",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Turn in Lieutenant Paval Reethe to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1252-lieutenant-paval-reethe" },
             complete = QuestState(1252, "completed"),
@@ -434,6 +462,7 @@ ns:RegisterGuide({
             id = "accept-1259-lieutenant-paval-reethe",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 30 } },
             text = "Accept Lieutenant Paval Reethe from Captain Garran Vimes in Foothold Citadel.",
             complete = QuestState(1259, "activeOrCompleted"),
             route = {
@@ -445,6 +474,7 @@ ns:RegisterGuide({
             id = "turnin-1253-the-black-shield",
             kind = "turnin",
             priority = 410,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1253-the-black-shield" },
             complete = QuestState(1253, "completed"),
@@ -457,6 +487,7 @@ ns:RegisterGuide({
             id = "accept-1319-the-black-shield",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Captain Garran Vimes in Foothold Citadel.",
             complete = QuestState(1319, "activeOrCompleted"),
             route = {
@@ -468,6 +499,7 @@ ns:RegisterGuide({
             id = "turnin-1284-suspicious-hoofprints",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 30 } },
             text = "Turn in Suspicious Hoofprints to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1284-suspicious-hoofprints" },
             complete = QuestState(1284, "completed"),
@@ -480,6 +512,7 @@ ns:RegisterGuide({
             id = "turnin-1259-lieutenant-paval-reethe",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 30 } },
             text = "Turn in Lieutenant Paval Reethe to Adjutant Tesoran in Foothold Citadel.",
             dependsOn = { "accept-1259-lieutenant-paval-reethe" },
             complete = QuestState(1259, "completed"),
@@ -492,6 +525,7 @@ ns:RegisterGuide({
             id = "accept-1285-daelin-s-men",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 30 } },
             text = "Accept Daelin's Men from Adjutant Tesoran in Foothold Citadel.",
             complete = QuestState(1285, "activeOrCompleted"),
             route = {
@@ -503,6 +537,7 @@ ns:RegisterGuide({
             id = "turnin-1319-the-black-shield",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Caz Twosprocket in Theramore Isle.",
             dependsOn = { "accept-1319-the-black-shield" },
             complete = QuestState(1319, "completed"),
@@ -515,6 +550,7 @@ ns:RegisterGuide({
             id = "accept-1320-the-black-shield",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Caz Twosprocket in Theramore Isle.",
             complete = QuestState(1320, "activeOrCompleted"),
             route = {
@@ -526,6 +562,7 @@ ns:RegisterGuide({
             id = "turnin-1320-the-black-shield",
             kind = "turnin",
             priority = 490,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1320-the-black-shield" },
             complete = QuestState(1320, "completed"),
@@ -538,6 +575,7 @@ ns:RegisterGuide({
             id = "turnin-1285-daelin-s-men",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 30 } },
             text = "Turn in Daelin's Men to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1285-daelin-s-men" },
             complete = QuestState(1285, "completed"),
@@ -550,6 +588,7 @@ ns:RegisterGuide({
             id = "accept-1286-the-deserters",
             kind = "accept",
             priority = 510,
+            conditions = { level = { min = 30 } },
             text = "Accept The Deserters from Captain Garran Vimes in Foothold Citadel.",
             complete = QuestState(1286, "activeOrCompleted"),
             route = {
@@ -561,6 +600,7 @@ ns:RegisterGuide({
             id = "turnin-1206-jarl-needs-eyes",
             kind = "turnin",
             priority = 530,
+            conditions = { level = { min = 30 } },
             text = "Turn in Jarl Needs Eyes to \"Swamp Eye\" Jarl in Swamplight Manor.",
             dependsOn = { "objective-1206-jarl-needs-eyes" },
             complete = QuestState(1206, "completed"),
@@ -575,6 +615,7 @@ ns:RegisterGuide({
             priority = 540,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 1260, state = "completed" } },
                 },
             },
@@ -594,6 +635,7 @@ ns:RegisterGuide({
             id = "objective-1177-hungry",
             kind = "objective",
             priority = 550,
+            conditions = { level = { min = 32 } },
             text = "Kill Murlocs and collect 8 Mirefin Head in Dreadmurk Shore.",
             dependsOn = { "accept-1177-hungry" },
             complete = QuestState(1177, "complete"),
@@ -606,6 +648,7 @@ ns:RegisterGuide({
             id = "accept-1222-stinky-s-escape",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 30 } },
             text = "Accept Stinky's Escape from \"Stinky\" Ignatz in Dustwallow Marsh.",
             complete = QuestState(1222, "activeOrCompleted"),
             route = {
@@ -617,6 +660,7 @@ ns:RegisterGuide({
             id = "objective-1222-stinky-s-escape",
             kind = "objective",
             priority = 570,
+            conditions = { level = { min = 30 } },
             text = "Escort \"Stinky\" Ignatz until quest is complete.",
             dependsOn = { "accept-1222-stinky-s-escape" },
             complete = QuestState(1222, "complete"),
@@ -637,6 +681,7 @@ ns:RegisterGuide({
             id = "turnin-1177-hungry",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 32 } },
             text = "Turn in Hungry! to Mudcrush Durtfeet in Dustwallow Marsh.",
             dependsOn = { "objective-1177-hungry" },
             complete = QuestState(1177, "completed"),
@@ -651,6 +696,7 @@ ns:RegisterGuide({
             id = "turnin-1286-the-deserters",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Deserters to Balos Jacken in Lost Point.",
             dependsOn = { "accept-1286-the-deserters" },
             complete = QuestState(1286, "completed"),
@@ -663,6 +709,7 @@ ns:RegisterGuide({
             id = "accept-1287-the-deserters",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 30 } },
             text = "Accept The Deserters from Balos Jacken in Lost Point.",
             complete = QuestState(1287, "activeOrCompleted"),
             route = {
@@ -674,6 +721,7 @@ ns:RegisterGuide({
             id = "turnin-1222-stinky-s-escape",
             kind = "turnin",
             priority = 630,
+            conditions = { level = { min = 30 } },
             text = "Turn in Stinky's Escape to Morgan Stern in Theramore Isle.",
             dependsOn = { "objective-1222-stinky-s-escape" },
             complete = QuestState(1222, "completed"),
@@ -686,6 +734,7 @@ ns:RegisterGuide({
             id = "turnin-1287-the-deserters",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Deserters to Captain Garran Vimes in Foothold Citadel.",
             dependsOn = { "accept-1287-the-deserters" },
             complete = QuestState(1287, "completed"),
@@ -700,6 +749,7 @@ ns:RegisterGuide({
             priority = 650,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 1204, state = "completed" } },
                 },
             },

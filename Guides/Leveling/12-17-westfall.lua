@@ -54,6 +54,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                     { ["not"] = { quest = { id = 1642, state = "activeOrCompleted" } } },
@@ -72,6 +73,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -90,6 +92,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -107,6 +110,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -125,6 +129,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -142,6 +147,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -160,6 +166,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -177,6 +184,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -191,6 +199,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -209,6 +218,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -226,6 +236,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -244,6 +255,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -261,6 +273,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -279,6 +292,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -296,6 +310,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -314,6 +329,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -332,6 +348,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -349,6 +366,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -367,6 +385,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -385,6 +404,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -402,6 +422,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -420,6 +441,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                     { ["not"] = { quest = { id = 1646, state = "activeOrCompleted" } } },
@@ -438,6 +460,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -456,6 +479,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -473,6 +497,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -491,6 +516,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -508,6 +534,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -526,6 +553,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -543,6 +571,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -561,6 +590,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -579,6 +609,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -596,6 +627,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -614,6 +646,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -631,6 +664,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -649,6 +683,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -666,6 +701,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -680,6 +716,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -698,6 +735,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -715,6 +753,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -733,6 +772,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -751,6 +791,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -768,6 +809,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -784,6 +826,7 @@ ns:RegisterGuide({
             id = "accept-64-the-forgotten-heirloom",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 9 } },
             text = "Accept The Forgotten Heirloom from Farmer Furlbrow in The Jansen Stead.",
             complete = QuestState(64, "activeOrCompleted"),
             route = {
@@ -795,6 +838,7 @@ ns:RegisterGuide({
             id = "accept-36-westfall-stew",
             kind = "accept",
             priority = 510,
+            conditions = { level = { min = 9 } },
             text = "Accept Westfall Stew from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(36, "activeOrCompleted"),
             route = {
@@ -806,6 +850,7 @@ ns:RegisterGuide({
             id = "accept-151-poor-old-blanchy",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 9 } },
             text = "Accept Poor Old Blanchy from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(151, "activeOrCompleted"),
             route = {
@@ -817,6 +862,7 @@ ns:RegisterGuide({
             id = "turnin-36-westfall-stew",
             kind = "turnin",
             priority = 530,
+            conditions = { level = { min = 9 } },
             text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
             dependsOn = { "accept-36-westfall-stew" },
             complete = QuestState(36, "completed"),
@@ -829,6 +875,7 @@ ns:RegisterGuide({
             id = "accept-38-westfall-stew",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 9 } },
             text = "Accept Westfall Stew from Salma Saldean in Saldean's Farm.",
             complete = QuestState(38, "activeOrCompleted"),
             route = {
@@ -840,6 +887,7 @@ ns:RegisterGuide({
             id = "accept-22-goretusk-liver-pie",
             kind = "accept",
             priority = 550,
+            conditions = { level = { min = 9 } },
             text = "Accept Goretusk Liver Pie from Salma Saldean in Saldean's Farm.",
             complete = QuestState(22, "activeOrCompleted"),
             route = {
@@ -851,6 +899,7 @@ ns:RegisterGuide({
             id = "accept-9-the-killing-fields",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 8 } },
             text = "Accept The Killing Fields from Farmer Saldean in Saldean's Farm.",
             complete = QuestState(9, "activeOrCompleted"),
             route = {
@@ -862,7 +911,7 @@ ns:RegisterGuide({
             id = "accept-92909-harvesting-the-harvesters",
             kind = "accept",
             priority = 561,
-            conditions = { level = { min = 15 } },
+            conditions = { level = { min = 8 } },
             text = "Accept Harvesting the Harvesters from Ozwin Ironsprocket at Saldean's Farm.",
             complete = QuestState(92909, "activeOrCompleted"),
             route = {
@@ -874,6 +923,7 @@ ns:RegisterGuide({
             id = "objective-151-poor-old-blanchy",
             kind = "objective",
             priority = 570,
+            conditions = { level = { min = 9 } },
             text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
@@ -882,6 +932,7 @@ ns:RegisterGuide({
             id = "accept-12-the-people-s-militia",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 9 } },
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(12, "activeOrCompleted"),
             route = {
@@ -893,7 +944,7 @@ ns:RegisterGuide({
             id = "accept-92742-testing-the-wells",
             kind = "accept",
             priority = 591,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             text = "Accept Testing the Wells from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92742, "activeOrCompleted"),
             route = {
@@ -905,7 +956,7 @@ ns:RegisterGuide({
             id = "accept-92744-murloc-gills",
             kind = "accept",
             priority = 592,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             text = "Accept Murloc Gills from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92744, "activeOrCompleted"),
             route = {
@@ -917,7 +968,7 @@ ns:RegisterGuide({
             id = "accept-92745-the-state-of-the-mines",
             kind = "accept",
             priority = 593,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "Accept The State of the Mines from Alba Fairmoon in Sentinel Hill.",
             complete = QuestState(92745, "activeOrCompleted"),
             route = {
@@ -929,6 +980,7 @@ ns:RegisterGuide({
             id = "accept-102-patrolling-westfall",
             kind = "accept",
             priority = 600,
+            conditions = { level = { min = 8 } },
             text = "Accept Patrolling Westfall from Captain Danuvin in Sentinel Hill.",
             complete = QuestState(102, "activeOrCompleted"),
             route = {
@@ -942,6 +994,7 @@ ns:RegisterGuide({
             priority = 610,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -956,6 +1009,7 @@ ns:RegisterGuide({
             id = "accept-153-red-leather-bandanas",
             kind = "accept",
             priority = 620,
+            conditions = { level = { min = 10 } },
             text = "Accept Red Leather Bandanas from Scout Galiaan in Sentinel Hill.",
             complete = QuestState(153, "activeOrCompleted"),
             route = {
@@ -969,6 +1023,7 @@ ns:RegisterGuide({
             priority = 630,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -986,6 +1041,7 @@ ns:RegisterGuide({
             priority = 640,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1002,6 +1058,7 @@ ns:RegisterGuide({
             priority = 660,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { race = 1 },
                 },
             },
@@ -1018,6 +1075,7 @@ ns:RegisterGuide({
             priority = 670,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1035,6 +1093,7 @@ ns:RegisterGuide({
             priority = 680,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1051,6 +1110,7 @@ ns:RegisterGuide({
             priority = 690,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1068,6 +1128,7 @@ ns:RegisterGuide({
             priority = 700,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1084,7 +1145,7 @@ ns:RegisterGuide({
             priority = 705,
             conditions = {
                 all = {
-                    { level = { min = 13 } },
+                    { level = { min = 7 } },
                     { race = 95 },
                 },
             },
@@ -1101,7 +1162,7 @@ ns:RegisterGuide({
             priority = 715,
             conditions = {
                 all = {
-                    { level = { min = 13 } },
+                    { level = { min = 7 } },
                     { race = 95 },
                 },
             },
@@ -1119,6 +1180,7 @@ ns:RegisterGuide({
             priority = 720,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -1134,6 +1196,7 @@ ns:RegisterGuide({
             id = "objective-12-the-people-s-militia",
             kind = "objective",
             priority = 730,
+            conditions = { level = { min = 9 } },
             text = "Kill 15 Defias Smuggler and 15 Defias Trapper in Jangolode Mine.",
             dependsOn = { "accept-12-the-people-s-militia" },
             complete = QuestState(12, "complete"),
@@ -1150,7 +1213,7 @@ ns:RegisterGuide({
             id = "objective-92745-kobold-digger",
             kind = "objective",
             priority = 735,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "The State of the Mines: slay 4 Kobold Diggers in the Jangolode Mine.",
             dependsOn = { "accept-92745-the-state-of-the-mines" },
             complete = QuestObjective(92745, 1),
@@ -1163,6 +1226,7 @@ ns:RegisterGuide({
             id = "objective-153-red-leather-bandanas",
             kind = "objective",
             priority = 740,
+            conditions = { level = { min = 10 } },
             text = "Collect Red Leather Bandana from Defias enemies.",
             dependsOn = { "accept-153-red-leather-bandanas" },
             complete = QuestState(153, "complete"),
@@ -1179,6 +1243,7 @@ ns:RegisterGuide({
             id = "turnin-153-red-leather-bandanas",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 10 } },
             text = "Turn in Red Leather Bandanas to Scout Galiaan in Sentinel Hill.",
             dependsOn = { "objective-153-red-leather-bandanas" },
             complete = QuestState(153, "completed"),
@@ -1191,6 +1256,7 @@ ns:RegisterGuide({
             id = "turnin-12-the-people-s-militia",
             kind = "turnin",
             priority = 770,
+            conditions = { level = { min = 9 } },
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-12-the-people-s-militia" },
             complete = QuestState(12, "completed"),
@@ -1203,6 +1269,7 @@ ns:RegisterGuide({
             id = "accept-13-the-people-s-militia",
             kind = "accept",
             priority = 780,
+            conditions = { level = { min = 9 } },
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(13, "activeOrCompleted"),
             route = {
@@ -1214,6 +1281,7 @@ ns:RegisterGuide({
             id = "objective-151-poor-old-blanchy-2",
             kind = "objective",
             priority = 790,
+            conditions = { level = { min = 9 } },
             text = "Collect 8 Handful of Oats from Sack of Oats on the ground in Saldean's Farm and The Molsen Farm (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
@@ -1226,7 +1294,7 @@ ns:RegisterGuide({
             id = "objective-92742-testing-the-wells",
             kind = "objective",
             priority = 795,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             useClientPin = true,
             text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-92742-testing-the-wells" },
@@ -1242,6 +1310,7 @@ ns:RegisterGuide({
             id = "turnin-151-poor-old-blanchy",
             kind = "turnin",
             priority = 800,
+            conditions = { level = { min = 9 } },
             text = "Turn in Poor Old Blanchy to Verna Furlbrow in The Jansen Stead.",
             dependsOn = { "objective-151-poor-old-blanchy", "objective-151-poor-old-blanchy-2" },
             complete = QuestState(151, "completed"),
@@ -1254,6 +1323,7 @@ ns:RegisterGuide({
             id = "objective-38-4-harvest-golem",
             kind = "objective",
             priority = 810,
+            conditions = { level = { min = 9 } },
             text = "Kill Harvest Golem and collect 3 Ripe Okra in Saldean's Farm Also collect 5 Hops for a later quest.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestObjective(38, 4),
@@ -1266,6 +1336,7 @@ ns:RegisterGuide({
             id = "objective-116-harvest-golem",
             kind = "objective",
             priority = 820,
+            conditions = { level = { min = 12 } },
             text = "Kill Harvest Golem and collect 5 Ripe Okra for a later quest in Saldean's Farm.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestState(116, "complete"),
@@ -1278,6 +1349,7 @@ ns:RegisterGuide({
             id = "objective-102-1-patrolling-westfall",
             kind = "objective",
             priority = 830,
+            conditions = { level = { min = 8 } },
             text = "Kill Gnolls near The Jansen Stead and collect 8 Gnoll Paw.",
             dependsOn = { "accept-102-patrolling-westfall" },
             complete = QuestObjective(102, 1),
@@ -1290,6 +1362,7 @@ ns:RegisterGuide({
             id = "objective-38-2-3-item-730",
             kind = "objective",
             priority = 840,
+            conditions = { level = { min = 9 } },
             text = "Kill Murlocs in Longshore and collect 3 Murloc Eye.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestObjective(38, 2),
@@ -1302,7 +1375,7 @@ ns:RegisterGuide({
             id = "objective-92744-murloc-gills",
             kind = "objective",
             priority = 845,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             text = "Murloc Gills: collect 7 Longshore Murloc Gills from murlocs along the shore.",
             dependsOn = { "accept-92744-murloc-gills" },
             complete = QuestState(92744, "complete"),
@@ -1315,6 +1388,7 @@ ns:RegisterGuide({
             id = "objective-136-captain-sanders-treasure-map",
             kind = "objective",
             priority = 850,
+            conditions = { level = { min = 10 } },
             text = "Kill Murlocs until you find Captain Sanders' Treasure Map in Longshore.",
             complete = QuestState(136, "complete"),
             route = {
@@ -1326,7 +1400,7 @@ ns:RegisterGuide({
             id = "turnin-92742-testing-the-wells",
             kind = "turnin",
             priority = 865,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Testing the Wells to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92742-testing-the-wells" },
             complete = QuestState(92742, "completed"),
@@ -1339,7 +1413,7 @@ ns:RegisterGuide({
             id = "turnin-92744-murloc-gills",
             kind = "turnin",
             priority = 866,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Murloc Gills to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92744-murloc-gills" },
             complete = QuestState(92744, "completed"),
@@ -1352,6 +1426,7 @@ ns:RegisterGuide({
             id = "turnin-102-patrolling-westfall",
             kind = "turnin",
             priority = 870,
+            conditions = { level = { min = 8 } },
             text = "Turn in Patrolling Westfall to Captain Danuvin in Sentinel Hill.",
             dependsOn = { "objective-102-1-patrolling-westfall" },
             complete = QuestState(102, "completed"),
@@ -1364,6 +1439,7 @@ ns:RegisterGuide({
             id = "objective-38-westfall-stew",
             kind = "objective",
             priority = 880,
+            conditions = { level = { min = 9 } },
             text = "Kill Young Goretusk and Young Fleshripper and collect 3 Goretusk Snout and 3 Stringy Vulture Meat scatterred in Westfall.",
             dependsOn = { "accept-38-westfall-stew" },
             complete = QuestState(38, "complete"),
@@ -1382,6 +1458,7 @@ ns:RegisterGuide({
             id = "objective-22-goretusk-liver-pie",
             kind = "objective",
             priority = 890,
+            conditions = { level = { min = 9 } },
             text = "Kill Young Goretusk and collect 8 Goretusk Liver scatterred in Westfall.",
             dependsOn = { "accept-22-goretusk-liver-pie" },
             complete = QuestState(22, "complete"),
@@ -1400,6 +1477,7 @@ ns:RegisterGuide({
             id = "turnin-38-westfall-stew",
             kind = "turnin",
             priority = 910,
+            conditions = { level = { min = 9 } },
             text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
             dependsOn = { "objective-38-4-harvest-golem", "objective-38-2-3-item-730", "objective-38-westfall-stew" },
             complete = QuestState(38, "completed"),
@@ -1412,6 +1490,7 @@ ns:RegisterGuide({
             id = "turnin-22-goretusk-liver-pie",
             kind = "turnin",
             priority = 920,
+            conditions = { level = { min = 9 } },
             text = "Turn in Goretusk Liver Pie to Salma Saldean in Saldean's Farm.",
             dependsOn = { "objective-22-goretusk-liver-pie" },
             complete = QuestState(22, "completed"),
@@ -1424,6 +1503,7 @@ ns:RegisterGuide({
             id = "objective-64-the-forgotten-heirloom",
             kind = "objective",
             priority = 930,
+            conditions = { level = { min = 9 } },
             text = "Collect Furlbrow's Pocket Watch from Furlbrow's Wardrobe. Benny Blanco guards the house. You do not need to kill him to loot the watch.",
             dependsOn = { "accept-64-the-forgotten-heirloom" },
             complete = QuestState(64, "complete"),
@@ -1436,6 +1516,7 @@ ns:RegisterGuide({
             id = "turnin-64-the-forgotten-heirloom",
             kind = "turnin",
             priority = 940,
+            conditions = { level = { min = 9 } },
             text = "Turn in The Forgotten Heirloom to Farmer Furlbrow in The Jansen Stead.",
             dependsOn = { "objective-64-the-forgotten-heirloom" },
             complete = QuestState(64, "completed"),
@@ -1448,6 +1529,7 @@ ns:RegisterGuide({
             id = "objective-9-the-killing-fields",
             kind = "objective",
             priority = 950,
+            conditions = { level = { min = 8 } },
             text = "Kill 20 Harvest Watcher in the 3 farms and also collect 5 Flask of Oil for a later quest.",
             dependsOn = { "accept-9-the-killing-fields" },
             complete = QuestState(9, "complete"),
@@ -1464,7 +1546,7 @@ ns:RegisterGuide({
             id = "objective-92909-harvesting-the-harvesters",
             kind = "objective",
             priority = 955,
-            conditions = { level = { min = 15 } },
+            conditions = { level = { min = 8 } },
             text = "Harvesting the Harvesters: collect 14 Golem Isosprings and 5 Harvester Gyrostabilizers from the harvest golems.",
             dependsOn = { "accept-92909-harvesting-the-harvesters" },
             complete = QuestState(92909, "complete"),
@@ -1477,6 +1559,7 @@ ns:RegisterGuide({
             id = "turnin-9-the-killing-fields",
             kind = "turnin",
             priority = 960,
+            conditions = { level = { min = 8 } },
             text = "Turn in The Killing Fields to Farmer Saldean in Saldean's Farm.",
             dependsOn = { "objective-9-the-killing-fields" },
             complete = QuestState(9, "completed"),
@@ -1489,7 +1572,7 @@ ns:RegisterGuide({
             id = "turnin-92909-harvesting-the-harvesters",
             kind = "turnin",
             priority = 965,
-            conditions = { level = { min = 15 } },
+            conditions = { level = { min = 8 } },
             text = "Turn in Harvesting the Harvesters to Ozwin Ironsprocket at Saldean's Farm.",
             dependsOn = { "objective-92909-harvesting-the-harvesters" },
             complete = QuestState(92909, "completed"),
@@ -1504,7 +1587,7 @@ ns:RegisterGuide({
             priority = 966,
             conditions = {
                 all = {
-                    { level = { min = 15 } },
+                    { level = { min = 8 } },
                     { quest = { id = 92910, state = "activeOrCompleted" } },
                 },
             },
@@ -1519,7 +1602,7 @@ ns:RegisterGuide({
             id = "objective-92745-riverpaw-miner",
             kind = "objective",
             priority = 969,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "The State of the Mines: slay 6 Riverpaw Miners in the Gold Coast Quarry.",
             dependsOn = { "accept-92745-the-state-of-the-mines" },
             complete = QuestObjective(92745, 2),
@@ -1532,6 +1615,7 @@ ns:RegisterGuide({
             id = "objective-13-the-people-s-militia",
             kind = "objective",
             priority = 980,
+            conditions = { level = { min = 9 } },
             text = "Kill 15 Defias Pillager and Defias Looter in Moonbrook.",
             dependsOn = { "accept-13-the-people-s-militia" },
             complete = QuestState(13, "complete"),
@@ -1652,6 +1736,7 @@ ns:RegisterGuide({
             id = "turnin-13-the-people-s-militia",
             kind = "turnin",
             priority = 1000,
+            conditions = { level = { min = 9 } },
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-13-the-people-s-militia" },
             complete = QuestState(13, "completed"),
@@ -1664,7 +1749,7 @@ ns:RegisterGuide({
             id = "turnin-92745-the-state-of-the-mines",
             kind = "turnin",
             priority = 1005,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in The State of the Mines to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92745-kobold-digger", "objective-92745-riverpaw-miner" },
             complete = QuestState(92745, "completed"),
@@ -1677,7 +1762,7 @@ ns:RegisterGuide({
             id = "accept-92747-moonbrook-espionage",
             kind = "accept",
             priority = 1006,
-            conditions = { level = { min = 16 } },
+            conditions = { level = { min = 9 } },
             text = "Accept Moonbrook Espionage from Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "turnin-92745-the-state-of-the-mines" },
             complete = QuestState(92747, "activeOrCompleted"),
@@ -1690,6 +1775,7 @@ ns:RegisterGuide({
             id = "accept-14-the-people-s-militia",
             kind = "accept",
             priority = 1010,
+            conditions = { level = { min = 9 } },
             text = "Accept The People's Militia from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(14, "activeOrCompleted"),
             route = {
@@ -1701,6 +1787,7 @@ ns:RegisterGuide({
             id = "accept-65-the-defias-brotherhood",
             kind = "accept",
             priority = 1020,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(65, "activeOrCompleted"),
             route = {
@@ -1712,6 +1799,7 @@ ns:RegisterGuide({
             id = "accept-244-encroaching-gnolls",
             kind = "accept",
             priority = 1040,
+            conditions = { level = { min = 11 } },
             text = "Accept Encroaching Gnolls from Watch Captain Parker in Three Corners.",
             complete = QuestState(244, "activeOrCompleted"),
             route = {
@@ -1723,6 +1811,7 @@ ns:RegisterGuide({
             id = "turnin-244-encroaching-gnolls",
             kind = "turnin",
             priority = 1050,
+            conditions = { level = { min = 11 } },
             text = "Turn in Encroaching Gnolls to Deputy Feldon in Redridge Mountains.",
             dependsOn = { "accept-244-encroaching-gnolls" },
             complete = QuestState(244, "completed"),
@@ -1735,6 +1824,7 @@ ns:RegisterGuide({
             id = "accept-246-assessing-the-threat",
             kind = "accept",
             priority = 1060,
+            conditions = { level = { min = 11 } },
             text = "Accept Assessing the Threat from Deputy Feldon in Redridge Mountains.",
             complete = QuestState(246, "activeOrCompleted"),
             route = {
@@ -1746,7 +1836,7 @@ ns:RegisterGuide({
             id = "accept-98407-show-of-force",
             kind = "accept",
             priority = 1065,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Show of Force from Deputy Feldon.",
             complete = QuestState(98407, "activeOrCompleted"),
             route = {
@@ -1758,6 +1848,7 @@ ns:RegisterGuide({
             id = "accept-3741-hilary-s-necklace",
             kind = "accept",
             priority = 1070,
+            conditions = { level = { min = 12 } },
             text = "Accept Hilary's Necklace from Shawn in Lake Everstill.",
             complete = QuestState(3741, "activeOrCompleted"),
             route = {
@@ -1769,6 +1860,7 @@ ns:RegisterGuide({
             id = "objective-3741-hilary-s-necklace",
             kind = "objective",
             priority = 1080,
+            conditions = { level = { min = 12 } },
             text = "Find Nida's Necklace inside a mud pile underwater in the lake, check around each waypoint.",
             dependsOn = { "accept-3741-hilary-s-necklace" },
             complete = QuestState(3741, "complete"),
@@ -1791,6 +1883,7 @@ ns:RegisterGuide({
             id = "turnin-3741-hilary-s-necklace",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 12 } },
             text = "Turn in Hilary's Necklace to Nida in Lake Everstill.",
             dependsOn = { "objective-3741-hilary-s-necklace" },
             complete = QuestState(3741, "completed"),
@@ -1803,6 +1896,7 @@ ns:RegisterGuide({
             id = "accept-118-the-price-of-shoes",
             kind = "accept",
             priority = 1100,
+            conditions = { level = { min = 14 } },
             text = "Accept The Price of Shoes from Verner Osgood in Lakeshire.",
             complete = QuestState(118, "activeOrCompleted"),
             route = {
@@ -1814,6 +1908,7 @@ ns:RegisterGuide({
             id = "accept-120-messenger-to-stormwind",
             kind = "accept",
             priority = 1110,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Stormwind from Magistrate Solomon in Lakeshire.",
             complete = QuestState(120, "activeOrCompleted"),
             route = {
@@ -1825,6 +1920,7 @@ ns:RegisterGuide({
             id = "accept-129-a-free-lunch",
             kind = "accept",
             priority = 1120,
+            conditions = { level = { min = 12 } },
             text = "Accept A Free Lunch from Darcy Parker in Lakeshire.",
             complete = QuestState(129, "activeOrCompleted"),
             route = {
@@ -1836,6 +1932,7 @@ ns:RegisterGuide({
             id = "accept-116-dry-times",
             kind = "accept",
             priority = 1130,
+            conditions = { level = { min = 12 } },
             text = "Accept Dry Times from Barkeep Daniels in Lakeshire.",
             complete = QuestState(116, "activeOrCompleted"),
             route = {
@@ -1847,6 +1944,7 @@ ns:RegisterGuide({
             id = "turnin-65-the-defias-brotherhood",
             kind = "turnin",
             priority = 1140,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Wiley the Black in Lakeshire.",
             dependsOn = { "accept-65-the-defias-brotherhood" },
             complete = QuestState(65, "completed"),
@@ -1859,6 +1957,7 @@ ns:RegisterGuide({
             id = "accept-132-the-defias-brotherhood",
             kind = "accept",
             priority = 1150,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from Wiley the Black in Lakeshire.",
             complete = QuestState(132, "activeOrCompleted"),
             route = {
@@ -1880,6 +1979,7 @@ ns:RegisterGuide({
             id = "turnin-132-the-defias-brotherhood",
             kind = "turnin",
             priority = 1180,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-132-the-defias-brotherhood" },
             complete = QuestState(132, "completed"),
@@ -1892,6 +1992,7 @@ ns:RegisterGuide({
             id = "accept-135-the-defias-brotherhood",
             kind = "accept",
             priority = 1190,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(135, "activeOrCompleted"),
             route = {
@@ -1903,6 +2004,7 @@ ns:RegisterGuide({
             id = "objective-116-2-cask-of-merlot",
             kind = "objective",
             priority = 1210,
+            conditions = { level = { min = 12 } },
             text = "Buy Cask of Merlot from Roberto Pupellyverbos in Valley Of Heroes.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 2),
@@ -1915,6 +2017,7 @@ ns:RegisterGuide({
             id = "turnin-135-the-defias-brotherhood",
             kind = "turnin",
             priority = 1220,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Master Mathias Shaw in SI:7.",
             dependsOn = { "accept-135-the-defias-brotherhood" },
             complete = QuestState(135, "completed"),
@@ -1927,6 +2030,7 @@ ns:RegisterGuide({
             id = "accept-141-the-defias-brotherhood",
             kind = "accept",
             priority = 1230,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from Master Mathias Shaw in SI:7.",
             complete = QuestState(141, "activeOrCompleted"),
             route = {
@@ -1938,6 +2042,7 @@ ns:RegisterGuide({
             id = "turnin-120-messenger-to-stormwind",
             kind = "turnin",
             priority = 1240,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Stormwind to General Marcus Jonathan in Valley Of Heroes.",
             dependsOn = { "accept-120-messenger-to-stormwind" },
             complete = QuestState(120, "completed"),
@@ -1950,6 +2055,7 @@ ns:RegisterGuide({
             id = "accept-121-messenger-to-stormwind",
             kind = "accept",
             priority = 1250,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Stormwind from General Marcus Jonathan in Valley Of Heroes.",
             complete = QuestState(121, "activeOrCompleted"),
             route = {
@@ -1961,6 +2067,7 @@ ns:RegisterGuide({
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
             priority = 1270,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Price of Shoes to Smith Argus in Goldshire.",
             dependsOn = { "accept-118-the-price-of-shoes" },
             complete = QuestState(118, "completed"),
@@ -1973,6 +2080,7 @@ ns:RegisterGuide({
             id = "accept-119-return-to-verner",
             kind = "accept",
             priority = 1280,
+            conditions = { level = { min = 13 } },
             text = "Accept Return to Verner from Smith Argus in Goldshire.",
             complete = QuestState(119, "activeOrCompleted"),
             route = {
@@ -1984,6 +2092,7 @@ ns:RegisterGuide({
             id = "objective-116-4-skin-of-sweet-rum",
             kind = "objective",
             priority = 1290,
+            conditions = { level = { min = 12 } },
             text = "Buy Skin of Sweet Rum from Barkeep Dobbins in Goldshire.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 4),
@@ -1996,6 +2105,7 @@ ns:RegisterGuide({
             id = "turnin-119-return-to-verner",
             kind = "turnin",
             priority = 1310,
+            conditions = { level = { min = 13 } },
             text = "Turn in Return to Verner to Verner Osgood in Lakeshire.",
             dependsOn = { "accept-119-return-to-verner" },
             complete = QuestState(119, "completed"),
@@ -2008,6 +2118,7 @@ ns:RegisterGuide({
             id = "accept-122-underbelly-scales",
             kind = "accept",
             priority = 1320,
+            conditions = { level = { min = 14 } },
             text = "Accept Underbelly Scales from Verner Osgood in Lakeshire.",
             complete = QuestState(122, "activeOrCompleted"),
             route = {
@@ -2019,6 +2130,7 @@ ns:RegisterGuide({
             id = "turnin-121-messenger-to-stormwind",
             kind = "turnin",
             priority = 1330,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Stormwind to Magistrate Solomon in Lakeshire.",
             dependsOn = { "accept-121-messenger-to-stormwind" },
             complete = QuestState(121, "completed"),
@@ -2031,6 +2143,7 @@ ns:RegisterGuide({
             id = "accept-143-messenger-to-westfall",
             kind = "accept",
             priority = 1340,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Westfall from Magistrate Solomon in Lakeshire.",
             complete = QuestState(143, "activeOrCompleted"),
             route = {
@@ -2042,6 +2155,7 @@ ns:RegisterGuide({
             id = "turnin-143-messenger-to-westfall",
             kind = "turnin",
             priority = 1360,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Westfall to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-143-messenger-to-westfall" },
             complete = QuestState(143, "completed"),
@@ -2054,6 +2168,7 @@ ns:RegisterGuide({
             id = "accept-144-messenger-to-westfall",
             kind = "accept",
             priority = 1370,
+            conditions = { level = { min = 14 } },
             text = "Accept Messenger to Westfall from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(144, "activeOrCompleted"),
             route = {
@@ -2065,6 +2180,7 @@ ns:RegisterGuide({
             id = "turnin-141-the-defias-brotherhood",
             kind = "turnin",
             priority = 1380,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "accept-141-the-defias-brotherhood" },
             complete = QuestState(141, "completed"),
@@ -2077,6 +2193,7 @@ ns:RegisterGuide({
             id = "accept-142-the-defias-brotherhood",
             kind = "accept",
             priority = 1390,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from Marshal Gryan Stoutmantle in Sentinel Hill.",
             complete = QuestState(142, "activeOrCompleted"),
             route = {
@@ -2098,6 +2215,7 @@ ns:RegisterGuide({
             id = "objective-142-the-defias-brotherhood",
             kind = "objective",
             priority = 1420,
+            conditions = { level = { min = 14 } },
             text = "Kill Defias Messenger and collect A Mysterious Message, he should be near the road entrance to Moonbrook.",
             dependsOn = { "accept-142-the-defias-brotherhood" },
             complete = QuestState(142, "complete"),
@@ -2110,7 +2228,7 @@ ns:RegisterGuide({
             id = "objective-92747-moonbrook-espionage",
             kind = "objective",
             priority = 1425,
-            conditions = { level = { min = 16 } },
+            conditions = { level = { min = 9 } },
             useClientPin = true,
             text = "Moonbrook Espionage: collect 8 Suspicious Industrial Supplies in Moonbrook. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-92747-moonbrook-espionage" },
@@ -2124,6 +2242,7 @@ ns:RegisterGuide({
             id = "accept-103-keeper-of-the-flame",
             kind = "accept",
             priority = 1440,
+            conditions = { level = { min = 10 } },
             text = "Accept Keeper of the Flame from Captain Grayson in Westfall Lighthouse.",
             complete = QuestState(103, "activeOrCompleted"),
             route = {
@@ -2135,6 +2254,7 @@ ns:RegisterGuide({
             id = "objective-103-keeper-of-the-flame",
             kind = "objective",
             priority = 1450,
+            conditions = { level = { min = 10 } },
             text = "Kill 20 Harvest Watcher in the 3 farms and collect 5 Flask of Oil for a later quest.",
             dependsOn = { "accept-103-keeper-of-the-flame" },
             complete = QuestState(103, "complete"),
@@ -2151,6 +2271,7 @@ ns:RegisterGuide({
             id = "turnin-103-keeper-of-the-flame",
             kind = "turnin",
             priority = 1460,
+            conditions = { level = { min = 10 } },
             text = "Turn in Keeper of the Flame to Captain Grayson in Westfall Lighthouse.",
             dependsOn = { "objective-103-keeper-of-the-flame" },
             complete = QuestState(103, "completed"),
@@ -2163,6 +2284,7 @@ ns:RegisterGuide({
             id = "turnin-136-captain-sander-s-hidden-treasure",
             kind = "turnin",
             priority = 1480,
+            conditions = { level = { min = 10 } },
             text = "Turn in Captain Sander's Hidden Treasure in Longshore.",
             dependsOn = { "objective-136-captain-sanders-treasure-map" },
             complete = QuestState(136, "completed"),
@@ -2175,6 +2297,7 @@ ns:RegisterGuide({
             id = "accept-138-captain-sander-s-hidden-treasure",
             kind = "accept",
             priority = 1490,
+            conditions = { level = { min = 10 } },
             text = "Accept Captain Sander's Hidden Treasure in Longshore.",
             complete = QuestState(138, "activeOrCompleted"),
             route = {
@@ -2186,6 +2309,7 @@ ns:RegisterGuide({
             id = "turnin-138-captain-sander-s-hidden-treasure",
             kind = "turnin",
             priority = 1500,
+            conditions = { level = { min = 10 } },
             text = "Turn in Captain Sander's Hidden Treasure.",
             dependsOn = { "accept-138-captain-sander-s-hidden-treasure" },
             complete = QuestState(138, "completed"),
@@ -2198,6 +2322,7 @@ ns:RegisterGuide({
             id = "accept-139-captain-sander-s-hidden-treasure",
             kind = "accept",
             priority = 1510,
+            conditions = { level = { min = 10 } },
             text = "Accept Captain Sander's Hidden Treasure.",
             complete = QuestState(139, "activeOrCompleted"),
             route = {
@@ -2209,6 +2334,7 @@ ns:RegisterGuide({
             id = "turnin-139-captain-sander-s-hidden-treasure",
             kind = "turnin",
             priority = 1520,
+            conditions = { level = { min = 10 } },
             text = "Turn in Captain Sander's Hidden Treasure in Jangolode Mine.",
             dependsOn = { "accept-139-captain-sander-s-hidden-treasure" },
             complete = QuestState(139, "completed"),
@@ -2221,6 +2347,7 @@ ns:RegisterGuide({
             id = "accept-140-captain-sander-s-hidden-treasure",
             kind = "accept",
             priority = 1530,
+            conditions = { level = { min = 10 } },
             text = "Accept Captain Sander's Hidden Treasure in Jangolode Mine.",
             complete = QuestState(140, "activeOrCompleted"),
             route = {
@@ -2232,6 +2359,7 @@ ns:RegisterGuide({
             id = "turnin-140-captain-sander-s-hidden-treasure",
             kind = "turnin",
             priority = 1550,
+            conditions = { level = { min = 10 } },
             text = "Turn in Captain Sander's Hidden Treasure in Longshore.",
             dependsOn = { "accept-140-captain-sander-s-hidden-treasure" },
             complete = QuestState(140, "completed"),
@@ -2244,7 +2372,7 @@ ns:RegisterGuide({
             id = "turnin-92747-moonbrook-espionage",
             kind = "turnin",
             priority = 1565,
-            conditions = { level = { min = 16 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Moonbrook Espionage to Alba Fairmoon in Sentinel Hill.",
             dependsOn = { "objective-92747-moonbrook-espionage" },
             complete = QuestState(92747, "completed"),
@@ -2257,6 +2385,7 @@ ns:RegisterGuide({
             id = "turnin-142-the-defias-brotherhood",
             kind = "turnin",
             priority = 1570,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-142-the-defias-brotherhood" },
             complete = QuestState(142, "completed"),
@@ -2269,6 +2398,7 @@ ns:RegisterGuide({
             id = "accept-155-the-defias-brotherhood",
             kind = "accept",
             priority = 1580,
+            conditions = { level = { min = 14 } },
             text = "Accept The Defias Brotherhood from The Defias Traitor in Sentinel Hill.",
             complete = QuestState(155, "activeOrCompleted"),
             route = {
@@ -2280,6 +2410,7 @@ ns:RegisterGuide({
             id = "objective-155-the-defias-brotherhood",
             kind = "objective",
             priority = 1590,
+            conditions = { level = { min = 14 } },
             text = "Escort the Defias Traitor to discover where VanCleef is hiding. Near the fountain in Moonbrook he pulls several enemies. This is an elite. Bring a group.",
             dependsOn = { "accept-155-the-defias-brotherhood" },
             complete = QuestState(155, "complete"),
@@ -2309,6 +2440,7 @@ ns:RegisterGuide({
             id = "objective-116-1-keg-of-thunderbrew-lager",
             kind = "objective",
             priority = 1620,
+            conditions = { level = { min = 12 } },
             text = "You should receive from Grimbooze Thunderbrew by turning in 'Thunderbrew' quest. This is an elite. Bring a group.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 1),
@@ -2321,6 +2453,7 @@ ns:RegisterGuide({
             id = "objective-14-the-people-s-militia",
             kind = "objective",
             priority = 1630,
+            conditions = { level = { min = 9 } },
             text = "Kill the required Defias enemies in The Dagger Hills.",
             dependsOn = { "accept-14-the-people-s-militia" },
             complete = QuestState(14, "complete"),
@@ -2333,6 +2466,7 @@ ns:RegisterGuide({
             id = "turnin-14-the-people-s-militia",
             kind = "turnin",
             priority = 1650,
+            conditions = { level = { min = 9 } },
             text = "Turn in The People's Militia to Marshal Gryan Stoutmantle in Sentinel Hill.",
             dependsOn = { "objective-14-the-people-s-militia" },
             complete = QuestState(14, "completed"),
@@ -2345,6 +2479,7 @@ ns:RegisterGuide({
             id = "turnin-155-the-defias-brotherhood",
             kind = "turnin",
             priority = 1660,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Defias Brotherhood to Marshal Gryan Stoutmantle in Sentinel Hil.",
             dependsOn = { "objective-155-the-defias-brotherhood" },
             complete = QuestState(155, "completed"),
@@ -2357,6 +2492,7 @@ ns:RegisterGuide({
             id = "turnin-144-messenger-to-westfall",
             kind = "turnin",
             priority = 1680,
+            conditions = { level = { min = 14 } },
             text = "Turn in Messenger to Westfall to Magistrate Solomon in Lakeshire.",
             dependsOn = { "accept-144-messenger-to-westfall" },
             complete = QuestState(144, "completed"),
@@ -2369,6 +2505,7 @@ ns:RegisterGuide({
             id = "objective-122-underbelly-scales",
             kind = "objective",
             priority = 1700,
+            conditions = { level = { min = 14 } },
             text = "Kill Black Dragon Whelp and collect 6 Underbelly Whelp Scale in Lakeridge Highway.",
             dependsOn = { "accept-122-underbelly-scales" },
             complete = QuestState(122, "complete"),
@@ -2381,6 +2518,7 @@ ns:RegisterGuide({
             id = "objective-246-assessing-the-threat",
             kind = "objective",
             priority = 1710,
+            conditions = { level = { min = 11 } },
             text = "Kill 10 Redridge Mongrel and 6 Redridge Poacher which can be found to the south in Lakeridge Highway.",
             dependsOn = { "accept-246-assessing-the-threat" },
             complete = QuestState(246, "complete"),
@@ -2395,7 +2533,7 @@ ns:RegisterGuide({
             id = "objective-98407-show-of-force",
             kind = "objective",
             priority = 1715,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
             dependsOn = { "accept-98407-show-of-force" },
             complete = QuestState(98407, "complete"),
@@ -2408,6 +2546,7 @@ ns:RegisterGuide({
             id = "turnin-129-a-free-lunch",
             kind = "turnin",
             priority = 1730,
+            conditions = { level = { min = 12 } },
             text = "Turn in A Free Lunch to Watch Captain Parker in Three Corners.",
             dependsOn = { "accept-129-a-free-lunch" },
             complete = QuestState(129, "completed"),
@@ -2420,6 +2559,7 @@ ns:RegisterGuide({
             id = "accept-130-visit-the-herbalist",
             kind = "accept",
             priority = 1740,
+            conditions = { level = { min = 12 } },
             text = "Accept Visit the Herbalist from Tarantula in Three Corners.",
             complete = QuestState(130, "activeOrCompleted"),
             route = {
@@ -2431,6 +2571,7 @@ ns:RegisterGuide({
             id = "objective-116-3-bottle-of-moonshine",
             kind = "objective",
             priority = 1760,
+            conditions = { level = { min = 12 } },
             text = "Buy Bottle of Moonshine from Barkeep Hann in Darkshire.",
             dependsOn = { "accept-116-dry-times" },
             complete = QuestObjective(116, 3),
@@ -2443,6 +2584,7 @@ ns:RegisterGuide({
             id = "turnin-246-assessing-the-threat",
             kind = "turnin",
             priority = 1780,
+            conditions = { level = { min = 11 } },
             text = "Turn in Assessing the Threat to Deputy Feldon in Redridge Mountains.",
             dependsOn = { "objective-246-assessing-the-threat" },
             complete = QuestState(246, "completed"),
@@ -2455,7 +2597,7 @@ ns:RegisterGuide({
             id = "turnin-98407-show-of-force",
             kind = "turnin",
             priority = 1785,
-            conditions = { level = { min = 17 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Show of Force to Deputy Feldon.",
             dependsOn = { "objective-98407-show-of-force" },
             complete = QuestState(98407, "completed"),
@@ -2468,6 +2610,7 @@ ns:RegisterGuide({
             id = "turnin-122-underbelly-scales",
             kind = "turnin",
             priority = 1790,
+            conditions = { level = { min = 14 } },
             text = "Turn in Underbelly Scales to Verner Osgood in Lakeshire.",
             dependsOn = { "objective-122-underbelly-scales" },
             complete = QuestState(122, "completed"),
@@ -2480,6 +2623,7 @@ ns:RegisterGuide({
             id = "turnin-116-dry-times",
             kind = "turnin",
             priority = 1800,
+            conditions = { level = { min = 12 } },
             text = "Turn in Dry Times to Barkeep Daniels in Lakeshire.",
             dependsOn = { "objective-116-harvest-golem", "objective-116-2-cask-of-merlot", "objective-116-4-skin-of-sweet-rum", "objective-116-1-keg-of-thunderbrew-lager", "objective-116-3-bottle-of-moonshine" },
             complete = QuestState(116, "completed"),
@@ -2492,6 +2636,7 @@ ns:RegisterGuide({
             id = "turnin-130-visit-the-herbalist",
             kind = "turnin",
             priority = 1810,
+            conditions = { level = { min = 12 } },
             text = "Turn in Visit the Herbalist to Martie Jainrose in Lakeshire.",
             dependsOn = { "accept-130-visit-the-herbalist" },
             complete = QuestState(130, "completed"),
@@ -2504,6 +2649,7 @@ ns:RegisterGuide({
             id = "accept-131-delivering-daffodils",
             kind = "accept",
             priority = 1820,
+            conditions = { level = { min = 12 } },
             text = "Accept Delivering Daffodils from Martie Jainrose in Lakeshire.",
             complete = QuestState(131, "activeOrCompleted"),
             route = {
@@ -2515,6 +2661,7 @@ ns:RegisterGuide({
             id = "turnin-131-delivering-daffodils",
             kind = "turnin",
             priority = 1830,
+            conditions = { level = { min = 12 } },
             text = "Turn in Delivering Daffodils to Darcy Parker in Lakeshire.",
             dependsOn = { "accept-131-delivering-daffodils" },
             complete = QuestState(131, "completed"),

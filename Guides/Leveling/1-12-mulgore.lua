@@ -343,7 +343,6 @@ ns:RegisterGuide({
             id = "accept-95805-grace-of-anshe-and-musha",
             kind = "accept",
             priority = 211,
-            conditions = { level = { min = 4 } },
             text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
             complete = QuestState(95805, "activeOrCompleted"),
             route = {
@@ -355,7 +354,6 @@ ns:RegisterGuide({
             id = "objective-95805-grace-of-anshe-and-musha",
             kind = "objective",
             priority = 212,
-            conditions = { level = { min = 4 } },
             useClientPin = true,
             text = "Carry the Smoldering Incense to the shrine of An'she and Mu'sha in the southeastern hills before it burns out. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-95805-grace-of-anshe-and-musha" },
@@ -393,6 +391,7 @@ ns:RegisterGuide({
             id = "accept-3376-break-sharptusk",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 3 } },
             text = "Accept Break Sharptusk! from Brave Windfeather in Camp Narache.",
             complete = QuestState(3376, "activeOrCompleted"),
             route = {
@@ -406,6 +405,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -433,6 +433,7 @@ ns:RegisterGuide({
             id = "objective-3376-break-sharptusk",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 3 } },
             text = "Kill Chief Sharptusk Thornmantle in Brambleblade Ravine and collect Chief Sharptusk Thornmantle's Head.",
             dependsOn = { "accept-3376-break-sharptusk" },
             complete = QuestState(3376, "complete"),
@@ -470,6 +471,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -510,6 +512,7 @@ ns:RegisterGuide({
             id = "turnin-3376-break-sharptusk",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 3 } },
             text = "Turn in Break Sharptusk! to Brave Windfeather in Camp Narache.",
             dependsOn = { "objective-3376-break-sharptusk" },
             complete = QuestState(3376, "completed"),
@@ -560,6 +563,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -578,6 +582,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -619,6 +624,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -637,6 +643,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -654,6 +661,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -681,6 +689,7 @@ ns:RegisterGuide({
             id = "accept-743-dangers-of-the-windfury",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 5 } },
             text = "Accept Dangers of the Windfury from Ruul Eagletalon in Bloodhoof Village.",
             complete = QuestState(743, "activeOrCompleted"),
             route = {
@@ -705,6 +714,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 510,
             dependsOn = { "turnin-763-rites-of-the-earthmother" },
+            conditions = { level = { min = 3 } },
             text = "Accept Rite of Vision from Baine Bloodhoof in Bloodhoof Village.",
             complete = QuestState(767, "activeOrCompleted"),
             route = {
@@ -756,6 +766,7 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -770,6 +781,7 @@ ns:RegisterGuide({
             id = "accept-761-swoop-hunting",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 4 } },
             text = "Accept Swoop Hunting from Harken Windtotem in Bloodhoof Village.",
             complete = QuestState(761, "activeOrCompleted"),
             route = {
@@ -781,6 +793,7 @@ ns:RegisterGuide({
             id = "turnin-767-rite-of-vision",
             kind = "turnin",
             priority = 570,
+            conditions = { level = { min = 3 } },
             text = "Turn in Rite of Vision to Zarlman Two-Moons in Bloodhoof Village.",
             dependsOn = { "accept-767-rite-of-vision" },
             complete = QuestState(767, "completed"),
@@ -794,6 +807,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 580,
             dependsOn = { "turnin-767-rite-of-vision" },
+            conditions = { level = { min = 3 } },
             text = "Accept Rite of Vision from Zarlman Two-Moons in Bloodhoof Village.",
             complete = QuestState(771, "activeOrCompleted"),
             route = {
@@ -805,6 +819,7 @@ ns:RegisterGuide({
             id = "accept-766-mazzranache",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 5 } },
             text = "Accept Mazzranache from Maur Raincaller in Bloodhoof Village.",
             complete = QuestState(766, "activeOrCompleted"),
             route = {
@@ -816,6 +831,7 @@ ns:RegisterGuide({
             id = "objective-771-2-ambercorn",
             kind = "objective",
             priority = 600,
+            conditions = { level = { min = 3 } },
             text = "Collect 2 Ambercorn from the ground near the base of the trees.",
             dependsOn = { "accept-771-rite-of-vision" },
             complete = QuestObjective(771, 2),
@@ -828,6 +844,7 @@ ns:RegisterGuide({
             id = "objective-771-1-well-stone",
             kind = "objective",
             priority = 610,
+            conditions = { level = { min = 3 } },
             text = "Collect 2 Well Stone from Winterhoof Water Well Collect 2 Ambercorn from the ground.",
             dependsOn = { "accept-771-rite-of-vision" },
             complete = QuestObjective(771, 1),
@@ -842,6 +859,7 @@ ns:RegisterGuide({
             priority = 620,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -865,6 +883,7 @@ ns:RegisterGuide({
             id = "objective-766-1-flatland-cougar-femur",
             kind = "objective",
             priority = 630,
+            conditions = { level = { min = 5 } },
             text = "Kill Flatland Cougar for Flatland Cougar Femur.",
             dependsOn = { "accept-766-mazzranache" },
             complete = QuestObjective(766, 1),
@@ -877,7 +896,6 @@ ns:RegisterGuide({
             id = "accept-98430-the-longwalkers",
             kind = "accept",
             priority = 641,
-            conditions = { level = { min = 8 } },
             text = "Accept The Longwalkers from Perith Stormhoof inside Palemane Rock.",
             complete = QuestState(98430, "activeOrCompleted"),
             route = {
@@ -889,7 +907,6 @@ ns:RegisterGuide({
             id = "objective-98430-the-longwalkers",
             kind = "objective",
             priority = 642,
-            conditions = { level = { min = 8 } },
             text = "Escort Perith Stormhoof out of Palemane Rock.",
             dependsOn = { "accept-98430-the-longwalkers" },
             complete = QuestState(98430, "complete"),
@@ -916,6 +933,7 @@ ns:RegisterGuide({
             id = "objective-761-swoop-hunting",
             kind = "objective",
             priority = 670,
+            conditions = { level = { min = 4 } },
             text = "Kill any Swoop for 8 Trophy Swoop Quill in The Rolling Plains.",
             dependsOn = { "accept-761-swoop-hunting" },
             complete = QuestState(761, "complete"),
@@ -936,6 +954,7 @@ ns:RegisterGuide({
             id = "objective-766-4-swoop-gizzard",
             kind = "objective",
             priority = 680,
+            conditions = { level = { min = 5 } },
             text = "Kill any Wiry Swoop until you find Swoop Gizzard.",
             dependsOn = { "accept-766-mazzranache" },
             complete = QuestObjective(766, 4),
@@ -956,6 +975,7 @@ ns:RegisterGuide({
             id = "objective-743-dangers-of-the-windfury",
             kind = "objective",
             priority = 690,
+            conditions = { level = { min = 5 } },
             text = "Kill Windfury Harpy and collect 8 Windfury Talon in The Rolling Plains.",
             dependsOn = { "accept-743-dangers-of-the-windfury" },
             complete = QuestState(743, "complete"),
@@ -968,6 +988,7 @@ ns:RegisterGuide({
             id = "objective-766-2-flatland-cougar-femur",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 5 } },
             text = "Kill any Flatland Cougar until you find Flatland Cougar Femur in The Rolling Plains.",
             dependsOn = { "accept-766-mazzranache" },
             complete = QuestObjective(766, 2),
@@ -980,6 +1001,7 @@ ns:RegisterGuide({
             id = "objective-766-3-plainstrider-scale",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 5 } },
             text = "Kill Adult Plainstrider until you find Plainstrider Scale in The Rolling Plains.",
             dependsOn = { "accept-766-mazzranache" },
             complete = QuestObjective(766, 3),
@@ -992,6 +1014,7 @@ ns:RegisterGuide({
             id = "accept-749-the-ravaged-caravan",
             kind = "accept",
             priority = 720,
+            conditions = { level = { min = 5 } },
             text = "Accept The Ravaged Caravan from Morin Cloudstalker in Ravaged Caravan.",
             complete = QuestState(749, "activeOrCompleted"),
             route = {
@@ -1003,6 +1026,7 @@ ns:RegisterGuide({
             id = "turnin-749-the-ravaged-caravan",
             kind = "turnin",
             priority = 730,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Ravaged Caravan in Ravaged Caravan.",
             dependsOn = { "accept-749-the-ravaged-caravan" },
             complete = QuestState(749, "completed"),
@@ -1015,6 +1039,7 @@ ns:RegisterGuide({
             id = "accept-751-the-ravaged-caravan",
             kind = "accept",
             priority = 740,
+            conditions = { level = { min = 5 } },
             text = "Accept The Ravaged Caravan from Grawl in Ravaged Caravan.",
             complete = QuestState(751, "activeOrCompleted"),
             route = {
@@ -1026,6 +1051,7 @@ ns:RegisterGuide({
             id = "turnin-743-dangers-of-the-windfury",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 5 } },
             text = "Turn in Dangers of the Windfury to Ruul Eagletalon in Bloodhoof Village.",
             dependsOn = { "objective-743-dangers-of-the-windfury" },
             complete = QuestState(743, "completed"),
@@ -1040,6 +1066,7 @@ ns:RegisterGuide({
             priority = 770,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1058,6 +1085,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-748-poison-water" },
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1072,6 +1100,7 @@ ns:RegisterGuide({
             id = "turnin-761-swoop-hunting",
             kind = "turnin",
             priority = 790,
+            conditions = { level = { min = 4 } },
             text = "Turn in Swoop Hunting to Harken Windtotem in Bloodhoof Village.",
             dependsOn = { "objective-761-swoop-hunting" },
             complete = QuestState(761, "completed"),
@@ -1084,6 +1113,7 @@ ns:RegisterGuide({
             id = "turnin-771-rite-of-vision",
             kind = "turnin",
             priority = 800,
+            conditions = { level = { min = 3 } },
             text = "Turn in Rite of Vision to Zarlman Two-Moons in Bloodhoof Village.",
             dependsOn = { "objective-771-2-ambercorn", "objective-771-1-well-stone" },
             complete = QuestState(771, "completed"),
@@ -1097,6 +1127,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 810,
             dependsOn = { "turnin-771-rite-of-vision" },
+            conditions = { level = { min = 3 } },
             text = "Accept Rite of Vision from Zarlman Two-Moons in Bloodhoof Village.",
             complete = QuestState(772, "activeOrCompleted"),
             route = {
@@ -1108,6 +1139,7 @@ ns:RegisterGuide({
             id = "turnin-766-mazzranache",
             kind = "turnin",
             priority = 820,
+            conditions = { level = { min = 5 } },
             text = "Turn in Mazzranache to Maur Raincaller in Bloodhoof Village.",
             dependsOn = { "objective-766-1-flatland-cougar-femur", "objective-766-4-swoop-gizzard", "objective-766-2-flatland-cougar-femur", "objective-766-3-plainstrider-scale" },
             complete = QuestState(766, "completed"),
@@ -1132,6 +1164,7 @@ ns:RegisterGuide({
             id = "accept-746-dwarven-digging",
             kind = "accept",
             priority = 840,
+            conditions = { level = { min = 6 } },
             text = "Accept Dwarven Digging from Baine Bloodhoof in Bloodhoof Village.",
             complete = QuestState(746, "activeOrCompleted"),
             route = {
@@ -1143,6 +1176,7 @@ ns:RegisterGuide({
             id = "turnin-751-the-ravaged-caravan",
             kind = "turnin",
             priority = 850,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Ravaged Caravan to Morin Cloudstalker in Mulgore.",
             dependsOn = { "accept-751-the-ravaged-caravan" },
             complete = QuestState(751, "completed"),
@@ -1156,6 +1190,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 860,
             dependsOn = { "turnin-751-the-ravaged-caravan" },
+            conditions = { level = { min = 5 } },
             text = "Accept The Venture Co. from Morin Cloudstalker in Mulgore.",
             complete = QuestState(764, "activeOrCompleted"),
             route = {
@@ -1168,6 +1203,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 870,
             dependsOn = { "turnin-751-the-ravaged-caravan" },
+            conditions = { level = { min = 5 } },
             text = "Accept Supervisor Fizsprocket from Morin Cloudstalker in Mulgore.",
             complete = QuestState(765, "activeOrCompleted"),
             route = {
@@ -1181,6 +1217,7 @@ ns:RegisterGuide({
             priority = 880,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1198,6 +1235,7 @@ ns:RegisterGuide({
             priority = 900,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1216,6 +1254,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-754-winterhoof-cleansing" },
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1230,6 +1269,7 @@ ns:RegisterGuide({
             id = "objective-773-water-of-the-seers",
             kind = "objective",
             priority = 920,
+            conditions = { level = { min = 3 } },
             text = "Use Water of the Seers.",
             dependsOn = { "accept-773-rite-of-wisdom" },
             complete = QuestState(773, "complete"),
@@ -1238,6 +1278,7 @@ ns:RegisterGuide({
             id = "objective-746-dwarven-digging",
             kind = "objective",
             priority = 930,
+            conditions = { level = { min = 6 } },
             text = "Kill Bael'dun Digger for 5 Prospector's Pick, then break them using Prospector's Pick next to the forge in Bael'dun Digsite.",
             dependsOn = { "accept-746-dwarven-digging" },
             complete = QuestState(746, "complete"),
@@ -1250,6 +1291,7 @@ ns:RegisterGuide({
             id = "turnin-772-rite-of-vision",
             kind = "turnin",
             priority = 940,
+            conditions = { level = { min = 3 } },
             text = "Turn in Rite of Vision.",
             dependsOn = { "accept-772-rite-of-vision" },
             complete = QuestState(772, "completed"),
@@ -1263,6 +1305,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 950,
             dependsOn = { "turnin-772-rite-of-vision" },
+            conditions = { level = { min = 3 } },
             text = "Accept Rite of Wisdom from Seer Wiserunner in Mulgore.",
             complete = QuestState(773, "activeOrCompleted"),
             route = {
@@ -1274,6 +1317,7 @@ ns:RegisterGuide({
             id = "accept-833-a-sacred-burial",
             kind = "accept",
             priority = 970,
+            conditions = { level = { min = 7 } },
             text = "Accept A Sacred Burial from Lorekeeper Raintotem in Red Rocks.",
             complete = QuestState(833, "activeOrCompleted"),
             route = {
@@ -1285,6 +1329,7 @@ ns:RegisterGuide({
             id = "objective-833-a-sacred-burial",
             kind = "objective",
             priority = 980,
+            conditions = { level = { min = 7 } },
             text = "Kill 8 Bristleback Interlopers at Red Rocks.",
             dependsOn = { "accept-833-a-sacred-burial" },
             complete = QuestState(833, "complete"),
@@ -1297,6 +1342,7 @@ ns:RegisterGuide({
             id = "turnin-773-rite-of-wisdom",
             kind = "turnin",
             priority = 990,
+            conditions = { level = { min = 3 } },
             text = "Turn in Rite of Wisdom to Ancestral Spirit in Red Rocks.",
             dependsOn = { "objective-773-water-of-the-seers" },
             complete = QuestState(773, "completed"),
@@ -1310,6 +1356,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 1000,
             dependsOn = { "turnin-773-rite-of-wisdom" },
+            conditions = { level = { min = 3 } },
             text = "Accept Journey into Thunder Bluff from Ancestral Spirit in Red Rocks.",
             complete = QuestState(775, "activeOrCompleted"),
             route = {
@@ -1321,6 +1368,7 @@ ns:RegisterGuide({
             id = "turnin-833-a-sacred-burial",
             kind = "turnin",
             priority = 1010,
+            conditions = { level = { min = 7 } },
             text = "Turn in A Sacred Burial to Lorekeeper Raintotem in Red Rocks.",
             dependsOn = { "objective-833-a-sacred-burial" },
             complete = QuestState(833, "completed"),
@@ -1335,6 +1383,7 @@ ns:RegisterGuide({
             priority = 1020,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1350,6 +1399,7 @@ ns:RegisterGuide({
             id = "accept-861-the-hunter-s-way",
             kind = "accept",
             priority = 1040,
+            conditions = { level = { min = 10 } },
             text = "Accept The Hunter's Way from Skorn Whitecloud in Bloodhoof Village.",
             complete = QuestState(861, "activeOrCompleted"),
             route = {
@@ -1361,7 +1411,7 @@ ns:RegisterGuide({
             id = "accept-99079-longwalker-malah",
             kind = "accept",
             priority = 1041,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Longwalker Malah from Brave Wildrunner in Bloodhoof Village.",
             complete = QuestState(99079, "activeOrCompleted"),
             route = {
@@ -1373,7 +1423,7 @@ ns:RegisterGuide({
             id = "accept-99108-sparring-match",
             kind = "accept",
             priority = 1042,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Sparring Match from Krang Stonehoof in Bloodhoof Village.",
             complete = QuestState(99108, "activeOrCompleted"),
             route = {
@@ -1385,7 +1435,7 @@ ns:RegisterGuide({
             id = "objective-99108-sparring-match",
             kind = "objective",
             priority = 1043,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 4 } },
             text = "Win 3 duels, or defeat Novice Warriors, for Krang Stonehoof.",
             dependsOn = { "accept-99108-sparring-match" },
             complete = QuestState(99108, "complete"),
@@ -1398,7 +1448,7 @@ ns:RegisterGuide({
             id = "turnin-99108-sparring-match",
             kind = "turnin",
             priority = 1044,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Sparring Match to Krang Stonehoof in Bloodhoof Village.",
             dependsOn = { "objective-99108-sparring-match" },
             complete = QuestState(99108, "completed"),
@@ -1413,6 +1463,7 @@ ns:RegisterGuide({
             priority = 1050,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1428,6 +1479,7 @@ ns:RegisterGuide({
             id = "turnin-746-dwarven-digging",
             kind = "turnin",
             priority = 1060,
+            conditions = { level = { min = 6 } },
             text = "Turn in Dwarven Digging to Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "objective-746-dwarven-digging" },
             complete = QuestState(746, "completed"),
@@ -1443,6 +1495,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-756-thunderhorn-totem" },
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1459,6 +1512,7 @@ ns:RegisterGuide({
             priority = 1080,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -1476,6 +1530,7 @@ ns:RegisterGuide({
             priority = 1090,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1491,7 +1546,7 @@ ns:RegisterGuide({
             id = "accept-96130-chakuyak",
             kind = "accept",
             priority = 1091,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 5 } },
             text = "Accept Chakuyak from Yaw Sharpmane in Bloodhoof Village.",
             complete = QuestState(96130, "activeOrCompleted"),
             route = {
@@ -1503,7 +1558,7 @@ ns:RegisterGuide({
             id = "objective-96130-chakuyak",
             kind = "objective",
             priority = 1092,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 5 } },
             text = "Kill Chakuyak.",
             dependsOn = { "accept-96130-chakuyak" },
             complete = QuestState(96130, "complete"),
@@ -1518,6 +1573,7 @@ ns:RegisterGuide({
             priority = 1100,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1536,6 +1592,7 @@ ns:RegisterGuide({
             priority = 1110,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1552,7 +1609,7 @@ ns:RegisterGuide({
             id = "turnin-96130-chakuyak",
             kind = "turnin",
             priority = 1101,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 5 } },
             text = "Turn in Chakuyak to Yaw Sharpmane in Bloodhoof Village.",
             dependsOn = { "objective-96130-chakuyak" },
             complete = QuestState(96130, "completed"),
@@ -1567,6 +1624,7 @@ ns:RegisterGuide({
             priority = 1120,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1584,6 +1642,7 @@ ns:RegisterGuide({
             priority = 1130,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1602,6 +1661,7 @@ ns:RegisterGuide({
             priority = 1140,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1620,6 +1680,7 @@ ns:RegisterGuide({
             priority = 1150,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1637,6 +1698,7 @@ ns:RegisterGuide({
             priority = 1160,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1655,6 +1717,7 @@ ns:RegisterGuide({
             priority = 1170,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1673,6 +1736,7 @@ ns:RegisterGuide({
             priority = 1180,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1690,6 +1754,7 @@ ns:RegisterGuide({
             priority = 1190,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1707,6 +1772,7 @@ ns:RegisterGuide({
             priority = 1210,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -1722,6 +1788,7 @@ ns:RegisterGuide({
             id = "accept-744-preparation-for-ceremony",
             kind = "accept",
             priority = 1230,
+            conditions = { level = { min = 7 } },
             text = "Accept Preparation for Ceremony from Eyahn Eagletalon in Thunder Bluff.",
             complete = QuestState(744, "activeOrCompleted"),
             route = {
@@ -1735,6 +1802,7 @@ ns:RegisterGuide({
             priority = 1240,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 6 },
                 },
@@ -1751,6 +1819,7 @@ ns:RegisterGuide({
             id = "turnin-775-journey-into-thunder-bluff",
             kind = "turnin",
             priority = 1250,
+            conditions = { level = { min = 3 } },
             text = "Turn in Journey into Thunder Bluff to Cairne Bloodhoof in Thunder Bluff.",
             dependsOn = { "accept-775-journey-into-thunder-bluff" },
             complete = QuestState(775, "completed"),
@@ -1767,7 +1836,6 @@ ns:RegisterGuide({
             id = "turnin-98430-the-longwalkers",
             kind = "turnin",
             priority = 1251,
-            conditions = { level = { min = 8 } },
             text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
             dependsOn = { "objective-98430-the-longwalkers" },
             complete = QuestState(98430, "completed"),
@@ -1780,6 +1848,7 @@ ns:RegisterGuide({
             id = "accept-97485-traditions-of-the-bluff",
             kind = "accept",
             priority = 1252,
+            conditions = { level = { min = 3 } },
             text = "Accept Traditions of the Bluff from Eylah Sunhorn in Thunder Bluff.",
             complete = QuestState(97485, "activeOrCompleted"),
             route = {
@@ -1791,6 +1860,7 @@ ns:RegisterGuide({
             id = "objective-97485-traditions-of-the-bluff",
             kind = "objective",
             priority = 1253,
+            conditions = { level = { min = 3 } },
             text = "Buy a Bundle of Herbs from Nida, a Bundle of Cedar Twigs from Nata, Sinew Thread from Mahu, and Ceremonial Flint and Tinder from Naal. Combine them for Eylah Sunhorn.",
             dependsOn = { "accept-97485-traditions-of-the-bluff" },
             complete = QuestState(97485, "complete"),
@@ -1803,6 +1873,7 @@ ns:RegisterGuide({
             id = "turnin-97485-traditions-of-the-bluff",
             kind = "turnin",
             priority = 1254,
+            conditions = { level = { min = 3 } },
             text = "Turn in Traditions of the Bluff to Eylah Sunhorn in Thunder Bluff.",
             dependsOn = { "objective-97485-traditions-of-the-bluff" },
             complete = QuestState(97485, "completed"),
@@ -1816,6 +1887,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 1260,
             dependsOn = { "turnin-775-journey-into-thunder-bluff" },
+            conditions = { level = { min = 3 } },
             text = "Accept Rites of the Earthmother from Cairne Bloodhoof in Thunder Bluff.",
             complete = QuestState(776, "activeOrCompleted"),
             route = {
@@ -1829,6 +1901,7 @@ ns:RegisterGuide({
             priority = 1270,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1847,6 +1920,7 @@ ns:RegisterGuide({
             priority = 1280,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1864,6 +1938,7 @@ ns:RegisterGuide({
             priority = 1300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1882,6 +1957,7 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1899,6 +1975,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1917,6 +1994,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1935,6 +2013,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1952,6 +2031,7 @@ ns:RegisterGuide({
             priority = 1360,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1970,6 +2050,7 @@ ns:RegisterGuide({
             priority = 1370,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -1985,6 +2066,7 @@ ns:RegisterGuide({
             id = "objective-861-the-hunter-s-way",
             kind = "objective",
             priority = 1390,
+            conditions = { level = { min = 10 } },
             text = "Kill Flatland Prowler and collect 4 Flatland Prowler Claw in The Golden Plains.",
             dependsOn = { "accept-861-the-hunter-s-way" },
             complete = QuestState(861, "complete"),
@@ -1997,6 +2079,7 @@ ns:RegisterGuide({
             id = "objective-765-supervisor-fizsprocket",
             kind = "objective",
             priority = 1410,
+            conditions = { level = { min = 5 } },
             text = "Kill Supervisor Fizsprocket inside The Venture Co. Mine. If he drops Fizsprocket's Notes, use them.",
             dependsOn = { "accept-765-supervisor-fizsprocket" },
             complete = QuestState(765, "complete"),
@@ -2013,7 +2096,7 @@ ns:RegisterGuide({
             priority = 1411,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2030,7 +2113,7 @@ ns:RegisterGuide({
             priority = 1412,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2047,6 +2130,7 @@ ns:RegisterGuide({
             id = "objective-764-the-venture-co",
             kind = "objective",
             priority = 1420,
+            conditions = { level = { min = 5 } },
             text = "Kill 14 Venture Co. Worker and 6 Venture Co. Supervisor around and in The Venture Co. Mine.",
             dependsOn = { "accept-764-the-venture-co" },
             complete = QuestState(764, "complete"),
@@ -2059,6 +2143,7 @@ ns:RegisterGuide({
             id = "objective-776-rites-of-the-earthmother",
             kind = "objective",
             priority = 1430,
+            conditions = { level = { min = 3 } },
             text = "Find and kill a kodo Arra'chea east of Thunder Bluff in The Golden Plains.",
             dependsOn = { "accept-776-rites-of-the-earthmother" },
             complete = QuestState(776, "complete"),
@@ -2077,6 +2162,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -2095,6 +2181,7 @@ ns:RegisterGuide({
             priority = 1470,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2110,7 +2197,7 @@ ns:RegisterGuide({
             id = "turnin-99079-longwalker-malah",
             kind = "turnin",
             priority = 1471,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Longwalker Malah to Malah Longwind, east of Bloodhoof Village.",
             dependsOn = { "accept-99079-longwalker-malah" },
             complete = QuestState(99079, "completed"),
@@ -2123,7 +2210,7 @@ ns:RegisterGuide({
             id = "accept-99081-grim-tidings",
             kind = "accept",
             priority = 1472,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Grim Tidings from Malah Longwind.",
             dependsOn = { "turnin-99079-longwalker-malah" },
             complete = QuestState(99081, "activeOrCompleted"),
@@ -2136,7 +2223,7 @@ ns:RegisterGuide({
             id = "turnin-99081-grim-tidings",
             kind = "turnin",
             priority = 1473,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Grim Tidings to Brave Wildrunner in Bloodhoof Village.",
             dependsOn = { "accept-99081-grim-tidings" },
             complete = QuestState(99081, "completed"),
@@ -2149,7 +2236,7 @@ ns:RegisterGuide({
             id = "accept-99101-our-ancient-enemy",
             kind = "accept",
             priority = 1474,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Our Ancient Enemy from Brave Wildrunner in Bloodhoof Village.",
             dependsOn = { "turnin-99081-grim-tidings" },
             complete = QuestState(99101, "activeOrCompleted"),
@@ -2162,7 +2249,7 @@ ns:RegisterGuide({
             id = "turnin-99101-our-ancient-enemy",
             kind = "turnin",
             priority = 1475,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Our Ancient Enemy to Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "accept-99101-our-ancient-enemy" },
             complete = QuestState(99101, "completed"),
@@ -2175,7 +2262,7 @@ ns:RegisterGuide({
             id = "accept-99080-drive-them-out",
             kind = "accept",
             priority = 1476,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Drive Them Out from Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "turnin-99101-our-ancient-enemy" },
             complete = QuestState(99080, "activeOrCompleted"),
@@ -2191,6 +2278,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-758-thunderhorn-cleansing" },
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2205,6 +2293,7 @@ ns:RegisterGuide({
             id = "turnin-764-the-venture-co",
             kind = "turnin",
             priority = 1490,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Venture Co. to Morin Cloudstalker in Mulgore.",
             dependsOn = { "objective-764-the-venture-co" },
             complete = QuestState(764, "completed"),
@@ -2217,6 +2306,7 @@ ns:RegisterGuide({
             id = "turnin-765-supervisor-fizsprocket",
             kind = "turnin",
             priority = 1500,
+            conditions = { level = { min = 5 } },
             text = "Turn in Supervisor Fizsprocket to Morin Cloudstalker in Mulgore.",
             dependsOn = { "objective-765-supervisor-fizsprocket" },
             complete = QuestState(765, "completed"),
@@ -2231,7 +2321,7 @@ ns:RegisterGuide({
             priority = 1501,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2249,7 +2339,7 @@ ns:RegisterGuide({
             priority = 1502,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2267,7 +2357,7 @@ ns:RegisterGuide({
             priority = 1503,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2285,7 +2375,7 @@ ns:RegisterGuide({
             priority = 1504,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -2301,7 +2391,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-1",
             kind = "objective",
             priority = 1505,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Drive Them Out: kill 6 Galak Centaurs.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 1),
@@ -2314,7 +2404,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-2",
             kind = "objective",
             priority = 1506,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Drive Them Out: kill 4 Galak Outrunners.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 2),
@@ -2327,7 +2417,7 @@ ns:RegisterGuide({
             id = "objective-99080-drive-them-out-3",
             kind = "objective",
             priority = 1507,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Drive Them Out: bring Herak the Pillager's head.",
             dependsOn = { "accept-99080-drive-them-out" },
             complete = QuestObjective(99080, 3),
@@ -2342,6 +2432,7 @@ ns:RegisterGuide({
             priority = 1520,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2361,6 +2452,7 @@ ns:RegisterGuide({
             id = "objective-744-preparation-for-ceremony",
             kind = "objective",
             priority = 1530,
+            conditions = { level = { min = 7 } },
             text = "Kill Windfury Sorceress for 6 Azure Feather and Windfury Matriarch for 6 Bronze Feather.",
             dependsOn = { "accept-744-preparation-for-ceremony" },
             complete = QuestState(744, "complete"),
@@ -2373,7 +2465,7 @@ ns:RegisterGuide({
             id = "turnin-99080-drive-them-out",
             kind = "turnin",
             priority = 1531,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Drive Them Out to Baine Bloodhoof in Bloodhoof Village.",
             dependsOn = { "objective-99080-drive-them-out-1", "objective-99080-drive-them-out-2", "objective-99080-drive-them-out-3" },
             complete = QuestState(99080, "completed"),
@@ -2386,7 +2478,7 @@ ns:RegisterGuide({
             id = "accept-99082-the-high-chieftain",
             kind = "accept",
             priority = 1532,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept The High Chieftain from Baine Bloodhoof.",
             dependsOn = { "turnin-99080-drive-them-out" },
             complete = QuestState(99082, "activeOrCompleted"),
@@ -2401,6 +2493,7 @@ ns:RegisterGuide({
             priority = 1550,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                     { race = 6 },
                 },
@@ -2417,6 +2510,7 @@ ns:RegisterGuide({
             id = "accept-886-the-barrens-oases",
             kind = "accept",
             priority = 1560,
+            conditions = { level = { min = 10 } },
             text = "Accept The Barrens Oases from Archdruid Hamuul Runetotem in Elder Rise.",
             complete = QuestState(886, "activeOrCompleted"),
             route = {
@@ -2428,6 +2522,7 @@ ns:RegisterGuide({
             id = "turnin-776-rites-of-the-earthmother",
             kind = "turnin",
             priority = 1570,
+            conditions = { level = { min = 3 } },
             text = "Turn in Rites of the Earthmother to Cairne Bloodhoof in Mulgore.",
             dependsOn = { "objective-776-rites-of-the-earthmother" },
             complete = QuestState(776, "completed"),
@@ -2440,7 +2535,7 @@ ns:RegisterGuide({
             id = "turnin-99082-the-high-chieftain",
             kind = "turnin",
             priority = 1565,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in The High Chieftain to Cairne Bloodhoof.",
             dependsOn = { "accept-99082-the-high-chieftain" },
             complete = QuestState(99082, "completed"),
@@ -2453,6 +2548,7 @@ ns:RegisterGuide({
             id = "turnin-861-the-hunter-s-way",
             kind = "turnin",
             priority = 1580,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Hunter's Way to Melor Stonehoof in Hunter Rise.",
             dependsOn = { "objective-861-the-hunter-s-way" },
             complete = QuestState(861, "completed"),
@@ -2465,6 +2561,7 @@ ns:RegisterGuide({
             id = "accept-860-sergra-darkthorn",
             kind = "accept",
             priority = 1590,
+            conditions = { level = { min = 10 } },
             text = "Accept Sergra Darkthorn from Melor Stonehoof in Hunter Rise.",
             complete = QuestState(860, "activeOrCompleted"),
             route = {
@@ -2476,6 +2573,7 @@ ns:RegisterGuide({
             id = "turnin-744-preparation-for-ceremony",
             kind = "turnin",
             priority = 1600,
+            conditions = { level = { min = 7 } },
             text = "Turn in Preparation for Ceremony to Eyahn Eagletalon in Thunder Bluff.",
             dependsOn = { "objective-744-preparation-for-ceremony" },
             complete = QuestState(744, "completed"),
@@ -2490,6 +2588,7 @@ ns:RegisterGuide({
             priority = 1620,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2508,6 +2607,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-759-wildmane-totem" },
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2524,6 +2624,7 @@ ns:RegisterGuide({
             priority = 1650,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2541,6 +2642,7 @@ ns:RegisterGuide({
             priority = 1670,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2558,7 +2660,7 @@ ns:RegisterGuide({
             priority = 1671,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -2576,7 +2678,7 @@ ns:RegisterGuide({
             priority = 1672,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },

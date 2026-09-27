@@ -43,6 +43,7 @@ ns:RegisterGuide({
             id = "accept-1171-the-brood-of-onyxia",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 38 } },
             text = "Accept The Brood of Onyxia from Overlord Mok'Morokk in Brackenwall Village.",
             complete = QuestState(1171, "activeOrCompleted"),
             route = {
@@ -54,6 +55,7 @@ ns:RegisterGuide({
             id = "turnin-1171-the-brood-of-onyxia",
             kind = "turnin",
             priority = 30,
+            conditions = { level = { min = 38 } },
             text = "Turn in The Brood of Onyxia to Draz'Zilb in Brackenwall Village.",
             dependsOn = { "accept-1171-the-brood-of-onyxia" },
             complete = QuestState(1171, "completed"),
@@ -66,6 +68,7 @@ ns:RegisterGuide({
             id = "accept-1172-the-brood-of-onyxia",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 38 } },
             text = "Accept The Brood of Onyxia from Draz'Zilb in Brackenwall Village.",
             complete = QuestState(1172, "activeOrCompleted"),
             route = {
@@ -77,6 +80,7 @@ ns:RegisterGuide({
             id = "objective-1172-the-brood-of-onyxia",
             kind = "objective",
             priority = 60,
+            conditions = { level = { min = 38 } },
             text = "Destroy 5 Egg of Onyxia in Wyrmbog.",
             dependsOn = { "accept-1172-the-brood-of-onyxia" },
             complete = QuestState(1172, "complete"),
@@ -91,6 +95,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 625, state = "completed" } },
                 },
             },
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "turnin-1172-the-brood-of-onyxia",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 38 } },
             text = "Turn in The Brood of Onyxia to Draz'Zilb in Brackenwall Village.",
             dependsOn = { "objective-1172-the-brood-of-onyxia" },
             complete = QuestState(1172, "completed"),
@@ -117,6 +123,7 @@ ns:RegisterGuide({
             id = "accept-1173-challenge-overlord-mok-morokk",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 38 } },
             text = "Accept Challenge Overlord Mok'Morokk from Overlord Mok'Morokk in Brackenwall Village.",
             complete = QuestState(1173, "activeOrCompleted"),
             route = {
@@ -128,6 +135,7 @@ ns:RegisterGuide({
             id = "objective-1173-challenge-overlord-mok-morokk",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 38 } },
             text = "Defeat Overlord Mok'Morokk in Brackenwall Village, he will run away at about 1/3 HP left.",
             dependsOn = { "accept-1173-challenge-overlord-mok-morokk" },
             complete = QuestState(1173, "complete"),
@@ -140,6 +148,7 @@ ns:RegisterGuide({
             id = "turnin-1173-challenge-overlord-mok-morokk",
             kind = "turnin",
             priority = 110,
+            conditions = { level = { min = 38 } },
             text = "Turn in Challenge Overlord Mok'Morokk to Draz'Zilb in Brackenwall Village.",
             dependsOn = { "objective-1173-challenge-overlord-mok-morokk" },
             complete = QuestState(1173, "completed"),

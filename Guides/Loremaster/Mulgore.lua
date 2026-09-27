@@ -66,7 +66,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept The Hunt Begins from Grull Hawkwind.",
@@ -83,7 +82,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "The Hunt Begins: Plainstrider Meat.",
@@ -101,7 +99,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "The Hunt Begins: Plainstrider Feather.",
@@ -119,7 +116,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in The Hunt Begins to Grull Hawkwind.",
@@ -209,7 +205,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept The Hunt Continues from Grull Hawkwind.",
@@ -227,7 +222,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept A Humble Task from Chief Hawkwind.",
@@ -320,7 +314,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in A Humble Task to Greatmother Hawkwind.",
@@ -338,7 +331,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept A Humble Task from Greatmother Hawkwind.",
@@ -356,7 +348,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             useClientPin = true,
@@ -375,7 +366,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in A Humble Task to Chief Hawkwind.",
@@ -393,7 +383,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept Rites of the Earthmother from Chief Hawkwind.",
@@ -411,7 +400,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "The Hunt Continues: Mountain Cougar Pelt.",
@@ -429,7 +417,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in Rites of the Earthmother to Seer Graytongue.",
@@ -447,7 +434,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept Rite of Strength from Seer Graytongue.",
@@ -465,7 +451,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
                 },
             },
             text = "Accept Grace of An'she and Mu'sha from Seer Graytongue.",
@@ -482,7 +467,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
                 },
             },
             useClientPin = true,
@@ -501,7 +485,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in The Hunt Continues to Grull Hawkwind.",
@@ -519,7 +502,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept The Battleboars from Grull Hawkwind.",
@@ -553,6 +535,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -572,7 +555,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "The Battleboars: Battleboar Snout. Bristleback Battleboars in the ravine drop these too.",
@@ -590,7 +572,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "The Battleboars: Battleboar Flank.",
@@ -625,6 +606,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -645,7 +627,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Rite of Strength: Bristleback Belt.",
@@ -663,7 +644,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in The Battleboars to Grull Hawkwind.",
@@ -699,7 +679,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in Rite of Strength to Chief Hawkwind.",
@@ -717,7 +696,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                     { quest = { id = 781, state = "activeOrCompleted" } },
                 },
             },
@@ -735,7 +713,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept Rites of the Earthmother from Chief Hawkwind.",
@@ -752,6 +729,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -771,6 +749,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -789,6 +768,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -808,6 +788,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -826,6 +807,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -846,7 +828,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept A Task Unfinished from Antur Fallow.",
@@ -880,7 +861,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in Rites of the Earthmother to Baine Bloodhoof.",
@@ -916,7 +896,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Accept Sharing the Land from Baine Bloodhoof.",
@@ -933,7 +912,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in A Task Unfinished to Innkeeper Kauth.",
@@ -1188,7 +1166,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
                 },
             },
             text = "Accept The Longwalkers from Perith Stormhoof.",
@@ -1205,7 +1182,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
                 },
             },
             text = "The Longwalkers: Escort Perith Stormhoof. Perith starts inside Palemane Rock.",
@@ -1223,7 +1199,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Sharing the Land: Palemane Tanner.",
@@ -1241,7 +1216,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Sharing the Land: Palemane Skinner.",
@@ -1259,7 +1233,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Sharing the Land: Palemane Poacher.",
@@ -1476,7 +1449,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 1 } },
                 },
             },
             text = "Turn in Sharing the Land to Baine Bloodhoof.",
@@ -1841,7 +1813,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 6 } },
                     { quest = { id = 770, state = "activeOrCompleted" } },
                 },
             },
@@ -1859,7 +1831,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept Longwalker Malah from Brave Wildrunner.",
@@ -1876,7 +1848,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept Sparring Match from Krang Stonehoof.",
@@ -1893,7 +1865,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 4 } },
                 },
             },
             useClientPin = true,
@@ -1912,7 +1884,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in Sparring Match to Krang Stonehoof.",
@@ -1985,6 +1957,7 @@ ns:RegisterGuide({
             priority = 1060,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 7 },
                     { race = 6 },
@@ -2003,6 +1976,7 @@ ns:RegisterGuide({
             priority = 1070,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2022,7 +1996,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
+                    { level = { min = 5 } },
                 },
             },
             text = "Accept Chakuyak from Yaw Sharpmane.",
@@ -2039,7 +2013,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
+                    { level = { min = 5 } },
                 },
             },
             text = "Chakuyak: Chakuyak's Pelt.",
@@ -2056,6 +2030,7 @@ ns:RegisterGuide({
             priority = 1100,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2075,6 +2050,7 @@ ns:RegisterGuide({
             priority = 1110,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2095,7 +2071,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
+                    { level = { min = 5 } },
                 },
             },
             text = "Turn in Chakuyak to Yaw Sharpmane.",
@@ -2112,6 +2088,7 @@ ns:RegisterGuide({
             priority = 1130,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2130,6 +2107,7 @@ ns:RegisterGuide({
             priority = 1140,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2149,6 +2127,7 @@ ns:RegisterGuide({
             priority = 1150,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2168,6 +2147,7 @@ ns:RegisterGuide({
             priority = 1160,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2186,6 +2166,7 @@ ns:RegisterGuide({
             priority = 1170,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2205,6 +2186,7 @@ ns:RegisterGuide({
             priority = 1180,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2224,6 +2206,7 @@ ns:RegisterGuide({
             priority = 1190,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2242,6 +2225,7 @@ ns:RegisterGuide({
             priority = 1200,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2280,6 +2264,7 @@ ns:RegisterGuide({
             priority = 1220,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Horde" },
                 },
             },
@@ -2296,6 +2281,7 @@ ns:RegisterGuide({
             priority = 1230,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 3 },
                     { race = 6 },
@@ -2334,7 +2320,6 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 8 } },
                 },
             },
             text = "Turn in The Longwalkers to Cairne Bloodhoof in Thunder Bluff.",
@@ -2351,6 +2336,7 @@ ns:RegisterGuide({
             priority = 1260,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { faction = "Horde" },
                 },
             },
@@ -2367,6 +2353,7 @@ ns:RegisterGuide({
             priority = 1270,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { faction = "Horde" },
                 },
             },
@@ -2384,6 +2371,7 @@ ns:RegisterGuide({
             priority = 1280,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { faction = "Horde" },
                 },
             },
@@ -2419,6 +2407,7 @@ ns:RegisterGuide({
             priority = 1300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2438,6 +2427,7 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2456,6 +2446,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2475,6 +2466,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2493,6 +2485,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2512,6 +2505,7 @@ ns:RegisterGuide({
             priority = 1350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2531,6 +2525,7 @@ ns:RegisterGuide({
             priority = 1360,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2549,6 +2544,7 @@ ns:RegisterGuide({
             priority = 1370,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2568,6 +2564,7 @@ ns:RegisterGuide({
             priority = 1380,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2624,7 +2621,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2642,7 +2639,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2662,7 +2659,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2682,7 +2679,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2702,7 +2699,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2776,6 +2773,7 @@ ns:RegisterGuide({
             priority = 1490,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -2815,7 +2813,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in Longwalker Malah to Malah Longwind.",
@@ -2833,7 +2831,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept Grim Tidings from Malah Longwind.",
@@ -2851,7 +2849,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in Grim Tidings to Brave Wildrunner.",
@@ -2869,7 +2867,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept Our Ancient Enemy from Brave Wildrunner.",
@@ -2887,7 +2885,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in Our Ancient Enemy to Baine Bloodhoof.",
@@ -2905,7 +2903,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept Drive Them Out from Baine Bloodhoof.",
@@ -2978,7 +2976,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2997,7 +2995,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3016,7 +3014,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3035,7 +3033,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 5 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3054,7 +3052,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Drive Them Out: Galak Centaur.",
@@ -3072,7 +3070,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Drive Them Out: Galak Outrunner.",
@@ -3090,7 +3088,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Drive Them Out: Herak's Head.",
@@ -3126,6 +3124,7 @@ ns:RegisterGuide({
             priority = 1680,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Horde" },
                 },
             },
@@ -3144,7 +3143,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in Drive Them Out to Baine Bloodhoof.",
@@ -3162,7 +3161,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Accept The High Chieftain from Baine Bloodhoof.",
@@ -3179,6 +3178,7 @@ ns:RegisterGuide({
             priority = 1710,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                     { class = 11 },
                     { race = 6 },
@@ -3198,6 +3198,7 @@ ns:RegisterGuide({
             priority = 1720,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                 },
             },
@@ -3233,7 +3234,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 4 } },
                 },
             },
             text = "Turn in The High Chieftain to Cairne Bloodhoof in Thunder Bluff.",
@@ -3269,6 +3270,7 @@ ns:RegisterGuide({
             priority = 1760,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                 },
             },
@@ -3285,6 +3287,7 @@ ns:RegisterGuide({
             priority = 1770,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { faction = "Horde" },
                 },
             },
@@ -3380,7 +3383,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -3399,7 +3402,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = 6 },
                 },
             },
@@ -3418,7 +3421,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
                     { class = { 1, 7 } },
                 },
@@ -3437,7 +3440,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
                     { class = { 1, 7 } },
                 },
@@ -3458,7 +3461,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
                     { class = { 1, 7 } },
                 },
@@ -3478,7 +3481,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3496,7 +3499,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3516,7 +3519,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3535,7 +3538,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3553,7 +3556,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3572,7 +3575,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 11 } },
+                    { level = { min = 4 } },
                     { class = 7 },
                 },
             },
@@ -3591,7 +3594,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 9 } },
                     { race = 6 },
                 },
             },
@@ -3609,7 +3612,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 12 } },
+                    { level = { min = 9 } },
                     { race = 6 },
                 },
             },

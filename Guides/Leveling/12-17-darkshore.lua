@@ -54,6 +54,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                     { ["not"] = { quest = { id = 1642, state = "activeOrCompleted" } } },
@@ -72,6 +73,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -90,6 +92,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -107,6 +110,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -125,6 +129,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -142,6 +147,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -160,6 +166,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -177,6 +184,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -191,6 +199,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -209,6 +218,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -226,6 +236,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -244,6 +255,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -261,6 +273,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -279,6 +292,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -296,6 +310,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -314,6 +329,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -332,6 +348,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -349,6 +366,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -367,6 +385,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -385,6 +404,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -402,6 +422,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -420,6 +441,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                     { ["not"] = { quest = { id = 1646, state = "activeOrCompleted" } } },
@@ -438,6 +460,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -456,6 +479,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -473,6 +497,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -491,6 +516,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -508,6 +534,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -526,6 +553,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -543,6 +571,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -561,6 +590,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -579,6 +609,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -596,6 +627,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -614,6 +646,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -631,6 +664,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -649,6 +683,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -666,6 +701,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -680,6 +716,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -698,6 +735,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -715,6 +753,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -733,6 +772,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -751,6 +791,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -768,6 +809,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -784,6 +826,7 @@ ns:RegisterGuide({
             id = "accept-3524-washed-ashore",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 11 } },
             text = "Accept Washed Ashore from Gwennyth Bly'Leggonde in Auberdine.",
             complete = QuestState(3524, "activeOrCompleted"),
             route = {
@@ -797,6 +840,7 @@ ns:RegisterGuide({
             priority = 510,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -813,6 +857,7 @@ ns:RegisterGuide({
             priority = 520,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -829,6 +874,7 @@ ns:RegisterGuide({
             priority = 540,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -844,6 +890,7 @@ ns:RegisterGuide({
             id = "accept-963-for-love-eternal",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 11 } },
             text = "Accept For Love Eternal from Cerellean Whiteclaw in Auberdine.",
             complete = QuestState(963, "activeOrCompleted"),
             route = {
@@ -855,6 +902,7 @@ ns:RegisterGuide({
             id = "accept-983-buzzbox-827",
             kind = "accept",
             priority = 570,
+            conditions = { level = { min = 7 } },
             text = "Accept Buzzbox 827 from Wizbang Cranktoggle in Auberdine.",
             complete = QuestState(983, "activeOrCompleted"),
             route = {
@@ -866,6 +914,7 @@ ns:RegisterGuide({
             id = "accept-4811-the-red-crystal",
             kind = "accept",
             priority = 580,
+            conditions = { level = { min = 12 } },
             text = "Accept The Red Crystal from Sentinel Glynda Nal'Shea in Auberdine.",
             complete = QuestState(4811, "activeOrCompleted"),
             route = {
@@ -877,7 +926,7 @@ ns:RegisterGuide({
             id = "accept-98025-wanted-jaivhanel",
             kind = "accept",
             priority = 581,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 10 } },
             text = "Accept WANTED: Jai'vhanel from the poster beside Sentinel Glynda Nal'Shea in Auberdine.",
             complete = QuestState(98025, "activeOrCompleted"),
             route = {
@@ -899,6 +948,7 @@ ns:RegisterGuide({
             id = "accept-947-cave-mushrooms",
             kind = "accept",
             priority = 600,
+            conditions = { level = { min = 12 } },
             text = "Accept Cave Mushrooms from Barithras Moonshade in Auberdine.",
             complete = QuestState(947, "activeOrCompleted"),
             route = {
@@ -910,6 +960,7 @@ ns:RegisterGuide({
             id = "accept-1141-the-family-and-the-fishing-pole",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 10 } },
             text = "Accept The Family and the Fishing Pole from Gubber Blump in Auberdine.",
             complete = QuestState(1141, "activeOrCompleted"),
             route = {
@@ -921,6 +972,7 @@ ns:RegisterGuide({
             id = "objective-1141-fishing-pole",
             kind = "objective",
             priority = 620,
+            conditions = { level = { min = 10 } },
             text = "Buy Fishing Pole from Gubber Blump.",
             dependsOn = { "accept-1141-the-family-and-the-fishing-pole" },
             complete = QuestState(1141, "complete"),
@@ -933,6 +985,7 @@ ns:RegisterGuide({
             id = "objective-1141-shiny-bauble",
             kind = "objective",
             priority = 630,
+            conditions = { level = { min = 10 } },
             text = "Buy Shiny Bauble from Gubber Blump.",
             dependsOn = { "accept-1141-the-family-and-the-fishing-pole" },
             complete = QuestState(1141, "complete"),
@@ -945,6 +998,7 @@ ns:RegisterGuide({
             id = "objective-1141-the-family-and-the-fishing-pole",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 10 } },
             text = "Catch 6 Darkshore Grouper in Auberdine Equip the Fishing Pole and cast the Fishing spell near the water and click on the bob when you see it moving to catch the fish, keep trying until you complete the quest This is an easy quest and recommended but you can safely skip it.",
             dependsOn = { "accept-1141-the-family-and-the-fishing-pole" },
             complete = QuestState(1141, "complete"),
@@ -957,6 +1011,7 @@ ns:RegisterGuide({
             id = "turnin-1141-the-family-and-the-fishing-pole",
             kind = "turnin",
             priority = 650,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Family and the Fishing Pole to Gubber Blump in Auberdine.",
             dependsOn = { "objective-1141-fishing-pole", "objective-1141-shiny-bauble", "objective-1141-the-family-and-the-fishing-pole" },
             complete = QuestState(1141, "completed"),
@@ -969,6 +1024,7 @@ ns:RegisterGuide({
             id = "accept-954-bashal-aran",
             kind = "accept",
             priority = 660,
+            conditions = { level = { min = 7 } },
             text = "Accept Bashal'Aran from Thundris Windweaver in Auberdine.",
             complete = QuestState(954, "activeOrCompleted"),
             route = {
@@ -980,6 +1036,7 @@ ns:RegisterGuide({
             id = "accept-958-tools-of-the-highborne",
             kind = "accept",
             priority = 670,
+            conditions = { level = { min = 9 } },
             text = "Accept Tools of the Highborne from Thundris Windweaver in Auberdine.",
             complete = QuestState(958, "activeOrCompleted"),
             route = {
@@ -991,6 +1048,7 @@ ns:RegisterGuide({
             id = "accept-2118-plagued-lands",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 10 } },
             text = "Accept Plagued Lands from Tharnariun Treetender in Auberdine.",
             complete = QuestState(2118, "activeOrCompleted"),
             route = {
@@ -1002,6 +1060,7 @@ ns:RegisterGuide({
             id = "accept-984-how-big-a-threat",
             kind = "accept",
             priority = 690,
+            conditions = { level = { min = 10 } },
             text = "Accept How Big a Threat? from Terenthis in Auberdine.",
             complete = QuestState(984, "activeOrCompleted"),
             route = {
@@ -1013,6 +1072,7 @@ ns:RegisterGuide({
             id = "objective-3524-washed-ashore",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 11 } },
             text = "Find the Sea Creature and collect Sea Creature Bones in The Long Wash.",
             dependsOn = { "accept-3524-washed-ashore" },
             complete = QuestState(3524, "complete"),
@@ -1025,6 +1085,7 @@ ns:RegisterGuide({
             id = "objective-983-buzzbox-827",
             kind = "objective",
             priority = 720,
+            conditions = { level = { min = 7 } },
             text = "Kill Pygmy Tide Crawler or Young Reef Crawler along the beach south of Auberdine for 6 Crawler Leg.",
             dependsOn = { "accept-983-buzzbox-827" },
             complete = QuestState(983, "complete"),
@@ -1037,6 +1098,7 @@ ns:RegisterGuide({
             id = "turnin-983-buzzbox-827",
             kind = "turnin",
             priority = 730,
+            conditions = { level = { min = 7 } },
             text = "Turn in Buzzbox 827 in Auberdine.",
             dependsOn = { "objective-983-buzzbox-827" },
             complete = QuestState(983, "completed"),
@@ -1049,6 +1111,7 @@ ns:RegisterGuide({
             id = "accept-1001-buzzbox-411",
             kind = "accept",
             priority = 740,
+            conditions = { level = { min = 7 } },
             text = "Accept Buzzbox 411 in Auberdine.",
             complete = QuestState(1001, "activeOrCompleted"),
             route = {
@@ -1060,6 +1123,7 @@ ns:RegisterGuide({
             id = "turnin-3524-washed-ashore",
             kind = "turnin",
             priority = 750,
+            conditions = { level = { min = 11 } },
             text = "Turn in Washed Ashore to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "objective-3524-washed-ashore" },
             complete = QuestState(3524, "completed"),
@@ -1072,6 +1136,7 @@ ns:RegisterGuide({
             id = "accept-4681-washed-ashore",
             kind = "accept",
             priority = 760,
+            conditions = { level = { min = 11 } },
             text = "Accept Washed Ashore from Gwennyth Bly'Leggonde in Auberdine.",
             complete = QuestState(4681, "activeOrCompleted"),
             route = {
@@ -1083,6 +1148,7 @@ ns:RegisterGuide({
             id = "objective-4681-washed-ashore",
             kind = "objective",
             priority = 770,
+            conditions = { level = { min = 11 } },
             text = "Collect Sea Turtle Remains from the Sea Turtle's body in the waters towards the boats.",
             dependsOn = { "accept-4681-washed-ashore" },
             complete = QuestState(4681, "complete"),
@@ -1095,6 +1161,7 @@ ns:RegisterGuide({
             id = "objective-1001-buzzbox-411",
             kind = "objective",
             priority = 790,
+            conditions = { level = { min = 7 } },
             text = "Kill Darkshore Thresher and collect 3 Thresher Eye in Mist's Edge.",
             dependsOn = { "accept-1001-buzzbox-411" },
             complete = QuestState(1001, "complete"),
@@ -1107,6 +1174,7 @@ ns:RegisterGuide({
             id = "turnin-4681-washed-ashore",
             kind = "turnin",
             priority = 810,
+            conditions = { level = { min = 11 } },
             text = "Turn in Washed Ashore to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "objective-4681-washed-ashore" },
             complete = QuestState(4681, "completed"),
@@ -1119,6 +1187,7 @@ ns:RegisterGuide({
             id = "accept-4723-beached-sea-creature",
             kind = "accept",
             priority = 830,
+            conditions = { level = { min = 11 } },
             text = "Accept Beached Sea Creature in Mist's Edge.",
             complete = QuestState(4723, "activeOrCompleted"),
             route = {
@@ -1130,6 +1199,7 @@ ns:RegisterGuide({
             id = "turnin-1001-buzzbox-411",
             kind = "turnin",
             priority = 840,
+            conditions = { level = { min = 7 } },
             text = "Turn in Buzzbox 411 in Mist's Edge.",
             dependsOn = { "objective-1001-buzzbox-411" },
             complete = QuestState(1001, "completed"),
@@ -1142,6 +1212,7 @@ ns:RegisterGuide({
             id = "accept-1002-buzzbox-323",
             kind = "accept",
             priority = 850,
+            conditions = { level = { min = 7 } },
             text = "Accept Buzzbox 323 in Mist's Edge.",
             complete = QuestState(1002, "activeOrCompleted"),
             route = {
@@ -1153,6 +1224,7 @@ ns:RegisterGuide({
             id = "turnin-954-bashal-aran",
             kind = "turnin",
             priority = 860,
+            conditions = { level = { min = 7 } },
             text = "Turn in Bashal'Aran to Asterion in Bashal'Aran.",
             dependsOn = { "accept-954-bashal-aran" },
             complete = QuestState(954, "completed"),
@@ -1165,6 +1237,7 @@ ns:RegisterGuide({
             id = "accept-955-bashal-aran",
             kind = "accept",
             priority = 870,
+            conditions = { level = { min = 7 } },
             text = "Accept Bashal'Aran from Asterion in Bashal'Aran.",
             complete = QuestState(955, "activeOrCompleted"),
             route = {
@@ -1176,6 +1249,7 @@ ns:RegisterGuide({
             id = "objective-955-bashal-aran",
             kind = "objective",
             priority = 880,
+            conditions = { level = { min = 7 } },
             text = "Kill Wild Grell to collect 8 Grell Earring in Bashal'Aran.",
             dependsOn = { "accept-955-bashal-aran" },
             complete = QuestState(955, "complete"),
@@ -1188,6 +1262,7 @@ ns:RegisterGuide({
             id = "turnin-955-bashal-aran",
             kind = "turnin",
             priority = 890,
+            conditions = { level = { min = 7 } },
             text = "Turn in Bashal'Aran to Asterion in Bashal'Aran.",
             dependsOn = { "objective-955-bashal-aran" },
             complete = QuestState(955, "completed"),
@@ -1200,6 +1275,7 @@ ns:RegisterGuide({
             id = "accept-956-bashal-aran",
             kind = "accept",
             priority = 900,
+            conditions = { level = { min = 7 } },
             text = "Accept Bashal'Aran from Asterion in Bashal'Aran.",
             complete = QuestState(956, "activeOrCompleted"),
             route = {
@@ -1211,6 +1287,7 @@ ns:RegisterGuide({
             id = "objective-956-bashal-aran",
             kind = "objective",
             priority = 910,
+            conditions = { level = { min = 7 } },
             text = "Kill Deth'ryll Satyr in Bashal'Aran until you find Ancient Moonstone Seal.",
             dependsOn = { "accept-956-bashal-aran" },
             complete = QuestState(956, "complete"),
@@ -1223,6 +1300,7 @@ ns:RegisterGuide({
             id = "turnin-956-bashal-aran",
             kind = "turnin",
             priority = 920,
+            conditions = { level = { min = 7 } },
             text = "Turn in Bashal'Aran to Asterion in Bashal'Aran.",
             dependsOn = { "objective-956-bashal-aran" },
             complete = QuestState(956, "completed"),
@@ -1235,6 +1313,7 @@ ns:RegisterGuide({
             id = "accept-957-bashal-aran",
             kind = "accept",
             priority = 930,
+            conditions = { level = { min = 7 } },
             text = "Accept Bashal'Aran from Asterion in Bashal'Aran.",
             complete = QuestState(957, "activeOrCompleted"),
             route = {
@@ -1246,6 +1325,7 @@ ns:RegisterGuide({
             id = "objective-4811-the-red-crystal",
             kind = "objective",
             priority = 940,
+            conditions = { level = { min = 12 } },
             text = "Find the Red Crystal to the east of Auberdine on the Mountain's border.",
             dependsOn = { "accept-4811-the-red-crystal" },
             complete = QuestState(4811, "complete"),
@@ -1258,6 +1338,7 @@ ns:RegisterGuide({
             id = "objective-984-how-big-a-threat",
             kind = "objective",
             priority = 950,
+            conditions = { level = { min = 10 } },
             text = "Find a corrupt furbolg camp in Darkshore, you just need to reach the waypoint to complete the quest.",
             dependsOn = { "accept-984-how-big-a-threat" },
             complete = QuestState(984, "complete"),
@@ -1270,6 +1351,7 @@ ns:RegisterGuide({
             id = "accept-953-the-fall-of-ameth-aran",
             kind = "accept",
             priority = 970,
+            conditions = { level = { min = 9 } },
             text = "Accept The Fall of Ameth'Aran from Sentinel Tysha Moonblade in Twilight Vale.",
             complete = QuestState(953, "activeOrCompleted"),
             route = {
@@ -1281,7 +1363,7 @@ ns:RegisterGuide({
             id = "objective-98025-wanted-jaivhanel",
             kind = "objective",
             priority = 975,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 10 } },
             text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
             dependsOn = { "accept-98025-wanted-jaivhanel" },
             complete = QuestState(98025, "complete"),
@@ -1294,6 +1376,7 @@ ns:RegisterGuide({
             id = "objective-953-1-read-the-lay-of-ameth-aran",
             kind = "objective",
             priority = 980,
+            conditions = { level = { min = 9 } },
             text = "Click on the Lay of Ameth'Aran tablet in Ameth'Aran.",
             dependsOn = { "accept-953-the-fall-of-ameth-aran" },
             complete = QuestObjective(953, 1),
@@ -1306,6 +1389,7 @@ ns:RegisterGuide({
             id = "objective-953-2-read-the-fall-of-ameth-aran",
             kind = "objective",
             priority = 990,
+            conditions = { level = { min = 9 } },
             text = "Click on the Fall of Ameth'Aran tablet in Ameth'Aran.",
             dependsOn = { "accept-953-the-fall-of-ameth-aran" },
             complete = QuestObjective(953, 2),
@@ -1318,6 +1402,7 @@ ns:RegisterGuide({
             id = "objective-957-bashal-aran",
             kind = "objective",
             priority = 1000,
+            conditions = { level = { min = 7 } },
             text = "Click on the Ancient flame in Ameth'Aran.",
             dependsOn = { "accept-957-bashal-aran" },
             complete = QuestState(957, "complete"),
@@ -1330,6 +1415,7 @@ ns:RegisterGuide({
             id = "objective-963-for-love-eternal",
             kind = "objective",
             priority = 1010,
+            conditions = { level = { min = 11 } },
             text = "Kill Anaya Dawnrunner and collect Anaya's Pendant in Ameth'Aran She's level 16 and can be tough to solo if you're too low level, you might need to help or complete later.",
             dependsOn = { "accept-963-for-love-eternal" },
             complete = QuestState(963, "complete"),
@@ -1342,6 +1428,7 @@ ns:RegisterGuide({
             id = "turnin-953-the-fall-of-ameth-aran",
             kind = "turnin",
             priority = 1030,
+            conditions = { level = { min = 9 } },
             text = "Turn in The Fall of Ameth'Aran to Sentinel Tysha Moonblade in Twilight Vale.",
             dependsOn = { "objective-953-1-read-the-lay-of-ameth-aran", "objective-953-2-read-the-fall-of-ameth-aran" },
             complete = QuestState(953, "completed"),
@@ -1354,6 +1441,7 @@ ns:RegisterGuide({
             id = "objective-958-tools-of-the-highborne",
             kind = "objective",
             priority = 1040,
+            conditions = { level = { min = 9 } },
             text = "Kill any of the Highborne mobs in Ameth'Aran to collect 7 Highborne Relic.",
             dependsOn = { "accept-958-tools-of-the-highborne" },
             complete = QuestState(958, "complete"),
@@ -1366,6 +1454,7 @@ ns:RegisterGuide({
             id = "objective-2118-plagued-lands",
             kind = "objective",
             priority = 1050,
+            conditions = { level = { min = 10 } },
             text = "Find Rabid Thistle Bear and use Tharnariun's Hope on the bear to capture it.",
             dependsOn = { "accept-2118-plagued-lands" },
             complete = QuestState(2118, "complete"),
@@ -1378,6 +1467,7 @@ ns:RegisterGuide({
             id = "turnin-963-for-love-eternal",
             kind = "turnin",
             priority = 1070,
+            conditions = { level = { min = 11 } },
             text = "Turn in For Love Eternal to Cerellean Whiteclaw in Auberdine.",
             dependsOn = { "objective-963-for-love-eternal" },
             complete = QuestState(963, "completed"),
@@ -1390,6 +1480,7 @@ ns:RegisterGuide({
             id = "turnin-4811-the-red-crystal",
             kind = "turnin",
             priority = 1080,
+            conditions = { level = { min = 12 } },
             text = "Turn in The Red Crystal to Sentinel Glynda Nal'Shea in Auberdine.",
             dependsOn = { "objective-4811-the-red-crystal" },
             complete = QuestState(4811, "completed"),
@@ -1402,7 +1493,7 @@ ns:RegisterGuide({
             id = "turnin-98025-wanted-jaivhanel",
             kind = "turnin",
             priority = 1081,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea in Auberdine.",
             dependsOn = { "objective-98025-wanted-jaivhanel" },
             complete = QuestState(98025, "completed"),
@@ -1415,6 +1506,7 @@ ns:RegisterGuide({
             id = "accept-4812-as-water-cascades",
             kind = "accept",
             priority = 1090,
+            conditions = { level = { min = 12 } },
             text = "Accept As Water Cascades from Sentinel Glynda Nal'Shea in Auberdine.",
             complete = QuestState(4812, "activeOrCompleted"),
             route = {
@@ -1426,6 +1518,7 @@ ns:RegisterGuide({
             id = "objective-4812-empty-water-tube",
             kind = "objective",
             priority = 1100,
+            conditions = { level = { min = 12 } },
             text = "Use the Empty Water Tube to create Moonwell Water Tube in the Moonwell.",
             dependsOn = { "accept-4812-as-water-cascades" },
             complete = QuestState(4812, "complete"),
@@ -1438,6 +1531,7 @@ ns:RegisterGuide({
             id = "turnin-2118-plagued-lands",
             kind = "turnin",
             priority = 1110,
+            conditions = { level = { min = 10 } },
             text = "Turn in Plagued Lands to Tharnariun Treetender in Auberdine.",
             dependsOn = { "objective-2118-plagued-lands" },
             complete = QuestState(2118, "completed"),
@@ -1450,6 +1544,7 @@ ns:RegisterGuide({
             id = "accept-2138-cleansing-of-the-infected",
             kind = "accept",
             priority = 1120,
+            conditions = { level = { min = 10 } },
             text = "Accept Cleansing of the Infected from Tharnariun Treetender in Auberdine.",
             complete = QuestState(2138, "activeOrCompleted"),
             route = {
@@ -1461,6 +1556,7 @@ ns:RegisterGuide({
             id = "turnin-984-how-big-a-threat",
             kind = "turnin",
             priority = 1130,
+            conditions = { level = { min = 10 } },
             text = "Turn in How Big a Threat? to Terenthis in Auberdine.",
             dependsOn = { "objective-984-how-big-a-threat" },
             complete = QuestState(984, "completed"),
@@ -1473,6 +1569,7 @@ ns:RegisterGuide({
             id = "accept-985-how-big-a-threat",
             kind = "accept",
             priority = 1140,
+            conditions = { level = { min = 10 } },
             text = "Accept How Big a Threat? from Terenthis in Auberdine.",
             complete = QuestState(985, "activeOrCompleted"),
             route = {
@@ -1484,6 +1581,7 @@ ns:RegisterGuide({
             id = "accept-4761-thundris-windweaver",
             kind = "accept",
             priority = 1150,
+            conditions = { level = { min = 11 } },
             text = "Accept Thundris Windweaver from Terenthis in Auberdine.",
             complete = QuestState(4761, "activeOrCompleted"),
             route = {
@@ -1495,6 +1593,7 @@ ns:RegisterGuide({
             id = "accept-965-the-tower-of-althalaxx",
             kind = "accept",
             priority = 1160,
+            conditions = { level = { min = 13 } },
             text = "Accept The Tower of Althalaxx from Sentinel Elissa Starbreeze in Auberdine.",
             complete = QuestState(965, "activeOrCompleted"),
             route = {
@@ -1506,6 +1605,7 @@ ns:RegisterGuide({
             id = "accept-982-deep-ocean-vast-sea",
             kind = "accept",
             priority = 1170,
+            conditions = { level = { min = 13 } },
             text = "Accept Deep Ocean, Vast Sea from Gorbold Steelhand in Auberdine.",
             complete = QuestState(982, "activeOrCompleted"),
             route = {
@@ -1517,6 +1617,7 @@ ns:RegisterGuide({
             id = "turnin-958-tools-of-the-highborne",
             kind = "turnin",
             priority = 1180,
+            conditions = { level = { min = 9 } },
             text = "Turn in Tools of the Highborne to Thundris Windweaver in Auberdine.",
             dependsOn = { "objective-958-tools-of-the-highborne" },
             complete = QuestState(958, "completed"),
@@ -1529,6 +1630,7 @@ ns:RegisterGuide({
             id = "turnin-4761-thundris-windweaver",
             kind = "turnin",
             priority = 1190,
+            conditions = { level = { min = 11 } },
             text = "Turn in Thundris Windweaver to Thundris Windweaver in Auberdine.",
             dependsOn = { "accept-4761-thundris-windweaver" },
             complete = QuestState(4761, "completed"),
@@ -1541,6 +1643,7 @@ ns:RegisterGuide({
             id = "accept-4762-the-cliffspring-river",
             kind = "accept",
             priority = 1200,
+            conditions = { level = { min = 11 } },
             text = "Accept The Cliffspring River from Thundris Windweaver in Auberdine.",
             complete = QuestState(4762, "activeOrCompleted"),
             route = {
@@ -1552,6 +1655,7 @@ ns:RegisterGuide({
             id = "turnin-4723-beached-sea-creature",
             kind = "turnin",
             priority = 1210,
+            conditions = { level = { min = 11 } },
             text = "Turn in Beached Sea Creature to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "accept-4723-beached-sea-creature" },
             complete = QuestState(4723, "completed"),
@@ -1566,6 +1670,7 @@ ns:RegisterGuide({
             priority = 1230,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1582,6 +1687,7 @@ ns:RegisterGuide({
             priority = 1250,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1599,6 +1705,7 @@ ns:RegisterGuide({
             priority = 1260,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1613,6 +1720,7 @@ ns:RegisterGuide({
             id = "turnin-957-bashal-aran",
             kind = "turnin",
             priority = 1270,
+            conditions = { level = { min = 7 } },
             text = "Turn in Bashal'Aran to Asterion in Bashal'Aran.",
             dependsOn = { "objective-957-bashal-aran" },
             complete = QuestState(957, "completed"),
@@ -1625,6 +1733,7 @@ ns:RegisterGuide({
             id = "objective-982-1-silver-dawning-s-lockbox",
             kind = "objective",
             priority = 1280,
+            conditions = { level = { min = 13 } },
             text = "Collect Silver Dawning's Lockbox from the lowest deck and rear side of the sunken ship.",
             dependsOn = { "accept-982-deep-ocean-vast-sea" },
             complete = QuestObjective(982, 1),
@@ -1637,6 +1746,7 @@ ns:RegisterGuide({
             id = "objective-982-2-mist-veil-s-lockbox",
             kind = "objective",
             priority = 1290,
+            conditions = { level = { min = 13 } },
             text = "Collect Mist Veil's Lockbox from the lowest deck and rear side of the sunken ship.",
             dependsOn = { "accept-982-deep-ocean-vast-sea" },
             complete = QuestObjective(982, 2),
@@ -1649,6 +1759,7 @@ ns:RegisterGuide({
             id = "accept-4725-beached-sea-turtle",
             kind = "accept",
             priority = 1310,
+            conditions = { level = { min = 12 } },
             text = "Accept Beached Sea Turtle in Mist's Edge.",
             complete = QuestState(4725, "activeOrCompleted"),
             route = {
@@ -1660,6 +1771,7 @@ ns:RegisterGuide({
             id = "objective-1002-buzzbox-323",
             kind = "objective",
             priority = 1320,
+            conditions = { level = { min = 7 } },
             text = "Kill Moonstalker cats and collect 6 Moonstalker Fang.",
             dependsOn = { "accept-1002-buzzbox-323" },
             complete = QuestState(1002, "complete"),
@@ -1674,6 +1786,7 @@ ns:RegisterGuide({
             id = "turnin-1002-buzzbox-323",
             kind = "turnin",
             priority = 1330,
+            conditions = { level = { min = 7 } },
             text = "Turn in Buzzbox 323 in Cliffspring River.",
             dependsOn = { "objective-1002-buzzbox-323" },
             complete = QuestState(1002, "completed"),
@@ -1686,6 +1799,7 @@ ns:RegisterGuide({
             id = "accept-1003-buzzbox-525",
             kind = "accept",
             priority = 1340,
+            conditions = { level = { min = 7 } },
             text = "Accept Buzzbox 525 in Cliffspring River.",
             complete = QuestState(1003, "activeOrCompleted"),
             route = {
@@ -1697,6 +1811,7 @@ ns:RegisterGuide({
             id = "objective-4762-the-cliffspring-river",
             kind = "objective",
             priority = 1350,
+            conditions = { level = { min = 11 } },
             text = "Go to Cliffspring River waterfall and use the Empty Sampling Tube.",
             dependsOn = { "accept-4762-the-cliffspring-river" },
             complete = QuestState(4762, "complete"),
@@ -1711,6 +1826,7 @@ ns:RegisterGuide({
             priority = 1360,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1726,6 +1842,7 @@ ns:RegisterGuide({
             id = "objective-947-cave-mushrooms",
             kind = "objective",
             priority = 1370,
+            conditions = { level = { min = 12 } },
             text = "Follow the path to the cave guarded by Naga's and collect 5 Scaber Stalk and 1 Death Cap from the ground inside the cave.",
             dependsOn = { "accept-947-cave-mushrooms" },
             complete = QuestState(947, "complete"),
@@ -1744,6 +1861,7 @@ ns:RegisterGuide({
             id = "turnin-4812-as-water-cascades",
             kind = "turnin",
             priority = 1380,
+            conditions = { level = { min = 12 } },
             text = "Turn in As Water Cascades.",
             dependsOn = { "objective-4812-empty-water-tube" },
             complete = QuestState(4812, "completed"),
@@ -1756,6 +1874,7 @@ ns:RegisterGuide({
             id = "accept-4813-the-fragments-within",
             kind = "accept",
             priority = 1390,
+            conditions = { level = { min = 12 } },
             text = "Accept The Fragments Within in Dark Shore.",
             complete = QuestState(4813, "activeOrCompleted"),
             route = {
@@ -1767,6 +1886,7 @@ ns:RegisterGuide({
             id = "objective-985-how-big-a-threat",
             kind = "objective",
             priority = 1400,
+            conditions = { level = { min = 10 } },
             text = "Kill 8 Blackwood Pathfinder and 5 Blackwood Windtalker in the furbolg camp.",
             dependsOn = { "accept-985-how-big-a-threat" },
             complete = QuestState(985, "complete"),
@@ -1781,6 +1901,7 @@ ns:RegisterGuide({
             id = "accept-4722-beached-sea-turtle",
             kind = "accept",
             priority = 1410,
+            conditions = { level = { min = 11 } },
             text = "Accept Beached Sea Turtle.",
             complete = QuestState(4722, "activeOrCompleted"),
             route = {
@@ -1792,6 +1913,7 @@ ns:RegisterGuide({
             id = "accept-4728-beached-sea-creature",
             kind = "accept",
             priority = 1420,
+            conditions = { level = { min = 12 } },
             text = "Accept Beached Sea Creature.",
             complete = QuestState(4728, "activeOrCompleted"),
             route = {
@@ -1803,6 +1925,7 @@ ns:RegisterGuide({
             id = "objective-2138-cleansing-of-the-infected",
             kind = "objective",
             priority = 1430,
+            conditions = { level = { min = 10 } },
             text = "Kill 20 Rabid Thistle Bear which are spread throughout the area past Bashal'Ara.",
             dependsOn = { "accept-2138-cleansing-of-the-infected" },
             complete = QuestState(2138, "complete"),
@@ -1817,6 +1940,7 @@ ns:RegisterGuide({
             id = "objective-1003-buzzbox-525",
             kind = "objective",
             priority = 1440,
+            conditions = { level = { min = 7 } },
             text = "Kill Grizzled Thistle Bear for 4 Grizzled Scalpwhich are found in the Southern area of Darkshore around.",
             dependsOn = { "accept-1003-buzzbox-525" },
             complete = QuestState(1003, "complete"),
@@ -1829,6 +1953,7 @@ ns:RegisterGuide({
             id = "turnin-1003-buzzbox-525",
             kind = "turnin",
             priority = 1460,
+            conditions = { level = { min = 7 } },
             text = "Turn in Buzzbox 525 in Twilight Vale.",
             dependsOn = { "objective-1003-buzzbox-525" },
             complete = QuestState(1003, "completed"),
@@ -1841,6 +1966,7 @@ ns:RegisterGuide({
             id = "turnin-4728-beached-sea-creature",
             kind = "turnin",
             priority = 1480,
+            conditions = { level = { min = 12 } },
             text = "Turn in Beached Sea Creature to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "accept-4728-beached-sea-creature" },
             complete = QuestState(4728, "completed"),
@@ -1853,6 +1979,7 @@ ns:RegisterGuide({
             id = "turnin-4725-beached-sea-turtle",
             kind = "turnin",
             priority = 1490,
+            conditions = { level = { min = 12 } },
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "accept-4725-beached-sea-turtle" },
             complete = QuestState(4725, "completed"),
@@ -1865,6 +1992,7 @@ ns:RegisterGuide({
             id = "turnin-4722-beached-sea-turtle",
             kind = "turnin",
             priority = 1500,
+            conditions = { level = { min = 11 } },
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "accept-4722-beached-sea-turtle" },
             complete = QuestState(4722, "completed"),
@@ -1877,6 +2005,7 @@ ns:RegisterGuide({
             id = "accept-1138-fruit-of-the-sea",
             kind = "accept",
             priority = 1510,
+            conditions = { level = { min = 15 } },
             text = "Accept Fruit of the Sea from Gubber Blump in Auberdine.",
             complete = QuestState(1138, "activeOrCompleted"),
             route = {
@@ -1888,6 +2017,7 @@ ns:RegisterGuide({
             id = "turnin-947-cave-mushrooms",
             kind = "turnin",
             priority = 1520,
+            conditions = { level = { min = 12 } },
             text = "Turn in Cave Mushrooms to Barithras Moonshade in Auberdine.",
             dependsOn = { "objective-947-cave-mushrooms" },
             complete = QuestState(947, "completed"),
@@ -1900,6 +2030,7 @@ ns:RegisterGuide({
             id = "accept-948-onu",
             kind = "accept",
             priority = 1530,
+            conditions = { level = { min = 12 } },
             text = "Accept Onu from Barithras Moonshade in Auberdine.",
             complete = QuestState(948, "activeOrCompleted"),
             route = {
@@ -1911,6 +2042,7 @@ ns:RegisterGuide({
             id = "turnin-4813-the-fragments-within",
             kind = "turnin",
             priority = 1540,
+            conditions = { level = { min = 12 } },
             text = "Turn in The Fragments Within to Sentinel Glynda Nal'Shea in Auberdine.",
             dependsOn = { "accept-4813-the-fragments-within" },
             complete = QuestState(4813, "completed"),
@@ -1923,6 +2055,7 @@ ns:RegisterGuide({
             id = "accept-729-the-absent-minded-prospector",
             kind = "accept",
             priority = 1550,
+            conditions = { level = { min = 15 } },
             text = "Accept The Absent Minded Prospector from Archaeologist Hollee in Auberdine.",
             complete = QuestState(729, "activeOrCompleted"),
             route = {
@@ -1934,6 +2067,7 @@ ns:RegisterGuide({
             id = "turnin-4762-the-cliffspring-river",
             kind = "turnin",
             priority = 1560,
+            conditions = { level = { min = 11 } },
             text = "Turn in The Cliffspring River to Thundris Windweaver in Auberdine.",
             dependsOn = { "objective-4762-the-cliffspring-river" },
             complete = QuestState(4762, "completed"),
@@ -1946,6 +2080,7 @@ ns:RegisterGuide({
             id = "accept-4763-the-blackwood-corrupted",
             kind = "accept",
             priority = 1570,
+            conditions = { level = { min = 15 } },
             text = "Accept The Blackwood Corrupted from Thundris Windweaver in Auberdine.",
             complete = QuestState(4763, "activeOrCompleted"),
             route = {
@@ -1957,6 +2092,7 @@ ns:RegisterGuide({
             id = "turnin-982-deep-ocean-vast-sea",
             kind = "turnin",
             priority = 1580,
+            conditions = { level = { min = 13 } },
             text = "Turn in Deep Ocean, Vast Sea to Gorbold Steelhand in Auberdine.",
             dependsOn = { "objective-982-1-silver-dawning-s-lockbox", "objective-982-2-mist-veil-s-lockbox" },
             complete = QuestState(982, "completed"),
@@ -1969,6 +2105,7 @@ ns:RegisterGuide({
             id = "turnin-2138-cleansing-of-the-infected",
             kind = "turnin",
             priority = 1590,
+            conditions = { level = { min = 10 } },
             text = "Turn in Cleansing of the Infected to Tharnariun Treetender in Auberdine.",
             dependsOn = { "objective-2138-cleansing-of-the-infected" },
             complete = QuestState(2138, "completed"),
@@ -1981,6 +2118,7 @@ ns:RegisterGuide({
             id = "accept-2139-tharnariun-s-hope",
             kind = "accept",
             priority = 1600,
+            conditions = { level = { min = 10 } },
             text = "Accept Tharnariun's Hope from Tharnariun Treetender in Auberdine.",
             complete = QuestState(2139, "activeOrCompleted"),
             route = {
@@ -1992,6 +2130,7 @@ ns:RegisterGuide({
             id = "turnin-985-how-big-a-threat",
             kind = "turnin",
             priority = 1610,
+            conditions = { level = { min = 10 } },
             text = "Turn in How Big a Threat? to Terenthis in Auberdine.",
             dependsOn = { "objective-985-how-big-a-threat" },
             complete = QuestState(985, "completed"),
@@ -2004,6 +2143,7 @@ ns:RegisterGuide({
             id = "accept-986-a-lost-master",
             kind = "accept",
             priority = 1620,
+            conditions = { level = { min = 10 } },
             text = "Accept A Lost Master from Terenthis in Auberdine.",
             complete = QuestState(986, "activeOrCompleted"),
             route = {
@@ -2017,6 +2157,7 @@ ns:RegisterGuide({
             priority = 1630,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2034,6 +2175,7 @@ ns:RegisterGuide({
             priority = 1640,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2048,6 +2190,7 @@ ns:RegisterGuide({
             id = "objective-2139-tharnariun-s-hope",
             kind = "objective",
             priority = 1650,
+            conditions = { level = { min = 10 } },
             text = "Go to the cave where you will find the Den Mother (level 19) with several level 9-10 cubs (52.40, 35,88).",
             dependsOn = { "accept-2139-tharnariun-s-hope" },
             complete = QuestState(2139, "complete"),
@@ -2060,6 +2203,7 @@ ns:RegisterGuide({
             id = "objective-4763-the-blackwood-corrupted",
             kind = "objective",
             priority = 1660,
+            conditions = { level = { min = 15 } },
             text = "Use the Filled Cleansing Bowl on the bonfire to summon Xabraxxis, kill him and collect the Talisman of Corruption.",
             dependsOn = { "accept-4763-the-blackwood-corrupted" },
             complete = QuestState(4763, "complete"),
@@ -2072,6 +2216,7 @@ ns:RegisterGuide({
             id = "turnin-965-the-tower-of-althalaxx",
             kind = "turnin",
             priority = 1670,
+            conditions = { level = { min = 13 } },
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike in Dark Shore.",
             dependsOn = { "accept-965-the-tower-of-althalaxx" },
             complete = QuestState(965, "completed"),
@@ -2084,6 +2229,7 @@ ns:RegisterGuide({
             id = "accept-966-the-tower-of-althalaxx",
             kind = "accept",
             priority = 1680,
+            conditions = { level = { min = 13 } },
             text = "Accept The Tower of Althalaxx from Balthule Shadowstrike in Dark Shore.",
             complete = QuestState(966, "activeOrCompleted"),
             route = {
@@ -2095,6 +2241,7 @@ ns:RegisterGuide({
             id = "objective-966-the-tower-of-althalaxx",
             kind = "objective",
             priority = 1690,
+            conditions = { level = { min = 13 } },
             text = "Kill Dark Strand Fanatic and collect 4 Worn Parchment around the Tower of Althalaxx.",
             dependsOn = { "accept-966-the-tower-of-althalaxx" },
             complete = QuestState(966, "complete"),
@@ -2107,6 +2254,7 @@ ns:RegisterGuide({
             id = "turnin-966-the-tower-of-althalaxx",
             kind = "turnin",
             priority = 1700,
+            conditions = { level = { min = 13 } },
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike in Dark Shore.",
             dependsOn = { "objective-966-the-tower-of-althalaxx" },
             complete = QuestState(966, "completed"),
@@ -2119,6 +2267,7 @@ ns:RegisterGuide({
             id = "accept-967-the-tower-of-althalaxx",
             kind = "accept",
             priority = 1710,
+            conditions = { level = { min = 13 } },
             text = "Accept The Tower of Althalaxx from Balthule Shadowstrike in Dark Shore.",
             complete = QuestState(967, "activeOrCompleted"),
             route = {
@@ -2130,6 +2279,7 @@ ns:RegisterGuide({
             id = "accept-4727-beached-sea-turtle",
             kind = "accept",
             priority = 1730,
+            conditions = { level = { min = 12 } },
             text = "Accept Beached Sea Turtle in Mist's Edge.",
             complete = QuestState(4727, "activeOrCompleted"),
             route = {
@@ -2141,6 +2291,7 @@ ns:RegisterGuide({
             id = "objective-1138-fruit-of-the-sea",
             kind = "objective",
             priority = 1740,
+            conditions = { level = { min = 15 } },
             text = "Kill Encrusted Tide Crawler or Reef Crawler and collect 6 Fine Crab Chunks in Mist's Edge.",
             dependsOn = { "accept-1138-fruit-of-the-sea" },
             complete = QuestState(1138, "complete"),
@@ -2153,6 +2304,7 @@ ns:RegisterGuide({
             id = "turnin-1138-fruit-of-the-sea",
             kind = "turnin",
             priority = 1760,
+            conditions = { level = { min = 15 } },
             text = "Turn in Fruit of the Sea to Gubber Blump in Auberdine.",
             dependsOn = { "objective-1138-fruit-of-the-sea" },
             complete = QuestState(1138, "completed"),
@@ -2165,6 +2317,7 @@ ns:RegisterGuide({
             id = "turnin-4727-beached-sea-turtle",
             kind = "turnin",
             priority = 1770,
+            conditions = { level = { min = 12 } },
             text = "Turn in Beached Sea Turtle to Gwennyth Bly'Leggonde in Auberdine.",
             dependsOn = { "accept-4727-beached-sea-turtle" },
             complete = QuestState(4727, "completed"),
@@ -2177,6 +2330,7 @@ ns:RegisterGuide({
             id = "turnin-4763-the-blackwood-corrupted",
             kind = "turnin",
             priority = 1780,
+            conditions = { level = { min = 15 } },
             text = "Turn in The Blackwood Corrupted to Thundris Windweaver in Auberdine.",
             dependsOn = { "objective-4763-the-blackwood-corrupted" },
             complete = QuestState(4763, "completed"),
@@ -2189,6 +2343,7 @@ ns:RegisterGuide({
             id = "turnin-2139-tharnariun-s-hope",
             kind = "turnin",
             priority = 1790,
+            conditions = { level = { min = 10 } },
             text = "Turn in Tharnariun's Hope to Tharnariun Treetender in Auberdine.",
             dependsOn = { "objective-2139-tharnariun-s-hope" },
             complete = QuestState(2139, "completed"),
@@ -2203,6 +2358,7 @@ ns:RegisterGuide({
             priority = 1800,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2228,6 +2384,7 @@ ns:RegisterGuide({
             priority = 1810,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2241,6 +2398,7 @@ ns:RegisterGuide({
             priority = 1820,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2258,6 +2416,7 @@ ns:RegisterGuide({
             priority = 1830,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2274,6 +2433,7 @@ ns:RegisterGuide({
             priority = 1840,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2307,6 +2467,7 @@ ns:RegisterGuide({
             priority = 1860,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2324,6 +2485,7 @@ ns:RegisterGuide({
             priority = 1870,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2340,6 +2502,7 @@ ns:RegisterGuide({
             priority = 1890,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2357,6 +2520,7 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2373,6 +2537,7 @@ ns:RegisterGuide({
             priority = 1920,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2389,6 +2554,7 @@ ns:RegisterGuide({
             priority = 1940,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2406,6 +2572,7 @@ ns:RegisterGuide({
             priority = 1950,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2422,6 +2589,7 @@ ns:RegisterGuide({
             priority = 1970,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2439,6 +2607,7 @@ ns:RegisterGuide({
             priority = 1980,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2456,6 +2625,7 @@ ns:RegisterGuide({
             priority = 1990,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2472,6 +2642,7 @@ ns:RegisterGuide({
             priority = 2030,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2489,6 +2660,7 @@ ns:RegisterGuide({
             priority = 2050,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2506,6 +2678,7 @@ ns:RegisterGuide({
             priority = 2060,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2522,6 +2695,7 @@ ns:RegisterGuide({
             priority = 2080,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },

@@ -46,6 +46,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1240, state = "completed" } },
                 },
             },
@@ -60,6 +61,7 @@ ns:RegisterGuide({
             id = "accept-1205-deadmire",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 35 } },
             text = "Accept Deadmire from Melor Stonehoof in Hunter Rise.",
             complete = QuestState(1205, "activeOrCompleted"),
             route = {
@@ -71,6 +73,7 @@ ns:RegisterGuide({
             id = "accept-1268-suspicious-hoofprints",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 30 } },
             text = "Accept Suspicious Hoofprints in Shady Rest Inn.",
             complete = QuestState(1268, "activeOrCompleted"),
             route = {
@@ -82,6 +85,7 @@ ns:RegisterGuide({
             id = "accept-1269-lieutenant-paval-reethe",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 30 } },
             text = "Accept Lieutenant Paval Reethe in Shady Rest Inn.",
             complete = QuestState(1269, "activeOrCompleted"),
             route = {
@@ -93,6 +97,7 @@ ns:RegisterGuide({
             id = "accept-1251-the-black-shield",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield in Shady Rest Inn.",
             complete = QuestState(1251, "activeOrCompleted"),
             route = {
@@ -104,6 +109,7 @@ ns:RegisterGuide({
             id = "turnin-1251-the-black-shield",
             kind = "turnin",
             priority = 90,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Krog in Brackenwall Village.",
             dependsOn = { "accept-1251-the-black-shield" },
             complete = QuestState(1251, "completed"),
@@ -116,6 +122,7 @@ ns:RegisterGuide({
             id = "accept-1321-the-black-shield",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Krog in Brackenwall Village.",
             complete = QuestState(1321, "activeOrCompleted"),
             route = {
@@ -127,6 +134,7 @@ ns:RegisterGuide({
             id = "turnin-1268-suspicious-hoofprints",
             kind = "turnin",
             priority = 110,
+            conditions = { level = { min = 30 } },
             text = "Turn in Suspicious Hoofprints to Krog in Brackenwall Village.",
             dependsOn = { "accept-1268-suspicious-hoofprints" },
             complete = QuestState(1268, "completed"),
@@ -139,6 +147,7 @@ ns:RegisterGuide({
             id = "turnin-1269-lieutenant-paval-reethe",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 30 } },
             text = "Turn in Lieutenant Paval Reethe to Krog in Brackenwall Village.",
             dependsOn = { "accept-1269-lieutenant-paval-reethe" },
             complete = QuestState(1269, "completed"),
@@ -151,6 +160,7 @@ ns:RegisterGuide({
             id = "accept-1273-questioning-reethe",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 30 } },
             text = "Accept Questioning Reethe from Ogron in Dustwallow Marsh.",
             complete = QuestState(1273, "activeOrCompleted"),
             route = {
@@ -162,6 +172,7 @@ ns:RegisterGuide({
             id = "turnin-1321-the-black-shield",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Do'gol in Brackenwall Village.",
             dependsOn = { "accept-1321-the-black-shield" },
             complete = QuestState(1321, "completed"),
@@ -174,6 +185,7 @@ ns:RegisterGuide({
             id = "accept-1169-identifying-the-brood",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 38 } },
             text = "Accept Identifying the Brood from Draz'Zilb in Brackenwall Village.",
             complete = QuestState(1169, "activeOrCompleted"),
             route = {
@@ -185,6 +197,7 @@ ns:RegisterGuide({
             id = "accept-1322-the-black-shield",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Do'gol in Brackenwall Village.",
             complete = QuestState(1322, "activeOrCompleted"),
             route = {
@@ -196,6 +209,7 @@ ns:RegisterGuide({
             id = "accept-1177-hungry",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 32 } },
             text = "Accept Hungry! from Mudcrush Durtfeet in Dustwallow Marsh.",
             complete = QuestState(1177, "activeOrCompleted"),
             route = {
@@ -207,6 +221,7 @@ ns:RegisterGuide({
             id = "objective-1322-the-black-shield",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 30 } },
             text = "Kill Darkfang Spider for 6 Acidic Venom Sac in Bluefen.",
             dependsOn = { "accept-1322-the-black-shield" },
             complete = QuestState(1322, "complete"),
@@ -219,6 +234,7 @@ ns:RegisterGuide({
             id = "objective-1177-hungry",
             kind = "objective",
             priority = 210,
+            conditions = { level = { min = 32 } },
             text = "Kill the Murlocs and collect 8 Mirefin Head in Dreadmurk Shore.",
             dependsOn = { "accept-1177-hungry" },
             complete = QuestState(1177, "complete"),
@@ -231,6 +247,7 @@ ns:RegisterGuide({
             id = "turnin-1322-the-black-shield",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Do'gol in Brackenwall Village.",
             dependsOn = { "objective-1322-the-black-shield" },
             complete = QuestState(1322, "completed"),
@@ -243,6 +260,7 @@ ns:RegisterGuide({
             id = "accept-1323-the-black-shield",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Do'gol in Brackenwall Village.",
             complete = QuestState(1323, "activeOrCompleted"),
             route = {
@@ -254,6 +272,7 @@ ns:RegisterGuide({
             id = "turnin-1323-the-black-shield",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Krog in Brackenwall Village.",
             dependsOn = { "accept-1323-the-black-shield" },
             complete = QuestState(1323, "completed"),
@@ -266,6 +285,7 @@ ns:RegisterGuide({
             id = "accept-1276-the-black-shield",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Krog in Brackenwall Village.",
             complete = QuestState(1276, "activeOrCompleted"),
             route = {
@@ -277,6 +297,7 @@ ns:RegisterGuide({
             id = "objective-1273-questioning-reethe",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 30 } },
             text = "Question and defend Paval Reethe in Dustwallow Marsh.",
             dependsOn = { "accept-1273-questioning-reethe" },
             complete = QuestState(1273, "complete"),
@@ -289,6 +310,7 @@ ns:RegisterGuide({
             id = "turnin-1273-questioning-reethe",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 30 } },
             text = "Turn in Questioning Reethe to Krog in Dustwallow Marsh.",
             dependsOn = { "objective-1273-questioning-reethe" },
             complete = QuestState(1273, "completed"),
@@ -301,6 +323,7 @@ ns:RegisterGuide({
             id = "objective-1205-deadmire",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 35 } },
             text = "Kill Deadmire and collect Deadmire's Tooth in The Quagmire.",
             dependsOn = { "accept-1205-deadmire" },
             complete = QuestState(1205, "complete"),
@@ -315,6 +338,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1240, state = "completed" } },
                 },
             },
@@ -330,6 +354,7 @@ ns:RegisterGuide({
             id = "objective-1169-identifying-the-brood",
             kind = "objective",
             priority = 340,
+            conditions = { level = { min = 38 } },
             text = "Kill Searing Hatchling or Searing Whelp for 7 Searing Tongue and 7 Searing Heart in Stonemaul Ruins, stay away from the elite dragons.",
             dependsOn = { "accept-1169-identifying-the-brood" },
             complete = QuestState(1169, "complete"),
@@ -344,6 +369,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1240, state = "completed" } },
                 },
             },
@@ -361,6 +387,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1262, state = "completed" } },
                 },
             },
@@ -375,6 +402,7 @@ ns:RegisterGuide({
             id = "turnin-1273-questioning-reethe-2",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Turn in Questioning Reethe to Krog in Brackenwall Village.",
             dependsOn = { "objective-1273-questioning-reethe" },
             complete = QuestState(1273, "completed"),
@@ -387,6 +415,7 @@ ns:RegisterGuide({
             id = "accept-1276-the-black-shield-2",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Krog in Brackenwall Village.",
             complete = QuestState(1276, "activeOrCompleted"),
             route = {
@@ -398,6 +427,7 @@ ns:RegisterGuide({
             id = "turnin-1169-identifying-the-brood",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 38 } },
             text = "Turn in Identifying the Brood to Draz'Zilb in Brackenwall Village.",
             dependsOn = { "objective-1169-identifying-the-brood" },
             complete = QuestState(1169, "completed"),
@@ -410,6 +440,7 @@ ns:RegisterGuide({
             id = "accept-1170-the-brood-of-onyxia",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 38 } },
             text = "Accept The Brood of Onyxia from Draz'Zilb in Brackenwall Village.",
             complete = QuestState(1170, "activeOrCompleted"),
             route = {
@@ -421,6 +452,7 @@ ns:RegisterGuide({
             id = "turnin-1170-the-brood-of-onyxia",
             kind = "turnin",
             priority = 420,
+            conditions = { level = { min = 38 } },
             text = "Turn in The Brood of Onyxia to Nazeer Bloodpike in Brackenwall Village.",
             dependsOn = { "accept-1170-the-brood-of-onyxia" },
             complete = QuestState(1170, "completed"),
@@ -433,6 +465,7 @@ ns:RegisterGuide({
             id = "turnin-1276-the-black-shield",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Mosarn in Hunter Rise.",
             dependsOn = { "accept-1276-the-black-shield" },
             complete = QuestState(1276, "completed"),
@@ -445,6 +478,7 @@ ns:RegisterGuide({
             id = "turnin-1205-deadmire",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 35 } },
             text = "Turn in Deadmire to Melor Stonehoof in Hunter Rise.",
             dependsOn = { "objective-1205-deadmire" },
             complete = QuestState(1205, "completed"),

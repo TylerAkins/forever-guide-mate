@@ -51,6 +51,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 7 },
                     { race = 6 },
                     { ["not"] = { quest = { id = 1531, state = "activeOrCompleted" } } },
@@ -69,6 +70,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 7 },
                     { race = { 2, 8 } },
                     { ["not"] = { quest = { id = 1532, state = "activeOrCompleted" } } },
@@ -87,6 +89,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -103,6 +106,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -120,6 +124,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -136,6 +141,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -153,6 +159,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -170,6 +177,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -186,6 +194,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -203,6 +212,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -219,6 +229,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -236,6 +247,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -253,6 +265,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -269,6 +282,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -282,6 +296,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -299,6 +314,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -315,6 +331,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -332,6 +349,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -347,6 +365,7 @@ ns:RegisterGuide({
             id = "accept-655-hammerfall",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 29 } },
             text = "Accept Hammerfall from Gor'mul in Hammerfall.",
             complete = QuestState(655, "activeOrCompleted"),
             route = {
@@ -358,6 +377,7 @@ ns:RegisterGuide({
             id = "turnin-655-hammerfall",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 29 } },
             text = "Turn in Hammerfall to Tor'gan in Hammerfall.",
             dependsOn = { "accept-655-hammerfall" },
             complete = QuestState(655, "completed"),
@@ -370,6 +390,7 @@ ns:RegisterGuide({
             id = "accept-672-raising-spirits",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 29 } },
             text = "Accept Raising Spirits from Tor'gan in Hammerfall.",
             complete = QuestState(672, "activeOrCompleted"),
             route = {
@@ -381,6 +402,7 @@ ns:RegisterGuide({
             id = "objective-672-raising-spirits",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 29 } },
             text = "Kill Highland Strider and collect 10 Highland Raptor Eye west of Hammerfall.",
             dependsOn = { "accept-672-raising-spirits" },
             complete = QuestState(672, "complete"),
@@ -395,6 +417,7 @@ ns:RegisterGuide({
             id = "turnin-672-raising-spirits",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 29 } },
             text = "Turn in Raising Spirits to Tor'gan in Hammerfall.",
             dependsOn = { "objective-672-raising-spirits" },
             complete = QuestState(672, "completed"),
@@ -407,6 +430,7 @@ ns:RegisterGuide({
             id = "accept-674-raising-spirits",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 29 } },
             text = "Accept Raising Spirits from Tor'gan in Hammerfall.",
             complete = QuestState(674, "activeOrCompleted"),
             route = {
@@ -418,6 +442,7 @@ ns:RegisterGuide({
             id = "turnin-674-raising-spirits",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 29 } },
             text = "Turn in Raising Spirits to Gor'mul in Hammerfall.",
             dependsOn = { "accept-674-raising-spirits" },
             complete = QuestState(674, "completed"),
@@ -430,6 +455,7 @@ ns:RegisterGuide({
             id = "accept-675-raising-spirits",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 29 } },
             text = "Accept Raising Spirits from Gor'mul in Hammerfall.",
             complete = QuestState(675, "activeOrCompleted"),
             route = {
@@ -441,6 +467,7 @@ ns:RegisterGuide({
             id = "turnin-675-raising-spirits",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 29 } },
             text = "Turn in Raising Spirits to Tor'gan in Hammerfall.",
             dependsOn = { "accept-675-raising-spirits" },
             complete = QuestState(675, "completed"),
