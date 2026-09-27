@@ -1,3 +1,3 @@
-## 0.1.20 - 2026-09-27
+## 0.1.21 - 2026-09-27
 
-- Ruins of Lordaeron dungeon guide: Horde enter at the Undercity portal (71.78, 11.44), and A Frightened Request from Tabitha Heartweaver in the Sepulcher is included in the pickup route.
+- Tirisfal Glades now includes the Undead paladin steps A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
