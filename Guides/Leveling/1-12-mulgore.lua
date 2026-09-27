@@ -6,6 +6,7 @@ local _, ns = ...
 -- Stalk With The Earthmother was already a class trial and is not a new quest.
 -- Thunderhorn's Report stays on tauren, with the well chain. Fizsprocket's Notes appear only if the pages drop.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including Relics of the Tauren, Icons of Power, and A Trial of Fitness.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -546,6 +547,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96659-the-adventurer",
+            kind = "accept",
+            priority = 375,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
+            dependsOn = { "turnin-757-rite-of-strength" },
+            complete = QuestState(96659, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4420, 0.7600, "Chief Hawkwind",
+                    "Travel to Chief Hawkwind."),
+            },
+        },
+        {
             id = "accept-763-rites-of-the-earthmother",
             kind = "accept",
             priority = 380,
@@ -695,6 +709,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4733, 0.6194, "Ruul Eagletalon",
                     "Travel to Ruul Eagletalon."),
+            },
+        },
+        {
+            id = "turnin-96659-the-adventurer",
+            kind = "turnin",
+            priority = 495,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
+            dependsOn = { "accept-96659-the-adventurer" },
+            complete = QuestState(96659, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                    "Travel to Kaga Wildhoof."),
             },
         },
         {
@@ -1893,6 +1920,73 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.5991, 0.5178, "Cairne Bloodhoof",
                     "Travel to Cairne Bloodhoof."),
+            },
+        },
+        {
+            id = "accept-94911-child-of-nature",
+            kind = "accept",
+            priority = 1261,
+            conditions = {
+                all = {
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Child of Nature from Muln Earthfury in Mulgore.",
+            complete = QuestState(94911, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.3340, 0.2240, "Muln Earthfury", "Travel to Muln Earthfury."),
+            },
+        },
+        {
+            id = "turnin-94911-child-of-nature",
+            kind = "turnin",
+            priority = 1261.01,
+            conditions = {
+                all = {
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Child of Nature to Turak Runetotem in Elder Rise.",
+            dependsOn = { "accept-94911-child-of-nature" },
+            complete = QuestState(94911, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7640, 0.2760, "Turak Runetotem", "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "accept-94913-moonglade-skyborne",
+            kind = "accept",
+            priority = 1261.1,
+            conditions = {
+                all = {
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Moonglade from Turak Runetotem in Elder Rise.",
+            dependsOn = { "turnin-94911-child-of-nature" },
+            complete = QuestState(94913, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7640, 0.2760, "Turak Runetotem", "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "turnin-94913-moonglade-skyborne",
+            kind = "turnin",
+            priority = 1261.11,
+            conditions = {
+                all = {
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Moonglade to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-94913-moonglade-skyborne" },
+            complete = QuestState(94913, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze", "Travel to Dendrite Starblaze."),
             },
         },
         {

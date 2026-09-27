@@ -612,6 +612,8 @@ class ContractTests(unittest.TestCase):
         self.assertNotIn("QuestState(95041,", dun)
         tirisfal = (ROOT / "Guides/Leveling/1-12-tirisfal-glades.lua").read_text(encoding="utf-8")
         self.assertIn("QuestState(98389,", tirisfal)
+        self.assertIn("QuestState(90902,", tirisfal)
+        self.assertIn("QuestState(91209,", tirisfal)
         self.assertIn("QuestState(96895,", tirisfal)
         self.assertNotIn("QuestState(97891,", tirisfal)
 

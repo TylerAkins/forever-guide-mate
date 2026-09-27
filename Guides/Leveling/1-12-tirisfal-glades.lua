@@ -2,9 +2,11 @@ local _, ns = ...
 
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
 -- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
+-- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including The Scarlet Rune and The Lost Rune.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -34,7 +36,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -264,6 +266,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98601-a-difficult-path",
+            kind = "accept",
+            priority = 151,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                },
+            },
+            text = "Accept A Difficult Path from Shadow Priest Sarvis in Deathknell.",
+            complete = QuestState(98601, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
+                    "Travel to Shadow Priest Sarvis."),
+            },
+        },
+        {
             id = "turnin-3096-encrypted-scroll",
             kind = "turnin",
             priority = 160,
@@ -346,6 +365,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.3110, 0.6610, "Dark Cleric Duesten",
                     "Travel to Dark Cleric Duesten."),
+            },
+        },
+        {
+            id = "turnin-98601-a-difficult-path",
+            kind = "turnin",
+            priority = 201,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                },
+            },
+            text = "Turn in A Difficult Path to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "accept-98601-a-difficult-path" },
+            complete = QuestState(98601, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
             },
         },
         {
@@ -435,6 +472,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-90902-rediscovering-the-light",
+            kind = "accept",
+            priority = 262,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Rediscovering the Light from Aramis Hammerhand in Deathknell.",
+            complete = QuestState(90902, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
             id = "accept-3902-scavenging-deathknell",
             kind = "accept",
             priority = 270,
@@ -506,6 +561,44 @@ ns:RegisterGuide({
             text = "Turn in A Light in the Darkness to Aramis Hammerhand in Deathknell.",
             dependsOn = { "objective-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "objective-90902-rediscovering-the-light",
+            kind = "objective",
+            priority = 313,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Heal 5 Injured Deathguard with Holy Light in Deathknell.",
+            dependsOn = { "accept-90902-rediscovering-the-light" },
+            complete = QuestState(90902, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3160, 0.6480, "Injured Deathguard",
+                    "Travel to Injured Deathguard."),
+            },
+        },
+        {
+            id = "turnin-90902-rediscovering-the-light",
+            kind = "turnin",
+            priority = 314,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Turn in Rediscovering the Light to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "objective-90902-rediscovering-the-light" },
+            complete = QuestState(90902, "completed"),
             route = {
                 Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
@@ -640,6 +733,93 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-91208-coming-to-terms",
+            kind = "accept",
+            priority = 431,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Coming to Terms from Aramis Hammerhand in Deathknell.",
+            complete = QuestState(91208, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "objective-91208-coming-to-terms",
+            kind = "objective",
+            priority = 432,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Find the Frightened Paladin in the hills west of the Deathknell chapel.",
+            dependsOn = { "accept-91208-coming-to-terms" },
+            complete = QuestState(91208, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2760, 0.6380, "Frightened Paladin",
+                    "Travel to Frightened Paladin."),
+            },
+        },
+        {
+            id = "turnin-91208-coming-to-terms",
+            kind = "turnin",
+            priority = 433,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Coming to Terms to Aramis Hammerhand in Deathknell.",
+            dependsOn = { "objective-91208-coming-to-terms" },
+            complete = QuestState(91208, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "accept-91209-continue-your-training",
+            kind = "accept",
+            priority = 434,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Continue Your Training from Aramis Hammerhand in Deathknell.",
+            dependsOn = { "turnin-91208-coming-to-terms" },
+            complete = QuestState(91209, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                    "Travel to Aramis Hammerhand."),
+            },
+        },
+        {
+            id = "accept-96656-the-adventurer",
+            kind = "accept",
+            priority = 435,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Executor Arren in Deathknell.",
+            complete = QuestState(96656, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3200, 0.6600, "Executor Arren",
+                    "Travel to Executor Arren."),
+            },
+        },
+        {
             id = "accept-383-vital-intelligence",
             kind = "accept",
             priority = 440,
@@ -699,6 +879,25 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-91209-continue-your-training",
+            kind = "turnin",
+            priority = 491,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Continue Your Training to Shari Stilwell in Brill.",
+            dependsOn = { "accept-91209-continue-your-training" },
+            complete = QuestState(91209, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell",
+                    "Travel to Shari Stilwell."),
+            },
+        },
+        {
             id = "accept-367-a-new-plague",
             kind = "accept",
             priority = 500,
@@ -708,6 +907,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
                     "Travel to Apothecary Johaan."),
+            },
+        },
+        {
+            id = "turnin-96656-the-adventurer",
+            kind = "turnin",
+            priority = 505,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Eleanor Shackleton in Brill.",
+            dependsOn = { "accept-96656-the-adventurer" },
+            complete = QuestState(96656, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                    "Travel to Eleanor Shackleton."),
             },
         },
         {
@@ -2078,6 +2290,584 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
                     "Travel to Executor Zygand."),
+            },
+        },
+        {
+            id = "accept-91282-a-second-home",
+            kind = "accept",
+            priority = 1468,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Accept A Second Home from Shari Stilwell in Brill.",
+            dependsOn = { "turnin-91209-continue-your-training" },
+            complete = QuestState(91282, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell", "Travel to Shari Stilwell."),
+            },
+        },
+        {
+            id = "turnin-91282-a-second-home",
+            kind = "turnin",
+            priority = 1468.01,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Turn in A Second Home to Breton Samuels at Bandarion Keep.",
+            dependsOn = { "accept-91282-a-second-home" },
+            complete = QuestState(91282, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+            },
+        },
+        {
+            id = "accept-91285-murlocs-at-the-gates",
+            kind = "accept",
+            priority = 1468.1,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Murlocs at the Gates from Breton Samuels at Bandarion Keep.",
+            dependsOn = { "turnin-91282-a-second-home" },
+            complete = QuestState(91285, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+            },
+        },
+        {
+            id = "objective-91285-murlocs-at-the-gates",
+            kind = "objective",
+            priority = 1468.11,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Kill Vile Fin Attackers and Vile Fin Seers for Breton Samuels.",
+            dependsOn = { "accept-91285-murlocs-at-the-gates" },
+            complete = QuestState(91285, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1720, 0.5820, "Vile Fin Seer", "Travel to Vile Fin Seer."),
+            },
+        },
+        {
+            id = "turnin-91285-murlocs-at-the-gates",
+            kind = "turnin",
+            priority = 1468.12,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Murlocs at the Gates to Breton Samuels at Bandarion Keep.",
+            dependsOn = { "objective-91285-murlocs-at-the-gates" },
+            complete = QuestState(91285, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+            },
+        },
+        {
+            id = "accept-91294-touring-the-grounds",
+            kind = "accept",
+            priority = 1468.2,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Accept Touring the Grounds from Breton Samuels at Bandarion Keep.",
+            dependsOn = { "turnin-91285-murlocs-at-the-gates" },
+            complete = QuestState(91294, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+            },
+        },
+        {
+            id = "objective-91294-touring-the-grounds",
+            kind = "objective",
+            priority = 1468.21,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Speak with Danitha Morr, Hilda the Breaker, Jorin Croge, and Ander Solliden at Bandarion Keep.",
+            dependsOn = { "accept-91294-touring-the-grounds" },
+            complete = QuestState(91294, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker", "Travel to Hilda the Breaker."),
+            },
+        },
+        {
+            id = "turnin-91294-touring-the-grounds",
+            kind = "turnin",
+            priority = 1468.22,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Turn in Touring the Grounds to Danitha Morr at Bandarion Keep.",
+            dependsOn = { "objective-91294-touring-the-grounds" },
+            complete = QuestState(91294, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "accept-91316-making-repairs",
+            kind = "accept",
+            priority = 1468.3,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Accept Making Repairs from Jorin Croge at Bandarion Keep.",
+            dependsOn = { "accept-91294-touring-the-grounds" },
+            complete = QuestState(91316, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+            },
+        },
+        {
+            id = "objective-91316-making-repairs",
+            kind = "objective",
+            priority = 1468.31,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Complete Making Repairs for Jorin Croge. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-91316-making-repairs" },
+            useClientPin = true,
+            complete = QuestState(91316, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+            },
+        },
+        {
+            id = "turnin-91316-making-repairs",
+            kind = "turnin",
+            priority = 1468.32,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Turn in Making Repairs to Jorin Croge at Bandarion Keep.",
+            dependsOn = { "objective-91316-making-repairs" },
+            complete = QuestState(91316, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+            },
+        },
+        {
+            id = "accept-91317-the-tarnished",
+            kind = "accept",
+            priority = 1468.4,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Accept The Tarnished from Danitha Morr at Bandarion Keep.",
+            dependsOn = { "turnin-91294-touring-the-grounds" },
+            complete = QuestState(91317, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "objective-91317-the-tarnished",
+            kind = "objective",
+            priority = 1468.41,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Kill Tarnished Zealots and Tarnished Drudges.",
+            dependsOn = { "accept-91317-the-tarnished" },
+            complete = QuestState(91317, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1160, 0.6400, "Tarnished Zealot", "Travel to Tarnished Zealot."),
+            },
+        },
+        {
+            id = "turnin-91317-the-tarnished",
+            kind = "turnin",
+            priority = 1468.42,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Turn in The Tarnished to Danitha Morr at Bandarion Keep.",
+            dependsOn = { "objective-91317-the-tarnished" },
+            complete = QuestState(91317, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "accept-95803-a-token-of-good-faith",
+            kind = "accept",
+            priority = 1468.5,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Accept A Token of Good Faith from Danitha Morr at Bandarion Keep.",
+            dependsOn = { "turnin-91317-the-tarnished" },
+            complete = QuestState(95803, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "turnin-95803-a-token-of-good-faith",
+            kind = "turnin",
+            priority = 1468.51,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Turn in A Token of Good Faith to Lady Sylvanas Windrunner in the Royal Quarter.",
+            dependsOn = { "accept-95803-a-token-of-good-faith" },
+            complete = QuestState(95803, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.5780, 0.9180, "Lady Sylvanas Windrunner", "Travel to Lady Sylvanas Windrunner."),
+            },
+        },
+        {
+            id = "accept-94427-a-lesson-in-divinity",
+            kind = "accept",
+            priority = 1468.6,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Danitha Morr at Bandarion Keep.",
+            dependsOn = { "turnin-91317-the-tarnished" },
+            complete = QuestState(94427, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "turnin-94427-a-lesson-in-divinity",
+            kind = "turnin",
+            priority = 1468.61,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Tanis Alderwood in the Undercity.",
+            dependsOn = { "accept-94427-a-lesson-in-divinity" },
+            complete = QuestState(94427, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+            },
+        },
+        {
+            id = "accept-94434-a-lesson-in-divinity-undercity",
+            kind = "accept",
+            priority = 1468.7,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Tanis Alderwood in the Undercity.",
+            dependsOn = { "turnin-94427-a-lesson-in-divinity" },
+            complete = QuestState(94434, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+            },
+        },
+        {
+            id = "objective-94434-a-lesson-in-divinity-undercity",
+            kind = "objective",
+            priority = 1468.71,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Complete Tanis Alderwood's lesson in the Undercity. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94434-a-lesson-in-divinity-undercity" },
+            useClientPin = true,
+            complete = QuestState(94434, "complete"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+            },
+        },
+        {
+            id = "turnin-94434-a-lesson-in-divinity-undercity",
+            kind = "turnin",
+            priority = 1468.72,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Tanis Alderwood in the Undercity.",
+            dependsOn = { "objective-94434-a-lesson-in-divinity-undercity" },
+            complete = QuestState(94434, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+            },
+        },
+        {
+            id = "accept-94435-a-lesson-in-divinity-return",
+            kind = "accept",
+            priority = 1468.8,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Tanis Alderwood in the Undercity.",
+            dependsOn = { "turnin-94434-a-lesson-in-divinity-undercity" },
+            complete = QuestState(94435, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+            },
+        },
+        {
+            id = "turnin-94435-a-lesson-in-divinity-return",
+            kind = "turnin",
+            priority = 1468.81,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Danitha Morr at Bandarion Keep.",
+            dependsOn = { "accept-94435-a-lesson-in-divinity-return" },
+            complete = QuestState(94435, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "accept-94436-a-lesson-in-divinity-billmuth",
+            kind = "accept",
+            priority = 1468.9,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Danitha Morr at Bandarion Keep.",
+            dependsOn = { "turnin-94435-a-lesson-in-divinity-return" },
+            complete = QuestState(94436, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
+            id = "turnin-94436-a-lesson-in-divinity-billmuth",
+            kind = "turnin",
+            priority = 1468.91,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Deathguard Billmuth at Bandarion Keep.",
+            dependsOn = { "accept-94436-a-lesson-in-divinity-billmuth" },
+            complete = QuestState(94436, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+            },
+        },
+        {
+            id = "accept-94438-a-lesson-in-divinity-falgan",
+            kind = "accept",
+            priority = 1469.0,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Deathguard Billmuth at Bandarion Keep.",
+            dependsOn = { "turnin-94436-a-lesson-in-divinity-billmuth" },
+            complete = QuestState(94438, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+            },
+        },
+        {
+            id = "turnin-94438-a-lesson-in-divinity-falgan",
+            kind = "turnin",
+            priority = 1469.01,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Deathguard Falgan.",
+            dependsOn = { "accept-94438-a-lesson-in-divinity-falgan" },
+            complete = QuestState(94438, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
+            },
+        },
+        {
+            id = "accept-94440-a-lesson-in-divinity-scarlets",
+            kind = "accept",
+            priority = 1469.1,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Deathguard Falgan.",
+            dependsOn = { "turnin-94438-a-lesson-in-divinity-falgan" },
+            complete = QuestState(94440, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
+            },
+        },
+        {
+            id = "objective-94440-a-lesson-in-divinity-scarlets",
+            kind = "objective",
+            priority = 1469.11,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Do as Deathguard Falgan asks among the Scarlet Crusade.",
+            dependsOn = { "accept-94440-a-lesson-in-divinity-scarlets" },
+            complete = QuestState(94440, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5160, 0.6760, "Scarlet Zealot", "Travel to Scarlet Zealot."),
+            },
+        },
+        {
+            id = "turnin-94440-a-lesson-in-divinity-scarlets",
+            kind = "turnin",
+            priority = 1469.12,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Deathguard Billmuth at Bandarion Keep.",
+            dependsOn = { "objective-94440-a-lesson-in-divinity-scarlets" },
+            complete = QuestState(94440, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+            },
+        },
+        {
+            id = "accept-94441-a-lesson-in-divinity-done",
+            kind = "accept",
+            priority = 1469.2,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Accept A Lesson in Divinity from Deathguard Billmuth at Bandarion Keep.",
+            dependsOn = { "turnin-94440-a-lesson-in-divinity-scarlets" },
+            complete = QuestState(94441, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+            },
+        },
+        {
+            id = "turnin-94441-a-lesson-in-divinity-done",
+            kind = "turnin",
+            priority = 1469.21,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 12 } },
+                },
+            },
+            text = "Turn in A Lesson in Divinity to Danitha Morr at Bandarion Keep.",
+            dependsOn = { "accept-94441-a-lesson-in-divinity-done" },
+            complete = QuestState(94441, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {

@@ -21,6 +21,188 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 91209,
+    mode = "all",
+    quests = { 91208 },
+    conditions = {
+        all = {
+            { faction = "Horde" },
+            { race = 5 },
+            { class = 2 },
+        },
+    },
+    note = "Continue Your Training is offered after Coming to Terms.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94773,
+    mode = "all",
+    quests = { 94774 },
+    conditions = { all = { { faction = "Alliance" }, { race = 1 }, { class = 5 } } },
+    note = "Laurena's Divine Grace follows Priestess Josetta's handoff.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94863,
+    mode = "all",
+    quests = { 94792 },
+    conditions = { all = { { faction = "Alliance" }, { class = 3 } } },
+    note = "Goldshire Taming the Beast continues in quest order.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94864,
+    mode = "all",
+    quests = { 94863 },
+    conditions = { all = { { faction = "Alliance" }, { class = 3 } } },
+    note = "Goldshire Taming the Beast continues in quest order.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94793,
+    mode = "all",
+    quests = { 94864 },
+    conditions = { all = { { faction = "Alliance" }, { class = 3 } } },
+    note = "Training the Beast follows the last Goldshire tame.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94374,
+    mode = "all",
+    quests = { 94373 },
+    conditions = { all = { { faction = "Alliance" }, { class = 7 } } },
+    note = "Coldridge Call of Earth continues at the earth shrine.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94375,
+    mode = "all",
+    quests = { 94374 },
+    conditions = { all = { { faction = "Alliance" }, { class = 7 } } },
+    note = "Coldridge Call of Earth returns to Teo Hammerstorm.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94465,
+    mode = "all",
+    quests = { 94449 },
+    conditions = { all = { { faction = "Alliance" }, { class = 7 } } },
+    note = "Call of Fire continues from Bruegs Kindleborn.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94817,
+    mode = "all",
+    quests = { 94824 },
+    conditions = { all = { { faction = "Alliance" }, { race = 7 }, { class = 5 } } },
+    note = "High Priestess Mims continues Confounding Flash.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94913,
+    mode = "all",
+    quests = { 94911 },
+    conditions = { all = { { faction = "Horde" }, { race = 96 } } },
+    note = "Skyborne Moonglade follows Child of Nature.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91282,
+    mode = "all",
+    quests = { 91209 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Second Home is offered by Shari Stilwell after Continue Your Training.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91285,
+    mode = "all",
+    quests = { 91282 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "Murlocs at the Gates follows A Second Home.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91294,
+    mode = "all",
+    quests = { 91285 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "Touring the Grounds follows Murlocs at the Gates.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91317,
+    mode = "all",
+    quests = { 91294 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "The Tarnished follows Touring the Grounds.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 95803,
+    mode = "all",
+    quests = { 91317 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Token of Good Faith follows The Tarnished.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94427,
+    mode = "all",
+    quests = { 91317 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity follows The Tarnished.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94434,
+    mode = "all",
+    quests = { 94427 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity continues with Tanis Alderwood.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94435,
+    mode = "all",
+    quests = { 94434 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity returns to Danitha Morr.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94436,
+    mode = "all",
+    quests = { 94435 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity continues with Deathguard Billmuth.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94438,
+    mode = "all",
+    quests = { 94436 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity continues with Deathguard Falgan.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94440,
+    mode = "all",
+    quests = { 94438 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity continues from Deathguard Falgan.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94441,
+    mode = "all",
+    quests = { 94440 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "A Lesson in Divinity returns to Danitha Morr.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 5727,
     mode = "all",
     quests = { 5726 },
