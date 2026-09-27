@@ -793,7 +793,7 @@ ns.charDB.history = {}
 ns.charDB.deferred = {}
 ns.charDB.completionLedger = {}
 ns.Engine:Refresh(hordeRuins)
-Equal(ns.Engine.currentGoal.id, "accept-wrath-of-rathmael", "horde starts with Deathguard Kristof")
+Equal(ns.Engine.currentGoal.id, "accept-frightened-request", "horde starts with Tabitha Heartweaver")
 
 ForeverGuideMateDB = { autoQuest = true }
 ForeverGuideMateCharDB = { selectedGuide = "dungeons-ragefire-chasm-horde" }

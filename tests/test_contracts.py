@@ -249,7 +249,7 @@ class ContractTests(unittest.TestCase):
 
     def test_ruins_of_lordaeron_guide_covers_listed_quests(self) -> None:
         guide = (ROOT / "Guides/Dungeons/RuinsOfLordaeron.lua").read_text(encoding="utf-8")
-        for quest_id in (92415, 92421, 92422, 95161, 95189, 95195, 95204, 95216, 95250, 97288, 97289, 97290, 97291, 97292):
+        for quest_id in (92401, 92415, 92421, 92422, 95161, 95189, 95195, 95204, 95216, 95250, 97288, 97289, 97290, 97291, 97292):
             self.assertIn(str(quest_id), guide)
         self.assertIn('id = "dungeons-ruins-of-lordaeron"', guide)
         self.assertIn("level = { min = 16 }", guide)
