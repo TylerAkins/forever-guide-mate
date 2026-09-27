@@ -3201,6 +3201,139 @@ local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Captur
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
 Equal(missingState.professionsKnown, false, "missing profession API is reported as unknown")
 
+function TestQuestLogBurstDoesNotStall()
+    local calls, delays = 0, {}
+    local timers = {}
+    local savedEngine = ns.Engine
+    local savedTimer = C_Timer
+    ns.Engine = { Refresh = function() calls = calls + 1 end }
+    C_Timer = {
+        After = function(delay, callback)
+            delays[#delays + 1] = delay
+            timers[#timers + 1] = callback
+        end,
+    }
+    ns.ScheduleRefresh(true)
+    ns.ScheduleRefresh(true)
+    ns.ScheduleRefresh(true)
+    Equal(calls, 0, "quest log events do not refresh inside the event")
+    Equal(#timers, 3, "each quest log event arms one later refresh")
+    Equal(delays[1] > 0, true, "the quest log is read after the burst settles")
+    for _, callback in ipairs(timers) do callback() end
+    Equal(calls, 1, "a burst of accept, loot, or kill events refreshes the guide once")
+    C_Timer = savedTimer
+    ns.Engine = savedEngine
+end
+TestQuestLogBurstDoesNotStall()
+
+function TestQuestCreditDoesNotRebuildCompletedQuests()
+    ns.PlayerState:InvalidateQuestCache()
+    local count, bulk, summaries, selecting = 1, 0, 0, 0
+    local log = { 100 }
+    local api = {
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return count end,
+            GetInfo = function()
+                return { questID = 100, title = "Proof", isComplete = false }
+            end,
+            GetQuestObjectives = function()
+                return { { text = "Slay", numRequired = 8, numFulfilled = 8, finished = true } }
+            end,
+            GetQuestLogQuestText = function()
+                summaries = summaries + 1
+                return "Body", "Collect the proof from the camp."
+            end,
+        },
+        GetQuestLogQuestText = function()
+            selecting = selecting + 1
+        end,
+        GetQuestsCompleted = function(completed)
+            bulk = bulk + 1
+            completed[200] = true
+        end,
+    }
+    local watched = { 100, 200 }
+    local first = ns.PlayerState:Capture(api, watched)
+    Equal(selecting, 0, "quest credit never selects a quest log row")
+    Equal(summaries, 1, "the objective summary is read once")
+    Equal(bulk, 1, "completed quests are loaded once")
+    Equal(first.quests[100].summary, "Collect the proof from the camp.", "the objective summary is kept")
+    Equal(first.completedQuests[200], true, "a turned-in quest is recorded from the one dump")
+    ns.PlayerState:Capture(api, watched)
+    Equal(summaries, 1, "another kill does not read the objective summary again")
+    Equal(bulk, 1, "another kill does not rebuild the completed-quest table")
+    Equal(selecting, 0, "another kill still does not select a quest log row")
+    count = 0
+    local duringBlip = ns.PlayerState:Capture(api, watched)
+    Equal(duringBlip.quests[100] ~= nil, true, "a momentary empty quest log keeps the open quest")
+    Equal(bulk, 1, "a momentary empty quest log does not rebuild completed quests")
+    ns.PlayerState:ForgetQuest(100, true)
+    local turnedIn = ns.PlayerState:Capture(api, watched)
+    Equal(turnedIn.quests[100], nil, "a turned-in quest leaves the cached log")
+    Equal(turnedIn.completedQuests[100], true, "a turned-in quest stays turned in without another dump")
+    Equal(bulk, 1, "turning a quest in does not rebuild the completed-quest table")
+    ns.PlayerState:InvalidateQuestCache()
+end
+TestQuestCreditDoesNotRebuildCompletedQuests()
+
+function TestClientPinIsReadOncePerObjectiveChange()
+    ns.Navigation:InvalidateClientPins()
+    local queries = 0
+    local pins = {
+        GetQuestsOnMap = function()
+            queries = queries + 1
+            return { { questID = 887, x = 0.2, y = 0.3 } }
+        end,
+    }
+    local goal = {
+        useClientPin = true,
+        complete = { quest = { id = 887, state = "complete" } },
+        route = { { mapID = 1413, x = 0.64, y = 0.45, label = "Camp" } },
+    }
+    local state = {
+        mapID = 1413, x = 0.5, y = 0.5,
+        quests = { [887] = { complete = false, objectives = {
+            { numFulfilled = 1, numRequired = 8, finished = false },
+        } } },
+    }
+    local first = ns.Navigation:GetActiveLeg(goal, state, pins)
+    local second = ns.Navigation:GetActiveLeg(goal, state, pins)
+    Equal(first and first.x, 0.2, "the quest log pin is used for the objective")
+    Equal(second and second.x, 0.2, "a second tracker update keeps the quest log pin")
+    Equal(queries, 1, "redrawing the tracker does not query the map pin again")
+    state.quests[887].objectives[1].numFulfilled = 2
+    local moved = ns.Navigation:GetActiveLeg(goal, state, pins)
+    Equal(moved and moved.x, 0.2, "a new kill credit still has a quest log pin")
+    Equal(queries, 2, "a kill credit reads the moved quest log pin once")
+    ns.Navigation:InvalidateClientPins()
+end
+TestClientPinIsReadOncePerObjectiveChange()
+
+function TestUnchangedQuestLogSkipsGuideWalk()
+    local saved = ns.Engine.questLogFingerprint
+    local state = {
+        quests = { [100] = { complete = false, objectives = {
+            { numFulfilled = 1, numRequired = 8, finished = false },
+        } } },
+        completedQuests = { [200] = true },
+        questLogKnown = true, questCompletionKnown = true,
+        level = 10, mapID = 1411, instanceID = nil,
+    }
+    ns.Engine.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(state)
+    Equal(ns.Engine:SameQuestLog(state), true, "the same objective progress does not need another guide walk")
+    local changed = {
+        quests = { [100] = { complete = false, objectives = {
+            { numFulfilled = 2, numRequired = 8, finished = false },
+        } } },
+        completedQuests = { [200] = true },
+        questLogKnown = true, questCompletionKnown = true,
+        level = 10, mapID = 1411, instanceID = nil,
+    }
+    Equal(ns.Engine:SameQuestLog(changed), false, "kill credit still walks the guide")
+    ns.Engine.questLogFingerprint = saved
+end
+TestUnchangedQuestLogSkipsGuideWalk()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)

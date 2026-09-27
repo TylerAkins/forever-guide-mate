@@ -127,22 +127,59 @@ function ns.InitializeStorage()
     ns.charDB = ForeverGuideMateCharDB
 end
 
-function ns.ScheduleRefresh()
-    if ns.refreshPending then
+-- QUEST_LOG_UPDATE fires in a burst while the client is still rebuilding the
+-- log (accept, turn-in, loot, and kill credit all do this). Reading the log
+-- on the first event forces that rebuild onto the main thread, which is the
+-- one-second stutter. Wait until the burst goes quiet, then read once.
+local QUEST_LOG_SETTLE_SECONDS = 0.15
+local refreshGeneration = 0
+local refreshNeedsFullPass = false
+local refreshTimer
+
+local function DeliverRefresh(generation)
+    if generation ~= refreshGeneration then
         return
     end
-    ns.refreshPending = true
-    local function Refresh()
-        ns.refreshPending = false
-        if ns.Engine and ns.Engine.Refresh then
-            ns.Engine:Refresh()
+    refreshTimer = nil
+    local fullPass = refreshNeedsFullPass
+    refreshNeedsFullPass = false
+    ns.refreshPending = false
+    if not fullPass and ns.Engine and ns.Engine.SameQuestLog and ns.PlayerState
+        and ns.PlayerState.Capture and ns.GetTrackedQuestIDs then
+        local state = ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
+        if ns.Engine:SameQuestLog(state) then
+            -- The log event did not change a watched quest. Skip the guide walk.
+        else
+            ns.Engine:Refresh(state)
         end
+    elseif ns.Engine and ns.Engine.Refresh then
+        ns.Engine:Refresh()
     end
-    if C_Timer and C_Timer.After then
-        C_Timer.After(0.1, Refresh)
-    else
-        Refresh()
+end
+
+function ns.ScheduleRefresh(questOnly)
+    if questOnly ~= true then
+        refreshNeedsFullPass = true
     end
+    refreshGeneration = refreshGeneration + 1
+    local generation = refreshGeneration
+    ns.refreshPending = true
+    if C_Timer and type(C_Timer.NewTimer) == "function" then
+        if refreshTimer and type(refreshTimer.Cancel) == "function" then
+            refreshTimer:Cancel()
+        end
+        refreshTimer = C_Timer.NewTimer(QUEST_LOG_SETTLE_SECONDS, function()
+            DeliverRefresh(generation)
+        end)
+        return
+    end
+    if C_Timer and type(C_Timer.After) == "function" then
+        C_Timer.After(QUEST_LOG_SETTLE_SECONDS, function()
+            DeliverRefresh(generation)
+        end)
+        return
+    end
+    DeliverRefresh(generation)
 end
 
 local function OnEvent(_, event, arg1)
@@ -159,6 +196,10 @@ local function OnEvent(_, event, arg1)
     elseif event == "PLAYER_ENTERING_WORLD" and not ns.questAuditPrinted then
         ns.questAuditPrinted = true
         ns.PrintQuestAudit()
+    elseif event == "QUEST_TURNED_IN" and ns.PlayerState and ns.PlayerState.ForgetQuest then
+        ns.PlayerState:ForgetQuest(arg1, true)
+    elseif event == "QUEST_REMOVED" and ns.PlayerState and ns.PlayerState.ForgetQuest then
+        ns.PlayerState:ForgetQuest(arg1, false)
     elseif event == "SKILL_LINES_CHANGED" and ns.PlayerState then
         ns.PlayerState:InvalidateProfessions()
     elseif event == "TAXIMAP_OPENED" and ns.Taxi then
@@ -172,7 +213,7 @@ local function OnEvent(_, event, arg1)
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
-    ns.ScheduleRefresh()
+    ns.ScheduleRefresh(event == "QUEST_LOG_UPDATE")
 end
 
 if CreateFrame then
@@ -181,6 +222,8 @@ if CreateFrame then
     eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
     eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
+    eventFrame:RegisterEvent("QUEST_TURNED_IN")
+    eventFrame:RegisterEvent("QUEST_REMOVED")
     eventFrame:RegisterEvent("TAXIMAP_OPENED")
     eventFrame:RegisterEvent("SKILL_LINES_CHANGED")
     eventFrame:RegisterEvent("ZONE_CHANGED")
