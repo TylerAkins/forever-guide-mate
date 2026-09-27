@@ -4,7 +4,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 A guide the character cannot use says Ineligible. The faction stays listed beside that. Coordinates in the shipped guides have not been validated in the Forever client.
 
-Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. Completed quest history is reconciled from the client, and verified quest prerequisites are followed automatically. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
+Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. Completed quest history is reconciled from the client, and verified quest prerequisites are followed automatically. Use the tracker's **Sync** button to discard its saved position and find the earliest unfinished step again without resetting completed or skipped steps. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
 
 The rules for the next Loremaster zone are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md). Shared quest-step rules (quest ids, multi-objective chains, pins) are in [docs/guide-authoring.md](docs/guide-authoring.md).
 
