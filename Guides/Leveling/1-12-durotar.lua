@@ -94,6 +94,7 @@ ns:RegisterGuide({
             id = "accept-788-cutting-teeth",
             kind = "accept",
             priority = 40,
+            dependsOn = { "turnin-4641-your-place-in-the-world" },
             text = "Accept Cutting Teeth from Gornek in The Den.",
             complete = QuestState(788, "activeOrCompleted"),
             route = {
@@ -187,6 +188,7 @@ ns:RegisterGuide({
             id = "accept-1499-vile-familiars",
             kind = "accept",
             priority = 80,
+            dependsOn = { "turnin-1485-vile-familiars" },
             conditions = {
                 all = {
                     { class = 9 },
@@ -714,6 +716,7 @@ ns:RegisterGuide({
             id = "accept-804-sarkoth",
             kind = "accept",
             priority = 400,
+            dependsOn = { "turnin-790-sarkoth" },
             text = "Accept Sarkoth from Hana'zua in Valley of Trials.",
             complete = QuestState(804, "activeOrCompleted"),
             route = {
@@ -807,6 +810,7 @@ ns:RegisterGuide({
             id = "accept-794-burning-blade-medallion",
             kind = "accept",
             priority = 480,
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
             text = "Accept Burning Blade Medallion from Zureetha Fargaze in Valley of Trials.",
             complete = QuestState(794, "activeOrCompleted"),
             route = {
@@ -865,6 +869,7 @@ ns:RegisterGuide({
             id = "accept-6394-thazz-ril-s-pick",
             kind = "accept",
             priority = 520,
+            dependsOn = { "turnin-5441-lazy-peons" },
             text = "Accept Thazz'ril's Pick from Foreman Thazz'ril in Valley of Trials.",
             complete = QuestState(6394, "activeOrCompleted"),
             route = {
@@ -990,6 +995,7 @@ ns:RegisterGuide({
             id = "accept-805-report-to-sen-jin-village",
             kind = "accept",
             priority = 620,
+            dependsOn = { "turnin-794-burning-blade-medallion" },
             text = "Accept Report to Sen'jin Village from Zureetha Fargaze in Valley of Trials.",
             complete = QuestState(805, "activeOrCompleted"),
             route = {
@@ -1286,6 +1292,7 @@ ns:RegisterGuide({
             id = "accept-806-dark-storms",
             kind = "accept",
             priority = 820,
+            dependsOn = { "turnin-823-report-to-orgnil" },
             text = "Accept Dark Storms from Orgnil Soulscar in Razor Hill.",
             complete = QuestState(806, "activeOrCompleted"),
             route = {
@@ -1436,6 +1443,7 @@ ns:RegisterGuide({
             id = "accept-830-the-admiral-s-orders",
             kind = "accept",
             priority = 920,
+            dependsOn = { "objective-784-3-lieutenant-benedict" },
             text = "Use the Aged Envelope to accept The Admiral's Orders.",
             complete = QuestState(830, "activeOrCompleted"),
             route = {
@@ -1497,6 +1505,7 @@ ns:RegisterGuide({
             id = "accept-825-from-the-wreckage",
             kind = "accept",
             priority = 960,
+            dependsOn = { "turnin-784-vanquish-the-betrayers" },
             text = "Accept From The Wreckage.... from Gar'Thok in Razor Hill.",
             complete = QuestState(825, "activeOrCompleted"),
             route = {
@@ -1520,6 +1529,7 @@ ns:RegisterGuide({
             id = "accept-831-the-admiral-s-orders",
             kind = "accept",
             priority = 980,
+            dependsOn = { "turnin-830-the-admiral-s-orders" },
             text = "Accept The Admiral's Orders from Gar'Thok in Razor Hill.",
             complete = QuestState(831, "activeOrCompleted"),
             route = {
@@ -1988,6 +1998,7 @@ ns:RegisterGuide({
             id = "accept-835-securing-the-lines",
             kind = "accept",
             priority = 1330,
+            dependsOn = { "turnin-834-winds-in-the-desert" },
             text = "Accept Securing the Lines from Rezlak in Durotar.",
             complete = QuestState(835, "activeOrCompleted"),
             route = {
@@ -2275,6 +2286,7 @@ ns:RegisterGuide({
             id = "accept-813-finding-the-antidote",
             kind = "accept",
             priority = 1510,
+            dependsOn = { "accept-812-need-for-a-cure" },
             conditions = {
                 all = {
                     { quest = { id = 812, state = "notCompleted" } },
@@ -2804,6 +2816,7 @@ ns:RegisterGuide({
             id = "accept-827-skull-rock",
             kind = "accept",
             priority = 1790,
+            dependsOn = { "turnin-828-margoz" },
             text = "Accept Skull Rock from Margoz in Durotar.",
             complete = QuestState(827, "activeOrCompleted"),
             route = {
@@ -2911,6 +2924,7 @@ ns:RegisterGuide({
             id = "accept-829-neeru-fireblade",
             kind = "accept",
             priority = 1860,
+            dependsOn = { "turnin-827-skull-rock" },
             text = "Accept Neeru Fireblade from Margoz in Durotar.",
             complete = QuestState(829, "activeOrCompleted"),
             route = {
@@ -2957,6 +2971,7 @@ ns:RegisterGuide({
             id = "accept-809-ak-zeloth",
             kind = "accept",
             priority = 1910,
+            dependsOn = { "turnin-829-neeru-fireblade" },
             text = "Accept Ak'Zeloth from Arnak Fireblade in Cleft of Shadow.",
             complete = QuestState(809, "activeOrCompleted"),
             route = {
