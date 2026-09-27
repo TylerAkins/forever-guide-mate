@@ -7,11 +7,13 @@ local _, ns = ...
 -- in-between and follow-up steps of chains listed on that page.
 -- The Wrath of Rath'mael and the Undercity Crest of Lordaeron are unmarked on
 -- Wowhead, but their givers and turn-ins are Forsaken, so those steps are Horde.
--- The entrance pin is the reported Tirisfal door. Map id 2999 is the Forever
--- client dungeon map reported for this instance.
+-- Horde use the portal above the Undercity (71.78, 11.44). Alliance use the
+-- Tirisfal door in northern Tirisfal Glades. Map id 2999 is the Forever client
+-- dungeon map reported for this instance.
 
 local MAP = {
     TIRISFAL = 1420,
+    SILVERPINE = 1421,
     UNDERCITY = 1458,
     STORMWIND = 1453,
     DUSKWOOD = 1431,
@@ -53,7 +55,7 @@ ns:RegisterGuide({
     id = "dungeons-ruins-of-lordaeron",
     title = "Ruins of Lordaeron",
     category = "Dungeon Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { level = { min = 16 } },
@@ -61,6 +63,24 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "accept-frightened-request",
+            kind = "accept",
+            priority = 9,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Accept A Frightened Request from Tabitha Heartweaver in the Sepulcher.",
+            taxiDestination = "The Sepulcher",
+            complete = QuestState(92401, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.446, 0.428, "Tabitha Heartweaver in the Sepulcher",
+                    "Travel to the Sepulcher in Silverpine Forest."),
+            },
+        },
         {
             id = "accept-wrath-of-rathmael",
             kind = "accept",
@@ -113,8 +133,10 @@ ns:RegisterGuide({
             id = "enter-ruins-of-lordaeron",
             kind = "travel",
             priority = 40,
-            text = "Enter the Ruins of Lordaeron in northern Tirisfal Glades.",
+            text = "Enter the Ruins of Lordaeron. Horde: use the portal above the Undercity. " ..
+                "Alliance: use the entrance in northern Tirisfal Glades.",
             dependsOn = {
+                "accept-frightened-request",
                 "accept-wrath-of-rathmael",
                 "accept-lights-justice",
                 "accept-new-plague",
@@ -122,9 +144,27 @@ ns:RegisterGuide({
             complete = { instance = RUINS_OF_LORDAERON },
             persistCompletion = true,
             route = {
-                Point(MAP.TIRISFAL, 0.716, 0.114, "Ruins of Lordaeron entrance",
-                    "Travel to the Ruins of Lordaeron in northern Tirisfal Glades."),
+                Point(MAP.UNDERCITY, 0.7178, 0.1144, "Ruins of Lordaeron portal above the Undercity",
+                    "Travel to the Undercity and enter through the portal in the ruins above the city.",
+                    ALLIANCE),
+                Point(MAP.TIRISFAL, 0.716, 0.114, "Ruins of Lordaeron entrance from Tirisfal Glades",
+                    "Travel to the Ruins of Lordaeron in northern Tirisfal Glades.",
+                    HORDE),
             },
+        },
+        {
+            id = "complete-frightened-request",
+            kind = "objective",
+            priority = 40,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Find Edward Heartweaver in the graveyard area near Rath'mael.",
+            dependsOn = { "enter-ruins-of-lordaeron" },
+            complete = QuestState(92401, "complete"),
         },
         {
             id = "complete-wrath-of-rathmael",
@@ -279,6 +319,25 @@ ns:RegisterGuide({
             text = "Read the Blood-Stained Letter found in the ruins to accept Remember That I Love You.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92415, "activeOrCompleted"),
+        },
+        {
+            id = "turnin-frightened-request",
+            kind = "turnin",
+            priority = 59,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
+            text = "Return to Tabitha Heartweaver in the Sepulcher.",
+            dependsOn = { "complete-frightened-request" },
+            taxiDestination = "The Sepulcher",
+            complete = QuestState(92401, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.446, 0.428, "Tabitha Heartweaver in the Sepulcher",
+                    "Travel to the Sepulcher in Silverpine Forest."),
+            },
         },
         {
             id = "turnin-wrath-of-rathmael",

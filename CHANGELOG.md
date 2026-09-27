@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.20 - 2026-09-27
+
+- Ruins of Lordaeron dungeon guide: Horde enter at the Undercity portal (71.78, 11.44), and A Frightened Request from Tabitha Heartweaver in the Sepulcher is included in the pickup route.
+
 ## 0.1.19 - 2026-09-27
 
 - Accepting, turning in, looting, or killing an objective no longer stalls the client while the quest log rebuilds. The guide waits until that burst settles, then refreshes once.
