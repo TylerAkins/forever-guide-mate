@@ -283,7 +283,7 @@ class ContractTests(unittest.TestCase):
     def test_durotar_guide_is_loremaster_without_dungeons(self) -> None:
         guide = (ROOT / "Guides/Loremaster/Durotar.lua").read_text(encoding="utf-8")
         goals = guide.split("goals = {", 1)[-1]
-        for quest_id in (4641, 788, 794, 837, 831, 924, 99052, 840):
+        for quest_id in (4641, 788, 794, 837, 831, 924, 99052, 840, 5726, 5727):
             self.assertIn(f"QuestState({quest_id},", goals)
         for omitted_id in (787, 5843, 807, 810, 814, 820, 5722, 5723):
             self.assertNotIn(f"QuestState({omitted_id},", goals)

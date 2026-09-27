@@ -2161,6 +2161,12 @@ Check(DependsOn(antidote, "accept-812-need-for-a-cure"),
 local cure = ns.Engine:GetGoal(durotar, "turnin-812-need-for-a-cure")
 Check(DependsOn(cure, "turnin-813-finding-the-antidote"),
     "Need for a Cure turns in after the antidote")
+local hiddenEnemies = ns.Engine:GetGoal(durotar, "accept-5727-hidden-enemies")
+Check(DependsOn(hiddenEnemies, "turnin-5726-hidden-enemies"),
+    "the second Hidden Enemies waits until the insignia is turned in")
+local neeru = ns.Engine:GetGoal(durotar, "gossip-5727-hidden-enemies")
+Check(neeru and neeru.kind == "gossip" and neeru.route[1].label == "Neeru Fireblade",
+    "Hidden Enemies dialogue is with Neeru Fireblade")
 function TestRepeatableRoutes()
     Load("Guides/Era/32-34-desolace.lua")
     Load("Guides/Era/51-51-blasted-lands.lua")
