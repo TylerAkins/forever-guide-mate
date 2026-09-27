@@ -17,6 +17,9 @@ local _, ns = ...
 -- Camping 101 steps that require a profession skill of 20 are omitted.
 -- The Great Outdoors and Camping 101: Cooking stay, because they finish at
 -- the campfire and the cooking trainer.
+-- Welcome! (92454) is the Collector's Edition gift-voucher quest, and More
+-- Al'Aketh Ears (93459) is a repeatable reputation hand-in. Placeholder,
+-- unused, and temporarily disabled quests are not part of the route.
 -- Ripped Missive (94490) starts from the item dropped by Commander Haalien.
 -- Rusty Gadget is an unlinked Wind Hollow drop, so it is mentioned on the
 -- Wind Hollow steps instead of tracked as its own quest.
@@ -68,7 +71,7 @@ ns:RegisterGuide({
     id = "leveling-zephras-isle",
     title = "Zephras Isle (Skyborne)",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -989,10 +992,10 @@ ns:RegisterGuide({
         {
             id = "accept-alaketh-thugs",
             kind = "accept",
-            priority = 580,
+            priority = 590,
             conditions = { level = { min = 2 } },
             text = "Accept Al'Aketh Thugs from Hanaa Nightwind.",
-            dependsOn = { "turnin-the-adventurer", "turnin-the-next-step" },
+            dependsOn = { "accept-the-adventurer", "accept-the-next-step" },
             complete = QuestState(92544, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.382, 0.302, "Hanaa Nightwind",
@@ -1002,7 +1005,7 @@ ns:RegisterGuide({
         {
             id = "objective-alaketh-thugs",
             kind = "objective",
-            priority = 590,
+            priority = 600,
             conditions = { level = { min = 2 } },
             text = "Slay 6 Al'Aketh Brutes, 4 Al'Aketh Neophytes, and Malduko Cloudcrush in Thendal Grove.",
             dependsOn = { "accept-alaketh-thugs" },
@@ -1015,7 +1018,7 @@ ns:RegisterGuide({
         {
             id = "turnin-alaketh-thugs",
             kind = "turnin",
-            priority = 600,
+            priority = 610,
             conditions = { level = { min = 2 } },
             text = "Turn in Al'Aketh Thugs to Hanaa Nightwind.",
             dependsOn = { "objective-alaketh-thugs" },
@@ -1028,7 +1031,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-adventurer",
             kind = "accept",
-            priority = 610,
+            priority = 580,
             conditions = { level = { min = 4 } },
             text = "Accept The Adventurer from Aetheen of the Gales.",
             dependsOn = { "turnin-foul-matriarch" },
@@ -1041,7 +1044,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-adventurer",
             kind = "turnin",
-            priority = 611,
+            priority = 620,
             conditions = { level = { min = 4 } },
             text = "Speak to Raan Wildwind near Shen'dar Village.",
             dependsOn = { "accept-the-adventurer" },
@@ -1054,7 +1057,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-next-step",
             kind = "accept",
-            priority = 620,
+            priority = 581,
             conditions = { level = { min = 3 } },
             text = "Accept The Next Step from Aetheen of the Gales.",
             dependsOn = { "turnin-foul-matriarch" },
