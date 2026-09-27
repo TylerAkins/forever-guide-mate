@@ -7,6 +7,8 @@ description: Add or update a Forever GuideMate zone Loremaster guide so it follo
 
 Loremaster finishes the zone. The walk is the leveling route, plus every zone quest that route left out.
 
+Only Durotar and Mulgore ship in the addon today. Add the file to `ForeverGuideMate.toc` and `tools/compile_addon.py` when a zone is ready.
+
 Zephras Isle stays a Leveling guide. Do not move it into Loremaster.
 
 ## Do this

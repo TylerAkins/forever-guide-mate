@@ -12,7 +12,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 | `UI.lua` | Tracker and guide library |
 | `Guides/Leveling/` | Zephras Isle and converted Era chapters (titles without `(Era)`) |
 | `Guides/Era/` | Unconverted Era chapters (titles with `(Era)`, not loaded) |
-| `Guides/Loremaster/` | Zone-completion guides |
+| `Guides/Loremaster/` | Zone-completion guides (shipped: Durotar and Mulgore only; add to `ForeverGuideMate.toc` when a zone is ready) |
 | `Guides/Dungeons/` | Dungeon quest guides |
 | `VERSION` | Current stable release used by automated version checks |
 | `RELEASE_NOTES.md` | Curated notes for only the current release |
