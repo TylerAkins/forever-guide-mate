@@ -8,6 +8,7 @@ local _, ns = ...
 -- Finding the Antidote (813) is repeatable. It stays on the route only while
 -- Need for a Cure (812) is still open.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including Stolen Power, The Lost Rune, Atop the Cliffs, Icons of Power, and A Trial of Fitness.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -338,6 +339,72 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.4208, 0.6835, "Gornek",
                     "Travel to Gornek."),
+            },
+        },
+        {
+            id = "accept-98576-glyphic-parchment",
+            kind = "accept",
+            priority = 161,
+            conditions = {
+                all = {
+                    { race = 2 },
+                    { class = 8 },
+                },
+            },
+            text = "Accept Glyphic Parchment from Gornek in the Den.",
+            complete = QuestState(98576, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek", "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-98576-glyphic-parchment",
+            kind = "turnin",
+            priority = 161.01,
+            conditions = {
+                all = {
+                    { race = 2 },
+                    { class = 8 },
+                },
+            },
+            text = "Turn in Glyphic Parchment to Mai'ah in the Valley of Trials.",
+            dependsOn = { "accept-98576-glyphic-parchment" },
+            complete = QuestState(98576, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4240, 0.6900, "Mai'ah", "Travel to Mai'ah."),
+            },
+        },
+        {
+            id = "accept-98575-tainted-tablet",
+            kind = "accept",
+            priority = 162,
+            conditions = {
+                all = {
+                    { race = 8 },
+                    { class = 9 },
+                },
+            },
+            text = "Accept Tainted Tablet from Gornek in the Den.",
+            complete = QuestState(98575, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek", "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-98575-tainted-tablet",
+            kind = "turnin",
+            priority = 162.01,
+            conditions = {
+                all = {
+                    { race = 8 },
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Tainted Tablet to Nartok in the Valley of Trials.",
+            dependsOn = { "accept-98575-tainted-tablet" },
+            complete = QuestState(98575, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4060, 0.6840, "Nartok", "Travel to Nartok."),
             },
         },
         {
@@ -1153,6 +1220,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96652-the-adventurer",
+            kind = "accept",
+            priority = 755,
+            conditions = { level = { min = 4 } },
+            useClientPin = true,
+            text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
+            complete = QuestState(96652, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Valley of Trials",
+                    "Travel to the Valley of Trials."),
+            },
+        },
+        {
             id = "accept-823-report-to-orgnil",
             kind = "accept",
             priority = 760,
@@ -1291,6 +1371,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5200, 0.6820, "Ukor",
                     "Travel to Ukor."),
+            },
+        },
+        {
+            id = "turnin-96652-the-adventurer",
+            kind = "turnin",
+            priority = 805,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Brakk near Razor Hill.",
+            dependsOn = { "accept-96652-the-adventurer" },
+            complete = QuestState(96652, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4740, "Brakk",
+                    "Travel to Brakk."),
             },
         },
         {

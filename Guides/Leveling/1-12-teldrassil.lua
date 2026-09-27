@@ -4,6 +4,7 @@ local _, ns = ...
 -- Forever quests from the Teldrassil and Darnassus lists are woven into this route.
 -- Left out: Tyrande and Remulos is a level 60 Moonglade handoff. Fang of Githyiss appears only if the fang drops.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including Relics of the Kaldorei, Trek Through the Caves, and Thrice Stolen.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -684,6 +685,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96630-the-adventurer",
+            kind = "accept",
+            priority = 451,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from the book on the table behind Tenaron Stormgrip in Aldrassil.",
+            complete = QuestState(96630, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
             id = "accept-2159-dolanaar-delivery",
             kind = "accept",
             priority = 460,
@@ -704,6 +717,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.6041, 0.5626, "Zenn Foulhoof",
                     "Travel to Zenn Foulhoof."),
+            },
+        },
+        {
+            id = "turnin-96630-the-adventurer",
+            kind = "turnin",
+            priority = 485,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Lyreena Duskblade near Dolanaar.",
+            dependsOn = { "accept-96630-the-adventurer" },
+            complete = QuestState(96630, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5760, 0.5660, "Lyreena Duskblade",
+                    "Travel to Lyreena Duskblade."),
             },
         },
         {

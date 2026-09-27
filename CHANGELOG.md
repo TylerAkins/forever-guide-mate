@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.21 - 2026-09-27
+
+- Tirisfal Glades now includes the Undead paladin steps A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
+- Starter chapters now include the Forever class quests whose givers are already on the route. Class quests with no start pin stay named in the chapter header.
+- The Adventurer is on each 1-12 starter route. Zephras Isle already had its own copy.
+
 ## 0.1.20 - 2026-09-27
 
 - Ruins of Lordaeron dungeon guide: Horde enter at the Undercity portal (71.78, 11.44), and A Frightened Request from Tabitha Heartweaver in the Sepulcher is included in the pickup route.

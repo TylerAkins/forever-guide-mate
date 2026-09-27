@@ -69,7 +69,7 @@ Hall of Thanes, the Deadmines, Wailing Caverns, and Ruins of Lordaeron use the F
 
 ### Class quests
 
-None yet.
+Starter chapters include the class quests whose givers are already on that route. A separate class-guide section is not written yet.
 
 ## Todo
 
