@@ -7,6 +7,7 @@ local _, ns = ...
 -- Underground Map, and The Treaty of Understanding are level 13 to 16, past this route.
 -- Your Package Has Arrived and Stolen Blasting Powder appear only after the item is in the log.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including the unplaced Confounding Flash steps.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -15,6 +16,7 @@ local MAP = {
     STORMWIND = 1453,
     ELWYNN = 1429,
     LOCH_MODAN = 1432,
+    DUROTAR = 1411,
 }
 
 local function QuestState(questID, state)
@@ -131,6 +133,72 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.2992, 0.7123, "Sten Stoutarm",
                     "Travel to Sten Stoutarm."),
+            },
+        },
+        {
+            id = "accept-98574-hallowed-memorandum",
+            kind = "accept",
+            priority = 61,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                },
+            },
+            text = "Accept Hallowed Memorandum from Sten Stoutarm in Coldridge Valley.",
+            complete = QuestState(98574, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2980, 0.7120, "Sten Stoutarm", "Travel to Sten Stoutarm."),
+            },
+        },
+        {
+            id = "turnin-98574-hallowed-memorandum",
+            kind = "turnin",
+            priority = 61.01,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                },
+            },
+            text = "Turn in Hallowed Memorandum to Branstock Khalder in Coldridge Valley.",
+            dependsOn = { "accept-98574-hallowed-memorandum" },
+            complete = QuestState(98574, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2860, 0.6640, "Branstock Khalder", "Travel to Branstock Khalder."),
+            },
+        },
+        {
+            id = "accept-98581-archaic-rune",
+            kind = "accept",
+            priority = 62,
+            conditions = {
+                all = {
+                    { race = 3 },
+                    { class = 7 },
+                },
+            },
+            text = "Accept Archaic Rune from Sten Stoutarm in Coldridge Valley.",
+            complete = QuestState(98581, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2980, 0.7120, "Sten Stoutarm", "Travel to Sten Stoutarm."),
+            },
+        },
+        {
+            id = "turnin-98581-archaic-rune",
+            kind = "turnin",
+            priority = 62.01,
+            conditions = {
+                all = {
+                    { race = 3 },
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Archaic Rune to Teo Hammerstorm in Coldridge Valley.",
+            dependsOn = { "accept-98581-archaic-rune" },
+            complete = QuestState(98581, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
             },
         },
         {
@@ -745,6 +813,175 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-94373-call-of-earth",
+            kind = "accept",
+            priority = 481,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
+            complete = QuestState(94373, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "objective-94373-call-of-earth",
+            kind = "objective",
+            priority = 481.01,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Kill Frostmane trolls for Teo Hammerstorm's Call of Earth.",
+            dependsOn = { "accept-94373-call-of-earth" },
+            complete = QuestState(94373, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2740, 0.8080, "Frostmane Troll Whelp", "Travel to Frostmane Troll Whelp."),
+            },
+        },
+        {
+            id = "turnin-94373-call-of-earth",
+            kind = "turnin",
+            priority = 481.02,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
+            dependsOn = { "objective-94373-call-of-earth" },
+            complete = QuestState(94373, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "accept-94374-call-of-earth-shrine",
+            kind = "accept",
+            priority = 481.1,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Coldridge Valley.",
+            dependsOn = { "turnin-94373-call-of-earth" },
+            complete = QuestState(94374, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "turnin-94374-call-of-earth-shrine",
+            kind = "turnin",
+            priority = 481.11,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to the Minor Manifestation of Earth.",
+            dependsOn = { "accept-94374-call-of-earth-shrine" },
+            complete = QuestState(94374, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth", "Travel to Minor Manifestation of Earth."),
+            },
+        },
+        {
+            id = "accept-94375-call-of-earth-return",
+            kind = "accept",
+            priority = 481.2,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from the Minor Manifestation of Earth.",
+            dependsOn = { "turnin-94374-call-of-earth-shrine" },
+            complete = QuestState(94375, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth", "Travel to Minor Manifestation of Earth."),
+            },
+        },
+        {
+            id = "turnin-94375-call-of-earth-return",
+            kind = "turnin",
+            priority = 481.21,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Coldridge Valley.",
+            dependsOn = { "accept-94375-call-of-earth-return" },
+            complete = QuestState(94375, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "accept-94472-earth-sapta",
+            kind = "accept",
+            priority = 481.3,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Earth Sapta from Teo Hammerstorm in Coldridge Valley.",
+            complete = QuestState(94472, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "objective-94472-earth-sapta",
+            kind = "objective",
+            priority = 481.31,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Bring Teo Hammerstorm the Earth Sapta he asks for. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94472-earth-sapta" },
+            useClientPin = true,
+            complete = QuestState(94472, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
+            id = "turnin-94472-earth-sapta",
+            kind = "turnin",
+            priority = 481.32,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Earth Sapta to Teo Hammerstorm in Coldridge Valley.",
+            dependsOn = { "objective-94472-earth-sapta" },
+            complete = QuestState(94472, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2880, 0.6620, "Teo Hammerstorm", "Travel to Teo Hammerstorm."),
+            },
+        },
+        {
             id = "accept-282-senir-s-observations",
             kind = "accept",
             priority = 490,
@@ -1190,6 +1427,96 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.4720, 0.5220, "Maxan Anvol",
                     "Travel to Maxan Anvol."),
+            },
+        },
+        {
+            id = "accept-94824-confounding-flash",
+            kind = "accept",
+            priority = 775.1,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Confounding Flash from Maxan Anvol in Kharanos.",
+            complete = QuestState(94824, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4720, 0.5220, "Maxan Anvol", "Travel to Maxan Anvol."),
+            },
+        },
+        {
+            id = "turnin-94824-confounding-flash",
+            kind = "turnin",
+            priority = 775.11,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge.",
+            dependsOn = { "accept-94824-confounding-flash" },
+            complete = QuestState(94824, "completed"),
+            route = {
+                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims", "Travel to High Priestess Mims."),
+            },
+        },
+        {
+            id = "accept-94817-confounding-flash-mims",
+            kind = "accept",
+            priority = 775.2,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Confounding Flash from High Priestess Mims in Ironforge.",
+            dependsOn = { "turnin-94824-confounding-flash" },
+            complete = QuestState(94817, "activeOrCompleted"),
+            route = {
+                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims", "Travel to High Priestess Mims."),
+            },
+        },
+        {
+            id = "objective-94817-confounding-flash-mims",
+            kind = "objective",
+            priority = 775.21,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Complete Confounding Flash for High Priestess Mims. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94817-confounding-flash-mims" },
+            useClientPin = true,
+            complete = QuestState(94817, "complete"),
+            route = {
+                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims", "Travel to High Priestess Mims."),
+            },
+        },
+        {
+            id = "turnin-94817-confounding-flash-mims",
+            kind = "turnin",
+            priority = 775.22,
+            conditions = {
+                all = {
+                    { race = 7 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge.",
+            dependsOn = { "objective-94817-confounding-flash-mims" },
+            complete = QuestState(94817, "completed"),
+            route = {
+                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims", "Travel to High Priestess Mims."),
             },
         },
         {
@@ -2776,6 +3103,73 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.8629, 0.4886, "Mountaineer Barleybrew",
                     "Travel to Mountaineer Barleybrew."),
+            },
+        },
+        {
+            id = "accept-94449-call-of-fire",
+            kind = "accept",
+            priority = 1802.1,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Call of Fire from Ingrid Dunwald in Kharanos.",
+            complete = QuestState(94449, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4740, 0.5200, "Ingrid Dunwald", "Travel to Ingrid Dunwald."),
+            },
+        },
+        {
+            id = "turnin-94449-call-of-fire",
+            kind = "turnin",
+            priority = 1802.11,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Call of Fire to Bruegs Kindleborn.",
+            dependsOn = { "accept-94449-call-of-fire" },
+            complete = QuestState(94449, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.8760, 0.4360, "Bruegs Kindleborn", "Travel to Bruegs Kindleborn."),
+            },
+        },
+        {
+            id = "accept-94465-call-of-fire-loch",
+            kind = "accept",
+            priority = 1802.2,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Call of Fire from Bruegs Kindleborn.",
+            dependsOn = { "turnin-94449-call-of-fire" },
+            complete = QuestState(94465, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.8760, 0.4360, "Bruegs Kindleborn", "Travel to Bruegs Kindleborn."),
+            },
+        },
+        {
+            id = "turnin-94465-call-of-fire-loch",
+            kind = "turnin",
+            priority = 1802.21,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Call of Fire to Braldir Ashmantle in Loch Modan.",
+            dependsOn = { "accept-94465-call-of-fire-loch" },
+            complete = QuestState(94465, "completed"),
+            route = {
+                Point(MAP.LOCH_MODAN, 0.3200, 0.6600, "Braldir Ashmantle", "Travel to Braldir Ashmantle."),
             },
         },
         {
