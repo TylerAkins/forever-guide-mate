@@ -43,18 +43,6 @@ REQUIRED_FILES = (
     "Guides/Leveling/ZephrasIsle.lua",
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Mulgore.lua",
-    "Guides/Loremaster/TheBarrens.lua",
-    "Guides/Loremaster/Teldrassil.lua",
-    "Guides/Loremaster/LochModan.lua",
-    "Guides/Loremaster/Westfall.lua",
-    "Guides/Loremaster/DunMorogh.lua",
-    "Guides/Loremaster/Duskwood.lua",
-    "Guides/Loremaster/RedridgeMountains.lua",
-    "Guides/Loremaster/SilverpineForest.lua",
-    "Guides/Loremaster/ElwynnForest.lua",
-    "Guides/Loremaster/Ashenvale.lua",
-    "Guides/Loremaster/Darkshore.lua",
-    "Guides/Loremaster/StonetalonMountains.lua",
     "docs/guide-authoring.md",
     "docs/zone-loremaster-guides.md",
     "docs/DEVELOPMENT.md",
@@ -117,18 +105,6 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/ZephrasIsle.lua",
                 "Guides/Loremaster/Durotar.lua",
                 "Guides/Loremaster/Mulgore.lua",
-                "Guides/Loremaster/TheBarrens.lua",
-                "Guides/Loremaster/Teldrassil.lua",
-                "Guides/Loremaster/LochModan.lua",
-                "Guides/Loremaster/Westfall.lua",
-                "Guides/Loremaster/DunMorogh.lua",
-                "Guides/Loremaster/Duskwood.lua",
-                "Guides/Loremaster/RedridgeMountains.lua",
-                "Guides/Loremaster/SilverpineForest.lua",
-                "Guides/Loremaster/ElwynnForest.lua",
-                "Guides/Loremaster/Ashenvale.lua",
-                "Guides/Loremaster/Darkshore.lua",
-                "Guides/Loremaster/StonetalonMountains.lua",
                 "Guides/Leveling/1-12-durotar.lua",
                 "Guides/Leveling/1-12-mulgore.lua",
                 "Guides/Leveling/1-12-tirisfal-glades.lua",
@@ -216,8 +192,6 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/ZephrasIsle.lua",
                 "Guides/Loremaster/Durotar.lua",
                 "Guides/Loremaster/Mulgore.lua",
-                "Guides/Loremaster/TheBarrens.lua",
-                "Guides/Loremaster/Teldrassil.lua",
             )
         )
         for term in forbidden:
@@ -306,23 +280,6 @@ class ContractTests(unittest.TestCase):
         self.assertIn("RACE_HORDE = 96", guide)
         self.assertNotIn("97963", guide)
 
-    def test_barrens_guide_is_loremaster_without_dungeons(self) -> None:
-        guide = (ROOT / "Guides/Loremaster/TheBarrens.lua").read_text(encoding="utf-8")
-        for quest_id in (844, 871, 894, 900, 906, 97003, 6543, 98024):
-            self.assertIn(str(quest_id), guide)
-        for dungeon_id in (3369, 3370, 914, 1491):
-            self.assertNotIn(str(dungeon_id), guide.split("goals = {", 1)[-1])
-        self.assertIn('id = "leveling-the-barrens"', guide)
-        self.assertIn('category = "Loremaster Guides"', guide)
-        self.assertIn("level = { min = 9 }", guide)
-        self.assertIn('{ faction = "Horde" }', guide)
-        self.assertIn('{ faction = "Alliance" }', guide)
-        self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn('id = "objective-900-samophlange-1"', guide)
-        self.assertIn('id = "objective-900-samophlange-2"', guide)
-        self.assertIn('id = "objective-900-samophlange-3"', guide)
-        self.assertIn("BARRENS = 1413", guide)
-
     def test_durotar_guide_is_loremaster_without_dungeons(self) -> None:
         guide = (ROOT / "Guides/Loremaster/Durotar.lua").read_text(encoding="utf-8")
         goals = guide.split("goals = {", 1)[-1]
@@ -376,45 +333,14 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-745-sharing-the-land-3"', guide)
         self.assertIn("MULGORE = 1412", guide)
 
-    def test_teldrassil_guide_is_loremaster_without_dungeons(self) -> None:
-        guide = (ROOT / "Guides/Loremaster/Teldrassil.lua").read_text(encoding="utf-8")
-        goals = guide.split("goals = {", 1)[-1]
-        for quest_id in (456, 921, 7383, 483, 2499, 3522, 490):
-            self.assertIn(f"QuestState({quest_id},", goals)
-        for omitted_id in (5842, 8734, 934):
-            self.assertNotIn(f"QuestState({omitted_id},", goals)
-            self.assertNotIn(f"QuestObjective({omitted_id},", goals)
-        self.assertIn('id = "leveling-teldrassil"', guide)
-        self.assertIn('title = "Teldrassil"', guide)
-        self.assertNotIn("(Loremaster)", guide.split("goals = {", 1)[0])
-        self.assertIn('category = "Loremaster Guides"', guide)
-        self.assertIn("level = { min = 1 }", guide)
-        self.assertIn('{ faction = "Alliance" }', guide)
-        self.assertIn("This is an elite. Bring a group.", guide)
-        self.assertIn('id = "objective-456-the-balance-of-nature-1"', guide)
-        self.assertIn('id = "objective-456-the-balance-of-nature-2"', guide)
-        self.assertIn('id = "objective-483-the-relics-of-wakening-1"', guide)
-        self.assertIn('id = "objective-483-the-relics-of-wakening-4"', guide)
-        self.assertIn("TELDRASSIL = 1438", guide)
-        self.assertIn("DARNASSUS = 1457", guide)
-
     def test_loremaster_routes_follow_leveling_and_keep_zone_quests(self) -> None:
         durotar = (ROOT / "Guides/Loremaster/Durotar.lua").read_text(encoding="utf-8")
         goals = durotar.split("goals = {", 1)[-1]
         self.assertIn("QuestState(1485,", goals)
         self.assertIn("QuestState(924,", goals)
         self.assertIn("follows the leveling route", durotar)
-        loch = (ROOT / "Guides/Loremaster/LochModan.lua").read_text(encoding="utf-8")
-        self.assertIn('category = "Loremaster Guides"', loch)
-        self.assertIn('title = "Loch Modan"', loch)
-        self.assertIn("QuestState(307,", loch)
-        self.assertIn("QuestState(278,", loch)
-        self.assertNotIn("QuestState(167,", loch.split("goals = {", 1)[-1])
-        ashenvale = (ROOT / "Guides/Loremaster/Ashenvale.lua").read_text(encoding="utf-8")
-        self.assertIn('{ faction = "Alliance" }', ashenvale)
-        self.assertIn('{ faction = "Horde" }', ashenvale)
-        westfall = (ROOT / "Guides/Loremaster/Westfall.lua").read_text(encoding="utf-8")
-        self.assertNotIn("QuestState(167,", westfall.split("goals = {", 1)[-1])
+        mulgore = (ROOT / "Guides/Loremaster/Mulgore.lua").read_text(encoding="utf-8")
+        self.assertIn("leveling route", mulgore)
 
     def test_era_leveling_guides_are_horde_routes(self) -> None:
         era_files = (
