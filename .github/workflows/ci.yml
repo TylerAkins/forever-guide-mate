@@ -38,8 +38,10 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           set -euo pipefail
+          # VERSION/CHANGELOG are required only when shipped addon content or Interface changes.
+          # README, docs/, skills, and other repo metadata can merge without a release bump.
           GUIDE_CONTENT_CHANGED=false
-          if ! git diff --quiet "$BASE_SHA" HEAD -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml UI.lua ForeverGuideMate.toc; then
+          if ! git diff --quiet "$BASE_SHA" HEAD -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml UI.lua ForeverGuideMate.toc VERSION; then
             GUIDE_CONTENT_CHANGED=true
           fi
           PREVIOUS_INTERFACE="$(git show "${BASE_SHA}:ForeverGuideMate.toc" | sed -n 's/^## Interface: //p')"
