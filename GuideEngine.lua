@@ -1491,6 +1491,13 @@ function Engine:ClearSavedPosition(guide)
     if storeKey then ns.charDB.activeGoalByGuide[storeKey] = nil end
     ns.charDB.activeGoal = nil
     ns.charDB.history = {}
+    if type(ns.charDB.notOffered) == "table" then
+        for goalID, entry in pairs(ns.charDB.notOffered) do
+            if type(entry) == "table" and entry.guide == guide.id then
+                ns.charDB.notOffered[goalID] = nil
+            end
+        end
+    end
     self.currentGoal = nil
     self.reviewingGoal = nil
 end
