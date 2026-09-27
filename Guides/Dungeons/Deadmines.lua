@@ -59,7 +59,12 @@ ns:RegisterGuide({
             id = "accept-red-silk-bandanas",
             kind = "accept",
             priority = 10,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Accept Red Silk Bandanas from Scout Riell at the Sentinel Hill tower.",
             taxiDestination = "Sentinel Hill",
             complete = QuestState(214, "activeOrCompleted"),
@@ -69,7 +74,12 @@ ns:RegisterGuide({
             id = "accept-defias-brotherhood",
             kind = "accept",
             priority = 11,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Accept The Defias Brotherhood from Gryan Stoutmantle at Sentinel Hill. " ..
                 "He offers this step after you finish The Defias Traitor.",
             taxiDestination = "Sentinel Hill",
@@ -80,7 +90,12 @@ ns:RegisterGuide({
             id = "accept-collecting-memories",
             kind = "accept",
             priority = 12,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Accept Collecting Memories from Wilder Thistlenettle in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(168, "activeOrCompleted"),
@@ -90,7 +105,12 @@ ns:RegisterGuide({
             id = "accept-oh-brother",
             kind = "accept",
             priority = 13,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Accept Oh Brother. . . from Wilder Thistlenettle in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(167, "activeOrCompleted"),
@@ -100,7 +120,12 @@ ns:RegisterGuide({
             id = "accept-underground-assault",
             kind = "accept",
             priority = 14,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Accept Underground Assault from Shoni the Shilent in the Dwarven District.",
             taxiDestination = "Stormwind",
             complete = QuestState(2040, "activeOrCompleted"),
@@ -128,7 +153,12 @@ ns:RegisterGuide({
             id = "complete-red-silk-bandanas",
             kind = "objective",
             priority = 41,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Collect 10 Red Silk Bandanas from the Defias in VanCleef's hideout.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(214, "complete"),
@@ -137,7 +167,12 @@ ns:RegisterGuide({
             id = "complete-collecting-memories",
             kind = "objective",
             priority = 42,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Collect 4 Miners' Union Cards in the Moonbrook mine.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(168, "complete"),
@@ -146,7 +181,12 @@ ns:RegisterGuide({
             id = "complete-oh-brother",
             kind = "objective",
             priority = 43,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Find Foreman Thistlenettle and take his Explorers' League Badge.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(167, "complete"),
@@ -155,7 +195,12 @@ ns:RegisterGuide({
             id = "complete-underground-assault",
             kind = "objective",
             priority = 44,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Take the Gnoam Sprecklesprocket from the goblin shredder.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(2040, "complete"),
@@ -164,7 +209,12 @@ ns:RegisterGuide({
             id = "complete-defias-brotherhood",
             kind = "objective",
             priority = 45,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Kill Edwin VanCleef and take his head.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(166, "complete"),
@@ -173,7 +223,12 @@ ns:RegisterGuide({
             id = "turnin-red-silk-bandanas",
             kind = "turnin",
             priority = 60,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Bring the Red Silk Bandanas back to Scout Riell.",
             dependsOn = { "complete-red-silk-bandanas" },
             taxiDestination = "Sentinel Hill",
@@ -184,7 +239,12 @@ ns:RegisterGuide({
             id = "turnin-defias-brotherhood",
             kind = "turnin",
             priority = 61,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Bring the Head of VanCleef to Gryan Stoutmantle.",
             dependsOn = { "complete-defias-brotherhood" },
             taxiDestination = "Sentinel Hill",
@@ -195,7 +255,12 @@ ns:RegisterGuide({
             id = "turnin-collecting-memories",
             kind = "turnin",
             priority = 62,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 14 } },
+                },
+            },
             text = "Bring the Miners' Union Cards back to Wilder Thistlenettle.",
             dependsOn = { "complete-collecting-memories" },
             taxiDestination = "Stormwind",
@@ -206,7 +271,12 @@ ns:RegisterGuide({
             id = "turnin-oh-brother",
             kind = "turnin",
             priority = 63,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Bring Thistlenettle's Badge back to Wilder Thistlenettle.",
             dependsOn = { "complete-oh-brother" },
             taxiDestination = "Stormwind",
@@ -217,7 +287,12 @@ ns:RegisterGuide({
             id = "turnin-underground-assault",
             kind = "turnin",
             priority = 64,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Bring the Gnoam Sprecklesprocket back to Shoni the Shilent.",
             dependsOn = { "complete-underground-assault" },
             taxiDestination = "Stormwind",

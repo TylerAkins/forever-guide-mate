@@ -173,7 +173,46 @@ local function QuestID(goal)
     end
 end
 
-function Navigation:ClientPin(goal, mapID, api)
+local pinCache = {}
+local pinTokens = {}
+local nextPinToken = 0
+
+local function PinToken(questLog)
+    if type(questLog) ~= "table" then
+        return 0
+    end
+    local token = pinTokens[questLog]
+    if not token then
+        nextPinToken = nextPinToken + 1
+        token = nextPinToken
+        pinTokens[questLog] = token
+    end
+    return token
+end
+
+local function ObjectiveKey(state, questID)
+    local entry = state and state.quests and state.quests[questID]
+    if type(entry) ~= "table" then
+        return tostring(questID)
+    end
+    local parts = { tostring(questID), entry.complete and "1" or "0" }
+    if type(entry.objectives) == "table" then
+        for index, objective in ipairs(entry.objectives) do
+            if type(objective) == "table" then
+                parts[#parts + 1] = tostring(index)
+                parts[#parts + 1] = tostring(objective.numFulfilled)
+                parts[#parts + 1] = objective.finished and "1" or "0"
+            end
+        end
+    end
+    return table.concat(parts, ":")
+end
+
+function Navigation:InvalidateClientPins()
+    pinCache = {}
+end
+
+function Navigation:ClientPin(goal, mapID, api, state)
     if not goal or goal.useClientPin ~= true then
         return nil
     end
@@ -187,6 +226,14 @@ function Navigation:ClientPin(goal, mapID, api)
     end
     if type(questLog) ~= "table" or type(questLog.GetQuestsOnMap) ~= "function" then
         return nil
+    end
+    local cacheKey = PinToken(questLog) .. ":" .. tostring(mapID) .. ":" .. ObjectiveKey(state, questID)
+    local cached = pinCache[cacheKey]
+    if cached ~= nil then
+        if cached == false then
+            return nil
+        end
+        return cached.mapID, cached.x, cached.y
     end
     local function OnMap(uiMapID)
         if type(uiMapID) ~= "number" then
@@ -206,22 +253,24 @@ function Navigation:ClientPin(goal, mapID, api)
         end
     end
     local pinMap, x, y = OnMap(mapID)
-    if x then
-        return pinMap, x, y
-    end
-    if type(questLog.GetMapForQuestPOIs) == "function" then
-        local ok, poiMap = pcall(questLog.GetMapForQuestPOIs)
-        if ok then
-            return OnMap(poiMap)
+    if not x and type(questLog.GetMapForQuestPOIs) == "function" then
+        local poiOK, poiMap = pcall(questLog.GetMapForQuestPOIs)
+        if poiOK then
+            pinMap, x, y = OnMap(poiMap)
         end
     end
+    if x then
+        pinCache[cacheKey] = { mapID = pinMap, x = x, y = y }
+        return pinMap, x, y
+    end
+    pinCache[cacheKey] = false
 end
 
-function Navigation:ApplyClientPin(goal, leg, api)
+function Navigation:ApplyClientPin(goal, leg, api, state)
     if not leg then
         return nil
     end
-    local pinMap, x, y = self:ClientPin(goal, leg.mapID, api)
+    local pinMap, x, y = self:ClientPin(goal, leg.mapID, api, state)
     if not x or (pinMap == leg.mapID and x == leg.x and y == leg.y) then
         return leg
     end
@@ -264,7 +313,7 @@ end
 
 function Navigation:GetActiveLeg(goal, state, api)
     if goal and goal.useClientPin == true and (type(goal.route) ~= "table" or #goal.route == 0) then
-        local pinMap, x, y = self:ClientPin(goal, state and state.mapID, api)
+        local pinMap, x, y = self:ClientPin(goal, state and state.mapID, api, state)
         if x then
             return {
                 mapID = pinMap,
@@ -296,9 +345,9 @@ function Navigation:GetActiveLeg(goal, state, api)
             else
                 if self:OnMap(state.mapID, leg.mapID) then
                     if not state.x or not state.y then
-                        return self:ApplyClientPin(goal, leg, api), "Waiting for a reliable player position."
+                        return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
                     end
-                    return self:ApplyClientPin(goal, leg, api), leg.label
+                    return self:ApplyClientPin(goal, leg, api, state), leg.label
                 end
                 local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
                 if not arrived then
@@ -311,7 +360,7 @@ function Navigation:GetActiveLeg(goal, state, api)
                 if transport and not self:PreferDirectWalk(leg, transport, state) then
                     return transport, transport.label
                 end
-                return self:ApplyClientPin(goal, leg, api), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
+                return self:ApplyClientPin(goal, leg, api, state), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
         end
     end

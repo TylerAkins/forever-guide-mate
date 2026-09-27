@@ -825,7 +825,29 @@ questAPI.C_GossipInfo.GetAvailableQuests = function()
 end
 calls.gossip = nil
 ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
-Equal(calls.gossip, 5722, "a later guide quest is left in the gossip window")
+Equal(calls.gossip, 5722, "the current accept is chosen when that giver also offers a later quest")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { 1, 5722 }
+end
+calls.gossip = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5722, "gossip selects the current accept when the list is quest ids")
+questAPI.C_GossipInfo.GetAvailableQuests = function()
+    return { { questID = 5723, title = "Testing an Enemy's Strength" } }
+end
+calls.gossip = nil
+calls.accept = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+Equal(calls.gossip, 5723, "a giver list opens the next ready quest when the current one is absent")
+questAPI.GetQuestID = function() return 5723 end
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, true, "the quest selected from the giver list is accepted")
+questAPI.C_GossipInfo.GetAvailableQuests = function() return {} end
+calls.accept = nil
+ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+Equal(calls.accept, nil, "opening a later quest without selecting it from the list does not accept it")
+questAPI.GetQuestID = function() return 5722 end
 questAPI.C_GossipInfo.GetAvailableQuests = function()
     return { { questID = 1 }, { questID = 5722 } }
 end
@@ -895,7 +917,11 @@ Equal(calls.greeting, 2, "a quest list opens the current accept step without a c
 greeting.GetAvailableTitle = function() return "Testing an Enemy's Strength" end
 calls.greeting = nil
 ns.QuestDialog:Handle("QUEST_GREETING", greeting)
-Equal(calls.greeting, nil, "a quest list does not open a different guide quest")
+Equal(calls.greeting, 1, "a quest list opens the next quest that same giver is offering")
+greeting.GetAvailableTitle = function() return "Hidden Enemies" end
+calls.greeting = nil
+ns.QuestDialog:Handle("QUEST_GREETING", greeting)
+Equal(calls.greeting, nil, "a quest list leaves a different giver's quest alone")
 greeting.GetAvailableTitle = function(index)
     if index == 1 then return "Searching for the Lost Satchel" end
     return "Testing an Enemy's Strength"
@@ -930,6 +956,50 @@ greeting.GetActiveQuestID = function() return 5723 end
 calls.greetingActive = nil
 ns.QuestDialog:Handle("QUEST_GREETING", greeting)
 Equal(calls.greetingActive, nil, "a quest list does not turn in a different guide quest")
+function TestForgottenLoaIdols()
+    local durotar = ns.guides["leveling-era"]
+    local idols = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-97225-forgotten-loa-idols")
+    Check(idols ~= nil, "Durotar accepts Forgotten Loa Idols")
+    Equal(idols.complete.quest.id, 97225, "Forgotten Loa Idols is quest 97225")
+    Equal(idols.route[#idols.route].label, "Master Vornal", "Forgotten Loa Idols is accepted from Master Vornal")
+    local solvent = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-818-a-solvent-spirit")
+    local savedGuide = ns.charDB.selectedGuide
+    local savedGoal = ns.Engine.currentGoal
+    local savedState = ns.Engine.state
+    local savedSegment = ns.Engine.currentSegment
+    ns.charDB.selectedGuide = "leveling-era"
+    ns.Engine.currentSegment = nil
+    ns.Engine.currentGoal = solvent
+    ns.Engine.state = {
+        faction = "Horde", level = 10, mapID = 1411,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    }
+    questAPI.C_GossipInfo.GetAvailableQuests = function()
+        return {
+            { questID = 97225, title = "Forgotten Loa Idols" },
+            { questID = 818, title = "A Solvent Spirit" },
+        }
+    end
+    calls.gossip = nil
+    ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+    Equal(calls.gossip, 818, "Master Vornal's list accepts the current quest first")
+    questAPI.C_GossipInfo.GetAvailableQuests = function()
+        return { { questID = 97225, title = "Forgotten Loa Idols" } }
+    end
+    calls.gossip = nil
+    calls.accept = nil
+    ns.QuestDialog:Handle("GOSSIP_SHOW", questAPI)
+    Equal(calls.gossip, 97225, "Master Vornal's list still accepts Forgotten Loa Idols")
+    questAPI.GetQuestID = function() return 97225 end
+    ns.QuestDialog:Handle("QUEST_DETAIL", questAPI)
+    Equal(calls.accept, true, "Forgotten Loa Idols is accepted after the list selects it")
+    ns.charDB.selectedGuide = savedGuide
+    ns.Engine.currentGoal = savedGoal
+    ns.Engine.state = savedState
+    ns.Engine.currentSegment = savedSegment
+end
+TestForgottenLoaIdols()
 
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
@@ -2845,6 +2915,79 @@ function TestFlightMemoryByLandmass()
 end
 TestFlightMemoryByLandmass()
 
+function TestLevelWallSaysToGrindOrDungeon()
+    local savedGuide = ns.charDB.selectedGuide
+    local savedGoal = ns.charDB.activeGoal
+    ns:RegisterGuide({
+        id = "test-level-wall",
+        title = "Level wall",
+        category = "Test",
+        revision = 1,
+        conditions = { level = { min = 1 } },
+        goals = {
+            {
+                id = "accept-later",
+                kind = "accept",
+                priority = 1,
+                conditions = { level = { min = 8 } },
+                text = "Accept Later from the trainer.",
+                complete = { quest = { id = 999001, state = "activeOrCompleted" } },
+            },
+            {
+                id = "objective-later",
+                kind = "objective",
+                priority = 2,
+                conditions = { level = { min = 8 } },
+                text = "Finish Later.",
+                dependsOn = { "accept-later" },
+                complete = { quest = { id = 999001, state = "complete" } },
+            },
+        },
+    })
+    ns.Engine:SelectGuide("test-level-wall")
+    ns.Engine:Refresh({
+        faction = "Horde", raceID = 2, classID = 9, level = 5,
+        professions = {}, professionsKnown = true,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+        mapID = 1411,
+    })
+    Equal(ns.Engine.currentGoal, nil, "a level 5 character has no step when every quest is level 8")
+    Equal(ns.Engine.status,
+        "The next step needs a higher level. Grind, or run a dungeon, until you can take it.",
+        "the tracker says to grind or dungeon when the next step is only a level gate")
+    ns.guides["test-level-wall"] = nil
+    for index = #ns.guideOrder, 1, -1 do
+        if ns.guideOrder[index] == "test-level-wall" then
+            table.remove(ns.guideOrder, index)
+        end
+    end
+    ns.Engine:SelectGuide(savedGuide)
+    ns.charDB.activeGoal = savedGoal
+end
+TestLevelWallSaysToGrindOrDungeon()
+
+function TestEncroachmentWaitsUntilGarThokOffersIt()
+    ns:FinalizeGuides()
+    local era = ns.guides["leveling-era"]
+    local ids = {
+        "leveling-era-1-12-durotar:accept-837-encroachment",
+        "leveling-era-1-12-durotar:objective-837-encroachment",
+        "leveling-era-1-12-durotar:turnin-837-encroachment",
+    }
+    for _, goalID in ipairs(ids) do
+        local goal = ns.Engine:GetGoal(era, goalID)
+        local levelGate = goal and goal.conditions and goal.conditions.all and goal.conditions.all[1]
+        Check(levelGate and levelGate.level and levelGate.level.min == 6,
+            goalID .. " waits until level 6")
+        Equal(ns.EvaluateCondition(goal.conditions, { level = 5, faction = "Horde", classID = 9 }), false,
+            "a level 5 warlock is not sent to accept Encroachment")
+        Equal(ns.EvaluateCondition(goal.conditions, { level = 6, faction = "Horde", classID = 9 }), true,
+            "Encroachment is offered from level 6")
+    end
+end
+TestEncroachmentWaitsUntilGarThokOffersIt()
+
 function TestStaleFlightRoutesPurged()
     local previousDB, previousCharDB = ForeverGuideMateDB, ForeverGuideMateCharDB
     ForeverGuideMateDB = { schemaVersion = 3 }
@@ -3000,7 +3143,7 @@ function TestEraLeveling()
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
         "finishing Durotar hands off to the Barrens")
     Equal(ns.Engine.currentGoal, nil, "the Barrens handoff waits until level 12")
-    Equal(ns.Engine.status, "Level requirement not met.",
+    Equal(ns.Engine.status, "The next step needs a higher level. Grind, or run a dungeon, until you can take it.",
         "a level 1 character is told the next chapter is not open yet")
 
     ResetEra()
@@ -3200,6 +3343,139 @@ ns.PlayerState:InvalidateProfessions()
 local missingAPIOK, missingState = pcall(function() return ns.PlayerState:Capture({}) end)
 Equal(missingAPIOK, true, "missing optional APIs do not raise Lua errors")
 Equal(missingState.professionsKnown, false, "missing profession API is reported as unknown")
+
+function TestQuestLogBurstDoesNotStall()
+    local calls, delays = 0, {}
+    local timers = {}
+    local savedEngine = ns.Engine
+    local savedTimer = C_Timer
+    ns.Engine = { Refresh = function() calls = calls + 1 end }
+    C_Timer = {
+        After = function(delay, callback)
+            delays[#delays + 1] = delay
+            timers[#timers + 1] = callback
+        end,
+    }
+    ns.ScheduleRefresh(true)
+    ns.ScheduleRefresh(true)
+    ns.ScheduleRefresh(true)
+    Equal(calls, 0, "quest log events do not refresh inside the event")
+    Equal(#timers, 3, "each quest log event arms one later refresh")
+    Equal(delays[1] > 0, true, "the quest log is read after the burst settles")
+    for _, callback in ipairs(timers) do callback() end
+    Equal(calls, 1, "a burst of accept, loot, or kill events refreshes the guide once")
+    C_Timer = savedTimer
+    ns.Engine = savedEngine
+end
+TestQuestLogBurstDoesNotStall()
+
+function TestQuestCreditDoesNotRebuildCompletedQuests()
+    ns.PlayerState:InvalidateQuestCache()
+    local count, bulk, summaries, selecting = 1, 0, 0, 0
+    local log = { 100 }
+    local api = {
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return count end,
+            GetInfo = function()
+                return { questID = 100, title = "Proof", isComplete = false }
+            end,
+            GetQuestObjectives = function()
+                return { { text = "Slay", numRequired = 8, numFulfilled = 8, finished = true } }
+            end,
+            GetQuestLogQuestText = function()
+                summaries = summaries + 1
+                return "Body", "Collect the proof from the camp."
+            end,
+        },
+        GetQuestLogQuestText = function()
+            selecting = selecting + 1
+        end,
+        GetQuestsCompleted = function(completed)
+            bulk = bulk + 1
+            completed[200] = true
+        end,
+    }
+    local watched = { 100, 200 }
+    local first = ns.PlayerState:Capture(api, watched)
+    Equal(selecting, 0, "quest credit never selects a quest log row")
+    Equal(summaries, 1, "the objective summary is read once")
+    Equal(bulk, 1, "completed quests are loaded once")
+    Equal(first.quests[100].summary, "Collect the proof from the camp.", "the objective summary is kept")
+    Equal(first.completedQuests[200], true, "a turned-in quest is recorded from the one dump")
+    ns.PlayerState:Capture(api, watched)
+    Equal(summaries, 1, "another kill does not read the objective summary again")
+    Equal(bulk, 1, "another kill does not rebuild the completed-quest table")
+    Equal(selecting, 0, "another kill still does not select a quest log row")
+    count = 0
+    local duringBlip = ns.PlayerState:Capture(api, watched)
+    Equal(duringBlip.quests[100] ~= nil, true, "a momentary empty quest log keeps the open quest")
+    Equal(bulk, 1, "a momentary empty quest log does not rebuild completed quests")
+    ns.PlayerState:ForgetQuest(100, true)
+    local turnedIn = ns.PlayerState:Capture(api, watched)
+    Equal(turnedIn.quests[100], nil, "a turned-in quest leaves the cached log")
+    Equal(turnedIn.completedQuests[100], true, "a turned-in quest stays turned in without another dump")
+    Equal(bulk, 1, "turning a quest in does not rebuild the completed-quest table")
+    ns.PlayerState:InvalidateQuestCache()
+end
+TestQuestCreditDoesNotRebuildCompletedQuests()
+
+function TestClientPinIsReadOncePerObjectiveChange()
+    ns.Navigation:InvalidateClientPins()
+    local queries = 0
+    local pins = {
+        GetQuestsOnMap = function()
+            queries = queries + 1
+            return { { questID = 887, x = 0.2, y = 0.3 } }
+        end,
+    }
+    local goal = {
+        useClientPin = true,
+        complete = { quest = { id = 887, state = "complete" } },
+        route = { { mapID = 1413, x = 0.64, y = 0.45, label = "Camp" } },
+    }
+    local state = {
+        mapID = 1413, x = 0.5, y = 0.5,
+        quests = { [887] = { complete = false, objectives = {
+            { numFulfilled = 1, numRequired = 8, finished = false },
+        } } },
+    }
+    local first = ns.Navigation:GetActiveLeg(goal, state, pins)
+    local second = ns.Navigation:GetActiveLeg(goal, state, pins)
+    Equal(first and first.x, 0.2, "the quest log pin is used for the objective")
+    Equal(second and second.x, 0.2, "a second tracker update keeps the quest log pin")
+    Equal(queries, 1, "redrawing the tracker does not query the map pin again")
+    state.quests[887].objectives[1].numFulfilled = 2
+    local moved = ns.Navigation:GetActiveLeg(goal, state, pins)
+    Equal(moved and moved.x, 0.2, "a new kill credit still has a quest log pin")
+    Equal(queries, 2, "a kill credit reads the moved quest log pin once")
+    ns.Navigation:InvalidateClientPins()
+end
+TestClientPinIsReadOncePerObjectiveChange()
+
+function TestUnchangedQuestLogSkipsGuideWalk()
+    local saved = ns.Engine.questLogFingerprint
+    local state = {
+        quests = { [100] = { complete = false, objectives = {
+            { numFulfilled = 1, numRequired = 8, finished = false },
+        } } },
+        completedQuests = { [200] = true },
+        questLogKnown = true, questCompletionKnown = true,
+        level = 10, mapID = 1411, instanceID = nil,
+    }
+    ns.Engine.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(state)
+    Equal(ns.Engine:SameQuestLog(state), true, "the same objective progress does not need another guide walk")
+    local changed = {
+        quests = { [100] = { complete = false, objectives = {
+            { numFulfilled = 2, numRequired = 8, finished = false },
+        } } },
+        completedQuests = { [200] = true },
+        questLogKnown = true, questCompletionKnown = true,
+        level = 10, mapID = 1411, instanceID = nil,
+    }
+    Equal(ns.Engine:SameQuestLog(changed), false, "kill credit still walks the guide")
+    ns.Engine.questLogFingerprint = saved
+end
+TestUnchangedQuestLogSkipsGuideWalk()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

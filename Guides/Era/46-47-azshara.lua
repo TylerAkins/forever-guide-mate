@@ -44,6 +44,7 @@ ns:RegisterGuide({
             id = "accept-5535-spiritual-unrest",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 45 } },
             text = "Accept Spiritual Unrest from Loh'atu in Talrendis Point.",
             complete = QuestState(5535, "activeOrCompleted"),
             route = {
@@ -55,6 +56,7 @@ ns:RegisterGuide({
             id = "accept-5536-a-land-filled-with-hatred",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 45 } },
             text = "Accept A Land Filled with Hatred from Loh'atu in Talrendis Point.",
             complete = QuestState(5536, "activeOrCompleted"),
             route = {
@@ -66,6 +68,7 @@ ns:RegisterGuide({
             id = "objective-5535-spiritual-unrest",
             kind = "objective",
             priority = 40,
+            conditions = { level = { min = 45 } },
             text = "Kill 6 Highborne Apparition and 6 Highborne Lichling at the Shadowsong Shrine.",
             dependsOn = { "accept-5535-spiritual-unrest" },
             complete = QuestState(5535, "complete"),
@@ -78,6 +81,7 @@ ns:RegisterGuide({
             id = "objective-5536-a-land-filled-with-hatred",
             kind = "objective",
             priority = 50,
+            conditions = { level = { min = 45 } },
             text = "Kill 6 Haldarr Satyr, 2 Haldarr Trickster and 2 Haldarr Felsworn found a bit more north in Haldarr Encampment.",
             dependsOn = { "accept-5536-a-land-filled-with-hatred" },
             complete = QuestState(5536, "complete"),
@@ -90,6 +94,7 @@ ns:RegisterGuide({
             id = "turnin-5535-spiritual-unrest",
             kind = "turnin",
             priority = 70,
+            conditions = { level = { min = 45 } },
             text = "Turn in Spiritual Unrest to Loh'atu in Talrendis Point.",
             dependsOn = { "objective-5535-spiritual-unrest" },
             complete = QuestState(5535, "completed"),
@@ -102,6 +107,7 @@ ns:RegisterGuide({
             id = "turnin-5536-a-land-filled-with-hatred",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 45 } },
             text = "Turn in A Land Filled with Hatred to Loh'atu in Talrendis Point.",
             dependsOn = { "objective-5536-a-land-filled-with-hatred" },
             complete = QuestState(5536, "completed"),
@@ -114,6 +120,7 @@ ns:RegisterGuide({
             id = "turnin-3504-betrayed",
             kind = "turnin",
             priority = 100,
+            conditions = { level = { min = 44 } },
             text = "Turn in Betrayed to Ag'tor Bloodfist in Valormok.",
             complete = QuestState(3504, "completed"),
             route = {
@@ -125,6 +132,7 @@ ns:RegisterGuide({
             id = "accept-3517-stealing-knowledge",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 45 } },
             text = "Accept Stealing Knowledge from Jediga in Valormok.",
             complete = QuestState(3517, "activeOrCompleted"),
             route = {
@@ -136,6 +144,7 @@ ns:RegisterGuide({
             id = "accept-3568-seeping-corruption",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 45 } },
             text = "Accept Seeping Corruption from Chemist Cuely in The Apothecarium.",
             complete = QuestState(3568, "activeOrCompleted"),
             route = {
@@ -149,6 +158,7 @@ ns:RegisterGuide({
             id = "accept-232-errand-for-apothecary-zinge",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 38 } },
             text = "Accept Errand for Apothecary Zinge from Apothecary Zinge in The Apothecarium.",
             complete = QuestState(232, "activeOrCompleted"),
             route = {
@@ -160,6 +170,7 @@ ns:RegisterGuide({
             id = "turnin-232-errand-for-apothecary-zinge",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 38 } },
             text = "Turn in Errand for Apothecary Zinge to Alessandro Luca in The Apothecarium.",
             dependsOn = { "accept-232-errand-for-apothecary-zinge" },
             complete = QuestState(232, "completed"),
@@ -172,6 +183,7 @@ ns:RegisterGuide({
             id = "accept-238-errand-for-apothecary-zinge",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 38 } },
             text = "Accept Errand for Apothecary Zinge from Alessandro Luca in The Apothecarium.",
             complete = QuestState(238, "activeOrCompleted"),
             route = {
@@ -183,6 +195,7 @@ ns:RegisterGuide({
             id = "turnin-238-errand-for-apothecary-zinge",
             kind = "turnin",
             priority = 170,
+            conditions = { level = { min = 38 } },
             text = "Turn in Errand for Apothecary Zinge to Apothecary Zinge in The Apothecarium.",
             dependsOn = { "accept-238-errand-for-apothecary-zinge" },
             complete = QuestState(238, "completed"),
@@ -197,6 +210,7 @@ ns:RegisterGuide({
             id = "accept-243-into-the-field",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 38 } },
             text = "Accept Into the Field from Apothecary Zinge in The Apothecarium.",
             complete = QuestState(243, "activeOrCompleted"),
             route = {

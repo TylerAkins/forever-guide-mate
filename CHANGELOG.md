@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.19 - 2026-09-27
+
+- Accepting, turning in, looting, or killing an objective no longer stalls the client while the quest log rebuilds. The guide waits until that burst settles, then refreshes once.
+- A quest list from one NPC accepts the current step, then the next ready quest that same giver offers. Master Vornal still offers Forgotten Loa Idols after A Solvent Spirit.
+- Encroachment stays off the tracker until level 6, which is when Gar'Thok offers it.
+- Every guide quest now uses the minimum level from the Forever quest database, the level the NPC will offer it.
+- When every remaining step needs a higher level, the tracker says to grind or run a dungeon until you can take the next one.
+
 ## 0.1.18 - 2026-09-27
 
 - Sync reopens skipped accept steps when that quest is not in your log, so warlock Vile Familiars can surface again instead of staying behind Lazy Peons or Thazz'ril's Pick.

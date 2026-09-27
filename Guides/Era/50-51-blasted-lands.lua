@@ -46,6 +46,7 @@ ns:RegisterGuide({
             id = "accept-2783-petty-squabbles",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 50 } },
             text = "Accept Petty Squabbles from Ambassador Ardalan in Nethergarde Keep.",
             complete = QuestState(2783, "activeOrCompleted"),
             route = {
@@ -57,6 +58,7 @@ ns:RegisterGuide({
             id = "turnin-2783-petty-squabbles",
             kind = "turnin",
             priority = 40,
+            conditions = { level = { min = 50 } },
             text = "Turn in Petty Squabbles to Fallen Hero of the Horde in Swamp of Sorrows.",
             dependsOn = { "accept-2783-petty-squabbles" },
             complete = QuestState(2783, "completed"),
@@ -69,6 +71,7 @@ ns:RegisterGuide({
             id = "accept-2801-a-tale-of-sorrow",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 45 } },
             text = "Accept A Tale of Sorrow from Fallen Hero of the Horde in Swamp of Sorrows.",
             complete = QuestState(2801, "activeOrCompleted"),
             route = {
@@ -80,6 +83,7 @@ ns:RegisterGuide({
             id = "objective-2801-a-tale-of-sorrow",
             kind = "objective",
             priority = 60,
+            conditions = { level = { min = 45 } },
             text = "Speak to Fallen Hero of the Horde until the quest is complete.",
             dependsOn = { "accept-2801-a-tale-of-sorrow" },
             complete = QuestState(2801, "complete"),
@@ -92,6 +96,7 @@ ns:RegisterGuide({
             id = "turnin-2801-a-tale-of-sorrow",
             kind = "turnin",
             priority = 70,
+            conditions = { level = { min = 45 } },
             text = "Turn in A Tale of Sorrow to Fallen Hero of the Horde in Swamp of Sorrows.",
             dependsOn = { "objective-2801-a-tale-of-sorrow" },
             complete = QuestState(2801, "completed"),
@@ -106,6 +111,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -125,6 +131,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -144,6 +151,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -163,6 +171,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },
@@ -180,6 +189,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -199,6 +209,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -215,6 +226,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -231,6 +243,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -247,6 +260,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -263,6 +277,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },
@@ -279,6 +294,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -296,6 +312,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -313,6 +330,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -330,6 +348,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -347,6 +366,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },

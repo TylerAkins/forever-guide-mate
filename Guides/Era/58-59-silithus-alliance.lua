@@ -52,6 +52,7 @@ ns:RegisterGuide({
             id = "accept-1015-the-new-frontier",
             kind = "accept",
             priority = 10,
+            conditions = { level = { min = 54 } },
             text = "Accept The New Frontier from Crier Goodman in The Canals.",
             complete = QuestState(1015, "activeOrCompleted"),
             route = {
@@ -65,6 +66,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 56 } },
                     { quest = { id = 6186, state = "completed" } },
                 },
             },
@@ -81,6 +83,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 978, state = "completed" } },
                 },
             },
@@ -95,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-6761-the-new-frontier",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 54 } },
             text = "Accept The New Frontier from Archdruid Fandral Staghelm in Cenarion Enclave.",
             complete = QuestState(6761, "activeOrCompleted"),
             route = {
@@ -106,6 +110,7 @@ ns:RegisterGuide({
             id = "turnin-6761-the-new-frontier",
             kind = "turnin",
             priority = 60,
+            conditions = { level = { min = 54 } },
             text = "Turn in The New Frontier to Mathrengyl Bearwalker in Cenarion Enclave.",
             dependsOn = { "accept-6761-the-new-frontier" },
             complete = QuestState(6761, "completed"),
@@ -118,6 +123,7 @@ ns:RegisterGuide({
             id = "accept-6762-rabine-saturna",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 54 } },
             text = "Accept Rabine Saturna from Mathrengyl Bearwalker in Cenarion Enclave.",
             complete = QuestState(6762, "activeOrCompleted"),
             route = {
@@ -129,6 +135,7 @@ ns:RegisterGuide({
             id = "objective-4441-felbound-ancients",
             kind = "objective",
             priority = 80,
+            conditions = { level = { min = 49 } },
             text = "Use Eridan's Vial in the fountain to get Vial of Blessed Water in Temple of the Moon.",
             complete = QuestState(4441, "complete"),
             route = {
@@ -140,6 +147,7 @@ ns:RegisterGuide({
             id = "accept-4493-march-of-the-silithid",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 50 } },
             text = "Accept March of the Silithid from Gracina Spiritmight in Temple of the Moon.",
             complete = QuestState(4493, "activeOrCompleted"),
             route = {
@@ -151,6 +159,7 @@ ns:RegisterGuide({
             id = "turnin-6762-rabine-saturna",
             kind = "turnin",
             priority = 110,
+            conditions = { level = { min = 54 } },
             text = "Turn in Rabine Saturna to Mathrengyl Bearwalker in Nighthaven.",
             dependsOn = { "accept-6762-rabine-saturna" },
             complete = QuestState(6762, "completed"),
@@ -163,6 +172,7 @@ ns:RegisterGuide({
             id = "accept-1124-wasteland",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 54 } },
             text = "Accept Wasteland from Rabine Saturna in Nighthaven.",
             complete = QuestState(1124, "activeOrCompleted"),
             route = {
@@ -176,6 +186,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 49 } },
                     { quest = { id = 4441, state = "completed" } },
                 },
             },
@@ -192,6 +203,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 49 } },
                     { quest = { id = 4441, state = "completed" } },
                 },
             },
@@ -207,6 +219,7 @@ ns:RegisterGuide({
             id = "turnin-4493-march-of-the-silithid",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 50 } },
             text = "Turn in March of the Silithid to Alchemist Pestlezugg in Gadgetzan.",
             dependsOn = { "accept-4493-march-of-the-silithid" },
             complete = QuestState(4493, "completed"),
@@ -219,6 +232,7 @@ ns:RegisterGuide({
             id = "accept-4496-bungle-in-the-jungle",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 50 } },
             text = "Accept Bungle in the Jungle from Alchemist Pestlezugg in Gadgetzan.",
             complete = QuestState(4496, "activeOrCompleted"),
             route = {
@@ -230,6 +244,7 @@ ns:RegisterGuide({
             id = "objective-4496-1-gorishi-scent-gland",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 50 } },
             text = "Kill Gorishi insects and collect Gorishi Scent Gland in The Slithering Scar.",
             dependsOn = { "accept-4496-bungle-in-the-jungle" },
             complete = QuestObjective(4496, 1),
@@ -242,6 +257,7 @@ ns:RegisterGuide({
             id = "objective-4496-2-un-goro-soil",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 50 } },
             text = "Collect 5 Un'Goro Soil from any npc or from Un'Goro Dirt Pile on the ground in Un'Goro.",
             dependsOn = { "accept-4496-bungle-in-the-jungle" },
             complete = QuestObjective(4496, 2),
@@ -250,6 +266,7 @@ ns:RegisterGuide({
             id = "turnin-1124-wasteland",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 54 } },
             text = "Turn in Wasteland to Layo Starstrike in Valor's Rest.",
             dependsOn = { "accept-1124-wasteland" },
             complete = QuestState(1124, "completed"),
@@ -262,6 +279,7 @@ ns:RegisterGuide({
             id = "accept-1125-the-spirits-of-southwind",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 54 } },
             text = "Accept The Spirits of Southwind from Layo Starstrike in Valor's Rest.",
             complete = QuestState(1125, "activeOrCompleted"),
             route = {
@@ -273,6 +291,7 @@ ns:RegisterGuide({
             id = "objective-1125-the-spirits-of-southwind",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 54 } },
             text = "Kill Tortured Sentinel and 8 Tortured Druid in Southwind Village.",
             dependsOn = { "accept-1125-the-spirits-of-southwind" },
             complete = QuestState(1125, "complete"),
@@ -285,6 +304,7 @@ ns:RegisterGuide({
             id = "turnin-1125-the-spirits-of-southwind",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 54 } },
             text = "Turn in The Spirits of Southwind to Layo Starstrike in Valor's Rest.",
             dependsOn = { "objective-1125-the-spirits-of-southwind" },
             complete = QuestState(1125, "completed"),
@@ -297,6 +317,7 @@ ns:RegisterGuide({
             id = "accept-1126-hive-in-the-tower",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 54 } },
             text = "Accept Hive in the Tower from Layo Starstrike in Valor's Rest.",
             complete = QuestState(1126, "activeOrCompleted"),
             route = {
@@ -308,6 +329,7 @@ ns:RegisterGuide({
             id = "objective-1126-hive-in-the-tower",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 54 } },
             text = "Click on Hive' Ashi Pod on top of the tower and 2 Hive'Ashi Ambusher will spawn, kill them and collect Encrusted Silithid Object in Southwind Village.",
             dependsOn = { "accept-1126-hive-in-the-tower" },
             complete = QuestState(1126, "complete"),
@@ -320,6 +342,7 @@ ns:RegisterGuide({
             id = "turnin-1126-hive-in-the-tower",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 54 } },
             text = "Turn in Hive in the Tower to Layo Starstrike in Valor's Rest.",
             dependsOn = { "objective-1126-hive-in-the-tower" },
             complete = QuestState(1126, "completed"),
@@ -332,6 +355,7 @@ ns:RegisterGuide({
             id = "accept-6844-umber-archivist",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 54 } },
             text = "Accept Umber, Archivist from Layo Starstrike in Valor's Rest.",
             complete = QuestState(6844, "activeOrCompleted"),
             route = {
@@ -343,6 +367,7 @@ ns:RegisterGuide({
             id = "turnin-4496-bungle-in-the-jungle",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 50 } },
             text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg in Gadgetzan.",
             dependsOn = { "objective-4496-1-gorishi-scent-gland", "objective-4496-2-un-goro-soil" },
             complete = QuestState(4496, "completed"),
@@ -355,6 +380,7 @@ ns:RegisterGuide({
             id = "turnin-5210-brother-carlin",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 50 } },
             text = "Turn in Brother Carlin to Carlin Redpath in Light's Hope Chapel.",
             complete = QuestState(5210, "completed"),
             route = {
@@ -366,6 +392,7 @@ ns:RegisterGuide({
             id = "accept-5181-villains-of-darrowshire",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 50 } },
             text = "Accept Villains of Darrowshire from Carlin Redpath in Light's Hope Chapel.",
             complete = QuestState(5181, "activeOrCompleted"),
             route = {
@@ -377,6 +404,7 @@ ns:RegisterGuide({
             id = "objective-5181-1-skull-of-horgus",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 50 } },
             text = "Collect Skull of Horgus underwater in Blackwood Lake.",
             dependsOn = { "accept-5181-villains-of-darrowshire" },
             complete = QuestObjective(5181, 1),
@@ -389,6 +417,7 @@ ns:RegisterGuide({
             id = "objective-5181-2-shattered-sword-of-marduk",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 50 } },
             text = "Collect Shattered Sword of Marduk from down below in The Infectis Scar (53.89, 65.78.",
             dependsOn = { "accept-5181-villains-of-darrowshire" },
             complete = QuestObjective(5181, 2),
@@ -401,6 +430,7 @@ ns:RegisterGuide({
             id = "turnin-5181-villains-of-darrowshire",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 50 } },
             text = "Turn in Villains of Darrowshire to Carlin Redpath in Light's Hope Chapel.",
             dependsOn = { "objective-5181-1-skull-of-horgus", "objective-5181-2-shattered-sword-of-marduk" },
             complete = QuestState(5181, "completed"),

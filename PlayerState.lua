@@ -89,23 +89,29 @@ end
 
 -- The line under the quest title is the objective summary. Progress rows
 -- such as "2/8 Trapped Game" are a different field and are not this text.
+-- The global GetQuestLogQuestText selects that quest log row and fires
+-- QUEST_LOG_UPDATE again. That selection is what stalls the frame on every
+-- kill, loot, accept, and turn-in, so only a quest-log method that does not
+-- take the selection is used, and each quest is read once.
+local summaryByQuest = {}
+local questLogCache
+
 local function ObjectiveSummary(api, questLog, questID, logIndex)
-    if type(logIndex) == "number" then
-        if type(questLog.GetQuestLogQuestText) == "function" then
-            local result, known = Call(questLog, "GetQuestLogQuestText", logIndex)
-            local text = known and CleanText(result[2])
-            if text then return text end
-        end
-        if type(api.GetQuestLogQuestText) == "function" then
-            local result, known = Call(api, "GetQuestLogQuestText", logIndex)
-            local text = known and CleanText(result[2])
-            if text then return text end
-        end
+    local cached = summaryByQuest[questID]
+    if cached ~= nil then
+        return cached or nil
     end
-    if type(questLog.GetNextWaypointText) == "function" then
+    local text
+    if type(logIndex) == "number" and type(questLog.GetQuestLogQuestText) == "function" then
+        local result, known = Call(questLog, "GetQuestLogQuestText", logIndex)
+        text = known and CleanText(result[2]) or nil
+    end
+    if not text and type(questLog.GetNextWaypointText) == "function" then
         local result, known = Call(questLog, "GetNextWaypointText", questID)
-        return known and CleanText(result[1]) or nil
+        text = known and CleanText(result[1]) or nil
     end
+    summaryByQuest[questID] = text or false
+    return text
 end
 
 local function QuestTimer(questLog, questID, info)
@@ -159,6 +165,13 @@ function PlayerState:GetQuestLog(api, questIDs)
     if not ok then
         return quests, false
     end
+    -- While objectives update, the client can briefly report an empty log.
+    -- Treating that as "every quest was abandoned" reloads completion data
+    -- and walks the whole guide. A real removal arrives as its own event,
+    -- or as a later log that still has other quests in it.
+    if count == 0 and type(questLogCache) == "table" and next(questLogCache) ~= nil then
+        return questLogCache, true
+    end
     local wanted = WantedSet(questIDs)
     for index = 1, count do
         local infoResult, infoKnown = Call(questLog, "GetInfo", index)
@@ -178,22 +191,45 @@ function PlayerState:GetQuestLog(api, questIDs)
             }
         end
     end
+    questLogCache = quests
     return quests, true
 end
 
 -- Turned-in quests stay turned in. Asking the client again on every kill
 -- credit is what hitches the frame, so a true answer is kept and a quest
--- still in the log is not asked at all.
+-- still in the log is not asked at all. A quest leaving the log must not
+-- throw away the completed-quest dump: rebuilding that table is the stall.
 local completionCache = {}
 local seenInLog = {}
+local logWasComplete = {}
 local bulkLoaded = false
 local bulkCompleted = {}
+function PlayerState:ForgetQuest(questID, turnedIn)
+    if type(questID) ~= "number" then
+        return
+    end
+    if turnedIn then
+        completionCache[questID] = true
+    end
+    logWasComplete[questID] = nil
+    summaryByQuest[questID] = nil
+    seenInLog[questID] = nil
+    if type(questLogCache) == "table" then
+        questLogCache[questID] = nil
+    end
+end
 
 function PlayerState:InvalidateQuestCache()
     completionCache = {}
     seenInLog = {}
+    logWasComplete = {}
     bulkLoaded = false
     bulkCompleted = {}
+    summaryByQuest = {}
+    questLogCache = nil
+    if ns.Navigation and ns.Navigation.InvalidateClientPins then
+        ns.Navigation:InvalidateClientPins()
+    end
 end
 
 local function FlagReader(api)
@@ -225,8 +261,8 @@ local function NoteQuestLog(quests)
         if not quests[questID] then
             if completionCache[questID] ~= true then
                 completionCache[questID] = nil
-                bulkLoaded = false
             end
+            summaryByQuest[questID] = nil
             seenInLog[questID] = nil
         end
     end
@@ -240,6 +276,12 @@ local function CompletedQuests(api, questIDs, logQuests)
     local questIDList = type(questIDs) == "table" and questIDs or {}
     if #questIDList == 0 then
         return completed, true
+    end
+    local departedComplete = {}
+    for questID in pairs(seenInLog) do
+        if not logQuests[questID] and logWasComplete[questID] then
+            departedComplete[questID] = true
+        end
     end
     NoteQuestLog(logQuests)
     local readFlag = FlagReader(api)
@@ -266,6 +308,9 @@ local function CompletedQuests(api, questIDs, logQuests)
             end
         elseif bulkLoaded then
             local done = bulkCompleted[questID] and true or false
+            if not done and departedComplete[questID] then
+                done = true
+            end
             completionCache[questID] = done
             completed[questID] = done
         else
@@ -273,7 +318,61 @@ local function CompletedQuests(api, questIDs, logQuests)
             completed[questID] = false
         end
     end
+    for questID in pairs(logWasComplete) do
+        if not logQuests[questID] then
+            logWasComplete[questID] = nil
+        end
+    end
+    for questID, entry in pairs(logQuests) do
+        logWasComplete[questID] = type(entry) == "table" and entry.complete and true or false
+    end
     return completed, known
+end
+
+function PlayerState:QuestLogFingerprint(state)
+    if type(state) ~= "table" then
+        return ""
+    end
+    local questIDs = {}
+    local quests = type(state.quests) == "table" and state.quests or {}
+    for questID in pairs(quests) do
+        questIDs[#questIDs + 1] = questID
+    end
+    table.sort(questIDs)
+    local questParts = {}
+    for _, questID in ipairs(questIDs) do
+        local entry = type(quests[questID]) == "table" and quests[questID] or {}
+        local line = tostring(questID) .. "=" .. (entry.complete and "1" or "0")
+        if type(entry.objectives) == "table" then
+            for index, objective in ipairs(entry.objectives) do
+                if type(objective) == "table" then
+                    line = line .. ":" .. index
+                        .. ":" .. tostring(objective.numFulfilled)
+                        .. ":" .. tostring(objective.numRequired)
+                        .. ":" .. (objective.finished and "1" or "0")
+                end
+            end
+        end
+        if type(entry.timeLeft) == "number" then
+            line = line .. ":t" .. math.floor(entry.timeLeft)
+        end
+        questParts[#questParts + 1] = line
+    end
+    local doneIDs = {}
+    local done = type(state.completedQuests) == "table" and state.completedQuests or {}
+    for questID, value in pairs(done) do
+        if value then
+            doneIDs[#doneIDs + 1] = questID
+        end
+    end
+    table.sort(doneIDs)
+    return table.concat(questParts, "|")
+        .. "#" .. table.concat(doneIDs, ",")
+        .. "@" .. tostring(state.questLogKnown)
+        .. ":" .. tostring(state.questCompletionKnown)
+        .. ":" .. tostring(state.level)
+        .. ":" .. tostring(state.mapID)
+        .. ":" .. tostring(state.instanceID)
 end
 
 function PlayerState:CapturePosition(api)

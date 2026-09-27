@@ -5226,7 +5226,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 11 },
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept Child of Nature from Archmage Ansirem Runeweaver in Dalaran.",
@@ -5317,7 +5317,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 11 },
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in Child of Nature to Sheldras Moontree in Stormwind.",
@@ -5336,7 +5336,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 11 },
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept Moonglade from Sheldras Moontree.",
@@ -5450,7 +5450,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 11 },
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Use Teleport: Moonglade, then turn in Moonglade to Dendrite Starblaze in Nighthaven.",

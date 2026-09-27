@@ -7,6 +7,7 @@ local VALID_KINDS = {
     accept = true, objective = true, turnin = true, gossip = true, travel = true, note = true,
 }
 local SHORT_TIMER_SECONDS = 30 * 60
+local trackedQuestIDs
 
 ns.questPrerequisites = ns.questPrerequisites or {}
 
@@ -460,6 +461,7 @@ function ns:RegisterGuide(guide)
     end
     self.guides[guide.id] = guide
     self.guideOrder[#self.guideOrder + 1] = guide.id
+    trackedQuestIDs = nil
 end
 
 -- Starter chapters are parallel. After the chosen starter, every later chapter
@@ -561,6 +563,7 @@ function ns:FinalizeGuides()
         end
     end
     if #sources == 0 then return end
+    trackedQuestIDs = nil
 
     local segments = {}
     local levelOneCount = { Alliance = 0, Horde = 0 }
@@ -658,6 +661,9 @@ function ns.GuideUsesQuest(guide, questID)
 end
 
 function ns.GetTrackedQuestIDs()
+    if trackedQuestIDs then
+        return trackedQuestIDs
+    end
     local found = {}
     for _, guide in pairs(ns.guides) do
         CollectQuestIDs(guide, found)
@@ -667,6 +673,7 @@ function ns.GetTrackedQuestIDs()
         ids[#ids + 1] = questID
     end
     table.sort(ids)
+    trackedQuestIDs = ids
     return ids
 end
 
@@ -874,6 +881,43 @@ local function HasPermanentFailure(condition, state)
         return false
     end
     return eligible == false
+end
+
+local LEVEL_WALL = "The next step needs a higher level. Grind, or run a dungeon, until you can take it."
+
+-- No step is ready, and every unfinished step is waiting on a level gate.
+function Engine:LevelWallStatus(guide, goals, state)
+    local function BlockedByLevel(goal, depth)
+        if type(goal) ~= "table" or depth > 8 then return false end
+        if HasPermanentFailure(goal.conditions, state) or self:IsGoalDone(goal, state, guide) then
+            return true
+        end
+        local ready, reason = self:IsReady(guide, goal, state)
+        if ready then return false end
+        if reason == "Level requirement not met." then return true end
+        if type(reason) ~= "string" or string.sub(reason, 1, 12) ~= "Waiting for " then
+            return false
+        end
+        local openDependency = false
+        for _, dependencyID in ipairs(goal.dependsOn or {}) do
+            local dependency = self:GetGoal(guide, dependencyID)
+            if not BlockedByLevel(dependency, depth + 1) then return false end
+            if dependency and not self:IsGoalDone(dependency, state, guide)
+                and not HasPermanentFailure(dependency.conditions, state) then
+                openDependency = true
+            end
+        end
+        return openDependency
+    end
+    local blocked = false
+    for _, goal in ipairs(goals or {}) do
+        if not HasPermanentFailure(goal.conditions, state) and not self:IsGoalDone(goal, state, guide) then
+            if not BlockedByLevel(goal, 0) then return nil end
+            blocked = true
+        end
+    end
+    if not blocked then return nil end
+    return LEVEL_WALL
 end
 
 function Engine:ChosenFork(guide, state)
@@ -1620,6 +1664,9 @@ function Engine:Refresh(state)
             ns.MapPins:HookMap()
             ns.MapPins:Refresh()
         end
+        if self.state and ns.PlayerState and ns.PlayerState.QuestLogFingerprint then
+            self.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(self.state)
+        end
         return
     end
     if self.resyncPending == guide.id and StateReadyForResync(state) then
@@ -1680,8 +1727,11 @@ function Engine:Refresh(state)
         else
             self.currentGoal = nil
             local segment = self.currentSegment
+            local levelWall = self:LevelWallStatus(guide, (segment and segment.goals) or guide.goals, state)
             if segment and type(state.level) == "number" and segment.levelMin and state.level < segment.levelMin then
-                self.status = "Level requirement not met."
+                self.status = LEVEL_WALL
+            elseif levelWall then
+                self.status = levelWall
             elseif segment then
                 local blocked
                 for _, goal in ipairs(segment.goals) do
@@ -1711,6 +1761,16 @@ function Engine:Refresh(state)
         ns.MapPins:HookMap()
         ns.MapPins:Refresh()
     end
+    if self.state and ns.PlayerState and ns.PlayerState.QuestLogFingerprint then
+        self.questLogFingerprint = ns.PlayerState:QuestLogFingerprint(self.state)
+    end
+end
+
+function Engine:SameQuestLog(state)
+    if self.questLogFingerprint == nil or not ns.PlayerState or not ns.PlayerState.QuestLogFingerprint then
+        return false
+    end
+    return self.questLogFingerprint == ns.PlayerState:QuestLogFingerprint(state)
 end
 
 function Engine:CompleteCurrent()

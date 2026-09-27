@@ -65,7 +65,12 @@ ns:RegisterGuide({
             id = "accept-wrath-of-rathmael",
             kind = "accept",
             priority = 10,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Accept The Wrath of Rath'mael from Deathguard Kristof southeast of Brill.",
             taxiDestination = "Undercity",
             complete = QuestState(92422, "activeOrCompleted"),
@@ -78,7 +83,12 @@ ns:RegisterGuide({
             id = "accept-lights-justice",
             kind = "accept",
             priority = 11,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Accept Light's Justice from Morbin Lightbane in the Royal Quarter.",
             taxiDestination = "Undercity",
             complete = QuestState(92421, "activeOrCompleted"),
@@ -88,7 +98,12 @@ ns:RegisterGuide({
             id = "accept-new-plague",
             kind = "accept",
             priority = 12,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept The New Plague from Theodore Griffs in the Apothecarium.",
             taxiDestination = "Undercity",
             complete = QuestState(95216, "activeOrCompleted"),
@@ -115,7 +130,12 @@ ns:RegisterGuide({
             id = "complete-wrath-of-rathmael",
             kind = "objective",
             priority = 41,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Slay Rath'mael.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92422, "complete"),
@@ -124,7 +144,12 @@ ns:RegisterGuide({
             id = "complete-lights-justice",
             kind = "objective",
             priority = 42,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Collect 25 Intact Limbs.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92421, "complete"),
@@ -133,7 +158,12 @@ ns:RegisterGuide({
             id = "complete-new-plague",
             kind = "objective",
             priority = 43,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Take the Highly Toxic Strain from Witherfang, in the spider area across from the entrance.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95216, "complete"),
@@ -142,7 +172,12 @@ ns:RegisterGuide({
             id = "accept-abominable-creatures",
             kind = "accept",
             priority = 44,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept Abominable Creatures. Captain Truman wants the Head of the Baron.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95250, "activeOrCompleted"),
@@ -151,7 +186,12 @@ ns:RegisterGuide({
             id = "complete-abominable-creatures",
             kind = "objective",
             priority = 45,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Collect the Head of the Baron.",
             dependsOn = { "accept-abominable-creatures" },
             complete = QuestState(95250, "complete"),
@@ -160,7 +200,12 @@ ns:RegisterGuide({
             id = "accept-unending-torment",
             kind = "accept",
             priority = 50,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Use the Abominable Head dropped by the abomination boss to accept Unending Torment.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(97288, "activeOrCompleted"),
@@ -169,7 +214,12 @@ ns:RegisterGuide({
             id = "accept-crest-horde",
             kind = "accept",
             priority = 51,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Loot the Crest of Lordaeron inside the ruins to accept the quest. It can be hanging on a tower or behind a door.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95204, "activeOrCompleted"),
@@ -178,7 +228,12 @@ ns:RegisterGuide({
             id = "accept-crest-alliance",
             kind = "accept",
             priority = 52,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Loot the Crest of Lordaeron inside the ruins to accept the quest. It can be hanging on a tower or behind a door.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95189, "activeOrCompleted"),
@@ -187,7 +242,12 @@ ns:RegisterGuide({
             id = "accept-bloodied-insignia",
             kind = "accept",
             priority = 53,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Collect Bloodied Insignias in the ruins to accept Bloodied Insignia.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95195, "activeOrCompleted"),
@@ -196,7 +256,12 @@ ns:RegisterGuide({
             id = "complete-bloodied-insignia",
             kind = "objective",
             priority = 54,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Collect 10 Bloodied Insignias.",
             dependsOn = { "accept-bloodied-insignia" },
             complete = QuestState(95195, "complete"),
@@ -205,7 +270,12 @@ ns:RegisterGuide({
             id = "accept-remember-letter",
             kind = "accept",
             priority = 55,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Read the Blood-Stained Letter found in the ruins to accept Remember That I Love You.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92415, "activeOrCompleted"),
@@ -214,7 +284,12 @@ ns:RegisterGuide({
             id = "turnin-wrath-of-rathmael",
             kind = "turnin",
             priority = 60,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Return to Deathguard Kristof and turn in The Wrath of Rath'mael.",
             dependsOn = { "complete-wrath-of-rathmael" },
             taxiDestination = "Undercity",
@@ -228,7 +303,12 @@ ns:RegisterGuide({
             id = "turnin-lights-justice",
             kind = "turnin",
             priority = 61,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Bring the Intact Limbs to Morbin Lightbane in the Royal Quarter.",
             dependsOn = { "complete-lights-justice" },
             taxiDestination = "Undercity",
@@ -239,7 +319,12 @@ ns:RegisterGuide({
             id = "turnin-new-plague",
             kind = "turnin",
             priority = 62,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Bring the Highly Toxic Strain to Theodore Griffs in the Apothecarium.",
             dependsOn = { "complete-new-plague" },
             taxiDestination = "Undercity",
@@ -250,7 +335,12 @@ ns:RegisterGuide({
             id = "turnin-unending-torment",
             kind = "turnin",
             priority = 63,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Deliver the Abominable Head to Master Apothecary Faranell.",
             dependsOn = { "accept-unending-torment" },
             taxiDestination = "Undercity",
@@ -261,7 +351,12 @@ ns:RegisterGuide({
             id = "accept-unending-torment-place",
             kind = "accept",
             priority = 64,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept the next Unending Torment task from Master Apothecary Faranell.",
             dependsOn = { "turnin-unending-torment" },
             taxiDestination = "Undercity",
@@ -272,7 +367,12 @@ ns:RegisterGuide({
             id = "turnin-unending-torment-place",
             kind = "turnin",
             priority = 65,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Place the Head of the Baron beside Othmar's body in the next room. Do not attach it.",
             dependsOn = { "accept-unending-torment-place" },
             complete = QuestState(97289, "completed"),
@@ -281,7 +381,12 @@ ns:RegisterGuide({
             id = "accept-unending-torment-report",
             kind = "accept",
             priority = 66,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept the unfinished abomination's Unending Torment report.",
             dependsOn = { "turnin-unending-torment-place" },
             complete = QuestState(97290, "activeOrCompleted"),
@@ -290,7 +395,12 @@ ns:RegisterGuide({
             id = "turnin-unending-torment-report",
             kind = "turnin",
             priority = 67,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Report back to Master Apothecary Faranell.",
             dependsOn = { "accept-unending-torment-report" },
             taxiDestination = "Undercity",
@@ -301,7 +411,12 @@ ns:RegisterGuide({
             id = "accept-unending-torment-reagents",
             kind = "accept",
             priority = 68,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept Faranell's reagent list for Unending Torment.",
             dependsOn = { "turnin-unending-torment-report" },
             taxiDestination = "Undercity",
@@ -312,7 +427,12 @@ ns:RegisterGuide({
             id = "complete-unending-torment-reagents",
             kind = "objective",
             priority = 69,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Collect a Toxic Skullcap from Tawny Grisette, Blisterweed near the Alliestars, and Essence of Agony from Ezekiel Graves.",
             dependsOn = { "accept-unending-torment-reagents" },
             complete = QuestState(97291, "complete"),
@@ -329,7 +449,12 @@ ns:RegisterGuide({
             id = "turnin-unending-torment-reagents",
             kind = "turnin",
             priority = 70,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Bring the reagents to Master Apothecary Faranell.",
             dependsOn = { "complete-unending-torment-reagents" },
             taxiDestination = "Undercity",
@@ -340,7 +465,12 @@ ns:RegisterGuide({
             id = "accept-unending-torment-serum",
             kind = "accept",
             priority = 71,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Accept Faranell's Hissing Serum for the last Unending Torment step.",
             dependsOn = { "turnin-unending-torment-reagents" },
             taxiDestination = "Undercity",
@@ -351,7 +481,12 @@ ns:RegisterGuide({
             id = "complete-unending-torment-serum",
             kind = "objective",
             priority = 72,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Inject the Hissing Serum into the system above Othmar's body.",
             dependsOn = { "accept-unending-torment-serum" },
             complete = QuestState(97292, "complete"),
@@ -360,7 +495,12 @@ ns:RegisterGuide({
             id = "turnin-unending-torment-serum",
             kind = "turnin",
             priority = 73,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Return to Master Apothecary Faranell and finish Unending Torment.",
             dependsOn = { "complete-unending-torment-serum" },
             taxiDestination = "Undercity",
@@ -371,7 +511,12 @@ ns:RegisterGuide({
             id = "turnin-crest-horde",
             kind = "turnin",
             priority = 74,
-            conditions = HORDE,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Bring the Crest of Lordaeron to Oran Snakewrithe.",
             dependsOn = { "accept-crest-horde" },
             taxiDestination = "Undercity",
@@ -382,7 +527,12 @@ ns:RegisterGuide({
             id = "turnin-abominable-creatures",
             kind = "turnin",
             priority = 80,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Bring the Head of the Baron to Captain Truman.",
             dependsOn = { "complete-abominable-creatures" },
             complete = QuestState(95250, "completed"),
@@ -391,7 +541,12 @@ ns:RegisterGuide({
             id = "turnin-crest-alliance",
             kind = "turnin",
             priority = 81,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Return the Crest of Lordaeron to Lady Dena Kennedy in Stormwind.",
             dependsOn = { "accept-crest-alliance" },
             taxiDestination = "Stormwind",
@@ -402,7 +557,12 @@ ns:RegisterGuide({
             id = "turnin-bloodied-insignia",
             kind = "turnin",
             priority = 82,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 16 } },
+                },
+            },
             text = "Take the Bloodied Insignias to General Marcus Jonathan in Stormwind.",
             dependsOn = { "complete-bloodied-insignia" },
             taxiDestination = "Stormwind",
@@ -413,7 +573,12 @@ ns:RegisterGuide({
             id = "turnin-remember-letter",
             kind = "turnin",
             priority = 83,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Bring the Blood-Stained Letter to Orphan Matron Nightingale in Stormwind.",
             dependsOn = { "accept-remember-letter" },
             taxiDestination = "Stormwind",
@@ -424,7 +589,12 @@ ns:RegisterGuide({
             id = "accept-remember-duskwood",
             kind = "accept",
             priority = 84,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Accept Nightingale's delivery for Remember That I Love You.",
             dependsOn = { "turnin-remember-letter" },
             taxiDestination = "Stormwind",
@@ -435,7 +605,12 @@ ns:RegisterGuide({
             id = "turnin-remember-duskwood",
             kind = "turnin",
             priority = 85,
-            conditions = ALLIANCE,
+            conditions = {
+                all = {
+                    ALLIANCE,
+                    { level = { min = 15 } },
+                },
+            },
             text = "Deliver the Blood-Stained Letter to Avette Fellwood in Duskwood.",
             dependsOn = { "accept-remember-duskwood" },
             taxiDestination = "Darkshire",

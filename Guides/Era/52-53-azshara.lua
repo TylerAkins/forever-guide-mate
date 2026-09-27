@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-978-moontouched-wildkin",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 52 } },
             text = "Accept Moontouched Wildkin from Erelas Ambersky in Rut'theran Village.",
             complete = QuestState(978, "activeOrCompleted"),
             route = {
@@ -58,6 +59,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3764, state = "completed" } },
                 },
             },
@@ -74,6 +76,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3764, state = "completed" } },
                 },
             },
@@ -91,6 +94,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3764, state = "completed" } },
                 },
             },
@@ -115,6 +119,7 @@ ns:RegisterGuide({
             id = "objective-3449-2-rubbing-rune-of-jin-yael",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 45 } },
             text = "Collect Rubbing: Rune of Jin'yael from Rune of Jin'yael in Temple of Zin-Malor.",
             complete = QuestObjective(3449, 2),
             route = {
@@ -126,6 +131,7 @@ ns:RegisterGuide({
             id = "objective-3449-1-rubbing-rune-of-beth-amara",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 45 } },
             text = "Collect Rubbing: Rune of Beth'Amara from Rune of Beth'Amara in Temple of Zin-Malor.",
             complete = QuestObjective(3449, 1),
             route = {
@@ -137,6 +143,7 @@ ns:RegisterGuide({
             id = "objective-3449-3-rubbing-rune-of-markri",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 45 } },
             text = "Collect Rubbing: Rune of Markri from Rune of Markri in Temple of Zin-Malor.",
             complete = QuestObjective(3449, 3),
             route = {
@@ -148,6 +155,7 @@ ns:RegisterGuide({
             id = "accept-3601-kim-jael-indeed",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 47 } },
             text = "Accept Kim'jael Indeed! from Kim'jael in Legash Encampment.",
             complete = QuestState(3601, "activeOrCompleted"),
             route = {
@@ -163,6 +171,7 @@ ns:RegisterGuide({
             id = "objective-3601-kim-jael-indeed",
             kind = "objective",
             priority = 140,
+            conditions = { level = { min = 47 } },
             text = "Collect all the required parts from the crates in Thalassian Base Camp.",
             dependsOn = { "accept-3601-kim-jael-indeed" },
             complete = QuestState(3601, "complete"),
@@ -175,6 +184,7 @@ ns:RegisterGuide({
             id = "turnin-3601-kim-jael-indeed",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 47 } },
             text = "Turn in Kim'jael Indeed! to Kim'jael in Legash Encampment.",
             dependsOn = { "objective-3601-kim-jael-indeed" },
             complete = QuestState(3601, "completed"),
@@ -191,6 +201,7 @@ ns:RegisterGuide({
             id = "accept-5534-kim-jael-s-missing-equipment",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 47 } },
             text = "Accept Kim'jael's \"Missing\" Equipment from Kim'jael in Legash Encampment.",
             complete = QuestState(5534, "activeOrCompleted"),
             route = {
@@ -202,6 +213,7 @@ ns:RegisterGuide({
             id = "objective-5534-kim-jael-s-missing-equipment",
             kind = "objective",
             priority = 180,
+            conditions = { level = { min = 47 } },
             text = "Kill Nagas in The Shattered Strand until you collect Some Rune.",
             dependsOn = { "accept-5534-kim-jael-s-missing-equipment" },
             complete = QuestState(5534, "complete"),
@@ -214,6 +226,7 @@ ns:RegisterGuide({
             id = "turnin-5534-kim-jael-s-missing-equipment",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 47 } },
             text = "Turn in Kim'jael's \"Missing\" Equipment to Kim'jael in Legash Encampment.",
             dependsOn = { "objective-5534-kim-jael-s-missing-equipment" },
             complete = QuestState(5534, "completed"),
@@ -230,6 +243,7 @@ ns:RegisterGuide({
             id = "objective-3449-4-rubbing-rune-of-sael-hai",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 45 } },
             text = "Collect Rubbing: Rune of Sael'hai from Rune of Sael'hai in Ruins of Eldarath.",
             complete = QuestObjective(3449, 4),
             route = {
@@ -251,6 +265,7 @@ ns:RegisterGuide({
             id = "turnin-3449-arcane-runes",
             kind = "turnin",
             priority = 250,
+            conditions = { level = { min = 45 } },
             text = "Turn in Arcane Runes to Pilot Xiggs Fuselighter in The Ruined Reaches.",
             dependsOn = { "objective-3449-2-rubbing-rune-of-jin-yael", "objective-3449-1-rubbing-rune-of-beth-amara", "objective-3449-3-rubbing-rune-of-markri", "objective-3449-4-rubbing-rune-of-sael-hai" },
             complete = QuestState(3449, "completed"),
@@ -263,6 +278,7 @@ ns:RegisterGuide({
             id = "accept-3461-return-to-tymor",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 45 } },
             text = "Accept Return to Tymor from Pilot Xiggs Fuselighter in The Ruined Reaches.",
             complete = QuestState(3461, "activeOrCompleted"),
             route = {
@@ -276,6 +292,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3764, state = "completed" } },
                 },
             },
@@ -289,6 +306,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 47 } },
                     { quest = { id = 3764, state = "completed" } },
                 },
             },

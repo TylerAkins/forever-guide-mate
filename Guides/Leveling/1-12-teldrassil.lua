@@ -270,6 +270,7 @@ ns:RegisterGuide({
             id = "accept-4495-a-good-friend",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 2 } },
             text = "Accept A Good Friend from Dirania Silvershine in Shadowglen.",
             complete = QuestState(4495, "activeOrCompleted"),
             route = {
@@ -332,7 +333,6 @@ ns:RegisterGuide({
             id = "accept-97977-natures-call",
             kind = "accept",
             priority = 201,
-            conditions = { level = { min = 3 } },
             text = "Accept Nature's Call from Tarindrella.",
             dependsOn = { "turnin-459-the-woodland-protector" },
             complete = QuestState(97977, "activeOrCompleted"),
@@ -345,7 +345,6 @@ ns:RegisterGuide({
             id = "objective-97977-natures-call",
             kind = "objective",
             priority = 202,
-            conditions = { level = { min = 3 } },
             useClientPin = true,
             text = "Collect a Gnarlpine Totem from the abandoned camps on the western edge of Shadowglen. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97977-natures-call" },
@@ -359,7 +358,6 @@ ns:RegisterGuide({
             id = "turnin-97977-natures-call",
             kind = "turnin",
             priority = 203,
-            conditions = { level = { min = 3 } },
             text = "Turn in Nature's Call to Tarindrella.",
             dependsOn = { "objective-97977-natures-call" },
             complete = QuestState(97977, "completed"),
@@ -372,6 +370,7 @@ ns:RegisterGuide({
             id = "accept-916-webwood-venom",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 3 } },
             text = "Accept Webwood Venom from Gilshalan Windwalker in Aldrassil.",
             complete = QuestState(916, "activeOrCompleted"),
             route = {
@@ -395,6 +394,7 @@ ns:RegisterGuide({
             id = "objective-916-webwood-venom",
             kind = "objective",
             priority = 230,
+            conditions = { level = { min = 3 } },
             text = "Kill Webwood Spider and collect 10 Webwood Venom Sac north in Shadowglen.",
             dependsOn = { "accept-916-webwood-venom" },
             complete = QuestState(916, "complete"),
@@ -407,6 +407,7 @@ ns:RegisterGuide({
             id = "turnin-4495-a-good-friend",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 2 } },
             text = "Turn in A Good Friend to Iverron in Shadowglen.",
             dependsOn = { "accept-4495-a-good-friend" },
             complete = QuestState(4495, "completed"),
@@ -419,6 +420,7 @@ ns:RegisterGuide({
             id = "accept-3519-a-friend-in-need",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 2 } },
             text = "Accept A Friend in Need from Iverron in Shadowglen.",
             complete = QuestState(3519, "activeOrCompleted"),
             route = {
@@ -430,6 +432,7 @@ ns:RegisterGuide({
             id = "turnin-916-webwood-venom",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 3 } },
             text = "Turn in Webwood Venom to Gilshalan Windwalker in Aldrassil.",
             dependsOn = { "objective-916-webwood-venom" },
             complete = QuestState(916, "completed"),
@@ -465,6 +468,7 @@ ns:RegisterGuide({
             id = "turnin-3519-a-friend-in-need",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 2 } },
             text = "Turn in A Friend in Need to Dirania Silvershine in Shadowglen.",
             dependsOn = { "accept-3519-a-friend-in-need" },
             complete = QuestState(3519, "completed"),
@@ -477,6 +481,7 @@ ns:RegisterGuide({
             id = "accept-3521-iverron-s-antidote",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 2 } },
             text = "Accept Iverron's Antidote from Dirania Silvershine in Shadowglen.",
             complete = QuestState(3521, "activeOrCompleted"),
             route = {
@@ -488,6 +493,7 @@ ns:RegisterGuide({
             id = "objective-3521-2-4-item-10641",
             kind = "objective",
             priority = 310,
+            conditions = { level = { min = 2 } },
             text = "Collect 4 Moonpetal Lily found around the edge of the pond in Shadowglen.",
             dependsOn = { "accept-3521-iverron-s-antidote" },
             complete = QuestObjective(3521, 2),
@@ -500,6 +506,7 @@ ns:RegisterGuide({
             id = "objective-3521-1-7-item-10639",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 2 } },
             text = "Collect 7 Hyacinth Mushroom found around the bottom of trees or dropped from Grellkin in Shadowglen.",
             dependsOn = { "accept-3521-iverron-s-antidote" },
             complete = QuestObjective(3521, 1),
@@ -528,6 +535,7 @@ ns:RegisterGuide({
             id = "objective-3521-3-webwood-ichor",
             kind = "objective",
             priority = 350,
+            conditions = { level = { min = 2 } },
             text = "Collect Webwood Ichor from Webwood Spider in Shadowglen cave.",
             dependsOn = { "accept-3521-iverron-s-antidote" },
             complete = QuestObjective(3521, 3),
@@ -554,7 +562,6 @@ ns:RegisterGuide({
             priority = 361,
             conditions = {
                 all = {
-                    { level = { min = 5 } },
                     { quest = { id = 97236, state = "activeOrCompleted" } },
                 },
             },
@@ -605,6 +612,7 @@ ns:RegisterGuide({
             id = "turnin-3521-iverron-s-antidote",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 2 } },
             text = "Turn in Iverron's Antidote to Dirania Silvershine in Shadowglen.",
             dependsOn = { "objective-3521-2-4-item-10641", "objective-3521-1-7-item-10639", "objective-3521-3-webwood-ichor" },
             complete = QuestState(3521, "completed"),
@@ -617,6 +625,7 @@ ns:RegisterGuide({
             id = "accept-3522-iverron-s-antidote",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 2 } },
             text = "Accept Iverron's Antidote from Dirania Silvershine in Shadowglen.",
             complete = QuestState(3522, "activeOrCompleted"),
             route = {
@@ -640,6 +649,7 @@ ns:RegisterGuide({
             id = "turnin-3522-iverron-s-antidote",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 2 } },
             text = "Turn in Iverron's Antidote to Iverron in Shadowglen.",
             dependsOn = { "accept-3522-iverron-s-antidote" },
             complete = QuestState(3522, "completed"),
@@ -688,6 +698,7 @@ ns:RegisterGuide({
             id = "accept-488-zenn-s-bidding",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 4 } },
             text = "Accept Zenn's Bidding from Zenn Foulhoof in Dolanaar.",
             complete = QuestState(488, "activeOrCompleted"),
             route = {
@@ -744,6 +755,7 @@ ns:RegisterGuide({
             id = "accept-997-denalan-s-earth",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 4 } },
             text = "Accept Denalan's Earth from Syral Bladeleaf in Dolanaar.",
             complete = QuestState(997, "activeOrCompleted"),
             route = {
@@ -755,6 +767,7 @@ ns:RegisterGuide({
             id = "accept-475-a-troubling-breeze",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 4 } },
             text = "Accept A Troubling Breeze from Athridas Bearmantle in Dolanaar.",
             complete = QuestState(475, "activeOrCompleted"),
             route = {
@@ -766,6 +779,7 @@ ns:RegisterGuide({
             id = "accept-98391-the-sisterhood-of-elune",
             kind = "accept",
             priority = 543,
+            conditions = { level = { min = 5 } },
             text = "Accept The Sisterhood of Elune from Laurna Morninglight in Dolanaar.",
             complete = QuestState(98391, "activeOrCompleted"),
             route = {
@@ -788,7 +802,7 @@ ns:RegisterGuide({
             id = "accept-87288-soft-saber-pelts",
             kind = "accept",
             priority = 551,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Soft Saber Pelts from Aldia in Dolanaar.",
             complete = QuestState(87288, "activeOrCompleted"),
             route = {
@@ -800,7 +814,7 @@ ns:RegisterGuide({
             id = "objective-87288-soft-saber-pelts",
             kind = "objective",
             priority = 552,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Skin Nightsabers for 6 Soft Nightsaber Pelts.",
             dependsOn = { "accept-87288-soft-saber-pelts" },
             complete = QuestState(87288, "complete"),
@@ -813,7 +827,7 @@ ns:RegisterGuide({
             id = "turnin-87288-soft-saber-pelts",
             kind = "turnin",
             priority = 553,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Soft Saber Pelts to Aldia in Dolanaar.",
             dependsOn = { "objective-87288-soft-saber-pelts" },
             complete = QuestState(87288, "completed"),
@@ -826,6 +840,7 @@ ns:RegisterGuide({
             id = "accept-932-twisted-hatred",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 4 } },
             text = "Accept Twisted Hatred from Tallonkai Swiftroot in Dolanaar.",
             complete = QuestState(932, "activeOrCompleted"),
             route = {
@@ -837,6 +852,7 @@ ns:RegisterGuide({
             id = "turnin-997-denalan-s-earth",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 4 } },
             text = "Turn in Denalan's Earth to Denalan in Lake Al'Ameth.",
             dependsOn = { "accept-997-denalan-s-earth" },
             complete = QuestState(997, "completed"),
@@ -849,6 +865,7 @@ ns:RegisterGuide({
             id = "accept-918-timberling-seeds",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 4 } },
             text = "Accept Timberling Seeds from Denalan in Lake Al'Ameth.",
             complete = QuestState(918, "activeOrCompleted"),
             route = {
@@ -860,6 +877,7 @@ ns:RegisterGuide({
             id = "accept-919-timberling-sprouts",
             kind = "accept",
             priority = 600,
+            conditions = { level = { min = 4 } },
             text = "Accept Timberling Sprouts from Denalan in Lake Al'Ameth.",
             complete = QuestState(919, "activeOrCompleted"),
             route = {
@@ -883,6 +901,7 @@ ns:RegisterGuide({
             id = "turnin-475-a-troubling-breeze",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 4 } },
             text = "Turn in A Troubling Breeze to Gaerolas Talvethren in Starbreeze Village.",
             dependsOn = { "accept-475-a-troubling-breeze" },
             complete = QuestState(475, "completed"),
@@ -895,6 +914,7 @@ ns:RegisterGuide({
             id = "accept-476-gnarlpine-corruption",
             kind = "accept",
             priority = 630,
+            conditions = { level = { min = 4 } },
             text = "Accept Gnarlpine Corruption from Gaerolas Talvethren in Starbreeze Village.",
             complete = QuestState(476, "activeOrCompleted"),
             route = {
@@ -941,6 +961,7 @@ ns:RegisterGuide({
             id = "turnin-476-gnarlpine-corruption",
             kind = "turnin",
             priority = 670,
+            conditions = { level = { min = 4 } },
             text = "Turn in Gnarlpine Corruption to Athridas Bearmantle in Dolanaar.",
             dependsOn = { "accept-476-gnarlpine-corruption" },
             complete = QuestState(476, "completed"),
@@ -953,6 +974,7 @@ ns:RegisterGuide({
             id = "accept-483-the-relics-of-wakening",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 4 } },
             text = "Accept The Relics of Wakening from Athridas Bearmantle in Dolanaar.",
             complete = QuestState(483, "activeOrCompleted"),
             route = {
@@ -987,6 +1009,7 @@ ns:RegisterGuide({
             id = "objective-918-timberling-seeds",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 4 } },
             text = "Kill Timberling and collect 8 Timberling Seed around Lake Al'Ameth.",
             dependsOn = { "accept-918-timberling-seeds" },
             complete = QuestState(918, "complete"),
@@ -1001,6 +1024,7 @@ ns:RegisterGuide({
             id = "objective-919-timberling-sprouts",
             kind = "objective",
             priority = 720,
+            conditions = { level = { min = 4 } },
             text = "Collect 12 Timberling Sprout from the ground around Lake Al'Ameth.",
             dependsOn = { "accept-919-timberling-sprouts" },
             complete = QuestState(919, "complete"),
@@ -1013,6 +1037,7 @@ ns:RegisterGuide({
             id = "objective-488-1-nightsaber",
             kind = "objective",
             priority = 730,
+            conditions = { level = { min = 4 } },
             text = "Kill Nightsaber for 3 Nightsaber Fang.",
             dependsOn = { "accept-488-zenn-s-bidding" },
             complete = QuestObjective(488, 1),
@@ -1025,6 +1050,7 @@ ns:RegisterGuide({
             id = "turnin-918-timberling-seeds",
             kind = "turnin",
             priority = 740,
+            conditions = { level = { min = 4 } },
             text = "Turn in Timberling Seeds to Denalan in Lake Al'Ameth.",
             dependsOn = { "objective-918-timberling-seeds" },
             complete = QuestState(918, "completed"),
@@ -1037,6 +1063,7 @@ ns:RegisterGuide({
             id = "accept-922-rellian-greenspyre",
             kind = "accept",
             priority = 750,
+            conditions = { level = { min = 4 } },
             text = "Accept Rellian Greenspyre from Denalan in Lake Al'Ameth.",
             complete = QuestState(922, "activeOrCompleted"),
             route = {
@@ -1048,6 +1075,7 @@ ns:RegisterGuide({
             id = "turnin-919-timberling-sprouts",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 4 } },
             text = "Turn in Timberling Sprouts to Denalan in Lake Al'Ameth.",
             dependsOn = { "objective-919-timberling-sprouts" },
             complete = QuestState(919, "completed"),
@@ -1060,6 +1088,7 @@ ns:RegisterGuide({
             id = "objective-488-2-webwood-lurker",
             kind = "objective",
             priority = 770,
+            conditions = { level = { min = 4 } },
             text = "Kill Strigid Owl for 3 Strigid Owl Feather.",
             dependsOn = { "accept-488-zenn-s-bidding" },
             complete = QuestObjective(488, 2),
@@ -1072,6 +1101,7 @@ ns:RegisterGuide({
             id = "objective-488-3-strigid-owl",
             kind = "objective",
             priority = 780,
+            conditions = { level = { min = 4 } },
             text = "Kill Webwood Lurker for 3 Webwood Spider Silk in Lake Al'Ameth.",
             dependsOn = { "accept-488-zenn-s-bidding" },
             complete = QuestObjective(488, 3),
@@ -1084,6 +1114,7 @@ ns:RegisterGuide({
             id = "turnin-488-zenn-s-bidding",
             kind = "turnin",
             priority = 790,
+            conditions = { level = { min = 4 } },
             text = "Turn in Zenn's Bidding to Zenn Foulhoof.",
             dependsOn = { "objective-488-1-nightsaber", "objective-488-2-webwood-lurker", "objective-488-3-strigid-owl" },
             complete = QuestState(488, "completed"),
@@ -1096,6 +1127,7 @@ ns:RegisterGuide({
             id = "accept-489-seek-redemption",
             kind = "accept",
             priority = 800,
+            conditions = { level = { min = 4 } },
             text = "Accept Seek Redemption! from Syral Bladeleaf in Dolanaar.",
             complete = QuestState(489, "activeOrCompleted"),
             route = {
@@ -1131,6 +1163,7 @@ ns:RegisterGuide({
             id = "objective-932-twisted-hatred",
             kind = "objective",
             priority = 840,
+            conditions = { level = { min = 4 } },
             text = "Kill Lord Melenas and collect Melenas' Head in Fel Rock.",
             dependsOn = { "accept-932-twisted-hatred" },
             complete = QuestState(932, "complete"),
@@ -1143,6 +1176,7 @@ ns:RegisterGuide({
             id = "turnin-932-twisted-hatred",
             kind = "turnin",
             priority = 860,
+            conditions = { level = { min = 4 } },
             text = "Turn in Twisted Hatred to Tallonkai Swiftroot in Dolanaar.",
             dependsOn = { "objective-932-twisted-hatred" },
             complete = QuestState(932, "completed"),
@@ -1155,7 +1189,7 @@ ns:RegisterGuide({
             id = "accept-98403-twisted-hatred",
             kind = "accept",
             priority = 861,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Twisted Hatred from Tallonkai Swiftroot. This is an elite. Bring a group.",
             dependsOn = { "turnin-932-twisted-hatred" },
             complete = QuestState(98403, "activeOrCompleted"),
@@ -1168,7 +1202,7 @@ ns:RegisterGuide({
             id = "objective-98403-twisted-hatred",
             kind = "objective",
             priority = 862,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 4 } },
             text = "Kill Xethorr the Wicked in the Cleft northwest of Dolanaar and collect Mature Fel Moss. This is an elite. Bring a group.",
             dependsOn = { "accept-98403-twisted-hatred" },
             complete = QuestState(98403, "complete"),
@@ -1181,7 +1215,7 @@ ns:RegisterGuide({
             id = "turnin-98403-twisted-hatred",
             kind = "turnin",
             priority = 863,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Twisted Hatred to Tallonkai Swiftroot.",
             dependsOn = { "objective-98403-twisted-hatred" },
             complete = QuestState(98403, "completed"),
@@ -1206,6 +1240,7 @@ ns:RegisterGuide({
             id = "accept-487-the-road-to-darnassus",
             kind = "accept",
             priority = 880,
+            conditions = { level = { min = 5 } },
             text = "Accept The Road to Darnassus from Moon Priestess Amara in Dolanaar.",
             complete = QuestState(487, "activeOrCompleted"),
             route = {
@@ -1219,6 +1254,7 @@ ns:RegisterGuide({
             id = "objective-487-the-road-to-darnassus",
             kind = "objective",
             priority = 890,
+            conditions = { level = { min = 5 } },
             text = "Kill 6 Gnarlpine Ambusher in in Ban'ethil Hollow.",
             dependsOn = { "accept-487-the-road-to-darnassus" },
             complete = QuestState(487, "complete"),
@@ -1231,6 +1267,7 @@ ns:RegisterGuide({
             id = "accept-930-the-glowing-fruit",
             kind = "accept",
             priority = 910,
+            conditions = { level = { min = 4 } },
             text = "Accept The Glowing Fruit in Gnarlpine Hold.",
             complete = QuestState(930, "activeOrCompleted"),
             route = {
@@ -1254,6 +1291,7 @@ ns:RegisterGuide({
             id = "objective-489-seek-redemption",
             kind = "objective",
             priority = 940,
+            conditions = { level = { min = 4 } },
             text = "Collect 3 Fel Cone from around the bottom area of large trees.",
             dependsOn = { "accept-489-seek-redemption" },
             complete = QuestState(489, "complete"),
@@ -1266,7 +1304,7 @@ ns:RegisterGuide({
             id = "accept-99053-escaping-banethil",
             kind = "accept",
             priority = 951,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Escaping Ban'ethil from Sentinel Lynessa Duskblossom in the Ban'ethil Barrow Den.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestState(99053, "activeOrCompleted"),
@@ -1279,7 +1317,7 @@ ns:RegisterGuide({
             id = "objective-99053-escaping-banethil",
             kind = "objective",
             priority = 952,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Escort Sentinel Lynessa Duskblossom out of the Ban'ethil Barrow Den.",
             dependsOn = { "accept-99053-escaping-banethil" },
             complete = QuestState(99053, "complete"),
@@ -1292,6 +1330,7 @@ ns:RegisterGuide({
             id = "objective-483-4-rune-of-nesting",
             kind = "objective",
             priority = 960,
+            conditions = { level = { min = 4 } },
             text = "Head down into the Ban'ethil Barrow Den at the first set of bridges take the left bridge and collect Rune of Nesting from the chest.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 4),
@@ -1304,6 +1343,7 @@ ns:RegisterGuide({
             id = "objective-483-2-black-feather-quill",
             kind = "objective",
             priority = 970,
+            conditions = { level = { min = 4 } },
             text = "Collect Black Feather Quill from the chest across the other bridge.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 2),
@@ -1316,6 +1356,7 @@ ns:RegisterGuide({
             id = "accept-2541-the-sleeping-druid",
             kind = "accept",
             priority = 980,
+            conditions = { level = { min = 3 } },
             text = "Accept The Sleeping Druid from Oben Rageclaw in Ban'ethil Barrow Den.",
             complete = QuestState(2541, "activeOrCompleted"),
             route = {
@@ -1327,6 +1368,7 @@ ns:RegisterGuide({
             id = "objective-483-1-raven-claw-talisman",
             kind = "objective",
             priority = 990,
+            conditions = { level = { min = 4 } },
             text = "Collect Raven Claw Talisman from the chest.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 1),
@@ -1343,6 +1385,7 @@ ns:RegisterGuide({
             id = "objective-483-3-sapphire-of-sky",
             kind = "objective",
             priority = 1000,
+            conditions = { level = { min = 4 } },
             text = "Collect Sapphire of Sky from the small chest.",
             dependsOn = { "accept-483-the-relics-of-wakening" },
             complete = QuestObjective(483, 3),
@@ -1355,6 +1398,7 @@ ns:RegisterGuide({
             id = "objective-2541-the-sleeping-druid",
             kind = "objective",
             priority = 1010,
+            conditions = { level = { min = 3 } },
             text = "Kill Gnarlpine Shamans until you find a Voodoo Charm. Only shamans drop it.",
             dependsOn = { "accept-2541-the-sleeping-druid" },
             complete = QuestState(2541, "complete"),
@@ -1367,6 +1411,7 @@ ns:RegisterGuide({
             id = "turnin-2541-the-sleeping-druid",
             kind = "turnin",
             priority = 1020,
+            conditions = { level = { min = 3 } },
             text = "Turn in The Sleeping Druid to Oben Rageclaw in Ban'ethil Barrow Den.",
             dependsOn = { "objective-2541-the-sleeping-druid" },
             complete = QuestState(2541, "completed"),
@@ -1379,6 +1424,7 @@ ns:RegisterGuide({
             id = "accept-2561-druid-of-the-claw",
             kind = "accept",
             priority = 1030,
+            conditions = { level = { min = 3 } },
             text = "Accept Druid of the Claw from Oben Rageclaw in Ban'ethil Barrow Den.",
             complete = QuestState(2561, "activeOrCompleted"),
             route = {
@@ -1390,6 +1436,7 @@ ns:RegisterGuide({
             id = "objective-2561-druid-of-the-claw",
             kind = "objective",
             priority = 1040,
+            conditions = { level = { min = 3 } },
             text = "Kill Rageclaw and then use the Voodoo Charm on the body.",
             dependsOn = { "accept-2561-druid-of-the-claw" },
             complete = QuestState(2561, "complete"),
@@ -1402,6 +1449,7 @@ ns:RegisterGuide({
             id = "turnin-2561-druid-of-the-claw",
             kind = "turnin",
             priority = 1050,
+            conditions = { level = { min = 3 } },
             text = "Turn in Druid of the Claw to Oben Rageclaw in Ban'ethil Barrow Den.",
             dependsOn = { "objective-2561-druid-of-the-claw" },
             complete = QuestState(2561, "completed"),
@@ -1437,6 +1485,7 @@ ns:RegisterGuide({
             id = "turnin-483-the-relics-of-wakening",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 4 } },
             text = "Turn in The Relics of Wakening to Athridas Bearmantle in Dolanaar.",
             dependsOn = { "objective-483-4-rune-of-nesting", "objective-483-2-black-feather-quill", "objective-483-1-raven-claw-talisman", "objective-483-3-sapphire-of-sky" },
             complete = QuestState(483, "completed"),
@@ -1449,7 +1498,7 @@ ns:RegisterGuide({
             id = "turnin-99053-escaping-banethil",
             kind = "turnin",
             priority = 1091,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Escaping Ban'ethil to Sentinel Kyra Starsong in Dolanaar.",
             dependsOn = { "objective-99053-escaping-banethil" },
             complete = QuestState(99053, "completed"),
@@ -1462,6 +1511,7 @@ ns:RegisterGuide({
             id = "accept-486-ursal-the-mauler",
             kind = "accept",
             priority = 1100,
+            conditions = { level = { min = 4 } },
             text = "Accept Ursal the Mauler from Athridas Bearmantle in Dolanaar.",
             complete = QuestState(486, "activeOrCompleted"),
             route = {
@@ -1473,7 +1523,7 @@ ns:RegisterGuide({
             id = "accept-99046-the-lost-runner",
             kind = "accept",
             priority = 1101,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept The Lost Runner from Sentinel Kyra Starsong in Dolanaar.",
             complete = QuestState(99046, "activeOrCompleted"),
             route = {
@@ -1485,7 +1535,7 @@ ns:RegisterGuide({
             id = "turnin-99046-the-lost-runner",
             kind = "turnin",
             priority = 1102,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in The Lost Runner to Sentinel Eralya Leafshadow on the road to the Oracle Glade.",
             dependsOn = { "accept-99046-the-lost-runner" },
             complete = QuestState(99046, "completed"),
@@ -1498,6 +1548,7 @@ ns:RegisterGuide({
             id = "turnin-489-seek-redemption",
             kind = "turnin",
             priority = 1110,
+            conditions = { level = { min = 4 } },
             text = "Turn in Seek Redemption! to Zenn Foulhoof in Teldrassil.",
             dependsOn = { "objective-489-seek-redemption" },
             complete = QuestState(489, "completed"),
@@ -1512,6 +1563,7 @@ ns:RegisterGuide({
             priority = 1120,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -1528,6 +1580,7 @@ ns:RegisterGuide({
             priority = 1130,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1544,6 +1597,7 @@ ns:RegisterGuide({
             priority = 1140,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -1560,6 +1614,7 @@ ns:RegisterGuide({
             priority = 1150,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1577,6 +1632,7 @@ ns:RegisterGuide({
             priority = 1160,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1595,6 +1651,7 @@ ns:RegisterGuide({
             priority = 1170,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1613,6 +1670,7 @@ ns:RegisterGuide({
             priority = 1180,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1628,6 +1686,7 @@ ns:RegisterGuide({
             id = "turnin-487-the-road-to-darnassus",
             kind = "turnin",
             priority = 1190,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Road to Darnassus to Moon Priestess Amara.",
             dependsOn = { "objective-487-the-road-to-darnassus" },
             complete = QuestState(487, "completed"),
@@ -1644,6 +1703,7 @@ ns:RegisterGuide({
             priority = 1200,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1662,6 +1722,7 @@ ns:RegisterGuide({
             priority = 1210,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1680,6 +1741,7 @@ ns:RegisterGuide({
             priority = 1220,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1697,6 +1759,7 @@ ns:RegisterGuide({
             priority = 1230,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1715,6 +1778,7 @@ ns:RegisterGuide({
             priority = 1240,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1733,6 +1797,7 @@ ns:RegisterGuide({
             priority = 1250,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1750,6 +1815,7 @@ ns:RegisterGuide({
             priority = 1270,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                     { ["not"] = { quest = { id = 6341, state = "activeOrCompleted" } } },
                 },
@@ -1765,6 +1831,7 @@ ns:RegisterGuide({
             id = "turnin-922-rellian-greenspyre",
             kind = "turnin",
             priority = 1280,
+            conditions = { level = { min = 4 } },
             text = "Turn in Rellian Greenspyre to Rellian Greenspyre in Cenarion Enclave.",
             dependsOn = { "accept-922-rellian-greenspyre" },
             complete = QuestState(922, "completed"),
@@ -1777,6 +1844,7 @@ ns:RegisterGuide({
             id = "accept-923-tumors",
             kind = "accept",
             priority = 1290,
+            conditions = { level = { min = 4 } },
             text = "Accept Tumors from Rellian Greenspyre in Cenarion Enclave.",
             complete = QuestState(923, "activeOrCompleted"),
             route = {
@@ -1790,6 +1858,7 @@ ns:RegisterGuide({
             priority = 1300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -1809,6 +1878,7 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                     { quest = { id = 2241, state = "completed" } },
                 },
@@ -1826,6 +1896,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 5 } },
                     { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
                 },
             },
@@ -1840,6 +1911,7 @@ ns:RegisterGuide({
             id = "turnin-98391-the-sisterhood-of-elune",
             kind = "turnin",
             priority = 1321,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Sisterhood of Elune to Sister Aquinne in the Temple Garden.",
             dependsOn = { "accept-98391-the-sisterhood-of-elune" },
             complete = QuestState(98391, "completed"),
@@ -1854,6 +1926,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 3 },
                     { race = 4 },
                 },
@@ -1872,6 +1945,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1889,6 +1963,7 @@ ns:RegisterGuide({
             priority = 1350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1905,6 +1980,7 @@ ns:RegisterGuide({
             priority = 1370,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1922,6 +1998,7 @@ ns:RegisterGuide({
             priority = 1380,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1938,6 +2015,7 @@ ns:RegisterGuide({
             priority = 1390,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1955,6 +2033,7 @@ ns:RegisterGuide({
             priority = 1400,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1972,6 +2051,7 @@ ns:RegisterGuide({
             priority = 1410,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -1988,6 +2068,7 @@ ns:RegisterGuide({
             priority = 1430,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -2005,6 +2086,7 @@ ns:RegisterGuide({
             priority = 1440,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -2021,6 +2103,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2038,6 +2121,7 @@ ns:RegisterGuide({
             priority = 1460,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2054,6 +2138,7 @@ ns:RegisterGuide({
             priority = 1470,
             conditions = {
                 all = {
+                    { level = { min = 5 } },
                     { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
                 },
             },
@@ -2069,6 +2154,7 @@ ns:RegisterGuide({
             id = "accept-2518-tears-of-the-moon",
             kind = "accept",
             priority = 1480,
+            conditions = { level = { min = 5 } },
             text = "Accept Tears of the Moon from Priestess A'moora in Temple of the Moon.",
             complete = QuestState(2518, "activeOrCompleted"),
             route = {
@@ -2080,6 +2166,7 @@ ns:RegisterGuide({
             id = "objective-486-ursal-the-mauler",
             kind = "objective",
             priority = 1500,
+            conditions = { level = { min = 4 } },
             text = "Kill Ursal the Mauler, consider skipping (x) this quest if the quest rewards Defender Axe or Thornroot Club is useless for your character.",
             dependsOn = { "accept-486-ursal-the-mauler" },
             complete = QuestState(486, "complete"),
@@ -2094,6 +2181,7 @@ ns:RegisterGuide({
             priority = 1510,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2115,6 +2203,7 @@ ns:RegisterGuide({
             id = "objective-923-tumors",
             kind = "objective",
             priority = 1530,
+            conditions = { level = { min = 4 } },
             text = "Kill Timberling Mire Beast or Timberling Trampler collect 5 Mossy Tumor in Wellspring River.",
             dependsOn = { "accept-923-tumors" },
             complete = QuestState(923, "complete"),
@@ -2139,6 +2228,7 @@ ns:RegisterGuide({
             id = "objective-927-blackmoss-the-fetid",
             kind = "objective",
             priority = 1550,
+            conditions = { level = { min = 5 } },
             text = "Kill Blackmoss the Fetid and collect Moss-Twined Heart to accept a quest and He is a rare npc skip the quest if you can't find him.",
             complete = QuestState(927, "complete"),
             route = {
@@ -2152,7 +2242,7 @@ ns:RegisterGuide({
             id = "accept-99047-not-dead-yet",
             kind = "accept",
             priority = 1851,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Not Dead Yet from Sentinel Eralya Leafshadow.",
             dependsOn = { "turnin-99046-the-lost-runner" },
             complete = QuestState(99047, "activeOrCompleted"),
@@ -2165,7 +2255,7 @@ ns:RegisterGuide({
             id = "turnin-99047-not-dead-yet",
             kind = "turnin",
             priority = 1851.1,
-            conditions = { level = { min = 9 } },
+            conditions = { level = { min = 4 } },
             text = "Tell Byancie in Dolanaar.",
             dependsOn = { "accept-99047-not-dead-yet" },
             complete = QuestState(99047, "completed"),
@@ -2178,7 +2268,7 @@ ns:RegisterGuide({
             id = "accept-99050-the-great-tree-provides",
             kind = "accept",
             priority = 1852,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             text = "Accept The Great Tree Provides from Byancie in Dolanaar.",
             dependsOn = { "turnin-99047-not-dead-yet" },
             complete = QuestState(99050, "activeOrCompleted"),
@@ -2191,7 +2281,7 @@ ns:RegisterGuide({
             id = "objective-99050-the-great-tree-provides-2",
             kind = "objective",
             priority = 1853,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             useClientPin = true,
             text = "Buy an Empty Vial in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
@@ -2205,7 +2295,7 @@ ns:RegisterGuide({
             id = "objective-99050-the-great-tree-provides-3",
             kind = "objective",
             priority = 1854,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             useClientPin = true,
             text = "Buy a Refreshing Spring Water in Dolanaar. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
@@ -2219,6 +2309,7 @@ ns:RegisterGuide({
             id = "accept-937-the-enchanted-glade",
             kind = "accept",
             priority = 1570,
+            conditions = { level = { min = 6 } },
             text = "Accept The Enchanted Glade from Sentinel Arynia Cloudsbreak in The Oracle Glade.",
             complete = QuestState(937, "activeOrCompleted"),
             route = {
@@ -2230,6 +2321,7 @@ ns:RegisterGuide({
             id = "accept-938-mist",
             kind = "accept",
             priority = 1580,
+            conditions = { level = { min = 7 } },
             text = "Accept Mist from Mist in The Oracle Glade.",
             complete = QuestState(938, "activeOrCompleted"),
             route = {
@@ -2241,6 +2333,7 @@ ns:RegisterGuide({
             id = "accept-931-the-shimmering-frond",
             kind = "accept",
             priority = 1590,
+            conditions = { level = { min = 4 } },
             text = "Accept The Shimmering Frond in The Oracle Glade.",
             complete = QuestState(931, "activeOrCompleted"),
             route = {
@@ -2252,6 +2345,7 @@ ns:RegisterGuide({
             id = "objective-938-mist",
             kind = "objective",
             priority = 1600,
+            conditions = { level = { min = 7 } },
             text = "Escort Mist to Sentinel Arynia Cloudsbreak at the moon well near the Oracle Tree.",
             dependsOn = { "accept-938-mist" },
             complete = QuestState(938, "complete"),
@@ -2266,6 +2360,7 @@ ns:RegisterGuide({
             id = "objective-937-the-enchanted-glade",
             kind = "objective",
             priority = 1610,
+            conditions = { level = { min = 6 } },
             text = "Kill Bloodfeather mobs and collect 6 Bloodfeather Belt in The Oracle Glade.",
             dependsOn = { "accept-937-the-enchanted-glade" },
             complete = QuestState(937, "complete"),
@@ -2278,6 +2373,7 @@ ns:RegisterGuide({
             id = "turnin-938-mist",
             kind = "turnin",
             priority = 1620,
+            conditions = { level = { min = 7 } },
             text = "Turn in Mist to Sentinel Arynia Cloudsbreak in The Oracle Glade.",
             dependsOn = { "objective-938-mist" },
             complete = QuestState(938, "completed"),
@@ -2290,6 +2386,7 @@ ns:RegisterGuide({
             id = "turnin-937-the-enchanted-glade",
             kind = "turnin",
             priority = 1630,
+            conditions = { level = { min = 6 } },
             text = "Turn in The Enchanted Glade to Sentinel Arynia Cloudsbreak in The Oracle Glade.",
             dependsOn = { "objective-937-the-enchanted-glade" },
             complete = QuestState(937, "completed"),
@@ -2302,7 +2399,7 @@ ns:RegisterGuide({
             id = "accept-98392-darkness-in-the-glade",
             kind = "accept",
             priority = 1631,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Accept Darkness in the Glade from Sentinel Arynia Cloudsbreak.",
             dependsOn = { "turnin-937-the-enchanted-glade" },
             complete = QuestState(98392, "activeOrCompleted"),
@@ -2315,7 +2412,7 @@ ns:RegisterGuide({
             id = "objective-98392-darkness-in-the-glade-1",
             kind = "objective",
             priority = 1632,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Darkness in the Glade: take Hatescreech's Amulet.",
             dependsOn = { "accept-98392-darkness-in-the-glade" },
             complete = QuestObjective(98392, 1),
@@ -2328,7 +2425,7 @@ ns:RegisterGuide({
             id = "objective-98392-darkness-in-the-glade-2",
             kind = "objective",
             priority = 1633,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Darkness in the Glade: take Windmistress Gaedress' Amulet.",
             dependsOn = { "accept-98392-darkness-in-the-glade" },
             complete = QuestObjective(98392, 2),
@@ -2341,7 +2438,7 @@ ns:RegisterGuide({
             id = "objective-98392-darkness-in-the-glade-3",
             kind = "objective",
             priority = 1634,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Darkness in the Glade: take Witchmother Arysa's Amulet.",
             dependsOn = { "accept-98392-darkness-in-the-glade" },
             complete = QuestObjective(98392, 3),
@@ -2354,7 +2451,7 @@ ns:RegisterGuide({
             id = "turnin-98392-darkness-in-the-glade",
             kind = "turnin",
             priority = 1635,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Turn in Darkness in the Glade to Sentinel Arynia Cloudsbreak.",
             dependsOn = { "objective-98392-darkness-in-the-glade-1", "objective-98392-darkness-in-the-glade-2", "objective-98392-darkness-in-the-glade-3" },
             complete = QuestState(98392, "completed"),
@@ -2367,7 +2464,7 @@ ns:RegisterGuide({
             id = "accept-98398-the-oracle-tree",
             kind = "accept",
             priority = 1636,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             text = "Accept The Oracle Tree from Sentinel Arynia Cloudsbreak.",
             dependsOn = { "turnin-98392-darkness-in-the-glade" },
             complete = QuestState(98398, "activeOrCompleted"),
@@ -2380,7 +2477,7 @@ ns:RegisterGuide({
             id = "turnin-98398-the-oracle-tree",
             kind = "turnin",
             priority = 1636.1,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 6 } },
             useClientPin = true,
             text = "Speak with the Oracle Tree. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-98398-the-oracle-tree" },
@@ -2394,6 +2491,7 @@ ns:RegisterGuide({
             id = "accept-940-teldrassil",
             kind = "accept",
             priority = 1640,
+            conditions = { level = { min = 6 } },
             text = "Accept Teldrassil from Sentinel Arynia Cloudsbreak in The Oracle Glade.",
             complete = QuestState(940, "activeOrCompleted"),
             route = {
@@ -2405,6 +2503,7 @@ ns:RegisterGuide({
             id = "objective-2518-tears-of-the-moon",
             kind = "objective",
             priority = 1650,
+            conditions = { level = { min = 5 } },
             text = "Kill Lady Sathrah and collect Silvery Spinnerets north of The Oracle Glade.",
             dependsOn = { "accept-2518-tears-of-the-moon" },
             complete = QuestState(2518, "complete"),
@@ -2419,6 +2518,7 @@ ns:RegisterGuide({
             priority = 1660,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                     { quest = { id = 2241, state = "completed" } },
                 },
@@ -2437,6 +2537,7 @@ ns:RegisterGuide({
             priority = 1680,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                     { quest = { id = 2241, state = "completed" } },
                 },
@@ -2455,6 +2556,7 @@ ns:RegisterGuide({
             priority = 1690,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2472,6 +2574,7 @@ ns:RegisterGuide({
             priority = 1700,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2486,6 +2589,7 @@ ns:RegisterGuide({
             id = "turnin-923-tumors",
             kind = "turnin",
             priority = 1710,
+            conditions = { level = { min = 4 } },
             text = "Turn in Tumors to Rellian Greenspyre in Cenarion Enclave.",
             dependsOn = { "objective-923-tumors" },
             complete = QuestState(923, "completed"),
@@ -2498,6 +2602,7 @@ ns:RegisterGuide({
             id = "accept-2498-return-to-denalan",
             kind = "accept",
             priority = 1720,
+            conditions = { level = { min = 4 } },
             text = "Accept Return to Denalan from Rellian Greenspyre in Cenarion Enclave.",
             complete = QuestState(2498, "activeOrCompleted"),
             route = {
@@ -2509,6 +2614,7 @@ ns:RegisterGuide({
             id = "turnin-2518-tears-of-the-moon",
             kind = "turnin",
             priority = 1730,
+            conditions = { level = { min = 5 } },
             text = "Turn in Tears of the Moon to Priestess A'moora in Temple of the Moon.",
             dependsOn = { "objective-2518-tears-of-the-moon" },
             complete = QuestState(2518, "completed"),
@@ -2521,6 +2627,7 @@ ns:RegisterGuide({
             id = "accept-2520-sathrah-s-sacrifice",
             kind = "accept",
             priority = 1740,
+            conditions = { level = { min = 5 } },
             text = "Accept Sathrah's Sacrifice from Priestess A'moora in Temple of the Moon.",
             complete = QuestState(2520, "activeOrCompleted"),
             route = {
@@ -2532,6 +2639,7 @@ ns:RegisterGuide({
             id = "objective-2520-sathrah-s-sacrifice",
             kind = "objective",
             priority = 1750,
+            conditions = { level = { min = 5 } },
             text = "Use Sathrah's Sacrifice at the fountain inside the temple.",
             dependsOn = { "accept-2520-sathrah-s-sacrifice" },
             complete = QuestState(2520, "complete"),
@@ -2544,6 +2652,7 @@ ns:RegisterGuide({
             id = "turnin-2520-sathrah-s-sacrifice",
             kind = "turnin",
             priority = 1760,
+            conditions = { level = { min = 5 } },
             text = "Turn in Sathrah's Sacrifice to Priestess A'moora in Temple of the Moon.",
             dependsOn = { "objective-2520-sathrah-s-sacrifice" },
             complete = QuestState(2520, "completed"),
@@ -2556,6 +2665,7 @@ ns:RegisterGuide({
             id = "turnin-486-ursal-the-mauler",
             kind = "turnin",
             priority = 1780,
+            conditions = { level = { min = 4 } },
             text = "Turn in Ursal the Mauler to Athridas Bearmantle in Dolanaar.",
             dependsOn = { "objective-486-ursal-the-mauler" },
             complete = QuestState(486, "completed"),
@@ -2591,6 +2701,7 @@ ns:RegisterGuide({
             id = "turnin-2498-return-to-denalan",
             kind = "turnin",
             priority = 1810,
+            conditions = { level = { min = 4 } },
             text = "Turn in Return to Denalan to Denalan in Lake Al'Ameth.",
             dependsOn = { "accept-2498-return-to-denalan" },
             complete = QuestState(2498, "completed"),
@@ -2603,6 +2714,7 @@ ns:RegisterGuide({
             id = "accept-2499-oakenscowl",
             kind = "accept",
             priority = 1820,
+            conditions = { level = { min = 4 } },
             text = "Accept Oakenscowl from Denalan in Lake Al'Ameth.",
             complete = QuestState(2499, "activeOrCompleted"),
             route = {
@@ -2614,6 +2726,7 @@ ns:RegisterGuide({
             id = "turnin-930-the-glowing-fruit",
             kind = "turnin",
             priority = 1830,
+            conditions = { level = { min = 4 } },
             text = "Turn in The Glowing Fruit to Denalan in Lake Al'Ameth.",
             dependsOn = { "accept-930-the-glowing-fruit" },
             complete = QuestState(930, "completed"),
@@ -2626,6 +2739,7 @@ ns:RegisterGuide({
             id = "turnin-931-the-shimmering-frond",
             kind = "turnin",
             priority = 1840,
+            conditions = { level = { min = 4 } },
             text = "Turn in The Shimmering Frond to Denalan in Lake Al'Ameth.",
             dependsOn = { "accept-931-the-shimmering-frond" },
             complete = QuestState(931, "completed"),
@@ -2638,6 +2752,7 @@ ns:RegisterGuide({
             id = "objective-2499-oakenscowl",
             kind = "objective",
             priority = 1850,
+            conditions = { level = { min = 4 } },
             text = "Kill Oakenscowl and collect Gargantuan Tumor in Lake Al'Ameth This is a group quest but can be soloed for good XP but you can safely skip this quest if it's too hard.",
             dependsOn = { "accept-2499-oakenscowl" },
             complete = QuestState(2499, "complete"),
@@ -2650,6 +2765,7 @@ ns:RegisterGuide({
             id = "turnin-2499-oakenscowl",
             kind = "turnin",
             priority = 1860,
+            conditions = { level = { min = 4 } },
             text = "Turn in Oakenscowl to Denalan in Lake Al'Ameth.",
             dependsOn = { "objective-2499-oakenscowl" },
             complete = QuestState(2499, "completed"),
@@ -2662,7 +2778,7 @@ ns:RegisterGuide({
             id = "objective-99050-the-great-tree-provides-1",
             kind = "objective",
             priority = 1861,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             text = "Collect 6 Dewy Lasher Fronds from lashers around Lake Al'Ameth.",
             dependsOn = { "accept-99050-the-great-tree-provides" },
             complete = QuestObjective(99050, 1),
@@ -2675,7 +2791,7 @@ ns:RegisterGuide({
             id = "turnin-99050-the-great-tree-provides",
             kind = "turnin",
             priority = 1865,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in The Great Tree Provides to Byancie in Dolanaar.",
             dependsOn = { "objective-99050-the-great-tree-provides-1", "objective-99050-the-great-tree-provides-2", "objective-99050-the-great-tree-provides-3" },
             complete = QuestState(99050, "completed"),
@@ -2688,7 +2804,7 @@ ns:RegisterGuide({
             id = "accept-99073-easing-suffering",
             kind = "accept",
             priority = 1866,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Easing Suffering from Byancie.",
             dependsOn = { "turnin-99050-the-great-tree-provides" },
             complete = QuestState(99073, "activeOrCompleted"),
@@ -2701,7 +2817,7 @@ ns:RegisterGuide({
             id = "turnin-99073-easing-suffering",
             kind = "turnin",
             priority = 1866.1,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 4 } },
             text = "Take the salve to Sentinel Eralya Leafshadow.",
             dependsOn = { "accept-99073-easing-suffering" },
             complete = QuestState(99073, "completed"),
@@ -2726,7 +2842,6 @@ ns:RegisterGuide({
             id = "accept-98046-crown-of-the-earth",
             kind = "accept",
             priority = 1881,
-            conditions = { level = { min = 11 } },
             text = "Accept Crown of the Earth from Arch Druid Fandral Staghelm.",
             dependsOn = { "turnin-935-crown-of-the-earth" },
             complete = QuestState(98046, "activeOrCompleted"),
@@ -2739,7 +2854,6 @@ ns:RegisterGuide({
             id = "turnin-98046-crown-of-the-earth",
             kind = "turnin",
             priority = 1881.1,
-            conditions = { level = { min = 11 } },
             text = "Bring the drained vessel to Priestess Lariia in the Temple of the Moon.",
             dependsOn = { "accept-98046-crown-of-the-earth" },
             complete = QuestState(98046, "completed"),
@@ -2752,7 +2866,6 @@ ns:RegisterGuide({
             id = "accept-98065-crown-of-the-earth",
             kind = "accept",
             priority = 1882,
-            conditions = { level = { min = 11 } },
             text = "Accept Crown of the Earth from Priestess Lariia.",
             dependsOn = { "turnin-98046-crown-of-the-earth" },
             complete = QuestState(98065, "activeOrCompleted"),
@@ -2765,7 +2878,6 @@ ns:RegisterGuide({
             id = "turnin-98065-crown-of-the-earth",
             kind = "turnin",
             priority = 1882.1,
-            conditions = { level = { min = 11 } },
             text = "Bring the moonwell remnants to Tyrande Whisperwind.",
             dependsOn = { "accept-98065-crown-of-the-earth" },
             complete = QuestState(98065, "completed"),
@@ -2817,6 +2929,7 @@ ns:RegisterGuide({
             id = "turnin-940-teldrassil",
             kind = "turnin",
             priority = 1890,
+            conditions = { level = { min = 6 } },
             text = "Turn in Teldrassil to Archdruid Fandral Staghelm in Cenarion Enclave.",
             dependsOn = { "accept-940-teldrassil" },
             complete = QuestState(940, "completed"),
@@ -2829,6 +2942,7 @@ ns:RegisterGuide({
             id = "accept-952-grove-of-the-ancients",
             kind = "accept",
             priority = 1900,
+            conditions = { level = { min = 6 } },
             text = "Accept Grove of the Ancients from Archdruid Fandral Staghelm in Cenarion Enclave.",
             complete = QuestState(952, "activeOrCompleted"),
             route = {
@@ -2842,6 +2956,7 @@ ns:RegisterGuide({
             priority = 1920,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                     { ["not"] = { quest = { id = 6341, state = "activeOrCompleted" } } },
                 },
@@ -2860,6 +2975,7 @@ ns:RegisterGuide({
             priority = 1930,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -2876,6 +2992,7 @@ ns:RegisterGuide({
             priority = 1940,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -2893,6 +3010,7 @@ ns:RegisterGuide({
             priority = 1950,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -2909,6 +3027,7 @@ ns:RegisterGuide({
             priority = 1970,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 4 },
                 },
             },
@@ -2926,6 +3045,7 @@ ns:RegisterGuide({
             priority = 1980,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -2943,6 +3063,7 @@ ns:RegisterGuide({
             priority = 1990,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2960,6 +3081,7 @@ ns:RegisterGuide({
             priority = 2000,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2977,6 +3099,7 @@ ns:RegisterGuide({
             priority = 2010,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2994,6 +3117,7 @@ ns:RegisterGuide({
             priority = 2030,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 11 },
                 },
             },
@@ -3011,6 +3135,7 @@ ns:RegisterGuide({
             priority = 2050,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3028,6 +3153,7 @@ ns:RegisterGuide({
             priority = 2060,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3044,6 +3170,7 @@ ns:RegisterGuide({
             priority = 2070,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3061,6 +3188,7 @@ ns:RegisterGuide({
             priority = 2080,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
