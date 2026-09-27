@@ -71,7 +71,7 @@ ns:RegisterGuide({
     id = "leveling-zephras-isle",
     title = "Zephras Isle (Skyborne)",
     category = "Leveling Quest Guides",
-    revision = 4,
+    revision = 5,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -1397,7 +1397,7 @@ ns:RegisterGuide({
         {
             id = "accept-welcome-to-shendar-village",
             kind = "accept",
-            priority = 870,
+            priority = 622,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1405,6 +1405,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
+            dependsOn = { "turnin-the-next-step" },
             complete = QuestState(92514, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -1414,7 +1415,7 @@ ns:RegisterGuide({
         {
             id = "objective-welcome-to-shendar-village",
             kind = "objective",
-            priority = 880,
+            priority = 623,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1432,7 +1433,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-shendar-village",
             kind = "turnin",
-            priority = 890,
+            priority = 624,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1450,7 +1451,7 @@ ns:RegisterGuide({
         {
             id = "accept-welcome-to-shendar-village-93461",
             kind = "accept",
-            priority = 900,
+            priority = 622,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1458,6 +1459,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
+            dependsOn = { "turnin-the-next-step" },
             complete = QuestState(93461, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -1467,7 +1469,7 @@ ns:RegisterGuide({
         {
             id = "objective-welcome-to-shendar-village-93461",
             kind = "objective",
-            priority = 910,
+            priority = 623,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1485,7 +1487,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-shendar-village-93461",
             kind = "turnin",
-            priority = 920,
+            priority = 624,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1503,7 +1505,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-criminal-element",
             kind = "accept",
-            priority = 930,
+            priority = 625,
             conditions = { level = { min = 4 } },
             text = "Accept The Criminal Element from Constable Aonda.",
             dependsOn = { "turnin-welcome-to-shendar-village", "turnin-welcome-to-shendar-village-93461" },

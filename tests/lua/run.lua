@@ -1557,6 +1557,10 @@ local nextStepAccept = ns.Engine:GetGoal(zephras, "accept-the-next-step")
 local alakethAccept = ns.Engine:GetGoal(zephras, "accept-alaketh-thugs")
 local adventurerTurnin = ns.Engine:GetGoal(zephras, "turnin-the-adventurer")
 local nextStepTurnin = ns.Engine:GetGoal(zephras, "turnin-the-next-step")
+local hordeWelcomeAccept = ns.Engine:GetGoal(zephras, "accept-welcome-to-shendar-village")
+local allianceWelcomeAccept = ns.Engine:GetGoal(zephras, "accept-welcome-to-shendar-village-93461")
+local criminalElementAccept = ns.Engine:GetGoal(zephras, "accept-the-criminal-element")
+local prideclawsAccept = ns.Engine:GetGoal(zephras, "accept-the-problem-with-prideclaws")
 Equal(adventurerAccept.route[1].label, "Aetheen of the Gales", "The Adventurer starts at Aetheen")
 Equal(nextStepAccept.route[1].label, "Aetheen of the Gales", "The Next Step starts at Aetheen")
 Check(adventurerAccept.priority < nextStepAccept.priority,
@@ -1569,6 +1573,16 @@ Check(HasDependency(alakethAccept, "accept-the-next-step"),
     "Al'Aketh Thugs waits for The Next Step pickup")
 Check(alakethAccept.priority < adventurerTurnin.priority,
     "Al'Aketh Thugs is handled on the southbound route before entering Shen'dar")
+Check(HasDependency(hordeWelcomeAccept, "turnin-the-next-step"),
+    "the Horde Shen'dar introduction waits for The Next Step")
+Check(HasDependency(allianceWelcomeAccept, "turnin-the-next-step"),
+    "the Alliance Shen'dar introduction waits for The Next Step")
+Check(hordeWelcomeAccept.priority < criminalElementAccept.priority,
+    "the Horde Shen'dar introduction opens the village quest batch")
+Check(allianceWelcomeAccept.priority < criminalElementAccept.priority,
+    "the Alliance Shen'dar introduction opens the village quest batch")
+Check(criminalElementAccept.priority < prideclawsAccept.priority,
+    "The Criminal Element is picked up before the Shen'dar side quests")
 
 local thendalDeparture = {
     id = "test-zephras-thendal-departure",
