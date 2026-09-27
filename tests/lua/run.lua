@@ -2167,6 +2167,28 @@ Check(DependsOn(hiddenEnemies, "turnin-5726-hidden-enemies"),
 local neeru = ns.Engine:GetGoal(durotar, "gossip-5727-hidden-enemies")
 Check(neeru and neeru.kind == "gossip" and neeru.route[1].label == "Neeru Fireblade",
     "Hidden Enemies dialogue is with Neeru Fireblade")
+function TestBurningBladeMedallionPrerequisites()
+    ns:FinalizeGuides()
+    local era = ns.guides["leveling-era"]
+    local medallionAccept = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-794-burning-blade-medallion")
+    Check(DependsOn(medallionAccept, "leveling-era-1-12-durotar:turnin-792-vile-familiars"),
+        "Burning Blade Medallion waits for the standard Vile Familiars turn-in")
+    Check(DependsOn(medallionAccept, "leveling-era-1-12-durotar:turnin-1499-vile-familiars"),
+        "Burning Blade Medallion waits for the warlock Vile Familiars turn-in")
+    local warlockValley = {
+        faction = "Horde", raceID = 2, classID = 9, level = 4,
+        mapID = 1411, x = 0.43, y = 0.69,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    }
+    Equal(ns.Engine:IsReady(era, medallionAccept, warlockValley), false,
+        "a warlock cannot accept Burning Blade Medallion before turning Vile Familiars in to Zureetha")
+    warlockValley.completedQuests[1485] = true
+    warlockValley.completedQuests[1499] = true
+    Equal(ns.Engine:IsReady(era, medallionAccept, warlockValley), true,
+        "a warlock can accept Burning Blade Medallion after the Zureetha Vile Familiars turn-in")
+end
+TestBurningBladeMedallionPrerequisites()
 function TestRepeatableRoutes()
     Load("Guides/Era/32-34-desolace.lua")
     Load("Guides/Era/51-51-blasted-lands.lua")

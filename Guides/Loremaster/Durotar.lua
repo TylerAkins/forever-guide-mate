@@ -988,7 +988,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Burning Blade Medallion from Zureetha Fargaze.",
-            dependsOn = { "turnin-792-vile-familiars" },
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
             complete = QuestState(794, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.428, 0.690, "Zureetha Fargaze",

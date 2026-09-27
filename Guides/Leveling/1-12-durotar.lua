@@ -807,6 +807,7 @@ ns:RegisterGuide({
             id = "accept-794-burning-blade-medallion",
             kind = "accept",
             priority = 480,
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
             text = "Accept Burning Blade Medallion from Zureetha Fargaze in Valley of Trials.",
             complete = QuestState(794, "activeOrCompleted"),
             route = {
