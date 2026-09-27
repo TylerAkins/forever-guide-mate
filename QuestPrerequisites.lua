@@ -19,3 +19,11 @@ ns:RegisterQuestPrerequisite({
     conditions = { faction = "Horde" },
     note = "Nara Wildmane is offered after Hamuul Runetotem.",
 })
+
+ns:RegisterQuestPrerequisite({
+    quest = 5727,
+    mode = "all",
+    quests = { 5726 },
+    conditions = { faction = "Horde" },
+    note = "Thrall's Hidden Enemies follow-up is offered after the Lieutenant's Insignia is returned.",
+})

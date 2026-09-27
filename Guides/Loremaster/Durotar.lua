@@ -3017,6 +3017,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-5726-hidden-enemies",
+            kind = "accept",
+            priority = 1625,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            complete = QuestState(5726, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
             id = "accept-813-finding-the-antidote",
             kind = "accept",
             priority = 1630,
@@ -3833,6 +3849,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-5726-hidden-enemies",
+            kind = "objective",
+            priority = 2065,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Kill Burning Blade Apprentice until you find Lieutenant's Insignia in Skull Rock.",
+            dependsOn = { "accept-5726-hidden-enemies" },
+            complete = QuestState(5726, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.544, 0.088, "Burning Blade Apprentice",
+                    "Travel to Burning Blade Apprentice."),
+            },
+        },
+        {
             id = "turnin-827-skull-rock",
             kind = "turnin",
             priority = 2070,
@@ -3906,6 +3939,40 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-5726-hidden-enemies",
+            kind = "turnin",
+            priority = 2105,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "objective-5726-hidden-enemies" },
+            complete = QuestState(5726, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "accept-5727-hidden-enemies",
+            kind = "accept",
+            priority = 2106,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            dependsOn = { "turnin-5726-hidden-enemies" },
+            complete = QuestState(5727, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
             id = "turnin-829-neeru-fireblade",
             kind = "turnin",
             priority = 2110,
@@ -3939,6 +4006,40 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.496, 0.504, "Neeru Fireblade",
                     "Travel to Neeru Fireblade."),
+            },
+        },
+        {
+            id = "gossip-5727-hidden-enemies",
+            kind = "gossip",
+            priority = 2125,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
+            dependsOn = { "accept-5727-hidden-enemies" },
+            complete = QuestState(5727, "complete"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.496, 0.504, "Neeru Fireblade",
+                    "Travel to Neeru Fireblade."),
+            },
+        },
+        {
+            id = "turnin-5727-hidden-enemies",
+            kind = "turnin",
+            priority = 2126,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                },
+            },
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "gossip-5727-hidden-enemies" },
+            complete = QuestState(5727, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
             },
         },
         {
