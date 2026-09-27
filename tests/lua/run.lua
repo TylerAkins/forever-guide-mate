@@ -1520,6 +1520,11 @@ local followUps = {
     { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
     { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
+    { "accept-welcome-to-azeroth-94947", "turnin-the-magical-city-of-dalaran" },
+    { "accept-exploring-the-alliance", "turnin-welcome-to-azeroth-94947" },
+    { "accept-journey-to-sentinel-hill", "turnin-welcome-to-azeroth-94947" },
+    { "accept-child-of-nature", "turnin-the-magical-city-of-dalaran" },
+    { "accept-moonglade", "turnin-child-of-nature" },
 }
 for _, pair in ipairs(followUps) do
     local goal = ns.Engine:GetGoal(zephras, pair[1])
@@ -2019,7 +2024,7 @@ Check(DependsOn(exploringSylvanas, "objective-exploring-the-horde-cairne"), "Syl
 Check(DependsOn(exploringTurnin, "objective-exploring-the-horde-sylvanas"), "Exploring the Horde turns in after the four visits")
 Equal(welcome.complete.quest.id, 95350, "Welcome to Azeroth is quest 95350")
 Equal(exploring.complete.quest.id, 93739, "Exploring the Horde is quest 93739")
-Equal(zephras.goals[#zephras.goals].id, "turnin-exploring-the-horde", "Exploring the Horde is the last Zephras step")
+Equal(zephras.goals[#zephras.goals].id, "turnin-moonglade", "Moonglade is the last Zephras step")
 Equal(ns.EvaluateCondition(welcome.conditions, { faction = "Alliance", level = 14 }), false,
     "Alliance does not take Welcome to Azeroth")
 Equal(welcomeTurnin.route[1].mapID, 1456, "Welcome to Azeroth flies from Thunder Bluff")
