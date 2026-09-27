@@ -229,11 +229,23 @@ function TestGuideResync()
     Check(ns.charDB.notOffered["other-guide-step"] ~= nil,
         "manual resync preserves quest availability observations for other guides")
 
+    state.quests[900010] = { complete = false }
     ns.charDB.deferred["resync-early"] = true
     ns.charDB.activeGoal = "resync-late"
     ns.Engine.currentGoal = guide.goals[2]
     ns.Engine:ResyncCurrent(state)
     Equal(ns.Engine.currentGoal.id, "resync-late", "manual resync preserves intentionally skipped steps")
+
+    ns.charDB.deferred["resync-early"] = true
+    ns.charDB.activeGoal = "resync-late"
+    ns.Engine.currentGoal = guide.goals[2]
+    state.quests = {}
+    state.completedQuests = {}
+    ns.Engine:ResyncCurrent(state)
+    Equal(ns.Engine.currentGoal.id, "resync-early",
+        "manual resync reopens a skipped step when the quest is still unfinished in the log")
+    Equal(ns.charDB.deferred["resync-early"], nil,
+        "manual resync clears stale deferrals for unfinished quest steps")
 
     ns.charDB.deferred = {}
     ns.charDB.activeGoal = "resync-late"
@@ -2187,6 +2199,12 @@ function TestBurningBladeMedallionPrerequisites()
     warlockValley.completedQuests[1499] = true
     Equal(ns.Engine:IsReady(era, medallionAccept, warlockValley), true,
         "a warlock can accept Burning Blade Medallion after the Zureetha Vile Familiars turn-in")
+    local lazyPeons = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-5441-lazy-peons")
+    Equal(ns.Engine:IsReady(era, lazyPeons, warlockValley), true,
+        "lazy peons unlock after the warlock Vile Familiars handoff")
+    warlockValley.completedQuests[1499] = nil
+    Equal(ns.Engine:IsReady(era, lazyPeons, warlockValley), false,
+        "lazy peons stay blocked until the warlock Vile Familiars Zureetha turn-in")
 end
 TestBurningBladeMedallionPrerequisites()
 function TestRepeatableRoutes()
