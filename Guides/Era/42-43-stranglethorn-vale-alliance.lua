@@ -43,6 +43,7 @@ ns:RegisterGuide({
             id = "accept-2864-tran-rek",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 40 } },
             text = "Accept Tran'rek from Krazek in The Salty Sailor Tavern.",
             complete = QuestState(2864, "activeOrCompleted"),
             route = {
@@ -54,6 +55,7 @@ ns:RegisterGuide({
             id = "accept-621-zanzil-s-secret",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 35 } },
             text = "Accept Zanzil's Secret from Crank Fizzlebub in The Salty Sailor Tavern.",
             complete = QuestState(621, "activeOrCompleted"),
             route = {
@@ -75,6 +77,7 @@ ns:RegisterGuide({
             id = "accept-617-akiris-by-the-bundle",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 38 } },
             text = "Accept Akiris by the Bundle from Privateer Bloads in Booty Bay.",
             complete = QuestState(617, "activeOrCompleted"),
             route = {
@@ -86,6 +89,7 @@ ns:RegisterGuide({
             id = "accept-606-scaring-shaky",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 30 } },
             text = "Accept Scaring Shaky from \"Sea Wolf\" MacKinley in Booty Bay.",
             complete = QuestState(606, "activeOrCompleted"),
             route = {
@@ -97,6 +101,7 @@ ns:RegisterGuide({
             id = "accept-595-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from First Mate Crazz in Booty Bay.",
             complete = QuestState(595, "activeOrCompleted"),
             route = {
@@ -108,6 +113,7 @@ ns:RegisterGuide({
             id = "turnin-599-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn in Booty Bay.",
             dependsOn = { "accept-599-the-bloodsail-buccaneers" },
             complete = QuestState(599, "completed"),
@@ -120,6 +126,7 @@ ns:RegisterGuide({
             id = "turnin-595-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 90,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers in Southern Savage Coast.",
             dependsOn = { "accept-595-the-bloodsail-buccaneers" },
             complete = QuestState(595, "completed"),
@@ -132,6 +139,7 @@ ns:RegisterGuide({
             id = "accept-597-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers in Southern Savage Coast.",
             complete = QuestState(597, "activeOrCompleted"),
             route = {
@@ -143,6 +151,7 @@ ns:RegisterGuide({
             id = "objective-606-scaring-shaky",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 30 } },
             text = "Kill Elder Mistvale Gorilla and collect 5 Mistvale Giblets in Mistvale Valley.",
             dependsOn = { "accept-606-scaring-shaky" },
             complete = QuestState(606, "complete"),
@@ -155,6 +164,7 @@ ns:RegisterGuide({
             id = "turnin-597-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to First Mate Crazz in Booty Bay.",
             dependsOn = { "accept-597-the-bloodsail-buccaneers" },
             complete = QuestState(597, "completed"),
@@ -167,6 +177,7 @@ ns:RegisterGuide({
             id = "accept-599-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from First Mate Crazz in Booty Bay.",
             complete = QuestState(599, "activeOrCompleted"),
             route = {
@@ -178,6 +189,7 @@ ns:RegisterGuide({
             id = "turnin-599-the-bloodsail-buccaneers-2",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn in Booty Bay.",
             dependsOn = { "accept-599-the-bloodsail-buccaneers" },
             complete = QuestState(599, "completed"),
@@ -190,6 +202,7 @@ ns:RegisterGuide({
             id = "accept-604-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from Fleet Master Seahorn in Booty Bay.",
             complete = QuestState(604, "activeOrCompleted"),
             route = {
@@ -201,6 +214,7 @@ ns:RegisterGuide({
             id = "turnin-606-scaring-shaky",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 30 } },
             text = "Turn in Scaring Shaky to \"Shaky\" Phillipe in Booty Bay.",
             dependsOn = { "objective-606-scaring-shaky" },
             complete = QuestState(606, "completed"),
@@ -213,6 +227,7 @@ ns:RegisterGuide({
             id = "accept-607-return-to-mackinley",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 30 } },
             text = "Accept Return to MacKinley from \"Sea Wolf\" MacKinley in Booty Bay.",
             complete = QuestState(607, "activeOrCompleted"),
             route = {
@@ -224,6 +239,7 @@ ns:RegisterGuide({
             id = "accept-587-up-to-snuff",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 37 } },
             text = "Accept Up to Snuff from Deeg in Booty Bay.",
             complete = QuestState(587, "activeOrCompleted"),
             route = {
@@ -237,6 +253,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 605, state = "completed" } },
                 },
             },
@@ -251,6 +268,7 @@ ns:RegisterGuide({
             id = "turnin-599-the-bloodsail-buccaneers-3",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers.",
             dependsOn = { "accept-599-the-bloodsail-buccaneers" },
             complete = QuestState(599, "completed"),
@@ -263,6 +281,7 @@ ns:RegisterGuide({
             id = "accept-604-the-bloodsail-buccaneers-2",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers.",
             complete = QuestState(604, "activeOrCompleted"),
             route = {
@@ -274,6 +293,7 @@ ns:RegisterGuide({
             id = "turnin-607-return-to-mackinley",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 30 } },
             text = "Turn in Return to MacKinley to \"Sea Wolf\" MacKinley in Booty Bay.",
             dependsOn = { "accept-607-return-to-mackinley" },
             complete = QuestState(607, "completed"),
@@ -286,6 +306,7 @@ ns:RegisterGuide({
             id = "accept-609-voodoo-dues",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 30 } },
             text = "Accept Voodoo Dues from \"Sea Wolf\" MacKinley in Booty Bay.",
             complete = QuestState(609, "activeOrCompleted"),
             route = {
@@ -297,6 +318,7 @@ ns:RegisterGuide({
             id = "accept-576-keep-an-eye-out",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 37 } },
             text = "Accept Keep An Eye Out from Dizzy One-Eye in Booty Bay.",
             complete = QuestState(576, "activeOrCompleted"),
             route = {
@@ -308,6 +330,7 @@ ns:RegisterGuide({
             id = "objective-604-2-bloodsail-charts",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 37 } },
             text = "Collect Bloodsail Charts on top the table in Wild Shore.",
             dependsOn = { "accept-604-the-bloodsail-buccaneers" },
             complete = QuestObjective(604, 2),
@@ -320,6 +343,7 @@ ns:RegisterGuide({
             id = "objective-604-3-bloodsail-orders",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 37 } },
             text = "Collect Bloodsail Orders on top of the crate in Wild Shore.",
             dependsOn = { "accept-604-the-bloodsail-buccaneers" },
             complete = QuestObjective(604, 3),
@@ -332,6 +356,7 @@ ns:RegisterGuide({
             id = "objective-604-the-bloodsail-buccaneers",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 37 } },
             text = "Kill 10 Bloodsail Swashbuckler in Wild Shore.",
             dependsOn = { "accept-604-the-bloodsail-buccaneers" },
             complete = QuestState(604, "complete"),
@@ -344,6 +369,7 @@ ns:RegisterGuide({
             id = "objective-587-up-to-snuff",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 37 } },
             text = "Kill Bloodsail pirates and collect 15 Snuff in Wild Shore.",
             dependsOn = { "accept-587-up-to-snuff" },
             complete = QuestState(587, "complete"),
@@ -356,6 +382,7 @@ ns:RegisterGuide({
             id = "objective-576-keep-an-eye-out",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 37 } },
             text = "The Pirates should have dropped Dizzy's Eye by now, or else keep killing pirates until you find one.",
             dependsOn = { "accept-576-keep-an-eye-out" },
             complete = QuestState(576, "complete"),
@@ -368,6 +395,7 @@ ns:RegisterGuide({
             id = "turnin-587-up-to-snuff",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 37 } },
             text = "Turn in Up to Snuff to Deeg in Booty Bay.",
             dependsOn = { "objective-587-up-to-snuff" },
             complete = QuestState(587, "completed"),
@@ -380,6 +408,7 @@ ns:RegisterGuide({
             id = "turnin-604-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn in Booty Bay.",
             dependsOn = { "objective-604-2-bloodsail-charts", "objective-604-3-bloodsail-orders", "objective-604-the-bloodsail-buccaneers" },
             complete = QuestState(604, "completed"),
@@ -392,6 +421,7 @@ ns:RegisterGuide({
             id = "turnin-576-keep-an-eye-out",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 37 } },
             text = "Turn in Keep An Eye Out to Dizzy One-Eye in Booty Bay.",
             dependsOn = { "objective-576-keep-an-eye-out" },
             complete = QuestState(576, "completed"),
@@ -404,6 +434,7 @@ ns:RegisterGuide({
             id = "objective-617-akiris-by-the-bundle",
             kind = "objective",
             priority = 360,
+            conditions = { level = { min = 38 } },
             text = "Collect 10 Bundles of Akiris Reed from the Naga Explorer.",
             dependsOn = { "accept-617-akiris-by-the-bundle" },
             complete = QuestState(617, "complete"),
@@ -416,6 +447,7 @@ ns:RegisterGuide({
             id = "objective-609-2-jon-jon-the-crow",
             kind = "objective",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Kill Jon-Jon the Crow and collect Jon-Jon's Golden Spyglass in Ruins of Jubuwal.",
             dependsOn = { "accept-609-voodoo-dues" },
             complete = QuestObjective(609, 2),
@@ -428,6 +460,7 @@ ns:RegisterGuide({
             id = "objective-609-1-maury-club-foot-wilkins",
             kind = "objective",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Kill Maury \"Club Foot\" Wilkins and collect Maury's Clubbed Foot in Ruins of Jubuwal.",
             dependsOn = { "accept-609-voodoo-dues" },
             complete = QuestObjective(609, 1),
@@ -442,6 +475,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 605, state = "completed" } },
                 },
             },
@@ -459,6 +493,7 @@ ns:RegisterGuide({
             id = "objective-609-3-chucky-ten-thumbs",
             kind = "objective",
             priority = 430,
+            conditions = { level = { min = 30 } },
             text = "Kill Chucky \"Ten Thumbs\" and collect Chucky's Huge Ring in Ruins of Aboraz.",
             dependsOn = { "accept-609-voodoo-dues" },
             complete = QuestObjective(609, 3),
@@ -471,6 +506,7 @@ ns:RegisterGuide({
             id = "objective-621-zanzil-s-secret",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 35 } },
             text = "Kill Zanzil Hunter and Zanzil Zombie at the Ruins of Aboraz for 12 Zanzil's Mixture.",
             dependsOn = { "accept-621-zanzil-s-secret" },
             complete = QuestState(621, "complete"),
@@ -485,6 +521,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -501,6 +538,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -518,6 +556,7 @@ ns:RegisterGuide({
             priority = 480,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -533,6 +572,7 @@ ns:RegisterGuide({
             id = "accept-338-the-green-hills-of-stranglethorn",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 30 } },
             text = "Accept The Green Hills of Stranglethorn from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(338, "activeOrCompleted"),
             route = {
@@ -544,6 +584,7 @@ ns:RegisterGuide({
             id = "accept-339-chapter-i",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter I from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(339, "activeOrCompleted"),
             route = {
@@ -555,6 +596,7 @@ ns:RegisterGuide({
             id = "accept-340-chapter-ii",
             kind = "accept",
             priority = 510,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter II from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(340, "activeOrCompleted"),
             route = {
@@ -566,6 +608,7 @@ ns:RegisterGuide({
             id = "accept-341-chapter-iii",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter III from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(341, "activeOrCompleted"),
             route = {
@@ -577,6 +620,7 @@ ns:RegisterGuide({
             id = "accept-342-chapter-iv",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter IV from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(342, "activeOrCompleted"),
             route = {
@@ -588,6 +632,7 @@ ns:RegisterGuide({
             id = "turnin-621-zanzil-s-secret",
             kind = "turnin",
             priority = 550,
+            conditions = { level = { min = 35 } },
             text = "Turn in Zanzil's Secret to Crank Fizzlebub in The Salty Sailor Tavern.",
             dependsOn = { "objective-621-zanzil-s-secret" },
             complete = QuestState(621, "completed"),
@@ -600,6 +645,7 @@ ns:RegisterGuide({
             id = "turnin-587-up-to-snuff-2",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 37 } },
             text = "Turn in Up to Snuff to Deeg in Booty Bay.",
             dependsOn = { "objective-587-up-to-snuff" },
             complete = QuestState(587, "completed"),
@@ -612,6 +658,7 @@ ns:RegisterGuide({
             id = "turnin-604-the-bloodsail-buccaneers-2",
             kind = "turnin",
             priority = 570,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn in Booty Bay.",
             dependsOn = { "objective-604-2-bloodsail-charts", "objective-604-3-bloodsail-orders", "objective-604-the-bloodsail-buccaneers" },
             complete = QuestState(604, "completed"),
@@ -624,6 +671,7 @@ ns:RegisterGuide({
             id = "turnin-617-akiris-by-the-bundle",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 38 } },
             text = "Turn in Akiris by the Bundle to Privateer Bloads in Booty Bay.",
             dependsOn = { "objective-617-akiris-by-the-bundle" },
             complete = QuestState(617, "completed"),
@@ -636,6 +684,7 @@ ns:RegisterGuide({
             id = "accept-623-akiris-by-the-bundle",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 38 } },
             text = "Accept Akiris by the Bundle from Privateer Bloads in Booty Bay.",
             complete = QuestState(623, "activeOrCompleted"),
             route = {
@@ -647,6 +696,7 @@ ns:RegisterGuide({
             id = "turnin-609-voodoo-dues",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 30 } },
             text = "Turn in Voodoo Dues to \"Sea Wolf\" MacKinley in Booty Bay.",
             dependsOn = { "objective-609-2-jon-jon-the-crow", "objective-609-1-maury-club-foot-wilkins", "objective-609-3-chucky-ten-thumbs" },
             complete = QuestState(609, "completed"),
@@ -659,6 +709,7 @@ ns:RegisterGuide({
             id = "accept-2872-stoley-s-debt",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 40 } },
             text = "Accept Stoley's Debt from \"Sea Wolf\" MacKinley in Booty Bay.",
             complete = QuestState(2872, "activeOrCompleted"),
             route = {
@@ -670,6 +721,7 @@ ns:RegisterGuide({
             id = "turnin-576-keep-an-eye-out-2",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 37 } },
             text = "Turn in Keep An Eye Out to Dizzy One-Eye in Booty Bay.",
             dependsOn = { "objective-576-keep-an-eye-out" },
             complete = QuestState(576, "completed"),
@@ -682,6 +734,7 @@ ns:RegisterGuide({
             id = "accept-602-magical-analysis",
             kind = "accept",
             priority = 630,
+            conditions = { level = { min = 32 } },
             text = "Accept Magical Analysis from Baron Revilgaz in Booty Bay.",
             complete = QuestState(602, "activeOrCompleted"),
             route = {

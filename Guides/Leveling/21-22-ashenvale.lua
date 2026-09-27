@@ -46,6 +46,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 970, state = "completed" } },
                 },
             },
@@ -60,6 +61,7 @@ ns:RegisterGuide({
             id = "accept-1010-bathran-s-hair",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 20 } },
             text = "Accept Bathran's Hair from Orendil Broadleaf in Maestra's Post.",
             complete = QuestState(1010, "activeOrCompleted"),
             route = {
@@ -73,6 +75,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 970, state = "completed" } },
                 },
             },
@@ -88,6 +91,7 @@ ns:RegisterGuide({
             id = "objective-1010-bathran-s-hair",
             kind = "objective",
             priority = 50,
+            conditions = { level = { min = 20 } },
             text = "Collect 5 of Bathran's Hair found in the plant bundles on the ground in the camp.",
             dependsOn = { "accept-1010-bathran-s-hair" },
             complete = QuestState(1010, "complete"),
@@ -102,6 +106,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 970, state = "completed" } },
                 },
             },
@@ -119,6 +124,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 970, state = "completed" } },
                 },
             },
@@ -133,6 +139,7 @@ ns:RegisterGuide({
             id = "turnin-1010-bathran-s-hair",
             kind = "turnin",
             priority = 90,
+            conditions = { level = { min = 20 } },
             text = "Turn in Bathran's Hair to Orendil Broadleaf in Maestra's Post.",
             dependsOn = { "objective-1010-bathran-s-hair" },
             complete = QuestState(1010, "completed"),
@@ -145,6 +152,7 @@ ns:RegisterGuide({
             id = "accept-1020-orendil-s-cure",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 20 } },
             text = "Accept Orendil's Cure from Orendil Broadleaf in Maestra's Post.",
             complete = QuestState(1020, "activeOrCompleted"),
             route = {
@@ -156,6 +164,7 @@ ns:RegisterGuide({
             id = "accept-1008-the-zoram-strand",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 14 } },
             text = "Accept The Zoram Strand from Shindrell Swiftfire in Astranaar.",
             complete = QuestState(1008, "activeOrCompleted"),
             route = {
@@ -167,6 +176,7 @@ ns:RegisterGuide({
             id = "accept-1070-on-guard-in-stonetalon",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 17 } },
             text = "Accept On Guard in Stonetalon from Sentinel Thenysil in Astranaar.",
             complete = QuestState(1070, "activeOrCompleted"),
             route = {
@@ -178,6 +188,7 @@ ns:RegisterGuide({
             id = "accept-1056-journey-to-stonetalon-peak",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 18 } },
             text = "Accept Journey to Stonetalon Peak from Faldreas Goeth'Shael in Astranaar.",
             complete = QuestState(1056, "activeOrCompleted"),
             route = {
@@ -189,6 +200,7 @@ ns:RegisterGuide({
             id = "accept-991-raene-s-cleansing",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Raene Wolfrunner in Astranaar.",
             complete = QuestState(991, "activeOrCompleted"),
             route = {
@@ -200,6 +212,7 @@ ns:RegisterGuide({
             id = "accept-1054-culling-the-threat",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 18 } },
             text = "Accept Culling the Threat from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1054, "activeOrCompleted"),
             route = {
@@ -221,6 +234,7 @@ ns:RegisterGuide({
             id = "turnin-1020-orendil-s-cure",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 20 } },
             text = "Turn in Orendil's Cure to Pelturas Whitemoon in Astranaar.",
             dependsOn = { "accept-1020-orendil-s-cure" },
             complete = QuestState(1020, "completed"),
@@ -233,6 +247,7 @@ ns:RegisterGuide({
             id = "accept-1033-elune-s-tear",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 20 } },
             text = "Accept Elune's Tear from Pelturas Whitemoon in Astranaar.",
             complete = QuestState(1033, "activeOrCompleted"),
             route = {
@@ -244,6 +259,7 @@ ns:RegisterGuide({
             id = "accept-1007-the-ancient-statuette",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 19 } },
             text = "Accept The Ancient Statuette from Talen in The Zoram Strand.",
             complete = QuestState(1007, "activeOrCompleted"),
             route = {
@@ -255,6 +271,7 @@ ns:RegisterGuide({
             id = "objective-1007-the-ancient-statuette",
             kind = "objective",
             priority = 210,
+            conditions = { level = { min = 19 } },
             text = "Collect the Ancient Statuette laying on the ground in The Zoram Strand.",
             dependsOn = { "accept-1007-the-ancient-statuette" },
             complete = QuestState(1007, "complete"),
@@ -267,6 +284,7 @@ ns:RegisterGuide({
             id = "turnin-1007-the-ancient-statuette",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 19 } },
             text = "Turn in The Ancient Statuette to Talen in The Zoram Strand.",
             dependsOn = { "objective-1007-the-ancient-statuette" },
             complete = QuestState(1007, "completed"),
@@ -279,6 +297,7 @@ ns:RegisterGuide({
             id = "accept-1009-ruuzel",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 20 } },
             text = "Accept Ruuzel from Talen in The Zoram Strand.",
             complete = QuestState(1009, "activeOrCompleted"),
             route = {
@@ -290,6 +309,7 @@ ns:RegisterGuide({
             id = "objective-1009-ruuzel",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 20 } },
             text = "Kill Ruuzel collect the Ring of Zoram She patrols clockwise around the small island with two bodyguards.",
             dependsOn = { "accept-1009-ruuzel" },
             complete = QuestState(1009, "complete"),
@@ -302,6 +322,7 @@ ns:RegisterGuide({
             id = "objective-1008-the-zoram-strand",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 14 } },
             text = "Kill any Wrathtail Wave Rider, Wrathtail Sorceress or Wrathtail Sea Witch which surround The Zoram Strand until you've collected 20 Wrathtail Head.",
             dependsOn = { "accept-1008-the-zoram-strand" },
             complete = QuestState(1008, "complete"),
@@ -314,6 +335,7 @@ ns:RegisterGuide({
             id = "turnin-1009-ruuzel",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 20 } },
             text = "Turn in Ruuzel to Talen in The Zoram Strand.",
             dependsOn = { "objective-1009-ruuzel" },
             complete = QuestState(1009, "completed"),
@@ -326,6 +348,7 @@ ns:RegisterGuide({
             id = "turnin-991-raene-s-cleansing",
             kind = "turnin",
             priority = 280,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Teronis' Corpse in Lake Falathim.",
             dependsOn = { "accept-991-raene-s-cleansing" },
             complete = QuestState(991, "completed"),
@@ -338,6 +361,7 @@ ns:RegisterGuide({
             id = "accept-1023-raene-s-cleansing",
             kind = "accept",
             priority = 290,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Teronis' Corpse in Lake Falathim.",
             complete = QuestState(1023, "activeOrCompleted"),
             route = {
@@ -349,6 +373,7 @@ ns:RegisterGuide({
             id = "objective-1023-raene-s-cleansing",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 18 } },
             text = "Kill the Saltspittle Oracle, Saltspittle Puddlejumper or Saltspittle Warrior at the nearby lake until you've collected the Glowing Gem.",
             dependsOn = { "accept-1023-raene-s-cleansing" },
             complete = QuestState(1023, "complete"),
@@ -361,6 +386,7 @@ ns:RegisterGuide({
             id = "turnin-1023-raene-s-cleansing",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Raene Wolfrunner in Astranaar.",
             dependsOn = { "objective-1023-raene-s-cleansing" },
             complete = QuestState(1023, "completed"),
@@ -373,6 +399,7 @@ ns:RegisterGuide({
             id = "accept-1024-raene-s-cleansing",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1024, "activeOrCompleted"),
             route = {
@@ -384,6 +411,7 @@ ns:RegisterGuide({
             id = "accept-1025-an-aggressive-defense",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 18 } },
             text = "Accept An Aggressive Defense from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1025, "activeOrCompleted"),
             route = {
@@ -395,6 +423,7 @@ ns:RegisterGuide({
             id = "turnin-1008-the-zoram-strand",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 14 } },
             text = "Turn in The Zoram Strand to Shindrell Swiftfire in Astranaar.",
             dependsOn = { "objective-1008-the-zoram-strand" },
             complete = QuestState(1008, "completed"),
@@ -407,6 +436,7 @@ ns:RegisterGuide({
             id = "accept-1134-pridewings-of-stonetalon",
             kind = "accept",
             priority = 360,
+            conditions = { level = { min = 18 } },
             text = "Accept Pridewings of Stonetalon from Shindrell Swiftfire in Astranaar.",
             complete = QuestState(1134, "activeOrCompleted"),
             route = {
@@ -418,6 +448,7 @@ ns:RegisterGuide({
             id = "objective-1033-elune-s-tear",
             kind = "objective",
             priority = 380,
+            conditions = { level = { min = 20 } },
             text = "Find and retrieve Elune's Tear in Iris Lake.",
             dependsOn = { "accept-1033-elune-s-tear" },
             complete = QuestState(1033, "complete"),
@@ -432,6 +463,7 @@ ns:RegisterGuide({
             id = "turnin-1024-raene-s-cleansing",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Shael'dryn in Moonwell.",
             dependsOn = { "accept-1024-raene-s-cleansing" },
             complete = QuestState(1024, "completed"),
@@ -444,6 +476,7 @@ ns:RegisterGuide({
             id = "accept-1026-raene-s-cleansing",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Shael'dryn in Moonwell.",
             complete = QuestState(1026, "activeOrCompleted"),
             route = {
@@ -455,6 +488,7 @@ ns:RegisterGuide({
             id = "objective-1025-an-aggressive-defense",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 18 } },
             text = "Kill 1 Foulweald Den Watcher, 2 Foulweald Ursa, 10 Foulweald Totemic and 12 Foulweald Warrior which can be found in the camp.",
             dependsOn = { "accept-1025-an-aggressive-defense" },
             complete = QuestState(1025, "complete"),
@@ -467,6 +501,7 @@ ns:RegisterGuide({
             id = "turnin-1025-an-aggressive-defense",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 18 } },
             text = "Turn in An Aggressive Defense to Raene Wolfrunner in Astranaar.",
             dependsOn = { "objective-1025-an-aggressive-defense" },
             complete = QuestState(1025, "completed"),
@@ -479,6 +514,7 @@ ns:RegisterGuide({
             id = "turnin-1033-elune-s-tear",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 20 } },
             text = "Turn in Elune's Tear to Pelturas Whitemoon in Astranaar.",
             dependsOn = { "objective-1033-elune-s-tear" },
             complete = QuestState(1033, "completed"),
@@ -491,6 +527,7 @@ ns:RegisterGuide({
             id = "accept-1034-the-ruins-of-stardust",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 20 } },
             text = "Accept The Ruins of Stardust from Pelturas Whitemoon in Astranaar.",
             complete = QuestState(1034, "activeOrCompleted"),
             route = {
@@ -502,6 +539,7 @@ ns:RegisterGuide({
             id = "objective-1034-the-ruins-of-stardust",
             kind = "objective",
             priority = 480,
+            conditions = { level = { min = 20 } },
             text = "Collect 5 Handful of Stardust which are found in Stardust covered bushes which are in the Ruins of Stardust.",
             dependsOn = { "accept-1034-the-ruins-of-stardust" },
             complete = QuestState(1034, "complete"),

@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-595-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from First Mate Crazz in Booty Bay.",
             complete = QuestState(595, "activeOrCompleted"),
             route = {
@@ -56,6 +57,7 @@ ns:RegisterGuide({
             id = "accept-606-scaring-shaky",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 30 } },
             text = "Accept Scaring Shaky from \"Sea Wolf\" MacKinley in Booty Bay.",
             complete = QuestState(606, "activeOrCompleted"),
             route = {
@@ -67,6 +69,7 @@ ns:RegisterGuide({
             id = "accept-600-venture-company-mining",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 30 } },
             text = "Accept Venture Company Mining from Crank Fizzlebub in The Salty Sailor Tavern.",
             complete = QuestState(600, "activeOrCompleted"),
             route = {
@@ -80,6 +83,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1116, state = "completed" } },
                 },
             },
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-209-skullsplitter-tusks",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 37 } },
             text = "Accept Skullsplitter Tusks from Kebok in The Salty Sailor Tavern.",
             complete = QuestState(209, "activeOrCompleted"),
             route = {
@@ -117,6 +122,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 669, state = "completed" } },
                 },
             },
@@ -131,6 +137,7 @@ ns:RegisterGuide({
             id = "accept-601-water-elementals",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 32 } },
             text = "Accept Water Elementals from Baron Revilgaz in Booty Bay.",
             complete = QuestState(601, "activeOrCompleted"),
             route = {
@@ -142,6 +149,7 @@ ns:RegisterGuide({
             id = "objective-606-scaring-shaky",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 30 } },
             text = "Kill Elder Mistvale Gorilla and collect 5 Mistvale Giblets in Mistvale Valley.",
             dependsOn = { "accept-606-scaring-shaky" },
             complete = QuestState(606, "complete"),
@@ -154,6 +162,7 @@ ns:RegisterGuide({
             id = "objective-600-venture-company-mining",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 30 } },
             text = "Kill Venture Co. Surveyor or Venture Co. Strip Miner and collect 10 Singing Blue Crystal You can skip this for now if you find it too difficult.",
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
@@ -168,6 +177,7 @@ ns:RegisterGuide({
             id = "objective-196-raptor-mastery",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Jungle Stalker near Gurubashi Arena.",
             complete = QuestState(196, "complete"),
             route = {
@@ -179,6 +189,7 @@ ns:RegisterGuide({
             id = "objective-577-some-assembly-required",
             kind = "objective",
             priority = 170,
+            conditions = { level = { min = 31 } },
             text = "Kill Snapjaw Crocolisk and collect 5 Snapjaw Crocolisk Skin along the river.",
             complete = QuestState(577, "complete"),
             route = {
@@ -190,6 +201,7 @@ ns:RegisterGuide({
             id = "objective-209-skullsplitter-tusks",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 37 } },
             text = "Kill Trolls and collect 18 Skullsplitter Tusk in Ziata'jai Ruins and Ruins of Zul'Mamwe Stick to this area for the lower level trolls.",
             dependsOn = { "accept-209-skullsplitter-tusks" },
             complete = QuestState(209, "complete"),
@@ -204,6 +216,7 @@ ns:RegisterGuide({
             id = "objective-193-panther-mastery",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 28 } },
             text = "Kill Bhag'thera in Stranglethorn Vale He's stealth, level 40 elite and can be soloed.",
             complete = QuestState(193, "complete"),
             route = {
@@ -215,6 +228,7 @@ ns:RegisterGuide({
             id = "turnin-196-raptor-mastery",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 28 } },
             text = "Turn in Raptor Mastery to Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             dependsOn = { "objective-196-raptor-mastery" },
             complete = QuestState(196, "completed"),
@@ -227,6 +241,7 @@ ns:RegisterGuide({
             id = "accept-197-raptor-mastery",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 28 } },
             text = "Accept Raptor Mastery from Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             complete = QuestState(197, "activeOrCompleted"),
             route = {
@@ -238,6 +253,7 @@ ns:RegisterGuide({
             id = "turnin-193-panther-mastery",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 28 } },
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin in Nesingwary's Expedition.",
             dependsOn = { "objective-193-panther-mastery" },
             complete = QuestState(193, "completed"),
@@ -250,6 +266,7 @@ ns:RegisterGuide({
             id = "objective-601-water-elementals",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 32 } },
             text = "Kill Lesser Water Elemental and collect 6 Water Elemental Bracers in The Savage Coast.",
             dependsOn = { "accept-601-water-elementals" },
             complete = QuestState(601, "complete"),
@@ -264,6 +281,7 @@ ns:RegisterGuide({
             id = "turnin-209-skullsplitter-tusks",
             kind = "turnin",
             priority = 280,
+            conditions = { level = { min = 37 } },
             text = "Turn in Skullsplitter Tusks to Kebok in The Salty Sailor Tavern.",
             dependsOn = { "objective-209-skullsplitter-tusks" },
             complete = QuestState(209, "completed"),
@@ -276,6 +294,7 @@ ns:RegisterGuide({
             id = "turnin-601-water-elementals",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 32 } },
             text = "Turn in Water Elementals to Baron Revilgaz in Booty Bay.",
             dependsOn = { "objective-601-water-elementals" },
             complete = QuestState(601, "completed"),
@@ -288,6 +307,7 @@ ns:RegisterGuide({
             id = "turnin-577-some-assembly-required",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 31 } },
             text = "Turn in Some Assembly Required to Drizzlik in Booty Bay.",
             dependsOn = { "objective-577-some-assembly-required" },
             complete = QuestState(577, "completed"),
@@ -300,6 +320,7 @@ ns:RegisterGuide({
             id = "accept-628-excelsior",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 31 } },
             text = "Accept Excelsior from Drizzlik in Booty Bay.",
             complete = QuestState(628, "activeOrCompleted"),
             route = {
@@ -311,6 +332,7 @@ ns:RegisterGuide({
             id = "turnin-595-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers in Southern Savage Coast.",
             dependsOn = { "accept-595-the-bloodsail-buccaneers" },
             complete = QuestState(595, "completed"),
@@ -323,6 +345,7 @@ ns:RegisterGuide({
             id = "accept-597-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers in Southern Savage Coast.",
             complete = QuestState(597, "activeOrCompleted"),
             route = {
@@ -334,6 +357,7 @@ ns:RegisterGuide({
             id = "objective-600-venture-company-mining-2",
             kind = "objective",
             priority = 350,
+            conditions = { level = { min = 30 } },
             text = "Kill Venture Co. Surveyor or Venture Co. Strip Miner and collect 10 Singing Blue Crystal You can skip this for now if you find it too difficult.",
             dependsOn = { "accept-600-venture-company-mining" },
             complete = QuestState(600, "complete"),
@@ -348,6 +372,7 @@ ns:RegisterGuide({
             id = "turnin-606-scaring-shaky",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 30 } },
             text = "Turn in Scaring Shaky to \"Shaky\" Phillipe in Booty Bay.",
             dependsOn = { "objective-606-scaring-shaky" },
             complete = QuestState(606, "completed"),
@@ -360,6 +385,7 @@ ns:RegisterGuide({
             id = "accept-607-return-to-mackinley",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Accept Return to MacKinley from \"Shaky\" Phillipe in Booty Bay.",
             complete = QuestState(607, "activeOrCompleted"),
             route = {
@@ -371,6 +397,7 @@ ns:RegisterGuide({
             id = "turnin-597-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 390,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to First Mate Crazz in Booty Bay.",
             dependsOn = { "accept-597-the-bloodsail-buccaneers" },
             complete = QuestState(597, "completed"),
@@ -383,6 +410,7 @@ ns:RegisterGuide({
             id = "accept-599-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from First Mate Crazz in Booty Bay.",
             complete = QuestState(599, "activeOrCompleted"),
             route = {
@@ -394,6 +422,7 @@ ns:RegisterGuide({
             id = "turnin-607-return-to-mackinley",
             kind = "turnin",
             priority = 410,
+            conditions = { level = { min = 30 } },
             text = "Turn in Return to MacKinley to \"Sea Wolf\" MacKinley in Booty Bay.",
             dependsOn = { "accept-607-return-to-mackinley" },
             complete = QuestState(607, "completed"),
@@ -406,6 +435,7 @@ ns:RegisterGuide({
             id = "accept-587-up-to-snuff",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 37 } },
             text = "Accept Up to Snuff from Deeg in The Salty Sailor Tavern.",
             complete = QuestState(587, "activeOrCompleted"),
             route = {
@@ -417,6 +447,7 @@ ns:RegisterGuide({
             id = "turnin-599-the-bloodsail-buccaneers",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 37 } },
             text = "Turn in The Bloodsail Buccaneers to Fleet Master Seahorn in Booty Bay.",
             dependsOn = { "accept-599-the-bloodsail-buccaneers" },
             complete = QuestState(599, "completed"),
@@ -429,6 +460,7 @@ ns:RegisterGuide({
             id = "accept-604-the-bloodsail-buccaneers",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 37 } },
             text = "Accept The Bloodsail Buccaneers from Fleet Master Seahorn in Booty Bay.",
             complete = QuestState(604, "activeOrCompleted"),
             route = {
@@ -440,6 +472,7 @@ ns:RegisterGuide({
             id = "objective-628-excelsior",
             kind = "objective",
             priority = 460,
+            conditions = { level = { min = 31 } },
             text = "Kill a Elder Snapjaw Crocolisk and collect Elder Crocolisk Skin in The Savage Coast.",
             dependsOn = { "accept-628-excelsior" },
             complete = QuestState(628, "complete"),
@@ -456,6 +489,7 @@ ns:RegisterGuide({
             id = "accept-338-the-green-hills-of-stranglethorn",
             kind = "accept",
             priority = 480,
+            conditions = { level = { min = 30 } },
             text = "Accept The Green Hills of Stranglethorn from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(338, "activeOrCompleted"),
             route = {
@@ -467,6 +501,7 @@ ns:RegisterGuide({
             id = "accept-339-chapter-i",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter I from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(339, "activeOrCompleted"),
             route = {
@@ -478,6 +513,7 @@ ns:RegisterGuide({
             id = "accept-340-chapter-ii",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter II from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(340, "activeOrCompleted"),
             route = {
@@ -489,6 +525,7 @@ ns:RegisterGuide({
             id = "accept-341-chapter-iii",
             kind = "accept",
             priority = 510,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter III from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(341, "activeOrCompleted"),
             route = {
@@ -500,6 +537,7 @@ ns:RegisterGuide({
             id = "accept-342-chapter-iv",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter IV from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(342, "activeOrCompleted"),
             route = {
@@ -511,6 +549,7 @@ ns:RegisterGuide({
             id = "turnin-628-excelsior",
             kind = "turnin",
             priority = 540,
+            conditions = { level = { min = 31 } },
             text = "Turn in Excelsior to Drizzlik in Booty Bay.",
             dependsOn = { "objective-628-excelsior" },
             complete = QuestState(628, "completed"),
@@ -525,6 +564,7 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -542,6 +582,7 @@ ns:RegisterGuide({
             priority = 560,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -560,6 +601,7 @@ ns:RegisterGuide({
             priority = 570,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -577,6 +619,7 @@ ns:RegisterGuide({
             priority = 580,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },

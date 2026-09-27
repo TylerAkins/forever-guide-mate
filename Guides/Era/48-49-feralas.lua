@@ -48,6 +48,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 624, state = "completed" } },
                 },
             },
@@ -62,6 +63,7 @@ ns:RegisterGuide({
             id = "accept-3763-assisting-arch-druid-staghelm",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 47 } },
             text = "Accept Assisting Arch Druid Staghelm from Innkeeper Firebrew in Ironforge.",
             complete = QuestState(3763, "activeOrCompleted"),
             route = {
@@ -73,6 +75,7 @@ ns:RegisterGuide({
             id = "accept-4512-a-little-slime-goes-a-long-way",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 48 } },
             text = "Accept A Little Slime Goes a Long Way from Laris Geardawdle in The Library.",
             complete = QuestState(4512, "activeOrCompleted"),
             route = {
@@ -86,6 +89,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -100,6 +104,7 @@ ns:RegisterGuide({
             id = "accept-2821-the-mark-of-quality",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 40 } },
             text = "Accept The Mark of Quality from Pratt McGrubben in Feathermoon Stronghold.",
             complete = QuestState(2821, "activeOrCompleted"),
             route = {
@@ -111,6 +116,7 @@ ns:RegisterGuide({
             id = "objective-2821-the-mark-of-quality",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 40 } },
             text = "Kill Feral Scar Yeti and collect 10 Thick Yeti Hide in Feral Scar Vale.",
             dependsOn = { "accept-2821-the-mark-of-quality" },
             complete = QuestState(2821, "complete"),
@@ -123,6 +129,7 @@ ns:RegisterGuide({
             id = "turnin-2821-the-mark-of-quality",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 40 } },
             text = "Turn in The Mark of Quality to Pratt McGrubben in Feathermoon Stronghold.",
             dependsOn = { "objective-2821-the-mark-of-quality" },
             complete = QuestState(2821, "completed"),
@@ -135,6 +142,7 @@ ns:RegisterGuide({
             id = "accept-7733-improved-quality",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 40 } },
             text = "Accept Improved Quality from Pratt McGrubben in Feathermoon Stronghold.",
             complete = QuestState(7733, "activeOrCompleted"),
             route = {
@@ -148,6 +156,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -165,6 +174,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -179,6 +189,7 @@ ns:RegisterGuide({
             id = "accept-3445-the-sunken-temple",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 46 } },
             text = "Accept The Sunken Temple from Angelas Moonbreeze in Feathermoon Stronghold.",
             complete = QuestState(3445, "activeOrCompleted"),
             route = {
@@ -190,6 +201,7 @@ ns:RegisterGuide({
             id = "accept-7003-zapped-giants",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 45 } },
             text = "Accept Zapped Giants from Zorbin Fandazzle in The Forgotten Coast.",
             complete = QuestState(7003, "activeOrCompleted"),
             route = {
@@ -201,6 +213,7 @@ ns:RegisterGuide({
             id = "accept-7721-fuel-for-the-zapping",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 45 } },
             text = "Accept Fuel for the Zapping from Zorbin Fandazzle in The Forgotten Coast.",
             complete = QuestState(7721, "activeOrCompleted"),
             route = {
@@ -212,6 +225,7 @@ ns:RegisterGuide({
             id = "objective-7721-fuel-for-the-zapping",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 45 } },
             text = "Kill Sea Elemental and collect 10 Water Elemental Core in The Forgotten Coast.",
             dependsOn = { "accept-7721-fuel-for-the-zapping" },
             complete = QuestState(7721, "complete"),
@@ -224,6 +238,7 @@ ns:RegisterGuide({
             id = "turnin-7721-fuel-for-the-zapping",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 45 } },
             text = "Turn in Fuel for the Zapping to Zorbin Fandazzle in The Forgotten Coast.",
             dependsOn = { "objective-7721-fuel-for-the-zapping" },
             complete = QuestState(7721, "completed"),
@@ -236,6 +251,7 @@ ns:RegisterGuide({
             id = "objective-7733-improved-quality",
             kind = "objective",
             priority = 230,
+            conditions = { level = { min = 40 } },
             text = "Kill Rage Scar Yeti and collect 10 Feral Scar Yeti Hide in Rage Scar Hold.",
             dependsOn = { "accept-7733-improved-quality" },
             complete = QuestState(7733, "complete"),
@@ -248,6 +264,7 @@ ns:RegisterGuide({
             id = "objective-7735-rage-scar-yeti",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 40 } },
             text = "Kill Rage Scar Yeti until you collect Pristine Yeti Hide to start a new quest.",
             dependsOn = { "accept-7735-pristine-yeti-hide" },
             complete = QuestState(7735, "complete"),
@@ -260,6 +277,7 @@ ns:RegisterGuide({
             id = "accept-7735-pristine-yeti-hide",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 40 } },
             text = "Use the Pristine Yeti Hide to accept Pristine Yeti Hide.",
             complete = QuestState(7735, "activeOrCompleted"),
         },
@@ -267,6 +285,7 @@ ns:RegisterGuide({
             id = "accept-2844-the-giant-guardian",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 44 } },
             text = "Accept The Giant Guardian from Rockbiter in The Twin Colossals.",
             complete = QuestState(2844, "activeOrCompleted"),
             route = {
@@ -278,6 +297,7 @@ ns:RegisterGuide({
             id = "objective-7003-zapped-giants",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 45 } },
             text = "Use Zorbin's Ultra-Shrinker on Land Walker or Cliff Giant to turn them into non elites, kill them and collect 15 Miniaturization Residue in The Twin Colossals.",
             dependsOn = { "accept-7003-zapped-giants" },
             complete = QuestState(7003, "complete"),
@@ -292,6 +312,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -309,6 +330,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -326,6 +348,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -340,6 +363,7 @@ ns:RegisterGuide({
             id = "turnin-2844-the-giant-guardian",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 44 } },
             text = "Turn in The Giant Guardian to Shay Leafrunner in Ruins of Ravenwind.",
             dependsOn = { "accept-2844-the-giant-guardian" },
             complete = QuestState(2844, "completed"),
@@ -352,6 +376,7 @@ ns:RegisterGuide({
             id = "accept-2845-wandering-shay",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 44 } },
             text = "Accept Wandering Shay from Shay Leafrunner in Ruins of Ravenwind.",
             complete = QuestState(2845, "activeOrCompleted"),
             route = {
@@ -363,6 +388,7 @@ ns:RegisterGuide({
             id = "objective-2845-wandering-shay",
             kind = "objective",
             priority = 340,
+            conditions = { level = { min = 44 } },
             text = "Take Shay Leafrunner to Rockbiter's camp, use the Shay's Bell to get her to follow you.",
             dependsOn = { "accept-2845-wandering-shay" },
             complete = QuestState(2845, "complete"),
@@ -375,6 +401,7 @@ ns:RegisterGuide({
             id = "turnin-2845-wandering-shay",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 44 } },
             text = "Turn in Wandering Shay to Rockbiter in The Twin Colossals.",
             dependsOn = { "objective-2845-wandering-shay" },
             complete = QuestState(2845, "completed"),
@@ -387,6 +414,7 @@ ns:RegisterGuide({
             id = "turnin-7003-zapped-giants",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 45 } },
             text = "Turn in Zapped Giants to Zorbin Fandazzle in The Forgotten Coast.",
             dependsOn = { "objective-7003-zapped-giants" },
             complete = QuestState(7003, "completed"),
@@ -399,6 +427,7 @@ ns:RegisterGuide({
             id = "accept-3841-an-orphan-looking-for-a-home",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 38 } },
             text = "Accept An Orphan Looking For a Home from Kindal Moonweaver.",
             complete = QuestState(3841, "activeOrCompleted"),
             route = {
@@ -412,6 +441,7 @@ ns:RegisterGuide({
             id = "objective-2741-hippogryph-egg",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 42 } },
             text = "Collect Hippogryph Egg in Ruins of Isildien.",
             complete = QuestState(2741, "complete"),
             route = {
@@ -425,6 +455,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 2766, state = "completed" } },
                 },
             },
@@ -441,6 +472,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 2766, state = "completed" } },
                 },
             },
@@ -462,6 +494,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 42 } },
                     { quest = { id = 2944, state = "completed" } },
                 },
             },
@@ -477,6 +510,7 @@ ns:RegisterGuide({
             id = "turnin-7733-improved-quality",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 40 } },
             text = "Turn in Improved Quality to Pratt McGrubben in Feathermoon Stronghold.",
             dependsOn = { "objective-7733-improved-quality" },
             complete = QuestState(7733, "completed"),
@@ -489,6 +523,7 @@ ns:RegisterGuide({
             id = "turnin-7735-pristine-yeti-hide",
             kind = "turnin",
             priority = 470,
+            conditions = { level = { min = 40 } },
             text = "Turn in Pristine Yeti Hide to Pratt McGrubben in Feathermoon Stronghold.",
             dependsOn = { "objective-7735-rage-scar-yeti" },
             complete = QuestState(7735, "completed"),

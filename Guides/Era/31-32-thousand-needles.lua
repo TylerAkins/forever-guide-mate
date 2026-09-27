@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-1145-the-swarm-grows",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 29 } },
             text = "Accept The Swarm Grows from Korran in The Crossroads.",
             complete = QuestState(1145, "activeOrCompleted"),
             route = {
@@ -58,6 +59,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -72,6 +74,7 @@ ns:RegisterGuide({
             id = "accept-1175-a-bump-in-the-road",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 28 } },
             text = "Accept A Bump in the Road from Trackmaster Zherin in Mirage Raceway.",
             complete = QuestState(1175, "activeOrCompleted"),
             route = {
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-1105-hardened-shells",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 28 } },
             text = "Accept Hardened Shells from Wizzle Brassbolts in Mirage Raceway.",
             complete = QuestState(1105, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-1176-load-lightening",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 29 } },
             text = "Accept Load Lightening from Pozzik in Mirage Raceway.",
             complete = QuestState(1176, "activeOrCompleted"),
             route = {
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "accept-1110-rocket-car-parts",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 28 } },
             text = "Accept Rocket Car Parts from Kravel Koalbeard in Mirage Raceway.",
             complete = QuestState(1110, "activeOrCompleted"),
             route = {
@@ -116,6 +122,7 @@ ns:RegisterGuide({
             id = "accept-1104-salt-flat-venom",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 28 } },
             text = "Accept Salt Flat Venom from Fizzle Brassbolts in Mirage Raceway.",
             complete = QuestState(1104, "activeOrCompleted"),
             route = {
@@ -127,6 +134,7 @@ ns:RegisterGuide({
             id = "objective-1104-salt-flat-venom",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 28 } },
             text = "Kill Scorpid Reaver and Scorpid Terror in The Shimmering Flats for 6 Salty Scorpid Venom.",
             dependsOn = { "accept-1104-salt-flat-venom" },
             complete = QuestState(1104, "complete"),
@@ -139,6 +147,7 @@ ns:RegisterGuide({
             id = "objective-1105-hardened-shells",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 28 } },
             text = "Kill Sparkleshell Tortoise, Sparkleshell Snapper and Sparkleshell Borer in The Shimmering Flats for 9 Hardened Tortoise Shell.",
             dependsOn = { "accept-1105-hardened-shells" },
             complete = QuestState(1105, "complete"),
@@ -151,6 +160,7 @@ ns:RegisterGuide({
             id = "objective-1176-load-lightening",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 29 } },
             text = "Kill Salt Flats Scavenger and Salt Flats Vulture for 10 Hollow Vulture Bone in The Shimmering Flats.",
             dependsOn = { "accept-1176-load-lightening" },
             complete = QuestState(1176, "complete"),
@@ -163,6 +173,7 @@ ns:RegisterGuide({
             id = "objective-1175-a-bump-in-the-road",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 28 } },
             text = "Kill the required Saltstone crocs, Saltstone Gazer are found bottom part of the map and Saltstone Basilisk are found top of the map.",
             dependsOn = { "accept-1175-a-bump-in-the-road" },
             complete = QuestState(1175, "complete"),
@@ -179,6 +190,7 @@ ns:RegisterGuide({
             id = "objective-1110-rocket-car-parts",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 28 } },
             text = "Collect 30 Rocket Car Parts through out The Shimmering Flats.",
             dependsOn = { "accept-1110-rocket-car-parts" },
             complete = QuestState(1110, "complete"),
@@ -201,6 +213,7 @@ ns:RegisterGuide({
             id = "turnin-1110-rocket-car-parts",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 28 } },
             text = "Turn in Rocket Car Parts to Kravel Koalbeard in Mirage Raceway.",
             dependsOn = { "objective-1110-rocket-car-parts" },
             complete = QuestState(1110, "completed"),
@@ -213,6 +226,7 @@ ns:RegisterGuide({
             id = "accept-1111-wharfmaster-dizzywig",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 30 } },
             text = "Accept Wharfmaster Dizzywig from Kravel Koalbeard in Mirage Raceway.",
             complete = QuestState(1111, "activeOrCompleted"),
             route = {
@@ -224,6 +238,7 @@ ns:RegisterGuide({
             id = "accept-5762-hemet-nesingwary",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 28 } },
             text = "Accept Hemet Nesingwary from Kravel Koalbeard in Mirage Raceway.",
             complete = QuestState(5762, "activeOrCompleted"),
             route = {
@@ -235,6 +250,7 @@ ns:RegisterGuide({
             id = "turnin-1104-salt-flat-venom",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 28 } },
             text = "Turn in Salt Flat Venom to Fizzle Brassbolts in Mirage Raceway.",
             dependsOn = { "objective-1104-salt-flat-venom" },
             complete = QuestState(1104, "completed"),
@@ -247,6 +263,7 @@ ns:RegisterGuide({
             id = "turnin-1105-hardened-shells",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 28 } },
             text = "Turn in Hardened Shells to Wizzle Brassbolts in Mirage Raceway.",
             dependsOn = { "objective-1105-hardened-shells" },
             complete = QuestState(1105, "completed"),
@@ -259,6 +276,7 @@ ns:RegisterGuide({
             id = "turnin-1176-load-lightening",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 29 } },
             text = "Turn in Load Lightening to Pozzik in Mirage Raceway.",
             dependsOn = { "objective-1176-load-lightening" },
             complete = QuestState(1176, "completed"),
@@ -271,6 +289,7 @@ ns:RegisterGuide({
             id = "accept-1178-goblin-sponsorship",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 29 } },
             text = "Accept Goblin Sponsorship from Pozzik in Mirage Raceway.",
             complete = QuestState(1178, "activeOrCompleted"),
             route = {
@@ -282,6 +301,7 @@ ns:RegisterGuide({
             id = "turnin-1175-a-bump-in-the-road",
             kind = "turnin",
             priority = 230,
+            conditions = { level = { min = 28 } },
             text = "Turn in A Bump in the Road to Trackmaster Zherin in Mirage Raceway.",
             dependsOn = { "objective-1175-a-bump-in-the-road" },
             complete = QuestState(1175, "completed"),
@@ -294,6 +314,7 @@ ns:RegisterGuide({
             id = "accept-1106-martek-the-exiled",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 26 } },
             text = "Accept Martek the Exiled from Fizzle Brassbolts in Mirage Raceway.",
             complete = QuestState(1106, "activeOrCompleted"),
             route = {
@@ -305,6 +326,7 @@ ns:RegisterGuide({
             id = "accept-1107-encrusted-tail-fins",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 28 } },
             text = "Accept Encrusted Tail Fins from Wizzle Brassbolts in Mirage Raceway.",
             complete = QuestState(1107, "activeOrCompleted"),
             route = {

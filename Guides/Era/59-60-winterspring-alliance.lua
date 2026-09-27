@@ -50,6 +50,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6844, state = "completed" } },
                 },
             },
@@ -66,6 +67,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6844, state = "completed" } },
                 },
             },
@@ -83,6 +85,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6845, state = "completed" } },
                 },
             },
@@ -99,6 +102,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -115,6 +119,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -138,6 +143,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                 },
             },
@@ -154,6 +160,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -178,6 +185,7 @@ ns:RegisterGuide({
             id = "accept-4970-frostsaber-provisions",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 58 } },
             text = "Accept Frostsaber Provisions from Rivern Frostwind in Frostsaber Rock.",
             complete = QuestState(4970, "activeOrCompleted"),
             route = {
@@ -191,6 +199,7 @@ ns:RegisterGuide({
             id = "objective-4970-frostsaber-provisions",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 58 } },
             text = "Kill Elder Shardtooth and Chillwind Ravager and collect 5 Shardtooth Meat and 5 Chillwind Meat near Frostsaber Rock.",
             dependsOn = { "accept-4970-frostsaber-provisions" },
             complete = QuestState(4970, "complete"),
@@ -205,6 +214,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                 },
             },
@@ -220,6 +230,7 @@ ns:RegisterGuide({
             id = "turnin-4970-frostsaber-provisions",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 58 } },
             text = "Turn in Frostsaber Provisions to Rivern Frostwind in Frostsaber Rock.",
             dependsOn = { "objective-4970-frostsaber-provisions" },
             complete = QuestState(4970, "completed"),
@@ -234,6 +245,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                 },
             },
@@ -251,6 +263,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4809, state = "completed" } },
                 },
             },
@@ -267,6 +280,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 979, state = "completed" } },
                 },
             },
@@ -283,6 +297,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 979, state = "completed" } },
                 },
             },
@@ -302,6 +317,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -333,6 +349,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -350,6 +367,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -366,6 +384,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -383,6 +402,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -400,6 +420,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -416,6 +437,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -433,6 +455,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -450,6 +473,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -462,6 +486,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -479,6 +504,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -495,6 +521,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -512,6 +539,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 979, state = "completed" } },
                 },
             },
@@ -529,6 +557,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 979, state = "completed" } },
                 },
             },
@@ -545,6 +574,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 979, state = "completed" } },
                 },
             },
@@ -562,6 +592,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4809, state = "completed" } },
                 },
             },

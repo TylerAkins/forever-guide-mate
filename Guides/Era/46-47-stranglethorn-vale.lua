@@ -47,6 +47,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -71,6 +72,7 @@ ns:RegisterGuide({
             id = "accept-587-up-to-snuff",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 37 } },
             text = "Accept Up to Snuff from Deeg in The Salty Sailor Tavern.",
             complete = QuestState(587, "activeOrCompleted"),
             route = {
@@ -82,6 +84,7 @@ ns:RegisterGuide({
             id = "accept-614-the-captain-s-chest",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 35 } },
             text = "Accept The Captain's Chest from Captain Hecklebury Smotts in Booty Bay.",
             complete = QuestState(614, "activeOrCompleted"),
             route = {
@@ -95,6 +98,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 604, state = "completed" } },
                 },
             },
@@ -111,6 +115,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -126,6 +131,7 @@ ns:RegisterGuide({
             id = "objective-614-the-captain-s-chest",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 35 } },
             text = "Kill Gorlash and collect Smotts' Chest in The Crystal Shore Gorlash is a level 47 Elite and you might need help to kill him otherwise it is safe to skip.",
             dependsOn = { "accept-614-the-captain-s-chest" },
             complete = QuestState(614, "complete"),
@@ -142,6 +148,7 @@ ns:RegisterGuide({
             id = "objective-594-carefully-folded-note",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 45 } },
             text = "Look for a Half Burried Bottle (green) along the beach and check it for Carefully Folded Note to start quest.",
             dependsOn = { "accept-594-message-in-a-bottle" },
             complete = QuestState(594, "activeOrCompleted"),
@@ -158,6 +165,7 @@ ns:RegisterGuide({
             id = "accept-594-message-in-a-bottle",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 45 } },
             text = "Use the Carefully Folded Note to accept Message in a Bottle.",
             complete = QuestState(594, "activeOrCompleted"),
         },
@@ -165,6 +173,7 @@ ns:RegisterGuide({
             id = "turnin-594-message-in-a-bottle",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 45 } },
             text = "Turn in Message in a Bottle to Crank Fizzlebub in Jaguero Isle.",
             dependsOn = { "objective-594-carefully-folded-note" },
             complete = QuestState(594, "completed"),
@@ -177,6 +186,7 @@ ns:RegisterGuide({
             id = "accept-630-message-in-a-bottle",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 45 } },
             text = "Accept Message in a Bottle from Princess Poobah in Jaguero Isle.",
             complete = QuestState(630, "activeOrCompleted"),
             route = {
@@ -188,6 +198,7 @@ ns:RegisterGuide({
             id = "objective-630-message-in-a-bottle",
             kind = "objective",
             priority = 160,
+            conditions = { level = { min = 45 } },
             text = "Kill King Mukla and collect Shackle Key in Jaguero Isle This is a group quest and hard to solo, safe to skip.",
             dependsOn = { "accept-630-message-in-a-bottle" },
             complete = QuestState(630, "complete"),
@@ -202,6 +213,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 604, state = "completed" } },
                 },
             },
@@ -219,6 +231,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 604, state = "completed" } },
                 },
             },
@@ -238,6 +251,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 604, state = "completed" } },
                 },
             },
@@ -255,6 +269,7 @@ ns:RegisterGuide({
             id = "objective-624-cortello-s-riddle",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 35 } },
             text = "Check the bottom floor of each ship for Cortello's Riddle or in the captain's room, it can spawn in one of the three ship.",
             complete = QuestState(624, "complete"),
             route = {
@@ -266,6 +281,7 @@ ns:RegisterGuide({
             id = "objective-587-up-to-snuff",
             kind = "objective",
             priority = 210,
+            conditions = { level = { min = 37 } },
             text = "Collect 15 Snuff from any pirates in Wild Shore.",
             dependsOn = { "accept-587-up-to-snuff" },
             complete = QuestState(587, "complete"),
@@ -280,6 +296,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -297,6 +314,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -311,6 +329,7 @@ ns:RegisterGuide({
             id = "turnin-587-up-to-snuff",
             kind = "turnin",
             priority = 250,
+            conditions = { level = { min = 37 } },
             text = "Turn in Up to Snuff to Deeg in The Salty Sailor Tavern.",
             dependsOn = { "objective-587-up-to-snuff" },
             complete = QuestState(587, "completed"),
@@ -325,6 +344,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 604, state = "completed" } },
                 },
             },
@@ -340,6 +360,7 @@ ns:RegisterGuide({
             id = "turnin-614-the-captain-s-chest",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 35 } },
             text = "Turn in The Captain's Chest to Captain Hecklebury Smotts in Booty Bay.",
             dependsOn = { "objective-614-the-captain-s-chest" },
             complete = QuestState(614, "completed"),
@@ -354,6 +375,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 348, state = "notCompleted" } },
                 },
             },
@@ -368,6 +390,7 @@ ns:RegisterGuide({
             id = "accept-580-whiskey-slim-s-lost-grog",
             kind = "accept",
             priority = 290,
+            conditions = { level = { min = 40 } },
             text = "Accept Whiskey Slim's Lost Grog from Whiskey Slim in The Salty Sailor Tavern.",
             complete = QuestState(580, "activeOrCompleted"),
             route = {
@@ -381,6 +404,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 348, state = "notCompleted" } },
                 },
             },
@@ -398,6 +422,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 348, state = "notCompleted" } },
                 },
             },
@@ -415,6 +440,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -432,6 +458,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -448,6 +475,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -465,6 +493,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 197, state = "completed" } },
                 },
             },
@@ -480,6 +509,7 @@ ns:RegisterGuide({
             id = "accept-338-the-green-hills-of-stranglethorn",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Accept The Green Hills of Stranglethorn from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(338, "activeOrCompleted"),
             route = {
@@ -491,6 +521,7 @@ ns:RegisterGuide({
             id = "accept-339-chapter-i",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter I from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(339, "activeOrCompleted"),
             route = {
@@ -502,6 +533,7 @@ ns:RegisterGuide({
             id = "accept-340-chapter-ii",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter II from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(340, "activeOrCompleted"),
             route = {
@@ -513,6 +545,7 @@ ns:RegisterGuide({
             id = "accept-341-chapter-iii",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter III from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(341, "activeOrCompleted"),
             route = {
@@ -524,6 +557,7 @@ ns:RegisterGuide({
             id = "accept-342-chapter-iv",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 30 } },
             text = "Accept Chapter IV from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(342, "activeOrCompleted"),
             route = {
@@ -537,6 +571,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 32 } },
                     { quest = { id = 603, state = "completed" } },
                 },
             },
@@ -554,6 +589,7 @@ ns:RegisterGuide({
             priority = 450,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 348, state = "notCompleted" } },
                 },
             },

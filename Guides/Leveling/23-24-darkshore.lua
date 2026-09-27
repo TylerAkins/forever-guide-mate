@@ -57,6 +57,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 15 } },
                     { quest = { id = 731, state = "completed" } },
                 },
             },
@@ -73,6 +74,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                 },
             },
@@ -89,6 +91,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 950, state = "completed" } },
                 },
             },
@@ -105,7 +108,7 @@ ns:RegisterGuide({
             priority = 51,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },
@@ -126,7 +129,7 @@ ns:RegisterGuide({
             priority = 165,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 15 } },
                     { quest = { id = 87760, state = "activeOrCompleted" } },
                 },
             },
@@ -141,6 +144,7 @@ ns:RegisterGuide({
             id = "accept-2098-gyromast-s-retrieval",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 14 } },
             text = "Accept Gyromast's Retrieval from Gelkak Gyromast in Mist's Edge.",
             complete = QuestState(2098, "activeOrCompleted"),
             route = {
@@ -152,6 +156,7 @@ ns:RegisterGuide({
             id = "objective-2098-3-raging-reef-crawler",
             kind = "objective",
             priority = 80,
+            conditions = { level = { min = 14 } },
             text = "Kill Raging Reef Crawler until you collect Bottom of Gelkak's Key in Mist's Edge.",
             dependsOn = { "accept-2098-gyromast-s-retrieval" },
             complete = QuestObjective(2098, 3),
@@ -164,6 +169,7 @@ ns:RegisterGuide({
             id = "objective-2098-2-greymist-tidehunter",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 14 } },
             text = "Kill Greymist Tidehunter until you collect Middle of Gelkak's Key in Mist's Edge.",
             dependsOn = { "accept-2098-gyromast-s-retrieval" },
             complete = QuestObjective(2098, 2),
@@ -176,6 +182,7 @@ ns:RegisterGuide({
             id = "objective-2098-1-giant-foreststrider",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 14 } },
             text = "Kill Giant Foreststrider until you collect Top of Gelkak's Key in Mist's Edge.",
             dependsOn = { "accept-2098-gyromast-s-retrieval" },
             complete = QuestObjective(2098, 1),
@@ -190,6 +197,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                 },
             },
@@ -205,6 +213,7 @@ ns:RegisterGuide({
             id = "turnin-2098-gyromast-s-retrieval",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 14 } },
             text = "Turn in Gyromast's Retrieval to Gelkak Gyromast in Mist's Edge.",
             dependsOn = { "objective-2098-3-raging-reef-crawler", "objective-2098-2-greymist-tidehunter", "objective-2098-1-giant-foreststrider" },
             complete = QuestState(2098, "completed"),
@@ -217,6 +226,7 @@ ns:RegisterGuide({
             id = "accept-2078-gyromast-s-revenge",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 14 } },
             text = "Accept Gyromast's Revenge from Gelkak Gyromast in Mist's Edge.",
             complete = QuestState(2078, "activeOrCompleted"),
             route = {
@@ -228,6 +238,7 @@ ns:RegisterGuide({
             id = "objective-2078-gyromast-s-revenge",
             kind = "objective",
             priority = 140,
+            conditions = { level = { min = 14 } },
             text = "Speak to The Threshwackonator 4100 and bring it back to the quest giver in Mist's Edge The Threshwackonator 4100 will turn hostile as soon as you reach Gelkak Gyromast, be ready to use all your cooldowns as it can be difficult to solo.",
             dependsOn = { "accept-2078-gyromast-s-revenge" },
             complete = QuestState(2078, "complete"),
@@ -240,6 +251,7 @@ ns:RegisterGuide({
             id = "turnin-2078-gyromast-s-revenge",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 14 } },
             text = "Turn in Gyromast's Revenge to Gelkak Gyromast in Mist's Edge.",
             dependsOn = { "objective-2078-gyromast-s-revenge" },
             complete = QuestState(2078, "completed"),
@@ -254,6 +266,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                 },
             },
@@ -271,6 +284,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                 },
             },
@@ -287,6 +301,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 950, state = "completed" } },
                 },
             },
@@ -304,7 +319,7 @@ ns:RegisterGuide({
             priority = 201,
             conditions = {
                 all = {
-                    { level = { min = 20 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },
@@ -321,6 +336,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                 },
             },
@@ -349,7 +365,7 @@ ns:RegisterGuide({
             priority = 231,
             conditions = {
                 all = {
-                    { level = { min = 21 } },
+                    { level = { min = 17 } },
                     { quest = { id = 98028, state = "activeOrCompleted" } },
                 },
             },
@@ -366,6 +382,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 995, state = "activeOrCompleted" } } },
                 },
@@ -383,6 +400,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 995, state = "activeOrCompleted" } } },
                 },
@@ -401,6 +419,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 994, state = "activeOrCompleted" } } },
                 },
@@ -418,6 +437,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 994, state = "activeOrCompleted" } } },
                 },
@@ -436,6 +456,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 994, state = "activeOrCompleted" } } },
                 },
@@ -454,6 +475,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 985, state = "completed" } },
                     { ["not"] = { quest = { id = 995, state = "activeOrCompleted" } } },
                 },
@@ -472,6 +494,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 15 } },
                     { quest = { id = 731, state = "completed" } },
                 },
             },
@@ -489,6 +512,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 15 } },
                     { quest = { id = 731, state = "completed" } },
                 },
             },

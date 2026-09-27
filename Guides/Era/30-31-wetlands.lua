@@ -48,6 +48,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -64,6 +65,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -80,6 +82,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -97,6 +100,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -113,6 +117,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -130,6 +135,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 1 },
                 },
             },
@@ -147,6 +153,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -164,6 +171,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -180,6 +188,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -197,6 +206,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -213,6 +223,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -230,6 +241,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -247,6 +259,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -263,6 +276,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -280,6 +294,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -297,6 +312,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -313,6 +329,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -330,6 +347,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { class = 9 },
                 },
             },
@@ -355,6 +373,7 @@ ns:RegisterGuide({
             id = "accept-288-the-third-fleet",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 22 } },
             text = "Accept The Third Fleet from First Mate Fitzsimmons in Menethil Harbor.",
             complete = QuestState(288, "activeOrCompleted"),
             route = {
@@ -366,6 +385,7 @@ ns:RegisterGuide({
             id = "objective-288-flagon-of-dwarven-mead",
             kind = "objective",
             priority = 230,
+            conditions = { level = { min = 22 } },
             text = "Buy Flagon of Dwarven Mead from Innkeeper Helbrek in Deepwater Tavern.",
             dependsOn = { "accept-288-the-third-fleet" },
             complete = QuestState(288, "complete"),
@@ -378,6 +398,7 @@ ns:RegisterGuide({
             id = "turnin-288-the-third-fleet",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 22 } },
             text = "Turn in The Third Fleet to First Mate Fitzsimmons in Menethil Harbor.",
             dependsOn = { "objective-288-flagon-of-dwarven-mead" },
             complete = QuestState(288, "completed"),
@@ -390,6 +411,7 @@ ns:RegisterGuide({
             id = "accept-289-the-cursed-crew",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 22 } },
             text = "Accept The Cursed Crew from First Mate Fitzsimmons in Menethil Harbor.",
             complete = QuestState(289, "activeOrCompleted"),
             route = {
@@ -401,6 +423,7 @@ ns:RegisterGuide({
             id = "objective-289-3-first-mate-snellig",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 22 } },
             text = "Collect Snellig's Snuffbox in The Lost Fleet.",
             dependsOn = { "accept-289-the-cursed-crew" },
             complete = QuestObjective(289, 3),
@@ -413,6 +436,7 @@ ns:RegisterGuide({
             id = "objective-289-the-cursed-crew",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 22 } },
             text = "Kill 13 Cursed Sailor and 5 Cursed Marine which are found around the shipwreck.",
             dependsOn = { "accept-289-the-cursed-crew" },
             complete = QuestState(289, "complete"),
@@ -427,6 +451,7 @@ ns:RegisterGuide({
             id = "turnin-289-the-cursed-crew",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 22 } },
             text = "Turn in The Cursed Crew to First Mate Fitzsimmons in Menethil Harbor.",
             dependsOn = { "objective-289-3-first-mate-snellig", "objective-289-the-cursed-crew" },
             complete = QuestState(289, "completed"),
@@ -439,6 +464,7 @@ ns:RegisterGuide({
             id = "accept-290-lifting-the-curse",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 22 } },
             text = "Accept Lifting the Curse from First Mate Fitzsimmons in Menethil Harbor.",
             complete = QuestState(290, "activeOrCompleted"),
             route = {
@@ -450,6 +476,7 @@ ns:RegisterGuide({
             id = "objective-290-lifting-the-curse",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 22 } },
             text = "Kill Captain Halyndor for the Intrepid Strongbox Key. Walk up the rudder on the top floor to reach him.",
             dependsOn = { "accept-290-lifting-the-curse" },
             complete = QuestState(290, "complete"),
@@ -462,6 +489,7 @@ ns:RegisterGuide({
             id = "turnin-290-lifting-the-curse",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 22 } },
             text = "Turn in Lifting the Curse.",
             dependsOn = { "objective-290-lifting-the-curse" },
             complete = QuestState(290, "completed"),
@@ -474,6 +502,7 @@ ns:RegisterGuide({
             id = "accept-292-the-eye-of-paleth",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 22 } },
             text = "Accept The Eye of Paleth.",
             complete = QuestState(292, "activeOrCompleted"),
             route = {
@@ -487,6 +516,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 23 } },
                     { quest = { id = 465, state = "completed" } },
                 },
             },
@@ -503,6 +533,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 23 } },
                     { quest = { id = 465, state = "completed" } },
                 },
             },
@@ -518,6 +549,7 @@ ns:RegisterGuide({
             id = "turnin-292-the-eye-of-paleth",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 22 } },
             text = "Turn in The Eye of Paleth to Glorin Steelbrow in Deepwater Tavern.",
             dependsOn = { "accept-292-the-eye-of-paleth" },
             complete = QuestState(292, "completed"),
@@ -530,6 +562,7 @@ ns:RegisterGuide({
             id = "accept-293-cleansing-the-eye",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 22 } },
             text = "Accept Cleansing the Eye from Glorin Steelbrow in Deepwater Tavern.",
             complete = QuestState(293, "activeOrCompleted"),
             route = {
@@ -543,6 +576,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 23 } },
                     { quest = { id = 465, state = "completed" } },
                 },
             },

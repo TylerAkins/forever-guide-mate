@@ -49,6 +49,7 @@ ns:RegisterGuide({
             id = "accept-1145-the-swarm-grows",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 29 } },
             text = "Accept The Swarm Grows from Korran in The Crossroads.",
             complete = QuestState(1145, "activeOrCompleted"),
             route = {
@@ -60,6 +61,7 @@ ns:RegisterGuide({
             id = "turnin-1145-the-swarm-grows",
             kind = "turnin",
             priority = 40,
+            conditions = { level = { min = 29 } },
             text = "Turn in The Swarm Grows to Belgrom Rockmaul in Valley of Honor.",
             dependsOn = { "accept-1145-the-swarm-grows" },
             complete = QuestState(1145, "completed"),
@@ -72,6 +74,7 @@ ns:RegisterGuide({
             id = "accept-1146-the-swarm-grows",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 29 } },
             text = "Accept The Swarm Grows from Belgrom Rockmaul in Valley of Honor.",
             complete = QuestState(1146, "activeOrCompleted"),
             route = {
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-1431-alliance-relations",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 30 } },
             text = "Accept Alliance Relations from Craven Drok in Cleft of Shadow.",
             complete = QuestState(1431, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "turnin-1431-alliance-relations",
             kind = "turnin",
             priority = 70,
+            conditions = { level = { min = 30 } },
             text = "Turn in Alliance Relations to Keldran in Orgrimmar.",
             dependsOn = { "accept-1431-alliance-relations" },
             complete = QuestState(1431, "completed"),
@@ -106,6 +111,7 @@ ns:RegisterGuide({
             id = "accept-1432-alliance-relations",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 30 } },
             text = "Accept Alliance Relations from Keldran in Orgrimmar.",
             complete = QuestState(1432, "activeOrCompleted"),
             route = {
@@ -119,6 +125,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -133,6 +140,7 @@ ns:RegisterGuide({
             id = "accept-5561-kodo-roundup",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 30 } },
             text = "Accept Kodo Roundup from Smeed Scrabblescrew in Scrabblescrew's Camp.",
             complete = QuestState(5561, "activeOrCompleted"),
             route = {
@@ -146,6 +154,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -163,6 +172,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -177,6 +187,7 @@ ns:RegisterGuide({
             id = "accept-1368-gelkis-alliance",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 30 } },
             text = "Accept Gelkis Alliance from Gurda Wildmane in Ghost Walker Post.",
             complete = QuestState(1368, "activeOrCompleted"),
             route = {
@@ -188,6 +199,7 @@ ns:RegisterGuide({
             id = "turnin-1432-alliance-relations",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 30 } },
             text = "Turn in Alliance Relations to Takata Steelblade in Ghost Walker Post.",
             dependsOn = { "accept-1432-alliance-relations" },
             complete = QuestState(1432, "completed"),
@@ -200,6 +212,7 @@ ns:RegisterGuide({
             id = "accept-1433-alliance-relations",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 30 } },
             text = "Accept Alliance Relations from Takata Steelblade in Ghost Walker Post.",
             complete = QuestState(1433, "activeOrCompleted"),
             route = {
@@ -211,6 +224,7 @@ ns:RegisterGuide({
             id = "turnin-1433-alliance-relations",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 30 } },
             text = "Turn in Alliance Relations to Maurin Bonesplitter in Ghost Walker Post.",
             dependsOn = { "accept-1433-alliance-relations" },
             complete = QuestState(1433, "completed"),
@@ -223,6 +237,7 @@ ns:RegisterGuide({
             id = "accept-1435-the-burning-of-spirits",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 25 } },
             text = "Accept The Burning of Spirits from Maurin Bonesplitter in Ghost Walker Post.",
             complete = QuestState(1435, "activeOrCompleted"),
             route = {
@@ -236,6 +251,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -251,6 +267,7 @@ ns:RegisterGuide({
             id = "objective-1368-gelkis-alliance",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 30 } },
             text = "Kill Magram centaurs until you gain friendly reputation status with Gelkis.",
             dependsOn = { "accept-1368-gelkis-alliance" },
             complete = QuestState(1368, "complete"),
@@ -263,6 +280,7 @@ ns:RegisterGuide({
             id = "objective-5561-kodo-roundup",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 30 } },
             text = "Use the Kodo Kombobulator on the Dying Kodo in the Graveyard and then escort them to Smeed Scrabblescrew.",
             dependsOn = { "accept-5561-kodo-roundup" },
             complete = QuestState(5561, "complete"),
@@ -277,6 +295,7 @@ ns:RegisterGuide({
             id = "turnin-5561-kodo-roundup",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 30 } },
             text = "Turn in Kodo Roundup to Smeed Scrabblescrew in Scrabblescrew's Camp.",
             dependsOn = { "objective-5561-kodo-roundup" },
             complete = QuestState(5561, "completed"),
@@ -291,6 +310,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -308,6 +328,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -322,6 +343,7 @@ ns:RegisterGuide({
             id = "turnin-1368-gelkis-alliance",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 30 } },
             text = "Turn in Gelkis Alliance to Uthek the Wise in Gelkis Village.",
             dependsOn = { "objective-1368-gelkis-alliance" },
             complete = QuestState(1368, "completed"),
@@ -334,6 +356,7 @@ ns:RegisterGuide({
             id = "accept-1370-stealing-supplies",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 30 } },
             text = "Accept Stealing Supplies from Uthek the Wise in Gelkis Village.",
             complete = QuestState(1370, "activeOrCompleted"),
             route = {
@@ -345,6 +368,7 @@ ns:RegisterGuide({
             id = "accept-5381-hand-of-iruxos",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 32 } },
             text = "Accept Hand of Iruxos from Taiga Wisemane in Shadowprey Village.",
             complete = QuestState(5381, "activeOrCompleted"),
             route = {
@@ -366,6 +390,7 @@ ns:RegisterGuide({
             id = "accept-6143-other-fish-to-fry",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 32 } },
             text = "Accept Other Fish to Fry from Drulzegar Skraghook in Shadowprey Village.",
             complete = QuestState(6143, "activeOrCompleted"),
             route = {
@@ -377,6 +402,7 @@ ns:RegisterGuide({
             id = "accept-6142-clam-bait",
             kind = "accept",
             priority = 360,
+            conditions = { level = { min = 31 } },
             text = "Accept Clam Bait from Mai'Lahii in Shadowprey Village.",
             complete = QuestState(6142, "activeOrCompleted"),
             route = {
@@ -388,6 +414,7 @@ ns:RegisterGuide({
             id = "turnin-5421-fish-in-a-bucket",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 25 } },
             text = "Turn in Fish in a Bucket to Jinar'Zillen in Shadowprey Village. This is an elite. Bring a group.",
             complete = QuestState(5421, "completed"),
             route = {
@@ -399,6 +426,7 @@ ns:RegisterGuide({
             id = "accept-6161-claim-rackmore-s-treasure",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Accept Claim Rackmore's Treasure! in Ethel Rethor.",
             complete = QuestState(6161, "activeOrCompleted"),
             route = {
@@ -410,6 +438,7 @@ ns:RegisterGuide({
             id = "accept-5741-sceptre-of-light",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 30 } },
             text = "Accept Sceptre of Light from Azore Aldamort in Ethel Rethor.",
             complete = QuestState(5741, "activeOrCompleted"),
             route = {
@@ -425,6 +454,7 @@ ns:RegisterGuide({
             id = "objective-5741-sceptre-of-light",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 30 } },
             text = "Go to the first watchtower on the left upon entering Thunder Axe Fortress. Work your way up, kill the Burning Blade Seer and take the Sceptre of Light.",
             dependsOn = { "accept-5741-sceptre-of-light" },
             complete = QuestState(5741, "complete"),
@@ -437,6 +467,7 @@ ns:RegisterGuide({
             id = "objective-5381-hand-of-iruxos",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 32 } },
             text = "Head into the biggest building in Thunder Axe Fortress. Clear the mainroom, use the Demon Pick on the Crystal in the center of the room. Kill the Demon Spirit that appears and collect the Demon Box.",
             dependsOn = { "accept-5381-hand-of-iruxos" },
             complete = QuestState(5381, "complete"),
@@ -449,6 +480,7 @@ ns:RegisterGuide({
             id = "objective-1435-the-burning-of-spirits",
             kind = "objective",
             priority = 460,
+            conditions = { level = { min = 25 } },
             text = "Use the Burning Gem on the humanoids after you damage them to get 10 Infused Burning Gem in the Thunder Axe Fortress.",
             dependsOn = { "accept-1435-the-burning-of-spirits" },
             complete = QuestState(1435, "complete"),
@@ -461,6 +493,7 @@ ns:RegisterGuide({
             id = "objective-1480-flayed-demon-skin-depricated",
             kind = "objective",
             priority = 470,
+            conditions = { level = { min = 25 } },
             text = "Kill Burning Blade enemies until you find Flayed Demon Skin [Depricated].",
             dependsOn = { "accept-1480-the-corrupter" },
             complete = QuestState(1480, "activeOrCompleted"),
@@ -473,6 +506,7 @@ ns:RegisterGuide({
             id = "accept-1480-the-corrupter",
             kind = "accept",
             priority = 480,
+            conditions = { level = { min = 25 } },
             text = "Use the Flayed Demon Skin [Depricated] to accept The Corrupter.",
             complete = QuestState(1480, "activeOrCompleted"),
         },
@@ -480,6 +514,7 @@ ns:RegisterGuide({
             id = "turnin-1435-the-burning-of-spirits",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Burning of Spirits to Maurin Bonesplitter in Ghost Walker Post.",
             dependsOn = { "objective-1435-the-burning-of-spirits" },
             complete = QuestState(1435, "completed"),
@@ -492,6 +527,7 @@ ns:RegisterGuide({
             id = "turnin-1480-the-corrupter",
             kind = "turnin",
             priority = 510,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Corrupter to Maurin Bonesplitter in Ghost Walker Post.",
             dependsOn = { "objective-1480-flayed-demon-skin-depricated" },
             complete = QuestState(1480, "completed"),
@@ -504,6 +540,7 @@ ns:RegisterGuide({
             id = "accept-1481-the-corrupter",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 25 } },
             text = "Accept The Corrupter from Maurin Bonesplitter in Ghost Walker Post.",
             complete = QuestState(1481, "activeOrCompleted"),
             route = {
@@ -515,6 +552,7 @@ ns:RegisterGuide({
             id = "accept-1434-befouled-by-satyr",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 25 } },
             text = "Accept Befouled by Satyr from Takata Steelblade in Ghost Walker Post.",
             complete = QuestState(1434, "activeOrCompleted"),
             route = {
@@ -526,6 +564,7 @@ ns:RegisterGuide({
             id = "accept-5386-catch-of-the-day",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 32 } },
             text = "Accept Catch of the Day from Nataka Longhorn in Ghost Walker Post.",
             complete = QuestState(5386, "activeOrCompleted"),
             route = {
@@ -537,6 +576,7 @@ ns:RegisterGuide({
             id = "objective-5386-catch-of-the-day",
             kind = "objective",
             priority = 550,
+            conditions = { level = { min = 32 } },
             text = "Collect 2 Bloodbelly Fish, you can get it from completing 'Fish in a Bucket' quest from Jinar'Zillen in Shadowprey Village.",
             dependsOn = { "accept-5386-catch-of-the-day" },
             complete = QuestState(5386, "complete"),
@@ -549,6 +589,7 @@ ns:RegisterGuide({
             id = "turnin-5386-catch-of-the-day",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 32 } },
             text = "Turn in Catch of the Day to Nataka Longhorn in Ghost Walker Post.",
             dependsOn = { "objective-5386-catch-of-the-day" },
             complete = QuestState(5386, "completed"),
@@ -561,6 +602,7 @@ ns:RegisterGuide({
             id = "objective-1481-the-corrupter",
             kind = "objective",
             priority = 580,
+            conditions = { level = { min = 25 } },
             text = "Kill Hatefury Shadowstalker to collect Shadowstalker Scalp Sargeron.",
             dependsOn = { "accept-1481-the-corrupter" },
             complete = QuestState(1481, "complete"),
@@ -573,6 +615,7 @@ ns:RegisterGuide({
             id = "objective-1434-befouled-by-satyr",
             kind = "objective",
             priority = 590,
+            conditions = { level = { min = 25 } },
             text = "Kill 7 Hatefury Rogue, 7 Hatefury Felsworn, 7 Hatefury Betrayer and 7 Hatefury Hellcaller at Sergeron.",
             dependsOn = { "accept-1434-befouled-by-satyr" },
             complete = QuestState(1434, "complete"),
@@ -587,6 +630,7 @@ ns:RegisterGuide({
             priority = 610,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 5501, state = "active" } },
                 },
             },
@@ -601,6 +645,7 @@ ns:RegisterGuide({
             id = "turnin-1434-befouled-by-satyr",
             kind = "turnin",
             priority = 630,
+            conditions = { level = { min = 25 } },
             text = "Turn in Befouled by Satyr to Takata Steelblade in Ghost Walker Post.",
             dependsOn = { "objective-1434-befouled-by-satyr" },
             complete = QuestState(1434, "completed"),
@@ -613,6 +658,7 @@ ns:RegisterGuide({
             id = "accept-1436-alliance-relations",
             kind = "accept",
             priority = 640,
+            conditions = { level = { min = 30 } },
             text = "Accept Alliance Relations from Takata Steelblade in Ghost Walker Post.",
             complete = QuestState(1436, "activeOrCompleted"),
             route = {
@@ -624,6 +670,7 @@ ns:RegisterGuide({
             id = "turnin-1481-the-corrupter",
             kind = "turnin",
             priority = 650,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Corrupter to Maurin Bonesplitter in Ghost Walker Post.",
             dependsOn = { "objective-1481-the-corrupter" },
             complete = QuestState(1481, "completed"),
@@ -636,6 +683,7 @@ ns:RegisterGuide({
             id = "accept-1482-the-corrupter",
             kind = "accept",
             priority = 660,
+            conditions = { level = { min = 25 } },
             text = "Accept The Corrupter from Maurin Bonesplitter in Ghost Walker Post.",
             complete = QuestState(1482, "activeOrCompleted"),
             route = {
@@ -647,6 +695,7 @@ ns:RegisterGuide({
             id = "turnin-5741-sceptre-of-light",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 30 } },
             text = "Turn in Sceptre of Light to Azore Aldamort in Ethel Rethor.",
             dependsOn = { "objective-5741-sceptre-of-light" },
             complete = QuestState(5741, "completed"),
@@ -659,6 +708,7 @@ ns:RegisterGuide({
             id = "accept-6027-book-of-the-ancients",
             kind = "accept",
             priority = 690,
+            conditions = { level = { min = 30 } },
             text = "Accept Book of the Ancients from Azore Aldamort in Ethel Rethor.",
             complete = QuestState(6027, "activeOrCompleted"),
             route = {
@@ -670,6 +720,7 @@ ns:RegisterGuide({
             id = "objective-6161-1-rackmore-s-golden-key",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 30 } },
             text = "Kill Slitherblade enemies until you find Rackmore's Golden Key in Sar'theris Strand.",
             dependsOn = { "accept-6161-claim-rackmore-s-treasure" },
             complete = QuestObjective(6161, 1),
@@ -682,6 +733,7 @@ ns:RegisterGuide({
             id = "objective-6161-2-rackmore-s-silver-key",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 30 } },
             text = "Kill Drysnap enemies until you find Rackmore's Silver Key in Ethel Rethor.",
             dependsOn = { "accept-6161-claim-rackmore-s-treasure" },
             complete = QuestObjective(6161, 2),
@@ -694,6 +746,7 @@ ns:RegisterGuide({
             id = "objective-6142-clam-bait",
             kind = "objective",
             priority = 730,
+            conditions = { level = { min = 31 } },
             text = "Collect 10 Soft-Shelled Clam Meat from Giant Softshell Clam in Sar'theris Strand.",
             dependsOn = { "accept-6142-clam-bait" },
             complete = QuestState(6142, "complete"),
@@ -706,6 +759,7 @@ ns:RegisterGuide({
             id = "objective-6027-book-of-the-ancients",
             kind = "objective",
             priority = 750,
+            conditions = { level = { min = 30 } },
             text = "Clear the area around the Serpent Statue , then interact with it and kill the Slitherblade Sea Witch that spawns and collect the Book of the Ancients in Ranazjar Isle.",
             dependsOn = { "accept-6027-book-of-the-ancients" },
             complete = QuestState(6027, "complete"),
@@ -718,6 +772,7 @@ ns:RegisterGuide({
             id = "turnin-6161-claim-rackmore-s-treasure",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 30 } },
             text = "Turn in Claim Rackmore's Treasure!",
             dependsOn = { "objective-6161-1-rackmore-s-golden-key", "objective-6161-2-rackmore-s-silver-key" },
             complete = QuestState(6161, "completed"),
@@ -730,6 +785,7 @@ ns:RegisterGuide({
             id = "objective-6143-other-fish-to-fry",
             kind = "objective",
             priority = 780,
+            conditions = { level = { min = 32 } },
             text = "Kill 7 Slitherblade Myrmidon, 7 Slitherblade Naga and 5 Slitherblade Sorceress in Sar'theris Strand.",
             dependsOn = { "accept-6143-other-fish-to-fry" },
             complete = QuestState(6143, "complete"),
@@ -742,6 +798,7 @@ ns:RegisterGuide({
             id = "objective-1482-the-corrupter",
             kind = "objective",
             priority = 790,
+            conditions = { level = { min = 25 } },
             text = "Collect an Oracle Crystal from a Slitherblade Oracle.",
             dependsOn = { "accept-1482-the-corrupter" },
             complete = QuestState(1482, "complete"),
@@ -754,6 +811,7 @@ ns:RegisterGuide({
             id = "turnin-6027-book-of-the-ancients",
             kind = "turnin",
             priority = 810,
+            conditions = { level = { min = 30 } },
             text = "Turn in Book of the Ancients to Azore Aldamort in Ethel Rethor.",
             dependsOn = { "objective-6027-book-of-the-ancients" },
             complete = QuestState(6027, "completed"),
@@ -766,6 +824,7 @@ ns:RegisterGuide({
             id = "turnin-1482-the-corrupter",
             kind = "turnin",
             priority = 830,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Corrupter to Maurin Bonesplitter in Ghost Walker Post.",
             dependsOn = { "objective-1482-the-corrupter" },
             complete = QuestState(1482, "completed"),
@@ -780,6 +839,7 @@ ns:RegisterGuide({
             id = "accept-1484-the-corrupter",
             kind = "accept",
             priority = 840,
+            conditions = { level = { min = 25 } },
             text = "Accept The Corrupter from Maurin Bonesplitter in Ghost Walker Post.",
             complete = QuestState(1484, "activeOrCompleted"),
             route = {
@@ -791,6 +851,7 @@ ns:RegisterGuide({
             id = "turnin-1484-the-corrupter",
             kind = "turnin",
             priority = 850,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Corrupter to Takata Steelblade.",
             dependsOn = { "accept-1484-the-corrupter" },
             complete = QuestState(1484, "completed"),
@@ -805,6 +866,7 @@ ns:RegisterGuide({
             priority = 870,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 5501, state = "active" } },
                 },
             },
@@ -820,6 +882,7 @@ ns:RegisterGuide({
             id = "objective-1370-stealing-supplies",
             kind = "objective",
             priority = 890,
+            conditions = { level = { min = 30 } },
             text = "Gather 6 bags of Crudely Dried Meat from the ground in the Magram Village.",
             dependsOn = { "accept-1370-stealing-supplies" },
             complete = QuestState(1370, "complete"),
@@ -838,6 +901,7 @@ ns:RegisterGuide({
             priority = 900,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -855,6 +919,7 @@ ns:RegisterGuide({
             priority = 920,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1361, state = "completed" } },
                 },
             },
@@ -872,6 +937,7 @@ ns:RegisterGuide({
             priority = 940,
             conditions = {
                 all = {
+                    { level = { min = 33 } },
                     { quest = { id = 5501, state = "active" } },
                 },
             },
@@ -887,6 +953,7 @@ ns:RegisterGuide({
             id = "turnin-5381-hand-of-iruxos",
             kind = "turnin",
             priority = 960,
+            conditions = { level = { min = 32 } },
             text = "Turn in Hand of Iruxos to Taiga Wisemane in Shadowprey Village.",
             dependsOn = { "objective-5381-hand-of-iruxos" },
             complete = QuestState(5381, "completed"),
@@ -899,6 +966,7 @@ ns:RegisterGuide({
             id = "turnin-1370-stealing-supplies",
             kind = "turnin",
             priority = 970,
+            conditions = { level = { min = 30 } },
             text = "Turn in Stealing Supplies to Uthek the Wise in Gelkis Village.",
             dependsOn = { "objective-1370-stealing-supplies" },
             complete = QuestState(1370, "completed"),
@@ -911,6 +979,7 @@ ns:RegisterGuide({
             id = "turnin-6143-other-fish-to-fry",
             kind = "turnin",
             priority = 980,
+            conditions = { level = { min = 32 } },
             text = "Turn in Other Fish to Fry to Drulzegar Skraghook in Shadowprey Village.",
             dependsOn = { "objective-6143-other-fish-to-fry" },
             complete = QuestState(6143, "completed"),
@@ -923,6 +992,7 @@ ns:RegisterGuide({
             id = "turnin-6142-clam-bait",
             kind = "turnin",
             priority = 990,
+            conditions = { level = { min = 31 } },
             text = "Turn in Clam Bait to Mai'Lahii in Shadowprey Village.",
             dependsOn = { "objective-6142-clam-bait" },
             complete = QuestState(6142, "completed"),
@@ -935,6 +1005,7 @@ ns:RegisterGuide({
             id = "accept-5763-hunting-in-stranglethorn",
             kind = "accept",
             priority = 1000,
+            conditions = { level = { min = 28 } },
             text = "Accept Hunting in Stranglethorn from Roon Wildmane in Shadowprey Village.",
             complete = QuestState(5763, "activeOrCompleted"),
             route = {
@@ -946,6 +1017,7 @@ ns:RegisterGuide({
             id = "accept-1268-suspicious-hoofprints",
             kind = "accept",
             priority = 1030,
+            conditions = { level = { min = 30 } },
             text = "Accept Suspicious Hoofprints in Shady Rest Inn.",
             complete = QuestState(1268, "activeOrCompleted"),
             route = {
@@ -957,6 +1029,7 @@ ns:RegisterGuide({
             id = "accept-1269-lieutenant-paval-reethe",
             kind = "accept",
             priority = 1040,
+            conditions = { level = { min = 30 } },
             text = "Accept Lieutenant Paval Reethe in Shady Rest Inn.",
             complete = QuestState(1269, "activeOrCompleted"),
             route = {
@@ -968,6 +1041,7 @@ ns:RegisterGuide({
             id = "accept-1251-the-black-shield",
             kind = "accept",
             priority = 1050,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield in Shady Rest Inn.",
             complete = QuestState(1251, "activeOrCompleted"),
             route = {
@@ -979,6 +1053,7 @@ ns:RegisterGuide({
             id = "turnin-1251-the-black-shield",
             kind = "turnin",
             priority = 1070,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Krog in Brackenwall Village.",
             dependsOn = { "accept-1251-the-black-shield" },
             complete = QuestState(1251, "completed"),
@@ -991,6 +1066,7 @@ ns:RegisterGuide({
             id = "accept-1321-the-black-shield",
             kind = "accept",
             priority = 1080,
+            conditions = { level = { min = 30 } },
             text = "Accept The Black Shield from Krog in Brackenwall Village.",
             complete = QuestState(1321, "activeOrCompleted"),
             route = {
@@ -1002,6 +1078,7 @@ ns:RegisterGuide({
             id = "turnin-1268-suspicious-hoofprints",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 30 } },
             text = "Turn in Suspicious Hoofprints to Krog in Brackenwall Village.",
             dependsOn = { "accept-1268-suspicious-hoofprints" },
             complete = QuestState(1268, "completed"),
@@ -1014,6 +1091,7 @@ ns:RegisterGuide({
             id = "turnin-1269-lieutenant-paval-reethe",
             kind = "turnin",
             priority = 1100,
+            conditions = { level = { min = 30 } },
             text = "Turn in Lieutenant Paval Reethe to Krog in Brackenwall Village.",
             dependsOn = { "accept-1269-lieutenant-paval-reethe" },
             complete = QuestState(1269, "completed"),
@@ -1026,6 +1104,7 @@ ns:RegisterGuide({
             id = "turnin-1321-the-black-shield",
             kind = "turnin",
             priority = 1110,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Black Shield to Do'gol in Brackenwall Village.",
             dependsOn = { "accept-1321-the-black-shield" },
             complete = QuestState(1321, "completed"),
@@ -1038,6 +1117,7 @@ ns:RegisterGuide({
             id = "turnin-1178-goblin-sponsorship",
             kind = "turnin",
             priority = 1130,
+            conditions = { level = { min = 29 } },
             text = "Turn in Goblin Sponsorship to Gazlowe in Ratchet.",
             complete = QuestState(1178, "completed"),
             route = {
@@ -1049,6 +1129,7 @@ ns:RegisterGuide({
             id = "accept-1180-goblin-sponsorship",
             kind = "accept",
             priority = 1140,
+            conditions = { level = { min = 29 } },
             text = "Accept Goblin Sponsorship from Gazlowe in Ratchet.",
             complete = QuestState(1180, "activeOrCompleted"),
             route = {
@@ -1062,6 +1143,7 @@ ns:RegisterGuide({
             priority = 1150,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1112, state = "completed" } },
                 },
             },

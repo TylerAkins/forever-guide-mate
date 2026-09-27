@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-690-malin-s-request",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 30 } },
             text = "Accept Malin's Request from Archmage Malin in Mage Quarter.",
             complete = QuestState(690, "activeOrCompleted"),
             route = {
@@ -56,6 +57,7 @@ ns:RegisterGuide({
             id = "accept-659-hints-of-a-new-plague",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 30 } },
             text = "Accept Hints of a New Plague? from Phin Odelic in Southshore.",
             complete = QuestState(659, "activeOrCompleted"),
             route = {
@@ -69,6 +71,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 690, state = "completed" } },
                 },
             },
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-642-the-princess-trapped",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 30 } },
             text = "Accept The Princess Trapped in Arathi Highlands.",
             complete = QuestState(642, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "objective-642-the-princess-trapped",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 30 } },
             text = "Kill Drywhisker Surveyor and collect 12 Mote of Myzrael in Drywhisker Gorge The quest turn in is inside the cave so keep working towards.",
             dependsOn = { "accept-642-the-princess-trapped" },
             complete = QuestState(642, "complete"),
@@ -110,6 +115,7 @@ ns:RegisterGuide({
             id = "turnin-642-the-princess-trapped",
             kind = "turnin",
             priority = 100,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Princess Trapped in Drywhisker Gorge.",
             dependsOn = { "objective-642-the-princess-trapped" },
             complete = QuestState(642, "completed"),
@@ -124,6 +130,7 @@ ns:RegisterGuide({
             id = "accept-651-stones-of-binding",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 30 } },
             text = "Accept Stones of Binding in Drywhisker Gorge.",
             complete = QuestState(651, "activeOrCompleted"),
             route = {
@@ -135,6 +142,7 @@ ns:RegisterGuide({
             id = "objective-651-2-cresting-key",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 30 } },
             text = "Collect Cresting Key from the stone in Circle of East Binding.",
             dependsOn = { "accept-651-stones-of-binding" },
             complete = QuestObjective(651, 2),
@@ -147,6 +155,7 @@ ns:RegisterGuide({
             id = "turnin-659-hints-of-a-new-plague",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 30 } },
             text = "Turn in Hints of a New Plague? to Quae in Go'Shek Farm.",
             dependsOn = { "accept-659-hints-of-a-new-plague" },
             complete = QuestState(659, "completed"),
@@ -159,6 +168,7 @@ ns:RegisterGuide({
             id = "accept-658-hints-of-a-new-plague",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 30 } },
             text = "Accept Hints of a New Plague? from Quae in Go'Shek Farm.",
             complete = QuestState(658, "activeOrCompleted"),
             route = {
@@ -172,6 +182,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 690, state = "completed" } },
                 },
             },
@@ -189,6 +200,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 690, state = "completed" } },
                 },
             },
@@ -204,6 +216,7 @@ ns:RegisterGuide({
             id = "objective-651-3-thundering-key",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 30 } },
             text = "Collect Thundering Key from the stone in Circle of Outer Binding.",
             dependsOn = { "accept-651-stones-of-binding" },
             complete = QuestObjective(651, 3),
@@ -218,6 +231,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 690, state = "completed" } },
                 },
             },
@@ -233,6 +247,7 @@ ns:RegisterGuide({
             id = "accept-693-wand-over-fist",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 30 } },
             text = "Accept Wand over Fist from Skuerto in Refuge Pointe.",
             complete = QuestState(693, "activeOrCompleted"),
             route = {
@@ -244,6 +259,7 @@ ns:RegisterGuide({
             id = "objective-651-1-burning-key",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 30 } },
             text = "Collect Burning Key from the stone in Circle of West Binding.",
             dependsOn = { "accept-651-stones-of-binding" },
             complete = QuestObjective(651, 1),
@@ -256,6 +272,7 @@ ns:RegisterGuide({
             id = "turnin-651-stones-of-binding",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 30 } },
             text = "Turn in Stones of Binding in Circle of Inner Binding.",
             dependsOn = { "objective-651-2-cresting-key", "objective-651-3-thundering-key", "objective-651-1-burning-key" },
             complete = QuestState(651, "completed"),
@@ -268,6 +285,7 @@ ns:RegisterGuide({
             id = "objective-693-wand-over-fist",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 30 } },
             text = "Kill Kor'gresh Coldrage and collect Trelane's Wand of Invocation in Boulderfist Hall.",
             dependsOn = { "accept-693-wand-over-fist" },
             complete = QuestState(693, "complete"),
@@ -280,6 +298,7 @@ ns:RegisterGuide({
             id = "accept-663-land-ho",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 35 } },
             text = "Accept Land Ho! from Lolo the Lookout in Faldir's Cove.",
             complete = QuestState(663, "activeOrCompleted"),
             route = {
@@ -291,6 +310,7 @@ ns:RegisterGuide({
             id = "turnin-663-land-ho",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 35 } },
             text = "Turn in Land Ho! to Shakes O'Breen in Faldir's Cove.",
             dependsOn = { "accept-663-land-ho" },
             complete = QuestState(663, "completed"),
@@ -303,6 +323,7 @@ ns:RegisterGuide({
             id = "accept-662-deep-sea-salvage",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 35 } },
             text = "Accept Deep Sea Salvage from First Mate Nilzlix in Faldir's Cove.",
             complete = QuestState(662, "activeOrCompleted"),
             route = {
@@ -314,6 +335,7 @@ ns:RegisterGuide({
             id = "accept-665-sunken-treasure",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 35 } },
             text = "Accept Sunken Treasure from Professor Phizzlethorpe in Faldir's Cove.",
             complete = QuestState(665, "activeOrCompleted"),
             route = {
@@ -325,6 +347,7 @@ ns:RegisterGuide({
             id = "accept-664-drowned-sorrows",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 35 } },
             text = "Accept Drowned Sorrows from Captain Steelgut in Faldir's Cove.",
             complete = QuestState(664, "activeOrCompleted"),
             route = {
@@ -336,6 +359,7 @@ ns:RegisterGuide({
             id = "objective-665-sunken-treasure",
             kind = "objective",
             priority = 360,
+            conditions = { level = { min = 35 } },
             text = "Escort Professor Phizzlethorpe to the cave and back in Faldir's Cove, this is a difficult quest, stay outside the cave and kill 2 level 40 Vengeful Surge Kill one Vengeful Surge at a time and let Professor Phizzlethorpe tank the other, he can take a decent amount of damage.",
             dependsOn = { "accept-665-sunken-treasure" },
             complete = QuestState(665, "complete"),
@@ -348,6 +372,7 @@ ns:RegisterGuide({
             id = "turnin-665-sunken-treasure",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 35 } },
             text = "Turn in Sunken Treasure to Doctor Draxlegauge in Faldir's Cove.",
             dependsOn = { "objective-665-sunken-treasure" },
             complete = QuestState(665, "completed"),
@@ -360,6 +385,7 @@ ns:RegisterGuide({
             id = "accept-666-sunken-treasure",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 35 } },
             text = "Accept Sunken Treasure from Doctor Draxlegauge in Faldir's Cove.",
             complete = QuestState(666, "activeOrCompleted"),
             route = {
@@ -371,6 +397,7 @@ ns:RegisterGuide({
             id = "objective-666-goggles-of-gem-hunting",
             kind = "objective",
             priority = 390,
+            conditions = { level = { min = 35 } },
             text = "Equip Goggles of Gem Hunting to help you find Elven Gem.",
             dependsOn = { "accept-666-sunken-treasure" },
             complete = QuestState(666, "complete"),
@@ -379,6 +406,7 @@ ns:RegisterGuide({
             id = "objective-662-1-maiden-s-folly-charts",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 35 } },
             text = "Collect Maiden's Folly Charts in The Drowned Reef Inside the cauldron on the second floor of the ship.",
             dependsOn = { "accept-662-deep-sea-salvage" },
             complete = QuestObjective(662, 1),
@@ -391,6 +419,7 @@ ns:RegisterGuide({
             id = "objective-662-2-maiden-s-folly-log",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 35 } },
             text = "Collect Maiden's Folly Log in The Drowned Reef Bottom of the ship.",
             dependsOn = { "accept-662-deep-sea-salvage" },
             complete = QuestObjective(662, 2),
@@ -403,6 +432,7 @@ ns:RegisterGuide({
             id = "objective-662-3-spirit-of-silverpine-charts",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 35 } },
             text = "Collect Spirit of Silverpine Charts in The Drowned Reef.",
             dependsOn = { "accept-662-deep-sea-salvage" },
             complete = QuestObjective(662, 3),
@@ -415,6 +445,7 @@ ns:RegisterGuide({
             id = "objective-662-4-spirit-of-silverpine-log",
             kind = "objective",
             priority = 430,
+            conditions = { level = { min = 35 } },
             text = "Collect Spirit of Silverpine Log in The Drowned Reef It is a book on the bottom of the ship.",
             dependsOn = { "accept-662-deep-sea-salvage" },
             complete = QuestObjective(662, 4),
@@ -427,6 +458,7 @@ ns:RegisterGuide({
             id = "objective-666-1-sunken-treasure",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 35 } },
             text = "Collect 10 Elven Gem from the stones underwater in The Drowned Reef.",
             dependsOn = { "accept-666-sunken-treasure" },
             complete = QuestObjective(666, 1),
@@ -439,6 +471,7 @@ ns:RegisterGuide({
             id = "objective-664-drowned-sorrows",
             kind = "objective",
             priority = 450,
+            conditions = { level = { min = 35 } },
             text = "Kill 10 Daggerspine Raider and 3 Daggerspine Sorceress in Faldir's Cove.",
             dependsOn = { "accept-664-drowned-sorrows" },
             complete = QuestState(664, "complete"),
@@ -451,6 +484,7 @@ ns:RegisterGuide({
             id = "turnin-662-deep-sea-salvage",
             kind = "turnin",
             priority = 470,
+            conditions = { level = { min = 35 } },
             text = "Turn in Deep Sea Salvage to First Mate Nilzlix in Faldir's Cove.",
             dependsOn = { "objective-662-1-maiden-s-folly-charts", "objective-662-2-maiden-s-folly-log", "objective-662-3-spirit-of-silverpine-charts", "objective-662-4-spirit-of-silverpine-log" },
             complete = QuestState(662, "completed"),
@@ -463,6 +497,7 @@ ns:RegisterGuide({
             id = "turnin-664-drowned-sorrows",
             kind = "turnin",
             priority = 480,
+            conditions = { level = { min = 35 } },
             text = "Turn in Drowned Sorrows to Captain Steelgut in Faldir's Cove.",
             dependsOn = { "objective-664-drowned-sorrows" },
             complete = QuestState(664, "completed"),
@@ -475,6 +510,7 @@ ns:RegisterGuide({
             id = "turnin-666-sunken-treasure",
             kind = "turnin",
             priority = 490,
+            conditions = { level = { min = 35 } },
             text = "Turn in Sunken Treasure to Doctor Draxlegauge in Faldir's Cove.",
             dependsOn = { "objective-666-goggles-of-gem-hunting", "objective-666-1-sunken-treasure" },
             complete = QuestState(666, "completed"),
@@ -487,6 +523,7 @@ ns:RegisterGuide({
             id = "accept-668-sunken-treasure",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 35 } },
             text = "Accept Sunken Treasure from Doctor Draxlegauge in Faldir's Cove.",
             complete = QuestState(668, "activeOrCompleted"),
             route = {
@@ -498,6 +535,7 @@ ns:RegisterGuide({
             id = "turnin-668-sunken-treasure",
             kind = "turnin",
             priority = 510,
+            conditions = { level = { min = 35 } },
             text = "Turn in Sunken Treasure to Shakes O'Breen in Faldir's Cove.",
             dependsOn = { "accept-668-sunken-treasure" },
             complete = QuestState(668, "completed"),
@@ -510,6 +548,7 @@ ns:RegisterGuide({
             id = "accept-669-sunken-treasure",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 35 } },
             text = "Accept Sunken Treasure from Shakes O'Breen in Faldir's Cove.",
             complete = QuestState(669, "activeOrCompleted"),
             route = {
@@ -521,6 +560,7 @@ ns:RegisterGuide({
             id = "turnin-693-wand-over-fist",
             kind = "turnin",
             priority = 540,
+            conditions = { level = { min = 30 } },
             text = "Turn in Wand over Fist to Skuerto in Refuge Pointe.",
             dependsOn = { "objective-693-wand-over-fist" },
             complete = QuestState(693, "completed"),
@@ -533,6 +573,7 @@ ns:RegisterGuide({
             id = "objective-658-hints-of-a-new-plague",
             kind = "objective",
             priority = 550,
+            conditions = { level = { min = 30 } },
             text = "Kill Forsaken Courier for Sealed Folder, she patrols on the main road between Go'Shek Farm and Hillsbrad Foothills You can skip the rest of the guide if you can't find her.",
             dependsOn = { "accept-658-hints-of-a-new-plague" },
             complete = QuestState(658, "complete"),
@@ -555,6 +596,7 @@ ns:RegisterGuide({
             id = "turnin-658-hints-of-a-new-plague",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 30 } },
             text = "Turn in Hints of a New Plague? to Quae in Go'Shek Farm.",
             dependsOn = { "objective-658-hints-of-a-new-plague" },
             complete = QuestState(658, "completed"),
@@ -569,6 +611,7 @@ ns:RegisterGuide({
             priority = 570,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -585,6 +628,7 @@ ns:RegisterGuide({
             priority = 580,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -602,6 +646,7 @@ ns:RegisterGuide({
             priority = 590,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -618,6 +663,7 @@ ns:RegisterGuide({
             priority = 600,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -635,6 +681,7 @@ ns:RegisterGuide({
             priority = 610,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -652,6 +699,7 @@ ns:RegisterGuide({
             priority = 620,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },
@@ -668,6 +716,7 @@ ns:RegisterGuide({
             priority = 640,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 658, state = "completed" } },
                 },
             },

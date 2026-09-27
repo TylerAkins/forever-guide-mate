@@ -52,6 +52,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -68,6 +69,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -84,6 +86,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -100,6 +103,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -116,6 +120,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -133,6 +138,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -149,6 +155,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -166,6 +173,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -183,6 +191,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -199,6 +208,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -216,6 +226,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                 },
             },
@@ -233,6 +244,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -251,6 +263,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -269,6 +282,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -282,6 +296,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -300,6 +315,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -317,6 +333,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -339,6 +356,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -356,6 +374,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -374,6 +393,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -392,6 +412,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -409,6 +430,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 2 },
                     { quest = { id = 1649, state = "completed" } },
                 },
@@ -425,6 +447,7 @@ ns:RegisterGuide({
             id = "accept-4740-wanted-murkdeep",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 15 } },
             text = "Accept WANTED: Murkdeep! in Auberdine.",
             complete = QuestState(4740, "activeOrCompleted"),
             route = {
@@ -436,6 +459,7 @@ ns:RegisterGuide({
             id = "accept-984-how-big-a-threat",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 10 } },
             text = "Accept How Big a Threat? from Terenthis in Auberdine.",
             complete = QuestState(984, "activeOrCompleted"),
             route = {
@@ -447,6 +471,7 @@ ns:RegisterGuide({
             id = "accept-729-the-absent-minded-prospector",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 15 } },
             text = "Accept The Absent Minded Prospector from Archaeologist Hollee in Auberdine.",
             complete = QuestState(729, "activeOrCompleted"),
             route = {
@@ -458,6 +483,7 @@ ns:RegisterGuide({
             id = "objective-984-how-big-a-threat",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 10 } },
             text = "Find a corrupt furbolg camp in Darkshore, you just need to reach the waypoint to complete the quest.",
             dependsOn = { "accept-984-how-big-a-threat" },
             complete = QuestState(984, "complete"),
@@ -470,6 +496,7 @@ ns:RegisterGuide({
             id = "turnin-984-how-big-a-threat",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 10 } },
             text = "Turn in How Big a Threat? to Terenthis in Auberdine.",
             dependsOn = { "objective-984-how-big-a-threat" },
             complete = QuestState(984, "completed"),
@@ -482,6 +509,7 @@ ns:RegisterGuide({
             id = "accept-985-how-big-a-threat",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 10 } },
             text = "Accept How Big a Threat? from Terenthis in Auberdine.",
             complete = QuestState(985, "activeOrCompleted"),
             route = {
@@ -493,6 +521,7 @@ ns:RegisterGuide({
             id = "accept-947-cave-mushrooms",
             kind = "accept",
             priority = 320,
+            conditions = { level = { min = 12 } },
             text = "Accept Cave Mushrooms from Barithras Moonshade in Auberdine.",
             complete = QuestState(947, "activeOrCompleted"),
             route = {
@@ -504,6 +533,7 @@ ns:RegisterGuide({
             id = "objective-947-cave-mushrooms",
             kind = "objective",
             priority = 330,
+            conditions = { level = { min = 12 } },
             text = "Follow the path to the cave guarded by Naga's and collect 5 Scaber Stalk and 1 Death Cap from the ground inside the cave.",
             dependsOn = { "accept-947-cave-mushrooms" },
             complete = QuestState(947, "complete"),
@@ -522,6 +552,7 @@ ns:RegisterGuide({
             id = "objective-985-how-big-a-threat",
             kind = "objective",
             priority = 340,
+            conditions = { level = { min = 10 } },
             text = "Kill 8 Blackwood Pathfinder and 5 Blackwood Windtalker in the furbolg camp.",
             dependsOn = { "accept-985-how-big-a-threat" },
             complete = QuestState(985, "complete"),
@@ -536,6 +567,7 @@ ns:RegisterGuide({
             id = "turnin-947-cave-mushrooms",
             kind = "turnin",
             priority = 350,
+            conditions = { level = { min = 12 } },
             text = "Turn in Cave Mushrooms to Barithras Moonshade in Auberdine.",
             dependsOn = { "objective-947-cave-mushrooms" },
             complete = QuestState(947, "completed"),
@@ -548,6 +580,7 @@ ns:RegisterGuide({
             id = "turnin-985-how-big-a-threat",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 10 } },
             text = "Turn in How Big a Threat? to Terenthis in Auberdine.",
             dependsOn = { "objective-985-how-big-a-threat" },
             complete = QuestState(985, "completed"),
@@ -560,6 +593,7 @@ ns:RegisterGuide({
             id = "accept-948-onu",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 12 } },
             text = "Accept Onu from Barithras Moonshade in Auberdine.",
             complete = QuestState(948, "activeOrCompleted"),
             route = {
@@ -571,6 +605,7 @@ ns:RegisterGuide({
             id = "accept-986-a-lost-master",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 10 } },
             text = "Accept A Lost Master from Terenthis in Auberdine.",
             complete = QuestState(986, "activeOrCompleted"),
             route = {
@@ -582,6 +617,7 @@ ns:RegisterGuide({
             id = "turnin-948-onu",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 12 } },
             text = "Turn in Onu to Onu in Grove of the Ancients.",
             dependsOn = { "accept-948-onu" },
             complete = QuestState(948, "completed"),
@@ -594,6 +630,7 @@ ns:RegisterGuide({
             id = "accept-944-the-master-s-glaive",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 12 } },
             text = "Accept The Master's Glaive from Onu in Grove of the Ancients.",
             complete = QuestState(944, "activeOrCompleted"),
             route = {
@@ -605,6 +642,7 @@ ns:RegisterGuide({
             id = "objective-944-the-master-s-glaive",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 12 } },
             text = "Travel south from the Grove of Ancients into The Master's Glaive until you've completed the quest. A Twilight Disciple or Thug may drop a Peerless Eye. Use it if one does.",
             dependsOn = { "accept-944-the-master-s-glaive" },
             complete = QuestState(944, "complete"),
@@ -617,6 +655,7 @@ ns:RegisterGuide({
             id = "turnin-944-the-master-s-glaive",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 12 } },
             text = "Turn in The Master's Glaive in The Master's Glaive.",
             dependsOn = { "objective-944-the-master-s-glaive" },
             complete = QuestState(944, "completed"),
@@ -629,6 +668,7 @@ ns:RegisterGuide({
             id = "accept-949-the-twilight-camp",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 12 } },
             text = "Use the Phial of Scrying to accept The Twilight Camp.",
             complete = QuestState(949, "activeOrCompleted"),
             route = {
@@ -640,6 +680,7 @@ ns:RegisterGuide({
             id = "turnin-949-the-twilight-camp",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 12 } },
             text = "Turn in The Twilight Camp in The Master's Glaive.",
             dependsOn = { "accept-949-the-twilight-camp" },
             complete = QuestState(949, "completed"),
@@ -652,6 +693,7 @@ ns:RegisterGuide({
             id = "accept-950-return-to-onu",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 12 } },
             text = "Accept Return to Onu in The Master's Glaive.",
             complete = QuestState(950, "activeOrCompleted"),
             route = {
@@ -663,6 +705,7 @@ ns:RegisterGuide({
             id = "accept-945-therylune-s-escape",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 10 } },
             text = "Accept Therylune's Escape from Therylune in The Master's Glaive.",
             complete = QuestState(945, "activeOrCompleted"),
             route = {
@@ -674,6 +717,7 @@ ns:RegisterGuide({
             id = "objective-945-therylune-s-escape",
             kind = "objective",
             priority = 480,
+            conditions = { level = { min = 10 } },
             text = "Escort Therylune until she escapes.",
             dependsOn = { "accept-945-therylune-s-escape" },
             complete = QuestState(945, "complete"),
@@ -686,6 +730,7 @@ ns:RegisterGuide({
             id = "turnin-729-the-absent-minded-prospector",
             kind = "turnin",
             priority = 490,
+            conditions = { level = { min = 15 } },
             text = "Turn in The Absent Minded Prospector to Prospector Remtravel in Remtravel's Excavation.",
             dependsOn = { "accept-729-the-absent-minded-prospector" },
             complete = QuestState(729, "completed"),
@@ -698,6 +743,7 @@ ns:RegisterGuide({
             id = "accept-731-the-absent-minded-prospector",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 15 } },
             text = "Accept The Absent Minded Prospector from Prospector Remtravel in Remtravel's Excavation.",
             complete = QuestState(731, "activeOrCompleted"),
             route = {
@@ -709,6 +755,7 @@ ns:RegisterGuide({
             id = "objective-731-the-absent-minded-prospector",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 15 } },
             text = "Protect Prospector Remtravel as he searches for the mysterious fossil This can be quite difficult to solo, try to clear the mobs in the area before accepting the quest. You can redo the quest if you fail but you need to wait about 5 mins for the quest giver to respawn.",
             dependsOn = { "accept-731-the-absent-minded-prospector" },
             complete = QuestState(731, "complete"),
@@ -721,6 +768,7 @@ ns:RegisterGuide({
             id = "objective-4740-wanted-murkdeep",
             kind = "objective",
             priority = 520,
+            conditions = { level = { min = 15 } },
             text = "Kill murlocs around the area and Murkdeep will eventually appear, kill him complete the quest.",
             dependsOn = { "accept-4740-wanted-murkdeep" },
             complete = QuestState(4740, "complete"),
@@ -735,6 +783,7 @@ ns:RegisterGuide({
             priority = 530,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 4681, state = "completed" } },
                 },
             },
@@ -751,6 +800,7 @@ ns:RegisterGuide({
             priority = 540,
             conditions = {
                 all = {
+                    { level = { min = 12 } },
                     { quest = { id = 4681, state = "completed" } },
                 },
             },
@@ -766,6 +816,7 @@ ns:RegisterGuide({
             id = "turnin-731-the-absent-minded-prospector",
             kind = "turnin",
             priority = 550,
+            conditions = { level = { min = 15 } },
             text = "Turn in The Absent Minded Prospector to Archaeologist Hollee in Auberdine.",
             dependsOn = { "objective-731-the-absent-minded-prospector" },
             complete = QuestState(731, "completed"),
@@ -778,6 +829,7 @@ ns:RegisterGuide({
             id = "turnin-4740-wanted-murkdeep",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 15 } },
             text = "Turn in WANTED: Murkdeep! to Sentinel Glynda Nal'Shea in Auberdine.",
             dependsOn = { "objective-4740-wanted-murkdeep" },
             complete = QuestState(4740, "completed"),
@@ -792,7 +844,7 @@ ns:RegisterGuide({
             priority = 565,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98042, state = "activeOrCompleted" } },
                 },
             },
@@ -807,6 +859,7 @@ ns:RegisterGuide({
             id = "turnin-950-return-to-onu",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 12 } },
             text = "Turn in Return to Onu to Onu in Grove of the Ancients.",
             dependsOn = { "accept-950-return-to-onu" },
             complete = QuestState(950, "completed"),
@@ -819,6 +872,7 @@ ns:RegisterGuide({
             id = "accept-951-mathystra-relics",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 12 } },
             text = "Accept Mathystra Relics from Onu in Grove of the Ancients.",
             complete = QuestState(951, "activeOrCompleted"),
             route = {
@@ -830,7 +884,7 @@ ns:RegisterGuide({
             id = "accept-98013-swelling-forces",
             kind = "accept",
             priority = 591,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 12 } },
             text = "Accept Swelling Forces from Arbal at the Grove of the Ancients.",
             complete = QuestState(98013, "activeOrCompleted"),
             route = {
@@ -842,6 +896,7 @@ ns:RegisterGuide({
             id = "accept-5321-the-sleeper-has-awakened",
             kind = "accept",
             priority = 600,
+            conditions = { level = { min = 17 } },
             text = "Accept The Sleeper Has Awakened from Kerlonian Evershade in Grove of the Ancients.",
             complete = QuestState(5321, "activeOrCompleted"),
             route = {
@@ -853,6 +908,7 @@ ns:RegisterGuide({
             id = "objective-5321-1-horn-of-awakening",
             kind = "objective",
             priority = 610,
+            conditions = { level = { min = 17 } },
             text = "Collect Horn of Awakening from the chest next to Kerlonian Evershade in Grove of the Ancients.",
             dependsOn = { "accept-5321-the-sleeper-has-awakened" },
             complete = QuestObjective(5321, 1),
@@ -865,6 +921,7 @@ ns:RegisterGuide({
             id = "accept-5713-one-shot-one-kill",
             kind = "accept",
             priority = 620,
+            conditions = { level = { min = 10 } },
             text = "Accept One Shot. One Kill. from Sentinel Aynasha in Dark Shore.",
             complete = QuestState(5713, "activeOrCompleted"),
             route = {
@@ -876,6 +933,7 @@ ns:RegisterGuide({
             id = "objective-5713-one-shot-one-kill",
             kind = "objective",
             priority = 630,
+            conditions = { level = { min = 10 } },
             text = "Protect Sentinel Aynasha until the quest is complete.",
             dependsOn = { "accept-5713-one-shot-one-kill" },
             complete = QuestState(5713, "complete"),
@@ -888,6 +946,7 @@ ns:RegisterGuide({
             id = "objective-5321-the-sleeper-has-awakened",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 17 } },
             text = "Escort Kerlonian Evershade to Maestra's Post Avoid the main road so you don't get ambushed by 4 mobs.",
             dependsOn = { "accept-5321-the-sleeper-has-awakened" },
             complete = QuestState(5321, "complete"),
@@ -902,6 +961,7 @@ ns:RegisterGuide({
             id = "turnin-5321-the-sleeper-has-awakened",
             kind = "turnin",
             priority = 650,
+            conditions = { level = { min = 17 } },
             text = "Turn in The Sleeper Has Awakened to Liladris Moonriver in Maestra's Post.",
             dependsOn = { "objective-5321-1-horn-of-awakening", "objective-5321-the-sleeper-has-awakened" },
             complete = QuestState(5321, "completed"),
@@ -916,7 +976,7 @@ ns:RegisterGuide({
             priority = 651,
             conditions = {
                 all = {
-                    { level = { min = 21 } },
+                    { level = { min = 17 } },
                     { quest = { id = 98028, state = "activeOrCompleted" } },
                 },
             },
