@@ -6,6 +6,7 @@ local _, ns = ...
 -- Exploring the Alliance and Welcome to Azeroth are Skyborne. Stormwind quests above level 12 stay out.
 -- The Northshire book chain continues only if a kobold drops the Nibbled-On Book.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including Relics of the Light, Thrice Stolen, Stolen Power, The Lost Rune, A Hunter's Strength, and the Divine Grace steps the database could not place.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {
@@ -258,6 +259,39 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4891, 0.4160, "Marshal McBride",
                     "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "accept-92479-a-scribbled-letter",
+            kind = "accept",
+            priority = 161,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 1 },
+                },
+            },
+            text = "Accept A Scribbled Letter from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(92479, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4880, 0.4160, "Marshal McBride", "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "turnin-92479-a-scribbled-letter",
+            kind = "turnin",
+            priority = 161.01,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 1 },
+                },
+            },
+            text = "Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
+            dependsOn = { "accept-92479-a-scribbled-letter" },
+            complete = QuestState(92479, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.5120, 0.4080, "Tordrin Sternblade", "Travel to Tordrin Sternblade."),
             },
         },
         {
@@ -2370,6 +2404,285 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ELWYNN, 0.4328, 0.6622, "Zaldimar Wefhellt",
                     "Travel to Zaldimar Wefhellt."),
+            },
+        },
+        {
+            id = "accept-94774-divine-grace",
+            kind = "accept",
+            priority = 1310,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Divine Grace from Priestess Josetta in Goldshire.",
+            complete = QuestState(94774, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4340, 0.6560, "Priestess Josetta", "Travel to Priestess Josetta."),
+            },
+        },
+        {
+            id = "turnin-94774-divine-grace",
+            kind = "turnin",
+            priority = 1310.01,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Divine Grace to High Priestess Laurena in the Cathedral of Light.",
+            dependsOn = { "accept-94774-divine-grace" },
+            complete = QuestState(94774, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.3880, 0.2640, "High Priestess Laurena", "Travel to High Priestess Laurena."),
+            },
+        },
+        {
+            id = "accept-94773-divine-grace-laurena",
+            kind = "accept",
+            priority = 1310.1,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Divine Grace from High Priestess Laurena in the Cathedral of Light.",
+            dependsOn = { "turnin-94774-divine-grace" },
+            complete = QuestState(94773, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.3880, 0.2640, "High Priestess Laurena", "Travel to High Priestess Laurena."),
+            },
+        },
+        {
+            id = "objective-94773-divine-grace-laurena",
+            kind = "objective",
+            priority = 1310.11,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Complete Divine Grace for High Priestess Laurena. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94773-divine-grace-laurena" },
+            useClientPin = true,
+            complete = QuestState(94773, "complete"),
+            route = {
+                Point(MAP.STORMWIND, 0.3880, 0.2640, "High Priestess Laurena", "Travel to High Priestess Laurena."),
+            },
+        },
+        {
+            id = "turnin-94773-divine-grace-laurena",
+            kind = "turnin",
+            priority = 1310.12,
+            conditions = {
+                all = {
+                    { race = 1 },
+                    { class = 5 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Divine Grace to High Priestess Laurena in the Cathedral of Light.",
+            dependsOn = { "objective-94773-divine-grace-laurena" },
+            complete = QuestState(94773, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.3880, 0.2640, "High Priestess Laurena", "Travel to High Priestess Laurena."),
+            },
+        },
+        {
+            id = "accept-94792-taming-the-beast",
+            kind = "accept",
+            priority = 1310.2,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Josephine Carson in Goldshire.",
+            complete = QuestState(94792, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "objective-94792-taming-the-beast",
+            kind = "objective",
+            priority = 1310.21,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Tame the beast Josephine Carson names. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94792-taming-the-beast" },
+            useClientPin = true,
+            complete = QuestState(94792, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "turnin-94792-taming-the-beast",
+            kind = "turnin",
+            priority = 1310.22,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
+            dependsOn = { "objective-94792-taming-the-beast" },
+            complete = QuestState(94792, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "accept-94863-taming-the-beast-2",
+            kind = "accept",
+            priority = 1310.3,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Josephine Carson in Goldshire.",
+            dependsOn = { "turnin-94792-taming-the-beast" },
+            complete = QuestState(94863, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "objective-94863-taming-the-beast-2",
+            kind = "objective",
+            priority = 1310.31,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Tame the beast Josephine Carson names. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94863-taming-the-beast-2" },
+            useClientPin = true,
+            complete = QuestState(94863, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "turnin-94863-taming-the-beast-2",
+            kind = "turnin",
+            priority = 1310.32,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
+            dependsOn = { "objective-94863-taming-the-beast-2" },
+            complete = QuestState(94863, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "accept-94864-taming-the-beast-3",
+            kind = "accept",
+            priority = 1310.4,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Josephine Carson in Goldshire.",
+            dependsOn = { "turnin-94863-taming-the-beast-2" },
+            complete = QuestState(94864, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "objective-94864-taming-the-beast-3",
+            kind = "objective",
+            priority = 1310.41,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Tame the beast Josephine Carson names. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-94864-taming-the-beast-3" },
+            useClientPin = true,
+            complete = QuestState(94864, "complete"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "turnin-94864-taming-the-beast-3",
+            kind = "turnin",
+            priority = 1310.42,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Josephine Carson in Goldshire.",
+            dependsOn = { "objective-94864-taming-the-beast-3" },
+            complete = QuestState(94864, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "accept-94793-training-the-beast",
+            kind = "accept",
+            priority = 1310.5,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Training the Beast from Josephine Carson in Goldshire.",
+            dependsOn = { "turnin-94864-taming-the-beast-3" },
+            complete = QuestState(94793, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4120, 0.6620, "Josephine Carson", "Travel to Josephine Carson."),
+            },
+        },
+        {
+            id = "turnin-94793-training-the-beast",
+            kind = "turnin",
+            priority = 1310.51,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Training the Beast to Isaac Chan in Goldshire.",
+            dependsOn = { "accept-94793-training-the-beast" },
+            complete = QuestState(94793, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4180, 0.6640, "Isaac Chan", "Travel to Isaac Chan."),
             },
         },
         {

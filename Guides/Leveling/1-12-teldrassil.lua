@@ -4,6 +4,7 @@ local _, ns = ...
 -- Forever quests from the Teldrassil and Darnassus lists are woven into this route.
 -- Left out: Tyrande and Remulos is a level 60 Moonglade handoff. Fang of Githyiss appears only if the fang drops.
 -- Grind stops and flight-point pickups are not part of this route.
+-- Forever class quests with no start pin stay off this route, including Relics of the Kaldorei, Trek Through the Caves, and Thrice Stolen.
 -- Coordinates have not been validated in the Forever client.
 
 local MAP = {

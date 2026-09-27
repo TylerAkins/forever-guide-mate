@@ -13,8 +13,9 @@ An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It 
 2. Open the Wowhead Forever zone quest page for the chapter's zone, for example `https://www.wowhead.com/forever/quests/eastern-kingdoms/westfall`. Read quest facts from [wow-database](https://github.com/TylerAkins/wow-database), the compiled Forever zone files under `data/forever/compiled/zones/`. A Forever quest has `firstseenpatch` 16001. The recommended level is the Wowhead Level line in `infoboxMarkup` (`Level: N`). When `index.list.level` disagrees with that line, use the Level line. A quest the bundle could not place (no start pin) is named in the guide header. Do not invent a pin.
 3. Every quest on that page that the spine already runs stays as-is. Classic quests the spine left off stay off, unless a new quest requires them.
 4. A new quest is woven in only when the route is already there, the quest is low-level and right there, or it is the first quest the route should accept. Anything else stays out (see below).
-5. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
-6. Graduate the chapter (see Ship it), then run the checks at the bottom.
+5. Class quests are part of this pass. Read `data/forever/raw/sources/class_*.json` as well as the zone bundle. A class quest at or below the chapter level is woven when its start pin is in the chapter's zone, or in a capital or neighbor the route already visits. Put `class` and `race` on every step. Gate the step at the database minimum level (`reqlevel`), the level the NPC offers it. Do not leave those quests for a separate class guide. A follow-up from the same trainer depends on the previous turn-in in that class chain.
+6. Register verified prerequisites in `QuestPrerequisites.lua` using `all` or `any` semantics.
+7. Graduate the chapter (see Ship it), then run the checks at the bottom.
 
 `tools/weave_loremaster.py` (`recommended_level`, `insert_quest`, `place_woven`) encodes the level and placement rules below. Read its output before shipping. A quest it could not read is named in the guide header. Fix that by hand rather than inventing a pin.
 
@@ -35,6 +36,7 @@ Use the first rule that fits.
 - Skyborne city tours and cloth donations on non-Skyborne chapters.
 - Anything past the chapter's level unless it is the first quest the next stop accepts.
 - A quest the guide does not know the NPC offers yet. A follow-up that needs a turn-in keeps `dependsOn` on that turn-in.
+- A class quest with no start pin. Name it in the chapter header. Do not invent a giver or a coordinate.
 
 Record every intentional omission in the guide header, for example: `Destruction in Deadmines is a dungeon quest.`
 
