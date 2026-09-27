@@ -1220,6 +1220,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96652-the-adventurer",
+            kind = "accept",
+            priority = 755,
+            conditions = { level = { min = 4 } },
+            useClientPin = true,
+            text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
+            complete = QuestState(96652, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Valley of Trials",
+                    "Travel to the Valley of Trials."),
+            },
+        },
+        {
             id = "accept-823-report-to-orgnil",
             kind = "accept",
             priority = 760,
@@ -1358,6 +1371,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUROTAR, 0.5200, 0.6820, "Ukor",
                     "Travel to Ukor."),
+            },
+        },
+        {
+            id = "turnin-96652-the-adventurer",
+            kind = "turnin",
+            priority = 805,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Brakk near Razor Hill.",
+            dependsOn = { "accept-96652-the-adventurer" },
+            complete = QuestState(96652, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4740, "Brakk",
+                    "Travel to Brakk."),
             },
         },
         {

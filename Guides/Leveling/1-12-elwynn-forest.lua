@@ -922,6 +922,31 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96627-the-adventurer",
+            kind = "accept",
+            priority = 479,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Marshal McBride in Northshire Abbey.",
+            complete = QuestState(96627, "activeOrCompleted"),
+            route = {
+                Point(MAP.ELWYNN, 0.4880, 0.4160, "Marshal McBride",
+                    "Travel to Marshal McBride."),
+            },
+        },
+        {
+            id = "turnin-96627-the-adventurer",
+            kind = "turnin",
+            priority = 479.1,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
+            dependsOn = { "accept-96627-the-adventurer" },
+            complete = QuestState(96627, "completed"),
+            route = {
+                Point(MAP.ELWYNN, 0.4480, 0.6320, "Sam Sarsaparilla",
+                    "Travel to Sam Sarsaparilla."),
+            },
+        },
+        {
             id = "accept-54-report-to-goldshire",
             kind = "accept",
             priority = 480,

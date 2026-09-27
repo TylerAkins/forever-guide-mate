@@ -808,6 +808,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96656-the-adventurer",
+            kind = "accept",
+            priority = 435,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Executor Arren in Deathknell.",
+            complete = QuestState(96656, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.3200, 0.6600, "Executor Arren",
+                    "Travel to Executor Arren."),
+            },
+        },
+        {
             id = "accept-383-vital-intelligence",
             kind = "accept",
             priority = 440,
@@ -895,6 +907,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
                     "Travel to Apothecary Johaan."),
+            },
+        },
+        {
+            id = "turnin-96656-the-adventurer",
+            kind = "turnin",
+            priority = 505,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Eleanor Shackleton in Brill.",
+            dependsOn = { "accept-96656-the-adventurer" },
+            complete = QuestState(96656, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                    "Travel to Eleanor Shackleton."),
             },
         },
         {

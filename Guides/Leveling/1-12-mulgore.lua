@@ -547,6 +547,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96659-the-adventurer",
+            kind = "accept",
+            priority = 375,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
+            dependsOn = { "turnin-757-rite-of-strength" },
+            complete = QuestState(96659, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4420, 0.7600, "Chief Hawkwind",
+                    "Travel to Chief Hawkwind."),
+            },
+        },
+        {
             id = "accept-763-rites-of-the-earthmother",
             kind = "accept",
             priority = 380,
@@ -696,6 +709,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.MULGORE, 0.4733, 0.6194, "Ruul Eagletalon",
                     "Travel to Ruul Eagletalon."),
+            },
+        },
+        {
+            id = "turnin-96659-the-adventurer",
+            kind = "turnin",
+            priority = 495,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
+            dependsOn = { "accept-96659-the-adventurer" },
+            complete = QuestState(96659, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                    "Travel to Kaga Wildhoof."),
             },
         },
         {
