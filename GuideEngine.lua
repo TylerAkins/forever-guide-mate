@@ -789,6 +789,18 @@ function Engine:ReconcileGuide(guide, state)
             done[goal.id] = true
         end
     end
+    local function MayInfer(goalID)
+        local dependency = self:GetGoal(guide, goalID)
+        if not dependency or not dependency.complete then
+            return true
+        end
+        local evaluation = ns.EvaluateCondition(dependency.complete, state)
+        if evaluation == false and QuestObservableCompletion(dependency.complete)
+            and state.questLogKnown and state.questCompletionKnown then
+            return false
+        end
+        return true
+    end
     local function InferDependencies(goalID, visiting)
         local goal = self:GetGoal(guide, goalID)
         if not goal or visiting[goalID] then
@@ -796,10 +808,12 @@ function Engine:ReconcileGuide(guide, state)
         end
         visiting[goalID] = true
         for _, dependencyID in ipairs(goal.dependsOn or {}) do
-            inferred[dependencyID] = true
-            local dependency = self:GetGoal(guide, dependencyID)
-            if dependency and dependency.kind ~= "travel" and dependency.kind ~= "note" then
-                InferDependencies(dependencyID, visiting)
+            if MayInfer(dependencyID) then
+                inferred[dependencyID] = true
+                local dependency = self:GetGoal(guide, dependencyID)
+                if dependency and dependency.kind ~= "travel" and dependency.kind ~= "note" then
+                    InferDependencies(dependencyID, visiting)
+                end
             end
         end
         for _, group in ipairs(goal.questPrerequisites or {}) do
@@ -807,8 +821,10 @@ function Engine:ReconcileGuide(guide, state)
             if applies ~= false then
                 for _, dependencyID in ipairs(group.goalIDs or {}) do
                     if group.mode == "all" or self:IsDependencyDone(guide, dependencyID, state) then
-                        inferred[dependencyID] = true
-                        InferDependencies(dependencyID, visiting)
+                        if MayInfer(dependencyID) then
+                            inferred[dependencyID] = true
+                            InferDependencies(dependencyID, visiting)
+                        end
                     end
                 end
             end
@@ -1502,6 +1518,42 @@ function Engine:ClearSavedPosition(guide)
     self.reviewingGoal = nil
 end
 
+local function QuestIDFromComplete(condition)
+    if type(condition) ~= "table" then
+        return nil
+    end
+    local quest = condition.quest
+    if type(quest) == "table" and type(quest.id) == "number" then
+        return quest.id
+    end
+    local objective = condition.questObjective
+    if type(objective) == "table" and type(objective.id) == "number" then
+        return objective.id
+    end
+end
+
+local function ClearStaleDeferred(guide, state)
+    if type(ns.charDB.deferred) ~= "table" then
+        return
+    end
+    for goalID, skipped in pairs(ns.charDB.deferred) do
+        if skipped then
+            local goal = Engine:GetGoal(guide, goalID)
+            if goal and goal.complete then
+                local evaluation = ns.EvaluateCondition(goal.complete, state)
+                if evaluation == false and QuestObservableCompletion(goal.complete)
+                    and state.questLogKnown and state.questCompletionKnown then
+                    local questID = QuestIDFromComplete(goal.complete)
+                    local active = questID and state.quests and state.quests[questID]
+                    if not active then
+                        ns.charDB.deferred[goalID] = nil
+                    end
+                end
+            end
+        end
+    end
+end
+
 function Engine:ResyncCurrent(state)
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     if not guide then return false end
@@ -1513,6 +1565,7 @@ function Engine:ResyncCurrent(state)
     self.resyncPending = nil
     self:ClearSavedPosition(guide)
     self.inferredCompletedByGuide = nil
+    ClearStaleDeferred(guide, state)
     self:Refresh(state)
     return true
 end
