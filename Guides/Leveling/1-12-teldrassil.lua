@@ -685,6 +685,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96630-the-adventurer",
+            kind = "accept",
+            priority = 451,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from the book on the table behind Tenaron Stormgrip in Aldrassil.",
+            complete = QuestState(96630, "activeOrCompleted"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5909, 0.3939, "Tenaron Stormgrip",
+                    "Travel to Tenaron Stormgrip."),
+            },
+        },
+        {
             id = "accept-2159-dolanaar-delivery",
             kind = "accept",
             priority = 460,
@@ -705,6 +717,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TELDRASSIL, 0.6041, 0.5626, "Zenn Foulhoof",
                     "Travel to Zenn Foulhoof."),
+            },
+        },
+        {
+            id = "turnin-96630-the-adventurer",
+            kind = "turnin",
+            priority = 485,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Lyreena Duskblade near Dolanaar.",
+            dependsOn = { "accept-96630-the-adventurer" },
+            complete = QuestState(96630, "completed"),
+            route = {
+                Point(MAP.TELDRASSIL, 0.5760, 0.5660, "Lyreena Duskblade",
+                    "Travel to Lyreena Duskblade."),
             },
         },
         {

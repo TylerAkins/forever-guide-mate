@@ -1020,6 +1020,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96628-the-adventurer",
+            kind = "accept",
+            priority = 511,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Mountaineer Thalos in Coldridge Pass.",
+            complete = QuestState(96628, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.3340, 0.7180, "Mountaineer Thalos",
+                    "Travel to Mountaineer Thalos."),
+            },
+        },
+        {
             id = "accept-420-senir-s-observations",
             kind = "accept",
             priority = 520,
@@ -1039,6 +1051,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUN_MOROGH, 0.3383, 0.7221, "Hands Springsprocket",
                     "Travel to Hands Springsprocket."),
+            },
+        },
+        {
+            id = "turnin-96628-the-adventurer",
+            kind = "turnin",
+            priority = 549,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Eric Brighthammer in Kharanos.",
+            dependsOn = { "accept-96628-the-adventurer" },
+            complete = QuestState(96628, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.4660, 0.5380, "Eric Brighthammer",
+                    "Travel to Eric Brighthammer."),
             },
         },
         {
