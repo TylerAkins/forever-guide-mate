@@ -47,6 +47,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -63,6 +64,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -80,6 +82,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -96,6 +99,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -113,6 +117,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -130,6 +135,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 270, state = "completed" } },
                 },
             },
@@ -144,6 +150,7 @@ ns:RegisterGuide({
             id = "accept-4581-kayneth-stillwind",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 24 } },
             text = "Accept Kayneth Stillwind from Shindrell Swiftfire in Astranaar.",
             complete = QuestState(4581, "activeOrCompleted"),
             route = {
@@ -165,6 +172,7 @@ ns:RegisterGuide({
             id = "accept-991-raene-s-cleansing",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Raene Wolfrunner in Astranaar.",
             complete = QuestState(991, "activeOrCompleted"),
             route = {
@@ -178,6 +186,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1034, state = "completed" } },
                 },
             },
@@ -192,6 +201,7 @@ ns:RegisterGuide({
             id = "accept-1022-the-howling-vale",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 25 } },
             text = "Accept The Howling Vale from Sentinel Melyria Frostshadow in The Shrine of Aessina.",
             complete = QuestState(1022, "activeOrCompleted"),
             route = {
@@ -203,6 +213,7 @@ ns:RegisterGuide({
             id = "accept-1021-vile-satyr-dryads-in-danger",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 26 } },
             text = "Accept Vile Satyr! Dryads in Danger! from Illiyana in The Shrine of Aessina.",
             complete = QuestState(1021, "activeOrCompleted"),
             route = {
@@ -214,6 +225,7 @@ ns:RegisterGuide({
             id = "turnin-991-raene-s-cleansing",
             kind = "turnin",
             priority = 170,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Teronis' Corpse in Lake Falathim.",
             dependsOn = { "accept-991-raene-s-cleansing" },
             complete = QuestState(991, "completed"),
@@ -226,6 +238,7 @@ ns:RegisterGuide({
             id = "accept-1023-raene-s-cleansing",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Teronis' Corpse in Lake Falathim.",
             complete = QuestState(1023, "activeOrCompleted"),
             route = {
@@ -237,6 +250,7 @@ ns:RegisterGuide({
             id = "objective-1023-raene-s-cleansing",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 18 } },
             text = "Kill the Saltspittle Oracle, Saltspittle Puddlejumper or Saltspittle Warrior at the nearby lake until you've collected the Glowing Gem.",
             dependsOn = { "accept-1023-raene-s-cleansing" },
             complete = QuestState(1023, "complete"),
@@ -249,6 +263,7 @@ ns:RegisterGuide({
             id = "turnin-1023-raene-s-cleansing",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Raene Wolfrunner in Astranaar.",
             dependsOn = { "objective-1023-raene-s-cleansing" },
             complete = QuestState(1023, "completed"),
@@ -261,6 +276,7 @@ ns:RegisterGuide({
             id = "accept-1024-raene-s-cleansing",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1024, "activeOrCompleted"),
             route = {
@@ -272,6 +288,7 @@ ns:RegisterGuide({
             id = "turnin-1024-raene-s-cleansing",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Shael'dryn in Moonwell.",
             dependsOn = { "accept-1024-raene-s-cleansing" },
             complete = QuestState(1024, "completed"),
@@ -284,6 +301,7 @@ ns:RegisterGuide({
             id = "accept-1026-raene-s-cleansing",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Shael'dryn in Moonwell.",
             complete = QuestState(1026, "activeOrCompleted"),
             route = {
@@ -295,6 +313,7 @@ ns:RegisterGuide({
             id = "objective-1026-crazed-ancient",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 18 } },
             text = "Kill Crazed Ancient until you collect a Wooden Key.",
             dependsOn = { "accept-1026-raene-s-cleansing" },
             complete = QuestState(1026, "complete"),
@@ -309,6 +328,7 @@ ns:RegisterGuide({
             id = "objective-1026-raene-s-cleansing",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 18 } },
             text = "Collect Iron Shaft from the worn chest in Nightsong Woods.",
             dependsOn = { "accept-1026-raene-s-cleansing" },
             complete = QuestState(1026, "complete"),
@@ -321,6 +341,7 @@ ns:RegisterGuide({
             id = "objective-1022-the-howling-vale",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 25 } },
             text = "Click on Tome of Mel'Thandris in The Howling Vale.",
             dependsOn = { "accept-1022-the-howling-vale" },
             complete = QuestState(1022, "complete"),
@@ -333,6 +354,7 @@ ns:RegisterGuide({
             id = "turnin-1026-raene-s-cleansing",
             kind = "turnin",
             priority = 310,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Shael'dryn in Moonwell.",
             dependsOn = { "objective-1026-crazed-ancient", "objective-1026-raene-s-cleansing" },
             complete = QuestState(1026, "completed"),
@@ -345,6 +367,7 @@ ns:RegisterGuide({
             id = "accept-1027-raene-s-cleansing",
             kind = "accept",
             priority = 320,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Shael'dryn in Moonwell.",
             complete = QuestState(1027, "activeOrCompleted"),
             route = {
@@ -356,6 +379,7 @@ ns:RegisterGuide({
             id = "turnin-1021-vile-satyr-dryads-in-danger",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 26 } },
             text = "Turn in Vile Satyr! Dryads in Danger! to Anilia in Xavian.",
             dependsOn = { "accept-1021-vile-satyr-dryads-in-danger" },
             complete = QuestState(1021, "completed"),
@@ -368,6 +392,7 @@ ns:RegisterGuide({
             id = "accept-1031-the-branch-of-cenarius",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 26 } },
             text = "Accept The Branch of Cenarius from Anilia in Xavian.",
             complete = QuestState(1031, "activeOrCompleted"),
             route = {
@@ -379,6 +404,7 @@ ns:RegisterGuide({
             id = "objective-1031-the-branch-of-cenarius",
             kind = "objective",
             priority = 360,
+            conditions = { level = { min = 26 } },
             text = "Kill Geltharis and collect Branch of Cenarius in Xavian.",
             dependsOn = { "accept-1031-the-branch-of-cenarius" },
             complete = QuestState(1031, "complete"),
@@ -391,6 +417,7 @@ ns:RegisterGuide({
             id = "turnin-4581-kayneth-stillwind",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 24 } },
             text = "Turn in Kayneth Stillwind to Kayneth Stillwind in Forest Song.",
             dependsOn = { "accept-4581-kayneth-stillwind" },
             complete = QuestState(4581, "completed"),
@@ -403,6 +430,7 @@ ns:RegisterGuide({
             id = "accept-1011-forsaken-diseases",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 24 } },
             text = "Accept Forsaken Diseases from Kayneth Stillwind in Forest Song.",
             complete = QuestState(1011, "activeOrCompleted"),
             route = {
@@ -414,6 +442,7 @@ ns:RegisterGuide({
             id = "objective-1011-forsaken-diseases",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 24 } },
             text = "Collect a Bottle of Disease in The Dor'Danil Barrow Den.",
             dependsOn = { "accept-1011-forsaken-diseases" },
             complete = QuestState(1011, "complete"),
@@ -430,6 +459,7 @@ ns:RegisterGuide({
             id = "objective-1027-raene-s-cleansing",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 18 } },
             text = "Kill Rotting Slime until you collect Iron Pommel in The Dor'Danil Barrow Den Tip: It can also be found inside the chest they drop.",
             dependsOn = { "accept-1027-raene-s-cleansing" },
             complete = QuestState(1027, "complete"),
@@ -444,6 +474,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1034, state = "completed" } },
                 },
             },
@@ -459,6 +490,7 @@ ns:RegisterGuide({
             id = "turnin-1011-forsaken-diseases",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 24 } },
             text = "Turn in Forsaken Diseases to Kayneth Stillwind in Forest Song.",
             dependsOn = { "objective-1011-forsaken-diseases" },
             complete = QuestState(1011, "completed"),
@@ -471,6 +503,7 @@ ns:RegisterGuide({
             id = "accept-1012-insane-druids",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 24 } },
             text = "Accept Insane Druids from Kayneth Stillwind in Forest Song.",
             complete = QuestState(1012, "activeOrCompleted"),
             route = {
@@ -482,6 +515,7 @@ ns:RegisterGuide({
             id = "objective-1012-1-taneel-darkwood",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 24 } },
             text = "Kill Taneel Darkwood for the quest Insane Druids inside the cave in The Dor'Danil Barrow Den.",
             dependsOn = { "accept-1012-insane-druids" },
             complete = QuestObjective(1012, 1),
@@ -496,6 +530,7 @@ ns:RegisterGuide({
             id = "objective-1012-2-uthil-mooncall",
             kind = "objective",
             priority = 500,
+            conditions = { level = { min = 24 } },
             text = "Kill Uthil Mooncall for the quest Insane Druids in in The Dor'Danil Barrow Den.",
             dependsOn = { "accept-1012-insane-druids" },
             complete = QuestObjective(1012, 2),
@@ -508,6 +543,7 @@ ns:RegisterGuide({
             id = "objective-1012-3-mavoris-cloudsbreak",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 24 } },
             text = "Kill Mavoris Cloudsbreak for the quest Insane Druids in in The Dor'Danil Barrow Den.",
             dependsOn = { "accept-1012-insane-druids" },
             complete = QuestObjective(1012, 3),
@@ -520,6 +556,7 @@ ns:RegisterGuide({
             id = "turnin-1012-insane-druids",
             kind = "turnin",
             priority = 520,
+            conditions = { level = { min = 24 } },
             text = "Turn in Insane Druids to Kayneth Stillwind in Forest Song.",
             dependsOn = { "objective-1012-1-taneel-darkwood", "objective-1012-2-uthil-mooncall", "objective-1012-3-mavoris-cloudsbreak" },
             complete = QuestState(1012, "completed"),
@@ -534,6 +571,7 @@ ns:RegisterGuide({
             priority = 540,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1034, state = "completed" } },
                 },
             },
@@ -549,6 +587,7 @@ ns:RegisterGuide({
             id = "turnin-1027-raene-s-cleansing",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Shael'dryn in Moonwell.",
             dependsOn = { "objective-1027-raene-s-cleansing" },
             complete = QuestState(1027, "completed"),
@@ -561,6 +600,7 @@ ns:RegisterGuide({
             id = "accept-1028-raene-s-cleansing",
             kind = "accept",
             priority = 570,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Shael'dryn in Moonwell.",
             complete = QuestState(1028, "activeOrCompleted"),
             route = {
@@ -572,6 +612,7 @@ ns:RegisterGuide({
             id = "turnin-1028-raene-s-cleansing",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing.",
             dependsOn = { "accept-1028-raene-s-cleansing" },
             complete = QuestState(1028, "completed"),
@@ -590,6 +631,7 @@ ns:RegisterGuide({
             id = "accept-1055-raene-s-cleansing",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing.",
             complete = QuestState(1055, "activeOrCompleted"),
             route = {
@@ -601,6 +643,7 @@ ns:RegisterGuide({
             id = "turnin-1055-raene-s-cleansing",
             kind = "turnin",
             priority = 610,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Shael'dryn in Moonwell.",
             dependsOn = { "accept-1055-raene-s-cleansing" },
             complete = QuestState(1055, "completed"),
@@ -613,6 +656,7 @@ ns:RegisterGuide({
             id = "accept-1029-raene-s-cleansing",
             kind = "accept",
             priority = 620,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Shael'dryn in Moonwell.",
             complete = QuestState(1029, "activeOrCompleted"),
             route = {
@@ -624,6 +668,7 @@ ns:RegisterGuide({
             id = "turnin-1029-raene-s-cleansing",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Raene Wolfrunner in Astranaar.",
             dependsOn = { "accept-1029-raene-s-cleansing" },
             complete = QuestState(1029, "completed"),
@@ -636,6 +681,7 @@ ns:RegisterGuide({
             id = "accept-1030-raene-s-cleansing",
             kind = "accept",
             priority = 650,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Raene Wolfrunner in Astranaar.",
             complete = QuestState(1030, "activeOrCompleted"),
             route = {
@@ -647,6 +693,7 @@ ns:RegisterGuide({
             id = "objective-1045-dartol-s-rod-of-transformation",
             kind = "objective",
             priority = 670,
+            conditions = { level = { min = 18 } },
             text = "Use Dartol's Rod of Transformation to gain the Furbolg Form buff.",
             dependsOn = { "accept-1045-raene-s-cleansing" },
             complete = QuestState(1045, "complete"),
@@ -655,6 +702,7 @@ ns:RegisterGuide({
             id = "accept-1045-raene-s-cleansing",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Krolg in Mystral Lake.",
             complete = QuestState(1045, "activeOrCompleted"),
             route = {
@@ -668,6 +716,7 @@ ns:RegisterGuide({
             id = "objective-1045-raene-s-cleansing",
             kind = "objective",
             priority = 690,
+            conditions = { level = { min = 18 } },
             text = "Kill Ran Bloodtooth and 4 Bloodtooth Guard in Bloodtooth Camp.",
             dependsOn = { "accept-1045-raene-s-cleansing" },
             complete = QuestState(1045, "complete"),
@@ -682,6 +731,7 @@ ns:RegisterGuide({
             id = "objective-1046-dartol-s-rod-of-transformation",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 18 } },
             text = "Use Dartol's Rod of Transformation to gain the Furbolg Form buff.",
             dependsOn = { "accept-1046-raene-s-cleansing" },
             complete = QuestState(1046, "complete"),
@@ -690,6 +740,7 @@ ns:RegisterGuide({
             id = "turnin-1045-raene-s-cleansing",
             kind = "turnin",
             priority = 710,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Krolg in Mystral Lake.",
             dependsOn = { "objective-1045-dartol-s-rod-of-transformation", "objective-1045-raene-s-cleansing" },
             complete = QuestState(1045, "completed"),
@@ -706,6 +757,7 @@ ns:RegisterGuide({
             id = "accept-1046-raene-s-cleansing",
             kind = "accept",
             priority = 720,
+            conditions = { level = { min = 18 } },
             text = "Accept Raene's Cleansing from Krolg in Mystral Lake.",
             complete = QuestState(1046, "activeOrCompleted"),
             route = {
@@ -717,6 +769,7 @@ ns:RegisterGuide({
             id = "turnin-1046-raene-s-cleansing",
             kind = "turnin",
             priority = 740,
+            conditions = { level = { min = 18 } },
             text = "Turn in Raene's Cleansing to Raene Wolfrunner in Astranaar.",
             dependsOn = { "objective-1046-dartol-s-rod-of-transformation" },
             complete = QuestState(1046, "completed"),
@@ -729,6 +782,7 @@ ns:RegisterGuide({
             id = "turnin-1022-the-howling-vale",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 25 } },
             text = "Turn in The Howling Vale to Sentinel Melyria Frostshadow in The Shrine of Aessina.",
             dependsOn = { "objective-1022-the-howling-vale" },
             complete = QuestState(1022, "completed"),
@@ -741,6 +795,7 @@ ns:RegisterGuide({
             id = "accept-1037-velinde-starsong",
             kind = "accept",
             priority = 770,
+            conditions = { level = { min = 25 } },
             text = "Accept Velinde Starsong from Sentinel Melyria Frostshadow in The Shrine of Aessina.",
             complete = QuestState(1037, "activeOrCompleted"),
             route = {
@@ -752,6 +807,7 @@ ns:RegisterGuide({
             id = "turnin-1031-the-branch-of-cenarius",
             kind = "turnin",
             priority = 780,
+            conditions = { level = { min = 26 } },
             text = "Turn in The Branch of Cenarius to Illiyana in The Shrine of Aessina.",
             dependsOn = { "objective-1031-the-branch-of-cenarius" },
             complete = QuestState(1031, "completed"),
@@ -764,6 +820,7 @@ ns:RegisterGuide({
             id = "turnin-1037-velinde-starsong",
             kind = "turnin",
             priority = 800,
+            conditions = { level = { min = 25 } },
             text = "Turn in Velinde Starsong to Thyn'tel Bladeweaver in Darnassus.",
             dependsOn = { "accept-1037-velinde-starsong" },
             complete = QuestState(1037, "completed"),
@@ -776,6 +833,7 @@ ns:RegisterGuide({
             id = "accept-1038-velinde-s-effects",
             kind = "accept",
             priority = 810,
+            conditions = { level = { min = 25 } },
             text = "Accept Velinde's Effects from Thyn'tel Bladeweaver in Darnassus.",
             complete = QuestState(1038, "activeOrCompleted"),
             route = {
@@ -787,6 +845,7 @@ ns:RegisterGuide({
             id = "accept-2925-klockmort-s-essentials",
             kind = "accept",
             priority = 820,
+            conditions = { level = { min = 24 } },
             text = "Accept Klockmort's Essentials from Mathiel in Darnassus.",
             complete = QuestState(2925, "activeOrCompleted"),
             route = {
@@ -798,6 +857,7 @@ ns:RegisterGuide({
             id = "objective-1038-1-velinde-s-journal",
             kind = "objective",
             priority = 830,
+            conditions = { level = { min = 25 } },
             text = "Collect Velinde's Journal from Velinde's Locker in Tradesmen's Terrace.",
             dependsOn = { "accept-1038-velinde-s-effects" },
             complete = QuestObjective(1038, 1),
@@ -814,6 +874,7 @@ ns:RegisterGuide({
             id = "turnin-1038-velinde-s-effects",
             kind = "turnin",
             priority = 840,
+            conditions = { level = { min = 25 } },
             text = "Turn in Velinde's Effects to Thyn'tel Bladeweaver in Darnassus.",
             dependsOn = { "objective-1038-1-velinde-s-journal" },
             complete = QuestState(1038, "completed"),
@@ -826,6 +887,7 @@ ns:RegisterGuide({
             id = "accept-1039-the-barrens-port",
             kind = "accept",
             priority = 850,
+            conditions = { level = { min = 25 } },
             text = "Accept The Barrens Port from Thyn'tel Bladeweaver in Darnassus.",
             complete = QuestState(1039, "activeOrCompleted"),
             route = {

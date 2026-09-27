@@ -47,6 +47,7 @@ ns:RegisterGuide({
             id = "accept-4449-caught",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 43 } },
             text = "Accept Caught! in Grimesilt Dig Site.",
             complete = QuestState(4449, "activeOrCompleted"),
             route = {
@@ -58,6 +59,7 @@ ns:RegisterGuide({
             id = "accept-3367-suntara-stones",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 40 } },
             text = "Accept Suntara Stones from Dorius Stonetender in Grimesilt Dig Site.",
             complete = QuestState(3367, "activeOrCompleted"),
             route = {
@@ -69,6 +71,7 @@ ns:RegisterGuide({
             id = "objective-3367-suntara-stones",
             kind = "objective",
             priority = 70,
+            conditions = { level = { min = 40 } },
             text = "Escort Dorius Stonetender to Dustfire Valley.",
             dependsOn = { "accept-3367-suntara-stones" },
             complete = QuestState(3367, "complete"),
@@ -81,6 +84,7 @@ ns:RegisterGuide({
             id = "turnin-3367-suntara-stones",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 40 } },
             text = "Turn in Suntara Stones in Dustfire Valley.",
             dependsOn = { "objective-3367-suntara-stones" },
             complete = QuestState(3367, "completed"),
@@ -93,6 +97,7 @@ ns:RegisterGuide({
             id = "accept-3368-suntara-stones",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 40 } },
             text = "Accept Suntara Stones in Dustfire Valley.",
             complete = QuestState(3368, "activeOrCompleted"),
             route = {
@@ -104,6 +109,7 @@ ns:RegisterGuide({
             id = "objective-4449-caught",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 43 } },
             text = "Kill 8 Dark Iron Geologists and collect 15 Silk Cloth in the Grimesilt Dig Site.",
             dependsOn = { "accept-4449-caught" },
             complete = QuestState(4449, "complete"),
@@ -116,6 +122,7 @@ ns:RegisterGuide({
             id = "turnin-4449-caught",
             kind = "turnin",
             priority = 110,
+            conditions = { level = { min = 43 } },
             text = "Turn in Caught! in Grimesilt Dig Site.",
             dependsOn = { "objective-4449-caught" },
             complete = QuestState(4449, "completed"),
@@ -128,6 +135,7 @@ ns:RegisterGuide({
             id = "accept-4450-ledger-from-tanaris",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 43 } },
             text = "Accept Ledger from Tanaris in Grimesilt Dig Site.",
             complete = QuestState(4450, "activeOrCompleted"),
             route = {
@@ -139,6 +147,7 @@ ns:RegisterGuide({
             id = "objective-4450-1-goodsteel-ledger",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 43 } },
             text = "Collect Goodsteel Ledger on the ground next to the Wooden Outhouse in Grimesilt Dig Site.",
             dependsOn = { "accept-4450-ledger-from-tanaris" },
             complete = QuestObjective(4450, 1),
@@ -151,6 +160,7 @@ ns:RegisterGuide({
             id = "objective-3181-margol-the-rager",
             kind = "objective",
             priority = 140,
+            conditions = { level = { min = 40 } },
             text = "Kill Margol the Rager and collect Margol's Horn to start a new quest It's easy elite to solo but you can skip this if you're not able to kill it.",
             complete = QuestState(3181, "complete"),
             route = {
@@ -164,6 +174,7 @@ ns:RegisterGuide({
             id = "objective-4450-2-glassweb-spider",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 43 } },
             text = "Kill Glassweb Spider and collect 20 Solid Crystal Leg Shaft in The Sea of Cinders.",
             dependsOn = { "accept-4450-ledger-from-tanaris" },
             complete = QuestObjective(4450, 2),
@@ -178,6 +189,7 @@ ns:RegisterGuide({
             id = "accept-3441-divine-retribution",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 40 } },
             text = "Accept Divine Retribution from Velarok Windblade in Thorium Point.",
             complete = QuestState(3441, "activeOrCompleted"),
             route = {
@@ -191,6 +203,7 @@ ns:RegisterGuide({
             id = "objective-3441-divine-retribution",
             kind = "objective",
             priority = 180,
+            conditions = { level = { min = 40 } },
             text = "Speak with Velarok Windblade in Thorium Point.",
             dependsOn = { "accept-3441-divine-retribution" },
             complete = QuestState(3441, "complete"),
@@ -203,6 +216,7 @@ ns:RegisterGuide({
             id = "turnin-3441-divine-retribution",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 40 } },
             text = "Turn in Divine Retribution to Velarok Windblade in Thorium Point.",
             dependsOn = { "objective-3441-divine-retribution" },
             complete = QuestState(3441, "completed"),
@@ -215,6 +229,7 @@ ns:RegisterGuide({
             id = "accept-3442-the-flawless-flame",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 40 } },
             text = "Accept The Flawless Flame from Velarok Windblade in Thorium Point.",
             complete = QuestState(3442, "activeOrCompleted"),
             route = {
@@ -226,6 +241,7 @@ ns:RegisterGuide({
             id = "accept-7701-wanted-overseer-maltorius",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 45 } },
             text = "Accept WANTED: Overseer Maltorius in Thorium Point.",
             complete = QuestState(7701, "activeOrCompleted"),
             route = {
@@ -237,6 +253,7 @@ ns:RegisterGuide({
             id = "accept-7728-stolen-smithing-tuyere-and-lookout-s-spygl",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 45 } },
             text = "Accept STOLEN: Smithing Tuyere and Lookout's Spyglass in Thorium Point.",
             complete = QuestState(7728, "activeOrCompleted"),
             route = {
@@ -248,6 +265,7 @@ ns:RegisterGuide({
             id = "accept-7729-job-opportunity-culling-the-competition",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 45 } },
             text = "Accept JOB OPPORTUNITY: Culling the Competition in Thorium Point.",
             complete = QuestState(7729, "activeOrCompleted"),
             route = {
@@ -259,6 +277,7 @@ ns:RegisterGuide({
             id = "accept-7723-curse-these-fat-fingers",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 45 } },
             text = "Accept Curse These Fat Fingers from Hansel Heavyhands in Thorium Point.",
             complete = QuestState(7723, "activeOrCompleted"),
             route = {
@@ -270,6 +289,7 @@ ns:RegisterGuide({
             id = "accept-7724-fiery-menace",
             kind = "accept",
             priority = 260,
+            conditions = { level = { min = 45 } },
             text = "Accept Fiery Menace! from Hansel Heavyhands in Thorium Point.",
             complete = QuestState(7724, "activeOrCompleted"),
             route = {
@@ -281,6 +301,7 @@ ns:RegisterGuide({
             id = "accept-7727-incendosaurs-whateverosaur-is-more-like-it",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 45 } },
             text = "Accept Incendosaurs? Whateverosaur is More Like It from Master Smith Burninate in Thorium Point.",
             complete = QuestState(7727, "activeOrCompleted"),
             route = {
@@ -292,6 +313,7 @@ ns:RegisterGuide({
             id = "accept-7722-what-the-flux",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 45 } },
             text = "Accept What the Flux? from Master Smith Burninate in Thorium Point.",
             complete = QuestState(7722, "activeOrCompleted"),
             route = {
@@ -303,6 +325,7 @@ ns:RegisterGuide({
             id = "turnin-3368-suntara-stones",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 40 } },
             text = "Turn in Suntara Stones to Curator Thorius in The Library.",
             dependsOn = { "accept-3368-suntara-stones" },
             complete = QuestState(3368, "completed"),
@@ -315,6 +338,7 @@ ns:RegisterGuide({
             id = "accept-3371-dwarven-justice",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 40 } },
             text = "Accept Dwarven Justice from Curator Thorius in The Library.",
             complete = QuestState(3371, "activeOrCompleted"),
             route = {
@@ -338,6 +362,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3181, state = "completed" } },
                 },
             },
@@ -354,6 +379,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3181, state = "completed" } },
                 },
             },
@@ -371,6 +397,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3181, state = "completed" } },
                 },
             },
@@ -387,6 +414,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3181, state = "completed" } },
                 },
             },
@@ -402,6 +430,7 @@ ns:RegisterGuide({
             id = "objective-7728-1-dark-iron-steamsmith",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 45 } },
             text = "Kill Dark Iron Steamsmith collect Smithing Tuyere in The Cauldron.",
             dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spygl" },
             complete = QuestObjective(7728, 1),
@@ -414,6 +443,7 @@ ns:RegisterGuide({
             id = "objective-7728-2-dark-iron-lookout",
             kind = "objective",
             priority = 410,
+            conditions = { level = { min = 45 } },
             text = "Kill Dark Iron Lookout and collect Lookout's Spyglass in The Sea of Cinders.",
             dependsOn = { "accept-7728-stolen-smithing-tuyere-and-lookout-s-spygl" },
             complete = QuestObjective(7728, 2),
@@ -426,6 +456,7 @@ ns:RegisterGuide({
             id = "objective-3442-the-flawless-flame",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 40 } },
             text = "Kill Blazing Elemental for 4 Heart of Flame and Magma Elemental for 4 Golem Oil near Thorium Point You will have to wait for respawn.",
             dependsOn = { "accept-3442-the-flawless-flame" },
             complete = QuestState(3442, "complete"),
@@ -442,6 +473,7 @@ ns:RegisterGuide({
             id = "objective-7724-fiery-menace",
             kind = "objective",
             priority = 430,
+            conditions = { level = { min = 45 } },
             text = "Kill 20 Greater Lava Spider in Firewatch Ridge.",
             dependsOn = { "accept-7724-fiery-menace" },
             complete = QuestState(7724, "complete"),
@@ -454,6 +486,7 @@ ns:RegisterGuide({
             id = "objective-7723-curse-these-fat-fingers",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 45 } },
             text = "Kill 20 Heavy War Golem in Firewatch Ridge.",
             dependsOn = { "accept-7723-curse-these-fat-fingers" },
             complete = QuestState(7723, "complete"),
@@ -466,6 +499,7 @@ ns:RegisterGuide({
             id = "turnin-3442-the-flawless-flame",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 40 } },
             text = "Turn in The Flawless Flame to Velarok Windblade in Thorium Point.",
             dependsOn = { "objective-3442-the-flawless-flame" },
             complete = QuestState(3442, "completed"),
@@ -478,6 +512,7 @@ ns:RegisterGuide({
             id = "accept-3443-forging-the-shaft",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 40 } },
             text = "Accept Forging the Shaft from Velarok Windblade in Thorium Point.",
             complete = QuestState(3443, "activeOrCompleted"),
             route = {
@@ -489,6 +524,7 @@ ns:RegisterGuide({
             id = "objective-7727-incendosaurs-whateverosaur-is-more-like-it",
             kind = "objective",
             priority = 470,
+            conditions = { level = { min = 45 } },
             text = "Kill 20 Incendosaur in The Slag Pit.",
             dependsOn = { "accept-7727-incendosaurs-whateverosaur-is-more-like-it" },
             complete = QuestState(7727, "complete"),
@@ -503,6 +539,7 @@ ns:RegisterGuide({
             id = "objective-7701-wanted-overseer-maltorius",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 45 } },
             text = "Kill Dark Iron Taskmaster and collect Head of Overseer Maltorius in The Slag Pit This is a group quest, hard to solo and safe to skip.",
             dependsOn = { "accept-7701-wanted-overseer-maltorius" },
             complete = QuestState(7701, "complete"),
@@ -515,6 +552,7 @@ ns:RegisterGuide({
             id = "objective-7722-what-the-flux",
             kind = "objective",
             priority = 500,
+            conditions = { level = { min = 45 } },
             text = "Collect Secret Plans: Fiery Flux in The Slag Pit If you can distract Dark Iron Taskmaster you can loot Secret Plans: Fiery Flux without killing him, safe to skip.",
             dependsOn = { "accept-7722-what-the-flux" },
             complete = QuestState(7722, "complete"),
@@ -527,6 +565,7 @@ ns:RegisterGuide({
             id = "turnin-3371-dwarven-justice",
             kind = "turnin",
             priority = 510,
+            conditions = { level = { min = 40 } },
             text = "Turn in Dwarven Justice to Dying Archaeologist in The Slag Pit.",
             dependsOn = { "accept-3371-dwarven-justice" },
             complete = QuestState(3371, "completed"),
@@ -539,6 +578,7 @@ ns:RegisterGuide({
             id = "objective-3443-forging-the-shaft",
             kind = "objective",
             priority = 520,
+            conditions = { level = { min = 40 } },
             text = "Kill Dark Iron Slaver or Dark Iron Taskmaster and collect 8 Thorium Plated Dagger in The Slag Pit.",
             dependsOn = { "accept-3443-forging-the-shaft" },
             complete = QuestState(3443, "complete"),
@@ -551,6 +591,7 @@ ns:RegisterGuide({
             id = "objective-7729-job-opportunity-culling-the-competition",
             kind = "objective",
             priority = 530,
+            conditions = { level = { min = 45 } },
             text = "Kill 15 Dark Iron Slaver and 15 Dark Iron Taskmaster in The Slag Pit.",
             dependsOn = { "accept-7729-job-opportunity-culling-the-competition" },
             complete = QuestState(7729, "complete"),
@@ -563,6 +604,7 @@ ns:RegisterGuide({
             id = "turnin-3443-forging-the-shaft",
             kind = "turnin",
             priority = 550,
+            conditions = { level = { min = 40 } },
             text = "Turn in Forging the Shaft to Velarok Windblade in Thorium Point.",
             dependsOn = { "objective-3443-forging-the-shaft" },
             complete = QuestState(3443, "completed"),
@@ -575,6 +617,7 @@ ns:RegisterGuide({
             id = "accept-3452-the-flame-s-casing",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 40 } },
             text = "Accept The Flame's Casing from Velarok Windblade in Thorium Point.",
             complete = QuestState(3452, "activeOrCompleted"),
             route = {
@@ -586,6 +629,7 @@ ns:RegisterGuide({
             id = "turnin-7701-wanted-overseer-maltorius",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 45 } },
             text = "Turn in WANTED: Overseer Maltorius to Lookout Captain Lolo Longstriker in Thorium Point.",
             dependsOn = { "objective-7701-wanted-overseer-maltorius" },
             complete = QuestState(7701, "completed"),
@@ -598,6 +642,7 @@ ns:RegisterGuide({
             id = "turnin-7723-curse-these-fat-fingers",
             kind = "turnin",
             priority = 590,
+            conditions = { level = { min = 45 } },
             text = "Turn in Curse These Fat Fingers to Hansel Heavyhands in Thorium Point.",
             dependsOn = { "objective-7723-curse-these-fat-fingers" },
             complete = QuestState(7723, "completed"),
@@ -610,6 +655,7 @@ ns:RegisterGuide({
             id = "turnin-7724-fiery-menace",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 45 } },
             text = "Turn in Fiery Menace! to Hansel Heavyhands in Thorium Point.",
             dependsOn = { "objective-7724-fiery-menace" },
             complete = QuestState(7724, "completed"),
@@ -622,6 +668,7 @@ ns:RegisterGuide({
             id = "turnin-7727-incendosaurs-whateverosaur-is-more-like-it",
             kind = "turnin",
             priority = 610,
+            conditions = { level = { min = 45 } },
             text = "Turn in Incendosaurs? Whateverosaur is More Like It to Hansel Heavyhands in Thorium Point.",
             dependsOn = { "objective-7727-incendosaurs-whateverosaur-is-more-like-it" },
             complete = QuestState(7727, "completed"),
@@ -634,6 +681,7 @@ ns:RegisterGuide({
             id = "turnin-7722-what-the-flux",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 45 } },
             text = "Turn in What the Flux? to Master Smith Burninate in Thorium Point.",
             dependsOn = { "objective-7722-what-the-flux" },
             complete = QuestState(7722, "completed"),
@@ -646,6 +694,7 @@ ns:RegisterGuide({
             id = "turnin-7728-stolen-smithing-tuyere-and-lookout-s-spygl",
             kind = "turnin",
             priority = 630,
+            conditions = { level = { min = 45 } },
             text = "Turn in STOLEN: Smithing Tuyere and Lookout's Spyglass to Taskmaster Scrange in Thorium Point.",
             dependsOn = { "objective-7728-1-dark-iron-steamsmith", "objective-7728-2-dark-iron-lookout" },
             complete = QuestState(7728, "completed"),
@@ -658,6 +707,7 @@ ns:RegisterGuide({
             id = "turnin-7729-job-opportunity-culling-the-competition",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 45 } },
             text = "Turn in JOB OPPORTUNITY: Culling the Competition to Taskmaster Scrange in Thorium Point.",
             dependsOn = { "objective-7729-job-opportunity-culling-the-competition" },
             complete = QuestState(7729, "completed"),
@@ -670,6 +720,7 @@ ns:RegisterGuide({
             id = "objective-3452-the-flame-s-casing",
             kind = "objective",
             priority = 660,
+            conditions = { level = { min = 40 } },
             text = "Kill Twilight Fire Guard or Twilight Dark Shaman and collect Symbol of Ragnaros in Firewatch Ridge Easy to solo, you can pull the elite one at a time, don't recommend skipping.",
             dependsOn = { "accept-3452-the-flame-s-casing" },
             complete = QuestState(3452, "complete"),
@@ -682,6 +733,7 @@ ns:RegisterGuide({
             id = "turnin-3452-the-flame-s-casing",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 40 } },
             text = "Turn in The Flame's Casing to Velarok Windblade in Thorium Point.",
             dependsOn = { "objective-3452-the-flame-s-casing" },
             complete = QuestState(3452, "completed"),
@@ -696,6 +748,7 @@ ns:RegisterGuide({
             priority = 690,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -712,6 +765,7 @@ ns:RegisterGuide({
             priority = 700,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -729,6 +783,7 @@ ns:RegisterGuide({
             priority = 710,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -746,6 +801,7 @@ ns:RegisterGuide({
             priority = 720,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -762,6 +818,7 @@ ns:RegisterGuide({
             priority = 730,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -779,6 +836,7 @@ ns:RegisterGuide({
             priority = 740,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -795,6 +853,7 @@ ns:RegisterGuide({
             priority = 750,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -812,6 +871,7 @@ ns:RegisterGuide({
             priority = 760,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -828,6 +888,7 @@ ns:RegisterGuide({
             priority = 770,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -845,6 +906,7 @@ ns:RegisterGuide({
             priority = 780,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -862,6 +924,7 @@ ns:RegisterGuide({
             priority = 790,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -879,6 +942,7 @@ ns:RegisterGuide({
             priority = 800,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -898,6 +962,7 @@ ns:RegisterGuide({
             priority = 820,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -915,6 +980,7 @@ ns:RegisterGuide({
             priority = 830,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },
@@ -931,6 +997,7 @@ ns:RegisterGuide({
             priority = 840,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3452, state = "completed" } },
                 },
             },

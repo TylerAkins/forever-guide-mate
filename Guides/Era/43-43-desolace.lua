@@ -45,6 +45,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1459, state = "completed" } },
                 },
             },
@@ -59,6 +60,7 @@ ns:RegisterGuide({
             id = "accept-261-down-the-scarlet-path",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 34 } },
             text = "Accept Down the Scarlet Path from Brother Anton in Nijel's Point.",
             complete = QuestState(261, "activeOrCompleted"),
             route = {
@@ -80,6 +82,7 @@ ns:RegisterGuide({
             id = "accept-6134-ghost-o-plasm-round-up",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 34 } },
             text = "Accept Ghost-o-plasm Round Up from Hornizz Brimbuzzle in Kodo Graveyard.",
             complete = QuestState(6134, "activeOrCompleted"),
             route = {
@@ -93,6 +96,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1374, state = "completed" } },
                 },
             },
@@ -109,6 +113,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1374, state = "completed" } },
                 },
             },
@@ -124,6 +129,7 @@ ns:RegisterGuide({
             id = "objective-6134-ghost-o-plasm-round-up",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 34 } },
             text = "Clear the area and use Crate of Ghost Magnets, kill the Magrami Spectre that appear and collect 8 Ghost-o-Plasm.",
             dependsOn = { "accept-6134-ghost-o-plasm-round-up" },
             complete = QuestState(6134, "complete"),
@@ -136,6 +142,7 @@ ns:RegisterGuide({
             id = "objective-261-down-the-scarlet-path",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 34 } },
             text = "Kill 30 Undead Ravager in Valley of Bones.",
             dependsOn = { "accept-261-down-the-scarlet-path" },
             complete = QuestState(261, "complete"),
@@ -150,6 +157,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1459, state = "completed" } },
                 },
             },
@@ -167,6 +175,7 @@ ns:RegisterGuide({
             id = "turnin-6134-ghost-o-plasm-round-up",
             kind = "turnin",
             priority = 150,
+            conditions = { level = { min = 34 } },
             text = "Turn in Ghost-o-plasm Round Up to Hornizz Brimbuzzle in Kodo Graveyard.",
             dependsOn = { "objective-6134-ghost-o-plasm-round-up" },
             complete = QuestState(6134, "completed"),
@@ -181,6 +190,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1374, state = "completed" } },
                 },
             },
@@ -198,6 +208,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1459, state = "completed" } },
                 },
             },
@@ -215,6 +226,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1459, state = "completed" } },
                 },
             },
@@ -229,6 +241,7 @@ ns:RegisterGuide({
             id = "turnin-261-down-the-scarlet-path",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 34 } },
             text = "Turn in Down the Scarlet Path to Brother Anton in Nijel's Point.",
             dependsOn = { "objective-261-down-the-scarlet-path" },
             complete = QuestState(261, "completed"),
@@ -241,6 +254,7 @@ ns:RegisterGuide({
             id = "accept-1052-down-the-scarlet-path",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 34 } },
             text = "Accept Down the Scarlet Path from Brother Anton in Nijel's Point.",
             complete = QuestState(1052, "activeOrCompleted"),
             route = {

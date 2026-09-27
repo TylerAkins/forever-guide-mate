@@ -47,6 +47,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -66,6 +67,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -85,6 +87,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -104,6 +107,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },
@@ -121,6 +125,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -140,6 +145,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -156,6 +162,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -172,6 +179,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -188,6 +196,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -204,6 +213,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },
@@ -220,6 +230,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2601, state = "active" } },
                 },
             },
@@ -237,6 +248,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2603, state = "active" } },
                 },
             },
@@ -254,6 +266,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2581, state = "active" } },
                 },
             },
@@ -271,6 +284,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2583, state = "active" } },
                 },
             },
@@ -288,6 +302,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 45 } },
                     { quest = { id = 2585, state = "active" } },
                 },
             },

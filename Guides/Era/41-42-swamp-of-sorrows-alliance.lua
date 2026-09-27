@@ -51,6 +51,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -68,6 +69,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -86,6 +88,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -103,6 +106,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -134,6 +138,7 @@ ns:RegisterGuide({
             id = "accept-1477-vital-supplies",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 40 } },
             text = "Accept Vital Supplies from High Sorcerer Andromath in Wizard's Sanctum.",
             complete = QuestState(1477, "activeOrCompleted"),
             route = {
@@ -145,6 +150,7 @@ ns:RegisterGuide({
             id = "accept-1395-supplies-for-nethergarde",
             kind = "accept",
             priority = 80,
+            conditions = { level = { min = 40 } },
             text = "Accept Supplies for Nethergarde from Watchmaster Sorigal in Darkshire.",
             complete = QuestState(1395, "activeOrCompleted"),
             route = {
@@ -156,6 +162,7 @@ ns:RegisterGuide({
             id = "accept-1448-in-search-of-the-temple",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 38 } },
             text = "Accept In Search of The Temple from Brohann Caskbelly in Dwarven District.",
             complete = QuestState(1448, "activeOrCompleted"),
             route = {
@@ -169,6 +176,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1115, state = "completed" } },
                 },
             },
@@ -183,6 +191,7 @@ ns:RegisterGuide({
             id = "turnin-1477-vital-supplies",
             kind = "turnin",
             priority = 120,
+            conditions = { level = { min = 40 } },
             text = "Turn in Vital Supplies to Watchmaster Sorigal in Darkshire.",
             dependsOn = { "accept-1477-vital-supplies" },
             complete = QuestState(1477, "completed"),
@@ -207,6 +216,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1115, state = "completed" } },
                 },
             },
@@ -222,6 +232,7 @@ ns:RegisterGuide({
             id = "accept-1396-encroaching-wildlife",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 30 } },
             text = "Accept Encroaching Wildlife from Watcher Biggs in Swamp of Sorrows.",
             complete = QuestState(1396, "activeOrCompleted"),
             route = {
@@ -233,6 +244,7 @@ ns:RegisterGuide({
             id = "objective-1392-noboru-the-cudgel",
             kind = "objective",
             priority = 170,
+            conditions = { level = { min = 29 } },
             text = "Kill Noboru the Cudgel and collect Noboru's Cudgel, he patrols around in The Shifting Mire.",
             complete = QuestState(1392, "complete"),
             route = {
@@ -244,6 +256,7 @@ ns:RegisterGuide({
             id = "objective-1396-encroaching-wildlife",
             kind = "objective",
             priority = 180,
+            conditions = { level = { min = 30 } },
             text = "Kill 10 Sorrow Spinner, 8 Young Sawtooth Crocolisk and 10 Swamp Jaguar in Swamp of Sorrows.",
             dependsOn = { "accept-1396-encroaching-wildlife" },
             complete = QuestState(1396, "complete"),
@@ -262,6 +275,7 @@ ns:RegisterGuide({
             id = "turnin-1396-encroaching-wildlife",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 30 } },
             text = "Turn in Encroaching Wildlife to Watcher Biggs in Swamp of Sorrows.",
             dependsOn = { "objective-1396-encroaching-wildlife" },
             complete = QuestState(1396, "completed"),
@@ -274,6 +288,7 @@ ns:RegisterGuide({
             id = "accept-1421-the-lost-caravan",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 30 } },
             text = "Accept The Lost Caravan from Watcher Biggs in Swamp of Sorrows.",
             complete = QuestState(1421, "activeOrCompleted"),
             route = {
@@ -285,6 +300,7 @@ ns:RegisterGuide({
             id = "accept-1389-draenethyst-crystals",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 30 } },
             text = "Accept Draenethyst Crystals from Magtoor in The Harborage.",
             complete = QuestState(1389, "activeOrCompleted"),
             route = {
@@ -296,6 +312,7 @@ ns:RegisterGuide({
             id = "objective-1421-the-lost-caravan",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 30 } },
             text = "Collect Wizards' Reagents from the Caravan Chest in Fallow Sanctuary.",
             dependsOn = { "accept-1421-the-lost-caravan" },
             complete = QuestState(1421, "complete"),
@@ -308,6 +325,7 @@ ns:RegisterGuide({
             id = "accept-1393-galen-s-escape",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 30 } },
             text = "Accept Galen's Escape from Galen Goodward in Fallow Sanctuary.",
             complete = QuestState(1393, "activeOrCompleted"),
             route = {
@@ -319,6 +337,7 @@ ns:RegisterGuide({
             id = "objective-1393-galen-s-escape",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 30 } },
             text = "Escort Galen Goodward until quest is complete.",
             dependsOn = { "accept-1393-galen-s-escape" },
             complete = QuestState(1393, "complete"),
@@ -333,6 +352,7 @@ ns:RegisterGuide({
             id = "objective-1389-draenethyst-crystals",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 30 } },
             text = "Collect 6 Draenethyst Crystal which are scattered around the Fallow Sanctuary.",
             dependsOn = { "accept-1389-draenethyst-crystals" },
             complete = QuestState(1389, "complete"),
@@ -345,6 +365,7 @@ ns:RegisterGuide({
             id = "turnin-1393-galen-s-escape",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 30 } },
             text = "Turn in Galen's Escape in The Shifting Mire.",
             dependsOn = { "objective-1393-galen-s-escape" },
             complete = QuestState(1393, "completed"),
@@ -357,6 +378,7 @@ ns:RegisterGuide({
             id = "turnin-1389-draenethyst-crystals",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 30 } },
             text = "Turn in Draenethyst Crystals to Magtoor in The Harborage.",
             dependsOn = { "objective-1389-draenethyst-crystals" },
             complete = QuestState(1389, "completed"),
@@ -369,6 +391,7 @@ ns:RegisterGuide({
             id = "turnin-1421-the-lost-caravan",
             kind = "turnin",
             priority = 310,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Lost Caravan to Watcher Biggs in Swamp of Sorrows.",
             dependsOn = { "objective-1421-the-lost-caravan" },
             complete = QuestState(1421, "completed"),
@@ -381,6 +404,7 @@ ns:RegisterGuide({
             id = "accept-1398-driftwood",
             kind = "accept",
             priority = 320,
+            conditions = { level = { min = 30 } },
             text = "Accept Driftwood from Watcher Biggs in Swamp of Sorrows.",
             complete = QuestState(1398, "activeOrCompleted"),
             route = {
@@ -392,6 +416,7 @@ ns:RegisterGuide({
             id = "turnin-1395-supplies-for-nethergarde",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 40 } },
             text = "Turn in Supplies for Nethergarde to Quartermaster Lungertz in Nethergarde Keep.",
             dependsOn = { "accept-1395-supplies-for-nethergarde" },
             complete = QuestState(1395, "completed"),
@@ -404,6 +429,7 @@ ns:RegisterGuide({
             id = "objective-1448-in-search-of-the-temple",
             kind = "objective",
             priority = 350,
+            conditions = { level = { min = 38 } },
             text = "Search for the Temple of Atal'Hakkar in Pool of Tears, just run towards the waypoint to complete the quest.",
             dependsOn = { "accept-1448-in-search-of-the-temple" },
             complete = QuestState(1448, "complete"),
@@ -416,6 +442,7 @@ ns:RegisterGuide({
             id = "objective-1258-and-bugs",
             kind = "objective",
             priority = 370,
+            conditions = { level = { min = 33 } },
             text = "Kill Silt Crawler and collect 12 Pristine Crawler Leg in Misty Reed Strand.",
             complete = QuestState(1258, "complete"),
             route = {
@@ -427,6 +454,7 @@ ns:RegisterGuide({
             id = "objective-1398-1-driftwood",
             kind = "objective",
             priority = 380,
+            conditions = { level = { min = 30 } },
             text = "Collect 8 Sundried Driftwood in Misty Reed Strand It spawns in each waypoint and you will need to through the murloc village to get some unless you're willing to wait for respawn.",
             dependsOn = { "accept-1398-driftwood" },
             complete = QuestObjective(1398, 1),
@@ -449,6 +477,7 @@ ns:RegisterGuide({
             id = "turnin-1398-driftwood",
             kind = "turnin",
             priority = 390,
+            conditions = { level = { min = 30 } },
             text = "Turn in Driftwood to Watcher Biggs in Swamp of Sorrows.",
             dependsOn = { "objective-1398-1-driftwood" },
             complete = QuestState(1398, "completed"),
@@ -461,6 +490,7 @@ ns:RegisterGuide({
             id = "accept-1425-deliver-the-shipment",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 30 } },
             text = "Accept Deliver the Shipment from Watcher Biggs in Swamp of Sorrows.",
             complete = QuestState(1425, "activeOrCompleted"),
             route = {
@@ -472,6 +502,7 @@ ns:RegisterGuide({
             id = "turnin-1425-deliver-the-shipment",
             kind = "turnin",
             priority = 420,
+            conditions = { level = { min = 30 } },
             text = "Turn in Deliver the Shipment to Quartermaster Lungertz in Nethergarde Keep.",
             dependsOn = { "accept-1425-deliver-the-shipment" },
             complete = QuestState(1425, "completed"),
@@ -484,6 +515,7 @@ ns:RegisterGuide({
             id = "turnin-1448-in-search-of-the-temple",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 38 } },
             text = "Turn in In Search of The Temple to Brohann Caskbelly in Dwarven District.",
             dependsOn = { "objective-1448-in-search-of-the-temple" },
             complete = QuestState(1448, "completed"),
@@ -496,6 +528,7 @@ ns:RegisterGuide({
             id = "accept-1449-to-the-hinterlands",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 38 } },
             text = "Accept To The Hinterlands from Brohann Caskbelly in Dwarven District.",
             complete = QuestState(1449, "activeOrCompleted"),
             route = {
@@ -509,6 +542,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1115, state = "completed" } },
                 },
             },
@@ -526,6 +560,7 @@ ns:RegisterGuide({
             priority = 480,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1115, state = "completed" } },
                 },
             },
@@ -540,6 +575,7 @@ ns:RegisterGuide({
             id = "turnin-1258-and-bugs",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 33 } },
             text = "Turn in ... and Bugs to Morgan Stern in Theramore Isle.",
             dependsOn = { "objective-1258-and-bugs" },
             complete = QuestState(1258, "completed"),

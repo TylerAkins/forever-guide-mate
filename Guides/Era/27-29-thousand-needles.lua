@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-1130-melor-sends-word",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 20 } },
             text = "Accept Melor Sends Word from Jorn Skyseer in Camp Taurajo.",
             complete = QuestState(1130, "activeOrCompleted"),
             route = {
@@ -58,6 +59,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -72,6 +74,7 @@ ns:RegisterGuide({
             id = "turnin-1130-melor-sends-word",
             kind = "turnin",
             priority = 50,
+            conditions = { level = { min = 20 } },
             text = "Turn in Melor Sends Word to Melor Stonehoof in Hunter Rise.",
             dependsOn = { "accept-1130-melor-sends-word" },
             complete = QuestState(1130, "completed"),
@@ -84,6 +87,7 @@ ns:RegisterGuide({
             id = "accept-1131-steelsnap",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 20 } },
             text = "Accept Steelsnap from Melor Stonehoof in Hunter Rise.",
             complete = QuestState(1131, "activeOrCompleted"),
             route = {
@@ -97,6 +101,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 1063, state = "completed" } },
                 },
             },
@@ -113,6 +118,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 1063, state = "completed" } },
                 },
             },
@@ -130,6 +136,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 13 } },
                     { quest = { id = 1063, state = "completed" } },
                 },
             },
@@ -144,6 +151,7 @@ ns:RegisterGuide({
             id = "objective-4881-galak-messenger",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 23 } },
             text = "Find and kill the patroling Galak Messenger to start new quest in Darkcloud Pinnacle.",
             dependsOn = { "accept-4881-assassination-plot" },
             complete = QuestState(4881, "complete"),
@@ -160,6 +168,7 @@ ns:RegisterGuide({
             id = "accept-4881-assassination-plot",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 23 } },
             text = "Use the Assassination Note to accept Assassination Plot.",
             complete = QuestState(4881, "activeOrCompleted"),
         },
@@ -167,6 +176,7 @@ ns:RegisterGuide({
             id = "accept-4841-pacify-the-centaur",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 23 } },
             text = "Accept Pacify the Centaur from Cliffwatcher Longhorn in Freewind Post.",
             complete = QuestState(4841, "activeOrCompleted"),
             route = {
@@ -178,6 +188,7 @@ ns:RegisterGuide({
             id = "accept-5147-wanted-arnak-grimtotem",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 25 } },
             text = "Accept Wanted - Arnak Grimtotem.",
             complete = QuestState(5147, "activeOrCompleted"),
             route = {
@@ -189,6 +200,7 @@ ns:RegisterGuide({
             id = "accept-4821-alien-egg",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 24 } },
             text = "Accept Alien Egg from Hagar Lightninghoof in Freewind Post.",
             complete = QuestState(4821, "activeOrCompleted"),
             route = {
@@ -200,6 +212,7 @@ ns:RegisterGuide({
             id = "accept-4767-wind-rider",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 25 } },
             text = "Accept Wind Rider from Elu in Freewind Post.",
             complete = QuestState(4767, "activeOrCompleted"),
             route = {
@@ -211,6 +224,7 @@ ns:RegisterGuide({
             id = "objective-4841-pacify-the-centaur",
             kind = "objective",
             priority = 170,
+            conditions = { level = { min = 23 } },
             text = "Kill 12 Galak Scout, 10 Galak Wrangler and 6 Galak Windchaser just north of Freewind.",
             dependsOn = { "accept-4841-pacify-the-centaur" },
             complete = QuestState(4841, "complete"),
@@ -223,6 +237,7 @@ ns:RegisterGuide({
             id = "accept-1149-test-of-faith",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 25 } },
             text = "Accept Test of Faith from Dorn Plainstalker in The Weathered Nook.",
             complete = QuestState(1149, "activeOrCompleted"),
             route = {
@@ -234,6 +249,7 @@ ns:RegisterGuide({
             id = "objective-1149-test-of-faith",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 25 } },
             text = "Run off the platform, Make sure you only jump off of the wooden plank! If you jump off of anywhere else you will fall to your death.",
             dependsOn = { "accept-1149-test-of-faith" },
             complete = QuestState(1149, "complete"),
@@ -246,6 +262,7 @@ ns:RegisterGuide({
             id = "turnin-1149-test-of-faith",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 25 } },
             text = "Turn in Test of Faith to Dorn Plainstalker in The Weathered Nook.",
             dependsOn = { "objective-1149-test-of-faith" },
             complete = QuestState(1149, "completed"),
@@ -260,6 +277,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -275,6 +293,7 @@ ns:RegisterGuide({
             id = "objective-4821-alien-egg",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 24 } },
             text = "The Alien Egg can spawn around 3 possible spots.",
             dependsOn = { "accept-4821-alien-egg" },
             complete = QuestState(4821, "complete"),
@@ -291,6 +310,7 @@ ns:RegisterGuide({
             id = "turnin-4841-pacify-the-centaur",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 23 } },
             text = "Turn in Pacify the Centaur to Cliffwatcher Longhorn in Freewind Post.",
             dependsOn = { "objective-4841-pacify-the-centaur" },
             complete = QuestState(4841, "completed"),
@@ -303,6 +323,7 @@ ns:RegisterGuide({
             id = "accept-5064-grimtotem-spying",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 24 } },
             text = "Accept Grimtotem Spying from Cliffwatcher Longhorn in Freewind Post.",
             complete = QuestState(5064, "activeOrCompleted"),
             route = {
@@ -314,6 +335,7 @@ ns:RegisterGuide({
             id = "turnin-4821-alien-egg",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 24 } },
             text = "Turn in Alien Egg to Hagar Lightninghoof in Freewind Post.",
             dependsOn = { "objective-4821-alien-egg" },
             complete = QuestState(4821, "completed"),
@@ -326,6 +348,7 @@ ns:RegisterGuide({
             id = "accept-4865-serpent-wild",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 24 } },
             text = "Accept Serpent Wild from Hagar Lightninghoof in Freewind Post.",
             complete = QuestState(4865, "activeOrCompleted"),
             route = {
@@ -339,6 +362,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -355,6 +379,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -372,6 +397,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -389,6 +415,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -416,6 +443,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1197, state = "completed" } },
                 },
             },
@@ -430,6 +458,7 @@ ns:RegisterGuide({
             id = "accept-4865-serpent-wild-2",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 24 } },
             text = "Accept Serpent Wild from Hagar Lightninghoof in Freewind Post.",
             complete = QuestState(4865, "activeOrCompleted"),
             route = {
@@ -443,6 +472,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1197, state = "completed" } },
                 },
             },
@@ -462,6 +492,7 @@ ns:RegisterGuide({
             id = "objective-4881-galak-messenger-2",
             kind = "objective",
             priority = 380,
+            conditions = { level = { min = 23 } },
             text = "Find and kill the patroling Galak Messenger to start new quest in Darkcloud Pinnacle.",
             dependsOn = { "accept-4881-assassination-plot" },
             complete = QuestState(4881, "complete"),
@@ -478,6 +509,7 @@ ns:RegisterGuide({
             id = "turnin-4865-serpent-wild",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 24 } },
             text = "Turn in Serpent Wild to Motega Firemane in Whitereach Post.",
             dependsOn = { "accept-4865-serpent-wild" },
             complete = QuestState(4865, "completed"),
@@ -490,6 +522,7 @@ ns:RegisterGuide({
             id = "accept-5062-sacred-fire",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 24 } },
             text = "Accept Sacred Fire from Motega Firemane in Whitereach Post.",
             complete = QuestState(5062, "activeOrCompleted"),
             route = {
@@ -501,6 +534,7 @@ ns:RegisterGuide({
             id = "accept-5151-hypercapacitor-gizmo",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 24 } },
             text = "Accept Hypercapacitor Gizmo from Wizlo Bearingshiner in Whitereach Post.",
             complete = QuestState(5151, "activeOrCompleted"),
             route = {
@@ -512,6 +546,7 @@ ns:RegisterGuide({
             id = "objective-5062-sacred-fire",
             kind = "objective",
             priority = 430,
+            conditions = { level = { min = 24 } },
             text = "Collect 10 Incendia Agave from Incendia Agave in Darkcloud Pinnacle.",
             dependsOn = { "accept-5062-sacred-fire" },
             complete = QuestState(5062, "complete"),
@@ -524,6 +559,7 @@ ns:RegisterGuide({
             id = "objective-4767-wind-rider",
             kind = "objective",
             priority = 450,
+            conditions = { level = { min = 25 } },
             text = "Gather 10 Highperch Wyvern Egg from Highperch Wyvern Egg in Highperch.",
             dependsOn = { "accept-4767-wind-rider" },
             complete = QuestState(4767, "complete"),
@@ -538,6 +574,7 @@ ns:RegisterGuide({
             id = "accept-4770-homeward-bound",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 25 } },
             text = "Accept Homeward Bound from Pao'ka Swiftmountain in Highperch.",
             complete = QuestState(4770, "activeOrCompleted"),
             route = {
@@ -549,6 +586,7 @@ ns:RegisterGuide({
             id = "objective-4770-homeward-bound",
             kind = "objective",
             priority = 470,
+            conditions = { level = { min = 25 } },
             text = "Escort Pao'ka Swiftmountain from Highperch.",
             dependsOn = { "accept-4770-homeward-bound" },
             complete = QuestState(4770, "complete"),
@@ -561,6 +599,7 @@ ns:RegisterGuide({
             id = "turnin-1131-steelsnap",
             kind = "turnin",
             priority = 490,
+            conditions = { level = { min = 20 } },
             text = "Turn in Steelsnap to Melor Stonehoof in Hunter Rise.",
             dependsOn = { "accept-1131-steelsnap" },
             complete = QuestState(1131, "completed"),
@@ -573,6 +612,7 @@ ns:RegisterGuide({
             id = "accept-1136-frostmaw",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 26 } },
             text = "Accept Frostmaw from Melor Stonehoof in Hunter Rise.",
             complete = QuestState(1136, "activeOrCompleted"),
             route = {
@@ -584,6 +624,7 @@ ns:RegisterGuide({
             id = "turnin-5062-sacred-fire",
             kind = "turnin",
             priority = 510,
+            conditions = { level = { min = 24 } },
             text = "Turn in Sacred Fire to Magatha Grimtotem in Elder Rise.",
             dependsOn = { "objective-5062-sacred-fire" },
             complete = QuestState(5062, "completed"),
@@ -596,6 +637,7 @@ ns:RegisterGuide({
             id = "accept-5088-arikara",
             kind = "accept",
             priority = 520,
+            conditions = { level = { min = 24 } },
             text = "Accept Arikara from Magatha Grimtotem in Elder Rise.",
             complete = QuestState(5088, "activeOrCompleted"),
             route = {
@@ -607,6 +649,7 @@ ns:RegisterGuide({
             id = "turnin-4767-wind-rider",
             kind = "turnin",
             priority = 540,
+            conditions = { level = { min = 25 } },
             text = "Turn in Wind Rider to Elu in Freewind Post.",
             dependsOn = { "objective-4767-wind-rider" },
             complete = QuestState(4767, "completed"),
@@ -621,6 +664,7 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 1197, state = "completed" } },
                 },
             },
@@ -636,6 +680,7 @@ ns:RegisterGuide({
             id = "objective-5064-1-secret-note-1",
             kind = "objective",
             priority = 570,
+            conditions = { level = { min = 24 } },
             text = "Collect Secret Note #1 from the Document Chest in Darkcloud Pinnacle.",
             dependsOn = { "accept-5064-grimtotem-spying" },
             complete = QuestObjective(5064, 1),
@@ -648,6 +693,7 @@ ns:RegisterGuide({
             id = "objective-5064-2-secret-note-2",
             kind = "objective",
             priority = 580,
+            conditions = { level = { min = 24 } },
             text = "Collect Secret Note #2 from the Document Chest in Darkcloud Pinnacle.",
             dependsOn = { "accept-5064-grimtotem-spying" },
             complete = QuestObjective(5064, 2),
@@ -660,6 +706,7 @@ ns:RegisterGuide({
             id = "objective-5064-3-secret-note-3",
             kind = "objective",
             priority = 590,
+            conditions = { level = { min = 24 } },
             text = "Collect Secret Note #3 from the Document Chest in Darkcloud Pinnacle.",
             dependsOn = { "accept-5064-grimtotem-spying" },
             complete = QuestObjective(5064, 3),
@@ -672,6 +719,7 @@ ns:RegisterGuide({
             id = "objective-5064-grimtotem-spying",
             kind = "objective",
             priority = 600,
+            conditions = { level = { min = 24 } },
             text = "Take the path up and collect Secret Note #1, Secret Note #2 and Secret Note #3 from the boxes.",
             dependsOn = { "accept-5064-grimtotem-spying" },
             complete = QuestState(5064, "complete"),
@@ -690,6 +738,7 @@ ns:RegisterGuide({
             id = "objective-5088-2-light-the-sacred-fire-of-life",
             kind = "objective",
             priority = 610,
+            conditions = { level = { min = 24 } },
             text = "Click Item Sacred Fire of Life in Darkcloud Pinnacle.",
             dependsOn = { "accept-5088-arikara" },
             complete = QuestObjective(5088, 2),
@@ -702,6 +751,7 @@ ns:RegisterGuide({
             id = "objective-5088-arikara",
             kind = "objective",
             priority = 620,
+            conditions = { level = { min = 24 } },
             text = "Kill Arikara and collect Arikara Serpent Skin in Darkcloud Pinnacle.",
             dependsOn = { "accept-5088-arikara" },
             complete = QuestState(5088, "complete"),
@@ -714,6 +764,7 @@ ns:RegisterGuide({
             id = "objective-5147-wanted-arnak-grimtotem",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 25 } },
             text = "Kill Arnak Grimtotem to the north, on the edge of the zone and loot Arnak's Hoof.",
             dependsOn = { "accept-5147-wanted-arnak-grimtotem" },
             complete = QuestState(5147, "complete"),
@@ -728,6 +779,7 @@ ns:RegisterGuide({
             id = "accept-4904-free-at-last",
             kind = "accept",
             priority = 650,
+            conditions = { level = { min = 25 } },
             text = "Accept Free at Last from Lakota Windsong in Darkcloud Pinnacle.",
             complete = QuestState(4904, "activeOrCompleted"),
             route = {
@@ -739,6 +791,7 @@ ns:RegisterGuide({
             id = "objective-4904-free-at-last",
             kind = "objective",
             priority = 660,
+            conditions = { level = { min = 25 } },
             text = "Escort Lakota Windsong from Darkcloud Pinnacle.",
             dependsOn = { "accept-4904-free-at-last" },
             complete = QuestState(4904, "complete"),
@@ -751,6 +804,7 @@ ns:RegisterGuide({
             id = "turnin-5088-arikara",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 24 } },
             text = "Turn in Arikara to Motega Firemane in Whitereach Post.",
             dependsOn = { "objective-5088-2-light-the-sacred-fire-of-life", "objective-5088-arikara" },
             complete = QuestState(5088, "completed"),
@@ -763,6 +817,7 @@ ns:RegisterGuide({
             id = "turnin-4770-homeward-bound",
             kind = "turnin",
             priority = 690,
+            conditions = { level = { min = 25 } },
             text = "Turn in Homeward Bound to Motega Firemane in Whitereach Post.",
             dependsOn = { "objective-4770-homeward-bound" },
             complete = QuestState(4770, "completed"),
@@ -775,6 +830,7 @@ ns:RegisterGuide({
             id = "objective-5151-hypercapacitor-gizmo",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 24 } },
             text = "Find the Panther Cage at the wrecked caravan north of Whitereach Post and use the Panther Cage Key to open it. Kill the Enraged Panther and take the Hypercapacitor Gizmo.",
             dependsOn = { "accept-5151-hypercapacitor-gizmo" },
             complete = QuestState(5151, "complete"),
@@ -787,6 +843,7 @@ ns:RegisterGuide({
             id = "turnin-5151-hypercapacitor-gizmo",
             kind = "turnin",
             priority = 720,
+            conditions = { level = { min = 24 } },
             text = "Turn in Hypercapacitor Gizmo to Wizlo Bearingshiner in Whitereach Post.",
             dependsOn = { "objective-5151-hypercapacitor-gizmo" },
             complete = QuestState(5151, "completed"),
@@ -799,6 +856,7 @@ ns:RegisterGuide({
             id = "accept-4966-protect-kanati-greycloud",
             kind = "accept",
             priority = 730,
+            conditions = { level = { min = 23 } },
             text = "Accept Protect Kanati Greycloud from Kanati Greycloud in Whitereach Post.",
             complete = QuestState(4966, "activeOrCompleted"),
             route = {
@@ -810,6 +868,7 @@ ns:RegisterGuide({
             id = "objective-4966-protect-kanati-greycloud",
             kind = "objective",
             priority = 740,
+            conditions = { level = { min = 23 } },
             text = "Protect Kanati Greycloud from the centaur attack.",
             dependsOn = { "accept-4966-protect-kanati-greycloud" },
             complete = QuestState(4966, "complete"),
@@ -822,6 +881,7 @@ ns:RegisterGuide({
             id = "turnin-4966-protect-kanati-greycloud",
             kind = "turnin",
             priority = 750,
+            conditions = { level = { min = 23 } },
             text = "Turn in Protect Kanati Greycloud to Kanati Greycloud in Whitereach Post.",
             dependsOn = { "objective-4966-protect-kanati-greycloud" },
             complete = QuestState(4966, "completed"),
@@ -834,6 +894,7 @@ ns:RegisterGuide({
             id = "turnin-4904-free-at-last",
             kind = "turnin",
             priority = 770,
+            conditions = { level = { min = 25 } },
             text = "Turn in Free at Last to Thalia Amberhide in Freewind Post.",
             dependsOn = { "objective-4904-free-at-last" },
             complete = QuestState(4904, "completed"),
@@ -846,6 +907,7 @@ ns:RegisterGuide({
             id = "turnin-5147-wanted-arnak-grimtotem",
             kind = "turnin",
             priority = 780,
+            conditions = { level = { min = 25 } },
             text = "Turn in Wanted - Arnak Grimtotem to Cliffwatcher Longhorn in Freewind Post.",
             dependsOn = { "objective-5147-wanted-arnak-grimtotem" },
             complete = QuestState(5147, "completed"),
@@ -858,6 +920,7 @@ ns:RegisterGuide({
             id = "turnin-5064-grimtotem-spying",
             kind = "turnin",
             priority = 790,
+            conditions = { level = { min = 24 } },
             text = "Turn in Grimtotem Spying to Cliffwatcher Longhorn in Freewind Post.",
             dependsOn = { "objective-5064-1-secret-note-1", "objective-5064-2-secret-note-2", "objective-5064-3-secret-note-3", "objective-5064-grimtotem-spying" },
             complete = QuestState(5064, "completed"),

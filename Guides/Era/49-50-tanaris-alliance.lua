@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "turnin-623-akiris-by-the-bundle",
             kind = "turnin",
             priority = 20,
+            conditions = { level = { min = 38 } },
             text = "Turn in Akiris by the Bundle to Privateer Groy in Theramore Isle.",
             complete = QuestState(623, "completed"),
             route = {
@@ -56,6 +57,7 @@ ns:RegisterGuide({
             id = "objective-4450-3-overdue-package",
             kind = "objective",
             priority = 40,
+            conditions = { level = { min = 43 } },
             text = "Collect Overdue Package from the Damaged Crate in Beezil's Wreck.",
             complete = QuestObjective(4450, 3),
             route = {
@@ -69,6 +71,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 35 } },
                     { quest = { id = 625, state = "completed" } },
                 },
             },
@@ -93,6 +96,7 @@ ns:RegisterGuide({
             id = "accept-2605-the-thirsty-goblin",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 44 } },
             text = "Accept The Thirsty Goblin from Marin Noggenfogger in Gadgetzan.",
             complete = QuestState(2605, "activeOrCompleted"),
             route = {
@@ -104,6 +108,7 @@ ns:RegisterGuide({
             id = "accept-992-gadgetzan-water-survey",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 38 } },
             text = "Accept Gadgetzan Water Survey from Senior Surveyor Fizzledowser in Gadgetzan.",
             complete = QuestState(992, "activeOrCompleted"),
             route = {
@@ -115,6 +120,7 @@ ns:RegisterGuide({
             id = "objective-992-gadgetzan-water-survey",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 38 } },
             text = "Use Untapped Dowsing Widget inside the pool in Sandsorrow Watch.",
             dependsOn = { "accept-992-gadgetzan-water-survey" },
             complete = QuestState(992, "complete"),
@@ -127,6 +133,7 @@ ns:RegisterGuide({
             id = "turnin-992-gadgetzan-water-survey",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 38 } },
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser in Gadgetzan.",
             dependsOn = { "objective-992-gadgetzan-water-survey" },
             complete = QuestState(992, "completed"),
@@ -139,6 +146,7 @@ ns:RegisterGuide({
             id = "accept-82-noxious-lair-investigation",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 39 } },
             text = "Accept Noxious Lair Investigation from Senior Surveyor Fizzledowser in Gadgetzan.",
             complete = QuestState(82, "activeOrCompleted"),
             route = {
@@ -150,6 +158,7 @@ ns:RegisterGuide({
             id = "accept-3362-thistleshrub-valley",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 45 } },
             text = "Accept Thistleshrub Valley from Tran'rek in Gadgetzan.",
             complete = QuestState(3362, "activeOrCompleted"),
             route = {
@@ -161,6 +170,7 @@ ns:RegisterGuide({
             id = "accept-5863-the-dunemaul-compound",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 44 } },
             text = "Accept The Dunemaul Compound from Andi Lynn in Gadgetzan.",
             complete = QuestState(5863, "activeOrCompleted"),
             route = {
@@ -172,6 +182,7 @@ ns:RegisterGuide({
             id = "turnin-3445-the-sunken-temple",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 46 } },
             text = "Turn in The Sunken Temple to Marvon Rivetseeker in Broken Pillar.",
             complete = QuestState(3445, "completed"),
             route = {
@@ -183,6 +194,7 @@ ns:RegisterGuide({
             id = "accept-3444-the-stone-circle",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 46 } },
             text = "Accept The Stone Circle from Marvon Rivetseeker in Broken Pillar.",
             complete = QuestState(3444, "activeOrCompleted"),
             route = {
@@ -194,6 +206,7 @@ ns:RegisterGuide({
             id = "accept-3161-gahz-ridian",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 43 } },
             text = "Accept Gahz'ridian from Marvon Rivetseeker in Broken Pillar.",
             complete = QuestState(3161, "activeOrCompleted"),
             route = {
@@ -205,6 +218,7 @@ ns:RegisterGuide({
             id = "objective-3161-gahz-ridian-detector",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 43 } },
             text = "Use Gahz'ridian Detector to help you find 30 Gahz'ridian Ornament from the small sand mound on the ground.",
             dependsOn = { "accept-3161-gahz-ridian" },
             complete = QuestState(3161, "complete"),
@@ -213,6 +227,7 @@ ns:RegisterGuide({
             id = "objective-5863-3-gor-marok-the-ravager",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 44 } },
             text = "Kill Gor'marok the Ravager inside the cave in Dunemaul Compound.",
             dependsOn = { "accept-5863-the-dunemaul-compound" },
             complete = QuestObjective(5863, 3),
@@ -225,6 +240,7 @@ ns:RegisterGuide({
             id = "objective-1452-1-searing-roc",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 38 } },
             text = "Kill Searing Roc and collect 3 Roc Gizzard.",
             complete = QuestObjective(1452, 1),
             route = {
@@ -236,6 +252,7 @@ ns:RegisterGuide({
             id = "objective-5863-the-dunemaul-compound",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 44 } },
             text = "Kill 10 Dunemaul Brute, 10 Dunemaul Enforcer and Gor'marok the Ravager in Dunemaul Compound.",
             dependsOn = { "accept-5863-the-dunemaul-compound" },
             complete = QuestState(5863, "complete"),
@@ -252,6 +269,7 @@ ns:RegisterGuide({
             id = "objective-3161-gahz-ridian",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 43 } },
             text = "Equip the Gahz'ridian Detector to find 30 Gahz'ridian Ornament all over Tanaris and especially near the Eastmoon Ruins.",
             dependsOn = { "accept-3161-gahz-ridian" },
             complete = QuestState(3161, "complete"),
@@ -268,6 +286,7 @@ ns:RegisterGuide({
             id = "objective-82-noxious-lair-investigation",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 39 } },
             text = "Kill Centipaar insects and collect 5 Centipaar Insect Parts in The Noxious Lair.",
             dependsOn = { "accept-82-noxious-lair-investigation" },
             complete = QuestState(82, "complete"),
@@ -280,6 +299,7 @@ ns:RegisterGuide({
             id = "objective-2605-thistleshrub-dew-collector",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 44 } },
             text = "Kill Thistleshrub Dew Collector until you collect Laden Dew Gland in Thistleshrub Valley.",
             dependsOn = { "accept-2605-the-thirsty-goblin" },
             complete = QuestState(2605, "complete"),
@@ -292,6 +312,7 @@ ns:RegisterGuide({
             id = "objective-3362-thistleshrub-valley",
             kind = "objective",
             priority = 330,
+            conditions = { level = { min = 45 } },
             text = "Kill 8 Gnarled Thistleshrub and 8 Thistleshrub Rootshaper in Thistleshrub Valley.",
             dependsOn = { "accept-3362-thistleshrub-valley" },
             complete = QuestState(3362, "complete"),
@@ -304,6 +325,7 @@ ns:RegisterGuide({
             id = "accept-1560-tooga-s-quest",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 40 } },
             text = "Accept Tooga's Quest from Tooga.",
             complete = QuestState(1560, "activeOrCompleted"),
             route = {
@@ -317,6 +339,7 @@ ns:RegisterGuide({
             id = "objective-1560-tooga-s-quest",
             kind = "objective",
             priority = 350,
+            conditions = { level = { min = 40 } },
             text = "Escort Tooga to Steamwheedle Port.",
             dependsOn = { "accept-1560-tooga-s-quest" },
             complete = QuestState(1560, "complete"),
@@ -329,6 +352,7 @@ ns:RegisterGuide({
             id = "turnin-1560-tooga-s-quest",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 40 } },
             text = "Turn in Tooga's Quest to Torta in Steamwheedle Port.",
             dependsOn = { "objective-1560-tooga-s-quest" },
             complete = QuestState(1560, "completed"),
@@ -341,6 +365,7 @@ ns:RegisterGuide({
             id = "turnin-5863-the-dunemaul-compound",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 44 } },
             text = "Turn in The Dunemaul Compound to Andi Lynn in Gadgetzan.",
             dependsOn = { "objective-5863-3-gor-marok-the-ravager", "objective-5863-the-dunemaul-compound" },
             complete = QuestState(5863, "completed"),
@@ -353,6 +378,7 @@ ns:RegisterGuide({
             id = "turnin-2605-the-thirsty-goblin",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 44 } },
             text = "Turn in The Thirsty Goblin to Marin Noggenfogger in Gadgetzan.",
             dependsOn = { "objective-2605-thistleshrub-dew-collector" },
             complete = QuestState(2605, "completed"),
@@ -365,6 +391,7 @@ ns:RegisterGuide({
             id = "accept-2606-in-good-taste",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 44 } },
             text = "Accept In Good Taste from Marin Noggenfogger in Gadgetzan.",
             complete = QuestState(2606, "activeOrCompleted"),
             route = {
@@ -376,6 +403,7 @@ ns:RegisterGuide({
             id = "turnin-2606-in-good-taste",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 44 } },
             text = "Turn in In Good Taste to Sprinkle in Gadgetzan.",
             dependsOn = { "accept-2606-in-good-taste" },
             complete = QuestState(2606, "completed"),
@@ -388,6 +416,7 @@ ns:RegisterGuide({
             id = "accept-2641-sprinkle-s-secret-ingredient",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 44 } },
             text = "Accept Sprinkle's Secret Ingredient from Sprinkle in Gadgetzan.",
             complete = QuestState(2641, "activeOrCompleted"),
             route = {
@@ -399,6 +428,7 @@ ns:RegisterGuide({
             id = "turnin-82-noxious-lair-investigation",
             kind = "turnin",
             priority = 420,
+            conditions = { level = { min = 39 } },
             text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg in Gadgetzan.",
             dependsOn = { "objective-82-noxious-lair-investigation" },
             complete = QuestState(82, "completed"),
@@ -411,6 +441,7 @@ ns:RegisterGuide({
             id = "accept-10-the-scrimshank-redemption",
             kind = "accept",
             priority = 430,
+            conditions = { level = { min = 39 } },
             text = "Accept The Scrimshank Redemption from Senior Surveyor Fizzledowser in Gadgetzan.",
             complete = QuestState(10, "activeOrCompleted"),
             route = {
@@ -422,6 +453,7 @@ ns:RegisterGuide({
             id = "turnin-3362-thistleshrub-valley",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 45 } },
             text = "Turn in Thistleshrub Valley to Tran'rek in Gadgetzan.",
             dependsOn = { "objective-3362-thistleshrub-valley" },
             complete = QuestState(3362, "completed"),
@@ -434,6 +466,7 @@ ns:RegisterGuide({
             id = "turnin-3161-gahz-ridian",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 43 } },
             text = "Turn in Gahz'ridian to Marvon Rivetseeker in Broken Pillar.",
             dependsOn = { "objective-3161-gahz-ridian-detector", "objective-3161-gahz-ridian" },
             complete = QuestState(3161, "completed"),
@@ -446,6 +479,7 @@ ns:RegisterGuide({
             id = "travel-10-the-gaping-chasm",
             kind = "travel",
             priority = 470,
+            conditions = { level = { min = 39 } },
             text = "Travel to The Gaping Chasm. Go to the Gaping Chasm, enter the cave, and follow the tunnel to the butterfly-shaped room. Loot Scrimshank's Surveying Gear there.",
             complete = QuestState(10, "complete"),
             dependsOn = { "accept-10-the-scrimshank-redemption" },
@@ -458,6 +492,7 @@ ns:RegisterGuide({
             id = "objective-10-the-scrimshank-redemption",
             kind = "objective",
             priority = 480,
+            conditions = { level = { min = 39 } },
             text = "Go to the Gaping Chasm, enter the cave, and follow the tunnel to the butterfly-shaped room. Loot Scrimshank's Surveying Gear there.",
             dependsOn = { "accept-10-the-scrimshank-redemption" },
             complete = QuestState(10, "complete"),
@@ -478,6 +513,7 @@ ns:RegisterGuide({
             priority = 490,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 351, state = "completed" } },
                 },
             },
@@ -494,6 +530,7 @@ ns:RegisterGuide({
             priority = 500,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 351, state = "completed" } },
                 },
             },
@@ -515,6 +552,7 @@ ns:RegisterGuide({
             id = "turnin-10-the-scrimshank-redemption",
             kind = "turnin",
             priority = 520,
+            conditions = { level = { min = 39 } },
             text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser in Gadgetzan.",
             dependsOn = { "objective-10-the-scrimshank-redemption" },
             complete = QuestState(10, "completed"),
@@ -527,6 +565,7 @@ ns:RegisterGuide({
             id = "accept-110-insect-part-analysis",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 39 } },
             text = "Accept Insect Part Analysis from Senior Surveyor Fizzledowser in Gadgetzan.",
             complete = QuestState(110, "activeOrCompleted"),
             route = {
@@ -538,6 +577,7 @@ ns:RegisterGuide({
             id = "turnin-110-insect-part-analysis",
             kind = "turnin",
             priority = 540,
+            conditions = { level = { min = 39 } },
             text = "Turn in Insect Part Analysis to Tran'rek in Gadgetzan.",
             dependsOn = { "accept-110-insect-part-analysis" },
             complete = QuestState(110, "completed"),
@@ -550,6 +590,7 @@ ns:RegisterGuide({
             id = "accept-113-insect-part-analysis",
             kind = "accept",
             priority = 550,
+            conditions = { level = { min = 39 } },
             text = "Accept Insect Part Analysis from Alchemist Pestlezugg in Gadgetzan.",
             complete = QuestState(113, "activeOrCompleted"),
             route = {
@@ -561,6 +602,7 @@ ns:RegisterGuide({
             id = "turnin-113-insect-part-analysis",
             kind = "turnin",
             priority = 560,
+            conditions = { level = { min = 39 } },
             text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser in Gadgetzan.",
             dependsOn = { "accept-113-insect-part-analysis" },
             complete = QuestState(113, "completed"),
@@ -573,6 +615,7 @@ ns:RegisterGuide({
             id = "accept-162-rise-of-the-silithid",
             kind = "accept",
             priority = 570,
+            conditions = { level = { min = 39 } },
             text = "Accept Rise of the Silithid from Senior Surveyor Fizzledowser in Gadgetzan.",
             complete = QuestState(162, "activeOrCompleted"),
             route = {
@@ -586,6 +629,7 @@ ns:RegisterGuide({
             priority = 580,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1188, state = "completed" } },
                 },
             },
@@ -602,6 +646,7 @@ ns:RegisterGuide({
             priority = 590,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1188, state = "completed" } },
                 },
             },
@@ -619,6 +664,7 @@ ns:RegisterGuide({
             priority = 600,
             conditions = {
                 all = {
+                    { level = { min = 38 } },
                     { quest = { id = 3842, state = "completed" } },
                 },
             },
@@ -631,6 +677,7 @@ ns:RegisterGuide({
             priority = 610,
             conditions = {
                 all = {
+                    { level = { min = 38 } },
                     { quest = { id = 3842, state = "completed" } },
                 },
             },

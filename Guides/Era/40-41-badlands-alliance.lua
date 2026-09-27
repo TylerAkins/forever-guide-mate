@@ -48,6 +48,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -65,6 +66,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 3 },
                 },
@@ -83,6 +85,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -100,6 +103,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { class = 2 },
                     { race = 1 },
                 },
@@ -131,6 +135,7 @@ ns:RegisterGuide({
             id = "objective-713-frost-oil",
             kind = "objective",
             priority = 70,
+            conditions = { level = { min = 35 } },
             text = "Buy Frost Oil.",
             complete = QuestState(713, "complete"),
             route = {
@@ -142,6 +147,7 @@ ns:RegisterGuide({
             id = "objective-713-gyrochronatom",
             kind = "objective",
             priority = 80,
+            conditions = { level = { min = 35 } },
             text = "Buy Gyrochronatom.",
             complete = QuestState(713, "complete"),
             route = {
@@ -153,6 +159,7 @@ ns:RegisterGuide({
             id = "objective-713-healing-potion",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 35 } },
             text = "Buy Healing Potion.",
             complete = QuestState(713, "complete"),
             route = {
@@ -164,6 +171,7 @@ ns:RegisterGuide({
             id = "objective-713-lesser-invisibility-potion",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 35 } },
             text = "Buy Lesser Invisibility Potion.",
             complete = QuestState(713, "complete"),
             route = {
@@ -175,6 +183,7 @@ ns:RegisterGuide({
             id = "objective-713-4-item-3404",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 35 } },
             text = "Buy Buzzard Wing.",
             complete = QuestState(713, "complete"),
             route = {
@@ -186,6 +195,7 @@ ns:RegisterGuide({
             id = "accept-707-ironband-wants-you",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 30 } },
             text = "Accept Ironband Wants You! from Prospector Stormpike in The Library.",
             complete = QuestState(707, "activeOrCompleted"),
             route = {
@@ -197,6 +207,7 @@ ns:RegisterGuide({
             id = "accept-2500-badlands-reagent-run",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 36 } },
             text = "Accept Badlands Reagent Run from Ghak Healtouch in Thelsamar.",
             complete = QuestState(2500, "activeOrCompleted"),
             route = {
@@ -208,6 +219,7 @@ ns:RegisterGuide({
             id = "turnin-707-ironband-wants-you",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 30 } },
             text = "Turn in Ironband Wants You! to Prospector Ironband in Ironband's Excavation Site.",
             dependsOn = { "accept-707-ironband-wants-you" },
             complete = QuestState(707, "completed"),
@@ -222,6 +234,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -236,6 +249,7 @@ ns:RegisterGuide({
             id = "accept-706-fiery-blaze-enchantments",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 40 } },
             text = "Accept Fiery Blaze Enchantments from Sigrun Ironhew in Badlands.",
             complete = QuestState(706, "activeOrCompleted"),
             route = {
@@ -247,6 +261,7 @@ ns:RegisterGuide({
             id = "accept-718-mirages",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 35 } },
             text = "Accept Mirages from Sigrun Ironhew in Badlands.",
             complete = QuestState(718, "activeOrCompleted"),
             route = {
@@ -258,6 +273,7 @@ ns:RegisterGuide({
             id = "accept-719-a-dwarf-and-his-tools",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 35 } },
             text = "Accept A Dwarf and His Tools from Prospector Ryedol in Badlands.",
             complete = QuestState(719, "activeOrCompleted"),
             route = {
@@ -271,6 +287,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 1106, state = "completed" } },
                 },
             },
@@ -285,6 +302,7 @@ ns:RegisterGuide({
             id = "accept-703-barbecued-buzzard-wings",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 33 } },
             text = "Accept Barbecued Buzzard Wings from Rigglefuzz in Valley of Fangs.",
             complete = QuestState(703, "activeOrCompleted"),
             route = {
@@ -296,6 +314,7 @@ ns:RegisterGuide({
             id = "objective-718-mirages",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 35 } },
             text = "Collect Supply Crate from the Excavation Supply Crate in Camp Kosh.",
             dependsOn = { "accept-718-mirages" },
             complete = QuestState(718, "complete"),
@@ -308,6 +327,7 @@ ns:RegisterGuide({
             id = "accept-720-a-sign-of-hope",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 35 } },
             text = "Accept A Sign of Hope in Hammertoe's Digsite.",
             complete = QuestState(720, "activeOrCompleted"),
             route = {
@@ -319,6 +339,7 @@ ns:RegisterGuide({
             id = "objective-719-a-dwarf-and-his-tools",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 35 } },
             text = "Kill Shadowforge mobs until you find Ryedol's Lucky Pick in Hammertoe's Digsite.",
             dependsOn = { "accept-719-a-dwarf-and-his-tools" },
             complete = QuestState(719, "complete"),
@@ -331,6 +352,7 @@ ns:RegisterGuide({
             id = "turnin-718-mirages",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 35 } },
             text = "Turn in Mirages to Sigrun Ironhew in Badlands.",
             dependsOn = { "objective-718-mirages" },
             complete = QuestState(718, "completed"),
@@ -343,6 +365,7 @@ ns:RegisterGuide({
             id = "accept-733-scrounging",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 35 } },
             text = "Accept Scrounging from Sigrun Ironhew in Badlands.",
             complete = QuestState(733, "activeOrCompleted"),
             route = {
@@ -354,6 +377,7 @@ ns:RegisterGuide({
             id = "turnin-719-a-dwarf-and-his-tools",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 35 } },
             text = "Turn in A Dwarf and His Tools to Prospector Ryedol in Badlands.",
             dependsOn = { "objective-719-a-dwarf-and-his-tools" },
             complete = QuestState(719, "completed"),
@@ -366,6 +390,7 @@ ns:RegisterGuide({
             id = "turnin-720-a-sign-of-hope",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 35 } },
             text = "Turn in A Sign of Hope to Prospector Ryedol in Badlands.",
             dependsOn = { "accept-720-a-sign-of-hope" },
             complete = QuestState(720, "completed"),
@@ -378,6 +403,7 @@ ns:RegisterGuide({
             id = "accept-732-tremors-of-the-earth",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 40 } },
             text = "Accept Tremors of the Earth from Garek in Badlands.",
             complete = QuestState(732, "activeOrCompleted"),
             route = {
@@ -391,6 +417,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -408,6 +435,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -424,6 +452,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -441,6 +470,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -458,6 +488,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 1106, state = "completed" } },
                 },
             },
@@ -475,6 +506,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 1106, state = "completed" } },
                 },
             },
@@ -490,6 +522,7 @@ ns:RegisterGuide({
             id = "objective-732-tremors-of-the-earth",
             kind = "objective",
             priority = 420,
+            conditions = { level = { min = 40 } },
             text = "Kill Boss Tho'grun who patrol down to the southwest side of the zone and back in a circle. You should be able to pick Boss Tho'grun off the back of the pack easily.",
             dependsOn = { "accept-732-tremors-of-the-earth" },
             complete = QuestState(732, "complete"),
@@ -512,6 +545,7 @@ ns:RegisterGuide({
             id = "objective-703-barbecued-buzzard-wings",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 33 } },
             text = "Kill Starving Buzzard and collect 4 Buzzard Wing.",
             dependsOn = { "accept-703-barbecued-buzzard-wings" },
             complete = QuestState(703, "complete"),
@@ -524,6 +558,7 @@ ns:RegisterGuide({
             id = "turnin-703-barbecued-buzzard-wings",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 33 } },
             text = "Turn in Barbecued Buzzard Wings to Rigglefuzz in Valley of Fangs.",
             dependsOn = { "objective-703-barbecued-buzzard-wings" },
             complete = QuestState(703, "completed"),
@@ -538,6 +573,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 28 } },
                     { quest = { id = 1106, state = "completed" } },
                 },
             },
@@ -552,6 +588,7 @@ ns:RegisterGuide({
             id = "accept-710-study-of-the-elements-rock",
             kind = "accept",
             priority = 480,
+            conditions = { level = { min = 35 } },
             text = "Accept Study of the Elements: Rock from Lotwil Veriatus in The Dustbowl.",
             complete = QuestState(710, "activeOrCompleted"),
             route = {
@@ -563,6 +600,7 @@ ns:RegisterGuide({
             id = "objective-710-study-of-the-elements-rock",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 35 } },
             text = "Kill the Lesser Rock Elemental and collect 10 Small Stone Shard.",
             dependsOn = { "accept-710-study-of-the-elements-rock" },
             complete = QuestState(710, "complete"),
@@ -575,6 +613,7 @@ ns:RegisterGuide({
             id = "turnin-710-study-of-the-elements-rock",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 35 } },
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus in The Dustbowl.",
             dependsOn = { "objective-710-study-of-the-elements-rock" },
             complete = QuestState(710, "completed"),
@@ -587,6 +626,7 @@ ns:RegisterGuide({
             id = "accept-711-study-of-the-elements-rock",
             kind = "accept",
             priority = 510,
+            conditions = { level = { min = 35 } },
             text = "Accept Study of the Elements: Rock from Lotwil Veriatus in The Dustbowl.",
             complete = QuestState(711, "activeOrCompleted"),
             route = {
@@ -598,6 +638,7 @@ ns:RegisterGuide({
             id = "objective-711-study-of-the-elements-rock",
             kind = "objective",
             priority = 520,
+            conditions = { level = { min = 35 } },
             text = "Kill Rock Elemental until you've collected 3 Large Stone Slab. They are found either further West or to the South of Badlands.",
             dependsOn = { "accept-711-study-of-the-elements-rock" },
             complete = QuestState(711, "complete"),
@@ -610,6 +651,7 @@ ns:RegisterGuide({
             id = "objective-2500-3-rock-elemental-shard",
             kind = "objective",
             priority = 530,
+            conditions = { level = { min = 36 } },
             text = "Kill Rock Elementals to collect 5 Rock Elemental Shard.",
             dependsOn = { "accept-2500-badlands-reagent-run" },
             complete = QuestObjective(2500, 3),
@@ -622,6 +664,7 @@ ns:RegisterGuide({
             id = "turnin-711-study-of-the-elements-rock",
             kind = "turnin",
             priority = 540,
+            conditions = { level = { min = 35 } },
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus in The Dustbowl.",
             dependsOn = { "objective-711-study-of-the-elements-rock" },
             complete = QuestState(711, "completed"),
@@ -634,6 +677,7 @@ ns:RegisterGuide({
             id = "accept-712-study-of-the-elements-rock",
             kind = "accept",
             priority = 550,
+            conditions = { level = { min = 35 } },
             text = "Accept Study of the Elements: Rock from Lotwil Veriatus in The Dustbowl.",
             complete = QuestState(712, "activeOrCompleted"),
             route = {
@@ -645,6 +689,7 @@ ns:RegisterGuide({
             id = "objective-733-scrounging",
             kind = "objective",
             priority = 570,
+            conditions = { level = { min = 35 } },
             text = "Kill Dustbelcher to collect 7 pieces of Scrap Metal in Camp Cagg.",
             dependsOn = { "accept-733-scrounging" },
             complete = QuestState(733, "complete"),
@@ -657,6 +702,7 @@ ns:RegisterGuide({
             id = "objective-712-study-of-the-elements-rock",
             kind = "objective",
             priority = 580,
+            conditions = { level = { min = 35 } },
             text = "Kill the Greater Rock Elemental and collect 5 Bracers of Rock Binding in Camp Cagg.",
             dependsOn = { "accept-712-study-of-the-elements-rock" },
             complete = QuestState(712, "complete"),
@@ -669,6 +715,7 @@ ns:RegisterGuide({
             id = "turnin-712-study-of-the-elements-rock",
             kind = "turnin",
             priority = 600,
+            conditions = { level = { min = 35 } },
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus in The Dustbowl.",
             dependsOn = { "objective-712-study-of-the-elements-rock" },
             complete = QuestState(712, "completed"),
@@ -681,6 +728,7 @@ ns:RegisterGuide({
             id = "accept-734-this-is-going-to-be-hard",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 35 } },
             text = "Accept This Is Going to Be Hard from Lotwil Veriatus in The Dustbowl.",
             complete = QuestState(734, "activeOrCompleted"),
             route = {
@@ -692,6 +740,7 @@ ns:RegisterGuide({
             id = "turnin-734-this-is-going-to-be-hard",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 35 } },
             text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench in The Dustbowl.",
             dependsOn = { "accept-734-this-is-going-to-be-hard" },
             complete = QuestState(734, "completed"),
@@ -704,6 +753,7 @@ ns:RegisterGuide({
             id = "accept-777-this-is-going-to-be-hard",
             kind = "accept",
             priority = 630,
+            conditions = { level = { min = 35 } },
             text = "Accept This Is Going to Be Hard from Lucien Tosselwrench in The Dustbowl.",
             complete = QuestState(777, "activeOrCompleted"),
             route = {
@@ -715,6 +765,7 @@ ns:RegisterGuide({
             id = "turnin-777-this-is-going-to-be-hard",
             kind = "turnin",
             priority = 640,
+            conditions = { level = { min = 35 } },
             text = "Turn in This Is Going to Be Hard to Lotwil Veriatus in The Dustbowl.",
             dependsOn = { "accept-777-this-is-going-to-be-hard" },
             complete = QuestState(777, "completed"),
@@ -727,6 +778,7 @@ ns:RegisterGuide({
             id = "accept-778-this-is-going-to-be-hard",
             kind = "accept",
             priority = 650,
+            conditions = { level = { min = 35 } },
             text = "Accept This Is Going to Be Hard from Lotwil Veriatus in The Dustbowl.",
             complete = QuestState(778, "activeOrCompleted"),
             route = {
@@ -738,6 +790,7 @@ ns:RegisterGuide({
             id = "objective-778-this-is-going-to-be-hard",
             kind = "objective",
             priority = 660,
+            conditions = { level = { min = 35 } },
             text = "Kill the Fam'retor Guardian patrolling around and collect Lotwil's Shackles of Elemental Binding It is possible to solo this quest, you will need to abandon the quest and accept it again to retry, it is safe to skip.",
             dependsOn = { "accept-778-this-is-going-to-be-hard" },
             complete = QuestState(778, "complete"),
@@ -750,6 +803,7 @@ ns:RegisterGuide({
             id = "turnin-733-scrounging",
             kind = "turnin",
             priority = 670,
+            conditions = { level = { min = 35 } },
             text = "Turn in Scrounging to Sigrun Ironhew in Badlands.",
             dependsOn = { "objective-733-scrounging" },
             complete = QuestState(733, "completed"),
@@ -762,6 +816,7 @@ ns:RegisterGuide({
             id = "turnin-732-tremors-of-the-earth",
             kind = "turnin",
             priority = 680,
+            conditions = { level = { min = 40 } },
             text = "Turn in Tremors of the Earth to Garek in Badlands.",
             dependsOn = { "objective-732-tremors-of-the-earth" },
             complete = QuestState(732, "completed"),
@@ -774,6 +829,7 @@ ns:RegisterGuide({
             id = "objective-706-fiery-blaze-enchantments",
             kind = "objective",
             priority = 690,
+            conditions = { level = { min = 40 } },
             text = "Kill Scalding Whelp until you collect a Black Drake's Heart Lethlor Ravine.",
             dependsOn = { "accept-706-fiery-blaze-enchantments" },
             complete = QuestState(706, "complete"),
@@ -786,6 +842,7 @@ ns:RegisterGuide({
             id = "turnin-706-fiery-blaze-enchantments",
             kind = "turnin",
             priority = 700,
+            conditions = { level = { min = 40 } },
             text = "Turn in Fiery Blaze Enchantments to Sigrun Ironhew in Badlands.",
             dependsOn = { "objective-706-fiery-blaze-enchantments" },
             complete = QuestState(706, "completed"),
@@ -798,6 +855,7 @@ ns:RegisterGuide({
             id = "objective-2500-badlands-reagent-run",
             kind = "objective",
             priority = 710,
+            conditions = { level = { min = 36 } },
             text = "Kill Buzzards, Coyotes and Rock Elementals to collect 5 Buzzard Gizzard, 10 Crag Coyote Fang and 5 Rock Elemental Shard in Apocryphan's Rest.",
             dependsOn = { "accept-2500-badlands-reagent-run" },
             complete = QuestState(2500, "complete"),
@@ -812,6 +870,7 @@ ns:RegisterGuide({
             priority = 730,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -829,6 +888,7 @@ ns:RegisterGuide({
             priority = 740,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 707, state = "completed" } },
                 },
             },
@@ -843,6 +903,7 @@ ns:RegisterGuide({
             id = "turnin-2500-badlands-reagent-run",
             kind = "turnin",
             priority = 760,
+            conditions = { level = { min = 36 } },
             text = "Turn in Badlands Reagent Run to Ghak Healtouch in Thelsamar.",
             dependsOn = { "objective-2500-3-rock-elemental-shard", "objective-2500-badlands-reagent-run" },
             complete = QuestState(2500, "completed"),

@@ -44,6 +44,7 @@ ns:RegisterGuide({
             id = "accept-868-egg-hunt",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 17 } },
             text = "Accept Egg Hunt from Korran in The Crossroads.",
             complete = QuestState(868, "activeOrCompleted"),
             route = {
@@ -57,6 +58,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -81,6 +83,7 @@ ns:RegisterGuide({
             id = "accept-893-weapons-of-choice",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 17 } },
             text = "Accept Weapons of Choice from Tatternack Steelforge in Camp Taurajo.",
             complete = QuestState(893, "activeOrCompleted"),
             route = {
@@ -122,6 +125,7 @@ ns:RegisterGuide({
             id = "objective-868-egg-hunt",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 17 } },
             text = "Use Digging Claw on the mounds and collect 12 Silithid Egg at the Field of Giants.",
             dependsOn = { "accept-868-egg-hunt" },
             complete = QuestState(868, "complete"),
@@ -134,6 +138,7 @@ ns:RegisterGuide({
             id = "objective-879-2-nak",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 17 } },
             text = "Kill Nak and collect Nak's Skull in Blackthorn Ridge.",
             complete = QuestObjective(879, 2),
             route = {
@@ -149,6 +154,7 @@ ns:RegisterGuide({
             id = "objective-893-2-razormane-seer",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Seer and collect Charred Razormane Wand in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 2),
@@ -161,6 +167,7 @@ ns:RegisterGuide({
             id = "objective-879-1-kuz",
             kind = "objective",
             priority = 130,
+            conditions = { level = { min = 17 } },
             text = "Kill Kuz and collect Kuz's Skull in Blackthorn Ridge.",
             complete = QuestObjective(879, 1),
             route = {
@@ -172,6 +179,7 @@ ns:RegisterGuide({
             id = "objective-893-3-razormane-warfrenzy",
             kind = "objective",
             priority = 140,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Warfrenzy and collect Razormane War Shield in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 3),
@@ -184,6 +192,7 @@ ns:RegisterGuide({
             id = "objective-879-3-lok-orcbane",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 17 } },
             text = "Kill Lok Orcbane and collect Lok's Skull in Blackthorn Ridge.",
             complete = QuestObjective(879, 3),
             route = {
@@ -195,6 +204,7 @@ ns:RegisterGuide({
             id = "objective-893-1-weapons-of-choice",
             kind = "objective",
             priority = 160,
+            conditions = { level = { min = 17 } },
             text = "Kill Razormane Pathfinder or Razormane Stalker and collect Razormane Backstabber in Blackthorn Ridge.",
             dependsOn = { "accept-893-weapons-of-choice" },
             complete = QuestObjective(893, 1),
@@ -207,6 +217,7 @@ ns:RegisterGuide({
             id = "accept-843-gann-s-reclamation",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 17 } },
             text = "Accept Gann's Reclamation from Gann Stonespire in Southern Gold Road.",
             complete = QuestState(843, "activeOrCompleted"),
             route = {
@@ -220,6 +231,7 @@ ns:RegisterGuide({
             id = "objective-843-3-prospector-khazgorm",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 17 } },
             text = "Kill Prospector Khazgorm collect Khazgorm's Journal in Bael Modan.",
             dependsOn = { "accept-843-gann-s-reclamation" },
             complete = QuestObjective(843, 3),
@@ -232,6 +244,7 @@ ns:RegisterGuide({
             id = "objective-843-gann-s-reclamation",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 17 } },
             text = "Kill 15 Bael'dun Excavator and 5 Bael'dun Foreman in Bael Modan.",
             dependsOn = { "accept-843-gann-s-reclamation" },
             complete = QuestState(843, "complete"),
@@ -244,6 +257,7 @@ ns:RegisterGuide({
             id = "turnin-843-gann-s-reclamation",
             kind = "turnin",
             priority = 220,
+            conditions = { level = { min = 17 } },
             text = "Turn in Gann's Reclamation to Gann Stonespire in Southern Gold Road.",
             dependsOn = { "objective-843-3-prospector-khazgorm", "objective-843-gann-s-reclamation" },
             complete = QuestState(843, "completed"),
@@ -258,6 +272,7 @@ ns:RegisterGuide({
             id = "accept-846-revenge-of-gann",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 17 } },
             text = "Accept Revenge of Gann from Gann Stonespire in Southern Gold Road.",
             complete = QuestState(846, "activeOrCompleted"),
             route = {
@@ -271,6 +286,7 @@ ns:RegisterGuide({
             id = "turnin-893-weapons-of-choice",
             kind = "turnin",
             priority = 250,
+            conditions = { level = { min = 17 } },
             text = "Turn in Weapons of Choice to Tatternack Steelforge in Camp Taurajo.",
             dependsOn = { "objective-893-2-razormane-seer", "objective-893-3-razormane-warfrenzy", "objective-893-1-weapons-of-choice" },
             complete = QuestState(893, "completed"),
@@ -283,6 +299,7 @@ ns:RegisterGuide({
             id = "turnin-879-betrayal-from-within",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 17 } },
             text = "Turn in Betrayal from Within to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-879-2-nak", "objective-879-1-kuz", "objective-879-3-lok-orcbane" },
             complete = QuestState(879, "completed"),
@@ -295,6 +312,7 @@ ns:RegisterGuide({
             id = "accept-906-betrayal-from-within",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 17 } },
             text = "Accept Betrayal from Within from Mangletooth in Camp Taurajo.",
             complete = QuestState(906, "activeOrCompleted"),
             route = {
@@ -306,6 +324,7 @@ ns:RegisterGuide({
             id = "turnin-868-egg-hunt",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 17 } },
             text = "Turn in Egg Hunt to Korran in The Crossroads.",
             dependsOn = { "objective-868-egg-hunt" },
             complete = QuestState(868, "completed"),
@@ -318,6 +337,7 @@ ns:RegisterGuide({
             id = "turnin-906-betrayal-from-within",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 17 } },
             text = "Turn in Betrayal from Within to Thork in The Crossroads.",
             dependsOn = { "accept-906-betrayal-from-within" },
             complete = QuestState(906, "completed"),
@@ -332,6 +352,7 @@ ns:RegisterGuide({
             priority = 310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -349,6 +370,7 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 3261, state = "completed" } },
                 },
             },
@@ -366,6 +388,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { quest = { id = 1094, state = "completed" } },
                 },
             },
@@ -382,6 +405,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 882, state = "completed" } },
                 },
             },
@@ -408,6 +432,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 893, state = "completed" } },
                 },
             },
@@ -424,6 +449,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 882, state = "completed" } },
                 },
             },
@@ -441,6 +467,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -457,6 +484,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -484,6 +512,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { quest = { id = 907, state = "completed" } },
                 },
             },
@@ -499,6 +528,7 @@ ns:RegisterGuide({
             id = "objective-846-revenge-of-gann",
             kind = "objective",
             priority = 440,
+            conditions = { level = { min = 17 } },
             text = "Kill Bael'dun Rifleman, Bael'dun Soldier and Bael'dun Officer at Bael Dun Keep to collect 6 vials of Nitroglycerin, 6 bundles of Wood Pulp and 6 samples of Sodium Nitrate in Bael'dun Keep.",
             dependsOn = { "accept-846-revenge-of-gann" },
             complete = QuestState(846, "complete"),
@@ -511,6 +541,7 @@ ns:RegisterGuide({
             id = "turnin-846-revenge-of-gann",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 17 } },
             text = "Turn in Revenge of Gann to Gann Stonespire in Southern Gold Road.",
             dependsOn = { "objective-846-revenge-of-gann" },
             complete = QuestState(846, "completed"),
@@ -525,6 +556,7 @@ ns:RegisterGuide({
             id = "accept-849-revenge-of-gann",
             kind = "accept",
             priority = 470,
+            conditions = { level = { min = 17 } },
             text = "Accept Revenge of Gann from Gann Stonespire in Southern Gold Road.",
             complete = QuestState(849, "activeOrCompleted"),
             route = {
@@ -538,6 +570,7 @@ ns:RegisterGuide({
             id = "objective-849-revenge-of-gann",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 17 } },
             text = "Use Explosive Stick of Gann to blow up the Bael Modan Flying Machine on top of the tower in Bael Modan.",
             dependsOn = { "accept-849-revenge-of-gann" },
             complete = QuestState(849, "complete"),
@@ -550,6 +583,7 @@ ns:RegisterGuide({
             id = "turnin-849-revenge-of-gann",
             kind = "turnin",
             priority = 500,
+            conditions = { level = { min = 17 } },
             text = "Turn in Revenge of Gann to Gann Stonespire in Southern Gold Road.",
             dependsOn = { "objective-849-revenge-of-gann" },
             complete = QuestState(849, "completed"),
@@ -585,6 +619,7 @@ ns:RegisterGuide({
             id = "turnin-5881-calling-in-the-reserves",
             kind = "turnin",
             priority = 530,
+            conditions = { level = { min = 23 } },
             text = "Turn in Calling in the Reserves to Grish Longrunner in The Great Lift.",
             complete = QuestState(5881, "completed"),
             route = {
@@ -596,6 +631,7 @@ ns:RegisterGuide({
             id = "accept-4542-message-to-freewind-post",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 23 } },
             text = "Accept Message to Freewind Post from Brave Moonhorn in The Great Lift.",
             complete = QuestState(4542, "activeOrCompleted"),
             route = {

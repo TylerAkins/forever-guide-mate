@@ -46,6 +46,7 @@ ns:RegisterGuide({
             id = "accept-580-whiskey-slim-s-lost-grog",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 40 } },
             text = "Accept Whiskey Slim's Lost Grog from Whiskey Slim in The Salty Sailor Tavern.",
             complete = QuestState(580, "activeOrCompleted"),
             route = {
@@ -75,6 +76,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 38 } },
                     { quest = { id = 3843, state = "completed" } },
                 },
             },
@@ -89,6 +91,7 @@ ns:RegisterGuide({
             id = "objective-2641-violet-tragan",
             kind = "objective",
             priority = 70,
+            conditions = { level = { min = 44 } },
             text = "Collect Violet Tragan from the mushroom underwater in the middle of Valorwind Lake.",
             complete = QuestState(2641, "complete"),
             route = {
@@ -100,6 +103,7 @@ ns:RegisterGuide({
             id = "travel-2989-the-altar-of-zul",
             kind = "travel",
             priority = 80,
+            conditions = { level = { min = 40 } },
             text = "Travel to The Altar of Zul. Go up to the top of the stair to search The Altar of Zul.",
             complete = QuestState(2989, "complete"),
             route = {
@@ -111,6 +115,7 @@ ns:RegisterGuide({
             id = "objective-2989-the-altar-of-zul",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 40 } },
             text = "Go up to the top of the stair to search The Altar of Zul.",
             complete = QuestState(2989, "complete"),
             route = {
@@ -124,6 +129,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 485, state = "completed" } },
                 },
             },
@@ -140,6 +146,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 485, state = "completed" } },
                 },
             },
@@ -171,6 +178,7 @@ ns:RegisterGuide({
             id = "turnin-626-cortello-s-riddle",
             kind = "turnin",
             priority = 130,
+            conditions = { level = { min = 35 } },
             text = "Turn in Cortello's Riddle in The Overlook Cliffs.",
             complete = QuestState(626, "completed"),
             route = {
@@ -184,6 +192,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 38 } },
                     { quest = { id = 3843, state = "completed" } },
                 },
             },
@@ -203,6 +212,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 38 } },
                     { quest = { id = 3843, state = "completed" } },
                 },
             },
@@ -220,6 +230,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 3843, state = "completed" } },
                 },
             },
@@ -236,6 +247,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 37 } },
                     { quest = { id = 3843, state = "completed" } },
                 },
             },
@@ -251,6 +263,7 @@ ns:RegisterGuide({
             id = "turnin-2989-the-altar-of-zul",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 40 } },
             text = "Turn in The Altar of Zul to Gryphon Master Talonaxe in Aerie Peak.",
             dependsOn = { "objective-2989-the-altar-of-zul" },
             complete = QuestState(2989, "completed"),
@@ -263,6 +276,7 @@ ns:RegisterGuide({
             id = "accept-2990-thadius-grimshade",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 40 } },
             text = "Accept Thadius Grimshade from Gryphon Master Talonaxe in Aerie Peak.",
             complete = QuestState(2990, "activeOrCompleted"),
             route = {
@@ -284,6 +298,7 @@ ns:RegisterGuide({
             id = "accept-4502-volcanic-activity",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 49 } },
             text = "Accept Volcanic Activity from Liv Rizzlefix in Ratchet.",
             complete = QuestState(4502, "activeOrCompleted"),
             route = {

@@ -45,6 +45,7 @@ ns:RegisterGuide({
             id = "accept-7815-snapjaws-mon",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 44 } },
             text = "Accept Snapjaws, Mon! from Katoom the Angler in Revantusk Village.",
             complete = QuestState(7815, "activeOrCompleted"),
             route = {
@@ -56,6 +57,7 @@ ns:RegisterGuide({
             id = "accept-7816-gammerita-mon",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 44 } },
             text = "Accept Gammerita, Mon! in The Overlook Cliffs.",
             complete = QuestState(7816, "activeOrCompleted"),
             route = {
@@ -69,6 +71,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 44 } },
                     { quest = { id = 7842, state = "completed" } },
                 },
             },
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-7840-lard-lost-his-lunch",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 44 } },
             text = "Accept Lard Lost His Lunch from Lard in Revantusk Village.",
             complete = QuestState(7840, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "objective-7815-snapjaws-mon",
             kind = "objective",
             priority = 60,
+            conditions = { level = { min = 44 } },
             text = "Kill 15 Saltwater Snapjaw in The Overlook Cliffs.",
             dependsOn = { "accept-7815-snapjaws-mon" },
             complete = QuestState(7815, "complete"),
@@ -106,6 +111,7 @@ ns:RegisterGuide({
             id = "objective-580-1-whiskey-slim-s-lost-grog",
             kind = "objective",
             priority = 70,
+            conditions = { level = { min = 40 } },
             text = "Collect 12 Pupellyverbos Port from the ground near the water around The Overlook Cliffs.",
             complete = QuestObjective(580, 1),
             route = {
@@ -123,6 +129,7 @@ ns:RegisterGuide({
             id = "objective-7816-gammerita-mon",
             kind = "objective",
             priority = 80,
+            conditions = { level = { min = 44 } },
             text = "Kill Gammerita and collect Katoom's Best Lure in The Overlook Cliffs.",
             dependsOn = { "accept-7816-gammerita-mon" },
             complete = QuestState(7816, "complete"),
@@ -135,6 +142,7 @@ ns:RegisterGuide({
             id = "turnin-626-cortello-s-riddle",
             kind = "turnin",
             priority = 90,
+            conditions = { level = { min = 35 } },
             text = "Turn in Cortello's Riddle in The Overlook Cliffs.",
             complete = QuestState(626, "completed"),
             route = {
@@ -146,6 +154,7 @@ ns:RegisterGuide({
             id = "objective-7840-lard-lost-his-lunch",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 44 } },
             text = "Click on Lard's Picnic Basket in the small island and three level 49 Vilebranch Kidnapper will appear, kill them to collect Lard's Lunch.",
             dependsOn = { "accept-7840-lard-lost-his-lunch" },
             complete = QuestState(7840, "complete"),
@@ -158,6 +167,7 @@ ns:RegisterGuide({
             id = "objective-2641-violet-tragan",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 44 } },
             text = "Collect Violet Tragan from the mushroom underwater in the middle of Valorwind Lake.",
             complete = QuestState(2641, "complete"),
             route = {
@@ -171,6 +181,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 44 } },
                     { quest = { id = 7842, state = "completed" } },
                 },
             },
@@ -188,6 +199,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 485, state = "completed" } },
                 },
             },
@@ -204,6 +216,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 43 } },
                     { quest = { id = 485, state = "completed" } },
                 },
             },
@@ -237,6 +250,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 44 } },
                     { quest = { id = 7842, state = "completed" } },
                 },
             },
@@ -252,6 +266,7 @@ ns:RegisterGuide({
             id = "turnin-7815-snapjaws-mon",
             kind = "turnin",
             priority = 190,
+            conditions = { level = { min = 44 } },
             text = "Turn in Snapjaws, Mon! to Katoom the Angler in Revantusk Village.",
             dependsOn = { "objective-7815-snapjaws-mon" },
             complete = QuestState(7815, "completed"),
@@ -264,6 +279,7 @@ ns:RegisterGuide({
             id = "turnin-7816-gammerita-mon",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 44 } },
             text = "Turn in Gammerita, Mon! to Katoom the Angler in Revantusk Village.",
             dependsOn = { "objective-7816-gammerita-mon" },
             complete = QuestState(7816, "completed"),
@@ -276,6 +292,7 @@ ns:RegisterGuide({
             id = "turnin-7840-lard-lost-his-lunch",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 44 } },
             text = "Turn in Lard Lost His Lunch to Lard in Revantusk Village.",
             dependsOn = { "objective-7840-lard-lost-his-lunch" },
             complete = QuestState(7840, "completed"),
@@ -288,6 +305,7 @@ ns:RegisterGuide({
             id = "turnin-3562-magatha-s-payment-to-jediga",
             kind = "turnin",
             priority = 230,
+            conditions = { level = { min = 45 } },
             text = "Turn in Magatha's Payment to Jediga to Jediga in Valormok.",
             complete = QuestState(3562, "completed"),
             route = {
@@ -299,6 +317,7 @@ ns:RegisterGuide({
             id = "turnin-3563-jes-rimon-s-payment-to-jediga",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 45 } },
             text = "Turn in Jes'rimon's Payment to Jediga to Jediga in Valormok.",
             complete = QuestState(3563, "completed"),
             route = {
@@ -310,6 +329,7 @@ ns:RegisterGuide({
             id = "turnin-3564-andron-s-payment-to-jediga",
             kind = "turnin",
             priority = 250,
+            conditions = { level = { min = 45 } },
             text = "Turn in Andron's Payment to Jediga to Jediga in Valormok.",
             complete = QuestState(3564, "completed"),
             route = {
@@ -321,6 +341,7 @@ ns:RegisterGuide({
             id = "accept-4502-volcanic-activity",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 49 } },
             text = "Accept Volcanic Activity from Liv Rizzlefix in Ratchet.",
             complete = QuestState(4502, "activeOrCompleted"),
             route = {

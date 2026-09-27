@@ -55,6 +55,7 @@ ns:RegisterGuide({
             id = "accept-1004-the-new-frontier",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 54 } },
             text = "Accept The New Frontier from Harbinger Balthazad in Trade Quarter.",
             complete = QuestState(1004, "activeOrCompleted"),
             route = {
@@ -66,6 +67,7 @@ ns:RegisterGuide({
             id = "accept-5094-a-call-to-arms-the-plaguelands",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 50 } },
             text = "Accept A Call to Arms: The Plaguelands! from Harbinger Balthazad in Trade Quarter.",
             complete = QuestState(5094, "activeOrCompleted"),
             route = {
@@ -79,6 +81,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 48 } },
                     { quest = { id = 4293, state = "completed" } },
                 },
             },
@@ -93,6 +96,7 @@ ns:RegisterGuide({
             id = "accept-5096-scarlet-diversions",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 50 } },
             text = "Accept Scarlet Diversions from High Executor Derrington in The Bulwark.",
             complete = QuestState(5096, "activeOrCompleted"),
             route = {
@@ -104,6 +108,7 @@ ns:RegisterGuide({
             id = "turnin-6029-the-everlook-report",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 50 } },
             text = "Turn in The Everlook Report to Argent Officer Garush in The Bulwark.",
             complete = QuestState(6029, "completed"),
             route = {
@@ -115,6 +120,7 @@ ns:RegisterGuide({
             id = "turnin-5405-argent-dawn-commission",
             kind = "turnin",
             priority = 90,
+            conditions = { level = { min = 50 } },
             text = "Turn in Argent Dawn Commission to Argent Officer Garush in The Bulwark. This is an elite. Bring a group.",
             complete = QuestState(5405, "completed"),
             route = {
@@ -126,6 +132,7 @@ ns:RegisterGuide({
             id = "accept-5901-a-plague-upon-thee",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 48 } },
             text = "Accept A Plague Upon Thee from Mickey Levine in The Bulwark.",
             complete = QuestState(5901, "activeOrCompleted"),
             route = {
@@ -137,6 +144,7 @@ ns:RegisterGuide({
             id = "accept-5021-better-late-than-never",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 50 } },
             text = "Accept Better Late Than Never from Janice Felstone in Felstone Field.",
             complete = QuestState(5021, "activeOrCompleted"),
             route = {
@@ -148,6 +156,7 @@ ns:RegisterGuide({
             id = "turnin-5021-better-late-than-never",
             kind = "turnin",
             priority = 130,
+            conditions = { level = { min = 50 } },
             text = "Turn in Better Late Than Never in Felstone Field.",
             dependsOn = { "accept-5021-better-late-than-never" },
             complete = QuestState(5021, "completed"),
@@ -160,6 +169,7 @@ ns:RegisterGuide({
             id = "accept-5023-better-late-than-never",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 50 } },
             text = "Accept Better Late Than Never in Felstone Field.",
             complete = QuestState(5023, "activeOrCompleted"),
             route = {
@@ -171,6 +181,7 @@ ns:RegisterGuide({
             id = "objective-5096-scarlet-diversions",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 50 } },
             text = "Click on the command tent to set it on fire and use the Scourge Banner next to it in Felstone Field.",
             dependsOn = { "accept-5096-scarlet-diversions" },
             complete = QuestState(5096, "complete"),
@@ -183,6 +194,7 @@ ns:RegisterGuide({
             id = "turnin-5096-scarlet-diversions",
             kind = "turnin",
             priority = 160,
+            conditions = { level = { min = 50 } },
             text = "Turn in Scarlet Diversions to Argent Officer Garush in The Bulwark.",
             dependsOn = { "objective-5096-scarlet-diversions" },
             complete = QuestState(5096, "completed"),
@@ -195,6 +207,7 @@ ns:RegisterGuide({
             id = "accept-5228-the-scourge-cauldrons",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 50 } },
             text = "Accept The Scourge Cauldrons from High Executor Derrington in The Bulwark.",
             complete = QuestState(5228, "activeOrCompleted"),
             route = {
@@ -206,6 +219,7 @@ ns:RegisterGuide({
             id = "turnin-5228-the-scourge-cauldrons",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 50 } },
             text = "Turn in The Scourge Cauldrons to Shadow Priestess Vandis in The Bulwark.",
             dependsOn = { "accept-5228-the-scourge-cauldrons" },
             complete = QuestState(5228, "completed"),
@@ -218,6 +232,7 @@ ns:RegisterGuide({
             id = "accept-5229-target-felstone-field",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 50 } },
             text = "Accept Target: Felstone Field from Shadow Priestess Vandis in The Bulwark.",
             complete = QuestState(5229, "activeOrCompleted"),
             route = {
@@ -229,6 +244,7 @@ ns:RegisterGuide({
             id = "objective-5229-target-felstone-field",
             kind = "objective",
             priority = 200,
+            conditions = { level = { min = 50 } },
             text = "Kill Cauldron Lord Bilemaw and collect Felstone Field Cauldron Key in Felstone Field.",
             dependsOn = { "accept-5229-target-felstone-field" },
             complete = QuestState(5229, "complete"),
@@ -241,6 +257,7 @@ ns:RegisterGuide({
             id = "turnin-5229-target-felstone-field",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 50 } },
             text = "Turn in Target: Felstone Field in Felstone Field.",
             dependsOn = { "objective-5229-target-felstone-field" },
             complete = QuestState(5229, "completed"),
@@ -253,6 +270,7 @@ ns:RegisterGuide({
             id = "accept-5230-return-to-the-bulwark",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 50 } },
             text = "Accept Return to the Bulwark in Felstone Field.",
             complete = QuestState(5230, "activeOrCompleted"),
             route = {
@@ -264,6 +282,7 @@ ns:RegisterGuide({
             id = "turnin-5230-return-to-the-bulwark",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 50 } },
             text = "Turn in Return to the Bulwark to Shadow Priestess Vandis in The Bulwark.",
             dependsOn = { "accept-5230-return-to-the-bulwark" },
             complete = QuestState(5230, "completed"),
@@ -276,6 +295,7 @@ ns:RegisterGuide({
             id = "accept-5231-target-dalson-s-tears",
             kind = "accept",
             priority = 250,
+            conditions = { level = { min = 50 } },
             text = "Accept Target: Dalson's Tears from Shadow Priestess Vandis in The Bulwark.",
             complete = QuestState(5231, "activeOrCompleted"),
             route = {
@@ -287,6 +307,7 @@ ns:RegisterGuide({
             id = "turnin-5058-mrs-dalson-s-diary",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 52 } },
             text = "Turn in Mrs. Dalson's Diary in Dalson's Tears. This is an elite. Bring a group.",
             complete = QuestState(5058, "completed"),
             route = {
@@ -298,6 +319,7 @@ ns:RegisterGuide({
             id = "objective-5060-wandering-skeleton",
             kind = "objective",
             priority = 280,
+            conditions = { level = { min = 52 } },
             text = "Kill Wandering Skeleton, it should spawn outside the barn after you turn in 'Mrs. Dalson's Diary' and collect the Dalson Outhouse Key.",
             complete = QuestState(5060, "complete"),
             route = {
@@ -309,6 +331,7 @@ ns:RegisterGuide({
             id = "turnin-5059-locked-away",
             kind = "turnin",
             priority = 290,
+            conditions = { level = { min = 52 } },
             text = "Turn in Locked Away in Dalson's Tears. This is an elite. Bring a group.",
             complete = QuestState(5059, "completed"),
             route = {
@@ -320,6 +343,7 @@ ns:RegisterGuide({
             id = "objective-5060-farmer-dalson",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 52 } },
             text = "Kill Farmer Dalson, he should spawn after turn in 'Locked Away' from the outhouse and. This is an elite. Bring a group.",
             complete = QuestState(5060, "complete"),
             route = {
@@ -331,6 +355,7 @@ ns:RegisterGuide({
             id = "turnin-5060-locked-away",
             kind = "turnin",
             priority = 310,
+            conditions = { level = { min = 52 } },
             text = "Turn in Locked Away in Dalson's Tears. This is an elite. Bring a group.",
             dependsOn = { "objective-5060-wandering-skeleton", "objective-5060-farmer-dalson" },
             complete = QuestState(5060, "completed"),
@@ -343,6 +368,7 @@ ns:RegisterGuide({
             id = "objective-5231-target-dalson-s-tears",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 50 } },
             text = "Kill Cauldron Lord Malvinious and collect Dalson's Tears Cauldron Key in Dalson's Tears.",
             dependsOn = { "accept-5231-target-dalson-s-tears" },
             complete = QuestState(5231, "complete"),
@@ -355,6 +381,7 @@ ns:RegisterGuide({
             id = "turnin-5231-target-dalson-s-tears",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 50 } },
             text = "Turn in Target: Dalson's Tears in Dalson's Tears.",
             dependsOn = { "objective-5231-target-dalson-s-tears" },
             complete = QuestState(5231, "completed"),
@@ -367,6 +394,7 @@ ns:RegisterGuide({
             id = "accept-5232-return-to-the-bulwark",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 50 } },
             text = "Accept Return to the Bulwark in Dalson's Tears.",
             complete = QuestState(5232, "activeOrCompleted"),
             route = {
@@ -378,6 +406,7 @@ ns:RegisterGuide({
             id = "turnin-5232-return-to-the-bulwark",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 50 } },
             text = "Turn in Return to the Bulwark to Shadow Priestess Vandis in The Bulwark.",
             dependsOn = { "accept-5232-return-to-the-bulwark" },
             complete = QuestState(5232, "completed"),
@@ -390,6 +419,7 @@ ns:RegisterGuide({
             id = "accept-5233-target-writhing-haunt",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 50 } },
             text = "Accept Target: Writhing Haunt from Shadow Priestess Vandis in The Bulwark.",
             complete = QuestState(5233, "activeOrCompleted"),
             route = {
@@ -401,6 +431,7 @@ ns:RegisterGuide({
             id = "accept-4984-the-wildlife-suffers-too",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 51 } },
             text = "Accept The Wildlife Suffers Too from Mulgris Deepriver in The Writhing Haunt.",
             complete = QuestState(4984, "activeOrCompleted"),
             route = {
@@ -412,6 +443,7 @@ ns:RegisterGuide({
             id = "objective-5233-target-writhing-haunt",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 50 } },
             text = "Kill Cauldron Lord Razarch and collect Writhing Haunt Cauldron Key in The Writhing Haunt.",
             dependsOn = { "accept-5233-target-writhing-haunt" },
             complete = QuestState(5233, "complete"),
@@ -424,6 +456,7 @@ ns:RegisterGuide({
             id = "turnin-5233-target-writhing-haunt",
             kind = "turnin",
             priority = 410,
+            conditions = { level = { min = 50 } },
             text = "Turn in Target: Writhing Haunt in The Writhing Haunt.",
             dependsOn = { "objective-5233-target-writhing-haunt" },
             complete = QuestState(5233, "completed"),
@@ -436,6 +469,7 @@ ns:RegisterGuide({
             id = "accept-5234-return-to-the-bulwark",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 50 } },
             text = "Accept Return to the Bulwark in The Writhing Haunt.",
             complete = QuestState(5234, "activeOrCompleted"),
             route = {
@@ -447,6 +481,7 @@ ns:RegisterGuide({
             id = "turnin-5234-return-to-the-bulwark",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 50 } },
             text = "Turn in Return to the Bulwark to Shadow Priestess Vandis in The Bulwark.",
             dependsOn = { "accept-5234-return-to-the-bulwark" },
             complete = QuestState(5234, "completed"),
@@ -459,6 +494,7 @@ ns:RegisterGuide({
             id = "accept-5235-target-gahrron-s-withering",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 50 } },
             text = "Accept Target: Gahrron's Withering from Shadow Priestess Vandis in The Bulwark.",
             complete = QuestState(5235, "activeOrCompleted"),
             route = {
@@ -470,6 +506,7 @@ ns:RegisterGuide({
             id = "objective-5235-target-gahrron-s-withering",
             kind = "objective",
             priority = 470,
+            conditions = { level = { min = 50 } },
             text = "Kill Cauldron Lord Soulwrath and collect Gahrron's Withering Cauldron Key in Gahrron's Withering.",
             dependsOn = { "accept-5235-target-gahrron-s-withering" },
             complete = QuestState(5235, "complete"),
@@ -482,6 +519,7 @@ ns:RegisterGuide({
             id = "turnin-5235-target-gahrron-s-withering",
             kind = "turnin",
             priority = 480,
+            conditions = { level = { min = 50 } },
             text = "Turn in Target: Gahrron's Withering in Gahrron's Withering.",
             dependsOn = { "objective-5235-target-gahrron-s-withering" },
             complete = QuestState(5235, "completed"),
@@ -494,6 +532,7 @@ ns:RegisterGuide({
             id = "accept-5236-return-to-the-bulwark",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 50 } },
             text = "Accept Return to the Bulwark in Gahrron's Withering.",
             complete = QuestState(5236, "activeOrCompleted"),
             route = {

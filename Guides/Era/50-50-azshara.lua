@@ -56,6 +56,7 @@ ns:RegisterGuide({
             id = "accept-3517-stealing-knowledge",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 45 } },
             text = "Accept Stealing Knowledge from Jediga in Valormok.",
             complete = QuestState(3517, "activeOrCompleted"),
             route = {
@@ -67,6 +68,7 @@ ns:RegisterGuide({
             id = "objective-3517-3-tablet-of-markri",
             kind = "objective",
             priority = 50,
+            conditions = { level = { min = 45 } },
             text = "Collect Tablet of Markri from the ground in Ruins of Eldarath it spawns randomly around the area.",
             dependsOn = { "accept-3517-stealing-knowledge" },
             complete = QuestObjective(3517, 3),
@@ -79,6 +81,7 @@ ns:RegisterGuide({
             id = "objective-3517-4-tablet-of-sael-hai",
             kind = "objective",
             priority = 60,
+            conditions = { level = { min = 45 } },
             text = "Collect Tablet of Sael'hai from the ground in Ruins of Eldarath it spawns randomly around the area.",
             dependsOn = { "accept-3517-stealing-knowledge" },
             complete = QuestObjective(3517, 4),
@@ -91,6 +94,7 @@ ns:RegisterGuide({
             id = "objective-3517-1-tablet-of-beth-amara",
             kind = "objective",
             priority = 70,
+            conditions = { level = { min = 45 } },
             text = "Collect Tablet of Beth'Amara from the ground in Ruins of Eldarath it spawns randomly around the area.",
             dependsOn = { "accept-3517-stealing-knowledge" },
             complete = QuestObjective(3517, 1),
@@ -103,6 +107,7 @@ ns:RegisterGuide({
             id = "objective-3517-2-tablet-of-jin-yael",
             kind = "objective",
             priority = 80,
+            conditions = { level = { min = 45 } },
             text = "Collect Tablet of Jin'yael from the ground in Ruins of Eldarath it spawns randomly around the area.",
             dependsOn = { "accept-3517-stealing-knowledge" },
             complete = QuestObjective(3517, 2),
@@ -115,6 +120,7 @@ ns:RegisterGuide({
             id = "objective-3568-1-filled-vial-labeled-1",
             kind = "objective",
             priority = 90,
+            conditions = { level = { min = 45 } },
             text = "Use Empty Vial Labeled #1 in the pool to collect Filled Vial Labeled #1 at Southridge Beach.",
             complete = QuestObjective(3568, 1),
             route = {
@@ -126,6 +132,7 @@ ns:RegisterGuide({
             id = "objective-3568-2-filled-vial-labeled-2",
             kind = "objective",
             priority = 100,
+            conditions = { level = { min = 45 } },
             text = "Use Empty Vial Labeled #2 in the pool to collect Filled Vial Labeled #2 at Southridge Beach.",
             complete = QuestObjective(3568, 2),
             route = {
@@ -137,6 +144,7 @@ ns:RegisterGuide({
             id = "objective-3568-3-filled-vial-labeled-3",
             kind = "objective",
             priority = 110,
+            conditions = { level = { min = 45 } },
             text = "Use Empty Vial Labeled #3 in the pool to collect Filled Vial Labeled #3 at The Shattered Strand.",
             complete = QuestObjective(3568, 3),
             route = {
@@ -148,6 +156,7 @@ ns:RegisterGuide({
             id = "objective-3568-4-filled-vial-labeled-4",
             kind = "objective",
             priority = 120,
+            conditions = { level = { min = 45 } },
             text = "Use Empty Vial Labeled #4 in the pool to collect Filled Vial Labeled #4 at The Shattered Strand.",
             complete = QuestObjective(3568, 4),
             route = {
@@ -159,6 +168,7 @@ ns:RegisterGuide({
             id = "turnin-3517-stealing-knowledge",
             kind = "turnin",
             priority = 140,
+            conditions = { level = { min = 45 } },
             text = "Turn in Stealing Knowledge to Jediga in Valormok.",
             dependsOn = { "objective-3517-3-tablet-of-markri", "objective-3517-4-tablet-of-sael-hai", "objective-3517-1-tablet-of-beth-amara", "objective-3517-2-tablet-of-jin-yael" },
             complete = QuestState(3517, "completed"),
@@ -171,6 +181,7 @@ ns:RegisterGuide({
             id = "accept-3518-delivery-to-magatha",
             kind = "accept",
             priority = 150,
+            conditions = { level = { min = 45 } },
             text = "Accept Delivery to Magatha from Jediga in Valormok.",
             complete = QuestState(3518, "activeOrCompleted"),
             route = {
@@ -182,6 +193,7 @@ ns:RegisterGuide({
             id = "accept-3541-delivery-to-jes-rimon",
             kind = "accept",
             priority = 160,
+            conditions = { level = { min = 45 } },
             text = "Accept Delivery to Jes'rimon from Jediga in Valormok.",
             complete = QuestState(3541, "activeOrCompleted"),
             route = {
@@ -193,6 +205,7 @@ ns:RegisterGuide({
             id = "accept-3542-delivery-to-andron-gant",
             kind = "accept",
             priority = 170,
+            conditions = { level = { min = 45 } },
             text = "Accept Delivery to Andron Gant from Jediga in Valormok.",
             complete = QuestState(3542, "activeOrCompleted"),
             route = {
@@ -204,6 +217,7 @@ ns:RegisterGuide({
             id = "accept-3561-delivery-to-archmage-xylem",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 45 } },
             text = "Accept Delivery to Archmage Xylem from Jediga in Valormok.",
             complete = QuestState(3561, "activeOrCompleted"),
             route = {
@@ -215,6 +229,7 @@ ns:RegisterGuide({
             id = "objective-3565-sanath-lim-yo",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 45 } },
             text = "Speak to Sanath Lim-yo to teleport up to Bear's Head.",
             dependsOn = { "accept-3565-xylem-s-payment-to-jediga" },
             complete = QuestState(3565, "complete"),
@@ -227,6 +242,7 @@ ns:RegisterGuide({
             id = "turnin-3561-delivery-to-archmage-xylem",
             kind = "turnin",
             priority = 200,
+            conditions = { level = { min = 45 } },
             text = "Turn in Delivery to Archmage Xylem to Archmage Xylem in Bear's Head.",
             dependsOn = { "accept-3561-delivery-to-archmage-xylem" },
             complete = QuestState(3561, "completed"),
@@ -241,6 +257,7 @@ ns:RegisterGuide({
             id = "accept-3565-xylem-s-payment-to-jediga",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 45 } },
             text = "Accept Xylem's Payment to Jediga from Archmage Xylem in Bear's Head.",
             complete = QuestState(3565, "activeOrCompleted"),
             route = {
@@ -252,6 +269,7 @@ ns:RegisterGuide({
             id = "objective-3565-nyrill",
             kind = "objective",
             priority = 220,
+            conditions = { level = { min = 45 } },
             text = "Speak to Nyrill to teleport down.",
             dependsOn = { "accept-3565-xylem-s-payment-to-jediga" },
             complete = QuestState(3565, "complete"),
@@ -264,6 +282,7 @@ ns:RegisterGuide({
             id = "turnin-3565-xylem-s-payment-to-jediga",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 45 } },
             text = "Turn in Xylem's Payment to Jediga to Jediga in Valormok.",
             dependsOn = { "objective-3565-sanath-lim-yo", "objective-3565-nyrill" },
             complete = QuestState(3565, "completed"),
@@ -276,6 +295,7 @@ ns:RegisterGuide({
             id = "turnin-3518-delivery-to-magatha",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 45 } },
             text = "Turn in Delivery to Magatha to Magatha Grimtotem in Elder Rise.",
             dependsOn = { "accept-3518-delivery-to-magatha" },
             complete = QuestState(3518, "completed"),
@@ -288,6 +308,7 @@ ns:RegisterGuide({
             id = "accept-3562-magatha-s-payment-to-jediga",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 45 } },
             text = "Accept Magatha's Payment to Jediga from Magatha Grimtotem in Elder Rise.",
             complete = QuestState(3562, "activeOrCompleted"),
             route = {
@@ -301,6 +322,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 32, state = "completed" } },
                 },
             },
@@ -315,6 +337,7 @@ ns:RegisterGuide({
             id = "turnin-3541-delivery-to-jes-rimon",
             kind = "turnin",
             priority = 300,
+            conditions = { level = { min = 45 } },
             text = "Turn in Delivery to Jes'rimon to Jes'rimon in The Drag.",
             dependsOn = { "accept-3541-delivery-to-jes-rimon" },
             complete = QuestState(3541, "completed"),
@@ -327,6 +350,7 @@ ns:RegisterGuide({
             id = "accept-3563-jes-rimon-s-payment-to-jediga",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 45 } },
             text = "Accept Jes'rimon's Payment to Jediga from Jes'rimon in The Drag.",
             complete = QuestState(3563, "activeOrCompleted"),
             route = {
@@ -338,6 +362,7 @@ ns:RegisterGuide({
             id = "accept-4300-bone-bladed-weapons",
             kind = "accept",
             priority = 320,
+            conditions = { level = { min = 48 } },
             text = "Accept Bone-Bladed Weapons from Jes'rimon in The Drag.",
             complete = QuestState(4300, "activeOrCompleted"),
             route = {
@@ -349,6 +374,7 @@ ns:RegisterGuide({
             id = "turnin-3542-delivery-to-andron-gant",
             kind = "turnin",
             priority = 340,
+            conditions = { level = { min = 45 } },
             text = "Turn in Delivery to Andron Gant to Andron Gant in The Apothecarium.",
             dependsOn = { "accept-3542-delivery-to-andron-gant" },
             complete = QuestState(3542, "completed"),
@@ -361,6 +387,7 @@ ns:RegisterGuide({
             id = "accept-3564-andron-s-payment-to-jediga",
             kind = "accept",
             priority = 350,
+            conditions = { level = { min = 45 } },
             text = "Accept Andron's Payment to Jediga from Andron Gant in The Apothecarium.",
             complete = QuestState(3564, "activeOrCompleted"),
             route = {
@@ -372,6 +399,7 @@ ns:RegisterGuide({
             id = "turnin-3568-seeping-corruption",
             kind = "turnin",
             priority = 360,
+            conditions = { level = { min = 45 } },
             text = "Turn in Seeping Corruption to Chemist Cuely in The Apothecarium.",
             dependsOn = { "objective-3568-1-filled-vial-labeled-1", "objective-3568-2-filled-vial-labeled-2", "objective-3568-3-filled-vial-labeled-3", "objective-3568-4-filled-vial-labeled-4" },
             complete = QuestState(3568, "completed"),
@@ -388,6 +416,7 @@ ns:RegisterGuide({
             id = "accept-3569-seeping-corruption",
             kind = "accept",
             priority = 370,
+            conditions = { level = { min = 45 } },
             text = "Accept Seeping Corruption from Chemist Cuely in The Apothecarium.",
             complete = QuestState(3569, "activeOrCompleted"),
             route = {
@@ -399,6 +428,7 @@ ns:RegisterGuide({
             id = "turnin-3569-seeping-corruption",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 45 } },
             text = "Turn in Seeping Corruption to Thersa Windsong in The Apothecarium.",
             dependsOn = { "accept-3569-seeping-corruption" },
             complete = QuestState(3569, "completed"),
@@ -411,6 +441,7 @@ ns:RegisterGuide({
             id = "accept-4133-vivian-lagrave",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 50 } },
             text = "Accept Vivian Lagrave from Apothecary Zinge in The Apothecarium.",
             complete = QuestState(4133, "activeOrCompleted"),
             route = {
@@ -422,6 +453,7 @@ ns:RegisterGuide({
             id = "accept-4293-a-sample-of-slime",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 48 } },
             text = "Accept A Sample of Slime... from Chemist Fuely in The Apothecarium.",
             complete = QuestState(4293, "activeOrCompleted"),
             route = {
@@ -433,6 +465,7 @@ ns:RegisterGuide({
             id = "accept-4294-and-a-batch-of-ooze",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 48 } },
             text = "Accept ... and a Batch of Ooze from Chemist Fuely in The Apothecarium.",
             complete = QuestState(4294, "activeOrCompleted"),
             route = {

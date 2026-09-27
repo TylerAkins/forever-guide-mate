@@ -161,6 +161,7 @@ ns:RegisterGuide({
             id = "accept-18-brotherhood-of-thieves",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 2 } },
             text = "Accept Brotherhood of Thieves from Sergeant Willem in Northshire Valley.",
             complete = QuestState(18, "activeOrCompleted"),
             route = {
@@ -407,7 +408,6 @@ ns:RegisterGuide({
             priority = 241,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "activeOrCompleted" } },
                 },
             },
@@ -424,7 +424,6 @@ ns:RegisterGuide({
             priority = 242,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -473,6 +472,7 @@ ns:RegisterGuide({
             id = "objective-18-brotherhood-of-thieves",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 2 } },
             text = "Kill the Two-Bit Thug which surround the area to the Southeast across the river to collect 12 Red Burlap Bandana in Northshire Vineyards.",
             dependsOn = { "accept-18-brotherhood-of-thieves" },
             complete = QuestState(18, "complete"),
@@ -504,7 +504,6 @@ ns:RegisterGuide({
             priority = 291,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -532,6 +531,7 @@ ns:RegisterGuide({
             id = "turnin-18-brotherhood-of-thieves",
             kind = "turnin",
             priority = 320,
+            conditions = { level = { min = 2 } },
             text = "Turn in Brotherhood of Thieves to Sergeant Willem in Northshire Valley.",
             dependsOn = { "objective-18-brotherhood-of-thieves" },
             complete = QuestState(18, "completed"),
@@ -544,6 +544,7 @@ ns:RegisterGuide({
             id = "accept-6-bounty-on-garrick-padfoot",
             kind = "accept",
             priority = 330,
+            conditions = { level = { min = 2 } },
             text = "Accept Bounty on Garrick Padfoot from Sergeant Willem in Northshire Valley.",
             complete = QuestState(6, "activeOrCompleted"),
             route = {
@@ -555,6 +556,7 @@ ns:RegisterGuide({
             id = "accept-3903-milly-osworth",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 2 } },
             text = "Accept Milly Osworth from Sergeant Willem in Northshire Valley.",
             complete = QuestState(3903, "activeOrCompleted"),
             route = {
@@ -580,7 +582,6 @@ ns:RegisterGuide({
             priority = 351,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -598,7 +599,6 @@ ns:RegisterGuide({
             priority = 352,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -616,7 +616,6 @@ ns:RegisterGuide({
             priority = 353,
             conditions = {
                 all = {
-                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -634,7 +633,6 @@ ns:RegisterGuide({
             priority = 354,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -661,6 +659,7 @@ ns:RegisterGuide({
             id = "turnin-3903-milly-osworth",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 2 } },
             text = "Turn in Milly Osworth to Milly Osworth in Northshire Valley.",
             dependsOn = { "accept-3903-milly-osworth" },
             complete = QuestState(3903, "completed"),
@@ -673,6 +672,7 @@ ns:RegisterGuide({
             id = "accept-3904-milly-s-harvest",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 2 } },
             text = "Accept Milly's Harvest from Milly Osworth in Northshire Valley.",
             complete = QuestState(3904, "activeOrCompleted"),
             route = {
@@ -684,6 +684,7 @@ ns:RegisterGuide({
             id = "objective-3904-milly-s-harvest",
             kind = "objective",
             priority = 390,
+            conditions = { level = { min = 2 } },
             text = "Clear the area around each crate of Northshire Vineyardsto collect 8 of Milly's Harvest.",
             dependsOn = { "accept-3904-milly-s-harvest" },
             complete = QuestState(3904, "complete"),
@@ -696,6 +697,7 @@ ns:RegisterGuide({
             id = "objective-6-bounty-on-garrick-padfoot",
             kind = "objective",
             priority = 400,
+            conditions = { level = { min = 2 } },
             text = "Find and kill Garrick Padfoot and collect Garrick's Head. He is surrounded by two guards but both can easily be pulled seperately in Northshire Vineyards.",
             dependsOn = { "accept-6-bounty-on-garrick-padfoot" },
             complete = QuestState(6, "complete"),
@@ -708,6 +710,7 @@ ns:RegisterGuide({
             id = "turnin-3904-milly-s-harvest",
             kind = "turnin",
             priority = 410,
+            conditions = { level = { min = 2 } },
             text = "Turn in Milly's Harvest to Milly Osworth in Northshire Valley.",
             dependsOn = { "objective-3904-milly-s-harvest" },
             complete = QuestState(3904, "completed"),
@@ -720,6 +723,7 @@ ns:RegisterGuide({
             id = "accept-3905-grape-manifest",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 2 } },
             text = "Accept Grape Manifest from Milly Osworth in Northshire Valley.",
             complete = QuestState(3905, "activeOrCompleted"),
             route = {
@@ -733,7 +737,6 @@ ns:RegisterGuide({
             priority = 431,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -751,7 +754,6 @@ ns:RegisterGuide({
             priority = 432,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -769,7 +771,6 @@ ns:RegisterGuide({
             priority = 433,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -797,6 +798,7 @@ ns:RegisterGuide({
             id = "turnin-6-bounty-on-garrick-padfoot",
             kind = "turnin",
             priority = 460,
+            conditions = { level = { min = 2 } },
             text = "Turn in Bounty on Garrick Padfoot to Sergeant Willem in Northshire Valley.",
             dependsOn = { "objective-6-bounty-on-garrick-padfoot" },
             complete = QuestState(6, "completed"),
@@ -823,7 +825,6 @@ ns:RegisterGuide({
             priority = 471,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -841,7 +842,6 @@ ns:RegisterGuide({
             priority = 472,
             conditions = {
                 all = {
-                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -859,7 +859,6 @@ ns:RegisterGuide({
             priority = 473,
             conditions = {
                 all = {
-                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -877,7 +876,6 @@ ns:RegisterGuide({
             priority = 474,
             conditions = {
                 all = {
-                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -904,6 +902,7 @@ ns:RegisterGuide({
             id = "turnin-3905-grape-manifest",
             kind = "turnin",
             priority = 490,
+            conditions = { level = { min = 2 } },
             text = "Turn in Grape Manifest to Brother Neals in Northshire Abbey.",
             dependsOn = { "accept-3905-grape-manifest" },
             complete = QuestState(3905, "completed"),
@@ -929,7 +928,6 @@ ns:RegisterGuide({
             priority = 511,
             conditions = {
                 all = {
-                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -960,7 +958,6 @@ ns:RegisterGuide({
             priority = 521,
             conditions = {
                 all = {
-                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -978,7 +975,6 @@ ns:RegisterGuide({
             priority = 522,
             conditions = {
                 all = {
-                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -994,7 +990,7 @@ ns:RegisterGuide({
             id = "accept-91751-rough-wolf-pelts",
             kind = "accept",
             priority = 523,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 5 } },
             text = "Accept Rough Wolf Pelts from Helene Peltskinner near Goldshire.",
             complete = QuestState(91751, "activeOrCompleted"),
             route = {
@@ -1006,7 +1002,7 @@ ns:RegisterGuide({
             id = "objective-91751-rough-wolf-pelts",
             kind = "objective",
             priority = 524,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 5 } },
             text = "Skin wolves for 7 Rough Wolf Pelts. A wolf may drop Elmpaw's Head. Use it if it does.",
             dependsOn = { "accept-91751-rough-wolf-pelts" },
             complete = QuestState(91751, "complete"),
@@ -1019,7 +1015,7 @@ ns:RegisterGuide({
             id = "turnin-91751-rough-wolf-pelts",
             kind = "turnin",
             priority = 525,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 5 } },
             text = "Turn in Rough Wolf Pelts to Helene Peltskinner.",
             dependsOn = { "objective-91751-rough-wolf-pelts" },
             complete = QuestState(91751, "completed"),
@@ -1032,6 +1028,7 @@ ns:RegisterGuide({
             id = "accept-62-the-fargodeep-mine",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 4 } },
             text = "Accept The Fargodeep Mine from Marshal Dughan in Goldshire.",
             complete = QuestState(62, "activeOrCompleted"),
             route = {
@@ -1043,6 +1040,7 @@ ns:RegisterGuide({
             id = "accept-47-gold-dust-exchange",
             kind = "accept",
             priority = 540,
+            conditions = { level = { min = 4 } },
             text = "Accept Gold Dust Exchange from Remy \"Two Times\" in Goldshire.",
             complete = QuestState(47, "activeOrCompleted"),
             route = {
@@ -1054,6 +1052,7 @@ ns:RegisterGuide({
             id = "accept-60-kobold-candles",
             kind = "accept",
             priority = 550,
+            conditions = { level = { min = 3 } },
             text = "Accept Kobold Candles from William Pestle in Goldshire.",
             complete = QuestState(60, "activeOrCompleted"),
             route = {
@@ -1087,6 +1086,7 @@ ns:RegisterGuide({
             id = "accept-85-lost-necklace",
             kind = "accept",
             priority = 590,
+            conditions = { level = { min = 5 } },
             text = "Accept Lost Necklace from \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
             complete = QuestState(85, "activeOrCompleted"),
             route = {
@@ -1098,6 +1098,7 @@ ns:RegisterGuide({
             id = "accept-106-young-lovers",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 5 } },
             text = "Accept Young Lovers from Maybell Maclure in The Maclure Vineyards.",
             complete = QuestState(106, "activeOrCompleted"),
             route = {
@@ -1109,6 +1110,7 @@ ns:RegisterGuide({
             id = "turnin-85-lost-necklace",
             kind = "turnin",
             priority = 620,
+            conditions = { level = { min = 5 } },
             text = "Turn in Lost Necklace to Billy Maclure in The Maclure Vineyards.",
             dependsOn = { "accept-85-lost-necklace" },
             complete = QuestState(85, "completed"),
@@ -1121,6 +1123,7 @@ ns:RegisterGuide({
             id = "accept-86-pie-for-billy",
             kind = "accept",
             priority = 630,
+            conditions = { level = { min = 5 } },
             text = "Accept Pie for Billy from Billy Maclure in The Maclure Vineyards.",
             complete = QuestState(86, "activeOrCompleted"),
             route = {
@@ -1132,6 +1135,7 @@ ns:RegisterGuide({
             id = "objective-86-pie-for-billy",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 5 } },
             text = "Kill any of the boars surrounding Elywnn Forest to collect 4 Chunk of Boar Meat. Rockhide Boar are easily found around to the south of Goldshire.",
             dependsOn = { "accept-86-pie-for-billy" },
             complete = QuestState(86, "complete"),
@@ -1144,6 +1148,7 @@ ns:RegisterGuide({
             id = "turnin-86-pie-for-billy",
             kind = "turnin",
             priority = 660,
+            conditions = { level = { min = 5 } },
             text = "Turn in Pie for Billy to \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
             dependsOn = { "objective-86-pie-for-billy" },
             complete = QuestState(86, "completed"),
@@ -1156,6 +1161,7 @@ ns:RegisterGuide({
             id = "accept-84-back-to-billy",
             kind = "accept",
             priority = 670,
+            conditions = { level = { min = 5 } },
             text = "Accept Back to Billy from \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
             complete = QuestState(84, "activeOrCompleted"),
             route = {
@@ -1167,6 +1173,7 @@ ns:RegisterGuide({
             id = "accept-88-princess-must-die",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 6 } },
             text = "Accept Princess Must Die! from Ma Stonefield in The Stonefield Farm.",
             complete = QuestState(88, "activeOrCompleted"),
             route = {
@@ -1178,6 +1185,7 @@ ns:RegisterGuide({
             id = "turnin-106-young-lovers",
             kind = "turnin",
             priority = 690,
+            conditions = { level = { min = 5 } },
             text = "Turn in Young Lovers to Tommy Joe Stonefield in The Stonefield Farm.",
             dependsOn = { "accept-106-young-lovers" },
             complete = QuestState(106, "completed"),
@@ -1190,6 +1198,7 @@ ns:RegisterGuide({
             id = "accept-111-speak-with-gramma",
             kind = "accept",
             priority = 700,
+            conditions = { level = { min = 5 } },
             text = "Accept Speak with Gramma from Tommy Joe Stonefield in The Stonefield Farm.",
             complete = QuestState(111, "activeOrCompleted"),
             route = {
@@ -1201,6 +1210,7 @@ ns:RegisterGuide({
             id = "turnin-111-speak-with-gramma",
             kind = "turnin",
             priority = 710,
+            conditions = { level = { min = 5 } },
             text = "Turn in Speak with Gramma to Gramma Stonefield in The Stonefield Farm.",
             dependsOn = { "accept-111-speak-with-gramma" },
             complete = QuestState(111, "completed"),
@@ -1213,6 +1223,7 @@ ns:RegisterGuide({
             id = "accept-107-note-to-william",
             kind = "accept",
             priority = 720,
+            conditions = { level = { min = 5 } },
             text = "Accept Note to William from Gramma Stonefield in The Stonefield Farm.",
             complete = QuestState(107, "activeOrCompleted"),
             route = {
@@ -1224,6 +1235,7 @@ ns:RegisterGuide({
             id = "turnin-84-back-to-billy",
             kind = "turnin",
             priority = 740,
+            conditions = { level = { min = 5 } },
             text = "Turn in Back to Billy to Billy Maclure in The Maclure Vineyards.",
             dependsOn = { "accept-84-back-to-billy" },
             complete = QuestState(84, "completed"),
@@ -1236,6 +1248,7 @@ ns:RegisterGuide({
             id = "accept-87-goldtooth",
             kind = "accept",
             priority = 750,
+            conditions = { level = { min = 5 } },
             text = "Accept Goldtooth from Billy Maclure in The Maclure Vineyards.",
             complete = QuestState(87, "activeOrCompleted"),
             route = {
@@ -1249,7 +1262,6 @@ ns:RegisterGuide({
             priority = 761,
             conditions = {
                 all = {
-                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1265,6 +1277,7 @@ ns:RegisterGuide({
             id = "objective-87-goldtooth",
             kind = "objective",
             priority = 770,
+            conditions = { level = { min = 5 } },
             text = "Kill Goldtooth and get Bernice's Necklace in Fargodeep Mine.",
             dependsOn = { "accept-87-goldtooth" },
             complete = QuestState(87, "complete"),
@@ -1277,6 +1290,7 @@ ns:RegisterGuide({
             id = "objective-62-the-fargodeep-mine",
             kind = "objective",
             priority = 780,
+            conditions = { level = { min = 4 } },
             text = "Travel inside The in Fargodeep Mine at to have it investigated.",
             dependsOn = { "accept-62-the-fargodeep-mine" },
             complete = QuestState(62, "complete"),
@@ -1289,6 +1303,7 @@ ns:RegisterGuide({
             id = "objective-47-gold-dust-exchange",
             kind = "objective",
             priority = 790,
+            conditions = { level = { min = 4 } },
             text = "Kill the Kobolds surrounding the Fargodeep Mineto collect 10 Gold Dust.",
             dependsOn = { "accept-47-gold-dust-exchange" },
             complete = QuestState(47, "complete"),
@@ -1301,6 +1316,7 @@ ns:RegisterGuide({
             id = "objective-60-kobold-candles",
             kind = "objective",
             priority = 800,
+            conditions = { level = { min = 3 } },
             text = "Kill the Kobolds surrounding the in Fargodeep Mine to collect 8 Large Candle.",
             dependsOn = { "accept-60-kobold-candles" },
             complete = QuestState(60, "complete"),
@@ -1313,6 +1329,7 @@ ns:RegisterGuide({
             id = "turnin-47-gold-dust-exchange",
             kind = "turnin",
             priority = 820,
+            conditions = { level = { min = 4 } },
             text = "Turn in Gold Dust Exchange to Remy \"Two Times\" in Goldshire.",
             dependsOn = { "objective-47-gold-dust-exchange" },
             complete = QuestState(47, "completed"),
@@ -1325,6 +1342,7 @@ ns:RegisterGuide({
             id = "accept-40-a-fishy-peril",
             kind = "accept",
             priority = 830,
+            conditions = { level = { min = 7 } },
             text = "Accept A Fishy Peril from Remy \"Two Times\" in Goldshire.",
             complete = QuestState(40, "activeOrCompleted"),
             route = {
@@ -1336,7 +1354,7 @@ ns:RegisterGuide({
             id = "accept-99127-a-net-disaster",
             kind = "accept",
             priority = 831,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept A Net Disaster from Jason Mathers in Goldshire.",
             complete = QuestState(99127, "activeOrCompleted"),
             route = {
@@ -1348,7 +1366,7 @@ ns:RegisterGuide({
             id = "accept-99128-slimy-menace",
             kind = "accept",
             priority = 832,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
             complete = QuestState(99128, "activeOrCompleted"),
             route = {
@@ -1360,7 +1378,7 @@ ns:RegisterGuide({
             id = "accept-99143-bottles-and-baubles",
             kind = "accept",
             priority = 833,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Bottles and Baubles from Lee Brown in Goldshire.",
             complete = QuestState(99143, "activeOrCompleted"),
             route = {
@@ -1372,6 +1390,7 @@ ns:RegisterGuide({
             id = "turnin-40-a-fishy-peril",
             kind = "turnin",
             priority = 840,
+            conditions = { level = { min = 7 } },
             text = "Turn in A Fishy Peril to Marshal Dughan in Goldshire.",
             dependsOn = { "accept-40-a-fishy-peril" },
             complete = QuestState(40, "completed"),
@@ -1384,6 +1403,7 @@ ns:RegisterGuide({
             id = "accept-35-further-concerns",
             kind = "accept",
             priority = 850,
+            conditions = { level = { min = 7 } },
             text = "Accept Further Concerns from Marshal Dughan in Goldshire.",
             complete = QuestState(35, "activeOrCompleted"),
             route = {
@@ -1395,6 +1415,7 @@ ns:RegisterGuide({
             id = "turnin-62-the-fargodeep-mine",
             kind = "turnin",
             priority = 860,
+            conditions = { level = { min = 4 } },
             text = "Turn in The Fargodeep Mine to Marshal Dughan in Goldshire.",
             dependsOn = { "objective-62-the-fargodeep-mine" },
             complete = QuestState(62, "completed"),
@@ -1409,7 +1430,6 @@ ns:RegisterGuide({
             priority = 861,
             conditions = {
                 all = {
-                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1427,7 +1447,6 @@ ns:RegisterGuide({
             priority = 862,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1443,6 +1462,7 @@ ns:RegisterGuide({
             id = "accept-76-the-jasperlode-mine",
             kind = "accept",
             priority = 870,
+            conditions = { level = { min = 4 } },
             text = "Accept The Jasperlode Mine from Marshal Dughan in Goldshire.",
             complete = QuestState(76, "activeOrCompleted"),
             route = {
@@ -1454,6 +1474,7 @@ ns:RegisterGuide({
             id = "turnin-60-kobold-candles",
             kind = "turnin",
             priority = 880,
+            conditions = { level = { min = 3 } },
             text = "Turn in Kobold Candles to William Pestle in Goldshire.",
             dependsOn = { "objective-60-kobold-candles" },
             complete = QuestState(60, "completed"),
@@ -1468,6 +1489,7 @@ ns:RegisterGuide({
             priority = 890,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { race = 1 },
                 },
             },
@@ -1482,6 +1504,7 @@ ns:RegisterGuide({
             id = "turnin-107-note-to-william",
             kind = "turnin",
             priority = 900,
+            conditions = { level = { min = 5 } },
             text = "Turn in Note to William to William Pestle in Goldshire.",
             dependsOn = { "accept-107-note-to-william" },
             complete = QuestState(107, "completed"),
@@ -1494,6 +1517,7 @@ ns:RegisterGuide({
             id = "accept-112-collecting-kelp",
             kind = "accept",
             priority = 910,
+            conditions = { level = { min = 5 } },
             text = "Accept Collecting Kelp from William Pestle in Goldshire.",
             complete = QuestState(112, "activeOrCompleted"),
             route = {
@@ -1505,7 +1529,7 @@ ns:RegisterGuide({
             id = "objective-99127-a-net-disaster",
             kind = "objective",
             priority = 921,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Check the fishing nets at Crystal Lake for 7 Half-Eaten Fish.",
             dependsOn = { "accept-99127-a-net-disaster" },
             complete = QuestState(99127, "complete"),
@@ -1518,7 +1542,7 @@ ns:RegisterGuide({
             id = "objective-99128-slimy-menace",
             kind = "objective",
             priority = 922,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Kill the murlocs at Crystal Lake.",
             dependsOn = { "accept-99128-slimy-menace" },
             complete = QuestState(99128, "complete"),
@@ -1531,7 +1555,7 @@ ns:RegisterGuide({
             id = "objective-99143-bottles-and-baubles",
             kind = "objective",
             priority = 923,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
             dependsOn = { "accept-99143-bottles-and-baubles" },
             complete = QuestState(99143, "complete"),
@@ -1544,6 +1568,7 @@ ns:RegisterGuide({
             id = "objective-112-collecting-kelp",
             kind = "objective",
             priority = 930,
+            conditions = { level = { min = 5 } },
             text = "Kill Murloc and Murloc Streamrunner and collect 4 Crystal Kelp Frond around the Crystal Lake.",
             dependsOn = { "accept-112-collecting-kelp" },
             complete = QuestState(112, "complete"),
@@ -1558,7 +1583,6 @@ ns:RegisterGuide({
             priority = 942,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1576,7 +1600,6 @@ ns:RegisterGuide({
             priority = 941,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1592,6 +1615,7 @@ ns:RegisterGuide({
             id = "objective-76-the-jasperlode-mine",
             kind = "objective",
             priority = 950,
+            conditions = { level = { min = 4 } },
             text = "Scout through the Jasperlode Mine.",
             dependsOn = { "accept-76-the-jasperlode-mine" },
             complete = QuestState(76, "complete"),
@@ -1604,6 +1628,7 @@ ns:RegisterGuide({
             id = "turnin-35-further-concerns",
             kind = "turnin",
             priority = 960,
+            conditions = { level = { min = 7 } },
             text = "Turn in Further Concerns to Guard Thomas in Elwynn Forest.",
             dependsOn = { "accept-35-further-concerns" },
             complete = QuestState(35, "completed"),
@@ -1616,6 +1641,7 @@ ns:RegisterGuide({
             id = "accept-37-find-the-lost-guards",
             kind = "accept",
             priority = 970,
+            conditions = { level = { min = 7 } },
             text = "Accept Find the Lost Guards from Guard Thomas in Elwynn Forest.",
             complete = QuestState(37, "activeOrCompleted"),
             route = {
@@ -1629,6 +1655,7 @@ ns:RegisterGuide({
             id = "accept-52-protect-the-frontier",
             kind = "accept",
             priority = 980,
+            conditions = { level = { min = 7 } },
             text = "Accept Protect the Frontier from Guard Thomas in Elwynn Forest.",
             complete = QuestState(52, "activeOrCompleted"),
             route = {
@@ -1640,7 +1667,7 @@ ns:RegisterGuide({
             id = "accept-91723-delicate-instruments",
             kind = "accept",
             priority = 955,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Delicate Instruments from Hamish Bergwort in the Tower of Azora.",
             complete = QuestState(91723, "activeOrCompleted"),
             route = {
@@ -1652,7 +1679,7 @@ ns:RegisterGuide({
             id = "accept-91725-stolen-enchanting-supplies",
             kind = "accept",
             priority = 956,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Stolen Enchanting Supplies from Blixie Fitzwink near the Tower of Azora.",
             complete = QuestState(91725, "activeOrCompleted"),
             route = {
@@ -1666,7 +1693,7 @@ ns:RegisterGuide({
             priority = 957,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 5 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1681,7 +1708,7 @@ ns:RegisterGuide({
             id = "accept-91732-good-steel",
             kind = "accept",
             priority = 994,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Good Steel from Hagar Lowe in Eastvale Logging Camp.",
             complete = QuestState(91732, "activeOrCompleted"),
             route = {
@@ -1693,7 +1720,7 @@ ns:RegisterGuide({
             id = "objective-91723-delicate-instruments",
             kind = "objective",
             priority = 995,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Kill 8 Kobold Geomancers in Jasperlode Mine. Disenchant their Crude Wax Effigies if you are on An Enchanting Lesson.",
             dependsOn = { "accept-91723-delicate-instruments" },
             complete = QuestState(91723, "complete"),
@@ -1706,7 +1733,7 @@ ns:RegisterGuide({
             id = "turnin-91723-delicate-instruments",
             kind = "turnin",
             priority = 998,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
             dependsOn = { "objective-91723-delicate-instruments" },
             complete = QuestState(91723, "completed"),
@@ -1719,7 +1746,7 @@ ns:RegisterGuide({
             id = "accept-91724-delicate-instruments",
             kind = "accept",
             priority = 999,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept the next Delicate Instruments from Hamish Bergwort.",
             dependsOn = { "turnin-91723-delicate-instruments" },
             complete = QuestState(91724, "activeOrCompleted"),
@@ -1734,7 +1761,7 @@ ns:RegisterGuide({
             priority = 996,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 5 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1750,7 +1777,7 @@ ns:RegisterGuide({
             id = "objective-91732-good-steel",
             kind = "objective",
             priority = 997,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Collect 4 Mining Tools from Jasperlode Mine.",
             dependsOn = { "accept-91732-good-steel" },
             complete = QuestState(91732, "complete"),
@@ -1763,6 +1790,7 @@ ns:RegisterGuide({
             id = "accept-83-red-linen-goods",
             kind = "accept",
             priority = 1000,
+            conditions = { level = { min = 4 } },
             text = "Accept Red Linen Goods from Sara Timberlain in Eastvale Logging Camp.",
             complete = QuestState(83, "activeOrCompleted"),
             route = {
@@ -1774,6 +1802,7 @@ ns:RegisterGuide({
             id = "accept-5545-a-bundle-of-trouble",
             kind = "accept",
             priority = 1010,
+            conditions = { level = { min = 5 } },
             text = "Accept A Bundle of Trouble from Supervisor Raelen in Eastvale Logging Camp.",
             complete = QuestState(5545, "activeOrCompleted"),
             route = {
@@ -1785,7 +1814,7 @@ ns:RegisterGuide({
             id = "accept-91733-downstream",
             kind = "accept",
             priority = 1011,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Downstream from Ormin Pelford in Eastvale Logging Camp.",
             complete = QuestState(91733, "activeOrCompleted"),
             route = {
@@ -1797,7 +1826,7 @@ ns:RegisterGuide({
             id = "objective-91733-downstream",
             kind = "objective",
             priority = 1012,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Collect the Waterlogged Axe, Waterlogged Saw, and Waterlogged Toolbox downstream from Eastvale.",
             dependsOn = { "accept-91733-downstream" },
             complete = QuestState(91733, "complete"),
@@ -1810,7 +1839,7 @@ ns:RegisterGuide({
             id = "turnin-91733-downstream",
             kind = "turnin",
             priority = 1013,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Downstream to Ormin Pelford.",
             dependsOn = { "objective-91733-downstream" },
             complete = QuestState(91733, "completed"),
@@ -1823,6 +1852,7 @@ ns:RegisterGuide({
             id = "turnin-37-find-the-lost-guards",
             kind = "turnin",
             priority = 1020,
+            conditions = { level = { min = 7 } },
             text = "Turn in Find the Lost Guards in Stone Cairn Lake.",
             dependsOn = { "accept-37-find-the-lost-guards" },
             complete = QuestState(37, "completed"),
@@ -1835,6 +1865,7 @@ ns:RegisterGuide({
             id = "accept-45-discover-rolf-s-fate",
             kind = "accept",
             priority = 1030,
+            conditions = { level = { min = 7 } },
             text = "Accept Discover Rolf's Fate in Stone Cairn Lake.",
             complete = QuestState(45, "activeOrCompleted"),
             route = {
@@ -1846,6 +1877,7 @@ ns:RegisterGuide({
             id = "turnin-45-discover-rolf-s-fate",
             kind = "turnin",
             priority = 1040,
+            conditions = { level = { min = 7 } },
             text = "Turn in Discover Rolf's Fate in Stone Cairn Lake.",
             dependsOn = { "accept-45-discover-rolf-s-fate" },
             complete = QuestState(45, "completed"),
@@ -1858,6 +1890,7 @@ ns:RegisterGuide({
             id = "accept-71-report-to-thomas",
             kind = "accept",
             priority = 1050,
+            conditions = { level = { min = 7 } },
             text = "Accept Report to Thomas in Stone Cairn Lake.",
             complete = QuestState(71, "activeOrCompleted"),
             route = {
@@ -1869,6 +1902,7 @@ ns:RegisterGuide({
             id = "objective-5545-a-bundle-of-trouble",
             kind = "objective",
             priority = 1060,
+            conditions = { level = { min = 5 } },
             text = "Collect 8 Bundle of Wood near the base of the trees in Stone Cairn Lake.",
             dependsOn = { "accept-5545-a-bundle-of-trouble" },
             complete = QuestState(5545, "complete"),
@@ -1881,6 +1915,7 @@ ns:RegisterGuide({
             id = "objective-52-protect-the-frontier",
             kind = "objective",
             priority = 1070,
+            conditions = { level = { min = 7 } },
             text = "Kill 8 Prowler and 5 Young Forest Bear which can both be found to the east around Eastvale Logging Camp as well as in the southern area across the bridge.",
             dependsOn = { "accept-52-protect-the-frontier" },
             complete = QuestState(52, "complete"),
@@ -1895,6 +1930,7 @@ ns:RegisterGuide({
             id = "turnin-5545-a-bundle-of-trouble",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 5 } },
             text = "Turn in A Bundle of Trouble to Supervisor Raelen in Eastvale Logging Camp.",
             dependsOn = { "objective-5545-a-bundle-of-trouble" },
             complete = QuestState(5545, "completed"),
@@ -1907,6 +1943,7 @@ ns:RegisterGuide({
             id = "objective-83-red-linen-goods",
             kind = "objective",
             priority = 1100,
+            conditions = { level = { min = 4 } },
             text = "Kill the Bandit in the area to collect 6 Linen Scrap.",
             dependsOn = { "accept-83-red-linen-goods" },
             complete = QuestState(83, "complete"),
@@ -1921,6 +1958,7 @@ ns:RegisterGuide({
             id = "objective-184-bandit",
             kind = "objective",
             priority = 1110,
+            conditions = { level = { min = 8 } },
             text = "Keep killing Bandit until you find Westfall Deed to begin a quest.",
             complete = QuestState(184, "complete"),
             route = {
@@ -1932,7 +1970,7 @@ ns:RegisterGuide({
             id = "objective-91724-delicate-instruments",
             kind = "objective",
             priority = 1121,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Kill 6 Defias Rogue Wizards at Stone Cairn Lake.",
             dependsOn = { "accept-91724-delicate-instruments" },
             complete = QuestState(91724, "complete"),
@@ -1945,7 +1983,7 @@ ns:RegisterGuide({
             id = "objective-91725-stolen-enchanting-supplies",
             kind = "objective",
             priority = 1122,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Collect 5 Stolen Enchanting Supplies from the gnoll camps around Stone Cairn Lake.",
             dependsOn = { "accept-91725-stolen-enchanting-supplies" },
             complete = QuestState(91725, "complete"),
@@ -1958,6 +1996,7 @@ ns:RegisterGuide({
             id = "turnin-71-report-to-thomas",
             kind = "turnin",
             priority = 1130,
+            conditions = { level = { min = 7 } },
             text = "Turn in Report to Thomas to Guard Thomas in Elwynn Forest.",
             dependsOn = { "accept-71-report-to-thomas" },
             complete = QuestState(71, "completed"),
@@ -1970,6 +2009,7 @@ ns:RegisterGuide({
             id = "accept-39-deliver-thomas-report",
             kind = "accept",
             priority = 1140,
+            conditions = { level = { min = 7 } },
             text = "Accept Deliver Thomas' Report from Guard Thomas in Elwynn Forest.",
             complete = QuestState(39, "activeOrCompleted"),
             route = {
@@ -1981,6 +2021,7 @@ ns:RegisterGuide({
             id = "turnin-52-protect-the-frontier",
             kind = "turnin",
             priority = 1150,
+            conditions = { level = { min = 7 } },
             text = "Turn in Protect the Frontier to Guard Thomas in Elwynn Forest.",
             dependsOn = { "objective-52-protect-the-frontier" },
             complete = QuestState(52, "completed"),
@@ -1993,6 +2034,7 @@ ns:RegisterGuide({
             id = "accept-109-report-to-gryan-stoutmantle",
             kind = "accept",
             priority = 1160,
+            conditions = { level = { min = 9 } },
             text = "Accept Report to Gryan Stoutmantle from Guard Thomas in Elwynn Forest.",
             complete = QuestState(109, "activeOrCompleted"),
             route = {
@@ -2004,7 +2046,7 @@ ns:RegisterGuide({
             id = "turnin-91724-delicate-instruments",
             kind = "turnin",
             priority = 1171,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
             dependsOn = { "objective-91724-delicate-instruments" },
             complete = QuestState(91724, "completed"),
@@ -2017,7 +2059,7 @@ ns:RegisterGuide({
             id = "turnin-91725-stolen-enchanting-supplies",
             kind = "turnin",
             priority = 1172,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Stolen Enchanting Supplies to Blixie Fitzwink.",
             dependsOn = { "objective-91725-stolen-enchanting-supplies" },
             complete = QuestState(91725, "completed"),
@@ -2032,7 +2074,7 @@ ns:RegisterGuide({
             priority = 1173,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 5 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2048,7 +2090,7 @@ ns:RegisterGuide({
             id = "turnin-91732-good-steel",
             kind = "turnin",
             priority = 1174,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Good Steel to Hagar Lowe.",
             dependsOn = { "objective-91732-good-steel" },
             complete = QuestState(91732, "completed"),
@@ -2061,6 +2103,7 @@ ns:RegisterGuide({
             id = "turnin-83-red-linen-goods",
             kind = "turnin",
             priority = 1180,
+            conditions = { level = { min = 4 } },
             text = "Turn in Red Linen Goods to Sara Timberlain in Eastvale Logging Camp.",
             dependsOn = { "objective-83-red-linen-goods" },
             complete = QuestState(83, "completed"),
@@ -2073,6 +2116,7 @@ ns:RegisterGuide({
             id = "turnin-112-collecting-kelp",
             kind = "turnin",
             priority = 1200,
+            conditions = { level = { min = 5 } },
             text = "Turn in Collecting Kelp to William Pestle in Goldshire.",
             dependsOn = { "objective-112-collecting-kelp" },
             complete = QuestState(112, "completed"),
@@ -2085,7 +2129,7 @@ ns:RegisterGuide({
             id = "turnin-99127-a-net-disaster",
             kind = "turnin",
             priority = 1191,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in A Net Disaster to Jason Mathers.",
             dependsOn = { "objective-99127-a-net-disaster" },
             complete = QuestState(99127, "completed"),
@@ -2098,7 +2142,7 @@ ns:RegisterGuide({
             id = "turnin-99128-slimy-menace",
             kind = "turnin",
             priority = 1192,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Slimy Menace to Jason Mathers.",
             dependsOn = { "objective-99128-slimy-menace" },
             complete = QuestState(99128, "completed"),
@@ -2111,7 +2155,7 @@ ns:RegisterGuide({
             id = "turnin-99143-bottles-and-baubles",
             kind = "turnin",
             priority = 1193,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in Bottles and Baubles to Lee Brown.",
             dependsOn = { "objective-99143-bottles-and-baubles" },
             complete = QuestState(99143, "completed"),
@@ -2124,7 +2168,7 @@ ns:RegisterGuide({
             id = "accept-99129-a-man-about-a-murloc",
             kind = "accept",
             priority = 1194,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept A Man About a Murloc from Jason Mathers.",
             dependsOn = { "turnin-99128-slimy-menace" },
             complete = QuestState(99129, "activeOrCompleted"),
@@ -2137,7 +2181,7 @@ ns:RegisterGuide({
             id = "turnin-99129-a-man-about-a-murloc",
             kind = "turnin",
             priority = 1195,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in A Man About a Murloc to Remy Two Times.",
             dependsOn = { "accept-99129-a-man-about-a-murloc" },
             complete = QuestState(99129, "completed"),
@@ -2150,7 +2194,7 @@ ns:RegisterGuide({
             id = "accept-99130-an-enticing-offer",
             kind = "accept",
             priority = 1196,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept An Enticing Offer from Remy Two Times.",
             dependsOn = { "turnin-99129-a-man-about-a-murloc" },
             complete = QuestState(99130, "activeOrCompleted"),
@@ -2163,7 +2207,7 @@ ns:RegisterGuide({
             id = "objective-99130-an-enticing-offer",
             kind = "objective",
             priority = 1197,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Collect 18 Duskweed Petals and 6 Vials of Animal Blood.",
             dependsOn = { "accept-99130-an-enticing-offer" },
             complete = QuestState(99130, "complete"),
@@ -2176,7 +2220,7 @@ ns:RegisterGuide({
             id = "turnin-99130-an-enticing-offer",
             kind = "turnin",
             priority = 1198,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Turn in An Enticing Offer to Remy Two Times.",
             dependsOn = { "objective-99130-an-enticing-offer" },
             complete = QuestState(99130, "completed"),
@@ -2189,7 +2233,7 @@ ns:RegisterGuide({
             id = "accept-99131-baited-for-success",
             kind = "accept",
             priority = 1199,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Accept Baited for Success from Remy Two Times.",
             dependsOn = { "turnin-99130-an-enticing-offer" },
             complete = QuestState(99131, "activeOrCompleted"),
@@ -2202,7 +2246,7 @@ ns:RegisterGuide({
             id = "turnin-99131-baited-for-success",
             kind = "turnin",
             priority = 1199.1,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 4 } },
             text = "Return to Jason Mathers.",
             dependsOn = { "accept-99131-baited-for-success" },
             complete = QuestState(99131, "completed"),
@@ -2215,6 +2259,7 @@ ns:RegisterGuide({
             id = "accept-114-the-escape",
             kind = "accept",
             priority = 1210,
+            conditions = { level = { min = 5 } },
             text = "Accept The Escape from William Pestle in Goldshire.",
             complete = QuestState(114, "activeOrCompleted"),
             route = {
@@ -2226,6 +2271,7 @@ ns:RegisterGuide({
             id = "turnin-39-deliver-thomas-report",
             kind = "turnin",
             priority = 1220,
+            conditions = { level = { min = 7 } },
             text = "Turn in Deliver Thomas' Report to Marshal Dughan in Goldshire.",
             dependsOn = { "accept-39-deliver-thomas-report" },
             complete = QuestState(39, "completed"),
@@ -2238,6 +2284,7 @@ ns:RegisterGuide({
             id = "accept-59-cloth-and-leather-armor",
             kind = "accept",
             priority = 1230,
+            conditions = { level = { min = 7 } },
             text = "Accept Cloth and Leather Armor from Marshal Dughan in Goldshire.",
             complete = QuestState(59, "activeOrCompleted"),
             route = {
@@ -2249,6 +2296,7 @@ ns:RegisterGuide({
             id = "turnin-76-the-jasperlode-mine",
             kind = "turnin",
             priority = 1240,
+            conditions = { level = { min = 4 } },
             text = "Turn in The Jasperlode Mine to Marshal Dughan in Goldshire.",
             dependsOn = { "objective-76-the-jasperlode-mine" },
             complete = QuestState(76, "completed"),
@@ -2261,6 +2309,7 @@ ns:RegisterGuide({
             id = "accept-239-westbrook-garrison-needs-help",
             kind = "accept",
             priority = 1250,
+            conditions = { level = { min = 6 } },
             text = "Accept Westbrook Garrison Needs Help! from Marshal Dughan in Goldshire.",
             complete = QuestState(239, "activeOrCompleted"),
             route = {
@@ -2272,6 +2321,7 @@ ns:RegisterGuide({
             id = "accept-1097-elmore-s-task",
             kind = "accept",
             priority = 1260,
+            conditions = { level = { min = 9 } },
             text = "Accept Elmore's Task from Smith Argus in Goldshire.",
             complete = QuestState(1097, "activeOrCompleted"),
             route = {
@@ -2283,6 +2333,7 @@ ns:RegisterGuide({
             id = "turnin-114-the-escape",
             kind = "turnin",
             priority = 1280,
+            conditions = { level = { min = 5 } },
             text = "Turn in The Escape to Maybell Maclure in The Maclure Vineyards.",
             dependsOn = { "accept-114-the-escape" },
             complete = QuestState(114, "completed"),
@@ -2295,6 +2346,7 @@ ns:RegisterGuide({
             id = "turnin-87-goldtooth",
             kind = "turnin",
             priority = 1290,
+            conditions = { level = { min = 5 } },
             text = "Turn in Goldtooth to \"Auntie\" Bernice Stonefield in The Stonefield Farm.",
             dependsOn = { "objective-87-goldtooth" },
             complete = QuestState(87, "completed"),
@@ -2309,6 +2361,7 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 8 },
                 },
             },
@@ -2325,6 +2378,7 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2341,7 +2395,7 @@ ns:RegisterGuide({
             priority = 1322,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 7 } },
                     { quest = { id = 91746, state = "activeOrCompleted" } },
                 },
             },
@@ -2358,6 +2412,7 @@ ns:RegisterGuide({
             priority = 1330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2374,6 +2429,7 @@ ns:RegisterGuide({
             priority = 1340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                     { ["not"] = { quest = { id = 1688, state = "activeOrCompleted" } } },
                 },
@@ -2389,6 +2445,7 @@ ns:RegisterGuide({
             id = "turnin-239-westbrook-garrison-needs-help",
             kind = "turnin",
             priority = 1360,
+            conditions = { level = { min = 6 } },
             text = "Turn in Westbrook Garrison Needs Help! to Deputy Rainer in Westbrook Garrison.",
             dependsOn = { "accept-239-westbrook-garrison-needs-help" },
             complete = QuestState(239, "completed"),
@@ -2401,7 +2458,7 @@ ns:RegisterGuide({
             id = "accept-91738-an-apple-treat",
             kind = "accept",
             priority = 1361,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Accept An Apple Treat from Sergeant De Vries at Westbrook Garrison.",
             complete = QuestState(91738, "activeOrCompleted"),
             route = {
@@ -2413,7 +2470,7 @@ ns:RegisterGuide({
             id = "objective-91738-an-apple-treat",
             kind = "objective",
             priority = 1362,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Collect Thunder Applejack for Sergeant De Vries.",
             dependsOn = { "accept-91738-an-apple-treat" },
             complete = QuestState(91738, "complete"),
@@ -2426,7 +2483,7 @@ ns:RegisterGuide({
             id = "turnin-91738-an-apple-treat",
             kind = "turnin",
             priority = 1363,
-            conditions = { level = { min = 10 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in An Apple Treat to Sergeant De Vries.",
             dependsOn = { "objective-91738-an-apple-treat" },
             complete = QuestState(91738, "completed"),
@@ -2439,6 +2496,7 @@ ns:RegisterGuide({
             id = "accept-11-riverpaw-gnoll-bounty",
             kind = "accept",
             priority = 1370,
+            conditions = { level = { min = 6 } },
             text = "Accept Riverpaw Gnoll Bounty from Deputy Rainer in Westbrook Garrison.",
             complete = QuestState(11, "activeOrCompleted"),
             route = {
@@ -2450,6 +2508,7 @@ ns:RegisterGuide({
             id = "accept-176-wanted-hogger",
             kind = "accept",
             priority = 1380,
+            conditions = { level = { min = 5 } },
             text = "Accept Wanted: \"Hogger\" in Westbrook Garrison.",
             complete = QuestState(176, "activeOrCompleted"),
             route = {
@@ -2461,6 +2520,7 @@ ns:RegisterGuide({
             id = "accept-64-the-forgotten-heirloom",
             kind = "accept",
             priority = 1400,
+            conditions = { level = { min = 9 } },
             text = "Accept The Forgotten Heirloom from Farmer Furlbrow in The Jansen Stead.",
             complete = QuestState(64, "activeOrCompleted"),
             route = {
@@ -2472,6 +2532,7 @@ ns:RegisterGuide({
             id = "accept-36-westfall-stew",
             kind = "accept",
             priority = 1410,
+            conditions = { level = { min = 9 } },
             text = "Accept Westfall Stew from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(36, "activeOrCompleted"),
             route = {
@@ -2483,6 +2544,7 @@ ns:RegisterGuide({
             id = "accept-151-poor-old-blanchy",
             kind = "accept",
             priority = 1420,
+            conditions = { level = { min = 9 } },
             text = "Accept Poor Old Blanchy from Verna Furlbrow in The Jansen Stead.",
             complete = QuestState(151, "activeOrCompleted"),
             route = {
@@ -2494,6 +2556,7 @@ ns:RegisterGuide({
             id = "turnin-36-westfall-stew",
             kind = "turnin",
             priority = 1430,
+            conditions = { level = { min = 9 } },
             text = "Turn in Westfall Stew to Salma Saldean in Saldean's Farm.",
             dependsOn = { "accept-36-westfall-stew" },
             complete = QuestState(36, "completed"),
@@ -2506,6 +2569,7 @@ ns:RegisterGuide({
             id = "accept-38-westfall-stew",
             kind = "accept",
             priority = 1440,
+            conditions = { level = { min = 9 } },
             text = "Accept Westfall Stew from Salma Saldean in Saldean's Farm.",
             complete = QuestState(38, "activeOrCompleted"),
             route = {
@@ -2517,6 +2581,7 @@ ns:RegisterGuide({
             id = "accept-22-goretusk-liver-pie",
             kind = "accept",
             priority = 1450,
+            conditions = { level = { min = 9 } },
             text = "Accept Goretusk Liver Pie from Salma Saldean in Saldean's Farm.",
             complete = QuestState(22, "activeOrCompleted"),
             route = {
@@ -2528,6 +2593,7 @@ ns:RegisterGuide({
             id = "accept-9-the-killing-fields",
             kind = "accept",
             priority = 1460,
+            conditions = { level = { min = 8 } },
             text = "Accept The Killing Fields from Farmer Saldean in Saldean's Farm.",
             complete = QuestState(9, "activeOrCompleted"),
             route = {
@@ -2539,6 +2605,7 @@ ns:RegisterGuide({
             id = "objective-151-poor-old-blanchy",
             kind = "objective",
             priority = 1470,
+            conditions = { level = { min = 9 } },
             text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
@@ -2549,6 +2616,7 @@ ns:RegisterGuide({
             priority = 1490,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2565,6 +2633,7 @@ ns:RegisterGuide({
             priority = 1500,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2582,6 +2651,7 @@ ns:RegisterGuide({
             priority = 1510,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2598,6 +2668,7 @@ ns:RegisterGuide({
             priority = 1530,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { race = 1 },
                 },
             },
@@ -2615,6 +2686,7 @@ ns:RegisterGuide({
             priority = 1540,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2632,6 +2704,7 @@ ns:RegisterGuide({
             priority = 1550,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2648,6 +2721,7 @@ ns:RegisterGuide({
             priority = 1560,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2665,6 +2739,7 @@ ns:RegisterGuide({
             priority = 1570,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -2681,6 +2756,7 @@ ns:RegisterGuide({
             priority = 1580,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                     { ["not"] = { quest = { id = 1688, state = "activeOrCompleted" } } },
                 },
@@ -2701,6 +2777,7 @@ ns:RegisterGuide({
             priority = 1590,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2717,6 +2794,7 @@ ns:RegisterGuide({
             priority = 1610,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2734,6 +2812,7 @@ ns:RegisterGuide({
             priority = 1620,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2751,6 +2830,7 @@ ns:RegisterGuide({
             priority = 1630,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2767,6 +2847,7 @@ ns:RegisterGuide({
             priority = 1640,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2784,6 +2865,7 @@ ns:RegisterGuide({
             priority = 1650,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2800,6 +2882,7 @@ ns:RegisterGuide({
             priority = 1660,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2817,6 +2900,7 @@ ns:RegisterGuide({
             priority = 1670,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2833,6 +2917,7 @@ ns:RegisterGuide({
             priority = 1680,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2850,6 +2935,7 @@ ns:RegisterGuide({
             priority = 1690,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2867,6 +2953,7 @@ ns:RegisterGuide({
             priority = 1700,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2883,6 +2970,7 @@ ns:RegisterGuide({
             priority = 1710,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2900,6 +2988,7 @@ ns:RegisterGuide({
             priority = 1720,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -2916,6 +3005,7 @@ ns:RegisterGuide({
             priority = 1740,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2933,6 +3023,7 @@ ns:RegisterGuide({
             priority = 1750,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 4 },
                 },
             },
@@ -2950,6 +3041,7 @@ ns:RegisterGuide({
             priority = 1770,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2967,6 +3059,7 @@ ns:RegisterGuide({
             priority = 1780,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -2983,6 +3076,7 @@ ns:RegisterGuide({
             priority = 1790,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -3002,6 +3096,7 @@ ns:RegisterGuide({
             priority = 1800,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 9 },
                 },
             },
@@ -3019,6 +3114,7 @@ ns:RegisterGuide({
             priority = 1820,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 1 },
                 },
             },
@@ -3034,6 +3130,7 @@ ns:RegisterGuide({
             id = "objective-11-riverpaw-gnoll-bounty",
             kind = "objective",
             priority = 1840,
+            conditions = { level = { min = 6 } },
             text = "Collect 8 Painted Gnoll Armband from the Riverpaw Outrunner and Riverpaw Runt which can be found to the South.",
             dependsOn = { "accept-11-riverpaw-gnoll-bounty" },
             complete = QuestState(11, "complete"),
@@ -3046,6 +3143,7 @@ ns:RegisterGuide({
             id = "objective-176-wanted-hogger",
             kind = "objective",
             priority = 1850,
+            conditions = { level = { min = 5 } },
             text = "Kill Hogger and collect Huge Gnoll Claw in Forest's Edge This is a group quest and safe to skip.",
             dependsOn = { "accept-176-wanted-hogger" },
             complete = QuestState(176, "complete"),
@@ -3060,7 +3158,7 @@ ns:RegisterGuide({
             priority = 1851,
             conditions = {
                 all = {
-                    { level = { min = 10 } },
+                    { level = { min = 7 } },
                     { quest = { id = 91740, state = "activeOrCompleted" } },
                 },
             },
@@ -3075,6 +3173,7 @@ ns:RegisterGuide({
             id = "objective-123-gold-pickup-schedule",
             kind = "objective",
             priority = 1860,
+            conditions = { level = { min = 7 } },
             text = "Kill Gnolls until you find Gold Pickup Schedule to begin a new quest, you can skip this if you can't find it.",
             complete = QuestState(123, "complete"),
             route = {
@@ -3086,6 +3185,7 @@ ns:RegisterGuide({
             id = "turnin-11-riverpaw-gnoll-bounty",
             kind = "turnin",
             priority = 1880,
+            conditions = { level = { min = 6 } },
             text = "Turn in Riverpaw Gnoll Bounty to Deputy Rainer in Westbrook Garrison.",
             dependsOn = { "objective-11-riverpaw-gnoll-bounty" },
             complete = QuestState(11, "completed"),
@@ -3098,6 +3198,7 @@ ns:RegisterGuide({
             id = "turnin-176-wanted-hogger",
             kind = "turnin",
             priority = 1900,
+            conditions = { level = { min = 5 } },
             text = "Turn in Wanted: \"Hogger\" to Marshal Dughan in Goldshire.",
             dependsOn = { "objective-176-wanted-hogger" },
             complete = QuestState(176, "completed"),
@@ -3110,6 +3211,7 @@ ns:RegisterGuide({
             id = "accept-147-manhunt",
             kind = "accept",
             priority = 1910,
+            conditions = { level = { min = 7 } },
             text = "Accept Manhunt from Marshal Dughan in Goldshire.",
             complete = QuestState(147, "activeOrCompleted"),
             route = {
@@ -3121,6 +3223,7 @@ ns:RegisterGuide({
             id = "objective-147-manhunt",
             kind = "objective",
             priority = 1930,
+            conditions = { level = { min = 7 } },
             text = "Kill Morgan the Collector in Brackwell Pumpkin Patch, you will need to pull the enemies around her first otherwise it is difficult to solo.",
             dependsOn = { "accept-147-manhunt" },
             complete = QuestState(147, "complete"),
@@ -3133,6 +3236,7 @@ ns:RegisterGuide({
             id = "objective-88-princess-must-die",
             kind = "objective",
             priority = 1940,
+            conditions = { level = { min = 6 } },
             text = "Kill Princess who patrols the area and loot the Brass Collar. She is a level 9 mob who is surrounded by two guards which are level 7 so grouping with another is recommended, you can skip it if you're unable to complete.",
             dependsOn = { "accept-88-princess-must-die" },
             complete = QuestState(88, "complete"),
@@ -3145,6 +3249,7 @@ ns:RegisterGuide({
             id = "accept-46-bounty-on-murlocs",
             kind = "accept",
             priority = 1950,
+            conditions = { level = { min = 7 } },
             text = "Accept Bounty on Murlocs from Guard Thomas in Elwynn Forest.",
             complete = QuestState(46, "activeOrCompleted"),
             route = {
@@ -3156,6 +3261,7 @@ ns:RegisterGuide({
             id = "objective-46-bounty-on-murlocs",
             kind = "objective",
             priority = 1960,
+            conditions = { level = { min = 7 } },
             text = "Kill Murlocs and collect 8 Torn Murloc Fin in Stone Cairn Lake.",
             dependsOn = { "accept-46-bounty-on-murlocs" },
             complete = QuestState(46, "complete"),
@@ -3168,6 +3274,7 @@ ns:RegisterGuide({
             id = "turnin-46-bounty-on-murlocs",
             kind = "turnin",
             priority = 1970,
+            conditions = { level = { min = 7 } },
             text = "Turn in Bounty on Murlocs to Guard Thomas in Elwynn Forest.",
             dependsOn = { "objective-46-bounty-on-murlocs" },
             complete = QuestState(46, "completed"),
@@ -3180,6 +3287,7 @@ ns:RegisterGuide({
             id = "turnin-59-cloth-and-leather-armor",
             kind = "turnin",
             priority = 1990,
+            conditions = { level = { min = 7 } },
             text = "Turn in Cloth and Leather Armor to Sara Timberlain in Eastvale Logging Camp.",
             dependsOn = { "accept-59-cloth-and-leather-armor" },
             complete = QuestState(59, "completed"),
@@ -3194,6 +3302,7 @@ ns:RegisterGuide({
             priority = 2000,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3211,6 +3320,7 @@ ns:RegisterGuide({
             priority = 2010,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3227,6 +3337,7 @@ ns:RegisterGuide({
             priority = 2020,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3244,6 +3355,7 @@ ns:RegisterGuide({
             priority = 2030,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3261,6 +3373,7 @@ ns:RegisterGuide({
             priority = 2040,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -3276,6 +3389,7 @@ ns:RegisterGuide({
             id = "turnin-147-manhunt",
             kind = "turnin",
             priority = 2060,
+            conditions = { level = { min = 7 } },
             text = "Turn in Manhunt to Marshal Dughan in Goldshire.",
             dependsOn = { "objective-147-manhunt" },
             complete = QuestState(147, "completed"),
@@ -3288,6 +3402,7 @@ ns:RegisterGuide({
             id = "turnin-88-princess-must-die",
             kind = "turnin",
             priority = 2080,
+            conditions = { level = { min = 6 } },
             text = "Turn in Princess Must Die! to Ma Stonefield in The Stonefield Farm.",
             dependsOn = { "objective-88-princess-must-die" },
             complete = QuestState(88, "completed"),
@@ -3300,6 +3415,7 @@ ns:RegisterGuide({
             id = "accept-244-encroaching-gnolls",
             kind = "accept",
             priority = 2100,
+            conditions = { level = { min = 11 } },
             text = "Accept Encroaching Gnolls from Watch Captain Parker in Three Corners.",
             complete = QuestState(244, "activeOrCompleted"),
             route = {
@@ -3311,6 +3427,7 @@ ns:RegisterGuide({
             id = "turnin-244-encroaching-gnolls",
             kind = "turnin",
             priority = 2110,
+            conditions = { level = { min = 11 } },
             text = "Turn in Encroaching Gnolls to Deputy Feldon in Lakeshire.",
             dependsOn = { "accept-244-encroaching-gnolls" },
             complete = QuestState(244, "completed"),
@@ -3323,6 +3440,7 @@ ns:RegisterGuide({
             id = "turnin-1097-elmore-s-task",
             kind = "turnin",
             priority = 2130,
+            conditions = { level = { min = 9 } },
             text = "Turn in Elmore's Task to Grimand Elmore in Dwarven District.",
             dependsOn = { "accept-1097-elmore-s-task" },
             complete = QuestState(1097, "completed"),
@@ -3335,6 +3453,7 @@ ns:RegisterGuide({
             id = "accept-353-stormpike-s-delivery",
             kind = "accept",
             priority = 2140,
+            conditions = { level = { min = 9 } },
             text = "Accept Stormpike's Delivery from Grimand Elmore in Dwarven District.",
             complete = QuestState(353, "activeOrCompleted"),
             route = {
@@ -3346,6 +3465,7 @@ ns:RegisterGuide({
             id = "accept-6661-deeprun-rat-roundup",
             kind = "accept",
             priority = 2160,
+            conditions = { level = { min = 10 } },
             text = "Accept Deeprun Rat Roundup from Monty in Deeprun Tram.",
             complete = QuestState(6661, "activeOrCompleted"),
         },
@@ -3353,6 +3473,7 @@ ns:RegisterGuide({
             id = "objective-6661-deeprun-rat-roundup",
             kind = "objective",
             priority = 2170,
+            conditions = { level = { min = 10 } },
             text = "Capture 5 Deeprun Rat by using the Rat Catcher's Flute. Lead the rats back to Monty. Don't forget to turn in the flute when you're finished.",
             dependsOn = { "accept-6661-deeprun-rat-roundup" },
             complete = QuestState(6661, "complete"),
@@ -3361,6 +3482,7 @@ ns:RegisterGuide({
             id = "turnin-6661-deeprun-rat-roundup",
             kind = "turnin",
             priority = 2180,
+            conditions = { level = { min = 10 } },
             text = "Turn in Deeprun Rat Roundup to Monty in Deeprun Tram.",
             dependsOn = { "objective-6661-deeprun-rat-roundup" },
             complete = QuestState(6661, "completed"),
@@ -3369,6 +3491,7 @@ ns:RegisterGuide({
             id = "accept-433-the-public-servant",
             kind = "accept",
             priority = 2220,
+            conditions = { level = { min = 6 } },
             text = "Accept The Public Servant from Senator Mehr Stonehallow in Gol'Bolar Quarry.",
             complete = QuestState(433, "activeOrCompleted"),
             route = {
@@ -3380,6 +3503,7 @@ ns:RegisterGuide({
             id = "accept-432-those-blasted-troggs",
             kind = "accept",
             priority = 2230,
+            conditions = { level = { min = 5 } },
             text = "Accept Those Blasted Troggs! in Gol'Bolar Quarry.",
             complete = QuestState(432, "activeOrCompleted"),
             route = {
@@ -3391,6 +3515,7 @@ ns:RegisterGuide({
             id = "objective-433-the-public-servant",
             kind = "objective",
             priority = 2240,
+            conditions = { level = { min = 6 } },
             text = "Kill 10 Rockjaw Bonesnapper around the Gol'Bolar Quarry.",
             dependsOn = { "accept-433-the-public-servant" },
             complete = QuestState(433, "complete"),
@@ -3403,6 +3528,7 @@ ns:RegisterGuide({
             id = "objective-432-those-blasted-troggs",
             kind = "objective",
             priority = 2250,
+            conditions = { level = { min = 5 } },
             text = "Kill 6 Rockjaw Skullthumper around the Gol'Bolar Quarry.",
             dependsOn = { "accept-432-those-blasted-troggs" },
             complete = QuestState(432, "complete"),
@@ -3415,6 +3541,7 @@ ns:RegisterGuide({
             id = "turnin-433-the-public-servant",
             kind = "turnin",
             priority = 2260,
+            conditions = { level = { min = 6 } },
             text = "Turn in The Public Servant to Senator Mehr Stonehallow in Gol'Bolar Quarry.",
             dependsOn = { "objective-433-the-public-servant" },
             complete = QuestState(433, "completed"),
@@ -3427,6 +3554,7 @@ ns:RegisterGuide({
             id = "turnin-432-those-blasted-troggs",
             kind = "turnin",
             priority = 2270,
+            conditions = { level = { min = 5 } },
             text = "Turn in Those Blasted Troggs! to Foreman Stonebrow in Gol'Bolar Quarry.",
             dependsOn = { "objective-432-those-blasted-troggs" },
             complete = QuestState(432, "completed"),
@@ -3439,6 +3567,7 @@ ns:RegisterGuide({
             id = "accept-224-in-defense-of-the-king-s-lands",
             kind = "accept",
             priority = 2300,
+            conditions = { level = { min = 10 } },
             text = "Accept In Defense of the King's Lands from Mountaineer Cobbleflint in Valley of Kings.",
             complete = QuestState(224, "activeOrCompleted"),
             route = {
@@ -3450,6 +3579,7 @@ ns:RegisterGuide({
             id = "accept-267-the-trogg-threat",
             kind = "accept",
             priority = 2310,
+            conditions = { level = { min = 10 } },
             text = "Accept The Trogg Threat from Captain Rugelfuss in Valley of Kings.",
             complete = QuestState(267, "activeOrCompleted"),
             route = {
@@ -3461,6 +3591,7 @@ ns:RegisterGuide({
             id = "objective-224-in-defense-of-the-king-s-lands",
             kind = "objective",
             priority = 2330,
+            conditions = { level = { min = 10 } },
             text = "Kill 10 Stonesplinter Trogg and 10 Stonesplinter Scout in Stonesplinter Valley.",
             dependsOn = { "accept-224-in-defense-of-the-king-s-lands" },
             complete = QuestState(224, "complete"),
@@ -3475,6 +3606,7 @@ ns:RegisterGuide({
             id = "objective-267-the-trogg-threat",
             kind = "objective",
             priority = 2340,
+            conditions = { level = { min = 10 } },
             text = "Kill Stonesplinter Scout and Stonesplinter Trogg to collect 8 Trogg Stone Tooth in Stonesplinter Valley.",
             dependsOn = { "accept-267-the-trogg-threat" },
             complete = QuestState(267, "complete"),
@@ -3487,6 +3619,7 @@ ns:RegisterGuide({
             id = "turnin-267-the-trogg-threat",
             kind = "turnin",
             priority = 2360,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Trogg Threat to Captain Rugelfuss in Valley of Kings.",
             dependsOn = { "objective-267-the-trogg-threat" },
             complete = QuestState(267, "completed"),
@@ -3499,6 +3632,7 @@ ns:RegisterGuide({
             id = "turnin-224-in-defense-of-the-king-s-lands",
             kind = "turnin",
             priority = 2370,
+            conditions = { level = { min = 10 } },
             text = "Turn in In Defense of the King's Lands to Mountaineer Cobbleflint in Valley of Kings.",
             dependsOn = { "objective-224-in-defense-of-the-king-s-lands" },
             complete = QuestState(224, "completed"),
@@ -3511,6 +3645,7 @@ ns:RegisterGuide({
             id = "accept-237-in-defense-of-the-king-s-lands",
             kind = "accept",
             priority = 2380,
+            conditions = { level = { min = 10 } },
             text = "Accept In Defense of the King's Lands from Mountaineer Gravelgaw in Valley of Kings.",
             complete = QuestState(237, "activeOrCompleted"),
             route = {
@@ -3522,6 +3657,7 @@ ns:RegisterGuide({
             id = "accept-416-rat-catching",
             kind = "accept",
             priority = 2400,
+            conditions = { level = { min = 10 } },
             text = "Accept Rat Catching from Mountaineer Kadrell in Thelsamar.",
             complete = QuestState(416, "activeOrCompleted"),
             route = {
@@ -3533,6 +3669,7 @@ ns:RegisterGuide({
             id = "accept-1339-mountaineer-stormpike-s-task",
             kind = "accept",
             priority = 2410,
+            conditions = { level = { min = 9 } },
             text = "Accept Mountaineer Stormpike's Task from Mountaineer Kadrell in Thelsamar.",
             complete = QuestState(1339, "activeOrCompleted"),
             route = {
@@ -3544,6 +3681,7 @@ ns:RegisterGuide({
             id = "accept-418-thelsamar-blood-sausages",
             kind = "accept",
             priority = 2420,
+            conditions = { level = { min = 7 } },
             text = "Accept Thelsamar Blood Sausages in Stoutlager Inn.",
             complete = QuestState(418, "activeOrCompleted"),
             route = {
@@ -3565,6 +3703,7 @@ ns:RegisterGuide({
             id = "objective-416-rat-catching",
             kind = "objective",
             priority = 2440,
+            conditions = { level = { min = 10 } },
             text = "Kill any of the Tunnel Rat enemies collect 12 Tunnel Rat Ear in Silver Stream Mine.",
             dependsOn = { "accept-416-rat-catching" },
             complete = QuestState(416, "complete"),
@@ -3577,6 +3716,7 @@ ns:RegisterGuide({
             id = "turnin-353-stormpike-s-delivery",
             kind = "turnin",
             priority = 2460,
+            conditions = { level = { min = 9 } },
             text = "Turn in Stormpike's Delivery to Mountaineer Stormpike in Algaz Station.",
             dependsOn = { "accept-353-stormpike-s-delivery" },
             complete = QuestState(353, "completed"),
@@ -3589,6 +3729,7 @@ ns:RegisterGuide({
             id = "turnin-1339-mountaineer-stormpike-s-task",
             kind = "turnin",
             priority = 2470,
+            conditions = { level = { min = 9 } },
             text = "Turn in Mountaineer Stormpike's Task to Mountaineer Stormpike in Algaz Station.",
             dependsOn = { "accept-1339-mountaineer-stormpike-s-task" },
             complete = QuestState(1339, "completed"),
@@ -3601,6 +3742,7 @@ ns:RegisterGuide({
             id = "accept-1338-stormpike-s-order",
             kind = "accept",
             priority = 2480,
+            conditions = { level = { min = 9 } },
             text = "Accept Stormpike's Order from Mountaineer Stormpike in Algaz Station.",
             complete = QuestState(1338, "activeOrCompleted"),
             route = {
@@ -3612,6 +3754,7 @@ ns:RegisterGuide({
             id = "objective-418-thelsamar-blood-sausages",
             kind = "objective",
             priority = 2490,
+            conditions = { level = { min = 7 } },
             text = "Kill any Bears, Spiders and Boars for 3 Boar Intestines, 3 Bear Meat and 3 Spider Ichor.",
             dependsOn = { "accept-418-thelsamar-blood-sausages" },
             complete = QuestState(418, "complete"),
@@ -3628,6 +3771,7 @@ ns:RegisterGuide({
             id = "turnin-418-thelsamar-blood-sausages",
             kind = "turnin",
             priority = 2510,
+            conditions = { level = { min = 7 } },
             text = "Turn in Thelsamar Blood Sausages to Vidra Hearthstove in Stoutlager Inn.",
             dependsOn = { "objective-418-thelsamar-blood-sausages" },
             complete = QuestState(418, "completed"),
@@ -3640,6 +3784,7 @@ ns:RegisterGuide({
             id = "turnin-416-a-rat-catching",
             kind = "turnin",
             priority = 2520,
+            conditions = { level = { min = 10 } },
             text = "Turn in A Rat Catching to Mountaineer Kadrell in Thelsamar.",
             dependsOn = { "objective-416-rat-catching" },
             complete = QuestState(416, "completed"),
@@ -3652,6 +3797,7 @@ ns:RegisterGuide({
             id = "accept-436-ironband-s-excavation",
             kind = "accept",
             priority = 2530,
+            conditions = { level = { min = 13 } },
             text = "Accept Ironband's Excavation from Jern Hornhelm in Thelsamar.",
             complete = QuestState(436, "activeOrCompleted"),
             route = {

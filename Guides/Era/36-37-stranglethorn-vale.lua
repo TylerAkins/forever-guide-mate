@@ -47,6 +47,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1178, state = "completed" } },
                 },
             },
@@ -63,6 +64,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1112, state = "completed" } },
                 },
             },
@@ -79,6 +81,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 1039, state = "completed" } },
                 },
             },
@@ -95,6 +98,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 25 } },
                     { quest = { id = 1039, state = "completed" } },
                 },
             },
@@ -110,6 +114,7 @@ ns:RegisterGuide({
             id = "accept-616-the-haunted-isle",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 32 } },
             text = "Accept The Haunted Isle from Krazek in The Salty Sailor Tavern.",
             complete = QuestState(616, "activeOrCompleted"),
             route = {
@@ -121,6 +126,7 @@ ns:RegisterGuide({
             id = "turnin-616-the-haunted-isle",
             kind = "turnin",
             priority = 80,
+            conditions = { level = { min = 32 } },
             text = "Turn in The Haunted Isle to Baron Revilgaz in Booty Bay.",
             dependsOn = { "accept-616-the-haunted-isle" },
             complete = QuestState(616, "completed"),
@@ -133,6 +139,7 @@ ns:RegisterGuide({
             id = "accept-578-the-stone-of-the-tides",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 32 } },
             text = "Accept The Stone of the Tides from Baron Revilgaz in Booty Bay.",
             complete = QuestState(578, "activeOrCompleted"),
             route = {
@@ -144,6 +151,7 @@ ns:RegisterGuide({
             id = "accept-189-bloodscalp-ears",
             kind = "accept",
             priority = 100,
+            conditions = { level = { min = 30 } },
             text = "Accept Bloodscalp Ears from Kebok in The Salty Sailor Tavern.",
             complete = QuestState(189, "activeOrCompleted"),
             route = {
@@ -155,6 +163,7 @@ ns:RegisterGuide({
             id = "accept-213-hostile-takeover",
             kind = "accept",
             priority = 110,
+            conditions = { level = { min = 31 } },
             text = "Accept Hostile Takeover from Kebok in The Salty Sailor Tavern.",
             complete = QuestState(213, "activeOrCompleted"),
             route = {
@@ -166,6 +175,7 @@ ns:RegisterGuide({
             id = "accept-198-supplies-to-private-thorsen",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 30 } },
             text = "Accept Supplies to Private Thorsen from Krazek in The Salty Sailor Tavern.",
             complete = QuestState(198, "activeOrCompleted"),
             route = {
@@ -177,6 +187,7 @@ ns:RegisterGuide({
             id = "accept-201-investigate-the-camp",
             kind = "accept",
             priority = 130,
+            conditions = { level = { min = 28 } },
             text = "Accept Investigate the Camp from Krazek in The Salty Sailor Tavern.",
             complete = QuestState(201, "activeOrCompleted"),
             route = {
@@ -188,6 +199,7 @@ ns:RegisterGuide({
             id = "accept-605-singing-blue-shards",
             kind = "accept",
             priority = 140,
+            conditions = { level = { min = 30 } },
             text = "Accept Singing Blue Shards from Crank Fizzlebub in The Salty Sailor Tavern.",
             complete = QuestState(605, "activeOrCompleted"),
             route = {
@@ -201,6 +213,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -217,6 +230,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -234,6 +248,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -248,6 +263,7 @@ ns:RegisterGuide({
             id = "accept-575-supply-and-demand",
             kind = "accept",
             priority = 180,
+            conditions = { level = { min = 26 } },
             text = "Accept Supply and Demand from Drizzlik in Booty Bay.",
             complete = QuestState(575, "activeOrCompleted"),
             route = {
@@ -259,6 +275,7 @@ ns:RegisterGuide({
             id = "accept-583-welcome-to-the-jungle",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 28 } },
             text = "Accept Welcome to the Jungle from Barnil Stonepot in Nesingwary's Expedition.",
             complete = QuestState(583, "activeOrCompleted"),
             route = {
@@ -270,6 +287,7 @@ ns:RegisterGuide({
             id = "turnin-583-welcome-to-the-jungle",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 28 } },
             text = "Turn in Welcome to the Jungle to Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             dependsOn = { "accept-583-welcome-to-the-jungle" },
             complete = QuestState(583, "completed"),
@@ -282,6 +300,7 @@ ns:RegisterGuide({
             id = "accept-194-raptor-mastery",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 28 } },
             text = "Accept Raptor Mastery from Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             complete = QuestState(194, "activeOrCompleted"),
             route = {
@@ -293,6 +312,7 @@ ns:RegisterGuide({
             id = "accept-185-tiger-mastery",
             kind = "accept",
             priority = 230,
+            conditions = { level = { min = 28 } },
             text = "Accept Tiger Mastery from Ajeck Rouack in Nesingwary's Expedition.",
             complete = QuestState(185, "activeOrCompleted"),
             route = {
@@ -304,6 +324,7 @@ ns:RegisterGuide({
             id = "accept-190-panther-mastery",
             kind = "accept",
             priority = 240,
+            conditions = { level = { min = 28 } },
             text = "Accept Panther Mastery from Sir S. J. Erlgadin in Nesingwary's Expedition.",
             complete = QuestState(190, "activeOrCompleted"),
             route = {
@@ -315,6 +336,7 @@ ns:RegisterGuide({
             id = "objective-185-tiger-mastery",
             kind = "objective",
             priority = 250,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Young Stranglethorn Tiger in Stranglethorn Vale.",
             dependsOn = { "accept-185-tiger-mastery" },
             complete = QuestState(185, "complete"),
@@ -327,6 +349,7 @@ ns:RegisterGuide({
             id = "turnin-185-tiger-mastery",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 28 } },
             text = "Turn in Tiger Mastery to Ajeck Rouack in Nesingwary's Expedition.",
             dependsOn = { "objective-185-tiger-mastery" },
             complete = QuestState(185, "completed"),
@@ -339,6 +362,7 @@ ns:RegisterGuide({
             id = "accept-186-tiger-mastery",
             kind = "accept",
             priority = 280,
+            conditions = { level = { min = 28 } },
             text = "Accept Tiger Mastery from Ajeck Rouack in Nesingwary's Expedition.",
             complete = QuestState(186, "activeOrCompleted"),
             route = {
@@ -350,6 +374,7 @@ ns:RegisterGuide({
             id = "objective-190-panther-mastery",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Young Panther in Stranglethorn Vale.",
             dependsOn = { "accept-190-panther-mastery" },
             complete = QuestState(190, "complete"),
@@ -362,6 +387,7 @@ ns:RegisterGuide({
             id = "objective-186-tiger-mastery",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Stranglethorn Tiger in Stranglethorn Vale.",
             dependsOn = { "accept-186-tiger-mastery" },
             complete = QuestState(186, "complete"),
@@ -374,6 +400,7 @@ ns:RegisterGuide({
             id = "turnin-186-tiger-mastery",
             kind = "turnin",
             priority = 310,
+            conditions = { level = { min = 28 } },
             text = "Turn in Tiger Mastery to Ajeck Rouack in Nesingwary's Expedition.",
             dependsOn = { "objective-186-tiger-mastery" },
             complete = QuestState(186, "completed"),
@@ -386,6 +413,7 @@ ns:RegisterGuide({
             id = "accept-187-tiger-mastery",
             kind = "accept",
             priority = 320,
+            conditions = { level = { min = 28 } },
             text = "Accept Tiger Mastery from Ajeck Rouack in Nesingwary's Expedition.",
             complete = QuestState(187, "activeOrCompleted"),
             route = {
@@ -397,6 +425,7 @@ ns:RegisterGuide({
             id = "turnin-190-panther-mastery",
             kind = "turnin",
             priority = 330,
+            conditions = { level = { min = 28 } },
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin in Nesingwary's Expedition.",
             dependsOn = { "objective-190-panther-mastery" },
             complete = QuestState(190, "completed"),
@@ -409,6 +438,7 @@ ns:RegisterGuide({
             id = "accept-191-panther-mastery",
             kind = "accept",
             priority = 340,
+            conditions = { level = { min = 28 } },
             text = "Accept Panther Mastery from Sir S. J. Erlgadin in Nesingwary's Expedition.",
             complete = QuestState(191, "activeOrCompleted"),
             route = {
@@ -420,6 +450,7 @@ ns:RegisterGuide({
             id = "objective-194-raptor-mastery",
             kind = "objective",
             priority = 350,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Stranglethorn Raptor in Stranglethorn Vale.",
             dependsOn = { "accept-194-raptor-mastery" },
             complete = QuestState(194, "complete"),
@@ -434,6 +465,7 @@ ns:RegisterGuide({
             id = "objective-191-panther-mastery",
             kind = "objective",
             priority = 360,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Panther in Stranglethorn Vale.",
             dependsOn = { "accept-191-panther-mastery" },
             complete = QuestState(191, "complete"),
@@ -446,6 +478,7 @@ ns:RegisterGuide({
             id = "objective-187-tiger-mastery",
             kind = "objective",
             priority = 370,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Elder Stranglethorn Tiger in Stranglethorn Vale.",
             dependsOn = { "accept-187-tiger-mastery" },
             complete = QuestState(187, "complete"),
@@ -458,6 +491,7 @@ ns:RegisterGuide({
             id = "turnin-194-raptor-mastery",
             kind = "turnin",
             priority = 380,
+            conditions = { level = { min = 28 } },
             text = "Turn in Raptor Mastery to Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             dependsOn = { "objective-194-raptor-mastery" },
             complete = QuestState(194, "completed"),
@@ -470,6 +504,7 @@ ns:RegisterGuide({
             id = "accept-195-raptor-mastery",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 28 } },
             text = "Accept Raptor Mastery from Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             complete = QuestState(195, "activeOrCompleted"),
             route = {
@@ -481,6 +516,7 @@ ns:RegisterGuide({
             id = "turnin-187-tiger-mastery",
             kind = "turnin",
             priority = 400,
+            conditions = { level = { min = 28 } },
             text = "Turn in Tiger Mastery to Ajeck Rouack in Nesingwary's Expedition.",
             dependsOn = { "objective-187-tiger-mastery" },
             complete = QuestState(187, "completed"),
@@ -493,6 +529,7 @@ ns:RegisterGuide({
             id = "accept-188-tiger-mastery",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 28 } },
             text = "Accept Tiger Mastery from Ajeck Rouack in Nesingwary's Expedition.",
             complete = QuestState(188, "activeOrCompleted"),
             route = {
@@ -504,6 +541,7 @@ ns:RegisterGuide({
             id = "turnin-191-panther-mastery",
             kind = "turnin",
             priority = 420,
+            conditions = { level = { min = 28 } },
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin in Nesingwary's Expedition.",
             dependsOn = { "objective-191-panther-mastery" },
             complete = QuestState(191, "completed"),
@@ -516,6 +554,7 @@ ns:RegisterGuide({
             id = "accept-192-panther-mastery",
             kind = "accept",
             priority = 430,
+            conditions = { level = { min = 28 } },
             text = "Accept Panther Mastery from Sir S. J. Erlgadin in Nesingwary's Expedition.",
             complete = QuestState(192, "activeOrCompleted"),
             route = {
@@ -527,6 +566,7 @@ ns:RegisterGuide({
             id = "objective-192-panther-mastery",
             kind = "objective",
             priority = 450,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Shadowmaw Panther in Stranglethorn Vale, they are stealth and hard to find.",
             dependsOn = { "accept-192-panther-mastery" },
             complete = QuestState(192, "complete"),
@@ -543,6 +583,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -560,6 +601,7 @@ ns:RegisterGuide({
             priority = 480,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -575,6 +617,7 @@ ns:RegisterGuide({
             id = "objective-213-hostile-takeover",
             kind = "objective",
             priority = 490,
+            conditions = { level = { min = 31 } },
             text = "Kill Venture Co. Geologist and collect 8 Tumbled Crystal in Venture Co. Base Camp.",
             dependsOn = { "accept-213-hostile-takeover" },
             complete = QuestState(213, "complete"),
@@ -587,6 +630,7 @@ ns:RegisterGuide({
             id = "objective-195-raptor-mastery",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 28 } },
             text = "Kill 10 Lashtail Raptor in Stranglethorn Vale.",
             dependsOn = { "accept-195-raptor-mastery" },
             complete = QuestState(195, "complete"),
@@ -599,6 +643,7 @@ ns:RegisterGuide({
             id = "objective-188-tiger-mastery",
             kind = "objective",
             priority = 530,
+            conditions = { level = { min = 28 } },
             text = "Kill Sin'Dall collect Paw of Sin'Dall and in Stranglethorn Vale.",
             dependsOn = { "accept-188-tiger-mastery" },
             complete = QuestState(188, "complete"),
@@ -611,6 +656,7 @@ ns:RegisterGuide({
             id = "objective-201-investigate-the-camp",
             kind = "objective",
             priority = 540,
+            conditions = { level = { min = 28 } },
             text = "Investigate the Camp in Nesingwary's Expedition.",
             dependsOn = { "accept-201-investigate-the-camp" },
             complete = QuestState(201, "complete"),
@@ -623,6 +669,7 @@ ns:RegisterGuide({
             id = "turnin-195-raptor-mastery",
             kind = "turnin",
             priority = 550,
+            conditions = { level = { min = 28 } },
             text = "Turn in Raptor Mastery to Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             dependsOn = { "objective-195-raptor-mastery" },
             complete = QuestState(195, "completed"),
@@ -635,6 +682,7 @@ ns:RegisterGuide({
             id = "accept-196-raptor-mastery",
             kind = "accept",
             priority = 560,
+            conditions = { level = { min = 28 } },
             text = "Accept Raptor Mastery from Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             complete = QuestState(196, "activeOrCompleted"),
             route = {
@@ -646,6 +694,7 @@ ns:RegisterGuide({
             id = "turnin-5762-hemet-nesingwary-jr",
             kind = "turnin",
             priority = 570,
+            conditions = { level = { min = 28 } },
             text = "Turn in Hemet Nesingwary Jr. to Hemet Nesingwary Jr. in Nesingwary's Expedition.",
             complete = QuestState(5762, "completed"),
             route = {
@@ -657,6 +706,7 @@ ns:RegisterGuide({
             id = "turnin-188-tiger-mastery",
             kind = "turnin",
             priority = 580,
+            conditions = { level = { min = 28 } },
             text = "Turn in Tiger Mastery to Ajeck Rouack in Nesingwary's Expedition.",
             dependsOn = { "objective-188-tiger-mastery" },
             complete = QuestState(188, "completed"),
@@ -669,6 +719,7 @@ ns:RegisterGuide({
             id = "turnin-192-panther-mastery",
             kind = "turnin",
             priority = 590,
+            conditions = { level = { min = 28 } },
             text = "Turn in Panther Mastery to Sir S. J. Erlgadin in Nesingwary's Expedition.",
             dependsOn = { "objective-192-panther-mastery" },
             complete = QuestState(192, "completed"),
@@ -681,6 +732,7 @@ ns:RegisterGuide({
             id = "accept-193-panther-mastery",
             kind = "accept",
             priority = 600,
+            conditions = { level = { min = 28 } },
             text = "Accept Panther Mastery from Sir S. J. Erlgadin in Nesingwary's Expedition.",
             complete = QuestState(193, "activeOrCompleted"),
             route = {
@@ -692,6 +744,7 @@ ns:RegisterGuide({
             id = "objective-575-supply-and-demand",
             kind = "objective",
             priority = 610,
+            conditions = { level = { min = 26 } },
             text = "Kill River Crocolisk and collect 2 Large River Crocolisk Skin Stranglethorn Vale.",
             dependsOn = { "accept-575-supply-and-demand" },
             complete = QuestState(575, "complete"),
@@ -704,6 +757,7 @@ ns:RegisterGuide({
             id = "objective-605-singing-blue-shards",
             kind = "objective",
             priority = 620,
+            conditions = { level = { min = 30 } },
             text = "Find Stone Maw Basilisk and collect some Singing Crystal Shard, you can complete this later, if you can't find crocs The Savage Coast.",
             dependsOn = { "accept-605-singing-blue-shards" },
             complete = QuestState(605, "complete"),
@@ -716,6 +770,7 @@ ns:RegisterGuide({
             id = "objective-189-bloodscalp-ears",
             kind = "objective",
             priority = 640,
+            conditions = { level = { min = 30 } },
             text = "Kill Bloodscalp trolls Tkashi Ruins and Bal'lal Ruins.",
             dependsOn = { "accept-189-bloodscalp-ears" },
             complete = QuestState(189, "complete"),
@@ -730,6 +785,7 @@ ns:RegisterGuide({
             id = "objective-578-the-stone-of-the-tides",
             kind = "objective",
             priority = 660,
+            conditions = { level = { min = 32 } },
             text = "Locate the haunted island in The Savage Coast.",
             dependsOn = { "accept-578-the-stone-of-the-tides" },
             complete = QuestState(578, "complete"),
@@ -742,6 +798,7 @@ ns:RegisterGuide({
             id = "objective-605-singing-blue-shards-2",
             kind = "objective",
             priority = 670,
+            conditions = { level = { min = 30 } },
             text = "Find Crystal Spine Basilisk and collect some Singing Crystal Shard in The Savage Coast, if you can't any crocs.",
             dependsOn = { "accept-605-singing-blue-shards" },
             complete = QuestState(605, "complete"),
@@ -754,6 +811,7 @@ ns:RegisterGuide({
             id = "accept-203-the-second-rebellion",
             kind = "accept",
             priority = 690,
+            conditions = { level = { min = 30 } },
             text = "Accept The Second Rebellion from Sergeant Yohwa in Rebel Camp.",
             complete = QuestState(203, "activeOrCompleted"),
             route = {
@@ -765,6 +823,7 @@ ns:RegisterGuide({
             id = "accept-204-bad-medicine",
             kind = "accept",
             priority = 700,
+            conditions = { level = { min = 30 } },
             text = "Accept Bad Medicine from Sergeant Yohwa in Rebel Camp.",
             complete = QuestState(204, "activeOrCompleted"),
             route = {
@@ -776,6 +835,7 @@ ns:RegisterGuide({
             id = "accept-210-krazek-s-cookery",
             kind = "accept",
             priority = 710,
+            conditions = { level = { min = 32 } },
             text = "Accept Krazek's Cookery from Corporal Kaleb in Rebel Camp.",
             complete = QuestState(210, "activeOrCompleted"),
             route = {
@@ -789,6 +849,7 @@ ns:RegisterGuide({
             priority = 720,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -803,6 +864,7 @@ ns:RegisterGuide({
             id = "objective-204-2-venom-fern-extract",
             kind = "objective",
             priority = 740,
+            conditions = { level = { min = 30 } },
             text = "Collect Venom Fern Extract from Kurzen supplies on the ground in Kurzen's Compound.",
             dependsOn = { "accept-204-bad-medicine" },
             complete = QuestObjective(204, 2),
@@ -817,6 +879,7 @@ ns:RegisterGuide({
             priority = 750,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -834,6 +897,7 @@ ns:RegisterGuide({
             priority = 760,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -848,6 +912,7 @@ ns:RegisterGuide({
             id = "objective-204-1-bad-medicine",
             kind = "objective",
             priority = 770,
+            conditions = { level = { min = 30 } },
             text = "Kill Kurzen Medicine Man collect 7 Jungle Remedy in Kurzen's Compound.",
             dependsOn = { "accept-204-bad-medicine" },
             complete = QuestObjective(204, 1),
@@ -860,6 +925,7 @@ ns:RegisterGuide({
             id = "objective-203-the-second-rebellion",
             kind = "objective",
             priority = 780,
+            conditions = { level = { min = 30 } },
             text = "Kill 15 Kurzen Jungle Fighter in Kurzen's Compound.",
             dependsOn = { "accept-203-the-second-rebellion" },
             complete = QuestState(203, "complete"),
@@ -872,6 +938,7 @@ ns:RegisterGuide({
             id = "turnin-203-the-second-rebellion",
             kind = "turnin",
             priority = 800,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Second Rebellion to Sergeant Yohwa in Rebel Camp.",
             dependsOn = { "objective-203-the-second-rebellion" },
             complete = QuestState(203, "completed"),
@@ -884,6 +951,7 @@ ns:RegisterGuide({
             id = "turnin-204-bad-medicine",
             kind = "turnin",
             priority = 810,
+            conditions = { level = { min = 30 } },
             text = "Turn in Bad Medicine to Sergeant Yohwa in Rebel Camp.",
             dependsOn = { "objective-204-2-venom-fern-extract", "objective-204-1-bad-medicine" },
             complete = QuestState(204, "completed"),
@@ -896,6 +964,7 @@ ns:RegisterGuide({
             id = "accept-574-special-forces",
             kind = "accept",
             priority = 820,
+            conditions = { level = { min = 30 } },
             text = "Accept Special Forces from Sergeant Yohwa in Rebel Camp.",
             complete = QuestState(574, "activeOrCompleted"),
             route = {
@@ -909,6 +978,7 @@ ns:RegisterGuide({
             priority = 840,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -926,6 +996,7 @@ ns:RegisterGuide({
             priority = 850,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -940,6 +1011,7 @@ ns:RegisterGuide({
             id = "objective-574-special-forces",
             kind = "objective",
             priority = 860,
+            conditions = { level = { min = 30 } },
             text = "Kill 6 Kurzen Headshrinker and 10 Kurzen Commando in The Stockpile Kurzen Commando are stealth and found near the cave entrance.",
             dependsOn = { "accept-574-special-forces" },
             complete = QuestState(574, "complete"),
@@ -952,6 +1024,7 @@ ns:RegisterGuide({
             id = "objective-605-singing-blue-shards-3",
             kind = "objective",
             priority = 870,
+            conditions = { level = { min = 30 } },
             text = "Find Crystal Spine Basilisk or Stone Maw Basilisk and collect 10 Singing Crystal Shard in The Savage Coast.",
             dependsOn = { "accept-605-singing-blue-shards" },
             complete = QuestState(605, "complete"),
@@ -966,6 +1039,7 @@ ns:RegisterGuide({
             id = "turnin-198-supplies-to-private-thorsen",
             kind = "turnin",
             priority = 890,
+            conditions = { level = { min = 30 } },
             text = "Turn in Supplies to Private Thorsen to Private Thorsen in Rebel Camp.",
             dependsOn = { "accept-198-supplies-to-private-thorsen" },
             complete = QuestState(198, "completed"),
@@ -980,6 +1054,7 @@ ns:RegisterGuide({
             priority = 900,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -997,6 +1072,7 @@ ns:RegisterGuide({
             priority = 910,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -1013,6 +1089,7 @@ ns:RegisterGuide({
             priority = 920,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -1030,6 +1107,7 @@ ns:RegisterGuide({
             priority = 930,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -1046,6 +1124,7 @@ ns:RegisterGuide({
             priority = 940,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 200, state = "completed" } },
                 },
             },
@@ -1061,6 +1140,7 @@ ns:RegisterGuide({
             id = "turnin-574-special-forces",
             kind = "turnin",
             priority = 950,
+            conditions = { level = { min = 30 } },
             text = "Turn in Special Forces to Lieutenant Doren in Rebel Camp.",
             dependsOn = { "objective-574-special-forces" },
             complete = QuestState(574, "completed"),
@@ -1073,6 +1153,7 @@ ns:RegisterGuide({
             id = "accept-202-colonel-kurzen",
             kind = "accept",
             priority = 960,
+            conditions = { level = { min = 30 } },
             text = "Accept Colonel Kurzen from Lieutenant Doren in Rebel Camp.",
             complete = QuestState(202, "activeOrCompleted"),
             route = {
@@ -1084,6 +1165,7 @@ ns:RegisterGuide({
             id = "turnin-201-investigate-the-camp",
             kind = "turnin",
             priority = 980,
+            conditions = { level = { min = 28 } },
             text = "Turn in Investigate the Camp to Krazek in The Salty Sailor Tavern.",
             dependsOn = { "objective-201-investigate-the-camp" },
             complete = QuestState(201, "completed"),
@@ -1096,6 +1178,7 @@ ns:RegisterGuide({
             id = "turnin-189-bloodscalp-ears",
             kind = "turnin",
             priority = 990,
+            conditions = { level = { min = 30 } },
             text = "Turn in Bloodscalp Ears to Kebok in The Salty Sailor Tavern.",
             dependsOn = { "objective-189-bloodscalp-ears" },
             complete = QuestState(189, "completed"),
@@ -1108,6 +1191,7 @@ ns:RegisterGuide({
             id = "turnin-213-hostile-takeover",
             kind = "turnin",
             priority = 1000,
+            conditions = { level = { min = 31 } },
             text = "Turn in Hostile Takeover to Kebok in The Salty Sailor Tavern.",
             dependsOn = { "objective-213-hostile-takeover" },
             complete = QuestState(213, "completed"),
@@ -1120,6 +1204,7 @@ ns:RegisterGuide({
             id = "turnin-578-the-stone-of-the-tides",
             kind = "turnin",
             priority = 1010,
+            conditions = { level = { min = 32 } },
             text = "Turn in The Stone of the Tides to Baron Revilgaz in Booty Bay.",
             dependsOn = { "objective-578-the-stone-of-the-tides" },
             complete = QuestState(578, "completed"),
@@ -1132,6 +1217,7 @@ ns:RegisterGuide({
             id = "accept-601-water-elementals",
             kind = "accept",
             priority = 1020,
+            conditions = { level = { min = 32 } },
             text = "Accept Water Elementals from Baron Revilgaz in Booty Bay.",
             complete = QuestState(601, "activeOrCompleted"),
             route = {
@@ -1145,6 +1231,7 @@ ns:RegisterGuide({
             priority = 1030,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -1162,6 +1249,7 @@ ns:RegisterGuide({
             priority = 1040,
             conditions = {
                 all = {
+                    { level = { min = 29 } },
                     { quest = { id = 1180, state = "completed" } },
                 },
             },
@@ -1176,6 +1264,7 @@ ns:RegisterGuide({
             id = "turnin-575-supply-and-demand",
             kind = "turnin",
             priority = 1050,
+            conditions = { level = { min = 26 } },
             text = "Turn in Supply and Demand to Drizzlik in Booty Bay.",
             dependsOn = { "objective-575-supply-and-demand" },
             complete = QuestState(575, "completed"),
@@ -1188,6 +1277,7 @@ ns:RegisterGuide({
             id = "accept-577-some-assembly-required",
             kind = "accept",
             priority = 1060,
+            conditions = { level = { min = 31 } },
             text = "Accept Some Assembly Required from Drizzlik in Booty Bay.",
             complete = QuestState(577, "activeOrCompleted"),
             route = {
@@ -1199,6 +1289,7 @@ ns:RegisterGuide({
             id = "turnin-605-singing-blue-shards",
             kind = "turnin",
             priority = 1070,
+            conditions = { level = { min = 30 } },
             text = "Turn in Singing Blue Shards to Crank Fizzlebub in The Salty Sailor Tavern.",
             dependsOn = { "objective-605-singing-blue-shards", "objective-605-singing-blue-shards-2", "objective-605-singing-blue-shards-3" },
             complete = QuestState(605, "completed"),
@@ -1211,6 +1302,7 @@ ns:RegisterGuide({
             id = "turnin-1457-the-karnitol-shipwreck",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 30 } },
             text = "Turn in The Karnitol Shipwreck to Roetten Stonehammer in Hall of Explorers.",
             complete = QuestState(1457, "completed"),
             route = {
@@ -1222,6 +1314,7 @@ ns:RegisterGuide({
             id = "accept-707-ironband-wants-you",
             kind = "accept",
             priority = 1100,
+            conditions = { level = { min = 30 } },
             text = "Accept Ironband Wants You! from Prospector Stormpike in The Library.",
             complete = QuestState(707, "activeOrCompleted"),
             route = {
@@ -1235,6 +1328,7 @@ ns:RegisterGuide({
             priority = 1110,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 514, state = "completed" } },
                 },
             },

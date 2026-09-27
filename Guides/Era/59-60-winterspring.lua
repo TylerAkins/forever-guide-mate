@@ -49,6 +49,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -65,6 +66,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6844, state = "completed" } },
                 },
             },
@@ -81,6 +83,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6844, state = "completed" } },
                 },
             },
@@ -98,6 +101,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 54 } },
                     { quest = { id = 6845, state = "completed" } },
                 },
             },
@@ -114,6 +118,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -130,6 +135,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -153,6 +159,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 5163, state = "completed" } },
                 },
             },
@@ -169,6 +176,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                     { quest = { id = 4521, state = "completed" } },
                 },
@@ -186,6 +194,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -200,6 +209,7 @@ ns:RegisterGuide({
             id = "accept-5054-ursius-of-the-shardtooth",
             kind = "accept",
             priority = 120,
+            conditions = { level = { min = 53 } },
             text = "Accept Ursius of the Shardtooth from Storm Shadowhoof in Everlook.",
             complete = QuestState(5054, "activeOrCompleted"),
             route = {
@@ -223,6 +233,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -258,6 +269,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 55 } },
                     { quest = { id = 6606, state = "completed" } },
                 },
             },
@@ -273,6 +285,7 @@ ns:RegisterGuide({
             id = "objective-5054-ursius-of-the-shardtooth",
             kind = "objective",
             priority = 170,
+            conditions = { level = { min = 53 } },
             text = "Kill Ursius, he's a level 56 elite and should be easy to solo.",
             dependsOn = { "accept-5054-ursius-of-the-shardtooth" },
             complete = QuestState(5054, "complete"),
@@ -293,6 +306,7 @@ ns:RegisterGuide({
             id = "turnin-5054-ursius-of-the-shardtooth",
             kind = "turnin",
             priority = 180,
+            conditions = { level = { min = 53 } },
             text = "Turn in Ursius of the Shardtooth to Storm Shadowhoof in Everlook.",
             dependsOn = { "objective-5054-ursius-of-the-shardtooth" },
             complete = QuestState(5054, "completed"),
@@ -305,6 +319,7 @@ ns:RegisterGuide({
             id = "accept-5055-brumeran-of-the-chillwind",
             kind = "accept",
             priority = 190,
+            conditions = { level = { min = 53 } },
             text = "Accept Brumeran of the Chillwind from Storm Shadowhoof in Everlook.",
             complete = QuestState(5055, "activeOrCompleted"),
             route = {
@@ -316,6 +331,7 @@ ns:RegisterGuide({
             id = "accept-975-cache-of-mau-ari",
             kind = "accept",
             priority = 200,
+            conditions = { level = { min = 55 } },
             text = "Accept Cache of Mau'ari from Witch Doctor Mau'ari in Everlook.",
             complete = QuestState(975, "activeOrCompleted"),
             route = {
@@ -327,6 +343,7 @@ ns:RegisterGuide({
             id = "turnin-975-cache-of-mau-ari",
             kind = "turnin",
             priority = 210,
+            conditions = { level = { min = 55 } },
             text = "Turn in Cache of Mau'ari to Witch Doctor Mau'ari in Everlook.",
             dependsOn = { "accept-975-cache-of-mau-ari" },
             complete = QuestState(975, "completed"),
@@ -341,6 +358,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -356,6 +374,7 @@ ns:RegisterGuide({
             id = "objective-5055-brumeran-of-the-chillwind",
             kind = "objective",
             priority = 240,
+            conditions = { level = { min = 53 } },
             text = "Kill Brumeran, this is a level 58 Elite and can be a bit tough to solo, you may need to get some help.",
             dependsOn = { "accept-5055-brumeran-of-the-chillwind" },
             complete = QuestState(5055, "complete"),
@@ -372,6 +391,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                     { quest = { id = 4521, state = "completed" } },
                 },
@@ -388,6 +408,7 @@ ns:RegisterGuide({
             id = "turnin-5055-brumeran-of-the-chillwind",
             kind = "turnin",
             priority = 260,
+            conditions = { level = { min = 53 } },
             text = "Turn in Brumeran of the Chillwind to Storm Shadowhoof in Everlook.",
             dependsOn = { "objective-5055-brumeran-of-the-chillwind" },
             complete = QuestState(5055, "completed"),
@@ -400,6 +421,7 @@ ns:RegisterGuide({
             id = "accept-5056-shy-rotam",
             kind = "accept",
             priority = 270,
+            conditions = { level = { min = 53 } },
             text = "Accept Shy-Rotam from Storm Shadowhoof in Everlook.",
             complete = QuestState(5056, "activeOrCompleted"),
             route = {
@@ -413,6 +435,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -430,6 +453,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -444,6 +468,7 @@ ns:RegisterGuide({
             id = "objective-4882-blue-feathered-necklace",
             kind = "objective",
             priority = 320,
+            conditions = { level = { min = 52 } },
             text = "Keep killing Moontouched Owlbeast until you find Blue-Feathered Necklace.",
             complete = QuestState(4882, "complete"),
             route = {
@@ -457,6 +482,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -474,6 +500,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                     { quest = { id = 4521, state = "completed" } },
                 },
@@ -492,6 +519,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5086, state = "completed" } },
                 },
             },
@@ -509,6 +537,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -525,6 +554,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4808, state = "completed" } },
                     { quest = { id = 4521, state = "completed" } },
                 },
@@ -543,6 +573,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4809, state = "completed" } },
                 },
             },
@@ -559,6 +590,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -576,6 +608,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -593,6 +626,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -605,6 +639,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -622,6 +657,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -638,6 +674,7 @@ ns:RegisterGuide({
             priority = 490,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 4521, state = "completed" } },
                 },
             },
@@ -655,6 +692,7 @@ ns:RegisterGuide({
             priority = 510,
             conditions = {
                 all = {
+                    { level = { min = 52 } },
                     { quest = { id = 5087, state = "completed" } },
                 },
             },
@@ -670,6 +708,7 @@ ns:RegisterGuide({
             id = "turnin-4883-guarding-secrets",
             kind = "turnin",
             priority = 530,
+            conditions = { level = { min = 52 } },
             text = "Turn in Guarding Secrets to Nara Wildmane in Elder Rise.",
             complete = QuestState(4883, "completed"),
             route = {
@@ -683,6 +722,7 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
+                    { level = { min = 50 } },
                     { quest = { id = 4809, state = "completed" } },
                 },
             },

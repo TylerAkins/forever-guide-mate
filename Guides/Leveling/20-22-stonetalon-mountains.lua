@@ -54,6 +54,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -71,6 +72,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -89,6 +91,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -106,6 +109,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -124,6 +128,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -141,6 +146,7 @@ ns:RegisterGuide({
             priority = 60,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -159,6 +165,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -176,6 +183,7 @@ ns:RegisterGuide({
             priority = 80,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -194,6 +202,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -211,6 +220,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -229,6 +239,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -246,6 +257,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -264,6 +276,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -281,6 +294,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -299,6 +313,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -316,6 +331,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -334,6 +350,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = { 2, 8 } },
                 },
@@ -352,6 +369,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -369,6 +387,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -387,6 +406,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -404,6 +424,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -422,6 +443,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -440,6 +462,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -458,6 +481,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -475,6 +499,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -493,6 +518,7 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 9 },
                     { race = 5 },
                 },
@@ -511,6 +537,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                     { race = 6 },
                     { ["not"] = { quest = { id = 1528, state = "activeOrCompleted" } } },
@@ -529,6 +556,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                     { race = { 2, 8 } },
                     { ["not"] = { quest = { id = 1529, state = "activeOrCompleted" } } },
@@ -545,6 +573,7 @@ ns:RegisterGuide({
             id = "accept-1069-deepmoss-spider-eggs",
             kind = "accept",
             priority = 300,
+            conditions = { level = { min = 15 } },
             text = "Accept Deepmoss Spider Eggs from Mebok Mizzyrix in Ratchet.",
             complete = QuestState(1069, "activeOrCompleted"),
             route = {
@@ -556,6 +585,7 @@ ns:RegisterGuide({
             id = "accept-1483-ziz-fizziks",
             kind = "accept",
             priority = 310,
+            conditions = { level = { min = 16 } },
             text = "Accept Ziz Fizziks from Sputtervalve in Ratchet.",
             complete = QuestState(1483, "activeOrCompleted"),
             route = {
@@ -569,6 +599,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -585,6 +616,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -602,6 +634,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -618,6 +651,7 @@ ns:RegisterGuide({
             priority = 370,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -635,6 +669,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -652,6 +687,7 @@ ns:RegisterGuide({
             priority = 390,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -668,6 +704,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 19 } },
                     { class = 7 },
                 },
             },
@@ -684,6 +721,7 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
+                    { level = { min = 19 } },
                     { class = 7 },
                 },
             },
@@ -701,6 +739,7 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -718,6 +757,7 @@ ns:RegisterGuide({
             priority = 460,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -735,6 +775,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -749,6 +790,7 @@ ns:RegisterGuide({
             id = "accept-1062-goblin-invaders",
             kind = "accept",
             priority = 490,
+            conditions = { level = { min = 13 } },
             text = "Accept Goblin Invaders from Seereth Stonebreak in The Barrens.",
             complete = QuestState(1062, "activeOrCompleted"),
             route = {
@@ -760,6 +802,7 @@ ns:RegisterGuide({
             id = "accept-6548-avenge-my-village",
             kind = "accept",
             priority = 500,
+            conditions = { level = { min = 12 } },
             text = "Accept Avenge My Village from Makaba Flathoof in The Barrens.",
             complete = QuestState(6548, "activeOrCompleted"),
             route = {
@@ -771,6 +814,7 @@ ns:RegisterGuide({
             id = "objective-6548-avenge-my-village",
             kind = "objective",
             priority = 510,
+            conditions = { level = { min = 12 } },
             text = "Kill 8 Grimtotem Ruffian and 6 Grimtotem Mercenary in the Greatwood Vale.",
             dependsOn = { "accept-6548-avenge-my-village" },
             complete = QuestState(6548, "complete"),
@@ -783,6 +827,7 @@ ns:RegisterGuide({
             id = "turnin-6548-avenge-my-village",
             kind = "turnin",
             priority = 520,
+            conditions = { level = { min = 12 } },
             text = "Turn in Avenge My Village to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6548-avenge-my-village" },
             complete = QuestState(6548, "completed"),
@@ -795,6 +840,7 @@ ns:RegisterGuide({
             id = "accept-6629-kill-grundig-darkcloud",
             kind = "accept",
             priority = 530,
+            conditions = { level = { min = 12 } },
             text = "Accept Kill Grundig Darkcloud from Makaba Flathoof in The Barrens.",
             complete = QuestState(6629, "activeOrCompleted"),
             route = {
@@ -806,6 +852,7 @@ ns:RegisterGuide({
             id = "objective-6629-kill-grundig-darkcloud",
             kind = "objective",
             priority = 540,
+            conditions = { level = { min = 12 } },
             text = "Kill Grundig Darkcloud and 6 Grimtotem Brute at the Grimtotem Post.",
             dependsOn = { "accept-6629-kill-grundig-darkcloud" },
             complete = QuestState(6629, "complete"),
@@ -818,6 +865,7 @@ ns:RegisterGuide({
             id = "accept-6523-protect-kaya",
             kind = "accept",
             priority = 550,
+            conditions = { level = { min = 12 } },
             text = "Accept Protect Kaya from Kaya Flathoof in Grimtotem Post.",
             complete = QuestState(6523, "activeOrCompleted"),
             route = {
@@ -829,6 +877,7 @@ ns:RegisterGuide({
             id = "objective-6523-protect-kaya",
             kind = "objective",
             priority = 560,
+            conditions = { level = { min = 12 } },
             text = "Escort Kaya Flathoof until objective is complete in Camp Aparaje.",
             dependsOn = { "accept-6523-protect-kaya" },
             complete = QuestState(6523, "complete"),
@@ -841,6 +890,7 @@ ns:RegisterGuide({
             id = "turnin-6523-protect-kaya",
             kind = "turnin",
             priority = 570,
+            conditions = { level = { min = 12 } },
             text = "Turn in Protect Kaya to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6523-protect-kaya" },
             complete = QuestState(6523, "completed"),
@@ -853,6 +903,7 @@ ns:RegisterGuide({
             id = "accept-6401-kaya-s-alive",
             kind = "accept",
             priority = 580,
+            conditions = { level = { min = 12 } },
             text = "Accept Kaya's Alive from Makaba Flathoof in The Barrens.",
             complete = QuestState(6401, "activeOrCompleted"),
             route = {
@@ -864,6 +915,7 @@ ns:RegisterGuide({
             id = "turnin-6629-kill-grundig-darkcloud",
             kind = "turnin",
             priority = 590,
+            conditions = { level = { min = 12 } },
             text = "Turn in Kill Grundig Darkcloud to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6629-kill-grundig-darkcloud" },
             complete = QuestState(6629, "completed"),
@@ -876,6 +928,7 @@ ns:RegisterGuide({
             id = "accept-1058-jin-zil-s-forest-magic",
             kind = "accept",
             priority = 610,
+            conditions = { level = { min = 20 } },
             text = "Accept Jin'Zil's Forest Magic from Witch Doctor Jin'Zil in Malaka'jin.",
             complete = QuestState(1058, "activeOrCompleted"),
             route = {
@@ -887,6 +940,7 @@ ns:RegisterGuide({
             id = "accept-6461-blood-feeders",
             kind = "accept",
             priority = 620,
+            conditions = { level = { min = 13 } },
             text = "Accept Blood Feeders from Xen'Zilla in Malaka'jin.",
             complete = QuestState(6461, "activeOrCompleted"),
             route = {
@@ -898,6 +952,7 @@ ns:RegisterGuide({
             id = "accept-6284-arachnophobia",
             kind = "accept",
             priority = 640,
+            conditions = { level = { min = 15 } },
             text = "Accept Arachnophobia in Webwinder Path.",
             complete = QuestState(6284, "activeOrCompleted"),
             route = {
@@ -909,6 +964,7 @@ ns:RegisterGuide({
             id = "objective-6284-arachnophobia",
             kind = "objective",
             priority = 650,
+            conditions = { level = { min = 15 } },
             text = "Kill Besseleth and take Besseleth's Fang in Sishir Canyon.",
             dependsOn = { "accept-6284-arachnophobia" },
             complete = QuestState(6284, "complete"),
@@ -921,6 +977,7 @@ ns:RegisterGuide({
             id = "objective-6461-blood-feeders",
             kind = "objective",
             priority = 660,
+            conditions = { level = { min = 13 } },
             text = "Kill 10 Deepmoss Creeper and 7 Deepmoss Venomspitter in Sishir Canyon.",
             dependsOn = { "accept-6461-blood-feeders" },
             complete = QuestState(6461, "complete"),
@@ -933,6 +990,7 @@ ns:RegisterGuide({
             id = "accept-1093-super-reaper-6000",
             kind = "accept",
             priority = 680,
+            conditions = { level = { min = 16 } },
             text = "Accept Super Reaper 6000 from Ziz Fizziks in Windshear Crag.",
             complete = QuestState(1093, "activeOrCompleted"),
             route = {
@@ -944,6 +1002,7 @@ ns:RegisterGuide({
             id = "objective-1093-super-reaper-6000",
             kind = "objective",
             priority = 690,
+            conditions = { level = { min = 16 } },
             text = "Kill Venture Co. Operator for the Super Reaper 6000 Blueprints in Windshear Crag.",
             dependsOn = { "accept-1093-super-reaper-6000" },
             complete = QuestState(1093, "complete"),
@@ -956,6 +1015,7 @@ ns:RegisterGuide({
             id = "objective-1062-goblin-invaders",
             kind = "objective",
             priority = 700,
+            conditions = { level = { min = 13 } },
             text = "Kill 15 Venture Co. Logger in Windshear Crag.",
             dependsOn = { "accept-1062-goblin-invaders" },
             complete = QuestState(1062, "complete"),
@@ -968,6 +1028,7 @@ ns:RegisterGuide({
             id = "turnin-1093-super-reaper-6000",
             kind = "turnin",
             priority = 710,
+            conditions = { level = { min = 16 } },
             text = "Turn in Super Reaper 6000 to Ziz Fizziks in Windshear Crag.",
             dependsOn = { "objective-1093-super-reaper-6000" },
             complete = QuestState(1093, "completed"),
@@ -980,6 +1041,7 @@ ns:RegisterGuide({
             id = "accept-1094-further-instructions",
             kind = "accept",
             priority = 720,
+            conditions = { level = { min = 16 } },
             text = "Accept Further Instructions from Ziz Fizziks in Windshear Crag.",
             complete = QuestState(1094, "activeOrCompleted"),
             route = {
@@ -991,6 +1053,7 @@ ns:RegisterGuide({
             id = "turnin-6284-arachnophobia",
             kind = "turnin",
             priority = 740,
+            conditions = { level = { min = 15 } },
             text = "Turn in Arachnophobia to Maggran Earthbinder in Sun Rock Retreat.",
             dependsOn = { "objective-6284-arachnophobia" },
             complete = QuestState(6284, "completed"),
@@ -1003,6 +1066,7 @@ ns:RegisterGuide({
             id = "accept-6301-cycle-of-rebirth",
             kind = "accept",
             priority = 750,
+            conditions = { level = { min = 17 } },
             text = "Accept Cycle of Rebirth from Tammra Windfield in Sun Rock Retreat.",
             complete = QuestState(6301, "activeOrCompleted"),
             route = {
@@ -1014,6 +1078,7 @@ ns:RegisterGuide({
             id = "accept-6421-boulderslide-ravine",
             kind = "accept",
             priority = 760,
+            conditions = { level = { min = 14 } },
             text = "Accept Boulderslide Ravine from Mor'rogal in Sun Rock Retreat.",
             complete = QuestState(6421, "activeOrCompleted"),
             route = {
@@ -1027,6 +1092,7 @@ ns:RegisterGuide({
             id = "accept-6562-trouble-in-the-deeps",
             kind = "accept",
             priority = 770,
+            conditions = { level = { min = 17 } },
             text = "Accept Trouble in the Deeps from Tsunaman in Sun Rock Retreat.",
             complete = QuestState(6562, "activeOrCompleted"),
             route = {
@@ -1038,6 +1104,7 @@ ns:RegisterGuide({
             id = "travel-6421-boulderslide-cavern",
             kind = "travel",
             priority = 780,
+            conditions = { level = { min = 14 } },
             text = "Travel to Boulderslide Cavern. Investigate Cave in Boulderslide Cavern.",
             complete = QuestObjective(6421, 2),
             dependsOn = { "accept-6421-boulderslide-ravine" },
@@ -1054,6 +1121,7 @@ ns:RegisterGuide({
             id = "objective-6421-2-investigate-cave",
             kind = "objective",
             priority = 790,
+            conditions = { level = { min = 14 } },
             text = "Investigate Cave in Boulderslide Cavern.",
             dependsOn = { "accept-6421-boulderslide-ravine" },
             complete = QuestObjective(6421, 2),
@@ -1066,6 +1134,7 @@ ns:RegisterGuide({
             id = "objective-6421-boulderslide-ravine",
             kind = "objective",
             priority = 810,
+            conditions = { level = { min = 14 } },
             text = "Click Item Resonite Crystal and collect 10 Resonite Crystal in Boulderslide Cavern.",
             dependsOn = { "accept-6421-boulderslide-ravine" },
             complete = QuestState(6421, "complete"),
@@ -1078,6 +1147,7 @@ ns:RegisterGuide({
             id = "turnin-6461-blood-feeders",
             kind = "turnin",
             priority = 830,
+            conditions = { level = { min = 13 } },
             text = "Turn in Blood Feeders to Xen'Zilla in Malaka'jin.",
             dependsOn = { "objective-6461-blood-feeders" },
             complete = QuestState(6461, "completed"),
@@ -1090,6 +1160,7 @@ ns:RegisterGuide({
             id = "turnin-1062-goblin-invaders",
             kind = "turnin",
             priority = 840,
+            conditions = { level = { min = 13 } },
             text = "Turn in Goblin Invaders to Seereth Stonebreak in The Barrens.",
             dependsOn = { "objective-1062-goblin-invaders" },
             complete = QuestState(1062, "completed"),
@@ -1102,6 +1173,7 @@ ns:RegisterGuide({
             id = "accept-1063-the-elder-crone",
             kind = "accept",
             priority = 850,
+            conditions = { level = { min = 13 } },
             text = "Accept The Elder Crone from Seereth Stonebreak in The Barrens.",
             complete = QuestState(1063, "activeOrCompleted"),
             route = {
@@ -1113,6 +1185,7 @@ ns:RegisterGuide({
             id = "accept-1068-shredding-machines",
             kind = "accept",
             priority = 860,
+            conditions = { level = { min = 13 } },
             text = "Accept Shredding Machines from Seereth Stonebreak in The Barrens.",
             complete = QuestState(1068, "activeOrCompleted"),
             route = {
@@ -1126,6 +1199,7 @@ ns:RegisterGuide({
             priority = 870,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 821, state = "completed" } },
                 },
             },
@@ -1140,6 +1214,7 @@ ns:RegisterGuide({
             id = "accept-6541-report-to-kadrak",
             kind = "accept",
             priority = 880,
+            conditions = { level = { min = 17 } },
             text = "Accept Report to Kadrak from Thork in The Crossroads.",
             complete = QuestState(6541, "activeOrCompleted"),
             route = {
@@ -1153,6 +1228,7 @@ ns:RegisterGuide({
             priority = 890,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 742, state = "completed" } },
                 },
             },
@@ -1169,6 +1245,7 @@ ns:RegisterGuide({
             priority = 900,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { quest = { id = 742, state = "completed" } },
                 },
             },
@@ -1186,6 +1263,7 @@ ns:RegisterGuide({
             priority = 920,
             conditions = {
                 all = {
+                    { level = { min = 20 } },
                     { class = 7 },
                 },
             },
@@ -1201,6 +1279,7 @@ ns:RegisterGuide({
             id = "accept-6442-naga-at-the-zoram-strand",
             kind = "accept",
             priority = 950,
+            conditions = { level = { min = 14 } },
             text = "Accept Naga at the Zoram Strand from Marukai in Zoram'gar Outpost.",
             complete = QuestState(6442, "activeOrCompleted"),
             route = {
@@ -1212,6 +1291,7 @@ ns:RegisterGuide({
             id = "objective-6442-naga-at-the-zoram-strand",
             kind = "objective",
             priority = 960,
+            conditions = { level = { min = 14 } },
             text = "Kill Wrathtail enemies and collect 20 Wrathtail Head.",
             dependsOn = { "accept-6442-naga-at-the-zoram-strand" },
             complete = QuestState(6442, "complete"),
@@ -1224,6 +1304,7 @@ ns:RegisterGuide({
             id = "turnin-6442-naga-at-the-zoram-strand",
             kind = "turnin",
             priority = 970,
+            conditions = { level = { min = 14 } },
             text = "Turn in Naga at the Zoram Strand to Marukai in Zoram'gar Outpost.",
             dependsOn = { "objective-6442-naga-at-the-zoram-strand" },
             complete = QuestState(6442, "completed"),

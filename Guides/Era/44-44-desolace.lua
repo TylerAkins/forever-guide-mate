@@ -43,6 +43,7 @@ ns:RegisterGuide({
             id = "accept-5381-hand-of-iruxos",
             kind = "accept",
             priority = 20,
+            conditions = { level = { min = 32 } },
             text = "Accept Hand of Iruxos from Taiga Wisemane in Shadowprey Village.",
             complete = QuestState(5381, "activeOrCompleted"),
             route = {
@@ -54,6 +55,7 @@ ns:RegisterGuide({
             id = "objective-5381-hand-of-iruxos",
             kind = "objective",
             priority = 40,
+            conditions = { level = { min = 32 } },
             text = "Head into the biggest building in Thunder Axe Fortress. Clear the mainroom, use the Demon Pick on the Crystal in the center of the room. Kill the Demon Spirit that appears and collect the Demon Box.",
             dependsOn = { "accept-5381-hand-of-iruxos" },
             complete = QuestState(5381, "complete"),
@@ -66,6 +68,7 @@ ns:RegisterGuide({
             id = "turnin-5381-hand-of-iruxos",
             kind = "turnin",
             priority = 50,
+            conditions = { level = { min = 32 } },
             text = "Turn in Hand of Iruxos to Taiga Wisemane in Shadowprey Village.",
             dependsOn = { "objective-5381-hand-of-iruxos" },
             complete = QuestState(5381, "completed"),
@@ -78,6 +81,7 @@ ns:RegisterGuide({
             id = "accept-5581-portals-of-the-legion",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 32 } },
             text = "Accept Portals of the Legion from Taiga Wisemane in Shadowprey Village.",
             complete = QuestState(5581, "activeOrCompleted"),
             route = {
@@ -91,6 +95,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1373, state = "completed" } },
                 },
             },
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "accept-6134-ghost-o-plasm-round-up",
             kind = "accept",
             priority = 90,
+            conditions = { level = { min = 34 } },
             text = "Accept Ghost-o-plasm Round Up from Hornizz Brimbuzzle in Kodo Graveyard.",
             complete = QuestState(6134, "activeOrCompleted"),
             route = {
@@ -118,6 +124,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 26 } },
                     { quest = { id = 1484, state = "completed" } },
                 },
             },
@@ -134,6 +141,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1373, state = "completed" } },
                 },
             },
@@ -149,6 +157,7 @@ ns:RegisterGuide({
             id = "objective-6134-ghost-o-plasm-round-up",
             kind = "objective",
             priority = 150,
+            conditions = { level = { min = 34 } },
             text = "Clear the area and use Zeppelin Cargo, kill the Magrami Spectre that appear and collect 8 Ghost-o-Plasm.",
             dependsOn = { "accept-6134-ghost-o-plasm-round-up" },
             complete = QuestState(6134, "complete"),
@@ -163,6 +172,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 26 } },
                     { quest = { id = 1484, state = "completed" } },
                 },
             },
@@ -180,6 +190,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 26 } },
                     { quest = { id = 1484, state = "completed" } },
                 },
             },
@@ -195,6 +206,7 @@ ns:RegisterGuide({
             id = "objective-5581-portals-of-the-legion",
             kind = "objective",
             priority = 190,
+            conditions = { level = { min = 32 } },
             text = "Use Hand of Iruxos on the Demon Portal and kill the Demon Portal Guardian that it summon to close 6 Demon portal in Mannoroc Coven.",
             dependsOn = { "accept-5581-portals-of-the-legion" },
             complete = QuestState(5581, "complete"),
@@ -209,6 +221,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 26 } },
                     { quest = { id = 1484, state = "completed" } },
                 },
             },
@@ -224,6 +237,7 @@ ns:RegisterGuide({
             id = "turnin-6134-ghost-o-plasm-round-up",
             kind = "turnin",
             priority = 230,
+            conditions = { level = { min = 34 } },
             text = "Turn in Ghost-o-plasm Round Up to Hornizz Brimbuzzle in Kodo Graveyard.",
             dependsOn = { "objective-6134-ghost-o-plasm-round-up" },
             complete = QuestState(6134, "completed"),
@@ -238,6 +252,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 30 } },
                     { quest = { id = 1373, state = "completed" } },
                 },
             },
@@ -253,6 +268,7 @@ ns:RegisterGuide({
             id = "turnin-5581-portals-of-the-legion",
             kind = "turnin",
             priority = 270,
+            conditions = { level = { min = 32 } },
             text = "Turn in Portals of the Legion to Taiga Wisemane in Shadowprey Village.",
             dependsOn = { "objective-5581-portals-of-the-legion" },
             complete = QuestState(5581, "completed"),

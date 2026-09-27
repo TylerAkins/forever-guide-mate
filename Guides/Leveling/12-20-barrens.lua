@@ -54,6 +54,7 @@ ns:RegisterGuide({
             priority = 10,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                     { race = 6 },
                     { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
@@ -72,6 +73,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                     { race = 6 },
                     { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
@@ -90,6 +92,7 @@ ns:RegisterGuide({
             priority = 30,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                     { race = { 2, 8 } },
                 },
@@ -107,6 +110,7 @@ ns:RegisterGuide({
             priority = 40,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -124,6 +128,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8, 5 } },
                 },
             },
@@ -140,6 +145,7 @@ ns:RegisterGuide({
             priority = 90,
             conditions = {
                 all = {
+                    { level = { min = 9 } },
                     { race = 6 },
                 },
             },
@@ -156,6 +162,7 @@ ns:RegisterGuide({
             priority = 110,
             conditions = {
                 all = {
+                    { level = { min = 9 } },
                     { race = 6 },
                 },
             },
@@ -173,6 +180,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -189,6 +197,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -206,6 +215,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -237,6 +247,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8, 5 } },
                 },
             },
@@ -255,6 +266,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-840-conscript-of-the-horde" },
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8, 5 } },
                     { quest = { id = 840, state = "completed" } },
                 },
@@ -272,7 +284,7 @@ ns:RegisterGuide({
             priority = 171,
             conditions = {
                 all = {
-                    { level = { min = 13 } },
+                    { level = { min = 7 } },
                     { race = 96 },
                 },
             },
@@ -289,7 +301,7 @@ ns:RegisterGuide({
             priority = 172,
             conditions = {
                 all = {
-                    { level = { min = 13 } },
+                    { level = { min = 7 } },
                     { race = 96 },
                 },
             },
@@ -307,6 +319,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 9 } },
                     { quest = { id = 809, state = "completed" } },
                 },
             },
@@ -323,6 +336,7 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -340,6 +354,7 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -356,6 +371,7 @@ ns:RegisterGuide({
             priority = 220,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -373,6 +389,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -389,6 +406,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -406,6 +424,7 @@ ns:RegisterGuide({
             priority = 270,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8, 5 } },
                     { quest = { id = 840, state = "completed" } },
                 },
@@ -424,6 +443,7 @@ ns:RegisterGuide({
             priority = 280,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -440,6 +460,7 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -457,6 +478,7 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -488,6 +510,7 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -505,6 +528,7 @@ ns:RegisterGuide({
             priority = 340,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -521,6 +545,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -538,6 +563,7 @@ ns:RegisterGuide({
             priority = 360,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -554,6 +580,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { race = { 2, 8 } },
                 },
             },
@@ -569,6 +596,7 @@ ns:RegisterGuide({
             id = "accept-869-raptor-thieves",
             kind = "accept",
             priority = 390,
+            conditions = { level = { min = 9 } },
             text = "Accept Raptor Thieves from Gazrog in The Crossroads.",
             complete = QuestState(869, "activeOrCompleted"),
             route = {
@@ -580,6 +608,7 @@ ns:RegisterGuide({
             id = "accept-871-disrupt-the-attacks",
             kind = "accept",
             priority = 400,
+            conditions = { level = { min = 9 } },
             text = "Accept Disrupt the Attacks from Thork in The Crossroads.",
             complete = QuestState(871, "activeOrCompleted"),
             route = {
@@ -591,6 +620,7 @@ ns:RegisterGuide({
             id = "accept-5041-supplies-for-the-crossroads",
             kind = "accept",
             priority = 410,
+            conditions = { level = { min = 9 } },
             text = "Accept Supplies for the Crossroads from Thork in The Crossroads.",
             complete = QuestState(5041, "activeOrCompleted"),
             route = {
@@ -602,6 +632,7 @@ ns:RegisterGuide({
             id = "accept-867-harpy-raiders",
             kind = "accept",
             priority = 420,
+            conditions = { level = { min = 12 } },
             text = "Accept Harpy Raiders from Darsok Swiftdagger in The Crossroads.",
             complete = QuestState(867, "activeOrCompleted"),
             route = {
@@ -613,6 +644,7 @@ ns:RegisterGuide({
             id = "accept-848-fungal-spores",
             kind = "accept",
             priority = 430,
+            conditions = { level = { min = 10 } },
             text = "Accept Fungal Spores from Apothecary Helbrim in The Crossroads.",
             complete = QuestState(848, "activeOrCompleted"),
             route = {
@@ -624,6 +656,7 @@ ns:RegisterGuide({
             id = "accept-1492-wharfmaster-dizzywig",
             kind = "accept",
             priority = 440,
+            conditions = { level = { min = 9 } },
             text = "Accept Wharfmaster Dizzywig from Apothecary Helbrim in The Crossroads.",
             complete = QuestState(1492, "activeOrCompleted"),
             route = {
@@ -635,6 +668,7 @@ ns:RegisterGuide({
             id = "accept-844-plainstrider-menace",
             kind = "accept",
             priority = 450,
+            conditions = { level = { min = 10 } },
             text = "Accept Plainstrider Menace from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(844, "activeOrCompleted"),
             route = {
@@ -646,6 +680,7 @@ ns:RegisterGuide({
             id = "accept-870-the-forgotten-pools",
             kind = "accept",
             priority = 460,
+            conditions = { level = { min = 10 } },
             text = "Accept The Forgotten Pools from Tonga Runetotem in The Crossroads.",
             complete = QuestState(870, "activeOrCompleted"),
             route = {
@@ -659,6 +694,7 @@ ns:RegisterGuide({
             priority = 470,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                     { race = 6 },
                     { ["not"] = { quest = { id = 1498, state = "activeOrCompleted" } } },
@@ -678,6 +714,7 @@ ns:RegisterGuide({
             priority = 480,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -694,6 +731,7 @@ ns:RegisterGuide({
             priority = 500,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -713,6 +751,7 @@ ns:RegisterGuide({
             priority = 510,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -730,6 +769,7 @@ ns:RegisterGuide({
             priority = 520,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -746,6 +786,7 @@ ns:RegisterGuide({
             priority = 530,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -765,6 +806,7 @@ ns:RegisterGuide({
             priority = 540,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -781,6 +823,7 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -798,6 +841,7 @@ ns:RegisterGuide({
             priority = 560,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 1 },
                 },
             },
@@ -817,6 +861,7 @@ ns:RegisterGuide({
             priority = 580,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                     { race = 6 },
                 },
@@ -835,6 +880,7 @@ ns:RegisterGuide({
             priority = 590,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                     { race = { 2, 8 } },
                 },
@@ -853,6 +899,7 @@ ns:RegisterGuide({
             priority = 600,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -869,6 +916,7 @@ ns:RegisterGuide({
             priority = 620,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -894,6 +942,7 @@ ns:RegisterGuide({
             priority = 630,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -910,6 +959,7 @@ ns:RegisterGuide({
             priority = 650,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -927,6 +977,7 @@ ns:RegisterGuide({
             priority = 680,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -944,6 +995,7 @@ ns:RegisterGuide({
             priority = 700,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -969,6 +1021,7 @@ ns:RegisterGuide({
             priority = 710,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -985,6 +1038,7 @@ ns:RegisterGuide({
             priority = 720,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -1002,6 +1056,7 @@ ns:RegisterGuide({
             priority = 730,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -1019,6 +1074,7 @@ ns:RegisterGuide({
             priority = 740,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -1036,6 +1092,7 @@ ns:RegisterGuide({
             priority = 750,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -1052,6 +1109,7 @@ ns:RegisterGuide({
             priority = 770,
             conditions = {
                 all = {
+                    { level = { min = 10 } },
                     { class = 7 },
                 },
             },
@@ -1069,6 +1127,7 @@ ns:RegisterGuide({
             priority = 790,
             conditions = {
                 all = {
+                    { level = { min = 9 } },
                     { quest = { id = 809, state = "completed" } },
                 },
             },
@@ -1084,6 +1143,7 @@ ns:RegisterGuide({
             id = "objective-871-disrupt-the-attacks",
             kind = "objective",
             priority = 810,
+            conditions = { level = { min = 9 } },
             text = "Kill 8 Razormane Plunderer, 8 Razormane Thornweaver and 3 Razormane Hunter in Thorn Hill.",
             dependsOn = { "accept-871-disrupt-the-attacks" },
             complete = QuestState(871, "complete"),
@@ -1096,6 +1156,7 @@ ns:RegisterGuide({
             id = "objective-844-plainstrider-menace",
             kind = "objective",
             priority = 830,
+            conditions = { level = { min = 10 } },
             text = "Kill Greater Plainstrider and collect 7 Plainstrider Beak around The Crossroads.",
             dependsOn = { "accept-844-plainstrider-menace" },
             complete = QuestState(844, "complete"),
@@ -1116,6 +1177,7 @@ ns:RegisterGuide({
             id = "turnin-844-plainstrider-menace",
             kind = "turnin",
             priority = 850,
+            conditions = { level = { min = 10 } },
             text = "Turn in Plainstrider Menace to Sergra Darkthorn in The Crossroads.",
             dependsOn = { "objective-844-plainstrider-menace" },
             complete = QuestState(844, "completed"),
@@ -1128,6 +1190,7 @@ ns:RegisterGuide({
             id = "accept-845-the-zhevra",
             kind = "accept",
             priority = 860,
+            conditions = { level = { min = 10 } },
             text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(845, "activeOrCompleted"),
             route = {
@@ -1139,6 +1202,7 @@ ns:RegisterGuide({
             id = "turnin-871-disrupt-the-attacks",
             kind = "turnin",
             priority = 870,
+            conditions = { level = { min = 9 } },
             text = "Turn in Disrupt the Attacks to Thork in The Crossroads.",
             dependsOn = { "objective-871-disrupt-the-attacks" },
             complete = QuestState(871, "completed"),
@@ -1151,6 +1215,7 @@ ns:RegisterGuide({
             id = "accept-872-the-disruption-ends",
             kind = "accept",
             priority = 880,
+            conditions = { level = { min = 9 } },
             text = "Accept The Disruption Ends from Thork in The Crossroads.",
             complete = QuestState(872, "activeOrCompleted"),
             route = {
@@ -1162,6 +1227,7 @@ ns:RegisterGuide({
             id = "objective-872-3-kreenig-snarlsnout",
             kind = "objective",
             priority = 890,
+            conditions = { level = { min = 9 } },
             text = "Kill Kreenig Snarlsnout and collect Kreenig Snarlsnout's Tusk in Thorn Hill.",
             dependsOn = { "accept-872-the-disruption-ends" },
             complete = QuestObjective(872, 3),
@@ -1174,6 +1240,7 @@ ns:RegisterGuide({
             id = "objective-5041-supplies-for-the-crossroads",
             kind = "objective",
             priority = 900,
+            conditions = { level = { min = 9 } },
             text = "Collect Crossroads Supply Crate from the ground in Thorn Hill.",
             dependsOn = { "accept-5041-supplies-for-the-crossroads" },
             complete = QuestState(5041, "complete"),
@@ -1186,6 +1253,7 @@ ns:RegisterGuide({
             id = "objective-872-the-disruption-ends",
             kind = "objective",
             priority = 910,
+            conditions = { level = { min = 9 } },
             text = "Kill 8 Razormane Geomancer, 8 Razormane Defender in Thorn Hill.",
             dependsOn = { "accept-872-the-disruption-ends" },
             complete = QuestState(872, "complete"),
@@ -1200,6 +1268,7 @@ ns:RegisterGuide({
             priority = 930,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 819, state = "completed" } },
                 },
             },
@@ -1214,6 +1283,7 @@ ns:RegisterGuide({
             id = "accept-865-raptor-horns",
             kind = "accept",
             priority = 940,
+            conditions = { level = { min = 13 } },
             text = "Accept Raptor Horns from Mebok Mizzyrix in Ratchet.",
             complete = QuestState(865, "activeOrCompleted"),
             route = {
@@ -1225,7 +1295,7 @@ ns:RegisterGuide({
             id = "accept-97253-parts-and-pieces",
             kind = "accept",
             priority = 941,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "Accept Parts and Pieces from Wrenix the Wretched in Ratchet.",
             complete = QuestState(97253, "activeOrCompleted"),
             route = {
@@ -1237,6 +1307,7 @@ ns:RegisterGuide({
             id = "accept-895-wanted-baron-longshore",
             kind = "accept",
             priority = 950,
+            conditions = { level = { min = 11 } },
             text = "Accept WANTED: Baron Longshore in Ratchet.",
             complete = QuestState(895, "activeOrCompleted"),
             route = {
@@ -1248,6 +1319,7 @@ ns:RegisterGuide({
             id = "accept-894-samophlange",
             kind = "accept",
             priority = 960,
+            conditions = { level = { min = 10 } },
             text = "Accept Samophlange from Sputtervalve in Ratchet.",
             complete = QuestState(894, "activeOrCompleted"),
             route = {
@@ -1259,6 +1331,7 @@ ns:RegisterGuide({
             id = "accept-887-southsea-freebooters",
             kind = "accept",
             priority = 970,
+            conditions = { level = { min = 9 } },
             text = "Accept Southsea Freebooters from Gazlowe in Ratchet.",
             complete = QuestState(887, "activeOrCompleted"),
             route = {
@@ -1270,6 +1343,7 @@ ns:RegisterGuide({
             id = "turnin-1492-wharfmaster-dizzywig",
             kind = "turnin",
             priority = 980,
+            conditions = { level = { min = 9 } },
             text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig in Ratchet.",
             dependsOn = { "accept-1492-wharfmaster-dizzywig" },
             complete = QuestState(1492, "completed"),
@@ -1282,6 +1356,7 @@ ns:RegisterGuide({
             id = "accept-896-miner-s-fortune",
             kind = "accept",
             priority = 990,
+            conditions = { level = { min = 13 } },
             text = "Accept Miner's Fortune from Wharfmaster Dizzywig in Ratchet.",
             complete = QuestState(896, "activeOrCompleted"),
             route = {
@@ -1293,7 +1368,7 @@ ns:RegisterGuide({
             id = "objective-97253-parts-and-pieces",
             kind = "objective",
             priority = 1005,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet.",
             dependsOn = { "accept-97253-parts-and-pieces" },
             complete = QuestState(97253, "complete"),
@@ -1306,6 +1381,7 @@ ns:RegisterGuide({
             id = "objective-895-wanted-baron-longshore",
             kind = "objective",
             priority = 1010,
+            conditions = { level = { min = 11 } },
             text = "Kill Baron Longshore and collect Cap'n Garvey's Head in The Merchant Coast.",
             dependsOn = { "accept-895-wanted-baron-longshore" },
             complete = QuestState(895, "complete"),
@@ -1320,6 +1396,7 @@ ns:RegisterGuide({
             id = "objective-887-southsea-freebooters",
             kind = "objective",
             priority = 1020,
+            conditions = { level = { min = 9 } },
             text = "Kill 12 Southsea Brigand and 6 Southsea Cannoneer along The Merchant Coast.",
             dependsOn = { "accept-887-southsea-freebooters" },
             complete = QuestState(887, "complete"),
@@ -1332,6 +1409,7 @@ ns:RegisterGuide({
             id = "turnin-887-southsea-freebooters",
             kind = "turnin",
             priority = 1040,
+            conditions = { level = { min = 9 } },
             text = "Turn in Southsea Freebooters to Gazlowe in Ratchet.",
             dependsOn = { "objective-887-southsea-freebooters" },
             complete = QuestState(887, "completed"),
@@ -1344,6 +1422,7 @@ ns:RegisterGuide({
             id = "accept-890-the-missing-shipment",
             kind = "accept",
             priority = 1050,
+            conditions = { level = { min = 9 } },
             text = "Accept The Missing Shipment from Gazlowe in Ratchet.",
             complete = QuestState(890, "activeOrCompleted"),
             route = {
@@ -1355,6 +1434,7 @@ ns:RegisterGuide({
             id = "turnin-895-wanted-baron-longshore",
             kind = "turnin",
             priority = 1060,
+            conditions = { level = { min = 11 } },
             text = "Turn in WANTED: Baron Longshore to Gazlowe in Ratchet.",
             dependsOn = { "objective-895-wanted-baron-longshore" },
             complete = QuestState(895, "completed"),
@@ -1367,7 +1447,7 @@ ns:RegisterGuide({
             id = "turnin-97253-parts-and-pieces",
             kind = "turnin",
             priority = 1062,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Parts and Pieces to Wrenix the Wretched in Ratchet.",
             dependsOn = { "objective-97253-parts-and-pieces" },
             complete = QuestState(97253, "completed"),
@@ -1380,6 +1460,7 @@ ns:RegisterGuide({
             id = "turnin-890-the-missing-shipment",
             kind = "turnin",
             priority = 1070,
+            conditions = { level = { min = 9 } },
             text = "Turn in The Missing Shipment to Wharfmaster Dizzywig in Ratchet.",
             dependsOn = { "accept-890-the-missing-shipment" },
             complete = QuestState(890, "completed"),
@@ -1392,6 +1473,7 @@ ns:RegisterGuide({
             id = "accept-892-the-missing-shipment",
             kind = "accept",
             priority = 1080,
+            conditions = { level = { min = 9 } },
             text = "Accept The Missing Shipment from Wharfmaster Dizzywig in Ratchet.",
             complete = QuestState(892, "activeOrCompleted"),
             route = {
@@ -1403,6 +1485,7 @@ ns:RegisterGuide({
             id = "turnin-892-the-missing-shipment",
             kind = "turnin",
             priority = 1090,
+            conditions = { level = { min = 9 } },
             text = "Turn in The Missing Shipment to Gazlowe in Ratchet.",
             dependsOn = { "accept-892-the-missing-shipment" },
             complete = QuestState(892, "completed"),
@@ -1415,6 +1498,7 @@ ns:RegisterGuide({
             id = "accept-888-stolen-booty",
             kind = "accept",
             priority = 1100,
+            conditions = { level = { min = 9 } },
             text = "Accept Stolen Booty from Gazlowe in Ratchet.",
             complete = QuestState(888, "activeOrCompleted"),
             route = {
@@ -1426,6 +1510,7 @@ ns:RegisterGuide({
             id = "objective-888-2-telescopic-lens",
             kind = "objective",
             priority = 1120,
+            conditions = { level = { min = 9 } },
             text = "Click on Fragile - Do Not Drop to collect Telescopic Lens in The Merchant Coast.",
             dependsOn = { "accept-888-stolen-booty" },
             complete = QuestObjective(888, 2),
@@ -1440,6 +1525,7 @@ ns:RegisterGuide({
             id = "objective-888-1-shipment-of-boots",
             kind = "objective",
             priority = 1130,
+            conditions = { level = { min = 9 } },
             text = "Click on Drizzlik's Emporium to collect Shipment of Boots in The Merchant Coast.",
             dependsOn = { "accept-888-stolen-booty" },
             complete = QuestObjective(888, 1),
@@ -1454,6 +1540,7 @@ ns:RegisterGuide({
             id = "turnin-872-the-disruption-ends",
             kind = "turnin",
             priority = 1150,
+            conditions = { level = { min = 9 } },
             text = "Turn in The Disruption Ends to Thork in The Crossroads.",
             dependsOn = { "objective-872-3-kreenig-snarlsnout", "objective-872-the-disruption-ends" },
             complete = QuestState(872, "completed"),
@@ -1466,6 +1553,7 @@ ns:RegisterGuide({
             id = "turnin-5041-supplies-for-the-crossroads",
             kind = "turnin",
             priority = 1160,
+            conditions = { level = { min = 9 } },
             text = "Turn in Supplies for the Crossroads to Thork in The Crossroads.",
             dependsOn = { "objective-5041-supplies-for-the-crossroads" },
             complete = QuestState(5041, "completed"),
@@ -1480,6 +1568,7 @@ ns:RegisterGuide({
             priority = 1180,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1496,6 +1585,7 @@ ns:RegisterGuide({
             priority = 1200,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1513,6 +1603,7 @@ ns:RegisterGuide({
             priority = 1210,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1529,6 +1620,7 @@ ns:RegisterGuide({
             priority = 1230,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1546,6 +1638,7 @@ ns:RegisterGuide({
             priority = 1250,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1563,6 +1656,7 @@ ns:RegisterGuide({
             priority = 1260,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1577,6 +1671,7 @@ ns:RegisterGuide({
             id = "accept-850-kolkar-leaders",
             kind = "accept",
             priority = 1270,
+            conditions = { level = { min = 11 } },
             text = "Accept Kolkar Leaders from Regthar Deathgate in The Barrens.",
             complete = QuestState(850, "activeOrCompleted"),
             route = {
@@ -1588,6 +1683,7 @@ ns:RegisterGuide({
             id = "accept-855-centaur-bracers",
             kind = "accept",
             priority = 1280,
+            conditions = { level = { min = 9 } },
             text = "Accept Centaur Bracers from Regthar Deathgate in The Barrens.",
             complete = QuestState(855, "activeOrCompleted"),
             route = {
@@ -1599,6 +1695,7 @@ ns:RegisterGuide({
             id = "travel-870-the-forgotten-pools",
             kind = "travel",
             priority = 1290,
+            conditions = { level = { min = 10 } },
             text = "Travel to The Forgotten Pools. Swim to the bubble in the middle of the pool in The Forgotten Pools.",
             complete = QuestState(870, "complete"),
             dependsOn = { "accept-870-the-forgotten-pools" },
@@ -1611,6 +1708,7 @@ ns:RegisterGuide({
             id = "objective-870-the-forgotten-pools",
             kind = "objective",
             priority = 1300,
+            conditions = { level = { min = 10 } },
             text = "Swim to the bubble in the middle of the pool in The Forgotten Pools.",
             dependsOn = { "accept-870-the-forgotten-pools" },
             complete = QuestState(870, "complete"),
@@ -1623,6 +1721,7 @@ ns:RegisterGuide({
             id = "objective-848-fungal-spores",
             kind = "objective",
             priority = 1310,
+            conditions = { level = { min = 10 } },
             text = "Collect 4 Fungal Spores from Laden Mushroom in The Forgotten Pools.",
             dependsOn = { "accept-848-fungal-spores" },
             complete = QuestState(848, "complete"),
@@ -1635,6 +1734,7 @@ ns:RegisterGuide({
             id = "objective-850-kolkar-leaders",
             kind = "objective",
             priority = 1330,
+            conditions = { level = { min = 11 } },
             text = "Kill Barak Kodobane and collect Kodobane's Head.",
             dependsOn = { "accept-850-kolkar-leaders" },
             complete = QuestState(850, "complete"),
@@ -1647,6 +1747,7 @@ ns:RegisterGuide({
             id = "objective-855-centaur-bracers",
             kind = "objective",
             priority = 1340,
+            conditions = { level = { min = 9 } },
             text = "Kill Kolkar enemies and collect 15 Centaur Bracers near in The Forgotten Pools.",
             dependsOn = { "accept-855-centaur-bracers" },
             complete = QuestState(855, "complete"),
@@ -1659,7 +1760,7 @@ ns:RegisterGuide({
             id = "accept-95507-vrangs-game",
             kind = "accept",
             priority = 1351,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Vrang's Game from Vrang Wildgore.",
             complete = QuestState(95507, "activeOrCompleted"),
             route = {
@@ -1671,7 +1772,7 @@ ns:RegisterGuide({
             id = "accept-95494-bruised-pride-and-lion-hides",
             kind = "accept",
             priority = 1352,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Bruised Pride and Lion Hides from Vrang Wildgore.",
             complete = QuestState(95494, "activeOrCompleted"),
             route = {
@@ -1683,6 +1784,7 @@ ns:RegisterGuide({
             id = "objective-867-harpy-raiders",
             kind = "objective",
             priority = 1360,
+            conditions = { level = { min = 12 } },
             text = "Kill Witchwing enemies and collect 8 Witchwing Talon in the northwest corner of the Barrens.",
             dependsOn = { "accept-867-harpy-raiders" },
             complete = QuestState(867, "complete"),
@@ -1695,7 +1797,7 @@ ns:RegisterGuide({
             id = "objective-95507-vrangs-game",
             kind = "objective",
             priority = 1361,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             useClientPin = true,
             text = "Vrang's Game: collect 8 Trapped Game from sprung traps in the valley. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-95507-vrangs-game" },
@@ -1709,7 +1811,7 @@ ns:RegisterGuide({
             id = "turnin-95507-vrangs-game",
             kind = "turnin",
             priority = 1362,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Vrang's Game to Vrang Wildgore.",
             dependsOn = { "objective-95507-vrangs-game" },
             complete = QuestState(95507, "completed"),
@@ -1722,7 +1824,7 @@ ns:RegisterGuide({
             id = "objective-95494-bruised-pride-and-lion-hides",
             kind = "objective",
             priority = 1363,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Bruised Pride and Lion Hides: collect 6 Savannah Lion Hides from Savannah Patriarchs and Savannah Matriarchs.",
             dependsOn = { "accept-95494-bruised-pride-and-lion-hides" },
             complete = QuestState(95494, "complete"),
@@ -1737,7 +1839,7 @@ ns:RegisterGuide({
             id = "turnin-95494-bruised-pride-and-lion-hides",
             kind = "turnin",
             priority = 1364,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Bruised Pride and Lion Hides to Vrang Wildgore.",
             dependsOn = { "objective-95494-bruised-pride-and-lion-hides" },
             complete = QuestState(95494, "completed"),
@@ -1750,7 +1852,7 @@ ns:RegisterGuide({
             id = "accept-95495-the-hermit-tanner",
             kind = "accept",
             priority = 1365,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Accept The Hermit Tanner from Vrang Wildgore.",
             dependsOn = { "turnin-95494-bruised-pride-and-lion-hides" },
             complete = QuestState(95495, "activeOrCompleted"),
@@ -1763,7 +1865,7 @@ ns:RegisterGuide({
             id = "turnin-95495-the-hermit-tanner",
             kind = "turnin",
             priority = 1366,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in The Hermit Tanner to Walton on the ridge.",
             dependsOn = { "accept-95495-the-hermit-tanner" },
             complete = QuestState(95495, "completed"),
@@ -1776,7 +1878,7 @@ ns:RegisterGuide({
             id = "accept-95621-trouble-in-the-valley",
             kind = "accept",
             priority = 1367,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Trouble in the Valley from Walton.",
             dependsOn = { "turnin-95495-the-hermit-tanner" },
             complete = QuestState(95621, "activeOrCompleted"),
@@ -1789,7 +1891,7 @@ ns:RegisterGuide({
             id = "objective-95621-trouble-in-the-valley",
             kind = "objective",
             priority = 1368,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Trouble in the Valley: take Benedict's Orders from Corporal Adamore at the wrecked caravan.",
             dependsOn = { "accept-95621-trouble-in-the-valley" },
             complete = QuestState(95621, "complete"),
@@ -1802,7 +1904,7 @@ ns:RegisterGuide({
             id = "turnin-95621-trouble-in-the-valley",
             kind = "turnin",
             priority = 1369,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Trouble in the Valley to Walton.",
             dependsOn = { "objective-95621-trouble-in-the-valley" },
             complete = QuestState(95621, "completed"),
@@ -1815,7 +1917,7 @@ ns:RegisterGuide({
             id = "accept-95508-unwelcome-guests",
             kind = "accept",
             priority = 1369.2,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Unwelcome Guests from Walton.",
             dependsOn = { "turnin-95621-trouble-in-the-valley" },
             complete = QuestState(95508, "activeOrCompleted"),
@@ -1828,7 +1930,7 @@ ns:RegisterGuide({
             id = "objective-95508-unwelcome-guests",
             kind = "objective",
             priority = 1369.4,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Unwelcome Guests: help Walton survive Terry Longdrink and the Kul Tiras marines.",
             dependsOn = { "accept-95508-unwelcome-guests" },
             complete = QuestState(95508, "complete"),
@@ -1841,7 +1943,7 @@ ns:RegisterGuide({
             id = "turnin-95508-unwelcome-guests",
             kind = "turnin",
             priority = 1369.6,
-            conditions = { level = { min = 18 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Unwelcome Guests to Walton.",
             dependsOn = { "objective-95508-unwelcome-guests" },
             complete = QuestState(95508, "completed"),
@@ -1854,6 +1956,7 @@ ns:RegisterGuide({
             id = "turnin-850-kolkar-leaders",
             kind = "turnin",
             priority = 1370,
+            conditions = { level = { min = 11 } },
             text = "Turn in Kolkar Leaders to Regthar Deathgate in The Barrens.",
             dependsOn = { "objective-850-kolkar-leaders" },
             complete = QuestState(850, "completed"),
@@ -1866,6 +1969,7 @@ ns:RegisterGuide({
             id = "accept-851-verog-the-dervish",
             kind = "accept",
             priority = 1380,
+            conditions = { level = { min = 11 } },
             text = "Accept Verog the Dervish from Regthar Deathgate in The Barrens.",
             complete = QuestState(851, "activeOrCompleted"),
             route = {
@@ -1877,6 +1981,7 @@ ns:RegisterGuide({
             id = "turnin-855-centaur-bracers",
             kind = "turnin",
             priority = 1390,
+            conditions = { level = { min = 9 } },
             text = "Turn in Centaur Bracers to Regthar Deathgate in The Barrens.",
             dependsOn = { "objective-855-centaur-bracers" },
             complete = QuestState(855, "completed"),
@@ -1889,6 +1994,7 @@ ns:RegisterGuide({
             id = "objective-845-the-zhevra",
             kind = "objective",
             priority = 1410,
+            conditions = { level = { min = 10 } },
             text = "Kill Zhevra Runner for 4 Zhevra Hooves in The Barrens.",
             dependsOn = { "accept-845-the-zhevra" },
             complete = QuestState(845, "complete"),
@@ -1903,6 +2009,7 @@ ns:RegisterGuide({
             priority = 1420,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 819, state = "completed" } },
                 },
             },
@@ -1920,6 +2027,7 @@ ns:RegisterGuide({
             priority = 1430,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 819, state = "completed" } },
                 },
             },
@@ -1937,6 +2045,7 @@ ns:RegisterGuide({
             priority = 1440,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1960,6 +2069,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -1971,6 +2081,7 @@ ns:RegisterGuide({
             id = "accept-1062-goblin-invaders",
             kind = "accept",
             priority = 1470,
+            conditions = { level = { min = 13 } },
             text = "Accept Goblin Invaders from Seereth Stonebreak in The Barrens.",
             complete = QuestState(1062, "activeOrCompleted"),
             route = {
@@ -1982,6 +2093,7 @@ ns:RegisterGuide({
             id = "accept-6548-avenge-my-village",
             kind = "accept",
             priority = 1480,
+            conditions = { level = { min = 12 } },
             text = "Accept Avenge My Village from Makaba Flathoof in The Barrens.",
             complete = QuestState(6548, "activeOrCompleted"),
             route = {
@@ -1993,6 +2105,7 @@ ns:RegisterGuide({
             id = "objective-6548-avenge-my-village",
             kind = "objective",
             priority = 1490,
+            conditions = { level = { min = 12 } },
             text = "Kill 8 Grimtotem Ruffian and 6 Grimtotem Mercenary in the Greatwood Vale.",
             dependsOn = { "accept-6548-avenge-my-village" },
             complete = QuestState(6548, "complete"),
@@ -2005,6 +2118,7 @@ ns:RegisterGuide({
             id = "turnin-6548-avenge-my-village",
             kind = "turnin",
             priority = 1500,
+            conditions = { level = { min = 12 } },
             text = "Turn in Avenge My Village to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6548-avenge-my-village" },
             complete = QuestState(6548, "completed"),
@@ -2017,6 +2131,7 @@ ns:RegisterGuide({
             id = "accept-6629-kill-grundig-darkcloud",
             kind = "accept",
             priority = 1510,
+            conditions = { level = { min = 12 } },
             text = "Accept Kill Grundig Darkcloud from Makaba Flathoof in The Barrens.",
             complete = QuestState(6629, "activeOrCompleted"),
             route = {
@@ -2028,6 +2143,7 @@ ns:RegisterGuide({
             id = "objective-6629-1-grundig-darkcloud",
             kind = "objective",
             priority = 1520,
+            conditions = { level = { min = 12 } },
             text = "Kill Grundig Darkcloud and 6 Grimtotem Brute at the Grimtotem Post.",
             dependsOn = { "accept-6629-kill-grundig-darkcloud" },
             complete = QuestObjective(6629, 1),
@@ -2042,6 +2158,7 @@ ns:RegisterGuide({
             id = "accept-6523-protect-kaya",
             kind = "accept",
             priority = 1530,
+            conditions = { level = { min = 12 } },
             text = "Accept Protect Kaya from Kaya Flathoof in Grimtotem Post.",
             complete = QuestState(6523, "activeOrCompleted"),
             route = {
@@ -2053,6 +2170,7 @@ ns:RegisterGuide({
             id = "objective-6523-protect-kaya",
             kind = "objective",
             priority = 1540,
+            conditions = { level = { min = 12 } },
             text = "Escort Kaya Flathoof until objective is complete in Camp Aparaje 3 Mobs will ambush near the end of the escort, Kaya Flathoof will be able to solo 1 mob on her own.",
             dependsOn = { "accept-6523-protect-kaya" },
             complete = QuestState(6523, "complete"),
@@ -2067,6 +2185,7 @@ ns:RegisterGuide({
             id = "objective-6629-grimtotem-brute",
             kind = "objective",
             priority = 1550,
+            conditions = { level = { min = 12 } },
             text = "Kill 6 Grimtotem Brute at the Grimtotem Post.",
             dependsOn = { "accept-6629-kill-grundig-darkcloud" },
             complete = QuestState(6629, "complete"),
@@ -2079,6 +2198,7 @@ ns:RegisterGuide({
             id = "turnin-6523-protect-kaya",
             kind = "turnin",
             priority = 1560,
+            conditions = { level = { min = 12 } },
             text = "Turn in Protect Kaya to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6523-protect-kaya" },
             complete = QuestState(6523, "completed"),
@@ -2091,6 +2211,7 @@ ns:RegisterGuide({
             id = "accept-6401-kaya-s-alive",
             kind = "accept",
             priority = 1570,
+            conditions = { level = { min = 12 } },
             text = "Accept Kaya's Alive from Makaba Flathoof in The Barrens.",
             complete = QuestState(6401, "activeOrCompleted"),
             route = {
@@ -2102,6 +2223,7 @@ ns:RegisterGuide({
             id = "turnin-6629-kill-grundig-darkcloud",
             kind = "turnin",
             priority = 1580,
+            conditions = { level = { min = 12 } },
             text = "Turn in Kill Grundig Darkcloud to Makaba Flathoof in The Barrens.",
             dependsOn = { "objective-6629-1-grundig-darkcloud", "objective-6629-grimtotem-brute" },
             complete = QuestState(6629, "completed"),
@@ -2114,6 +2236,7 @@ ns:RegisterGuide({
             id = "turnin-848-fungal-spores",
             kind = "turnin",
             priority = 1610,
+            conditions = { level = { min = 10 } },
             text = "Turn in Fungal Spores to Apothecary Helbrim in The Crossroads.",
             dependsOn = { "objective-848-fungal-spores" },
             complete = QuestState(848, "completed"),
@@ -2126,6 +2249,7 @@ ns:RegisterGuide({
             id = "turnin-867-harpy-raiders",
             kind = "turnin",
             priority = 1620,
+            conditions = { level = { min = 12 } },
             text = "Turn in Harpy Raiders to Darsok Swiftdagger in The Crossroads.",
             dependsOn = { "objective-867-harpy-raiders" },
             complete = QuestState(867, "completed"),
@@ -2138,6 +2262,7 @@ ns:RegisterGuide({
             id = "accept-875-harpy-lieutenants",
             kind = "accept",
             priority = 1630,
+            conditions = { level = { min = 12 } },
             text = "Accept Harpy Lieutenants from Darsok Swiftdagger in The Crossroads.",
             complete = QuestState(875, "activeOrCompleted"),
             route = {
@@ -2149,6 +2274,7 @@ ns:RegisterGuide({
             id = "accept-3281-stolen-silver",
             kind = "accept",
             priority = 1640,
+            conditions = { level = { min = 9 } },
             text = "Accept Stolen Silver from Gazrog in The Crossroads.",
             complete = QuestState(3281, "activeOrCompleted"),
             route = {
@@ -2160,6 +2286,7 @@ ns:RegisterGuide({
             id = "turnin-845-the-zhevra",
             kind = "turnin",
             priority = 1650,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Zhevra to Sergra Darkthorn in The Crossroads.",
             dependsOn = { "objective-845-the-zhevra" },
             complete = QuestState(845, "completed"),
@@ -2172,6 +2299,7 @@ ns:RegisterGuide({
             id = "accept-903-prowlers-of-the-barrens",
             kind = "accept",
             priority = 1660,
+            conditions = { level = { min = 10 } },
             text = "Accept Prowlers of the Barrens from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(903, "activeOrCompleted"),
             route = {
@@ -2183,6 +2311,7 @@ ns:RegisterGuide({
             id = "turnin-870-the-forgotten-pools",
             kind = "turnin",
             priority = 1670,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Forgotten Pools to Tonga Runetotem in The Crossroads.",
             dependsOn = { "objective-870-the-forgotten-pools" },
             complete = QuestState(870, "completed"),
@@ -2195,6 +2324,7 @@ ns:RegisterGuide({
             id = "accept-877-the-stagnant-oasis",
             kind = "accept",
             priority = 1680,
+            conditions = { level = { min = 10 } },
             text = "Accept The Stagnant Oasis from Tonga Runetotem in The Crossroads.",
             complete = QuestState(877, "activeOrCompleted"),
             route = {
@@ -2208,6 +2338,7 @@ ns:RegisterGuide({
             priority = 1690,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2228,6 +2359,7 @@ ns:RegisterGuide({
             priority = 1700,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2242,6 +2374,7 @@ ns:RegisterGuide({
             id = "objective-903-prowlers-of-the-barrens",
             kind = "objective",
             priority = 1710,
+            conditions = { level = { min = 10 } },
             text = "Kill Savannah Prowler and collect 7 Huntress Claws in The Barrens.",
             dependsOn = { "accept-903-prowlers-of-the-barrens" },
             complete = QuestState(903, "complete"),
@@ -2254,6 +2387,7 @@ ns:RegisterGuide({
             id = "objective-875-harpy-lieutenants",
             kind = "objective",
             priority = 1730,
+            conditions = { level = { min = 12 } },
             text = "Kill Witchwing Slayer and collect 6 Harpy Lieutenant Ring in The Dry Hills.",
             dependsOn = { "accept-875-harpy-lieutenants" },
             complete = QuestState(875, "complete"),
@@ -2268,6 +2402,7 @@ ns:RegisterGuide({
             priority = 1750,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2303,6 +2438,7 @@ ns:RegisterGuide({
             priority = 1770,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2320,6 +2456,7 @@ ns:RegisterGuide({
             priority = 1780,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2336,6 +2473,7 @@ ns:RegisterGuide({
             priority = 1800,
             conditions = {
                 all = {
+                    { level = { min = 14 } },
                     { class = 11 },
                 },
             },
@@ -2353,6 +2491,7 @@ ns:RegisterGuide({
             priority = 1810,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2369,6 +2508,7 @@ ns:RegisterGuide({
             priority = 1830,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2386,6 +2526,7 @@ ns:RegisterGuide({
             priority = 1840,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2402,6 +2543,7 @@ ns:RegisterGuide({
             priority = 1860,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2419,6 +2561,7 @@ ns:RegisterGuide({
             priority = 1870,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2436,6 +2579,7 @@ ns:RegisterGuide({
             priority = 1880,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2450,6 +2594,7 @@ ns:RegisterGuide({
             id = "turnin-894-samophlange",
             kind = "turnin",
             priority = 1900,
+            conditions = { level = { min = 10 } },
             text = "Turn in Samophlange in The Sludge Fen.",
             dependsOn = { "accept-894-samophlange" },
             complete = QuestState(894, "completed"),
@@ -2462,6 +2607,7 @@ ns:RegisterGuide({
             id = "accept-900-samophlange",
             kind = "accept",
             priority = 1910,
+            conditions = { level = { min = 10 } },
             text = "Accept Samophlange in The Sludge Fen.",
             complete = QuestState(900, "activeOrCompleted"),
             route = {
@@ -2473,6 +2619,7 @@ ns:RegisterGuide({
             id = "objective-900-2-shut-off-fuel-control-valve",
             kind = "objective",
             priority = 1920,
+            conditions = { level = { min = 10 } },
             text = "Click Regulator Valve in The Sludge Fen.",
             dependsOn = { "accept-900-samophlange" },
             complete = QuestObjective(900, 2),
@@ -2485,6 +2632,7 @@ ns:RegisterGuide({
             id = "objective-900-3-shut-off-regulator-valve",
             kind = "objective",
             priority = 1930,
+            conditions = { level = { min = 10 } },
             text = "Click Regulator Valve in The Sludge Fen.",
             dependsOn = { "accept-900-samophlange" },
             complete = QuestObjective(900, 3),
@@ -2497,6 +2645,7 @@ ns:RegisterGuide({
             id = "objective-900-1-shut-off-main-control-valve",
             kind = "objective",
             priority = 1940,
+            conditions = { level = { min = 10 } },
             text = "Click Main Control Valve in The Sludge Fen.",
             dependsOn = { "accept-900-samophlange" },
             complete = QuestObjective(900, 1),
@@ -2509,6 +2658,7 @@ ns:RegisterGuide({
             id = "turnin-900-samophlange",
             kind = "turnin",
             priority = 1950,
+            conditions = { level = { min = 10 } },
             text = "Turn in Samophlange in The Sludge Fen.",
             dependsOn = { "objective-900-2-shut-off-fuel-control-valve", "objective-900-3-shut-off-regulator-valve", "objective-900-1-shut-off-main-control-valve" },
             complete = QuestState(900, "completed"),
@@ -2521,6 +2671,7 @@ ns:RegisterGuide({
             id = "accept-901-samophlange",
             kind = "accept",
             priority = 1960,
+            conditions = { level = { min = 10 } },
             text = "Accept Samophlange in The Sludge Fen.",
             complete = QuestState(901, "activeOrCompleted"),
             route = {
@@ -2532,6 +2683,7 @@ ns:RegisterGuide({
             id = "objective-901-samophlange",
             kind = "objective",
             priority = 1970,
+            conditions = { level = { min = 10 } },
             text = "Kill Tinkerer Sniggles in the hut on the hill.",
             dependsOn = { "accept-901-samophlange" },
             complete = QuestState(901, "complete"),
@@ -2544,6 +2696,7 @@ ns:RegisterGuide({
             id = "turnin-901-samophlange",
             kind = "turnin",
             priority = 1980,
+            conditions = { level = { min = 10 } },
             text = "Turn in Samophlange in The Sludge Fen.",
             dependsOn = { "objective-901-samophlange" },
             complete = QuestState(901, "completed"),
@@ -2556,6 +2709,7 @@ ns:RegisterGuide({
             id = "accept-902-samophlange",
             kind = "accept",
             priority = 1990,
+            conditions = { level = { min = 10 } },
             text = "Accept Samophlange in The Sludge Fen.",
             complete = QuestState(902, "activeOrCompleted"),
             route = {
@@ -2567,6 +2721,7 @@ ns:RegisterGuide({
             id = "accept-858-ignition",
             kind = "accept",
             priority = 2000,
+            conditions = { level = { min = 13 } },
             text = "Accept Ignition from Wizzlecrank's Shredder in The Sludge Fen.",
             complete = QuestState(858, "activeOrCompleted"),
             route = {
@@ -2578,6 +2733,7 @@ ns:RegisterGuide({
             id = "objective-858-ignition",
             kind = "objective",
             priority = 2010,
+            conditions = { level = { min = 13 } },
             text = "Go up the ramp of the big structure in the water, kill Supervisor Lugwizzle and collect Ignition Key in The Sludge Fen.",
             dependsOn = { "accept-858-ignition" },
             complete = QuestState(858, "complete"),
@@ -2590,6 +2746,7 @@ ns:RegisterGuide({
             id = "turnin-858-ignition",
             kind = "turnin",
             priority = 2020,
+            conditions = { level = { min = 13 } },
             text = "Turn in Ignition to Wizzlecrank's Shredder in The Sludge Fen.",
             dependsOn = { "objective-858-ignition" },
             complete = QuestState(858, "completed"),
@@ -2602,6 +2759,7 @@ ns:RegisterGuide({
             id = "accept-863-the-escape",
             kind = "accept",
             priority = 2030,
+            conditions = { level = { min = 13 } },
             text = "Accept The Escape from Wizzlecrank's Shredder in The Sludge Fen.",
             complete = QuestState(863, "activeOrCompleted"),
             route = {
@@ -2613,6 +2771,7 @@ ns:RegisterGuide({
             id = "objective-863-the-escape",
             kind = "objective",
             priority = 2040,
+            conditions = { level = { min = 13 } },
             text = "Protect Wizzlecrank's Shredder on the way to Sputtervalve in Ratchet.",
             dependsOn = { "accept-863-the-escape" },
             complete = QuestState(863, "complete"),
@@ -2625,6 +2784,7 @@ ns:RegisterGuide({
             id = "objective-896-miner-s-fortune",
             kind = "objective",
             priority = 2050,
+            conditions = { level = { min = 13 } },
             text = "Collect the Cats Eye Emerald from one of the Venture Co. Overseer or Venture Co. Enforcer.",
             dependsOn = { "accept-896-miner-s-fortune" },
             complete = QuestState(896, "complete"),
@@ -2637,6 +2797,7 @@ ns:RegisterGuide({
             id = "turnin-888-stolen-booty",
             kind = "turnin",
             priority = 2070,
+            conditions = { level = { min = 9 } },
             text = "Turn in Stolen Booty to Gazlowe in Ratchet.",
             dependsOn = { "objective-888-2-telescopic-lens", "objective-888-1-shipment-of-boots" },
             complete = QuestState(888, "completed"),
@@ -2649,6 +2810,7 @@ ns:RegisterGuide({
             id = "turnin-863-the-escape",
             kind = "turnin",
             priority = 2080,
+            conditions = { level = { min = 13 } },
             text = "Turn in The Escape to Sputtervalve in Ratchet.",
             dependsOn = { "objective-863-the-escape" },
             complete = QuestState(863, "completed"),
@@ -2661,6 +2823,7 @@ ns:RegisterGuide({
             id = "turnin-902-samophlange",
             kind = "turnin",
             priority = 2090,
+            conditions = { level = { min = 10 } },
             text = "Turn in Samophlange to Sputtervalve in Ratchet.",
             dependsOn = { "accept-902-samophlange" },
             complete = QuestState(902, "completed"),
@@ -2673,7 +2836,7 @@ ns:RegisterGuide({
             id = "accept-92706-wanted-bruuz",
             kind = "accept",
             priority = 2091,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 15 } },
             text = "Accept WANTED: Bruuz from the poster in Ratchet. This is an elite. Bring a group.",
             complete = QuestState(92706, "activeOrCompleted"),
             route = {
@@ -2685,7 +2848,7 @@ ns:RegisterGuide({
             id = "objective-92706-wanted-bruuz",
             kind = "objective",
             priority = 2092,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 15 } },
             text = "WANTED: Bruuz: bring Bruuz's Dorsal Fin to Gazlowe. This is an elite. Bring a group.",
             dependsOn = { "accept-92706-wanted-bruuz" },
             complete = QuestState(92706, "complete"),
@@ -2698,7 +2861,7 @@ ns:RegisterGuide({
             id = "turnin-92706-wanted-bruuz",
             kind = "turnin",
             priority = 2093,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 15 } },
             text = "Turn in WANTED: Bruuz to Gazlowe in Ratchet.",
             dependsOn = { "objective-92706-wanted-bruuz" },
             complete = QuestState(92706, "completed"),
@@ -2711,6 +2874,7 @@ ns:RegisterGuide({
             id = "accept-1483-ziz-fizziks",
             kind = "accept",
             priority = 2100,
+            conditions = { level = { min = 16 } },
             text = "Accept Ziz Fizziks from Sputtervalve in Ratchet.",
             complete = QuestState(1483, "activeOrCompleted"),
             route = {
@@ -2722,6 +2886,7 @@ ns:RegisterGuide({
             id = "accept-3921-wenikee-boltbucket",
             kind = "accept",
             priority = 2110,
+            conditions = { level = { min = 10 } },
             text = "Accept Wenikee Boltbucket from Sputtervalve in Ratchet.",
             complete = QuestState(3921, "activeOrCompleted"),
             route = {
@@ -2733,6 +2898,7 @@ ns:RegisterGuide({
             id = "turnin-896-miner-s-fortune",
             kind = "turnin",
             priority = 2120,
+            conditions = { level = { min = 13 } },
             text = "Turn in Miner's Fortune to Wharfmaster Dizzywig in Ratchet.",
             dependsOn = { "objective-896-miner-s-fortune" },
             complete = QuestState(896, "completed"),
@@ -2745,6 +2911,7 @@ ns:RegisterGuide({
             id = "accept-1069-deepmoss-spider-eggs",
             kind = "accept",
             priority = 2130,
+            conditions = { level = { min = 15 } },
             text = "Accept Deepmoss Spider Eggs from Mebok Mizzyrix in Ratchet.",
             complete = QuestState(1069, "activeOrCompleted"),
             route = {
@@ -2756,6 +2923,7 @@ ns:RegisterGuide({
             id = "accept-891-the-guns-of-northwatch",
             kind = "accept",
             priority = 2140,
+            conditions = { level = { min = 13 } },
             text = "Accept The Guns of Northwatch from Captain Thalo'thas Brightsun in Ratchet.",
             complete = QuestState(891, "activeOrCompleted"),
             route = {
@@ -2769,6 +2937,7 @@ ns:RegisterGuide({
             priority = 2150,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 819, state = "completed" } },
                 },
             },
@@ -2786,6 +2955,7 @@ ns:RegisterGuide({
             priority = 2160,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 821, state = "completed" } },
                 },
             },
@@ -2802,6 +2972,7 @@ ns:RegisterGuide({
             priority = 2190,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2819,6 +2990,7 @@ ns:RegisterGuide({
             priority = 2200,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2836,6 +3008,7 @@ ns:RegisterGuide({
             priority = 2210,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2852,6 +3025,7 @@ ns:RegisterGuide({
             priority = 2220,
             conditions = {
                 all = {
+                    { level = { min = 16 } },
                     { class = 11 },
                 },
             },
@@ -2867,6 +3041,7 @@ ns:RegisterGuide({
             id = "objective-877-the-stagnant-oasis",
             kind = "objective",
             priority = 2240,
+            conditions = { level = { min = 10 } },
             text = "Go to the fissure at the bottom of the lake at The Stagnant Oasis.",
             dependsOn = { "accept-877-the-stagnant-oasis" },
             complete = QuestState(877, "complete"),
@@ -2879,6 +3054,7 @@ ns:RegisterGuide({
             id = "objective-851-verog-the-dervish",
             kind = "objective",
             priority = 2250,
+            conditions = { level = { min = 11 } },
             text = "Kill the other Centaurs around the command tent until Verog the Dervish spawn. Kill Verog the Dervish when he appears and collect Verog's Head.",
             dependsOn = { "accept-851-verog-the-dervish" },
             complete = QuestState(851, "complete"),
@@ -2891,6 +3067,7 @@ ns:RegisterGuide({
             id = "turnin-877-the-stagnant-oasis",
             kind = "turnin",
             priority = 2270,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Stagnant Oasis to Tonga Runetotem in The Crossroads.",
             dependsOn = { "objective-877-the-stagnant-oasis" },
             complete = QuestState(877, "completed"),
@@ -2903,6 +3080,7 @@ ns:RegisterGuide({
             id = "accept-880-altered-beings",
             kind = "accept",
             priority = 2280,
+            conditions = { level = { min = 10 } },
             text = "Accept Altered Beings from Tonga Runetotem in The Crossroads.",
             complete = QuestState(880, "activeOrCompleted"),
             route = {
@@ -2914,6 +3092,7 @@ ns:RegisterGuide({
             id = "turnin-903-prowlers-of-the-barrens",
             kind = "turnin",
             priority = 2290,
+            conditions = { level = { min = 10 } },
             text = "Turn in Prowlers of the Barrens to Sergra Darkthorn in The Crossroads.",
             dependsOn = { "objective-903-prowlers-of-the-barrens" },
             complete = QuestState(903, "completed"),
@@ -2926,6 +3105,7 @@ ns:RegisterGuide({
             id = "accept-881-echeyakee",
             kind = "accept",
             priority = 2300,
+            conditions = { level = { min = 10 } },
             text = "Accept Echeyakee from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(881, "activeOrCompleted"),
             route = {
@@ -2937,6 +3117,7 @@ ns:RegisterGuide({
             id = "accept-6541-report-to-kadrak",
             kind = "accept",
             priority = 2310,
+            conditions = { level = { min = 17 } },
             text = "Accept Report to Kadrak from Thork in The Crossroads.",
             complete = QuestState(6541, "activeOrCompleted"),
             route = {
@@ -2948,6 +3129,7 @@ ns:RegisterGuide({
             id = "turnin-875-harpy-lieutenants",
             kind = "turnin",
             priority = 2320,
+            conditions = { level = { min = 12 } },
             text = "Turn in Harpy Lieutenants to Darsok Swiftdagger in The Crossroads.",
             dependsOn = { "objective-875-harpy-lieutenants" },
             complete = QuestState(875, "completed"),
@@ -2960,6 +3142,7 @@ ns:RegisterGuide({
             id = "accept-876-serena-bloodfeather",
             kind = "accept",
             priority = 2330,
+            conditions = { level = { min = 12 } },
             text = "Accept Serena Bloodfeather from Darsok Swiftdagger in The Crossroads.",
             complete = QuestState(876, "activeOrCompleted"),
             route = {
@@ -2971,6 +3154,7 @@ ns:RegisterGuide({
             id = "turnin-851-verog-the-dervish",
             kind = "turnin",
             priority = 2340,
+            conditions = { level = { min = 11 } },
             text = "Turn in Verog the Dervish to Regthar Deathgate in The Barrens.",
             dependsOn = { "objective-851-verog-the-dervish" },
             complete = QuestState(851, "completed"),
@@ -2983,6 +3167,7 @@ ns:RegisterGuide({
             id = "accept-852-hezrul-bloodmark",
             kind = "accept",
             priority = 2350,
+            conditions = { level = { min = 11 } },
             text = "Accept Hezrul Bloodmark from Regthar Deathgate in The Barrens.",
             complete = QuestState(852, "activeOrCompleted"),
             route = {
@@ -2994,6 +3179,7 @@ ns:RegisterGuide({
             id = "objective-876-serena-bloodfeather",
             kind = "objective",
             priority = 2370,
+            conditions = { level = { min = 12 } },
             text = "Kill Serena Bloodfeather in the northwest part of the Barrens in The Dry Hills.",
             dependsOn = { "accept-876-serena-bloodfeather" },
             complete = QuestState(876, "complete"),
@@ -3006,6 +3192,7 @@ ns:RegisterGuide({
             id = "objective-881-echeyakee",
             kind = "objective",
             priority = 2380,
+            conditions = { level = { min = 10 } },
             text = "Go to Echeyakee's lair and use Horn of Echeyakee to summon kill Echeyakee and collect Echeyakee's Hide.",
             dependsOn = { "accept-881-echeyakee" },
             complete = QuestState(881, "complete"),
@@ -3020,6 +3207,7 @@ ns:RegisterGuide({
             id = "turnin-881-echeyakee",
             kind = "turnin",
             priority = 2400,
+            conditions = { level = { min = 10 } },
             text = "Turn in Echeyakee to Sergra Darkthorn in The Crossroads.",
             dependsOn = { "objective-881-echeyakee" },
             complete = QuestState(881, "completed"),
@@ -3032,6 +3220,7 @@ ns:RegisterGuide({
             id = "accept-905-the-angry-scytheclaws",
             kind = "accept",
             priority = 2410,
+            conditions = { level = { min = 10 } },
             text = "Accept The Angry Scytheclaws from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(905, "activeOrCompleted"),
             route = {
@@ -3043,6 +3232,7 @@ ns:RegisterGuide({
             id = "turnin-876-serena-bloodfeather",
             kind = "turnin",
             priority = 2420,
+            conditions = { level = { min = 12 } },
             text = "Turn in Serena Bloodfeather to Darsok Swiftdagger in The Crossroads.",
             dependsOn = { "objective-876-serena-bloodfeather" },
             complete = QuestState(876, "completed"),
@@ -3055,6 +3245,7 @@ ns:RegisterGuide({
             id = "accept-1060-letter-to-jin-zil",
             kind = "accept",
             priority = 2430,
+            conditions = { level = { min = 15 } },
             text = "Accept Letter to Jin'Zil from Darsok Swiftdagger in The Crossroads.",
             complete = QuestState(1060, "activeOrCompleted"),
             route = {
@@ -3066,6 +3257,7 @@ ns:RegisterGuide({
             id = "accept-899-consumed-by-hatred",
             kind = "accept",
             priority = 2440,
+            conditions = { level = { min = 14 } },
             text = "Accept Consumed by Hatred from Mankrik in The Crossroads.",
             complete = QuestState(899, "activeOrCompleted"),
             route = {
@@ -3077,6 +3269,7 @@ ns:RegisterGuide({
             id = "accept-4921-lost-in-battle",
             kind = "accept",
             priority = 2450,
+            conditions = { level = { min = 14 } },
             text = "Accept Lost in Battle from Mankrik in The Crossroads.",
             complete = QuestState(4921, "activeOrCompleted"),
             route = {
@@ -3088,7 +3281,7 @@ ns:RegisterGuide({
             id = "accept-95774-her-name-is-olgra",
             kind = "accept",
             priority = 2451,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 14 } },
             text = "Accept Her Name Is Olgra from Mankrik at the Crossroads.",
             dependsOn = { "accept-4921-lost-in-battle" },
             complete = QuestState(95774, "activeOrCompleted"),
@@ -3101,6 +3294,7 @@ ns:RegisterGuide({
             id = "objective-880-altered-beings",
             kind = "objective",
             priority = 2470,
+            conditions = { level = { min = 10 } },
             text = "Kill Oasis Snapjaw and collect Altered Snapjaw Shell in Lushwater Oasis.",
             dependsOn = { "accept-880-altered-beings" },
             complete = QuestState(880, "complete"),
@@ -3113,6 +3307,7 @@ ns:RegisterGuide({
             id = "objective-852-hezrul-bloodmark",
             kind = "objective",
             priority = 2480,
+            conditions = { level = { min = 11 } },
             text = "Kill Hezrul Bloodmark by the oasis and collect Hezrul's Head. He patrols clockwise with two guards. This is an elite. Bring a group.",
             dependsOn = { "accept-852-hezrul-bloodmark" },
             complete = QuestState(852, "complete"),
@@ -3125,6 +3320,7 @@ ns:RegisterGuide({
             id = "objective-3281-stolen-silver",
             kind = "objective",
             priority = 2500,
+            conditions = { level = { min = 9 } },
             text = "Collect the Stolen Silver from the Stolen Silver Chest in Raptor Grounds.",
             dependsOn = { "accept-3281-stolen-silver" },
             complete = QuestState(3281, "complete"),
@@ -3137,6 +3333,7 @@ ns:RegisterGuide({
             id = "objective-905-1-visit-blue-raptor-nest",
             kind = "objective",
             priority = 2510,
+            conditions = { level = { min = 10 } },
             text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Blue Raptor Nest in Raptor Grounds.",
             dependsOn = { "accept-905-the-angry-scytheclaws" },
             complete = QuestObjective(905, 1),
@@ -3149,6 +3346,7 @@ ns:RegisterGuide({
             id = "objective-905-3-visit-red-raptor-nest",
             kind = "objective",
             priority = 2520,
+            conditions = { level = { min = 10 } },
             text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Red Raptor Nest in Raptor Grounds.",
             dependsOn = { "accept-905-the-angry-scytheclaws" },
             complete = QuestObjective(905, 3),
@@ -3161,6 +3359,7 @@ ns:RegisterGuide({
             id = "objective-905-2-visit-yellow-raptor-nest",
             kind = "objective",
             priority = 2530,
+            conditions = { level = { min = 10 } },
             text = "Kill Sunscale Scytheclaw for Sunscale Feather then click on the Yellow Raptor Nest in Raptor Grounds.",
             dependsOn = { "accept-905-the-angry-scytheclaws" },
             complete = QuestObjective(905, 2),
@@ -3173,6 +3372,7 @@ ns:RegisterGuide({
             id = "objective-865-raptor-horns",
             kind = "objective",
             priority = 2550,
+            conditions = { level = { min = 13 } },
             text = "Kill Sunscale Scytheclaw and collect 5 Intact Raptor Horn at the Raptor Grounds.",
             dependsOn = { "accept-865-raptor-horns" },
             complete = QuestState(865, "complete"),
@@ -3185,6 +3385,7 @@ ns:RegisterGuide({
             id = "objective-4921-lost-in-battle",
             kind = "objective",
             priority = 2560,
+            conditions = { level = { min = 14 } },
             text = "Find Beaten Corpse in Southern Barrens.",
             dependsOn = { "accept-4921-lost-in-battle" },
             complete = QuestState(4921, "complete"),
@@ -3199,6 +3400,7 @@ ns:RegisterGuide({
             priority = 2570,
             conditions = {
                 all = {
+                    { level = { min = 11 } },
                     { quest = { id = 819, state = "completed" } },
                 },
             },
@@ -3214,6 +3416,7 @@ ns:RegisterGuide({
             id = "accept-893-weapons-of-choice",
             kind = "accept",
             priority = 2590,
+            conditions = { level = { min = 17 } },
             text = "Accept Weapons of Choice from Tatternack Steelforge in Camp Taurajo.",
             complete = QuestState(893, "activeOrCompleted"),
             route = {
@@ -3225,6 +3428,7 @@ ns:RegisterGuide({
             id = "accept-878-tribes-at-war",
             kind = "accept",
             priority = 2600,
+            conditions = { level = { min = 14 } },
             text = "Accept Tribes at War from Mangletooth in Camp Taurajo.",
             complete = QuestState(878, "activeOrCompleted"),
             route = {
@@ -3236,6 +3440,7 @@ ns:RegisterGuide({
             id = "objective-878-tribes-at-war",
             kind = "objective",
             priority = 2620,
+            conditions = { level = { min = 14 } },
             text = "Kill 6 Bristleback Water Seeker, 12 Bristleback Thornweaver and 12 Bristleback Geomancer in Agama'gor.",
             dependsOn = { "accept-878-tribes-at-war" },
             complete = QuestState(878, "complete"),
@@ -3254,6 +3459,7 @@ ns:RegisterGuide({
             id = "objective-5052-blood-shard",
             kind = "objective",
             priority = 2630,
+            conditions = { level = { min = 14 } },
             text = "Collect Blood Shard from Bristleback enemies in Agama'gor.",
             dependsOn = { "accept-5052-blood-shards-of-agamaggan" },
             complete = QuestState(5052, "activeOrCompleted"),
@@ -3272,6 +3478,7 @@ ns:RegisterGuide({
             id = "objective-899-consumed-by-hatred",
             kind = "objective",
             priority = 2650,
+            conditions = { level = { min = 14 } },
             text = "Kill Bristleback Quilboars for 60 Quilboar Tusk in Bramblescar.",
             dependsOn = { "accept-899-consumed-by-hatred" },
             complete = QuestState(899, "complete"),
@@ -3290,7 +3497,7 @@ ns:RegisterGuide({
             id = "objective-95774-her-name-is-olgra",
             kind = "objective",
             priority = 2655,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 14 } },
             text = "Her Name Is Olgra: collect 4 of Olgra's Adornments from quilboars.",
             dependsOn = { "accept-95774-her-name-is-olgra" },
             complete = QuestState(95774, "complete"),
@@ -3303,6 +3510,7 @@ ns:RegisterGuide({
             id = "turnin-878-tribes-at-war",
             kind = "turnin",
             priority = 2670,
+            conditions = { level = { min = 14 } },
             text = "Turn in Tribes at War to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-878-tribes-at-war" },
             complete = QuestState(878, "completed"),
@@ -3315,6 +3523,7 @@ ns:RegisterGuide({
             id = "accept-5052-blood-shards-of-agamaggan",
             kind = "accept",
             priority = 2680,
+            conditions = { level = { min = 14 } },
             text = "Accept Blood Shards of Agamaggan from Mangletooth in Camp Taurajo.",
             complete = QuestState(5052, "activeOrCompleted"),
             route = {
@@ -3326,6 +3535,7 @@ ns:RegisterGuide({
             id = "turnin-5052-blood-shards-of-agamaggan",
             kind = "turnin",
             priority = 2690,
+            conditions = { level = { min = 14 } },
             text = "Turn in Blood Shards of Agamaggan to Mangletooth in Camp Taurajo.",
             dependsOn = { "objective-5052-blood-shard" },
             complete = QuestState(5052, "completed"),
@@ -3338,6 +3548,7 @@ ns:RegisterGuide({
             id = "accept-879-betrayal-from-within",
             kind = "accept",
             priority = 2700,
+            conditions = { level = { min = 17 } },
             text = "Accept Betrayal from Within from Mangletooth in Camp Taurajo.",
             complete = QuestState(879, "activeOrCompleted"),
             route = {
@@ -3349,6 +3560,7 @@ ns:RegisterGuide({
             id = "turnin-3281-stolen-silver",
             kind = "turnin",
             priority = 2720,
+            conditions = { level = { min = 9 } },
             text = "Turn in Stolen Silver to Gazrog in The Crossroads.",
             dependsOn = { "objective-3281-stolen-silver" },
             complete = QuestState(3281, "completed"),
@@ -3361,6 +3573,7 @@ ns:RegisterGuide({
             id = "turnin-905-the-angry-scytheclaws",
             kind = "turnin",
             priority = 2730,
+            conditions = { level = { min = 10 } },
             text = "Turn in The Angry Scytheclaws to Sergra Darkthorn in The Crossroads.",
             dependsOn = { "objective-905-1-visit-blue-raptor-nest", "objective-905-3-visit-red-raptor-nest", "objective-905-2-visit-yellow-raptor-nest" },
             complete = QuestState(905, "completed"),
@@ -3373,6 +3586,7 @@ ns:RegisterGuide({
             id = "accept-3261-jorn-skyseer",
             kind = "accept",
             priority = 2740,
+            conditions = { level = { min = 10 } },
             text = "Accept Jorn Skyseer from Sergra Darkthorn in The Crossroads.",
             complete = QuestState(3261, "activeOrCompleted"),
             route = {
@@ -3384,6 +3598,7 @@ ns:RegisterGuide({
             id = "turnin-899-consumed-by-hatred",
             kind = "turnin",
             priority = 2750,
+            conditions = { level = { min = 14 } },
             text = "Turn in Consumed by Hatred to Mankrik in The Crossroads.",
             dependsOn = { "objective-899-consumed-by-hatred" },
             complete = QuestState(899, "completed"),
@@ -3396,6 +3611,7 @@ ns:RegisterGuide({
             id = "turnin-4921-lost-in-battle",
             kind = "turnin",
             priority = 2760,
+            conditions = { level = { min = 14 } },
             text = "Turn in Lost in Battle to Mankrik in The Crossroads.",
             dependsOn = { "objective-4921-lost-in-battle" },
             complete = QuestState(4921, "completed"),
@@ -3408,7 +3624,7 @@ ns:RegisterGuide({
             id = "turnin-95774-her-name-is-olgra",
             kind = "turnin",
             priority = 2761,
-            conditions = { level = { min = 20 } },
+            conditions = { level = { min = 14 } },
             text = "Turn in Her Name Is Olgra to Mankrik at the Crossroads.",
             dependsOn = { "objective-95774-her-name-is-olgra" },
             complete = QuestState(95774, "completed"),
@@ -3421,6 +3637,7 @@ ns:RegisterGuide({
             id = "turnin-880-altered-beings",
             kind = "turnin",
             priority = 2770,
+            conditions = { level = { min = 10 } },
             text = "Turn in Altered Beings to Tonga Runetotem in The Crossroads.",
             dependsOn = { "objective-880-altered-beings" },
             complete = QuestState(880, "completed"),
@@ -3433,6 +3650,7 @@ ns:RegisterGuide({
             id = "accept-1489-hamuul-runetotem",
             kind = "accept",
             priority = 2780,
+            conditions = { level = { min = 10 } },
             text = "Accept Hamuul Runetotem from Tonga Runetotem in The Crossroads.",
             dependsOn = { "turnin-880-altered-beings" },
             complete = QuestState(1489, "activeOrCompleted"),
@@ -3445,6 +3663,7 @@ ns:RegisterGuide({
             id = "accept-853-apothecary-zamah",
             kind = "accept",
             priority = 2790,
+            conditions = { level = { min = 10 } },
             text = "Accept Apothecary Zamah from Apothecary Helbrim in The Crossroads.",
             complete = QuestState(853, "activeOrCompleted"),
             route = {
@@ -3456,6 +3675,7 @@ ns:RegisterGuide({
             id = "turnin-865-raptor-horns",
             kind = "turnin",
             priority = 2800,
+            conditions = { level = { min = 13 } },
             text = "Turn in Raptor Horns to Mebok Mizzyrix in Ratchet.",
             dependsOn = { "objective-865-raptor-horns" },
             complete = QuestState(865, "completed"),
@@ -3468,6 +3688,7 @@ ns:RegisterGuide({
             id = "turnin-3261-jorn-skyseer",
             kind = "turnin",
             priority = 2820,
+            conditions = { level = { min = 10 } },
             text = "Turn in Jorn Skyseer to Jorn Skyseer in Camp Taurajo.",
             dependsOn = { "accept-3261-jorn-skyseer" },
             complete = QuestState(3261, "completed"),
@@ -3480,6 +3701,7 @@ ns:RegisterGuide({
             id = "turnin-853-apothecary-zamah",
             kind = "turnin",
             priority = 2840,
+            conditions = { level = { min = 10 } },
             text = "Turn in Apothecary Zamah to Apothecary Zamah in Spirit Rise.",
             dependsOn = { "accept-853-apothecary-zamah" },
             complete = QuestState(853, "completed"),
@@ -3494,6 +3716,7 @@ ns:RegisterGuide({
             id = "turnin-1489-hamuul-runetotem",
             kind = "turnin",
             priority = 2850,
+            conditions = { level = { min = 10 } },
             text = "Turn in Hamuul Runetotem to Archdruid Hamuul Runetotem in Elder Rise.",
             dependsOn = { "accept-1489-hamuul-runetotem" },
             complete = QuestState(1489, "completed"),
@@ -3506,6 +3729,7 @@ ns:RegisterGuide({
             id = "accept-1490-nara-wildmane",
             kind = "accept",
             priority = 2860,
+            conditions = { level = { min = 10 } },
             text = "Accept Nara Wildmane from Archdruid Hamuul Runetotem in Elder Rise.",
             dependsOn = { "turnin-1489-hamuul-runetotem" },
             complete = QuestState(1490, "activeOrCompleted"),
@@ -3518,6 +3742,7 @@ ns:RegisterGuide({
             id = "turnin-1490-nara-wildmane",
             kind = "turnin",
             priority = 2870,
+            conditions = { level = { min = 10 } },
             text = "Speak with Nara Wildmane in the tent beside Hamuul on Elder Rise.",
             dependsOn = { "accept-1490-nara-wildmane" },
             complete = QuestState(1490, "completed"),
@@ -3530,6 +3755,7 @@ ns:RegisterGuide({
             id = "objective-891-1-captain-fairmount",
             kind = "objective",
             priority = 2890,
+            conditions = { level = { min = 13 } },
             text = "Kill Captain Fairmount in Northwatch Hold.",
             dependsOn = { "accept-891-the-guns-of-northwatch" },
             complete = QuestObjective(891, 1),
@@ -3544,6 +3770,7 @@ ns:RegisterGuide({
             id = "objective-891-3-cannoneer-smythe",
             kind = "objective",
             priority = 2900,
+            conditions = { level = { min = 13 } },
             text = "Kill Cannoneer Smythe in Northwatch Hold.",
             dependsOn = { "accept-891-the-guns-of-northwatch" },
             complete = QuestObjective(891, 3),
@@ -3556,6 +3783,7 @@ ns:RegisterGuide({
             id = "objective-891-2-cannoneer-whessan",
             kind = "objective",
             priority = 2910,
+            conditions = { level = { min = 13 } },
             text = "Kill Cannoneer Whessan in Northwatch Hold.",
             dependsOn = { "accept-891-the-guns-of-northwatch" },
             complete = QuestObjective(891, 2),
@@ -3568,6 +3796,7 @@ ns:RegisterGuide({
             id = "objective-891-4-the-guns-of-northwatch",
             kind = "objective",
             priority = 2920,
+            conditions = { level = { min = 13 } },
             text = "Kill Theramore Marine or Theramore Preserver and collect 10 Theramore Medal from in Northwatch Hold.",
             dependsOn = { "accept-891-the-guns-of-northwatch" },
             complete = QuestObjective(891, 4),
@@ -3580,6 +3809,7 @@ ns:RegisterGuide({
             id = "accept-898-free-from-the-hold",
             kind = "accept",
             priority = 2930,
+            conditions = { level = { min = 13 } },
             text = "Accept Free From the Hold from Gilthares Firebough in Northwatch Hold.",
             complete = QuestState(898, "activeOrCompleted"),
             route = {
@@ -3591,6 +3821,7 @@ ns:RegisterGuide({
             id = "objective-898-free-from-the-hold",
             kind = "objective",
             priority = 2940,
+            conditions = { level = { min = 13 } },
             text = "Safely escort Gilthares Firebough back to Captain Brightsun in Ratchet This can be difficult to solo. Safe to skip if you fail.",
             dependsOn = { "accept-898-free-from-the-hold" },
             complete = QuestState(898, "complete"),
@@ -3603,6 +3834,7 @@ ns:RegisterGuide({
             id = "turnin-898-free-from-the-hold",
             kind = "turnin",
             priority = 2950,
+            conditions = { level = { min = 13 } },
             text = "Turn in Free From the Hold to Captain Thalo'thas Brightsun in Ratchet.",
             dependsOn = { "objective-898-free-from-the-hold" },
             complete = QuestState(898, "completed"),
@@ -3615,6 +3847,7 @@ ns:RegisterGuide({
             id = "turnin-891-the-guns-of-northwatch",
             kind = "turnin",
             priority = 2960,
+            conditions = { level = { min = 13 } },
             text = "Turn in The Guns of Northwatch to Captain Thalo'thas Brightsun in Ratchet.",
             dependsOn = { "objective-891-1-captain-fairmount", "objective-891-3-cannoneer-smythe", "objective-891-2-cannoneer-whessan", "objective-891-4-the-guns-of-northwatch" },
             complete = QuestState(891, "completed"),
@@ -3627,6 +3860,7 @@ ns:RegisterGuide({
             id = "turnin-852-hezrul-bloodmark",
             kind = "turnin",
             priority = 2970,
+            conditions = { level = { min = 11 } },
             text = "Turn in Hezrul Bloodmark to Regthar Deathgate in The Barrens.",
             dependsOn = { "objective-852-hezrul-bloodmark" },
             complete = QuestState(852, "completed"),
@@ -3639,7 +3873,7 @@ ns:RegisterGuide({
             id = "accept-97003-cholaruk-the-ravener",
             kind = "accept",
             priority = 2971,
-            conditions = { level = { min = 21 } },
+            conditions = { level = { min = 15 } },
             text = "Accept Chol'aruk the Ravener from Gur'ak at the Crossroads. This is an elite. Bring a group.",
             complete = QuestState(97003, "activeOrCompleted"),
             route = {
@@ -3651,7 +3885,7 @@ ns:RegisterGuide({
             id = "objective-97003-cholaruk-the-ravener",
             kind = "objective",
             priority = 2972,
-            conditions = { level = { min = 21 } },
+            conditions = { level = { min = 15 } },
             text = "Chol'aruk the Ravener: bring Chol'aruk's Head from the cave at Thorn Hill. This is an elite. Bring a group.",
             dependsOn = { "accept-97003-cholaruk-the-ravener" },
             complete = QuestState(97003, "complete"),
@@ -3664,7 +3898,7 @@ ns:RegisterGuide({
             id = "turnin-97003-cholaruk-the-ravener",
             kind = "turnin",
             priority = 2973,
-            conditions = { level = { min = 21 } },
+            conditions = { level = { min = 15 } },
             text = "Turn in Chol'aruk the Ravener to Gur'ak at the Crossroads.",
             dependsOn = { "objective-97003-cholaruk-the-ravener" },
             complete = QuestState(97003, "completed"),

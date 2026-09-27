@@ -47,6 +47,7 @@ ns:RegisterGuide({
             priority = 20,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -61,6 +62,7 @@ ns:RegisterGuide({
             id = "accept-3380-the-sunken-temple",
             kind = "accept",
             priority = 30,
+            conditions = { level = { min = 46 } },
             text = "Accept The Sunken Temple from Witch Doctor Uzer'i in Camp Mojache.",
             complete = QuestState(3380, "activeOrCompleted"),
             route = {
@@ -72,6 +74,7 @@ ns:RegisterGuide({
             id = "accept-7734-improved-quality",
             kind = "accept",
             priority = 40,
+            conditions = { level = { min = 40 } },
             text = "Accept Improved Quality in Camp Mojache.",
             complete = QuestState(7734, "activeOrCompleted"),
             route = {
@@ -83,6 +86,7 @@ ns:RegisterGuide({
             id = "accept-3062-dark-heart",
             kind = "accept",
             priority = 50,
+            conditions = { level = { min = 45 } },
             text = "Accept Dark Heart from Talo Thornhoof in Camp Mojache.",
             complete = QuestState(3062, "activeOrCompleted"),
             route = {
@@ -94,6 +98,7 @@ ns:RegisterGuide({
             id = "accept-3063-vengeance-on-the-northspring",
             kind = "accept",
             priority = 60,
+            conditions = { level = { min = 45 } },
             text = "Accept Vengeance on the Northspring from Talo Thornhoof in Camp Mojache.",
             complete = QuestState(3063, "activeOrCompleted"),
             route = {
@@ -105,6 +110,7 @@ ns:RegisterGuide({
             id = "accept-4120-the-strength-of-corruption",
             kind = "accept",
             priority = 70,
+            conditions = { level = { min = 47 } },
             text = "Accept The Strength of Corruption from Talo Thornhoof in Camp Mojache.",
             complete = QuestState(4120, "activeOrCompleted"),
             route = {
@@ -128,6 +134,7 @@ ns:RegisterGuide({
             priority = 100,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -145,6 +152,7 @@ ns:RegisterGuide({
             priority = 120,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -162,6 +170,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -178,6 +187,7 @@ ns:RegisterGuide({
             priority = 140,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -195,6 +205,7 @@ ns:RegisterGuide({
             priority = 150,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -212,6 +223,7 @@ ns:RegisterGuide({
             priority = 160,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -228,6 +240,7 @@ ns:RegisterGuide({
             priority = 170,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -247,6 +260,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -264,6 +278,7 @@ ns:RegisterGuide({
             priority = 190,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -278,6 +293,7 @@ ns:RegisterGuide({
             id = "accept-7003-zapped-giants",
             kind = "accept",
             priority = 210,
+            conditions = { level = { min = 45 } },
             text = "Accept Zapped Giants from Zorbin Fandazzle in The Forgotten Coast.",
             complete = QuestState(7003, "activeOrCompleted"),
             route = {
@@ -289,6 +305,7 @@ ns:RegisterGuide({
             id = "accept-7721-fuel-for-the-zapping",
             kind = "accept",
             priority = 220,
+            conditions = { level = { min = 45 } },
             text = "Accept Fuel for the Zapping from Zorbin Fandazzle in The Forgotten Coast.",
             complete = QuestState(7721, "activeOrCompleted"),
             route = {
@@ -300,6 +317,7 @@ ns:RegisterGuide({
             id = "objective-7721-fuel-for-the-zapping",
             kind = "objective",
             priority = 230,
+            conditions = { level = { min = 45 } },
             text = "Kill Sea Elemental and collect 10 Water Elemental Core in The Forgotten Coast.",
             dependsOn = { "accept-7721-fuel-for-the-zapping" },
             complete = QuestState(7721, "complete"),
@@ -312,6 +330,7 @@ ns:RegisterGuide({
             id = "turnin-7721-fuel-for-the-zapping",
             kind = "turnin",
             priority = 240,
+            conditions = { level = { min = 45 } },
             text = "Turn in Fuel for the Zapping to Zorbin Fandazzle in The Forgotten Coast.",
             dependsOn = { "objective-7721-fuel-for-the-zapping" },
             complete = QuestState(7721, "completed"),
@@ -324,6 +343,7 @@ ns:RegisterGuide({
             id = "objective-7734-improved-quality",
             kind = "objective",
             priority = 260,
+            conditions = { level = { min = 40 } },
             text = "Kill the Yetis and collect 10 Feral Scar Yeti Hide in Rage Scar Hold.",
             dependsOn = { "accept-7734-improved-quality" },
             complete = QuestState(7734, "complete"),
@@ -336,6 +356,7 @@ ns:RegisterGuide({
             id = "objective-7738-rage-scar-yeti",
             kind = "objective",
             priority = 270,
+            conditions = { level = { min = 40 } },
             text = "Keep killing Rage Scar Yeti until you collect Perfect Yeti Hide for accept a new quest.",
             complete = QuestState(7738, "complete"),
             route = {
@@ -347,6 +368,7 @@ ns:RegisterGuide({
             id = "objective-3062-northspring-windcaller",
             kind = "objective",
             priority = 290,
+            conditions = { level = { min = 45 } },
             text = "Kill Northspring Windcaller and collect a Horn of Hatetalon.",
             dependsOn = { "accept-3062-dark-heart" },
             complete = QuestState(3062, "complete"),
@@ -359,6 +381,7 @@ ns:RegisterGuide({
             id = "objective-3062-dark-heart",
             kind = "objective",
             priority = 300,
+            conditions = { level = { min = 45 } },
             text = "Use Horn of Hatetalon between the two stones in Ruins of Ravenwind to summon and kill Edana Hatetalon, collect Edana's Dark Heart.",
             dependsOn = { "accept-3062-dark-heart" },
             complete = QuestState(3062, "complete"),
@@ -371,6 +394,7 @@ ns:RegisterGuide({
             id = "objective-3063-vengeance-on-the-northspring",
             kind = "objective",
             priority = 310,
+            conditions = { level = { min = 45 } },
             text = "Kill the required Northspring Harpies in Ruins of Ravenwind.",
             dependsOn = { "accept-3063-vengeance-on-the-northspring" },
             complete = QuestState(3063, "complete"),
@@ -383,6 +407,7 @@ ns:RegisterGuide({
             id = "objective-7003-zapped-giants",
             kind = "objective",
             priority = 330,
+            conditions = { level = { min = 45 } },
             text = "Use Zorbin's Ultra-Shrinker on Land Walker or Cliff Giant to turn them into non elites, kill them and collect 15 Miniaturization Residue in The Twin Colossals.",
             dependsOn = { "accept-7003-zapped-giants" },
             complete = QuestState(7003, "complete"),
@@ -397,6 +422,7 @@ ns:RegisterGuide({
             priority = 350,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -412,6 +438,7 @@ ns:RegisterGuide({
             id = "turnin-7003-zapped-giants",
             kind = "turnin",
             priority = 370,
+            conditions = { level = { min = 45 } },
             text = "Turn in Zapped Giants to Zorbin Fandazzle in The Forgotten Coast.",
             dependsOn = { "objective-7003-zapped-giants" },
             complete = QuestState(7003, "completed"),
@@ -426,6 +453,7 @@ ns:RegisterGuide({
             priority = 400,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -443,6 +471,7 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -459,6 +488,7 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
+                    { level = { min = 40 } },
                     { quest = { id = 3123, state = "completed" } },
                 },
             },
@@ -474,6 +504,7 @@ ns:RegisterGuide({
             id = "turnin-7734-improved-quality",
             kind = "turnin",
             priority = 430,
+            conditions = { level = { min = 40 } },
             text = "Turn in Improved Quality to Jangdor Swiftstrider in Camp Mojache.",
             dependsOn = { "objective-7734-improved-quality" },
             complete = QuestState(7734, "completed"),
@@ -486,6 +517,7 @@ ns:RegisterGuide({
             id = "turnin-3062-dark-heart",
             kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 45 } },
             text = "Turn in Dark Heart to Talo Thornhoof in Camp Mojache.",
             dependsOn = { "objective-3062-northspring-windcaller", "objective-3062-dark-heart" },
             complete = QuestState(3062, "completed"),
@@ -498,6 +530,7 @@ ns:RegisterGuide({
             id = "turnin-3063-vengeance-on-the-northspring",
             kind = "turnin",
             priority = 450,
+            conditions = { level = { min = 45 } },
             text = "Turn in Vengeance on the Northspring to Talo Thornhoof in Camp Mojache.",
             dependsOn = { "objective-3063-vengeance-on-the-northspring" },
             complete = QuestState(3063, "completed"),
