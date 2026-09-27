@@ -70,12 +70,28 @@ Use `all` when every listed quest must be turned in. Use `any` only for true alt
 
 When copying WC / RFC / other dungeon chains into a leveling chapter, compare the **dungeon guide** `dependsOn` and turn-in NPC pins, not just the accept text.
 
+### Class-branch turn-ins (example: warlock Vile Familiars)
+
+Some quests use **different quest ids** for the same narrative beat (Durotar **792** vs warlock **1485 / 1499**). The engine treats a class-ineligible turn-in step as **satisfied** for routing, so a single `dependsOn` on only the non-warlock turn-in is **not** enough.
+
+For any accept the client only offers after **either** branch is turned in, list **both** turn-in goal ids on the accept:
+
+```lua
+dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
+```
+
+Do **not** rely on `RegisterQuestPrerequisite` `mode = "any"` alone for this pattern: the skipped branch still counts as done for warlocks.
+
+CI enforces known class-branch gates (`tests/lua/guide_data_checks.lua`) and keeps Era leveling accepts aligned with Loremaster turn-in gates for Durotar and Mulgore.
+
 ## Data checks beyond CI
 
 | Check | Command | What it catches |
 |--------|---------|----------------|
 | CI lint | `lua5.1 tests/lua/lint.lua` | Wrong objective quest ids, mismatched conditions, incomplete turn-in dependencies, registered prerequisite errors, and more |
 | Chain audit | `lua5.1 tests/lua/audit_accept_chains.lua` | Enforces registered prerequisite references (same rules as lint, quick standalone pass) |
+| Era vs Loremaster accept gates | part of `lua5.1 tests/lua/lint.lua` | Era chapter accept must match Loremaster `dependsOn` when Loremaster gates on a prior turn-in or objective |
+| Class-branch turn-ins | part of `lua5.1 tests/lua/lint.lua` | Curated dual `dependsOn` rules (e.g. Burning Blade Medallion and Lazy Peons vs 792 and 1499) |
 | Quest giver audit | in game on gossip | Rewinds through a registered prerequisite or blocks with a diagnostic; it never silently skips (see `QuestAudit.lua`) |
 
 ### Data requiring manual review
@@ -84,6 +100,10 @@ When copying WC / RFC / other dungeon chains into a leveling chapter, compare th
 - **Alliance vs Horde quest id mix-ups** — partially covered by objective/accept id lint (6128 vs 6123).
 
 After editing chains, run lint and the chain audit. Add a verified catalog entry when a quest requires an earlier quest turn-in.
+
+### Before merging route changes (manual smoke)
+
+On a **fresh** character matching the edited chapter, walk until the changed quests unlock. Confirm the tracker does not point at an accept before the NPC offers it. For Durotar, spot-check **orc warlock** (Ruzan → Zureetha Vile Familiars) and a non-warlock orc through **Lazy Peons** and **Burning Blade Medallion**. Use **Sync** after skipping an early step; skipped accepts with no quest in the log should reopen.
 
 ## Mid-guide recovery
 

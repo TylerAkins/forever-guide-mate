@@ -822,6 +822,7 @@ ns:RegisterGuide({
             id = "accept-5441-lazy-peons",
             kind = "accept",
             priority = 490,
+            dependsOn = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
             text = "Accept Lazy Peons from Foreman Thazz'ril in Valley of Trials.",
             complete = QuestState(5441, "activeOrCompleted"),
             route = {
