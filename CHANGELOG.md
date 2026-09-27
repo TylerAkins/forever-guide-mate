@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.17 - 2026-09-27
+
+- Era Durotar, Mulgore, and Crossroads Conscription accepts now wait for the prior turn-in (or objective) that unlocks them in the client, including the warlock Vile Familiars handoff before Burning Blade Medallion.
+
 ## 0.1.16 - 2026-09-27
 
 - Loremaster now ships Durotar and Mulgore only. The other zone guides are removed until each one is rewritten from its leveling route.
