@@ -252,6 +252,7 @@ ns:RegisterGuide({
             id = "accept-842-crossroads-conscription",
             kind = "accept",
             priority = 170,
+            dependsOn = { "turnin-840-conscript-of-the-horde" },
             conditions = {
                 all = {
                     { race = { 2, 8, 5 } },
