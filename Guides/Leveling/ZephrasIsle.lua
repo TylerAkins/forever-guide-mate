@@ -10,11 +10,12 @@ local _, ns = ...
 -- Mining, Skinning, Herbalism, First Aid, Fishing, Alchemy, Blacksmithing,
 -- Tailoring, Enchanting, and Leatherworking. Cooking stays.
 -- Camping 101: Engineering is not offered on this route.
--- Alliance city follow-ups after The Magical City of Dalaran are not on
--- this island route: Welcome to Azeroth, Exploring the Alliance, and
--- Journey to Sentinel Hill.
--- Child of Nature and Moonglade are druid lessons in the cities, after
--- this starter path.
+-- After The Magical City of Dalaran, Alliance takes Welcome to Azeroth
+-- through the Skyborne Portal to Bolvar, then Exploring the Alliance.
+-- Journey to Sentinel Hill is accepted from Bolvar on that visit. Its
+-- turn-in stays on the Westfall chapter.
+-- Alliance druids take Child of Nature from Ansirem in Dalaran to
+-- Sheldras Moontree, then Moonglade to Dendrite Starblaze.
 -- Quest list, chains, and coordinates:
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#quests
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#starts-quest
@@ -40,7 +41,7 @@ local _, ns = ...
 -- Thrall in Orgrimmar, and finishes with Exploring the Horde (93739).
 -- Nazgrel, Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner are
 -- separate steps so a finished visit is not pinned again.
--- The Alliance path still ends at The Magical City of Dalaran.
+-- The Alliance path ends with Exploring the Alliance, turned in to Bolvar.
 -- Coordinates have not been validated in the Forever client.
 -- UnitRace reports Alliance Skyborne as 95 and Horde Skyborne as 96.
 -- Wowhead's race bitmask does not use those client ids.
@@ -52,6 +53,10 @@ local MAP = {
     ORGRIMMAR = 1454,
     THUNDER_BLUFF = 1456,
     UNDERCITY = 1458,
+    STORMWIND = 1453,
+    IRONFORGE = 1455,
+    DARNASSUS = 1457,
+    MOONGLADE = 1450,
 }
 
 local RACE_ALLIANCE = 95
@@ -81,7 +86,7 @@ ns:RegisterGuide({
     id = "leveling-zephras-isle",
     title = "Zephras Isle (Skyborne)",
     category = "Leveling Quest Guides",
-    revision = 5,
+    revision = 6,
     conditions = {
         all = {
             { level = { min = 1 } },
@@ -5193,6 +5198,267 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
                     "Take the zeppelin to the Undercity and enter the Royal Quarter."),
+            },
+        },
+        {
+            id = "accept-welcome-to-azeroth-94947",
+            kind = "accept",
+            priority = 3320,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Welcome to Azeroth from Danaaris Stargale in Dalaran.",
+            dependsOn = { "turnin-the-magical-city-of-dalaran" },
+            complete = QuestState(94947, "activeOrCompleted"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Danaaris Stargale in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "accept-child-of-nature",
+            kind = "accept",
+            priority = 3330,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Child of Nature from Archmage Ansirem Runeweaver in Dalaran.",
+            dependsOn = { "turnin-the-magical-city-of-dalaran" },
+            complete = QuestState(94912, "activeOrCompleted"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Archmage Ansirem Runeweaver in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "objective-welcome-to-azeroth-94947",
+            kind = "objective",
+            priority = 3340,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Take the Skyborne Portal to Stormwind.",
+            dependsOn = { "accept-welcome-to-azeroth-94947" },
+            complete = QuestObjective(94947, 1, "Skyborne Portal"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Skyborne Portal in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "turnin-welcome-to-azeroth-94947",
+            kind = "turnin",
+            priority = 3350,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Welcome to Azeroth to Bolvar Fordragon in Stormwind Keep.",
+            dependsOn = { "objective-welcome-to-azeroth-94947" },
+            complete = QuestState(94947, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "accept-exploring-the-alliance",
+            kind = "accept",
+            priority = 3360,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Exploring the Alliance from Bolvar Fordragon.",
+            dependsOn = { "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(93963, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "accept-journey-to-sentinel-hill",
+            kind = "accept",
+            priority = 3370,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
+            dependsOn = { "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(98021, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "turnin-child-of-nature",
+            kind = "turnin",
+            priority = 3380,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Child of Nature to Sheldras Moontree in Stormwind.",
+            dependsOn = { "accept-child-of-nature", "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(94912, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.212, 0.516, "Sheldras Moontree",
+                    "Travel to Stormwind."),
+            },
+        },
+        {
+            id = "accept-moonglade",
+            kind = "accept",
+            priority = 3390,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Moonglade from Sheldras Moontree.",
+            dependsOn = { "turnin-child-of-nature" },
+            complete = QuestState(94914, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.212, 0.516, "Sheldras Moontree",
+                    "Travel to Stormwind."),
+            },
+        },
+        {
+            id = "gossip-exploring-the-alliance",
+            kind = "gossip",
+            priority = 3400,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Randal Emerson in the southern antechamber of Stormwind Keep.",
+            dependsOn = { "accept-exploring-the-alliance" },
+            complete = QuestObjective(93963, 1, "Randal Emerson"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Randal Emerson",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-mekkatorque",
+            kind = "objective",
+            priority = 3410,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with High Tinker Mekkatorque in Tinker Town.",
+            dependsOn = { "gossip-exploring-the-alliance" },
+            complete = QuestObjective(93963, 2, "Mekkatorque"),
+            route = {
+                Point(MAP.IRONFORGE, 0.688, 0.490, "High Tinker Mekkatorque",
+                    "Take the Deeprun Tram to Ironforge."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-magni",
+            kind = "objective",
+            priority = 3420,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with King Magni Bronzebeard in the High Seat.",
+            dependsOn = { "gossip-exploring-the-alliance" },
+            complete = QuestObjective(93963, 3, "Magni"),
+            route = {
+                Point(MAP.IRONFORGE, 0.391, 0.562, "King Magni Bronzebeard",
+                    "Take the Deeprun Tram to Ironforge."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-tyrande",
+            kind = "objective",
+            priority = 3430,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Tyrande Whisperwind in the Temple of the Moon.",
+            dependsOn = { "objective-exploring-the-alliance-mekkatorque", "objective-exploring-the-alliance-magni" },
+            complete = QuestObjective(93963, 4, "Tyrande"),
+            route = {
+                Point(MAP.DARNASSUS, 0.390, 0.812, "Tyrande Whisperwind",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-exploring-the-alliance",
+            kind = "turnin",
+            priority = 3440,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Exploring the Alliance to Bolvar Fordragon.",
+            dependsOn = {
+                "gossip-exploring-the-alliance",
+                "objective-exploring-the-alliance-mekkatorque",
+                "objective-exploring-the-alliance-magni",
+                "objective-exploring-the-alliance-tyrande",
+            },
+            complete = QuestState(93963, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "turnin-moonglade",
+            kind = "turnin",
+            priority = 3450,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Use Teleport: Moonglade, then turn in Moonglade to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-moonglade" },
+            complete = QuestState(94914, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.562, 0.306, "Dendrite Starblaze",
+                    "Teleport to Moonglade."),
             },
         },
     },
