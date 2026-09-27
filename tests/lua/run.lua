@@ -1474,8 +1474,70 @@ Equal(elementalAccept.route[1].label, "Rorian the Dayseeker", "Elemental Unrest 
 Equal(elementalTurnin.route[1].label, "Yala Windwatcher", "Elemental Unrest ends at Yala")
 Check(HasDependency(ns.Engine:GetGoal(zephras, "accept-aggressive-encroachment"),
     "turnin-aetheen-of-the-gales"), "Aggressive Encroachment waits until the route reaches Valreaa")
-Check(HasDependency(ns.Engine:GetGoal(zephras, "accept-alaketh-thugs"), "turnin-the-next-step"),
-    "Al'Aketh Thugs waits until the route leaves Aetheen")
+local adventurerAccept = ns.Engine:GetGoal(zephras, "accept-the-adventurer")
+local nextStepAccept = ns.Engine:GetGoal(zephras, "accept-the-next-step")
+local alakethAccept = ns.Engine:GetGoal(zephras, "accept-alaketh-thugs")
+local adventurerTurnin = ns.Engine:GetGoal(zephras, "turnin-the-adventurer")
+local nextStepTurnin = ns.Engine:GetGoal(zephras, "turnin-the-next-step")
+Equal(adventurerAccept.route[1].label, "Aetheen of the Gales", "The Adventurer starts at Aetheen")
+Equal(nextStepAccept.route[1].label, "Aetheen of the Gales", "The Next Step starts at Aetheen")
+Check(adventurerAccept.priority < nextStepAccept.priority,
+    "The Adventurer is accepted before the other Aetheen quest")
+Check(nextStepAccept.priority < alakethAccept.priority,
+    "both Aetheen quests are accepted before leaving Thendal Grove")
+Check(HasDependency(alakethAccept, "accept-the-adventurer"),
+    "Al'Aketh Thugs waits for The Adventurer pickup")
+Check(HasDependency(alakethAccept, "accept-the-next-step"),
+    "Al'Aketh Thugs waits for The Next Step pickup")
+Check(alakethAccept.priority < adventurerTurnin.priority,
+    "Al'Aketh Thugs is handled on the southbound route before entering Shen'dar")
+
+local thendalDeparture = {
+    id = "test-zephras-thendal-departure",
+    category = zephras.category,
+    goals = {
+        ns.Engine:GetGoal(zephras, "turnin-foul-matriarch"),
+        adventurerAccept,
+        nextStepAccept,
+        alakethAccept,
+        ns.Engine:GetGoal(zephras, "objective-alaketh-thugs"),
+        ns.Engine:GetGoal(zephras, "turnin-alaketh-thugs"),
+        adventurerTurnin,
+        nextStepTurnin,
+    },
+}
+local departureState = {
+    faction = "Horde", raceID = 96, classID = 1, level = 4,
+    professions = {}, professionsKnown = true,
+    quests = {}, completedQuests = { [92470] = true },
+    questLogKnown = true, questCompletionKnown = true,
+    mapID = 2521, x = 0.426, y = 0.236,
+}
+local savedDeferred = ns.charDB.deferred
+ns.charDB.deferred = {}
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-adventurer",
+    "the Thendal departure first accepts The Adventurer")
+departureState.quests[96638] = { complete = false, objectives = {} }
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-next-step",
+    "the Thendal departure accepts The Next Step before moving")
+departureState.quests[92472] = { complete = false, objectives = {} }
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-alaketh-thugs",
+    "the southbound route stops at Hanaa before entering Shen'dar")
+departureState.quests[92544] = { complete = false, objectives = {} }
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "objective-alaketh-thugs",
+    "Al'Aketh Thugs is completed before continuing south")
+departureState.quests[92544].complete = true
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-alaketh-thugs",
+    "Al'Aketh Thugs turns in before entering Shen'dar")
+departureState.quests[92544] = nil
+departureState.completedQuests[92544] = true
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-adventurer",
+    "The Adventurer turns in after the Al'Aketh detour")
+departureState.quests[96638] = nil
+departureState.completedQuests[96638] = true
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-next-step",
+    "The Next Step turns in during the same Shen'dar arrival")
+ns.charDB.deferred = savedDeferred
 end
 TestZephrasClientQuestData()
 local pinned = ns.Navigation:GetActiveLeg({
