@@ -1,10 +1,21 @@
 local _, ns = ...
 
 -- Skyborne starter path for Zephras Isle, levels 1-14.
--- Hub order follows the north-to-south Skyborne route: Shen'dar side
--- quests before Welcome to Shen'dar Village, High Order work after the
--- cult chain, and Bugged after the Shadowgale den. Quests that route
--- does not list stay on this path.
+-- Route order follows the RestedXP 1-14 Zephras Isle speedrun: grove
+-- kills, the watchtower, then the southbound Shen'dar and Valanaar loops.
+-- Accepts stay chained to the previous open step so the tracker cannot
+-- jump to a later hub.
+-- Still left out, and why:
+-- Camping 101 profession lessons that need skill 20 stay off this route:
+-- Mining, Skinning, Herbalism, First Aid, Fishing, Alchemy, Blacksmithing,
+-- Tailoring, Enchanting, and Leatherworking. Cooking stays.
+-- Camping 101: Engineering is not offered on this route.
+-- After The Magical City of Dalaran, Alliance takes Welcome to Azeroth
+-- through the Skyborne Portal to Bolvar, then Exploring the Alliance.
+-- Journey to Sentinel Hill is accepted from Bolvar on that visit. Its
+-- turn-in stays on the Westfall chapter.
+-- Alliance druids take Child of Nature from Ansirem in Dalaran to
+-- Sheldras Moontree, then Moonglade to Dendrite Starblaze.
 -- Quest list, chains, and coordinates:
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#quests
 -- https://www.wowhead.com/forever/zone=16593/zephras-isle#starts-quest
@@ -30,7 +41,7 @@ local _, ns = ...
 -- Thrall in Orgrimmar, and finishes with Exploring the Horde (93739).
 -- Nazgrel, Vol'jin, Cairne Bloodhoof, and Lady Sylvanas Windrunner are
 -- separate steps so a finished visit is not pinned again.
--- The Alliance path still ends at The Magical City of Dalaran.
+-- The Alliance path ends with Exploring the Alliance, turned in to Bolvar.
 -- Coordinates have not been validated in the Forever client.
 -- UnitRace reports Alliance Skyborne as 95 and Horde Skyborne as 96.
 -- Wowhead's race bitmask does not use those client ids.
@@ -42,6 +53,10 @@ local MAP = {
     ORGRIMMAR = 1454,
     THUNDER_BLUFF = 1456,
     UNDERCITY = 1458,
+    STORMWIND = 1453,
+    IRONFORGE = 1455,
+    DARNASSUS = 1457,
+    MOONGLADE = 1450,
 }
 
 local RACE_ALLIANCE = 95
@@ -150,21 +165,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-harmony-in-balance",
-            kind = "turnin",
-            priority = 70,
-            text = "Turn in Harmony in Balance to Rorian the Dayseeker.",
-            dependsOn = { "objective-harmony-in-balance" },
-            complete = QuestState(92461, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-infestation-investigation",
             kind = "turnin",
-            priority = 80,
+            priority = 70,
             text = "Turn in Infestation Investigation to Elatrell Featherlight.",
             dependsOn = { "objective-infestation-investigation" },
             complete = QuestState(92462, "completed"),
@@ -174,225 +177,23 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-a-student-of-nature",
+            id = "accept-the-cirrusfly-queen",
             kind = "accept",
-            priority = 90,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept A Student of Nature from Rorian the Dayseeker.",
-            complete = QuestState(92485, "activeOrCompleted"),
+            priority = 80,
+            conditions = { level = { min = 2 } },
+            text = "Accept The Cirrusfly Queen from Elatrell Featherlight.",
+            dependsOn = { "turnin-infestation-investigation" },
+            complete = QuestState(92463, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-student-of-the-arcane",
-            kind = "accept",
-            priority = 100,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 8 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept A Student of the Arcane from Rorian the Dayseeker.",
-            complete = QuestState(92481, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-at-home-in-the-shadows",
-            kind = "accept",
-            priority = 110,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 4 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept At Home in the Shadows from Rorian the Dayseeker.",
-            complete = QuestState(92483, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-embracing-the-elements",
-            kind = "accept",
-            priority = 120,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept Embracing the Elements from Rorian the Dayseeker.",
-            complete = QuestState(92484, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-warriors-path",
-            kind = "accept",
-            priority = 130,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept The Warrior's Path from Rorian the Dayseeker.",
-            complete = QuestState(92532, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-way-of-the-hunter",
-            kind = "accept",
-            priority = 140,
-            dependsOn = { "turnin-harmony-in-balance" },
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept The Way of the Hunter from Rorian the Dayseeker.",
-            complete = QuestState(92482, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-student-of-nature",
-            kind = "turnin",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Folded Parchment then speak with Xyton Silverwind in Thendal Grove.",
-            dependsOn = { "accept-a-student-of-nature" },
-            complete = QuestState(92485, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.234, "Xyton Silverwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-student-of-the-arcane",
-            kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { class = 8 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Examine the Glowing Recall Crystal, then speak with Dorii Brightwhisper in Thendal Grove.",
-            dependsOn = { "accept-a-student-of-the-arcane" },
-            complete = QuestState(92481, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.236, "Dorii Brightwhisper",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-at-home-in-the-shadows",
-            kind = "turnin",
-            priority = 170,
-            conditions = {
-                all = {
-                    { class = 4 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Simple Note then speak with Akeri Duskblade within the watchtower in Thendal Grove.",
-            dependsOn = { "accept-at-home-in-the-shadows" },
-            complete = QuestState(92483, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.242, "Akeri Duskblade",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-embracing-the-elements",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Examine the Humming Recall Crystal then speak with Windshaper Boro in Thendal Grove.",
-            dependsOn = { "accept-embracing-the-elements" },
-            complete = QuestState(92484, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-warriors-path",
-            kind = "turnin",
-            priority = 190,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Crumpled Note you've been given, then seek out Blademaster Ren inside the Thendal Village watchtower.",
-            dependsOn = { "accept-the-warriors-path" },
-            complete = QuestState(92532, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.242, "Blademaster Ren",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-way-of-the-hunter",
-            kind = "turnin",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Read the Scribbled Note and then speak with Tai'ree Farsight in Thendal Grove.",
-            dependsOn = { "accept-the-way-of-the-hunter" },
-            complete = QuestState(92482, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.236, "Tai'ree Farsight",
+                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-the-anchors-of-zephras",
             kind = "accept",
-            priority = 210,
+            priority = 90,
+            dependsOn = { "accept-the-cirrusfly-queen" },
             conditions = { level = { min = 2 } },
             text = "Accept The Anchors of Zephras from Halaan Hawk-Eye.",
             complete = QuestState(94414, "activeOrCompleted"),
@@ -404,7 +205,7 @@ ns:RegisterGuide({
         {
             id = "gossip-the-anchors-of-zephras",
             kind = "gossip",
-            priority = 220,
+            priority = 100,
             conditions = { level = { min = 2 } },
             text = "Ask Halaan Hawk-Eye to lend you his gift, then view the Anchor Pylon.",
             dependsOn = { "accept-the-anchors-of-zephras" },
@@ -413,7 +214,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-anchors-of-zephras",
             kind = "turnin",
-            priority = 230,
+            priority = 110,
             conditions = { level = { min = 2 } },
             text = "Turn in The Anchors of Zephras to Halaan Hawk-Eye.",
             dependsOn = { "gossip-the-anchors-of-zephras" },
@@ -426,7 +227,8 @@ ns:RegisterGuide({
         {
             id = "accept-falling-with-style",
             kind = "accept",
-            priority = 240,
+            priority = 120,
+            dependsOn = { "turnin-the-anchors-of-zephras" },
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -441,9 +243,21 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-harmony-in-balance",
+            kind = "turnin",
+            priority = 130,
+            text = "Turn in Harmony in Balance to Rorian the Dayseeker.",
+            dependsOn = { "objective-harmony-in-balance" },
+            complete = QuestState(92461, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "objective-falling-with-style",
             kind = "objective",
-            priority = 250,
+            priority = 140,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -461,7 +275,7 @@ ns:RegisterGuide({
         {
             id = "turnin-falling-with-style",
             kind = "turnin",
-            priority = 260,
+            priority = 150,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -477,53 +291,264 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-cirrusfly-queen",
+            id = "accept-elemental-unrest",
             kind = "accept",
-            priority = 270,
+            priority = 160,
             conditions = { level = { min = 2 } },
-            text = "Accept The Cirrusfly Queen from Elatrell Featherlight.",
-            dependsOn = { "turnin-infestation-investigation" },
-            complete = QuestState(92463, "activeOrCompleted"),
+            text = "Accept Elemental Unrest from Rorian the Dayseeker.",
+            dependsOn = { "turnin-harmony-in-balance" },
+            complete = QuestState(92464, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-the-cirrusfly-queen",
-            kind = "objective",
-            priority = 280,
-            conditions = { level = { min = 2 } },
-            text = "Destroy the Cirrusfly Queen in Thendal Grove.",
-            dependsOn = { "accept-the-cirrusfly-queen" },
-            complete = QuestState(92463, "complete"),
+            id = "accept-a-student-of-the-arcane",
+            kind = "accept",
+            priority = 170,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 8 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept A Student of the Arcane from Rorian the Dayseeker.",
+            complete = QuestState(92481, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.484, 0.282, "Cirrusfly Queen",
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-the-cirrusfly-queen",
+            id = "accept-at-home-in-the-shadows",
+            kind = "accept",
+            priority = 180,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 4 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept At Home in the Shadows from Rorian the Dayseeker.",
+            complete = QuestState(92483, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-way-of-the-hunter",
+            kind = "accept",
+            priority = 190,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept The Way of the Hunter from Rorian the Dayseeker.",
+            complete = QuestState(92482, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-embracing-the-elements",
+            kind = "accept",
+            priority = 200,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Embracing the Elements from Rorian the Dayseeker.",
+            complete = QuestState(92484, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-warriors-path",
+            kind = "accept",
+            priority = 210,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 1 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept The Warrior's Path from Rorian the Dayseeker.",
+            complete = QuestState(92532, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-student-of-nature",
+            kind = "accept",
+            priority = 220,
+            dependsOn = { "turnin-harmony-in-balance" },
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept A Student of Nature from Rorian the Dayseeker.",
+            complete = QuestState(92485, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-student-of-nature",
             kind = "turnin",
-            priority = 290,
-            conditions = { level = { min = 2 } },
-            text = "Turn in The Cirrusfly Queen to Elatrell Featherlight.",
-            dependsOn = { "objective-the-cirrusfly-queen" },
-            complete = QuestState(92463, "completed"),
+            priority = 230,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Folded Parchment then speak with Xyton Silverwind in Thendal Grove.",
+            dependsOn = { "accept-a-student-of-nature" },
+            complete = QuestState(92485, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
+                Point(MAP.ZEPHRAS, 0.416, 0.234, "Xyton Silverwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-student-of-the-arcane",
+            kind = "turnin",
+            priority = 240,
+            conditions = {
+                all = {
+                    { class = 8 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Examine the Glowing Recall Crystal, then speak with Dorii Brightwhisper in Thendal Grove.",
+            dependsOn = { "accept-a-student-of-the-arcane" },
+            complete = QuestState(92481, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.236, "Dorii Brightwhisper",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-embracing-the-elements",
+            kind = "turnin",
+            priority = 250,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Examine the Humming Recall Crystal then speak with Windshaper Boro in Thendal Grove.",
+            dependsOn = { "accept-embracing-the-elements" },
+            complete = QuestState(92484, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-call-of-earth",
+            kind = "accept",
+            priority = 260,
+            dependsOn = { "accept-elemental-unrest" },
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Accept Call of Earth from Windshaper Boro.",
+            complete = QuestState(92466, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-way-of-the-hunter",
+            kind = "turnin",
+            priority = 270,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Read the Scribbled Note and then speak with Tai'ree Farsight in Thendal Grove.",
+            dependsOn = { "accept-the-way-of-the-hunter" },
+            complete = QuestState(92482, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.236, "Tai'ree Farsight",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-gift-of-skysight",
+            kind = "accept",
+            priority = 280,
+            dependsOn = { "accept-elemental-unrest" },
+            conditions = {
+                all = {
+                    { race = RACE_HORDE },
+                    { faction = "Horde" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept The Gift of Skysight from Ventaari Brightwish.",
+            complete = QuestState(92598, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.426, 0.244, "Ventaari Brightwish",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-harvesting-windstones",
             kind = "accept",
-            priority = 300,
+            priority = 290,
+            dependsOn = { "accept-elemental-unrest" },
             conditions = { level = { min = 2 } },
             text = "Accept Harvesting Windstones from Dalia the Collector.",
             complete = QuestState(93552, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.432, 0.240, "Dalia the Collector",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-reading-the-ley-lines",
+            kind = "accept",
+            priority = 300,
+            dependsOn = { "accept-harvesting-windstones" },
+            conditions = {
+                all = {
+                    { race = RACE_ALLIANCE },
+                    { faction = "Alliance" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Reading the Ley Lines from Falorne Fallwind.",
+            complete = QuestState(92597, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.432, 0.248, "Falorne Fallwind",
                     "Travel to Zephras Isle."),
             },
         },
@@ -541,35 +566,22 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-harvesting-windstones",
-            kind = "turnin",
+            id = "objective-the-cirrusfly-queen",
+            kind = "objective",
             priority = 320,
             conditions = { level = { min = 2 } },
-            text = "Turn in Harvesting Windstones to Dalia the Collector.",
-            dependsOn = { "objective-harvesting-windstones" },
-            complete = QuestState(93552, "completed"),
+            text = "Destroy the Cirrusfly Queen in Thendal Grove.",
+            dependsOn = { "accept-the-cirrusfly-queen" },
+            complete = QuestState(92463, "complete"),
             route = {
-                Point(MAP.ZEPHRAS, 0.432, 0.240, "Dalia the Collector",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-elemental-unrest",
-            kind = "accept",
-            priority = 330,
-            conditions = { level = { min = 2 } },
-            text = "Accept Elemental Unrest from Rorian the Dayseeker.",
-            dependsOn = { "turnin-harmony-in-balance" },
-            complete = QuestState(92464, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                Point(MAP.ZEPHRAS, 0.484, 0.282, "Cirrusfly Queen",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "turnin-elemental-unrest",
             kind = "turnin",
-            priority = 331,
+            priority = 330,
             conditions = { level = { min = 2 } },
             text = "Speak to Yala Windwatcher in Thendal Grove.",
             dependsOn = { "accept-elemental-unrest" },
@@ -580,62 +592,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-call-of-earth",
-            kind = "accept",
-            priority = 340,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 3 } },
-                },
-            },
-            text = "Accept Call of Earth from Windshaper Boro.",
-            complete = QuestState(92466, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-call-of-earth",
-            kind = "objective",
-            priority = 350,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 3 } },
-                },
-            },
-            text = "Bring a Signet of Akir to Windshaper Boro.",
-            dependsOn = { "accept-call-of-earth" },
-            complete = QuestState(92466, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.464, 0.180, "Al'Aketh Converts at the standing stones",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-call-of-earth",
-            kind = "turnin",
-            priority = 360,
-            conditions = {
-                all = {
-                    { class = 7 },
-                    { level = { min = 3 } },
-                },
-            },
-            text = "Turn in Call of Earth to Windshaper Boro.",
-            dependsOn = { "objective-call-of-earth" },
-            complete = QuestState(92466, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-agitators",
             kind = "accept",
-            priority = 370,
+            priority = 340,
             conditions = { level = { min = 2 } },
             text = "Accept Agitators from Yala Windwatcher.",
             dependsOn = { "turnin-elemental-unrest" },
@@ -648,13 +607,69 @@ ns:RegisterGuide({
         {
             id = "objective-agitators",
             kind = "objective",
-            priority = 380,
+            priority = 350,
             conditions = { level = { min = 2 } },
             text = "Slay 6 Roiling Winds and 7 Al'Aketh Converts in Thendal Grove.",
             dependsOn = { "accept-agitators" },
             complete = QuestState(92465, "complete"),
             route = {
                 Point(MAP.ZEPHRAS, 0.470, 0.214, "Roiling Winds",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-reading-the-ley-lines",
+            kind = "objective",
+            priority = 360,
+            conditions = {
+                all = {
+                    { race = RACE_ALLIANCE },
+                    { faction = "Alliance" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Use your Read Ley Line racial at the standing stones northeast of Thendal Village.",
+            dependsOn = { "accept-reading-the-ley-lines" },
+            complete = QuestState(92597, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.472, 0.218, "Standing stones northeast of Thendal Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-gift-of-skysight",
+            kind = "objective",
+            priority = 370,
+            conditions = {
+                all = {
+                    { race = RACE_HORDE },
+                    { faction = "Horde" },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Use your Skysight racial at the Elemental Convergence by the standing stones northeast of Thendal Village.",
+            dependsOn = { "accept-the-gift-of-skysight" },
+            complete = QuestState(92598, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.472, 0.218, "Elemental Convergence at the standing stones",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-call-of-earth",
+            kind = "objective",
+            priority = 380,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Bring a Signet of Akir to Windshaper Boro.",
+            dependsOn = { "accept-call-of-earth" },
+            complete = QuestState(92466, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.464, 0.180, "Al'Aketh Converts at the standing stones",
                     "Travel to Zephras Isle."),
             },
         },
@@ -672,39 +687,28 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-reading-the-ley-lines",
+            id = "accept-return-to-rorian",
             kind = "accept",
             priority = 400,
-            conditions = {
-                all = {
-                    { race = RACE_ALLIANCE },
-                    { faction = "Alliance" },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept Reading the Ley Lines from Falorne Fallwind.",
-            complete = QuestState(92597, "activeOrCompleted"),
+            conditions = { level = { min = 3 } },
+            text = "Accept Return to Rorian from Yala Windwatcher.",
+            dependsOn = { "turnin-agitators" },
+            complete = QuestState(92469, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.432, 0.248, "Falorne Fallwind",
+                Point(MAP.ZEPHRAS, 0.472, 0.218, "Yala Windwatcher",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-reading-the-ley-lines",
-            kind = "objective",
+            id = "turnin-harvesting-windstones",
+            kind = "turnin",
             priority = 410,
-            conditions = {
-                all = {
-                    { race = RACE_ALLIANCE },
-                    { faction = "Alliance" },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Use your Read Ley Line racial at the standing stones northeast of Thendal Village.",
-            dependsOn = { "accept-reading-the-ley-lines" },
-            complete = QuestState(92597, "complete"),
+            conditions = { level = { min = 2 } },
+            text = "Turn in Harvesting Windstones to Dalia the Collector.",
+            dependsOn = { "objective-harvesting-windstones" },
+            complete = QuestState(93552, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.472, 0.218, "Standing stones northeast of Thendal Village",
+                Point(MAP.ZEPHRAS, 0.432, 0.240, "Dalia the Collector",
                     "Travel to Zephras Isle."),
             },
         },
@@ -728,46 +732,58 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-gift-of-skysight",
-            kind = "accept",
+            id = "turnin-at-home-in-the-shadows",
+            kind = "turnin",
             priority = 430,
             conditions = {
                 all = {
-                    { race = RACE_HORDE },
-                    { faction = "Horde" },
+                    { class = 4 },
                     { level = { min = 2 } },
                 },
             },
-            text = "Accept The Gift of Skysight from Ventaari Brightwish.",
-            complete = QuestState(92598, "activeOrCompleted"),
+            text = "Read the Simple Note then speak with Akeri Duskblade within the watchtower in Thendal Grove.",
+            dependsOn = { "accept-at-home-in-the-shadows" },
+            complete = QuestState(92483, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.426, 0.244, "Ventaari Brightwish",
+                Point(MAP.ZEPHRAS, 0.436, 0.242, "Akeri Duskblade",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-the-gift-of-skysight",
-            kind = "objective",
+            id = "turnin-the-cirrusfly-queen",
+            kind = "turnin",
             priority = 440,
+            conditions = { level = { min = 2 } },
+            text = "Turn in The Cirrusfly Queen to Elatrell Featherlight.",
+            dependsOn = { "objective-the-cirrusfly-queen" },
+            complete = QuestState(92463, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.434, 0.248, "Elatrell Featherlight",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-warriors-path",
+            kind = "turnin",
+            priority = 450,
             conditions = {
                 all = {
-                    { race = RACE_HORDE },
-                    { faction = "Horde" },
+                    { class = 1 },
                     { level = { min = 2 } },
                 },
             },
-            text = "Use your Skysight racial at the Elemental Convergence by the standing stones northeast of Thendal Village.",
-            dependsOn = { "accept-the-gift-of-skysight" },
-            complete = QuestState(92598, "complete"),
+            text = "Read the Crumpled Note you've been given, then seek out Blademaster Ren inside the Thendal Village watchtower.",
+            dependsOn = { "accept-the-warriors-path" },
+            complete = QuestState(92532, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.472, 0.218, "Elemental Convergence at the standing stones",
+                Point(MAP.ZEPHRAS, 0.436, 0.242, "Blademaster Ren",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "turnin-the-gift-of-skysight",
             kind = "turnin",
-            priority = 450,
+            priority = 460,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -784,22 +800,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-return-to-rorian",
-            kind = "accept",
-            priority = 460,
-            conditions = { level = { min = 3 } },
-            text = "Accept Return to Rorian from Yala Windwatcher.",
-            dependsOn = { "turnin-agitators" },
-            complete = QuestState(92469, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.472, 0.218, "Yala Windwatcher",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-return-to-rorian",
             kind = "turnin",
-            priority = 461,
+            priority = 470,
             conditions = { level = { min = 3 } },
             text = "Bring word of the Al'Aketh to Rorian the Dayseeker in Thendal Grove.",
             dependsOn = { "accept-return-to-rorian" },
@@ -810,9 +813,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-aetheen-of-the-gales",
+            kind = "accept",
+            priority = 480,
+            conditions = { level = { min = 4 } },
+            text = "Accept Aetheen of the Gales from Rorian the Dayseeker.",
+            dependsOn = { "turnin-return-to-rorian" },
+            complete = QuestState(92471, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-aetheen-of-the-gales",
+            kind = "turnin",
+            priority = 490,
+            conditions = { level = { min = 4 } },
+            text = "Speak with Aetheen of the Gales in Thendal Grove.",
+            dependsOn = { "accept-aetheen-of-the-gales" },
+            complete = QuestState(92471, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-foul-matriarch",
+            kind = "accept",
+            priority = 500,
+            conditions = { level = { min = 2 } },
+            text = "Accept Foul Matriarch from Aetheen of the Gales.",
+            dependsOn = { "turnin-aetheen-of-the-gales" },
+            complete = QuestState(92470, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-call-of-earth",
+            kind = "turnin",
+            priority = 510,
+            conditions = {
+                all = {
+                    { class = 7 },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Turn in Call of Earth to Windshaper Boro.",
+            dependsOn = { "objective-call-of-earth" },
+            complete = QuestState(92466, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.428, 0.236, "Windshaper Boro",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-call-of-earth-92467",
             kind = "accept",
-            priority = 470,
+            priority = 520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -831,7 +891,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-earth-92467",
             kind = "turnin",
-            priority = 480,
+            priority = 530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -850,7 +910,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-earth-92468",
             kind = "accept",
-            priority = 490,
+            priority = 540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -869,7 +929,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-earth-92468",
             kind = "turnin",
-            priority = 500,
+            priority = 550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -886,35 +946,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-aetheen-of-the-gales",
-            kind = "accept",
-            priority = 510,
-            conditions = { level = { min = 4 } },
-            text = "Accept Aetheen of the Gales from Rorian the Dayseeker.",
-            dependsOn = { "turnin-return-to-rorian" },
-            complete = QuestState(92471, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.420, 0.234, "Rorian the Dayseeker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-aetheen-of-the-gales",
-            kind = "turnin",
-            priority = 511,
-            conditions = { level = { min = 4 } },
-            text = "Speak with Aetheen of the Gales in Thendal Grove.",
-            dependsOn = { "accept-aetheen-of-the-gales" },
-            complete = QuestState(92471, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-aggressive-encroachment",
             kind = "accept",
-            priority = 520,
+            priority = 560,
             conditions = { level = { min = 3 } },
             text = "Accept Aggressive Encroachment from Valreaa Valewind.",
             dependsOn = { "turnin-aetheen-of-the-gales" },
@@ -925,22 +959,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-foul-matriarch",
-            kind = "accept",
-            priority = 530,
-            conditions = { level = { min = 2 } },
-            text = "Accept Foul Matriarch from Aetheen of the Gales.",
-            dependsOn = { "turnin-aetheen-of-the-gales" },
-            complete = QuestState(92470, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "objective-aggressive-encroachment",
             kind = "objective",
-            priority = 540,
+            priority = 570,
             conditions = { level = { min = 3 } },
             text = "Collect 6 Scrawny Ursera Claws from Scrawny Ursera in Thendal Grove.",
             dependsOn = { "accept-aggressive-encroachment" },
@@ -953,7 +974,7 @@ ns:RegisterGuide({
         {
             id = "objective-foul-matriarch",
             kind = "objective",
-            priority = 550,
+            priority = 580,
             conditions = { level = { min = 2 } },
             text = "Slay 8 Ursera Scavengers and collect the head of the den mother, Urs'anah in Thendal Grove.",
             dependsOn = { "accept-foul-matriarch" },
@@ -964,22 +985,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-aggressive-encroachment",
-            kind = "turnin",
-            priority = 560,
-            conditions = { level = { min = 3 } },
-            text = "Turn in Aggressive Encroachment to Valreaa Valewind.",
-            dependsOn = { "objective-aggressive-encroachment" },
-            complete = QuestState(92473, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.250, "Valreaa Valewind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-foul-matriarch",
             kind = "turnin",
-            priority = 570,
+            priority = 590,
             conditions = { level = { min = 2 } },
             text = "Turn in Foul Matriarch to Aetheen of the Gales.",
             dependsOn = { "objective-foul-matriarch" },
@@ -990,9 +998,48 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-the-next-step",
+            kind = "accept",
+            priority = 600,
+            conditions = { level = { min = 3 } },
+            text = "Accept The Next Step from Aetheen of the Gales.",
+            dependsOn = { "turnin-foul-matriarch" },
+            complete = QuestState(92472, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-adventurer",
+            kind = "accept",
+            priority = 610,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Aetheen of the Gales.",
+            dependsOn = { "turnin-foul-matriarch" },
+            complete = QuestState(96638, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-aggressive-encroachment",
+            kind = "turnin",
+            priority = 620,
+            conditions = { level = { min = 3 } },
+            text = "Turn in Aggressive Encroachment to Valreaa Valewind.",
+            dependsOn = { "objective-aggressive-encroachment" },
+            complete = QuestState(92473, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.250, "Valreaa Valewind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-alaketh-thugs",
             kind = "accept",
-            priority = 590,
+            priority = 630,
             conditions = { level = { min = 2 } },
             text = "Accept Al'Aketh Thugs from Hanaa Nightwind.",
             dependsOn = { "accept-the-adventurer", "accept-the-next-step" },
@@ -1005,7 +1052,7 @@ ns:RegisterGuide({
         {
             id = "objective-alaketh-thugs",
             kind = "objective",
-            priority = 600,
+            priority = 640,
             conditions = { level = { min = 2 } },
             text = "Slay 6 Al'Aketh Brutes, 4 Al'Aketh Neophytes, and Malduko Cloudcrush in Thendal Grove.",
             dependsOn = { "accept-alaketh-thugs" },
@@ -1018,7 +1065,7 @@ ns:RegisterGuide({
         {
             id = "turnin-alaketh-thugs",
             kind = "turnin",
-            priority = 610,
+            priority = 650,
             conditions = { level = { min = 2 } },
             text = "Turn in Al'Aketh Thugs to Hanaa Nightwind.",
             dependsOn = { "objective-alaketh-thugs" },
@@ -1029,48 +1076,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-adventurer",
-            kind = "accept",
-            priority = 580,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Adventurer from Aetheen of the Gales.",
-            dependsOn = { "turnin-foul-matriarch" },
-            complete = QuestState(96638, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-adventurer",
-            kind = "turnin",
-            priority = 620,
-            conditions = { level = { min = 4 } },
-            text = "Speak to Raan Wildwind near Shen'dar Village.",
-            dependsOn = { "accept-the-adventurer" },
-            complete = QuestState(96638, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-next-step",
-            kind = "accept",
-            priority = 581,
-            conditions = { level = { min = 3 } },
-            text = "Accept The Next Step from Aetheen of the Gales.",
-            dependsOn = { "turnin-foul-matriarch" },
-            complete = QuestState(92472, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.426, 0.236, "Aetheen of the Gales",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-the-next-step",
             kind = "turnin",
-            priority = 621,
+            priority = 660,
             conditions = { level = { min = 3 } },
             text = "Report to Constable Aonda in Shen'dar Village.",
             dependsOn = { "accept-the-next-step" },
@@ -1081,377 +1089,10 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-great-outdoors",
-            kind = "accept",
-            priority = 630,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Great Outdoors from Raan Wildwind.",
-            dependsOn = { "turnin-the-adventurer" },
-            complete = QuestState(96101, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-great-outdoors",
-            kind = "objective",
-            priority = 640,
-            conditions = { level = { min = 4 } },
-            text = "Type /sit at Raan Wildwind's campfire and wait until you gain the Boosted Rest buff.",
-            dependsOn = { "accept-the-great-outdoors" },
-            complete = QuestState(96101, "complete"),
-        },
-        {
-            id = "turnin-the-great-outdoors",
-            kind = "turnin",
-            priority = 650,
-            conditions = { level = { min = 4 } },
-            text = "Turn in The Great Outdoors to Raan Wildwind.",
-            dependsOn = { "objective-the-great-outdoors" },
-            complete = QuestState(96101, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-camping-101-cooking",
-            kind = "accept",
-            priority = 660,
-            conditions = { level = { min = 4 } },
-            text = "Accept Camping 101: Cooking from Raan Wildwind.",
-            dependsOn = { "turnin-the-great-outdoors" },
-            complete = QuestState(96646, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-camping-101-cooking",
-            kind = "turnin",
-            priority = 661,
-            conditions = { level = { min = 4 } },
-            text = "Speak with Zerril Softbreeze in Shen'dar Village to learn to become a cook.",
-            dependsOn = { "accept-camping-101-cooking" },
-            complete = QuestState(96646, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-problem-with-prideclaws",
-            kind = "accept",
-            priority = 670,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Problem With Prideclaws from Indari Sunseam.",
-            complete = QuestState(92515, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-restocking-the-larders",
-            kind = "accept",
-            priority = 680,
-            conditions = { level = { min = 4 } },
-            text = "Accept Restocking the Larders from Zerril Softbreeze.",
-            complete = QuestState(92553, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-pilfered-windstones",
-            kind = "accept",
-            priority = 690,
-            conditions = { level = { min = 4 } },
-            text = "Accept Pilfered Windstones from Teeri Wellwind.",
-            complete = QuestState(93319, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-hippogryph-harrassment",
-            kind = "accept",
-            priority = 700,
-            conditions = { level = { min = 4 } },
-            text = "Accept Hippogryph Harrassment from Teeri Wellwind.",
-            complete = QuestState(92516, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-little-beauty",
-            kind = "accept",
-            priority = 710,
-            conditions = { level = { min = 4 } },
-            text = "Accept A Little Beauty from Taleen Shimmerthread.",
-            complete = QuestState(93951, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-wanted-vulgara-the-insatiable",
-            kind = "accept",
-            priority = 720,
-            conditions = { level = { min = 4 } },
-            text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
-            complete = QuestState(93318, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-problem-with-prideclaws",
-            kind = "objective",
-            priority = 730,
-            conditions = { level = { min = 4 } },
-            text = "Collect 10 Prideclaw Pelts from the Prideclaws in Shen'dar Highlands.",
-            dependsOn = { "accept-the-problem-with-prideclaws" },
-            complete = QuestState(92515, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.412, 0.456, "Prideclaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-restocking-the-larders",
-            kind = "objective",
-            priority = 740,
-            conditions = { level = { min = 4 } },
-            text = "Collect 3 Small Eggs and 8 Strider Meat from creatures found throughout the Shen'dar Highlands.",
-            dependsOn = { "accept-restocking-the-larders" },
-            complete = QuestState(92553, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.416, 0.452, "Galestriders near Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-pilfered-windstones",
-            kind = "objective",
-            priority = 750,
-            conditions = { level = { min = 4 } },
-            text = "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
-            dependsOn = { "accept-pilfered-windstones" },
-            complete = QuestState(93319, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.430, 0.464, "Captured Bandit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-hippogryph-harrassment",
-            kind = "objective",
-            priority = 760,
-            conditions = { level = { min = 4 } },
-            text = "Slay 8 Hippogryph Youths, 6 Hippogryph Protectors and a Hippogryph Matriarch in the Shen'dar Highlands.",
-            dependsOn = { "accept-hippogryph-harrassment" },
-            complete = QuestState(92516, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph Youth",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-a-little-beauty",
-            kind = "objective",
-            priority = 770,
-            conditions = { level = { min = 4 } },
-            text = "Collect 8 Hippogryph Down feathers around the nesting grounds southwest of Shen'dar Village.",
-            dependsOn = { "accept-a-little-beauty" },
-            complete = QuestState(93951, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph nesting grounds",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-wanted-vulgara-the-insatiable",
-            kind = "objective",
-            priority = 780,
-            conditions = { level = { min = 4 } },
-            text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
-            dependsOn = { "accept-wanted-vulgara-the-insatiable" },
-            complete = QuestState(93318, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-problem-with-prideclaws",
-            kind = "turnin",
-            priority = 790,
-            conditions = { level = { min = 4 } },
-            text = "Turn in The Problem With Prideclaws to Indari Sunseam. The reward is a Simple Leather Satchel.",
-            dependsOn = { "objective-the-problem-with-prideclaws" },
-            complete = QuestState(92515, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-restocking-the-larders",
-            kind = "turnin",
-            priority = 800,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Restocking the Larders to Zerril Softbreeze.",
-            dependsOn = { "objective-restocking-the-larders" },
-            complete = QuestState(92553, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-pilfered-windstones",
-            kind = "turnin",
-            priority = 810,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Pilfered Windstones to Teeri Wellwind.",
-            dependsOn = { "objective-pilfered-windstones" },
-            complete = QuestState(93319, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-hippogryph-harrassment",
-            kind = "turnin",
-            priority = 820,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Hippogryph Harrassment to Teeri Wellwind.",
-            dependsOn = { "objective-hippogryph-harrassment" },
-            complete = QuestState(92516, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-little-beauty",
-            kind = "turnin",
-            priority = 830,
-            conditions = { level = { min = 4 } },
-            text = "Turn in A Little Beauty to Taleen Shimmerthread.",
-            dependsOn = { "objective-a-little-beauty" },
-            complete = QuestState(93951, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-wanted-vulgara-the-insatiable",
-            kind = "turnin",
-            priority = 840,
-            conditions = { level = { min = 4 } },
-            text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
-            dependsOn = { "objective-wanted-vulgara-the-insatiable" },
-            complete = QuestState(93318, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-stolen-supplies",
-            kind = "accept",
-            priority = 850,
-            conditions = { level = { min = 5 } },
-            text = "Accept Stolen Supplies from Danarii Bellowveil.",
-            complete = QuestState(92551, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-stolen-supplies",
-            kind = "turnin",
-            priority = 860,
-            conditions = { level = { min = 5 } },
-            text = "Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
-            dependsOn = { "accept-stolen-supplies" },
-            complete = QuestState(92551, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-welcome-to-shendar-village",
-            kind = "accept",
-            priority = 622,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
-            dependsOn = { "turnin-the-next-step" },
-            complete = QuestState(92514, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-welcome-to-shendar-village",
-            kind = "objective",
-            priority = 623,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Speak with Illaya Amberwind and Coriella Calmbreeze in Shen'dar Village.",
-            dependsOn = { "accept-welcome-to-shendar-village" },
-            complete = QuestState(92514, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.430, 0.432, "Coriella Calmbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-welcome-to-shendar-village",
-            kind = "turnin",
-            priority = 624,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Welcome to Shen'dar Village to Constable Aonda.",
-            dependsOn = { "objective-welcome-to-shendar-village" },
-            complete = QuestState(92514, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-welcome-to-shendar-village-93461",
             kind = "accept",
-            priority = 622,
+            priority = 670,
+            dependsOn = { "turnin-the-next-step" },
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1459,8 +1100,25 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
-            dependsOn = { "turnin-the-next-step" },
             complete = QuestState(93461, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-welcome-to-shendar-village",
+            kind = "accept",
+            priority = 680,
+            dependsOn = { "turnin-the-next-step" },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Welcome to Shen'dar Village from Constable Aonda.",
+            complete = QuestState(92514, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
                     "Travel to Zephras Isle."),
@@ -1469,7 +1127,7 @@ ns:RegisterGuide({
         {
             id = "objective-welcome-to-shendar-village-93461",
             kind = "objective",
-            priority = 623,
+            priority = 690,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1485,9 +1143,27 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-welcome-to-shendar-village",
+            kind = "objective",
+            priority = 700,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Speak with Illaya Amberwind and Coriella Calmbreeze in Shen'dar Village.",
+            dependsOn = { "accept-welcome-to-shendar-village" },
+            complete = QuestState(92514, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.430, 0.432, "Coriella Calmbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-welcome-to-shendar-village-93461",
             kind = "turnin",
-            priority = 624,
+            priority = 710,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1503,266 +1179,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-criminal-element",
-            kind = "accept",
-            priority = 625,
-            conditions = { level = { min = 4 } },
-            text = "Accept The Criminal Element from Constable Aonda.",
-            dependsOn = { "turnin-welcome-to-shendar-village", "turnin-welcome-to-shendar-village-93461" },
-            complete = QuestState(92517, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-criminal-element",
-            kind = "objective",
-            priority = 940,
-            conditions = { level = { min = 4 } },
-            text = "Kill 10 Highlands Bandits and their leader, \"Badwind\" Bennic in the Shen'dar Highlands.",
-            dependsOn = { "accept-the-criminal-element" },
-            complete = QuestState(92517, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.508, 0.340, "\"Badwind\" Bennic",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-criminal-element",
-            kind = "turnin",
-            priority = 950,
-            conditions = { level = { min = 4 } },
-            text = "Turn in The Criminal Element to Constable Aonda.",
-            dependsOn = { "objective-the-criminal-element" },
-            complete = QuestState(92517, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-infiltrating-the-cult",
-            kind = "accept",
-            priority = 960,
-            conditions = { level = { min = 5 } },
-            text = "Accept Infiltrating the Cult from Constable Aonda.",
-            dependsOn = { "turnin-the-criminal-element" },
-            complete = QuestState(93036, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-infiltrating-the-cult",
-            kind = "turnin",
-            priority = 961,
-            conditions = { level = { min = 5 } },
-            text = "Speak with Sania Silverstream in Shen'dar Village.",
-            dependsOn = { "accept-infiltrating-the-cult" },
-            complete = QuestState(93036, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-falaath-village",
-            kind = "accept",
-            priority = 970,
-            conditions = { level = { min = 5 } },
-            text = "Accept Falaath Village from Sania Silverstream.",
-            dependsOn = { "turnin-infiltrating-the-cult" },
-            complete = QuestState(92529, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-falaath-village",
-            kind = "turnin",
-            priority = 971,
-            conditions = { level = { min = 5 } },
-            text = "Report to Missionary Jasaan near the entrance to Falaath Village.",
-            dependsOn = { "accept-falaath-village" },
-            complete = QuestState(92529, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-among-the-faithful",
-            kind = "accept",
-            priority = 980,
-            conditions = { level = { min = 5 } },
-            text = "Accept Among the Faithful from Missionary Jasaan.",
-            dependsOn = { "turnin-falaath-village" },
-            complete = QuestState(92528, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-among-the-faithful",
-            kind = "turnin",
-            priority = 981,
-            conditions = { level = { min = 5 } },
-            text = "Investigate Falaath Village, then return to Constable Aonda.",
-            dependsOn = { "accept-among-the-faithful" },
-            complete = QuestState(92528, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-havoc-in-the-highlands",
-            kind = "accept",
-            priority = 990,
-            conditions = { level = { min = 5 } },
-            text = "Accept Havoc in the Highlands from Constable Aonda.",
-            dependsOn = { "turnin-among-the-faithful" },
-            complete = QuestState(92550, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-havoc-in-the-highlands",
-            kind = "objective",
-            priority = 1000,
-            conditions = { level = { min = 5 } },
-            text = "Travel to the ruins of Falaath Village and slay 6 Al'Aketh Stormcallers, 4 Living Lightning and take the head of Commander Cyclas.",
-            dependsOn = { "accept-havoc-in-the-highlands" },
-            complete = QuestState(92550, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.502, 0.568, "Commander Cyclas",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-havoc-in-the-highlands",
-            kind = "turnin",
-            priority = 1010,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Havoc in the Highlands to Constable Aonda.",
-            dependsOn = { "objective-havoc-in-the-highlands" },
-            complete = QuestState(92550, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-western-watch",
-            kind = "accept",
-            priority = 1020,
-            conditions = { level = { min = 5 } },
-            text = "Accept The Western Watch from Constable Aonda.",
-            dependsOn = { "turnin-havoc-in-the-highlands" },
-            complete = QuestState(93926, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-western-watch",
-            kind = "turnin",
-            priority = 1021,
-            conditions = { level = { min = 5 } },
-            text = "Find Peacekeeper Vaaniel at the western watchtower.",
-            dependsOn = { "accept-the-western-watch" },
-            complete = QuestState(93926, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-last-request",
-            kind = "accept",
-            priority = 1030,
-            conditions = { level = { min = 5 } },
-            text = "Accept A Last Request from Peacekeeper Vaaniel.",
-            dependsOn = { "turnin-the-western-watch" },
-            complete = QuestState(93927, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-a-last-request",
-            kind = "objective",
-            priority = 1040,
-            conditions = { level = { min = 5 } },
-            text = "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
-            dependsOn = { "accept-a-last-request" },
-            complete = QuestState(93927, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.410, 0.640, "Skypriest Aanders",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-last-request",
-            kind = "turnin",
-            priority = 1050,
-            conditions = { level = { min = 5 } },
-            text = "Turn in A Last Request to Constable Aonda.",
-            dependsOn = { "objective-a-last-request" },
-            complete = QuestState(93927, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-windshapers",
-            kind = "accept",
-            priority = 1060,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept The Windshapers from Illaya Amberwind.",
-            dependsOn = { "turnin-welcome-to-shendar-village" },
-            complete = QuestState(92595, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-windshapers",
-            kind = "turnin",
-            priority = 1070,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Listen to what Illaya Amberwind has to say.",
-            dependsOn = { "accept-the-windshapers" },
-            complete = QuestState(92595, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-the-high-order",
             kind = "accept",
-            priority = 1080,
+            priority = 720,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1780,7 +1199,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-high-order",
             kind = "turnin",
-            priority = 1090,
+            priority = 730,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1796,63 +1215,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-meddlesome-mages",
-            kind = "accept",
-            priority = 1100,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Meddlesome Mages from Illaya Amberwind.",
-            dependsOn = { "turnin-the-windshapers" },
-            complete = QuestState(94411, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-meddlesome-mages",
-            kind = "objective",
-            priority = 1110,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Slay 6 High Order Apprentices in Shen'dar Highlands.",
-            dependsOn = { "accept-meddlesome-mages" },
-            complete = QuestState(94411, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.460, 0.400, "High Order Apprentice",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-meddlesome-mages",
-            kind = "turnin",
-            priority = 1120,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Meddlesome Mages to Illaya Amberwind.",
-            dependsOn = { "objective-meddlesome-mages" },
-            complete = QuestState(94411, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-a-magical-affront",
             kind = "accept",
-            priority = 1130,
+            priority = 740,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1868,9 +1233,321 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-welcome-to-shendar-village",
+            kind = "turnin",
+            priority = 750,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Welcome to Shen'dar Village to Constable Aonda.",
+            dependsOn = { "objective-welcome-to-shendar-village" },
+            complete = QuestState(92514, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-windshapers",
+            kind = "accept",
+            priority = 760,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept The Windshapers from Illaya Amberwind.",
+            dependsOn = { "turnin-welcome-to-shendar-village" },
+            complete = QuestState(92595, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-windshapers",
+            kind = "turnin",
+            priority = 770,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Listen to what Illaya Amberwind has to say.",
+            dependsOn = { "accept-the-windshapers" },
+            complete = QuestState(92595, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-meddlesome-mages",
+            kind = "accept",
+            priority = 780,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Meddlesome Mages from Illaya Amberwind.",
+            dependsOn = { "turnin-the-windshapers" },
+            complete = QuestState(94411, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-criminal-element",
+            kind = "accept",
+            priority = 790,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Criminal Element from Constable Aonda.",
+            dependsOn = { "turnin-welcome-to-shendar-village", "turnin-welcome-to-shendar-village-93461" },
+            complete = QuestState(92517, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-pilfered-windstones",
+            kind = "accept",
+            priority = 800,
+            dependsOn = { "accept-the-criminal-element" },
+            conditions = { level = { min = 4 } },
+            text = "Accept Pilfered Windstones from Teeri Wellwind.",
+            complete = QuestState(93319, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-hippogryph-harrassment",
+            kind = "accept",
+            priority = 810,
+            dependsOn = { "accept-pilfered-windstones" },
+            conditions = { level = { min = 4 } },
+            text = "Accept Hippogryph Harrassment from Teeri Wellwind.",
+            complete = QuestState(92516, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-problem-with-prideclaws",
+            kind = "accept",
+            priority = 820,
+            dependsOn = { "accept-hippogryph-harrassment" },
+            conditions = { level = { min = 4 } },
+            text = "Accept The Problem With Prideclaws from Indari Sunseam.",
+            complete = QuestState(92515, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-little-beauty",
+            kind = "accept",
+            priority = 830,
+            dependsOn = { "accept-the-problem-with-prideclaws" },
+            conditions = { level = { min = 4 } },
+            text = "Accept A Little Beauty from Taleen Shimmerthread.",
+            complete = QuestState(93951, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-restocking-the-larders",
+            kind = "accept",
+            priority = 840,
+            dependsOn = { "accept-a-little-beauty" },
+            conditions = { level = { min = 4 } },
+            text = "Accept Restocking the Larders from Zerril Softbreeze.",
+            complete = QuestState(92553, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-restocking-the-larders",
+            kind = "objective",
+            priority = 850,
+            conditions = { level = { min = 4 } },
+            text = "Collect 3 Small Eggs and 8 Strider Meat from creatures found throughout the Shen'dar Highlands.",
+            dependsOn = { "accept-restocking-the-larders" },
+            complete = QuestState(92553, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.452, "Galestriders near Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-problem-with-prideclaws",
+            kind = "objective",
+            priority = 860,
+            conditions = { level = { min = 4 } },
+            text = "Collect 10 Prideclaw Pelts from the Prideclaws in Shen'dar Highlands.",
+            dependsOn = { "accept-the-problem-with-prideclaws" },
+            complete = QuestState(92515, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.412, 0.456, "Prideclaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-meddlesome-mages",
+            kind = "objective",
+            priority = 870,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Slay 6 High Order Apprentices in Shen'dar Highlands.",
+            dependsOn = { "accept-meddlesome-mages" },
+            complete = QuestState(94411, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.460, 0.400, "High Order Apprentice",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-criminal-element",
+            kind = "objective",
+            priority = 880,
+            conditions = { level = { min = 4 } },
+            text = "Kill 10 Highlands Bandits and their leader, \"Badwind\" Bennic in the Shen'dar Highlands.",
+            dependsOn = { "accept-the-criminal-element" },
+            complete = QuestState(92517, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.508, 0.340, "\"Badwind\" Bennic",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-pilfered-windstones",
+            kind = "objective",
+            priority = 890,
+            conditions = { level = { min = 4 } },
+            text = "Collect 10 Pilfered Windstones from the Highlands Bandits in the Shen'dar Highlands.",
+            dependsOn = { "accept-pilfered-windstones" },
+            complete = QuestState(93319, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.430, 0.464, "Captured Bandit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-meddlesome-mages",
+            kind = "turnin",
+            priority = 900,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Meddlesome Mages to Illaya Amberwind.",
+            dependsOn = { "objective-meddlesome-mages" },
+            complete = QuestState(94411, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.436, 0.448, "Illaya Amberwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-wanted-vulgara-the-insatiable",
+            kind = "accept",
+            priority = 910,
+            dependsOn = { "objective-pilfered-windstones" },
+            conditions = { level = { min = 4 } },
+            text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
+            complete = QuestState(93318, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-adventurer",
+            kind = "turnin",
+            priority = 920,
+            conditions = { level = { min = 4 } },
+            text = "Speak to Raan Wildwind near Shen'dar Village.",
+            dependsOn = { "accept-the-adventurer" },
+            complete = QuestState(96638, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-great-outdoors",
+            kind = "accept",
+            priority = 930,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Great Outdoors from Raan Wildwind.",
+            dependsOn = { "turnin-the-adventurer" },
+            complete = QuestState(96101, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-great-outdoors",
+            kind = "objective",
+            priority = 940,
+            conditions = { level = { min = 4 } },
+            text = "Type /sit at Raan Wildwind's campfire and wait until you gain the Boosted Rest buff.",
+            dependsOn = { "accept-the-great-outdoors" },
+            complete = QuestState(96101, "complete"),
+        },
+        {
+            id = "turnin-the-great-outdoors",
+            kind = "turnin",
+            priority = 950,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Great Outdoors to Raan Wildwind.",
+            dependsOn = { "objective-the-great-outdoors" },
+            complete = QuestState(96101, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-camping-101-cooking",
+            kind = "accept",
+            priority = 960,
+            conditions = { level = { min = 4 } },
+            text = "Accept Camping 101: Cooking from Raan Wildwind.",
+            dependsOn = { "turnin-the-great-outdoors" },
+            complete = QuestState(96646, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.416, 0.448, "Raan Wildwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "objective-a-magical-affront",
             kind = "objective",
-            priority = 1140,
+            priority = 970,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1886,9 +1563,191 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-hippogryph-harrassment",
+            kind = "objective",
+            priority = 980,
+            conditions = { level = { min = 4 } },
+            text = "Slay 8 Hippogryph Youths, 6 Hippogryph Protectors and a Hippogryph Matriarch in the Shen'dar Highlands.",
+            dependsOn = { "accept-hippogryph-harrassment" },
+            complete = QuestState(92516, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph Youth",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-a-little-beauty",
+            kind = "objective",
+            priority = 990,
+            conditions = { level = { min = 4 } },
+            text = "Collect 8 Hippogryph Down feathers around the nesting grounds southwest of Shen'dar Village.",
+            dependsOn = { "accept-a-little-beauty" },
+            complete = QuestState(93951, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.378, 0.510, "Hippogryph nesting grounds",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-wanted-vulgara-the-insatiable",
+            kind = "objective",
+            priority = 1000,
+            conditions = { level = { min = 4 } },
+            text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
+            dependsOn = { "accept-wanted-vulgara-the-insatiable" },
+            complete = QuestState(93318, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Vulgara wanted notice in Shen'dar Village",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-restocking-the-larders",
+            kind = "turnin",
+            priority = 1010,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Restocking the Larders to Zerril Softbreeze.",
+            dependsOn = { "objective-restocking-the-larders" },
+            complete = QuestState(92553, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-camping-101-cooking",
+            kind = "turnin",
+            priority = 1020,
+            conditions = { level = { min = 4 } },
+            text = "Speak with Zerril Softbreeze in Shen'dar Village to learn to become a cook.",
+            dependsOn = { "accept-camping-101-cooking" },
+            complete = QuestState(96646, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.438, 0.438, "Zerril Softbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-little-beauty",
+            kind = "turnin",
+            priority = 1030,
+            conditions = { level = { min = 4 } },
+            text = "Turn in A Little Beauty to Taleen Shimmerthread.",
+            dependsOn = { "objective-a-little-beauty" },
+            complete = QuestState(93951, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.442, "Taleen Shimmerthread",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-problem-with-prideclaws",
+            kind = "turnin",
+            priority = 1040,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Problem With Prideclaws to Indari Sunseam. The reward is a Simple Leather Satchel.",
+            dependsOn = { "objective-the-problem-with-prideclaws" },
+            complete = QuestState(92515, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.446, 0.444, "Indari Sunseam",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-hippogryph-harrassment",
+            kind = "turnin",
+            priority = 1050,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Hippogryph Harrassment to Teeri Wellwind.",
+            dependsOn = { "objective-hippogryph-harrassment" },
+            complete = QuestState(92516, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-pilfered-windstones",
+            kind = "turnin",
+            priority = 1060,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Pilfered Windstones to Teeri Wellwind.",
+            dependsOn = { "objective-pilfered-windstones" },
+            complete = QuestState(93319, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.444, 0.450, "Teeri Wellwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-wanted-vulgara-the-insatiable",
+            kind = "turnin",
+            priority = 1070,
+            conditions = { level = { min = 4 } },
+            text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
+            dependsOn = { "objective-wanted-vulgara-the-insatiable" },
+            complete = QuestState(93318, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-criminal-element",
+            kind = "turnin",
+            priority = 1080,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Criminal Element to Constable Aonda.",
+            dependsOn = { "objective-the-criminal-element" },
+            complete = QuestState(92517, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-infiltrating-the-cult",
+            kind = "accept",
+            priority = 1090,
+            conditions = { level = { min = 5 } },
+            text = "Accept Infiltrating the Cult from Constable Aonda.",
+            dependsOn = { "turnin-the-criminal-element" },
+            complete = QuestState(93036, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-infiltrating-the-cult",
+            kind = "turnin",
+            priority = 1100,
+            conditions = { level = { min = 5 } },
+            text = "Speak with Sania Silverstream in Shen'dar Village.",
+            dependsOn = { "accept-infiltrating-the-cult" },
+            complete = QuestState(93036, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-falaath-village",
+            kind = "accept",
+            priority = 1110,
+            conditions = { level = { min = 5 } },
+            text = "Accept Falaath Village from Sania Silverstream.",
+            dependsOn = { "turnin-infiltrating-the-cult" },
+            complete = QuestState(92529, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.448, 0.454, "Sania Silverstream",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-a-magical-affront",
             kind = "turnin",
-            priority = 1150,
+            priority = 1120,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1904,45 +1763,178 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-to-valanaar",
-            kind = "accept",
-            priority = 1160,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 6 } },
-                },
+            id = "turnin-falaath-village",
+            kind = "turnin",
+            priority = 1130,
+            conditions = { level = { min = 5 } },
+            text = "Report to Missionary Jasaan near the entrance to Falaath Village.",
+            dependsOn = { "accept-falaath-village" },
+            complete = QuestState(92529, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
+                    "Travel to Zephras Isle."),
             },
-            text = "Accept To Valanaar from Constable Aonda.",
-            dependsOn = { "turnin-havoc-in-the-highlands" },
-            complete = QuestState(92579, "activeOrCompleted"),
+        },
+        {
+            id = "accept-among-the-faithful",
+            kind = "accept",
+            priority = 1140,
+            conditions = { level = { min = 5 } },
+            text = "Accept Among the Faithful from Missionary Jasaan.",
+            dependsOn = { "turnin-falaath-village" },
+            complete = QuestState(92528, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.468, 0.562, "Missionary Jasaan",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-among-the-faithful",
+            kind = "turnin",
+            priority = 1150,
+            conditions = { level = { min = 5 } },
+            text = "Investigate Falaath Village, then return to Constable Aonda.",
+            dependsOn = { "accept-among-the-faithful" },
+            complete = QuestState(92528, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-to-valanaar",
-            kind = "turnin",
-            priority = 1170,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Deliver Aonda's Written Report to Valennia Stormfist in Valanaar.",
-            dependsOn = { "accept-to-valanaar" },
-            complete = QuestState(92579, "completed"),
+            id = "accept-havoc-in-the-highlands",
+            kind = "accept",
+            priority = 1160,
+            conditions = { level = { min = 5 } },
+            text = "Accept Havoc in the Highlands from Constable Aonda.",
+            dependsOn = { "turnin-among-the-faithful" },
+            complete = QuestState(92550, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-stolen-supplies",
+            kind = "accept",
+            priority = 1170,
+            dependsOn = { "accept-havoc-in-the-highlands" },
+            conditions = { level = { min = 5 } },
+            text = "Accept Stolen Supplies from Danarii Bellowveil.",
+            complete = QuestState(92551, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-havoc-in-the-highlands",
+            kind = "objective",
+            priority = 1180,
+            conditions = { level = { min = 5 } },
+            text = "Travel to the ruins of Falaath Village and slay 6 Al'Aketh Stormcallers, 4 Living Lightning and take the head of Commander Cyclas.",
+            dependsOn = { "accept-havoc-in-the-highlands" },
+            complete = QuestState(92550, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.502, 0.568, "Commander Cyclas",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-stolen-supplies",
+            kind = "turnin",
+            priority = 1190,
+            conditions = { level = { min = 5 } },
+            text = "Collect 10 packs of Stolen Shen'dar Supplies from Falaath Village in the Shen'dar Highlands.",
+            dependsOn = { "accept-stolen-supplies" },
+            complete = QuestState(92551, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.452, "Danarii Bellowveil",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-havoc-in-the-highlands",
+            kind = "turnin",
+            priority = 1200,
+            conditions = { level = { min = 5 } },
+            text = "Turn in Havoc in the Highlands to Constable Aonda.",
+            dependsOn = { "objective-havoc-in-the-highlands" },
+            complete = QuestState(92550, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-western-watch",
+            kind = "accept",
+            priority = 1210,
+            conditions = { level = { min = 5 } },
+            text = "Accept The Western Watch from Constable Aonda.",
+            dependsOn = { "turnin-havoc-in-the-highlands" },
+            complete = QuestState(93926, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-western-watch",
+            kind = "turnin",
+            priority = 1220,
+            conditions = { level = { min = 5 } },
+            text = "Find Peacekeeper Vaaniel at the western watchtower.",
+            dependsOn = { "accept-the-western-watch" },
+            complete = QuestState(93926, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-last-request",
+            kind = "accept",
+            priority = 1230,
+            conditions = { level = { min = 5 } },
+            text = "Accept A Last Request from Peacekeeper Vaaniel.",
+            dependsOn = { "turnin-the-western-watch" },
+            complete = QuestState(93927, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.424, 0.620, "Peacekeeper Vaaniel",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-a-last-request",
+            kind = "objective",
+            priority = 1240,
+            conditions = { level = { min = 5 } },
+            text = "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
+            dependsOn = { "accept-a-last-request" },
+            complete = QuestState(93927, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.410, 0.640, "Skypriest Aanders",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-last-request",
+            kind = "turnin",
+            priority = 1250,
+            conditions = { level = { min = 5 } },
+            text = "Turn in A Last Request to Constable Aonda.",
+            dependsOn = { "objective-a-last-request" },
+            complete = QuestState(93927, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-to-valanaar-92701",
             kind = "accept",
-            priority = 1180,
+            priority = 1260,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1958,9 +1950,105 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-to-valanaar",
+            kind = "accept",
+            priority = 1270,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Accept To Valanaar from Constable Aonda.",
+            dependsOn = { "turnin-havoc-in-the-highlands" },
+            complete = QuestState(92579, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-deliver-the-signet",
+            kind = "accept",
+            priority = 1280,
+            conditions = { level = { min = 6 } },
+            text = "Accept Deliver the Signet from Constable Aonda.",
+            dependsOn = { "turnin-a-last-request" },
+            complete = QuestState(93948, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-crab-season",
+            kind = "accept",
+            priority = 1290,
+            dependsOn = { "accept-deliver-the-signet" },
+            conditions = { level = { min = 4 } },
+            text = "Accept Crab Season from Nyalah Brightfire.",
+            complete = QuestState(93317, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.606, 0.726, "Nyalah Brightfire",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-blood-tithe",
+            kind = "accept",
+            priority = 1300,
+            dependsOn = { "accept-crab-season" },
+            conditions = { level = { min = 5 } },
+            text = "Accept Blood Tithe from Alvarion Windfield.",
+            complete = QuestState(92679, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.620, 0.732, "Alvarion Windfield",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-unnerving-silence",
+            kind = "accept",
+            priority = 1310,
+            dependsOn = { "accept-blood-tithe" },
+            conditions = { level = { min = 8 } },
+            text = "Accept Unnerving Silence from Lotheluum Starbreeze.",
+            complete = QuestState(94484, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-aid-for-the-refugees",
+            kind = "accept",
+            priority = 1320,
+            dependsOn = { "accept-unnerving-silence" },
+            conditions = { level = { min = 8 } },
+            text = "Accept Aid For The Refugees from Ealaane Nimbuswalker.",
+            complete = QuestState(94896, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-deliver-the-signet",
+            kind = "turnin",
+            priority = 1330,
+            conditions = { level = { min = 6 } },
+            text = "Deliver the Shadowsong Family Signet to Talaanis Shadowsong in Valanaar.",
+            dependsOn = { "accept-deliver-the-signet" },
+            complete = QuestState(93948, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-to-valanaar-92701",
             kind = "turnin",
-            priority = 1190,
+            priority = 1340,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1976,331 +2064,28 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-deliver-the-signet",
-            kind = "accept",
-            priority = 1200,
-            conditions = { level = { min = 6 } },
-            text = "Accept Deliver the Signet from Constable Aonda.",
-            dependsOn = { "turnin-a-last-request" },
-            complete = QuestState(93948, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-deliver-the-signet",
-            kind = "turnin",
-            priority = 1201,
-            conditions = { level = { min = 6 } },
-            text = "Deliver the Shadowsong Family Signet to Talaanis Shadowsong in Valanaar.",
-            dependsOn = { "accept-deliver-the-signet" },
-            complete = QuestState(93948, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-crab-season",
-            kind = "accept",
-            priority = 1210,
-            conditions = { level = { min = 4 } },
-            text = "Accept Crab Season from Nyalah Brightfire.",
-            complete = QuestState(93317, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.606, 0.726, "Nyalah Brightfire",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-crab-season",
-            kind = "objective",
-            priority = 1220,
-            conditions = { level = { min = 4 } },
-            text = "Collect 6 pieces of Windsong Crawler Meat.",
-            dependsOn = { "accept-crab-season" },
-            complete = QuestState(93317, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.512, 0.696, "Windsong Crawler",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-crab-season",
-            kind = "turnin",
-            priority = 1230,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Crab Season to Nyalah Brightfire.",
-            dependsOn = { "objective-crab-season" },
-            complete = QuestState(93317, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.606, 0.726, "Nyalah Brightfire",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-blood-tithe",
-            kind = "accept",
-            priority = 1240,
-            conditions = { level = { min = 5 } },
-            text = "Accept Blood Tithe from Alvarion Windfield.",
-            complete = QuestState(92679, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.620, 0.732, "Alvarion Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-blood-tithe",
-            kind = "turnin",
-            priority = 1250,
-            conditions = { level = { min = 5 } },
-            text = "Listen to what Alvarion Windfield has to say and find Aamelia Windfield at the Windfield Orchard.",
-            dependsOn = { "accept-blood-tithe" },
-            complete = QuestState(92679, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-what-is-my-purpose",
-            kind = "accept",
-            priority = 1260,
-            conditions = { level = { min = 5 } },
-            text = "Accept What Is My Purpose? from Malfunctioning Cyclone Construct.",
-            complete = QuestState(92698, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.486, 0.782, "Malfunctioning Cyclone Construct",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-make-yourself-useful",
-            kind = "accept",
-            priority = 1270,
-            conditions = { level = { min = 5 } },
-            text = "Accept Make Yourself Useful from Aamelia Windfield.",
-            dependsOn = { "turnin-blood-tithe" },
-            complete = QuestState(92682, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-ornery-ornery-galestriders",
-            kind = "accept",
-            priority = 1280,
-            conditions = { level = { min = 5 } },
-            text = "Accept Ornery Ornery Galestriders from Aamelia Windfield.",
-            dependsOn = { "turnin-blood-tithe" },
-            complete = QuestState(92684, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-flutterfly-dust",
-            kind = "accept",
-            priority = 1290,
-            conditions = { level = { min = 5 } },
-            text = "Accept Flutterfly Dust from Aamelia Windfield.",
-            dependsOn = { "turnin-blood-tithe" },
-            complete = QuestState(92683, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-hills-have-eyes",
-            kind = "accept",
-            priority = 1300,
-            conditions = { level = { min = 5 } },
-            text = "Accept The Hills Have Eyes from Aamelia Windfield.",
-            dependsOn = { "turnin-blood-tithe" },
-            complete = QuestState(92685, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-make-yourself-useful",
-            kind = "objective",
-            priority = 1310,
-            conditions = { level = { min = 5 } },
-            text = "Gather 10 Ripe Stormapples and slay 5 Hungry Bandits at the Windfield Orchard.",
-            dependsOn = { "accept-make-yourself-useful" },
-            complete = QuestState(92682, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.806, "Hungry Bandit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-ornery-ornery-galestriders",
-            kind = "objective",
-            priority = 1320,
-            conditions = { level = { min = 5 } },
-            text = "Gather 7 Lowlands Galestrider Tenderloins from the Ornery Galestriders found throughout the Gustberry Lowlands.",
-            dependsOn = { "accept-ornery-ornery-galestriders" },
-            complete = QuestState(92684, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.532, 0.722, "Ornery Galestrider",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-hills-have-eyes",
-            kind = "objective",
-            priority = 1330,
-            conditions = { level = { min = 5 } },
-            text = "Loot 7 Blood-Stained Bandit Masks from Highwayman Bandits in the Gustberry Lowlands.",
-            dependsOn = { "accept-the-hills-have-eyes" },
-            complete = QuestState(92685, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.438, 0.746, "Bandit Highwayman",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-what-is-my-purpose",
-            kind = "turnin",
-            priority = 1340,
-            conditions = { level = { min = 5 } },
-            text = "Speak with Aamelia Windfield about the Malfunctioning Cyclone Construct.",
-            dependsOn = { "accept-what-is-my-purpose" },
-            complete = QuestState(92698, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-make-yourself-useful",
+            id = "turnin-to-valanaar",
             kind = "turnin",
             priority = 1350,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Make Yourself Useful to Aamelia Windfield.",
-            dependsOn = { "objective-make-yourself-useful" },
-            complete = QuestState(92682, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
             },
-        },
-        {
-            id = "turnin-ornery-ornery-galestriders",
-            kind = "turnin",
-            priority = 1360,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Ornery Ornery Galestriders to Aamelia Windfield.",
-            dependsOn = { "objective-ornery-ornery-galestriders" },
-            complete = QuestState(92684, "completed"),
+            text = "Deliver Aonda's Written Report to Valennia Stormfist in Valanaar.",
+            dependsOn = { "accept-to-valanaar" },
+            complete = QuestState(92579, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-flutterfly-dust",
-            kind = "turnin",
-            priority = 1370,
-            conditions = { level = { min = 5 } },
-            text = "Gather 5 Flutterfly Dust from the Flutterflies around the Gustberry Lowlands.",
-            dependsOn = { "accept-flutterfly-dust" },
-            complete = QuestState(92683, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-hills-have-eyes",
-            kind = "turnin",
-            priority = 1380,
-            conditions = { level = { min = 5 } },
-            text = "Turn in The Hills Have Eyes to Aamelia Windfield.",
-            dependsOn = { "objective-the-hills-have-eyes" },
-            complete = QuestState(92685, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-standing-our-ground",
-            kind = "accept",
-            priority = 1390,
-            conditions = { level = { min = 5 } },
-            text = "Accept Standing Our Ground from Aamelia Windfield.",
-            dependsOn = { "turnin-blood-tithe" },
-            complete = QuestState(92693, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-standing-our-ground",
-            kind = "objective",
-            priority = 1400,
-            conditions = { level = { min = 5 } },
-            text = "Speak with Aamelia Windfield when you are ready to confront the bandit leader.",
-            dependsOn = { "accept-standing-our-ground" },
-            complete = QuestState(92693, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.476, 0.778, "Ferauu the Bludgeon",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-standing-our-ground",
-            kind = "turnin",
-            priority = 1410,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Standing Our Ground to Aamelia Windfield.",
-            dependsOn = { "objective-standing-our-ground" },
-            complete = QuestState(92693, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-deliver-the-news",
-            kind = "accept",
-            priority = 1420,
-            conditions = { level = { min = 5 } },
-            text = "Accept Deliver the News from Aamelia Windfield.",
-            dependsOn = { "turnin-standing-our-ground" },
-            complete = QuestState(92703, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-deliver-the-news",
-            kind = "turnin",
-            priority = 1421,
-            conditions = { level = { min = 5 } },
-            text = "Speak with Alvarion Windfield in Valanaar.",
-            dependsOn = { "accept-deliver-the-news" },
-            complete = QuestState(92703, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.620, 0.732, "Alvarion Windfield",
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-the-supreme-magister",
             kind = "accept",
-            priority = 1430,
+            priority = 1360,
+            dependsOn = { "turnin-deliver-the-signet" },
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2315,9 +2100,53 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-the-grand-skyseer",
+            kind = "accept",
+            priority = 1370,
+            dependsOn = { "turnin-deliver-the-signet" },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept The Grand Skyseer from Valennia Stormfist.",
+            complete = QuestState(92700, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-bugged",
+            kind = "accept",
+            priority = 1380,
+            dependsOn = { "turnin-deliver-the-signet" },
+            conditions = { level = { min = 6 } },
+            text = "Accept Bugged from Valennia Stormfist.",
+            complete = QuestState(93949, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-bugged",
+            kind = "objective",
+            priority = 1390,
+            conditions = { level = { min = 6 } },
+            text = "Exterminate 8 enchanted skyhoppers in the Gustberry Lowlands.",
+            dependsOn = { "accept-bugged" },
+            complete = QuestState(93949, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.620, 0.732, "Gustberry Lowlands outside Valanaar",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-the-supreme-magister",
             kind = "turnin",
-            priority = 1440,
+            priority = 1400,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2335,7 +2164,8 @@ ns:RegisterGuide({
         {
             id = "accept-a-grand-adventure",
             kind = "accept",
-            priority = 1450,
+            priority = 1410,
+            dependsOn = { "objective-bugged" },
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2350,9 +2180,45 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-the-missing-scholar",
+            kind = "accept",
+            priority = 1420,
+            dependsOn = { "objective-bugged" },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept The Missing Scholar from Dondallion Whisperwind.",
+            complete = QuestState(92727, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.798, "Dondallion Whisperwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-unwelcome-visitors",
+            kind = "accept",
+            priority = 1430,
+            dependsOn = { "objective-bugged" },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Accept Unwelcome Visitors from Iaadaria Bitterwind.",
+            complete = QuestState(92741, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.796, "Iaadaria Bitterwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "turnin-a-grand-adventure",
             kind = "turnin",
-            priority = 1460,
+            priority = 1440,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2368,26 +2234,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-grand-skyseer",
-            kind = "accept",
-            priority = 1470,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept The Grand Skyseer from Valennia Stormfist.",
-            complete = QuestState(92700, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "turnin-the-grand-skyseer",
             kind = "turnin",
-            priority = 1480,
+            priority = 1450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2405,7 +2254,8 @@ ns:RegisterGuide({
         {
             id = "accept-a-grand-adventure-92708",
             kind = "accept",
-            priority = 1490,
+            priority = 1460,
+            dependsOn = { "objective-bugged" },
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2420,27 +2270,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-a-grand-adventure-92708",
-            kind = "turnin",
-            priority = 1500,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Listen to what Ayessa Dawnsinger has to say.",
-            dependsOn = { "accept-a-grand-adventure-92708" },
-            complete = QuestState(92708, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-the-broken-construct",
             kind = "accept",
-            priority = 1510,
+            priority = 1470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2450,6 +2282,78 @@ ns:RegisterGuide({
             text = "Accept The Broken Construct from Ayessa Dawnsinger.",
             dependsOn = { "turnin-the-grand-skyseer" },
             complete = QuestState(93735, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-unwelcome-spirits",
+            kind = "accept",
+            priority = 1480,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Unwelcome Spirits from Endaria Mistgaze.",
+            dependsOn = { "turnin-the-grand-skyseer" },
+            complete = QuestState(93736, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.582, 0.782, "Endaria Mistgaze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-unwelcome-spirits",
+            kind = "objective",
+            priority = 1490,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Gather 10 Wind Hollow Essences in Shadowgale Forest. Wind Hollows can also drop a Rusty Gadget, which starts a quest.",
+            dependsOn = { "accept-unwelcome-spirits" },
+            complete = QuestState(93736, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.570, 0.294, "Wind Hollow",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-unwelcome-spirits",
+            kind = "turnin",
+            priority = 1500,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Unwelcome Spirits to Endaria Mistgaze.",
+            dependsOn = { "objective-unwelcome-spirits" },
+            complete = QuestState(93736, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.582, 0.782, "Endaria Mistgaze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-grand-adventure-92708",
+            kind = "turnin",
+            priority = 1510,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Listen to what Ayessa Dawnsinger has to say.",
+            dependsOn = { "accept-a-grand-adventure-92708" },
+            complete = QuestState(92708, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
                     "Travel to Zephras Isle."),
@@ -2528,1393 +2432,257 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-broken-construct-93738",
-            kind = "accept",
-            priority = 1560,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept The Broken Construct from Riaani Nightwind.",
-            dependsOn = { "turnin-the-broken-construct-93737" },
-            complete = QuestState(93738, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.730, "Riaani Nightwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-broken-construct-93738",
+            id = "turnin-blood-tithe",
             kind = "turnin",
-            priority = 1570,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Report back to Ayessa Dawnsinger in Valanaar.",
-            dependsOn = { "accept-the-broken-construct-93738" },
-            complete = QuestState(93738, "completed"),
+            priority = 1560,
+            conditions = { level = { min = 5 } },
+            text = "Listen to what Alvarion Windfield has to say and find Aamelia Windfield at the Windfield Orchard.",
+            dependsOn = { "accept-blood-tithe" },
+            complete = QuestState(92679, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "accept-a-firm-response",
+            id = "accept-make-yourself-useful",
+            kind = "accept",
+            priority = 1570,
+            conditions = { level = { min = 5 } },
+            text = "Accept Make Yourself Useful from Aamelia Windfield.",
+            dependsOn = { "turnin-blood-tithe" },
+            complete = QuestState(92682, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-ornery-ornery-galestriders",
             kind = "accept",
             priority = 1580,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept A Firm Response from Ayessa Dawnsinger.",
-            dependsOn = { "turnin-the-broken-construct-93738" },
-            complete = QuestState(93746, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Accept Ornery Ornery Galestriders from Aamelia Windfield.",
+            dependsOn = { "turnin-blood-tithe" },
+            complete = QuestState(92684, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-a-firm-response",
-            kind = "objective",
+            id = "accept-flutterfly-dust",
+            kind = "accept",
             priority = 1590,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Confront Belthaan Brightwish along the road to the Shrine of Akir.",
-            dependsOn = { "accept-a-firm-response" },
-            complete = QuestState(93746, "complete"),
+            conditions = { level = { min = 5 } },
+            text = "Accept Flutterfly Dust from Aamelia Windfield.",
+            dependsOn = { "turnin-blood-tithe" },
+            complete = QuestState(92683, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.598, 0.570, "Belathaan Brightwish",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-a-firm-response",
-            kind = "turnin",
+            id = "objective-ornery-ornery-galestriders",
+            kind = "objective",
             priority = 1600,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in A Firm Response to Ayessa Dawnsinger.",
-            dependsOn = { "objective-a-firm-response" },
-            complete = QuestState(93746, "completed"),
+            conditions = { level = { min = 5 } },
+            text = "Gather 7 Lowlands Galestrider Tenderloins from the Ornery Galestriders found throughout the Gustberry Lowlands.",
+            dependsOn = { "accept-ornery-ornery-galestriders" },
+            complete = QuestState(92684, "complete"),
             route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                Point(MAP.ZEPHRAS, 0.532, 0.722, "Ornery Galestrider",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "accept-the-missing-scholar",
-            kind = "accept",
+            id = "objective-make-yourself-useful",
+            kind = "objective",
             priority = 1610,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept The Missing Scholar from Dondallion Whisperwind.",
-            complete = QuestState(92727, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Gather 10 Ripe Stormapples and slay 5 Hungry Bandits at the Windfield Orchard.",
+            dependsOn = { "accept-make-yourself-useful" },
+            complete = QuestState(92682, "complete"),
             route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.798, "Dondallion Whisperwind",
+                Point(MAP.ZEPHRAS, 0.466, 0.806, "Hungry Bandit",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-the-missing-scholar",
-            kind = "turnin",
-            priority = 1620,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Find what became of Fillion Flamebreeze on the road west of Valanaar.",
-            dependsOn = { "accept-the-missing-scholar" },
-            complete = QuestState(92727, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze's trail",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-missing-scholar-92849",
+            id = "accept-what-is-my-purpose",
             kind = "accept",
+            priority = 1620,
+            dependsOn = { "objective-make-yourself-useful" },
+            conditions = { level = { min = 5 } },
+            text = "Accept What Is My Purpose? from Malfunctioning Cyclone Construct.",
+            complete = QuestState(92698, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.486, 0.782, "Malfunctioning Cyclone Construct",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-make-yourself-useful",
+            kind = "turnin",
             priority = 1630,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept the next Missing Scholar step where you found Fillion Flamebreeze.",
-            dependsOn = { "turnin-the-missing-scholar" },
-            complete = QuestState(92849, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Turn in Make Yourself Useful to Aamelia Windfield.",
+            dependsOn = { "objective-make-yourself-useful" },
+            complete = QuestState(92682, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-the-missing-scholar-92849",
-            kind = "objective",
+            id = "turnin-ornery-ornery-galestriders",
+            kind = "turnin",
             priority = 1640,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Find Fillion Flamebreeze.",
-            dependsOn = { "accept-the-missing-scholar-92849" },
-            complete = QuestObjective(92849, 1, "Find Fillion"),
+            conditions = { level = { min = 5 } },
+            text = "Turn in Ornery Ornery Galestriders to Aamelia Windfield.",
+            dependsOn = { "objective-ornery-ornery-galestriders" },
+            complete = QuestState(92684, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-the-missing-scholar-92849-carry",
-            kind = "objective",
+            id = "turnin-what-is-my-purpose",
+            kind = "turnin",
             priority = 1650,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Carry Fillion Flamebreeze to safety while avoiding enemies.",
-            dependsOn = { "objective-the-missing-scholar-92849" },
-            complete = QuestObjective(92849, 2, "Carry Fillion"),
+            conditions = { level = { min = 5 } },
+            text = "Speak with Aamelia Windfield about the Malfunctioning Cyclone Construct.",
+            dependsOn = { "accept-what-is-my-purpose" },
+            complete = QuestState(92698, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.520, 0.694, "Carry Fillion Flamebreeze to safety",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-the-missing-scholar-92849",
+            id = "turnin-flutterfly-dust",
             kind = "turnin",
             priority = 1660,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in The Missing Scholar to Fillion Flamebreeze.",
-            dependsOn = { "objective-the-missing-scholar-92849-carry" },
-            complete = QuestState(92849, "completed"),
+            conditions = { level = { min = 5 } },
+            text = "Gather 5 Flutterfly Dust from the Flutterflies around the Gustberry Lowlands.",
+            dependsOn = { "accept-flutterfly-dust" },
+            complete = QuestState(92683, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.520, 0.694, "Fillion Flamebreeze",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "accept-the-missing-scholar-92850",
+            id = "accept-the-hills-have-eyes",
             kind = "accept",
             priority = 1670,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept The Missing Scholar from Fillion Flamebreeze.",
-            dependsOn = { "turnin-the-missing-scholar-92849" },
-            complete = QuestState(92850, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Accept The Hills Have Eyes from Aamelia Windfield.",
+            dependsOn = { "turnin-blood-tithe" },
+            complete = QuestState(92685, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.520, 0.694, "Fillion Flamebreeze",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-the-missing-scholar-92850",
+            id = "objective-the-hills-have-eyes",
             kind = "objective",
             priority = 1680,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Slay the Shriekling Matriarch in the Shriekling Den then return its head to Dondallion Whisperwind in Valanaar.",
-            dependsOn = { "accept-the-missing-scholar-92850" },
-            complete = QuestState(92850, "complete"),
+            conditions = { level = { min = 5 } },
+            text = "Loot 7 Blood-Stained Bandit Masks from Highwayman Bandits in the Gustberry Lowlands.",
+            dependsOn = { "accept-the-hills-have-eyes" },
+            complete = QuestState(92685, "complete"),
             route = {
-                Point(MAP.ZEPHRAS, 0.520, 0.658, "Shriekling Matriarch",
+                Point(MAP.ZEPHRAS, 0.438, 0.746, "Bandit Highwayman",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-the-missing-scholar-92850",
+            id = "turnin-the-hills-have-eyes",
             kind = "turnin",
             priority = 1690,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in The Missing Scholar to Dondallion Whisperwind.",
-            dependsOn = { "objective-the-missing-scholar-92850" },
-            complete = QuestState(92850, "completed"),
+            conditions = { level = { min = 5 } },
+            text = "Turn in The Hills Have Eyes to Aamelia Windfield.",
+            dependsOn = { "objective-the-hills-have-eyes" },
+            complete = QuestState(92685, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.798, "Dondallion Whisperwind",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "accept-catching-wind",
+            id = "accept-standing-our-ground",
             kind = "accept",
             priority = 1700,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Accept Catching Wind from Elaadrin Evengale.",
-            dependsOn = { "turnin-the-supreme-magister" },
-            complete = QuestState(92840, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Accept Standing Our Ground from Aamelia Windfield.",
+            dependsOn = { "turnin-blood-tithe" },
+            complete = QuestState(92693, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-catching-wind",
+            id = "objective-standing-our-ground",
             kind = "objective",
             priority = 1710,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Take the Index Esoteria to the Overlook Standing Stones in Shen'dar Highlands and use it once there. Protect the Index from harm as it gathers data.",
-            dependsOn = { "accept-catching-wind" },
-            complete = QuestState(92840, "complete"),
+            conditions = { level = { min = 5 } },
+            text = "Speak with Aamelia Windfield when you are ready to confront the bandit leader.",
+            dependsOn = { "accept-standing-our-ground" },
+            complete = QuestState(92693, "complete"),
             route = {
-                Point(MAP.ZEPHRAS, 0.480, 0.690, "Index Esoteria",
+                Point(MAP.ZEPHRAS, 0.476, 0.778, "Ferauu the Bludgeon",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "turnin-catching-wind",
+            id = "turnin-standing-our-ground",
             kind = "turnin",
             priority = 1720,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Turn in Catching Wind to Elaadrin Evengale.",
-            dependsOn = { "objective-catching-wind" },
-            complete = QuestState(92840, "completed"),
+            conditions = { level = { min = 5 } },
+            text = "Turn in Standing Our Ground to Aamelia Windfield.",
+            dependsOn = { "objective-standing-our-ground" },
+            complete = QuestState(92693, "completed"),
             route = {
-                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "accept-avenged-tenfold",
+            id = "accept-deliver-the-news",
             kind = "accept",
             priority = 1730,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Accept Avenged Tenfold from Elaadrin Evengale.",
-            dependsOn = { "turnin-catching-wind" },
-            complete = QuestState(92834, "activeOrCompleted"),
+            conditions = { level = { min = 5 } },
+            text = "Accept Deliver the News from Aamelia Windfield.",
+            dependsOn = { "turnin-standing-our-ground" },
+            complete = QuestState(92703, "activeOrCompleted"),
             route = {
-                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                Point(MAP.ZEPHRAS, 0.466, 0.818, "Aamelia Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
-            id = "objective-avenged-tenfold",
-            kind = "objective",
+            id = "turnin-deliver-the-news",
+            kind = "turnin",
             priority = 1740,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Collect 10 Al'Aketh Windstone Charms from Al'Aketh cultists found north of Valanaar at the Gustberry Fields or Shrine of Akir.",
-            dependsOn = { "accept-avenged-tenfold" },
-            complete = QuestState(92834, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.650, 0.654, "Al'Aketh cultists in the Gustberry Lowlands",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-avenged-tenfold",
-            kind = "turnin",
-            priority = 1750,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Turn in Avenged Tenfold to Elaadrin Evengale.",
-            dependsOn = { "objective-avenged-tenfold" },
-            complete = QuestState(92834, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-aid-for-the-refugees",
-            kind = "accept",
-            priority = 1760,
-            conditions = { level = { min = 8 } },
-            text = "Accept Aid For The Refugees from Ealaane Nimbuswalker.",
-            complete = QuestState(94896, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-aid-for-the-refugees",
-            kind = "objective",
-            priority = 1770,
-            conditions = { level = { min = 8 } },
-            text = "Collect 8 Abandoned Belongings in the Ruins of Ban'aethal.",
-            dependsOn = { "accept-aid-for-the-refugees" },
-            complete = QuestState(94896, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.570, 0.294, "Ruins of Ban'aethal",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-aid-for-the-refugees",
-            kind = "turnin",
-            priority = 1780,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Aid For The Refugees to Ealaane Nimbuswalker.",
-            dependsOn = { "objective-aid-for-the-refugees" },
-            complete = QuestState(94896, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-fate-of-a-loved-one",
-            kind = "accept",
-            priority = 1790,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Fate of a Loved One from Ealaane Nimbuswalker.",
-            dependsOn = { "turnin-aid-for-the-refugees" },
-            complete = QuestState(94897, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-fate-of-a-loved-one",
-            kind = "objective",
-            priority = 1800,
-            conditions = { level = { min = 8 } },
-            text = "Find Resaan in the Ruins of Ban'aethal.",
-            dependsOn = { "accept-the-fate-of-a-loved-one" },
-            complete = QuestState(94897, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.570, 0.294, "Resaan Nimbuswalker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-fate-of-a-loved-one",
-            kind = "turnin",
-            priority = 1810,
-            conditions = { level = { min = 8 } },
-            text = "Turn in The Fate of a Loved One to Ealaane Nimbuswalker.",
-            dependsOn = { "objective-the-fate-of-a-loved-one" },
-            complete = QuestState(94897, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-unwelcome-visitors",
-            kind = "accept",
-            priority = 1820,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Unwelcome Visitors from Iaadaria Bitterwind.",
-            complete = QuestState(92741, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.796, "Iaadaria Bitterwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-unwelcome-visitors",
-            kind = "objective",
-            priority = 1830,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Travel to Shadowgale Forest and collect 8 Shriekling Talons for Iaadaria Bitterwind in Valanaar.",
-            dependsOn = { "accept-unwelcome-visitors" },
-            complete = QuestState(92741, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.622, 0.382, "Shadowgale Shriekling",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-unwelcome-visitors",
-            kind = "turnin",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Unwelcome Visitors to Iaadaria Bitterwind.",
-            dependsOn = { "objective-unwelcome-visitors" },
-            complete = QuestState(92741, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.796, "Iaadaria Bitterwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-unnerving-silence",
-            kind = "accept",
-            priority = 1850,
-            conditions = { level = { min = 8 } },
-            text = "Accept Unnerving Silence from Lotheluum Starbreeze.",
-            complete = QuestState(94484, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-unnerving-silence",
-            kind = "turnin",
-            priority = 1860,
-            conditions = { level = { min = 8 } },
-            text = "Find and speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
-            dependsOn = { "accept-unnerving-silence" },
-            complete = QuestState(94484, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-strange-hermit",
-            kind = "accept",
-            priority = 1870,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Strange Hermit from Strange Hermit.",
-            complete = QuestState(93159, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-strange-hermit",
-            kind = "turnin",
-            priority = 1880,
-            conditions = { level = { min = 8 } },
-            text = "Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
-            dependsOn = { "accept-the-strange-hermit" },
-            complete = QuestState(93159, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-forests-bounty",
-            kind = "accept",
-            priority = 1890,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Forest's Bounty from Strange Hermit.",
-            dependsOn = { "turnin-the-strange-hermit" },
-            complete = QuestState(93160, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-free-the-hollows",
-            kind = "accept",
-            priority = 1900,
-            conditions = { level = { min = 8 } },
-            text = "Accept Free the Hollows from Strange Hermit.",
-            dependsOn = { "turnin-the-strange-hermit" },
-            complete = QuestState(93172, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-unwelcome-spirits",
-            kind = "accept",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Unwelcome Spirits from Endaria Mistgaze.",
-            dependsOn = { "turnin-the-grand-skyseer" },
-            complete = QuestState(93736, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.582, 0.782, "Endaria Mistgaze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-free-the-hollows",
-            kind = "objective",
-            priority = 1920,
-            conditions = { level = { min = 8 } },
-            text = "Destroy 10 Wind Hollows in the Ruins of Ban'aethal. They can also drop a Rusty Gadget, which starts a quest.",
-            dependsOn = { "accept-free-the-hollows" },
-            complete = QuestState(93172, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.570, 0.294, "Wind Hollow",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-unwelcome-spirits",
-            kind = "objective",
-            priority = 1930,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Gather 10 Wind Hollow Essences in Shadowgale Forest. Wind Hollows can also drop a Rusty Gadget, which starts a quest.",
-            dependsOn = { "accept-unwelcome-spirits" },
-            complete = QuestState(93736, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.570, 0.294, "Wind Hollow",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-forests-bounty",
-            kind = "turnin",
-            priority = 1940,
-            conditions = { level = { min = 8 } },
-            text = "Gather 8 Shadowgale Acorns in Shadowgale Forest.",
-            dependsOn = { "accept-the-forests-bounty" },
-            complete = QuestState(93160, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-free-the-hollows",
-            kind = "turnin",
-            priority = 1950,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Free the Hollows to Strange Hermit.",
-            dependsOn = { "objective-free-the-hollows" },
-            complete = QuestState(93172, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-unwelcome-spirits",
-            kind = "turnin",
-            priority = 1960,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Unwelcome Spirits to Endaria Mistgaze.",
-            dependsOn = { "objective-unwelcome-spirits" },
-            complete = QuestState(93736, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.582, 0.782, "Endaria Mistgaze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-feathers-for-binding",
-            kind = "accept",
-            priority = 1970,
-            conditions = { level = { min = 8 } },
-            text = "Accept Feathers for Binding from Elegael Thornpaw.",
-            dependsOn = { "turnin-unnerving-silence" },
-            complete = QuestState(94486, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-tears-of-the-lady",
-            kind = "accept",
-            priority = 1980,
-            conditions = { level = { min = 8 } },
-            text = "Accept Tears of the Lady from Elegael Thornpaw.",
-            dependsOn = { "turnin-unnerving-silence" },
-            complete = QuestState(94485, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-unwanted-and-unworthy",
-            kind = "accept",
-            priority = 1990,
-            conditions = { level = { min = 8 } },
-            text = "Accept Unwanted and Unworthy from Elegael Thornpaw.",
-            dependsOn = { "turnin-unnerving-silence" },
-            complete = QuestState(94487, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-ties-that-bind",
-            kind = "accept",
-            priority = 2000,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Ties That Bind from Elegael Thornpaw.",
-            dependsOn = { "turnin-unnerving-silence" },
-            complete = QuestState(94488, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-feathers-for-binding",
-            kind = "objective",
-            priority = 2010,
-            conditions = { level = { min = 8 } },
-            text = "Collect 20 feathers from the Shadowgale Shrieklings in Shadowgale Forest.",
-            dependsOn = { "accept-feathers-for-binding" },
-            complete = QuestState(94486, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.622, 0.382, "Shadowgale Shriekling",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-tears-of-the-lady",
-            kind = "objective",
-            priority = 2020,
-            conditions = { level = { min = 8 } },
-            text = "Collect 8 Lady's Tear Moss from the bases of trees around Elegael Thornpaw.",
-            dependsOn = { "accept-tears-of-the-lady" },
-            complete = QuestState(94485, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Lady's Tear Moss around Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-unwanted-and-unworthy",
-            kind = "objective",
-            priority = 2030,
-            conditions = { level = { min = 8 } },
-            text = "Collect 10 Bloodied Heirlooms from Al'Aketh Footsoldiers and Al'Aketh Stormchasers in the Shadowgale Forest.",
-            dependsOn = { "accept-unwanted-and-unworthy" },
-            complete = QuestState(94487, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.638, 0.368, "Al'Aketh Stormchaser",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-ties-that-bind",
-            kind = "objective",
-            priority = 2040,
-            conditions = { level = { min = 8 } },
-            text = "Kill Commander Haalien and bring his head to Elegael Thornpaw in the Shadowgale Forest.",
-            dependsOn = { "accept-the-ties-that-bind" },
-            complete = QuestState(94488, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.654, 0.362, "Commander Haalien",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-feathers-for-binding",
-            kind = "turnin",
-            priority = 2050,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Feathers for Binding to Elegael Thornpaw.",
-            dependsOn = { "objective-feathers-for-binding" },
-            complete = QuestState(94486, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-tears-of-the-lady",
-            kind = "turnin",
-            priority = 2060,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Tears of the Lady to Elegael Thornpaw.",
-            dependsOn = { "objective-tears-of-the-lady" },
-            complete = QuestState(94485, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-unwanted-and-unworthy",
-            kind = "turnin",
-            priority = 2070,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Unwanted and Unworthy to Elegael Thornpaw.",
-            dependsOn = { "objective-unwanted-and-unworthy" },
-            complete = QuestState(94487, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-ties-that-bind",
-            kind = "turnin",
-            priority = 2080,
-            conditions = { level = { min = 8 } },
-            text = "Turn in The Ties That Bind to Elegael Thornpaw.",
-            dependsOn = { "objective-the-ties-that-bind" },
-            complete = QuestState(94488, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-ripped-missive",
-            kind = "accept",
-            priority = 2090,
-            conditions = { level = { min = 9 } },
-            text = "Accept Ripped Missive from the missive dropped by Commander Haalien.",
-            dependsOn = { "turnin-the-ties-that-bind" },
-            complete = QuestState(94490, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.654, 0.362, "Commander Haalien",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-ripped-missive",
-            kind = "turnin",
-            priority = 2100,
-            conditions = { level = { min = 9 } },
-            text = "Bring the Ripped Missive to Elegael Thornpaw in the Shadowgale Forest.",
-            dependsOn = { "accept-ripped-missive" },
-            complete = QuestState(94490, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-a-sacrifice-in-vain",
-            kind = "accept",
-            priority = 2110,
-            conditions = { level = { min = 8 } },
-            text = "Accept A Sacrifice in Vain from Elegael Thornpaw.",
-            dependsOn = { "turnin-unnerving-silence" },
-            complete = QuestState(94493, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-a-sacrifice-in-vain",
-            kind = "turnin",
-            priority = 2120,
-            conditions = { level = { min = 8 } },
-            text = "Speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
-            dependsOn = { "accept-a-sacrifice-in-vain" },
-            complete = QuestState(94493, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-wounds-of-betrayal",
-            kind = "accept",
-            priority = 2130,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Wounds of Betrayal from Elegael Thornpaw.",
-            dependsOn = { "turnin-tears-of-the-lady", "turnin-feathers-for-binding", "turnin-a-sacrifice-in-vain" },
-            complete = QuestState(94489, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-wounds-of-betrayal",
-            kind = "objective",
-            priority = 2140,
-            conditions = { level = { min = 8 } },
-            text = "Enter the Nightfang Den and heal 7 druids and find Jorel Windsinger in Shadowgale Forest.",
-            dependsOn = { "accept-the-wounds-of-betrayal" },
-            complete = QuestState(94489, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.334, "Baeo Sharpstrike",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-wounds-of-betrayal",
-            kind = "turnin",
-            priority = 2150,
-            conditions = { level = { min = 8 } },
-            text = "Turn in The Wounds of Betrayal to Elegael Thornpaw.",
-            dependsOn = { "objective-the-wounds-of-betrayal" },
-            complete = QuestState(94489, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-fate-of-the-den",
-            kind = "accept",
-            priority = 2160,
-            conditions = { level = { min = 8 } },
-            text = "Accept The Fate of the Den from Elegael Thornpaw.",
-            dependsOn = { "turnin-the-wounds-of-betrayal" },
-            complete = QuestState(94491, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-fate-of-the-den",
-            kind = "turnin",
-            priority = 2161,
-            conditions = { level = { min = 8 } },
-            text = "Give the missive to Lotheluum in Valanaar and tell him what has transpired.",
-            dependsOn = { "accept-the-fate-of-the-den" },
-            complete = QuestState(94491, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-bugged",
-            kind = "accept",
-            priority = 2170,
-            conditions = { level = { min = 6 } },
-            text = "Accept Bugged from Valennia Stormfist.",
-            complete = QuestState(93949, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-bugged",
-            kind = "objective",
-            priority = 2180,
-            conditions = { level = { min = 6 } },
-            text = "Exterminate 8 enchanted skyhoppers in the Gustberry Lowlands.",
-            dependsOn = { "accept-bugged" },
-            complete = QuestState(93949, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.620, 0.732, "Gustberry Lowlands outside Valanaar",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-bugged",
-            kind = "turnin",
-            priority = 2190,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Bugged to Valennia Stormfist.",
-            dependsOn = { "objective-bugged" },
-            complete = QuestState(93949, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-mercy-falls-on-deaf-ears",
-            kind = "accept",
-            priority = 2200,
-            conditions = { level = { min = 8 } },
-            text = "Accept Mercy Falls on Deaf Ears from Vayn Moongaze.",
-            complete = QuestState(93165, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.638, 0.360, "Vayn Moongaze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-mercy-falls-on-deaf-ears",
-            kind = "objective",
-            priority = 2210,
-            conditions = { level = { min = 8 } },
-            text = "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
-            dependsOn = { "accept-mercy-falls-on-deaf-ears" },
-            complete = QuestState(93165, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.566, 0.504, "Zaal Stormshield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-mercy-falls-on-deaf-ears",
-            kind = "turnin",
-            priority = 2220,
-            conditions = { level = { min = 8 } },
-            text = "Turn in Mercy Falls on Deaf Ears to Vayn Moongaze.",
-            dependsOn = { "objective-mercy-falls-on-deaf-ears" },
-            complete = QuestState(93165, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.638, 0.360, "Vayn Moongaze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-speak-with-belann",
-            kind = "accept",
-            priority = 2230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 8 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Speak with Belann from Anathamaas Aetherwind.",
-            complete = QuestState(93791, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.804, "Anathamaas Aetherwind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-speak-with-belann",
-            kind = "turnin",
-            priority = 2240,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 8 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Speak with Belann Windwood in Valanaar.",
-            dependsOn = { "accept-speak-with-belann" },
-            complete = QuestState(93791, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-boughs-in-the-wind",
-            kind = "accept",
-            priority = 2250,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 8 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Boughs in the Wind from Belann Windwood.",
-            dependsOn = { "turnin-speak-with-belann" },
-            complete = QuestState(93797, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-boughs-in-the-wind",
-            kind = "objective",
-            priority = 2260,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 8 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Bring Belann Windwood a Wind-Infused Bough from the wind shrine just south of Falaath Village.",
-            dependsOn = { "accept-boughs-in-the-wind" },
-            complete = QuestState(93797, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.468, 0.562, "Falaath Village, then the wind shrine just south",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-boughs-in-the-wind",
-            kind = "turnin",
-            priority = 2270,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 8 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Boughs in the Wind to Belann Windwood.",
-            dependsOn = { "objective-boughs-in-the-wind" },
-            complete = QuestState(93797, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-great-ursera-spirit",
-            kind = "accept",
-            priority = 2280,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 11 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Great Ursera Spirit from Lotheluum Starbreeze.",
-            complete = QuestState(94006, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-great-ursera-spirit",
-            kind = "turnin",
-            priority = 2290,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 11 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Speak with Urs'endris near the falls northeast of Valanaar.",
-            dependsOn = { "accept-the-great-ursera-spirit" },
-            complete = QuestState(94006, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-strength-and-mercy",
-            kind = "accept",
-            priority = 2300,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 11 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Strength and Mercy from Urs'endris.",
-            dependsOn = { "turnin-the-great-ursera-spirit" },
-            complete = QuestState(94638, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-strength-and-mercy",
-            kind = "objective",
-            priority = 2310,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 11 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Find and kill Ur'endra in the Shen'dar Highlands.",
-            dependsOn = { "accept-strength-and-mercy" },
-            complete = QuestState(94638, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.540, 0.654, "Ur'endra",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-strength-and-mercy",
-            kind = "turnin",
-            priority = 2320,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 11 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Strength and Mercy to Urs'endris.",
-            dependsOn = { "objective-strength-and-mercy" },
-            complete = QuestState(94638, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-taming-the-beast",
-            kind = "accept",
-            priority = 2330,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Elayaa Easewind.",
-            complete = QuestState(94007, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.452, 0.442, "Elayaa Easewind",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-taming-the-beast",
-            kind = "turnin",
-            priority = 2340,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Report to Quel'ana Quickgale in Valanaar.",
-            dependsOn = { "accept-taming-the-beast" },
-            complete = QuestState(94007, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-taming-the-beast-94013",
-            kind = "accept",
-            priority = 2350,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast" },
-            complete = QuestState(94013, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-taming-the-beast-94013",
-            kind = "turnin",
-            priority = 2360,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Use the Taming Rod to tame a Vuldren Alpha in the Gustberry Lowlands. Practice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
-            dependsOn = { "accept-taming-the-beast-94013" },
-            complete = QuestState(94013, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-taming-the-beast-94978",
-            kind = "accept",
-            priority = 2370,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast-94013" },
-            complete = QuestState(94978, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-taming-the-beast-94978",
-            kind = "turnin",
-            priority = 2380,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Use the Taming Rod to tame a Windsong Crawler found near bodies of water.",
-            dependsOn = { "accept-taming-the-beast-94978" },
-            complete = QuestState(94978, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-taming-the-beast-94979",
-            kind = "accept",
-            priority = 2390,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast-94978" },
-            complete = QuestState(94979, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-taming-the-beast-94979",
-            kind = "turnin",
-            priority = 2400,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Use the Taming Rod to tame an Ornery Galestrider in the Gustberry Lowlands.",
-            dependsOn = { "accept-taming-the-beast-94979" },
-            complete = QuestState(94979, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-training-the-beast",
-            kind = "accept",
-            priority = 2410,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Training the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast-94979" },
-            complete = QuestState(94050, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-training-the-beast",
-            kind = "turnin",
-            priority = 2420,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Speak to Quel'dora Quickgale in Valanaar.",
-            dependsOn = { "accept-training-the-beast" },
-            complete = QuestState(94050, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'dora Quickgale",
+            conditions = { level = { min = 5 } },
+            text = "Speak with Alvarion Windfield in Valanaar.",
+            dependsOn = { "accept-deliver-the-news" },
+            complete = QuestState(92703, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.620, 0.732, "Alvarion Windfield",
                     "Travel to Zephras Isle."),
             },
         },
         {
             id = "accept-call-of-fire",
             kind = "accept",
-            priority = 2430,
+            priority = 1750,
+            dependsOn = { "turnin-deliver-the-news" },
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3933,7 +2701,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire",
             kind = "turnin",
-            priority = 2440,
+            priority = 1760,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3951,9 +2719,1653 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-speak-with-belann",
+            kind = "accept",
+            priority = 1770,
+            dependsOn = { "turnin-deliver-the-news" },
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Speak with Belann from Anathamaas Aetherwind.",
+            complete = QuestState(93791, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.804, "Anathamaas Aetherwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-speak-with-belann",
+            kind = "turnin",
+            priority = 1780,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Speak with Belann Windwood in Valanaar.",
+            dependsOn = { "accept-speak-with-belann" },
+            complete = QuestState(93791, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-boughs-in-the-wind",
+            kind = "accept",
+            priority = 1790,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Boughs in the Wind from Belann Windwood.",
+            dependsOn = { "turnin-speak-with-belann" },
+            complete = QuestState(93797, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-catching-wind",
+            kind = "accept",
+            priority = 1800,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 5 } },
+                },
+            },
+            text = "Accept Catching Wind from Elaadrin Evengale.",
+            dependsOn = { "turnin-the-supreme-magister" },
+            complete = QuestState(92840, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-missing-scholar",
+            kind = "turnin",
+            priority = 1810,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Find what became of Fillion Flamebreeze on the road west of Valanaar.",
+            dependsOn = { "accept-the-missing-scholar" },
+            complete = QuestState(92727, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze's trail",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-missing-scholar-92849",
+            kind = "accept",
+            priority = 1820,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept the next Missing Scholar step where you found Fillion Flamebreeze.",
+            dependsOn = { "turnin-the-missing-scholar" },
+            complete = QuestState(92849, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-missing-scholar-92849",
+            kind = "objective",
+            priority = 1830,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Find Fillion Flamebreeze.",
+            dependsOn = { "accept-the-missing-scholar-92849" },
+            complete = QuestObjective(92849, 1, "Find Fillion"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.506, 0.654, "Fillion Flamebreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-missing-scholar-92849-carry",
+            kind = "objective",
+            priority = 1840,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Carry Fillion Flamebreeze to safety while avoiding enemies.",
+            dependsOn = { "objective-the-missing-scholar-92849" },
+            complete = QuestObjective(92849, 2, "Carry Fillion"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.520, 0.694, "Carry Fillion Flamebreeze to safety",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-missing-scholar-92849",
+            kind = "turnin",
+            priority = 1850,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in The Missing Scholar to Fillion Flamebreeze.",
+            dependsOn = { "objective-the-missing-scholar-92849-carry" },
+            complete = QuestState(92849, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.520, 0.694, "Fillion Flamebreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-missing-scholar-92850",
+            kind = "accept",
+            priority = 1860,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept The Missing Scholar from Fillion Flamebreeze.",
+            dependsOn = { "turnin-the-missing-scholar-92849" },
+            complete = QuestState(92850, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.520, 0.694, "Fillion Flamebreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-missing-scholar-92850",
+            kind = "objective",
+            priority = 1870,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Slay the Shriekling Matriarch in the Shriekling Den then return its head to Dondallion Whisperwind in Valanaar.",
+            dependsOn = { "accept-the-missing-scholar-92850" },
+            complete = QuestState(92850, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.520, 0.658, "Shriekling Matriarch",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-missing-scholar-92850",
+            kind = "turnin",
+            priority = 1880,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in The Missing Scholar to Dondallion Whisperwind.",
+            dependsOn = { "objective-the-missing-scholar-92850" },
+            complete = QuestState(92850, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.798, "Dondallion Whisperwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-crab-season",
+            kind = "objective",
+            priority = 1890,
+            conditions = { level = { min = 4 } },
+            text = "Collect 6 pieces of Windsong Crawler Meat.",
+            dependsOn = { "accept-crab-season" },
+            complete = QuestState(93317, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.512, 0.696, "Windsong Crawler",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-catching-wind",
+            kind = "objective",
+            priority = 1900,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 5 } },
+                },
+            },
+            text = "Take the Index Esoteria to the Overlook Standing Stones in Shen'dar Highlands and use it once there. Protect the Index from harm as it gathers data.",
+            dependsOn = { "accept-catching-wind" },
+            complete = QuestState(92840, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.480, 0.690, "Index Esoteria",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-boughs-in-the-wind",
+            kind = "objective",
+            priority = 1910,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Bring Belann Windwood a Wind-Infused Bough from the wind shrine just south of Falaath Village.",
+            dependsOn = { "accept-boughs-in-the-wind" },
+            complete = QuestState(93797, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.468, 0.562, "Falaath Village, then the wind shrine just south",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-crab-season",
+            kind = "turnin",
+            priority = 1920,
+            conditions = { level = { min = 4 } },
+            text = "Turn in Crab Season to Nyalah Brightfire.",
+            dependsOn = { "objective-crab-season" },
+            complete = QuestState(93317, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.606, 0.726, "Nyalah Brightfire",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-boughs-in-the-wind",
+            kind = "turnin",
+            priority = 1930,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Boughs in the Wind to Belann Windwood.",
+            dependsOn = { "objective-boughs-in-the-wind" },
+            complete = QuestState(93797, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.628, 0.774, "Belann Windwood",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-catching-wind",
+            kind = "turnin",
+            priority = 1940,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 5 } },
+                },
+            },
+            text = "Turn in Catching Wind to Elaadrin Evengale.",
+            dependsOn = { "objective-catching-wind" },
+            complete = QuestState(92840, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-avenged-tenfold",
+            kind = "accept",
+            priority = 1950,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Accept Avenged Tenfold from Elaadrin Evengale.",
+            dependsOn = { "turnin-catching-wind" },
+            complete = QuestState(92834, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-bugged",
+            kind = "turnin",
+            priority = 1960,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Bugged to Valennia Stormfist.",
+            dependsOn = { "objective-bugged" },
+            complete = QuestState(93949, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-tower-defense",
+            kind = "accept",
+            priority = 1970,
+            conditions = { level = { min = 6 } },
+            text = "Accept Tower Defense from Valennia Stormfist.",
+            dependsOn = { "turnin-to-valanaar", "turnin-to-valanaar-92701" },
+            complete = QuestState(93320, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-avenged-tenfold",
+            kind = "objective",
+            priority = 1980,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Collect 10 Al'Aketh Windstone Charms from Al'Aketh cultists found north of Valanaar at the Gustberry Fields or Shrine of Akir.",
+            dependsOn = { "accept-avenged-tenfold" },
+            complete = QuestState(92834, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.650, 0.654, "Al'Aketh cultists in the Gustberry Lowlands",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-tower-defense",
+            kind = "turnin",
+            priority = 1990,
+            conditions = { level = { min = 6 } },
+            text = "Report to Yorana Windyreed at the eastern watchtower in the Gustberry Lowlands.",
+            dependsOn = { "accept-tower-defense" },
+            complete = QuestState(93320, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-disrupting-logistics",
+            kind = "accept",
+            priority = 2000,
+            conditions = { level = { min = 6 } },
+            text = "Accept Disrupting Logistics from Yorana Windyreed.",
+            dependsOn = { "turnin-tower-defense" },
+            complete = QuestState(92642, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-breaking-the-breaker",
+            kind = "accept",
+            priority = 2010,
+            conditions = { level = { min = 6 } },
+            text = "Accept Breaking the Breaker from Yorana Windyreed.",
+            dependsOn = { "turnin-tower-defense" },
+            complete = QuestState(92645, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-disrupting-logistics",
+            kind = "objective",
+            priority = 2020,
+            conditions = { level = { min = 6 } },
+            text = "Slay 4 Al'Aketh Healers and 8 Al'Aketh Brawlers in the Gustberry Lowlands.",
+            dependsOn = { "accept-disrupting-logistics" },
+            complete = QuestState(92642, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.654, "Al'Aketh Healer",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-breaking-the-breaker",
+            kind = "objective",
+            priority = 2030,
+            conditions = { level = { min = 6 } },
+            text = "Slay Commander Belguilos in the Gustberry Lowlands.",
+            dependsOn = { "accept-breaking-the-breaker" },
+            complete = QuestState(92645, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.656, 0.654, "Commander Belguilos",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-breaking-the-breaker",
+            kind = "turnin",
+            priority = 2040,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Breaking the Breaker to Yorana Windyreed.",
+            dependsOn = { "objective-breaking-the-breaker" },
+            complete = QuestState(92645, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-disrupting-logistics",
+            kind = "turnin",
+            priority = 2050,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Disrupting Logistics to Yorana Windyreed.",
+            dependsOn = { "objective-disrupting-logistics" },
+            complete = QuestState(92642, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-return-to-valanaar",
+            kind = "accept",
+            priority = 2060,
+            conditions = { level = { min = 6 } },
+            text = "Accept Return to Valanaar from Yorana Windyreed.",
+            dependsOn = { "turnin-disrupting-logistics", "turnin-breaking-the-breaker" },
+            complete = QuestState(92880, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-return-to-valanaar",
+            kind = "turnin",
+            priority = 2070,
+            conditions = { level = { min = 6 } },
+            text = "Bring Yorana's Report to Valennia Stormfist in Valanaar.",
+            dependsOn = { "accept-return-to-valanaar" },
+            complete = QuestState(92880, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-high-elders-request",
+            kind = "accept",
+            priority = 2080,
+            conditions = { level = { min = 6 } },
+            text = "Accept The High Elder's Request from Valennia Stormfist.",
+            dependsOn = { "turnin-return-to-valanaar" },
+            complete = QuestState(92881, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-high-elders-request",
+            kind = "turnin",
+            priority = 2090,
+            conditions = { level = { min = 6 } },
+            text = "Speak with Talaanis Shadowsong in Valanaar.",
+            dependsOn = { "accept-the-high-elders-request" },
+            complete = QuestState(92881, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-turncoat",
+            kind = "accept",
+            priority = 2100,
+            conditions = { level = { min = 6 } },
+            text = "Accept The Turncoat from Talaanis Shadowsong.",
+            dependsOn = { "turnin-the-high-elders-request" },
+            complete = QuestState(92643, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-avenged-tenfold",
+            kind = "turnin",
+            priority = 2110,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Turn in Avenged Tenfold to Elaadrin Evengale.",
+            dependsOn = { "objective-avenged-tenfold" },
+            complete = QuestState(92834, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-in-service-of-zephras",
+            kind = "accept",
+            priority = 2120,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Accept In Service of Zephras from Elaadrin Evengale.",
+            dependsOn = { "turnin-avenged-tenfold" },
+            complete = QuestState(92860, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-in-service-of-zephras",
+            kind = "turnin",
+            priority = 2130,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Report to Valennia Stormfist and let her know that High Order is with them in their fight against the Al'Aketh.",
+            dependsOn = { "accept-in-service-of-zephras" },
+            complete = QuestState(92860, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-turncoat",
+            kind = "turnin",
+            priority = 2140,
+            conditions = { level = { min = 6 } },
+            text = "Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
+            dependsOn = { "accept-the-turncoat" },
+            complete = QuestState(92643, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.560, 0.588, "Dead Cultist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-alaketh-assassins",
+            kind = "accept",
+            priority = 2150,
+            conditions = { level = { min = 6 } },
+            text = "Accept Al'Aketh Assassins from Fendaal Windstone.",
+            dependsOn = { "turnin-the-turncoat" },
+            complete = QuestState(98512, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.568, 0.610, "Fendaal Windstone",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-alaketh-assassins",
+            kind = "objective",
+            priority = 2160,
+            conditions = { level = { min = 6 } },
+            text = "Kill 10 Al'Aketh Assassins in the Shen'dar Highlands.",
+            dependsOn = { "accept-alaketh-assassins" },
+            complete = QuestState(98512, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.560, 0.606, "Al'Aketh Assassin",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-unfortunate-news",
+            kind = "accept",
+            priority = 2170,
+            conditions = { level = { min = 6 } },
+            text = "Accept Unfortunate News from Dead Cultist.",
+            dependsOn = { "turnin-the-turncoat" },
+            complete = QuestState(92644, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.560, 0.588, "Dead Cultist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-alaketh-assassins",
+            kind = "turnin",
+            priority = 2180,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Al'Aketh Assassins to Fendaal Windstone.",
+            dependsOn = { "objective-alaketh-assassins" },
+            complete = QuestState(98512, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.568, 0.610, "Fendaal Windstone",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-unfortunate-news",
+            kind = "turnin",
+            priority = 2190,
+            conditions = { level = { min = 6 } },
+            text = "Deliver the glowing crystal to Talaanis Shadowsong in Valanaar.",
+            dependsOn = { "accept-unfortunate-news" },
+            complete = QuestState(92644, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-cults-true-plans",
+            kind = "accept",
+            priority = 2200,
+            conditions = { level = { min = 6 } },
+            text = "Accept The Cult's True Plans from Talaanis Shadowsong.",
+            dependsOn = { "turnin-unfortunate-news" },
+            complete = QuestState(94568, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-cults-true-plans",
+            kind = "turnin",
+            priority = 2210,
+            conditions = { level = { min = 6 } },
+            text = "Speak with Talaanis Shadowsong and observe the conversation.",
+            dependsOn = { "accept-the-cults-true-plans" },
+            complete = QuestState(94568, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-skybreaker-bulwark",
+            kind = "accept",
+            priority = 2220,
+            dependsOn = { "turnin-the-cults-true-plans" },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 1 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept The Skybreaker Bulwark from Seena Skybreaker.",
+            complete = QuestState(94003, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.598, 0.728, "Seena Skybreaker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-skybreaker-bulwark",
+            kind = "objective",
+            priority = 2230,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 1 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Reclaim the Skybreaker Bulwark from Zaal Stormshield at the Shrine of Akir.",
+            dependsOn = { "accept-the-skybreaker-bulwark" },
+            complete = QuestState(94003, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.566, 0.504, "Zaal Stormshield",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-skybreaker-bulwark",
+            kind = "turnin",
+            priority = 2240,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 1 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in The Skybreaker Bulwark to Seena Skybreaker.",
+            dependsOn = { "objective-the-skybreaker-bulwark" },
+            complete = QuestState(94003, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.598, 0.728, "Seena Skybreaker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-unwelcome-visitors",
+            kind = "objective",
+            priority = 2250,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Travel to Shadowgale Forest and collect 8 Shriekling Talons for Iaadaria Bitterwind in Valanaar.",
+            dependsOn = { "accept-unwelcome-visitors" },
+            complete = QuestState(92741, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.622, 0.382, "Shadowgale Shriekling",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-strange-hermit",
+            kind = "accept",
+            priority = 2260,
+            dependsOn = { "turnin-the-cults-true-plans" },
+            conditions = { level = { min = 8 } },
+            text = "Accept The Strange Hermit from Strange Hermit.",
+            complete = QuestState(93159, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-strange-hermit",
+            kind = "turnin",
+            priority = 2270,
+            conditions = { level = { min = 8 } },
+            text = "Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
+            dependsOn = { "accept-the-strange-hermit" },
+            complete = QuestState(93159, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-forests-bounty",
+            kind = "accept",
+            priority = 2280,
+            conditions = { level = { min = 8 } },
+            text = "Accept The Forest's Bounty from Strange Hermit.",
+            dependsOn = { "turnin-the-strange-hermit" },
+            complete = QuestState(93160, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-free-the-hollows",
+            kind = "accept",
+            priority = 2290,
+            conditions = { level = { min = 8 } },
+            text = "Accept Free the Hollows from Strange Hermit.",
+            dependsOn = { "turnin-the-strange-hermit" },
+            complete = QuestState(93172, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-unnerving-silence",
+            kind = "turnin",
+            priority = 2300,
+            conditions = { level = { min = 8 } },
+            text = "Find and speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
+            dependsOn = { "accept-unnerving-silence" },
+            complete = QuestState(94484, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-tears-of-the-lady",
+            kind = "accept",
+            priority = 2310,
+            conditions = { level = { min = 8 } },
+            text = "Accept Tears of the Lady from Elegael Thornpaw.",
+            dependsOn = { "turnin-unnerving-silence" },
+            complete = QuestState(94485, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-feathers-for-binding",
+            kind = "accept",
+            priority = 2320,
+            conditions = { level = { min = 8 } },
+            text = "Accept Feathers for Binding from Elegael Thornpaw.",
+            dependsOn = { "turnin-unnerving-silence" },
+            complete = QuestState(94486, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-unwanted-and-unworthy",
+            kind = "accept",
+            priority = 2330,
+            conditions = { level = { min = 8 } },
+            text = "Accept Unwanted and Unworthy from Elegael Thornpaw.",
+            dependsOn = { "turnin-unnerving-silence" },
+            complete = QuestState(94487, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-tears-of-the-lady",
+            kind = "objective",
+            priority = 2340,
+            conditions = { level = { min = 8 } },
+            text = "Collect 8 Lady's Tear Moss from the bases of trees around Elegael Thornpaw.",
+            dependsOn = { "accept-tears-of-the-lady" },
+            complete = QuestState(94485, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Lady's Tear Moss around Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-unwanted-and-unworthy",
+            kind = "objective",
+            priority = 2350,
+            conditions = { level = { min = 8 } },
+            text = "Collect 10 Bloodied Heirlooms from Al'Aketh Footsoldiers and Al'Aketh Stormchasers in the Shadowgale Forest.",
+            dependsOn = { "accept-unwanted-and-unworthy" },
+            complete = QuestState(94487, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.638, 0.368, "Al'Aketh Stormchaser",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-mercy-falls-on-deaf-ears",
+            kind = "accept",
+            priority = 2360,
+            dependsOn = { "objective-unwanted-and-unworthy" },
+            conditions = { level = { min = 8 } },
+            text = "Accept Mercy Falls on Deaf Ears from Vayn Moongaze.",
+            complete = QuestState(93165, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.638, 0.360, "Vayn Moongaze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-mercy-falls-on-deaf-ears",
+            kind = "objective",
+            priority = 2370,
+            conditions = { level = { min = 8 } },
+            text = "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
+            dependsOn = { "accept-mercy-falls-on-deaf-ears" },
+            complete = QuestState(93165, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.566, 0.504, "Zaal Stormshield",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-mercy-falls-on-deaf-ears",
+            kind = "turnin",
+            priority = 2380,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Mercy Falls on Deaf Ears to Vayn Moongaze.",
+            dependsOn = { "objective-mercy-falls-on-deaf-ears" },
+            complete = QuestState(93165, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.638, 0.360, "Vayn Moongaze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-feathers-for-binding",
+            kind = "objective",
+            priority = 2390,
+            conditions = { level = { min = 8 } },
+            text = "Collect 20 feathers from the Shadowgale Shrieklings in Shadowgale Forest.",
+            dependsOn = { "accept-feathers-for-binding" },
+            complete = QuestState(94486, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.622, 0.382, "Shadowgale Shriekling",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-tears-of-the-lady",
+            kind = "turnin",
+            priority = 2400,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Tears of the Lady to Elegael Thornpaw.",
+            dependsOn = { "objective-tears-of-the-lady" },
+            complete = QuestState(94485, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-unwanted-and-unworthy",
+            kind = "turnin",
+            priority = 2410,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Unwanted and Unworthy to Elegael Thornpaw.",
+            dependsOn = { "objective-unwanted-and-unworthy" },
+            complete = QuestState(94487, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-feathers-for-binding",
+            kind = "turnin",
+            priority = 2420,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Feathers for Binding to Elegael Thornpaw.",
+            dependsOn = { "objective-feathers-for-binding" },
+            complete = QuestState(94486, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-ties-that-bind",
+            kind = "accept",
+            priority = 2430,
+            conditions = { level = { min = 8 } },
+            text = "Accept The Ties That Bind from Elegael Thornpaw.",
+            dependsOn = { "turnin-unnerving-silence" },
+            complete = QuestState(94488, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-ties-that-bind",
+            kind = "objective",
+            priority = 2440,
+            conditions = { level = { min = 8 } },
+            text = "Kill Commander Haalien and bring his head to Elegael Thornpaw in the Shadowgale Forest.",
+            dependsOn = { "accept-the-ties-that-bind" },
+            complete = QuestState(94488, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.654, 0.362, "Commander Haalien",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-ties-that-bind",
+            kind = "turnin",
+            priority = 2450,
+            conditions = { level = { min = 8 } },
+            text = "Turn in The Ties That Bind to Elegael Thornpaw.",
+            dependsOn = { "objective-the-ties-that-bind" },
+            complete = QuestState(94488, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-ripped-missive",
+            kind = "accept",
+            priority = 2460,
+            conditions = { level = { min = 9 } },
+            text = "Accept Ripped Missive from the missive dropped by Commander Haalien.",
+            dependsOn = { "turnin-the-ties-that-bind" },
+            complete = QuestState(94490, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.654, 0.362, "Commander Haalien",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-ripped-missive",
+            kind = "turnin",
+            priority = 2470,
+            conditions = { level = { min = 9 } },
+            text = "Bring the Ripped Missive to Elegael Thornpaw in the Shadowgale Forest.",
+            dependsOn = { "accept-ripped-missive" },
+            complete = QuestState(94490, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-free-the-hollows",
+            kind = "objective",
+            priority = 2480,
+            conditions = { level = { min = 8 } },
+            text = "Destroy 10 Wind Hollows in the Ruins of Ban'aethal. They can also drop a Rusty Gadget, which starts a quest.",
+            dependsOn = { "accept-free-the-hollows" },
+            complete = QuestState(93172, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.570, 0.294, "Wind Hollow",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-aid-for-the-refugees",
+            kind = "objective",
+            priority = 2490,
+            conditions = { level = { min = 8 } },
+            text = "Collect 8 Abandoned Belongings in the Ruins of Ban'aethal.",
+            dependsOn = { "accept-aid-for-the-refugees" },
+            complete = QuestState(94896, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.570, 0.294, "Ruins of Ban'aethal",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-forests-bounty",
+            kind = "turnin",
+            priority = 2500,
+            conditions = { level = { min = 8 } },
+            text = "Gather 8 Shadowgale Acorns in Shadowgale Forest.",
+            dependsOn = { "accept-the-forests-bounty" },
+            complete = QuestState(93160, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-free-the-hollows",
+            kind = "turnin",
+            priority = 2510,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Free the Hollows to Strange Hermit.",
+            dependsOn = { "objective-free-the-hollows" },
+            complete = QuestState(93172, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.390, "Strange Hermit",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-aid-for-the-refugees",
+            kind = "turnin",
+            priority = 2520,
+            conditions = { level = { min = 8 } },
+            text = "Turn in Aid For The Refugees to Ealaane Nimbuswalker.",
+            dependsOn = { "objective-aid-for-the-refugees" },
+            complete = QuestState(94896, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-fate-of-a-loved-one",
+            kind = "accept",
+            priority = 2530,
+            conditions = { level = { min = 8 } },
+            text = "Accept The Fate of a Loved One from Ealaane Nimbuswalker.",
+            dependsOn = { "turnin-aid-for-the-refugees" },
+            complete = QuestState(94897, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-fate-of-a-loved-one",
+            kind = "objective",
+            priority = 2540,
+            conditions = { level = { min = 8 } },
+            text = "Find Resaan in the Ruins of Ban'aethal.",
+            dependsOn = { "accept-the-fate-of-a-loved-one" },
+            complete = QuestState(94897, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.570, 0.294, "Resaan Nimbuswalker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-fate-of-a-loved-one",
+            kind = "turnin",
+            priority = 2550,
+            conditions = { level = { min = 8 } },
+            text = "Turn in The Fate of a Loved One to Ealaane Nimbuswalker.",
+            dependsOn = { "objective-the-fate-of-a-loved-one" },
+            complete = QuestState(94897, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.744, "Ealaane Nimbuswalker",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-unwelcome-visitors",
+            kind = "turnin",
+            priority = 2560,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Turn in Unwelcome Visitors to Iaadaria Bitterwind.",
+            dependsOn = { "objective-unwelcome-visitors" },
+            complete = QuestState(92741, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.796, "Iaadaria Bitterwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-broken-construct-93738",
+            kind = "accept",
+            priority = 2570,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept The Broken Construct from Riaani Nightwind.",
+            dependsOn = { "turnin-the-broken-construct-93737" },
+            complete = QuestState(93738, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.730, "Riaani Nightwind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-broken-construct-93738",
+            kind = "turnin",
+            priority = 2580,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Report back to Ayessa Dawnsinger in Valanaar.",
+            dependsOn = { "accept-the-broken-construct-93738" },
+            complete = QuestState(93738, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-firm-response",
+            kind = "accept",
+            priority = 2590,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept A Firm Response from Ayessa Dawnsinger.",
+            dependsOn = { "turnin-the-broken-construct-93738" },
+            complete = QuestState(93746, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-a-firm-response",
+            kind = "objective",
+            priority = 2600,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Confront Belthaan Brightwish along the road to the Shrine of Akir.",
+            dependsOn = { "accept-a-firm-response" },
+            complete = QuestState(93746, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.598, 0.570, "Belathaan Brightwish",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-firm-response",
+            kind = "turnin",
+            priority = 2610,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in A Firm Response to Ayessa Dawnsinger.",
+            dependsOn = { "objective-a-firm-response" },
+            complete = QuestState(93746, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-a-sacrifice-in-vain",
+            kind = "accept",
+            priority = 2620,
+            conditions = { level = { min = 8 } },
+            text = "Accept A Sacrifice in Vain from Elegael Thornpaw.",
+            dependsOn = { "turnin-unnerving-silence" },
+            complete = QuestState(94493, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-a-sacrifice-in-vain",
+            kind = "turnin",
+            priority = 2630,
+            conditions = { level = { min = 8 } },
+            text = "Speak with Elegael Thornpaw in the northeastern part of Shadowgale Forest.",
+            dependsOn = { "accept-a-sacrifice-in-vain" },
+            complete = QuestState(94493, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-wounds-of-betrayal",
+            kind = "accept",
+            priority = 2640,
+            conditions = { level = { min = 8 } },
+            text = "Accept The Wounds of Betrayal from Elegael Thornpaw.",
+            dependsOn = { "turnin-tears-of-the-lady", "turnin-feathers-for-binding", "turnin-a-sacrifice-in-vain" },
+            complete = QuestState(94489, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-the-wounds-of-betrayal",
+            kind = "objective",
+            priority = 2650,
+            conditions = { level = { min = 8 } },
+            text = "Enter the Nightfang Den and heal 7 druids and find Jorel Windsinger in Shadowgale Forest.",
+            dependsOn = { "accept-the-wounds-of-betrayal" },
+            complete = QuestState(94489, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.658, 0.334, "Baeo Sharpstrike",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-wounds-of-betrayal",
+            kind = "turnin",
+            priority = 2660,
+            conditions = { level = { min = 8 } },
+            text = "Turn in The Wounds of Betrayal to Elegael Thornpaw.",
+            dependsOn = { "objective-the-wounds-of-betrayal" },
+            complete = QuestState(94489, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-fate-of-the-den",
+            kind = "accept",
+            priority = 2670,
+            conditions = { level = { min = 8 } },
+            text = "Accept The Fate of the Den from Elegael Thornpaw.",
+            dependsOn = { "turnin-the-wounds-of-betrayal" },
+            complete = QuestState(94491, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.616, 0.392, "Elegael Thornpaw",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-fate-of-the-den",
+            kind = "turnin",
+            priority = 2680,
+            conditions = { level = { min = 8 } },
+            text = "Give the missive to Lotheluum in Valanaar and tell him what has transpired.",
+            dependsOn = { "accept-the-fate-of-the-den" },
+            complete = QuestState(94491, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-great-ursera-spirit",
+            kind = "accept",
+            priority = 2690,
+            dependsOn = { "turnin-the-fate-of-the-den" },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 11 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept The Great Ursera Spirit from Lotheluum Starbreeze.",
+            complete = QuestState(94006, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.640, 0.750, "Lotheluum Starbreeze",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-great-ursera-spirit",
+            kind = "turnin",
+            priority = 2700,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 11 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Speak with Urs'endris near the falls northeast of Valanaar.",
+            dependsOn = { "accept-the-great-ursera-spirit" },
+            complete = QuestState(94006, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-strength-and-mercy",
+            kind = "accept",
+            priority = 2710,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 11 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Strength and Mercy from Urs'endris.",
+            dependsOn = { "turnin-the-great-ursera-spirit" },
+            complete = QuestState(94638, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-strength-and-mercy",
+            kind = "objective",
+            priority = 2720,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 11 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Find and kill Ur'endra in the Shen'dar Highlands.",
+            dependsOn = { "accept-strength-and-mercy" },
+            complete = QuestState(94638, "complete"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.540, 0.654, "Ur'endra",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-strength-and-mercy",
+            kind = "turnin",
+            priority = 2730,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 11 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Strength and Mercy to Urs'endris.",
+            dependsOn = { "objective-strength-and-mercy" },
+            complete = QuestState(94638, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.698, 0.616, "Urs'endris",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-taming-the-beast",
+            kind = "accept",
+            priority = 2740,
+            dependsOn = { "turnin-the-fate-of-the-den" },
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Elayaa Easewind.",
+            complete = QuestState(94007, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.452, 0.442, "Elayaa Easewind",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-taming-the-beast",
+            kind = "turnin",
+            priority = 2750,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Report to Quel'ana Quickgale in Valanaar.",
+            dependsOn = { "accept-taming-the-beast" },
+            complete = QuestState(94007, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-taming-the-beast-94013",
+            kind = "accept",
+            priority = 2760,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Quel'ana Quickgale.",
+            dependsOn = { "turnin-taming-the-beast" },
+            complete = QuestState(94013, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-taming-the-beast-94013",
+            kind = "turnin",
+            priority = 2770,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Use the Taming Rod to tame a Vuldren Alpha in the Gustberry Lowlands. Practice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
+            dependsOn = { "accept-taming-the-beast-94013" },
+            complete = QuestState(94013, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-taming-the-beast-94978",
+            kind = "accept",
+            priority = 2780,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Quel'ana Quickgale.",
+            dependsOn = { "turnin-taming-the-beast-94013" },
+            complete = QuestState(94978, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-taming-the-beast-94978",
+            kind = "turnin",
+            priority = 2790,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Use the Taming Rod to tame a Windsong Crawler found near bodies of water.",
+            dependsOn = { "accept-taming-the-beast-94978" },
+            complete = QuestState(94978, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-taming-the-beast-94979",
+            kind = "accept",
+            priority = 2800,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Quel'ana Quickgale.",
+            dependsOn = { "turnin-taming-the-beast-94978" },
+            complete = QuestState(94979, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-taming-the-beast-94979",
+            kind = "turnin",
+            priority = 2810,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Use the Taming Rod to tame an Ornery Galestrider in the Gustberry Lowlands.",
+            dependsOn = { "accept-taming-the-beast-94979" },
+            complete = QuestState(94979, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-training-the-beast",
+            kind = "accept",
+            priority = 2820,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Training the Beast from Quel'ana Quickgale.",
+            dependsOn = { "turnin-taming-the-beast-94979" },
+            complete = QuestState(94050, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-training-the-beast",
+            kind = "turnin",
+            priority = 2830,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Speak to Quel'dora Quickgale in Valanaar.",
+            dependsOn = { "accept-training-the-beast" },
+            complete = QuestState(94050, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'dora Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-call-of-fire-97244",
             kind = "accept",
-            priority = 2450,
+            priority = 2840,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3973,7 +4385,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97244",
             kind = "objective",
-            priority = 2460,
+            priority = 2850,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -3993,7 +4405,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97244",
             kind = "turnin",
-            priority = 2470,
+            priority = 2860,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4013,7 +4425,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire-97245",
             kind = "accept",
-            priority = 2480,
+            priority = 2870,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4033,7 +4445,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97245",
             kind = "objective",
-            priority = 2490,
+            priority = 2880,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4053,7 +4465,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97245",
             kind = "turnin",
-            priority = 2500,
+            priority = 2890,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4073,7 +4485,7 @@ ns:RegisterGuide({
         {
             id = "accept-call-of-fire-97257",
             kind = "accept",
-            priority = 2510,
+            priority = 2900,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4093,7 +4505,7 @@ ns:RegisterGuide({
         {
             id = "objective-call-of-fire-97257",
             kind = "objective",
-            priority = 2520,
+            priority = 2910,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4113,7 +4525,7 @@ ns:RegisterGuide({
         {
             id = "turnin-call-of-fire-97257",
             kind = "turnin",
-            priority = 2530,
+            priority = 2920,
             conditions = {
                 all = {
                     { race = RACE_HORDE },
@@ -4133,7 +4545,7 @@ ns:RegisterGuide({
         {
             id = "accept-blood-for-blood",
             kind = "accept",
-            priority = 2540,
+            priority = 2930,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4151,7 +4563,7 @@ ns:RegisterGuide({
         {
             id = "objective-blood-for-blood",
             kind = "objective",
-            priority = 2550,
+            priority = 2940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4169,7 +4581,7 @@ ns:RegisterGuide({
         {
             id = "turnin-blood-for-blood",
             kind = "turnin",
-            priority = 2560,
+            priority = 2950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4185,45 +4597,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-in-service-of-zephras",
-            kind = "accept",
-            priority = 2570,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Accept In Service of Zephras from Elaadrin Evengale.",
-            dependsOn = { "turnin-avenged-tenfold" },
-            complete = QuestState(92860, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.666, 0.798, "Elaadrin Evengale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-in-service-of-zephras",
-            kind = "turnin",
-            priority = 2580,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Report to Valennia Stormfist and let her know that High Order is with them in their fight against the Al'Aketh.",
-            dependsOn = { "accept-in-service-of-zephras" },
-            complete = QuestState(92860, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-in-service-of-zephras-92871",
             kind = "accept",
-            priority = 2590,
+            priority = 2960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4241,7 +4617,7 @@ ns:RegisterGuide({
         {
             id = "turnin-in-service-of-zephras-92871",
             kind = "turnin",
-            priority = 2600,
+            priority = 2970,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4257,282 +4633,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-tower-defense",
-            kind = "accept",
-            priority = 2610,
-            conditions = { level = { min = 6 } },
-            text = "Accept Tower Defense from Valennia Stormfist.",
-            dependsOn = { "turnin-to-valanaar", "turnin-to-valanaar-92701" },
-            complete = QuestState(93320, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-tower-defense",
-            kind = "turnin",
-            priority = 2620,
-            conditions = { level = { min = 6 } },
-            text = "Report to Yorana Windyreed at the eastern watchtower in the Gustberry Lowlands.",
-            dependsOn = { "accept-tower-defense" },
-            complete = QuestState(93320, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-disrupting-logistics",
-            kind = "accept",
-            priority = 2630,
-            conditions = { level = { min = 6 } },
-            text = "Accept Disrupting Logistics from Yorana Windyreed.",
-            dependsOn = { "turnin-tower-defense" },
-            complete = QuestState(92642, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-disrupting-logistics",
-            kind = "objective",
-            priority = 2640,
-            conditions = { level = { min = 6 } },
-            text = "Slay 4 Al'Aketh Healers and 8 Al'Aketh Brawlers in the Gustberry Lowlands.",
-            dependsOn = { "accept-disrupting-logistics" },
-            complete = QuestState(92642, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.658, 0.654, "Al'Aketh Healer",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-disrupting-logistics",
-            kind = "turnin",
-            priority = 2650,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Disrupting Logistics to Yorana Windyreed.",
-            dependsOn = { "objective-disrupting-logistics" },
-            complete = QuestState(92642, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-breaking-the-breaker",
-            kind = "accept",
-            priority = 2660,
-            conditions = { level = { min = 6 } },
-            text = "Accept Breaking the Breaker from Yorana Windyreed.",
-            dependsOn = { "turnin-tower-defense" },
-            complete = QuestState(92645, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-breaking-the-breaker",
-            kind = "objective",
-            priority = 2670,
-            conditions = { level = { min = 6 } },
-            text = "Slay Commander Belguilos in the Gustberry Lowlands.",
-            dependsOn = { "accept-breaking-the-breaker" },
-            complete = QuestState(92645, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.656, 0.654, "Commander Belguilos",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-breaking-the-breaker",
-            kind = "turnin",
-            priority = 2680,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Breaking the Breaker to Yorana Windyreed.",
-            dependsOn = { "objective-breaking-the-breaker" },
-            complete = QuestState(92645, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-return-to-valanaar",
-            kind = "accept",
-            priority = 2690,
-            conditions = { level = { min = 6 } },
-            text = "Accept Return to Valanaar from Yorana Windyreed.",
-            dependsOn = { "turnin-disrupting-logistics", "turnin-breaking-the-breaker" },
-            complete = QuestState(92880, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.696, 0.670, "Yorana Windyreed",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-return-to-valanaar",
-            kind = "turnin",
-            priority = 2691,
-            conditions = { level = { min = 6 } },
-            text = "Bring Yorana's Report to Valennia Stormfist in Valanaar.",
-            dependsOn = { "accept-return-to-valanaar" },
-            complete = QuestState(92880, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-high-elders-request",
-            kind = "accept",
-            priority = 2700,
-            conditions = { level = { min = 6 } },
-            text = "Accept The High Elder's Request from Valennia Stormfist.",
-            dependsOn = { "turnin-return-to-valanaar" },
-            complete = QuestState(92881, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-high-elders-request",
-            kind = "turnin",
-            priority = 2710,
-            conditions = { level = { min = 6 } },
-            text = "Speak with Talaanis Shadowsong in Valanaar.",
-            dependsOn = { "accept-the-high-elders-request" },
-            complete = QuestState(92881, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-turncoat",
-            kind = "accept",
-            priority = 2720,
-            conditions = { level = { min = 6 } },
-            text = "Accept The Turncoat from Talaanis Shadowsong.",
-            dependsOn = { "turnin-the-high-elders-request" },
-            complete = QuestState(92643, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-turncoat",
-            kind = "turnin",
-            priority = 2721,
-            conditions = { level = { min = 6 } },
-            text = "Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
-            dependsOn = { "accept-the-turncoat" },
-            complete = QuestState(92643, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.560, 0.588, "Dead Cultist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-alaketh-assassins",
-            kind = "accept",
-            priority = 2730,
-            conditions = { level = { min = 6 } },
-            text = "Accept Al'Aketh Assassins from Fendaal Windstone.",
-            dependsOn = { "turnin-the-turncoat" },
-            complete = QuestState(98512, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.568, 0.610, "Fendaal Windstone",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-alaketh-assassins",
-            kind = "objective",
-            priority = 2740,
-            conditions = { level = { min = 6 } },
-            text = "Kill 10 Al'Aketh Assassins in the Shen'dar Highlands.",
-            dependsOn = { "accept-alaketh-assassins" },
-            complete = QuestState(98512, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.560, 0.606, "Al'Aketh Assassin",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-alaketh-assassins",
-            kind = "turnin",
-            priority = 2750,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Al'Aketh Assassins to Fendaal Windstone.",
-            dependsOn = { "objective-alaketh-assassins" },
-            complete = QuestState(98512, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.568, 0.610, "Fendaal Windstone",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-unfortunate-news",
-            kind = "accept",
-            priority = 2760,
-            conditions = { level = { min = 6 } },
-            text = "Accept Unfortunate News from Dead Cultist.",
-            dependsOn = { "turnin-the-turncoat" },
-            complete = QuestState(92644, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.560, 0.588, "Dead Cultist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-unfortunate-news",
-            kind = "turnin",
-            priority = 2761,
-            conditions = { level = { min = 6 } },
-            text = "Deliver the glowing crystal to Talaanis Shadowsong in Valanaar.",
-            dependsOn = { "accept-unfortunate-news" },
-            complete = QuestState(92644, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-the-cults-true-plans",
-            kind = "accept",
-            priority = 2770,
-            conditions = { level = { min = 6 } },
-            text = "Accept The Cult's True Plans from Talaanis Shadowsong.",
-            dependsOn = { "turnin-unfortunate-news" },
-            complete = QuestState(94568, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-cults-true-plans",
-            kind = "turnin",
-            priority = 2780,
-            conditions = { level = { min = 6 } },
-            text = "Speak with Talaanis Shadowsong and observe the conversation.",
-            dependsOn = { "accept-the-cults-true-plans" },
-            complete = QuestState(94568, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-desperate-times",
             kind = "accept",
-            priority = 2790,
+            priority = 2980,
             conditions = { level = { min = 6 } },
             text = "Accept Desperate Times from Talaanis Shadowsong.",
             dependsOn = { "turnin-the-cults-true-plans", "turnin-in-service-of-zephras", "turnin-in-service-of-zephras-92871" },
@@ -4545,7 +4648,7 @@ ns:RegisterGuide({
         {
             id = "objective-desperate-times",
             kind = "objective",
-            priority = 2800,
+            priority = 2990,
             conditions = { level = { min = 6 } },
             text = "Speak with Valennia Stormfist in Valanaar and follow her instructions.",
             dependsOn = { "accept-desperate-times" },
@@ -4558,7 +4661,7 @@ ns:RegisterGuide({
         {
             id = "turnin-desperate-times",
             kind = "turnin",
-            priority = 2810,
+            priority = 3000,
             conditions = { level = { min = 6 } },
             text = "Turn in Desperate Times to Valennia Stormfist.",
             dependsOn = { "objective-desperate-times" },
@@ -4571,7 +4674,7 @@ ns:RegisterGuide({
         {
             id = "accept-prepare-for-battle",
             kind = "accept",
-            priority = 2820,
+            priority = 3010,
             conditions = { level = { min = 7 } },
             text = "Accept Prepare for Battle from Valennia Stormfist.",
             dependsOn = { "turnin-desperate-times" },
@@ -4584,7 +4687,7 @@ ns:RegisterGuide({
         {
             id = "turnin-prepare-for-battle",
             kind = "turnin",
-            priority = 2821,
+            priority = 3020,
             conditions = { level = { min = 7 } },
             text = "Speak with Valennia Stormfist in the Gustberry Lowlands.",
             dependsOn = { "accept-prepare-for-battle" },
@@ -4595,65 +4698,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-skybreaker-bulwark",
-            kind = "accept",
-            priority = 2830,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Skybreaker Bulwark from Seena Skybreaker.",
-            complete = QuestState(94003, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.598, 0.728, "Seena Skybreaker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-the-skybreaker-bulwark",
-            kind = "objective",
-            priority = 2840,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Reclaim the Skybreaker Bulwark from Zaal Stormshield at the Shrine of Akir.",
-            dependsOn = { "accept-the-skybreaker-bulwark" },
-            complete = QuestState(94003, "complete"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.566, 0.504, "Zaal Stormshield",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-skybreaker-bulwark",
-            kind = "turnin",
-            priority = 2850,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Skybreaker Bulwark to Seena Skybreaker.",
-            dependsOn = { "objective-the-skybreaker-bulwark" },
-            complete = QuestState(94003, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.598, 0.728, "Seena Skybreaker",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-making-our-move",
             kind = "accept",
-            priority = 2860,
+            priority = 3030,
             conditions = { level = { min = 7 } },
             text = "Accept Making Our Move from Valennia Stormfist.",
             dependsOn = { "turnin-prepare-for-battle" },
@@ -4666,7 +4713,7 @@ ns:RegisterGuide({
         {
             id = "objective-making-our-move",
             kind = "objective",
-            priority = 2870,
+            priority = 3040,
             conditions = { level = { min = 7 } },
             text = "Slay 8 Al'Aketh Guardians, 6 Al'Aketh Spiritcallers, and 6 Al'Aketh Blademasters.",
             dependsOn = { "accept-making-our-move" },
@@ -4679,7 +4726,7 @@ ns:RegisterGuide({
         {
             id = "turnin-making-our-move",
             kind = "turnin",
-            priority = 2880,
+            priority = 3050,
             conditions = { level = { min = 7 } },
             text = "Turn in Making Our Move to Hyusaa Quickbreeze.",
             dependsOn = { "objective-making-our-move" },
@@ -4692,7 +4739,7 @@ ns:RegisterGuide({
         {
             id = "accept-the-inner-sanctum",
             kind = "accept",
-            priority = 2890,
+            priority = 3060,
             conditions = { level = { min = 7 } },
             text = "Accept The Inner Sanctum from Hyusaa Quickbreeze.",
             dependsOn = { "turnin-making-our-move" },
@@ -4705,7 +4752,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-inner-sanctum",
             kind = "turnin",
-            priority = 2891,
+            priority = 3070,
             conditions = { level = { min = 7 } },
             text = "Speak with Valennia Stormfist inside the inner sanctum at the Shrine of Akir.",
             dependsOn = { "accept-the-inner-sanctum" },
@@ -4716,45 +4763,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-confront-lorthuna",
-            kind = "accept",
-            priority = 2900,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Accept Confront Lorthuna from Valennia Stormfist.",
-            dependsOn = { "turnin-the-inner-sanctum" },
-            complete = QuestState(92646, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.652, 0.504, "Valennia Stormfist",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-confront-lorthuna",
-            kind = "turnin",
-            priority = 2910,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with the High Priestess Lorthuna.",
-            dependsOn = { "accept-confront-lorthuna" },
-            complete = QuestState(92646, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-confront-lorthuna-93835",
             kind = "accept",
-            priority = 2920,
+            priority = 3080,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4772,7 +4783,7 @@ ns:RegisterGuide({
         {
             id = "turnin-confront-lorthuna-93835",
             kind = "turnin",
-            priority = 2930,
+            priority = 3090,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4788,45 +4799,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-the-fate-of-zephras",
-            kind = "accept",
-            priority = 2940,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Accept The Fate of Zephras from Ayessa Dawnsinger.",
-            dependsOn = { "turnin-confront-lorthuna" },
-            complete = QuestState(93836, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-the-fate-of-zephras",
-            kind = "turnin",
-            priority = 2950,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Speak with Talaanis Shadowsong in Valanaar.",
-            dependsOn = { "accept-the-fate-of-zephras" },
-            complete = QuestState(93836, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-the-fate-of-zephras-94369",
             kind = "accept",
-            priority = 2960,
+            priority = 3100,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4844,7 +4819,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-fate-of-zephras-94369",
             kind = "turnin",
-            priority = 2970,
+            priority = 3110,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4862,7 +4837,7 @@ ns:RegisterGuide({
         {
             id = "accept-what-comes-next",
             kind = "accept",
-            priority = 2980,
+            priority = 3120,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4880,7 +4855,7 @@ ns:RegisterGuide({
         {
             id = "turnin-what-comes-next",
             kind = "turnin",
-            priority = 2990,
+            priority = 3130,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4896,45 +4871,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-what-comes-next-93090",
-            kind = "accept",
-            priority = 3000,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Accept What Comes Next from Talaanis Shadowsong.",
-            dependsOn = { "turnin-the-fate-of-zephras" },
-            complete = QuestState(93090, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-what-comes-next-93090",
-            kind = "turnin",
-            priority = 3010,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 7 } },
-                },
-            },
-            text = "Speak with Ayessa Dawnsinger when you are prepared to leave Zephras Isle.",
-            dependsOn = { "accept-what-comes-next-93090" },
-            complete = QuestState(93090, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
             id = "accept-the-magical-city-of-dalaran",
             kind = "accept",
-            priority = 3020,
+            priority = 3140,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4952,7 +4891,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-magical-city-of-dalaran",
             kind = "turnin",
-            priority = 3030,
+            priority = 3150,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -4968,9 +4907,117 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-confront-lorthuna",
+            kind = "accept",
+            priority = 3160,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Confront Lorthuna from Valennia Stormfist.",
+            dependsOn = { "turnin-the-inner-sanctum" },
+            complete = QuestState(92646, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.652, 0.504, "Valennia Stormfist",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-confront-lorthuna",
+            kind = "turnin",
+            priority = 3170,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with the High Priestess Lorthuna.",
+            dependsOn = { "accept-confront-lorthuna" },
+            complete = QuestState(92646, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-the-fate-of-zephras",
+            kind = "accept",
+            priority = 3180,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept The Fate of Zephras from Ayessa Dawnsinger.",
+            dependsOn = { "turnin-confront-lorthuna" },
+            complete = QuestState(93836, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-the-fate-of-zephras",
+            kind = "turnin",
+            priority = 3190,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Talaanis Shadowsong in Valanaar.",
+            dependsOn = { "accept-the-fate-of-zephras" },
+            complete = QuestState(93836, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-what-comes-next-93090",
+            kind = "accept",
+            priority = 3200,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept What Comes Next from Talaanis Shadowsong.",
+            dependsOn = { "turnin-the-fate-of-zephras" },
+            complete = QuestState(93090, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.662, 0.766, "Talaanis Shadowsong",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-what-comes-next-93090",
+            kind = "turnin",
+            priority = 3210,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Ayessa Dawnsinger when you are prepared to leave Zephras Isle.",
+            dependsOn = { "accept-what-comes-next-93090" },
+            complete = QuestState(93090, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.590, 0.796, "Ayessa Dawnsinger",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
             id = "accept-the-earthen-ring",
             kind = "accept",
-            priority = 3040,
+            priority = 3220,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4988,7 +5035,7 @@ ns:RegisterGuide({
         {
             id = "turnin-the-earthen-ring",
             kind = "turnin",
-            priority = 3050,
+            priority = 3230,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5006,7 +5053,7 @@ ns:RegisterGuide({
         {
             id = "accept-welcome-to-azeroth",
             kind = "accept",
-            priority = 3060,
+            priority = 3240,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5024,7 +5071,7 @@ ns:RegisterGuide({
         {
             id = "turnin-welcome-to-azeroth",
             kind = "turnin",
-            priority = 3070,
+            priority = 3250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5045,7 +5092,7 @@ ns:RegisterGuide({
         {
             id = "accept-exploring-the-horde",
             kind = "accept",
-            priority = 3080,
+            priority = 3260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5063,7 +5110,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde",
             kind = "objective",
-            priority = 3090,
+            priority = 3270,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5081,7 +5128,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-voljin",
             kind = "objective",
-            priority = 3100,
+            priority = 3280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5099,7 +5146,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-cairne",
             kind = "objective",
-            priority = 3110,
+            priority = 3290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5120,7 +5167,7 @@ ns:RegisterGuide({
         {
             id = "objective-exploring-the-horde-sylvanas",
             kind = "objective",
-            priority = 3120,
+            priority = 3300,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5138,7 +5185,7 @@ ns:RegisterGuide({
         {
             id = "turnin-exploring-the-horde",
             kind = "turnin",
-            priority = 3130,
+            priority = 3310,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -5151,6 +5198,267 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.574, 0.918, "Lady Sylvanas Windrunner in the Royal Quarter",
                     "Take the zeppelin to the Undercity and enter the Royal Quarter."),
+            },
+        },
+        {
+            id = "accept-welcome-to-azeroth-94947",
+            kind = "accept",
+            priority = 3320,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Welcome to Azeroth from Danaaris Stargale in Dalaran.",
+            dependsOn = { "turnin-the-magical-city-of-dalaran" },
+            complete = QuestState(94947, "activeOrCompleted"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Danaaris Stargale in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "accept-child-of-nature",
+            kind = "accept",
+            priority = 3330,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Child of Nature from Archmage Ansirem Runeweaver in Dalaran.",
+            dependsOn = { "turnin-the-magical-city-of-dalaran" },
+            complete = QuestState(94912, "activeOrCompleted"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Archmage Ansirem Runeweaver in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "objective-welcome-to-azeroth-94947",
+            kind = "objective",
+            priority = 3340,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Take the Skyborne Portal to Stormwind.",
+            dependsOn = { "accept-welcome-to-azeroth-94947" },
+            complete = QuestObjective(94947, 1, "Skyborne Portal"),
+            route = {
+                Point(MAP.ALTERAC, 0.124, 0.562, "Skyborne Portal in Dalaran",
+                    "Take the Valanaar zeppelin toward Dalaran."),
+            },
+        },
+        {
+            id = "turnin-welcome-to-azeroth-94947",
+            kind = "turnin",
+            priority = 3350,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Welcome to Azeroth to Bolvar Fordragon in Stormwind Keep.",
+            dependsOn = { "objective-welcome-to-azeroth-94947" },
+            complete = QuestState(94947, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "accept-exploring-the-alliance",
+            kind = "accept",
+            priority = 3360,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Exploring the Alliance from Bolvar Fordragon.",
+            dependsOn = { "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(93963, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "accept-journey-to-sentinel-hill",
+            kind = "accept",
+            priority = 3370,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
+            dependsOn = { "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(98021, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "turnin-child-of-nature",
+            kind = "turnin",
+            priority = 3380,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Child of Nature to Sheldras Moontree in Stormwind.",
+            dependsOn = { "accept-child-of-nature", "turnin-welcome-to-azeroth-94947" },
+            complete = QuestState(94912, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.212, 0.516, "Sheldras Moontree",
+                    "Travel to Stormwind."),
+            },
+        },
+        {
+            id = "accept-moonglade",
+            kind = "accept",
+            priority = 3390,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept Moonglade from Sheldras Moontree.",
+            dependsOn = { "turnin-child-of-nature" },
+            complete = QuestState(94914, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWIND, 0.212, 0.516, "Sheldras Moontree",
+                    "Travel to Stormwind."),
+            },
+        },
+        {
+            id = "gossip-exploring-the-alliance",
+            kind = "gossip",
+            priority = 3400,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Randal Emerson in the southern antechamber of Stormwind Keep.",
+            dependsOn = { "accept-exploring-the-alliance" },
+            complete = QuestObjective(93963, 1, "Randal Emerson"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Randal Emerson",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-mekkatorque",
+            kind = "objective",
+            priority = 3410,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with High Tinker Mekkatorque in Tinker Town.",
+            dependsOn = { "gossip-exploring-the-alliance" },
+            complete = QuestObjective(93963, 2, "Mekkatorque"),
+            route = {
+                Point(MAP.IRONFORGE, 0.688, 0.490, "High Tinker Mekkatorque",
+                    "Take the Deeprun Tram to Ironforge."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-magni",
+            kind = "objective",
+            priority = 3420,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with King Magni Bronzebeard in the High Seat.",
+            dependsOn = { "gossip-exploring-the-alliance" },
+            complete = QuestObjective(93963, 3, "Magni"),
+            route = {
+                Point(MAP.IRONFORGE, 0.391, 0.562, "King Magni Bronzebeard",
+                    "Take the Deeprun Tram to Ironforge."),
+            },
+        },
+        {
+            id = "objective-exploring-the-alliance-tyrande",
+            kind = "objective",
+            priority = 3430,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Speak with Tyrande Whisperwind in the Temple of the Moon.",
+            dependsOn = { "objective-exploring-the-alliance-mekkatorque", "objective-exploring-the-alliance-magni" },
+            complete = QuestObjective(93963, 4, "Tyrande"),
+            route = {
+                Point(MAP.DARNASSUS, 0.390, 0.812, "Tyrande Whisperwind",
+                    "Travel to Darnassus."),
+            },
+        },
+        {
+            id = "turnin-exploring-the-alliance",
+            kind = "turnin",
+            priority = 3440,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in Exploring the Alliance to Bolvar Fordragon.",
+            dependsOn = {
+                "gossip-exploring-the-alliance",
+                "objective-exploring-the-alliance-mekkatorque",
+                "objective-exploring-the-alliance-magni",
+                "objective-exploring-the-alliance-tyrande",
+            },
+            complete = QuestState(93963, "completed"),
+            route = {
+                Point(MAP.STORMWIND, 0.780, 0.180, "Highlord Bolvar Fordragon",
+                    "Travel to Stormwind Keep."),
+            },
+        },
+        {
+            id = "turnin-moonglade",
+            kind = "turnin",
+            priority = 3450,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Use Teleport: Moonglade, then turn in Moonglade to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-moonglade" },
+            complete = QuestState(94914, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.562, 0.306, "Dendrite Starblaze",
+                    "Teleport to Moonglade."),
             },
         },
     },

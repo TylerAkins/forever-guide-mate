@@ -1506,14 +1506,18 @@ grove.quests[92462] = {
 }
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "turnin-harmony-in-balance",
-    "both grove objectives lead back to the Harmony turn-in")
-grove.completedQuests[92461] = true
+Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
+    "both grove objectives lead back to the Infestation Investigation turn-in")
+grove.completedQuests[92462] = true
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
-Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
-    "Infestation Investigation is turned in before the class breadcrumb")
-grove.completedQuests[92462] = true
+Equal(ns.Engine.currentGoal.id, "accept-the-cirrusfly-queen",
+    "The Cirrusfly Queen is accepted before the watchtower")
+grove.quests[92463] = { complete = false, objectives = {} }
+grove.quests[92464] = { complete = false, objectives = {} }
+grove.completedQuests[94414] = true
+grove.completedQuests[92474] = true
+grove.completedQuests[92461] = true
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
@@ -1527,6 +1531,11 @@ local followUps = {
     { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
     { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
+    { "accept-welcome-to-azeroth-94947", "turnin-the-magical-city-of-dalaran" },
+    { "accept-exploring-the-alliance", "turnin-welcome-to-azeroth-94947" },
+    { "accept-journey-to-sentinel-hill", "turnin-welcome-to-azeroth-94947" },
+    { "accept-child-of-nature", "turnin-the-magical-city-of-dalaran" },
+    { "accept-moonglade", "turnin-child-of-nature" },
 }
 for _, pair in ipairs(followUps) do
     local goal = ns.Engine:GetGoal(zephras, pair[1])
@@ -1574,8 +1583,8 @@ local criminalElementAccept = ns.Engine:GetGoal(zephras, "accept-the-criminal-el
 local prideclawsAccept = ns.Engine:GetGoal(zephras, "accept-the-problem-with-prideclaws")
 Equal(adventurerAccept.route[1].label, "Aetheen of the Gales", "The Adventurer starts at Aetheen")
 Equal(nextStepAccept.route[1].label, "Aetheen of the Gales", "The Next Step starts at Aetheen")
-Check(adventurerAccept.priority < nextStepAccept.priority,
-    "The Adventurer is accepted before the other Aetheen quest")
+Check(nextStepAccept.priority < adventurerAccept.priority,
+    "The Next Step is accepted before The Adventurer")
 Check(nextStepAccept.priority < alakethAccept.priority,
     "both Aetheen quests are accepted before leaving Thendal Grove")
 Check(HasDependency(alakethAccept, "accept-the-adventurer"),
@@ -1618,12 +1627,12 @@ local departureState = {
 }
 local savedDeferred = ns.charDB.deferred
 ns.charDB.deferred = {}
-Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-adventurer",
-    "the Thendal departure first accepts The Adventurer")
-departureState.quests[96638] = { complete = false, objectives = {} }
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-next-step",
-    "the Thendal departure accepts The Next Step before moving")
+    "the Thendal departure first accepts The Next Step")
 departureState.quests[92472] = { complete = false, objectives = {} }
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-the-adventurer",
+    "the Thendal departure accepts The Adventurer before moving")
+departureState.quests[96638] = { complete = false, objectives = {} }
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-alaketh-thugs",
     "the southbound route stops at Hanaa before entering Shen'dar")
 departureState.quests[92544] = { complete = false, objectives = {} }
@@ -1634,12 +1643,12 @@ Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-
     "Al'Aketh Thugs turns in before entering Shen'dar")
 departureState.quests[92544] = nil
 departureState.completedQuests[92544] = true
-Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-adventurer",
-    "The Adventurer turns in after the Al'Aketh detour")
-departureState.quests[96638] = nil
-departureState.completedQuests[96638] = true
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-next-step",
-    "The Next Step turns in during the same Shen'dar arrival")
+    "The Next Step turns in before entering Shen'dar")
+departureState.quests[92472] = nil
+departureState.completedQuests[92472] = true
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-the-adventurer",
+    "The Adventurer turns in at Raan Wildwind after the Al'Aketh detour")
 ns.charDB.deferred = savedDeferred
 end
 TestZephrasClientQuestData()
@@ -2040,7 +2049,7 @@ Check(DependsOn(exploringSylvanas, "objective-exploring-the-horde-cairne"), "Syl
 Check(DependsOn(exploringTurnin, "objective-exploring-the-horde-sylvanas"), "Exploring the Horde turns in after the four visits")
 Equal(welcome.complete.quest.id, 95350, "Welcome to Azeroth is quest 95350")
 Equal(exploring.complete.quest.id, 93739, "Exploring the Horde is quest 93739")
-Equal(zephras.goals[#zephras.goals].id, "turnin-exploring-the-horde", "Exploring the Horde is the last Zephras step")
+Equal(zephras.goals[#zephras.goals].id, "turnin-moonglade", "Moonglade is the last Zephras step")
 Equal(ns.EvaluateCondition(welcome.conditions, { faction = "Alliance", level = 14 }), false,
     "Alliance does not take Welcome to Azeroth")
 Equal(welcomeTurnin.route[1].mapID, 1456, "Welcome to Azeroth flies from Thunder Bluff")
