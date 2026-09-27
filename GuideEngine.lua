@@ -883,6 +883,43 @@ local function HasPermanentFailure(condition, state)
     return eligible == false
 end
 
+local LEVEL_WALL = "The next step needs a higher level. Grind, or run a dungeon, until you can take it."
+
+-- No step is ready, and every unfinished step is waiting on a level gate.
+function Engine:LevelWallStatus(guide, goals, state)
+    local function BlockedByLevel(goal, depth)
+        if type(goal) ~= "table" or depth > 8 then return false end
+        if HasPermanentFailure(goal.conditions, state) or self:IsGoalDone(goal, state, guide) then
+            return true
+        end
+        local ready, reason = self:IsReady(guide, goal, state)
+        if ready then return false end
+        if reason == "Level requirement not met." then return true end
+        if type(reason) ~= "string" or string.sub(reason, 1, 12) ~= "Waiting for " then
+            return false
+        end
+        local openDependency = false
+        for _, dependencyID in ipairs(goal.dependsOn or {}) do
+            local dependency = self:GetGoal(guide, dependencyID)
+            if not BlockedByLevel(dependency, depth + 1) then return false end
+            if dependency and not self:IsGoalDone(dependency, state, guide)
+                and not HasPermanentFailure(dependency.conditions, state) then
+                openDependency = true
+            end
+        end
+        return openDependency
+    end
+    local blocked = false
+    for _, goal in ipairs(goals or {}) do
+        if not HasPermanentFailure(goal.conditions, state) and not self:IsGoalDone(goal, state, guide) then
+            if not BlockedByLevel(goal, 0) then return nil end
+            blocked = true
+        end
+    end
+    if not blocked then return nil end
+    return LEVEL_WALL
+end
+
 function Engine:ChosenFork(guide, state)
     local forks = {}
     for _, segment in ipairs(guide.segments or {}) do
@@ -1690,8 +1727,11 @@ function Engine:Refresh(state)
         else
             self.currentGoal = nil
             local segment = self.currentSegment
+            local levelWall = self:LevelWallStatus(guide, (segment and segment.goals) or guide.goals, state)
             if segment and type(state.level) == "number" and segment.levelMin and state.level < segment.levelMin then
-                self.status = "Level requirement not met."
+                self.status = LEVEL_WALL
+            elseif levelWall then
+                self.status = levelWall
             elseif segment then
                 local blocked
                 for _, goal in ipairs(segment.goals) do

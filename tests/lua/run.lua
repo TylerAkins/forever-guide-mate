@@ -2915,6 +2915,58 @@ function TestFlightMemoryByLandmass()
 end
 TestFlightMemoryByLandmass()
 
+function TestLevelWallSaysToGrindOrDungeon()
+    local savedGuide = ns.charDB.selectedGuide
+    local savedGoal = ns.charDB.activeGoal
+    ns:RegisterGuide({
+        id = "test-level-wall",
+        title = "Level wall",
+        category = "Test",
+        revision = 1,
+        conditions = { level = { min = 1 } },
+        goals = {
+            {
+                id = "accept-later",
+                kind = "accept",
+                priority = 1,
+                conditions = { level = { min = 8 } },
+                text = "Accept Later from the trainer.",
+                complete = { quest = { id = 999001, state = "activeOrCompleted" } },
+            },
+            {
+                id = "objective-later",
+                kind = "objective",
+                priority = 2,
+                conditions = { level = { min = 8 } },
+                text = "Finish Later.",
+                dependsOn = { "accept-later" },
+                complete = { quest = { id = 999001, state = "complete" } },
+            },
+        },
+    })
+    ns.Engine:SelectGuide("test-level-wall")
+    ns.Engine:Refresh({
+        faction = "Horde", raceID = 2, classID = 9, level = 5,
+        professions = {}, professionsKnown = true,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+        mapID = 1411,
+    })
+    Equal(ns.Engine.currentGoal, nil, "a level 5 character has no step when every quest is level 8")
+    Equal(ns.Engine.status,
+        "The next step needs a higher level. Grind, or run a dungeon, until you can take it.",
+        "the tracker says to grind or dungeon when the next step is only a level gate")
+    ns.guides["test-level-wall"] = nil
+    for index = #ns.guideOrder, 1, -1 do
+        if ns.guideOrder[index] == "test-level-wall" then
+            table.remove(ns.guideOrder, index)
+        end
+    end
+    ns.Engine:SelectGuide(savedGuide)
+    ns.charDB.activeGoal = savedGoal
+end
+TestLevelWallSaysToGrindOrDungeon()
+
 function TestEncroachmentWaitsUntilGarThokOffersIt()
     ns:FinalizeGuides()
     local era = ns.guides["leveling-era"]
@@ -3091,7 +3143,7 @@ function TestEraLeveling()
     Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
         "finishing Durotar hands off to the Barrens")
     Equal(ns.Engine.currentGoal, nil, "the Barrens handoff waits until level 12")
-    Equal(ns.Engine.status, "Level requirement not met.",
+    Equal(ns.Engine.status, "The next step needs a higher level. Grind, or run a dungeon, until you can take it.",
         "a level 1 character is told the next chapter is not open yet")
 
     ResetEra()
