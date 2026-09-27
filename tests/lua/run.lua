@@ -171,6 +171,16 @@ local badCoordinateOK = pcall(function()
 end)
 Equal(badCoordinateOK, false, "invalid coordinate rejected")
 
+ns:RegisterGuide({
+    id = "test-guide-resync", title = "Resync", category = "Test", revision = 2,
+    goals = {
+        { id = "resync-early", kind = "accept", priority = 1, text = "Early",
+            complete = { quest = { id = 900010, state = "activeOrCompleted" } } },
+        { id = "resync-late", kind = "accept", priority = 2, text = "Late",
+            complete = { quest = { id = 900011, state = "activeOrCompleted" } } },
+    },
+})
+
 ForeverGuideMateDB = {
     schemaVersion = 1,
     tracker = { shown = false, locked = true, scale = 1.2, x = 9000, y = 9000 },
@@ -194,8 +204,76 @@ Equal(ns.db.tracker.locked, true, "schema migration preserves tracker lock")
 Equal(ns.db.tracker.scale, 1.2, "schema migration preserves tracker scale")
 Equal(ns.db.uiOpen, false, "schema migration preserves closed state")
 Equal(ns.charDB.deferred.later, true, "schema migration converts skipped steps to deferred")
+Check(type(ns.charDB.guideRevisions) == "table", "storage tracks the last seen guide revisions")
 ns.InitializeStorage()
 Equal(ns.charDB.selectedGuide, "remember-me", "existing character progress is preserved")
+
+function TestGuideResync()
+    local previousCharDB = ns.charDB
+    local guide = ns.guides["test-guide-resync"]
+    local state = {
+        faction = "Horde", raceID = 2, classID = 1, level = 10,
+        professions = {}, professionsKnown = true,
+        quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true,
+    }
+    ns.charDB = {
+        selectedGuide = guide.id,
+        activeGoal = "resync-late",
+        activeGoalByGuide = { [guide.id] = "resync-late" },
+        guideRevisions = {},
+        manualCompleted = {}, completionLedger = {}, deferred = {}, history = {},
+    }
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "resync-late", "first revision observation preserves the saved step")
+    Equal(ns.charDB.guideRevisions[guide.id], 2, "first revision observation records the current revision")
+
+    Equal(ns.Engine:ResyncCurrent(state), true, "manual resync runs with complete player state")
+    Equal(ns.Engine.currentGoal.id, "resync-early", "manual resync finds the earliest unfinished step")
+    Equal(ns.charDB.activeGoalByGuide[guide.id], "resync-early", "manual resync replaces the saved step")
+    Equal(#ns.charDB.history, 0, "manual resync clears review history")
+
+    ns.charDB.deferred["resync-early"] = true
+    ns.charDB.activeGoal = "resync-late"
+    ns.Engine.currentGoal = guide.goals[2]
+    ns.Engine:ResyncCurrent(state)
+    Equal(ns.Engine.currentGoal.id, "resync-late", "manual resync preserves intentionally skipped steps")
+
+    ns.charDB.deferred = {}
+    ns.charDB.activeGoal = "resync-late"
+    ns.Engine.currentGoal = guide.goals[2]
+    local loading = {}
+    for key, value in pairs(state) do loading[key] = value end
+    loading.questLogKnown = false
+    loading.questCompletionKnown = false
+    Equal(ns.Engine:ResyncCurrent(loading), false, "manual resync waits for complete quest state")
+    Equal(ns.Engine.currentGoal.id, "resync-late", "an early resync does not discard the saved step")
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "resync-early", "a pending resync runs when quest state becomes available")
+
+    ns.charDB.activeGoal = "resync-late"
+    ns.Engine.currentGoal = guide.goals[2]
+    guide.revision = 3
+    ns.Engine:Refresh(loading)
+    Equal(ns.Engine.currentGoal.id, "resync-late", "revision resync waits for complete quest state")
+    Equal(ns.charDB.guideRevisions[guide.id], 2, "an incomplete refresh does not consume the new revision")
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "resync-early", "a changed guide revision recalculates the saved step")
+    Equal(ns.charDB.guideRevisions[guide.id], 3, "automatic resync records the new revision")
+    ns.charDB.activeGoal = "resync-late"
+    ns.Engine.currentGoal = guide.goals[2]
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "resync-late", "ordinary refresh preserves the saved step")
+
+    guide.revision = 2
+    ns.charDB = previousCharDB
+    ns.Engine.currentGuide = nil
+    ns.Engine.currentGoal = nil
+    ns.Engine.state = nil
+    ns.Engine.resyncPending = nil
+end
+TestGuideResync()
+
 ns.charDB.selectedGuide = nil
 ns.Engine:Refresh(baseState)
 Equal(ns.Engine.currentGuide, nil, "startup does not auto-select a guide")

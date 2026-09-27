@@ -33,6 +33,7 @@ local CHARACTER_DEFAULTS = {
     history = {},
     completionLedger = {},
     activeGoalByGuide = {},
+    guideRevisions = {},
     taxiRoutes = {},
     taxiNodes = {},
     taxiNodesByContinent = {},

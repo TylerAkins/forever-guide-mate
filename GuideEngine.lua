@@ -1473,6 +1473,57 @@ local function ValidateActiveGoal(engine, guide)
     end
 end
 
+local function StateReadyForResync(state)
+    return type(state) == "table"
+        and state.questLogKnown == true
+        and state.questCompletionKnown == true
+        and state.professionsKnown == true
+        and type(state.level) == "number"
+        and type(state.classID) == "number"
+        and type(state.raceID) == "number"
+        and type(state.faction) == "string"
+end
+
+function Engine:ClearSavedPosition(guide)
+    local active = guide and self:GetGoal(guide, ns.charDB.activeGoal)
+    local storeKey = ActiveGoalStorageKey(guide, active or ns.charDB.activeGoal)
+    ns.charDB.activeGoalByGuide = ns.charDB.activeGoalByGuide or {}
+    if storeKey then ns.charDB.activeGoalByGuide[storeKey] = nil end
+    ns.charDB.activeGoal = nil
+    ns.charDB.history = {}
+    self.currentGoal = nil
+    self.reviewingGoal = nil
+end
+
+function Engine:ResyncCurrent(state)
+    local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
+    if not guide then return false end
+    state = state or ns.PlayerState:Capture(nil, ns.QuestIDsForGuide(guide))
+    if not StateReadyForResync(state) then
+        self.resyncPending = guide.id
+        return false
+    end
+    self.resyncPending = nil
+    self:ClearSavedPosition(guide)
+    self.inferredCompletedByGuide = nil
+    self:Refresh(state)
+    return true
+end
+
+function Engine:ResyncUpdatedGuide(guide, state)
+    ns.charDB.guideRevisions = ns.charDB.guideRevisions or {}
+    local savedRevision = ns.charDB.guideRevisions[guide.id]
+    if savedRevision == nil then
+        ns.charDB.guideRevisions[guide.id] = guide.revision
+        return false
+    end
+    if savedRevision == guide.revision or not StateReadyForResync(state) then return false end
+    self:ClearSavedPosition(guide)
+    self.inferredCompletedByGuide = nil
+    ns.charDB.guideRevisions[guide.id] = guide.revision
+    return true
+end
+
 function Engine:SetActiveGoal(goal, remember)
     local oldID = ns.charDB.activeGoal
     if remember and oldID and oldID ~= goal.id then
@@ -1511,6 +1562,12 @@ function Engine:Refresh(state)
         end
         return
     end
+    if self.resyncPending == guide.id and StateReadyForResync(state) then
+        self.resyncPending = nil
+        self:ClearSavedPosition(guide)
+        self.inferredCompletedByGuide = nil
+    end
+    self:ResyncUpdatedGuide(guide, state)
     self:ReconcileGuide(guide, state)
     if self:ReleaseUnconfirmedRefusals(guide, state) then
         self:ReconcileGuide(guide, state)
