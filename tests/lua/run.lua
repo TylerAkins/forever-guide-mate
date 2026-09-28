@@ -65,6 +65,15 @@ Load("Guides/Leveling/21-22-ashenvale.lua")
 Load("Guides/Leveling/23-24-darkshore.lua")
 Load("Guides/Leveling/27-28-redridge-mountains.lua")
 Load("Guides/Leveling/28-29-duskwood.lua")
+Load("Guides/Class/Warrior.lua")
+Load("Guides/Class/Paladin.lua")
+Load("Guides/Class/Hunter.lua")
+Load("Guides/Class/Rogue.lua")
+Load("Guides/Class/Priest.lua")
+Load("Guides/Class/Shaman.lua")
+Load("Guides/Class/Mage.lua")
+Load("Guides/Class/Warlock.lua")
+Load("Guides/Class/Druid.lua")
 
 local baseState = {
     faction = "Horde",
@@ -3479,6 +3488,56 @@ function TestUnchangedQuestLogSkipsGuideWalk()
     ns.Engine.questLogFingerprint = saved
 end
 TestUnchangedQuestLogSkipsGuideWalk()
+
+local function TestClassQuestGuides()
+    local classNames = {
+        "warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid",
+    }
+    for _, className in ipairs(classNames) do
+        local guide = ns.guides["class-" .. className]
+        Check(guide ~= nil, className .. " class guide is registered")
+        if guide then
+            Equal(guide.category, "Class Quests", className .. " is in the Class Quests section")
+        end
+    end
+    local paladin = ns.guides["class-paladin"]
+    local undeadPaladin, orcPaladin
+    if paladin then
+        for _, goal in ipairs(paladin.goals) do
+            local text = goal.text or ""
+            if string.find(text, "A Difficult Path", 1, true) and goal.kind == "accept" then
+                undeadPaladin = goal
+            end
+            local function Walk(condition)
+                if type(condition) ~= "table" then return end
+                local race = condition.race
+                if race == 2 or race == 6 or race == 8 or race == 96 then
+                    orcPaladin = goal.id
+                elseif type(race) == "table" then
+                    for _, value in ipairs(race) do
+                        if value == 2 or value == 6 or value == 8 or value == 96 then
+                            orcPaladin = goal.id
+                        end
+                    end
+                end
+                if condition.all then for _, child in ipairs(condition.all) do Walk(child) end end
+                if condition.any then for _, child in ipairs(condition.any) do Walk(child) end end
+            end
+            Walk(goal.conditions)
+        end
+    end
+    Check(undeadPaladin ~= nil, "the paladin guide includes the Undead quest A Difficult Path")
+    Check(orcPaladin == nil, "the paladin guide has no Orc, Troll, Tauren, or Horde Skyborne steps")
+    if undeadPaladin then
+        local undead = { faction = "Horde", raceID = 5, classID = 2, level = 2 }
+        local orc = { faction = "Horde", raceID = 2, classID = 2, level = 2 }
+        Equal(ns.EvaluateCondition(undeadPaladin.conditions, undead), true,
+            "an Undead paladin can take A Difficult Path")
+        Equal(ns.EvaluateCondition(undeadPaladin.conditions, orc), false,
+            "an Orc is not offered the Undead paladin step")
+    end
+end
+TestClassQuestGuides()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

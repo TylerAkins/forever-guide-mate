@@ -126,6 +126,15 @@ class ContractTests(unittest.TestCase):
                 "Guides/Leveling/23-24-darkshore.lua",
                 "Guides/Leveling/27-28-redridge-mountains.lua",
                 "Guides/Leveling/28-29-duskwood.lua",
+                "Guides/Class/Warrior.lua",
+                "Guides/Class/Paladin.lua",
+                "Guides/Class/Hunter.lua",
+                "Guides/Class/Rogue.lua",
+                "Guides/Class/Priest.lua",
+                "Guides/Class/Shaman.lua",
+                "Guides/Class/Mage.lua",
+                "Guides/Class/Warlock.lua",
+                "Guides/Class/Druid.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
