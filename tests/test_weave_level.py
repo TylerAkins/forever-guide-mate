@@ -6,8 +6,10 @@ from tools.weave_loremaster import (
     insert_quest,
     parse_goals,
     place_woven,
+    offer_level,
     recommended_level,
     set_min_level,
+    step_level,
 )
 
 
@@ -27,6 +29,43 @@ def step(ident, quest_id, kind="accept", text="", priority=0, depends=None, raw=
         depends=depends or [],
         origin="test",
     )
+
+
+class StepLevelTests(unittest.TestCase):
+    def test_classic_quest_keeps_the_offer_level(self):
+        self.assertEqual(
+            step_level({"list": {"level": 10, "reqlevel": 6, "firstseenpatch": 11302}, "minLevel": 6}),
+            6,
+        )
+
+    def test_new_quest_uses_the_level_line_when_requires_level_is_lower(self):
+        record = {
+            "list": {"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0},
+            "minLevel": 5,
+            "classes": [],
+        }
+        self.assertEqual(step_level(record), 11)
+        self.assertEqual(offer_level(record), 5)
+
+    def test_a_small_gap_stays_on_the_offer_level(self):
+        self.assertEqual(
+            step_level({
+                "list": {"level": 3, "reqlevel": 2, "firstseenpatch": 16001, "reqclass": 0},
+                "minLevel": 2,
+                "classes": [],
+            }),
+            2,
+        )
+
+    def test_new_class_quest_stays_on_the_offer_level(self):
+        self.assertEqual(
+            step_level({
+                "list": {"level": 11, "reqlevel": 8, "firstseenpatch": 16001, "reqclass": 2},
+                "minLevel": 8,
+                "classes": [2],
+            }),
+            8,
+        )
 
 
 class RecommendedLevelTests(unittest.TestCase):
