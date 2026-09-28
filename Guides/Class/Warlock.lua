@@ -1,8 +1,7 @@
 local _, ns = ...
 
 -- Warlock class quests.
--- The classic route is the Zygor class guide. Forever quests from wow-database
--- are woven in after the quest that unlocks them, or by the level the NPC offers them.
+-- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
 -- Dungeon, raid, and PvP quests stay in their own guides.
 -- A quest with no start pin is named below and is not given a coordinate.
 -- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
