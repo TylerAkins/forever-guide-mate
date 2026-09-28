@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for the Southern Barrens, levels 22-23.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
+-- Deepmoss Spider Eggs, collected in Sishir Canyon, turn in here on the Ratchet visit.
 -- Scout Support and Valuable Vantages are worked in Hillsbrad, past this southern loop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -35,7 +36,7 @@ ns:RegisterGuide({
     id = "leveling-era-22-23-southern-barrens",
     title = "22-23 Southern Barrens",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -937,6 +938,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5984, 0.2989, "Ishamuhale",
                     "Travel to Ishamuhale."),
+            },
+        },
+        {
+            id = "turnin-1069-deepmoss-spider-eggs",
+            kind = "turnin",
+            priority = 709,
+            conditions = {
+                all = {
+                    { level = { min = 15 } },
+                    { quest = { id = 1069, state = "complete" } },
+                },
+            },
+            text = "Turn in Deepmoss Spider Eggs to Mebok Mizzyrix in Ratchet.",
+            complete = QuestState(1069, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6236, 0.3767, "Mebok Mizzyrix",
+                    "Travel to Mebok Mizzyrix."),
             },
         },
         {

@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.24 - 2026-09-28
+
+- Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in to Mebok on the next Ratchet visit. The 20-22 Stonetalon, 21-22 Ashenvale, and 22-23 Stonetalon chapters were checked against the Forever speedrun; no new Stonetalon or Ashenvale quest sits on those passes.
+
 ## 0.1.23 - 2026-09-28
 
 - Woven objectives now finish on the same classic trip as the Forever speedrun: Brill deathguards with the first Brill visit, hides with the duskbat and murloc kills, Seeking Refuge at Solliden, Shadowvale elixir with the western crypt run, Echo Isles idols with Zalazane, Northshire books with the kobolds, and the Westfall wells with the gnoll patrol.
