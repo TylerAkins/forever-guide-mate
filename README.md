@@ -1,8 +1,10 @@
 # Forever GuideMate
 
-Forever GuideMate is a minimalist, free, open-source leveling guide for World of Warcraft: Forever. It shows the next quest step, a searchable guide library, and hands the next point to [TomTom](https://www.curseforge.com/wow/addons/tomtom). It reads player and quest state. It does not accept quests, choose rewards, move the character, or take protected gameplay actions.
+**Forever GuideMate is a minimalist, free, open-source questing guide for World of Warcraft: Forever. It shows the next quest step and hands that point to [TomTom](https://www.curseforge.com/wow/addons/tomtom). It reads your quest log.**
 
-A guide the character cannot use says Ineligible. Coordinates in the shipped guides have not been validated in the Forever client.
+Requires [TomTom](https://www.curseforge.com/wow/addons/tomtom). The CurseForge app installs it with this addon.
+
+It does not accept quests, choose rewards, move the character, or take protected gameplay actions. A guide the character cannot use says Ineligible. Coordinates in the shipped guides have not been validated in the Forever client.
 
 Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. Completed quest history comes from the client, and verified quest prerequisites are followed automatically. Use the tracker's **Sync** button to discard its saved position and find the earliest unfinished step again without resetting completed or skipped steps. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
 
@@ -16,60 +18,74 @@ Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Lore
 | `Guides/Era/` | Unconverted Era chapters (not loaded by the addon) |
 | `Guides/Loremaster/` | Zone-completion guides |
 | `Guides/Dungeons/` | Dungeon quest guides |
+| `Guides/Class/` | Supported class-quest guides, one per class |
 
 Only files listed in `ForeverGuideMate.toc` appear in the addon.
 
-## Shipped guides
+## Current supported guides
 
 ### Leveling
 
-Each chapter is its own library row. Zephras Isle stays separate. Opening a chapter stays on that chapter. Steps the other faction cannot take are skipped. The starter follows your race, or the starter zone you are standing in, until you open another chapter.
+Each chapter is its own library row. Opening a chapter stays on that chapter.
 
 **Alliance**
 
-- 1–14 Zephras Isle (Skyborne)
-- 1–12 Dun Morogh, Elwynn Forest, and Teldrassil (capital stops included)
-- 12–17 Westfall; 12–17, 20–21, and 23–24 Darkshore
-- 17–18 Loch Modan
-- 18–20 and 27–28 Redridge Mountains
-- 21–22 Ashenvale
-- 28–29 Duskwood
+| Levels | Chapters |
+| --- | --- |
+| 1–12 | Dun Morogh, Elwynn Forest, and Teldrassil |
+| 1–14 | Zephras Isle |
+| 12–17 | Westfall and Darkshore |
+| 17–18 | Loch Modan |
+| 18–20 | Redridge Mountains |
+| 20–21 | Darkshore |
+| 21–22 | Ashenvale |
+| 22–23 | Stonetalon Mountains |
+| 23–24 | Darkshore |
+| 27–28 | Redridge Mountains |
+| 28–29 | Duskwood |
 
 **Horde**
 
-- 1–14 Zephras Isle (Skyborne)
-- 1–12 Durotar, Mulgore, and Tirisfal Glades (capital stops included)
-- 12–20 The Barrens and 12–20 Silverpine Forest
-- 20–22 Stonetalon Mountains; 22–23 Southern Barrens; 23–25 Stonetalon Mountains
-
-Converted chapters include Forever quests woven into the existing Era route. Remaining `(Era)` chapters live in `Guides/Era/` until converted; see [Era conversion](#era-chapters-not-yet-loaded).
-
-### Loremaster
-
-Zone guides follow the leveling route and weave in zone quests that route skips. Dungeon-only quests stay in the dungeon guides.
-
-| Guide | Faction |
+| Levels | Chapters |
 | --- | --- |
-| Durotar | Horde |
-| Mulgore | Horde |
+| 1–12 | Durotar, Mulgore, and Tirisfal Glades |
+| 1–14 | Zephras Isle |
+| 12–20 | The Barrens and Silverpine Forest |
+| 20–22 | Stonetalon Mountains |
+| 22–23 | Southern Barrens |
+| 23–25 | Stonetalon Mountains |
 
-Other Loremaster files were removed from the package until each zone is rewritten from its leveling spine. See [Todo](#todo).
+Converted chapters include Forever quests woven into the existing route. Remaining `(Era)` chapters live in `Guides/Era/` until converted; see [Era conversion](#era-chapters-not-yet-loaded).
 
 ### Dungeons
 
 | Guide | Faction | Level |
 | --- | --- | --- |
-| Ragefire Chasm | Horde | 9 |
-| Hall of Thanes | Alliance | 10 |
-| The Deadmines | Alliance | 15 |
-| Wailing Caverns | Alliance and Horde | 15 |
-| Ruins of Lordaeron | Alliance and Horde | 16 |
-
-Hall of Thanes, the Deadmines, Wailing Caverns, and Ruins of Lordaeron use the Forever dungeon lists. Ragefire Chasm still follows the classic list and needs a Forever pass.
+| Ragefire Chasm | Horde | 9+ |
+| Hall of Thanes | Alliance | 10+ |
+| The Deadmines | Alliance | 15+ |
+| Wailing Caverns | Alliance and Horde | 15+ |
+| Ruins of Lordaeron | Alliance and Horde | 16+ |
 
 ### Class quests
 
-Starter chapters include the class quests whose givers are already on that route. A separate class-guide section is not written yet.
+| Guide | Faction |
+| --- | --- |
+| Warrior | Alliance and Horde |
+| Paladin | Alliance and Horde |
+| Hunter | Alliance and Horde |
+| Rogue | Alliance and Horde |
+| Priest | Alliance and Horde |
+| Shaman | Alliance and Horde |
+| Mage | Alliance and Horde |
+| Warlock | Alliance and Horde |
+| Druid | Alliance and Horde |
+
+### Loremaster (lowest priority for development right now)
+
+- **Alliance:** None
+- **Horde:** Durotar, Mulgore (needs more testing)
+- **Both:** None
 
 ## Todo
 
@@ -91,15 +107,11 @@ Capitals are not separate Loremaster guides. Capital quests belong on the zone r
 - No guide yet: Shadowfang Keep, The Stockade, Blackfathom Deeps, Gnomeregan, Razorfen Kraul, Scarlet Monastery, Razorfen Downs, Uldaman, Zul'Farrak, Maraudon, Temple of Atal'Hakkar, Blackrock Depths, Lower and Upper Blackrock Spire, Dire Maul, Scholomance, Stratholme
 - Raids and attunements not started (Zul'Gurub through Naxxramas)
 
-### Class quests
-
-One guide section per class (Warrior through Druid, including Moonglade for druids). None written yet.
-
 ### Era chapters not yet loaded
 
 Walk each `Guides/Era/` chapter against the Wowhead Forever zone page, weave new quests per `.cursor/skills/era-forever-weave/SKILL.md`, then drop `(Era)` from the title, move the file to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py`.
 
-**Alliance (examples):** Ashenvale 24–24 and 29–30; Stonetalon 22–23; Wetlands; mid- and high-level zones through Winterspring
+**Alliance (examples):** Ashenvale 24–24 and 29–30; Wetlands; mid- and high-level zones through Winterspring
 
 **Horde (examples):** Stonetalon 20–22 and 27–27; Southern Barrens 25–25; Thousand Needles; Ashenvale 26–27; mid- and high-level zones through Winterspring
 
