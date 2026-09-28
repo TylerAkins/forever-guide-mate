@@ -44,7 +44,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-durotar",
     title = "1-12 Durotar",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1295,7 +1295,7 @@ ns:RegisterGuide({
         {
             id = "accept-97225-forgotten-loa-idols",
             kind = "accept",
-            priority = 792,
+            priority = 781,
             conditions = { level = { min = 9 } },
             text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
             complete = QuestState(97225, "activeOrCompleted"),
@@ -1307,7 +1307,7 @@ ns:RegisterGuide({
         {
             id = "accept-97223-bloodtalon-matriarch",
             kind = "accept",
-            priority = 793,
+            priority = 731,
             conditions = { level = { min = 5 } },
             text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
             complete = QuestState(97223, "activeOrCompleted"),
@@ -1478,7 +1478,7 @@ ns:RegisterGuide({
         {
             id = "accept-96822-for-honor",
             kind = "accept",
-            priority = 832,
+            priority = 851,
             conditions = { level = { min = 3 } },
             text = "Accept For Honor from Turroc in Razor Hill Barracks.",
             complete = QuestState(96822, "activeOrCompleted"),
@@ -1526,7 +1526,7 @@ ns:RegisterGuide({
         {
             id = "accept-96825-this-fruit-could-bite-back",
             kind = "accept",
-            priority = 861,
+            priority = 830.5,
             conditions = { level = { min = 3 } },
             text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
             complete = QuestState(96825, "activeOrCompleted"),

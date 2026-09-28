@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-teldrassil",
     title = "1-12 Teldrassil",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -1583,7 +1583,7 @@ ns:RegisterGuide({
         {
             id = "accept-99046-the-lost-runner",
             kind = "accept",
-            priority = 1101,
+            priority = 550.5,
             conditions = { level = { min = 9 } },
             text = "Accept The Lost Runner from Sentinel Kyra Starsong in Dolanaar.",
             complete = QuestState(99046, "activeOrCompleted"),
