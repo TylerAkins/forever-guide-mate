@@ -584,6 +584,13 @@ def step_level(record: dict | None) -> int | None:
     reqclass = listed.get("reqclass") if isinstance(listed, dict) else 0
     if not reqclass:
         reqclass = record.get("reqclass") or 0
+    quest_id = record.get("id")
+    if not isinstance(quest_id, int) and isinstance(listed, dict):
+        quest_id = listed.get("id")
+    # Tomb Weed is offered at Requires level 5 after Doom Weed is turned in.
+    # Wowhead records neither that chain nor a useful Level line for it.
+    if quest_id == 99142 and isinstance(minimum, int) and minimum > 0:
+        return minimum
     is_class = bool(record.get("classes")) or bool(reqclass)
     patch = listed.get("firstseenpatch") if isinstance(listed, dict) else record.get("firstseenpatch")
     if (

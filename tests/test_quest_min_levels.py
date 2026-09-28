@@ -47,7 +47,7 @@ class QuestMinLevelTests(unittest.TestCase):
         self.assertEqual(self.levels[784], 3)
         self.assertEqual(self.levels[97225], 9)
         self.assertEqual(self.levels[96821], 6)
-        self.assertEqual(self.levels[99142], 11)
+        self.assertEqual(self.levels[99142], 5)
 
     def test_every_database_quest_is_gated_at_its_minimum(self) -> None:
         seen = {goal.quest_id for goal in self.goals}

@@ -47,6 +47,17 @@ class StepLevelTests(unittest.TestCase):
         self.assertEqual(step_level(record), 11)
         self.assertEqual(offer_level(record), 5)
 
+    def test_tomb_weed_stays_at_the_offer_level(self):
+        self.assertEqual(
+            step_level({
+                "id": 99142,
+                "list": {"id": 99142, "level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0},
+                "minLevel": 5,
+                "classes": [],
+            }),
+            5,
+        )
+
     def test_a_small_gap_stays_on_the_offer_level(self):
         self.assertEqual(
             step_level({

@@ -210,3 +210,11 @@ ns:RegisterQuestPrerequisite({
     note = "Thrall's Hidden Enemies follow-up is offered after the Lieutenant's Insignia is returned.",
 })
 
+ns:RegisterQuestPrerequisite({
+    quest = 99142,
+    mode = "all",
+    quests = { 5482 },
+    conditions = { faction = "Horde" },
+    note = "Tomb Weed is offered after Doom Weed is turned in.",
+})
+
