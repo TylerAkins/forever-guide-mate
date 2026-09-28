@@ -1078,662 +1078,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-98340-the-great-cat-spirit",
-            kind = "accept",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
-            complete = QuestState(98340, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "turnin-98340-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 530,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "accept-98340-the-great-cat-spirit" },
-            complete = QuestState(98340, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98341-the-great-windborne-cat-spirit",
-            kind = "accept",
-            priority = 540,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Windborne Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-98340-the-great-cat-spirit" },
-            complete = QuestState(98341, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98341-the-great-windborne-cat-spirit",
-            kind = "turnin",
-            priority = 550,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98341-the-great-windborne-cat-spirit" },
-            complete = QuestState(98341, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98393-the-great-cat-spirit",
-            kind = "accept",
-            priority = 560,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
-            complete = QuestState(98393, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
-        },
-        {
-            id = "turnin-98393-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 570,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "accept-98393-the-great-cat-spirit" },
-            complete = QuestState(98393, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98394-the-great-cat-spirit",
-            kind = "accept",
-            priority = 580,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98393-the-great-cat-spirit" },
-            complete = QuestState(98394, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98394-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 590,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98394-the-great-cat-spirit" },
-            complete = QuestState(98394, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98396-the-great-cat-spirit",
-            kind = "accept",
-            priority = 600,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98394-the-great-cat-spirit" },
-            complete = QuestState(98396, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98396-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 610,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98396-the-great-cat-spirit" },
-            complete = QuestState(98396, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98731-blessings-of-the-great-cat-spirit",
-            kind = "accept",
-            priority = 620,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
-            dependsOn = { "turnin-98396-the-great-cat-spirit" },
-            complete = QuestState(98731, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98731-blessings-of-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 630,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
-            dependsOn = { "accept-98731-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98731, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98397-to-darnassus",
-            kind = "accept",
-            priority = 640,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept To Darnassus from Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "turnin-98731-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98397, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98397-to-darnassus",
-            kind = "turnin",
-            priority = 650,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = { 4, 95 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in To Darnassus to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
-            dependsOn = { "accept-98397-to-darnassus" },
-            complete = QuestState(98397, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus."),
-            },
-        },
-        {
-            id = "accept-98404-the-great-windborne-cat-spirit",
-            kind = "accept",
-            priority = 660,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(98404, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98404-the-great-windborne-cat-spirit",
-            kind = "turnin",
-            priority = 670,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98404-the-great-windborne-cat-spirit" },
-            complete = QuestState(98404, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
-            kind = "accept",
-            priority = 680,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Blessings of the Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-98404-the-great-windborne-cat-spirit" },
-            complete = QuestState(98738, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
-                    "Travel to Avatar of Saeyleenan in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98738-blessings-of-the-great-windborne-cat-spirit",
-            kind = "turnin",
-            priority = 690,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = { 95, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Blessings of the Great Windborne Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-98738-blessings-of-the-great-windborne-cat-spirit" },
-            complete = QuestState(98738, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98405-the-great-cat-spirit",
-            kind = "accept",
-            priority = 700,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            complete = QuestState(98405, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98405-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 710,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98405-the-great-cat-spirit" },
-            complete = QuestState(98405, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98342-the-great-cat-spirit",
-            kind = "accept",
-            priority = 720,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-98405-the-great-cat-spirit" },
-            complete = QuestState(98342, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98342-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 730,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98342-the-great-cat-spirit" },
-            complete = QuestState(98342, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98739-blessings-of-the-great-cat-spirit",
-            kind = "accept",
-            priority = 740,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
-            dependsOn = { "turnin-98342-the-great-cat-spirit" },
-            complete = QuestState(98739, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
-                    "Travel to Great Cat Spirit in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98739-blessings-of-the-great-cat-spirit",
-            kind = "turnin",
-            priority = 750,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = 6 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren.",
-            dependsOn = { "accept-98739-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98739, "completed"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "accept-98362-to-thunder-bluff",
-            kind = "accept",
-            priority = 760,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept To Thunder Bluff from Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "turnin-98739-blessings-of-the-great-cat-spirit" },
-            complete = QuestState(98362, "activeOrCompleted"),
-            route = {
-                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
-                    "Travel to Dendrite Starblaze in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-98362-to-thunder-bluff",
-            kind = "turnin",
-            priority = 770,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 11 },
-                    { race = { 6, 96 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in To Thunder Bluff to Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
-            dependsOn = { "accept-98362-to-thunder-bluff" },
-            complete = QuestState(98362, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
-                    "Travel to Turak Runetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-9063-torwa-pathfinder",
-            kind = "accept",
-            priority = 780,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Torwa Pathfinder from Theridran in Stormwind City. This step is for Night Elves.",
-            dependsOn = { "turnin-5061-aquatic-form" },
-            complete = QuestState(9063, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2140, 0.5140, "Theridran",
-                    "Travel to Theridran in Stormwind City.", { map = { MAP.DARNASSUS, MAP.MOONGLADE } }),
-                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
-                    "Travel to Mathrengyl Bearwalker in Darnassus.", { map = { MAP.MOONGLADE } }),
-                Point(MAP.MOONGLADE, 0.5240, 0.4040, "Loganaar",
-                    "Travel to Loganaar in Moonglade."),
-            },
-        },
-        {
-            id = "turnin-9063-torwa-pathfinder",
-            kind = "turnin",
-            priority = 790,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Torwa Pathfinder to Torwa Pathfinder in Un'Goro Crater. This step is for Night Elves.",
-            dependsOn = { "accept-9063-torwa-pathfinder" },
-            complete = QuestState(9063, "completed"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
-        },
-        {
-            id = "accept-9052-bloodpetal-poison",
-            kind = "accept",
-            priority = 800,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Bloodpetal Poison from Torwa Pathfinder in Un'Goro Crater. This step is for Night Elves.",
-            dependsOn = { "turnin-9063-torwa-pathfinder" },
-            complete = QuestState(9052, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
-        },
-        {
-            id = "objective-9052-bloodpetal-poison",
-            kind = "objective",
-            priority = 810,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Bloodpetal Poison: Gorishi Sting. This step is for Night Elves.",
-            dependsOn = { "accept-9052-bloodpetal-poison" },
-            complete = QuestState(9052, "complete"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.5040, 0.7880, "Gorishi Wasp",
-                    "Travel to Gorishi Wasp in Un'Goro Crater."),
-                Point(MAP.UNGOROCRATER, 0.5000, 0.8080, "Gorishi Stinger",
-                    "Travel to Gorishi Stinger in Un'Goro Crater."),
-                Point(MAP.UNGOROCRATER, 0.4360, 0.8140, "Gorishi Hive Queen",
-                    "Travel to Gorishi Hive Queen in Un'Goro Crater."),
-            },
-        },
-        {
-            id = "turnin-9052-bloodpetal-poison",
-            kind = "turnin",
-            priority = 820,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Bloodpetal Poison to Torwa Pathfinder in Un'Goro Crater. This step is for Night Elves.",
-            dependsOn = { "objective-9052-bloodpetal-poison" },
-            complete = QuestState(9052, "completed"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
-        },
-        {
-            id = "accept-9051-toxic-test",
-            kind = "accept",
-            priority = 830,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Toxic Test from Torwa Pathfinder in Un'Goro Crater. This step is for Night Elves.",
-            dependsOn = { "turnin-9052-bloodpetal-poison", "turnin-9063-torwa-pathfinder" },
-            complete = QuestState(9051, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
-        },
-        {
-            id = "turnin-9051-toxic-test",
-            kind = "turnin",
-            priority = 840,
-            conditions = {
-                all = {
-                    { class = 11 },
-                    { race = 4 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Toxic Test to Torwa Pathfinder in Un'Goro Crater. This step is for Night Elves.",
-            dependsOn = { "accept-9051-toxic-test" },
-            complete = QuestState(9051, "completed"),
-            route = {
-                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
-                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
-            },
-        },
-        {
             id = "accept-5926-heeding-the-call",
             kind = "accept",
-            priority = 850,
+            priority = 520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1752,7 +1099,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5926-heeding-the-call",
             kind = "turnin",
-            priority = 860,
+            priority = 530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1772,7 +1119,7 @@ ns:RegisterGuide({
         {
             id = "accept-5927-heeding-the-call",
             kind = "accept",
-            priority = 870,
+            priority = 540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1792,7 +1139,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5927-heeding-the-call",
             kind = "turnin",
-            priority = 880,
+            priority = 550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1812,7 +1159,7 @@ ns:RegisterGuide({
         {
             id = "accept-5928-heeding-the-call",
             kind = "accept",
-            priority = 890,
+            priority = 560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1832,7 +1179,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5928-heeding-the-call",
             kind = "turnin",
-            priority = 900,
+            priority = 570,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1852,7 +1199,7 @@ ns:RegisterGuide({
         {
             id = "accept-5922-moonglade",
             kind = "accept",
-            priority = 910,
+            priority = 580,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1872,7 +1219,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5922-moonglade",
             kind = "turnin",
-            priority = 920,
+            priority = 590,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1892,7 +1239,7 @@ ns:RegisterGuide({
         {
             id = "accept-5930-great-bear-spirit",
             kind = "accept",
-            priority = 930,
+            priority = 600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1912,7 +1259,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5930-great-bear-spirit",
             kind = "turnin",
-            priority = 940,
+            priority = 610,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1932,7 +1279,7 @@ ns:RegisterGuide({
         {
             id = "accept-5932-back-to-thunder-bluff",
             kind = "accept",
-            priority = 950,
+            priority = 620,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1952,7 +1299,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5932-back-to-thunder-bluff",
             kind = "turnin",
-            priority = 960,
+            priority = 630,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1972,7 +1319,7 @@ ns:RegisterGuide({
         {
             id = "accept-6002-body-and-heart",
             kind = "accept",
-            priority = 970,
+            priority = 640,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1992,7 +1339,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6002-body-and-heart",
             kind = "turnin",
-            priority = 980,
+            priority = 650,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2012,7 +1359,7 @@ ns:RegisterGuide({
         {
             id = "accept-6126-lessons-anew",
             kind = "accept",
-            priority = 990,
+            priority = 660,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2032,7 +1379,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6126-lessons-anew",
             kind = "turnin",
-            priority = 1000,
+            priority = 670,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2052,7 +1399,7 @@ ns:RegisterGuide({
         {
             id = "accept-6127-the-principal-source",
             kind = "accept",
-            priority = 1010,
+            priority = 680,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2072,7 +1419,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6127-the-principal-source",
             kind = "turnin",
-            priority = 1020,
+            priority = 690,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2092,7 +1439,7 @@ ns:RegisterGuide({
         {
             id = "accept-6128-gathering-the-cure",
             kind = "accept",
-            priority = 1030,
+            priority = 700,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2112,7 +1459,7 @@ ns:RegisterGuide({
         {
             id = "objective-6128-gathering-the-cure",
             kind = "objective",
-            priority = 1040,
+            priority = 710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2150,7 +1497,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6128-gathering-the-cure",
             kind = "turnin",
-            priority = 1050,
+            priority = 720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2170,7 +1517,7 @@ ns:RegisterGuide({
         {
             id = "accept-6129-curing-the-sick",
             kind = "accept",
-            priority = 1060,
+            priority = 730,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2190,7 +1537,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6129-curing-the-sick",
             kind = "turnin",
-            priority = 1070,
+            priority = 740,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2210,7 +1557,7 @@ ns:RegisterGuide({
         {
             id = "accept-6130-power-over-poison",
             kind = "accept",
-            priority = 1080,
+            priority = 750,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2230,7 +1577,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6130-power-over-poison",
             kind = "turnin",
-            priority = 1090,
+            priority = 760,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2250,7 +1597,7 @@ ns:RegisterGuide({
         {
             id = "accept-27-a-lesson-to-learn",
             kind = "accept",
-            priority = 1100,
+            priority = 770,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2270,7 +1617,7 @@ ns:RegisterGuide({
         {
             id = "turnin-27-a-lesson-to-learn",
             kind = "turnin",
-            priority = 1110,
+            priority = 780,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2290,7 +1637,7 @@ ns:RegisterGuide({
         {
             id = "accept-28-trial-of-the-lake",
             kind = "accept",
-            priority = 1120,
+            priority = 790,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2310,7 +1657,7 @@ ns:RegisterGuide({
         {
             id = "turnin-28-trial-of-the-lake",
             kind = "turnin",
-            priority = 1130,
+            priority = 800,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2330,7 +1677,7 @@ ns:RegisterGuide({
         {
             id = "accept-30-trial-of-the-sea-lion",
             kind = "accept",
-            priority = 1140,
+            priority = 810,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2350,7 +1697,7 @@ ns:RegisterGuide({
         {
             id = "turnin-30-trial-of-the-sea-lion",
             kind = "turnin",
-            priority = 1150,
+            priority = 820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2370,7 +1717,7 @@ ns:RegisterGuide({
         {
             id = "accept-31-aquatic-form",
             kind = "accept",
-            priority = 1160,
+            priority = 830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2390,7 +1737,7 @@ ns:RegisterGuide({
         {
             id = "turnin-31-aquatic-form",
             kind = "turnin",
-            priority = 1170,
+            priority = 840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2405,6 +1752,652 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
                     "Travel to Turak Runetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "accept-98340-the-great-cat-spirit",
+            kind = "accept",
+            priority = 850,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = { 6, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
+            complete = QuestState(98340, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
+                    "Travel to Turak Runetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "turnin-98340-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 860,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = { 6, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
+            dependsOn = { "accept-98340-the-great-cat-spirit" },
+            complete = QuestState(98340, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98341-the-great-windborne-cat-spirit",
+            kind = "accept",
+            priority = 870,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Windborne Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "turnin-98340-the-great-cat-spirit" },
+            complete = QuestState(98341, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98341-the-great-windborne-cat-spirit",
+            kind = "turnin",
+            priority = 880,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "accept-98341-the-great-windborne-cat-spirit" },
+            complete = QuestState(98341, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
+                    "Travel to Avatar of Saeyleenan in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98393-the-great-cat-spirit",
+            kind = "accept",
+            priority = 890,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = { 4, 95 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
+            complete = QuestState(98393, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker in Darnassus."),
+            },
+        },
+        {
+            id = "turnin-98393-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 900,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = { 4, 95 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
+            dependsOn = { "accept-98393-the-great-cat-spirit" },
+            complete = QuestState(98393, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98394-the-great-cat-spirit",
+            kind = "accept",
+            priority = 910,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Night Elves.",
+            dependsOn = { "turnin-98393-the-great-cat-spirit" },
+            complete = QuestState(98394, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98394-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 920,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
+            dependsOn = { "accept-98394-the-great-cat-spirit" },
+            complete = QuestState(98394, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98396-the-great-cat-spirit",
+            kind = "accept",
+            priority = 930,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
+            dependsOn = { "turnin-98394-the-great-cat-spirit" },
+            complete = QuestState(98396, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98396-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 940,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Night Elves.",
+            dependsOn = { "accept-98396-the-great-cat-spirit" },
+            complete = QuestState(98396, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98731-blessings-of-the-great-cat-spirit",
+            kind = "accept",
+            priority = 950,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Night Elves.",
+            dependsOn = { "turnin-98396-the-great-cat-spirit" },
+            complete = QuestState(98731, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98731-blessings-of-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 960,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = 4 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Night Elves.",
+            dependsOn = { "accept-98731-blessings-of-the-great-cat-spirit" },
+            complete = QuestState(98731, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98397-to-darnassus",
+            kind = "accept",
+            priority = 970,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = { 4, 95 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept To Darnassus from Dendrite Starblaze in Moonglade. This step is for Night Elves and Alliance Skyborne.",
+            dependsOn = { "turnin-98731-blessings-of-the-great-cat-spirit" },
+            complete = QuestState(98397, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98397-to-darnassus",
+            kind = "turnin",
+            priority = 980,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 11 },
+                    { race = { 4, 95 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in To Darnassus to Mathrengyl Bearwalker in Darnassus. This step is for Night Elves and Alliance Skyborne.",
+            dependsOn = { "accept-98397-to-darnassus" },
+            complete = QuestState(98397, "completed"),
+            route = {
+                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker in Darnassus."),
+            },
+        },
+        {
+            id = "accept-98404-the-great-windborne-cat-spirit",
+            kind = "accept",
+            priority = 990,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            complete = QuestState(98404, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
+                    "Travel to Avatar of Saeyleenan in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98404-the-great-windborne-cat-spirit",
+            kind = "turnin",
+            priority = 1000,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Windborne Cat Spirit to Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "accept-98404-the-great-windborne-cat-spirit" },
+            complete = QuestState(98404, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
+                    "Travel to Avatar of Saeyleenan in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98738-blessings-of-the-great-windborne-cat-spirit",
+            kind = "accept",
+            priority = 1010,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Blessings of the Great Windborne Cat Spirit from Avatar of Saeyleenan in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "turnin-98404-the-great-windborne-cat-spirit" },
+            complete = QuestState(98738, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.4400, 0.7340, "Avatar of Saeyleenan",
+                    "Travel to Avatar of Saeyleenan in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98738-blessings-of-the-great-windborne-cat-spirit",
+            kind = "turnin",
+            priority = 1020,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { race = { 95, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Blessings of the Great Windborne Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "accept-98738-blessings-of-the-great-windborne-cat-spirit" },
+            complete = QuestState(98738, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98405-the-great-cat-spirit",
+            kind = "accept",
+            priority = 1030,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Dendrite Starblaze in Moonglade. This step is for Tauren.",
+            complete = QuestState(98405, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98405-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 1040,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
+            dependsOn = { "accept-98405-the-great-cat-spirit" },
+            complete = QuestState(98405, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98342-the-great-cat-spirit",
+            kind = "accept",
+            priority = 1050,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
+            dependsOn = { "turnin-98405-the-great-cat-spirit" },
+            complete = QuestState(98342, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98342-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 1060,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Great Cat Spirit to Great Cat Spirit in Moonglade. This step is for Tauren.",
+            dependsOn = { "accept-98342-the-great-cat-spirit" },
+            complete = QuestState(98342, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98739-blessings-of-the-great-cat-spirit",
+            kind = "accept",
+            priority = 1070,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Blessings of the Great Cat Spirit from Great Cat Spirit in Moonglade. This step is for Tauren.",
+            dependsOn = { "turnin-98342-the-great-cat-spirit" },
+            complete = QuestState(98739, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5460, 0.7500, "Great Cat Spirit",
+                    "Travel to Great Cat Spirit in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98739-blessings-of-the-great-cat-spirit",
+            kind = "turnin",
+            priority = 1080,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = 6 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Blessings of the Great Cat Spirit to Dendrite Starblaze in Moonglade. This step is for Tauren.",
+            dependsOn = { "accept-98739-blessings-of-the-great-cat-spirit" },
+            complete = QuestState(98739, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "accept-98362-to-thunder-bluff",
+            kind = "accept",
+            priority = 1090,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = { 6, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept To Thunder Bluff from Dendrite Starblaze in Moonglade. This step is for Tauren and Horde Skyborne.",
+            dependsOn = { "turnin-98739-blessings-of-the-great-cat-spirit" },
+            complete = QuestState(98362, "activeOrCompleted"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze",
+                    "Travel to Dendrite Starblaze in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-98362-to-thunder-bluff",
+            kind = "turnin",
+            priority = 1100,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 11 },
+                    { race = { 6, 96 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in To Thunder Bluff to Turak Runetotem in Thunder Bluff. This step is for Tauren and Horde Skyborne.",
+            dependsOn = { "accept-98362-to-thunder-bluff" },
+            complete = QuestState(98362, "completed"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
+                    "Travel to Turak Runetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "accept-9063-torwa-pathfinder",
+            kind = "accept",
+            priority = 1110,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Accept Torwa Pathfinder from Theridran in Stormwind City.",
+            dependsOn = { "turnin-5061-aquatic-form", "turnin-31-aquatic-form" },
+            complete = QuestState(9063, "activeOrCompleted"),
+            route = {
+                Point(MAP.STORMWINDCITY, 0.2140, 0.5140, "Theridran",
+                    "Travel to Theridran in Stormwind City.", { map = { MAP.THUNDERBLUFF, MAP.DARNASSUS, MAP.MOONGLADE } }),
+                Point(MAP.THUNDERBLUFF, 0.7640, 0.2760, "Turak Runetotem",
+                    "Travel to Turak Runetotem in Thunder Bluff.", { map = { MAP.DARNASSUS, MAP.MOONGLADE } }),
+                Point(MAP.DARNASSUS, 0.3520, 0.0800, "Mathrengyl Bearwalker",
+                    "Travel to Mathrengyl Bearwalker in Darnassus.", { map = { MAP.MOONGLADE } }),
+                Point(MAP.MOONGLADE, 0.5240, 0.4040, "Loganaar",
+                    "Travel to Loganaar in Moonglade."),
+            },
+        },
+        {
+            id = "turnin-9063-torwa-pathfinder",
+            kind = "turnin",
+            priority = 1120,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Turn in Torwa Pathfinder to Torwa Pathfinder in Un'Goro Crater.",
+            dependsOn = { "accept-9063-torwa-pathfinder" },
+            complete = QuestState(9063, "completed"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
+                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
+            },
+        },
+        {
+            id = "accept-9052-bloodpetal-poison",
+            kind = "accept",
+            priority = 1130,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Accept Bloodpetal Poison from Torwa Pathfinder in Un'Goro Crater.",
+            dependsOn = { "turnin-9063-torwa-pathfinder" },
+            complete = QuestState(9052, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
+                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
+            },
+        },
+        {
+            id = "objective-9052-bloodpetal-poison",
+            kind = "objective",
+            priority = 1140,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Bloodpetal Poison: Gorishi Sting.",
+            dependsOn = { "accept-9052-bloodpetal-poison" },
+            complete = QuestState(9052, "complete"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.5040, 0.7880, "Gorishi Wasp",
+                    "Travel to Gorishi Wasp in Un'Goro Crater."),
+                Point(MAP.UNGOROCRATER, 0.5000, 0.8080, "Gorishi Stinger",
+                    "Travel to Gorishi Stinger in Un'Goro Crater."),
+                Point(MAP.UNGOROCRATER, 0.4360, 0.8140, "Gorishi Hive Queen",
+                    "Travel to Gorishi Hive Queen in Un'Goro Crater."),
+            },
+        },
+        {
+            id = "turnin-9052-bloodpetal-poison",
+            kind = "turnin",
+            priority = 1150,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Turn in Bloodpetal Poison to Torwa Pathfinder in Un'Goro Crater.",
+            dependsOn = { "objective-9052-bloodpetal-poison" },
+            complete = QuestState(9052, "completed"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
+                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
+            },
+        },
+        {
+            id = "accept-9051-toxic-test",
+            kind = "accept",
+            priority = 1160,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Accept Toxic Test from Torwa Pathfinder in Un'Goro Crater.",
+            dependsOn = { "turnin-9052-bloodpetal-poison", "turnin-9063-torwa-pathfinder" },
+            complete = QuestState(9051, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
+                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
+            },
+        },
+        {
+            id = "turnin-9051-toxic-test",
+            kind = "turnin",
+            priority = 1170,
+            conditions = {
+                all = {
+                    { class = 11 },
+                    { level = { min = 50 } },
+                },
+            },
+            text = "Turn in Toxic Test to Torwa Pathfinder in Un'Goro Crater.",
+            dependsOn = { "accept-9051-toxic-test" },
+            complete = QuestState(9051, "completed"),
+            route = {
+                Point(MAP.UNGOROCRATER, 0.7160, 0.7600, "Torwa Pathfinder",
+                    "Travel to Torwa Pathfinder in Un'Goro Crater."),
             },
         }
     },

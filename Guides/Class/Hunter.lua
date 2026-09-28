@@ -607,7 +607,6 @@ ns:RegisterGuide({
             priority = 290,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
                     { level = { min = 50 } },
                 },
@@ -616,9 +615,13 @@ ns:RegisterGuide({
             complete = QuestState(8151, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWINDCITY, 0.6200, 0.1500, "Ulfir Ironbeard",
-                    "Travel to Ulfir Ironbeard in Stormwind City.", { map = { MAP.IRONFORGE, MAP.DARNASSUS } }),
+                    "Travel to Ulfir Ironbeard in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
                 Point(MAP.IRONFORGE, 0.7060, 0.8380, "Olmin Burningbeard",
-                    "Travel to Olmin Burningbeard in Ironforge.", { map = { MAP.DARNASSUS } }),
+                    "Travel to Olmin Burningbeard in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
+                Point(MAP.ORGRIMMAR, 0.6620, 0.1820, "Ormak Grimshot",
+                    "Travel to Ormak Grimshot in Orgrimmar.", { map = { MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
+                Point(MAP.THUNDERBLUFF, 0.5740, 0.8920, "Holt Thunderhorn",
+                    "Travel to Holt Thunderhorn in Thunder Bluff.", { map = { MAP.DARNASSUS } }),
                 Point(MAP.DARNASSUS, 0.4220, 0.0760, "Dorion",
                     "Travel to Dorion in Darnassus."),
             },
@@ -629,7 +632,6 @@ ns:RegisterGuide({
             priority = 300,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
                     { level = { min = 50 } },
                 },
