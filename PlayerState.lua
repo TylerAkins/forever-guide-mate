@@ -89,24 +89,21 @@ end
 
 -- The line under the quest title is the objective summary. Progress rows
 -- such as "2/8 Trapped Game" are a different field and are not this text.
--- The global GetQuestLogQuestText selects that quest log row and fires
--- QUEST_LOG_UPDATE again. That selection is what stalls the frame on every
--- kill, loot, accept, and turn-in, so only a quest-log method that does not
--- take the selection is used, and each quest is read once.
+-- GetQuestLogQuestText selects that quest log row and fires QUEST_LOG_UPDATE
+-- again. Selecting every row is what locked the client, so the summary comes
+-- only from a quest-id lookup that does not change the selection.
 local summaryByQuest = {}
 local questLogCache
+local lastLogSnapshot
+local questLogDirty = false
 
-local function ObjectiveSummary(api, questLog, questID, logIndex)
+local function ObjectiveSummary(questLog, questID)
     local cached = summaryByQuest[questID]
     if cached ~= nil then
         return cached or nil
     end
     local text
-    if type(logIndex) == "number" and type(questLog.GetQuestLogQuestText) == "function" then
-        local result, known = Call(questLog, "GetQuestLogQuestText", logIndex)
-        text = known and CleanText(result[2]) or nil
-    end
-    if not text and type(questLog.GetNextWaypointText) == "function" then
+    if type(questLog.GetNextWaypointText) == "function" then
         local result, known = Call(questLog, "GetNextWaypointText", questID)
         text = known and CleanText(result[1]) or nil
     end
@@ -154,7 +151,29 @@ local function WantedSet(questIDs)
     return wanted
 end
 
+local function ObjectivesMatch(left, right)
+    if type(left) ~= "table" or type(right) ~= "table" or #left ~= #right then
+        return false
+    end
+    for index, objective in ipairs(right) do
+        local previous = left[index]
+        if type(objective) ~= "table" or type(previous) ~= "table" then
+            return false
+        end
+        if objective.numFulfilled ~= previous.numFulfilled
+            or objective.numRequired ~= previous.numRequired
+            or (objective.finished and true or false) ~= (previous.finished and true or false) then
+            return false
+        end
+    end
+    return true
+end
+
 function PlayerState:GetQuestLog(api, questIDs)
+    if self.reuseQuestLog and type(questLogCache) == "table" then
+        self.reuseQuestLog = false
+        return questLogCache, true
+    end
     local quests = {}
     local questLog = api.C_QuestLog
     if not questLog or type(questLog.GetNumQuestLogEntries) ~= "function"
@@ -180,19 +199,72 @@ function PlayerState:GetQuestLog(api, questIDs)
             and (not wanted or wanted[info.questID]) then
             local objectiveResult, objectiveKnown = Call(questLog, "GetQuestObjectives", info.questID)
             local objectives = objectiveKnown and type(objectiveResult[1]) == "table" and objectiveResult[1] or {}
-            local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
-            quests[info.questID] = {
-                title = info.title,
-                complete = LogQuestComplete(questLog, info.questID, info, objectives),
-                objectives = objectives,
-                summary = ObjectiveSummary(api, questLog, info.questID, index),
-                timeAllowed = timeAllowed,
-                timeLeft = timeLeft,
-            }
+            local previous = type(questLogCache) == "table" and questLogCache[info.questID] or nil
+            local reported = info.isComplete == true or (type(info.isComplete) == "number" and info.isComplete > 0)
+            if type(previous) == "table" and ObjectivesMatch(previous.objectives, objectives)
+                and (info.isComplete == nil or reported == previous.complete) then
+                -- Same kill credit as last time. Skip the completion and timer calls.
+                quests[info.questID] = previous
+            else
+                local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
+                quests[info.questID] = {
+                    title = info.title,
+                    complete = LogQuestComplete(questLog, info.questID, info, objectives),
+                    objectives = objectives,
+                    summary = ObjectiveSummary(questLog, info.questID),
+                    timeAllowed = timeAllowed,
+                    timeLeft = timeLeft,
+                }
+            end
         end
     end
     questLogCache = quests
     return quests, true
+end
+
+local function LogSnapshot(quests)
+    local ids = {}
+    for questID in pairs(quests or {}) do
+        ids[#ids + 1] = questID
+    end
+    table.sort(ids)
+    local parts = {}
+    for _, questID in ipairs(ids) do
+        local entry = type(quests[questID]) == "table" and quests[questID] or {}
+        local line = tostring(questID) .. "=" .. (entry.complete and "1" or "0")
+        if type(entry.objectives) == "table" then
+            for index, objective in ipairs(entry.objectives) do
+                if type(objective) == "table" then
+                    line = line .. ":" .. index
+                        .. ":" .. tostring(objective.numFulfilled)
+                        .. ":" .. tostring(objective.numRequired)
+                        .. ":" .. (objective.finished and "1" or "0")
+                end
+            end
+        end
+        parts[#parts + 1] = line
+    end
+    return table.concat(parts, "|")
+end
+
+-- Standing still still produces quest-log events. A matching snapshot means
+-- there is nothing new to ask the client and nothing to recalculate.
+function PlayerState:LogUnchanged(api, questIDs)
+    self.reuseQuestLog = false
+    api = api or _G
+    local quests, known = self:GetQuestLog(api, questIDs)
+    if not known then
+        return false
+    end
+    if questLogDirty then
+        questLogDirty = false
+        lastLogSnapshot = nil
+    end
+    local snapshot = LogSnapshot(quests)
+    local unchanged = lastLogSnapshot ~= nil and snapshot == lastLogSnapshot
+    lastLogSnapshot = snapshot
+    self.reuseQuestLog = true
+    return unchanged
 end
 
 -- Turned-in quests stay turned in. Asking the client again on every kill
@@ -200,10 +272,16 @@ end
 -- still in the log is not asked at all. A quest leaving the log must not
 -- throw away the completed-quest dump: rebuilding that table is the stall.
 local completionCache = {}
+local completionFailed = {}
 local seenInLog = {}
 local logWasComplete = {}
 local bulkLoaded = false
 local bulkCompleted = {}
+local flagAPIWorks = false
+local completionUnavailable = false
+-- How many uncached quests a single pulse may ask the client about. The open
+-- chapter is always resolved; the rest of the catalog continues on later pulses.
+ns.COMPLETION_QUERY_BUDGET = 24
 function PlayerState:ForgetQuest(questID, turnedIn)
     if type(questID) ~= "number" then
         return
@@ -214,6 +292,7 @@ function PlayerState:ForgetQuest(questID, turnedIn)
     logWasComplete[questID] = nil
     summaryByQuest[questID] = nil
     seenInLog[questID] = nil
+    questLogDirty = true
     if type(questLogCache) == "table" then
         questLogCache[questID] = nil
     end
@@ -221,15 +300,29 @@ end
 
 function PlayerState:InvalidateQuestCache()
     completionCache = {}
+    completionFailed = {}
     seenInLog = {}
     logWasComplete = {}
     bulkLoaded = false
     bulkCompleted = {}
+    flagAPIWorks = false
+    completionUnavailable = false
     summaryByQuest = {}
     questLogCache = nil
+    lastLogSnapshot = nil
+    questLogDirty = false
     if ns.Navigation and ns.Navigation.InvalidateClientPins then
         ns.Navigation:InvalidateClientPins()
     end
+end
+
+function PlayerState:RetryFailedCompletions()
+    completionUnavailable = false
+    flagAPIWorks = false
+    for questID in pairs(completionFailed) do
+        completionCache[questID] = nil
+    end
+    completionFailed = {}
 end
 
 local function FlagReader(api)
@@ -271,11 +364,57 @@ local function NoteQuestLog(quests)
     end
 end
 
-local function CompletedQuests(api, questIDs, logQuests)
-    local completed = {}
+local function StoreCompletion(questID, done, failed)
+    completionCache[questID] = done and true or false
+    if failed then
+        completionFailed[questID] = true
+    else
+        completionFailed[questID] = nil
+    end
+end
+
+local function ReadCachedCompletion(api, questID, departedComplete)
+    if completionCache[questID] ~= nil then
+        return completionCache[questID], true
+    end
+    local readFlag = FlagReader(api)
+    if readFlag then
+        if completionUnavailable then
+            return nil, false
+        end
+        local ok, value = pcall(readFlag, questID)
+        if ok then
+            flagAPIWorks = true
+            local done = value and true or false
+            StoreCompletion(questID, done, false)
+            return done, true
+        end
+        if flagAPIWorks then
+            StoreCompletion(questID, false, true)
+            return false, true
+        end
+        completionUnavailable = true
+        return nil, false
+    end
+    if type(api.GetQuestsCompleted) == "function" and not LoadBulkCompleted(api) then
+        return nil, false
+    end
+    if not bulkLoaded then
+        return nil, false
+    end
+    local done = bulkCompleted[questID] and true or false
+    if not done and departedComplete[questID] then
+        done = true
+    end
+    StoreCompletion(questID, done, false)
+    return done, true
+end
+
+local function CompletedQuests(api, questIDs, logQuests, priorityCount)
+    local completed, watched = {}, {}
     local questIDList = type(questIDs) == "table" and questIDs or {}
     if #questIDList == 0 then
-        return completed, true
+        return completed, true, watched
     end
     local departedComplete = {}
     for questID in pairs(seenInLog) do
@@ -284,38 +423,37 @@ local function CompletedQuests(api, questIDs, logQuests)
         end
     end
     NoteQuestLog(logQuests)
-    local readFlag = FlagReader(api)
-    local known = true
-    if not readFlag and type(api.GetQuestsCompleted) == "function" and not LoadBulkCompleted(api) then
-        known = false
-    elseif not readFlag and type(api.GetQuestsCompleted) ~= "function" then
-        known = false
-    end
-    for _, questID in ipairs(questIDList) do
+    local priority = type(priorityCount) == "number" and priorityCount or #questIDList
+    if priority < 0 then priority = 0 end
+    if priority > #questIDList then priority = #questIDList end
+    local extra = 0
+    local budget = ns.COMPLETION_QUERY_BUDGET or 24
+    local apiDown = false
+    for index, questID in ipairs(questIDList) do
         if logQuests[questID] then
             completed[questID] = false
+            watched[questID] = true
         elseif completionCache[questID] ~= nil then
             completed[questID] = completionCache[questID]
-        elseif readFlag then
-            local ok, value = pcall(readFlag, questID)
-            if ok then
-                local done = value and true or false
-                completionCache[questID] = done
-                completed[questID] = done
-            else
-                known = false
-                completed[questID] = false
-            end
-        elseif bulkLoaded then
-            local done = bulkCompleted[questID] and true or false
-            if not done and departedComplete[questID] then
-                done = true
-            end
-            completionCache[questID] = done
-            completed[questID] = done
+            watched[questID] = true
+        elseif apiDown then
+            -- The client already failed this pulse. Leave the rest unread.
         else
-            known = false
-            completed[questID] = false
+            local required = index <= priority
+            if not required and extra >= budget then
+                -- Saved for the next pulse.
+            else
+                local done, known = ReadCachedCompletion(api, questID, departedComplete)
+                if not known then
+                    apiDown = true
+                else
+                    if not required and completionCache[questID] ~= nil then
+                        extra = extra + 1
+                    end
+                    completed[questID] = done
+                    watched[questID] = true
+                end
+            end
         end
     end
     for questID in pairs(logWasComplete) do
@@ -326,7 +464,16 @@ local function CompletedQuests(api, questIDs, logQuests)
     for questID, entry in pairs(logQuests) do
         logWasComplete[questID] = type(entry) == "table" and entry.complete and true or false
     end
-    return completed, known
+    local known = not apiDown
+    if known then
+        for _, questID in ipairs(questIDList) do
+            if not watched[questID] then
+                known = false
+                break
+            end
+        end
+    end
+    return completed, known, watched
 end
 
 function PlayerState:QuestLogFingerprint(state)
@@ -353,9 +500,8 @@ function PlayerState:QuestLogFingerprint(state)
                 end
             end
         end
-        if type(entry.timeLeft) == "number" then
-            line = line .. ":t" .. math.floor(entry.timeLeft)
-        end
+        -- A countdown changes every second. Folding it into the fingerprint
+        -- rebuilt the whole route on that pulse, which is the periodic freeze.
         questParts[#questParts + 1] = line
     end
     local doneIDs = {}
@@ -394,7 +540,7 @@ function PlayerState:CapturePosition(api)
     return mapID, x, y
 end
 
-function PlayerState:Capture(api, questIDs)
+function PlayerState:Capture(api, questIDs, priorityCount)
     api = api or _G
     local raceResult, raceKnown = Call(api, "UnitRace", "player")
     local classResult, classKnown = Call(api, "UnitClass", "player")
@@ -413,7 +559,7 @@ function PlayerState:Capture(api, questIDs)
         instanceID = instanceKnown and instanceResult[8] or nil
     end
 
-    local completedQuests, completionKnown = CompletedQuests(api, questIDs, quests)
+    local completedQuests, completionKnown, watchedQuests = CompletedQuests(api, questIDs, quests, priorityCount)
 
     return {
         raceID = raceID,
@@ -425,6 +571,7 @@ function PlayerState:Capture(api, questIDs)
         quests = quests,
         questLogKnown = questLogKnown,
         completedQuests = completedQuests,
+        watchedQuests = watchedQuests,
         questCompletionKnown = completionKnown,
         mapID = mapID,
         x = x,

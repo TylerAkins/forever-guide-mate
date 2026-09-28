@@ -44,6 +44,17 @@ local function Unknown(reason)
     return nil, reason or "Eligibility could not be verified."
 end
 
+-- A partial catalog read must not treat every unread quest as failed.
+local function QuestChecked(state, questID)
+    if type(state) ~= "table" then
+        return false
+    end
+    if type(state.watchedQuests) == "table" then
+        return state.watchedQuests[questID] == true
+    end
+    return state.questCompletionKnown == true
+end
+
 local function ObjectiveFinished(objective)
     if type(objective) ~= "table" then
         return nil
@@ -210,12 +221,12 @@ function ns.EvaluateCondition(condition, state)
             if active then
                 return active.complete and true or false, active.complete and nil or "Quest objectives are incomplete."
             end
-            if not state.questLogKnown or not state.questCompletionKnown then
+            if not state.questLogKnown or not QuestChecked(state, questID) then
                 return Unknown("Quest completion is unavailable.")
             end
             return false, "Quest is not complete."
         elseif wanted == "completed" then
-            if not state.questCompletionKnown then
+            if not QuestChecked(state, questID) then
                 return Unknown("Quest completion is unavailable.")
             end
             return completed and true or false, completed and nil or "Quest has not been turned in."
@@ -223,12 +234,12 @@ function ns.EvaluateCondition(condition, state)
             if active or completed then
                 return true
             end
-            if not state.questLogKnown or not state.questCompletionKnown then
+            if not state.questLogKnown or not QuestChecked(state, questID) then
                 return Unknown("Quest state is unavailable.")
             end
             return false, "Quest has not been accepted."
         elseif wanted == "notCompleted" then
-            if not state.questCompletionKnown then
+            if not QuestChecked(state, questID) then
                 return Unknown("Quest completion is unavailable.")
             end
             return not completed, completed and "Quest is already complete." or nil
@@ -252,7 +263,7 @@ function ns.EvaluateCondition(condition, state)
             return Unknown("Quest log is unavailable.")
         end
         if not active then
-            if not state.questCompletionKnown then
+            if not QuestChecked(state, questID) then
                 return Unknown("Quest completion is unavailable.")
             end
             -- The log can lag on login while the quest is still in progress.
@@ -318,6 +329,20 @@ local function GoalQuestID(goal)
     local quest = type(complete) == "table" and complete.quest or nil
     local objective = type(complete) == "table" and complete.questObjective or nil
     return type(quest) == "table" and quest.id or type(objective) == "table" and objective.id or nil
+end
+
+local function TrustedQuestResult(state, goal)
+    if type(state) ~= "table" or not state.questLogKnown then
+        return false
+    end
+    if state.questCompletionKnown then
+        return true
+    end
+    if type(state.watchedQuests) ~= "table" then
+        return false
+    end
+    local questID = GoalQuestID(goal)
+    return type(questID) == "number" and state.watchedQuests[questID] == true
 end
 
 local function ApplyClientQuestData(guide)
@@ -717,6 +742,58 @@ function ns.QuestIDsForGuide(guide)
     return ids
 end
 
+function ns.QuestIDsForGoals(goals)
+    local found = {}
+    for _, goal in ipairs(goals or {}) do
+        CollectQuestIDs(goal, found)
+    end
+    local ids = {}
+    for questID in pairs(found) do
+        ids[#ids + 1] = questID
+    end
+    table.sort(ids)
+    return ids
+end
+
+-- The open chapter is resolved on this pulse. Every other quest in the addon
+-- follows behind it so a kill credit does not ask the client about all of them.
+function ns.QuestQuery()
+    local all = ns.GetTrackedQuestIDs()
+    local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
+    if type(guide) ~= "table" then
+        return all, 0
+    end
+    local priority
+    if type(guide.segments) == "table" and type(guide.segmentByID) == "table" then
+        local segment = ns.Engine and ns.Engine.currentSegment
+        if type(segment) ~= "table" or guide.segmentByID[segment.id] ~= segment then
+            local pick = ns.charDB.eraChapterPick or ns.charDB.eraFloor
+            segment = type(pick) == "string" and guide.segmentByID[pick] or nil
+        end
+        if type(segment) == "table" then
+            priority = ns.QuestIDsForGoals(segment.goals)
+        end
+    end
+    if not priority then
+        priority = ns.QuestIDsForGuide(guide)
+    end
+    local seen, ordered = {}, {}
+    for _, questID in ipairs(priority) do
+        if type(questID) == "number" and not seen[questID] then
+            seen[questID] = true
+            ordered[#ordered + 1] = questID
+        end
+    end
+    local priorityCount = #ordered
+    for _, questID in ipairs(all) do
+        if not seen[questID] then
+            seen[questID] = true
+            ordered[#ordered + 1] = questID
+        end
+    end
+    return ordered, priorityCount
+end
+
 function Engine:GetGoal(guide, goalID)
     local indexed = guide.goalByID
     if indexed then
@@ -771,7 +848,7 @@ function Engine:IsGoalDone(goal, state, guide)
         -- Once both quest APIs have answered, their negative result is more
         -- trustworthy than old manual, ledger, or inferred state.
         if evaluation == false and QuestObservableCompletion(goal.complete)
-            and state.questLogKnown and state.questCompletionKnown then
+            and TrustedQuestResult(state, goal) then
             return false
         end
     end
@@ -804,7 +881,7 @@ function Engine:ReconcileGuide(guide, state)
         local evaluation = goal.complete and ns.EvaluateCondition(goal.complete, state)
         local observed = evaluation == true
         local observedIncomplete = evaluation == false and QuestObservableCompletion(goal.complete)
-            and state.questLogKnown and state.questCompletionKnown
+            and TrustedQuestResult(state, goal)
         if observedIncomplete then
             ledger[goal.id] = nil
             ns.charDB.manualCompleted[goal.id] = nil
@@ -824,16 +901,18 @@ function Engine:ReconcileGuide(guide, state)
         end
         local evaluation = ns.EvaluateCondition(dependency.complete, state)
         if evaluation == false and QuestObservableCompletion(dependency.complete)
-            and state.questLogKnown and state.questCompletionKnown then
+            and TrustedQuestResult(state, dependency) then
             return false
         end
         return true
     end
+    local expanded = {}
     local function InferDependencies(goalID, visiting)
         local goal = self:GetGoal(guide, goalID)
-        if not goal or visiting[goalID] then
+        if not goal or visiting[goalID] or expanded[goalID] then
             return
         end
+        expanded[goalID] = true
         visiting[goalID] = true
         for _, dependencyID in ipairs(goal.dependsOn or {}) do
             if MayInfer(dependencyID) then
@@ -865,6 +944,7 @@ function Engine:ReconcileGuide(guide, state)
             InferDependencies(goalID, {})
         end
     end
+    self.reconcileStamp = guide.id .. "\0" .. tostring(guide.revision) .. "\0" .. tostring(state)
 end
 
 local function HasPermanentFailure(condition, state)
@@ -1210,7 +1290,10 @@ end
 function Engine:GetGuideProgress(guide, state, segment)
     state = state or self.state or {}
     ns:FinalizeGuides()
-    self:ReconcileGuide(guide, state)
+    local stamp = guide.id .. "\0" .. tostring(guide.revision) .. "\0" .. tostring(state)
+    if self.reconcileStamp ~= stamp then
+        self:ReconcileGuide(guide, state)
+    end
     local goals = guide.goals
     if segment and segment.goals then
         goals = segment.goals
@@ -1425,13 +1508,21 @@ function Engine:CandidateGoals(guide, state)
     for _, candidate in ipairs(urgent) do
         goals[#goals + 1] = candidate.goal
     end
+    self.candidateGoals = goals
     return goals
 end
 
 local function QuestTurnedIn(state, questID)
-    return state.questCompletionKnown == true
-        and type(state.completedQuests) == "table"
-        and state.completedQuests[questID] == true
+    if type(state) ~= "table" or type(state.completedQuests) ~= "table" then
+        return false
+    end
+    if state.completedQuests[questID] ~= true then
+        return false
+    end
+    if state.questCompletionKnown == true then
+        return true
+    end
+    return type(state.watchedQuests) == "table" and state.watchedQuests[questID] == true
 end
 
 -- A gossip refusal means the catalog chain is not actually finished unless the
@@ -1607,7 +1698,7 @@ local function ClearStaleDeferred(guide, state)
             if goal and goal.complete then
                 local evaluation = ns.EvaluateCondition(goal.complete, state)
                 if evaluation == false and QuestObservableCompletion(goal.complete)
-                    and state.questLogKnown and state.questCompletionKnown then
+                    and TrustedQuestResult(state, goal) then
                     local questID = QuestIDFromComplete(goal.complete)
                     local active = questID and state.quests and state.quests[questID]
                     if not active then
@@ -1622,7 +1713,10 @@ end
 function Engine:ResyncCurrent(state)
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     if not guide then return false end
-    state = state or ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
+    if not state and ns.PlayerState and ns.PlayerState.Capture and ns.GetTrackedQuestIDs then
+        local ids = ns.GetTrackedQuestIDs()
+        state = ns.PlayerState:Capture(nil, ids, #ids)
+    end
     if not StateReadyForResync(state) then
         self.resyncPending = guide.id
         return false
@@ -1664,14 +1758,46 @@ function Engine:SetActiveGoal(goal, remember)
     self.reviewingGoal = nil
 end
 
+function Engine:NotePosition()
+    local state = self.state
+    if type(state) ~= "table" or not ns.PlayerState or not ns.PlayerState.CapturePosition then
+        return false
+    end
+    local mapID, x, y = ns.PlayerState:CapturePosition()
+    if type(mapID) ~= "number" then
+        return false
+    end
+    local sameMap = mapID == state.mapID
+    state.mapID, state.x, state.y = mapID, x, y
+    -- Subzone noise fires while standing up to walk. The waypoint does not
+    -- move, and TomTom already follows the player across the same map.
+    if sameMap then
+        return false
+    end
+    local goal = self.currentGoal
+    if goal and self.currentGuide and goal.complete and ns.db and ns.db.autoAdvance ~= false
+        and ns.EvaluateCondition(goal.complete, state) == true then
+        self:Refresh(state)
+        return true
+    end
+    if ns.UI and ns.UI.UpdateArrow then
+        ns.UI:UpdateArrow()
+    end
+    return true
+end
+
 function Engine:Refresh(state)
     ns:FinalizeGuides()
     if not ns.charDB then
         return
     end
+    self.candidateGoals = nil
     self:MigrateEraProgress()
     local guide = ns.guides[ns.charDB.selectedGuide]
-    state = state or ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
+    if not state and ns.PlayerState and ns.PlayerState.Capture and ns.QuestQuery then
+        local ids, priorityCount = ns.QuestQuery()
+        state = ns.PlayerState:Capture(nil, ids, priorityCount)
+    end
     self.state = state
     self.currentGuide = guide
     self.currentSegment = nil
@@ -1698,6 +1824,7 @@ function Engine:Refresh(state)
     self:ResyncUpdatedGuide(guide, state)
     self:ReconcileGuide(guide, state)
     if self:ReleaseUnconfirmedRefusals(guide, state) then
+        self.reconcileStamp = nil
         self:ReconcileGuide(guide, state)
     end
     ValidateActiveGoal(self, guide)

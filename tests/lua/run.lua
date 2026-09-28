@@ -1942,6 +1942,7 @@ Equal(logged[92462].complete, false, "an unfinished quest objective stays incomp
 
 function TestUnpinnedObjectiveText()
 local vrangSummary = "Collect 8 Trapped Game from traps found in Sprung Traps in the Barrens."
+local selectedRows = 0
 local vrangLog = ns.PlayerState:GetQuestLog({
     C_QuestLog = {
         GetNumQuestLogEntries = function() return 1 end,
@@ -1950,10 +1951,15 @@ local vrangLog = ns.PlayerState:GetQuestLog({
             return { { text = "Trapped Game", finished = false, numFulfilled = 2, numRequired = 8 } }
         end,
         GetQuestLogQuestText = function()
+            selectedRows = selectedRows + 1
             return "While you are out there, check on my traps.", vrangSummary
+        end,
+        GetNextWaypointText = function()
+            return vrangSummary
         end,
     },
 })
+Equal(selectedRows, 0, "reading the log does not select a quest row")
 Equal(vrangLog[95507].summary, vrangSummary, "the quest log keeps the objective under the quest title")
 Equal(vrangLog[95507].title, "Vrang's Game", "the quest log keeps the quest title")
 local waypointOnly = ns.PlayerState:GetQuestLog({
@@ -3395,8 +3401,12 @@ function TestQuestCreditDoesNotRebuildCompletedQuests()
                 return { { text = "Slay", numRequired = 8, numFulfilled = 8, finished = true } }
             end,
             GetQuestLogQuestText = function()
-                summaries = summaries + 1
+                selecting = selecting + 1
                 return "Body", "Collect the proof from the camp."
+            end,
+            GetNextWaypointText = function()
+                summaries = summaries + 1
+                return "Collect the proof from the camp."
             end,
         },
         GetQuestLogQuestText = function()
@@ -3459,7 +3469,10 @@ function TestClientPinIsReadOncePerObjectiveChange()
     state.quests[887].objectives[1].numFulfilled = 2
     local moved = ns.Navigation:GetActiveLeg(goal, state, pins)
     Equal(moved and moved.x, 0.2, "a new kill credit still has a quest log pin")
-    Equal(queries, 2, "a kill credit reads the moved quest log pin once")
+    Equal(queries, 1, "a kill credit does not read the quest map pin again")
+    state.quests[887].objectives[1].finished = true
+    ns.Navigation:GetActiveLeg(goal, state, pins)
+    Equal(queries, 2, "finishing the objective can read a new quest map pin")
     ns.Navigation:InvalidateClientPins()
 end
 TestClientPinIsReadOncePerObjectiveChange()
@@ -3485,6 +3498,15 @@ function TestUnchangedQuestLogSkipsGuideWalk()
         level = 10, mapID = 1411, instanceID = nil,
     }
     Equal(ns.Engine:SameQuestLog(changed), false, "kill credit still walks the guide")
+    local ticking = {
+        quests = { [100] = { complete = false, timeLeft = 59, objectives = {
+            { numFulfilled = 1, numRequired = 8, finished = false },
+        } } },
+        completedQuests = { [200] = true },
+        questLogKnown = true, questCompletionKnown = true,
+        level = 10, mapID = 1411, instanceID = nil,
+    }
+    Equal(ns.Engine:SameQuestLog(ticking), true, "a ticking quest timer does not walk the guide")
     ns.Engine.questLogFingerprint = saved
 end
 TestUnchangedQuestLogSkipsGuideWalk()
@@ -3612,6 +3634,80 @@ local function TestClassQuestGuides()
     end
 end
 TestClassQuestGuides()
+
+function TestIdleAndMovementSkipTheCatalog()
+    ns.PlayerState:InvalidateQuestCache()
+    local objectives, flags, fulfilled, timers = 0, 0, 1, 0
+    local api = {
+        C_QuestLog = {
+            GetNumQuestLogEntries = function() return 1 end,
+            GetInfo = function() return { questID = 50, isComplete = false } end,
+            GetQuestObjectives = function()
+                objectives = objectives + 1
+                return { { numFulfilled = fulfilled, numRequired = 8, finished = false } }
+            end,
+            IsQuestFlaggedCompleted = function()
+                flags = flags + 1
+                return false
+            end,
+            GetTimeAllowed = function()
+                timers = timers + 1
+                return nil
+            end,
+        },
+    }
+    local ids = {}
+    for index = 1, 60 do ids[index] = index end
+    Equal(ns.PlayerState:LogUnchanged(api, ids), false, "the first quest pulse is new")
+    Equal(flags, 0, "an unchanged check does not ask if quests were turned in")
+    local peeked = objectives
+    Equal(ns.PlayerState:LogUnchanged(api, ids), true, "standing still is not a new quest pulse")
+    Equal(flags, 0, "standing still still does not ask if quests were turned in")
+    Equal(timers, 1, "standing still does not ask the quest timer again")
+    Check(objectives > peeked, "standing still peeks at the log so a kill is not missed")
+    fulfilled = 2
+    Equal(ns.PlayerState:LogUnchanged(api, ids), false, "kill credit is a new quest pulse")
+
+    ns.PlayerState:InvalidateQuestCache()
+    local budget = ns.COMPLETION_QUERY_BUDGET
+    local state = ns.PlayerState:Capture(api, ids, 1)
+    Equal(flags, 1 + budget, "a real update reads the open quests plus a slice of the catalog")
+    Equal(state.questCompletionKnown, false, "the rest of the catalog waits for a later update")
+    Equal(state.watchedQuests[1], true, "the open chapter quest is resolved")
+    Equal(state.watchedQuests[60], nil, "a later catalog quest is not read on this pulse")
+    Equal(ns.EvaluateCondition({ quest = { id = 60, state = "completed" } }, state), nil,
+        "an unread quest is not treated as failed")
+    local flagsAfter = flags
+    ns.PlayerState:Capture(api, ids, 1)
+    Equal(flags - flagsAfter, budget, "the next real update continues through the catalog")
+
+    local captures, refreshes = 0, 0
+    local savedCapture = ns.PlayerState.Capture
+    local savedRefresh = ns.Engine.Refresh
+    ns.PlayerState.Capture = function() captures = captures + 1 end
+    ns.Engine.Refresh = function() refreshes = refreshes + 1 end
+    ns.Engine.state = { mapID = 1420, x = 0.2, y = 0.2 }
+    ns.Engine.currentGoal = nil
+    ns.Engine.currentGuide = nil
+    local savedMap = C_Map
+    local mapID = 1420
+    C_Map = {
+        GetBestMapForUnit = function() return mapID end,
+        GetPlayerMapPosition = function() return { x = 0.4, y = 0.5 } end,
+    }
+    Equal(ns.Engine:NotePosition(), false, "starting to walk on the same map does not rebuild the route")
+    Equal(captures, 0, "starting to walk does not read the quest catalog")
+    Equal(refreshes, 0, "starting to walk does not refresh the guide")
+    mapID = 1497
+    ns.Engine:NotePosition()
+    Equal(captures, 0, "crossing into another map does not read the quest catalog")
+    Equal(refreshes, 0, "crossing into another map does not refresh the guide")
+    C_Map = savedMap
+    ns.PlayerState.Capture = savedCapture
+    ns.Engine.Refresh = savedRefresh
+    ns.PlayerState:InvalidateQuestCache()
+end
+TestIdleAndMovementSkipTheCatalog()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

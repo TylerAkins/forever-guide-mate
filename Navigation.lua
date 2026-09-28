@@ -200,7 +200,6 @@ local function ObjectiveKey(state, questID)
         for index, objective in ipairs(entry.objectives) do
             if type(objective) == "table" then
                 parts[#parts + 1] = tostring(index)
-                parts[#parts + 1] = tostring(objective.numFulfilled)
                 parts[#parts + 1] = objective.finished and "1" or "0"
             end
         end

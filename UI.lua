@@ -304,7 +304,11 @@ end
 
 function UI:NextGoalText(engine)
     if not engine.currentGuide or not engine.currentGoal then return nil end
-    for _, goal in ipairs(engine:CandidateGoals(engine.currentGuide, engine.state)) do
+    local goals = engine.candidateGoals
+    if not goals then
+        goals = engine:CandidateGoals(engine.currentGuide, engine.state)
+    end
+    for _, goal in ipairs(goals) do
         if goal.id ~= engine.currentGoal.id then return goal.text end
     end
 end
