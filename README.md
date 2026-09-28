@@ -16,6 +16,7 @@ Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Lore
 | `Guides/Era/` | Unconverted Era chapters (not loaded by the addon) |
 | `Guides/Loremaster/` | Zone-completion guides |
 | `Guides/Dungeons/` | Dungeon quest guides |
+| `Guides/Class/` | Supported class-quest guides, one per class |
 
 Only files listed in `ForeverGuideMate.toc` appear in the addon.
 
@@ -69,7 +70,19 @@ Hall of Thanes, the Deadmines, Wailing Caverns, and Ruins of Lordaeron use the F
 
 ### Class quests
 
-Starter chapters include the class quests whose givers are already on that route. A separate class-guide section is not written yet.
+| Guide | Who |
+| --- | --- |
+| Warrior | Alliance and Horde |
+| Paladin | Alliance, and Undead on Horde |
+| Hunter | Alliance and Horde |
+| Rogue | Alliance and Horde |
+| Priest | Alliance and Horde |
+| Shaman | Horde, plus the Alliance shaman quests Forever added |
+| Mage | Alliance and Horde |
+| Warlock | Alliance and Horde |
+| Druid | Alliance and Horde, including Moonglade |
+
+Each guide is the classic class route with Forever class quests woven in. Race and faction are on every step. Horde has no Orc, Troll, Tauren, or Horde Skyborne paladin quests in the database. Dungeon class quests stay in the dungeon guides. Starter chapters still include the class quests whose givers are already on that route.
 
 ## Todo
 
@@ -90,10 +103,6 @@ Capitals are not separate Loremaster guides. Capital quests belong on the zone r
 - Ragefire Chasm: Forever list pass
 - No guide yet: Shadowfang Keep, The Stockade, Blackfathom Deeps, Gnomeregan, Razorfen Kraul, Scarlet Monastery, Razorfen Downs, Uldaman, Zul'Farrak, Maraudon, Temple of Atal'Hakkar, Blackrock Depths, Lower and Upper Blackrock Spire, Dire Maul, Scholomance, Stratholme
 - Raids and attunements not started (Zul'Gurub through Naxxramas)
-
-### Class quests
-
-One guide section per class (Warrior through Druid, including Moonglade for druids). None written yet.
 
 ### Era chapters not yet loaded
 
