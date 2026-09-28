@@ -16,6 +16,7 @@ Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Lore
 | `Guides/Era/` | Unconverted Era chapters (not loaded by the addon) |
 | `Guides/Loremaster/` | Zone-completion guides |
 | `Guides/Dungeons/` | Dungeon quest guides |
+| `Guides/Class/` | Supported class-quest guides, one per class |
 
 Only files listed in `ForeverGuideMate.toc` appear in the addon.
 
