@@ -1,6 +1,14 @@
 # Guide authoring
 
-Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, and `Guides/Class/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class guides use `category = "Class Quests"`.
+Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, and `Guides/Class/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class quests are a supported guide type. Class guides use `category = "Class Quests"`.
+
+## Class quests
+
+One guide per class lives in `Guides/Class/`. The library label is Class. Each guide is the classic class route with Forever class quests woven in. Put class, race, and faction on every step. Use the database race list. A quest offered to both factions stays open to both. When the database leaves the race blank, keep a race lock only when a single-faction classic guide names that race.
+
+Horde paladin quests are Undead only. Orc, Troll, Tauren, and Horde Skyborne have no paladin quests in the database.
+
+Dungeon, raid, and PvP class quests stay in the dungeon guides. A quest with no giver, objectives, and turn-in is named in the class guide header. Revisit it when the database records those. Do not invent a giver or a coordinate. Starter chapters still weave class quests whose givers are already on that route. The full chain stays in the class guide.
 
 ## Quest chains
 
