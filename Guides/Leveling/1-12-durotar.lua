@@ -44,7 +44,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-durotar",
     title = "1-12 Durotar",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1916,7 +1916,7 @@ ns:RegisterGuide({
         {
             id = "objective-97225-forgotten-loa-idols",
             kind = "objective",
-            priority = 1141,
+            priority = 1165,
             conditions = { level = { min = 9 } },
             useClientPin = true,
             text = "Collect Forgotten Loa Idols on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
@@ -1930,7 +1930,7 @@ ns:RegisterGuide({
         {
             id = "objective-97223-bloodtalon-matriarch",
             kind = "objective",
-            priority = 1142,
+            priority = 1200.5,
             conditions = { level = { min = 5 } },
             text = "Collect Bloodtalon Matriarch Eggs.",
             dependsOn = { "accept-97223-bloodtalon-matriarch" },
@@ -2052,7 +2052,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97223-bloodtalon-matriarch",
             kind = "turnin",
-            priority = 1232,
+            priority = 1251,
             conditions = { level = { min = 5 } },
             text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
             dependsOn = { "objective-97223-bloodtalon-matriarch" },
