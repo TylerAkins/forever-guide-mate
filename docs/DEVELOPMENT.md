@@ -14,6 +14,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 | `Guides/Era/` | Unconverted Era chapters (titles with `(Era)`, not loaded) |
 | `Guides/Loremaster/` | Zone-completion guides (shipped: Durotar and Mulgore only; add to `ForeverGuideMate.toc` when a zone is ready) |
 | `Guides/Dungeons/` | Dungeon quest guides |
+| `Guides/Class/` | One class-quest guide per class |
 | `VERSION` | Current stable release used by automated version checks |
 | `RELEASE_NOTES.md` | Curated notes for only the current release |
 | `tools/compile_addon.py` | Local install-tree builder |

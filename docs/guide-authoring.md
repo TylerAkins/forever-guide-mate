@@ -1,6 +1,6 @@
 # Guide authoring
 
-Rules for `Guides/Leveling/`, `Guides/Loremaster/`, and `Guides/Dungeons/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes.
+Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, and `Guides/Class/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class guides use `category = "Class Quests"`.
 
 ## Quest chains
 
