@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for the Barrens, levels 12-20.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
--- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter.
+-- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter. Wenikee Boltbucket is accepted from Sputtervalve, and no chapter stops at Wenikee.
 -- Journey to the Crossroads from Thrall is for Horde Skyborne.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -40,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-12-20-barrens",
     title = "12-20 Barrens",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -665,6 +665,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-860-sergra-darkthorn",
+            kind = "turnin",
+            priority = 445,
+            conditions = {
+                all = {
+                    { level = { min = 10 } },
+                    { quest = { id = 860, state = "active" } },
+                },
+            },
+            text = "Turn in Sergra Darkthorn to Sergra Darkthorn in The Crossroads.",
+            complete = QuestState(860, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
             id = "accept-844-plainstrider-menace",
             kind = "accept",
             priority = 450,
@@ -674,6 +691,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
                     "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
+            id = "turnin-886-the-barrens-oases",
+            kind = "turnin",
+            priority = 455,
+            conditions = {
+                all = {
+                    { level = { min = 10 } },
+                    { quest = { id = 886, state = "active" } },
+                },
+            },
+            text = "Turn in The Barrens Oases to Tonga Runetotem in The Crossroads.",
+            complete = QuestState(886, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5223, 0.3193, "Tonga Runetotem",
+                    "Travel to Tonga Runetotem."),
             },
         },
         {

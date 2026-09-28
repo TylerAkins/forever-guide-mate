@@ -40,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-12-17-westfall",
     title = "12-17 Westfall",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -927,6 +927,23 @@ ns:RegisterGuide({
             text = "Start collecting Handful of Oats from Sack of Oats on the ground in Saldean's Farm Try to get 3-4 Handful of Oats and to complete later (56.9, 19,3).",
             dependsOn = { "accept-151-poor-old-blanchy" },
             complete = QuestState(151, "complete"),
+        },
+        {
+            id = "turnin-109-report-to-gryan-stoutmantle",
+            kind = "turnin",
+            priority = 585,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { quest = { id = 109, state = "active" } },
+                },
+            },
+            text = "Turn in Report to Gryan Stoutmantle to Marshal Gryan Stoutmantle in Sentinel Hill.",
+            complete = QuestState(109, "completed"),
+            route = {
+                Point(MAP.WESTFALL, 0.5637, 0.4764, "Marshal Gryan Stoutmantle",
+                    "Travel to Marshal Gryan Stoutmantle."),
+            },
         },
         {
             id = "accept-12-the-people-s-militia",

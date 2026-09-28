@@ -33,7 +33,7 @@ Use the first rule that fits.
 
 Past level 20 there is no published speed run to copy. Place an extra quest the way that speed run places a new one. The leveling spine stays in order.
 
-Accept it with the giver the route is already visiting, once the route has reached the quest's level. Do the objective on the classic trip that already crosses that spot. Turn it in on the way back to that NPC. Do not add a trip, and do not start a chain in the middle. A recommended level that is still above the steps ahead waits until after those steps, so the tracker does not turn around when the character dings. The full pattern is in [era-forever-weave](../era-forever-weave/SKILL.md).
+Accept it with the giver the route is already visiting, once the route has reached the quest's level. Do the objective on the classic trip that already crosses that spot. Turn it in on the way back to that NPC. Do not add a trip, and do not start a chain in the middle. A recommended level that is still above the steps ahead waits until after those steps, so the tracker does not turn around when the character dings. An accept with no turn-in is handed in on the later chapter that already stops at that NPC. The full pattern is in [era-forever-weave](../era-forever-weave/SKILL.md).
 
 Leave it out of the first wave when the guide does not know the NPC offers it yet. A follow-up that needs a turn-in keeps `dependsOn` on that turn-in.
 

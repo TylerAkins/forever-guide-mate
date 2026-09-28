@@ -38,7 +38,7 @@ ns:RegisterGuide({
     id = "leveling-era-20-21-darkshore",
     title = "20-21 Darkshore",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -621,6 +621,23 @@ ns:RegisterGuide({
             text = "Turn in Onu to Onu in Grove of the Ancients.",
             dependsOn = { "accept-948-onu" },
             complete = QuestState(948, "completed"),
+            route = {
+                Point(MAP.DARKSHORE, 0.4355, 0.7632, "Onu",
+                    "Travel to Onu."),
+            },
+        },
+        {
+            id = "turnin-952-grove-of-the-ancients",
+            kind = "turnin",
+            priority = 405,
+            conditions = {
+                all = {
+                    { level = { min = 6 } },
+                    { quest = { id = 952, state = "active" } },
+                },
+            },
+            text = "Turn in Grove of the Ancients to Onu in Grove of the Ancients.",
+            complete = QuestState(952, "completed"),
             route = {
                 Point(MAP.DARKSHORE, 0.4355, 0.7632, "Onu",
                     "Travel to Onu."),

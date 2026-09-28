@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for Thousand Needles, levels 27-29.
 -- This follows the classic route and is not rewritten for Forever yet.
+-- The Elder Crone, accepted from Seereth, turns in to Magatha before Forsaken Aid.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -33,7 +34,7 @@ ns:RegisterGuide({
     id = "leveling-era-27-29-thousand-needles",
     title = "27-29 Thousand Needles (Era)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -93,6 +94,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.6136, 0.8067, "Melor Stonehoof",
                     "Travel to Melor Stonehoof."),
+            },
+        },
+        {
+            id = "turnin-1063-the-elder-crone",
+            kind = "turnin",
+            priority = 65,
+            conditions = {
+                all = {
+                    { level = { min = 13 } },
+                    { quest = { id = 1063, state = "active" } },
+                },
+            },
+            text = "Turn in The Elder Crone to Magatha Grimtotem in Elder Rise.",
+            complete = QuestState(1063, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7010, 0.3080, "Magatha Grimtotem",
+                    "Travel to Magatha Grimtotem."),
             },
         },
         {
