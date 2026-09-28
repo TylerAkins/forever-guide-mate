@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.22 - 2026-09-28
+
+- Each 1-12 starter route now includes The Great Outdoors after The Adventurer turn-in.
+- Durotar and Mulgore Loremaster guides follow the updated leveling spine, including The Adventurer and The Great Outdoors.
+
 ## 0.1.21 - 2026-09-27
 
 - Tirisfal Glades now includes the Undead paladin steps A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.

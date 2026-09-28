@@ -2229,6 +2229,9 @@ Check(not ns.Engine.currentGoal or (
 local durotar = ns.guides["leveling-durotar"]
 Check(durotar ~= nil, "the Durotar guide is registered")
 Equal(durotar.category, "Loremaster Guides", "the Durotar guide is a Loremaster guide")
+local greatOutdoorsAccept = ns.Engine:GetGoal(durotar, "accept-96101-the-great-outdoors")
+Check(DependsOn(greatOutdoorsAccept, "turnin-96652-the-adventurer"),
+    "The Great Outdoors waits for The Adventurer in Durotar Loremaster")
 local encroachmentGoals = 0
 for _, goal in ipairs(durotar.goals) do
     if string.find(goal.id, "objective-837-encroachment-", 1, true) then

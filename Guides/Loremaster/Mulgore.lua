@@ -23,6 +23,8 @@ local _, ns = ...
 -- steps follow the quest log pin and keep a landmark until the quest is accepted.
 -- Coordinates have not been validated in the Forever client.
 
+-- Step order follows the leveling route. Zone quests that are not on
+-- that route are woven in at the same giver, or after their series quest.
 local MAP = {
     MOONGLADE = 1450,
     MULGORE = 1412,
@@ -707,9 +709,22 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-763-rites-of-the-earthmother",
+            id = "accept-96659-the-adventurer",
             kind = "accept",
             priority = 380,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
+            dependsOn = { "turnin-757-rite-of-strength" },
+            complete = QuestState(96659, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4420, 0.7600, "Chief Hawkwind",
+                    "Travel to Chief Hawkwind."),
+            },
+        },
+        {
+            id = "accept-763-rites-of-the-earthmother",
+            kind = "accept",
+            priority = 390,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -726,7 +741,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1519-call-of-earth",
             kind = "turnin",
-            priority = 390,
+            priority = 400,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -746,7 +761,7 @@ ns:RegisterGuide({
         {
             id = "accept-1520-call-of-earth",
             kind = "accept",
-            priority = 400,
+            priority = 410,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -765,7 +780,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1520-call-of-earth",
             kind = "turnin",
-            priority = 410,
+            priority = 420,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -785,7 +800,7 @@ ns:RegisterGuide({
         {
             id = "accept-1521-call-of-earth",
             kind = "accept",
-            priority = 420,
+            priority = 430,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -804,7 +819,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1521-call-of-earth",
             kind = "turnin",
-            priority = 430,
+            priority = 440,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -824,7 +839,7 @@ ns:RegisterGuide({
         {
             id = "accept-1656-a-task-unfinished",
             kind = "accept",
-            priority = 440,
+            priority = 450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -840,7 +855,7 @@ ns:RegisterGuide({
         {
             id = "accept-743-dangers-of-the-windfury",
             kind = "accept",
-            priority = 450,
+            priority = 460,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -855,9 +870,57 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-96659-the-adventurer",
+            kind = "turnin",
+            priority = 470,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
+            dependsOn = { "accept-96659-the-adventurer" },
+            complete = QuestState(96659, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                    "Travel to Kaga Wildhoof."),
+            },
+        },
+        {
+            id = "accept-96101-the-great-outdoors",
+            kind = "accept",
+            priority = 480,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Great Outdoors from Kaga Wildhoof.",
+            dependsOn = { "turnin-96659-the-adventurer" },
+            complete = QuestState(96101, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                    "Travel to Kaga Wildhoof."),
+            },
+        },
+        {
+            id = "objective-96101-the-great-outdoors",
+            kind = "objective",
+            priority = 490,
+            conditions = { level = { min = 4 } },
+            text = "Type /sit at Kaga Wildhoof's campfire and wait until you gain the Boosted Rest buff.",
+            dependsOn = { "accept-96101-the-great-outdoors" },
+            complete = QuestState(96101, "complete"),
+        },
+        {
+            id = "turnin-96101-the-great-outdoors",
+            kind = "turnin",
+            priority = 500,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Great Outdoors to Kaga Wildhoof.",
+            dependsOn = { "objective-96101-the-great-outdoors" },
+            complete = QuestState(96101, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.4620, 0.6720, "Kaga Wildhoof",
+                    "Travel to Kaga Wildhoof."),
+            },
+        },
+        {
             id = "turnin-763-rites-of-the-earthmother",
             kind = "turnin",
-            priority = 460,
+            priority = 510,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -874,7 +937,7 @@ ns:RegisterGuide({
         {
             id = "accept-767-rite-of-vision",
             kind = "accept",
-            priority = 470,
+            priority = 520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -892,7 +955,7 @@ ns:RegisterGuide({
         {
             id = "accept-745-sharing-the-land",
             kind = "accept",
-            priority = 480,
+            priority = 530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -908,7 +971,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1656-a-task-unfinished",
             kind = "turnin",
-            priority = 490,
+            priority = 540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -925,7 +988,7 @@ ns:RegisterGuide({
         {
             id = "accept-748-poison-water",
             kind = "accept",
-            priority = 500,
+            priority = 550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -943,7 +1006,7 @@ ns:RegisterGuide({
         {
             id = "accept-761-swoop-hunting",
             kind = "accept",
-            priority = 510,
+            priority = 560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -960,7 +1023,7 @@ ns:RegisterGuide({
         {
             id = "turnin-767-rite-of-vision",
             kind = "turnin",
-            priority = 520,
+            priority = 570,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -978,7 +1041,7 @@ ns:RegisterGuide({
         {
             id = "accept-771-rite-of-vision",
             kind = "accept",
-            priority = 530,
+            priority = 580,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -996,7 +1059,7 @@ ns:RegisterGuide({
         {
             id = "accept-766-mazzranache",
             kind = "accept",
-            priority = 540,
+            priority = 590,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1013,7 +1076,7 @@ ns:RegisterGuide({
         {
             id = "objective-771-rite-of-vision-2",
             kind = "objective",
-            priority = 550,
+            priority = 600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1032,7 +1095,7 @@ ns:RegisterGuide({
         {
             id = "objective-771-rite-of-vision-1",
             kind = "objective",
-            priority = 560,
+            priority = 610,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1051,7 +1114,7 @@ ns:RegisterGuide({
         {
             id = "objective-748-poison-water-1",
             kind = "objective",
-            priority = 570,
+            priority = 620,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1071,7 +1134,7 @@ ns:RegisterGuide({
         {
             id = "objective-748-poison-water-2",
             kind = "objective",
-            priority = 580,
+            priority = 630,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1090,7 +1153,7 @@ ns:RegisterGuide({
         {
             id = "objective-766-mazzranache-1",
             kind = "objective",
-            priority = 590,
+            priority = 640,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1108,7 +1171,7 @@ ns:RegisterGuide({
         {
             id = "objective-766-mazzranache-3",
             kind = "objective",
-            priority = 600,
+            priority = 650,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1126,7 +1189,7 @@ ns:RegisterGuide({
         {
             id = "objective-766-mazzranache-4",
             kind = "objective",
-            priority = 610,
+            priority = 660,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1144,7 +1207,7 @@ ns:RegisterGuide({
         {
             id = "objective-766-mazzranache-2",
             kind = "objective",
-            priority = 620,
+            priority = 670,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1162,7 +1225,7 @@ ns:RegisterGuide({
         {
             id = "accept-98430-the-longwalkers",
             kind = "accept",
-            priority = 630,
+            priority = 680,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1178,7 +1241,7 @@ ns:RegisterGuide({
         {
             id = "objective-98430-the-longwalkers-1",
             kind = "objective",
-            priority = 640,
+            priority = 690,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1195,7 +1258,7 @@ ns:RegisterGuide({
         {
             id = "objective-745-sharing-the-land-1",
             kind = "objective",
-            priority = 650,
+            priority = 700,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1212,7 +1275,7 @@ ns:RegisterGuide({
         {
             id = "objective-745-sharing-the-land-2",
             kind = "objective",
-            priority = 660,
+            priority = 710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1229,7 +1292,7 @@ ns:RegisterGuide({
         {
             id = "objective-745-sharing-the-land-3",
             kind = "objective",
-            priority = 670,
+            priority = 720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1246,7 +1309,7 @@ ns:RegisterGuide({
         {
             id = "objective-761-swoop-hunting-1",
             kind = "objective",
-            priority = 680,
+            priority = 730,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1264,7 +1327,7 @@ ns:RegisterGuide({
         {
             id = "objective-743-dangers-of-the-windfury-1",
             kind = "objective",
-            priority = 690,
+            priority = 740,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1282,7 +1345,7 @@ ns:RegisterGuide({
         {
             id = "accept-749-the-ravaged-caravan",
             kind = "accept",
-            priority = 700,
+            priority = 750,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1299,7 +1362,7 @@ ns:RegisterGuide({
         {
             id = "objective-749-the-ravaged-caravan-1",
             kind = "objective",
-            priority = 710,
+            priority = 760,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1317,7 +1380,7 @@ ns:RegisterGuide({
         {
             id = "turnin-743-dangers-of-the-windfury",
             kind = "turnin",
-            priority = 720,
+            priority = 770,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1335,7 +1398,7 @@ ns:RegisterGuide({
         {
             id = "turnin-748-poison-water",
             kind = "turnin",
-            priority = 730,
+            priority = 780,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1354,7 +1417,7 @@ ns:RegisterGuide({
         {
             id = "accept-754-winterhoof-cleansing",
             kind = "accept",
-            priority = 740,
+            priority = 790,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1373,7 +1436,7 @@ ns:RegisterGuide({
         {
             id = "turnin-761-swoop-hunting",
             kind = "turnin",
-            priority = 750,
+            priority = 800,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1391,7 +1454,7 @@ ns:RegisterGuide({
         {
             id = "turnin-771-rite-of-vision",
             kind = "turnin",
-            priority = 760,
+            priority = 810,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1409,7 +1472,7 @@ ns:RegisterGuide({
         {
             id = "accept-772-rite-of-vision",
             kind = "accept",
-            priority = 770,
+            priority = 820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1427,7 +1490,7 @@ ns:RegisterGuide({
         {
             id = "turnin-766-mazzranache",
             kind = "turnin",
-            priority = 780,
+            priority = 830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1445,7 +1508,7 @@ ns:RegisterGuide({
         {
             id = "turnin-745-sharing-the-land",
             kind = "turnin",
-            priority = 790,
+            priority = 840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1462,7 +1525,7 @@ ns:RegisterGuide({
         {
             id = "accept-746-dwarven-digging",
             kind = "accept",
-            priority = 800,
+            priority = 850,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1479,7 +1542,7 @@ ns:RegisterGuide({
         {
             id = "turnin-751-the-ravaged-caravan",
             kind = "turnin",
-            priority = 810,
+            priority = 860,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1495,9 +1558,69 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-76156-stalk-with-the-earthmother",
+            kind = "accept",
+            priority = 870,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7 } },
+                },
+            },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76156, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            kind = "objective",
+            priority = 880,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7 } },
+                },
+            },
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
+            route = {
+                Point(MAP.MULGORE, 0.644, 0.436, "Venture Co. Mine",
+                    "Travel to Venture Co. Mine."),
+            },
+        },
+        {
+            id = "turnin-76156-stalk-with-the-earthmother",
+            kind = "turnin",
+            priority = 890,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7 } },
+                },
+            },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
+            complete = QuestState(76156, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
             id = "accept-764-the-venture-co",
             kind = "accept",
-            priority = 820,
+            priority = 900,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1513,297 +1636,153 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-765-supervisor-fizsprocket",
-            kind = "accept",
-            priority = 830,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Accept Supervisor Fizsprocket from Morin Cloudstalker.",
-            dependsOn = { "turnin-751-the-ravaged-caravan" },
-            complete = QuestState(765, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
-                    "Travel to Morin Cloudstalker."),
-            },
-        },
-        {
-            id = "objective-754-winterhoof-cleansing-1",
-            kind = "objective",
-            priority = 840,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = 6 },
-                },
-            },
-            useClientPin = true,
-            text = "Winterhoof Cleansing: Cleanse the Winterhoof Water Well. Use the Winterhoof Cleansing Totem. The well is southeast of Bloodhoof among the palemane. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-754-winterhoof-cleansing" },
-            complete = QuestObjective(754, 1, "Cleanse the Winterhoof Water Well"),
-            route = {
-                Point(MAP.MULGORE, 0.526, 0.722, "Winterhoof Water Well",
-                    "Travel to Winterhoof Water Well."),
-            },
-        },
-        {
-            id = "turnin-754-winterhoof-cleansing",
-            kind = "turnin",
-            priority = 850,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = 6 },
-                },
-            },
-            text = "Turn in Winterhoof Cleansing to Mull Thunderhorn.",
-            dependsOn = { "objective-754-winterhoof-cleansing-1" },
-            complete = QuestState(754, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
-                    "Travel to Mull Thunderhorn."),
-            },
-        },
-        {
-            id = "accept-756-thunderhorn-totem",
-            kind = "accept",
-            priority = 860,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = 6 },
-                },
-            },
-            text = "Accept Thunderhorn Totem from Mull Thunderhorn.",
-            dependsOn = { "turnin-754-winterhoof-cleansing" },
-            complete = QuestState(756, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
-                    "Travel to Mull Thunderhorn."),
-            },
-        },
-        {
-            id = "objective-746-dwarven-digging-2",
-            kind = "objective",
-            priority = 870,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 6 } },
-                },
-            },
-            text = "Dwarven Digging: Prospector's Pick. The picks come from the Bael'dun diggers and appraisers northwest of Bloodhoof.",
-            dependsOn = { "accept-746-dwarven-digging" },
-            complete = QuestObjective(746, 2, "Prospector's Pick"),
-            route = {
-                Point(MAP.MULGORE, 0.322, 0.488, "Bael'dun Digger",
-                    "Travel to Bael'dun Digger."),
-            },
-        },
-        {
-            id = "objective-746-dwarven-digging-1",
-            kind = "objective",
-            priority = 880,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 6 } },
-                },
-            },
-            useClientPin = true,
-            text = "Dwarven Digging: Broken Tools. Smash the Prospector's Picks at a forge. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-746-dwarven-digging" },
-            complete = QuestObjective(746, 1, "Broken Tools"),
-            route = {
-                Point(MAP.MULGORE, 0.474, 0.602, "Bloodhoof forge",
-                    "Travel to Bloodhoof forge."),
-            },
-        },
-        {
-            id = "turnin-772-rite-of-vision",
-            kind = "turnin",
-            priority = 890,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 3 } },
-                },
-            },
-            text = "Drink the Water of the Seers at the tribal fire in Bloodhoof, follow the vision, and turn in Rite of Vision to Seer Wiserunner.",
-            dependsOn = { "accept-772-rite-of-vision" },
-            complete = QuestState(772, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
-                    "Travel to Seer Wiserunner."),
-            },
-        },
-        {
-            id = "accept-773-rite-of-wisdom",
-            kind = "accept",
-            priority = 900,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 3 } },
-                },
-            },
-            text = "Accept Rite of Wisdom from Seer Wiserunner.",
-            dependsOn = { "turnin-772-rite-of-vision" },
-            complete = QuestState(773, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
-                    "Travel to Seer Wiserunner."),
-            },
-        },
-        {
-            id = "accept-833-a-sacred-burial",
+            id = "accept-76160-stalk-with-the-earthmother",
             kind = "accept",
             priority = 910,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 4 } },
+                    { class = 7 },
                 },
             },
-            text = "Accept A Sacred Burial from Lorekeeper Raintotem.",
-            complete = QuestState(833, "activeOrCompleted"),
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff. Gather the cones with the harpies.",
+            complete = QuestState(76160, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
-                    "Travel to Lorekeeper Raintotem."),
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {
-            id = "objective-833-a-sacred-burial-1",
-            kind = "objective",
+            id = "accept-76240-stalk-with-the-earthmother",
+            kind = "accept",
             priority = 920,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 4 } },
+                    { class = 7 },
                 },
             },
-            text = "A Sacred Burial: Bristleback Interloper.",
-            dependsOn = { "accept-833-a-sacred-burial" },
-            complete = QuestObjective(833, 1, "Bristleback Interloper"),
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76240, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.616, 0.226, "Bristleback Interloper",
-                    "Travel to Bristleback Interloper."),
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {
-            id = "turnin-773-rite-of-wisdom",
-            kind = "turnin",
+            id = "objective-76240-stalk-with-the-earthmother-1",
+            kind = "objective",
             priority = 930,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 4 } },
+                    { class = 7 },
                 },
             },
-            text = "Turn in Rite of Wisdom to Ancestral Spirit.",
-            dependsOn = { "accept-773-rite-of-wisdom" },
-            complete = QuestState(773, "completed"),
+            text = "Stalk With The Earthmother: Fish Chunks. Buy or catch a Raw Brilliant Smallfish and fillet it in front of Boarton Shadetotem.",
+            dependsOn = { "accept-76240-stalk-with-the-earthmother" },
+            complete = QuestObjective(76240, 1, "Fish Chunks"),
             route = {
-                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
-                    "Travel to Ancestral Spirit."),
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {
-            id = "accept-775-journey-into-thunder-bluff",
-            kind = "accept",
+            id = "turnin-76240-stalk-with-the-earthmother",
+            kind = "turnin",
             priority = 940,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 4 } },
+                    { class = 7 },
                 },
             },
-            text = "Accept Journey into Thunder Bluff from Ancestral Spirit.",
-            dependsOn = { "turnin-773-rite-of-wisdom" },
-            complete = QuestState(775, "activeOrCompleted"),
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem.",
+            dependsOn = { "objective-76240-stalk-with-the-earthmother-1" },
+            complete = QuestState(76240, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
-                    "Travel to Ancestral Spirit."),
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {
-            id = "turnin-833-a-sacred-burial",
-            kind = "turnin",
+            id = "objective-76160-stalk-with-the-earthmother-1",
+            kind = "objective",
             priority = 950,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 4 } },
+                    { class = 7 },
                 },
             },
-            text = "Turn in A Sacred Burial to Lorekeeper Raintotem.",
-            dependsOn = { "objective-833-a-sacred-burial-1" },
-            complete = QuestState(833, "completed"),
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
+            complete = QuestObjective(76160, 1, "Pine Salve"),
             route = {
-                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
-                    "Travel to Lorekeeper Raintotem."),
+                Point(MAP.MULGORE, 0.324, 0.276, "Windfury Matriarch",
+                    "Travel to Windfury Matriarch."),
             },
         },
         {
-            id = "objective-756-thunderhorn-totem-1",
-            kind = "objective",
+            id = "turnin-76160-stalk-with-the-earthmother",
+            kind = "turnin",
             priority = 960,
             conditions = {
                 all = {
                     { faction = "Horde" },
                     { level = { min = 4 } },
-                    { race = 6 },
+                    { class = 7 },
                 },
             },
-            text = "Thunderhorn Totem: Stalker Claws.",
-            dependsOn = { "accept-756-thunderhorn-totem" },
-            complete = QuestObjective(756, 1, "Stalker Claws"),
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
+            complete = QuestState(76160, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.388, 0.372, "Prairie Stalker",
-                    "Travel to Prairie Stalker."),
+                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {
-            id = "objective-756-thunderhorn-totem-2",
-            kind = "objective",
+            id = "accept-854-journey-to-the-crossroads",
+            kind = "accept",
             priority = 970,
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                     { race = 6 },
                 },
             },
-            text = "Thunderhorn Totem: Cougar Claws.",
-            dependsOn = { "accept-756-thunderhorn-totem" },
-            complete = QuestObjective(756, 2, "Cougar Claws"),
+            text = "Accept Journey to the Crossroads from Kirge Sternhorn in Bloodhoof Village.",
+            complete = QuestState(854, "activeOrCompleted"),
             route = {
-                Point(MAP.MULGORE, 0.408, 0.440, "Flatland Cougar",
-                    "Travel to Flatland Cougar."),
+                Point(MAP.MULGORE, 0.448, 0.586, "Kirge Sternhorn",
+                    "Travel to Kirge Sternhorn."),
             },
         },
         {
-            id = "accept-861-the-hunters-way",
-            kind = "accept",
+            id = "turnin-854-journey-to-the-crossroads",
+            kind = "turnin",
             priority = 980,
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { level = { min = 9 } },
                     { race = 6 },
-                    { level = { min = 10 } },
                 },
             },
-            text = "Accept The Hunter's Way from Skorn Whitecloud.",
-            complete = QuestState(861, "activeOrCompleted"),
+            text = "Turn in Journey to the Crossroads to Thork at the Crossroads.",
+            dependsOn = { "accept-854-journey-to-the-crossroads" },
+            complete = QuestState(854, "completed"),
             route = {
-                Point(MAP.MULGORE, 0.468, 0.602, "Skorn Whitecloud",
-                    "Travel to Skorn Whitecloud."),
+                Point(MAP.BARRENS, 0.514, 0.308, "Thork",
+                    "Travel to Thork."),
             },
         },
         {
@@ -1825,9 +1804,303 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-99079-longwalker-malah",
+            id = "accept-765-supervisor-fizsprocket",
             kind = "accept",
             priority = 1000,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 5 } },
+                },
+            },
+            text = "Accept Supervisor Fizsprocket from Morin Cloudstalker.",
+            dependsOn = { "turnin-751-the-ravaged-caravan" },
+            complete = QuestState(765, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.530, 0.602, "Morin Cloudstalker",
+                    "Travel to Morin Cloudstalker."),
+            },
+        },
+        {
+            id = "objective-754-winterhoof-cleansing-1",
+            kind = "objective",
+            priority = 1010,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = 6 },
+                },
+            },
+            useClientPin = true,
+            text = "Winterhoof Cleansing: Cleanse the Winterhoof Water Well. Use the Winterhoof Cleansing Totem. The well is southeast of Bloodhoof among the palemane. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-754-winterhoof-cleansing" },
+            complete = QuestObjective(754, 1, "Cleanse the Winterhoof Water Well"),
+            route = {
+                Point(MAP.MULGORE, 0.526, 0.722, "Winterhoof Water Well",
+                    "Travel to Winterhoof Water Well."),
+            },
+        },
+        {
+            id = "turnin-754-winterhoof-cleansing",
+            kind = "turnin",
+            priority = 1020,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = 6 },
+                },
+            },
+            text = "Turn in Winterhoof Cleansing to Mull Thunderhorn.",
+            dependsOn = { "objective-754-winterhoof-cleansing-1" },
+            complete = QuestState(754, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                    "Travel to Mull Thunderhorn."),
+            },
+        },
+        {
+            id = "accept-756-thunderhorn-totem",
+            kind = "accept",
+            priority = 1030,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = 6 },
+                },
+            },
+            text = "Accept Thunderhorn Totem from Mull Thunderhorn.",
+            dependsOn = { "turnin-754-winterhoof-cleansing" },
+            complete = QuestState(756, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.484, 0.604, "Mull Thunderhorn",
+                    "Travel to Mull Thunderhorn."),
+            },
+        },
+        {
+            id = "objective-746-dwarven-digging-2",
+            kind = "objective",
+            priority = 1040,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
+            text = "Dwarven Digging: Prospector's Pick. The picks come from the Bael'dun diggers and appraisers northwest of Bloodhoof.",
+            dependsOn = { "accept-746-dwarven-digging" },
+            complete = QuestObjective(746, 2, "Prospector's Pick"),
+            route = {
+                Point(MAP.MULGORE, 0.322, 0.488, "Bael'dun Digger",
+                    "Travel to Bael'dun Digger."),
+            },
+        },
+        {
+            id = "objective-746-dwarven-digging-1",
+            kind = "objective",
+            priority = 1050,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
+            useClientPin = true,
+            text = "Dwarven Digging: Broken Tools. Smash the Prospector's Picks at a forge. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-746-dwarven-digging" },
+            complete = QuestObjective(746, 1, "Broken Tools"),
+            route = {
+                Point(MAP.MULGORE, 0.474, 0.602, "Bloodhoof forge",
+                    "Travel to Bloodhoof forge."),
+            },
+        },
+        {
+            id = "turnin-772-rite-of-vision",
+            kind = "turnin",
+            priority = 1060,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Drink the Water of the Seers at the tribal fire in Bloodhoof, follow the vision, and turn in Rite of Vision to Seer Wiserunner.",
+            dependsOn = { "accept-772-rite-of-vision" },
+            complete = QuestState(772, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
+                    "Travel to Seer Wiserunner."),
+            },
+        },
+        {
+            id = "accept-773-rite-of-wisdom",
+            kind = "accept",
+            priority = 1070,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Accept Rite of Wisdom from Seer Wiserunner.",
+            dependsOn = { "turnin-772-rite-of-vision" },
+            complete = QuestState(773, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.328, 0.360, "Seer Wiserunner",
+                    "Travel to Seer Wiserunner."),
+            },
+        },
+        {
+            id = "accept-833-a-sacred-burial",
+            kind = "accept",
+            priority = 1080,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Accept A Sacred Burial from Lorekeeper Raintotem.",
+            complete = QuestState(833, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
+                    "Travel to Lorekeeper Raintotem."),
+            },
+        },
+        {
+            id = "objective-833-a-sacred-burial-1",
+            kind = "objective",
+            priority = 1090,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "A Sacred Burial: Bristleback Interloper.",
+            dependsOn = { "accept-833-a-sacred-burial" },
+            complete = QuestObjective(833, 1, "Bristleback Interloper"),
+            route = {
+                Point(MAP.MULGORE, 0.616, 0.226, "Bristleback Interloper",
+                    "Travel to Bristleback Interloper."),
+            },
+        },
+        {
+            id = "turnin-773-rite-of-wisdom",
+            kind = "turnin",
+            priority = 1100,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Turn in Rite of Wisdom to Ancestral Spirit.",
+            dependsOn = { "accept-773-rite-of-wisdom" },
+            complete = QuestState(773, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
+                    "Travel to Ancestral Spirit."),
+            },
+        },
+        {
+            id = "accept-775-journey-into-thunder-bluff",
+            kind = "accept",
+            priority = 1110,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 3 } },
+                },
+            },
+            text = "Accept Journey into Thunder Bluff from Ancestral Spirit.",
+            dependsOn = { "turnin-773-rite-of-wisdom" },
+            complete = QuestState(775, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.614, 0.210, "Ancestral Spirit",
+                    "Travel to Ancestral Spirit."),
+            },
+        },
+        {
+            id = "turnin-833-a-sacred-burial",
+            kind = "turnin",
+            priority = 1120,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 7 } },
+                },
+            },
+            text = "Turn in A Sacred Burial to Lorekeeper Raintotem.",
+            dependsOn = { "objective-833-a-sacred-burial-1" },
+            complete = QuestState(833, "completed"),
+            route = {
+                Point(MAP.MULGORE, 0.598, 0.256, "Lorekeeper Raintotem",
+                    "Travel to Lorekeeper Raintotem."),
+            },
+        },
+        {
+            id = "objective-756-thunderhorn-totem-1",
+            kind = "objective",
+            priority = 1130,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = 6 },
+                },
+            },
+            text = "Thunderhorn Totem: Stalker Claws.",
+            dependsOn = { "accept-756-thunderhorn-totem" },
+            complete = QuestObjective(756, 1, "Stalker Claws"),
+            route = {
+                Point(MAP.MULGORE, 0.388, 0.372, "Prairie Stalker",
+                    "Travel to Prairie Stalker."),
+            },
+        },
+        {
+            id = "objective-756-thunderhorn-totem-2",
+            kind = "objective",
+            priority = 1140,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 4 } },
+                    { race = 6 },
+                },
+            },
+            text = "Thunderhorn Totem: Cougar Claws.",
+            dependsOn = { "accept-756-thunderhorn-totem" },
+            complete = QuestObjective(756, 2, "Cougar Claws"),
+            route = {
+                Point(MAP.MULGORE, 0.408, 0.440, "Flatland Cougar",
+                    "Travel to Flatland Cougar."),
+            },
+        },
+        {
+            id = "accept-861-the-hunters-way",
+            kind = "accept",
+            priority = 1150,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 6 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept The Hunter's Way from Skorn Whitecloud.",
+            complete = QuestState(861, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.468, 0.602, "Skorn Whitecloud",
+                    "Travel to Skorn Whitecloud."),
+            },
+        },
+        {
+            id = "accept-99079-longwalker-malah",
+            kind = "accept",
+            priority = 1160,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1844,7 +2117,7 @@ ns:RegisterGuide({
         {
             id = "accept-99108-sparring-match",
             kind = "accept",
-            priority = 1010,
+            priority = 1170,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1861,7 +2134,7 @@ ns:RegisterGuide({
         {
             id = "objective-99108-sparring-match-1",
             kind = "objective",
-            priority = 1020,
+            priority = 1180,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1880,7 +2153,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99108-sparring-match",
             kind = "turnin",
-            priority = 1020.1,
+            priority = 1190,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1898,7 +2171,7 @@ ns:RegisterGuide({
         {
             id = "turnin-756-thunderhorn-totem",
             kind = "turnin",
-            priority = 1030,
+            priority = 1200,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1917,7 +2190,7 @@ ns:RegisterGuide({
         {
             id = "turnin-746-dwarven-digging",
             kind = "turnin",
-            priority = 1040,
+            priority = 1210,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1935,7 +2208,7 @@ ns:RegisterGuide({
         {
             id = "accept-758-thunderhorn-cleansing",
             kind = "accept",
-            priority = 1050,
+            priority = 1220,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1954,7 +2227,7 @@ ns:RegisterGuide({
         {
             id = "accept-2984-call-of-fire",
             kind = "accept",
-            priority = 1060,
+            priority = 1230,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -1973,7 +2246,7 @@ ns:RegisterGuide({
         {
             id = "accept-6061-taming-the-beast",
             kind = "accept",
-            priority = 1070,
+            priority = 1240,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -1992,7 +2265,7 @@ ns:RegisterGuide({
         {
             id = "accept-96130-chakuyak",
             kind = "accept",
-            priority = 1080,
+            priority = 1250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2009,7 +2282,7 @@ ns:RegisterGuide({
         {
             id = "objective-96130-chakuyak-1",
             kind = "objective",
-            priority = 1090,
+            priority = 1260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2027,7 +2300,7 @@ ns:RegisterGuide({
         {
             id = "objective-6061-taming-the-beast",
             kind = "objective",
-            priority = 1100,
+            priority = 1270,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2047,7 +2320,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6061-taming-the-beast",
             kind = "turnin",
-            priority = 1110,
+            priority = 1280,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2067,7 +2340,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96130-chakuyak",
             kind = "turnin",
-            priority = 1120,
+            priority = 1290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2085,7 +2358,7 @@ ns:RegisterGuide({
         {
             id = "accept-6087-taming-the-beast",
             kind = "accept",
-            priority = 1130,
+            priority = 1300,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2104,7 +2377,7 @@ ns:RegisterGuide({
         {
             id = "objective-6087-taming-the-beast",
             kind = "objective",
-            priority = 1140,
+            priority = 1310,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2124,7 +2397,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6087-taming-the-beast",
             kind = "turnin",
-            priority = 1150,
+            priority = 1320,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2144,7 +2417,7 @@ ns:RegisterGuide({
         {
             id = "accept-6088-taming-the-beast",
             kind = "accept",
-            priority = 1160,
+            priority = 1330,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2163,7 +2436,7 @@ ns:RegisterGuide({
         {
             id = "objective-6088-taming-the-beast",
             kind = "objective",
-            priority = 1170,
+            priority = 1340,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2183,7 +2456,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6088-taming-the-beast",
             kind = "turnin",
-            priority = 1180,
+            priority = 1350,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2203,7 +2476,7 @@ ns:RegisterGuide({
         {
             id = "accept-6089-training-the-beast",
             kind = "accept",
-            priority = 1190,
+            priority = 1360,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2222,7 +2495,7 @@ ns:RegisterGuide({
         {
             id = "accept-5927-heeding-the-call",
             kind = "accept",
-            priority = 1200,
+            priority = 1370,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2241,7 +2514,7 @@ ns:RegisterGuide({
         {
             id = "objective-758-thunderhorn-cleansing-1",
             kind = "objective",
-            priority = 1210,
+            priority = 1380,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2261,7 +2534,7 @@ ns:RegisterGuide({
         {
             id = "accept-744-preparation-for-ceremony",
             kind = "accept",
-            priority = 1220,
+            priority = 1390,
             conditions = {
                 all = {
                     { level = { min = 7 } },
@@ -2278,7 +2551,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6089-training-the-beast",
             kind = "turnin",
-            priority = 1230,
+            priority = 1400,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2298,7 +2571,7 @@ ns:RegisterGuide({
         {
             id = "turnin-775-journey-into-thunder-bluff",
             kind = "turnin",
-            priority = 1240,
+            priority = 1410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2316,7 +2589,7 @@ ns:RegisterGuide({
         {
             id = "turnin-98430-the-longwalkers",
             kind = "turnin",
-            priority = 1250,
+            priority = 1420,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2333,7 +2606,7 @@ ns:RegisterGuide({
         {
             id = "accept-97485-traditions-of-the-bluff",
             kind = "accept",
-            priority = 1260,
+            priority = 1430,
             conditions = {
                 all = {
                     { level = { min = 3 } },
@@ -2350,7 +2623,7 @@ ns:RegisterGuide({
         {
             id = "objective-97485-traditions-of-the-bluff",
             kind = "objective",
-            priority = 1270,
+            priority = 1440,
             conditions = {
                 all = {
                     { level = { min = 3 } },
@@ -2368,7 +2641,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97485-traditions-of-the-bluff",
             kind = "turnin",
-            priority = 1280,
+            priority = 1450,
             conditions = {
                 all = {
                     { level = { min = 3 } },
@@ -2386,7 +2659,7 @@ ns:RegisterGuide({
         {
             id = "accept-776-rites-of-the-earthmother",
             kind = "accept",
-            priority = 1290,
+            priority = 1460,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2402,9 +2675,80 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-94911-child-of-nature",
+            kind = "accept",
+            priority = 1470,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Child of Nature from Muln Earthfury in Mulgore.",
+            complete = QuestState(94911, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.3340, 0.2240, "Muln Earthfury", "Travel to Muln Earthfury."),
+            },
+        },
+        {
+            id = "turnin-94911-child-of-nature",
+            kind = "turnin",
+            priority = 1480,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Child of Nature to Turak Runetotem in Elder Rise.",
+            dependsOn = { "accept-94911-child-of-nature" },
+            complete = QuestState(94911, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7640, 0.2760, "Turak Runetotem", "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "accept-94913-moonglade-skyborne",
+            kind = "accept",
+            priority = 1490,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Moonglade from Turak Runetotem in Elder Rise.",
+            dependsOn = { "turnin-94911-child-of-nature" },
+            complete = QuestState(94913, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.7640, 0.2760, "Turak Runetotem", "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "turnin-94913-moonglade-skyborne",
+            kind = "turnin",
+            priority = 1500,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 96 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Moonglade to Dendrite Starblaze in Nighthaven.",
+            dependsOn = { "accept-94913-moonglade-skyborne" },
+            complete = QuestState(94913, "completed"),
+            route = {
+                Point(MAP.MOONGLADE, 0.5620, 0.3040, "Dendrite Starblaze", "Travel to Dendrite Starblaze."),
+            },
+        },
+        {
             id = "turnin-5927-heeding-the-call",
             kind = "turnin",
-            priority = 1300,
+            priority = 1510,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2424,7 +2768,7 @@ ns:RegisterGuide({
         {
             id = "accept-5922-moonglade",
             kind = "accept",
-            priority = 1310,
+            priority = 1520,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2443,7 +2787,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5922-moonglade",
             kind = "turnin",
-            priority = 1320,
+            priority = 1530,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2463,7 +2807,7 @@ ns:RegisterGuide({
         {
             id = "accept-5930-great-bear-spirit",
             kind = "accept",
-            priority = 1330,
+            priority = 1540,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2482,7 +2826,7 @@ ns:RegisterGuide({
         {
             id = "objective-5930-1-great-bear-spirit",
             kind = "objective",
-            priority = 1340,
+            priority = 1550,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2502,7 +2846,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5930-great-bear-spirit",
             kind = "turnin",
-            priority = 1350,
+            priority = 1560,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2522,7 +2866,7 @@ ns:RegisterGuide({
         {
             id = "accept-5932-back-to-thunder-bluff",
             kind = "accept",
-            priority = 1360,
+            priority = 1570,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2541,7 +2885,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5932-back-to-thunder-bluff",
             kind = "turnin",
-            priority = 1370,
+            priority = 1580,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2561,7 +2905,7 @@ ns:RegisterGuide({
         {
             id = "accept-6002-body-and-heart",
             kind = "accept",
-            priority = 1380,
+            priority = 1590,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2580,7 +2924,7 @@ ns:RegisterGuide({
         {
             id = "objective-861-the-hunters-way-1",
             kind = "objective",
-            priority = 1390,
+            priority = 1600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2599,7 +2943,7 @@ ns:RegisterGuide({
         {
             id = "objective-765-supervisor-fizsprocket-1",
             kind = "objective",
-            priority = 1400,
+            priority = 1610,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2617,7 +2961,7 @@ ns:RegisterGuide({
         {
             id = "accept-98424-fizsprockets-notes",
             kind = "accept",
-            priority = 1410,
+            priority = 1620,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2635,7 +2979,7 @@ ns:RegisterGuide({
         {
             id = "objective-98424-fizsprockets-notes-1",
             kind = "objective",
-            priority = 1420,
+            priority = 1630,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2655,7 +2999,7 @@ ns:RegisterGuide({
         {
             id = "objective-98424-fizsprockets-notes-2",
             kind = "objective",
-            priority = 1430,
+            priority = 1640,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2675,7 +3019,7 @@ ns:RegisterGuide({
         {
             id = "objective-98424-fizsprockets-notes-3",
             kind = "objective",
-            priority = 1440,
+            priority = 1650,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2695,7 +3039,7 @@ ns:RegisterGuide({
         {
             id = "objective-98424-fizsprockets-notes-4",
             kind = "objective",
-            priority = 1450,
+            priority = 1660,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2715,7 +3059,7 @@ ns:RegisterGuide({
         {
             id = "objective-764-the-venture-co-1",
             kind = "objective",
-            priority = 1460,
+            priority = 1670,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2733,7 +3077,7 @@ ns:RegisterGuide({
         {
             id = "objective-764-the-venture-co-2",
             kind = "objective",
-            priority = 1470,
+            priority = 1680,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2751,7 +3095,7 @@ ns:RegisterGuide({
         {
             id = "objective-776-rites-of-the-earthmother-1",
             kind = "objective",
-            priority = 1480,
+            priority = 1690,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2770,7 +3114,7 @@ ns:RegisterGuide({
         {
             id = "objective-6002-body-and-heart",
             kind = "objective",
-            priority = 1490,
+            priority = 1700,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2790,7 +3134,7 @@ ns:RegisterGuide({
         {
             id = "turnin-758-thunderhorn-cleansing",
             kind = "turnin",
-            priority = 1500,
+            priority = 1710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2809,7 +3153,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99079-longwalker-malah",
             kind = "turnin",
-            priority = 1510,
+            priority = 1720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2827,7 +3171,7 @@ ns:RegisterGuide({
         {
             id = "accept-99081-grim-tidings",
             kind = "accept",
-            priority = 1520,
+            priority = 1730,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2845,7 +3189,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99081-grim-tidings",
             kind = "turnin",
-            priority = 1530,
+            priority = 1740,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2863,7 +3207,7 @@ ns:RegisterGuide({
         {
             id = "accept-99101-our-ancient-enemy",
             kind = "accept",
-            priority = 1540,
+            priority = 1750,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2881,7 +3225,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99101-our-ancient-enemy",
             kind = "turnin",
-            priority = 1550,
+            priority = 1760,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2899,7 +3243,7 @@ ns:RegisterGuide({
         {
             id = "accept-99080-drive-them-out",
             kind = "accept",
-            priority = 1560,
+            priority = 1770,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2917,7 +3261,7 @@ ns:RegisterGuide({
         {
             id = "accept-759-wildmane-totem",
             kind = "accept",
-            priority = 1570,
+            priority = 1780,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2936,7 +3280,7 @@ ns:RegisterGuide({
         {
             id = "turnin-764-the-venture-co",
             kind = "turnin",
-            priority = 1580,
+            priority = 1790,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2954,7 +3298,7 @@ ns:RegisterGuide({
         {
             id = "turnin-765-supervisor-fizsprocket",
             kind = "turnin",
-            priority = 1590,
+            priority = 1800,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2972,7 +3316,7 @@ ns:RegisterGuide({
         {
             id = "turnin-98424-fizsprockets-notes",
             kind = "turnin",
-            priority = 1600,
+            priority = 1810,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2991,7 +3335,7 @@ ns:RegisterGuide({
         {
             id = "accept-98427-ceasing-operations",
             kind = "accept",
-            priority = 1610,
+            priority = 1820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3010,7 +3354,7 @@ ns:RegisterGuide({
         {
             id = "objective-98427-ceasing-operations-1",
             kind = "objective",
-            priority = 1620,
+            priority = 1830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3029,7 +3373,7 @@ ns:RegisterGuide({
         {
             id = "turnin-98427-ceasing-operations",
             kind = "turnin",
-            priority = 1630,
+            priority = 1840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3048,7 +3392,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-1",
             kind = "objective",
-            priority = 1640,
+            priority = 1850,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3066,7 +3410,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-2",
             kind = "objective",
-            priority = 1650,
+            priority = 1860,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3084,7 +3428,7 @@ ns:RegisterGuide({
         {
             id = "objective-99080-drive-them-out-3",
             kind = "objective",
-            priority = 1660,
+            priority = 1870,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3102,7 +3446,7 @@ ns:RegisterGuide({
         {
             id = "objective-759-wildmane-totem-1",
             kind = "objective",
-            priority = 1670,
+            priority = 1880,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3121,7 +3465,7 @@ ns:RegisterGuide({
         {
             id = "objective-744-preparation-for-ceremony",
             kind = "objective",
-            priority = 1680,
+            priority = 1890,
             conditions = {
                 all = {
                     { level = { min = 7 } },
@@ -3139,7 +3483,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99080-drive-them-out",
             kind = "turnin",
-            priority = 1690,
+            priority = 1900,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3157,7 +3501,7 @@ ns:RegisterGuide({
         {
             id = "accept-99082-the-high-chieftain",
             kind = "accept",
-            priority = 1700,
+            priority = 1910,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3175,7 +3519,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6002-body-and-heart",
             kind = "turnin",
-            priority = 1710,
+            priority = 1920,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3195,7 +3539,7 @@ ns:RegisterGuide({
         {
             id = "accept-886-the-barrens-oases",
             kind = "accept",
-            priority = 1720,
+            priority = 1930,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3212,7 +3556,7 @@ ns:RegisterGuide({
         {
             id = "turnin-776-rites-of-the-earthmother",
             kind = "turnin",
-            priority = 1730,
+            priority = 1940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3230,7 +3574,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99082-the-high-chieftain",
             kind = "turnin",
-            priority = 1740,
+            priority = 1950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3248,7 +3592,7 @@ ns:RegisterGuide({
         {
             id = "turnin-861-the-hunters-way",
             kind = "turnin",
-            priority = 1750,
+            priority = 1960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3267,7 +3611,7 @@ ns:RegisterGuide({
         {
             id = "accept-860-sergra-darkthorn",
             kind = "accept",
-            priority = 1760,
+            priority = 1970,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3284,7 +3628,7 @@ ns:RegisterGuide({
         {
             id = "turnin-744-preparation-for-ceremony",
             kind = "turnin",
-            priority = 1770,
+            priority = 1980,
             conditions = {
                 all = {
                     { level = { min = 7 } },
@@ -3302,7 +3646,7 @@ ns:RegisterGuide({
         {
             id = "turnin-759-wildmane-totem",
             kind = "turnin",
-            priority = 1780,
+            priority = 1990,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3321,7 +3665,7 @@ ns:RegisterGuide({
         {
             id = "accept-760-wildmane-cleansing",
             kind = "accept",
-            priority = 1790,
+            priority = 2000,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3340,7 +3684,7 @@ ns:RegisterGuide({
         {
             id = "objective-760-wildmane-cleansing-1",
             kind = "objective",
-            priority = 1800,
+            priority = 2010,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3360,7 +3704,7 @@ ns:RegisterGuide({
         {
             id = "turnin-760-wildmane-cleansing",
             kind = "turnin",
-            priority = 1810,
+            priority = 2020,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3379,7 +3723,7 @@ ns:RegisterGuide({
         {
             id = "accept-98435-thunderhorns-report",
             kind = "accept",
-            priority = 1820,
+            priority = 2030,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3398,7 +3742,7 @@ ns:RegisterGuide({
         {
             id = "turnin-98435-thunderhorns-report",
             kind = "turnin",
-            priority = 1830,
+            priority = 2040,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3412,216 +3756,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.784, 0.284, "Arch Druid Hamuul Runetotem",
                     "Travel to Arch Druid Hamuul Runetotem."),
-            },
-        },
-        {
-            id = "accept-76156-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76156, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "objective-76156-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 1850,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
-            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
-            route = {
-                Point(MAP.MULGORE, 0.644, 0.436, "Venture Co. Mine",
-                    "Travel to Venture Co. Mine."),
-            },
-        },
-        {
-            id = "turnin-76156-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 1860,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
-            complete = QuestState(76156, "completed"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "accept-76160-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 1870,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff. Gather the cones with the harpies.",
-            complete = QuestState(76160, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "objective-76160-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 1880,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
-            complete = QuestObjective(76160, 1, "Pine Salve"),
-            route = {
-                Point(MAP.MULGORE, 0.324, 0.276, "Windfury Matriarch",
-                    "Travel to Windfury Matriarch."),
-            },
-        },
-        {
-            id = "turnin-76160-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 1890,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
-            complete = QuestState(76160, "completed"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "accept-76240-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 1900,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76240, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "objective-76240-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            text = "Stalk With The Earthmother: Fish Chunks. Buy or catch a Raw Brilliant Smallfish and fillet it in front of Boarton Shadetotem.",
-            dependsOn = { "accept-76240-stalk-with-the-earthmother" },
-            complete = QuestObjective(76240, 1, "Fish Chunks"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "turnin-76240-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 1920,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 4 } },
-                    { class = 7 },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem.",
-            dependsOn = { "objective-76240-stalk-with-the-earthmother-1" },
-            complete = QuestState(76240, "completed"),
-            route = {
-                Point(MAP.THUNDER_BLUFF, 0.396, 0.656, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem."),
-            },
-        },
-        {
-            id = "accept-854-journey-to-the-crossroads",
-            kind = "accept",
-            priority = 1930,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 9 } },
-                    { race = 6 },
-                },
-            },
-            text = "Accept Journey to the Crossroads from Kirge Sternhorn in Bloodhoof Village.",
-            complete = QuestState(854, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.448, 0.586, "Kirge Sternhorn",
-                    "Travel to Kirge Sternhorn."),
-            },
-        },
-        {
-            id = "turnin-854-journey-to-the-crossroads",
-            kind = "turnin",
-            priority = 1940,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 9 } },
-                    { race = 6 },
-                },
-            },
-            text = "Turn in Journey to the Crossroads to Thork at the Crossroads.",
-            dependsOn = { "accept-854-journey-to-the-crossroads" },
-            complete = QuestState(854, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.514, 0.308, "Thork",
-                    "Travel to Thork."),
             },
         },
     },

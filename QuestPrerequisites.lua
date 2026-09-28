@@ -209,3 +209,10 @@ ns:RegisterQuestPrerequisite({
     conditions = { faction = "Horde" },
     note = "Thrall's Hidden Enemies follow-up is offered after the Lieutenant's Insignia is returned.",
 })
+
+ns:RegisterQuestPrerequisite({
+    quest = 96101,
+    mode = "any",
+    quests = { 96627, 96628, 96630, 96638, 96652, 96656, 96659 },
+    note = "The Great Outdoors follows The Adventurer.",
+})
