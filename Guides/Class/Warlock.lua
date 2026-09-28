@@ -1139,7 +1139,6 @@ ns:RegisterGuide({
             priority = 550,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
                     { level = { min = 60 } },
                 },
@@ -1147,10 +1146,14 @@ ns:RegisterGuide({
             text = "Accept Mor'zul Bloodbringer from Martha Strain in Undercity.",
             complete = QuestState(7562, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8580, 0.1580, "Martha Strain",
+                    "Travel to Martha Strain in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR } }),
                 Point(MAP.STORMWINDCITY, 0.2580, 0.7760, "Spackle Thornberry",
-                    "Travel to Spackle Thornberry in Stormwind City.", { map = { MAP.IRONFORGE } }),
+                    "Travel to Spackle Thornberry in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
                 Point(MAP.IRONFORGE, 0.5280, 0.0600, "Jubahl Corpseseeker",
-                    "Travel to Jubahl Corpseseeker in Ironforge."),
+                    "Travel to Jubahl Corpseseeker in Ironforge.", { map = { MAP.ORGRIMMAR } }),
+                Point(MAP.ORGRIMMAR, 0.4760, 0.4680, "Kurgul",
+                    "Travel to Kurgul in Orgrimmar."),
             },
         },
         {
@@ -1159,7 +1162,6 @@ ns:RegisterGuide({
             priority = 560,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
                     { level = { min = 60 } },
                 },
@@ -3824,7 +3826,6 @@ ns:RegisterGuide({
             priority = 1920,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
                     { level = { min = 50 } },
                 },
@@ -3832,10 +3833,14 @@ ns:RegisterGuide({
             text = "Accept An Imp's Request from Kaal Soulreaper in Undercity.",
             complete = QuestState(8419, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8600, 0.1560, "Kaal Soulreaper",
+                    "Travel to Kaal Soulreaper in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR } }),
                 Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
-                    "Travel to Demisette Cloyce in Stormwind City.", { map = { MAP.IRONFORGE } }),
+                    "Travel to Demisette Cloyce in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
                 Point(MAP.IRONFORGE, 0.5020, 0.0600, "Briarthorn",
-                    "Travel to Briarthorn in Ironforge."),
+                    "Travel to Briarthorn in Ironforge.", { map = { MAP.ORGRIMMAR } }),
+                Point(MAP.ORGRIMMAR, 0.4840, 0.4560, "Zevrost",
+                    "Travel to Zevrost in Orgrimmar."),
             },
         },
         {
@@ -3844,7 +3849,6 @@ ns:RegisterGuide({
             priority = 1930,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
                     { level = { min = 50 } },
                 },

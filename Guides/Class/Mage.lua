@@ -679,7 +679,6 @@ ns:RegisterGuide({
             priority = 320,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 30 } },
                 },
@@ -687,10 +686,16 @@ ns:RegisterGuide({
             text = "Accept Journey to the Marsh from Anastasia Hartwell in Undercity.",
             complete = QuestState(1947, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.1020, "Anastasia Hartwell",
+                    "Travel to Anastasia Hartwell in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.STORMWINDCITY, 0.3860, 0.7940, "Jennea Cannon",
-                    "Travel to Jennea Cannon in Stormwind City.", { map = { MAP.IRONFORGE } }),
+                    "Travel to Jennea Cannon in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.IRONFORGE, 0.2700, 0.0820, "Bink",
-                    "Travel to Bink in Ironforge."),
+                    "Travel to Bink in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
+                Point(MAP.ORGRIMMAR, 0.3840, 0.8580, "Deino",
+                    "Travel to Deino in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
+                Point(MAP.THUNDERBLUFF, 0.2560, 0.1460, "Ursyn Ghull",
+                    "Travel to Ursyn Ghull in Thunder Bluff."),
             },
         },
         {
@@ -699,7 +704,6 @@ ns:RegisterGuide({
             priority = 330,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 30 } },
                 },
@@ -931,7 +935,6 @@ ns:RegisterGuide({
             priority = 430,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 35 } },
                 },
@@ -939,10 +942,16 @@ ns:RegisterGuide({
             text = "Accept Return to the Marsh from Anastasia Hartwell in Undercity.",
             complete = QuestState(1953, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.1020, "Anastasia Hartwell",
+                    "Travel to Anastasia Hartwell in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.STORMWINDCITY, 0.3860, 0.7940, "Jennea Cannon",
-                    "Travel to Jennea Cannon in Stormwind City.", { map = { MAP.IRONFORGE } }),
+                    "Travel to Jennea Cannon in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.IRONFORGE, 0.2700, 0.0820, "Bink",
-                    "Travel to Bink in Ironforge."),
+                    "Travel to Bink in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
+                Point(MAP.ORGRIMMAR, 0.3840, 0.8580, "Deino",
+                    "Travel to Deino in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
+                Point(MAP.THUNDERBLUFF, 0.2560, 0.1460, "Ursyn Ghull",
+                    "Travel to Ursyn Ghull in Thunder Bluff."),
             },
         },
         {
@@ -951,7 +960,6 @@ ns:RegisterGuide({
             priority = 440,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 35 } },
                 },
@@ -1773,7 +1781,6 @@ ns:RegisterGuide({
             priority = 860,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 50 } },
                 },
@@ -1781,12 +1788,16 @@ ns:RegisterGuide({
             text = "Accept Magecraft from Pierce Shackleton in Undercity.",
             complete = QuestState(8250, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8540, 0.1380, "Pierce Shackleton",
+                    "Travel to Pierce Shackleton in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.STORMWINDCITY, 0.3800, 0.8160, "Maginor Dumas",
-                    "Travel to Maginor Dumas in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
+                    "Travel to Maginor Dumas in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.IRONFORGE, 0.2680, 0.0840, "Dink",
-                    "Travel to Dink in Ironforge.", { map = { MAP.ORGRIMMAR } }),
+                    "Travel to Dink in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.ORGRIMMAR, 0.3900, 0.8600, "Uthel'nay",
-                    "Travel to Uthel'nay in Orgrimmar."),
+                    "Travel to Uthel'nay in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
+                Point(MAP.THUNDERBLUFF, 0.2260, 0.1480, "Archmage Shymm",
+                    "Travel to Archmage Shymm in Thunder Bluff."),
             },
         },
         {
@@ -1795,7 +1806,6 @@ ns:RegisterGuide({
             priority = 870,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 50 } },
                 },

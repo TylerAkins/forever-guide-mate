@@ -539,7 +539,6 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
                     { level = { min = 50 } },
                 },
@@ -561,7 +560,6 @@ ns:RegisterGuide({
             priority = 260,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
                     { level = { min = 50 } },
                 },

@@ -524,7 +524,6 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
                     { level = { min = 30 } },
                 },
@@ -532,10 +531,16 @@ ns:RegisterGuide({
             text = "Accept The Islander from Baltus Fowler in Undercity.",
             complete = QuestState(1718, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.4720, 0.1700, "Baltus Fowler",
+                    "Travel to Baltus Fowler in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.STORMWINDCITY, 0.7880, 0.4560, "Wu Shen",
-                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE } }),
+                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
                 Point(MAP.IRONFORGE, 0.7000, 0.9060, "Kelv Sternhammer",
-                    "Travel to Kelv Sternhammer in Ironforge."),
+                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
+                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
+                    "Travel to Sorek in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
+                Point(MAP.THUNDERBLUFF, 0.5760, 0.8720, "Torm Ragetotem",
+                    "Travel to Torm Ragetotem in Thunder Bluff."),
             },
         },
         {
@@ -544,7 +549,6 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
                     { level = { min = 30 } },
                 },
@@ -840,7 +844,6 @@ ns:RegisterGuide({
             priority = 410,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
                     { level = { min = 50 } },
                 },
@@ -848,10 +851,14 @@ ns:RegisterGuide({
             text = "Accept A Troubled Spirit from Christoph Walker in Undercity.",
             complete = QuestState(8417, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.4720, 0.1500, "Christoph Walker",
+                    "Travel to Christoph Walker in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
                 Point(MAP.STORMWINDCITY, 0.7880, 0.4560, "Wu Shen",
-                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.DARNASSUS } }),
+                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
                 Point(MAP.IRONFORGE, 0.7000, 0.9060, "Kelv Sternhammer",
-                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.DARNASSUS } }),
+                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.DARNASSUS } }),
+                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
+                    "Travel to Sorek in Orgrimmar.", { map = { MAP.DARNASSUS } }),
                 Point(MAP.DARNASSUS, 0.5860, 0.3540, "Darnath Bladesinger",
                     "Travel to Darnath Bladesinger in Darnassus."),
             },
@@ -862,7 +869,6 @@ ns:RegisterGuide({
             priority = 420,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
                     { level = { min = 50 } },
                 },

@@ -423,7 +423,6 @@ ns:RegisterGuide({
             priority = 200,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 4 },
                     { level = { min = 50 } },
                 },
@@ -431,10 +430,14 @@ ns:RegisterGuide({
             text = "Accept A Simple Request from Miles Dexter in Undercity.",
             complete = QuestState(8233, "activeOrCompleted"),
             route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.7120, "Miles Dexter",
+                    "Travel to Miles Dexter in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
                 Point(MAP.STORMWINDCITY, 0.7440, 0.5280, "Osborne the Night Man",
-                    "Travel to Osborne the Night Man in Stormwind City.", { map = { MAP.IRONFORGE, MAP.DARNASSUS } }),
+                    "Travel to Osborne the Night Man in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
                 Point(MAP.IRONFORGE, 0.5160, 0.1480, "Hulfdan Blackbeard",
-                    "Travel to Hulfdan Blackbeard in Ironforge.", { map = { MAP.DARNASSUS } }),
+                    "Travel to Hulfdan Blackbeard in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.DARNASSUS } }),
+                Point(MAP.ORGRIMMAR, 0.4400, 0.5440, "Ormok",
+                    "Travel to Ormok in Orgrimmar.", { map = { MAP.DARNASSUS } }),
                 Point(MAP.DARNASSUS, 0.3680, 0.2180, "Syurna",
                     "Travel to Syurna in Darnassus."),
             },
@@ -445,7 +448,6 @@ ns:RegisterGuide({
             priority = 210,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 4 },
                     { level = { min = 50 } },
                 },
