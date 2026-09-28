@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance leveling route for the Wetlands, levels 24-27.
 -- Spoils of War is accepted from Valstag Ironjaw in Menethil Keep, collected in the harbor, and turned in with War Banners.
--- Left out: Crocs of the Sky, Return the Statuette, Bloom of the Heavens, Crimson Crate Delivery, Razormaw Needling, Trying Times, and Alchemical Hazards have no start pin. Forced Disarmament is level 30. A Lack of Virtue starts with Tom Wilson in Loch Modan. Unrequited Love starts with Archaeologist Hollee in Auberdine. Call of Water starts with Eldrun Stormbreaker in Ironforge after this route has left the Wetlands.
+-- Left out: Crocs of the Sky, Return the Statuette, Bloom of the Heavens, Crimson Crate Delivery, Razormaw Needling, Trying Times, and Alchemical Hazards have no start pin. Forced Disarmament is level 30. A Lack of Virtue starts with Tom Wilson in Hillsbrad Foothills. Unrequited Love starts with Archaeologist Hollee in Auberdine. Call of Water starts with Eldrun Stormbreaker in Ironforge after this route has left the Wetlands.
 -- An Old Colleague, accepted from Gaxim in Stonetalon, turns in to Lomac before Ineptitude + Chemicals = Fun.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
