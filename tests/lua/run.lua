@@ -74,6 +74,15 @@ Load("Guides/Leveling/24-27-wetlands.lua")
 Load("Guides/Leveling/27-28-redridge-mountains.lua")
 Load("Guides/Leveling/28-29-duskwood.lua")
 Load("Guides/Leveling/29-30-ashenvale.lua")
+Load("Guides/Class/Warrior.lua")
+Load("Guides/Class/Paladin.lua")
+Load("Guides/Class/Hunter.lua")
+Load("Guides/Class/Rogue.lua")
+Load("Guides/Class/Priest.lua")
+Load("Guides/Class/Shaman.lua")
+Load("Guides/Class/Mage.lua")
+Load("Guides/Class/Warlock.lua")
+Load("Guides/Class/Druid.lua")
 
 local baseState = {
     faction = "Horde",
@@ -3488,6 +3497,130 @@ function TestUnchangedQuestLogSkipsGuideWalk()
     ns.Engine.questLogFingerprint = saved
 end
 TestUnchangedQuestLogSkipsGuideWalk()
+
+local function TestClassQuestGuides()
+    local classNames = {
+        "warrior", "paladin", "hunter", "rogue", "priest", "shaman", "mage", "warlock", "druid",
+    }
+    for _, className in ipairs(classNames) do
+        local guide = ns.guides["class-" .. className]
+        Check(guide ~= nil, className .. " class guide is registered")
+        if guide then
+            Equal(guide.category, "Class Quests", className .. " is in the Class Quests section")
+        end
+    end
+    local paladin = ns.guides["class-paladin"]
+    local undeadPaladin, orcPaladin
+    if paladin then
+        for _, goal in ipairs(paladin.goals) do
+            local text = goal.text or ""
+            if string.find(text, "A Difficult Path", 1, true) and goal.kind == "accept" then
+                undeadPaladin = goal
+            end
+            local function Walk(condition)
+                if type(condition) ~= "table" then return end
+                local race = condition.race
+                if race == 2 or race == 6 or race == 8 or race == 96 then
+                    orcPaladin = goal.id
+                elseif type(race) == "table" then
+                    for _, value in ipairs(race) do
+                        if value == 2 or value == 6 or value == 8 or value == 96 then
+                            orcPaladin = goal.id
+                        end
+                    end
+                end
+                if condition.all then for _, child in ipairs(condition.all) do Walk(child) end end
+                if condition.any then for _, child in ipairs(condition.any) do Walk(child) end end
+            end
+            Walk(goal.conditions)
+        end
+    end
+    Check(undeadPaladin ~= nil, "the paladin guide includes the Undead quest A Difficult Path")
+    Check(orcPaladin == nil, "the paladin guide has no Orc, Troll, Tauren, or Horde Skyborne steps")
+    if undeadPaladin then
+        local undead = { faction = "Horde", raceID = 5, classID = 2, level = 2 }
+        local orc = { faction = "Horde", raceID = 2, classID = 2, level = 2 }
+        Equal(ns.EvaluateCondition(undeadPaladin.conditions, undead), true,
+            "an Undead paladin can take A Difficult Path")
+        Equal(ns.EvaluateCondition(undeadPaladin.conditions, orc), false,
+            "an Orc is not offered the Undead paladin step")
+    end
+
+    local function Goal(guide, id)
+        if not guide then return nil end
+        for _, goal in ipairs(guide.goals) do
+            if goal.id == id then return goal end
+        end
+    end
+
+    local function HasLabel(goal, label)
+        for _, point in ipairs(goal and goal.route or {}) do
+            if point.label == label then return true end
+        end
+        return false
+    end
+
+    local druid = ns.guides["class-druid"]
+    local torwa = Goal(druid, "accept-9063-torwa-pathfinder")
+    Check(torwa ~= nil, "the druid guide includes Torwa Pathfinder")
+    if torwa then
+        local nightElf = { faction = "Alliance", raceID = 4, classID = 11, level = 50 }
+        local tauren = { faction = "Horde", raceID = 6, classID = 11, level = 50 }
+        Equal(ns.EvaluateCondition(torwa.conditions, nightElf), true,
+            "a Night Elf druid can accept Torwa Pathfinder")
+        Equal(ns.EvaluateCondition(torwa.conditions, tauren), true,
+            "a Tauren druid can accept Torwa Pathfinder")
+        Check(HasLabel(torwa, "Turak Runetotem"),
+            "Torwa Pathfinder keeps the Thunder Bluff giver")
+    end
+
+    local warrior = ns.guides["class-warrior"]
+    local training = Goal(warrior, "accept-1638-a-warriors-training")
+    local islander = Goal(warrior, "accept-1718-the-islander")
+    local muren = Goal(warrior, "accept-1679-muren-stormpike")
+    if training then
+        local human = { faction = "Alliance", raceID = 1, classID = 1, level = 10 }
+        local nightElf = { faction = "Alliance", raceID = 4, classID = 1, level = 10 }
+        Equal(ns.EvaluateCondition(training.conditions, human), true,
+            "a Human warrior can accept A Warrior's Training")
+        Equal(ns.EvaluateCondition(training.conditions, nightElf), false,
+            "a Night Elf warrior is not offered the Human training quest")
+    end
+    if muren then
+        local dwarf = { faction = "Alliance", raceID = 3, classID = 1, level = 10 }
+        local gnome = { faction = "Alliance", raceID = 7, classID = 1, level = 10 }
+        local nightElf = { faction = "Alliance", raceID = 4, classID = 1, level = 10 }
+        Equal(ns.EvaluateCondition(muren.conditions, dwarf), true,
+            "a Dwarf warrior can accept Muren Stormpike")
+        Equal(ns.EvaluateCondition(muren.conditions, gnome), true,
+            "a Gnome warrior can accept Muren Stormpike")
+        Equal(ns.EvaluateCondition(muren.conditions, nightElf), false,
+            "a Night Elf warrior is not offered the Dwarf and Gnome training quest")
+    end
+    if islander then
+        local orc = { faction = "Horde", raceID = 2, classID = 1, level = 30 }
+        local human = { faction = "Alliance", raceID = 1, classID = 1, level = 30 }
+        Equal(ns.EvaluateCondition(islander.conditions, orc), true,
+            "a Horde warrior can accept The Islander")
+        Equal(ns.EvaluateCondition(islander.conditions, human), true,
+            "an Alliance warrior can accept The Islander")
+        Check(HasLabel(islander, "Sorek"), "The Islander keeps the Orgrimmar giver")
+        Check(HasLabel(islander, "Baltus Fowler"), "The Islander keeps the Undercity giver")
+    end
+
+    local shaman = ns.guides["class-shaman"]
+    local callOfEarth = Goal(shaman, "accept-94373-call-of-earth")
+    Check(callOfEarth ~= nil, "the shaman guide includes the Alliance Call of Earth")
+    if callOfEarth then
+        local dwarf = { faction = "Alliance", raceID = 3, classID = 7, level = 4 }
+        local orc = { faction = "Horde", raceID = 2, classID = 7, level = 4 }
+        Equal(ns.EvaluateCondition(callOfEarth.conditions, dwarf), true,
+            "a Dwarf shaman can accept Call of Earth")
+        Equal(ns.EvaluateCondition(callOfEarth.conditions, orc), false,
+            "a Horde shaman is not offered the Alliance Call of Earth")
+    end
+end
+TestClassQuestGuides()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

@@ -68,3 +68,12 @@ Guides/Leveling/24-27-wetlands.lua
 Guides/Leveling/27-28-redridge-mountains.lua
 Guides/Leveling/28-29-duskwood.lua
 Guides/Leveling/29-30-ashenvale.lua
+Guides/Class/Warrior.lua
+Guides/Class/Paladin.lua
+Guides/Class/Hunter.lua
+Guides/Class/Rogue.lua
+Guides/Class/Priest.lua
+Guides/Class/Shaman.lua
+Guides/Class/Mage.lua
+Guides/Class/Warlock.lua
+Guides/Class/Druid.lua
