@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 20-22.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- The Forever speedrun (17-22 and 20-24 Stonetalon/Barrens) has no new Stonetalon quest. It collects Deepmoss Spider Eggs in Sishir Canyon with Blood Feeders. The turn-in waits for the next Ratchet visit.
+-- Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders. The turn-in waits for the next Ratchet visit.
 -- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter, after the harpy trip. Pigments for Paints starts in Thunder Bluff. Scramble is the middle of a hunt that starts in the Field of Giants, and this pass does not go to Pocket Litter. Wet Job is level 32. Rekindle is level 40.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.

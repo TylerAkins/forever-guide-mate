@@ -2,7 +2,6 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Ashenvale, levels 21-22.
 -- Forever quests from the Ashenvale list that sit on this pass are woven in.
--- The Forever speedrun's Ashenvale opening accepts the same Maestra's Post and Astranaar quests this chapter already runs. It lists no new quest to move.
 -- Left out: Repelling Invaders is a level 60 daily.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
