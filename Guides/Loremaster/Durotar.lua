@@ -1519,6 +1519,7 @@ ns:RegisterGuide({
             priority = 810,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { faction = "Horde" },
                 },
             },
@@ -1536,7 +1537,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Forgotten Loa Idols from Master Vornal.",
@@ -1587,6 +1588,7 @@ ns:RegisterGuide({
             priority = 850,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { faction = "Horde" },
                 },
             },
@@ -1604,6 +1606,7 @@ ns:RegisterGuide({
             priority = 860,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { faction = "Horde" },
                 },
             },
@@ -1740,6 +1743,7 @@ ns:RegisterGuide({
             priority = 950,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { faction = "Horde" },
                 },
             },
@@ -2456,7 +2460,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             useClientPin = true,
@@ -2640,7 +2644,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Forgotten Loa Idols to Master Gadrin.",
@@ -4401,7 +4405,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                     { quest = { id = 96877, state = "activeOrCompleted" } },
                 },
             },

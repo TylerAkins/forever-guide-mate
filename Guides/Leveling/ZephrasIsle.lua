@@ -1475,7 +1475,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 910,
             dependsOn = { "objective-pilfered-windstones" },
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Accept WANTED: Vulgara the Insatiable from the notice in Shen'dar Village.",
             complete = QuestState(93318, "activeOrCompleted"),
             route = {
@@ -1592,7 +1592,7 @@ ns:RegisterGuide({
             id = "objective-wanted-vulgara-the-insatiable",
             kind = "objective",
             priority = 1000,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Kill Vulgara the Insatiable in the Shen'dar Highlands and bring her head to Danarii Bellowveil.",
             dependsOn = { "accept-wanted-vulgara-the-insatiable" },
             complete = QuestState(93318, "complete"),
@@ -1683,7 +1683,7 @@ ns:RegisterGuide({
             id = "turnin-wanted-vulgara-the-insatiable",
             kind = "turnin",
             priority = 1070,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in WANTED: Vulgara the Insatiable to Danarii Bellowveil.",
             dependsOn = { "objective-wanted-vulgara-the-insatiable" },
             complete = QuestState(93318, "completed"),
@@ -1985,7 +1985,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 1290,
             dependsOn = { "accept-deliver-the-signet" },
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Accept Crab Season from Nyalah Brightfire.",
             complete = QuestState(93317, "activeOrCompleted"),
             route = {
@@ -2089,7 +2089,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Supreme Magister from Valennia Stormfist.",
@@ -2107,7 +2107,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Grand Skyseer from Valennia Stormfist.",
@@ -2150,7 +2150,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Find Elaadrin Evengale in Valanaar.",
@@ -2169,7 +2169,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept A Grand Adventure from Elaadrin Evengale.",
@@ -2187,7 +2187,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept The Missing Scholar from Dondallion Whisperwind.",
@@ -2205,7 +2205,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Unwelcome Visitors from Iaadaria Bitterwind.",
@@ -2222,7 +2222,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Listen to what Elaadrin Evengale in Valanaar has to say.",
@@ -2240,7 +2240,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Find Ayessa Dawnsinger in Valanaar.",
@@ -2259,7 +2259,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept A Grand Adventure from Ayessa Dawnsinger.",
@@ -2276,7 +2276,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Broken Construct from Ayessa Dawnsinger.",
@@ -2294,7 +2294,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Unwelcome Spirits from Endaria Mistgaze.",
@@ -2312,7 +2312,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Gather 10 Wind Hollow Essences in Shadowgale Forest. Wind Hollows can also drop a Rusty Gadget, which starts a quest.",
@@ -2330,7 +2330,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Unwelcome Spirits to Endaria Mistgaze.",
@@ -2348,7 +2348,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Listen to what Ayessa Dawnsinger has to say.",
@@ -2366,7 +2366,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Find Riaani Nightwind on the west side of Valanaar.",
@@ -2384,7 +2384,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Broken Construct from Riaani Nightwind.",
@@ -2402,7 +2402,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Listen to Riaani Nightwind, then collect Crystallized Lightning, an Enchanted Gyrozephyr, and an Air Construct Core.",
@@ -2420,7 +2420,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in The Broken Construct to Riaani Nightwind.",
@@ -2782,7 +2782,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Catching Wind from Elaadrin Evengale.",
@@ -2800,7 +2800,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Find what became of Fillion Flamebreeze on the road west of Valanaar.",
@@ -2818,7 +2818,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept the next Missing Scholar step where you found Fillion Flamebreeze.",
@@ -2836,7 +2836,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Find Fillion Flamebreeze.",
@@ -2854,7 +2854,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Carry Fillion Flamebreeze to safety while avoiding enemies.",
@@ -2872,7 +2872,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in The Missing Scholar to Fillion Flamebreeze.",
@@ -2890,7 +2890,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Accept The Missing Scholar from Fillion Flamebreeze.",
@@ -2908,7 +2908,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Slay the Shriekling Matriarch in the Shriekling Den then return its head to Dondallion Whisperwind in Valanaar.",
@@ -2926,7 +2926,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                 },
             },
             text = "Turn in The Missing Scholar to Dondallion Whisperwind.",
@@ -2941,7 +2941,7 @@ ns:RegisterGuide({
             id = "objective-crab-season",
             kind = "objective",
             priority = 1890,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Collect 6 pieces of Windsong Crawler Meat.",
             dependsOn = { "accept-crab-season" },
             complete = QuestState(93317, "complete"),
@@ -2957,7 +2957,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Take the Index Esoteria to the Overlook Standing Stones in Shen'dar Highlands and use it once there. Protect the Index from harm as it gathers data.",
@@ -2991,7 +2991,7 @@ ns:RegisterGuide({
             id = "turnin-crab-season",
             kind = "turnin",
             priority = 1920,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Crab Season to Nyalah Brightfire.",
             dependsOn = { "objective-crab-season" },
             complete = QuestState(93317, "completed"),
@@ -3026,7 +3026,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 5 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Catching Wind to Elaadrin Evengale.",
@@ -3044,7 +3044,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Avenged Tenfold from Elaadrin Evengale.",
@@ -3072,7 +3072,7 @@ ns:RegisterGuide({
             id = "accept-tower-defense",
             kind = "accept",
             priority = 1970,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Tower Defense from Valennia Stormfist.",
             dependsOn = { "turnin-to-valanaar", "turnin-to-valanaar-92701" },
             complete = QuestState(93320, "activeOrCompleted"),
@@ -3088,7 +3088,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Collect 10 Al'Aketh Windstone Charms from Al'Aketh cultists found north of Valanaar at the Gustberry Fields or Shrine of Akir.",
@@ -3103,7 +3103,7 @@ ns:RegisterGuide({
             id = "turnin-tower-defense",
             kind = "turnin",
             priority = 1990,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Report to Yorana Windyreed at the eastern watchtower in the Gustberry Lowlands.",
             dependsOn = { "accept-tower-defense" },
             complete = QuestState(93320, "completed"),
@@ -3116,7 +3116,7 @@ ns:RegisterGuide({
             id = "accept-disrupting-logistics",
             kind = "accept",
             priority = 2000,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Disrupting Logistics from Yorana Windyreed.",
             dependsOn = { "turnin-tower-defense" },
             complete = QuestState(92642, "activeOrCompleted"),
@@ -3129,7 +3129,7 @@ ns:RegisterGuide({
             id = "accept-breaking-the-breaker",
             kind = "accept",
             priority = 2010,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Breaking the Breaker from Yorana Windyreed.",
             dependsOn = { "turnin-tower-defense" },
             complete = QuestState(92645, "activeOrCompleted"),
@@ -3142,7 +3142,7 @@ ns:RegisterGuide({
             id = "objective-disrupting-logistics",
             kind = "objective",
             priority = 2020,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Slay 4 Al'Aketh Healers and 8 Al'Aketh Brawlers in the Gustberry Lowlands.",
             dependsOn = { "accept-disrupting-logistics" },
             complete = QuestState(92642, "complete"),
@@ -3155,7 +3155,7 @@ ns:RegisterGuide({
             id = "objective-breaking-the-breaker",
             kind = "objective",
             priority = 2030,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Slay Commander Belguilos in the Gustberry Lowlands.",
             dependsOn = { "accept-breaking-the-breaker" },
             complete = QuestState(92645, "complete"),
@@ -3168,7 +3168,7 @@ ns:RegisterGuide({
             id = "turnin-breaking-the-breaker",
             kind = "turnin",
             priority = 2040,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Breaking the Breaker to Yorana Windyreed.",
             dependsOn = { "objective-breaking-the-breaker" },
             complete = QuestState(92645, "completed"),
@@ -3181,7 +3181,7 @@ ns:RegisterGuide({
             id = "turnin-disrupting-logistics",
             kind = "turnin",
             priority = 2050,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Disrupting Logistics to Yorana Windyreed.",
             dependsOn = { "objective-disrupting-logistics" },
             complete = QuestState(92642, "completed"),
@@ -3194,7 +3194,7 @@ ns:RegisterGuide({
             id = "accept-return-to-valanaar",
             kind = "accept",
             priority = 2060,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Return to Valanaar from Yorana Windyreed.",
             dependsOn = { "turnin-disrupting-logistics", "turnin-breaking-the-breaker" },
             complete = QuestState(92880, "activeOrCompleted"),
@@ -3207,7 +3207,7 @@ ns:RegisterGuide({
             id = "turnin-return-to-valanaar",
             kind = "turnin",
             priority = 2070,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Bring Yorana's Report to Valennia Stormfist in Valanaar.",
             dependsOn = { "accept-return-to-valanaar" },
             complete = QuestState(92880, "completed"),
@@ -3220,7 +3220,7 @@ ns:RegisterGuide({
             id = "accept-the-high-elders-request",
             kind = "accept",
             priority = 2080,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept The High Elder's Request from Valennia Stormfist.",
             dependsOn = { "turnin-return-to-valanaar" },
             complete = QuestState(92881, "activeOrCompleted"),
@@ -3233,7 +3233,7 @@ ns:RegisterGuide({
             id = "turnin-the-high-elders-request",
             kind = "turnin",
             priority = 2090,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Speak with Talaanis Shadowsong in Valanaar.",
             dependsOn = { "accept-the-high-elders-request" },
             complete = QuestState(92881, "completed"),
@@ -3246,7 +3246,7 @@ ns:RegisterGuide({
             id = "accept-the-turncoat",
             kind = "accept",
             priority = 2100,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept The Turncoat from Talaanis Shadowsong.",
             dependsOn = { "turnin-the-high-elders-request" },
             complete = QuestState(92643, "activeOrCompleted"),
@@ -3262,7 +3262,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Avenged Tenfold to Elaadrin Evengale.",
@@ -3280,7 +3280,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept In Service of Zephras from Elaadrin Evengale.",
@@ -3298,7 +3298,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Report to Valennia Stormfist and let her know that High Order is with them in their fight against the Al'Aketh.",
@@ -3313,7 +3313,7 @@ ns:RegisterGuide({
             id = "turnin-the-turncoat",
             kind = "turnin",
             priority = 2140,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Find the cultist turncoat at the house just inside the highlands northwest of Valanaar.",
             dependsOn = { "accept-the-turncoat" },
             complete = QuestState(92643, "completed"),
@@ -3326,7 +3326,7 @@ ns:RegisterGuide({
             id = "accept-alaketh-assassins",
             kind = "accept",
             priority = 2150,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Al'Aketh Assassins from Fendaal Windstone.",
             dependsOn = { "turnin-the-turncoat" },
             complete = QuestState(98512, "activeOrCompleted"),
@@ -3339,7 +3339,7 @@ ns:RegisterGuide({
             id = "objective-alaketh-assassins",
             kind = "objective",
             priority = 2160,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Kill 10 Al'Aketh Assassins in the Shen'dar Highlands.",
             dependsOn = { "accept-alaketh-assassins" },
             complete = QuestState(98512, "complete"),
@@ -3352,7 +3352,7 @@ ns:RegisterGuide({
             id = "accept-unfortunate-news",
             kind = "accept",
             priority = 2170,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Unfortunate News from Dead Cultist.",
             dependsOn = { "turnin-the-turncoat" },
             complete = QuestState(92644, "activeOrCompleted"),
@@ -3365,7 +3365,7 @@ ns:RegisterGuide({
             id = "turnin-alaketh-assassins",
             kind = "turnin",
             priority = 2180,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Al'Aketh Assassins to Fendaal Windstone.",
             dependsOn = { "objective-alaketh-assassins" },
             complete = QuestState(98512, "completed"),
@@ -3378,7 +3378,7 @@ ns:RegisterGuide({
             id = "turnin-unfortunate-news",
             kind = "turnin",
             priority = 2190,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Deliver the glowing crystal to Talaanis Shadowsong in Valanaar.",
             dependsOn = { "accept-unfortunate-news" },
             complete = QuestState(92644, "completed"),
@@ -3391,7 +3391,7 @@ ns:RegisterGuide({
             id = "accept-the-cults-true-plans",
             kind = "accept",
             priority = 2200,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept The Cult's True Plans from Talaanis Shadowsong.",
             dependsOn = { "turnin-unfortunate-news" },
             complete = QuestState(94568, "activeOrCompleted"),
@@ -3404,7 +3404,7 @@ ns:RegisterGuide({
             id = "turnin-the-cults-true-plans",
             kind = "turnin",
             priority = 2210,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Speak with Talaanis Shadowsong and observe the conversation.",
             dependsOn = { "accept-the-cults-true-plans" },
             complete = QuestState(94568, "completed"),
@@ -3477,7 +3477,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Travel to Shadowgale Forest and collect 8 Shriekling Talons for Iaadaria Bitterwind in Valanaar.",
@@ -3493,7 +3493,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 2260,
             dependsOn = { "turnin-the-cults-true-plans" },
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Accept The Strange Hermit from Strange Hermit.",
             complete = QuestState(93159, "activeOrCompleted"),
             route = {
@@ -3505,7 +3505,7 @@ ns:RegisterGuide({
             id = "turnin-the-strange-hermit",
             kind = "turnin",
             priority = 2270,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Speak with the Strange Hermit in the Shadowgale Forest and learn more about him.",
             dependsOn = { "accept-the-strange-hermit" },
             complete = QuestState(93159, "completed"),
@@ -3518,7 +3518,7 @@ ns:RegisterGuide({
             id = "accept-the-forests-bounty",
             kind = "accept",
             priority = 2280,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Accept The Forest's Bounty from Strange Hermit.",
             dependsOn = { "turnin-the-strange-hermit" },
             complete = QuestState(93160, "activeOrCompleted"),
@@ -3531,7 +3531,7 @@ ns:RegisterGuide({
             id = "accept-free-the-hollows",
             kind = "accept",
             priority = 2290,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Accept Free the Hollows from Strange Hermit.",
             dependsOn = { "turnin-the-strange-hermit" },
             complete = QuestState(93172, "activeOrCompleted"),
@@ -3623,7 +3623,7 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 2360,
             dependsOn = { "objective-unwanted-and-unworthy" },
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Accept Mercy Falls on Deaf Ears from Vayn Moongaze.",
             complete = QuestState(93165, "activeOrCompleted"),
             route = {
@@ -3635,7 +3635,7 @@ ns:RegisterGuide({
             id = "objective-mercy-falls-on-deaf-ears",
             kind = "objective",
             priority = 2370,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Collect 10 Al'Aketh Cultist's Ears from the Al'Aketh cultists in Shadowgale Forest, the Shine of Akir, or Gustberry Lowlands.",
             dependsOn = { "accept-mercy-falls-on-deaf-ears" },
             complete = QuestState(93165, "complete"),
@@ -3648,7 +3648,7 @@ ns:RegisterGuide({
             id = "turnin-mercy-falls-on-deaf-ears",
             kind = "turnin",
             priority = 2380,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Turn in Mercy Falls on Deaf Ears to Vayn Moongaze.",
             dependsOn = { "objective-mercy-falls-on-deaf-ears" },
             complete = QuestState(93165, "completed"),
@@ -3778,7 +3778,7 @@ ns:RegisterGuide({
             id = "objective-free-the-hollows",
             kind = "objective",
             priority = 2480,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Destroy 10 Wind Hollows in the Ruins of Ban'aethal. They can also drop a Rusty Gadget, which starts a quest.",
             dependsOn = { "accept-free-the-hollows" },
             complete = QuestState(93172, "complete"),
@@ -3804,7 +3804,7 @@ ns:RegisterGuide({
             id = "turnin-the-forests-bounty",
             kind = "turnin",
             priority = 2500,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Gather 8 Shadowgale Acorns in Shadowgale Forest.",
             dependsOn = { "accept-the-forests-bounty" },
             complete = QuestState(93160, "completed"),
@@ -3817,7 +3817,7 @@ ns:RegisterGuide({
             id = "turnin-free-the-hollows",
             kind = "turnin",
             priority = 2510,
-            conditions = { level = { min = 8 } },
+            conditions = { level = { min = 13 } },
             text = "Turn in Free the Hollows to Strange Hermit.",
             dependsOn = { "objective-free-the-hollows" },
             complete = QuestState(93172, "completed"),
@@ -3885,7 +3885,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 8 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Unwelcome Visitors to Iaadaria Bitterwind.",
@@ -3903,7 +3903,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The Broken Construct from Riaani Nightwind.",
@@ -3921,7 +3921,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Report back to Ayessa Dawnsinger in Valanaar.",
@@ -3939,7 +3939,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept A Firm Response from Ayessa Dawnsinger.",
@@ -3957,7 +3957,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Confront Belthaan Brightwish along the road to the Shrine of Akir.",
@@ -3975,7 +3975,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in A Firm Response to Ayessa Dawnsinger.",
@@ -4549,7 +4549,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Blood for Blood from Ayessa Dawnsinger.",
@@ -4567,7 +4567,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Collect 10 Al'Aketh Windstone Charms from the corpses of Al'Aketh cultists in the Gustberry Lowlands.",
@@ -4585,7 +4585,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Blood for Blood to Ayessa Dawnsinger.",
@@ -4603,7 +4603,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept In Service of Zephras from Ayessa Dawnsinger.",
@@ -4621,7 +4621,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Report to Valennia Stormfist and let her know that the Windshapers are with them in their fight against the Al'Aketh.",
@@ -4636,7 +4636,7 @@ ns:RegisterGuide({
             id = "accept-desperate-times",
             kind = "accept",
             priority = 2980,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Accept Desperate Times from Talaanis Shadowsong.",
             dependsOn = { "turnin-the-cults-true-plans", "turnin-in-service-of-zephras", "turnin-in-service-of-zephras-92871" },
             complete = QuestState(92640, "activeOrCompleted"),
@@ -4649,7 +4649,7 @@ ns:RegisterGuide({
             id = "objective-desperate-times",
             kind = "objective",
             priority = 2990,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Speak with Valennia Stormfist in Valanaar and follow her instructions.",
             dependsOn = { "accept-desperate-times" },
             complete = QuestState(92640, "complete"),
@@ -4662,7 +4662,7 @@ ns:RegisterGuide({
             id = "turnin-desperate-times",
             kind = "turnin",
             priority = 3000,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 11 } },
             text = "Turn in Desperate Times to Valennia Stormfist.",
             dependsOn = { "objective-desperate-times" },
             complete = QuestState(92640, "completed"),
@@ -4675,7 +4675,7 @@ ns:RegisterGuide({
             id = "accept-prepare-for-battle",
             kind = "accept",
             priority = 3010,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Accept Prepare for Battle from Valennia Stormfist.",
             dependsOn = { "turnin-desperate-times" },
             complete = QuestState(93065, "activeOrCompleted"),
@@ -4688,7 +4688,7 @@ ns:RegisterGuide({
             id = "turnin-prepare-for-battle",
             kind = "turnin",
             priority = 3020,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Speak with Valennia Stormfist in the Gustberry Lowlands.",
             dependsOn = { "accept-prepare-for-battle" },
             complete = QuestState(93065, "completed"),
@@ -4701,7 +4701,7 @@ ns:RegisterGuide({
             id = "accept-making-our-move",
             kind = "accept",
             priority = 3030,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Accept Making Our Move from Valennia Stormfist.",
             dependsOn = { "turnin-prepare-for-battle" },
             complete = QuestState(92947, "activeOrCompleted"),
@@ -4714,7 +4714,7 @@ ns:RegisterGuide({
             id = "objective-making-our-move",
             kind = "objective",
             priority = 3040,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Slay 8 Al'Aketh Guardians, 6 Al'Aketh Spiritcallers, and 6 Al'Aketh Blademasters.",
             dependsOn = { "accept-making-our-move" },
             complete = QuestState(92947, "complete"),
@@ -4727,7 +4727,7 @@ ns:RegisterGuide({
             id = "turnin-making-our-move",
             kind = "turnin",
             priority = 3050,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Turn in Making Our Move to Hyusaa Quickbreeze.",
             dependsOn = { "objective-making-our-move" },
             complete = QuestState(92947, "completed"),
@@ -4740,7 +4740,7 @@ ns:RegisterGuide({
             id = "accept-the-inner-sanctum",
             kind = "accept",
             priority = 3060,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Accept The Inner Sanctum from Hyusaa Quickbreeze.",
             dependsOn = { "turnin-making-our-move" },
             complete = QuestState(93958, "activeOrCompleted"),
@@ -4753,7 +4753,7 @@ ns:RegisterGuide({
             id = "turnin-the-inner-sanctum",
             kind = "turnin",
             priority = 3070,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 12 } },
             text = "Speak with Valennia Stormfist inside the inner sanctum at the Shrine of Akir.",
             dependsOn = { "accept-the-inner-sanctum" },
             complete = QuestState(93958, "completed"),
@@ -4769,7 +4769,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Confront Lorthuna from Valennia Stormfist.",
@@ -4787,7 +4787,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with High Priestess Lorthuna.",
@@ -4805,7 +4805,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept The Fate of Zephras from Elaadrin Evengale.",
@@ -4823,7 +4823,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Speak with Talaanis Shadowsong in Valanaar.",
@@ -4841,7 +4841,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept What Comes Next from Talaanis Shadowsong.",
@@ -4859,7 +4859,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Elaadrin Evengale when you are prepared to leave Zephras Isle.",
@@ -4877,7 +4877,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept The Magical City of Dalaran from Elaadrin Evengale.",
@@ -4895,7 +4895,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Take the skycutter from Valanaar to Dalaran and turn in The Magical City of Dalaran to Danaaris Stargale.",
@@ -4913,7 +4913,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Confront Lorthuna from Valennia Stormfist.",
@@ -4931,7 +4931,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Take the portal to the Rohashi Spires overhead and join Elaadrin Evengale and Ayessa Dawnsinger in their confrontation with the High Priestess Lorthuna.",
@@ -4949,7 +4949,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept The Fate of Zephras from Ayessa Dawnsinger.",
@@ -4967,7 +4967,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Speak with Talaanis Shadowsong in Valanaar.",
@@ -4985,7 +4985,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept What Comes Next from Talaanis Shadowsong.",
@@ -5003,7 +5003,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Ayessa Dawnsinger when you are prepared to leave Zephras Isle.",
@@ -5021,7 +5021,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept The Earthen Ring from Ayessa Dawnsinger.",
@@ -5039,7 +5039,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Take the skycutter from Valanaar to Mulgore and turn in The Earthen Ring to Alana Stormwalker.",
@@ -5057,7 +5057,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Welcome to Azeroth from Alana Stormwalker.",
@@ -5075,7 +5075,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Welcome to Azeroth to Thrall in Orgrimmar.",
@@ -5096,7 +5096,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Exploring the Horde from Thrall.",
@@ -5114,7 +5114,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Nazgrel in Grommash Hold.",
@@ -5132,7 +5132,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Vol'jin in Grommash Hold.",
@@ -5150,7 +5150,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Cairne Bloodhoof on the High Rise in Thunder Bluff.",
@@ -5171,7 +5171,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Lady Sylvanas Windrunner in the Royal Quarter.",
@@ -5189,7 +5189,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Finish Exploring the Horde with Lady Sylvanas Windrunner.",
@@ -5207,7 +5207,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Welcome to Azeroth from Danaaris Stargale in Dalaran.",
@@ -5244,7 +5244,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Take the Skyborne Portal to Stormwind.",
@@ -5262,7 +5262,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Welcome to Azeroth to Bolvar Fordragon in Stormwind Keep.",
@@ -5280,7 +5280,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Exploring the Alliance from Bolvar Fordragon.",
@@ -5298,7 +5298,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Accept Journey to Sentinel Hill from Bolvar Fordragon. Westfall turns this in at Sentinel Hill.",
@@ -5354,7 +5354,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Randal Emerson in the southern antechamber of Stormwind Keep.",
@@ -5372,7 +5372,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with High Tinker Mekkatorque in Tinker Town.",
@@ -5390,7 +5390,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with King Magni Bronzebeard in the High Seat.",
@@ -5408,7 +5408,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Speak with Tyrande Whisperwind in the Temple of the Moon.",
@@ -5426,7 +5426,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
-                    { level = { min = 7 } },
+                    { level = { min = 13 } },
                 },
             },
             text = "Turn in Exploring the Alliance to Bolvar Fordragon.",

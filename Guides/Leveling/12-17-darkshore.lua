@@ -40,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-12-17-darkshore",
     title = "12-17 Darkshore",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -1362,7 +1362,7 @@ ns:RegisterGuide({
         {
             id = "objective-98025-wanted-jaivhanel",
             kind = "objective",
-            priority = 975,
+            priority = 1001,
             conditions = { level = { min = 10 } },
             text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
             dependsOn = { "accept-98025-wanted-jaivhanel" },

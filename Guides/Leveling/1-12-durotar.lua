@@ -44,7 +44,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-durotar",
     title = "1-12 Durotar",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1284,6 +1284,7 @@ ns:RegisterGuide({
             id = "accept-96821-legging-it",
             kind = "accept",
             priority = 791,
+            conditions = { level = { min = 6 } },
             text = "Accept Legging It from Vel'rin Fang in Sen'jin Village.",
             complete = QuestState(96821, "activeOrCompleted"),
             route = {
@@ -1294,8 +1295,8 @@ ns:RegisterGuide({
         {
             id = "accept-97225-forgotten-loa-idols",
             kind = "accept",
-            priority = 792,
-            conditions = { level = { min = 4 } },
+            priority = 781,
+            conditions = { level = { min = 9 } },
             text = "Accept Forgotten Loa Idols from Master Vornal in Sen'jin Village.",
             complete = QuestState(97225, "activeOrCompleted"),
             route = {
@@ -1306,7 +1307,7 @@ ns:RegisterGuide({
         {
             id = "accept-97223-bloodtalon-matriarch",
             kind = "accept",
-            priority = 793,
+            priority = 731,
             conditions = { level = { min = 5 } },
             text = "Accept Bloodtalon Matriarch from Xar'Ti in Sen'jin Village.",
             complete = QuestState(97223, "activeOrCompleted"),
@@ -1336,6 +1337,7 @@ ns:RegisterGuide({
             id = "objective-96821-legging-it-1",
             kind = "objective",
             priority = 801,
+            conditions = { level = { min = 6 } },
             text = "Legging It: kill Ridgeshade Creepers on the way to Razor Hill.",
             dependsOn = { "accept-96821-legging-it" },
             complete = QuestObjective(96821, 1),
@@ -1348,6 +1350,7 @@ ns:RegisterGuide({
             id = "objective-96821-legging-it-2",
             kind = "objective",
             priority = 802,
+            conditions = { level = { min = 6 } },
             text = "Legging It: kill Ridgeshade Lurkers on the way to Razor Hill. A lost pack can drop for Ukor.",
             dependsOn = { "accept-96821-legging-it" },
             complete = QuestObjective(96821, 2),
@@ -1463,6 +1466,7 @@ ns:RegisterGuide({
             id = "turnin-96821-legging-it",
             kind = "turnin",
             priority = 831,
+            conditions = { level = { min = 6 } },
             text = "Turn in Legging It to Gar'Thok in Razor Hill.",
             dependsOn = { "objective-96821-legging-it-1", "objective-96821-legging-it-2" },
             complete = QuestState(96821, "completed"),
@@ -1474,7 +1478,7 @@ ns:RegisterGuide({
         {
             id = "accept-96822-for-honor",
             kind = "accept",
-            priority = 832,
+            priority = 851,
             conditions = { level = { min = 3 } },
             text = "Accept For Honor from Turroc in Razor Hill Barracks.",
             complete = QuestState(96822, "activeOrCompleted"),
@@ -1522,7 +1526,7 @@ ns:RegisterGuide({
         {
             id = "accept-96825-this-fruit-could-bite-back",
             kind = "accept",
-            priority = 861,
+            priority = 830.5,
             conditions = { level = { min = 3 } },
             text = "Accept This Fruit Could Bite Back from Cook Torka in Razor Hill.",
             complete = QuestState(96825, "activeOrCompleted"),
@@ -1912,8 +1916,8 @@ ns:RegisterGuide({
         {
             id = "objective-97225-forgotten-loa-idols",
             kind = "objective",
-            priority = 1141,
-            conditions = { level = { min = 4 } },
+            priority = 1165,
+            conditions = { level = { min = 9 } },
             useClientPin = true,
             text = "Collect Forgotten Loa Idols on the Echo Isles. No saved spot for this, so the guide follows the pin in your quest log.",
             dependsOn = { "accept-97225-forgotten-loa-idols" },
@@ -1926,7 +1930,7 @@ ns:RegisterGuide({
         {
             id = "objective-97223-bloodtalon-matriarch",
             kind = "objective",
-            priority = 1142,
+            priority = 1200.5,
             conditions = { level = { min = 5 } },
             text = "Collect Bloodtalon Matriarch Eggs.",
             dependsOn = { "accept-97223-bloodtalon-matriarch" },
@@ -2036,7 +2040,7 @@ ns:RegisterGuide({
             id = "turnin-97225-forgotten-loa-idols",
             kind = "turnin",
             priority = 1231,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 9 } },
             text = "Turn in Forgotten Loa Idols to Master Gadrin in Sen'jin Village.",
             dependsOn = { "objective-97225-forgotten-loa-idols" },
             complete = QuestState(97225, "completed"),
@@ -2048,7 +2052,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97223-bloodtalon-matriarch",
             kind = "turnin",
-            priority = 1232,
+            priority = 1251,
             conditions = { level = { min = 5 } },
             text = "Turn in Bloodtalon Matriarch to Xar'Ti in Sen'jin Village.",
             dependsOn = { "objective-97223-bloodtalon-matriarch" },
@@ -3379,7 +3383,7 @@ ns:RegisterGuide({
             priority = 1975,
             conditions = {
                 all = {
-                    { level = { min = 6 } },
+                    { level = { min = 12 } },
                     { quest = { id = 96877, state = "activeOrCompleted" } },
                 },
             },

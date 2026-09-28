@@ -2,6 +2,8 @@ local _, ns = ...
 
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
 -- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
+-- Tomb Weed is offered only after Doom Weed is turned in. Wowhead does not record that chain.
+-- Collect it at Balnir Farmstead with Rear Guard Patrol, then turn it in after the last A New Plague.
 -- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
@@ -36,7 +38,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 7,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -973,7 +975,7 @@ ns:RegisterGuide({
         {
             id = "accept-99134-discipline",
             kind = "accept",
-            priority = 511,
+            priority = 521,
             conditions = { level = { min = 4 } },
             text = "Accept Discipline from Executor Zygand in Brill.",
             complete = QuestState(99134, "activeOrCompleted"),
@@ -1023,7 +1025,7 @@ ns:RegisterGuide({
         {
             id = "accept-95314-that-shadowvale-green-elixir",
             kind = "accept",
-            priority = 515,
+            priority = 1011,
             conditions = { level = { min = 7 } },
             text = "Accept That Shadowvale Green Elixir from Carolai Anise in Brill.",
             complete = QuestState(95314, "activeOrCompleted"),
@@ -1219,31 +1221,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-99142-tomb-weed",
-            kind = "accept",
-            priority = 681,
-            conditions = { level = { min = 5 } },
-            text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
-            complete = QuestState(99142, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
-                    "Travel to Junior Apothecary Holland."),
-            },
-        },
-        {
-            id = "objective-99142-tomb-weed",
-            kind = "objective",
-            priority = 711,
-            conditions = { level = { min = 5 } },
-            text = "Collect 5 Tomb Weed around the graves north of Brill.",
-            dependsOn = { "accept-99142-tomb-weed" },
-            complete = QuestState(99142, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal graves",
-                    "Travel to Tirisfal graves."),
-            },
-        },
-        {
             id = "objective-367-a-new-plague",
             kind = "objective",
             priority = 700,
@@ -1356,9 +1333,35 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99142-tomb-weed",
+            kind = "accept",
+            priority = 790.1,
+            conditions = { level = { min = 5 } },
+            text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
+            dependsOn = { "turnin-5482-doom-weed" },
+            complete = QuestState(99142, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                    "Travel to Junior Apothecary Holland."),
+            },
+        },
+        {
+            id = "objective-99142-tomb-weed",
+            kind = "objective",
+            priority = 1190.5,
+            conditions = { level = { min = 5 } },
+            text = "Collect 5 Tomb Weed at Balnir Farmstead, on the same trip as Rear Guard Patrol.",
+            dependsOn = { "accept-99142-tomb-weed" },
+            complete = QuestState(99142, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.7500, 0.6000, "Balnir Farmstead",
+                    "Travel to Balnir Farmstead."),
+            },
+        },
+        {
             id = "turnin-99142-tomb-weed",
             kind = "turnin",
-            priority = 791,
+            priority = 1391,
             conditions = { level = { min = 5 } },
             text = "Turn in Tomb Weed to Junior Apothecary Holland.",
             dependsOn = { "objective-99142-tomb-weed" },
@@ -1371,7 +1374,7 @@ ns:RegisterGuide({
         {
             id = "objective-99134-discipline",
             kind = "objective",
-            priority = 792,
+            priority = 522,
             conditions = { level = { min = 4 } },
             text = "Motivate the Deathguards Executor Zygand named. They stand in Brill and along the roads you are already riding, including Deathknell.",
             dependsOn = { "accept-99134-discipline" },
@@ -1384,7 +1387,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99134-discipline",
             kind = "turnin",
-            priority = 793,
+            priority = 951,
             conditions = { level = { min = 4 } },
             text = "Turn in Discipline to Executor Zygand.",
             dependsOn = { "objective-99134-discipline" },
@@ -1397,7 +1400,7 @@ ns:RegisterGuide({
         {
             id = "accept-99141-patience",
             kind = "accept",
-            priority = 794,
+            priority = 952,
             conditions = { level = { min = 4 } },
             text = "Accept Patience from Executor Zygand.",
             dependsOn = { "turnin-99134-discipline" },
@@ -1410,7 +1413,7 @@ ns:RegisterGuide({
         {
             id = "objective-99141-patience",
             kind = "objective",
-            priority = 795,
+            priority = 953,
             conditions = { level = { min = 4 } },
             text = "Collect reports from Deathguard Dillinger, Deathguard Kristof, and Gordo.",
             dependsOn = { "accept-99141-patience" },
@@ -1423,7 +1426,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99141-patience",
             kind = "turnin",
-            priority = 796,
+            priority = 954,
             conditions = { level = { min = 4 } },
             text = "Turn in Patience to Executor Zygand.",
             dependsOn = { "objective-99141-patience" },
@@ -1845,8 +1848,8 @@ ns:RegisterGuide({
         {
             id = "accept-97558-hides-for-the-forsaken",
             kind = "accept",
-            priority = 1171,
-            conditions = { level = { min = 6 } },
+            priority = 751,
+            conditions = { level = { min = 11 } },
             text = "Accept Hides for the Forsaken from Shelene Rhobart.",
             complete = QuestState(97558, "activeOrCompleted"),
             route = {
@@ -1858,7 +1861,7 @@ ns:RegisterGuide({
             id = "accept-99156-rear-guard-patrol",
             kind = "accept",
             priority = 1172,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 13 } },
             text = "Accept Rear Guard Patrol from Deathguard Linnea.",
             complete = QuestState(99156, "activeOrCompleted"),
             route = {
@@ -1870,7 +1873,7 @@ ns:RegisterGuide({
             id = "objective-99156-rear-guard-patrol",
             kind = "objective",
             priority = 1181,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 13 } },
             text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
             dependsOn = { "accept-99156-rear-guard-patrol" },
             complete = QuestState(99156, "complete"),
@@ -1882,8 +1885,8 @@ ns:RegisterGuide({
         {
             id = "objective-97558-hides-for-the-forsaken",
             kind = "objective",
-            priority = 1182,
-            conditions = { level = { min = 6 } },
+            priority = 1061,
+            conditions = { level = { min = 11 } },
             text = "Collect 8 Duskbat Wing Membranes, 6 Darkhound Hides, and 3 Vile Fin Murloc Skins.",
             dependsOn = { "accept-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "complete"),
@@ -1895,7 +1898,7 @@ ns:RegisterGuide({
         {
             id = "objective-95314-that-shadowvale-green-elixir",
             kind = "objective",
-            priority = 1183,
+            priority = 1488,
             conditions = { level = { min = 7 } },
             text = "Collect 8 Bottles of Whispering Elixir in Shadowvale. A Whispering Horror may drop residue. Use it if it does.",
             dependsOn = { "accept-95314-that-shadowvale-green-elixir" },
@@ -1921,25 +1924,25 @@ ns:RegisterGuide({
         {
             id = "accept-99144-seeking-refuge",
             kind = "accept",
-            priority = 1201,
+            priority = 881,
             conditions = { level = { min = 5 } },
-            text = "Accept Seeking Refuge from Bareth Dawnstone at Crusader's Outpost.",
+            text = "Accept Seeking Refuge from Bareth Dawnstone at the top of the tower in Solliden Farmstead.",
             complete = QuestState(99144, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
         {
             id = "objective-99144-seeking-refuge",
             kind = "objective",
-            priority = 1202,
+            priority = 882,
             conditions = { level = { min = 5 } },
-            text = "Escort Bareth Dawnstone out of Crusader's Outpost.",
+            text = "Escort Bareth Dawnstone out of Solliden Farmstead.",
             dependsOn = { "accept-99144-seeking-refuge" },
             complete = QuestState(99144, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
@@ -2227,7 +2230,7 @@ ns:RegisterGuide({
             id = "turnin-99156-rear-guard-patrol",
             kind = "turnin",
             priority = 1411,
-            conditions = { level = { min = 6 } },
+            conditions = { level = { min = 13 } },
             text = "Turn in Rear Guard Patrol to Deathguard Linnea.",
             dependsOn = { "objective-99156-rear-guard-patrol" },
             complete = QuestState(99156, "completed"),
@@ -2239,8 +2242,8 @@ ns:RegisterGuide({
         {
             id = "turnin-97558-hides-for-the-forsaken",
             kind = "turnin",
-            priority = 1412,
-            conditions = { level = { min = 6 } },
+            priority = 1151,
+            conditions = { level = { min = 11 } },
             text = "Turn in Hides for the Forsaken to Shelene Rhobart.",
             dependsOn = { "objective-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "completed"),
@@ -2252,7 +2255,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99144-seeking-refuge",
             kind = "turnin",
-            priority = 1413,
+            priority = 955,
             conditions = { level = { min = 5 } },
             text = "Turn in Seeking Refuge to Shari Stilwell in Brill.",
             dependsOn = { "objective-99144-seeking-refuge" },
@@ -2265,7 +2268,7 @@ ns:RegisterGuide({
         {
             id = "turnin-95314-that-shadowvale-green-elixir",
             kind = "turnin",
-            priority = 1414,
+            priority = 1490,
             conditions = { level = { min = 7 } },
             text = "Turn in That Shadowvale Green Elixir to Carolai Anise in Brill.",
             dependsOn = { "objective-95314-that-shadowvale-green-elixir" },
