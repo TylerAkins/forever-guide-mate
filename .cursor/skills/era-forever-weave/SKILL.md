@@ -27,21 +27,22 @@ Use the first rule that fits.
 2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins. A giver you met earlier does not count when this quest's recommended level is still ahead.
 3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower recommended level. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
 
-## Speedrun placement
+## Same trip
 
-The classic spine stays in its order. A Forever speedrun is only a second list of when the woven quests are accepted, finished, and turned in. Use it when a RestedXP Forever guide covers the chapter (`Guides/forever/` in [RXPGuides](https://github.com/RestedXP/RXPGuides)). Read `.accept`, `.complete`, and `.turnin`. Do not copy the rest of that route.
+The published speed run, through about level 20, shows how a new Forever quest is placed. It does not replace the classic route. Past that, the speed run is not published. Place the woven quest on our spine the same way.
 
-- Move only woven Forever steps, by priority. Classic accepts, objectives, and turn-ins stay where they are.
-- Put the accept on the classic visit where the speedrun accepts it, with that NPC's other accepts.
-- Put the objective on the classic trip where the speedrun completes it. When the speedrun spreads one quest across several kills, one objective step goes on the trip where the collect finishes, not on the accept and not on the first kill.
-- Turn it in with the classic hand-in on the way back. Do not turn it in early when that walks the player back to town in the middle of the trip.
-- A prerequisite the speedrun waits for is `dependsOn` on that turn-in, even when Wowhead lists none.
-- When the speedrun names a different spot on the same trip, use that spot and reuse a pin the chapter already has. Do not invent a coordinate.
-- When the two classic neighbors are in the opposite order on our spine, anchor to the later step we already visit. Do not reorder the spine to make the sandwich true.
-- Leave a step that is already on that trip. Leave class chains and `dependsOn` order alone.
-- The tracker keeps the current step. An earlier objective takes over once it is ready, so a woven objective placed ahead of work that is still coming will pull the player back when they reach its level. A recommended level above the chapter, or above the steps still ahead, stays after those steps. Bloodfury Trinkets stays at the end of 23-25 Stonetalon for that reason: the harpy kill is earlier, and the quest is level 26.
-- A quest the speedrun does not list stays out when its start is another zone, a later chapter already walks that ground, or it is the middle of a hunt whose earlier step is not on this route. Scramble is that hunt: Stepping Stones ends at Pocket Litter, and the hunt starts in Westfall or the Field of Giants. Name the omission in the header.
-- When the speedrun does not cover the chapter, use the same test on our spine. The objective belongs on the classic step that is already standing in that spot. Do not add a trip. A classic quest this chapter already accepts, and then never finishes, gets its objective on that same trip. Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in on the next visit to Mebok.
+Classic accepts, objectives, and turn-ins stay in order. Move only the woven quest.
+
+- Accept it on the visit where the route is already speaking to that giver, once the route has reached the quest's level. A giver met earlier does not count while the recommended level is still ahead.
+- Do the objective on the classic trip that already kills those targets or walks through that spot. When the work matches several classic kills, finish the one objective step on the trip where the collect happens, not on the accept and not on the first kill.
+- Turn it in with that NPC's turn-ins on the way back. Do not send the player back to town in the middle of the outing.
+- If the quest is offered only after another turn-in, `dependsOn` that turn-in even when Wowhead lists no prerequisite.
+- When the work is a different spot on a trip the route already takes, reuse that trip's pin. Do not invent a coordinate, and do not add a trip.
+- If our spine visits the two neighboring classic steps in the opposite order, anchor the woven quest to the later step. Do not reorder the spine.
+- Leave a woven step that is already on that trip. Leave class chains and their `dependsOn` order alone.
+- The tracker stays on the current step until an earlier objective becomes ready, and then it turns back. A recommended level that is still above the steps ahead waits until after those steps, so dinging does not pull the player off the route. Bloodfury Trinkets waits at the end of 23-25 Stonetalon for that reason: the harpy kill is earlier, and the quest is level 26.
+- A quest stays out when the start is another zone, a later chapter already walks that ground, or the quest is the middle of a chain this route never starts. Scramble is that chain: it begins in Westfall or the Field of Giants and only later reaches Pocket Litter. Name the omission in the header.
+- A classic quest this chapter already accepts, and then never finishes, gets its objective on that same trip. Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in on the next visit to Mebok.
 
 ## What stays out
 

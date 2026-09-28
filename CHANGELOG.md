@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 
 ## 0.1.24 - 2026-09-28
 
-- Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in to Mebok on the next Ratchet visit. The 20-22 Stonetalon, 21-22 Ashenvale, and 22-23 Stonetalon chapters were checked against the Forever speedrun; no new Stonetalon or Ashenvale quest sits on those passes.
+- Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in to Mebok on the next Ratchet visit. No new Stonetalon or Ashenvale quest sits on the 20-22, 21-22, or 22-23 passes.
 
 ## 0.1.23 - 2026-09-28
 
