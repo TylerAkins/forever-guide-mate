@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 5,
+    revision = 6,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1347,20 +1347,20 @@ ns:RegisterGuide({
         {
             id = "objective-99142-tomb-weed",
             kind = "objective",
-            priority = 790.2,
+            priority = 1190.5,
             conditions = { level = { min = 5 } },
-            text = "Collect 5 Tomb Weed around the graves north of Brill.",
+            text = "Collect 5 Tomb Weed at Balnir Farmstead, on the same trip as Rear Guard Patrol.",
             dependsOn = { "accept-99142-tomb-weed" },
             complete = QuestState(99142, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal graves",
-                    "Travel to Tirisfal graves."),
+                Point(MAP.TIRISFAL, 0.7500, 0.6000, "Balnir Farmstead",
+                    "Travel to Balnir Farmstead."),
             },
         },
         {
             id = "turnin-99142-tomb-weed",
             kind = "turnin",
-            priority = 790.3,
+            priority = 1391,
             conditions = { level = { min = 5 } },
             text = "Turn in Tomb Weed to Junior Apothecary Holland.",
             dependsOn = { "objective-99142-tomb-weed" },
