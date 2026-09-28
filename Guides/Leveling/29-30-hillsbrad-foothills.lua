@@ -1,7 +1,8 @@
 local _, ns = ...
 
 -- Horde leveling route for Hillsbrad Foothills, levels 29-30.
--- Hillsbrad has no new Forever quests. Scout Support and Valuable Vantages have no start pin.
+-- The Hillsbrad list has no new Forever quests. Undead paladins accept An Underrated Talent from Trevan Rol at the Sepulcher and turn it in to Ott in Tarren Mill, then watch Ott's Masterwork.
+-- The Moonsilver Blade returns to Trevan after this chapter has left the Sepulcher. Old Fire-Eye and the earlier steps are in Silverpine. Scout Support and Valuable Vantages have no start pin.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -34,7 +35,7 @@ ns:RegisterGuide({
     id = "leveling-era-29-30-hillsbrad-foothills",
     title = "29-30 Hillsbrad Foothills",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -52,6 +53,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4290, 0.4090, "Apothecary Renferrel",
                     "Travel to Apothecary Renferrel."),
+            },
+        },
+        {
+            id = "accept-95111-an-underrated-talent",
+            kind = "accept",
+            priority = 50,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { class = 2 },
+                    { race = 5 },
+                },
+            },
+            text = "Accept An Underrated Talent from Trevan Rol in The Sepulcher. He gives you a bundle of blacksmithing materials for Ott.",
+            complete = QuestState(95111, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4340, 0.4100, "Trevan Rol",
+                    "Travel to Trevan Rol."),
             },
         },
         {
@@ -204,6 +223,82 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD, 0.6236, 0.1901, "Christoph Jeffcoat",
                     "Travel to Christoph Jeffcoat."),
+            },
+        },
+        {
+            id = "turnin-95111-an-underrated-talent",
+            kind = "turnin",
+            priority = 185,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { class = 2 },
+                    { race = 5 },
+                },
+            },
+            text = "Turn in An Underrated Talent to Ott in Tarren Mill.",
+            dependsOn = { "accept-95111-an-underrated-talent" },
+            complete = QuestState(95111, "completed"),
+            route = {
+                Point(MAP.HILLSBRAD, 0.6040, 0.2600, "Ott",
+                    "Travel to Ott."),
+            },
+        },
+        {
+            id = "accept-95125-ott-s-masterwork",
+            kind = "accept",
+            priority = 186,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { class = 2 },
+                    { race = 5 },
+                },
+            },
+            text = "Accept Ott's Masterwork from Ott in Tarren Mill.",
+            dependsOn = { "turnin-95111-an-underrated-talent" },
+            complete = QuestState(95125, "activeOrCompleted"),
+            route = {
+                Point(MAP.HILLSBRAD, 0.6040, 0.2600, "Ott",
+                    "Travel to Ott."),
+            },
+        },
+        {
+            id = "objective-95125-ott-s-masterwork",
+            kind = "objective",
+            priority = 187,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { class = 2 },
+                    { race = 5 },
+                },
+            },
+            text = "Watch Ott forge the blade in Tarren Mill.",
+            dependsOn = { "accept-95125-ott-s-masterwork" },
+            complete = QuestState(95125, "complete"),
+            route = {
+                Point(MAP.HILLSBRAD, 0.6040, 0.2600, "Ott",
+                    "Travel to Ott."),
+            },
+        },
+        {
+            id = "turnin-95125-ott-s-masterwork",
+            kind = "turnin",
+            priority = 188,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { class = 2 },
+                    { race = 5 },
+                },
+            },
+            text = "Turn in Ott's Masterwork to Ott in Tarren Mill.",
+            dependsOn = { "objective-95125-ott-s-masterwork" },
+            complete = QuestState(95125, "completed"),
+            route = {
+                Point(MAP.HILLSBRAD, 0.6040, 0.2600, "Ott",
+                    "Travel to Ott."),
             },
         },
         {

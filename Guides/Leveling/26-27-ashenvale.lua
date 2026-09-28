@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde leveling route for Ashenvale, levels 26-27.
 -- Pigments for Paints is accepted from Tah Winterhoof on this Thunder Bluff visit. The pods are collected at Mirkfallon Lake in the next Stonetalon chapter.
--- The Great Cat Spirit is offered by Turak Runetotem on an earlier Thunder Bluff visit. Seeking the Kor Gem is a Blackfathom Deeps quest. Repelling Invaders is a level 60 daily for the other faction.
+-- The Great Cat Spirit is offered by Turak Runetotem on an earlier Thunder Bluff visit. Seeking the Kor Gem is a Blackfathom Deeps quest. Never Coming Back and A Void Path have no start pin. Repelling Invaders is a level 60 daily for the other faction.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 

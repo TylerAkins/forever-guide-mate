@@ -1,7 +1,7 @@
 local _, ns = ...
 
 -- Horde leveling route for the Southern Barrens, levels 25-25.
--- No new Forever Barrens quest sits on this pass. Stepping Stones starts at the Burned-Out Remains in the Field of Giants and turns in at Pocket Litter. That is the Scramble chain, and no chapter stops there. Scout Support and Valuable Vantages have no start pin.
+-- The Barrens list has no new Forever quest on this pass. Stepping Stones starts at the Burned-Out Remains in the Field of Giants and turns in at Pocket Litter. ... and that note you found starts at those same remains and turns in at Westfall. No chapter stops at either hand-in. Scout Support and Valuable Vantages have no start pin.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 

@@ -218,3 +218,11 @@ ns:RegisterQuestPrerequisite({
     note = "Tomb Weed is offered after Doom Weed is turned in.",
 })
 
+ns:RegisterQuestPrerequisite({
+    quest = 95125,
+    mode = "all",
+    quests = { 95111 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "Ott's Masterwork is offered after An Underrated Talent delivers the smithing materials.",
+})
+

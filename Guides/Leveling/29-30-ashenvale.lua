@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance leveling route for Ashenvale, levels 29-30.
 -- No new Forever Ashenvale quest sits on this pass. Repelling Invaders is a level 60 daily.
--- The Great Cat Spirit is offered by Mathrengyl Bearwalker on an earlier Darnassus visit. Unrequited Love starts with Archaeologist Hollee in Auberdine. A Lack of Virtue starts with Tom Wilson in Loch Modan.
+-- The Great Cat Spirit is offered by Mathrengyl Bearwalker on an earlier Darnassus visit. Unrequited Love starts with Archaeologist Hollee in Auberdine. A Lack of Virtue starts with Tom Wilson in Hillsbrad Foothills.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
