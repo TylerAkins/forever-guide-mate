@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
 -- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
+-- Tomb Weed is offered only after Doom Weed is turned in. Wowhead does not record that chain.
 -- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
@@ -36,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1219,31 +1220,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-99142-tomb-weed",
-            kind = "accept",
-            priority = 681,
-            conditions = { level = { min = 11 } },
-            text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
-            complete = QuestState(99142, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
-                    "Travel to Junior Apothecary Holland."),
-            },
-        },
-        {
-            id = "objective-99142-tomb-weed",
-            kind = "objective",
-            priority = 711,
-            conditions = { level = { min = 11 } },
-            text = "Collect 5 Tomb Weed around the graves north of Brill.",
-            dependsOn = { "accept-99142-tomb-weed" },
-            complete = QuestState(99142, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal graves",
-                    "Travel to Tirisfal graves."),
-            },
-        },
-        {
             id = "objective-367-a-new-plague",
             kind = "objective",
             priority = 700,
@@ -1356,10 +1332,36 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-99142-tomb-weed",
+            kind = "accept",
+            priority = 790.1,
+            conditions = { level = { min = 5 } },
+            text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
+            dependsOn = { "turnin-5482-doom-weed" },
+            complete = QuestState(99142, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                    "Travel to Junior Apothecary Holland."),
+            },
+        },
+        {
+            id = "objective-99142-tomb-weed",
+            kind = "objective",
+            priority = 790.2,
+            conditions = { level = { min = 5 } },
+            text = "Collect 5 Tomb Weed around the graves north of Brill.",
+            dependsOn = { "accept-99142-tomb-weed" },
+            complete = QuestState(99142, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal graves",
+                    "Travel to Tirisfal graves."),
+            },
+        },
+        {
             id = "turnin-99142-tomb-weed",
             kind = "turnin",
-            priority = 791,
-            conditions = { level = { min = 11 } },
+            priority = 790.3,
+            conditions = { level = { min = 5 } },
             text = "Turn in Tomb Weed to Junior Apothecary Holland.",
             dependsOn = { "objective-99142-tomb-weed" },
             complete = QuestState(99142, "completed"),
