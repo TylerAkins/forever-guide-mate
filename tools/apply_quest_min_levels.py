@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Stamp wow-database minLevel onto every guide step.
+"""Stamp a level gate onto every guide step.
 
-The quest index field is the level the NPC will offer the quest (Wowhead
-"Requires level"), not the recommended Level line. Steps for a quest share
-that gate. A minimum of 1 is not written; a higher recommended-level gate on
-that quest is removed.
+Classic quests use the level the NPC offers (Wowhead "Requires level").
+A Forever quest from patch 16001 uses the Level line when that line is
+at least 5 levels above Requires level. A smaller gap stays on the offer
+level. Dungeon guides always stay on the offer level.
+Class quests stay on the offer level. Steps for a quest share that gate.
+A minimum of 1 is not written.
 """
 
 from __future__ import annotations
@@ -17,7 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from weave_loremaster import parse_goals, replace_goals, set_min_level
+from weave_loremaster import offer_level, parse_goals, replace_goals, set_min_level, step_level
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX_URL = (
@@ -59,12 +61,12 @@ def load_min_levels(index_path: Path | None = None) -> dict[int, int]:
     for key, quest in data.items():
         if not isinstance(quest, dict):
             continue
-        raw = quest.get("minLevel")
-        if not isinstance(raw, int):
-            listed = quest.get("list") or {}
-            raw = listed.get("reqlevel")
-        if isinstance(raw, int) and raw > 0:
-            levels[int(key)] = raw
+        chosen = step_level(quest)
+        offered = offer_level(quest)
+        if isinstance(chosen, int) and chosen > 0:
+            levels[int(key)] = {"step": chosen, "offer": offered or chosen}
+        elif isinstance(offered, int) and offered > 0:
+            levels[int(key)] = {"step": offered, "offer": offered}
     return levels
 
 
@@ -102,7 +104,7 @@ def guide_files() -> list[Path]:
     return files
 
 
-def apply(levels: dict[int, int]) -> tuple[dict[int, int], list[str]]:
+def apply(levels: dict[int, dict[str, int]]) -> tuple[dict[int, int], list[str]]:
     used: dict[int, int] = {}
     missing: list[str] = []
     for path in guide_files():
@@ -110,15 +112,26 @@ def apply(levels: dict[int, int]) -> tuple[dict[int, int], list[str]]:
         goals = parse_goals(text, "guide", str(path.relative_to(ROOT)), None)
         if not goals:
             continue
+        # Dungeon pickups stay at the level the NPC offers. The Level line
+        # is for woven leveling routes, where a new quest's Requires level
+        # is often still a default.
+        kind = "offer" if "Guides/Dungeons" in str(path) else "step"
         changed = False
         for goal in goals:
             quest_id = goal.quest_id
             if quest_id is None:
                 continue
-            level = levels.get(quest_id)
+            record = levels.get(quest_id)
+            level = record.get(kind) if record else None
             if level is None:
                 missing.append(f"{path.relative_to(ROOT)} {goal.id} quest {quest_id}")
                 continue
+            previous = used.get(quest_id)
+            if previous is not None and previous != level:
+                missing.append(
+                    f"{path.relative_to(ROOT)} {goal.id} quest {quest_id} "
+                    f"level {level} disagrees with {previous}"
+                )
             used[quest_id] = level
             updated = apply_level(goal.raw, level)
             if updated != goal.raw:
@@ -141,7 +154,7 @@ def main() -> None:
     )
     print(f"stamped {len(used)} quests into {FIXTURE.relative_to(ROOT)}")
     if missing:
-        print(f"{len(missing)} guide steps have no wow-database minLevel:")
+        print(f"{len(missing)} guide steps need a level check:")
         for line in missing:
             print(" ", line)
 

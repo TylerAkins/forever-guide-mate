@@ -1228,6 +1228,7 @@ ns:RegisterGuide({
             priority = 680,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { faction = "Horde" },
                 },
             },
@@ -1244,6 +1245,7 @@ ns:RegisterGuide({
             priority = 690,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { faction = "Horde" },
                 },
             },
@@ -2104,7 +2106,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Longwalker Malah from Brave Wildrunner.",
@@ -2592,6 +2594,7 @@ ns:RegisterGuide({
             priority = 1420,
             conditions = {
                 all = {
+                    { level = { min = 8 } },
                     { faction = "Horde" },
                 },
             },
@@ -2609,7 +2612,7 @@ ns:RegisterGuide({
             priority = 1430,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                 },
             },
@@ -2626,7 +2629,7 @@ ns:RegisterGuide({
             priority = 1440,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                 },
             },
@@ -2644,7 +2647,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = {
                 all = {
-                    { level = { min = 3 } },
+                    { level = { min = 10 } },
                     { faction = "Horde" },
                 },
             },
@@ -2965,7 +2968,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -2983,7 +2986,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -3003,7 +3006,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -3023,7 +3026,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -3043,7 +3046,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -3157,7 +3160,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Longwalker Malah to Malah Longwind.",
@@ -3175,7 +3178,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Grim Tidings from Malah Longwind.",
@@ -3193,7 +3196,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Grim Tidings to Brave Wildrunner.",
@@ -3211,7 +3214,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Our Ancient Enemy from Brave Wildrunner.",
@@ -3229,7 +3232,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Our Ancient Enemy to Baine Bloodhoof.",
@@ -3247,7 +3250,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept Drive Them Out from Baine Bloodhoof.",
@@ -3320,7 +3323,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 10 } },
                     { quest = { id = 98424, state = "activeOrCompleted" } },
                 },
             },
@@ -3339,7 +3342,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3358,7 +3361,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3377,7 +3380,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 12 } },
                     { quest = { id = 98424, state = "completed" } },
                 },
             },
@@ -3396,7 +3399,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Drive Them Out: Galak Centaur.",
@@ -3414,7 +3417,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Drive Them Out: Galak Outrunner.",
@@ -3432,7 +3435,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Drive Them Out: Herak's Head.",
@@ -3487,7 +3490,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in Drive Them Out to Baine Bloodhoof.",
@@ -3505,7 +3508,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Accept The High Chieftain from Baine Bloodhoof.",
@@ -3578,7 +3581,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 9 } },
                 },
             },
             text = "Turn in The High Chieftain to Cairne Bloodhoof in Thunder Bluff.",
@@ -3727,7 +3730,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },
@@ -3746,7 +3749,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 10 } },
                     { race = 6 },
                 },
             },

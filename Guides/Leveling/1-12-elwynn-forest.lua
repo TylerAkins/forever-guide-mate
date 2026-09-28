@@ -44,7 +44,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-elwynn-forest",
     title = "1-12 Elwynn Forest",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -439,7 +439,7 @@ ns:RegisterGuide({
         {
             id = "turnin-91741-nibbled-on-book",
             kind = "turnin",
-            priority = 241,
+            priority = 61,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "activeOrCompleted" } },
@@ -455,7 +455,7 @@ ns:RegisterGuide({
         {
             id = "accept-91743-rascally-rodents",
             kind = "accept",
-            priority = 242,
+            priority = 62,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -535,7 +535,7 @@ ns:RegisterGuide({
         {
             id = "objective-91743-rascally-rodents",
             kind = "objective",
-            priority = 291,
+            priority = 71,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -613,7 +613,7 @@ ns:RegisterGuide({
         {
             id = "turnin-91743-rascally-rodents",
             kind = "turnin",
-            priority = 351,
+            priority = 111,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -907,7 +907,7 @@ ns:RegisterGuide({
         {
             id = "accept-91772-shhh-were-hunting-kobolds",
             kind = "accept",
-            priority = 474,
+            priority = 481,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -924,7 +924,7 @@ ns:RegisterGuide({
         {
             id = "accept-96627-the-adventurer",
             kind = "accept",
-            priority = 479,
+            priority = 480.5,
             conditions = { level = { min = 4 } },
             text = "Accept The Adventurer from Marshal McBride in Northshire Abbey.",
             complete = QuestState(96627, "activeOrCompleted"),
@@ -936,7 +936,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96627-the-adventurer",
             kind = "turnin",
-            priority = 479.1,
+            priority = 512,
             conditions = { level = { min = 4 } },
             text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
             dependsOn = { "accept-96627-the-adventurer" },
@@ -949,7 +949,7 @@ ns:RegisterGuide({
         {
             id = "accept-96101-the-great-outdoors",
             kind = "accept",
-            priority = 479.2,
+            priority = 512.1,
             conditions = { level = { min = 4 } },
             text = "Accept The Great Outdoors from Sam Sarsaparilla.",
             dependsOn = { "turnin-96627-the-adventurer" },
@@ -962,7 +962,7 @@ ns:RegisterGuide({
         {
             id = "objective-96101-the-great-outdoors",
             kind = "objective",
-            priority = 479.3,
+            priority = 512.2,
             conditions = { level = { min = 4 } },
             text = "Type /sit at Sam Sarsaparilla's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-96101-the-great-outdoors" },
@@ -971,7 +971,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96101-the-great-outdoors",
             kind = "turnin",
-            priority = 479.4,
+            priority = 512.3,
             conditions = { level = { min = 4 } },
             text = "Turn in The Great Outdoors to Sam Sarsaparilla.",
             dependsOn = { "objective-96101-the-great-outdoors" },
@@ -1069,6 +1069,7 @@ ns:RegisterGuide({
             priority = 522,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1356,6 +1357,7 @@ ns:RegisterGuide({
             priority = 761,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1447,7 +1449,7 @@ ns:RegisterGuide({
         {
             id = "accept-99127-a-net-disaster",
             kind = "accept",
-            priority = 831,
+            priority = 911,
             conditions = { level = { min = 4 } },
             text = "Accept A Net Disaster from Jason Mathers in Goldshire.",
             complete = QuestState(99127, "activeOrCompleted"),
@@ -1459,9 +1461,10 @@ ns:RegisterGuide({
         {
             id = "accept-99128-slimy-menace",
             kind = "accept",
-            priority = 832,
+            priority = 1191.5,
             conditions = { level = { min = 4 } },
             text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
+            dependsOn = { "turnin-99127-a-net-disaster" },
             complete = QuestState(99128, "activeOrCompleted"),
             route = {
                 Point(MAP.ELWYNN, 0.4740, 0.6220, "Jason Mathers",
@@ -1471,7 +1474,7 @@ ns:RegisterGuide({
         {
             id = "accept-99143-bottles-and-baubles",
             kind = "accept",
-            priority = 833,
+            priority = 912,
             conditions = { level = { min = 4 } },
             text = "Accept Bottles and Baubles from Lee Brown in Goldshire.",
             complete = QuestState(99143, "activeOrCompleted"),
@@ -1524,6 +1527,7 @@ ns:RegisterGuide({
             priority = 861,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1541,6 +1545,7 @@ ns:RegisterGuide({
             priority = 862,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1648,7 +1653,7 @@ ns:RegisterGuide({
         {
             id = "objective-99143-bottles-and-baubles",
             kind = "objective",
-            priority = 923,
+            priority = 931,
             conditions = { level = { min = 4 } },
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
             dependsOn = { "accept-99143-bottles-and-baubles" },
@@ -1677,6 +1682,7 @@ ns:RegisterGuide({
             priority = 942,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1691,9 +1697,10 @@ ns:RegisterGuide({
         {
             id = "objective-91777-rare-books",
             kind = "objective",
-            priority = 941,
+            priority = 951,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1919,7 +1926,7 @@ ns:RegisterGuide({
         {
             id = "objective-91733-downstream",
             kind = "objective",
-            priority = 1012,
+            priority = 1061,
             conditions = { level = { min = 7 } },
             text = "Collect the Waterlogged Axe, Waterlogged Saw, and Waterlogged Toolbox downstream from Eastvale.",
             dependsOn = { "accept-91733-downstream" },

@@ -844,7 +844,7 @@ ns:RegisterGuide({
             priority = 565,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 17 } },
                     { quest = { id = 98042, state = "activeOrCompleted" } },
                 },
             },
@@ -884,7 +884,7 @@ ns:RegisterGuide({
             id = "accept-98013-swelling-forces",
             kind = "accept",
             priority = 591,
-            conditions = { level = { min = 12 } },
+            conditions = { level = { min = 20 } },
             text = "Accept Swelling Forces from Arbal at the Grove of the Ancients.",
             complete = QuestState(98013, "activeOrCompleted"),
             route = {

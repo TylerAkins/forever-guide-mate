@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Every guide quest step uses the wow-database minimum level."""
+"""Every guide quest step uses the level the weave writes.
+
+Classic quests use the offer level. A Forever quest from patch 16001 uses
+the Wowhead Level line when that line is higher than Requires level.
+"""
 
 from __future__ import annotations
 
@@ -38,11 +42,12 @@ class QuestMinLevelTests(unittest.TestCase):
                 if goal.quest_id is not None:
                     cls.goals.append(goal)
 
-    def test_fixture_uses_database_minimums(self) -> None:
+    def test_fixture_uses_offer_level_unless_a_new_quest_has_a_higher_level_line(self) -> None:
         self.assertEqual(self.levels[837], 6)
         self.assertEqual(self.levels[784], 3)
-        self.assertEqual(self.levels[97225], 4)
-        self.assertEqual(self.levels[96821], 1)
+        self.assertEqual(self.levels[97225], 9)
+        self.assertEqual(self.levels[96821], 6)
+        self.assertEqual(self.levels[99142], 5)
 
     def test_every_database_quest_is_gated_at_its_minimum(self) -> None:
         seen = {goal.quest_id for goal in self.goals}
