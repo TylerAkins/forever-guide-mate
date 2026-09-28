@@ -144,15 +144,15 @@ local function DeliverRefresh(generation)
     local fullPass = refreshNeedsFullPass
     refreshNeedsFullPass = false
     ns.refreshPending = false
-    if not fullPass and ns.Engine and ns.Engine.SameQuestLog and ns.PlayerState
-        and ns.PlayerState.Capture and ns.GetTrackedQuestIDs then
-        local state = ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
-        if ns.Engine:SameQuestLog(state) then
-            -- The log event did not change a watched quest. Skip the guide walk.
-        else
-            ns.Engine:Refresh(state)
+    if not fullPass and ns.Engine and ns.Engine.state and ns.PlayerState
+        and ns.PlayerState.LogUnchanged and ns.QuestQuery then
+        local ids = ns.QuestQuery()
+        if ns.PlayerState:LogUnchanged(nil, ids) then
+            ns.PlayerState.reuseQuestLog = false
+            return
         end
-    elseif ns.Engine and ns.Engine.Refresh then
+    end
+    if ns.Engine and ns.Engine.Refresh then
         ns.Engine:Refresh()
     end
 end
@@ -193,9 +193,19 @@ local function OnEvent(_, event, arg1)
             ns.MapPins:HookMap()
             ns.MapPins:Refresh()
         end
-    elseif event == "PLAYER_ENTERING_WORLD" and not ns.questAuditPrinted then
-        ns.questAuditPrinted = true
-        ns.PrintQuestAudit()
+    elseif event == "PLAYER_ENTERING_WORLD" then
+        if ns.PlayerState and ns.PlayerState.RetryFailedCompletions then
+            ns.PlayerState:RetryFailedCompletions()
+        end
+        if not ns.questAuditPrinted then
+            ns.questAuditPrinted = true
+            ns.PrintQuestAudit()
+        end
+    elseif event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" or event == "ZONE_CHANGED_NEW_AREA" then
+        if ns.Engine and ns.Engine.NotePosition then
+            ns.Engine:NotePosition()
+        end
+        return
     elseif event == "QUEST_TURNED_IN" and ns.PlayerState and ns.PlayerState.ForgetQuest then
         ns.PlayerState:ForgetQuest(arg1, true)
     elseif event == "QUEST_REMOVED" and ns.PlayerState and ns.PlayerState.ForgetQuest then
@@ -210,6 +220,7 @@ local function OnEvent(_, event, arg1)
         end
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
+        return
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
