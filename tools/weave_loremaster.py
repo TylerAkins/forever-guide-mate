@@ -536,6 +536,73 @@ def giver_name(goal: Goal) -> str:
     return ""
 
 
+FOREVER_PATCH = 16001
+# A new Forever page often keeps a low Requires level. The Level line is the
+# rating to weave against once it sits at least this far above that minimum.
+# Smaller gaps are the normal "offered a level or two early" pattern.
+LEVEL_LINE_GAP = 5
+
+
+def offer_level(record: dict | None) -> int | None:
+    """Requires level: the level the NPC offers the quest."""
+    if not isinstance(record, dict):
+        return None
+    listed = record.get("list") if isinstance(record.get("list"), dict) else {}
+    minimum = record.get("minLevel")
+    if not isinstance(minimum, int):
+        raw = listed.get("reqlevel") if isinstance(listed, dict) else None
+        minimum = raw if isinstance(raw, int) else None
+    if not isinstance(minimum, int):
+        raw = record.get("reqlevel")
+        minimum = raw if isinstance(raw, int) else None
+    if isinstance(minimum, int) and minimum > 0:
+        return minimum
+    return None
+
+
+def step_level(record: dict | None) -> int | None:
+    """Level written on a guide step.
+
+    Classic quests use Requires level, the level the NPC offers the quest.
+    A quest added in Forever (patch 16001) uses Wowhead's Level line when
+    that line is higher. New pages often keep a default Requires level while
+    the Level line is the rating the route should wait for. Class quests stay
+    on the offer level, which is when the trainer gives them.
+    """
+    if not isinstance(record, dict):
+        return None
+    listed = record.get("list") if isinstance(record.get("list"), dict) else record
+    minimum = record.get("minLevel")
+    if not isinstance(minimum, int):
+        minimum = record.get("reqlevel") if isinstance(record.get("reqlevel"), int) else None
+    if not isinstance(minimum, int) and isinstance(listed, dict):
+        raw = listed.get("reqlevel")
+        minimum = raw if isinstance(raw, int) else None
+    recommended = listed.get("level") if isinstance(listed, dict) else None
+    if not isinstance(recommended, int):
+        recommended = record.get("level") if isinstance(record.get("level"), int) else None
+    reqclass = listed.get("reqclass") if isinstance(listed, dict) else 0
+    if not reqclass:
+        reqclass = record.get("reqclass") or 0
+    is_class = bool(record.get("classes")) or bool(reqclass)
+    patch = listed.get("firstseenpatch") if isinstance(listed, dict) else record.get("firstseenpatch")
+    if (
+        patch == FOREVER_PATCH
+        and not is_class
+        and isinstance(recommended, int)
+        and recommended > 1
+        and (
+            not isinstance(minimum, int)
+            or minimum <= 0
+            or recommended - minimum >= LEVEL_LINE_GAP
+        )
+    ):
+        return recommended
+    if isinstance(minimum, int) and minimum > 0:
+        return minimum
+    return None
+
+
 def recommended_level(summary: dict | None = None, meta: dict | None = None, html: str | None = None) -> int:
     """Wowhead's Level line, not Requires level.
 

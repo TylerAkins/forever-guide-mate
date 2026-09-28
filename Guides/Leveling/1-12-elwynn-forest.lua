@@ -1069,6 +1069,7 @@ ns:RegisterGuide({
             priority = 522,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1356,6 +1357,7 @@ ns:RegisterGuide({
             priority = 761,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1524,6 +1526,7 @@ ns:RegisterGuide({
             priority = 861,
             conditions = {
                 all = {
+                    { level = { min = 6 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1541,6 +1544,7 @@ ns:RegisterGuide({
             priority = 862,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1677,6 +1681,7 @@ ns:RegisterGuide({
             priority = 942,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1694,6 +1699,7 @@ ns:RegisterGuide({
             priority = 941,
             conditions = {
                 all = {
+                    { level = { min = 7 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },

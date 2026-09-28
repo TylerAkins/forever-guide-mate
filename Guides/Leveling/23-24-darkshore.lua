@@ -108,7 +108,7 @@ ns:RegisterGuide({
             priority = 51,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },
@@ -129,7 +129,7 @@ ns:RegisterGuide({
             priority = 165,
             conditions = {
                 all = {
-                    { level = { min = 15 } },
+                    { level = { min = 20 } },
                     { quest = { id = 87760, state = "activeOrCompleted" } },
                 },
             },
@@ -319,7 +319,7 @@ ns:RegisterGuide({
             priority = 201,
             conditions = {
                 all = {
-                    { level = { min = 12 } },
+                    { level = { min = 20 } },
                     { quest = { id = 98013, state = "activeOrCompleted" } },
                 },
             },

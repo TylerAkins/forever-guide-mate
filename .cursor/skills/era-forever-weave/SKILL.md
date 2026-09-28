@@ -49,7 +49,7 @@ Record every intentional omission in the guide header, for example: `Destruction
 - A provided item, such as a quest item the giver hands you, is not its own step. Say how to use it on the objective that needs it.
 - An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.
 - Put faction, class, race, and profession requirements on every step of that quest. A mismatch is left out of the percentage. The same quest's steps must carry the same conditions.
-- A level requirement uses Wowhead's recommended level, the Level line, not the level the quest can be started. It stays in the percentage until the character reaches it.
+- A level requirement on a classic quest is the level the NPC offers it (Requires level). A Forever quest from patch 16001 uses the Wowhead Level line when that line is at least 5 levels above Requires level, because a new page often leaves Requires level at a default. A smaller gap stays on the offer level. Class quests stay on the offer level. The step stays in the percentage until the character reaches it.
 - Use uiMap IDs. Wowhead area IDs are not map IDs.
 - `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
 - If there is no saved pin, keep the nearest named landmark and say the guide follows the pin in the quest log. Do not invent a precise pin. Mark that step `useClientPin` so the addon uses the quest log pin while the quest is accepted.
