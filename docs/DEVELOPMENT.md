@@ -14,6 +14,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 | `Guides/Era/` | Unconverted Era chapters (titles with `(Era)`, not loaded) |
 | `Guides/Loremaster/` | Zone-completion guides (shipped: Durotar and Mulgore only; add to `ForeverGuideMate.toc` when a zone is ready) |
 | `Guides/Dungeons/` | Dungeon quest guides |
+| `Guides/Class/` | Supported class-quest guides, one per class |
 | `VERSION` | Current stable release used by automated version checks |
 | `RELEASE_NOTES.md` | Curated notes for only the current release |
 | `tools/compile_addon.py` | Local install-tree builder |
@@ -23,7 +24,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 ## Guides
 
-Quest-step rules are in [guide-authoring.md](guide-authoring.md). Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
+Quest-step rules are in [guide-authoring.md](guide-authoring.md). Class quests are supported: one guide per class in `Guides/Class/`, with race and faction on every step. Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
 Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database). Use the compiled zone files in `data/forever/compiled/zones/`. A quest added in Forever has `firstseenpatch` 16001. The recommended level is the Wowhead Level line in that bundle (`Level: N` in `infoboxMarkup`).
 
