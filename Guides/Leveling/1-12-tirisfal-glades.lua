@@ -5,6 +5,9 @@ local _, ns = ...
 -- Tomb Weed is offered only after Doom Weed is turned in. Wowhead does not record that chain.
 -- Collect it at Balnir Farmstead with Rear Guard Patrol, then turn it in after the last A New Plague.
 -- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
+-- Bandarion Keep is the precursor to the Lumina Windsinger escort for the Wolfsbane Sword.
+-- Hadric Harlson does not offer it when The Argent Emissary is turned in. He offers
+-- The Cult of the Damned and Remnants of War first. Bandarion Keep waits until both are turned in.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
 -- Grind stops and flight-point pickups are not part of this route.
@@ -38,7 +41,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 7,
+    revision = 8,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -3053,10 +3056,13 @@ ns:RegisterGuide({
         {
             id = "accept-96899-bandarion-keep",
             kind = "accept",
-            priority = 1475.5,
+            priority = 1488,
             conditions = { level = { min = 10 } },
             text = "Accept Bandarion Keep from Hadric Harlson.",
-            dependsOn = { "turnin-96895-the-argent-emissary" },
+            dependsOn = {
+                "turnin-96897-the-cult-of-the-damned",
+                "turnin-96898-remnants-of-war",
+            },
             complete = QuestState(96899, "activeOrCompleted"),
             route = {
                 Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
