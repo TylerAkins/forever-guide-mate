@@ -3,6 +3,7 @@ local _, ns = ...
 -- Horde Era leveling route for Tirisfal Glades, levels 1-12.
 -- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
 -- Tomb Weed is offered only after Doom Weed is turned in. Wowhead does not record that chain.
+-- Collect it at Balnir Farmstead with Rear Guard Patrol, then turn it in after the last A New Plague.
 -- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 -- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
 -- Whispering Horror Residue is turned in only after the item starts the quest.
