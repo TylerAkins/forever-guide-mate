@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Stonetalon Mountains, levels 22-23.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble continues a hunt that starts in Westfall, and Pocket Litter is not a stop on the Windshear path. Wet Job is level 32. Rekindle is level 40. An Old Colleague turns in to Lomac in Ironforge, and this route does not go there.
+-- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble continues a hunt that starts in Westfall, and Pocket Litter is not a stop on the Windshear path. Wet Job is level 32. Rekindle is level 40. An Old Colleague turns in to Lomac on the Wetlands Ironforge visit.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
