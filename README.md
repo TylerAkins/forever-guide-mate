@@ -41,8 +41,11 @@ Each chapter is its own library row. Opening a chapter stays on that chapter.
 | 21–22 | Ashenvale |
 | 22–23 | Stonetalon Mountains |
 | 23–24 | Darkshore |
+| 24–24 | Ashenvale |
+| 24–27 | Wetlands |
 | 27–28 | Redridge Mountains |
 | 28–29 | Duskwood |
+| 29–30 | Ashenvale |
 
 **Horde**
 
@@ -54,6 +57,12 @@ Each chapter is its own library row. Opening a chapter stays on that chapter.
 | 20–22 | Stonetalon Mountains |
 | 22–23 | Southern Barrens |
 | 23–25 | Stonetalon Mountains |
+| 25–25 | Southern Barrens |
+| 25–26 | Thousand Needles |
+| 26–27 | Ashenvale |
+| 27–27 | Stonetalon Mountains |
+| 27–29 | Thousand Needles |
+| 29–30 | Hillsbrad Foothills |
 
 Converted chapters include Forever quests woven into the existing route. Remaining `(Era)` chapters live in `Guides/Era/` until converted; see [Era conversion](#era-chapters-not-yet-loaded).
 
@@ -111,9 +120,9 @@ Capitals are not separate Loremaster guides. Capital quests belong on the zone r
 
 Walk each `Guides/Era/` chapter against the Wowhead Forever zone page, weave new quests per `.cursor/skills/era-forever-weave/SKILL.md`, then drop `(Era)` from the title, move the file to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py`.
 
-**Alliance (examples):** Ashenvale 24–24 and 29–30; Wetlands; mid- and high-level zones through Winterspring
+**Alliance (examples):** Wetlands 30–31; Hillsbrad Foothills 31–32; mid- and high-level zones through Winterspring
 
-**Horde (examples):** Stonetalon 20–22 and 27–27; Southern Barrens 25–25; Thousand Needles; Ashenvale 26–27; mid- and high-level zones through Winterspring
+**Horde (examples):** Arathi Highlands 30–30; Stranglethorn Vale 30–31; Thousand Needles 31–32; mid- and high-level zones through Winterspring
 
 The full chapter list is the filenames under `Guides/Era/`.
 
