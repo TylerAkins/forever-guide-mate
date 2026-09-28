@@ -3709,6 +3709,35 @@ function TestIdleAndMovementSkipTheCatalog()
 end
 TestIdleAndMovementSkipTheCatalog()
 
+function TestChapterUpdateStaysSmall()
+    ns:FinalizeGuides()
+    local guide = ns.guides["leveling-era"]
+    ns.charDB.eraChapterPick = "leveling-era-1-12-tirisfal-glades"
+    ns.charDB.eraFloor = "leveling-era-1-12-tirisfal-glades"
+    ns.Engine.currentSegment = nil
+    local chapter = ns.Engine:ChapterGoals(guide)
+    Check(chapter ~= nil and #chapter < #guide.goals, "an accept only reconciles the open chapter")
+    Equal(#chapter, #guide.segmentByID["leveling-era-1-12-tirisfal-glades"].goals,
+        "Tirisfal accepts do not walk later chapters")
+    local firstIDs, firstPriority = ns.QuestQuery()
+    local secondIDs, secondPriority = ns.QuestQuery()
+    Check(firstIDs == secondIDs, "standing still reuses the quest id list")
+    Equal(firstPriority, secondPriority, "the open chapter stays first in the quest list")
+    ns.charDB.history = {}
+    ns.charDB.activeGoal = "step-0"
+    ns.Engine.currentGuide = nil
+    for index = 1, 45 do
+        ns.Engine:SetActiveGoal({ id = "step-" .. index }, true)
+    end
+    Equal(#ns.charDB.history, 30, "review history does not grow for the whole session")
+    Equal(ns.charDB.history[#ns.charDB.history], "step-44", "the newest step stays in history")
+    ns.charDB.eraChapterPick = nil
+    ns.charDB.eraFloor = nil
+    ns.charDB.history = {}
+    ns.questQueryKey = nil
+end
+TestChapterUpdateStaysSmall()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)

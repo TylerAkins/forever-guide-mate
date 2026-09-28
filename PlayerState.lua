@@ -96,6 +96,8 @@ local summaryByQuest = {}
 local questLogCache
 local lastLogSnapshot
 local questLogDirty = false
+local wantedQuestIDs
+local wantedSet
 
 local function ObjectiveSummary(questLog, questID)
     local cached = summaryByQuest[questID]
@@ -142,12 +144,16 @@ local function WantedSet(questIDs)
     if type(questIDs) ~= "table" then
         return nil
     end
+    if questIDs == wantedQuestIDs and wantedSet then
+        return wantedSet
+    end
     local wanted = {}
     for _, questID in ipairs(questIDs) do
         if type(questID) == "number" then
             wanted[questID] = true
         end
     end
+    wantedQuestIDs, wantedSet = questIDs, wanted
     return wanted
 end
 
@@ -222,6 +228,10 @@ function PlayerState:GetQuestLog(api, questIDs)
     return quests, true
 end
 
+local function ObjectiveMarked(value)
+    return value == true or (type(value) == "number" and value > 0)
+end
+
 local function LogSnapshot(quests)
     local ids = {}
     for questID in pairs(quests or {}) do
@@ -238,7 +248,7 @@ local function LogSnapshot(quests)
                     line = line .. ":" .. index
                         .. ":" .. tostring(objective.numFulfilled)
                         .. ":" .. tostring(objective.numRequired)
-                        .. ":" .. (objective.finished and "1" or "0")
+                        .. ":" .. (ObjectiveMarked(objective.finished) and "1" or "0")
                 end
             end
         end
@@ -496,7 +506,7 @@ function PlayerState:QuestLogFingerprint(state)
                     line = line .. ":" .. index
                         .. ":" .. tostring(objective.numFulfilled)
                         .. ":" .. tostring(objective.numRequired)
-                        .. ":" .. (objective.finished and "1" or "0")
+                        .. ":" .. (ObjectiveMarked(objective.finished) and "1" or "0")
                 end
             end
         end
