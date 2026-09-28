@@ -3598,6 +3598,18 @@ local function TestClassQuestGuides()
         Check(HasLabel(islander, "Sorek"), "The Islander keeps the Orgrimmar giver")
         Check(HasLabel(islander, "Baltus Fowler"), "The Islander keeps the Undercity giver")
     end
+
+    local shaman = ns.guides["class-shaman"]
+    local callOfEarth = Goal(shaman, "accept-94373-call-of-earth")
+    Check(callOfEarth ~= nil, "the shaman guide includes the Alliance Call of Earth")
+    if callOfEarth then
+        local dwarf = { faction = "Alliance", raceID = 3, classID = 7, level = 4 }
+        local orc = { faction = "Horde", raceID = 2, classID = 7, level = 4 }
+        Equal(ns.EvaluateCondition(callOfEarth.conditions, dwarf), true,
+            "a Dwarf shaman can accept Call of Earth")
+        Equal(ns.EvaluateCondition(callOfEarth.conditions, orc), false,
+            "a Horde shaman is not offered the Alliance Call of Earth")
+    end
 end
 TestClassQuestGuides()
 
