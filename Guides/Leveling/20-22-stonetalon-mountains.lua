@@ -2,7 +2,8 @@ local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 20-22.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter. Pigments for Paints starts in Thunder Bluff. Scramble is level 24. Wet Job is level 32. Rekindle is level 40.
+-- Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders. The turn-in waits for the next Ratchet visit.
+-- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter, after the harpy trip. Pigments for Paints starts in Thunder Bluff. Scramble is the middle of a hunt that starts in the Field of Giants, and this pass does not go to Pocket Litter. Wet Job is level 32. Rekindle is level 40. Report to Kadrak is accepted here, and no later chapter stops at Kadrak.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -40,7 +41,7 @@ ns:RegisterGuide({
     id = "leveling-era-20-22-stonetalon-mountains",
     title = "20-22 Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -925,6 +926,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-1060-letter-to-jin-zil",
+            kind = "turnin",
+            priority = 600,
+            conditions = {
+                all = {
+                    { level = { min = 15 } },
+                    { quest = { id = 1060, state = "active" } },
+                },
+            },
+            text = "Turn in Letter to Jin'Zil to Witch Doctor Jin'Zil in Malaka'jin.",
+            complete = QuestState(1060, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.7455, 0.9784, "Witch Doctor Jin'Zil",
+                    "Travel to Witch Doctor Jin'Zil."),
+            },
+        },
+        {
             id = "accept-1058-jin-zil-s-forest-magic",
             kind = "accept",
             priority = 610,
@@ -984,6 +1002,32 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.5333, 0.7404, "Deepmoss Creeper",
                     "Travel to Deepmoss Creeper."),
+            },
+        },
+        {
+            id = "objective-1069-deepmoss-spider-eggs",
+            kind = "objective",
+            priority = 670,
+            conditions = { level = { min = 15 } },
+            text = "Collect 15 Deepmoss Egg from the eggs near the trees in Sishir Canyon, with the Deepmoss spiders. A hatchling can call a Deepmoss Matriarch.",
+            dependsOn = { "accept-1069-deepmoss-spider-eggs" },
+            complete = QuestState(1069, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.5333, 0.7404, "Deepmoss Egg",
+                    "Travel to Deepmoss Egg."),
+            },
+        },
+        {
+            id = "turnin-1483-ziz-fizziks",
+            kind = "turnin",
+            priority = 675,
+            conditions = { level = { min = 16 } },
+            text = "Turn in Ziz Fizziks to Ziz Fizziks in Windshear Crag.",
+            dependsOn = { "accept-1483-ziz-fizziks" },
+            complete = QuestState(1483, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.5898, 0.6250, "Ziz Fizziks",
+                    "Travel to Ziz Fizziks."),
             },
         },
         {
@@ -1273,6 +1317,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3355, 0.6744, "The Ruins of Stardust",
                     "Travel to The Ruins of Stardust."),
+            },
+        },
+        {
+            id = "turnin-6562-trouble-in-the-deeps",
+            kind = "turnin",
+            priority = 940,
+            conditions = { level = { min = 17 } },
+            text = "Turn in Trouble in the Deeps to Je'neu Sancrea in Zoram'gar Outpost.",
+            dependsOn = { "accept-6562-trouble-in-the-deeps" },
+            complete = QuestState(6562, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.1160, 0.3428, "Je'neu Sancrea",
+                    "Travel to Je'neu Sancrea."),
             },
         },
         {

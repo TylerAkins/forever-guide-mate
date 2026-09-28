@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for the Southern Barrens, levels 22-23.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
+-- Deepmoss Spider Eggs, collected in Sishir Canyon, turn in here on the Ratchet visit. Further Instructions turns in to Sputtervalve on that same visit.
 -- Scout Support and Valuable Vantages are worked in Hillsbrad, past this southern loop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -35,7 +36,7 @@ ns:RegisterGuide({
     id = "leveling-era-22-23-southern-barrens",
     title = "22-23 Southern Barrens",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -940,6 +941,40 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-1069-deepmoss-spider-eggs",
+            kind = "turnin",
+            priority = 709,
+            conditions = {
+                all = {
+                    { level = { min = 15 } },
+                    { quest = { id = 1069, state = "complete" } },
+                },
+            },
+            text = "Turn in Deepmoss Spider Eggs to Mebok Mizzyrix in Ratchet.",
+            complete = QuestState(1069, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6236, 0.3767, "Mebok Mizzyrix",
+                    "Travel to Mebok Mizzyrix."),
+            },
+        },
+        {
+            id = "turnin-1094-further-instructions",
+            kind = "turnin",
+            priority = 709.5,
+            conditions = {
+                all = {
+                    { level = { min = 16 } },
+                    { quest = { id = 1094, state = "active" } },
+                },
+            },
+            text = "Turn in Further Instructions to Sputtervalve in Ratchet.",
+            complete = QuestState(1094, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6296, 0.3721, "Sputtervalve",
+                    "Travel to Sputtervalve."),
+            },
+        },
+        {
             id = "accept-1095-further-instructions",
             kind = "accept",
             priority = 710,
@@ -1098,6 +1133,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-882-ishamuhale",
+            kind = "turnin",
+            priority = 830,
+            conditions = {
+                all = {
+                    { level = { min = 10 } },
+                    { quest = { id = 3261, state = "completed" } },
+                },
+            },
+            text = "Turn in Ishamuhale to Jorn Skyseer in Camp Taurajo.",
+            dependsOn = { "objective-882-zhevra-charger", "objective-882-ishamuhale" },
+            complete = QuestState(882, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4484, 0.5912, "Jorn Skyseer",
+                    "Travel to Jorn Skyseer."),
+            },
+        },
+        {
             id = "accept-907-enraged-thunder-lizards",
             kind = "accept",
             priority = 840,
@@ -1130,6 +1183,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5000, 0.6000, "Thunderhead",
                     "Travel to Thunderhead."),
+            },
+        },
+        {
+            id = "turnin-907-enraged-thunder-lizards",
+            kind = "turnin",
+            priority = 860,
+            conditions = {
+                all = {
+                    { level = { min = 10 } },
+                    { quest = { id = 882, state = "completed" } },
+                },
+            },
+            text = "Turn in Enraged Thunder Lizards to Jorn Skyseer in Camp Taurajo.",
+            dependsOn = { "objective-907-enraged-thunder-lizards" },
+            complete = QuestState(907, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4486, 0.5913, "Jorn Skyseer",
+                    "Travel to Jorn Skyseer."),
             },
         },
         {

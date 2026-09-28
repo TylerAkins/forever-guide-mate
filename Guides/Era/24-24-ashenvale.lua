@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Ashenvale, levels 24-24.
 -- This follows the classic route and is not rewritten for Forever yet.
+-- Pridewings of Stonetalon, collected on the way to Stonetalon Peak, turns in to Shindrell on this Astranaar visit.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -31,7 +32,7 @@ ns:RegisterGuide({
     id = "leveling-era-24-24-ashenvale",
     title = "24-24 Ashenvale (Era)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -39,6 +40,23 @@ ns:RegisterGuide({
         },
     },
     goals = {
+        {
+            id = "turnin-1134-pridewings-of-stonetalon",
+            kind = "turnin",
+            priority = 10,
+            conditions = {
+                all = {
+                    { level = { min = 18 } },
+                    { quest = { id = 1134, state = "complete" } },
+                },
+            },
+            text = "Turn in Pridewings of Stonetalon to Shindrell Swiftfire in Astranaar.",
+            complete = QuestState(1134, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.3465, 0.4888, "Shindrell Swiftfire",
+                    "Travel to Shindrell Swiftfire."),
+            },
+        },
         {
             id = "accept-1054-culling-the-threat",
             kind = "accept",

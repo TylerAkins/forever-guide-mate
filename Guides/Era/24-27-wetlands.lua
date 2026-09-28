@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for the Wetlands, levels 24-27.
 -- This follows the classic route and is not rewritten for Forever yet.
+-- An Old Colleague, accepted from Gaxim in Stonetalon, turns in to Lomac before Ineptitude + Chemicals = Fun.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,7 +33,7 @@ ns:RegisterGuide({
     id = "leveling-era-24-27-wetlands",
     title = "24-27 Wetlands (Era)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -959,6 +960,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1091, 0.5953, "First Mate Fitzsimmons",
                     "Travel to First Mate Fitzsimmons."),
+            },
+        },
+        {
+            id = "turnin-1072-an-old-colleague",
+            kind = "turnin",
+            priority = 805,
+            conditions = {
+                all = {
+                    { level = { min = 17 } },
+                    { quest = { id = 1072, state = "active" } },
+                },
+            },
+            text = "Turn in An Old Colleague to Lomac Gearstrip in Tinker Town.",
+            complete = QuestState(1072, "completed"),
+            route = {
+                Point(MAP.IRONFORGE, 0.7180, 0.5140, "Lomac Gearstrip",
+                    "Travel to Lomac Gearstrip."),
             },
         },
         {
