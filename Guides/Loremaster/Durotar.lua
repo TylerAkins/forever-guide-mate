@@ -412,9 +412,79 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-3088-encrypted-parchment",
+            id = "accept-98576-glyphic-parchment",
             kind = "accept",
             priority = 200,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 2 },
+                    { class = 8 },
+                },
+            },
+            text = "Accept Glyphic Parchment from Gornek in the Den.",
+            complete = QuestState(98576, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek", "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-98576-glyphic-parchment",
+            kind = "turnin",
+            priority = 210,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 2 },
+                    { class = 8 },
+                },
+            },
+            text = "Turn in Glyphic Parchment to Mai'ah in the Valley of Trials.",
+            dependsOn = { "accept-98576-glyphic-parchment" },
+            complete = QuestState(98576, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4240, 0.6900, "Mai'ah", "Travel to Mai'ah."),
+            },
+        },
+        {
+            id = "accept-98575-tainted-tablet",
+            kind = "accept",
+            priority = 220,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 8 },
+                    { class = 9 },
+                },
+            },
+            text = "Accept Tainted Tablet from Gornek in the Den.",
+            complete = QuestState(98575, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek", "Travel to Gornek."),
+            },
+        },
+        {
+            id = "turnin-98575-tainted-tablet",
+            kind = "turnin",
+            priority = 230,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { race = 8 },
+                    { class = 9 },
+                },
+            },
+            text = "Turn in Tainted Tablet to Nartok in the Valley of Trials.",
+            dependsOn = { "accept-98575-tainted-tablet" },
+            complete = QuestState(98575, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4060, 0.6840, "Nartok", "Travel to Nartok."),
+            },
+        },
+        {
+            id = "accept-3088-encrypted-parchment",
+            kind = "accept",
+            priority = 240,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -432,7 +502,7 @@ ns:RegisterGuide({
         {
             id = "accept-3083-encrypted-tablet",
             kind = "accept",
-            priority = 210,
+            priority = 250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -450,7 +520,7 @@ ns:RegisterGuide({
         {
             id = "accept-3085-hallowed-tablet",
             kind = "accept",
-            priority = 220,
+            priority = 260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -467,7 +537,7 @@ ns:RegisterGuide({
         {
             id = "accept-3065-simple-tablet",
             kind = "accept",
-            priority = 230,
+            priority = 270,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -485,7 +555,7 @@ ns:RegisterGuide({
         {
             id = "accept-2383-simple-parchment",
             kind = "accept",
-            priority = 240,
+            priority = 280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -503,7 +573,7 @@ ns:RegisterGuide({
         {
             id = "accept-3090-tainted-parchment",
             kind = "accept",
-            priority = 250,
+            priority = 290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -520,7 +590,7 @@ ns:RegisterGuide({
         {
             id = "accept-792-vile-familiars",
             kind = "accept",
-            priority = 260,
+            priority = 300,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -538,7 +608,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3087-etched-tablet",
             kind = "turnin",
-            priority = 270,
+            priority = 310,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -557,7 +627,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3082-etched-tablet",
             kind = "turnin",
-            priority = 280,
+            priority = 320,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -576,7 +646,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3084-rune-inscribed-tablet",
             kind = "turnin",
-            priority = 290,
+            priority = 330,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -595,7 +665,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3089-rune-inscribed-parchment",
             kind = "turnin",
-            priority = 300,
+            priority = 340,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -614,7 +684,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3086-glyphic-tablet",
             kind = "turnin",
-            priority = 310,
+            priority = 350,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -632,7 +702,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3088-encrypted-parchment",
             kind = "turnin",
-            priority = 320,
+            priority = 360,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -651,7 +721,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3083-encrypted-tablet",
             kind = "turnin",
-            priority = 330,
+            priority = 370,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -670,7 +740,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3085-hallowed-tablet",
             kind = "turnin",
-            priority = 340,
+            priority = 380,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -688,7 +758,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3065-simple-tablet",
             kind = "turnin",
-            priority = 350,
+            priority = 390,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -707,7 +777,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2383-simple-parchment",
             kind = "turnin",
-            priority = 360,
+            priority = 400,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -726,7 +796,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3090-tainted-parchment",
             kind = "turnin",
-            priority = 370,
+            priority = 410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -744,7 +814,7 @@ ns:RegisterGuide({
         {
             id = "accept-4402-galgars-cactus-apple-surprise",
             kind = "accept",
-            priority = 380,
+            priority = 420,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -761,7 +831,7 @@ ns:RegisterGuide({
         {
             id = "accept-790-sarkoth",
             kind = "accept",
-            priority = 390,
+            priority = 430,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -778,7 +848,7 @@ ns:RegisterGuide({
         {
             id = "objective-790-sarkoth-1",
             kind = "objective",
-            priority = 400,
+            priority = 440,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -796,7 +866,7 @@ ns:RegisterGuide({
         {
             id = "objective-789-sting-of-the-scorpid-1",
             kind = "objective",
-            priority = 410,
+            priority = 450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -814,7 +884,7 @@ ns:RegisterGuide({
         {
             id = "turnin-790-sarkoth",
             kind = "turnin",
-            priority = 420,
+            priority = 460,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -832,7 +902,7 @@ ns:RegisterGuide({
         {
             id = "accept-804-sarkoth",
             kind = "accept",
-            priority = 430,
+            priority = 470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -850,7 +920,7 @@ ns:RegisterGuide({
         {
             id = "turnin-804-sarkoth",
             kind = "turnin",
-            priority = 440,
+            priority = 480,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -868,7 +938,7 @@ ns:RegisterGuide({
         {
             id = "objective-792-vile-familiars-1",
             kind = "objective",
-            priority = 450,
+            priority = 490,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -887,7 +957,7 @@ ns:RegisterGuide({
         {
             id = "objective-4402-galgars-cactus-apple-surprise-1",
             kind = "objective",
-            priority = 460,
+            priority = 500,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -906,7 +976,7 @@ ns:RegisterGuide({
         {
             id = "turnin-4402-galgars-cactus-apple-surprise",
             kind = "turnin",
-            priority = 470,
+            priority = 510,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -924,7 +994,7 @@ ns:RegisterGuide({
         {
             id = "turnin-789-sting-of-the-scorpid",
             kind = "turnin",
-            priority = 480,
+            priority = 520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -942,7 +1012,7 @@ ns:RegisterGuide({
         {
             id = "turnin-792-vile-familiars",
             kind = "turnin",
-            priority = 490,
+            priority = 530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -961,7 +1031,7 @@ ns:RegisterGuide({
         {
             id = "accept-794-burning-blade-medallion",
             kind = "accept",
-            priority = 500,
+            priority = 540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -979,7 +1049,7 @@ ns:RegisterGuide({
         {
             id = "accept-5441-lazy-peons",
             kind = "accept",
-            priority = 510,
+            priority = 550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -997,7 +1067,7 @@ ns:RegisterGuide({
         {
             id = "objective-5441-lazy-peons-1",
             kind = "objective",
-            priority = 520,
+            priority = 560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1016,7 +1086,7 @@ ns:RegisterGuide({
         {
             id = "turnin-5441-lazy-peons",
             kind = "turnin",
-            priority = 530,
+            priority = 570,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1035,7 +1105,7 @@ ns:RegisterGuide({
         {
             id = "accept-6394-thazzrils-pick",
             kind = "accept",
-            priority = 540,
+            priority = 580,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1054,7 +1124,7 @@ ns:RegisterGuide({
         {
             id = "accept-1516-call-of-earth",
             kind = "accept",
-            priority = 550,
+            priority = 590,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1072,7 +1142,7 @@ ns:RegisterGuide({
         {
             id = "objective-794-burning-blade-medallion-1",
             kind = "objective",
-            priority = 560,
+            priority = 600,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1090,7 +1160,7 @@ ns:RegisterGuide({
         {
             id = "objective-6394-thazzrils-pick-1",
             kind = "objective",
-            priority = 570,
+            priority = 610,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1110,7 +1180,7 @@ ns:RegisterGuide({
         {
             id = "objective-1516-call-of-earth",
             kind = "objective",
-            priority = 580,
+            priority = 620,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1129,7 +1199,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1516-call-of-earth",
             kind = "turnin",
-            priority = 590,
+            priority = 630,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1148,7 +1218,7 @@ ns:RegisterGuide({
         {
             id = "accept-1517-call-of-earth",
             kind = "accept",
-            priority = 600,
+            priority = 640,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1166,7 +1236,7 @@ ns:RegisterGuide({
         {
             id = "turnin-794-burning-blade-medallion",
             kind = "turnin",
-            priority = 610,
+            priority = 650,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1184,7 +1254,7 @@ ns:RegisterGuide({
         {
             id = "accept-805-report-to-senjin-village",
             kind = "accept",
-            priority = 620,
+            priority = 660,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1202,7 +1272,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6394-thazzrils-pick",
             kind = "turnin",
-            priority = 630,
+            priority = 670,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1221,7 +1291,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1517-call-of-earth",
             kind = "turnin",
-            priority = 640,
+            priority = 680,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1240,7 +1310,7 @@ ns:RegisterGuide({
         {
             id = "accept-1518-call-of-earth",
             kind = "accept",
-            priority = 650,
+            priority = 690,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1258,7 +1328,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1518-call-of-earth",
             kind = "turnin",
-            priority = 660,
+            priority = 700,
             conditions = {
                 all = {
                     { level = { min = 4 } },
@@ -1277,7 +1347,7 @@ ns:RegisterGuide({
         {
             id = "accept-2161-a-peons-burden",
             kind = "accept",
-            priority = 670,
+            priority = 710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1294,7 +1364,7 @@ ns:RegisterGuide({
         {
             id = "accept-786-thwarting-kolkar-aggression",
             kind = "accept",
-            priority = 680,
+            priority = 720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1311,7 +1381,7 @@ ns:RegisterGuide({
         {
             id = "turnin-785-a-strategic-alliance",
             kind = "turnin",
-            priority = 690,
+            priority = 730,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1330,7 +1400,7 @@ ns:RegisterGuide({
         {
             id = "turnin-805-report-to-senjin-village",
             kind = "turnin",
-            priority = 700,
+            priority = 740,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1348,7 +1418,7 @@ ns:RegisterGuide({
         {
             id = "accept-808-minshinas-skull",
             kind = "accept",
-            priority = 710,
+            priority = 750,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1363,9 +1433,22 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-96652-the-adventurer",
+            kind = "accept",
+            priority = 760,
+            conditions = { level = { min = 4 } },
+            useClientPin = true,
+            text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
+            complete = QuestState(96652, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4200, 0.6840, "Valley of Trials",
+                    "Travel to the Valley of Trials."),
+            },
+        },
+        {
             id = "accept-823-report-to-orgnil",
             kind = "accept",
-            priority = 720,
+            priority = 770,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1382,7 +1465,7 @@ ns:RegisterGuide({
         {
             id = "accept-826-zalazane",
             kind = "accept",
-            priority = 730,
+            priority = 780,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1399,7 +1482,7 @@ ns:RegisterGuide({
         {
             id = "accept-818-a-solvent-spirit",
             kind = "accept",
-            priority = 740,
+            priority = 790,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1416,7 +1499,7 @@ ns:RegisterGuide({
         {
             id = "accept-817-practical-prey",
             kind = "accept",
-            priority = 750,
+            priority = 800,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1433,7 +1516,7 @@ ns:RegisterGuide({
         {
             id = "accept-96821-legging-it",
             kind = "accept",
-            priority = 760,
+            priority = 810,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1449,7 +1532,7 @@ ns:RegisterGuide({
         {
             id = "accept-97225-forgotten-loa-idols",
             kind = "accept",
-            priority = 770,
+            priority = 820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1466,7 +1549,7 @@ ns:RegisterGuide({
         {
             id = "accept-97223-bloodtalon-matriarch",
             kind = "accept",
-            priority = 780,
+            priority = 830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1483,7 +1566,7 @@ ns:RegisterGuide({
         {
             id = "accept-96873-a-pain-in-the-neck",
             kind = "accept",
-            priority = 790,
+            priority = 840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1501,7 +1584,7 @@ ns:RegisterGuide({
         {
             id = "objective-96821-legging-it-1",
             kind = "objective",
-            priority = 800,
+            priority = 850,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1518,7 +1601,7 @@ ns:RegisterGuide({
         {
             id = "objective-96821-legging-it-2",
             kind = "objective",
-            priority = 810,
+            priority = 860,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1535,7 +1618,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96876-ukors-lost-pack",
             kind = "turnin",
-            priority = 820,
+            priority = 870,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1551,9 +1634,57 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-96652-the-adventurer",
+            kind = "turnin",
+            priority = 880,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Adventurer to Brakk near Razor Hill.",
+            dependsOn = { "accept-96652-the-adventurer" },
+            complete = QuestState(96652, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4740, "Brakk",
+                    "Travel to Brakk."),
+            },
+        },
+        {
+            id = "accept-96101-the-great-outdoors",
+            kind = "accept",
+            priority = 890,
+            conditions = { level = { min = 4 } },
+            text = "Accept The Great Outdoors from Brakk.",
+            dependsOn = { "turnin-96652-the-adventurer" },
+            complete = QuestState(96101, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4740, "Brakk",
+                    "Travel to Brakk."),
+            },
+        },
+        {
+            id = "objective-96101-the-great-outdoors",
+            kind = "objective",
+            priority = 900,
+            conditions = { level = { min = 4 } },
+            text = "Type /sit at Brakk's campfire and wait until you gain the Boosted Rest buff.",
+            dependsOn = { "accept-96101-the-great-outdoors" },
+            complete = QuestState(96101, "complete"),
+        },
+        {
+            id = "turnin-96101-the-great-outdoors",
+            kind = "turnin",
+            priority = 910,
+            conditions = { level = { min = 4 } },
+            text = "Turn in The Great Outdoors to Brakk.",
+            dependsOn = { "objective-96101-the-great-outdoors" },
+            complete = QuestState(96101, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.5200, 0.4740, "Brakk",
+                    "Travel to Brakk."),
+            },
+        },
+        {
             id = "turnin-823-report-to-orgnil",
             kind = "turnin",
-            priority = 830,
+            priority = 920,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1571,7 +1702,7 @@ ns:RegisterGuide({
         {
             id = "accept-806-dark-storms",
             kind = "accept",
-            priority = 840,
+            priority = 930,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1589,7 +1720,7 @@ ns:RegisterGuide({
         {
             id = "accept-784-vanquish-the-betrayers",
             kind = "accept",
-            priority = 850,
+            priority = 940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1606,7 +1737,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96821-legging-it",
             kind = "turnin",
-            priority = 860,
+            priority = 950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1623,7 +1754,7 @@ ns:RegisterGuide({
         {
             id = "accept-96822-for-honor",
             kind = "accept",
-            priority = 870,
+            priority = 960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1640,7 +1771,7 @@ ns:RegisterGuide({
         {
             id = "accept-837-encroachment",
             kind = "accept",
-            priority = 880,
+            priority = 970,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1657,7 +1788,7 @@ ns:RegisterGuide({
         {
             id = "accept-791-carry-your-weight",
             kind = "accept",
-            priority = 890,
+            priority = 980,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1674,7 +1805,7 @@ ns:RegisterGuide({
         {
             id = "accept-815-break-a-few-eggs",
             kind = "accept",
-            priority = 900,
+            priority = 990,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1691,7 +1822,7 @@ ns:RegisterGuide({
         {
             id = "accept-96825-this-fruit-could-bite-back",
             kind = "accept",
-            priority = 910,
+            priority = 1000,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1708,7 +1839,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2161-a-peons-burden",
             kind = "turnin",
-            priority = 920,
+            priority = 1010,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1726,7 +1857,7 @@ ns:RegisterGuide({
         {
             id = "objective-784-vanquish-the-betrayers-1",
             kind = "objective",
-            priority = 930,
+            priority = 1020,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1744,7 +1875,7 @@ ns:RegisterGuide({
         {
             id = "objective-784-vanquish-the-betrayers-2",
             kind = "objective",
-            priority = 940,
+            priority = 1030,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1762,7 +1893,7 @@ ns:RegisterGuide({
         {
             id = "objective-784-vanquish-the-betrayers-3",
             kind = "objective",
-            priority = 950,
+            priority = 1040,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1780,7 +1911,7 @@ ns:RegisterGuide({
         {
             id = "accept-830-the-admirals-orders",
             kind = "accept",
-            priority = 960,
+            priority = 1050,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1797,7 +1928,7 @@ ns:RegisterGuide({
         {
             id = "objective-791-carry-your-weight-1",
             kind = "objective",
-            priority = 970,
+            priority = 1060,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1815,7 +1946,7 @@ ns:RegisterGuide({
         {
             id = "turnin-784-vanquish-the-betrayers",
             kind = "turnin",
-            priority = 980,
+            priority = 1070,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1833,7 +1964,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96822-for-honor",
             kind = "turnin",
-            priority = 990,
+            priority = 1080,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1851,7 +1982,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96825-this-fruit-could-bite-back",
             kind = "turnin",
-            priority = 1000,
+            priority = 1090,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1869,7 +2000,7 @@ ns:RegisterGuide({
         {
             id = "accept-825-from-the-wreckage",
             kind = "accept",
-            priority = 1010,
+            priority = 1100,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1887,7 +2018,7 @@ ns:RegisterGuide({
         {
             id = "turnin-830-the-admirals-orders",
             kind = "turnin",
-            priority = 1020,
+            priority = 1110,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1904,7 +2035,7 @@ ns:RegisterGuide({
         {
             id = "accept-831-the-admirals-orders",
             kind = "accept",
-            priority = 1030,
+            priority = 1120,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1921,7 +2052,7 @@ ns:RegisterGuide({
         {
             id = "turnin-791-carry-your-weight",
             kind = "turnin",
-            priority = 1040,
+            priority = 1130,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1939,7 +2070,7 @@ ns:RegisterGuide({
         {
             id = "objective-96825-this-fruit-could-bite-back-1",
             kind = "objective",
-            priority = 1050,
+            priority = 1140,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1958,7 +2089,7 @@ ns:RegisterGuide({
         {
             id = "objective-96822-for-honor-1",
             kind = "objective",
-            priority = 1060,
+            priority = 1150,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1977,7 +2108,7 @@ ns:RegisterGuide({
         {
             id = "objective-96822-for-honor-2",
             kind = "objective",
-            priority = 1070,
+            priority = 1160,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1996,7 +2127,7 @@ ns:RegisterGuide({
         {
             id = "objective-96822-for-honor-3",
             kind = "objective",
-            priority = 1080,
+            priority = 1170,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2015,7 +2146,7 @@ ns:RegisterGuide({
         {
             id = "objective-837-encroachment-1",
             kind = "objective",
-            priority = 1090,
+            priority = 1180,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2033,7 +2164,7 @@ ns:RegisterGuide({
         {
             id = "objective-837-encroachment-2",
             kind = "objective",
-            priority = 1100,
+            priority = 1190,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2051,7 +2182,7 @@ ns:RegisterGuide({
         {
             id = "objective-837-encroachment-3",
             kind = "objective",
-            priority = 1110,
+            priority = 1200,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2069,7 +2200,7 @@ ns:RegisterGuide({
         {
             id = "objective-837-encroachment-4",
             kind = "objective",
-            priority = 1120,
+            priority = 1210,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2087,7 +2218,7 @@ ns:RegisterGuide({
         {
             id = "objective-825-from-the-wreckage-1",
             kind = "objective",
-            priority = 1130,
+            priority = 1220,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2106,7 +2237,7 @@ ns:RegisterGuide({
         {
             id = "objective-818-a-solvent-spirit-1",
             kind = "objective",
-            priority = 1140,
+            priority = 1230,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2124,7 +2255,7 @@ ns:RegisterGuide({
         {
             id = "objective-818-a-solvent-spirit-2",
             kind = "objective",
-            priority = 1150,
+            priority = 1240,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2142,7 +2273,7 @@ ns:RegisterGuide({
         {
             id = "turnin-825-from-the-wreckage",
             kind = "turnin",
-            priority = 1160,
+            priority = 1250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2160,7 +2291,7 @@ ns:RegisterGuide({
         {
             id = "turnin-837-encroachment",
             kind = "turnin",
-            priority = 1170,
+            priority = 1260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2178,7 +2309,7 @@ ns:RegisterGuide({
         {
             id = "accept-99123-lost-in-the-shadows",
             kind = "accept",
-            priority = 1180,
+            priority = 1270,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2195,7 +2326,7 @@ ns:RegisterGuide({
         {
             id = "objective-99123-lost-in-the-shadows-1",
             kind = "objective",
-            priority = 1190,
+            priority = 1280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2213,7 +2344,7 @@ ns:RegisterGuide({
         {
             id = "objective-786-thwarting-kolkar-aggression-1",
             kind = "objective",
-            priority = 1200,
+            priority = 1290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2231,7 +2362,7 @@ ns:RegisterGuide({
         {
             id = "objective-786-thwarting-kolkar-aggression-2",
             kind = "objective",
-            priority = 1210,
+            priority = 1300,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2249,7 +2380,7 @@ ns:RegisterGuide({
         {
             id = "objective-786-thwarting-kolkar-aggression-3",
             kind = "objective",
-            priority = 1220,
+            priority = 1310,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2267,7 +2398,7 @@ ns:RegisterGuide({
         {
             id = "turnin-786-thwarting-kolkar-aggression",
             kind = "turnin",
-            priority = 1230,
+            priority = 1320,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2285,7 +2416,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99123-lost-in-the-shadows",
             kind = "turnin",
-            priority = 1240,
+            priority = 1330,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2303,7 +2434,7 @@ ns:RegisterGuide({
         {
             id = "turnin-818-a-solvent-spirit",
             kind = "turnin",
-            priority = 1250,
+            priority = 1340,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2321,7 +2452,7 @@ ns:RegisterGuide({
         {
             id = "objective-97225-forgotten-loa-idols-1",
             kind = "objective",
-            priority = 1260,
+            priority = 1350,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2340,7 +2471,7 @@ ns:RegisterGuide({
         {
             id = "objective-97223-bloodtalon-matriarch-1",
             kind = "objective",
-            priority = 1270,
+            priority = 1360,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2358,7 +2489,7 @@ ns:RegisterGuide({
         {
             id = "objective-96873-a-pain-in-the-neck-1",
             kind = "objective",
-            priority = 1280,
+            priority = 1370,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2377,7 +2508,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-1",
             kind = "objective",
-            priority = 1290,
+            priority = 1380,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2395,7 +2526,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-2",
             kind = "objective",
-            priority = 1300,
+            priority = 1390,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2413,7 +2544,7 @@ ns:RegisterGuide({
         {
             id = "objective-826-zalazane-3",
             kind = "objective",
-            priority = 1310,
+            priority = 1400,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2431,7 +2562,7 @@ ns:RegisterGuide({
         {
             id = "objective-808-minshinas-skull-1",
             kind = "objective",
-            priority = 1320,
+            priority = 1410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2450,7 +2581,7 @@ ns:RegisterGuide({
         {
             id = "objective-815-break-a-few-eggs-1",
             kind = "objective",
-            priority = 1330,
+            priority = 1420,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2469,7 +2600,7 @@ ns:RegisterGuide({
         {
             id = "objective-817-practical-prey-1",
             kind = "objective",
-            priority = 1340,
+            priority = 1430,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2487,7 +2618,7 @@ ns:RegisterGuide({
         {
             id = "turnin-808-minshinas-skull",
             kind = "turnin",
-            priority = 1350,
+            priority = 1440,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2505,7 +2636,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97225-forgotten-loa-idols",
             kind = "turnin",
-            priority = 1360,
+            priority = 1450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2523,7 +2654,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97223-bloodtalon-matriarch",
             kind = "turnin",
-            priority = 1370,
+            priority = 1460,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2541,7 +2672,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96873-a-pain-in-the-neck",
             kind = "turnin",
-            priority = 1380,
+            priority = 1470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2560,7 +2691,7 @@ ns:RegisterGuide({
         {
             id = "turnin-826-zalazane",
             kind = "turnin",
-            priority = 1390,
+            priority = 1480,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2578,7 +2709,7 @@ ns:RegisterGuide({
         {
             id = "turnin-817-practical-prey",
             kind = "turnin",
-            priority = 1400,
+            priority = 1490,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2596,7 +2727,7 @@ ns:RegisterGuide({
         {
             id = "turnin-815-break-a-few-eggs",
             kind = "turnin",
-            priority = 1410,
+            priority = 1500,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2614,7 +2745,7 @@ ns:RegisterGuide({
         {
             id = "accept-816-lost-but-not-forgotten",
             kind = "accept",
-            priority = 1420,
+            priority = 1510,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2631,7 +2762,7 @@ ns:RegisterGuide({
         {
             id = "accept-834-winds-in-the-desert",
             kind = "accept",
-            priority = 1430,
+            priority = 1520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2648,7 +2779,7 @@ ns:RegisterGuide({
         {
             id = "objective-834-winds-in-the-desert-1",
             kind = "objective",
-            priority = 1440,
+            priority = 1530,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2666,7 +2797,7 @@ ns:RegisterGuide({
         {
             id = "turnin-834-winds-in-the-desert",
             kind = "turnin",
-            priority = 1450,
+            priority = 1540,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2684,7 +2815,7 @@ ns:RegisterGuide({
         {
             id = "accept-835-securing-the-lines",
             kind = "accept",
-            priority = 1460,
+            priority = 1550,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2702,7 +2833,7 @@ ns:RegisterGuide({
         {
             id = "accept-812-need-for-a-cure",
             kind = "accept",
-            priority = 1470,
+            priority = 1560,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2720,7 +2851,7 @@ ns:RegisterGuide({
         {
             id = "accept-6062-taming-the-beast",
             kind = "accept",
-            priority = 1480,
+            priority = 1570,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2739,7 +2870,7 @@ ns:RegisterGuide({
         {
             id = "objective-6062-taming-the-beast",
             kind = "objective",
-            priority = 1490,
+            priority = 1580,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2759,7 +2890,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6062-taming-the-beast",
             kind = "turnin",
-            priority = 1500,
+            priority = 1590,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2779,7 +2910,7 @@ ns:RegisterGuide({
         {
             id = "accept-6083-taming-the-beast",
             kind = "accept",
-            priority = 1510,
+            priority = 1600,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2798,7 +2929,7 @@ ns:RegisterGuide({
         {
             id = "objective-6083-taming-the-beast",
             kind = "objective",
-            priority = 1520,
+            priority = 1610,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2818,7 +2949,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6083-taming-the-beast",
             kind = "turnin",
-            priority = 1530,
+            priority = 1620,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2838,7 +2969,7 @@ ns:RegisterGuide({
         {
             id = "accept-6082-taming-the-beast",
             kind = "accept",
-            priority = 1540,
+            priority = 1630,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2857,7 +2988,7 @@ ns:RegisterGuide({
         {
             id = "objective-6082-taming-the-beast",
             kind = "objective",
-            priority = 1550,
+            priority = 1640,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2877,7 +3008,7 @@ ns:RegisterGuide({
         {
             id = "turnin-6082-taming-the-beast",
             kind = "turnin",
-            priority = 1560,
+            priority = 1650,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2897,7 +3028,7 @@ ns:RegisterGuide({
         {
             id = "accept-6081-training-the-beast",
             kind = "accept",
-            priority = 1570,
+            priority = 1660,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2916,7 +3047,7 @@ ns:RegisterGuide({
         {
             id = "accept-1506-gan-rul-s-summons",
             kind = "accept",
-            priority = 1580,
+            priority = 1670,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2934,7 +3065,7 @@ ns:RegisterGuide({
         {
             id = "accept-96874-this-is-spinal-axe",
             kind = "accept",
-            priority = 1590,
+            priority = 1680,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2952,7 +3083,7 @@ ns:RegisterGuide({
         {
             id = "accept-96875-beasts-of-thunder-ridge",
             kind = "accept",
-            priority = 1600,
+            priority = 1690,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2970,7 +3101,7 @@ ns:RegisterGuide({
         {
             id = "accept-1883-speak-with-un-thuwa",
             kind = "accept",
-            priority = 1610,
+            priority = 1700,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -2988,7 +3119,7 @@ ns:RegisterGuide({
         {
             id = "turnin-831-the-admirals-orders",
             kind = "turnin",
-            priority = 1620,
+            priority = 1710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3003,26 +3134,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-5726-hidden-enemies",
-            kind = "accept",
-            priority = 1625,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
-            complete = QuestState(5726, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
-                    "Travel to Thrall."),
-            },
-        },
-        {
             id = "accept-813-finding-the-antidote",
             kind = "accept",
-            priority = 1630,
+            priority = 1720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3039,9 +3153,116 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-5726-hidden-enemies",
+            kind = "accept",
+            priority = 1730,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            complete = QuestState(5726, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "objective-5726-hidden-enemies",
+            kind = "objective",
+            priority = 1740,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Kill Burning Blade Apprentice until you find Lieutenant's Insignia in Skull Rock.",
+            dependsOn = { "accept-5726-hidden-enemies" },
+            complete = QuestState(5726, "complete"),
+            route = {
+                Point(MAP.DUROTAR, 0.544, 0.088, "Burning Blade Apprentice",
+                    "Travel to Burning Blade Apprentice."),
+            },
+        },
+        {
+            id = "turnin-5726-hidden-enemies",
+            kind = "turnin",
+            priority = 1750,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "objective-5726-hidden-enemies" },
+            complete = QuestState(5726, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "accept-5727-hidden-enemies",
+            kind = "accept",
+            priority = 1760,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
+            dependsOn = { "turnin-5726-hidden-enemies" },
+            complete = QuestState(5727, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
+            id = "gossip-5727-hidden-enemies",
+            kind = "gossip",
+            priority = 1770,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
+            dependsOn = { "accept-5727-hidden-enemies" },
+            complete = QuestState(5727, "complete"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.496, 0.504, "Neeru Fireblade",
+                    "Travel to Neeru Fireblade."),
+            },
+        },
+        {
+            id = "turnin-5727-hidden-enemies",
+            kind = "turnin",
+            priority = 1780,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { faction = "Horde" },
+                },
+            },
+            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
+            dependsOn = { "gossip-5727-hidden-enemies" },
+            complete = QuestState(5727, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
             id = "turnin-6081-training-the-beast",
             kind = "turnin",
-            priority = 1640,
+            priority = 1790,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3061,7 +3282,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1506-gan-rul-s-summons",
             kind = "turnin",
-            priority = 1650,
+            priority = 1800,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3080,7 +3301,7 @@ ns:RegisterGuide({
         {
             id = "accept-1501-creature-of-the-void",
             kind = "accept",
-            priority = 1660,
+            priority = 1810,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3098,7 +3319,7 @@ ns:RegisterGuide({
         {
             id = "objective-813-finding-the-antidote-1",
             kind = "objective",
-            priority = 1670,
+            priority = 1820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3118,7 +3339,7 @@ ns:RegisterGuide({
         {
             id = "turnin-813-finding-the-antidote",
             kind = "turnin",
-            priority = 1680,
+            priority = 1830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3137,7 +3358,7 @@ ns:RegisterGuide({
         {
             id = "turnin-812-need-for-a-cure",
             kind = "turnin",
-            priority = 1690,
+            priority = 1840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3155,7 +3376,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1883-speak-with-un-thuwa",
             kind = "turnin",
-            priority = 1700,
+            priority = 1850,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3174,7 +3395,7 @@ ns:RegisterGuide({
         {
             id = "accept-1884-ju-ju-heaps",
             kind = "accept",
-            priority = 1710,
+            priority = 1860,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3192,7 +3413,7 @@ ns:RegisterGuide({
         {
             id = "objective-1884-ju-ju-heaps",
             kind = "objective",
-            priority = 1720,
+            priority = 1870,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3221,7 +3442,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1884-ju-ju-heaps",
             kind = "turnin",
-            priority = 1730,
+            priority = 1880,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3240,7 +3461,7 @@ ns:RegisterGuide({
         {
             id = "objective-835-securing-the-lines-1",
             kind = "objective",
-            priority = 1740,
+            priority = 1890,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3258,7 +3479,7 @@ ns:RegisterGuide({
         {
             id = "objective-835-securing-the-lines-2",
             kind = "objective",
-            priority = 1750,
+            priority = 1900,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3276,7 +3497,7 @@ ns:RegisterGuide({
         {
             id = "turnin-835-securing-the-lines",
             kind = "turnin",
-            priority = 1760,
+            priority = 1910,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3294,7 +3515,7 @@ ns:RegisterGuide({
         {
             id = "objective-816-lost-but-not-forgotten-1",
             kind = "objective",
-            priority = 1770,
+            priority = 1920,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3312,7 +3533,7 @@ ns:RegisterGuide({
         {
             id = "objective-806-dark-storms-1",
             kind = "objective",
-            priority = 1780,
+            priority = 1930,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3330,7 +3551,7 @@ ns:RegisterGuide({
         {
             id = "objective-96874-this-is-spinal-axe-1",
             kind = "objective",
-            priority = 1790,
+            priority = 1940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3349,7 +3570,7 @@ ns:RegisterGuide({
         {
             id = "objective-96874-this-is-spinal-axe-2",
             kind = "objective",
-            priority = 1800,
+            priority = 1950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3368,7 +3589,7 @@ ns:RegisterGuide({
         {
             id = "objective-96875-beasts-of-thunder-ridge-1",
             kind = "objective",
-            priority = 1810,
+            priority = 1960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3387,7 +3608,7 @@ ns:RegisterGuide({
         {
             id = "objective-96875-beasts-of-thunder-ridge-2",
             kind = "objective",
-            priority = 1820,
+            priority = 1970,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3406,7 +3627,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97281-a-simmering-storm",
             kind = "turnin",
-            priority = 1830,
+            priority = 1980,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3424,7 +3645,7 @@ ns:RegisterGuide({
         {
             id = "accept-97282-stormy-potential",
             kind = "accept",
-            priority = 1840,
+            priority = 1990,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3443,7 +3664,7 @@ ns:RegisterGuide({
         {
             id = "objective-97282-stormy-potential-1",
             kind = "objective",
-            priority = 1850,
+            priority = 2000,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3462,7 +3683,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97282-stormy-potential",
             kind = "turnin",
-            priority = 1860,
+            priority = 2010,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3481,7 +3702,7 @@ ns:RegisterGuide({
         {
             id = "turnin-816-lost-but-not-forgotten",
             kind = "turnin",
-            priority = 1870,
+            priority = 2020,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3499,7 +3720,7 @@ ns:RegisterGuide({
         {
             id = "turnin-806-dark-storms",
             kind = "turnin",
-            priority = 1880,
+            priority = 2030,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3517,7 +3738,7 @@ ns:RegisterGuide({
         {
             id = "accept-99048-a-missing-hand",
             kind = "accept",
-            priority = 1890,
+            priority = 2040,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3534,7 +3755,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99048-a-missing-hand",
             kind = "turnin",
-            priority = 1900,
+            priority = 2050,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3552,7 +3773,7 @@ ns:RegisterGuide({
         {
             id = "accept-99049-threat-from-below",
             kind = "accept",
-            priority = 1910,
+            priority = 2060,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3570,7 +3791,7 @@ ns:RegisterGuide({
         {
             id = "objective-99049-threat-from-below-1",
             kind = "objective",
-            priority = 1920,
+            priority = 2070,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3589,7 +3810,7 @@ ns:RegisterGuide({
         {
             id = "objective-99049-threat-from-below-2",
             kind = "objective",
-            priority = 1930,
+            priority = 2080,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3608,7 +3829,7 @@ ns:RegisterGuide({
         {
             id = "objective-99049-threat-from-below-3",
             kind = "objective",
-            priority = 1940,
+            priority = 2090,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3627,7 +3848,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99049-threat-from-below",
             kind = "turnin",
-            priority = 1950,
+            priority = 2100,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3645,7 +3866,7 @@ ns:RegisterGuide({
         {
             id = "accept-99051-threat-from-below",
             kind = "accept",
-            priority = 1960,
+            priority = 2110,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3663,7 +3884,7 @@ ns:RegisterGuide({
         {
             id = "objective-99051-threat-from-below-1",
             kind = "objective",
-            priority = 1970,
+            priority = 2120,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3681,7 +3902,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99051-threat-from-below",
             kind = "turnin",
-            priority = 1980,
+            priority = 2130,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3699,7 +3920,7 @@ ns:RegisterGuide({
         {
             id = "accept-99052-threat-from-below",
             kind = "accept",
-            priority = 1990,
+            priority = 2140,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3717,7 +3938,7 @@ ns:RegisterGuide({
         {
             id = "accept-828-margoz",
             kind = "accept",
-            priority = 2000,
+            priority = 2150,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3734,7 +3955,7 @@ ns:RegisterGuide({
         {
             id = "accept-2983-call-of-fire",
             kind = "accept",
-            priority = 2010,
+            priority = 2160,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3752,7 +3973,7 @@ ns:RegisterGuide({
         {
             id = "turnin-828-margoz",
             kind = "turnin",
-            priority = 2020,
+            priority = 2170,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3770,7 +3991,7 @@ ns:RegisterGuide({
         {
             id = "accept-827-skull-rock",
             kind = "accept",
-            priority = 2030,
+            priority = 2180,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3788,7 +4009,7 @@ ns:RegisterGuide({
         {
             id = "objective-99052-threat-from-below-1",
             kind = "objective",
-            priority = 2040,
+            priority = 2190,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3806,7 +4027,7 @@ ns:RegisterGuide({
         {
             id = "objective-1501-creature-of-the-void",
             kind = "objective",
-            priority = 2050,
+            priority = 2200,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3829,7 +4050,7 @@ ns:RegisterGuide({
         {
             id = "objective-827-skull-rock-1",
             kind = "objective",
-            priority = 2060,
+            priority = 2210,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3845,27 +4066,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-5726-hidden-enemies",
-            kind = "objective",
-            priority = 2065,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Kill Burning Blade Apprentice until you find Lieutenant's Insignia in Skull Rock.",
-            dependsOn = { "accept-5726-hidden-enemies" },
-            complete = QuestState(5726, "complete"),
-            route = {
-                Point(MAP.DUROTAR, 0.544, 0.088, "Burning Blade Apprentice",
-                    "Travel to Burning Blade Apprentice."),
-            },
-        },
-        {
             id = "turnin-827-skull-rock",
             kind = "turnin",
-            priority = 2070,
+            priority = 2220,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3883,7 +4086,7 @@ ns:RegisterGuide({
         {
             id = "turnin-832-burning-shadows",
             kind = "turnin",
-            priority = 2080,
+            priority = 2230,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3902,7 +4105,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99052-threat-from-below",
             kind = "turnin",
-            priority = 2090,
+            priority = 2240,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3920,7 +4123,7 @@ ns:RegisterGuide({
         {
             id = "accept-829-neeru-fireblade",
             kind = "accept",
-            priority = 2100,
+            priority = 2250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3936,45 +4139,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-5726-hidden-enemies",
-            kind = "turnin",
-            priority = 2105,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
-            dependsOn = { "objective-5726-hidden-enemies" },
-            complete = QuestState(5726, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
-                    "Travel to Thrall."),
-            },
-        },
-        {
-            id = "accept-5727-hidden-enemies",
-            kind = "accept",
-            priority = 2106,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Accept Hidden Enemies from Thrall in Grommash Hold.",
-            dependsOn = { "turnin-5726-hidden-enemies" },
-            complete = QuestState(5727, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
-                    "Travel to Thrall."),
-            },
-        },
-        {
             id = "turnin-829-neeru-fireblade",
             kind = "turnin",
-            priority = 2110,
+            priority = 2260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -3992,7 +4159,7 @@ ns:RegisterGuide({
         {
             id = "accept-809-akzeloth",
             kind = "accept",
-            priority = 2120,
+            priority = 2270,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4008,45 +4175,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "gossip-5727-hidden-enemies",
-            kind = "gossip",
-            priority = 2125,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Show the insignia to Neeru Fireblade and exhaust his dialogue.",
-            dependsOn = { "accept-5727-hidden-enemies" },
-            complete = QuestState(5727, "complete"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.496, 0.504, "Neeru Fireblade",
-                    "Travel to Neeru Fireblade."),
-            },
-        },
-        {
-            id = "turnin-5727-hidden-enemies",
-            kind = "turnin",
-            priority = 2126,
-            conditions = {
-                all = {
-                    { level = { min = 9 } },
-                    { faction = "Horde" },
-                },
-            },
-            text = "Turn in Hidden Enemies to Thrall in Grommash Hold.",
-            dependsOn = { "gossip-5727-hidden-enemies" },
-            complete = QuestState(5727, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall",
-                    "Travel to Thrall."),
-            },
-        },
-        {
             id = "turnin-809-akzeloth",
             kind = "turnin",
-            priority = 2130,
+            priority = 2280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4064,7 +4195,7 @@ ns:RegisterGuide({
         {
             id = "accept-924-the-demon-seed",
             kind = "accept",
-            priority = 2140,
+            priority = 2290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4080,45 +4211,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-924-the-demon-seed-1",
-            kind = "objective",
-            priority = 2150,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "The Demon Seed: Destroy the Demon Seed. Use the Flawed Power Stone at the altar before the 30 minute timer expires.",
-            dependsOn = { "accept-924-the-demon-seed", "accept-926-flawed-power-stone" },
-            complete = QuestObjective(924, 1, "Destroy the Demon Seed"),
-            route = {
-                Point(MAP.BARRENS, 0.480, 0.191, "Altar of Fire",
-                    "Travel to Altar of Fire."),
-            },
-        },
-        {
-            id = "turnin-924-the-demon-seed",
-            kind = "turnin",
-            priority = 2160,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Turn in The Demon Seed to Ak'Zeloth.",
-            dependsOn = { "objective-924-the-demon-seed-1" },
-            complete = QuestState(924, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.624, 0.200, "Ak'Zeloth",
-                    "Travel to Ak'Zeloth."),
-            },
-        },
-        {
             id = "accept-926-flawed-power-stone",
             kind = "accept",
-            priority = 2170,
+            priority = 2300,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4136,7 +4231,7 @@ ns:RegisterGuide({
         {
             id = "turnin-926-flawed-power-stone",
             kind = "turnin",
-            priority = 2180,
+            priority = 2310,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4151,9 +4246,45 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-924-the-demon-seed-1",
+            kind = "objective",
+            priority = 2320,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "The Demon Seed: Destroy the Demon Seed. Use the Flawed Power Stone at the altar before the 30 minute timer expires.",
+            dependsOn = { "accept-924-the-demon-seed", "accept-926-flawed-power-stone" },
+            complete = QuestObjective(924, 1, "Destroy the Demon Seed"),
+            route = {
+                Point(MAP.BARRENS, 0.480, 0.191, "Altar of Fire",
+                    "Travel to Altar of Fire."),
+            },
+        },
+        {
+            id = "turnin-924-the-demon-seed",
+            kind = "turnin",
+            priority = 2330,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Turn in The Demon Seed to Ak'Zeloth.",
+            dependsOn = { "objective-924-the-demon-seed-1" },
+            complete = QuestState(924, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.624, 0.200, "Ak'Zeloth",
+                    "Travel to Ak'Zeloth."),
+            },
+        },
+        {
             id = "turnin-1501-creature-of-the-void",
             kind = "turnin",
-            priority = 2190,
+            priority = 2340,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -4172,7 +4303,7 @@ ns:RegisterGuide({
         {
             id = "accept-1504-the-binding",
             kind = "accept",
-            priority = 2200,
+            priority = 2350,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -4190,7 +4321,7 @@ ns:RegisterGuide({
         {
             id = "objective-1504-the-binding",
             kind = "objective",
-            priority = 2210,
+            priority = 2360,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -4209,7 +4340,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1504-the-binding",
             kind = "turnin",
-            priority = 2220,
+            priority = 2370,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -4228,7 +4359,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96874-this-is-spinal-axe",
             kind = "turnin",
-            priority = 2230,
+            priority = 2380,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4247,7 +4378,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96875-beasts-of-thunder-ridge",
             kind = "turnin",
-            priority = 2240,
+            priority = 2390,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4266,7 +4397,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96877-halikors-hoof",
             kind = "turnin",
-            priority = 2250,
+            priority = 2400,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4284,7 +4415,7 @@ ns:RegisterGuide({
         {
             id = "accept-840-conscript-of-the-horde",
             kind = "accept",
-            priority = 2260,
+            priority = 2410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4302,7 +4433,7 @@ ns:RegisterGuide({
         {
             id = "turnin-840-conscript-of-the-horde",
             kind = "turnin",
-            priority = 2270,
+            priority = 2420,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4321,7 +4452,7 @@ ns:RegisterGuide({
         {
             id = "accept-842-crossroads-conscription",
             kind = "accept",
-            priority = 2280,
+            priority = 2430,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -4340,7 +4471,7 @@ ns:RegisterGuide({
         {
             id = "turnin-842-crossroads-conscription",
             kind = "turnin",
-            priority = 2290,
+            priority = 2440,
             conditions = {
                 all = {
                     { faction = "Horde" },

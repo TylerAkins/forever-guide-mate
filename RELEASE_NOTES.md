@@ -1,5 +1,4 @@
-## 0.1.21 - 2026-09-27
+## 0.1.22 - 2026-09-28
 
-- Tirisfal Glades now includes the Undead paladin steps A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
-- Starter chapters now include the Forever class quests whose givers are already on the route. Class quests with no start pin stay named in the chapter header.
-- The Adventurer is on each 1-12 starter route. Zephras Isle already had its own copy.
+- Each 1-12 starter route now includes The Great Outdoors after The Adventurer turn-in.
+- Durotar and Mulgore Loremaster guides follow the updated leveling spine, including The Adventurer and The Great Outdoors.
