@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 4,
+    revision = 5,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -974,7 +974,7 @@ ns:RegisterGuide({
         {
             id = "accept-99134-discipline",
             kind = "accept",
-            priority = 511,
+            priority = 521,
             conditions = { level = { min = 4 } },
             text = "Accept Discipline from Executor Zygand in Brill.",
             complete = QuestState(99134, "activeOrCompleted"),
@@ -1024,7 +1024,7 @@ ns:RegisterGuide({
         {
             id = "accept-95314-that-shadowvale-green-elixir",
             kind = "accept",
-            priority = 515,
+            priority = 1011,
             conditions = { level = { min = 7 } },
             text = "Accept That Shadowvale Green Elixir from Carolai Anise in Brill.",
             complete = QuestState(95314, "activeOrCompleted"),
@@ -1847,7 +1847,7 @@ ns:RegisterGuide({
         {
             id = "accept-97558-hides-for-the-forsaken",
             kind = "accept",
-            priority = 1171,
+            priority = 751,
             conditions = { level = { min = 11 } },
             text = "Accept Hides for the Forsaken from Shelene Rhobart.",
             complete = QuestState(97558, "activeOrCompleted"),
