@@ -27,6 +27,33 @@ Use the first rule that fits.
 2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins. A giver you met earlier does not count when this quest's recommended level is still ahead.
 3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower recommended level. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
 
+## Same trip
+
+The published speed run, through about level 20, shows how a new Forever quest is placed. It does not replace the classic route. Past that, the speed run is not published. Place the woven quest on our spine the same way.
+
+Classic accepts, objectives, and turn-ins stay in order. Move only the woven quest.
+
+- Accept it on the visit where the route is already speaking to that giver, once the route has reached the quest's level. A giver met earlier does not count while the recommended level is still ahead.
+- Do the objective on the classic trip that already kills those targets or walks through that spot. When the work matches several classic kills, finish the one objective step on the trip where the collect happens, not on the accept and not on the first kill.
+- Turn it in with that NPC's turn-ins on the way back. Do not send the player back to town in the middle of the outing.
+- If the quest is offered only after another turn-in, `dependsOn` that turn-in even when Wowhead lists no prerequisite.
+- When the work is a different spot on a trip the route already takes, reuse that trip's pin. Do not invent a coordinate, and do not add a trip.
+- If our spine visits the two neighboring classic steps in the opposite order, anchor the woven quest to the later step. Do not reorder the spine.
+- Leave a woven step that is already on that trip. Leave class chains and their `dependsOn` order alone.
+- The tracker stays on the current step until an earlier objective becomes ready, and then it turns back. A recommended level that is still above the steps ahead waits until after those steps, so dinging does not pull the player off the route. Bloodfury Trinkets waits at the end of 23-25 Stonetalon for that reason: the harpy kill is earlier, and the quest is level 26.
+- A quest stays out when the start is another zone, a later chapter already walks that ground, or the quest is the middle of a chain this route never starts. Scramble is that chain: it begins in Westfall or the Field of Giants and only later reaches Pocket Litter. Name the omission in the header.
+- A classic quest this chapter already accepts, and then never finishes, gets its objective on that same trip. Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in on the next visit to Mebok.
+
+## Hand it in
+
+Search every guide, Leveling and Era, for an accept that has no turn-in. The hand-in goes in the later chapter that already stops at that NPC, on that visit, before the next quest the NPC gives. Do not add a second hand-in when another guide already has one.
+
+- A handoff in another file, with no objectives, is gated with quest state `active` and completes on `completed`. It only shows while the quest is still in the log.
+- A quest whose objectives are already done in an earlier chapter is gated with state `complete`. The hand-in waits until that work is finished. If a later chapter still has objectives for it, leave the turn-in for the chapter that finishes the work and then stops at the NPC.
+- Do not `dependsOn` a step id from another file. Quest state is the cross-guide gate. In the same file, the turn-in `dependsOn` the accept and every objective of that quest, and it keeps that quest's conditions. Every step of one quest in one file has to carry the same conditions.
+- Put the turn-in on the visit where the route is already standing at the recipient, not in the middle of the outing that picked the quest up. Report to Gryan Stoutmantle is accepted in Elwynn and turned in on the first Sentinel Hill visit. Letter to Jin'Zil is accepted at the Crossroads and turned in on the first Malaka'jin visit.
+- If no chapter stops at the recipient, name the quest in the accept chapter's header. Do not add a city trip or a new camp stop to finish it. Report to Kadrak stays named, because no chapter stops at Kadrak.
+
 ## What stays out
 
 - Dungeon quests. They stay in the dungeon guides.

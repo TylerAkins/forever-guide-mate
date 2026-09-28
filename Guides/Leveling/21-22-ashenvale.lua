@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Ashenvale, levels 21-22.
 -- Forever quests from the Ashenvale list that sit on this pass are woven in.
--- Left out: Repelling Invaders is a level 60 daily.
+-- Left out: Repelling Invaders is a level 60 daily. The Tower of Althalaxx follow-up kills Ilkrud at the tower, and no later chapter goes back there.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,7 +32,7 @@ ns:RegisterGuide({
     id = "leveling-era-21-22-ashenvale",
     title = "21-22 Ashenvale",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -41,13 +41,30 @@ ns:RegisterGuide({
     },
     goals = {
         {
+            id = "turnin-967-the-tower-of-althalaxx",
+            kind = "turnin",
+            priority = 10,
+            conditions = {
+                all = {
+                    { level = { min = 13 } },
+                    { quest = { id = 967, state = "active" } },
+                },
+            },
+            text = "Turn in The Tower of Althalaxx to Delgren the Purifier in Maestra's Post.",
+            complete = QuestState(967, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.2620, 0.3866, "Delgren the Purifier",
+                    "Travel to Delgren the Purifier."),
+            },
+        },
+        {
             id = "accept-970-the-tower-of-althalaxx",
             kind = "accept",
             priority = 20,
             conditions = {
                 all = {
                     { level = { min = 13 } },
-                    { quest = { id = 970, state = "completed" } },
+                    { quest = { id = 967, state = "completed" } },
                 },
             },
             text = "Accept The Tower of Althalaxx from Delgren the Purifier in Maestra's Post.",
@@ -76,7 +93,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { level = { min = 13 } },
-                    { quest = { id = 970, state = "completed" } },
+                    { quest = { id = 967, state = "completed" } },
                 },
             },
             text = "Kill Dark Strand Adept, Dark Strand Enforcer or Dark Strand Cultist and collect a Glowing Soul Gem.",
@@ -107,7 +124,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { level = { min = 13 } },
-                    { quest = { id = 970, state = "completed" } },
+                    { quest = { id = 967, state = "completed" } },
                 },
             },
             text = "Turn in The Tower of Althalaxx to Delgren the Purifier in Maestra's Post.",

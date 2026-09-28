@@ -29,6 +29,12 @@ Use the first rule that fits.
 2. **Same giver.** The route already stops at this NPC at the quest's recommended level. Accept it with the other accepts on that visit, before anyone leaves. Do its objectives on the trip that leaves. Turn it in with that NPC's turn-ins. A giver you met earlier does not count when this quest's recommended level is still ahead.
 3. **Nearest stop.** Nothing above matched. Insert the whole quest beside the closest pin, after quests of a lower recommended level. Inside a leveling chapter, a Wowhead level above that chapter's end does not count as the route having reached it. The quest waits at the end of the chapter.
 
+## Same trip
+
+Past level 20 there is no published speed run to copy. Place an extra quest the way that speed run places a new one. The leveling spine stays in order.
+
+Accept it with the giver the route is already visiting, once the route has reached the quest's level. Do the objective on the classic trip that already crosses that spot. Turn it in on the way back to that NPC. Do not add a trip, and do not start a chain in the middle. A recommended level that is still above the steps ahead waits until after those steps, so the tracker does not turn around when the character dings. An accept with no turn-in is handed in on the later chapter that already stops at that NPC. The full pattern is in [era-forever-weave](../era-forever-weave/SKILL.md).
+
 Leave it out of the first wave when the guide does not know the NPC offers it yet. A follow-up that needs a turn-in keeps `dependsOn` on that turn-in.
 
 ## Shape of a quest

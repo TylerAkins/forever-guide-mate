@@ -1,7 +1,7 @@
 local _, ns = ...
 
 -- Skyborne starter path for Zephras Isle, levels 1-14.
--- Route order follows the RestedXP 1-14 Zephras Isle speedrun: grove
+-- Route order follows the 1-14 Zephras Isle speed run: grove
 -- kills, the watchtower, then the southbound Shen'dar and Valanaar loops.
 -- Accepts stay chained to the previous open step so the tracker cannot
 -- jump to a later hub.
