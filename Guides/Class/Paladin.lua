@@ -5,6 +5,7 @@ local _, ns = ...
 -- are woven in after the quest that unlocks them, or by the level the NPC offers them.
 -- Dungeon, raid, and PvP quests stay in their own guides.
 -- A quest with no start pin is named below and is not given a coordinate.
+-- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
 -- Coordinates have not been validated in the Forever client.
 -- Horde paladins in Forever are Undead. Classic paladin quests stay on the races
 -- the database lists, which are Alliance. Orc, Troll, Tauren, and Horde Skyborne
