@@ -9,6 +9,9 @@ local _, ns = ...
 -- Forever quests woven into this route:
 -- Archaic Rune
 -- Embracing the Elements
+-- Call of Earth
+-- Call of Earth
+-- Call of Earth
 -- Earth Sapta
 -- Call of Fire
 -- Call of Fire
@@ -29,10 +32,7 @@ local _, ns = ...
 -- Water Sapta
 -- Call of Water
 -- Left out (dungeon quest): The Darkreaver Menace, Da Voodoo
--- Left out (needs 94373, which is not on this route): Call of Earth
--- Left out (needs 94374, which is not on this route): Call of Earth
 -- Left out (needs 94503, which is not on this route): Call of Water
--- Left out (needs 96243, which is not on this route): Call of Earth
 -- Left out (no start pin): Clarifying Air, Answering Air's Call, Heavy Metal, A Particular Set of Skills, Efficiency Is Priority One, Commit to Quality, Purifying Fire, Purging Earth, Cleansing Water, Answering Fire's Call, Answering Earth's Call, Answering Water's Call (+8 more)
 
 local MAP = {
@@ -451,9 +451,147 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-94472-earth-sapta",
+            id = "accept-94373-call-of-earth",
             kind = "accept",
             priority = 190,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Dun Morogh.",
+            complete = QuestState(94373, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
+                    "Travel to Teo Hammerstorm in Dun Morogh."),
+            },
+        },
+        {
+            id = "objective-94373-call-of-earth",
+            kind = "objective",
+            priority = 200,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Call of Earth: Iceclaw Bear Pendant.",
+            dependsOn = { "accept-94373-call-of-earth" },
+            complete = QuestState(94373, "complete"),
+            route = {
+                Point(MAP.DUNMOROGH, 0.2740, 0.8080, "Frostmane Troll Whelp",
+                    "Travel to Frostmane Troll Whelp in Dun Morogh."),
+                Point(MAP.DUNMOROGH, 0.3040, 0.7940, "Frostmane Novice",
+                    "Travel to Frostmane Novice in Dun Morogh."),
+            },
+        },
+        {
+            id = "turnin-94373-call-of-earth",
+            kind = "turnin",
+            priority = 210,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Dun Morogh.",
+            dependsOn = { "objective-94373-call-of-earth" },
+            complete = QuestState(94373, "completed"),
+            route = {
+                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
+                    "Travel to Teo Hammerstorm in Dun Morogh."),
+            },
+        },
+        {
+            id = "accept-94374-call-of-earth",
+            kind = "accept",
+            priority = 220,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from Teo Hammerstorm in Dun Morogh.",
+            dependsOn = { "turnin-94373-call-of-earth" },
+            complete = QuestState(94374, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
+                    "Travel to Teo Hammerstorm in Dun Morogh."),
+            },
+        },
+        {
+            id = "turnin-94374-call-of-earth",
+            kind = "turnin",
+            priority = 230,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar.",
+            dependsOn = { "accept-94374-call-of-earth" },
+            complete = QuestState(94374, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
+                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth in Mulgore."),
+            },
+        },
+        {
+            id = "accept-94375-call-of-earth",
+            kind = "accept",
+            priority = 240,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar.",
+            dependsOn = { "turnin-94374-call-of-earth" },
+            complete = QuestState(94375, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
+                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
+                    "Travel to Minor Manifestation of Earth in Mulgore."),
+            },
+        },
+        {
+            id = "turnin-94375-call-of-earth",
+            kind = "turnin",
+            priority = 250,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 7 },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Call of Earth to Teo Hammerstorm in Dun Morogh.",
+            dependsOn = { "accept-94375-call-of-earth" },
+            complete = QuestState(94375, "completed"),
+            route = {
+                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
+                    "Travel to Teo Hammerstorm in Dun Morogh."),
+            },
+        },
+        {
+            id = "accept-94472-earth-sapta",
+            kind = "accept",
+            priority = 260,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -471,7 +609,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94472-earth-sapta",
             kind = "turnin",
-            priority = 200,
+            priority = 270,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -490,7 +628,7 @@ ns:RegisterGuide({
         {
             id = "accept-94449-call-of-fire",
             kind = "accept",
-            priority = 210,
+            priority = 280,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -510,7 +648,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94449-call-of-fire",
             kind = "turnin",
-            priority = 220,
+            priority = 290,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -529,7 +667,7 @@ ns:RegisterGuide({
         {
             id = "accept-94465-call-of-fire",
             kind = "accept",
-            priority = 230,
+            priority = 300,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -548,7 +686,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94465-call-of-fire",
             kind = "turnin",
-            priority = 240,
+            priority = 310,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -567,7 +705,7 @@ ns:RegisterGuide({
         {
             id = "accept-94466-call-of-fire",
             kind = "accept",
-            priority = 250,
+            priority = 320,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -586,7 +724,7 @@ ns:RegisterGuide({
         {
             id = "objective-94466-call-of-fire",
             kind = "objective",
-            priority = 260,
+            priority = 330,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -607,7 +745,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94466-call-of-fire",
             kind = "turnin",
-            priority = 270,
+            priority = 340,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -626,7 +764,7 @@ ns:RegisterGuide({
         {
             id = "accept-94467-call-of-fire",
             kind = "accept",
-            priority = 280,
+            priority = 350,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -645,7 +783,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94467-call-of-fire",
             kind = "turnin",
-            priority = 290,
+            priority = 360,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -666,7 +804,7 @@ ns:RegisterGuide({
         {
             id = "accept-94468-call-of-fire",
             kind = "accept",
-            priority = 300,
+            priority = 370,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -687,7 +825,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94468-call-of-fire",
             kind = "turnin",
-            priority = 310,
+            priority = 380,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -706,7 +844,7 @@ ns:RegisterGuide({
         {
             id = "accept-94473-fire-sapta",
             kind = "accept",
-            priority = 320,
+            priority = 390,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -724,7 +862,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94473-fire-sapta",
             kind = "turnin",
-            priority = 330,
+            priority = 400,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -743,7 +881,7 @@ ns:RegisterGuide({
         {
             id = "accept-97243-call-of-fire",
             kind = "accept",
-            priority = 340,
+            priority = 410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -764,7 +902,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97243-call-of-fire",
             kind = "turnin",
-            priority = 350,
+            priority = 420,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -784,7 +922,7 @@ ns:RegisterGuide({
         {
             id = "accept-97244-call-of-fire",
             kind = "accept",
-            priority = 360,
+            priority = 430,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -803,7 +941,7 @@ ns:RegisterGuide({
         {
             id = "objective-97244-call-of-fire",
             kind = "objective",
-            priority = 370,
+            priority = 440,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -823,7 +961,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97244-call-of-fire",
             kind = "turnin",
-            priority = 380,
+            priority = 450,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -843,7 +981,7 @@ ns:RegisterGuide({
         {
             id = "accept-97245-call-of-fire",
             kind = "accept",
-            priority = 390,
+            priority = 460,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -862,7 +1000,7 @@ ns:RegisterGuide({
         {
             id = "objective-97245-call-of-fire",
             kind = "objective",
-            priority = 400,
+            priority = 470,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -882,7 +1020,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97245-call-of-fire",
             kind = "turnin",
-            priority = 410,
+            priority = 480,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -902,7 +1040,7 @@ ns:RegisterGuide({
         {
             id = "accept-97257-call-of-fire",
             kind = "accept",
-            priority = 420,
+            priority = 490,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -922,7 +1060,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97257-call-of-fire",
             kind = "turnin",
-            priority = 430,
+            priority = 500,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -942,7 +1080,7 @@ ns:RegisterGuide({
         {
             id = "accept-1528-call-of-water",
             kind = "accept",
-            priority = 440,
+            priority = 510,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -961,7 +1099,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1528-call-of-water",
             kind = "turnin",
-            priority = 450,
+            priority = 520,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -981,7 +1119,7 @@ ns:RegisterGuide({
         {
             id = "accept-94495-call-of-water",
             kind = "accept",
-            priority = 460,
+            priority = 530,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -999,7 +1137,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94495-call-of-water",
             kind = "turnin",
-            priority = 470,
+            priority = 540,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1018,7 +1156,7 @@ ns:RegisterGuide({
         {
             id = "accept-94497-call-of-water",
             kind = "accept",
-            priority = 480,
+            priority = 550,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1037,7 +1175,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94497-call-of-water",
             kind = "turnin",
-            priority = 490,
+            priority = 560,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1056,7 +1194,7 @@ ns:RegisterGuide({
         {
             id = "accept-94499-call-of-water",
             kind = "accept",
-            priority = 500,
+            priority = 570,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1075,7 +1213,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94499-call-of-water",
             kind = "turnin",
-            priority = 510,
+            priority = 580,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1094,7 +1232,7 @@ ns:RegisterGuide({
         {
             id = "accept-94500-call-of-water",
             kind = "accept",
-            priority = 520,
+            priority = 590,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1113,7 +1251,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94500-call-of-water",
             kind = "turnin",
-            priority = 530,
+            priority = 600,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1132,7 +1270,7 @@ ns:RegisterGuide({
         {
             id = "accept-94501-call-of-water",
             kind = "accept",
-            priority = 540,
+            priority = 610,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1151,7 +1289,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94501-call-of-water",
             kind = "turnin",
-            priority = 550,
+            priority = 620,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1170,7 +1308,7 @@ ns:RegisterGuide({
         {
             id = "accept-94502-call-of-water",
             kind = "accept",
-            priority = 560,
+            priority = 630,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1189,7 +1327,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94502-call-of-water",
             kind = "turnin",
-            priority = 570,
+            priority = 640,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1208,7 +1346,7 @@ ns:RegisterGuide({
         {
             id = "accept-94616-water-sapta",
             kind = "accept",
-            priority = 580,
+            priority = 650,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1226,7 +1364,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94616-water-sapta",
             kind = "turnin",
-            priority = 590,
+            priority = 660,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -1245,7 +1383,7 @@ ns:RegisterGuide({
         {
             id = "accept-1531-call-of-air",
             kind = "accept",
-            priority = 600,
+            priority = 670,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1264,7 +1402,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1531-call-of-air",
             kind = "turnin",
-            priority = 610,
+            priority = 680,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1284,7 +1422,7 @@ ns:RegisterGuide({
         {
             id = "accept-8410-elemental-mastery",
             kind = "accept",
-            priority = 620,
+            priority = 690,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1305,7 +1443,7 @@ ns:RegisterGuide({
         {
             id = "turnin-8410-elemental-mastery",
             kind = "turnin",
-            priority = 630,
+            priority = 700,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1325,7 +1463,7 @@ ns:RegisterGuide({
         {
             id = "accept-3084-rune-inscribed-tablet",
             kind = "accept",
-            priority = 640,
+            priority = 710,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1343,7 +1481,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3084-rune-inscribed-tablet",
             kind = "turnin",
-            priority = 650,
+            priority = 720,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1362,7 +1500,7 @@ ns:RegisterGuide({
         {
             id = "accept-3089-rune-inscribed-parchment",
             kind = "accept",
-            priority = 660,
+            priority = 730,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1380,7 +1518,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3089-rune-inscribed-parchment",
             kind = "turnin",
-            priority = 670,
+            priority = 740,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1399,7 +1537,7 @@ ns:RegisterGuide({
         {
             id = "accept-3093-rune-inscribed-note",
             kind = "accept",
-            priority = 680,
+            priority = 750,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1417,7 +1555,7 @@ ns:RegisterGuide({
         {
             id = "turnin-3093-rune-inscribed-note",
             kind = "turnin",
-            priority = 690,
+            priority = 760,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1436,7 +1574,7 @@ ns:RegisterGuide({
         {
             id = "accept-1462-earth-sapta",
             kind = "accept",
-            priority = 700,
+            priority = 770,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1454,7 +1592,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1462-earth-sapta",
             kind = "turnin",
-            priority = 710,
+            priority = 780,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1473,7 +1611,7 @@ ns:RegisterGuide({
         {
             id = "accept-1463-earth-sapta",
             kind = "accept",
-            priority = 720,
+            priority = 790,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1491,7 +1629,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1463-earth-sapta",
             kind = "turnin",
-            priority = 730,
+            priority = 800,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1510,7 +1648,7 @@ ns:RegisterGuide({
         {
             id = "accept-1464-fire-sapta",
             kind = "accept",
-            priority = 740,
+            priority = 810,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1528,7 +1666,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1464-fire-sapta",
             kind = "turnin",
-            priority = 750,
+            priority = 820,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1547,7 +1685,7 @@ ns:RegisterGuide({
         {
             id = "accept-1522-call-of-fire",
             kind = "accept",
-            priority = 760,
+            priority = 830,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1566,7 +1704,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1522-call-of-fire",
             kind = "turnin",
-            priority = 770,
+            priority = 840,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1586,7 +1724,7 @@ ns:RegisterGuide({
         {
             id = "accept-1523-call-of-fire",
             kind = "accept",
-            priority = 780,
+            priority = 850,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1606,7 +1744,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1523-call-of-fire",
             kind = "turnin",
-            priority = 790,
+            priority = 860,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1626,7 +1764,7 @@ ns:RegisterGuide({
         {
             id = "accept-2983-call-of-fire",
             kind = "accept",
-            priority = 800,
+            priority = 870,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1646,7 +1784,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2983-call-of-fire",
             kind = "turnin",
-            priority = 810,
+            priority = 880,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1666,7 +1804,7 @@ ns:RegisterGuide({
         {
             id = "accept-2984-call-of-fire",
             kind = "accept",
-            priority = 820,
+            priority = 890,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1686,7 +1824,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2984-call-of-fire",
             kind = "turnin",
-            priority = 830,
+            priority = 900,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1706,7 +1844,7 @@ ns:RegisterGuide({
         {
             id = "accept-1524-call-of-fire",
             kind = "accept",
-            priority = 840,
+            priority = 910,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1726,7 +1864,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1524-call-of-fire",
             kind = "turnin",
-            priority = 850,
+            priority = 920,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1746,7 +1884,7 @@ ns:RegisterGuide({
         {
             id = "accept-1525-call-of-fire",
             kind = "accept",
-            priority = 860,
+            priority = 930,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1766,7 +1904,7 @@ ns:RegisterGuide({
         {
             id = "objective-1525-call-of-fire",
             kind = "objective",
-            priority = 870,
+            priority = 940,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1786,7 +1924,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1525-call-of-fire",
             kind = "turnin",
-            priority = 880,
+            priority = 950,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1806,7 +1944,7 @@ ns:RegisterGuide({
         {
             id = "accept-1526-call-of-fire",
             kind = "accept",
-            priority = 890,
+            priority = 960,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1826,7 +1964,7 @@ ns:RegisterGuide({
         {
             id = "objective-1526-call-of-fire",
             kind = "objective",
-            priority = 900,
+            priority = 970,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1846,7 +1984,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1526-call-of-fire",
             kind = "turnin",
-            priority = 910,
+            priority = 980,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1868,7 +2006,7 @@ ns:RegisterGuide({
         {
             id = "accept-1527-call-of-fire",
             kind = "accept",
-            priority = 920,
+            priority = 990,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1890,7 +2028,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1527-call-of-fire",
             kind = "turnin",
-            priority = 930,
+            priority = 1000,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1910,7 +2048,7 @@ ns:RegisterGuide({
         {
             id = "accept-972-water-sapta",
             kind = "accept",
-            priority = 940,
+            priority = 1010,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1928,7 +2066,7 @@ ns:RegisterGuide({
         {
             id = "turnin-972-water-sapta",
             kind = "turnin",
-            priority = 950,
+            priority = 1020,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1947,7 +2085,7 @@ ns:RegisterGuide({
         {
             id = "accept-1103-call-of-water",
             kind = "accept",
-            priority = 960,
+            priority = 1030,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1966,7 +2104,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1103-call-of-water",
             kind = "turnin",
-            priority = 970,
+            priority = 1040,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -1986,7 +2124,7 @@ ns:RegisterGuide({
         {
             id = "accept-1529-call-of-water",
             kind = "accept",
-            priority = 980,
+            priority = 1050,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2006,7 +2144,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1529-call-of-water",
             kind = "turnin",
-            priority = 990,
+            priority = 1060,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2026,7 +2164,7 @@ ns:RegisterGuide({
         {
             id = "accept-2985-call-of-water",
             kind = "accept",
-            priority = 1000,
+            priority = 1070,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2045,7 +2183,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2985-call-of-water",
             kind = "turnin",
-            priority = 1010,
+            priority = 1080,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2064,7 +2202,7 @@ ns:RegisterGuide({
         {
             id = "accept-2986-call-of-water",
             kind = "accept",
-            priority = 1020,
+            priority = 1090,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2083,7 +2221,7 @@ ns:RegisterGuide({
         {
             id = "turnin-2986-call-of-water",
             kind = "turnin",
-            priority = 1030,
+            priority = 1100,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2102,7 +2240,7 @@ ns:RegisterGuide({
         {
             id = "accept-94494-call-of-water",
             kind = "accept",
-            priority = 1040,
+            priority = 1110,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2121,7 +2259,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94494-call-of-water",
             kind = "turnin",
-            priority = 1050,
+            priority = 1120,
             conditions = {
                 all = {
                     { faction = "Alliance" },
@@ -2140,7 +2278,7 @@ ns:RegisterGuide({
         {
             id = "accept-1530-call-of-water",
             kind = "accept",
-            priority = 1060,
+            priority = 1130,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2160,7 +2298,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1530-call-of-water",
             kind = "turnin",
-            priority = 1070,
+            priority = 1140,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2180,7 +2318,7 @@ ns:RegisterGuide({
         {
             id = "accept-1535-call-of-water",
             kind = "accept",
-            priority = 1080,
+            priority = 1150,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2200,7 +2338,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1535-call-of-water",
             kind = "turnin",
-            priority = 1090,
+            priority = 1160,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2220,7 +2358,7 @@ ns:RegisterGuide({
         {
             id = "accept-1536-call-of-water",
             kind = "accept",
-            priority = 1100,
+            priority = 1170,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2240,7 +2378,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1536-call-of-water",
             kind = "turnin",
-            priority = 1110,
+            priority = 1180,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2260,7 +2398,7 @@ ns:RegisterGuide({
         {
             id = "accept-1534-call-of-water",
             kind = "accept",
-            priority = 1120,
+            priority = 1190,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2280,7 +2418,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1534-call-of-water",
             kind = "turnin",
-            priority = 1130,
+            priority = 1200,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2300,7 +2438,7 @@ ns:RegisterGuide({
         {
             id = "accept-220-call-of-water",
             kind = "accept",
-            priority = 1140,
+            priority = 1210,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2320,7 +2458,7 @@ ns:RegisterGuide({
         {
             id = "turnin-220-call-of-water",
             kind = "turnin",
-            priority = 1150,
+            priority = 1220,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2340,7 +2478,7 @@ ns:RegisterGuide({
         {
             id = "accept-63-call-of-water",
             kind = "accept",
-            priority = 1160,
+            priority = 1230,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2360,7 +2498,7 @@ ns:RegisterGuide({
         {
             id = "turnin-63-call-of-water",
             kind = "turnin",
-            priority = 1170,
+            priority = 1240,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2380,7 +2518,7 @@ ns:RegisterGuide({
         {
             id = "accept-100-call-of-water",
             kind = "accept",
-            priority = 1180,
+            priority = 1250,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2400,7 +2538,7 @@ ns:RegisterGuide({
         {
             id = "turnin-100-call-of-water",
             kind = "turnin",
-            priority = 1190,
+            priority = 1260,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2420,7 +2558,7 @@ ns:RegisterGuide({
         {
             id = "accept-96-call-of-water",
             kind = "accept",
-            priority = 1200,
+            priority = 1270,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2440,7 +2578,7 @@ ns:RegisterGuide({
         {
             id = "turnin-96-call-of-water",
             kind = "turnin",
-            priority = 1210,
+            priority = 1280,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2460,7 +2598,7 @@ ns:RegisterGuide({
         {
             id = "accept-1532-call-of-air",
             kind = "accept",
-            priority = 1220,
+            priority = 1290,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2479,7 +2617,7 @@ ns:RegisterGuide({
         {
             id = "turnin-1532-call-of-air",
             kind = "turnin",
-            priority = 1230,
+            priority = 1300,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2499,7 +2637,7 @@ ns:RegisterGuide({
         {
             id = "accept-8411-mastering-the-elements",
             kind = "accept",
-            priority = 1240,
+            priority = 1310,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2518,7 +2656,7 @@ ns:RegisterGuide({
         {
             id = "objective-8411-mastering-the-elements",
             kind = "objective",
-            priority = 1250,
+            priority = 1320,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2541,7 +2679,7 @@ ns:RegisterGuide({
         {
             id = "turnin-8411-mastering-the-elements",
             kind = "turnin",
-            priority = 1260,
+            priority = 1330,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2560,7 +2698,7 @@ ns:RegisterGuide({
         {
             id = "accept-8412-spirit-totem",
             kind = "accept",
-            priority = 1270,
+            priority = 1340,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2580,7 +2718,7 @@ ns:RegisterGuide({
         {
             id = "turnin-8412-spirit-totem",
             kind = "turnin",
-            priority = 1280,
+            priority = 1350,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2600,7 +2738,7 @@ ns:RegisterGuide({
         {
             id = "accept-7667-material-assistance",
             kind = "accept",
-            priority = 1290,
+            priority = 1360,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2619,7 +2757,7 @@ ns:RegisterGuide({
         {
             id = "objective-7667-material-assistance",
             kind = "objective",
-            priority = 1300,
+            priority = 1370,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2659,7 +2797,7 @@ ns:RegisterGuide({
         {
             id = "turnin-7667-material-assistance",
             kind = "turnin",
-            priority = 1310,
+            priority = 1380,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2679,7 +2817,7 @@ ns:RegisterGuide({
         {
             id = "accept-7669-again-into-the-great-ossuary",
             kind = "accept",
-            priority = 1320,
+            priority = 1390,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2697,7 +2835,7 @@ ns:RegisterGuide({
         {
             id = "turnin-7669-again-into-the-great-ossuary",
             kind = "turnin",
-            priority = 1330,
+            priority = 1400,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2716,7 +2854,7 @@ ns:RegisterGuide({
         {
             id = "accept-8259-a-more-fitting-reward",
             kind = "accept",
-            priority = 1340,
+            priority = 1410,
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -2734,7 +2872,7 @@ ns:RegisterGuide({
         {
             id = "turnin-8259-a-more-fitting-reward",
             kind = "turnin",
-            priority = 1350,
+            priority = 1420,
             conditions = {
                 all = {
                     { faction = "Horde" },
