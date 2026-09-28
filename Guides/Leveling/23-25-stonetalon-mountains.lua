@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 23-25.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Stonetalon Supply Run turns in at Freewind Post. Pigments for Paints starts in Thunder Bluff, and this chapter does not go there.
+-- Left out: Stonetalon Supply Run turns in at Freewind Post. Pigments for Paints starts in Thunder Bluff, and this chapter does not go there. Ordanus is killed in the later Ashenvale chapter, and no chapter after that stops at Braelyn.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -33,7 +33,7 @@ ns:RegisterGuide({
     id = "leveling-era-23-25-stonetalon-mountains",
     title = "23-25 Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -87,6 +87,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.4727, 0.6427, "Tsunaman",
                     "Travel to Tsunaman."),
+            },
+        },
+        {
+            id = "turnin-6421-boulderslide-ravine",
+            kind = "turnin",
+            priority = 65,
+            conditions = {
+                all = {
+                    { level = { min = 14 } },
+                    { quest = { id = 6421, state = "complete" } },
+                },
+            },
+            text = "Turn in Boulderslide Ravine to Mor'rogal in Sun Rock Retreat.",
+            complete = QuestState(6421, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.4719, 0.6416, "Mor'rogal",
+                    "Travel to Mor'rogal."),
             },
         },
         {

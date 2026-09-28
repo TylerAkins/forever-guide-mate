@@ -44,6 +44,16 @@ Classic accepts, objectives, and turn-ins stay in order. Move only the woven que
 - A quest stays out when the start is another zone, a later chapter already walks that ground, or the quest is the middle of a chain this route never starts. Scramble is that chain: it begins in Westfall or the Field of Giants and only later reaches Pocket Litter. Name the omission in the header.
 - A classic quest this chapter already accepts, and then never finishes, gets its objective on that same trip. Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in on the next visit to Mebok.
 
+## Hand it in
+
+Search every guide, Leveling and Era, for an accept that has no turn-in. The hand-in goes in the later chapter that already stops at that NPC, on that visit, before the next quest the NPC gives. Do not add a second hand-in when another guide already has one.
+
+- A handoff in another file, with no objectives, is gated with quest state `active` and completes on `completed`. It only shows while the quest is still in the log.
+- A quest whose objectives are already done in an earlier chapter is gated with state `complete`. The hand-in waits until that work is finished. If a later chapter still has objectives for it, leave the turn-in for the chapter that finishes the work and then stops at the NPC.
+- Do not `dependsOn` a step id from another file. Quest state is the cross-guide gate. In the same file, the turn-in `dependsOn` the accept and every objective of that quest, and it keeps that quest's conditions. Every step of one quest in one file has to carry the same conditions.
+- Put the turn-in on the visit where the route is already standing at the recipient, not in the middle of the outing that picked the quest up. Report to Gryan Stoutmantle is accepted in Elwynn and turned in on the first Sentinel Hill visit. Letter to Jin'Zil is accepted at the Crossroads and turned in on the first Malaka'jin visit.
+- If no chapter stops at the recipient, name the quest in the accept chapter's header. Do not add a city trip or a new camp stop to finish it. Report to Kadrak stays named, because no chapter stops at Kadrak.
+
 ## What stays out
 
 - Dungeon quests. They stay in the dungeon guides.

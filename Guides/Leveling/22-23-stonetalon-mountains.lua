@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Stonetalon Mountains, levels 22-23.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble continues a hunt that starts in Westfall, and Pocket Litter is not a stop on the Windshear path. Wet Job is level 32. Rekindle is level 40.
+-- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble continues a hunt that starts in Westfall, and Pocket Litter is not a stop on the Windshear path. Wet Job is level 32. Rekindle is level 40. An Old Colleague turns in to Lomac in Ironforge, and this route does not go there.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -34,7 +34,7 @@ ns:RegisterGuide({
     id = "leveling-era-22-23-stonetalon-mountains",
     title = "22-23 Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -76,6 +76,36 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ASHENVALE, 0.3578, 0.4916, "Faldreas Goeth'Shael",
                     "Travel to Faldreas Goeth'Shael."),
+            },
+        },
+        {
+            id = "turnin-1034-the-ruins-of-stardust",
+            kind = "turnin",
+            priority = 55,
+            conditions = {
+                all = {
+                    { level = { min = 20 } },
+                    { quest = { id = 1034, state = "complete" } },
+                },
+            },
+            text = "Turn in The Ruins of Stardust to Pelturas Whitemoon in Astranaar.",
+            complete = QuestState(1034, "completed"),
+            route = {
+                Point(MAP.ASHENVALE, 0.3737, 0.5178, "Pelturas Whitemoon",
+                    "Travel to Pelturas Whitemoon."),
+            },
+        },
+        {
+            id = "turnin-1483-ziz-fizziks",
+            kind = "turnin",
+            priority = 70,
+            conditions = { level = { min = 16 } },
+            text = "Turn in Ziz Fizziks to Ziz Fizziks in Windshear Crag.",
+            dependsOn = { "accept-1483-ziz-fizziks" },
+            complete = QuestState(1483, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.5900, 0.6250, "Ziz Fizziks",
+                    "Travel to Ziz Fizziks."),
             },
         },
         {
@@ -204,6 +234,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.5950, 0.6716, "Gaxim Rustfizzle",
                     "Travel to Gaxim Rustfizzle."),
+            },
+        },
+        {
+            id = "objective-1134-pridewings-of-stonetalon",
+            kind = "objective",
+            priority = 200,
+            conditions = {
+                all = {
+                    { level = { min = 18 } },
+                    { quest = { id = 1134, state = "active" } },
+                },
+            },
+            useClientPin = true,
+            text = "Kill Pridewing wyverns beside Mirkfallon Lake, on the way to Stonetalon Peak, and collect 12 Pridewing Venom Sac. No saved spot for the wyverns, so the guide follows the pin in your quest log.",
+            complete = QuestState(1134, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.4800, 0.4100, "Mirkfallon Lake",
+                    "Travel to Mirkfallon Lake."),
             },
         },
         {
