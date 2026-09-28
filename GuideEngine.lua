@@ -349,6 +349,11 @@ local function ApplyQuestPrerequisites(guide)
     -- A turn-in is never ready until every objective authored for that quest is
     -- complete. Augmenting legacy data here keeps the public guide format
     -- backward compatible while the lint enforces the finalized invariant.
+    local function GoalByID(goalID)
+        if not guide.goalByID then return nil end
+        local index = guide.goalByID[goalID]
+        return index and guide.goals[index] or nil
+    end
     for _, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
             local questID = GoalQuestID(goal)
@@ -356,7 +361,18 @@ local function ApplyQuestPrerequisites(guide)
             goal.dependsOn = goal.dependsOn or {}
             for _, dependency in ipairs(goal.dependsOn) do present[dependency] = true end
             for _, objectiveID in ipairs(objectives[questID] or {}) do
-                if not present[objectiveID] then goal.dependsOn[#goal.dependsOn + 1] = objectiveID end
+                if present[objectiveID] then
+                    -- already linked
+                else
+                    local objective = GoalByID(objectiveID)
+                    if goal.segmentID and objective and objective.segmentID
+                        and objective.segmentID ~= goal.segmentID then
+                        -- Shared quest ids repeat on every starter chapter in the
+                        -- merged Era guide. Only wire objectives from this chapter.
+                    else
+                        goal.dependsOn[#goal.dependsOn + 1] = objectiveID
+                    end
+                end
             end
         end
     end
@@ -370,12 +386,17 @@ local function ApplyQuestPrerequisites(guide)
                     local group = { mode = rule.mode, conditions = rule.conditions, questIDs = {}, goalIDs = {} }
                     for _, questID in ipairs(rule.quests) do
                         local turnin = turnins[questID]
-                        if not turnin or turnin.index >= goalIndex then
+                        if turnin and turnin.index < goalIndex then
+                            group.questIDs[#group.questIDs + 1] = questID
+                            group.goalIDs[#group.goalIDs + 1] = turnin.id
+                        elseif rule.mode == "all" then
                             error(("Forever GuideMate: guide %s accept %s needs turn-in quest %d")
                                 :format(guide.id, goal.id, questID), 3)
                         end
-                        group.questIDs[#group.questIDs + 1] = questID
-                        group.goalIDs[#group.goalIDs + 1] = turnin.id
+                    end
+                    if #group.questIDs == 0 then
+                        error(("Forever GuideMate: guide %s accept %s needs at least one prerequisite turn-in")
+                            :format(guide.id, goal.id), 3)
                     end
                     goal.questPrerequisites[#goal.questPrerequisites + 1] = group
                 end

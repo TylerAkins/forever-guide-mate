@@ -209,3 +209,4 @@ ns:RegisterQuestPrerequisite({
     conditions = { faction = "Horde" },
     note = "Thrall's Hidden Enemies follow-up is offered after the Lieutenant's Insignia is returned.",
 })
+
