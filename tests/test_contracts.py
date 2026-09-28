@@ -614,6 +614,8 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "turnin-1134-pridewings-of-stonetalon"', ashenvale_later)
         needles = (ROOT / "Guides/Era/27-29-thousand-needles.lua").read_text(encoding="utf-8")
         self.assertIn('id = "turnin-1063-the-elder-crone"', needles)
+        wetlands = (ROOT / "Guides/Era/24-27-wetlands.lua").read_text(encoding="utf-8")
+        self.assertIn('id = "turnin-1072-an-old-colleague"', wetlands)
         self.assertIn("QuestState(97250,", southern)
         self.assertIn("QuestState(98093,", southern)
         self.assertIn("QuestState(97279,", durotar)
