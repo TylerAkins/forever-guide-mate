@@ -174,6 +174,7 @@ local function QuestID(goal)
 end
 
 local pinCache = {}
+local pinCacheCount = 0
 local pinTokens = {}
 local nextPinToken = 0
 
@@ -200,7 +201,7 @@ local function ObjectiveKey(state, questID)
         for index, objective in ipairs(entry.objectives) do
             if type(objective) == "table" then
                 parts[#parts + 1] = tostring(index)
-                parts[#parts + 1] = objective.finished and "1" or "0"
+                parts[#parts + 1] = (objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0)) and "1" or "0"
             end
         end
     end
@@ -209,6 +210,7 @@ end
 
 function Navigation:InvalidateClientPins()
     pinCache = {}
+    pinCacheCount = 0
 end
 
 function Navigation:ClientPin(goal, mapID, api, state)
@@ -233,6 +235,9 @@ function Navigation:ClientPin(goal, mapID, api, state)
             return nil
         end
         return cached.mapID, cached.x, cached.y
+    end
+    if self.deferClientPins then
+        return nil
     end
     local function OnMap(uiMapID)
         if type(uiMapID) ~= "number" then
@@ -259,10 +264,20 @@ function Navigation:ClientPin(goal, mapID, api, state)
         end
     end
     if x then
+        if pinCacheCount > 32 then
+            pinCache = {}
+            pinCacheCount = 0
+        end
         pinCache[cacheKey] = { mapID = pinMap, x = x, y = y }
+        pinCacheCount = pinCacheCount + 1
         return pinMap, x, y
     end
+    if pinCacheCount > 32 then
+        pinCache = {}
+        pinCacheCount = 0
+    end
     pinCache[cacheKey] = false
+    pinCacheCount = pinCacheCount + 1
 end
 
 function Navigation:ApplyClientPin(goal, leg, api, state)
