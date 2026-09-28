@@ -53,6 +53,12 @@ Load("Guides/Leveling/20-22-stonetalon-mountains.lua")
 Load("Guides/Leveling/22-23-southern-barrens.lua")
 Load("Guides/Leveling/22-23-stonetalon-mountains.lua")
 Load("Guides/Leveling/23-25-stonetalon-mountains.lua")
+Load("Guides/Leveling/25-25-southern-barrens.lua")
+Load("Guides/Leveling/25-26-thousand-needles.lua")
+Load("Guides/Leveling/26-27-ashenvale.lua")
+Load("Guides/Leveling/27-27-stonetalon-mountains.lua")
+Load("Guides/Leveling/27-29-thousand-needles.lua")
+Load("Guides/Leveling/29-30-hillsbrad-foothills.lua")
 Load("Guides/Leveling/1-12-dun-morogh.lua")
 Load("Guides/Leveling/1-12-elwynn-forest.lua")
 Load("Guides/Leveling/1-12-teldrassil.lua")
@@ -63,8 +69,11 @@ Load("Guides/Leveling/18-20-redridge-mountains.lua")
 Load("Guides/Leveling/20-21-darkshore.lua")
 Load("Guides/Leveling/21-22-ashenvale.lua")
 Load("Guides/Leveling/23-24-darkshore.lua")
+Load("Guides/Leveling/24-24-ashenvale.lua")
+Load("Guides/Leveling/24-27-wetlands.lua")
 Load("Guides/Leveling/27-28-redridge-mountains.lua")
 Load("Guides/Leveling/28-29-duskwood.lua")
+Load("Guides/Leveling/29-30-ashenvale.lua")
 
 local baseState = {
     faction = "Horde",
@@ -3079,7 +3088,7 @@ function TestEraLeveling()
         Check(segment.faction == "Horde" or segment.faction == "Alliance",
             "every Era chapter names a faction")
     end
-    Equal(chapters, 21, "the merged Era guide includes the converted chapters")
+    Equal(chapters, 30, "the merged Era guide includes the converted chapters")
 
     local function ResetEra()
         ns.charDB.selectedGuide = nil

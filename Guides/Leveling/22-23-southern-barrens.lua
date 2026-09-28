@@ -3,7 +3,7 @@ local _, ns = ...
 -- Horde Era leveling route for the Southern Barrens, levels 22-23.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
 -- Deepmoss Spider Eggs, collected in Sishir Canyon, turn in here on the Ratchet visit. Further Instructions turns in to Sputtervalve on that same visit.
--- Scout Support and Valuable Vantages are worked in Hillsbrad, past this southern loop.
+-- Scout Support and Valuable Vantages have no start pin, so they stay off this route.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 

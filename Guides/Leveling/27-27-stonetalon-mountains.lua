@@ -1,7 +1,8 @@
 local _, ns = ...
 
--- Horde Era leveling route for Stonetalon Mountains, levels 27-27.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for Stonetalon Mountains, levels 27-27.
+-- Mirkweed Pods for Pigments for Paints are collected at Mirkfallon Lake with the Gaea Seeds, and turned in to Tah Winterhoof on the Thunder Bluff visit.
+-- Scramble, Wet Job, and Rekindle are the Pocket Litter chain. No chapter stops at Pocket Litter, and Wet Job is level 32. Stonetalon Supply Run has no start pin. Bloodfury Trinkets is on the 23-25 pass. The Horn of Xelthos starts at a Dead Drop in Silverpine.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -31,9 +32,9 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-27-27-stonetalon-mountains",
-    title = "27-27 Stonetalon Mountains (Era)",
+    title = "27-27 Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -122,6 +123,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.4800, 0.4100, "Cycle of Rebirth",
                     "Travel to Cycle of Rebirth."),
+            },
+        },
+        {
+            id = "objective-97538-pigments-for-paints",
+            kind = "objective",
+            priority = 85,
+            conditions = {
+                all = {
+                    { level = { min = 26 } },
+                    { quest = { id = 97538, state = "active" } },
+                },
+            },
+            useClientPin = true,
+            text = "Collect 30 Mirkweed Pods in Mirkfallon Lake. No saved spot for the pods, so the guide follows the pin in your quest log.",
+            complete = QuestState(97538, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.4800, 0.4100, "Mirkfallon Lake",
+                    "Travel to Mirkfallon Lake."),
             },
         },
         {
@@ -427,6 +446,24 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.4718, 0.6108, "Maggran Earthbinder",
                     "Travel to Maggran Earthbinder."),
+            },
+        },
+        {
+            id = "turnin-97538-pigments-for-paints",
+            kind = "turnin",
+            priority = 365,
+            conditions = {
+                all = {
+                    { level = { min = 26 } },
+                    { quest = { id = 97538, state = "active" } },
+                },
+            },
+            text = "Turn in Pigments for Paints to Tah Winterhoof in Thunder Bluff.",
+            dependsOn = { "objective-97538-pigments-for-paints" },
+            complete = QuestState(97538, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.5400, 0.4740, "Tah Winterhoof",
+                    "Travel to Tah Winterhoof."),
             },
         },
         {
