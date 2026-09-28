@@ -1,7 +1,7 @@
 local _, ns = ...
 
--- Horde Era leveling route for Hillsbrad Foothills, levels 29-30.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for Hillsbrad Foothills, levels 29-30.
+-- Hillsbrad has no new Forever quests. Scout Support and Valuable Vantages have no start pin.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,9 +32,9 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-29-30-hillsbrad-foothills",
-    title = "29-30 Hillsbrad Foothills (Era)",
+    title = "29-30 Hillsbrad Foothills",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },

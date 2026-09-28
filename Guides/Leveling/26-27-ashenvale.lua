@@ -1,7 +1,8 @@
 local _, ns = ...
 
--- Horde Era leveling route for Ashenvale, levels 26-27.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for Ashenvale, levels 26-27.
+-- Pigments for Paints is accepted from Tah Winterhoof on this Thunder Bluff visit. The pods are collected at Mirkfallon Lake in the next Stonetalon chapter.
+-- The Great Cat Spirit is offered by Turak Runetotem on an earlier Thunder Bluff visit. Seeking the Kor Gem is a Blackfathom Deeps quest. Repelling Invaders is a level 60 daily for the other faction.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -30,9 +31,9 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-26-27-ashenvale",
-    title = "26-27 Ashenvale (Era)",
+    title = "26-27 Ashenvale",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -50,6 +51,18 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.5479, 0.5129, "Zangen Stonehoof",
                     "Travel to Zangen Stonehoof."),
+            },
+        },
+        {
+            id = "accept-97538-pigments-for-paints",
+            kind = "accept",
+            priority = 30,
+            conditions = { level = { min = 26 } },
+            text = "Accept Pigments for Paints from Tah Winterhoof in Thunder Bluff.",
+            complete = QuestState(97538, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.5400, 0.4740, "Tah Winterhoof",
+                    "Travel to Tah Winterhoof."),
             },
         },
         {
