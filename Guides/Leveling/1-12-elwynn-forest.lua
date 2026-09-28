@@ -44,7 +44,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-elwynn-forest",
     title = "1-12 Elwynn Forest",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -535,7 +535,7 @@ ns:RegisterGuide({
         {
             id = "objective-91743-rascally-rodents",
             kind = "objective",
-            priority = 291,
+            priority = 71,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -613,7 +613,7 @@ ns:RegisterGuide({
         {
             id = "turnin-91743-rascally-rodents",
             kind = "turnin",
-            priority = 351,
+            priority = 111,
             conditions = {
                 all = {
                     { quest = { id = 91741, state = "completed" } },
@@ -1653,7 +1653,7 @@ ns:RegisterGuide({
         {
             id = "objective-99143-bottles-and-baubles",
             kind = "objective",
-            priority = 923,
+            priority = 931,
             conditions = { level = { min = 4 } },
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
             dependsOn = { "accept-99143-bottles-and-baubles" },
@@ -1697,7 +1697,7 @@ ns:RegisterGuide({
         {
             id = "objective-91777-rare-books",
             kind = "objective",
-            priority = 941,
+            priority = 951,
             conditions = {
                 all = {
                     { level = { min = 7 } },
@@ -1926,7 +1926,7 @@ ns:RegisterGuide({
         {
             id = "objective-91733-downstream",
             kind = "objective",
-            priority = 1012,
+            priority = 1061,
             conditions = { level = { min = 7 } },
             text = "Collect the Waterlogged Axe, Waterlogged Saw, and Waterlogged Toolbox downstream from Eastvale.",
             dependsOn = { "accept-91733-downstream" },

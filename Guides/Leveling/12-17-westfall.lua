@@ -40,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-12-17-westfall",
     title = "12-17 Westfall",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -1293,7 +1293,7 @@ ns:RegisterGuide({
         {
             id = "objective-92742-testing-the-wells",
             kind = "objective",
-            priority = 795,
+            priority = 831,
             conditions = { level = { min = 9 } },
             useClientPin = true,
             text = "Testing the Wells: sample the wells at the Jansen Stead and the Molsen Farm. No saved spot for this, so the guide follows the pin in your quest log.",

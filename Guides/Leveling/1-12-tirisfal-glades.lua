@@ -38,7 +38,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 6,
+    revision = 7,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1374,7 +1374,7 @@ ns:RegisterGuide({
         {
             id = "objective-99134-discipline",
             kind = "objective",
-            priority = 792,
+            priority = 522,
             conditions = { level = { min = 4 } },
             text = "Motivate the Deathguards Executor Zygand named. They stand in Brill and along the roads you are already riding, including Deathknell.",
             dependsOn = { "accept-99134-discipline" },
@@ -1387,7 +1387,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99134-discipline",
             kind = "turnin",
-            priority = 793,
+            priority = 951,
             conditions = { level = { min = 4 } },
             text = "Turn in Discipline to Executor Zygand.",
             dependsOn = { "objective-99134-discipline" },
@@ -1400,7 +1400,7 @@ ns:RegisterGuide({
         {
             id = "accept-99141-patience",
             kind = "accept",
-            priority = 794,
+            priority = 952,
             conditions = { level = { min = 4 } },
             text = "Accept Patience from Executor Zygand.",
             dependsOn = { "turnin-99134-discipline" },
@@ -1413,7 +1413,7 @@ ns:RegisterGuide({
         {
             id = "objective-99141-patience",
             kind = "objective",
-            priority = 795,
+            priority = 953,
             conditions = { level = { min = 4 } },
             text = "Collect reports from Deathguard Dillinger, Deathguard Kristof, and Gordo.",
             dependsOn = { "accept-99141-patience" },
@@ -1426,7 +1426,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99141-patience",
             kind = "turnin",
-            priority = 796,
+            priority = 954,
             conditions = { level = { min = 4 } },
             text = "Turn in Patience to Executor Zygand.",
             dependsOn = { "objective-99141-patience" },
@@ -1885,7 +1885,7 @@ ns:RegisterGuide({
         {
             id = "objective-97558-hides-for-the-forsaken",
             kind = "objective",
-            priority = 1182,
+            priority = 1061,
             conditions = { level = { min = 11 } },
             text = "Collect 8 Duskbat Wing Membranes, 6 Darkhound Hides, and 3 Vile Fin Murloc Skins.",
             dependsOn = { "accept-97558-hides-for-the-forsaken" },
@@ -1898,7 +1898,7 @@ ns:RegisterGuide({
         {
             id = "objective-95314-that-shadowvale-green-elixir",
             kind = "objective",
-            priority = 1183,
+            priority = 1488,
             conditions = { level = { min = 7 } },
             text = "Collect 8 Bottles of Whispering Elixir in Shadowvale. A Whispering Horror may drop residue. Use it if it does.",
             dependsOn = { "accept-95314-that-shadowvale-green-elixir" },
@@ -1924,25 +1924,25 @@ ns:RegisterGuide({
         {
             id = "accept-99144-seeking-refuge",
             kind = "accept",
-            priority = 1201,
+            priority = 881,
             conditions = { level = { min = 5 } },
-            text = "Accept Seeking Refuge from Bareth Dawnstone at Crusader's Outpost.",
+            text = "Accept Seeking Refuge from Bareth Dawnstone at the top of the tower in Solliden Farmstead.",
             complete = QuestState(99144, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
         {
             id = "objective-99144-seeking-refuge",
             kind = "objective",
-            priority = 1202,
+            priority = 882,
             conditions = { level = { min = 5 } },
-            text = "Escort Bareth Dawnstone out of Crusader's Outpost.",
+            text = "Escort Bareth Dawnstone out of Solliden Farmstead.",
             dependsOn = { "accept-99144-seeking-refuge" },
             complete = QuestState(99144, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Bareth Dawnstone",
+                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
@@ -2242,7 +2242,7 @@ ns:RegisterGuide({
         {
             id = "turnin-97558-hides-for-the-forsaken",
             kind = "turnin",
-            priority = 1412,
+            priority = 1151,
             conditions = { level = { min = 11 } },
             text = "Turn in Hides for the Forsaken to Shelene Rhobart.",
             dependsOn = { "objective-97558-hides-for-the-forsaken" },
@@ -2255,7 +2255,7 @@ ns:RegisterGuide({
         {
             id = "turnin-99144-seeking-refuge",
             kind = "turnin",
-            priority = 1413,
+            priority = 955,
             conditions = { level = { min = 5 } },
             text = "Turn in Seeking Refuge to Shari Stilwell in Brill.",
             dependsOn = { "objective-99144-seeking-refuge" },
@@ -2268,7 +2268,7 @@ ns:RegisterGuide({
         {
             id = "turnin-95314-that-shadowvale-green-elixir",
             kind = "turnin",
-            priority = 1414,
+            priority = 1490,
             conditions = { level = { min = 7 } },
             text = "Turn in That Shadowvale Green Elixir to Carolai Anise in Brill.",
             dependsOn = { "objective-95314-that-shadowvale-green-elixir" },
