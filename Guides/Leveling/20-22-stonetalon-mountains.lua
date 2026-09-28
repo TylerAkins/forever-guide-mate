@@ -2,7 +2,8 @@ local _, ns = ...
 
 -- Horde Era leveling route for Stonetalon Mountains, levels 20-22.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter. Pigments for Paints starts in Thunder Bluff. Scramble is level 24. Wet Job is level 32. Rekindle is level 40.
+-- The Forever speedrun (17-22 and 20-24 Stonetalon/Barrens) has no new Stonetalon quest. It collects Deepmoss Spider Eggs in Sishir Canyon with Blood Feeders. The turn-in waits for the next Ratchet visit.
+-- Left out: Bloodfury Trinkets is level 26 and stays on the 23-25 chapter, after the harpy trip. Pigments for Paints starts in Thunder Bluff. Scramble is the middle of a hunt that starts in the Field of Giants, and this pass does not go to Pocket Litter. Wet Job is level 32. Rekindle is level 40.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -40,7 +41,7 @@ ns:RegisterGuide({
     id = "leveling-era-20-22-stonetalon-mountains",
     title = "20-22 Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -984,6 +985,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STONETALON, 0.5333, 0.7404, "Deepmoss Creeper",
                     "Travel to Deepmoss Creeper."),
+            },
+        },
+        {
+            id = "objective-1069-deepmoss-spider-eggs",
+            kind = "objective",
+            priority = 670,
+            conditions = { level = { min = 15 } },
+            text = "Collect 15 Deepmoss Egg from the eggs near the trees in Sishir Canyon, with the Deepmoss spiders. A hatchling can call a Deepmoss Matriarch.",
+            dependsOn = { "accept-1069-deepmoss-spider-eggs" },
+            complete = QuestState(1069, "complete"),
+            route = {
+                Point(MAP.STONETALON, 0.5333, 0.7404, "Deepmoss Egg",
+                    "Travel to Deepmoss Egg."),
             },
         },
         {

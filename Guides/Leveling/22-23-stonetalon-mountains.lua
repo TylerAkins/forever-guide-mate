@@ -2,7 +2,8 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Stonetalon Mountains, levels 22-23.
 -- Forever quests from the Stonetalon list that sit on this pass are woven in.
--- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble is level 24. Wet Job is level 32. Rekindle is level 40.
+-- The Forever speedrun does not cover this Windshear and Stonetalon Peak pass, and it lists no new quest here.
+-- Left out: Stonetalon Supply Run has no giver on this route and its objective is a Freewind Post wyvern. Scramble continues a hunt that starts in Westfall, and Pocket Litter is not a stop on the Windshear path. Wet Job is level 32. Rekindle is level 40.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
