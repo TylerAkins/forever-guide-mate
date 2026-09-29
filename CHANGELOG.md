@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.30 - 2026-09-29
+
+- The Tirisfal Glades chapter title no longer starts with 1-12. The library and tracker use Tirisfal Glades.
+
 ## 0.1.29 - 2026-09-29
 
 - Leveling chapter titles now use zone names. Revisited zones use (Part 1), (Part 2), and so on.
