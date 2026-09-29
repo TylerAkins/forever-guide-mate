@@ -25,7 +25,7 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 4,
+    schemaVersion = 6,
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
@@ -111,6 +111,142 @@ local function MigrateStorage(account, character)
         end
         character.schemaVersion = 4
     end
+    if (tonumber(character.schemaVersion) or 1) < 5 then
+        local eraChapterIDs = {
+            ["leveling-era-1-12-durotar"] = "leveling-era-durotar",
+            ["leveling-era-1-12-mulgore"] = "leveling-era-mulgore",
+            ["leveling-era-1-12-tirisfal-glades"] = "leveling-era-tirisfal-glades",
+            ["leveling-era-1-12-dun-morogh"] = "leveling-era-dun-morogh",
+            ["leveling-era-1-12-elwynn-forest"] = "leveling-era-elwynn-forest",
+            ["leveling-era-1-12-teldrassil"] = "leveling-era-teldrassil",
+            ["leveling-era-12-20-barrens"] = "leveling-era-the-barrens-part-1",
+            ["leveling-era-22-23-southern-barrens"] = "leveling-era-the-barrens-part-2",
+            ["leveling-era-12-20-silverpine-forest"] = "leveling-era-silverpine-forest",
+            ["leveling-era-12-17-westfall"] = "leveling-era-westfall",
+            ["leveling-era-12-17-darkshore"] = "leveling-era-darkshore-part-1",
+            ["leveling-era-20-21-darkshore"] = "leveling-era-darkshore-part-2",
+            ["leveling-era-23-24-darkshore"] = "leveling-era-darkshore-part-3",
+            ["leveling-era-17-18-loch-modan"] = "leveling-era-loch-modan",
+            ["leveling-era-18-20-redridge-mountains"] = "leveling-era-redridge-mountains-part-1",
+            ["leveling-era-27-28-redridge-mountains"] = "leveling-era-redridge-mountains-part-2",
+            ["leveling-era-21-22-ashenvale"] = "leveling-era-ashenvale",
+            ["leveling-era-20-22-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-1",
+            ["leveling-era-22-23-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-2",
+            ["leveling-era-23-25-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-3",
+            ["leveling-era-28-29-duskwood"] = "leveling-era-duskwood",
+        }
+        local function RemapEraKey(key)
+            if type(key) ~= "string" then
+                return key
+            end
+            local mapped = eraChapterIDs[key]
+            if mapped then
+                return mapped
+            end
+            for oldID, newID in pairs(eraChapterIDs) do
+                local prefix = oldID .. ":"
+                if string.sub(key, 1, #prefix) == prefix then
+                    return newID .. ":" .. string.sub(key, #prefix + 1)
+                end
+            end
+            return key
+        end
+        local function RemapStringField(field)
+            if type(character[field]) == "string" then
+                character[field] = RemapEraKey(character[field])
+            end
+        end
+        RemapStringField("selectedGuide")
+        RemapStringField("eraChapterPick")
+        RemapStringField("eraFloor")
+        RemapStringField("eraSegment")
+        RemapStringField("activeGoal")
+        if type(character.activeGoalByGuide) == "table" then
+            local nextByGuide = {}
+            for guideID, goalID in pairs(character.activeGoalByGuide) do
+                nextByGuide[RemapEraKey(guideID)] = RemapEraKey(goalID)
+            end
+            character.activeGoalByGuide = nextByGuide
+        end
+        if type(character.completionLedger) == "table" then
+            local nextLedger = {}
+            for guideID, revisions in pairs(character.completionLedger) do
+                nextLedger[RemapEraKey(guideID)] = revisions
+            end
+            character.completionLedger = nextLedger
+        end
+        if type(character.deferred) == "table" then
+            local nextDeferred = {}
+            for goalID, value in pairs(character.deferred) do
+                nextDeferred[RemapEraKey(goalID)] = value
+            end
+            character.deferred = nextDeferred
+        end
+        if type(character.history) == "table" then
+            for index, goalID in ipairs(character.history) do
+                character.history[index] = RemapEraKey(goalID)
+            end
+        end
+        character.schemaVersion = 5
+    end
+    if (tonumber(character.schemaVersion) or 1) < 6 then
+        local eraChapterIDs = {
+            ["leveling-era-ashenvale"] = "leveling-era-ashenvale-part-1",
+        }
+        local function RemapEraKey(key)
+            if type(key) ~= "string" then
+                return key
+            end
+            local mapped = eraChapterIDs[key]
+            if mapped then
+                return mapped
+            end
+            for oldID, newID in pairs(eraChapterIDs) do
+                local prefix = oldID .. ":"
+                if string.sub(key, 1, #prefix) == prefix then
+                    return newID .. ":" .. string.sub(key, #prefix + 1)
+                end
+            end
+            return key
+        end
+        local function RemapStringField(field)
+            if type(character[field]) == "string" then
+                character[field] = RemapEraKey(character[field])
+            end
+        end
+        RemapStringField("selectedGuide")
+        RemapStringField("eraChapterPick")
+        RemapStringField("eraFloor")
+        RemapStringField("eraSegment")
+        RemapStringField("activeGoal")
+        if type(character.activeGoalByGuide) == "table" then
+            local nextByGuide = {}
+            for guideID, goalID in pairs(character.activeGoalByGuide) do
+                nextByGuide[RemapEraKey(guideID)] = RemapEraKey(goalID)
+            end
+            character.activeGoalByGuide = nextByGuide
+        end
+        if type(character.completionLedger) == "table" then
+            local nextLedger = {}
+            for guideID, revisions in pairs(character.completionLedger) do
+                nextLedger[RemapEraKey(guideID)] = revisions
+            end
+            character.completionLedger = nextLedger
+        end
+        if type(character.deferred) == "table" then
+            local nextDeferred = {}
+            for goalID, value in pairs(character.deferred) do
+                nextDeferred[RemapEraKey(goalID)] = value
+            end
+            character.deferred = nextDeferred
+        end
+        if type(character.history) == "table" then
+            for index, goalID in ipairs(character.history) do
+                character.history[index] = RemapEraKey(goalID)
+            end
+        end
+        character.schemaVersion = 6
+    end
 end
 
 function ns.InitializeStorage()
@@ -144,15 +280,15 @@ local function DeliverRefresh(generation)
     local fullPass = refreshNeedsFullPass
     refreshNeedsFullPass = false
     ns.refreshPending = false
-    if not fullPass and ns.Engine and ns.Engine.SameQuestLog and ns.PlayerState
-        and ns.PlayerState.Capture and ns.GetTrackedQuestIDs then
-        local state = ns.PlayerState:Capture(nil, ns.GetTrackedQuestIDs())
-        if ns.Engine:SameQuestLog(state) then
-            -- The log event did not change a watched quest. Skip the guide walk.
-        else
-            ns.Engine:Refresh(state)
+    if not fullPass and ns.Engine and ns.Engine.state and ns.PlayerState
+        and ns.PlayerState.LogUnchanged and ns.QuestQuery then
+        local ids = ns.QuestQuery()
+        if ns.PlayerState:LogUnchanged(nil, ids) then
+            ns.PlayerState.reuseQuestLog = false
+            return
         end
-    elseif ns.Engine and ns.Engine.Refresh then
+    end
+    if ns.Engine and ns.Engine.Refresh then
         ns.Engine:Refresh()
     end
 end
@@ -193,9 +329,19 @@ local function OnEvent(_, event, arg1)
             ns.MapPins:HookMap()
             ns.MapPins:Refresh()
         end
-    elseif event == "PLAYER_ENTERING_WORLD" and not ns.questAuditPrinted then
-        ns.questAuditPrinted = true
-        ns.PrintQuestAudit()
+    elseif event == "PLAYER_ENTERING_WORLD" then
+        if ns.PlayerState and ns.PlayerState.RetryFailedCompletions then
+            ns.PlayerState:RetryFailedCompletions()
+        end
+        if not ns.questAuditPrinted then
+            ns.questAuditPrinted = true
+            ns.PrintQuestAudit()
+        end
+    elseif event == "ZONE_CHANGED" or event == "ZONE_CHANGED_INDOORS" or event == "ZONE_CHANGED_NEW_AREA" then
+        if ns.Engine and ns.Engine.NotePosition then
+            ns.Engine:NotePosition()
+        end
+        return
     elseif event == "QUEST_TURNED_IN" and ns.PlayerState and ns.PlayerState.ForgetQuest then
         ns.PlayerState:ForgetQuest(arg1, true)
     elseif event == "QUEST_REMOVED" and ns.PlayerState and ns.PlayerState.ForgetQuest then
@@ -210,6 +356,7 @@ local function OnEvent(_, event, arg1)
         end
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
+        return
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
