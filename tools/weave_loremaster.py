@@ -1249,10 +1249,11 @@ def ensure_skill(text: str, skills: dict[str, int]) -> str:
 def level_min(paths: list[str]) -> int:
     lowest = 60
     for relative in paths:
-        match = re.search(r"(\d+)-", Path(relative).name)
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        match = re.search(r"level = \{\s*min = (\d+)\s*\}", text)
         if match:
             lowest = min(lowest, int(match.group(1)))
-    return lowest
+    return lowest if lowest < 60 else 1
 
 
 def quest_ids(goals: list[Goal]) -> set[int]:
@@ -1442,7 +1443,7 @@ ZONES = [
         "zone": "Durotar",
         "map_key": "DUROTAR",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/durotar",
-        "leveling": ["Guides/Leveling/1-12-durotar.lua"],
+        "leveling": ["Guides/Leveling/durotar.lua"],
     },
     {
         "title": "Mulgore",
@@ -1453,7 +1454,7 @@ ZONES = [
         "zone": "Mulgore",
         "map_key": "MULGORE",
         "url": "https://www.wowhead.com/forever/quests/kalimdor/mulgore",
-        "leveling": ["Guides/Leveling/1-12-mulgore.lua"],
+        "leveling": ["Guides/Leveling/mulgore.lua"],
     },
 ]
 

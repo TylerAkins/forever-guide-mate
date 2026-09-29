@@ -37,8 +37,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-12-17-darkshore",
-    title = "12-17 Darkshore",
+    id = "leveling-era-darkshore-part-1",
+    title = "Darkshore (Part 1)",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

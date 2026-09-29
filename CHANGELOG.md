@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.29 - 2026-09-29
+
+- Leveling chapter titles now use zone names. Revisited zones use (Part 1), (Part 2), and so on.
+- Leveling guide files now use zone slugs (`durotar.lua`, `darkshore-part-2.lua`, and so on) instead of level ranges.
+- Era chapter IDs were renamed to match (`leveling-era-durotar`, `leveling-era-darkshore-part-1`, …). Saved character data migrates on load (schema 5).
+- Tirisfal Glades now includes The One That Got Away after Bandarion Keep is turned in.
+- Added `tools/audit_leveling_zone_quests.py` to compare Wowhead Forever zone lists with woven leveling routes.
+- Stonetalon chapter titles now number parts per faction: Alliance uses a single `Stonetalon Mountains` row; Horde uses `(Part 1)` and `(Part 2)`.
+
 ## 0.1.28 - 2026-09-29
 
 - Tirisfal Glades now includes As Above, So Below after Bandarion Keep is turned in. Hilda the Breaker sends you into the Shadowvale cellars for Faintly Glowing Bones.

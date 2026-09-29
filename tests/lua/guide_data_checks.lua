@@ -100,8 +100,8 @@ end
 
 -- Era leveling chapters that must keep accept turn-in gates aligned with Loremaster.
 M.EraLoremasterPairs = {
-    ["leveling-era-1-12-durotar"] = "leveling-durotar",
-    ["leveling-era-1-12-mulgore"] = "leveling-mulgore",
+    ["leveling-era-durotar"] = "leveling-durotar",
+    ["leveling-era-mulgore"] = "leveling-mulgore",
 }
 
 function M.GateDependencies(goal)
@@ -150,12 +150,12 @@ end
 -- When one class uses a different turn-in goal id for the same unlock, list every branch.
 M.RequiredClassBranchTurnins = {
     {
-        guideID = "leveling-era-1-12-durotar",
+        guideID = "leveling-era-durotar",
         goalID = "accept-794-burning-blade-medallion",
         turnins = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
     },
     {
-        guideID = "leveling-era-1-12-durotar",
+        guideID = "leveling-era-durotar",
         goalID = "accept-5441-lazy-peons",
         turnins = { "turnin-792-vile-familiars", "turnin-1499-vile-familiars" },
     },

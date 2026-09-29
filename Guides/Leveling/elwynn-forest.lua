@@ -41,8 +41,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-1-12-elwynn-forest",
-    title = "1-12 Elwynn Forest",
+    id = "leveling-era-elwynn-forest",
+    title = "Elwynn Forest",
     category = "Leveling Quest Guides",
     revision = 4,
     conditions = {

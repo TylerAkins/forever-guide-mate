@@ -226,3 +226,11 @@ ns:RegisterQuestPrerequisite({
     note = "As Above, So Below is offered after Bandarion Keep is turned in.",
 })
 
+ns:RegisterQuestPrerequisite({
+    quest = 99153,
+    mode = "all",
+    quests = { 96899 },
+    conditions = { faction = "Horde" },
+    note = "The One That Got Away is offered after Bandarion Keep is turned in.",
+})
+
