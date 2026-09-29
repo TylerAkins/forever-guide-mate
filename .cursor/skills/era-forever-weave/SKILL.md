@@ -122,5 +122,6 @@ Unconverted files keep the level range. A converted chapter does not.
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
 lua5.1 tests/lua/lint.lua
+lua5.1 tests/lua/audit_accept_chains.lua
 python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
 ```
