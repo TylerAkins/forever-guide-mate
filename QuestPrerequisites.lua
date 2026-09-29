@@ -218,3 +218,11 @@ ns:RegisterQuestPrerequisite({
     note = "Tomb Weed is offered after Doom Weed is turned in.",
 })
 
+ns:RegisterQuestPrerequisite({
+    quest = 99152,
+    mode = "all",
+    quests = { 96899 },
+    conditions = { faction = "Horde" },
+    note = "As Above, So Below is offered after Bandarion Keep is turned in.",
+})
+
