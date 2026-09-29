@@ -41,30 +41,30 @@ Load("Guides/Dungeons/WailingCaverns.lua")
 Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
-Load("Guides/Leveling/ZephrasIsle.lua")
+Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
-Load("Guides/Leveling/1-12-durotar.lua")
-Load("Guides/Leveling/1-12-mulgore.lua")
-Load("Guides/Leveling/1-12-tirisfal-glades.lua")
-Load("Guides/Leveling/12-20-barrens.lua")
-Load("Guides/Leveling/12-20-silverpine-forest.lua")
-Load("Guides/Leveling/20-22-stonetalon-mountains.lua")
-Load("Guides/Leveling/22-23-southern-barrens.lua")
-Load("Guides/Leveling/22-23-stonetalon-mountains.lua")
-Load("Guides/Leveling/23-25-stonetalon-mountains.lua")
-Load("Guides/Leveling/1-12-dun-morogh.lua")
-Load("Guides/Leveling/1-12-elwynn-forest.lua")
-Load("Guides/Leveling/1-12-teldrassil.lua")
-Load("Guides/Leveling/12-17-darkshore.lua")
-Load("Guides/Leveling/12-17-westfall.lua")
-Load("Guides/Leveling/17-18-loch-modan.lua")
-Load("Guides/Leveling/18-20-redridge-mountains.lua")
-Load("Guides/Leveling/20-21-darkshore.lua")
-Load("Guides/Leveling/21-22-ashenvale.lua")
-Load("Guides/Leveling/23-24-darkshore.lua")
-Load("Guides/Leveling/27-28-redridge-mountains.lua")
-Load("Guides/Leveling/28-29-duskwood.lua")
+Load("Guides/Leveling/durotar.lua")
+Load("Guides/Leveling/mulgore.lua")
+Load("Guides/Leveling/tirisfal-glades.lua")
+Load("Guides/Leveling/the-barrens-part-1.lua")
+Load("Guides/Leveling/silverpine-forest.lua")
+Load("Guides/Leveling/stonetalon-mountains-part-1.lua")
+Load("Guides/Leveling/the-barrens-part-2.lua")
+Load("Guides/Leveling/stonetalon-mountains-part-2.lua")
+Load("Guides/Leveling/stonetalon-mountains-part-3.lua")
+Load("Guides/Leveling/dun-morogh.lua")
+Load("Guides/Leveling/elwynn-forest.lua")
+Load("Guides/Leveling/teldrassil.lua")
+Load("Guides/Leveling/darkshore-part-1.lua")
+Load("Guides/Leveling/westfall.lua")
+Load("Guides/Leveling/loch-modan.lua")
+Load("Guides/Leveling/redridge-mountains-part-1.lua")
+Load("Guides/Leveling/darkshore-part-2.lua")
+Load("Guides/Leveling/ashenvale.lua")
+Load("Guides/Leveling/darkshore-part-3.lua")
+Load("Guides/Leveling/redridge-mountains-part-2.lua")
+Load("Guides/Leveling/duskwood.lua")
 Load("Guides/Class/Warrior.lua")
 Load("Guides/Class/Paladin.lua")
 Load("Guides/Class/Hunter.lua")
@@ -192,7 +192,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 3, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 4, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 5, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -967,11 +967,11 @@ ns.QuestDialog:Handle("QUEST_GREETING", greeting)
 Equal(calls.greetingActive, nil, "a quest list does not turn in a different guide quest")
 function TestForgottenLoaIdols()
     local durotar = ns.guides["leveling-era"]
-    local idols = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-97225-forgotten-loa-idols")
+    local idols = ns.Engine:GetGoal(durotar, "leveling-era-durotar:accept-97225-forgotten-loa-idols")
     Check(idols ~= nil, "Durotar accepts Forgotten Loa Idols")
     Equal(idols.complete.quest.id, 97225, "Forgotten Loa Idols is quest 97225")
     Equal(idols.route[#idols.route].label, "Master Vornal", "Forgotten Loa Idols is accepted from Master Vornal")
-    local solvent = ns.Engine:GetGoal(durotar, "leveling-era-1-12-durotar:accept-818-a-solvent-spirit")
+    local solvent = ns.Engine:GetGoal(durotar, "leveling-era-durotar:accept-818-a-solvent-spirit")
     local savedGuide = ns.charDB.selectedGuide
     local savedGoal = ns.Engine.currentGoal
     local savedState = ns.Engine.state
@@ -1118,9 +1118,9 @@ function TestLostBarrensKodo()
         Check(turnin and turnin.dependsOn[1] == "objective-6128-2-lost-barrens-kodo"
             and turnin.dependsOn[2] == "objective-6128-1-earthroot", guideID .. " turn-in waits on both parts")
     end
-    local eraGuide = ns.guides["leveling-era-12-20-barrens"] or ns.guides["leveling-era"]
-    local eraID = ns.guides["leveling-era-12-20-barrens"] and "objective-6128-2-lost-barrens-kodo"
-        or "leveling-era-12-20-barrens:objective-6128-2-lost-barrens-kodo"
+    local eraGuide = ns.guides["leveling-era-the-barrens-part-1"] or ns.guides["leveling-era"]
+    local eraID = ns.guides["leveling-era-the-barrens-part-1"] and "objective-6128-2-lost-barrens-kodo"
+        or "leveling-era-the-barrens-part-1:objective-6128-2-lost-barrens-kodo"
     local eraGoal = ns.Engine:GetGoal(eraGuide, eraID)
     Check(eraGoal and eraGoal.route and #eraGoal.route > 1, "era barrens keeps the kodo route")
     local shown = ns.UI:GoalInstruction({
@@ -1134,7 +1134,7 @@ end
 TestLostBarrensKodo()
 
 function TestGatheringTheCureLedger()
-    local chapterID = "leveling-era-12-20-barrens"
+    local chapterID = "leveling-era-the-barrens-part-1"
     local guide = ns.guides["leveling-era"]
     local function Step(name) return chapterID .. ":" .. name end
     local base = {
@@ -1196,7 +1196,7 @@ end
 TestGatheringTheCureLedger()
 
 function TestActiveGoalReload()
-    local chapterID = "leveling-era-12-20-barrens"
+    local chapterID = "leveling-era-the-barrens-part-1"
     local guide = ns.guides["leveling-era"]
     local earthrootID = chapterID .. ":objective-6128-1-earthroot"
     local base = {
@@ -1232,7 +1232,7 @@ function TestActiveGoalReload()
     ns.Engine:Refresh(base)
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, earthrootID,
         "reopening the same guide restores the last active step")
-    ns.Engine:SelectGuide("leveling-era-1-12-durotar")
+    ns.Engine:SelectGuide("leveling-era-durotar")
     ns.Engine:Refresh({
         faction = "Horde", raceID = 2, classID = 1, level = 5,
         mapID = 1411, x = 0.42, y = 0.19,
@@ -1241,7 +1241,7 @@ function TestActiveGoalReload()
     })
     Check(ns.charDB.activeGoalByGuide[chapterID] == earthrootID,
         "switching guides keeps the Barrens step saved under its chapter")
-    Check(ns.charDB.activeGoalByGuide["leveling-era-1-12-durotar"] ~= nil,
+    Check(ns.charDB.activeGoalByGuide["leveling-era-durotar"] ~= nil,
         "switching guides remembers the Durotar step separately from Barrens")
     ns.Engine:SelectGuide(chapterID)
     ns.Engine:Refresh(base)
@@ -1275,10 +1275,10 @@ TestActiveGoalReload()
 function TestNaraWildmaneChain()
     ns:FinalizeGuides()
     local era = ns.guides["leveling-era"]
-    local accept = ns.Engine:GetGoal(era, "leveling-era-12-20-barrens:accept-1490-nara-wildmane")
-    Check(accept and accept.dependsOn[1] == "leveling-era-12-20-barrens:turnin-1489-hamuul-runetotem",
+    local accept = ns.Engine:GetGoal(era, "leveling-era-the-barrens-part-1:accept-1490-nara-wildmane")
+    Check(accept and accept.dependsOn[1] == "leveling-era-the-barrens-part-1:turnin-1489-hamuul-runetotem",
         "Nara Wildmane waits until Hamuul Runetotem is turned in at Elder Rise")
-    local turnin = ns.Engine:GetGoal(era, "leveling-era-12-20-barrens:turnin-1490-nara-wildmane")
+    local turnin = ns.Engine:GetGoal(era, "leveling-era-the-barrens-part-1:turnin-1490-nara-wildmane")
     Check(turnin and turnin.route[#turnin.route].label == "Nara Wildmane",
         "Nara Wildmane is turned in at Nara, not Hamuul")
 end
@@ -2270,10 +2270,10 @@ Check(neeru and neeru.kind == "gossip" and neeru.route[1].label == "Neeru Firebl
 function TestBurningBladeMedallionPrerequisites()
     ns:FinalizeGuides()
     local era = ns.guides["leveling-era"]
-    local medallionAccept = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-794-burning-blade-medallion")
-    Check(DependsOn(medallionAccept, "leveling-era-1-12-durotar:turnin-792-vile-familiars"),
+    local medallionAccept = ns.Engine:GetGoal(era, "leveling-era-durotar:accept-794-burning-blade-medallion")
+    Check(DependsOn(medallionAccept, "leveling-era-durotar:turnin-792-vile-familiars"),
         "Burning Blade Medallion waits for the standard Vile Familiars turn-in")
-    Check(DependsOn(medallionAccept, "leveling-era-1-12-durotar:turnin-1499-vile-familiars"),
+    Check(DependsOn(medallionAccept, "leveling-era-durotar:turnin-1499-vile-familiars"),
         "Burning Blade Medallion waits for the warlock Vile Familiars turn-in")
     local warlockValley = {
         faction = "Horde", raceID = 2, classID = 9, level = 4,
@@ -2287,7 +2287,7 @@ function TestBurningBladeMedallionPrerequisites()
     warlockValley.completedQuests[1499] = true
     Equal(ns.Engine:IsReady(era, medallionAccept, warlockValley), true,
         "a warlock can accept Burning Blade Medallion after the Zureetha Vile Familiars turn-in")
-    local lazyPeons = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-5441-lazy-peons")
+    local lazyPeons = ns.Engine:GetGoal(era, "leveling-era-durotar:accept-5441-lazy-peons")
     Equal(ns.Engine:IsReady(era, lazyPeons, warlockValley), true,
         "lazy peons unlock after the warlock Vile Familiars handoff")
     warlockValley.completedQuests[1499] = nil
@@ -2314,7 +2314,7 @@ function TestRepeatableRoutes()
         completedQuests = { [812] = true }, questCompletionKnown = true,
     }
     local era = ns.guides["leveling-era"]
-    local antidote = ns.Engine:GetGoal(era, "leveling-era-1-12-durotar:accept-813-finding-the-antidote")
+    local antidote = ns.Engine:GetGoal(era, "leveling-era-durotar:accept-813-finding-the-antidote")
     Equal(ns.EvaluateCondition(antidote.conditions, openCure), true,
         "the Durotar chapter still offers the antidote while Need for a Cure is open")
     Equal(ns.EvaluateCondition(antidote.conditions, cured), false,
@@ -2989,9 +2989,9 @@ function TestEncroachmentWaitsUntilGarThokOffersIt()
     ns:FinalizeGuides()
     local era = ns.guides["leveling-era"]
     local ids = {
-        "leveling-era-1-12-durotar:accept-837-encroachment",
-        "leveling-era-1-12-durotar:objective-837-encroachment",
-        "leveling-era-1-12-durotar:turnin-837-encroachment",
+        "leveling-era-durotar:accept-837-encroachment",
+        "leveling-era-durotar:objective-837-encroachment",
+        "leveling-era-durotar:turnin-837-encroachment",
     }
     for _, goalID in ipairs(ids) do
         local goal = ns.Engine:GetGoal(era, goalID)
@@ -3020,7 +3020,7 @@ function TestStaleFlightRoutesPurged()
         taxiNodes = { ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore" },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 4, "stale flight storage migrates forward")
+    Equal(ns.charDB.schemaVersion, 5, "stale flight storage migrates forward")
     local survivors = ns.charDB.taxiRoutes[1413] and ns.charDB.taxiRoutes[1413].destinations or {}
     Check(survivors["thunder bluff, mulgore"] ~= nil, "a learned flight survives the route purge")
     Equal(survivors["sun rock retreat, stonetalon mountains"], nil,
@@ -3031,6 +3031,36 @@ function TestStaleFlightRoutesPurged()
     ns.InitializeStorage()
 end
 TestStaleFlightRoutesPurged()
+
+function TestEraChapterIdMigration()
+    local previousCharDB = ForeverGuideMateCharDB
+    ForeverGuideMateCharDB = {
+        schemaVersion = 4,
+        selectedGuide = "leveling-era-1-12-durotar",
+        eraChapterPick = "leveling-era-12-20-barrens",
+        eraFloor = "leveling-era-12-20-barrens",
+        activeGoal = "leveling-era-1-12-durotar:accept-4641-your-place-in-the-world",
+        completionLedger = {
+            ["leveling-era-1-12-durotar"] = { ["1"] = { ["accept-4641-your-place-in-the-world"] = true } },
+        },
+        deferred = {
+            ["leveling-era-12-20-barrens:accept-844-plainstrider-menace"] = true,
+        },
+    }
+    ns.InitializeStorage()
+    Equal(ns.charDB.schemaVersion, 5, "era chapter rename bumps character schema")
+    Equal(ns.charDB.selectedGuide, "leveling-era-durotar", "selectedGuide migrates to the new chapter id")
+    Equal(ns.charDB.eraChapterPick, "leveling-era-the-barrens-part-1", "eraChapterPick migrates")
+    Equal(ns.charDB.activeGoal, "leveling-era-durotar:accept-4641-your-place-in-the-world",
+        "prefixed active goals migrate")
+    Check(ns.charDB.completionLedger["leveling-era-durotar"] ~= nil,
+        "completion ledger keys migrate to the new chapter id")
+    Check(ns.charDB.deferred["leveling-era-the-barrens-part-1:accept-844-plainstrider-menace"],
+        "deferred prefixed goals migrate")
+    ForeverGuideMateCharDB = previousCharDB
+    ns.InitializeStorage()
+end
+TestEraChapterIdMigration()
 
 function TestFlightNamesNeedADistinctiveMatch()
     ns.charDB.taxiRoutes = {}
@@ -3065,8 +3095,8 @@ function TestEraLeveling()
     Check(guide ~= nil, "Alliance and Horde Era routes merge into one guide")
     Equal(guide.title, "1-60 Era", "the merged Era guide covers the full route")
     Equal(guide.category, "Leveling Quest Guides", "the merged Era guide is a leveling guide")
-    Equal(ns.guides["leveling-era-1-12-durotar"], nil, "Durotar is a chapter, not its own guide")
-    Equal(ns.guides["leveling-era-1-12-dun-morogh"], nil, "Dun Morogh is a chapter, not its own guide")
+    Equal(ns.guides["leveling-era-durotar"], nil, "Durotar is a chapter, not its own guide")
+    Equal(ns.guides["leveling-era-dun-morogh"], nil, "Dun Morogh is a chapter, not its own guide")
     local function EraState(faction, level, raceID, mapID)
         return {
             faction = faction, level = level, raceID = raceID, classID = 1,
@@ -3120,10 +3150,10 @@ function TestEraLeveling()
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(horde)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-durotar",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-durotar",
         "an orc starts in Durotar")
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id,
-        "leveling-era-1-12-durotar:accept-4641-your-place-in-the-world",
+        "leveling-era-durotar:accept-4641-your-place-in-the-world",
         "Durotar starts at Your Place In The World")
     Check(ns.Engine.status ~= "This step is for Alliance.",
         "the merged guide does not tell a Horde character the guide is for Alliance")
@@ -3131,22 +3161,22 @@ function TestEraLeveling()
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(EraState("Horde", 1, 2, 1412))
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-mulgore",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-mulgore",
         "an orc standing in Mulgore follows the Mulgore chapter")
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(alliance)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-elwynn-forest",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-elwynn-forest",
         "a human starts in Elwynn Forest")
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id,
-        "leveling-era-1-12-elwynn-forest:accept-783-a-threat-within",
+        "leveling-era-elwynn-forest:accept-783-a-threat-within",
         "Elwynn starts at A Threat Within")
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(EraState("Alliance", 1, 3, 1426))
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-dun-morogh",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-dun-morogh",
         "a dwarf starts in Dun Morogh")
 
     ResetEra()
@@ -3158,7 +3188,7 @@ function TestEraLeveling()
     unknownDurotar.questLogKnown = false
     unknownDurotar.questCompletionKnown = false
     ns.Engine:Refresh(unknownDurotar)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "finishing Durotar hands off to the Barrens")
     Equal(ns.Engine.currentGoal, nil, "the Barrens handoff waits until level 12")
     Equal(ns.Engine.status, "The next step needs a higher level. Grind, or run a dungeon, until you can take it.",
@@ -3170,13 +3200,13 @@ function TestEraLeveling()
     unknownBarrens.questLogKnown = false
     unknownBarrens.questCompletionKnown = false
     ns.Engine:Refresh(unknownBarrens)
-    CompleteSegment(guide.segmentByID["leveling-era-1-12-durotar"])
+    CompleteSegment(guide.segmentByID["leveling-era-durotar"])
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
     ns.Engine:Refresh(unknownBarrens)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "a level 12 orc continues in the Barrens")
-    Check(ns.Engine.currentGoal ~= nil and ns.Engine.currentGoal.segmentID == "leveling-era-12-20-barrens",
+    Check(ns.Engine.currentGoal ~= nil and ns.Engine.currentGoal.segmentID == "leveling-era-the-barrens-part-1",
         "the Barrens handoff opens a Barrens step")
 
     ResetEra()
@@ -3185,19 +3215,19 @@ function TestEraLeveling()
     unknownTirisfal.questLogKnown = false
     unknownTirisfal.questCompletionKnown = false
     ns.Engine:Refresh(unknownTirisfal)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-tirisfal-glades",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-tirisfal-glades",
         "a level 12 undead standing in Tirisfal stays on that starter")
-    CompleteSegment(guide.segmentByID["leveling-era-1-12-tirisfal-glades"])
+    CompleteSegment(guide.segmentByID["leveling-era-tirisfal-glades"])
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
     ns.Engine:Refresh(unknownTirisfal)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "finishing Tirisfal hands off to the next Horde chapter, the Barrens")
 
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "a level 12 orc with no progress opens the Barrens")
     local barrensStep = ns.Engine.currentGoal
     Check(barrensStep ~= nil, "the Barrens chapter has a step")
@@ -3205,15 +3235,15 @@ function TestEraLeveling()
     ns.charDB.activeGoal = nil
     ns.Engine.reviewingGoal = nil
     ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "progress in a later chapter does not snap back to Durotar")
     ns.Engine:Previous()
     local previousSegment = ns.Engine.currentGoal and ns.Engine.currentGoal.segmentID
-    Check(previousSegment == nil or previousSegment == "leveling-era-12-20-barrens",
+    Check(previousSegment == nil or previousSegment == "leveling-era-the-barrens-part-1",
         "previous stays in the Barrens instead of another starter")
 
     ResetEra()
-    ns.charDB.selectedGuide = "leveling-era-1-12-durotar"
+    ns.charDB.selectedGuide = "leveling-era-durotar"
     ns.charDB.activeGoal = "accept-4641-your-place-in-the-world"
     ns.charDB.history = { "accept-4641-your-place-in-the-world" }
     ns.charDB.deferred = {
@@ -3221,29 +3251,29 @@ function TestEraLeveling()
         ["accept-840-conscript-of-the-horde"] = true,
     }
     ns.charDB.completionLedger = {
-        ["leveling-era-1-12-durotar"] = { ["1"] = { ["accept-4641-your-place-in-the-world"] = true } },
+        ["leveling-era-durotar"] = { ["1"] = { ["accept-4641-your-place-in-the-world"] = true } },
     }
     ns.Engine:Refresh(EraState("Horde", 12, 2, 1453))
     Equal(ns.charDB.selectedGuide, "leveling-era", "a saved Era guide becomes the merged guide")
-    Equal(ns.charDB.eraFloor, "leveling-era-1-12-durotar", "the saved chapter stays the floor")
-    Equal(ns.Engine:GetLedger(guide, false)["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"],
+    Equal(ns.charDB.eraFloor, "leveling-era-durotar", "the saved chapter stays the floor")
+    Equal(ns.Engine:GetLedger(guide, false)["leveling-era-durotar:accept-4641-your-place-in-the-world"],
         nil, "known quest truth clears migrated stale completion")
-    Equal(ns.charDB.deferred["leveling-era-1-12-durotar:accept-4641-your-place-in-the-world"], true,
+    Equal(ns.charDB.deferred["leveling-era-durotar:accept-4641-your-place-in-the-world"], true,
         "a saved deferred step keeps its chapter")
-    Equal(ns.charDB.deferred["leveling-era-1-12-durotar:accept-840-conscript-of-the-horde"], true,
+    Equal(ns.charDB.deferred["leveling-era-durotar:accept-840-conscript-of-the-horde"], true,
         "a saved skip stays on Durotar when that step id also exists in another chapter")
-    Equal(ns.charDB.completionLedger["leveling-era-1-12-durotar"], nil,
+    Equal(ns.charDB.completionLedger["leveling-era-durotar"], nil,
         "the old Era ledger is removed after it is copied")
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-durotar",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-durotar",
         "saved Durotar progress is not replaced by the level 12 chapter")
 
     ResetEra()
-    ns.Engine:SelectGuide("leveling-era-1-12-dun-morogh")
+    ns.Engine:SelectGuide("leveling-era-dun-morogh")
     Equal(ns.charDB.selectedGuide, "leveling-era", "an old Era guide id opens the merged guide")
-    Equal(ns.charDB.eraSegment, "leveling-era-1-12-dun-morogh",
+    Equal(ns.charDB.eraSegment, "leveling-era-dun-morogh",
         "an old Era guide id keeps that starter")
     ns.Engine:Refresh(EraState("Alliance", 1, 1, 1429))
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-1-12-dun-morogh",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-dun-morogh",
         "the saved starter wins over the human default")
 
     ResetEra()
@@ -3270,17 +3300,17 @@ function TestEraLeveling()
     ResetEra()
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(hordeLevel)
-    local durotarGoal = guide.segmentByID["leveling-era-1-12-durotar"].goals[1]
+    local durotarGoal = guide.segmentByID["leveling-era-durotar"].goals[1]
     ns.Engine:GetLedger(guide, true)[durotarGoal.id] = true
-    ns.charDB.eraChapterPick = "leveling-era-12-20-barrens"
-    ns.charDB.eraFloor = "leveling-era-12-20-barrens"
+    ns.charDB.eraChapterPick = "leveling-era-the-barrens-part-1"
+    ns.charDB.eraFloor = "leveling-era-the-barrens-part-1"
     ns.Engine:SelectGuide("leveling-era")
     ns.Engine:Refresh(hordeLevel)
-    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-12-20-barrens",
+    Equal(ns.Engine.currentSegment and ns.Engine.currentSegment.id, "leveling-era-the-barrens-part-1",
         "opening the Barrens stays there when Durotar already has progress")
     ns.Engine:Previous()
     local openedPrevious = ns.Engine.currentGoal and ns.Engine.currentGoal.segmentID
-    Check(openedPrevious == nil or openedPrevious == "leveling-era-12-20-barrens",
+    Check(openedPrevious == nil or openedPrevious == "leveling-era-the-barrens-part-1",
         "previous from an opened Barrens chapter stays in the Barrens")
 end
 TestEraLeveling()
@@ -3343,7 +3373,7 @@ function TestLibraryProgressReadsEveryGuide()
         }
     end
     local savedGuide = ns.charDB.selectedGuide
-    ns.charDB.selectedGuide = "leveling-era-1-12-durotar"
+    ns.charDB.selectedGuide = "leveling-era-durotar"
     ns.Engine:Refresh()
     ns.PlayerState.Capture = savedCapture
     ns.charDB.selectedGuide = savedGuide
@@ -3712,12 +3742,12 @@ TestIdleAndMovementSkipTheCatalog()
 function TestChapterUpdateStaysSmall()
     ns:FinalizeGuides()
     local guide = ns.guides["leveling-era"]
-    ns.charDB.eraChapterPick = "leveling-era-1-12-tirisfal-glades"
-    ns.charDB.eraFloor = "leveling-era-1-12-tirisfal-glades"
+    ns.charDB.eraChapterPick = "leveling-era-tirisfal-glades"
+    ns.charDB.eraFloor = "leveling-era-tirisfal-glades"
     ns.Engine.currentSegment = nil
     local chapter = ns.Engine:ChapterGoals(guide)
     Check(chapter ~= nil and #chapter < #guide.goals, "an accept only reconciles the open chapter")
-    Equal(#chapter, #guide.segmentByID["leveling-era-1-12-tirisfal-glades"].goals,
+    Equal(#chapter, #guide.segmentByID["leveling-era-tirisfal-glades"].goals,
         "Tirisfal accepts do not walk later chapters")
     local firstIDs, firstPriority = ns.QuestQuery()
     local secondIDs, secondPriority = ns.QuestQuery()

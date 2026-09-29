@@ -29,7 +29,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-27-28-redridge-mountains",
+    id = "leveling-era-redridge-mountains-part-2",
     title = "Redridge Mountains (Part 2)",
     category = "Leveling Quest Guides",
     revision = 1,

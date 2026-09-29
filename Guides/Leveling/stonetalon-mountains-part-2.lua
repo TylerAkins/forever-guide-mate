@@ -31,7 +31,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-22-23-stonetalon-mountains",
+    id = "leveling-era-stonetalon-mountains-part-2",
     title = "Stonetalon Mountains (Part 2)",
     category = "Leveling Quest Guides",
     revision = 2,

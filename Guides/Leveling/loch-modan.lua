@@ -32,7 +32,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-17-18-loch-modan",
+    id = "leveling-era-loch-modan",
     title = "Loch Modan",
     category = "Leveling Quest Guides",
     revision = 1,

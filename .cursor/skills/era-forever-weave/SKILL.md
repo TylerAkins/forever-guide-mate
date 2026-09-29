@@ -88,7 +88,7 @@ Race ids: Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gno
 
 ## Converted example
 
-The Westfall chapter (`Guides/Leveling/12-17-westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/28-29-duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/24-24-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
+The Westfall chapter (`Guides/Leveling/westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/24-24-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
 
 ## Ship it
 
