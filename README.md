@@ -10,91 +10,12 @@ Opening a leveling or Loremaster chapter midway resumes a valid saved step or re
 
 Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Loremaster weave rules are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
-## Guide layout
+## Guide Types
 
-| Folder | Contents |
-| --- | --- |
-| `Guides/Leveling/` | Zephras Isle and converted Era chapters (no `(Era)` in the title) |
-| `Guides/Era/` | Unconverted Era chapters (not loaded by the addon) |
-| `Guides/Loremaster/` | Zone-completion guides |
-| `Guides/Dungeons/` | Dungeon quest guides |
-| `Guides/Class/` | Supported class-quest guides, one per class |
-
-Only files listed in `ForeverGuideMate.toc` appear in the addon.
-
-## Current supported guides
-
-### Leveling
-
-Each chapter is its own library row. Opening a chapter stays on that chapter.
-
-**Alliance**
-
-| Levels | Chapters |
-| --- | --- |
-| 1–12 | Dun Morogh, Elwynn Forest, and Teldrassil |
-| 1–14 | Zephras Isle |
-| 12–17 | Westfall and Darkshore |
-| 17–18 | Loch Modan |
-| 18–20 | Redridge Mountains |
-| 20–21 | Darkshore |
-| 21–22 | Ashenvale |
-| 22–23 | Stonetalon Mountains |
-| 23–24 | Darkshore |
-| 24–24 | Ashenvale |
-| 24–27 | Wetlands |
-| 27–28 | Redridge Mountains |
-| 28–29 | Duskwood |
-| 29–30 | Ashenvale |
-
-**Horde**
-
-| Levels | Chapters |
-| --- | --- |
-| 1–12 | Durotar, Mulgore, and Tirisfal Glades |
-| 1–14 | Zephras Isle |
-| 12–20 | The Barrens and Silverpine Forest |
-| 20–22 | Stonetalon Mountains |
-| 22–23 | Southern Barrens |
-| 23–25 | Stonetalon Mountains |
-| 25–25 | Southern Barrens |
-| 25–26 | Thousand Needles |
-| 26–27 | Ashenvale |
-| 27–27 | Stonetalon Mountains |
-| 27–29 | Thousand Needles |
-| 29–30 | Hillsbrad Foothills |
-
-Converted chapters include Forever quests woven into the existing route. Remaining `(Era)` chapters live in `Guides/Era/` until converted; see [Era conversion](#era-chapters-not-yet-loaded).
-
-### Dungeons
-
-| Guide | Faction | Level |
-| --- | --- | --- |
-| Ragefire Chasm | Horde | 9+ |
-| Hall of Thanes | Alliance | 10+ |
-| The Deadmines | Alliance | 15+ |
-| Wailing Caverns | Alliance and Horde | 15+ |
-| Ruins of Lordaeron | Alliance and Horde | 16+ |
-
-### Class quests
-
-| Guide | Faction |
-| --- | --- |
-| Warrior | Alliance and Horde |
-| Paladin | Alliance and Horde |
-| Hunter | Alliance and Horde |
-| Rogue | Alliance and Horde |
-| Priest | Alliance and Horde |
-| Shaman | Alliance and Horde |
-| Mage | Alliance and Horde |
-| Warlock | Alliance and Horde |
-| Druid | Alliance and Horde |
-
-### Loremaster (lowest priority for development right now)
-
-- **Alliance:** None
-- **Horde:** Durotar, Mulgore (needs more testing)
-- **Both:** None
+- Class Quests
+- Dungeon Quests
+- Leveling Quests
+- Loremaster
 
 ## Todo
 
