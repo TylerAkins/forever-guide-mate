@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -113,29 +113,19 @@ ns:RegisterGuide({
             id = "accept-429-wild-hearts",
             kind = "accept",
             priority = 90,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Accept Wild Hearts from Dalar Dawnweaver in The Ivar Patch.",
+            conditions = { level = { min = 10 } },
+            text = "Accept Wild Hearts from Rane Yorick in The Ivar Patch.",
             complete = QuestState(429, "activeOrCompleted"),
             route = {
-                Point(MAP.SILVERPINE, 0.5346, 0.1345, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
+                Point(MAP.SILVERPINE, 0.5346, 0.1345, "Rane Yorick",
+                    "Travel to Rane Yorick."),
             },
         },
         {
             id = "objective-429-wild-hearts",
             kind = "objective",
             priority = 110,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
+            conditions = { level = { min = 10 } },
             text = "Kill Rabid Worg and collect 6 Discolored Worg Heart in Malden's Orchard.",
             dependsOn = { "accept-429-wild-hearts" },
             complete = QuestState(429, "complete"),
@@ -202,12 +192,7 @@ ns:RegisterGuide({
             id = "turnin-429-wild-hearts",
             kind = "turnin",
             priority = 170,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
+            conditions = { level = { min = 10 } },
             text = "Turn in Wild Hearts to Apothecary Renferrel in The Sepulcher.",
             dependsOn = { "objective-429-wild-hearts" },
             complete = QuestState(429, "completed"),
@@ -222,6 +207,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = { level = { min = 10 } },
             text = "Accept Return to Quinn from Apothecary Renferrel in The Sepulcher.",
+            dependsOn = { "turnin-429-wild-hearts" },
             complete = QuestState(430, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.4275, 0.4100, "Apothecary Renferrel",

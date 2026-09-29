@@ -8,6 +8,7 @@ All notable changes to this project are documented here.
 - Spoils of War is collected in Menethil Harbor with the keep pickups. Pigments for Paints is accepted beside Zangen Stonehoof, the pods are collected at Mirkfallon Lake with the Gaea Seeds, and the turn-in is on the Thunder Bluff visit at the end of Stonetalon.
 - Thousand Needles and the Hillsbrad quest list have no new Forever quests. Undead paladins take An Underrated Talent from Trevan Rol and Ott's Masterwork in Tarren Mill. Stepping Stones and ... and that note you found stay out because their hand-ins are not on a chapter stop. Wetlands quests with no start pin stay named.
 - The first Alliance Ashenvale chapter is now Ashenvale (Part 1). Saved progress for that chapter migrates on load.
+- Silverpine no longer asks for Return to Quinn before Wild Hearts is turned in. The worg hearts stay on the route, and Supplying the Sepulcher turns in to Karos Razok on that same Sepulcher visit.
 
 ## 0.1.30 - 2026-09-29
 
