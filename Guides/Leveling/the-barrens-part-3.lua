@@ -1,7 +1,7 @@
 local _, ns = ...
 
--- Horde Era leveling route for the Southern Barrens, levels 25-25.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for the Southern Barrens, levels 25-25.
+-- The Barrens list has no new Forever quest on this pass. Stepping Stones starts at the Burned-Out Remains in the Field of Giants and turns in at Pocket Litter. ... and that note you found starts at those same remains and turns in at Westfall. No chapter stops at either hand-in. Scout Support and Valuable Vantages have no start pin.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -29,10 +29,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-25-25-southern-barrens",
-    title = "25-25 Southern Barrens (Era)",
+    id = "leveling-era-the-barrens-part-3",
+    title = "The Barrens (Part 3)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },

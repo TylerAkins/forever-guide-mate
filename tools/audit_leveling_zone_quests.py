@@ -112,9 +112,49 @@ CHAPTERS: list[dict] = [
         "level_max": 28,
     },
     {
-        "file": "Guides/Leveling/ashenvale.lua",
+        "file": "Guides/Leveling/ashenvale-part-1.lua",
         "urls": ["https://www.wowhead.com/forever/quests/kalimdor/ashenvale"],
         "level_max": 22,
+    },
+    {
+        "file": "Guides/Leveling/ashenvale-part-2.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/ashenvale"],
+        "level_max": 24,
+    },
+    {
+        "file": "Guides/Leveling/ashenvale-part-3.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/ashenvale"],
+        "level_max": 27,
+    },
+    {
+        "file": "Guides/Leveling/ashenvale-part-4.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/ashenvale"],
+        "level_max": 30,
+    },
+    {
+        "file": "Guides/Leveling/the-barrens-part-3.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/the-barrens"],
+        "level_max": 25,
+    },
+    {
+        "file": "Guides/Leveling/thousand-needles-part-1.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/thousand-needles"],
+        "level_max": 26,
+    },
+    {
+        "file": "Guides/Leveling/thousand-needles-part-2.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/thousand-needles"],
+        "level_max": 29,
+    },
+    {
+        "file": "Guides/Leveling/wetlands.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/eastern-kingdoms/wetlands"],
+        "level_max": 27,
+    },
+    {
+        "file": "Guides/Leveling/hillsbrad-foothills.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/eastern-kingdoms/hillsbrad-foothills"],
+        "level_max": 30,
     },
     {
         "file": "Guides/Leveling/stonetalon-mountains-part-1.lua",
@@ -130,6 +170,11 @@ CHAPTERS: list[dict] = [
         "file": "Guides/Leveling/stonetalon-mountains-part-3.lua",
         "urls": ["https://www.wowhead.com/forever/quests/kalimdor/stonetalon-mountains"],
         "level_max": 25,
+    },
+    {
+        "file": "Guides/Leveling/stonetalon-mountains-part-4.lua",
+        "urls": ["https://www.wowhead.com/forever/quests/kalimdor/stonetalon-mountains"],
+        "level_max": 27,
     },
     {
         "file": "Guides/Leveling/duskwood.lua",

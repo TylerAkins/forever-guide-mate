@@ -1,7 +1,8 @@
 local _, ns = ...
 
--- Horde Era leveling route for Thousand Needles, levels 27-29.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for Thousand Needles, levels 27-29.
+-- Thousand Needles has no new Forever quests. Pigments for Paints turns in on the Stonetalon visit to Thunder Bluff.
+-- The Great Cat Spirit is offered by Turak Runetotem on an earlier Thunder Bluff visit.
 -- The Elder Crone, accepted from Seereth, turns in to Magatha before Forsaken Aid.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -31,10 +32,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-27-29-thousand-needles",
-    title = "27-29 Thousand Needles (Era)",
+    id = "leveling-era-thousand-needles-part-2",
+    title = "Thousand Needles (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },

@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -113,29 +113,19 @@ ns:RegisterGuide({
             id = "accept-429-wild-hearts",
             kind = "accept",
             priority = 90,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Accept Wild Hearts from Dalar Dawnweaver in The Ivar Patch.",
+            conditions = { level = { min = 10 } },
+            text = "Accept Wild Hearts from Rane Yorick in The Ivar Patch.",
             complete = QuestState(429, "activeOrCompleted"),
             route = {
-                Point(MAP.SILVERPINE, 0.5346, 0.1345, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
+                Point(MAP.SILVERPINE, 0.5346, 0.1345, "Rane Yorick",
+                    "Travel to Rane Yorick."),
             },
         },
         {
             id = "objective-429-wild-hearts",
             kind = "objective",
             priority = 110,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
+            conditions = { level = { min = 10 } },
             text = "Kill Rabid Worg and collect 6 Discolored Worg Heart in Malden's Orchard.",
             dependsOn = { "accept-429-wild-hearts" },
             complete = QuestState(429, "complete"),
@@ -202,12 +192,7 @@ ns:RegisterGuide({
             id = "turnin-429-wild-hearts",
             kind = "turnin",
             priority = 170,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 429, state = "activeOrCompleted" } } },
-                },
-            },
+            conditions = { level = { min = 10 } },
             text = "Turn in Wild Hearts to Apothecary Renferrel in The Sepulcher.",
             dependsOn = { "objective-429-wild-hearts" },
             complete = QuestState(429, "completed"),
@@ -222,6 +207,7 @@ ns:RegisterGuide({
             priority = 180,
             conditions = { level = { min = 10 } },
             text = "Accept Return to Quinn from Apothecary Renferrel in The Sepulcher.",
+            dependsOn = { "turnin-429-wild-hearts" },
             complete = QuestState(430, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.4275, 0.4100, "Apothecary Renferrel",
@@ -579,35 +565,11 @@ ns:RegisterGuide({
             priority = 461,
             conditions = { level = { min = 10 } },
             text = "Accept Wild Eyes from Quinn Yorick at the Ivar Patch.",
+            dependsOn = { "turnin-430-return-to-quinn" },
             complete = QuestState(91920, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.5340, 0.1260, "Quinn Yorick",
                     "Travel to Quinn Yorick."),
-            },
-        },
-        {
-            id = "accept-425-ivar-the-foul",
-            kind = "accept",
-            priority = 470,
-            conditions = { level = { min = 10 } },
-            text = "Accept Ivar the Foul from Rane Yorick in The Ivar Patch.",
-            complete = QuestState(425, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.5344, 0.1340, "Rane Yorick",
-                    "Travel to Rane Yorick."),
-            },
-        },
-        {
-            id = "objective-425-ivar-the-foul",
-            kind = "objective",
-            priority = 480,
-            conditions = { level = { min = 10 } },
-            text = "Kill Ivar the Foul and collect Ivar's Head in The Ivar Patch.",
-            dependsOn = { "accept-425-ivar-the-foul" },
-            complete = QuestState(425, "complete"),
-            route = {
-                Point(MAP.SILVERPINE, 0.5161, 0.1388, "Ivar the Foul",
-                    "Travel to Ivar the Foul."),
             },
         },
         {
@@ -621,19 +583,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.5980, 0.1540, "Vile Fin Shredder",
                     "Travel to Vile Fin Shredder."),
-            },
-        },
-        {
-            id = "turnin-425-ivar-the-foul",
-            kind = "turnin",
-            priority = 490,
-            conditions = { level = { min = 10 } },
-            text = "Turn in Ivar the Foul to Rane Yorick in The Ivar Patch.",
-            dependsOn = { "objective-425-ivar-the-foul" },
-            complete = QuestState(425, "completed"),
-            route = {
-                Point(MAP.SILVERPINE, 0.5346, 0.1342, "Rane Yorick",
-                    "Travel to Rane Yorick."),
             },
         },
         {
@@ -699,6 +648,45 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.5340, 0.1260, "Quinn Yorick",
                     "Travel to Quinn Yorick."),
+            },
+        },
+        {
+            id = "accept-425-ivar-the-foul",
+            kind = "accept",
+            priority = 533,
+            conditions = { level = { min = 10 } },
+            text = "Accept Ivar the Foul from Rane Yorick in The Ivar Patch.",
+            dependsOn = { "turnin-91921-return-to-quinn-again" },
+            complete = QuestState(425, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5344, 0.1340, "Rane Yorick",
+                    "Travel to Rane Yorick."),
+            },
+        },
+        {
+            id = "objective-425-ivar-the-foul",
+            kind = "objective",
+            priority = 534,
+            conditions = { level = { min = 10 } },
+            text = "Kill Ivar the Foul and collect Ivar's Head in The Ivar Patch.",
+            dependsOn = { "accept-425-ivar-the-foul" },
+            complete = QuestState(425, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5161, 0.1388, "Ivar the Foul",
+                    "Travel to Ivar the Foul."),
+            },
+        },
+        {
+            id = "turnin-425-ivar-the-foul",
+            kind = "turnin",
+            priority = 535,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Ivar the Foul to Rane Yorick in The Ivar Patch.",
+            dependsOn = { "objective-425-ivar-the-foul" },
+            complete = QuestState(425, "completed"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5346, 0.1342, "Rane Yorick",
+                    "Travel to Rane Yorick."),
             },
         },
         {
@@ -951,18 +939,6 @@ ns:RegisterGuide({
             complete = QuestState(99, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.4427, 0.3981, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "accept-98298-arugals-folly",
-            kind = "accept",
-            priority = 791,
-            conditions = { level = { min = 16 } },
-            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
-            complete = QuestState(98298, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
             },
         },
@@ -2917,19 +2893,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-98298-arugals-folly",
-            kind = "objective",
-            priority = 2621,
-            conditions = { level = { min = 16 } },
-            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
-            dependsOn = { "accept-98298-arugals-folly" },
-            complete = QuestState(98298, "complete"),
-            route = {
-                Point(MAP.SILVERPINE, 0.5000, 0.7400, "Moonrage Bloodhowler",
-                    "Travel to Moonrage Bloodhowler."),
-            },
-        },
-        {
             id = "objective-98299-stop-the-spread",
             kind = "objective",
             priority = 2622,
@@ -2955,6 +2918,32 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4421, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "accept-98298-arugals-folly",
+            kind = "accept",
+            priority = 2640.5,
+            conditions = { level = { min = 16 } },
+            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
+            dependsOn = { "turnin-99-arugal-s-folly" },
+            complete = QuestState(98298, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "objective-98298-arugals-folly",
+            kind = "objective",
+            priority = 2640.7,
+            conditions = { level = { min = 16 } },
+            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
+            dependsOn = { "accept-98298-arugals-folly" },
+            complete = QuestState(98298, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5000, 0.7400, "Moonrage Bloodhowler",
+                    "Travel to Moonrage Bloodhowler."),
             },
         },
         {

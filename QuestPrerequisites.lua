@@ -211,11 +211,83 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 430,
+    mode = "all",
+    quests = { 429 },
+    conditions = { faction = "Horde" },
+    note = "Return to Quinn is offered after Wild Hearts is turned in to Apothecary Renferrel.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91920,
+    mode = "all",
+    quests = { 430 },
+    conditions = { faction = "Horde" },
+    note = "Wild Eyes is offered after the minor potion is delivered to Quinn Yorick.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91921,
+    mode = "all",
+    quests = { 91920 },
+    conditions = { faction = "Horde" },
+    note = "Return to Quinn (Again) is offered after Wild Eyes is turned in to Apothecary Renferrel.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 425,
+    mode = "all",
+    quests = { 91921 },
+    conditions = { faction = "Horde" },
+    note = "Ivar the Foul is offered after Quinn Yorick receives the second potion.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 98298,
+    mode = "all",
+    quests = { 99 },
+    conditions = { faction = "Horde" },
+    note = "Dalar's worgen follow-up is offered after Pyrewood Village is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 95774,
+    mode = "all",
+    quests = { 4921 },
+    conditions = { faction = "Horde" },
+    note = "Her Name Is Olgra is offered after Lost in Battle is turned in to Mankrik.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 99156,
+    mode = "all",
+    quests = { 356 },
+    conditions = { faction = "Horde" },
+    note = "Linnea's abomination report is offered after Rear Guard Patrol is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 2519,
+    mode = "all",
+    quests = { 98391 },
+    conditions = { faction = "Alliance" },
+    note = "The Temple of the Moon is offered after The Sisterhood of Elune is turned in to Sister Aquinne.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 99142,
     mode = "all",
     quests = { 5482 },
     conditions = { faction = "Horde" },
     note = "Tomb Weed is offered after Doom Weed is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 95125,
+    mode = "all",
+    quests = { 95111 },
+    conditions = { all = { { faction = "Horde" }, { race = 5 }, { class = 2 } } },
+    note = "Ott's Masterwork is offered after An Underrated Talent delivers the smithing materials.",
 })
 
 ns:RegisterQuestPrerequisite({

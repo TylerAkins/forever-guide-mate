@@ -1,7 +1,8 @@
 local _, ns = ...
 
--- Alliance Era leveling route for the Wetlands, levels 24-27.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Alliance leveling route for the Wetlands, levels 24-27.
+-- Spoils of War is accepted from Valstag Ironjaw in Menethil Keep, collected in the harbor, and turned in with War Banners.
+-- Left out: Crocs of the Sky, Return the Statuette, Bloom of the Heavens, Crimson Crate Delivery, Razormaw Needling, Trying Times, and Alchemical Hazards have no start pin. Forced Disarmament is level 30. A Lack of Virtue starts with Tom Wilson in Hillsbrad Foothills. Unrequited Love starts with Archaeologist Hollee in Auberdine. Call of Water starts with Eldrun Stormbreaker in Ironforge after this route has left the Wetlands.
 -- An Old Colleague, accepted from Gaxim in Stonetalon, turns in to Lomac before Ineptitude + Chemicals = Fun.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -30,10 +31,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-24-27-wetlands",
-    title = "24-27 Wetlands (Era)",
+    id = "leveling-era-wetlands",
+    title = "Wetlands",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -184,6 +185,18 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98197-spoils-of-war",
+            kind = "accept",
+            priority = 125,
+            conditions = { level = { min = 18 } },
+            text = "Accept Spoils of War from Valstag Ironjaw in Menethil Keep.",
+            complete = QuestState(98197, "activeOrCompleted"),
+            route = {
+                Point(MAP.WETLANDS, 0.1000, 0.5680, "Valstag Ironjaw",
+                    "Travel to Valstag Ironjaw."),
+            },
+        },
+        {
             id = "accept-305-in-search-of-the-excavation-team",
             kind = "accept",
             priority = 130,
@@ -193,6 +206,20 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1147, 0.5220, "Tarrel Rockweaver",
                     "Travel to Tarrel Rockweaver."),
+            },
+        },
+        {
+            id = "objective-98197-spoils-of-war",
+            kind = "objective",
+            priority = 135,
+            conditions = { level = { min = 18 } },
+            useClientPin = true,
+            text = "Recover 6 Khaz Modan Timber and 30 Khaz Modan Iron from the water in Menethil Harbor. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-98197-spoils-of-war" },
+            complete = QuestState(98197, "complete"),
+            route = {
+                Point(MAP.WETLANDS, 0.1000, 0.5680, "Menethil Harbor",
+                    "Travel to Menethil Harbor."),
             },
         },
         {
@@ -869,6 +896,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.0990, 0.5743, "Captain Stoutfist",
                     "Travel to Captain Stoutfist."),
+            },
+        },
+        {
+            id = "turnin-98197-spoils-of-war",
+            kind = "turnin",
+            priority = 725,
+            conditions = { level = { min = 18 } },
+            text = "Turn in Spoils of War to Valstag Ironjaw in Menethil Keep.",
+            dependsOn = { "objective-98197-spoils-of-war" },
+            complete = QuestState(98197, "completed"),
+            route = {
+                Point(MAP.WETLANDS, 0.1000, 0.5680, "Valstag Ironjaw",
+                    "Travel to Valstag Ironjaw."),
             },
         },
         {

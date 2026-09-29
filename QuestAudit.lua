@@ -100,7 +100,7 @@ function QuestAudit:Record(goal, questID, npc)
         text = goal.text,
     }
     if type(ns.charDB.deferred) == "table" then ns.charDB.deferred[goal.id] = nil end
-    self:Announce(("%s does not offer quest %d. Progress is blocked until its prerequisite is known: %s")
+    self:Announce(("%s does not offer quest %d. The guide stays on this step until that quest is offered: %s")
         :format(npc, questID, tostring(goal.text)))
 end
 

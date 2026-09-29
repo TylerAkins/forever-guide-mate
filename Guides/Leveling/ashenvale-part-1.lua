@@ -29,8 +29,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-ashenvale",
-    title = "Ashenvale",
+    id = "leveling-era-ashenvale-part-1",
+    title = "Ashenvale (Part 1)",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

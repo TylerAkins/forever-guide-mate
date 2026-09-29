@@ -25,7 +25,7 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 5,
+    schemaVersion = 6,
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
@@ -188,6 +188,64 @@ local function MigrateStorage(account, character)
             end
         end
         character.schemaVersion = 5
+    end
+    if (tonumber(character.schemaVersion) or 1) < 6 then
+        local eraChapterIDs = {
+            ["leveling-era-ashenvale"] = "leveling-era-ashenvale-part-1",
+        }
+        local function RemapEraKey(key)
+            if type(key) ~= "string" then
+                return key
+            end
+            local mapped = eraChapterIDs[key]
+            if mapped then
+                return mapped
+            end
+            for oldID, newID in pairs(eraChapterIDs) do
+                local prefix = oldID .. ":"
+                if string.sub(key, 1, #prefix) == prefix then
+                    return newID .. ":" .. string.sub(key, #prefix + 1)
+                end
+            end
+            return key
+        end
+        local function RemapStringField(field)
+            if type(character[field]) == "string" then
+                character[field] = RemapEraKey(character[field])
+            end
+        end
+        RemapStringField("selectedGuide")
+        RemapStringField("eraChapterPick")
+        RemapStringField("eraFloor")
+        RemapStringField("eraSegment")
+        RemapStringField("activeGoal")
+        if type(character.activeGoalByGuide) == "table" then
+            local nextByGuide = {}
+            for guideID, goalID in pairs(character.activeGoalByGuide) do
+                nextByGuide[RemapEraKey(guideID)] = RemapEraKey(goalID)
+            end
+            character.activeGoalByGuide = nextByGuide
+        end
+        if type(character.completionLedger) == "table" then
+            local nextLedger = {}
+            for guideID, revisions in pairs(character.completionLedger) do
+                nextLedger[RemapEraKey(guideID)] = revisions
+            end
+            character.completionLedger = nextLedger
+        end
+        if type(character.deferred) == "table" then
+            local nextDeferred = {}
+            for goalID, value in pairs(character.deferred) do
+                nextDeferred[RemapEraKey(goalID)] = value
+            end
+            character.deferred = nextDeferred
+        end
+        if type(character.history) == "table" then
+            for index, goalID in ipairs(character.history) do
+                character.history[index] = RemapEraKey(goalID)
+            end
+        end
+        character.schemaVersion = 6
     end
 end
 
