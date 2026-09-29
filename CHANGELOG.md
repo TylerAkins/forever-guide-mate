@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.28 - 2026-09-29
+
+- Tirisfal Glades now includes As Above, So Below after Bandarion Keep is turned in. Hilda the Breaker sends you into the Shadowvale cellars for Faintly Glowing Bones.
+
 ## 0.1.27 - 2026-09-28
 
 - Accepting or turning in a quest no longer walks every chapter on the game thread. Only the open chapter is rebuilt, and the map pin is read after that update finishes.
