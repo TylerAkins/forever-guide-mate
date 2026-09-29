@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -939,18 +939,6 @@ ns:RegisterGuide({
             complete = QuestState(99, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.4427, 0.3981, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "accept-98298-arugals-folly",
-            kind = "accept",
-            priority = 791,
-            conditions = { level = { min = 16 } },
-            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
-            complete = QuestState(98298, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
             },
         },
@@ -2905,19 +2893,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-98298-arugals-folly",
-            kind = "objective",
-            priority = 2621,
-            conditions = { level = { min = 16 } },
-            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
-            dependsOn = { "accept-98298-arugals-folly" },
-            complete = QuestState(98298, "complete"),
-            route = {
-                Point(MAP.SILVERPINE, 0.5000, 0.7400, "Moonrage Bloodhowler",
-                    "Travel to Moonrage Bloodhowler."),
-            },
-        },
-        {
             id = "objective-98299-stop-the-spread",
             kind = "objective",
             priority = 2622,
@@ -2943,6 +2918,32 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINE, 0.4421, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "accept-98298-arugals-folly",
+            kind = "accept",
+            priority = 2640.5,
+            conditions = { level = { min = 16 } },
+            text = "Accept Arugal's Folly from Dalar Dawnweaver in the Sepulcher.",
+            dependsOn = { "turnin-99-arugal-s-folly" },
+            complete = QuestState(98298, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "objective-98298-arugals-folly",
+            kind = "objective",
+            priority = 2640.7,
+            conditions = { level = { min = 16 } },
+            text = "Arugal's Folly: bring 6 Worgen Bits from Moonrage Bloodhowlers.",
+            dependsOn = { "accept-98298-arugals-folly" },
+            complete = QuestState(98298, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.5000, 0.7400, "Moonrage Bloodhowler",
+                    "Travel to Moonrage Bloodhowler."),
             },
         },
         {

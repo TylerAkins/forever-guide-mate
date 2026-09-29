@@ -10,6 +10,7 @@ All notable changes to this project are documented here.
 - The first Alliance Ashenvale chapter is now Ashenvale (Part 1). Saved progress for that chapter migrates on load.
 - Silverpine no longer asks for Return to Quinn before Wild Hearts is turned in. The worg hearts stay on the route, and Supplying the Sepulcher turns in to Karos Razok on that same Sepulcher visit.
 - Ivar the Foul waits until Return to Quinn (Again) is turned in. Rane Yorick does not offer it after the first potion.
+- Three more accepts wait for the turn-in that offers them: Dalar's worgen follow-up after Pyrewood Village, Her Name Is Olgra after Lost in Battle, and Linnea's abomination report after Rear Guard Patrol. The Temple of the Moon waits until Sister Aquinne takes The Sisterhood of Elune.
 
 ## 0.1.30 - 2026-09-29
 
