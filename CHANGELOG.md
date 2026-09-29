@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.32 - 2026-09-29
+
+- Silverpine Forest now accepts Watching the Roads after Ambermill Investigations is turned in, and The Weaver after Watching the Roads. The tracker no longer asks for The Weaver while Shadow Priest Allister only offers Watching the Roads.
+
 ## 0.1.31 - 2026-09-29
 
 - Horde and Alliance leveling chapters through level 30 are in the guide. Alliance Ashenvale is Part 1, Part 2, and Part 3. Wetlands is its own chapter. Horde adds The Barrens (Part 3), Thousand Needles (Part 1) and (Part 2), Ashenvale, Stonetalon Mountains (Part 3), and Hillsbrad Foothills.
