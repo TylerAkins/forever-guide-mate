@@ -36,7 +36,7 @@ lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
 ```
 
-CI (`validate`) runs the same suite, validates `RELEASE_NOTES.md` against `VERSION`, then dry-runs the packager.
+CI (`validate`) runs the same suite, validates `RELEASE_NOTES.md` against `VERSION`, and on pull requests checks that any change under `Guides/`, `QuestPrerequisites.lua`, core addon Lua, `ForeverGuideMate.toc`, or `VERSION` bumps the patch version and updates `CHANGELOG.md` (see the `Validate automated release intent` step in `.github/workflows/ci.yml`). It then dry-runs the packager.
 
 ## Forever interface updates
 

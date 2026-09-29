@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 4,
+    revision = 5,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -968,22 +968,11 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-480-the-weaver",
+            id = "accept-95981-watching-the-roads",
             kind = "accept",
             priority = 810,
             conditions = { level = { min = 10 } },
-            text = "Accept The Weaver from Shadow Priest Allister in The Sepulcher.",
-            complete = QuestState(480, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.4398, 0.4096, "Shadow Priest Allister",
-                    "Travel to Shadow Priest Allister."),
-            },
-        },
-        {
-            id = "accept-95981-watching-the-roads",
-            kind = "accept",
-            priority = 811,
-            conditions = { level = { min = 20 } },
+            dependsOn = { "turnin-479-ambermill-investigations" },
             text = "Accept Watching the Roads from Shadow Priest Allister in the Sepulcher.",
             complete = QuestState(95981, "activeOrCompleted"),
             route = {
@@ -994,8 +983,8 @@ ns:RegisterGuide({
         {
             id = "objective-95981-watching-the-roads",
             kind = "objective",
-            priority = 812,
-            conditions = { level = { min = 20 } },
+            priority = 811,
+            conditions = { level = { min = 10 } },
             text = "Watching the Roads: slay 8 Dalaran Watchers and 8 Dalaran Wizards in Ambermill.",
             dependsOn = { "accept-95981-watching-the-roads" },
             complete = QuestState(95981, "complete"),
@@ -1009,13 +998,26 @@ ns:RegisterGuide({
         {
             id = "turnin-95981-watching-the-roads",
             kind = "turnin",
-            priority = 813,
-            conditions = { level = { min = 20 } },
+            priority = 812,
+            conditions = { level = { min = 10 } },
             text = "Turn in Watching the Roads to Shadow Priest Allister in the Sepulcher.",
             dependsOn = { "objective-95981-watching-the-roads" },
             complete = QuestState(95981, "completed"),
             route = {
                 Point(MAP.SILVERPINE, 0.4400, 0.4100, "Shadow Priest Allister",
+                    "Travel to Shadow Priest Allister."),
+            },
+        },
+        {
+            id = "accept-480-the-weaver",
+            kind = "accept",
+            priority = 813,
+            conditions = { level = { min = 10 } },
+            dependsOn = { "turnin-95981-watching-the-roads" },
+            text = "Accept The Weaver from Shadow Priest Allister in The Sepulcher.",
+            complete = QuestState(480, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4398, 0.4096, "Shadow Priest Allister",
                     "Travel to Shadow Priest Allister."),
             },
         },
