@@ -1,4 +1,5 @@
-## 0.1.30 - 2026-09-29
+## 0.1.29 - 2026-09-29
 
-- Leveling guide files now use zone names instead of level ranges.
-- Era chapter IDs were renamed to match. Saved character data migrates on load.
+- Leveling chapter titles use zone names; revisited zones use (Part 1), (Part 2), and so on.
+- Leveling guide files use zone slugs (`durotar.lua`, `darkshore-part-2.lua`, …). Era chapter IDs match; saved data migrates on load.
+- Tirisfal Glades includes The One That Got Away after Bandarion Keep is turned in.
