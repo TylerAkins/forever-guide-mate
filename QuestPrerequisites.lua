@@ -306,3 +306,19 @@ ns:RegisterQuestPrerequisite({
     note = "The One That Got Away is offered after Bandarion Keep is turned in.",
 })
 
+ns:RegisterQuestPrerequisite({
+    quest = 95981,
+    mode = "all",
+    quests = { 479 },
+    conditions = { faction = "Horde" },
+    note = "Watching the Roads is offered after Ambermill Investigations is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 480,
+    mode = "all",
+    quests = { 95981 },
+    conditions = { faction = "Horde" },
+    note = "The Weaver is offered after Watching the Roads is turned in.",
+})
+
