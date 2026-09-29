@@ -47,6 +47,12 @@ Guides/Leveling/stonetalon-mountains-part-1.lua
 Guides/Leveling/the-barrens-part-2.lua
 Guides/Leveling/stonetalon-mountains-part-2.lua
 Guides/Leveling/stonetalon-mountains-part-3.lua
+Guides/Leveling/the-barrens-part-3.lua
+Guides/Leveling/thousand-needles-part-1.lua
+Guides/Leveling/ashenvale-part-3.lua
+Guides/Leveling/stonetalon-mountains-part-4.lua
+Guides/Leveling/thousand-needles-part-2.lua
+Guides/Leveling/hillsbrad-foothills.lua
 Guides/Leveling/dun-morogh.lua
 Guides/Leveling/elwynn-forest.lua
 Guides/Leveling/teldrassil.lua
@@ -55,10 +61,13 @@ Guides/Leveling/westfall.lua
 Guides/Leveling/loch-modan.lua
 Guides/Leveling/redridge-mountains-part-1.lua
 Guides/Leveling/darkshore-part-2.lua
-Guides/Leveling/ashenvale.lua
+Guides/Leveling/ashenvale-part-1.lua
 Guides/Leveling/darkshore-part-3.lua
+Guides/Leveling/ashenvale-part-2.lua
+Guides/Leveling/wetlands.lua
 Guides/Leveling/redridge-mountains-part-2.lua
 Guides/Leveling/duskwood.lua
+Guides/Leveling/ashenvale-part-4.lua
 Guides/Class/Warrior.lua
 Guides/Class/Paladin.lua
 Guides/Class/Hunter.lua

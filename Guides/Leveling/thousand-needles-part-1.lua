@@ -1,7 +1,7 @@
 local _, ns = ...
 
--- Horde Era leveling route for Thousand Needles, levels 25-26.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Horde leveling route for Thousand Needles, levels 25-26.
+-- Thousand Needles has no new Forever quests.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -29,10 +29,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-25-26-thousand-needles",
-    title = "25-26 Thousand Needles (Era)",
+    id = "leveling-era-thousand-needles-part-1",
+    title = "Thousand Needles (Part 1)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Horde" },

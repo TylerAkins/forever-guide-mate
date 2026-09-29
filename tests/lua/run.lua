@@ -53,6 +53,12 @@ Load("Guides/Leveling/stonetalon-mountains-part-1.lua")
 Load("Guides/Leveling/the-barrens-part-2.lua")
 Load("Guides/Leveling/stonetalon-mountains-part-2.lua")
 Load("Guides/Leveling/stonetalon-mountains-part-3.lua")
+Load("Guides/Leveling/the-barrens-part-3.lua")
+Load("Guides/Leveling/thousand-needles-part-1.lua")
+Load("Guides/Leveling/ashenvale-part-3.lua")
+Load("Guides/Leveling/stonetalon-mountains-part-4.lua")
+Load("Guides/Leveling/thousand-needles-part-2.lua")
+Load("Guides/Leveling/hillsbrad-foothills.lua")
 Load("Guides/Leveling/dun-morogh.lua")
 Load("Guides/Leveling/elwynn-forest.lua")
 Load("Guides/Leveling/teldrassil.lua")
@@ -61,10 +67,13 @@ Load("Guides/Leveling/westfall.lua")
 Load("Guides/Leveling/loch-modan.lua")
 Load("Guides/Leveling/redridge-mountains-part-1.lua")
 Load("Guides/Leveling/darkshore-part-2.lua")
-Load("Guides/Leveling/ashenvale.lua")
+Load("Guides/Leveling/ashenvale-part-1.lua")
 Load("Guides/Leveling/darkshore-part-3.lua")
+Load("Guides/Leveling/ashenvale-part-2.lua")
+Load("Guides/Leveling/wetlands.lua")
 Load("Guides/Leveling/redridge-mountains-part-2.lua")
 Load("Guides/Leveling/duskwood.lua")
+Load("Guides/Leveling/ashenvale-part-4.lua")
 Load("Guides/Class/Warrior.lua")
 Load("Guides/Class/Paladin.lua")
 Load("Guides/Class/Hunter.lua")
@@ -192,7 +201,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 3, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 5, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 6, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -3020,7 +3029,7 @@ function TestStaleFlightRoutesPurged()
         taxiNodes = { ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore" },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 5, "stale flight storage migrates forward")
+    Equal(ns.charDB.schemaVersion, 6, "stale flight storage migrates forward")
     local survivors = ns.charDB.taxiRoutes[1413] and ns.charDB.taxiRoutes[1413].destinations or {}
     Check(survivors["thunder bluff, mulgore"] ~= nil, "a learned flight survives the route purge")
     Equal(survivors["sun rock retreat, stonetalon mountains"], nil,
@@ -3048,7 +3057,7 @@ function TestEraChapterIdMigration()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 5, "era chapter rename bumps character schema")
+    Equal(ns.charDB.schemaVersion, 6, "era chapter rename bumps character schema")
     Equal(ns.charDB.selectedGuide, "leveling-era-durotar", "selectedGuide migrates to the new chapter id")
     Equal(ns.charDB.eraChapterPick, "leveling-era-the-barrens-part-1", "eraChapterPick migrates")
     Equal(ns.charDB.activeGoal, "leveling-era-durotar:accept-4641-your-place-in-the-world",
@@ -3061,6 +3070,29 @@ function TestEraChapterIdMigration()
     ns.InitializeStorage()
 end
 TestEraChapterIdMigration()
+
+function TestAshenvalePartIdMigration()
+    local previousCharDB = ForeverGuideMateCharDB
+    ForeverGuideMateCharDB = {
+        schemaVersion = 5,
+        selectedGuide = "leveling-era-ashenvale",
+        activeGoal = "leveling-era-ashenvale:turnin-967-the-tower-of-althalaxx",
+        completionLedger = {
+            ["leveling-era-ashenvale"] = { ["2"] = { ["turnin-967-the-tower-of-althalaxx"] = true } },
+        },
+    }
+    ns.InitializeStorage()
+    Equal(ns.charDB.schemaVersion, 6, "ashenvale part rename bumps character schema")
+    Equal(ns.charDB.selectedGuide, "leveling-era-ashenvale-part-1",
+        "the first Alliance Ashenvale chapter migrates to part 1")
+    Equal(ns.charDB.activeGoal, "leveling-era-ashenvale-part-1:turnin-967-the-tower-of-althalaxx",
+        "ashenvale goal ids migrate with the chapter")
+    Check(ns.charDB.completionLedger["leveling-era-ashenvale-part-1"] ~= nil,
+        "ashenvale completion ledger migrates to part 1")
+    ForeverGuideMateCharDB = previousCharDB
+    ns.InitializeStorage()
+end
+TestAshenvalePartIdMigration()
 
 function TestFlightNamesNeedADistinctiveMatch()
     ns.charDB.taxiRoutes = {}
@@ -3124,7 +3156,7 @@ function TestEraLeveling()
         Check(segment.faction == "Horde" or segment.faction == "Alliance",
             "every Era chapter names a faction")
     end
-    Equal(chapters, 21, "the merged Era guide includes the converted chapters")
+    Equal(chapters, 30, "the merged Era guide includes the converted chapters")
 
     local function ResetEra()
         ns.charDB.selectedGuide = nil

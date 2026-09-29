@@ -1,7 +1,7 @@
 local _, ns = ...
 
--- Alliance Era leveling route for Ashenvale, levels 24-24.
--- This follows the classic route and is not rewritten for Forever yet.
+-- Alliance leveling route for Ashenvale, levels 24-24.
+-- No new Forever Ashenvale quest sits on this pass. Repelling Invaders is a level 60 daily.
 -- Pridewings of Stonetalon, collected on the way to Stonetalon Peak, turns in to Shindrell on this Astranaar visit.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -29,10 +29,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-24-24-ashenvale",
-    title = "24-24 Ashenvale (Era)",
+    id = "leveling-era-ashenvale-part-2",
+    title = "Ashenvale (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Alliance" },

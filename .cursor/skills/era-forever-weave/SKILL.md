@@ -5,7 +5,7 @@ description: Weave Wowhead Forever quests into a classic Era leveling chapter an
 
 # Era Forever weave
 
-An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It lives in `Guides/Era/` and is not loaded. Those files still use a level-range name, such as `Guides/Era/24-24-ashenvale.lua`, and a title that ends in `(Era)`.
+An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It lives in `Guides/Era/` and is not loaded. Those files still use a level-range name, such as `Guides/Era/30-31-wetlands.lua`, and a title that ends in `(Era)`.
 
 A converted chapter lives in `Guides/Leveling/` and is part of the 1-60 Era guide. Converting means weaving in the Forever quests that sit on the existing route — never rewriting the route itself. The graduated file, id, and title drop the level range. See **Names** below.
 
@@ -90,7 +90,7 @@ Race ids: Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gno
 
 ## Converted example
 
-The Westfall chapter (`Guides/Leveling/westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/24-24-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
+The Westfall chapter (`Guides/Leveling/westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/30-31-wetlands.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
 
 ## Names
 
