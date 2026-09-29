@@ -2,7 +2,7 @@
 
 The procedure for adding or updating a zone lives in the repo skill [`.cursor/skills/zone-loremaster-guide/SKILL.md`](../.cursor/skills/zone-loremaster-guide/SKILL.md). Use that when writing the next zone. The files in `Guides/Loremaster/` are the working copies. Only **Durotar** and **Mulgore** are listed in `ForeverGuideMate.toc` today; other zones return when rewritten from their leveling spine. Quest id, multi-objective, and pin rules are in [guide-authoring.md](guide-authoring.md).
 
-Loremaster finishes the zone. The walk is the leveling route. Converted chapters are in `Guides/Leveling/`. A chapter whose title still ends in `(Era)` is in `Guides/Era/` and is still part of that walk. A quest on the Wowhead Forever zone page that is not already on that route is woven in:
+Loremaster finishes the zone. The walk is the leveling route. Converted chapters are zone slugs in `Guides/Leveling/` (`durotar.lua`, `the-barrens-part-1.lua`), not level-range names. A chapter whose title still ends in `(Era)` is in `Guides/Era/` under its level-range filename and is still part of that walk. A quest on the Wowhead Forever zone page that is not already on that route is woven in:
 
 1. A series follow-up goes immediately after the previous turn-in.
 2. A quest from a giver the route already visits at that quest's recommended level is accepted with that visit, before anyone leaves. An earlier visit does not count when the recommended level is still ahead.
