@@ -64,6 +64,8 @@ Part numbers are **per faction**, not shared across Alliance and Horde. If only 
 
 Example: Horde Stonetalon is `(Part 1)` then `(Part 2)`; Alliance Stonetalon is a single chapter titled `Stonetalon Mountains` with no part suffix. Internal chapter ids and filenames may still use `part-1`, `part-2` slugs for load order; only the displayed `title` follows this rule.
 
+A converted file drops the Era level-range name. `Guides/Era/12-17-westfall.lua` becomes `Guides/Leveling/westfall.lua` with id `leveling-era-westfall`. The conversion steps are in `.cursor/skills/era-forever-weave/SKILL.md`.
+
 ## `dependsOn` and conditions
 
 - Put faction, class, race, and level gates on **every** step of a quest, not only the accept.
