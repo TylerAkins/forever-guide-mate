@@ -33,8 +33,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-22-23-southern-barrens",
-    title = "22-23 Southern Barrens",
+    id = "leveling-era-the-barrens-part-2",
+    title = "The Barrens (Part 2)",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

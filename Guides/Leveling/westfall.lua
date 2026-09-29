@@ -37,8 +37,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-12-17-westfall",
-    title = "12-17 Westfall",
+    id = "leveling-era-westfall",
+    title = "Westfall",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

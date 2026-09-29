@@ -35,8 +35,8 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-1-12-mulgore",
-    title = "1-12 Mulgore",
+    id = "leveling-era-mulgore",
+    title = "Mulgore",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

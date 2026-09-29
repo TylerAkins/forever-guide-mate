@@ -38,10 +38,10 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-1-12-tirisfal-glades",
+    id = "leveling-era-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 9,
+    revision = 10,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -3121,6 +3121,47 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
                     "Travel to Hilda the Breaker."),
+            },
+        },
+        {
+            id = "accept-99153-the-one-that-got-away",
+            kind = "accept",
+            priority = 1490.3,
+            conditions = { level = { min = 10 } },
+            text = "Accept The One That Got Away from Ephram Barbaro at Bandarion Keep.",
+            dependsOn = { "turnin-96899-bandarion-keep" },
+            complete = QuestState(99153, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2020, 0.4640, "Ephram Barbaro",
+                    "Travel to Ephram Barbaro."),
+            },
+        },
+        {
+            id = "objective-99153-the-one-that-got-away",
+            kind = "objective",
+            priority = 1490.4,
+            conditions = { level = { min = 10 } },
+            text = "Pick up the Glowing Crystal Fragment in the Shadowvale cellars. Use the burned-house entrance on the southwestern edge.",
+            dependsOn = { "accept-99153-the-one-that-got-away" },
+            complete = QuestState(99153, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
+                    "Travel to the burned house entrance to the Shadowvale cellars."),
+                Point(MAP.TIRISFAL, 0.0970, 0.6940, "Glowing Crystal Fragment",
+                    "Travel to the Glowing Crystal Fragment."),
+            },
+        },
+        {
+            id = "turnin-99153-the-one-that-got-away",
+            kind = "turnin",
+            priority = 1490.5,
+            conditions = { level = { min = 10 } },
+            text = "Turn in The One That Got Away to Ephram Barbaro at Bandarion Keep.",
+            dependsOn = { "objective-99153-the-one-that-got-away" },
+            complete = QuestState(99153, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2020, 0.4640, "Ephram Barbaro",
+                    "Travel to Ephram Barbaro."),
             },
         },
         {
