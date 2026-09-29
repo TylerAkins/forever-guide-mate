@@ -41,7 +41,7 @@ ns:RegisterGuide({
     id = "leveling-era-tirisfal-glades",
     title = "Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 10,
+    revision = 11,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1861,31 +1861,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-99156-rear-guard-patrol",
-            kind = "accept",
-            priority = 1172,
-            conditions = { level = { min = 13 } },
-            text = "Accept Rear Guard Patrol from Deathguard Linnea.",
-            complete = QuestState(99156, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
-                    "Travel to Deathguard Linnea."),
-            },
-        },
-        {
-            id = "objective-99156-rear-guard-patrol",
-            kind = "objective",
-            priority = 1181,
-            conditions = { level = { min = 13 } },
-            text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
-            dependsOn = { "accept-99156-rear-guard-patrol" },
-            complete = QuestState(99156, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.8280, 0.4420, "Riptear",
-                    "Travel to Riptear."),
-            },
-        },
-        {
             id = "objective-97558-hides-for-the-forsaken",
             kind = "objective",
             priority = 1061,
@@ -2227,6 +2202,32 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.6553, 0.6019, "Deathguard Linnea",
                     "Travel to Deathguard Linnea."),
+            },
+        },
+        {
+            id = "accept-99156-rear-guard-patrol",
+            kind = "accept",
+            priority = 1410.4,
+            conditions = { level = { min = 13 } },
+            text = "Accept Rear Guard Patrol from Deathguard Linnea.",
+            dependsOn = { "turnin-356-rear-guard-patrol" },
+            complete = QuestState(99156, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
+                    "Travel to Deathguard Linnea."),
+            },
+        },
+        {
+            id = "objective-99156-rear-guard-patrol",
+            kind = "objective",
+            priority = 1410.6,
+            conditions = { level = { min = 13 } },
+            text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
+            dependsOn = { "accept-99156-rear-guard-patrol" },
+            complete = QuestState(99156, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.8280, 0.4420, "Riptear",
+                    "Travel to Riptear."),
             },
         },
         {

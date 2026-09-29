@@ -40,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-the-barrens-part-1",
     title = "The Barrens (Part 1)",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -3312,19 +3312,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-95774-her-name-is-olgra",
-            kind = "accept",
-            priority = 2451,
-            conditions = { level = { min = 20 } },
-            text = "Accept Her Name Is Olgra from Mankrik at the Crossroads.",
-            dependsOn = { "accept-4921-lost-in-battle" },
-            complete = QuestState(95774, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5200, 0.3160, "Mankrik",
-                    "Travel to Mankrik."),
-            },
-        },
-        {
             id = "objective-880-altered-beings",
             kind = "objective",
             priority = 2470,
@@ -3528,19 +3515,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-95774-her-name-is-olgra",
-            kind = "objective",
-            priority = 2655,
-            conditions = { level = { min = 20 } },
-            text = "Her Name Is Olgra: collect 4 of Olgra's Adornments from quilboars.",
-            dependsOn = { "accept-95774-her-name-is-olgra" },
-            complete = QuestState(95774, "complete"),
-            route = {
-                Point(MAP.BARRENS, 0.4920, 0.5040, "Razormane Raider",
-                    "Travel to Razormane Raider."),
-            },
-        },
-        {
             id = "turnin-878-tribes-at-war",
             kind = "turnin",
             priority = 2670,
@@ -3652,6 +3626,32 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5197, 0.3157, "Mankrik",
                     "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "accept-95774-her-name-is-olgra",
+            kind = "accept",
+            priority = 2760.4,
+            conditions = { level = { min = 20 } },
+            text = "Accept Her Name Is Olgra from Mankrik at the Crossroads.",
+            dependsOn = { "turnin-4921-lost-in-battle" },
+            complete = QuestState(95774, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5200, 0.3160, "Mankrik",
+                    "Travel to Mankrik."),
+            },
+        },
+        {
+            id = "objective-95774-her-name-is-olgra",
+            kind = "objective",
+            priority = 2760.6,
+            conditions = { level = { min = 20 } },
+            text = "Her Name Is Olgra: collect 4 of Olgra's Adornments from quilboars.",
+            dependsOn = { "accept-95774-her-name-is-olgra" },
+            complete = QuestState(95774, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.4920, 0.5040, "Razormane Raider",
+                    "Travel to Razormane Raider."),
             },
         },
         {

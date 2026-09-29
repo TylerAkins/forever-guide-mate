@@ -37,7 +37,7 @@ ns:RegisterGuide({
     id = "leveling-era-teldrassil",
     title = "Teldrassil",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -1952,23 +1952,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-2519-the-temple-of-the-moon",
-            kind = "accept",
-            priority = 1320,
-            conditions = {
-                all = {
-                    { level = { min = 5 } },
-                    { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Accept The Temple of the Moon from Sister Aquinne in The Temple Gardens.",
-            complete = QuestState(2519, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.2900, 0.4550, "Sister Aquinne",
-                    "Travel to Sister Aquinne."),
-            },
-        },
-        {
             id = "turnin-98391-the-sisterhood-of-elune",
             kind = "turnin",
             priority = 1321,
@@ -1978,6 +1961,24 @@ ns:RegisterGuide({
             complete = QuestState(98391, "completed"),
             route = {
                 Point(MAP.DARNASSUS, 0.2900, 0.4540, "Sister Aquinne",
+                    "Travel to Sister Aquinne."),
+            },
+        },
+        {
+            id = "accept-2519-the-temple-of-the-moon",
+            kind = "accept",
+            priority = 1322,
+            conditions = {
+                all = {
+                    { level = { min = 5 } },
+                    { ["not"] = { quest = { id = 2518, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Accept The Temple of the Moon from Sister Aquinne in The Temple Gardens.",
+            dependsOn = { "turnin-98391-the-sisterhood-of-elune" },
+            complete = QuestState(2519, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARNASSUS, 0.2900, 0.4550, "Sister Aquinne",
                     "Travel to Sister Aquinne."),
             },
         },

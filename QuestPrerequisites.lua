@@ -243,6 +243,38 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 98298,
+    mode = "all",
+    quests = { 99 },
+    conditions = { faction = "Horde" },
+    note = "Dalar's worgen follow-up is offered after Pyrewood Village is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 95774,
+    mode = "all",
+    quests = { 4921 },
+    conditions = { faction = "Horde" },
+    note = "Her Name Is Olgra is offered after Lost in Battle is turned in to Mankrik.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 99156,
+    mode = "all",
+    quests = { 356 },
+    conditions = { faction = "Horde" },
+    note = "Linnea's abomination report is offered after Rear Guard Patrol is turned in.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 2519,
+    mode = "all",
+    quests = { 98391 },
+    conditions = { faction = "Alliance" },
+    note = "The Temple of the Moon is offered after The Sisterhood of Elune is turned in to Sister Aquinne.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 99142,
     mode = "all",
     quests = { 5482 },
