@@ -513,16 +513,16 @@ end
 -- Starter chapters are parallel. After the chosen starter, every later chapter
 -- for that faction stays on the route in listed order.
 local ERA_STARTER_BY_RACE = {
-    [1] = "leveling-era-1-12-elwynn-forest",
-    [2] = "leveling-era-1-12-durotar",
-    [3] = "leveling-era-1-12-dun-morogh",
-    [4] = "leveling-era-1-12-teldrassil",
-    [5] = "leveling-era-1-12-tirisfal-glades",
-    [6] = "leveling-era-1-12-mulgore",
-    [7] = "leveling-era-1-12-dun-morogh",
-    [8] = "leveling-era-1-12-durotar",
-    [95] = "leveling-era-1-12-elwynn-forest",
-    [96] = "leveling-era-1-12-durotar",
+    [1] = "leveling-era-elwynn-forest",
+    [2] = "leveling-era-durotar",
+    [3] = "leveling-era-dun-morogh",
+    [4] = "leveling-era-teldrassil",
+    [5] = "leveling-era-tirisfal-glades",
+    [6] = "leveling-era-mulgore",
+    [7] = "leveling-era-dun-morogh",
+    [8] = "leveling-era-durotar",
+    [95] = "leveling-era-elwynn-forest",
+    [96] = "leveling-era-durotar",
 }
 
 local function IsEraGuide(guide)

@@ -29,7 +29,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-21-22-ashenvale",
+    id = "leveling-era-ashenvale",
     title = "Ashenvale",
     category = "Leveling Quest Guides",
     revision = 2,

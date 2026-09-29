@@ -41,7 +41,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-1-12-durotar",
+    id = "leveling-era-durotar",
     title = "Durotar",
     category = "Leveling Quest Guides",
     revision = 3,

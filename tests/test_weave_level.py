@@ -224,7 +224,7 @@ class PriorityTests(unittest.TestCase):
             },
         })
         """
-        goals = parse_goals(text, "guide", "Guides/Leveling/1-12-dun-morogh.lua", None)
+        goals = parse_goals(text, "guide", "Guides/Leveling/dun-morogh.lua", None)
         self.assertEqual(goals[0].priority, 781.5)
 
     def test_a_repair_shift_keeps_the_fraction(self):

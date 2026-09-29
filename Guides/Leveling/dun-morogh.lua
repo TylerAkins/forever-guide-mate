@@ -38,7 +38,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-1-12-dun-morogh",
+    id = "leveling-era-dun-morogh",
     title = "Dun Morogh",
     category = "Leveling Quest Guides",
     revision = 1,

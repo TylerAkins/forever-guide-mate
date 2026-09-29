@@ -31,7 +31,7 @@ local function Point(mapID, x, y, label, offMapText)
 end
 
 ns:RegisterGuide({
-    id = "leveling-era-28-29-duskwood",
+    id = "leveling-era-duskwood",
     title = "Duskwood",
     category = "Leveling Quest Guides",
     revision = 1,
