@@ -56,6 +56,14 @@ Use `accept`, `objective`, `turnin`, and `gossip` as distinct steps. An ordinary
 
 Delivery and breadcrumb quests still use separate records. The accept points at the giver and completes on `activeOrCompleted`; the turn-in points at the recipient and depends on the accept. Never write `Accept ..., then ...` in one record. The all-guide lint enforces this for active, Loremaster, Dungeon, and Era source guides.
 
+## Chapter titles
+
+Use the zone name for the `title` field. When the **same faction** returns to that zone on the 1–60 route, add `(Part 2)`, `(Part 3)`, and so on in route order.
+
+Part numbers are **per faction**, not shared across Alliance and Horde. If only one faction has a chapter in a zone, omit the part suffix. If two factions both visit a zone but on different chapters, number each faction’s visits from 1 within that faction only.
+
+Example: Horde Stonetalon is `(Part 1)` then `(Part 2)`; Alliance Stonetalon is a single chapter titled `Stonetalon Mountains` with no part suffix. Internal chapter ids and filenames may still use `part-1`, `part-2` slugs for load order; only the displayed `title` follows this rule.
+
 ## `dependsOn` and conditions
 
 - Put faction, class, race, and level gates on **every** step of a quest, not only the accept.

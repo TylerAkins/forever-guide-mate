@@ -9,6 +9,7 @@ All notable changes to this project are documented here.
 - Era chapter IDs were renamed to match (`leveling-era-durotar`, `leveling-era-darkshore-part-1`, …). Saved character data migrates on load (schema 5).
 - Tirisfal Glades now includes The One That Got Away after Bandarion Keep is turned in.
 - Added `tools/audit_leveling_zone_quests.py` to compare Wowhead Forever zone lists with woven leveling routes.
+- Stonetalon chapter titles now number parts per faction: Alliance uses a single `Stonetalon Mountains` row; Horde uses `(Part 1)` and `(Part 2)`.
 
 ## 0.1.28 - 2026-09-29
 
