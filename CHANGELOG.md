@@ -2,11 +2,41 @@
 
 All notable changes to this project are documented here.
 
-## 0.1.26 - 2026-09-28
+## 0.1.31 - 2026-09-29
 
-- Horde and Alliance leveling chapters through level 30 are in the guide. That covers 24-24 Ashenvale, 24-27 Wetlands, 25-25 Southern Barrens, 25-26 Thousand Needles, 26-27 Ashenvale, 27-27 Stonetalon Mountains, 27-29 Thousand Needles, 29-30 Hillsbrad Foothills, and 29-30 Ashenvale.
+- Horde and Alliance leveling chapters through level 30 are in the guide. Alliance Ashenvale is Part 1, Part 2, and Part 3. Wetlands is its own chapter. Horde adds The Barrens (Part 3), Thousand Needles (Part 1) and (Part 2), Ashenvale, Stonetalon Mountains (Part 3), and Hillsbrad Foothills.
 - Spoils of War is collected in Menethil Harbor with the keep pickups. Pigments for Paints is accepted beside Zangen Stonehoof, the pods are collected at Mirkfallon Lake with the Gaea Seeds, and the turn-in is on the Thunder Bluff visit at the end of Stonetalon.
 - Thousand Needles and the Hillsbrad quest list have no new Forever quests. Undead paladins take An Underrated Talent from Trevan Rol and Ott's Masterwork in Tarren Mill. Stepping Stones and ... and that note you found stay out because their hand-ins are not on a chapter stop. Wetlands quests with no start pin stay named.
+- The first Alliance Ashenvale chapter is now Ashenvale (Part 1). Saved progress for that chapter migrates on load.
+
+## 0.1.30 - 2026-09-29
+
+- The Tirisfal Glades chapter title no longer starts with 1-12. The library and tracker use Tirisfal Glades.
+- As Above, So Below and The One That Got Away are accepted together at Bandarion Keep, finished in the same Shadowvale cellar, and turned in together.
+
+## 0.1.29 - 2026-09-29
+
+- Leveling chapter titles now use zone names. Revisited zones use (Part 1), (Part 2), and so on.
+- Leveling guide files now use zone slugs (`durotar.lua`, `darkshore-part-2.lua`, and so on) instead of level ranges.
+- Era chapter IDs were renamed to match (`leveling-era-durotar`, `leveling-era-darkshore-part-1`, …). Saved character data migrates on load (schema 5).
+- Tirisfal Glades now includes The One That Got Away after Bandarion Keep is turned in.
+- Added `tools/audit_leveling_zone_quests.py` to compare Wowhead Forever zone lists with woven leveling routes.
+- Stonetalon chapter titles now number parts per faction: Alliance uses a single `Stonetalon Mountains` row; Horde uses `(Part 1)` and `(Part 2)`.
+
+## 0.1.28 - 2026-09-29
+
+- Tirisfal Glades now includes As Above, So Below after Bandarion Keep is turned in. Hilda the Breaker sends you into the Shadowvale cellars for Faintly Glowing Bones.
+
+## 0.1.27 - 2026-09-28
+
+- Accepting or turning in a quest no longer walks every chapter on the game thread. Only the open chapter is rebuilt, and the map pin is read after that update finishes.
+- Addon memory no longer climbs for the whole session. The quest list is reused, and review history is capped.
+- Bandarion Keep waits until The Cult of the Damned and Remnants of War are turned in. Hadric Harlson offers those two first. Bandarion Keep is the precursor to the Lumina Windsinger escort.
+
+## 0.1.26 - 2026-09-28
+
+- Standing still or starting to walk no longer locks the WoW client. Those moments were running the addon on the game's main thread: a quest-log pulse with nothing changed is ignored, and crossing a subzone only updates the waypoint.
+- Kill credit no longer selects quest-log rows or rereads the quest map pin. Quest completion for chapters you are not on is checked a few quests at a time, so one update cannot scan the whole catalog.
 
 ## 0.1.25 - 2026-09-28
 

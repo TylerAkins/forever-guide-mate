@@ -5,7 +5,9 @@ description: Weave Wowhead Forever quests into a classic Era leveling chapter an
 
 # Era Forever weave
 
-An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It lives in `Guides/Era/` and is not loaded. A converted chapter lives in `Guides/Leveling/` with no `(Era)` in its title and is part of the 1-60 Era guide. Converting means weaving in the Forever quests that sit on the existing route — never rewriting the route itself.
+An `(Era)` chapter is a classic route that is not rewritten for Forever yet. It lives in `Guides/Era/` and is not loaded. Those files still use a level-range name, such as `Guides/Era/30-31-wetlands.lua`, and a title that ends in `(Era)`.
+
+A converted chapter lives in `Guides/Leveling/` and is part of the 1-60 Era guide. Converting means weaving in the Forever quests that sit on the existing route — never rewriting the route itself. The graduated file, id, and title drop the level range. See **Names** below.
 
 ## Do this
 
@@ -40,7 +42,7 @@ Classic accepts, objectives, and turn-ins stay in order. Move only the woven que
 - When the work is a different spot on a trip the route already takes, reuse that trip's pin. Do not invent a coordinate, and do not add a trip.
 - If our spine visits the two neighboring classic steps in the opposite order, anchor the woven quest to the later step. Do not reorder the spine.
 - Leave a woven step that is already on that trip. Leave class chains and their `dependsOn` order alone.
-- The tracker stays on the current step until an earlier objective becomes ready, and then it turns back. A recommended level that is still above the steps ahead waits until after those steps, so dinging does not pull the player off the route. Bloodfury Trinkets waits at the end of 23-25 Stonetalon for that reason: the harpy kill is earlier, and the quest is level 26.
+- The tracker stays on the current step until an earlier objective becomes ready, and then it turns back. A recommended level that is still above the steps ahead waits until after those steps, so dinging does not pull the player off the route. Bloodfury Trinkets waits at the end of Horde Stonetalon Mountains (Part 2), `Guides/Leveling/stonetalon-mountains-part-3.lua`, for that reason: the harpy kill is earlier, and the quest is level 26.
 - A quest stays out when the start is another zone, a later chapter already walks that ground, or the quest is the middle of a chain this route never starts. Scramble is that chain: it begins in Westfall or the Field of Giants and only later reaches Pocket Litter. Name the omission in the header.
 - A classic quest this chapter already accepts, and then never finishes, gets its objective on that same trip. Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in on the next visit to Mebok.
 
@@ -88,11 +90,29 @@ Race ids: Orc 2, Troll 8, Tauren 6, Undead 5, Human 1, Dwarf 3, Night Elf 4, Gno
 
 ## Converted example
 
-The Westfall chapter (`Guides/Leveling/12-17-westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/28-29-duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/24-24-ashenvale.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
+The Westfall chapter (`Guides/Leveling/westfall.lua`) kept the classic Darkshire loop and wove in the Forever quests standing on it. Its header names what stayed out and why. The Duskwood chapter (`Guides/Leveling/duskwood.lua`) did the same for the Darkshire and Raven Hill loop. An unconverted chapter (`Guides/Era/30-31-wetlands.lua`) still says `not rewritten for Forever yet` and keeps `(Era)` in its title.
+
+## Names
+
+Unconverted files keep the level range. A converted chapter does not.
+
+| | Unconverted | Converted |
+| --- | --- | --- |
+| File | `Guides/Era/12-17-westfall.lua` | `Guides/Leveling/westfall.lua` |
+| `id` | unused (the file is not loaded) | `leveling-era-westfall` |
+| `title` | `12-17 Westfall (Era)` | `Westfall` |
+
+- Filename: lowercase zone slug with hyphens. No level numbers. `The Barrens` is `the-barrens`. Spaces and apostrophes become hyphens (`un-goro-crater`).
+- `id`: `leveling-era-` plus that slug. Zephras Isle is the exception already in the tree (`leveling-zephras-isle`). New Era graduations use the `leveling-era-` prefix.
+- `title`: the zone name, with no level prefix and no `(Era)`. Full rules, including per-faction `(Part n)`, are in [docs/guide-authoring.md](../../docs/guide-authoring.md).
+- A second visit by the **same faction** is the next part for that faction only. Count existing `Guides/Leveling/` chapters for that zone and faction, in route order. Horde's first Barrens chapter is `the-barrens-part-1.lua` (`The Barrens (Part 1)`, id `leveling-era-the-barrens-part-1`). Horde's second is `the-barrens-part-2.lua`. Alliance Stonetalon is one chapter, so the file may be `stonetalon-mountains-part-2.lua` while the title is `Stonetalon Mountains` with no part suffix. Do not number Alliance and Horde on one shared part index.
+- Do not copy the Era filename forward. `Guides/Leveling/12-17-westfall.lua` and `title = "12-17 Westfall"` are wrong after conversion.
+- A new id needs no saved-data migration. Add a `Core.lua` schema map only when an id that players already have saved is renamed.
+- Insert the file in `ForeverGuideMate.toc` and `tools/compile_addon.py` with the other chapters for that faction, in route order.
 
 ## Ship it
 
-- Drop `(Era)` from the title, move the file from `Guides/Era/` to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc`, `tools/compile_addon.py`, `tests/test_contracts.py`, `tests/lua/run.lua`, and `tests/lua/lint.lua`.
+- Apply **Names**, move the file from `Guides/Era/` to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc`, `tools/compile_addon.py`, `tests/test_contracts.py`, `tests/lua/run.lua`, and `tests/lua/lint.lua`.
 - Assert one real woven chain, one quest split into objectives, the elite wording if the chapter has an elite, and that omitted, dungeon, grind, and flight-pickup steps are absent.
 - Add a changelog line.
 - If the change should publish (it almost always should for a converted chapter), bump `VERSION` by exactly one patch and refresh `CHANGELOG.md` plus `RELEASE_NOTES.md` (current release only, no email addresses). Merging that reviewed PR tags and publishes the GitHub Release and CurseForge package. See [docs/DEVELOPMENT.md](../../docs/DEVELOPMENT.md).
