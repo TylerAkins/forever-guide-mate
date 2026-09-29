@@ -3254,7 +3254,7 @@ function TestEraLeveling()
     end
     Equal(titles[1], "Durotar", "the Horde leveling library starts with the starter chapter")
     Equal(titles[2], "Zephras Isle", "Zephras Isle stays in the Leveling library")
-    Equal(titles[3], "The Barrens (Part 1)", "The Barrens is its own Leveling library row")
+    Equal(titles[3], "Silverpine Forest", "level-12 chapters sort alphabetically after the starters")
     local sawElwynn = false
     for _, title in ipairs(titles) do
         if title == "Elwynn Forest" then sawElwynn = true end
