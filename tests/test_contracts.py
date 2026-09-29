@@ -589,7 +589,11 @@ class ContractTests(unittest.TestCase):
         self.assertNotIn("QuestState(79974,", early)
         self.assertNotIn("QuestState(80001,", early)
         alliance_stone = (ROOT / "Guides/Leveling/stonetalon-mountains-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Stonetalon Mountains (Part 2)"', alliance_stone)
+        self.assertIn('title = "Stonetalon Mountains"', alliance_stone)
+        stonetalon_horde_late = (ROOT / "Guides/Leveling/stonetalon-mountains-part-3.lua").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn('title = "Stonetalon Mountains (Part 2)"', stonetalon_horde_late)
         self.assertIn("QuestState(1093,", alliance_stone)
         self.assertNotIn("QuestState(86574,", alliance_stone)
         self.assertNotIn("QuestState(79980,", alliance_stone)
