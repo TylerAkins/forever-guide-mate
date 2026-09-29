@@ -32,7 +32,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-28-29-duskwood",
-    title = "28-29 Duskwood",
+    title = "Duskwood",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {

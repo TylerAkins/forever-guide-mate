@@ -3252,17 +3252,17 @@ function TestEraLeveling()
     for _, entry in ipairs(ns.LibraryEntries(hordeLevel, "", "Leveling Quest Guides", false)) do
         titles[#titles + 1] = entry.title
     end
-    Equal(titles[1], "1-12 Durotar", "the Horde leveling library starts with the starter chapter")
-    Equal(titles[2], "1-14 Zephras Isle", "Zephras Isle stays in the Leveling library")
-    Equal(titles[3], "12-20 Barrens", "12-20 Barrens is its own Leveling library row")
+    Equal(titles[1], "Durotar", "the Horde leveling library starts with the starter chapter")
+    Equal(titles[2], "Zephras Isle", "Zephras Isle stays in the Leveling library")
+    Equal(titles[3], "The Barrens (Part 1)", "The Barrens is its own Leveling library row")
     local sawElwynn = false
     for _, title in ipairs(titles) do
-        if title == "1-12 Elwynn Forest" then sawElwynn = true end
+        if title == "Elwynn Forest" then sawElwynn = true end
     end
     Check(not sawElwynn, "a Horde leveling library leaves out Alliance chapters")
     local barrensEntry
     for _, entry in ipairs(ns.LibraryEntries(hordeLevel, "barrens", "Leveling Quest Guides", false)) do
-        if entry.title == "12-20 Barrens" then barrensEntry = entry end
+        if entry.title == "The Barrens (Part 1)" then barrensEntry = entry end
     end
     Check(barrensEntry ~= nil, "searching Barrens finds the Barrens chapter")
     Equal(barrensEntry and barrensEntry.segment.levelMin, 12, "the Barrens row uses the chapter level")

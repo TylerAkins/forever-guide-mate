@@ -36,7 +36,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-20-21-darkshore",
-    title = "20-21 Darkshore",
+    title = "Darkshore (Part 2)",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

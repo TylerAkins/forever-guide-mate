@@ -35,7 +35,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-teldrassil",
-    title = "1-12 Teldrassil",
+    title = "Teldrassil",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

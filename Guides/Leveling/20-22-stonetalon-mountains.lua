@@ -39,7 +39,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-20-22-stonetalon-mountains",
-    title = "20-22 Stonetalon Mountains",
+    title = "Stonetalon Mountains (Part 1)",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

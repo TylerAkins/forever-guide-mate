@@ -30,7 +30,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-21-22-ashenvale",
-    title = "21-22 Ashenvale",
+    title = "Ashenvale",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

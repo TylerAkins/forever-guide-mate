@@ -39,7 +39,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-dun-morogh",
-    title = "1-12 Dun Morogh",
+    title = "Dun Morogh",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
