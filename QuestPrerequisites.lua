@@ -211,6 +211,14 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 430,
+    mode = "all",
+    quests = { 429 },
+    conditions = { faction = "Horde" },
+    note = "Return to Quinn is offered after Wild Hearts is turned in to Apothecary Renferrel.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 99142,
     mode = "all",
     quests = { 5482 },
