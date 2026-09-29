@@ -219,6 +219,30 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 91920,
+    mode = "all",
+    quests = { 430 },
+    conditions = { faction = "Horde" },
+    note = "Wild Eyes is offered after the minor potion is delivered to Quinn Yorick.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 91921,
+    mode = "all",
+    quests = { 91920 },
+    conditions = { faction = "Horde" },
+    note = "Return to Quinn (Again) is offered after Wild Eyes is turned in to Apothecary Renferrel.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 425,
+    mode = "all",
+    quests = { 91921 },
+    conditions = { faction = "Horde" },
+    note = "Ivar the Foul is offered after Quinn Yorick receives the second potion.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 99142,
     mode = "all",
     quests = { 5482 },
