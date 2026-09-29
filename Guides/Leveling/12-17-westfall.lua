@@ -38,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-17-westfall",
-    title = "12-17 Westfall",
+    title = "Westfall",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

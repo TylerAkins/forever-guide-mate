@@ -42,7 +42,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-1-12-durotar",
-    title = "1-12 Durotar",
+    title = "Durotar",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

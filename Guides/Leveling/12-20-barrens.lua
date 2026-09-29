@@ -38,7 +38,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-12-20-barrens",
-    title = "12-20 Barrens",
+    title = "The Barrens (Part 1)",
     category = "Leveling Quest Guides",
     revision = 2,
     conditions = {

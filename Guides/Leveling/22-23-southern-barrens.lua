@@ -34,7 +34,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-22-23-southern-barrens",
-    title = "22-23 Southern Barrens",
+    title = "The Barrens (Part 2)",
     category = "Leveling Quest Guides",
     revision = 3,
     conditions = {

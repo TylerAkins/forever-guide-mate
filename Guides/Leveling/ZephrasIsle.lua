@@ -84,7 +84,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-zephras-isle",
-    title = "1-14 Zephras Isle",
+    title = "Zephras Isle",
     category = "Leveling Quest Guides",
     revision = 6,
     conditions = {

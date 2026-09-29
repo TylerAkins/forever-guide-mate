@@ -30,7 +30,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-27-28-redridge-mountains",
-    title = "27-28 Redridge Mountains",
+    title = "Redridge Mountains (Part 2)",
     category = "Leveling Quest Guides",
     revision = 1,
     conditions = {
