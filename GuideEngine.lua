@@ -760,19 +760,29 @@ end
 function ns.QuestQuery()
     local all = ns.GetTrackedQuestIDs()
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
-    if type(guide) ~= "table" then
-        return all, 0
-    end
-    local priority
-    if type(guide.segments) == "table" and type(guide.segmentByID) == "table" then
+    local segmentID = ""
+    if type(guide) == "table" and type(guide.segmentByID) == "table" then
         local segment = ns.Engine and ns.Engine.currentSegment
         if type(segment) ~= "table" or guide.segmentByID[segment.id] ~= segment then
             local pick = ns.charDB.eraChapterPick or ns.charDB.eraFloor
             segment = type(pick) == "string" and guide.segmentByID[pick] or nil
         end
         if type(segment) == "table" then
-            priority = ns.QuestIDsForGoals(segment.goals)
+            segmentID = segment.id
         end
+    end
+    local key = (type(guide) == "table" and guide.id or "") .. "\0" .. segmentID
+    if ns.questQueryKey == key and ns.questQueryTracked == all and ns.questQueryIDs then
+        return ns.questQueryIDs, ns.questQueryPriority
+    end
+    if type(guide) ~= "table" then
+        ns.questQueryKey, ns.questQueryTracked = key, all
+        ns.questQueryIDs, ns.questQueryPriority = all, 0
+        return all, 0
+    end
+    local priority
+    if segmentID ~= "" and guide.segmentByID[segmentID] then
+        priority = ns.QuestIDsForGoals(guide.segmentByID[segmentID].goals)
     end
     if not priority then
         priority = ns.QuestIDsForGuide(guide)
@@ -791,6 +801,8 @@ function ns.QuestQuery()
             ordered[#ordered + 1] = questID
         end
     end
+    ns.questQueryKey, ns.questQueryTracked = key, all
+    ns.questQueryIDs, ns.questQueryPriority = ordered, priorityCount
     return ordered, priorityCount
 end
 
@@ -866,14 +878,14 @@ function Engine:IsGoalDone(goal, state, guide)
     return evaluation == true
 end
 
-function Engine:ReconcileGuide(guide, state)
+function Engine:ReconcileGuide(guide, state, goals)
     self.inferredCompletedByGuide = self.inferredCompletedByGuide or {}
     self.inferredCompletedByGuide[guide.id] = self.inferredCompletedByGuide[guide.id] or {}
     local inferred = {}
     self.inferredCompletedByGuide[guide.id][tostring(guide.revision)] = inferred
     local ledger = self:GetLedger(guide, true)
     local done = {}
-    for _, goal in ipairs(guide.goals) do
+    for _, goal in ipairs(goals or guide.goals) do
         if guide.id == ns.charDB.selectedGuide and ns.charDB.manualCompleted[goal.id] then
             ledger[goal.id] = true
             ns.charDB.manualCompleted[goal.id] = nil
@@ -1287,6 +1299,27 @@ function Engine:SegmentGoals(guide, state)
     return segment and segment.goals or {}
 end
 
+function Engine:ActiveChapter(guide)
+    if type(guide) ~= "table" or type(guide.segmentByID) ~= "table" then
+        return nil
+    end
+    local segment = self.currentSegment
+    if type(segment) == "table" and guide.segmentByID[segment.id] == segment then
+        return segment
+    end
+    local pick = ns.charDB and (ns.charDB.eraChapterPick or ns.charDB.eraFloor)
+    if type(pick) == "string" then
+        return guide.segmentByID[pick]
+    end
+end
+
+function Engine:ChapterGoals(guide)
+    local segment = self:ActiveChapter(guide)
+    if segment and type(segment.goals) == "table" then
+        return segment.goals
+    end
+end
+
 function Engine:GetGuideProgress(guide, state, segment)
     state = state or self.state or {}
     ns:FinalizeGuides()
@@ -1405,7 +1438,7 @@ end
 function Engine:ActiveTimers(guide, state)
     local timers = {}
     local completed = state.completedQuests or {}
-    for _, goal in ipairs(guide.goals) do
+    for _, goal in ipairs(self:ChapterGoals(guide) or guide.goals) do
         local questID = TimerQuestID(goal)
         local seconds = type(goal.timer) == "number" and goal.timer
             or type(goal.timer) == "table" and goal.timer.seconds
@@ -1454,7 +1487,7 @@ function Engine:UrgentGoals(guide, state)
             Mark(dependencyID, seconds)
         end
     end
-    for _, goal in ipairs(guide.goals) do
+    for _, goal in ipairs(self:ChapterGoals(guide) or guide.goals) do
         Mark(goal.id)
     end
     return urgent
@@ -1467,21 +1500,23 @@ function Engine:CandidateGoals(guide, state)
     local candidates = {}
     self.eligibilityReasons = {}
     for index, goal in ipairs(self:SegmentGoals(guide, state)) do
-        local ready, reason, ineligible = self:IsReady(guide, goal, state)
-        if reason and (ineligible or ready) then
-            self.eligibilityReasons[goal.id] = reason
-        end
-        if ready and not self:IsGoalDone(goal, state, guide) then
-            local destination = goal.route and goal.route[#goal.route]
-            local candidate = {
-                goal = goal, index = index,
-                deferred = ns.charDB.deferred[goal.id] == true,
-                sameMap = destination and destination.mapID == state.mapID or false,
-            }
-            if urgentGoals[goal.id] and not candidate.deferred then
-                urgent[#urgent + 1] = candidate
-            else
-                candidates[#candidates + 1] = candidate
+        if not self:IsGoalDone(goal, state, guide) then
+            local ready, reason, ineligible = self:IsReady(guide, goal, state)
+            if reason and (ineligible or ready) then
+                self.eligibilityReasons[goal.id] = reason
+            end
+            if ready then
+                local destination = goal.route and goal.route[#goal.route]
+                local candidate = {
+                    goal = goal, index = index,
+                    deferred = ns.charDB.deferred[goal.id] == true,
+                    sameMap = destination and destination.mapID == state.mapID or false,
+                }
+                if urgentGoals[goal.id] and not candidate.deferred then
+                    urgent[#urgent + 1] = candidate
+                else
+                    candidates[#candidates + 1] = candidate
+                end
             end
         end
     end
@@ -1754,6 +1789,10 @@ function Engine:SetActiveGoal(goal, remember)
     if storeKey then
         ns.charDB.activeGoalByGuide[storeKey] = goal.id
     end
+    local history = ns.charDB.history
+    while #history > 30 do
+        table.remove(history, 1)
+    end
     self.currentGoal = goal
     self.reviewingGoal = nil
 end
@@ -1822,10 +1861,11 @@ function Engine:Refresh(state)
         self.inferredCompletedByGuide = nil
     end
     self:ResyncUpdatedGuide(guide, state)
-    self:ReconcileGuide(guide, state)
+    local chapterGoals = self:ChapterGoals(guide)
+    self:ReconcileGuide(guide, state, chapterGoals)
     if self:ReleaseUnconfirmedRefusals(guide, state) then
         self.reconcileStamp = nil
-        self:ReconcileGuide(guide, state)
+        self:ReconcileGuide(guide, state, chapterGoals)
     end
     ValidateActiveGoal(self, guide)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state)
@@ -1903,7 +1943,14 @@ function Engine:Refresh(state)
         end
     end
     if ns.UI and ns.UI.Update then
+        if ns.Navigation then ns.Navigation.deferClientPins = true end
         ns.UI:Update(self)
+        if ns.Navigation then ns.Navigation.deferClientPins = false end
+        if ns.Navigation and C_Timer and type(C_Timer.After) == "function" and ns.UI.UpdateArrow then
+            C_Timer.After(0, function()
+                if ns.UI and ns.UI.UpdateArrow then ns.UI:UpdateArrow() end
+            end)
+        end
     end
     if ns.MapPins then
         ns.MapPins:HookMap()
