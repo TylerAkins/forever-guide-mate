@@ -39,7 +39,7 @@ end
 
 ns:RegisterGuide({
     id = "leveling-era-tirisfal-glades",
-    title = "1-12 Tirisfal Glades",
+    title = "Tirisfal Glades",
     category = "Leveling Quest Guides",
     revision = 10,
     conditions = {
@@ -3096,37 +3096,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-99152-as-above-so-below",
-            kind = "objective",
-            priority = 1490.1,
-            conditions = { level = { min = 10 } },
-            text = "Collect 6 Faintly Glowing Bones from Shadowvale Lurchers and Shadowvale Mystics in the cellars beneath Shadowvale. Enter through the burned house on the southwestern edge.",
-            dependsOn = { "accept-99152-as-above-so-below" },
-            complete = QuestState(99152, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
-                    "Travel to the burned house entrance to the Shadowvale cellars."),
-                Point(MAP.TIRISFAL, 0.1100, 0.6600, "Shadowvale",
-                    "Travel to Shadowvale."),
-            },
-        },
-        {
-            id = "turnin-99152-as-above-so-below",
-            kind = "turnin",
-            priority = 1490.2,
-            conditions = { level = { min = 10 } },
-            text = "Turn in As Above, So Below to Hilda the Breaker at Bandarion Keep.",
-            dependsOn = { "objective-99152-as-above-so-below" },
-            complete = QuestState(99152, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
-                    "Travel to Hilda the Breaker."),
-            },
-        },
-        {
             id = "accept-99153-the-one-that-got-away",
             kind = "accept",
-            priority = 1490.3,
+            priority = 1490.1,
             conditions = { level = { min = 10 } },
             text = "Accept The One That Got Away from Ephram Barbaro at Bandarion Keep.",
             dependsOn = { "turnin-96899-bandarion-keep" },
@@ -3137,11 +3109,26 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-99152-as-above-so-below",
+            kind = "objective",
+            priority = 1490.2,
+            conditions = { level = { min = 10 } },
+            text = "Collect 6 Faintly Glowing Bones from Shadowvale Lurchers and Shadowvale Mystics in the Shadowvale cellars. The Glowing Crystal Fragment for The One That Got Away is in the same cellar.",
+            dependsOn = { "accept-99152-as-above-so-below" },
+            complete = QuestState(99152, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
+                    "Travel to the burned house entrance to the Shadowvale cellars."),
+                Point(MAP.TIRISFAL, 0.0970, 0.6940, "Shadowvale cellars",
+                    "Travel into the Shadowvale cellars."),
+            },
+        },
+        {
             id = "objective-99153-the-one-that-got-away",
             kind = "objective",
-            priority = 1490.4,
+            priority = 1490.3,
             conditions = { level = { min = 10 } },
-            text = "Pick up the Glowing Crystal Fragment in the Shadowvale cellars. Use the burned-house entrance on the southwestern edge.",
+            text = "Pick up the Glowing Crystal Fragment in the Shadowvale cellars.",
             dependsOn = { "accept-99153-the-one-that-got-away" },
             complete = QuestState(99153, "complete"),
             route = {
@@ -3149,6 +3136,19 @@ ns:RegisterGuide({
                     "Travel to the burned house entrance to the Shadowvale cellars."),
                 Point(MAP.TIRISFAL, 0.0970, 0.6940, "Glowing Crystal Fragment",
                     "Travel to the Glowing Crystal Fragment."),
+            },
+        },
+        {
+            id = "turnin-99152-as-above-so-below",
+            kind = "turnin",
+            priority = 1490.4,
+            conditions = { level = { min = 10 } },
+            text = "Turn in As Above, So Below to Hilda the Breaker at Bandarion Keep.",
+            dependsOn = { "objective-99152-as-above-so-below" },
+            complete = QuestState(99152, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
+                    "Travel to Hilda the Breaker."),
             },
         },
         {
