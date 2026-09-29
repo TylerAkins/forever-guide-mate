@@ -41,7 +41,7 @@ ns:RegisterGuide({
     id = "leveling-era-1-12-tirisfal-glades",
     title = "1-12 Tirisfal Glades",
     category = "Leveling Quest Guides",
-    revision = 8,
+    revision = 9,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -3080,6 +3080,47 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                     "Travel to Leonid Barthalomew the Revered."),
+            },
+        },
+        {
+            id = "accept-99152-as-above-so-below",
+            kind = "accept",
+            priority = 1490,
+            conditions = { level = { min = 10 } },
+            text = "Accept As Above, So Below from Hilda the Breaker at Bandarion Keep.",
+            dependsOn = { "turnin-96899-bandarion-keep" },
+            complete = QuestState(99152, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
+                    "Travel to Hilda the Breaker."),
+            },
+        },
+        {
+            id = "objective-99152-as-above-so-below",
+            kind = "objective",
+            priority = 1490.1,
+            conditions = { level = { min = 10 } },
+            text = "Collect 6 Faintly Glowing Bones from Shadowvale Lurchers and Shadowvale Mystics in the cellars beneath Shadowvale. Enter through the burned house on the southwestern edge.",
+            dependsOn = { "accept-99152-as-above-so-below" },
+            complete = QuestState(99152, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
+                    "Travel to the burned house entrance to the Shadowvale cellars."),
+                Point(MAP.TIRISFAL, 0.1100, 0.6600, "Shadowvale",
+                    "Travel to Shadowvale."),
+            },
+        },
+        {
+            id = "turnin-99152-as-above-so-below",
+            kind = "turnin",
+            priority = 1490.2,
+            conditions = { level = { min = 10 } },
+            text = "Turn in As Above, So Below to Hilda the Breaker at Bandarion Keep.",
+            dependsOn = { "objective-99152-as-above-so-below" },
+            complete = QuestState(99152, "completed"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
+                    "Travel to Hilda the Breaker."),
             },
         },
         {
