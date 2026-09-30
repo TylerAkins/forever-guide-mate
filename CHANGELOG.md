@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.34 - 2026-09-30
+
+- Silverpine Forest tracks Plainstrider Menace through turn-in at Sergra Darkthorn before offering The Zhevra. The Barrens (Part 1) gates The Zhevra the same way.
+
 ## 0.1.33 - 2026-09-30
 
 - Interface options add Hide in Combat (off by default) and a Guide scale slider from 50% to 150% (default 100%).

@@ -39,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 6,
+    revision = 7,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1135,6 +1135,27 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-844-plainstrider-menace",
+            kind = "objective",
+            priority = 1095,
+            conditions = { level = { min = 10 } },
+            text = "Kill Greater Plainstrider and collect 7 Plainstrider Beak around The Crossroads.",
+            dependsOn = { "accept-844-plainstrider-menace" },
+            complete = QuestState(844, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5311, 0.3237, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5301, 0.2804, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5132, 0.2743, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.4935, 0.3003, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5128, 0.3334, "Greater Plainstrider",
+                    "Travel to Greater Plainstrider."),
+            },
+        },
+        {
             id = "accept-869-raptor-thieves",
             kind = "accept",
             priority = 1000,
@@ -1340,11 +1361,25 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-844-plainstrider-menace",
+            kind = "turnin",
+            priority = 1165,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Plainstrider Menace to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-844-plainstrider-menace" },
+            complete = QuestState(844, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
             id = "accept-845-the-zhevra",
             kind = "accept",
             priority = 1170,
             conditions = { level = { min = 10 } },
             text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-844-plainstrider-menace" },
             complete = QuestState(845, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
