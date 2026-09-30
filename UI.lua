@@ -835,6 +835,7 @@ function UI:ToggleGuideTracker()
 end
 
 function UI:OpenSettings()
+    if UI.PlayerInCombat() then return end
     if Settings and Settings.OpenToCategory and self.settingsCategory then
         local categoryID = self.settingsCategory
         if type(categoryID) == "table" and type(categoryID.ID) == "number" then
@@ -846,6 +847,21 @@ function UI:OpenSettings()
     if InterfaceOptionsFrame_OpenToCategory and self.settingsPanel then
         InterfaceOptionsFrame_OpenToCategory(self.settingsPanel)
         InterfaceOptionsFrame_OpenToCategory(self.settingsPanel)
+    end
+end
+
+function UI:CloseSettingsIfOpen()
+    if Settings and Settings.CloseSettings then
+        Settings.CloseSettings()
+        return
+    end
+    if SettingsPanel and SettingsPanel.IsShown and SettingsPanel:IsShown() and SettingsPanel.Hide then
+        SettingsPanel:Hide()
+        return
+    end
+    if InterfaceOptionsFrame and InterfaceOptionsFrame.IsShown
+        and InterfaceOptionsFrame:IsShown() and InterfaceOptionsFrame.Hide then
+        InterfaceOptionsFrame:Hide()
     end
 end
 

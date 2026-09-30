@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.44 - 2026-09-30
+
+- Forever GuideMate settings cannot be opened during combat (including from the minimap button), and the settings panel is closed when combat starts.
+
 ## 0.1.43 - 2026-09-30
 
 - Minimap button matches other Forever addons (33px frame, 54px tracking border, centered 20px icon): removes the oversized square black fill and uses the circular tracking background like LFG Forever.

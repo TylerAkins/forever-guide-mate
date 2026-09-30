@@ -371,7 +371,11 @@ local function OnEvent(_, event, arg1)
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
         return
-    elseif (event == "PLAYER_REGEN_DISABLED" or event == "PLAYER_REGEN_ENABLED") and ns.UI and ns.UI.ApplySettings then
+    elseif event == "PLAYER_REGEN_DISABLED" and ns.UI then
+        if ns.UI.CloseSettingsIfOpen then ns.UI:CloseSettingsIfOpen() end
+        if ns.UI.ApplySettings then ns.UI:ApplySettings() end
+        return
+    elseif event == "PLAYER_REGEN_ENABLED" and ns.UI and ns.UI.ApplySettings then
         ns.UI:ApplySettings()
         return
     end
