@@ -1,8 +1,8 @@
 # Forever GuideMate
 
-**Forever GuideMate is a minimalist, free, open-source questing guide for World of Warcraft: Forever. It shows the next quest step and hands that point to [TomTom](https://www.curseforge.com/wow/addons/tomtom). It reads your quest log.**
+**Forever GuideMate is a minimalist, free, open-source questing guide for World of Warcraft: Forever. It shows the next quest step and tracks destinations with Blizzard Map Pins or optional [TomTom](https://www.curseforge.com/wow/addons/tomtom). It reads your quest log.**
 
-Requires [TomTom](https://www.curseforge.com/wow/addons/tomtom). The CurseForge app installs it with this addon.
+Blizzard Map Pins is the default waypoint provider. Choose optional TomTom under Navigation in addon settings.
 
 It does not accept quests, choose rewards, move the character, or take protected gameplay actions. A guide the character cannot use says Ineligible. Coordinates in the shipped guides have not been validated in the Forever client.
 
@@ -47,15 +47,11 @@ Walk each `Guides/Era/` chapter against the Wowhead Forever zone page, weave new
 
 The full chapter list is the filenames under `Guides/Era/`.
 
-## Required dependency
+## Installation and navigation
 
-TomTom is required. Forever GuideMate does not load without it. Install TomTom from CurseForge before copying this addon into the AddOns folder:
+Copy the compiled `ForeverGuideMate` folder into `World of Warcraft/Interface/AddOns`. TomTom is optional. Navigation settings also expose Blizzard's shared in-world destination marker setting.
 
-https://www.curseforge.com/wow/addons/tomtom
-
-The CurseForge app also reads `RequiredDeps: TomTom` from `ForeverGuideMate.toc` and installs TomTom when GuideMate itself is installed from CurseForge. For a manual install, place the `TomTom` folder next to `ForeverGuideMate` in `World of Warcraft/Interface/AddOns`.
-
-Close the tracker to clear the TomTom waypoint, then reopen it from the AddOn compartment, the minimap fallback, or the AddOns settings panel. On the same continent, a flight path the character already has says to take the flight path there. If that path is not known, the guide stays on the road, boat, or zeppelin. Across continents, a known flight path is used to reach the dock. Otherwise the guide walks. Boats, zeppelins, and flight masters follow Wowhead's Forever world map, including the Riverglades gryphon and wind rider and the Zephras Isle zeppelins.
+Close the tracker to clear GuideMate’s owned destination, then reopen it from the AddOn compartment, the minimap fallback, or the AddOns settings panel. On the same continent, a flight path the character already has says to take the flight path there. If that path is not known, the guide stays on the road, boat, or zeppelin. Across continents, a known flight path is used to reach the dock. Otherwise the guide walks. Boats, zeppelins, and flight masters follow Wowhead's Forever world map, including the Riverglades gryphon and wind rider and the Zephras Isle zeppelins.
 
 ## Development
 

@@ -173,6 +173,19 @@ local function QuestID(goal)
     end
 end
 
+function Navigation:QuestDestinationID(goal)
+    local questID = QuestID(goal)
+    if not questID then return nil end
+    if goal.kind == "objective" or goal.kind == "turnin" then return questID end
+    if goal.kind == "travel" then
+        local complete = goal.complete
+        local quest = complete.quest
+        if complete.questObjective or (quest and (quest.state == "complete" or quest.state == "completed")) then
+            return questID
+        end
+    end
+end
+
 local pinCache = {}
 local pinCacheCount = 0
 local pinTokens = {}
