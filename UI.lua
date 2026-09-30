@@ -911,7 +911,11 @@ end
 
 function UI:OpenSettings()
     if Settings and Settings.OpenToCategory and self.settingsCategory then
-        Settings.OpenToCategory(self.settingsCategory)
+        local categoryID = self.settingsCategory
+        if type(categoryID) == "table" and type(categoryID.ID) == "number" then
+            categoryID = categoryID.ID
+        end
+        Settings.OpenToCategory(categoryID)
         return
     end
     if InterfaceOptionsFrame_OpenToCategory and self.settingsPanel then

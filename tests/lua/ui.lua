@@ -154,10 +154,17 @@ Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
 Equal(ns.db.uiOpen, true, "minimap left click shows the guide tracker again")
 local settingsOpened = false
-Settings = { OpenToCategory = function() settingsOpened = true end }
-ns.UI.settingsCategory = {}
+local settingsCategoryID
+Settings = {
+    OpenToCategory = function(categoryID)
+        settingsOpened = true
+        settingsCategoryID = categoryID
+    end,
+}
+ns.UI.settingsCategory = { ID = 42 }
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "RightButton")
 Equal(settingsOpened, true, "minimap right click opens the options panel")
+Equal(settingsCategoryID, 42, "minimap right click passes the settings category id")
 Settings = nil
 ns.db.showMinimapButton = false
 ns.UI:ApplySettings()
