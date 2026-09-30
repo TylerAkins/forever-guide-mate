@@ -1,45 +1,22 @@
 local _, ns = ...
 
--- Forever minimap button (Vampify / BulwarkFrame recipe, verified on Forever 1.12).
+-- Forever minimap button (vanilla MiniMapTrackingButton layout, Vampify/BulwarkFrame orbit).
 local MinimapButton = {}
 ns.MinimapButton = MinimapButton
 
 local BUTTON_SIZE = 33
 local BORDER_SIZE = 54
-local ICON_SIZE = 20
+local SLOT_X, SLOT_Y, SLOT_SIZE = 7, -6, 20
+local ICON_TEXTURE = "Interface\\Icons\\INV_Misc_QuestionMark"
 local ICON_CROP = { 0.08, 0.92, 0.08, 0.92 }
+local TRACKING_BACKGROUND = "Interface\\Minimap\\MiniMap-TrackingBackground"
+local TRACKING_BORDER = "Interface\\Minimap\\MiniMap-TrackingBorder"
 
 local button
 local getAngle
 local setAngle
 local onLeftClick
 local onRightClick
-
-local MINIMAP_ICON_ATLASES = { "QuestNormal", "quest-normal" }
-local MINIMAP_ICON_TEXTURES = {
-    "Interface\\Minimap\\Tracking\\QuestBlob",
-    "Interface\\Icons\\INV_Misc_QuestionMark",
-}
-
-local function SetQuestIcon(texture)
-    if not texture then return false end
-    if type(texture.SetAtlas) == "function" then
-        for _, atlas in ipairs(MINIMAP_ICON_ATLASES) do
-            if pcall(texture.SetAtlas, texture, atlas, false) then
-                if type(texture.GetAtlas) ~= "function" or texture:GetAtlas() == atlas then
-                    return true
-                end
-            end
-        end
-    end
-    if texture.SetTexture then
-        for _, path in ipairs(MINIMAP_ICON_TEXTURES) do
-            texture:SetTexture(path)
-            return false
-        end
-    end
-    return false
-end
 
 local function PlaceButton(angleDeg)
     if not button or not Minimap then return end
@@ -94,23 +71,23 @@ function MinimapButton:Create(hooks)
     btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     btn:RegisterForDrag("LeftButton")
 
+    -- FrameXML tracking slot: filled disc and icon share TOPLEFT(7,-6) on a 33px button.
     local disc = btn:CreateTexture(nil, "BACKGROUND")
-    disc:SetSize(ICON_SIZE, ICON_SIZE)
-    disc:SetPoint("CENTER", btn, "CENTER", 0, 0)
-    disc:SetTexture("Interface\\Minimap\\MiniMap-TrackingBackground")
-    if disc.SetVertexColor then disc:SetVertexColor(0, 0, 0, 1) end
+    disc:SetSize(SLOT_SIZE, SLOT_SIZE)
+    disc:SetPoint("TOPLEFT", btn, "TOPLEFT", SLOT_X, SLOT_Y)
+    disc:SetTexture(TRACKING_BACKGROUND)
 
     local icon = btn:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(ICON_SIZE, ICON_SIZE)
-    icon:SetPoint("CENTER", btn, "CENTER", 0, 0)
-    local iconIsAtlas = SetQuestIcon(icon)
-    if not iconIsAtlas and icon.SetTexCoord then
+    icon:SetSize(SLOT_SIZE, SLOT_SIZE)
+    icon:SetPoint("TOPLEFT", btn, "TOPLEFT", SLOT_X, SLOT_Y)
+    icon:SetTexture(ICON_TEXTURE)
+    if icon.SetTexCoord then
         icon:SetTexCoord(ICON_CROP[1], ICON_CROP[2], ICON_CROP[3], ICON_CROP[4])
     end
 
     local border = btn:CreateTexture(nil, "OVERLAY")
     border:SetSize(BORDER_SIZE, BORDER_SIZE)
-    border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
+    border:SetTexture(TRACKING_BORDER)
     border:SetPoint("TOPLEFT", btn, "TOPLEFT", 0, 0)
 
     btn:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")

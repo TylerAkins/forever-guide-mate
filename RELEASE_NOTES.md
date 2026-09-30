@@ -1,3 +1,3 @@
-## 0.1.44 - 2026-09-30
+## 0.1.45 - 2026-09-30
 
-- Forever GuideMate settings cannot be opened during combat (including from the minimap button), and the settings panel is closed when combat starts.
+- Minimap button uses the vanilla tracking slot with a visible tracking background and same-size icon art as other Forever minimap buttons (fixes missing fill and oversized quest atlas).

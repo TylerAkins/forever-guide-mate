@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.45 - 2026-09-30
+
+- Minimap button uses the vanilla tracking slot (`TOPLEFT` 7,-6): native tracking background (no tint that hid the disc), cropped question-mark icon instead of an oversized quest atlas, matching LFG-sized 33/54 layout. CI toc contract lists `MinimapButton.lua`.
+
 ## 0.1.44 - 2026-09-30
 
 - Forever GuideMate settings cannot be opened during combat (including from the minimap button), and the settings panel is closed when combat starts.
