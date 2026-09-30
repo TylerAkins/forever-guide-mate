@@ -174,6 +174,9 @@ local function QuestID(goal)
 end
 
 function Navigation:QuestDestinationID(goal)
+    if type(goal) ~= "table" or goal.useClientPin == false then
+        return nil
+    end
     local questID = QuestID(goal)
     if not questID then return nil end
     if goal.kind == "objective" or goal.kind == "turnin" then return questID end

@@ -2348,11 +2348,12 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 2120,
             conditions = { level = { min = 14 } },
+            useClientPin = false,
             text = "Find Beaten Corpse in Southern Barrens.",
             dependsOn = { "accept-4921-lost-in-battle" },
             complete = QuestState(4921, "complete"),
             route = {
-                Point(MAP.BARRENS, 0.4934, 0.5037, "Beaten Corpse",
+                Point(MAP.BARRENS, 0.4933, 0.5032, "Beaten Corpse",
                     "Travel to Beaten Corpse."),
             },
         },
