@@ -1,14 +1,15 @@
 local _, ns = ...
 
--- Forever minimap button (vanilla MiniMapTrackingButton layout, Vampify/BulwarkFrame orbit).
+-- Match LFG Forever's LibDBIcon mainline minimap button layout.
 local MinimapButton = {}
 ns.MinimapButton = MinimapButton
 
-local BUTTON_SIZE = 33
-local BORDER_SIZE = 54
-local SLOT_X, SLOT_Y, SLOT_SIZE = 7, -6, 20
+local BUTTON_SIZE = 31
+local BORDER_SIZE = 50
+local BACKGROUND_SIZE = 24
+local ICON_SIZE = 18
 local ICON_TEXTURE = "Interface\\GossipFrame\\AvailableQuestIcon"
-local TRACKING_BACKGROUND = "Interface\\Minimap\\MiniMap-TrackingBackground"
+local TRACKING_BACKGROUND = "Interface\\Minimap\\UI-Minimap-Background"
 local TRACKING_BORDER = "Interface\\Minimap\\MiniMap-TrackingBorder"
 
 local button
@@ -70,15 +71,15 @@ function MinimapButton:Create(hooks)
     btn:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     btn:RegisterForDrag("LeftButton")
 
-    -- FrameXML tracking slot: filled disc and icon share TOPLEFT(7,-6) on a 33px button.
+    -- The border art is offset within its texture; the backing and icon are centered.
     local disc = btn:CreateTexture(nil, "BACKGROUND")
-    disc:SetSize(SLOT_SIZE, SLOT_SIZE)
-    disc:SetPoint("TOPLEFT", btn, "TOPLEFT", SLOT_X, SLOT_Y)
+    disc:SetSize(BACKGROUND_SIZE, BACKGROUND_SIZE)
+    disc:SetPoint("CENTER", btn, "CENTER", 0, 0)
     disc:SetTexture(TRACKING_BACKGROUND)
 
     local icon = btn:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(SLOT_SIZE, SLOT_SIZE)
-    icon:SetPoint("TOPLEFT", btn, "TOPLEFT", SLOT_X, SLOT_Y)
+    icon:SetSize(ICON_SIZE, ICON_SIZE)
+    icon:SetPoint("CENTER", btn, "CENTER", 0, 0)
     icon:SetTexture(ICON_TEXTURE)
 
     local border = btn:CreateTexture(nil, "OVERLAY")

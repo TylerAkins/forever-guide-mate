@@ -2,37 +2,10 @@
 
 All notable changes to this project are documented here.
 
-## 0.1.46 - 2026-09-30
-
-- Minimap icon is Blizzard’s yellow available-quest mark (`AvailableQuestIcon`) in the same 20px tracking slot, instead of the red question-mark icon.
-
-## 0.1.45 - 2026-09-30
-
-- Minimap button uses the vanilla tracking slot (`TOPLEFT` 7,-6): native tracking background (no tint that hid the disc), cropped question-mark icon instead of an oversized quest atlas, matching LFG-sized 33/54 layout. CI toc contract lists `MinimapButton.lua`.
-
-## 0.1.44 - 2026-09-30
-
-- Forever GuideMate settings cannot be opened during combat (including from the minimap button), and the settings panel is closed when combat starts.
-
-## 0.1.43 - 2026-09-30
-
-- Minimap button matches other Forever addons (33px frame, 54px tracking border, centered 20px icon): removes the oversized square black fill and uses the circular tracking background like LFG Forever.
-
-## 0.1.42 - 2026-09-30
-
-- Minimap button logic moved into `MinimapButton.lua` using the same placement and drag code path as SmartLFG/LFG Forever-style addons, with a black tracking disc behind the quest icon and without screen clamping that fought drag.
-
-## 0.1.41 - 2026-09-30
-
-- Right-clicking the minimap button opens Forever GuideMate settings without error by passing Blizzard’s numeric settings category id.
-
-## 0.1.40 - 2026-09-30
-
-- Minimap button uses Blizzard’s filled tracking disc (black), centers the quest icon in the ring, and drags smoothly around round or square minimaps. Default position is 200° (lower-left of the ring).
-
 ## 0.1.39 - 2026-09-30
 
-- Added a draggable minimap button with the default quest icon. Left-click shows or hides the guide tracker, right-click opens Forever GuideMate settings, and the new **Show minimap button** option defaults to on.
+- Added a draggable minimap button with a yellow quest icon, matching LFG Forever’s size, black background, and centered layout. Left-click toggles the guide, right-click opens settings, and the Show minimap button option controls visibility.
+- Settings cannot be opened during combat and close when combat starts.
 
 ## 0.1.38 - 2026-09-30
 
