@@ -1094,13 +1094,19 @@ end
 
 function ForeverGuideMate_OnAddonCompartmentClick() UI:OpenGuideBrowser() end
 
-function ForeverGuideMate_OnAddonCompartmentEnter(button)
-    if GameTooltip then
-        GameTooltip:SetOwner(button, "ANCHOR_LEFT")
-        GameTooltip:SetText("Forever GuideMate")
-        GameTooltip:AddLine("Open the guide library.", 1, 1, 1)
-        GameTooltip:Show()
+function ForeverGuideMate_OnAddonCompartmentEnter(owner)
+    if not GameTooltip or not GameTooltip.SetOwner then return end
+    -- The compartment menu passes the addon name string, not a frame.
+    if type(owner) ~= "table" then
+        owner = AddonCompartmentFrame
     end
+    if type(owner) ~= "table" then return end
+    GameTooltip:SetOwner(owner, "ANCHOR_LEFT")
+    GameTooltip:SetText("Forever GuideMate")
+    if GameTooltip.AddLine then
+        GameTooltip:AddLine("Open the guide library.", 1, 1, 1)
+    end
+    GameTooltip:Show()
 end
 
 function ForeverGuideMate_OnAddonCompartmentLeave()
