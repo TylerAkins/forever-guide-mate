@@ -9,8 +9,12 @@ local UI = {
 }
 ns.UI = UI
 
-local TRACKER_DEFAULTS = { point = "LEFT", relativePoint = "LEFT", x = 0, y = 0, scale = 1 }
-local BROWSER_DEFAULTS = { point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1 }
+local TRACKER_DEFAULTS = {
+    point = "LEFT", relativePoint = "LEFT", x = 0, y = 0, scale = 1, scaleMin = 0.5, scaleMax = 1.5,
+}
+local BROWSER_DEFAULTS = {
+    point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1, scaleMin = 0.7, scaleMax = 1.4,
+}
 local GOLD_BORDER = { 0.78, 0.58, 0.16, 0.95 }
 
 local function Create(kind, name, parent, template)
@@ -52,7 +56,7 @@ function UI.NormalizePlacement(settings, defaults, screenWidth, screenHeight)
     screenHeight = type(screenHeight) == "number" and screenHeight or 1080
     settings.point = type(settings.point) == "string" and settings.point or defaults.point
     settings.relativePoint = type(settings.relativePoint) == "string" and settings.relativePoint or defaults.relativePoint
-    settings.scale = ClampNumber(settings.scale, 0.7, 1.4, defaults.scale)
+    settings.scale = ClampNumber(settings.scale, defaults.scaleMin or 0.5, defaults.scaleMax or 1.5, defaults.scale)
     settings.x = ClampNumber(settings.x, -screenWidth + 32, screenWidth - 32, defaults.x)
     settings.y = ClampNumber(settings.y, -screenHeight + 32, screenHeight - 32, defaults.y)
     return settings
@@ -189,6 +193,47 @@ local function CreateCheckbox(parent, label, getter, setter)
     end)
     box:SetScript("OnShow", function(self) self:SetChecked(getter()) end)
     return box
+end
+
+local function CreateSlider(parent, label, minimum, maximum, step, getter, setter, formatValue)
+    local slider = Create("Slider", nil, parent, "OptionsSliderTemplate")
+    slider:SetOrientation("HORIZONTAL")
+    slider:SetWidth(200)
+    slider:SetHeight(17)
+    slider:SetMinMaxValues(minimum, maximum)
+    slider:SetValueStep(step)
+    if slider.SetObeyStepOnDrag then slider:SetObeyStepOnDrag(true) end
+    local title = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    title:SetPoint("BOTTOMLEFT", slider, "TOPLEFT", 0, 4)
+    title:SetText(label)
+    local valueText = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    valueText:SetPoint("LEFT", slider, "RIGHT", 8, 0)
+    local function Sync()
+        local value = getter()
+        slider:SetValue(value)
+        valueText:SetText(formatValue(value))
+    end
+    slider:SetScript("OnValueChanged", function(self, value)
+        setter(value)
+        valueText:SetText(formatValue(value))
+        UI:ApplySettings()
+    end)
+    slider:SetScript("OnShow", Sync)
+    Sync()
+    slider.valueText = valueText
+    return slider
+end
+
+function UI.PlayerInCombat()
+    return UnitAffectingCombat and UnitAffectingCombat("player")
+end
+
+function UI.HideGuideForCombat()
+    return ns.db.hideInCombat == true and UI.PlayerInCombat()
+end
+
+function UI.NormalizeGuideScale(scale)
+    return ClampNumber(scale, 0.5, 1.5, 1)
 end
 
 local function CreateProgressBar(parent, height)
@@ -951,9 +996,15 @@ function UI:Update(engine)
 end
 
 function UI:ApplySettings()
+    ns.db.guideScale = UI.NormalizeGuideScale(ns.db.guideScale)
+    ns.db.tracker.scale = ns.db.guideScale
     ApplyPlacement(self.tracker, ns.db.tracker, TRACKER_DEFAULTS)
     if self.browser then ApplyPlacement(self.browser, ns.db.browser, BROWSER_DEFAULTS) end
-    if ns.db.uiOpen and ns.db.tracker.enabled then self.tracker:Show() else self.tracker:Hide() end
+    if ns.db.uiOpen and ns.db.tracker.enabled and not UI.HideGuideForCombat() then
+        self.tracker:Show()
+    else
+        self.tracker:Hide()
+    end
     if self.launcher then
         if AddonCompartmentFrame then self.launcher:Hide() else self.launcher:Show() end
     end
@@ -966,6 +1017,7 @@ end
 function UI:ResetPositions()
     for key, value in pairs(TRACKER_DEFAULTS) do ns.db.tracker[key] = value end
     for key, value in pairs(BROWSER_DEFAULTS) do ns.db.browser[key] = value end
+    ns.db.guideScale = 1
     self:ApplySettings()
 end
 
@@ -998,17 +1050,20 @@ function UI:RegisterSettings()
             if UI.browser and UI.browser:IsShown() then UI:RefreshGuideBrowser() end
         end)
     hideIneligible:SetPoint("TOPLEFT", autoQuest, "BOTTOMLEFT", 0, -4)
+    local hideInCombat = CreateCheckbox(panel, "Hide in Combat",
+        function() return not not ns.db.hideInCombat end,
+        function(value) ns.db.hideInCombat = value end)
+    hideInCombat:SetPoint("TOPLEFT", hideIneligible, "BOTTOMLEFT", 0, -4)
+    local guideScale = CreateSlider(panel, "Guide scale", 50, 150, 5,
+        function() return math.floor(UI.NormalizeGuideScale(ns.db.guideScale) * 100 + 0.5) end,
+        function(value) ns.db.guideScale = value / 100 end,
+        function(value) return value .. "%" end)
+    guideScale:SetPoint("TOPLEFT", hideInCombat, "BOTTOMLEFT", -2, -24)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
-    open:SetPoint("TOPLEFT", hideIneligible, "BOTTOMLEFT", 4, -14)
+    open:SetPoint("TOPLEFT", guideScale, "BOTTOMLEFT", 6, -14)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
-    local trackerScale = CreatePlainButton(panel, 180, "Cycle tracker scale")
-    trackerScale:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
-    trackerScale:SetScript("OnClick", function()
-        ns.db.tracker.scale = ns.db.tracker.scale >= 1.2 and 0.8 or ns.db.tracker.scale + 0.1
-        UI:ApplySettings()
-    end)
     local reset = CreatePlainButton(panel, 180, "Reset frame positions")
-    reset:SetPoint("TOPLEFT", trackerScale, "BOTTOMLEFT", 0, -6)
+    reset:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
     reset:SetScript("OnClick", function() UI:ResetPositions() end)
     if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
         local category = Settings.RegisterCanvasLayoutCategory(panel, "Forever GuideMate")

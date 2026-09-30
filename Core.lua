@@ -6,8 +6,10 @@ ns.guides = ns.guides or {}
 ns.guideOrder = ns.guideOrder or {}
 
 local ACCOUNT_DEFAULTS = {
-    schemaVersion = 3,
+    schemaVersion = 4,
     uiOpen = true,
+    hideInCombat = false,
+    guideScale = 1,
     tracker = {
         enabled = true, locked = false, scale = 1,
         point = "LEFT", relativePoint = "LEFT", x = 0, y = 0,
@@ -70,6 +72,13 @@ local function MigrateStorage(account, character)
         tracker.point, tracker.relativePoint, tracker.x, tracker.y = "LEFT", "LEFT", 0, 0
         account.tracker = tracker
         account.schemaVersion = 3
+    end
+    if (tonumber(account.schemaVersion) or 1) < 4 then
+        local tracker = type(account.tracker) == "table" and account.tracker or {}
+        if type(account.guideScale) ~= "number" then
+            account.guideScale = type(tracker.scale) == "number" and tracker.scale or 1
+        end
+        account.schemaVersion = 4
     end
     if (tonumber(character.schemaVersion) or 1) < 2 then
         character.deferred = type(character.skipped) == "table" and character.skipped or {}
@@ -357,6 +366,9 @@ local function OnEvent(_, event, arg1)
     elseif (event == "DISPLAY_SIZE_CHANGED" or event == "UI_SCALE_CHANGED") and ns.UI and ns.UI.ValidatePositions then
         ns.UI:ValidatePositions()
         return
+    elseif (event == "PLAYER_REGEN_DISABLED" or event == "PLAYER_REGEN_ENABLED") and ns.UI and ns.UI.ApplySettings then
+        ns.UI:ApplySettings()
+        return
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
@@ -378,6 +390,8 @@ if CreateFrame then
     eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
     eventFrame:RegisterEvent("DISPLAY_SIZE_CHANGED")
     eventFrame:RegisterEvent("UI_SCALE_CHANGED")
+    eventFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
+    eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
     eventFrame:RegisterEvent("GOSSIP_SHOW")
     eventFrame:RegisterEvent("QUEST_GREETING")
     eventFrame:RegisterEvent("QUEST_DETAIL")
