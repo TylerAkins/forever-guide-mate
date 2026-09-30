@@ -3884,6 +3884,95 @@ function TestChapterUpdateStaysSmall()
 end
 TestChapterUpdateStaysSmall()
 
+-- Provider ownership and native quest destinations.
+function TestWaypointProviders()
+    ns.TomTomWaypoints:Clear()
+    ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
+    local userPoint, trackedQuest, trackingUser, pinWrites = nil, 0, false, 0
+    UiMapPoint = { CreateFromCoordinates = function(mapID, x, y)
+        return { uiMapID = mapID, position = { x = x, y = y } }
+    end }
+    C_Map = {
+        GetUserWaypoint = function() return userPoint end,
+        SetUserWaypoint = function(point) userPoint = point; pinWrites = pinWrites + 1 end,
+        ClearUserWaypoint = function() userPoint = nil end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return trackedQuest end,
+        SetSuperTrackedQuestID = function(id) trackedQuest = id; trackingUser = false end,
+        SetSuperTrackedUserWaypoint = function(value) trackingUser = value end,
+        IsSuperTrackingUserWaypoint = function() return trackingUser end,
+    }
+    local accept = { kind = "accept", complete = { quest = { id = 123 } }, route = {
+        { mapID = 10, x = 0.1, y = 0.2 }, { mapID = 11, x = 0.3, y = 0.4 },
+    } }
+    local waypoints = ns.TomTomWaypoints
+    waypoints:Sync(accept, {})
+    Equal(userPoint.uiMapID, 11, "accept uses the giver zone rather than a travel breadcrumb")
+    Equal(userPoint.position.x, 0.3, "accept uses authored giver coordinates")
+    waypoints:Sync(accept, {})
+    Equal(pinWrites, 1, "unchanged step does not recreate a pin")
+    userPoint = UiMapPoint.CreateFromCoordinates(12, 0.5, 0.6)
+    waypoints:Sync(accept, {})
+    Equal(pinWrites, 1, "manual destination survives refresh")
+    waypoints:Clear()
+    Equal(userPoint.uiMapID, 12, "clear preserves a manually placed pin")
+    C_QuestLog = { GetNextWaypoint = function() return 13, 0.7, 0.8 end }
+    local objective = { kind = "objective", complete = { questObjective = { id = 123, index = 1 } } }
+    waypoints:Sync(objective, {})
+    Equal(trackedQuest, 123, "objective super-tracks the native quest")
+    Equal(userPoint.uiMapID, 12, "quest tracking leaves unrelated user pins alone")
+    trackedQuest = 456
+    waypoints:Sync(objective, {})
+    Equal(trackedQuest, 456, "manual quest tracking survives refresh")
+    waypoints:Clear()
+    Equal(trackedQuest, 456, "clear leaves manually tracked quests alone")
+    local turnin = { kind = "turnin", complete = { quest = { id = 789 } } }
+    waypoints:Sync(turnin, {})
+    Equal(trackedQuest, 789, "turn-in uses native quest tracking")
+    C_QuestLog.GetNextWaypoint = function() return nil end
+    waypoints:Sync(turnin, {})
+    Equal(trackedQuest, 0, "lost quest location clears only owned tracking")
+    Equal(waypoints.status, "No Blizzard quest location is available for this step.", "missing location is reported")
+    local calls = {}
+    local optional = {
+        AddWaypoint = function(_, mapID, x, y) calls[#calls + 1] = { mapID, x, y }; return #calls end,
+        RemoveWaypoint = function(_, uid) calls[uid].removed = true end,
+    }
+    C_QuestLog.GetNextWaypoint = function() return 13, 0.7, 0.8 end
+    waypoints:Sync(objective, {}, optional)
+    Equal(calls[1][2], 0.7, "TomTom objectives use client quest coordinates")
+    C_QuestLog.GetNextWaypoint = function() return 14, 0.2, 0.3 end
+    waypoints:Sync(objective, {}, optional)
+    Equal(calls[1].removed, true, "TomTom removes its old destination when the client location changes")
+    Equal(calls[2][1], 14, "TomTom follows updated quest locations")
+    hooksecurefunc = function(api, method, observer)
+        local original = api[method]
+        api[method] = function(self, ...)
+            original(self, ...)
+            observer(self, ...)
+        end
+    end
+    optional.SetCrazyArrow = function() end
+    waypoints:Sync(objective, {}, optional)
+    optional:SetCrazyArrow("manual")
+    C_QuestLog.GetNextWaypoint = function() return 15, 0.4, 0.5 end
+    waypoints:Sync(objective, {}, optional)
+    Equal(#calls, 2, "TomTom does not reclaim a manually redirected arrow")
+    hooksecurefunc = nil
+    waypoints:Clear()
+    Equal(calls[2].removed, true, "TomTom removal uses the provider that created the waypoint")
+    C_QuestLog = nil
+    waypoints:Sync({ kind = "objective", complete = { questObjective = { id = 123 } } }, {})
+    Equal(waypoints.status, "Blizzard quest-location APIs are unavailable on this client.", "missing quest APIs are reported")
+    C_Map = nil
+    waypoints:Sync(accept, {})
+    Equal(waypoints.status, "Blizzard Map Pins are unavailable on this client.", "missing pin APIs are reported")
+
+end
+TestWaypointProviders()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
