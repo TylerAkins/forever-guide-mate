@@ -27,7 +27,14 @@ local function NewRegion(parent)
         rawset(self, "scripts", scripts)
         scripts[name] = callback
     end
-    function methods:CreateTexture() local child = NewRegion(self); self.lastTexture = child; return child end
+    function methods:CreateTexture(_, layer)
+        local child = NewRegion(self)
+        child.layer = layer
+        self.textures = rawget(self, "textures") or {}
+        self.textures[#self.textures + 1] = child
+        self.lastTexture = child
+        return child
+    end
     function methods:CreateFontString() local child = NewRegion(self); self.lastFontString = child; return child end
     function methods:CreateLine() local child = NewRegion(self); self.lastLine = child; return child end
     function methods:GetParent() return rawget(self, "parent") end
@@ -148,9 +155,29 @@ Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
 Equal(ns.db.showMinimapButton ~= false, true, "show minimap button defaults on")
 Check(ns.UI.minimapButton ~= nil, "minimap button is created")
 Equal(ns.db.minimapButton.position, 200, "minimap button default angle is 200 degrees")
-Equal(ns.UI.minimapButton.width, 33, "minimap button matches the Forever 33px recipe")
-Equal(ns.UI.minimapButton.height, 33, "minimap button matches the Forever 33px recipe")
+Equal(ns.UI.minimapButton.width, 31, "minimap button matches LFG Forever size")
+Equal(ns.UI.minimapButton.height, 31, "minimap button matches LFG Forever size")
 Equal(ns.UI.minimapButton.points[1][2], Minimap, "minimap button anchors to the minimap")
+local minimapTextures = ns.UI.minimapButton.textures
+local disc, icon, border = minimapTextures[1], minimapTextures[2], minimapTextures[3]
+Equal(disc.texturePath, "Interface\\Minimap\\UI-Minimap-Background", "minimap uses LFG's black backing")
+Equal(disc.width, 24, "black backing matches LFG size")
+Equal(disc.height, 24, "black backing is square")
+Equal(icon.width, 18, "quest icon matches LFG icon size")
+Equal(icon.height, 18, "quest icon is square")
+for _, texture in ipairs({ disc, icon }) do
+    Equal(texture.points[1][1], "CENTER", "backing and icon are centered")
+    Equal(texture.points[1][2], ns.UI.minimapButton, "texture anchors to the button")
+    Equal(texture.points[1][3], "CENTER", "texture aligns with button center")
+    Equal(texture.points[1][4], 0, "texture has no horizontal offset")
+    Equal(texture.points[1][5], 0, "texture has no vertical offset")
+end
+Equal(border.width, 50, "border matches LFG size")
+Equal(border.height, 50, "border is square")
+Equal(border.points[1][1], "TOPLEFT", "border retains its texture art alignment")
+Equal(disc.layer, "BACKGROUND", "black backing sits behind the icon")
+Equal(icon.layer, "ARTWORK", "quest icon sits above the backing")
+Equal(border.layer, "OVERLAY", "ring sits above the icon")
 ns.UI.minimapButton.isDragging = true
 ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
 local draggedAngle = ns.db.minimapButton.position
