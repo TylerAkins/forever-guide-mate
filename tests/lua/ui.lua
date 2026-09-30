@@ -148,15 +148,17 @@ Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
 Equal(ns.db.showMinimapButton ~= false, true, "show minimap button defaults on")
 Check(ns.UI.minimapButton ~= nil, "minimap button is created")
 Equal(ns.db.minimapButton.position, 200, "minimap button default angle is 200 degrees")
-Equal(ns.UI.minimapButton.points[1][1], "CENTER", "minimap button rides the minimap edge")
+Equal(ns.UI.minimapButton.width, 33, "minimap button matches the Forever 33px recipe")
+Equal(ns.UI.minimapButton.height, 33, "minimap button matches the Forever 33px recipe")
 Equal(ns.UI.minimapButton.points[1][2], Minimap, "minimap button anchors to the minimap")
-ns.UI.minimapButton.scripts.OnDragStart(ns.UI.minimapButton)
+ns.UI.minimapButton.isDragging = true
 ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
 local draggedAngle = ns.db.minimapButton.position
 ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
 Equal(ns.db.minimapButton.position, draggedAngle, "drag angle stays stable for a fixed cursor")
-ns.UI.minimapButton.scripts.OnDragStop(ns.UI.minimapButton)
-Equal(ns.UI.minimapButton.scripts.OnUpdate, nil, "drag clears OnUpdate")
+ns.UI.minimapButton.isDragging = false
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+Equal(ns.db.minimapButton.position, draggedAngle, "drag angle does not change after drag stops")
 ns.db.uiOpen = true
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
 Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
