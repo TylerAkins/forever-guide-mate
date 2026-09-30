@@ -785,6 +785,7 @@ class ContractTests(unittest.TestCase):
         self.assertIn("function UI:CloseTracker()", ui)
         self.assertIn("function UI:OpenGuideBrowser()", ui)
         self.assertIn("function UI:ToggleGuideBrowser()", ui)
+        self.assertIn("function UI:ToggleGuideTracker()", ui)
         self.assertIn("function UI:OpenSettings()", ui)
         self.assertIn("function UI:CloseSettingsIfOpen()", ui)
         self.assertIn("if UI.PlayerInCombat() then return end", ui)
