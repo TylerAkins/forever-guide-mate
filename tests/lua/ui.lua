@@ -60,8 +60,18 @@ Minimap = NewRegion()
 CreateFrame = function(kind, _, parent)
     local frame = NewRegion(parent)
     if kind == "CheckButton" then frame.Text = NewRegion() end
+    if kind == "Slider" then
+        frame.value = 100
+        frame.SetOrientation = function() end
+        frame.SetMinMaxValues = function(self, minimum, maximum) self.minimum, self.maximum = minimum, maximum end
+        frame.SetValueStep = function() end
+        frame.SetObeyStepOnDrag = function() end
+        frame.SetValue = function(self, value) self.value = value end
+        frame.GetValue = function(self) return self.value end
+    end
     return frame
 end
+UnitAffectingCombat = function() return false end
 C_Timer = nil
 Settings = nil
 InterfaceOptions_AddCategory = nil
@@ -101,6 +111,26 @@ Equal(ns.UI.browser.shown, true, "startup opens the guide library until a guide 
 Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
 Equal(ns.db.browser.hideIneligible, false, "hide ineligible defaults off")
 Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts unchecked")
+Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
+Equal(ns.db.guideScale, 1, "guide scale defaults to 100%")
+Equal(ns.UI.tracker.scale, 1, "guide scale applies to the tracker")
+ns.db.guideScale = 1.6
+ns.UI:ApplySettings()
+Equal(ns.db.guideScale, 1.5, "guide scale clamps to 150%")
+Equal(ns.UI.tracker.scale, 1.5, "the tracker honors the guide scale clamp")
+ns.db.guideScale = 0.4
+ns.UI:ApplySettings()
+Equal(ns.db.guideScale, 0.5, "guide scale clamps to 50%")
+UnitAffectingCombat = function() return true end
+ns.db.hideInCombat = true
+ns.UI:ApplySettings()
+Equal(ns.UI.tracker.shown, false, "hide in combat hides the tracker while fighting")
+ns.db.hideInCombat = false
+ns.UI:ApplySettings()
+Equal(ns.UI.tracker.shown, true, "the tracker returns when hide in combat is off")
+UnitAffectingCombat = function() return false end
+ns.db.guideScale = 1
+ns.UI:ApplySettings()
 ns.UI.tracker.instruction:SetText(string.rep("A longer guide instruction needs room. ", 8))
 ns.UI.tracker.nextStep:SetText("")
 ns.UI:ResizeTracker()
