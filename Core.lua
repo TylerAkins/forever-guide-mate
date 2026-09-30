@@ -25,7 +25,7 @@ local ACCOUNT_DEFAULTS = {
         hideIneligible = false,
     },
     minimapButton = {
-        position = 225,
+        position = 200,
     },
     autoAdvance = true,
     autoQuest = true,
