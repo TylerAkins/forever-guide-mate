@@ -176,6 +176,11 @@ ns.UI.settingsCategory = { ID = 42 }
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "RightButton")
 Equal(settingsOpened, true, "minimap right click opens the options panel")
 Equal(settingsCategoryID, 42, "minimap right click passes the settings category id")
+UnitAffectingCombat = function() return true end
+settingsOpened = false
+ns.UI:OpenSettings()
+Equal(settingsOpened, false, "settings do not open while in combat")
+UnitAffectingCombat = function() return false end
 Settings = nil
 ns.db.showMinimapButton = false
 ns.UI:ApplySettings()
