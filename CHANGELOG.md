@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.36 - 2026-09-30
+
+- Stolen Silver waits until Raptor Thieves is turned in. Gazrog does not offer it before that.
+
 ## 0.1.35 - 2026-09-30
 
 - Leveling lint compares every shipped leveling chapter and fails when one drops objective or turn-in steps another chapter still has, unless that handoff is listed. Silverpine Forest turns in Jorn Skyseer on the Crossroads detour.
