@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.46 - 2026-09-30
+
+- Minimap icon is Blizzard’s yellow available-quest mark (`AvailableQuestIcon`) in the same 20px tracking slot, instead of the red question-mark icon.
+
 ## 0.1.45 - 2026-09-30
 
 - Minimap button uses the vanilla tracking slot (`TOPLEFT` 7,-6): native tracking background (no tint that hid the disc), cropped question-mark icon instead of an oversized quest atlas, matching LFG-sized 33/54 layout. CI toc contract lists `MinimapButton.lua`.

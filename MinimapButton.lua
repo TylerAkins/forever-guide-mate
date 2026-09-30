@@ -7,8 +7,7 @@ ns.MinimapButton = MinimapButton
 local BUTTON_SIZE = 33
 local BORDER_SIZE = 54
 local SLOT_X, SLOT_Y, SLOT_SIZE = 7, -6, 20
-local ICON_TEXTURE = "Interface\\Icons\\INV_Misc_QuestionMark"
-local ICON_CROP = { 0.08, 0.92, 0.08, 0.92 }
+local ICON_TEXTURE = "Interface\\GossipFrame\\AvailableQuestIcon"
 local TRACKING_BACKGROUND = "Interface\\Minimap\\MiniMap-TrackingBackground"
 local TRACKING_BORDER = "Interface\\Minimap\\MiniMap-TrackingBorder"
 
@@ -81,9 +80,6 @@ function MinimapButton:Create(hooks)
     icon:SetSize(SLOT_SIZE, SLOT_SIZE)
     icon:SetPoint("TOPLEFT", btn, "TOPLEFT", SLOT_X, SLOT_Y)
     icon:SetTexture(ICON_TEXTURE)
-    if icon.SetTexCoord then
-        icon:SetTexCoord(ICON_CROP[1], ICON_CROP[2], ICON_CROP[3], ICON_CROP[4])
-    end
 
     local border = btn:CreateTexture(nil, "OVERLAY")
     border:SetSize(BORDER_SIZE, BORDER_SIZE)
