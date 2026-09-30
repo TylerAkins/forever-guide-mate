@@ -1,3 +1,3 @@
-## 0.1.39 - 2026-09-30
+## 0.1.40 - 2026-09-30
 
-- Added a draggable minimap button with the default quest icon. Left-click shows or hides the guide tracker, right-click opens Forever GuideMate settings, and the new **Show minimap button** option defaults to on.
+- Minimap button uses Blizzard’s filled tracking disc (black), centers the quest icon in the ring, and drags smoothly around round or square minimaps. Default position is 200° (lower-left of the ring).

@@ -64,8 +64,9 @@ end
 UIParent = NewRegion()
 UIParent.width, UIParent.height = 1920, 1080
 Minimap = NewRegion()
-Minimap.width = 140
+Minimap.width, Minimap.height = 140, 140
 Minimap.GetWidth = function(self) return self.width end
+Minimap.GetHeight = function(self) return self.height end
 GetCursorPosition = function() return 100, 170 end
 local createdFrames = {}
 CreateFrame = function(kind, _, parent)
@@ -144,7 +145,9 @@ Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts 
 Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
 Equal(ns.db.showMinimapButton ~= false, true, "show minimap button defaults on")
 Check(ns.UI.minimapButton ~= nil, "minimap button is created")
-Equal(ns.UI.minimapButton.points[1][1], "CENTER", "minimap button anchors to the minimap center")
+Equal(ns.db.minimapButton.position, 200, "minimap button default angle is 200 degrees")
+Equal(ns.UI.minimapButton.points[1][1], "CENTER", "minimap button rides the minimap edge")
+Equal(ns.UI.minimapButton.points[1][2], Minimap, "minimap button anchors to the minimap")
 ns.db.uiOpen = true
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
 Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
