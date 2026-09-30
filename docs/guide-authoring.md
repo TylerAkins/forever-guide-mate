@@ -74,9 +74,9 @@ A converted file drops the Era level-range name. `Guides/Era/12-17-westfall.lua`
 
 ### Detour weave checklist
 
-When a chapter copies a block from another route, treat the source as canonical and the copy as a detour. The CI pair table lives in `tests/lua/guide_data_checks.lua` (`DetourCoveragePairs`). Add a row when you weave another detour.
+When a chapter copies a block from another route, treat the source as canonical and the copy as a detour. Named pairs live in `tests/lua/guide_data_checks.lua` (`DetourCoveragePairs`).
 
-For every shared quest id (step ids `accept-`, `turnin-`, `objective-`, or `gossip-` plus that id), the detour must not drop a kind the canonical chapter has. Accept-only on the detour while the source also has an objective or turn-in fails lint.
+Lint also compares **every shipped leveling chapter** with every other shipped leveling chapter. For a shared quest id (step ids `accept-`, `turnin-`, `objective-`, or `gossip-` plus that id), a strict subset fails unless that `guideID:questID` is in `CoverageGapAllowlist` with the chapter that still has the missing steps. Era archive files and class guides are printed by `audit_accept_chains.lua` and do not fail lint. Add an allowlist row only for a real handoff to a named later chapter, not to hide a dropped turn-in on a detour.
 
 ### Gated accepts
 

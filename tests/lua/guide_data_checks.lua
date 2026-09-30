@@ -339,8 +339,163 @@ function M.DetourCoverageViolations(guides, configured)
     return issues
 end
 
+-- Shipped leveling chapters (Guides/Leveling). Numeric Era archive ids
+-- (leveling-era-30-30-…) are reported by the audit and are not hard failures.
+function M.IsShippedLevelingID(guideID)
+    return type(guideID) == "string"
+        and guideID:match("^leveling%-") ~= nil
+        and guideID:match("^leveling%-era%-%d") == nil
+end
+
+-- Reviewed handoffs: this chapter is a strict subset because the rest of the
+-- quest is in the named guide. A new subset that is not listed here fails lint.
+-- Key is "guideID:questID". Value is the guide that currently has the fuller steps.
+M.CoverageGapAllowlist = {
+    ["leveling-durotar:2983"] = "leveling-era-the-barrens-part-1",
+    ["leveling-durotar:830"] = "leveling-era-durotar",
+    ["leveling-era-ashenvale-part-1:1026"] = "leveling-era-ashenvale-part-4",
+    ["leveling-era-ashenvale-part-1:1054"] = "leveling-era-ashenvale-part-2",
+    ["leveling-era-ashenvale-part-1:1056"] = "leveling-era-stonetalon-mountains-part-2",
+    ["leveling-era-ashenvale-part-1:1070"] = "leveling-era-stonetalon-mountains-part-2",
+    ["leveling-era-ashenvale-part-3:6383"] = "leveling-era-stonetalon-mountains-part-1",
+    ["leveling-era-darkshore-part-1:6342"] = "leveling-era-teldrassil",
+    ["leveling-era-darkshore-part-1:729"] = "leveling-era-darkshore-part-2",
+    ["leveling-era-darkshore-part-1:948"] = "leveling-era-darkshore-part-2",
+    ["leveling-era-darkshore-part-1:986"] = "leveling-era-darkshore-part-3",
+    ["leveling-era-darkshore-part-2:1685"] = "leveling-era-elwynn-forest",
+    ["leveling-era-darkshore-part-2:986"] = "leveling-era-darkshore-part-3",
+    ["leveling-era-dun-morogh:416"] = "leveling-era-elwynn-forest",
+    ["leveling-era-dun-morogh:418"] = "leveling-era-elwynn-forest",
+    ["leveling-era-durotar:2983"] = "leveling-era-the-barrens-part-1",
+    ["leveling-era-durotar:809"] = "leveling-durotar",
+    ["leveling-era-durotar:840"] = "leveling-durotar",
+    ["leveling-era-elwynn-forest:151"] = "leveling-era-westfall",
+    ["leveling-era-elwynn-forest:22"] = "leveling-era-westfall",
+    ["leveling-era-elwynn-forest:38"] = "leveling-era-westfall",
+    ["leveling-era-elwynn-forest:436"] = "leveling-era-loch-modan",
+    ["leveling-era-elwynn-forest:64"] = "leveling-era-westfall",
+    ["leveling-era-elwynn-forest:9"] = "leveling-era-westfall",
+    ["leveling-era-mulgore:2984"] = "leveling-era-the-barrens-part-1",
+    ["leveling-era-redridge-mountains-part-1:126"] = "leveling-era-redridge-mountains-part-2",
+    ["leveling-era-silverpine-forest:1062"] = "leveling-era-stonetalon-mountains-part-1",
+    ["leveling-era-silverpine-forest:493"] = "leveling-era-hillsbrad-foothills",
+    ["leveling-era-silverpine-forest:879"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-silverpine-forest:893"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-stonetalon-mountains-part-1:1058"] = "leveling-era-stonetalon-mountains-part-3",
+    ["leveling-era-stonetalon-mountains-part-1:6301"] = "leveling-era-stonetalon-mountains-part-3",
+    ["leveling-era-stonetalon-mountains-part-4:1058"] = "leveling-era-stonetalon-mountains-part-3",
+    ["leveling-era-the-barrens-part-1:1062"] = "leveling-era-stonetalon-mountains-part-1",
+    ["leveling-era-the-barrens-part-1:1069"] = "leveling-era-stonetalon-mountains-part-1",
+    ["leveling-era-the-barrens-part-1:1483"] = "leveling-era-stonetalon-mountains-part-1",
+    ["leveling-era-the-barrens-part-1:879"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-the-barrens-part-1:893"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-the-barrens-part-2:846"] = "leveling-era-the-barrens-part-3",
+    ["leveling-era-the-barrens-part-2:899"] = "leveling-era-silverpine-forest",
+    ["leveling-era-the-barrens-part-3:1153"] = "leveling-era-thousand-needles-part-1",
+    ["leveling-era-the-barrens-part-3:879"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-the-barrens-part-3:882"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-the-barrens-part-3:907"] = "leveling-era-the-barrens-part-2",
+    ["leveling-era-thousand-needles-part-1:4767"] = "leveling-era-thousand-needles-part-2",
+    ["leveling-era-thousand-needles-part-1:4865"] = "leveling-era-thousand-needles-part-2",
+    ["leveling-era-thousand-needles-part-1:5064"] = "leveling-era-thousand-needles-part-2",
+    ["leveling-era-thousand-needles-part-1:5147"] = "leveling-era-thousand-needles-part-2",
+    ["leveling-era-tirisfal-glades:445"] = "leveling-era-silverpine-forest",
+    ["leveling-era-westfall:61"] = "leveling-era-elwynn-forest",
+    ["leveling-mulgore:2984"] = "leveling-era-the-barrens-part-1",
+    ["leveling-mulgore:751"] = "leveling-era-mulgore",
+    ["leveling-mulgore:773"] = "leveling-era-mulgore",
+    ["leveling-mulgore:781"] = "leveling-era-mulgore",
+}
+
+function M.CollapsedCoverageGaps(issues)
+    local best = {}
+    for _, issue in ipairs(issues or {}) do
+        local key = issue.detourID .. ":" .. tostring(issue.questID)
+        local prev = best[key]
+        if not prev or #issue.missing > #prev.missing then
+            best[key] = issue
+        end
+    end
+    local collapsed = {}
+    for _, issue in pairs(best) do
+        collapsed[#collapsed + 1] = issue
+    end
+    table.sort(collapsed, function(a, b)
+        if a.detourID == b.detourID then
+            return a.questID < b.questID
+        end
+        return a.detourID < b.detourID
+    end)
+    return collapsed
+end
+
+function M.ShippedLevelingCoverageViolations(guides)
+    local violations = {}
+    for _, issue in ipairs(M.CollapsedCoverageGaps(M.AllGuideCoverageGaps(guides))) do
+        if M.IsShippedLevelingID(issue.detourID) and M.IsShippedLevelingID(issue.canonicalID) then
+            local key = issue.detourID .. ":" .. tostring(issue.questID)
+            if not M.CoverageGapAllowlist[key] then
+                violations[#violations + 1] = issue
+            end
+        end
+    end
+    return violations
+end
+
 -- Fixture: a detour that keeps only the accept must be reported. Lint calls
 -- this so a regression in the checker itself fails CI.
+-- Every guide against every other guide. A hit means this guide's step kinds for
+-- a shared quest id are a strict subset of another guide's kinds.
+function M.AllGuideCoverageGaps(guides)
+    local kindsByGuide = {}
+    local guideIDs = {}
+    for guideID, guide in pairs(guides or {}) do
+        if guide and guide.category ~= "Dungeon Quest Guides" and type(guide.goals) == "table" then
+            kindsByGuide[guideID] = M.QuestStepKinds(guide)
+            guideIDs[#guideIDs + 1] = guideID
+        end
+    end
+    table.sort(guideIDs)
+    local issues = {}
+    for _, weakerID in ipairs(guideIDs) do
+        for _, fullerID in ipairs(guideIDs) do
+            if weakerID ~= fullerID then
+                for questID, weakerSet in pairs(kindsByGuide[weakerID]) do
+                    local fullerSet = kindsByGuide[fullerID][questID]
+                    if fullerSet then
+                        local missing = {}
+                        local subset = true
+                        for kind in pairs(weakerSet) do
+                            if not fullerSet[kind] then
+                                subset = false
+                            end
+                        end
+                        if subset then
+                            for kind in pairs(fullerSet) do
+                                if not weakerSet[kind] then
+                                    missing[#missing + 1] = kind
+                                end
+                            end
+                        end
+                        if #missing > 0 then
+                            table.sort(missing)
+                            issues[#issues + 1] = {
+                                detourID = weakerID,
+                                canonicalID = fullerID,
+                                questID = questID,
+                                detourKinds = table.concat(KindList(weakerSet), ","),
+                                canonicalKinds = table.concat(KindList(fullerSet), ","),
+                                missing = table.concat(missing, ","),
+                            }
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return issues
+end
+
 function M.DetourCoverageFixtureFails()
     local guides = {
         canonical = { goals = {

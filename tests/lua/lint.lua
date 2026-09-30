@@ -341,6 +341,10 @@ for _, issue in ipairs(guideData.DetourCoverageViolations(ns.guides)) do
         :format(issue.detourID, issue.questID, issue.canonicalID,
             issue.detourKinds, issue.canonicalKinds, issue.missing))
 end
+for _, issue in ipairs(guideData.ShippedLevelingCoverageViolations(ns.guides)) do
+    Check(false, ("%s quest %d is weaker than %s (has %s, missing %s). Add the steps or CoverageGapAllowlist.")
+        :format(issue.detourID, issue.questID, issue.canonicalID, issue.detourKinds, issue.missing))
+end
 for _, issue in ipairs(guideData.PrerequisiteTurninViolations(ns.guides, ns.questPrerequisites)) do
     Check(false, ("%s %s accept %d needs a turnin-%d step in that guide")
         :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
