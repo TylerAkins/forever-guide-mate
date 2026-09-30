@@ -1340,11 +1340,46 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-844-plainstrider-menace",
+            kind = "objective",
+            priority = 1150,
+            conditions = { level = { min = 10 } },
+            text = "Kill Greater Plainstrider and collect 7 Plainstrider Beak around The Crossroads.",
+            dependsOn = { "accept-844-plainstrider-menace" },
+            complete = QuestState(844, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5311, 0.3237, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5301, 0.2804, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5132, 0.2743, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.4935, 0.3003, "Continue toward Plainstrider Menace",
+                    "Continue toward Plainstrider Menace."),
+                Point(MAP.BARRENS, 0.5128, 0.3334, "Greater Plainstrider",
+                    "Travel to Greater Plainstrider."),
+            },
+        },
+        {
+            id = "turnin-844-plainstrider-menace",
+            kind = "turnin",
+            priority = 1160,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Plainstrider Menace to Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "objective-844-plainstrider-menace" },
+            complete = QuestState(844, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
+                    "Travel to Sergra Darkthorn."),
+            },
+        },
+        {
             id = "accept-845-the-zhevra",
             kind = "accept",
             priority = 1170,
             conditions = { level = { min = 10 } },
             text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-844-plainstrider-menace" },
             complete = QuestState(845, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -1613,6 +1648,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = { level = { min = 10 } },
             text = "Accept Prowlers of the Barrens from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-845-the-zhevra" },
             complete = QuestState(903, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5223, 0.3100, "Sergra Darkthorn",
@@ -1625,6 +1661,7 @@ ns:RegisterGuide({
             priority = 1460,
             conditions = { level = { min = 9 } },
             text = "Accept Stolen Silver from Gazrog in The Crossroads.",
+            dependsOn = { "turnin-869-raptor-thieves" },
             complete = QuestState(3281, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5193, 0.3033, "Gazrog",
@@ -2103,6 +2140,7 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = { level = { min = 10 } },
             text = "Accept Echeyakee from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-903-prowlers-of-the-barrens" },
             complete = QuestState(881, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2181,6 +2219,7 @@ ns:RegisterGuide({
             priority = 1980,
             conditions = { level = { min = 10 } },
             text = "Accept The Angry Scytheclaws from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-881-echeyakee" },
             complete = QuestState(905, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2493,6 +2532,7 @@ ns:RegisterGuide({
             priority = 2300,
             conditions = { level = { min = 10 } },
             text = "Accept Jorn Skyseer from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-905-the-angry-scytheclaws" },
             complete = QuestState(3261, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2612,6 +2652,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4600, 0.4110, "Hezrul Bloodmark",
                     "Travel to Hezrul Bloodmark."),
+            },
+        },
+        {
+            id = "turnin-3261-jorn-skyseer",
+            kind = "turnin",
+            priority = 2405,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Jorn Skyseer to Jorn Skyseer in Camp Taurajo.",
+            dependsOn = { "accept-3261-jorn-skyseer" },
+            complete = QuestState(3261, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4484, 0.5909, "Jorn Skyseer",
+                    "Travel to Jorn Skyseer."),
             },
         },
         {
