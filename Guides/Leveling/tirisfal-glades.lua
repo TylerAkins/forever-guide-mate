@@ -2490,16 +2490,34 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Making Repairs from Jorin Croge at Bandarion Keep.",
-            dependsOn = { "accept-91294-touring-the-grounds" },
+            dependsOn = { "turnin-91294-touring-the-grounds" },
             complete = QuestState(91316, "activeOrCompleted"),
             route = {
                 Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
             },
         },
         {
+            id = "accept-91317-the-tarnished",
+            kind = "accept",
+            priority = 1468.35,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "Accept The Tarnished from Danitha Morr at Bandarion Keep.",
+            dependsOn = { "turnin-91294-touring-the-grounds" },
+            complete = QuestState(91317, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+            },
+        },
+        {
             id = "objective-91316-making-repairs",
             kind = "objective",
-            priority = 1468.31,
+            priority = 1468.36,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2516,9 +2534,27 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-91317-the-tarnished",
+            kind = "objective",
+            priority = 1468.37,
+            conditions = {
+                all = {
+                    { race = 5 },
+                    { class = 2 },
+                    { level = { min = 9 } },
+                },
+            },
+            text = "The Tarnished: Rudolph Gelhardt's Head.",
+            dependsOn = { "accept-91317-the-tarnished", "accept-91316-making-repairs" },
+            complete = QuestState(91317, "complete"),
+            route = {
+                Point(MAP.TIRISFAL, 0.1160, 0.6420, "Rudolph Gelhardt", "Travel to Rudolph Gelhardt."),
+            },
+        },
+        {
             id = "turnin-91316-making-repairs",
             kind = "turnin",
-            priority = 1468.32,
+            priority = 1468.38,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2534,45 +2570,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-91317-the-tarnished",
-            kind = "accept",
-            priority = 1468.4,
-            conditions = {
-                all = {
-                    { race = 5 },
-                    { class = 2 },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Accept The Tarnished from Danitha Morr at Bandarion Keep.",
-            dependsOn = { "turnin-91294-touring-the-grounds" },
-            complete = QuestState(91317, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
-            },
-        },
-        {
-            id = "objective-91317-the-tarnished",
-            kind = "objective",
-            priority = 1468.41,
-            conditions = {
-                all = {
-                    { race = 5 },
-                    { class = 2 },
-                    { level = { min = 9 } },
-                },
-            },
-            text = "Kill Tarnished Zealots and Tarnished Drudges.",
-            dependsOn = { "accept-91317-the-tarnished" },
-            complete = QuestState(91317, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.1160, 0.6400, "Tarnished Zealot", "Travel to Tarnished Zealot."),
-            },
-        },
-        {
             id = "turnin-91317-the-tarnished",
             kind = "turnin",
-            priority = 1468.42,
+            priority = 1468.39,
             conditions = {
                 all = {
                     { race = 5 },
