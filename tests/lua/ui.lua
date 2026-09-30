@@ -46,6 +46,13 @@ local function NewRegion(parent)
     function methods:SetRotation(value) self.rotation = value end
     function methods:SetAlpha(value) self.alpha = value end
     function methods:SetValue(value) self.value = value end
+    function methods:GetCenter() return 100, 100 end
+    function methods:GetEffectiveScale() return 1 end
+    function methods:HookScript(name, callback)
+        local hooks = rawget(self, "hookScripts") or {}
+        rawset(self, "hookScripts", hooks)
+        hooks[name] = callback
+    end
     function methods:SetChecked(value) self.checked = value end
     function methods:GetChecked() return self.checked end
     function methods:GetWidth() return rawget(self, "width") or 1920 end
@@ -57,6 +64,9 @@ end
 UIParent = NewRegion()
 UIParent.width, UIParent.height = 1920, 1080
 Minimap = NewRegion()
+Minimap.width = 140
+Minimap.GetWidth = function(self) return self.width end
+GetCursorPosition = function() return 100, 170 end
 local createdFrames = {}
 CreateFrame = function(kind, _, parent)
     local frame = NewRegion(parent)
@@ -132,6 +142,26 @@ Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
 Equal(ns.db.browser.hideIneligible, false, "hide ineligible defaults off")
 Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts unchecked")
 Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
+Equal(ns.db.showMinimapButton ~= false, true, "show minimap button defaults on")
+Check(ns.UI.minimapButton ~= nil, "minimap button is created")
+Equal(ns.UI.minimapButton.points[1][1], "CENTER", "minimap button anchors to the minimap center")
+ns.db.uiOpen = true
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
+Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
+Equal(ns.db.uiOpen, true, "minimap left click shows the guide tracker again")
+local settingsOpened = false
+Settings = { OpenToCategory = function() settingsOpened = true end }
+ns.UI.settingsCategory = {}
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "RightButton")
+Equal(settingsOpened, true, "minimap right click opens the options panel")
+Settings = nil
+ns.db.showMinimapButton = false
+ns.UI:ApplySettings()
+Equal(ns.UI.minimapButton.shown, false, "show minimap button off hides the minimap button")
+ns.db.showMinimapButton = true
+ns.UI:ApplySettings()
+Equal(ns.UI.minimapButton.shown, true, "show minimap button on restores the minimap button")
 Equal(ns.db.guideScale, 1, "guide scale defaults to 100%")
 Equal(ns.UI.tracker.scale, 1, "guide scale applies to the tracker")
 ns.db.guideScale = 1.6

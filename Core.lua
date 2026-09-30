@@ -8,6 +8,7 @@ ns.guideOrder = ns.guideOrder or {}
 local ACCOUNT_DEFAULTS = {
     schemaVersion = 4,
     uiOpen = true,
+    showMinimapButton = true,
     hideInCombat = false,
     waypointProvider = "blizzard",
     guideScale = 1,
@@ -22,6 +23,9 @@ local ACCOUNT_DEFAULTS = {
     browser = {
         scale = 1, point = "CENTER", relativePoint = "CENTER", x = 0, y = 0,
         hideIneligible = false,
+    },
+    minimapButton = {
+        position = 225,
     },
     autoAdvance = true,
     autoQuest = true,
