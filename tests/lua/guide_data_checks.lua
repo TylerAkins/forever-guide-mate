@@ -347,9 +347,11 @@ function M.IsShippedLevelingID(guideID)
         and guideID:match("^leveling%-era%-%d") == nil
 end
 
--- Reviewed handoffs: this chapter is a strict subset because the rest of the
--- quest is in the named guide. A new subset that is not listed here fails lint.
--- Key is "guideID:questID". Value is the guide that currently has the fuller steps.
+-- Baseline of gaps that already exist. These were recorded so lint stays green;
+-- they have not each been confirmed as intentional handoffs. A new subset that
+-- is not listed here fails lint. Remove an entry after the weaker chapter gains
+-- the missing steps. Key is "guideID:questID". Value is a chapter that currently
+-- has the fuller steps.
 M.CoverageGapAllowlist = {
     ["leveling-durotar:2983"] = "leveling-era-the-barrens-part-1",
     ["leveling-durotar:830"] = "leveling-era-durotar",

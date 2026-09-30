@@ -1661,7 +1661,6 @@ ns:RegisterGuide({
             priority = 1460,
             conditions = { level = { min = 9 } },
             text = "Accept Stolen Silver from Gazrog in The Crossroads.",
-            dependsOn = { "turnin-869-raptor-thieves" },
             complete = QuestState(3281, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5193, 0.3033, "Gazrog",

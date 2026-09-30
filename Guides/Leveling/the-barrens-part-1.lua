@@ -4,7 +4,7 @@ local _, ns = ...
 -- Forever quests from the Barrens list that sit on this pass are woven in.
 -- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter. Wenikee Boltbucket is accepted from Sputtervalve, and no chapter stops at Wenikee.
 -- Accept-only on purpose (turn-in is a named later stop, not Barrens Parts 1–3):
--- 822 Chen's Empty Keg continues in Stonetalon Mountains (Part 1); the Ratchet turn-in is not on Parts 1–3.
+-- 822 Chen's Empty Keg: Stonetalon Mountains (Part 1) has only the kodo-liver objective. No chapter turns it in.
 -- 1060 Letter to Jin'Zil turns in in Stonetalon Mountains (Part 1).
 -- 1062 Goblin Invaders turns in in Stonetalon Mountains (Part 1).
 -- 1483 Ziz Fizziks turns in in Stonetalon Mountains (Part 1) and (Part 2).
@@ -2337,7 +2337,6 @@ ns:RegisterGuide({
             priority = 1640,
             conditions = { level = { min = 9 } },
             text = "Accept Stolen Silver from Gazrog in The Crossroads.",
-            dependsOn = { "turnin-869-raptor-thieves" },
             complete = QuestState(3281, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5195, 0.3032, "Gazrog",
