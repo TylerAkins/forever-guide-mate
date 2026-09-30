@@ -57,8 +57,10 @@ end
 UIParent = NewRegion()
 UIParent.width, UIParent.height = 1920, 1080
 Minimap = NewRegion()
+local createdFrames = {}
 CreateFrame = function(kind, _, parent)
     local frame = NewRegion(parent)
+    createdFrames[#createdFrames + 1] = frame
     if kind == "CheckButton" then frame.Text = NewRegion() end
     if kind == "Slider" then
         frame.value = 100
@@ -97,8 +99,26 @@ Load("Guides/Dungeons/RagefireChasm.lua")
 
 ForeverGuideMateDB = nil
 ForeverGuideMateCharDB = nil
+local markerValue, markerWrites = "1", 0
+C_CVar = {
+    GetCVar = function() return markerValue end,
+    SetCVar = function(_, value) markerValue = value; markerWrites = markerWrites + 1 end,
+}
 ns.InitializeStorage()
 ns.UI:Initialize()
+Equal(ns.db.waypointProvider, "blizzard", "Blizzard is the default provider")
+Equal(markerWrites, 0, "login does not overwrite the shared navigation CVar")
+for _, frame in ipairs(createdFrames) do
+    if rawget(frame, "Text") and frame.Text:GetText() == "Show in-world destination marker" then
+        Equal(frame.checked, true, "marker checkbox reads the current game setting")
+        frame:SetChecked(false)
+        frame.scripts.OnClick(frame)
+        Equal(markerValue, "0", "marker checkbox writes the shared game setting")
+        markerValue = "1"
+        frame.scripts.OnShow(frame)
+        Equal(frame.checked, true, "marker checkbox reflects external CVar changes")
+    end
+end
 
 Equal(ns.UI.tracker.clamped, true, "tracker is clamped to the screen")
 local trackerPoint, _, trackerRelative, trackerX, trackerY = ns.UI.tracker:GetPoint()
@@ -150,6 +170,7 @@ Check(WorldMapFrame.provider ~= nil, "late world-map loading attaches the guide 
 WorldMapFrame, MapCanvasDataProviderMixin, CreateFromMixins = nil, nil, nil
 ns.MapPins.hooked, ns.MapPins.provider = false, nil
 
+ns.db.waypointProvider = "tomtom"
 local addedWaypoints = {}
 TomTom = {
     AddWaypoint = function(_, mapID, x, y, options)

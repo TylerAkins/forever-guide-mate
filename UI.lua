@@ -1059,8 +1059,44 @@ function UI:RegisterSettings()
         function(value) ns.db.guideScale = value / 100 end,
         function(value) return value .. "%" end)
     guideScale:SetPoint("TOPLEFT", hideInCombat, "BOTTOMLEFT", -2, -24)
+    local heading = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    heading:SetPoint("TOPLEFT", guideScale, "BOTTOMLEFT", 6, -20)
+    heading:SetText("Navigation")
+    local providerLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    providerLabel:SetPoint("TOPLEFT", heading, "BOTTOMLEFT", 0, -8)
+    providerLabel:SetText("Waypoint provider")
+    local provider = Create("DropdownButton", nil, panel, "WowStyle1DropdownTemplate")
+    provider:SetPoint("TOPLEFT", providerLabel, "BOTTOMLEFT", 0, -4)
+    provider:SetSize(240, 24)
+    if provider.SetupMenu then
+        provider:SetDefaultText("Blizzard Map Pins")
+        provider:SetupMenu(function(_, root)
+            local function Selected(value) return ns.db.waypointProvider == value end
+            local function Select(value)
+                ns.db.waypointProvider = value
+                UI:UpdateArrow()
+            end
+            root:CreateRadio("Blizzard Map Pins", Selected, Select, "blizzard")
+            root:CreateRadio("TomTom (optional addon)", Selected, Select, "tomtom")
+        end)
+        provider:SetScript("OnShow", function(control) control:GenerateMenu() end)
+    end
+    local marker = CreateCheckbox(panel, "Show in-world destination marker",
+        function()
+            return C_CVar and type(C_CVar.GetCVar) == "function"
+                and C_CVar.GetCVar("showInGameNavigation") == "1" or false
+        end,
+        function(value)
+            if C_CVar and type(C_CVar.GetCVar) == "function" and type(C_CVar.SetCVar) == "function"
+                and C_CVar.GetCVar("showInGameNavigation") ~= nil then
+                C_CVar.SetCVar("showInGameNavigation", value and "1" or "0")
+            else
+                ns.TomTomWaypoints:Report("In-world navigation is unavailable on this client.")
+            end
+        end)
+    marker:SetPoint("TOPLEFT", provider, "BOTTOMLEFT", -4, -4)
     local open = CreatePlainButton(panel, 180, "Open guide browser")
-    open:SetPoint("TOPLEFT", guideScale, "BOTTOMLEFT", 6, -14)
+    open:SetPoint("TOPLEFT", marker, "BOTTOMLEFT", 4, -10)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
     local reset = CreatePlainButton(panel, 180, "Reset frame positions")
     reset:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
