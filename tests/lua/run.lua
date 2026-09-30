@@ -3937,6 +3937,9 @@ function TestWaypointProviders()
         quest = { id = 123, state = "activeOrCompleted" } } }), nil, "accept-linked travel keeps its authored destination")
     Equal(ns.Navigation:QuestDestinationID({ kind = "travel", complete = { map = 11 } }), nil,
         "ordinary travel keeps route navigation")
+    Equal(ns.Navigation:QuestDestinationID({ kind = "objective", useClientPin = false,
+        complete = { quest = { id = 4921, state = "complete" } } }), nil,
+        "authored objective pins keep route navigation")
     waypoints:Sync(objective, {})
     trackedQuest = 456
     waypoints:Sync(objective, {})
@@ -3995,6 +3998,17 @@ function TestWaypointProviders()
     C_QuestLog = nil
     waypoints:Sync(objective, {}, optional)
     Equal(waypoints.status, "No Blizzard quest location is available for this step.", "TomTom reports missing client locations")
+    local corpse = {
+        kind = "objective",
+        useClientPin = false,
+        text = "Find Beaten Corpse in Southern Barrens.",
+        complete = { quest = { id = 4921, state = "complete" } },
+        route = { { mapID = 1413, x = 0.4933, y = 0.5032, label = "Beaten Corpse" } },
+    }
+    waypoints:Sync(corpse, {}, optional)
+    Equal(calls[#calls][1], 1413, "TomTom uses the authored Barrens map for Lost in Battle")
+    Equal(calls[#calls][2], 0.4933, "TomTom uses the authored Beaten Corpse x coordinate")
+    Equal(calls[#calls][3], 0.5032, "TomTom uses the authored Beaten Corpse y coordinate")
     C_Map = nil
     waypoints:Sync(accept, {})
     Equal(waypoints.status, "Blizzard Map Pins are unavailable on this client.", "missing pin APIs are reported")
