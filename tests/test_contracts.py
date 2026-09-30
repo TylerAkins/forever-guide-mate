@@ -33,6 +33,7 @@ REQUIRED_FILES = (
     "Navigation.lua",
     "MapPins.lua",
     "MapPins.xml",
+    "MinimapButton.lua",
     "UI.lua",
     "TomTomWaypoints.lua",
     "Guides/Dungeons/RagefireChasm.lua",
@@ -96,6 +97,7 @@ class ContractTests(unittest.TestCase):
                 "TomTomWaypoints.lua",
                 "MapPins.lua",
                 "MapPins.xml",
+                "MinimapButton.lua",
                 "UI.lua",
                 "Guides/Dungeons/RagefireChasm.lua",
                 "Guides/Dungeons/WailingCaverns.lua",
@@ -216,6 +218,7 @@ class ContractTests(unittest.TestCase):
                 "TomTomWaypoints.lua",
                 "MapPins.lua",
                 "MapPins.xml",
+                "MinimapButton.lua",
                 "UI.lua",
                 "Guides/Dungeons/RagefireChasm.lua",
                 "Guides/Dungeons/WailingCaverns.lua",
@@ -776,6 +779,7 @@ class ContractTests(unittest.TestCase):
         toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
         self.assertIn("schemaVersion = 4", core)
         self.assertIn("hideInCombat = false", core)
+        self.assertIn("showMinimapButton = true", core)
         self.assertIn("guideScale = 1", core)
         self.assertIn('point = "LEFT", relativePoint = "LEFT", x = 0, y = 0', core)
         self.assertNotIn('selectedGuide = "dungeons-ragefire-chasm-horde"', core)
@@ -784,6 +788,11 @@ class ContractTests(unittest.TestCase):
         self.assertIn("function UI:CloseTracker()", ui)
         self.assertIn("function UI:OpenGuideBrowser()", ui)
         self.assertIn("function UI:ToggleGuideBrowser()", ui)
+        self.assertIn("function UI:ToggleGuideTracker()", ui)
+        self.assertIn("function UI:OpenSettings()", ui)
+        self.assertIn("function UI:CloseSettingsIfOpen()", ui)
+        self.assertIn("if UI.PlayerInCombat() then return end", ui)
+        self.assertIn("ForeverGuideMateMinimapButton", (ROOT / "MinimapButton.lua").read_text(encoding="utf-8"))
         self.assertIn("SetClampedToScreen(true)", ui)
         self.assertNotIn("CreateLine", ui)
         self.assertIn("TomTomWaypoints", ui)

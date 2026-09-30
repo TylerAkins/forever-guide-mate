@@ -15,6 +15,7 @@ local TRACKER_DEFAULTS = {
 local BROWSER_DEFAULTS = {
     point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1, scaleMin = 0.7, scaleMax = 1.4,
 }
+local MINIMAP_BUTTON_DEFAULTS = { position = 200 }
 local GOLD_BORDER = { 0.78, 0.58, 0.16, 0.95 }
 
 local function Create(kind, name, parent, template)
@@ -161,12 +162,36 @@ end
 local function SetButtonTooltip(button, tooltip)
     button:SetScript("OnEnter", function(self)
         if GameTooltip then
-            GameTooltip:SetOwner(self, "ANCHOR_TOP")
+            GameTooltip:SetOwner(self, "ANCHOR_LEFT")
             GameTooltip:SetText(tooltip)
+            if GameTooltip.AddLine then
+                GameTooltip:AddLine("Left-click to show or hide the guide.", 1, 1, 1)
+                GameTooltip:AddLine("Right-click for options.", 1, 1, 1)
+                GameTooltip:AddLine("Drag to move around the minimap.", 0.8, 0.8, 0.8)
+            end
             GameTooltip:Show()
         end
     end)
     button:SetScript("OnLeave", function() if GameTooltip then GameTooltip:Hide() end end)
+end
+
+local function NormalizeMinimapAngle(angle)
+    if type(angle) ~= "number" or angle ~= angle then
+        angle = MINIMAP_BUTTON_DEFAULTS.position
+    end
+    angle = angle % 360
+    if angle < 0 then angle = angle + 360 end
+    return angle
+end
+
+local function MinimapButtonAngle()
+    local settings = ns.db and ns.db.minimapButton
+    return NormalizeMinimapAngle(settings and settings.position)
+end
+
+local function SetMinimapButtonAngle(angle)
+    ns.db.minimapButton = type(ns.db.minimapButton) == "table" and ns.db.minimapButton or {}
+    ns.db.minimapButton.position = NormalizeMinimapAngle(angle)
 end
 
 local function CreateIconButton(parent, texturePath, tooltip)
@@ -805,14 +830,51 @@ function UI:ToggleGuideBrowser()
     if self.browser and self.browser:IsShown() then self.browser:Hide() else self:OpenGuideBrowser() end
 end
 
+function UI:ToggleGuideTracker()
+    if ns.db.uiOpen then self:CloseTracker() else self:OpenTracker() end
+end
+
+function UI:OpenSettings()
+    if UI.PlayerInCombat() then return end
+    if Settings and Settings.OpenToCategory and self.settingsCategory then
+        local categoryID = self.settingsCategory
+        if type(categoryID) == "table" and type(categoryID.ID) == "number" then
+            categoryID = categoryID.ID
+        end
+        Settings.OpenToCategory(categoryID)
+        return
+    end
+    if InterfaceOptionsFrame_OpenToCategory and self.settingsPanel then
+        InterfaceOptionsFrame_OpenToCategory(self.settingsPanel)
+        InterfaceOptionsFrame_OpenToCategory(self.settingsPanel)
+    end
+end
+
+function UI:CloseSettingsIfOpen()
+    if Settings and Settings.CloseSettings then
+        Settings.CloseSettings()
+        return
+    end
+    if SettingsPanel and SettingsPanel.IsShown and SettingsPanel:IsShown() and SettingsPanel.Hide then
+        SettingsPanel:Hide()
+        return
+    end
+    if InterfaceOptionsFrame and InterfaceOptionsFrame.IsShown
+        and InterfaceOptionsFrame:IsShown() and InterfaceOptionsFrame.Hide then
+        InterfaceOptionsFrame:Hide()
+    end
+end
+
 function UI:CreateLauncher()
-    if not Minimap then return end
-    local button = CreatePlainButton(Minimap, 30, "FG")
-    button:SetSize(30, 30)
-    button:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -5, 5)
-    if button.SetClampedToScreen then button:SetClampedToScreen(true) end
-    button:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
-    self.launcher = button
+    if not Minimap or self.minimapButton or not ns.MinimapButton then return end
+    ns.MinimapButton:Create({
+        getAngle = MinimapButtonAngle,
+        setAngle = SetMinimapButtonAngle,
+        onLeftClick = function() UI:ToggleGuideTracker() end,
+        onRightClick = function() UI:OpenSettings() end,
+    })
+    self.minimapButton = ns.MinimapButton:GetButton()
+    self.launcher = self.minimapButton
 end
 
 local function PathDot(leg)
@@ -1005,8 +1067,13 @@ function UI:ApplySettings()
     else
         self.tracker:Hide()
     end
-    if self.launcher then
-        if AddonCompartmentFrame then self.launcher:Hide() else self.launcher:Show() end
+    if ns.MinimapButton then
+        if ns.db.showMinimapButton ~= false then
+            ns.MinimapButton:UpdatePosition()
+            ns.MinimapButton:SetShown(true)
+        else
+            ns.MinimapButton:SetShown(false)
+        end
     end
 end
 
@@ -1018,6 +1085,8 @@ function UI:ResetPositions()
     for key, value in pairs(TRACKER_DEFAULTS) do ns.db.tracker[key] = value end
     for key, value in pairs(BROWSER_DEFAULTS) do ns.db.browser[key] = value end
     ns.db.guideScale = 1
+    ns.db.minimapButton = ns.db.minimapButton or {}
+    ns.db.minimapButton.position = MINIMAP_BUTTON_DEFAULTS.position
     self:ApplySettings()
 end
 
@@ -1033,9 +1102,13 @@ function UI:RegisterSettings()
     local trackerEnabled = CreateCheckbox(panel, "Enable guide tracker", function() return ns.db.tracker.enabled end,
         function(value) ns.db.tracker.enabled = value end)
     trackerEnabled:SetPoint("TOPLEFT", help, "BOTTOMLEFT", -4, -14)
+    local showMinimapButton = CreateCheckbox(panel, "Show minimap button",
+        function() return ns.db.showMinimapButton ~= false end,
+        function(value) ns.db.showMinimapButton = value end)
+    showMinimapButton:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
     local trackerLocked = CreateCheckbox(panel, "Lock guide tracker", function() return ns.db.tracker.locked end,
         function(value) ns.db.tracker.locked = value end)
-    trackerLocked:SetPoint("TOPLEFT", trackerEnabled, "BOTTOMLEFT", 0, -4)
+    trackerLocked:SetPoint("TOPLEFT", showMinimapButton, "BOTTOMLEFT", 0, -4)
     local autoAdvance = CreateCheckbox(panel, "Advance observable steps automatically", function() return ns.db.autoAdvance end,
         function(value) ns.db.autoAdvance = value; ns.ScheduleRefresh() end)
     local autoQuest = CreateCheckbox(panel, "Automatically accept the current step and turn in guide quests", function() return ns.db.autoQuest end,
@@ -1103,7 +1176,10 @@ function UI:RegisterSettings()
     reset:SetScript("OnClick", function() UI:ResetPositions() end)
     if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
         local category = Settings.RegisterCanvasLayoutCategory(panel, "Forever GuideMate")
-        if category then Settings.RegisterAddOnCategory(category) end
+        if category then
+            Settings.RegisterAddOnCategory(category)
+            self.settingsCategory = category
+        end
     elseif InterfaceOptions_AddCategory then InterfaceOptions_AddCategory(panel) end
     self.settingsPanel = panel
 end

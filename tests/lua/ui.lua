@@ -27,7 +27,14 @@ local function NewRegion(parent)
         rawset(self, "scripts", scripts)
         scripts[name] = callback
     end
-    function methods:CreateTexture() local child = NewRegion(self); self.lastTexture = child; return child end
+    function methods:CreateTexture(_, layer)
+        local child = NewRegion(self)
+        child.layer = layer
+        self.textures = rawget(self, "textures") or {}
+        self.textures[#self.textures + 1] = child
+        self.lastTexture = child
+        return child
+    end
     function methods:CreateFontString() local child = NewRegion(self); self.lastFontString = child; return child end
     function methods:CreateLine() local child = NewRegion(self); self.lastLine = child; return child end
     function methods:GetParent() return rawget(self, "parent") end
@@ -46,6 +53,13 @@ local function NewRegion(parent)
     function methods:SetRotation(value) self.rotation = value end
     function methods:SetAlpha(value) self.alpha = value end
     function methods:SetValue(value) self.value = value end
+    function methods:GetCenter() return 100, 100 end
+    function methods:GetEffectiveScale() return 1 end
+    function methods:HookScript(name, callback)
+        local hooks = rawget(self, "hookScripts") or {}
+        rawset(self, "hookScripts", hooks)
+        hooks[name] = callback
+    end
     function methods:SetChecked(value) self.checked = value end
     function methods:GetChecked() return self.checked end
     function methods:GetWidth() return rawget(self, "width") or 1920 end
@@ -57,6 +71,11 @@ end
 UIParent = NewRegion()
 UIParent.width, UIParent.height = 1920, 1080
 Minimap = NewRegion()
+Minimap.width, Minimap.height = 140, 140
+Minimap.GetWidth = function(self) return self.width end
+Minimap.GetHeight = function(self) return self.height end
+Minimap.GetEffectiveScale = function() return 1 end
+GetCursorPosition = function() return 100, 170 end
 local createdFrames = {}
 CreateFrame = function(kind, _, parent)
     local frame = NewRegion(parent)
@@ -94,6 +113,7 @@ Load("GuideEngine.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
+Load("MinimapButton.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 
@@ -132,6 +152,69 @@ Equal(ns.UI.browser.clamped, true, "browser is clamped to the screen")
 Equal(ns.db.browser.hideIneligible, false, "hide ineligible defaults off")
 Equal(ns.UI.browser.hideIneligible.checked, false, "the browser checkbox starts unchecked")
 Equal(ns.db.hideInCombat, false, "hide in combat defaults off")
+Equal(ns.db.showMinimapButton ~= false, true, "show minimap button defaults on")
+Check(ns.UI.minimapButton ~= nil, "minimap button is created")
+Equal(ns.db.minimapButton.position, 200, "minimap button default angle is 200 degrees")
+Equal(ns.UI.minimapButton.width, 31, "minimap button matches LFG Forever size")
+Equal(ns.UI.minimapButton.height, 31, "minimap button matches LFG Forever size")
+Equal(ns.UI.minimapButton.points[1][2], Minimap, "minimap button anchors to the minimap")
+local minimapTextures = ns.UI.minimapButton.textures
+local disc, icon, border = minimapTextures[1], minimapTextures[2], minimapTextures[3]
+Equal(disc.texturePath, "Interface\\Minimap\\UI-Minimap-Background", "minimap uses LFG's black backing")
+Equal(disc.width, 24, "black backing matches LFG size")
+Equal(disc.height, 24, "black backing is square")
+Equal(icon.width, 18, "quest icon matches LFG icon size")
+Equal(icon.height, 18, "quest icon is square")
+for _, texture in ipairs({ disc, icon }) do
+    Equal(texture.points[1][1], "CENTER", "backing and icon are centered")
+    Equal(texture.points[1][2], ns.UI.minimapButton, "texture anchors to the button")
+    Equal(texture.points[1][3], "CENTER", "texture aligns with button center")
+    Equal(texture.points[1][4], 0, "texture has no horizontal offset")
+    Equal(texture.points[1][5], 0, "texture has no vertical offset")
+end
+Equal(border.width, 50, "border matches LFG size")
+Equal(border.height, 50, "border is square")
+Equal(border.points[1][1], "TOPLEFT", "border retains its texture art alignment")
+Equal(disc.layer, "BACKGROUND", "black backing sits behind the icon")
+Equal(icon.layer, "ARTWORK", "quest icon sits above the backing")
+Equal(border.layer, "OVERLAY", "ring sits above the icon")
+ns.UI.minimapButton.isDragging = true
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+local draggedAngle = ns.db.minimapButton.position
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+Equal(ns.db.minimapButton.position, draggedAngle, "drag angle stays stable for a fixed cursor")
+ns.UI.minimapButton.isDragging = false
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+Equal(ns.db.minimapButton.position, draggedAngle, "drag angle does not change after drag stops")
+ns.db.uiOpen = true
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
+Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
+Equal(ns.db.uiOpen, true, "minimap left click shows the guide tracker again")
+local settingsOpened = false
+local settingsCategoryID
+Settings = {
+    OpenToCategory = function(categoryID)
+        settingsOpened = true
+        settingsCategoryID = categoryID
+    end,
+}
+ns.UI.settingsCategory = { ID = 42 }
+ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "RightButton")
+Equal(settingsOpened, true, "minimap right click opens the options panel")
+Equal(settingsCategoryID, 42, "minimap right click passes the settings category id")
+UnitAffectingCombat = function() return true end
+settingsOpened = false
+ns.UI:OpenSettings()
+Equal(settingsOpened, false, "settings do not open while in combat")
+UnitAffectingCombat = function() return false end
+Settings = nil
+ns.db.showMinimapButton = false
+ns.UI:ApplySettings()
+Equal(ns.UI.minimapButton.shown, false, "show minimap button off hides the minimap button")
+ns.db.showMinimapButton = true
+ns.UI:ApplySettings()
+Equal(ns.UI.minimapButton.shown, true, "show minimap button on restores the minimap button")
 Equal(ns.db.guideScale, 1, "guide scale defaults to 100%")
 Equal(ns.UI.tracker.scale, 1, "guide scale applies to the tracker")
 ns.db.guideScale = 1.6

@@ -1,3 +1,4 @@
-## 0.1.38 - 2026-09-30
+## 0.1.39 - 2026-09-30
 
-- Tirisfal paladin steps pick up Making Repairs at Bandarion Keep before sending you to Rudolph Gelhardt for The Tarnished, so both quests can be done on one trip.
+- Added a draggable minimap button with a yellow quest icon, matching LFG Forever’s size, black background, and centered layout. Left-click toggles the guide, right-click opens settings, and the Show minimap button option controls visibility.
+- Settings cannot be opened during combat and close when combat starts.
