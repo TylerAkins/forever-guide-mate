@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.37 - 2026-09-30
+
+- Tirisfal paladin steps pick up Making Repairs at Bandarion Keep before sending you to Rudolph Gelhardt for The Tarnished, so both quests can be done on one trip.
+
 ## 0.1.36 - 2026-09-30
 
 - Stolen Silver waits until Raptor Thieves is turned in. Gazrog does not offer it before that.

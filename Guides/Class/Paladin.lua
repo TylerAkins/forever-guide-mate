@@ -366,6 +366,26 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-91316-making-repairs",
+            kind = "accept",
+            priority = 145,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 2 },
+                    { race = 5 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Accept Making Repairs from Jorin Croge in Tirisfal Glades. This step is for Undead.",
+            dependsOn = { "turnin-91294-touring-the-grounds" },
+            complete = QuestState(91316, "activeOrCompleted"),
+            route = {
+                Point(MAP.TIRISFALGLADES, 0.2260, 0.4480, "Jorin Croge",
+                    "Travel to Jorin Croge in Tirisfal Glades."),
+            },
+        },
+        {
             id = "accept-91317-the-tarnished",
             kind = "accept",
             priority = 150,
@@ -386,6 +406,27 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-91316-making-repairs",
+            kind = "objective",
+            priority = 155,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 2 },
+                    { race = 5 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Complete Making Repairs for Jorin Croge. The guide follows the pin in your quest log.",
+            dependsOn = { "accept-91316-making-repairs" },
+            useClientPin = true,
+            complete = QuestState(91316, "complete"),
+            route = {
+                Point(MAP.TIRISFALGLADES, 0.2260, 0.4480, "Jorin Croge",
+                    "Travel to Jorin Croge in Tirisfal Glades."),
+            },
+        },
+        {
             id = "objective-91317-the-tarnished",
             kind = "objective",
             priority = 160,
@@ -398,7 +439,7 @@ ns:RegisterGuide({
                 },
             },
             text = "The Tarnished: Rudolph Gelhardt's Head. This step is for Undead.",
-            dependsOn = { "accept-91317-the-tarnished" },
+            dependsOn = { "accept-91317-the-tarnished", "accept-91316-making-repairs" },
             complete = QuestState(91317, "complete"),
             route = {
                 Point(MAP.TIRISFALGLADES, 0.1160, 0.6420, "Rudolph Gelhardt",
@@ -423,6 +464,26 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFALGLADES, 0.2200, 0.4460, "Danitha Morr",
                     "Travel to Danitha Morr in Tirisfal Glades."),
+            },
+        },
+        {
+            id = "turnin-91316-making-repairs",
+            kind = "turnin",
+            priority = 165,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 2 },
+                    { race = 5 },
+                    { level = { min = 8 } },
+                },
+            },
+            text = "Turn in Making Repairs to Jorin Croge in Tirisfal Glades. This step is for Undead.",
+            dependsOn = { "objective-91316-making-repairs" },
+            complete = QuestState(91316, "completed"),
+            route = {
+                Point(MAP.TIRISFALGLADES, 0.2260, 0.4480, "Jorin Croge",
+                    "Travel to Jorin Croge in Tirisfal Glades."),
             },
         },
         {
@@ -463,45 +524,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.5780, 0.9180, "Lady Sylvanas Windrunner",
                     "Travel to Lady Sylvanas Windrunner in Undercity."),
-            },
-        },
-        {
-            id = "accept-91316-making-repairs",
-            kind = "accept",
-            priority = 200,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 2 },
-                    { race = 5 },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Accept Making Repairs from Jorin Croge in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(91316, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.2260, 0.4480, "Jorin Croge",
-                    "Travel to Jorin Croge in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-91316-making-repairs",
-            kind = "turnin",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 2 },
-                    { race = 5 },
-                    { level = { min = 8 } },
-                },
-            },
-            text = "Turn in Making Repairs to Jorin Croge in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-91316-making-repairs" },
-            complete = QuestState(91316, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.2260, 0.4480, "Jorin Croge",
-                    "Travel to Jorin Croge in Tirisfal Glades."),
             },
         },
         {
