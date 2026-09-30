@@ -23,6 +23,7 @@ SHIPPED = (
     "TomTomWaypoints.lua",
     "MapPins.lua",
     "MapPins.xml",
+    "MinimapButton.lua",
     "UI.lua",
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",

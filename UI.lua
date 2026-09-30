@@ -16,30 +16,6 @@ local BROWSER_DEFAULTS = {
     point = "CENTER", relativePoint = "CENTER", x = 0, y = 0, scale = 1, scaleMin = 0.7, scaleMax = 1.4,
 }
 local MINIMAP_BUTTON_DEFAULTS = { position = 200 }
-local MINIMAP_ICON_ANCHOR = { x = 7, y = -5, size = 20 }
--- Minimap edge placement follows the LibDBIcon / SmartLFG approach (round/square minimaps).
-local MINIMAP_SHAPES = {
-    ["ROUND"] = { true, true, true, true },
-    ["SQUARE"] = { false, false, false, false },
-    ["CORNER-TOPLEFT"] = { false, false, false, true },
-    ["CORNER-TOPRIGHT"] = { false, false, true, false },
-    ["CORNER-BOTTOMLEFT"] = { false, true, false, false },
-    ["CORNER-BOTTOMRIGHT"] = { true, false, false, false },
-    ["SIDE-LEFT"] = { false, true, false, true },
-    ["SIDE-RIGHT"] = { true, false, true, false },
-    ["SIDE-TOP"] = { false, false, true, true },
-    ["SIDE-BOTTOM"] = { true, true, false, false },
-    ["TRICORNER-TOPLEFT"] = { false, true, true, true },
-    ["TRICORNER-TOPRIGHT"] = { true, false, true, true },
-    ["TRICORNER-BOTTOMLEFT"] = { true, true, false, true },
-    ["TRICORNER-BOTTOMRIGHT"] = { true, true, true, false },
-}
-local MINIMAP_ICON_ATLASES = { "QuestNormal", "quest-normal" }
-local MINIMAP_ICON_TEXTURES = {
-    "Interface\\Minimap\\Tracking\\QuestBlob",
-    "Interface\\Icons\\INV_Misc_QuestionMark",
-    "Interface\\Icons\\INV_Misc_Map_01",
-}
 local GOLD_BORDER = { 0.78, 0.58, 0.16, 0.95 }
 
 local function Create(kind, name, parent, template)
@@ -213,60 +189,9 @@ local function MinimapButtonAngle()
     return NormalizeMinimapAngle(settings and settings.position)
 end
 
-local function SetMinimapButtonIcon(texture)
-    if not texture then return end
-    if type(texture.SetAtlas) == "function" then
-        for _, atlas in ipairs(MINIMAP_ICON_ATLASES) do
-            if pcall(texture.SetAtlas, texture, atlas, false) then
-                if type(texture.GetAtlas) ~= "function" or texture:GetAtlas() == atlas then
-                    return
-                end
-            end
-        end
-    end
-    if texture.SetTexture then
-        for _, path in ipairs(MINIMAP_ICON_TEXTURES) do
-            texture:SetTexture(path)
-            return
-        end
-    end
-end
-
-local function UpdateMinimapButtonPosition(button)
-    if not button or not Minimap then return end
-    local angle = math.rad(MinimapButtonAngle())
-    local x, y, quadrant = math.cos(angle), math.sin(angle), 1
-    if x < 0 then quadrant = quadrant + 1 end
-    if y > 0 then quadrant = quadrant + 2 end
-    local shape = (GetMinimapShape and GetMinimapShape()) or "ROUND"
-    local rounded = MINIMAP_SHAPES[shape] or MINIMAP_SHAPES["ROUND"]
-    local halfWidth = ((Minimap.GetWidth and Minimap:GetWidth()) or 140) / 2 + 5
-    local halfHeight = ((Minimap.GetHeight and Minimap:GetHeight()) or 140) / 2 + 5
-    if rounded[quadrant] then
-        x, y = x * halfWidth, y * halfHeight
-    else
-        x = math.max(-halfWidth, math.min(x * math.sqrt(2 * halfWidth * halfWidth) - 10, halfWidth))
-        y = math.max(-halfHeight, math.min(y * math.sqrt(2 * halfHeight * halfHeight) - 10, halfHeight))
-    end
-    button:ClearAllPoints()
-    button:SetPoint("CENTER", Minimap, "CENTER", x, y)
-end
-
-local function MinimapButtonDragUpdate()
-    if not Minimap or not Minimap.GetCenter or not UI.minimapButton then return end
-    local centerX, centerY = Minimap:GetCenter()
-    local scale = (Minimap.GetEffectiveScale and Minimap:GetEffectiveScale()) or 1
-    local cursorX, cursorY = GetCursorPosition and GetCursorPosition() or centerX, centerY
-    if scale ~= 0 then
-        cursorX, cursorY = cursorX / scale, cursorY / scale
-    end
-    if type(centerX) ~= "number" or type(centerY) ~= "number"
-        or type(cursorX) ~= "number" or type(cursorY) ~= "number" then
-        return
-    end
+local function SetMinimapButtonAngle(angle)
     ns.db.minimapButton = type(ns.db.minimapButton) == "table" and ns.db.minimapButton or {}
-    ns.db.minimapButton.position = NormalizeMinimapAngle(math.deg(math.atan2(cursorY - centerY, cursorX - centerX)))
-    UpdateMinimapButtonPosition(UI.minimapButton)
+    ns.db.minimapButton.position = NormalizeMinimapAngle(angle)
 end
 
 local function CreateIconButton(parent, texturePath, tooltip)
@@ -925,59 +850,15 @@ function UI:OpenSettings()
 end
 
 function UI:CreateLauncher()
-    if not Minimap or self.minimapButton then return end
-    local anchor = MINIMAP_ICON_ANCHOR
-    local button = Create("Button", "ForeverGuideMateMinimapButton", Minimap)
-    button:SetSize(31, 31)
-    button:SetFrameStrata("MEDIUM")
-    button:SetFrameLevel(8)
-    button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-    button:RegisterForDrag("LeftButton")
-    if button.SetClampedToScreen then button:SetClampedToScreen(true) end
-    local backdrop = button:CreateTexture(nil, "BACKGROUND")
-    backdrop:SetSize(anchor.size, anchor.size)
-    backdrop:SetPoint("TOPLEFT", button, "TOPLEFT", anchor.x, anchor.y)
-    if backdrop.SetTexture and pcall(backdrop.SetTexture, backdrop, "Interface\\Minimap\\MiniMap-TrackingBackground") then
-        if backdrop.SetVertexColor then backdrop:SetVertexColor(0, 0, 0, 1) end
-    else
-        SetSolidColor(backdrop, 0, 0, 0, 1)
-    end
-    if backdrop.SetMask then
-        pcall(backdrop.SetMask, backdrop, "Interface\\CharacterFrame\\TempPortraitAlphaMask")
-    end
-    local icon = button:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(anchor.size, anchor.size)
-    icon:SetPoint("TOPLEFT", button, "TOPLEFT", anchor.x, anchor.y)
-    SetMinimapButtonIcon(icon)
-    local border = button:CreateTexture(nil, "OVERLAY")
-    border:SetSize(53, 53)
-    border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
-    border:SetPoint("TOPLEFT")
-    button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
-    if button.GetHighlightTexture then
-        local highlight = button:GetHighlightTexture()
-        if highlight and highlight.SetBlendMode then highlight:SetBlendMode("ADD") end
-    end
-    button:SetScript("OnClick", function(_, mouseButton)
-        if mouseButton == "RightButton" then
-            UI:OpenSettings()
-        else
-            UI:ToggleGuideTracker()
-        end
-    end)
-    button:SetScript("OnDragStart", function(self)
-        self:SetScript("OnUpdate", MinimapButtonDragUpdate)
-    end)
-    button:SetScript("OnDragStop", function(self)
-        self:SetScript("OnUpdate", nil)
-    end)
-    SetButtonTooltip(button, "Forever GuideMate")
-    if Minimap.HookScript then
-        Minimap:HookScript("OnSizeChanged", function() UpdateMinimapButtonPosition(button) end)
-    end
-    UpdateMinimapButtonPosition(button)
-    self.minimapButton = button
-    self.launcher = button
+    if not Minimap or self.minimapButton or not ns.MinimapButton then return end
+    ns.MinimapButton:Create({
+        getAngle = MinimapButtonAngle,
+        setAngle = SetMinimapButtonAngle,
+        onLeftClick = function() UI:ToggleGuideTracker() end,
+        onRightClick = function() UI:OpenSettings() end,
+    })
+    self.minimapButton = ns.MinimapButton:GetButton()
+    self.launcher = self.minimapButton
 end
 
 local function PathDot(leg)
@@ -1170,12 +1051,12 @@ function UI:ApplySettings()
     else
         self.tracker:Hide()
     end
-    if self.minimapButton then
+    if ns.MinimapButton then
         if ns.db.showMinimapButton ~= false then
-            UpdateMinimapButtonPosition(self.minimapButton)
-            self.minimapButton:Show()
+            ns.MinimapButton:UpdatePosition()
+            ns.MinimapButton:SetShown(true)
         else
-            self.minimapButton:Hide()
+            ns.MinimapButton:SetShown(false)
         end
     end
 end

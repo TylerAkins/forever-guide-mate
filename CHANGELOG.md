@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.42 - 2026-09-30
+
+- Minimap button logic moved into `MinimapButton.lua` using the same placement and drag code path as SmartLFG/LFG Forever-style addons, with a black tracking disc behind the quest icon and without screen clamping that fought drag.
+
 ## 0.1.41 - 2026-09-30
 
 - Right-clicking the minimap button opens Forever GuideMate settings without error by passing Blizzard’s numeric settings category id.
