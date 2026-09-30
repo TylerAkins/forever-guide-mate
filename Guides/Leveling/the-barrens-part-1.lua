@@ -1226,6 +1226,7 @@ ns:RegisterGuide({
             priority = 860,
             conditions = { level = { min = 10 } },
             text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-844-plainstrider-menace" },
             complete = QuestState(845, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
