@@ -148,8 +148,8 @@ class ContractTests(unittest.TestCase):
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
         self.assertIn("## SavedVariablesPerCharacter: ForeverGuideMateCharDB", lines)
-        self.assertIn("## Dependencies: TomTom", lines)
-        self.assertIn("## RequiredDeps: TomTom", lines)
+        self.assertIn("## OptionalDeps: TomTom", lines)
+        self.assertNotIn("## RequiredDeps: TomTom", lines)
         self.assertFalse(any("Dependencies:" in line and "TomTom" not in line for line in lines))
 
     def test_namespace_and_registration_contract(self) -> None:

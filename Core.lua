@@ -9,6 +9,7 @@ local ACCOUNT_DEFAULTS = {
     schemaVersion = 4,
     uiOpen = true,
     hideInCombat = false,
+    waypointProvider = "blizzard",
     guideScale = 1,
     tracker = {
         enabled = true, locked = false, scale = 1,
