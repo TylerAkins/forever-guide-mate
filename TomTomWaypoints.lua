@@ -117,20 +117,33 @@ function Waypoints:Sync(goal, state, api)
     end
     if self.questID and C_SuperTrack.GetSuperTrackedQuestID() ~= self.questID then self.suspended = true end
     if self.suspended then return end
-    local complete = goal.complete or {}
-    local quest = complete.quest or complete.questObjective
-    local questID = type(quest) == "table" and quest.id
-    local nativeQuest = goal.kind == "objective" or goal.kind == "turnin"
+    local questID = ns.Navigation:QuestDestinationID(goal)
+    local nativeQuest = questID ~= nil
+    if nativeQuest and provider == "blizzard" then
+        if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"
+            or type(C_SuperTrack.GetSuperTrackedQuestID) ~= "function" then
+            self:Report("Blizzard quest super-tracking is unavailable on this client."); return
+        end
+        if self.questID ~= questID then
+            self:Clear()
+            C_SuperTrack.SetSuperTrackedQuestID(questID)
+            self.questID = questID
+        end
+
+        self:Report(nil)
+        return
+    end
     local leg
     if nativeQuest then
         local mapID, x, y
-        if not C_QuestLog or type(C_QuestLog.GetNextWaypoint) ~= "function" then
-            self:Clear(api)
-            self:Report("Blizzard quest-location APIs are unavailable on this client.")
-            return
-        end
-        if type(questID) == "number" and C_QuestLog and type(C_QuestLog.GetNextWaypoint) == "function" then
+        if C_QuestLog and type(C_QuestLog.GetNextWaypoint) == "function" then
             mapID, x, y = C_QuestLog.GetNextWaypoint(questID)
+        end
+        if not ValidPoint(mapID, x, y) then
+            local pinGoal = { useClientPin = true, complete = goal.complete }
+            local route = goal.route
+            local destination = route and route[#route]
+            mapID, x, y = ns.Navigation:ClientPin(pinGoal, destination and destination.mapID or state.mapID, nil, state)
         end
         if not ValidPoint(mapID, x, y) then
             self:Clear(api)
@@ -168,17 +181,7 @@ function Waypoints:Sync(goal, state, api)
         if self.waypoint then self:Report(nil) end
         return
     end
-    if nativeQuest then
-        if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"
-            or type(C_SuperTrack.GetSuperTrackedQuestID) ~= "function" then
-            self:Report("Blizzard quest super-tracking is unavailable on this client."); return
-        end
-        if self.questID ~= questID then
-            self:Clear()
-            C_SuperTrack.SetSuperTrackedQuestID(questID)
-            self.questID = questID
-        end
-    else
+    do
         if not C_Map or type(C_Map.SetUserWaypoint) ~= "function" or type(C_Map.GetUserWaypoint) ~= "function"
             or type(C_Map.ClearUserWaypoint) ~= "function" or type(C_Map.CanSetUserWaypointOnMap) ~= "function"
             or not UiMapPoint or type(UiMapPoint.CreateFromCoordinates) ~= "function" then

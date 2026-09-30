@@ -47,6 +47,8 @@ function MapPins:Refresh(mapCanvas)
     self:Clear(mapCanvas)
     if not mapCanvas or not mapCanvas.AcquirePin
         or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
+        or ((ns.db.waypointProvider or "blizzard") == "blizzard"
+            and ns.Navigation:QuestDestinationID(ns.Engine.currentGoal))
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
