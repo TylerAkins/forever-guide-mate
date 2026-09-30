@@ -67,6 +67,7 @@ Minimap = NewRegion()
 Minimap.width, Minimap.height = 140, 140
 Minimap.GetWidth = function(self) return self.width end
 Minimap.GetHeight = function(self) return self.height end
+Minimap.GetEffectiveScale = function() return 1 end
 GetCursorPosition = function() return 100, 170 end
 local createdFrames = {}
 CreateFrame = function(kind, _, parent)
@@ -105,6 +106,7 @@ Load("GuideEngine.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
+Load("MinimapButton.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 
@@ -148,6 +150,13 @@ Check(ns.UI.minimapButton ~= nil, "minimap button is created")
 Equal(ns.db.minimapButton.position, 200, "minimap button default angle is 200 degrees")
 Equal(ns.UI.minimapButton.points[1][1], "CENTER", "minimap button rides the minimap edge")
 Equal(ns.UI.minimapButton.points[1][2], Minimap, "minimap button anchors to the minimap")
+ns.UI.minimapButton.scripts.OnDragStart(ns.UI.minimapButton)
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+local draggedAngle = ns.db.minimapButton.position
+ns.UI.minimapButton.scripts.OnUpdate(ns.UI.minimapButton, 0)
+Equal(ns.db.minimapButton.position, draggedAngle, "drag angle stays stable for a fixed cursor")
+ns.UI.minimapButton.scripts.OnDragStop(ns.UI.minimapButton)
+Equal(ns.UI.minimapButton.scripts.OnUpdate, nil, "drag clears OnUpdate")
 ns.db.uiOpen = true
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "LeftButton")
 Equal(ns.db.uiOpen, false, "minimap left click hides the guide tracker")
