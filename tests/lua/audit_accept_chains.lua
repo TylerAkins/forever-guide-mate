@@ -69,6 +69,26 @@ if hints == 0 then
     print("  (none)")
 end
 
+print("Shared quests whose step kinds are a strict subset of another guide:")
+local gapCount = 0
+for _, issue in ipairs(guideData.CollapsedCoverageGaps(guideData.AllGuideCoverageGaps(ns.guides))) do
+    gapCount = gapCount + 1
+    local key = issue.detourID .. ":" .. tostring(issue.questID)
+    local shipped = guideData.IsShippedLevelingID(issue.detourID)
+        and guideData.IsShippedLevelingID(issue.canonicalID)
+    local label = "hint"
+    if shipped and guideData.CoverageGapAllowlist[key] then
+        label = "allow"
+    elseif shipped then
+        label = "fail"
+    end
+    print(string.format("  %s %s quest %d missing %s versus %s",
+        label, issue.detourID, issue.questID, issue.missing, issue.canonicalID))
+end
+if gapCount == 0 then
+    print("  (none)")
+end
+
 if requiredMissing > 0 then
     io.stderr:write(string.format(
         "%d same-chapter turn-in denylist violation(s). See SameChapterTurninRequired in tests/lua/guide_data_checks.lua\n",
