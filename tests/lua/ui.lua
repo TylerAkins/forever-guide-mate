@@ -334,6 +334,21 @@ ns.UI.browser:Hide()
 ns.UI:Initialize()
 Equal(ns.UI.browser.shown, true, "login without a started guide still opens the library")
 
+local tooltipOwner
+GameTooltip = {
+    SetOwner = function(_, owner) tooltipOwner = owner end,
+    SetText = function() end,
+    AddLine = function() end,
+    Show = function() end,
+    Hide = function() end,
+}
+AddonCompartmentFrame = NewRegion()
+ForeverGuideMate_OnAddonCompartmentEnter("ForeverGuideMate")
+Equal(tooltipOwner, AddonCompartmentFrame, "the addon menu tooltip anchors to the compartment button")
+local dropdownButton = NewRegion()
+ForeverGuideMate_OnAddonCompartmentEnter(dropdownButton)
+Equal(tooltipOwner, dropdownButton, "a compartment frame owner is used when one is passed")
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
