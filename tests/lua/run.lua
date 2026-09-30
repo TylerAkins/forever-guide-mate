@@ -1205,6 +1205,43 @@ function TestGatheringTheCureLedger()
 end
 TestGatheringTheCureLedger()
 
+function TestSilverpinePlainstriderBeforeZhevra()
+    local chapterID = "leveling-era-silverpine-forest"
+    local guide = ns.guides["leveling-era"]
+    local function Step(name) return chapterID .. ":" .. name end
+    local state = {
+        faction = "Horde", raceID = 5, classID = 8, level = 14,
+        professions = {}, professionsKnown = true,
+        mapID = 1413, x = 0.522, y = 0.310,
+        quests = {
+            [844] = { complete = true, objectives = {} },
+        },
+        completedQuests = {},
+        questLogKnown = true,
+        questCompletionKnown = true,
+    }
+    ns.charDB.selectedGuide = "leveling-era"
+    ns.charDB.eraChapterPick = chapterID
+    ns.charDB.activeGoal = nil
+    ns.charDB.manualCompleted = {}
+    ns.charDB.deferred = {}
+    ns.charDB.history = {}
+    ns.charDB.completionLedger = {}
+    ns.db.autoAdvance = true
+    ns.Engine.reviewingGoal = nil
+    ns.Engine:Refresh(state)
+    local turnin = ns.Engine:GetGoal(guide, Step("turnin-844-plainstrider-menace"))
+    local zhevra = ns.Engine:GetGoal(guide, Step("accept-845-the-zhevra"))
+    Check(ns.Engine:IsReady(guide, turnin, state), "Plainstrider turn-in is ready when objectives are complete")
+    Check(not ns.Engine:IsReady(guide, zhevra, state),
+        "The Zhevra accept stays blocked until Plainstrider Menace is turned in")
+    state.completedQuests[844] = true
+    state.quests[844] = nil
+    Check(ns.Engine:IsReady(guide, zhevra, state),
+        "The Zhevra accept opens after Plainstrider Menace is turned in")
+end
+TestSilverpinePlainstriderBeforeZhevra()
+
 function TestActiveGoalReload()
     local chapterID = "leveling-era-the-barrens-part-1"
     local guide = ns.guides["leveling-era"]
