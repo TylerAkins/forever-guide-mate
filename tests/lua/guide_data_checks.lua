@@ -251,4 +251,190 @@ function M.ClassBranchTurninViolations(guides)
     return issues
 end
 
+-- Detour coverage pairs. When a chapter copies a block from a canonical route,
+-- add a row here so CI fails if the detour drops objective or turn-in kinds
+-- for a shared quest id. Paths are repo-relative; guideID is the RegisterGuide id.
+-- Match steps by id prefix accept|turnin|objective|gossip-{questId}-.
+M.DetourCoveragePairs = {
+    {
+        detour = "Guides/Leveling/silverpine-forest.lua",
+        detourID = "leveling-era-silverpine-forest",
+        canonical = "Guides/Leveling/the-barrens-part-1.lua",
+        canonicalID = "leveling-era-the-barrens-part-1",
+    },
+}
+
+local STEP_KIND_PREFIX = {
+    accept = true,
+    turnin = true,
+    objective = true,
+    gossip = true,
+}
+
+function M.QuestStepKinds(guide)
+    local byQuest = {}
+    for _, goal in ipairs(guide and guide.goals or {}) do
+        local questID = tonumber(tostring(goal.id or ""):match("^accept%-(%d+)%-")
+            or tostring(goal.id or ""):match("^turnin%-(%d+)%-")
+            or tostring(goal.id or ""):match("^objective%-(%d+)%-")
+            or tostring(goal.id or ""):match("^gossip%-(%d+)%-"))
+        local kind = goal.kind
+        if questID and STEP_KIND_PREFIX[kind] then
+            byQuest[questID] = byQuest[questID] or {}
+            byQuest[questID][kind] = true
+        end
+    end
+    return byQuest
+end
+
+local function KindList(set)
+    local names = {}
+    for name in pairs(set or {}) do
+        names[#names + 1] = name
+    end
+    table.sort(names)
+    return names
+end
+
+-- Fail when the detour's kinds for a shared quest are a strict subset of the
+-- canonical chapter (for example accept-only on the detour, accept+turnin on
+-- the source). Equal coverage and extra detour kinds are allowed.
+function M.DetourCoverageViolations(guides, configured)
+    local issues = {}
+    for _, pair in ipairs(configured or M.DetourCoveragePairs) do
+        local detourKinds = M.QuestStepKinds(guides[pair.detourID])
+        local canonicalKinds = M.QuestStepKinds(guides[pair.canonicalID])
+        for questID, detourSet in pairs(detourKinds) do
+            local canonicalSet = canonicalKinds[questID]
+            if canonicalSet then
+                local missing = {}
+                local subset = true
+                for kind in pairs(detourSet) do
+                    if not canonicalSet[kind] then
+                        subset = false
+                    end
+                end
+                if subset then
+                    for kind in pairs(canonicalSet) do
+                        if not detourSet[kind] then
+                            missing[#missing + 1] = kind
+                        end
+                    end
+                end
+                if #missing > 0 then
+                    table.sort(missing)
+                    issues[#issues + 1] = {
+                        detourID = pair.detourID,
+                        canonicalID = pair.canonicalID,
+                        questID = questID,
+                        detourKinds = table.concat(KindList(detourSet), ","),
+                        canonicalKinds = table.concat(KindList(canonicalSet), ","),
+                        missing = table.concat(missing, ","),
+                    }
+                end
+            end
+        end
+    end
+    table.sort(issues, function(a, b) return a.questID < b.questID end)
+    return issues
+end
+
+-- Fixture: a detour that keeps only the accept must be reported. Lint calls
+-- this so a regression in the checker itself fails CI.
+function M.DetourCoverageFixtureFails()
+    local guides = {
+        canonical = { goals = {
+            { id = "accept-1-a", kind = "accept" },
+            { id = "objective-1-a", kind = "objective" },
+            { id = "turnin-1-a", kind = "turnin" },
+            { id = "accept-2-b", kind = "accept" },
+            { id = "turnin-2-b", kind = "turnin" },
+        } },
+        detour = { goals = {
+            { id = "accept-1-a", kind = "accept" },
+            { id = "accept-2-b", kind = "accept" },
+            { id = "turnin-2-b", kind = "turnin" },
+            { id = "objective-3-extra", kind = "objective" },
+        } },
+    }
+    local issues = M.DetourCoverageViolations(guides, {
+        { detourID = "detour", canonicalID = "canonical" },
+    })
+    return #issues == 1 and issues[1].questID == 1 and issues[1].missing == "objective,turnin"
+end
+
+-- Quests that must have a same-chapter turn-in. Empty on purpose: the audit
+-- prints every accept-without-turn-in as a hint and fails only this list.
+M.SameChapterTurninRequired = {}
+
+function M.AcceptsWithoutSameChapterTurnin(guide, guideID)
+    local hints = {}
+    if not guide or guide.category ~= "Leveling Quest Guides" then
+        return hints
+    end
+    local turnins = {}
+    for _, goal in ipairs(guide.goals or {}) do
+        local questID = M.TurninQuestID(goal.id)
+        if questID then
+            turnins[questID] = true
+        end
+    end
+    for _, goal in ipairs(guide.goals or {}) do
+        if goal.kind == "accept" then
+            local questID = goal.id and tonumber(tostring(goal.id):match("^accept%-(%d+)%-"))
+            if questID and not turnins[questID] then
+                hints[#hints + 1] = {
+                    guideID = guideID,
+                    goalID = goal.id,
+                    questID = questID,
+                    required = M.SameChapterTurninRequired[questID] == true,
+                }
+            end
+        end
+    end
+    return hints
+end
+
+-- Catalog prerequisites must have a turnin-{quest}- step in every guide that
+-- accepts the dependent quest. Engine injection already errors when that
+-- turn-in is missing or later; this check keeps the data rule next to lint.
+-- M.PrerequisiteTurninExceptions[acceptQuest][prereqQuest] = "reason" skips a pair.
+M.PrerequisiteTurninExceptions = {}
+
+function M.PrerequisiteTurninViolations(guides, catalog)
+    local issues = {}
+    for guideID, guide in pairs(guides or {}) do
+        if guide and guide.category ~= "Dungeon Quest Guides" then
+            local turnins = {}
+            for _, goal in ipairs(guide.goals or {}) do
+                local questID = M.TurninQuestID(goal.id)
+                if questID then
+                    turnins[questID] = true
+                end
+            end
+            for _, goal in ipairs(guide.goals or {}) do
+                if goal.kind == "accept" then
+                    local acceptQuest = goal.id and tonumber(tostring(goal.id):match("^accept%-(%d+)%-"))
+                    local rules = acceptQuest and catalog and catalog[acceptQuest]
+                    for _, rule in ipairs(rules or {}) do
+                        for _, need in ipairs(rule.quests or {}) do
+                            local skipped = M.PrerequisiteTurninExceptions[acceptQuest]
+                                and M.PrerequisiteTurninExceptions[acceptQuest][need]
+                            if not skipped and not turnins[need] then
+                                issues[#issues + 1] = {
+                                    guideID = guideID,
+                                    goalID = goal.id,
+                                    acceptQuest = acceptQuest,
+                                    needTurnin = need,
+                                }
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return issues
+end
+
 return M

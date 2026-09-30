@@ -3,6 +3,14 @@ local _, ns = ...
 -- Horde Era leveling route for the Barrens, levels 12-20.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
 -- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter. Wenikee Boltbucket is accepted from Sputtervalve, and no chapter stops at Wenikee.
+-- Accept-only on purpose (turn-in is a named later stop, not Barrens Parts 1–3):
+-- 822 Chen's Empty Keg continues in Stonetalon Mountains (Part 1); the Ratchet turn-in is not on Parts 1–3.
+-- 1060 Letter to Jin'Zil turns in in Stonetalon Mountains (Part 1).
+-- 1062 Goblin Invaders turns in in Stonetalon Mountains (Part 1).
+-- 1483 Ziz Fizziks turns in in Stonetalon Mountains (Part 1) and (Part 2).
+-- 3921 Wenikee Boltbucket stays accept-only because no chapter stops at Wenikee.
+-- 6401 Kaya's Alive turns in in Stonetalon Mountains (Part 3) and (Part 4).
+-- 6541 Report to Kadrak stays accept-only until a chapter stops at Kadrak.
 -- Journey to the Crossroads from Thrall is for Horde Skyborne.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -1174,6 +1182,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-924-the-demon-seed",
+            kind = "turnin",
+            priority = 800,
+            conditions = {
+                all = {
+                    { level = { min = 9 } },
+                    { quest = { id = 809, state = "completed" } },
+                },
+            },
+            text = "Turn in The Demon Seed to Ak'Zeloth in Far Watch Post.",
+            dependsOn = { "objective-924-the-demon-seed" },
+            complete = QuestState(924, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6235, 0.2008, "Ak'Zeloth",
+                    "Travel to Ak'Zeloth."),
+            },
+        },
+        {
             id = "objective-871-disrupt-the-attacks",
             kind = "objective",
             priority = 810,
@@ -1226,6 +1252,7 @@ ns:RegisterGuide({
             priority = 860,
             conditions = { level = { min = 10 } },
             text = "Accept The Zhevra from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-844-plainstrider-menace" },
             complete = QuestState(845, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2310,6 +2337,7 @@ ns:RegisterGuide({
             priority = 1640,
             conditions = { level = { min = 9 } },
             text = "Accept Stolen Silver from Gazrog in The Crossroads.",
+            dependsOn = { "turnin-869-raptor-thieves" },
             complete = QuestState(3281, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5195, 0.3032, "Gazrog",
@@ -2335,6 +2363,7 @@ ns:RegisterGuide({
             priority = 1660,
             conditions = { level = { min = 10 } },
             text = "Accept Prowlers of the Barrens from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-845-the-zhevra" },
             complete = QuestState(903, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -3141,6 +3170,7 @@ ns:RegisterGuide({
             priority = 2300,
             conditions = { level = { min = 10 } },
             text = "Accept Echeyakee from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-903-prowlers-of-the-barrens" },
             complete = QuestState(881, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -3256,6 +3286,7 @@ ns:RegisterGuide({
             priority = 2410,
             conditions = { level = { min = 10 } },
             text = "Accept The Angry Scytheclaws from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-881-echeyakee" },
             complete = QuestState(905, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -3400,6 +3431,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5203, 0.4653, "Sunscale Scytheclaw",
                     "Travel to Sunscale Scytheclaw."),
+            },
+        },
+        {
+            id = "objective-869-raptor-thieves",
+            kind = "objective",
+            priority = 2555,
+            conditions = { level = { min = 9 } },
+            text = "Kill the Raptors across the Barrens for 12 Raptor Head and collect 5 Intact Raptor Horn in The Barrens.",
+            dependsOn = { "accept-869-raptor-thieves" },
+            complete = QuestState(869, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.5203, 0.4653, "Sunscale Lashtail",
+                    "Travel to Sunscale Lashtail."),
             },
         },
         {
@@ -3565,6 +3609,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-869-raptor-thieves",
+            kind = "turnin",
+            priority = 2715,
+            conditions = { level = { min = 9 } },
+            text = "Turn in Raptor Thieves to Gazrog in The Crossroads.",
+            dependsOn = { "objective-869-raptor-thieves" },
+            complete = QuestState(869, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5193, 0.3033, "Gazrog",
+                    "Travel to Gazrog."),
+            },
+        },
+        {
             id = "turnin-3281-stolen-silver",
             kind = "turnin",
             priority = 2720,
@@ -3596,6 +3653,7 @@ ns:RegisterGuide({
             priority = 2740,
             conditions = { level = { min = 10 } },
             text = "Accept Jorn Skyseer from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-905-the-angry-scytheclaws" },
             complete = QuestState(3261, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",

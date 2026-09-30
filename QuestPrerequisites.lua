@@ -322,3 +322,46 @@ ns:RegisterQuestPrerequisite({
     note = "The Weaver is offered after Watching the Roads is turned in.",
 })
 
+-- Sergra Darkthorn at the Crossroads. Classic series verified on Warcraft Wiki
+-- (The Zhevra, Echeyakee, Jorn Skyseer): each quest is offered only after the
+-- previous one is turned in.
+ns:RegisterQuestPrerequisite({
+    quest = 845,
+    mode = "all",
+    quests = { 844 },
+    conditions = { faction = "Horde" },
+    note = "The Zhevra is offered after Plainstrider Menace.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 903,
+    mode = "all",
+    quests = { 845 },
+    conditions = { faction = "Horde" },
+    note = "Prowlers of the Barrens is offered after The Zhevra.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 881,
+    mode = "all",
+    quests = { 903 },
+    conditions = { faction = "Horde" },
+    note = "Echeyakee is offered after Prowlers of the Barrens.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 905,
+    mode = "all",
+    quests = { 881 },
+    conditions = { faction = "Horde" },
+    note = "The Angry Scytheclaws is offered after Echeyakee.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 3261,
+    mode = "all",
+    quests = { 905 },
+    conditions = { faction = "Horde" },
+    note = "Jorn Skyseer is offered after The Angry Scytheclaws.",
+})
+

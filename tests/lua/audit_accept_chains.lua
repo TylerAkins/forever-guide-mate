@@ -49,4 +49,31 @@ if violations > 0 then
     os.exit(1)
 end
 
+local requiredMissing = 0
+local hints = 0
+print("Accepts with no turn-in in the same Leveling chapter (review hints, not failures):")
+for _, guideID in ipairs(ns.guideOrder) do
+    local guide = ns.guides[guideID]
+    for _, hint in ipairs(guideData.AcceptsWithoutSameChapterTurnin(guide, guideID)) do
+        hints = hints + 1
+        print(string.format("  %s %s quest %d", hint.guideID, hint.goalID, hint.questID))
+        if hint.required then
+            requiredMissing = requiredMissing + 1
+            io.stderr:write(string.format(
+                "DENY: %s %s quest %d must turn in in the same chapter\n",
+                hint.guideID, hint.goalID, hint.questID))
+        end
+    end
+end
+if hints == 0 then
+    print("  (none)")
+end
+
+if requiredMissing > 0 then
+    io.stderr:write(string.format(
+        "%d same-chapter turn-in denylist violation(s). See SameChapterTurninRequired in tests/lua/guide_data_checks.lua\n",
+        requiredMissing))
+    os.exit(1)
+end
+
 print("Chain audit passed (registered quest prerequisites). See docs/guide-authoring.md for manual review when adding accepts.")

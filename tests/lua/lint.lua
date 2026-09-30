@@ -334,6 +334,18 @@ for _, issue in ipairs(guideData.ClassBranchTurninViolations(ns.guides)) do
         issue.guideID, issue.goalID, issue.detail))
 end
 
+Check(guideData.DetourCoverageFixtureFails(),
+    "detour coverage fixture must fail when the detour drops objective and turn-in")
+for _, issue in ipairs(guideData.DetourCoverageViolations(ns.guides)) do
+    Check(false, ("%s quest %d is weaker than %s (detour %s, canonical %s, missing %s)")
+        :format(issue.detourID, issue.questID, issue.canonicalID,
+            issue.detourKinds, issue.canonicalKinds, issue.missing))
+end
+for _, issue in ipairs(guideData.PrerequisiteTurninViolations(ns.guides, ns.questPrerequisites)) do
+    Check(false, ("%s %s accept %d needs a turnin-%d step in that guide")
+        :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d guide data checks failed\n"):format(failures, checks))
     os.exit(1)
