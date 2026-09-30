@@ -1648,6 +1648,7 @@ ns:RegisterGuide({
             priority = 1450,
             conditions = { level = { min = 10 } },
             text = "Accept Prowlers of the Barrens from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-845-the-zhevra" },
             complete = QuestState(903, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5223, 0.3100, "Sergra Darkthorn",
@@ -2138,6 +2139,7 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = { level = { min = 10 } },
             text = "Accept Echeyakee from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-903-prowlers-of-the-barrens" },
             complete = QuestState(881, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2216,6 +2218,7 @@ ns:RegisterGuide({
             priority = 1980,
             conditions = { level = { min = 10 } },
             text = "Accept The Angry Scytheclaws from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-881-echeyakee" },
             complete = QuestState(905, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2528,6 +2531,7 @@ ns:RegisterGuide({
             priority = 2300,
             conditions = { level = { min = 10 } },
             text = "Accept Jorn Skyseer from Sergra Darkthorn in The Crossroads.",
+            dependsOn = { "turnin-905-the-angry-scytheclaws" },
             complete = QuestState(3261, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5221, 0.3099, "Sergra Darkthorn",
@@ -2647,6 +2651,19 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4600, 0.4110, "Hezrul Bloodmark",
                     "Travel to Hezrul Bloodmark."),
+            },
+        },
+        {
+            id = "turnin-3261-jorn-skyseer",
+            kind = "turnin",
+            priority = 2405,
+            conditions = { level = { min = 10 } },
+            text = "Turn in Jorn Skyseer to Jorn Skyseer in Camp Taurajo.",
+            dependsOn = { "accept-3261-jorn-skyseer" },
+            complete = QuestState(3261, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.4484, 0.5909, "Jorn Skyseer",
+                    "Travel to Jorn Skyseer."),
             },
         },
         {

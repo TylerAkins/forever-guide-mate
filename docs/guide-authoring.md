@@ -72,6 +72,20 @@ A converted file drops the Era level-range name. `Guides/Era/12-17-westfall.lua`
 - A handoff step depends on the previous turn-in. A turn-in depends on all objective steps for that quest.
 - Do not point `dependsOn` at a step the player has not reached yet unless that is intentional gating.
 
+### Detour weave checklist
+
+When a chapter copies a block from another route, treat the source as canonical and the copy as a detour. Named pairs live in `tests/lua/guide_data_checks.lua` (`DetourCoveragePairs`).
+
+Lint also compares **every shipped leveling chapter** with every other shipped leveling chapter. For a shared quest id (step ids `accept-`, `turnin-`, `objective-`, or `gossip-` plus that id), a strict subset fails unless that `guideID:questID` is in `CoverageGapAllowlist` with a chapter that still has the missing steps. The current list is a baseline of existing gaps, not a sign-off that each one is intentional. Era archive files and class guides are printed by `audit_accept_chains.lua` and do not fail lint. Add an allowlist row only for a real handoff to a named later chapter, not to hide a dropped turn-in on a detour.
+
+### Gated accepts
+
+If the client offers quest B only after quest A is turned in, the accept for B must `dependsOn` the `turnin-A-…` step, or `RegisterQuestPrerequisite` must name A and that turn-in step must appear earlier in the same guide. Priority alone does not hold the accept.
+
+### Accept-only deferral
+
+An accept with no turn-in in the same chapter is allowed only when the guide header says why, and the turn-in lives in a named later chapter or part. `lua5.1 tests/lua/audit_accept_chains.lua` prints those accepts as review hints. It fails only for quest ids listed in `SameChapterTurninRequired`.
+
 ### When an accept may have no `dependsOn`
 
 Many **camp pickup** accepts intentionally have an empty `dependsOn`: the route visits an NPC and several quests are picked up together. That is fine.

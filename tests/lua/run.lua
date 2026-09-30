@@ -1319,6 +1319,52 @@ function TestActiveGoalReload()
 end
 TestActiveGoalReload()
 
+function TestSilverpinePlainstriderBeforeZhevra()
+    local function CheckEdge(chapterID, prereq, turninID, acceptID)
+        local guide = ns.guides["leveling-era"] or ns.guides[chapterID]
+        turninID = guide.id == "leveling-era" and (chapterID .. ":" .. turninID) or turninID
+        acceptID = guide.id == "leveling-era" and (chapterID .. ":" .. acceptID) or acceptID
+        local turnin = ns.Engine:GetGoal(guide, turninID)
+        local accept = ns.Engine:GetGoal(guide, acceptID)
+        Check(turnin ~= nil and accept ~= nil, chapterID .. " has " .. turninID .. " and " .. acceptID)
+        local linked = false
+        for _, group in ipairs(accept and accept.questPrerequisites or {}) do
+            for _, questID in ipairs(group.questIDs or {}) do
+                if questID == prereq then linked = true end
+            end
+        end
+        Check(linked, acceptID .. " requires quest " .. prereq)
+        local state = {
+            faction = "Horde", raceID = 5, classID = 1, level = 20,
+            quests = { [prereq] = { complete = true, objectives = {} } },
+            completedQuests = {},
+            questLogKnown = true, questCompletionKnown = true,
+        }
+        ForeverGuideMateCharDB = { selectedGuide = guide.id }
+        ns.InitializeStorage()
+        Equal(ns.Engine:IsReady(guide, turnin, state), true,
+            turninID .. " is ready while quest " .. prereq .. " is complete in the log")
+        Equal(ns.Engine:IsReady(guide, accept, state), false,
+            acceptID .. " stays locked until quest " .. prereq .. " is turned in")
+        state.completedQuests[prereq] = true
+        Equal(ns.Engine:IsReady(guide, accept, state), true,
+            acceptID .. " is ready after quest " .. prereq .. " is turned in")
+    end
+    CheckEdge("leveling-era-silverpine-forest", 844,
+        "turnin-844-plainstrider-menace", "accept-845-the-zhevra")
+    CheckEdge("leveling-era-the-barrens-part-1", 844,
+        "turnin-844-plainstrider-menace", "accept-845-the-zhevra")
+    CheckEdge("leveling-era-the-barrens-part-1", 845,
+        "turnin-845-the-zhevra", "accept-903-prowlers-of-the-barrens")
+    CheckEdge("leveling-era-the-barrens-part-1", 903,
+        "turnin-903-prowlers-of-the-barrens", "accept-881-echeyakee")
+    CheckEdge("leveling-era-the-barrens-part-1", 881,
+        "turnin-881-echeyakee", "accept-905-the-angry-scytheclaws")
+    CheckEdge("leveling-era-the-barrens-part-1", 905,
+        "turnin-905-the-angry-scytheclaws", "accept-3261-jorn-skyseer")
+end
+TestSilverpinePlainstriderBeforeZhevra()
+
 function TestNaraWildmaneChain()
     ns:FinalizeGuides()
     local era = ns.guides["leveling-era"]
