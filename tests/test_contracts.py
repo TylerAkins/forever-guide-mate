@@ -786,7 +786,7 @@ class ContractTests(unittest.TestCase):
         self.assertIn("function UI:OpenGuideBrowser()", ui)
         self.assertIn("function UI:ToggleGuideBrowser()", ui)
         self.assertIn("function UI:ToggleGuideTracker()", ui)
-        self.assertIn("ForeverGuideMateMinimapButton", ui)
+        self.assertIn("ForeverGuideMateMinimapButton", (ROOT / "MinimapButton.lua").read_text(encoding="utf-8"))
         self.assertIn("SetClampedToScreen(true)", ui)
         self.assertNotIn("CreateLine", ui)
         self.assertIn("TomTomWaypoints", ui)

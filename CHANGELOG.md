@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.43 - 2026-09-30
+
+- Minimap button matches other Forever addons (33px frame, 54px tracking border, centered 20px icon): removes the oversized square black fill and uses the circular tracking background like LFG Forever.
+
 ## 0.1.42 - 2026-09-30
 
 - Minimap button logic moved into `MinimapButton.lua` using the same placement and drag code path as SmartLFG/LFG Forever-style addons, with a black tracking disc behind the quest icon and without screen clamping that fought drag.
