@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.38 - 2026-09-30
+
+- Tirisfal paladin steps pick up Making Repairs at Bandarion Keep before sending you to Rudolph Gelhardt for The Tarnished, so both quests can be done on one trip.
+
 ## 0.1.37 - 2026-09-30
 
 - Native Blizzard quest tracking works even when quest waypoint coordinates are unavailable. TomTom falls back to client quest-map pin coordinates.
