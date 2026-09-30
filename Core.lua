@@ -407,6 +407,18 @@ if CreateFrame then
     eventFrame:RegisterEvent("QUEST_PROGRESS")
     eventFrame:RegisterEvent("QUEST_COMPLETE")
     eventFrame:SetScript("OnEvent", OnEvent)
+    local taxiElapsed, wasOnTaxi = 0, false
+    eventFrame:SetScript("OnUpdate", function(_, elapsed)
+        taxiElapsed = taxiElapsed + elapsed
+        if taxiElapsed < 0.5 then return end
+        taxiElapsed = 0
+        if type(UnitOnTaxi) ~= "function" then return end
+        local onTaxi = not not UnitOnTaxi("player")
+        if wasOnTaxi and not onTaxi then
+            ns.ScheduleRefresh()
+        end
+        wasOnTaxi = onTaxi
+    end)
     ns.eventFrame = eventFrame
 end
 

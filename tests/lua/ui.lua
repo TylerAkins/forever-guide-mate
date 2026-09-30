@@ -477,6 +477,53 @@ do
     Equal(acquired, 1, "ordinary travel retains the guide route marker")
 end
 
+function TestFlightLandingRefreshesGuide()
+    local savedCapture = ns.PlayerState.Capture
+    local savedGuide = ns.charDB.selectedGuide
+    local state = { mapID = 1413, x = 0.4, y = 0.4, quests = {}, completedQuests = {},
+        questLogKnown = true, questCompletionKnown = true }
+    local captures = 0
+    ns.PlayerState.Capture = function() captures = captures + 1; return state end
+    ns:RegisterGuide({ id = "landing-test", title = "Landing test", category = "Other Guides", revision = 1,
+        goals = {
+        { id = "landing-travel", kind = "travel", text = "Fly to Thunder Bluff",
+            complete = { map = 1456 } },
+        { id = "landing-next", kind = "note", text = "Continue after landing" },
+    } })
+    ns.charDB.selectedGuide, ns.charDB.activeGoal = "landing-test", nil
+    ns.db.autoAdvance = true
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "landing-travel", "travel waits before the flight")
+    local onTaxi, reads = false, 0
+    UnitOnTaxi = function(unit)
+        Equal(unit, "player", "landing detection observes the player")
+        reads = reads + 1
+        return onTaxi
+    end
+    local pulse = ns.eventFrame.scripts.OnUpdate
+    pulse(nil, 0.1)
+    Equal(reads, 0, "taxi state is throttled instead of read every frame")
+    pulse(nil, 0.4)
+    Equal(captures, 0, "standing on the ground does not read the quest catalog")
+    onTaxi = true
+    pulse(nil, 0.5)
+    pulse(nil, 0.5)
+    Equal(captures, 0, "flying does not repeatedly refresh the guide")
+    state.mapID = 1456
+    onTaxi = false
+    pulse(nil, 0.5)
+    Equal(captures, 1, "landing captures fresh player state once")
+    Equal(ns.Engine.currentGoal.id, "landing-next", "landing clears completed travel without Sync")
+    pulse(nil, 0.5)
+    Equal(captures, 1, "remaining on the ground does not refresh again")
+    UnitOnTaxi = nil
+    pulse(nil, 0.5)
+    Equal(captures, 1, "clients without the optional taxi API do not refresh")
+    ns.PlayerState.Capture = savedCapture
+    ns.charDB.selectedGuide = savedGuide
+end
+TestFlightLandingRefreshesGuide()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)

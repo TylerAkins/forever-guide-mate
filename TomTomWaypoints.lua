@@ -103,7 +103,12 @@ end
 function Waypoints:Sync(goal, state, api)
     state = state or {}
     local provider = api and "tomtom" or (ns.db and ns.db.waypointProvider or "blizzard")
+    local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
+    local flightLeg = routeLeg and routeLeg.flight and routeLeg
     local selection = goal and (tostring(goal) .. ":" .. provider)
+    if flightLeg then
+        selection = selection .. ":flight:" .. flightLeg.mapID .. ":" .. flightLeg.x .. ":" .. flightLeg.y
+    end
     if selection ~= self.selection then
         self:Clear(api)
         self.selection, self.suspended = selection, false
@@ -117,7 +122,7 @@ function Waypoints:Sync(goal, state, api)
     end
     if self.questID and C_SuperTrack.GetSuperTrackedQuestID() ~= self.questID then self.suspended = true end
     if self.suspended then return end
-    local questID = ns.Navigation:QuestDestinationID(goal)
+    local questID = not flightLeg and ns.Navigation:QuestDestinationID(goal) or nil
     local nativeQuest = questID ~= nil
     if nativeQuest and provider == "blizzard" then
         if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"
@@ -134,7 +139,9 @@ function Waypoints:Sync(goal, state, api)
         return
     end
     local leg
-    if nativeQuest then
+    if flightLeg then
+        leg = flightLeg
+    elseif nativeQuest then
         local mapID, x, y
         if C_QuestLog and type(C_QuestLog.GetNextWaypoint) == "function" then
             mapID, x, y = C_QuestLog.GetNextWaypoint(questID)
@@ -154,7 +161,7 @@ function Waypoints:Sync(goal, state, api)
     elseif goal.kind == "accept" and provider == "blizzard" then
         leg = goal.route and goal.route[#goal.route]
     else
-        leg = ns.Navigation:GetActiveLeg(goal, state)
+        leg = routeLeg
     end
     if not leg or not ValidPoint(leg.mapID, leg.x, leg.y) then
         self:Clear(api); self:Report("No waypoint location is available for this step."); return
