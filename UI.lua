@@ -373,14 +373,11 @@ function UI:UpdateArrow()
 end
 
 function UI:NextGoalText(engine)
-    if not engine.currentGuide or not engine.currentGoal then return nil end
-    local goals = engine.candidateGoals
-    if not goals then
-        goals = engine:CandidateGoals(engine.currentGuide, engine.state)
+    if not engine.currentGuide or not engine.currentGoal or type(engine.NextRouteGoal) ~= "function" then
+        return nil
     end
-    for _, goal in ipairs(goals) do
-        if goal.id ~= engine.currentGoal.id then return goal.text end
-    end
+    local goal = engine:NextRouteGoal(engine.currentGuide, engine.currentGoal, engine.state)
+    return goal and goal.text or nil
 end
 
 local function GuideTypeLabel(guide)
