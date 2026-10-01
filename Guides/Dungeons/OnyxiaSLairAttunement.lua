@@ -40,7 +40,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-onyxia-s-lair-attunement",
     title = "Onyxia's Lair Attunement",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

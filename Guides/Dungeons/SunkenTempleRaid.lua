@@ -44,7 +44,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-sunken-temple-raid",
     title = "Sunken Temple Raid",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

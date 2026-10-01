@@ -34,7 +34,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-gnomeregan-raid",
     title = "Gnomeregan Raid",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

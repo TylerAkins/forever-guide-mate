@@ -29,7 +29,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-blackfathom-deeps-raid",
     title = "Blackfathom Deeps Raid",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

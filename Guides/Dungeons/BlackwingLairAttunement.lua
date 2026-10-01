@@ -19,7 +19,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-blackwing-lair-attunement",
     title = "Blackwing Lair Attunement",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

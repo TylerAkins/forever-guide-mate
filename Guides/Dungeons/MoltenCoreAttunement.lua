@@ -19,7 +19,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-molten-core-attunement",
     title = "Molten Core Attunement",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {
