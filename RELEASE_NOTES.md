@@ -1,4 +1,3 @@
-## 0.1.41 - 2026-09-30
+## 0.1.42 - 2026-10-01
 
-- Flight instructions now activate a Blizzard Map Pin at the flight master, including flights on quest steps, and restore the quest destination after arrival.
-- Landing from a flight automatically refreshes the guide so completed travel steps and flight instructions clear without pressing Sync.
+- Stop the Spread waits until the worgen Arugal's Folly is turned in. Dalar Dawnweaver does not offer it while that quest is still in the log.

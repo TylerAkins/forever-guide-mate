@@ -251,6 +251,14 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 98299,
+    mode = "all",
+    quests = { 98298 },
+    conditions = { faction = "Horde" },
+    note = "Stop the Spread is offered after the worgen bits are turned in to Dalar Dawnweaver.",
+})
+
+ns:RegisterQuestPrerequisite({
     quest = 95774,
     mode = "all",
     quests = { 4921 },
