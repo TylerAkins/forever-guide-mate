@@ -837,6 +837,26 @@ local function TestWailingCavernsRoute()
     local ebruLeg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ebruCave)
     Equal(ebruLeg.mapID, 1413, "the cave pin stays the Barrens entrance")
     Check(not ebruLeg.transport, "the cave does not route the Ratchet boat")
+    local savedMap = C_Map
+    C_Map = {
+        GetMapInfo = function(mapID)
+            if mapID == 5150 then return { name = "Wailing Caverns", parentMapID = 10 } end
+            if mapID == 10 then return { name = "Northern Barrens", parentMapID = 12 } end
+            if mapID == 1413 then return { name = "The Barrens", parentMapID = 12 } end
+        end,
+    }
+    local betaCave = {}
+    for key, value in pairs(ebruCave) do betaCave[key] = value end
+    betaCave.mapID = 5150
+    ns.charDB.activeGoal = nil
+    ns.Engine.inferredCompletedByGuide = nil
+    ns.Engine:Refresh(betaCave)
+    Equal(ns.Engine.currentGoal.id, "accept-deviate-eradication",
+        "an unknown Wailing Caverns map id still accepts from Ebru")
+    Equal(ns.UI:GoalInstruction(ns.Engine),
+        "Accept Deviate Eradication from Ebru in the same cave.",
+        "a child of the Barrens does not board the boat to Ratchet")
+    C_Map = savedMap
 end
 TestWailingCavernsRoute()
 

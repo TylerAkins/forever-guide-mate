@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / ".compiled" / "ForeverGuideMate"
+INSTALL_CONFIG = ROOT / "install.json"
+DEFAULT_WOW_ADDONS = "/Applications/World of Warcraft/_classic_beta_/Interface/AddOns"
 SHIPPED = (
     "ForeverGuideMate.toc",
     "Core.lua",
@@ -145,11 +148,54 @@ def compile_addon(output: Path = OUTPUT, *, dry_run: bool = False) -> list[Path]
     return destinations
 
 
+def wow_addons_dir(override: str | None = None) -> Path:
+    """Return the AddOns directory from --wow-addons, install.json, or the default."""
+    if override:
+        return Path(override).expanduser()
+    if INSTALL_CONFIG.is_file():
+        data = json.loads(INSTALL_CONFIG.read_text(encoding="utf-8"))
+        configured = data.get("wow_addons") if isinstance(data, dict) else None
+        if isinstance(configured, str) and configured.strip():
+            return Path(configured).expanduser()
+    return Path(DEFAULT_WOW_ADDONS)
+
+
+def install_addon(addons_dir: Path | None = None, *, output: Path = OUTPUT) -> Path:
+    """Compile the addon and copy it into the WoW AddOns folder."""
+    destination_root = addons_dir or wow_addons_dir()
+    if not destination_root.is_dir():
+        raise FileNotFoundError(
+            f"WoW AddOns directory does not exist: {destination_root}. "
+            f"Set wow_addons in {INSTALL_CONFIG.name}."
+        )
+    compile_addon(output)
+    destination = destination_root / output.name
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(output, destination)
+    return destination
+
+
 def main() -> None:
     """Compile the addon or list the files that would be compiled."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--install",
+        action="store_true",
+        help="Copy the compiled addon into the WoW AddOns directory from install.json",
+    )
+    parser.add_argument(
+        "--wow-addons",
+        help="AddOns directory to use with --install, instead of install.json",
+    )
     args = parser.parse_args()
+    if args.install and args.dry_run:
+        parser.error("--install cannot be combined with --dry-run")
+    if args.install:
+        destination = install_addon(wow_addons_dir(args.wow_addons))
+        print(f"Installed {destination}")
+        return
     files = compile_addon(dry_run=args.dry_run)
     if args.dry_run:
         print(f"Would build {len(files)} files in {OUTPUT}")
