@@ -79,7 +79,8 @@ end
 
 function Waypoints:OwnsPin()
     if not self.point or not C_Map or type(C_Map.GetUserWaypoint) ~= "function" then return false end
-    local point = C_Map.GetUserWaypoint()
+    local ok, point = pcall(C_Map.GetUserWaypoint)
+    if not ok then return false end
     return point and point.position and point.uiMapID == self.point.uiMapID
         and point.position.x == self.point.position.x and point.position.y == self.point.position.y
 end
@@ -92,16 +93,23 @@ function Waypoints:Clear(api)
     self.applying = applying
     self.owner = nil
     if self.questID and C_SuperTrack and type(C_SuperTrack.GetSuperTrackedQuestID) == "function"
-        and type(C_SuperTrack.SetSuperTrackedQuestID) == "function"
-        and C_SuperTrack.GetSuperTrackedQuestID() == self.questID then
-        C_SuperTrack.SetSuperTrackedQuestID(0)
+        and type(C_SuperTrack.SetSuperTrackedQuestID) == "function" then
+        local ok, tracked = pcall(C_SuperTrack.GetSuperTrackedQuestID)
+        if ok and tracked == self.questID then pcall(C_SuperTrack.SetSuperTrackedQuestID, 0) end
     end
-    if self:OwnsPin() and type(C_Map.ClearUserWaypoint) == "function" then C_Map.ClearUserWaypoint() end
+    if self:OwnsPin() and type(C_Map.ClearUserWaypoint) == "function" then pcall(C_Map.ClearUserWaypoint) end
     self.questID, self.point = nil, nil
 end
 
 function Waypoints:Sync(goal, state, api)
     state = state or {}
+    if ns.PlayerState and ns.PlayerState:InInstance(state) then
+        if self.waypoint or self.point or self.questID or self.selection then
+            self:Clear(api)
+            self.selection, self.suspended = nil, false
+        end
+        return
+    end
     local provider = api and "tomtom" or (ns.db and ns.db.waypointProvider or "blizzard")
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
     local flightLeg = routeLeg and routeLeg.flight and routeLeg
