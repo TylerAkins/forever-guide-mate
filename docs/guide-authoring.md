@@ -96,7 +96,7 @@ The engine treats any accept with no `dependsOn` as **always ready** for routing
 
 ### Registered quest prerequisites
 
-`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. The engine attaches matching turn-in goals to leveling and Loremaster accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Dungeon guides retain their focused pickup behavior.
+`QuestPrerequisites.lua` is the repository-owned quest-chain catalog. Register a verified prerequisite with `ns:RegisterQuestPrerequisite({ quest = ..., mode = "all"|"any", quests = {...}, conditions = ... })`. The engine attaches matching turn-in goals to leveling and Loremaster accepts, validates references and cycles, and routes to missing prerequisites before showing the dependent accept. Dungeon and raid guides follow authored priority. They do not skip ahead to every quest on the player's current map. After the player passes a step, later ready steps come before the route jumps backward. Once an accept, turn-in, or gossip at a pin is done, other ready steps at that same pin come before the route leaves.
 
 Use `all` when every listed quest must be turned in. Use `any` only for true alternative breadcrumbs where one completed branch unlocks the quest. Conditions belong on the catalog entry when the chain differs by faction, race, or class. Do not copy prerequisite data from another add-on; verify it independently.
 

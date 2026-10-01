@@ -164,11 +164,6 @@ local function SetButtonTooltip(button, tooltip)
         if GameTooltip then
             GameTooltip:SetOwner(self, "ANCHOR_LEFT")
             GameTooltip:SetText(tooltip)
-            if GameTooltip.AddLine then
-                GameTooltip:AddLine("Left-click to show or hide the guide.", 1, 1, 1)
-                GameTooltip:AddLine("Right-click for options.", 1, 1, 1)
-                GameTooltip:AddLine("Drag to move around the minimap.", 0.8, 0.8, 0.8)
-            end
             GameTooltip:Show()
         end
     end)
@@ -979,13 +974,32 @@ function UI:GoalInstruction(engine)
         end
         return goal.text
     end
-    if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID) then
+    local finalLeg = goal.route and goal.route[#goal.route]
+    local pickup = goal.kind == "accept" or goal.kind == "turnin" or goal.kind == "gossip"
+    if pickup and finalLeg and ns.Navigation:NearPin(state, finalLeg) then
+        if goal.kind == "gossip" and (goal.useClientText == true or goal.useClientPin == true) then
+            return ClientObjective(goal, state)
+        end
+        if goal.kind == "turnin" and goal.useClientPin == true then
+            return TurnInInstruction(goal, state)
+        end
+        if goal.kind == "accept" then
+            return goal.text
+        end
+        return goal.text
+    end
+    if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID)
+        and not ns.Navigation:InsidePin(state, leg)
+        and not ns.Navigation:InZone(state.mapID, leg.mapID)
+        and not (pickup and finalLeg and ns.Navigation:NearPin(state, finalLeg)) then
         return status or leg.offMapText or leg.label or goal.text
     end
     if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
+        if pickup then
+            return leg.offMapText or goal.text
+        end
         return status or leg.label or goal.text
     end
-    local finalLeg = goal.route and goal.route[#goal.route]
     if leg and finalLeg and state.mapID and (leg.mapID ~= finalLeg.mapID or leg.x ~= finalLeg.x or leg.y ~= finalLeg.y) then
         if (goal.useClientText == true or goal.useClientPin == true)
             and (goal.kind == "objective" or goal.kind == "gossip")

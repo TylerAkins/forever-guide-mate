@@ -925,3 +925,23 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn("@project-version@", toc)
             for excluded in ("tests", "tools", ".github", "__pycache__"):
                 self.assertFalse((output / excluded).exists())
+
+    def test_compiler_installs_into_wow_addons(self) -> None:
+        compiler = compiler_module()
+        configured = compiler.wow_addons_dir()
+        self.assertEqual(
+            configured.as_posix(),
+            "/Applications/World of Warcraft/_classic_beta_/Interface/AddOns",
+        )
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            output = root / "build" / "ForeverGuideMate"
+            addons = root / "AddOns"
+            addons.mkdir()
+            installed = compiler.install_addon(addons, output=output)
+            self.assertEqual(installed, addons / "ForeverGuideMate")
+            self.assertTrue((installed / "ForeverGuideMate.toc").is_file())
+            self.assertFalse((installed / "tests").exists())
+            missing = root / "missing"
+            with self.assertRaises(FileNotFoundError):
+                compiler.install_addon(missing, output=output)
