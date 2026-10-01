@@ -430,6 +430,20 @@ ns.Engine:Refresh({ faction = "Horde", level = 10 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance leveling guide")
 
 Check(ns.UI:HasStartedGuide(), "a selected guide counts as started")
+do
+    local captured = { title = nil, lines = {} }
+    GameTooltip = {
+        SetOwner = function() end,
+        SetText = function(_, text) captured.title = text end,
+        AddLine = function(_, text) table.insert(captured.lines, text) end,
+        Show = function() end,
+        Hide = function() end,
+    }
+    ns.UI.tracker.sync.scripts.OnEnter(ns.UI.tracker.sync)
+    Equal(captured.title, "Resync guide from your quest log and completed quests",
+        "the Sync button tooltip uses only its resync text")
+    Equal(#captured.lines, 0, "tracker buttons do not append minimap tooltip lines")
+end
 ns.UI.browser:Hide()
 ns.UI:Initialize()
 Equal(ns.UI.browser.shown, false, "login with a started guide keeps the library closed")

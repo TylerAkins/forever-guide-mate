@@ -72,6 +72,14 @@ function Navigation:SameZone(first, second, api)
     return left ~= nil and left == right
 end
 
+-- A micro map or dungeon interior is not the zone map the entrance pin uses.
+-- UiMap 11 is the Wailing Caverns cave (Ebru and Nalpak). UiMap 279 is the instance.
+-- Both sit on the Barrens entrance. Without this, that cave routes a boat to Ratchet.
+local MICRO_ENTRANCE = {
+    [11] = { mapID = 1413, x = 0.460, y = 0.364, radius = 0.05 },
+    [279] = { mapID = 1413, x = 0.460, y = 0.364, radius = 0.05 },
+}
+
 function Navigation:OnMap(stateMap, legMap)
     if stateMap == legMap then return true end
     if self:SameZone(stateMap, legMap) then return true end
@@ -81,8 +89,53 @@ function Navigation:OnMap(stateMap, legMap)
     return type(left) == "string" and left ~= "the next zone" and left == right
 end
 
+function Navigation:InsidePin(state, leg)
+    local entrance = type(state) == "table" and MICRO_ENTRANCE[state.mapID]
+    if not entrance or type(leg) ~= "table" or leg.mapID ~= entrance.mapID then return false end
+    if type(leg.x) ~= "number" or type(leg.y) ~= "number" then return false end
+    local dx = leg.x - entrance.x
+    local dy = leg.y - entrance.y
+    return (dx * dx) + (dy * dy) <= (entrance.radius * entrance.radius)
+end
+
+local function PickupStep(goal)
+    return type(goal) == "table"
+        and (goal.kind == "accept" or goal.kind == "turnin" or goal.kind == "gossip")
+end
+
+local function WithinRadius(leg, x, y, radius)
+    if type(leg) ~= "table" or type(leg.x) ~= "number" or type(leg.y) ~= "number"
+        or type(x) ~= "number" or type(y) ~= "number" then
+        return false
+    end
+    local limit = radius or leg.radius or 0.05
+    local dx, dy = leg.x - x, leg.y - y
+    return (dx * dx) + (dy * dy) <= (limit * limit)
+end
+
+-- Player is at the authored pin: same map, child map, known micro entrance, or
+-- the client can project the player position onto the pin map near the NPC.
+function Navigation:NearPin(state, leg, api)
+    if type(state) ~= "table" or type(leg) ~= "table" or not state.mapID then return false end
+    if self:OnMap(state.mapID, leg.mapID) or self:InsidePin(state, leg)
+        or self:InZone(state.mapID, leg.mapID, api) then
+        return true
+    end
+    if state.x and state.y then
+        local projectedX, projectedY = self:ProjectToMap(state.mapID, state.x, state.y, leg.mapID, api)
+        if WithinRadius(leg, projectedX, projectedY) then return true end
+        projectedX, projectedY = self:ProjectToMap(leg.mapID, leg.x, leg.y, state.mapID, api)
+        if projectedX and projectedY and state.x and state.y then
+            local dx, dy = projectedX - state.x, projectedY - state.y
+            if (dx * dx) + (dy * dy) <= 0.05 * 0.05 then return true end
+        end
+    end
+    return false
+end
+
 function Navigation:TransportLeg(leg, state)
     if not ns.Travel or not leg or not state or not state.mapID or self:OnMap(state.mapID, leg.mapID) then return nil end
+    if self:InZone(state.mapID, leg.mapID) or self:InsidePin(state, leg) then return nil end
     return ns.Travel:Departure(state, leg.mapID, leg.label)
 end
 
@@ -97,6 +150,46 @@ local function MapAncestors(mapID, api)
         mapID = ok and type(info) == "table" and info.parentMapID or nil
     end
     return ancestors
+end
+
+local function ZoneKey(name)
+    if type(name) ~= "string" then return nil end
+    name = string.lower(name)
+    name = string.gsub(name, "^the ", "")
+    name = string.gsub(name, "^northern ", "")
+    name = string.gsub(name, "^southern ", "")
+    if name == "" then return nil end
+    return name
+end
+
+local function ClientZoneName(mapID, api)
+    if not api or type(api.GetMapInfo) ~= "function" or type(mapID) ~= "number" then return nil end
+    local ok, info = pcall(api.GetMapInfo, mapID)
+    if ok and type(info) == "table" and type(info.name) == "string" and info.name ~= "" then
+        return info.name
+    end
+end
+
+-- True when the player map is the pin's zone or a cave, dungeon, or building
+-- inside it. Classic reports the Wailing Caverns mouth as its own map, and
+-- that id is not stable across clients. The parent chain is what Zygor-style
+-- map libraries use, so a new cave id still counts as the Barrens.
+function Navigation:InZone(stateMap, legMap, api)
+    if type(stateMap) ~= "number" or type(legMap) ~= "number" then return false end
+    if stateMap == legMap then return true end
+    api = api or C_Map
+    local legName = ClientZoneName(legMap, api)
+    if not legName and ns.Travel and ns.Travel.MapName then
+        local known = ns.Travel:MapName(legMap)
+        if known ~= "the next zone" then legName = known end
+    end
+    local legKey = ZoneKey(legName)
+    for _, ancestor in ipairs(MapAncestors(stateMap, api)) do
+        if ancestor ~= stateMap and ancestor == legMap then return true end
+        local ancestorKey = ZoneKey(ClientZoneName(ancestor, api))
+        if ancestor ~= stateMap and legKey and ancestorKey == legKey then return true end
+    end
+    return false
 end
 
 local function CommonMap(first, second, api)
@@ -373,22 +466,29 @@ function Navigation:GetActiveLeg(goal, state, api)
                 local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo)
                 if hop then return hop, hop.label end
             else
-                if self:OnMap(state.mapID, leg.mapID) then
+                if self:NearPin(state, leg, api) then
                     if not state.x or not state.y then
                         return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
                     end
                     return self:ApplyClientPin(goal, leg, api, state), leg.label
                 end
-                local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
-                if not arrived then
-                    local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
-                    if learnedLeg and not self:PreferDirectWalk(leg, learnedLeg, state) then
-                        return learnedLeg, learnedLeg.label
+                -- Single-leg camp accepts use only the authored pin. The global
+                -- boat graph sent Ebru to Ratchet. Keep taxi when the step names
+                -- a flight destination.
+                local campPickup = PickupStep(goal) and #goal.route == 1
+                    and type(goal.taxiDestination) ~= "string"
+                if not campPickup then
+                    local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
+                    if not arrived then
+                        local learnedLeg = ns.Taxi and ns.Taxi.GetLearnedLeg and ns.Taxi:GetLearnedLeg(goal, state)
+                        if learnedLeg and not self:PreferDirectWalk(leg, learnedLeg, state) then
+                            return learnedLeg, learnedLeg.label
+                        end
                     end
-                end
-                local transport = self:TransportLeg(leg, state)
-                if transport and not self:PreferDirectWalk(leg, transport, state) then
-                    return transport, transport.label
+                    local transport = self:TransportLeg(leg, state)
+                    if transport and not self:PreferDirectWalk(leg, transport, state) then
+                        return transport, transport.label
+                    end
                 end
                 return self:ApplyClientPin(goal, leg, api, state), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
