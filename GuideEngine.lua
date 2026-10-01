@@ -11,6 +11,32 @@ local function FocusedPickupGuide(guide)
     local category = type(guide) == "table" and guide.category
     return category == "Dungeon Quest Guides" or category == "Raid Quests"
 end
+
+-- Same camp, not the same zone. Deviate Hides and Deviate Eradication share a
+-- pin; the Crossroads and Ratchet do not.
+local PICKUP_STOP_RADIUS = 0.02
+
+local function RouteDestination(goal)
+    local route = type(goal) == "table" and goal.route
+    if type(route) ~= "table" then return nil end
+    return route[#route]
+end
+
+local function SamePickupStop(first, second)
+    if type(first) ~= "table" or type(second) ~= "table" then return false end
+    if first.mapID ~= second.mapID then return false end
+    if type(first.x) ~= "number" or type(first.y) ~= "number"
+        or type(second.x) ~= "number" or type(second.y) ~= "number" then
+        return false
+    end
+    local dx = first.x - second.x
+    local dy = first.y - second.y
+    return (dx * dx) + (dy * dy) <= (PICKUP_STOP_RADIUS * PICKUP_STOP_RADIUS)
+end
+
+local function PickupStopKind(goal)
+    return goal.kind == "accept" or goal.kind == "turnin" or goal.kind == "gossip"
+end
 local SHORT_TIMER_SECONDS = 30 * 60
 local trackedQuestIDs
 
@@ -1536,18 +1562,56 @@ function Engine:CandidateGoals(guide, state)
     local urgent = {}
     local candidates = {}
     self.eligibilityReasons = {}
-    for index, goal in ipairs(self:SegmentGoals(guide, state)) do
+    -- Dungeon routes stay in authored priority. Preferring every step on the
+    -- current map pulled later pickups forward, then a cave or city map sent
+    -- the player back to an earlier step and left the quest beside them.
+    -- Once the player has passed a step, keep going forward while a later
+    -- step is ready. A pickup already started still finishes the other ready
+    -- steps at that pin before the route leaves.
+    local goals = self:SegmentGoals(guide, state)
+    local startedStops = {}
+    local progress = 0
+    local function ObservedAtStop(goal)
+        if not FocusedPickupGuide(guide) or not PickupStopKind(goal) then return false end
+        if goal.complete and ns.EvaluateCondition(goal.complete, state) == true then
+            return true
+        end
+        local ledger = self:GetLedger(guide, false)
+        return ledger ~= nil and ledger[goal.id] == true
+    end
+    if FocusedPickupGuide(guide) then
+        for _, goal in ipairs(goals) do
+            if self:IsGoalDone(goal, state, guide) then
+                local priority = type(goal.priority) == "number" and goal.priority or 0
+                if priority > progress then progress = priority end
+            end
+            if ObservedAtStop(goal) then
+                local destination = RouteDestination(goal)
+                if destination then startedStops[#startedStops + 1] = destination end
+            end
+        end
+    end
+    local function AtStartedStop(destination)
+        for _, stop in ipairs(startedStops) do
+            if SamePickupStop(destination, stop) then return true end
+        end
+        return false
+    end
+    for index, goal in ipairs(goals) do
         if not self:IsGoalDone(goal, state, guide) then
             local ready, reason, ineligible = self:IsReady(guide, goal, state)
             if reason and (ineligible or ready) then
                 self.eligibilityReasons[goal.id] = reason
             end
             if ready then
-                local destination = goal.route and goal.route[#goal.route]
+                local destination = RouteDestination(goal)
+                local priority = type(goal.priority) == "number" and goal.priority or index
                 local candidate = {
                     goal = goal, index = index,
                     deferred = ns.charDB.deferred[goal.id] == true,
                     sameMap = destination and destination.mapID == state.mapID or false,
+                    startedStop = AtStartedStop(destination),
+                    forward = progress > 0 and priority > progress,
                 }
                 if urgentGoals[goal.id] and not candidate.deferred then
                     urgent[#urgent + 1] = candidate
@@ -1564,9 +1628,8 @@ function Engine:CandidateGoals(guide, state)
             return aUrgent.seconds < bUrgent.seconds
         end
         if a.deferred ~= b.deferred then return not a.deferred end
-        if FocusedPickupGuide(guide) and a.sameMap ~= b.sameMap then
-            return a.sameMap
-        end
+        if a.startedStop ~= b.startedStop then return a.startedStop end
+        if a.forward ~= b.forward then return a.forward end
         local aPriority = a.goal.priority or a.index
         local bPriority = b.goal.priority or b.index
         if aPriority ~= bPriority then return aPriority < bPriority end
@@ -1576,12 +1639,12 @@ function Engine:CandidateGoals(guide, state)
     table.sort(urgent, Sort)
     table.sort(candidates, Sort)
     for _, candidate in ipairs(candidates) do urgent[#urgent + 1] = candidate end
-    local goals = {}
+    local ordered = {}
     for _, candidate in ipairs(urgent) do
-        goals[#goals + 1] = candidate.goal
+        ordered[#ordered + 1] = candidate.goal
     end
-    self.candidateGoals = goals
-    return goals
+    self.candidateGoals = ordered
+    return ordered
 end
 
 local function QuestTurnedIn(state, questID)

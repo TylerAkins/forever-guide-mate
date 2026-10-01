@@ -320,9 +320,10 @@ ns.db.uiOpen = true
 
 ns.Engine:Refresh(baseState)
 Check(ns.Engine.currentGoal ~= nil, "engine selects a ready goal")
-Equal(ns.Engine.currentGoal.id, "accept-hidden-enemies-1", "engine prefers a same-map ready goal")
+Equal(ns.Engine.currentGoal.id, "accept-searching-satchel",
+    "a dungeon guide follows authored order instead of the current map")
 ns.Engine:CompleteCurrent()
-Equal(ns.Engine:GetLedger(ns.Engine.currentGuide, false)["accept-hidden-enemies-1"], true,
+Equal(ns.Engine:GetLedger(ns.Engine.currentGuide, false)["accept-searching-satchel"], true,
     "manual completion persisted in the revision ledger")
 
 local navigationGoal = { route = { { mapID = 1454, x = 0.5, y = 0.4, label = "Test point", radius = 0.01 } } }
@@ -788,6 +789,37 @@ local trackedCavernQuests = {}
 for _, questID in ipairs(ns.GetTrackedQuestIDs()) do trackedCavernQuests[questID] = true end
 Check(trackedCavernQuests[1487], "deviate eradication is tracked")
 Check(trackedCavernQuests[3366], "the alternate glowing shard quest is tracked")
+local function TestWailingCavernsRoute()
+    local barrensCaverns = {}
+    for key, value in pairs(hordeCaverns) do barrensCaverns[key] = value end
+    barrensCaverns.mapID = 1413
+    barrensCaverns.x, barrensCaverns.y = 0.460, 0.364
+    ns.charDB.activeGoal = nil
+    ns.charDB.history = {}
+    ns.charDB.deferred = {}
+    ns.charDB.completionLedger = {}
+    ns.charDB.manualCompleted = {}
+    ns.Engine.inferredCompletedByGuide = nil
+    ns.Engine:Refresh(barrensCaverns)
+    Equal(ns.Engine.currentGoal.id, "accept-hamuul-runetotem",
+        "standing at Wailing Caverns still starts at the Crossroads")
+    local caveCaverns = {}
+    for key, value in pairs(barrensCaverns) do caveCaverns[key] = value end
+    caveCaverns.mapID = 718
+    caveCaverns.level = 18
+    caveCaverns.quests = {
+        [1489] = { complete = false },
+        [1486] = { complete = false },
+    }
+    ns.Engine:Refresh(caveCaverns)
+    Equal(ns.Engine.currentGoal.id, "accept-deviate-eradication",
+        "Deviate Eradication is accepted beside Deviate Hides before Thunder Bluff")
+    caveCaverns.quests[1487] = { complete = false }
+    ns.Engine:Refresh(caveCaverns)
+    Equal(ns.Engine.currentGoal.id, "turnin-hamuul-runetotem",
+        "Thunder Bluff resumes after both cave quests are accepted")
+end
+TestWailingCavernsRoute()
 
 local ruins = ns.guides["dungeons-ruins-of-lordaeron"]
 Check(ruins ~= nil, "ruins of lordaeron guide is registered")
