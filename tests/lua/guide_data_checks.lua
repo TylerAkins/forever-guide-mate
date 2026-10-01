@@ -5,6 +5,10 @@
 
 local M = {}
 
+function M.FocusedPickupCategory(category)
+    return category == "Dungeon Quest Guides" or category == "Raid Quests"
+end
+
 function M.TurninQuestID(goalID)
     if type(goalID) ~= "string" then
         return nil
@@ -33,7 +37,7 @@ end
 
 function M.ChainViolations(guide, guideID)
     local issues = {}
-    if not guide or guide.category == "Dungeon Quest Guides" then
+    if not guide or M.FocusedPickupCategory(guide.category) then
         return issues
     end
     for _, goal in ipairs(guide.goals or {}) do
@@ -61,7 +65,7 @@ end
 -- and accept appears later in the file (may be intentional camp pickup).
 function M.OrphanAcceptHints(guide, guideID)
     local hints = {}
-    if not guide or guide.category == "Dungeon Quest Guides" then
+    if not guide or M.FocusedPickupCategory(guide.category) then
         return hints
     end
     local turnins = {}
@@ -452,7 +456,7 @@ function M.AllGuideCoverageGaps(guides)
     local kindsByGuide = {}
     local guideIDs = {}
     for guideID, guide in pairs(guides or {}) do
-        if guide and guide.category ~= "Dungeon Quest Guides" and type(guide.goals) == "table" then
+        if guide and not M.FocusedPickupCategory(guide.category) and type(guide.goals) == "table" then
             kindsByGuide[guideID] = M.QuestStepKinds(guide)
             guideIDs[#guideIDs + 1] = guideID
         end
@@ -561,7 +565,7 @@ M.PrerequisiteTurninExceptions = {}
 function M.PrerequisiteTurninViolations(guides, catalog)
     local issues = {}
     for guideID, guide in pairs(guides or {}) do
-        if guide and guide.category ~= "Dungeon Quest Guides" then
+        if guide and not M.FocusedPickupCategory(guide.category) then
             local turnins = {}
             for _, goal in ipairs(guide.goals or {}) do
                 local questID = M.TurninQuestID(goal.id)

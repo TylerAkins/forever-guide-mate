@@ -27,7 +27,7 @@ end
 ns:RegisterGuide({
     id = "dungeons-naxxramas-attunement",
     title = "Naxxramas Attunement",
-    category = "Dungeon Quest Guides",
+    category = "Raid Quests",
     revision = 1,
     conditions = {
         all = {

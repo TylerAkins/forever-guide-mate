@@ -524,6 +524,33 @@ function TestFlightLandingRefreshesGuide()
 end
 TestFlightLandingRefreshesGuide()
 
+ns:RegisterGuide({
+    id = "raid-category-probe",
+    title = "Raid Category Probe",
+    category = "Raid Quests",
+    revision = 1,
+    conditions = {
+        all = {
+            { level = { min = 60 } },
+            { any = { { faction = "Alliance" }, { faction = "Horde" } } },
+        },
+    },
+    goals = { { id = "raid-step", kind = "note", text = "Raid step" } },
+})
+ns.UI.browserCategory = "Raid Quests"
+ns.UI.browserPage = 1
+ns.UI.browser.search:SetText("raid category")
+ns.Engine.state = { faction = "Horde", level = 60 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Raid Category Probe").eligibility.text, "Raid  •  Eligible  •  Both  •  Level 60+",
+    "raid quest guides use the Raid tag and both-faction label")
+local sawRaidCategory = false
+for index = 1, #ns.UI.browserCategoryButtons do
+    local button = ns.UI.browserCategoryButtons[index]
+    if button.shown and button.label.text == "› Raid Quests" then sawRaidCategory = true end
+end
+Check(sawRaidCategory, "the library lists Raid Quests as its own category")
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
