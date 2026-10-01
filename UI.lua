@@ -770,6 +770,7 @@ function UI:RefreshGuideBrowser()
             local segment = entry.segment
             local row = self.browserRows[visible] or self:CreateBrowserRow(visible)
             local browserState = ns.Engine.state or {}
+            ns.PlayerState:FillCompletion(browserState, ns.QuestIDsForGuide(guide))
             local progress = ns.Engine:GetGuideProgress(guide, browserState, segment)
             row.title:SetText(entry.title)
             if segment then
