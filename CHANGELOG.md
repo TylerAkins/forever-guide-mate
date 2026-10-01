@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.45 - 2026-10-01
+
+- Dungeon and raid guides follow their authored route instead of jumping to every quest on your current map. A pickup you already started still finishes the other quests at that pin, so Wailing Caverns accepts Deviate Eradication beside Deviate Hides before it sends you to Thunder Bluff.
+
 ## 0.1.44 - 2026-10-01
 
 - Ragefire Chasm accepts Slaying the Beast from Neeru Fireblade as soon as the insignia dialogue ends, then turns Hidden Enemies in to Thrall for the dungeon quest before sending you in to kill troggs.
