@@ -857,6 +857,20 @@ local function TestWailingCavernsRoute()
         "Accept Deviate Eradication from Ebru in the same cave.",
         "a child of the Barrens does not board the boat to Ratchet")
     C_Map = savedMap
+    local eradication = ns.Engine:GetGoal(wc, "accept-deviate-eradication")
+    local orphanCave = { faction = "Horde", mapID = 279, x = 0.5, y = 0.5 }
+    local boatLeg, boatStatus = ns.Navigation:GetActiveLeg(eradication, orphanCave)
+    Check(not boatLeg.transport, "a cave accept does not use the boat graph")
+    Check(string.find(boatStatus or "", "Ratchet", 1, true) == nil,
+        "a cave accept does not mention Ratchet")
+    Check(string.find(boatStatus or "", "Wailing Caverns", 1, true) ~= nil,
+        "a cave accept uses the authored travel line")
+    ForeverGuideMateDB.uiOpen = true
+    ns.Engine.currentGoal = eradication
+    ns.Engine.state = orphanCave
+    Equal(ns.UI:GoalInstruction(ns.Engine),
+        "Accept Deviate Eradication from Ebru in the same cave.",
+        "the tracker shows the accept text when the cave has no parent map data")
 end
 TestWailingCavernsRoute()
 
