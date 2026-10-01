@@ -4016,6 +4016,70 @@ function TestWaypointProviders()
 end
 TestWaypointProviders()
 
+function TestFlightWaypointOverridesQuestDestination()
+    local savedMap, savedTracking, savedPoint = C_Map, C_SuperTrack, UiMapPoint
+    local savedNodes = ns.charDB.taxiNodesByContinent
+    local pin, quest, tracking = nil, 0, false
+    C_Map = {
+        GetUserWaypoint = function() return pin end,
+        SetUserWaypoint = function(point) pin = point end,
+        ClearUserWaypoint = function() pin = nil end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    UiMapPoint = { CreateFromCoordinates = function(mapID, x, y)
+        return { uiMapID = mapID, position = { x = x, y = y } }
+    end }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return quest end,
+        SetSuperTrackedQuestID = function(id) quest = id; tracking = false end,
+        SetSuperTrackedUserWaypoint = function(value) tracking = value end,
+        IsSuperTrackingUserWaypoint = function() return tracking end,
+    }
+    ns.charDB.taxiNodesByContinent = { Kalimdor = {
+        ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore",
+    } }
+    ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
+    local state = { mapID = 1413, x = 0.4, y = 0.4, faction = "Horde" }
+    local goal = { kind = "turnin", taxiDestination = "Thunder Bluff",
+        complete = { quest = { id = 123, state = "completed" } },
+        route = { { mapID = 1456, x = 0.5, y = 0.5, label = "Quest giver" } },
+    }
+    local waypoints = ns.TomTomWaypoints
+    waypoints:Clear()
+    waypoints:Sync(goal, state)
+    Check(pin ~= nil, "a quest flight creates a flight-master pin")
+    Equal(pin and pin.uiMapID, 1413, "the flight pin is in the boarding zone")
+    Equal(tracking, true, "the flight pin becomes Blizzard's current destination")
+    Equal(quest, 0, "the quest destination does not override the flight master")
+    local firstPin = pin
+    waypoints:Sync(goal, state)
+    Equal(pin, firstPin, "an unchanged flight retains its active pin")
+    tracking = false
+    waypoints:Sync(goal, state)
+    Equal(tracking, false, "manual tracking changes are respected during a flight step")
+    state.mapID = 1456
+    waypoints:Sync(goal, state)
+    Equal(quest, 123, "arrival restores native quest tracking for the same step")
+    Equal(pin, nil, "arrival clears the owned flight-master pin")
+    goal.kind = "accept"
+    state.mapID = 1413
+    waypoints:Sync(goal, state)
+    Equal(pin and pin.uiMapID, 1413, "accept steps also target the active flight master")
+    Equal(tracking, true, "accept flight pins become current")
+    local tomtomMap
+    local api = {
+        AddWaypoint = function(_, mapID) tomtomMap = mapID; return 1 end,
+        RemoveWaypoint = function() end,
+    }
+    goal.kind = "turnin"
+    waypoints:Sync(goal, state, api)
+    Equal(tomtomMap, 1413, "TomTom also follows the flight leg on quest steps")
+    waypoints:Clear()
+    ns.charDB.taxiNodesByContinent = savedNodes
+    C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
+end
+TestFlightWaypointOverridesQuestDestination()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
