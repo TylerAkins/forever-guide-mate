@@ -201,7 +201,8 @@ ns:RegisterGuide({
             id = "enter-ragefire-chasm",
             kind = "travel",
             priority = 40,
-            text = "Enter Ragefire Chasm from the Cleft of Shadow.",
+            text = "Enter Ragefire Chasm from the Cleft of Shadow. " ..
+                "Oggleflint is first: crowd-control one guard, face him away for Cleave, and kill the adds before him.",
             dependsOn = {
                 "accept-searching-satchel",
                 "accept-testing-strength",
@@ -257,7 +258,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 45,
             conditions = { level = { min = 9 } },
-            text = "Slay Taragaman the Hungerer and loot his heart.",
+            text = "Slay Taragaman the Hungerer and loot his heart. " ..
+                "Keep him off the platform edge so Uppercut does not knock the tank into the lava. Ranged stay out of Fire Nova.",
             dependsOn = { "enter-ragefire-chasm" },
             complete = QuestState(5761, "complete"),
         },
@@ -275,7 +277,9 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 47,
             conditions = { level = { min = 9 } },
-            text = "Slay Bazzalan and Jergosh the Invoker.",
+            text = "Slay Jergosh the Invoker, then Bazzalan. " ..
+                "Crowd-control one of Jergosh's guards and kill the adds first. " ..
+                "Pull the cultist on Bazzalan's right before the fight, then crowd-control the other cultist.",
             dependsOn = { "enter-ragefire-chasm" },
             complete = QuestState(5728, "complete"),
         },
