@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.44 - 2026-10-01
+
+- Ragefire Chasm accepts Slaying the Beast from Neeru Fireblade as soon as the insignia dialogue ends, then turns Hidden Enemies in to Thrall for the dungeon quest before sending you in to kill troggs.
+
 ## 0.1.43 - 2026-10-01
 
 - Dungeon guides now cover each classic dungeon and wing as its own route, with quest pickup order, boss order, and the mechanics that matter in the run.
