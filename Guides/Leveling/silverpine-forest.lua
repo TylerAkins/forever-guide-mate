@@ -3,6 +3,7 @@ local _, ns = ...
 -- Horde Era leveling route for Silverpine Forest, levels 12-20.
 -- Forever quests from the Silverpine list are woven into this route.
 -- Left out: The Tortured Soul chain is level 23, past this route.
+-- Arugal Must Die and Deathstalkers in Shadowfang are Shadowfang Keep dungeon quests.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -39,7 +40,7 @@ ns:RegisterGuide({
     id = "leveling-era-silverpine-forest",
     title = "Silverpine Forest",
     category = "Leveling Quest Guides",
-    revision = 7,
+    revision = 8,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -939,18 +940,6 @@ ns:RegisterGuide({
             complete = QuestState(99, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.4427, 0.3981, "Dalar Dawnweaver",
-                    "Travel to Dalar Dawnweaver."),
-            },
-        },
-        {
-            id = "accept-98299-stop-the-spread",
-            kind = "accept",
-            priority = 792,
-            conditions = { level = { min = 20 } },
-            text = "Accept Stop the Spread from Dalar Dawnweaver in the Sepulcher.",
-            complete = QuestState(98299, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
                     "Travel to Dalar Dawnweaver."),
             },
         },
@@ -2923,21 +2912,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-98299-stop-the-spread",
-            kind = "objective",
-            priority = 2622,
-            conditions = { level = { min = 20 } },
-            text = "Stop the Spread: slay 5 Sickly Refugees and 5 Haggard Refugees in Pyrewood.",
-            dependsOn = { "accept-98299-stop-the-spread" },
-            complete = QuestState(98299, "complete"),
-            route = {
-                Point(MAP.SILVERPINE, 0.4540, 0.8320, "Sickly Refugee",
-                    "Travel to Sickly Refugee."),
-                Point(MAP.SILVERPINE, 0.4620, 0.8640, "Haggard Refugee",
-                    "Travel to Haggard Refugee."),
-            },
-        },
-        {
             id = "turnin-95981-watching-the-roads",
             kind = "turnin",
             priority = 2635,
@@ -3016,9 +2990,37 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-98299-stop-the-spread",
+            kind = "accept",
+            priority = 2641.2,
+            conditions = { level = { min = 20 } },
+            text = "Accept Stop the Spread from Dalar Dawnweaver in the Sepulcher.",
+            dependsOn = { "turnin-98298-arugals-folly" },
+            complete = QuestState(98299, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4420, 0.3980, "Dalar Dawnweaver",
+                    "Travel to Dalar Dawnweaver."),
+            },
+        },
+        {
+            id = "objective-98299-stop-the-spread",
+            kind = "objective",
+            priority = 2641.4,
+            conditions = { level = { min = 20 } },
+            text = "Stop the Spread: slay 5 Sickly Refugees and 5 Haggard Refugees by the Greymane Wall.",
+            dependsOn = { "accept-98299-stop-the-spread" },
+            complete = QuestState(98299, "complete"),
+            route = {
+                Point(MAP.SILVERPINE, 0.4540, 0.8320, "Sickly Refugee",
+                    "Travel to Sickly Refugee."),
+                Point(MAP.SILVERPINE, 0.4620, 0.8640, "Haggard Refugee",
+                    "Travel to Haggard Refugee."),
+            },
+        },
+        {
             id = "turnin-98299-stop-the-spread",
             kind = "turnin",
-            priority = 2642,
+            priority = 2641.6,
             conditions = { level = { min = 20 } },
             text = "Turn in Stop the Spread to Dalar Dawnweaver in the Sepulcher.",
             dependsOn = { "objective-98299-stop-the-spread" },
