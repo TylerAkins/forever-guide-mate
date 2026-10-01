@@ -6,6 +6,11 @@ ns.Engine = Engine
 local VALID_KINDS = {
     accept = true, objective = true, turnin = true, gossip = true, travel = true, note = true,
 }
+
+local function FocusedPickupGuide(guide)
+    local category = type(guide) == "table" and guide.category
+    return category == "Dungeon Quest Guides" or category == "Raid Quests"
+end
 local SHORT_TIMER_SECONDS = 30 * 60
 local trackedQuestIDs
 
@@ -401,7 +406,7 @@ local function ApplyQuestPrerequisites(guide)
             end
         end
     end
-    if guide.category == "Dungeon Quest Guides" then return end
+    if FocusedPickupGuide(guide) then return end
     for goalIndex, goal in ipairs(guide.goals) do
         if goal.kind == "accept" then
             local rules = ns.questPrerequisites[GoalQuestID(goal)]
@@ -1527,7 +1532,7 @@ function Engine:CandidateGoals(guide, state)
             return aUrgent.seconds < bUrgent.seconds
         end
         if a.deferred ~= b.deferred then return not a.deferred end
-        if guide.category == "Dungeon Quest Guides" and a.sameMap ~= b.sameMap then
+        if FocusedPickupGuide(guide) and a.sameMap ~= b.sameMap then
             return a.sameMap
         end
         local aPriority = a.goal.priority or a.index
