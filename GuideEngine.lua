@@ -1001,6 +1001,38 @@ local function HasPermanentFailure(condition, state)
     return eligible == false
 end
 
+-- The step that follows the current one in authored order. Ready-candidate
+-- order skips anything still waiting on the current step, which let a later
+-- dungeon kill show up as Next while the player was still talking to Neeru.
+function Engine:NextRouteGoal(guide, current, state)
+    if type(guide) ~= "table" or type(current) ~= "table" then return nil end
+    state = state or {}
+    local goals = self:ChapterGoals(guide) or guide.goals
+    local function Priority(goal)
+        if type(goal.priority) == "number" then return goal.priority end
+        local _, index = self:GetGoal(guide, goal.id)
+        return index or 0
+    end
+    local function Open(goal)
+        if goal.id == current.id or self:IsGoalDone(goal, state, guide) then return false end
+        if HasPermanentFailure(goal.conditions, state) then return false end
+        return true
+    end
+    local currentPriority = Priority(current)
+    local bestAfter, bestAny
+    for _, goal in ipairs(goals) do
+        if Open(goal) then
+            local priority = Priority(goal)
+            if priority > currentPriority then
+                if not bestAfter or priority < Priority(bestAfter) then bestAfter = goal end
+            elseif not bestAny or priority < Priority(bestAny) then
+                bestAny = goal
+            end
+        end
+    end
+    return bestAfter or bestAny
+end
+
 local LEVEL_WALL = "The next step needs a higher level. Grind, or run a dungeon, until you can take it."
 
 -- No step is ready, and every unfinished step is waiting on a level gate.

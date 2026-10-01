@@ -2870,8 +2870,31 @@ function TestHiddenEnemies()
     talking.quests[5727].complete = true
     ns.charDB.activeGoal = "gauge-neeru"
     ns.Engine:Refresh(talking)
+    Equal(ns.Engine.currentGoal.id, "accept-slaying-beast",
+        "exhausting Neeru's dialogue accepts Slaying the Beast before leaving")
+    local nextGoal = ns.Engine:NextRouteGoal(rfc, ns.Engine.currentGoal, talking)
+    Equal(nextGoal and nextGoal.id, "turnin-hidden-enemies-2",
+        "the next step after Neeru's quest is the Hidden Enemies turn-in")
+    talking.quests[5761] = { complete = false }
+    ns.Engine:Refresh(talking)
     Equal(ns.Engine.currentGoal.id, "turnin-hidden-enemies-2",
-        "exhausting Neeru's dialogue reports back to Thrall")
+        "after Slaying the Beast is accepted, Hidden Enemies turns in to Thrall")
+    local troggState = State({
+        [5723] = { complete = false },
+        [5727] = { complete = false, objectives = {
+            { text = "Gauge Neeru Fireblade's reaction", finished = 0 },
+        } },
+    }, { [5726] = true })
+    Open(troggState)
+    ns.Engine:GetLedger(rfc, true)["enter-ragefire-chasm"] = true
+    ns.charDB.activeGoal = "gauge-neeru"
+    ns.Engine:Refresh(troggState)
+    Equal(ns.Engine.currentGoal.id, "gauge-neeru", "an unfinished talk with Neeru stays put")
+    nextGoal = ns.Engine:NextRouteGoal(rfc, ns.Engine.currentGoal, troggState)
+    Equal(nextGoal and nextGoal.id, "accept-slaying-beast",
+        "the preview after Neeru is his quest, not the trogg kills")
+    Equal(ns.Engine:IsReady(rfc, ns.Engine:GetGoal(rfc, "complete-testing-strength"), troggState), false,
+        "trogg kills stay locked until Hidden Enemies and Slaying the Beast are accepted")
     local unfinished = State({
         [5727] = { complete = false, objectives = {
             { text = "Gauge Neeru Fireblade's reaction", finished = 0 },
