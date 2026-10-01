@@ -3828,6 +3828,16 @@ function TestIdleAndMovementSkipTheCatalog()
     ns.PlayerState:Capture(api, ids, 1)
     Equal(flags - flagsAfter, budget, "the next real update continues through the catalog")
 
+    local rowIDs = { 1, 58, 59, 60 }
+    flagsAfter = flags
+    ns.PlayerState:FillCompletion(state, rowIDs, api)
+    Equal(state.watchedQuests[60], true, "a library row reads the quests its guide still needs")
+    Check(state.completedQuests[60] ~= nil, "a library row records the read answer")
+    Check(flags - flagsAfter <= 3, "a library row skips quests the pulse already resolved")
+    flagsAfter = flags
+    ns.PlayerState:FillCompletion(state, rowIDs, api)
+    Equal(flags, flagsAfter, "redrawing a library row asks the client nothing new")
+
     local captures, refreshes = 0, 0
     local savedCapture = ns.PlayerState.Capture
     local savedRefresh = ns.Engine.Refresh

@@ -137,7 +137,13 @@ ns:RegisterGuide({
             priority = 40,
             conditions = ALLIANCE,
             text = "Enter the Deadmines through the Defias Hideout in Moonbrook. " ..
-                "The instance portal is at the bottom of the mine.",
+                "The instance portal is at the bottom of the mine. " ..
+                "Rhahk'Zor: pull the two Defias Watchmen first if you can, otherwise crowd-control an archer and kill adds before him. Watch patrols. " ..
+                "Miner Johnson is a rare surrounded by non-elite miners. " ..
+                "Gilnid: crowd-control the engineer or he summons a Remote Controlled Golem. If it spawns, kill the engineer. " ..
+                "Mr. Smite engages on the plank. Kill the two stealthed Defias Blackguards first. He stuns the group at 66% and 33%, and can stun the tank at 33%. " ..
+                "Captain Greenskin: crowd-control the adds, then kill them before the captain. " ..
+                "Cookie is on the ledge below. Interrupt Cookie's Cooking so it does not heal him.",
             dependsOn = {
                 "accept-red-silk-bandanas",
                 "accept-defias-brotherhood",
@@ -201,7 +207,8 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Take the Gnoam Sprecklesprocket from the goblin shredder.",
+            text = "Take the Gnoam Sprecklesprocket from Sneed's Shredder. Clear the room first. " ..
+                "Terrify fears. When the shredder dies, Sneed jumps out and disarms the tank, so let the tank pick him up.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(2040, "complete"),
         },
@@ -215,7 +222,8 @@ ns:RegisterGuide({
                     { level = { min = 14 } },
                 },
             },
-            text = "Kill Edwin VanCleef and take his head.",
+            text = "Kill Edwin VanCleef and take his head. " ..
+                "Kill the two stealthed Defias Blackguards before him. At 50% he calls two more. Kill those, then finish him.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(166, "complete"),
         },

@@ -106,7 +106,7 @@ ns:RegisterGuide({
             text = "Accept The Restless Dead from Afadra Dunwall up the Old Ironforge stairs.",
             taxiDestination = "Ironforge",
             complete = QuestState(96394, "activeOrCompleted"),
-            route = Ironforge(0.332, 0.476, "Afadra Dunwall in Old Ironforge"),
+            route = Ironforge(0.340, 0.488, "Afadra Dunwall in Old Ironforge"),
         },
         {
             id = "accept-important-heirlooms",
@@ -116,7 +116,7 @@ ns:RegisterGuide({
             text = "Accept Important Heirlooms from Thom Filch by the bridge into the Hall of Thanes.",
             taxiDestination = "Ironforge",
             complete = QuestState(96403, "activeOrCompleted"),
-            route = Ironforge(0.324, 0.448, "Thom Filch by the Hall of Thanes bridge"),
+            route = Ironforge(0.326, 0.446, "Thom Filch by the Hall of Thanes bridge"),
         },
         {
             id = "enter-hall-of-thanes",
@@ -124,7 +124,8 @@ ns:RegisterGuide({
             priority = 40,
             conditions = { level = { min = 10 } },
             text = "Enter the Hall of Thanes from the cobwebbed corridor left of the High Seat. " ..
-                "Follow it down past the lava bridge. Mark this step complete after you zone in. " ..
+                "Follow it down past the lava bridge. Boss order: Faldrim Anvilmar, Magmatus, Plunder, Durgen Dirgehammer. " ..
+                "Mark this step complete after you zone in. " ..
                 "It also advances when a Hall of Thanes quest is accepted inside or an objective is finished.",
             dependsOn = {
                 "accept-old-ironforge-incursion",
@@ -162,7 +163,8 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Slay 15 Enraged Apparitions and 10 Tormented Souls in the first rooms.",
+            text = "Slay 15 Enraged Apparitions and 10 Tormented Souls in the first rooms. " ..
+                "Clear a few apparitions before Faldrim so the pull has room.",
             dependsOn = { "enter-hall-of-thanes" },
             complete = QuestState(96394, "complete"),
         },
@@ -180,7 +182,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 44,
             conditions = { level = { min = 10 } },
-            text = "Put Faldrim Anvilmar to rest in Anvilmar's Rest.",
+            text = "Put Faldrim Anvilmar to rest in Anvilmar's Rest. He patrols that room. " ..
+                "Interrupt Mind Blast. Anvilmar's Curse slows the tank's attacks.",
             dependsOn = { "accept-ancient-grudge" },
             complete = QuestState(96395, "complete"),
         },
@@ -190,7 +193,10 @@ ns:RegisterGuide({
             priority = 45,
             conditions = { level = { min = 9 } },
             text = "Take Durgen Dirgehammer's Head in the Reliquary of Kings. " ..
-                "The Treaty of Understanding is in a vault in this room.",
+                "Clear the Dark Iron on the edges first. Kill his two Lesser Stone Golems before him. He fears and applies Rend. " ..
+                "On the way, kill Magmatus's Dark Iron Summoner first, keep Magmatus away from the group for Fire Nova, and heal Combustion. " ..
+                "Plunder only knocks back. Tank him in the previous room so the knockback does not pull more packs. " ..
+                "The Treaty of Understanding is in a vault in Durgen's room. Many Dwarven Heirlooms are behind those vaults.",
             dependsOn = { "enter-hall-of-thanes" },
             complete = QuestState(96393, "complete"),
         },
@@ -231,7 +237,7 @@ ns:RegisterGuide({
             dependsOn = { "complete-restless-dead" },
             taxiDestination = "Ironforge",
             complete = QuestState(96394, "completed"),
-            route = Ironforge(0.332, 0.476, "Afadra Dunwall in Old Ironforge"),
+            route = Ironforge(0.340, 0.488, "Afadra Dunwall in Old Ironforge"),
         },
         {
             id = "turnin-important-heirlooms",
@@ -242,7 +248,7 @@ ns:RegisterGuide({
             dependsOn = { "complete-important-heirlooms" },
             taxiDestination = "Ironforge",
             complete = QuestState(96403, "completed"),
-            route = Ironforge(0.324, 0.448, "Thom Filch by the Hall of Thanes bridge"),
+            route = Ironforge(0.326, 0.446, "Thom Filch by the Hall of Thanes bridge"),
         },
         {
             id = "turnin-old-ironforge-incursion",

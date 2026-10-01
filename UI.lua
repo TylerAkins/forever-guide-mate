@@ -388,6 +388,7 @@ local function GuideTypeLabel(guide)
     if type(category) ~= "string" then return nil end
     if category == "Loremaster Guides" then return "Loremaster" end
     if category == "Class Quests" then return "Class" end
+    if category == "Raid Quests" then return "Raid" end
     local label = category:match("^(.-) Quest Guides$")
     if label and label ~= "" then return label end
     return nil
@@ -423,7 +424,8 @@ end
 
 local function EligibilityText(guide, state)
     local eligible, reason = ns.EvaluateCondition(guide.conditions, state or {})
-    local isDungeon = GuideTypeLabel(guide) == "Dungeon"
+    local typeLabel = GuideTypeLabel(guide)
+    local isDungeon = typeLabel == "Dungeon" or typeLabel == "Raid"
     local requirements = {}
     local levelRequirements = {}
     local function Collect(condition)
@@ -768,6 +770,7 @@ function UI:RefreshGuideBrowser()
             local segment = entry.segment
             local row = self.browserRows[visible] or self:CreateBrowserRow(visible)
             local browserState = ns.Engine.state or {}
+            ns.PlayerState:FillCompletion(browserState, ns.QuestIDsForGuide(guide))
             local progress = ns.Engine:GetGuideProgress(guide, browserState, segment)
             row.title:SetText(entry.title)
             if segment then

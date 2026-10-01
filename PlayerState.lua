@@ -486,6 +486,31 @@ local function CompletedQuests(api, questIDs, logQuests, priorityCount)
     return completed, known, watched
 end
 
+-- The pulse budget leaves most of the catalog unread right after login, so a
+-- library row would score unread turn-ins as unfinished. Each answer is cached,
+-- so a guide pays for its uncached quests once per session.
+function PlayerState:FillCompletion(state, questIDs, api)
+    if type(state) ~= "table" or type(questIDs) ~= "table" then
+        return
+    end
+    api = api or _G
+    local completed = type(state.completedQuests) == "table" and state.completedQuests or {}
+    local watched = type(state.watchedQuests) == "table" and state.watchedQuests or {}
+    local logQuests = type(state.quests) == "table" and state.quests or {}
+    local noDeparted = {}
+    for _, questID in ipairs(questIDs) do
+        if not watched[questID] and not logQuests[questID] then
+            local done, known = ReadCachedCompletion(api, questID, noDeparted)
+            if not known then
+                break
+            end
+            completed[questID] = done
+            watched[questID] = true
+        end
+    end
+    state.completedQuests, state.watchedQuests = completed, watched
+end
+
 function PlayerState:QuestLogFingerprint(state)
     if type(state) ~= "table" then
         return ""

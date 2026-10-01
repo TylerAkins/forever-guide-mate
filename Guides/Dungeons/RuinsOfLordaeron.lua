@@ -134,7 +134,9 @@ ns:RegisterGuide({
             kind = "travel",
             priority = 40,
             text = "Enter the Ruins of Lordaeron. Horde: use the portal above the Undercity. " ..
-                "Alliance: use the entrance in northern Tirisfal Glades.",
+                "Alliance: use the entrance in northern Tirisfal Glades. " ..
+                "Boss order: Witherfang, The Baron, Viktor the Vile, The Abandoned, Bjork, Rath'mael. " ..
+                "The Lordaeron Captain is a rare on the west side after the others die. He is friendly to Alliance and only Horde can kill him.",
             dependsOn = {
                 "accept-frightened-request",
                 "accept-wrath-of-rathmael",
@@ -176,7 +178,8 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Slay Rath'mael.",
+            text = "Slay Rath'mael in the center. Clear the mobs around him. " ..
+                "Interrupt or stun Flamestrike. Heal the aura around him. Edward Heartweaver's corpse is in the graveyard beside this area.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92422, "complete"),
         },
@@ -197,14 +200,15 @@ ns:RegisterGuide({
         {
             id = "complete-new-plague",
             kind = "objective",
-            priority = 43,
+            priority = 39,
             conditions = {
                 all = {
                     HORDE,
                     { level = { min = 16 } },
                 },
             },
-            text = "Take the Highly Toxic Strain from Witherfang, in the spider area across from the entrance.",
+            text = "Take the Highly Toxic Strain from Witherfang, by King's Alley across from the entrance. " ..
+                "She patrols with Broodlings. The fight is a poison on the tank.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(95216, "complete"),
         },
@@ -232,7 +236,8 @@ ns:RegisterGuide({
                     { level = { min = 16 } },
                 },
             },
-            text = "Collect the Head of the Baron.",
+            text = "Collect the Head of the Baron at the end of the southeast hall. " ..
+                "Stay behind him to avoid Cleave. He knocks the tank back and drops threat, so taunt immediately and do not get knocked into other packs.",
             dependsOn = { "accept-abominable-creatures" },
             complete = QuestState(95250, "complete"),
         },
@@ -246,7 +251,7 @@ ns:RegisterGuide({
                     { level = { min = 16 } },
                 },
             },
-            text = "Use the Abominable Head dropped by the abomination boss to accept Unending Torment.",
+            text = "Use the Abominable Head dropped by The Baron to accept Unending Torment. Everyone in the group can loot it.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(97288, "activeOrCompleted"),
         },
@@ -319,6 +324,47 @@ ns:RegisterGuide({
             text = "Read the Blood-Stained Letter found in the ruins to accept Remember That I Love You.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92415, "activeOrCompleted"),
+        },
+        {
+            id = "kill-viktor-the-vile",
+            kind = "note",
+            priority = 46,
+            conditions = { level = { min = 16 } },
+            text = "Summon Viktor the Vile from the Grim Campfire in the southwest house. " ..
+                "Clear the skeleton waves. Viktor himself is a tank-and-spank, so save healing for the adds.",
+            dependsOn = { "enter-ruins-of-lordaeron" },
+        },
+        {
+            id = "kill-the-abandoned",
+            kind = "note",
+            priority = 47,
+            conditions = { level = { min = 16 } },
+            text = "Walk up to the west statue with glowing red eyes to summon The Abandoned. " ..
+                "Three waves come first. Interrupt Drain Life. Frost Nova roots anyone close. Frost Armor slows attackers.",
+            dependsOn = { "kill-viktor-the-vile" },
+        },
+        {
+            id = "kill-bjork",
+            kind = "note",
+            priority = 48,
+            conditions = { level = { min = 16 } },
+            text = "Kill Bjork at the end of the northwest corridor. " ..
+                "His only danger is a knockback. Do not get knocked into other packs.",
+            dependsOn = { "kill-the-abandoned" },
+        },
+        {
+            id = "kill-lordaeron-captain",
+            kind = "note",
+            priority = 49,
+            conditions = {
+                all = {
+                    HORDE,
+                    { level = { min = 16 } },
+                },
+            },
+            text = "Kill the Lordaeron Captain if he spawned on the west side after the other bosses. " ..
+                "He is a long patrol. Clear around him. Alliance see him as friendly.",
+            dependsOn = { "kill-bjork" },
         },
         {
             id = "turnin-frightened-request",
