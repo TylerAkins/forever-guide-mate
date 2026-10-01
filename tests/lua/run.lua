@@ -818,6 +818,25 @@ local function TestWailingCavernsRoute()
     ns.Engine:Refresh(caveCaverns)
     Equal(ns.Engine.currentGoal.id, "turnin-hamuul-runetotem",
         "Thunder Bluff resumes after both cave quests are accepted")
+    local ebruCave = {}
+    for key, value in pairs(caveCaverns) do ebruCave[key] = value end
+    ebruCave.quests = {
+        [1489] = { complete = false },
+        [1486] = { complete = false },
+    }
+    ebruCave.mapID = 11
+    ebruCave.x, ebruCave.y = 0.5, 0.5
+    ns.charDB.activeGoal = nil
+    ns.Engine.inferredCompletedByGuide = nil
+    ns.Engine:Refresh(ebruCave)
+    Equal(ns.Engine.currentGoal.id, "accept-deviate-eradication",
+        "the Wailing Caverns cave stays on Deviate Eradication")
+    Equal(ns.UI:GoalInstruction(ns.Engine),
+        "Accept Deviate Eradication from Ebru in the same cave.",
+        "standing on Ebru accepts Deviate Eradication instead of boarding a boat")
+    local ebruLeg = ns.Navigation:GetActiveLeg(ns.Engine.currentGoal, ebruCave)
+    Equal(ebruLeg.mapID, 1413, "the cave pin stays the Barrens entrance")
+    Check(not ebruLeg.transport, "the cave does not route the Ratchet boat")
 end
 TestWailingCavernsRoute()
 

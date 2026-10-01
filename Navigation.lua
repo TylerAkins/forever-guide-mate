@@ -72,6 +72,14 @@ function Navigation:SameZone(first, second, api)
     return left ~= nil and left == right
 end
 
+-- A micro map or dungeon interior is not the zone map the entrance pin uses.
+-- UiMap 11 is the Wailing Caverns cave (Ebru and Nalpak). UiMap 279 is the instance.
+-- Both sit on the Barrens entrance. Without this, that cave routes a boat to Ratchet.
+local MICRO_ENTRANCE = {
+    [11] = { mapID = 1413, x = 0.460, y = 0.364, radius = 0.05 },
+    [279] = { mapID = 1413, x = 0.460, y = 0.364, radius = 0.05 },
+}
+
 function Navigation:OnMap(stateMap, legMap)
     if stateMap == legMap then return true end
     if self:SameZone(stateMap, legMap) then return true end
@@ -79,6 +87,15 @@ function Navigation:OnMap(stateMap, legMap)
     local left = ns.Travel:MapName(stateMap)
     local right = ns.Travel:MapName(legMap)
     return type(left) == "string" and left ~= "the next zone" and left == right
+end
+
+function Navigation:InsidePin(state, leg)
+    local entrance = type(state) == "table" and MICRO_ENTRANCE[state.mapID]
+    if not entrance or type(leg) ~= "table" or leg.mapID ~= entrance.mapID then return false end
+    if type(leg.x) ~= "number" or type(leg.y) ~= "number" then return false end
+    local dx = leg.x - entrance.x
+    local dy = leg.y - entrance.y
+    return (dx * dx) + (dy * dy) <= (entrance.radius * entrance.radius)
 end
 
 function Navigation:TransportLeg(leg, state)
@@ -373,7 +390,7 @@ function Navigation:GetActiveLeg(goal, state, api)
                 local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo)
                 if hop then return hop, hop.label end
             else
-                if self:OnMap(state.mapID, leg.mapID) then
+                if self:OnMap(state.mapID, leg.mapID) or self:InsidePin(state, leg) then
                     if not state.x or not state.y then
                         return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
                     end
