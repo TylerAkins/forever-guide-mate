@@ -4113,6 +4113,72 @@ function TestFlightWaypointOverridesQuestDestination()
 end
 TestFlightWaypointOverridesQuestDestination()
 
+function TestPinsStayOffInsideAnInstance()
+    local savedMap, savedTracking, savedPoint = C_Map, C_SuperTrack, UiMapPoint
+    local savedInstance, savedInfo = IsInInstance, GetInstanceInfo
+    local pin, quest, tracking, pinWrites, trackWrites = nil, 0, false, 0, 0
+    C_Map = {
+        GetUserWaypoint = function() return pin end,
+        SetUserWaypoint = function(point) pin = point; pinWrites = pinWrites + 1 end,
+        ClearUserWaypoint = function() pin = nil end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    UiMapPoint = { CreateFromCoordinates = function(mapID, x, y)
+        return { uiMapID = mapID, position = { x = x, y = y } }
+    end }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return quest end,
+        SetSuperTrackedQuestID = function(id) quest = id; trackWrites = trackWrites + 1; tracking = false end,
+        SetSuperTrackedUserWaypoint = function(value) tracking = value end,
+        IsSuperTrackingUserWaypoint = function() return tracking end,
+    }
+    ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
+    local waypoints = ns.TomTomWaypoints
+    waypoints:Clear()
+    local accept = { kind = "accept", complete = { quest = { id = 123 } }, route = {
+        { mapID = 11, x = 0.3, y = 0.4 },
+    } }
+    IsInInstance = function() return false, "none" end
+    waypoints:Sync(accept, {})
+    Equal(pinWrites, 1, "an outdoor accept still places a map pin")
+    IsInInstance = function() return true, "party" end
+    waypoints:Sync(accept, { instanceID = 389 })
+    Equal(pin, nil, "entering an instance clears the owned map pin")
+    Equal(pinWrites, 1, "an instance does not place another map pin")
+    waypoints:Sync(accept, { instanceID = 389 })
+    Equal(pinWrites, 1, "standing in an instance does not retry the map pin")
+    local objective = { kind = "objective", complete = { questObjective = { id = 123, index = 1 } } }
+    waypoints:Sync(objective, { instanceID = 389 })
+    Equal(quest, 0, "an instance does not super-track the quest")
+    Equal(trackWrites, 0, "an instance does not write quest tracking")
+    IsInInstance = nil
+    GetInstanceInfo = function() return "Ragefire Chasm", "party", 1, "Normal", 5, false, false, 389 end
+    waypoints:Sync(objective, {})
+    Equal(trackWrites, 0, "GetInstanceInfo also keeps quest tracking off")
+    GetInstanceInfo = nil
+    waypoints:Sync(objective, { instanceID = 389 })
+    Equal(trackWrites, 0, "a saved instance id keeps tracking off when the client API is missing")
+    IsInInstance = function() return false, "none" end
+    waypoints:Sync(objective, {})
+    Equal(quest, 123, "leaving the instance restores quest tracking")
+    local calls = {}
+    local tomtom = {
+        AddWaypoint = function(_, mapID) calls[#calls + 1] = mapID; return #calls end,
+        RemoveWaypoint = function(_, uid) calls[uid] = nil end,
+    }
+    IsInInstance = function() return true, "party" end
+    waypoints:Sync(accept, { instanceID = 389 }, tomtom)
+    Equal(#calls, 0, "TomTom does not add a waypoint inside an instance")
+    Equal(quest, 0, "entering an instance clears quest tracking before TomTom would run")
+    IsInInstance = function() return false, "none" end
+    waypoints:Sync(accept, {}, tomtom)
+    Equal(calls[1], 11, "TomTom resumes after leaving the instance")
+    waypoints:Clear()
+    IsInInstance, GetInstanceInfo = savedInstance, savedInfo
+    C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
+end
+TestPinsStayOffInsideAnInstance()
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)

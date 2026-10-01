@@ -475,6 +475,11 @@ do
     ns.Engine.currentGoal = { kind = "travel", route = { { mapID = 1454, x = 0.5, y = 0.5 } } }
     ns.MapPins:Refresh(map)
     Equal(acquired, 1, "ordinary travel retains the guide route marker")
+    local savedInstance = IsInInstance
+    IsInInstance = function() return true, "party" end
+    ns.MapPins:Refresh(map)
+    Equal(acquired, 1, "the world map does not add a guide pin inside an instance")
+    IsInInstance = savedInstance
 end
 
 function TestFlightLandingRefreshesGuide()

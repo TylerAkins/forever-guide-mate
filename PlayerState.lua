@@ -575,6 +575,27 @@ function PlayerState:CapturePosition(api)
     return mapID, x, y
 end
 
+function PlayerState:InInstance(state, api)
+    api = api or _G
+    if type(api.IsInInstance) == "function" then
+        local result, known = Call(api, "IsInInstance")
+        if known then return result[1] == true end
+    end
+    if type(api.GetInstanceInfo) == "function" then
+        local result, known = Call(api, "GetInstanceInfo")
+        if known then
+            local instanceType = result[2]
+            if type(instanceType) == "string" and instanceType ~= "" then
+                return instanceType ~= "none"
+            end
+            return type(result[8]) == "number" and result[8] > 0
+        end
+    end
+    state = state or (ns.Engine and ns.Engine.state)
+    local instanceID = type(state) == "table" and state.instanceID or nil
+    return type(instanceID) == "number" and instanceID > 0
+end
+
 function PlayerState:Capture(api, questIDs, priorityCount)
     api = api or _G
     local raceResult, raceKnown = Call(api, "UnitRace", "player")
