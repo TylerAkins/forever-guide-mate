@@ -1106,6 +1106,90 @@ function TestForgottenLoaIdols()
 end
 TestForgottenLoaIdols()
 
+function TestQuestActionsSkipBlockedCalls()
+    local savedTimer, savedLock = C_Timer, InCombatLockdown
+    local savedRestricted, savedEnum = C_RestrictedActions, Enum
+    ns.QuestDialog.actionsBlocked = nil
+    ns.Engine.currentGoal = ns.Engine:GetGoal(ragefire, "accept-searching-satchel")
+    local attempts = 0
+    local api = {
+        C_GossipInfo = {
+            GetAvailableQuests = function() return { { questID = 5722 } } end,
+            SelectAvailableQuest = function()
+                attempts = attempts + 1
+                error("AddOn 'ForeverGuideMate' tried to call the protected function 'SelectAvailableQuest'.")
+            end,
+            GetActiveQuests = function() return {} end,
+            SelectActiveQuest = function() attempts = attempts + 1 end,
+        },
+    }
+    C_Timer = { After = function(_, fn) fn() end }
+    ns.QuestDialog:Handle("GOSSIP_SHOW", api)
+    Equal(attempts, 1, "a blocked gossip select is not retried")
+    ns.QuestDialog:Handle("GOSSIP_SHOW", api)
+    Equal(attempts, 1, "a client that blocks quest actions is not called again")
+    ns.QuestDialog.actionsBlocked = nil
+    attempts = 0
+    InCombatLockdown = function() return true end
+    ns.QuestDialog:Handle("GOSSIP_SHOW", api)
+    Equal(attempts, 0, "combat does not select a gossip quest")
+    InCombatLockdown = nil
+    C_RestrictedActions = {
+        IsAddOnRestrictionActive = function(kind) return kind == 0 end,
+    }
+    Enum = { AddOnRestrictionType = { Combat = 0, Encounter = 1, ChallengeMode = 2, PvPMatch = 3 } }
+    ns.QuestDialog:Handle("GOSSIP_SHOW", api)
+    Equal(attempts, 0, "an active combat restriction does not select a gossip quest")
+    C_Timer, InCombatLockdown = savedTimer, savedLock
+    C_RestrictedActions, Enum = savedRestricted, savedEnum
+    ns.QuestDialog.actionsBlocked = nil
+end
+TestQuestActionsSkipBlockedCalls()
+
+function TestBlockedQuestTrackingIsNotRetried()
+    local savedMap, savedTracking, savedPoint = C_Map, C_SuperTrack, UiMapPoint
+    local savedInstance = IsInInstance
+    local writes = 0
+    IsInInstance = function() return false, "none" end
+    C_Map = {
+        GetUserWaypoint = function() return nil end,
+        SetUserWaypoint = function() end,
+        ClearUserWaypoint = function() end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    UiMapPoint = { CreateFromCoordinates = function() return nil end }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return 0 end,
+        SetSuperTrackedQuestID = function()
+            writes = writes + 1
+            error("AddOn tried to call the protected function 'SetSuperTrackedQuestID'.")
+        end,
+        SetSuperTrackedUserWaypoint = function() end,
+        IsSuperTrackingUserWaypoint = function() return false end,
+    }
+    local savedOpen, savedProvider = ns.db.uiOpen, ns.db.waypointProvider
+    ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
+    local waypoints = ns.TomTomWaypoints
+    waypoints.questID, waypoints.point = nil, nil
+    waypoints.blizzardPinsBlocked = nil
+    waypoints:Clear()
+    writes = 0
+    waypoints.blizzardPinsBlocked = nil
+    waypoints.suspended = false
+    waypoints.selection = nil
+    local objective = { kind = "objective", complete = { questObjective = { id = 50, index = 1 } } }
+    waypoints:Sync(objective, {})
+    waypoints:Sync(objective, {})
+    Equal(writes, 1, "a blocked quest-tracking call is not repeated")
+    waypoints.blizzardPinsBlocked = nil
+    waypoints.suspended = false
+    waypoints:Clear()
+    ns.db.uiOpen, ns.db.waypointProvider = savedOpen, savedProvider
+    IsInInstance = savedInstance
+    C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
+end
+TestBlockedQuestTrackingIsNotRetried()
+
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
 function TestEliteLabels()
@@ -4228,7 +4312,7 @@ function TestPinsStayOffInsideAnInstance()
     Equal(pinWrites, 1, "an outdoor accept still places a map pin")
     IsInInstance = function() return true, "party" end
     waypoints:Sync(accept, { instanceID = 389 })
-    Equal(pin, nil, "entering an instance clears the owned map pin")
+    Equal(pin ~= nil, true, "an instance does not call the waypoint API to clear the pin")
     Equal(pinWrites, 1, "an instance does not place another map pin")
     waypoints:Sync(accept, { instanceID = 389 })
     Equal(pinWrites, 1, "standing in an instance does not retry the map pin")
@@ -4252,9 +4336,10 @@ function TestPinsStayOffInsideAnInstance()
         RemoveWaypoint = function(_, uid) calls[uid] = nil end,
     }
     IsInInstance = function() return true, "party" end
+    local trackedBeforeInstance = trackWrites
     waypoints:Sync(accept, { instanceID = 389 }, tomtom)
     Equal(#calls, 0, "TomTom does not add a waypoint inside an instance")
-    Equal(quest, 0, "entering an instance clears quest tracking before TomTom would run")
+    Equal(trackWrites, trackedBeforeInstance, "entering an instance does not call quest tracking")
     IsInInstance = function() return false, "none" end
     waypoints:Sync(accept, {}, tomtom)
     Equal(calls[1], 11, "TomTom resumes after leaving the instance")
