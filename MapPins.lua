@@ -45,6 +45,7 @@ end
 function MapPins:Refresh(mapCanvas)
     mapCanvas = mapCanvas or WorldMapFrame
     self:Clear(mapCanvas)
+    if ns.PlayerState and ns.PlayerState:InInstance(ns.Engine and ns.Engine.state) then return end
     if not mapCanvas or not mapCanvas.AcquirePin
         or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
         or ((ns.db.waypointProvider or "blizzard") == "blizzard"
