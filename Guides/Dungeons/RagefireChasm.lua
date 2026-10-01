@@ -35,7 +35,7 @@ ns:RegisterGuide({
     id = "dungeons-ragefire-chasm-horde",
     title = "Ragefire Chasm",
     category = "Dungeon Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -162,11 +162,23 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-slaying-beast",
+            kind = "accept",
+            priority = 34.5,
+            conditions = { level = { min = 9 } },
+            text = "Accept Slaying the Beast from Neeru Fireblade.",
+            dependsOn = { "gauge-neeru" },
+            complete = QuestState(5761, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
+            },
+        },
+        {
             id = "turnin-hidden-enemies-2",
             kind = "turnin",
             priority = 35,
             conditions = { level = { min = 9 } },
-            text = "Report Neeru's reaction to Thrall.",
+            text = "Turn in Hidden Enemies to Thrall.",
             dependsOn = { "gauge-neeru" },
             complete = QuestState(5727, "completed"),
             route = {
@@ -178,23 +190,11 @@ ns:RegisterGuide({
             kind = "accept",
             priority = 36,
             conditions = { level = { min = 9 } },
-            text = "Accept the dungeon step of Hidden Enemies from Thrall.",
+            text = "Accept the next Hidden Enemies from Thrall. This step is the Ragefire Chasm kill quest.",
             dependsOn = { "turnin-hidden-enemies-2" },
             complete = QuestState(5728, "activeOrCompleted"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.320, 0.378, "Thrall in the Valley of Wisdom"),
-            },
-        },
-        {
-            id = "accept-slaying-beast",
-            kind = "accept",
-            priority = 37,
-            conditions = { level = { min = 9 } },
-            text = "Accept Slaying the Beast from Neeru Fireblade.",
-            dependsOn = { "turnin-hidden-enemies-2" },
-            complete = QuestState(5761, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.496, 0.506, "Neeru Fireblade in the Cleft of Shadow"),
             },
         },
         {
@@ -223,7 +223,7 @@ ns:RegisterGuide({
             priority = 41,
             conditions = { level = { min = 9 } },
             text = "Defeat 8 Ragefire Troggs and 8 Ragefire Shamans.",
-            dependsOn = { "enter-ragefire-chasm" },
+            dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
             complete = QuestState(5723, "complete"),
         },
         {
@@ -232,7 +232,7 @@ ns:RegisterGuide({
             priority = 42,
             conditions = { level = { min = 9 } },
             text = "Find Maur Grimtotem in the side cave beyond the first trogg room.",
-            dependsOn = { "enter-ragefire-chasm" },
+            dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
             complete = QuestState(5722, "complete"),
         },
         {
@@ -260,7 +260,7 @@ ns:RegisterGuide({
             conditions = { level = { min = 9 } },
             text = "Slay Taragaman the Hungerer and loot his heart. " ..
                 "Keep him off the platform edge so Uppercut does not knock the tank into the lava. Ranged stay out of Fire Nova.",
-            dependsOn = { "enter-ragefire-chasm" },
+            dependsOn = { "accept-slaying-beast", "enter-ragefire-chasm" },
             complete = QuestState(5761, "complete"),
         },
         {
@@ -269,7 +269,7 @@ ns:RegisterGuide({
             priority = 46,
             conditions = { level = { min = 9 } },
             text = "Recover Spells of Shadow and Incantations from the Nether from Searing Blade cultists.",
-            dependsOn = { "enter-ragefire-chasm" },
+            dependsOn = { "accept-hidden-enemies-3", "accept-slaying-beast", "enter-ragefire-chasm" },
             complete = QuestState(5725, "complete"),
         },
         {
@@ -280,7 +280,7 @@ ns:RegisterGuide({
             text = "Slay Jergosh the Invoker, then Bazzalan. " ..
                 "Crowd-control one of Jergosh's guards and kill the adds first. " ..
                 "Pull the cultist on Bazzalan's right before the fight, then crowd-control the other cultist.",
-            dependsOn = { "enter-ragefire-chasm" },
+            dependsOn = { "accept-hidden-enemies-3", "enter-ragefire-chasm" },
             complete = QuestState(5728, "complete"),
         },
         {
