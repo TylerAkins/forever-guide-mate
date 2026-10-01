@@ -136,6 +136,42 @@ local function Call(fn, ...)
     if ok then return a, b, c, d, e, f, g, h end
 end
 
+-- A refused protected call still counts on the addon list, even inside pcall.
+local function BlockedMessage(message)
+    message = string.lower(tostring(message or ""))
+    return string.find(message, "protected", 1, true) ~= nil
+        or string.find(message, "forbidden", 1, true) ~= nil
+        or string.find(message, "interface action", 1, true) ~= nil
+        or string.find(message, "addon_action", 1, true) ~= nil
+end
+
+function QuestDialog:ActionsAllowed()
+    if self.actionsBlocked then return false end
+    if type(InCombatLockdown) == "function" and InCombatLockdown() then return false end
+    local restricted = C_RestrictedActions
+    local kinds = Enum and Enum.AddOnRestrictionType
+    if type(restricted) ~= "table" or type(restricted.IsAddOnRestrictionActive) ~= "function"
+        or type(kinds) ~= "table" then
+        return true
+    end
+    for _, name in ipairs({ "Combat", "Encounter", "ChallengeMode", "PvPMatch" }) do
+        local kind = kinds[name]
+        if kind ~= nil then
+            local ok, active = pcall(restricted.IsAddOnRestrictionActive, kind)
+            if ok and active then return false end
+        end
+    end
+    return true
+end
+
+function QuestDialog:Perform(fn, ...)
+    if type(fn) ~= "function" or not self:ActionsAllowed() then return false end
+    local ok, err = pcall(fn, ...)
+    if ok then return true end
+    if BlockedMessage(err) then self.actionsBlocked = true end
+    return false
+end
+
 local function ReportedComplete(value)
     return value == true or (type(value) == "number" and value > 0)
 end
@@ -168,13 +204,14 @@ function QuestDialog:SelectGossipQuest(entries, goals, kind, selectFn)
             local questID = self:GossipQuestID(entry)
             local title = type(entry) == "table" and entry.title or nil
             if self:RowMatchesGoal(goal, questID, title, kind) then
+                local selectedID = questID or self:GoalQuestID(goal)
+                if not selectFn(selectedID) then return false end
                 if kind == "accept" then
                     self.expectDetailAccept = true
-                    self.pendingAcceptID = questID or self:GoalQuestID(goal)
+                    self.pendingAcceptID = selectedID
                 else
-                    self.pendingTurnInID = questID or self:GoalQuestID(goal)
+                    self.pendingTurnInID = selectedID
                 end
-                selectFn(questID or self:GoalQuestID(goal))
                 return true
             end
         end
@@ -193,7 +230,7 @@ function QuestDialog:SelectGossip(api)
         end
         local quests = Call(info.GetAvailableQuests)
         return self:SelectGossipQuest(quests, self:SameGiverGoals("accept"), "accept", function(questID)
-            Call(info.SelectAvailableQuest, questID)
+            return self:Perform(info.SelectAvailableQuest, questID)
         end)
     end
     local function TurnIns()
@@ -209,16 +246,17 @@ function QuestDialog:SelectGossip(api)
             end
         end
         if self:SelectGossipQuest(ready, self:SameGiverGoals("turnin"), "turnin", function(questID)
-            Call(info.SelectActiveQuest, questID)
+            return self:Perform(info.SelectActiveQuest, questID)
         end) then
             return true
         end
         for _, quest in ipairs(ready) do
             if self:ActiveQuestReady(api, quest) then
                 local questID = self:GossipQuestID(quest)
-                self.pendingTurnInID = questID
-                Call(info.SelectActiveQuest, questID)
-                return true
+                if self:Perform(info.SelectActiveQuest, questID) then
+                    self.pendingTurnInID = questID
+                    return true
+                end
             end
         end
         return false
@@ -275,9 +313,9 @@ function QuestDialog:SelectGreetingAvailable(api)
         for index = 1, num do
             local title, questID = self:GreetingAvailable(api, index)
             if self:RowMatchesGoal(goal, questID, title, "accept") then
+                if not self:Perform(api.SelectAvailableQuest, index) then return false end
                 self.expectDetailAccept = true
                 self.pendingAcceptID = questID or self:GoalQuestID(goal)
-                Call(api.SelectAvailableQuest, index)
                 return true
             end
         end
@@ -297,8 +335,8 @@ function QuestDialog:SelectGreetingActive(api)
             local title, questID, isComplete = self:GreetingActive(api, index)
             if isComplete ~= false and isComplete ~= 0
                 and self:RowMatchesGoal(goal, questID, title, "turnin") then
+                if not self:Perform(api.SelectActiveQuest, index) then return false end
                 self.pendingTurnInID = questID or self:GoalQuestID(goal)
-                Call(api.SelectActiveQuest, index)
                 return true
             end
         end
@@ -328,35 +366,57 @@ end
 function QuestDialog:Accept(api)
     local questID = Call(api.GetQuestID)
     local selected = self.expectDetailAccept and questID == self.pendingAcceptID
-    if self:Accepts(questID) or selected then
-        self.expectDetailAccept = nil
-        self.pendingAcceptID = nil
-        Later(function() Call(api.AcceptQuest) end)
-    end
+    if not (self:Accepts(questID) or selected) or not self:ActionsAllowed() then return end
+    self.expectDetailAccept = nil
+    self.pendingAcceptID = nil
+    Later(function()
+        if not QuestDialog:ActionsAllowed() then
+            if selected then
+                QuestDialog.expectDetailAccept = true
+                QuestDialog.pendingAcceptID = questID
+            end
+            return
+        end
+        QuestDialog:Perform(api.AcceptQuest)
+    end)
 end
 
 function QuestDialog:Progress(api)
     local questID = Call(api.GetQuestID)
     local wanted = self:Uses(questID) or questID == self.pendingTurnInID
-    if not wanted or not Call(api.IsQuestCompletable) then return end
+    if not wanted or not Call(api.IsQuestCompletable) or not self:ActionsAllowed() then return end
     local questLog = type(api) == "table" and api.C_QuestLog or nil
     if type(questLog) == "table" and type(questLog.IsComplete) == "function" then
         local complete = Call(questLog.IsComplete, questID)
         if complete == false or complete == 0 then return end
     end
+    local remembered = self.pendingTurnInID
     self.pendingTurnInID = nil
     -- Completing inside the progress event is ignored. The click has to land
     -- after the list has finished opening the quest.
-    Later(function() Call(api.CompleteQuest) end)
+    Later(function()
+        if not QuestDialog:ActionsAllowed() then
+            QuestDialog.pendingTurnInID = remembered
+            return
+        end
+        QuestDialog:Perform(api.CompleteQuest)
+    end)
 end
 
 function QuestDialog:Reward(api)
     local questID = Call(api.GetQuestID)
     local choices = Call(api.GetNumQuestChoices)
-    if (self:Uses(questID) or questID == self.pendingTurnInID) and type(choices) == "number" and choices <= 1 then
-        self.pendingTurnInID = nil
-        Later(function() Call(api.GetQuestReward, 1) end)
-    end
+    local wanted = self:Uses(questID) or questID == self.pendingTurnInID
+    if not wanted or type(choices) ~= "number" or choices > 1 or not self:ActionsAllowed() then return end
+    local remembered = self.pendingTurnInID
+    self.pendingTurnInID = nil
+    Later(function()
+        if not QuestDialog:ActionsAllowed() then
+            QuestDialog.pendingTurnInID = remembered
+            return
+        end
+        QuestDialog:Perform(api.GetQuestReward, 1)
+    end)
 end
 
 function QuestDialog:FrameShown(frame)
@@ -366,7 +426,7 @@ end
 
 function QuestDialog:Retry(api)
     api = api or _G
-    if not self:Enabled() then return false end
+    if not self:Enabled() or not self:ActionsAllowed() then return false end
     local questFrame = api.QuestFrame
     local gossipFrame = api.GossipFrame
     local greeting = (type(questFrame) == "table" and questFrame.GreetingPanel)
@@ -391,6 +451,7 @@ function QuestDialog:Retry(api)
 end
 
 function QuestDialog:ScheduleRetry(api)
+    if not self:ActionsAllowed() then return end
     if not (C_Timer and type(C_Timer.After) == "function") then return end
     if (self.retryCount or 0) >= 6 then return end
     self.retryCount = (self.retryCount or 0) + 1

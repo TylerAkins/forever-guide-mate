@@ -85,6 +85,22 @@ function Waypoints:OwnsPin()
         and point.position.x == self.point.position.x and point.position.y == self.point.position.y
 end
 
+local function BlockedMessage(message)
+    message = string.lower(tostring(message or ""))
+    return string.find(message, "protected", 1, true) ~= nil
+        or string.find(message, "forbidden", 1, true) ~= nil
+        or string.find(message, "interface action", 1, true) ~= nil
+        or string.find(message, "addon_action", 1, true) ~= nil
+end
+
+function Waypoints:CallBlizzard(fn, ...)
+    if self.blizzardPinsBlocked or type(fn) ~= "function" then return false end
+    local ok, err = pcall(fn, ...)
+    if ok then return true end
+    if BlockedMessage(err) then self.blizzardPinsBlocked = true end
+    return false
+end
+
 local ClearTomTom = Waypoints.Clear
 function Waypoints:Clear(api)
     local applying = self.applying
@@ -92,24 +108,39 @@ function Waypoints:Clear(api)
     ClearTomTom(self, self.owner or api)
     self.applying = applying
     self.owner = nil
-    if self.questID and C_SuperTrack and type(C_SuperTrack.GetSuperTrackedQuestID) == "function"
+    if not self.blizzardPinsBlocked and self.questID and C_SuperTrack
+        and type(C_SuperTrack.GetSuperTrackedQuestID) == "function"
         and type(C_SuperTrack.SetSuperTrackedQuestID) == "function" then
         local ok, tracked = pcall(C_SuperTrack.GetSuperTrackedQuestID)
-        if ok and tracked == self.questID then pcall(C_SuperTrack.SetSuperTrackedQuestID, 0) end
+        if ok and tracked == self.questID then
+            self:CallBlizzard(C_SuperTrack.SetSuperTrackedQuestID, 0)
+        end
     end
-    if self:OwnsPin() and type(C_Map.ClearUserWaypoint) == "function" then pcall(C_Map.ClearUserWaypoint) end
+    if not self.blizzardPinsBlocked and self:OwnsPin() and type(C_Map.ClearUserWaypoint) == "function" then
+        self:CallBlizzard(C_Map.ClearUserWaypoint)
+    end
     self.questID, self.point = nil, nil
 end
 
 function Waypoints:Sync(goal, state, api)
     state = state or {}
     if ns.PlayerState and ns.PlayerState:InInstance(state) then
-        if self.waypoint or self.point or self.questID or self.selection then
-            self:Clear(api)
+        -- Drop the TomTom arrow. Leave Blizzard's pin until we are outside,
+        -- because clearing it here is a blocked interface action.
+        if not self.heldForInstance then
+            self.heldForInstance = true
+            if self.waypoint then
+                local applying = self.applying
+                self.applying = true
+                ClearTomTom(self, self.owner or api)
+                self.applying = applying
+                self.owner = nil
+            end
             self.selection, self.suspended = nil, false
         end
         return
     end
+    self.heldForInstance = nil
     local provider = api and "tomtom" or (ns.db and ns.db.waypointProvider or "blizzard")
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
     local flightLeg = routeLeg and routeLeg.flight and routeLeg
@@ -139,8 +170,12 @@ function Waypoints:Sync(goal, state, api)
         end
         if self.questID ~= questID then
             self:Clear()
-            C_SuperTrack.SetSuperTrackedQuestID(questID)
-            self.questID = questID
+            if self:CallBlizzard(C_SuperTrack.SetSuperTrackedQuestID, questID) then
+                self.questID = questID
+            else
+                self.questID = nil
+                self.suspended = true
+            end
         end
 
         self:Report(nil)
@@ -208,10 +243,15 @@ function Waypoints:Sync(goal, state, api)
         if not self.point or self.point.uiMapID ~= leg.mapID or self.point.position.x ~= leg.x
             or self.point.position.y ~= leg.y then
             self:Clear()
-            self.point = UiMapPoint.CreateFromCoordinates(leg.mapID, leg.x, leg.y)
-            C_Map.SetUserWaypoint(self.point)
-            if C_SuperTrack and type(C_SuperTrack.SetSuperTrackedUserWaypoint) == "function" then
-                C_SuperTrack.SetSuperTrackedUserWaypoint(true)
+            local point = UiMapPoint.CreateFromCoordinates(leg.mapID, leg.x, leg.y)
+            if self:CallBlizzard(C_Map.SetUserWaypoint, point) then
+                self.point = point
+                if C_SuperTrack and type(C_SuperTrack.SetSuperTrackedUserWaypoint) == "function" then
+                    self:CallBlizzard(C_SuperTrack.SetSuperTrackedUserWaypoint, true)
+                end
+            else
+                self.point = nil
+                self.suspended = true
             end
         end
     end
