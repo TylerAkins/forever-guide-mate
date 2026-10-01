@@ -164,11 +164,6 @@ local function SetButtonTooltip(button, tooltip)
         if GameTooltip then
             GameTooltip:SetOwner(self, "ANCHOR_LEFT")
             GameTooltip:SetText(tooltip)
-            if GameTooltip.AddLine then
-                GameTooltip:AddLine("Left-click to show or hide the guide.", 1, 1, 1)
-                GameTooltip:AddLine("Right-click for options.", 1, 1, 1)
-                GameTooltip:AddLine("Drag to move around the minimap.", 0.8, 0.8, 0.8)
-            end
             GameTooltip:Show()
         end
     end)
