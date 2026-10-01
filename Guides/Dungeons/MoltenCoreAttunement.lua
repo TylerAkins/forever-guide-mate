@@ -1,3 +1,6 @@
+-- TODO: Convert this guide to Forever before loading it.
+-- Not shipped. Onyxia's Lair is the only raid content confirmed in Forever.
+
 local _, ns = ...
 
 local MAP = {
