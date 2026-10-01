@@ -307,7 +307,12 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Take the gems from Lady Anacondra, Lord Cobrahn, Lord Pythas, and Lord Serpentis.",
+            text = "Take the gems from Lady Anacondra, Lord Cobrahn, Lord Pythas, and Lord Serpentis. " ..
+                "Interrupt their Sleep. Kill Cobrahn's three Deviate Pythons first. " ..
+                "On Pythas, crowd-control the Druid of the Fang and kill the other add. " ..
+                "Kresh, before Anacondra, is a tank-and-spank. Skum's Chained Bolt splashes nearby players, so spread out. " ..
+                "Verdan's Grasping Vines roots and knocks down anyone within 10 yards. " ..
+                "The Deviate Faerie Dragon in the Winding Chasm is a rare.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(914, "complete"),
         },
@@ -325,7 +330,9 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 51,
             conditions = { level = { min = 10 } },
-            text = "Escort the Disciple of Naralex and keep him alive while he wakes the sleeping druid.",
+            text = "Escort the Disciple of Naralex from the dungeon entrance and keep him alive. " ..
+                "After the four Fanglords are dead, waves attack at Naralex's stone and Mutanus the Devourer spawns. " ..
+                "Ranged handle Mutanus: Thunderclap hits the tank and nearby melee, and Terrify and Naralex's Nightmare stun.",
             dependsOn = { "accept-dreams-turn-to-nightmares" },
             complete = QuestState(999, "complete"),
         },
