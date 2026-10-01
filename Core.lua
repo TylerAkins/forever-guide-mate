@@ -375,8 +375,9 @@ local function OnEvent(_, event, arg1)
         if ns.UI.CloseSettingsIfOpen then ns.UI:CloseSettingsIfOpen() end
         if ns.UI.ApplySettings then ns.UI:ApplySettings() end
         return
-    elseif event == "PLAYER_REGEN_ENABLED" and ns.UI and ns.UI.ApplySettings then
-        ns.UI:ApplySettings()
+    elseif event == "PLAYER_REGEN_ENABLED" then
+        if ns.UI and ns.UI.ApplySettings then ns.UI:ApplySettings() end
+        if ns.QuestDialog then ns.QuestDialog:Retry() end
         return
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
