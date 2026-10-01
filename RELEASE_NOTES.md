@@ -1,6 +1,3 @@
-## 0.1.46 - 2026-10-01
+## 0.1.47 - 2026-10-01
 
-- Dungeon and raid guides follow their authored route instead of jumping to every quest on your current map. A pickup you already started still finishes the other quests at that pin, so Wailing Caverns accepts Deviate Eradication beside Deviate Hides before it sends you to Thunder Bluff.
-- Standing in the Wailing Caverns cave with Ebru accepts Deviate Eradication. Accept, turn-in, and gossip steps no longer use the global boat graph, and the tracker shows the quest text when you are at the pin.
-- `python3 tools/compile_addon.py --install` copies the built addon into the WoW AddOns path from `install.json`.
-- Tracker Sync, Back, Skip, and Mark complete tooltips show only their own help text, not the minimap button lines.
+- Quest accept, turn-in, and map-pin calls no longer run when the client would block them. That was adding to "Interface actions failed because of this AddOn" on the addon list, including repeated tries after a blocked call and clearing a Blizzard pin from inside a dungeon.
