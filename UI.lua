@@ -980,7 +980,8 @@ function UI:GoalInstruction(engine)
         return goal.text
     end
     if leg and state.mapID and not ns.Navigation:OnMap(state.mapID, leg.mapID)
-        and not ns.Navigation:InsidePin(state, leg) then
+        and not ns.Navigation:InsidePin(state, leg)
+        and not ns.Navigation:InZone(state.mapID, leg.mapID) then
         return status or leg.offMapText or leg.label or goal.text
     end
     if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
