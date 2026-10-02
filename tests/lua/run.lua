@@ -1815,6 +1815,7 @@ ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
     "both grove objectives lead back to the Infestation Investigation turn-in")
 grove.completedQuests[92462] = true
+grove.level = 3
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-cirrusfly-queen",
@@ -1829,13 +1830,13 @@ ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-way-of-the-hunter",
     "The Way of the Hunter opens after Harmony in Balance is turned in")
 local followUps = {
-    { "accept-the-way-of-the-hunter", "turnin-harmony-in-balance" },
-    { "accept-the-warriors-path", "turnin-harmony-in-balance" },
+    { "accept-the-way-of-the-hunter", "turnin-92461-harmony-in-balance" },
+    { "accept-the-warriors-path", "turnin-92461-harmony-in-balance" },
     { "accept-the-cirrusfly-queen", "turnin-infestation-investigation" },
-    { "accept-elemental-unrest", "turnin-harmony-in-balance" },
+    { "accept-elemental-unrest", "turnin-92461-harmony-in-balance" },
     { "accept-the-adventurer", "turnin-foul-matriarch" },
     { "accept-infiltrating-the-cult", "turnin-the-criminal-element" },
-    { "accept-the-western-watch", "turnin-havoc-in-the-highlands" },
+    { "accept-the-western-watch", "turnin-92550-havoc-in-the-highlands" },
     { "accept-the-fate-of-a-loved-one", "turnin-aid-for-the-refugees" },
     { "accept-welcome-to-azeroth-94947", "turnin-the-magical-city-of-dalaran" },
     { "accept-exploring-the-alliance", "turnin-welcome-to-azeroth-94947" },
@@ -1853,7 +1854,7 @@ for _, pair in ipairs(followUps) do
 end
 function TestZephrasClientQuestData()
 local zephrasObjective = ns.Engine:GetGoal(zephras, "objective-harmony-in-balance")
-local zephrasTurnin = ns.Engine:GetGoal(zephras, "turnin-harmony-in-balance")
+local zephrasTurnin = ns.Engine:GetGoal(zephras, "turnin-92461-harmony-in-balance")
 local zephrasAccept = ns.Engine:GetGoal(zephras, "accept-harmony-in-balance")
 local zephrasGossip = ns.Engine:GetGoal(zephras, "gossip-the-anchors-of-zephras")
 Equal(zephrasObjective.useClientPin, true, "Zephras objectives prefer client pins")
@@ -1870,7 +1871,7 @@ local function HasDependency(goal, dependencyID)
     end
     return false
 end
-Check(HasDependency(elementalAccept, "turnin-harmony-in-balance"),
+Check(HasDependency(elementalAccept, "turnin-92461-harmony-in-balance"),
     "Elemental Unrest routes to its giver after Harmony in Balance")
 Check(HasDependency(elementalTurnin, "accept-elemental-unrest"),
     "Elemental Unrest routes onward only after acceptance")
@@ -1925,7 +1926,7 @@ local thendalDeparture = {
     },
 }
 local departureState = {
-    faction = "Horde", raceID = 96, classID = 1, level = 4,
+    faction = "Horde", raceID = 96, classID = 1, level = 6,
     professions = {}, professionsKnown = true,
     quests = {}, completedQuests = { [92470] = true },
     questLogKnown = true, questCompletionKnown = true,
@@ -2048,7 +2049,7 @@ local allianceSkyborne = {}
 for key, value in pairs(starter) do allianceSkyborne[key] = value end
 allianceSkyborne.faction = "Alliance"
 allianceSkyborne.raceID = 95
-allianceSkyborne.level = 2
+allianceSkyborne.level = 4
 Equal(ns.EvaluateCondition(leyLines.conditions, allianceSkyborne), true, "alliance skyborne can read the ley lines")
 Equal(ns.EvaluateCondition(skysight.conditions, allianceSkyborne), false, "alliance skyborne do not get Skysight")
 Equal(ns.EvaluateCondition(falling.conditions, allianceSkyborne), true, "alliance skyborne can take Falling With Style")
@@ -2056,7 +2057,7 @@ local hordeSkyborne = {}
 for key, value in pairs(starter) do hordeSkyborne[key] = value end
 hordeSkyborne.faction = "Horde"
 hordeSkyborne.raceID = 96
-hordeSkyborne.level = 2
+hordeSkyborne.level = 4
 Equal(ns.EvaluateCondition(leyLines.conditions, hordeSkyborne), false, "horde skyborne do not read the ley lines")
 Equal(ns.EvaluateCondition(skysight.conditions, hordeSkyborne), true, "horde skyborne can take Skysight")
 Equal(ns.EvaluateCondition(falling.conditions, hordeSkyborne), true, "horde skyborne can take Falling With Style")
@@ -2084,7 +2085,7 @@ beforeAetheen.quests = {}
 beforeAetheen.completedQuests = {}
 Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
     "Foul Matriarch waits until Aetheen of the Gales can be completed")
-beforeAetheen.level = 4
+beforeAetheen.level = 5
 Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
     "Foul Matriarch stays locked until Aetheen of the Gales is turned in")
 beforeAetheen.completedQuests[92471] = true

@@ -149,6 +149,7 @@ ns:RegisterGuide({
             priority = 50,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { faction = "Horde" },
                     { race = { 2, 8 } },
                 },
@@ -184,6 +185,7 @@ ns:RegisterGuide({
             priority = 70,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { faction = "Horde" },
                     { race = { 2, 8 } },
                 },
@@ -293,6 +295,7 @@ ns:RegisterGuide({
             priority = 130,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { faction = "Horde" },
                     { race = { 2, 8 } },
                 },
@@ -1436,7 +1439,12 @@ ns:RegisterGuide({
             id = "accept-96652-the-adventurer",
             kind = "accept",
             priority = 760,
-            conditions = { level = { min = 4 } },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
             useClientPin = true,
             text = "Accept The Adventurer from the Lost Journal. No saved spot for the journal, so the guide follows the pin in your quest log.",
             complete = QuestState(96652, "activeOrCompleted"),
@@ -1554,7 +1562,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Accept Bloodtalon Matriarch from Xar'Ti.",
@@ -1571,7 +1579,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1625,7 +1633,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { quest = { id = 96876, state = "activeOrCompleted" } },
                 },
             },
@@ -1640,7 +1648,12 @@ ns:RegisterGuide({
             id = "turnin-96652-the-adventurer",
             kind = "turnin",
             priority = 880,
-            conditions = { level = { min = 4 } },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
             text = "Turn in The Adventurer to Brakk near Razor Hill.",
             dependsOn = { "accept-96652-the-adventurer" },
             complete = QuestState(96652, "completed"),
@@ -1653,7 +1666,7 @@ ns:RegisterGuide({
             id = "accept-96101-the-great-outdoors",
             kind = "accept",
             priority = 890,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Accept The Great Outdoors from Brakk.",
             dependsOn = { "turnin-96652-the-adventurer" },
             complete = QuestState(96101, "activeOrCompleted"),
@@ -1666,7 +1679,7 @@ ns:RegisterGuide({
             id = "objective-96101-the-great-outdoors",
             kind = "objective",
             priority = 900,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Type /sit at Brakk's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-96101-the-great-outdoors" },
             complete = QuestState(96101, "complete"),
@@ -1675,7 +1688,7 @@ ns:RegisterGuide({
             id = "turnin-96101-the-great-outdoors",
             kind = "turnin",
             priority = 910,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Turn in The Great Outdoors to Brakk.",
             dependsOn = { "objective-96101-the-great-outdoors" },
             complete = QuestState(96101, "completed"),
@@ -1762,7 +1775,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept For Honor from Turroc.",
@@ -1830,7 +1843,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept This Fruit Could Bite Back from Cook Torka.",
@@ -1972,7 +1985,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in For Honor to Turroc.",
@@ -1990,7 +2003,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in This Fruit Could Bite Back to Cook Torka.",
@@ -2078,7 +2091,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             useClientPin = true,
@@ -2097,7 +2110,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             useClientPin = true,
@@ -2116,7 +2129,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             useClientPin = true,
@@ -2135,7 +2148,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 3 } },
+                    { level = { min = 6 } },
                 },
             },
             useClientPin = true,
@@ -2317,7 +2330,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Accept Lost in the Shadows from Pal'juh.",
@@ -2334,7 +2347,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Lost in the Shadows: Escort Pal'juh. Pal'juh starts inside Kolkar Crag.",
@@ -2424,7 +2437,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Turn in Lost in the Shadows to Master Vornal.",
@@ -2479,7 +2492,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Bloodtalon Matriarch: Bloodtalon Martriarch Eggs.",
@@ -2497,7 +2510,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2662,7 +2675,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                 },
             },
             text = "Turn in Bloodtalon Matriarch to Xar'Ti.",
@@ -2680,7 +2693,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 5 } },
+                    { level = { min = 8 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -3073,7 +3086,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3091,7 +3104,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3559,7 +3572,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3578,7 +3591,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -3597,7 +3610,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3616,7 +3629,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },
@@ -3635,7 +3648,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3653,7 +3666,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3672,7 +3685,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3691,7 +3704,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 7 } },
+                    { level = { min = 11 } },
                     { quest = { id = 97281, state = "activeOrCompleted" } },
                 },
             },
@@ -3746,7 +3759,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept A Missing Hand from Orgnil Soulscar.",
@@ -3763,7 +3776,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in A Missing Hand to Heglan Shadeeye.",
@@ -3781,7 +3794,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Threat from Below from Heglan Shadeeye.",
@@ -3799,7 +3812,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             useClientPin = true,
@@ -3818,7 +3831,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             useClientPin = true,
@@ -3837,7 +3850,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             useClientPin = true,
@@ -3856,7 +3869,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -3874,7 +3887,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Accept Threat from Below from Orgnil Soulscar.",
@@ -3892,7 +3905,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Threat from Below: Naga Spinefin.",
@@ -3910,7 +3923,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 9 } },
+                    { level = { min = 11 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -3928,7 +3941,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Accept Threat from Below from Orgnil Soulscar. This is an elite. Bring a group.",
@@ -4017,7 +4030,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Threat from Below: Aggor's Belt. This is an elite. Bring a group.",
@@ -4113,7 +4126,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 10 } },
+                    { level = { min = 12 } },
                 },
             },
             text = "Turn in Threat from Below to Orgnil Soulscar.",
@@ -4367,7 +4380,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.BLACKSMITHING } },
                 },
             },
@@ -4386,7 +4399,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 6 } },
+                    { level = { min = 10 } },
                     { profession = { skillLineID = SKILL.LEATHERWORKING } },
                 },
             },

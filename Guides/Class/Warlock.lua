@@ -533,200 +533,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-65593-hearts-of-the-lovers",
-            kind = "accept",
-            priority = 240,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Hearts of the Lovers from Godrick Farsan in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(65593, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
-                    "Travel to Godrick Farsan in Undercity."),
-            },
-        },
-        {
-            id = "turnin-65593-hearts-of-the-lovers",
-            kind = "turnin",
-            priority = 250,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Hearts of the Lovers to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65593-hearts-of-the-lovers" },
-            complete = QuestState(65593, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "accept-65597-the-binding",
-            kind = "accept",
-            priority = 260,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Carendin Halgar in Undercity.",
-            dependsOn = { "turnin-65593-hearts-of-the-lovers" },
-            complete = QuestState(65597, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "turnin-65597-the-binding",
-            kind = "turnin",
-            priority = 270,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Carendin Halgar in Undercity.",
-            dependsOn = { "accept-65597-the-binding" },
-            complete = QuestState(65597, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "accept-65601-love-hurts",
-            kind = "accept",
-            priority = 280,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Love Hurts from Cazul in Orgrimmar. This step is for Orcs and Undead.",
-            complete = QuestState(65601, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4720, 0.4660, "Cazul",
-                    "Travel to Cazul in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65601-love-hurts",
-            kind = "turnin",
-            priority = 290,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Love Hurts to Magar in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65601-love-hurts" },
-            complete = QuestState(65601, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
-                    "Travel to Magar in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-65610-wish-you-were-here",
-            kind = "accept",
-            priority = 300,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Wish You Were Here from Magar in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-65601-love-hurts" },
-            complete = QuestState(65610, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
-                    "Travel to Magar in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65610-wish-you-were-here",
-            kind = "turnin",
-            priority = 310,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Wish You Were Here to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65610-wish-you-were-here" },
-            complete = QuestState(65610, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-65604-the-binding",
-            kind = "accept",
-            priority = 320,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar.",
-            dependsOn = { "turnin-65610-wish-you-were-here" },
-            complete = QuestState(65604, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65604-the-binding",
-            kind = "turnin",
-            priority = 330,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar.",
-            dependsOn = { "accept-65604-the-binding" },
-            complete = QuestState(65604, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
             id = "accept-65602-what-is-love",
             kind = "accept",
             priority = 340,
@@ -739,6 +545,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept What Is Love? from Takar the Seer in The Barrens. This step is for Humans and Gnomes.",
+            dependsOn = { "turnin-1716-devourer-of-souls" },
             complete = QuestState(65602, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.4920, 0.5700, "Takar the Seer",
@@ -1970,6 +1777,124 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-65601-love-hurts",
+            kind = "accept",
+            priority = 981,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Love Hurts from Cazul in Orgrimmar. This step is for Orcs and Undead.",
+            dependsOn = { "turnin-1507-devourer-of-souls" },
+            complete = QuestState(65601, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4720, 0.4660, "Cazul",
+                    "Travel to Cazul in Orgrimmar."),
+            },
+        },
+        {
+            id = "turnin-65601-love-hurts",
+            kind = "turnin",
+            priority = 982,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Love Hurts to Magar in Orgrimmar. This step is for Orcs and Undead.",
+            dependsOn = { "accept-65601-love-hurts" },
+            complete = QuestState(65601, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
+                    "Travel to Magar in Orgrimmar."),
+            },
+        },
+        {
+            id = "accept-65610-wish-you-were-here",
+            kind = "accept",
+            priority = 983,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Wish You Were Here from Magar in Orgrimmar. This step is for Orcs and Undead.",
+            dependsOn = { "turnin-65601-love-hurts" },
+            complete = QuestState(65610, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
+                    "Travel to Magar in Orgrimmar."),
+            },
+        },
+        {
+            id = "turnin-65610-wish-you-were-here",
+            kind = "turnin",
+            priority = 984,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Wish You Were Here to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
+            dependsOn = { "accept-65610-wish-you-were-here" },
+            complete = QuestState(65610, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
+                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
+            },
+        },
+        {
+            id = "accept-65604-the-binding",
+            kind = "accept",
+            priority = 985,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar.",
+            dependsOn = { "turnin-65610-wish-you-were-here" },
+            complete = QuestState(65604, "activeOrCompleted"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
+                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
+            },
+        },
+        {
+            id = "turnin-65604-the-binding",
+            kind = "turnin",
+            priority = 986,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar.",
+            dependsOn = { "accept-65604-the-binding" },
+            complete = QuestState(65604, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
+                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
+            },
+        },
+        {
             id = "accept-1508-blind-cazul",
             kind = "accept",
             priority = 990,
@@ -2672,6 +2597,84 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
                     "Travel to Godrick Farsan in Undercity."),
+            },
+        },
+        {
+            id = "accept-65593-hearts-of-the-lovers",
+            kind = "accept",
+            priority = 1341,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Hearts of the Lovers from Godrick Farsan in Undercity. This step is for Orcs and Undead.",
+            dependsOn = { "turnin-1472-devourer-of-souls" },
+            complete = QuestState(65593, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
+                    "Travel to Godrick Farsan in Undercity."),
+            },
+        },
+        {
+            id = "turnin-65593-hearts-of-the-lovers",
+            kind = "turnin",
+            priority = 1342,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { race = { 2, 5 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Hearts of the Lovers to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            dependsOn = { "accept-65593-hearts-of-the-lovers" },
+            complete = QuestState(65593, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
+                    "Travel to Carendin Halgar in Undercity."),
+            },
+        },
+        {
+            id = "accept-65597-the-binding",
+            kind = "accept",
+            priority = 1343,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept The Binding from Carendin Halgar in Undercity.",
+            dependsOn = { "turnin-65593-hearts-of-the-lovers" },
+            complete = QuestState(65597, "activeOrCompleted"),
+            route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
+                    "Travel to Carendin Halgar in Undercity."),
+            },
+        },
+        {
+            id = "turnin-65597-the-binding",
+            kind = "turnin",
+            priority = 1344,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 9 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in The Binding to Carendin Halgar in Undercity.",
+            dependsOn = { "accept-65597-the-binding" },
+            complete = QuestState(65597, "completed"),
+            route = {
+                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
+                    "Travel to Carendin Halgar in Undercity."),
             },
         },
         {
