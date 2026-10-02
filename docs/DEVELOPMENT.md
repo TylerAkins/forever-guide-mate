@@ -26,7 +26,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 Quest-step rules are in [guide-authoring.md](guide-authoring.md). Class quests are supported: one guide per class in `Guides/Class/`, with race and faction on every step. Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
-Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database). Use the compiled zone files in `data/forever/compiled/zones/`. A quest added in Forever has `firstseenpatch` 16001. The recommended level is the Wowhead Level line in that bundle (`Level: N` in `infoboxMarkup`).
+Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database). Use the compiled zone and collection files in `data/forever/compiled/`. A quest added in Forever has `firstseenpatch` 16001. When `detail.questie.fields` is present, a positive `questLevel` is the step level and a positive `requiredLevel` is the offer gate. `0` and `-1` leave the Wowhead value. `detail.requirements.allOf` is mode `all` and `anyOf` is mode `any`. Without a Questie level, the recommended level is the Wowhead Level line (`Level: N` in `infoboxMarkup`). `python3 tools/audit_quest_paths.py` reports disagreements and does not edit guides.
 
 ```sh
 python3 -m unittest discover -s tests

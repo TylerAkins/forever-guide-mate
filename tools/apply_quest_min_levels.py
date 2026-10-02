@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Stamp a level gate onto every guide step.
 
-Classic quests use the level the NPC offers (Wowhead "Requires level").
-A Forever quest from patch 16001 uses the Level line when that line is
-at least 5 levels above Requires level. A smaller gap stays on the offer
-level. Dungeon guides always stay on the offer level.
-Class quests stay on the offer level. Steps for a quest share that gate.
-A minimum of 1 is not written.
+When the local wow-database checkout has a Questie overlay, a positive
+questLevel is the step level and a positive requiredLevel is the offer
+gate. Zero and -1 leave the Wowhead value. Without that overlay, a Forever
+quest from patch 16001 uses the Level line when that line is at least 5
+levels above Requires level. Classic quests use the offer level. Dungeon
+guides always stay on the offer level. Class quests stay on the offer
+level. Steps for a quest share that gate. A minimum of 1 is not written.
 """
 
 from __future__ import annotations
@@ -50,13 +51,40 @@ def named_gate(indent: str, name: str, level: int) -> str:
     )
 
 
-def load_min_levels(index_path: Path | None = None) -> dict[int, int]:
+def overlay_compiled_details(data: dict, database_root: Path) -> None:
+    compiled = database_root / "data" / "forever" / "compiled"
+    if not compiled.is_dir():
+        return
+    for path in sorted(compiled.rglob("*.json")):
+        bundle = json.loads(path.read_text(encoding="utf-8"))
+        quests = bundle.get("quests")
+        if not isinstance(quests, dict):
+            continue
+        for key, quest in quests.items():
+            if not isinstance(quest, dict):
+                continue
+            base = data.get(str(key))
+            if not isinstance(base, dict):
+                base = {}
+            merged = dict(base)
+            detail = quest.get("detail")
+            if isinstance(detail, dict):
+                merged["detail"] = detail
+            index = quest.get("index")
+            if isinstance(index, dict) and isinstance(index.get("list"), dict) and "list" not in merged:
+                merged["list"] = index["list"]
+            data[str(key)] = merged
+
+
+def load_min_levels(index_path: Path | None = None, database_root: Path | None = None) -> dict[int, int]:
     if index_path is None:
         index_path = Path("/tmp/quest_index.json")
         if not index_path.exists():
             request = urllib.request.Request(INDEX_URL, headers={"User-Agent": "ForeverGuideMate"})
             index_path.write_bytes(urllib.request.urlopen(request, timeout=60).read())
     data = json.loads(index_path.read_text(encoding="utf-8"))
+    if database_root is not None:
+        overlay_compiled_details(data, database_root)
     levels: dict[int, int] = {}
     for key, quest in data.items():
         if not isinstance(quest, dict):
@@ -144,7 +172,14 @@ def apply(levels: dict[int, dict[str, int]]) -> tuple[dict[int, int], list[str]]
 
 
 def main() -> None:
-    levels = load_min_levels()
+    sibling = ROOT.parent / "wow-database"
+    database_root = sibling if (sibling / "data" / "forever" / "compiled").is_dir() else None
+    index_path = None
+    if database_root is not None:
+        local_index = database_root / "data" / "forever" / "raw" / "quest_index.json"
+        if local_index.is_file():
+            index_path = local_index
+    levels = load_min_levels(index_path=index_path, database_root=database_root)
     used, missing = apply(levels)
     FIXTURE.parent.mkdir(parents=True, exist_ok=True)
     FIXTURE.write_text(
