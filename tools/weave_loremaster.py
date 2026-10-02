@@ -145,6 +145,11 @@ class Goal:
     origin: str
     faction: str | None = None
     source_file: str = ""
+    level_min: int | None = None
+    classes: list[int] = field(default_factory=list)
+    races: list[int] = field(default_factory=list)
+    skills: list[int] = field(default_factory=list)
+    step_faction: str | None = None
 
 
 @dataclass
@@ -210,12 +215,43 @@ def split_top_tables(body: str) -> list[str]:
     return tables
 
 
+def _condition_ids(raw: str, key: str) -> list[int]:
+    found: list[int] = []
+    for body in re.findall(rf"\b{key}\s*=\s*\{{([^}}]*)\}}", raw):
+        found.extend(int(value) for value in re.findall(r"\d+", body))
+    found.extend(int(value) for value in re.findall(rf"\b{key}\s*=\s*(\d+)", raw))
+    unique: list[int] = []
+    for value in found:
+        if value not in unique:
+            unique.append(value)
+    return unique
+
+
+def extract_step_conditions(raw: str, constants: dict[str, int] | None = None) -> dict:
+    """Read level, class, race, skill, and faction gates from a step."""
+    level = re.search(r"\blevel\s*=\s*\{\s*min\s*=\s*(\d+)", raw)
+    faction = re.search(r'\bfaction\s*=\s*"(Alliance|Horde)"', raw)
+    skills = _condition_ids(raw, "skill") + _condition_ids(raw, "profession")
+    for name in re.findall(r"\bSKILL\.([A-Z0-9_]+)", raw):
+        value = (constants or {}).get(name)
+        if value is not None and value not in skills:
+            skills.append(value)
+    return {
+        "level_min": int(level.group(1)) if level else None,
+        "classes": _condition_ids(raw, "class"),
+        "races": _condition_ids(raw, "race"),
+        "skills": skills,
+        "faction": faction.group(1) if faction else None,
+    }
+
+
 def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -> list[Goal]:
     marker = text.find("goals = {")
     if marker < 0:
         return []
     open_at = text.find("{", marker)
     end = brace_end(text, open_at)
+    constants = map_entries(text)
     goals = []
     for raw in split_top_tables(text[open_at + 1 : end]):
         ident = re.search(r'\bid = "([^"]+)"', raw)
@@ -231,6 +267,7 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
         )
         depends = re.search(r"dependsOn = \{([^}]*)\}", raw)
         dep_ids = re.findall(r'"([^"]+)"', depends.group(1)) if depends else []
+        conditions = extract_step_conditions(raw, constants)
         goals.append(
             Goal(
                 raw=raw,
@@ -244,6 +281,11 @@ def parse_goals(text: str, origin: str, source_file: str, faction: str | None) -
                 origin=origin,
                 faction=faction,
                 source_file=source_file,
+                level_min=conditions["level_min"],
+                classes=conditions["classes"],
+                races=conditions["races"],
+                skills=conditions["skills"],
+                step_faction=conditions["faction"],
             )
         )
     return goals
@@ -543,10 +585,40 @@ FOREVER_PATCH = 16001
 LEVEL_LINE_GAP = 5
 
 
+def questie_fields(record: dict | None) -> dict | None:
+    """QuestieDB fields when this record was overlaid. Missing means no record."""
+    if not isinstance(record, dict):
+        return None
+    detail = record.get("detail")
+    questie = None
+    if isinstance(detail, dict):
+        questie = detail.get("questie")
+    if not isinstance(questie, dict):
+        questie = record.get("questie")
+    if not isinstance(questie, dict):
+        return None
+    fields = questie.get("fields")
+    if isinstance(fields, dict):
+        return fields
+    return None
+
+
+def positive_level(value) -> int | None:
+    """Questie uses 0 for a missing number and -1 for 'match the player'."""
+    if isinstance(value, int) and value > 0:
+        return value
+    return None
+
+
 def offer_level(record: dict | None) -> int | None:
     """Requires level: the level the NPC offers the quest."""
     if not isinstance(record, dict):
         return None
+    fields = questie_fields(record)
+    if fields is not None:
+        confirmed = positive_level(fields.get("requiredLevel"))
+        if confirmed is not None:
+            return confirmed
     listed = record.get("list") if isinstance(record.get("list"), dict) else {}
     minimum = record.get("minLevel")
     if not isinstance(minimum, int):
@@ -563,14 +635,16 @@ def offer_level(record: dict | None) -> int | None:
 def step_level(record: dict | None) -> int | None:
     """Level written on a guide step.
 
-    Classic quests use Requires level, the level the NPC offers the quest.
-    A quest added in Forever (patch 16001) uses Wowhead's Level line when
-    that line is higher. New pages often keep a default Requires level while
-    the Level line is the rating the route should wait for. Class quests stay
-    on the offer level, which is when the trainer gives them.
+    When a Questie record exists, a positive questLevel is the step level and
+    a positive requiredLevel is the offer gate. Zero and -1 leave the Wowhead
+    value in place. Classic quests use Requires level. A quest added in
+    Forever (patch 16001) with no Questie level uses Wowhead's Level line when
+    that line is at least 5 above Requires level. Class quests stay on the
+    offer level, which is when the trainer gives them.
     """
     if not isinstance(record, dict):
         return None
+    fields = questie_fields(record)
     listed = record.get("list") if isinstance(record.get("list"), dict) else record
     minimum = record.get("minLevel")
     if not isinstance(minimum, int):
@@ -592,6 +666,17 @@ def step_level(record: dict | None) -> int | None:
     if quest_id == 99142 and isinstance(minimum, int) and minimum > 0:
         return minimum
     is_class = bool(record.get("classes")) or bool(reqclass)
+    if fields is not None and not is_class:
+        confirmed = positive_level(fields.get("questLevel"))
+        if confirmed is not None:
+            return confirmed
+        confirmed_offer = positive_level(fields.get("requiredLevel"))
+        if confirmed_offer is not None:
+            return confirmed_offer
+    if fields is not None and is_class:
+        confirmed_offer = positive_level(fields.get("requiredLevel"))
+        if confirmed_offer is not None:
+            return confirmed_offer
     patch = listed.get("firstseenpatch") if isinstance(listed, dict) else record.get("firstseenpatch")
     if (
         patch == FOREVER_PATCH

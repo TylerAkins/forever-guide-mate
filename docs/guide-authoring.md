@@ -69,6 +69,7 @@ A converted file drops the Era level-range name. `Guides/Era/12-17-westfall.lua`
 ## `dependsOn` and conditions
 
 - Put faction, class, race, and level gates on **every** step of a quest, not only the accept.
+- When wow-database has `detail.questie.fields` for that quest, a positive `questLevel` is the level gate and a positive `requiredLevel` is the offer level. `0` and `-1` leave the existing Wowhead number. `detail.requirements.allOf` registers as mode `all`. `anyOf` registers as mode `any`. Register the chain in `QuestPrerequisites.lua` only when the prerequisite turn-in is already earlier in that guide.
 - A handoff step depends on the previous turn-in. A turn-in depends on all objective steps for that quest.
 - Do not point `dependsOn` at a step the player has not reached yet unless that is intentional gating.
 
@@ -161,4 +162,4 @@ Changing a turn-in’s `dependsOn` or splitting objectives can leave **stale com
 
 The addon saves **active step per guide** (`activeGoalByGuide`). Reload and switching away and back should return to the same step, not the first open quest in the chapter.
 
-Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/zones/`).
+Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). A positive Questie `questLevel` is the step level. `0` and `-1` leave the Wowhead level.

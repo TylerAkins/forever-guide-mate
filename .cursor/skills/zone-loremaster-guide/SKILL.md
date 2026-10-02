@@ -48,7 +48,7 @@ Leave it out of the first wave when the guide does not know the NPC offers it ye
 - An elite step says `This is an elite. Bring a group.` Use Forever's creature rank. A normal named target does not get that sentence.
 - Keep prerequisite handoffs already present in the leveling route. Dungeon-only quests stay in the dungeon guides. Record every other intentional omission in the header.
 - Put faction, class, race, and profession requirements on every step of that quest. A mismatch is left out of the percentage. The same quest's steps must carry the same conditions.
-- A level requirement uses Wowhead's recommended level, the Level line, not the level the quest can be started. It stays in the percentage until the character reaches it.
+- When a Questie record exists, a positive `questLevel` is the step level and a positive `requiredLevel` is the offer gate. A `0` or `-1` leaves the Wowhead Level line. Without a Questie level, use Wowhead's recommended level, the Level line, not the level the quest can be started. `detail.requirements.allOf` is mode `all` and `anyOf` is mode `any`. It stays in the percentage until the character reaches it.
 - Use uiMap IDs. Wowhead area IDs are not map IDs.
 - `flightTo` only on a travel hop. Say a flight path is available only when that character has learned it.
 - If there is no saved pin, keep the nearest named landmark and say the guide follows the pin in the quest log. Do not invent a precise pin. Mark that step `useClientPin` so the addon uses the quest log pin while the quest is accepted.

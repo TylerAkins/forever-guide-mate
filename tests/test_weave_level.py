@@ -68,6 +68,35 @@ class StepLevelTests(unittest.TestCase):
             2,
         )
 
+    def test_questie_quest_level_is_the_step_level(self):
+        record = {
+            "list": {"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0},
+            "minLevel": 5,
+            "classes": [],
+            "detail": {"questie": {"fields": {"questLevel": 18, "requiredLevel": 12}}},
+        }
+        self.assertEqual(step_level(record), 18)
+        self.assertEqual(offer_level(record), 12)
+
+    def test_questie_zero_keeps_the_wowhead_level(self):
+        record = {
+            "list": {"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0},
+            "minLevel": 5,
+            "classes": [],
+            "detail": {"questie": {"fields": {"questLevel": 0, "requiredLevel": 0}}},
+        }
+        self.assertEqual(step_level(record), 11)
+        self.assertEqual(offer_level(record), 5)
+
+    def test_questie_negative_level_keeps_the_wowhead_level(self):
+        record = {
+            "list": {"level": 3, "reqlevel": 2, "firstseenpatch": 16001, "reqclass": 0},
+            "minLevel": 2,
+            "classes": [],
+            "detail": {"questie": {"fields": {"questLevel": -1, "requiredLevel": 0}}},
+        }
+        self.assertEqual(step_level(record), 2)
+
     def test_new_class_quest_stays_on_the_offer_level(self):
         self.assertEqual(
             step_level({

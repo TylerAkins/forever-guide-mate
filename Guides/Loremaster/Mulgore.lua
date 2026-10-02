@@ -13,8 +13,9 @@ local _, ns = ...
 -- The Thunderhorn well chain (748, 754, 756, 758, 759, 760, 98435),
 -- The Hunter's Way (861), and Journey to the Crossroads (854) are tauren.
 -- Other races still reach 100%.
--- Stalk With The Earthmother is a warrior or shaman trial (76156) and two shaman
--- follow-ups (76160, 76240). Other classes still reach 100%.
+-- Stalk With The Earthmother is a warrior, shaman, or druid trial (76156, 76160).
+-- The Wowhead class line lists those three classes. The later follow-up (76240)
+-- is shaman only. Other classes still reach 100%.
 -- Attack on Camp Narache (781), The Demon Scarred Cloak (770), and Fizsprocket's
 -- Notes (98424) appear only after the quest is in the log. Ceasing Operations
 -- waits until those notes are turned in.
@@ -452,6 +453,7 @@ ns:RegisterGuide({
             priority = 230,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                 },
             },
@@ -468,6 +470,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { faction = "Horde" },
                 },
             },
@@ -712,7 +715,12 @@ ns:RegisterGuide({
             id = "accept-96659-the-adventurer",
             kind = "accept",
             priority = 380,
-            conditions = { level = { min = 4 } },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
             text = "Accept The Adventurer from Chief Hawkwind in Camp Narache.",
             dependsOn = { "turnin-757-rite-of-strength" },
             complete = QuestState(96659, "activeOrCompleted"),
@@ -873,7 +881,12 @@ ns:RegisterGuide({
             id = "turnin-96659-the-adventurer",
             kind = "turnin",
             priority = 470,
-            conditions = { level = { min = 4 } },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { level = { min = 6 } },
+                },
+            },
             text = "Turn in The Adventurer to Kaga Wildhoof on the road to Bloodhoof Village.",
             dependsOn = { "accept-96659-the-adventurer" },
             complete = QuestState(96659, "completed"),
@@ -886,7 +899,7 @@ ns:RegisterGuide({
             id = "accept-96101-the-great-outdoors",
             kind = "accept",
             priority = 480,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Accept The Great Outdoors from Kaga Wildhoof.",
             dependsOn = { "turnin-96659-the-adventurer" },
             complete = QuestState(96101, "activeOrCompleted"),
@@ -899,7 +912,7 @@ ns:RegisterGuide({
             id = "objective-96101-the-great-outdoors",
             kind = "objective",
             priority = 490,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Type /sit at Kaga Wildhoof's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-96101-the-great-outdoors" },
             complete = QuestState(96101, "complete"),
@@ -908,7 +921,7 @@ ns:RegisterGuide({
             id = "turnin-96101-the-great-outdoors",
             kind = "turnin",
             priority = 500,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Turn in The Great Outdoors to Kaga Wildhoof.",
             dependsOn = { "objective-96101-the-great-outdoors" },
             complete = QuestState(96101, "completed"),
@@ -1568,7 +1581,7 @@ ns:RegisterGuide({
                     { faction = "Horde" },
                     { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
@@ -1587,7 +1600,7 @@ ns:RegisterGuide({
                     { faction = "Horde" },
                     { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             useClientPin = true,
@@ -1608,7 +1621,7 @@ ns:RegisterGuide({
                     { faction = "Horde" },
                     { level = { min = 4 } },
                     { race = { 2, 6, 8 } },
-                    { class = { 1, 7 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
@@ -1645,7 +1658,8 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 4 } },
-                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff. Gather the cones with the harpies.",
@@ -1719,7 +1733,8 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 4 } },
-                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             useClientPin = true,
@@ -1739,7 +1754,8 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { level = { min = 4 } },
-                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
                 },
             },
             text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
@@ -2123,7 +2139,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Accept Sparring Match from Krang Stonehoof.",
@@ -2140,7 +2156,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 6 } },
                 },
             },
             useClientPin = true,
@@ -2159,7 +2175,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
-                    { level = { min = 4 } },
+                    { level = { min = 6 } },
                 },
             },
             text = "Turn in Sparring Match to Krang Stonehoof.",
