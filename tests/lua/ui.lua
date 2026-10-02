@@ -570,6 +570,21 @@ for index = 1, #ns.UI.browserCategoryButtons do
 end
 Check(sawRaidCategory, "the library lists Raid Quests as its own category")
 
+do
+    ns.Engine.currentGoal = {
+        kind = "objective",
+        text = "Kill Thule Ravenclaw. This is an elite. Bring a group.",
+        useClientText = true,
+        complete = { quest = { id = 442 } },
+    }
+    ns.Engine.state = {
+        quests = { [442] = { objectives = { { text = "0/1 Thule's Head" } } } },
+    }
+    Equal(ns.UI:GoalInstruction(ns.Engine),
+        "0/1 Thule's Head. This is an elite. Bring a group.",
+        "client quest objective text preserves the authored elite warning")
+end
+
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
     os.exit(1)
