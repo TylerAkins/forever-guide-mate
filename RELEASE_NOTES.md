@@ -1,3 +1,3 @@
-## 0.1.49 - 2026-10-02
+## 0.1.50 - 2026-10-02
 
-- The addon list groups Forever GuideMate under Quests using Blizzard category metadata, with localized category names for non-English clients.
+- Assault on Fenris Isle warns that Thule Ravenclaw is an elite target and recommends bringing a group.
