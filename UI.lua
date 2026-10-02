@@ -926,6 +926,17 @@ end
 -- Navigation labels describe the route, not the work. Show the current
 -- unfinished objective row from the quest log, then fall back to the quest
 -- summary and finally the authored step text.
+local ELITE_NOTE = "This is an elite. Bring a group."
+
+local function PreserveEliteNote(goal, text)
+    if type(text) ~= "string" or type(goal.text) ~= "string"
+        or not goal.text:find(ELITE_NOTE, 1, true)
+        or text:lower():find("elite", 1, true) then
+        return text
+    end
+    return text .. (text:match("[%p]$") and " " or ". ") .. ELITE_NOTE
+end
+
 local function ClientObjective(goal, state)
     if not goal or (goal.useClientText ~= true and goal.useClientPin ~= true)
         or (goal.kind ~= "objective" and goal.kind ~= "gossip") then
@@ -935,11 +946,11 @@ local function ClientObjective(goal, state)
     local entry = type(quests) == "table" and quests[GoalQuestID(goal)]
     local objective = type(entry) == "table" and ObjectiveForGoal(goal, entry.objectives)
     if type(objective) == "table" and type(objective.text) == "string" and objective.text ~= "" then
-        return objective.text
+        return PreserveEliteNote(goal, objective.text)
     end
     local summary = type(entry) == "table" and entry.summary
     if type(summary) == "string" and summary ~= "" then
-        return summary
+        return PreserveEliteNote(goal, summary)
     end
     return goal.text
 end

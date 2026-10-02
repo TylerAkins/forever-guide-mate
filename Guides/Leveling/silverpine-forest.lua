@@ -3391,7 +3391,7 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 3030,
             conditions = { level = { min = 10 } },
-            text = "Kill Thule Ravenclaw and collect Thule's Head in Fenris Keep.",
+            text = "Kill Thule Ravenclaw and collect Thule's Head in Fenris Keep. This is an elite. Bring a group.",
             dependsOn = { "accept-442-assault-on-fenris-isle" },
             complete = QuestState(442, "complete"),
             route = {
