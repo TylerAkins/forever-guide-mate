@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.49 - 2026-10-02
+
+- The addon list groups Forever GuideMate under Quests using Blizzard category metadata, with localized category names for non-English clients.
+
 ## 0.1.48 - 2026-10-01
 
 - Hearts of the Lovers and Love Hurts now follow Devourer of Souls, matching the Questie prerequisite. What Is Love? follows the Alliance Devourer of Souls the same way.
