@@ -1815,6 +1815,7 @@ ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "turnin-infestation-investigation",
     "both grove objectives lead back to the Infestation Investigation turn-in")
 grove.completedQuests[92462] = true
+grove.level = 3
 ns.charDB.activeGoal = nil
 ns.Engine:Refresh(grove)
 Equal(ns.Engine.currentGoal.id, "accept-the-cirrusfly-queen",
