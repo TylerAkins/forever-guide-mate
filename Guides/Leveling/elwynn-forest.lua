@@ -442,6 +442,7 @@ ns:RegisterGuide({
             priority = 61,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "activeOrCompleted" } },
                 },
             },
@@ -458,6 +459,7 @@ ns:RegisterGuide({
             priority = 62,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -538,6 +540,7 @@ ns:RegisterGuide({
             priority = 71,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -616,6 +619,7 @@ ns:RegisterGuide({
             priority = 111,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -633,6 +637,7 @@ ns:RegisterGuide({
             priority = 352,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -650,6 +655,7 @@ ns:RegisterGuide({
             priority = 353,
             conditions = {
                 all = {
+                    { level = { min = 2 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -667,6 +673,7 @@ ns:RegisterGuide({
             priority = 354,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -771,6 +778,7 @@ ns:RegisterGuide({
             priority = 431,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -788,6 +796,7 @@ ns:RegisterGuide({
             priority = 432,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -805,6 +814,7 @@ ns:RegisterGuide({
             priority = 433,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -859,6 +869,7 @@ ns:RegisterGuide({
             priority = 471,
             conditions = {
                 all = {
+                    { level = { min = 3 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -876,6 +887,7 @@ ns:RegisterGuide({
             priority = 472,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -893,6 +905,7 @@ ns:RegisterGuide({
             priority = 473,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -910,6 +923,7 @@ ns:RegisterGuide({
             priority = 481,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -925,7 +939,7 @@ ns:RegisterGuide({
             id = "accept-96627-the-adventurer",
             kind = "accept",
             priority = 480.5,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Accept The Adventurer from Marshal McBride in Northshire Abbey.",
             complete = QuestState(96627, "activeOrCompleted"),
             route = {
@@ -937,7 +951,7 @@ ns:RegisterGuide({
             id = "turnin-96627-the-adventurer",
             kind = "turnin",
             priority = 512,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Turn in The Adventurer to Sam Sarsaparilla near Goldshire.",
             dependsOn = { "accept-96627-the-adventurer" },
             complete = QuestState(96627, "completed"),
@@ -950,7 +964,7 @@ ns:RegisterGuide({
             id = "accept-96101-the-great-outdoors",
             kind = "accept",
             priority = 512.1,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Accept The Great Outdoors from Sam Sarsaparilla.",
             dependsOn = { "turnin-96627-the-adventurer" },
             complete = QuestState(96101, "activeOrCompleted"),
@@ -963,7 +977,7 @@ ns:RegisterGuide({
             id = "objective-96101-the-great-outdoors",
             kind = "objective",
             priority = 512.2,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Type /sit at Sam Sarsaparilla's campfire and wait until you gain the Boosted Rest buff.",
             dependsOn = { "accept-96101-the-great-outdoors" },
             complete = QuestState(96101, "complete"),
@@ -972,7 +986,7 @@ ns:RegisterGuide({
             id = "turnin-96101-the-great-outdoors",
             kind = "turnin",
             priority = 512.3,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 6 } },
             text = "Turn in The Great Outdoors to Sam Sarsaparilla.",
             dependsOn = { "objective-96101-the-great-outdoors" },
             complete = QuestState(96101, "completed"),
@@ -1022,6 +1036,7 @@ ns:RegisterGuide({
             priority = 511,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1052,6 +1067,7 @@ ns:RegisterGuide({
             priority = 521,
             conditions = {
                 all = {
+                    { level = { min = 4 } },
                     { quest = { id = 91741, state = "completed" } },
                 },
             },
@@ -1085,7 +1101,7 @@ ns:RegisterGuide({
             id = "accept-91751-rough-wolf-pelts",
             kind = "accept",
             priority = 523,
-            conditions = { level = { min = 5 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Rough Wolf Pelts from Helene Peltskinner near Goldshire.",
             complete = QuestState(91751, "activeOrCompleted"),
             route = {
@@ -1097,7 +1113,7 @@ ns:RegisterGuide({
             id = "objective-91751-rough-wolf-pelts",
             kind = "objective",
             priority = 524,
-            conditions = { level = { min = 5 } },
+            conditions = { level = { min = 7 } },
             text = "Skin wolves for 7 Rough Wolf Pelts. A wolf may drop Elmpaw's Head. Use it if it does.",
             dependsOn = { "accept-91751-rough-wolf-pelts" },
             complete = QuestState(91751, "complete"),
@@ -1110,7 +1126,7 @@ ns:RegisterGuide({
             id = "turnin-91751-rough-wolf-pelts",
             kind = "turnin",
             priority = 525,
-            conditions = { level = { min = 5 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Rough Wolf Pelts to Helene Peltskinner.",
             dependsOn = { "objective-91751-rough-wolf-pelts" },
             complete = QuestState(91751, "completed"),
@@ -1450,7 +1466,7 @@ ns:RegisterGuide({
             id = "accept-99127-a-net-disaster",
             kind = "accept",
             priority = 911,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept A Net Disaster from Jason Mathers in Goldshire.",
             complete = QuestState(99127, "activeOrCompleted"),
             route = {
@@ -1462,7 +1478,7 @@ ns:RegisterGuide({
             id = "accept-99128-slimy-menace",
             kind = "accept",
             priority = 1191.5,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Slimy Menace from Jason Mathers. A murloc may drop Croaky's Head. Use it if it does.",
             dependsOn = { "turnin-99127-a-net-disaster" },
             complete = QuestState(99128, "activeOrCompleted"),
@@ -1475,7 +1491,7 @@ ns:RegisterGuide({
             id = "accept-99143-bottles-and-baubles",
             kind = "accept",
             priority = 912,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Bottles and Baubles from Lee Brown in Goldshire.",
             complete = QuestState(99143, "activeOrCompleted"),
             route = {
@@ -1628,7 +1644,7 @@ ns:RegisterGuide({
             id = "objective-99127-a-net-disaster",
             kind = "objective",
             priority = 921,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Check the fishing nets at Crystal Lake for 7 Half-Eaten Fish.",
             dependsOn = { "accept-99127-a-net-disaster" },
             complete = QuestState(99127, "complete"),
@@ -1641,7 +1657,7 @@ ns:RegisterGuide({
             id = "objective-99128-slimy-menace",
             kind = "objective",
             priority = 922,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Kill the murlocs at Crystal Lake.",
             dependsOn = { "accept-99128-slimy-menace" },
             complete = QuestState(99128, "complete"),
@@ -1654,7 +1670,7 @@ ns:RegisterGuide({
             id = "objective-99143-bottles-and-baubles",
             kind = "objective",
             priority = 931,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Collect 6 pieces of shiny junk from the murloc camp.",
             dependsOn = { "accept-99143-bottles-and-baubles" },
             complete = QuestState(99143, "complete"),
@@ -1768,7 +1784,7 @@ ns:RegisterGuide({
             id = "accept-91723-delicate-instruments",
             kind = "accept",
             priority = 955,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept Delicate Instruments from Hamish Bergwort in the Tower of Azora.",
             complete = QuestState(91723, "activeOrCompleted"),
             route = {
@@ -1780,7 +1796,7 @@ ns:RegisterGuide({
             id = "accept-91725-stolen-enchanting-supplies",
             kind = "accept",
             priority = 956,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept Stolen Enchanting Supplies from Blixie Fitzwink near the Tower of Azora.",
             complete = QuestState(91725, "activeOrCompleted"),
             route = {
@@ -1794,7 +1810,7 @@ ns:RegisterGuide({
             priority = 957,
             conditions = {
                 all = {
-                    { level = { min = 5 } },
+                    { level = { min = 7 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1809,7 +1825,7 @@ ns:RegisterGuide({
             id = "accept-91732-good-steel",
             kind = "accept",
             priority = 994,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept Good Steel from Hagar Lowe in Eastvale Logging Camp.",
             complete = QuestState(91732, "activeOrCompleted"),
             route = {
@@ -1821,7 +1837,7 @@ ns:RegisterGuide({
             id = "objective-91723-delicate-instruments",
             kind = "objective",
             priority = 995,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Kill 8 Kobold Geomancers in Jasperlode Mine. Disenchant their Crude Wax Effigies if you are on An Enchanting Lesson.",
             dependsOn = { "accept-91723-delicate-instruments" },
             complete = QuestState(91723, "complete"),
@@ -1834,7 +1850,7 @@ ns:RegisterGuide({
             id = "turnin-91723-delicate-instruments",
             kind = "turnin",
             priority = 998,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
             dependsOn = { "objective-91723-delicate-instruments" },
             complete = QuestState(91723, "completed"),
@@ -1847,7 +1863,7 @@ ns:RegisterGuide({
             id = "accept-91724-delicate-instruments",
             kind = "accept",
             priority = 999,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept the next Delicate Instruments from Hamish Bergwort.",
             dependsOn = { "turnin-91723-delicate-instruments" },
             complete = QuestState(91724, "activeOrCompleted"),
@@ -1862,7 +1878,7 @@ ns:RegisterGuide({
             priority = 996,
             conditions = {
                 all = {
-                    { level = { min = 5 } },
+                    { level = { min = 7 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -1878,7 +1894,7 @@ ns:RegisterGuide({
             id = "objective-91732-good-steel",
             kind = "objective",
             priority = 997,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Collect 4 Mining Tools from Jasperlode Mine.",
             dependsOn = { "accept-91732-good-steel" },
             complete = QuestState(91732, "complete"),
@@ -1915,7 +1931,7 @@ ns:RegisterGuide({
             id = "accept-91733-downstream",
             kind = "accept",
             priority = 1011,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept Downstream from Ormin Pelford in Eastvale Logging Camp.",
             complete = QuestState(91733, "activeOrCompleted"),
             route = {
@@ -1927,7 +1943,7 @@ ns:RegisterGuide({
             id = "objective-91733-downstream",
             kind = "objective",
             priority = 1061,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Collect the Waterlogged Axe, Waterlogged Saw, and Waterlogged Toolbox downstream from Eastvale.",
             dependsOn = { "accept-91733-downstream" },
             complete = QuestState(91733, "complete"),
@@ -1940,7 +1956,7 @@ ns:RegisterGuide({
             id = "turnin-91733-downstream",
             kind = "turnin",
             priority = 1013,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in Downstream to Ormin Pelford.",
             dependsOn = { "objective-91733-downstream" },
             complete = QuestState(91733, "completed"),
@@ -2071,7 +2087,7 @@ ns:RegisterGuide({
             id = "objective-91724-delicate-instruments",
             kind = "objective",
             priority = 1121,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Kill 6 Defias Rogue Wizards at Stone Cairn Lake.",
             dependsOn = { "accept-91724-delicate-instruments" },
             complete = QuestState(91724, "complete"),
@@ -2084,7 +2100,7 @@ ns:RegisterGuide({
             id = "objective-91725-stolen-enchanting-supplies",
             kind = "objective",
             priority = 1122,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Collect 5 Stolen Enchanting Supplies from the gnoll camps around Stone Cairn Lake.",
             dependsOn = { "accept-91725-stolen-enchanting-supplies" },
             complete = QuestState(91725, "complete"),
@@ -2147,7 +2163,7 @@ ns:RegisterGuide({
             id = "turnin-91724-delicate-instruments",
             kind = "turnin",
             priority = 1171,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in Delicate Instruments to Hamish Bergwort.",
             dependsOn = { "objective-91724-delicate-instruments" },
             complete = QuestState(91724, "completed"),
@@ -2160,7 +2176,7 @@ ns:RegisterGuide({
             id = "turnin-91725-stolen-enchanting-supplies",
             kind = "turnin",
             priority = 1172,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in Stolen Enchanting Supplies to Blixie Fitzwink.",
             dependsOn = { "objective-91725-stolen-enchanting-supplies" },
             complete = QuestState(91725, "completed"),
@@ -2175,7 +2191,7 @@ ns:RegisterGuide({
             priority = 1173,
             conditions = {
                 all = {
-                    { level = { min = 5 } },
+                    { level = { min = 7 } },
                     { profession = { skillLineID = SKILL.ENCHANTING } },
                 },
             },
@@ -2191,7 +2207,7 @@ ns:RegisterGuide({
             id = "turnin-91732-good-steel",
             kind = "turnin",
             priority = 1174,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in Good Steel to Hagar Lowe.",
             dependsOn = { "objective-91732-good-steel" },
             complete = QuestState(91732, "completed"),
@@ -2230,7 +2246,7 @@ ns:RegisterGuide({
             id = "turnin-99127-a-net-disaster",
             kind = "turnin",
             priority = 1191,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in A Net Disaster to Jason Mathers.",
             dependsOn = { "objective-99127-a-net-disaster" },
             complete = QuestState(99127, "completed"),
@@ -2243,7 +2259,7 @@ ns:RegisterGuide({
             id = "turnin-99128-slimy-menace",
             kind = "turnin",
             priority = 1192,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Slimy Menace to Jason Mathers.",
             dependsOn = { "objective-99128-slimy-menace" },
             complete = QuestState(99128, "completed"),
@@ -2256,7 +2272,7 @@ ns:RegisterGuide({
             id = "turnin-99143-bottles-and-baubles",
             kind = "turnin",
             priority = 1193,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in Bottles and Baubles to Lee Brown.",
             dependsOn = { "objective-99143-bottles-and-baubles" },
             complete = QuestState(99143, "completed"),
@@ -2269,7 +2285,7 @@ ns:RegisterGuide({
             id = "accept-99129-a-man-about-a-murloc",
             kind = "accept",
             priority = 1194,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept A Man About a Murloc from Jason Mathers.",
             dependsOn = { "turnin-99128-slimy-menace" },
             complete = QuestState(99129, "activeOrCompleted"),
@@ -2282,7 +2298,7 @@ ns:RegisterGuide({
             id = "turnin-99129-a-man-about-a-murloc",
             kind = "turnin",
             priority = 1195,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in A Man About a Murloc to Remy Two Times.",
             dependsOn = { "accept-99129-a-man-about-a-murloc" },
             complete = QuestState(99129, "completed"),
@@ -2295,7 +2311,7 @@ ns:RegisterGuide({
             id = "accept-99130-an-enticing-offer",
             kind = "accept",
             priority = 1196,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept An Enticing Offer from Remy Two Times.",
             dependsOn = { "turnin-99129-a-man-about-a-murloc" },
             complete = QuestState(99130, "activeOrCompleted"),
@@ -2308,7 +2324,7 @@ ns:RegisterGuide({
             id = "objective-99130-an-enticing-offer",
             kind = "objective",
             priority = 1197,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Collect 18 Duskweed Petals and 6 Vials of Animal Blood.",
             dependsOn = { "accept-99130-an-enticing-offer" },
             complete = QuestState(99130, "complete"),
@@ -2321,7 +2337,7 @@ ns:RegisterGuide({
             id = "turnin-99130-an-enticing-offer",
             kind = "turnin",
             priority = 1198,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Turn in An Enticing Offer to Remy Two Times.",
             dependsOn = { "objective-99130-an-enticing-offer" },
             complete = QuestState(99130, "completed"),
@@ -2334,7 +2350,7 @@ ns:RegisterGuide({
             id = "accept-99131-baited-for-success",
             kind = "accept",
             priority = 1199,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Accept Baited for Success from Remy Two Times.",
             dependsOn = { "turnin-99130-an-enticing-offer" },
             complete = QuestState(99131, "activeOrCompleted"),
@@ -2347,7 +2363,7 @@ ns:RegisterGuide({
             id = "turnin-99131-baited-for-success",
             kind = "turnin",
             priority = 1199.1,
-            conditions = { level = { min = 4 } },
+            conditions = { level = { min = 7 } },
             text = "Return to Jason Mathers.",
             dependsOn = { "accept-99131-baited-for-success" },
             complete = QuestState(99131, "completed"),
@@ -2775,7 +2791,7 @@ ns:RegisterGuide({
             priority = 1322,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                     { quest = { id = 91746, state = "activeOrCompleted" } },
                 },
             },
@@ -2838,7 +2854,7 @@ ns:RegisterGuide({
             id = "accept-91738-an-apple-treat",
             kind = "accept",
             priority = 1361,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Accept An Apple Treat from Sergeant De Vries at Westbrook Garrison.",
             complete = QuestState(91738, "activeOrCompleted"),
             route = {
@@ -2850,7 +2866,7 @@ ns:RegisterGuide({
             id = "objective-91738-an-apple-treat",
             kind = "objective",
             priority = 1362,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Collect Thunder Applejack for Sergeant De Vries.",
             dependsOn = { "accept-91738-an-apple-treat" },
             complete = QuestState(91738, "complete"),
@@ -2863,7 +2879,7 @@ ns:RegisterGuide({
             id = "turnin-91738-an-apple-treat",
             kind = "turnin",
             priority = 1363,
-            conditions = { level = { min = 7 } },
+            conditions = { level = { min = 10 } },
             text = "Turn in An Apple Treat to Sergeant De Vries.",
             dependsOn = { "objective-91738-an-apple-treat" },
             complete = QuestState(91738, "completed"),
@@ -3538,7 +3554,7 @@ ns:RegisterGuide({
             priority = 1851,
             conditions = {
                 all = {
-                    { level = { min = 7 } },
+                    { level = { min = 10 } },
                     { quest = { id = 91740, state = "activeOrCompleted" } },
                 },
             },

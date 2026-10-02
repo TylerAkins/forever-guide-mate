@@ -373,3 +373,181 @@ ns:RegisterQuestPrerequisite({
     note = "Jorn Skyseer is offered after The Angry Scytheclaws.",
 })
 
+-- QuestieDB prerequisite groups. Registered only when the turn-in step id is
+-- turnin-<questId>- and that step is already earlier in the same guide.
+-- Zephras entries below are the ones Wowhead prerequisiteQuestIds also lists.
+ns:RegisterQuestPrerequisite({
+    quest = 65593,
+    mode = "any",
+    quests = { 1472 },
+    conditions = { all = { { faction = "Horde" }, { class = 9 } } },
+    note = "Hearts of the Lovers is offered after Devourer of Souls.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 65601,
+    mode = "any",
+    quests = { 1507 },
+    conditions = { all = { { faction = "Horde" }, { class = 9 } } },
+    note = "Love Hurts is offered after Devourer of Souls.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 65602,
+    mode = "any",
+    quests = { 1716 },
+    conditions = { all = { { faction = "Alliance" }, { class = 9 } } },
+    note = "What Is Love? is offered after Devourer of Souls.",
+})
+
+-- Wowhead prerequisiteQuestIds for Zephras Isle. Mode follows Questie when the
+-- id list matches that page. Catching Wind's 99260 and Tower Defense's Questie
+-- any-of are not on a usable Wowhead prerequisite list, so they are omitted.
+ns:RegisterQuestPrerequisite({
+    quest = 92551,
+    mode = "any",
+    quests = { 92528 },
+    note = "Stolen Supplies follows Among the Faithful.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92685,
+    mode = "all",
+    quests = { 92682, 92683, 92684 },
+    note = "The Hills Have Eyes follows the three Shendar tasks.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92693,
+    mode = "any",
+    quests = { 92685 },
+    note = "Standing Our Ground follows The Hills Have Eyes.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92698,
+    mode = "any",
+    quests = { 92679 },
+    note = "What Is My Purpose? follows Blood Tithe.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92699,
+    mode = "any",
+    quests = { 92701 },
+    conditions = { faction = "Alliance" },
+    note = "The Supreme Magister follows the Alliance report to Valanaar.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92700,
+    mode = "any",
+    quests = { 92579 },
+    conditions = { faction = "Horde" },
+    note = "The Grand Skyseer follows the Horde report to Valanaar.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92708,
+    mode = "any",
+    quests = { 92700 },
+    conditions = { faction = "Horde" },
+    note = "A Grand Adventure follows The Grand Skyseer.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92709,
+    mode = "any",
+    quests = { 92699 },
+    conditions = { faction = "Alliance" },
+    note = "A Grand Adventure follows The Supreme Magister.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92727,
+    mode = "any",
+    quests = { 92699 },
+    conditions = { faction = "Alliance" },
+    note = "The Missing Scholar follows The Supreme Magister.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92741,
+    mode = "any",
+    quests = { 92699 },
+    conditions = { faction = "Alliance" },
+    note = "Unwelcome Visitors follows The Supreme Magister.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 92860,
+    mode = "any",
+    quests = { 92840 },
+    conditions = { faction = "Alliance" },
+    note = "In Service of Zephras follows Catching Wind.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 93165,
+    mode = "any",
+    quests = { 94484 },
+    note = "Mercy Falls on Deaf Ears follows Unnerving Silence.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 93552,
+    mode = "any",
+    quests = { 92461 },
+    note = "Harvesting Windstones follows Harmony in Balance.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 93740,
+    mode = "any",
+    quests = { 93746 },
+    conditions = { faction = "Horde" },
+    note = "Blood for Blood follows A Firm Response.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 93926,
+    mode = "any",
+    quests = { 92528 },
+    note = "The Western Watch follows Among the Faithful.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 93948,
+    mode = "any",
+    quests = { 92550 },
+    note = "Deliver the Signet follows Havoc in the Highlands.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94488,
+    mode = "all",
+    quests = { 94486, 94487 },
+    note = "The Ties That Bind follows Feathers for Binding and Unwanted and Unworthy.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94489,
+    mode = "all",
+    quests = { 94486, 94487 },
+    note = "The Wounds of Betrayal follows Feathers for Binding and Unwanted and Unworthy.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94490,
+    mode = "all",
+    quests = { 94486, 94487 },
+    note = "Ripped Missive follows Feathers for Binding and Unwanted and Unworthy.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 94491,
+    mode = "any",
+    quests = { 94490 },
+    note = "The Fate of the Den follows Ripped Missive.",
+})
+

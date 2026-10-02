@@ -365,7 +365,7 @@ ns:RegisterGuide({
             priority = 231,
             conditions = {
                 all = {
-                    { level = { min = 17 } },
+                    { level = { min = 21 } },
                     { quest = { id = 98028, state = "activeOrCompleted" } },
                 },
             },
