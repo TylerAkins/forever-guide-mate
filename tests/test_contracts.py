@@ -109,6 +109,8 @@ class ContractTests(unittest.TestCase):
         lines = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8").splitlines()
         self.assertIn("## Interface: 16001", lines)
         self.assertIn("## Title: Forever GuideMate", lines)
+        self.assertIn("## Category: Quests", lines)
+        self.assertIn("## X-Category: Quests", lines)
         self.assertIn("## X-Website: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Source: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Issues: https://github.com/TylerAkins/forever-guide-mate/issues", lines)
