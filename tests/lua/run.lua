@@ -1926,7 +1926,7 @@ local thendalDeparture = {
     },
 }
 local departureState = {
-    faction = "Horde", raceID = 96, classID = 1, level = 4,
+    faction = "Horde", raceID = 96, classID = 1, level = 6,
     professions = {}, professionsKnown = true,
     quests = {}, completedQuests = { [92470] = true },
     questLogKnown = true, questCompletionKnown = true,
@@ -2049,7 +2049,7 @@ local allianceSkyborne = {}
 for key, value in pairs(starter) do allianceSkyborne[key] = value end
 allianceSkyborne.faction = "Alliance"
 allianceSkyborne.raceID = 95
-allianceSkyborne.level = 2
+allianceSkyborne.level = 4
 Equal(ns.EvaluateCondition(leyLines.conditions, allianceSkyborne), true, "alliance skyborne can read the ley lines")
 Equal(ns.EvaluateCondition(skysight.conditions, allianceSkyborne), false, "alliance skyborne do not get Skysight")
 Equal(ns.EvaluateCondition(falling.conditions, allianceSkyborne), true, "alliance skyborne can take Falling With Style")
@@ -2057,7 +2057,7 @@ local hordeSkyborne = {}
 for key, value in pairs(starter) do hordeSkyborne[key] = value end
 hordeSkyborne.faction = "Horde"
 hordeSkyborne.raceID = 96
-hordeSkyborne.level = 2
+hordeSkyborne.level = 4
 Equal(ns.EvaluateCondition(leyLines.conditions, hordeSkyborne), false, "horde skyborne do not read the ley lines")
 Equal(ns.EvaluateCondition(skysight.conditions, hordeSkyborne), true, "horde skyborne can take Skysight")
 Equal(ns.EvaluateCondition(falling.conditions, hordeSkyborne), true, "horde skyborne can take Falling With Style")
@@ -2085,7 +2085,7 @@ beforeAetheen.quests = {}
 beforeAetheen.completedQuests = {}
 Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
     "Foul Matriarch waits until Aetheen of the Gales can be completed")
-beforeAetheen.level = 4
+beforeAetheen.level = 5
 Equal(ns.Engine:IsReady(zephras, foulMatriarch, beforeAetheen), false,
     "Foul Matriarch stays locked until Aetheen of the Gales is turned in")
 beforeAetheen.completedQuests[92471] = true
