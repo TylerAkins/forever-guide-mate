@@ -5,6 +5,17 @@
 ## Author: Tyler Akins
 ## Version: @project-version@
 ## IconTexture: Interface\Icons\INV_Misc_Map_01
+## Category: Quests
+## Category-deDE: Quests
+## Category-esES: Misiones
+## Category-esMX: Misiones
+## Category-frFR: Quêtes
+## Category-itIT: Missioni
+## Category-koKR: 퀘스트
+## Category-ptBR: Missões
+## Category-ruRU: Задания
+## Category-zhCN: 任务
+## Category-zhTW: 任務
 ## X-License: GPL-3.0-or-later
 ## X-Category: Quests
 ## X-Website: https://github.com/TylerAkins/forever-guide-mate
