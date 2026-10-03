@@ -137,9 +137,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92461-harmony-in-balance",
+            kind = "accept",
+            priority = 47,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
+            complete = QuestState(92461, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-92461-harmony-in-balance",
+            kind = "objective",
+            priority = 48,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            complete = QuestState(92461, "complete"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
+                    "Travel to Juvenile Vuldren in Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-92461-harmony-in-balance",
+            kind = "turnin",
+            priority = 49,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { class = 8 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
+            dependsOn = { "objective-92461-harmony-in-balance" },
+            complete = QuestState(92461, "completed"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
             id = "accept-92481-a-student-of-the-arcane",
             kind = "accept",
             priority = 50,
+            dependsOn = { "turnin-92461-harmony-in-balance" },
             conditions = {
                 all = {
                     { faction = "Alliance" },
