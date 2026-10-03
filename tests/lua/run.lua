@@ -490,16 +490,19 @@ ns.MapPins:HookMap()
 Check(WorldMapFrame.provider ~= nil, "map pin registers a Blizzard map data provider")
 WorldMapFrame.provider:RefreshAllData()
 Equal(acquiredPin.x, 0.5, "map data provider refreshes the guide pin")
-local savedTimer = C_Timer
-local ran = false
-C_Timer = { After = function(_, fn) ran = true end }
-acquiredPin.x = nil
-WorldMapFrame.provider:RefreshAllData()
-Equal(acquiredPin.x, nil, "map pin acquisition waits until the world map's secure refresh returns")
-Equal(ran, true, "map pin refresh is queued for the next frame")
-C_Timer = savedTimer
-ns.MapPins.refreshQueued = false
-ns.MapPins.pendingCanvas = nil
+function TestMapPinDefersSecureRefresh()
+    local savedTimer = C_Timer
+    local ran = false
+    C_Timer = { After = function(_, fn) ran = true end }
+    acquiredPin.x = nil
+    WorldMapFrame.provider:RefreshAllData()
+    Equal(acquiredPin.x, nil, "map pin acquisition waits until the world map's secure refresh returns")
+    Equal(ran, true, "map pin refresh is queued for the next frame")
+    C_Timer = savedTimer
+    ns.MapPins.refreshQueued = false
+    ns.MapPins.pendingCanvas = nil
+end
+TestMapPinDefersSecureRefresh()
 WorldMapFrame, MapCanvasPinMixin, MapCanvasDataProviderMixin, CreateFromMixins = nil, nil, nil, nil
 
 local transportGoal = { route = {
