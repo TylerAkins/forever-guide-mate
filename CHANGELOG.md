@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.52 - 2026-10-03
+
+- Wailing Caverns no longer tracks When Dreams Turn to Nightmares or Waking Naralex. The finale escort and Mutanus are not quest steps in Forever.
+
 ## 0.1.51 - 2026-10-03
 
 - Added the Excavation Site: Wetlands dungeon quest guide for both factions.
