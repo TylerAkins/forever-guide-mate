@@ -41,6 +41,7 @@ REQUIRED_FILES = (
     "Guides/Dungeons/RuinsOfLordaeron.lua",
     "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
+    "Guides/Dungeons/ExcavationSiteWetlands.lua",
     "Guides/Dungeons/ShadowfangKeep.lua",
     "Guides/Dungeons/BlackfathomDeeps.lua",
     "Guides/Dungeons/Gnomeregan.lua",
@@ -136,6 +137,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/RuinsOfLordaeron.lua",
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
+                "Guides/Dungeons/ExcavationSiteWetlands.lua",
                 "Guides/Dungeons/ShadowfangKeep.lua",
                 "Guides/Dungeons/BlackfathomDeeps.lua",
                 "Guides/Dungeons/Gnomeregan.lua",
@@ -287,6 +289,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Dungeons/RuinsOfLordaeron.lua",
                 "Guides/Dungeons/Deadmines.lua",
                 "Guides/Dungeons/HallOfThanes.lua",
+                "Guides/Dungeons/ExcavationSiteWetlands.lua",
                 "Guides/Dungeons/ShadowfangKeep.lua",
                 "Guides/Dungeons/BlackfathomDeeps.lua",
                 "Guides/Dungeons/Gnomeregan.lua",
@@ -391,6 +394,16 @@ class ContractTests(unittest.TestCase):
         self.assertIn("level = { min = 10 }", guide)
         self.assertIn('{ faction = "Alliance" }', guide)
         self.assertIn("IRONFORGE = 1455", guide)
+
+    def test_excavation_site_wetlands_guide_covers_listed_quests(self) -> None:
+        guide = (ROOT / "Guides/Dungeons/ExcavationSiteWetlands.lua").read_text(encoding="utf-8")
+        for quest_id in (469, 98815, 95772, 95795, 95737, 95647, 95809, 95646, 95810, 98824, 95697, 95663, 95682, 95664, 98823):
+            self.assertIn(str(quest_id), guide)
+        self.assertIn('id = "dungeons-excavation-site-wetlands"', guide)
+        self.assertIn('category = "Dungeon Quest Guides"', guide)
+        self.assertIn("level = { min = 24 }", guide)
+        self.assertIn('{ faction = "Alliance" }', guide)
+        self.assertIn('{ faction = "Horde" }', guide)
 
     def test_zephras_isle_guide_covers_the_starter_path(self) -> None:
         guide = (ROOT / "Guides/Leveling/zephras-isle.lua").read_text(encoding="utf-8")

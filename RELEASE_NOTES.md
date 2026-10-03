@@ -1,3 +1,3 @@
-## 0.1.50 - 2026-10-02
+## 0.1.51 - 2026-10-03
 
-- Assault on Fenris Isle warns that Thule Ravenclaw is an elite target and recommends bringing a group.
+- Added the Excavation Site: Wetlands dungeon quest guide for both factions.
