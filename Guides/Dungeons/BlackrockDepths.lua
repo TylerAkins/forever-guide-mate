@@ -225,13 +225,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-thaurissan-relic",
-            kind = "note",
-            priority = 25,
-            conditions = { level = { min = 52 } },
-            text = "Click Thaurissan Relic+.",
-        },
-        {
             id = "objective-3701-1-pieces-of-information",
             kind = "objective",
             priority = 26,
@@ -506,13 +499,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-enemies-around-this-area",
-            kind = "note",
-            priority = 49,
-            conditions = { level = { min = 52 } },
-            text = "Kill enemies around this area. Only Tempered War Golems, Heavy War Golems, and Magma Elementals will drop this quest item.",
-        },
-        {
             id = "objective-3442-2-golem-oil",
             kind = "objective",
             priority = 50,
@@ -523,14 +509,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.486, 0.383, "Searing Gorge", "Travel to Searing Gorge."),
             },
-        },
-        {
-            id = "boss-elemental-enemies-around-this-area",
-            kind = "note",
-            priority = 51,
-            conditions = { level = { min = 52 } },
-            text = "Kill Elemental enemies around this area. Heavy War Golems will not drop this quest item.",
-            dependsOn = { "boss-enemies-around-this-area" },
         },
         {
             id = "objective-3442-1-heart-of-flame",
@@ -569,14 +547,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-dark-iron-enemies-around-this-area",
-            kind = "note",
-            priority = 55,
-            conditions = { level = { min = 52 } },
-            text = "Kill Dark Iron enemies around this area. Inside the cave, all throughout. You can also find some outside, near Thorium Point.",
-            dependsOn = { "boss-elemental-enemies-around-this-area" },
-        },
-        {
             id = "objective-3443-1-thorium-plated-dagger",
             kind = "objective",
             priority = 56,
@@ -611,14 +581,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.391, 0.390, "Kalaran Windblade", "Travel to Searing Gorge."),
             },
-        },
-        {
-            id = "boss-twilight-enemies-around-this-area",
-            kind = "note",
-            priority = 59,
-            conditions = { level = { min = 52 } },
-            text = "Kill Twilight enemies around this area. They are elite enemies, you will likely need help with this. Try to find someone to help you. Doing this quest unlocks more quests that give easy experience, so it's important to get it done.",
-            dependsOn = { "boss-dark-iron-enemies-around-this-area" },
         },
         {
             id = "objective-3452-1-symbol-of-ragnaros",
@@ -693,13 +655,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-torch-of-retribution",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 52 } },
-            text = "Click Torch of Retribution.",
-        },
-        {
             id = "turnin-3454-the-torch-of-retribution",
             kind = "turnin",
             priority = 67,
@@ -745,13 +700,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.392, 0.390, "Squire Maltrake", "Travel to Searing Gorge."),
             },
-        },
-        {
-            id = "note-click-sentry-brazier",
-            kind = "note",
-            priority = 71,
-            conditions = { level = { min = 52 } },
-            text = "Click Sentry Brazier.",
         },
         {
             id = "objective-3463-4-set-the-northern-tower-a",
@@ -812,13 +760,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.392, 0.390, "Squire Maltrake", "Travel to Searing Gorge."),
             },
-        },
-        {
-            id = "note-click-hoard-of-the-black-dragonflight",
-            kind = "note",
-            priority = 77,
-            conditions = { level = { min = 52 } },
-            text = "Click Hoard of the Black Dragonflight.",
         },
         {
             id = "accept-3481-trinkets",
@@ -976,35 +917,12 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-anvilrage-dwarves-at-the-beginning-of-the",
-            kind = "note",
-            priority = 92,
-            conditions = { level = { min = 52 } },
-            text = "Kill Anvilrage dwarves at the beginning of the dungeon. Just clear the first few rooms of the dungeon, killing all the Anvilrage dwarves and resetting the instance if needed, until you get the item drop.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "accept-4264-a-crumpled-up-note",
             kind = "accept",
             priority = 93,
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             text = "Accept A Crumpled Up Note.",
             complete = QuestState(4264, "activeOrCompleted"),
-        },
-        {
-            id = "boss-high-interrogator-gerstahn",
-            kind = "note",
-            priority = 94,
-            conditions = { level = { min = 52 } },
-            text = "Kill High Interrogator Gerstahn. After entering the dungeon, go straight into the Detention Block and then take the first right. Follow this path around until you can go left into a room at the back of this long hallway. Her most dangerous ability is 'Psychic Scream' which will fear the entire group, possibly leading to adds being pulled. 'Fear Ward' and 'Tremor Totem' will come in very handy during this encounter. Fight her in a corner of the room to try and control where your party runs during fear.",
-            dependsOn = { "boss-anvilrage-dwarves-at-the-beginning-of-the" },
-        },
-        {
-            id = "note-click-cell-door",
-            kind = "note",
-            priority = 95,
-            conditions = { level = { min = 52 } },
-            text = "Click Cell Door.",
         },
         {
             id = "turnin-4341-kharan-mighthammer",
@@ -1092,14 +1010,6 @@ ns:RegisterGuide({
             complete = QuestState(4282, "activeOrCompleted"),
         },
         {
-            id = "boss-fineous-darkvire",
-            kind = "note",
-            priority = 105,
-            conditions = { level = { min = 52 } },
-            text = "Kill Fineous Darkvire. Leave the tunnel and head east through the Detention Block and then turn left after reaching the Halls of the Law to start the Ring of the Law event. Complete the event and then exit through the west gate to enter the Eastern Garrison, immediately take a sharp right and go up the stairs to reach the upper. Follow the path around the arena and go down the ramp on the other side, go left and across the bridge to The Domicile. Clear all enemies along the path he patrols before engaging. This boss hits very hard, so extra healing may be required. Be sure to interrupt his 'Holy Light' as to not prolong the encounter.",
-            dependsOn = { "boss-high-interrogator-gerstahn" },
-        },
-        {
             id = "objective-3802-1-ironfel",
             kind = "objective",
             priority = 106,
@@ -1108,13 +1018,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3802-dark-iron-legacy" },
             complete = QuestState(3802, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-monument-of-franclorn-forgewright",
-            kind = "note",
-            priority = 107,
-            conditions = { level = { min = 52 } },
-            text = "Click Monument of Franclorn Forgewright.",
         },
         {
             id = "turnin-3802-dark-iron-legacy",
@@ -1127,14 +1030,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-bael-gar",
-            kind = "note",
-            priority = 109,
-            conditions = { level = { min = 52 } },
-            text = "Kill Bael'Gar. Turn around and cross the bridge in Shadowforge City to once again reach The Domicile. Follow the same path as before to reach the Hall of Crafting where you killed Fineous Darkvire. Continue down through the Hall of Crafting's lower level to reach the boss Lord Incendius. This is an optional boss and may be skipped. He will spawn adds which need to be killed quickly. The tank will need to face him away from the group to prevent damage from 'Magma Splash'.",
-            dependsOn = { "boss-fineous-darkvire" },
-        },
-        {
             id = "objective-4024-1-encased-fiery-essence",
             kind = "objective",
             priority = 110,
@@ -1145,14 +1040,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-general-angerforge",
-            kind = "note",
-            priority = 111,
-            conditions = { level = { min = 52 } },
-            text = "Kill General Angerforge. Run back down the Dark Iron Highway, take the first right and unlock the gate on your left. Unlock the first door on your left to enter East Garrison. In the lower part of this room, click the Shadowforge Lock. run up the two sets of stairs and follow the hallway on the left just before the third set of. This boss is optional. During the encounter, he will summon adds which need to be AoE'd down. Aside from the tanks picking up adds, the fight is straight forward.",
-            dependsOn = { "boss-bael-gar" },
-        },
-        {
             id = "objective-4282-1-marshal-windsor-s-lost-i",
             kind = "objective",
             priority = 112,
@@ -1161,14 +1048,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4282-a-shred-of-hope" },
             complete = QuestObjective(4282, 1, "Marshal Windsor's Lost Information"),
             useClientPin = true,
-        },
-        {
-            id = "boss-golem-lord-argelmach",
-            kind = "note",
-            priority = 113,
-            conditions = { level = { min = 52 } },
-            text = "Kill Golem Lord Argelmach. Run back down the Dark Iron Highway, take the first right and unlock the gate on your left. Unlock the first door on your left to enter East Garrison. In the lower part of this room, click the Shadowforge Lock. run up the two sets of stairs and follow the hallway on the left just before the third set of.",
-            dependsOn = { "boss-general-angerforge" },
         },
         {
             id = "objective-4282-2-marshal-windsor-s-lost-i",
@@ -1189,14 +1068,6 @@ ns:RegisterGuide({
             complete = QuestState(4201, "activeOrCompleted"),
         },
         {
-            id = "boss-ribbly-screwspigot",
-            kind = "note",
-            priority = 116,
-            conditions = { level = { min = 52 } },
-            text = "Kill Ribbly Screwspigot. He's at the bottom level of the Grim Guzzler.",
-            dependsOn = { "boss-golem-lord-argelmach" },
-        },
-        {
             id = "objective-4136-1-ribbly-s-head",
             kind = "gossip",
             priority = 117,
@@ -1207,21 +1078,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-thunderbrew-lager-keg",
-            kind = "note",
-            priority = 118,
-            conditions = { level = { min = 52 } },
-            text = "Click Thunderbrew Lager Keg+.",
-        },
-        {
-            id = "boss-hurley-blackbreath",
-            kind = "note",
-            priority = 119,
-            conditions = { level = { min = 52 } },
-            text = "Kill Hurley Blackbreath. They look like wooden kegs sitting in a side room in the lower section of The Grim Guzzler. Destroy all three kegs to spawn Hurley Blackbreath.",
-            dependsOn = { "boss-ribbly-screwspigot" },
-        },
-        {
             id = "objective-4126-1-lost-thunderbrew-recipe",
             kind = "objective",
             priority = 120,
@@ -1230,28 +1086,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4126-hurley-blackbreath" },
             complete = QuestState(4126, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-relic-coffer-door",
-            kind = "note",
-            priority = 121,
-            conditions = { level = { min = 52 } },
-            text = "Click Relic Coffer Door.",
-        },
-        {
-            id = "boss-watchman-doomgrip",
-            kind = "note",
-            priority = 122,
-            conditions = { level = { min = 52 } },
-            text = "Kill Watchman Doomgrip. Open all 12 of them inside of the Black Vault after clearing the room. Proceed back through The Domicile to reach the Shadowforge City. take the first door on the right to enter The Black Vault. He will spawn once all 12 Relic Coffer Doors have been opened.",
-            dependsOn = { "boss-hurley-blackbreath" },
-        },
-        {
-            id = "note-click-heart-of-the-mountain",
-            kind = "note",
-            priority = 123,
-            conditions = { level = { min = 52 } },
-            text = "Click Heart of the Mountain.",
         },
         {
             id = "objective-4123-1-the-heart-of-the-mountai",
@@ -1301,20 +1135,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4286-the-good-stuff" },
             complete = QuestState(4286, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 129,
-            conditions = { level = { min = 52 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 130,
-            conditions = { level = { min = 52 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-4322-jail-break",
@@ -1459,14 +1279,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-cliff-enemies-around-this-area",
-            kind = "note",
-            priority = 143,
-            conditions = { level = { min = 52 } },
-            text = "Kill Cliff enemies around this area. These are elite. You may need help with this.",
-            dependsOn = { "boss-watchman-doomgrip" },
-        },
-        {
             id = "objective-4201-2-giant-silver-vein",
             kind = "objective",
             priority = 144,
@@ -1509,14 +1321,6 @@ ns:RegisterGuide({
             dependsOn = { "objective-4201-1-gromsblood", "objective-4201-2-giant-silver-vein", "objective-4201-3-nagmara-s-filled-vial" },
             complete = QuestState(4201, "completed"),
             useClientPin = true,
-        },
-        {
-            id = "boss-emperor-dagran-thaurissan",
-            kind = "note",
-            priority = 148,
-            conditions = { level = { min = 52 } },
-            text = "Kill Emperor Dagran Thaurissan. Don't kill Princess Moira Bronzebeard during the encounter. Interrupt her heals otherwise the encounter will be complicated. You will not be able to turn in the quest if you kill her. During the encounter, your group will need to decide what to do with Princess Moira Bronzebeard. Keep her CC'd if you chose to save her while keeping her away from AoE damage. If you fail to keep her controlled, have a group member dedicated to interrupting her healing abilities.",
-            dependsOn = { "boss-cliff-enemies-around-this-area" },
         },
         {
             id = "objective-4362-1-emperor-dagran-thaurissa",
@@ -1618,13 +1422,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-wanted",
-            kind = "note",
-            priority = 158,
-            conditions = { level = { min = 52 } },
-            text = "Click WANTED.",
-        },
-        {
             id = "accept-4081-kill-on-sight-dark-iron-dwarves",
             kind = "accept",
             priority = 159,
@@ -1717,30 +1514,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SEARING_GORGE, 0.264, 0.777, "Searing Gorge", "Travel to Searing Gorge."),
             },
-        },
-        {
-            id = "boss-lord-roccor",
-            kind = "note",
-            priority = 167,
-            conditions = { level = { min = 52 } },
-            text = "Kill Lord Roccor. This boss can use 'Earth Shock' which will interrupt any casters spells and prevent casting for 2 seconds. It also casts 'Flame Shock' which will leave a dot on a party member.",
-            dependsOn = { "boss-emperor-dagran-thaurissan" },
-        },
-        {
-            id = "boss-houndmaster-grebmar",
-            kind = "note",
-            priority = 168,
-            conditions = { level = { min = 52 } },
-            text = "Kill Houndmaster Grebmar. Before engaging him, pull and kill the two packs of hounds patrolling the room with him. Range should keep their distance to avoid being interrupted with 'Pummel'. Other than that, this is a pretty straight forward encounter.",
-            dependsOn = { "boss-lord-roccor" },
-        },
-        {
-            id = "boss-pyromancer-loregrain",
-            kind = "note",
-            priority = 169,
-            conditions = { level = { min = 52 } },
-            text = "Kill Pyromancer Loregrain. This is an optional boss and may be skipped. Destroy his totems when they are summoned.",
-            dependsOn = { "boss-houndmaster-grebmar" },
         },
         {
             id = "objective-4063-1-head-of-argelmach",
@@ -1851,13 +1624,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-kill-on-sight",
-            kind = "note",
-            priority = 180,
-            conditions = { level = { min = 52 } },
-            text = "Click KILL ON SIGHT.",
-        },
-        {
             id = "accept-4082-kill-on-sight-high-ranking-dark-iron-offic",
             kind = "accept",
             priority = 181,
@@ -1889,14 +1655,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3907-disharmony-of-fire" },
             complete = QuestObjective(3907, 1, "Lord Incendius"),
             useClientPin = true,
-        },
-        {
-            id = "boss-lord-incendius",
-            kind = "note",
-            priority = 184,
-            conditions = { level = { min = 52 } },
-            text = "Kill Lord Incendius. The most important thing for this encounter is to not get knocked off the platform. Avoid its 'Mighty Blow' ability to ensure that.",
-            dependsOn = { "boss-pyromancer-loregrain" },
         },
         {
             id = "objective-3907-2-tablet-of-kurniya",
@@ -1993,14 +1751,6 @@ ns:RegisterGuide({
             complete = QuestState(3982, "activeOrCompleted"),
         },
         {
-            id = "boss-the-enemies-that-attack-in-waves",
-            kind = "note",
-            priority = 194,
-            conditions = { level = { min = 52 } },
-            text = "Kill the enemies that attack in waves. There will be two waves of enemies. Make sure Commander Gor'shak doesn't die.",
-            dependsOn = { "boss-lord-incendius" },
-        },
-        {
             id = "objective-3982-1-survive-the-onslaught",
             kind = "objective",
             priority = 195,
@@ -2086,38 +1836,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.318, 0.378, "Thrall", "Travel to Orgrimmar."),
             },
-        },
-        {
-            id = "boss-phalanx",
-            kind = "note",
-            priority = 203,
-            conditions = { level = { min = 52 } },
-            text = "Kill Phalanx. Purchase 6 Dark Iron Ale Mugs from Plugger and give them to Private Rocknot. This will enrage him and cause Phalanx to burst through the door. The group should spread out as far as possible to avoid 'Thunderclap'.",
-            dependsOn = { "boss-the-enemies-that-attack-in-waves" },
-        },
-        {
-            id = "boss-ambassador-flamelash",
-            kind = "note",
-            priority = 204,
-            conditions = { level = { min = 52 } },
-            text = "Kill Ambassador Flamelash. During the encounter, adds will spawn. They will need to be killed before reaching Flamelash.",
-            dependsOn = { "boss-phalanx" },
-        },
-        {
-            id = "boss-panzor-the-invincible",
-            kind = "note",
-            priority = 205,
-            conditions = { level = { min = 52 } },
-            text = "Kill Panzor the Invincible if the rare is up. This is a rare mob that may not be available. Casters need to watch out for its 'Spell Reflection' ability.",
-            dependsOn = { "boss-ambassador-flamelash" },
-        },
-        {
-            id = "boss-magmus",
-            kind = "note",
-            priority = 206,
-            conditions = { level = { min = 52 } },
-            text = "Kill Magmus. To open the door, kill Shadowforge Flame Keepers and collect two Shadowforge Torches. Use them to light the braziers that open the door to Magmus. For this encounter, the tank will need to position Magmus properly.",
-            dependsOn = { "boss-panzor-the-invincible" },
         },
         {
             id = "objective-4003-1-emperor-dagran-thaurissa",

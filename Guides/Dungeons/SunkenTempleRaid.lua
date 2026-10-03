@@ -169,13 +169,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-gorishi-enemies-around-this-area",
-            kind = "note",
-            priority = 20,
-            conditions = { level = { min = 25 } },
-            text = "Kill Gorishi enemies around this area. Gorishi Workers may call for help when at low health. |only if hardcore() |notinsticky. Watch for patrols and respawns while in the cave. |only if hardcore() |notinsticky.",
-        },
-        {
             id = "objective-9052-1-gorishi-sting",
             kind = "objective",
             priority = 21,
@@ -186,13 +179,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UN_GORO_CRATER, 0.504, 0.786, "Un'Goro Crater", "Travel to Un'Goro Crater."),
             },
-        },
-        {
-            id = "note-click-bloodcap",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 25 } },
-            text = "Click Bloodcap.",
         },
         {
             id = "objective-9052-2-bloodcap",
@@ -291,14 +277,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-mosshoof-courser",
-            kind = "note",
-            priority = 31,
-            conditions = { level = { min = 25 } },
-            text = "Kill Mosshoof Courser. They are scattered all over the area. These have a low drop rate. |only if hardcore().",
-            dependsOn = { "boss-gorishi-enemies-around-this-area" },
-        },
-        {
             id = "objective-8153-1-perfect-courser-antler",
             kind = "objective",
             priority = 32,
@@ -333,14 +311,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.424, 0.426, "Ogtinc", "Travel to Azshara."),
             },
-        },
-        {
-            id = "boss-wavethrasher-enemies-around-this-area",
-            kind = "note",
-            priority = 35,
-            conditions = { level = { min = 25 } },
-            text = "Kill Wavethrasher enemies around this area. They look like 3 headed beasts. |only if hardcore(). They are underwater around this area. Watch for patroling elites while here. |only if hardcore().",
-            dependsOn = { "boss-mosshoof-courser" },
         },
         {
             id = "objective-8231-1-wavethrasher-scale",
@@ -402,14 +372,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-blood-elf-enemies-around-this-area",
-            kind = "note",
-            priority = 41,
-            conditions = { level = { min = 25 } },
-            text = "Kill Blood Elf enemies around this area.",
-            dependsOn = { "boss-wavethrasher-enemies-around-this-area" },
-        },
-        {
             id = "objective-8251-1-glittering-dust",
             kind = "objective",
             priority = 42,
@@ -455,14 +417,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.281, 0.501, "Archmage Xylem", "Travel to Azshara."),
             },
-        },
-        {
-            id = "boss-spitelash-siren",
-            kind = "note",
-            priority = 46,
-            conditions = { level = { min = 25 } },
-            text = "Kill Spitelash Siren+.",
-            dependsOn = { "boss-blood-elf-enemies-around-this-area" },
         },
         {
             id = "objective-8252-1-enchanted-coral",
@@ -523,14 +477,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.427, 0.840, "Commander Ashlam Valorfist", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "boss-enemies-around-this-area",
-            kind = "note",
-            priority = 52,
-            conditions = { level = { min = 25 } },
-            text = "Kill enemies around this area. Murk Worms, Deep Lurkers and Saturated Oozes specifically drop the quest item. |notinsticky.",
-            dependsOn = { "boss-spitelash-siren" },
         },
         {
             id = "objective-8414-1-minion-s-scourgestone",
@@ -653,14 +599,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-highborne-enemies-around-this-area",
-            kind = "note",
-            priority = 63,
-            conditions = { level = { min = 25 } },
-            text = "Kill Highborne enemies around this area. These have a low drop rate.",
-            dependsOn = { "boss-enemies-around-this-area" },
-        },
-        {
             id = "objective-8256-1-ichor-of-undeath",
             kind = "objective",
             priority = 64,
@@ -721,14 +659,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-timbermaw-shaman",
-            kind = "note",
-            priority = 69,
-            conditions = { level = { min = 25 } },
-            text = "Kill Timbermaw Shaman. You can also Pickpocket them. Watch for patrols and respawns while in the area. |only if hardcore().",
-            dependsOn = { "boss-highborne-enemies-around-this-area" },
-        },
-        {
             id = "objective-8234-1-sealed-azure-bag",
             kind = "objective",
             priority = 70,
@@ -774,14 +704,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.AZSHARA, 0.361, 0.678, "Nyrill", "Travel to Azshara."),
             },
-        },
-        {
-            id = "boss-forest-ooze",
-            kind = "note",
-            priority = 74,
-            conditions = { level = { min = 25 } },
-            text = "Kill Forest Ooze. Pickpocket them before killing them. Kill Mistwing Ravagers if you run out of oozes to kill. |only if hardcore().",
-            dependsOn = { "boss-timbermaw-shaman" },
         },
         {
             id = "objective-8235-1-encoded-fragment",
@@ -842,14 +764,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FELWOOD, 0.414, 0.450, "Impsy", "Travel to Felwood."),
             },
-        },
-        {
-            id = "boss-tainted-ooze",
-            kind = "note",
-            priority = 80,
-            conditions = { level = { min = 25 } },
-            text = "Kill Tainted Ooze+.",
-            dependsOn = { "boss-forest-ooze" },
         },
         {
             id = "objective-8421-2-bloodvenom-essence",
@@ -1139,14 +1053,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-roc-enemies-around-this-area",
-            kind = "note",
-            priority = 105,
-            conditions = { level = { min = 25 } },
-            text = "Kill Roc enemies around this area.",
-            dependsOn = { "boss-tainted-ooze" },
-        },
-        {
             id = "objective-1452-1-roc-gizzard",
             kind = "objective",
             priority = 106,
@@ -1170,14 +1076,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-ironfur-enemies-around-this-area",
-            kind = "note",
-            priority = 108,
-            conditions = { level = { min = 25 } },
-            text = "Kill Ironfur enemies around this area. They share a spawn with Groddoc enemies around this area.",
-            dependsOn = { "boss-roc-enemies-around-this-area" },
-        },
-        {
             id = "objective-1452-2-ironfur-liver",
             kind = "objective",
             priority = 109,
@@ -1188,14 +1086,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.499, 0.304, "Feralas", "Travel to Feralas."),
             },
-        },
-        {
-            id = "boss-groddoc-enemies-around-this-area",
-            kind = "note",
-            priority = 110,
-            conditions = { level = { min = 25 } },
-            text = "Kill Groddoc enemies around this area. They share a spawn with Ironfur enemies around this area.",
-            dependsOn = { "boss-ironfur-enemies-around-this-area" },
         },
         {
             id = "objective-1452-3-groddoc-liver",
@@ -1270,13 +1160,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-marvon-s-chest",
-            kind = "note",
-            priority = 118,
-            conditions = { level = { min = 25 } },
-            text = "Click Marvon's Chest.",
-        },
-        {
             id = "objective-3444-1-stone-circle",
             kind = "objective",
             priority = 119,
@@ -1322,14 +1205,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.670, 0.224, "Yeh'kinya", "Travel to Tanaris."),
             },
-        },
-        {
-            id = "boss-vale-screecher",
-            kind = "note",
-            priority = 123,
-            conditions = { level = { min = 25 } },
-            text = "Kill Vale Screecher+. These have a low spawn rate. Use it on their corpse.",
-            dependsOn = { "boss-groddoc-enemies-around-this-area" },
         },
         {
             id = "objective-3520-1-screecher-spirits",
@@ -1378,14 +1253,6 @@ ns:RegisterGuide({
             complete = { instance = 109 },
         },
         {
-            id = "boss-theka-the-martyr",
-            kind = "note",
-            priority = 128,
-            conditions = { level = { min = 25 } },
-            text = "Kill Theka the Martyr. Follow the path north and then go right when the path splits. Quickly go left afterwards and then north. He is the second boss of the dungeon.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "objective-3527-1-first-mosh-aru-tablet",
             kind = "objective",
             priority = 129,
@@ -1396,14 +1263,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-hydromancer-velratha",
-            kind = "note",
-            priority = 130,
-            conditions = { level = { min = 25 } },
-            text = "Kill Hydromancer Velratha. Follow the path west to reach an open room with a large pyramid on the western side. Continue following the path southeast to reach the large room with a pool in the center. She walks around this area.",
-            dependsOn = { "boss-theka-the-martyr" },
-        },
-        {
             id = "objective-3527-2-second-mosh-aru-tablet",
             kind = "objective",
             priority = 131,
@@ -1412,20 +1271,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
             complete = QuestObjective(3527, 2, "Second Mosh'aru Tablet"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 132,
-            conditions = { level = { min = 25 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 133,
-            conditions = { level = { min = 25 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
@@ -1445,19 +1290,6 @@ ns:RegisterGuide({
             text = "Accept The Ancient Egg from Yeh'kinya.",
             dependsOn = { "turnin-3527-the-prophecy-of-mosh-aru" },
             complete = QuestState(4787, "activeOrCompleted"),
-        },
-        {
-            id = "note-click-ancient-egg",
-            kind = "note",
-            priority = 137,
-            conditions = { level = { min = 25 } },
-            text = "Click Ancient Egg.",
-            route = {
-                Point(MAP.THE_HINTERLANDS, 0.622, 0.714, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.600, 0.702, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.587, 0.703, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.592, 0.743, "The Hinterlands", "Travel to The Hinterlands."),
-            },
         },
         {
             id = "objective-4787-1-ancient-egg",
@@ -1493,14 +1325,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UN_GORO_CRATER, 0.429, 0.097, "Muigin", "Travel to Un'Goro Crater."),
             },
-        },
-        {
-            id = "boss-bloodpetal-enemies-around-this-area",
-            kind = "note",
-            priority = 142,
-            conditions = { level = { min = 25 } },
-            text = "Kill Bloodpetal enemies around this area. They look like walking plants. These have a low drop rate.",
-            dependsOn = { "boss-hydromancer-velratha" },
         },
         {
             id = "objective-4141-1-bloodpetal",
@@ -1551,40 +1375,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-atal-ai-tablet",
-            kind = "note",
-            priority = 148,
-            conditions = { level = { min = 25 } },
-            text = "Click Atal'ai Tablet+.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.717, 0.458, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.727, 0.422, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.758, 0.449, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.760, 0.460, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "note-click-atal-ai-statue",
-            kind = "note",
-            priority = 150,
-            conditions = { level = { min = 25 } },
-            text = "Click Atal'ai Statue.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.802, 0.496, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.813, 0.424, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.789, 0.407, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.768, 0.388, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "boss-atal-alarion",
-            kind = "note",
-            priority = 151,
-            conditions = { level = { min = 25 } },
-            text = "Kill Atal'alarion. There are 6 of them. Enemies will spawn behind you after interacting with the statues. They can be tamed instead of fighting if you have a Lone Wolf Hunter in the group.",
-            dependsOn = { "boss-bloodpetal-enemies-around-this-area" },
-        },
-        {
             id = "objective-9053-1-putrid-vine",
             kind = "objective",
             priority = 152,
@@ -1593,13 +1383,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-9053-a-better-ingredient" },
             complete = QuestState(9053, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-altar-of-hakkar",
-            kind = "note",
-            priority = 153,
-            conditions = { level = { min = 25 } },
-            text = "Click Altar of Hakkar.",
         },
         {
             id = "turnin-3446-into-the-depths",
@@ -1621,13 +1404,6 @@ ns:RegisterGuide({
             complete = QuestState(3447, "activeOrCompleted"),
         },
         {
-            id = "note-click-idol-of-hakkar",
-            kind = "note",
-            priority = 156,
-            conditions = { level = { min = 25 } },
-            text = "Click Idol of Hakkar.",
-        },
-        {
             id = "turnin-3447-secret-of-the-circle",
             kind = "turnin",
             priority = 157,
@@ -1636,14 +1412,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3447-secret-of-the-circle" },
             complete = QuestState(3447, "completed"),
             useClientPin = true,
-        },
-        {
-            id = "boss-atal-ai-defenders-controller-controllers",
-            kind = "note",
-            priority = 158,
-            conditions = { level = { min = 25 } },
-            text = "Kill Atal'ai Defenders Controller Controllers. This is a gauntlet style fight. |grouprole EVERYONE. Enemies will appear one at a time. |grouprole EVERYONE. When one is killed, they will be turned into an unkillable ghost that needs to be CC'd by either a Priest or a Hunter. |grouprole EVERYONE.",
-            dependsOn = { "boss-atal-alarion" },
         },
         {
             id = "objective-8418-1-amber-voodoo-feather",
@@ -1736,22 +1504,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-jammal-an-the-prophet-ogom-the-wretched",
-            kind = "note",
-            priority = 168,
-            conditions = { level = { min = 25 } },
-            text = "Kill Jammal'an the Prophet, Ogom the Wretched. The mechanics may change weekly. Depending on such, Jammal'an the Prophet may be the one who is killed first. Focus Ogom until he dies, damage on Jammal'an does not matter in phase 1. |grouprole EVERYONE.",
-            dependsOn = { "boss-atal-ai-defenders-controller-controllers" },
-        },
-        {
-            id = "boss-morphaz-hazzas",
-            kind = "note",
-            priority = 170,
-            conditions = { level = { min = 25 } },
-            text = "Kill Morphaz, Hazzas. Unless you're a tank, don't stand in front of or behind the boss. |grouprole EVERYONE. Hazzas casts 'Animate Flames' at 80%. |grouprole EVERYONE. The adds must be killed as soon as they appear. |grouprole EVERYONE.",
-            dependsOn = { "boss-jammal-an-the-prophet-ogom-the-wretched" },
-        },
-        {
             id = "objective-8232-1-tooth-of-morphaz",
             kind = "objective",
             priority = 171,
@@ -1790,29 +1542,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8236-the-azure-key" },
             complete = QuestState(8236, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-essence-font",
-            kind = "note",
-            priority = 176,
-            conditions = { level = { min = 25 } },
-            text = "Click Essence Font.",
-        },
-        {
-            id = "boss-avatar-of-hakkar",
-            kind = "note",
-            priority = 178,
-            conditions = { level = { min = 25 } },
-            text = "Kill Avatar of Hakkar. Have a ranged stack and a melee stack. |grouprole EVERYONE. Anyone who gets Corrupted Blood must leave the stack to not spread the debuff to other players. |grouprole EVERYONE. Anyone who gets Corrupted Blood should move behind the tank until Avatar of Hakkar uses his breath attack. |grouprole EVERYONE.",
-            dependsOn = { "boss-morphaz-hazzas" },
-        },
-        {
-            id = "boss-atal-ai-enemies-around-this-area",
-            kind = "note",
-            priority = 182,
-            conditions = { level = { min = 25 } },
-            text = "Kill Atal'ai enemies around this area. These can also drop outside of the instance. |notinsticky.",
-            dependsOn = { "boss-avatar-of-hakkar" },
         },
         {
             id = "objective-1445-1-fetish-of-hakkar",
@@ -1929,13 +1658,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-bloodpetal-sprout",
-            kind = "note",
-            priority = 200,
-            conditions = { level = { min = 25 } },
-            text = "Click Bloodpetal Sprout.",
-        },
-        {
             id = "turnin-8410-elemental-mastery",
             kind = "turnin",
             priority = 201,
@@ -2040,13 +1762,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.479, 0.548, "Fel'zerul", "Travel to Swamp of Sorrows."),
             },
-        },
-        {
-            id = "note-click-atal-ai-artifact",
-            kind = "note",
-            priority = 210,
-            conditions = { level = { min = 25 } },
-            text = "Click Atal'ai Artifact+.",
         },
         {
             id = "objective-1424-1-atal-ai-artifact",
@@ -2226,14 +1941,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-festering-rotslime",
-            kind = "note",
-            priority = 228,
-            conditions = { level = { min = 25 } },
-            text = "Kill Festering Rotslime. The boss moves around in a circle, poisoning the raid as it moves. |grouprole EVERYONE. People afflicted by the poison will have their movement speed reduced by 60%. |grouprole EVERYONE. When the poison is dispelled, it will leave a green patch on the ground that deals damage over time to anyone that walks over it. |grouprole EVERYONE.",
-            dependsOn = { "boss-atal-ai-enemies-around-this-area" },
-        },
-        {
             id = "objective-8413-1-amber-voodoo-feather",
             kind = "objective",
             priority = 229,
@@ -2262,22 +1969,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-8413-da-voodoo" },
             complete = QuestObjective(8413, 3, "Green Voodoo Feather"),
             useClientPin = true,
-        },
-        {
-            id = "boss-dreamscythe-weaver",
-            kind = "note",
-            priority = 232,
-            conditions = { level = { min = 25 } },
-            text = "Kill Dreamscythe, Weaver. Stay towards the center of the room to avoid getting knocked back into poison. |grouprole EVERYONE. Just be sure to not fall into the hole in the middle! |grouprole EVERYONE. Both dragons have a knockback, a frontal cone breath, and share a health pool. |grouprole EVERYONE.",
-            dependsOn = { "boss-festering-rotslime" },
-        },
-        {
-            id = "boss-shade-of-eranikus",
-            kind = "note",
-            priority = 233,
-            conditions = { level = { min = 25 } },
-            text = "Kill Shade of Eranikus. Nature Resistance potions as well as Poison Cleansing Potions should be utilized here. |grouprole EVERYONE. Druids and Paladins need to prioritize cleansing 'Lethargic Poison'. |only if Alliance |grouprole EVERYONE. Shaman should use Poison Cleanse totoem for 'Lethargic Poison'. |only if Horde |grouprole EVERYONE.",
-            dependsOn = { "boss-dreamscythe-weaver" },
         },
         {
             id = "turnin-8413-da-voodoo",

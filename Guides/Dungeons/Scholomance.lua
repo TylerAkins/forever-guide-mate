@@ -66,20 +66,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-broodling-enemies-around-this-area",
-            kind = "note",
-            priority = 12,
-            conditions = { level = { min = 50 } },
-            text = "Kill Broodling enemies around this area. Use it on Broodling enemies around this area. They look like small flying dragons. They look like red floating crystals that appear above their corpses after you kill them.",
-        },
-        {
-            id = "note-click-broodling-essence",
-            kind = "note",
-            priority = 13,
-            conditions = { level = { min = 50 } },
-            text = "Click Broodling Essence+.",
-        },
-        {
             id = "objective-4726-1-broodling-essence",
             kind = "objective",
             priority = 14,
@@ -138,14 +124,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.616, 0.386, "Felnok Steelspring", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "boss-chillwind-ravager",
-            kind = "note",
-            priority = 19,
-            conditions = { level = { min = 50 } },
-            text = "Kill Chillwind Ravager+. They look like chimeras. They share spawn points with the bears, so kill them too.",
-            dependsOn = { "boss-broodling-enemies-around-this-area" },
         },
         {
             id = "objective-4809-1-uncracked-chillwind-horn",
@@ -249,20 +227,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4734-egg-freezing" },
             complete = QuestState(4734, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 29,
-            conditions = { level = { min = 50 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 30,
-            conditions = { level = { min = 50 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-4734-egg-freezing",
@@ -514,15 +478,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "reach-level-55",
-            kind = "note",
-            priority = 52,
-            conditions = { level = { min = 55 } },
-            text = "Reach level 55 before you continue.",
-            dependsOn = { "turnin-5097-all-along-the-watchtowers" },
-            complete = { level = { min = 55 } },
-        },
-        {
             id = "accept-5533-scholomance",
             kind = "accept",
             priority = 53,
@@ -556,14 +511,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.427, 0.838, "Alchemist Arbington", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "boss-skeletal-enemies-around-this-area",
-            kind = "note",
-            priority = 56,
-            conditions = { level = { min = 55 } },
-            text = "Kill Skeletal enemies around this area. Only enemies that look like skeletons will drop the quest item.",
-            dependsOn = { "enter-dungeon" },
         },
         {
             id = "objective-5537-1-skeletal-fragments",
@@ -662,21 +609,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-araj-the-summoner",
-            kind = "note",
-            priority = 65,
-            conditions = { level = { min = 55 } },
-            text = "Kill Araj the Summoner. You may need help with this.",
-            dependsOn = { "boss-skeletal-enemies-around-this-area" },
-        },
-        {
-            id = "note-click-araj-s-phylactery",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 55 } },
-            text = "Click Araj's Phylactery.",
-        },
-        {
             id = "objective-5803-1-araj-s-scarab",
             kind = "objective",
             priority = 67,
@@ -734,13 +666,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-the-deed-to-southshore",
-            kind = "note",
-            priority = 72,
-            conditions = { level = { min = 55 } },
-            text = "Click The Deed to Southshore.",
-        },
-        {
             id = "objective-5343-3-the-deed-to-southshore",
             kind = "objective",
             priority = 73,
@@ -749,13 +674,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5343-barov-family-fortune" },
             complete = QuestObjective(5343, 3, "The Deed to Southshore"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-the-deed-to-tarren-mill",
-            kind = "note",
-            priority = 74,
-            conditions = { level = { min = 55 } },
-            text = "Click The Deed to Tarren Mill.",
         },
         {
             id = "objective-5343-4-the-deed-to-tarren-mill",
@@ -778,14 +696,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-rattlegore",
-            kind = "note",
-            priority = 77,
-            conditions = { level = { min = 55 } },
-            text = "Kill Rattlegore. He is downstairs inside The Great Ossuary. Jump down into one of the holes on the sides of the room to reach the lower level. This key is required to progress further into the dungeon. Carefully clear the area around Rattlegore before engaging. He hits hard, so this fight will be healing intensive. The tank should face him away from the group.",
-            dependsOn = { "boss-araj-the-summoner" },
-        },
-        {
             id = "objective-4771-1-place-the-dawn-s-gmabit",
             kind = "objective",
             priority = 78,
@@ -794,14 +704,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4771-dawn-s-gambit" },
             complete = QuestObjective(4771, 1, "Place the Dawn's Gmabit"),
             useClientPin = true,
-        },
-        {
-            id = "boss-vectus",
-            kind = "note",
-            priority = 79,
-            conditions = { level = { min = 55 } },
-            text = "Kill Vectus. In the Viewing room. Avoid standing in his 'Flamestrikes' radius when cast.",
-            dependsOn = { "boss-rattlegore" },
         },
         {
             id = "objective-4771-2-vectus",
@@ -814,13 +716,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-the-deed-to-brill",
-            kind = "note",
-            priority = 81,
-            conditions = { level = { min = 55 } },
-            text = "Click The Deed to Brill.",
-        },
-        {
             id = "objective-5343-1-the-deed-to-brill",
             kind = "objective",
             priority = 82,
@@ -831,13 +726,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-remains-of-eva-sarkhoff",
-            kind = "note",
-            priority = 83,
-            conditions = { level = { min = 55 } },
-            text = "Click Remains of Eva Sarkhoff.",
-        },
-        {
             id = "objective-5382-2-burn-the-remains-of-eva",
             kind = "objective",
             priority = 84,
@@ -846,13 +734,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
             complete = QuestObjective(5382, 2, "Burn the Remains of Eva Sarkhoff"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-remains-of-lucien-sarkhoff",
-            kind = "note",
-            priority = 85,
-            conditions = { level = { min = 55 } },
-            text = "Click Remains of Lucien Sarkhoff.",
         },
         {
             id = "objective-5382-3-burn-the-remains-of-luci",
@@ -873,13 +754,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
             complete = QuestObjective(5382, 1, "Doctor Theolen Krastinov"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-the-deed-to-caer-darrow",
-            kind = "note",
-            priority = 88,
-            conditions = { level = { min = 55 } },
-            text = "Click The Deed to Caer Darrow.",
         },
         {
             id = "objective-5343-2-the-deed-to-caer-darrow",
@@ -952,14 +826,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-jandice-barov",
-            kind = "note",
-            priority = 95,
-            conditions = { level = { min = 55 } },
-            text = "Kill Jandice Barov. After entering the dungeon, follow the path forward to enter The Reliquary. Go left and proceed through the Iron Gate on the north side of the room to reach the Chamber of Summoning. Proceed into the next main room and then follow the path to the right and go down the stairs. She will use the ability 'Curse of Blood' which should be dispelled by Mages and Druids. She will also summon Illusions of herself, which will need to be killed. They cannot be AoE'd so you will need to single target damage all of them.",
-            dependsOn = { "boss-vectus" },
-        },
-        {
             id = "objective-5515-1-krastinov-s-bag-of-horro",
             kind = "objective",
             priority = 96,
@@ -968,14 +834,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5515-krastinov-s-bag-of-horrors" },
             complete = QuestState(5515, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-plagued-hatchling",
-            kind = "note",
-            priority = 97,
-            conditions = { level = { min = 55 } },
-            text = "Kill Plagued Hatchling+.",
-            dependsOn = { "boss-jandice-barov" },
         },
         {
             id = "accept-5582-healthy-dragon-scale",
@@ -1022,13 +880,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-brazier-of-the-herald",
-            kind = "note",
-            priority = 102,
-            conditions = { level = { min = 55 } },
-            text = "Click Brazier of the Herald.",
-        },
-        {
             id = "objective-5384-1-kirtonos-the-herald",
             kind = "objective",
             priority = 103,
@@ -1051,15 +902,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "reach-level-57",
-            kind = "note",
-            priority = 105,
-            conditions = { level = { min = 57 } },
-            text = "Reach level 57 before you continue.",
-            dependsOn = { "turnin-5384-kirtonos-the-herald" },
-            complete = { level = { min = 57 } },
-        },
-        {
             id = "accept-5461-the-human-ras-frostwhisper",
             kind = "accept",
             priority = 106,
@@ -1069,13 +911,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.706, 0.741, "Magistrate Marduke", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "note-click-keepsake-of-remembrance",
-            kind = "note",
-            priority = 107,
-            conditions = { level = { min = 57 } },
-            text = "Click Keepsake of Remembrance.",
         },
         {
             id = "objective-5461-1-keepsake-of-remembrance",
@@ -1138,23 +973,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-elders-square-service-gate",
-            kind = "note",
-            priority = 113,
-            conditions = { level = { min = 57 } },
-            text = "Click Elders' Square Service Gate.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.479, 0.239, "Eastern Plaguelands", "Travel to Eastern Plaguelands."),
-            },
-        },
-        {
-            id = "note-click-menethil-s-gift",
-            kind = "note",
-            priority = 114,
-            conditions = { level = { min = 57 } },
-            text = "Click Menethil's Gift.",
-        },
-        {
             id = "turnin-5463-menethil-s-gift",
             kind = "turnin",
             priority = 115,
@@ -1212,14 +1030,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-ras-frostwhisper",
-            kind = "note",
-            priority = 120,
-            conditions = { level = { min = 57 } },
-            text = "Kill Ras Frostwhisper. Use it on Ras Frostwhisper. He is inside The Laboratory. Go back upstairs after killing Rattlegore and head north in The Great Ossuary to return to the previous room (the map will just say Scholomance). Clear the area around him before engaging. The tank should face him away from the group. If possible, interrupt his 'Fear' ability, as well as his 'Frostbolt Volley'.",
-            dependsOn = { "boss-plagued-hatchling" },
-        },
-        {
             id = "objective-5466-1-human-head-of-ras-frostw",
             kind = "objective",
             priority = 121,
@@ -1275,20 +1085,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TIRISFAL_GLADES, 0.831, 0.689, "High Executor Derrington", "Travel to Tirisfal Glades."),
             },
-        },
-        {
-            id = "note-click-box-of-incendiaries",
-            kind = "note",
-            priority = 126,
-            conditions = { level = { min = 50 } },
-            text = "Click Box of Incendiaries.",
-        },
-        {
-            id = "note-click-command-tent",
-            kind = "note",
-            priority = 127,
-            conditions = { level = { min = 50 } },
-            text = "Click Command Tent.",
         },
         {
             id = "objective-5096-1-destroy-the-command-tent",
@@ -1536,14 +1332,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-marduk-blackpool",
-            kind = "note",
-            priority = 149,
-            conditions = { level = { min = 50 } },
-            text = "Kill Marduk Blackpool. The tank should keep Marduk stationary when possible. Range should stand far enough back to avoid being hit by Defiling Aura. When he casts 'Shadow Shield', melee will take extra damage each time they hit.",
-            dependsOn = { "boss-ras-frostwhisper" },
-        },
-        {
             id = "objective-5341-1-the-deed-to-brill",
             kind = "objective",
             priority = 150,
@@ -1576,22 +1364,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-blood-steward-of-kirtonos",
-            kind = "note",
-            priority = 153,
-            conditions = { level = { min = 50 } },
-            text = "Kill Blood Steward of Kirtonos. She has 3 abilities to look out for:. 'Curse of Impotence' reduces magic damage output on the target and can be removed by a Mage or Druid. 'Curse of Weakness' reduces the melee damage output on the target and can be removed by a Mage or Druid.",
-            dependsOn = { "boss-marduk-blackpool" },
-        },
-        {
-            id = "boss-kirtonos-the-herald",
-            kind = "note",
-            priority = 154,
-            conditions = { level = { min = 50 } },
-            text = "Kill Kirtonos the Herald. This boss is summoned by 'Blood of Innocents', obtained from Blood Steward of Kirtonos, Doctor Theolen Krastinov and Jandice Barov. Use it on the porch to summon Kirtonos. The tank should keep their back to the wall to prevent knockback.",
-            dependsOn = { "boss-blood-steward-of-kirtonos" },
-        },
-        {
             id = "turnin-5464-menethil-s-gift",
             kind = "turnin",
             priority = 155,
@@ -1602,62 +1374,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.817, 0.578, "Leonid Barthalomew the Revered", "Travel to Eastern Plaguelands."),
             },
-        },
-        {
-            id = "boss-instructor-malicia",
-            kind = "note",
-            priority = 156,
-            conditions = { level = { min = 50 } },
-            text = "Kill Instructor Malicia. For this encounter, it is important to interrupt her 'Heal' ability. Druids and Mages should keep an eye out for 'Call of the Grave' which sould be dispelled as soon as possible.",
-            dependsOn = { "boss-kirtonos-the-herald" },
-        },
-        {
-            id = "boss-doctor-theolen-krastinov",
-            kind = "note",
-            priority = 157,
-            conditions = { level = { min = 50 } },
-            text = "Kill Doctor Theolen Krastinov. The tank should pull Theolen and keep their back to the wall. The tank should also save defensive abilities for when the boss reaches 50% health. He will gain 50% increased attack speed at that point, making the fight healing intensive.",
-            dependsOn = { "boss-instructor-malicia" },
-        },
-        {
-            id = "boss-lorekeeper-polkelt",
-            kind = "note",
-            priority = 158,
-            conditions = { level = { min = 50 } },
-            text = "Kill Lorekeeper Polkelt. He should be tanked at the lower level of the room, while all ranged stay at the top level and DPS/Heal from the balcony. Anyone afflicted by 'Volatile Infection' needs to move away from the rest of the party.",
-            dependsOn = { "boss-doctor-theolen-krastinov" },
-        },
-        {
-            id = "boss-the-ravenian",
-            kind = "note",
-            priority = 159,
-            conditions = { level = { min = 50 } },
-            text = "Kill The Ravenian. The tank should stand with their back to a wall, facing Ravenian away from the group. Melee watch out for its 'Cleave' and 'Sundering Cleave' ability.",
-            dependsOn = { "boss-lorekeeper-polkelt" },
-        },
-        {
-            id = "boss-lord-alexei-barov",
-            kind = "note",
-            priority = 160,
-            conditions = { level = { min = 50 } },
-            text = "Kill Lord Alexei Barov. He is accompanied by two skeleton body guards which can be CC'd with either a Priests 'Shackle Undead' or a Paladins 'Turn Undead'. In the room, there is green liquid on the ground which the group must stay out of. The tank must bull Alexei to max range from range so they don't take damage from 'Unholy Aura'.",
-            dependsOn = { "boss-the-ravenian" },
-        },
-        {
-            id = "boss-lady-illucia-barov",
-            kind = "note",
-            priority = 161,
-            conditions = { level = { min = 50 } },
-            text = "Kill Lady Illucia Barov. She used the 'Dominate Mind' ability on random party members. Use CC abilities on them when it happens. Clear the entire room to avoid pulling adds from her 'Fear' ability.",
-            dependsOn = { "boss-lord-alexei-barov" },
-        },
-        {
-            id = "boss-darkmaster-gandling",
-            kind = "note",
-            priority = 162,
-            conditions = { level = { min = 50 } },
-            text = "Kill Darkmaster Gandling. The tank should keep him where he spawns if possible, while ranged stay stay at the top of the stairs. During the encounter, he will teleport a random player to one of the rooms where previous bosses were. That player will be locked in until the kill all enemies inside.",
-            dependsOn = { "boss-lady-illucia-barov" },
         },
     },
 })

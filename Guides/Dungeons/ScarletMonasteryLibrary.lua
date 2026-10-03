@@ -43,14 +43,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "reach-level-34",
-            kind = "note",
-            priority = 10,
-            conditions = { level = { min = 34 } },
-            text = "Reach level 34 before you continue.",
-            complete = { level = { min = 34 } },
-        },
-        {
             id = "accept-6141-brother-anton",
             kind = "accept",
             priority = 11,
@@ -167,22 +159,6 @@ ns:RegisterGuide({
             complete = { instance = 189 },
         },
         {
-            id = "boss-houndmaster-loksey",
-            kind = "note",
-            priority = 21,
-            conditions = { level = { min = 28 } },
-            text = "Kill Houndmaster Loksey. For this encounter, Loksey will be accompanied by 3 elite Scarlet Tracking Hounds. They will need to either be CC'd or killed immidiately. Once the hounds are dealt with, kill Houndmaster Loksey.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "boss-arcanist-doan",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 28 } },
-            text = "Kill Arcanist Doan. For this encounter, he will cast 'Detonation' which will damage the entire group. When he does this, use the pillars to line of sight the ability. This fight is very healing intensive, so if you have a hybrid class, additional healing may be required.",
-            dependsOn = { "boss-houndmaster-loksey" },
-        },
-        {
             id = "objective-1053-4-houndmaster-loksey",
             kind = "objective",
             priority = 23,
@@ -193,13 +169,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-mythology-of-the-titans",
-            kind = "note",
-            priority = 24,
-            conditions = { level = { min = 34 } },
-            text = "Click Mythology of the Titans.",
-        },
-        {
             id = "objective-1050-1-mythology-of-the-titans",
             kind = "objective",
             priority = 25,
@@ -208,20 +177,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1050-mythology-of-the-titans" },
             complete = QuestState(1050, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 26,
-            conditions = { level = { min = 34 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 27,
-            conditions = { level = { min = 34 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-1053-in-the-name-of-the-light",
@@ -294,29 +249,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-harpy-foodstuffs",
-            kind = "note",
-            priority = 34,
-            conditions = { level = { min = 28 } },
-            text = "Click Harpy Foodstuffs.",
-        },
-        {
-            id = "boss-the-enemies-that-attack-in-waves",
-            kind = "note",
-            priority = 35,
-            conditions = { level = { min = 28 } },
-            text = "Kill the enemies that attack in waves. Inside the cave.",
-            dependsOn = { "boss-arcanist-doan" },
-        },
-        {
-            id = "boss-grenka-bloodscreech",
-            kind = "note",
-            priority = 36,
-            conditions = { level = { min = 28 } },
-            text = "Kill Grenka Bloodscreech. Inside the cave.",
-            dependsOn = { "boss-the-enemies-that-attack-in-waves" },
-        },
-        {
             id = "objective-1150-1-grenka-s-claw",
             kind = "objective",
             priority = 37,
@@ -351,14 +283,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.539, 0.415, "Dorn Plainstalker", "Travel to Thousand Needles."),
             },
-        },
-        {
-            id = "boss-rok-alim-the-pounder",
-            kind = "note",
-            priority = 40,
-            conditions = { level = { min = 28 } },
-            text = "Kill Rok'Alim the Pounder. It patrols along this path. You may need help with this.",
-            dependsOn = { "boss-grenka-bloodscreech" },
         },
         {
             id = "objective-1151-1-fragments-of-rok-alim",
@@ -416,17 +340,6 @@ ns:RegisterGuide({
             complete = QuestState(1154, "activeOrCompleted"),
             route = {
                 Point(MAP.STONETALON_MOUNTAINS, 0.788, 0.457, "Braug Dimspirit", "Travel to Stonetalon Mountains."),
-            },
-        },
-        {
-            id = "note-click-the-legacy-of-the-aspects",
-            kind = "note",
-            priority = 46,
-            conditions = { level = { min = 28 } },
-            text = "Click The Legacy of the Aspects.",
-            route = {
-                Point(MAP.ASHENVALE, 0.760, 0.754, "Ashenvale", "Travel to Ashenvale."),
-                Point(MAP.ASHENVALE, 0.763, 0.756, "Ashenvale", "Travel to Ashenvale."),
             },
         },
         {
@@ -547,13 +460,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-beginnings-of-the-undead-threat",
-            kind = "note",
-            priority = 57,
-            conditions = { level = { min = 28 } },
-            text = "Click Beginnings of the Undead Threat.",
-        },
-        {
             id = "objective-1160-1-beginnings-of-the-undead",
             kind = "objective",
             priority = 58,
@@ -564,13 +470,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-compendium-of-the-fallen",
-            kind = "note",
-            priority = 59,
-            conditions = { level = { min = 28 } },
-            text = "Click Compendium of the Fallen.",
-        },
-        {
             id = "objective-1049-1-compendium-of-the-fallen",
             kind = "objective",
             priority = 60,
@@ -579,13 +478,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1049-compendium-of-the-fallen" },
             complete = QuestState(1049, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-doan-s-strongbox",
-            kind = "note",
-            priority = 61,
-            conditions = { level = { min = 28 } },
-            text = "Click Doan's Strongbox.",
         },
         {
             id = "turnin-1160-test-of-lore",

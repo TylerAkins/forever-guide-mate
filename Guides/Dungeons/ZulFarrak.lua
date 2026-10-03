@@ -57,13 +57,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-first-witherbark-cage",
-            kind = "note",
-            priority = 11,
-            conditions = { level = { min = 40 } },
-            text = "Click First Witherbark Cage.",
-        },
-        {
             id = "objective-2988-1-check-the-first-cage",
             kind = "objective",
             priority = 12,
@@ -76,13 +69,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-second-witherbark-cage",
-            kind = "note",
-            priority = 13,
-            conditions = { level = { min = 40 } },
-            text = "Click Second Witherbark Cage.",
-        },
-        {
             id = "objective-2988-2-check-the-second-cage",
             kind = "objective",
             priority = 14,
@@ -93,13 +79,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THE_HINTERLANDS, 0.231, 0.588, "The Hinterlands", "Travel to The Hinterlands."),
             },
-        },
-        {
-            id = "note-click-third-witherbark-cage",
-            kind = "note",
-            priority = 15,
-            conditions = { level = { min = 40 } },
-            text = "Click Third Witherbark Cage.",
         },
         {
             id = "objective-2988-3-check-the-third-cage",
@@ -198,13 +177,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-qiaga-the-keeper",
-            kind = "note",
-            priority = 24,
-            conditions = { level = { min = 40 } },
-            text = "Kill Qiaga the Keeper. At the top of the Altar of Zul. You may need help with this.",
-        },
-        {
             id = "accept-2846-tiara-of-the-deep",
             kind = "accept",
             priority = 25,
@@ -241,14 +213,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.670, 0.224, "Yeh'kinya", "Travel to Tanaris."),
             },
-        },
-        {
-            id = "boss-vale-screecher",
-            kind = "note",
-            priority = 28,
-            conditions = { level = { min = 40 } },
-            text = "Kill Vale Screecher+. These have a low spawn rate. Use it on their corpse.",
-            dependsOn = { "boss-qiaga-the-keeper" },
         },
         {
             id = "objective-3520-1-screecher-spirits",
@@ -330,14 +294,6 @@ ns:RegisterGuide({
             complete = { instance = 209 },
         },
         {
-            id = "boss-theka-the-martyr",
-            kind = "note",
-            priority = 36,
-            conditions = { level = { min = 40 } },
-            text = "Kill Theka the Martyr. He is the second boss of the dungeon. Follow the path north and then go right when the path splits. Quickly go left afterwards and then north. This is a mini boss found in the dungeon. He will cast 'Fevered Plague' on group members, dealing damage over time. When he reaches 30% health, he will become immune to physical and shadow damage.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "objective-3527-1-first-mosh-aru-tablet",
             kind = "objective",
             priority = 37,
@@ -346,30 +302,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
             complete = QuestObjective(3527, 1, "First Mosh'aru Tablet"),
             useClientPin = true,
-        },
-        {
-            id = "boss-the-enemies-that-attack-in-waves",
-            kind = "note",
-            priority = 38,
-            conditions = { level = { min = 40 } },
-            text = "Kill the enemies that attack in waves. Continue following the path west and run up the stairs to reach the top of the large pyramid. Kill the Sandfury Executioner and then open the cages to start the event. He will be killable after you release them from captivity and clear the temple event.",
-            dependsOn = { "boss-theka-the-martyr" },
-        },
-        {
-            id = "boss-witch-doctor-zum-rah",
-            kind = "note",
-            priority = 39,
-            conditions = { level = { min = 40 } },
-            text = "Kill Witch Doctor Zum'rah. Zum'rah will cast 'Shadow Bolt Volley' which will need to be interrupted. He will also summon zombies from nearby graves that will attack you. All DPS should switch to the zombies before moving back to the boss.",
-            dependsOn = { "boss-the-enemies-that-attack-in-waves" },
-        },
-        {
-            id = "boss-nekrum-gutchewer",
-            kind = "note",
-            priority = 40,
-            conditions = { level = { min = 40 } },
-            text = "Kill Nekrum Gutchewer. Continue following the path west and run up the stairs to reach the top of the large pyramid. Kill the Sandfury Executioner and then open the cages to start the event. He will be killable after you release them from captivity and clear the temple event. He will be accompanied by Shadowpriest Sezz'ziz. Have DPS burn down Nekrum Gutchewer before burning down Sezz'ziz. Be sure to interrupt Sezz'ziz' 'Heal' ability throughout the encounter.",
-            dependsOn = { "boss-witch-doctor-zum-rah" },
         },
         {
             id = "objective-2991-1-nekrum-s-medallion",
@@ -382,14 +314,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-sergeant-bly",
-            kind = "note",
-            priority = 42,
-            conditions = { level = { min = 40 } },
-            text = "Kill Sergeant Bly. Continue following the path west and run up the stairs to reach the top of the large pyramid. Kill the Sandfury Executioner and then open the cages to start the event. He will be killable after you release them from captivity and clear the temple event.",
-            dependsOn = { "boss-nekrum-gutchewer" },
-        },
-        {
             id = "objective-2768-1-divino-matic-rod",
             kind = "objective",
             priority = 43,
@@ -398,14 +322,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2768-divino-matic-rod" },
             complete = QuestState(2768, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-hydromancer-velratha",
-            kind = "note",
-            priority = 44,
-            conditions = { level = { min = 40 } },
-            text = "Kill Hydromancer Velratha. Follow the path southeast to reach the large room with a pool in the center. She walks around this area. She patrols around a room filled with elite enemies. Clear as many as you can without pulling her. Once you've cleared a safe spot, pull Velratha into the hallway from where you fought Sergeant Bly.",
-            dependsOn = { "boss-sergeant-bly" },
         },
         {
             id = "objective-2846-1-tiara-of-the-deep",
@@ -428,14 +344,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-gahz-rilla",
-            kind = "note",
-            priority = 47,
-            conditions = { level = { min = 40 } },
-            text = "Kill Gahz'rilla. Clear the room. Use it near the gong atop the pool of water. To summon Gahz'rilla, you will need the 'Sacred Mallet' that drops from Qiaga the Keeper in the Hinterlands. You will then need to use the mallet at the altar in Jintha'Alor, also found in the Hinterlands. Clear the entire room before ringing the gong with the 'Mallet of Zul'Farrak'.",
-            dependsOn = { "boss-hydromancer-velratha" },
-        },
-        {
             id = "objective-2770-1-gahz-rilla-s-electrified",
             kind = "objective",
             priority = 48,
@@ -444,14 +352,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2770-gahz-rilla" },
             complete = QuestState(2770, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-scarab",
-            kind = "note",
-            priority = 49,
-            conditions = { level = { min = 40 } },
-            text = "Kill Scarab. They are found all around the instance, but mostly in the scarab room with Theka the Martyr.",
-            dependsOn = { "boss-gahz-rilla" },
         },
         {
             id = "objective-2865-1-uncracked-scarab-shell",
@@ -464,14 +364,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-enemies-around-this-area",
-            kind = "note",
-            priority = 51,
-            conditions = { level = { min = 40 } },
-            text = "Kill enemies around this area. These drop from troll enemies inside of Zul'Farrak. It will likely take multiple runs to complete.",
-            dependsOn = { "boss-scarab" },
-        },
-        {
             id = "objective-3042-1-troll-temper",
             kind = "objective",
             priority = 52,
@@ -480,20 +372,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3042-troll-temper" },
             complete = QuestState(3042, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 53,
-            conditions = { level = { min = 40 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 54,
-            conditions = { level = { min = 40 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
@@ -580,13 +458,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-venom-bottle",
-            kind = "note",
-            priority = 62,
-            conditions = { level = { min = 40 } },
-            text = "Click Venom Bottle.",
-        },
-        {
             id = "accept-2933-venom-bottles",
             kind = "accept",
             priority = 63,
@@ -625,14 +496,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.HILLSBRAD_FOOTHILLS, 0.614, 0.191, "Apothecary Lydon", "Travel to Hillsbrad Foothills."),
             },
-        },
-        {
-            id = "boss-witherbark-broodguard",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 40 } },
-            text = "Kill Witherbark Broodguard.",
-            dependsOn = { "boss-enemies-around-this-area" },
         },
         {
             id = "objective-2934-1-undamaged-venom-sac",
@@ -695,21 +558,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-vale-screecher-2",
-            kind = "note",
-            priority = 72,
-            conditions = { level = { min = 40 } },
-            text = "Kill Vale Screecher. These have a low spawn rate. Use it on their corpse.",
-            dependsOn = { "boss-witherbark-broodguard" },
-        },
-        {
-            id = "note-click-tablet-of-theka",
-            kind = "note",
-            priority = 73,
-            conditions = { level = { min = 40 } },
-            text = "Click Tablet of Theka.",
-        },
-        {
             id = "objective-2936-1-the-spider-god-s-name",
             kind = "objective",
             priority = 74,
@@ -718,38 +566,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2936-the-spider-god" },
             complete = QuestState(2936, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-antu-sul",
-            kind = "note",
-            priority = 75,
-            conditions = { level = { min = 40 } },
-            text = "Kill Antu'sul. During the encounter, he will summon 'Sul'lithuz Broodlings' and 'Servants of Antu'sul'. When they appear, all DPS should switch to the adds and kill them. He will summon various totems that should be destroyed as soon as they appear.",
-            dependsOn = { "boss-vale-screecher-2" },
-        },
-        {
-            id = "boss-shadowpriest-sezz-ziz",
-            kind = "note",
-            priority = 76,
-            conditions = { level = { min = 40 } },
-            text = "Kill Shadowpriest Sezz'ziz. He will be accompanied by Shadowpriest Sezz'ziz. Have DPS burn down Nekrum Gutchewer before burning down Sezz'ziz. Be sure to interrupt Sezz'ziz' 'Heal' ability throughout the encounter.",
-            dependsOn = { "boss-antu-sul" },
-        },
-        {
-            id = "boss-chief-ukorz-sandscalp",
-            kind = "note",
-            priority = 77,
-            conditions = { level = { min = 40 } },
-            text = "Kill Chief Ukorz Sandscalp. Make sure the tank faces the bosses away from the group. Melee allies should damage him from behind to avoid its 'Cleave' ability. Kill Ruuzlu. Ukorz.",
-            dependsOn = { "boss-shadowpriest-sezz-ziz" },
-        },
-        {
-            id = "boss-zerillis",
-            kind = "note",
-            priority = 78,
-            conditions = { level = { min = 40 } },
-            text = "Kill Zerillis if the rare is up. This is a rare mob that may not be available. He wanders all over the first half of the dungeon. Line of sight him into melee range as soon as possible.",
-            dependsOn = { "boss-chief-ukorz-sandscalp" },
         },
         {
             id = "turnin-2936-the-spider-god",

@@ -138,16 +138,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-cathedral-door",
-            kind = "note",
-            priority = 18,
-            conditions = { level = { min = 40 } },
-            text = "Click Cathedral Door.",
-            route = {
-                Point(MAP.TIRISFAL_GLADES, 0.852, 0.309, "Tirisfal Glades", "Travel to Tirisfal Glades."),
-            },
-        },
-        {
             id = "enter-dungeon",
             kind = "travel",
             priority = 19,
@@ -156,30 +146,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-6141-brother-anton", "accept-261-down-the-scarlet-path", "accept-1052-down-the-scarlet-path", "accept-1053-in-the-name-of-the-light" },
             persistCompletion = true,
             complete = { instance = 189 },
-        },
-        {
-            id = "boss-scarlet-commander-mograine",
-            kind = "note",
-            priority = 20,
-            conditions = { level = { min = 40 } },
-            text = "Kill Scarlet Commander Mograine. Clear the Cathedral before starting this encounter. He will use the ability 'Hammer of Justice' which will stun the target for 3 seconds. He will use the 'Divine Shield' ability, which will make him invulnerable to all damage.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "boss-high-inquisitor-whitemane",
-            kind = "note",
-            priority = 21,
-            conditions = { level = { min = 40 } },
-            text = "Kill High Inquisitor Whitemane. She will primarily cast 'Holy Smite', dealing magic damage to the tank. When she is near death, she will sleep the entire party and revive Mograine. Both of their health bars will return to full adn the tank will need to pick up Mograine immidiately.",
-            dependsOn = { "boss-scarlet-commander-mograine" },
-        },
-        {
-            id = "boss-high-inquisitor-fairbanks",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 40 } },
-            text = "Kill High Inquisitor Fairbanks. He will cast 'Curse of Blood' on a party member, which can be dispelled by a mage or a druid. He will also use 'Fear' and 'Sleep' on random party members.",
-            dependsOn = { "boss-high-inquisitor-whitemane" },
         },
         {
             id = "objective-1053-2-scarlet-commander-mograi",
@@ -200,20 +166,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1053-in-the-name-of-the-light" },
             complete = QuestObjective(1053, 1, "High Inquisitor Whitemane"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 25,
-            conditions = { level = { min = 40 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 26,
-            conditions = { level = { min = 40 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-1053-in-the-name-of-the-light",

@@ -134,16 +134,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-armory-door",
-            kind = "note",
-            priority = 18,
-            conditions = { level = { min = 38 } },
-            text = "Click Armory Door.",
-            route = {
-                Point(MAP.TIRISFAL_GLADES, 0.854, 0.316, "Tirisfal Glades", "Travel to Tirisfal Glades."),
-            },
-        },
-        {
             id = "enter-dungeon",
             kind = "travel",
             priority = 19,
@@ -154,14 +144,6 @@ ns:RegisterGuide({
             complete = { instance = 189 },
         },
         {
-            id = "boss-herod",
-            kind = "note",
-            priority = 20,
-            conditions = { level = { min = 38 } },
-            text = "Kill Herod. The tank should keep Herod at the center of the room. He will use the 'Whirlwind' ability, he will become immune to magic damage. Anyone at the center of the room should move from it to avoid getting hit by it, including the tank.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "objective-1053-3-herod",
             kind = "objective",
             priority = 21,
@@ -170,20 +152,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1053-in-the-name-of-the-light" },
             complete = QuestState(1053, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 38 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 23,
-            conditions = { level = { min = 38 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-1053-in-the-name-of-the-light",

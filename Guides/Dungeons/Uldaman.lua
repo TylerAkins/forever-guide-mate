@@ -44,21 +44,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "reach-level-38",
-            kind = "note",
-            priority = 10,
-            conditions = { level = { min = 38 } },
-            text = "Reach level 38 before you continue.",
-            complete = { level = { min = 38 } },
-        },
-        {
-            id = "boss-shadowforge-enemies-around-this-area",
-            kind = "note",
-            priority = 11,
-            conditions = { level = { min = 38 } },
-            text = "Kill Shadowforge enemies around this area. You may need help with this. You can find more inside the cave.",
-        },
-        {
             id = "accept-2198-the-shattered-necklace",
             kind = "accept",
             priority = 12,
@@ -136,13 +121,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-crumpled-map",
-            kind = "note",
-            priority = 19,
-            conditions = { level = { min = 38 } },
-            text = "Click Crumpled Map.",
-        },
-        {
             id = "accept-720-a-sign-of-hope",
             kind = "accept",
             priority = 20,
@@ -212,14 +190,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.540, 0.577, "Hammertoe Grez", "Travel to Badlands."),
             },
-        },
-        {
-            id = "boss-magregan-deepshadow",
-            kind = "note",
-            priority = 26,
-            conditions = { level = { min = 38 } },
-            text = "Kill Magregan Deepshadow. He patrols through the tunnels before the entrance. He has a slow respawn rate.",
-            dependsOn = { "boss-shadowforge-enemies-around-this-area" },
         },
         {
             id = "objective-722-1-hammertoe-s-amulet",
@@ -400,13 +370,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-battered-dwarven-skeleton",
-            kind = "note",
-            priority = 42,
-            conditions = { level = { min = 38 } },
-            text = "Click Battered Dwarven Skeleton.",
-        },
-        {
             id = "turnin-738-find-agmond",
             kind = "turnin",
             priority = 43,
@@ -455,14 +418,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-ambassador-infernus",
-            kind = "note",
-            priority = 47,
-            conditions = { level = { min = 38 } },
-            text = "Kill Ambassador Infernus. Downstairs inside the building. You may need help with this.",
-            dependsOn = { "boss-magregan-deepshadow" },
-        },
-        {
             id = "objective-762-1-ambassador-infernus-brac",
             kind = "objective",
             priority = 48,
@@ -473,14 +428,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.421, 0.289, "Badlands", "Travel to Badlands."),
             },
-        },
-        {
-            id = "boss-lesser-rock-elemental",
-            kind = "note",
-            priority = 49,
-            conditions = { level = { min = 38 } },
-            text = "Kill Lesser Rock Elemental+.",
-            dependsOn = { "boss-ambassador-infernus" },
         },
         {
             id = "objective-2500-3-rock-elemental-shard",
@@ -495,14 +442,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-buzzard-enemies-around-this-area",
-            kind = "note",
-            priority = 51,
-            conditions = { level = { min = 38 } },
-            text = "Kill Buzzard enemies around this area.",
-            dependsOn = { "boss-lesser-rock-elemental" },
-        },
-        {
             id = "objective-2500-1-buzzard-gizzard",
             kind = "objective",
             priority = 52,
@@ -513,14 +452,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.168, 0.598, "Badlands", "Travel to Badlands."),
             },
-        },
-        {
-            id = "boss-coyote-enemies-around-this-area",
-            kind = "note",
-            priority = 53,
-            conditions = { level = { min = 38 } },
-            text = "Kill Coyote enemies around this area.",
-            dependsOn = { "boss-buzzard-enemies-around-this-area" },
         },
         {
             id = "objective-2500-2-crag-coyote-fang",
@@ -643,20 +574,6 @@ ns:RegisterGuide({
             complete = QuestState(2240, "activeOrCompleted"),
         },
         {
-            id = "note-click-baelog-s-chest",
-            kind = "note",
-            priority = 65,
-            conditions = { level = { min = 38 } },
-            text = "Click Baelog's Chest.",
-        },
-        {
-            id = "note-click-conspicuous-urn",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 38 } },
-            text = "Click Conspicuous Urn.",
-        },
-        {
             id = "objective-2201-3-shattered-necklace-topaz",
             kind = "objective",
             priority = 67,
@@ -665,21 +582,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2201-find-the-gems" },
             complete = QuestObjective(2201, 3, "Shattered Necklace Topaz"),
             useClientPin = true,
-        },
-        {
-            id = "boss-revelosh",
-            kind = "note",
-            priority = 68,
-            conditions = { level = { min = 38 } },
-            text = "Kill Revelosh. He is the second boss of the dungeon. Leave Dig Two and go left. Use Crowd Control abilities on the 2 Stonevault Rockcheres if possible. If you have no Crowd Control, burn them down before the boss. Interrupt his 'Chain Lightning' ability when possible.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "note-click-keystone",
-            kind = "note",
-            priority = 69,
-            conditions = { level = { min = 38 } },
-            text = "Click Keystone.",
         },
         {
             id = "objective-2240-1-explore-the-hidden-chamb",
@@ -692,13 +594,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-shadowforge-cache",
-            kind = "note",
-            priority = 71,
-            conditions = { level = { min = 38 } },
-            text = "Click Shadowforge Cache.",
-        },
-        {
             id = "objective-2201-1-shattered-necklace-ruby",
             kind = "objective",
             priority = 72,
@@ -707,13 +602,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2201-find-the-gems" },
             complete = QuestObjective(2201, 1, "Shattered Necklace Ruby"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-tablet-of-will",
-            kind = "note",
-            priority = 73,
-            conditions = { level = { min = 38 } },
-            text = "Click Tablet of Will.",
         },
         {
             id = "objective-1139-1-tablet-of-will",
@@ -726,14 +614,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-grimlok",
-            kind = "note",
-            priority = 75,
-            conditions = { level = { min = 38 } },
-            text = "Kill Grimlok. Leave Dig Three and go left. continue left to the end of The Stone Vault. He is accompanied by a Stonevault Geomancer, Stonevault Brawler and a Jadespine Basilisk. Use a Crowd Control ability on one of the adds. Then, use all cooldowns and burn down Grimlok as fast as possible.",
-            dependsOn = { "boss-revelosh" },
-        },
-        {
             id = "objective-2201-2-shattered-necklace-sapph",
             kind = "objective",
             priority = 76,
@@ -742,13 +622,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2201-find-the-gems" },
             complete = QuestObjective(2201, 2, "Shattered Necklace Sapphire"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-talvash-s-scrying-bowl",
-            kind = "note",
-            priority = 77,
-            conditions = { level = { min = 38 } },
-            text = "Click Talvash's Scrying Bowl.",
         },
         {
             id = "turnin-2201-find-the-gems",
@@ -770,21 +643,6 @@ ns:RegisterGuide({
             complete = QuestState(2204, "activeOrCompleted"),
         },
         {
-            id = "note-click-altar-of-the-keepers",
-            kind = "note",
-            priority = 80,
-            conditions = { level = { min = 38 } },
-            text = "Click Altar of The Keepers.",
-        },
-        {
-            id = "boss-archaedas",
-            kind = "note",
-            priority = 81,
-            conditions = { level = { min = 38 } },
-            text = "Kill Archaedas. He is the last boss of the dungeon. Leave The Stone Vault and follow the left path to reach the Hall of the Crafters. He will summon adds through the encounter. When they appear, all DPS should kill them as soon as possible. The fight is long, so healers should conserve mana when possible.",
-            dependsOn = { "boss-grimlok" },
-        },
-        {
             id = "objective-2204-1-shattered-necklace-power",
             kind = "objective",
             priority = 82,
@@ -793,13 +651,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2204-restoring-the-necklace" },
             complete = QuestState(2204, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-the-discs-of-norgannon",
-            kind = "note",
-            priority = 83,
-            conditions = { level = { min = 38 } },
-            text = "Click The Discs of Norgannon.",
         },
         {
             id = "accept-2278-the-platinum-discs",
@@ -839,13 +690,6 @@ ns:RegisterGuide({
             complete = QuestState(2279, "activeOrCompleted"),
         },
         {
-            id = "note-click-carved-stone-urn",
-            kind = "note",
-            priority = 88,
-            conditions = { level = { min = 38 } },
-            text = "Click Carved Stone Urn.",
-        },
-        {
             id = "objective-704-1-carved-stone-urn",
             kind = "objective",
             priority = 89,
@@ -856,13 +700,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-magenta-cap-cluster",
-            kind = "note",
-            priority = 90,
-            conditions = { level = { min = 38 } },
-            text = "Click Magenta Cap Cluster+.",
-        },
-        {
             id = "objective-2202-1-magenta-cap-cluster",
             kind = "objective",
             priority = 91,
@@ -871,20 +708,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2202-uldaman-reagent-run" },
             complete = QuestState(2202, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 92,
-            conditions = { level = { min = 38 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 93,
-            conditions = { level = { min = 38 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-704-agmond-s-fate",
@@ -1131,13 +954,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-ancient-chest",
-            kind = "note",
-            priority = 115,
-            conditions = { level = { min = 37 } },
-            text = "Click Ancient Chest.",
-        },
-        {
             id = "objective-709-1-tablet-of-ryun-eh",
             kind = "objective",
             priority = 116,
@@ -1148,13 +964,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BADLANDS, 0.541, 0.582, "Badlands", "Travel to Badlands."),
             },
-        },
-        {
-            id = "note-click-garrett-family-chest",
-            kind = "note",
-            priority = 117,
-            conditions = { level = { min = 37 } },
-            text = "Click Garrett Family Chest.",
         },
         {
             id = "objective-2342-1-garrett-family-treasure",
@@ -1254,38 +1063,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-ironaya",
-            kind = "note",
-            priority = 127,
-            conditions = { level = { min = 37 } },
-            text = "Kill Ironaya. She is immune to Damage Over Time effects. The tank should face her away from the rest of the group to avoid them being hit with 'Arcing Smash'. Range spread out.",
-            dependsOn = { "boss-archaedas" },
-        },
-        {
-            id = "boss-obsidian-sentinel",
-            kind = "note",
-            priority = 128,
-            conditions = { level = { min = 37 } },
-            text = "Kill Obsidian Sentinel. This boss is immunity to Damage Over Time abilities. At 66% and 33% Health, it will spawn two Obsidian Shards. DPS should switch to killing these before going back to the boss.",
-            dependsOn = { "boss-ironaya" },
-        },
-        {
-            id = "boss-ancient-stone-keeper",
-            kind = "note",
-            priority = 129,
-            conditions = { level = { min = 37 } },
-            text = "Kill Ancient Stone Keeper. This boss has immunity to Damage Over Time abilities. It also casts the ability 'Sand Storms', which will cast Slow and Silence on those caught in it. Range spread out.",
-            dependsOn = { "boss-obsidian-sentinel" },
-        },
-        {
-            id = "boss-galgann-firehammer",
-            kind = "note",
-            priority = 130,
-            conditions = { level = { min = 37 } },
-            text = "Kill Galgann Firehammer. He will be accompanied by Shadowforge Geologists. Heavy AoE damage will be inflicted upon your group. The Tank should pick up Galgann Firehammer and move him away from the Shadowforge Geologist.",
-            dependsOn = { "boss-ancient-stone-keeper" },
-        },
-        {
             id = "objective-2339-2-shattered-necklace-sapph",
             kind = "objective",
             priority = 131,
@@ -1294,14 +1071,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-2339-find-the-gems-and-power-source" },
             complete = QuestObjective(2339, 2, "Shattered Necklace Sapphire"),
             useClientPin = true,
-        },
-        {
-            id = "boss-baelog",
-            kind = "note",
-            priority = 132,
-            conditions = { level = { min = 37 } },
-            text = "Kill Baelog. He is accompanied by Eric 'The Swift' and Olaf. Use Crowd Control on Baelog. After, the tank should pick up Olaf.",
-            dependsOn = { "boss-galgann-firehammer" },
         },
         {
             id = "objective-2339-4-shattered-necklace-power",
@@ -1321,13 +1090,6 @@ ns:RegisterGuide({
             text = "Accept The Platinum Discs.",
             dependsOn = { "turnin-2338-translating-the-journal" },
             complete = QuestState(2280, "activeOrCompleted"),
-        },
-        {
-            id = "note-click-magenta-cap-clusters",
-            kind = "note",
-            priority = 135,
-            conditions = { level = { min = 37 } },
-            text = "Click Magenta Cap Clusters+.",
         },
         {
             id = "objective-2418-1-dentrium-power-stone",

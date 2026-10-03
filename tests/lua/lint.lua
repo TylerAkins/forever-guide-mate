@@ -36,6 +36,7 @@ for _, path in ipairs({
     "Guides/Dungeons/RagefireChasm.lua", "Guides/Dungeons/WailingCaverns.lua",
     "Guides/Dungeons/RuinsOfLordaeron.lua", "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
+    "Guides/Dungeons/ExcavationSiteWetlands.lua",
     "Guides/Dungeons/ShadowfangKeep.lua",
     "Guides/Dungeons/BlackfathomDeeps.lua",
     "Guides/Dungeons/Gnomeregan.lua",

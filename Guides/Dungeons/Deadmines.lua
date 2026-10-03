@@ -136,14 +136,7 @@ ns:RegisterGuide({
             kind = "travel",
             priority = 40,
             conditions = ALLIANCE,
-            text = "Enter the Deadmines through the Defias Hideout in Moonbrook. " ..
-                "The instance portal is at the bottom of the mine. " ..
-                "Rhahk'Zor: pull the two Defias Watchmen first if you can, otherwise crowd-control an archer and kill adds before him. Watch patrols. " ..
-                "Miner Johnson is a rare surrounded by non-elite miners. " ..
-                "Gilnid: crowd-control the engineer or he summons a Remote Controlled Golem. If it spawns, kill the engineer. " ..
-                "Mr. Smite engages on the plank. Kill the two stealthed Defias Blackguards first. He stuns the group at 66% and 33%, and can stun the tank at 33%. " ..
-                "Captain Greenskin: crowd-control the adds, then kill them before the captain. " ..
-                "Cookie is on the ledge below. Interrupt Cookie's Cooking so it does not heal him.",
+            text = "Enter the Deadmines through the Defias Hideout in Moonbrook. The instance portal is at the bottom of the mine.",
             dependsOn = {
                 "accept-red-silk-bandanas",
                 "accept-defias-brotherhood",

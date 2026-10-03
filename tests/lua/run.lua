@@ -42,6 +42,7 @@ Load("Guides/Dungeons/WailingCaverns.lua")
 Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
+Load("Guides/Dungeons/ExcavationSiteWetlands.lua")
 Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -1758,6 +1759,7 @@ local allianceHot = {}
 for key, value in pairs(hordeHot) do allianceHot[key] = value end
 allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
+Check(ns.guides["dungeons-excavation-site-wetlands"] ~= nil, "excavation site wetlands guide is registered")
 
 local zephras = ns.guides["leveling-zephras-isle"]
 Equal(zephras.category, "Leveling Quest Guides", "Zephras Isle stays a leveling guide")
