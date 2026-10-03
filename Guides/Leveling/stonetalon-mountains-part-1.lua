@@ -926,16 +926,24 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1060-letter-to-jin-zil",
+            kind = "accept",
+            priority = 595,
+            conditions = { level = { min = 15 } },
+            text = "Accept Letter to Jin'Zil from Darsok Swiftdagger in The Crossroads.",
+            complete = QuestState(1060, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
             id = "turnin-1060-letter-to-jin-zil",
             kind = "turnin",
             priority = 600,
-            conditions = {
-                all = {
-                    { level = { min = 15 } },
-                    { quest = { id = 1060, state = "active" } },
-                },
-            },
+            conditions = { level = { min = 15 } },
             text = "Turn in Letter to Jin'Zil to Witch Doctor Jin'Zil in Malaka'jin.",
+            dependsOn = { "accept-1060-letter-to-jin-zil" },
             complete = QuestState(1060, "completed"),
             route = {
                 Point(MAP.STONETALON, 0.7455, 0.9784, "Witch Doctor Jin'Zil",
@@ -948,6 +956,7 @@ ns:RegisterGuide({
             priority = 610,
             conditions = { level = { min = 20 } },
             text = "Accept Jin'Zil's Forest Magic from Witch Doctor Jin'Zil in Malaka'jin.",
+            dependsOn = { "turnin-1060-letter-to-jin-zil" },
             complete = QuestState(1058, "activeOrCompleted"),
             route = {
                 Point(MAP.STONETALON, 0.7455, 0.9784, "Witch Doctor Jin'Zil",

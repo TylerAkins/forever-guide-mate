@@ -3,6 +3,7 @@ local _, ns = ...
 -- Horde Era leveling route for Silverpine Forest, levels 12-20.
 -- Forever quests from the Silverpine list are woven into this route.
 -- Left out: The Tortured Soul chain is level 23, past this route.
+-- 1060 Letter to Jin'Zil is accepted after Serena Bloodfeather. Stonetalon Mountains (Part 1) turns it in.
 -- Arugal Must Die and Deathstalkers in Shadowfang are Shadowfang Keep dungeon quests.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -2223,6 +2224,19 @@ ns:RegisterGuide({
             text = "Turn in Serena Bloodfeather to Darsok Swiftdagger in The Crossroads.",
             dependsOn = { "objective-876-serena-bloodfeather" },
             complete = QuestState(876, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
+                    "Travel to Darsok Swiftdagger."),
+            },
+        },
+        {
+            id = "accept-1060-letter-to-jin-zil",
+            kind = "accept",
+            priority = 2000,
+            conditions = { level = { min = 15 } },
+            text = "Accept Letter to Jin'Zil from Darsok Swiftdagger in The Crossroads.",
+            dependsOn = { "turnin-876-serena-bloodfeather" },
+            complete = QuestState(1060, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5164, 0.3092, "Darsok Swiftdagger",
                     "Travel to Darsok Swiftdagger."),
