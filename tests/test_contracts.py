@@ -354,8 +354,10 @@ class ContractTests(unittest.TestCase):
 
     def test_wailing_caverns_guide_covers_listed_quests(self) -> None:
         guide = (ROOT / "Guides/Dungeons/WailingCaverns.lua").read_text(encoding="utf-8")
-        for quest_id in (914, 959, 962, 999, 1486, 1487, 1489, 1490, 1491, 1500, 3366, 6981):
+        for quest_id in (914, 959, 962, 1486, 1487, 1489, 1490, 1491, 3366, 6981):
             self.assertIn(str(quest_id), guide)
+        for omitted_id in (999, 1500):
+            self.assertNotIn(f"QuestState({omitted_id},", guide)
         self.assertIn('id = "dungeons-wailing-caverns"', guide)
         self.assertIn('category = "Dungeon Quest Guides"', guide)
         self.assertIn("level = { min = 15 }", guide)
