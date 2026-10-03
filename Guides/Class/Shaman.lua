@@ -128,9 +128,66 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-92461-harmony-in-balance",
+            kind = "accept",
+            priority = 27,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
+            complete = QuestState(92461, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-92461-harmony-in-balance",
+            kind = "objective",
+            priority = 28,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            complete = QuestState(92461, "complete"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
+                    "Travel to Juvenile Vuldren in Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-92461-harmony-in-balance",
+            kind = "turnin",
+            priority = 29,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
+            dependsOn = { "objective-92461-harmony-in-balance" },
+            complete = QuestState(92461, "completed"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
             id = "accept-92484-embracing-the-elements",
             kind = "accept",
             priority = 30,
+            dependsOn = { "turnin-92461-harmony-in-balance" },
             conditions = {
                 all = {
                     { faction = "Horde" },
@@ -932,6 +989,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Call of Fire from Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
+            dependsOn = { "turnin-97243-call-of-fire" },
             complete = QuestState(97244, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
@@ -991,6 +1049,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Call of Fire from Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
+            dependsOn = { "turnin-97244-call-of-fire" },
             complete = QuestState(97245, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",

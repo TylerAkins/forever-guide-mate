@@ -27,9 +27,8 @@ local _, ns = ...
 -- part of this starter path.
 -- Catching Wind (92840): the Wowhead prerequisite list is quest 99260. That
 -- quest has no compiled page and no turn-in on this route, so it is not registered.
--- Tower Defense (93320): Wowhead's prerequisite list is empty. Questie names
--- In Service of Zephras as an alternative prerequisite. That link is not on
--- the Wowhead page, so it is not registered.
+-- Tower Defense (93320): Questie requires In Service of Zephras. The accept
+-- waits on that turn-in for the character's faction.
 -- Camping 101 steps that require a profession skill of 20 are omitted.
 -- The Great Outdoors and Camping 101: Cooking stay, because they finish at
 -- the campfire and the cooking trainer.
@@ -3082,7 +3081,12 @@ ns:RegisterGuide({
             priority = 1970,
             conditions = { level = { min = 11 } },
             text = "Accept Tower Defense from Valennia Stormfist.",
-            dependsOn = { "turnin-92579-to-valanaar", "turnin-92701-to-valanaar" },
+            dependsOn = {
+                "turnin-92579-to-valanaar",
+                "turnin-92701-to-valanaar",
+                "turnin-92860-in-service-of-zephras",
+                "turnin-92871-in-service-of-zephras",
+            },
             complete = QuestState(93320, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.662, 0.766, "Valennia Stormfist",
