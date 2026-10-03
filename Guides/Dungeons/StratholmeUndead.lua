@@ -60,21 +60,6 @@ ns:RegisterGuide({
             complete = { instance = 329 },
         },
         {
-            id = "boss-rattlegore",
-            kind = "note",
-            priority = 12,
-            conditions = { level = { min = 55 } },
-            text = "Kill Rattlegore. After entering the dungeon, follow the path forward to enter The Reliquary. Go left and proceed through the Iron Gate on the north side of the room to reach the Chamber of Summoning. Continue straight through the dungeon to reach The Great Ossuary.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "note-click-remains-of-eva-sarkhoff",
-            kind = "note",
-            priority = 13,
-            conditions = { level = { min = 55 } },
-            text = "Click Remains of Eva Sarkhoff.",
-        },
-        {
             id = "objective-5382-2-burn-the-remains-of-eva",
             kind = "objective",
             priority = 14,
@@ -83,13 +68,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
             complete = QuestObjective(5382, 2, "Burn the Remains of Eva Sarkhoff"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-remains-of-lucien-sarkhoff",
-            kind = "note",
-            priority = 15,
-            conditions = { level = { min = 55 } },
-            text = "Click Remains of Lucien Sarkhoff.",
         },
         {
             id = "objective-5382-3-burn-the-remains-of-luci",
@@ -110,20 +88,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5382-doctor-theolen-krastinov-the-butcher" },
             complete = QuestObjective(5382, 1, "Doctor Theolen Krastinov"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 18,
-            conditions = { level = { min = 55 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 19,
-            conditions = { level = { min = 55 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-5382-doctor-theolen-krastinov-the-butcher",
@@ -148,14 +112,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.702, 0.737, "Eva Sarkhoff", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "boss-jandice-barov",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 55 } },
-            text = "Kill Jandice Barov. After entering the dungeon, follow the path forward to enter The Reliquary. Go left and proceed through the Iron Gate on the north side of the room to reach the Chamber of Summoning. Proceed into the next main room and then follow the path to the right and go down the stairs.",
-            dependsOn = { "boss-rattlegore" },
         },
         {
             id = "objective-5515-1-krastinov-s-bag-of-horro",
@@ -192,13 +148,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-brazier-of-the-herald",
-            kind = "note",
-            priority = 26,
-            conditions = { level = { min = 55 } },
-            text = "Click Brazier of the Herald.",
-        },
-        {
             id = "objective-5384-1-kirtonos-the-herald",
             kind = "objective",
             priority = 27,
@@ -221,15 +170,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "reach-level-57",
-            kind = "note",
-            priority = 29,
-            conditions = { level = { min = 57 } },
-            text = "Reach level 57 before you continue.",
-            dependsOn = { "turnin-5384-kirtonos-the-herald" },
-            complete = { level = { min = 57 } },
-        },
-        {
             id = "accept-5461-the-human-ras-frostwhisper",
             kind = "accept",
             priority = 30,
@@ -239,13 +179,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.706, 0.741, "Magistrate Marduke", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "note-click-keepsake-of-remembrance",
-            kind = "note",
-            priority = 31,
-            conditions = { level = { min = 57 } },
-            text = "Click Keepsake of Remembrance.",
         },
         {
             id = "objective-5461-1-keepsake-of-remembrance",
@@ -319,35 +252,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-the-bastion-door",
-            kind = "note",
-            priority = 38,
-            conditions = { level = { min = 57 } },
-            text = "Click The Bastion Door.",
-        },
-        {
-            id = "note-click-malor-s-strongbox",
-            kind = "note",
-            priority = 39,
-            conditions = { level = { min = 57 } },
-            text = "Click Malor's Strongbox.",
-        },
-        {
-            id = "note-click-hall-of-high-command",
-            kind = "note",
-            priority = 40,
-            conditions = { level = { min = 57 } },
-            text = "Click Hall of High Command.",
-        },
-        {
-            id = "boss-archivist-galford",
-            kind = "note",
-            priority = 41,
-            conditions = { level = { min = 57 } },
-            text = "Kill Archivist Galford. This requires The Scarlet Key from the Scarlet Monastery dungeon or a Rogue with leveled lockpicking to open. Go across the hall from The Hall of Lights to enter The Scarlet Bastion. He is near the end of The Scarlet Bastion across from Grand Crusader Dathrohan.",
-            dependsOn = { "boss-jandice-barov" },
-        },
-        {
             id = "objective-5251-1-archivist-galford",
             kind = "objective",
             priority = 42,
@@ -356,13 +260,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5251-the-archivist" },
             complete = QuestObjective(5251, 1, "Archivist Galford"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-scarlet-archive",
-            kind = "note",
-            priority = 43,
-            conditions = { level = { min = 57 } },
-            text = "Click Scarlet Archive.",
         },
         {
             id = "objective-5251-2-burn-the-archive",
@@ -385,14 +282,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.814, 0.598, "Duke Nicholas Zverenhoff", "Travel to Eastern Plaguelands."),
             },
-        },
-        {
-            id = "boss-balnazzar",
-            kind = "note",
-            priority = 46,
-            conditions = { level = { min = 57 } },
-            text = "Kill Balnazzar. He is the last boss of the Live Side of Stratholme. He is at the very end of The Scarlet Bastion, across from where Archivist Galford was.",
-            dependsOn = { "boss-archivist-galford" },
         },
         {
             id = "accept-5262-the-truth-comes-crashing-down",
@@ -449,37 +338,12 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-elders-square-service-gate",
-            kind = "note",
-            priority = 52,
-            conditions = { level = { min = 57 } },
-            text = "Click Elders' Square Service Gate.",
-            route = {
-                Point(MAP.EASTERN_PLAGUELANDS, 0.479, 0.239, "Eastern Plaguelands", "Travel to Eastern Plaguelands."),
-            },
-        },
-        {
-            id = "note-click-service-entrance-gate",
-            kind = "note",
-            priority = 53,
-            conditions = { level = { min = 57 } },
-            text = "Click Service Entrance Gate.",
-        },
-        {
             id = "accept-5122-the-medallion-of-faith",
             kind = "accept",
             priority = 54,
             conditions = { level = { min = 55 } },
             text = "Accept The Medallion of Faith from Aurius.",
             complete = QuestState(5122, "activeOrCompleted"),
-        },
-        {
-            id = "boss-baron-rivendare",
-            kind = "note",
-            priority = 55,
-            conditions = { level = { min = 57 } },
-            text = "Kill Baron Rivendare. Enter the building in Slaughter Square and go downstairs. The tank should pull him to the right side of the room. Ranged should stand atop the bone piles located throughout the room. Melee stack up behind the boss to avoid the 'Cleave' ability.",
-            dependsOn = { "boss-balnazzar" },
         },
         {
             id = "objective-5263-1-head-of-baron-rivendare",
@@ -498,13 +362,6 @@ ns:RegisterGuide({
             conditions = { level = { min = 55 } },
             text = "Accept Aurius' Reckoning from Aurius.",
             complete = QuestState(5125, "activeOrCompleted"),
-        },
-        {
-            id = "note-click-menethil-s-gift",
-            kind = "note",
-            priority = 58,
-            conditions = { level = { min = 57 } },
-            text = "Click Menethil's Gift.",
         },
         {
             id = "turnin-5463-menethil-s-gift",
@@ -526,14 +383,6 @@ ns:RegisterGuide({
             complete = QuestState(5464, "activeOrCompleted"),
         },
         {
-            id = "boss-enemies-around-this-area",
-            kind = "note",
-            priority = 61,
-            conditions = { level = { min = 57 } },
-            text = "Kill enemies around this area. These have a 10 minute timer before they vanish from your inventory.",
-            dependsOn = { "boss-baron-rivendare" },
-        },
-        {
             id = "objective-5212-1-plagued-flesh-sample",
             kind = "objective",
             priority = 62,
@@ -542,13 +391,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-5212-the-flesh-does-not-lie" },
             complete = QuestState(5212, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-stratholme-supply-crate",
-            kind = "note",
-            priority = 63,
-            conditions = { level = { min = 57 } },
-            text = "Click Stratholme Supply Crate+.",
         },
         {
             id = "objective-5243-1-stratholme-holy-water",
@@ -619,13 +461,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.817, 0.578, "Leonid Barthalomew the Revered", "Travel to Eastern Plaguelands."),
             },
-        },
-        {
-            id = "note-click-scourge-data",
-            kind = "note",
-            priority = 70,
-            conditions = { level = { min = 57 } },
-            text = "Click Scourge Data.",
         },
         {
             id = "objective-5213-1-scourge-data",
@@ -717,13 +552,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.609, 0.488, "Eastern Plaguelands", "Travel to Eastern Plaguelands."),
             },
-        },
-        {
-            id = "note-click-quel-thalas-registry",
-            kind = "note",
-            priority = 79,
-            conditions = { level = { min = 57 } },
-            text = "Click Quel'Thalas Registry.",
         },
         {
             id = "objective-6133-4-quel-thalas-registry",
@@ -833,14 +661,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-duskwing",
-            kind = "note",
-            priority = 89,
-            conditions = { level = { min = 57 } },
-            text = "Kill Duskwing. You may need help with this.",
-            dependsOn = { "boss-enemies-around-this-area" },
-        },
-        {
             id = "objective-6135-1-patch-of-duskwing-s-fur",
             kind = "objective",
             priority = 90,
@@ -897,62 +717,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.EASTERN_PLAGUELANDS, 0.265, 0.747, "Nathanos Blightcaller", "Travel to Eastern Plaguelands."),
             },
-        },
-        {
-            id = "boss-magistrate-barthilas",
-            kind = "note",
-            priority = 95,
-            conditions = { level = { min = 55 } },
-            text = "Kill Magistrate Barthilas. The tank should keep their back to the wall. He uses the 'Mighty Blow' ability which will knockback the tank.",
-            dependsOn = { "boss-duskwing" },
-        },
-        {
-            id = "boss-nerub-enkan",
-            kind = "note",
-            priority = 96,
-            conditions = { level = { min = 55 } },
-            text = "Kill Nerub'enkan. During the fight, it will summon 'Crypt Scarabs' which will need to be AoE'd down. It also uses 'Pierce Armor' on the tank. When this happens, the tank should use damage mitigating abilities.",
-            dependsOn = { "boss-magistrate-barthilas" },
-        },
-        {
-            id = "boss-black-guard-swordsmith",
-            kind = "note",
-            priority = 97,
-            conditions = { level = { min = 55 } },
-            text = "Kill Black Guard Swordsmith. They are near the buildings to the right of Baroness Anastari. This mob can be skipped if no one in the group needs the 'Bottom Half of Advanced Armorsmithing: Volume I' for Blacksmithing.",
-            dependsOn = { "boss-nerub-enkan" },
-        },
-        {
-            id = "boss-baroness-anastari",
-            kind = "note",
-            priority = 98,
-            conditions = { level = { min = 55 } },
-            text = "Kill Baroness Anastari. She will use the 'Possess' ability which will mind control a random party member. To break the Possess, you will need to damage the target to 50% health. 'Banshee Curse' should be dispelled by Mages and Druids.",
-            dependsOn = { "boss-black-guard-swordsmith" },
-        },
-        {
-            id = "boss-stonespine",
-            kind = "note",
-            priority = 99,
-            conditions = { level = { min = 55 } },
-            text = "Kill Stonespine if the rare is up. This is a rare mob that may not be available. It uses the 'Vicious Rend' ability which will inflict heavy damage to the target.",
-            dependsOn = { "boss-baroness-anastari" },
-        },
-        {
-            id = "boss-maleki-the-pallid",
-            kind = "note",
-            priority = 100,
-            conditions = { level = { min = 55 } },
-            text = "Kill Maleki the Pallid. He uses the ability 'Ice Tomb' which most of the time will target the tank. DPS should slow when this happen so they don't pull aggro.",
-            dependsOn = { "boss-stonespine" },
-        },
-        {
-            id = "boss-ramstein-the-gorger",
-            kind = "note",
-            priority = 101,
-            conditions = { level = { min = 57 } },
-            text = "Kill Ramstein the Gorger. Follow the path north and then east through the two Gauntlet Gates to reach the Gauntlet. This requires the Key to the City or a Rogue with leveled lockpicking to open. Continue following the path north and then west to reach Slaughter Square. Clear the room before engaging the boss. Tank him with your back when possible.",
-            dependsOn = { "boss-maleki-the-pallid" },
         },
         {
             id = "objective-6163-1-head-of-ramstein-the-gor",

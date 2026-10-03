@@ -32,13 +32,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "boss-scarshield-quartermaster",
-            kind = "note",
-            priority = 10,
-            conditions = { level = { min = 55 } },
-            text = "Kill Scarshield Quartermaster. He walks around this area.",
-        },
-        {
             id = "accept-7761-blackhand-s-command",
             kind = "accept",
             priority = 11,
@@ -53,21 +46,6 @@ ns:RegisterGuide({
             conditions = { level = { min = 55 } },
             text = "Enter Blackrock Spire with your group.",
             dependsOn = { "accept-7761-blackhand-s-command" },
-        },
-        {
-            id = "boss-general-drakkisath",
-            kind = "note",
-            priority = 13,
-            conditions = { level = { min = 55 } },
-            text = "Kill General Drakkisath. Use the Dungeon guides to accomplish this. It looks like a large glowing blue totem behind General Drakkisath. Turning this in will allow you to teleport directly to Blackwing Lair by clicking the Orb of Command.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "note-click-drakkisath-s-brand",
-            kind = "note",
-            priority = 14,
-            conditions = { level = { min = 55 } },
-            text = "Click Drakkisath's Brand.",
         },
         {
             id = "turnin-7761-blackhand-s-command",
