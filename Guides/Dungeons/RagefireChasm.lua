@@ -201,8 +201,7 @@ ns:RegisterGuide({
             id = "enter-ragefire-chasm",
             kind = "travel",
             priority = 40,
-            text = "Enter Ragefire Chasm from the Cleft of Shadow. " ..
-                "Oggleflint is first: crowd-control one guard, face him away for Cleave, and kill the adds before him.",
+            text = "Enter Ragefire Chasm from the Cleft of Shadow.",
             dependsOn = {
                 "accept-searching-satchel",
                 "accept-testing-strength",

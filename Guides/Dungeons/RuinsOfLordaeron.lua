@@ -133,10 +133,7 @@ ns:RegisterGuide({
             id = "enter-ruins-of-lordaeron",
             kind = "travel",
             priority = 40,
-            text = "Enter the Ruins of Lordaeron. Horde: use the portal above the Undercity. " ..
-                "Alliance: use the entrance in northern Tirisfal Glades. " ..
-                "Boss order: Witherfang, The Baron, Viktor the Vile, The Abandoned, Bjork, Rath'mael. " ..
-                "The Lordaeron Captain is a rare on the west side after the others die. He is friendly to Alliance and only Horde can kill him.",
+            text = "Enter the Ruins of Lordaeron. Horde: use the portal above the Undercity. Alliance: use the entrance in northern Tirisfal Glades.",
             dependsOn = {
                 "accept-frightened-request",
                 "accept-wrath-of-rathmael",
@@ -324,47 +321,6 @@ ns:RegisterGuide({
             text = "Read the Blood-Stained Letter found in the ruins to accept Remember That I Love You.",
             dependsOn = { "enter-ruins-of-lordaeron" },
             complete = QuestState(92415, "activeOrCompleted"),
-        },
-        {
-            id = "kill-viktor-the-vile",
-            kind = "note",
-            priority = 46,
-            conditions = { level = { min = 16 } },
-            text = "Summon Viktor the Vile from the Grim Campfire in the southwest house. " ..
-                "Clear the skeleton waves. Viktor himself is a tank-and-spank, so save healing for the adds.",
-            dependsOn = { "enter-ruins-of-lordaeron" },
-        },
-        {
-            id = "kill-the-abandoned",
-            kind = "note",
-            priority = 47,
-            conditions = { level = { min = 16 } },
-            text = "Walk up to the west statue with glowing red eyes to summon The Abandoned. " ..
-                "Three waves come first. Interrupt Drain Life. Frost Nova roots anyone close. Frost Armor slows attackers.",
-            dependsOn = { "kill-viktor-the-vile" },
-        },
-        {
-            id = "kill-bjork",
-            kind = "note",
-            priority = 48,
-            conditions = { level = { min = 16 } },
-            text = "Kill Bjork at the end of the northwest corridor. " ..
-                "His only danger is a knockback. Do not get knocked into other packs.",
-            dependsOn = { "kill-the-abandoned" },
-        },
-        {
-            id = "kill-lordaeron-captain",
-            kind = "note",
-            priority = 49,
-            conditions = {
-                all = {
-                    HORDE,
-                    { level = { min = 16 } },
-                },
-            },
-            text = "Kill the Lordaeron Captain if he spawned on the west side after the other bosses. " ..
-                "He is a long patrol. Clear around him. Alliance see him as friendly.",
-            dependsOn = { "kill-bjork" },
         },
         {
             id = "turnin-frightened-request",

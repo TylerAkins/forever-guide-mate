@@ -11,8 +11,9 @@ local _, ns = ...
 -- leads to Prehistoric Prism. Songblade Search leads to Fallen in the Fen.
 -- Seeking Caitlin is a breadcrumb. Caitlin Grassman also offers Lost in the
 -- Thicket Things, so that accept does not wait on the breadcrumb.
--- Wowhead has no interior map. Accepts and turn-ins inside the excavation
--- follow the quest log. Fallen in the Fen has a turn-in pin and no start pin.
+-- The entrance is the path by the spider cave near Thelgen Rock. Wowhead has
+-- no interior map, so accepts and turn-ins inside the excavation follow the
+-- quest log. Fallen in the Fen has a turn-in pin and no start pin.
 -- Turning in Elder Knowledge removes the Titan Relic in the current beta,
 -- and Earthen Echo still asks for that relic.
 
@@ -196,10 +197,7 @@ ns:RegisterGuide({
                     BOTH_FACTIONS,
                 },
             },
-            text = "Enter Excavation Site: Wetlands from the path by the spider cave near Thelgen Rock. " ..
-                "Boss order: Saltspine, Shadetooth, Highland Horror, Relic Guardian. " ..
-                "Mark this step complete after you zone in. " ..
-                "It also advances when an Excavation Site: Wetlands quest is finished inside or the Titan Relic quest is accepted.",
+            text = "Enter Excavation Site: Wetlands from the path by the spider cave near Thelgen Rock.",
             persistCompletion = true,
             complete = {
                 any = {

@@ -41,14 +41,6 @@ ns:RegisterGuide({
     },
     goals = {
         {
-            id = "reach-level-39",
-            kind = "note",
-            priority = 10,
-            conditions = { level = { min = 39 } },
-            text = "Reach level 39 before you continue.",
-            complete = { level = { min = 39 } },
-        },
-        {
             id = "accept-3636-bring-the-light",
             kind = "accept",
             priority = 11,
@@ -129,13 +121,6 @@ ns:RegisterGuide({
             complete = { instance = 129 },
         },
         {
-            id = "note-click-holding-pen",
-            kind = "note",
-            priority = 18,
-            conditions = { level = { min = 39 } },
-            text = "Click Holding Pen.",
-        },
-        {
             id = "accept-3523-scourge-of-the-downs",
             kind = "accept",
             priority = 19,
@@ -163,22 +148,6 @@ ns:RegisterGuide({
             complete = QuestState(3525, "activeOrCompleted"),
         },
         {
-            id = "boss-the-enemies-that-attack-in-waves",
-            kind = "note",
-            priority = 22,
-            conditions = { level = { min = 39 } },
-            text = "Kill the enemies that attack in waves.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
-            id = "boss-plaguemaw-the-rotting",
-            kind = "note",
-            priority = 23,
-            conditions = { level = { min = 39 } },
-            text = "Kill Plaguemaw the Rotting. This is an optional fight. Speak with Belnistrasz to start the event. Waves of enemies will spawn and may require additional off tanks.",
-            dependsOn = { "boss-the-enemies-that-attack-in-waves" },
-        },
-        {
             id = "objective-3525-1-escort-belnistrasz-to-th",
             kind = "objective",
             priority = 24,
@@ -187,13 +156,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3525-extinguishing-the-idol" },
             complete = QuestState(3525, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-belnistrasz-s-brazier",
-            kind = "note",
-            priority = 25,
-            conditions = { level = { min = 39 } },
-            text = "Click Belnistrasz's Brazier.",
         },
         {
             id = "turnin-3525-extinguishing-the-idol",
@@ -216,20 +178,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 28,
-            conditions = { level = { min = 39 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 29,
-            conditions = { level = { min = 39 } },
-            text = "Click Here to Continue.",
-        },
-        {
             id = "turnin-3636-bring-the-light",
             kind = "turnin",
             priority = 30,
@@ -240,14 +188,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.STORMWIND_CITY, 0.396, 0.273, "Archbishop Benedictus", "Travel to Stormwind City."),
             },
-        },
-        {
-            id = "boss-charlga-razorflank",
-            kind = "note",
-            priority = 31,
-            conditions = { level = { min = 37 } },
-            text = "Kill Charlga Razorflank. She is the last boss of the Razorfen Kraul Dungeon. Use the Razorfen Kraul Dungeon guide to accomplish this.",
-            dependsOn = { "boss-plaguemaw-the-rotting" },
         },
         {
             id = "accept-6522-an-unholy-alliance",
@@ -293,14 +233,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-ambassador-malcin",
-            kind = "note",
-            priority = 36,
-            conditions = { level = { min = 37 } },
-            text = "Kill Ambassador Malcin.",
-            dependsOn = { "boss-charlga-razorflank" },
-        },
-        {
             id = "objective-6521-1-ambassador-malcin-s-head",
             kind = "objective",
             priority = 37,
@@ -311,46 +243,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THE_BARRENS, 0.485, 0.956, "The Barrens", "Travel to The Barrens."),
             },
-        },
-        {
-            id = "boss-tuten-kash",
-            kind = "note",
-            priority = 38,
-            conditions = { level = { min = 37 } },
-            text = "Kill Tuten'kash. Clear the room and ring the gong to begin the encounter. After each wave, you will need to ring the gong again until the boss appears. The tank should face the boss away from the group when it spawns.",
-            dependsOn = { "boss-ambassador-malcin" },
-        },
-        {
-            id = "boss-mordresh-fire-eye",
-            kind = "note",
-            priority = 39,
-            conditions = { level = { min = 37 } },
-            text = "Kill Mordresh Fire Eye. Before engaging, clear the enemies around Mordresh. The last pack of skeletons will draw the aggro of the boss. This boss is vulnerable to melee damage.",
-            dependsOn = { "boss-tuten-kash" },
-        },
-        {
-            id = "boss-glutton",
-            kind = "note",
-            priority = 40,
-            conditions = { level = { min = 37 } },
-            text = "Kill Glutton. Have the tank move out of it's 'Disease Cloud' ability. Heavy heals will be needed when Glutton enrages.",
-            dependsOn = { "boss-mordresh-fire-eye" },
-        },
-        {
-            id = "boss-ragglesnout",
-            kind = "note",
-            priority = 41,
-            conditions = { level = { min = 37 } },
-            text = "Kill Ragglesnout if the rare is up. This is a rare mob that may not be available. He will use 'Dominate Mind' on a random group member, including the tank or healer. It'll be important to have a back up healer or tank in case this happens.",
-            dependsOn = { "boss-glutton" },
-        },
-        {
-            id = "boss-amnennar-the-coldbringer",
-            kind = "note",
-            priority = 42,
-            conditions = { level = { min = 37 } },
-            text = "Kill Amnennar the Coldbringer. He is the last boss of the dungeon. Follow the left path out of the Belnistrasz escort room. go right in the Spiral of Thorns and jump down. From here, go west and follow the path as it wraps up and around, eventually reaching Amnennar at the top. The tank should tank him facing the tent where he's at. The group should then stack on top of the tank to reduce damage from 'Frost Nova'. He will summon 'Frost Spectres'.",
-            dependsOn = { "boss-ragglesnout" },
         },
         {
             id = "objective-3341-1-skull-of-the-coldbringer",

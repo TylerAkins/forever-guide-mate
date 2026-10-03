@@ -164,13 +164,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-roc-enemies-around-this-area",
-            kind = "note",
-            priority = 20,
-            conditions = { level = { min = 47 } },
-            text = "Kill Roc enemies around this area.",
-        },
-        {
             id = "objective-1452-1-roc-gizzard",
             kind = "objective",
             priority = 21,
@@ -194,14 +187,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-ironfur-enemies-around-this-area",
-            kind = "note",
-            priority = 23,
-            conditions = { level = { min = 47 } },
-            text = "Kill Ironfur enemies around this area. They share a spawn with Groddoc enemies around this area.",
-            dependsOn = { "boss-roc-enemies-around-this-area" },
-        },
-        {
             id = "objective-1452-2-ironfur-liver",
             kind = "objective",
             priority = 24,
@@ -212,14 +197,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.FERALAS, 0.499, 0.304, "Feralas", "Travel to Feralas."),
             },
-        },
-        {
-            id = "boss-groddoc-enemies-around-this-area",
-            kind = "note",
-            priority = 25,
-            conditions = { level = { min = 47 } },
-            text = "Kill Groddoc enemies around this area. They share a spawn with Ironfur enemies around this area.",
-            dependsOn = { "boss-ironfur-enemies-around-this-area" },
         },
         {
             id = "objective-1452-3-groddoc-liver",
@@ -306,13 +283,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-marvon-s-chest",
-            kind = "note",
-            priority = 33,
-            conditions = { level = { min = 47 } },
-            text = "Click Marvon's Chest.",
-        },
-        {
             id = "objective-3444-1-stone-circle",
             kind = "objective",
             priority = 34,
@@ -358,14 +328,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.TANARIS, 0.670, 0.224, "Yeh'kinya", "Travel to Tanaris."),
             },
-        },
-        {
-            id = "boss-vale-screecher",
-            kind = "note",
-            priority = 38,
-            conditions = { level = { min = 47 } },
-            text = "Kill Vale Screecher+. These have a low spawn rate. Use it on their corpse.",
-            dependsOn = { "boss-groddoc-enemies-around-this-area" },
         },
         {
             id = "objective-3520-1-screecher-spirits",
@@ -414,14 +376,6 @@ ns:RegisterGuide({
             complete = { instance = 109 },
         },
         {
-            id = "boss-theka-the-martyr",
-            kind = "note",
-            priority = 43,
-            conditions = { level = { min = 47 } },
-            text = "Kill Theka the Martyr. Follow the path north and then go right when the path splits. Quickly go left afterwards and then north. He is the second boss of the dungeon.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "objective-3527-1-first-mosh-aru-tablet",
             kind = "objective",
             priority = 44,
@@ -432,14 +386,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-hydromancer-velratha",
-            kind = "note",
-            priority = 45,
-            conditions = { level = { min = 47 } },
-            text = "Kill Hydromancer Velratha. Follow the path west to reach an open room with a large pyramid on the western side. Continue following the path southeast to reach the large room with a pool in the center. She walks around this area.",
-            dependsOn = { "boss-theka-the-martyr" },
-        },
-        {
             id = "objective-3527-2-second-mosh-aru-tablet",
             kind = "objective",
             priority = 46,
@@ -448,20 +394,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3527-the-prophecy-of-mosh-aru" },
             complete = QuestObjective(3527, 2, "Second Mosh'aru Tablet"),
             useClientPin = true,
-        },
-        {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 47,
-            conditions = { level = { min = 47 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 48,
-            conditions = { level = { min = 47 } },
-            text = "Click Here to Continue.",
         },
         {
             id = "turnin-3527-the-prophecy-of-mosh-aru",
@@ -491,19 +423,6 @@ ns:RegisterGuide({
             complete = QuestState(1446, "activeOrCompleted"),
             route = {
                 Point(MAP.THE_HINTERLANDS, 0.338, 0.752, "Atal'ai Exile", "Travel to The Hinterlands."),
-            },
-        },
-        {
-            id = "note-click-ancient-egg",
-            kind = "note",
-            priority = 52,
-            conditions = { level = { min = 47 } },
-            text = "Click Ancient Egg.",
-            route = {
-                Point(MAP.THE_HINTERLANDS, 0.622, 0.714, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.600, 0.702, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.587, 0.703, "The Hinterlands", "Travel to The Hinterlands."),
-                Point(MAP.THE_HINTERLANDS, 0.592, 0.743, "The Hinterlands", "Travel to The Hinterlands."),
             },
         },
         {
@@ -552,14 +471,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.UN_GORO_CRATER, 0.429, 0.097, "Muigin", "Travel to Un'Goro Crater."),
             },
-        },
-        {
-            id = "boss-bloodpetal-enemies-around-this-area",
-            kind = "note",
-            priority = 57,
-            conditions = { level = { min = 47 } },
-            text = "Kill Bloodpetal enemies around this area. They look like walking plants. These have a low drop rate.",
-            dependsOn = { "boss-hydromancer-velratha" },
         },
         {
             id = "objective-4141-1-bloodpetal",
@@ -622,19 +533,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-atal-ai-tablet",
-            kind = "note",
-            priority = 63,
-            conditions = { level = { min = 47 } },
-            text = "Click Atal'ai Tablet+.",
-            route = {
-                Point(MAP.SWAMP_OF_SORROWS, 0.717, 0.458, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.727, 0.422, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.758, 0.449, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-                Point(MAP.SWAMP_OF_SORROWS, 0.760, 0.460, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
-            },
-        },
-        {
             id = "objective-1475-1-atal-ai-tablet",
             kind = "objective",
             priority = 64,
@@ -645,28 +543,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.568, 0.760, "Swamp of Sorrows", "Travel to Swamp of Sorrows."),
             },
-        },
-        {
-            id = "note-click-atal-ai-statue",
-            kind = "note",
-            priority = 65,
-            conditions = { level = { min = 47 } },
-            text = "Click Atal'ai Statue+.",
-        },
-        {
-            id = "boss-atal-alarion",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 47 } },
-            text = "Kill Atal'alarion. After entering the dungeon follow the left path and then go down the stairs to reach the Hall of Serpents. Run around the outside ring and clear each of the small inside rooms. Click the serpent statues in the inside rooms in this order:. Clear the trash in the area as you travel around the platform. Once cleared, the group will need to spread out and click each Atal'ai Statue in the numbered order indicated on the map. The Atal'ai Statue will be green if done correctly and Atal'alrion will appear at the center of the room.",
-            dependsOn = { "boss-bloodpetal-enemies-around-this-area" },
-        },
-        {
-            id = "note-click-altar-of-hakkar",
-            kind = "note",
-            priority = 67,
-            conditions = { level = { min = 47 } },
-            text = "Click Altar of Hakkar.",
         },
         {
             id = "turnin-3446-into-the-depths",
@@ -688,13 +564,6 @@ ns:RegisterGuide({
             complete = QuestState(3447, "activeOrCompleted"),
         },
         {
-            id = "note-click-idol-of-hakkar",
-            kind = "note",
-            priority = 70,
-            conditions = { level = { min = 47 } },
-            text = "Click Idol of Hakkar.",
-        },
-        {
             id = "turnin-3447-secret-of-the-circle",
             kind = "turnin",
             priority = 71,
@@ -703,14 +572,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-3447-secret-of-the-circle" },
             complete = QuestState(3447, "completed"),
             useClientPin = true,
-        },
-        {
-            id = "boss-jammal-an-the-prophet",
-            kind = "note",
-            priority = 72,
-            conditions = { level = { min = 47 } },
-            text = "Kill Jammal'an the Prophet. Follow the path up and out of The Pit of Refuse. Follow the left path again and go up three large sets of stairs, immediately go right to follow a short hallway and reach the upper level of The Pit of. There should be an elite enemy named Hukku channeling a spell on this balcony; kill him and then go back down the short hallway, but turn right and continue. After defeating the Atal'ai Defenders, the way to Jammal'an will open up. Clear the trash in the Lair of the Chosen, watching out for Atal'ai Deathwalkers 'Fear' abilitiy. Ghosts will spawn when some of the enemies die here, all of which you can do is kite run away from them.",
-            dependsOn = { "boss-atal-alarion" },
         },
         {
             id = "objective-1446-1-head-of-jammal-an",
@@ -723,27 +584,12 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-shade-of-eranikus",
-            kind = "note",
-            priority = 74,
-            conditions = { level = { min = 47 } },
-            text = "Kill Shade of Eranikus. Return to the main central room in The Pit of Sacrifice and follow the southern path. Clear all dragon enemies before pulling this boss or they will swarm you. All ranged should stay at max distance to avoid being stunned by its 'War Stomp' ability. The abilities 'Fade' for Priest, 'Blessing of Salvation' for Paladin and 'Feint' for Rogues should be used to mitigate threat when possible.",
-            dependsOn = { "boss-jammal-an-the-prophet" },
-        },
-        {
             id = "accept-3373-the-essence-of-eranikus",
             kind = "accept",
             priority = 75,
             conditions = { level = { min = 48 } },
             text = "Accept The Essence of Eranikus.",
             complete = QuestState(3373, "activeOrCompleted"),
-        },
-        {
-            id = "note-click-essence-font",
-            kind = "note",
-            priority = 76,
-            conditions = { level = { min = 47 } },
-            text = "Click Essence Font.",
         },
         {
             id = "turnin-3373-the-essence-of-eranikus",
@@ -756,37 +602,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-the-enemies-that-spawn-in-waves",
-            kind = "note",
-            priority = 78,
-            conditions = { level = { min = 47 } },
-            text = "Kill the enemies that spawn in waves. Use it next to the skeleton laying on the ground in the Sanctum of the Fallen God. Return to the main central room in The Pit of Sacrifice and follow the southwestern path to reach the Sanctum of the Fallen God. Use it to put out the braziers in each corner of the room.",
-            dependsOn = { "boss-shade-of-eranikus" },
-        },
-        {
-            id = "boss-hakkari-bloodkeeper",
-            kind = "note",
-            priority = 79,
-            conditions = { level = { min = 47 } },
-            text = "Kill Hakkari Bloodkeeper+. Use it next to the skeleton laying on the ground in the Sanctum of the Fallen God. Return to the main central room in The Pit of Sacrifice and follow the southwestern path to reach the Sanctum of the Fallen God. Use it to put out the braziers in each corner of the room.",
-            dependsOn = { "boss-the-enemies-that-spawn-in-waves" },
-        },
-        {
-            id = "note-click-eternal-flame",
-            kind = "note",
-            priority = 80,
-            conditions = { level = { min = 47 } },
-            text = "Click Eternal Flame+.",
-        },
-        {
-            id = "boss-avatar-of-hakkar",
-            kind = "note",
-            priority = 81,
-            conditions = { level = { min = 47 } },
-            text = "Kill Avatar of Hakkar. Use it next to the skeleton laying on the ground in the Sanctum of the Fallen God. Return to the main central room in The Pit of Sacrifice and follow the southwestern path to reach the Sanctum of the Fallen God. Use it to put out the braziers in each corner of the room. Clear trash in the Sanctum of the Fallen God. This boss can only be summoned by using the 'Egg of Hakkar' which is for the quest 'The God Hakkar'. Players whom have completed the quest can use 'Yeh'kinya's Scroll' to summon as well.",
-            dependsOn = { "boss-hakkari-bloodkeeper" },
-        },
-        {
             id = "objective-3528-1-fill-the-egg-of-hakkar",
             kind = "objective",
             priority = 82,
@@ -797,14 +612,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "boss-atal-ai-enemies-around-this-area",
-            kind = "note",
-            priority = 83,
-            conditions = { level = { min = 47 } },
-            text = "Kill Atal'ai enemies around this area. These can also drop outside of the instance.",
-            dependsOn = { "boss-avatar-of-hakkar" },
-        },
-        {
             id = "objective-1445-1-fetish-of-hakkar",
             kind = "objective",
             priority = 84,
@@ -813,14 +620,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-1445-the-temple-of-atal-hakkar" },
             complete = QuestState(1445, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-enemies-around-this-area",
-            kind = "note",
-            priority = 85,
-            conditions = { level = { min = 47 } },
-            text = "Kill enemies around this area. Murk Worms, Deep Lurkers and Saturated Oozes specifically drop the quest item.",
-            dependsOn = { "boss-atal-ai-enemies-around-this-area" },
         },
         {
             id = "objective-4143-1-atal-ai-haze",
@@ -913,13 +712,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SWAMP_OF_SORROWS, 0.479, 0.548, "Fel'zerul", "Travel to Swamp of Sorrows."),
             },
-        },
-        {
-            id = "note-click-atal-ai-artifact",
-            kind = "note",
-            priority = 94,
-            conditions = { level = { min = 47 } },
-            text = "Click Atal'ai Artifact+.",
         },
         {
             id = "objective-1424-1-atal-ai-artifact",
@@ -1111,54 +903,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THE_BARRENS, 0.625, 0.387, "Liv Rizzlefix", "Travel to The Barrens."),
             },
-        },
-        {
-            id = "boss-the-atal-ai-defenders",
-            kind = "note",
-            priority = 111,
-            conditions = { level = { min = 47 } },
-            text = "Kill the Atal'ai Defenders. There will be 6 sub bosses you need to kill. To start, clear the Pit of Refuse of all mobs. You'll run up the stairs and reach an area similar to the Atal'ai Statue area for the previous boss.",
-            dependsOn = { "boss-enemies-around-this-area" },
-        },
-        {
-            id = "boss-ogom-the-wretched",
-            kind = "note",
-            priority = 112,
-            conditions = { level = { min = 47 } },
-            text = "Kill Ogom the Wretched. After defeating the Atal'ai Defenders, the way to Jammal'an will open up. Clear the trash in the Lair of the Chosen, watching out for Atal'ai Deathwalkers 'Fear' abilitiy. Ghosts will spawn when some of the enemies die here, all of which you can do is kite run away from them.",
-            dependsOn = { "boss-the-atal-ai-defenders" },
-        },
-        {
-            id = "boss-dreamscythe",
-            kind = "note",
-            priority = 113,
-            conditions = { level = { min = 47 } },
-            text = "Kill Dreamscythe. The tank should keep their back to the wall and keep all drakes facing away from the party. All of their abilities hit in front of it, so this will save you needless healing.",
-            dependsOn = { "boss-ogom-the-wretched" },
-        },
-        {
-            id = "boss-weaver",
-            kind = "note",
-            priority = 114,
-            conditions = { level = { min = 47 } },
-            text = "Kill Weaver. The tank should keep their back to the wall and keep all drakes facing away from the party. All of their abilities hit in front of it, so this will save you needless healing.",
-            dependsOn = { "boss-dreamscythe" },
-        },
-        {
-            id = "boss-hazzas",
-            kind = "note",
-            priority = 115,
-            conditions = { level = { min = 47 } },
-            text = "Kill Hazzas. Similar to the last encounter, the tank should keep their back to the wall and keep all drakes facing away from the party. All of their abilities hit in front of it, so this will save you needless healing.",
-            dependsOn = { "boss-weaver" },
-        },
-        {
-            id = "boss-morphaz",
-            kind = "note",
-            priority = 116,
-            conditions = { level = { min = 47 } },
-            text = "Kill Morphaz. Similar to the last encounter, the tank should keep their back to the wall and keep all drakes facing away from the party. All of their abilities hit in front of it, so this will save you needless healing.",
-            dependsOn = { "boss-hazzas" },
         },
         {
             id = "objective-4146-1-atal-ai-haze",

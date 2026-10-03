@@ -312,14 +312,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-high-interrogator-gerstahn",
-            kind = "note",
-            priority = 32,
-            conditions = { level = { min = 48 } },
-            text = "Kill High Interrogator Gerstahn. She is the fourth boss in the dungeon. Use the Dungeon guides to accomplish this. You need this key to unlock Marshal Windsor's cell door.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "turnin-4241-marshal-windsor",
             kind = "turnin",
             priority = 33,
@@ -351,23 +343,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "reach-level-50",
-            kind = "note",
-            priority = 36,
-            conditions = { level = { min = 50 } },
-            text = "Reach level 50 before you continue.",
-            dependsOn = { "turnin-4242-abandoned-hope" },
-            complete = { level = { min = 50 } },
-        },
-        {
-            id = "boss-anvilrage-dwarves-at-the-beginning-of-the",
-            kind = "note",
-            priority = 37,
-            conditions = { level = { min = 50 } },
-            text = "Kill Anvilrage dwarves at the beginning of the dungeon. Just clear the first few rooms of the dungeon, killing all the Anvilrage dwarves and resetting the instance if needed, until you get the item drop.",
-            dependsOn = { "boss-high-interrogator-gerstahn" },
-        },
-        {
             id = "accept-4264-a-crumpled-up-note",
             kind = "accept",
             priority = 38,
@@ -395,14 +370,6 @@ ns:RegisterGuide({
             complete = QuestState(4282, "activeOrCompleted"),
         },
         {
-            id = "boss-general-angerforge",
-            kind = "note",
-            priority = 41,
-            conditions = { level = { min = 50 } },
-            text = "Kill General Angerforge. Use the Dungeon guides to accomplish this.",
-            dependsOn = { "boss-anvilrage-dwarves-at-the-beginning-of-the" },
-        },
-        {
             id = "objective-4282-1-marshal-windsor-s-lost-i",
             kind = "objective",
             priority = 42,
@@ -411,14 +378,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4282-a-shred-of-hope" },
             complete = QuestObjective(4282, 1, "Marshal Windsor's Lost Information"),
             useClientPin = true,
-        },
-        {
-            id = "boss-golem-lord-argelmach",
-            kind = "note",
-            priority = 43,
-            conditions = { level = { min = 50 } },
-            text = "Kill Golem Lord Argelmach. Use the Dungeon guides to accomplish this.",
-            dependsOn = { "boss-general-angerforge" },
         },
         {
             id = "objective-4282-2-marshal-windsor-s-lost-i",
@@ -509,14 +468,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-onyxia-s-elite-guard",
-            kind = "note",
-            priority = 52,
-            conditions = { level = { min = 50 } },
-            text = "Kill Onyxia's Elite Guard+. Inside the building.",
-            dependsOn = { "boss-golem-lord-argelmach" },
-        },
-        {
             id = "objective-6403-1-complete-reginald-windso",
             kind = "objective",
             priority = 53,
@@ -577,14 +528,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-general-drakkisath",
-            kind = "note",
-            priority = 58,
-            conditions = { level = { min = 50 } },
-            text = "Kill General Drakkisath. Use the Dungeon guides to accomplish this.",
-            dependsOn = { "boss-onyxia-s-elite-guard" },
-        },
-        {
             id = "objective-6502-1-blood-of-the-black-drago",
             kind = "objective",
             priority = 59,
@@ -605,15 +548,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.545, 0.512, "Haleh", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "reach-level-55",
-            kind = "note",
-            priority = 61,
-            conditions = { level = { min = 55 } },
-            text = "Reach level 55 before you continue.",
-            dependsOn = { "turnin-6502-drakefire-amulet" },
-            complete = { level = { min = 55 } },
         },
         {
             id = "accept-4903-warlord-s-command",
@@ -652,13 +586,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4903-warlord-s-command" },
             complete = QuestObjective(4903, 1, "Overlord Wyrmthalak"),
             useClientPin = true,
-        },
-        {
-            id = "note-click-inconspicuous-documents",
-            kind = "note",
-            priority = 66,
-            conditions = { level = { min = 55 } },
-            text = "Click Inconspicuous Documents.",
         },
         {
             id = "objective-4903-4-important-blackrock-docu",
@@ -729,14 +656,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.317, 0.378, "Thrall", "Travel to Orgrimmar."),
             },
-        },
-        {
-            id = "boss-warchief-rend-blackhand",
-            kind = "note",
-            priority = 73,
-            conditions = { level = { min = 55 } },
-            text = "Kill Warchief Rend Blackhand. Use the Dungeon guides to accomplish this.",
-            dependsOn = { "boss-general-drakkisath" },
         },
         {
             id = "objective-4974-1-head-of-rend-blackhand",
@@ -851,14 +770,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-rage-talon-enemies-throughout-the-dungeon",
-            kind = "note",
-            priority = 84,
-            conditions = { level = { min = 55 } },
-            text = "Kill Rage Talon enemies throughout the dungeon. There's a few at the very beginning of the dungeon and a lot more in The Rookery.",
-            dependsOn = { "boss-warchief-rend-blackhand" },
-        },
-        {
             id = "objective-6569-1-black-dragonspawn-eye",
             kind = "objective",
             priority = 85,
@@ -939,14 +850,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-chronalis",
-            kind = "note",
-            priority = 92,
-            conditions = { level = { min = 55 } },
-            text = "Kill Chronalis. It flies around this area. Killing it will require a full group.",
-            dependsOn = { "boss-rage-talon-enemies-throughout-the-dungeon" },
-        },
-        {
             id = "objective-6584-1-the-skull-of-chronalis",
             kind = "objective",
             priority = 93,
@@ -959,14 +862,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-scryer",
-            kind = "note",
-            priority = 94,
-            conditions = { level = { min = 55 } },
-            text = "Kill Scryer. Inside the cave. It flies around this area. Killing it will require a full group.",
-            dependsOn = { "boss-chronalis" },
-        },
-        {
             id = "objective-6582-1-the-skull-of-scryer",
             kind = "objective",
             priority = 95,
@@ -977,14 +872,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.529, 0.561, "Winterspring", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "boss-somnus",
-            kind = "note",
-            priority = 96,
-            conditions = { level = { min = 55 } },
-            text = "Kill Somnus. It flies around this area, between these two spots. Killing it will require a full group.",
-            dependsOn = { "boss-scryer" },
         },
         {
             id = "objective-6583-1-the-skull-of-somnus",
@@ -1045,14 +932,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.DUSTWALLOW_MARSH, 0.567, 0.877, "Emberstrife", "Travel to Dustwallow Marsh."),
             },
-        },
-        {
-            id = "boss-axtroz",
-            kind = "note",
-            priority = 102,
-            conditions = { level = { min = 55 } },
-            text = "Kill Axtroz. It flies back and forth between these two gates. Killing it will require a full group.",
-            dependsOn = { "boss-somnus" },
         },
         {
             id = "objective-6585-1-the-skull-of-axtroz",
