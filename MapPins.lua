@@ -42,6 +42,27 @@ function MapPins:Clear(mapCanvas)
     elseif pin.Hide then pin:Hide() end
 end
 
+-- AcquirePin runs while the world map is opening, inside Blizzard's secure
+-- data-provider refresh. That path calls SetPassThroughButtons, which the
+-- client refuses from addon code and records as ADDON_ACTION_BLOCKED.
+-- Wait until that refresh has returned.
+function MapPins:ScheduleRefresh(mapCanvas)
+    if mapCanvas then self.pendingCanvas = mapCanvas end
+    if self.refreshQueued then return end
+    self.refreshQueued = true
+    local function run()
+        self.refreshQueued = false
+        local canvas = self.pendingCanvas
+        self.pendingCanvas = nil
+        self:Refresh(canvas)
+    end
+    if type(C_Timer) == "table" and type(C_Timer.After) == "function" then
+        C_Timer.After(0, run)
+    else
+        run()
+    end
+end
+
 function MapPins:Refresh(mapCanvas)
     mapCanvas = mapCanvas or WorldMapFrame
     self:Clear(mapCanvas)
@@ -66,7 +87,7 @@ function MapPins:HookMap()
     if WorldMapFrame.AddDataProvider and CreateFromMixins and MapCanvasDataProviderMixin then
         local provider = CreateFromMixins(MapCanvasDataProviderMixin)
         function provider:RefreshAllData()
-            MapPins:Refresh(self:GetMap())
+            MapPins:ScheduleRefresh(self:GetMap())
         end
         function provider:RemoveAllData()
             MapPins:Clear(self:GetMap())
@@ -77,7 +98,7 @@ function MapPins:HookMap()
         hooksecurefunc(WorldMapFrame, "OnMapChanged", function() MapPins:Refresh() end)
     end
     if WorldMapFrame.HookScript then
-        WorldMapFrame:HookScript("OnShow", function() MapPins:Refresh() end)
+        WorldMapFrame:HookScript("OnShow", function() MapPins:ScheduleRefresh() end)
         WorldMapFrame:HookScript("OnHide", function() MapPins:Clear() end)
     end
 end

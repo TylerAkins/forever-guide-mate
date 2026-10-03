@@ -70,9 +70,63 @@ ns:RegisterGuide({
     },
     goals = {
         {
+            id = "accept-92461-harmony-in-balance",
+            kind = "accept",
+            priority = 7,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
+            complete = QuestState(92461, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
+            id = "objective-92461-harmony-in-balance",
+            kind = "objective",
+            priority = 8,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            complete = QuestState(92461, "complete"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
+                    "Travel to Juvenile Vuldren in Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-92461-harmony-in-balance",
+            kind = "turnin",
+            priority = 9,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { level = { min = 2 } },
+                },
+            },
+            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
+            dependsOn = { "objective-92461-harmony-in-balance" },
+            complete = QuestState(92461, "completed"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
+                    "Travel to Rorian the Dayseeker in Zephras Isle."),
+            },
+        },
+        {
             id = "accept-92482-the-way-of-the-hunter",
             kind = "accept",
             priority = 10,
+            dependsOn = { "turnin-92461-harmony-in-balance" },
             conditions = {
                 all = {
                     { class = 3 },
