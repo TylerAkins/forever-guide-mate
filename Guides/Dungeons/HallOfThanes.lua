@@ -123,10 +123,7 @@ ns:RegisterGuide({
             kind = "travel",
             priority = 40,
             conditions = { level = { min = 10 } },
-            text = "Enter the Hall of Thanes from the cobwebbed corridor left of the High Seat. " ..
-                "Follow it down past the lava bridge. Boss order: Faldrim Anvilmar, Magmatus, Plunder, Durgen Dirgehammer. " ..
-                "Mark this step complete after you zone in. " ..
-                "It also advances when a Hall of Thanes quest is accepted inside or an objective is finished.",
+            text = "Enter the Hall of Thanes from the cobwebbed corridor left of the High Seat. Follow it down past the lava bridge.",
             dependsOn = {
                 "accept-old-ironforge-incursion",
                 "accept-restless-dead",

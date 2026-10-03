@@ -159,20 +159,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-broodling-enemies-around-this-area",
-            kind = "note",
-            priority = 19,
-            conditions = { level = { min = 57 } },
-            text = "Kill Broodling enemies around this area. Use it on Broodling enemies around this area. They look like small flying dragons. They look like red floating crystals that appear above their corpses after you kill them.",
-        },
-        {
-            id = "note-click-broodling-essence",
-            kind = "note",
-            priority = 20,
-            conditions = { level = { min = 57 } },
-            text = "Click Broodling Essence+.",
-        },
-        {
             id = "objective-4726-1-broodling-essence",
             kind = "objective",
             priority = 21,
@@ -390,14 +376,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-high-interrogator-gerstahn",
-            kind = "note",
-            priority = 39,
-            conditions = { level = { min = 57 } },
-            text = "Kill High Interrogator Gerstahn. After entering the dungeon, go straight into the Detention Block and then take the first right. Follow this path around until you can go left into a room at the back of this long hallway. You need this key to unlock Marshal Windsor's cell door.",
-            dependsOn = { "enter-dungeon" },
-        },
-        {
             id = "turnin-4241-marshal-windsor",
             kind = "turnin",
             priority = 40,
@@ -417,20 +395,6 @@ ns:RegisterGuide({
             complete = QuestState(4242, "activeOrCompleted"),
         },
         {
-            id = "note-leave-the-dungeon",
-            kind = "note",
-            priority = 42,
-            conditions = { level = { min = 57 } },
-            text = "Leave the dungeon.",
-        },
-        {
-            id = "note-click-here-to-continue",
-            kind = "note",
-            priority = 43,
-            conditions = { level = { min = 57 } },
-            text = "Click Here to Continue.",
-        },
-        {
             id = "turnin-4242-abandoned-hope",
             kind = "turnin",
             priority = 44,
@@ -441,14 +405,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BURNING_STEPPES, 0.848, 0.690, "Marshal Maxwell", "Travel to Burning Steppes."),
             },
-        },
-        {
-            id = "boss-anvilrage-dwarves-at-the-beginning-of-the",
-            kind = "note",
-            priority = 45,
-            conditions = { level = { min = 57 } },
-            text = "Kill Anvilrage dwarves at the beginning of the dungeon. Just clear the first few rooms of the dungeon, killing all the Anvilrage dwarves and resetting the instance if needed, until you get the item drop.",
-            dependsOn = { "boss-high-interrogator-gerstahn" },
         },
         {
             id = "accept-4264-a-crumpled-up-note",
@@ -478,14 +434,6 @@ ns:RegisterGuide({
             complete = QuestState(4282, "activeOrCompleted"),
         },
         {
-            id = "boss-general-angerforge",
-            kind = "note",
-            priority = 49,
-            conditions = { level = { min = 57 } },
-            text = "Kill General Angerforge. Run north through the Detention Block and unlock the East Garrison Door to enter the East Garrison. In the lower part of this room, click the Shadowforge Lock. run up the two sets of stairs and follow the hallway on the left just before the third set of. Follow the path through the hallway to reach the West Garrison.",
-            dependsOn = { "boss-anvilrage-dwarves-at-the-beginning-of-the" },
-        },
-        {
             id = "objective-4282-1-marshal-windsor-s-lost-i",
             kind = "objective",
             priority = 50,
@@ -494,14 +442,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4282-a-shred-of-hope" },
             complete = QuestObjective(4282, 1, "Marshal Windsor's Lost Information"),
             useClientPin = true,
-        },
-        {
-            id = "boss-golem-lord-argelmach",
-            kind = "note",
-            priority = 51,
-            conditions = { level = { min = 57 } },
-            text = "Kill Golem Lord Argelmach. Go back up the stairs next to General Angerforge and continue north to reach The Manufactory and Golem Lord Argelmach.",
-            dependsOn = { "boss-general-angerforge" },
         },
         {
             id = "objective-4282-2-marshal-windsor-s-lost-i",
@@ -592,14 +532,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-onyxia-s-elite-guard",
-            kind = "note",
-            priority = 60,
-            conditions = { level = { min = 57 } },
-            text = "Kill Onyxia's Elite Guard+. Inside the building.",
-            dependsOn = { "boss-golem-lord-argelmach" },
-        },
-        {
             id = "objective-6403-1-complete-reginald-windso",
             kind = "objective",
             priority = 61,
@@ -682,14 +614,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.616, 0.386, "Felnok Steelspring", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "boss-chillwind-ravager",
-            kind = "note",
-            priority = 68,
-            conditions = { level = { min = 57 } },
-            text = "Kill Chillwind Ravager+. They look like chimeras. They share spawn points with the bears, so kill them too.",
-            dependsOn = { "boss-onyxia-s-elite-guard" },
         },
         {
             id = "objective-4809-1-uncracked-chillwind-horn",
@@ -845,14 +769,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-discordant-surge",
-            kind = "note",
-            priority = 82,
-            conditions = { level = { min = 57 } },
-            text = "Kill Discordant Surge+. Use it on Plague Ravagers and Blighted Surge around this area.",
-            dependsOn = { "boss-chillwind-ravager" },
-        },
-        {
             id = "objective-6804-1-discordant-bracers",
             kind = "objective",
             priority = 83,
@@ -901,14 +817,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-overlord-wyrmthalak",
-            kind = "note",
-            priority = 87,
-            conditions = { level = { min = 57 } },
-            text = "Kill Overlord Wyrmthalak. After entering the dungeon, follow the path right in the Hall of Blackhand to reach Hordemar City. Proceed across the bridges through Hordemar City and jump down into the groove in the ground where Bijou is. Jump down to the west from Bijou and follow the path west around Hordemar City, eventually heading south to reach the Skitterweb Tunnels.",
-            dependsOn = { "boss-discordant-surge" },
-        },
-        {
             id = "accept-5089-general-drakkisath-s-command",
             kind = "accept",
             priority = 88,
@@ -941,14 +849,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-pyroguard-emberseer",
-            kind = "note",
-            priority = 91,
-            conditions = { level = { min = 57 } },
-            text = "Kill Pyroguard Emberseer. After entering the dungeon, follow the path to the left to enter the Upper Blackrock Spire. Someone in your group must have the Seal of Ascension in order to open the door. Clear the enemies in the first room to unlock the door to the next room. This will start the fight. The Tank should keep him away from the group. Melee will need extra heals during the encounter from its AoE attacks.",
-            dependsOn = { "boss-overlord-wyrmthalak" },
-        },
-        {
             id = "objective-6821-1-eye-of-the-emberseer",
             kind = "objective",
             priority = 92,
@@ -969,13 +869,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-doomrigger-s-coffer",
-            kind = "note",
-            priority = 94,
-            conditions = { level = { min = 57 } },
-            text = "Click Doomrigger's Coffer.",
-        },
-        {
             id = "objective-4764-1-doomrigger-s-clasp",
             kind = "objective",
             priority = 95,
@@ -992,14 +885,6 @@ ns:RegisterGuide({
             conditions = { level = { min = 57 } },
             text = "Accept The Matron Protectorate from Awbee.",
             complete = QuestState(5160, "activeOrCompleted"),
-        },
-        {
-            id = "boss-the-beast",
-            kind = "note",
-            priority = 97,
-            conditions = { level = { min = 57 } },
-            text = "Kill The Beast if the rare is up. Head east up the stairs from Awbee and go right into The Furnace, followed by a left to reach The Beast. This is a rare drop and may take multiple attempts to get. If you don't have Skinning or you don't want to do this you can skip this step but you will have to skip the next quest. It's 'Berserker Charge' ability targets the player with the most aggro. The tanks must ensure that they have the highest aggro at all times. All ranged should stand at max range to avoid its 'Fear' ability.",
-            dependsOn = { "boss-pyroguard-emberseer" },
         },
         {
             id = "accept-5047-finkle-einhorn-at-your-service",
@@ -1104,13 +989,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WESTERN_PLAGUELANDS, 0.394, 0.668, "Jeziba", "Travel to Western Plaguelands."),
             },
-        },
-        {
-            id = "note-click-catalogue-of-the-wayward",
-            kind = "note",
-            priority = 107,
-            conditions = { level = { min = 57 } },
-            text = "Click Catalogue of the Wayward.",
         },
         {
             id = "turnin-5164-catalogue-of-the-wayward",
@@ -1235,13 +1113,6 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
-            id = "note-click-inconspicuous-documents",
-            kind = "note",
-            priority = 119,
-            conditions = { level = { min = 57 } },
-            text = "Click Inconspicuous Documents.",
-        },
-        {
             id = "objective-4903-4-important-blackrock-docu",
             kind = "objective",
             priority = 120,
@@ -1276,13 +1147,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "note-click-darkstone-tablet",
-            kind = "note",
-            priority = 123,
-            conditions = { level = { min = 57 } },
-            text = "Click Darkstone Tablet.",
-        },
-        {
             id = "objective-4768-1-darkstone-tablet",
             kind = "objective",
             priority = 124,
@@ -1291,14 +1155,6 @@ ns:RegisterGuide({
             dependsOn = { "accept-4768-the-darkstone-tablet" },
             complete = QuestState(4768, "complete"),
             useClientPin = true,
-        },
-        {
-            id = "boss-gyth",
-            kind = "note",
-            priority = 125,
-            conditions = { level = { min = 57 } },
-            text = "Kill Gyth. They will spawn after clearing the gauntlet of orcs and dragon spawn. Focus on Flame Tongues, Dragonguard, Dragon Spawn, Chromatic Dragonspawn, Chromatic Whelps then Blackhand Orcs in that order. When Gyth appears, the tank should face it away from the group.",
-            dependsOn = { "boss-the-beast" },
         },
         {
             id = "turnin-4768-the-darkstone-tablet",
@@ -1395,38 +1251,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.545, 0.512, "Haleh", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "boss-solakar-flamewreath",
-            kind = "note",
-            priority = 134,
-            conditions = { level = { min = 57 } },
-            text = "Kill Solakar Flamewreath. Clear all dragon spawn before starting the event. Click on father flame and take the item to start the event. DPS need to focus down 'Rookery Hatchers' as quickly as possible.",
-            dependsOn = { "boss-gyth" },
-        },
-        {
-            id = "boss-jed-runewatcher",
-            kind = "note",
-            priority = 135,
-            conditions = { level = { min = 57 } },
-            text = "Kill Jed Runewatcher if the rare is up. This is a rare mob that may not be available. The tank should have their back to the wall. All ranged should be at max distance as well.",
-            dependsOn = { "boss-solakar-flamewreath" },
-        },
-        {
-            id = "boss-goraluk-anvilcrack",
-            kind = "note",
-            priority = 136,
-            conditions = { level = { min = 57 } },
-            text = "Kill Goraluk Anvilcrack. The tank should have their back to the wall. All ranged should be at max distance as well.",
-            dependsOn = { "boss-jed-runewatcher" },
-        },
-        {
-            id = "boss-warchief-rend-blackhand",
-            kind = "note",
-            priority = 137,
-            conditions = { level = { min = 57 } },
-            text = "Kill Warchief Rend Blackhand. Proceed through the upper level of The Rookery to reach the Hall of Blackhand. Go east in the Hall of Blackhand and jump down into the Blackrock Stadium to start the encounter. Kill the enemies that attack. finally Gyth and Warchief Rend Blackhand. They will spawn after clearing the gauntlet of orcs and dragon spawn. Focus on Flame Tongues, Dragonguard, Dragon Spawn, Chromatic Dragonspawn, Chromatic Whelps then Blackhand Orcs in that order. When Gyth appears, the tank should face it away from the group.",
-            dependsOn = { "boss-goraluk-anvilcrack" },
         },
         {
             id = "objective-4974-1-head-of-rend-blackhand",
@@ -1541,14 +1365,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-rage-talon-enemies-throughout-the-dungeon",
-            kind = "note",
-            priority = 148,
-            conditions = { level = { min = 57 } },
-            text = "Kill Rage Talon enemies throughout the dungeon. There's a few at the very beginning of the dungeon and a lot more in The Rookery.",
-            dependsOn = { "boss-warchief-rend-blackhand" },
-        },
-        {
             id = "objective-6569-1-black-dragonspawn-eye",
             kind = "objective",
             priority = 149,
@@ -1629,14 +1445,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-chronalis",
-            kind = "note",
-            priority = 156,
-            conditions = { level = { min = 57 } },
-            text = "Kill Chronalis. It flies around this area. Killing it will require a full group.",
-            dependsOn = { "boss-rage-talon-enemies-throughout-the-dungeon" },
-        },
-        {
             id = "objective-6584-1-the-skull-of-chronalis",
             kind = "objective",
             priority = 157,
@@ -1649,14 +1457,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-scryer",
-            kind = "note",
-            priority = 158,
-            conditions = { level = { min = 57 } },
-            text = "Kill Scryer. Inside the cave. It flies around this area. Killing it will require a full group.",
-            dependsOn = { "boss-chronalis" },
-        },
-        {
             id = "objective-6582-1-the-skull-of-scryer",
             kind = "objective",
             priority = 159,
@@ -1667,14 +1467,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WINTERSPRING, 0.529, 0.561, "Winterspring", "Travel to Winterspring."),
             },
-        },
-        {
-            id = "boss-somnus",
-            kind = "note",
-            priority = 160,
-            conditions = { level = { min = 57 } },
-            text = "Kill Somnus. It flies around this area, between these two spots. Killing it will require a full group.",
-            dependsOn = { "boss-scryer" },
         },
         {
             id = "objective-6583-1-the-skull-of-somnus",
@@ -1737,14 +1529,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "boss-axtroz",
-            kind = "note",
-            priority = 166,
-            conditions = { level = { min = 57 } },
-            text = "Kill Axtroz. It flies back and forth between these two gates. Killing it will require a full group.",
-            dependsOn = { "boss-somnus" },
-        },
-        {
             id = "objective-6585-1-the-skull-of-axtroz",
             kind = "objective",
             priority = 167,
@@ -1797,14 +1581,6 @@ ns:RegisterGuide({
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } } } },
             text = "Accept Blood of the Black Dragon Champion from Rexxar.",
             complete = QuestState(6602, "activeOrCompleted"),
-        },
-        {
-            id = "boss-general-drakkisath",
-            kind = "note",
-            priority = 172,
-            conditions = { level = { min = 57 } },
-            text = "Kill General Drakkisath. After entering the dungeon, follow the path to the left to enter the Upper Blackrock Spire. Someone in your group must have the Seal of Ascension in order to open the door. Follow the path in the dungeon to reach The Rookery. To start, if you have a hunter, you can have them kite General Drakkisath into The Beasts room and feign death while the group burns down the 'Chromatic Elite. You can also tank all 3 where they stand, AoEing down the Elite Guards as quickly as possible. Melee should stand behind Drakkisath at all times.",
-            dependsOn = { "boss-axtroz" },
         },
         {
             id = "objective-6602-1-blood-of-the-black-drago",
