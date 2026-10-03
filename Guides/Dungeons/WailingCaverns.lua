@@ -3,6 +3,10 @@ local _, ns = ...
 -- Forever dungeon quest list:
 -- https://www.wowhead.com/forever/quests/dungeons/wailing-caverns
 -- The guide level is the highest required level among those quests (15).
+-- When Dreams Turn to Nightmares (999) and Waking Naralex (1500) remain in the
+-- database but are not offered in Forever. The Disciple escort and Mutanus are
+-- the dungeon finale without a quest log entry. The Glowing Shard still starts
+-- from Mutanus.
 -- Zone pins come from Forever. Nalpak and Ebru only have a Kalimdor pin beside
 -- the cavern mouth, so they share Mad Magglish's Barrens entrance pin until
 -- that cave is validated in Forever.
@@ -307,61 +311,9 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Take the gems from Lady Anacondra, Lord Cobrahn, Lord Pythas, and Lord Serpentis. " ..
-                "Interrupt their Sleep. Kill Cobrahn's three Deviate Pythons first. " ..
-                "On Pythas, crowd-control the Druid of the Fang and kill the other add. " ..
-                "Kresh, before Anacondra, is a tank-and-spank. Skum's Chained Bolt splashes nearby players, so spread out. " ..
-                "Verdan's Grasping Vines roots and knocks down anyone within 10 yards. " ..
-                "The Deviate Faerie Dragon in the Winding Chasm is a rare.",
+            text = "Collect the gems from Lady Anacondra, Lord Cobrahn, Lord Pythas, and Lord Serpentis.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(914, "complete"),
-        },
-        {
-            id = "accept-dreams-turn-to-nightmares",
-            kind = "accept",
-            priority = 50,
-            conditions = { level = { min = 10 } },
-            text = "After the four Fanglords are dead, accept When Dreams Turn to Nightmares from the Disciple of Naralex.",
-            dependsOn = { "enter-wailing-caverns" },
-            complete = QuestState(999, "activeOrCompleted"),
-        },
-        {
-            id = "complete-dreams-turn-to-nightmares",
-            kind = "objective",
-            priority = 51,
-            conditions = { level = { min = 10 } },
-            text = "Escort the Disciple of Naralex from the dungeon entrance and keep him alive. " ..
-                "After the four Fanglords are dead, waves attack at Naralex's stone and Mutanus the Devourer spawns. " ..
-                "Ranged handle Mutanus: Thunderclap hits the tank and nearby melee, and Terrify and Naralex's Nightmare stun.",
-            dependsOn = { "accept-dreams-turn-to-nightmares" },
-            complete = QuestState(999, "complete"),
-        },
-        {
-            id = "turnin-dreams-turn-to-nightmares",
-            kind = "turnin",
-            priority = 52,
-            conditions = { level = { min = 10 } },
-            text = "Finish When Dreams Turn to Nightmares.",
-            dependsOn = { "complete-dreams-turn-to-nightmares" },
-            complete = QuestState(999, "completed"),
-        },
-        {
-            id = "accept-waking-naralex",
-            kind = "accept",
-            priority = 53,
-            conditions = { level = { min = 10 } },
-            text = "Accept Waking Naralex inside Wailing Caverns.",
-            dependsOn = { "enter-wailing-caverns" },
-            complete = QuestState(1500, "activeOrCompleted"),
-        },
-        {
-            id = "turnin-waking-naralex",
-            kind = "turnin",
-            priority = 54,
-            conditions = { level = { min = 10 } },
-            text = "Finish Waking Naralex.",
-            dependsOn = { "accept-waking-naralex" },
-            complete = QuestState(1500, "completed"),
         },
         {
             id = "accept-glowing-shard",
