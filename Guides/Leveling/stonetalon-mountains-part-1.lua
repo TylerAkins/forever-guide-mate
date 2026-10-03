@@ -1128,6 +1128,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "turnin-6401-kaya-s-alive",
+            kind = "turnin",
+            priority = 755,
+            conditions = { level = { min = 12 } },
+            text = "Turn in Kaya's Alive to Tammra Windfield in Sun Rock Retreat.",
+            dependsOn = { "accept-6401-kaya-s-alive" },
+            complete = QuestState(6401, "completed"),
+            route = {
+                Point(MAP.STONETALON, 0.4745, 0.5846, "Tammra Windfield",
+                    "Travel to Tammra Windfield."),
+            },
+        },
+        {
             id = "accept-6421-boulderslide-ravine",
             kind = "accept",
             priority = 760,
