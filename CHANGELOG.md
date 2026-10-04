@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.54 - 2026-10-03
+
+- Kaya's Alive turns in to Tammra Windfield on the first Sun Rock visit in Stonetalon Mountains (Part 1). Parts 3 and 4 still turn it in if it is still in the log.
+
 ## 0.1.53 - 2026-10-03
 
 - Silverpine accepts Letter to Jin'Zil from Darsok after Serena Bloodfeather. Stonetalon (Part 1) sends you back for that letter before Jin'Zil's Forest Magic.

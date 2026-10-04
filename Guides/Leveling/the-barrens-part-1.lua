@@ -9,7 +9,7 @@ local _, ns = ...
 -- 1062 Goblin Invaders turns in in Stonetalon Mountains (Part 1).
 -- 1483 Ziz Fizziks turns in in Stonetalon Mountains (Part 1) and (Part 2).
 -- 3921 Wenikee Boltbucket stays accept-only because no chapter stops at Wenikee.
--- 6401 Kaya's Alive turns in in Stonetalon Mountains (Part 3) and (Part 4).
+-- 6401 Kaya's Alive turns in to Tammra on the first Sun Rock visit in Stonetalon Mountains (Part 1).
 -- 6541 Report to Kadrak stays accept-only until a chapter stops at Kadrak.
 -- Journey to the Crossroads from Thrall is for Horde Skyborne.
 -- Grind stops and flight-point pickups are not part of this route.
