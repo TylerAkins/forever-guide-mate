@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde Era leveling route for the Barrens, levels 12-20.
 -- Forever quests from the Barrens list that sit on this pass are woven in.
--- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages are worked in Hillsbrad. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter. Wenikee Boltbucket is accepted from Sputtervalve, and no chapter stops at Wenikee.
+-- Left out: Sign Me Up is level 60. Scout Support and Valuable Vantages have no start pin. The other faction's Chol'aruk stays out. Wrongly Blamed and Field to Clear sit on the southern chapter. Wenikee Boltbucket is accepted from Sputtervalve, and no chapter stops at Wenikee.
 -- Accept-only on purpose (turn-in is a named later stop, not Barrens Parts 1–3):
 -- 822 Chen's Empty Keg: Stonetalon Mountains (Part 1) has only the kodo-liver objective. No chapter turns it in.
 -- 1060 Letter to Jin'Zil turns in in Stonetalon Mountains (Part 1).
@@ -48,7 +48,7 @@ ns:RegisterGuide({
     id = "leveling-era-the-barrens-part-1",
     title = "The Barrens (Part 1)",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -2896,44 +2896,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-92706-wanted-bruuz",
-            kind = "accept",
-            priority = 2091,
-            conditions = { level = { min = 20 } },
-            text = "Accept WANTED: Bruuz from the poster in Ratchet. This is an elite. Bring a group.",
-            complete = QuestState(92706, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3750, "WANTED",
-                    "Travel to WANTED."),
-            },
-        },
-        {
-            id = "objective-92706-wanted-bruuz",
-            kind = "objective",
-            priority = 2092,
-            conditions = { level = { min = 20 } },
-            text = "WANTED: Bruuz: bring Bruuz's Dorsal Fin to Gazlowe. This is an elite. Bring a group.",
-            dependsOn = { "accept-92706-wanted-bruuz" },
-            complete = QuestState(92706, "complete"),
-            route = {
-                Point(MAP.BARRENS, 0.6440, 0.3900, "Bruuz",
-                    "Travel to Bruuz."),
-            },
-        },
-        {
-            id = "turnin-92706-wanted-bruuz",
-            kind = "turnin",
-            priority = 2093,
-            conditions = { level = { min = 20 } },
-            text = "Turn in WANTED: Bruuz to Gazlowe in Ratchet.",
-            dependsOn = { "objective-92706-wanted-bruuz" },
-            complete = QuestState(92706, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3620, "Gazlowe",
-                    "Travel to Gazlowe."),
-            },
-        },
-        {
             id = "accept-1483-ziz-fizziks",
             kind = "accept",
             priority = 2100,
@@ -3947,6 +3909,44 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.6228, 0.3907, "Captain Thalo'thas Brightsun",
                     "Travel to Captain Thalo'thas Brightsun."),
+            },
+        },
+        {
+            id = "accept-92706-wanted-bruuz",
+            kind = "accept",
+            priority = 2961,
+            conditions = { level = { min = 20 } },
+            text = "Accept WANTED: Bruuz from the poster in Ratchet. This is an elite. Bring a group.",
+            complete = QuestState(92706, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3750, "WANTED",
+                    "Travel to WANTED."),
+            },
+        },
+        {
+            id = "objective-92706-wanted-bruuz",
+            kind = "objective",
+            priority = 2962,
+            conditions = { level = { min = 20 } },
+            text = "WANTED: Bruuz: bring Bruuz's Dorsal Fin to Gazlowe. This is an elite. Bring a group.",
+            dependsOn = { "accept-92706-wanted-bruuz" },
+            complete = QuestState(92706, "complete"),
+            route = {
+                Point(MAP.BARRENS, 0.6440, 0.3900, "Bruuz",
+                    "Travel to Bruuz."),
+            },
+        },
+        {
+            id = "turnin-92706-wanted-bruuz",
+            kind = "turnin",
+            priority = 2963,
+            conditions = { level = { min = 20 } },
+            text = "Turn in WANTED: Bruuz to Gazlowe in Ratchet.",
+            dependsOn = { "objective-92706-wanted-bruuz" },
+            complete = QuestState(92706, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6260, 0.3620, "Gazlowe",
+                    "Travel to Gazlowe."),
             },
         },
         {
