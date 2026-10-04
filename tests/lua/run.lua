@@ -494,18 +494,30 @@ Equal(pinY, 0.4, "map pin uses the active route y coordinate")
 local parentPinX, parentPinY = ns.MapPins:GetLocation(navigationGoal, baseState, 1411, mapAPI)
 Equal(parentPinX, 0.4, "map pin projects onto a viewed parent map")
 Equal(parentPinY, 0.26, "map pin projects its y coordinate onto a viewed parent map")
-local acquiredPin
 MapCanvasPinMixin = {}
 WorldMapFrame = {
     IsShown = function() return true end,
     GetMapID = function() return 1454 end,
-    AcquirePin = function(_, template, x, y, label)
-        acquiredPin = { template = template, x = x, y = y, label = label }
-        return { GetMap = function() return WorldMapFrame end }
-    end,
-    RemovePin = function() acquiredPin.removed = true end,
+    GetWidth = function() return 1000 end,
+    GetHeight = function() return 800 end,
+    acquireCalls = 0,
+    AcquirePin = function() WorldMapFrame.acquireCalls = WorldMapFrame.acquireCalls + 1 end,
     AddDataProvider = function(_, provider) WorldMapFrame.provider = provider end,
 }
+CreateFrame = function(_, _, parent)
+    local pin = { parent = parent, points = {}, shown = false }
+    function pin:SetSize() end
+    function pin:EnableMouse() end
+    function pin:SetScript() end
+    function pin:CreateTexture() return { SetAllPoints = function() end } end
+    function pin:SetParent(nextParent) self.parent = nextParent end
+    function pin:GetParent() return self.parent end
+    function pin:ClearAllPoints() self.points = {} end
+    function pin:SetPoint(...) self.points[#self.points + 1] = { ... } end
+    function pin:Show() self.shown = true end
+    function pin:Hide() self.shown = false end
+    return pin
+end
 MapCanvasDataProviderMixin = { GetMap = function() return WorldMapFrame end }
 CreateFromMixins = function(mixin)
     local result = {}
@@ -515,29 +527,31 @@ end
 ns.Engine.currentGoal = navigationGoal
 ns.Engine.state = baseState
 ns.MapPins:Refresh()
-Equal(acquiredPin.template, "ForeverGuideMateMapPinTemplate", "map pin uses the guide pin template")
-Equal(acquiredPin.x, 0.5, "map pin is acquired at the active route location")
+Equal(WorldMapFrame.acquireCalls, 0, "the guide pin does not call AcquirePin")
+Equal(ns.MapPins.pin.points[1][4], 500, "map pin is placed at the active route x coordinate")
+Equal(ns.MapPins.pin.points[1][5], -320, "map pin is placed at the active route y coordinate")
 ns.MapPins:Clear()
-Equal(acquiredPin.removed, true, "map pin is released through the map canvas")
+Equal(ns.MapPins.pin.shown, false, "clearing the map pin hides the guide frame")
 ns.MapPins.hooked = false
 ns.MapPins:HookMap()
 Check(WorldMapFrame.provider ~= nil, "map pin registers a Blizzard map data provider")
+ns.MapPins.pin.points = {}
 WorldMapFrame.provider:RefreshAllData()
-Equal(acquiredPin.x, 0.5, "map data provider refreshes the guide pin")
+Equal(ns.MapPins.pin.points[1][4], 500, "map data provider refreshes the guide pin")
 function TestMapPinDefersSecureRefresh()
     local savedTimer = C_Timer
     local ran = false
     C_Timer = { After = function(_, fn) ran = true end }
-    acquiredPin.x = nil
+    ns.MapPins.pin.points = {}
     WorldMapFrame.provider:RefreshAllData()
-    Equal(acquiredPin.x, nil, "map pin acquisition waits until the world map's secure refresh returns")
+    Equal(ns.MapPins.pin.points[1], nil, "map pin placement waits until the world map's secure refresh returns")
     Equal(ran, true, "map pin refresh is queued for the next frame")
     C_Timer = savedTimer
     ns.MapPins.refreshQueued = false
     ns.MapPins.pendingCanvas = nil
 end
 TestMapPinDefersSecureRefresh()
-WorldMapFrame, MapCanvasPinMixin, MapCanvasDataProviderMixin, CreateFromMixins = nil, nil, nil, nil
+WorldMapFrame, MapCanvasPinMixin, MapCanvasDataProviderMixin, CreateFromMixins, CreateFrame = nil, nil, nil, nil, nil
 
 local transportGoal = { route = {
     { mapID = 1411, x = 0.5, y = 0.1, complete = { map = { 1420, 1458 } } },
