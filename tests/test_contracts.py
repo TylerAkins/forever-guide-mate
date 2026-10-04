@@ -911,7 +911,7 @@ class ContractTests(unittest.TestCase):
         self.assertIn("GetMapRectOnMap", navigation)
         self.assertIn('"Waypoint-MapPin-Tracked"', map_pins)
         self.assertIn("MapCanvasDataProviderMixin", map_pins)
-        self.assertIn("mapCanvas.AcquirePin", map_pins)
+        self.assertNotIn("AcquirePin", map_pins)
         self.assertIn("## AddonCompartmentFunc: ForeverGuideMate_OnAddonCompartmentClick", toc)
 
     def test_compiler_dry_run_and_build_output(self) -> None:

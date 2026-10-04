@@ -468,31 +468,32 @@ ForeverGuideMate_OnAddonCompartmentEnter(dropdownButton)
 Equal(tooltipOwner, dropdownButton, "a compartment frame owner is used when one is passed")
 
 do
-    local acquired = 0
     local map = {
         IsShown = function() return true end,
         GetMapID = function() return 1454 end,
-        AcquirePin = function() acquired = acquired + 1; return {} end,
+        GetWidth = function() return 1000 end,
+        GetHeight = function() return 800 end,
+        AcquirePin = function() error("AcquirePin calls SetPassThroughButtons") end,
     }
     ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
     ns.Engine.state = { mapID = 1454, x = 0.4, y = 0.4 }
     ns.Engine.currentGoal = { kind = "travel", complete = { quest = { id = 870, state = "complete" } },
         route = { { mapID = 1454, x = 0.5, y = 0.5 } } }
     ns.MapPins:Refresh(map)
-    Equal(acquired, 0, "quest-linked travel relies on Blizzard's existing pin")
+    Equal(ns.MapPins.pin, nil, "quest-linked travel relies on Blizzard's existing pin")
     ns.Engine.currentGoal.kind = "objective"
     ns.MapPins:Refresh(map)
-    Equal(acquired, 0, "objectives do not add a duplicate guide marker")
+    Equal(ns.MapPins.pin, nil, "objectives do not add a duplicate guide marker")
     ns.Engine.currentGoal.kind = "turnin"
     ns.MapPins:Refresh(map)
-    Equal(acquired, 0, "turn-ins do not add a duplicate guide marker")
+    Equal(ns.MapPins.pin, nil, "turn-ins do not add a duplicate guide marker")
     ns.Engine.currentGoal = { kind = "travel", route = { { mapID = 1454, x = 0.5, y = 0.5 } } }
     ns.MapPins:Refresh(map)
-    Equal(acquired, 1, "ordinary travel retains the guide route marker")
+    Equal(ns.MapPins.pin.shown, true, "ordinary travel retains the guide route marker")
     local savedInstance = IsInInstance
     IsInInstance = function() return true, "party" end
     ns.MapPins:Refresh(map)
-    Equal(acquired, 1, "the world map does not add a guide pin inside an instance")
+    Equal(ns.MapPins.pin.shown, false, "the world map does not add a guide pin inside an instance")
     IsInInstance = savedInstance
 end
 
