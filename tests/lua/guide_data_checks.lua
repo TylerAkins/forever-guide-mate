@@ -370,6 +370,7 @@ M.CoverageGapAllowlist = {
     ["leveling-era-darkshore-part-1:986"] = "leveling-era-darkshore-part-3",
     ["leveling-era-darkshore-part-2:1685"] = "leveling-era-elwynn-forest",
     ["leveling-era-darkshore-part-2:986"] = "leveling-era-darkshore-part-3",
+    ["leveling-era-darkshore-part-3:98461"] = "leveling-era-wetlands",
     ["leveling-era-dun-morogh:416"] = "leveling-era-elwynn-forest",
     ["leveling-era-dun-morogh:418"] = "leveling-era-elwynn-forest",
     ["leveling-era-durotar:2983"] = "leveling-era-the-barrens-part-1",

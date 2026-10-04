@@ -2,7 +2,8 @@ local _, ns = ...
 
 -- Alliance leveling route for the Wetlands, levels 24-27.
 -- Spoils of War is accepted from Valstag Ironjaw in Menethil Keep, collected in the harbor, and turned in with War Banners.
--- Left out: Crocs of the Sky, Return the Statuette, Bloom of the Heavens, Crimson Crate Delivery, Razormaw Needling, Trying Times, and Alchemical Hazards have no start pin. Forced Disarmament is level 30. A Lack of Virtue starts with Tom Wilson in Hillsbrad Foothills. Unrequited Love starts with Archaeologist Hollee in Auberdine. Call of Water starts with Eldrun Stormbreaker in Ironforge after this route has left the Wetlands.
+-- Unrequited Love, accepted from Archaeologist Hollee in Darkshore (Part 3), turns in to Tarrel Rockweaver on the first Menethil visit.
+-- Left out: Crocs of the Sky, Return the Statuette, Bloom of the Heavens, Crimson Crate Delivery, Razormaw Needling, Trying Times, and Alchemical Hazards have no start pin. Forced Disarmament is level 30. A Lack of Virtue starts with Tom Wilson in Hillsbrad Foothills. Call of Water starts with Eldrun Stormbreaker in Ironforge after this route has left the Wetlands.
 -- An Old Colleague, accepted from Gaxim in Stonetalon, turns in to Lomac before Ineptitude + Chemicals = Fun.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -34,7 +35,7 @@ ns:RegisterGuide({
     id = "leveling-era-wetlands",
     title = "Wetlands",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -194,6 +195,23 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.WETLANDS, 0.1000, 0.5680, "Valstag Ironjaw",
                     "Travel to Valstag Ironjaw."),
+            },
+        },
+        {
+            id = "turnin-98461-unrequited-love",
+            kind = "turnin",
+            priority = 129,
+            conditions = {
+                all = {
+                    { level = { min = 21 } },
+                    { quest = { id = 98461, state = "active" } },
+                },
+            },
+            text = "Turn in Unrequited Love to Tarrel Rockweaver in Menethil Harbor.",
+            complete = QuestState(98461, "completed"),
+            route = {
+                Point(MAP.WETLANDS, 0.1147, 0.5220, "Tarrel Rockweaver",
+                    "Travel to Tarrel Rockweaver."),
             },
         },
         {

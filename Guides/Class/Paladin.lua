@@ -42,7 +42,7 @@ local _, ns = ...
 -- Left out (needs 1654, which is not on this route): The Test of Righteousness
 -- Left out (needs 7643, which is not on this route): Blessed Arcanite Barding
 -- Left out (needs 7644, which is not on this route): The Divination Scryer
--- Left out (no start pin): Our Wayward Friend, Grand Theft Echoing Orb, A Solid Lead, Plaguelands Rendezvous, A Newly Discovered Purpose..., A Lesson in Grace, The Ruins of Andorhal, A Time to Kill, Culmination, A Most Curious Gnome, A Paladin of the Silver Hand, Worst Case Scenario (+40 more)
+-- Left out (no start pin): Into Fenris Keep (91861), Our Wayward Friend, Grand Theft Echoing Orb, A Solid Lead, Plaguelands Rendezvous, A Newly Discovered Purpose..., A Lesson in Grace, The Ruins of Andorhal, A Time to Kill, Culmination, A Most Curious Gnome, A Paladin of the Silver Hand, Worst Case Scenario (+40 more)
 
 local MAP = {
     ASHENVALE = 1440,

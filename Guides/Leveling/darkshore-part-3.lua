@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Darkshore, levels 23-24.
 -- Forever quests from the Darkshore list that sit on this pass are woven in.
+-- Unrequited Love is accepted from Archaeologist Hollee here. Wetlands turns it in to Tarrel Rockweaver on the first Menethil visit.
 -- Swelling Forces is finished here if it was picked up at the grove. Holy Diver and Baron Marinous turn in only after the item starts them.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
@@ -33,7 +34,7 @@ ns:RegisterGuide({
     id = "leveling-era-darkshore-part-3",
     title = "Darkshore (Part 3)",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -63,6 +64,18 @@ ns:RegisterGuide({
             },
             text = "Accept The Absent Minded Prospector from Archaeologist Hollee in Auberdine.",
             complete = QuestState(741, "activeOrCompleted"),
+            route = {
+                Point(MAP.DARKSHORE, 0.3746, 0.4188, "Archaeologist Hollee",
+                    "Travel to Archaeologist Hollee."),
+            },
+        },
+        {
+            id = "accept-98461-unrequited-love",
+            kind = "accept",
+            priority = 31,
+            conditions = { level = { min = 21 } },
+            text = "Accept Unrequited Love from Archaeologist Hollee in Auberdine. Wetlands turns Hollee's Note in to Tarrel Rockweaver.",
+            complete = QuestState(98461, "activeOrCompleted"),
             route = {
                 Point(MAP.DARKSHORE, 0.3746, 0.4188, "Archaeologist Hollee",
                     "Travel to Archaeologist Hollee."),

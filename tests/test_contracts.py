@@ -791,7 +791,7 @@ class ContractTests(unittest.TestCase):
         self.assertIn('id = "objective-279-2-gobbler"', wetlands)
         self.assertNotIn("QuestState(98072,", wetlands)
         self.assertNotIn("QuestState(98459,", wetlands)
-        self.assertNotIn("QuestState(98461,", wetlands)
+        self.assertIn("QuestState(98461,", wetlands)
         self.assertNotIn("QuestState(94494,", wetlands)
         southern_later = (ROOT / "Guides/Leveling/the-barrens-part-3.lua").read_text(encoding="utf-8")
         self.assertIn('title = "The Barrens (Part 3)"', southern_later)
@@ -942,6 +942,49 @@ class ContractTests(unittest.TestCase):
             self.assertNotIn("@project-version@", toc)
             for excluded in ("tests", "tools", ".github", "__pycache__"):
                 self.assertFalse((output / excluded).exists())
+
+    def test_remaining_forever_weaves(self) -> None:
+        darkshore_part_1 = (ROOT / "Guides/Leveling/darkshore-part-1.lua").read_text(encoding="utf-8")
+        darkshore_part_2 = (ROOT / "Guides/Leveling/darkshore-part-2.lua").read_text(encoding="utf-8")
+        darkshore_part_3 = (ROOT / "Guides/Leveling/darkshore-part-3.lua").read_text(encoding="utf-8")
+        wetlands = (ROOT / "Guides/Leveling/wetlands.lua").read_text(encoding="utf-8")
+        self.assertIn('id = "accept-98461-unrequited-love"', darkshore_part_3)
+        self.assertIn("level = { min = 21 }", darkshore_part_3[darkshore_part_3.find("accept-98461"):darkshore_part_3.find("accept-98461") + 400])
+        self.assertNotIn("QuestState(98461,", darkshore_part_1)
+        self.assertNotIn("QuestState(98461,", darkshore_part_2)
+        self.assertIn('id = "turnin-98461-unrequited-love"', wetlands)
+        self.assertIn('{ quest = { id = 98461, state = "active" } }', wetlands)
+
+        dun_morogh = (ROOT / "Guides/Leveling/dun-morogh.lua").read_text(encoding="utf-8")
+        grund = dun_morogh.find('id = "accept-97277-grund-and-gozwin"')
+        coldridge = dun_morogh.find('id = "accept-179-dwarven-outfitters"')
+        self.assertGreater(grund, coldridge)
+        self.assertIn("level = { min = 6 }", dun_morogh[grund:grund + 350])
+        self.assertIn("0.2860, 0.6740", dun_morogh[grund:grund + 900])
+
+        mulgore = (ROOT / "Guides/Leveling/mulgore.lua").read_text(encoding="utf-8")
+        self.assertIn("QuestState(76156,", mulgore)
+        self.assertIn("QuestState(76240,", mulgore)
+        self.assertNotIn("QuestState(76160,", mulgore)
+        self.assertIn("{ class = { 1, 7, 11 } }", mulgore)
+        self.assertIn("{ race = { 2, 6, 8 } }", mulgore)
+        self.assertIn("{ class = 7 }", mulgore)
+
+        shaman = (ROOT / "Guides/Class/Shaman.lua").read_text(encoding="utf-8")
+        warrior = (ROOT / "Guides/Class/Warrior.lua").read_text(encoding="utf-8")
+        druid = (ROOT / "Guides/Class/Druid.lua").read_text(encoding="utf-8")
+        for quest_id in (76156, 76160, 76240):
+            self.assertIn(f"QuestState({quest_id},", shaman)
+        for quest_id in (76156, 76160):
+            self.assertIn(f"QuestState({quest_id},", warrior)
+            self.assertIn(f"QuestState({quest_id},", druid)
+        self.assertNotIn("QuestState(76240,", warrior)
+        self.assertNotIn("QuestState(76240,", druid)
+
+        barrens = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
+        bruuz = barrens.find('id = "accept-92706-wanted-bruuz"')
+        self.assertIn("priority = 2961", barrens[bruuz:bruuz + 200])
+        self.assertNotIn("worked in Hillsbrad", barrens)
 
     def test_compiler_installs_into_wow_addons(self) -> None:
         compiler = compiler_module()
