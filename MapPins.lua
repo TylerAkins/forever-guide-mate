@@ -3,7 +3,6 @@ local _, ns = ...
 local MapPins = { hooked = false, pin = nil, provider = nil }
 ns.MapPins = MapPins
 
-local PIN_TEMPLATE = "ForeverGuideMateMapPinTemplate"
 local PIN_ATLASES = { "Waypoint-MapPin-Tracked", "waypoint-mappin-minimap-tracked", "QuestNormal" }
 
 local function ApplyPinVisual(texture)
@@ -35,17 +34,56 @@ end
 
 function MapPins:Clear(mapCanvas)
     local pin = self.pin
-    self.pin = nil
     if not pin then return end
-    local map = mapCanvas or (pin.GetMap and pin:GetMap()) or WorldMapFrame
-    if map and map.RemovePin then pcall(map.RemovePin, map, pin)
-    elseif pin.Hide then pin:Hide() end
+    if pin.Hide then pin:Hide() end
 end
 
--- AcquirePin runs while the world map is opening, inside Blizzard's secure
--- data-provider refresh. That path calls SetPassThroughButtons, which the
--- client refuses from addon code and records as ADDON_ACTION_BLOCKED.
--- Wait until that refresh has returned.
+-- The map pin pool calls SetPassThroughButtons. That function is protected,
+-- and the client records ADDON_ACTION_BLOCKED when addon code reaches it,
+-- including from a frame queued after the map's own refresh.
+-- This pin is an ordinary frame on the map canvas.
+function MapPins:Canvas(mapCanvas)
+    if mapCanvas and mapCanvas.GetCanvas then
+        local ok, canvas = pcall(mapCanvas.GetCanvas, mapCanvas)
+        if ok and canvas then return canvas end
+    end
+    return mapCanvas
+end
+
+function MapPins:EnsurePin(canvas)
+    local pin = self.pin
+    if pin then
+        if pin.SetParent and pin.GetParent and pin:GetParent() ~= canvas then
+            pin:SetParent(canvas)
+        end
+        return pin
+    end
+    if type(CreateFrame) ~= "function" or not canvas then return nil end
+    pin = CreateFrame("Frame", nil, canvas)
+    pin:SetSize(28, 28)
+    if pin.EnableMouse then pin:EnableMouse(true) end
+    pin:SetScript("OnEnter", function(self) ForeverGuideMateMapPinMixin.OnMouseEnter(self) end)
+    pin:SetScript("OnLeave", function(self) ForeverGuideMateMapPinMixin.OnMouseLeave(self) end)
+    pin.Texture = pin:CreateTexture(nil, "OVERLAY")
+    ApplyPinVisual(pin.Texture)
+    self.pin = pin
+    return pin
+end
+
+function MapPins:Place(mapCanvas, x, y, label)
+    local canvas = self:Canvas(mapCanvas)
+    local pin = self:EnsurePin(canvas)
+    if not pin then return end
+    local width = canvas and canvas.GetWidth and canvas:GetWidth() or 0
+    local height = canvas and canvas.GetHeight and canvas:GetHeight() or 0
+    if width > 0 and height > 0 and pin.ClearAllPoints and pin.SetPoint then
+        pin:ClearAllPoints()
+        pin:SetPoint("CENTER", canvas, "TOPLEFT", x * width, -y * height)
+    end
+    pin.label = label
+    if pin.Show then pin:Show() end
+end
+
 function MapPins:ScheduleRefresh(mapCanvas)
     if mapCanvas then self.pendingCanvas = mapCanvas end
     if self.refreshQueued then return end
@@ -67,8 +105,7 @@ function MapPins:Refresh(mapCanvas)
     mapCanvas = mapCanvas or WorldMapFrame
     self:Clear(mapCanvas)
     if ns.PlayerState and ns.PlayerState:InInstance(ns.Engine and ns.Engine.state) then return end
-    if not mapCanvas or not mapCanvas.AcquirePin
-        or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
+    if not mapCanvas or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
         or ((ns.db.waypointProvider or "blizzard") == "blizzard"
             and ns.Navigation:QuestDestinationID(ns.Engine.currentGoal))
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
@@ -76,9 +113,7 @@ function MapPins:Refresh(mapCanvas)
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
     local x, y, leg = self:GetLocation(ns.Engine.currentGoal, ns.Engine.state or {}, viewedMapID, C_Map)
     if not x then return end
-    local ok, pin = pcall(mapCanvas.AcquirePin, mapCanvas, PIN_TEMPLATE, x, y,
-        leg.label or ns.Engine.currentGoal.text)
-    if ok then self.pin = pin end
+    self:Place(mapCanvas, x, y, leg.label or ns.Engine.currentGoal.text)
 end
 
 function MapPins:HookMap()

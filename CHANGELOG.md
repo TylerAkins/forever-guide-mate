@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.1.56 - 2026-10-04
+
+- A step in the same zone uses a learned flight path when the pin is at another flight camp and that flight master is closer than walking. The Crossroads to Camp Taurajo is that case.
+
 ## 0.1.55 - 2026-10-03
 
 - Darkshore (Part 3) accepts Unrequited Love from Archaeologist Hollee. Wetlands turns it in to Tarrel Rockweaver on the first Menethil visit.
