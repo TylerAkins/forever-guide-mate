@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Loch Modan, levels 17-18.
 -- Forever quests from the Loch Modan list are woven into this route.
--- Left out: Banner of the Fallen stands on the southern road past this loop. Snowbound ends on the north shore after the Algaz visit. Ingredients for the Forge is level 30.
+-- Left out: Banner of the Fallen stands on the southern road past this loop. Snowbound ends on the north shore after the Algaz visit. Ingredients for the Forge is level 30. Eagle's Fist is the scramble chain's object at the dam.
 -- Drop turn-ins appear only after the item starts them.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.

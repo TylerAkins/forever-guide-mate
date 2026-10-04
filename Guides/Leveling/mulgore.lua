@@ -2,8 +2,8 @@ local _, ns = ...
 
 -- Horde Era leveling route for Mulgore, levels 1-12.
 -- Forever quests from the Mulgore and Thunder Bluff lists are woven into this route.
--- Left out: A Donation of Wool is a level 60 cloth turn-in. Never Coming Back and A Void Path are level 22.
--- Stalk With The Earthmother was already a class trial and is not a new quest.
+-- Left out: A Donation of Wool is a level 60 cloth turn-in. Never Coming Back and A Void Path are level 22 and have no start pin.
+-- Stalk With The Earthmother's cone step stays out. The Windfury kill is already finished before this route meets Boarton.
 -- Thunderhorn's Report stays on tauren, with the well chain. Fizsprocket's Notes appear only if the pages drop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Forever class quests with no start pin stay off this route, including Relics of the Tauren, Icons of Power, and A Trial of Fitness.
@@ -38,7 +38,7 @@ ns:RegisterGuide({
     id = "leveling-era-mulgore",
     title = "Mulgore",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -2197,6 +2197,77 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-76156-stalk-with-the-earthmother",
+            kind = "accept",
+            priority = 1372,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
+                },
+            },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76156, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
+            id = "accept-76240-stalk-with-the-earthmother",
+            kind = "accept",
+            priority = 1373,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { class = 7 },
+                },
+            },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76240, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
+            id = "objective-76240-stalk-with-the-earthmother-1",
+            kind = "objective",
+            priority = 1374,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { class = 7 },
+                },
+            },
+            text = "Stalk With The Earthmother: Fish Chunks. Buy or catch a Raw Brilliant Smallfish and fillet it in front of Boarton Shadetotem.",
+            dependsOn = { "accept-76240-stalk-with-the-earthmother" },
+            complete = QuestObjective(76240, 1, "Fish Chunks"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
+            id = "turnin-76240-stalk-with-the-earthmother",
+            kind = "turnin",
+            priority = 1375,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { class = 7 },
+                },
+            },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76240-stalk-with-the-earthmother-1" },
+            complete = QuestState(76240, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
+            },
+        },
+        {
             id = "objective-861-the-hunter-s-way",
             kind = "objective",
             priority = 1390,
@@ -2222,6 +2293,26 @@ ns:RegisterGuide({
                     "Continue toward Supervisor Fizsprocket."),
                 Point(MAP.MULGORE, 0.6437, 0.4423, "Supervisor Fizsprocket",
                     "Travel to Supervisor Fizsprocket."),
+            },
+        },
+        {
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            kind = "objective",
+            priority = 1412,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
+                },
+            },
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the Venture Co. Mine. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
+            route = {
+                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
+                    "Travel to Venture Co. Mine."),
             },
         },
         {
@@ -2638,6 +2729,25 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.THUNDER_BLUFF, 0.7660, 0.2760, "Turak Runetotem",
                     "Travel to Turak Runetotem."),
+            },
+        },
+        {
+            id = "turnin-76156-stalk-with-the-earthmother",
+            kind = "turnin",
+            priority = 1552,
+            conditions = {
+                all = {
+                    { level = { min = 4 } },
+                    { race = { 2, 6, 8 } },
+                    { class = { 1, 7, 11 } },
+                },
+            },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
+            complete = QuestState(76156, "completed"),
+            route = {
+                Point(MAP.THUNDER_BLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem."),
             },
         },
         {

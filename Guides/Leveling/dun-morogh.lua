@@ -2,9 +2,10 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Dun Morogh, levels 1-12.
 -- Forever quests from the Dun Morogh and Ironforge lists are woven into this route.
--- Left out: Data Hoarders sends you back into Gnomeregan after this road has left.
--- The Quarry's Smith is a copper-bar delivery. Nip 'Em in the Bud, Farsen's Watch, A Visitor to Dun Morogh,
--- Underground Map, and The Treaty of Understanding are level 13 to 16, past this route.
+-- Left out: Data Hoarders is a Gnomeregan card turn-in after this road has left.
+-- The Quarry's Smith is a copper-bar delivery.
+-- Nip 'Em in the Bud, Farsen's Watch, and A Visitor to Dun Morogh are level 13, and this chapter ends at 12. Loch Modan does not return to Farsen or Beldin.
+-- Underground Map and The Treaty of Understanding are in the Hall of Thanes dungeon guide.
 -- Your Package Has Arrived and Stolen Blasting Powder appear only after the item is in the log.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Forever class quests with no start pin stay off this route, including the unplaced Confounding Flash steps.
@@ -41,7 +42,7 @@ ns:RegisterGuide({
     id = "leveling-era-dun-morogh",
     title = "Dun Morogh",
     category = "Leveling Quest Guides",
-    revision = 1,
+    revision = 2,
     conditions = {
         all = {
             { faction = "Alliance" },
@@ -1005,6 +1006,44 @@ ns:RegisterGuide({
                     "Continue toward A Refugee's Quandary."),
                 Point(MAP.DUN_MOROGH, 0.2856, 0.6774, "Felix Whindlebolt",
                     "Travel to Felix Whindlebolt."),
+            },
+        },
+        {
+            id = "accept-97277-grund-and-gozwin",
+            kind = "accept",
+            priority = 501,
+            conditions = { level = { min = 6 } },
+            text = "Accept Grund and Gozwin from Grund Drokda in Anvilmar.",
+            complete = QuestState(97277, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2860, 0.6740, "Grund Drokda",
+                    "Travel to Grund Drokda."),
+            },
+        },
+        {
+            id = "objective-97277-grund-and-gozwin",
+            kind = "objective",
+            priority = 502,
+            conditions = { level = { min = 6 } },
+            text = "Find Grund and Gozwin's camp in the hills northwest of Anvilmar. Recover Gozwin's Mechanic's Log and kill the Snow Leopard Prowler.",
+            dependsOn = { "accept-97277-grund-and-gozwin" },
+            complete = QuestState(97277, "complete"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2860, 0.6740, "Grund Drokda",
+                    "Travel to Grund Drokda."),
+            },
+        },
+        {
+            id = "turnin-97277-grund-and-gozwin",
+            kind = "turnin",
+            priority = 503,
+            conditions = { level = { min = 6 } },
+            text = "Turn in Grund and Gozwin to Grund Drokda in Anvilmar.",
+            dependsOn = { "objective-97277-grund-and-gozwin" },
+            complete = QuestState(97277, "completed"),
+            route = {
+                Point(MAP.DUN_MOROGH, 0.2860, 0.6740, "Grund Drokda",
+                    "Travel to Grund Drokda."),
             },
         },
         {
