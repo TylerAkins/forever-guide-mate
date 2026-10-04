@@ -105,15 +105,20 @@ function MapPins:Refresh(mapCanvas)
     mapCanvas = mapCanvas or WorldMapFrame
     self:Clear(mapCanvas)
     if ns.PlayerState and ns.PlayerState:InInstance(ns.Engine and ns.Engine.state) then return end
-    if not mapCanvas or not ns.db or not ns.db.uiOpen or not ns.Engine.currentGoal
-        or ((ns.db.waypointProvider or "blizzard") == "blizzard"
-            and ns.Navigation:QuestDestinationID(ns.Engine.currentGoal))
+    local goal = ns.Engine.currentGoal
+    local state = ns.Engine.state or {}
+    local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
+    local questTracking = goal and ns.Navigation:QuestDestinationID(goal)
+    local taxiPending = goal and ns.Navigation.PendingTaxiTravel
+        and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg)
+    if not mapCanvas or not ns.db or not ns.db.uiOpen or not goal
+        or ((ns.db.waypointProvider or "blizzard") == "blizzard" and questTracking and not taxiPending)
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
-    local x, y, leg = self:GetLocation(ns.Engine.currentGoal, ns.Engine.state or {}, viewedMapID, C_Map)
+    local x, y, leg = self:GetLocation(goal, state, viewedMapID, C_Map)
     if not x then return end
-    self:Place(mapCanvas, x, y, leg.label or ns.Engine.currentGoal.text)
+    self:Place(mapCanvas, x, y, leg.label or goal.text)
 end
 
 function MapPins:HookMap()
