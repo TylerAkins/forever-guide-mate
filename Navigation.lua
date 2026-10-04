@@ -466,6 +466,12 @@ function Navigation:GetActiveLeg(goal, state, api)
                 local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo)
                 if hop then return hop, hop.label end
             else
+                -- Same map is "near" the pin, which hid Crossroads -> Camp Taurajo.
+                -- Offer that flight before the walking pin when it is the shorter trip.
+                local sameZone = ns.Travel and ns.Travel.SameZoneFlight and ns.Travel:SameZoneFlight(state, leg)
+                if sameZone and not self:PreferDirectWalk(leg, sameZone, state) then
+                    return sameZone, sameZone.label
+                end
                 if self:NearPin(state, leg, api) then
                     if not state.x or not state.y then
                         return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
