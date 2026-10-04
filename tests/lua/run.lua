@@ -441,6 +441,40 @@ function TestNearbyCrossZoneWalkBeatsFlight()
     ns.charDB.taxiRoutes = {}
 end
 TestNearbyCrossZoneWalkBeatsFlight()
+
+function TestSameZoneFlightToCamp()
+    ns.charDB.taxiRoutes = {
+        [1413] = { x = 0.515, y = 0.303, destinations = {
+            ["camp taurajo, the barrens"] = "Camp Taurajo, The Barrens",
+        } },
+    }
+    local goal = {
+        kind = "accept",
+        route = { { mapID = 1413, x = 0.4483, y = 0.5909, label = "Jorn Skyseer" } },
+    }
+    local atCrossroads = { mapID = 1413, x = 0.515, y = 0.303, faction = "Horde" }
+    local flight = ns.Navigation:GetActiveLeg(goal, atCrossroads)
+    Check(flight.flight, "a learned Camp Taurajo flight replaces the walk from the Crossroads")
+    Equal(flight.x, 0.515, "the same-zone flight points at the Crossroads flight master")
+    Equal(flight.label, "Take the flight path to Camp Taurajo.",
+        "the same-zone flight names Camp Taurajo")
+    ns.charDB.taxiRoutes = {}
+    local walk = ns.Navigation:GetActiveLeg(goal, atCrossroads)
+    Equal(walk.label, "Jorn Skyseer", "an unlearned Camp Taurajo flight stays a walk")
+    Check(not walk.flight, "an unlearned Camp Taurajo flight does not point at the flight master")
+    ns.charDB.taxiRoutes = {
+        [1413] = { x = 0.515, y = 0.303, destinations = {
+            ["camp taurajo, the barrens"] = "Camp Taurajo, The Barrens",
+        } },
+    }
+    local field = {
+        route = { { mapID = 1413, x = 0.55, y = 0.45, label = "Barrens field" } },
+    }
+    local fieldLeg = ns.Navigation:GetActiveLeg(field, atCrossroads)
+    Equal(fieldLeg.label, "Barrens field", "a pin away from every flight camp stays a walk")
+    ns.charDB.taxiRoutes = {}
+end
+TestSameZoneFlightToCamp()
 Enum = nil
 
 local mapAPI = {
