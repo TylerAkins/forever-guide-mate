@@ -113,9 +113,8 @@ local function WithinRadius(leg, x, y, radius)
     return (dx * dx) + (dy * dy) <= (limit * limit)
 end
 
--- Player is at the authored pin: same map, child map, known micro entrance, or
--- the client can project the player position onto the pin map near the NPC.
-function Navigation:NearPin(state, leg, api)
+-- Player is within walking distance of the authored coordinates.
+function Navigation:AtRoutePin(state, leg, api)
     if type(state) ~= "table" or type(leg) ~= "table" or not state.mapID then return false end
     if self:InsidePin(state, leg) then return true end
     if not state.x or not state.y then
@@ -136,6 +135,17 @@ function Navigation:NearPin(state, leg, api)
     return false
 end
 
+-- Player is at the authored pin: same map, child map, known micro entrance, or
+-- the client can project the player position onto the pin map near the NPC.
+function Navigation:NearPin(state, leg, api)
+    if type(state) ~= "table" or type(leg) ~= "table" or not state.mapID then return false end
+    if self:OnMap(state.mapID, leg.mapID) or self:InsidePin(state, leg)
+        or self:InZone(state.mapID, leg.mapID, api) then
+        return true
+    end
+    return self:AtRoutePin(state, leg, api)
+end
+
 function Navigation:PendingTaxiTravel(goal, state, leg)
     if type(goal) ~= "table" or type(goal.taxiDestination) ~= "string" or type(state) ~= "table" then
         return false
@@ -144,7 +154,7 @@ function Navigation:PendingTaxiTravel(goal, state, leg)
         return false
     end
     local finalLeg = goal.route and goal.route[#goal.route]
-    if finalLeg and self:NearPin(state, finalLeg) then
+    if finalLeg and self:AtRoutePin(state, finalLeg) then
         return false
     end
     if leg and (leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
@@ -502,39 +512,43 @@ function Navigation:GetActiveLeg(goal, state, api)
             complete = true
         end
         if not complete then
-            if leg.flightTo then
+            if leg.flightTo and (self:OnMap(state.mapID, leg.mapID) or self:AtRoutePin(state, leg, api)) then
                 local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo)
                 if hop then return hop, hop.label end
             end
-            local sameZone = ns.Travel and ns.Travel.SameZoneFlight and ns.Travel:SameZoneFlight(state, leg)
-            if sameZone and not self:PreferDirectWalk(leg, sameZone, state) then
-                return sameZone, sameZone.label
-            end
-            if self:NearPin(state, leg, api) then
-                if not state.x or not state.y then
-                    return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
+            if leg.flightTo and #goal.route > 1 then
+                -- Fly-only hops on multi-leg routes defer to later legs when boarding is unavailable.
+            else
+                local sameZone = ns.Travel and ns.Travel.SameZoneFlight and ns.Travel:SameZoneFlight(state, leg)
+                if sameZone and not self:PreferDirectWalk(leg, sameZone, state) then
+                    return sameZone, sameZone.label
                 end
-                return self:ApplyClientPin(goal, leg, api, state), leg.label
-            end
-            -- Single-leg camp accepts use only the authored pin. The global
-            -- boat graph sent Ebru to Ratchet. Keep taxi when the step names
-            -- a flight destination.
-            local campPickup = PickupStep(goal) and #goal.route == 1
-                and type(goal.taxiDestination) ~= "string"
-            if not campPickup then
-                local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
-                if not arrived then
-                    local taxiLeg = ns.Taxi and ns.Taxi.GetSuggestedLeg and ns.Taxi:GetSuggestedLeg(goal, state, leg)
-                    if taxiLeg and not self:PreferDirectWalk(leg, taxiLeg, state) then
-                        return taxiLeg, taxiLeg.label
+                -- Single-leg camp accepts use only the authored pin. The global
+                -- boat graph sent Ebru to Ratchet. Keep taxi when the step names
+                -- a flight destination.
+                local campPickup = PickupStep(goal) and #goal.route == 1
+                    and type(goal.taxiDestination) ~= "string"
+                if not campPickup then
+                    local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
+                    if not arrived then
+                        local taxiLeg = ns.Taxi and ns.Taxi.GetSuggestedLeg and ns.Taxi:GetSuggestedLeg(goal, state, leg)
+                        if taxiLeg and not self:PreferDirectWalk(leg, taxiLeg, state) then
+                            return taxiLeg, taxiLeg.label
+                        end
+                    end
+                    local transport = self:TransportLeg(leg, state)
+                    if transport and not self:PreferDirectWalk(leg, transport, state) then
+                        return transport, transport.label
                     end
                 end
-                local transport = self:TransportLeg(leg, state)
-                if transport and not self:PreferDirectWalk(leg, transport, state) then
-                    return transport, transport.label
+                if self:NearPin(state, leg, api) then
+                    if not state.x or not state.y then
+                        return self:ApplyClientPin(goal, leg, api, state), "Waiting for a reliable player position."
+                    end
+                    return self:ApplyClientPin(goal, leg, api, state), leg.label
                 end
+                return self:ApplyClientPin(goal, leg, api, state), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
             end
-            return self:ApplyClientPin(goal, leg, api, state), leg.offMapText or ("Travel to " .. (leg.label or "the marked area") .. ".")
         end
     end
     return nil, "Destination reached."

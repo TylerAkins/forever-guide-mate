@@ -530,9 +530,9 @@ function TestIshamuhaleCampTaurajoFlight()
         "Take the flight path to Camp Taurajo.",
         "an unknown Camp Taurajo flight names the destination")
     local jornLeg = ishamuhaleTurnIn.route[1]
-    Check(not ns.Navigation:NearPin({ mapID = 1413, x = 0.515, y = 0.303 }, jornLeg),
+    Check(not ns.Navigation:AtRoutePin({ mapID = 1413, x = 0.515, y = 0.303 }, jornLeg),
         "northern Barrens is not treated as on top of a southern camp turn-in")
-    Check(ns.Navigation:NearPin({ mapID = 1413, x = 0.4484, y = 0.5912 }, jornLeg),
+    Check(ns.Navigation:AtRoutePin({ mapID = 1413, x = 0.4484, y = 0.5912 }, jornLeg),
         "standing on the turn-in NPC still counts as near the pin")
     local ratchetTurnInText = ns.UI:GoalInstruction({
         currentGoal = ishamuhaleTurnIn,
