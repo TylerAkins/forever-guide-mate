@@ -981,6 +981,14 @@ function UI:GoalInstruction(engine)
     if taxiInstruction then
         return taxiInstruction
     end
+    if goal.kind == "accept" then
+        if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
+            return status or leg.label or goal.text
+        end
+        if not state.mapID or not state.x or not state.y then
+            return goal.text
+        end
+    end
     -- Era routes keep their path dots. On the map the step reads as the
     -- objective. Off the map the travel text still has to point the way.
     if PathDot(leg) and leg and state.mapID and ns.Navigation:OnMap(state.mapID, leg.mapID) then

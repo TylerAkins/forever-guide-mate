@@ -150,6 +150,9 @@ function Navigation:PendingTaxiTravel(goal, state, leg)
     if type(goal) ~= "table" or type(goal.taxiDestination) ~= "string" or type(state) ~= "table" then
         return false
     end
+    if goal.kind == "accept" and type(goal.route) == "table" and #goal.route > 1 then
+        return false
+    end
     if ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state) then
         return false
     end
