@@ -995,7 +995,8 @@ function UI:GoalInstruction(engine)
         if goal.kind == "gossip" and (goal.useClientText == true or goal.useClientPin == true) then
             return ClientObjective(goal, state)
         end
-        if goal.kind == "turnin" and goal.useClientPin == true then
+        if goal.kind == "turnin" and goal.useClientPin == true
+            and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, leg)) then
             return TurnInInstruction(goal, state)
         end
         if goal.kind == "accept" then

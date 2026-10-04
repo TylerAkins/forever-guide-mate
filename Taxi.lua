@@ -225,7 +225,10 @@ function Taxi:GetSuggestedLeg(goal, state, destinationLeg)
     if type(destinationLeg) ~= "table" or type(destinationLeg.mapID) ~= "number" then
         return nil
     end
-    if ns.Navigation and ns.Navigation.NearPin and ns.Navigation:NearPin(state, destinationLeg) then
+    if ns.Navigation and ns.Navigation.AtRoutePin and ns.Navigation:AtRoutePin(state, destinationLeg) then
+        return nil
+    end
+    if type(goal.route) ~= "table" or #goal.route ~= 1 then
         return nil
     end
     -- Unknown cross-map flights keep the authored walking route.
