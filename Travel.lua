@@ -73,68 +73,70 @@ local NORTH_KALIMDOR = Set(1439, 1438, 1457, 1440, 1448, 1450, 1452, 1447, 2652,
 local SOUTH_KALIMDOR = Set(1413, 1446, 1441, 1444, 1445, 1449, 1451, 1443, 1412, 1456, 1442)
 local HORDE_KALIMDOR = Set(1411, 1454, 1413, 1412, 1456, 1440, 1442, 1443, 1447, 1448, 1452, 1450, 2652)
 
+-- `node` is the place name on the taxi map ("Camp Taurajo, The Barrens").
+-- It is how a pin next to that flight master is matched to a learned route.
 Travel.flightMasters = {
-    { mapID = 1413, x = 0.630, y = 0.372, name = "Bragok", },
-    { mapID = 1413, x = 0.515, y = 0.303, name = "Devrak", faction = "Horde", },
-    { mapID = 1413, x = 0.444, y = 0.590, name = "Omusa Thunderhorn", faction = "Horde", },
-    { mapID = 1417, x = 0.456, y = 0.460, name = "Cedrik Prose", faction = "Alliance", },
-    { mapID = 1417, x = 0.730, y = 0.326, name = "Urda", faction = "Horde", },
-    { mapID = 1418, x = 0.040, y = 0.448, name = "Gorrik", faction = "Horde", },
-    { mapID = 1419, x = 0.655, y = 0.244, name = "Alexandra Constantine", faction = "Alliance", },
-    { mapID = 1421, x = 0.455, y = 0.425, name = "Karos Razok", faction = "Horde", },
-    { mapID = 1422, x = 0.428, y = 0.850, name = "Bibilfaz Featherwhistle", faction = "Alliance", },
-    { mapID = 1423, x = 0.802, y = 0.570, name = "Georgia", faction = "Horde", },
-    { mapID = 1423, x = 0.815, y = 0.592, name = "Khaelyn Steelwing", faction = "Alliance", },
-    { mapID = 1424, x = 0.494, y = 0.524, name = "Darla Harris", faction = "Alliance", },
-    { mapID = 1424, x = 0.602, y = 0.185, name = "Zarise", faction = "Horde", },
-    { mapID = 1425, x = 0.816, y = 0.818, name = "Gorkas", faction = "Horde", },
-    { mapID = 1425, x = 0.110, y = 0.460, name = "Guthrum Thunderfist", faction = "Alliance", },
-    { mapID = 1427, x = 0.348, y = 0.305, name = "Grisha", faction = "Horde", },
-    { mapID = 1427, x = 0.378, y = 0.305, name = "Lanie Reed", faction = "Alliance", },
-    { mapID = 1428, x = 0.844, y = 0.682, name = "Borgus Stoutarm", faction = "Alliance", },
-    { mapID = 1428, x = 0.655, y = 0.241, name = "Vahgruk", faction = "Horde", },
-    { mapID = 1431, x = 0.775, y = 0.445, name = "Felicia Maline", faction = "Alliance", },
-    { mapID = 1432, x = 0.338, y = 0.506, name = "Thorgrum Borrelson", faction = "Alliance", },
-    { mapID = 1433, x = 0.305, y = 0.594, name = "Ariena Stormfeather", faction = "Alliance", },
-    { mapID = 1434, x = 0.268, y = 0.770, name = "Gringer", faction = "Horde", },
-    { mapID = 1434, x = 0.275, y = 0.777, name = "Gyll", faction = "Alliance", },
-    { mapID = 1434, x = 0.325, y = 0.292, name = "Thysta", faction = "Horde", },
-    { mapID = 1435, x = 0.460, y = 0.545, name = "Breyk", faction = "Horde", },
-    { mapID = 1436, x = 0.565, y = 0.525, name = "Thor", faction = "Alliance", },
-    { mapID = 1437, x = 0.095, y = 0.595, name = "Shellei Brondir", faction = "Alliance", },
-    { mapID = 1438, x = 0.584, y = 0.940, name = "Vesprystus", faction = "Alliance", },
-    { mapID = 1439, x = 0.364, y = 0.455, name = "Caylais Moonfeather", faction = "Alliance", },
-    { mapID = 1440, x = 0.122, y = 0.338, name = "Andruk", faction = "Horde", },
-    { mapID = 1440, x = 0.344, y = 0.480, name = "Daelyshia", faction = "Alliance", },
-    { mapID = 1440, x = 0.732, y = 0.615, name = "Vhulgra", faction = "Horde", },
-    { mapID = 1441, x = 0.450, y = 0.492, name = "Nyse", faction = "Horde", },
-    { mapID = 1442, x = 0.365, y = 0.072, name = "Teloren", faction = "Alliance", },
-    { mapID = 1442, x = 0.452, y = 0.598, name = "Tharm", faction = "Horde", },
-    { mapID = 1443, x = 0.646, y = 0.105, name = "Baritanas Skyriver", faction = "Alliance", },
-    { mapID = 1443, x = 0.215, y = 0.740, name = "Thalon", faction = "Horde", },
-    { mapID = 1444, x = 0.302, y = 0.432, name = "Fyldren Moonfeather", faction = "Alliance", },
-    { mapID = 1444, x = 0.754, y = 0.442, name = "Shyn", faction = "Horde", },
-    { mapID = 1444, x = 0.895, y = 0.458, name = "Thyssiana", faction = "Alliance", },
-    { mapID = 1445, x = 0.675, y = 0.513, name = "Baldruc", faction = "Alliance", },
-    { mapID = 1445, x = 0.355, y = 0.318, name = "Shardi", faction = "Horde", },
-    { mapID = 1446, x = 0.510, y = 0.292, name = "Bera Stonehammer", faction = "Alliance", },
-    { mapID = 1446, x = 0.516, y = 0.255, name = "Bulkrek Ragefist", faction = "Horde", },
-    { mapID = 1447, x = 0.118, y = 0.775, name = "Jarrodenus", faction = "Alliance", },
-    { mapID = 1447, x = 0.220, y = 0.496, name = "Kroum", faction = "Horde", },
-    { mapID = 1448, x = 0.344, y = 0.538, name = "Brakkar", faction = "Horde", },
-    { mapID = 1448, x = 0.625, y = 0.241, name = "Mishellena", faction = "Alliance", },
-    { mapID = 1449, x = 0.452, y = 0.058, name = "Gryfe", },
-    { mapID = 1450, x = 0.322, y = 0.665, name = "Faustron", faction = "Horde", },
-    { mapID = 1450, x = 0.480, y = 0.672, name = "Sindrayl", faction = "Alliance", },
-    { mapID = 1451, x = 0.506, y = 0.345, name = "Cloud Skydancer", faction = "Alliance", },
-    { mapID = 1451, x = 0.488, y = 0.366, name = "Runk Windtamer", faction = "Horde", },
-    { mapID = 1452, x = 0.622, y = 0.365, name = "Maethrya", faction = "Alliance", },
-    { mapID = 1452, x = 0.604, y = 0.364, name = "Yugrek", faction = "Horde", },
-    { mapID = 1453, x = 0.661, y = 0.625, name = "Dungar Longdrink", faction = "Alliance", },
-    { mapID = 1454, x = 0.454, y = 0.639, name = "Doras", faction = "Horde", },
-    { mapID = 1455, x = 0.557, y = 0.480, name = "Gryth Thurden", faction = "Alliance", },
-    { mapID = 1456, x = 0.468, y = 0.497, name = "Tal", faction = "Horde", },
-    { mapID = 1458, x = 0.634, y = 0.482, name = "Michael Garrett", faction = "Horde", },
+    { mapID = 1413, x = 0.630, y = 0.372, name = "Bragok", node = "Ratchet", },
+    { mapID = 1413, x = 0.515, y = 0.303, name = "Devrak", faction = "Horde", node = "Crossroads", },
+    { mapID = 1413, x = 0.444, y = 0.590, name = "Omusa Thunderhorn", faction = "Horde", node = "Camp Taurajo", },
+    { mapID = 1417, x = 0.456, y = 0.460, name = "Cedrik Prose", faction = "Alliance", node = "Refuge Pointe", },
+    { mapID = 1417, x = 0.730, y = 0.326, name = "Urda", faction = "Horde", node = "Hammerfall", },
+    { mapID = 1418, x = 0.040, y = 0.448, name = "Gorrik", faction = "Horde", node = "Kargath", },
+    { mapID = 1419, x = 0.655, y = 0.244, name = "Alexandra Constantine", faction = "Alliance", node = "Nethergarde Keep", },
+    { mapID = 1421, x = 0.455, y = 0.425, name = "Karos Razok", faction = "Horde", node = "The Sepulcher", },
+    { mapID = 1422, x = 0.428, y = 0.850, name = "Bibilfaz Featherwhistle", faction = "Alliance", node = "Chillwind Camp", },
+    { mapID = 1423, x = 0.802, y = 0.570, name = "Georgia", faction = "Horde", node = "Light's Hope Chapel", },
+    { mapID = 1423, x = 0.815, y = 0.592, name = "Khaelyn Steelwing", faction = "Alliance", node = "Light's Hope Chapel", },
+    { mapID = 1424, x = 0.494, y = 0.524, name = "Darla Harris", faction = "Alliance", node = "Southshore", },
+    { mapID = 1424, x = 0.602, y = 0.185, name = "Zarise", faction = "Horde", node = "Tarren Mill", },
+    { mapID = 1425, x = 0.816, y = 0.818, name = "Gorkas", faction = "Horde", node = "Revantusk Village", },
+    { mapID = 1425, x = 0.110, y = 0.460, name = "Guthrum Thunderfist", faction = "Alliance", node = "Aerie Peak", },
+    { mapID = 1427, x = 0.348, y = 0.305, name = "Grisha", faction = "Horde", node = "Thorium Point", },
+    { mapID = 1427, x = 0.378, y = 0.305, name = "Lanie Reed", faction = "Alliance", node = "Thorium Point", },
+    { mapID = 1428, x = 0.844, y = 0.682, name = "Borgus Stoutarm", faction = "Alliance", node = "Morgan's Vigil", },
+    { mapID = 1428, x = 0.655, y = 0.241, name = "Vahgruk", faction = "Horde", node = "Flame Crest", },
+    { mapID = 1431, x = 0.775, y = 0.445, name = "Felicia Maline", faction = "Alliance", node = "Darkshire", },
+    { mapID = 1432, x = 0.338, y = 0.506, name = "Thorgrum Borrelson", faction = "Alliance", node = "Thelsamar", },
+    { mapID = 1433, x = 0.305, y = 0.594, name = "Ariena Stormfeather", faction = "Alliance", node = "Lakeshire", },
+    { mapID = 1434, x = 0.268, y = 0.770, name = "Gringer", faction = "Horde", node = "Booty Bay", },
+    { mapID = 1434, x = 0.275, y = 0.777, name = "Gyll", faction = "Alliance", node = "Booty Bay", },
+    { mapID = 1434, x = 0.325, y = 0.292, name = "Thysta", faction = "Horde", node = "Grom'gol", },
+    { mapID = 1435, x = 0.460, y = 0.545, name = "Breyk", faction = "Horde", node = "Stonard", },
+    { mapID = 1436, x = 0.565, y = 0.525, name = "Thor", faction = "Alliance", node = "Sentinel Hill", },
+    { mapID = 1437, x = 0.095, y = 0.595, name = "Shellei Brondir", faction = "Alliance", node = "Menethil Harbor", },
+    { mapID = 1438, x = 0.584, y = 0.940, name = "Vesprystus", faction = "Alliance", node = "Rut'theran Village", },
+    { mapID = 1439, x = 0.364, y = 0.455, name = "Caylais Moonfeather", faction = "Alliance", node = "Auberdine", },
+    { mapID = 1440, x = 0.122, y = 0.338, name = "Andruk", faction = "Horde", node = "Zoram'gar Outpost", },
+    { mapID = 1440, x = 0.344, y = 0.480, name = "Daelyshia", faction = "Alliance", node = "Astranaar", },
+    { mapID = 1440, x = 0.732, y = 0.615, name = "Vhulgra", faction = "Horde", node = "Splintertree Post", },
+    { mapID = 1441, x = 0.450, y = 0.492, name = "Nyse", faction = "Horde", node = "Freewind Post", },
+    { mapID = 1442, x = 0.365, y = 0.072, name = "Teloren", faction = "Alliance", node = "Stonetalon Peak", },
+    { mapID = 1442, x = 0.452, y = 0.598, name = "Tharm", faction = "Horde", node = "Sun Rock Retreat", },
+    { mapID = 1443, x = 0.646, y = 0.105, name = "Baritanas Skyriver", faction = "Alliance", node = "Nijel's Point", },
+    { mapID = 1443, x = 0.215, y = 0.740, name = "Thalon", faction = "Horde", node = "Shadowprey Village", },
+    { mapID = 1444, x = 0.302, y = 0.432, name = "Fyldren Moonfeather", faction = "Alliance", node = "Feathermoon", },
+    { mapID = 1444, x = 0.754, y = 0.442, name = "Shyn", faction = "Horde", node = "Camp Mojache", },
+    { mapID = 1444, x = 0.895, y = 0.458, name = "Thyssiana", faction = "Alliance", node = "Thalanaar", },
+    { mapID = 1445, x = 0.675, y = 0.513, name = "Baldruc", faction = "Alliance", node = "Theramore", },
+    { mapID = 1445, x = 0.355, y = 0.318, name = "Shardi", faction = "Horde", node = "Brackenwall Village", },
+    { mapID = 1446, x = 0.510, y = 0.292, name = "Bera Stonehammer", faction = "Alliance", node = "Gadgetzan", },
+    { mapID = 1446, x = 0.516, y = 0.255, name = "Bulkrek Ragefist", faction = "Horde", node = "Gadgetzan", },
+    { mapID = 1447, x = 0.118, y = 0.775, name = "Jarrodenus", faction = "Alliance", node = "Talrendis Point", },
+    { mapID = 1447, x = 0.220, y = 0.496, name = "Kroum", faction = "Horde", node = "Valormok", },
+    { mapID = 1448, x = 0.344, y = 0.538, name = "Brakkar", faction = "Horde", node = "Bloodvenom Post", },
+    { mapID = 1448, x = 0.625, y = 0.241, name = "Mishellena", faction = "Alliance", node = "Talonbranch Glade", },
+    { mapID = 1449, x = 0.452, y = 0.058, name = "Gryfe", node = "Marshal's Refuge", },
+    { mapID = 1450, x = 0.322, y = 0.665, name = "Faustron", faction = "Horde", node = "Moonglade", },
+    { mapID = 1450, x = 0.480, y = 0.672, name = "Sindrayl", faction = "Alliance", node = "Moonglade", },
+    { mapID = 1451, x = 0.506, y = 0.345, name = "Cloud Skydancer", faction = "Alliance", node = "Cenarion Hold", },
+    { mapID = 1451, x = 0.488, y = 0.366, name = "Runk Windtamer", faction = "Horde", node = "Cenarion Hold", },
+    { mapID = 1452, x = 0.622, y = 0.365, name = "Maethrya", faction = "Alliance", node = "Everlook", },
+    { mapID = 1452, x = 0.604, y = 0.364, name = "Yugrek", faction = "Horde", node = "Everlook", },
+    { mapID = 1453, x = 0.661, y = 0.625, name = "Dungar Longdrink", faction = "Alliance", node = "Stormwind", },
+    { mapID = 1454, x = 0.454, y = 0.639, name = "Doras", faction = "Horde", node = "Orgrimmar", },
+    { mapID = 1455, x = 0.557, y = 0.480, name = "Gryth Thurden", faction = "Alliance", node = "Ironforge", },
+    { mapID = 1456, x = 0.468, y = 0.497, name = "Tal", faction = "Horde", node = "Thunder Bluff", },
+    { mapID = 1458, x = 0.634, y = 0.482, name = "Michael Garrett", faction = "Horde", node = "Undercity", },
     { mapID = 2548, x = 0.596, y = 0.452, name = "Grakna", faction = "Horde", },
     { mapID = 2548, x = 0.606, y = 0.814, name = "Gretchen Mayberry", faction = "Alliance", },
 
@@ -262,6 +264,38 @@ function Travel:PairedMap(mapID)
     for id, known in pairs(MAP_NAMES) do
         if known == name and PAIRED[id] then return PAIRED[id] end
     end
+end
+
+-- A pin belongs to a flight master only when it is in that camp. The Barrens
+-- has three, and a quest in the middle of the zone is not a flight.
+local FLIGHT_CAMP_RADIUS = 0.05
+
+function Travel:CampFlightMaster(mapID, x, y, state)
+    if not mapID or not x or not y or not ns.Navigation then return nil end
+    local best, bestDistance
+    for _, master in ipairs(self.flightMasters) do
+        if master.mapID == mapID and type(master.node) == "string" and self:Allows(master.faction, state) then
+            local distance = ns.Navigation.Distance(x, y, master.x, master.y)
+            if distance and distance <= FLIGHT_CAMP_RADIUS and (not bestDistance or distance < bestDistance) then
+                best, bestDistance = master, distance
+            end
+        end
+    end
+    return best
+end
+
+-- Same zone, two different learned flight points. Crossroads to Camp Taurajo
+-- is this case: the step pin and the player are both in The Barrens.
+function Travel:SameZoneFlight(state, leg)
+    if not state or not leg or not state.mapID or state.mapID ~= leg.mapID then return nil end
+    if not state.x or not state.y or not leg.x or not leg.y then return nil end
+    local destination = self:CampFlightMaster(leg.mapID, leg.x, leg.y, state)
+    local here = self:FlightMaster(state)
+    if not destination or not here then return nil end
+    if here.mapID == destination.mapID and here.x == destination.x and here.y == destination.y then
+        return nil
+    end
+    return self:FlightPoint(state, destination.node)
 end
 
 function Travel:FlightMaster(state)
