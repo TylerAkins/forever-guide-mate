@@ -27,6 +27,8 @@ local _, ns = ...
 -- The Great Cat Spirit
 -- Blessings of the Great Cat Spirit
 -- To Thunder Bluff
+-- Stalk With The Earthmother
+-- Stalk With The Earthmother
 -- Left out (dungeon quest): A Better Ingredient
 -- Left out (no start pin): Relics of the Kaldorei, Wisdom of the Guardians, The Lost Saplings, Trial of The Owls, The Frigid Barrow, A Better Ingredient, Relics of the Tauren, The Lost Ancient, The Heart of Chromaggus
 
@@ -163,6 +165,126 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ZEPHRASISLE, 0.4160, 0.2340, "Xyton Silverwind",
                     "Travel to Xyton Silverwind in Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-76156-stalk-with-the-earthmother",
+            kind = "accept",
+            priority = 21,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76156, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            kind = "objective",
+            priority = 22,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
+            route = {
+                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
+                    "Travel to the Venture Co. Mine in Mulgore."),
+            },
+        },
+        {
+            id = "turnin-76156-stalk-with-the-earthmother",
+            kind = "turnin",
+            priority = 23,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
+            complete = QuestState(76156, "completed"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "accept-76160-stalk-with-the-earthmother",
+            kind = "accept",
+            priority = 24,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
+            complete = QuestState(76160, "activeOrCompleted"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem in Thunder Bluff."),
+            },
+        },
+        {
+            id = "objective-76160-stalk-with-the-earthmother-1",
+            kind = "objective",
+            priority = 25,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            useClientPin = true,
+            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
+            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
+            complete = QuestObjective(76160, 1, "Pine Salve"),
+            route = {
+                Point(MAP.MULGORE, 0.3240, 0.2760, "Windfury Matriarch",
+                    "Travel to the Windfury harpies in Mulgore."),
+            },
+        },
+        {
+            id = "turnin-76160-stalk-with-the-earthmother",
+            kind = "turnin",
+            priority = 26,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = { 1, 7, 11 } },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 4 } },
+                },
+            },
+            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
+            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
+            complete = QuestState(76160, "completed"),
+            route = {
+                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
+                    "Travel to Boarton Shadetotem in Thunder Bluff."),
             },
         },
         {

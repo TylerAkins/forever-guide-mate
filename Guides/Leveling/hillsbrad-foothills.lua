@@ -3,6 +3,7 @@ local _, ns = ...
 -- Horde leveling route for Hillsbrad Foothills, levels 29-30.
 -- The Hillsbrad list has no new Forever quests. Undead paladins accept An Underrated Talent from Trevan Rol at the Sepulcher and turn it in to Ott in Tarren Mill, then watch Ott's Masterwork.
 -- The Moonsilver Blade returns to Trevan after this chapter has left the Sepulcher. Old Fire-Eye and the earlier steps are in Silverpine. Scout Support and Valuable Vantages have no start pin.
+-- This Must Be The Place (79976) is the Arathi end of the scramble chain. Its Questie quest level is 32.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 

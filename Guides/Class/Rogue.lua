@@ -10,7 +10,7 @@ local _, ns = ...
 -- The Horn of Xelthos
 -- At Home in the Shadows
 -- Left out (dungeon quest): The Azure Key
--- Left out (no start pin): Second-Story Work, The Dark Hoard, Fool Me Twice, Atop the Cliffs, Into the Hold of Shadows, The Enemy of my Enemy, The Manor, Ravenholdt, The Talisman of Kazdor, Thrice Stolen, The Azure Key, Goblin Lockpicks, One Last Drop (+6 more)
+-- Left out (no start pin): Goblin Lockpicks (78270), Horn of Xelthos (78307), Second-Story Work, The Dark Hoard, Fool Me Twice, Atop the Cliffs, Into the Hold of Shadows, The Enemy of my Enemy, The Manor, Ravenholdt, The Talisman of Kazdor, Thrice Stolen, The Azure Key, One Last Drop (+6 more)
 
 local MAP = {
     ALTERACMOUNTAINS = 1416,

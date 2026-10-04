@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Alliance Era leveling route for Elwynn Forest, levels 1-12.
 -- Forever quests from the Elwynn Forest list are woven into this route.
--- Left out: Applejack Still has no giver. Fishin' Time is a Stormwind Harbor errand off this road.
+-- Left out: Applejack Still has no giver. A Taste of Darkness has no start pin. Fishin' Time is a Stormwind Harbor errand off this road.
 -- Exploring the Alliance and Welcome to Azeroth are Skyborne. Stormwind quests above level 12 stay out.
 -- The Northshire book chain continues only if a kobold drops the Nibbled-On Book.
 -- Grind stops and flight-point pickups are not part of this route.
