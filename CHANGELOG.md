@@ -6,6 +6,7 @@ All notable changes to this project are documented here.
 
 - Near-pin checks use distance on the same map, so a Barrens turn-in no longer reads as already at the NPC while you are still at Ratchet.
 - The Ishamuhale turn-in in The Barrens (Part 2) names Camp Taurajo as the flight destination. The tracker and map pin stay on the flight master until you reach Jorn Skyseer.
+- The optional Silithid Harvester hunt (quest 897) is no longer a step in The Barrens (Part 2) or (Part 3).
 
 ## 0.1.56 - 2026-10-04
 

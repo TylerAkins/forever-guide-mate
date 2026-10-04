@@ -4,6 +4,7 @@ local _, ns = ...
 -- Forever quests from the Barrens list that sit on this pass are woven in.
 -- Deepmoss Spider Eggs, collected in Sishir Canyon, turn in here on the Ratchet visit. Further Instructions turns in to Sputtervalve on that same visit.
 -- Scout Support and Valuable Vantages have no start pin, so they stay off this route.
+-- The Harvester (897) optional rare hunt stays off this route; turn it in from the quest log if you get the head.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -38,7 +39,7 @@ ns:RegisterGuide({
     id = "leveling-era-the-barrens-part-2",
     title = "The Barrens (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 5,
+    revision = 6,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -565,23 +566,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4891, 0.6097, "Owatanka",
                     "Travel to Owatanka."),
-            },
-        },
-        {
-            id = "objective-897-silithid-harvester",
-            kind = "objective",
-            priority = 430,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { ["not"] = { quest = { id = 897, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Kill Silithid Harvester and collect Harvester's Head in Field of Giants to accept a quest Optional quest, skip if you're not able to find it.",
-            complete = QuestState(897, "complete"),
-            route = {
-                Point(MAP.BARRENS, 0.4520, 0.7100, "Silithid Harvester",
-                    "Travel to Silithid Harvester."),
             },
         },
         {
