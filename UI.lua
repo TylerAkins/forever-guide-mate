@@ -977,6 +977,10 @@ function UI:GoalInstruction(engine)
     end
     local state = engine.state or {}
     local leg, status = ns.Navigation:GetActiveLeg(goal, state)
+    local taxiInstruction = ns.Navigation:TaxiInstruction(goal, state, leg, status)
+    if taxiInstruction then
+        return taxiInstruction
+    end
     -- Era routes keep their path dots. On the map the step reads as the
     -- objective. Off the map the travel text still has to point the way.
     if PathDot(leg) and leg and state.mapID and ns.Navigation:OnMap(state.mapID, leg.mapID) then
@@ -1007,7 +1011,7 @@ function UI:GoalInstruction(engine)
     end
     if leg and (leg.transport or leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
         if pickup then
-            return leg.offMapText or goal.text
+            return status or leg.label or leg.offMapText or goal.text
         end
         return status or leg.label or goal.text
     end
@@ -1016,10 +1020,6 @@ function UI:GoalInstruction(engine)
             and (goal.kind == "objective" or goal.kind == "gossip")
             and (not status or status == leg.label) then
             return ClientObjective(goal, state)
-        end
-        if goal.useClientPin == true and goal.kind == "turnin"
-            and (not status or status == leg.label) then
-            return TurnInInstruction(goal, state)
         end
         return status or leg.label or goal.text
     end

@@ -22,13 +22,15 @@ local function QuestObjective(questID, index)
     return { questObjective = { id = questID, index = index } }
 end
 
-local function Point(mapID, x, y, label, offMapText)
+local function Point(mapID, x, y, label, offMapText, complete, flightTo)
     return {
         mapID = mapID,
         x = x,
         y = y,
         label = label,
         offMapText = offMapText,
+        complete = complete,
+        flightTo = flightTo,
     }
 end
 
@@ -36,7 +38,7 @@ ns:RegisterGuide({
     id = "leveling-era-the-barrens-part-2",
     title = "The Barrens (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 5,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -1143,11 +1145,12 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Ishamuhale to Jorn Skyseer in Camp Taurajo.",
+            taxiDestination = "Camp Taurajo",
             dependsOn = { "objective-882-zhevra-charger", "objective-882-ishamuhale" },
             complete = QuestState(882, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.4484, 0.5912, "Jorn Skyseer",
-                    "Travel to Jorn Skyseer."),
+                    "Travel to Jorn Skyseer.", nil, "Camp Taurajo"),
             },
         },
         {
