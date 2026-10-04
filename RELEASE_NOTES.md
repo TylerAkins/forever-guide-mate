@@ -1,3 +1,5 @@
-## 0.1.56 - 2026-10-04
+## 0.1.57 - 2026-10-04
 
-- A step in the same zone uses a learned flight path when the pin is at another flight camp and that flight master is closer than walking. The Crossroads to Camp Taurajo is that case.
+- Near-pin checks use distance on the same map, so a Barrens turn-in no longer reads as already at the NPC while you are still at Ratchet.
+- The Ishamuhale turn-in in The Barrens (Part 2) names Camp Taurajo as the flight destination. The tracker and map pin stay on the flight master until you reach Jorn Skyseer.
+- The optional Silithid Harvester hunt (quest 897) is no longer a step in The Barrens (Part 2) or (Part 3).

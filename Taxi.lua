@@ -201,6 +201,57 @@ function Taxi:GetLearnedLeg(goal, state)
     }
 end
 
-function Taxi:GetSuggestedLeg(goal, state)
-    return self:GetLearnedLeg(goal, state)
+local function SameTravelMap(stateMap, legMap)
+    if type(stateMap) ~= "number" or type(legMap) ~= "number" then
+        return false
+    end
+    if stateMap == legMap then
+        return true
+    end
+    return ns.Travel and ns.Travel.Paired and ns.Travel:Paired(stateMap, legMap) or false
+end
+
+function Taxi:GetSuggestedLeg(goal, state, destinationLeg)
+    local learned = self:GetLearnedLeg(goal, state)
+    if learned then
+        return learned
+    end
+    if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID then
+        return nil
+    end
+    if self:AtDestination(goal, state) then
+        return nil
+    end
+    if type(destinationLeg) ~= "table" or type(destinationLeg.mapID) ~= "number" then
+        return nil
+    end
+    if ns.Navigation and ns.Navigation.AtRoutePin and ns.Navigation:AtRoutePin(state, destinationLeg) then
+        return nil
+    end
+    if type(goal.route) ~= "table" or #goal.route ~= 1 then
+        return nil
+    end
+    -- Unknown cross-map flights keep the authored walking route.
+    if not SameTravelMap(state.mapID, destinationLeg.mapID) then
+        return nil
+    end
+    if state.x and state.y and destinationLeg.x and destinationLeg.y then
+        local distance = ns.Navigation.Distance(state.x, state.y, destinationLeg.x, destinationLeg.y)
+        if not distance or distance < 0.06 then
+            return nil
+        end
+    end
+    local master = ns.Travel and ns.Travel.FlightMaster and ns.Travel:FlightMaster(state)
+    if not master then
+        return nil
+    end
+    return {
+        mapID = master.mapID,
+        x = master.x,
+        y = master.y,
+        radius = 0.02,
+        label = "Take the flight path to " .. goal.taxiDestination .. ".",
+        flight = true,
+        fallbackTaxi = true,
+    }
 end

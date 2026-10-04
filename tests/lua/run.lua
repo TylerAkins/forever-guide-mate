@@ -475,6 +475,84 @@ function TestSameZoneFlightToCamp()
     ns.charDB.taxiRoutes = {}
 end
 TestSameZoneFlightToCamp()
+
+function TestIshamuhaleCampTaurajoFlight()
+    ns.charDB.taxiRoutes = {
+        [1413] = {
+            x = 0.515,
+            y = 0.303,
+            destinations = { ["camp taurajo, the barrens"] = "Camp Taurajo, The Barrens" },
+        },
+    }
+    local ishamuhaleTurnIn = {
+        kind = "turnin",
+        useClientPin = true,
+        taxiDestination = "Camp Taurajo",
+        text = "Turn in Ishamuhale to Jorn Skyseer in Camp Taurajo.",
+        complete = { quest = { id = 882, state = "completed" } },
+        route = {
+            {
+                mapID = 1413,
+                x = 0.4484,
+                y = 0.5912,
+                label = "Jorn Skyseer",
+                offMapText = "Travel to Jorn Skyseer.",
+            },
+        },
+    }
+    local northBarrens = {
+        mapID = 1413,
+        x = 0.59,
+        y = 0.30,
+        faction = "Horde",
+        quests = { [882] = { title = "Ishamuhale" } },
+    }
+    local ishamuhaleFlightText = ns.UI:GoalInstruction({
+        currentGoal = ishamuhaleTurnIn,
+        state = northBarrens,
+    })
+    Check(string.find(ishamuhaleFlightText, "Camp Taurajo", 1, true) ~= nil,
+        "a turn-in flight to Camp Taurajo names the destination")
+    Check(string.find(ishamuhaleFlightText, "@", 1, true) == nil,
+        "a turn-in flight does not use turn-in form while boarding")
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
+    local unknownCampTaurajoLeg = ns.Navigation:GetActiveLeg(ishamuhaleTurnIn, {
+        mapID = 1413,
+        x = 0.515,
+        y = 0.303,
+        faction = "Horde",
+    })
+    Check(unknownCampTaurajoLeg and unknownCampTaurajoLeg.flight,
+        "an unknown Camp Taurajo flight still targets the flight master")
+    Equal(unknownCampTaurajoLeg and unknownCampTaurajoLeg.label,
+        "Take the flight path to Camp Taurajo.",
+        "an unknown Camp Taurajo flight names the destination")
+    local jornLeg = ishamuhaleTurnIn.route[1]
+    Check(not ns.Navigation:AtRoutePin({ mapID = 1413, x = 0.515, y = 0.303 }, jornLeg),
+        "northern Barrens is not treated as on top of a southern camp turn-in")
+    Check(ns.Navigation:AtRoutePin({ mapID = 1413, x = 0.4484, y = 0.5912 }, jornLeg),
+        "standing on the turn-in NPC still counts as near the pin")
+    local ratchetTurnInText = ns.UI:GoalInstruction({
+        currentGoal = ishamuhaleTurnIn,
+        state = {
+            mapID = 1413,
+            x = 0.515,
+            y = 0.303,
+            faction = "Horde",
+            quests = { [882] = { title = "Ishamuhale" } },
+        },
+    })
+    Check(string.find(ratchetTurnInText, "Camp Taurajo", 1, true) ~= nil,
+        "the tracker names Camp Taurajo from Ratchet before the turn-in form")
+    Check(string.find(ratchetTurnInText, "@", 1, true) == nil,
+        "the tracker does not use turn-in form while a flight is still required")
+    ns.charDB.taxiRoutes = {}
+    ns.charDB.taxiNodes = nil
+    ns.charDB.taxiNodesByContinent = nil
+end
+TestIshamuhaleCampTaurajoFlight()
 Enum = nil
 
 local mapAPI = {
