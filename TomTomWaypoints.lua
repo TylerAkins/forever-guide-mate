@@ -161,7 +161,9 @@ function Waypoints:Sync(goal, state, api)
     end
     if self.questID and C_SuperTrack.GetSuperTrackedQuestID() ~= self.questID then self.suspended = true end
     if self.suspended then return end
-    local questID = not flightLeg and ns.Navigation:QuestDestinationID(goal) or nil
+    local questID = not flightLeg
+        and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg))
+        and ns.Navigation:QuestDestinationID(goal) or nil
     local nativeQuest = questID ~= nil
     if nativeQuest and provider == "blizzard" then
         if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"

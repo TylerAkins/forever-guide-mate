@@ -2,6 +2,7 @@ local _, ns = ...
 
 -- Horde leveling route for the Southern Barrens, levels 25-25.
 -- The Barrens list has no new Forever quest on this pass. Stepping Stones starts at the Burned-Out Remains in the Field of Giants and turns in at Pocket Litter. ... and that note you found starts at those same remains and turns in at Westfall. No chapter stops at either hand-in. Scout Support and Valuable Vantages have no start pin.
+-- The Harvester (897) optional rare hunt stays off this route; turn it in from the quest log if you get the head.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -32,7 +33,7 @@ ns:RegisterGuide({
     id = "leveling-era-the-barrens-part-3",
     title = "The Barrens (Part 3)",
     category = "Leveling Quest Guides",
-    revision = 2,
+    revision = 3,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -104,21 +105,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.4891, 0.6097, "Owatanka",
                     "Travel to Owatanka."),
-            },
-        },
-        {
-            id = "objective-silithid-harvester",
-            kind = "objective",
-            priority = 80,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 897, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Kill Silithid Harvester and collect Harvester's Head in Field of Giants to accept a quest.",
-            route = {
-                Point(MAP.BARRENS, 0.4640, 0.7200, "Silithid Harvester",
-                    "Travel to Silithid Harvester."),
             },
         },
         {
