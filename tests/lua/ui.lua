@@ -142,7 +142,6 @@ Load("MinimapButton.lua")
 Load("UITheme.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
-Load("Guides/Miscellaneous/LibraryBooks.lua")
 
 ForeverGuideMateDB = nil
 ForeverGuideMateCharDB = nil
@@ -612,12 +611,25 @@ for index = 1, #ns.UI.browserCategoryButtons do
 end
 Check(sawRaidCategory, "the library lists Raid Quests as its own category")
 
+ns:RegisterGuide({
+    id = "misc-category-probe",
+    title = "Library Books",
+    category = "Miscellaneous Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { level = { min = 1 } },
+            { any = { { faction = "Alliance" }, { faction = "Horde" } } },
+        },
+    },
+    goals = { { id = "misc-step", kind = "note", text = "Misc step" } },
+})
 ns.UI.browserCategory = "Miscellaneous Guides"
 ns.UI.browserPage = 1
 ns.UI.browser.search:SetText("library books")
 ns.Engine.state = { faction = "Horde", level = 10 }
 ns.UI:RefreshGuideBrowser()
-Equal(GuideRow("Library Books").eligibility.text, "Miscellaneous  •  Eligible  •  Both  •  Level 1+",
+Equal(GuideRow("Library Books").eligibility.text, "Miscellaneous  •  Eligible  •  Alliance and Horde  •  Level 1+",
     "library books uses the Miscellaneous tag")
 local sawMiscCategory = false
 for index = 1, #ns.UI.browserCategoryButtons do
