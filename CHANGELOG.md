@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## 0.2.0 - 2026-10-05
+
+- Restyle the guide tracker and library with Blizzard NineSlice panel chrome (`UITheme.lua`) instead of flat dark overlays.
+- Add guide opacity in settings (50% to 100%, default 100%) with account storage schema version 5.
+- Tracker title bar: library cog, guide title, progress percent, and close control on one baseline.
+- Guide library: open guides on row click, Hide Ineligible in the title bar, hover highlights on categories and rows, left-aligned eligibility text.
+- Panel solid backgrounds use asymmetric NineSlice insets so fill stays inside the frame without bleed or edge gaps.
+- Settings sliders have clearer spacing between scale and opacity; footer nav and resync use consistent spellbook-style chrome.
+
 ## 0.1.57 - 2026-10-04
 
 - Near-pin checks use distance on the same map, so a Barrens turn-in no longer reads as already at the NPC while you are still at Ratchet.

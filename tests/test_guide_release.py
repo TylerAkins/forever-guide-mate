@@ -60,6 +60,14 @@ class GuideReleaseTests(unittest.TestCase):
                 "0.1.2",
                 release_content_changed=True,
             )
+        self.assertEqual(
+            "v0.2.0",
+            GUIDE_RELEASE.plan_automated_release(
+                "0.1.57",
+                "0.2.0",
+                release_content_changed=True,
+            ),
+        )
 
     def test_tag_planning_rejects_collisions(self) -> None:
         self.assertEqual("create", GUIDE_RELEASE.plan_tag(None, "abc123"))

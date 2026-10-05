@@ -27,6 +27,7 @@ SHIPPED = (
     "MapPins.lua",
     "MapPins.xml",
     "MinimapButton.lua",
+    "UITheme.lua",
     "UI.lua",
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",
