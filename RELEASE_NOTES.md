@@ -1,5 +1,8 @@
-## 0.1.57 - 2026-10-04
+## 0.2.0 - 2026-10-05
 
-- Near-pin checks use distance on the same map, so a Barrens turn-in no longer reads as already at the NPC while you are still at Ratchet.
-- The Ishamuhale turn-in in The Barrens (Part 2) names Camp Taurajo as the flight destination. The tracker and map pin stay on the flight master until you reach Jorn Skyseer.
-- The optional Silithid Harvester hunt (quest 897) is no longer a step in The Barrens (Part 2) or (Part 3).
+- Restyle the guide tracker and library with Blizzard NineSlice panel chrome instead of flat dark overlays.
+- Add guide opacity in settings (50% to 100%, default 100%).
+- Tracker title bar: library cog, guide title, progress percent, and close control on one baseline.
+- Guide library: open guides on row click, Hide Ineligible in the title bar, hover highlights on categories and rows.
+- Panel backgrounds use NineSlice insets so fill stays inside the frame without bleed or edge gaps.
+- Settings sliders have clearer spacing between scale and opacity.

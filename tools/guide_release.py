@@ -30,6 +30,9 @@ class Version:
     def next_patch(self) -> Version:
         return Version(self.major, self.minor, self.patch + 1)
 
+    def next_minor(self) -> Version:
+        return Version(self.major, self.minor + 1, 0)
+
     def __str__(self) -> str:
         return f"{self.major}.{self.minor}.{self.patch}"
 
@@ -46,11 +49,12 @@ def plan_automated_release(
 
     previous = Version.parse(previous_version)
     current = Version.parse(current_version)
-    expected = previous.next_patch()
-    if current != expected:
+    expected_patch = previous.next_patch()
+    expected_minor = previous.next_minor()
+    if current not in (expected_patch, expected_minor):
         raise ValueError(
             f"Release content changed, but VERSION must advance from {previous} "
-            f"to {expected}; "
+            f"to {expected_patch} or {expected_minor}; "
             f"found {current}"
         )
     return f"v{current}"

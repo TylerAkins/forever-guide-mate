@@ -63,6 +63,23 @@ Each run deletes the previous `.compiled/ForeverGuideMate` directory and recreat
 
 Use `python3 tools/compile_addon.py --dry-run` to list the files without changing `.compiled/`.
 
+Install into the path from `install.json` (or the default Forever beta AddOns folder):
+
+```sh
+python3 tools/compile_addon.py --install
+```
+
+## Reference Blizzard UI (developers)
+
+Forever GuideMate chrome should match in-game frames (NineSlice borders from `SharedUIPanelTemplates`, quest-log list styling). Do **not** commit extracted art or FrameXML trees.
+
+1. Launch WoW Forever with `-console`, open the console on the login screen, and run `ExportInterfaceFiles code` (and `ExportInterfaceFiles art` if you need textures).
+2. Grep the export for `NineSlice`, `SharedUIPanelTemplates`, and frames such as `ProfessionsFrame` or the quest log.
+3. Use `/fstack` in-game to confirm template names and anchor paths.
+4. Ship only runtime references (`Interface\\...` paths, XML templates, `NineSliceUtil`) inside the addon.
+
+[`UITheme.lua`](../UITheme.lua) centralizes panel and button styling with fallbacks when client APIs are missing.
+
 ## Releases
 
 | Channel | Trigger | Result |

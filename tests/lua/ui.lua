@@ -52,6 +52,9 @@ local function NewRegion(parent)
     end
     function methods:SetRotation(value) self.rotation = value end
     function methods:SetAlpha(value) self.alpha = value end
+    function methods:GetAlpha() return rawget(self, "alpha") or 1 end
+    function methods:SetBackdrop(value) self.backdrop = value end
+    function methods:GetBackdrop() return rawget(self, "backdrop") end
     function methods:SetValue(value) self.value = value end
     function methods:GetCenter() return 100, 100 end
     function methods:GetEffectiveScale() return 1 end
@@ -77,10 +80,32 @@ Minimap.GetHeight = function(self) return self.height end
 Minimap.GetEffectiveScale = function() return 1 end
 GetCursorPosition = function() return 100, 170 end
 local createdFrames = {}
-CreateFrame = function(kind, _, parent)
+local createFrameTemplates = {}
+CreateFrame = function(kind, _, parent, template)
     local frame = NewRegion(parent)
+    frame.template = template
+    if template then createFrameTemplates[#createFrameTemplates + 1] = template end
     createdFrames[#createdFrames + 1] = frame
-    if kind == "CheckButton" then frame.Text = NewRegion() end
+    if kind == "CheckButton" then
+        frame.Text = NewRegion()
+        frame.GetChecked = function(self) return rawget(self, "checked") end
+        frame.SetChecked = function(self, value) self.checked = not not value end
+    end
+    if template == "BackdropTemplate" then
+        frame.SetBackdrop = function(self, value) self.backdrop = value end
+        frame.GetBackdrop = function(self) return rawget(self, "backdrop") end
+    end
+    if template == "UIPanelButtonTemplate" then
+        local label = NewRegion()
+        frame.fontString = label
+        frame.SetText = function(self, value)
+            self.text = value
+            label.text = value
+        end
+        frame.GetText = function(self) return rawget(self, "text") or "" end
+        frame.GetFontString = function(self) return self.fontString end
+        frame.label = label
+    end
     if kind == "Slider" then
         frame.value = 100
         frame.SetOrientation = function() end
@@ -114,6 +139,7 @@ Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
 Load("MinimapButton.lua")
+Load("UITheme.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 
@@ -215,6 +241,21 @@ Equal(ns.UI.minimapButton.shown, false, "show minimap button off hides the minim
 ns.db.showMinimapButton = true
 ns.UI:ApplySettings()
 Equal(ns.UI.minimapButton.shown, true, "show minimap button on restores the minimap button")
+Equal(ns.db.guideOpacity, 1, "guide opacity defaults to 100%")
+Equal(ns.UI.tracker.alpha, 1, "guide opacity applies to the tracker")
+ns.db.guideOpacity = 0.45
+ns.UI:ApplySettings()
+Equal(ns.db.guideOpacity, 0.5, "guide opacity clamps to 50%")
+Equal(ns.UI.tracker.alpha, 0.5, "the tracker honors the opacity clamp")
+ns.db.guideOpacity = 1.2
+ns.UI:ApplySettings()
+Equal(ns.db.guideOpacity, 1, "guide opacity clamps to 100%")
+ns.db.guideOpacity = 1
+ns.UI:ApplySettings()
+Check(ns.UITheme ~= nil, "UI theme module is loaded")
+Check(rawget(ns.UI.tracker, "themePanelBackground") ~= nil or rawget(ns.UI.tracker, "themeBackdropFrame") ~= nil
+    or rawget(ns.UI.tracker, "usedNineSlice"),
+    "tracker uses Blizzard-style panel chrome")
 Equal(ns.db.guideScale, 1, "guide scale defaults to 100%")
 Equal(ns.UI.tracker.scale, 1, "guide scale applies to the tracker")
 ns.db.guideScale = 1.6
@@ -299,11 +340,11 @@ ns.UI:OpenGuideBrowser()
 Equal(ns.UI.browser.shown, true, "the shared browser path opens the guide library")
 Equal(#ns.UI.browserRows, 2, "the browser renders multiple guide choices")
 Equal(#ns.UI.browserCategoryButtons, 3, "the browser builds category choices from registered guides")
-Equal(ns.UI.browserCategoryButtons[1].selectionBorder[1].shown, true, "All Guides has a selected gold border")
+Equal(ns.UI.browserCategoryButtons[1].categorySelected, true, "All Guides is the selected category")
 ns.UI.browserCategoryButtons[2].scripts.OnClick()
 Equal(#ns.UI.browserRows, 2, "category filtering reuses browser rows")
 Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm", "dungeon category shows the RFC guide")
-Equal(ns.UI.browserCategoryButtons[2].selectionBorder[1].shown, true, "selected category has a gold border")
+Equal(ns.UI.browserCategoryButtons[2].categorySelected, true, "the active category is marked selected")
 ns.UI.browserCategoryButtons[1].scripts.OnClick()
 Equal(ns.UI.browserRows[1].shown, true, "All Guides restores the dungeon guide")
 Check(string.find(ns.UI.browserRows[1].eligibility.text, "Dungeon  •  ", 1, true) == 1,
@@ -313,8 +354,7 @@ Check(string.find(ns.UI.browserRows[2].eligibility.text, "Dungeon", 1, true) == 
 Equal(ns.UI.browserRows[1].title.text, "Ragefire Chasm", "leveled guides stay ahead of guides without a level")
 Equal(ns.UI.browserRows[1].divider.shown, true, "a divider separates the first guide row")
 Equal(ns.UI.browserRows[2].divider.shown, false, "the last visible guide row has no trailing divider")
-Equal(ns.UI.browserRows[1].divider.color[1], ns.UI.browserCategoryButtons[1].selectionBorder[1].color[1],
-    "guide dividers use the category gold border")
+Equal(ns.UI.browserRows[1].divider.color[1], 0.78, "guide dividers use gold accents")
 ns:RegisterGuide({
     id = "early-guide", title = "Early Guide", category = "Dungeon Quest Guides", revision = 1,
     conditions = { all = { { level = { min = 8 } } } },
@@ -379,7 +419,7 @@ Equal(labelPoint[2], ns.UI.browser.close, "hide ineligible label anchors to the 
 Equal(ns.db.browser.hideIneligible, false, "ineligible guides stay visible until hidden")
 ns.db.browser.hideIneligible = true
 ns.UI.browser.hideIneligible.scripts.OnShow()
-Equal(ns.UI.browser.hideIneligible.mark.shown, true, "the title-bar box shows a mark when hiding ineligible guides")
+Equal(ns.UI.browser.hideIneligible.checked, true, "the title-bar box is checked when hiding ineligible guides")
 ns.UI:RefreshGuideBrowser()
 Equal(GuideRow("Ragefire Chasm"), nil, "hide ineligible removes an ineligible dungeon guide")
 ns.db.browser.hideIneligible = false
@@ -413,9 +453,9 @@ Equal(GuideRow("Zone Loremaster").eligibility.text, "Loremaster  •  Eligible  
 local sawLoremasterCategory = false
 for index = 1, #ns.UI.browserCategoryButtons do
     local button = ns.UI.browserCategoryButtons[index]
-    if button.shown and button.label.text == "Loremaster Guides" then sawLoremasterCategory = true end
+    if button.shown and button.label.text == "Loremaster" then sawLoremasterCategory = true end
 end
-Check(sawLoremasterCategory, "the library lists Loremaster Guides as its own category")
+Check(sawLoremasterCategory, "the library lists Loremaster as its own category")
 
 ns.charDB.selectedGuide = "dungeons-ragefire-chasm-horde"
 ns.Engine:Refresh({ faction = "Alliance", level = 20 })
@@ -567,7 +607,7 @@ Equal(GuideRow("Raid Category Probe").eligibility.text, "Raid  •  Eligible  �
 local sawRaidCategory = false
 for index = 1, #ns.UI.browserCategoryButtons do
     local button = ns.UI.browserCategoryButtons[index]
-    if button.shown and button.label.text == "› Raid Quests" then sawRaidCategory = true end
+    if button.shown and button.label.text == "Raid Quests" then sawRaidCategory = true end
 end
 Check(sawRaidCategory, "the library lists Raid Quests as its own category")
 
