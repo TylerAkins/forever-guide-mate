@@ -36,6 +36,7 @@ Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
 Load("MinimapButton.lua")
+Load("UITheme.lua")
 Load("UI.lua")
 Load("Guides/Dungeons/RagefireChasm.lua")
 Load("Guides/Dungeons/WailingCaverns.lua")
@@ -202,7 +203,7 @@ ForeverGuideMateCharDB = {
     history = {},
 }
 ns.InitializeStorage()
-Equal(ns.db.schemaVersion, 4, "account schema migrated")
+Equal(ns.db.schemaVersion, 5, "account schema migrated")
 Equal(ns.charDB.schemaVersion, 6, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
