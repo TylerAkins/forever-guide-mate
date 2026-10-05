@@ -146,6 +146,7 @@ for _, path in ipairs({
     "Guides/Class/Mage.lua",
     "Guides/Class/Warlock.lua",
     "Guides/Class/Druid.lua",
+    "Guides/Miscellaneous/LibraryBooks.lua",
     "Guides/Era/30-31-wetlands.lua",
     "Guides/Era/31-32-hillsbrad-foothills.lua",
     "Guides/Era/32-33-stranglethorn-vale.lua",

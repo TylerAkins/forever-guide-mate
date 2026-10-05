@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.2.1 - 2026-10-05
+
+- Add a **Miscellaneous** guide category and a **Library Books** collection guide with map pins for Forever library books, manual pickup steps where needed, and milestone reward quests at 10, 20, and 25 books.
+
 ## 0.2.0 - 2026-10-05
 
 - Restyle the guide tracker and library with Blizzard NineSlice panel chrome (`UITheme.lua`) instead of flat dark overlays.
