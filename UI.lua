@@ -17,6 +17,16 @@ local BROWSER_DEFAULTS = {
 }
 local MINIMAP_BUTTON_DEFAULTS = { position = 200 }
 local GOLD_BORDER = { 0.78, 0.58, 0.16, 0.95 }
+local UITheme = ns.UITheme
+local OPACITY_MIN = 0.5
+local OPACITY_MAX = 1.0
+local OPACITY_STEP = 5
+local CATEGORY_BUTTON_WIDTH = 138
+local BROWSER_SIDEBAR_RIGHT = 158
+local BROWSER_CONTENT_LEFT = 168
+local SYNC_ICON = "Interface\\Buttons\\UI-RotationRight-Button-Up"
+local NAV_PREV_ICON = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+local NAV_NEXT_ICON = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
 
 local function Create(kind, name, parent, template)
     if template then
@@ -29,22 +39,6 @@ end
 local function SetSolidColor(texture, red, green, blue, alpha)
     if texture.SetColorTexture then texture:SetColorTexture(red, green, blue, alpha)
     else texture:SetTexture(red, green, blue, alpha) end
-end
-
-local function AddPanelBackground(frame, alpha)
-    local background = frame:CreateTexture(nil, "BACKGROUND")
-    background:SetAllPoints()
-    SetSolidColor(background, 0.018, 0.027, 0.04, alpha or 0.94)
-    local topLine = frame:CreateTexture(nil, "BORDER")
-    topLine:SetPoint("TOPLEFT", 1, -1)
-    topLine:SetPoint("TOPRIGHT", -1, -1)
-    topLine:SetHeight(1)
-    SetSolidColor(topLine, 0.73, 0.55, 0.18, 0.8)
-    local edge = frame:CreateTexture(nil, "BORDER")
-    edge:SetPoint("BOTTOMLEFT", 1, 1)
-    edge:SetPoint("BOTTOMRIGHT", -1, 1)
-    edge:SetHeight(1)
-    SetSolidColor(edge, 0.2, 0.25, 0.3, 0.8)
 end
 
 local function ClampNumber(value, minimum, maximum, fallback)
@@ -142,21 +136,29 @@ local function ApplyPlacement(frame, settings, defaults)
     ClampAndSave(frame, settings, defaults)
 end
 
-local function CreatePlainButton(parent, width, label)
-    local button = Create("Button", nil, parent)
-    button:SetSize(width, 22)
-    local background = button:CreateTexture(nil, "BACKGROUND")
-    background:SetAllPoints()
-    SetSolidColor(background, 0.09, 0.12, 0.16, 0.9)
-    local highlight = button:CreateTexture(nil, "HIGHLIGHT")
-    highlight:SetAllPoints()
-    SetSolidColor(highlight, 0.34, 0.45, 0.58, 0.3)
-    local text = button:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    text:SetPoint("CENTER")
-    text:SetText(label)
-    button.label = text
-    button.SetText = function(_, value) text:SetText(value) end
-    return button
+local function CreatePlainButton(parent, width, label, smallFont)
+    return UITheme and UITheme.CreatePanelButton(parent, width, label, smallFont)
+        or Create("Button", nil, parent)
+end
+
+local function CategoryDisplayName(category)
+    if category == "Dungeon Quest Guides" then return "Dungeon Quests" end
+    if category == "Leveling Quest Guides" then return "Leveling Quests" end
+    if category == "Loremaster Guides" then return "Loremaster" end
+    return category
+end
+
+local function OpenLibraryEntry(guideID, segment)
+    if segment then
+        ns.charDB.eraChapterPick = segment.id
+        if segment.fork then
+            ns.charDB.eraSegment = segment.id
+        end
+        ns.charDB.eraFloor = segment.id
+    end
+    ns.Engine:SelectGuide(guideID)
+    UI:OpenTracker()
+    if UI.browser then UI.browser:Hide() end
 end
 
 local function SetButtonTooltip(button, tooltip)
@@ -189,13 +191,18 @@ local function SetMinimapButtonAngle(angle)
     ns.db.minimapButton.position = NormalizeMinimapAngle(angle)
 end
 
-local function CreateIconButton(parent, texturePath, tooltip)
-    local button = CreatePlainButton(parent, 25, "")
-    button:SetSize(25, 22)
-    local icon = button:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(15, 15)
-    icon:SetPoint("CENTER")
-    icon:SetTexture(texturePath)
+local function CreateIconButton(parent, texturePath, tooltip, options)
+    local button
+    if UITheme and UITheme.CreateNavIconButton then
+        button = UITheme.CreateNavIconButton(parent, texturePath, options)
+    else
+        button = Create("Button", nil, parent)
+        button:SetSize(26, 26)
+        local icon = button:CreateTexture(nil, "ARTWORK")
+        icon:SetSize(18, 18)
+        icon:SetPoint("CENTER")
+        icon:SetTexture(texturePath)
+    end
     SetButtonTooltip(button, tooltip)
     return button
 end
@@ -256,12 +263,20 @@ function UI.NormalizeGuideScale(scale)
     return ClampNumber(scale, 0.5, 1.5, 1)
 end
 
+function UI.NormalizeGuideOpacity(opacity)
+    return ClampNumber(opacity, OPACITY_MIN, OPACITY_MAX, 1)
+end
+
+function UI.GuideOpacityPercent()
+    return math.floor(UI.NormalizeGuideOpacity(ns.db.guideOpacity) * 100 + 0.5)
+end
+
 local function CreateProgressBar(parent, height)
     local bar = Create("StatusBar", nil, parent)
     bar:SetHeight(height or 7)
     bar:SetMinMaxValues(0, 100)
     bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-    bar:SetStatusBarColor(0.78, 0.58, 0.16, 0.95)
+    bar:SetStatusBarColor(0.2, 0.7, 0.2, 0.95)
     local background = bar:CreateTexture(nil, "BACKGROUND")
     background:SetAllPoints()
     SetSolidColor(background, 0.08, 0.1, 0.13, 0.95)
@@ -269,71 +284,100 @@ local function CreateProgressBar(parent, height)
 end
 
 function UI:CreateTracker()
-    local frame = Create("Frame", "ForeverGuideMateTracker", UIParent)
-    frame:SetSize(350, 178)
+    local frame = UITheme.CreatePanel(UIParent, "ForeverGuideMateTracker", {
+        variant = "panel",
+        topInset = 34,
+    })
+    frame:SetSize(350, 172)
     frame:SetFrameStrata("MEDIUM")
-    AddPanelBackground(frame)
     ConfigureMovement(frame, ns.db.tracker, TRACKER_DEFAULTS)
-    local library = CreatePlainButton(frame, 46, "Guides")
-    library:SetPoint("TOPLEFT", 10, -8)
-    library:SetScript("OnClick", function() UI:ToggleGuideBrowser() end)
-    local titleButton = Create("Button", nil, frame)
-    titleButton:SetPoint("TOPLEFT", library, "TOPRIGHT", 7, 0)
-    titleButton:SetPoint("TOPRIGHT", -89, -8)
-    titleButton:SetHeight(22)
-    local title = titleButton:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    title:SetPoint("LEFT")
-    title:SetPoint("RIGHT")
-    title:SetJustifyH("LEFT")
-    titleButton:SetScript("OnClick", function() UI:ToggleGuideBrowser() end)
-    local close = CreatePlainButton(frame, 26, "×")
-    close:SetPoint("TOPRIGHT", -9, -8)
+
+    local close = UITheme.CreateCloseButton(frame)
+    UITheme.PlaceCloseButton(frame, close)
     close:SetScript("OnClick", function() UI:CloseTracker() end)
+
+    local library = (UITheme and UITheme.CreateCogButton)
+        and UITheme.CreateCogButton(frame, 18)
+        or CreateIconButton(frame, "Interface\\WorldMap\\Gear_64", "Open guide library")
+    library:SetPoint("TOPLEFT", frame, "TOPLEFT", 12, -1)
+    SetButtonTooltip(library, "Open guide library")
+    library:SetScript("OnClick", function() UI:ToggleGuideBrowser() end)
+    if library.SetFrameLevel and frame.GetFrameLevel then
+        local level = frame:GetFrameLevel()
+        if type(level) == "number" then library:SetFrameLevel(level + 10) end
+    end
+
     local percent = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     percent:SetPoint("RIGHT", close, "LEFT", -8, 0)
     percent:SetWidth(38)
     percent:SetJustifyH("RIGHT")
+
+    local titleButton = Create("Button", nil, frame)
+    titleButton:SetPoint("TOP", library, "TOP", 0, 0)
+    titleButton:SetPoint("BOTTOM", library, "BOTTOM", 0, 0)
+    titleButton:SetPoint("LEFT", library, "RIGHT", 6, 0)
+    titleButton:SetPoint("RIGHT", percent, "LEFT", -6, 0)
+    if titleButton.SetFrameLevel and frame.GetFrameLevel then
+        local level = frame:GetFrameLevel()
+        if type(level) == "number" then titleButton:SetFrameLevel(level + 5) end
+    end
+    titleButton:SetScript("OnClick", function() UI:ToggleGuideBrowser() end)
+
+    local title = titleButton:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("LEFT", 0, 0)
+    title:SetPoint("RIGHT", 0, 0)
+    title:SetJustifyH("LEFT")
+    if title.SetMaxLines then title:SetMaxLines(1) end
+
     local progress = CreateProgressBar(frame, 7)
-    progress:SetPoint("TOPLEFT", 10, -39)
-    progress:SetPoint("TOPRIGHT", -10, -39)
+    progress:SetPoint("TOPLEFT", 12, -28)
+    progress:SetPoint("TOPRIGHT", -12, -28)
+
     local typeLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    typeLabel:SetPoint("TOPLEFT", 27, -56)
+    typeLabel:SetPoint("TOPLEFT", 29, -44)
     local typeIcon = frame:CreateTexture(nil, "ARTWORK")
     typeIcon:SetSize(10, 10)
     typeIcon:SetPoint("RIGHT", typeLabel, "LEFT", -5, 0)
     SetSolidColor(typeIcon, 0.78, 0.58, 0.16, 1)
+
     local instruction = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    instruction:SetPoint("TOPLEFT", frame, "TOPLEFT", 11, -75)
-    instruction:SetPoint("RIGHT", -11, 0)
+    instruction:SetPoint("TOPLEFT", frame, "TOPLEFT", 12, -62)
+    instruction:SetPoint("RIGHT", -12, 0)
     instruction:SetHeight(42)
     instruction:SetJustifyH("LEFT")
     instruction:SetJustifyV("TOP")
     instruction:SetWordWrap(true)
+
     local nextStep = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     nextStep:SetPoint("TOPLEFT", instruction, "BOTTOMLEFT", 0, -4)
-    nextStep:SetPoint("RIGHT", -11, 0)
+    nextStep:SetPoint("RIGHT", -12, 0)
     nextStep:SetHeight(28)
     nextStep:SetJustifyH("LEFT")
     nextStep:SetJustifyV("TOP")
     nextStep:SetWordWrap(true)
+
     local status = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    status:SetPoint("BOTTOMLEFT", 11, 11)
+    status:SetPoint("BOTTOMLEFT", 12, 11)
     status:SetWidth(112)
     status:SetJustifyH("LEFT")
-    local previous = CreateIconButton(frame, "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up", "Back")
+
+    local previous = CreateIconButton(frame, NAV_PREV_ICON, "Back")
     previous:SetPoint("BOTTOMRIGHT", -73, 7)
     previous:SetScript("OnClick", function() ns.Engine:Previous() end)
-    local sync = CreatePlainButton(frame, 38, "Sync")
+
+    local sync = CreateIconButton(frame, SYNC_ICON, "Resync guide from your quest log and completed quests")
     sync:SetPoint("RIGHT", previous, "LEFT", -4, 0)
-    SetButtonTooltip(sync, "Resync guide from your quest log and completed quests")
     sync:SetScript("OnClick", function() ns.Engine:ResyncCurrent() end)
-    local skip = CreateIconButton(frame, "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up", "Skip for now")
+
+    local skip = CreateIconButton(frame, NAV_NEXT_ICON, "Skip for now")
     skip:SetPoint("LEFT", previous, "RIGHT", 4, 0)
     skip:SetScript("OnClick", function() ns.Engine:SkipCurrent() end)
+
     local complete = CreateIconButton(frame, "Interface\\Buttons\\UI-CheckBox-Check", "Mark complete")
     complete:SetPoint("LEFT", skip, "RIGHT", 4, 0)
     complete:SetScript("OnClick", function() ns.Engine:CompleteCurrent() end)
-    frame.title, frame.percent, frame.progress = title, percent, progress
+
+    frame.library, frame.title, frame.percent, frame.progress = library, title, percent, progress
     frame.typeIcon, frame.typeLabel = typeIcon, typeLabel
     frame.instruction, frame.nextStep, frame.status, frame.sync = instruction, nextStep, status, sync
     self.tracker = frame
@@ -353,7 +397,7 @@ function UI:ResizeTracker()
     local nextHeight = self.tracker.nextStep:GetText() ~= ""
         and MeasuredTextHeight(self.tracker.nextStep, 18, 96) or 0
     self.tracker.nextStep:SetHeight(nextHeight)
-    self.tracker:SetHeight(math.max(178, 126 + instructionHeight + nextHeight))
+    self.tracker:SetHeight(math.max(172, 114 + instructionHeight + nextHeight))
     ClampAndSave(self.tracker, ns.db.tracker, TRACKER_DEFAULTS)
 end
 
@@ -579,47 +623,56 @@ function ns.LibraryEntries(state, query, category, hideIneligible)
 end
 
 function UI:CreateGuideBrowser()
-    local frame = Create("Frame", "ForeverGuideMateBrowser", UIParent)
+    local frame = UITheme.CreatePanel(UIParent, "ForeverGuideMateBrowser", {
+        variant = "panel",
+        topInset = 40,
+    })
+    local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("TOP", 0, -8)
+    title:SetText("Guide Library")
+    frame.panelTitle = title
     frame:SetSize(560, 370)
     frame:SetFrameStrata("DIALOG")
-    AddPanelBackground(frame, 0.97)
     ConfigureMovement(frame, ns.db.browser, BROWSER_DEFAULTS)
-    local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    title:SetPoint("TOPLEFT", 14, -14)
-    title:SetText("Guide Library")
-    local close = CreatePlainButton(frame, 26, "×")
-    close:SetPoint("TOPRIGHT", -12, -10)
+    local close = UITheme.CreateCloseButton(frame)
+    UITheme.PlaceCloseButton(frame, close)
     close:SetScript("OnClick", function() frame:Hide() end)
-    local hideIneligibleLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    local hideIneligible = Create("CheckButton", nil, frame, "UICheckButtonTemplate")
+    hideIneligible:SetSize(24, 24)
+    local hideIneligibleLabel = hideIneligible.Text
+    if not hideIneligibleLabel or not hideIneligibleLabel.SetText then
+        hideIneligibleLabel = hideIneligible:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    end
     hideIneligibleLabel:SetText("Hide Ineligible")
-    hideIneligibleLabel:SetPoint("RIGHT", close, "LEFT", -10, 0)
-    local hideIneligible = Create("CheckButton", nil, frame)
-    hideIneligible:SetSize(16, 16)
+    hideIneligibleLabel:SetJustifyH("RIGHT")
+    if hideIneligibleLabel.SetFontObject then
+        hideIneligibleLabel:SetFontObject(GameFontNormal)
+    end
+    if hideIneligibleLabel.SetTextColor then
+        hideIneligibleLabel:SetTextColor(1, 0.82, 0, 1)
+    end
+    hideIneligibleLabel:ClearAllPoints()
+    hideIneligibleLabel:SetPoint("RIGHT", close, "LEFT", -12, -2)
     hideIneligible:SetPoint("RIGHT", hideIneligibleLabel, "LEFT", -6, 0)
-    local hideBox = hideIneligible:CreateTexture(nil, "BACKGROUND")
-    hideBox:SetAllPoints()
-    SetSolidColor(hideBox, 0.09, 0.12, 0.16, 0.9)
-    local hideMark = hideIneligible:CreateTexture(nil, "ARTWORK")
-    hideMark:SetPoint("TOPLEFT", 3, -3)
-    hideMark:SetPoint("BOTTOMRIGHT", -3, 3)
-    SetSolidColor(hideMark, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
-    hideIneligible.mark = hideMark
-    local function SyncHideIneligible()
-        local hidden = ns.db.browser.hideIneligible == true
-        hideIneligible:SetChecked(hidden)
-        hideMark:SetShown(hidden)
+    if hideIneligible.SetFrameLevel and frame.GetFrameLevel then
+        local level = frame:GetFrameLevel()
+        if type(level) == "number" then
+            hideIneligible:SetFrameLevel(level + 25)
+        end
     end
     hideIneligible:SetScript("OnClick", function(self)
         ns.db.browser.hideIneligible = not not self:GetChecked()
-        SyncHideIneligible()
         UI.browserPage = 1
         UI:RefreshGuideBrowser()
     end)
+    local function SyncHideIneligible()
+        hideIneligible:SetChecked(ns.db.browser.hideIneligible == true)
+    end
     hideIneligible:SetScript("OnShow", SyncHideIneligible)
     SyncHideIneligible()
     local search = Create("EditBox", nil, frame, "InputBoxTemplate")
     search:SetHeight(24)
-    search:SetPoint("TOPLEFT", 174, -42)
+    search:SetPoint("TOPLEFT", BROWSER_CONTENT_LEFT, -42)
     search:SetPoint("TOPRIGHT", -14, -42)
     search:SetAutoFocus(false)
     search:SetTextInsets(8, 8, 0, 0)
@@ -628,8 +681,8 @@ function UI:CreateGuideBrowser()
     categoryTitle:SetPoint("TOPLEFT", 16, -52)
     categoryTitle:SetText("CATEGORIES")
     local separator = frame:CreateTexture(nil, "ARTWORK")
-    separator:SetPoint("TOPLEFT", 160, -42)
-    separator:SetPoint("BOTTOMLEFT", 160, 14)
+    separator:SetPoint("TOPLEFT", BROWSER_SIDEBAR_RIGHT, -42)
+    separator:SetPoint("BOTTOMLEFT", BROWSER_SIDEBAR_RIGHT, 14)
     separator:SetWidth(1)
     SetSolidColor(separator, 0.2, 0.25, 0.3, 0.7)
     local empty = frame:CreateFontString(nil, "OVERLAY", "GameFontDisable")
@@ -637,19 +690,19 @@ function UI:CreateGuideBrowser()
     empty:SetText("No guides match this search.")
     empty:Hide()
     local resultCount = frame:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
-    resultCount:SetPoint("BOTTOMLEFT", 174, 17)
-    local previousPage = CreatePlainButton(frame, 28, "‹")
-    previousPage:SetPoint("BOTTOMRIGHT", -86, 10)
+    resultCount:SetPoint("BOTTOMLEFT", BROWSER_CONTENT_LEFT, 17)
+    local previousPage = CreateIconButton(frame, NAV_PREV_ICON, "Previous page")
+    previousPage:SetPoint("BOTTOMRIGHT", -92, 10)
     previousPage:SetScript("OnClick", function()
         UI.browserPage = math.max(1, UI.browserPage - 1)
         UI:RefreshGuideBrowser()
     end)
     local page = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    page:SetPoint("LEFT", previousPage, "RIGHT", 7, 0)
+    page:SetPoint("LEFT", previousPage, "RIGHT", 6, 0)
     page:SetWidth(34)
     page:SetJustifyH("CENTER")
-    local nextPage = CreatePlainButton(frame, 28, "›")
-    nextPage:SetPoint("LEFT", page, "RIGHT", 7, 0)
+    local nextPage = CreateIconButton(frame, NAV_NEXT_ICON, "Next page")
+    nextPage:SetPoint("LEFT", page, "RIGHT", 6, 0)
     nextPage:SetScript("OnClick", function()
         UI.browserPage = UI.browserPage + 1
         UI:RefreshGuideBrowser()
@@ -664,56 +717,112 @@ end
 function UI:CreateBrowserRow(index)
     local row = Create("Frame", nil, self.browser)
     row:SetSize(374, 78)
-    row:SetPoint("TOPLEFT", 172, -76 - ((index - 1) * 84))
-    local background = row:CreateTexture(nil, "BACKGROUND")
-    background:SetAllPoints()
-    SetSolidColor(background, 0.045, 0.065, 0.09, 0.8)
+    row:SetPoint("TOPLEFT", BROWSER_CONTENT_LEFT - 2, -76 - ((index - 1) * 84))
+    if UITheme and UITheme.ApplyListRow then UITheme.ApplyListRow(row, false) end
+    if row.EnableMouse then row:EnableMouse(true) end
+    if row.RegisterForClicks then row:RegisterForClicks("LeftButtonUp") end
+    row:SetScript("OnEnter", function(self)
+        if UITheme and UITheme.SetListRowHover then UITheme.SetListRowHover(self, true) end
+        if SetCursor then SetCursor("Interface\\CURSOR\\Point") end
+        local tip = rawget(self, "libraryTooltip")
+        if tip and GameTooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+            GameTooltip:SetText(tip)
+            GameTooltip:Show()
+        end
+    end)
+    row:SetScript("OnLeave", function(self)
+        if UITheme and UITheme.SetListRowHover then UITheme.SetListRowHover(self, false) end
+        if SetCursor then SetCursor(nil) end
+        if GameTooltip then GameTooltip:Hide() end
+    end)
     local title = row:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     title:SetPoint("TOPLEFT", 10, -9)
-    title:SetPoint("RIGHT", -86, 0)
+    title:SetPoint("RIGHT", -10, 0)
     title:SetJustifyH("LEFT")
     local eligibility = row:CreateFontString(nil, "OVERLAY", "GameFontDisableSmall")
     eligibility:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -5)
+    eligibility:SetPoint("RIGHT", -10, 0)
+    eligibility:SetJustifyH("LEFT")
+    eligibility:SetJustifyV("TOP")
     local counts = row:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     counts:SetPoint("TOPRIGHT", -10, -10)
     counts:SetJustifyH("RIGHT")
     local progress = CreateProgressBar(row, 7)
     progress:SetPoint("BOTTOMLEFT", 10, 12)
-    progress:SetPoint("RIGHT", -92, 0)
-    local open = CreatePlainButton(row, 70, "Open")
-    open:SetPoint("BOTTOMRIGHT", -10, 5)
+    progress:SetPoint("RIGHT", -10, 0)
     local divider = row:CreateTexture(nil, "ARTWORK")
     divider:SetPoint("TOPLEFT", row, "BOTTOMLEFT", 0, -3)
     divider:SetPoint("TOPRIGHT", row, "BOTTOMRIGHT", 0, -3)
     divider:SetHeight(1)
     SetSolidColor(divider, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
     divider:Hide()
-    row.title, row.eligibility, row.counts, row.progress, row.open, row.divider = title, eligibility, counts, progress, open, divider
+    row.title, row.eligibility, row.counts, row.progress, row.divider = title, eligibility, counts, progress, divider
     self.browserRows[index] = row
     return row
 end
 
-function UI:CreateBrowserCategory(index, name)
-    local button = self.browserCategoryButtons[index] or CreatePlainButton(self.browser, 132, "")
-    if not rawget(button, "selectionBorder") then
-        local border = {}
-        local function Edge(point, relativePoint, width, height, x, y)
-            local texture = button:CreateTexture(nil, "BORDER")
-            texture:SetPoint(point, button, relativePoint, x, y)
-            texture:SetSize(width, height)
-            SetSolidColor(texture, GOLD_BORDER[1], GOLD_BORDER[2], GOLD_BORDER[3], GOLD_BORDER[4])
-            texture:Hide()
-            border[#border + 1] = texture
-        end
-        Edge("TOPLEFT", "TOPLEFT", 132, 1, 0, 0)
-        Edge("BOTTOMLEFT", "BOTTOMLEFT", 132, 1, 0, 0)
-        Edge("TOPLEFT", "TOPLEFT", 1, 22, 0, 0)
-        Edge("TOPRIGHT", "TOPRIGHT", 1, 22, 0, 0)
-        button.selectionBorder = border
+local function PaintCategoryButton(button)
+    local selected = rawget(button, "categorySelected") == true
+    local displayText = rawget(button, "categoryDisplayText") or ""
+    if button.SetText then button:SetText(displayText) end
+    local fontString = button.GetFontString and button:GetFontString()
+    if not fontString and button.label and button.label.SetText then
+        fontString = button.label
     end
+    if fontString then
+        if fontString.SetFontObject then fontString:SetFontObject(GameFontHighlightSmall) end
+        if fontString.SetTextColor then
+            local hover = rawget(button, "categoryHover") == true
+            if selected then
+                if hover then
+                    fontString:SetTextColor(1, 0.92, 0.45, 1)
+                else
+                    fontString:SetTextColor(1, 0.82, 0, 1)
+                end
+            elseif hover then
+                fontString:SetTextColor(1, 1, 1, 1)
+            else
+                fontString:SetTextColor(0.78, 0.78, 0.78, 1)
+            end
+        end
+    end
+    local highlight = rawget(button, "categoryHighlight")
+    if highlight and highlight.SetAlpha then
+        local hover = rawget(button, "categoryHover") == true
+        if selected then
+            highlight:SetAlpha(hover and 0.5 or 0.38)
+        elseif hover then
+            highlight:SetAlpha(0.35)
+        else
+            highlight:SetAlpha(0)
+        end
+    end
+end
+
+local function ApplyCategoryAppearance(button, selected, displayText)
+    rawset(button, "categorySelected", selected == true)
+    rawset(button, "categoryDisplayText", displayText or "")
+    PaintCategoryButton(button)
+end
+
+function UI:CreateBrowserCategory(index, name)
+    local button = self.browserCategoryButtons[index]
+    if not button and UITheme and UITheme.CreateCategoryListButton then
+        button = UITheme.CreateCategoryListButton(self.browser, CATEGORY_BUTTON_WIDTH)
+        button:SetScript("OnEnter", function(self)
+            rawset(self, "categoryHover", true)
+            PaintCategoryButton(self)
+        end)
+        button:SetScript("OnLeave", function(self)
+            rawset(self, "categoryHover", false)
+            PaintCategoryButton(self)
+        end)
+    end
+    button = button or CreatePlainButton(self.browser, CATEGORY_BUTTON_WIDTH, "", true)
     button:ClearAllPoints()
     button:SetPoint("TOPLEFT", 14, -70 - ((index - 1) * 28))
-    button:SetText(name)
+    button:SetText(CategoryDisplayName(name))
     button:SetScript("OnClick", function()
         UI.browserCategory = name
         UI.browserPage = 1
@@ -722,10 +831,6 @@ function UI:CreateBrowserCategory(index, name)
     button:Show()
     self.browserCategoryButtons[index] = button
     return button
-end
-
-local function SetCategorySelected(button, selected)
-    for _, texture in ipairs(rawget(button, "selectionBorder") or {}) do texture:SetShown(selected) end
 end
 
 function UI:RefreshGuideBrowser()
@@ -740,12 +845,11 @@ function UI:RefreshGuideBrowser()
     end
     table.sort(categories)
     local allGuides = self:CreateBrowserCategory(1, "All Guides")
-    allGuides:SetText(self.browserCategory == "All Guides" and "› All Guides" or "All Guides")
-    SetCategorySelected(allGuides, self.browserCategory == "All Guides")
+    ApplyCategoryAppearance(allGuides, self.browserCategory == "All Guides", "All Guides")
     for index, category in ipairs(categories) do
         local button = self:CreateBrowserCategory(index + 1, category)
-        button:SetText(self.browserCategory == category and ("› " .. category) or category)
-        SetCategorySelected(button, self.browserCategory == category)
+        local displayName = CategoryDisplayName(category)
+        ApplyCategoryAppearance(button, self.browserCategory == category, displayName)
     end
     for index = #categories + 2, #self.browserCategoryButtons do self.browserCategoryButtons[index]:Hide() end
 
@@ -772,22 +876,14 @@ function UI:RefreshGuideBrowser()
             end
             row.counts:SetText(("%d/%d  %d%%"):format(progress.completed, progress.eligible, progress.percentage))
             row.progress:SetValue(progress.percentage)
-            local onThisRow = ns.charDB.selectedGuide == guide.id
-                and (not segment or (ns.Engine.currentSegment and ns.Engine.currentSegment.id == segment.id))
-            row.open:SetText(onThisRow and "Continue" or "Open")
             local selectedGuideID = guide.id
             local chosenSegment = segment
-            row.open:SetScript("OnClick", function()
-                if chosenSegment then
-                    ns.charDB.eraChapterPick = chosenSegment.id
-                    if chosenSegment.fork then
-                        ns.charDB.eraSegment = chosenSegment.id
-                    end
-                    ns.charDB.eraFloor = chosenSegment.id
+            local rowTitle = entry.title or guide.title or ""
+            rawset(row, "libraryTooltip", rowTitle)
+            row:SetScript("OnMouseUp", function(_, mouseButton)
+                if mouseButton == "LeftButton" then
+                    OpenLibraryEntry(selectedGuideID, chosenSegment)
                 end
-                ns.Engine:SelectGuide(selectedGuideID)
-                UI:OpenTracker()
-                UI.browser:Hide()
             end)
             row.divider:SetShown(matchIndex < math.min(self.browserPage * pageSize, #matches))
             row:Show()
@@ -1093,9 +1189,15 @@ end
 
 function UI:ApplySettings()
     ns.db.guideScale = UI.NormalizeGuideScale(ns.db.guideScale)
+    ns.db.guideOpacity = UI.NormalizeGuideOpacity(ns.db.guideOpacity)
     ns.db.tracker.scale = ns.db.guideScale
+    local opacity = ns.db.guideOpacity
     ApplyPlacement(self.tracker, ns.db.tracker, TRACKER_DEFAULTS)
-    if self.browser then ApplyPlacement(self.browser, ns.db.browser, BROWSER_DEFAULTS) end
+    if self.tracker and self.tracker.SetAlpha then self.tracker:SetAlpha(opacity) end
+    if self.browser then
+        ApplyPlacement(self.browser, ns.db.browser, BROWSER_DEFAULTS)
+        if self.browser.SetAlpha then self.browser:SetAlpha(opacity) end
+    end
     if ns.db.uiOpen and ns.db.tracker.enabled and not UI.HideGuideForCombat() then
         self.tracker:Show()
     else
@@ -1127,6 +1229,9 @@ end
 function UI:RegisterSettings()
     local panel = Create("Frame", "ForeverGuideMateSettingsPanel")
     panel.name = "Forever GuideMate"
+    if panel.SetSize then
+        panel:SetSize(420, 520)
+    end
     local title = panel:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     title:SetPoint("TOPLEFT", 16, -16)
     title:SetText("Forever GuideMate")
@@ -1165,9 +1270,17 @@ function UI:RegisterSettings()
         function() return math.floor(UI.NormalizeGuideScale(ns.db.guideScale) * 100 + 0.5) end,
         function(value) ns.db.guideScale = value / 100 end,
         function(value) return value .. "%" end)
-    guideScale:SetPoint("TOPLEFT", hideInCombat, "BOTTOMLEFT", -2, -24)
+    guideScale:SetPoint("TOPLEFT", hideInCombat, "BOTTOMLEFT", 0, -28)
+    local guideOpacity = CreateSlider(panel, "Guide opacity", 50, 100, OPACITY_STEP,
+        function() return UI.GuideOpacityPercent() end,
+        function(value)
+            ns.db.guideOpacity = value / 100
+            UI:ApplySettings()
+        end,
+        function(value) return value .. "%" end)
+    guideOpacity:SetPoint("TOPLEFT", guideScale, "BOTTOMLEFT", 0, -36)
     local heading = panel:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    heading:SetPoint("TOPLEFT", guideScale, "BOTTOMLEFT", 6, -20)
+    heading:SetPoint("TOPLEFT", guideOpacity, "BOTTOMLEFT", 6, -20)
     heading:SetText("Navigation")
     local providerLabel = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     providerLabel:SetPoint("TOPLEFT", heading, "BOTTOMLEFT", 0, -8)

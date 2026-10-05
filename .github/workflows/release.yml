@@ -86,7 +86,7 @@ jobs:
             exit 0
           fi
           GUIDE_CONTENT_CHANGED=false
-          if ! git diff --quiet "$BEFORE_SHA" "$GITHUB_SHA" -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml MinimapButton.lua UI.lua ForeverGuideMate.toc; then
+          if ! git diff --quiet "$BEFORE_SHA" "$GITHUB_SHA" -- Guides Core.lua PlayerState.lua Travel.lua Taxi.lua GuideEngine.lua QuestAudit.lua QuestDialog.lua Navigation.lua TomTomWaypoints.lua MapPins.lua MapPins.xml MinimapButton.lua UITheme.lua UI.lua ForeverGuideMate.toc; then
             GUIDE_CONTENT_CHANGED=true
           fi
           PREVIOUS_INTERFACE="$(git show "${BEFORE_SHA}:ForeverGuideMate.toc" | sed -n 's/^## Interface: //p')"

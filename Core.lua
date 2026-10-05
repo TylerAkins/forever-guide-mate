@@ -6,12 +6,13 @@ ns.guides = ns.guides or {}
 ns.guideOrder = ns.guideOrder or {}
 
 local ACCOUNT_DEFAULTS = {
-    schemaVersion = 4,
+    schemaVersion = 5,
     uiOpen = true,
     showMinimapButton = true,
     hideInCombat = false,
     waypointProvider = "blizzard",
     guideScale = 1,
+    guideOpacity = 1,
     tracker = {
         enabled = true, locked = false, scale = 1,
         point = "LEFT", relativePoint = "LEFT", x = 0, y = 0,
@@ -84,6 +85,12 @@ local function MigrateStorage(account, character)
             account.guideScale = type(tracker.scale) == "number" and tracker.scale or 1
         end
         account.schemaVersion = 4
+    end
+    if (tonumber(account.schemaVersion) or 1) < 5 then
+        if type(account.guideOpacity) ~= "number" or account.guideOpacity < 0.5 or account.guideOpacity > 1 then
+            account.guideOpacity = 1
+        end
+        account.schemaVersion = 5
     end
     if (tonumber(character.schemaVersion) or 1) < 2 then
         character.deferred = type(character.skipped) == "table" and character.skipped or {}
