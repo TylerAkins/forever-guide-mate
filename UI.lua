@@ -145,6 +145,7 @@ local function CategoryDisplayName(category)
     if category == "Dungeon Quest Guides" then return "Dungeon Quests" end
     if category == "Leveling Quest Guides" then return "Leveling Quests" end
     if category == "Loremaster Guides" then return "Loremaster" end
+    if category == "Miscellaneous Guides" then return "Miscellaneous" end
     return category
 end
 
@@ -425,6 +426,7 @@ local function GuideTypeLabel(guide)
     if category == "Loremaster Guides" then return "Loremaster" end
     if category == "Class Quests" then return "Class" end
     if category == "Raid Quests" then return "Raid" end
+    if category == "Miscellaneous Guides" then return "Miscellaneous" end
     local label = category:match("^(.-) Quest Guides$")
     if label and label ~= "" then return label end
     return nil

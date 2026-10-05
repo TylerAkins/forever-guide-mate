@@ -15,7 +15,7 @@ local function NewRegion(parent)
     local methods = {}
     function methods:SetPoint(...) self.points[#self.points + 1] = { ... } end
     function methods:ClearAllPoints() self.points = {} end
-    function methods:GetPoint() local point = self.points[1] or {}; return unpack(point) end
+    function methods:GetPoint() local point = self.points[1] or {}; return (table.unpack or unpack)(point) end
     function methods:SetText(value) self.text = value end
     function methods:GetText() return self.text end
     function methods:Show() self.shown = true end
@@ -610,6 +610,33 @@ for index = 1, #ns.UI.browserCategoryButtons do
     if button.shown and button.label.text == "Raid Quests" then sawRaidCategory = true end
 end
 Check(sawRaidCategory, "the library lists Raid Quests as its own category")
+
+ns:RegisterGuide({
+    id = "misc-category-probe",
+    title = "Library Books",
+    category = "Miscellaneous Guides",
+    revision = 1,
+    conditions = {
+        all = {
+            { level = { min = 1 } },
+            { any = { { faction = "Alliance" }, { faction = "Horde" } } },
+        },
+    },
+    goals = { { id = "misc-step", kind = "note", text = "Misc step" } },
+})
+ns.UI.browserCategory = "Miscellaneous Guides"
+ns.UI.browserPage = 1
+ns.UI.browser.search:SetText("library books")
+ns.Engine.state = { faction = "Horde", level = 10 }
+ns.UI:RefreshGuideBrowser()
+Equal(GuideRow("Library Books").eligibility.text, "Miscellaneous  •  Eligible  •  Alliance and Horde  •  Level 1+",
+    "library books uses the Miscellaneous tag")
+local sawMiscCategory = false
+for index = 1, #ns.UI.browserCategoryButtons do
+    local button = ns.UI.browserCategoryButtons[index]
+    if button.shown and button.label.text == "Miscellaneous" then sawMiscCategory = true end
+end
+Check(sawMiscCategory, "the library lists Miscellaneous as its own category")
 
 do
     ns.Engine.currentGoal = {
