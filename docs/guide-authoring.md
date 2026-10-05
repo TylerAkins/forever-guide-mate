@@ -1,6 +1,10 @@
 # Guide authoring
 
-Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, and `Guides/Class/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class quests are a supported guide type. Class guides use `category = "Class Quests"`.
+Rules for `Guides/Leveling/`, `Guides/Loremaster/`, `Guides/Dungeons/`, `Guides/Class/`, and `Guides/Miscellaneous/`. The engine tests in `tests/lua/run.lua` cover behaviour; `tests/lua/lint.lua` catches common data mistakes. Class quests are a supported guide type. Class guides use `category = "Class Quests"`. Collection guides such as library books use `category = "Miscellaneous Guides"`; the library label is **Miscellaneous**.
+
+## Miscellaneous guides
+
+Guides in `Guides/Miscellaneous/` cover optional world collection routes that are not zone leveling chapters. Use `category = "Miscellaneous Guides"`. Book pickup steps are usually `kind = "note"` with map pins; use `complete = QuestState(questID, "completed")` when the Forever turn-in quest id is verified, otherwise omit `complete` so the player marks the step with the tracker **Complete** button (stored in the completion ledger). Milestone reward quests use normal accept and turn-in steps with `dependsOn` on the book step that matches the collection tier in the authored order, not empty `dependsOn` on the accept.
 
 ## Class quests
 
