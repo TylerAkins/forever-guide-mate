@@ -212,6 +212,7 @@ class ContractTests(unittest.TestCase):
                 "Guides/Class/Mage.lua",
                 "Guides/Class/Warlock.lua",
                 "Guides/Class/Druid.lua",
+                "Guides/Miscellaneous/LibraryBooks.lua",
             ],
         )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
@@ -229,6 +230,20 @@ class ContractTests(unittest.TestCase):
         self.assertIn("function ns:RegisterGuide(guide)", engine)
         self.assertIn('id = "dungeons-ragefire-chasm-horde"', guide)
         self.assertIn('category = "Dungeon Quest Guides"', guide)
+
+    def test_library_books_guide_registers_miscellaneous_category(self) -> None:
+        guide = (ROOT / "Guides/Miscellaneous/LibraryBooks.lua").read_text(encoding="utf-8")
+        self.assertIn('id = "misc-library-books"', guide)
+        self.assertIn('category = "Miscellaneous Guides"', guide)
+        self.assertIn("QuestState(78150,", guide)
+        self.assertIn("QuestState(79536,", guide)
+        self.assertIn("QuestState(82208,", guide)
+        self.assertIn('dependsOn = { "book-baxtan-destructive-magics" }', guide)
+        self.assertIn('dependsOn = { "book-conjurers-codex" }', guide)
+        self.assertIn('dependsOn = { "book-scourge-misunderstood" }', guide)
+        self.assertGreaterEqual(guide.count('kind = "note"'), 35)
+        ui = (ROOT / "UI.lua").read_text(encoding="utf-8")
+        self.assertIn('category == "Miscellaneous Guides"', ui)
 
     def test_version_and_packaging_contract(self) -> None:
         version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()

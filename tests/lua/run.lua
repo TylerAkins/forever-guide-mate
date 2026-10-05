@@ -86,6 +86,7 @@ Load("Guides/Class/Shaman.lua")
 Load("Guides/Class/Mage.lua")
 Load("Guides/Class/Warlock.lua")
 Load("Guides/Class/Druid.lua")
+Load("Guides/Miscellaneous/LibraryBooks.lua")
 
 local baseState = {
     faction = "Horde",

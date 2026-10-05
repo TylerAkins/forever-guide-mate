@@ -1,8 +1,3 @@
-## 0.2.0 - 2026-10-05
+## 0.2.1 - 2026-10-05
 
-- Restyle the guide tracker and library with Blizzard NineSlice panel chrome instead of flat dark overlays.
-- Add guide opacity in settings (50% to 100%, default 100%).
-- Tracker title bar: library cog, guide title, progress percent, and close control on one baseline.
-- Guide library: open guides on row click, Hide Ineligible in the title bar, hover highlights on categories and rows.
-- Panel backgrounds use NineSlice insets so fill stays inside the frame without bleed or edge gaps.
-- Settings sliders have clearer spacing between scale and opacity.
+- Add a **Miscellaneous** guide category and a **Library Books** collection guide with map pins for Forever library books, manual pickup steps where needed, and milestone reward quests at 10, 20, and 25 books.

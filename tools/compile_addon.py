@@ -107,6 +107,7 @@ SHIPPED = (
     "Guides/Class/Mage.lua",
     "Guides/Class/Warlock.lua",
     "Guides/Class/Druid.lua",
+    "Guides/Miscellaneous/LibraryBooks.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
