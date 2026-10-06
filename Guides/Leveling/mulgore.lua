@@ -450,7 +450,6 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 290,
             text = "Collect Dirt-Stained Map from Dirt-Stained Map on the ground.",
-            dependsOn = { "accept-781-attack-on-camp-narache" },
             complete = QuestState(781, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.6326, 0.8263, "Dirt-Stained Map",
@@ -461,6 +460,7 @@ ns:RegisterGuide({
             id = "accept-781-attack-on-camp-narache",
             kind = "accept",
             priority = 300,
+            dependsOn = { "objective-781-dirt-stained-map" },
             text = "Use the Dirt-Stained Map to accept Attack on Camp Narache.",
             complete = QuestState(781, "activeOrCompleted"),
             route = {

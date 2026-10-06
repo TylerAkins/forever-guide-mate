@@ -1,3 +1,4 @@
-## 0.2.2 - 2026-10-06
+## 0.2.3 - 2026-10-06
 
-- Quest audit no longer blocks an accept step after you already picked up the quest. It reads the live quest log on gossip and clears a stale “not offered” report when the quest is in your log.
+- Remove the optional Washte Pawne rare hunt from **The Barrens (Part 3)** so the route no longer detours for quest 885.
+- Fix inverted item-start quest chains (loot/kill before “Use the … to accept”) in Thousand Needles **Assassination Plot**, Durotar, Mulgore, Silverpine, Darkshore, Westfall, and matching Era chapters. Guide lint now fails if a starter-item objective depends on its use-item accept.

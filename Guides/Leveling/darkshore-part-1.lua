@@ -79,7 +79,6 @@ ns:RegisterGuide({
                 },
             },
             text = "Speak to Duthorian Rall and collect Tome of Divinity to begin quest.",
-            dependsOn = { "accept-1642-the-tome-of-divinity" },
             complete = QuestState(1642, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWIND, 0.3983, 0.2982, "Duthorian Rall",
@@ -90,6 +89,7 @@ ns:RegisterGuide({
             id = "accept-1642-the-tome-of-divinity",
             kind = "accept",
             priority = 30,
+            dependsOn = { "objective-1642-tome-of-divinity" },
             conditions = {
                 all = {
                     { level = { min = 12 } },
@@ -466,7 +466,6 @@ ns:RegisterGuide({
                 },
             },
             text = "Speak to Tiza Battleforge and collect Tome of Divinity to begin quest.",
-            dependsOn = { "accept-1646-the-tome-of-divinity" },
             complete = QuestState(1646, "activeOrCompleted"),
             route = {
                 Point(MAP.IRONFORGE, 0.2763, 0.1225, "Tiza Battleforge",
@@ -477,6 +476,7 @@ ns:RegisterGuide({
             id = "accept-1646-the-tome-of-divinity",
             kind = "accept",
             priority = 260,
+            dependsOn = { "objective-1646-tome-of-divinity" },
             conditions = {
                 all = {
                     { level = { min = 12 } },
