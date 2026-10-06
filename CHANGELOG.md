@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.2.5 - 2026-10-06
+
+- Add a Horde **City of Dalaran Attunement** dungeon guide for the Dalaran Sewer Key chain (Prison Break In, Key to the City, Dalaran Patrols, Blood in the Streets, Heart of Disruption).
+
 ## 0.2.4 - 2026-10-06
 
 - Align Forever quest prerequisites with wow-database: Deliver the Signet waits on both Havoc in the Highlands and A Last Request; Journey to the Crossroads waits on Welcome to Azeroth for Horde Skyborne.
