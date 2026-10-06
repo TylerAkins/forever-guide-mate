@@ -78,6 +78,13 @@ def mask_ids(mask, allowed: set[int]) -> list[int]:
     return [bit for bit in allowed if mask & (1 << (bit - 1))]
 
 
+def id_list(value, allowed: set[int]) -> list[int]:
+    """Accept schema v2 id arrays or legacy Questie bitmasks."""
+    if isinstance(value, list):
+        return sorted({int(item) for item in value if isinstance(item, int) and item in allowed})
+    return mask_ids(value, allowed)
+
+
 def requirement_from_record(record: dict | None) -> Requirement | None:
     """Map allOf/preQuestGroup to all and anyOf/preQuestSingle to any.
 
@@ -88,8 +95,16 @@ def requirement_from_record(record: dict | None) -> Requirement | None:
     detail = record.get("detail") if isinstance(record.get("detail"), dict) else {}
     requirements = detail.get("requirements") if isinstance(detail.get("requirements"), dict) else {}
     fields = questie_fields(record) or {}
-    all_of = _ints(requirements.get("allOf")) or _ints(fields.get("preQuestGroup"))
-    any_of = _ints(requirements.get("anyOf")) or _ints(fields.get("preQuestSingle"))
+    all_of = (
+        _ints(requirements.get("allOf"))
+        or _ints(fields.get("preQuestGroup"))
+        or _ints(record.get("preQuestGroup"))
+    )
+    any_of = (
+        _ints(requirements.get("anyOf"))
+        or _ints(fields.get("preQuestSingle"))
+        or _ints(record.get("preQuestSingle"))
+    )
     if all_of and any_of:
         return Requirement("mixed", sorted(set(all_of + any_of)))
     if all_of:
@@ -106,46 +121,144 @@ def catalog_quest(quest_id: int, record: dict | None) -> CatalogQuest:
     if isinstance(record, dict):
         detail = record.get("detail") if isinstance(record.get("detail"), dict) else {}
         listed = record.get("list") if isinstance(record.get("list"), dict) else {}
+        if not fields:
+            fields = record
     requirements = detail.get("requirements") if isinstance(detail.get("requirements"), dict) else {}
-    exclusive = _ints(requirements.get("exclusiveTo")) or _ints(fields.get("exclusiveTo"))
-    breadcrumbs = _ints(requirements.get("breadcrumbs")) or _ints(fields.get("breadcrumbs"))
+    exclusive = (
+        _ints(requirements.get("exclusiveTo"))
+        or _ints(fields.get("exclusiveTo"))
+        or _ints(record.get("exclusiveTo") if isinstance(record, dict) else None)
+    )
+    breadcrumbs = (
+        _ints(requirements.get("breadcrumbs"))
+        or _ints(fields.get("breadcrumbs"))
+        or _ints(record.get("breadcrumbs") if isinstance(record, dict) else None)
+    )
     breadcrumb_for = positive_level(fields.get("breadcrumbForQuestId"))
+    if not breadcrumb_for and isinstance(record, dict):
+        breadcrumb_for = positive_level(record.get("breadcrumbForQuestId"))
     if breadcrumb_for and breadcrumb_for not in breadcrumbs:
         breadcrumbs.append(breadcrumb_for)
-    next_quest = positive_level(requirements.get("nextQuestInChain")) or positive_level(fields.get("nextQuestInChain"))
+    next_quest = (
+        positive_level(requirements.get("nextQuestInChain"))
+        or positive_level(fields.get("nextQuestInChain"))
+        or positive_level(record.get("nextQuestInChain") if isinstance(record, dict) else None)
+    )
     skill = fields.get("requiredSkill")
+    if skill is None and isinstance(record, dict):
+        skill = record.get("requiredSkill")
     skills = []
     if isinstance(skill, list) and skill and isinstance(skill[0], int) and skill[0] > 0:
         skills = [skill[0]]
     elif isinstance(skill, int) and skill > 0:
         skills = [skill]
     patch = listed.get("firstseenpatch") if isinstance(listed, dict) else None
+    if patch is None and isinstance(record, dict):
+        patch = record.get("firstseenpatch")
+    # Schema v2 Forever exports omit firstseenpatch. Forever-added quest ids sit
+    # in the high 90k range in the current QuestieDB cut.
+    forever = patch == FOREVER_PATCH or quest_id >= 90000
     name = ""
     if isinstance(listed, dict) and isinstance(listed.get("name"), str):
         name = listed["name"]
     elif isinstance(fields.get("name"), str):
         name = fields["name"]
+    elif isinstance(record, dict) and isinstance(record.get("name"), str):
+        name = record["name"]
     return CatalogQuest(
         quest_id=quest_id,
-        forever=patch == FOREVER_PATCH,
+        forever=forever,
         name=name,
         requirement=requirement_from_record(record),
         exclusive=sorted(set(exclusive)),
         breadcrumbs=sorted(set(breadcrumbs)),
         next_quest=next_quest,
-        required_classes=mask_ids(fields.get("requiredClasses"), CLASSIC_CLASS_IDS),
-        required_races=mask_ids(fields.get("requiredRaces"), CLASSIC_RACE_IDS),
+        required_classes=id_list(fields.get("requiredClasses"), CLASSIC_CLASS_IDS),
+        required_races=id_list(fields.get("requiredRaces"), CLASSIC_RACE_IDS),
         required_skills=skills,
         step_level=step_level(record) if record else None,
         record_found=record is not None,
     )
 
 
+def normalize_export_quest(quest: dict) -> dict:
+    """Map schema v2 quest bodies onto the catalog record shape."""
+    quest_id = int(quest["id"])
+    quest_level = quest.get("questLevel") if isinstance(quest.get("questLevel"), int) else None
+    required_level = quest.get("requiredLevel") if isinstance(quest.get("requiredLevel"), int) else None
+    required_classes = quest.get("requiredClasses") if isinstance(quest.get("requiredClasses"), list) else []
+    fields = {
+        key: quest[key]
+        for key in (
+            "name",
+            "questLevel",
+            "requiredLevel",
+            "preQuestGroup",
+            "preQuestSingle",
+            "exclusiveTo",
+            "breadcrumbs",
+            "breadcrumbForQuestId",
+            "nextQuestInChain",
+            "requiredClasses",
+            "requiredRaces",
+            "requiredSkill",
+        )
+        if key in quest and quest[key] is not None
+    }
+    return {
+        "id": quest_id,
+        "list": {
+            "id": quest_id,
+            "level": quest_level,
+            "reqlevel": required_level,
+            "firstseenpatch": FOREVER_PATCH if quest_id >= 90000 else None,
+            "name": quest.get("name") if isinstance(quest.get("name"), str) else "",
+            "reqclass": 1 if required_classes else 0,
+        },
+        "minLevel": required_level,
+        "classes": [item for item in required_classes if isinstance(item, int)],
+        "detail": {
+            "requirements": {
+                "allOf": _ints(quest.get("preQuestGroup")),
+                "anyOf": _ints(quest.get("preQuestSingle")),
+                "exclusiveTo": _ints(quest.get("exclusiveTo")),
+                "breadcrumbs": _ints(quest.get("breadcrumbs")),
+                "nextQuestInChain": quest.get("nextQuestInChain"),
+            },
+            "questie": {"fields": fields},
+        },
+    }
+
+
+def load_export_records(database_root: Path) -> dict[int, dict]:
+    quests_dir = database_root / "export" / "forever" / "quests"
+    paths = sorted(quests_dir.glob("*.json"))
+    print(f"reading {len(paths)} schema v2 shards from {quests_dir}", flush=True)
+    records: dict[int, dict] = {}
+    for path in paths:
+        bundle = json.loads(path.read_text(encoding="utf-8"))
+        quests = bundle.get("quests")
+        if not isinstance(quests, dict):
+            continue
+        for quest in quests.values():
+            if not isinstance(quest, dict) or not isinstance(quest.get("id"), int):
+                continue
+            records[quest["id"]] = normalize_export_quest(quest)
+    print(f"loaded {len(records)} exported quests", flush=True)
+    return records
+
+
 def load_compiled_records(database_root: Path) -> dict[int, dict]:
+    export_quests = database_root / "export" / "forever" / "quests"
+    if export_quests.is_dir():
+        return load_export_records(database_root)
+
     compiled = database_root / "data" / "forever" / "compiled"
     records: dict[int, dict] = {}
     if not compiled.is_dir():
-        raise SystemExit(f"no compiled forever data at {compiled}")
+        raise SystemExit(
+            f"no wow-database export at {export_quests} and no compiled forever data at {compiled}"
+        )
     paths = sorted(compiled.rglob("*.json"))
     print(f"reading {len(paths)} compiled bundles from {compiled}", flush=True)
     for path in paths:
@@ -428,6 +541,14 @@ def format_report(findings: list[Finding]) -> str:
     return "\n".join(lines) + "\n"
 
 
+DEP_CATEGORIES = (
+    "missing-prerequisite",
+    "extra-prerequisite",
+    "prerequisite-mode",
+    "missing-record",
+)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Report guide quest paths that disagree with wow-database.")
     parser.add_argument(
@@ -436,12 +557,19 @@ def main() -> None:
         default=ROOT.parent / "wow-database",
         help="wow-database checkout (default: sibling ../wow-database)",
     )
+    parser.add_argument(
+        "--deps-only",
+        action="store_true",
+        help="only print prerequisite / missing-record findings",
+    )
     args = parser.parse_args()
     records = load_compiled_records(args.database)
     goals = load_guide_goals(ROOT)
     print(f"parsed {len(goals)} guide steps", flush=True)
     registered = parse_registered_prereqs((ROOT / "QuestPrerequisites.lua").read_text(encoding="utf-8"))
     findings = audit(goals, records, registered)
+    if args.deps_only:
+        findings = [item for item in findings if item.category in DEP_CATEGORIES]
     print(format_report(findings), end="")
 
 

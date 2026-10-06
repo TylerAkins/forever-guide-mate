@@ -6,7 +6,7 @@ local _, ns = ...
 -- authoritative quest source.
 ns:RegisterQuestPrerequisite({
     quest = 1489,
-    mode = "all",
+    mode = "any",
     quests = { 880 },
     conditions = { faction = "Horde" },
     note = "Hamuul Runetotem is offered after Altered Beings.",
@@ -14,7 +14,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 1490,
-    mode = "all",
+    mode = "any",
     quests = { 1489 },
     conditions = { faction = "Horde" },
     note = "Nara Wildmane is offered after Hamuul Runetotem.",
@@ -204,7 +204,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 5727,
-    mode = "all",
+    mode = "any",
     quests = { 5726 },
     conditions = { faction = "Horde" },
     note = "Thrall's Hidden Enemies follow-up is offered after the Lieutenant's Insignia is returned.",
@@ -335,7 +335,7 @@ ns:RegisterQuestPrerequisite({
 -- previous one is turned in.
 ns:RegisterQuestPrerequisite({
     quest = 845,
-    mode = "all",
+    mode = "any",
     quests = { 844 },
     conditions = { faction = "Horde" },
     note = "The Zhevra is offered after Plainstrider Menace.",
@@ -343,7 +343,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 903,
-    mode = "all",
+    mode = "any",
     quests = { 845 },
     conditions = { faction = "Horde" },
     note = "Prowlers of the Barrens is offered after The Zhevra.",
@@ -351,7 +351,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 881,
-    mode = "all",
+    mode = "any",
     quests = { 903 },
     conditions = { faction = "Horde" },
     note = "Echeyakee is offered after Prowlers of the Barrens.",
@@ -359,7 +359,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 905,
-    mode = "all",
+    mode = "any",
     quests = { 881 },
     conditions = { faction = "Horde" },
     note = "The Angry Scytheclaws is offered after Echeyakee.",
@@ -367,7 +367,7 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 3261,
-    mode = "all",
+    mode = "any",
     quests = { 905 },
     conditions = { faction = "Horde" },
     note = "Jorn Skyseer is offered after The Angry Scytheclaws.",
@@ -518,9 +518,22 @@ ns:RegisterQuestPrerequisite({
 
 ns:RegisterQuestPrerequisite({
     quest = 93948,
+    mode = "all",
+    quests = { 92550, 93927 },
+    note = "Deliver the Signet follows Havoc in the Highlands and A Last Request.",
+})
+
+ns:RegisterQuestPrerequisite({
+    quest = 98024,
     mode = "any",
-    quests = { 92550 },
-    note = "Deliver the Signet follows Havoc in the Highlands.",
+    quests = { 95350 },
+    conditions = {
+        all = {
+            { faction = "Horde" },
+            { race = 96 },
+        },
+    },
+    note = "Journey to the Crossroads is offered after Welcome to Azeroth.",
 })
 
 ns:RegisterQuestPrerequisite({

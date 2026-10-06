@@ -1,4 +1,4 @@
-## 0.2.3 - 2026-10-06
+## 0.2.4 - 2026-10-06
 
-- Remove the optional Washte Pawne rare hunt from **The Barrens (Part 3)** so the route no longer detours for quest 885.
-- Fix inverted item-start quest chains (loot/kill before “Use the … to accept”) in Thousand Needles **Assassination Plot**, Durotar, Mulgore, Silverpine, Darkshore, Westfall, and matching Era chapters. Guide lint now fails if a starter-item objective depends on its use-item accept.
+- Align Forever quest prerequisites with wow-database: Deliver the Signet waits on both Havoc in the Highlands and A Last Request; Journey to the Crossroads waits on Welcome to Azeroth for Horde Skyborne.
+- Set Sergra Darkthorn, Hamuul, and Hidden Enemies catalog modes to `any` to match Questie `preQuestSingle` (Silverpine Forever replacements left unchanged).
