@@ -1,3 +1,3 @@
-## 0.2.1 - 2026-10-05
+## 0.2.2 - 2026-10-06
 
-- Add a **Miscellaneous** guide category and a **Library Books** collection guide with map pins for Forever library books, manual pickup steps where needed, and milestone reward quests at 10, 20, and 25 books.
+- Quest audit no longer blocks an accept step after you already picked up the quest. It reads the live quest log on gossip and clears a stale “not offered” report when the quest is in your log.
