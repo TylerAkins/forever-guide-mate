@@ -73,7 +73,6 @@ ns:RegisterGuide({
             priority = 70,
             conditions = { level = { min = 29 } },
             text = "Collect Henrig Lonebrow's Journal near the corpse on the ground, click on the book in The Great Lift.",
-            dependsOn = { "accept-1100-lonebrow-s-journal" },
             complete = QuestState(1100, "activeOrCompleted"),
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.3071, 0.2439, "The Great Lift",
@@ -84,6 +83,7 @@ ns:RegisterGuide({
             id = "accept-1100-lonebrow-s-journal",
             kind = "accept",
             priority = 80,
+            dependsOn = { "objective-1100-henrig-lonebrow-s-journal" },
             conditions = { level = { min = 29 } },
             text = "Use the Henrig Lonebrow's Journal to accept Lonebrow's Journal.",
             complete = QuestState(1100, "activeOrCompleted"),

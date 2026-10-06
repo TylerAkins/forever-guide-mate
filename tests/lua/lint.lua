@@ -381,6 +381,10 @@ for _, issue in ipairs(guideData.PrerequisiteTurninViolations(ns.guides, ns.ques
     Check(false, ("%s %s accept %d needs a turnin-%d step in that guide")
         :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
 end
+for _, issue in ipairs(guideData.ItemStartInversionViolations(ns.guides)) do
+    Check(false, ("%s %s depends on %s: loot/collect the starter item before Use-the-item accept for quest %d")
+        :format(issue.guideID, tostring(issue.goalID), tostring(issue.acceptID), issue.questID))
+end
 
 if failures > 0 then
     io.stderr:write(("%d of %d guide data checks failed\n"):format(failures, checks))

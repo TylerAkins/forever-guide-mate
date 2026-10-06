@@ -179,7 +179,6 @@ ns:RegisterGuide({
             priority = 130,
             conditions = { level = { min = 38 } },
             text = "Collect Gordunni Scroll found near a log on the floor in Gordunni Outpost.",
-            dependsOn = { "accept-2978-the-gordunni-scroll" },
             complete = QuestState(2978, "activeOrCompleted"),
             route = {
                 Point(MAP.FERALAS, 0.7513, 0.2975, "Gordunni Outpost",
@@ -190,6 +189,7 @@ ns:RegisterGuide({
             id = "accept-2978-the-gordunni-scroll",
             kind = "accept",
             priority = 140,
+            dependsOn = { "objective-2978-gordunni-scroll" },
             conditions = { level = { min = 38 } },
             text = "Use the Gordunni Scroll to accept The Gordunni Scroll.",
             complete = QuestState(2978, "activeOrCompleted"),

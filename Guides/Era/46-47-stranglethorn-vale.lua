@@ -150,7 +150,6 @@ ns:RegisterGuide({
             priority = 110,
             conditions = { level = { min = 45 } },
             text = "Look for a Half Burried Bottle (green) along the beach and check it for Carefully Folded Note to start quest.",
-            dependsOn = { "accept-594-message-in-a-bottle" },
             complete = QuestState(594, "activeOrCompleted"),
             route = {
                 Point(MAP.STRANGLETHORN, 0.3460, 0.7300, "Continue toward Carefully Folded Note",
@@ -165,6 +164,7 @@ ns:RegisterGuide({
             id = "accept-594-message-in-a-bottle",
             kind = "accept",
             priority = 120,
+            dependsOn = { "objective-594-carefully-folded-note" },
             conditions = { level = { min = 45 } },
             text = "Use the Carefully Folded Note to accept Message in a Bottle.",
             complete = QuestState(594, "activeOrCompleted"),
