@@ -605,4 +605,47 @@ function M.PrerequisiteTurninViolations(guides, catalog)
     return issues
 end
 
+-- An item-started quest must loot/collect the starter item before the
+-- "Use the … to accept" step. A source objective that dependsOn that accept
+-- inverts the chain (Assassination Plot / Galak Messenger class of bug).
+function M.ItemStartInversionViolations(guides)
+    local issues = {}
+    for guideID, guide in pairs(guides or {}) do
+        local byID = {}
+        for _, goal in ipairs(guide.goals or {}) do
+            if type(goal.id) == "string" then
+                byID[goal.id] = goal
+            end
+        end
+        for _, goal in ipairs(guide.goals or {}) do
+            if goal.kind == "objective" or goal.kind == "note" then
+                for _, dep in ipairs(goal.dependsOn or {}) do
+                    local accept = byID[dep]
+                    if accept and accept.kind == "accept"
+                        and type(accept.text) == "string"
+                        and accept.text:match("^Use the .+ to accept") then
+                        local acceptQuest = M.AcceptQuestIDFromGoal(accept)
+                            or (type(dep) == "string" and tonumber(dep:match("^accept%-(%d+)%-")))
+                        local sourceQuest = M.AcceptQuestIDFromGoal(goal)
+                            or (type(goal.id) == "string" and tonumber(goal.id:match("^objective%-(%d+)%-")))
+                        local complete = goal.complete
+                        local hasQuestObjective = type(complete) == "table"
+                            and type(complete.questObjective) == "table"
+                        if acceptQuest and sourceQuest and acceptQuest == sourceQuest
+                            and not hasQuestObjective then
+                            issues[#issues + 1] = {
+                                guideID = guideID,
+                                goalID = goal.id,
+                                acceptID = dep,
+                                questID = acceptQuest,
+                            }
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return issues
+end
+
 return M

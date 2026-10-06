@@ -156,7 +156,6 @@ ns:RegisterGuide({
             priority = 130,
             conditions = { level = { min = 52 } },
             text = "Collect Empty Firewater Flask from Winterfall fulborgs.",
-            dependsOn = { "accept-5083-winterfall-firewater" },
             complete = QuestState(5083, "activeOrCompleted"),
             route = {
                 Point(MAP.WINTERSPRING, 0.6713, 0.3593, "Winterfall Shaman",
@@ -167,6 +166,7 @@ ns:RegisterGuide({
             id = "accept-5083-winterfall-firewater",
             kind = "accept",
             priority = 140,
+            dependsOn = { "objective-5083-empty-firewater-flask" },
             conditions = { level = { min = 52 } },
             text = "Use the Empty Firewater Flask to accept Winterfall Firewater.",
             complete = QuestState(5083, "activeOrCompleted"),
@@ -269,7 +269,6 @@ ns:RegisterGuide({
             priority = 220,
             conditions = { level = { min = 52 } },
             text = "Collect Empty Firewater Flask from Winterfall fulborgs.",
-            dependsOn = { "accept-5083-winterfall-firewater" },
             complete = QuestState(5083, "activeOrCompleted"),
             route = {
                 Point(MAP.WINTERSPRING, 0.3076, 0.3653, "Winterfall Pathfinder",
@@ -280,6 +279,7 @@ ns:RegisterGuide({
             id = "accept-5083-winterfall-firewater-2",
             kind = "accept",
             priority = 230,
+            dependsOn = { "objective-5083-empty-firewater-flask-2" },
             conditions = { level = { min = 52 } },
             text = "Use the Empty Firewater Flask to accept Winterfall Firewater.",
             complete = QuestState(5083, "activeOrCompleted"),

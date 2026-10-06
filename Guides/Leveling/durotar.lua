@@ -1591,7 +1591,6 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 910,
             text = "Collect Aged Envelope from Benedict's Chest upstair.",
-            dependsOn = { "accept-830-the-admiral-s-orders" },
             complete = QuestState(830, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.5930, 0.5770, "Aged Envelope",
@@ -1602,7 +1601,7 @@ ns:RegisterGuide({
             id = "accept-830-the-admiral-s-orders",
             kind = "accept",
             priority = 920,
-            dependsOn = { "objective-784-3-lieutenant-benedict" },
+            dependsOn = { "objective-784-3-lieutenant-benedict", "objective-830-aged-envelope" },
             text = "Use the Aged Envelope to accept The Admiral's Orders.",
             complete = QuestState(830, "activeOrCompleted"),
             route = {

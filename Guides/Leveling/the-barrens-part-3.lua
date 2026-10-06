@@ -2,7 +2,7 @@ local _, ns = ...
 
 -- Horde leveling route for the Southern Barrens, levels 25-25.
 -- The Barrens list has no new Forever quest on this pass. Stepping Stones starts at the Burned-Out Remains in the Field of Giants and turns in at Pocket Litter. ... and that note you found starts at those same remains and turns in at Westfall. No chapter stops at either hand-in. Scout Support and Valuable Vantages have no start pin.
--- The Harvester (897) optional rare hunt stays off this route; turn it in from the quest log if you get the head.
+-- The Harvester (897) and Washte Pawne (885) optional rare hunts stay off this route; turn them in from the quest log if you get the drop.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -578,27 +578,6 @@ ns:RegisterGuide({
                     "Continue toward Revenge of Gann."),
                 Point(MAP.BARRENS, 0.4600, 0.8100, "Gann Stonespire",
                     "Travel to Gann Stonespire."),
-            },
-        },
-        {
-            id = "objective-washte-pawne",
-            kind = "objective",
-            priority = 510,
-            conditions = {
-                all = {
-                    { ["not"] = { quest = { id = 885, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Kill Washte Pawne and collect Washte Pawne's Feather to start a new quest You can safely skip this if you can't find Washte Pawne.",
-            route = {
-                Point(MAP.BARRENS, 0.4480, 0.7560, "Continue toward Washte Pawne",
-                    "Continue toward Washte Pawne."),
-                Point(MAP.BARRENS, 0.4500, 0.7840, "Continue toward Washte Pawne",
-                    "Continue toward Washte Pawne."),
-                Point(MAP.BARRENS, 0.4340, 0.8160, "Continue toward Washte Pawne",
-                    "Continue toward Washte Pawne."),
-                Point(MAP.BARRENS, 0.4760, 0.7940, "Washte Pawne",
-                    "Travel to Washte Pawne."),
             },
         },
         {

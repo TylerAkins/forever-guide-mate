@@ -3114,7 +3114,6 @@ ns:RegisterGuide({
             priority = 2720,
             conditions = { level = { min = 12 } },
             text = "Kill Rothide Gnolls until you collect A Talking Head Fenris Isle.",
-            dependsOn = { "accept-460-resting-in-pieces" },
             complete = QuestState(460, "activeOrCompleted"),
             route = {
                 Point(MAP.SILVERPINE, 0.6591, 0.2724, "Rot Hide Brute",
@@ -3125,6 +3124,7 @@ ns:RegisterGuide({
             id = "accept-460-resting-in-pieces",
             kind = "accept",
             priority = 2730,
+            dependsOn = { "objective-460-a-talking-head" },
             conditions = { level = { min = 12 } },
             text = "Use the A Talking Head to accept Resting in Pieces.",
             complete = QuestState(460, "activeOrCompleted"),

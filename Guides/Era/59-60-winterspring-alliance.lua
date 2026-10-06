@@ -460,7 +460,6 @@ ns:RegisterGuide({
                 },
             },
             text = "Collect Crudely-Written Log from High Chief Winterfall in Winterfall Village.",
-            dependsOn = { "accept-5123-the-final-piece" },
             complete = QuestState(5123, "activeOrCompleted"),
             route = {
                 Point(MAP.WINTERSPRING, 0.6969, 0.3826, "High Chief Winterfall",
@@ -471,6 +470,7 @@ ns:RegisterGuide({
             id = "accept-5123-the-final-piece",
             kind = "accept",
             priority = 310,
+            dependsOn = { "objective-5123-crudely-written-log" },
             conditions = {
                 all = {
                     { level = { min = 52 } },

@@ -495,7 +495,6 @@ ns:RegisterGuide({
             priority = 470,
             conditions = { level = { min = 25 } },
             text = "Kill Burning Blade enemies until you find Flayed Demon Skin [Depricated].",
-            dependsOn = { "accept-1480-the-corrupter" },
             complete = QuestState(1480, "activeOrCompleted"),
             route = {
                 Point(MAP.DESOLACE, 0.5620, 0.2810, "Burning Blade Felsworn",
@@ -506,6 +505,7 @@ ns:RegisterGuide({
             id = "accept-1480-the-corrupter",
             kind = "accept",
             priority = 480,
+            dependsOn = { "objective-1480-flayed-demon-skin-depricated" },
             conditions = { level = { min = 25 } },
             text = "Use the Flayed Demon Skin [Depricated] to accept The Corrupter.",
             complete = QuestState(1480, "activeOrCompleted"),
