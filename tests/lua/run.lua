@@ -44,6 +44,7 @@ Load("Guides/Dungeons/RuinsOfLordaeron.lua")
 Load("Guides/Dungeons/Deadmines.lua")
 Load("Guides/Dungeons/HallOfThanes.lua")
 Load("Guides/Dungeons/ExcavationSiteWetlands.lua")
+Load("Guides/Dungeons/CityOfDalaranAttunement.lua")
 Load("Guides/Leveling/zephras-isle.lua")
 Load("Guides/Loremaster/Durotar.lua")
 Load("Guides/Loremaster/Mulgore.lua")
@@ -1923,6 +1924,33 @@ for key, value in pairs(hordeHot) do allianceHot[key] = value end
 allianceHot.faction = "Alliance"
 Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use the hall of thanes guide")
 Check(ns.guides["dungeons-excavation-site-wetlands"] ~= nil, "excavation site wetlands guide is registered")
+
+do
+    local guide = ns.guides["dungeons-city-of-dalaran-attunement"]
+    Check(guide ~= nil, "city of dalaran attunement guide is registered")
+    Equal(guide.category, "Dungeon Quest Guides", "city of dalaran attunement is a dungeon guide")
+    Equal(guide.conditions.all[1].level.min, 30, "city of dalaran attunement starts at level 30")
+    local state = {}
+    for key, value in pairs(baseState) do state[key] = value end
+    state.faction = "Horde"
+    state.level = 30
+    Equal(ns.EvaluateCondition(guide.conditions, state), true, "horde can use the city of dalaran attunement guide")
+    state.faction = "Alliance"
+    Equal(ns.EvaluateCondition(guide.conditions, state), false, "alliance cannot use the horde city of dalaran attunement guide")
+    local bloodAccept
+    for _, goal in ipairs(guide.goals) do
+        if goal.id == "accept-92434-blood-in-the-streets" then
+            bloodAccept = goal
+            break
+        end
+    end
+    Check(bloodAccept ~= nil, "blood in the streets accept is present")
+    Check(bloodAccept.dependsOn ~= nil, "blood in the streets waits on prior turn-ins")
+    local bloodDeps = {}
+    for _, dep in ipairs(bloodAccept.dependsOn) do bloodDeps[dep] = true end
+    Check(bloodDeps["turnin-545-dalaran-patrols"], "blood in the streets waits on dalaran patrols")
+    Check(bloodDeps["turnin-93680-key-to-the-city"], "blood in the streets waits on key to the city")
+end
 
 local zephras = ns.guides["leveling-zephras-isle"]
 Equal(zephras.category, "Leveling Quest Guides", "Zephras Isle stays a leveling guide")
