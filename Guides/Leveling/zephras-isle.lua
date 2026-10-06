@@ -1900,7 +1900,7 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-a-last-request",
+            id = "accept-93927-a-last-request",
             kind = "accept",
             priority = 1230,
             conditions = { level = { min = 8 } },
@@ -1913,12 +1913,12 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "objective-a-last-request",
+            id = "objective-93927-a-last-request",
             kind = "objective",
             priority = 1240,
             conditions = { level = { min = 8 } },
             text = "Collect the note you found near the dead peacekeeper and read it to determine your next steps.",
-            dependsOn = { "accept-a-last-request" },
+            dependsOn = { "accept-93927-a-last-request" },
             complete = QuestState(93927, "complete"),
             route = {
                 Point(MAP.ZEPHRAS, 0.410, 0.640, "Skypriest Aanders",
@@ -1926,12 +1926,12 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-a-last-request",
+            id = "turnin-93927-a-last-request",
             kind = "turnin",
             priority = 1250,
             conditions = { level = { min = 8 } },
             text = "Turn in A Last Request to Constable Aonda.",
-            dependsOn = { "objective-a-last-request" },
+            dependsOn = { "objective-93927-a-last-request" },
             complete = QuestState(93927, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -1949,7 +1949,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept To Valanaar from Constable Aonda.",
-            dependsOn = { "turnin-92550-havoc-in-the-highlands", "turnin-a-last-request" },
+            dependsOn = { "turnin-92550-havoc-in-the-highlands", "turnin-93927-a-last-request" },
             complete = QuestState(92701, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",
@@ -1980,7 +1980,7 @@ ns:RegisterGuide({
             priority = 1280,
             conditions = { level = { min = 9 } },
             text = "Accept Deliver the Signet from Constable Aonda.",
-            dependsOn = { "turnin-a-last-request" },
+            dependsOn = { "turnin-92550-havoc-in-the-highlands", "turnin-93927-a-last-request" },
             complete = QuestState(93948, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.456, 0.454, "Constable Aonda",

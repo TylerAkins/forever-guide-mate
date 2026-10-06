@@ -11,7 +11,8 @@ local _, ns = ...
 -- 3921 Wenikee Boltbucket stays accept-only because no chapter stops at Wenikee.
 -- 6401 Kaya's Alive turns in to Tammra on the first Sun Rock visit in Stonetalon Mountains (Part 1).
 -- 6541 Report to Kadrak stays accept-only until a chapter stops at Kadrak.
--- Journey to the Crossroads from Thrall is for Horde Skyborne.
+-- Journey to the Crossroads from Thrall is for Horde Skyborne. It waits on
+-- Welcome to Azeroth (95350), which Zephras Isle also runs for all Horde.
 -- Grind stops and flight-point pickups are not part of this route.
 -- Coordinates have not been validated in the Forever client.
 
@@ -287,6 +288,41 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-95350-welcome-to-azeroth",
+            kind = "accept",
+            priority = 169,
+            conditions = {
+                all = {
+                    { level = { min = 13 } },
+                    { race = 96 },
+                },
+            },
+            text = "Accept Welcome to Azeroth from Alana Stormwalker in Mulgore. This step is for Horde Skyborne.",
+            complete = QuestState(95350, "activeOrCompleted"),
+            route = {
+                Point(MAP.MULGORE, 0.3340, 0.2240, "Alana Stormwalker",
+                    "Travel to Alana Stormwalker."),
+            },
+        },
+        {
+            id = "turnin-95350-welcome-to-azeroth",
+            kind = "turnin",
+            priority = 170,
+            conditions = {
+                all = {
+                    { level = { min = 13 } },
+                    { race = 96 },
+                },
+            },
+            text = "Turn in Welcome to Azeroth to Thrall in Orgrimmar. This step is for Horde Skyborne.",
+            dependsOn = { "accept-95350-welcome-to-azeroth" },
+            complete = QuestState(95350, "completed"),
+            route = {
+                Point(MAP.ORGRIMMAR, 0.3200, 0.3780, "Thrall",
+                    "Travel to Thrall."),
+            },
+        },
+        {
             id = "accept-98024-journey-to-the-crossroads",
             kind = "accept",
             priority = 171,
@@ -297,6 +333,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Journey to the Crossroads from Thrall in Orgrimmar. This step is for Horde Skyborne.",
+            dependsOn = { "turnin-95350-welcome-to-azeroth" },
             complete = QuestState(98024, "activeOrCompleted"),
             route = {
                 Point(MAP.ORGRIMMAR, 0.3200, 0.3780, "Thrall",
