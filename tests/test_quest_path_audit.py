@@ -4,6 +4,7 @@ from tools.audit_quest_paths import (
     Requirement,
     audit,
     catalog_quest,
+    normalize_export_quest,
     requirement_from_record,
 )
 from tools.weave_loremaster import Goal, parse_goals
@@ -55,6 +56,24 @@ class RequirementMappingTests(unittest.TestCase):
         mapped = requirement_from_record(record)
         self.assertEqual(mapped.mode, "mixed")
         self.assertEqual(mapped.quests, [2, 3])
+
+    def test_schema_v2_export_maps_pre_quest_single(self):
+        record = normalize_export_quest(
+            {
+                "id": 92461,
+                "name": "Harmony in Balance",
+                "preQuestSingle": [92460],
+                "questLevel": 1,
+                "requiredLevel": 1,
+                "requiredClasses": [7],
+                "requiredRaces": [2],
+            }
+        )
+        catalog = catalog_quest(92461, record)
+        self.assertTrue(catalog.forever)
+        self.assertEqual(catalog.requirement, Requirement("any", [92460]))
+        self.assertEqual(catalog.required_classes, [7])
+        self.assertEqual(catalog.required_races, [2])
 
 
 class FallbackTests(unittest.TestCase):

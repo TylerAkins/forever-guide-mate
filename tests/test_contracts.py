@@ -729,6 +729,17 @@ class ContractTests(unittest.TestCase):
         self.assertIn("quests = { 91921 }", prerequisites)
         self.assertIn("quest = 98299", prerequisites)
         self.assertIn("quests = { 98298 }", prerequisites)
+        self.assertIn("quest = 93948", prerequisites)
+        self.assertIn("quests = { 92550, 93927 }", prerequisites)
+        self.assertIn("quest = 98024", prerequisites)
+        self.assertIn("quests = { 95350 }", prerequisites)
+        barrens = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
+        self.assertIn('dependsOn = { "turnin-95350-welcome-to-azeroth" }', barrens)
+        zephras = (ROOT / "Guides/Leveling/zephras-isle.lua").read_text(encoding="utf-8")
+        self.assertIn(
+            'dependsOn = { "turnin-92550-havoc-in-the-highlands", "turnin-93927-a-last-request" }',
+            zephras,
+        )
         loch = (ROOT / "Guides/Leveling/loch-modan.lua").read_text(encoding="utf-8")
         self.assertIn("QuestState(86758,", loch)
         self.assertNotIn("QuestState(86776,", loch)
