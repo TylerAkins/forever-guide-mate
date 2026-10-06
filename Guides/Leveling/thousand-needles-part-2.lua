@@ -35,7 +35,7 @@ ns:RegisterGuide({
     id = "leveling-era-thousand-needles-part-2",
     title = "Thousand Needles (Part 2)",
     category = "Leveling Quest Guides",
-    revision = 3,
+    revision = 4,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -170,10 +170,14 @@ ns:RegisterGuide({
             id = "objective-4881-galak-messenger",
             kind = "objective",
             priority = 110,
-            conditions = { level = { min = 23 } },
-            text = "Find and kill the patroling Galak Messenger to start new quest in Darkcloud Pinnacle.",
-            dependsOn = { "accept-4881-assassination-plot" },
-            complete = QuestState(4881, "complete"),
+            conditions = {
+                all = {
+                    { level = { min = 23 } },
+                    { ["not"] = { quest = { id = 4881, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Kill the patrolling Galak Messenger on the road toward Darkcloud Pinnacle for the Assassination Note. Use the note when it drops.",
+            complete = QuestState(4881, "activeOrCompleted"),
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.3860, 0.3150, "Continue toward Galak Messenger",
                     "Continue toward Galak Messenger."),
@@ -187,8 +191,14 @@ ns:RegisterGuide({
             id = "accept-4881-assassination-plot",
             kind = "accept",
             priority = 120,
-            conditions = { level = { min = 23 } },
+            conditions = {
+                all = {
+                    { level = { min = 23 } },
+                    { ["not"] = { quest = { id = 4881, state = "activeOrCompleted" } } },
+                },
+            },
             text = "Use the Assassination Note to accept Assassination Plot.",
+            dependsOn = { "objective-4881-galak-messenger" },
             complete = QuestState(4881, "activeOrCompleted"),
         },
         {
@@ -511,10 +521,14 @@ ns:RegisterGuide({
             id = "objective-4881-galak-messenger-2",
             kind = "objective",
             priority = 380,
-            conditions = { level = { min = 23 } },
-            text = "Find and kill the patroling Galak Messenger to start new quest in Darkcloud Pinnacle.",
-            dependsOn = { "accept-4881-assassination-plot" },
-            complete = QuestState(4881, "complete"),
+            conditions = {
+                all = {
+                    { level = { min = 23 } },
+                    { ["not"] = { quest = { id = 4881, state = "activeOrCompleted" } } },
+                },
+            },
+            text = "Kill the patrolling Galak Messenger on the road toward Darkcloud Pinnacle for the Assassination Note. Use the note when it drops.",
+            complete = QuestState(4881, "activeOrCompleted"),
             route = {
                 Point(MAP.THOUSAND_NEEDLES, 0.3860, 0.3150, "Continue toward Galak Messenger",
                     "Continue toward Galak Messenger."),
