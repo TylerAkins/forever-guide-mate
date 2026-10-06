@@ -266,8 +266,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = { level = { min = 40 } },
             text = "Kill Rage Scar Yeti until you collect Pristine Yeti Hide to start a new quest.",
-            dependsOn = { "accept-7735-pristine-yeti-hide" },
-            complete = QuestState(7735, "complete"),
+            complete = QuestState(7735, "activeOrCompleted"),
             route = {
                 Point(MAP.FERALAS, 0.5241, 0.3176, "Rage Scar Yeti",
                     "Travel to Rage Scar Yeti."),
@@ -277,6 +276,7 @@ ns:RegisterGuide({
             id = "accept-7735-pristine-yeti-hide",
             kind = "accept",
             priority = 250,
+            dependsOn = { "objective-7735-rage-scar-yeti" },
             conditions = { level = { min = 40 } },
             text = "Use the Pristine Yeti Hide to accept Pristine Yeti Hide.",
             complete = QuestState(7735, "activeOrCompleted"),
