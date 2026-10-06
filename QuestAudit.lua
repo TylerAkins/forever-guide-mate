@@ -71,11 +71,36 @@ function QuestAudit:StartsFromItem(goal)
         or lower:find("loot the item that starts", 1, true) ~= nil
 end
 
-function QuestAudit:AlreadyTaken(questID)
+local function QuestInLiveLog(api, questID)
+    local questLog = type(api) == "table" and api.C_QuestLog or nil
+    if type(questLog) ~= "table" or type(questLog.GetLogIndexForQuestID) ~= "function" then
+        return false
+    end
+    local ok, index = pcall(questLog.GetLogIndexForQuestID, questID)
+    return ok and type(index) == "number" and index > 0
+end
+
+local function QuestFlaggedCompleted(api, questID)
+    local questLog = type(api) == "table" and api.C_QuestLog or nil
+    local flag = type(questLog) == "table" and questLog.IsQuestFlaggedCompleted or nil
+    if type(flag) ~= "function" and type(api) == "table" then
+        flag = api.IsQuestFlaggedCompleted
+    end
+    if type(flag) ~= "function" then return false end
+    local ok, done = pcall(flag, questID)
+    return ok and done and true or false
+end
+
+function QuestAudit:AlreadyTaken(questID, api)
+    api = api or _G
     local state = ns.Engine and ns.Engine.state or nil
-    if type(state) ~= "table" then return false end
-    if type(state.quests) == "table" and state.quests[questID] then return true end
-    if type(state.completedQuests) == "table" and state.completedQuests[questID] then return true end
+    if type(state) == "table" then
+        if type(state.quests) == "table" and state.quests[questID] then return true end
+        if type(state.completedQuests) == "table" and state.completedQuests[questID] then return true end
+    end
+    if QuestInLiveLog(api, questID) or QuestFlaggedCompleted(api, questID) then
+        return true
+    end
     return false
 end
 
@@ -115,7 +140,11 @@ function QuestAudit:Inspect(api)
     local goal = ns.Engine.currentGoal
     if type(goal) ~= "table" or goal.kind ~= "accept" then return end
     local questID = self:GoalQuestID(goal)
-    if not questID or self:AlreadyTaken(questID) then return end
+    if not questID then return end
+    if self:AlreadyTaken(questID, api) then
+        self:Clear(goal.id)
+        return
+    end
     if self:StartsFromItem(goal) then return end
     if not self:NameMatches(self:GoalNPC(goal), Call(api.UnitName, "npc")) then return end
     local offered = OfferedQuestIDs(api)

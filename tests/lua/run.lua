@@ -1771,6 +1771,28 @@ function TestQuestAudit()
     Equal(next(ns.charDB.notOffered), nil, "a quest already in the log is not reported")
 
     Fresh()
+    ns.charDB.notOffered[spinalAxe.id] = {
+        guide = "leveling-durotar", quest = 96874, npc = "Ug'thok", text = spinalAxe.text,
+    }
+    ns.Engine.state.quests[96874] = { complete = false, objectives = {} }
+    ns.QuestAudit:Inspect(API("Ug'thok", {}))
+    Equal(next(ns.charDB.notOffered), nil, "a stale refusal clears when the quest is already in the log")
+
+    Fresh()
+    ns.charDB.notOffered[spinalAxe.id] = {
+        guide = "leveling-durotar", quest = 96874, npc = "Ug'thok", text = spinalAxe.text,
+    }
+    ns.QuestAudit:Inspect({
+        UnitName = function() return "Ug'thok" end,
+        C_GossipInfo = { GetAvailableQuests = function() return {} end, GetActiveQuests = function() return {} end },
+        C_QuestLog = {
+            GetLogIndexForQuestID = function(questID) return questID == 96874 and 1 or 0 end,
+        },
+    })
+    Equal(next(ns.charDB.notOffered), nil,
+        "a stale refusal clears when the live quest log already has the quest")
+
+    Fresh()
     ns.Engine.state.completedQuests[96874] = true
     ns.QuestAudit:Inspect(API("Ug'thok", {}))
     Equal(next(ns.charDB.notOffered), nil, "a quest already finished is not reported")
