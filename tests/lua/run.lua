@@ -3095,6 +3095,7 @@ local arrived = {}
 for key, value in pairs(starter) do arrived[key] = value end
 arrived.level = 14
 arrived.faction = "Horde"
+arrived.raceID = 96
 arrived.classID = 1
 arrived.quests = {}
 arrived.completedQuests = {}
@@ -4799,6 +4800,130 @@ local function TestClassQuestGuides()
         Equal(ns.EvaluateCondition(callOfEarth.conditions, orc), false,
             "a Horde shaman is not offered the Alliance Call of Earth")
     end
+
+    local hunter = ns.guides["class-hunter"]
+    local elwynn = ns.guides["leveling-era-elwynn-forest"]
+    local josephineSteps = {
+        Goal(hunter, "accept-94792-taming-the-beast"),
+        Goal(hunter, "turnin-94793-training-the-beast"),
+        Goal(elwynn, "woven-accept-94792-taming-the-beast"),
+        Goal(elwynn, "woven-turnin-94793-training-the-beast"),
+    }
+    Equal(#josephineSteps, 4, "the hunter and Elwynn guides route Josephine Carson's chain")
+    for _, step in ipairs(josephineSteps) do
+        for raceID, offered in pairs({ [1] = true, [7] = true, [3] = false, [4] = false, [95] = false }) do
+            local hunterState = { faction = "Alliance", raceID = raceID, classID = 3, level = 27 }
+            Equal(ns.EvaluateCondition(step.conditions, hunterState), offered,
+                step.id .. " offers Josephine Carson's chain only to Human and Gnome hunters (race " .. raceID .. ")")
+        end
+    end
+
+    local raceGates = {
+        { "class-hunter", "accept-3092-etched-note", "Horde", 3, { [6] = true, [2] = false } },
+        { "class-hunter", "accept-6087-taming-the-beast", "Horde", 3, { [6] = true, [2] = false } },
+        { "class-rogue", "accept-1859-therzok", "Horde", 4, { [2] = true, [8] = false } },
+        { "class-rogue", "accept-3118-encrypted-sigil", "Alliance", 4, { [4] = true, [1] = false } },
+        { "class-warrior", "accept-3095-simple-scroll", "Horde", 1, { [5] = true, [2] = false } },
+        { "class-warrior", "accept-1666-marshal-haggard", "Alliance", 1, { [1] = true, [3] = false, [95] = false } },
+        { "class-warrior", "accept-1680-tormus-deepforge", "Alliance", 1, { [3] = true, [95] = false } },
+        { "class-warrior", "accept-1822-heirloom-weapon", "Horde", 1, { [5] = true, [2] = false } },
+        { "class-warlock", "accept-1473-creature-of-the-void", "Horde", 9, { [5] = true, [2] = false } },
+        { "class-warlock", "accept-1501-creature-of-the-void", "Horde", 9, { [2] = true, [5] = false } },
+        { "class-warlock", "accept-1795-the-binding", "Horde", 9, { [2] = true, [8] = false } },
+        { "class-mage", "accept-1941-manaweave-robe", "Alliance", 8, { [7] = true, [3] = false } },
+        { "class-paladin", "accept-1649-the-tome-of-valor", "Alliance", 2, { [3] = true, [95] = false } },
+        { "class-shaman", "accept-1520-call-of-earth", "Horde", 7, { [6] = true, [8] = false } },
+        { "class-shaman", "accept-1462-earth-sapta", "Horde", 7, { [6] = true, [8] = false } },
+        { "class-shaman", "accept-972-water-sapta", "Horde", 7, { [2] = true, [5] = false } },
+        { "class-shaman", "accept-1516-call-of-earth", "Horde", 7, { [2] = true, [8] = true, [6] = false } },
+        { "class-shaman", "accept-1519-call-of-earth", "Horde", 7, { [6] = true, [2] = false } },
+        { "class-shaman", "accept-1463-earth-sapta", "Horde", 7, { [8] = true, [6] = false } },
+    }
+    for _, case in ipairs(raceGates) do
+        local step = Goal(ns.guides[case[1]], case[2])
+        Check(step ~= nil, case[1] .. " routes " .. case[2])
+        for raceID, offered in pairs(step and case[5] or {}) do
+            local player = { faction = case[3], raceID = raceID, classID = case[4], level = 60 }
+            Equal(ns.EvaluateCondition(step.conditions, player), offered,
+                case[2] .. " follows the race gate of the quest or the quest that unlocks it (race " .. raceID .. ")")
+        end
+    end
+
+    -- Starter guides gate woven class quests by the database race and class.
+    local starterGates = {
+        { "leveling-era-elwynn-forest", "accept-3100-simple-letter", "Alliance", { { 1, 1, true }, { 1, 2, false }, { 3, 1, false } } },
+        { "leveling-era-teldrassil", "accept-3116-simple-sigil", "Alliance", { { 4, 1, true }, { 4, 11, false }, { 1, 1, false } } },
+        { "leveling-era-teldrassil", "accept-3118-encrypted-sigil", "Alliance", { { 4, 4, true }, { 4, 11, false } } },
+        { "leveling-era-dun-morogh", "accept-3106-simple-rune", "Alliance", { { 3, 1, true }, { 7, 1, false }, { 3, 2, false } } },
+        { "leveling-era-tirisfal-glades", "accept-3095-simple-scroll", "Horde", { { 5, 1, true }, { 2, 1, false }, { 5, 9, false } } },
+        { "leveling-era-durotar", "accept-1473-creature-of-the-void", "Horde", { { 5, 9, true }, { 2, 9, false } } },
+        { "leveling-era-durotar", "accept-792-vile-familiars", "Horde", { { 2, 1, true }, { 2, 9, false } } },
+        { "leveling-era-mulgore", "accept-3092-etched-note", "Horde", { { 6, 3, true }, { 2, 3, false } } },
+        { "leveling-zephras-isle", "accept-a-student-of-the-arcane", "Alliance", { { 95, 8, true } }, 14 },
+        { "leveling-zephras-isle", "accept-a-student-of-the-arcane", "Horde", { { 96, 8, false } }, 14 },
+        { "leveling-era-mulgore", "turnin-748-poison-water", "Horde", { { 6, 1, true }, { 2, 1, false } } },
+        { "leveling-era-mulgore", "accept-854-journey-to-the-crossroads", "Horde", { { 6, 1, true }, { 8, 1, false } } },
+        { "leveling-era-tirisfal-glades", "accept-363-rude-awakening", "Horde", { { 5, 1, true }, { 2, 1, false } } },
+        { "leveling-zephras-isle", "accept-welcome-to-azeroth", "Horde", { { 96, 1, true }, { 2, 1, false } }, 14 },
+    }
+    for _, case in ipairs(starterGates) do
+        local step = Goal(ns.guides[case[1]], case[2])
+        Check(step ~= nil, case[1] .. " routes " .. case[2])
+        for _, player in ipairs(step and case[4] or {}) do
+            local state = { faction = case[3], raceID = player[1], classID = player[2], level = case[5] or 10 }
+            Equal(ns.EvaluateCondition(step.conditions, state), player[3],
+                case[2] .. " in " .. case[1] .. " (race " .. player[1] .. ", class " .. player[2] .. ")")
+        end
+    end
+
+    local unlocks = {
+        { "class-hunter", "accept-94978-taming-the-beast", "turnin-94007-taming-the-beast" },
+        { "class-hunter", "accept-94013-taming-the-beast", "turnin-94979-taming-the-beast" },
+        { "class-hunter", "accept-94050-training-the-beast", "turnin-94013-taming-the-beast" },
+        { "leveling-zephras-isle", "accept-taming-the-beast-94013", "turnin-taming-the-beast-94979" },
+        { "class-warrior", "accept-1839-ulaelek-and-the-brutal-gauntlets", "turnin-1848-brutal-hauberk" },
+        { "class-warrior", "accept-1843-brutal-gauntlets", "turnin-1842-satyr-hooves" },
+        { "class-warlock", "accept-4964-the-completed-orb-of-darorahil", "turnin-4976-returning-the-cleansed-orb" },
+        { "class-warlock", "accept-4975-the-completed-orb-of-nohorahil", "turnin-4976-returning-the-cleansed-orb" },
+        { "class-shaman", "accept-1464-fire-sapta", "turnin-1525-call-of-fire" },
+        { "class-shaman", "accept-1103-call-of-water", "turnin-63-call-of-water" },
+    }
+    for _, case in ipairs(unlocks) do
+        local guide = ns.guides[case[1]]
+        local step, unlock = Goal(guide, case[2]), Goal(guide, case[3])
+        Check(step ~= nil and unlock ~= nil, case[1] .. " routes " .. case[2] .. " and " .. case[3])
+        if step and unlock then
+            local waits = false
+            for _, dependency in ipairs(step.dependsOn or {}) do
+                if dependency == case[3] then waits = true end
+            end
+            Check(waits, case[2] .. " waits for " .. case[3])
+            Check(step.priority > unlock.priority, case[2] .. " comes after " .. case[3])
+        end
+    end
+
+    -- Taking one trainer's version of a class quest closes the others.
+    local tauren = { faction = "Horde", raceID = 6, classID = 11, level = 10, quests = {},
+        completedQuests = { [5926] = true }, questLogKnown = true, questCompletionKnown = true }
+    for _, goalID in ipairs({ "accept-5927-heeding-the-call", "turnin-5927-heeding-the-call",
+        "accept-5928-heeding-the-call", "turnin-5928-heeding-the-call" }) do
+        local step = Goal(druid, goalID)
+        Check(step ~= nil and ns.Engine:IsGoalDone(step, tauren, druid),
+            goalID .. " is skipped once Heeding the Call is turned in at another trainer")
+    end
+    local orc = { faction = "Horde", raceID = 2, classID = 7, level = 4, quests = { [1519] = { objectives = {} } },
+        completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    local durotarObjective = Goal(shaman, "objective-1516-call-of-earth")
+    Check(durotarObjective ~= nil and ns.Engine:IsGoalDone(durotarObjective, orc, shaman),
+        "the Durotar Call of Earth objective is skipped while the Mulgore version is in the log")
+    Check(not ns.Engine:IsGoalDone(Goal(shaman, "objective-1519-call-of-earth"), orc, shaman),
+        "the Mulgore Call of Earth objective stays open while that quest is in the log")
+    local mulgoreDone = { faction = "Horde", raceID = 2, classID = 7, level = 4, quests = {},
+        completedQuests = { [1519] = true, [1520] = true, [1521] = true }, questLogKnown = true, questCompletionKnown = true }
+    for _, goalID in ipairs({ "accept-1517-call-of-earth", "accept-1518-call-of-earth" }) do
+        Check(ns.Engine:IsGoalDone(Goal(shaman, goalID), mulgoreDone, shaman),
+            goalID .. " is skipped after the Mulgore Call of Earth rite")
+    end
 end
 TestClassQuestGuides()
 
@@ -4840,6 +4965,7 @@ function TestIdleAndMovementSkipTheCatalog()
     local state = ns.PlayerState:Capture(api, ids, 1)
     Equal(flags, 1 + budget, "a real update reads the open quests plus a slice of the catalog")
     Equal(state.questCompletionKnown, false, "the rest of the catalog waits for a later update")
+    Equal(state.questRouteKnown, true, "the open guide's quests are known before the catalog finishes")
     Equal(state.watchedQuests[1], true, "the open chapter quest is resolved")
     Equal(state.watchedQuests[60], nil, "a later catalog quest is not read on this pulse")
     Equal(ns.EvaluateCondition({ quest = { id = 60, state = "completed" } }, state), nil,
@@ -4885,6 +5011,89 @@ function TestIdleAndMovementSkipTheCatalog()
     ns.PlayerState:InvalidateQuestCache()
 end
 TestIdleAndMovementSkipTheCatalog()
+
+function TestCasualRouteWaitsOnlyForItsQuests()
+    ns:FinalizeGuides()
+    local guideID = "leveling-casual-horde"
+    local vrangID = "leveling-era-horde-the-barrens-and-stonetalon-mountain:woven-accept-95507-vrangs-game"
+    Check(ns.Engine:GetGoal(ns.guides[guideID], vrangID) ~= nil, "Casual Horde routes the Vrang's Game accept")
+    local previousCharDB = ns.charDB
+    ns.charDB = {
+        selectedGuide = guideID, activeGoal = vrangID,
+        activeGoalByGuide = { [guideID] = vrangID }, guideRevisions = {},
+        manualCompleted = {}, completionLedger = {}, deferred = {}, history = {}, notOffered = {},
+    }
+    local function Accepted(routeKnown)
+        return {
+            faction = "Horde", raceID = 2, classID = 3, level = 20,
+            professions = {}, professionsKnown = true,
+            quests = { [95507] = { title = "Vrang's Game", complete = false, objectives = {} } },
+            questLogKnown = true, questCompletionKnown = false, questRouteKnown = routeKnown,
+            completedQuests = {}, watchedQuests = setmetatable({}, { __index = function() return true end }),
+            mapID = 1413, x = 0.438, y = 0.122,
+        }
+    end
+    ns.Engine.casualAwaitingQuestState = nil
+    ns.Engine:Refresh(Accepted(false))
+    Equal(ns.Engine.status, "Loading quest progress…", "Casual waits while its own quests are unread")
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, vrangID, "the saved Casual step holds while loading")
+    ns.Engine:Refresh(Accepted(true))
+    Check(ns.Engine.status ~= "Loading quest progress…",
+        "Casual stops loading once its own quests are read")
+    Check(ns.Engine.currentGoal and ns.Engine.currentGoal.id ~= vrangID,
+        "an accepted Casual step advances before other guides' quests are read")
+    ns.charDB = previousCharDB
+    ns.Engine.casualAwaitingQuestState = nil
+    ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = nil, nil, nil
+end
+TestCasualRouteWaitsOnlyForItsQuests()
+
+function TestMarkCompleteOnUnofferedQuest()
+    ns:RegisterGuide({
+        id = "mark-complete-unoffered", title = "Mark complete unoffered", category = "Test", revision = 1,
+        goals = {
+            { id = "accept-unoffered", kind = "accept", text = "Accept a quest this race is not offered",
+                complete = { quest = { id = 9300001, state = "activeOrCompleted" } } },
+            { id = "turnin-unoffered", kind = "turnin", text = "Turn in the quest",
+                dependsOn = { "accept-unoffered" },
+                complete = { quest = { id = 9300001, state = "completed" } } },
+            { id = "after-unoffered", kind = "note", text = "Keep going" },
+        },
+    })
+    local guide = ns.guides["mark-complete-unoffered"]
+    local previousCharDB = ns.charDB
+    local savedCapture = ns.PlayerState.Capture
+    ns.charDB = {
+        selectedGuide = guide.id, activeGoal = nil, activeGoalByGuide = {}, guideRevisions = {},
+        manualCompleted = {}, completionLedger = {}, deferred = {}, history = {}, notOffered = {},
+    }
+    local state = {
+        faction = "Alliance", raceID = 95, classID = 3, level = 27,
+        professions = {}, professionsKnown = true,
+        quests = {}, questLogKnown = true,
+        completedQuests = { [9300001] = false }, watchedQuests = { [9300001] = true },
+        questCompletionKnown = true,
+    }
+    ns.PlayerState.Capture = function() return state end
+    ns.Engine:Refresh(state)
+    Equal(ns.Engine.currentGoal.id, "accept-unoffered", "the unoffered accept is the current step")
+    ns.Engine:CompleteCurrent()
+    Equal(ns.Engine.currentGoal.id, "after-unoffered",
+        "mark complete moves past an accept the quest log contradicts")
+    Equal(ns.Engine:GetGuideProgress(guide, state).completed, 0,
+        "the contradicted accept and its turn-in are not counted as done")
+    ns.Engine:Previous()
+    Equal(ns.Engine.currentGoal.id, "accept-unoffered", "back returns to the step marked complete")
+    Equal(ns.charDB.skipped["accept-unoffered"], nil, "back reopens a step marked complete against the quest log")
+    ns.Engine:CompleteCurrent()
+    state.quests = { [9300001] = { title = "Unoffered", complete = false, objectives = {} } }
+    ns.Engine:Refresh(state)
+    Equal(ns.charDB.skipped["accept-unoffered"], nil, "accepting the quest later clears the pass")
+    ns.PlayerState.Capture = savedCapture
+    ns.charDB = previousCharDB
+    ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = nil, nil, nil
+end
+TestMarkCompleteOnUnofferedQuest()
 
 function TestChapterUpdateStaysSmall()
     ns:FinalizeGuides()

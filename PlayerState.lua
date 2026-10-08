@@ -428,7 +428,7 @@ local lastQuestIDList, lastCompleted, lastWatched
 local function CompletedQuests(api, questIDs, logQuests, priorityCount)
     local questIDList = type(questIDs) == "table" and questIDs or {}
     if #questIDList == 0 then
-        return {}, true, {}
+        return {}, true, {}, true
     end
     local completed, watched
     local reuse = lastQuestIDList == questIDList and lastCompleted ~= nil
@@ -509,15 +509,17 @@ local function CompletedQuests(api, questIDs, logQuests, priorityCount)
         logWasComplete[questID] = type(entry) == "table" and entry.complete and true or false
     end
     local known = not apiDown
+    local priorityKnown = known
     if known then
-        for _, questID in ipairs(questIDList) do
+        for index, questID in ipairs(questIDList) do
             if not watched[questID] then
                 known = false
+                priorityKnown = index > priority
                 break
             end
         end
     end
-    return completed, known, watched
+    return completed, known, watched, priorityKnown
 end
 
 -- The pulse budget leaves most of the catalog unread right after login, so a
@@ -585,6 +587,7 @@ function PlayerState:QuestLogFingerprint(state)
         .. "#" .. table.concat(doneIDs, ",")
         .. "@" .. tostring(state.questLogKnown)
         .. ":" .. tostring(state.questCompletionKnown)
+        .. ":" .. tostring(state.questRouteKnown)
         .. ":" .. tostring(state.level)
         .. ":" .. tostring(state.mapID)
         .. ":" .. tostring(state.instanceID)
@@ -649,7 +652,8 @@ function PlayerState:Capture(api, questIDs, priorityCount)
         instanceID = instanceKnown and instanceResult[8] or nil
     end
 
-    local completedQuests, completionKnown, watchedQuests = CompletedQuests(api, questIDs, quests, priorityCount)
+    local completedQuests, completionKnown, watchedQuests, routeKnown =
+        CompletedQuests(api, questIDs, quests, priorityCount)
     local onTaxi
     if type(api.UnitOnTaxi) == "function" then
         local taxiResult, taxiKnown = Call(api, "UnitOnTaxi", "player")
@@ -668,6 +672,7 @@ function PlayerState:Capture(api, questIDs, priorityCount)
         completedQuests = completedQuests,
         watchedQuests = watchedQuests,
         questCompletionKnown = completionKnown,
+        questRouteKnown = routeKnown,
         mapID = mapID,
         x = x,
         y = y,

@@ -1570,10 +1570,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 1 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                 },
             },
-            text = "Accept Simple Scroll from Shadow Priest Sarvis in Tirisfal Glades. This step is for Orcs and Undead.",
+            text = "Accept Simple Scroll from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
             complete = QuestState(3095, "activeOrCompleted"),
             route = {
                 Point(MAP.TIRISFALGLADES, 0.3080, 0.6620, "Shadow Priest Sarvis",
@@ -1588,10 +1588,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 1 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                 },
             },
-            text = "Turn in Simple Scroll to Dannal Stern in Tirisfal Glades. This step is for Orcs and Undead.",
+            text = "Turn in Simple Scroll to Dannal Stern in Tirisfal Glades. This step is for Undead.",
             dependsOn = { "accept-3095-simple-scroll" },
             complete = QuestState(3095, "completed"),
             route = {
@@ -1644,10 +1644,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 3, 7 } },
+                    { race = 3 },
                 },
             },
-            text = "Accept Simple Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves and Gnomes.",
+            text = "Accept Simple Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves.",
             complete = QuestState(3106, "activeOrCompleted"),
             route = {
                 Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
@@ -1662,10 +1662,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 3, 7 } },
+                    { race = 3 },
                 },
             },
-            text = "Turn in Simple Rune to Thran Khorman in Dun Morogh. This step is for Dwarves and Gnomes.",
+            text = "Turn in Simple Rune to Thran Khorman in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-3106-simple-rune" },
             complete = QuestState(3106, "completed"),
             route = {
@@ -1681,10 +1681,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 7 } },
+                    { race = 7 },
                 },
             },
-            text = "Accept Simple Memorandum from Sten Stoutarm in Dun Morogh. This step is for Humans and Gnomes.",
+            text = "Accept Simple Memorandum from Sten Stoutarm in Dun Morogh. This step is for Gnomes.",
             complete = QuestState(3112, "activeOrCompleted"),
             route = {
                 Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
@@ -1699,10 +1699,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 7 } },
+                    { race = 7 },
                 },
             },
-            text = "Turn in Simple Memorandum to Thran Khorman in Dun Morogh. This step is for Humans and Gnomes.",
+            text = "Turn in Simple Memorandum to Thran Khorman in Dun Morogh. This step is for Gnomes.",
             dependsOn = { "accept-3112-simple-memorandum" },
             complete = QuestState(3112, "completed"),
             route = {
@@ -1718,10 +1718,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 4 } },
+                    { race = 4 },
                 },
             },
-            text = "Accept Simple Sigil from Conservator Ilthalaine in Teldrassil. This step is for Humans and Night Elves.",
+            text = "Accept Simple Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
             complete = QuestState(3116, "activeOrCompleted"),
             route = {
                 Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
@@ -1736,10 +1736,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 4 } },
+                    { race = 4 },
                 },
             },
-            text = "Turn in Simple Sigil to Alyissia in Teldrassil. This step is for Humans and Night Elves.",
+            text = "Turn in Simple Sigil to Alyissia in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-3116-simple-sigil" },
             complete = QuestState(3116, "completed"),
             route = {
@@ -1755,10 +1755,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = 1 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Marshal Haggard from Harry Burlguard in Stormwind City.",
+            text = "Accept Marshal Haggard from Harry Burlguard in Stormwind City. This step is for Humans.",
             complete = QuestState(1666, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWINDCITY, 0.7400, 0.3720, "Harry Burlguard",
@@ -1773,10 +1774,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = 1 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Marshal Haggard to Marshal Haggard in Elwynn Forest.",
+            text = "Turn in Marshal Haggard to Marshal Haggard in Elwynn Forest. This step is for Humans.",
             dependsOn = { "accept-1666-marshal-haggard" },
             complete = QuestState(1666, "completed"),
             route = {
@@ -1792,10 +1794,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = 1 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Dead-tooth Jack from Marshal Haggard in Elwynn Forest.",
+            text = "Accept Dead-tooth Jack from Marshal Haggard in Elwynn Forest. This step is for Humans.",
             dependsOn = { "turnin-1666-marshal-haggard" },
             complete = QuestState(1667, "activeOrCompleted"),
             route = {
@@ -1811,10 +1814,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = 1 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Kill Dead-Tooth Jack and collect Dead-tooth's Key at Ridgepoint Tower.",
+            text = "Kill Dead-Tooth Jack and collect Dead-tooth's Key at Ridgepoint Tower. This step is for Humans.",
             dependsOn = { "accept-1667-dead-tooth-jack" },
             complete = QuestState(1667, "complete"),
             route = {
@@ -1830,10 +1834,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = 1 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Dead-tooth Jack to Marshal Haggard in Elwynn Forest.",
+            text = "Turn in Dead-tooth Jack to Marshal Haggard in Elwynn Forest. This step is for Humans.",
             dependsOn = { "objective-1667-dead-tooth-jack" },
             complete = QuestState(1667, "completed"),
             route = {
@@ -1849,10 +1854,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Tormus Deepforge from Muren Stormpike in Ironforge.",
+            text = "Accept Tormus Deepforge from Muren Stormpike in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "turnin-1678-vejrek" },
             complete = QuestState(1680, "activeOrCompleted"),
             route = {
@@ -1868,10 +1874,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Tormus Deepforge to Tormus Deepforge in Ironforge.",
+            text = "Turn in Tormus Deepforge to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1680-tormus-deepforge" },
             complete = QuestState(1680, "completed"),
             route = {
@@ -1887,10 +1894,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Ironband's Compound from Tormus Deepforge in Ironforge.",
+            text = "Accept Ironband's Compound from Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "turnin-1680-tormus-deepforge" },
             complete = QuestState(1681, "activeOrCompleted"),
             route = {
@@ -1906,10 +1914,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Ironband's Compound to Tormus Deepforge in Ironforge.",
+            text = "Turn in Ironband's Compound to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1681-ironbands-compound" },
             complete = QuestState(1681, "completed"),
             route = {
@@ -1925,10 +1934,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Grey Iron Weapons from Tormus Deepforge in Ironforge.",
+            text = "Accept Grey Iron Weapons from Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             complete = QuestState(1682, "activeOrCompleted"),
             route = {
                 Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
@@ -1943,10 +1953,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Grey Iron Weapons to Tormus Deepforge in Ironforge.",
+            text = "Turn in Grey Iron Weapons to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1682-grey-iron-weapons" },
             complete = QuestState(1682, "completed"),
             route = {
@@ -1962,10 +1973,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept The Shade of Elura from Elanaria in Darnassus.",
+            text = "Accept The Shade of Elura from Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             complete = QuestState(1686, "activeOrCompleted"),
             route = {
                 Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
@@ -1980,10 +1992,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in The Shade of Elura to Elanaria in Darnassus.",
+            text = "Turn in The Shade of Elura to Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1686-the-shade-of-elura" },
             complete = QuestState(1686, "completed"),
             route = {
@@ -1999,10 +2012,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Smith Mathiel from Elanaria in Darnassus.",
+            text = "Accept Smith Mathiel from Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "turnin-1686-the-shade-of-elura" },
             complete = QuestState(1692, "activeOrCompleted"),
             route = {
@@ -2018,10 +2032,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Smith Mathiel to Mathiel in Darnassus.",
+            text = "Turn in Smith Mathiel to Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1692-smith-mathiel" },
             complete = QuestState(1692, "completed"),
             route = {
@@ -2037,10 +2052,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Weapons of Elunite from Mathiel in Darnassus.",
+            text = "Accept Weapons of Elunite from Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             complete = QuestState(1693, "activeOrCompleted"),
             route = {
                 Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
@@ -2055,10 +2071,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 1 },
+                    { race = { 1, 3, 4, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Weapons of Elunite to Mathiel in Darnassus.",
+            text = "Turn in Weapons of Elunite to Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
             dependsOn = { "accept-1693-weapons-of-elunite" },
             complete = QuestState(1693, "completed"),
             route = {
@@ -2074,10 +2091,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 1 },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Heirloom Weapon from Coleman Farthing in Tirisfal Glades.",
+            text = "Accept Heirloom Weapon from Coleman Farthing in Tirisfal Glades. This step is for Undead.",
             complete = QuestState(1822, "activeOrCompleted"),
             route = {
                 Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
@@ -2092,10 +2110,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 1 },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Heirloom Weapon to Coleman Farthing in Tirisfal Glades.",
+            text = "Turn in Heirloom Weapon to Coleman Farthing in Tirisfal Glades. This step is for Undead.",
             dependsOn = { "accept-1822-heirloom-weapon" },
             complete = QuestState(1822, "completed"),
             route = {
@@ -2815,6 +2834,44 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1848-brutal-hauberk",
+            kind = "accept",
+            priority = 1334,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 1 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Brutal Hauberk from Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "turnin-1838-brutal-armor" },
+            complete = QuestState(1848, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
+                    "Travel to Thun'grim Firegaze in The Barrens."),
+            },
+        },
+        {
+            id = "turnin-1848-brutal-hauberk",
+            kind = "turnin",
+            priority = 1336,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 1 },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Brutal Hauberk to Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "accept-1848-brutal-hauberk" },
+            complete = QuestState(1848, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
+                    "Travel to Thun'grim Firegaze in The Barrens."),
+            },
+        },
+        {
             id = "accept-1839-ulaelek-and-the-brutal-gauntlets",
             kind = "accept",
             priority = 1340,
@@ -2826,6 +2883,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Ula'elek and the Brutal Gauntlets from Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "turnin-1848-brutal-hauberk" },
             complete = QuestState(1839, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
@@ -2863,6 +2921,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Orm Stonehoof and the Brutal Helm from Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "turnin-1848-brutal-hauberk" },
             complete = QuestState(1840, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
@@ -2900,6 +2959,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Velora Nitely and the Brutal Legguards from Thun'grim Firegaze in The Barrens.",
+            dependsOn = { "turnin-1848-brutal-hauberk" },
             complete = QuestState(1841, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
@@ -2975,6 +3035,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Brutal Gauntlets from Ula'elek in Durotar.",
+            dependsOn = { "turnin-1842-satyr-hooves" },
             complete = QuestState(1843, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
@@ -3050,6 +3111,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Brutal Helm from Orm Stonehoof in Thunder Bluff.",
+            dependsOn = { "turnin-1844-chimaeric-horn" },
             complete = QuestState(1845, "activeOrCompleted"),
             route = {
                 Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
@@ -3125,6 +3187,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Brutal Legguards from Velora Nitely in Undercity.",
+            dependsOn = { "turnin-1846-dragonmaw-shinbones" },
             complete = QuestState(1847, "activeOrCompleted"),
             route = {
                 Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
@@ -3150,42 +3213,5 @@ ns:RegisterGuide({
                     "Travel to Velora Nitely in Undercity."),
             },
         },
-        {
-            id = "accept-1848-brutal-hauberk",
-            kind = "accept",
-            priority = 1520,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Brutal Hauberk from Thun'grim Firegaze in The Barrens.",
-            complete = QuestState(1848, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1848-brutal-hauberk",
-            kind = "turnin",
-            priority = 1530,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Brutal Hauberk to Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "accept-1848-brutal-hauberk" },
-            complete = QuestState(1848, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        }
     },
 })

@@ -114,7 +114,9 @@ ns:RegisterGuide({
             priority = 50,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 1 }
             } },
             text = "Accept Simple Rune.",
             complete = QuestState(3106, "activeOrCompleted"),
@@ -129,7 +131,9 @@ ns:RegisterGuide({
             priority = 60,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Rune.",
             complete = QuestState(3109, "activeOrCompleted"),
@@ -144,7 +148,9 @@ ns:RegisterGuide({
             priority = 70,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 5 }
             } },
             text = "Accept Hallowed Rune.",
             complete = QuestState(3110, "activeOrCompleted"),
@@ -159,7 +165,9 @@ ns:RegisterGuide({
             priority = 80,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 2 }
             } },
             text = "Accept Consecrated Rune.",
             complete = QuestState(3107, "activeOrCompleted"),
@@ -174,7 +182,9 @@ ns:RegisterGuide({
             priority = 90,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 3 }
             } },
             text = "Accept Etched Rune.",
             complete = QuestState(3108, "activeOrCompleted"),
@@ -189,7 +199,9 @@ ns:RegisterGuide({
             priority = 100,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 7 },
+                { class = 8 }
             } },
             text = "Accept Glyphic Memorandum.",
             complete = QuestState(3114, "activeOrCompleted"),
@@ -204,7 +216,9 @@ ns:RegisterGuide({
             priority = 110,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 7 },
+                { class = 1 }
             } },
             text = "Accept Simple Memorandum.",
             complete = QuestState(3112, "activeOrCompleted"),
@@ -219,7 +233,9 @@ ns:RegisterGuide({
             priority = 120,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 7 },
+                { class = 9 }
             } },
             text = "Accept Tainted Memorandum.",
             complete = QuestState(3115, "activeOrCompleted"),
@@ -234,7 +250,9 @@ ns:RegisterGuide({
             priority = 130,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 7 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Memorandum.",
             complete = QuestState(3113, "activeOrCompleted"),
@@ -467,6 +485,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 1 }
             } },
             text = "Turn in Simple Rune.",
@@ -484,6 +503,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Rune.",
@@ -501,6 +521,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 5 }
             } },
             text = "Turn in Hallowed Rune.",
@@ -518,6 +539,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in Consecrated Rune.",
@@ -535,6 +557,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Turn in Etched Rune.",
@@ -552,6 +575,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 7 },
                 { class = 1 }
             } },
             text = "Turn in Simple Memorandum.",
@@ -569,6 +593,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 7 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Memorandum.",
@@ -586,6 +611,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 7 },
                 { class = 8 }
             } },
             text = "Turn in Glyphic Memorandum.",
@@ -603,6 +629,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 7 },
                 { class = 9 }
             } },
             text = "Turn in Tainted Memorandum.",
@@ -904,6 +931,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 3, 7 } },
                 { class = 5 }
             } },
             text = "Accept Accept Garments of the Light.",
@@ -920,6 +948,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 3, 7 } },
                 { class = 5 }
             } },
             text = "Turn in Accept Garments of the Light.",
@@ -1513,6 +1542,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 1, 3 } },
                 { class = 5 }
             } },
             text = "Accept Desperate Prayer.",
@@ -1529,6 +1559,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1545,6 +1576,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Use Taming Rod.",
@@ -1562,6 +1594,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1579,6 +1612,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1594,7 +1628,9 @@ ns:RegisterGuide({
             priority = 990,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 3 },
+                { class = 3 }
             } },
             text = "Use Taming Rod.",
             complete = QuestObjective(6084, 1, "Taming Rod"),
@@ -1611,6 +1647,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1628,6 +1665,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1644,6 +1682,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Use Taming Rod.",
@@ -1661,6 +1700,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1678,6 +1718,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Accept Training the Beast.",
@@ -1694,6 +1735,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 3 }
             } },
             text = "Turn in Training the Beast.",
@@ -2378,6 +2420,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 1, 3 } },
                 { class = 5 }
             } },
             text = "Turn in Desperate Prayer.",
@@ -2394,7 +2437,8 @@ ns:RegisterGuide({
             priority = 1500,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Turn in The Slaughtered Lamb.",
             complete = QuestState(1715, "completed"),
@@ -2410,7 +2454,8 @@ ns:RegisterGuide({
             priority = 1510,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Accept Surena Caledon.",
             complete = QuestState(1688, "activeOrCompleted"),
@@ -2746,7 +2791,8 @@ ns:RegisterGuide({
             priority = 1730,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Turn in Surena Caledon.",
             complete = QuestState(1688, "completed"),
@@ -2762,7 +2808,8 @@ ns:RegisterGuide({
             priority = 1740,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Accept The Binding.",
             complete = QuestState(1689, "activeOrCompleted"),
@@ -2812,6 +2859,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept Tome of Divinity.",
@@ -2828,6 +2876,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in Tome of Divinity.",
@@ -2845,6 +2894,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -2861,6 +2911,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity from Tiza Battleforge in Ironforge.",
@@ -2874,6 +2925,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2891,6 +2943,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -2907,6 +2960,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2922,6 +2976,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity from Tiza Battleforge in Ironforge.",
@@ -2935,6 +2990,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2950,6 +3006,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity from Tiza Battleforge in Ironforge.",
@@ -2963,6 +3020,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2980,6 +3038,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -2996,6 +3055,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -3013,6 +3073,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -3055,7 +3116,8 @@ ns:RegisterGuide({
             priority = 1930,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = { 3, 7 } }
             } },
             text = "Turn in Return to Brock.",
             complete = QuestState(6392, "completed"),
@@ -3166,6 +3228,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -3183,6 +3246,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -3199,6 +3263,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Kill Dark Iron Spy.",
@@ -3216,6 +3281,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -3233,6 +3299,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -3249,6 +3316,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 3 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
