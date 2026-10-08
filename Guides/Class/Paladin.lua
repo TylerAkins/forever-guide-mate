@@ -438,7 +438,7 @@ ns:RegisterGuide({
                     { level = { min = 9 } },
                 },
             },
-            text = "The Tarnished: Rudolph Gelhardt's Head. This step is for Undead.",
+            text = "Kill Rudolph Gelhardt and collect Rudolph Gelhardt's Head in Tirisfal Glades. This step is for Undead.",
             dependsOn = { "accept-91317-the-tarnished", "accept-91316-making-repairs" },
             complete = QuestState(91317, "complete"),
             route = {
@@ -677,7 +677,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "The Tome of Divinity: Linen Cloth. This step is for Humans.",
+            text = "Bring 10 Linen Cloth to Stephanie Turner in Stormwind. You can buy it from the auction house. This step is for Humans.",
             dependsOn = { "accept-1644-the-tome-of-divinity" },
             complete = QuestState(1644, "complete"),
             route = {
@@ -863,7 +863,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "The Tome of Divinity: Defias Script. This step is for Humans.",
+            text = "Kill Rogue Wizard and collect Defias Script in Heroes' Vigil. This step is for Humans.",
             dependsOn = { "accept-1787-the-tome-of-divinity" },
             complete = QuestState(1787, "complete"),
             route = {
@@ -1124,7 +1124,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "The Tome of Divinity: Linen Cloth. This step is for Dwarves.",
+            text = "Buy 10 Linen Cloth from the Auction House in Ironforge. This step is for Dwarves.",
             dependsOn = { "accept-1648-the-tome-of-divinity" },
             complete = QuestState(1648, "complete"),
             route = {
@@ -1306,7 +1306,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "The Tome of Divinity: Dark Iron Script. This step is for Dwarves.",
+            text = "Kill a Dark Iron Spy and collect Dark Iron Script in Ironband's Compound. This step is for Dwarves.",
             dependsOn = { "accept-1784-the-tome-of-divinity" },
             complete = QuestState(1784, "complete"),
             route = {
@@ -1446,7 +1446,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "A Lesson in Divinity: Linen Cloth. This step is for Undead.",
+            text = "Complete Tanis Alderwood's lesson in the Undercity. Loot linen from crates or bring 10 Linen Cloth. This step is for Undead.",
             dependsOn = { "accept-94434-a-lesson-in-divinity" },
             complete = QuestState(94434, "complete"),
             route = {
@@ -1628,7 +1628,7 @@ ns:RegisterGuide({
                     { level = { min = 12 } },
                 },
             },
-            text = "A Lesson in Divinity: Scarlet Crusade Attack Plans. This step is for Undead.",
+            text = "Do as Deathguard Falgan asks among the Scarlet Crusade in Tirisfal Glades. This step is for Undead.",
             dependsOn = { "accept-94440-a-lesson-in-divinity" },
             complete = QuestState(94440, "complete"),
             route = {
@@ -1848,7 +1848,7 @@ ns:RegisterGuide({
                     { level = { min = 18 } },
                 },
             },
-            text = "Lumina Windsinger: Fenris Isle Key. This step is for Undead.",
+            text = "Kill Rot Hide gnolls in Silverpine Forest and collect the Fenris Isle Key. This step is for Undead.",
             dependsOn = { "accept-91862-lumina-windsinger" },
             complete = QuestState(91862, "complete"),
             route = {
@@ -2560,7 +2560,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Dispelling Evil: Minion's Scourgestone. This step is for Humans and Dwarves.",
+            text = "Collect 20 Minion's Scourgestone from scourge in the Eastern Plaguelands. This step is for Humans and Dwarves.",
             dependsOn = { "accept-8414-dispelling-evil" },
             complete = QuestState(8414, "complete"),
             route = {

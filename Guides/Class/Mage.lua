@@ -499,7 +499,7 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Gathering Materials: Linen Cloth. This step is for Humans and Gnomes.",
+            text = "Loot 10 Linen Cloth from humanoids in Stormwind or buy from the auction house. This step is for Humans and Gnomes.",
             dependsOn = { "accept-1921-gathering-materials" },
             complete = QuestState(1921, "complete"),
             route = {
@@ -872,7 +872,7 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
-            text = "Items of Power: Jade.",
+            text = "Kill Drywallow crocolisks and related mobs in Dustwallow Marsh and collect Jade.",
             dependsOn = { "accept-1948-items-of-power" },
             complete = QuestState(1948, "complete"),
             route = {
@@ -1297,7 +1297,7 @@ ns:RegisterGuide({
                     { level = { min = 15 } },
                 },
             },
-            text = "Gathering Materials: Linen Cloth. This step is for Undead and Trolls.",
+            text = "Loot 10 Linen Cloth from crates and citizens in the Undercity, or buy from the auction house. This step is for Undead and Trolls.",
             dependsOn = { "accept-1961-gathering-materials" },
             complete = QuestState(1961, "complete"),
             route = {
@@ -1902,7 +1902,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Magic Dust: Glittering Dust.",
+            text = "Collect 10 Glittering Dust from blood elves in Azshara.",
             dependsOn = { "accept-8251-magic-dust" },
             complete = QuestState(8251, "complete"),
             route = {
@@ -1960,7 +1960,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "The Siren's Coral: Enchanted Coral.",
+            text = "Collect 6 Enchanted Coral from Spitelash sirens in Azshara.",
             dependsOn = { "accept-8252-the-sirens-coral" },
             complete = QuestState(8252, "complete"),
             route = {
@@ -2013,7 +2013,7 @@ ns:RegisterGuide({
                     { level = { min = 60 } },
                 },
             },
-            text = "Warlord Krellian: Prismatic Shell.",
+            text = "Kill Warlord Krellian or Scalebeard in Azshara and collect the Prismatic Shell.",
             dependsOn = { "accept-9362-warlord-krellian" },
             complete = QuestState(9362, "complete"),
             route = {

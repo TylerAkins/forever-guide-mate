@@ -2,6 +2,62 @@
 
 All notable changes to this project are documented here.
 
+## 0.3.0 - 2026-10-08
+
+### Forever Casual Route
+
+- Replace the merged `1-60 Era` guide with **Forever Casual Route** rows for Alliance and Horde (compact library entries). Starter zones stay individual guides; post-starter Leveling chapters compose into Casual (level 12+) in registration order (Silverpine before Barrens).
+- Rebuild the route from classic leveling spines (`tools/import_classic_leveling.py`), omitting hearth, ding/grind, trainer, vendor, and flight-learn steps. Port Forever quests (id 90000+) onto the spines (`tools/port_forever_weaves.py`).
+- Graduate every 30-60 chapter from `Guides/Era/` into `Guides/Leveling/` and delete `Guides/Era/` plus orphan Leveling leftovers.
+- Weave verified same-hub Forever quests: Alliance Hillsbrad `98059`/`98071`/`98463`, Horde Thousand Needles `98069`/`98070`, Horde Arathi `97539`, Horde Desolace `97265`/`93225`/`94873`/`96222`, Horde Swamp of Sorrows `93663`, Alliance Feralas `98155`, Alliance Swamp of Sorrows `93585`/`93176`.
+- Casual is a flat tracker route with one saved cursor per faction guide. After a reload it waits for the quest-completion APIs before choosing a step, so progress no longer jumps after Sync.
+- Merged Casual guides no longer duplicate goal ids or carry dungeon boss steps (Deadmines kills and Stormwind pickups moved to `Guides/Dungeons/Deadmines.lua`).
+- Character storage schemas 7-10 migrate deferred skips, `leveling-era` progress, and old woven chapter ids (including `skippedBecause`, `manualCompleted`, and `notOffered`) onto the Casual spine, and add per-camp `taxiBoarding`.
+
+### Skips and step readiness
+
+- Add `SkipLineage.lua`: hard skip with a dependent cascade and a confirm dialog. Skip does not raise completion percent, Loremaster guides cannot skip, and the soft "defer for later" is removed. Sync and Previous clear skip clusters; stale skips clear on refresh.
+- Add `kind = "confirm"` for boss and event steps without quest completion.
+- Objective and quest-gossip steps wait until the quest is in the log. Turn-ins wait until the quest is complete (for example Miner's Fortune at 0/1 Cats Eye Emerald).
+- Item-start accepts ("Use the ... to accept") wait for the starter item in your bags. Rare drops (Lakota'mani, Margol the Rager, The Harvester, Washte Pawne, Owatanka) show a kill-and-loot note with a pin first, and the note clears once the drop is in your bags.
+- Inside a dungeon or raid, ready steps without outdoor pins stay ahead of capital turn-ins (Ragefire Chasm, Blackfathom Deeps).
+
+### Navigation and flights
+
+- Turn-ins and objectives with `useClientPin` follow the Blizzard quest map POI, choosing the nearest when there are several. Authored pins are the fallback; `useClientPin = false` keeps the authored pin.
+- Flight copy names the camp closest to the quest pin (Crossroads, Ratchet, or Camp Taurajo) instead of "The Barrens", and boarding copy reads `Take the flight path to ...`.
+- Remember which flight master each taxi window was opened at (`taxiBoarding`) and walk to another master on the same land mass when the nearest one cannot reach a learned destination.
+- While on a flight, pickups and turn-ins show the destination leg until you land. The guide refreshes on takeoff and on landing.
+- Cross-zone pickups no longer take the same-map `campPickup` taxi skip, and TomTom only projects pins on the current or paired map.
+- Fix Lua errors from `Taxi:Capture` without an `api` argument (opening the flight map) and from `PlayerState:Capture` reversing `UnitOnTaxi` results.
+
+### Tracker
+
+- Right-click the tracker cog to open addon settings; left-click still opens the guide library.
+- Accept steps show their step text and client-pinned turn-ins show `Turn in <quest title>.`. Pin labels are no longer shown as the NPC, because imported labels are usually the quest title.
+
+### Quest fixes
+
+- **The Spirits of Stonetalon**: the giver is Zor Lonetree in Grommash Hold. The accept and turn-in complete on their own when Goblin Invaders is active or done (breadcrumb bypass, no Skip needed), the gossip audit clears stale "not offered" blocks at Zor Lonetree, and Goblin Invaders depends on the Spirits turn-in.
+- **The Escape**: add the Wizzlecrank escort step so the route stays at the drill site until the escort is done.
+- **Miner's Fortune**: add a Boulder Lode objective before the Wharfmaster Dizzywig turn-in in Ratchet.
+- **Chen's Empty Keg**: use a Barrens ground-keg pin and loot copy instead of a pinless NPC accept.
+- **Return to the Crossroads** (6386): gate the turn-in to Orc and Troll like the rest of the Doras flight chain.
+- Rewrite Blackfathom Deeps Horde drop chains and tighten dungeon and Class guide objective wording.
+- Pinless Leveling accepts get Use-the-item or navigation copy, pinless objectives and turn-ins use the client pin, and set-hearth note steps are removed.
+
+### Performance
+
+- Route refresh makes about 80% less garbage (roughly 720 KB to 150 KB per refresh on the Horde Casual route), which removes the hitch on loot and quest pickup.
+- `BAG_UPDATE` is no longer registered. `BAG_UPDATE_DELAYED` rebuilds the route only when an item the route asked about appeared or left the bags, and `PlayerState:HasItem` keeps its answers until then.
+- `PlayerState:Capture` reuses unchanged completion tables, and `Engine:UrgentGoals` returns early when no quest timer is running.
+
+### Tooling and checks
+
+- Lint fails on accepts with no turn-in (`OrphanAcceptAllowlist` for instant and auto quests) and on bare pinless `Accept ...` steps. Tests fail if merged Casual guides reuse a goal id. The importer understands `turninany` and `|instant`.
+- Empty `{}` condition children evaluate as no-ops.
+- Scrub third-party guide product names from shipped guides, engine code, docs, skills, and tools.
+
 ## 0.2.5 - 2026-10-06
 
 - Add a Horde **City of Dalaran Attunement** dungeon guide for the Dalaran Sewer Key chain (Prison Break In, Key to the City, Dalaran Patrols, Blood in the Streets, Heart of Disruption).

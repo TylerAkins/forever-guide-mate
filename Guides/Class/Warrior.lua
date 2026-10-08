@@ -667,7 +667,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "The Skybreaker Bulwark: Skybreaker Bulwark. This step is for Alliance Skyborne and Horde Skyborne.",
+            text = "Reclaim the Skybreaker Bulwark from Zaal Stormshield at the Shrine of Akir. This step is for Alliance Skyborne and Horde Skyborne.",
             dependsOn = { "accept-94003-the-skybreaker-bulwark" },
             complete = QuestState(94003, "complete"),
             route = {
@@ -837,7 +837,7 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
-            text = "Cyclonian: Liferoot.",
+            text = "Collect 8 Liferoot. Buy from Thanthaldis Snowgleam in Alterac Mountains or loot from chests on the route.",
             dependsOn = { "accept-1712-cyclonian" },
             complete = QuestState(1712, "complete"),
             route = {
@@ -898,7 +898,7 @@ ns:RegisterGuide({
                     { level = { min = 30 } },
                 },
             },
-            text = "Essence of the Exile: Burning Charm.",
+            text = "Kill Ancient Fire Elementals in Alterac Mountains and collect Burning Charm.",
             dependsOn = { "accept-1714-essence-of-the-exile" },
             complete = QuestState(1714, "complete"),
             route = {
@@ -1814,7 +1814,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Dead-tooth Jack: Dead-tooth's Key.",
+            text = "Kill Dead-Tooth Jack and collect Dead-tooth's Key at Ridgepoint Tower.",
             dependsOn = { "accept-1667-dead-tooth-jack" },
             complete = QuestState(1667, "complete"),
             route = {
@@ -2670,7 +2670,7 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                 },
             },
-            text = "Trial at the Field of Giants: Twitching Antenna.",
+            text = "Kill silithid at the Field of Giants in The Barrens and collect Twitching Antenna.",
             dependsOn = { "accept-1824-trial-at-the-field-of-giants" },
             complete = QuestState(1824, "complete"),
             route = {
@@ -2773,7 +2773,7 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                 },
             },
-            text = "Brutal Armor: Iron Bar.",
+            text = "Loot Iron Bars from Fel Interlopers in the zones marked on the route.",
             dependsOn = { "accept-1838-brutal-armor" },
             complete = QuestState(1838, "complete"),
             route = {

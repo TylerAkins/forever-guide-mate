@@ -10,8 +10,8 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 | `Core.lua` | Saved variables, events |
 | `GuideEngine.lua` | Guide routing and progress |
 | `UI.lua` | Tracker and guide library |
-| `Guides/Leveling/` | Zephras Isle and converted Era chapters (titles without `(Era)`) |
-| `Guides/Era/` | Unconverted Era chapters (titles with `(Era)`, not loaded) |
+| `Guides/Leveling/` | Full Casual 1–60 spine (starters through Silithus); Forever weaves land here |
+| `SkipLineage.lua` | Hard skip cascade for Casual and dungeon guides |
 | `Guides/Loremaster/` | Zone-completion guides (shipped: Durotar and Mulgore only; add to `ForeverGuideMate.toc` when a zone is ready) |
 | `Guides/Dungeons/` | Dungeon quest guides |
 | `Guides/Class/` | Supported class-quest guides, one per class |

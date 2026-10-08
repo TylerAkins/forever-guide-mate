@@ -984,7 +984,7 @@ ns:RegisterGuide({
                     { level = { min = 14 } },
                 },
             },
-            text = "Gathering the Cure: Earthroot. This step is for Night Elves.",
+            text = "Gather 5 Earthroot with Herbalism or buy from the auction house. This step is for Night Elves.",
             dependsOn = { "accept-6123-gathering-the-cure" },
             complete = QuestState(6123, "complete"),
             route = {
@@ -1645,7 +1645,7 @@ ns:RegisterGuide({
                     { level = { min = 14 } },
                 },
             },
-            text = "Gathering the Cure: Earthroot. This step is for Tauren.",
+            text = "Gather Earthroot and kodo horns for Gathering the Cure in The Barrens. This step is for Tauren.",
             dependsOn = { "accept-6128-gathering-the-cure" },
             complete = QuestState(6128, "complete"),
             route = {
@@ -2511,7 +2511,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Bloodpetal Poison: Gorishi Sting.",
+            text = "Collect 8 Gorishi Sting and 8 Bloodcap in Un'Goro Crater.",
             dependsOn = { "accept-9052-bloodpetal-poison" },
             complete = QuestState(9052, "complete"),
             route = {

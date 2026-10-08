@@ -19,14 +19,14 @@ sys.path.insert(0, str(ROOT / "tools"))
 from weave_loremaster import parse_goals  # noqa: E402
 
 FIXTURE = ROOT / "tests" / "fixtures" / "quest_min_levels.json"
-# Thunderbrew is in the quest index with reqlevel 0, so it has no minimum.
-UNLEVELED = {117}
+# Quests that appear in guides but intentionally have no fixture minimum.
+UNLEVELED: set[int] = set()
 LEVEL_RE = re.compile(r"level = \{\s*min = (\d+)\s*\}")
 
 
 def guide_files() -> list[Path]:
     files = []
-    for folder in ("Leveling", "Loremaster", "Dungeons", "Era"):
+    for folder in ("Leveling", "Loremaster", "Dungeons"):
         files.extend(sorted((ROOT / "Guides" / folder).glob("*.lua")))
     return files
 

@@ -108,7 +108,8 @@ function MinimapButton:Create(hooks)
         local cursorX, cursorY = GetCursorPosition()
         local scale = Minimap:GetEffectiveScale()
         cursorX, cursorY = cursorX / scale, cursorY / scale
-        local angle = math.deg(math.atan2(cursorY - centerY, cursorX - centerX))
+        local atan2 = math.atan2 or function(y, x) return math.atan(y, x) end
+        local angle = math.deg(atan2(cursorY - centerY, cursorX - centerX))
         setAngle(angle)
         PlaceButton(angle)
     end)

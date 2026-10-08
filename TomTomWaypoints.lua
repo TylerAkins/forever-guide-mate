@@ -30,7 +30,13 @@ function Waypoints:SyncTomTom(goal, state, api)
         return
     end
     local mapID, x, y = leg.mapID, leg.x, leg.y
-    if state.mapID and state.mapID ~= mapID and ns.Navigation then
+    -- Only project onto the player map when that map is the same zone (or a
+    -- paired city/zone). Projecting Barrens coords onto Orgrimmar invents a
+    -- fake Org pin for Crossroads turn-ins.
+    if state.mapID and state.mapID ~= mapID and ns.Navigation
+        and (ns.Navigation:OnMap(state.mapID, mapID)
+            or ns.Navigation:InZone(state.mapID, mapID)
+            or (ns.Travel and ns.Travel.Paired and ns.Travel:Paired(state.mapID, mapID))) then
         local projectedX, projectedY = ns.Navigation:ProjectToMap(mapID, x, y, state.mapID)
         if projectedX and projectedY and projectedX >= 0 and projectedX <= 1
             and projectedY >= 0 and projectedY <= 1 then
@@ -68,6 +74,14 @@ end
 local function ValidPoint(mapID, x, y)
     return type(mapID) == "number" and mapID > 0 and type(x) == "number" and type(y) == "number"
         and x >= 0 and x <= 1 and y >= 0 and y <= 1
+end
+
+local function TurninQuestID(goal)
+    if type(goal) ~= "table" or goal.kind ~= "turnin" then
+        return nil
+    end
+    local quest = type(goal.complete) == "table" and goal.complete.quest or nil
+    return type(quest) == "table" and quest.id or nil
 end
 
 function Waypoints:Report(message)
@@ -210,6 +224,17 @@ function Waypoints:Sync(goal, state, api)
     end
     if not leg or not ValidPoint(leg.mapID, leg.x, leg.y) then
         self:Clear(api); self:Report("No waypoint location is available for this step."); return
+    end
+    if provider == "blizzard" and not nativeQuest and not flightLeg and TurninQuestID(goal)
+        and type(goal.route) == "table" and C_SuperTrack
+        and type(C_SuperTrack.GetSuperTrackedQuestID) == "function"
+        and type(C_SuperTrack.SetSuperTrackedQuestID) == "function" then
+        local turninQuest = TurninQuestID(goal)
+        local ok, tracked = pcall(C_SuperTrack.GetSuperTrackedQuestID)
+        if ok and tracked == turninQuest then
+            self:CallBlizzard(C_SuperTrack.SetSuperTrackedQuestID, 0)
+            self.questID = nil
+        end
     end
     if provider == "tomtom" then
         api = api or TomTom

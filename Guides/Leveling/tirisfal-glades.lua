@@ -1,30 +1,16 @@
 local _, ns = ...
 
--- Horde Era leveling route for Tirisfal Glades, levels 1-12.
--- Forever quests from the Tirisfal Glades and Undercity lists are woven into this route.
--- Tomb Weed is offered only after Doom Weed is turned in. Wowhead does not record that chain.
--- Collect it at Balnir Farmstead with Rear Guard Patrol, then turn it in after the last A New Plague.
--- Undead paladin steps on this road: A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
--- Bandarion Keep is the precursor to the Lumina Windsinger escort for the Wolfsbane Sword.
--- Hadric Harlson does not offer it when The Argent Emissary is turned in. He offers
--- The Cult of the Damned and Remnants of War first. Bandarion Keep waits until both are turned in.
--- Left out: Prompt Potion Runner, A Frightened Request, and Unending Torment are level 16 to 22.
--- Whispering Horror Residue is turned in only after the item starts the quest.
--- Grind stops and flight-point pickups are not part of this route.
--- Forever class quests with no start pin stay off this route, including The Scarlet Rune and The Lost Rune.
--- Coordinates have not been validated in the Forever client.
-
-local MAP = {
-    TIRISFAL = 1420,
-    UNDERCITY = 1458,
-}
+-- Forever Casual spine: Undead Starter (1-13)
+-- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
+-- Forever weaves ported from prior Leveling chapters (quest id >= 90000).
+-- Coordinates not yet validated in Forever.
 
 local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
 end
 
-local function QuestObjective(questID, index)
-    return { questObjective = { id = questID, index = index } }
+local function QuestObjective(questID, index, text)
+    return { questObjective = { id = questID, index = index, text = text } }
 end
 
 local function Point(mapID, x, y, label, offMapText)
@@ -37,11 +23,19 @@ local function Point(mapID, x, y, label, offMapText)
     }
 end
 
+local MAP = {
+    DUROTAR = 1411,
+    TIRISFAL_GLADES = 1420,
+    ORGRIMMAR = 1454,
+    UNDERCITY = 1458,
+}
+
 ns:RegisterGuide({
     id = "leveling-era-tirisfal-glades",
-    title = "Tirisfal Glades",
+    title = "Undead Starter",
     category = "Leveling Quest Guides",
-    revision = 11,
+    revision = 1,
+    casualSpine = true,
     conditions = {
         all = {
             { faction = "Horde" },
@@ -53,227 +47,2766 @@ ns:RegisterGuide({
             id = "accept-363-rude-awakening",
             kind = "accept",
             priority = 10,
-            conditions = {
-                all = {
-                    { race = 5 },
-                },
-            },
-            text = "Accept Rude Awakening from Undertaker Mordo in Deathknell.",
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Rude Awakening.",
             complete = QuestState(363, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3025, 0.7171, "Undertaker Mordo",
-                    "Travel to Undertaker Mordo."),
+                Point(1420, 0.3022, 0.7165, "Rude Awakening",
+                    "Travel to Rude Awakening.")
+            }
             },
-        },
+        {
+            id = "objective-364-1-duskbat",
+            kind = "objective",
+            priority = 20,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { any = { { class = 1 }, { class = 9 } } }
+            } },
+            text = "Kill Duskbat.",
+            complete = QuestObjective(364, 1, "Duskbat"),
+            route = {
+                Point(1420, 0.2940, 0.6960, "Duskbat",
+                    "Travel to Duskbat.")
+            }
+            },
         {
             id = "turnin-363-rude-awakening",
             kind = "turnin",
-            priority = 20,
-            conditions = {
-                all = {
-                    { race = 5 },
-                },
-            },
-            text = "Turn in Rude Awakening to Shadow Priest Sarvis in Deathknell.",
-            dependsOn = { "accept-363-rude-awakening" },
+            priority = 30,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Rude Awakening.",
             complete = QuestState(363, "completed"),
+            dependsOn = { "accept-363-rude-awakening" },
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
+                Point(1420, 0.3084, 0.6620, "Rude Awakening",
+                    "Travel to Rude Awakening.")
+            }
             },
-        },
         {
             id = "accept-364-the-mindless-ones",
             kind = "accept",
-            priority = 30,
-            text = "Accept The Mindless Ones from Shadow Priest Sarvis in Deathknell.",
+            priority = 40,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Mindless Ones.",
             complete = QuestState(364, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
+                Point(1420, 0.3084, 0.6620, "The Mindless Ones",
+                    "Travel to The Mindless Ones.")
+            }
             },
-        },
         {
             id = "accept-1470-piercing-the-veil",
             kind = "accept",
-            priority = 40,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Accept Piercing the Veil from Venya Marthand in Deathknell.",
+            priority = 50,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Accept Piercing the Veil.",
             complete = QuestState(1470, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3106, 0.6635, "Venya Marthand",
-                    "Travel to Venya Marthand."),
+                Point(1420, 0.3098, 0.6641, "Piercing the Veil",
+                    "Travel to Piercing the Veil.")
+            }
             },
-        },
         {
-            id = "objective-1470-piercing-the-veil",
-            kind = "objective",
-            priority = 50,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Kill Rattlecage Skeleton and collect Rattlecage Skull in Deathknell.",
-            dependsOn = { "accept-1470-piercing-the-veil" },
-            complete = QuestState(1470, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3289, 0.6161, "Rattlecage Skeleton",
-                    "Travel to Rattlecage Skeleton."),
-            },
-        },
-        {
-            id = "objective-364-the-mindless-ones",
+            id = "objective-1470-1-rattlecage-skeleton",
             kind = "objective",
             priority = 60,
-            text = "Kill 8 Mindless Zombie and 8 Wretched Ghoul right outside town.",
-            dependsOn = { "accept-364-the-mindless-ones" },
-            complete = QuestState(364, "complete"),
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Rattlecage Skeleton.",
+            complete = QuestObjective(1470, 1, "Rattlecage Skeleton"),
+            dependsOn = { "accept-1470-piercing-the-veil" },
             route = {
-                Point(MAP.TIRISFAL, 0.3336, 0.6427, "Mindless Zombie",
-                    "Travel to Mindless Zombie."),
+                Point(1420, 0.3220, 0.6260, "Rattlecage Skeleton",
+                    "Travel to Rattlecage Skeleton.")
+            }
             },
-        },
-        {
-            id = "turnin-364-the-mindless-ones",
-            kind = "turnin",
-            priority = 70,
-            text = "Turn in The Mindless Ones to Shadow Priest Sarvis in Deathknell.",
-            dependsOn = { "objective-364-the-mindless-ones" },
-            complete = QuestState(364, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
-            },
-        },
         {
             id = "turnin-1470-piercing-the-veil",
             kind = "turnin",
-            priority = 80,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Turn in Piercing the Veil to Venya Marthand in Deathknell.",
-            dependsOn = { "objective-1470-piercing-the-veil" },
+            priority = 70,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Turn in Piercing the Veil.",
             complete = QuestState(1470, "completed"),
+            dependsOn = { "accept-1470-piercing-the-veil", "objective-1470-1-rattlecage-skeleton" },
             route = {
-                Point(MAP.TIRISFAL, 0.3098, 0.6641, "Venya Marthand",
-                    "Travel to Venya Marthand."),
+                Point(1420, 0.3098, 0.6641, "Piercing the Veil",
+                    "Travel to Piercing the Veil.")
+            }
             },
-        },
         {
-            id = "accept-3901-rattling-the-rattlecages",
+            id = "turnin-364-the-mindless-ones",
+            kind = "turnin",
+            priority = 80,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Mindless Ones.",
+            complete = QuestState(364, "completed"),
+            dependsOn = { "accept-364-the-mindless-ones", "objective-364-1-duskbat" },
+            route = {
+                Point(1420, 0.3084, 0.6620, "The Mindless Ones",
+                    "Travel to The Mindless Ones.")
+            }
+            },
+        {
+            id = "accept-3095-simple-scroll",
             kind = "accept",
             priority = 90,
-            text = "Accept Rattling the Rattlecages from Shadow Priest Sarvis in Deathknell.",
-            complete = QuestState(3901, "activeOrCompleted"),
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Simple Scroll.",
+            complete = QuestState(3095, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
+                Point(1420, 0.3084, 0.6620, "Simple Scroll",
+                    "Travel to Simple Scroll.")
+            }
             },
-        },
         {
-            id = "accept-376-the-damned",
+            id = "accept-3099-tainted-scroll",
             kind = "accept",
             priority = 100,
-            conditions = { level = { min = 2 } },
-            text = "Accept The Damned from Novice Elreth in Deathknell.",
-            complete = QuestState(376, "activeOrCompleted"),
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Tainted Scroll.",
+            complete = QuestState(3099, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3092, 0.6614, "Novice Elreth",
-                    "Travel to Novice Elreth."),
+                Point(1420, 0.3084, 0.6620, "Tainted Scroll",
+                    "Travel to Tainted Scroll.")
+            }
             },
-        },
         {
             id = "accept-3096-encrypted-scroll",
             kind = "accept",
             priority = 110,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Accept Encrypted Scroll from Shadow Priest Sarvis in Deathknell.",
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Encrypted Scroll.",
             complete = QuestState(3096, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
+                Point(1420, 0.3084, 0.6620, "Encrypted Scroll",
+                    "Travel to Encrypted Scroll.")
+            }
             },
-        },
-        {
-            id = "accept-3099-tainted-scroll",
-            kind = "accept",
-            priority = 120,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Accept Tainted Scroll from Shadow Priest Sarvis in Deathknell.",
-            complete = QuestState(3099, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
-            },
-        },
-        {
-            id = "accept-3095-simple-scroll",
-            kind = "accept",
-            priority = 130,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Accept Simple Scroll from Shadow Priest Sarvis in Deathknell.",
-            complete = QuestState(3095, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
-            },
-        },
-        {
-            id = "accept-3098-glyphic-scroll",
-            kind = "accept",
-            priority = 140,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Accept Glyphic Scroll from Shadow Priest Sarvis in Deathknell.",
-            complete = QuestState(3098, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
-            },
-        },
         {
             id = "accept-3097-hallowed-scroll",
             kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 5 },
-                },
-            },
-            text = "Accept Hallowed Scroll from Shadow Priest Sarvis in Deathknell.",
+            priority = 120,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Hallowed Scroll.",
             complete = QuestState(3097, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
+                Point(1420, 0.3084, 0.6620, "Hallowed Scroll",
+                    "Travel to Hallowed Scroll.")
+            }
+            },
+        {
+            id = "accept-3098-glyphic-scroll",
+            kind = "accept",
+            priority = 130,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Glyphic Scroll.",
+            complete = QuestState(3098, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3084, 0.6620, "Glyphic Scroll",
+                    "Travel to Glyphic Scroll.")
+            }
+            },
+        {
+            id = "accept-3901-rattling-the-rattlecages",
+            kind = "accept",
+            priority = 140,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Rattling the Rattlecages.",
+            complete = QuestState(3901, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3084, 0.6620, "Rattling the Rattlecages",
+                    "Travel to Rattling the Rattlecages.")
+            }
+            },
+        {
+            id = "accept-376-the-damned",
+            kind = "accept",
+            priority = 150,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Damned.",
+            complete = QuestState(376, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3086, 0.6605, "The Damned",
+                    "Travel to The Damned.")
+            }
+            },
+        {
+            id = "turnin-3098-glyphic-scroll",
+            kind = "turnin",
+            priority = 160,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 8 }
+            } },
+            text = "Turn in Glyphic Scroll.",
+            complete = QuestState(3098, "completed"),
+            dependsOn = { "accept-3098-glyphic-scroll" },
+            route = {
+                Point(1420, 0.3094, 0.6606, "Glyphic Scroll",
+                    "Travel to Glyphic Scroll.")
+            }
+            },
+        {
+            id = "turnin-3099-tainted-scroll",
+            kind = "turnin",
+            priority = 170,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Turn in Tainted Scroll.",
+            complete = QuestState(3099, "completed"),
+            dependsOn = { "accept-3099-tainted-scroll" },
+            route = {
+                Point(1420, 0.3091, 0.6634, "Tainted Scroll",
+                    "Travel to Tainted Scroll.")
+            }
+            },
+        {
+            id = "turnin-3097-hallowed-scroll",
+            kind = "turnin",
+            priority = 180,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Turn in Hallowed Scroll.",
+            complete = QuestState(3097, "completed"),
+            dependsOn = { "accept-3097-hallowed-scroll" },
+            route = {
+                Point(1420, 0.3111, 0.6603, "Hallowed Scroll",
+                    "Travel to Hallowed Scroll.")
+            }
+            },
+        {
+            id = "objective-3901-1-rattlecage-skeleton",
+            kind = "objective",
+            priority = 190,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill 12 Rattlecage Skeleton.",
+            complete = QuestObjective(3901, 1, "Rattlecage Skeleton"),
+            dependsOn = { "accept-3901-rattling-the-rattlecages" },
+            route = {
+                Point(1420, 0.3220, 0.6260, "Rattlecage Skeleton",
+                    "Travel to Rattlecage Skeleton.")
+            }
+            },
+        {
+            id = "turnin-376-the-damned",
+            kind = "turnin",
+            priority = 200,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Damned.",
+            complete = QuestState(376, "completed"),
+            dependsOn = { "accept-376-the-damned" },
+            route = {
+                Point(1420, 0.3086, 0.6605, "The Damned",
+                    "Travel to The Damned.")
+            }
+            },
+        {
+            id = "accept-6395-marla-s-last-wish",
+            kind = "accept",
+            priority = 210,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Marla's Last Wish.",
+            complete = QuestState(6395, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3086, 0.6605, "Marla's Last Wish",
+                    "Travel to Marla's Last Wish.")
+            }
+            },
+        {
+            id = "turnin-3901-rattling-the-rattlecages",
+            kind = "turnin",
+            priority = 220,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Rattling the Rattlecages.",
+            complete = QuestState(3901, "completed"),
+            dependsOn = { "accept-3901-rattling-the-rattlecages", "objective-3901-1-rattlecage-skeleton" },
+            route = {
+                Point(1420, 0.3083, 0.6620, "Rattling the Rattlecages",
+                    "Travel to Rattling the Rattlecages.")
+            }
+            },
+        {
+            id = "accept-380-night-web-s-hollow",
+            kind = "accept",
+            priority = 230,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Night Web's Hollow.",
+            complete = QuestState(380, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3215, 0.6601, "Night Web's Hollow",
+                    "Travel to Night Web's Hollow.")
+            }
+            },
+        {
+            id = "turnin-3095-simple-scroll",
+            kind = "turnin",
+            priority = 240,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Turn in Simple Scroll.",
+            complete = QuestState(3095, "completed"),
+            dependsOn = { "accept-3095-simple-scroll" },
+            route = {
+                Point(1420, 0.3269, 0.6556, "Simple Scroll",
+                    "Travel to Simple Scroll.")
+            }
+            },
+        {
+            id = "turnin-3096-encrypted-scroll",
+            kind = "turnin",
+            priority = 250,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 4 }
+            } },
+            text = "Turn in Encrypted Scroll.",
+            complete = QuestState(3096, "completed"),
+            dependsOn = { "accept-3096-encrypted-scroll" },
+            route = {
+                Point(1420, 0.3253, 0.6565, "Encrypted Scroll",
+                    "Travel to Encrypted Scroll.")
+            }
+            },
+        {
+            id = "accept-3902-scavenging-deathknell",
+            kind = "accept",
+            priority = 260,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Scavenging Deathknell.",
+            complete = QuestState(3902, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3161, 0.6560, "Scavenging Deathknell",
+                    "Travel to Scavenging Deathknell.")
+            }
+            },
+        {
+            id = "objective-3902-1-scavenged-goods",
+            kind = "objective",
+            priority = 270,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Collect 6 Scavenged Goods.",
+            complete = QuestObjective(3902, 1, "Scavenged Goods"),
+            dependsOn = { "accept-3902-scavenging-deathknell" },
+            route = {
+                Point(1420, 0.3360, 0.6590, "Scavenged Goods",
+                    "Travel to Scavenged Goods.")
+            }
+            },
+        {
+            id = "objective-380-1-young-night-web-spider",
+            kind = "objective",
+            priority = 280,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill 10 Young Night Web Spider.",
+            complete = QuestObjective(380, 1, "Young Night Web Spider"),
+            dependsOn = { "accept-380-night-web-s-hollow" },
+            route = {
+                Point(1420, 0.2920, 0.5960, "Young Night Web Spider",
+                    "Travel to Young Night Web Spider.")
+            }
+            },
+        {
+            id = "objective-380-2-night-web-spider",
+            kind = "objective",
+            priority = 290,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill 8 Night Web Spider.",
+            complete = QuestObjective(380, 2, "Night Web Spider"),
+            dependsOn = { "accept-380-night-web-s-hollow" },
+            route = {
+                Point(1420, 0.2684, 0.5941, "Night Web Spider",
+                    "Travel to Night Web Spider.")
+            }
+            },
+        {
+            id = "turnin-3902-scavenging-deathknell",
+            kind = "turnin",
+            priority = 300,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Scavenging Deathknell.",
+            complete = QuestState(3902, "completed"),
+            dependsOn = { "accept-3902-scavenging-deathknell", "objective-3902-1-scavenged-goods" },
+            route = {
+                Point(1420, 0.2682, 0.5942, "Scavenging Deathknell",
+                    "Travel to Scavenging Deathknell.")
+            }
+            },
+        {
+            id = "turnin-380-night-web-s-hollow",
+            kind = "turnin",
+            priority = 310,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Night Web's Hollow.",
+            complete = QuestState(380, "completed"),
+            dependsOn = { "accept-380-night-web-s-hollow", "objective-380-1-young-night-web-spider", "objective-380-2-night-web-spider" },
+            route = {
+                Point(1420, 0.3215, 0.6601, "Night Web's Hollow",
+                    "Travel to Night Web's Hollow.")
+            }
+            },
+        {
+            id = "accept-381-the-scarlet-crusade",
+            kind = "accept",
+            priority = 320,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Scarlet Crusade.",
+            complete = QuestState(381, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3215, 0.6601, "The Scarlet Crusade",
+                    "Travel to The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "objective-381-1-scarlet-convert",
+            kind = "objective",
+            priority = 330,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Scarlet Convert.",
+            complete = QuestObjective(381, 1, "Scarlet Convert"),
+            dependsOn = { "accept-381-the-scarlet-crusade" },
+            route = {
+                Point(1420, 0.3540, 0.6580, "Scarlet Convert",
+                    "Travel to Scarlet Convert.")
+            }
+            },
+        {
+            id = "objective-6395-1-samuel-fipps",
+            kind = "objective",
+            priority = 340,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Samuel Fipps.",
+            complete = QuestObjective(6395, 1, "Samuel Fipps"),
+            dependsOn = { "accept-6395-marla-s-last-wish" },
+            route = {
+                Point(1420, 0.3668, 0.6157, "Samuel Fipps",
+                    "Travel to Samuel Fipps.")
+            }
+            },
+        {
+            id = "turnin-6395-marla-s-last-wish",
+            kind = "turnin",
+            priority = 350,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Marla's Last Wish.",
+            complete = QuestState(6395, "completed"),
+            dependsOn = { "accept-6395-marla-s-last-wish", "objective-6395-1-samuel-fipps" },
+            route = {
+                Point(1420, 0.3086, 0.6605, "Marla's Last Wish",
+                    "Travel to Marla's Last Wish.")
+            }
+            },
+        {
+            id = "accept-5651-in-favor-of-darkness",
+            kind = "accept",
+            priority = 360,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Accept In Favor of Darkness.",
+            complete = QuestState(5651, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3111, 0.6603, "In Favor of Darkness",
+                    "Travel to In Favor of Darkness.")
+            }
+            },
+        {
+            id = "turnin-381-the-scarlet-crusade",
+            kind = "turnin",
+            priority = 370,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Scarlet Crusade.",
+            complete = QuestState(381, "completed"),
+            dependsOn = { "accept-381-the-scarlet-crusade", "objective-381-1-scarlet-convert" },
+            route = {
+                Point(1420, 0.3215, 0.6601, "The Scarlet Crusade",
+                    "Travel to The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "accept-382-the-red-messenger",
+            kind = "accept",
+            priority = 380,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Red Messenger.",
+            complete = QuestState(382, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3215, 0.6601, "The Red Messenger",
+                    "Travel to The Red Messenger.")
+            }
+            },
+        {
+            id = "objective-382-1-meven-korgal",
+            kind = "objective",
+            priority = 390,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Meven Korgal.",
+            complete = QuestObjective(382, 1, "Meven Korgal"),
+            dependsOn = { "accept-382-the-red-messenger" },
+            route = {
+                Point(1420, 0.3651, 0.6880, "Meven Korgal",
+                    "Travel to Meven Korgal.")
+            }
+            },
+        {
+            id = "turnin-382-the-red-messenger",
+            kind = "turnin",
+            priority = 400,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Red Messenger.",
+            complete = QuestState(382, "completed"),
+            dependsOn = { "accept-382-the-red-messenger", "objective-382-1-meven-korgal" },
+            route = {
+                Point(1420, 0.3215, 0.6601, "The Red Messenger",
+                    "Travel to The Red Messenger.")
+            }
+            },
+        {
+            id = "accept-383-vital-intelligence",
+            kind = "accept",
+            priority = 410,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Vital Intelligence.",
+            complete = QuestState(383, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3215, 0.6601, "Vital Intelligence",
+                    "Travel to Vital Intelligence.")
+            }
+            },
+        {
+            id = "accept-8-a-rogue-s-deal",
+            kind = "accept",
+            priority = 420,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A Rogue's Deal.",
+            complete = QuestState(8, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.3823, 0.5679, "A Rogue's Deal",
+                    "Travel to A Rogue's Deal.")
+            }
+            },
+        {
+            id = "accept-365-fields-of-grief",
+            kind = "accept",
+            priority = 430,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Fields of Grief.",
+            complete = QuestState(365, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.4091, 0.5416, "Fields of Grief",
+                    "Travel to Fields of Grief.")
+            }
+            },
+        {
+            id = "accept-5481-gordo-s-task",
+            kind = "accept",
+            priority = 440,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Gordo's Task from Gordo on the road into Brill.",
+            complete = QuestState(5481, "activeOrCompleted"),
+            route = nil
+            },
+        {
+            id = "accept-404-a-putrid-task",
+            kind = "accept",
+            priority = 450,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A Putrid Task.",
+            complete = QuestState(404, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5820, 0.5144, "A Putrid Task",
+                    "Travel to A Putrid Task.")
+            }
+            },
+        {
+            id = "accept-367-a-new-plague",
+            kind = "accept",
+            priority = 460,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A New Plague.",
+            complete = QuestState(367, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "turnin-383-vital-intelligence",
+            kind = "turnin",
+            priority = 470,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Vital Intelligence.",
+            complete = QuestState(383, "completed"),
+            dependsOn = { "accept-383-vital-intelligence" },
+            route = {
+                Point(1420, 0.6059, 0.5176, "Vital Intelligence",
+                    "Travel to Vital Intelligence.")
+            }
+            },
+        {
+            id = "accept-427-at-war-with-the-scarlet-crusade",
+            kind = "accept",
+            priority = 480,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept At War With The Scarlet Crusade.",
+            complete = QuestState(427, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6059, 0.5176, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "turnin-8-a-rogue-s-deal",
+            kind = "turnin",
+            priority = 490,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A Rogue's Deal.",
+            complete = QuestState(8, "completed"),
+            dependsOn = { "accept-8-a-rogue-s-deal" },
+            route = {
+                Point(1420, 0.6171, 0.5205, "A Rogue's Deal",
+                    "Travel to A Rogue's Deal.")
+            }
+            },
+        {
+            id = "turnin-5651-in-favor-of-darkness",
+            kind = "turnin",
+            priority = 500,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Turn in In Favor of Darkness.",
+            complete = QuestState(5651, "completed"),
+            dependsOn = { "accept-5651-in-favor-of-darkness" },
+            route = {
+                Point(1420, 0.6157, 0.5219, "In Favor of Darkness",
+                    "Travel to In Favor of Darkness.")
+            }
+            },
+        {
+            id = "accept-5650-garments-of-darkness",
+            kind = "accept",
+            priority = 510,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Accept Garments of Darkness.",
+            complete = QuestState(5650, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6157, 0.5219, "Garments of Darkness",
+                    "Travel to Garments of Darkness.")
+            }
+            },
+        {
+            id = "turnin-5650-garments-of-darkness",
+            kind = "turnin",
+            priority = 520,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Turn in Garments of Darkness.",
+            complete = QuestState(5650, "completed"),
+            dependsOn = { "accept-5650-garments-of-darkness" },
+            route = {
+                Point(1420, 0.6157, 0.5219, "Garments of Darkness",
+                    "Travel to Garments of Darkness.")
+            }
+            },
+        {
+            id = "objective-367-1-decrepit-darkhound",
+            kind = "objective",
+            priority = 530,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Decrepit Darkhound.",
+            complete = QuestObjective(367, 1, "Decrepit Darkhound"),
+            dependsOn = { "accept-367-a-new-plague" },
+            route = {
+                Point(1420, 0.6440, 0.5320, "Decrepit Darkhound",
+                    "Travel to Decrepit Darkhound.")
+            }
+            },
+        {
+            id = "turnin-367-a-new-plague",
+            kind = "turnin",
+            priority = 540,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A New Plague.",
+            complete = QuestState(367, "completed"),
+            dependsOn = { "accept-367-a-new-plague", "objective-367-1-decrepit-darkhound" },
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "accept-368-a-new-plague",
+            kind = "accept",
+            priority = 550,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A New Plague.",
+            complete = QuestState(368, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "objective-404-1-ravaged-corpse",
+            kind = "objective",
+            priority = 560,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Ravaged Corpse.",
+            complete = QuestObjective(404, 1, "Ravaged Corpse"),
+            dependsOn = { "accept-404-a-putrid-task" },
+            route = {
+                Point(1420, 0.5320, 0.5400, "Ravaged Corpse",
+                    "Travel to Ravaged Corpse.")
+            }
+            },
+        {
+            id = "objective-365-1-tirisfal-pumpkin",
+            kind = "objective",
+            priority = 570,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Click Tirisfal Pumpkin.",
+            complete = QuestObjective(365, 1, "Tirisfal Pumpkin"),
+            dependsOn = { "accept-365-fields-of-grief" },
+            route = {
+                Point(1420, 0.3630, 0.5120, "Tirisfal Pumpkin",
+                    "Travel to Tirisfal Pumpkin.")
+            }
+            },
+        {
+            id = "objective-427-1-scarlet-warrior",
+            kind = "objective",
+            priority = 580,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill 10 Scarlet Warrior.",
+            complete = QuestObjective(427, 1, "Scarlet Warrior"),
+            dependsOn = { "accept-427-at-war-with-the-scarlet-crusade" },
+            route = {
+                Point(1420, 0.3280, 0.5040, "Scarlet Warrior",
+                    "Travel to Scarlet Warrior.")
+            }
+            },
+        {
+            id = "turnin-427-at-war-with-the-scarlet-crusade",
+            kind = "turnin",
+            priority = 590,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in At War With The Scarlet Crusade.",
+            complete = QuestState(427, "completed"),
+            dependsOn = { "accept-427-at-war-with-the-scarlet-crusade", "objective-427-1-scarlet-warrior" },
+            route = {
+                Point(1420, 0.6059, 0.5176, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "accept-370-at-war-with-the-scarlet-crusade",
+            kind = "accept",
+            priority = 600,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept At War With The Scarlet Crusade.",
+            complete = QuestState(370, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6059, 0.5176, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "turnin-365-fields-of-grief",
+            kind = "turnin",
+            priority = 610,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Fields of Grief.",
+            complete = QuestState(365, "completed"),
+            dependsOn = { "accept-365-fields-of-grief", "objective-365-1-tirisfal-pumpkin" },
+            route = {
+                Point(1420, 0.5945, 0.5240, "Fields of Grief",
+                    "Travel to Fields of Grief.")
+            }
+            },
+        {
+            id = "accept-407-fields-of-grief",
+            kind = "accept",
+            priority = 620,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Fields of Grief.",
+            complete = QuestState(407, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "Fields of Grief",
+                    "Travel to Fields of Grief.")
+            }
+            },
+        {
+            id = "turnin-404-a-putrid-task",
+            kind = "turnin",
+            priority = 630,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A Putrid Task.",
+            complete = QuestState(404, "completed"),
+            dependsOn = { "accept-404-a-putrid-task", "objective-404-1-ravaged-corpse" },
+            route = {
+                Point(1420, 0.5820, 0.5145, "A Putrid Task",
+                    "Travel to A Putrid Task.")
+            }
+            },
+        {
+            id = "accept-426-the-mills-overrun",
+            kind = "accept",
+            priority = 640,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Mills Overrun.",
+            complete = QuestState(426, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5820, 0.5145, "The Mills Overrun",
+                    "Travel to The Mills Overrun.")
+            }
+            },
+        {
+            id = "turnin-5481-gordo-s-task",
+            kind = "turnin",
+            priority = 650,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Gordo's Task.",
+            complete = QuestState(5481, "completed"),
+            dependsOn = { "accept-5481-gordo-s-task" },
+            useClientPin = true,
+            route = nil
+            },
+        {
+            id = "accept-5482-doom-weed",
+            kind = "accept",
+            priority = 660,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Doom Weed from Junior Apothecary Holland in Brill.",
+            complete = QuestState(5482, "activeOrCompleted"),
+            route = nil
+            },
+        {
+            id = "turnin-407-fields-of-grief",
+            kind = "turnin",
+            priority = 670,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Fields of Grief.",
+            complete = QuestState(407, "completed"),
+            dependsOn = { "accept-407-fields-of-grief" },
+            route = {
+                Point(1420, 0.6197, 0.5129, "Fields of Grief",
+                    "Travel to Fields of Grief.")
+            }
+            },
+        {
+            id = "accept-784-vanquish-the-betrayers",
+            kind = "accept",
+            priority = 680,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Vanquish the Betrayers.",
+            complete = QuestState(784, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5195, 0.4350, "Vanquish the Betrayers",
+                    "Travel to Vanquish the Betrayers."),
             },
         },
         {
-            id = "accept-98601-a-difficult-path",
+            id = "accept-791-carry-your-weight",
             kind = "accept",
-            priority = 151,
+            priority = 690,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Carry Your Weight.",
+            complete = QuestState(791, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5009, 0.4301, "Carry Your Weight",
+                    "Travel to Carry Your Weight."),
+            },
+        },
+        {
+            id = "accept-2161-a-peon-s-burden",
+            kind = "accept",
+            priority = 700,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A Peon's Burden.",
+            complete = QuestState(2161, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5206, 0.6831, "A Peon's Burden",
+                    "Travel to A Peon's Burden.")
+            }
+            },
+        {
+            id = "accept-786-thwarting-kolkar-aggression",
+            kind = "accept",
+            priority = 710,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Thwarting Kolkar Aggression.",
+            complete = QuestState(786, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5419, 0.7329, "Thwarting Kolkar Aggression",
+                    "Travel to Thwarting Kolkar Aggression."),
+            },
+        },
+        {
+            id = "accept-817-practical-prey",
+            kind = "accept",
+            priority = 720,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Practical Prey.",
+            complete = QuestState(817, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5596, 0.7392, "Practical Prey",
+                    "Travel to Practical Prey."),
+            },
+        },
+        {
+            id = "accept-818-a-solvent-spirit",
+            kind = "accept",
+            priority = 730,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept A Solvent Spirit.",
+            complete = QuestState(818, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5594, 0.7439, "A Solvent Spirit",
+                    "Travel to A Solvent Spirit."),
+            },
+        },
+        {
+            id = "accept-808-minshina-s-skull",
+            kind = "accept",
+            priority = 740,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Minshina's Skull.",
+            complete = QuestState(808, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5595, 0.7472, "Minshina's Skull",
+                    "Travel to Minshina's Skull."),
+            },
+        },
+        {
+            id = "accept-826-zalazane",
+            kind = "accept",
+            priority = 750,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Zalazane.",
+            complete = QuestState(826, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5595, 0.7472, "Zalazane",
+                    "Travel to Zalazane."),
+            },
+        },
+        {
+            id = "accept-823-report-to-orgnil",
+            kind = "accept",
+            priority = 760,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Report to Orgnil.",
+            complete = QuestState(823, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5595, 0.7472, "Report to Orgnil",
+                    "Travel to Report to Orgnil."),
+            },
+        },
+        {
+            id = "objective-818-1-makrura-clacker",
+            kind = "objective",
+            priority = 770,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill Makrura Clacker.",
+            complete = QuestObjective(818, 1, "Makrura Clacker"),
+            dependsOn = { "accept-818-a-solvent-spirit" },
+            route = {
+                Point(1411, 0.6020, 0.7080, "Makrura Clacker",
+                    "Travel to Makrura Clacker."),
+            },
+        },
+        {
+            id = "turnin-818-a-solvent-spirit",
+            kind = "turnin",
+            priority = 780,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in A Solvent Spirit.",
+            complete = QuestState(818, "completed"),
+            dependsOn = { "accept-818-a-solvent-spirit", "objective-818-1-makrura-clacker" },
+            route = {
+                Point(1411, 0.5594, 0.7439, "A Solvent Spirit",
+                    "Travel to A Solvent Spirit."),
+            },
+        },
+        {
+            id = "turnin-786-thwarting-kolkar-aggression",
+            kind = "turnin",
+            priority = 790,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Thwarting Kolkar Aggression.",
+            complete = QuestState(786, "completed"),
+            dependsOn = { "accept-786-thwarting-kolkar-aggression" },
+            route = {
+                Point(1411, 0.5419, 0.7329, "Thwarting Kolkar Aggression",
+                    "Travel to Thwarting Kolkar Aggression."),
+            },
+        },
+        {
+            id = "objective-784-3-lieutenant-benedict",
+            kind = "objective",
+            priority = 800,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill Lieutenant Benedict.",
+            complete = QuestObjective(784, 3, "Lieutenant Benedict"),
+            dependsOn = { "accept-784-vanquish-the-betrayers" },
+            route = {
+                Point(1411, 0.5899, 0.5830, "Lieutenant Benedict",
+                    "Travel to Lieutenant Benedict."),
+            },
+        },
+        {
+            id = "accept-830-the-admiral-s-orders",
+            kind = "accept",
+            priority = 810,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Use the Admiral's Orders to accept The Admiral's Orders.",
+            complete = QuestState(830, "activeOrCompleted"),
+            route = nil
+            },
+        {
+            id = "turnin-823-report-to-orgnil",
+            kind = "turnin",
+            priority = 820,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Report to Orgnil.",
+            complete = QuestState(823, "completed"),
+            dependsOn = { "accept-823-report-to-orgnil" },
+            route = {
+                Point(1411, 0.5225, 0.4315, "Report to Orgnil",
+                    "Travel to Report to Orgnil."),
+            },
+        },
+        {
+            id = "turnin-784-vanquish-the-betrayers",
+            kind = "turnin",
+            priority = 830,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Vanquish the Betrayers.",
+            complete = QuestState(784, "completed"),
+            dependsOn = { "accept-784-vanquish-the-betrayers", "objective-784-3-lieutenant-benedict" },
+            route = {
+                Point(1411, 0.5195, 0.4350, "Vanquish the Betrayers",
+                    "Travel to Vanquish the Betrayers."),
+            },
+        },
+        {
+            id = "accept-825-from-the-wreckage",
+            kind = "accept",
+            priority = 840,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept From The Wreckage....",
+            complete = QuestState(825, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5195, 0.4350, "From The Wreckage...",
+                    "Travel to From The Wreckage....."),
+            },
+        },
+        {
+            id = "turnin-830-the-admiral-s-orders",
+            kind = "turnin",
+            priority = 850,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Admiral's Orders.",
+            complete = QuestState(830, "completed"),
+            dependsOn = { "accept-830-the-admiral-s-orders" },
+            route = {
+                Point(1411, 0.5195, 0.4350, "The Admiral's Orders",
+                    "Travel to The Admiral's Orders.")
+            }
+            },
+        {
+            id = "accept-831-the-admiral-s-orders",
+            kind = "accept",
+            priority = 860,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Admiral's Orders.",
+            complete = QuestState(831, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5195, 0.4350, "The Admiral's Orders",
+                    "Travel to The Admiral's Orders.")
+            }
+            },
+        {
+            id = "accept-837-encroachment",
+            kind = "accept",
+            priority = 870,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Encroachment.",
+            complete = QuestState(837, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5195, 0.4350, "Encroachment",
+                    "Travel to Encroachment."),
+            },
+        },
+        {
+            id = "accept-815-break-a-few-eggs",
+            kind = "accept",
+            priority = 880,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Break a Few Eggs.",
+            complete = QuestState(815, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5111, 0.4245, "Break a Few Eggs",
+                    "Travel to Break a Few Eggs."),
+            },
+        },
+        {
+            id = "turnin-791-carry-your-weight",
+            kind = "turnin",
+            priority = 890,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Carry Your Weight.",
+            complete = QuestState(791, "completed"),
+            dependsOn = { "accept-791-carry-your-weight" },
+            route = {
+                Point(1411, 0.5009, 0.4301, "Carry Your Weight",
+                    "Travel to Carry Your Weight."),
+            },
+        },
+        {
+            id = "turnin-2161-a-peon-s-burden",
+            kind = "turnin",
+            priority = 900,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A Peon's Burden.",
+            complete = QuestState(2161, "completed"),
+            dependsOn = { "accept-2161-a-peon-s-burden" },
+            route = {
+                Point(1411, 0.5152, 0.4165, "A Peon's Burden",
+                    "Travel to A Peon's Burden.")
+            }
+            },
+        {
+            id = "objective-825-1-gnomish-tools",
+            kind = "objective",
+            priority = 910,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Collect 3 Gnomish Tools.",
+            complete = QuestObjective(825, 1, "Gnomish Tools"),
+            dependsOn = { "accept-825-from-the-wreckage" },
+            route = {
+                Point(1411, 0.6140, 0.5620, "Gnomish Tools",
+                    "Travel to Gnomish Tools."),
+            },
+        },
+        {
+            id = "objective-826-3-zalazane",
+            kind = "objective",
+            priority = 920,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill Zalazane.",
+            complete = QuestObjective(826, 3, "Zalazane"),
+            dependsOn = { "accept-826-zalazane" },
+            route = {
+                Point(1411, 0.6740, 0.8640, "Zalazane",
+                    "Travel to Zalazane."),
+            },
+        },
+        {
+            id = "turnin-808-minshina-s-skull",
+            kind = "turnin",
+            priority = 930,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Minshina's Skull.",
+            complete = QuestState(808, "completed"),
+            dependsOn = { "accept-808-minshina-s-skull" },
+            route = {
+                Point(1411, 0.5595, 0.7472, "Minshina's Skull",
+                    "Travel to Minshina's Skull."),
+            },
+        },
+        {
+            id = "turnin-826-zalazane",
+            kind = "turnin",
+            priority = 940,
+            conditions = { all = {
+                { level = { min = 4 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Zalazane.",
+            complete = QuestState(826, "completed"),
+            dependsOn = { "accept-826-zalazane", "objective-826-3-zalazane" },
+            route = {
+                Point(1411, 0.5595, 0.7472, "Zalazane",
+                    "Travel to Zalazane."),
+            },
+        },
+        {
+            id = "turnin-817-practical-prey",
+            kind = "turnin",
+            priority = 950,
+            conditions = { all = {
+                { level = { min = 5 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Practical Prey.",
+            complete = QuestState(817, "completed"),
+            dependsOn = { "accept-817-practical-prey" },
+            route = {
+                Point(1411, 0.5595, 0.7393, "Practical Prey",
+                    "Travel to Practical Prey."),
+            },
+        },
+        {
+            id = "turnin-825-from-the-wreckage",
+            kind = "turnin",
+            priority = 960,
+            conditions = { all = {
+                { level = { min = 3 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in From The Wreckage....",
+            complete = QuestState(825, "completed"),
+            dependsOn = { "accept-825-from-the-wreckage", "objective-825-1-gnomish-tools" },
+            route = {
+                Point(1411, 0.5195, 0.4350, "From The Wreckage...",
+                    "Travel to From The Wreckage....."),
+            },
+        },
+        {
+            id = "turnin-815-break-a-few-eggs",
+            kind = "turnin",
+            priority = 970,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Break a Few Eggs.",
+            complete = QuestState(815, "completed"),
+            dependsOn = { "accept-815-break-a-few-eggs" },
+            route = {
+                Point(1411, 0.5111, 0.4245, "Break a Few Eggs",
+                    "Travel to Break a Few Eggs."),
+            },
+        },
+        {
+            id = "accept-5660-touch-of-weakness",
+            kind = "accept",
+            priority = 980,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Accept Touch of Weakness.",
+            complete = QuestState(5660, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.5426, 0.4293, "Touch of Weakness",
+                    "Travel to Touch of Weakness.")
+            }
+            },
+        {
+            id = "objective-837-1-razormane-quilboar",
+            kind = "objective",
+            priority = 990,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill 4 Razormane Quilboar.",
+            complete = QuestObjective(837, 1, "Razormane Quilboar"),
+            dependsOn = { "accept-837-encroachment" },
+            route = {
+                Point(1411, 0.5000, 0.4960, "Razormane Quilboar",
+                    "Travel to Razormane Quilboar."),
+            },
+        },
+        {
+            id = "objective-837-2-razormane-scout",
+            kind = "objective",
+            priority = 1000,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill 4 Razormane Scout.",
+            complete = QuestObjective(837, 2, "Razormane Scout"),
+            dependsOn = { "accept-837-encroachment" },
+            route = {
+                Point(1411, 0.5000, 0.4960, "Razormane Scout",
+                    "Travel to Razormane Scout."),
+            },
+        },
+        {
+            id = "objective-837-3-razormane-dustrunner",
+            kind = "objective",
+            priority = 1010,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill 4 Razormane Dustrunner.",
+            complete = QuestObjective(837, 3, "Razormane Dustrunner"),
+            dependsOn = { "accept-837-encroachment" },
+            route = {
+                Point(1411, 0.4240, 0.4060, "Razormane Dustrunner",
+                    "Travel to Razormane Dustrunner."),
+            },
+        },
+        {
+            id = "objective-837-4-razormane-battleguard",
+            kind = "objective",
+            priority = 1020,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Kill 4 Razormane Battleguard.",
+            complete = QuestObjective(837, 4, "Razormane Battleguard"),
+            dependsOn = { "accept-837-encroachment" },
+            route = {
+                Point(1411, 0.4240, 0.4060, "Razormane Battleguard",
+                    "Travel to Razormane Battleguard."),
+            },
+        },
+        {
+            id = "turnin-837-encroachment",
+            kind = "turnin",
+            priority = 1030,
+            conditions = { all = {
+                { level = { min = 6 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Encroachment.",
+            complete = QuestState(837, "completed"),
+            dependsOn = { "accept-837-encroachment", "objective-837-1-razormane-quilboar", "objective-837-2-razormane-scout", "objective-837-3-razormane-dustrunner", "objective-837-4-razormane-battleguard" },
+            route = {
+                Point(1411, 0.5195, 0.4350, "Encroachment",
+                    "Travel to Encroachment."),
+            },
+        },
+        {
+            id = "accept-834-winds-in-the-desert",
+            kind = "accept",
+            priority = 1040,
+            conditions = { all = {
+                { level = { min = 7 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Winds in the Desert.",
+            complete = QuestState(834, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.4637, 0.2294, "Winds in the Desert",
+                    "Travel to Winds in the Desert."),
+            },
+        },
+        {
+            id = "objective-834-1-sack-of-supplies",
+            kind = "objective",
+            priority = 1050,
+            conditions = { all = {
+                { level = { min = 7 } },
+                { faction = "Horde" },
+            } },
+            text = "Collect 5 Sack of Supplies.",
+            complete = QuestObjective(834, 1, "Sack of Supplies"),
+            dependsOn = { "accept-834-winds-in-the-desert" },
+            route = {
+                Point(1411, 0.4910, 0.2250, "Sack of Supplies",
+                    "Travel to Sack of Supplies."),
+            },
+        },
+        {
+            id = "turnin-834-winds-in-the-desert",
+            kind = "turnin",
+            priority = 1060,
+            conditions = { all = {
+                { level = { min = 7 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Winds in the Desert.",
+            complete = QuestState(834, "completed"),
+            dependsOn = { "accept-834-winds-in-the-desert", "objective-834-1-sack-of-supplies" },
+            route = {
+                Point(1411, 0.4637, 0.2294, "Winds in the Desert",
+                    "Travel to Winds in the Desert."),
+            },
+        },
+        {
+            id = "accept-835-securing-the-lines",
+            kind = "accept",
+            priority = 1070,
+            conditions = { all = {
+                { level = { min = 7 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Securing the Lines.",
+            complete = QuestState(835, "activeOrCompleted"),
+            route = {
+                Point(1411, 0.4637, 0.2294, "Securing the Lines",
+                    "Travel to Securing the Lines."),
+            },
+        },
+        {
+            id = "turnin-835-securing-the-lines",
+            kind = "turnin",
+            priority = 1080,
+            conditions = { all = {
+                { level = { min = 7 } },
+                { faction = "Horde" },
+            } },
+            text = "Turn in Securing the Lines.",
+            complete = QuestState(835, "completed"),
+            dependsOn = { "accept-835-securing-the-lines" },
+            route = {
+                Point(1411, 0.5351, 0.2779, "Securing the Lines",
+                    "Travel to Securing the Lines."),
+            },
+        },
+        {
+            id = "turnin-831-the-admiral-s-orders",
+            kind = "turnin",
+            priority = 1090,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Admiral's Orders.",
+            complete = QuestState(831, "completed"),
+            dependsOn = { "accept-831-the-admiral-s-orders" },
+            route = {
+                Point(1454, 0.3227, 0.3580, "The Admiral's Orders",
+                    "Travel to The Admiral's Orders.")
+            }
+            },
+        {
+            id = "accept-1818-speak-with-dillinger",
+            kind = "accept",
+            priority = 1100,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Accept Speak with Dillinger.",
+            complete = QuestState(1818, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6185, 0.5254, "Speak with Dillinger",
+                    "Travel to Speak with Dillinger.")
+            }
+            },
+        {
+            id = "accept-354-deaths-in-the-family",
+            kind = "accept",
+            priority = 1110,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Deaths in the Family.",
+            complete = QuestState(354, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6172, 0.5229, "Deaths in the Family",
+                    "Travel to Deaths in the Family.")
+            }
+            },
+        {
+            id = "accept-362-the-haunted-mills",
+            kind = "accept",
+            priority = 1120,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Haunted Mills.",
+            complete = QuestState(362, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6172, 0.5229, "The Haunted Mills",
+                    "Travel to The Haunted Mills.")
+            }
+            },
+        {
+            id = "accept-1881-speak-with-anastasia",
+            kind = "accept",
+            priority = 1130,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 8 }
+            } },
+            text = "Accept Speak with Anastasia.",
+            complete = QuestState(1881, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6197, 0.5247, "Speak with Anastasia",
+                    "Travel to Speak with Anastasia.")
+            }
+            },
+        {
+            id = "accept-375-the-chill-of-death",
+            kind = "accept",
+            priority = 1140,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Chill of Death.",
+            complete = QuestState(375, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6189, 0.5273, "The Chill of Death",
+                    "Travel to The Chill of Death.")
+            }
+            },
+        {
+            id = "accept-1478-halgar-s-summons",
+            kind = "accept",
+            priority = 1150,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Accept Halgar's Summons.",
+            complete = QuestState(1478, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6162, 0.5268, "Halgar's Summons",
+                    "Travel to Halgar's Summons.")
+            }
+            },
+        {
+            id = "accept-1885-mennet-carkad",
+            kind = "accept",
+            priority = 1160,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 4 }
+            } },
+            text = "Accept Mennet Carkad.",
+            complete = QuestState(1885, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6175, 0.5200, "Mennet Carkad",
+                    "Travel to Mennet Carkad.")
+            }
+            },
+        {
+            id = "accept-374-proof-of-demise",
+            kind = "accept",
+            priority = 1170,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Proof of Demise.",
+            complete = QuestState(374, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6093, 0.5201, "Proof of Demise",
+                    "Travel to Proof of Demise.")
+            }
+            },
+        {
+            id = "accept-358-graverobbers",
+            kind = "accept",
+            priority = 1180,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Graverobbers.",
+            complete = QuestState(358, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6126, 0.5084, "Graverobbers",
+                    "Travel to Graverobbers.")
+            }
+            },
+        {
+            id = "accept-398-wanted-maggot-eye",
+            kind = "accept",
+            priority = 1190,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Wanted: Maggot Eye.",
+            complete = QuestState(398, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6073, 0.5152, "Wanted: Maggot Eye",
+                    "Travel to Wanted: Maggot Eye.")
+            }
+            },
+        {
+            id = "turnin-1818-speak-with-dillinger",
+            kind = "turnin",
+            priority = 1200,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Turn in Speak with Dillinger.",
+            complete = QuestState(1818, "completed"),
+            dependsOn = { "accept-1818-speak-with-dillinger" },
+            route = {
+                Point(1420, 0.5820, 0.5145, "Speak with Dillinger",
+                    "Travel to Speak with Dillinger.")
+            }
+            },
+        {
+            id = "accept-1819-ulag-the-cleaver",
+            kind = "accept",
+            priority = 1210,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Accept Ulag the Cleaver.",
+            complete = QuestState(1819, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5820, 0.5145, "Ulag the Cleaver",
+                    "Travel to Ulag the Cleaver.")
+            }
+            },
+        {
+            id = "objective-1819-1-mausoleum-trigger",
+            kind = "objective",
+            priority = 1220,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Click Mausoleum Trigger.",
+            complete = QuestObjective(1819, 1, "Mausoleum Trigger"),
+            dependsOn = { "accept-1819-ulag-the-cleaver" },
+            route = {
+                Point(1420, 0.5916, 0.4851, "Mausoleum Trigger",
+                    "Travel to Mausoleum Trigger.")
+            }
+            },
+        {
+            id = "turnin-1819-ulag-the-cleaver",
+            kind = "turnin",
+            priority = 1230,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Turn in Ulag the Cleaver.",
+            complete = QuestState(1819, "completed"),
+            dependsOn = { "accept-1819-ulag-the-cleaver", "objective-1819-1-mausoleum-trigger" },
+            route = {
+                Point(1420, 0.5820, 0.5145, "Ulag the Cleaver",
+                    "Travel to Ulag the Cleaver.")
+            }
+            },
+        {
+            id = "accept-1820-speak-with-coleman",
+            kind = "accept",
+            priority = 1240,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Accept Speak with Coleman.",
+            complete = QuestState(1820, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5820, 0.5145, "Speak with Coleman",
+                    "Travel to Speak with Coleman.")
+            }
+            },
+        {
+            id = "turnin-1820-speak-with-coleman",
+            kind = "turnin",
+            priority = 1250,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 1 }
+            } },
+            text = "Turn in Speak with Coleman.",
+            complete = QuestState(1820, "completed"),
+            dependsOn = { "accept-1820-speak-with-coleman" },
+            route = {
+                Point(1420, 0.6172, 0.5229, "Speak with Coleman",
+                    "Travel to Speak with Coleman.")
+            }
+            },
+        {
+            id = "turnin-1478-halgar-s-summons",
+            kind = "turnin",
+            priority = 1260,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Turn in Halgar's Summons.",
+            complete = QuestState(1478, "completed"),
+            dependsOn = { "accept-1478-halgar-s-summons" },
+            route = {
+                Point(1458, 0.8504, 0.2601, "Halgar's Summons",
+                    "Travel to Halgar's Summons.")
+            }
+            },
+        {
+            id = "accept-1473-creature-of-the-void",
+            kind = "accept",
+            priority = 1270,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Accept Creature of the Void.",
+            complete = QuestState(1473, "activeOrCompleted"),
+            route = {
+                Point(1458, 0.8504, 0.2601, "Creature of the Void",
+                    "Travel to Creature of the Void.")
+            }
+            },
+        {
+            id = "turnin-1885-mennet-carkad",
+            kind = "turnin",
+            priority = 1280,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 4 }
+            } },
+            text = "Turn in Mennet Carkad.",
+            complete = QuestState(1885, "completed"),
+            dependsOn = { "accept-1885-mennet-carkad" },
+            route = {
+                Point(1458, 0.8351, 0.6911, "Mennet Carkad",
+                    "Travel to Mennet Carkad.")
+            }
+            },
+        {
+            id = "accept-1886-the-deathstalkers",
+            kind = "accept",
+            priority = 1290,
+            conditions = { all = {
+                { level = { min = 13 } },
+                { faction = "Horde" },
+                { class = 4 },
+            } },
+            text = "Accept The Deathstalkers.",
+            complete = QuestState(1886, "activeOrCompleted"),
+            route = {
+                Point(1458, 0.8351, 0.6911, "The Deathstalkers",
+                    "Travel to The Deathstalkers."),
+            },
+        },
+        {
+            id = "turnin-5660-touch-of-weakness",
+            kind = "turnin",
+            priority = 1300,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 5 }
+            } },
+            text = "Turn in Touch of Weakness.",
+            complete = QuestState(5660, "completed"),
+            dependsOn = { "accept-5660-touch-of-weakness" },
+            route = {
+                Point(1458, 0.4926, 0.1712, "Touch of Weakness",
+                    "Travel to Touch of Weakness.")
+            }
+            },
+        {
+            id = "turnin-1881-speak-with-anastasia",
+            kind = "turnin",
+            priority = 1310,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Speak with Anastasia.",
+            complete = QuestState(1881, "completed"),
+            dependsOn = { "accept-1881-speak-with-anastasia" },
+            route = {
+                Point(1458, 0.8514, 0.1003, "Speak with Anastasia",
+                    "Travel to Speak with Anastasia.")
+            }
+            },
+        {
+            id = "accept-1882-the-balnir-farmstead",
+            kind = "accept",
+            priority = 1320,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept The Balnir Farmstead.",
+            complete = QuestState(1882, "activeOrCompleted"),
+            route = {
+                Point(1458, 0.8514, 0.1003, "The Balnir Farmstead",
+                    "Travel to The Balnir Farmstead.")
+            }
+            },
+        {
+            id = "objective-370-1-captain-perrine",
+            kind = "objective",
+            priority = 1330,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Captain Perrine.",
+            complete = QuestObjective(370, 1, "Captain Perrine"),
+            dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
+            route = {
+                Point(1420, 0.5113, 0.6780, "Captain Perrine",
+                    "Travel to Captain Perrine.")
+            }
+            },
+        {
+            id = "turnin-1473-creature-of-the-void",
+            kind = "turnin",
+            priority = 1340,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Turn in Creature of the Void.",
+            complete = QuestState(1473, "completed"),
+            dependsOn = { "accept-1473-creature-of-the-void" },
+            route = {
+                Point(1458, 0.8504, 0.2601, "Creature of the Void",
+                    "Travel to Creature of the Void.")
+            }
+            },
+        {
+            id = "accept-1471-the-binding",
+            kind = "accept",
+            priority = 1350,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Accept The Binding.",
+            complete = QuestState(1471, "activeOrCompleted"),
+            route = {
+                Point(1458, 0.8504, 0.2601, "The Binding",
+                    "Travel to The Binding.")
+            }
+            },
+        {
+            id = "objective-1471-1-runes-of-summoning",
+            kind = "objective",
+            priority = 1360,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Use Runes of Summoning.",
+            complete = QuestObjective(1471, 1, "Runes of Summoning"),
+            dependsOn = { "accept-1471-the-binding" },
+            route = {
+                Point(1458, 0.8662, 0.2710, "Runes of Summoning",
+                    "Travel to Runes of Summoning.")
+            }
+            },
+        {
+            id = "turnin-1471-the-binding",
+            kind = "turnin",
+            priority = 1370,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 9 }
+            } },
+            text = "Turn in The Binding.",
+            complete = QuestState(1471, "completed"),
+            dependsOn = { "accept-1471-the-binding", "objective-1471-1-runes-of-summoning" },
+            route = {
+                Point(1458, 0.8504, 0.2601, "The Binding",
+                    "Travel to The Binding.")
+            }
+            },
+        {
+            id = "objective-375-1-greater-duskbat",
+            kind = "objective",
+            priority = 1380,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Greater Duskbat.",
+            complete = QuestObjective(375, 1, "Greater Duskbat"),
+            dependsOn = { "accept-375-the-chill-of-death" },
+            route = {
+                Point(1420, 0.5840, 0.5440, "Greater Duskbat",
+                    "Travel to Greater Duskbat.")
+            }
+            },
+        {
+            id = "objective-362-1-devlin-agamand",
+            kind = "objective",
+            priority = 1390,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Devlin Agamand.",
+            complete = QuestObjective(362, 1, "Devlin Agamand"),
+            dependsOn = { "accept-362-the-haunted-mills" },
+            route = {
+                Point(1420, 0.4740, 0.4160, "Devlin Agamand",
+                    "Travel to Devlin Agamand.")
+            }
+            },
+        {
+            id = "objective-354-2-nissa-agamand",
+            kind = "objective",
+            priority = 1400,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Nissa Agamand.",
+            complete = QuestObjective(354, 2, "Nissa Agamand"),
+            dependsOn = { "accept-354-deaths-in-the-family" },
+            route = {
+                Point(1420, 0.4954, 0.3602, "Nissa Agamand",
+                    "Travel to Nissa Agamand.")
+            }
+            },
+        {
+            id = "objective-354-1-gregor-agamand",
+            kind = "objective",
+            priority = 1410,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Gregor Agamand.",
+            complete = QuestObjective(354, 1, "Gregor Agamand"),
+            dependsOn = { "accept-354-deaths-in-the-family" },
+            route = {
+                Point(1420, 0.4640, 0.3060, "Gregor Agamand",
+                    "Travel to Gregor Agamand.")
+            }
+            },
+        {
+            id = "objective-354-3-thurman-agamand",
+            kind = "objective",
+            priority = 1420,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Thurman Agamand.",
+            complete = QuestObjective(354, 3, "Thurman Agamand"),
+            dependsOn = { "accept-354-deaths-in-the-family" },
+            route = {
+                Point(1420, 0.4340, 0.3420, "Thurman Agamand",
+                    "Travel to Thurman Agamand.")
+            }
+            },
+        {
+            id = "accept-361-a-letter-undelivered",
+            kind = "accept",
+            priority = 1430,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Use the A Sealed Letter to accept A Letter Undelivered.",
+            complete = QuestState(361, "activeOrCompleted"),
+            route = nil
+            },
+        {
+            id = "objective-398-1-maggot-eye",
+            kind = "objective",
+            priority = 1440,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Maggot Eye.",
+            complete = QuestObjective(398, 1, "Maggot Eye"),
+            dependsOn = { "accept-398-wanted-maggot-eye" },
+            route = {
+                Point(1420, 0.5428, 0.3167, "Maggot Eye",
+                    "Travel to Maggot Eye.")
+            }
+            },
+        {
+            id = "objective-368-1-vile-fin-puddlejumper",
+            kind = "objective",
+            priority = 1450,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Vile Fin Puddlejumper.",
+            complete = QuestObjective(368, 1, "Vile Fin Puddlejumper"),
+            dependsOn = { "accept-368-a-new-plague" },
+            route = {
+                Point(1420, 0.6240, 0.2880, "Vile Fin Puddlejumper",
+                    "Travel to Vile Fin Puddlejumper.")
+            }
+            },
+        {
+            id = "objective-358-1-rot-hide-graverobber",
+            kind = "objective",
+            priority = 1460,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill 8 Rot Hide Graverobber.",
+            complete = QuestObjective(358, 1, "Rot Hide Graverobber"),
+            dependsOn = { "accept-358-graverobbers" },
+            route = {
+                Point(1420, 0.5537, 0.4234, "Rot Hide Graverobber",
+                    "Travel to Rot Hide Graverobber.")
+            }
+            },
+        {
+            id = "turnin-5482-doom-weed",
+            kind = "turnin",
+            priority = 1470,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Doom Weed.",
+            complete = QuestState(5482, "completed"),
+            dependsOn = { "accept-5482-doom-weed" },
+            useClientPin = true,
+            route = nil
+            },
+        {
+            id = "turnin-426-the-mills-overrun",
+            kind = "turnin",
+            priority = 1480,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Mills Overrun.",
+            complete = QuestState(426, "completed"),
+            dependsOn = { "accept-426-the-mills-overrun" },
+            route = {
+                Point(1420, 0.5820, 0.5145, "The Mills Overrun",
+                    "Travel to The Mills Overrun.")
+            }
+            },
+        {
+            id = "turnin-368-a-new-plague",
+            kind = "turnin",
+            priority = 1490,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A New Plague.",
+            complete = QuestState(368, "completed"),
+            dependsOn = { "accept-368-a-new-plague", "objective-368-1-vile-fin-puddlejumper" },
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "accept-369-a-new-plague",
+            kind = "accept",
+            priority = 1500,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A New Plague.",
+            complete = QuestState(369, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "turnin-370-at-war-with-the-scarlet-crusade",
+            kind = "turnin",
+            priority = 1510,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in At War With The Scarlet Crusade.",
+            complete = QuestState(370, "completed"),
+            dependsOn = { "accept-370-at-war-with-the-scarlet-crusade", "objective-370-1-captain-perrine" },
+            route = {
+                Point(1420, 0.6059, 0.5176, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "accept-371-at-war-with-the-scarlet-crusade",
+            kind = "accept",
+            priority = 1520,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept At War With The Scarlet Crusade.",
+            complete = QuestState(371, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6059, 0.5176, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "turnin-398-wanted-maggot-eye",
+            kind = "turnin",
+            priority = 1530,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Wanted: Maggot Eye.",
+            complete = QuestState(398, "completed"),
+            dependsOn = { "accept-398-wanted-maggot-eye", "objective-398-1-maggot-eye" },
+            route = {
+                Point(1420, 0.6059, 0.5176, "Wanted: Maggot Eye",
+                    "Travel to Wanted: Maggot Eye.")
+            }
+            },
+        {
+            id = "turnin-358-graverobbers",
+            kind = "turnin",
+            priority = 1540,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Graverobbers.",
+            complete = QuestState(358, "completed"),
+            dependsOn = { "accept-358-graverobbers", "objective-358-1-rot-hide-graverobber" },
+            route = {
+                Point(1420, 0.6126, 0.5084, "Graverobbers",
+                    "Travel to Graverobbers.")
+            }
+            },
+        {
+            id = "accept-359-forsaken-duties",
+            kind = "accept",
+            priority = 1550,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Forsaken Duties.",
+            complete = QuestState(359, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6126, 0.5084, "Forsaken Duties",
+                    "Travel to Forsaken Duties.")
+            }
+            },
+        {
+            id = "turnin-374-proof-of-demise",
+            kind = "turnin",
+            priority = 1560,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Proof of Demise.",
+            complete = QuestState(374, "completed"),
+            dependsOn = { "accept-374-proof-of-demise" },
+            route = {
+                Point(1420, 0.6093, 0.5201, "Proof of Demise",
+                    "Travel to Proof of Demise.")
+            }
+            },
+        {
+            id = "turnin-361-a-letter-undelivered",
+            kind = "turnin",
+            priority = 1570,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A Letter Undelivered.",
+            complete = QuestState(361, "completed"),
+            dependsOn = { "accept-361-a-letter-undelivered" },
+            route = {
+                Point(1420, 0.6158, 0.5260, "A Letter Undelivered",
+                    "Travel to A Letter Undelivered.")
+            }
+            },
+        {
+            id = "turnin-354-deaths-in-the-family",
+            kind = "turnin",
+            priority = 1580,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Deaths in the Family.",
+            complete = QuestState(354, "completed"),
+            dependsOn = { "accept-354-deaths-in-the-family", "objective-354-2-nissa-agamand", "objective-354-1-gregor-agamand", "objective-354-3-thurman-agamand" },
+            route = {
+                Point(1420, 0.6172, 0.5229, "Deaths in the Family",
+                    "Travel to Deaths in the Family.")
+            }
+            },
+        {
+            id = "turnin-362-the-haunted-mills",
+            kind = "turnin",
+            priority = 1590,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Haunted Mills.",
+            complete = QuestState(362, "completed"),
+            dependsOn = { "accept-362-the-haunted-mills", "objective-362-1-devlin-agamand" },
+            route = {
+                Point(1420, 0.6172, 0.5229, "The Haunted Mills",
+                    "Travel to The Haunted Mills.")
+            }
+            },
+        {
+            id = "accept-355-speak-with-sevren",
+            kind = "accept",
+            priority = 1600,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Speak with Sevren.",
+            complete = QuestState(355, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6172, 0.5229, "Speak with Sevren",
+                    "Travel to Speak with Sevren.")
+            }
+            },
+        {
+            id = "turnin-375-the-chill-of-death",
+            kind = "turnin",
+            priority = 1610,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in The Chill of Death.",
+            complete = QuestState(375, "completed"),
+            dependsOn = { "accept-375-the-chill-of-death", "objective-375-1-greater-duskbat" },
+            route = {
+                Point(1420, 0.6189, 0.5273, "The Chill of Death",
+                    "Travel to The Chill of Death.")
+            }
+            },
+        {
+            id = "turnin-359-forsaken-duties",
+            kind = "turnin",
+            priority = 1620,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Forsaken Duties.",
+            complete = QuestState(359, "completed"),
+            dependsOn = { "accept-359-forsaken-duties" },
+            route = {
+                Point(1420, 0.6549, 0.6025, "Forsaken Duties",
+                    "Travel to Forsaken Duties.")
+            }
+            },
+        {
+            id = "accept-360-return-to-the-magistrate",
+            kind = "accept",
+            priority = 1630,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Return to the Magistrate.",
+            complete = QuestState(360, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6549, 0.6025, "Return to the Magistrate",
+                    "Travel to the Magistrate.")
+            }
+            },
+        {
+            id = "accept-356-rear-guard-patrol",
+            kind = "accept",
+            priority = 1640,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept Rear Guard Patrol.",
+            complete = QuestState(356, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.6549, 0.6025, "Rear Guard Patrol",
+                    "Travel to Rear Guard Patrol.")
+            }
+            },
+        {
+            id = "objective-371-1-captain-vachon",
+            kind = "objective",
+            priority = 1650,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Captain Vachon.",
+            complete = QuestObjective(371, 1, "Captain Vachon"),
+            dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
+            route = {
+                Point(1420, 0.7882, 0.5613, "Captain Vachon",
+                    "Travel to Captain Vachon.")
+            }
+            },
+        {
+            id = "objective-369-1-vicious-night-web-spider",
+            kind = "objective",
+            priority = 1660,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Kill Vicious Night Web Spider.",
+            complete = QuestObjective(369, 1, "Vicious Night Web Spider"),
+            dependsOn = { "accept-369-a-new-plague" },
+            route = {
+                Point(1420, 0.8340, 0.5140, "Vicious Night Web Spider",
+                    "Travel to Vicious Night Web Spider.")
+            }
+            },
+        {
+            id = "turnin-356-rear-guard-patrol",
+            kind = "turnin",
+            priority = 1670,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Rear Guard Patrol.",
+            complete = QuestState(356, "completed"),
+            dependsOn = { "accept-356-rear-guard-patrol" },
+            route = {
+                Point(1420, 0.6549, 0.6025, "Rear Guard Patrol",
+                    "Travel to Rear Guard Patrol.")
+            }
+            },
+        {
+            id = "turnin-355-speak-with-sevren",
+            kind = "turnin",
+            priority = 1680,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Speak with Sevren.",
+            complete = QuestState(355, "completed"),
+            dependsOn = { "accept-355-speak-with-sevren" },
+            route = {
+                Point(1420, 0.6126, 0.5084, "Speak with Sevren",
+                    "Travel to Speak with Sevren.")
+            }
+            },
+        {
+            id = "turnin-360-return-to-the-magistrate",
+            kind = "turnin",
+            priority = 1690,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in Return to the Magistrate.",
+            complete = QuestState(360, "completed"),
+            dependsOn = { "accept-360-return-to-the-magistrate" },
+            route = {
+                Point(1420, 0.6126, 0.5084, "Return to the Magistrate",
+                    "Travel to the Magistrate.")
+            }
+            },
+        {
+            id = "turnin-371-at-war-with-the-scarlet-crusade",
+            kind = "turnin",
+            priority = 1700,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in At War With The Scarlet Crusade.",
+            complete = QuestState(371, "completed"),
+            dependsOn = { "accept-371-at-war-with-the-scarlet-crusade", "objective-371-1-captain-vachon" },
+            route = {
+                Point(1420, 0.6058, 0.5177, "At War With The Scarlet Crusade",
+                    "Travel to At War With The Scarlet Crusade.")
+            }
+            },
+        {
+            id = "turnin-369-a-new-plague",
+            kind = "turnin",
+            priority = 1710,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A New Plague.",
+            complete = QuestState(369, "completed"),
+            dependsOn = { "accept-369-a-new-plague", "objective-369-1-vicious-night-web-spider" },
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "accept-492-a-new-plague",
+            kind = "accept",
+            priority = 1720,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Accept A New Plague.",
+            complete = QuestState(492, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "accept-445-delivery-to-silverpine-forest",
+            kind = "accept",
+            priority = 1730,
+            conditions = { all = {
+                { level = { min = 13 } },
+                { faction = "Horde" },
+            } },
+            text = "Accept Delivery to Silverpine Forest.",
+            complete = QuestState(445, "activeOrCompleted"),
+            route = {
+                Point(1420, 0.5945, 0.5240, "Delivery to Silverpine Forest",
+                    "Travel to Delivery to Silverpine Forest."),
+            },
+        },
+        {
+            id = "turnin-492-a-new-plague",
+            kind = "turnin",
+            priority = 1740,
+            conditions = { all = {
+                { },
+                { faction = "Horde" }
+            } },
+            text = "Turn in A New Plague.",
+            complete = QuestState(492, "completed"),
+            dependsOn = { "accept-492-a-new-plague" },
+            route = {
+                Point(1420, 0.6194, 0.5140, "A New Plague",
+                    "Travel to A New Plague.")
+            }
+            },
+        {
+            id = "turnin-1882-the-balnir-farmstead",
+            kind = "turnin",
+            priority = 1750,
+            conditions = { all = {
+                { },
+                { faction = "Horde" },
+                { class = 8 }
+            } },
+            text = "Turn in The Balnir Farmstead.",
+            complete = QuestState(1882, "completed"),
+            dependsOn = { "accept-1882-the-balnir-farmstead" },
+            route = {
+                Point(1458, 0.8514, 0.1003, "The Balnir Farmstead",
+                    "Travel to The Balnir Farmstead.")
+            }
+            },
+        {
+            id = "objective-1886-1-astor-hadren",
+            kind = "objective",
+            priority = 1760,
+            conditions = { all = {
+                { level = { min = 13 } },
+                { faction = "Horde" },
+                { class = 4 },
+            } },
+            text = "Kill Astor Hadren.",
+            complete = QuestObjective(1886, 1, "Astor Hadren"),
+            dependsOn = { "accept-1886-the-deathstalkers" },
+            useClientPin = true,
+            route = nil,
+        },
+        {
+            id = "woven-accept-98601-a-difficult-path",
+            kind = "accept",
+            priority = 1770,
             conditions = {
                 all = {
                     { race = 5 },
@@ -283,99 +2816,14 @@ ns:RegisterGuide({
             text = "Accept A Difficult Path from Shadow Priest Sarvis in Deathknell.",
             complete = QuestState(98601, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
+                Point(1420, 0.3086, 0.6617, "Shadow Priest Sarvis",
                     "Travel to Shadow Priest Sarvis."),
             },
         },
         {
-            id = "turnin-3096-encrypted-scroll",
+            id = "woven-turnin-98601-a-difficult-path",
             kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { class = 4 },
-                },
-            },
-            text = "Turn in Encrypted Scroll to David Trias in Deathknell.",
-            dependsOn = { "accept-3096-encrypted-scroll" },
-            complete = QuestState(3096, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3250, 0.6560, "David Trias",
-                    "Travel to David Trias."),
-            },
-        },
-        {
-            id = "turnin-3099-tainted-scroll",
-            kind = "turnin",
-            priority = 170,
-            conditions = {
-                all = {
-                    { class = 9 },
-                },
-            },
-            text = "Turn in Tainted Scroll to Maximillion in Deathknell.",
-            dependsOn = { "accept-3099-tainted-scroll" },
-            complete = QuestState(3099, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3091, 0.6626, "Maximillion",
-                    "Travel to Maximillion."),
-            },
-        },
-        {
-            id = "turnin-3095-simple-scroll",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Simple Scroll to Dannal Stern in Deathknell.",
-            dependsOn = { "accept-3095-simple-scroll" },
-            complete = QuestState(3095, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3260, 0.6560, "Dannal Stern",
-                    "Travel to Dannal Stern."),
-            },
-        },
-        {
-            id = "turnin-3098-glyphic-scroll",
-            kind = "turnin",
-            priority = 190,
-            conditions = {
-                all = {
-                    { class = 8 },
-                },
-            },
-            text = "Turn in Glyphic Scroll to Isabella in Deathknell.",
-            dependsOn = { "accept-3098-glyphic-scroll" },
-            complete = QuestState(3098, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3090, 0.6620, "Isabella",
-                    "Travel to Isabella."),
-            },
-        },
-        {
-            id = "turnin-3097-hallowed-scroll",
-            kind = "turnin",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 5 },
-                },
-            },
-            text = "Turn in Hallowed Scroll to Dark Cleric Duesten in Deathknell.",
-            dependsOn = { "accept-3097-hallowed-scroll" },
-            complete = QuestState(3097, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3110, 0.6610, "Dark Cleric Duesten",
-                    "Travel to Dark Cleric Duesten."),
-            },
-        },
-        {
-            id = "turnin-98601-a-difficult-path",
-            kind = "turnin",
-            priority = 201,
+            priority = 1780,
             conditions = {
                 all = {
                     { race = 5 },
@@ -383,103 +2831,28 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Difficult Path to Aramis Hammerhand in Deathknell.",
-            dependsOn = { "accept-98601-a-difficult-path" },
             complete = QuestState(98601, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "objective-376-the-damned",
-            kind = "objective",
-            priority = 210,
-            conditions = { level = { min = 2 } },
-            text = "Kill Ragged Scavenger and Duskbat to the south for 6 Scavenger Paw and 6 Duskbat Wing in Deathknell.",
-            dependsOn = { "accept-376-the-damned" },
-            complete = QuestState(376, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.5700, "Ragged Scavenger",
-                    "Travel to Ragged Scavenger."),
-            },
-        },
-        {
-            id = "objective-3901-rattling-the-rattlecages",
-            kind = "objective",
-            priority = 220,
-            text = "Kill 12 Rattlecage Skeleton south of town in Deathknell.",
-            dependsOn = { "accept-3901-rattling-the-rattlecages" },
-            complete = QuestState(3901, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3293, 0.6172, "Rattlecage Skeleton",
-                    "Travel to Rattlecage Skeleton."),
-            },
-        },
-        {
-            id = "turnin-376-the-damned",
-            kind = "turnin",
-            priority = 230,
-            conditions = { level = { min = 2 } },
-            text = "Turn in The Damned to Novice Elreth in Deathknell.",
-            dependsOn = { "objective-376-the-damned" },
-            complete = QuestState(376, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3092, 0.6614, "Novice Elreth",
-                    "Travel to Novice Elreth."),
-            },
-        },
-        {
-            id = "turnin-3901-rattling-the-rattlecages",
-            kind = "turnin",
-            priority = 240,
-            text = "Turn in Rattling the Rattlecages to Shadow Priest Sarvis in Deathknell.",
-            dependsOn = { "objective-3901-rattling-the-rattlecages" },
-            complete = QuestState(3901, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3086, 0.6617, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis."),
-            },
-        },
-        {
-            id = "accept-6395-marla-s-last-wish",
+            id = "woven-accept-98389-a-light-in-the-darkness",
             kind = "accept",
-            priority = 250,
-            conditions = { level = { min = 3 } },
-            text = "Accept Marla's Last Wish from Novice Elreth in Deathknell.",
-            complete = QuestState(6395, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3092, 0.6614, "Novice Elreth",
-                    "Travel to Novice Elreth."),
-            },
-        },
-        {
-            id = "accept-380-night-web-s-hollow",
-            kind = "accept",
-            priority = 260,
-            conditions = { level = { min = 2 } },
-            text = "Accept Night Web's Hollow from Executor Arren in Deathknell.",
-            complete = QuestState(380, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3211, 0.6603, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "accept-98389-a-light-in-the-darkness",
-            kind = "accept",
-            priority = 261,
+            priority = 1790,
             conditions = { level = { min = 4 } },
             text = "Accept A Light in the Darkness from Aramis Hammerhand in Deathknell.",
             complete = QuestState(98389, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "accept-90902-rediscovering-the-light",
+            id = "woven-accept-90902-rediscovering-the-light",
             kind = "accept",
-            priority = 262,
+            priority = 1800,
             conditions = {
                 all = {
                     { race = 5 },
@@ -490,91 +2863,38 @@ ns:RegisterGuide({
             text = "Accept Rediscovering the Light from Aramis Hammerhand in Deathknell.",
             complete = QuestState(90902, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "accept-3902-scavenging-deathknell",
-            kind = "accept",
-            priority = 270,
-            conditions = { level = { min = 2 } },
-            text = "Accept Scavenging Deathknell from Deathguard Saltain in Deathknell.",
-            complete = QuestState(3902, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3168, 0.6551, "Deathguard Saltain",
-                    "Travel to Deathguard Saltain."),
-            },
-        },
-        {
-            id = "objective-3902-scavenging-deathknell",
+            id = "woven-objective-98389-a-light-in-the-darkness",
             kind = "objective",
-            priority = 280,
-            conditions = { level = { min = 2 } },
-            text = "Collect 6 Scavenged Goods around or inside the buildings in Deathknell.",
-            dependsOn = { "accept-3902-scavenging-deathknell" },
-            complete = QuestState(3902, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.6600, "Deathknell",
-                    "Travel to Deathknell."),
-            },
-        },
-        {
-            id = "objective-6395-samuel-fipps",
-            kind = "objective",
-            priority = 300,
-            conditions = { level = { min = 3 } },
-            text = "Kill Samuel Fipps and collect Samuel's Remains.",
-            dependsOn = { "accept-6395-marla-s-last-wish" },
-            complete = QuestState(6395, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3660, 0.6160, "Samuel Fipps",
-                    "Travel to Samuel Fipps."),
-            },
-        },
-        {
-            id = "objective-380-night-web-s-hollow",
-            kind = "objective",
-            priority = 320,
-            conditions = { level = { min = 2 } },
-            text = "Kill 8 Young Night Web Spider outside the cave and 5 Night Web Spider inside the cave in Night Web's Hollow.",
-            dependsOn = { "accept-380-night-web-s-hollow" },
-            complete = QuestState(380, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.2680, 0.5990, "Young Night Web Spider",
-                    "Travel to Young Night Web Spider."),
-            },
-        },
-        {
-            id = "objective-98389-a-light-in-the-darkness",
-            kind = "objective",
-            priority = 311,
+            priority = 1810,
             conditions = { level = { min = 4 } },
             text = "Free 6 Webbed Forsaken in Night Web's Hollow.",
-            dependsOn = { "accept-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.2660, 0.5940, "Webbed Forsaken",
+                Point(1420, 0.2660, 0.5940, "Webbed Forsaken",
                     "Travel to Webbed Forsaken."),
             },
         },
         {
-            id = "turnin-98389-a-light-in-the-darkness",
+            id = "woven-turnin-98389-a-light-in-the-darkness",
             kind = "turnin",
-            priority = 312,
+            priority = 1820,
             conditions = { level = { min = 4 } },
             text = "Turn in A Light in the Darkness to Aramis Hammerhand in Deathknell.",
-            dependsOn = { "objective-98389-a-light-in-the-darkness" },
             complete = QuestState(98389, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "objective-90902-rediscovering-the-light",
+            id = "woven-objective-90902-rediscovering-the-light",
             kind = "objective",
-            priority = 313,
+            priority = 1830,
             conditions = {
                 all = {
                     { race = 5 },
@@ -583,17 +2903,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Heal 5 Injured Deathguard with Holy Light in Deathknell.",
-            dependsOn = { "accept-90902-rediscovering-the-light" },
             complete = QuestState(90902, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.3160, 0.6480, "Injured Deathguard",
+                Point(1420, 0.3160, 0.6480, "Injured Deathguard",
                     "Travel to Injured Deathguard."),
             },
         },
         {
-            id = "turnin-90902-rediscovering-the-light",
+            id = "woven-turnin-90902-rediscovering-the-light",
             kind = "turnin",
-            priority = 314,
+            priority = 1840,
             conditions = {
                 all = {
                     { race = 5 },
@@ -602,145 +2921,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Rediscovering the Light to Aramis Hammerhand in Deathknell.",
-            dependsOn = { "objective-90902-rediscovering-the-light" },
             complete = QuestState(90902, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "objective-6395-marla-s-last-wish",
-            kind = "objective",
-            priority = 340,
-            conditions = { level = { min = 3 } },
-            text = "Use Samuel's Remains at Marla's Grave in Deathknell.",
-            dependsOn = { "accept-6395-marla-s-last-wish" },
-            complete = QuestState(6395, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3117, 0.6505, "Deathknell",
-                    "Travel to Deathknell."),
-            },
-        },
-        {
-            id = "turnin-3902-scavenging-deathknell",
-            kind = "turnin",
-            priority = 350,
-            conditions = { level = { min = 2 } },
-            text = "Turn in Scavenging Deathknell to Deathguard Saltain in Deathknell.",
-            dependsOn = { "objective-3902-scavenging-deathknell" },
-            complete = QuestState(3902, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3168, 0.6551, "Deathguard Saltain",
-                    "Travel to Deathguard Saltain."),
-            },
-        },
-        {
-            id = "turnin-380-night-web-s-hollow",
-            kind = "turnin",
-            priority = 360,
-            conditions = { level = { min = 2 } },
-            text = "Turn in Night Web's Hollow to Executor Arren in Deathknell.",
-            dependsOn = { "objective-380-night-web-s-hollow" },
-            complete = QuestState(380, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3211, 0.6603, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "accept-381-the-scarlet-crusade",
+            id = "woven-accept-91208-coming-to-terms",
             kind = "accept",
-            priority = 370,
-            conditions = { level = { min = 2 } },
-            text = "Accept The Scarlet Crusade from Executor Arren in Deathknell.",
-            complete = QuestState(381, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3211, 0.6603, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "turnin-6395-marla-s-last-wish",
-            kind = "turnin",
-            priority = 380,
-            conditions = { level = { min = 3 } },
-            text = "Turn in Marla's Last Wish to Novice Elreth in Deathknell.",
-            dependsOn = { "objective-6395-samuel-fipps", "objective-6395-marla-s-last-wish" },
-            complete = QuestState(6395, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3092, 0.6614, "Novice Elreth",
-                    "Travel to Novice Elreth."),
-            },
-        },
-        {
-            id = "objective-381-the-scarlet-crusade",
-            kind = "objective",
-            priority = 390,
-            conditions = { level = { min = 2 } },
-            text = "Kill Scarlet Convert, Scarlet Initiate and collect 12 Scarlet Armband in a camp east of town in Deathknell.",
-            dependsOn = { "accept-381-the-scarlet-crusade" },
-            complete = QuestState(381, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3600, 0.6750, "Scarlet Convert",
-                    "Travel to Scarlet Convert."),
-            },
-        },
-        {
-            id = "turnin-381-the-scarlet-crusade",
-            kind = "turnin",
-            priority = 400,
-            conditions = { level = { min = 2 } },
-            text = "Turn in The Scarlet Crusade to Executor Arren in Deathknell.",
-            dependsOn = { "objective-381-the-scarlet-crusade" },
-            complete = QuestState(381, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3214, 0.6596, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "accept-382-the-red-messenger",
-            kind = "accept",
-            priority = 410,
-            conditions = { level = { min = 2 } },
-            text = "Accept The Red Messenger from Executor Arren in Deathknell.",
-            complete = QuestState(382, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3214, 0.6596, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "objective-382-the-red-messenger",
-            kind = "objective",
-            priority = 420,
-            conditions = { level = { min = 2 } },
-            text = "Kill Meven Korgal and collect Scarlet Crusade Documents in Deathknell.",
-            dependsOn = { "accept-382-the-red-messenger" },
-            complete = QuestState(382, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3648, 0.6878, "Meven Korgal",
-                    "Travel to Meven Korgal."),
-            },
-        },
-        {
-            id = "turnin-382-the-red-messenger",
-            kind = "turnin",
-            priority = 430,
-            conditions = { level = { min = 2 } },
-            text = "Turn in The Red Messenger to Executor Arren in Deathknell.",
-            dependsOn = { "objective-382-the-red-messenger" },
-            complete = QuestState(382, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3214, 0.6596, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "accept-91208-coming-to-terms",
-            kind = "accept",
-            priority = 431,
+            priority = 1850,
             conditions = {
                 all = {
                     { race = 5 },
@@ -751,14 +2941,14 @@ ns:RegisterGuide({
             text = "Accept Coming to Terms from Aramis Hammerhand in Deathknell.",
             complete = QuestState(91208, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "objective-91208-coming-to-terms",
+            id = "woven-objective-91208-coming-to-terms",
             kind = "objective",
-            priority = 432,
+            priority = 1860,
             conditions = {
                 all = {
                     { race = 5 },
@@ -767,17 +2957,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Find the Frightened Paladin in the hills west of the Deathknell chapel.",
-            dependsOn = { "accept-91208-coming-to-terms" },
             complete = QuestState(91208, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.2760, 0.6380, "Frightened Paladin",
+                Point(1420, 0.2760, 0.6380, "Frightened Paladin",
                     "Travel to Frightened Paladin."),
             },
         },
         {
-            id = "turnin-91208-coming-to-terms",
+            id = "woven-turnin-91208-coming-to-terms",
             kind = "turnin",
-            priority = 433,
+            priority = 1870,
             conditions = {
                 all = {
                     { race = 5 },
@@ -786,17 +2975,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Coming to Terms to Aramis Hammerhand in Deathknell.",
-            dependsOn = { "objective-91208-coming-to-terms" },
             complete = QuestState(91208, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "accept-91209-continue-your-training",
+            id = "woven-accept-91209-continue-your-training",
             kind = "accept",
-            priority = 434,
+            priority = 1880,
             conditions = {
                 all = {
                     { race = 5 },
@@ -805,88 +2993,28 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Continue Your Training from Aramis Hammerhand in Deathknell.",
-            dependsOn = { "turnin-91208-coming-to-terms" },
             complete = QuestState(91209, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3100, 0.6620, "Aramis Hammerhand",
+                Point(1420, 0.3100, 0.6620, "Aramis Hammerhand",
                     "Travel to Aramis Hammerhand."),
             },
         },
         {
-            id = "accept-96656-the-adventurer",
+            id = "woven-accept-96656-the-adventurer",
             kind = "accept",
-            priority = 435,
+            priority = 1890,
             conditions = { level = { min = 6 } },
             text = "Accept The Adventurer from Executor Arren in Deathknell.",
             complete = QuestState(96656, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3200, 0.6600, "Executor Arren",
+                Point(1420, 0.3200, 0.6600, "Executor Arren",
                     "Travel to Executor Arren."),
             },
         },
         {
-            id = "accept-383-vital-intelligence",
-            kind = "accept",
-            priority = 440,
-            conditions = { level = { min = 2 } },
-            text = "Accept Vital Intelligence from Executor Arren in Deathknell.",
-            complete = QuestState(383, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3214, 0.6596, "Executor Arren",
-                    "Travel to Executor Arren."),
-            },
-        },
-        {
-            id = "accept-8-a-rogue-s-deal",
-            kind = "accept",
-            priority = 450,
-            text = "Accept A Rogue's Deal from Calvin Montague in Deathknell.",
-            complete = QuestState(8, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3818, 0.5684, "Calvin Montague",
-                    "Travel to Calvin Montague."),
-            },
-        },
-        {
-            id = "accept-365-fields-of-grief",
-            kind = "accept",
-            priority = 460,
-            conditions = { level = { min = 4 } },
-            text = "Accept Fields of Grief from Deathguard Simmer in Deathknell.",
-            complete = QuestState(365, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.4088, 0.5424, "Deathguard Simmer",
-                    "Travel to Deathguard Simmer."),
-            },
-        },
-        {
-            id = "accept-5481-gordo-s-task",
-            kind = "accept",
-            priority = 470,
-            conditions = { level = { min = 5 } },
-            text = "Accept Gordo's Task from Gordo in Nightmare Vale.",
-            complete = QuestState(5481, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.4368, 0.5441, "Gordo",
-                    "Travel to Gordo."),
-            },
-        },
-        {
-            id = "accept-404-a-putrid-task",
-            kind = "accept",
-            priority = 490,
-            conditions = { level = { min = 4 } },
-            text = "Accept A Putrid Task from Deathguard Dillinger in Brill.",
-            complete = QuestState(404, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5146, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "turnin-91209-continue-your-training",
+            id = "woven-turnin-91209-continue-your-training",
             kind = "turnin",
-            priority = 491,
+            priority = 1900,
             conditions = {
                 all = {
                     { race = 5 },
@@ -895,1449 +3023,312 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Continue Your Training to Shari Stilwell in Brill.",
-            dependsOn = { "accept-91209-continue-your-training" },
             complete = QuestState(91209, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell",
+                Point(1420, 0.6020, 0.5260, "Shari Stilwell",
                     "Travel to Shari Stilwell."),
             },
         },
         {
-            id = "accept-367-a-new-plague",
-            kind = "accept",
-            priority = 500,
-            conditions = { level = { min = 6 } },
-            text = "Accept A New Plague from Apothecary Johaan in Brill.",
-            complete = QuestState(367, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "turnin-96656-the-adventurer",
+            id = "woven-turnin-96656-the-adventurer",
             kind = "turnin",
-            priority = 505,
+            priority = 1910,
             conditions = { level = { min = 6 } },
             text = "Turn in The Adventurer to Eleanor Shackleton in Brill.",
-            dependsOn = { "accept-96656-the-adventurer" },
             complete = QuestState(96656, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                Point(1420, 0.5720, 0.5540, "Eleanor Shackleton",
                     "Travel to Eleanor Shackleton."),
             },
         },
         {
-            id = "accept-96101-the-great-outdoors",
+            id = "woven-accept-96101-the-great-outdoors",
             kind = "accept",
-            priority = 505.1,
+            priority = 1920,
             conditions = { level = { min = 6 } },
             text = "Accept The Great Outdoors from Eleanor Shackleton.",
-            dependsOn = { "turnin-96656-the-adventurer" },
             complete = QuestState(96101, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                Point(1420, 0.5720, 0.5540, "Eleanor Shackleton",
                     "Travel to Eleanor Shackleton."),
             },
         },
         {
-            id = "objective-96101-the-great-outdoors",
+            id = "woven-objective-96101-the-great-outdoors",
             kind = "objective",
-            priority = 505.2,
+            priority = 1930,
             conditions = { level = { min = 6 } },
             text = "Type /sit at Eleanor Shackleton's campfire and wait until you gain the Boosted Rest buff.",
-            dependsOn = { "accept-96101-the-great-outdoors" },
             complete = QuestState(96101, "complete"),
         },
         {
-            id = "turnin-96101-the-great-outdoors",
+            id = "woven-turnin-96101-the-great-outdoors",
             kind = "turnin",
-            priority = 505.3,
+            priority = 1940,
             conditions = { level = { min = 6 } },
             text = "Turn in The Great Outdoors to Eleanor Shackleton.",
-            dependsOn = { "objective-96101-the-great-outdoors" },
             complete = QuestState(96101, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
+                Point(1420, 0.5720, 0.5540, "Eleanor Shackleton",
                     "Travel to Eleanor Shackleton."),
             },
         },
         {
-            id = "turnin-383-vital-intelligence",
-            kind = "turnin",
-            priority = 510,
-            conditions = { level = { min = 2 } },
-            text = "Turn in Vital Intelligence to Executor Zygand in Brill.",
-            dependsOn = { "accept-383-vital-intelligence" },
-            complete = QuestState(383, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6055, 0.5181, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-99134-discipline",
+            id = "woven-accept-99134-discipline",
             kind = "accept",
-            priority = 521,
+            priority = 1950,
             conditions = { level = { min = 6 } },
             text = "Accept Discipline from Executor Zygand in Brill.",
             complete = QuestState(99134, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                Point(1420, 0.6060, 0.5180, "Executor Zygand",
                     "Travel to Executor Zygand."),
             },
         },
         {
-            id = "accept-86784-sticks-and-bones",
+            id = "woven-accept-95314-that-shadowvale-green-elixir",
             kind = "accept",
-            priority = 512,
-            conditions = { level = { min = 7 } },
-            text = "Accept Sticks and Bones from Deathguard Bartholomew in Brill. He gives you a Collecting Basket.",
-            complete = QuestState(86784, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5840, 0.5140, "Deathguard Bartholomew",
-                    "Travel to Deathguard Bartholomew."),
-            },
-        },
-        {
-            id = "objective-86784-sticks-and-bones",
-            kind = "objective",
-            priority = 513,
-            conditions = { level = { min = 7 } },
-            text = "Collect 6 Dry Branches in the hills west of Brill and bring them to Eleanor Shackleton.",
-            dependsOn = { "accept-86784-sticks-and-bones" },
-            complete = QuestState(86784, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
-                    "Travel to Eleanor Shackleton."),
-            },
-        },
-        {
-            id = "turnin-86784-sticks-and-bones",
-            kind = "turnin",
-            priority = 514,
-            conditions = { level = { min = 7 } },
-            text = "Turn in Sticks and Bones to Eleanor Shackleton.",
-            dependsOn = { "objective-86784-sticks-and-bones" },
-            complete = QuestState(86784, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5720, 0.5540, "Eleanor Shackleton",
-                    "Travel to Eleanor Shackleton."),
-            },
-        },
-        {
-            id = "accept-95314-that-shadowvale-green-elixir",
-            kind = "accept",
-            priority = 1011,
+            priority = 1960,
             conditions = { level = { min = 10 } },
             text = "Accept That Shadowvale Green Elixir from Carolai Anise in Brill.",
             complete = QuestState(95314, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.5940, 0.5220, "Carolai Anise",
+                Point(1420, 0.5940, 0.5220, "Carolai Anise",
                     "Travel to Carolai Anise."),
             },
         },
         {
-            id = "accept-427-at-war-with-the-scarlet-crusade",
+            id = "woven-accept-99142-tomb-weed",
             kind = "accept",
-            priority = 520,
-            conditions = { level = { min = 5 } },
-            text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
-            complete = QuestState(427, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-398-wanted-maggot-eye",
-            kind = "accept",
-            priority = 530,
-            conditions = { level = { min = 6 } },
-            text = "Accept Wanted: Maggot Eye in Brill.",
-            complete = QuestState(398, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6070, 0.5160, "Brill",
-                    "Travel to Brill."),
-            },
-        },
-        {
-            id = "accept-358-graverobbers",
-            kind = "accept",
-            priority = 540,
-            conditions = { level = { min = 4 } },
-            text = "Accept Graverobbers from Magistrate Sevren in Brill Town Hall.",
-            complete = QuestState(358, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-8-a-rogue-s-deal",
-            kind = "turnin",
-            priority = 550,
-            text = "Turn in A Rogue's Deal to Innkeeper Renee in Gallows' End Tavern.",
-            dependsOn = { "accept-8-a-rogue-s-deal" },
-            complete = QuestState(8, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6174, 0.5205, "Innkeeper Renee",
-                    "Travel to Innkeeper Renee."),
-            },
-        },
-        {
-            id = "note-367-gallows-end-tavern",
-            kind = "note",
-            priority = 560,
-            text = "Set your hearth in Gallows' End Tavern with Innkeeper Renee.",
-            route = {
-                Point(MAP.TIRISFAL, 0.6174, 0.5205, "Innkeeper Renee",
-                    "Travel to Innkeeper Renee."),
-            },
-        },
-        {
-            id = "objective-398-wanted-maggot-eye",
-            kind = "objective",
-            priority = 580,
-            conditions = { level = { min = 6 } },
-            text = "Kill Maggot Eye and collect Maggot Eye's Paw in the house at the north end of Garren's Haunt.",
-            dependsOn = { "accept-398-wanted-maggot-eye" },
-            complete = QuestState(398, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5870, 0.3170, "Maggot Eye",
-                    "Travel to Maggot Eye."),
-            },
-        },
-        {
-            id = "objective-358-graverobbers",
-            kind = "objective",
-            priority = 590,
-            conditions = { level = { min = 4 } },
-            text = "Kill 8 Rot Hide Graverobber and 5 Rot Hide Mongrel and loot them for 8 Embalming Ichor in the area.",
-            dependsOn = { "accept-358-graverobbers" },
-            complete = QuestState(358, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5900, 0.3500, "Rot Hide Graverobber",
-                    "Travel to Rot Hide Graverobber."),
-            },
-        },
-        {
-            id = "objective-5481-gordo-s-task",
-            kind = "objective",
-            priority = 600,
-            conditions = { level = { min = 5 } },
-            text = "Collect Gloom Weed find in the area between Deathknell and Brill.",
-            dependsOn = { "accept-5481-gordo-s-task" },
-            complete = QuestState(5481, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5100, 0.5500, "Deathknell",
-                    "Travel to Deathknell."),
-            },
-        },
-        {
-            id = "objective-404-a-putrid-task",
-            kind = "objective",
-            priority = 610,
-            conditions = { level = { min = 4 } },
-            text = "Kill Rotting Dead and Ravaged Corpse west of Brill for 7 Putrid Claw.",
-            dependsOn = { "accept-404-a-putrid-task" },
-            complete = QuestState(404, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5100, 0.5500, "Rotting Dead",
-                    "Travel to Rotting Dead."),
-            },
-        },
-        {
-            id = "turnin-398-wanted-maggot-eye",
-            kind = "turnin",
-            priority = 630,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Wanted: Maggot Eye to Executor Zygand in Brill.",
-            dependsOn = { "objective-398-wanted-maggot-eye" },
-            complete = QuestState(398, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6055, 0.5181, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "turnin-358-graverobbers",
-            kind = "turnin",
-            priority = 640,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Graverobbers to Magistrate Sevren in Brill Town Hall.",
-            dependsOn = { "objective-358-graverobbers" },
-            complete = QuestState(358, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-404-a-putrid-task",
-            kind = "turnin",
-            priority = 650,
-            conditions = { level = { min = 4 } },
-            text = "Turn in A Putrid Task to Deathguard Dillinger in Brill.",
-            dependsOn = { "objective-404-a-putrid-task" },
-            complete = QuestState(404, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5146, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "accept-426-the-mills-overrun",
-            kind = "accept",
-            priority = 660,
-            conditions = { level = { min = 6 } },
-            text = "Accept The Mills Overrun from Deathguard Dillinger in Brill.",
-            complete = QuestState(426, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5146, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "turnin-5481-gordo-s-task",
-            kind = "turnin",
-            priority = 670,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Gordo's Task to Junior Apothecary Holland in Brill.",
-            dependsOn = { "objective-5481-gordo-s-task" },
-            complete = QuestState(5481, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5830, 0.4977, "Junior Apothecary Holland",
-                    "Travel to Junior Apothecary Holland."),
-            },
-        },
-        {
-            id = "accept-5482-doom-weed",
-            kind = "accept",
-            priority = 680,
-            conditions = { level = { min = 5 } },
-            text = "Accept Doom Weed from Junior Apothecary Holland in Brill.",
-            complete = QuestState(5482, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5830, 0.4977, "Junior Apothecary Holland",
-                    "Travel to Junior Apothecary Holland."),
-            },
-        },
-        {
-            id = "objective-367-a-new-plague",
-            kind = "objective",
-            priority = 700,
-            conditions = { level = { min = 6 } },
-            text = "Kill any Darkhounds for 5 Darkhound Blood around.",
-            dependsOn = { "accept-367-a-new-plague" },
-            complete = QuestState(367, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6820, 0.4050, "Decrepit Darkhound",
-                    "Travel to Decrepit Darkhound."),
-            },
-        },
-        {
-            id = "objective-5482-doom-weed",
-            kind = "objective",
-            priority = 710,
-            conditions = { level = { min = 5 } },
-            text = "Collect 10 Doom Weed from the ground around Tirisfal Glades.",
-            dependsOn = { "accept-5482-doom-weed" },
-            complete = QuestState(5482, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5500, 0.4200, "Tirisfal Glades",
-                    "Travel to Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-354-deaths-in-the-family",
-            kind = "accept",
-            priority = 730,
-            conditions = { level = { min = 7 } },
-            text = "Accept Deaths in the Family from Coleman Farthing in Gallows' End Tavern.",
-            complete = QuestState(354, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "accept-362-the-haunted-mills",
-            kind = "accept",
-            priority = 740,
-            conditions = { level = { min = 7 } },
-            text = "Accept The Haunted Mills from Coleman Farthing in Gallows' End Tavern.",
-            complete = QuestState(362, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "accept-375-the-chill-of-death",
-            kind = "accept",
-            priority = 750,
-            conditions = { level = { min = 7 } },
-            text = "Accept The Chill of Death from Gretchen Dedmar in Gallows' End Tavern.",
-            complete = QuestState(375, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6189, 0.5266, "Gretchen Dedmar",
-                    "Travel to Gretchen Dedmar."),
-            },
-        },
-        {
-            id = "accept-359-forsaken-duties",
-            kind = "accept",
-            priority = 760,
-            conditions = { level = { min = 6 } },
-            text = "Accept Forsaken Duties from Magistrate Sevren in Brill Town Hall.",
-            complete = QuestState(359, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-367-a-new-plague",
-            kind = "turnin",
-            priority = 770,
-            conditions = { level = { min = 6 } },
-            text = "Turn in A New Plague to Apothecary Johaan in Brill.",
-            dependsOn = { "objective-367-a-new-plague" },
-            complete = QuestState(367, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-368-a-new-plague",
-            kind = "accept",
-            priority = 780,
-            conditions = { level = { min = 6 } },
-            text = "Accept A New Plague from Apothecary Johaan in Brill.",
-            complete = QuestState(368, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "turnin-5482-doom-weed",
-            kind = "turnin",
-            priority = 790,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Doom Weed to Junior Apothecary Holland in Brill.",
-            dependsOn = { "objective-5482-doom-weed" },
-            complete = QuestState(5482, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5830, 0.4977, "Junior Apothecary Holland",
-                    "Travel to Junior Apothecary Holland."),
-            },
-        },
-        {
-            id = "accept-99142-tomb-weed",
-            kind = "accept",
-            priority = 790.1,
+            priority = 1970,
             conditions = { level = { min = 5 } },
             text = "Accept Tomb Weed from Junior Apothecary Holland in Brill.",
-            dependsOn = { "turnin-5482-doom-weed" },
             complete = QuestState(99142, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                Point(1420, 0.5760, 0.4900, "Junior Apothecary Holland",
                     "Travel to Junior Apothecary Holland."),
             },
         },
         {
-            id = "objective-99142-tomb-weed",
+            id = "woven-objective-99142-tomb-weed",
             kind = "objective",
-            priority = 1190.5,
+            priority = 1980,
             conditions = { level = { min = 5 } },
             text = "Collect 5 Tomb Weed at Balnir Farmstead, on the same trip as Rear Guard Patrol.",
-            dependsOn = { "accept-99142-tomb-weed" },
             complete = QuestState(99142, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.7500, 0.6000, "Balnir Farmstead",
+                Point(1420, 0.7500, 0.6000, "Balnir Farmstead",
                     "Travel to Balnir Farmstead."),
             },
         },
         {
-            id = "turnin-99142-tomb-weed",
+            id = "woven-turnin-99142-tomb-weed",
             kind = "turnin",
-            priority = 1391,
+            priority = 1990,
             conditions = { level = { min = 5 } },
             text = "Turn in Tomb Weed to Junior Apothecary Holland.",
-            dependsOn = { "objective-99142-tomb-weed" },
             complete = QuestState(99142, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.5760, 0.4900, "Junior Apothecary Holland",
+                Point(1420, 0.5760, 0.4900, "Junior Apothecary Holland",
                     "Travel to Junior Apothecary Holland."),
             },
         },
         {
-            id = "objective-99134-discipline",
+            id = "woven-objective-99134-discipline",
             kind = "objective",
-            priority = 522,
+            priority = 2000,
             conditions = { level = { min = 6 } },
             text = "Motivate the Deathguards Executor Zygand named. They stand in Brill and along the roads you are already riding, including Deathknell.",
-            dependsOn = { "accept-99134-discipline" },
             complete = QuestState(99134, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                Point(1420, 0.6060, 0.5180, "Executor Zygand",
                     "Travel to Executor Zygand."),
             },
         },
         {
-            id = "turnin-99134-discipline",
+            id = "woven-turnin-99134-discipline",
             kind = "turnin",
-            priority = 951,
+            priority = 2010,
             conditions = { level = { min = 6 } },
             text = "Turn in Discipline to Executor Zygand.",
-            dependsOn = { "objective-99134-discipline" },
             complete = QuestState(99134, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                Point(1420, 0.6060, 0.5180, "Executor Zygand",
                     "Travel to Executor Zygand."),
             },
         },
         {
-            id = "accept-99141-patience",
+            id = "woven-accept-99141-patience",
             kind = "accept",
-            priority = 952,
+            priority = 2020,
             conditions = { level = { min = 6 } },
             text = "Accept Patience from Executor Zygand.",
-            dependsOn = { "turnin-99134-discipline" },
             complete = QuestState(99141, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                Point(1420, 0.6060, 0.5180, "Executor Zygand",
                     "Travel to Executor Zygand."),
             },
         },
         {
-            id = "objective-99141-patience",
+            id = "woven-objective-99141-patience",
             kind = "objective",
-            priority = 953,
+            priority = 2030,
             conditions = { level = { min = 6 } },
             text = "Collect reports from Deathguard Dillinger, Deathguard Kristof, and Gordo.",
-            dependsOn = { "accept-99141-patience" },
             complete = QuestState(99141, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5140, "Deathguard Dillinger",
+                Point(1420, 0.5820, 0.5140, "Deathguard Dillinger",
                     "Travel to Deathguard Dillinger."),
             },
         },
         {
-            id = "turnin-99141-patience",
+            id = "woven-turnin-99141-patience",
             kind = "turnin",
-            priority = 954,
+            priority = 2040,
             conditions = { level = { min = 6 } },
             text = "Turn in Patience to Executor Zygand.",
-            dependsOn = { "objective-99141-patience" },
             complete = QuestState(99141, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5180, "Executor Zygand",
+                Point(1420, 0.6060, 0.5180, "Executor Zygand",
                     "Travel to Executor Zygand."),
             },
         },
         {
-            id = "objective-362-the-haunted-mills",
-            kind = "objective",
-            priority = 810,
-            conditions = { level = { min = 7 } },
-            text = "Kill Devlin Agamand and collect Devlin's Remains in Agamand Mills.",
-            dependsOn = { "accept-362-the-haunted-mills" },
-            complete = QuestState(362, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.4692, 0.4102, "Devlin Agamand",
-                    "Travel to Devlin Agamand."),
-            },
-        },
-        {
-            id = "objective-354-2-nissa-agamand",
-            kind = "objective",
-            priority = 820,
-            conditions = { level = { min = 7 } },
-            text = "Kill Nissa Agamand and collect Nissa's Remains in Agamand Mills.",
-            dependsOn = { "accept-354-deaths-in-the-family" },
-            complete = QuestObjective(354, 2),
-            route = {
-                Point(MAP.TIRISFAL, 0.4956, 0.3558, "Nissa Agamand",
-                    "Travel to Nissa Agamand."),
-            },
-        },
-        {
-            id = "objective-354-1-gregor-agamand",
-            kind = "objective",
-            priority = 830,
-            conditions = { level = { min = 7 } },
-            text = "Kill Gregor Agamand and collect Gregor's Remains in Agamand Mills.",
-            dependsOn = { "accept-354-deaths-in-the-family" },
-            complete = QuestObjective(354, 1),
-            route = {
-                Point(MAP.TIRISFAL, 0.4510, 0.3020, "Gregor Agamand",
-                    "Travel to Gregor Agamand."),
-            },
-        },
-        {
-            id = "objective-354-3-thurman-agamand",
-            kind = "objective",
-            priority = 840,
-            conditions = { level = { min = 7 } },
-            text = "Kill Thurman Agamand and collect Thurman's Remains in Agamand Mills.",
-            dependsOn = { "accept-354-deaths-in-the-family" },
-            complete = QuestObjective(354, 3),
-            route = {
-                Point(MAP.TIRISFAL, 0.4407, 0.3185, "Thurman Agamand",
-                    "Travel to Thurman Agamand."),
-            },
-        },
-        {
-            id = "objective-426-the-mills-overrun",
-            kind = "objective",
-            priority = 850,
-            conditions = { level = { min = 6 } },
-            text = "Kill the Scourge at Agamand Mills and gather 5 Notched Rib and 3 Blackened Skull from Darkeye Bonecaster around.",
-            dependsOn = { "accept-426-the-mills-overrun" },
-            complete = QuestState(426, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5000, 0.3698, "Continue toward The Mills Overrun",
-                    "Continue toward The Mills Overrun."),
-                Point(MAP.TIRISFAL, 0.4802, 0.3454, "Darkeye Bonecaster",
-                    "Travel to Darkeye Bonecaster."),
-            },
-        },
-        {
-            id = "objective-365-fields-of-grief",
-            kind = "objective",
-            priority = 870,
-            conditions = { level = { min = 4 } },
-            text = "Collect 10 Tirisfal Pumpkin from the ground in Solliden Farmstead.",
-            dependsOn = { "accept-365-fields-of-grief" },
-            complete = QuestState(365, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3452, 0.4923, "Solliden Farmstead",
-                    "Travel to Solliden Farmstead."),
-            },
-        },
-        {
-            id = "objective-427-at-war-with-the-scarlet-crusade",
-            kind = "objective",
-            priority = 880,
-            conditions = { level = { min = 5 } },
-            text = "Kill 10 Scarlet Warrior in Solliden Farmstead.",
-            dependsOn = { "accept-427-at-war-with-the-scarlet-crusade" },
-            complete = QuestState(427, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Scarlet Warrior",
-                    "Travel to Scarlet Warrior."),
-            },
-        },
-        {
-            id = "objective-368-a-new-plague",
-            kind = "objective",
-            priority = 900,
-            conditions = { level = { min = 6 } },
-            text = "Kill Murlocs and collect 5 Vile Fin Scale along the shore in Whispering Shore.",
-            dependsOn = { "accept-368-a-new-plague" },
-            complete = QuestState(368, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.3624, 0.4129, "Vile Fin Puddlejumper",
-                    "Travel to Vile Fin Puddlejumper."),
-            },
-        },
-        {
-            id = "turnin-354-deaths-in-the-family",
-            kind = "turnin",
-            priority = 920,
-            conditions = { level = { min = 7 } },
-            text = "Turn in Deaths in the Family to Coleman Farthing in Gallows' End Tavern.",
-            dependsOn = { "objective-354-2-nissa-agamand", "objective-354-1-gregor-agamand", "objective-354-3-thurman-agamand" },
-            complete = QuestState(354, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "turnin-362-the-haunted-mills",
-            kind = "turnin",
-            priority = 930,
-            conditions = { level = { min = 7 } },
-            text = "Turn in The Haunted Mills to Coleman Farthing in Gallows' End Tavern.",
-            dependsOn = { "objective-362-the-haunted-mills" },
-            complete = QuestState(362, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "accept-355-speak-with-sevren",
+            id = "woven-accept-97558-hides-for-the-forsaken",
             kind = "accept",
-            priority = 940,
-            conditions = { level = { min = 7 } },
-            text = "Accept Speak with Sevren from Coleman Farthing in Gallows' End Tavern.",
-            complete = QuestState(355, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6176, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "turnin-427-at-war-with-the-scarlet-crusade",
-            kind = "turnin",
-            priority = 950,
-            conditions = { level = { min = 5 } },
-            text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
-            dependsOn = { "objective-427-at-war-with-the-scarlet-crusade" },
-            complete = QuestState(427, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-370-at-war-with-the-scarlet-crusade",
-            kind = "accept",
-            priority = 960,
-            conditions = { level = { min = 5 } },
-            text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
-            complete = QuestState(370, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-374-proof-of-demise",
-            kind = "accept",
-            priority = 970,
-            conditions = { level = { min = 5 } },
-            text = "Accept Proof of Demise from Deathguard Burgess in Brill.",
-            complete = QuestState(374, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6089, 0.5212, "Deathguard Burgess",
-                    "Travel to Deathguard Burgess."),
-            },
-        },
-        {
-            id = "turnin-355-speak-with-sevren",
-            kind = "turnin",
-            priority = 980,
-            conditions = { level = { min = 7 } },
-            text = "Turn in Speak with Sevren to Magistrate Sevren in Brill Town Hall.",
-            dependsOn = { "accept-355-speak-with-sevren" },
-            complete = QuestState(355, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "accept-408-the-family-crypt",
-            kind = "accept",
-            priority = 990,
-            conditions = { level = { min = 7 } },
-            text = "Accept The Family Crypt from Magistrate Sevren in Brill Town Hall.",
-            complete = QuestState(408, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-365-fields-of-grief",
-            kind = "turnin",
-            priority = 1000,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Fields of Grief to Apothecary Johaan in Brill.",
-            dependsOn = { "objective-365-fields-of-grief" },
-            complete = QuestState(365, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-407-fields-of-grief",
-            kind = "accept",
-            priority = 1010,
-            conditions = { level = { min = 4 } },
-            text = "Accept Fields of Grief from Apothecary Johaan in Brill.",
-            complete = QuestState(407, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "turnin-368-a-new-plague",
-            kind = "turnin",
-            priority = 1020,
-            conditions = { level = { min = 6 } },
-            text = "Turn in A New Plague to Apothecary Johaan in Brill.",
-            dependsOn = { "objective-368-a-new-plague" },
-            complete = QuestState(368, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5947, 0.5233, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-369-a-new-plague",
-            kind = "accept",
-            priority = 1030,
-            conditions = { level = { min = 6 } },
-            text = "Accept A New Plague from Apothecary Johaan in Brill.",
-            complete = QuestState(369, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5947, 0.5233, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "turnin-426-the-mills-overrun",
-            kind = "turnin",
-            priority = 1040,
-            conditions = { level = { min = 6 } },
-            text = "Turn in The Mills Overrun to Deathguard Dillinger in Brill.",
-            dependsOn = { "objective-426-the-mills-overrun" },
-            complete = QuestState(426, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5146, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "objective-369-coarse-thread",
-            kind = "objective",
-            priority = 1050,
-            conditions = { level = { min = 6 } },
-            text = "Buy Coarse Thread from Abigail Shiel in Brill.",
-            dependsOn = { "accept-369-a-new-plague" },
-            complete = QuestState(369, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6100, 0.5250, "Abigail Shiel",
-                    "Travel to Abigail Shiel."),
-            },
-        },
-        {
-            id = "objective-375-the-chill-of-death",
-            kind = "objective",
-            priority = 1060,
-            conditions = { level = { min = 7 } },
-            text = "Collect 6 Duskbat Pelt drop from the Greater Duskbat just outside town.",
-            dependsOn = { "accept-375-the-chill-of-death" },
-            complete = QuestState(375, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5700, 0.5600, "Greater Duskbat",
-                    "Travel to Greater Duskbat."),
-            },
-        },
-        {
-            id = "turnin-375-the-chill-of-death",
-            kind = "turnin",
-            priority = 1080,
-            conditions = { level = { min = 7 } },
-            text = "Turn in The Chill of Death to Gretchen Dedmar in Gallows' End Tavern.",
-            dependsOn = { "objective-375-the-chill-of-death" },
-            complete = QuestState(375, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6189, 0.5266, "Gretchen Dedmar",
-                    "Travel to Gretchen Dedmar."),
-            },
-        },
-        {
-            id = "turnin-407-fields-of-grief",
-            kind = "turnin",
-            priority = 1090,
-            conditions = { level = { min = 4 } },
-            text = "Turn in Fields of Grief to Captured Scarlet Zealot.",
-            dependsOn = { "accept-407-fields-of-grief" },
-            complete = QuestState(407, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6190, 0.5130, "Captured Scarlet Zealot",
-                    "Travel to Captured Scarlet Zealot."),
-            },
-        },
-        {
-            id = "objective-370-1-captain-perrine",
-            kind = "objective",
-            priority = 1100,
-            conditions = { level = { min = 5 } },
-            text = "Kill Captain Perrine inside the keep in Tirisfal Glades.",
-            dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
-            complete = QuestObjective(370, 1),
-            route = {
-                Point(MAP.TIRISFAL, 0.5160, 0.6760, "Captain Perrine",
-                    "Travel to Captain Perrine."),
-            },
-        },
-        {
-            id = "objective-370-at-war-with-the-scarlet-crusade",
-            kind = "objective",
-            priority = 1110,
-            conditions = { level = { min = 5 } },
-            text = "Kill 3 Scarlet Zealot and 3 Scarlet Missionary near the keep in Tirisfal Glades.",
-            dependsOn = { "accept-370-at-war-with-the-scarlet-crusade" },
-            complete = QuestState(370, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5100, 0.6700, "Scarlet Zealot",
-                    "Travel to Scarlet Zealot."),
-            },
-        },
-        {
-            id = "turnin-370-at-war-with-the-scarlet-crusade",
-            kind = "turnin",
-            priority = 1120,
-            conditions = { level = { min = 5 } },
-            text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
-            dependsOn = { "objective-370-1-captain-perrine", "objective-370-at-war-with-the-scarlet-crusade" },
-            complete = QuestState(370, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-371-at-war-with-the-scarlet-crusade",
-            kind = "accept",
-            priority = 1130,
-            conditions = { level = { min = 5 } },
-            text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
-            complete = QuestState(371, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "turnin-359-forsaken-duties",
-            kind = "turnin",
-            priority = 1150,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Forsaken Duties to Deathguard Linnea in Tirisfal Glades.",
-            dependsOn = { "accept-359-forsaken-duties" },
-            complete = QuestState(359, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6542, 0.6025, "Deathguard Linnea",
-                    "Travel to Deathguard Linnea."),
-            },
-        },
-        {
-            id = "accept-360-return-to-the-magistrate",
-            kind = "accept",
-            priority = 1160,
-            conditions = { level = { min = 6 } },
-            text = "Accept Return to the Magistrate from Deathguard Linnea in Tirisfal Glades.",
-            complete = QuestState(360, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6553, 0.6019, "Deathguard Linnea",
-                    "Travel to Deathguard Linnea."),
-            },
-        },
-        {
-            id = "accept-356-rear-guard-patrol",
-            kind = "accept",
-            priority = 1170,
-            conditions = { level = { min = 6 } },
-            text = "Accept Rear Guard Patrol from Deathguard Linnea in Tirisfal Glades.",
-            complete = QuestState(356, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6553, 0.6019, "Deathguard Linnea",
-                    "Travel to Deathguard Linnea."),
-            },
-        },
-        {
-            id = "accept-97558-hides-for-the-forsaken",
-            kind = "accept",
-            priority = 751,
+            priority = 2050,
             conditions = { level = { min = 11 } },
             text = "Accept Hides for the Forsaken from Shelene Rhobart.",
             complete = QuestState(97558, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                Point(1420, 0.6540, 0.6000, "Shelene Rhobart",
                     "Travel to Shelene Rhobart."),
             },
         },
         {
-            id = "objective-97558-hides-for-the-forsaken",
+            id = "woven-objective-97558-hides-for-the-forsaken",
             kind = "objective",
-            priority = 1061,
+            priority = 2060,
             conditions = { level = { min = 11 } },
             text = "Collect 8 Duskbat Wing Membranes, 6 Darkhound Hides, and 3 Vile Fin Murloc Skins.",
-            dependsOn = { "accept-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                Point(1420, 0.6540, 0.6000, "Shelene Rhobart",
                     "Travel to Shelene Rhobart."),
             },
         },
         {
-            id = "objective-95314-that-shadowvale-green-elixir",
+            id = "woven-objective-95314-that-shadowvale-green-elixir",
             kind = "objective",
-            priority = 1488,
+            priority = 2070,
             conditions = { level = { min = 10 } },
             text = "Collect 8 Bottles of Whispering Elixir in Shadowvale. A Whispering Horror may drop residue. Use it if it does.",
-            dependsOn = { "accept-95314-that-shadowvale-green-elixir" },
             complete = QuestState(95314, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.1100, 0.6600, "Shadowvale",
+                Point(1420, 0.1100, 0.6600, "Shadowvale",
                     "Travel to Shadowvale."),
             },
         },
         {
-            id = "objective-356-rear-guard-patrol",
-            kind = "objective",
-            priority = 1190,
-            conditions = { level = { min = 6 } },
-            text = "Kill 8 Bleeding Horror and 8 Wandering Spirit at the farm further east down the road in Balnir Farmstead.",
-            dependsOn = { "accept-356-rear-guard-patrol" },
-            complete = QuestState(356, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.7500, 0.6000, "Bleeding Horror",
-                    "Travel to Bleeding Horror."),
-            },
-        },
-        {
-            id = "accept-99144-seeking-refuge",
+            id = "woven-accept-99144-seeking-refuge",
             kind = "accept",
-            priority = 881,
+            priority = 2080,
             conditions = { level = { min = 7 } },
             text = "Accept Seeking Refuge from Bareth Dawnstone at the top of the tower in Solliden Farmstead.",
             complete = QuestState(99144, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
+                Point(1420, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
         {
-            id = "objective-99144-seeking-refuge",
+            id = "woven-objective-99144-seeking-refuge",
             kind = "objective",
-            priority = 882,
+            priority = 2090,
             conditions = { level = { min = 7 } },
             text = "Escort Bareth Dawnstone out of Solliden Farmstead.",
-            dependsOn = { "accept-99144-seeking-refuge" },
             complete = QuestState(99144, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.3400, 0.4800, "Bareth Dawnstone",
+                Point(1420, 0.3400, 0.4800, "Bareth Dawnstone",
                     "Travel to Bareth Dawnstone."),
             },
         },
         {
-            id = "objective-371-1-captain-vachon",
-            kind = "objective",
-            priority = 1210,
-            conditions = { level = { min = 5 } },
-            text = "Kill Captain Vachon in Crusader Outpost.",
-            dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
-            complete = QuestObjective(371, 1),
-            route = {
-                Point(MAP.TIRISFAL, 0.7932, 0.5590, "Captain Vachon",
-                    "Travel to Captain Vachon."),
-            },
-        },
-        {
-            id = "objective-371-2-scarlet-friar",
-            kind = "objective",
-            priority = 1220,
-            conditions = { level = { min = 5 } },
-            text = "Kill 5 Scarlet Friar in Crusader Outpost.",
-            dependsOn = { "accept-371-at-war-with-the-scarlet-crusade" },
-            complete = QuestObjective(371, 2),
-            route = {
-                Point(MAP.TIRISFAL, 0.7996, 0.5597, "Scarlet Friar",
-                    "Travel to Scarlet Friar."),
-            },
-        },
-        {
-            id = "objective-369-a-new-plague",
-            kind = "objective",
-            priority = 1240,
-            conditions = { level = { min = 6 } },
-            text = "Kill Vicious Night Web Spider and collect 4 Vicious Night Web Spider Venom in Venomweb Vale.",
-            dependsOn = { "accept-369-a-new-plague" },
-            complete = QuestState(369, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.8600, 0.5150, "Vicious Night Web Spider",
-                    "Travel to Vicious Night Web Spider."),
-            },
-        },
-        {
-            id = "turnin-371-at-war-with-the-scarlet-crusade",
-            kind = "turnin",
-            priority = 1260,
-            conditions = { level = { min = 5 } },
-            text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
-            dependsOn = { "objective-371-1-captain-vachon", "objective-371-2-scarlet-friar" },
-            complete = QuestState(371, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-372-at-war-with-the-scarlet-crusade",
+            id = "woven-accept-99156-rear-guard-patrol",
             kind = "accept",
-            priority = 1270,
-            conditions = { level = { min = 5 } },
-            text = "Accept At War With The Scarlet Crusade from Executor Zygand in Brill.",
-            complete = QuestState(372, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "turnin-369-a-new-plague",
-            kind = "turnin",
-            priority = 1280,
-            conditions = { level = { min = 6 } },
-            text = "Turn in A New Plague to Apothecary Johaan in Brill.",
-            dependsOn = { "objective-369-coarse-thread", "objective-369-a-new-plague" },
-            complete = QuestState(369, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-492-a-new-plague",
-            kind = "accept",
-            priority = 1290,
-            conditions = { level = { min = 6 } },
-            text = "Accept A New Plague from Apothecary Johaan in Brill.",
-            complete = QuestState(492, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5946, 0.5234, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-445-delivery-to-silverpine-forest",
-            kind = "accept",
-            priority = 1300,
-            conditions = { level = { min = 9 } },
-            text = "Accept Delivery to Silverpine Forest from Apothecary Johaan in Brill.",
-            complete = QuestState(445, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5949, 0.5232, "Apothecary Johaan",
-                    "Travel to Apothecary Johaan."),
-            },
-        },
-        {
-            id = "accept-1818-speak-with-dillinger",
-            kind = "accept",
-            priority = 1310,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Accept Speak with Dillinger from Austil de Mon in Gallows' End Tavern.",
-            complete = QuestState(1818, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6185, 0.5254, "Austil de Mon",
-                    "Travel to Austil de Mon."),
-            },
-        },
-        {
-            id = "turnin-1818-speak-with-dillinger",
-            kind = "turnin",
-            priority = 1320,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Speak with Dillinger to Deathguard Dillinger in Brill.",
-            dependsOn = { "accept-1818-speak-with-dillinger" },
-            complete = QuestState(1818, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5819, 0.5148, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "accept-1819-ulag-the-cleaver",
-            kind = "accept",
-            priority = 1330,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Accept Ulag the Cleaver from Deathguard Dillinger in Brill.",
-            complete = QuestState(1819, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5819, 0.5148, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "objective-1819-ulag-the-cleaver",
-            kind = "objective",
-            priority = 1340,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Click on the Mausoleum Trigger on the ground then click on the crypt door to find and kill Ulag the Cleaver in Brill.",
-            dependsOn = { "accept-1819-ulag-the-cleaver" },
-            complete = QuestState(1819, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5914, 0.4852, "Ulag the Cleaver",
-                    "Travel to Ulag the Cleaver."),
-            },
-        },
-        {
-            id = "turnin-1819-ulag-the-cleaver",
-            kind = "turnin",
-            priority = 1350,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Ulag the Cleaver to Deathguard Dillinger in Brill.",
-            dependsOn = { "objective-1819-ulag-the-cleaver" },
-            complete = QuestState(1819, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5145, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "accept-1820-speak-with-coleman",
-            kind = "accept",
-            priority = 1360,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Accept Speak with Coleman from Deathguard Dillinger in Brill.",
-            complete = QuestState(1820, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5820, 0.5145, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger."),
-            },
-        },
-        {
-            id = "turnin-1820-speak-with-coleman",
-            kind = "turnin",
-            priority = 1370,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Speak with Coleman to Coleman Farthing in Gallows' End Tavern.",
-            dependsOn = { "accept-1820-speak-with-coleman" },
-            complete = QuestState(1820, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6171, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "accept-1821-agamand-heirlooms",
-            kind = "accept",
-            priority = 1380,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Accept Agamand Heirlooms from Coleman Farthing in Gallows' End Tavern.",
-            complete = QuestState(1821, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6171, 0.5229, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "turnin-492-a-new-plague",
-            kind = "turnin",
-            priority = 1390,
-            conditions = { level = { min = 6 } },
-            text = "Turn in A New Plague to Captured Mountaineer in Gallows' End Tavern.",
-            dependsOn = { "accept-492-a-new-plague" },
-            complete = QuestState(492, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6189, 0.5137, "Captured Mountaineer",
-                    "Travel to Captured Mountaineer."),
-            },
-        },
-        {
-            id = "turnin-360-return-to-the-magistrate",
-            kind = "turnin",
-            priority = 1400,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Return to the Magistrate to Magistrate Sevren in Brill Town Hall.",
-            dependsOn = { "accept-360-return-to-the-magistrate" },
-            complete = QuestState(360, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-356-rear-guard-patrol",
-            kind = "turnin",
-            priority = 1410,
-            conditions = { level = { min = 6 } },
-            text = "Turn in Rear Guard Patrol to Deathguard Linnea in Tirisfal Glades.",
-            dependsOn = { "objective-356-rear-guard-patrol" },
-            complete = QuestState(356, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6553, 0.6019, "Deathguard Linnea",
-                    "Travel to Deathguard Linnea."),
-            },
-        },
-        {
-            id = "accept-99156-rear-guard-patrol",
-            kind = "accept",
-            priority = 1410.4,
+            priority = 2100,
             conditions = { level = { min = 13 } },
             text = "Accept Rear Guard Patrol from Deathguard Linnea.",
-            dependsOn = { "turnin-356-rear-guard-patrol" },
             complete = QuestState(99156, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
+                Point(1420, 0.6540, 0.6020, "Deathguard Linnea",
                     "Travel to Deathguard Linnea."),
             },
         },
         {
-            id = "objective-99156-rear-guard-patrol",
+            id = "woven-objective-99156-rear-guard-patrol",
             kind = "objective",
-            priority = 1410.6,
+            priority = 2110,
             conditions = { level = { min = 13 } },
             text = "Kill Riptear and bring Riptear's Heart to Deathguard Linnea.",
-            dependsOn = { "accept-99156-rear-guard-patrol" },
             complete = QuestState(99156, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.8280, 0.4420, "Riptear",
+                Point(1420, 0.8280, 0.4420, "Riptear",
                     "Travel to Riptear."),
             },
         },
         {
-            id = "turnin-99156-rear-guard-patrol",
+            id = "woven-turnin-99156-rear-guard-patrol",
             kind = "turnin",
-            priority = 1411,
+            priority = 2120,
             conditions = { level = { min = 13 } },
             text = "Turn in Rear Guard Patrol to Deathguard Linnea.",
-            dependsOn = { "objective-99156-rear-guard-patrol" },
             complete = QuestState(99156, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6020, "Deathguard Linnea",
+                Point(1420, 0.6540, 0.6020, "Deathguard Linnea",
                     "Travel to Deathguard Linnea."),
             },
         },
         {
-            id = "turnin-97558-hides-for-the-forsaken",
+            id = "woven-turnin-97558-hides-for-the-forsaken",
             kind = "turnin",
-            priority = 1151,
+            priority = 2130,
             conditions = { level = { min = 11 } },
             text = "Turn in Hides for the Forsaken to Shelene Rhobart.",
-            dependsOn = { "objective-97558-hides-for-the-forsaken" },
             complete = QuestState(97558, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6540, 0.6000, "Shelene Rhobart",
+                Point(1420, 0.6540, 0.6000, "Shelene Rhobart",
                     "Travel to Shelene Rhobart."),
             },
         },
         {
-            id = "turnin-99144-seeking-refuge",
+            id = "woven-turnin-99144-seeking-refuge",
             kind = "turnin",
-            priority = 955,
+            priority = 2140,
             conditions = { level = { min = 7 } },
             text = "Turn in Seeking Refuge to Shari Stilwell in Brill.",
-            dependsOn = { "objective-99144-seeking-refuge" },
             complete = QuestState(99144, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell",
+                Point(1420, 0.6020, 0.5260, "Shari Stilwell",
                     "Travel to Shari Stilwell."),
             },
         },
         {
-            id = "turnin-95314-that-shadowvale-green-elixir",
+            id = "woven-turnin-95314-that-shadowvale-green-elixir",
             kind = "turnin",
-            priority = 1490,
+            priority = 2150,
             conditions = { level = { min = 10 } },
             text = "Turn in That Shadowvale Green Elixir to Carolai Anise in Brill.",
-            dependsOn = { "objective-95314-that-shadowvale-green-elixir" },
             complete = QuestState(95314, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.5940, 0.5220, "Carolai Anise",
+                Point(1420, 0.5940, 0.5220, "Carolai Anise",
                     "Travel to Carolai Anise."),
             },
         },
         {
-            id = "objective-372-1-captain-melrache",
-            kind = "objective",
-            priority = 1430,
-            conditions = { level = { min = 5 } },
-            text = "Kill Captain Melrache in Scarlet Watch Post.",
-            dependsOn = { "accept-372-at-war-with-the-scarlet-crusade" },
-            complete = QuestObjective(372, 1),
-            route = {
-                Point(MAP.TIRISFAL, 0.7948, 0.2595, "Captain Melrache",
-                    "Travel to Captain Melrache."),
-            },
-        },
-        {
-            id = "objective-372-2-scarlet-bodyguard",
-            kind = "objective",
-            priority = 1440,
-            conditions = { level = { min = 5 } },
-            text = "Kill 2 Scarlet Bodyguard in Scarlet Watch Post.",
-            dependsOn = { "accept-372-at-war-with-the-scarlet-crusade" },
-            complete = QuestObjective(372, 2),
-            route = {
-                Point(MAP.TIRISFAL, 0.7948, 0.2595, "Scarlet Bodyguard",
-                    "Travel to Scarlet Bodyguard."),
-            },
-        },
-        {
-            id = "objective-374-proof-of-demise",
-            kind = "objective",
-            priority = 1450,
-            conditions = { level = { min = 5 } },
-            text = "Collect 10 Scarlet Insignia Ring dropped by the Scarlet Crusade enemies in Scarlet Watch Post.",
-            dependsOn = { "accept-374-proof-of-demise" },
-            complete = QuestState(374, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5100, 0.6700, "Scarlet Bodyguard",
-                    "Travel to Scarlet Bodyguard."),
-            },
-        },
-        {
-            id = "turnin-372-at-war-with-the-scarlet-crusade",
-            kind = "turnin",
-            priority = 1470,
-            conditions = { level = { min = 5 } },
-            text = "Turn in At War With The Scarlet Crusade to Executor Zygand in Brill.",
-            dependsOn = { "objective-372-1-captain-melrache", "objective-372-2-scarlet-bodyguard" },
-            complete = QuestState(372, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6060, 0.5188, "Executor Zygand",
-                    "Travel to Executor Zygand."),
-            },
-        },
-        {
-            id = "accept-91282-a-second-home",
+            id = "woven-accept-91282-a-second-home",
             kind = "accept",
-            priority = 1468,
+            priority = 2160,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2346,16 +3337,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Second Home from Shari Stilwell in Brill.",
-            dependsOn = { "turnin-91209-continue-your-training" },
             complete = QuestState(91282, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6020, 0.5260, "Shari Stilwell", "Travel to Shari Stilwell."),
+                Point(1420, 0.6020, 0.5260, "Shari Stilwell", "Travel to Shari Stilwell."),
             },
         },
         {
-            id = "turnin-91282-a-second-home",
+            id = "woven-turnin-91282-a-second-home",
             kind = "turnin",
-            priority = 1468.01,
+            priority = 2170,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2364,16 +3354,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Second Home to Breton Samuels at Bandarion Keep.",
-            dependsOn = { "accept-91282-a-second-home" },
             complete = QuestState(91282, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+                Point(1420, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
             },
         },
         {
-            id = "accept-91285-murlocs-at-the-gates",
+            id = "woven-accept-91285-murlocs-at-the-gates",
             kind = "accept",
-            priority = 1468.1,
+            priority = 2180,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2382,16 +3371,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Murlocs at the Gates from Breton Samuels at Bandarion Keep.",
-            dependsOn = { "turnin-91282-a-second-home" },
             complete = QuestState(91285, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+                Point(1420, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
             },
         },
         {
-            id = "objective-91285-murlocs-at-the-gates",
+            id = "woven-objective-91285-murlocs-at-the-gates",
             kind = "objective",
-            priority = 1468.11,
+            priority = 2190,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2400,16 +3388,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Kill Vile Fin Attackers and Vile Fin Seers for Breton Samuels.",
-            dependsOn = { "accept-91285-murlocs-at-the-gates" },
             complete = QuestState(91285, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.1720, 0.5820, "Vile Fin Seer", "Travel to Vile Fin Seer."),
+                Point(1420, 0.1720, 0.5820, "Vile Fin Seer", "Travel to Vile Fin Seer."),
             },
         },
         {
-            id = "turnin-91285-murlocs-at-the-gates",
+            id = "woven-turnin-91285-murlocs-at-the-gates",
             kind = "turnin",
-            priority = 1468.12,
+            priority = 2200,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2418,16 +3405,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Murlocs at the Gates to Breton Samuels at Bandarion Keep.",
-            dependsOn = { "objective-91285-murlocs-at-the-gates" },
             complete = QuestState(91285, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+                Point(1420, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
             },
         },
         {
-            id = "accept-91294-touring-the-grounds",
+            id = "woven-accept-91294-touring-the-grounds",
             kind = "accept",
-            priority = 1468.2,
+            priority = 2210,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2436,16 +3422,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Touring the Grounds from Breton Samuels at Bandarion Keep.",
-            dependsOn = { "turnin-91285-murlocs-at-the-gates" },
             complete = QuestState(91294, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
+                Point(1420, 0.2180, 0.4520, "Breton Samuels", "Travel to Breton Samuels."),
             },
         },
         {
-            id = "objective-91294-touring-the-grounds",
+            id = "woven-objective-91294-touring-the-grounds",
             kind = "objective",
-            priority = 1468.21,
+            priority = 2220,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2454,16 +3439,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Speak with Danitha Morr, Hilda the Breaker, Jorin Croge, and Ander Solliden at Bandarion Keep.",
-            dependsOn = { "accept-91294-touring-the-grounds" },
             complete = QuestState(91294, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker", "Travel to Hilda the Breaker."),
+                Point(1420, 0.2200, 0.4720, "Hilda the Breaker", "Travel to Hilda the Breaker."),
             },
         },
         {
-            id = "turnin-91294-touring-the-grounds",
+            id = "woven-turnin-91294-touring-the-grounds",
             kind = "turnin",
-            priority = 1468.22,
+            priority = 2230,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2472,16 +3456,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Touring the Grounds to Danitha Morr at Bandarion Keep.",
-            dependsOn = { "objective-91294-touring-the-grounds" },
             complete = QuestState(91294, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "accept-91316-making-repairs",
+            id = "woven-accept-91316-making-repairs",
             kind = "accept",
-            priority = 1468.3,
+            priority = 2240,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2490,16 +3473,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Making Repairs from Jorin Croge at Bandarion Keep.",
-            dependsOn = { "turnin-91294-touring-the-grounds" },
             complete = QuestState(91316, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+                Point(1420, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
             },
         },
         {
-            id = "accept-91317-the-tarnished",
+            id = "woven-accept-91317-the-tarnished",
             kind = "accept",
-            priority = 1468.35,
+            priority = 2250,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2508,16 +3490,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept The Tarnished from Danitha Morr at Bandarion Keep.",
-            dependsOn = { "turnin-91294-touring-the-grounds" },
             complete = QuestState(91317, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "objective-91316-making-repairs",
+            id = "woven-objective-91316-making-repairs",
             kind = "objective",
-            priority = 1468.36,
+            priority = 2260,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2526,17 +3507,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Complete Making Repairs for Jorin Croge. The guide follows the pin in your quest log.",
-            dependsOn = { "accept-91316-making-repairs" },
             useClientPin = true,
             complete = QuestState(91316, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+                Point(1420, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
             },
         },
         {
-            id = "objective-91317-the-tarnished",
+            id = "woven-objective-91317-the-tarnished",
             kind = "objective",
-            priority = 1468.37,
+            priority = 2270,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2545,16 +3525,15 @@ ns:RegisterGuide({
                 },
             },
             text = "The Tarnished: Rudolph Gelhardt's Head.",
-            dependsOn = { "accept-91317-the-tarnished", "accept-91316-making-repairs" },
             complete = QuestState(91317, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.1160, 0.6420, "Rudolph Gelhardt", "Travel to Rudolph Gelhardt."),
+                Point(1420, 0.1160, 0.6420, "Rudolph Gelhardt", "Travel to Rudolph Gelhardt."),
             },
         },
         {
-            id = "turnin-91316-making-repairs",
+            id = "woven-turnin-91316-making-repairs",
             kind = "turnin",
-            priority = 1468.38,
+            priority = 2280,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2563,16 +3542,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in Making Repairs to Jorin Croge at Bandarion Keep.",
-            dependsOn = { "objective-91316-making-repairs" },
             complete = QuestState(91316, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
+                Point(1420, 0.2260, 0.4480, "Jorin Croge", "Travel to Jorin Croge."),
             },
         },
         {
-            id = "turnin-91317-the-tarnished",
+            id = "woven-turnin-91317-the-tarnished",
             kind = "turnin",
-            priority = 1468.39,
+            priority = 2290,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2581,16 +3559,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in The Tarnished to Danitha Morr at Bandarion Keep.",
-            dependsOn = { "objective-91317-the-tarnished" },
             complete = QuestState(91317, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "accept-95803-a-token-of-good-faith",
+            id = "woven-accept-95803-a-token-of-good-faith",
             kind = "accept",
-            priority = 1468.5,
+            priority = 2300,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2599,16 +3576,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Token of Good Faith from Danitha Morr at Bandarion Keep.",
-            dependsOn = { "turnin-91317-the-tarnished" },
             complete = QuestState(95803, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "turnin-95803-a-token-of-good-faith",
+            id = "woven-turnin-95803-a-token-of-good-faith",
             kind = "turnin",
-            priority = 1468.51,
+            priority = 2310,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2617,16 +3593,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Token of Good Faith to Lady Sylvanas Windrunner in the Royal Quarter.",
-            dependsOn = { "accept-95803-a-token-of-good-faith" },
             complete = QuestState(95803, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.5780, 0.9180, "Lady Sylvanas Windrunner", "Travel to Lady Sylvanas Windrunner."),
+                Point(1458, 0.5780, 0.9180, "Lady Sylvanas Windrunner", "Travel to Lady Sylvanas Windrunner."),
             },
         },
         {
-            id = "accept-94427-a-lesson-in-divinity",
+            id = "woven-accept-94427-a-lesson-in-divinity",
             kind = "accept",
-            priority = 1468.6,
+            priority = 2320,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2635,16 +3610,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Danitha Morr at Bandarion Keep.",
-            dependsOn = { "turnin-91317-the-tarnished" },
             complete = QuestState(94427, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "turnin-94427-a-lesson-in-divinity",
+            id = "woven-turnin-94427-a-lesson-in-divinity",
             kind = "turnin",
-            priority = 1468.61,
+            priority = 2330,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2653,16 +3627,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Tanis Alderwood in the Undercity.",
-            dependsOn = { "accept-94427-a-lesson-in-divinity" },
             complete = QuestState(94427, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+                Point(1458, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
             },
         },
         {
-            id = "accept-94434-a-lesson-in-divinity-undercity",
+            id = "woven-accept-94434-a-lesson-in-divinity-undercity",
             kind = "accept",
-            priority = 1468.7,
+            priority = 2340,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2671,16 +3644,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Tanis Alderwood in the Undercity.",
-            dependsOn = { "turnin-94427-a-lesson-in-divinity" },
             complete = QuestState(94434, "activeOrCompleted"),
             route = {
-                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+                Point(1458, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
             },
         },
         {
-            id = "objective-94434-a-lesson-in-divinity-undercity",
+            id = "woven-objective-94434-a-lesson-in-divinity-undercity",
             kind = "objective",
-            priority = 1468.71,
+            priority = 2350,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2689,17 +3661,16 @@ ns:RegisterGuide({
                 },
             },
             text = "Complete Tanis Alderwood's lesson in the Undercity. The guide follows the pin in your quest log.",
-            dependsOn = { "accept-94434-a-lesson-in-divinity-undercity" },
             useClientPin = true,
             complete = QuestState(94434, "complete"),
             route = {
-                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+                Point(1458, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
             },
         },
         {
-            id = "turnin-94434-a-lesson-in-divinity-undercity",
+            id = "woven-turnin-94434-a-lesson-in-divinity-undercity",
             kind = "turnin",
-            priority = 1468.72,
+            priority = 2360,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2708,16 +3679,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Tanis Alderwood in the Undercity.",
-            dependsOn = { "objective-94434-a-lesson-in-divinity-undercity" },
             complete = QuestState(94434, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+                Point(1458, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
             },
         },
         {
-            id = "accept-94435-a-lesson-in-divinity-return",
+            id = "woven-accept-94435-a-lesson-in-divinity-return",
             kind = "accept",
-            priority = 1468.8,
+            priority = 2370,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2726,16 +3696,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Tanis Alderwood in the Undercity.",
-            dependsOn = { "turnin-94434-a-lesson-in-divinity-undercity" },
             complete = QuestState(94435, "activeOrCompleted"),
             route = {
-                Point(MAP.UNDERCITY, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
+                Point(1458, 0.6560, 0.3780, "Tanis Alderwood", "Travel to Tanis Alderwood."),
             },
         },
         {
-            id = "turnin-94435-a-lesson-in-divinity-return",
+            id = "woven-turnin-94435-a-lesson-in-divinity-return",
             kind = "turnin",
-            priority = 1468.81,
+            priority = 2380,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2744,16 +3713,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Danitha Morr at Bandarion Keep.",
-            dependsOn = { "accept-94435-a-lesson-in-divinity-return" },
             complete = QuestState(94435, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "accept-94436-a-lesson-in-divinity-billmuth",
+            id = "woven-accept-94436-a-lesson-in-divinity-billmuth",
             kind = "accept",
-            priority = 1468.9,
+            priority = 2390,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2762,16 +3730,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Danitha Morr at Bandarion Keep.",
-            dependsOn = { "turnin-94435-a-lesson-in-divinity-return" },
             complete = QuestState(94436, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "turnin-94436-a-lesson-in-divinity-billmuth",
+            id = "woven-turnin-94436-a-lesson-in-divinity-billmuth",
             kind = "turnin",
-            priority = 1468.91,
+            priority = 2400,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2780,16 +3747,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Deathguard Billmuth at Bandarion Keep.",
-            dependsOn = { "accept-94436-a-lesson-in-divinity-billmuth" },
             complete = QuestState(94436, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+                Point(1420, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
             },
         },
         {
-            id = "accept-94438-a-lesson-in-divinity-falgan",
+            id = "woven-accept-94438-a-lesson-in-divinity-falgan",
             kind = "accept",
-            priority = 1469.0,
+            priority = 2410,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2798,16 +3764,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Deathguard Billmuth at Bandarion Keep.",
-            dependsOn = { "turnin-94436-a-lesson-in-divinity-billmuth" },
             complete = QuestState(94438, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+                Point(1420, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
             },
         },
         {
-            id = "turnin-94438-a-lesson-in-divinity-falgan",
+            id = "woven-turnin-94438-a-lesson-in-divinity-falgan",
             kind = "turnin",
-            priority = 1469.01,
+            priority = 2420,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2816,16 +3781,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Deathguard Falgan.",
-            dependsOn = { "accept-94438-a-lesson-in-divinity-falgan" },
             complete = QuestState(94438, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
+                Point(1420, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
             },
         },
         {
-            id = "accept-94440-a-lesson-in-divinity-scarlets",
+            id = "woven-accept-94440-a-lesson-in-divinity-scarlets",
             kind = "accept",
-            priority = 1469.1,
+            priority = 2430,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2834,16 +3798,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Deathguard Falgan.",
-            dependsOn = { "turnin-94438-a-lesson-in-divinity-falgan" },
             complete = QuestState(94440, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
+                Point(1420, 0.8660, 0.4760, "Deathguard Falgan", "Travel to Deathguard Falgan."),
             },
         },
         {
-            id = "objective-94440-a-lesson-in-divinity-scarlets",
+            id = "woven-objective-94440-a-lesson-in-divinity-scarlets",
             kind = "objective",
-            priority = 1469.11,
+            priority = 2440,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2852,16 +3815,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Do as Deathguard Falgan asks among the Scarlet Crusade.",
-            dependsOn = { "accept-94440-a-lesson-in-divinity-scarlets" },
             complete = QuestState(94440, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.5160, 0.6760, "Scarlet Zealot", "Travel to Scarlet Zealot."),
+                Point(1420, 0.5160, 0.6760, "Scarlet Zealot", "Travel to Scarlet Zealot."),
             },
         },
         {
-            id = "turnin-94440-a-lesson-in-divinity-scarlets",
+            id = "woven-turnin-94440-a-lesson-in-divinity-scarlets",
             kind = "turnin",
-            priority = 1469.12,
+            priority = 2450,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2870,16 +3832,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Deathguard Billmuth at Bandarion Keep.",
-            dependsOn = { "objective-94440-a-lesson-in-divinity-scarlets" },
             complete = QuestState(94440, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+                Point(1420, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
             },
         },
         {
-            id = "accept-94441-a-lesson-in-divinity-done",
+            id = "woven-accept-94441-a-lesson-in-divinity-done",
             kind = "accept",
-            priority = 1469.2,
+            priority = 2460,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2888,16 +3849,15 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept A Lesson in Divinity from Deathguard Billmuth at Bandarion Keep.",
-            dependsOn = { "turnin-94440-a-lesson-in-divinity-scarlets" },
             complete = QuestState(94441, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
+                Point(1420, 0.2200, 0.4460, "Deathguard Billmuth", "Travel to Deathguard Billmuth."),
             },
         },
         {
-            id = "turnin-94441-a-lesson-in-divinity-done",
+            id = "woven-turnin-94441-a-lesson-in-divinity-done",
             kind = "turnin",
-            priority = 1469.21,
+            priority = 2470,
             conditions = {
                 all = {
                     { race = 5 },
@@ -2906,295 +3866,271 @@ ns:RegisterGuide({
                 },
             },
             text = "Turn in A Lesson in Divinity to Danitha Morr at Bandarion Keep.",
-            dependsOn = { "accept-94441-a-lesson-in-divinity-done" },
             complete = QuestState(94441, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
+                Point(1420, 0.2200, 0.4460, "Danitha Morr", "Travel to Danitha Morr."),
             },
         },
         {
-            id = "accept-96895-the-argent-emissary",
+            id = "woven-accept-96895-the-argent-emissary",
             kind = "accept",
-            priority = 1471,
+            priority = 2480,
             conditions = { level = { min = 13 } },
             text = "Accept The Argent Emissary from Deathguard Terrence in Brill.",
             complete = QuestState(96895, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6140, 0.5340, "Deathguard Terrence",
+                Point(1420, 0.6140, 0.5340, "Deathguard Terrence",
                     "Travel to Deathguard Terrence."),
             },
         },
         {
-            id = "turnin-96895-the-argent-emissary",
+            id = "woven-turnin-96895-the-argent-emissary",
             kind = "turnin",
-            priority = 1472,
+            priority = 2490,
             conditions = { level = { min = 13 } },
             text = "Turn in The Argent Emissary to Hadric Harlson, on the road toward the Undercity.",
-            dependsOn = { "accept-96895-the-argent-emissary" },
             complete = QuestState(96895, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "accept-96896-a-righteous-cause",
+            id = "woven-accept-96896-a-righteous-cause",
             kind = "accept",
-            priority = 1473,
+            priority = 2500,
             conditions = { level = { min = 13 } },
             text = "Accept A Righteous Cause from Leonid Barthalomew the Revered.",
-            dependsOn = { "turnin-96899-bandarion-keep" },
             complete = QuestState(96896, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                Point(1420, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                     "Travel to Leonid Barthalomew the Revered."),
             },
         },
         {
-            id = "objective-96896-a-righteous-cause",
+            id = "woven-objective-96896-a-righteous-cause",
             kind = "objective",
-            priority = 1474,
+            priority = 2510,
             conditions = { level = { min = 13 } },
             text = "Observe the conversation between Danitha Morr and Leonid Barthalomew.",
-            dependsOn = { "accept-96896-a-righteous-cause" },
             complete = QuestState(96896, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                Point(1420, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                     "Travel to Leonid Barthalomew the Revered."),
             },
         },
         {
-            id = "turnin-96896-a-righteous-cause",
+            id = "woven-turnin-96896-a-righteous-cause",
             kind = "turnin",
-            priority = 1475,
+            priority = 2520,
             conditions = { level = { min = 13 } },
             text = "Turn in A Righteous Cause to Leonid Barthalomew the Revered.",
-            dependsOn = { "objective-96896-a-righteous-cause" },
             complete = QuestState(96896, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                Point(1420, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                     "Travel to Leonid Barthalomew the Revered."),
             },
         },
         {
-            id = "accept-96897-the-cult-of-the-damned",
+            id = "woven-accept-96897-the-cult-of-the-damned",
             kind = "accept",
-            priority = 1476,
+            priority = 2530,
             conditions = { level = { min = 13 } },
             text = "Accept The Cult of the Damned from Hadric Harlson.",
-            dependsOn = { "turnin-96895-the-argent-emissary" },
             complete = QuestState(96897, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "accept-96898-remnants-of-war",
+            id = "woven-accept-96898-remnants-of-war",
             kind = "accept",
-            priority = 1477,
+            priority = 2540,
             conditions = { level = { min = 13 } },
             text = "Accept Remnants of War from Hadric Harlson.",
-            dependsOn = { "turnin-96895-the-argent-emissary" },
             complete = QuestState(96898, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "objective-96897-the-cult-of-the-damned",
+            id = "woven-objective-96897-the-cult-of-the-damned",
             kind = "objective",
-            priority = 1478,
+            priority = 2550,
             conditions = { level = { min = 13 } },
             text = "Kill 8 Dark Neophytes and 8 Dark Enforcers.",
-            dependsOn = { "accept-96897-the-cult-of-the-damned" },
             complete = QuestState(96897, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.6660, 0.6540, "Dark Neophyte",
+                Point(1420, 0.6660, 0.6540, "Dark Neophyte",
                     "Travel to Dark Neophyte."),
             },
         },
         {
-            id = "objective-96898-remnants-of-war",
+            id = "woven-objective-96898-remnants-of-war",
             kind = "objective",
-            priority = 1479,
+            priority = 2560,
             conditions = { level = { min = 13 } },
             text = "Gather 12 Necrotic Crystal Fragments.",
-            dependsOn = { "accept-96898-remnants-of-war" },
             complete = QuestState(96898, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.6660, 0.6540, "Dark Neophyte",
+                Point(1420, 0.6660, 0.6540, "Dark Neophyte",
                     "Travel to Dark Neophyte."),
             },
         },
         {
-            id = "turnin-96897-the-cult-of-the-damned",
+            id = "woven-turnin-96897-the-cult-of-the-damned",
             kind = "turnin",
-            priority = 1486,
+            priority = 2570,
             conditions = { level = { min = 13 } },
             text = "Turn in The Cult of the Damned to Hadric Harlson.",
-            dependsOn = { "objective-96897-the-cult-of-the-damned" },
             complete = QuestState(96897, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "turnin-96898-remnants-of-war",
+            id = "woven-turnin-96898-remnants-of-war",
             kind = "turnin",
-            priority = 1487,
+            priority = 2580,
             conditions = { level = { min = 13 } },
             text = "Turn in Remnants of War to Hadric Harlson.",
-            dependsOn = { "objective-96898-remnants-of-war" },
             complete = QuestState(96898, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "accept-96899-bandarion-keep",
+            id = "woven-accept-96899-bandarion-keep",
             kind = "accept",
-            priority = 1488,
+            priority = 2590,
             conditions = { level = { min = 13 } },
             text = "Accept Bandarion Keep from Hadric Harlson.",
-            dependsOn = {
-                "turnin-96897-the-cult-of-the-damned",
-                "turnin-96898-remnants-of-war",
-            },
             complete = QuestState(96899, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.6580, 0.6100, "Hadric Harlson",
+                Point(1420, 0.6580, 0.6100, "Hadric Harlson",
                     "Travel to Hadric Harlson."),
             },
         },
         {
-            id = "turnin-96899-bandarion-keep",
+            id = "woven-turnin-96899-bandarion-keep",
             kind = "turnin",
-            priority = 1489,
+            priority = 2600,
             conditions = { level = { min = 13 } },
             text = "Turn in Bandarion Keep to Leonid Barthalomew the Revered.",
-            dependsOn = { "accept-96899-bandarion-keep" },
             complete = QuestState(96899, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                Point(1420, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                     "Travel to Leonid Barthalomew the Revered."),
             },
         },
         {
-            id = "accept-99152-as-above-so-below",
+            id = "woven-accept-99152-as-above-so-below",
             kind = "accept",
-            priority = 1490,
+            priority = 2610,
             conditions = { level = { min = 10 } },
             text = "Accept As Above, So Below from Hilda the Breaker at Bandarion Keep.",
-            dependsOn = { "turnin-96899-bandarion-keep" },
             complete = QuestState(99152, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
+                Point(1420, 0.2200, 0.4720, "Hilda the Breaker",
                     "Travel to Hilda the Breaker."),
             },
         },
         {
-            id = "accept-99153-the-one-that-got-away",
+            id = "woven-accept-99153-the-one-that-got-away",
             kind = "accept",
-            priority = 1490.1,
+            priority = 2620,
             conditions = { level = { min = 10 } },
             text = "Accept The One That Got Away from Ephram Barbaro at Bandarion Keep.",
-            dependsOn = { "turnin-96899-bandarion-keep" },
             complete = QuestState(99153, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2020, 0.4640, "Ephram Barbaro",
+                Point(1420, 0.2020, 0.4640, "Ephram Barbaro",
                     "Travel to Ephram Barbaro."),
             },
         },
         {
-            id = "objective-99152-as-above-so-below",
+            id = "woven-objective-99152-as-above-so-below",
             kind = "objective",
-            priority = 1490.2,
+            priority = 2630,
             conditions = { level = { min = 10 } },
             text = "Collect 6 Faintly Glowing Bones from Shadowvale Lurchers and Shadowvale Mystics in the Shadowvale cellars. The Glowing Crystal Fragment for The One That Got Away is in the same cellar.",
-            dependsOn = { "accept-99152-as-above-so-below" },
             complete = QuestState(99152, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
+                Point(1420, 0.1300, 0.6500, "Shadowvale cellars",
                     "Travel to the burned house entrance to the Shadowvale cellars."),
-                Point(MAP.TIRISFAL, 0.0970, 0.6940, "Shadowvale cellars",
+                Point(1420, 0.0970, 0.6940, "Shadowvale cellars",
                     "Travel into the Shadowvale cellars."),
             },
         },
         {
-            id = "objective-99153-the-one-that-got-away",
+            id = "woven-objective-99153-the-one-that-got-away",
             kind = "objective",
-            priority = 1490.3,
+            priority = 2640,
             conditions = { level = { min = 10 } },
             text = "Pick up the Glowing Crystal Fragment in the Shadowvale cellars.",
-            dependsOn = { "accept-99153-the-one-that-got-away" },
             complete = QuestState(99153, "complete"),
             route = {
-                Point(MAP.TIRISFAL, 0.1300, 0.6500, "Shadowvale cellars",
+                Point(1420, 0.1300, 0.6500, "Shadowvale cellars",
                     "Travel to the burned house entrance to the Shadowvale cellars."),
-                Point(MAP.TIRISFAL, 0.0970, 0.6940, "Glowing Crystal Fragment",
+                Point(1420, 0.0970, 0.6940, "Glowing Crystal Fragment",
                     "Travel to the Glowing Crystal Fragment."),
             },
         },
         {
-            id = "turnin-99152-as-above-so-below",
+            id = "woven-turnin-99152-as-above-so-below",
             kind = "turnin",
-            priority = 1490.4,
+            priority = 2650,
             conditions = { level = { min = 10 } },
             text = "Turn in As Above, So Below to Hilda the Breaker at Bandarion Keep.",
-            dependsOn = { "objective-99152-as-above-so-below" },
             complete = QuestState(99152, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4720, "Hilda the Breaker",
+                Point(1420, 0.2200, 0.4720, "Hilda the Breaker",
                     "Travel to Hilda the Breaker."),
             },
         },
         {
-            id = "turnin-99153-the-one-that-got-away",
+            id = "woven-turnin-99153-the-one-that-got-away",
             kind = "turnin",
-            priority = 1490.5,
+            priority = 2660,
             conditions = { level = { min = 10 } },
             text = "Turn in The One That Got Away to Ephram Barbaro at Bandarion Keep.",
-            dependsOn = { "objective-99153-the-one-that-got-away" },
             complete = QuestState(99153, "completed"),
             route = {
-                Point(MAP.TIRISFAL, 0.2020, 0.4640, "Ephram Barbaro",
+                Point(1420, 0.2020, 0.4640, "Ephram Barbaro",
                     "Travel to Ephram Barbaro."),
             },
         },
         {
-            id = "accept-98545-leonid-s-letter",
+            id = "woven-accept-98545-leonid-s-letter",
             kind = "accept",
-            priority = 1491,
+            priority = 2670,
             conditions = { level = { min = 13 } },
             text = "Accept Leonid's Letter from Leonid Barthalomew.",
-            dependsOn = { "turnin-96896-a-righteous-cause" },
             complete = QuestState(98545, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFAL, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
+                Point(1420, 0.2200, 0.4480, "Leonid Barthalomew the Revered",
                 "Travel to Leonid Barthalomew the Revered."),
             },
         },
         {
-            id = "turnin-98545-leonids-letter",
+            id = "woven-turnin-98545-leonids-letter",
             kind = "turnin",
-            priority = 1491.1,
+            priority = 2680,
             conditions = { level = { min = 13 } },
             text = "Deliver it to Glix Xizzix in the Undercity.",
-            dependsOn = { "accept-98545-leonid-s-letter" },
             complete = QuestState(98545, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.6980, 0.4700, "Glix Xizzix",
+                Point(1458, 0.6980, 0.4700, "Glix Xizzix",
                     "Travel to Glix Xizzix."),
             },
         },
         {
-            id = "turnin-95328-whispering-horror-residue",
+            id = "woven-turnin-95328-whispering-horror-residue",
             kind = "turnin",
-            priority = 1492,
+            priority = 2690,
             conditions = {
                 all = {
                     { level = { min = 10 } },
@@ -3204,751 +4140,8 @@ ns:RegisterGuide({
             text = "Turn in Whispering Horror Residue to Father Lankester in the War Quarter if you found it.",
             complete = QuestState(95328, "completed"),
             route = {
-                Point(MAP.UNDERCITY, 0.4960, 0.1560, "Father Lankester",
+                Point(1458, 0.4960, 0.1560, "Father Lankester",
                     "Travel to Father Lankester."),
-            },
-        },
-        {
-            id = "turnin-374-proof-of-demise",
-            kind = "turnin",
-            priority = 1470.5,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Proof of Demise to Deathguard Burgess in Brill.",
-            dependsOn = { "objective-374-proof-of-demise" },
-            complete = QuestState(374, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6089, 0.5212, "Deathguard Burgess",
-                    "Travel to Deathguard Burgess."),
-            },
-        },
-        {
-            id = "accept-1885-mennet-carkad",
-            kind = "accept",
-            priority = 1470.6,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Accept Mennet Carkad from Marion Call in Gallows' End Tavern.",
-            complete = QuestState(1885, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6174, 0.5200, "Marion Call",
-                    "Travel to Marion Call."),
-            },
-        },
-        {
-            id = "accept-1881-speak-with-anastasia",
-            kind = "accept",
-            priority = 1500,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 8 },
-                    { ["not"] = { quest = { id = 1882, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Accept Speak with Anastasia from Cain Firesong in Gallows' End Tavern.",
-            complete = QuestState(1881, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6192, 0.5231, "Cain Firesong",
-                    "Travel to Cain Firesong."),
-            },
-        },
-        {
-            id = "accept-1478-halgar-s-summons",
-            kind = "accept",
-            priority = 1510,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Accept Halgar's Summons from Ageron Kargal in Gallows' End Tavern.",
-            complete = QuestState(1478, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6162, 0.5265, "Ageron Kargal",
-                    "Travel to Ageron Kargal."),
-            },
-        },
-        {
-            id = "turnin-1478-halgar-s-summons",
-            kind = "turnin",
-            priority = 1530,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Turn in Halgar's Summons to Carendin Halgar in Magic Quarter.",
-            dependsOn = { "accept-1478-halgar-s-summons" },
-            complete = QuestState(1478, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8502, 0.2589, "Carendin Halgar",
-                    "Travel to Carendin Halgar."),
-            },
-        },
-        {
-            id = "accept-1473-creature-of-the-void",
-            kind = "accept",
-            priority = 1540,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Accept Creature of the Void from Carendin Halgar in Magic Quarter.",
-            complete = QuestState(1473, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8502, 0.2589, "Carendin Halgar",
-                    "Travel to Carendin Halgar."),
-            },
-        },
-        {
-            id = "objective-1473-creature-of-the-void",
-            kind = "objective",
-            priority = 1570,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Collect Egalin's Grimoire from the lockbox inside the tower.",
-            dependsOn = { "accept-1473-creature-of-the-void" },
-            complete = QuestState(1473, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5110, 0.6757, "Creature of the Void",
-                    "Travel to Creature of the Void."),
-            },
-        },
-        {
-            id = "turnin-1473-creature-of-the-void",
-            kind = "turnin",
-            priority = 1600,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Turn in Creature of the Void to Carendin Halgar in Magic Quarter.",
-            dependsOn = { "objective-1473-creature-of-the-void" },
-            complete = QuestState(1473, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8509, 0.2606, "Carendin Halgar",
-                    "Travel to Carendin Halgar."),
-            },
-        },
-        {
-            id = "accept-1471-the-binding",
-            kind = "accept",
-            priority = 1610,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Accept The Binding from Carendin Halgar in Magic Quarter.",
-            complete = QuestState(1471, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8627, 0.2668, "Carendin Halgar",
-                    "Travel to Carendin Halgar."),
-            },
-        },
-        {
-            id = "objective-1471-the-binding",
-            kind = "objective",
-            priority = 1620,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Using the Runes of Summoning on the purple summoning circle to summon and subdue a Summoned Voidwalker in Magic Quarter.",
-            dependsOn = { "accept-1471-the-binding" },
-            complete = QuestState(1471, "complete"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8664, 0.2697, "Summoned Voidwalker",
-                    "Travel to Summoned Voidwalker."),
-            },
-        },
-        {
-            id = "turnin-1471-the-binding",
-            kind = "turnin",
-            priority = 1630,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 9 },
-                },
-            },
-            text = "Turn in The Binding to Carendin Halgar in Magic Quarter.",
-            dependsOn = { "objective-1471-the-binding" },
-            complete = QuestState(1471, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8504, 0.2593, "Carendin Halgar",
-                    "Travel to Carendin Halgar."),
-            },
-        },
-        {
-            id = "turnin-1881-speak-with-anastasia",
-            kind = "turnin",
-            priority = 1650,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 8 },
-                    { ["not"] = { quest = { id = 1882, state = "activeOrCompleted" } } },
-                },
-            },
-            text = "Turn in Speak with Anastasia to Anastasia Hartwell in Magic Quarter.",
-            dependsOn = { "accept-1881-speak-with-anastasia" },
-            complete = QuestState(1881, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8509, 0.1014, "Anastasia Hartwell",
-                    "Travel to Anastasia Hartwell."),
-            },
-        },
-        {
-            id = "accept-1882-the-balnir-farmstead",
-            kind = "accept",
-            priority = 1660,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 8 },
-                },
-            },
-            text = "Accept The Balnir Farmstead from Anastasia Hartwell in Magic Quarter.",
-            complete = QuestState(1882, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8509, 0.1014, "Anastasia Hartwell",
-                    "Travel to Anastasia Hartwell."),
-            },
-        },
-        {
-            id = "objective-1882-the-balnir-farmstead",
-            kind = "objective",
-            priority = 1680,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 8 },
-                },
-            },
-            text = "Collect Balnir Snapdragons from the bush in Balnir Farmstead.",
-            dependsOn = { "accept-1882-the-balnir-farmstead" },
-            complete = QuestState(1882, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.7752, 0.6171, "Balnir Farmstead",
-                    "Travel to Balnir Farmstead."),
-            },
-        },
-        {
-            id = "turnin-1882-the-balnir-farmstead",
-            kind = "turnin",
-            priority = 1690,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 8 },
-                },
-            },
-            text = "Turn in The Balnir Farmstead to Anastasia Hartwell in Magic Quarter.",
-            dependsOn = { "objective-1882-the-balnir-farmstead" },
-            complete = QuestState(1882, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8514, 0.1016, "Anastasia Hartwell",
-                    "Travel to Anastasia Hartwell."),
-            },
-        },
-        {
-            id = "turnin-1885-mennet-carkad",
-            kind = "turnin",
-            priority = 1710,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Turn in Mennet Carkad to Mennet Carkad in Rogues' Quarter.",
-            dependsOn = { "accept-1885-mennet-carkad" },
-            complete = QuestState(1885, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8353, 0.6906, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "accept-1886-the-deathstalkers",
-            kind = "accept",
-            priority = 1720,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Accept The Deathstalkers from Mennet Carkad in Rogues' Quarter.",
-            complete = QuestState(1886, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8353, 0.6906, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "objective-1886-the-deathstalkers",
-            kind = "objective",
-            priority = 1750,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Find and speak to Astor Hadren, you can find him patroling the road to Silverpine Forest He will become hostile after you speak to him and you will need to kill him to collect Astor's Letter of Introduction.",
-            dependsOn = { "accept-1886-the-deathstalkers" },
-            complete = QuestState(1886, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5899, 0.6396, "Continue toward The Deathstalkers",
-                    "Continue toward The Deathstalkers."),
-                Point(MAP.TIRISFAL, 0.5481, 0.7288, "Continue toward The Deathstalkers",
-                    "Continue toward The Deathstalkers."),
-                Point(MAP.TIRISFAL, 0.5475, 0.7335, "Astor Hadren",
-                    "Travel to Astor Hadren."),
-            },
-        },
-        {
-            id = "turnin-1886-the-deathstalkers",
-            kind = "turnin",
-            priority = 1780,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Turn in The Deathstalkers to Mennet Carkad in Rogues' Quarter.",
-            dependsOn = { "objective-1886-the-deathstalkers" },
-            complete = QuestState(1886, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8351, 0.6906, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "accept-1898-the-deathstalkers",
-            kind = "accept",
-            priority = 1790,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Accept The Deathstalkers from Mennet Carkad in Rogues' Quarter.",
-            complete = QuestState(1898, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8351, 0.6906, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "turnin-1898-the-deathstalkers",
-            kind = "turnin",
-            priority = 1800,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Turn in The Deathstalkers to Andron Gant in The Apothecarium.",
-            dependsOn = { "accept-1898-the-deathstalkers" },
-            complete = QuestState(1898, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.5483, 0.7631, "Andron Gant",
-                    "Travel to Andron Gant."),
-            },
-        },
-        {
-            id = "accept-1899-the-deathstalkers",
-            kind = "accept",
-            priority = 1810,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Accept The Deathstalkers from Andron Gant in The Apothecarium.",
-            complete = QuestState(1899, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.5587, 0.7524, "Andron Gant",
-                    "Travel to Andron Gant."),
-            },
-        },
-        {
-            id = "objective-1899-the-deathstalkers",
-            kind = "objective",
-            priority = 1820,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Collect Andron's Ledger from the Bookshelf next to the quest giver in The Apothecarium.",
-            dependsOn = { "accept-1899-the-deathstalkers" },
-            complete = QuestState(1899, "complete"),
-            route = {
-                Point(MAP.UNDERCITY, 0.5547, 0.7673, "The Apothecarium",
-                    "Travel to The Apothecarium."),
-            },
-        },
-        {
-            id = "turnin-1899-the-deathstalkers",
-            kind = "turnin",
-            priority = 1830,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Turn in The Deathstalkers to Mennet Carkad in Rogues' Quarter.",
-            dependsOn = { "objective-1899-the-deathstalkers" },
-            complete = QuestState(1899, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8356, 0.6907, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "accept-1978-the-deathstalkers",
-            kind = "accept",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Accept The Deathstalkers from Mennet Carkad in Rogues' Quarter.",
-            complete = QuestState(1978, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8356, 0.6907, "Mennet Carkad",
-                    "Travel to Mennet Carkad."),
-            },
-        },
-        {
-            id = "turnin-1978-the-deathstalkers",
-            kind = "turnin",
-            priority = 1860,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 4 },
-                },
-            },
-            text = "Turn in The Deathstalkers to Varimathras in Royal Quarter.",
-            dependsOn = { "accept-1978-the-deathstalkers" },
-            complete = QuestState(1978, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.5624, 0.9216, "Varimathras",
-                    "Travel to Varimathras."),
-            },
-        },
-        {
-            id = "objective-1821-3-agamand-family-mace",
-            kind = "objective",
-            priority = 1880,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Collect Agamand Family Mace from the weapon rack in Agamand Family Crypt.",
-            dependsOn = { "accept-1821-agamand-heirlooms" },
-            complete = QuestObjective(1821, 3),
-            route = {
-                Point(MAP.TIRISFAL, 0.5190, 0.2709, "Agamand Family Crypt",
-                    "Travel to Agamand Family Crypt."),
-            },
-        },
-        {
-            id = "objective-1821-2-agamand-family-dagger",
-            kind = "objective",
-            priority = 1890,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Collect Agamand Family Dagger from the weapon rack in Agamand Family Crypt.",
-            dependsOn = { "accept-1821-agamand-heirlooms" },
-            complete = QuestObjective(1821, 2),
-            route = {
-                Point(MAP.TIRISFAL, 0.5190, 0.2709, "Agamand Family Crypt",
-                    "Travel to Agamand Family Crypt."),
-            },
-        },
-        {
-            id = "objective-1821-1-agamand-family-axe",
-            kind = "objective",
-            priority = 1900,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Collect Agamand Family Axe from the weapon rack in Agamand Family Crypt.",
-            dependsOn = { "accept-1821-agamand-heirlooms" },
-            complete = QuestObjective(1821, 1),
-            route = {
-                Point(MAP.TIRISFAL, 0.5264, 0.2591, "Agamand Family Crypt",
-                    "Travel to Agamand Family Crypt."),
-            },
-        },
-        {
-            id = "objective-1821-4-agamand-family-sword",
-            kind = "objective",
-            priority = 1910,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Collect Agamand Family Sword from the weapon rack in Agamand Family Crypt.",
-            dependsOn = { "accept-1821-agamand-heirlooms" },
-            complete = QuestObjective(1821, 4),
-            route = {
-                Point(MAP.TIRISFAL, 0.5264, 0.2591, "Agamand Family Crypt",
-                    "Travel to Agamand Family Crypt."),
-            },
-        },
-        {
-            id = "objective-408-3-captain-dargol",
-            kind = "objective",
-            priority = 1920,
-            conditions = { level = { min = 7 } },
-            text = "Kill Captain Dargol and collect Dargol's Skull in Agamand Family Crypt.",
-            dependsOn = { "accept-408-the-family-crypt" },
-            complete = QuestObjective(408, 3),
-            route = {
-                Point(MAP.TIRISFAL, 0.5234, 0.2631, "Captain Dargol",
-                    "Travel to Captain Dargol."),
-            },
-        },
-        {
-            id = "objective-408-the-family-crypt",
-            kind = "objective",
-            priority = 1930,
-            conditions = { level = { min = 7 } },
-            text = "Kill 8 Wailing Ancestor and 8 Rotting Ancestor Agamand Mills.",
-            dependsOn = { "accept-408-the-family-crypt" },
-            complete = QuestState(408, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.5257, 0.2707, "Wailing Ancestor",
-                    "Travel to Wailing Ancestor."),
-            },
-        },
-        {
-            id = "turnin-408-the-family-crypt",
-            kind = "turnin",
-            priority = 1950,
-            conditions = { level = { min = 7 } },
-            text = "Turn in The Family Crypt to Magistrate Sevren in Brill Town Hall.",
-            dependsOn = { "objective-408-3-captain-dargol", "objective-408-the-family-crypt" },
-            complete = QuestState(408, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6127, 0.5077, "Magistrate Sevren",
-                    "Travel to Magistrate Sevren."),
-            },
-        },
-        {
-            id = "turnin-1821-agamand-heirlooms",
-            kind = "turnin",
-            priority = 1960,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Agamand Heirlooms to Coleman Farthing in Gallows' End Tavern.",
-            dependsOn = { "objective-1821-3-agamand-family-mace", "objective-1821-2-agamand-family-dagger", "objective-1821-1-agamand-family-axe", "objective-1821-4-agamand-family-sword" },
-            complete = QuestState(1821, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6173, 0.5231, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "turnin-1822-heirloom-weapon",
-            kind = "turnin",
-            priority = 1970,
-            conditions = {
-                all = {
-                    { level = { min = 10 } },
-                    { class = 1 },
-                },
-            },
-            text = "Turn in Heirloom Weapon to Coleman Farthing in Gallows' End Tavern. This is an elite. Bring a group.",
-            complete = QuestState(1822, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6173, 0.5231, "Coleman Farthing",
-                    "Travel to Coleman Farthing."),
-            },
-        },
-        {
-            id = "turnin-405-the-prodigal-lich",
-            kind = "turnin",
-            priority = 1990,
-            conditions = { level = { min = 5 } },
-            text = "Turn in The Prodigal Lich.",
-            complete = QuestState(405, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8430, 0.1750, "The Prodigal Lich",
-                    "Travel to The Prodigal Lich."),
-            },
-        },
-        {
-            id = "accept-357-the-lich-s-identity",
-            kind = "accept",
-            priority = 2000,
-            conditions = { level = { min = 5 } },
-            text = "Accept The Lich's Identity.",
-            complete = QuestState(357, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8430, 0.1750, "The Lich's Identity",
-                    "Travel to The Lich's Identity."),
-            },
-        },
-        {
-            id = "objective-357-the-lich-s-identity",
-            kind = "objective",
-            priority = 2020,
-            conditions = { level = { min = 5 } },
-            text = "Loot [The Lich's Spellbook] on the island.",
-            dependsOn = { "accept-357-the-lich-s-identity" },
-            complete = QuestState(357, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6793, 0.4215, "The Lich's Identity",
-                    "Travel to The Lich's Identity."),
-            },
-        },
-        {
-            id = "turnin-357-the-lich-s-identity",
-            kind = "turnin",
-            priority = 2040,
-            conditions = { level = { min = 5 } },
-            text = "Turn in The Lich's Identity.",
-            dependsOn = { "objective-357-the-lich-s-identity" },
-            complete = QuestState(357, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8430, 0.1750, "The Lich's Identity",
-                    "Travel to The Lich's Identity."),
-            },
-        },
-        {
-            id = "accept-366-return-the-book",
-            kind = "accept",
-            priority = 2050,
-            conditions = { level = { min = 5 } },
-            text = "Accept Return the Book.",
-            complete = QuestState(366, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8430, 0.1750, "Return the Book",
-                    "Travel to Return the Book."),
-            },
-        },
-        {
-            id = "turnin-366-return-the-book",
-            kind = "turnin",
-            priority = 2060,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Return the Book.",
-            dependsOn = { "accept-366-return-the-book" },
-            complete = QuestState(366, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6818, 0.4198, "Return the Book",
-                    "Travel to Return the Book."),
-            },
-        },
-        {
-            id = "accept-409-proving-allegiance",
-            kind = "accept",
-            priority = 2070,
-            conditions = { level = { min = 5 } },
-            text = "Accept Proving Allegiance.",
-            complete = QuestState(409, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6820, 0.4200, "Proving Allegiance",
-                    "Travel to Proving Allegiance."),
-            },
-        },
-        {
-            id = "objective-409-proving-allegiance",
-            kind = "objective",
-            priority = 2080,
-            conditions = { level = { min = 5 } },
-            text = "Grab a candle from the crate, then summon Lillith at the table on the island to the south.",
-            dependsOn = { "accept-409-proving-allegiance" },
-            complete = QuestState(409, "complete"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6660, 0.4480, "Proving Allegiance",
-                    "Travel to Proving Allegiance."),
-            },
-        },
-        {
-            id = "turnin-409-proving-allegiance",
-            kind = "turnin",
-            priority = 2090,
-            conditions = { level = { min = 5 } },
-            text = "Turn in Proving Allegiance.",
-            dependsOn = { "objective-409-proving-allegiance" },
-            complete = QuestState(409, "completed"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6820, 0.4200, "Proving Allegiance",
-                    "Travel to Proving Allegiance."),
-            },
-        },
-        {
-            id = "accept-411-the-prodigal-lich-returns",
-            kind = "accept",
-            priority = 2100,
-            conditions = { level = { min = 5 } },
-            text = "Accept The Prodigal Lich Returns.",
-            complete = QuestState(411, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFAL, 0.6820, 0.4200, "The Prodigal Lich Returns",
-                    "Travel to The Prodigal Lich Returns."),
-            },
-        },
-        {
-            id = "turnin-411-the-prodigal-lich-returns",
-            kind = "turnin",
-            priority = 2110,
-            conditions = { level = { min = 5 } },
-            text = "Turn in The Prodigal Lich Returns.",
-            dependsOn = { "accept-411-the-prodigal-lich-returns" },
-            complete = QuestState(411, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8430, 0.1750, "The Prodigal Lich Returns",
-                    "Travel to The Prodigal Lich Returns."),
             },
         },
     },

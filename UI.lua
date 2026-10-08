@@ -301,8 +301,28 @@ function UI:CreateTracker()
         and UITheme.CreateCogButton(frame, 18)
         or CreateIconButton(frame, "Interface\\WorldMap\\Gear_64", "Open guide library")
     library:SetPoint("TOPLEFT", frame, "TOPLEFT", 12, -1)
-    SetButtonTooltip(library, "Open guide library")
-    library:SetScript("OnClick", function() UI:ToggleGuideBrowser() end)
+    library:SetScript("OnEnter", function(self)
+        if GameTooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+            GameTooltip:SetText("Open guide library")
+            if GameTooltip.AddLine then
+                GameTooltip:AddLine("Left-click to open.", 1, 1, 1)
+                GameTooltip:AddLine("Right-click for options.", 1, 1, 1)
+            end
+            GameTooltip:Show()
+        end
+    end)
+    library:SetScript("OnLeave", function() if GameTooltip then GameTooltip:Hide() end end)
+    if library.RegisterForClicks then
+        library:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+    end
+    library:SetScript("OnClick", function(_, mouseButton)
+        if mouseButton == "RightButton" then
+            UI:OpenSettings()
+        else
+            UI:ToggleGuideBrowser()
+        end
+    end)
     if library.SetFrameLevel and frame.GetFrameLevel then
         local level = frame:GetFrameLevel()
         if type(level) == "number" then library:SetFrameLevel(level + 10) end
@@ -366,13 +386,51 @@ function UI:CreateTracker()
     previous:SetPoint("BOTTOMRIGHT", -73, 7)
     previous:SetScript("OnClick", function() ns.Engine:Previous() end)
 
-    local sync = CreateIconButton(frame, SYNC_ICON, "Resync guide from your quest log and completed quests")
+    local sync = CreateIconButton(frame, SYNC_ICON,
+        "Resync guide from your quest log and completed quests. Skipped steps stay skipped.")
     sync:SetPoint("RIGHT", previous, "LEFT", -4, 0)
     sync:SetScript("OnClick", function() ns.Engine:ResyncCurrent() end)
 
-    local skip = CreateIconButton(frame, NAV_NEXT_ICON, "Skip for now")
+    local skip = CreateIconButton(frame, NAV_NEXT_ICON, "Skip")
     skip:SetPoint("LEFT", previous, "RIGHT", 4, 0)
-    skip:SetScript("OnClick", function() ns.Engine:SkipCurrent() end)
+    skip:SetScript("OnClick", function()
+        local guide = ns.Engine.currentGuide
+        if not guide or not ns.SkipLineage or not ns.SkipLineage:SkipAllowed(guide) then
+            return
+        end
+        local cascade = ns.Engine:SkipCurrent(false)
+        if type(cascade) == "table" and #cascade > 0 then
+            local lines = { "Skipping this step also skips:" }
+            for index, goalID in ipairs(cascade) do
+                if index > 8 then
+                    lines[#lines + 1] = ("… and %d more"):format(#cascade - 8)
+                    break
+                end
+                local goal = ns.Engine:GetGoal(guide, goalID)
+                lines[#lines + 1] = "- " .. (goal and goal.text or goalID)
+            end
+            lines[#lines + 1] = ""
+            lines[#lines + 1] = "Continue?"
+            if StaticPopupDialogs then
+                StaticPopupDialogs["FOREVER_GUIDEMATE_SKIP"] = {
+                    text = table.concat(lines, "\n"),
+                    button1 = "Skip",
+                    button2 = "Cancel",
+                    OnAccept = function() ns.Engine:SkipCurrent(true) end,
+                    timeout = 0,
+                    whileDead = true,
+                    hideOnEscape = true,
+                    preferredIndex = 3,
+                }
+                StaticPopup_Show("FOREVER_GUIDEMATE_SKIP")
+            else
+                ns.Engine:SkipCurrent(true)
+            end
+            return
+        end
+        ns.Engine:SkipCurrent(true)
+    end)
+    frame.skip = skip
 
     local complete = CreateIconButton(frame, "Interface\\Buttons\\UI-CheckBox-Check", "Mark complete")
     complete:SetPoint("LEFT", skip, "RIGHT", 4, 0)
@@ -590,7 +648,8 @@ function ns.LibraryEntries(state, query, category, hideIneligible)
     for _, guideID in ipairs(ns.guideOrder) do
         local guide = ns.guides[guideID]
         if category == "All Guides" or guide.category == category then
-            local route = guide.segments and ns.Engine:RouteSegments(guide, state) or nil
+            local route = guide.segments and not guide.compactLibrary
+                and ns.Engine:RouteSegments(guide, state) or nil
             if route and #route > 0 then
                 for _, segment in ipairs(route) do
                     local haystack = string.lower(table.concat({
@@ -1053,17 +1112,15 @@ local function ClientObjective(goal, state)
     return goal.text
 end
 
+-- Route labels are often the quest title rather than the NPC, so a turn-in
+-- names only the quest.
 local function TurnInInstruction(goal, state)
     if not goal or goal.kind ~= "turnin" then return nil end
     local quests = state and state.quests
     local entry = type(quests) == "table" and quests[GoalQuestID(goal)]
     local title = type(entry) == "table" and entry.title
-    local route = goal.route
-    local destination = type(route) == "table" and route[#route]
-    destination = type(destination) == "table" and destination.label
-    if type(title) == "string" and title ~= ""
-        and type(destination) == "string" and destination ~= "" then
-        return title .. " @ " .. destination
+    if type(title) == "string" and title ~= "" then
+        return "Turn in " .. title .. "."
     end
     return goal.text
 end
@@ -1075,6 +1132,9 @@ function UI:GoalInstruction(engine)
     end
     local state = engine.state or {}
     local leg, status = ns.Navigation:GetActiveLeg(goal, state)
+    if state.onTaxi == true and type(status) == "string" and status ~= "" then
+        return status
+    end
     local taxiInstruction = ns.Navigation:TaxiInstruction(goal, state, leg, status)
     if taxiInstruction then
         return taxiInstruction
@@ -1089,13 +1149,13 @@ function UI:GoalInstruction(engine)
     end
     -- Era routes keep their path dots. On the map the step reads as the
     -- objective. Off the map the travel text still has to point the way.
+    local finalLeg = goal.route and goal.route[#goal.route]
     if PathDot(leg) and leg and state.mapID and ns.Navigation:OnMap(state.mapID, leg.mapID) then
         if goal.kind == "objective" or goal.kind == "gossip" then
             return ClientObjective(goal, state)
         end
         return goal.text
     end
-    local finalLeg = goal.route and goal.route[#goal.route]
     local pickup = goal.kind == "accept" or goal.kind == "turnin" or goal.kind == "gossip"
     if pickup and finalLeg and ns.Navigation:NearPin(state, finalLeg) then
         if goal.kind == "gossip" and (goal.useClientText == true or goal.useClientPin == true) then
@@ -1104,9 +1164,6 @@ function UI:GoalInstruction(engine)
         if goal.kind == "turnin" and goal.useClientPin == true
             and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, leg)) then
             return TurnInInstruction(goal, state)
-        end
-        if goal.kind == "accept" then
-            return goal.text
         end
         return goal.text
     end
@@ -1147,7 +1204,7 @@ function UI:Update(engine)
     local progress = guide and engine:GetGuideProgress(guide, engine.state) or
         { completed = 0, eligible = 0, percentage = 0 }
     local title = guide and guide.title or "No guide selected"
-    if engine.currentSegment and engine.currentSegment.title then
+    if engine.currentSegment and engine.currentSegment.title and not (guide and guide.compactLibrary) then
         title = engine.currentSegment.title
     end
     self.tracker.title:SetText(title)
@@ -1160,6 +1217,7 @@ function UI:Update(engine)
         local colors = {
             accept = { 0.2, 0.75, 0.35 }, objective = { 0.92, 0.72, 0.2 }, turnin = { 0.25, 0.65, 1 },
             gossip = { 0.9, 0.5, 0.9 }, travel = { 0.7, 0.45, 0.95 }, note = { 0.65, 0.7, 0.75 },
+            confirm = { 0.85, 0.55, 0.25 },
         }
         local color = colors[engine.currentGoal.kind] or colors.note
         SetSolidColor(self.tracker.typeIcon, color[1], color[2], color[3], 1)
@@ -1179,10 +1237,27 @@ function UI:Update(engine)
         local guideEligible = guide and ns.EvaluateCondition(guide.conditions, engine.state or {})
         if guideEligible == false then
             instruction = "Ineligible"
+        elseif guide and progress.percentage >= 100 and guide.series ~= "casual"
+            and (guide.id or ""):find("^leveling%-era%-") then
+            local faction = engine.state and engine.state.faction
+            if faction == "Alliance" or faction == "Horde" then
+                instruction = "Starter complete. Open Forever Casual Route (" .. faction .. ") in the library."
+            end
         end
         self.tracker.instruction:SetText(instruction)
         self.tracker.nextStep:SetText("")
         self.tracker.status:SetText("")
+    end
+    if self.tracker.skip then
+        local skipOk = guide and ns.SkipLineage and ns.SkipLineage:SkipAllowed(guide)
+            and engine.currentGoal
+        if self.tracker.skip.SetEnabled then
+            self.tracker.skip:SetEnabled(skipOk and true or false)
+        elseif skipOk then
+            self.tracker.skip:Enable()
+        else
+            self.tracker.skip:Disable()
+        end
     end
     self:ResizeTracker()
     if self.browser and self.browser:IsShown() then self:RefreshGuideBrowser() end
@@ -1320,8 +1395,19 @@ function UI:RegisterSettings()
     local open = CreatePlainButton(panel, 180, "Open guide browser")
     open:SetPoint("TOPLEFT", marker, "BOTTOMLEFT", 4, -10)
     open:SetScript("OnClick", function() UI:OpenGuideBrowser() end)
+    local resetSkips = CreatePlainButton(panel, 180, "Reset skips on this guide")
+    resetSkips:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
+    resetSkips:SetScript("OnClick", function()
+        if ns.Engine:ResetSkipsCurrent() then
+            if ns.TomTomWaypoints and ns.TomTomWaypoints.Report then
+                ns.TomTomWaypoints:Report("Cleared skipped steps on the open guide.")
+            end
+        elseif ns.TomTomWaypoints and ns.TomTomWaypoints.Report then
+            ns.TomTomWaypoints:Report("Open a guide first, then reset its skips.")
+        end
+    end)
     local reset = CreatePlainButton(panel, 180, "Reset frame positions")
-    reset:SetPoint("TOPLEFT", open, "BOTTOMLEFT", 0, -6)
+    reset:SetPoint("TOPLEFT", resetSkips, "BOTTOMLEFT", 0, -6)
     reset:SetScript("OnClick", function() UI:ResetPositions() end)
     if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
         local category = Settings.RegisterCanvasLayoutCategory(panel, "Forever GuideMate")

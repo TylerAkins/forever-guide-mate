@@ -255,7 +255,7 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Call of Earth: Ritual Salve. This step is for Orcs and Tauren.",
+            text = "Kill Bristleback Shaman in Brambleblade Ravine and collect 2 Ritual Salve. This step is for Orcs and Tauren.",
             dependsOn = { "accept-1519-call-of-earth" },
             complete = QuestState(1519, "complete"),
             route = {
@@ -398,7 +398,7 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Call of Earth: Felstalker Hoof. This step is for Orcs, Tauren, and Trolls.",
+            text = "Kill Felstalker in Burning Blade Coven and collect 2 Felstalker Hoof. This step is for Orcs, Tauren, and Trolls.",
             dependsOn = { "accept-1516-call-of-earth" },
             complete = QuestState(1516, "complete"),
             route = {
@@ -539,7 +539,7 @@ ns:RegisterGuide({
                     { level = { min = 4 } },
                 },
             },
-            text = "Call of Earth: Iceclaw Bear Pendant.",
+            text = "Kill Frostmane trolls in Dun Morogh for Teo Hammerstorm's Call of Earth.",
             dependsOn = { "accept-94373-call-of-earth" },
             complete = QuestState(94373, "complete"),
             route = {
@@ -968,7 +968,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Call of Fire: Reagent Pouch.",
+            text = "Kill Stonesplinter casters in Loch Modan and collect a Reagent Pouch.",
             dependsOn = { "accept-94466-call-of-fire" },
             complete = QuestState(94466, "complete"),
             route = {
@@ -1187,7 +1187,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Call of Fire: Faladiel's Heart. This step is for Horde Skyborne.",
+            text = "Slay Skypriest Faladiel in the Gustberry Lowlands and collect Faladiel's Heart. This step is for Horde Skyborne.",
             dependsOn = { "accept-97244-call-of-fire" },
             complete = QuestState(97244, "complete"),
             route = {
@@ -1247,7 +1247,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Call of Fire: Kuramaa's Mask. This step is for Horde Skyborne.",
+            text = "Defeat Kuramaa in the Shen'dar Highlands and collect Kuramaa's Mask. This step is for Horde Skyborne.",
             dependsOn = { "accept-97245-call-of-fire" },
             complete = QuestState(97245, "complete"),
             route = {
@@ -2151,7 +2151,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Call of Fire: Reagent Pouch. This step is for Orcs, Tauren, and Trolls.",
+            text = "Kill Stonesplinter casters in Loch Modan and collect a Reagent Pouch. This step is for Orcs, Tauren, and Trolls.",
             dependsOn = { "accept-1525-call-of-fire" },
             complete = QuestState(1525, "complete"),
             route = {
@@ -2211,7 +2211,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "Call of Fire: Glowing Ember. This step is for Orcs, Tauren, and Trolls.",
+            text = "Kill Minor Manifestation of Fire in Durotar and collect Glowing Ember. This step is for Orcs, Tauren, and Trolls.",
             dependsOn = { "accept-1526-call-of-fire" },
             complete = QuestState(1526, "complete"),
             route = {
@@ -2902,7 +2902,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Mastering the Elements: Elemental Earth.",
+            text = "Kill Stone Fury in Alterac Mountains and collect Elemental Earth.",
             dependsOn = { "accept-8411-mastering-the-elements" },
             complete = QuestState(8411, "complete"),
             route = {
@@ -3004,7 +3004,7 @@ ns:RegisterGuide({
                     { level = { min = 58 } },
                 },
             },
-            text = "Material Assistance: Azerothian Diamond. This step is for Orcs, Tauren, and Trolls.",
+            text = "Collect an Azerothian Diamond from solid chests on the route or buy one from the auction house. This step is for Orcs, Tauren, and Trolls.",
             dependsOn = { "accept-7667-material-assistance" },
             complete = QuestState(7667, "complete"),
             route = {

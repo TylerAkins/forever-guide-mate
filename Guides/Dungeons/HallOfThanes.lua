@@ -170,7 +170,8 @@ ns:RegisterGuide({
             kind = "objective",
             priority = 43,
             conditions = { level = { min = 10 } },
-            text = "Collect 8 Dwarven Heirlooms. The Reliquary of Kings has enough for the group.",
+            text = "Loot 8 Dwarven Heirlooms from the vaults and reliquaries in the Hall of Thanes. " ..
+                "The Reliquary of Kings has enough for the group.",
             dependsOn = { "enter-hall-of-thanes" },
             complete = QuestState(96403, "complete"),
         },

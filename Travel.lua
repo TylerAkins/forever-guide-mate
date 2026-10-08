@@ -284,18 +284,44 @@ function Travel:CampFlightMaster(mapID, x, y, state)
     return best
 end
 
+-- Closest flight master on this map to a quest pin. The Barrens has three camps;
+-- zone-wide "fly to The Barrens" is useless without naming one of them.
+function Travel:NearestFlightMaster(mapID, x, y, state)
+    if not mapID or not x or not y or not ns.Navigation then return nil end
+    local best, bestDistance
+    for _, master in ipairs(self.flightMasters) do
+        if master.mapID == mapID and type(master.node) == "string" and self:Allows(master.faction, state) then
+            local distance = ns.Navigation.Distance(x, y, master.x, master.y)
+            if distance and (not bestDistance or distance < bestDistance) then
+                best, bestDistance = master, distance
+            end
+        end
+    end
+    return best
+end
+
+function Travel:FlightNodeForLeg(leg, state)
+    if type(leg) ~= "table" or type(leg.mapID) ~= "number" or not leg.x or not leg.y then
+        return nil
+    end
+    local master = self:CampFlightMaster(leg.mapID, leg.x, leg.y, state)
+        or self:NearestFlightMaster(leg.mapID, leg.x, leg.y, state)
+    return master and master.node
+end
+
 -- Same zone, two different learned flight points. Crossroads to Camp Taurajo
 -- is this case: the step pin and the player are both in The Barrens.
 function Travel:SameZoneFlight(state, leg)
     if not state or not leg or not state.mapID or state.mapID ~= leg.mapID then return nil end
     if not state.x or not state.y or not leg.x or not leg.y then return nil end
     local destination = self:CampFlightMaster(leg.mapID, leg.x, leg.y, state)
+        or self:NearestFlightMaster(leg.mapID, leg.x, leg.y, state)
     local here = self:FlightMaster(state)
     if not destination or not here then return nil end
     if here.mapID == destination.mapID and here.x == destination.x and here.y == destination.y then
         return nil
     end
-    return self:FlightPoint(state, destination.node)
+    return self:FlightPoint(state, destination.node, nil, leg)
 end
 
 function Travel:FlightMaster(state)
@@ -332,8 +358,11 @@ local function BoardingFollowUp(label)
     return string.lower(string.sub(text, 1, 1)) .. string.sub(text, 2)
 end
 
-function Travel:FlightPoint(state, destination, followUp)
+function Travel:FlightPoint(state, destination, followUp, destinationLeg)
     if type(destination) ~= "string" or destination == "" then return nil end
+    if ns.Taxi and ns.Taxi.FlightLeg then
+        return ns.Taxi:FlightLeg(state, destination, followUp, destinationLeg)
+    end
     if not ns.Taxi or not ns.Taxi.LearnedDestination or not ns.Taxi:LearnedDestination(state, destination) then
         return nil
     end
@@ -454,7 +483,7 @@ function Travel:LocalExit(state, destination)
     return best
 end
 
-function Travel:Departure(state, destination, destinationLabel)
+function Travel:Departure(state, destination, destinationLabel, pinX, pinY)
     if not state or not state.mapID or not destination or state.mapID == destination then return nil end
     if self:Paired(state.mapID, destination) then return nil end
     local route = self:BestDock(state, destination)
@@ -480,7 +509,12 @@ function Travel:Departure(state, destination, destinationLabel)
     if not same then
         return self:LocalExit(state, destination)
     end
-    local hub = self:FlightHubName(destination)
+    local hub
+    if pinX and pinY then
+        local master = self:NearestFlightMaster(destination, pinX, pinY, state)
+        hub = master and master.node
+    end
+    hub = hub or self:FlightHubName(destination)
     if not hub then return nil end
     return self:FlightPoint(state, hub, BoardingFollowUp(destinationLabel))
 end

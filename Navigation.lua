@@ -103,6 +103,36 @@ local function PickupStep(goal)
         and (goal.kind == "accept" or goal.kind == "turnin" or goal.kind == "gossip")
 end
 
+local function PlayerOnTaxi(state, api)
+    if type(state) ~= "table" then
+        return false
+    end
+    if state.onTaxi == true then
+        return true
+    end
+    if state.onTaxi == false then
+        return false
+    end
+    api = api or _G
+    if type(api.UnitOnTaxi) == "function" then
+        local ok, result = pcall(api.UnitOnTaxi, "player")
+        return ok and result == true
+    end
+    return false
+end
+
+local function HasAuthoredRoutePin(goal)
+    if type(goal) ~= "table" or type(goal.route) ~= "table" then
+        return false
+    end
+    for _, point in ipairs(goal.route) do
+        if type(point) == "table" and type(point.mapID) == "number" then
+            return true
+        end
+    end
+    return false
+end
+
 local function WithinRadius(leg, x, y, radius)
     if type(leg) ~= "table" or type(leg.x) ~= "number" or type(leg.y) ~= "number"
         or type(x) ~= "number" or type(y) ~= "number" then
@@ -147,21 +177,28 @@ function Navigation:NearPin(state, leg, api)
 end
 
 function Navigation:PendingTaxiTravel(goal, state, leg)
-    if type(goal) ~= "table" or type(goal.taxiDestination) ~= "string" or type(state) ~= "table" then
+    if type(goal) ~= "table" or type(state) ~= "table" then
+        return false
+    end
+    if PlayerOnTaxi(state) then
         return false
     end
     if goal.kind == "accept" and type(goal.route) == "table" and #goal.route > 1 then
-        return false
-    end
-    if ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state) then
         return false
     end
     local finalLeg = goal.route and goal.route[#goal.route]
     if finalLeg and self:AtRoutePin(state, finalLeg) then
         return false
     end
+    if type(goal.taxiDestination) == "string" and ns.Taxi and ns.Taxi.AtDestination
+        and ns.Taxi:AtDestination(goal, state) then
+        return false
+    end
     if leg and (leg.flight or leg.learnedTaxi or leg.fallbackTaxi) then
         return true
+    end
+    if type(goal.taxiDestination) ~= "string" then
+        return false
     end
     if not finalLeg or not state.x or not finalLeg.x or not finalLeg.y then
         return true
@@ -177,19 +214,30 @@ function Navigation:TaxiInstruction(goal, state, leg, status)
     if not self:PendingTaxiTravel(goal, state, leg) then
         return nil
     end
+    if leg and (leg.flight or leg.learnedTaxi or leg.fallbackTaxi)
+        and type(leg.label) == "string" and leg.label ~= "" then
+        return leg.label
+    end
     if type(status) == "string" and status ~= "" then
         return status
     end
-    if leg and type(leg.label) == "string" and leg.label ~= "" then
-        return leg.label
+    if ns.Taxi and ns.Taxi.ResolveDestinationName then
+        local finalLeg = type(goal.route) == "table" and goal.route[#goal.route] or leg
+        local destinationName = ns.Taxi:ResolveDestinationName(goal, finalLeg, state)
+        if type(destinationName) == "string" then
+            return "Take the flight path to " .. destinationName .. "."
+        end
     end
-    return "Take the flight path to " .. goal.taxiDestination .. "."
+    if type(goal.taxiDestination) == "string" then
+        return "Take the flight path to " .. goal.taxiDestination .. "."
+    end
+    return nil
 end
 
 function Navigation:TransportLeg(leg, state)
     if not ns.Travel or not leg or not state or not state.mapID or self:OnMap(state.mapID, leg.mapID) then return nil end
     if self:InZone(state.mapID, leg.mapID) or self:InsidePin(state, leg) then return nil end
-    return ns.Travel:Departure(state, leg.mapID, leg.label)
+    return ns.Travel:Departure(state, leg.mapID, leg.label, leg.x, leg.y)
 end
 
 local function MapAncestors(mapID, api)
@@ -225,8 +273,8 @@ end
 
 -- True when the player map is the pin's zone or a cave, dungeon, or building
 -- inside it. Classic reports the Wailing Caverns mouth as its own map, and
--- that id is not stable across clients. The parent chain is what Zygor-style
--- map libraries use, so a new cave id still counts as the Barrens.
+-- that id is not stable across clients. Walking the parent map chain matches
+-- how Blizzard nests caves under zones, so a new cave id still counts as the Barrens.
 function Navigation:InZone(stateMap, legMap, api)
     if type(stateMap) ~= "number" or type(legMap) ~= "number" then return false end
     if stateMap == legMap then return true end
@@ -325,7 +373,12 @@ function Navigation:QuestDestinationID(goal)
     end
     local questID = QuestID(goal)
     if not questID then return nil end
-    if goal.kind == "objective" or goal.kind == "turnin" then return questID end
+    if goal.kind == "objective" or goal.kind == "turnin" or goal.kind == "gossip" then
+        if goal.useClientPin ~= true then
+            return nil
+        end
+        return questID
+    end
     if goal.kind == "travel" then
         local complete = goal.complete
         local quest = complete.quest
@@ -370,6 +423,78 @@ local function ObjectiveKey(state, questID)
     return table.concat(parts, ":")
 end
 
+local function PlayerPinBucket(state)
+    if type(state) ~= "table" or not state.x or not state.y then
+        return ""
+    end
+    return (":" .. math.floor(state.x * 20) .. ":" .. math.floor(state.y * 20))
+end
+
+local function MapIDsToSearch(mapID, questLog)
+    local ids = {}
+    local seen = {}
+    local function add(id)
+        if type(id) == "number" and not seen[id] then
+            seen[id] = true
+            ids[#ids + 1] = id
+        end
+    end
+    add(mapID)
+    if type(questLog) == "table" and type(questLog.GetMapForQuestPOIs) == "function" then
+        local poiOK, poiMap = pcall(questLog.GetMapForQuestPOIs)
+        if poiOK then
+            add(poiMap)
+        end
+    end
+    for _, ancestor in ipairs(MapAncestors(mapID, C_Map)) do
+        add(ancestor)
+    end
+    return ids
+end
+
+local function CollectQuestPOIs(questLog, questID, mapIDs)
+    local candidates = {}
+    if type(questLog.GetQuestsOnMap) ~= "function" then
+        return candidates
+    end
+    for _, uiMapID in ipairs(mapIDs) do
+        local ok, quests = pcall(questLog.GetQuestsOnMap, uiMapID)
+        if ok and type(quests) == "table" then
+            for _, info in ipairs(quests) do
+                if type(info) == "table" and info.questID == questID and not info.isMapIndicatorQuest then
+                    local x, y = PlainCoord(info.x), PlainCoord(info.y)
+                    if x and y then
+                        candidates[#candidates + 1] = { mapID = uiMapID, x = x, y = y }
+                    end
+                end
+            end
+        end
+    end
+    return candidates
+end
+
+local function NearestQuestPOI(candidates, state)
+    if type(candidates) ~= "table" or #candidates == 0 then
+        return nil
+    end
+    if type(state) ~= "table" or not state.x or not state.y then
+        local first = candidates[1]
+        return first.mapID, first.x, first.y
+    end
+    local best, bestDistance
+    for _, candidate in ipairs(candidates) do
+        local distance = Navigation:DistanceToLeg(state, candidate)
+        if distance and (not bestDistance or distance < bestDistance) then
+            best, bestDistance = candidate, distance
+        end
+    end
+    if best then
+        return best.mapID, best.x, best.y
+    end
+    local first = candidates[1]
+    return first.mapID, first.x, first.y
+end
+
 function Navigation:InvalidateClientPins()
     pinCache = {}
     pinCacheCount = 0
@@ -391,6 +516,7 @@ function Navigation:ClientPin(goal, mapID, api, state)
         return nil
     end
     local cacheKey = PinToken(questLog) .. ":" .. tostring(mapID) .. ":" .. ObjectiveKey(state, questID)
+        .. PlayerPinBucket(state)
     local cached = pinCache[cacheKey]
     if cached ~= nil then
         if cached == false then
@@ -401,30 +527,8 @@ function Navigation:ClientPin(goal, mapID, api, state)
     if self.deferClientPins then
         return nil
     end
-    local function OnMap(uiMapID)
-        if type(uiMapID) ~= "number" then
-            return nil
-        end
-        local ok, quests = pcall(questLog.GetQuestsOnMap, uiMapID)
-        if not ok or type(quests) ~= "table" then
-            return nil
-        end
-        for _, info in ipairs(quests) do
-            if type(info) == "table" and info.questID == questID and not info.isMapIndicatorQuest then
-                local x, y = PlainCoord(info.x), PlainCoord(info.y)
-                if x and y then
-                    return uiMapID, x, y
-                end
-            end
-        end
-    end
-    local pinMap, x, y = OnMap(mapID)
-    if not x and type(questLog.GetMapForQuestPOIs) == "function" then
-        local poiOK, poiMap = pcall(questLog.GetMapForQuestPOIs)
-        if poiOK then
-            pinMap, x, y = OnMap(poiMap)
-        end
-    end
+    local mapIDs = MapIDsToSearch(mapID, questLog)
+    local pinMap, x, y = NearestQuestPOI(CollectQuestPOIs(questLog, questID, mapIDs), state)
     if x then
         if pinCacheCount > 32 then
             pinCache = {}
@@ -446,8 +550,14 @@ function Navigation:ApplyClientPin(goal, leg, api, state)
     if not leg then
         return nil
     end
+    if not goal or goal.useClientPin ~= true then
+        return leg
+    end
     local pinMap, x, y = self:ClientPin(goal, leg.mapID, api, state)
-    if not x or (pinMap == leg.mapID and x == leg.x and y == leg.y) then
+    if not x then
+        return leg
+    end
+    if pinMap == leg.mapID and x == leg.x and y == leg.y then
         return leg
     end
     local copy = {}
@@ -503,6 +613,14 @@ function Navigation:GetActiveLeg(goal, state, api)
     if not goal or not goal.route then
         return nil, "No waypoint for this step."
     end
+    local destinationLeg = goal.route[#goal.route]
+    if PlayerOnTaxi(state, api) and PickupStep(goal) and type(destinationLeg) == "table" then
+        local pinLeg = self:ApplyClientPin(goal, destinationLeg, api, state)
+        local travel = destinationLeg.offMapText
+            or (type(destinationLeg.label) == "string"
+                and ("Travel to " .. destinationLeg.label .. "."))
+        return pinLeg, travel
+    end
     for index, leg in ipairs(goal.route) do
         local complete = false
         if leg.complete then
@@ -516,7 +634,7 @@ function Navigation:GetActiveLeg(goal, state, api)
         end
         if not complete then
             if leg.flightTo and (self:OnMap(state.mapID, leg.mapID) or self:AtRoutePin(state, leg, api)) then
-                local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo)
+                local hop = ns.Travel and ns.Travel:FlightPoint(state, leg.flightTo, nil, leg)
                 if hop then return hop, hop.label end
             end
             if leg.flightTo and #goal.route > 1 then
@@ -526,12 +644,15 @@ function Navigation:GetActiveLeg(goal, state, api)
                 if sameZone and not self:PreferDirectWalk(leg, sameZone, state) then
                     return sameZone, sameZone.label
                 end
-                -- Single-leg camp accepts use only the authored pin. The global
-                -- boat graph sent Ebru to Ratchet. Keep taxi when the step names
-                -- a flight destination.
-                local campPickup = PickupStep(goal) and #goal.route == 1
+                -- Same-zone camp pickups use only the authored pin so the boat
+                -- graph cannot yank Ebru to Ratchet. Cross-zone handoffs still
+                -- need taxi/transport (Org → Crossroads).
+                local localCampPickup = PickupStep(goal) and #goal.route == 1
                     and type(goal.taxiDestination) ~= "string"
-                if not campPickup then
+                    and (self:OnMap(state.mapID, leg.mapID)
+                        or self:InZone(state.mapID, leg.mapID, api)
+                        or self:NearPin(state, leg, api))
+                if not localCampPickup then
                     local arrived = ns.Taxi and ns.Taxi.AtDestination and ns.Taxi:AtDestination(goal, state)
                     if not arrived then
                         local taxiLeg = ns.Taxi and ns.Taxi.GetSuggestedLeg and ns.Taxi:GetSuggestedLeg(goal, state, leg)

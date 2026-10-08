@@ -3175,7 +3175,7 @@ ns:RegisterGuide({
             priority = 1730,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -3192,7 +3192,7 @@ ns:RegisterGuide({
             priority = 1740,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -3210,7 +3210,7 @@ ns:RegisterGuide({
             priority = 1750,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -3228,7 +3228,7 @@ ns:RegisterGuide({
             priority = 1760,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -3246,7 +3246,7 @@ ns:RegisterGuide({
             priority = 1770,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -3264,7 +3264,7 @@ ns:RegisterGuide({
             priority = 1780,
             conditions = {
                 all = {
-                    { level = { min = 9 } },
+                    { level = { min = 13 } },
                     { faction = "Horde" },
                 },
             },
@@ -4437,7 +4437,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Conscript of the Horde from Takrin Pathseeker.",
@@ -4455,7 +4455,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Conscript of the Horde to Kargal Battlescar at Far Watch Post.",
@@ -4474,7 +4474,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Crossroads Conscription from Kargal Battlescar.",
@@ -4493,7 +4493,7 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Turn in Crossroads Conscription to Sergra Darkthorn at the Crossroads.",

@@ -27,7 +27,7 @@ from weave_loremaster import (  # noqa: E402
     step_level,
 )
 
-GUIDE_ROOTS = ("Guides/Leveling", "Guides/Loremaster", "Guides/Class", "Guides/Dungeons", "Guides/Era")
+GUIDE_ROOTS = ("Guides/Leveling", "Guides/Loremaster", "Guides/Class", "Guides/Dungeons")
 CLASSIC_RACE_IDS = set(range(1, 9))
 CLASSIC_CLASS_IDS = {1, 2, 3, 4, 5, 7, 8, 9, 11}
 HORDE_RACES = {2, 5, 6, 8}
