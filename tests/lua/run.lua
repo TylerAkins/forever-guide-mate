@@ -144,6 +144,8 @@ Load("Guides/Class/Mage.lua")
 Load("Guides/Class/Warlock.lua")
 Load("Guides/Class/Druid.lua")
 Load("Guides/Miscellaneous/LibraryBooks.lua")
+Load("Guides/Legacy/ExploreSilverpineForest.lua")
+Load("Guides/Legacy/ExploreTirisfalGlades.lua")
 
 local baseState = {
     faction = "Horde",
@@ -187,6 +189,130 @@ unknownQuest.questCompletionKnown = false
 unknownQuest.questLogKnown = false
 Equal(ns.EvaluateCondition({ quest = { id = 5722, state = "completed" } }, unknownQuest), nil,
     "unknown quest completion remains unknown")
+
+local legacyAchievement = ns.guides["legacy-explore-silverpine-forest"]
+Equal(legacyAchievement.category, "Legacy Points", "Legacy Points is a guide library category")
+Equal(legacyAchievement.title, "Explore Silverpine Forest", "the first Legacy guide uses the achievement title")
+Equal(#legacyAchievement.goals, 15, "Silverpine Legacy guide has one step per Forever area criterion")
+local legacyNames, legacyIDs = {}, {}
+local expectedSilverpine = {
+    { "Malden's Orchard", 57, 10 }, { "The Shining Strand", 55, 23 },
+    { "The Dead Field", 45, 20 }, { "The Skittering Dark", 37, 16 },
+    { "North Tide's Hollow", 39, 28 }, { "Fenris Isle", 66, 27 },
+    { "The Decrepit Ferry", 57, 34 }, { "The Sepulcher", 43, 41 },
+    { "Deep Elem Mine", 55, 47 }, { "Olsen's Farthing", 47, 53 },
+    { "Ambermill", 61, 64 }, { "Shadowfang Keep", 44, 68 },
+    { "Pyrewood Village", 45, 73 }, { "The Greymane Wall", 46, 83 },
+    { "Beren's Peril", 61, 74 },
+}
+local silverpinePins = {}
+for index, goal in ipairs(legacyAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Silverpine step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedSilverpine[index][1], "Silverpine step uses the matching achievement criterion")
+    legacyNames[criterion.name] = true
+    Check(not legacyIDs[goal.id], "Silverpine step ids are unique")
+    legacyIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1421, "Silverpine criterion uses the Silverpine map")
+    Equal(goal.route[1].x, expectedSilverpine[index][2] / 100, "Silverpine waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedSilverpine[index][3] / 100, "Silverpine waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not silverpinePins[pinKey], "Silverpine waypoint pins are unique")
+    silverpinePins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], legacyAchievement.goals[index - 1].id,
+            "Silverpine criteria follow the authored waypoint order")
+    end
+end
+Check(not legacyNames["North Tide's Run"], "Forever Silverpine criteria omit North Tide's Run")
+local finalSilverpineStep = legacyAchievement.goals[#legacyAchievement.goals]
+Equal(finalSilverpineStep.complete.all[2].achievement.id, 769,
+    "the final waypoint also waits for Explore Silverpine Forest achievement 769")
+
+local tirisfalAchievement = ns.guides["legacy-explore-tirisfal-glades"]
+Equal(tirisfalAchievement.category, "Legacy Points", "Tirisfal guide uses the Legacy Points category")
+Equal(tirisfalAchievement.title, "Explore Tirisfal Glades", "Tirisfal guide uses the achievement title")
+Equal(#tirisfalAchievement.goals, 16, "Tirisfal guide has one step per Forever area criterion")
+local expectedTirisfal = {
+    { "Deathknell", 35, 59 }, { "Solliden Farmstead", 36, 50 },
+    { "Agamand Mills", 48, 39 }, { "Stillwater Pond", 49, 52 },
+    { "Nightmare Vale", 48, 64 }, { "Cold Hearth Manor", 53, 57 },
+    { "Brill", 59, 51 }, { "Garren's Haunt", 59, 35 },
+    { "Brightwater Lake", 68, 45 }, { "Balnir Farmstead", 75, 61 },
+    { "Crusader Outpost", 78, 55 }, { "Scarlet Watch Post", 79, 29 },
+    { "Whispering Gardens", 81, 32 }, { "Venomweb Vale", 84, 47 },
+    { "The Bulwark", 81, 69 }, { "Undercity", 61, 66 },
+}
+local tirisfalNames, tirisfalIDs, tirisfalPins = {}, {}, {}
+for index, goal in ipairs(tirisfalAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Tirisfal step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedTirisfal[index][1], "Tirisfal step uses the matching achievement criterion")
+    tirisfalNames[criterion.name] = true
+    Check(not tirisfalIDs[goal.id], "Tirisfal step ids are unique")
+    tirisfalIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1420, "Tirisfal criterion uses the Tirisfal map")
+    Equal(goal.route[1].x, expectedTirisfal[index][2] / 100, "Tirisfal waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedTirisfal[index][3] / 100, "Tirisfal waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not tirisfalPins[pinKey], "Tirisfal waypoint pins are unique")
+    tirisfalPins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], tirisfalAchievement.goals[index - 1].id,
+            "Tirisfal criteria follow the authored waypoint order")
+    end
+end
+local finalTirisfalStep = tirisfalAchievement.goals[#tirisfalAchievement.goals]
+Equal(finalTirisfalStep.complete.all[2].achievement.id, 768,
+    "the final waypoint also waits for Explore Tirisfal Glades achievement 768")
+
+local unknownAchievementState = {}
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, unknownAchievementState), nil,
+    "missing achievement API state remains unknown")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, unknownAchievementState), nil,
+    "missing achievement criterion state remains unknown")
+local incompleteAchievementState = {
+    achievements = { [769] = { completed = false, criteriaByName = { ambermill = false } } },
+}
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, incompleteAchievementState), false,
+    "an incomplete achievement is reported as incomplete")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, incompleteAchievementState), false,
+    "an undiscovered achievement criterion is reported as incomplete")
+local completeAchievementState = {
+    achievements = { [769] = { completed = true, criteriaByName = { ambermill = false } } },
+}
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, completeAchievementState), true,
+    "the overall achievement confirms its criteria are complete")
+Equal(ns.EvaluateCondition(finalSilverpineStep.complete, incompleteAchievementState), false,
+    "the final waypoint waits for the overall achievement flag")
+Equal(ns.EvaluateCondition(finalSilverpineStep.complete, completeAchievementState), true,
+    "the final waypoint completes when achievement 769 is complete")
+
+local capturedLegacyState = ns.PlayerState:Capture({
+    GetAchievementInfo = function(id) return id, "Explore Silverpine Forest", 0, false end,
+    GetAchievementNumCriteria = function() return 2 end,
+    GetAchievementCriteriaInfo = function(_, index)
+        return index == 1 and "Ambermill" or "Olsen's Farthing", 0, index == 2
+    end,
+}, {}, 0, { 769 })
+Equal(capturedLegacyState.achievements[769].completed, false,
+    "player state captures the achievement completion flag")
+Equal(capturedLegacyState.achievements[769].criteriaByName.ambermill, false,
+    "player state captures an incomplete achievement criterion")
+Equal(capturedLegacyState.achievements[769].criteriaByName["olsen's farthing"], true,
+    "player state captures a completed achievement criterion")
+local missingLegacyAPIState = ns.PlayerState:Capture({
+    GetAchievementInfo = function() error("achievement API unavailable") end,
+}, {}, 0, { 769 })
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, missingLegacyAPIState), nil,
+    "a failed achievement API read stays unknown")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, missingLegacyAPIState), nil,
+    "a failed criterion API read stays unknown")
+Equal(#ns.GetTrackedAchievementIDs(), 2, "the guide query tracks only referenced achievement ids")
+Equal(ns.GetTrackedAchievementIDs()[1], 768, "the Tirisfal guide registers achievement 768 for capture")
+Equal(ns.GetTrackedAchievementIDs()[2], 769, "the Silverpine guide registers achievement 769 for capture")
 
 local duplicateOK = pcall(function()
     ns:RegisterGuide({ id = "dungeons-ragefire-chasm-horde", title = "Duplicate", category = "Test", revision = 1,

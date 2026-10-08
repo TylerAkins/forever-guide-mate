@@ -49,6 +49,7 @@ local function PickupStopKind(goal)
 end
 local SHORT_TIMER_SECONDS = 30 * 60
 local trackedQuestIDs
+local trackedAchievementIDs
 
 ns.questPrerequisites = ns.questPrerequisites or {}
 
@@ -306,6 +307,41 @@ function ns.EvaluateCondition(condition, state)
         local has = ns.PlayerState and ns.PlayerState.HasItem
             and ns.PlayerState:HasItem(name, state)
         return has and true or false, has and nil or "Item is not in your bags."
+    end
+    if condition.achievement then
+        local achievementID = type(condition.achievement) == "table" and condition.achievement.id or nil
+        if type(achievementID) ~= "number" then
+            return false, "Invalid achievement condition."
+        end
+        local achievements = type(state) == "table" and state.achievements or nil
+        local achievement = achievements and achievements[achievementID]
+        if type(achievement) ~= "table" or type(achievement.completed) ~= "boolean" then
+            return Unknown("Achievement state is unavailable.")
+        end
+        if achievement.completed then return true end
+        return false, "Achievement is incomplete."
+    end
+    if condition.achievementCriterion then
+        local spec = type(condition.achievementCriterion) == "table" and condition.achievementCriterion or {}
+        local achievementID = spec.id
+        local name = type(spec.name) == "string" and string.lower(spec.name) or nil
+        if type(achievementID) ~= "number" or not name or name == "" then
+            return false, "Invalid achievement criterion condition."
+        end
+        local achievements = type(state) == "table" and state.achievements or nil
+        local achievement = achievements and achievements[achievementID]
+        if type(achievement) ~= "table" then
+            return Unknown("Achievement criterion state is unavailable.")
+        end
+        if achievement.completed == true then
+            return true
+        end
+        local criteria = achievement.criteriaByName
+        if type(criteria) ~= "table" or type(criteria[name]) ~= "boolean" then
+            return Unknown("Achievement criterion state is unavailable.")
+        end
+        if criteria[name] then return true end
+        return false, "Achievement criterion is incomplete."
     end
     if condition.quest then
         local questID = condition.quest.id
@@ -650,6 +686,7 @@ function ns:RegisterGuide(guide)
     self.guides[guide.id] = guide
     self.guideOrder[#self.guideOrder + 1] = guide.id
     trackedQuestIDs = nil
+    trackedAchievementIDs = nil
 end
 
 -- Starter chapters are parallel. After the chosen starter, every later chapter
@@ -825,6 +862,7 @@ function ns:FinalizeGuides()
     end
     if next(retired) == nil then return end
     trackedQuestIDs = nil
+    trackedAchievementIDs = nil
     if ns.SkipLineage then ns.SkipLineage:InvalidateDependents() end
 
     -- Keep registration / TOC order (Horde: Silverpine then Barrens).
@@ -859,6 +897,20 @@ local function CollectQuestIDs(value, found)
     end
 end
 
+local function CollectAchievementIDs(value, found)
+    if type(value) ~= "table" then return end
+    if type(value.achievement) == "table" and type(value.achievement.id) == "number" then
+        found[value.achievement.id] = true
+    end
+    local criterion = value.achievementCriterion
+    if type(criterion) == "table" and type(criterion.id) == "number" then
+        found[criterion.id] = true
+    end
+    for _, child in pairs(value) do
+        if type(child) == "table" then CollectAchievementIDs(child, found) end
+    end
+end
+
 function ns.GuideUsesQuest(guide, questID)
     local found = {}
     CollectQuestIDs(guide, found)
@@ -879,6 +931,19 @@ function ns.GetTrackedQuestIDs()
     end
     table.sort(ids)
     trackedQuestIDs = ids
+    return ids
+end
+
+function ns.GetTrackedAchievementIDs()
+    if trackedAchievementIDs then return trackedAchievementIDs end
+    local found = {}
+    for _, guide in pairs(ns.guides) do
+        CollectAchievementIDs(guide, found)
+    end
+    local ids = {}
+    for achievementID in pairs(found) do ids[#ids + 1] = achievementID end
+    table.sort(ids)
+    trackedAchievementIDs = ids
     return ids
 end
 
@@ -2262,7 +2327,7 @@ function Engine:ResyncCurrent(state)
     if not guide then return false end
     if not state and ns.PlayerState and ns.PlayerState.Capture and ns.GetTrackedQuestIDs then
         local ids = ns.GetTrackedQuestIDs()
-        state = ns.PlayerState:Capture(nil, ids, #ids)
+        state = ns.PlayerState:Capture(nil, ids, #ids, ns.GetTrackedAchievementIDs and ns.GetTrackedAchievementIDs())
     end
     if not StateReadyForResync(state) then
         self.resyncPending = guide.id
@@ -2358,7 +2423,8 @@ function Engine:Refresh(state)
     local guide = ns.guides[ns.charDB.selectedGuide]
     if not state and ns.PlayerState and ns.PlayerState.Capture and ns.QuestQuery then
         local ids, priorityCount = ns.QuestQuery()
-        state = ns.PlayerState:Capture(nil, ids, priorityCount)
+        state = ns.PlayerState:Capture(nil, ids, priorityCount,
+            ns.GetTrackedAchievementIDs and ns.GetTrackedAchievementIDs())
     end
     self.state = state
     self.currentGuide = guide

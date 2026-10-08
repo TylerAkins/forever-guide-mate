@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.3.2 - 2026-10-08
+
+- Add the Legacy Points category with Explore Silverpine Forest and Explore Tirisfal Glades. Their 15 and 16 waypoints clear from Forever's achievement criteria, and each guide's final step waits for overall achievement completion.
+
 ## 0.3.1 - 2026-10-08
 
 - Casual waits only for its own quests after a reload. `PlayerState:Capture` reports `questRouteKnown` once the open guide's priority quests are read, and the Casual loading gate uses it instead of `questCompletionKnown`. That flag also covers every other guide's quests, which are read 24 per refresh, so accepted quests stayed on screen for dozens of refreshes.

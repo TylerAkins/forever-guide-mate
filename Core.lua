@@ -462,6 +462,7 @@ if CreateFrame then
     eventFrame:RegisterEvent("ZONE_CHANGED")
     eventFrame:RegisterEvent("ZONE_CHANGED_INDOORS")
     eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    eventFrame:RegisterEvent("MAP_EXPLORATION_UPDATED")
     eventFrame:RegisterEvent("DISPLAY_SIZE_CHANGED")
     eventFrame:RegisterEvent("UI_SCALE_CHANGED")
     eventFrame:RegisterEvent("PLAYER_REGEN_DISABLED")

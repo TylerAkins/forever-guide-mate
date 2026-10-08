@@ -164,6 +164,8 @@ SHIPPED = (
     "Guides/Class/Warlock.lua",
     "Guides/Class/Druid.lua",
     "Guides/Miscellaneous/LibraryBooks.lua",
+    "Guides/Legacy/ExploreSilverpineForest.lua",
+    "Guides/Legacy/ExploreTirisfalGlades.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
