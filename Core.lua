@@ -33,19 +33,119 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 6,
+    schemaVersion = 10,
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
+    skipped = {},
+    skippedBecause = {},
     notOffered = {},
     history = {},
     completionLedger = {},
     activeGoalByGuide = {},
     guideRevisions = {},
     taxiRoutes = {},
+    taxiBoarding = {},
     taxiNodes = {},
     taxiNodesByContinent = {},
 }
+
+-- Woven Leveling chapter ids → Casual spine ids.
+-- Schema 5 early-name remaps target these same Casual ids where applicable.
+local WOVEN_TO_CASUAL_CHAPTER_IDS = {
+    ["leveling-era-the-barrens-part-1"] = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+    ["leveling-era-the-barrens-part-2"] = "leveling-era-horde-the-barrens",
+    ["leveling-era-the-barrens-part-3"] = "leveling-era-horde-the-barrens",
+    ["leveling-era-silverpine-forest"] = "leveling-era-horde-silverpine-forest",
+    ["leveling-era-westfall"] = "leveling-era-alliance-westfall",
+    ["leveling-era-darkshore-part-1"] = "leveling-era-alliance-darkshore",
+    ["leveling-era-darkshore-part-2"] = "leveling-era-alliance-darkshore-part-2",
+    ["leveling-era-darkshore-part-3"] = "leveling-era-alliance-darkshore-part-2",
+    ["leveling-era-loch-modan"] = "leveling-era-alliance-loch-modan",
+    ["leveling-era-redridge-mountains-part-1"] = "leveling-era-alliance-redridge-and-westfall",
+    ["leveling-era-redridge-mountains-part-2"] = "leveling-era-alliance-duskwood-and-redridge-mountains",
+    ["leveling-era-ashenvale-part-1"] = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+    ["leveling-era-ashenvale-part-2"] = "leveling-era-horde-ashenvale",
+    ["leveling-era-ashenvale-part-3"] = "leveling-era-horde-ashenvale-part-2",
+    ["leveling-era-ashenvale-part-4"] = "leveling-era-horde-ashenvale-part-2",
+    ["leveling-era-stonetalon-mountains-part-1"] = "leveling-era-horde-stonetalon-mountains",
+    ["leveling-era-stonetalon-mountains-part-2"] = "leveling-era-horde-stonetalon-mountains",
+    ["leveling-era-stonetalon-mountains-part-3"] = "leveling-era-horde-stonetalon-mountains",
+    ["leveling-era-stonetalon-mountains-part-4"] = "leveling-era-horde-stonetalon-mountains",
+    ["leveling-era-duskwood"] = "leveling-era-alliance-duskwood-and-redridge-mountains",
+    ["leveling-era-wetlands"] = "leveling-era-alliance-wetlands",
+    ["leveling-era-hillsbrad-foothills"] = "leveling-era-horde-hillsbrad-foothills",
+    ["leveling-era-thousand-needles-part-1"] = "leveling-era-horde-thousand-needles",
+    ["leveling-era-thousand-needles-part-2"] = "leveling-era-horde-thousand-needles-part-2",
+}
+
+local function RemapChapterKey(map, key)
+    if type(key) ~= "string" or type(map) ~= "table" then
+        return key
+    end
+    local mapped = map[key]
+    if mapped then
+        return mapped
+    end
+    for oldID, newID in pairs(map) do
+        local prefix = oldID .. ":"
+        if string.sub(key, 1, #prefix) == prefix then
+            return newID .. ":" .. string.sub(key, #prefix + 1)
+        end
+    end
+    return key
+end
+
+local function RemapCharacterChapterFields(character, map)
+    local function RemapStringField(field)
+        if type(character[field]) == "string" then
+            character[field] = RemapChapterKey(map, character[field])
+        end
+    end
+    RemapStringField("selectedGuide")
+    RemapStringField("eraChapterPick")
+    RemapStringField("eraFloor")
+    RemapStringField("eraSegment")
+    RemapStringField("activeGoal")
+    if type(character.activeGoalByGuide) == "table" then
+        local nextByGuide = {}
+        for guideID, goalID in pairs(character.activeGoalByGuide) do
+            nextByGuide[RemapChapterKey(map, guideID)] = RemapChapterKey(map, goalID)
+        end
+        character.activeGoalByGuide = nextByGuide
+    end
+    if type(character.completionLedger) == "table" then
+        local nextLedger = {}
+        for guideID, revisions in pairs(character.completionLedger) do
+            nextLedger[RemapChapterKey(map, guideID)] = revisions
+        end
+        character.completionLedger = nextLedger
+    end
+    for _, field in ipairs({ "skipped", "deferred", "manualCompleted", "notOffered" }) do
+        if type(character[field]) == "table" then
+            local nextTable = {}
+            for goalID, value in pairs(character[field]) do
+                nextTable[RemapChapterKey(map, goalID)] = value
+            end
+            character[field] = nextTable
+        end
+    end
+    -- Cascade parents are goal ids; remap both keys and values.
+    if type(character.skippedBecause) == "table" then
+        local nextBecause = {}
+        for goalID, parentID in pairs(character.skippedBecause) do
+            local newGoal = RemapChapterKey(map, goalID)
+            local newParent = type(parentID) == "string" and RemapChapterKey(map, parentID) or parentID
+            nextBecause[newGoal] = newParent
+        end
+        character.skippedBecause = nextBecause
+    end
+    if type(character.history) == "table" then
+        for index, goalID in ipairs(character.history) do
+            character.history[index] = RemapChapterKey(map, goalID)
+        end
+    end
+end
 
 local function ApplyDefaults(target, defaults)
     for key, value in pairs(defaults) do
@@ -140,133 +240,85 @@ local function MigrateStorage(account, character)
             ["leveling-era-1-12-dun-morogh"] = "leveling-era-dun-morogh",
             ["leveling-era-1-12-elwynn-forest"] = "leveling-era-elwynn-forest",
             ["leveling-era-1-12-teldrassil"] = "leveling-era-teldrassil",
-            ["leveling-era-12-20-barrens"] = "leveling-era-the-barrens-part-1",
-            ["leveling-era-22-23-southern-barrens"] = "leveling-era-the-barrens-part-2",
-            ["leveling-era-12-20-silverpine-forest"] = "leveling-era-silverpine-forest",
-            ["leveling-era-12-17-westfall"] = "leveling-era-westfall",
-            ["leveling-era-12-17-darkshore"] = "leveling-era-darkshore-part-1",
-            ["leveling-era-20-21-darkshore"] = "leveling-era-darkshore-part-2",
-            ["leveling-era-23-24-darkshore"] = "leveling-era-darkshore-part-3",
-            ["leveling-era-17-18-loch-modan"] = "leveling-era-loch-modan",
-            ["leveling-era-18-20-redridge-mountains"] = "leveling-era-redridge-mountains-part-1",
-            ["leveling-era-27-28-redridge-mountains"] = "leveling-era-redridge-mountains-part-2",
-            ["leveling-era-21-22-ashenvale"] = "leveling-era-ashenvale",
-            ["leveling-era-20-22-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-1",
-            ["leveling-era-22-23-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-2",
-            ["leveling-era-23-25-stonetalon-mountains"] = "leveling-era-stonetalon-mountains-part-3",
-            ["leveling-era-28-29-duskwood"] = "leveling-era-duskwood",
+            ["leveling-era-12-20-barrens"] = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            ["leveling-era-22-23-southern-barrens"] = "leveling-era-horde-the-barrens",
+            ["leveling-era-12-20-silverpine-forest"] = "leveling-era-horde-silverpine-forest",
+            ["leveling-era-12-17-westfall"] = "leveling-era-alliance-westfall",
+            ["leveling-era-12-17-darkshore"] = "leveling-era-alliance-darkshore",
+            ["leveling-era-20-21-darkshore"] = "leveling-era-alliance-darkshore-part-2",
+            ["leveling-era-23-24-darkshore"] = "leveling-era-alliance-darkshore-part-2",
+            ["leveling-era-17-18-loch-modan"] = "leveling-era-alliance-loch-modan",
+            ["leveling-era-18-20-redridge-mountains"] = "leveling-era-alliance-redridge-and-westfall",
+            ["leveling-era-27-28-redridge-mountains"] = "leveling-era-alliance-duskwood-and-redridge-mountains",
+            ["leveling-era-21-22-ashenvale"] = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            ["leveling-era-20-22-stonetalon-mountains"] = "leveling-era-horde-stonetalon-mountains",
+            ["leveling-era-22-23-stonetalon-mountains"] = "leveling-era-horde-stonetalon-mountains",
+            ["leveling-era-23-25-stonetalon-mountains"] = "leveling-era-horde-stonetalon-mountains",
+            ["leveling-era-28-29-duskwood"] = "leveling-era-alliance-duskwood-and-redridge-mountains",
         }
-        local function RemapEraKey(key)
-            if type(key) ~= "string" then
-                return key
-            end
-            local mapped = eraChapterIDs[key]
-            if mapped then
-                return mapped
-            end
-            for oldID, newID in pairs(eraChapterIDs) do
-                local prefix = oldID .. ":"
-                if string.sub(key, 1, #prefix) == prefix then
-                    return newID .. ":" .. string.sub(key, #prefix + 1)
-                end
-            end
-            return key
-        end
-        local function RemapStringField(field)
-            if type(character[field]) == "string" then
-                character[field] = RemapEraKey(character[field])
-            end
-        end
-        RemapStringField("selectedGuide")
-        RemapStringField("eraChapterPick")
-        RemapStringField("eraFloor")
-        RemapStringField("eraSegment")
-        RemapStringField("activeGoal")
-        if type(character.activeGoalByGuide) == "table" then
-            local nextByGuide = {}
-            for guideID, goalID in pairs(character.activeGoalByGuide) do
-                nextByGuide[RemapEraKey(guideID)] = RemapEraKey(goalID)
-            end
-            character.activeGoalByGuide = nextByGuide
-        end
-        if type(character.completionLedger) == "table" then
-            local nextLedger = {}
-            for guideID, revisions in pairs(character.completionLedger) do
-                nextLedger[RemapEraKey(guideID)] = revisions
-            end
-            character.completionLedger = nextLedger
-        end
-        if type(character.deferred) == "table" then
-            local nextDeferred = {}
-            for goalID, value in pairs(character.deferred) do
-                nextDeferred[RemapEraKey(goalID)] = value
-            end
-            character.deferred = nextDeferred
-        end
-        if type(character.history) == "table" then
-            for index, goalID in ipairs(character.history) do
-                character.history[index] = RemapEraKey(goalID)
-            end
-        end
+        RemapCharacterChapterFields(character, eraChapterIDs)
         character.schemaVersion = 5
     end
     if (tonumber(character.schemaVersion) or 1) < 6 then
-        local eraChapterIDs = {
+        RemapCharacterChapterFields(character, {
             ["leveling-era-ashenvale"] = "leveling-era-ashenvale-part-1",
-        }
-        local function RemapEraKey(key)
-            if type(key) ~= "string" then
-                return key
+        })
+        character.schemaVersion = 6
+    end
+    if (tonumber(character.schemaVersion) or 1) < 7 then
+        character.skipped = type(character.skipped) == "table" and character.skipped or {}
+        character.skippedBecause = type(character.skippedBecause) == "table" and character.skippedBecause or {}
+        if type(character.deferred) == "table" then
+            for goalID, value in pairs(character.deferred) do
+                if value then character.skipped[goalID] = true end
             end
-            local mapped = eraChapterIDs[key]
-            if mapped then
-                return mapped
-            end
-            for oldID, newID in pairs(eraChapterIDs) do
-                local prefix = oldID .. ":"
-                if string.sub(key, 1, #prefix) == prefix then
-                    return newID .. ":" .. string.sub(key, #prefix + 1)
+            character.deferred = {}
+        end
+        -- Keep selectedGuide = "leveling-era" so MigrateEraProgress can remap
+        -- selection and merge the leveling-era completion ledger into Casual.
+        character.schemaVersion = 7
+    end
+    if (tonumber(character.schemaVersion) or 1) < 8 then
+        RemapCharacterChapterFields(character, WOVEN_TO_CASUAL_CHAPTER_IDS)
+        character.schemaVersion = 8
+    end
+    if (tonumber(character.schemaVersion) or 1) < 9 then
+        -- Schema 8 remapped skipped but not skippedBecause / manualCompleted /
+        -- notOffered. Re-run the woven→Casual map (idempotent) so cascade skips
+        -- and refusal reports stay aligned with goal ids.
+        RemapCharacterChapterFields(character, WOVEN_TO_CASUAL_CHAPTER_IDS)
+        character.schemaVersion = 9
+    end
+    if (tonumber(character.schemaVersion) or 1) < 10 then
+        if type(character.taxiBoarding) ~= "table" then character.taxiBoarding = {} end
+        if next(character.taxiBoarding) == nil and type(character.taxiRoutes) == "table" and ns.Travel then
+            for mapID, route in pairs(character.taxiRoutes) do
+                if type(route) == "table" and type(route.destinations) == "table"
+                    and type(route.x) == "number" and type(route.y) == "number" then
+                    local best, bestDistance
+                    for _, master in ipairs(ns.Travel.flightMasters) do
+                        if master.mapID == mapID and type(master.node) == "string" then
+                            local dist = ns.Navigation
+                                and ns.Navigation.Distance(route.x, route.y, master.x, master.y)
+                            if dist and (not bestDistance or dist < bestDistance) then
+                                best, bestDistance = master, dist
+                            end
+                        end
+                    end
+                    if best and bestDistance and bestDistance <= 0.06 then
+                        local key = string.lower((best.node:gsub("^%s+", ""):gsub("%s+$", "")))
+                        character.taxiBoarding[key] = {
+                            mapID = best.mapID,
+                            x = best.x,
+                            y = best.y,
+                            node = best.node,
+                            destinations = route.destinations,
+                        }
+                    end
                 end
             end
-            return key
         end
-        local function RemapStringField(field)
-            if type(character[field]) == "string" then
-                character[field] = RemapEraKey(character[field])
-            end
-        end
-        RemapStringField("selectedGuide")
-        RemapStringField("eraChapterPick")
-        RemapStringField("eraFloor")
-        RemapStringField("eraSegment")
-        RemapStringField("activeGoal")
-        if type(character.activeGoalByGuide) == "table" then
-            local nextByGuide = {}
-            for guideID, goalID in pairs(character.activeGoalByGuide) do
-                nextByGuide[RemapEraKey(guideID)] = RemapEraKey(goalID)
-            end
-            character.activeGoalByGuide = nextByGuide
-        end
-        if type(character.completionLedger) == "table" then
-            local nextLedger = {}
-            for guideID, revisions in pairs(character.completionLedger) do
-                nextLedger[RemapEraKey(guideID)] = revisions
-            end
-            character.completionLedger = nextLedger
-        end
-        if type(character.deferred) == "table" then
-            local nextDeferred = {}
-            for goalID, value in pairs(character.deferred) do
-                nextDeferred[RemapEraKey(goalID)] = value
-            end
-            character.deferred = nextDeferred
-        end
-        if type(character.history) == "table" then
-            for index, goalID in ipairs(character.history) do
-                character.history[index] = RemapEraKey(goalID)
-            end
-        end
-        character.schemaVersion = 6
+        character.schemaVersion = 10
     end
 end
 
@@ -386,6 +438,11 @@ local function OnEvent(_, event, arg1)
         if ns.UI and ns.UI.ApplySettings then ns.UI:ApplySettings() end
         if ns.QuestDialog then ns.QuestDialog:Retry() end
         return
+    elseif event == "BAG_UPDATE_DELAYED" then
+        if ns.PlayerState and ns.PlayerState.BagsChanged and ns.PlayerState:BagsChanged() then
+            ns.ScheduleRefresh()
+        end
+        return
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
@@ -414,6 +471,7 @@ if CreateFrame then
     eventFrame:RegisterEvent("QUEST_DETAIL")
     eventFrame:RegisterEvent("QUEST_PROGRESS")
     eventFrame:RegisterEvent("QUEST_COMPLETE")
+    eventFrame:RegisterEvent("BAG_UPDATE_DELAYED")
     eventFrame:SetScript("OnEvent", OnEvent)
     local taxiElapsed, wasOnTaxi = 0, false
     eventFrame:SetScript("OnUpdate", function(_, elapsed)
@@ -422,7 +480,7 @@ if CreateFrame then
         taxiElapsed = 0
         if type(UnitOnTaxi) ~= "function" then return end
         local onTaxi = not not UnitOnTaxi("player")
-        if wasOnTaxi and not onTaxi then
+        if onTaxi ~= wasOnTaxi then
             ns.ScheduleRefresh()
         end
         wasOnTaxi = onTaxi

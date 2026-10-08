@@ -28,7 +28,7 @@ INDEX_URL = (
     "data/forever/raw/quest_index.json"
 )
 FIXTURE = ROOT / "tests" / "fixtures" / "quest_min_levels.json"
-GUIDE_ROOTS = ("Guides/Leveling", "Guides/Loremaster", "Guides/Dungeons", "Guides/Class", "Guides/Era")
+GUIDE_ROOTS = ("Guides/Leveling", "Guides/Loremaster", "Guides/Dungeons", "Guides/Class")
 
 SOLE_LEVEL = re.compile(r"\n[ \t]*conditions = \{ level = \{ min = \d+ \} \},")
 LEVEL_ENTRY = re.compile(r"\n[ \t]*\{ level = \{ min = \d+ \} \},")

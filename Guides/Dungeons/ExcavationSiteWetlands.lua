@@ -66,7 +66,7 @@ ns:RegisterGuide({
             id = "accept-469-daily-delivery",
             kind = "accept",
             priority = 10,
-            conditions = { all = { ALLIANCE, { level = { min = 18 } } } },
+            conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Accept Daily Delivery from Einar Stonegrip in The Green Belt. " ..
                 "James Halloran offers Highland Hides after this.",
             complete = QuestState(469, "activeOrCompleted"),
@@ -76,7 +76,7 @@ ns:RegisterGuide({
             id = "turnin-469-daily-delivery",
             kind = "turnin",
             priority = 11,
-            conditions = { all = { ALLIANCE, { level = { min = 18 } } } },
+            conditions = { all = { ALLIANCE, { level = { min = 24 } } } },
             text = "Turn in Daily Delivery to James Halloran.",
             dependsOn = { "accept-469-daily-delivery" },
             complete = QuestState(469, "completed"),

@@ -96,4 +96,20 @@ if requiredMissing > 0 then
     os.exit(1)
 end
 
+local orphans = 0
+print("Accepts with no turn-in in any shipped guide:")
+for _, issue in ipairs(guideData.OrphanAcceptViolations(ns.guides)) do
+    orphans = orphans + 1
+    io.stderr:write(string.format(
+        "ORPHAN: %s %s quest %d\n", issue.guideID, issue.goalID, issue.questID))
+end
+if orphans == 0 then
+    print("  (none)")
+else
+    io.stderr:write(string.format(
+        "%d orphan accept(s). Add a turn-in or OrphanAcceptAllowlist in tests/lua/guide_data_checks.lua\n",
+        orphans))
+    os.exit(1)
+end
+
 print("Chain audit passed (registered quest prerequisites). See docs/guide-authoring.md for manual review when adding accepts.")

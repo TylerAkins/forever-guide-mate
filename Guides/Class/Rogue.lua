@@ -613,7 +613,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Encoded Fragments: Encoded Fragment.",
+            text = "Collect 10 Encoded Fragment for Archmage Xylem in Azshara.",
             dependsOn = { "accept-8235-encoded-fragments" },
             complete = QuestState(8235, "complete"),
             route = {
@@ -1430,7 +1430,7 @@ ns:RegisterGuide({
                     { level = { min = 10 } },
                 },
             },
-            text = "The Shattered Hand: Tazan's Key. This step is for Orcs and Trolls.",
+            text = "Pickpocket Tazan's Key from Tazan in The Barrens. This step is for Orcs and Trolls.",
             dependsOn = { "accept-1858-the-shattered-hand" },
             complete = QuestState(1858, "complete"),
             route = {
@@ -2176,7 +2176,7 @@ ns:RegisterGuide({
                     { level = { min = 16 } },
                 },
             },
-            text = "Plundering the Plunderers: Southsea Treasure. This step is for Orcs, Undead, and Trolls.",
+            text = "Steal Southsea Treasure from the Southsea pirates in The Barrens. This step is for Orcs, Undead, and Trolls.",
             dependsOn = { "accept-2381-plundering-the-plunderers" },
             complete = QuestState(2381, "complete"),
             route = {
@@ -2233,7 +2233,7 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                 },
             },
-            text = "The Touch of Zanzil: Simple Wildflowers.",
+            text = "Collect the Touch of Zanzil reagents. Farm Forest Ooze in Azshara and buy flowers in Stormwind if the quest log sends you there.",
             dependsOn = { "accept-2609-the-touch-of-zanzil" },
             complete = QuestState(2609, "complete"),
             route = {
@@ -2289,7 +2289,7 @@ ns:RegisterGuide({
                     { level = { min = 24 } },
                 },
             },
-            text = "Syndicate Emblems: Syndicate Emblem.",
+            text = "Kill Syndicate in Hillsbrad Foothills and Alterac Mountains and collect Syndicate Emblems.",
             dependsOn = { "accept-6701-syndicate-emblems" },
             complete = QuestState(6701, "complete"),
             route = {

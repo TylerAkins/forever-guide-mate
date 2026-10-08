@@ -2,7 +2,7 @@
 
 The procedure for adding or updating a zone lives in the repo skill [`.cursor/skills/zone-loremaster-guide/SKILL.md`](../.cursor/skills/zone-loremaster-guide/SKILL.md). Use that when writing the next zone. The files in `Guides/Loremaster/` are the working copies. Only **Durotar** and **Mulgore** are listed in `ForeverGuideMate.toc` today; other zones return when rewritten from their leveling spine. Quest id, multi-objective, and pin rules are in [guide-authoring.md](guide-authoring.md).
 
-Loremaster finishes the zone. The walk is the leveling route. Converted chapters are zone slugs in `Guides/Leveling/` (`durotar.lua`, `the-barrens-part-1.lua`), not level-range names. A chapter whose title still ends in `(Era)` is in `Guides/Era/` under its level-range filename and is still part of that walk. A quest on the Wowhead Forever zone page that is not already on that route is woven in:
+Loremaster finishes the zone. The walk is the leveling route under `Guides/Leveling/` (zone/faction slugs such as `durotar.lua`, `horde-the-barrens.lua`). A quest on the Wowhead Forever zone page that is not already on that route is woven in:
 
 1. A series follow-up goes immediately after the previous turn-in.
 2. A quest from a giver the route already visits at that quest's recommended level is accepted with that visit, before anyone leaves. An earlier visit does not count when the recommended level is still ahead.
@@ -10,6 +10,6 @@ Loremaster finishes the zone. The walk is the leveling route. Converted chapters
 
 Shared leveling quests must keep the same quest-chain edges in Loremaster. When a leveling route gains a required handoff, add the same chain to the zone route and register the verified relationship in `QuestPrerequisites.lua`. Loremaster keeps all eligible zone quests; recovery changes their order only to satisfy prerequisites and never reduces the completion set.
 
-Keep every quest the leveling route already runs, including prerequisite handoffs it shares with a dungeon chain. Dungeon-only quests stay in the dungeon guides. Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`, so the title is the zone name. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path. A chapter whose title still ends in `(Era)` stays unloaded until it is converted and moved to `Guides/Leveling/`.
+Keep every quest the leveling route already runs, including prerequisite handoffs it shares with a dungeon chain. Dungeon-only quests stay in the dungeon guides. Put the file in `Guides/Loremaster/` and register it as `category = "Loremaster Guides"`. The library row tag is `Loremaster`, so the title is the zone name. Zephras Isle stays in `Guides/Leveling/` under `Leveling Quest Guides`, because that file is the Skyborne starter path.
 
 An elite step says `This is an elite. Bring a group.` A handoff uses a separate accept at the giver and turn-in at the recipient. The accept completes on `activeOrCompleted`; the turn-in completes on `completed` and depends on the accept. Use one API-driven objective step when the client can cycle objectives from the same outing, and split objectives only when the route requires separate locations. Coordinates have not been validated in the Forever client.

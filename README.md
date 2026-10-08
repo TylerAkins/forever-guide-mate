@@ -6,7 +6,7 @@ Blizzard Map Pins is the default waypoint provider. Choose optional TomTom under
 
 It does not accept quests, choose rewards, move the character, or take protected gameplay actions. A guide the character cannot use says Ineligible. Coordinates in the shipped guides have not been validated in the Forever client.
 
-Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. Completed quest history comes from the client, and verified quest prerequisites are followed automatically. Use the tracker's **Sync** button to discard its saved position and find the earliest unfinished step again without resetting completed or skipped steps. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
+Opening a leveling or Loremaster chapter midway resumes a valid saved step or returns to the earliest unfinished eligible route step. After starters, **Forever Casual Route** (Alliance or Horde) is the 1–60 spine: Casual leveling order with Forever quests woven on top, as one flat guide (no zone chapter title). Use **Skip** on Casual or dungeon guides to hard-skip a step and its dependents after a confirm; Loremaster cannot skip. **Sync** resyncs from the quest log and keeps skips; **Reset skips on this guide** in options clears them. Completed quest history comes from the client, and verified quest prerequisites are followed automatically. If a giver does not offer an expected quest and no verified prerequisite is registered, the tracker stops with a diagnostic instead of silently skipping the quest.
 
 Quest-step rules are in [docs/guide-authoring.md](docs/guide-authoring.md). Loremaster weave rules are in [docs/zone-loremaster-guides.md](docs/zone-loremaster-guides.md).
 
@@ -33,19 +33,11 @@ Capitals are not separate Loremaster guides. Capital quests belong on the zone r
 
 ### Dungeon quests
 
-- Ragefire Chasm: Forever list pass
-- No guide yet: Shadowfang Keep, The Stockade, Blackfathom Deeps, Gnomeregan, Razorfen Kraul, Scarlet Monastery, Razorfen Downs, Uldaman, Zul'Farrak, Maraudon, Temple of Atal'Hakkar, Blackrock Depths, Lower and Upper Blackrock Spire, Dire Maul, Scholomance, Stratholme
-- Raids and attunements not started (Zul'Gurub through Naxxramas)
+Classic dungeon guides ship for RFC through Sunken Temple (plus Forever HoT / RoL / Excavation / Dalaran attunement). Keep improving objective how-to text and Forever quest coverage. Later: remaining BRD / Spire / Dire Maul / Scholo / Strat polish and unfinished raid attunements.
 
-### Era chapters not yet loaded
+### Era chapters still needing a Forever weave
 
-Walk each `Guides/Era/` chapter against the Wowhead Forever zone page, weave new quests per `.cursor/skills/era-forever-weave/SKILL.md`, then drop `(Era)` from the title, move the file to `Guides/Leveling/`, and add it to `ForeverGuideMate.toc` and `tools/compile_addon.py`.
-
-**Alliance (examples):** Wetlands 30–31; Hillsbrad Foothills 31–32; mid- and high-level zones through Winterspring
-
-**Horde (examples):** Arathi Highlands 30–30; Stranglethorn Vale 30–31; Thousand Needles 31–32; mid- and high-level zones through Winterspring
-
-The full chapter list is the filenames under `Guides/Era/`.
+The 1–60 Casual spine lives entirely under `Guides/Leveling/`. Forever weaves for each zone follow `.cursor/skills/era-forever-weave/SKILL.md` and stay in that folder.
 
 ## Installation and navigation
 

@@ -135,6 +135,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("SkipLineage.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
 Load("MapPins.lua")
@@ -229,6 +230,10 @@ ns.UI.settingsCategory = { ID = 42 }
 ns.UI.minimapButton.scripts.OnClick(ns.UI.minimapButton, "RightButton")
 Equal(settingsOpened, true, "minimap right click opens the options panel")
 Equal(settingsCategoryID, 42, "minimap right click passes the settings category id")
+settingsOpened = false
+ns.UI.tracker.library.scripts.OnClick(ns.UI.tracker.library, "RightButton")
+Equal(settingsOpened, true, "tracker cog right click opens the options panel")
+Equal(settingsCategoryID, 42, "tracker cog right click passes the settings category id")
 UnitAffectingCombat = function() return true end
 settingsOpened = false
 ns.UI:OpenSettings()
@@ -463,8 +468,13 @@ Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible
 ns.Engine:Refresh({ faction = "Horde", level = 1 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible when the dungeon level is not met")
 ns.Engine:Refresh({ faction = "Horde", level = 9 })
-Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
+Equal(ns.UI.tracker.instruction.text, "Accept The Power to Destroy... from Varimathras in the Undercity.",
     "an eligible dungeon guide still shows its step")
+ns.charDB.activeGoal = nil
+ns.Engine.currentGoal = nil
+ns.Engine:Refresh({ faction = "Horde", level = 13 })
+Equal(ns.UI.tracker.instruction.text, "Accept Searching for the Lost Satchel from Rahauro on Elder Rise.",
+    "at level 13 the satchel accept is ready")
 ns.charDB.selectedGuide = "alliance-only-leveling"
 ns.Engine:Refresh({ faction = "Horde", level = 10 })
 Equal(ns.UI.tracker.instruction.text, "Ineligible", "the tracker says Ineligible for an Alliance leveling guide")
@@ -480,7 +490,7 @@ do
         Hide = function() end,
     }
     ns.UI.tracker.sync.scripts.OnEnter(ns.UI.tracker.sync)
-    Equal(captured.title, "Resync guide from your quest log and completed quests",
+    Equal(captured.title, "Resync guide from your quest log and completed quests. Skipped steps stay skipped.",
         "the Sync button tooltip uses only its resync text")
     Equal(#captured.lines, 0, "tracker buttons do not append minimap tooltip lines")
 end
@@ -522,6 +532,7 @@ do
     ns.MapPins:Refresh(map)
     Equal(ns.MapPins.pin, nil, "quest-linked travel relies on Blizzard's existing pin")
     ns.Engine.currentGoal.kind = "objective"
+    ns.Engine.currentGoal.useClientPin = true
     ns.MapPins:Refresh(map)
     Equal(ns.MapPins.pin, nil, "objectives do not add a duplicate guide marker")
     ns.Engine.currentGoal.kind = "turnin"
@@ -567,22 +578,37 @@ function TestFlightLandingRefreshesGuide()
     Equal(captures, 0, "standing on the ground does not read the quest catalog")
     onTaxi = true
     pulse(nil, 0.5)
+    Equal(captures, 1, "takeoff refreshes the guide once")
     pulse(nil, 0.5)
-    Equal(captures, 0, "flying does not repeatedly refresh the guide")
+    Equal(captures, 1, "flying does not repeatedly refresh the guide")
     state.mapID = 1456
     onTaxi = false
     pulse(nil, 0.5)
-    Equal(captures, 1, "landing captures fresh player state once")
+    Equal(captures, 2, "landing captures fresh player state once")
     Equal(ns.Engine.currentGoal.id, "landing-next", "landing clears completed travel without Sync")
     pulse(nil, 0.5)
-    Equal(captures, 1, "remaining on the ground does not refresh again")
+    Equal(captures, 2, "remaining on the ground does not refresh again")
     UnitOnTaxi = nil
     pulse(nil, 0.5)
-    Equal(captures, 1, "clients without the optional taxi API do not refresh")
+    Equal(captures, 2, "clients without the optional taxi API do not refresh")
     ns.PlayerState.Capture = savedCapture
     ns.charDB.selectedGuide = savedGuide
 end
 TestFlightLandingRefreshesGuide()
+
+function TestLootOnlyRefreshesForWatchedItems()
+    local savedSchedule, savedBagsChanged = ns.ScheduleRefresh, ns.PlayerState.BagsChanged
+    local scheduled, routeItemChanged = 0, false
+    ns.ScheduleRefresh = function() scheduled = scheduled + 1 end
+    ns.PlayerState.BagsChanged = function() return routeItemChanged end
+    ns.eventFrame.scripts.OnEvent(nil, "BAG_UPDATE_DELAYED")
+    Equal(scheduled, 0, "ordinary loot does not rebuild the route")
+    routeItemChanged = true
+    ns.eventFrame.scripts.OnEvent(nil, "BAG_UPDATE_DELAYED")
+    Equal(scheduled, 1, "looting a starter item rebuilds the route once")
+    ns.ScheduleRefresh, ns.PlayerState.BagsChanged = savedSchedule, savedBagsChanged
+end
+TestLootOnlyRefreshesForWatchedItems()
 
 ns:RegisterGuide({
     id = "raid-category-probe",
