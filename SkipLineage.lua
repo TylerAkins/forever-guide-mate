@@ -115,6 +115,16 @@ function SkipLineage:SkipAllowed(guide)
     return type(guide) == "table" and guide.category ~= "Loremaster Guides"
 end
 
+-- Mark complete on a step the quest log contradicts. Progress still counts it
+-- as unfinished, so the route moves on without crediting the quest, and later
+-- steps stay open for their own checks.
+function SkipLineage:Pass(goalID)
+    EnsureTables()
+    if type(goalID) ~= "string" then return end
+    ns.charDB.skipped[goalID] = true
+    ns.charDB.skippedBecause[goalID] = nil
+end
+
 function SkipLineage:Apply(guide, goal, cascadeIDs)
     EnsureTables()
     if not self:SkipAllowed(guide) or type(goal) ~= "table" or type(goal.id) ~= "string" then

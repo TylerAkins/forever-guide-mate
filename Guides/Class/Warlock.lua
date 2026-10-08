@@ -1585,11 +1585,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Creature of the Void from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            text = "Accept Creature of the Void from Carendin Halgar in Undercity. This step is for Undead.",
             dependsOn = { "turnin-1478-halgars-summons" },
             complete = QuestState(1473, "activeOrCompleted"),
             route = {
@@ -1605,11 +1605,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Creature of the Void to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            text = "Turn in Creature of the Void to Carendin Halgar in Undercity. This step is for Undead.",
             dependsOn = { "accept-1473-creature-of-the-void" },
             complete = QuestState(1473, "completed"),
             route = {
@@ -1664,11 +1664,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Creature of the Void from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
+            text = "Accept Creature of the Void from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
             dependsOn = { "turnin-1506-ganruls-summons" },
             complete = QuestState(1501, "activeOrCompleted"),
             route = {
@@ -1684,11 +1684,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Creature of the Void to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
+            text = "Turn in Creature of the Void to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
             dependsOn = { "accept-1501-creature-of-the-void" },
             complete = QuestState(1501, "completed"),
             route = {
@@ -1704,11 +1704,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
+            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
             dependsOn = { "turnin-1501-creature-of-the-void", "turnin-1506-ganruls-summons" },
             complete = QuestState(1504, "activeOrCompleted"),
             route = {
@@ -1724,11 +1724,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
+            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
             dependsOn = { "accept-1504-the-binding" },
             complete = QuestState(1504, "completed"),
             route = {
@@ -1864,10 +1864,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
+                    { race = { 2, 5 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar.",
+            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
             dependsOn = { "turnin-65610-wish-you-were-here" },
             complete = QuestState(65604, "activeOrCompleted"),
             route = {
@@ -1883,10 +1884,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
+                    { race = { 2, 5 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar.",
+            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
             dependsOn = { "accept-65604-the-binding" },
             complete = QuestState(65604, "completed"),
             route = {
@@ -2341,11 +2343,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Undead.",
             dependsOn = { "turnin-1473-creature-of-the-void", "turnin-1805-tome-of-the-cabal", "turnin-1478-halgars-summons" },
             complete = QuestState(1471, "activeOrCompleted"),
             route = {
@@ -2361,11 +2363,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    { race = 5 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Undead.",
             dependsOn = { "accept-1471-the-binding" },
             complete = QuestState(1471, "completed"),
             route = {
@@ -2647,10 +2649,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
+                    { race = { 2, 5 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Binding from Carendin Halgar in Undercity.",
+            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
             dependsOn = { "turnin-65593-hearts-of-the-lovers" },
             complete = QuestState(65597, "activeOrCompleted"),
             route = {
@@ -2666,10 +2669,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 9 },
+                    { race = { 2, 5 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Turn in The Binding to Carendin Halgar in Undercity.",
+            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
             dependsOn = { "accept-65597-the-binding" },
             complete = QuestState(65597, "completed"),
             route = {
@@ -2763,10 +2767,11 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 9 },
+                    { race = { 1, 2, 5, 7 } },
                     { level = { min = 30 } },
                 },
             },
-            text = "Accept The Binding from Strahad Farsan in The Barrens.",
+            text = "Accept The Binding from Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
             dependsOn = { "turnin-1805-tome-of-the-cabal" },
             complete = QuestState(1795, "activeOrCompleted"),
             route = {
@@ -2781,10 +2786,11 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 9 },
+                    { race = { 1, 2, 5, 7 } },
                     { level = { min = 30 } },
                 },
             },
-            text = "Turn in The Binding to Strahad Farsan in The Barrens.",
+            text = "Turn in The Binding to Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
             dependsOn = { "accept-1795-the-binding" },
             complete = QuestState(1795, "completed"),
             route = {
@@ -3415,41 +3421,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-4964-the-completed-orb-of-darorahil",
-            kind = "accept",
-            priority = 1700,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Accept The Completed Orb of Dar'Orahil from Menara Voidrender in The Barrens.",
-            complete = QuestState(4964, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-4964-the-completed-orb-of-darorahil",
-            kind = "turnin",
-            priority = 1710,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in The Completed Orb of Dar'Orahil to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4964-the-completed-orb-of-darorahil" },
-            complete = QuestState(4964, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
             id = "accept-4965-knowledge-of-the-orb-of-orahil",
             kind = "accept",
             priority = 1720,
@@ -3678,41 +3649,6 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-4975-the-completed-orb-of-nohorahil",
-            kind = "accept",
-            priority = 1840,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Accept The Completed Orb of Noh'Orahil from Menara Voidrender in The Barrens.",
-            complete = QuestState(4975, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-4975-the-completed-orb-of-nohorahil",
-            kind = "turnin",
-            priority = 1850,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in The Completed Orb of Noh'Orahil to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4975-the-completed-orb-of-nohorahil" },
-            complete = QuestState(4975, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
             id = "accept-4976-returning-the-cleansed-orb",
             kind = "accept",
             priority = 1860,
@@ -3743,6 +3679,78 @@ ns:RegisterGuide({
             text = "Turn in Returning the Cleansed Orb to Menara Voidrender in The Barrens.",
             dependsOn = { "accept-4976-returning-the-cleansed-orb" },
             complete = QuestState(4976, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
+                    "Travel to Menara Voidrender in The Barrens."),
+            },
+        },
+        {
+            id = "accept-4964-the-completed-orb-of-darorahil",
+            kind = "accept",
+            priority = 1872,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { level = { min = 35 } },
+                },
+            },
+            text = "Accept The Completed Orb of Dar'Orahil from Menara Voidrender in The Barrens.",
+            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
+            complete = QuestState(4964, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
+                    "Travel to Menara Voidrender in The Barrens."),
+            },
+        },
+        {
+            id = "turnin-4964-the-completed-orb-of-darorahil",
+            kind = "turnin",
+            priority = 1874,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { level = { min = 35 } },
+                },
+            },
+            text = "Turn in The Completed Orb of Dar'Orahil to Menara Voidrender in The Barrens.",
+            dependsOn = { "accept-4964-the-completed-orb-of-darorahil" },
+            complete = QuestState(4964, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
+                    "Travel to Menara Voidrender in The Barrens."),
+            },
+        },
+        {
+            id = "accept-4975-the-completed-orb-of-nohorahil",
+            kind = "accept",
+            priority = 1876,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { level = { min = 35 } },
+                },
+            },
+            text = "Accept The Completed Orb of Noh'Orahil from Menara Voidrender in The Barrens.",
+            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
+            complete = QuestState(4975, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
+                    "Travel to Menara Voidrender in The Barrens."),
+            },
+        },
+        {
+            id = "turnin-4975-the-completed-orb-of-nohorahil",
+            kind = "turnin",
+            priority = 1878,
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { level = { min = 35 } },
+                },
+            },
+            text = "Turn in The Completed Orb of Noh'Orahil to Menara Voidrender in The Barrens.",
+            dependsOn = { "accept-4975-the-completed-orb-of-nohorahil" },
+            complete = QuestState(4975, "completed"),
             route = {
                 Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
                     "Travel to Menara Voidrender in The Barrens."),
@@ -3794,10 +3802,11 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 9 },
+                    { race = { 1, 2, 5, 7 } },
                     { level = { min = 40 } },
                 },
             },
-            text = "Accept Summon Felsteed from Strahad Farsan in The Barrens.",
+            text = "Accept Summon Felsteed from Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
             dependsOn = { "turnin-4489-summon-felsteed", "turnin-4487-summon-felsteed", "turnin-4488-summon-felsteed", "turnin-3631-summon-felsteed" },
             complete = QuestState(4490, "activeOrCompleted"),
             route = {
@@ -3812,10 +3821,11 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 9 },
+                    { race = { 1, 2, 5, 7 } },
                     { level = { min = 40 } },
                 },
             },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens.",
+            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
             dependsOn = { "accept-4490-summon-felsteed" },
             complete = QuestState(4490, "completed"),
             route = {

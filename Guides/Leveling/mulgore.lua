@@ -145,7 +145,9 @@ ns:RegisterGuide({
             priority = 70,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 },
+                { class = 1 }
             } },
             text = "Accept Simple Note.",
             complete = QuestState(3091, "activeOrCompleted"),
@@ -160,7 +162,9 @@ ns:RegisterGuide({
             priority = 80,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 },
+                { class = 7 }
             } },
             text = "Accept Rune-Inscribed Note.",
             complete = QuestState(3093, "activeOrCompleted"),
@@ -175,7 +179,9 @@ ns:RegisterGuide({
             priority = 90,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 },
+                { class = 3 }
             } },
             text = "Accept Etched Note.",
             complete = QuestState(3092, "activeOrCompleted"),
@@ -190,7 +196,9 @@ ns:RegisterGuide({
             priority = 100,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 },
+                { class = 11 }
             } },
             text = "Accept Verdant Note.",
             complete = QuestState(3094, "activeOrCompleted"),
@@ -221,6 +229,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 7 }
             } },
             text = "Turn in Rune-Inscribed Note.",
@@ -238,6 +247,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 }
             } },
             text = "Turn in Verdant Note.",
@@ -286,6 +296,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 1 }
             } },
             text = "Turn in Simple Note.",
@@ -303,6 +314,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 }
             } },
             text = "Turn in Etched Note.",
@@ -838,6 +850,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Turn in Poison Water.",
             complete = QuestState(748, "completed"),
@@ -854,6 +867,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Accept Winterhoof Cleansing.",
             complete = QuestState(754, "activeOrCompleted"),
@@ -901,6 +915,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Use Winterhoof Cleansing Totem.",
             complete = QuestObjective(754, 1, "Winterhoof Cleansing Totem"),
@@ -933,6 +948,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Turn in Winterhoof Cleansing.",
             complete = QuestState(754, "completed"),
@@ -949,6 +965,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Accept Thunderhorn Totem.",
             complete = QuestState(756, "activeOrCompleted"),
@@ -1070,6 +1087,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Turn in Thunderhorn Totem.",
             complete = QuestState(756, "completed"),
@@ -1086,6 +1104,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Accept Thunderhorn Cleansing.",
             complete = QuestState(758, "activeOrCompleted"),
@@ -1101,6 +1120,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Use Thunderhorn Cleansing Totem.",
             complete = QuestObjective(758, 1, "Thunderhorn Cleansing Totem"),
@@ -1290,6 +1310,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 4 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Turn in Thunderhorn Cleansing.",
             complete = QuestState(758, "completed"),
@@ -1306,6 +1327,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1322,6 +1344,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1339,6 +1362,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1356,6 +1380,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1372,6 +1397,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1389,6 +1415,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1406,6 +1433,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1422,6 +1450,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1439,6 +1468,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1456,6 +1486,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Accept Training the Beast.",
@@ -1488,6 +1519,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 }
             } },
             text = "Accept Heeding the Call.",
@@ -1518,6 +1550,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 9 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Accept Journey to the Crossroads.",
             complete = QuestState(854, "activeOrCompleted"),
@@ -1533,6 +1566,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 9 } },
                 { faction = "Horde" },
+                { race = 6 },
             } },
             text = "Turn in Journey to the Crossroads.",
             complete = QuestState(854, "completed"),
@@ -1548,7 +1582,8 @@ ns:RegisterGuide({
             priority = 960,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Accept A Bundle of Hides.",
             complete = QuestState(6361, "activeOrCompleted"),
@@ -1563,7 +1598,8 @@ ns:RegisterGuide({
             priority = 970,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Turn in A Bundle of Hides.",
             complete = QuestState(6361, "completed"),
@@ -1579,7 +1615,8 @@ ns:RegisterGuide({
             priority = 980,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Accept Ride to Thunder Bluff.",
             complete = QuestState(6362, "activeOrCompleted"),
@@ -1594,7 +1631,8 @@ ns:RegisterGuide({
             priority = 990,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Turn in Ride to Thunder Bluff.",
             complete = QuestState(6362, "completed"),
@@ -1610,7 +1648,8 @@ ns:RegisterGuide({
             priority = 1000,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Accept Tal the Wind Rider Master.",
             complete = QuestState(6363, "activeOrCompleted"),
@@ -1626,6 +1665,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 3 },
             } },
             text = "Turn in Training the Beast.",
@@ -1659,6 +1699,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 }
             } },
             text = "Turn in Heeding the Call.",
@@ -1676,6 +1717,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Accept Moonglade.",
@@ -1708,6 +1750,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Turn in Moonglade.",
@@ -1725,6 +1768,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Accept Great Bear Spirit.",
@@ -1741,6 +1785,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Turn in Great Bear Spirit.",
@@ -1758,6 +1803,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Accept Back to Thunder Bluff.",
@@ -1774,6 +1820,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Turn in Back to Thunder Bluff.",
@@ -1791,6 +1838,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Accept Body and Heart.",
@@ -1806,7 +1854,8 @@ ns:RegisterGuide({
             priority = 1120,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Turn in Tal the Wind Rider Master.",
             complete = QuestState(6363, "completed"),
@@ -1822,7 +1871,8 @@ ns:RegisterGuide({
             priority = 1130,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Accept Return to Jahan.",
             complete = QuestState(6364, "activeOrCompleted"),
@@ -1838,6 +1888,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Use Cenarion Lunardust.",
@@ -1855,6 +1906,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = 6 },
                 { class = 11 },
             } },
             text = "Turn in Body and Heart.",
@@ -1888,7 +1940,8 @@ ns:RegisterGuide({
             priority = 1170,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 6 }
             } },
             text = "Turn in Return to Jahan.",
             complete = QuestState(6364, "completed"),
@@ -3140,6 +3193,7 @@ ns:RegisterGuide({
             priority = 2010,
             conditions = {
                 all = {
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
@@ -3156,6 +3210,7 @@ ns:RegisterGuide({
             priority = 2020,
             conditions = {
                 all = {
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
@@ -3172,6 +3227,7 @@ ns:RegisterGuide({
             priority = 2030,
             conditions = {
                 all = {
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },

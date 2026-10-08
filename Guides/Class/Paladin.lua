@@ -1968,10 +1968,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Tome of Valor from Tiza Battleforge in Ironforge.",
+            text = "Accept The Tome of Valor from Tiza Battleforge in Ironforge. This step is for Humans and Dwarves.",
             complete = QuestState(1794, "activeOrCompleted"),
             route = {
                 Point(MAP.IRONFORGE, 0.2740, 0.1200, "Tiza Battleforge",
@@ -1986,10 +1987,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Turn in The Tome of Valor to Tiza Battleforge in Ironforge.",
+            text = "Turn in The Tome of Valor to Tiza Battleforge in Ironforge. This step is for Humans and Dwarves.",
             dependsOn = { "accept-1794-the-tome-of-valor" },
             complete = QuestState(1794, "completed"),
             route = {
@@ -2005,10 +2007,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Tome of Valor from Duthorian Rall in Stormwind City.",
+            text = "Accept The Tome of Valor from Duthorian Rall in Stormwind City. This step is for Humans and Dwarves.",
             complete = QuestState(1793, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWINDCITY, 0.4000, 0.2980, "Duthorian Rall",
@@ -2023,10 +2026,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Turn in The Tome of Valor to Duthorian Rall in Stormwind City.",
+            text = "Turn in The Tome of Valor to Duthorian Rall in Stormwind City. This step is for Humans and Dwarves.",
             dependsOn = { "accept-1793-the-tome-of-valor" },
             complete = QuestState(1793, "completed"),
             route = {
@@ -2042,10 +2046,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Accept The Tome of Valor from Duthorian Rall in Stormwind City.",
+            text = "Accept The Tome of Valor from Duthorian Rall in Stormwind City. This step is for Humans and Dwarves.",
             complete = QuestState(1649, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWINDCITY, 0.3981, 0.2980, "Duthorian Rall",
@@ -2060,10 +2065,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 20 } },
                 },
             },
-            text = "Turn in The Tome of Valor to Duthorian Rall in Stormwind City.",
+            text = "Turn in The Tome of Valor to Duthorian Rall in Stormwind City. This step is for Humans and Dwarves.",
             dependsOn = { "accept-1649-the-tome-of-valor" },
             complete = QuestState(1649, "completed"),
             route = {
@@ -3259,10 +3265,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 40 } },
                 },
             },
-            text = "Accept The Tome of Nobility from Tiza Battleforge in Ironforge.",
+            text = "Accept The Tome of Nobility from Tiza Battleforge in Ironforge. This step is for Humans and Dwarves.",
             complete = QuestState(4485, "activeOrCompleted"),
             route = {
                 Point(MAP.IRONFORGE, 0.2740, 0.1200, "Tiza Battleforge",
@@ -3277,10 +3284,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 2 },
+                    { race = { 1, 3 } },
                     { level = { min = 40 } },
                 },
             },
-            text = "Turn in The Tome of Nobility to Duthorian Rall in Stormwind City.",
+            text = "Turn in The Tome of Nobility to Duthorian Rall in Stormwind City. This step is for Humans and Dwarves.",
             dependsOn = { "accept-4485-the-tome-of-nobility" },
             complete = QuestState(4485, "completed"),
             route = {

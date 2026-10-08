@@ -1689,7 +1689,7 @@ function Engine:IsReady(guide, goal, state)
             if active ~= nil and active.complete ~= true then
                 return false, "Quest objectives are incomplete.", false
             end
-            if active == nil and state.questCompletionKnown == true and not turnedIn then
+            if active == nil and TrustedQuestResult(state, goal) and not turnedIn then
                 return false, "Quest is not ready to turn in.", false
             end
         end
@@ -1999,7 +1999,7 @@ function Engine:QuestChainBypassed(goal, state, api)
         end
         return false
     end
-    if goal.kind == "turnin" then
+    if goal.kind == "turnin" or goal.kind == "objective" then
         for _, altID in ipairs(alternates) do
             if type(state) == "table" and type(state.quests) == "table" and state.quests[altID] then
                 return true
@@ -2153,10 +2153,12 @@ local function ValidateActiveGoal(engine, guide)
     end
 end
 
-local function StateReadyForResync(state)
+-- routeOnly accepts the open guide's quests before the rest of the catalog,
+-- which is read a few quests per refresh and takes dozens of refreshes.
+local function StateReadyForResync(state, routeOnly)
     return type(state) == "table"
         and state.questLogKnown == true
-        and state.questCompletionKnown == true
+        and (state.questCompletionKnown == true or (routeOnly == true and state.questRouteKnown == true))
         and state.professionsKnown == true
         and type(state.level) == "number"
         and type(state.classID) == "number"
@@ -2377,9 +2379,9 @@ function Engine:Refresh(state)
         return
     end
     -- Casual waits for quest APIs before advancing (separate from Sync pending).
-    if guide.compactLibrary and not StateReadyForResync(state) then
+    if guide.compactLibrary and not StateReadyForResync(state, true) then
         self.casualAwaitingQuestState = true
-    elseif self.casualAwaitingQuestState and StateReadyForResync(state) then
+    elseif self.casualAwaitingQuestState and StateReadyForResync(state, true) then
         self.casualAwaitingQuestState = nil
         self.inferredCompletedByGuide = nil
         local saved = self:GetGoal(guide, ns.charDB.activeGoal)
@@ -2529,9 +2531,18 @@ end
 
 function Engine:CompleteCurrent()
     if self.currentGoal then
-        self:GetLedger(self.currentGuide, true)[self.currentGoal.id] = true
+        local goal = self.currentGoal
+        self:GetLedger(self.currentGuide, true)[goal.id] = true
         if ns.SkipLineage then
-            ns.SkipLineage:Clear(self.currentGoal.id)
+            ns.SkipLineage:Clear(goal.id)
+            -- Reconcile drops ledger credit the quest log contradicts, so only
+            -- a pass moves the route off this step.
+            local state = self.state
+            if goal.complete and QuestObservableCompletion(goal.complete)
+                and ns.EvaluateCondition(goal.complete, state) == false
+                and TrustedQuestResult(state, goal) then
+                ns.SkipLineage:Pass(goal.id)
+            end
         end
         if type(ns.charDB.deferred) == "table" then
             ns.charDB.deferred[self.currentGoal.id] = nil
