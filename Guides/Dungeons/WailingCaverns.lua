@@ -80,7 +80,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Hamuul Runetotem from Tonga Runetotem at the Crossroads. " ..
@@ -99,7 +99,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Speak with Arch Druid Hamuul Runetotem on Elder Rise.",
@@ -116,7 +116,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Nara Wildmane from Arch Druid Hamuul Runetotem.",
@@ -133,7 +133,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Speak with Nara Wildmane in the tent beside Hamuul.",
@@ -150,7 +150,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Leaders of the Fang from Nara Wildmane.",
@@ -167,7 +167,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 14 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Accept Serpentbloom from Apothecary Zamah in the Pools of Vision. " ..
@@ -181,7 +181,7 @@ ns:RegisterGuide({
             id = "accept-smart-drinks",
             kind = "accept",
             priority = 20,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 15 } },
             text = "Accept Smart Drinks from Mebok Mizzyrix in Ratchet.",
             taxiDestination = "Ratchet",
             complete = QuestState(1491, "activeOrCompleted"),
@@ -194,7 +194,7 @@ ns:RegisterGuide({
             id = "accept-trouble-at-the-docks",
             kind = "accept",
             priority = 21,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 15 } },
             text = "Accept Trouble at the Docks from Crane Operator Bigglefuzz in Ratchet.",
             taxiDestination = "Ratchet",
             complete = QuestState(959, "activeOrCompleted"),
@@ -207,7 +207,7 @@ ns:RegisterGuide({
             id = "accept-deviate-hides",
             kind = "accept",
             priority = 22,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 15 } },
             text = "Accept Deviate Hides from Nalpak in the cave above the Wailing Caverns portal.",
             complete = QuestState(1486, "activeOrCompleted"),
             route = {
@@ -264,8 +264,8 @@ ns:RegisterGuide({
             id = "complete-deviate-hides",
             kind = "objective",
             priority = 42,
-            conditions = { level = { min = 13 } },
-            text = "Collect 20 Deviate Hides.",
+            conditions = { level = { min = 15 } },
+            text = "Kill deviate beasts inside Wailing Caverns until you loot 20 Deviate Hides.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(1486, "complete"),
         },
@@ -273,7 +273,7 @@ ns:RegisterGuide({
             id = "complete-smart-drinks",
             kind = "objective",
             priority = 43,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 15 } },
             text = "Collect 6 Wailing Essences from the ectoplasmic creatures.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(1491, "complete"),
@@ -282,7 +282,7 @@ ns:RegisterGuide({
             id = "complete-trouble-at-the-docks",
             kind = "objective",
             priority = 44,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 15 } },
             text = "Recover the 99-Year-Old Port from Mad Magglish.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(959, "complete"),
@@ -294,10 +294,10 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 14 } },
+                    { level = { min = 15 } },
                 },
             },
-            text = "Collect 10 Serpentbloom from the cavern pools.",
+            text = "Loot 10 Serpentbloom from the green plants growing around the cavern pools.",
             dependsOn = { "enter-wailing-caverns" },
             complete = QuestState(962, "complete"),
         },
@@ -308,7 +308,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Collect the gems from Lady Anacondra, Lord Cobrahn, Lord Pythas, and Lord Serpentis.",
@@ -352,7 +352,7 @@ ns:RegisterGuide({
             id = "turnin-deviate-hides",
             kind = "turnin",
             priority = 60,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 15 } },
             text = "Bring the Deviate Hides back to Nalpak.",
             dependsOn = { "complete-deviate-hides" },
             complete = QuestState(1486, "completed"),
@@ -378,7 +378,7 @@ ns:RegisterGuide({
             id = "turnin-smart-drinks",
             kind = "turnin",
             priority = 62,
-            conditions = { level = { min = 13 } },
+            conditions = { level = { min = 15 } },
             text = "Bring the Wailing Essences to Mebok Mizzyrix in Ratchet.",
             dependsOn = { "complete-smart-drinks" },
             taxiDestination = "Ratchet",
@@ -392,7 +392,7 @@ ns:RegisterGuide({
             id = "turnin-trouble-at-the-docks",
             kind = "turnin",
             priority = 63,
-            conditions = { level = { min = 14 } },
+            conditions = { level = { min = 15 } },
             text = "Return the 99-Year-Old Port to Crane Operator Bigglefuzz in Ratchet.",
             dependsOn = { "complete-trouble-at-the-docks" },
             taxiDestination = "Ratchet",
@@ -409,7 +409,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 14 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Bring the Serpentbloom to Apothecary Zamah in Thunder Bluff.",
@@ -426,7 +426,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     HORDE,
-                    { level = { min = 10 } },
+                    { level = { min = 15 } },
                 },
             },
             text = "Bring the four dream gems to Nara Wildmane in Thunder Bluff.",

@@ -726,7 +726,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Courser Antlers: Perfect Courser Antler.",
+            text = "Collect 2 Perfect Courser Antler from Mosshoof Coursers in Azshara.",
             dependsOn = { "accept-8153-courser-antlers" },
             complete = QuestState(8153, "complete"),
             route = {
@@ -780,7 +780,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Wavethrashing: Wavethrasher Scales.",
+            text = "Collect 6 Wavethrasher Scale from wavethrashers in Azshara.",
             dependsOn = { "accept-8231-wavethrashing" },
             complete = QuestState(8231, "complete"),
             route = {

@@ -42,6 +42,9 @@ local function OfferedQuestIDs(api)
 end
 
 function QuestAudit:GoalQuestID(goal)
+    if ns.Engine and type(ns.Engine.GetGoalQuestID) == "function" then
+        return ns.Engine:GetGoalQuestID(goal)
+    end
     local complete = type(goal) == "table" and goal.complete or nil
     local quest = type(complete) == "table" and complete.quest or nil
     local questID = type(quest) == "table" and quest.id or nil
@@ -150,6 +153,12 @@ function QuestAudit:Inspect(api)
     local offered = OfferedQuestIDs(api)
     if type(offered) ~= "table" then return end
     if offered[questID] then
+        self:Clear(goal.id)
+        return
+    end
+    local state = ns.Engine and ns.Engine.state or nil
+    if ns.Engine and ns.Engine.QuestChainBypassed
+        and ns.Engine:QuestChainBypassed(goal, state, api) then
         self:Clear(goal.id)
         return
     end

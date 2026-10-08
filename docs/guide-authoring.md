@@ -51,8 +51,10 @@ Use a substring that appears in the quest log text for that objective.
 - The **tracker** shows the step’s `text` (the objective). On the map, `Continue toward …` pins are path dots only; they must not read as the step title while you are on that map.
 - Keep **named** destination pins (`Travel to …`, NPC names, mob names). Era routes may still use `Continue toward …` coordinates between them; do not delete those pins to “simplify” a step.
 - If there is **no saved pin**, set `useClientPin = true` and say the guide follows the quest log pin. Do not invent coordinates. The tracker shows the objective summary under the quest title when the client provides it, so the step does not read as only the landmark NPC.
-- Registered guides prefer quest-log pins for objectives, gossip, and turn-ins. Objective steps show the first unfinished objective row reported by the client, advancing through those rows as they complete. Authored routes and text remain fallbacks when the client API or a quest POI is unavailable. Accept steps stay authored because an unaccepted quest is not in the quest log; item-started quests also need an authored source.
-- Turn-in steps display `Quest Name @ NPC or Object`, using the client quest title and the final authored destination label. Keep that final label limited to the NPC or object name.
+- Registered guides prefer quest-log pins for objectives, gossip, and turn-ins. When the client reports several POIs for one quest, navigation picks the one nearest the player (authored coordinates are the fallback when no POI exists). Objective steps show the first unfinished objective row reported by the client, advancing through those rows as they complete. Set `useClientPin = false` on a step to keep a spine pin canonical. Accept steps stay authored because an unaccepted quest is not in the quest log; item-started quests also need an authored source.
+- A Leveling accept with no route pin must still guide the player: `Use the … to accept …` for bag/item starts, or clear navigation copy (NPC and place, `Inside …` for dungeons, Deeprun tram directions). Pinless objectives and turn-ins should set `useClientPin = true` when there is no saved pin. Lint fails bare `Accept ….` steps with `route = nil`.
+- At the pin, turn-in steps display `Turn in Quest Name.` using the client quest title, and accept steps display their authored `text`. Neither names the pin label, because imported labels are often the quest title rather than the NPC.
+- **Route pin labels are not quest titles.** Use the NPC or place name on `label` and in `offMapText` (`Travel to Wharfmaster Dizzywig in Ratchet.`). Put the quest name in the step `text` (`Accept … from …`, `Turn in … to …`). Quest-title pins read like zone names, especially in-flight when the tracker shows `offMapText` instead of the flight-master line.
 
 ## Step structure
 
@@ -68,7 +70,7 @@ Part numbers are **per faction**, not shared across Alliance and Horde. If only 
 
 Example: Horde Stonetalon is `(Part 1)` then `(Part 2)`; Alliance Stonetalon is a single chapter titled `Stonetalon Mountains` with no part suffix. Internal chapter ids and filenames may still use `part-1`, `part-2` slugs for load order; only the displayed `title` follows this rule.
 
-A converted file drops the Era level-range name. `Guides/Era/12-17-westfall.lua` becomes `Guides/Leveling/westfall.lua` with id `leveling-era-westfall`. The conversion steps are in `.cursor/skills/era-forever-weave/SKILL.md`.
+Leveling chapters use zone/faction slugs under `Guides/Leveling/` (for example `horde-desolace.lua`, id `leveling-era-horde-desolace`). Forever weave rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
 ## `dependsOn` and conditions
 
@@ -89,7 +91,15 @@ If the client offers quest B only after quest A is turned in, the accept for B m
 
 ### Accept-only deferral
 
-An accept with no turn-in in the same chapter is allowed only when the guide header says why, and the turn-in lives in a named later chapter or part. `lua5.1 tests/lua/audit_accept_chains.lua` prints those accepts as review hints. It fails only for quest ids listed in `SameChapterTurninRequired`.
+An accept with no turn-in in the same chapter is allowed when the turn-in lives in a later chapter, dungeon, or class guide. `lua5.1 tests/lua/audit_accept_chains.lua` and `lint.lua` fail if an accept has **no turn-in in any shipped guide**. Instant/auto omits go in `OrphanAcceptAllowlist`. Same-chapter denylist remains `SameChapterTurninRequired`.
+
+### Skip lineage (player Skip, not soft defer)
+
+Casual and dungeon guides support hard **Skip** with a cascade confirm when dependents would also leave the route. Skipped steps satisfy `dependsOn` for routing but do not raise completion percent. Loremaster guides disable Skip. Sync keeps skips and only clears ones the client has already finished. **Reset skips on this guide** in the options panel clears every skip on the open guide. Previous clears the returned step’s skip. Do not author soft “skip for now” / grind-only / set-hearth stops on Casual or starter chapters.
+
+### Forever Casual Route composition
+
+`FinalizeGuides` merges non-starter `leveling-era-*` chapters into `leveling-casual-alliance` and `leveling-casual-horde` with `compactLibrary = true`. Starters stay individual library guides. The spine comes from `tools/import_classic_leveling.py`; Forever steps are woven afterward (`tools/port_forever_weaves.py` or the era-forever-weave skill). Casual is one flat route in the tracker (no zone chapter title); segments exist only for composition. Step `text` must say how to finish the objective (mob/object, until condition, item-start loot → use → accept).
 
 ### When an accept may have no `dependsOn`
 

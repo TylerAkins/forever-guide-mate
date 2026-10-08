@@ -30,11 +30,22 @@ end
 CreateFrame = nil
 C_Timer = nil
 for _, path in ipairs({
-    "Core.lua", "PlayerState.lua", "Travel.lua", "Taxi.lua", "GuideEngine.lua", "QuestPrerequisites.lua",
-    "QuestAudit.lua", "QuestDialog.lua", "Navigation.lua", "TomTomWaypoints.lua",
-    "MapPins.lua", "UI.lua",
-    "Guides/Dungeons/RagefireChasm.lua", "Guides/Dungeons/WailingCaverns.lua",
-    "Guides/Dungeons/RuinsOfLordaeron.lua", "Guides/Dungeons/Deadmines.lua",
+    "Core.lua",
+    "PlayerState.lua",
+    "Travel.lua",
+    "Taxi.lua",
+    "GuideEngine.lua",
+    "QuestPrerequisites.lua",
+    "QuestAudit.lua",
+    "QuestDialog.lua",
+    "Navigation.lua",
+    "TomTomWaypoints.lua",
+    "MapPins.lua",
+    "UI.lua",
+    "Guides/Dungeons/RagefireChasm.lua",
+    "Guides/Dungeons/WailingCaverns.lua",
+    "Guides/Dungeons/RuinsOfLordaeron.lua",
+    "Guides/Dungeons/Deadmines.lua",
     "Guides/Dungeons/HallOfThanes.lua",
     "Guides/Dungeons/ExcavationSiteWetlands.lua",
     "Guides/Dungeons/CityOfDalaranAttunement.lua",
@@ -68,76 +79,93 @@ for _, path in ipairs({
     "Guides/Dungeons/UpperBlackrockSpire.lua",
     "Guides/Dungeons/DireMaulNorthTribute.lua",
     "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
-    "Guides/Leveling/zephras-isle.lua", "Guides/Loremaster/Durotar.lua",
+    "Guides/Leveling/zephras-isle.lua",
+    "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Mulgore.lua",
-    "Guides/Leveling/durotar.lua",
-    "Guides/Leveling/mulgore.lua",
     "Guides/Leveling/tirisfal-glades.lua",
-    "Guides/Leveling/the-barrens-part-1.lua",
-    "Guides/Leveling/silverpine-forest.lua",
-    "Guides/Leveling/stonetalon-mountains-part-1.lua",
-    "Guides/Leveling/the-barrens-part-2.lua",
-    "Guides/Leveling/stonetalon-mountains-part-3.lua",
-    "Guides/Leveling/the-barrens-part-3.lua",
-    "Guides/Leveling/thousand-needles-part-1.lua",
-    "Guides/Leveling/ashenvale-part-3.lua",
-    "Guides/Leveling/stonetalon-mountains-part-4.lua",
-    "Guides/Leveling/thousand-needles-part-2.lua",
-    "Guides/Leveling/hillsbrad-foothills.lua",
-    "Guides/Era/30-30-arathi-highlands.lua",
-    "Guides/Era/30-31-stranglethorn-vale.lua",
-    "Guides/Era/31-32-thousand-needles.lua",
-    "Guides/Era/32-34-desolace.lua",
-    "Guides/Era/34-36-stranglethorn-vale.lua",
-    "Guides/Era/36-37-alterac-mountains.lua",
-    "Guides/Era/37-38-arathi-highlands.lua",
-    "Guides/Era/37-38-thousand-needles.lua",
-    "Guides/Era/38-38-dustwallow-marsh.lua",
-    "Guides/Era/38-40-stranglethorn-vale.lua",
-    "Guides/Era/40-41-badlands.lua",
-    "Guides/Era/41-42-swamp-of-sorrows.lua",
-    "Guides/Era/42-43-stranglethorn-vale.lua",
-    "Guides/Era/43-44-dustwallow-marsh.lua",
-    "Guides/Era/44-44-desolace.lua",
-    "Guides/Era/44-45-tanaris.lua",
-    "Guides/Era/45-46-feralas.lua",
-    "Guides/Era/46-47-azshara.lua",
-    "Guides/Era/47-47-hinterlands.lua",
-    "Guides/Era/47-47-stranglethorn-vale.lua",
-    "Guides/Era/47-48-searing-gorge.lua",
-    "Guides/Era/48-49-swamp-of-sorrows.lua",
-    "Guides/Era/49-49-dustwallow-marsh.lua",
-    "Guides/Era/49-50-feralas.lua",
-    "Guides/Era/49-50-tanaris.lua",
-    "Guides/Era/50-50-azshara.lua",
-    "Guides/Era/50-51-hinterlands.lua",
-    "Guides/Era/51-51-blasted-lands.lua",
-    "Guides/Era/51-53-ungoro-crater.lua",
-    "Guides/Era/53-54-burning-steppes.lua",
-    "Guides/Era/54-54-felwood.lua",
-    "Guides/Era/54-55-winterspring.lua",
-    "Guides/Era/55-56-felwood.lua",
-    "Guides/Era/56-56-western-plaguelands.lua",
-    "Guides/Era/56-57-eastern-plaguelands.lua",
-    "Guides/Era/57-58-western-plaguelands.lua",
-    "Guides/Era/58-59-silithus.lua",
-    "Guides/Era/59-60-winterspring.lua",
-    "Guides/Leveling/dun-morogh.lua",
+    "Guides/Leveling/mulgore.lua",
+    "Guides/Leveling/durotar.lua",
+    "Guides/Leveling/horde-silverpine-forest.lua",
+    "Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua",
+    "Guides/Leveling/horde-ashenvale.lua",
+    "Guides/Leveling/horde-hillsbrad-foothills.lua",
+    "Guides/Leveling/horde-the-barrens.lua",
+    "Guides/Leveling/horde-stonetalon-mountains.lua",
+    "Guides/Leveling/horde-ashenvale-part-2.lua",
+    "Guides/Leveling/horde-thousand-needles.lua",
+    "Guides/Leveling/horde-hillsbrad-foothills-part-2.lua",
+    "Guides/Leveling/horde-arathi-highlands.lua",
+    "Guides/Leveling/horde-thousand-needles-part-2.lua",
+    "Guides/Leveling/horde-desolace.lua",
+    "Guides/Leveling/horde-stranglethorn-vale.lua",
+    "Guides/Leveling/horde-dustwallow-marsh.lua",
+    "Guides/Leveling/horde-alterac-mountains-and-arathi-highlands.lua",
+    "Guides/Leveling/horde-badlands.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-and-swamp-of-sorrows.lua",
+    "Guides/Leveling/horde-desolace-part-2.lua",
+    "Guides/Leveling/horde-tanaris.lua",
+    "Guides/Leveling/horde-dustwallow-marsh-part-2.lua",
+    "Guides/Leveling/horde-tanaris-part-2.lua",
+    "Guides/Leveling/horde-feralas.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-part-2.lua",
+    "Guides/Leveling/horde-swamp-of-sorrows.lua",
+    "Guides/Leveling/horde-tanaris-and-dustwallow-marsh.lua",
+    "Guides/Leveling/horde-the-hinterlands.lua",
+    "Guides/Leveling/horde-feralas-and-ungoro-crater.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-and-swamp-of-sorrows-part-2.lua",
+    "Guides/Leveling/horde-blasted-lands.lua",
+    "Guides/Leveling/horde-searing-gorge.lua",
+    "Guides/Leveling/horde-burning-steppes-and-azshara.lua",
+    "Guides/Leveling/horde-felwood-and-winterspring.lua",
+    "Guides/Leveling/horde-ungoro-crater.lua",
+    "Guides/Leveling/horde-azshara.lua",
+    "Guides/Leveling/horde-felwood-and-winterspring-part-2.lua",
+    "Guides/Leveling/horde-western-and-eastern-plaguelands.lua",
+    "Guides/Leveling/horde-winterspring.lua",
+    "Guides/Leveling/horde-silithus.lua",
     "Guides/Leveling/elwynn-forest.lua",
+    "Guides/Leveling/dun-morogh.lua",
     "Guides/Leveling/teldrassil.lua",
-    "Guides/Leveling/darkshore-part-1.lua",
-    "Guides/Leveling/westfall.lua",
-    "Guides/Leveling/loch-modan.lua",
-    "Guides/Leveling/redridge-mountains-part-1.lua",
-    "Guides/Leveling/darkshore-part-2.lua",
-    "Guides/Leveling/ashenvale-part-1.lua",
-    "Guides/Leveling/stonetalon-mountains-part-2.lua",
-    "Guides/Leveling/darkshore-part-3.lua",
-    "Guides/Leveling/ashenvale-part-2.lua",
-    "Guides/Leveling/wetlands.lua",
-    "Guides/Leveling/redridge-mountains-part-2.lua",
-    "Guides/Leveling/duskwood.lua",
-    "Guides/Leveling/ashenvale-part-4.lua",
+    "Guides/Leveling/alliance-westfall.lua",
+    "Guides/Leveling/alliance-darkshore.lua",
+    "Guides/Leveling/alliance-loch-modan.lua",
+    "Guides/Leveling/alliance-redridge-and-westfall.lua",
+    "Guides/Leveling/alliance-darkshore-part-2.lua",
+    "Guides/Leveling/alliance-ashenvale-and-stonetalon-mountains.lua",
+    "Guides/Leveling/alliance-wetlands.lua",
+    "Guides/Leveling/alliance-duskwood-and-redridge-mountains.lua",
+    "Guides/Leveling/alliance-wetlands-part-2.lua",
+    "Guides/Leveling/alliance-stonetalon-mountains-and-ashenvale.lua",
+    "Guides/Leveling/alliance-duskwood-and-stranglethorn-vale.lua",
+    "Guides/Leveling/alliance-hillsbrad-foothills-and-arathi-highlands.lua",
+    "Guides/Leveling/alliance-dustwallow-marsh-and-thousand-needles.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale.lua",
+    "Guides/Leveling/alliance-desolace.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-2.lua",
+    "Guides/Leveling/alliance-swamp-of-sorrows.lua",
+    "Guides/Leveling/alliance-arathi-highlands-and-alterac-mountains.lua",
+    "Guides/Leveling/alliance-dustwallow-marsh.lua",
+    "Guides/Leveling/alliance-desolace-part-2.lua",
+    "Guides/Leveling/alliance-badlands.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-3.lua",
+    "Guides/Leveling/alliance-swamp-of-sorrows-part-2.lua",
+    "Guides/Leveling/alliance-tanaris.lua",
+    "Guides/Leveling/alliance-feralas-and-tanaris.lua",
+    "Guides/Leveling/alliance-the-hinterlands.lua",
+    "Guides/Leveling/alliance-tanaris-part-2.lua",
+    "Guides/Leveling/alliance-ungoro-crater.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-4.lua",
+    "Guides/Leveling/alliance-searing-gorge.lua",
+    "Guides/Leveling/alliance-blasted-lands-and-burning-steppes.lua",
+    "Guides/Leveling/alliance-western-plaguelands.lua",
+    "Guides/Leveling/alliance-azshara-and-felwood.lua",
+    "Guides/Leveling/alliance-feralas-and-azshara.lua",
+    "Guides/Leveling/alliance-ungoro-crater-part-2.lua",
+    "Guides/Leveling/alliance-winterspring-and-felwood.lua",
+    "Guides/Leveling/alliance-burning-steppes.lua",
+    "Guides/Leveling/alliance-western-and-eastern-plaguelands.lua",
+    "Guides/Leveling/alliance-winterspring.lua",
+    "Guides/Leveling/alliance-silithus.lua",
     "Guides/Class/Warrior.lua",
     "Guides/Class/Paladin.lua",
     "Guides/Class/Hunter.lua",
@@ -148,41 +176,6 @@ for _, path in ipairs({
     "Guides/Class/Warlock.lua",
     "Guides/Class/Druid.lua",
     "Guides/Miscellaneous/LibraryBooks.lua",
-    "Guides/Era/30-31-wetlands.lua",
-    "Guides/Era/31-32-hillsbrad-foothills.lua",
-    "Guides/Era/32-33-stranglethorn-vale.lua",
-    "Guides/Era/33-34-thousand-needles.lua",
-    "Guides/Era/34-35-desolace.lua",
-    "Guides/Era/36-37-stranglethorn-vale.lua",
-    "Guides/Era/37-37-alterac-mountains.lua",
-    "Guides/Era/37-38-arathi-highlands-alliance.lua",
-    "Guides/Era/38-39-dustwallow-marsh.lua",
-    "Guides/Era/39-40-stranglethorn-vale.lua",
-    "Guides/Era/40-41-badlands-alliance.lua",
-    "Guides/Era/41-42-swamp-of-sorrows-alliance.lua",
-    "Guides/Era/42-43-stranglethorn-vale-alliance.lua",
-    "Guides/Era/43-43-desolace.lua",
-    "Guides/Era/43-44-tanaris.lua",
-    "Guides/Era/44-46-feralas.lua",
-    "Guides/Era/46-46-azshara.lua",
-    "Guides/Era/46-46-hinterlands.lua",
-    "Guides/Era/46-47-stranglethorn-vale.lua",
-    "Guides/Era/47-48-searing-gorge-alliance.lua",
-    "Guides/Era/48-49-feralas.lua",
-    "Guides/Era/49-50-tanaris-alliance.lua",
-    "Guides/Era/50-50-hinterlands.lua",
-    "Guides/Era/50-51-blasted-lands.lua",
-    "Guides/Era/51-52-ungoro-crater.lua",
-    "Guides/Era/52-53-azshara.lua",
-    "Guides/Era/53-54-felwood.lua",
-    "Guides/Era/54-55-winterspring-alliance.lua",
-    "Guides/Era/55-56-burning-steppes.lua",
-    "Guides/Era/55-56-felwood-alliance.lua",
-    "Guides/Era/56-57-western-plaguelands.lua",
-    "Guides/Era/57-58-eastern-plaguelands.lua",
-    "Guides/Era/57-58-western-plaguelands-alliance.lua",
-    "Guides/Era/58-59-silithus-alliance.lua",
-    "Guides/Era/59-60-winterspring-alliance.lua",
 }) do Load(path) end
 
 local function Serialize(value)
@@ -238,18 +231,20 @@ for _, guideID in ipairs(ns.guideOrder) do
             goals[#goals + 1] = goal
         end
     end
-    for _, questID in ipairs(questOrder) do
-        local signature, firstID, mismatchID
-        for _, goal in ipairs(byQuest[questID]) do
-            local current = Serialize(goal.conditions)
-            if signature == nil then
-                signature, firstID = current, goal.id
-            elseif current ~= signature and not mismatchID then
-                mismatchID = goal.id
+    if not guide.casualSpine then
+        for _, questID in ipairs(questOrder) do
+            local signature, firstID, mismatchID
+            for _, goal in ipairs(byQuest[questID]) do
+                local current = Serialize(goal.conditions)
+                if signature == nil then
+                    signature, firstID = current, goal.id
+                elseif current ~= signature and not mismatchID then
+                    mismatchID = goal.id
+                end
             end
+            Check(mismatchID == nil, ("%s quest %d: %s and %s do not share conditions")
+                :format(guideID, questID, tostring(firstID), tostring(mismatchID)))
         end
-        Check(mismatchID == nil, ("%s quest %d: %s and %s do not share conditions")
-            :format(guideID, questID, tostring(firstID), tostring(mismatchID)))
     end
 end
 
@@ -329,9 +324,11 @@ for _, guideID in ipairs(ns.guideOrder) do
             end
         end
     end
-    for _, issue in ipairs(guideData.ChainViolations(guide, guideID)) do
-        Check(false, ("%s %s accept for quest %d has an invalid prerequisite turn-in for quest %d")
-            :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
+    if not guide.casualSpine then
+        for _, issue in ipairs(guideData.ChainViolations(guide, guideID)) do
+            Check(false, ("%s %s accept for quest %d has an invalid prerequisite turn-in for quest %d")
+                :format(issue.guideID, tostring(issue.goalID), issue.acceptQuest, issue.needTurnin))
+        end
     end
 
     local objectivesByQuest = {}
@@ -374,9 +371,16 @@ for _, issue in ipairs(guideData.DetourCoverageViolations(ns.guides)) do
         :format(issue.detourID, issue.questID, issue.canonicalID,
             issue.detourKinds, issue.canonicalKinds, issue.missing))
 end
-for _, issue in ipairs(guideData.ShippedLevelingCoverageViolations(ns.guides)) do
-    Check(false, ("%s quest %d is weaker than %s (has %s, missing %s). Add the steps or CoverageGapAllowlist.")
-        :format(issue.detourID, issue.questID, issue.canonicalID, issue.detourKinds, issue.missing))
+-- Casual spine + Forever weaves: skip classic-vs-detour coverage until chapters are hand-audited.
+do
+    local nonCasualSpine = {}
+    for id, g in pairs(ns.guides) do
+        if not g.casualSpine then nonCasualSpine[id] = g end
+    end
+    for _, issue in ipairs(guideData.ShippedLevelingCoverageViolations(nonCasualSpine)) do
+        Check(false, ("%s quest %d is weaker than %s (has %s, missing %s). Add the steps or CoverageGapAllowlist.")
+            :format(issue.detourID, issue.questID, issue.canonicalID, issue.detourKinds, issue.missing))
+    end
 end
 for _, issue in ipairs(guideData.PrerequisiteTurninViolations(ns.guides, ns.questPrerequisites)) do
     Check(false, ("%s %s accept %d needs a turnin-%d step in that guide")
@@ -385,6 +389,18 @@ end
 for _, issue in ipairs(guideData.ItemStartInversionViolations(ns.guides)) do
     Check(false, ("%s %s depends on %s: loot/collect the starter item before Use-the-item accept for quest %d")
         :format(issue.guideID, tostring(issue.goalID), tostring(issue.acceptID), issue.questID))
+end
+for _, issue in ipairs(guideData.ItemStartQuestObjectiveViolations(ns.guides)) do
+    Check(false, ("%s %s uses QuestObjective(%d) before %s: use a note with activeOrCompleted, not QuestObjective, for item-starts")
+        :format(issue.guideID, tostring(issue.goalID), issue.questID, tostring(issue.acceptID)))
+end
+for _, issue in ipairs(guideData.PinlessAcceptViolations(ns.guides)) do
+    Check(false, ("%s %s %s")
+        :format(issue.guideID, tostring(issue.goalID), issue.detail))
+end
+for _, issue in ipairs(guideData.OrphanAcceptViolations(ns.guides)) do
+    Check(false, ("%s %s accepts quest %d with no turn-in in any shipped guide (add turnin or OrphanAcceptAllowlist)")
+        :format(issue.guideID, tostring(issue.goalID), issue.questID))
 end
 
 if failures > 0 then

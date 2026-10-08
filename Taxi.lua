@@ -101,35 +101,6 @@ function Taxi:ContinentFor(mapID)
     return nil
 end
 
-function Taxi:Capture(api)
-    if not ns.charDB then return false end
-    local mapID, x, y = ns.PlayerState:CapturePosition(api)
-    local reachable, known = self:ReadDestinations(api, mapID)
-    if next(known) == nil then return false end
-    self:Remember(known, self:ContinentFor(mapID))
-    if mapID and x and y and next(reachable) ~= nil then
-        if type(ns.charDB.taxiRoutes) ~= "table" then ns.charDB.taxiRoutes = {} end
-        ns.charDB.taxiRoutes[mapID] = { x = x, y = y, destinations = reachable }
-    end
-    return true
-end
-
-function Taxi:AtDestination(goal, state)
-    if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID or not ns.Travel then
-        return false
-    end
-    local wanted = NormalizeName(goal.taxiDestination)
-    if not wanted or wanted == "" then return false end
-    local function Matches(mapID)
-        if not mapID then return false end
-        local name = NormalizeName(ns.Travel:MapName(mapID))
-        if not name or name == "the next zone" then return false end
-        return name == wanted or string.find(name, wanted, 1, true) or string.find(wanted, name, 1, true)
-    end
-    if Matches(state.mapID) then return true end
-    return ns.Travel.PairedMap and Matches(ns.Travel:PairedMap(state.mapID)) or false
-end
-
 -- Zone suffixes shared by many places. Matching on one of these alone made
 -- "Stonetalon Mountains" match any known "... Mountains" flight point.
 local GENERIC_WORDS = {
@@ -159,6 +130,182 @@ local function FindDestination(destinations, wanted)
     end
 end
 
+local function RememberBoarding(mapID, x, y, destinations, state)
+    if not ns.charDB or not ns.Travel or not ns.Travel.CampFlightMaster then return end
+    if type(ns.charDB.taxiBoarding) ~= "table" then ns.charDB.taxiBoarding = {} end
+    local master = ns.Travel:CampFlightMaster(mapID, x, y, state or {})
+    if not master or type(master.node) ~= "string" then return end
+    local key = NormalizeName(master.node)
+    if not key or key == "" then return end
+    ns.charDB.taxiBoarding[key] = {
+        mapID = master.mapID,
+        x = master.x,
+        y = master.y,
+        node = master.node,
+        destinations = destinations,
+    }
+end
+
+function Taxi:BoardingForNode(nodeName)
+    if type(nodeName) ~= "string" or not ns.charDB then return nil end
+    local board = ns.charDB.taxiBoarding
+    local key = NormalizeName(nodeName)
+    return type(board) == "table" and key and board[key] or nil
+end
+
+function Taxi:ReachableFromMaster(master, destinationName)
+    if not master or type(destinationName) ~= "string" then return nil end
+    local wanted = NormalizeName(destinationName)
+    if not wanted or wanted == "" then return nil end
+    local board = type(master.node) == "string" and self:BoardingForNode(master.node) or nil
+    if board and type(board.destinations) == "table" then
+        return FindDestination(board.destinations, wanted)
+    end
+    local routes = ns.charDB and ns.charDB.taxiRoutes
+    local route = type(routes) == "table" and routes[master.mapID]
+    if type(route) == "table" and type(route.destinations) == "table"
+        and type(route.x) == "number" and type(master.x) == "number" and ns.Navigation then
+        local dist = ns.Navigation.Distance(route.x, route.y, master.x, master.y)
+        if dist and dist <= 0.03 then
+            return FindDestination(route.destinations, wanted)
+        end
+    end
+    return nil
+end
+
+local function SameContinentMaps(first, second)
+    if not ns.Travel or type(first) ~= "number" or type(second) ~= "number" then
+        return false
+    end
+    local a = ns.Travel:Continent(first)
+    local b = ns.Travel:Continent(second)
+    return type(a) == "string" and a == b
+end
+
+local function BoardingSavesWalk(state, master, destinationLeg)
+    if not state or not master or not ns.Navigation then return true end
+    if type(destinationLeg) ~= "table" or not destinationLeg.x or not destinationLeg.y then
+        return true
+    end
+    if not state.x or not state.y then return true end
+    local direct = ns.Navigation:DistanceToLeg(state, destinationLeg)
+    local toMaster = ns.Navigation.Distance(state.x, state.y, master.x, master.y)
+    if not direct or not toMaster then return true end
+    if direct <= toMaster then return false end
+    if state.mapID == destinationLeg.mapID and master.mapID == destinationLeg.mapID then
+        local tail = ns.Navigation.Distance(master.x, master.y, destinationLeg.x, destinationLeg.y)
+        if tail then
+            return toMaster + tail * 0.35 < direct
+        end
+    end
+    return true
+end
+
+function Taxi:ChooseFlightMaster(state, destinationName, destinationLeg)
+    if not state or not state.mapID or type(destinationName) ~= "string" or not ns.Travel then
+        return nil
+    end
+    local nearest = ns.Travel:FlightMaster(state)
+    local best, bestWalk
+
+    local function consider(master)
+        if not master or not ns.Travel:Allows(master.faction, state) then return end
+        if not SameContinentMaps(state.mapID, master.mapID) then return end
+        if not self:ReachableFromMaster(master, destinationName) then return end
+        if not BoardingSavesWalk(state, master, destinationLeg) then return end
+        if not state.x or not state.y then
+            best = master
+            return
+        end
+        local walk = ns.Navigation and ns.Navigation.Distance(state.x, state.y, master.x, master.y)
+        if not walk then return end
+        if not bestWalk or walk < bestWalk then
+            best, bestWalk = master, walk
+        end
+    end
+
+    if nearest and self:ReachableFromMaster(nearest, destinationName)
+        and BoardingSavesWalk(state, nearest, destinationLeg) then
+        return nearest
+    end
+
+    consider(nearest)
+    for _, master in ipairs(ns.Travel.flightMasters) do
+        if master ~= nearest then consider(master) end
+    end
+
+    if best then return best end
+
+    if nearest and self:LearnedDestination(state, destinationName) then
+        return nearest
+    end
+    return nil
+end
+
+function Taxi:FlightLeg(state, destinationName, followUp, destinationLeg)
+    if type(destinationName) ~= "string" or destinationName == "" then return nil end
+    if not self:LearnedDestination(state, destinationName) then return nil end
+    local master = self:ChooseFlightMaster(state, destinationName, destinationLeg)
+    if not master then return nil end
+    local label = "Take the flight path to " .. destinationName .. "."
+    if followUp then
+        label = "Take the flight path to " .. destinationName .. ", then " .. followUp .. "."
+    end
+    return {
+        mapID = master.mapID,
+        x = master.x,
+        y = master.y,
+        radius = 0.02,
+        flight = true,
+        learnedTaxi = true,
+        label = label,
+    }
+end
+
+function Taxi:Capture(api)
+    if not ns.charDB then return false end
+    api = api or _G
+    local mapID, x, y = ns.PlayerState:CapturePosition(api)
+    local reachable, known = self:ReadDestinations(api, mapID)
+    if next(known) == nil then return false end
+    self:Remember(known, self:ContinentFor(mapID))
+    local faction = type(api.UnitFactionGroup) == "function" and api.UnitFactionGroup("player")
+    local state = { faction = faction == "Alliance" and "Alliance" or faction == "Horde" and "Horde" or nil }
+    if mapID and x and y and next(reachable) ~= nil then
+        if type(ns.charDB.taxiRoutes) ~= "table" then ns.charDB.taxiRoutes = {} end
+        ns.charDB.taxiRoutes[mapID] = { x = x, y = y, destinations = reachable }
+        RememberBoarding(mapID, x, y, reachable, state)
+    end
+    return true
+end
+
+function Taxi:ResolveDestinationName(goal, destinationLeg, state)
+    if type(goal) ~= "table" then return nil end
+    if type(goal.taxiDestination) == "string" then return goal.taxiDestination end
+    if ns.Travel and type(ns.Travel.FlightNodeForLeg) == "function" then
+        return ns.Travel:FlightNodeForLeg(destinationLeg, state)
+    end
+end
+
+function Taxi:AtDestination(goal, state)
+    if not goal or not state or not state.mapID or not ns.Travel then
+        return false
+    end
+    local finalLeg = type(goal.route) == "table" and goal.route[#goal.route] or nil
+    local destinationName = self:ResolveDestinationName(goal, finalLeg, state)
+    if type(destinationName) ~= "string" then return false end
+    local wanted = NormalizeName(destinationName)
+    if not wanted or wanted == "" then return false end
+    local function Matches(mapID)
+        if not mapID then return false end
+        local name = NormalizeName(ns.Travel:MapName(mapID))
+        if not name or name == "the next zone" then return false end
+        return name == wanted or string.find(name, wanted, 1, true) or string.find(wanted, name, 1, true)
+    end
+    if Matches(state.mapID) then return true end
+    return ns.Travel.PairedMap and Matches(ns.Travel:PairedMap(state.mapID)) or false
+end
+
 function Taxi:LearnedDestination(state, destinationName)
     if not state or not state.mapID or type(destinationName) ~= "string" or not ns.charDB then return nil end
     local wanted = NormalizeName(destinationName)
@@ -178,29 +325,6 @@ function Taxi:LearnedDestination(state, destinationName)
     return FindDestination(ns.charDB.taxiNodes, wanted)
 end
 
-function Taxi:GetLearnedLeg(goal, state)
-    if self:AtDestination(goal, state) then return nil end
-    if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID then return nil end
-    if not self:LearnedDestination(state, goal.taxiDestination) then return nil end
-    local routes = ns.charDB.taxiRoutes
-    local route = type(routes) == "table" and routes[state.mapID] or nil
-    local mapID, x, y = state.mapID, route and route.x, route and route.y
-    if not x or not y then
-        local master = ns.Travel and ns.Travel.FlightMaster and ns.Travel:FlightMaster(state)
-        if not master then return nil end
-        mapID, x, y = master.mapID, master.x, master.y
-    end
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        radius = 0.02,
-        label = "Take the flight path to " .. goal.taxiDestination .. ".",
-        learnedTaxi = true,
-        flight = true,
-    }
-end
-
 local function SameTravelMap(stateMap, legMap)
     if type(stateMap) ~= "number" or type(legMap) ~= "number" then
         return false
@@ -211,12 +335,42 @@ local function SameTravelMap(stateMap, legMap)
     return ns.Travel and ns.Travel.Paired and ns.Travel:Paired(stateMap, legMap) or false
 end
 
+function Taxi:GetLearnedLeg(goal, state)
+    if self:AtDestination(goal, state) then return nil end
+    if not goal or not state or not state.mapID then return nil end
+    local finalLeg = type(goal.route) == "table" and goal.route[#goal.route] or nil
+    if type(goal.taxiDestination) ~= "string" then
+        if goal.kind ~= "accept" and goal.kind ~= "turnin" and goal.kind ~= "travel" then
+            return nil
+        end
+        if finalLeg and SameTravelMap(state.mapID, finalLeg.mapID) then
+            return nil
+        end
+    end
+    local destinationName = self:ResolveDestinationName(goal, finalLeg, state)
+    if type(destinationName) ~= "string" then return nil end
+    if finalLeg and ns.Navigation and ns.Navigation.NearPin and ns.Navigation:NearPin(state, finalLeg) then
+        return nil
+    end
+    return self:FlightLeg(state, destinationName, nil, finalLeg)
+end
+
 function Taxi:GetSuggestedLeg(goal, state, destinationLeg)
     local learned = self:GetLearnedLeg(goal, state)
     if learned then
         return learned
     end
-    if not goal or type(goal.taxiDestination) ~= "string" or not state or not state.mapID then
+    if not goal or not state or not state.mapID then
+        return nil
+    end
+    local finalLeg = type(goal.route) == "table" and goal.route[#goal.route] or destinationLeg
+    if type(goal.taxiDestination) ~= "string" then
+        if goal.kind ~= "accept" and goal.kind ~= "turnin" and goal.kind ~= "travel" then
+            return nil
+        end
+    end
+    local destinationName = self:ResolveDestinationName(goal, finalLeg, state)
+    if type(destinationName) ~= "string" then
         return nil
     end
     if self:AtDestination(goal, state) then
@@ -241,6 +395,12 @@ function Taxi:GetSuggestedLeg(goal, state, destinationLeg)
             return nil
         end
     end
+    local leg = self:FlightLeg(state, destinationName, nil, finalLeg)
+    if leg then
+        leg.fallbackTaxi = true
+        leg.learnedTaxi = nil
+        return leg
+    end
     local master = ns.Travel and ns.Travel.FlightMaster and ns.Travel:FlightMaster(state)
     if not master then
         return nil
@@ -250,7 +410,7 @@ function Taxi:GetSuggestedLeg(goal, state, destinationLeg)
         x = master.x,
         y = master.y,
         radius = 0.02,
-        label = "Take the flight path to " .. goal.taxiDestination .. ".",
+        label = "Take the flight path to " .. destinationName .. ".",
         flight = true,
         fallbackTaxi = true,
     }
