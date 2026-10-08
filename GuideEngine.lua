@@ -5,6 +5,16 @@ ns.Engine = Engine
 
 local VALID_KINDS = {
     accept = true, objective = true, turnin = true, gossip = true, travel = true, note = true,
+    confirm = true,
+}
+
+local STARTER_GUIDE_IDS = {
+    ["leveling-era-durotar"] = true,
+    ["leveling-era-mulgore"] = true,
+    ["leveling-era-tirisfal-glades"] = true,
+    ["leveling-era-dun-morogh"] = true,
+    ["leveling-era-elwynn-forest"] = true,
+    ["leveling-era-teldrassil"] = true,
 }
 
 local function FocusedPickupGuide(guide)
@@ -71,6 +81,55 @@ local function Contains(values, expected)
     return false
 end
 
+local function HasOutdoorDestination(goal)
+    local destination = RouteDestination(goal)
+    return type(destination) == "table" and type(destination.mapID) == "number"
+end
+
+-- True when this step is work inside the current instance. Outdoor capital
+-- turn-ins that dependOn dungeon objectives still have world pins; those must
+-- not count as in-instance or they preempt Maur/bosses mid-run (RFC/BFD).
+local function GoalMatchesInstance(goal, state, guide)
+    if type(goal) ~= "table" or type(state) ~= "table" or type(state.instanceID) ~= "number" then
+        return false
+    end
+    local function Walk(condition)
+        if type(condition) ~= "table" then return false end
+        if condition.instance and Contains(condition.instance, state.instanceID) then
+            return true
+        end
+        for _, key in ipairs({ "all", "any" }) do
+            if type(condition[key]) == "table" then
+                for _, child in ipairs(condition[key]) do
+                    if Walk(child) then return true end
+                end
+            end
+        end
+        return false
+    end
+    local seen = {}
+    local function Matches(candidate)
+        if type(candidate) ~= "table" or type(candidate.id) ~= "string" or seen[candidate.id] then
+            return false
+        end
+        seen[candidate.id] = true
+        if HasOutdoorDestination(candidate) then
+            return false
+        end
+        -- Authored enter steps put instance on complete, not conditions.
+        if Walk(candidate.conditions) or Walk(candidate.complete) then
+            return true
+        end
+        if type(guide) ~= "table" then return false end
+        for _, dependencyID in ipairs(candidate.dependsOn or {}) do
+            local dependency = Engine:GetGoal(guide, dependencyID)
+            if Matches(dependency) then return true end
+        end
+        return false
+    end
+    return Matches(goal)
+end
+
 local function Unknown(reason)
     return nil, reason or "Eligibility could not be verified."
 end
@@ -131,6 +190,10 @@ function ns.EvaluateCondition(condition, state)
     end
     if type(condition) ~= "table" then
         return false, "Invalid condition."
+    end
+    -- spine import leaves empty `{}` children as no-op flags.
+    if next(condition) == nil then
+        return true
     end
     if condition.all then
         local unknownReason
@@ -234,6 +297,15 @@ function ns.EvaluateCondition(condition, state)
         end
         local matches = Contains(condition.instance, state.instanceID)
         return matches, matches and nil or "Enter the required instance."
+    end
+    if condition.item then
+        local name = type(condition.item) == "string" and condition.item or condition.item.name
+        if type(name) ~= "string" or name == "" then
+            return false, "Invalid item condition."
+        end
+        local has = ns.PlayerState and ns.PlayerState.HasItem
+            and ns.PlayerState:HasItem(name, state)
+        return has and true or false, has and nil or "Item is not in your bags."
     end
     if condition.quest then
         local questID = condition.quest.id
@@ -355,11 +427,39 @@ local function ValidateTimer(goal)
     return true
 end
 
+local function QuestIDFromCondition(condition)
+    if type(condition) ~= "table" then
+        return nil
+    end
+    local quest = condition.quest
+    if type(quest) == "table" and type(quest.id) == "number" then
+        return quest.id
+    end
+    local objective = condition.questObjective
+    if type(objective) == "table" and type(objective.id) == "number" then
+        return objective.id
+    end
+    for _, key in ipairs({ "all", "any" }) do
+        local group = condition[key]
+        if type(group) == "table" then
+            for _, child in ipairs(group) do
+                local questID = QuestIDFromCondition(child)
+                if questID then
+                    return questID
+                end
+            end
+        end
+    end
+    return nil
+end
+
 local function GoalQuestID(goal)
     local complete = type(goal) == "table" and goal.complete or nil
-    local quest = type(complete) == "table" and complete.quest or nil
-    local objective = type(complete) == "table" and complete.questObjective or nil
-    return type(quest) == "table" and quest.id or type(objective) == "table" and objective.id or nil
+    return QuestIDFromCondition(complete)
+end
+
+function Engine:GetGoalQuestID(goal)
+    return GoalQuestID(goal)
 end
 
 local function TrustedQuestResult(state, goal)
@@ -446,15 +546,26 @@ local function ApplyQuestPrerequisites(guide)
                             group.questIDs[#group.questIDs + 1] = questID
                             group.goalIDs[#group.goalIDs + 1] = turnin.id
                         elseif rule.mode == "all" then
-                            error(("Forever GuideMate: guide %s accept %s needs turn-in quest %d")
-                                :format(guide.id, goal.id, questID), 3)
+                            local softPrereqs = guide.casualSpine == true
+                                or (type(guide.title) == "string"
+                                    and string.find(guide.title, "(Era)", 1, true))
+                            if not softPrereqs then
+                                error(("Forever GuideMate: guide %s accept %s needs turn-in quest %d")
+                                    :format(guide.id, goal.id, questID), 3)
+                            end
                         end
                     end
                     if #group.questIDs == 0 then
-                        error(("Forever GuideMate: guide %s accept %s needs at least one prerequisite turn-in")
-                            :format(guide.id, goal.id), 3)
+                        local softPrereqs = guide.casualSpine == true
+                            or (type(guide.title) == "string"
+                                and string.find(guide.title, "(Era)", 1, true))
+                        if not softPrereqs then
+                            error(("Forever GuideMate: guide %s accept %s needs at least one prerequisite turn-in")
+                                :format(guide.id, goal.id), 3)
+                        end
+                    else
+                        goal.questPrerequisites[#goal.questPrerequisites + 1] = group
                     end
-                    goal.questPrerequisites[#goal.questPrerequisites + 1] = group
                 end
             end
         end
@@ -629,23 +740,15 @@ local function RemoveGuide(id)
     end
 end
 
-function ns:FinalizeGuides()
-    if self.guidesFinalized then return end
-    self.guidesFinalized = true
-    local sources = {}
-    for _, guideID in ipairs(self.guideOrder) do
-        local guide = self.guides[guideID]
-        if IsEraGuide(guide) then
-            sources[#sources + 1] = guide
-        end
-    end
-    if #sources == 0 then return end
-    trackedQuestIDs = nil
-
+local function BuildCasualGuide(faction, sources)
     local segments = {}
-    local levelOneCount = { Alliance = 0, Horde = 0 }
+    local goals = {}
+    local segmentByID = {}
+    -- Each source chapter keeps its own priority space (10, 20, …). Remap onto
+    -- one increasing spine so later zones cannot sort ahead of earlier ones.
+    local routePriority = 0
     for _, source in ipairs(sources) do
-        local faction, levelMin = GuideFactionAndLevel(source)
+        local _, levelMin = GuideFactionAndLevel(source)
         local segment = {
             id = source.id,
             title = source.title,
@@ -654,25 +757,16 @@ function ns:FinalizeGuides()
             maps = {},
             goals = {},
             gate = source.conditions,
-            sourceGoals = source.goals,
         }
-        segments[#segments + 1] = segment
-        if levelMin == 1 and levelOneCount[faction] then
-            levelOneCount[faction] = levelOneCount[faction] + 1
+        local maxLocal = 0
+        for _, goal in ipairs(source.goals or {}) do
+            local localPriority = type(goal.priority) == "number" and goal.priority or 0
+            if localPriority > maxLocal then maxLocal = localPriority end
         end
-    end
-    for _, segment in ipairs(segments) do
-        if segment.levelMin == 1 and (levelOneCount[segment.faction] or 0) > 1 then
-            segment.fork = true
-        end
-    end
-
-    local goals = {}
-    local segmentByID = {}
-    for _, segment in ipairs(segments) do
-        segmentByID[segment.id] = segment
-        for _, goal in ipairs(segment.sourceGoals) do
-            local copy = CopyEraGoal(goal, segment, segment.gate)
+        for _, goal in ipairs(source.goals or {}) do
+            local copy = CopyEraGoal(goal, segment, source.conditions)
+            local localPriority = type(goal.priority) == "number" and goal.priority or 0
+            copy.priority = routePriority + localPriority
             for _, leg in ipairs(copy.route or {}) do
                 if type(leg.mapID) == "number" then
                     segment.maps[leg.mapID] = (segment.maps[leg.mapID] or 0) + 1
@@ -681,37 +775,71 @@ function ns:FinalizeGuides()
             segment.goals[#segment.goals + 1] = copy
             goals[#goals + 1] = copy
         end
-        segment.sourceGoals = nil
-        segment.gate = nil
+        routePriority = routePriority + maxLocal + 1000
+        segmentByID[segment.id] = segment
+        segments[#segments + 1] = segment
     end
-
     local goalByID = {}
     for index, goal in ipairs(goals) do
         goalByID[goal.id] = index
     end
-    local retired = {}
-    for _, segment in ipairs(segments) do
-        retired[segment.id] = true
-        RemoveGuide(segment.id)
-    end
-    self.retiredEraGuides = retired
-    self:RegisterGuide({
-        id = "leveling-era",
-        title = "1-60 Era",
+    if #segments == 0 then return nil end
+    return {
+        id = "leveling-casual-" .. string.lower(faction),
+        title = "Forever Casual Route",
         category = "Leveling Quest Guides",
         revision = 1,
-        series = "era",
+        series = "casual",
+        compactLibrary = true,
+        -- Built from leveling spines; Forever weave prerequisites may still be mid-port.
+        casualSpine = true,
         segments = segments,
         segmentByID = segmentByID,
         goalByID = goalByID,
         conditions = {
             all = {
-                { level = { min = 1 } },
-                { any = { { faction = "Alliance" }, { faction = "Horde" } } },
+                { level = { min = 12 } },
+                { faction = faction },
             },
         },
         goals = goals,
-    })
+    }
+end
+
+function ns:FinalizeGuides()
+    if self.guidesFinalized then return end
+    self.guidesFinalized = true
+    local allianceSources, hordeSources = {}, {}
+    local retired = {}
+    for _, guideID in ipairs(self.guideOrder) do
+        local guide = self.guides[guideID]
+        if IsEraGuide(guide) and not STARTER_GUIDE_IDS[guide.id] then
+            local faction = GuideFactionAndLevel(guide)
+            if faction == "Alliance" then
+                allianceSources[#allianceSources + 1] = guide
+            elseif faction == "Horde" then
+                hordeSources[#hordeSources + 1] = guide
+            end
+            retired[guide.id] = faction
+        end
+    end
+    if next(retired) == nil then return end
+    trackedQuestIDs = nil
+    if ns.SkipLineage then ns.SkipLineage:InvalidateDependents() end
+
+    -- Keep registration / TOC order (Horde: Silverpine then Barrens).
+    -- Sorting by levelMin alone is fine; do not reorder by title.
+
+    for guideID in pairs(retired) do
+        RemoveGuide(guideID)
+    end
+    self.retiredEraGuides = retired
+    self.retiredCasualByFaction = retired
+
+    local alliance = BuildCasualGuide("Alliance", allianceSources)
+    local horde = BuildCasualGuide("Horde", hordeSources)
+    if alliance then self:RegisterGuide(alliance) end
+    if horde then self:RegisterGuide(horde) end
 end
 
 local function CollectQuestIDs(value, found)
@@ -786,13 +914,14 @@ function ns.QuestIDsForGoals(goals)
     return ids
 end
 
--- The open chapter is resolved on this pulse. Every other quest in the addon
--- follows behind it so a kill credit does not ask the client about all of them.
+-- Prefer quests for the open guide. Compact Casual queries the full route;
+-- non-compact segmented guides still prioritize the open chapter first.
 function ns.QuestQuery()
     local all = ns.GetTrackedQuestIDs()
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     local segmentID = ""
-    if type(guide) == "table" and type(guide.segmentByID) == "table" then
+    if type(guide) == "table" and type(guide.segmentByID) == "table"
+        and not guide.compactLibrary then
         local segment = ns.Engine and ns.Engine.currentSegment
         if type(segment) ~= "table" or guide.segmentByID[segment.id] ~= segment then
             local pick = ns.charDB.eraChapterPick or ns.charDB.eraFloor
@@ -838,13 +967,16 @@ function ns.QuestQuery()
 end
 
 function Engine:GetGoal(guide, goalID)
+    if type(guide) ~= "table" or type(goalID) ~= "string" then
+        return nil
+    end
     local indexed = guide.goalByID
     if indexed then
         local index = indexed[goalID]
         if index then return guide.goals[index], index end
         return nil
     end
-    for index, goal in ipairs(guide.goals) do
+    for index, goal in ipairs(guide.goals or {}) do
         if goal.id == goalID then
             return goal, index
         end
@@ -852,6 +984,9 @@ function Engine:GetGoal(guide, goalID)
 end
 
 function Engine:GetLedger(guide, create)
+    if type(guide) ~= "table" or type(guide.id) ~= "string" then
+        return nil
+    end
     local ledgers = ns.charDB.completionLedger
     local guideLedger = ledgers[guide.id]
     if not guideLedger and create then
@@ -882,6 +1017,12 @@ function Engine:IsGoalDone(goal, state, guide)
     if guide and guide.id == ns.charDB.selectedGuide and ns.charDB.manualCompleted[goal.id] then
         return true
     end
+    if ns.SkipLineage and ns.SkipLineage:IsSkipped(goal.id) then
+        return true
+    end
+    if self:QuestChainBypassed(goal, state, _G) then
+        return true
+    end
     local evaluation
     if goal.complete then
         evaluation = ns.EvaluateCondition(goal.complete, state)
@@ -908,6 +1049,8 @@ function Engine:IsGoalDone(goal, state, guide)
     end
     return evaluation == true
 end
+
+local NO_ENTRIES = {}
 
 function Engine:ReconcileGuide(guide, state, goals)
     self.inferredCompletedByGuide = self.inferredCompletedByGuide or {}
@@ -957,7 +1100,7 @@ function Engine:ReconcileGuide(guide, state, goals)
         end
         expanded[goalID] = true
         visiting[goalID] = true
-        for _, dependencyID in ipairs(goal.dependsOn or {}) do
+        for _, dependencyID in ipairs(goal.dependsOn or NO_ENTRIES) do
             if MayInfer(dependencyID) then
                 inferred[dependencyID] = true
                 local dependency = self:GetGoal(guide, dependencyID)
@@ -966,10 +1109,10 @@ function Engine:ReconcileGuide(guide, state, goals)
                 end
             end
         end
-        for _, group in ipairs(goal.questPrerequisites or {}) do
+        for _, group in ipairs(goal.questPrerequisites or NO_ENTRIES) do
             local applies = ns.EvaluateCondition(group.conditions, state)
             if applies ~= false then
-                for _, dependencyID in ipairs(group.goalIDs or {}) do
+                for _, dependencyID in ipairs(group.goalIDs or NO_ENTRIES) do
                     if group.mode == "all" or self:IsDependencyDone(guide, dependencyID, state) then
                         if MayInfer(dependencyID) then
                             inferred[dependencyID] = true
@@ -981,10 +1124,11 @@ function Engine:ReconcileGuide(guide, state, goals)
         end
         visiting[goalID] = nil
     end
+    local visiting = {}
     for goalID in pairs(done) do
         local goal = self:GetGoal(guide, goalID)
         if goal and goal.kind ~= "travel" and goal.kind ~= "note" then
-            InferDependencies(goalID, {})
+            InferDependencies(goalID, visiting)
         end
     end
     self.reconcileStamp = guide.id .. "\0" .. tostring(guide.revision) .. "\0" .. tostring(state)
@@ -1027,6 +1171,19 @@ local function HasPermanentFailure(condition, state)
     return eligible == false
 end
 
+local function GoalRequiresItem(goal)
+    if not goal or goal.kind ~= "accept" or goal.route ~= nil or type(goal.text) ~= "string" then
+        return nil
+    end
+    local item = goal.text:match("^Use the (.+) to accept") or goal.text:match("^Use (.+) to accept")
+    if not item then return nil end
+    local period = item:find("%.", 1, true)
+    if period then item = item:sub(1, period - 1) end
+    local dropped = item:find(" dropped by ", 1, true)
+    if dropped then item = item:sub(1, dropped - 1) end
+    return item:match("^%s*(.-)%s*$")
+end
+
 -- The step that follows the current one in authored order. Ready-candidate
 -- order skips anything still waiting on the current step, which let a later
 -- dungeon kill show up as Next while the player was still talking to Neeru.
@@ -1042,6 +1199,16 @@ function Engine:NextRouteGoal(guide, current, state)
     local function Open(goal)
         if goal.id == current.id or self:IsGoalDone(goal, state, guide) then return false end
         if HasPermanentFailure(goal.conditions, state) then return false end
+        if GoalRequiresItem(goal) and not self:IsReady(guide, goal, state) then
+            return false
+        end
+        if goal.kind == "objective" then
+            local currentQuest = GoalQuestID(current)
+            local goalQuest = GoalQuestID(goal)
+            if currentQuest ~= goalQuest and not self:IsReady(guide, goal, state) then
+                return false
+            end
+        end
         return true
     end
     local currentPriority = Priority(current)
@@ -1215,6 +1382,11 @@ end
 
 function Engine:RouteStartIndex(guide, route, state)
     state = state or {}
+    -- Compact Casual is one flat route. Zone segments stay for merge/migration
+    -- only; floor/pick must not lock the player into a "chapter".
+    if guide and guide.compactLibrary then
+        return 1
+    end
     local pickID = ns.charDB and ns.charDB.eraChapterPick
     local pickIndex = pickID and self:RouteIndex(route, pickID) or nil
     if pickIndex then return pickIndex end
@@ -1278,60 +1450,53 @@ end
 
 function Engine:MigrateEraProgress()
     local retired = ns.retiredEraGuides
-    local guide = ns.guides["leveling-era"]
-    if not ns.charDB or ns.charDB.eraProgressMerged or not retired or not guide or not guide.goalByID then
-        return
+    if not ns.charDB or not retired then return end
+    if ns.charDB.selectedGuide == "leveling-era" then
+        local faction = self.state and self.state.faction
+        if faction ~= "Alliance" and faction ~= "Horde" then
+            faction = "Horde"
+        end
+        ns.charDB.selectedGuide = "leveling-casual-" .. string.lower(faction)
     end
-    ns.charDB.eraProgressMerged = true
-    local function Prefixed(ownerID, goalID)
+    if ns.charDB.casualProgressMerged then return end
+    local function GuideForChapter(chapterID)
+        local faction = retired[chapterID]
+        if faction == true or type(faction) ~= "string" then return nil end
+        return ns.guides["leveling-casual-" .. string.lower(faction)]
+    end
+    local oldID = ns.charDB.selectedGuide
+    local target = ns.guides[oldID]
+    if retired[oldID] then
+        target = GuideForChapter(oldID)
+        if target then
+            ns.charDB.selectedGuide = target.id
+            ns.charDB.eraFloor = oldID
+        end
+    end
+    local function Prefixed(ownerID, goalID, into)
         if type(goalID) ~= "string" then return goalID end
-        if guide.goalByID[goalID] then return goalID end
-        if ownerID then
+        if into and into.goalByID and into.goalByID[goalID] then return goalID end
+        if ownerID and into and into.goalByID then
             local combined = ownerID .. ":" .. goalID
-            if guide.goalByID[combined] then return combined end
+            if into.goalByID[combined] then return combined end
         end
         return nil
     end
-    local function UniquePrefix(goalID)
-        if type(goalID) ~= "string" then return goalID end
-        if guide.goalByID[goalID] then return goalID end
-        local found
-        for guideID in pairs(retired) do
-            if guide.goalByID[guideID .. ":" .. goalID] then
-                if found then return goalID end
-                found = guideID .. ":" .. goalID
-            end
-        end
-        return found or goalID
+    if target and target.goalByID and retired[oldID] and ns.charDB.activeGoal then
+        ns.charDB.activeGoal = Prefixed(oldID, ns.charDB.activeGoal, target) or ns.charDB.activeGoal
     end
-    local oldID = ns.charDB.selectedGuide
-    local savedOwner = retired[oldID] and oldID or nil
-    if savedOwner then
-        local segment = guide.segmentByID[oldID]
-        if segment and segment.fork then
-            ns.charDB.eraSegment = oldID
-        end
-        ns.charDB.eraFloor = oldID
-        if ns.charDB.activeGoal then
-            ns.charDB.activeGoal = Prefixed(oldID, ns.charDB.activeGoal) or ns.charDB.activeGoal
-        end
-        local history = {}
-        for _, goalID in ipairs(ns.charDB.history or {}) do
-            history[#history + 1] = Prefixed(oldID, goalID) or goalID
-        end
-        ns.charDB.history = history
-        ns.charDB.selectedGuide = "leveling-era"
-    end
-    local merged = self:GetLedger(guide, true)
     local ledgers = ns.charDB.completionLedger
     if type(ledgers) == "table" then
-        for guideID in pairs(retired) do
+        for guideID, faction in pairs(retired) do
+            local guide = type(faction) == "string"
+                and ns.guides["leveling-casual-" .. string.lower(faction)]
             local revisions = ledgers[guideID]
-            if type(revisions) == "table" then
+            if guide and type(revisions) == "table" then
+                local merged = self:GetLedger(guide, true)
                 for _, done in pairs(revisions) do
                     if type(done) == "table" then
                         for goalID, value in pairs(done) do
-                            local prefixed = Prefixed(guideID, goalID)
+                            local prefixed = Prefixed(guideID, goalID, guide)
                             if prefixed then merged[prefixed] = value end
                         end
                     end
@@ -1339,24 +1504,52 @@ function Engine:MigrateEraProgress()
                 ledgers[guideID] = nil
             end
         end
-    end
-    local function Rewrite(map)
-        if type(map) ~= "table" then return end
-        local copy = {}
-        for key, value in pairs(map) do
-            local owned = savedOwner and Prefixed(savedOwner, key) or nil
-            copy[owned or UniquePrefix(key)] = value
+        -- Merge even when selectedGuide was cleared or already remapped: the old
+        -- merged Era ledger is keyed leveling-era, not a chapter id.
+        if type(ledgers["leveling-era"]) == "table" then
+            for _, guideID in ipairs({ "leveling-casual-alliance", "leveling-casual-horde" }) do
+                local guide = ns.guides[guideID]
+                if guide then
+                    local merged = self:GetLedger(guide, true)
+                    for _, done in pairs(ledgers["leveling-era"]) do
+                        if type(done) == "table" then
+                            for goalID, value in pairs(done) do
+                                if guide.goalByID[goalID] then merged[goalID] = value end
+                            end
+                        end
+                    end
+                end
+            end
+            ledgers["leveling-era"] = nil
         end
-        for key in pairs(map) do map[key] = nil end
-        for key, value in pairs(copy) do map[key] = value end
     end
-    Rewrite(ns.charDB.deferred)
-    Rewrite(ns.charDB.manualCompleted)
-    Rewrite(ns.charDB.notOffered)
+    if target and target.goalByID then
+        local function MigrateSkipTable(source)
+            if type(source) ~= "table" then return end
+            ns.charDB.skipped = type(ns.charDB.skipped) == "table" and ns.charDB.skipped or {}
+            for goalID, value in pairs(source) do
+                if value then
+                    local prefixed = Prefixed(oldID, goalID, target) or goalID
+                    ns.charDB.skipped[prefixed] = true
+                end
+            end
+        end
+        MigrateSkipTable(ns.charDB.deferred)
+        MigrateSkipTable(ns.charDB.skipped)
+    end
+    if type(ns.charDB.deferred) == "table" then
+        ns.charDB.deferred = {}
+    end
+    ns.charDB.casualProgressMerged = true
+    ns.charDB.eraProgressMerged = true
 end
 
 function Engine:SegmentGoals(guide, state)
     if type(guide.segments) ~= "table" then return guide.goals end
+    if guide.compactLibrary then
+        self.currentSegment = nil
+        return guide.goals
+    end
     local segment = self:ActiveSegment(guide, state)
     self.currentSegment = segment
     return segment and segment.goals or {}
@@ -1364,6 +1557,10 @@ end
 
 function Engine:ActiveChapter(guide)
     if type(guide) ~= "table" or type(guide.segmentByID) ~= "table" then
+        return nil
+    end
+    -- Compact Casual never scopes reconcile/candidates to a zone segment.
+    if guide.compactLibrary then
         return nil
     end
     local segment = self.currentSegment
@@ -1393,7 +1590,9 @@ function Engine:GetGuideProgress(guide, state, segment)
     local goals = guide.goals
     if segment and segment.goals then
         goals = segment.goals
-    elseif guide.segments then
+    elseif guide.segments and not guide.compactLibrary then
+        -- Expanded segment guides (old Era-style library rows) report the open
+        -- chapter. Compact Casual reports the full faction route.
         local active = self:ActiveSegment(guide, state)
         if active then
             goals = active.goals
@@ -1406,6 +1605,7 @@ function Engine:GetGuideProgress(guide, state, segment)
             end
         end
     end
+    -- compactLibrary keeps guide.goals as the flattened full route.
     local guideEligible = ns.EvaluateCondition(guide.conditions, state)
     local completed, eligible, total = 0, 0, #goals
     if guideEligible == false then
@@ -1414,7 +1614,8 @@ function Engine:GetGuideProgress(guide, state, segment)
     for _, goal in ipairs(goals) do
         if not HasPermanentFailure(goal.conditions, state) then
             eligible = eligible + 1
-            if self:IsGoalDone(goal, state, guide) then
+            local skipped = ns.SkipLineage and ns.SkipLineage:IsSkipped(goal.id)
+            if self:IsGoalDone(goal, state, guide) and not skipped then
                 completed = completed + 1
             end
         end
@@ -1438,16 +1639,19 @@ function Engine:IsDependencyDone(guide, dependencyID, state)
 end
 
 function Engine:IsReady(guide, goal, state)
+    if type(goal) ~= "table" then
+        return false, "Goal is unavailable.", true
+    end
     local eligible, reason = ns.EvaluateCondition(goal.conditions, state)
     if eligible == false then
         return false, reason, true
     end
-    for _, dependencyID in ipairs(goal.dependsOn or {}) do
+    for _, dependencyID in ipairs(goal.dependsOn or NO_ENTRIES) do
         if not self:IsDependencyDone(guide, dependencyID, state) then
             return false, "Waiting for " .. dependencyID .. ".", false
         end
     end
-    for _, group in ipairs(goal.questPrerequisites or {}) do
+    for _, group in ipairs(goal.questPrerequisites or NO_ENTRIES) do
         local applies, conditionReason = ns.EvaluateCondition(group.conditions, state)
         if applies == nil then return false, conditionReason, false end
         if applies ~= false then
@@ -1461,8 +1665,87 @@ function Engine:IsReady(guide, goal, state)
             end
         end
     end
+    -- Objective steps require the quest to be in the player's quest log.
+    -- Without this, an objective with no local dependsOn (or from an earlier chapter)
+    -- becomes ready before the player has ever accepted the quest.
+    if (goal.kind == "objective" or goal.kind == "gossip") and type(state) == "table" and state.questLogKnown == true then
+        local questID = GoalQuestID(goal)
+        if type(questID) == "number" then
+            local active = state.quests and state.quests[questID]
+            local turnedIn = state.completedQuests and state.completedQuests[questID]
+            if active == nil and not turnedIn then
+                return false, "Quest is not in the quest log.", false
+            end
+        end
+    end
+    -- Turn-ins wait until the client marks the quest complete. Imported spines
+    -- often omit objective steps; without this, Accept alone made Turn in ready
+    -- (Miner's Fortune at 0/1 Cats Eye Emerald).
+    if goal.kind == "turnin" and type(state) == "table" and state.questLogKnown == true then
+        local questID = GoalQuestID(goal)
+        if type(questID) == "number" then
+            local active = state.quests and state.quests[questID]
+            local turnedIn = state.completedQuests and state.completedQuests[questID]
+            if active ~= nil and active.complete ~= true then
+                return false, "Quest objectives are incomplete.", false
+            end
+            if active == nil and state.questCompletionKnown == true and not turnedIn then
+                return false, "Quest is not ready to turn in.", false
+            end
+        end
+    end
+    -- Pinless item-start accepts ("Use the … to accept …") require the starter item
+    -- to be in the player's bags unless the quest has already been accepted or turned in.
+    -- Without the item, the player cannot accept the quest and has no authored destination.
+    local requiredItem = GoalRequiresItem(goal)
+    if requiredItem then
+        local questID = GoalQuestID(goal)
+        local active = type(questID) == "number" and type(state) == "table"
+            and state.quests and state.quests[questID]
+        local turnedIn = type(questID) == "number" and type(state) == "table"
+            and state.completedQuests and state.completedQuests[questID]
+        if not active and not turnedIn then
+            local hasItem = ns.PlayerState and ns.PlayerState.HasItem
+                and ns.PlayerState:HasItem(requiredItem, state)
+            if not hasItem then
+                return false, "Requires " .. requiredItem .. " in your bags.", false
+            end
+        end
+    end
+    -- Item-start accepts wait behind an earlier incomplete kill/loot source for
+    -- the same quest (Lakota'mani / Margol). Without this, Sync could land on
+    -- "Use the …" before the starter item dropped.
+    if goal.kind == "accept" and type(goal.text) == "string"
+        and (goal.text:match("^Use the .+ to accept") or goal.text:match("^Use .+ to accept"))
+        and type(guide) == "table" and type(guide.goals) == "table" then
+        local questID = GoalQuestID(goal)
+        if type(questID) == "number" then
+            local active = type(state) == "table" and state.quests and state.quests[questID]
+            local turnedIn = type(state) == "table" and state.completedQuests
+                and state.completedQuests[questID]
+            if not active and not turnedIn then
+                local hasStarterItem = requiredItem and ns.PlayerState and ns.PlayerState.HasItem
+                    and ns.PlayerState:HasItem(requiredItem, state)
+                if not hasStarterItem then
+                    local goalPriority = type(goal.priority) == "number" and goal.priority or 0
+                    for _, other in ipairs(guide.goals) do
+                        if other.id ~= goal.id and GoalQuestID(other) == questID
+                            and (other.kind == "note" or other.kind == "objective"
+                                or other.kind == "travel")
+                            and (type(other.priority) ~= "number" or other.priority < goalPriority)
+                            and not HasPermanentFailure(other.conditions, state)
+                            and not self:IsGoalDone(other, state, guide) then
+                            return false, "Waiting for " .. other.id .. ".", false
+                        end
+                    end
+                end
+            end
+        end
+    end
     return true, eligible == nil and reason or nil, false
 end
+
+local CONDITION_GROUP_KEYS = { "all", "any" }
 
 local function ConditionQuestIDs(condition, found)
     if type(condition) ~= "table" then
@@ -1476,7 +1759,7 @@ local function ConditionQuestIDs(condition, found)
     if type(objective) == "table" and type(objective.id) == "number" then
         found[objective.id] = true
     end
-    for _, key in ipairs({ "all", "any" }) do
+    for _, key in ipairs(CONDITION_GROUP_KEYS) do
         if type(condition[key]) == "table" then
             for _, child in ipairs(condition[key]) do
                 ConditionQuestIDs(child, found)
@@ -1524,6 +1807,11 @@ end
 function Engine:UrgentGoals(guide, state)
     local timers = self:ActiveTimers(guide, state)
     local urgent = {}
+    -- Only a running timer marks a goal urgent. Walking every goal without one
+    -- is most of the garbage a refresh makes.
+    if next(timers) == nil then
+        return urgent
+    end
     local function Mark(goalID, inherited)
         local goal = self:GetGoal(guide, goalID)
         if not goal or self:IsGoalDone(goal, state, guide) then
@@ -1608,12 +1896,14 @@ function Engine:CandidateGoals(guide, state)
                 local priority = type(goal.priority) == "number" and goal.priority or index
                 local candidate = {
                     goal = goal, index = index,
-                    deferred = ns.charDB.deferred[goal.id] == true,
+                    deferred = false,
+                    inInstance = GoalMatchesInstance(goal, state, guide),
+                    outdoorPin = HasOutdoorDestination(goal),
                     sameMap = destination and destination.mapID == state.mapID or false,
                     startedStop = AtStartedStop(destination),
                     forward = progress > 0 and priority > progress,
                 }
-                if urgentGoals[goal.id] and not candidate.deferred then
+                if urgentGoals[goal.id] then
                     urgent[#urgent + 1] = candidate
                 else
                     candidates[#candidates + 1] = candidate
@@ -1621,13 +1911,20 @@ function Engine:CandidateGoals(guide, state)
             end
         end
     end
+    local insideInstance = type(state.instanceID) == "number" and state.instanceID > 0
     local function Sort(a, b)
         local aUrgent = urgentGoals[a.goal.id]
         local bUrgent = urgentGoals[b.goal.id]
         if aUrgent and bUrgent and aUrgent.seconds ~= bUrgent.seconds then
             return aUrgent.seconds < bUrgent.seconds
         end
-        if a.deferred ~= b.deferred then return not a.deferred end
+        -- Finish the dungeon/raid in one pass before capital turn-ins. Hub
+        -- "started stop" sorting otherwise yanks RFC to Thunder Bluff and BFD
+        -- to Darkshore while Maur/bosses are still ready inside.
+        if insideInstance and a.outdoorPin ~= b.outdoorPin then
+            return not a.outdoorPin
+        end
+        if insideInstance and a.inInstance ~= b.inInstance then return a.inInstance end
         if a.startedStop ~= b.startedStop then return a.startedStop end
         if a.forward ~= b.forward then return a.forward end
         local aPriority = a.goal.priority or a.index
@@ -1658,6 +1955,77 @@ local function QuestTurnedIn(state, questID)
         return true
     end
     return type(state.watchedQuests) == "table" and state.watchedQuests[questID] == true
+end
+
+local function QuestFlaggedCompleted(api, questID)
+    if type(questID) ~= "number" then return false end
+    api = api or _G
+    local questLog = type(api) == "table" and api.C_QuestLog or nil
+    local flag = type(questLog) == "table" and questLog.IsQuestFlaggedCompleted or nil
+    if type(flag) ~= "function" and type(api) == "table" then
+        flag = api.IsQuestFlaggedCompleted
+    end
+    if type(flag) ~= "function" then return false end
+    local ok, done = pcall(flag, questID)
+    return ok and done == true
+end
+
+function Engine:QuestChainBypassed(goal, state, api)
+    if type(goal) ~= "table" then return false end
+    local questID = GoalQuestID(goal)
+    if type(questID) ~= "number" then return false end
+    local alternates = ns.questBreadcrumbBypass and ns.questBreadcrumbBypass[questID]
+    if type(alternates) ~= "table" then return false end
+    api = api or _G
+    if goal.kind == "accept" then
+        if type(state) == "table" then
+            if type(state.quests) == "table" and state.quests[questID] then
+                return true
+            end
+            if QuestTurnedIn(state, questID) then
+                return true
+            end
+        end
+        if QuestFlaggedCompleted(api, questID) then
+            return true
+        end
+        for _, altID in ipairs(alternates) do
+            if type(state) == "table" and type(state.quests) == "table" and state.quests[altID] then
+                return true
+            end
+            if QuestTurnedIn(state, altID) or QuestFlaggedCompleted(api, altID) then
+                return true
+            end
+        end
+        return false
+    end
+    if goal.kind == "turnin" then
+        for _, altID in ipairs(alternates) do
+            if type(state) == "table" and type(state.quests) == "table" and state.quests[altID] then
+                return true
+            end
+            if QuestTurnedIn(state, altID) or QuestFlaggedCompleted(api, altID) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+function Engine:ClearBypassedRefusals(guide, state, api)
+    local report = ns.charDB and ns.charDB.notOffered
+    if type(report) ~= "table" or type(guide) ~= "table" then return false end
+    local cleared = false
+    for goalID, entry in pairs(report) do
+        if type(entry) == "table" and entry.guide == guide.id then
+            local goal = self:GetGoal(guide, goalID)
+            if goal and self:QuestChainBypassed(goal, state, api) then
+                report[goalID] = nil
+                cleared = true
+            end
+        end
+    end
+    return cleared
 end
 
 -- A gossip refusal means the catalog chain is not actually finished unless the
@@ -1741,8 +2109,13 @@ function Engine:BlockedAuditGoal(guide, state)
 end
 
 local function ActiveGoalStorageKey(guide, goalOrID)
-    if not guide or guide.id ~= "leveling-era" then
+    -- Compact Casual stores one cursor for the whole faction route.
+    if not guide or guide.compactLibrary or guide.series == "casual" then
         return guide and guide.id
+    end
+    local segmented = guide.id == "leveling-era"
+    if not segmented then
+        return guide.id
     end
     if type(goalOrID) == "table" and type(goalOrID.segmentID) == "string" then
         return goalOrID.segmentID
@@ -1845,6 +2218,43 @@ local function ClearStaleDeferred(guide, state)
     end
 end
 
+-- Drop skips on steps the client already finished so a finished dungeon does
+-- not sit on "remaining steps were skipped" after the quests are turned in.
+local function ClearStaleSkips(guide, state)
+    if not ns.SkipLineage or type(ns.charDB.skipped) ~= "table" then
+        return
+    end
+    for goalID, skipped in pairs(ns.charDB.skipped) do
+        if skipped then
+            local goal = Engine:GetGoal(guide, goalID)
+            if goal and goal.complete then
+                local evaluation = ns.EvaluateCondition(goal.complete, state)
+                if evaluation == true then
+                    ns.SkipLineage:Clear(goalID)
+                end
+            end
+        end
+    end
+end
+
+local function HasSkippedRemainder(guide, goals, state)
+    if not ns.SkipLineage or type(goals) ~= "table" then
+        return false
+    end
+    for _, goal in ipairs(goals) do
+        if ns.SkipLineage:IsSkipped(goal.id) and not HasPermanentFailure(goal.conditions, state) then
+            local evaluation = goal.complete and ns.EvaluateCondition(goal.complete, state)
+            if evaluation ~= true then
+                local ledger = Engine:GetLedger(guide, false)
+                if not (ledger and ledger[goal.id]) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
 function Engine:ResyncCurrent(state)
     local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
     if not guide then return false end
@@ -1860,8 +2270,19 @@ function Engine:ResyncCurrent(state)
     self:ClearSavedPosition(guide)
     self.inferredCompletedByGuide = nil
     ClearStaleDeferred(guide, state)
+    -- Sync keeps hard skips. Use ResetSkipsCurrent (options) to clear them.
     self:Refresh(state)
     return true
+end
+
+-- Clear every hard skip on the selected guide, then resync the cursor.
+function Engine:ResetSkipsCurrent(state)
+    local guide = ns.charDB and ns.guides[ns.charDB.selectedGuide]
+    if not guide or not ns.SkipLineage then
+        return false
+    end
+    ns.SkipLineage:ClearGuide(guide)
+    return self:ResyncCurrent(state)
 end
 
 function Engine:ResyncUpdatedGuide(guide, state)
@@ -1955,15 +2376,31 @@ function Engine:Refresh(state)
         end
         return
     end
+    -- Casual waits for quest APIs before advancing (separate from Sync pending).
+    if guide.compactLibrary and not StateReadyForResync(state) then
+        self.casualAwaitingQuestState = true
+    elseif self.casualAwaitingQuestState and StateReadyForResync(state) then
+        self.casualAwaitingQuestState = nil
+        self.inferredCompletedByGuide = nil
+        local saved = self:GetGoal(guide, ns.charDB.activeGoal)
+        if not saved or self:IsGoalDone(saved, state, guide) then
+            self:ClearSavedPosition(guide)
+        end
+    end
     if self.resyncPending == guide.id and StateReadyForResync(state) then
         self.resyncPending = nil
         self:ClearSavedPosition(guide)
         self.inferredCompletedByGuide = nil
     end
     self:ResyncUpdatedGuide(guide, state)
+    ClearStaleSkips(guide, state)
     local chapterGoals = self:ChapterGoals(guide)
     self:ReconcileGuide(guide, state, chapterGoals)
     if self:ReleaseUnconfirmedRefusals(guide, state) then
+        self.reconcileStamp = nil
+        self:ReconcileGuide(guide, state, chapterGoals)
+    end
+    if self:ClearBypassedRefusals(guide, state) then
         self.reconcileStamp = nil
         self:ReconcileGuide(guide, state, chapterGoals)
     end
@@ -1972,6 +2409,10 @@ function Engine:Refresh(state)
     if eligible == false then
         self.currentGoal = nil
         self.status = reason
+    elseif guide.compactLibrary and self.casualAwaitingQuestState then
+        local active = self:GetGoal(guide, ns.charDB.activeGoal)
+        self.currentGoal = active
+        self.status = "Loading quest progress…"
     else
         local active = self:GetGoal(guide, ns.charDB.activeGoal)
         local ready = active and self:IsReady(guide, active, state)
@@ -1993,11 +2434,15 @@ function Engine:Refresh(state)
         local nextGoal = candidates[1]
         local earlierObjective = nextGoal and active
             and (nextGoal.kind == "objective" or nextGoal.kind == "gossip")
-            and not ns.charDB.deferred[nextGoal.id]
+            and not (ns.charDB.deferred and ns.charDB.deferred[nextGoal.id])
+            and not (ns.SkipLineage and ns.SkipLineage:IsSkipped(nextGoal.id))
             and type(nextGoal.priority) == "number" and type(active.priority) == "number"
             and nextGoal.priority < active.priority
-        local onChapter = not self.currentSegment or not active or not active.segmentID
+        local onChapter = guide.compactLibrary
+            or not self.currentSegment or not active or not active.segmentID
             or active.segmentID == self.currentSegment.id
+        local activeSkipped = (ns.charDB.deferred and ns.charDB.deferred[active and active.id])
+            or (ns.SkipLineage and active and ns.SkipLineage:IsSkipped(active.id))
         if active and self.reviewingGoal == active.id and not shortPreempt then
             self.currentGoal = active
             self.status = "Reviewing a previous step."
@@ -2005,7 +2450,7 @@ function Engine:Refresh(state)
             self:SetActiveGoal(blockedGoal, active ~= nil)
             self.status = ("Blocked: %s does not offer quest %d. Its prerequisites are already turned in, so this step stays until the quest is offered or you check it off.")
                 :format(tostring(blockedEntry.npc), tonumber(blockedEntry.quest) or 0)
-        elseif onChapter and active and ready and not activeFinished and not ns.charDB.deferred[active.id]
+        elseif onChapter and active and ready and not activeFinished and not activeSkipped
             and (not observedDone or not ns.db.autoAdvance or observedUnknown) and not shortPreempt
             and not earlierObjective then
             self.currentGoal = active
@@ -2014,15 +2459,19 @@ function Engine:Refresh(state)
             self.status = eligible == nil and reason or nil
         else
             self.currentGoal = nil
-            local segment = self.currentSegment
-            local levelWall = self:LevelWallStatus(guide, (segment and segment.goals) or guide.goals, state)
+            local segment = (not guide.compactLibrary) and self.currentSegment or nil
+            local progressGoals = (segment and segment.goals) or guide.goals
+            local levelWall = self:LevelWallStatus(guide, progressGoals, state)
+            local progress = self:GetGuideProgress(guide, state, segment)
             if segment and type(state.level) == "number" and segment.levelMin and state.level < segment.levelMin then
                 self.status = LEVEL_WALL
             elseif levelWall then
                 self.status = levelWall
-            elseif segment then
+            elseif progress.percentage >= 100 then
+                self.status = "Guide complete."
+            else
                 local blocked
-                for _, goal in ipairs(segment.goals) do
+                for _, goal in ipairs(progressGoals) do
                     if not HasPermanentFailure(goal.conditions, state)
                         and not self:IsGoalDone(goal, state, guide) then
                         local _, goalReason = self:IsReady(guide, goal, state)
@@ -2030,15 +2479,25 @@ function Engine:Refresh(state)
                         break
                     end
                 end
-                self.status = blocked or "No active step."
-            else
-                self.status = eligible == nil and reason or "Guide complete."
+                if blocked then
+                    self.status = blocked
+                elseif HasSkippedRemainder(guide, progressGoals, state) then
+                    self.status = "No active step. Remaining steps were skipped — Reset Skips in options, or Complete them."
+                elseif progress.completed >= progress.eligible then
+                    self.status = "Guide complete."
+                else
+                    -- Leftover steps are unfinished but not skipped and not ready
+                    -- (no reason). Do not claim the player skipped them.
+                    self.status = "No active step."
+                end
             end
         end
-        if guide.segments and self.currentSegment and not self.reviewingGoal then
+        if guide.segments and not guide.compactLibrary and self.currentSegment
+            and not self.reviewingGoal then
             self:LockEraFloor(guide, state)
         end
-        if self.currentGoal and guide.segmentByID and self.currentGoal.segmentID then
+        if self.currentGoal and guide.segmentByID and self.currentGoal.segmentID
+            and not guide.compactLibrary then
             self.currentSegment = guide.segmentByID[self.currentGoal.segmentID] or self.currentSegment
         end
     end
@@ -2071,21 +2530,50 @@ end
 function Engine:CompleteCurrent()
     if self.currentGoal then
         self:GetLedger(self.currentGuide, true)[self.currentGoal.id] = true
-        ns.charDB.deferred[self.currentGoal.id] = nil
+        if ns.SkipLineage then
+            ns.SkipLineage:Clear(self.currentGoal.id)
+        end
+        if type(ns.charDB.deferred) == "table" then
+            ns.charDB.deferred[self.currentGoal.id] = nil
+        end
         self.reviewingGoal = nil
         self:Refresh()
     end
 end
 
-function Engine:SkipCurrent()
-    if self.currentGoal then
-        ns.charDB.deferred[self.currentGoal.id] = true
-        self.reviewingGoal = nil
-        self:Refresh()
+function Engine:PreviewSkip(goal)
+    goal = goal or self.currentGoal
+    if not self.currentGuide or not goal or not ns.SkipLineage then
+        return {}
     end
+    return ns.SkipLineage:Preview(self.currentGuide, goal)
 end
 
-Engine.Next = Engine.SkipCurrent
+-- confirm=true applies the cascade. Without confirm, returns the forced-out ids.
+function Engine:SkipCurrent(confirm)
+    local guide = self.currentGuide
+    local goal = self.currentGoal
+    if not guide or not goal or not ns.SkipLineage then
+        return false
+    end
+    if not ns.SkipLineage:SkipAllowed(guide) then
+        return false
+    end
+    local cascade = ns.SkipLineage:Preview(guide, goal)
+    if confirm ~= true and #cascade > 0 then
+        return cascade
+    end
+    ns.SkipLineage:Apply(guide, goal, cascade)
+    self.reviewingGoal = nil
+    self:Refresh()
+    return true
+end
+
+-- Next is an alias for confirmed skip (no StaticPopup). Tracker Skip uses the
+-- confirm dialog; keep Next for callers that already confirmed the cascade.
+Engine.Next = function(self)
+    return self:SkipCurrent(true)
+end
 
 function Engine:PreviousRouteGoal(guide, goal)
     local route = self:RouteSegments(guide, self.state or {})
@@ -2136,7 +2624,12 @@ function Engine:Previous()
         end
     end
     if previousID and self.currentGuide then
-        ns.charDB.deferred[previousID] = nil
+        if type(ns.charDB.deferred) == "table" then
+            ns.charDB.deferred[previousID] = nil
+        end
+        if ns.SkipLineage then
+            ns.SkipLineage:Clear(previousID)
+        end
         local goal = self:GetGoal(self.currentGuide, previousID)
         if goal then
             self:SetActiveGoal(goal, false)
@@ -2152,14 +2645,20 @@ function Engine:SelectGuide(guideID)
     local chapterID
     if ns.retiredEraGuides and ns.retiredEraGuides[guideID] then
         chapterID = guideID
-        local merged = ns.guides["leveling-era"]
-        local segment = merged and merged.segmentByID[guideID]
-        if segment and segment.fork then
-            ns.charDB.eraSegment = guideID
+        local faction = ns.retiredEraGuides[guideID]
+        if type(faction) ~= "string" then
+            faction = (self.state and self.state.faction) or "Horde"
         end
         ns.charDB.eraChapterPick = guideID
         ns.charDB.eraFloor = guideID
-        guideID = "leveling-era"
+        guideID = "leveling-casual-" .. string.lower(faction)
+    end
+    if guideID == "leveling-era" then
+        local faction = (self.state and self.state.faction) or "Horde"
+        if faction ~= "Alliance" and faction ~= "Horde" then
+            faction = "Horde"
+        end
+        guideID = "leveling-casual-" .. string.lower(faction)
     end
     if ns.guides[guideID] then
         local guide = ns.guides[guideID]
@@ -2172,8 +2671,15 @@ function Engine:SelectGuide(guideID)
             end
         end
         ns.charDB.selectedGuide = guideID
-        local restoreKey = chapterID or guideID
+        if guide.compactLibrary then
+            -- Direct Casual picks are not zone chapters.
+            ns.charDB.eraChapterPick = nil
+        end
+        local restoreKey = guide.compactLibrary and guideID or (chapterID or guideID)
         local saved = ns.charDB.activeGoalByGuide[restoreKey]
+        if (not saved or not self:GetGoal(guide, saved)) and chapterID then
+            saved = ns.charDB.activeGoalByGuide[chapterID]
+        end
         if saved and self:GetGoal(guide, saved) then
             ns.charDB.activeGoal = saved
         else

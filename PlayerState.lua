@@ -420,11 +420,40 @@ local function ReadCachedCompletion(api, questID, departedComplete)
     return done, true
 end
 
+-- Every refresh reads the whole catalog. Building two fresh tables of every
+-- tracked quest each time is most of the garbage a refresh makes, so an
+-- unchanged answer hands back the previous tables. Earlier states keep theirs.
+local lastQuestIDList, lastCompleted, lastWatched
+
 local function CompletedQuests(api, questIDs, logQuests, priorityCount)
-    local completed, watched = {}, {}
     local questIDList = type(questIDs) == "table" and questIDs or {}
     if #questIDList == 0 then
-        return completed, true, watched
+        return {}, true, {}
+    end
+    local completed, watched
+    local reuse = lastQuestIDList == questIDList and lastCompleted ~= nil
+    if not reuse then
+        completed, watched = {}, {}
+    end
+    local function Record(index, questID, done)
+        if reuse then
+            if lastCompleted[questID] == done and (lastWatched[questID] == true) == (done ~= nil) then
+                return
+            end
+            reuse = false
+            completed, watched = {}, {}
+            for earlier = 1, index - 1 do
+                local earlierID = questIDList[earlier]
+                if lastCompleted[earlierID] ~= nil then
+                    completed[earlierID] = lastCompleted[earlierID]
+                    watched[earlierID] = true
+                end
+            end
+        end
+        if done ~= nil then
+            completed[questID] = done
+            watched[questID] = true
+        end
     end
     local departedComplete = {}
     for questID in pairs(seenInLog) do
@@ -441,30 +470,35 @@ local function CompletedQuests(api, questIDs, logQuests, priorityCount)
     local apiDown = false
     for index, questID in ipairs(questIDList) do
         if logQuests[questID] then
-            completed[questID] = false
-            watched[questID] = true
+            Record(index, questID, false)
         elseif completionCache[questID] ~= nil then
-            completed[questID] = completionCache[questID]
-            watched[questID] = true
+            Record(index, questID, completionCache[questID])
         elseif apiDown then
             -- The client already failed this pulse. Leave the rest unread.
+            Record(index, questID, nil)
         else
             local required = index <= priority
             if not required and extra >= budget then
                 -- Saved for the next pulse.
+                Record(index, questID, nil)
             else
                 local done, known = ReadCachedCompletion(api, questID, departedComplete)
                 if not known then
                     apiDown = true
+                    Record(index, questID, nil)
                 else
                     if not required and completionCache[questID] ~= nil then
                         extra = extra + 1
                     end
-                    completed[questID] = done
-                    watched[questID] = true
+                    Record(index, questID, done)
                 end
             end
         end
+    end
+    if reuse then
+        completed, watched = lastCompleted, lastWatched
+    else
+        lastQuestIDList, lastCompleted, lastWatched = questIDList, completed, watched
     end
     for questID in pairs(logWasComplete) do
         if not logQuests[questID] then
@@ -616,6 +650,11 @@ function PlayerState:Capture(api, questIDs, priorityCount)
     end
 
     local completedQuests, completionKnown, watchedQuests = CompletedQuests(api, questIDs, quests, priorityCount)
+    local onTaxi
+    if type(api.UnitOnTaxi) == "function" then
+        local taxiResult, taxiKnown = Call(api, "UnitOnTaxi", "player")
+        onTaxi = taxiKnown and taxiResult[1] == true
+    end
 
     return {
         raceID = raceID,
@@ -633,5 +672,98 @@ function PlayerState:Capture(api, questIDs, priorityCount)
         x = x,
         y = y,
         instanceID = instanceID,
+        onTaxi = onTaxi,
     }
+end
+
+-- Every refresh asks about each item-start accept on the route. Rescanning
+-- and lowercasing every bag slot per question is the loot stutter, so the
+-- client answers are kept until the bags change.
+local itemPresence = {}
+local bagLinks
+
+local function BagLinks(api)
+    if api == _G and bagLinks then return bagLinks end
+    local links = {}
+    local getSlots = (api.C_Container and api.C_Container.GetContainerNumSlots) or api.GetContainerNumSlots
+    local getLink = (api.C_Container and api.C_Container.GetContainerItemLink) or api.GetContainerItemLink
+    if type(getSlots) == "function" and type(getLink) == "function" then
+        for bag = 0, 4 do
+            local numSlots = getSlots(bag) or 0
+            for slot = 1, numSlots do
+                local link = getLink(bag, slot)
+                if link then
+                    links[#links + 1] = string.lower(link)
+                end
+            end
+        end
+    end
+    if api == _G then bagLinks = links end
+    return links
+end
+
+local function ClientHasItem(itemName, api)
+    if type(api.GetItemCount) == "function" then
+        local ok, count = pcall(api.GetItemCount, itemName)
+        if ok and type(count) == "number" and count > 0 then
+            return true
+        end
+    end
+    if api.C_Item and type(api.C_Item.GetItemCount) == "function" then
+        local ok, count = pcall(api.C_Item.GetItemCount, itemName)
+        if ok and type(count) == "number" and count > 0 then
+            return true
+        end
+    end
+    local target = string.lower(itemName)
+    local stripped = target:gsub("^(the|a|an)%s+", "")
+    for _, lower in ipairs(BagLinks(api)) do
+        if string.find(lower, target, 1, true) or string.find(lower, stripped, 1, true) then
+            return true
+        end
+    end
+    return false
+end
+
+-- Returns true when an item the route asked about appeared or left the bags.
+-- Any other loot leaves the route alone.
+function PlayerState:BagsChanged(api)
+    api = api or _G
+    local previous = itemPresence
+    itemPresence, bagLinks = {}, nil
+    local changed = false
+    for itemName, had in pairs(previous) do
+        local has = ClientHasItem(itemName, api)
+        if api == _G then itemPresence[itemName] = has end
+        if has ~= had then changed = true end
+    end
+    return changed
+end
+
+function PlayerState:HasItem(itemName, state, api)
+    if type(itemName) ~= "string" or itemName == "" then return false end
+    if type(state) == "table" and type(state.items) == "table" then
+        if state.items[itemName] then return true end
+        local lower = string.lower(itemName)
+        local stripped = lower:gsub("^(the|a|an)%s+", "")
+        for name, count in pairs(state.items) do
+            if count and count > 0 then
+                local nLower = string.lower(tostring(name))
+                if nLower == lower or nLower == stripped or string.find(nLower, stripped, 1, true) then
+                    return true
+                end
+            end
+        end
+        return false
+    end
+    api = api or _G
+    if api ~= _G then
+        return ClientHasItem(itemName, api)
+    end
+    local known = itemPresence[itemName]
+    if known == nil then
+        known = ClientHasItem(itemName, api)
+        itemPresence[itemName] = known
+    end
+    return known
 end

@@ -151,7 +151,7 @@ ns:RegisterGuide({
                     { race = { 1, 7 } },
                 },
             },
-            text = "Beginnings: Feather Charm. This step is for Humans and Gnomes.",
+            text = "Kill Frostmane Novice in Coldridge Valley and collect Feather Charm for Beginnings. This step is for Humans and Gnomes.",
             dependsOn = { "accept-1599-beginnings" },
             complete = QuestState(1599, "complete"),
             route = {
@@ -914,7 +914,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Flawless Fel Essence: Flawless Fel Essence (Jaedenar).",
+            text = "Kill Jaedenar Legionnaires in Jaedenar and collect Flawless Fel Essence.",
             dependsOn = { "accept-7602-flawless-fel-essence" },
             complete = QuestState(7602, "complete"),
             route = {
@@ -1116,7 +1116,7 @@ ns:RegisterGuide({
                     { level = { min = 60 } },
                 },
             },
-            text = "Bell of Dethmoora: Elixir of Shadow Power.",
+            text = "Buy or craft Elixir of Shadow Power and bring it to Batrider Pele'keiki in Orgrimmar.",
             dependsOn = { "accept-7626-bell-of-dethmoora" },
             complete = QuestState(7626, "complete"),
             route = {
@@ -1169,7 +1169,7 @@ ns:RegisterGuide({
                     { level = { min = 60 } },
                 },
             },
-            text = "Wheel of the Black March: Dark Iron Ore.",
+            text = "Collect Dark Iron Ore from Cyrus Therepentous in the Burning Steppes.",
             dependsOn = { "accept-7627-wheel-of-the-black-march" },
             complete = QuestState(7627, "complete"),
             route = {
@@ -1224,7 +1224,7 @@ ns:RegisterGuide({
                     { level = { min = 60 } },
                 },
             },
-            text = "Doomsday Candle: Black Dragonscale.",
+            text = "Kill black dragonkin in the Burning Steppes and collect Black Dragonscale.",
             dependsOn = { "accept-7628-doomsday-candle" },
             complete = QuestState(7628, "complete"),
             route = {
@@ -1326,7 +1326,7 @@ ns:RegisterGuide({
                     { level = { min = 60 } },
                 },
             },
-            text = "Ulathek the Traitor: The Traitor's Heart.",
+            text = "Kill Ulathek the Traitor and collect The Traitor's Heart.",
             dependsOn = { "accept-7624-ulathek-the-traitor" },
             complete = QuestState(7624, "complete"),
             route = {
@@ -1417,7 +1417,7 @@ ns:RegisterGuide({
                     { race = { 2, 5, 8 } },
                 },
             },
-            text = "Vile Familiars: Vile Familiar Head. This step is for Orcs, Undead, and Trolls.",
+            text = "Kill Vile Familiar and collect 6 Vile Familiar Head in Valley of Trials. This step is for Orcs, Undead, and Trolls.",
             dependsOn = { "accept-1485-vile-familiars" },
             complete = QuestState(1485, "complete"),
             route = {
@@ -1511,7 +1511,7 @@ ns:RegisterGuide({
                     { race = { 2, 5 } },
                 },
             },
-            text = "Piercing the Veil: Rattlecage Skull. This step is for Orcs and Undead.",
+            text = "Kill Rattlecage Skeleton and collect Rattlecage Skull in Deathknell. This step is for Orcs and Undead.",
             dependsOn = { "accept-1470-piercing-the-veil" },
             complete = QuestState(1470, "complete"),
             route = {
@@ -3051,7 +3051,7 @@ ns:RegisterGuide({
                     { level = { min = 31 } },
                 },
             },
-            text = "Components for the Enchanted Gold Bloodrobe: Gold Bar.",
+            text = "Loot a Gold Bar from solid chests on the route or buy one from the auction house.",
             dependsOn = { "accept-4781-components-for-the-enchanted-gold-bloodrobe" },
             complete = QuestState(4781, "complete"),
             route = {
@@ -3892,7 +3892,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Hot and Itchy: Felcloth.",
+            text = "Collect Felcloth from jadefire satyrs in Felwood.",
             dependsOn = { "accept-8420-hot-and-itchy" },
             complete = QuestState(8420, "complete"),
             route = {
@@ -3974,7 +3974,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "The Wrong Stuff: Bloodvenom Essence.",
+            text = "Collect Bloodvenom Essence and Rotting Wood in Felwood.",
             dependsOn = { "accept-8421-the-wrong-stuff" },
             complete = QuestState(8421, "complete"),
             route = {

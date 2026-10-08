@@ -600,7 +600,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "Of Coursers We Know: Healthy Courser Gland.",
+            text = "Collect 4 Healthy Courser Gland from Mosshoof Coursers in Azshara.",
             dependsOn = { "accept-8255-of-coursers-we-know" },
             complete = QuestState(8255, "complete"),
             route = {
@@ -654,7 +654,7 @@ ns:RegisterGuide({
                     { level = { min = 50 } },
                 },
             },
-            text = "The Ichor of Undeath: Ichor of Undeath.",
+            text = "Collect Ichor of Undeath from the Highborne undead in Azshara.",
             dependsOn = { "accept-8256-the-ichor-of-undeath" },
             complete = QuestState(8256, "complete"),
             route = {

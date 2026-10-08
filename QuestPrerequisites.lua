@@ -21,6 +21,19 @@ ns:RegisterQuestPrerequisite({
 })
 
 ns:RegisterQuestPrerequisite({
+    quest = 1062,
+    mode = "all",
+    quests = { 1061 },
+    conditions = { faction = "Horde" },
+    note = "Goblin Invaders is offered after The Spirits of Stonetalon. Zor Lonetree will not offer Spirits while Goblin Invaders is in the log.",
+})
+
+-- Org breadcrumb accepts that the Stonetalon chain can skip once a later quest is
+-- already active or turned in. The engine treats the step as done (no Skip).
+ns.questBreadcrumbBypass = ns.questBreadcrumbBypass or {}
+ns.questBreadcrumbBypass[1061] = { 1062 }
+
+ns:RegisterQuestPrerequisite({
     quest = 91209,
     mode = "all",
     quests = { 91208 },

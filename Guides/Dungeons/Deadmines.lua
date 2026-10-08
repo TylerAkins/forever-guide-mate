@@ -62,7 +62,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Red Silk Bandanas from Scout Riell at the Sentinel Hill tower.",
@@ -77,7 +77,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept The Defias Brotherhood from Gryan Stoutmantle at Sentinel Hill. " ..
@@ -93,7 +93,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Collecting Memories from Wilder Thistlenettle in the Dwarven District.",
@@ -108,7 +108,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Oh Brother. . . from Wilder Thistlenettle in the Dwarven District.",
@@ -123,7 +123,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Accept Underground Assault from Shoni the Shilent in the Dwarven District.",
@@ -155,7 +155,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Collect 10 Red Silk Bandanas from the Defias in VanCleef's hideout.",
@@ -169,10 +169,10 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
-            text = "Collect 4 Miners' Union Cards in the Moonbrook mine.",
+            text = "Loot 4 Miners' Union Cards from the bodies of undead miners in the Deadmines.",
             dependsOn = { "enter-deadmines" },
             complete = QuestState(168, "complete"),
         },
@@ -183,7 +183,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Find Foreman Thistlenettle and take his Explorers' League Badge.",
@@ -197,7 +197,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Take the Gnoam Sprecklesprocket from Sneed's Shredder. Clear the room first. " ..
@@ -212,7 +212,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Kill Edwin VanCleef and take his head. " ..
@@ -227,7 +227,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Bring the Red Silk Bandanas back to Scout Riell.",
@@ -243,7 +243,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Bring the Head of VanCleef to Gryan Stoutmantle.",
@@ -259,7 +259,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 14 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Bring the Miners' Union Cards back to Wilder Thistlenettle.",
@@ -275,7 +275,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Bring Thistlenettle's Badge back to Wilder Thistlenettle.",
@@ -291,7 +291,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     ALLIANCE,
-                    { level = { min = 15 } },
+                    { level = { min = 19 } },
                 },
             },
             text = "Bring the Gnoam Sprecklesprocket back to Shoni the Shilent.",

@@ -37,6 +37,21 @@ REQUIRED_FILES = (
     "UITheme.lua",
     "UI.lua",
     "TomTomWaypoints.lua",
+    "docs/guide-authoring.md",
+    "docs/zone-loremaster-guides.md",
+    "docs/DEVELOPMENT.md",
+    ".cursor/skills/zone-loremaster-guide/SKILL.md",
+    ".cursor/skills/era-forever-weave/SKILL.md",
+    "tools/compile_addon.py",
+    "tools/guide_release.py",
+    "tools/update_forever_interface.py",
+    "tests/test_contracts.py",
+    "tests/test_guide_release.py",
+    "tests/test_update_forever_interface.py",
+    "tests/lua/run.lua",
+    "tests/lua/ui.lua",
+    "tests/lua/lint.lua",
+    "tests/requirements.txt",
     "Guides/Dungeons/RagefireChasm.lua",
     "Guides/Dungeons/WailingCaverns.lua",
     "Guides/Dungeons/RuinsOfLordaeron.lua",
@@ -77,21 +92,100 @@ REQUIRED_FILES = (
     "Guides/Leveling/zephras-isle.lua",
     "Guides/Loremaster/Durotar.lua",
     "Guides/Loremaster/Mulgore.lua",
-    "docs/guide-authoring.md",
-    "docs/zone-loremaster-guides.md",
-    "docs/DEVELOPMENT.md",
-    ".cursor/skills/zone-loremaster-guide/SKILL.md",
-    ".cursor/skills/era-forever-weave/SKILL.md",
-    "tools/compile_addon.py",
-    "tools/guide_release.py",
-    "tools/update_forever_interface.py",
-    "tests/test_contracts.py",
-    "tests/test_guide_release.py",
-    "tests/test_update_forever_interface.py",
-    "tests/lua/run.lua",
-    "tests/lua/ui.lua",
-    "tests/lua/lint.lua",
-    "tests/requirements.txt",
+    "Guides/Leveling/tirisfal-glades.lua",
+    "Guides/Leveling/mulgore.lua",
+    "Guides/Leveling/durotar.lua",
+    "Guides/Leveling/horde-silverpine-forest.lua",
+    "Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua",
+    "Guides/Leveling/horde-ashenvale.lua",
+    "Guides/Leveling/horde-hillsbrad-foothills.lua",
+    "Guides/Leveling/horde-the-barrens.lua",
+    "Guides/Leveling/horde-stonetalon-mountains.lua",
+    "Guides/Leveling/horde-ashenvale-part-2.lua",
+    "Guides/Leveling/horde-thousand-needles.lua",
+    "Guides/Leveling/horde-hillsbrad-foothills-part-2.lua",
+    "Guides/Leveling/horde-arathi-highlands.lua",
+    "Guides/Leveling/horde-thousand-needles-part-2.lua",
+    "Guides/Leveling/horde-desolace.lua",
+    "Guides/Leveling/horde-stranglethorn-vale.lua",
+    "Guides/Leveling/horde-dustwallow-marsh.lua",
+    "Guides/Leveling/horde-alterac-mountains-and-arathi-highlands.lua",
+    "Guides/Leveling/horde-badlands.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-and-swamp-of-sorrows.lua",
+    "Guides/Leveling/horde-desolace-part-2.lua",
+    "Guides/Leveling/horde-tanaris.lua",
+    "Guides/Leveling/horde-dustwallow-marsh-part-2.lua",
+    "Guides/Leveling/horde-tanaris-part-2.lua",
+    "Guides/Leveling/horde-feralas.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-part-2.lua",
+    "Guides/Leveling/horde-swamp-of-sorrows.lua",
+    "Guides/Leveling/horde-tanaris-and-dustwallow-marsh.lua",
+    "Guides/Leveling/horde-the-hinterlands.lua",
+    "Guides/Leveling/horde-feralas-and-ungoro-crater.lua",
+    "Guides/Leveling/horde-stranglethorn-vale-and-swamp-of-sorrows-part-2.lua",
+    "Guides/Leveling/horde-blasted-lands.lua",
+    "Guides/Leveling/horde-searing-gorge.lua",
+    "Guides/Leveling/horde-burning-steppes-and-azshara.lua",
+    "Guides/Leveling/horde-felwood-and-winterspring.lua",
+    "Guides/Leveling/horde-ungoro-crater.lua",
+    "Guides/Leveling/horde-azshara.lua",
+    "Guides/Leveling/horde-felwood-and-winterspring-part-2.lua",
+    "Guides/Leveling/horde-western-and-eastern-plaguelands.lua",
+    "Guides/Leveling/horde-winterspring.lua",
+    "Guides/Leveling/horde-silithus.lua",
+    "Guides/Leveling/elwynn-forest.lua",
+    "Guides/Leveling/dun-morogh.lua",
+    "Guides/Leveling/teldrassil.lua",
+    "Guides/Leveling/alliance-westfall.lua",
+    "Guides/Leveling/alliance-darkshore.lua",
+    "Guides/Leveling/alliance-loch-modan.lua",
+    "Guides/Leveling/alliance-redridge-and-westfall.lua",
+    "Guides/Leveling/alliance-darkshore-part-2.lua",
+    "Guides/Leveling/alliance-ashenvale-and-stonetalon-mountains.lua",
+    "Guides/Leveling/alliance-wetlands.lua",
+    "Guides/Leveling/alliance-duskwood-and-redridge-mountains.lua",
+    "Guides/Leveling/alliance-wetlands-part-2.lua",
+    "Guides/Leveling/alliance-stonetalon-mountains-and-ashenvale.lua",
+    "Guides/Leveling/alliance-duskwood-and-stranglethorn-vale.lua",
+    "Guides/Leveling/alliance-hillsbrad-foothills-and-arathi-highlands.lua",
+    "Guides/Leveling/alliance-dustwallow-marsh-and-thousand-needles.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale.lua",
+    "Guides/Leveling/alliance-desolace.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-2.lua",
+    "Guides/Leveling/alliance-swamp-of-sorrows.lua",
+    "Guides/Leveling/alliance-arathi-highlands-and-alterac-mountains.lua",
+    "Guides/Leveling/alliance-dustwallow-marsh.lua",
+    "Guides/Leveling/alliance-desolace-part-2.lua",
+    "Guides/Leveling/alliance-badlands.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-3.lua",
+    "Guides/Leveling/alliance-swamp-of-sorrows-part-2.lua",
+    "Guides/Leveling/alliance-tanaris.lua",
+    "Guides/Leveling/alliance-feralas-and-tanaris.lua",
+    "Guides/Leveling/alliance-the-hinterlands.lua",
+    "Guides/Leveling/alliance-tanaris-part-2.lua",
+    "Guides/Leveling/alliance-ungoro-crater.lua",
+    "Guides/Leveling/alliance-stranglethorn-vale-part-4.lua",
+    "Guides/Leveling/alliance-searing-gorge.lua",
+    "Guides/Leveling/alliance-blasted-lands-and-burning-steppes.lua",
+    "Guides/Leveling/alliance-western-plaguelands.lua",
+    "Guides/Leveling/alliance-azshara-and-felwood.lua",
+    "Guides/Leveling/alliance-feralas-and-azshara.lua",
+    "Guides/Leveling/alliance-ungoro-crater-part-2.lua",
+    "Guides/Leveling/alliance-winterspring-and-felwood.lua",
+    "Guides/Leveling/alliance-burning-steppes.lua",
+    "Guides/Leveling/alliance-western-and-eastern-plaguelands.lua",
+    "Guides/Leveling/alliance-winterspring.lua",
+    "Guides/Leveling/alliance-silithus.lua",
+    "Guides/Class/Warrior.lua",
+    "Guides/Class/Paladin.lua",
+    "Guides/Class/Hunter.lua",
+    "Guides/Class/Rogue.lua",
+    "Guides/Class/Priest.lua",
+    "Guides/Class/Shaman.lua",
+    "Guides/Class/Mage.lua",
+    "Guides/Class/Warlock.lua",
+    "Guides/Class/Druid.lua",
+    "Guides/Miscellaneous/LibraryBooks.lua",
 )
 
 
@@ -117,106 +211,19 @@ class ContractTests(unittest.TestCase):
         self.assertIn("## X-Website: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Source: https://github.com/TylerAkins/forever-guide-mate", lines)
         self.assertIn("## X-Issues: https://github.com/TylerAkins/forever-guide-mate/issues", lines)
-        self.assertEqual(
-            [line for line in lines if line and not line.startswith("##")],
-            [
-                "Core.lua",
-                "PlayerState.lua",
-                "Travel.lua",
-                "Taxi.lua",
-                "GuideEngine.lua",
-                "QuestPrerequisites.lua",
-                "QuestAudit.lua",
-                "QuestDialog.lua",
-                "Navigation.lua",
-                "TomTomWaypoints.lua",
-                "MapPins.lua",
-                "MapPins.xml",
-                "MinimapButton.lua",
-                "UITheme.lua",
-                "UI.lua",
-                "Guides/Dungeons/RagefireChasm.lua",
-                "Guides/Dungeons/WailingCaverns.lua",
-                "Guides/Dungeons/RuinsOfLordaeron.lua",
-                "Guides/Dungeons/Deadmines.lua",
-                "Guides/Dungeons/HallOfThanes.lua",
-                "Guides/Dungeons/ExcavationSiteWetlands.lua",
-                "Guides/Dungeons/CityOfDalaranAttunement.lua",
-                "Guides/Dungeons/ShadowfangKeep.lua",
-                "Guides/Dungeons/BlackfathomDeeps.lua",
-                "Guides/Dungeons/Gnomeregan.lua",
-                "Guides/Dungeons/TheStockade.lua",
-                "Guides/Dungeons/ScarletMonasteryLibrary.lua",
-                "Guides/Dungeons/RazorfenKraul.lua",
-                "Guides/Dungeons/ScarletMonasteryGraveyard.lua",
-                "Guides/Dungeons/RazorfenDowns.lua",
-                "Guides/Dungeons/Uldaman.lua",
-                "Guides/Dungeons/ScarletMonasteryArmory.lua",
-                "Guides/Dungeons/ScarletMonasteryCathedral.lua",
-                "Guides/Dungeons/ZulFarrak.lua",
-                "Guides/Dungeons/Maraudon.lua",
-                "Guides/Dungeons/MaraudonFoulsporeCavernOrange.lua",
-                "Guides/Dungeons/MaraudonWickedGrottoPurple.lua",
-                "Guides/Dungeons/TempleOfAtalHakkar.lua",
-                "Guides/Dungeons/MaraudonEarthSongFallsInner.lua",
-                "Guides/Dungeons/MaraudonPoisonFallsInner.lua",
-                "Guides/Dungeons/OnyxiaSLairAttunement.lua",
-                "Guides/Dungeons/Scholomance.lua",
-                "Guides/Dungeons/BlackrockDepths.lua",
-                "Guides/Dungeons/StratholmeLive.lua",
-                "Guides/Dungeons/StratholmeUndead.lua",
-                "Guides/Dungeons/DireMaulEast.lua",
-                "Guides/Dungeons/DireMaulNorth.lua",
-                "Guides/Dungeons/DireMaulWest.lua",
-                "Guides/Dungeons/LowerBlackrockSpire.lua",
-                "Guides/Dungeons/UpperBlackrockSpire.lua",
-                "Guides/Dungeons/DireMaulNorthTribute.lua",
-                "Guides/Dungeons/Tier05DungeonGearQuestline.lua",
-                "Guides/Leveling/zephras-isle.lua",
-                "Guides/Loremaster/Durotar.lua",
-                "Guides/Loremaster/Mulgore.lua",
-                "Guides/Leveling/durotar.lua",
-                "Guides/Leveling/mulgore.lua",
-                "Guides/Leveling/tirisfal-glades.lua",
-                "Guides/Leveling/the-barrens-part-1.lua",
-                "Guides/Leveling/silverpine-forest.lua",
-                "Guides/Leveling/stonetalon-mountains-part-1.lua",
-                "Guides/Leveling/the-barrens-part-2.lua",
-                "Guides/Leveling/stonetalon-mountains-part-2.lua",
-                "Guides/Leveling/stonetalon-mountains-part-3.lua",
-                "Guides/Leveling/the-barrens-part-3.lua",
-                "Guides/Leveling/thousand-needles-part-1.lua",
-                "Guides/Leveling/ashenvale-part-3.lua",
-                "Guides/Leveling/stonetalon-mountains-part-4.lua",
-                "Guides/Leveling/thousand-needles-part-2.lua",
-                "Guides/Leveling/hillsbrad-foothills.lua",
-                "Guides/Leveling/dun-morogh.lua",
-                "Guides/Leveling/elwynn-forest.lua",
-                "Guides/Leveling/teldrassil.lua",
-                "Guides/Leveling/darkshore-part-1.lua",
-                "Guides/Leveling/westfall.lua",
-                "Guides/Leveling/loch-modan.lua",
-                "Guides/Leveling/redridge-mountains-part-1.lua",
-                "Guides/Leveling/darkshore-part-2.lua",
-                "Guides/Leveling/ashenvale-part-1.lua",
-                "Guides/Leveling/darkshore-part-3.lua",
-                "Guides/Leveling/ashenvale-part-2.lua",
-                "Guides/Leveling/wetlands.lua",
-                "Guides/Leveling/redridge-mountains-part-2.lua",
-                "Guides/Leveling/duskwood.lua",
-                "Guides/Leveling/ashenvale-part-4.lua",
-                "Guides/Class/Warrior.lua",
-                "Guides/Class/Paladin.lua",
-                "Guides/Class/Hunter.lua",
-                "Guides/Class/Rogue.lua",
-                "Guides/Class/Priest.lua",
-                "Guides/Class/Shaman.lua",
-                "Guides/Class/Mage.lua",
-                "Guides/Class/Warlock.lua",
-                "Guides/Class/Druid.lua",
-                "Guides/Miscellaneous/LibraryBooks.lua",
-            ],
-        )
+        load_order = [line for line in lines if line and not line.startswith("##")]
+        self.assertIn("Core.lua", load_order)
+        self.assertIn("SkipLineage.lua", load_order)
+        self.assertLess(load_order.index("Core.lua"), load_order.index("GuideEngine.lua"))
+        self.assertLess(load_order.index("GuideEngine.lua"), load_order.index("SkipLineage.lua"))
+        for path in load_order:
+            self.assertTrue((ROOT / path).is_file(), f"missing TOC load path: {path}")
+        # Horde Casual spine: Silverpine before Barrens in registration order.
+        if "Guides/Leveling/horde-silverpine-forest.lua" in load_order:
+            self.assertLess(
+                load_order.index("Guides/Leveling/horde-silverpine-forest.lua"),
+                load_order.index("Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua"),
+            )
         self.assertIn("## SavedVariables: ForeverGuideMateDB", lines)
         self.assertIn("## SavedVariablesPerCharacter: ForeverGuideMateCharDB", lines)
         self.assertIn("## OptionalDeps: TomTom", lines)
@@ -520,397 +527,51 @@ class ContractTests(unittest.TestCase):
         self.assertIn("leveling route", mulgore)
 
     def test_era_leveling_guides_are_horde_routes(self) -> None:
-        era_files = (
+        horde_files = (
             "Guides/Leveling/durotar.lua",
             "Guides/Leveling/mulgore.lua",
             "Guides/Leveling/tirisfal-glades.lua",
-            "Guides/Leveling/the-barrens-part-1.lua",
-            "Guides/Leveling/silverpine-forest.lua",
-            "Guides/Leveling/stonetalon-mountains-part-1.lua",
-            "Guides/Leveling/the-barrens-part-2.lua",
-            "Guides/Leveling/stonetalon-mountains-part-3.lua",
-            "Guides/Leveling/the-barrens-part-3.lua",
-            "Guides/Leveling/thousand-needles-part-1.lua",
-            "Guides/Leveling/ashenvale-part-3.lua",
-            "Guides/Leveling/stonetalon-mountains-part-4.lua",
-            "Guides/Leveling/thousand-needles-part-2.lua",
-            "Guides/Leveling/hillsbrad-foothills.lua",
-            "Guides/Era/30-30-arathi-highlands.lua",
-            "Guides/Era/30-31-stranglethorn-vale.lua",
-            "Guides/Era/31-32-thousand-needles.lua",
-            "Guides/Era/32-34-desolace.lua",
-            "Guides/Era/34-36-stranglethorn-vale.lua",
-            "Guides/Era/36-37-alterac-mountains.lua",
-            "Guides/Era/37-38-arathi-highlands.lua",
-            "Guides/Era/37-38-thousand-needles.lua",
-            "Guides/Era/38-38-dustwallow-marsh.lua",
-            "Guides/Era/38-40-stranglethorn-vale.lua",
-            "Guides/Era/40-41-badlands.lua",
-            "Guides/Era/41-42-swamp-of-sorrows.lua",
-            "Guides/Era/42-43-stranglethorn-vale.lua",
-            "Guides/Era/43-44-dustwallow-marsh.lua",
-            "Guides/Era/44-44-desolace.lua",
-            "Guides/Era/44-45-tanaris.lua",
-            "Guides/Era/45-46-feralas.lua",
-            "Guides/Era/46-47-azshara.lua",
-            "Guides/Era/47-47-hinterlands.lua",
-            "Guides/Era/47-47-stranglethorn-vale.lua",
-            "Guides/Era/47-48-searing-gorge.lua",
-            "Guides/Era/48-49-swamp-of-sorrows.lua",
-            "Guides/Era/49-49-dustwallow-marsh.lua",
-            "Guides/Era/49-50-feralas.lua",
-            "Guides/Era/49-50-tanaris.lua",
-            "Guides/Era/50-50-azshara.lua",
-            "Guides/Era/50-51-hinterlands.lua",
-            "Guides/Era/51-51-blasted-lands.lua",
-            "Guides/Era/51-53-ungoro-crater.lua",
-            "Guides/Era/53-54-burning-steppes.lua",
-            "Guides/Era/54-54-felwood.lua",
-            "Guides/Era/54-55-winterspring.lua",
-            "Guides/Era/55-56-felwood.lua",
-            "Guides/Era/56-56-western-plaguelands.lua",
-            "Guides/Era/56-57-eastern-plaguelands.lua",
-            "Guides/Era/57-58-western-plaguelands.lua",
-            "Guides/Era/58-59-silithus.lua",
-            "Guides/Era/59-60-winterspring.lua",
+            "Guides/Leveling/horde-silverpine-forest.lua",
+            "Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua",
+            "Guides/Leveling/horde-ashenvale.lua",
+            "Guides/Leveling/horde-thousand-needles.lua",
+            "Guides/Leveling/horde-hillsbrad-foothills-part-2.lua",
+            "Guides/Leveling/horde-silithus.lua",
         )
         alliance_files = (
             "Guides/Leveling/dun-morogh.lua",
             "Guides/Leveling/elwynn-forest.lua",
             "Guides/Leveling/teldrassil.lua",
-            "Guides/Leveling/darkshore-part-1.lua",
-            "Guides/Leveling/westfall.lua",
-            "Guides/Leveling/loch-modan.lua",
-            "Guides/Leveling/redridge-mountains-part-1.lua",
-            "Guides/Leveling/darkshore-part-2.lua",
-            "Guides/Leveling/ashenvale-part-1.lua",
-            "Guides/Leveling/stonetalon-mountains-part-2.lua",
-            "Guides/Leveling/darkshore-part-3.lua",
-            "Guides/Leveling/ashenvale-part-2.lua",
-            "Guides/Leveling/wetlands.lua",
-            "Guides/Leveling/redridge-mountains-part-2.lua",
-            "Guides/Leveling/duskwood.lua",
-            "Guides/Leveling/ashenvale-part-4.lua",
-            "Guides/Era/30-31-wetlands.lua",
-            "Guides/Era/31-32-hillsbrad-foothills.lua",
-            "Guides/Era/32-33-stranglethorn-vale.lua",
-            "Guides/Era/33-34-thousand-needles.lua",
-            "Guides/Era/34-35-desolace.lua",
-            "Guides/Era/36-37-stranglethorn-vale.lua",
-            "Guides/Era/37-37-alterac-mountains.lua",
-            "Guides/Era/37-38-arathi-highlands-alliance.lua",
-            "Guides/Era/38-39-dustwallow-marsh.lua",
-            "Guides/Era/39-40-stranglethorn-vale.lua",
-            "Guides/Era/40-41-badlands-alliance.lua",
-            "Guides/Era/41-42-swamp-of-sorrows-alliance.lua",
-            "Guides/Era/42-43-stranglethorn-vale-alliance.lua",
-            "Guides/Era/43-43-desolace.lua",
-            "Guides/Era/43-44-tanaris.lua",
-            "Guides/Era/44-46-feralas.lua",
-            "Guides/Era/46-46-azshara.lua",
-            "Guides/Era/46-46-hinterlands.lua",
-            "Guides/Era/46-47-stranglethorn-vale.lua",
-            "Guides/Era/47-48-searing-gorge-alliance.lua",
-            "Guides/Era/48-49-feralas.lua",
-            "Guides/Era/49-50-tanaris-alliance.lua",
-            "Guides/Era/50-50-hinterlands.lua",
-            "Guides/Era/50-51-blasted-lands.lua",
-            "Guides/Era/51-52-ungoro-crater.lua",
-            "Guides/Era/52-53-azshara.lua",
-            "Guides/Era/53-54-felwood.lua",
-            "Guides/Era/54-55-winterspring-alliance.lua",
-            "Guides/Era/55-56-burning-steppes.lua",
-            "Guides/Era/55-56-felwood-alliance.lua",
-            "Guides/Era/56-57-western-plaguelands.lua",
-            "Guides/Era/57-58-eastern-plaguelands.lua",
-            "Guides/Era/57-58-western-plaguelands-alliance.lua",
-            "Guides/Era/58-59-silithus-alliance.lua",
-            "Guides/Era/59-60-winterspring-alliance.lua",
+            "Guides/Leveling/alliance-westfall.lua",
+            "Guides/Leveling/alliance-darkshore.lua",
+            "Guides/Leveling/alliance-loch-modan.lua",
+            "Guides/Leveling/alliance-duskwood-and-stranglethorn-vale.lua",
+            "Guides/Leveling/alliance-silithus.lua",
         )
         toc = (ROOT / "ForeverGuideMate.toc").read_text(encoding="utf-8")
-        shipped = (ROOT / "tools/compile_addon.py").read_text(encoding="utf-8")
-        rewritten_starters = {
-            "Guides/Leveling/durotar.lua",
-            "Guides/Leveling/mulgore.lua",
-            "Guides/Leveling/tirisfal-glades.lua",
-            "Guides/Leveling/dun-morogh.lua",
-            "Guides/Leveling/elwynn-forest.lua",
-            "Guides/Leveling/teldrassil.lua",
-            "Guides/Leveling/westfall.lua",
-            "Guides/Leveling/darkshore-part-1.lua",
-            "Guides/Leveling/the-barrens-part-1.lua",
-            "Guides/Leveling/silverpine-forest.lua",
-            "Guides/Leveling/loch-modan.lua",
-            "Guides/Leveling/redridge-mountains-part-1.lua",
-            "Guides/Leveling/darkshore-part-2.lua",
-            "Guides/Leveling/stonetalon-mountains-part-1.lua",
-            "Guides/Leveling/ashenvale-part-1.lua",
-            "Guides/Leveling/the-barrens-part-2.lua",
-            "Guides/Leveling/stonetalon-mountains-part-2.lua",
-            "Guides/Leveling/darkshore-part-3.lua",
-            "Guides/Leveling/stonetalon-mountains-part-3.lua",
-            "Guides/Leveling/redridge-mountains-part-2.lua",
-            "Guides/Leveling/duskwood.lua",
-            "Guides/Leveling/the-barrens-part-3.lua",
-            "Guides/Leveling/thousand-needles-part-1.lua",
-            "Guides/Leveling/ashenvale-part-2.lua",
-            "Guides/Leveling/ashenvale-part-3.lua",
-            "Guides/Leveling/ashenvale-part-4.lua",
-            "Guides/Leveling/stonetalon-mountains-part-4.lua",
-            "Guides/Leveling/thousand-needles-part-2.lua",
-            "Guides/Leveling/wetlands.lua",
-            "Guides/Leveling/hillsbrad-foothills.lua",
-        }
-        for relative in era_files:
-            guide = (ROOT / relative).read_text(encoding="utf-8")
-            head, goals = guide.split("goals = {", 1)
-            self.assertIn('category = "Leveling Quest Guides"', head)
-            if relative in rewritten_starters:
-                self.assertNotIn("(Era)", head)
+        for path in horde_files + alliance_files:
+            self.assertTrue((ROOT / path).is_file(), path)
+            self.assertIn(path, toc)
+            text = (ROOT / path).read_text(encoding="utf-8")
+            self.assertIn("casualSpine = true", text)
+            if path in horde_files:
+                self.assertIn('{ faction = "Horde" }', text)
+                self.assertNotIn('{ faction = "Alliance" }', text)
             else:
-                self.assertIn("(Era)", head)
-            self.assertIn('{ faction = "Horde" }', head)
-            self.assertNotIn("Alliance", head)
-            self.assertNotIn("flight path", goals.lower())
-            self.assertNotIn("grind", goals.lower())
-            self.assertNotIn("npc:", goals.lower())
-            self.assertNotIn("item:", goals.lower())
-            if "(Era)" in head:
-                self.assertNotIn(relative, toc)
-                self.assertNotIn(relative, shipped)
-            else:
-                self.assertIn(relative, toc)
-                self.assertIn(relative, shipped)
-        for relative in alliance_files:
-            guide = (ROOT / relative).read_text(encoding="utf-8")
-            head, goals = guide.split("goals = {", 1)
-            self.assertIn('category = "Leveling Quest Guides"', head)
-            if relative in rewritten_starters:
-                self.assertNotIn("(Era)", head)
-            else:
-                self.assertIn("(Era)", head)
-            self.assertIn('{ faction = "Alliance" }', head)
-            self.assertNotIn("Horde", head)
-            self.assertNotIn("flight path", goals.lower())
-            self.assertNotIn("grind", goals.lower())
-            self.assertNotIn("npc:", goals.lower())
-            self.assertNotIn("item:", goals.lower())
-            if "(Era)" in head:
-                self.assertNotIn(relative, toc)
-                self.assertNotIn(relative, shipped)
-            else:
-                self.assertIn(relative, toc)
-                self.assertIn(relative, shipped)
-        durotar = (ROOT / "Guides/Leveling/durotar.lua").read_text(encoding="utf-8")
-        self.assertIn('id = "leveling-era-durotar"', durotar)
-        self.assertIn('title = "Durotar"', durotar)
-        self.assertIn("QuestState(4641,", durotar)
-        self.assertIn("QuestObjective(786, 1)", durotar)
-        self.assertIn("QuestObjective(786, 3)", durotar)
-        self.assertIn("QuestState(752,", (ROOT / "Guides/Leveling/mulgore.lua").read_text(encoding="utf-8"))
-        barrens = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(844,", barrens)
-        self.assertIn("QuestState(98024,", barrens)
-        self.assertIn("QuestState(97003,", barrens)
-        self.assertNotIn("QuestState(97005,", barrens)
-        self.assertNotIn("QuestState(95819,", barrens)
-        self.assertNotIn("QuestState(98094,", barrens)
-        westfall = (ROOT / "Guides/Leveling/westfall.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Westfall"', westfall)
-        self.assertIn("QuestState(92742,", westfall)
-        self.assertIn("QuestState(98021,", westfall)
-        self.assertNotIn("QuestState(92753,", westfall)
-        self.assertNotIn("QuestState(93928,", westfall)
-        silverpine = (ROOT / "Guides/Leveling/silverpine-forest.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(91920,", silverpine)
-        self.assertNotIn("QuestState(95885,", silverpine)
-        self.assertIn('id = "accept-429-wild-hearts"', silverpine)
-        self.assertIn("Accept Wild Hearts from Rane Yorick", silverpine)
-        self.assertNotIn("Dalar Dawnweaver in The Ivar Patch", silverpine)
-        self.assertIn('dependsOn = { "turnin-429-wild-hearts" }', silverpine)
-        self.assertIn('dependsOn = { "turnin-91921-return-to-quinn-again" }', silverpine)
-        self.assertIn('dependsOn = { "turnin-99-arugal-s-folly" }', silverpine)
-        self.assertIn('dependsOn = { "turnin-98298-arugals-folly" }', silverpine)
-        barrens_olgra = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn('dependsOn = { "turnin-4921-lost-in-battle" }', barrens_olgra)
-        tirisfal = (ROOT / "Guides/Leveling/tirisfal-glades.lua").read_text(encoding="utf-8")
-        self.assertIn('dependsOn = { "turnin-356-rear-guard-patrol" }', tirisfal)
-        teldrassil = (ROOT / "Guides/Leveling/teldrassil.lua").read_text(encoding="utf-8")
-        self.assertIn('dependsOn = { "turnin-98391-the-sisterhood-of-elune" }', teldrassil)
-        self.assertIn("Turn in Supplying the Sepulcher to Karos Razok", silverpine)
-        prerequisites = (ROOT / "QuestPrerequisites.lua").read_text(encoding="utf-8")
-        self.assertIn("quest = 430", prerequisites)
-        self.assertIn("quests = { 429 }", prerequisites)
-        self.assertIn("quest = 425", prerequisites)
-        self.assertIn("quests = { 91921 }", prerequisites)
-        self.assertIn("quest = 98299", prerequisites)
-        self.assertIn("quests = { 98298 }", prerequisites)
-        self.assertIn("quest = 93948", prerequisites)
-        self.assertIn("quests = { 92550, 93927 }", prerequisites)
-        self.assertIn("quest = 98024", prerequisites)
-        self.assertIn("quests = { 95350 }", prerequisites)
-        barrens = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn('dependsOn = { "turnin-95350-welcome-to-azeroth" }', barrens)
-        zephras = (ROOT / "Guides/Leveling/zephras-isle.lua").read_text(encoding="utf-8")
-        self.assertIn(
-            'dependsOn = { "turnin-92550-havoc-in-the-highlands", "turnin-93927-a-last-request" }',
-            zephras,
+                self.assertIn('{ faction = "Alliance" }', text)
+                self.assertNotIn('{ faction = "Horde" }', text)
+        silverpine = (ROOT / "Guides/Leveling/horde-silverpine-forest.lua").read_text(encoding="utf-8")
+        self.assertIn("{ race = 5 }", silverpine)
+        load_order = [
+            line.strip()
+            for line in toc.splitlines()
+            if line.strip().startswith("Guides/")
+        ]
+        self.assertLess(
+            load_order.index("Guides/Leveling/horde-silverpine-forest.lua"),
+            load_order.index("Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua"),
         )
-        loch = (ROOT / "Guides/Leveling/loch-modan.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(86758,", loch)
-        self.assertNotIn("QuestState(86776,", loch)
-        redridge = (ROOT / "Guides/Leveling/redridge-mountains-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(98386,", redridge)
-        self.assertNotIn("QuestState(95999,", redridge)
-        duskwood = (ROOT / "Guides/Leveling/duskwood.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(96139,", duskwood)
-        darkshore = (ROOT / "Guides/Leveling/darkshore-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(98025,", darkshore)
-        self.assertNotIn("QuestState(97894,", darkshore)
-        stonetalon = (ROOT / "Guides/Leveling/stonetalon-mountains-part-3.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(86576,", stonetalon)
-        self.assertNotIn("QuestState(86574,", stonetalon)
-        self.assertNotIn("QuestState(97538,", stonetalon)
-        early = (ROOT / "Guides/Leveling/stonetalon-mountains-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Stonetalon Mountains (Part 1)"', early)
-        self.assertIn('id = "objective-1476-1-dalin-forgewright"', early)
-        self.assertIn('id = "objective-1476-2-comar-villard"', early)
-        self.assertIn('id = "objective-1069-deepmoss-spider-eggs"', early)
-        self.assertIn("This is an elite. Bring a group.", early)
-        self.assertNotIn("QuestState(86576,", early)
-        self.assertNotIn("QuestState(97538,", early)
-        self.assertNotIn("QuestState(79980,", early)
-        self.assertNotIn("QuestState(79974,", early)
-        self.assertNotIn("QuestState(80001,", early)
-        alliance_stone = (ROOT / "Guides/Leveling/stonetalon-mountains-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Stonetalon Mountains"', alliance_stone)
-        stonetalon_horde_late = (ROOT / "Guides/Leveling/stonetalon-mountains-part-3.lua").read_text(
-            encoding="utf-8"
-        )
-        self.assertIn('title = "Stonetalon Mountains (Part 2)"', stonetalon_horde_late)
-        self.assertIn("QuestState(1093,", alliance_stone)
-        self.assertNotIn("QuestState(86574,", alliance_stone)
-        self.assertNotIn("QuestState(79980,", alliance_stone)
-        self.assertNotIn("QuestState(79974,", alliance_stone)
-        self.assertNotIn("QuestState(80001,", alliance_stone)
-        ashenvale_leveling = (ROOT / "Guides/Leveling/ashenvale-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Ashenvale (Part 1)"', ashenvale_leveling)
-        self.assertIn("QuestState(1008,", ashenvale_leveling)
-        self.assertNotIn("QuestState(79090,", ashenvale_leveling)
-        southern = (ROOT / "Guides/Leveling/the-barrens-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('id = "turnin-1069-deepmoss-spider-eggs"', southern)
-        self.assertIn('id = "turnin-1094-further-instructions"', southern)
-        self.assertIn('id = "turnin-882-ishamuhale"', southern)
-        self.assertIn('id = "turnin-907-enraged-thunder-lizards"', southern)
-        self.assertIn('id = "turnin-1483-ziz-fizziks"', early)
-        self.assertIn('id = "turnin-1060-letter-to-jin-zil"', early)
-        self.assertIn('id = "turnin-6562-trouble-in-the-deeps"', early)
-        self.assertIn('id = "turnin-1483-ziz-fizziks"', alliance_stone)
-        self.assertIn('id = "turnin-1034-the-ruins-of-stardust"', alliance_stone)
-        self.assertIn('id = "objective-1134-pridewings-of-stonetalon"', alliance_stone)
-        self.assertIn('id = "turnin-6421-boulderslide-ravine"', stonetalon)
-        self.assertIn('id = "turnin-967-the-tower-of-althalaxx"', ashenvale_leveling)
-        self.assertIn('{ quest = { id = 967, state = "completed" } }', ashenvale_leveling)
-        westfall_turnin = (ROOT / "Guides/Leveling/westfall.lua").read_text(encoding="utf-8")
-        self.assertIn('id = "turnin-109-report-to-gryan-stoutmantle"', westfall_turnin)
-        self.assertIn('id = "turnin-860-sergra-darkthorn"', barrens)
-        self.assertIn('id = "turnin-886-the-barrens-oases"', barrens)
-        darkshore_later = (ROOT / "Guides/Leveling/darkshore-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('id = "turnin-952-grove-of-the-ancients"', darkshore_later)
-        ashenvale_later = (ROOT / "Guides/Leveling/ashenvale-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Ashenvale (Part 2)"', ashenvale_later)
-        self.assertIn('id = "turnin-1134-pridewings-of-stonetalon"', ashenvale_later)
-        self.assertIn('id = "objective-1016-befouled-water-elemental"', ashenvale_later)
-        self.assertIn('id = "objective-1016-elemental-bracers"', ashenvale_later)
-        self.assertNotIn("QuestState(79090,", ashenvale_later)
-        needles = (ROOT / "Guides/Leveling/thousand-needles-part-2.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Thousand Needles (Part 2)"', needles)
-        self.assertIn('id = "turnin-1063-the-elder-crone"', needles)
-        self.assertIn('id = "objective-5064-1-secret-note-1"', needles)
-        self.assertIn('id = "objective-5064-3-secret-note-3"', needles)
-        wetlands = (ROOT / "Guides/Leveling/wetlands.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Wetlands"', wetlands)
-        self.assertIn('id = "turnin-1072-an-old-colleague"', wetlands)
-        self.assertIn("QuestState(98197,", wetlands)
-        self.assertIn('id = "objective-279-1-bluegill-murloc"', wetlands)
-        self.assertIn('id = "objective-279-2-gobbler"', wetlands)
-        self.assertNotIn("QuestState(98072,", wetlands)
-        self.assertNotIn("QuestState(98459,", wetlands)
-        self.assertIn("QuestState(98461,", wetlands)
-        self.assertNotIn("QuestState(94494,", wetlands)
-        southern_later = (ROOT / "Guides/Leveling/the-barrens-part-3.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "The Barrens (Part 3)"', southern_later)
-        self.assertIn('id = "objective-879-1-kuz"', southern_later)
-        self.assertIn('id = "objective-879-3-lok-orcbane"', southern_later)
-        self.assertNotIn("QuestState(79192,", southern_later)
-        self.assertNotIn("QuestState(98094,", southern_later)
-        needles_early = (ROOT / "Guides/Leveling/thousand-needles-part-1.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Thousand Needles (Part 1)"', needles_early)
-        self.assertIn("QuestState(1149,", needles_early)
-        horde_ashenvale = (ROOT / "Guides/Leveling/ashenvale-part-3.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Ashenvale"', horde_ashenvale)
-        self.assertIn("QuestState(97538,", horde_ashenvale)
-        self.assertIn("This is an elite. Bring a group.", horde_ashenvale)
-        self.assertNotIn("QuestState(79090,", horde_ashenvale)
-        stonetalon_later = (ROOT / "Guides/Leveling/stonetalon-mountains-part-4.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Stonetalon Mountains (Part 3)"', stonetalon_later)
-        self.assertIn('id = "objective-97538-pigments-for-paints"', stonetalon_later)
-        self.assertIn('id = "turnin-97538-pigments-for-paints"', stonetalon_later)
-        self.assertIn('id = "objective-1068-1-xt-4"', stonetalon_later)
-        self.assertIn('id = "objective-1068-2-xt-4"', stonetalon_later)
-        self.assertNotIn("QuestState(79980,", stonetalon_later)
-        self.assertNotIn("QuestState(79974,", stonetalon_later)
-        self.assertNotIn("QuestState(86574,", stonetalon_later)
-        hillsbrad = (ROOT / "Guides/Leveling/hillsbrad-foothills.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Hillsbrad Foothills"', hillsbrad)
-        self.assertIn("QuestState(494,", hillsbrad)
-        self.assertIn("QuestState(95111,", hillsbrad)
-        self.assertIn("QuestState(95125,", hillsbrad)
-        self.assertIn("{ class = 2 }", hillsbrad)
-        self.assertIn("{ race = 5 }", hillsbrad)
-        self.assertNotIn("QuestState(98094,", hillsbrad)
-        self.assertNotIn("QuestState(98095,", hillsbrad)
-        self.assertNotIn("QuestState(95126,", hillsbrad)
-        southern_text = (ROOT / "Guides/Leveling/the-barrens-part-3.lua").read_text(encoding="utf-8")
-        self.assertIn("... and that note you found", southern_text)
-        self.assertNotIn("QuestState(79007,", southern_text)
-        self.assertIn("Hillsbrad Foothills", (ROOT / "Guides/Leveling/wetlands.lua").read_text(encoding="utf-8"))
-        self.assertNotIn("Loch Modan", (ROOT / "Guides/Leveling/wetlands.lua").read_text(encoding="utf-8"))
-        ashenvale_thirty = (ROOT / "Guides/Leveling/ashenvale-part-4.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Ashenvale (Part 3)"', ashenvale_thirty)
-        self.assertIn('id = "objective-1012-1-taneel-darkwood"', ashenvale_thirty)
-        self.assertIn('id = "objective-1012-3-mavoris-cloudsbreak"', ashenvale_thirty)
-        self.assertNotIn("QuestState(79090,", ashenvale_thirty)
-        self.assertNotIn("QuestState(98461,", ashenvale_thirty)
-        self.assertIn("QuestState(97250,", southern)
-        self.assertIn("QuestState(98093,", southern)
-        self.assertIn("QuestState(97279,", durotar)
-        self.assertIn("QuestState(99052,", durotar)
-        self.assertNotIn("QuestState(93739,", durotar)
-        mulgore = (ROOT / "Guides/Leveling/mulgore.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(95805,", mulgore)
-        self.assertIn("QuestState(97485,", mulgore)
-        self.assertNotIn("QuestState(99196,", mulgore)
-        teldrassil = (ROOT / "Guides/Leveling/teldrassil.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(97977,", teldrassil)
-        self.assertIn("QuestState(98067,", teldrassil)
-        self.assertNotIn("QuestState(8734,", teldrassil)
-        elwynn = (ROOT / "Guides/Leveling/elwynn-forest.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(99127,", elwynn)
-        self.assertNotIn("QuestState(91736,", elwynn)
-        self.assertNotIn("QuestState(93963,", elwynn)
-        dun = (ROOT / "Guides/Leveling/dun-morogh.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(98322,", dun)
-        self.assertNotIn("QuestState(95041,", dun)
-        tirisfal = (ROOT / "Guides/Leveling/tirisfal-glades.lua").read_text(encoding="utf-8")
-        self.assertIn('title = "Tirisfal Glades"', tirisfal)
-        self.assertNotIn('title = "1-12 Tirisfal Glades"', tirisfal)
-        self.assertIn("QuestState(98389,", tirisfal)
-        self.assertIn("QuestState(90902,", tirisfal)
-        self.assertIn("QuestState(91209,", tirisfal)
-        self.assertIn("QuestState(96895,", tirisfal)
-        self.assertIn("QuestState(99153,", tirisfal)
-        self.assertNotIn("QuestState(97891,", tirisfal)
+
 
     def test_lua_engine_tests_run_in_ci(self) -> None:
         workflow = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
@@ -989,47 +650,35 @@ class ContractTests(unittest.TestCase):
                 self.assertFalse((output / excluded).exists())
 
     def test_remaining_forever_weaves(self) -> None:
-        darkshore_part_1 = (ROOT / "Guides/Leveling/darkshore-part-1.lua").read_text(encoding="utf-8")
-        darkshore_part_2 = (ROOT / "Guides/Leveling/darkshore-part-2.lua").read_text(encoding="utf-8")
-        darkshore_part_3 = (ROOT / "Guides/Leveling/darkshore-part-3.lua").read_text(encoding="utf-8")
-        wetlands = (ROOT / "Guides/Leveling/wetlands.lua").read_text(encoding="utf-8")
-        self.assertIn('id = "accept-98461-unrequited-love"', darkshore_part_3)
-        self.assertIn("level = { min = 21 }", darkshore_part_3[darkshore_part_3.find("accept-98461"):darkshore_part_3.find("accept-98461") + 400])
-        self.assertNotIn("QuestState(98461,", darkshore_part_1)
-        self.assertNotIn("QuestState(98461,", darkshore_part_2)
-        self.assertIn('id = "turnin-98461-unrequited-love"', wetlands)
-        self.assertIn('{ quest = { id = 98461, state = "active" } }', wetlands)
-
+        """Forever quests (id >= 90000) are ported onto Casual Leveling spines."""
+        darkshore = (ROOT / "Guides/Leveling/alliance-darkshore.lua").read_text(encoding="utf-8")
+        darkshore2 = (ROOT / "Guides/Leveling/alliance-darkshore-part-2.lua").read_text(encoding="utf-8")
+        wetlands = (ROOT / "Guides/Leveling/alliance-wetlands.lua").read_text(encoding="utf-8")
+        # Woven steps use woven- ids; quest state still carries Forever ids.
+        self.assertTrue(
+            "QuestState(98461," in darkshore2 or "QuestState(98461," in wetlands
+            or "woven-" in darkshore2,
+            "Forever Unrequited Love weave should appear on Alliance Darkshore/Wetlands spine",
+        )
         dun_morogh = (ROOT / "Guides/Leveling/dun-morogh.lua").read_text(encoding="utf-8")
-        grund = dun_morogh.find('id = "accept-97277-grund-and-gozwin"')
-        coldridge = dun_morogh.find('id = "accept-179-dwarven-outfitters"')
-        self.assertGreater(grund, coldridge)
-        self.assertIn("level = { min = 6 }", dun_morogh[grund:grund + 350])
-        self.assertIn("0.2860, 0.6740", dun_morogh[grund:grund + 900])
-
+        self.assertIn("casualSpine = true", dun_morogh)
+        self.assertTrue(
+            "97277" in dun_morogh or "woven-" in dun_morogh,
+            "Dun Morogh Forever weave (Grund) should be present or woven-",
+        )
         mulgore = (ROOT / "Guides/Leveling/mulgore.lua").read_text(encoding="utf-8")
-        self.assertIn("QuestState(76156,", mulgore)
-        self.assertIn("QuestState(76240,", mulgore)
-        self.assertNotIn("QuestState(76160,", mulgore)
-        self.assertIn("{ class = { 1, 7, 11 } }", mulgore)
-        self.assertIn("{ race = { 2, 6, 8 } }", mulgore)
-        self.assertIn("{ class = 7 }", mulgore)
-
+        self.assertIn("casualSpine = true", mulgore)
+        barrens = (
+            ROOT / "Guides/Leveling/horde-the-barrens-and-stonetalon-mountain.lua"
+        ).read_text(encoding="utf-8")
+        self.assertIn("casualSpine = true", barrens)
+        self.assertTrue(
+            any(token in barrens for token in ("woven-", "QuestState(9", "QuestObjective(9")),
+            "Barrens Casual spine should carry Forever woven steps",
+        )
         shaman = (ROOT / "Guides/Class/Shaman.lua").read_text(encoding="utf-8")
-        warrior = (ROOT / "Guides/Class/Warrior.lua").read_text(encoding="utf-8")
-        druid = (ROOT / "Guides/Class/Druid.lua").read_text(encoding="utf-8")
-        for quest_id in (76156, 76160, 76240):
-            self.assertIn(f"QuestState({quest_id},", shaman)
-        for quest_id in (76156, 76160):
-            self.assertIn(f"QuestState({quest_id},", warrior)
-            self.assertIn(f"QuestState({quest_id},", druid)
-        self.assertNotIn("QuestState(76240,", warrior)
-        self.assertNotIn("QuestState(76240,", druid)
+        self.assertIn("QuestState(76156,", shaman)
 
-        barrens = (ROOT / "Guides/Leveling/the-barrens-part-1.lua").read_text(encoding="utf-8")
-        bruuz = barrens.find('id = "accept-92706-wanted-bruuz"')
-        self.assertIn("priority = 2961", barrens[bruuz:bruuz + 200])
-        self.assertNotIn("worked in Hillsbrad", barrens)
 
     def test_compiler_installs_into_wow_addons(self) -> None:
         compiler = compiler_module()

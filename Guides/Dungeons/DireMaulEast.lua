@@ -39,7 +39,7 @@ ns:RegisterGuide({
             id = "accept-5527-a-reliquary-of-purity",
             kind = "accept",
             priority = 10,
-            conditions = { level = { min = 56 } },
+            conditions = { level = { min = 59 } },
             text = "Accept A Reliquary of Purity from Rabine Saturna.",
             complete = QuestState(5527, "activeOrCompleted"),
             route = {
@@ -50,7 +50,7 @@ ns:RegisterGuide({
             id = "turnin-5527-a-reliquary-of-purity",
             kind = "turnin",
             priority = 12,
-            conditions = { level = { min = 56 } },
+            conditions = { level = { min = 59 } },
             text = "Turn in A Reliquary of Purity to Rabine Saturna.",
             dependsOn = { "accept-5527-a-reliquary-of-purity" },
             complete = QuestState(5527, "completed"),
