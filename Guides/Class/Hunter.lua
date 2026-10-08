@@ -355,7 +355,7 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-94013-taming-the-beast",
+            id = "accept-94978-taming-the-beast",
             kind = "accept",
             priority = 130,
             conditions = {
@@ -366,44 +366,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(94013, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94013-taming-the-beast",
-            kind = "turnin",
-            priority = 140,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94013-taming-the-beast" },
-            complete = QuestState(94013, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94978-taming-the-beast",
-            kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94013-taming-the-beast" },
+            dependsOn = { "turnin-94007-taming-the-beast" },
             complete = QuestState(94978, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
@@ -413,7 +376,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94978-taming-the-beast",
             kind = "turnin",
-            priority = 160,
+            priority = 140,
             conditions = {
                 all = {
                     { class = 3 },
@@ -432,7 +395,7 @@ ns:RegisterGuide({
         {
             id = "accept-94979-taming-the-beast",
             kind = "accept",
-            priority = 170,
+            priority = 150,
             conditions = {
                 all = {
                     { class = 3 },
@@ -451,7 +414,7 @@ ns:RegisterGuide({
         {
             id = "turnin-94979-taming-the-beast",
             kind = "turnin",
-            priority = 180,
+            priority = 160,
             conditions = {
                 all = {
                     { class = 3 },
@@ -462,6 +425,44 @@ ns:RegisterGuide({
             text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
             dependsOn = { "accept-94979-taming-the-beast" },
             complete = QuestState(94979, "completed"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
+                    "Travel to Quel'ana Quickgale in Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-94013-taming-the-beast",
+            kind = "accept",
+            priority = 170,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 95, 96 } },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "turnin-94979-taming-the-beast" },
+            complete = QuestState(94013, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
+                    "Travel to Quel'ana Quickgale in Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-94013-taming-the-beast",
+            kind = "turnin",
+            priority = 180,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    { race = { 95, 96 } },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "accept-94013-taming-the-beast" },
+            complete = QuestState(94013, "completed"),
             route = {
                 Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
                     "Travel to Quel'ana Quickgale in Zephras Isle."),
@@ -479,6 +480,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Training the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
+            dependsOn = { "turnin-94013-taming-the-beast" },
             complete = QuestState(94050, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
@@ -512,10 +514,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest.",
+            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             complete = QuestState(94792, "activeOrCompleted"),
             route = {
                 Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
@@ -530,10 +533,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest.",
+            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "accept-94792-taming-the-beast" },
             complete = QuestState(94792, "completed"),
             route = {
@@ -549,10 +553,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest.",
+            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "turnin-94792-taming-the-beast" },
             complete = QuestState(94863, "activeOrCompleted"),
             route = {
@@ -568,10 +573,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest.",
+            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "accept-94863-taming-the-beast" },
             complete = QuestState(94863, "completed"),
             route = {
@@ -587,10 +593,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest.",
+            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "turnin-94863-taming-the-beast" },
             complete = QuestState(94864, "activeOrCompleted"),
             route = {
@@ -606,10 +613,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest.",
+            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "accept-94864-taming-the-beast" },
             complete = QuestState(94864, "completed"),
             route = {
@@ -625,10 +633,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Training the Beast from Josephine Carson in Elwynn Forest.",
+            text = "Accept Training the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "turnin-94864-taming-the-beast" },
             complete = QuestState(94793, "activeOrCompleted"),
             route = {
@@ -644,10 +653,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Training the Beast to Isaac Chan in Elwynn Forest.",
+            text = "Turn in Training the Beast to Isaac Chan in Elwynn Forest. This step is for Humans and Gnomes.",
             dependsOn = { "accept-94793-training-the-beast" },
             complete = QuestState(94793, "completed"),
             route = {
@@ -1001,10 +1011,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                 },
             },
-            text = "Accept Etched Note from Grull Hawkwind in Mulgore. This step is for Orcs and Tauren.",
+            text = "Accept Etched Note from Grull Hawkwind in Mulgore. This step is for Tauren.",
             complete = QuestState(3092, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.4480, 0.7720, "Grull Hawkwind",
@@ -1019,10 +1029,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                 },
             },
-            text = "Turn in Etched Note to Lanka Farshot in Mulgore. This step is for Orcs and Tauren.",
+            text = "Turn in Etched Note to Lanka Farshot in Mulgore. This step is for Tauren.",
             dependsOn = { "accept-3092-etched-note" },
             complete = QuestState(3092, "completed"),
             route = {
@@ -1271,11 +1281,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Taming the Beast from Yaw Sharpmane in Mulgore. This step is for Orcs and Tauren.",
+            text = "Accept Taming the Beast from Yaw Sharpmane in Mulgore. This step is for Tauren.",
             dependsOn = { "turnin-6061-taming-the-beast" },
             complete = QuestState(6087, "activeOrCompleted"),
             route = {
@@ -1291,11 +1301,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Taming the Beast to Yaw Sharpmane in Mulgore. This step is for Orcs and Tauren.",
+            text = "Turn in Taming the Beast to Yaw Sharpmane in Mulgore. This step is for Tauren.",
             dependsOn = { "accept-6087-taming-the-beast" },
             complete = QuestState(6087, "completed"),
             route = {

@@ -317,6 +317,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92461-harmony-in-balance" },
             conditions = {
                 all = {
+                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 2 } },
                 },
@@ -371,6 +372,7 @@ ns:RegisterGuide({
             dependsOn = { "turnin-92461-harmony-in-balance" },
             conditions = {
                 all = {
+                    { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 2 } },
                 },
@@ -442,6 +444,7 @@ ns:RegisterGuide({
             priority = 240,
             conditions = {
                 all = {
+                    { faction = "Alliance" },
                     { class = 8 },
                     { level = { min = 2 } },
                 },
@@ -460,6 +463,7 @@ ns:RegisterGuide({
             priority = 250,
             conditions = {
                 all = {
+                    { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 2 } },
                 },
@@ -479,6 +483,7 @@ ns:RegisterGuide({
             dependsOn = { "accept-elemental-unrest" },
             conditions = {
                 all = {
+                    { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 3 } },
                 },
@@ -668,6 +673,7 @@ ns:RegisterGuide({
             priority = 380,
             conditions = {
                 all = {
+                    { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 3 } },
                 },
@@ -864,6 +870,7 @@ ns:RegisterGuide({
             priority = 510,
             conditions = {
                 all = {
+                    { faction = "Horde" },
                     { class = 7 },
                     { level = { min = 3 } },
                 },
@@ -4223,7 +4230,7 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "accept-taming-the-beast-94013",
+            id = "accept-taming-the-beast-94978",
             kind = "accept",
             priority = 2760,
             conditions = {
@@ -4235,44 +4242,6 @@ ns:RegisterGuide({
             },
             text = "Accept Taming the Beast from Quel'ana Quickgale.",
             dependsOn = { "turnin-taming-the-beast" },
-            complete = QuestState(94013, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-taming-the-beast-94013",
-            kind = "turnin",
-            priority = 2770,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Use the Taming Rod to tame a Vuldren Alpha in the Gustberry Lowlands. Practice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
-            dependsOn = { "accept-taming-the-beast-94013" },
-            complete = QuestState(94013, "completed"),
-            route = {
-                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
-                    "Travel to Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-taming-the-beast-94978",
-            kind = "accept",
-            priority = 2780,
-            conditions = {
-                all = {
-                    { race = { RACE_ALLIANCE, RACE_HORDE } },
-                    { class = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast-94013" },
             complete = QuestState(94978, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
@@ -4282,7 +4251,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast-94978",
             kind = "turnin",
-            priority = 2790,
+            priority = 2770,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4301,7 +4270,7 @@ ns:RegisterGuide({
         {
             id = "accept-taming-the-beast-94979",
             kind = "accept",
-            priority = 2800,
+            priority = 2780,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4320,7 +4289,7 @@ ns:RegisterGuide({
         {
             id = "turnin-taming-the-beast-94979",
             kind = "turnin",
-            priority = 2810,
+            priority = 2790,
             conditions = {
                 all = {
                     { race = { RACE_ALLIANCE, RACE_HORDE } },
@@ -4331,6 +4300,44 @@ ns:RegisterGuide({
             text = "Use the Taming Rod to tame an Ornery Galestrider in the Gustberry Lowlands.",
             dependsOn = { "accept-taming-the-beast-94979" },
             complete = QuestState(94979, "completed"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "accept-taming-the-beast-94013",
+            kind = "accept",
+            priority = 2800,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Taming the Beast from Quel'ana Quickgale.",
+            dependsOn = { "turnin-taming-the-beast-94979" },
+            complete = QuestState(94013, "activeOrCompleted"),
+            route = {
+                Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
+                    "Travel to Zephras Isle."),
+            },
+        },
+        {
+            id = "turnin-taming-the-beast-94013",
+            kind = "turnin",
+            priority = 2810,
+            conditions = {
+                all = {
+                    { race = { RACE_ALLIANCE, RACE_HORDE } },
+                    { class = 3 },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Use the Taming Rod to tame a Vuldren Alpha in the Gustberry Lowlands. Practice your skills, then return the Taming Rod to Quel'ana Quickgale in Valanaar.",
+            dependsOn = { "accept-taming-the-beast-94013" },
+            complete = QuestState(94013, "completed"),
             route = {
                 Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
                     "Travel to Zephras Isle."),
@@ -4348,7 +4355,7 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Training the Beast from Quel'ana Quickgale.",
-            dependsOn = { "turnin-taming-the-beast-94979" },
+            dependsOn = { "turnin-taming-the-beast-94013" },
             complete = QuestState(94050, "activeOrCompleted"),
             route = {
                 Point(MAP.ZEPHRAS, 0.596, 0.726, "Quel'ana Quickgale",
@@ -5069,6 +5076,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5087,6 +5095,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5108,6 +5117,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5126,6 +5136,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5144,6 +5155,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5162,6 +5174,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5183,6 +5196,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5201,6 +5215,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { race = 96 },
                     { level = { min = 13 } },
                 },
             },
@@ -5219,6 +5234,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5237,6 +5253,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -5256,6 +5273,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5274,6 +5292,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5292,6 +5311,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5310,6 +5330,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5328,6 +5349,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -5347,6 +5369,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { class = 11 },
                     { level = { min = 10 } },
                 },
@@ -5366,6 +5389,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5384,6 +5408,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5402,6 +5427,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5420,6 +5446,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5438,6 +5465,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { level = { min = 13 } },
                 },
             },
@@ -5461,6 +5489,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Alliance" },
+                    { race = 95 },
                     { class = 11 },
                     { level = { min = 10 } },
                 },

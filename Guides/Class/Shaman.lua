@@ -232,11 +232,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Orcs and Tauren.",
+            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Tauren.",
             complete = QuestState(1519, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
@@ -251,11 +251,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Kill Bristleback Shaman in Brambleblade Ravine and collect 2 Ritual Salve. This step is for Orcs and Tauren.",
+            text = "Kill Bristleback Shaman in Brambleblade Ravine and collect 2 Ritual Salve. This step is for Tauren.",
             dependsOn = { "accept-1519-call-of-earth" },
             complete = QuestState(1519, "complete"),
             route = {
@@ -271,11 +271,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Orcs and Tauren.",
+            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Tauren.",
             dependsOn = { "objective-1519-call-of-earth" },
             complete = QuestState(1519, "completed"),
             route = {
@@ -291,11 +291,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Orcs, Tauren, and Trolls.",
+            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Tauren.",
             dependsOn = { "turnin-1519-call-of-earth" },
             complete = QuestState(1520, "activeOrCompleted"),
             route = {
@@ -311,11 +311,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Tauren.",
             dependsOn = { "accept-1520-call-of-earth" },
             complete = QuestState(1520, "completed"),
             route = {
@@ -333,11 +333,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Tauren.",
             dependsOn = { "turnin-1520-call-of-earth" },
             complete = QuestState(1521, "activeOrCompleted"),
             route = {
@@ -355,11 +355,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Orcs, Tauren, and Trolls.",
+            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Tauren.",
             dependsOn = { "accept-1521-call-of-earth" },
             complete = QuestState(1521, "completed"),
             route = {
@@ -375,11 +375,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             complete = QuestState(1516, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
@@ -394,11 +394,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Kill Felstalker in Burning Blade Coven and collect 2 Felstalker Hoof. This step is for Orcs, Tauren, and Trolls.",
+            text = "Kill Felstalker in Burning Blade Coven and collect 2 Felstalker Hoof. This step is for Orcs and Trolls.",
             dependsOn = { "accept-1516-call-of-earth" },
             complete = QuestState(1516, "complete"),
             route = {
@@ -414,11 +414,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "objective-1516-call-of-earth" },
             complete = QuestState(1516, "completed"),
             route = {
@@ -434,11 +434,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "turnin-1516-call-of-earth" },
             complete = QuestState(1517, "activeOrCompleted"),
             route = {
@@ -454,11 +454,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "accept-1517-call-of-earth" },
             complete = QuestState(1517, "completed"),
             route = {
@@ -476,11 +476,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "turnin-1517-call-of-earth" },
             complete = QuestState(1518, "activeOrCompleted"),
             route = {
@@ -498,11 +498,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "accept-1518-call-of-earth" },
             complete = QuestState(1518, "completed"),
             route = {
@@ -1817,10 +1817,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Earth Sapta from Seer Ravenfeather in Mulgore.",
+            text = "Accept Earth Sapta from Seer Ravenfeather in Mulgore. This step is for Tauren.",
             complete = QuestState(1462, "activeOrCompleted"),
             route = {
                 Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
@@ -1835,10 +1836,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
+                    { race = 6 },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Earth Sapta to Seer Ravenfeather in Mulgore.",
+            text = "Turn in Earth Sapta to Seer Ravenfeather in Mulgore. This step is for Tauren.",
             dependsOn = { "accept-1462-earth-sapta" },
             complete = QuestState(1462, "completed"),
             route = {
@@ -1854,10 +1856,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Accept Earth Sapta from Canaga Earthcaller in Durotar.",
+            text = "Accept Earth Sapta from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             complete = QuestState(1463, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
@@ -1872,52 +1875,16 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 7 },
+                    { race = { 2, 8 } },
                     { level = { min = 4 } },
                 },
             },
-            text = "Turn in Earth Sapta to Canaga Earthcaller in Durotar.",
+            text = "Turn in Earth Sapta to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
             dependsOn = { "accept-1463-earth-sapta" },
             complete = QuestState(1463, "completed"),
             route = {
                 Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
                     "Travel to Canaga Earthcaller in Durotar."),
-            },
-        },
-        {
-            id = "accept-1464-fire-sapta",
-            kind = "accept",
-            priority = 810,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Fire Sapta from Telf Joolam in Durotar.",
-            complete = QuestState(1464, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
-        },
-        {
-            id = "turnin-1464-fire-sapta",
-            kind = "turnin",
-            priority = 820,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Fire Sapta to Telf Joolam in Durotar.",
-            dependsOn = { "accept-1464-fire-sapta" },
-            complete = QuestState(1464, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
             },
         },
         {
@@ -2180,6 +2147,46 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-1464-fire-sapta",
+            kind = "accept",
+            priority = 952,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Accept Fire Sapta from Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "turnin-1525-call-of-fire" },
+            complete = QuestState(1464, "activeOrCompleted"),
+            route = {
+                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
+                    "Travel to Telf Joolam in Durotar."),
+            },
+        },
+        {
+            id = "turnin-1464-fire-sapta",
+            kind = "turnin",
+            priority = 954,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 10 } },
+                },
+            },
+            text = "Turn in Fire Sapta to Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "accept-1464-fire-sapta" },
+            complete = QuestState(1464, "completed"),
+            route = {
+                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
+                    "Travel to Telf Joolam in Durotar."),
+            },
+        },
+        {
             id = "accept-1526-call-of-fire",
             kind = "accept",
             priority = 960,
@@ -2281,82 +2288,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
                     "Travel to Kranal Fiss in The Barrens."),
-            },
-        },
-        {
-            id = "accept-972-water-sapta",
-            kind = "accept",
-            priority = 1010,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Water Sapta from Islen Waterseer in The Barrens.",
-            complete = QuestState(972, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-972-water-sapta",
-            kind = "turnin",
-            priority = 1020,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Water Sapta to Islen Waterseer in The Barrens.",
-            dependsOn = { "accept-972-water-sapta" },
-            complete = QuestState(972, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1103-call-of-water",
-            kind = "accept",
-            priority = 1030,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1103, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
-                    "Travel to Tiev Mordune in Silverpine Forest."),
-            },
-        },
-        {
-            id = "turnin-1103-call-of-water",
-            kind = "turnin",
-            priority = 1040,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1103-call-of-water" },
-            complete = QuestState(1103, "completed"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
-                    "Travel to Tiev Mordune in Silverpine Forest."),
             },
         },
         {
@@ -2714,6 +2645,46 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "accept-972-water-sapta",
+            kind = "accept",
+            priority = 1222,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Water Sapta from Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "turnin-220-call-of-water" },
+            complete = QuestState(972, "activeOrCompleted"),
+            route = {
+                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
+                    "Travel to Islen Waterseer in The Barrens."),
+            },
+        },
+        {
+            id = "turnin-972-water-sapta",
+            kind = "turnin",
+            priority = 1224,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Water Sapta to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "accept-972-water-sapta" },
+            complete = QuestState(972, "completed"),
+            route = {
+                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
+                    "Travel to Islen Waterseer in The Barrens."),
+            },
+        },
+        {
             id = "accept-63-call-of-water",
             kind = "accept",
             priority = 1230,
@@ -2751,6 +2722,46 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.SILVERPINEFOREST, 0.3820, 0.4450, "Brazier of Everfount",
                     "Travel to Brazier of Everfount in Silverpine Forest."),
+            },
+        },
+        {
+            id = "accept-1103-call-of-water",
+            kind = "accept",
+            priority = 1242,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Accept Call of Water from Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "turnin-63-call-of-water" },
+            complete = QuestState(1103, "activeOrCompleted"),
+            route = {
+                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
+                    "Travel to Tiev Mordune in Silverpine Forest."),
+            },
+        },
+        {
+            id = "turnin-1103-call-of-water",
+            kind = "turnin",
+            priority = 1244,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    { class = 7 },
+                    { race = { 2, 6, 8 } },
+                    { level = { min = 20 } },
+                },
+            },
+            text = "Turn in Call of Water to Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
+            dependsOn = { "accept-1103-call-of-water" },
+            complete = QuestState(1103, "completed"),
+            route = {
+                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
+                    "Travel to Tiev Mordune in Silverpine Forest."),
             },
         },
         {

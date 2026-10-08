@@ -289,7 +289,9 @@ ns:RegisterGuide({
             priority = 160,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 2 },
+                { class = 1 }
             } },
             text = "Accept Simple Parchment.",
             complete = QuestState(2383, "activeOrCompleted"),
@@ -304,7 +306,9 @@ ns:RegisterGuide({
             priority = 170,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 2 },
+                { class = 7 }
             } },
             text = "Accept Rune-Inscribed Parchment.",
             complete = QuestState(3089, "activeOrCompleted"),
@@ -319,7 +323,9 @@ ns:RegisterGuide({
             priority = 180,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 2 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Parchment.",
             complete = QuestState(3088, "activeOrCompleted"),
@@ -334,7 +340,9 @@ ns:RegisterGuide({
             priority = 190,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 2 },
+                { class = 3 }
             } },
             text = "Accept Etched Parchment.",
             complete = QuestState(3087, "activeOrCompleted"),
@@ -349,7 +357,9 @@ ns:RegisterGuide({
             priority = 200,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 2 },
+                { class = 9 }
             } },
             text = "Accept Tainted Parchment.",
             complete = QuestState(3090, "activeOrCompleted"),
@@ -364,7 +374,9 @@ ns:RegisterGuide({
             priority = 210,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 1 }
             } },
             text = "Accept Simple Tablet.",
             complete = QuestState(3065, "activeOrCompleted"),
@@ -379,7 +391,9 @@ ns:RegisterGuide({
             priority = 220,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 3 }
             } },
             text = "Accept Etched Tablet.",
             complete = QuestState(3082, "activeOrCompleted"),
@@ -394,7 +408,9 @@ ns:RegisterGuide({
             priority = 230,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Tablet.",
             complete = QuestState(3083, "activeOrCompleted"),
@@ -409,7 +425,9 @@ ns:RegisterGuide({
             priority = 240,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 5 }
             } },
             text = "Accept Hallowed Tablet.",
             complete = QuestState(3085, "activeOrCompleted"),
@@ -424,7 +442,9 @@ ns:RegisterGuide({
             priority = 250,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 7 }
             } },
             text = "Accept Rune-Inscribed Tablet.",
             complete = QuestState(3084, "activeOrCompleted"),
@@ -439,7 +459,9 @@ ns:RegisterGuide({
             priority = 260,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 8 }
             } },
             text = "Accept Glyphic Tablet.",
             complete = QuestState(3086, "activeOrCompleted"),
@@ -470,6 +492,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 2 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Parchment.",
@@ -487,6 +510,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Tablet.",
@@ -504,6 +528,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 2 },
                 { class = 9 }
             } },
             text = "Turn in Tainted Parchment.",
@@ -536,6 +561,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Turn in Hallowed Tablet.",
@@ -553,6 +579,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 2 },
                 { class = 7 }
             } },
             text = "Turn in Rune-Inscribed Parchment.",
@@ -570,6 +597,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 7 }
             } },
             text = "Turn in Rune-Inscribed Tablet.",
@@ -603,6 +631,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 8 }
             } },
             text = "Turn in Glyphic Tablet.",
@@ -620,7 +649,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 2 } },
                 { faction = "Horde" },
-                { class = 9 },
+                { class = { 1, 2, 3, 4, 5, 7, 8, 11 } },
             } },
             text = "Accept Vile Familiars.",
             complete = QuestState(792, "activeOrCompleted"),
@@ -636,6 +665,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 2 },
                 { class = 1 }
             } },
             text = "Turn in Simple Parchment.",
@@ -653,6 +683,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 1 }
             } },
             text = "Turn in Simple Tablet.",
@@ -670,6 +701,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 2 },
                 { class = 3 }
             } },
             text = "Turn in Etched Parchment.",
@@ -687,6 +719,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 3 }
             } },
             text = "Turn in Etched Tablet.",
@@ -719,7 +752,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 2 } },
                 { faction = "Horde" },
-                { class = 9 },
+                { class = { 1, 2, 3, 4, 5, 7, 8, 11 } },
             } },
             text = "Kill 12 Vile Familiar.",
             complete = QuestObjective(792, 1, "Vile Familiar"),
@@ -768,6 +801,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 2 } },
                 { faction = "Horde" },
+                { class = { 1, 2, 3, 4, 5, 7, 8, 11 } },
             } },
             text = "Turn in Vile Familiars.",
             complete = QuestState(792, "completed"),
@@ -861,6 +895,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Accept In Favor of Spirituality.",
@@ -1254,6 +1289,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Turn in In Favor of Spirituality.",
@@ -1271,6 +1307,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Accept Garments of Spirituality.",
@@ -1286,7 +1323,9 @@ ns:RegisterGuide({
             priority = 790,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 8 },
+                { class = 5 }
             } },
             text = "Turn in Garments of Spirituality.",
             complete = QuestState(5648, "completed"),
@@ -1601,6 +1640,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Accept Hex of Weakness.",
@@ -1617,6 +1657,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1633,6 +1674,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1650,6 +1692,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1667,6 +1710,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1683,6 +1727,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1700,6 +1745,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1717,6 +1763,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Accept Taming the Beast.",
@@ -1733,6 +1780,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Use Taming Rod.",
@@ -1750,6 +1798,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Turn in Taming the Beast.",
@@ -1767,6 +1816,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Accept Training the Beast.",
@@ -1832,6 +1882,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 10 } },
                 { faction = "Horde" },
+                { race = { 2, 8 } },
                 { class = 3 },
             } },
             text = "Turn in Training the Beast.",
@@ -2224,6 +2275,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 8 },
                 { class = 5 }
             } },
             text = "Turn in Hex of Weakness.",
@@ -2351,6 +2403,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = { 5, 8 } },
                 { class = 8 }
             } },
             text = "Accept Speak with Anastasia.",
@@ -2560,6 +2613,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Accept Creature of the Void.",
@@ -2576,6 +2630,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Turn in Creature of the Void.",
@@ -2593,6 +2648,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Accept The Binding.",
@@ -2609,6 +2665,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Use Runes of Summoning.",
@@ -2626,6 +2683,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Turn in The Binding.",
@@ -2642,7 +2700,9 @@ ns:RegisterGuide({
             priority = 1630,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = { 5, 8 } },
+                { class = 8 }
             } },
             text = "Turn in Speak with Anastasia.",
             complete = QuestState(1881, "completed"),
@@ -2658,7 +2718,9 @@ ns:RegisterGuide({
             priority = 1640,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = { 5, 8 } },
+                { class = 8 }
             } },
             text = "Accept The Balnir Farmstead.",
             complete = QuestState(1882, "activeOrCompleted"),
@@ -3034,6 +3096,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = { 5, 8 } },
                 { class = 8 }
             } },
             text = "Turn in The Balnir Farmstead.",

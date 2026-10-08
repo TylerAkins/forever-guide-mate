@@ -320,7 +320,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 2 }
+                { race = 1 },
+                { class = 8 }
             } },
             text = "Accept Glyphic Letter.",
             complete = QuestState(3104, "activeOrCompleted"),
@@ -336,7 +337,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 2 }
+                { race = 1 },
+                { class = 1 }
             } },
             text = "Accept Simple Letter.",
             complete = QuestState(3100, "activeOrCompleted"),
@@ -352,7 +354,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 2 }
+                { race = 1 },
+                { class = 9 }
             } },
             text = "Accept Tainted Letter.",
             complete = QuestState(3105, "activeOrCompleted"),
@@ -368,7 +371,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 2 }
+                { race = 1 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Letter.",
             complete = QuestState(3102, "activeOrCompleted"),
@@ -384,7 +388,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 2 }
+                { race = 1 },
+                { class = 5 }
             } },
             text = "Accept Hallowed Letter.",
             complete = QuestState(3103, "activeOrCompleted"),
@@ -400,6 +405,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Accept Consecrated Letter.",
@@ -416,6 +422,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 1 }
             } },
             text = "Turn in Simple Letter.",
@@ -433,6 +440,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Turn in Consecrated Letter.",
@@ -450,6 +458,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 5 }
             } },
             text = "Turn in Hallowed Letter.",
@@ -467,6 +476,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 8 }
             } },
             text = "Turn in Glyphic Letter.",
@@ -499,6 +509,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 9 }
             } },
             text = "Turn in Tainted Letter.",
@@ -624,7 +635,9 @@ ns:RegisterGuide({
             priority = 370,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { race = 1 },
+                { class = 4 }
             } },
             text = "Turn in Encrypted Letter.",
             complete = QuestState(3102, "completed"),
@@ -751,6 +764,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 5 }
             } },
             text = "Accept In Favor of the Light.",
@@ -860,6 +874,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 5 }
             } },
             text = "Turn in In Favor of the Light.",
@@ -877,6 +892,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 5 }
             } },
             text = "Accept Garments of the Light.",
@@ -893,6 +909,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 5 }
             } },
             text = "Turn in Garments of the Light.",
@@ -1682,6 +1699,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 1, 3 } },
                 { class = 5 }
             } },
             text = "Accept Desperate Prayer.",
@@ -2041,7 +2059,8 @@ ns:RegisterGuide({
             priority = 1280,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Turn in Gakin's Summons.",
             complete = QuestState(1685, "completed"),
@@ -2057,7 +2076,8 @@ ns:RegisterGuide({
             priority = 1290,
             conditions = { all = {
                 { },
-                { faction = "Alliance" }
+                { faction = "Alliance" },
+                { class = 9 }
             } },
             text = "Accept Surena Caledon.",
             complete = QuestState(1688, "activeOrCompleted"),
@@ -2340,6 +2360,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = { 1, 3 } },
                 { class = 5 }
             } },
             text = "Turn in Desperate Prayer.",
@@ -2934,6 +2955,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -2950,6 +2972,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2967,6 +2990,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity from Duthorian Rall in Stormwind Cathedral.",
@@ -2980,6 +3004,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -2997,6 +3022,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -3029,6 +3055,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -3046,6 +3073,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Accept The Tome of Divinity.",
@@ -3062,6 +3090,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 1 },
                 { class = 2 }
             } },
             text = "Turn in The Tome of Divinity.",
@@ -4143,6 +4172,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4159,6 +4189,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4177,6 +4208,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4194,6 +4226,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4211,6 +4244,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4229,6 +4263,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4246,6 +4281,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4263,6 +4299,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4281,6 +4318,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4298,6 +4336,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },
@@ -4315,6 +4354,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { class = 3 },
+                    { race = { 1, 7 } },
                     { level = { min = 10 } },
                 },
             },

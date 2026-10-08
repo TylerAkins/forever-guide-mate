@@ -1131,10 +1131,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 4 },
-                    { race = { 1, 4 } },
+                    { race = 4 },
                 },
             },
-            text = "Accept Encrypted Sigil from Conservator Ilthalaine in Teldrassil. This step is for Humans and Night Elves.",
+            text = "Accept Encrypted Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
             complete = QuestState(3118, "activeOrCompleted"),
             route = {
                 Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
@@ -1149,10 +1149,10 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 4 },
-                    { race = { 1, 4 } },
+                    { race = 4 },
                 },
             },
-            text = "Turn in Encrypted Sigil to Frahun Shadewhisper in Teldrassil. This step is for Humans and Night Elves.",
+            text = "Turn in Encrypted Sigil to Frahun Shadewhisper in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-3118-encrypted-sigil" },
             complete = QuestState(3118, "completed"),
             route = {
@@ -1168,11 +1168,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 4 },
-                    { race = { 2, 8 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Therzok from Kaplak in Durotar. This step is for Orcs and Trolls.",
+            text = "Accept Therzok from Kaplak in Durotar. This step is for Orcs.",
             complete = QuestState(1859, "activeOrCompleted"),
             route = {
                 Point(MAP.DUROTAR, 0.5200, 0.4360, "Kaplak",
@@ -1187,11 +1187,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 4 },
-                    { race = { 2, 8 } },
+                    { race = 2 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Therzok to Therzok in Orgrimmar. This step is for Orcs and Trolls.",
+            text = "Turn in Therzok to Therzok in Orgrimmar. This step is for Orcs.",
             dependsOn = { "accept-1859-therzok" },
             complete = QuestState(1859, "completed"),
             route = {

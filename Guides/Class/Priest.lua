@@ -1547,11 +1547,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
+                    { race = 3 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Accept Desperate Prayer from Laurna Morninglight in Teldrassil. This step is for Humans and Dwarves.",
+            text = "Accept Desperate Prayer from Laurna Morninglight in Teldrassil. This step is for Dwarves.",
             complete = QuestState(5636, "activeOrCompleted"),
             route = {
                 Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
@@ -1566,11 +1566,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
+                    { race = 3 },
                     { level = { min = 10 } },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
+            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Dwarves.",
             dependsOn = { "accept-5636-desperate-prayer" },
             complete = QuestState(5636, "completed"),
             route = {

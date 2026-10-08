@@ -179,7 +179,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 11 }
+                { race = 4 },
+                { class = 1 }
             } },
             text = "Accept Simple Sigil.",
             complete = QuestState(3116, "activeOrCompleted"),
@@ -195,7 +196,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 11 }
+                { race = 4 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Sigil.",
             complete = QuestState(3118, "activeOrCompleted"),
@@ -211,7 +213,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 11 }
+                { race = 4 },
+                { class = 5 }
             } },
             text = "Accept Hallowed Sigil.",
             complete = QuestState(3119, "activeOrCompleted"),
@@ -227,7 +230,8 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
-                { class = 11 }
+                { race = 4 },
+                { class = 3 }
             } },
             text = "Accept Etched Sigil.",
             complete = QuestState(3117, "activeOrCompleted"),
@@ -243,6 +247,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Accept Verdant Sigil.",
@@ -259,6 +264,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 1 }
             } },
             text = "Turn in Simple Sigil.",
@@ -276,6 +282,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Sigil.",
@@ -309,6 +316,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Turn in Hallowed Sigil.",
@@ -326,6 +334,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in Etched Sigil.",
@@ -343,6 +352,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Turn in Verdant Sigil.",
@@ -736,6 +746,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Accept In Favor of Elune.",
@@ -843,6 +854,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Turn in In Favor of Elune.",
@@ -860,6 +872,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Accept Garments of the Moon.",
@@ -1156,6 +1169,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Turn in Garments of the Moon.",
@@ -1589,6 +1603,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Accept The Hunter's Path.",
@@ -1605,6 +1620,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Accept Moonglade.",
@@ -1667,6 +1683,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Turn in Moonglade.",
@@ -1684,6 +1701,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Accept Great Bear Spirit.",
@@ -1700,6 +1718,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Turn in Great Bear Spirit.",
@@ -1717,6 +1736,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Accept Back to Darnassus.",
@@ -1749,6 +1769,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in The Hunter's Path.",
@@ -1766,6 +1787,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1782,6 +1804,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Use Taming Rod.",
@@ -1799,6 +1822,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1816,6 +1840,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1895,6 +1920,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Use Taming Rod.",
@@ -1912,6 +1938,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1929,6 +1956,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Accept Taming the Beast.",
@@ -1945,6 +1973,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Use Taming Rod.",
@@ -1962,6 +1991,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in Taming the Beast.",
@@ -1979,6 +2009,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Accept Training the Beast.",
@@ -1995,6 +2026,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Accept Returning Home.",
@@ -2206,6 +2238,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 3 }
             } },
             text = "Turn in Training the Beast.",
@@ -2223,6 +2256,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Turn in Back to Darnassus.",
@@ -2240,6 +2274,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Accept Body and Heart.",
@@ -2303,6 +2338,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Turn in Returning Home.",
@@ -2320,6 +2356,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 5 }
             } },
             text = "Accept Stars of Elune.",
@@ -2590,6 +2627,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Use Cenarion Moondust.",
@@ -2640,6 +2678,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Alliance" },
+                { race = 4 },
                 { class = 11 }
             } },
             text = "Turn in Body and Heart.",
