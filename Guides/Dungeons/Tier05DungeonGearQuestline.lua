@@ -1168,6 +1168,7 @@ ns:RegisterGuide({
             id = "objective-9025-1-theldren-s-team-defeated",
             kind = "objective",
             priority = 128,
+            conditions = { all = { { faction = "Alliance" } } },
             text = "Theldren's Team Defeated.",
             complete = QuestState(9025, "complete"),
             useClientPin = true,

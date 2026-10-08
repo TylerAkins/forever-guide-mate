@@ -541,10 +541,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 8 },
+                    { race = { 1, 7 } },
                     { level = { min = 15 } },
                 },
             },
-            text = "Accept Manaweave Robe from Wynne Larson in Stormwind City.",
+            text = "Accept Manaweave Robe from Wynne Larson in Stormwind City. This step is for Humans and Gnomes.",
             dependsOn = { "turnin-1921-gathering-materials" },
             complete = QuestState(1941, "activeOrCompleted"),
             route = {
@@ -560,10 +561,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 8 },
+                    { race = { 1, 7 } },
                     { level = { min = 15 } },
                 },
             },
-            text = "Turn in Manaweave Robe to Wynne Larson in Stormwind City.",
+            text = "Turn in Manaweave Robe to Wynne Larson in Stormwind City. This step is for Humans and Gnomes.",
             dependsOn = { "accept-1941-manaweave-robe" },
             complete = QuestState(1941, "completed"),
             route = {
@@ -700,10 +702,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 8 },
+                    { race = { 1, 7 } },
                     { level = { min = 26 } },
                 },
             },
-            text = "Accept Astral Knot Garment from Wynne Larson in Stormwind City.",
+            text = "Accept Astral Knot Garment from Wynne Larson in Stormwind City. This step is for Humans and Gnomes.",
             dependsOn = { "turnin-1940-pristine-spider-silk" },
             complete = QuestState(1942, "activeOrCompleted"),
             route = {
@@ -719,10 +722,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Alliance" },
                     { class = 8 },
+                    { race = { 1, 7 } },
                     { level = { min = 26 } },
                 },
             },
-            text = "Turn in Astral Knot Garment to Wynne Larson in Stormwind City.",
+            text = "Turn in Astral Knot Garment to Wynne Larson in Stormwind City. This step is for Humans and Gnomes.",
             dependsOn = { "accept-1942-astral-knot-garment" },
             complete = QuestState(1942, "completed"),
             route = {
@@ -1335,10 +1339,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 8 },
+                    { race = { 5, 8 } },
                     { level = { min = 15 } },
                 },
             },
-            text = "Accept Spellfire Robes from Rhiannon Davis in Undercity.",
+            text = "Accept Spellfire Robes from Rhiannon Davis in Undercity. This step is for Undead and Trolls.",
             dependsOn = { "turnin-1961-gathering-materials" },
             complete = QuestState(1962, "activeOrCompleted"),
             route = {
@@ -1354,10 +1359,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 8 },
+                    { race = { 5, 8 } },
                     { level = { min = 15 } },
                 },
             },
-            text = "Turn in Spellfire Robes to Josef Gregorian in Undercity.",
+            text = "Turn in Spellfire Robes to Josef Gregorian in Undercity. This step is for Undead and Trolls.",
             dependsOn = { "accept-1962-spellfire-robes" },
             complete = QuestState(1962, "completed"),
             route = {
@@ -1496,10 +1502,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 8 },
+                    { race = { 5, 8 } },
                     { level = { min = 26 } },
                 },
             },
-            text = "Accept Nether-lace Garment from Kil'hala in The Barrens.",
+            text = "Accept Nether-lace Garment from Kil'hala in The Barrens. This step is for Undead and Trolls.",
             dependsOn = { "turnin-1945-laughing-sisters" },
             complete = QuestState(1946, "activeOrCompleted"),
             route = {
@@ -1515,10 +1522,11 @@ ns:RegisterGuide({
                 all = {
                     { faction = "Horde" },
                     { class = 8 },
+                    { race = { 5, 8 } },
                     { level = { min = 26 } },
                 },
             },
-            text = "Turn in Nether-lace Garment to Kil'hala in The Barrens.",
+            text = "Turn in Nether-lace Garment to Kil'hala in The Barrens. This step is for Undead and Trolls.",
             dependsOn = { "accept-1946-nether-lace-garment" },
             complete = QuestState(1946, "completed"),
             route = {

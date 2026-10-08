@@ -49,7 +49,8 @@ ns:RegisterGuide({
             priority = 10,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 }
             } },
             text = "Accept Rude Awakening.",
             complete = QuestState(363, "activeOrCompleted"),
@@ -80,7 +81,8 @@ ns:RegisterGuide({
             priority = 30,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 }
             } },
             text = "Turn in Rude Awakening.",
             complete = QuestState(363, "completed"),
@@ -127,7 +129,8 @@ ns:RegisterGuide({
             priority = 60,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { class = 9 }
             } },
             text = "Kill Rattlecage Skeleton.",
             complete = QuestObjective(1470, 1, "Rattlecage Skeleton"),
@@ -176,7 +179,9 @@ ns:RegisterGuide({
             priority = 90,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 },
+                { class = 1 }
             } },
             text = "Accept Simple Scroll.",
             complete = QuestState(3095, "activeOrCompleted"),
@@ -191,7 +196,9 @@ ns:RegisterGuide({
             priority = 100,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 },
+                { class = 9 }
             } },
             text = "Accept Tainted Scroll.",
             complete = QuestState(3099, "activeOrCompleted"),
@@ -206,7 +213,9 @@ ns:RegisterGuide({
             priority = 110,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 },
+                { class = 4 }
             } },
             text = "Accept Encrypted Scroll.",
             complete = QuestState(3096, "activeOrCompleted"),
@@ -221,7 +230,9 @@ ns:RegisterGuide({
             priority = 120,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 },
+                { class = 5 }
             } },
             text = "Accept Hallowed Scroll.",
             complete = QuestState(3097, "activeOrCompleted"),
@@ -236,7 +247,9 @@ ns:RegisterGuide({
             priority = 130,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = 5 },
+                { class = 8 }
             } },
             text = "Accept Glyphic Scroll.",
             complete = QuestState(3098, "activeOrCompleted"),
@@ -282,6 +295,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 8 }
             } },
             text = "Turn in Glyphic Scroll.",
@@ -299,6 +313,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Turn in Tainted Scroll.",
@@ -316,6 +331,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Turn in Hallowed Scroll.",
@@ -411,6 +427,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 1 }
             } },
             text = "Turn in Simple Scroll.",
@@ -428,6 +445,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 4 }
             } },
             text = "Turn in Encrypted Scroll.",
@@ -603,6 +621,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Accept In Favor of Darkness.",
@@ -816,6 +835,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Turn in In Favor of Darkness.",
@@ -833,6 +853,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Accept Garments of Darkness.",
@@ -849,6 +870,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Turn in Garments of Darkness.",
@@ -1559,6 +1581,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Accept Touch of Weakness.",
@@ -1795,6 +1818,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = { 5, 8 } },
                 { class = 8 }
             } },
             text = "Accept Speak with Anastasia.",
@@ -1842,6 +1866,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 4 }
             } },
             text = "Accept Mennet Carkad.",
@@ -2020,6 +2045,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Accept Creature of the Void.",
@@ -2036,6 +2062,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 4 }
             } },
             text = "Turn in Mennet Carkad.",
@@ -2053,6 +2080,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 13 } },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 4 },
             } },
             text = "Accept The Deathstalkers.",
@@ -2069,6 +2097,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 5 }
             } },
             text = "Turn in Touch of Weakness.",
@@ -2085,7 +2114,9 @@ ns:RegisterGuide({
             priority = 1310,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = { 5, 8 } },
+                { class = 8 }
             } },
             text = "Turn in Speak with Anastasia.",
             complete = QuestState(1881, "completed"),
@@ -2101,7 +2132,9 @@ ns:RegisterGuide({
             priority = 1320,
             conditions = { all = {
                 { },
-                { faction = "Horde" }
+                { faction = "Horde" },
+                { race = { 5, 8 } },
+                { class = 8 }
             } },
             text = "Accept The Balnir Farmstead.",
             complete = QuestState(1882, "activeOrCompleted"),
@@ -2133,6 +2166,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Turn in Creature of the Void.",
@@ -2150,6 +2184,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Accept The Binding.",
@@ -2166,6 +2201,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Use Runes of Summoning.",
@@ -2183,6 +2219,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 9 }
             } },
             text = "Turn in The Binding.",
@@ -2778,6 +2815,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { },
                 { faction = "Horde" },
+                { race = { 5, 8 } },
                 { class = 8 }
             } },
             text = "Turn in The Balnir Farmstead.",
@@ -2795,6 +2833,7 @@ ns:RegisterGuide({
             conditions = { all = {
                 { level = { min = 13 } },
                 { faction = "Horde" },
+                { race = 5 },
                 { class = 4 },
             } },
             text = "Kill Astor Hadren.",

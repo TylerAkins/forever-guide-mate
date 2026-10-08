@@ -2700,6 +2700,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
@@ -2717,6 +2718,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
@@ -2735,6 +2737,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
@@ -2753,6 +2756,7 @@ ns:RegisterGuide({
             conditions = {
                 all = {
                     { faction = "Horde" },
+                    { class = 11 },
                     { race = 96 },
                     { level = { min = 10 } },
                 },
