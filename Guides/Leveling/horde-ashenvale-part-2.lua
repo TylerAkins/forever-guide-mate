@@ -629,7 +629,7 @@ ns:RegisterGuide({
             complete = QuestState(1195, "completed"),
             dependsOn = { "objective-1195-1-etched-phial" },
             route = {
-                Point(1456, 0.2987, 0.2984, "The Sacred Flame",
+                Point(1456, 0.5510, 0.5080, "The Sacred Flame",
                     "Travel to The Sacred Flame."),
             },
         },
@@ -644,7 +644,7 @@ ns:RegisterGuide({
             text = "Accept The Sacred Flame.",
             complete = QuestState(1196, "activeOrCompleted"),
             route = {
-                Point(1456, 0.2987, 0.2984, "The Sacred Flame",
+                Point(1456, 0.5510, 0.5080, "The Sacred Flame",
                     "Travel to The Sacred Flame."),
             },
         },
