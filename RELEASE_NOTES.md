@@ -1,4 +1,3 @@
-## 0.3.3 - 2026-10-09
+## 0.3.4 - 2026-10-09
 
-- Add 13 achievement-driven Legacy Points exploration guides with their checklist areas and waypoints.
-- Correct exploration progress, quest prerequisites, and zone waypoints, and explain the optional Silithid Harvester wait.
+- Keep saved guide map pins visible when Blizzard has no quest POI, refresh quest progress when Blizzard marks watched objectives complete, and add the Explore Moonglade pin for Lake Elune'ara.
