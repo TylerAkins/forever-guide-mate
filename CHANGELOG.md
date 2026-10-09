@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 
 ## 0.3.2 - 2026-10-08
 
-- Add the Legacy Points category with Explore Silverpine Forest and Explore Tirisfal Glades. Their 15 and 16 waypoints clear from Forever's achievement criteria, and each guide's final step waits for overall achievement completion.
+- Add the Legacy Points category with Explore Silverpine Forest, Explore Tirisfal Glades, Explore Elwynn Forest, and Explore Mulgore. Their 15, 16, 12, and 14 waypoints clear from Forever's achievement criteria, and each guide's final step waits for overall achievement completion. Repair same-title quest-chain prerequisites across Casual, starter, class, and dungeon guides so follow-ups wait for the preceding turn-in, including Elixir of Suffering and Elixir of Pain.
 
 ## 0.3.1 - 2026-10-08
 

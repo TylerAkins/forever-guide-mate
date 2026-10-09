@@ -166,6 +166,8 @@ SHIPPED = (
     "Guides/Miscellaneous/LibraryBooks.lua",
     "Guides/Legacy/ExploreSilverpineForest.lua",
     "Guides/Legacy/ExploreTirisfalGlades.lua",
+    "Guides/Legacy/ExploreElwynnForest.lua",
+    "Guides/Legacy/ExploreMulgore.lua",
     "README.md",
     "CHANGELOG.md",
     "RELEASE_NOTES.md",
