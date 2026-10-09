@@ -144,6 +144,10 @@ Load("Guides/Class/Mage.lua")
 Load("Guides/Class/Warlock.lua")
 Load("Guides/Class/Druid.lua")
 Load("Guides/Miscellaneous/LibraryBooks.lua")
+Load("Guides/Legacy/ExploreSilverpineForest.lua")
+Load("Guides/Legacy/ExploreTirisfalGlades.lua")
+Load("Guides/Legacy/ExploreElwynnForest.lua")
+Load("Guides/Legacy/ExploreMulgore.lua")
 
 local baseState = {
     faction = "Horde",
@@ -187,6 +191,249 @@ unknownQuest.questCompletionKnown = false
 unknownQuest.questLogKnown = false
 Equal(ns.EvaluateCondition({ quest = { id = 5722, state = "completed" } }, unknownQuest), nil,
     "unknown quest completion remains unknown")
+
+local legacyAchievement = ns.guides["legacy-explore-silverpine-forest"]
+Equal(legacyAchievement.category, "Legacy Points", "Legacy Points is a guide library category")
+Equal(legacyAchievement.title, "Explore Silverpine Forest", "the first Legacy guide uses the achievement title")
+Equal(#legacyAchievement.goals, 15, "Silverpine Legacy guide has one step per Forever area criterion")
+local legacyNames, legacyIDs = {}, {}
+local expectedSilverpine = {
+    { "Malden's Orchard", 57, 10 }, { "The Shining Strand", 55, 23 },
+    { "The Dead Field", 45, 20 }, { "The Skittering Dark", 37, 16 },
+    { "North Tide's Hollow", 39, 28 }, { "Fenris Isle", 66, 27 },
+    { "The Decrepit Ferry", 57, 34 }, { "The Sepulcher", 43, 41 },
+    { "Deep Elem Mine", 55, 47 }, { "Olsen's Farthing", 47, 53 },
+    { "Ambermill", 61, 64 }, { "Shadowfang Keep", 44, 68 },
+    { "Pyrewood Village", 45, 73 }, { "The Greymane Wall", 46, 83 },
+    { "Beren's Peril", 61, 74 },
+}
+local silverpinePins = {}
+for index, goal in ipairs(legacyAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Silverpine step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedSilverpine[index][1], "Silverpine step uses the matching achievement criterion")
+    legacyNames[criterion.name] = true
+    Check(not legacyIDs[goal.id], "Silverpine step ids are unique")
+    legacyIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1421, "Silverpine criterion uses the Silverpine map")
+    Equal(goal.route[1].x, expectedSilverpine[index][2] / 100, "Silverpine waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedSilverpine[index][3] / 100, "Silverpine waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not silverpinePins[pinKey], "Silverpine waypoint pins are unique")
+    silverpinePins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], legacyAchievement.goals[index - 1].id,
+            "Silverpine criteria follow the authored waypoint order")
+    end
+end
+Check(not legacyNames["North Tide's Run"], "Forever Silverpine criteria omit North Tide's Run")
+local finalSilverpineStep = legacyAchievement.goals[#legacyAchievement.goals]
+Equal(finalSilverpineStep.complete.all[2].achievement.id, 769,
+    "the final waypoint also waits for Explore Silverpine Forest achievement 769")
+
+local tirisfalAchievement = ns.guides["legacy-explore-tirisfal-glades"]
+Equal(tirisfalAchievement.category, "Legacy Points", "Tirisfal guide uses the Legacy Points category")
+Equal(tirisfalAchievement.title, "Explore Tirisfal Glades", "Tirisfal guide uses the achievement title")
+Equal(#tirisfalAchievement.goals, 16, "Tirisfal guide has one step per Forever area criterion")
+local expectedTirisfal = {
+    { "Deathknell", 35, 59 }, { "Solliden Farmstead", 36, 50 },
+    { "Agamand Mills", 48, 39 }, { "Stillwater Pond", 49, 52 },
+    { "Nightmare Vale", 48, 64 }, { "Cold Hearth Manor", 53, 57 },
+    { "Brill", 59, 51 }, { "Garren's Haunt", 59, 35 },
+    { "Brightwater Lake", 68, 45 }, { "Balnir Farmstead", 75, 61 },
+    { "Crusader Outpost", 78, 55 }, { "Scarlet Watch Post", 79, 29 },
+    { "Whispering Gardens", 81, 32 }, { "Venomweb Vale", 84, 47 },
+    { "The Bulwark", 82.2, 70.6 }, { "Undercity", 61, 66 },
+}
+local tirisfalNames, tirisfalIDs, tirisfalPins = {}, {}, {}
+for index, goal in ipairs(tirisfalAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Tirisfal step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedTirisfal[index][1], "Tirisfal step uses the matching achievement criterion")
+    tirisfalNames[criterion.name] = true
+    Check(not tirisfalIDs[goal.id], "Tirisfal step ids are unique")
+    tirisfalIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1420, "Tirisfal criterion uses the Tirisfal map")
+    Equal(goal.route[1].x, expectedTirisfal[index][2] / 100, "Tirisfal waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedTirisfal[index][3] / 100, "Tirisfal waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not tirisfalPins[pinKey], "Tirisfal waypoint pins are unique")
+    tirisfalPins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], tirisfalAchievement.goals[index - 1].id,
+            "Tirisfal criteria follow the authored waypoint order")
+    end
+end
+local finalTirisfalStep = tirisfalAchievement.goals[#tirisfalAchievement.goals]
+Equal(finalTirisfalStep.complete.all[2].achievement.id, 768,
+    "the final waypoint also waits for Explore Tirisfal Glades achievement 768")
+
+do
+local elwynnAchievement = ns.guides["legacy-explore-elwynn-glades"]
+Equal(elwynnAchievement.category, "Legacy Points", "Elwynn guide uses the Legacy Points category")
+Equal(elwynnAchievement.title, "Explore Elwynn Forest", "Elwynn guide uses the achievement title")
+Equal(#elwynnAchievement.goals, 12, "Elwynn guide has one step per Forever area criterion")
+local expectedElwynn = {
+    { "Northshire Valley", 45, 47 },
+    { "Goldshire", 42, 65 },
+    { "Fargodeep Mine", 38, 82 },
+    { "Stormwind City", 32, 48 },
+    { "Forest's Edge", 27, 77 },
+    { "Jerod's Landing", 47, 87 },
+    { "Tower of Azora", 64, 70 },
+    { "Brackwell Pumpkin Patch", 69, 79 },
+    { "Eastvale Logging Camp", 81, 66 },
+    { "Ridgepoint Tower", 84, 79 },
+    { "Crystal Lake", 52, 66 },
+    { "Stone Cairn Lake", 73, 58 },
+}
+local elwynnNames, elwynnIDs, elwynnPins = {}, {}, {}
+for index, goal in ipairs(elwynnAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Elwynn step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedElwynn[index][1], "Elwynn step uses the matching achievement criterion")
+    local criterionState = { achievements = { [776] = {
+        completed = true, criteriaByName = { [string.lower(criterion.name)] = true },
+    } } }
+    Equal(ns.EvaluateCondition(goal.complete, criterionState), true,
+        "Elwynn completed criterion clears its step")
+    criterionState.achievements[776].completed = false
+    criterionState.achievements[776].criteriaByName[string.lower(criterion.name)] = false
+    Equal(ns.EvaluateCondition(goal.complete, criterionState), false,
+        "Elwynn incomplete criterion keeps its step pending")
+    Equal(ns.EvaluateCondition(goal.complete, {}), nil,
+        "Elwynn unavailable criterion keeps its step pending")
+    elwynnNames[criterion.name] = true
+    Check(not elwynnIDs[goal.id], "Elwynn step ids are unique")
+    elwynnIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1429, "Elwynn criterion uses the Elwynn map")
+    Equal(goal.route[1].x, expectedElwynn[index][2] / 100, "Elwynn waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedElwynn[index][3] / 100, "Elwynn waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not elwynnPins[pinKey], "Elwynn waypoint pins are unique")
+    elwynnPins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], elwynnAchievement.goals[index - 1].id,
+            "Elwynn criteria follow the authored waypoint order")
+    end
+end
+local finalElwynnStep = elwynnAchievement.goals[#elwynnAchievement.goals]
+Equal(finalElwynnStep.complete.all[2].achievement.id, 776,
+    "the final waypoint also waits for Explore Elwynn Forest achievement 776")
+Equal(ns.EvaluateCondition(finalElwynnStep.complete, { achievements = { [776] = {
+    completed = false, criteriaByName = { ["stone cairn lake"] = true },
+} } }), false, "Elwynn final criterion waits for overall achievement completion")
+end
+
+do
+local mulgoreAchievement = ns.guides["legacy-explore-mulgore"]
+Equal(mulgoreAchievement.category, "Legacy Points", "Mulgore guide uses the Legacy Points category")
+Equal(mulgoreAchievement.title, "Explore Mulgore", "Mulgore guide uses the achievement title")
+Equal(#mulgoreAchievement.goals, 14, "Mulgore guide has one step per Forever area criterion")
+local expectedMulgore = {
+    { "Red Cloud Mesa", 39, 82 },
+    { "Palemane Rock", 34, 62 },
+    { "Bloodhoof Village", 49, 58 },
+    { "Winterhoof Water Well", 53, 66 },
+    { "The Rolling Plains", 61, 67 },
+    { "The Venture Co. Mine", 62, 48 },
+    { "Ravaged Caravan", 53, 47 },
+    { "The Golden Plains", 49, 35 },
+    { "Thunderhorn Water Well", 44, 45 },
+    { "Bael'Dun Digsite", 32, 48 },
+    { "Red Rocks", 60, 21 },
+    { "Windfury Ridge", 52, 11 },
+    { "Wildmane Water Well", 42, 14 },
+    { "Thunder Bluff", 36, 29 },
+}
+local mulgoreNames, mulgoreIDs, mulgorePins = {}, {}, {}
+for index, goal in ipairs(mulgoreAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Mulgore step " .. index .. " uses its achievement criterion")
+    Equal(criterion.name, expectedMulgore[index][1], "Mulgore step uses the matching achievement criterion")
+    local criterionState = { achievements = { [736] = {
+        completed = true, criteriaByName = { [string.lower(criterion.name)] = true },
+    } } }
+    Equal(ns.EvaluateCondition(goal.complete, criterionState), true,
+        "Mulgore completed criterion clears its step")
+    criterionState.achievements[736].completed = false
+    criterionState.achievements[736].criteriaByName[string.lower(criterion.name)] = false
+    Equal(ns.EvaluateCondition(goal.complete, criterionState), false,
+        "Mulgore incomplete criterion keeps its step pending")
+    Equal(ns.EvaluateCondition(goal.complete, {}), nil,
+        "Mulgore unavailable criterion keeps its step pending")
+    mulgoreNames[criterion.name] = true
+    Check(not mulgoreIDs[goal.id], "Mulgore step ids are unique")
+    mulgoreIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1412, "Mulgore criterion uses the Mulgore map")
+    Equal(goal.route[1].x, expectedMulgore[index][2] / 100, "Mulgore waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedMulgore[index][3] / 100, "Mulgore waypoint has the expected Y coordinate")
+    local pinKey = goal.route[1].mapID .. ":" .. goal.route[1].x .. ":" .. goal.route[1].y
+    Check(not mulgorePins[pinKey], "Mulgore waypoint pins are unique")
+    mulgorePins[pinKey] = true
+    if index > 1 then
+        Equal(goal.dependsOn[1], mulgoreAchievement.goals[index - 1].id,
+            "Mulgore criteria follow the authored waypoint order")
+    end
+end
+local finalMulgoreStep = mulgoreAchievement.goals[#mulgoreAchievement.goals]
+Equal(finalMulgoreStep.complete.all[2].achievement.id, 736,
+    "the final waypoint also waits for Explore Mulgore achievement 736")
+Equal(ns.EvaluateCondition(finalMulgoreStep.complete, { achievements = { [736] = {
+    completed = false, criteriaByName = { ["thunder bluff"] = true },
+} } }), false, "Mulgore final criterion waits for overall achievement completion")
+end
+
+local unknownAchievementState = {}
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, unknownAchievementState), nil,
+    "missing achievement API state remains unknown")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, unknownAchievementState), nil,
+    "missing achievement criterion state remains unknown")
+local incompleteAchievementState = {
+    achievements = { [769] = { completed = false, criteriaByName = { ambermill = false } } },
+}
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, incompleteAchievementState), false,
+    "an incomplete achievement is reported as incomplete")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, incompleteAchievementState), false,
+    "an undiscovered achievement criterion is reported as incomplete")
+local completeAchievementState = {
+    achievements = { [769] = { completed = true, criteriaByName = { ambermill = false } } },
+}
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, completeAchievementState), true,
+    "the overall achievement confirms its criteria are complete")
+Equal(ns.EvaluateCondition(finalSilverpineStep.complete, incompleteAchievementState), false,
+    "the final waypoint waits for the overall achievement flag")
+Equal(ns.EvaluateCondition(finalSilverpineStep.complete, completeAchievementState), true,
+    "the final waypoint completes when achievement 769 is complete")
+
+local capturedLegacyState = ns.PlayerState:Capture({
+    GetAchievementInfo = function(id) return id, "Explore Silverpine Forest", 0, false end,
+    GetAchievementNumCriteria = function() return 2 end,
+    GetAchievementCriteriaInfo = function(_, index)
+        return index == 1 and "Ambermill" or "Olsen's Farthing", 0, index == 2
+    end,
+}, {}, 0, { 769 })
+Equal(capturedLegacyState.achievements[769].completed, false,
+    "player state captures the achievement completion flag")
+Equal(capturedLegacyState.achievements[769].criteriaByName.ambermill, false,
+    "player state captures an incomplete achievement criterion")
+Equal(capturedLegacyState.achievements[769].criteriaByName["olsen's farthing"], true,
+    "player state captures a completed achievement criterion")
+local missingLegacyAPIState = ns.PlayerState:Capture({
+    GetAchievementInfo = function() error("achievement API unavailable") end,
+}, {}, 0, { 769 })
+Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, missingLegacyAPIState), nil,
+    "a failed achievement API read stays unknown")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, missingLegacyAPIState), nil,
+    "a failed criterion API read stays unknown")
+Equal(ns.GetTrackedAchievementIDs()[1], 736, "Mulgore registers achievement 736 for capture")
+Equal(#ns.GetTrackedAchievementIDs(), 4, "the guide query tracks only referenced achievement ids")
+Equal(ns.GetTrackedAchievementIDs()[2], 768, "the Tirisfal guide registers achievement 768 for capture")
+Equal(ns.GetTrackedAchievementIDs()[3], 769, "the Silverpine guide registers achievement 769 for capture")
 
 local duplicateOK = pcall(function()
     ns:RegisterGuide({ id = "dungeons-ragefire-chasm-horde", title = "Duplicate", category = "Test", revision = 1,
@@ -234,6 +481,29 @@ function TestAlternativePrerequisites()
     ns.charDB = previousCharDB
 end
 TestAlternativePrerequisites()
+
+function TestElixirOfSufferingFollowup()
+    local previousCharDB = ns.charDB
+    ns.charDB = { manualCompleted = {}, completionLedger = {}, deferred = {} }
+    local guide = ns.guides["leveling-era-horde-hillsbrad-foothills"]
+    local firstAccept = ns.Engine:GetGoal(guide, "accept-496-elixir-of-suffering")
+    local followup = ns.Engine:GetGoal(guide, "accept-499-elixir-of-suffering")
+    local state = { faction = "Horde", level = 26, quests = { [496] = { complete = false } },
+        completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    Equal(ns.Engine:IsGoalDone(firstAccept, state, guide), true,
+        "the active gathering quest clears its own Elixir of Suffering accept")
+    Equal(ns.Engine:IsReady(guide, followup, state), false,
+        "the same-title Elixir of Suffering follow-up waits for the gathering quest turn-in")
+    state.quests[496].complete = true
+    Equal(ns.Engine:IsReady(guide, followup, state), false,
+        "finished gathering objectives do not unlock the Elixir follow-up before turn-in")
+    state.quests[496] = nil
+    state.completedQuests[496] = true
+    Equal(ns.Engine:IsReady(guide, followup, state), true,
+        "turning in the gathering quest unlocks the Elixir follow-up")
+    ns.charDB = previousCharDB
+end
+TestElixirOfSufferingFollowup()
 
 local badCoordinateOK = pcall(function()
     ns:RegisterGuide({ id = "bad-coordinate", title = "Bad", category = "Test", revision = 1,
@@ -5383,6 +5653,137 @@ function TestPinsStayOffInsideAnInstance()
     C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
 end
 TestPinsStayOffInsideAnInstance()
+
+function TestSameTitleQuestChainGates()
+    local chains = dofile("tests/lua/guide_data_checks.lua").SameTitleQuestChains
+    local seen = {}
+    local actual = {}
+    local savedCreateFrame, savedTimer = CreateFrame, C_Timer
+    CreateFrame, C_Timer = nil, nil
+    for path in io.lines("ForeverGuideMate.toc") do
+        if path:match("%.lua$") then assert(loadfile(path))("ForeverGuideMate", actual) end
+    end
+    CreateFrame, C_Timer = savedCreateFrame, savedTimer
+    actual.charDB = { manualCompleted = {}, completionLedger = {}, deferred = {} }
+    actual:FinalizeGuides()
+    for guideID, guide in pairs(actual.guides) do
+        local turnins = {}
+        for _, goal in ipairs(guide.goals) do
+            if goal.kind == "turnin" and goal.complete and goal.complete.quest then
+                turnins[goal.complete.quest.id] = true
+            end
+        end
+        for _, goal in ipairs(guide.goals) do
+            local questID = goal.kind == "accept" and goal.complete and goal.complete.quest
+                and goal.complete.quest.id
+            local previousQuest = questID and chains[questID]
+            if previousQuest and turnins[previousQuest] then
+                seen[questID] = true
+                local function Matches(dependency)
+                    local prior = actual.Engine:GetGoal(guide, dependency)
+                    return prior and prior.kind == "turnin" and prior.complete and prior.complete.quest
+                        and prior.complete.quest.id == previousQuest
+                end
+                local linked = false
+                for _, dependency in ipairs(goal.dependsOn or {}) do
+                    if Matches(dependency) then linked = true end
+                end
+                for _, group in ipairs(goal.questPrerequisites or {}) do
+                    for _, dependency in ipairs(group.goalIDs or {}) do
+                        if Matches(dependency) then linked = true end
+                    end
+                end
+                Check(linked, guideID .. " " .. goal.id .. " waits for quest " .. previousQuest)
+            end
+        end
+    end
+    for questID in pairs(chains) do
+        Check(seen[questID], "audited same-title chain " .. questID .. " is covered by a shipped guide")
+    end
+    local samples = { [502] = 501, [528] = 527, [900] = 894, [368] = 367, [192] = 191 }
+    local sampleCount = 0
+    for _, guide in pairs(actual.guides) do
+        for _, goal in ipairs(guide.goals) do
+            local questID = goal.kind == "accept" and goal.complete and goal.complete.quest
+                and goal.complete.quest.id
+            local previousQuest = questID and samples[questID]
+            if previousQuest then
+                local state = { faction = "Horde", level = 60, quests = {}, completedQuests = {},
+                    questLogKnown = true, questCompletionKnown = true }
+                if actual.EvaluateCondition(goal.conditions, state) == false then
+                    state.faction = "Alliance"
+                end
+                for _, other in ipairs(guide.goals) do
+                    if other.complete and other.complete.quest then
+                        state.completedQuests[other.complete.quest.id] = true
+                    end
+                end
+                state.completedQuests[questID] = false
+                state.completedQuests[previousQuest] = false
+                state.quests[previousQuest] = { complete = false }
+                Equal(actual.Engine:IsReady(guide, goal, state), false,
+                    "same-title follow-up " .. questID .. " waits while its predecessor is active")
+                state.quests[previousQuest].complete = true
+                Equal(actual.Engine:IsReady(guide, goal, state), false,
+                    "same-title follow-up " .. questID .. " waits until its predecessor is turned in")
+                state.quests[previousQuest] = nil
+                state.completedQuests[previousQuest] = true
+                Equal(actual.Engine:IsReady(guide, goal, state), true,
+                    "same-title follow-up " .. questID .. " unlocks after its predecessor turn-in")
+                sampleCount = sampleCount + 1
+            end
+        end
+    end
+    Check(sampleCount >= 5, "representative same-title chains exercise player readiness")
+    local deadmines = actual.guides["dungeons-the-deadmines"]
+    local casualAlliance = actual.guides["leveling-casual-alliance"]
+    local felsteed
+    for _, goal in ipairs(casualAlliance.goals) do
+        if goal.kind == "accept" and goal.complete and goal.complete.quest
+            and goal.complete.quest.id == 4490 then felsteed = goal end
+    end
+    Check(felsteed ~= nil, "Casual routes the Summon Felsteed follow-up")
+    local felsteedState = { faction = "Alliance", raceID = 1, classID = 9, level = 60,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    Equal(actual.Engine:IsReady(casualAlliance, felsteed, felsteedState), false,
+        "Summon Felsteed waits for a trainer introduction")
+    for _, questID in ipairs({ 4487, 4488 }) do
+        felsteedState.completedQuests = { [questID] = true }
+        Equal(actual.Engine:IsReady(casualAlliance, felsteed, felsteedState), true,
+            "Summon Felsteed accepts either routed trainer introduction " .. questID)
+    end
+    local warlock = actual.guides["class-warlock"]
+    local classFelsteed = actual.Engine:GetGoal(warlock, "accept-4490-summon-felsteed")
+    felsteedState.completedQuests = {}
+    Equal(actual.Engine:IsReady(warlock, classFelsteed, felsteedState), false,
+        "Warlock Felsteed waits for one trainer introduction")
+    for _, questID in ipairs({ 4487, 4488 }) do
+        felsteedState.completedQuests = { [questID] = true }
+        Equal(actual.Engine:IsReady(warlock, classFelsteed, felsteedState), true,
+            "Warlock Felsteed accepts either Alliance introduction " .. questID)
+    end
+    felsteedState.completedQuests = {}
+    Equal(actual.Engine:IsReady(warlock,
+        actual.Engine:GetGoal(warlock, "accept-4488-summon-felsteed"), felsteedState), true,
+        "Stormwind Felsteed introduction does not require Ironforge introduction")
+    local defiasState = { faction = "Alliance", level = 20, quests = { [155] = { complete = false } },
+        completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
+    for _, id in ipairs({ "accept-defias-brotherhood", "complete-defias-brotherhood", "turnin-defias-brotherhood" }) do
+        local goal = actual.Engine:GetGoal(deadmines, id)
+        Equal(actual.EvaluateCondition(goal.conditions, defiasState), false,
+            "Deadmines " .. id .. " is unavailable before the external escort turn-in")
+        defiasState.completedQuests[155] = true
+        Equal(actual.EvaluateCondition(goal.conditions, defiasState), true,
+            "Deadmines " .. id .. " is available after the external escort turn-in")
+        defiasState.completedQuests[155] = false
+        defiasState.quests[166] = { complete = false }
+        Equal(actual.EvaluateCondition(goal.conditions, defiasState), true,
+            "Deadmines " .. id .. " remains eligible when VanCleef's quest is already active")
+        defiasState.quests[166] = nil
+    end
+
+end
+TestSameTitleQuestChainGates()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

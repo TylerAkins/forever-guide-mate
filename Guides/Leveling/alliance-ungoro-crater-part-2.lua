@@ -1120,6 +1120,7 @@ ns:RegisterGuide({
         },
         {
             id = "accept-6761-the-new-frontier",
+            dependsOn = { "turnin-1047-the-new-frontier" },
             kind = "accept",
             priority = 710,
             conditions = { all = {

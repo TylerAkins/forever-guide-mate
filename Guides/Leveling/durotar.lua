@@ -220,6 +220,7 @@ ns:RegisterGuide({
             },
         {
             id = "accept-1499-vile-familiars",
+            dependsOn = { "turnin-1485-vile-familiars" },
             kind = "accept",
             priority = 120,
             conditions = { all = {
@@ -924,6 +925,7 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1517-call-of-earth",
+            dependsOn = { "turnin-1516-call-of-earth" },
             kind = "accept",
             priority = 540,
             conditions = { all = {
