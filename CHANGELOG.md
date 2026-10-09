@@ -5,6 +5,7 @@ All notable changes to this project are documented here.
 ## 0.3.4 - 2026-10-09
 
 - Keep saved guide map pins visible when Blizzard has no quest POI, while preferring Blizzard's POI when one is available.
+- Refresh quest progress from Blizzard's completion state when a watched objective update leaves its objective row unchanged.
 
 ## 0.3.3 - 2026-10-09
 

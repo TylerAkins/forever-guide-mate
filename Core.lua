@@ -336,10 +336,9 @@ function ns.InitializeStorage()
     ns.charDB = ForeverGuideMateCharDB
 end
 
--- QUEST_LOG_UPDATE fires in a burst while the client is still rebuilding the
--- log (accept, turn-in, loot, and kill credit all do this). Reading the log
--- on the first event forces that rebuild onto the main thread, which is the
--- one-second stutter. Wait until the burst goes quiet, then read once.
+-- Quest log and watch events fire in bursts while the client rebuilds quest
+-- state. Reading the log on the first event forces that rebuild onto the main
+-- thread, so wait until the burst goes quiet, then read once.
 local QUEST_LOG_SETTLE_SECONDS = 0.15
 local refreshGeneration = 0
 local refreshNeedsFullPass = false
@@ -446,7 +445,7 @@ local function OnEvent(_, event, arg1)
     end
     if ns.QuestAudit then ns.QuestAudit:Handle(event) end
     if ns.QuestDialog then ns.QuestDialog:Handle(event) end
-    ns.ScheduleRefresh(event == "QUEST_LOG_UPDATE")
+    ns.ScheduleRefresh(event == "QUEST_LOG_UPDATE" or event == "QUEST_WATCH_UPDATE")
 end
 
 if CreateFrame then
@@ -455,6 +454,7 @@ if CreateFrame then
     eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
     eventFrame:RegisterEvent("QUEST_LOG_UPDATE")
+    eventFrame:RegisterEvent("QUEST_WATCH_UPDATE")
     eventFrame:RegisterEvent("QUEST_TURNED_IN")
     eventFrame:RegisterEvent("QUEST_REMOVED")
     eventFrame:RegisterEvent("TAXIMAP_OPENED")

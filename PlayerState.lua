@@ -206,21 +206,27 @@ function PlayerState:GetQuestLog(api, questIDs)
             local objectiveResult, objectiveKnown = Call(questLog, "GetQuestObjectives", info.questID)
             local objectives = objectiveKnown and type(objectiveResult[1]) == "table" and objectiveResult[1] or {}
             local previous = type(questLogCache) == "table" and questLogCache[info.questID] or nil
-            local reported = info.isComplete == true or (type(info.isComplete) == "number" and info.isComplete > 0)
-            if type(previous) == "table" and ObjectivesMatch(previous.objectives, objectives)
-                and (info.isComplete == nil or reported == previous.complete) then
-                -- Same kill credit as last time. Skip the completion and timer calls.
+            local sameObjectives = type(previous) == "table"
+                and ObjectivesMatch(previous.objectives, objectives)
+            if sameObjectives and previous.complete then
+                -- Completion cannot regress while the quest stays in the log.
                 quests[info.questID] = previous
             else
-                local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
-                quests[info.questID] = {
-                    title = info.title,
-                    complete = LogQuestComplete(questLog, info.questID, info, objectives),
-                    objectives = objectives,
-                    summary = ObjectiveSummary(questLog, info.questID),
-                    timeAllowed = timeAllowed,
-                    timeLeft = timeLeft,
-                }
+                local complete = LogQuestComplete(questLog, info.questID, info, objectives)
+                if sameObjectives and complete == previous.complete then
+                    -- Rechecked the API-backed completion flag; only timer calls can be skipped.
+                    quests[info.questID] = previous
+                else
+                    local timeAllowed, timeLeft = QuestTimer(questLog, info.questID, info)
+                    quests[info.questID] = {
+                        title = info.title,
+                        complete = complete,
+                        objectives = objectives,
+                        summary = ObjectiveSummary(questLog, info.questID),
+                        timeAllowed = timeAllowed,
+                        timeLeft = timeLeft,
+                    }
+                end
             end
         end
     end
