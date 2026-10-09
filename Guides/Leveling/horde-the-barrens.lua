@@ -82,7 +82,7 @@ ns:RegisterGuide({
             text = "Accept The Sacred Flame.",
             complete = QuestState(1195, "activeOrCompleted"),
             route = {
-                Point(1456, 0.2981, 0.2982, "The Sacred Flame",
+                Point(1456, 0.5510, 0.5080, "The Sacred Flame",
                     "Travel to The Sacred Flame."),
             },
         },
@@ -201,7 +201,7 @@ ns:RegisterGuide({
                 { level = { min = 24 } },
                 { faction = "Horde" },
             } },
-            text = "Kill Silithid Harvester and loot the Harvester's Head.",
+            text = "Kill Silithid Harvester and loot the Harvester's Head. This rare mob can take hours to respawn; skip this step if you want.",
             complete = { any = {
                 { quest = { id = 897, state = "activeOrCompleted" } },
                 { item = "Harvester's Head" },

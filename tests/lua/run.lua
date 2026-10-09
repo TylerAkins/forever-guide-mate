@@ -14,6 +14,31 @@ local function Equal(actual, expected, message)
 end
 
 local ns = {}
+local function TestDurotarPartialProgress()
+    local durotar = ns.guides["legacy-explore-durotar"]
+    local partialState = { achievements = { [728] = { completed = true, criteriaByName = {} } } }
+    for _, name in ipairs({ "Orgrimmar", "Razor Hill", "Skull Rock" }) do
+        partialState.achievements[728].criteriaByName[string.lower(name)] = true
+    end
+    ns.charDB = {
+        selectedGuide = durotar.id,
+        manualCompleted = {},
+        completionLedger = { [durotar.id] = { [tostring(durotar.revision)] = {} } },
+        deferred = {}, skipped = {}, skippedBecause = {},
+    }
+    local saved = ns.charDB.completionLedger[durotar.id][tostring(durotar.revision)]
+    for _, goal in ipairs(durotar.goals) do
+        ns.charDB.manualCompleted[goal.id] = true
+        saved[goal.id] = true
+    end
+    local progress = ns.Engine:GetGuideProgress(durotar, partialState)
+    Equal(progress.completed, 3, "Durotar progress counts all three discovered criteria")
+    Equal(progress.eligible, 11, "undiscovered Durotar criteria remain in the progress denominator")
+    Equal(progress.percentage, 27, "partial Durotar exploration is not shown as complete")
+    Check(saved[durotar.goals[6].id], "observed Durotar completion is retained")
+    Check(not saved[durotar.goals[2].id], "stale Durotar completion is cleared when its criterion is unavailable")
+end
+
 local function Load(path)
     local chunk, reason = loadfile(path)
     Check(chunk ~= nil, "load " .. path .. ": " .. tostring(reason))
@@ -61,6 +86,26 @@ Load("Guides/Leveling/horde-the-barrens.lua")
 Load("Guides/Leveling/horde-stonetalon-mountains.lua")
 Load("Guides/Leveling/horde-ashenvale-part-2.lua")
 Load("Guides/Leveling/horde-thousand-needles.lua")
+
+local function CheckZangenStonehoofPin(guideID, goalID)
+    local guide = ns.guides[guideID]
+    local goal
+    for _, candidate in ipairs(guide.goals) do
+        if candidate.id == goalID then
+            goal = candidate
+            break
+        end
+    end
+    Check(goal ~= nil, goalID .. " exists")
+    Equal(goal.route[1].mapID, 1456, goalID .. " uses the Thunder Bluff map")
+    Equal(goal.route[1].x, 0.551, goalID .. " points to Zangen Stonehoof's X coordinate")
+    Equal(goal.route[1].y, 0.508, goalID .. " points to Zangen Stonehoof's Y coordinate")
+end
+
+CheckZangenStonehoofPin("leveling-era-horde-the-barrens", "accept-1195-the-sacred-flame")
+CheckZangenStonehoofPin("leveling-era-horde-ashenvale-part-2", "turnin-1195-the-sacred-flame")
+CheckZangenStonehoofPin("leveling-era-horde-ashenvale-part-2", "accept-1196-the-sacred-flame")
+
 Load("Guides/Leveling/horde-hillsbrad-foothills-part-2.lua")
 Load("Guides/Leveling/horde-arathi-highlands.lua")
 Load("Guides/Leveling/horde-thousand-needles-part-2.lua")
@@ -148,6 +193,19 @@ Load("Guides/Legacy/ExploreSilverpineForest.lua")
 Load("Guides/Legacy/ExploreTirisfalGlades.lua")
 Load("Guides/Legacy/ExploreElwynnForest.lua")
 Load("Guides/Legacy/ExploreMulgore.lua")
+Load("Guides/Legacy/ExploreDurotar.lua")
+Load("Guides/Legacy/ExploreDunMorogh.lua")
+Load("Guides/Legacy/ExploreWestfall.lua")
+Load("Guides/Legacy/ExploreLochModan.lua")
+Load("Guides/Legacy/ExploreTheBarrens.lua")
+Load("Guides/Legacy/ExploreHillsbradFoothills.lua")
+Load("Guides/Legacy/ExploreRedridgeMountains.lua")
+Load("Guides/Legacy/ExploreWetlands.lua")
+Load("Guides/Legacy/ExploreDuskwood.lua")
+Load("Guides/Legacy/ExploreAshenvale.lua")
+Load("Guides/Legacy/ExploreTeldrassil.lua")
+Load("Guides/Legacy/ExploreThousandNeedles.lua")
+Load("Guides/Legacy/ExploreDarkshore.lua")
 
 local baseState = {
     faction = "Horde",
@@ -388,6 +446,455 @@ Equal(ns.EvaluateCondition(finalMulgoreStep.complete, { achievements = { [736] =
 } } }), false, "Mulgore final criterion waits for overall achievement completion")
 end
 
+do
+local durotarAchievement = ns.guides["legacy-explore-durotar"]
+Equal(durotarAchievement.category, "Legacy Points", "Durotar guide uses the Legacy Points category")
+Equal(durotarAchievement.title, "Explore Durotar", "Durotar guide uses the achievement title")
+Equal(#durotarAchievement.goals, 11, "Durotar guide has one step per achievement criterion")
+local expectedDurotar = {
+    { "Valley of Trials", 44, 59 }, { "Sen'jin Village", 55, 74 },
+    { "Kolkar Crag", 48, 78 }, { "Echo Isles", 62, 81 },
+    { "Tiragarde Keep", 57, 54 }, { "Razor Hill", 53, 43 },
+    { "Razormane Grounds", 41, 45 }, { "Thunder Ridge", 39, 28 },
+    { "Drygulch Ravine", 53, 23 }, { "Skull Rock", 54, 13 },
+    { "Orgrimmar", 45, 11 },
+}
+local durotarIDs = {}
+for index, goal in ipairs(durotarAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Durotar step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 728, "Durotar criterion uses achievement 728")
+    Equal(criterion.name, expectedDurotar[index][1], "Durotar step uses the matching achievement criterion")
+    Check(not durotarIDs[goal.id], "Durotar step ids are unique")
+    durotarIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1411, "Durotar criterion uses the Durotar map")
+    Equal(goal.route[1].x, expectedDurotar[index][2] / 100, "Durotar waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedDurotar[index][3] / 100, "Durotar waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], durotarAchievement.goals[index - 1].id,
+            "Durotar criteria follow the authored waypoint order")
+    end
+end
+Equal(durotarAchievement.goals[#durotarAchievement.goals].complete.achievementCriterion.name, "Orgrimmar",
+    "the final waypoint completes from the Orgrimmar area criterion")
+end
+
+do
+local dunMoroghAchievement = ns.guides["legacy-explore-dun-morogh"]
+Equal(dunMoroghAchievement.category, "Legacy Points", "Dun Morogh guide uses the Legacy Points category")
+Equal(dunMoroghAchievement.title, "Explore Dun Morogh", "Dun Morogh guide uses the achievement title")
+Equal(#dunMoroghAchievement.goals, 18, "Dun Morogh guide has one step per supplied achievement criterion")
+local expectedDunMorogh = {
+    { "Coldridge Pass", 34, 69 }, { "Chill Breeze Valley", 36, 52 },
+    { "Shimmer Ridge", 40, 38 }, { "Kharanos", 46, 52 },
+    { "Misty Pine Refuge", 58, 44 }, { "The Tundrid Hills", 56, 57 },
+    { "Amberstill Ranch", 63, 50 }, { "Helm's Bed Lake", 76, 54 },
+    { "Gol'Bolar Quarry", 68, 56 }, { "North Gate Outpost", 83, 41 },
+    { "Frostmane Hold", 25, 50 }, { "Brewnall Village", 30, 45 },
+    { "Anvilmar", 28, 67 }, { "The Grizzled Den", 42, 58 },
+    { "South Gate Outpost", 85, 51 }, { "Iceflow Lake", 34, 42 },
+    { "Gnomeregan", 24, 40 }, { "Gates of Ironforge", 52, 35 },
+}
+local dunMoroghIDs = {}
+for index, goal in ipairs(dunMoroghAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Dun Morogh step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 627, "Dun Morogh criterion uses achievement 627")
+    Equal(criterion.name, expectedDunMorogh[index][1], "Dun Morogh step uses the matching achievement criterion")
+    Check(not dunMoroghIDs[goal.id], "Dun Morogh step ids are unique")
+    dunMoroghIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1426, "Dun Morogh criterion uses the Dun Morogh map")
+    Equal(goal.route[1].x, expectedDunMorogh[index][2] / 100, "Dun Morogh waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedDunMorogh[index][3] / 100, "Dun Morogh waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], dunMoroghAchievement.goals[index - 1].id,
+            "Dun Morogh criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local westfallAchievement = ns.guides["legacy-explore-westfall"]
+Equal(westfallAchievement.category, "Legacy Points", "Westfall guide uses the Legacy Points category")
+Equal(westfallAchievement.title, "Explore Westfall", "Westfall guide uses the achievement title")
+Equal(#westfallAchievement.goals, 14, "Westfall guide has one step per supplied achievement criterion")
+local expectedWestfall = {
+    { "Sentinel Hill", 54, 50 }, { "Saldean's Farm", 54, 32 },
+    { "Furlbrow's Pumpkin Farm", 51, 22 }, { "The Jansen Stead", 58, 17 },
+    { "Jangolode Mine", 44, 25 }, { "The Molsen Farm", 44, 35 },
+    { "Gold Coast Quarry", 32, 43 }, { "The Dead Acre", 62, 60 },
+    { "Moonbrook", 43, 69 }, { "Alexston Farmstead", 38, 52 },
+    { "Demont's Place", 32, 75 }, { "Westfall Lighthouse", 30, 86 },
+    { "The Dagger Hills", 47, 78 }, { "The Dust Plains", 64, 72 },
+}
+local westfallIDs = {}
+for index, goal in ipairs(westfallAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Westfall step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 802, "Westfall criterion uses achievement 802")
+    Equal(criterion.name, expectedWestfall[index][1], "Westfall step uses the matching achievement criterion")
+    Check(not westfallIDs[goal.id], "Westfall step ids are unique")
+    westfallIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1436, "Westfall criterion uses the Westfall map")
+    Equal(goal.route[1].x, expectedWestfall[index][2] / 100, "Westfall waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedWestfall[index][3] / 100, "Westfall waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], westfallAchievement.goals[index - 1].id,
+            "Westfall criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local lochModanAchievement = ns.guides["legacy-explore-loch-modan"]
+Equal(lochModanAchievement.category, "Legacy Points", "Loch Modan guide uses the Legacy Points category")
+Equal(lochModanAchievement.title, "Explore Loch Modan", "Loch Modan guide uses the achievement title")
+Equal(#lochModanAchievement.goals, 11, "Loch Modan guide has one step per supplied achievement criterion")
+local expectedLochModan = {
+    { "The Loch", 48, 50 }, { "Stonewrought Dam", 47, 13 },
+    { "Mo'grosh Stronghold", 70, 24 }, { "Silver Stream Mine", 34, 18 },
+    { "North Gate Pass", 24, 18 }, { "The Farstrider Lodge", 80, 62 },
+    { "Ironband's Excavation Site", 68, 63 }, { "Grizzlepaw Ridge", 47, 74 },
+    { "Thelsamar", 34, 47 }, { "Stonesplinter Valley", 34, 75 },
+    { "Valley of Kings", 22, 70 },
+}
+local lochModanIDs = {}
+for index, goal in ipairs(lochModanAchievement.goals) do
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Loch Modan step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 779, "Loch Modan criterion uses achievement 779")
+    Equal(criterion.name, expectedLochModan[index][1], "Loch Modan step uses the matching achievement criterion")
+    Check(not lochModanIDs[goal.id], "Loch Modan step ids are unique")
+    lochModanIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1432, "Loch Modan criterion uses the Loch Modan map")
+    Equal(goal.route[1].x, expectedLochModan[index][2] / 100, "Loch Modan waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expectedLochModan[index][3] / 100, "Loch Modan waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], lochModanAchievement.goals[index - 1].id,
+            "Loch Modan criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local barrensAchievement = ns.guides["legacy-explore-the-barrens"]
+Equal(barrensAchievement.category, "Legacy Points", "Barrens guide uses the Legacy Points category")
+Equal(barrensAchievement.title, "Explore The Barrens", "Barrens guide uses the combined achievement title")
+Equal(#barrensAchievement.goals, 25, "Barrens guide includes all 25 original achievement criteria")
+local expectedBarrens = {
+    { "Boulder Lode Mine", 62, 7 }, { "The Mor'shan Rampart", 48, 7 },
+    { "The Dry Hills", 40, 15 }, { "Far Watch Post", 61, 21 },
+    { "The Crossroads", 52, 28 }, { "Ratchet", 63, 37 },
+    { "Lushwater Oasis", 47, 39 }, { "The Sludge Fen", 55, 7 },
+    { "Dreadmist Peak", 48, 18 }, { "The Forgotten Pools", 45, 24 },
+    { "Grol'dom Farm", 56, 19 }, { "Thorn Hill", 57, 28 },
+    { "The Stagnant Oasis", 56, 43 }, { "The Merchant Coast", 64, 45 },
+    { "Honor's Stand", 37, 28 }, { "Northwatch Hold", 61, 55 },
+    { "Bramblescar", 51, 58 }, { "Field of Giants", 46, 71 },
+    { "Bael Modan", 48, 84 }, { "Razorfen Downs", 49, 92 },
+    { "Raptor Grounds", 56, 51 }, { "Agama'gor", 43, 48 },
+    { "Camp Taurajo", 46, 61 }, { "Blackthorn Ridge", 42, 79 },
+    { "Razorfen Kraul", 41, 88 },
+}
+local barrensIDs = {}
+for index, goal in ipairs(barrensAchievement.goals) do
+    local expected = expectedBarrens[index]
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Barrens step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 750, "Barrens criteria use Forever's combined achievement")
+    Equal(criterion.name, expected[1], "Barrens step uses the matching in-game criterion")
+    Check(not barrensIDs[goal.id], "Barrens step ids are unique")
+    barrensIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1413, "Barrens criterion uses the combined Barrens map")
+    Equal(goal.route[1].x, expected[2] / 100, "Barrens waypoint uses combined-map X coordinates")
+    Equal(goal.route[1].y, expected[3] / 100, "Barrens waypoint uses combined-map Y coordinates")
+    if index > 1 then
+        Equal(goal.dependsOn[1], barrensAchievement.goals[index - 1].id,
+            "Barrens criteria follow the route order")
+    end
+end
+Equal(barrensAchievement.goals[25].complete.all[2].achievement.id, 750,
+    "the final Barrens criterion waits for the combined achievement to complete")
+end
+
+do
+local hillsbradAchievement = ns.guides["legacy-explore-hillsbrad-foothills"]
+Equal(hillsbradAchievement.category, "Legacy Points", "Hillsbrad guide uses the Legacy Points category")
+Equal(hillsbradAchievement.title, "Explore Hillsbrad Foothills", "Hillsbrad guide uses the achievement title")
+Equal(#hillsbradAchievement.goals, 12, "Hillsbrad guide has one step per supplied achievement criterion")
+local expectedHillsbrad = {
+    { "Darrow Hill", 49, 33 }, { "Tarren Mill", 61, 23 },
+    { "Durnholde Keep", 76, 41 }, { "Dun Garok", 69, 76 },
+    { "Nethander Stead", 64, 60 }, { "Eastern Strand", 60, 72 },
+    { "Southshore", 49, 56 }, { "Hillsbrad Fields", 33, 42 },
+    { "Western Strand", 36, 68 }, { "Azurelode Mine", 26, 60 },
+    { "Southpoint Tower", 20, 49 }, { "Purgation Isle", 16, 79 },
+}
+local hillsbradIDs = {}
+for index, goal in ipairs(hillsbradAchievement.goals) do
+    local expected = expectedHillsbrad[index]
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Hillsbrad step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 772, "Hillsbrad criterion uses achievement 772")
+    Equal(criterion.name, expected[1], "Hillsbrad step uses the matching achievement criterion")
+    Check(not hillsbradIDs[goal.id], "Hillsbrad step ids are unique")
+    hillsbradIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1424, "Hillsbrad waypoint uses the Hillsbrad map")
+    Equal(goal.route[1].x, expected[2] / 100, "Hillsbrad waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Hillsbrad waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], hillsbradAchievement.goals[index - 1].id,
+            "Hillsbrad criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local redridgeAchievement = ns.guides["legacy-explore-redridge-mountains"]
+Equal(redridgeAchievement.category, "Legacy Points", "Redridge guide uses the Legacy Points category")
+Equal(redridgeAchievement.title, "Explore Redridge Mountains", "Redridge guide uses the achievement title")
+Equal(#redridgeAchievement.goals, 11, "Redridge guide has one step per supplied achievement criterion")
+local expectedRedridge = {
+    { "Lakeshire", 28, 47 }, { "Lake Everstill", 33, 54 },
+    { "Three Corners", 15, 71 }, { "Lakeridge Highway", 26, 77 },
+    { "Redridge Canyons", 41, 32 }, { "Alther's Mill", 53, 42 },
+    { "Stonewatch", 66, 53 }, { "Render's Valley", 73, 77 },
+    { "Render's Camp", 43, 19 }, { "Stonewatch Falls", 73, 62 },
+    { "Galardell Valley", 78, 39 },
+}
+local redridgeIDs = {}
+for index, goal in ipairs(redridgeAchievement.goals) do
+    local expected = expectedRedridge[index]
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Redridge step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 780, "Redridge criterion uses achievement 780")
+    Equal(criterion.name, expected[1], "Redridge step uses the matching achievement criterion")
+    Check(not redridgeIDs[goal.id], "Redridge step ids are unique")
+    redridgeIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1433, "Redridge waypoint uses the Redridge map")
+    Equal(goal.route[1].x, expected[2] / 100, "Redridge waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Redridge waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], redridgeAchievement.goals[index - 1].id,
+            "Redridge criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local wetlandsAchievement = ns.guides["legacy-explore-wetlands"]
+Equal(wetlandsAchievement.category, "Legacy Points", "Wetlands guide uses the Legacy Points category")
+Equal(wetlandsAchievement.title, "Explore Wetlands", "Wetlands guide uses the achievement title")
+Equal(#wetlandsAchievement.goals, 15, "Wetlands guide has one step per supplied achievement criterion")
+local expectedWetlands = {
+    { "Menethil Harbor", 11, 53 }, { "Black Channel Marsh", 21, 46 },
+    { "Bluegill Marsh", 19, 37 }, { "Whelgar's Excavation Site", 35, 47 },
+    { "Sundown Marsh", 28, 30 }, { "Saltspray Glen", 34, 20 },
+    { "Ironbeard's Tomb", 44, 27 }, { "Dun Modr", 49, 17 },
+    { "Angerfang Encampment", 47, 48 }, { "Dun Algaz", 52, 72 },
+    { "The Green Belt", 55, 34 }, { "Mosshide Fen", 58, 53 },
+    { "Direforge Hill", 61, 33 }, { "Raptor Ridge", 68, 37 },
+    { "Grim Batol", 78, 74 },
+}
+local wetlandsIDs = {}
+for index, goal in ipairs(wetlandsAchievement.goals) do
+    local expected = expectedWetlands[index]
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Wetlands step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 841, "Wetlands criterion uses achievement 841")
+    Equal(criterion.name, expected[1], "Wetlands step uses the matching achievement criterion")
+    Check(not wetlandsIDs[goal.id], "Wetlands step ids are unique")
+    wetlandsIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1437, "Wetlands waypoint uses the Wetlands map")
+    Equal(goal.route[1].x, expected[2] / 100, "Wetlands waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Wetlands waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], wetlandsAchievement.goals[index - 1].id,
+            "Wetlands criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local duskwoodAchievement = ns.guides["legacy-explore-duskwood"]
+Equal(duskwoodAchievement.category, "Legacy Points", "Duskwood guide uses the Legacy Points category")
+Equal(duskwoodAchievement.title, "Explore Duskwood", "Duskwood guide uses the achievement title")
+Equal(#duskwoodAchievement.goals, 13, "Duskwood guide has one step per supplied achievement criterion")
+local expectedDuskwood = {
+    { "The Hushed Bank", 9, 49 }, { "Addle's Stead", 21, 68 },
+    { "Raven Hill", 20, 55 }, { "Raven Hill Cemetery", 20, 42 },
+    { "Vul'Gol Ogre Mound", 35, 72 }, { "Twilight Grove", 47, 44 },
+    { "The Yorgen Farmstead", 49, 73 }, { "Brightwood Grove", 64, 37 },
+    { "The Rotting Orchard", 63, 72 }, { "Tranquil Gardens Cemetery", 76, 63 },
+    { "Darkshire", 74, 46 }, { "Manor Mistmantle", 77, 35 },
+    { "The Darkened Bank", 53, 12 },
+}
+local duskwoodIDs = {}
+for index, goal in ipairs(duskwoodAchievement.goals) do
+    local expected = expectedDuskwood[index]
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Duskwood step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 778, "Duskwood criterion uses achievement 778")
+    Equal(criterion.name, expected[1], "Duskwood step uses the matching achievement criterion")
+    Check(not duskwoodIDs[goal.id], "Duskwood step ids are unique")
+    duskwoodIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1431, "Duskwood waypoint uses the Duskwood map")
+    Equal(goal.route[1].x, expected[2] / 100, "Duskwood waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Duskwood waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], duskwoodAchievement.goals[index - 1].id,
+            "Duskwood criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local ashenvaleAchievement = ns.guides["legacy-explore-ashenvale"]
+Equal(ashenvaleAchievement.category, "Legacy Points", "Ashenvale guide uses the Legacy Points category")
+Equal(ashenvaleAchievement.title, "Explore Ashenvale", "Ashenvale guide uses the achievement title")
+Equal(#ashenvaleAchievement.goals, 18, "Ashenvale guide has one step per supplied achievement criterion")
+local expectedAshenvale = {
+    { "The Zoram Strand", 14, 23 }, { "Lake Falathim", 20, 42 },
+    { "Maestra's Post", 27, 36 }, { "Thistlefur Village", 36, 37 },
+    { "The Shrine of Aessina", 22, 53 }, { "Fire Scar Shrine", 26, 64 },
+    { "Astranaar", 36, 50 }, { "Iris Lake", 46, 46 },
+    { "The Ruins of Stardust", 33, 67 }, { "Mystral Lake", 49, 69 },
+    { "The Howling Vale", 54, 36 }, { "Raynewood Retreat", 61, 51 },
+    { "Fallen Sky Lake", 66, 82 }, { "Splintertree Post", 73, 62 },
+    { "Satyrnaar", 80, 49 }, { "Bough Shadow", 93, 35 },
+    { "Warsong Lumber Camp", 90, 58 }, { "Felfire Hill", 89, 77 },
+}
+local ashenvaleIDs = {}
+for index, goal in ipairs(ashenvaleAchievement.goals) do
+    local expected = expectedAshenvale[index]
+    local criterion = goal.complete.achievementCriterion
+    Check(criterion ~= nil, "Ashenvale step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 845, "Ashenvale criterion uses achievement 845")
+    Equal(criterion.name, expected[1], "Ashenvale step uses the matching achievement criterion")
+    Check(not ashenvaleIDs[goal.id], "Ashenvale step ids are unique")
+    ashenvaleIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1440, "Ashenvale waypoint uses the Ashenvale map")
+    Equal(goal.route[1].x, expected[2] / 100, "Ashenvale waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Ashenvale waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], ashenvaleAchievement.goals[index - 1].id,
+            "Ashenvale criteria follow the supplied waypoint order")
+    end
+end
+end
+
+do
+local teldrassilAchievement = ns.guides["legacy-explore-teldrassil"]
+Equal(teldrassilAchievement.category, "Legacy Points", "Teldrassil guide uses the Legacy Points category")
+Equal(teldrassilAchievement.title, "Explore Teldrassil", "Teldrassil guide uses the achievement title")
+Equal(#teldrassilAchievement.goals, 12, "Teldrassil guide includes the 11 listed criteria and The Cleft")
+local expectedTeldrassil = {
+    { "Shadowglen", 60, 43 }, { "Ban'ethil Hollow", 46, 51 },
+    { "Dolanaar", 55, 58 }, { "Gnarlpine Hold", 42.8, 76.0 },
+    { "Lake Al'Ameth", 54, 68 }, { "Pools of Arlithrien", 42.84, 59.56 },
+    { "Starbreeze Village", 66, 57 }, { "The Oracle Glade", 38, 30 },
+    { "Wellspring Lake", 42, 40 }, { "Darnassus", 25, 55 },
+    { "Rut'theran Village", 55, 91 }, { "The Cleft", 51.8, 38.4 },
+}
+local teldrassilIDs = {}
+for index, goal in ipairs(teldrassilAchievement.goals) do
+    local expected = expectedTeldrassil[index]
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Teldrassil step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 842, "Teldrassil criterion uses achievement 842")
+    Equal(criterion.name, expected[1], "Teldrassil step uses the matching achievement criterion")
+    Check(not teldrassilIDs[goal.id], "Teldrassil step ids are unique")
+    teldrassilIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1438, "Teldrassil waypoint uses the Teldrassil map")
+    Equal(goal.route[1].x, expected[2] / 100, "Teldrassil waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Teldrassil waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], teldrassilAchievement.goals[index - 1].id,
+            "Teldrassil criteria follow the supplied waypoint order")
+    end
+end
+local cleftGoal = teldrassilAchievement.goals[#teldrassilAchievement.goals]
+Equal(cleftGoal.complete.all[2].achievement.id, 842,
+    "the final Teldrassil waypoint also waits for achievement completion")
+Equal(teldrassilAchievement.goals[4].route[1].x, 0.428,
+    "Gnarlpine Hold uses its corrected X coordinate")
+Equal(teldrassilAchievement.goals[4].route[1].y, 0.76,
+    "Gnarlpine Hold uses its corrected Y coordinate")
+end
+
+do
+local darkshoreAchievement = ns.guides["legacy-explore-darkshore"]
+Equal(darkshoreAchievement.category, "Legacy Points", "Darkshore guide uses the Legacy Points category")
+Equal(darkshoreAchievement.title, "Explore Darkshore", "Darkshore guide uses the achievement title")
+Equal(#darkshoreAchievement.goals, 9, "Darkshore guide has one step per screenshot achievement criterion")
+local expectedDarkshore = {
+    { "Auberdine", 38, 44 }, { "Ruins of Mathystra", 58, 20 },
+    { "Tower of Althalaxx", 56, 26 }, { "Cliffspring River", 52, 31 },
+    { "Bashal'Aran", 44, 36 }, { "Ameth'Aran", 43, 57 },
+    { "Grove of the Ancients", 43, 77 }, { "Remtravel's Excavation", 35, 85 },
+    { "The Master's Glaive", 38, 86 },
+}
+local darkshoreIDs = {}
+for index, goal in ipairs(darkshoreAchievement.goals) do
+    local expected = expectedDarkshore[index]
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Darkshore step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 844, "Darkshore criterion uses achievement 844")
+    Equal(criterion.name, expected[1], "Darkshore step uses the matching achievement criterion")
+    Check(not darkshoreIDs[goal.id], "Darkshore step ids are unique")
+    darkshoreIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1439, "Darkshore waypoint uses the Darkshore map")
+    Equal(goal.route[1].x, expected[2] / 100, "Darkshore waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Darkshore waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], darkshoreAchievement.goals[index - 1].id,
+            "Darkshore criteria follow the supplied waypoint order")
+    end
+end
+local darkshoreFinalGoal = darkshoreAchievement.goals[#darkshoreAchievement.goals]
+Equal(darkshoreFinalGoal.complete.all[2].achievement.id, 844,
+    "the final Darkshore waypoint also waits for achievement completion")
+end
+
+do
+local thousandNeedlesAchievement = ns.guides["legacy-explore-thousand-needles"]
+Equal(thousandNeedlesAchievement.category, "Legacy Points", "Thousand Needles guide uses the Legacy Points category")
+Equal(thousandNeedlesAchievement.title, "Explore Thousand Needles", "Thousand Needles guide uses the achievement title")
+Equal(#thousandNeedlesAchievement.goals, 9, "Thousand Needles guide has one step per achievement criterion")
+local expectedThousandNeedles = {
+    { "The Great Lift", 31, 23 }, { "Darkcloud Pinnacle", 34, 38 },
+    { "The Screeching Canyon", 33, 52 }, { "Freewind Post", 45, 50 },
+    { "Splithoof Crag", 40, 37 }, { "Windbreak Canyon", 60, 53 },
+    { "The Shimmering Flats", 75, 68 }, { "Camp E'thok", 18, 21 },
+    { "Highperch", 12, 34 },
+}
+local thousandNeedlesIDs = {}
+for index, goal in ipairs(thousandNeedlesAchievement.goals) do
+    local expected = expectedThousandNeedles[index]
+    local criterion = goal.complete.achievementCriterion
+        or (goal.complete.all and goal.complete.all[1].achievementCriterion)
+    Check(criterion ~= nil, "Thousand Needles step " .. index .. " uses its achievement criterion")
+    Equal(criterion.id, 846, "Thousand Needles criterion uses achievement 846")
+    Equal(criterion.name, expected[1], "Thousand Needles step uses the matching achievement criterion")
+    Check(not thousandNeedlesIDs[goal.id], "Thousand Needles step ids are unique")
+    thousandNeedlesIDs[goal.id] = true
+    Equal(goal.route[1].mapID, 1441, "Thousand Needles waypoint uses the Thousand Needles map")
+    Equal(goal.route[1].x, expected[2] / 100, "Thousand Needles waypoint has the expected X coordinate")
+    Equal(goal.route[1].y, expected[3] / 100, "Thousand Needles waypoint has the expected Y coordinate")
+    if index > 1 then
+        Equal(goal.dependsOn[1], thousandNeedlesAchievement.goals[index - 1].id,
+            "Thousand Needles criteria follow the supplied waypoint order")
+    end
+end
+local finalGoal = thousandNeedlesAchievement.goals[#thousandNeedlesAchievement.goals]
+Equal(finalGoal.complete.all[2].achievement.id, 846,
+    "the final Thousand Needles waypoint also waits for achievement completion")
+end
+
 local unknownAchievementState = {}
 Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, unknownAchievementState), nil,
     "missing achievement API state remains unknown")
@@ -401,10 +908,12 @@ Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, incompleteAchievement
 Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, incompleteAchievementState), false,
     "an undiscovered achievement criterion is reported as incomplete")
 local completeAchievementState = {
-    achievements = { [769] = { completed = true, criteriaByName = { ambermill = false } } },
+    achievements = { [769] = { completed = true, criteriaByName = {
+        ambermill = false, ["beren's peril"] = true,
+    } } },
 }
-Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, completeAchievementState), true,
-    "the overall achievement confirms its criteria are complete")
+Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, completeAchievementState), false,
+    "overall completion does not override an incomplete achievement criterion")
 Equal(ns.EvaluateCondition(finalSilverpineStep.complete, incompleteAchievementState), false,
     "the final waypoint waits for the overall achievement flag")
 Equal(ns.EvaluateCondition(finalSilverpineStep.complete, completeAchievementState), true,
@@ -430,10 +939,24 @@ Equal(ns.EvaluateCondition({ achievement = { id = 769 } }, missingLegacyAPIState
     "a failed achievement API read stays unknown")
 Equal(ns.EvaluateCondition({ achievementCriterion = { id = 769, name = "Ambermill" } }, missingLegacyAPIState), nil,
     "a failed criterion API read stays unknown")
-Equal(ns.GetTrackedAchievementIDs()[1], 736, "Mulgore registers achievement 736 for capture")
-Equal(#ns.GetTrackedAchievementIDs(), 4, "the guide query tracks only referenced achievement ids")
-Equal(ns.GetTrackedAchievementIDs()[2], 768, "the Tirisfal guide registers achievement 768 for capture")
-Equal(ns.GetTrackedAchievementIDs()[3], 769, "the Silverpine guide registers achievement 769 for capture")
+Equal(#ns.GetTrackedAchievementIDs(), 17, "the guide query tracks only referenced achievement ids")
+Equal(ns.GetTrackedAchievementIDs()[1], 627, "Dun Morogh registers achievement 627 for capture")
+Equal(ns.GetTrackedAchievementIDs()[2], 728, "Durotar registers achievement 728 for capture")
+Equal(ns.GetTrackedAchievementIDs()[3], 736, "Mulgore registers achievement 736 for capture")
+Equal(ns.GetTrackedAchievementIDs()[4], 750, "The Barrens registers achievement 750 for capture")
+Equal(ns.GetTrackedAchievementIDs()[5], 768, "the Tirisfal guide registers achievement 768 for capture")
+Equal(ns.GetTrackedAchievementIDs()[6], 769, "the Silverpine guide registers achievement 769 for capture")
+Equal(ns.GetTrackedAchievementIDs()[7], 772, "Hillsbrad registers achievement 772 for capture")
+Equal(ns.GetTrackedAchievementIDs()[8], 776, "Elwynn registers achievement 776 for capture")
+Equal(ns.GetTrackedAchievementIDs()[9], 778, "Duskwood registers achievement 778 for capture")
+Equal(ns.GetTrackedAchievementIDs()[10], 779, "Loch Modan registers achievement 779 for capture")
+Equal(ns.GetTrackedAchievementIDs()[11], 780, "Redridge registers achievement 780 for capture")
+Equal(ns.GetTrackedAchievementIDs()[12], 802, "Westfall registers achievement 802 for capture")
+Equal(ns.GetTrackedAchievementIDs()[13], 841, "Wetlands registers achievement 841 for capture")
+Equal(ns.GetTrackedAchievementIDs()[14], 842, "Teldrassil registers achievement 842 for capture")
+Equal(ns.GetTrackedAchievementIDs()[15], 844, "Darkshore registers achievement 844 for capture")
+Equal(ns.GetTrackedAchievementIDs()[16], 845, "Ashenvale registers achievement 845 for capture")
+Equal(ns.GetTrackedAchievementIDs()[17], 846, "Thousand Needles registers achievement 846 for capture")
 
 local duplicateOK = pcall(function()
     ns:RegisterGuide({ id = "dungeons-ragefire-chasm-horde", title = "Duplicate", category = "Test", revision = 1,
@@ -487,14 +1010,22 @@ function TestElixirOfSufferingFollowup()
     ns.charDB = { manualCompleted = {}, completionLedger = {}, deferred = {} }
     local guide = ns.guides["leveling-era-horde-hillsbrad-foothills"]
     local firstAccept = ns.Engine:GetGoal(guide, "accept-496-elixir-of-suffering")
+    local objective = ns.Engine:GetGoal(guide, "objective-496-elixir-of-suffering")
+    local turnin = ns.Engine:GetGoal(guide, "turnin-496-elixir-of-suffering")
     local followup = ns.Engine:GetGoal(guide, "accept-499-elixir-of-suffering")
     local state = { faction = "Horde", level = 26, quests = { [496] = { complete = false } },
         completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
     Equal(ns.Engine:IsGoalDone(firstAccept, state, guide), true,
         "the active gathering quest clears its own Elixir of Suffering accept")
+    Equal(ns.Engine:IsReady(guide, objective, state), true,
+        "the Elixir of Suffering objective routes while its quest is active")
+    Equal(ns.Engine:IsReady(guide, turnin, state), false,
+        "the Elixir of Suffering turn-in waits for the gathering objective")
     Equal(ns.Engine:IsReady(guide, followup, state), false,
         "the same-title Elixir of Suffering follow-up waits for the gathering quest turn-in")
     state.quests[496].complete = true
+    Equal(ns.Engine:IsReady(guide, turnin, state), true,
+        "the Elixir of Suffering turn-in opens when the gathering objectives are complete")
     Equal(ns.Engine:IsReady(guide, followup, state), false,
         "finished gathering objectives do not unlock the Elixir follow-up before turn-in")
     state.quests[496] = nil
@@ -504,6 +1035,27 @@ function TestElixirOfSufferingFollowup()
     ns.charDB = previousCharDB
 end
 TestElixirOfSufferingFollowup()
+
+function TestUnderratedTalentWaitsForMoonKissedBlade()
+    local guide = ns.guides["leveling-era-horde-hillsbrad-foothills"]
+    local accept = ns.Engine:GetGoal(guide, "woven-accept-95111-an-underrated-talent")
+    local state = {
+        faction = "Horde", raceID = 5, classID = 2, level = 22,
+        quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
+    }
+    local ready, reason = ns.Engine:IsReady(guide, accept, state)
+    Equal(ready, false, "the woven 95111 accept waits for A Moon-Kissed Blade")
+    Equal(reason, "Quest has not been turned in.", "the unmet 95111 prerequisite is identified")
+    local tracked = false
+    for _, questID in ipairs(ns.GetTrackedQuestIDs()) do
+        if questID == 95036 then tracked = true end
+    end
+    Check(tracked, "A Moon-Kissed Blade completion is included in the quest-state query")
+    state.completedQuests[95036] = true
+    Equal(ns.Engine:IsReady(guide, accept, state), true,
+        "the woven 95111 accept opens after A Moon-Kissed Blade is turned in")
+end
+TestUnderratedTalentWaitsForMoonKissedBlade()
 
 local badCoordinateOK = pcall(function()
     ns:RegisterGuide({ id = "bad-coordinate", title = "Bad", category = "Test", revision = 1,
@@ -1221,6 +1773,10 @@ function TestItemStartWaitsForBagItem()
         "Lakota'mani loot note is ready before the hoof drops")
     Check(ns.Engine:IsReady(guide, harvesterNote, stateWithoutItem),
         "Harvester loot note is ready before the head drops")
+    Check(string.find(harvesterNote.text, "can take hours to respawn", 1, true) ~= nil,
+        "Harvester note warns about its long respawn")
+    Check(string.find(harvesterNote.text, "skip this step if you want", 1, true) ~= nil,
+        "Harvester note says the step can be skipped")
     local candidates = ns.Engine:CandidateGoals(guide, stateWithoutItem)
     local hoofIdx, harvesterIdx, hoofNoteIdx, harvesterNoteIdx
     for index, goal in ipairs(candidates) do
@@ -5784,6 +6340,7 @@ function TestSameTitleQuestChainGates()
 
 end
 TestSameTitleQuestChainGates()
+TestDurotarPartialProgress()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))
