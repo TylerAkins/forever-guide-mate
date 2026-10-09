@@ -85,6 +85,11 @@ CreateFrame = function(kind, _, parent, template)
     local frame = NewRegion(parent)
     frame.template = template
     if template then createFrameTemplates[#createFrameTemplates + 1] = template end
+    if template == "ForeverGuideMateMapPinTemplate" then
+        frame.Texture = frame:CreateTexture(nil, "OVERLAY")
+        frame.UseFrameLevelType = function(self, frameLevelType) self.frameLevelType = frameLevelType end
+        frame.SetScalingLimits = function(self, ...) self.scalingLimits = { ... } end
+    end
     createdFrames[#createdFrames + 1] = frame
     if kind == "CheckButton" then
         frame.Text = NewRegion()
@@ -518,9 +523,13 @@ ForeverGuideMate_OnAddonCompartmentEnter(dropdownButton)
 Equal(tooltipOwner, dropdownButton, "a compartment frame owner is used when one is passed")
 
 do
+    local savedQuestLog = C_QuestLog
+    C_QuestLog = { GetQuestsOnMap = function() return {} end }
+    local viewedMapID = 1454
     local map = {
         IsShown = function() return true end,
-        GetMapID = function() return 1454 end,
+        GetMapID = function() return viewedMapID end,
+        SetMapID = function(_, mapID) viewedMapID = mapID end,
         GetWidth = function() return 1000 end,
         GetHeight = function() return 800 end,
         AcquirePin = function() error("AcquirePin calls SetPassThroughButtons") end,
@@ -530,15 +539,37 @@ do
     ns.Engine.currentGoal = { kind = "travel", complete = { quest = { id = 870, state = "complete" } },
         route = { { mapID = 1454, x = 0.5, y = 0.5 } } }
     ns.MapPins:Refresh(map)
-    Equal(ns.MapPins.pin, nil, "quest-linked travel relies on Blizzard's existing pin")
+    Equal(ns.MapPins.pin.shown, true, "quest-linked travel keeps its route pin when Blizzard has no POI")
+    Equal(ns.MapPins.pin.template, "ForeverGuideMateMapPinTemplate", "the route pin uses the Blizzard map pin template")
+    Equal(ns.MapPins.pin.frameLevelType, "PIN_FRAME_LEVEL_AREA_POI", "the route pin uses the map POI frame level")
     ns.Engine.currentGoal.kind = "objective"
     ns.Engine.currentGoal.useClientPin = true
+    ns.Engine.currentGoal.complete = { questObjective = { id = 870, index = 1 } }
     ns.MapPins:Refresh(map)
-    Equal(ns.MapPins.pin, nil, "objectives do not add a duplicate guide marker")
+    Equal(ns.MapPins.pin.shown, true, "objectives keep their route pin when Blizzard has no POI")
     ns.Engine.currentGoal.kind = "turnin"
+    ns.Engine.currentGoal.complete = { quest = { id = 870, state = "completed" } }
     ns.MapPins:Refresh(map)
-    Equal(ns.MapPins.pin, nil, "turn-ins do not add a duplicate guide marker")
+    Equal(ns.MapPins.pin.shown, true, "turn-ins keep their route pin when Blizzard has no POI")
+    C_QuestLog = { GetQuestsOnMap = function() return { { questID = 870, x = 0.6, y = 0.6 } } end }
+    ns.MapPins:Refresh(map)
+    Equal(ns.MapPins.pin.shown, false, "a real Blizzard quest POI replaces the guide route marker")
+    C_QuestLog = { GetQuestsOnMap = function() return {} end }
+    local savedMapAPI = C_Map
+    C_Map = { GetMapRectOnMap = function() return nil end }
+    ns.Engine.currentGoal = { kind = "objective", useClientPin = true,
+        complete = { questObjective = { id = 870, index = 1 } },
+        route = { { mapID = 1442, x = 0.6652, y = 0.4548, label = "Toxic Fogger" } } }
+    ns.Engine.state = { mapID = 1442, x = 0.5, y = 0.5 }
+    viewedMapID = 1454
+    ns.MapPins:Refresh(map)
+    Equal(viewedMapID, 1442, "a pinless quest opens the saved route map when its pin cannot project here")
+    ns.MapPins:Refresh(map)
+    Equal(ns.MapPins.pin.shown, true, "the saved route pin appears after switching to its map")
+    C_Map = savedMapAPI
     ns.Engine.currentGoal = { kind = "travel", route = { { mapID = 1454, x = 0.5, y = 0.5 } } }
+    ns.Engine.state = { mapID = 1454, x = 0.4, y = 0.4 }
+    viewedMapID = 1454
     ns.MapPins:Refresh(map)
     Equal(ns.MapPins.pin.shown, true, "ordinary travel retains the guide route marker")
     local savedInstance = IsInInstance
@@ -546,6 +577,7 @@ do
     ns.MapPins:Refresh(map)
     Equal(ns.MapPins.pin.shown, false, "the world map does not add a guide pin inside an instance")
     IsInInstance = savedInstance
+    C_QuestLog = savedQuestLog
 end
 
 function TestFlightLandingRefreshesGuide()
