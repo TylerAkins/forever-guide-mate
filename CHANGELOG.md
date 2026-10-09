@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.3.4 - 2026-10-09
+
+- Keep saved guide map pins visible when Blizzard has no quest POI, while preferring Blizzard's POI when one is available.
+
 ## 0.3.3 - 2026-10-09
 
 - Add achievement-driven Legacy Points guides for Durotar, Dun Morogh, Westfall, Loch Modan, The Barrens, Hillsbrad Foothills, Redridge Mountains, Wetlands, Duskwood, Ashenvale, Teldrassil, Thousand Needles, and Darkshore.

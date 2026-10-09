@@ -1903,9 +1903,12 @@ WorldMapFrame = {
     AcquirePin = function() WorldMapFrame.acquireCalls = WorldMapFrame.acquireCalls + 1 end,
     AddDataProvider = function(_, provider) WorldMapFrame.provider = provider end,
 }
-CreateFrame = function(_, _, parent)
+CreateFrame = function(_, _, parent, template)
     local pin = { parent = parent, points = {}, shown = false }
+    pin.template = template
     function pin:SetSize() end
+    function pin:UseFrameLevelType(frameLevelType) self.frameLevelType = frameLevelType end
+    function pin:SetScalingLimits() end
     function pin:EnableMouse() end
     function pin:SetScript() end
     function pin:CreateTexture() return { SetAllPoints = function() end } end
@@ -1927,6 +1930,8 @@ ns.Engine.currentGoal = navigationGoal
 ns.Engine.state = baseState
 ns.MapPins:Refresh()
 Equal(WorldMapFrame.acquireCalls, 0, "the guide pin does not call AcquirePin")
+Equal(ns.MapPins.pin.template, "ForeverGuideMateMapPinTemplate", "the guide pin uses the Blizzard map pin template")
+Equal(ns.MapPins.pin.frameLevelType, "PIN_FRAME_LEVEL_AREA_POI", "the guide pin uses the POI frame level")
 Equal(ns.MapPins.pin.points[1][4], 500, "map pin is placed at the active route x coordinate")
 Equal(ns.MapPins.pin.points[1][5], -320, "map pin is placed at the active route y coordinate")
 ns.MapPins:Clear()
@@ -6013,6 +6018,19 @@ function TestWaypointProviders()
     waypoints:Sync(turnin, {})
     Equal(trackedQuest, 789, "native quest tracking does not require waypoint coordinates")
     Equal(waypoints.status, nil, "native quest tracking does not report a coordinate failure")
+    local authoredFallback = { kind = "objective", useClientPin = true,
+        complete = { questObjective = { id = 123, index = 1 } },
+        route = { { mapID = 1442, x = 0.6652, y = 0.4548, label = "Toxic Fogger" } } }
+    userPoint, trackingUser = nil, false
+    local writesBeforeFallback = pinWrites
+    waypoints:Sync(authoredFallback, {})
+    Equal(userPoint.uiMapID, 1442, "a quest without a Blizzard location selects the authored fallback waypoint")
+    Equal(userPoint.position.x, 0.6652, "the selected fallback waypoint uses authored route coordinates")
+    Equal(trackingUser, true, "the authored fallback becomes Blizzard's super-tracked user waypoint")
+    Equal(waypoints.questFallback, 123, "the fallback prevents native quest tracking from reclaiming selection")
+    waypoints:Sync(authoredFallback, {})
+    Equal(pinWrites, writesBeforeFallback + 1, "refresh does not recreate the selected fallback waypoint")
+    Equal(trackedQuest, 0, "refresh keeps the authored waypoint selected when quest coordinates are absent")
     local calls = {}
     local optional = {
         AddWaypoint = function(_, mapID, x, y) calls[#calls + 1] = { mapID, x, y }; return #calls end,
@@ -6059,6 +6077,10 @@ function TestWaypointProviders()
     C_QuestLog = nil
     waypoints:Sync(objective, {}, optional)
     Equal(waypoints.status, "No Blizzard quest location is available for this step.", "TomTom reports missing client locations")
+    waypoints:Sync(authoredFallback, {}, optional)
+    Equal(calls[6][1], 1442, "TomTom uses the saved route map when Blizzard has no quest pin")
+    Equal(calls[6][2], 0.6652, "TomTom uses the saved route coordinates when Blizzard has no quest pin")
+    Equal(waypoints.status, nil, "a saved route clears the missing client location warning")
     local corpse = {
         kind = "objective",
         useClientPin = false,
