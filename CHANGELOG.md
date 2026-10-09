@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.3.4 - 2026-10-09
+
+- Keep saved guide map pins visible when Blizzard has no quest POI, while preferring Blizzard's POI when one is available.
+- Refresh quest progress from Blizzard's completion state when a watched objective update leaves its objective row unchanged.
+- Add the Explore Moonglade achievement route with a pin for Lake Elune'ara.
+
 ## 0.3.3 - 2026-10-09
 
 - Add achievement-driven Legacy Points guides for Durotar, Dun Morogh, Westfall, Loch Modan, The Barrens, Hillsbrad Foothills, Redridge Mountains, Wetlands, Duskwood, Ashenvale, Teldrassil, Thousand Needles, and Darkshore.

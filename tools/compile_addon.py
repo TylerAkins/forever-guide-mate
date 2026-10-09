@@ -168,6 +168,7 @@ SHIPPED = (
     "Guides/Legacy/ExploreTirisfalGlades.lua",
     "Guides/Legacy/ExploreElwynnForest.lua",
     "Guides/Legacy/ExploreMulgore.lua",
+    "Guides/Legacy/ExploreMoonglade.lua",
     "Guides/Legacy/ExploreDurotar.lua",
     "Guides/Legacy/ExploreDunMorogh.lua",
     "Guides/Legacy/ExploreWestfall.lua",

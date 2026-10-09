@@ -59,12 +59,15 @@ function MapPins:EnsurePin(canvas)
         return pin
     end
     if type(CreateFrame) ~= "function" or not canvas then return nil end
-    pin = CreateFrame("Frame", nil, canvas)
+    pin = CreateFrame("Frame", nil, canvas, "ForeverGuideMateMapPinTemplate")
     pin:SetSize(28, 28)
+    pin.Texture = pin.Texture or pin:CreateTexture(nil, "OVERLAY")
+    if ForeverGuideMateMapPinMixin and type(ForeverGuideMateMapPinMixin.OnLoad) == "function" then
+        ForeverGuideMateMapPinMixin.OnLoad(pin)
+    end
     if pin.EnableMouse then pin:EnableMouse(true) end
     pin:SetScript("OnEnter", function(self) ForeverGuideMateMapPinMixin.OnMouseEnter(self) end)
     pin:SetScript("OnLeave", function(self) ForeverGuideMateMapPinMixin.OnMouseLeave(self) end)
-    pin.Texture = pin:CreateTexture(nil, "OVERLAY")
     ApplyPinVisual(pin.Texture)
     self.pin = pin
     return pin
@@ -109,15 +112,33 @@ function MapPins:Refresh(mapCanvas)
     local state = ns.Engine.state or {}
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
     local questTracking = goal and ns.Navigation:QuestDestinationID(goal)
+    local useBlizzardPins = ns.db and (ns.db.waypointProvider or "blizzard") == "blizzard"
+    local hasClientPin = false
+    if useBlizzardPins and questTracking and routeLeg then
+        local pinGoal = goal
+        if goal.useClientPin ~= true then
+            pinGoal = {}
+            for key, value in pairs(goal) do pinGoal[key] = value end
+            pinGoal.useClientPin = true
+        end
+        local _, x = ns.Navigation:ClientPin(pinGoal, routeLeg.mapID, C_QuestLog, state)
+        hasClientPin = x ~= nil
+    end
     local taxiPending = goal and ns.Navigation.PendingTaxiTravel
         and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg)
     if not mapCanvas or not ns.db or not ns.db.uiOpen or not goal
-        or ((ns.db.waypointProvider or "blizzard") == "blizzard" and questTracking and not taxiPending)
+        or (useBlizzardPins and hasClientPin and not taxiPending)
         or (ns.TomTomWaypoints and ns.TomTomWaypoints.waypoint)
         or (mapCanvas.IsShown and not mapCanvas:IsShown()) then return end
     local viewedMapID = mapCanvas.GetMapID and mapCanvas:GetMapID() or nil
     local x, y, leg = self:GetLocation(goal, state, viewedMapID, C_Map)
-    if not x then return end
+    if not x then
+        if useBlizzardPins and questTracking and not hasClientPin and routeLeg
+            and routeLeg.mapID ~= viewedMapID and type(mapCanvas.SetMapID) == "function" then
+            pcall(mapCanvas.SetMapID, mapCanvas, routeLeg.mapID)
+        end
+        return
+    end
     self:Place(mapCanvas, x, y, leg.label or goal.text)
 end
 

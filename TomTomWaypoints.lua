@@ -76,6 +76,18 @@ local function ValidPoint(mapID, x, y)
         and x >= 0 and x <= 1 and y >= 0 and y <= 1
 end
 
+local function HasClientQuestPoint(goal, routeLeg, state, questID)
+    local mapID, x, y
+    if C_QuestLog and type(C_QuestLog.GetNextWaypoint) == "function" then
+        local ok
+        ok, mapID, x, y = pcall(C_QuestLog.GetNextWaypoint, questID)
+        if ok and ValidPoint(mapID, x, y) then return true end
+    end
+    local pinGoal = { useClientPin = true, complete = goal.complete }
+    mapID, x, y = ns.Navigation:ClientPin(pinGoal, routeLeg and routeLeg.mapID or state.mapID, nil, state)
+    return ValidPoint(mapID, x, y)
+end
+
 local function TurninQuestID(goal)
     if type(goal) ~= "table" or goal.kind ~= "turnin" then
         return nil
@@ -133,7 +145,7 @@ function Waypoints:Clear(api)
     if not self.blizzardPinsBlocked and self:OwnsPin() and type(C_Map.ClearUserWaypoint) == "function" then
         self:CallBlizzard(C_Map.ClearUserWaypoint)
     end
-    self.questID, self.point = nil, nil
+    self.questID, self.questFallback, self.point = nil, nil, nil
 end
 
 function Waypoints:Sync(goal, state, api)
@@ -174,6 +186,14 @@ function Waypoints:Sync(goal, state, api)
         self.suspended = true
     end
     if self.questID and C_SuperTrack.GetSuperTrackedQuestID() ~= self.questID then self.suspended = true end
+    if self.questFallback then
+        if self.questFallback == ns.Navigation:QuestDestinationID(goal) then
+            if self.suspended then return end
+            self:Report(nil)
+            return
+        end
+        self.questFallback = nil
+    end
     if self.suspended then return end
     local questID = not flightLeg
         and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg))
@@ -194,8 +214,11 @@ function Waypoints:Sync(goal, state, api)
             end
         end
 
-        self:Report(nil)
-        return
+        if HasClientQuestPoint(goal, routeLeg, state, questID)
+            or not ValidPoint(routeLeg and routeLeg.mapID, routeLeg and routeLeg.x, routeLeg and routeLeg.y) then
+            self:Report(nil)
+            return
+        end
     end
     local leg
     if flightLeg then
@@ -211,12 +234,15 @@ function Waypoints:Sync(goal, state, api)
             local destination = route and route[#route]
             mapID, x, y = ns.Navigation:ClientPin(pinGoal, destination and destination.mapID or state.mapID, nil, state)
         end
-        if not ValidPoint(mapID, x, y) then
+        if ValidPoint(mapID, x, y) then
+            leg = { mapID = mapID, x = x, y = y, label = goal.text }
+        elseif ValidPoint(routeLeg and routeLeg.mapID, routeLeg and routeLeg.x, routeLeg and routeLeg.y) then
+            leg = routeLeg
+        else
             self:Clear(api)
             self:Report("No Blizzard quest location is available for this step.")
             return
         end
-        leg = { mapID = mapID, x = x, y = y, label = goal.text }
     elseif goal.kind == "accept" and provider == "blizzard" then
         leg = goal.route and goal.route[#goal.route]
     else
@@ -239,7 +265,6 @@ function Waypoints:Sync(goal, state, api)
     if provider == "tomtom" then
         api = api or TomTom
         if not self:Available(api) then self:Clear(); self:Report("TomTom is unavailable. Select Blizzard Map Pins in Navigation."); return end
-        -- Quest destinations must come from the client, never the authored objective fallback.
         local target = { text = goal.text, route = { leg } }
         if type(hooksecurefunc) == "function" and type(api.SetCrazyArrow) == "function"
             and self.hookedOwner ~= api then
@@ -276,6 +301,7 @@ function Waypoints:Sync(goal, state, api)
                 if C_SuperTrack and type(C_SuperTrack.SetSuperTrackedUserWaypoint) == "function" then
                     self:CallBlizzard(C_SuperTrack.SetSuperTrackedUserWaypoint, true)
                 end
+                if nativeQuest then self.questID, self.questFallback = nil, questID end
             else
                 self.point = nil
                 self.suspended = true
