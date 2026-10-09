@@ -1,3 +1,4 @@
-## 0.3.2 - 2026-10-08
+## 0.3.3 - 2026-10-09
 
-- Add Legacy Points with achievement-driven waypoint guides for Silverpine Forest, Tirisfal Glades, Elwynn Forest, and Mulgore, and fix quest chains showing same-title follow-ups before their prerequisites are turned in.
+- Add 13 achievement-driven Legacy Points exploration guides with their checklist areas and waypoints.
+- Correct exploration progress, quest prerequisites, and zone waypoints, and explain the optional Silithid Harvester wait.
