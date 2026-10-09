@@ -1089,7 +1089,7 @@ ns:RegisterGuide({
             priority = 134,
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             text = "Accept The Platinum Discs.",
-            dependsOn = { "turnin-2338-translating-the-journal" },
+            dependsOn = { "turnin-2338-translating-the-journal", "turnin-2278-the-platinum-discs" },
             complete = QuestState(2280, "activeOrCompleted"),
         },
         {

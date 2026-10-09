@@ -28,7 +28,7 @@ local locations = {
     { "scarlet-watch-post", "Scarlet Watch Post", 79, 29 },
     { "whispering-gardens", "Whispering Gardens", 81, 32 },
     { "venomweb-vale", "Venomweb Vale", 84, 47 },
-    { "the-bulwark", "The Bulwark", 81, 69 },
+    { "the-bulwark", "The Bulwark", 82.2, 70.6 },
     { "undercity", "Undercity", 61, 66 },
 }
 

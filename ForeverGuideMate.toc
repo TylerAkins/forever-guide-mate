@@ -179,3 +179,5 @@ Guides/Class/Druid.lua
 Guides/Miscellaneous/LibraryBooks.lua
 Guides/Legacy/ExploreSilverpineForest.lua
 Guides/Legacy/ExploreTirisfalGlades.lua
+Guides/Legacy/ExploreElwynnForest.lua
+Guides/Legacy/ExploreMulgore.lua

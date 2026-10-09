@@ -438,6 +438,7 @@ ns:RegisterGuide({
             id = "accept-499-elixir-of-suffering",
             kind = "accept",
             priority = 260,
+            dependsOn = { "turnin-496-elixir-of-suffering" },
             conditions = { all = {
                 { level = { min = 22 } },
                 { faction = "Horde" },
