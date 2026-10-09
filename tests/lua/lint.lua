@@ -178,6 +178,19 @@ for _, path in ipairs({
     "Guides/Miscellaneous/LibraryBooks.lua",
     "Guides/Legacy/ExploreSilverpineForest.lua",
     "Guides/Legacy/ExploreTirisfalGlades.lua",
+    "Guides/Legacy/ExploreDurotar.lua",
+    "Guides/Legacy/ExploreDunMorogh.lua",
+    "Guides/Legacy/ExploreWestfall.lua",
+    "Guides/Legacy/ExploreLochModan.lua",
+    "Guides/Legacy/ExploreTheBarrens.lua",
+    "Guides/Legacy/ExploreHillsbradFoothills.lua",
+    "Guides/Legacy/ExploreRedridgeMountains.lua",
+    "Guides/Legacy/ExploreWetlands.lua",
+    "Guides/Legacy/ExploreDuskwood.lua",
+    "Guides/Legacy/ExploreAshenvale.lua",
+    "Guides/Legacy/ExploreTeldrassil.lua",
+    "Guides/Legacy/ExploreThousandNeedles.lua",
+    "Guides/Legacy/ExploreDarkshore.lua",
 }) do Load(path) end
 
 local function Serialize(value)

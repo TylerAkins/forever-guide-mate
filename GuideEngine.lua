@@ -333,9 +333,6 @@ function ns.EvaluateCondition(condition, state)
         if type(achievement) ~= "table" then
             return Unknown("Achievement criterion state is unavailable.")
         end
-        if achievement.completed == true then
-            return true
-        end
         local criteria = achievement.criteriaByName
         if type(criteria) ~= "table" or type(criteria[name]) ~= "boolean" then
             return Unknown("Achievement criterion state is unavailable.")
@@ -1077,11 +1074,19 @@ local function QuestObservableCompletion(condition)
     return type(condition) == "table" and (condition.quest or condition.questObjective)
 end
 
+local function AchievementObservableCompletion(condition)
+    if type(condition) ~= "table" then return false end
+    if condition.achievement or condition.achievementCriterion then return true end
+    for _, key in ipairs({ "all", "any" }) do
+        for _, child in ipairs(condition[key] or {}) do
+            if AchievementObservableCompletion(child) then return true end
+        end
+    end
+    return condition["not"] and AchievementObservableCompletion(condition["not"]) or false
+end
+
 function Engine:IsGoalDone(goal, state, guide)
     guide = guide or self.currentGuide
-    if guide and guide.id == ns.charDB.selectedGuide and ns.charDB.manualCompleted[goal.id] then
-        return true
-    end
     if ns.SkipLineage and ns.SkipLineage:IsSkipped(goal.id) then
         return true
     end
@@ -1094,12 +1099,20 @@ function Engine:IsGoalDone(goal, state, guide)
         if evaluation == true then
             return true
         end
+        -- Achievement-backed steps require current client evidence. False or
+        -- unavailable state must not resurrect an old manual or persisted check.
+        if AchievementObservableCompletion(goal.complete) then
+            return false
+        end
         -- Once both quest APIs have answered, their negative result is more
         -- trustworthy than old manual, ledger, or inferred state.
         if evaluation == false and QuestObservableCompletion(goal.complete)
             and TrustedQuestResult(state, goal) then
             return false
         end
+    end
+    if guide and guide.id == ns.charDB.selectedGuide and ns.charDB.manualCompleted[goal.id] then
+        return true
     end
     local ledger = guide and self:GetLedger(guide, false)
     if ledger and ledger[goal.id] then
@@ -1131,8 +1144,9 @@ function Engine:ReconcileGuide(guide, state, goals)
         end
         local evaluation = goal.complete and ns.EvaluateCondition(goal.complete, state)
         local observed = evaluation == true
-        local observedIncomplete = evaluation == false and QuestObservableCompletion(goal.complete)
-            and TrustedQuestResult(state, goal)
+        local observedIncomplete = (AchievementObservableCompletion(goal.complete) and evaluation ~= true)
+            or (evaluation == false and QuestObservableCompletion(goal.complete)
+                and TrustedQuestResult(state, goal))
         if observedIncomplete then
             ledger[goal.id] = nil
             ns.charDB.manualCompleted[goal.id] = nil

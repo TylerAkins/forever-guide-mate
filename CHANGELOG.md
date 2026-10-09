@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 0.3.3 - 2026-10-09
+
+- Add achievement-driven Legacy Points guides for Durotar, Dun Morogh, Westfall, Loch Modan, The Barrens, Hillsbrad Foothills, Redridge Mountains, Wetlands, Duskwood, Ashenvale, Teldrassil, Thousand Needles, and Darkshore.
+- Keep exploration progress tied to current achievement criteria, correct zone waypoints, and clear stale Durotar checks.
+- Repair quest routing for Elixir of Suffering and An Underrated Talent, correct The Sacred Flame and Gnarlpine Hold waypoints, and note that the Silithid Harvester can take hours to respawn and may be skipped.
+
 ## 0.3.2 - 2026-10-08
 
 - Add the Legacy Points category with Explore Silverpine Forest, Explore Tirisfal Glades, Explore Elwynn Forest, and Explore Mulgore. Their 15, 16, 12, and 14 waypoints clear from Forever's achievement criteria, and each guide's final step waits for overall achievement completion. Repair same-title quest-chain prerequisites across Casual, starter, class, and dungeon guides so follow-ups wait for the preceding turn-in, including Elixir of Suffering and Elixir of Pain.

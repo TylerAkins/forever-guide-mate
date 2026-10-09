@@ -183,6 +183,19 @@ ns:RegisterGuide({
             },
         },
         {
+            id = "objective-496-elixir-of-suffering",
+            kind = "objective",
+            priority = 95,
+            conditions = { all = {
+                { level = { min = 22 } },
+                { faction = "Horde" },
+            } },
+            text = "Collect 10 Gray Bear Tongues and Creeper Ichor from spiders around Tarren Mill. Follow the quest log pin; the Ichor can take many kills to drop.",
+            complete = QuestState(496, "complete"),
+            dependsOn = { "accept-496-elixir-of-suffering" },
+            useClientPin = true,
+        },
+        {
             id = "accept-501-elixir-of-pain",
             kind = "accept",
             priority = 100,
@@ -428,7 +441,7 @@ ns:RegisterGuide({
             } },
             text = "Turn in Elixir of Suffering.",
             complete = QuestState(496, "completed"),
-            dependsOn = { "accept-496-elixir-of-suffering" },
+            dependsOn = { "accept-496-elixir-of-suffering", "objective-496-elixir-of-suffering" },
             route = {
                 Point(1424, 0.6144, 0.1906, "Elixir of Suffering",
                     "Travel to Elixir of Suffering."),
@@ -743,9 +756,10 @@ ns:RegisterGuide({
                     { level = { min = 20 } },
                     { class = 2 },
                     { race = 5 },
+                    { quest = { id = 95036, state = "completed" } },
                 },
             },
-            text = "Accept An Underrated Talent from Trevan Rol in The Sepulcher. He gives you a bundle of blacksmithing materials for Ott.",
+            text = "After turning in A Moon-Kissed Blade, accept An Underrated Talent from Trevan Rol in The Sepulcher. He gives you a bundle of blacksmithing materials for Ott.",
             complete = QuestState(95111, "activeOrCompleted"),
             route = {
                 Point(1421, 0.4340, 0.4100, "Trevan Rol",
