@@ -228,6 +228,50 @@ function PlayerState:GetQuestLog(api, questIDs)
     return quests, true
 end
 
+local function CaptureAchievements(api, achievementIDs)
+    local achievements = {}
+    if type(achievementIDs) ~= "table" then
+        return achievements, false
+    end
+
+    local achievementKnown = true
+    for _, achievementID in ipairs(achievementIDs) do
+        local info, infoKnown = Call(api, "GetAchievementInfo", achievementID)
+        local completed
+        if infoKnown then completed = info[4] end
+        local entry = {}
+        if type(completed) == "boolean" then entry.completed = completed end
+        local entryKnown = entry.completed ~= nil
+
+        if type(api.GetAchievementNumCriteria) == "function"
+            and type(api.GetAchievementCriteriaInfo) == "function" then
+            local countResult, countKnown = Call(api, "GetAchievementNumCriteria", achievementID)
+            if countKnown and type(countResult[1]) == "number" then
+                entry.criteriaByName = {}
+                entry.criteriaKnown = true
+                for index = 1, countResult[1] do
+                    local criteria, criteriaKnown = Call(api, "GetAchievementCriteriaInfo", achievementID, index)
+                    local name = criteriaKnown and criteria[1]
+                    local done = criteriaKnown and criteria[3]
+                    if type(name) == "string" and name ~= "" and type(done) == "boolean" then
+                        entry.criteriaByName[string.lower(name)] = done
+                    else
+                        entry.criteriaKnown = false
+                    end
+                end
+                entryKnown = entryKnown or entry.criteriaKnown
+            end
+        end
+
+        if entryKnown then
+            achievements[achievementID] = entry
+        else
+            achievementKnown = false
+        end
+    end
+    return achievements, achievementKnown
+end
+
 local function ObjectiveMarked(value)
     return value == true or (type(value) == "number" and value > 0)
 end
@@ -633,7 +677,7 @@ function PlayerState:InInstance(state, api)
     return type(instanceID) == "number" and instanceID > 0
 end
 
-function PlayerState:Capture(api, questIDs, priorityCount)
+function PlayerState:Capture(api, questIDs, priorityCount, achievementIDs)
     api = api or _G
     local raceResult, raceKnown = Call(api, "UnitRace", "player")
     local classResult, classKnown = Call(api, "UnitClass", "player")
@@ -654,6 +698,7 @@ function PlayerState:Capture(api, questIDs, priorityCount)
 
     local completedQuests, completionKnown, watchedQuests, routeKnown =
         CompletedQuests(api, questIDs, quests, priorityCount)
+    local achievements, achievementsKnown = CaptureAchievements(api, achievementIDs)
     local onTaxi
     if type(api.UnitOnTaxi) == "function" then
         local taxiResult, taxiKnown = Call(api, "UnitOnTaxi", "player")
@@ -673,6 +718,8 @@ function PlayerState:Capture(api, questIDs, priorityCount)
         watchedQuests = watchedQuests,
         questCompletionKnown = completionKnown,
         questRouteKnown = routeKnown,
+        achievements = achievements,
+        achievementsKnown = achievementsKnown,
         mapID = mapID,
         x = x,
         y = y,

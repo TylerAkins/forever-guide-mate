@@ -579,6 +579,7 @@ ns:RegisterGuide({
         },
         {
             id = "accept-1520-call-of-earth",
+            dependsOn = { "turnin-1519-call-of-earth" },
             kind = "accept",
             priority = 340,
             conditions = { all = {

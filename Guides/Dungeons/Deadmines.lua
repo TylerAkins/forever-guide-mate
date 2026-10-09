@@ -20,6 +20,13 @@ local function QuestState(questID, state)
     return { quest = { id = questID, state = state } }
 end
 
+local DEFIAS_UNLOCKED = {
+    any = {
+        QuestState(155, "completed"),
+        QuestState(166, "activeOrCompleted"),
+    },
+}
+
 local function Point(mapID, x, y, label, offMapText, complete)
     return {
         mapID = mapID,
@@ -78,6 +85,7 @@ ns:RegisterGuide({
                 all = {
                     ALLIANCE,
                     { level = { min = 19 } },
+                    DEFIAS_UNLOCKED,
                 },
             },
             text = "Accept The Defias Brotherhood from Gryan Stoutmantle at Sentinel Hill. " ..
@@ -213,6 +221,7 @@ ns:RegisterGuide({
                 all = {
                     ALLIANCE,
                     { level = { min = 19 } },
+                    DEFIAS_UNLOCKED,
                 },
             },
             text = "Kill Edwin VanCleef and take his head. " ..
@@ -244,6 +253,7 @@ ns:RegisterGuide({
                 all = {
                     ALLIANCE,
                     { level = { min = 19 } },
+                    DEFIAS_UNLOCKED,
                 },
             },
             text = "Bring the Head of VanCleef to Gryan Stoutmantle.",

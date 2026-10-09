@@ -824,7 +824,6 @@ ns:RegisterGuide({
                 },
             },
             text = "Accept Summon Felsteed from Demisette Cloyce in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-4487-summon-felsteed" },
             complete = QuestState(4488, "activeOrCompleted"),
             route = {
                 Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
@@ -3801,13 +3800,17 @@ ns:RegisterGuide({
             priority = 1900,
             conditions = {
                 all = {
+                    { any = {
+                        QuestState(3631, "completed"), QuestState(4487, "completed"),
+                        QuestState(4488, "completed"), QuestState(4489, "completed"),
+                        QuestState(4490, "activeOrCompleted"),
+                    } },
                     { class = 9 },
                     { race = { 1, 2, 5, 7 } },
                     { level = { min = 40 } },
                 },
             },
             text = "Accept Summon Felsteed from Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
-            dependsOn = { "turnin-4489-summon-felsteed", "turnin-4487-summon-felsteed", "turnin-4488-summon-felsteed", "turnin-3631-summon-felsteed" },
             complete = QuestState(4490, "activeOrCompleted"),
             route = {
                 Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
@@ -3820,6 +3823,11 @@ ns:RegisterGuide({
             priority = 1910,
             conditions = {
                 all = {
+                    { any = {
+                        QuestState(3631, "completed"), QuestState(4487, "completed"),
+                        QuestState(4488, "completed"), QuestState(4489, "completed"),
+                        QuestState(4490, "activeOrCompleted"),
+                    } },
                     { class = 9 },
                     { race = { 1, 2, 5, 7 } },
                     { level = { min = 40 } },
