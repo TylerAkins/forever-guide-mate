@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 0.4.1 - 2026-10-10
+- Stop sending paladins back for Seeking the Kor Gem once they carry a Purified Kor Gem or have turned in A Moon-Kissed Blade. The quest is repeatable, so the client does not remember finishing it.
+- Fix an ADDON_ACTION_BLOCKED error blamed on Forever GuideMate when the guide changed Blizzard quest tracking during combat. Blizzard map pin and quest tracking updates now wait until combat ends.
+
 ## 0.4.0 - 2026-10-10
 - Select Blizzard quest navigation for ordinary objectives and completed turn-ins, with authored pins as fallback.
 - Refresh waypoints when transport arrival changes the route destination within the same guide step.

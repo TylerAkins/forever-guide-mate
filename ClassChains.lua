@@ -1,5 +1,14 @@
 local _, ns = ...
 
+-- Seeking the Kor Gem (95042) is repeatable, so the client never reports it as
+-- turned in. Its Purified Kor Gem is only used by A Moon-Kissed Blade (95036).
+local KOR_GEM_NOT_NEEDED = {
+    any = {
+        { quest = { id = 95036, state = "completed" } },
+        { item = "Purified Kor Gem" },
+    },
+}
+
 ns.classActions = {
     ["accept-98601-a-difficult-path"] = {
         text = "Accept A Difficult Path from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
@@ -2013,6 +2022,7 @@ ns.classActions = {
         complete = {
             quest = { id = 95042, state = "activeOrCompleted" },
         },
+        excludeWhen = KOR_GEM_NOT_NEEDED,
         requiredQuests = {},
         useClientText = false,
     },
@@ -2022,6 +2032,7 @@ ns.classActions = {
         complete = {
             questObjective = { id = 95042, index = 1, text = "Corrupted Kor Gem", count = 1 },
         },
+        excludeWhen = KOR_GEM_NOT_NEEDED,
         requiredQuests = {},
         useClientText = false,
     },
@@ -2031,6 +2042,7 @@ ns.classActions = {
         complete = {
             quest = { id = 95042, state = "completed" },
         },
+        excludeWhen = KOR_GEM_NOT_NEEDED,
         requiredQuests = {},
         useClientText = false,
     },
