@@ -2654,6 +2654,59 @@ function TestBlockedQuestTrackingIsNotRetried()
 end
 TestBlockedQuestTrackingIsNotRetried()
 
+function TestQuestTrackingWaitsForCombat()
+    local savedMap, savedTracking, savedPoint = C_Map, C_SuperTrack, UiMapPoint
+    local savedInstance, savedLock = IsInInstance, InCombatLockdown
+    local tracked, writes, inCombat = 0, 0, false
+    IsInInstance = function() return false, "none" end
+    InCombatLockdown = function() return inCombat end
+    C_Map = {
+        GetUserWaypoint = function() return nil end,
+        SetUserWaypoint = function() end,
+        ClearUserWaypoint = function() end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    UiMapPoint = { CreateFromCoordinates = function() return nil end }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return tracked end,
+        SetSuperTrackedQuestID = function(id) writes = writes + 1; tracked = id end,
+        SetSuperTrackedUserWaypoint = function() end,
+        IsSuperTrackingUserWaypoint = function() return false end,
+    }
+    local savedOpen, savedProvider = ns.db.uiOpen, ns.db.waypointProvider
+    ns.db.uiOpen, ns.db.waypointProvider = true, "blizzard"
+    local waypoints = ns.TomTomWaypoints
+    waypoints:Clear()
+    waypoints.questID, waypoints.point, waypoints.blizzardPinsBlocked = nil, nil, nil
+    waypoints.suspended, waypoints.selection, waypoints.deferred = false, nil, nil
+    local objective = { kind = "objective", useClientPin = true,
+        complete = { questObjective = { id = 50, index = 1 } } }
+
+    inCombat = true
+    waypoints:Sync(objective, {})
+    Equal(writes, 0, "quest super-tracking is not changed in combat")
+    Equal(waypoints.deferred, true, "a combat sync is deferred")
+
+    inCombat = false
+    waypoints:Sync(objective, {})
+    Equal(writes, 1, "quest super-tracking is applied after combat")
+    Equal(tracked, 50, "the deferred quest is super-tracked after combat")
+    Equal(waypoints.deferred, nil, "the deferral clears after combat")
+
+    inCombat = true
+    waypoints:Clear()
+    Equal(tracked, 50, "closing the tracker in combat leaves super-tracking alone")
+    inCombat = false
+    waypoints:Clear()
+    Equal(tracked, 0, "super-tracking is cleared after combat")
+
+    waypoints.selection, waypoints.deferred = nil, nil
+    ns.db.uiOpen, ns.db.waypointProvider = savedOpen, savedProvider
+    IsInInstance, InCombatLockdown = savedInstance, savedLock
+    C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
+end
+TestQuestTrackingWaitsForCombat()
+
 -- The quest audit is how a missing class, race, or profession requirement in
 -- the guide data surfaces without anyone walking the route by hand.
 function TestEliteLabels()
@@ -4204,6 +4257,41 @@ function TestRepeatableAntidote()
     end
 end
 TestRepeatableAntidote()
+
+function TestRepeatableKorGem()
+    local function PaladinState(completed, items)
+        return {
+            faction = "Horde", raceID = 5, classID = 2, level = 22,
+            professions = {}, professionsKnown = true,
+            quests = {}, questLogKnown = true,
+            completedQuests = completed, questCompletionKnown = true,
+            items = items,
+        }
+    end
+    local seeking = PaladinState({}, {})
+    local bladeDone = PaladinState({ [95036] = true }, {})
+    local holdingGem = PaladinState({}, { ["Purified Kor Gem"] = 1 })
+    local itineraries = {
+        { guide = ns.guides["leveling-casual-horde"], prefix = "leveling-era-horde-ashenvale:woven-class-paladin-" },
+        { guide = ns.guides["class-paladin"], prefix = "" },
+    }
+    for _, itinerary in ipairs(itineraries) do
+        for _, step in ipairs({ "accept", "objective", "turnin" }) do
+            local goalID = itinerary.prefix .. step .. "-95042-seeking-the-kor-gem"
+            local goal = ns.Engine:GetGoal(itinerary.guide, goalID)
+            Check(goal ~= nil, goalID .. " exists in " .. itinerary.guide.id)
+            if goal then
+                Equal(ns.OrderedRoutes:ExcludedAction(goal, seeking), false,
+                    goalID .. " stays while A Moon-Kissed Blade still needs a gem")
+                Equal(ns.OrderedRoutes:ExcludedAction(goal, bladeDone), true,
+                    goalID .. " drops out once A Moon-Kissed Blade is turned in")
+                Equal(ns.OrderedRoutes:ExcludedAction(goal, holdingGem), true,
+                    goalID .. " drops out while a Purified Kor Gem is in the bags")
+            end
+        end
+    end
+end
+TestRepeatableKorGem()
 local aggor = ns.Engine:GetGoal(durotar, "objective-99052-threat-from-below-1")
 Check(aggor and string.find(aggor.text, "Bring a group", 1, true) ~= nil,
     "Aggor tells the player to bring a group")
