@@ -386,9 +386,19 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "turnin-95697-changing-tastes",
+            id = "turnin-95682-open-the-maw",
             kind = "turnin",
             priority = 110,
+            conditions = { all = { HORDE, { level = { min = 24 } } } },
+            text = "Turn in Open the Maw to the Deathstalker Agent.",
+            dependsOn = { "objective-95682-open-the-maw" },
+            complete = QuestState(95682, "completed"),
+            route = Wetlands(0.514, 0.592, "Deathstalker Agent"),
+        },
+        {
+            id = "turnin-95697-changing-tastes",
+            kind = "turnin",
+            priority = 111,
             conditions = { all = { HORDE, { level = { min = 24 } } } },
             text = "Turn in Changing Tastes to Borstan.",
             dependsOn = { "objective-95697-changing-tastes" },
@@ -396,16 +406,6 @@ ns:RegisterGuide({
             route = {
                 Point(MAP.ORGRIMMAR, 0.574, 0.534, "Borstan", "Travel to Orgrimmar."),
             },
-        },
-        {
-            id = "turnin-95682-open-the-maw",
-            kind = "turnin",
-            priority = 111,
-            conditions = { all = { HORDE, { level = { min = 24 } } } },
-            text = "Turn in Open the Maw to the Deathstalker Agent.",
-            dependsOn = { "objective-95682-open-the-maw" },
-            complete = QuestState(95682, "completed"),
-            route = Wetlands(0.514, 0.592, "Deathstalker Agent"),
         },
         {
             id = "turnin-95664-elder-knowledge",

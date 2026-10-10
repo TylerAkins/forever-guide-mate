@@ -3299,6 +3299,23 @@ Equal(ns.EvaluateCondition(hot.conditions, allianceHot), true, "alliance can use
 Check(ns.guides["dungeons-excavation-site-wetlands"] ~= nil, "excavation site wetlands guide is registered")
 
 do
+    local guide = ns.guides["dungeons-excavation-site-wetlands"]
+    local turnins = {}
+    for _, goal in ipairs(guide.goals) do
+        if goal.id == "turnin-95682-open-the-maw"
+            or goal.id == "turnin-95697-changing-tastes"
+            or goal.id == "turnin-95664-elder-knowledge" then
+            turnins[#turnins + 1] = goal
+        end
+    end
+    Equal(turnins[1].id, "turnin-95682-open-the-maw", "Wetlands returns to Open the Maw first")
+    Equal(turnins[2].id, "turnin-95697-changing-tastes", "Wetlands turns in Changing Tastes second")
+    Equal(turnins[3].id, "turnin-95664-elder-knowledge", "Wetlands turns in Elder Knowledge third")
+    Check(turnins[1].priority < turnins[2].priority and turnins[2].priority < turnins[3].priority,
+        "Wetlands dungeon routing follows the final Horde turn-in order")
+end
+
+do
     local guide = ns.guides["dungeons-city-of-dalaran-attunement"]
     Check(guide ~= nil, "city of dalaran attunement guide is registered")
     Equal(guide.category, "Dungeon Quest Guides", "city of dalaran attunement is a dungeon guide")
