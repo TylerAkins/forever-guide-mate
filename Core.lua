@@ -395,6 +395,24 @@ function ns.ScheduleRefresh(questOnly)
     DeliverRefresh(generation)
 end
 
+function ns.AddOnActionsRestricted()
+    if type(InCombatLockdown) == "function" and InCombatLockdown() then return true end
+    local restricted = C_RestrictedActions
+    local kinds = Enum and Enum.AddOnRestrictionType
+    if type(restricted) ~= "table" or type(restricted.IsAddOnRestrictionActive) ~= "function"
+        or type(kinds) ~= "table" then
+        return false
+    end
+    for _, name in ipairs({ "Combat", "Encounter", "ChallengeMode", "PvPMatch" }) do
+        local kind = kinds[name]
+        if kind ~= nil then
+            local ok, active = pcall(restricted.IsAddOnRestrictionActive, kind)
+            if ok and active then return true end
+        end
+    end
+    return false
+end
+
 local function OnEvent(_, event, arg1)
     if event == "ADDON_LOADED" then
         if arg1 == ADDON_NAME then
@@ -441,6 +459,9 @@ local function OnEvent(_, event, arg1)
     elseif event == "PLAYER_REGEN_ENABLED" then
         if ns.UI and ns.UI.ApplySettings then ns.UI:ApplySettings() end
         if ns.QuestDialog then ns.QuestDialog:Retry() end
+        if ns.TomTomWaypoints and ns.TomTomWaypoints.deferred and ns.UI and ns.UI.UpdateArrow then
+            ns.UI:UpdateArrow()
+        end
         return
     elseif event == "BAG_UPDATE_DELAYED" then
         if ns.PlayerState and ns.PlayerState.BagsChanged and ns.PlayerState:BagsChanged() then

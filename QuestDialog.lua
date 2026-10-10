@@ -150,22 +150,7 @@ local function BlockedMessage(message)
 end
 
 function QuestDialog:ActionsAllowed()
-    if self.actionsBlocked then return false end
-    if type(InCombatLockdown) == "function" and InCombatLockdown() then return false end
-    local restricted = C_RestrictedActions
-    local kinds = Enum and Enum.AddOnRestrictionType
-    if type(restricted) ~= "table" or type(restricted.IsAddOnRestrictionActive) ~= "function"
-        or type(kinds) ~= "table" then
-        return true
-    end
-    for _, name in ipairs({ "Combat", "Encounter", "ChallengeMode", "PvPMatch" }) do
-        local kind = kinds[name]
-        if kind ~= nil then
-            local ok, active = pcall(restricted.IsAddOnRestrictionActive, kind)
-            if ok and active then return false end
-        end
-    end
-    return true
+    return not self.actionsBlocked and not ns.AddOnActionsRestricted()
 end
 
 function QuestDialog:Perform(fn, ...)
