@@ -171,8 +171,9 @@ function Waypoints:Sync(goal, state, api)
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
     local flightLeg = routeLeg and routeLeg.flight and routeLeg
     local selection = goal and (tostring(goal) .. ":" .. provider)
-    if flightLeg then
-        selection = selection .. ":flight:" .. flightLeg.mapID .. ":" .. flightLeg.x .. ":" .. flightLeg.y
+    if routeLeg then
+        selection = selection .. ":leg:" .. tostring(routeLeg.mapID)
+            .. ":" .. tostring(routeLeg.x) .. ":" .. tostring(routeLeg.y)
     end
     if selection ~= self.selection then
         self:Clear(api)
@@ -187,17 +188,19 @@ function Waypoints:Sync(goal, state, api)
     end
     if self.questID and C_SuperTrack.GetSuperTrackedQuestID() ~= self.questID then self.suspended = true end
     if self.questFallback then
-        if self.questFallback == ns.Navigation:QuestDestinationID(goal) then
+        if self.questFallback == ns.Navigation:QuestDestinationID(goal, state) then
             if self.suspended then return end
-            self:Report(nil)
-            return
+            if not HasClientQuestPoint(goal, routeLeg, state, self.questFallback) then
+                self:Report(nil)
+                return
+            end
         end
         self.questFallback = nil
     end
     if self.suspended then return end
-    local questID = not flightLeg
+    local questID = not flightLeg and not (routeLeg and routeLeg.transport)
         and not (ns.Navigation.PendingTaxiTravel and ns.Navigation:PendingTaxiTravel(goal, state, routeLeg))
-        and ns.Navigation:QuestDestinationID(goal) or nil
+        and ns.Navigation:QuestDestinationID(goal, state) or nil
     local nativeQuest = questID ~= nil
     if nativeQuest and provider == "blizzard" then
         if not C_SuperTrack or type(C_SuperTrack.SetSuperTrackedQuestID) ~= "function"

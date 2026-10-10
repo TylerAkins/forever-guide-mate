@@ -1,4152 +1,7948 @@
 local _, ns = ...
 
--- Warlock class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- Tainted Tablet
--- Hearts of the Lovers
--- The Binding
--- Love Hurts
--- Wish You Were Here
--- The Binding
--- What Is Love?
--- The Binding
--- Left out (dungeon quest): The Orb of Soran'ruk, Trolls of a Feather, The Prison's Bindings, Imp Delivery, Dreadsteed of Xoroth
--- Left out (no start pin): Soul of Devouring, The Final Test, Otherworldly Treasure, Soul Vessel, The Depleted Scythe, A Solid Foundation, Trolls of a Feather, Stolen Power, The Lost Rune, Tempting Fate, Soul of Mischief, Soul of the Void (+1 more)
-
-local MAP = {
-    ALTERACMOUNTAINS = 1416,
-    ASHENVALE = 1440,
-    AZSHARA = 1447,
-    BADLANDS = 1418,
-    BARRENS = 1413,
-    BLASTEDLANDS = 1419,
-    BURNINGSTEPPES = 1428,
-    DARKSHORE = 1439,
-    DESOLACE = 1443,
-    DUNMOROGH = 1426,
-    DUROTAR = 1411,
-    DUSKWOOD = 1431,
-    DUSTWALLOWMARSH = 1445,
-    ELWYNNFOREST = 1429,
-    FELWOOD = 1448,
-    FERALAS = 1444,
-    HINTERLANDS = 1425,
-    IRONFORGE = 1455,
-    LOCHMODAN = 1432,
-    ORGRIMMAR = 1454,
-    REDRIDGEMOUNTAINS = 1433,
-    SEARINGGORGE = 1427,
-    SILVERPINEFOREST = 1421,
-    STONETALONMOUNTAINS = 1442,
-    STORMWINDCITY = 1453,
-    STRANGLETHORNVALE = 1434,
-    SWAMPOFSORROWS = 1435,
-    TANARIS = 1446,
-    THOUSANDNEEDLES = 1441,
-    TIRISFALGLADES = 1420,
-    UNDERCITY = 1458,
-    WESTFALL = 1436,
-    WETLANDS = 1437,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-warlock",
+    revision = 3,
     title = "Warlock",
     category = "Class Quests",
-    revision = 1,
+    id = "class-warlock",
     conditions = {
         all = {
             { class = 9 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-1598-the-stolen-tome",
-            kind = "accept",
             priority = 10,
+            route = {
+                { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
+            },
+            id = "accept-1598-the-stolen-tome",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept The Stolen Tome from Drusilla La Salle in Elwynn Forest. This step is for Humans and Gnomes.",
-            complete = QuestState(1598, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4980, 0.4260, "Drusilla La Salle",
-                    "Travel to Drusilla La Salle in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1598-the-stolen-tome",
         },
         {
-            id = "turnin-1598-the-stolen-tome",
-            kind = "turnin",
             priority = 20,
+            route = {
+                { mapID = 1429, x = 0.5674, y = 0.43770000000000003, label = "Powers of the Void", offMapText = "Travel to Powers of the Void." },
+            },
+            id = "objective-1598-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in The Stolen Tome to Drusilla La Salle in Elwynn Forest. This step is for Humans and Gnomes.",
+            useClientPin = false,
             dependsOn = { "accept-1598-the-stolen-tome" },
-            complete = QuestState(1598, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4980, 0.4260, "Drusilla La Salle",
-                    "Travel to Drusilla La Salle in Elwynn Forest."),
-            },
+            classAction = "objective-1598-quest-work",
         },
         {
-            id = "accept-1599-beginnings",
-            kind = "accept",
             priority = 30,
+            route = {
+                { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
+            },
+            dependsOn = { "accept-1598-the-stolen-tome", "objective-1598-quest-work" },
+            id = "turnin-1598-the-stolen-tome",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Beginnings from Alamar Grimm in Dun Morogh. This step is for Humans and Gnomes.",
-            complete = QuestState(1599, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6620, "Alamar Grimm",
-                    "Travel to Alamar Grimm in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1598-the-stolen-tome",
         },
         {
-            id = "objective-1599-beginnings",
-            kind = "objective",
             priority = 40,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
+            },
+            id = "accept-1599-beginnings",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Kill Frostmane Novice in Coldridge Valley and collect Feather Charm for Beginnings. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1599-beginnings" },
-            complete = QuestState(1599, "complete"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.3040, 0.7940, "Frostmane Novice",
-                    "Travel to Frostmane Novice in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1599-beginnings",
         },
         {
-            id = "turnin-1599-beginnings",
-            kind = "turnin",
             priority = 50,
+            route = {
+                { y = 0.794, mapID = 1426, label = "Frostmane Novice", x = 0.304, offMapText = "Travel to Frostmane Novice in Dun Morogh." },
+            },
+            dependsOn = { "accept-1599-beginnings" },
+            id = "objective-1599-beginnings",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Beginnings to Alamar Grimm in Dun Morogh. This step is for Humans and Gnomes.",
-            dependsOn = { "objective-1599-beginnings" },
-            complete = QuestState(1599, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6620, "Alamar Grimm",
-                    "Travel to Alamar Grimm in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "objective-1599-beginnings",
         },
         {
-            id = "accept-98575-tainted-tablet",
-            kind = "accept",
             priority = 60,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
+            },
+            dependsOn = { "accept-1599-beginnings", "objective-1599-beginnings" },
+            id = "turnin-1599-beginnings",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = 8 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Tainted Tablet from Gornek in Durotar. This step is for Trolls.",
-            complete = QuestState(98575, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1599-beginnings",
         },
         {
-            id = "turnin-98575-tainted-tablet",
-            kind = "turnin",
             priority = 70,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-98575-tainted-tablet",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Turn in Tainted Tablet to Nartok in Durotar. This step is for Trolls.",
-            dependsOn = { "accept-98575-tainted-tablet" },
-            complete = QuestState(98575, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4060, 0.6840, "Nartok",
-                    "Travel to Nartok in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98575-tainted-tablet",
         },
         {
-            id = "accept-1715-the-slaughtered-lamb",
-            kind = "accept",
             priority = 80,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Nartok", x = 0.406, offMapText = "Travel to Nartok in Durotar." },
+            },
+            dependsOn = { "accept-98575-tainted-tablet" },
+            id = "turnin-98575-tainted-tablet",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept The Slaughtered Lamb from Lago Blackwrench in Ironforge. This step is for Humans and Gnomes.",
-            complete = QuestState(1715, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4760, 0.0960, "Lago Blackwrench",
-                    "Travel to Lago Blackwrench in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-98575-tainted-tablet",
         },
         {
-            id = "turnin-1715-the-slaughtered-lamb",
-            kind = "turnin",
             priority = 90,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Slaughtered Lamb to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1715-the-slaughtered-lamb" },
-            complete = QuestState(1715, "completed"),
             route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
+                { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
             },
-        },
-        {
-            id = "accept-1685-gakins-summons",
-            kind = "accept",
-            priority = 100,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Gakin's Summons from Remen Marcot in Elwynn Forest. This step is for Humans and Gnomes.",
-            complete = QuestState(1685, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4440, 0.6620, "Remen Marcot",
-                    "Travel to Remen Marcot in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-1685-gakins-summons",
-            kind = "turnin",
-            priority = 110,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Gakin's Summons to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1685-gakins-summons" },
-            complete = QuestState(1685, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1688-surena-caledon",
-            kind = "accept",
-            priority = 120,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Surena Caledon from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1685-gakins-summons", "turnin-1715-the-slaughtered-lamb" },
-            complete = QuestState(1688, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1688-surena-caledon",
-            kind = "turnin",
-            priority = 130,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Surena Caledon to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1688-surena-caledon" },
-            complete = QuestState(1688, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1689-the-binding",
-            kind = "accept",
-            priority = 140,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Binding from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1688-surena-caledon", "turnin-1715-the-slaughtered-lamb", "turnin-1685-gakins-summons" },
-            complete = QuestState(1689, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1689-the-binding",
-            kind = "turnin",
-            priority = 150,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Binding to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1689-the-binding" },
-            complete = QuestState(1689, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1717-gakins-summons",
-            kind = "accept",
-            priority = 160,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Gakin's Summons from Lago Blackwrench in Ironforge. This step is for Humans and Gnomes.",
-            complete = QuestState(1717, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4760, 0.0960, "Lago Blackwrench",
-                    "Travel to Lago Blackwrench in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-1717-gakins-summons",
-            kind = "turnin",
-            priority = 170,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Gakin's Summons to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1717-gakins-summons" },
-            complete = QuestState(1717, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1716-devourer-of-souls",
-            kind = "accept",
-            priority = 180,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Devourer of Souls from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1717-gakins-summons" },
-            complete = QuestState(1716, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1716-devourer-of-souls",
-            kind = "turnin",
-            priority = 190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Devourer of Souls to Takar the Seer in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1716-devourer-of-souls" },
-            complete = QuestState(1716, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4920, 0.5700, "Takar the Seer",
-                    "Travel to Takar the Seer in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1738-heartswood",
-            kind = "accept",
-            priority = 200,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Heartswood from Takar the Seer in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1716-devourer-of-souls" },
-            complete = QuestState(1738, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4920, 0.5700, "Takar the Seer",
-                    "Travel to Takar the Seer in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1738-heartswood",
-            kind = "turnin",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Heartswood to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1738-heartswood" },
-            complete = QuestState(1738, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1739-the-binding",
-            kind = "accept",
-            priority = 220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1738-heartswood" },
-            complete = QuestState(1739, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1739-the-binding",
-            kind = "turnin",
-            priority = 230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1739-the-binding" },
-            complete = QuestState(1739, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-65602-what-is-love",
-            kind = "accept",
-            priority = 340,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept What Is Love? from Takar the Seer in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1716-devourer-of-souls" },
-            complete = QuestState(65602, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4920, 0.5700, "Takar the Seer",
-                    "Travel to Takar the Seer in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-65602-what-is-love",
-            kind = "turnin",
-            priority = 350,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in What Is Love? to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-65602-what-is-love" },
-            complete = QuestState(65602, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-65603-the-binding",
-            kind = "accept",
-            priority = 360,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-65602-what-is-love" },
-            complete = QuestState(65603, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-65603-the-binding",
-            kind = "turnin",
-            priority = 370,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-65603-the-binding" },
-            complete = QuestState(65603, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1798-seeking-strahad",
-            kind = "accept",
-            priority = 380,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Seeking Strahad from Gakin the Darkbinder in Stormwind City. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1739-the-binding" },
-            complete = QuestState(1798, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7840, "Gakin the Darkbinder",
-                    "Travel to Gakin the Darkbinder in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1798-seeking-strahad",
-            kind = "turnin",
-            priority = 390,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Seeking Strahad to Strahad Farsan in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1798-seeking-strahad" },
-            complete = QuestState(1798, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1758-tome-of-the-cabal",
-            kind = "accept",
-            priority = 400,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Strahad Farsan in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1798-seeking-strahad" },
-            complete = QuestState(1758, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1758-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 410,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Krom Stoutarm in Ironforge. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1758-tome-of-the-cabal" },
-            complete = QuestState(1758, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7420, 0.0980, "Krom Stoutarm",
-                    "Travel to Krom Stoutarm in Ironforge."),
-            },
-        },
-        {
-            id = "accept-1802-tome-of-the-cabal",
-            kind = "accept",
-            priority = 420,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Krom Stoutarm in Ironforge. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1758-tome-of-the-cabal" },
-            complete = QuestState(1802, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7420, 0.0980, "Krom Stoutarm",
-                    "Travel to Krom Stoutarm in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-1802-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 430,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Krom Stoutarm in Ironforge. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1802-tome-of-the-cabal" },
-            complete = QuestState(1802, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7420, 0.0980, "Krom Stoutarm",
-                    "Travel to Krom Stoutarm in Ironforge."),
-            },
-        },
-        {
-            id = "accept-1804-tome-of-the-cabal",
-            kind = "accept",
-            priority = 440,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Krom Stoutarm in Ironforge. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-1802-tome-of-the-cabal", "turnin-1758-tome-of-the-cabal" },
-            complete = QuestState(1804, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7420, 0.0980, "Krom Stoutarm",
-                    "Travel to Krom Stoutarm in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-1804-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 450,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Strahad Farsan in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-1804-tome-of-the-cabal" },
-            complete = QuestState(1804, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-4487-summon-felsteed",
-            kind = "accept",
-            priority = 460,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Accept Summon Felsteed from Briarthorn in Ironforge. This step is for Humans and Gnomes.",
-            complete = QuestState(4487, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.5020, 0.0600, "Briarthorn",
-                    "Travel to Briarthorn in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-4487-summon-felsteed",
-            kind = "turnin",
-            priority = 470,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4487-summon-felsteed" },
-            complete = QuestState(4487, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-4488-summon-felsteed",
-            kind = "accept",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Accept Summon Felsteed from Demisette Cloyce in Stormwind City. This step is for Humans and Gnomes.",
-            complete = QuestState(4488, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
-                    "Travel to Demisette Cloyce in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-4488-summon-felsteed",
-            kind = "turnin",
-            priority = 490,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4488-summon-felsteed" },
-            complete = QuestState(4488, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-7601-what-niby-commands",
-            kind = "accept",
-            priority = 500,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept What Niby Commands from Niby the Almighty in Felwood.",
-            complete = QuestState(7601, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Niby the Almighty",
-                    "Travel to Niby the Almighty in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7601-what-niby-commands",
-            kind = "turnin",
-            priority = 510,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in What Niby Commands to Impsy in Felwood.",
-            dependsOn = { "accept-7601-what-niby-commands" },
-            complete = QuestState(7601, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
-        },
-        {
-            id = "accept-7602-flawless-fel-essence",
-            kind = "accept",
-            priority = 520,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Flawless Fel Essence from Impsy in Felwood.",
-            dependsOn = { "turnin-7601-what-niby-commands" },
-            complete = QuestState(7602, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
-        },
-        {
-            id = "objective-7602-flawless-fel-essence",
-            kind = "objective",
-            priority = 530,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Kill Jaedenar Legionnaires in Jaedenar and collect Flawless Fel Essence.",
-            dependsOn = { "accept-7602-flawless-fel-essence" },
-            complete = QuestState(7602, "complete"),
-            route = {
-                Point(MAP.FELWOOD, 0.3740, 0.5320, "Jaedenar Legionnaire",
-                    "Travel to Jaedenar Legionnaire in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7602-flawless-fel-essence",
-            kind = "turnin",
-            priority = 540,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Flawless Fel Essence to Impsy in Felwood.",
-            dependsOn = { "objective-7602-flawless-fel-essence" },
-            complete = QuestState(7602, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
-        },
-        {
-            id = "accept-7562-morzul-bloodbringer",
-            kind = "accept",
-            priority = 550,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Mor'zul Bloodbringer from Martha Strain in Undercity.",
-            complete = QuestState(7562, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8580, 0.1580, "Martha Strain",
-                    "Travel to Martha Strain in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR } }),
-                Point(MAP.STORMWINDCITY, 0.2580, 0.7760, "Spackle Thornberry",
-                    "Travel to Spackle Thornberry in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
-                Point(MAP.IRONFORGE, 0.5280, 0.0600, "Jubahl Corpseseeker",
-                    "Travel to Jubahl Corpseseeker in Ironforge.", { map = { MAP.ORGRIMMAR } }),
-                Point(MAP.ORGRIMMAR, 0.4760, 0.4680, "Kurgul",
-                    "Travel to Kurgul in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-7562-morzul-bloodbringer",
-            kind = "turnin",
-            priority = 560,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Mor'zul Bloodbringer to Mor'zul Bloodbringer in Burning Steppes.",
-            dependsOn = { "accept-7562-morzul-bloodbringer" },
-            complete = QuestState(7562, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7563-rage-of-blood",
-            kind = "accept",
-            priority = 570,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Rage of Blood from Mor'zul Bloodbringer in Burning Steppes.",
-            dependsOn = { "turnin-7562-morzul-bloodbringer" },
-            complete = QuestState(7563, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7563-rage-of-blood",
-            kind = "turnin",
-            priority = 580,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Rage of Blood to Mor'zul Bloodbringer in Burning Steppes.",
-            dependsOn = { "accept-7563-rage-of-blood" },
-            complete = QuestState(7563, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7564-wildeyes",
-            kind = "accept",
-            priority = 590,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Wildeyes from Mor'zul Bloodbringer in Burning Steppes.",
-            dependsOn = { "turnin-7563-rage-of-blood", "turnin-7562-morzul-bloodbringer" },
-            complete = QuestState(7564, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7564-wildeyes",
-            kind = "turnin",
-            priority = 600,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Wildeyes to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "accept-7564-wildeyes" },
-            complete = QuestState(7564, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7623-lord-banehollow",
-            kind = "accept",
-            priority = 610,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Lord Banehollow from Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "turnin-7564-wildeyes" },
-            complete = QuestState(7623, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7623-lord-banehollow",
-            kind = "turnin",
-            priority = 620,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Lord Banehollow to Lord Banehollow in Felwood.",
-            dependsOn = { "accept-7623-lord-banehollow" },
-            complete = QuestState(7623, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.3600, 0.4460, "Lord Banehollow",
-                    "Travel to Lord Banehollow in Felwood."),
-            },
-        },
-        {
-            id = "accept-7626-bell-of-dethmoora",
-            kind = "accept",
-            priority = 630,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Bell of Dethmoora from Mor'zul Bloodbringer in Burning Steppes.",
-            complete = QuestState(7626, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "objective-7626-bell-of-dethmoora",
-            kind = "objective",
-            priority = 640,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Buy or craft Elixir of Shadow Power and bring it to Batrider Pele'keiki in Orgrimmar.",
-            dependsOn = { "accept-7626-bell-of-dethmoora" },
-            complete = QuestState(7626, "complete"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3320, 0.6940, "Batrider Pele'keiki",
-                    "Travel to Batrider Pele'keiki in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-7626-bell-of-dethmoora",
-            kind = "turnin",
-            priority = 650,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Bell of Dethmoora to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "objective-7626-bell-of-dethmoora" },
-            complete = QuestState(7626, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7627-wheel-of-the-black-march",
-            kind = "accept",
-            priority = 660,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Wheel of the Black March from Mor'zul Bloodbringer in Burning Steppes.",
-            complete = QuestState(7627, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "objective-7627-wheel-of-the-black-march",
-            kind = "objective",
-            priority = 670,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Collect Dark Iron Ore from Cyrus Therepentous in the Burning Steppes.",
-            dependsOn = { "accept-7627-wheel-of-the-black-march" },
-            complete = QuestState(7627, "complete"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.9480, 0.3160, "Cyrus Therepentous",
-                    "Travel to Cyrus Therepentous in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.6560, 0.2420, "Vahgruk",
-                    "Travel to Vahgruk in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7627-wheel-of-the-black-march",
-            kind = "turnin",
-            priority = 680,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Wheel of the Black March to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "objective-7627-wheel-of-the-black-march" },
-            complete = QuestState(7627, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7628-doomsday-candle",
-            kind = "accept",
-            priority = 690,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Doomsday Candle from Mor'zul Bloodbringer in Burning Steppes.",
-            complete = QuestState(7628, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1260, 0.3160, "Mor'zul Bloodbringer",
-                    "Travel to Mor'zul Bloodbringer in Burning Steppes."),
-            },
-        },
-        {
-            id = "objective-7628-doomsday-candle",
-            kind = "objective",
-            priority = 700,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Kill black dragonkin in the Burning Steppes and collect Black Dragonscale.",
-            dependsOn = { "accept-7628-doomsday-candle" },
-            complete = QuestState(7628, "complete"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.9260, 0.5360, "Black Dragonspawn",
-                    "Travel to Black Dragonspawn in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.9220, 0.5460, "Black Wyrmkin",
-                    "Travel to Black Wyrmkin in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.3320, 0.5080, "Flamescale Dragonspawn",
-                    "Travel to Flamescale Dragonspawn in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.2180, 0.4780, "Flamescale Wyrmkin",
-                    "Travel to Flamescale Wyrmkin in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.8280, 0.6120, "Black Drake",
-                    "Travel to Black Drake in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.2560, 0.6460, "Searscale Drake",
-                    "Travel to Searscale Drake in Burning Steppes."),
-                Point(MAP.BURNINGSTEPPES, 0.9420, 0.3180, "Frenzied Black Drake",
-                    "Travel to Frenzied Black Drake in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7628-doomsday-candle",
-            kind = "turnin",
-            priority = 710,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Doomsday Candle to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "objective-7628-doomsday-candle" },
-            complete = QuestState(7628, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7630-arcanite",
-            kind = "accept",
-            priority = 720,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Arcanite from Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "turnin-7626-bell-of-dethmoora", "turnin-7627-wheel-of-the-black-march", "turnin-7628-doomsday-candle" },
-            complete = QuestState(7630, "activeOrCompleted"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "turnin-7630-arcanite",
-            kind = "turnin",
-            priority = 730,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Arcanite to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "accept-7630-arcanite" },
-            complete = QuestState(7630, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
-            id = "accept-7624-ulathek-the-traitor",
-            kind = "accept",
-            priority = 740,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Ulathek the Traitor from Lord Banehollow in Felwood.",
-            dependsOn = { "turnin-7623-lord-banehollow" },
-            complete = QuestState(7624, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.3600, 0.4460, "Lord Banehollow",
-                    "Travel to Lord Banehollow in Felwood."),
-            },
-        },
-        {
-            id = "objective-7624-ulathek-the-traitor",
-            kind = "objective",
-            priority = 750,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Kill Ulathek the Traitor and collect The Traitor's Heart.",
-            dependsOn = { "accept-7624-ulathek-the-traitor" },
-            complete = QuestState(7624, "complete"),
-            route = {
-                Point(MAP.FELWOOD, 0.4060, 0.4840, "Ulathek",
-                    "Travel to Ulathek in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7624-ulathek-the-traitor",
-            kind = "turnin",
-            priority = 760,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Ulathek the Traitor to Lord Banehollow in Felwood.",
-            dependsOn = { "objective-7624-ulathek-the-traitor" },
-            complete = QuestState(7624, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.3600, 0.4460, "Lord Banehollow",
-                    "Travel to Lord Banehollow in Felwood."),
-            },
-        },
-        {
-            id = "accept-7625-xorothian-stardust",
-            kind = "accept",
-            priority = 770,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Xorothian Stardust from Lord Banehollow in Felwood.",
-            dependsOn = { "turnin-7624-ulathek-the-traitor", "turnin-7623-lord-banehollow" },
-            complete = QuestState(7625, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.3600, 0.4460, "Lord Banehollow",
-                    "Travel to Lord Banehollow in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7625-xorothian-stardust",
-            kind = "turnin",
-            priority = 780,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Xorothian Stardust to Gorzeeki Wildeyes in Burning Steppes.",
-            dependsOn = { "accept-7625-xorothian-stardust" },
-            complete = QuestState(7625, "completed"),
-            route = {
-                Point(MAP.BURNINGSTEPPES, 0.1240, 0.3160, "Gorzeeki Wildeyes",
-                    "Travel to Gorzeeki Wildeyes in Burning Steppes."),
-            },
-        },
-        {
             id = "accept-1485-vile-familiars",
-            kind = "accept",
-            priority = 790,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5, 8 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Vile Familiars from Ruzan in Durotar. This step is for Orcs, Undead, and Trolls.",
-            complete = QuestState(1485, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4260, 0.6900, "Ruzan",
-                    "Travel to Ruzan in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1485-vile-familiars",
         },
         {
-            id = "objective-1485-vile-familiars",
-            kind = "objective",
-            priority = 800,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5, 8 } },
-                },
+            priority = 100,
+            route = {
+                { y = 0.55, mapID = 1411, label = "Vile Familiar", x = 0.452, offMapText = "Travel to Vile Familiar in Durotar." },
             },
-            text = "Kill Vile Familiar and collect 6 Vile Familiar Head in Valley of Trials. This step is for Orcs, Undead, and Trolls.",
             dependsOn = { "accept-1485-vile-familiars" },
-            complete = QuestState(1485, "complete"),
-            route = {
-                Point(MAP.DUROTAR, 0.4520, 0.5500, "Vile Familiar",
-                    "Travel to Vile Familiar in Durotar."),
+            id = "objective-1485-vile-familiars",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "objective-1485-vile-familiars",
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
+            },
+            dependsOn = { "accept-1485-vile-familiars", "objective-1485-vile-familiars" },
             id = "turnin-1485-vile-familiars",
-            kind = "turnin",
-            priority = 810,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5, 8 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Vile Familiars to Ruzan in Durotar. This step is for Orcs, Undead, and Trolls.",
-            dependsOn = { "objective-1485-vile-familiars" },
-            complete = QuestState(1485, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4260, 0.6900, "Ruzan",
-                    "Travel to Ruzan in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1485-vile-familiars",
         },
         {
-            id = "accept-1499-vile-familiars",
-            kind = "accept",
-            priority = 820,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                },
-            },
-            text = "Accept Vile Familiars from Ruzan in Durotar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1485-vile-familiars" },
-            complete = QuestState(1499, "activeOrCompleted"),
+            priority = 120,
             route = {
-                Point(MAP.DUROTAR, 0.4260, 0.6900, "Ruzan",
-                    "Travel to Ruzan in Durotar."),
+                { y = 0.662, mapID = 1420, label = "Venya Marthand", x = 0.31, offMapText = "Travel to Venya Marthand in Tirisfal Glades." },
             },
-        },
-        {
-            id = "turnin-1499-vile-familiars",
-            kind = "turnin",
-            priority = 830,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                },
-            },
-            text = "Turn in Vile Familiars to Zureetha Fargaze in Durotar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1499-vile-familiars" },
-            complete = QuestState(1499, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4280, 0.6900, "Zureetha Fargaze",
-                    "Travel to Zureetha Fargaze in Durotar."),
-            },
-        },
-        {
             id = "accept-1470-piercing-the-veil",
-            kind = "accept",
-            priority = 840,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Piercing the Veil from Venya Marthand in Tirisfal Glades. This step is for Orcs and Undead.",
-            complete = QuestState(1470, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3100, 0.6620, "Venya Marthand",
-                    "Travel to Venya Marthand in Tirisfal Glades."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1470-piercing-the-veil",
         },
         {
-            id = "objective-1470-piercing-the-veil",
-            kind = "objective",
-            priority = 850,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                },
+            priority = 130,
+            route = {
+                { y = 0.632, mapID = 1420, label = "Rattlecage Skeleton", x = 0.33, offMapText = "Travel to Rattlecage Skeleton in Tirisfal Glades." },
             },
-            text = "Kill Rattlecage Skeleton and collect Rattlecage Skull in Deathknell. This step is for Orcs and Undead.",
             dependsOn = { "accept-1470-piercing-the-veil" },
-            complete = QuestState(1470, "complete"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3300, 0.6320, "Rattlecage Skeleton",
-                    "Travel to Rattlecage Skeleton in Tirisfal Glades."),
+            id = "objective-1470-piercing-the-veil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "objective-1470-piercing-the-veil",
         },
         {
+            priority = 140,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Venya Marthand", x = 0.31, offMapText = "Travel to Venya Marthand in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1470-piercing-the-veil", "objective-1470-piercing-the-veil" },
             id = "turnin-1470-piercing-the-veil",
-            kind = "turnin",
-            priority = 860,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Piercing the Veil to Venya Marthand in Tirisfal Glades. This step is for Orcs and Undead.",
-            dependsOn = { "objective-1470-piercing-the-veil" },
-            complete = QuestState(1470, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3100, 0.6620, "Venya Marthand",
-                    "Travel to Venya Marthand in Tirisfal Glades."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1470-piercing-the-veil",
         },
         {
-            id = "accept-1478-halgars-summons",
-            kind = "accept",
-            priority = 870,
+            priority = 150,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Ruzan", x = 0.426, offMapText = "Travel to Ruzan in Durotar." },
+            },
+            dependsOn = { "turnin-1485-vile-familiars" },
+            id = "accept-1499-vile-familiars",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Halgar's Summons from Ageron Kargal in Tirisfal Glades. This step is for Orcs and Undead.",
-            complete = QuestState(1478, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6160, 0.5260, "Ageron Kargal",
-                    "Travel to Ageron Kargal in Tirisfal Glades."),
-            },
+            useClientPin = false,
+            classAction = "accept-1499-vile-familiars",
         },
         {
-            id = "turnin-1478-halgars-summons",
-            kind = "turnin",
-            priority = 880,
+            priority = 160,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Zureetha Fargaze", x = 0.428, offMapText = "Travel to Zureetha Fargaze in Durotar." },
+            },
+            dependsOn = { "accept-1499-vile-familiars" },
+            id = "turnin-1499-vile-familiars",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Halgar's Summons to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1478-halgars-summons" },
-            complete = QuestState(1478, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1499-vile-familiars",
         },
         {
-            id = "accept-1473-creature-of-the-void",
-            kind = "accept",
-            priority = 890,
+            priority = 170,
+            route = {
+                { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-179-dwarven-outfitters",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 9 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Creature of the Void from Carendin Halgar in Undercity. This step is for Undead.",
-            dependsOn = { "turnin-1478-halgars-summons" },
-            complete = QuestState(1473, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "turnin-1473-creature-of-the-void",
-            kind = "turnin",
-            priority = 900,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Creature of the Void to Carendin Halgar in Undercity. This step is for Undead.",
-            dependsOn = { "accept-1473-creature-of-the-void" },
-            complete = QuestState(1473, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "accept-1506-ganruls-summons",
-            kind = "accept",
-            priority = 910,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Gan'rul's Summons from Ophek in Durotar. This step is for Orcs and Undead.",
-            complete = QuestState(1506, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4120, "Ophek",
-                    "Travel to Ophek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-1506-ganruls-summons",
-            kind = "turnin",
-            priority = 920,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Gan'rul's Summons to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1506-ganruls-summons" },
-            complete = QuestState(1506, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1501-creature-of-the-void",
-            kind = "accept",
-            priority = 930,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Creature of the Void from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
-            dependsOn = { "turnin-1506-ganruls-summons" },
-            complete = QuestState(1501, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1501-creature-of-the-void",
-            kind = "turnin",
-            priority = 940,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Creature of the Void to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
-            dependsOn = { "accept-1501-creature-of-the-void" },
-            complete = QuestState(1501, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1504-the-binding",
-            kind = "accept",
-            priority = 950,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
-            dependsOn = { "turnin-1501-creature-of-the-void", "turnin-1506-ganruls-summons" },
-            complete = QuestState(1504, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1504-the-binding",
-            kind = "turnin",
-            priority = 960,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs.",
-            dependsOn = { "accept-1504-the-binding" },
-            complete = QuestState(1504, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1507-devourer-of-souls",
-            kind = "accept",
-            priority = 970,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Devourer of Souls from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1504-the-binding" },
-            complete = QuestState(1507, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1507-devourer-of-souls",
-            kind = "turnin",
-            priority = 980,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Devourer of Souls to Cazul in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1507-devourer-of-souls" },
-            complete = QuestState(1507, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4720, 0.4660, "Cazul",
-                    "Travel to Cazul in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-65601-love-hurts",
-            kind = "accept",
-            priority = 981,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Love Hurts from Cazul in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1507-devourer-of-souls" },
-            complete = QuestState(65601, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4720, 0.4660, "Cazul",
-                    "Travel to Cazul in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65601-love-hurts",
-            kind = "turnin",
-            priority = 982,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Love Hurts to Magar in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65601-love-hurts" },
-            complete = QuestState(65601, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
-                    "Travel to Magar in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-65610-wish-you-were-here",
-            kind = "accept",
-            priority = 983,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Wish You Were Here from Magar in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-65601-love-hurts" },
-            complete = QuestState(65610, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6340, 0.5000, "Magar",
-                    "Travel to Magar in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65610-wish-you-were-here",
-            kind = "turnin",
-            priority = 984,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Wish You Were Here to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65610-wish-you-were-here" },
-            complete = QuestState(65610, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-65604-the-binding",
-            kind = "accept",
-            priority = 985,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-65610-wish-you-were-here" },
-            complete = QuestState(65604, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-65604-the-binding",
-            kind = "turnin",
-            priority = 986,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-65604-the-binding" },
-            complete = QuestState(65604, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1508-blind-cazul",
-            kind = "accept",
-            priority = 990,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Blind Cazul from Cazul in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1507-devourer-of-souls" },
-            complete = QuestState(1508, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4720, 0.4660, "Cazul",
-                    "Travel to Cazul in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1508-blind-cazul",
-            kind = "turnin",
-            priority = 1000,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Blind Cazul to Zankaja in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1508-blind-cazul" },
-            complete = QuestState(1508, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3700, 0.5960, "Zankaja",
-                    "Travel to Zankaja in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1509-news-of-dogran",
-            kind = "accept",
-            priority = 1010,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept News of Dogran from Zankaja in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1508-blind-cazul" },
-            complete = QuestState(1509, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3700, 0.5960, "Zankaja",
-                    "Travel to Zankaja in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1509-news-of-dogran",
-            kind = "turnin",
-            priority = 1020,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in News of Dogran to Gazrog in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1509-news-of-dogran" },
-            complete = QuestState(1509, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5180, 0.3020, "Gazrog",
-                    "Travel to Gazrog in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1510-news-of-dogran",
-            kind = "accept",
-            priority = 1030,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept News of Dogran from Gazrog in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1509-news-of-dogran" },
-            complete = QuestState(1510, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5180, 0.3020, "Gazrog",
-                    "Travel to Gazrog in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1510-news-of-dogran",
-            kind = "turnin",
-            priority = 1040,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in News of Dogran to Ken'zigla in Stonetalon Mountains. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1510-news-of-dogran" },
-            complete = QuestState(1510, "completed"),
-            route = {
-                Point(MAP.STONETALONMOUNTAINS, 0.7320, 0.9500, "Ken'zigla",
-                    "Travel to Ken'zigla in Stonetalon Mountains."),
-            },
-        },
-        {
-            id = "accept-1511-kenziglas-draught",
-            kind = "accept",
-            priority = 1050,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Ken'zigla's Draught from Ken'zigla in Stonetalon Mountains. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1510-news-of-dogran" },
-            complete = QuestState(1511, "activeOrCompleted"),
-            route = {
-                Point(MAP.STONETALONMOUNTAINS, 0.7320, 0.9500, "Ken'zigla",
-                    "Travel to Ken'zigla in Stonetalon Mountains."),
-            },
-        },
-        {
-            id = "turnin-1511-kenziglas-draught",
-            kind = "turnin",
-            priority = 1060,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Ken'zigla's Draught to Grunt Logmar in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1511-kenziglas-draught" },
-            complete = QuestState(1511, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5920, "Grunt Logmar",
-                    "Travel to Grunt Logmar in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1515-dograns-captivity",
-            kind = "accept",
-            priority = 1070,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Dogran's Captivity from Grunt Logmar in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1511-kenziglas-draught" },
-            complete = QuestState(1515, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5920, "Grunt Logmar",
-                    "Travel to Grunt Logmar in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1515-dograns-captivity",
-            kind = "turnin",
-            priority = 1080,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Dogran's Captivity to Grunt Dogran in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1515-dograns-captivity" },
-            complete = QuestState(1515, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4320, 0.4780, "Grunt Dogran",
-                    "Travel to Grunt Dogran in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1512-loves-gift",
-            kind = "accept",
-            priority = 1090,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Love's Gift from Grunt Dogran in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1515-dograns-captivity" },
-            complete = QuestState(1512, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4320, 0.4780, "Grunt Dogran",
-                    "Travel to Grunt Dogran in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1512-loves-gift",
-            kind = "turnin",
-            priority = 1100,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Love's Gift to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1512-loves-gift" },
-            complete = QuestState(1512, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-1513-the-binding",
-            kind = "accept",
-            priority = 1110,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept The Binding from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1512-loves-gift" },
-            complete = QuestState(1513, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1513-the-binding",
-            kind = "turnin",
-            priority = 1120,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in The Binding to Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1513-the-binding" },
-            complete = QuestState(1513, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-2996-seeking-strahad",
-            kind = "accept",
-            priority = 1130,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Seeking Strahad from Gan'rul Bloodeye in Orgrimmar. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1513-the-binding" },
-            complete = QuestState(2996, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4820, 0.4560, "Gan'rul Bloodeye",
-                    "Travel to Gan'rul Bloodeye in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-2996-seeking-strahad",
-            kind = "turnin",
-            priority = 1140,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Seeking Strahad to Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-2996-seeking-strahad" },
-            complete = QuestState(2996, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1801-tome-of-the-cabal",
-            kind = "accept",
-            priority = 1150,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-2996-seeking-strahad" },
-            complete = QuestState(1801, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1801-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 1160,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Jorah Annison in Undercity. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1801-tome-of-the-cabal" },
-            complete = QuestState(1801, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.7600, 0.3760, "Jorah Annison",
-                    "Travel to Jorah Annison in Undercity."),
-            },
-        },
-        {
-            id = "accept-1803-tome-of-the-cabal",
-            kind = "accept",
-            priority = 1170,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Jorah Annison in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(1803, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.7600, 0.3760, "Jorah Annison",
-                    "Travel to Jorah Annison in Undercity."),
-            },
-        },
-        {
-            id = "turnin-1803-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 1180,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Jorah Annison in Undercity. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1803-tome-of-the-cabal" },
-            complete = QuestState(1803, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.7600, 0.3760, "Jorah Annison",
-                    "Travel to Jorah Annison in Undercity."),
-            },
-        },
-        {
-            id = "accept-1805-tome-of-the-cabal",
-            kind = "accept",
-            priority = 1190,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Tome of the Cabal from Jorah Annison in Undercity. This step is for Orcs and Undead.",
-            dependsOn = { "turnin-1803-tome-of-the-cabal" },
-            complete = QuestState(1805, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.7600, 0.3760, "Jorah Annison",
-                    "Travel to Jorah Annison in Undercity."),
-            },
-        },
-        {
-            id = "turnin-1805-tome-of-the-cabal",
-            kind = "turnin",
-            priority = 1200,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Tome of the Cabal to Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-1805-tome-of-the-cabal" },
-            complete = QuestState(1805, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1471-the-binding",
-            kind = "accept",
-            priority = 1210,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Undead.",
-            dependsOn = { "turnin-1473-creature-of-the-void", "turnin-1805-tome-of-the-cabal", "turnin-1478-halgars-summons" },
-            complete = QuestState(1471, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "turnin-1471-the-binding",
-            kind = "turnin",
-            priority = 1220,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Undead.",
-            dependsOn = { "accept-1471-the-binding" },
-            complete = QuestState(1471, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "accept-3631-summon-felsteed",
-            kind = "accept",
-            priority = 1230,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Accept Summon Felsteed from Zevrost in Orgrimmar. This step is for Orcs and Undead.",
-            complete = QuestState(3631, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4840, 0.4560, "Zevrost",
-                    "Travel to Zevrost in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-3631-summon-felsteed",
-            kind = "turnin",
-            priority = 1240,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 40 } },
-                },
-            },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-3631-summon-felsteed" },
-            complete = QuestState(3631, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
-        },
-        {
-            id = "accept-3090-tainted-parchment",
-            kind = "accept",
-            priority = 1250,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                },
-            },
-            text = "Accept Tainted Parchment from Gornek in Durotar. This step is for Orcs.",
-            complete = QuestState(3090, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-3090-tainted-parchment",
-            kind = "turnin",
-            priority = 1260,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 2 },
-                },
-            },
-            text = "Turn in Tainted Parchment to Nartok in Durotar. This step is for Orcs.",
-            dependsOn = { "accept-3090-tainted-parchment" },
-            complete = QuestState(3090, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4060, 0.6840, "Nartok",
-                    "Travel to Nartok in Durotar."),
-            },
-        },
-        {
-            id = "accept-3099-tainted-scroll",
-            kind = "accept",
-            priority = 1270,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 5 },
-                },
-            },
-            text = "Accept Tainted Scroll from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(3099, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3080, 0.6620, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-3099-tainted-scroll",
-            kind = "turnin",
-            priority = 1280,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = 5 },
-                },
-            },
-            text = "Turn in Tainted Scroll to Maximillion in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-3099-tainted-scroll" },
-            complete = QuestState(3099, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3080, 0.6620, "Maximillion",
-                    "Travel to Maximillion in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-3105-tainted-letter",
-            kind = "accept",
-            priority = 1290,
-            conditions = {
-                all = {
                     { faction = "Alliance" },
-                    { class = 9 },
-                    { race = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Tainted Letter from Marshal McBride in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(3105, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4880, 0.4160, "Marshal McBride",
-                    "Travel to Marshal McBride in Elwynn Forest."),
-            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-179-dwarven-outfitters",
         },
         {
-            id = "turnin-3105-tainted-letter",
-            kind = "turnin",
-            priority = 1300,
+            priority = 180,
+            route = {
+                { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
+            },
+            id = "objective-179-1-ragged-young-wolf",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 9 },
-                    { race = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Tainted Letter to Drusilla La Salle in Elwynn Forest. This step is for Humans.",
-            dependsOn = { "accept-3105-tainted-letter" },
-            complete = QuestState(3105, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4980, 0.4260, "Drusilla La Salle",
-                    "Travel to Drusilla La Salle in Elwynn Forest."),
-            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = { "accept-179-dwarven-outfitters" },
+            classAction = "objective-179-1-ragged-young-wolf",
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
+            },
+            dependsOn = { "accept-179-dwarven-outfitters", "objective-179-1-ragged-young-wolf" },
+            id = "turnin-179-dwarven-outfitters",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-179-dwarven-outfitters",
+        },
+        {
+            priority = 200,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
             id = "accept-3115-tainted-memorandum",
-            kind = "accept",
-            priority = 1310,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Accept Tainted Memorandum from Sten Stoutarm in Dun Morogh. This step is for Gnomes.",
-            complete = QuestState(3115, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3115-tainted-memorandum",
         },
         {
-            id = "turnin-3115-tainted-memorandum",
-            kind = "turnin",
-            priority = 1320,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 9 },
-                    { race = 7 },
-                },
+            priority = 210,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Alamar Grimm", x = 0.286, offMapText = "Travel to Alamar Grimm in Dun Morogh." },
             },
-            text = "Turn in Tainted Memorandum to Alamar Grimm in Dun Morogh. This step is for Gnomes.",
             dependsOn = { "accept-3115-tainted-memorandum" },
-            complete = QuestState(3115, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6620, "Alamar Grimm",
-                    "Travel to Alamar Grimm in Dun Morogh."),
+            id = "turnin-3115-tainted-memorandum",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3115-tainted-memorandum",
         },
         {
+            priority = 220,
+            route = {
+                { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
+            },
+            id = "accept-783-a-threat-within",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 12,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-783-a-threat-within",
+        },
+        {
+            priority = 230,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-783-a-threat-within" },
+            id = "turnin-783-a-threat-within",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-783-a-threat-within",
+        },
+        {
+            priority = 240,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            id = "accept-7-kobold-camp-cleanup",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7-kobold-camp-cleanup",
+        },
+        {
+            priority = 250,
+            route = {
+                { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup" },
+            id = "objective-7-1-kobold-vermin",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 18,
+            useClientPin = false,
+            classAction = "objective-7-1-kobold-vermin",
+        },
+        {
+            priority = 260,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup", "objective-7-1-kobold-vermin" },
+            id = "turnin-7-kobold-camp-cleanup",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 20,
+            useClientPin = false,
+            classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            priority = 270,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
+            },
+            id = "accept-3105-tainted-letter",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3105-tainted-letter",
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.426, mapID = 1429, label = "Drusilla La Salle", x = 0.498, offMapText = "Travel to Drusilla La Salle in Elwynn Forest." },
+            },
+            dependsOn = { "accept-3105-tainted-letter" },
+            id = "turnin-3105-tainted-letter",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3105-tainted-letter",
+        },
+        {
+            priority = 290,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            id = "accept-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-788-cutting-teeth",
+        },
+        {
+            priority = 300,
+            route = {
+                { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
+            },
+            dependsOn = { "accept-788-cutting-teeth" },
+            id = "objective-788-1-mottled-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "objective-788-1-mottled-boar",
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            dependsOn = { "accept-788-cutting-teeth", "objective-788-1-mottled-boar" },
+            id = "turnin-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 21,
+            useClientPin = false,
+            classAction = "turnin-788-cutting-teeth",
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-3090-tainted-parchment",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3090-tainted-parchment",
+        },
+        {
+            priority = 330,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Nartok", x = 0.406, offMapText = "Travel to Nartok in Durotar." },
+            },
+            dependsOn = { "accept-3090-tainted-parchment" },
+            id = "turnin-3090-tainted-parchment",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3090-tainted-parchment",
+        },
+        {
+            priority = 340,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            id = "accept-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-364-the-mindless-ones",
+        },
+        {
+            priority = 350,
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Mindless Zombie", offMapText = "Travel to Mindless Zombie." },
+            },
+            id = "objective-364-1-duskbat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-1-duskbat",
+        },
+        {
+            id = "objective-364-2-wretched-zombie",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Wretched Zombie", offMapText = "Travel to Wretched Zombie." },
+            },
+            sourceStep = 13,
+            priority = 360,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-2-wretched-zombie",
+        },
+        {
+            priority = 370,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            dependsOn = { "accept-364-the-mindless-ones", "objective-364-1-duskbat", "objective-364-2-wretched-zombie" },
+            id = "turnin-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 9 },
+                                    {
+                                        class = { 9 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 9 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 14,
+            useClientPin = false,
+            classAction = "turnin-364-the-mindless-ones",
+        },
+        {
+            priority = 380,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", x = 0.308, offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades." },
+            },
+            id = "accept-3099-tainted-scroll",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3099-tainted-scroll",
+        },
+        {
+            priority = 390,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Maximillion", x = 0.308, offMapText = "Travel to Maximillion in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-3099-tainted-scroll" },
+            id = "turnin-3099-tainted-scroll",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3099-tainted-scroll",
+        },
+        {
+            id = "level-before-accept-1715-the-slaughtered-lamb",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1715,
+            alternativeQuests = { 1688 },
+            priority = 400,
+        },
+        {
+            priority = 410,
+            route = {
+                { y = 0.096, mapID = 1455, label = "Lago Blackwrench", x = 0.476, offMapText = "Travel to Lago Blackwrench in Ironforge." },
+            },
+            id = "accept-1715-the-slaughtered-lamb",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1715-the-slaughtered-lamb",
+        },
+        {
+            priority = 420,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1715-the-slaughtered-lamb" },
+            id = "turnin-1715-the-slaughtered-lamb",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1715-the-slaughtered-lamb",
+        },
+        {
+            priority = 430,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Remen Marcot", x = 0.444, offMapText = "Travel to Remen Marcot in Elwynn Forest." },
+            },
+            id = "accept-1685-gakins-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1685-gakins-summons",
+        },
+        {
+            priority = 440,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1685-gakins-summons" },
+            id = "turnin-1685-gakins-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1685-gakins-summons",
+        },
+        {
+            priority = 450,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-1685-gakins-summons", "turnin-1715-the-slaughtered-lamb" },
+            id = "accept-1688-surena-caledon",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1688-surena-caledon",
+        },
+        {
+            priority = 460,
+            route = {
+                { mapID = 1429, x = 0.7101999999999999, y = 0.8078, label = "Surena's Choker", offMapText = "Travel to Surena's Choker." },
+            },
+            id = "objective-1688-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1688-surena-caledon" },
+            classAction = "objective-1688-quest-work",
+        },
+        {
+            priority = 470,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1688-surena-caledon", "objective-1688-quest-work" },
+            id = "turnin-1688-surena-caledon",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1688-surena-caledon",
+        },
+        {
+            priority = 480,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-1688-surena-caledon", "turnin-1715-the-slaughtered-lamb", "turnin-1685-gakins-summons" },
+            id = "accept-1689-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1689-the-binding",
+        },
+        {
+            priority = 490,
+            route = {
+                { mapID = 1453, x = 0.2511, y = 0.7746, label = "Summoned Voidwalker", offMapText = "Travel to Summoned Voidwalker." },
+            },
+            id = "objective-1689-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1689-the-binding" },
+            classAction = "objective-1689-quest-work",
+        },
+        {
+            priority = 500,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1689-the-binding", "objective-1689-quest-work" },
+            id = "turnin-1689-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1689-the-binding",
+        },
+        {
+            id = "level-before-accept-1478-halgars-summons",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1478,
+            priority = 510,
+        },
+        {
+            priority = 520,
+            route = {
+                { y = 0.526, mapID = 1420, label = "Ageron Kargal", x = 0.616, offMapText = "Travel to Ageron Kargal in Tirisfal Glades." },
+            },
+            id = "accept-1478-halgars-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1478-halgars-summons",
+        },
+        {
+            priority = 530,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-1478-halgars-summons" },
+            id = "turnin-1478-halgars-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1478-halgars-summons",
+        },
+        {
+            id = "level-before-accept-1473-creature-of-the-void",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1473,
+            priority = 540,
+        },
+        {
+            priority = 550,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "turnin-1478-halgars-summons" },
+            id = "accept-1473-creature-of-the-void",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1473-creature-of-the-void",
+        },
+        {
+            priority = 560,
+            route = {
+                { mapID = 1420, x = 0.5106, y = 0.6757, label = "Egalin's Grimoire", offMapText = "Travel to Egalin's Grimoire." },
+            },
+            id = "objective-1473-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1473-creature-of-the-void" },
+            classAction = "objective-1473-quest-work",
+        },
+        {
+            priority = 570,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-1473-creature-of-the-void", "objective-1473-quest-work" },
+            id = "turnin-1473-creature-of-the-void",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1473-creature-of-the-void",
+        },
+        {
+            priority = 580,
+            route = {
+                { y = 0.412, mapID = 1411, label = "Ophek", x = 0.542, offMapText = "Travel to Ophek in Durotar." },
+            },
+            id = "accept-1506-ganruls-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1506-ganruls-summons",
+        },
+        {
+            priority = 590,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-1506-ganruls-summons" },
+            id = "turnin-1506-ganruls-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1506-ganruls-summons",
+        },
+        {
+            id = "level-before-accept-1501-creature-of-the-void",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1501,
+            priority = 600,
+        },
+        {
+            priority = 610,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1506-ganruls-summons" },
+            id = "accept-1501-creature-of-the-void",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1501-creature-of-the-void",
+        },
+        {
+            priority = 620,
+            id = "objective-1501-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1501-creature-of-the-void" },
+            classAction = "objective-1501-quest-work",
+        },
+        {
+            priority = 630,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-1501-creature-of-the-void", "objective-1501-quest-work" },
+            id = "turnin-1501-creature-of-the-void",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1501-creature-of-the-void",
+        },
+        {
+            priority = 640,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1501-creature-of-the-void", "turnin-1506-ganruls-summons" },
+            id = "accept-1504-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1504-the-binding",
+        },
+        {
+            priority = 650,
+            id = "objective-1504-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1504-the-binding" },
+            classAction = "objective-1504-quest-work",
+        },
+        {
+            priority = 660,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-1504-the-binding", "objective-1504-quest-work" },
+            id = "turnin-1504-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1504-the-binding",
+        },
+        {
+            priority = 670,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "turnin-1473-creature-of-the-void", "turnin-1805-tome-of-the-cabal", "turnin-1478-halgars-summons" },
+            id = "accept-1471-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1471-the-binding",
+        },
+        {
+            priority = 680,
+            route = {
+                { mapID = 1458, x = 0.8662000000000001, y = 0.271, label = "Summoned Voidwalker", offMapText = "Travel to Summoned Voidwalker." },
+            },
+            id = "objective-1471-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1471-the-binding" },
+            classAction = "objective-1471-quest-work",
+        },
+        {
+            priority = 690,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-1471-the-binding", "objective-1471-quest-work" },
+            id = "turnin-1471-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1471-the-binding",
+        },
+        {
+            id = "level-before-accept-1717-gakins-summons",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1717,
+            alternativeQuests = { 1716 },
+            priority = 700,
+        },
+        {
+            priority = 710,
+            route = {
+                { y = 0.096, mapID = 1455, label = "Lago Blackwrench", x = 0.476, offMapText = "Travel to Lago Blackwrench in Ironforge." },
+            },
+            id = "accept-1717-gakins-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1717-gakins-summons",
+        },
+        {
+            priority = 720,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1717-gakins-summons" },
+            id = "turnin-1717-gakins-summons",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1717-gakins-summons",
+        },
+        {
+            priority = 730,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-1717-gakins-summons" },
+            id = "accept-1716-devourer-of-souls",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1716-devourer-of-souls",
+        },
+        {
+            priority = 740,
+            route = {
+                { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
+            },
+            dependsOn = { "accept-1716-devourer-of-souls" },
+            id = "turnin-1716-devourer-of-souls",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1716-devourer-of-souls",
+        },
+        {
+            priority = 750,
+            route = {
+                { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
+            },
+            dependsOn = { "turnin-1716-devourer-of-souls" },
+            id = "accept-1738-heartswood",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1738-heartswood",
+        },
+        {
+            priority = 760,
+            route = {
+                { mapID = 1440, x = 0.31489999999999996, y = 0.3145, label = "Heartswood", offMapText = "Travel to Heartswood." },
+            },
+            id = "objective-1738-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1738-heartswood" },
+            classAction = "objective-1738-quest-work",
+        },
+        {
+            priority = 770,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1738-heartswood", "objective-1738-quest-work" },
+            id = "turnin-1738-heartswood",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1738-heartswood",
+        },
+        {
+            priority = 780,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-1738-heartswood" },
+            id = "accept-1739-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1739-the-binding",
+        },
+        {
+            priority = 790,
+            route = {
+                { mapID = 1453, x = 0.2511, y = 0.7746, label = "Summoned Succubus", offMapText = "Travel to Summoned Succubus." },
+            },
+            id = "objective-1739-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1739-the-binding" },
+            classAction = "objective-1739-quest-work",
+        },
+        {
+            priority = 800,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-1739-the-binding", "objective-1739-quest-work" },
+            id = "turnin-1739-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1739-the-binding",
+        },
+        {
+            priority = 810,
+            route = {
+                { y = 0.57, mapID = 1413, label = "Takar the Seer", x = 0.492, offMapText = "Travel to Takar the Seer in The Barrens." },
+            },
+            dependsOn = { "turnin-1716-devourer-of-souls" },
+            id = "accept-65602-what-is-love",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-65602-what-is-love",
+        },
+        {
+            priority = 820,
+            id = "objective-65602-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-65602-what-is-love" },
+            classAction = "objective-65602-quest-work",
+        },
+        {
+            priority = 830,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-65602-what-is-love", "objective-65602-quest-work" },
+            id = "turnin-65602-what-is-love",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65602-what-is-love",
+        },
+        {
+            priority = 840,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-65602-what-is-love" },
+            id = "accept-65603-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-65603-the-binding",
+        },
+        {
+            priority = 850,
+            id = "objective-65603-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-65603-the-binding" },
+            classAction = "objective-65603-quest-work",
+        },
+        {
+            priority = 860,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "accept-65603-the-binding", "objective-65603-quest-work" },
+            id = "turnin-65603-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65603-the-binding",
+        },
+        {
+            id = "level-before-accept-1507-devourer-of-souls",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1507,
+            alternativeQuests = { 1472 },
+            priority = 870,
+        },
+        {
+            priority = 880,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1504-the-binding" },
+            id = "accept-1507-devourer-of-souls",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1507-devourer-of-souls",
+        },
+        {
+            priority = 890,
+            route = {
+                { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
+            },
+            dependsOn = { "accept-1507-devourer-of-souls" },
+            id = "turnin-1507-devourer-of-souls",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1507-devourer-of-souls",
+        },
+        {
+            priority = 900,
+            route = {
+                { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1507-devourer-of-souls" },
+            id = "accept-65601-love-hurts",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-65601-love-hurts",
+        },
+        {
+            priority = 910,
+            route = {
+                { y = 0.5, mapID = 1454, label = "Magar", x = 0.634, offMapText = "Travel to Magar in Orgrimmar." },
+            },
+            dependsOn = { "accept-65601-love-hurts" },
+            id = "turnin-65601-love-hurts",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65601-love-hurts",
+        },
+        {
+            priority = 920,
+            route = {
+                { y = 0.5, mapID = 1454, label = "Magar", x = 0.634, offMapText = "Travel to Magar in Orgrimmar." },
+            },
+            dependsOn = { "turnin-65601-love-hurts" },
+            id = "accept-65610-wish-you-were-here",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-65610-wish-you-were-here",
+        },
+        {
+            priority = 930,
+            id = "objective-65610-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-65610-wish-you-were-here" },
+            classAction = "objective-65610-quest-work",
+        },
+        {
+            priority = 940,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-65610-wish-you-were-here", "objective-65610-quest-work" },
+            id = "turnin-65610-wish-you-were-here",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65610-wish-you-were-here",
+        },
+        {
+            priority = 950,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-65610-wish-you-were-here" },
+            id = "accept-65604-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-65604-the-binding",
+        },
+        {
+            priority = 960,
+            id = "objective-65604-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-65604-the-binding" },
+            classAction = "objective-65604-quest-work",
+        },
+        {
+            priority = 970,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-65604-the-binding", "objective-65604-quest-work" },
+            id = "turnin-65604-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65604-the-binding",
+        },
+        {
+            priority = 980,
+            route = {
+                { y = 0.466, mapID = 1454, label = "Cazul", x = 0.472, offMapText = "Travel to Cazul in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1507-devourer-of-souls" },
+            id = "accept-1508-blind-cazul",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1508-blind-cazul",
+        },
+        {
+            priority = 990,
+            route = {
+                { y = 0.596, mapID = 1454, label = "Zankaja", x = 0.37, offMapText = "Travel to Zankaja in Orgrimmar." },
+            },
+            dependsOn = { "accept-1508-blind-cazul" },
+            id = "turnin-1508-blind-cazul",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1508-blind-cazul",
+        },
+        {
+            priority = 1000,
+            route = {
+                { y = 0.596, mapID = 1454, label = "Zankaja", x = 0.37, offMapText = "Travel to Zankaja in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1508-blind-cazul" },
+            id = "accept-1509-news-of-dogran",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1509-news-of-dogran",
+        },
+        {
+            priority = 1010,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Gazrog", x = 0.518, offMapText = "Travel to Gazrog in The Barrens." },
+            },
+            dependsOn = { "accept-1509-news-of-dogran" },
+            id = "turnin-1509-news-of-dogran",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1509-news-of-dogran",
+        },
+        {
+            priority = 1020,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Gazrog", x = 0.518, offMapText = "Travel to Gazrog in The Barrens." },
+            },
+            dependsOn = { "turnin-1509-news-of-dogran" },
+            id = "accept-1510-news-of-dogran",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1510-news-of-dogran",
+        },
+        {
+            priority = 1030,
+            route = {
+                { y = 0.95, mapID = 1442, label = "Ken'zigla", x = 0.732, offMapText = "Travel to Ken'zigla in Stonetalon Mountains." },
+            },
+            dependsOn = { "accept-1510-news-of-dogran" },
+            id = "turnin-1510-news-of-dogran",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1510-news-of-dogran",
+        },
+        {
+            priority = 1040,
+            route = {
+                { y = 0.95, mapID = 1442, label = "Ken'zigla", x = 0.732, offMapText = "Travel to Ken'zigla in Stonetalon Mountains." },
+            },
+            dependsOn = { "turnin-1510-news-of-dogran" },
+            id = "accept-1511-kenziglas-draught",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1511-kenziglas-draught",
+        },
+        {
+            priority = 1050,
+            route = {
+                { y = 0.592, mapID = 1413, label = "Grunt Logmar", x = 0.446, offMapText = "Travel to Grunt Logmar in The Barrens." },
+            },
+            dependsOn = { "accept-1511-kenziglas-draught" },
+            id = "turnin-1511-kenziglas-draught",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1511-kenziglas-draught",
+        },
+        {
+            priority = 1060,
+            route = {
+                { y = 0.592, mapID = 1413, label = "Grunt Logmar", x = 0.446, offMapText = "Travel to Grunt Logmar in The Barrens." },
+            },
+            dependsOn = { "turnin-1511-kenziglas-draught" },
+            id = "accept-1515-dograns-captivity",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1515-dograns-captivity",
+        },
+        {
+            priority = 1070,
+            route = {
+                { y = 0.478, mapID = 1413, label = "Grunt Dogran", x = 0.432, offMapText = "Travel to Grunt Dogran in The Barrens." },
+            },
+            dependsOn = { "accept-1515-dograns-captivity" },
+            id = "turnin-1515-dograns-captivity",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1515-dograns-captivity",
+        },
+        {
+            priority = 1080,
+            route = {
+                { y = 0.478, mapID = 1413, label = "Grunt Dogran", x = 0.432, offMapText = "Travel to Grunt Dogran in The Barrens." },
+            },
+            dependsOn = { "turnin-1515-dograns-captivity" },
+            id = "accept-1512-loves-gift",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1512-loves-gift",
+        },
+        {
+            priority = 1090,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-1512-loves-gift" },
+            id = "turnin-1512-loves-gift",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1512-loves-gift",
+        },
+        {
+            priority = 1100,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1512-loves-gift" },
+            id = "accept-1513-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1513-the-binding",
+        },
+        {
+            priority = 1110,
+            route = {
+                { mapID = 1454, x = 0.49450000000000005, y = 0.5003, label = "Summoned Succubus", offMapText = "Travel to Summoned Succubus." },
+            },
+            id = "objective-1513-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1513-the-binding" },
+            classAction = "objective-1513-quest-work",
+        },
+        {
+            priority = 1120,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "accept-1513-the-binding", "objective-1513-quest-work" },
+            id = "turnin-1513-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1513-the-binding",
+        },
+        {
+            priority = 1130,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
             id = "accept-1472-devourer-of-souls",
-            kind = "accept",
-            priority = 1330,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Devourer of Souls from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(1472, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1472-devourer-of-souls",
         },
         {
-            id = "turnin-1472-devourer-of-souls",
-            kind = "turnin",
-            priority = 1340,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
-                },
+            priority = 1140,
+            route = {
+                { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
             },
-            text = "Turn in Devourer of Souls to Godrick Farsan in Undercity. This step is for Orcs and Undead.",
             dependsOn = { "accept-1472-devourer-of-souls" },
-            complete = QuestState(1472, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
-                    "Travel to Godrick Farsan in Undercity."),
-            },
-        },
-        {
-            id = "accept-65593-hearts-of-the-lovers",
-            kind = "accept",
-            priority = 1341,
+            id = "turnin-1472-devourer-of-souls",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Hearts of the Lovers from Godrick Farsan in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "turnin-1472-devourer-of-souls",
+        },
+        {
+            priority = 1150,
+            route = {
+                { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
+            },
             dependsOn = { "turnin-1472-devourer-of-souls" },
-            complete = QuestState(65593, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
-                    "Travel to Godrick Farsan in Undercity."),
-            },
-        },
-        {
-            id = "turnin-65593-hearts-of-the-lovers",
-            kind = "turnin",
-            priority = 1342,
+            id = "accept-65593-hearts-of-the-lovers",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Hearts of the Lovers to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "accept-65593-hearts-of-the-lovers",
+        },
+        {
+            priority = 1160,
+            id = "objective-65593-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-65593-hearts-of-the-lovers" },
-            complete = QuestState(65593, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            classAction = "objective-65593-quest-work",
         },
         {
-            id = "accept-65597-the-binding",
-            kind = "accept",
-            priority = 1343,
+            priority = 1170,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-65593-hearts-of-the-lovers", "objective-65593-quest-work" },
+            id = "turnin-65593-hearts-of-the-lovers",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "turnin-65593-hearts-of-the-lovers",
+        },
+        {
+            priority = 1180,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
             dependsOn = { "turnin-65593-hearts-of-the-lovers" },
-            complete = QuestState(65597, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "turnin-65597-the-binding",
-            kind = "turnin",
-            priority = 1344,
+            id = "accept-65597-the-binding",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "accept-65597-the-binding",
+        },
+        {
+            priority = 1190,
+            id = "objective-65597-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-65597-the-binding" },
-            complete = QuestState(65597, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            classAction = "objective-65597-quest-work",
         },
         {
+            priority = 1200,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-65597-the-binding", "objective-65597-quest-work" },
+            id = "turnin-65597-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-65597-the-binding",
+        },
+        {
+            priority = 1210,
+            route = {
+                { y = 0.148, mapID = 1458, label = "Godrick Farsan", x = 0.85, offMapText = "Travel to Godrick Farsan in Undercity." },
+            },
             id = "accept-1476-hearts-of-the-pure",
-            kind = "accept",
-            priority = 1350,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Hearts of the Pure from Godrick Farsan in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(1476, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.1480, "Godrick Farsan",
-                    "Travel to Godrick Farsan in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1476-hearts-of-the-pure",
         },
         {
-            id = "turnin-1476-hearts-of-the-pure",
-            kind = "turnin",
-            priority = 1360,
+            priority = 1220,
+            id = "objective-1476-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Hearts of the Pure to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = true,
             dependsOn = { "accept-1476-hearts-of-the-pure" },
-            complete = QuestState(1476, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            classAction = "objective-1476-quest-work",
         },
         {
-            id = "accept-1474-the-binding",
-            kind = "accept",
-            priority = 1370,
+            priority = 1230,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-1476-hearts-of-the-pure", "objective-1476-quest-work" },
+            id = "turnin-1476-hearts-of-the-pure",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept The Binding from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "turnin-1476-hearts-of-the-pure",
+        },
+        {
+            priority = 1240,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
             dependsOn = { "turnin-1476-hearts-of-the-pure" },
-            complete = QuestState(1474, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
-        },
-        {
-            id = "turnin-1474-the-binding",
-            kind = "turnin",
-            priority = 1380,
+            id = "accept-1474-the-binding",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in The Binding to Carendin Halgar in Undercity. This step is for Orcs and Undead.",
+            useClientPin = false,
+            classAction = "accept-1474-the-binding",
+        },
+        {
+            priority = 1250,
+            id = "objective-1474-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-1474-the-binding" },
-            complete = QuestState(1474, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            classAction = "objective-1474-quest-work",
         },
         {
-            id = "accept-1795-the-binding",
-            kind = "accept",
+            priority = 1260,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            dependsOn = { "accept-1474-the-binding", "objective-1474-quest-work" },
+            id = "turnin-1474-the-binding",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1474-the-binding",
+        },
+        {
+            id = "level-before-accept-1798-seeking-strahad",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1798,
+            priority = 1270,
+        },
+        {
+            priority = 1280,
+            route = {
+                { y = 0.784, mapID = 1453, label = "Gakin the Darkbinder", x = 0.254, offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            dependsOn = { "turnin-1739-the-binding" },
+            id = "accept-1798-seeking-strahad",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1798-seeking-strahad",
+        },
+        {
+            priority = 1290,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-1798-seeking-strahad" },
+            id = "turnin-1798-seeking-strahad",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1798-seeking-strahad",
+        },
+        {
+            priority = 1300,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "turnin-1798-seeking-strahad" },
+            id = "accept-1758-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1758-tome-of-the-cabal",
+        },
+        {
+            priority = 1310,
+            route = {
+                { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
+            },
+            dependsOn = { "accept-1758-tome-of-the-cabal" },
+            id = "turnin-1758-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1758-tome-of-the-cabal",
+        },
+        {
+            priority = 1320,
+            route = {
+                { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
+            },
+            dependsOn = { "turnin-1758-tome-of-the-cabal" },
+            id = "accept-1802-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1802-tome-of-the-cabal",
+        },
+        {
+            priority = 1330,
+            id = "objective-1802-book-1",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1802-tome-of-the-cabal" },
+            route = {
+                { mapID = 1424, x = 0.2778, y = 0.7278, label = "Moldy Tome", offMapText = "Travel to Moldy Tome." },
+            },
+            classAction = "objective-1802-book-1",
+        },
+        {
+            priority = 1340,
+            id = "objective-1802-book-2",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1802-tome-of-the-cabal" },
+            route = {
+                { mapID = 1441, x = 0.4343, y = 0.32689999999999997, label = "Tattered Manuscript", offMapText = "Travel to Tattered Manuscript." },
+            },
+            classAction = "objective-1802-book-2",
+        },
+        {
+            priority = 1350,
+            route = {
+                { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
+            },
+            dependsOn = { "accept-1802-tome-of-the-cabal", "objective-1802-book-1", "objective-1802-book-2" },
+            id = "turnin-1802-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1802-tome-of-the-cabal",
+        },
+        {
+            priority = 1360,
+            route = {
+                { y = 0.098, mapID = 1455, label = "Krom Stoutarm", x = 0.742, offMapText = "Travel to Krom Stoutarm in Ironforge." },
+            },
+            dependsOn = { "turnin-1802-tome-of-the-cabal", "turnin-1758-tome-of-the-cabal" },
+            id = "accept-1804-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1804-tome-of-the-cabal",
+        },
+        {
+            priority = 1370,
+            id = "objective-1804-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1804-tome-of-the-cabal" },
+            classAction = "objective-1804-quest-work",
+        },
+        {
+            priority = 1380,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-1804-tome-of-the-cabal", "objective-1804-quest-work" },
+            id = "turnin-1804-tome-of-the-cabal",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1804-tome-of-the-cabal",
+        },
+        {
+            id = "level-before-accept-2996-seeking-strahad",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2996,
             priority = 1390,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { race = { 1, 2, 5, 7 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept The Binding from Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
-            dependsOn = { "turnin-1805-tome-of-the-cabal" },
-            complete = QuestState(1795, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
         },
         {
-            id = "turnin-1795-the-binding",
-            kind = "turnin",
             priority = 1400,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Gan'rul Bloodeye", x = 0.482, offMapText = "Travel to Gan'rul Bloodeye in Orgrimmar." },
+            },
+            dependsOn = { "turnin-1513-the-binding" },
+            id = "accept-2996-seeking-strahad",
             conditions = {
                 all = {
                     { class = 9 },
-                    { race = { 1, 2, 5, 7 } },
-                    { level = { min = 30 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in The Binding to Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
-            dependsOn = { "accept-1795-the-binding" },
-            complete = QuestState(1795, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-2996-seeking-strahad",
         },
         {
-            id = "accept-3001-seeking-strahad",
-            kind = "accept",
             priority = 1410,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-2996-seeking-strahad" },
+            id = "turnin-2996-seeking-strahad",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Seeking Strahad from Carendin Halgar in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(3001, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8500, 0.2560, "Carendin Halgar",
-                    "Travel to Carendin Halgar in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-2996-seeking-strahad",
         },
         {
-            id = "turnin-3001-seeking-strahad",
-            kind = "turnin",
             priority = 1420,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "turnin-2996-seeking-strahad" },
+            id = "accept-1801-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 30 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Seeking Strahad to Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-3001-seeking-strahad" },
-            complete = QuestState(3001, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1801-tome-of-the-cabal",
         },
         {
-            id = "accept-4736-in-search-of-menara-voidrender",
-            kind = "accept",
             priority = 1430,
+            route = {
+                { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
+            },
+            dependsOn = { "accept-1801-tome-of-the-cabal" },
+            id = "turnin-1801-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept In Search of Menara Voidrender from Briarthorn in Ironforge. This step is for Humans and Gnomes.",
-            complete = QuestState(4736, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.5020, 0.0600, "Briarthorn",
-                    "Travel to Briarthorn in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1801-tome-of-the-cabal",
         },
         {
-            id = "turnin-4736-in-search-of-menara-voidrender",
-            kind = "turnin",
             priority = 1440,
+            route = {
+                { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
+            },
+            id = "accept-1803-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in In Search of Menara Voidrender to Menara Voidrender in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4736-in-search-of-menara-voidrender" },
-            complete = QuestState(4736, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1803-tome-of-the-cabal",
         },
         {
-            id = "accept-4737-in-search-of-menara-voidrender",
-            kind = "accept",
             priority = 1450,
+            id = "objective-1803-book-1",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept In Search of Menara Voidrender from Zevrost in Orgrimmar. This step is for Orcs and Undead.",
-            complete = QuestState(4737, "activeOrCompleted"),
+            useClientPin = false,
+            dependsOn = { "accept-1803-tome-of-the-cabal" },
             route = {
-                Point(MAP.ORGRIMMAR, 0.4840, 0.4560, "Zevrost",
-                    "Travel to Zevrost in Orgrimmar."),
+                { mapID = 1424, x = 0.2778, y = 0.7278, label = "Moldy Tome", offMapText = "Travel to Moldy Tome." },
             },
+            classAction = "objective-1803-book-1",
         },
         {
-            id = "turnin-4737-in-search-of-menara-voidrender",
-            kind = "turnin",
             priority = 1460,
+            id = "objective-1803-book-2",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in In Search of Menara Voidrender to Menara Voidrender in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-4737-in-search-of-menara-voidrender" },
-            complete = QuestState(4737, "completed"),
+            useClientPin = false,
+            dependsOn = { "accept-1803-tome-of-the-cabal" },
             route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
+                { mapID = 1441, x = 0.4343, y = 0.32689999999999997, label = "Tattered Manuscript", offMapText = "Travel to Tattered Manuscript." },
             },
+            classAction = "objective-1803-book-2",
         },
         {
-            id = "accept-4738-in-search-of-menara-voidrender",
-            kind = "accept",
             priority = 1470,
+            route = {
+                { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
+            },
+            dependsOn = { "accept-1803-tome-of-the-cabal", "objective-1803-book-1", "objective-1803-book-2" },
+            id = "turnin-1803-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept In Search of Menara Voidrender from Demisette Cloyce in Stormwind City. This step is for Humans and Gnomes.",
-            complete = QuestState(4738, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
-                    "Travel to Demisette Cloyce in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1803-tome-of-the-cabal",
         },
         {
-            id = "turnin-4738-in-search-of-menara-voidrender",
-            kind = "turnin",
             priority = 1480,
+            route = {
+                { y = 0.376, mapID = 1458, label = "Jorah Annison", x = 0.76, offMapText = "Travel to Jorah Annison in Undercity." },
+            },
+            dependsOn = { "turnin-1803-tome-of-the-cabal" },
+            id = "accept-1805-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in In Search of Menara Voidrender to Menara Voidrender in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4738-in-search-of-menara-voidrender" },
-            complete = QuestState(4738, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1805-tome-of-the-cabal",
         },
         {
-            id = "accept-4739-in-search-of-menara-voidrender",
-            kind = "accept",
             priority = 1490,
+            id = "objective-1805-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept In Search of Menara Voidrender from Kaal Soulreaper in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(4739, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8600, 0.1560, "Kaal Soulreaper",
-                    "Travel to Kaal Soulreaper in Undercity."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1805-tome-of-the-cabal" },
+            classAction = "objective-1805-quest-work",
         },
         {
-            id = "turnin-4739-in-search-of-menara-voidrender",
-            kind = "turnin",
             priority = 1500,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-1805-tome-of-the-cabal", "objective-1805-quest-work" },
+            id = "turnin-1805-tome-of-the-cabal",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in In Search of Menara Voidrender to Menara Voidrender in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-4739-in-search-of-menara-voidrender" },
-            complete = QuestState(4739, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1805-tome-of-the-cabal",
         },
         {
-            id = "accept-1796-components-for-the-enchanted-gold-bloodrobe",
-            kind = "accept",
+            id = "level-before-accept-1795-the-binding",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1795,
             priority = 1510,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 31 } },
-                },
-            },
-            text = "Accept Components for the Enchanted Gold Bloodrobe from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4739-in-search-of-menara-voidrender" },
-            complete = QuestState(1796, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
         },
         {
-            id = "turnin-1796-components-for-the-enchanted-gold-bloodrobe",
-            kind = "turnin",
             priority = 1520,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "turnin-1805-tome-of-the-cabal" },
+            id = "accept-1795-the-binding",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
                 },
             },
-            text = "Turn in Components for the Enchanted Gold Bloodrobe to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-1796-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(1796, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1795-the-binding",
         },
         {
-            id = "accept-4781-components-for-the-enchanted-gold-bloodrobe",
-            kind = "accept",
             priority = 1530,
+            id = "objective-1795-quest-work",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
                 },
             },
-            text = "Accept Components for the Enchanted Gold Bloodrobe from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-1796-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4781, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1795-the-binding" },
+            classAction = "objective-1795-quest-work",
         },
         {
-            id = "objective-4781-components-for-the-enchanted-gold-bloodrobe",
-            kind = "objective",
             priority = 1540,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-1795-the-binding", "objective-1795-quest-work" },
+            id = "turnin-1795-the-binding",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
                 },
             },
-            text = "Loot a Gold Bar from solid chests on the route or buy one from the auction house.",
-            dependsOn = { "accept-4781-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4781, "complete"),
-            route = {
-                Point(MAP.DUSKWOOD, 0.8180, 0.5870, "Solid Chest",
-                    "Travel to Solid Chest in Duskwood.", { map = { MAP.WETLANDS, MAP.SILVERPINEFOREST, MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DUSKWOOD, 0.3680, 0.8040, "Solid Chest",
-                    "Travel to Solid Chest in Duskwood.", { map = { MAP.WETLANDS, MAP.SILVERPINEFOREST, MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.WETLANDS, 0.4790, 0.5890, "Solid Chest",
-                    "Travel to Solid Chest in Wetlands.", { map = { MAP.SILVERPINEFOREST, MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.WETLANDS, 0.4750, 0.1500, "Solid Chest",
-                    "Travel to Solid Chest in Wetlands.", { map = { MAP.SILVERPINEFOREST, MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SILVERPINEFOREST, 0.6520, 0.2320, "Battered Chest",
-                    "Travel to Battered Chest in Silverpine Forest.", { map = { MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SILVERPINEFOREST, 0.5270, 0.2830, "Battered Chest",
-                    "Travel to Battered Chest in Silverpine Forest.", { map = { MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SILVERPINEFOREST, 0.5960, 0.7200, "Alliance Chest",
-                    "Travel to Alliance Chest in Silverpine Forest.", { map = { MAP.DARKSHORE, MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DARKSHORE, 0.3630, 0.8650, "Battered Chest",
-                    "Travel to Battered Chest in Darkshore.", { map = { MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DARKSHORE, 0.4710, 0.3700, "Battered Chest",
-                    "Travel to Battered Chest in Darkshore.", { map = { MAP.DUSTWALLOWMARSH, MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DUSTWALLOWMARSH, 0.3070, 0.2240, "Solid Chest",
-                    "Travel to Solid Chest in Dustwallow Marsh.", { map = { MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DUSTWALLOWMARSH, 0.4410, 0.6500, "Solid Chest",
-                    "Travel to Solid Chest in Dustwallow Marsh.", { map = { MAP.AZSHARA, MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.AZSHARA, 0.3020, 0.7980, "Fel Interloper",
-                    "Travel to Fel Interloper in Azshara.", { map = { MAP.BADLANDS, MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.BADLANDS, 0.4230, 0.2880, "Solid Chest",
-                    "Travel to Solid Chest in Badlands.", { map = { MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.BADLANDS, 0.0960, 0.9330, "Solid Chest",
-                    "Travel to Solid Chest in Badlands.", { map = { MAP.STRANGLETHORNVALE, MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STRANGLETHORNVALE, 0.4270, 0.1870, "Solid Chest",
-                    "Travel to Solid Chest in Stranglethorn Vale.", { map = { MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STRANGLETHORNVALE, 0.4730, 0.4000, "Solid Chest",
-                    "Travel to Solid Chest in Stranglethorn Vale.", { map = { MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STRANGLETHORNVALE, 0.2810, 0.6360, "Solid Chest",
-                    "Travel to Solid Chest in Stranglethorn Vale.", { map = { MAP.ASHENVALE, MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ASHENVALE, 0.2240, 0.3620, "Battered Chest",
-                    "Travel to Battered Chest in Ashenvale.", { map = { MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ASHENVALE, 0.5430, 0.6420, "Solid Chest",
-                    "Travel to Solid Chest in Ashenvale.", { map = { MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ASHENVALE, 0.7940, 0.4960, "Solid Chest",
-                    "Travel to Solid Chest in Ashenvale.", { map = { MAP.FERALAS, MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.FERALAS, 0.7420, 0.5060, "Fel Interloper",
-                    "Travel to Fel Interloper in Feralas.", { map = { MAP.ALTERACMOUNTAINS, MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ALTERACMOUNTAINS, 0.5990, 0.4340, "Solid Chest",
-                    "Travel to Solid Chest in Alterac Mountains.", { map = { MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ALTERACMOUNTAINS, 0.3950, 0.1520, "Solid Chest",
-                    "Travel to Solid Chest in Alterac Mountains.", { map = { MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ALTERACMOUNTAINS, 0.1800, 0.7720, "Alliance Strongbox",
-                    "Travel to Alliance Strongbox in Alterac Mountains.", { map = { MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ALTERACMOUNTAINS, 0.1490, 0.7530, "Alliance Chest",
-                    "Travel to Alliance Chest in Alterac Mountains.", { map = { MAP.LOCHMODAN, MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.LOCHMODAN, 0.6800, 0.6590, "Battered Chest",
-                    "Travel to Battered Chest in Loch Modan.", { map = { MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.LOCHMODAN, 0.3520, 0.2420, "Battered Chest",
-                    "Travel to Battered Chest in Loch Modan.", { map = { MAP.BLASTEDLANDS, MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.BLASTEDLANDS, 0.6220, 0.3900, "Fel Interloper",
-                    "Travel to Fel Interloper in Blasted Lands.", { map = { MAP.WESTFALL, MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.WESTFALL, 0.5300, 0.7890, "Battered Chest",
-                    "Travel to Battered Chest in Westfall.", { map = { MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.WESTFALL, 0.4230, 0.6880, "Battered Chest",
-                    "Travel to Battered Chest in Westfall.", { map = { MAP.THOUSANDNEEDLES, MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.THOUSANDNEEDLES, 0.1390, 0.3890, "Solid Chest",
-                    "Travel to Solid Chest in Thousand Needles.", { map = { MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.THOUSANDNEEDLES, 0.6530, 0.8690, "Solid Chest",
-                    "Travel to Solid Chest in Thousand Needles.", { map = { MAP.DESOLACE, MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DESOLACE, 0.5520, 0.3010, "Solid Chest",
-                    "Travel to Solid Chest in Desolace.", { map = { MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DESOLACE, 0.7380, 0.7370, "Solid Chest",
-                    "Travel to Solid Chest in Desolace.", { map = { MAP.STONETALONMOUNTAINS, MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STONETALONMOUNTAINS, 0.7360, 0.8560, "Battered Chest",
-                    "Travel to Battered Chest in Stonetalon Mountains.", { map = { MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STONETALONMOUNTAINS, 0.3450, 0.6200, "Solid Chest",
-                    "Travel to Solid Chest in Stonetalon Mountains.", { map = { MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.STONETALONMOUNTAINS, 0.2550, 0.1170, "Alliance Chest",
-                    "Travel to Alliance Chest in Stonetalon Mountains.", { map = { MAP.REDRIDGEMOUNTAINS, MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2840, 0.1260, "Corporal Keeshan",
-                    "Travel to Corporal Keeshan in Redridge Mountains.", { map = { MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2960, 0.8440, "Battered Chest",
-                    "Travel to Battered Chest in Redridge Mountains.", { map = { MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.REDRIDGEMOUNTAINS, 0.4150, 0.1060, "Solid Chest",
-                    "Travel to Solid Chest in Redridge Mountains.", { map = { MAP.TANARIS, MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.TANARIS, 0.6070, 0.3910, "Solid Chest",
-                    "Travel to Solid Chest in Tanaris.", { map = { MAP.HINTERLANDS, MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.HINTERLANDS, 0.4750, 0.6920, "Solid Chest",
-                    "Travel to Solid Chest in The Hinterlands.", { map = { MAP.SEARINGGORGE, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SEARINGGORGE, 0.4420, 0.3390, "Solid Chest",
-                    "Travel to Solid Chest in Searing Gorge.", { map = { MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SWAMPOFSORROWS, 0.0490, 0.3160, "Solid Chest",
-                    "Travel to Solid Chest in Swamp of Sorrows."),
-                Point(MAP.SWAMPOFSORROWS, 0.8900, 0.7850, "Solid Chest",
-                    "Travel to Solid Chest in Swamp of Sorrows."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1795-the-binding",
         },
         {
-            id = "turnin-4781-components-for-the-enchanted-gold-bloodrobe",
-            kind = "turnin",
             priority = 1550,
+            route = {
+                { y = 0.256, mapID = 1458, label = "Carendin Halgar", x = 0.85, offMapText = "Travel to Carendin Halgar in Undercity." },
+            },
+            id = "accept-3001-seeking-strahad",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Components for the Enchanted Gold Bloodrobe to Xizk Goodstitch in Stranglethorn Vale.",
-            dependsOn = { "objective-4781-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4781, "completed"),
-            route = {
-                Point(MAP.STRANGLETHORNVALE, 0.2860, 0.7680, "Xizk Goodstitch",
-                    "Travel to Xizk Goodstitch in Stranglethorn Vale."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3001-seeking-strahad",
         },
         {
-            id = "accept-4782-components-for-the-enchanted-gold-bloodrobe",
-            kind = "accept",
             priority = 1560,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-3001-seeking-strahad" },
+            id = "turnin-3001-seeking-strahad",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Components for the Enchanted Gold Bloodrobe from Xizk Goodstitch in Stranglethorn Vale.",
-            dependsOn = { "turnin-4781-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4782, "activeOrCompleted"),
-            route = {
-                Point(MAP.STRANGLETHORNVALE, 0.2860, 0.7680, "Xizk Goodstitch",
-                    "Travel to Xizk Goodstitch in Stranglethorn Vale."),
-            },
+            useClientPin = false,
+            classAction = "turnin-3001-seeking-strahad",
         },
         {
-            id = "turnin-4782-components-for-the-enchanted-gold-bloodrobe",
-            kind = "turnin",
+            id = "level-before-accept-4736-in-search-of-menara-voidrender",
+            kind = "note",
+            text = "Reach level 31 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 31 },
+            },
+            requiredLevel = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4736,
+            alternativeQuests = { 4737, 4738, 4739 },
             priority = 1570,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 31 } },
-                },
-            },
-            text = "Turn in Components for the Enchanted Gold Bloodrobe to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4782-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4782, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
         },
         {
-            id = "accept-4783-components-for-the-enchanted-gold-bloodrobe",
-            kind = "accept",
             priority = 1580,
+            route = {
+                { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
+            },
+            id = "accept-4736-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Components for the Enchanted Gold Bloodrobe from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4782-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4783, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4736-in-search-of-menara-voidrender",
         },
         {
-            id = "turnin-4783-components-for-the-enchanted-gold-bloodrobe",
-            kind = "turnin",
             priority = 1590,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4736-in-search-of-menara-voidrender" },
+            id = "turnin-4736-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Components for the Enchanted Gold Bloodrobe to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4783-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4783, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4736-in-search-of-menara-voidrender",
         },
         {
-            id = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
-            kind = "accept",
+            id = "level-before-accept-4737-in-search-of-menara-voidrender",
+            kind = "note",
+            text = "Reach level 31 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 31 },
+            },
+            requiredLevel = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4737,
+            alternativeQuests = { 4736, 4738, 4739 },
             priority = 1600,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 31 } },
-                },
-            },
-            text = "Accept Components for the Enchanted Gold Bloodrobe from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4783-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4784, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
         },
         {
-            id = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
-            kind = "turnin",
             priority = 1610,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
+            },
+            id = "accept-4737-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Components for the Enchanted Gold Bloodrobe to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4784, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4737-in-search-of-menara-voidrender",
         },
         {
-            id = "accept-4785-fine-gold-thread",
-            kind = "accept",
             priority = 1620,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4737-in-search-of-menara-voidrender" },
+            id = "turnin-4737-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Fine Gold Thread from Xizk Goodstitch in Stranglethorn Vale.",
-            complete = QuestState(4785, "activeOrCompleted"),
-            route = {
-                Point(MAP.STRANGLETHORNVALE, 0.2860, 0.7680, "Xizk Goodstitch",
-                    "Travel to Xizk Goodstitch in Stranglethorn Vale."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4737-in-search-of-menara-voidrender",
         },
         {
-            id = "turnin-4785-fine-gold-thread",
-            kind = "turnin",
             priority = 1630,
+            route = {
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+            },
+            id = "accept-4738-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Fine Gold Thread to Xizk Goodstitch in Stranglethorn Vale.",
-            dependsOn = { "accept-4785-fine-gold-thread" },
-            complete = QuestState(4785, "completed"),
-            route = {
-                Point(MAP.STRANGLETHORNVALE, 0.2860, 0.7680, "Xizk Goodstitch",
-                    "Travel to Xizk Goodstitch in Stranglethorn Vale."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4738-in-search-of-menara-voidrender",
         },
         {
-            id = "accept-4786-the-completed-robe",
-            kind = "accept",
             priority = 1640,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4738-in-search-of-menara-voidrender" },
+            id = "turnin-4738-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept The Completed Robe from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4784-components-for-the-enchanted-gold-bloodrobe" },
-            complete = QuestState(4786, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4738-in-search-of-menara-voidrender",
         },
         {
-            id = "turnin-4786-the-completed-robe",
-            kind = "turnin",
             priority = 1650,
+            route = {
+                { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
+            },
+            id = "accept-4739-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 31 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in The Completed Robe to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4786-the-completed-robe" },
-            complete = QuestState(4786, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4739-in-search-of-menara-voidrender",
         },
         {
-            id = "accept-4962-shard-of-a-felhound",
-            kind = "accept",
             priority = 1660,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4739-in-search-of-menara-voidrender" },
+            id = "turnin-4739-in-search-of-menara-voidrender",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept Shard of a Felhound from Acolyte Wytula in The Barrens.",
-            complete = QuestState(4962, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3520, "Acolyte Wytula",
-                    "Travel to Acolyte Wytula in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4739-in-search-of-menara-voidrender",
         },
         {
-            id = "turnin-4962-shard-of-a-felhound",
-            kind = "turnin",
+            id = "level-before-accept-1796-components-for-the-enchanted-gold-bloodrobe",
+            kind = "note",
+            text = "Reach level 31 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 31 },
+            },
+            requiredLevel = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1796,
             priority = 1670,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in Shard of a Felhound to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4962-shard-of-a-felhound" },
-            complete = QuestState(4962, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
         },
         {
-            id = "accept-4963-shard-of-an-infernal",
-            kind = "accept",
             priority = 1680,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4739-in-search-of-menara-voidrender" },
+            id = "accept-1796-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Shard of an Infernal from Acolyte Magaz in The Barrens.",
-            complete = QuestState(4963, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3520, "Acolyte Magaz",
-                    "Travel to Acolyte Magaz in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1796-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "turnin-4963-shard-of-an-infernal",
-            kind = "turnin",
             priority = 1690,
+            id = "objective-1796-quest-work",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Shard of an Infernal to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4963-shard-of-an-infernal" },
-            complete = QuestState(4963, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1796-components-for-the-enchanted-gold-bloodrobe" },
+            classAction = "objective-1796-quest-work",
         },
         {
-            id = "accept-4965-knowledge-of-the-orb-of-orahil",
-            kind = "accept",
+            priority = 1700,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-1796-components-for-the-enchanted-gold-bloodrobe", "objective-1796-quest-work" },
+            id = "turnin-1796-components-for-the-enchanted-gold-bloodrobe",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1796-components-for-the-enchanted-gold-bloodrobe",
+        },
+        {
+            priority = 1710,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-1796-components-for-the-enchanted-gold-bloodrobe" },
+            id = "accept-4781-components-for-the-enchanted-gold-bloodrobe",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4781-components-for-the-enchanted-gold-bloodrobe",
+        },
+        {
             priority = 1720,
+            route = {
+                {
+                    y = 0.587,
+                    mapID = 1431,
+                    label = "Solid Chest",
+                    x = 0.818,
+                    offMapText = "Travel to Solid Chest in Duskwood.",
+                    complete = {
+                        map = { 1437, 1421, 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.804,
+                    mapID = 1431,
+                    label = "Solid Chest",
+                    x = 0.368,
+                    offMapText = "Travel to Solid Chest in Duskwood.",
+                    complete = {
+                        map = { 1437, 1421, 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.589,
+                    mapID = 1437,
+                    label = "Solid Chest",
+                    x = 0.479,
+                    offMapText = "Travel to Solid Chest in Wetlands.",
+                    complete = {
+                        map = { 1421, 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.15,
+                    mapID = 1437,
+                    label = "Solid Chest",
+                    x = 0.475,
+                    offMapText = "Travel to Solid Chest in Wetlands.",
+                    complete = {
+                        map = { 1421, 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.232,
+                    mapID = 1421,
+                    label = "Battered Chest",
+                    x = 0.652,
+                    offMapText = "Travel to Battered Chest in Silverpine Forest.",
+                    complete = {
+                        map = { 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.283,
+                    mapID = 1421,
+                    label = "Battered Chest",
+                    x = 0.527,
+                    offMapText = "Travel to Battered Chest in Silverpine Forest.",
+                    complete = {
+                        map = { 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.72,
+                    mapID = 1421,
+                    label = "Alliance Chest",
+                    x = 0.596,
+                    offMapText = "Travel to Alliance Chest in Silverpine Forest.",
+                    complete = {
+                        map = { 1439, 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.865,
+                    mapID = 1439,
+                    label = "Battered Chest",
+                    x = 0.363,
+                    offMapText = "Travel to Battered Chest in Darkshore.",
+                    complete = {
+                        map = { 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.37,
+                    mapID = 1439,
+                    label = "Battered Chest",
+                    x = 0.471,
+                    offMapText = "Travel to Battered Chest in Darkshore.",
+                    complete = {
+                        map = { 1445, 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.224,
+                    mapID = 1445,
+                    label = "Solid Chest",
+                    x = 0.307,
+                    offMapText = "Travel to Solid Chest in Dustwallow Marsh.",
+                    complete = {
+                        map = { 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.65,
+                    mapID = 1445,
+                    label = "Solid Chest",
+                    x = 0.441,
+                    offMapText = "Travel to Solid Chest in Dustwallow Marsh.",
+                    complete = {
+                        map = { 1447, 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.798,
+                    mapID = 1447,
+                    label = "Fel Interloper",
+                    x = 0.302,
+                    offMapText = "Travel to Fel Interloper in Azshara.",
+                    complete = {
+                        map = { 1418, 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.288,
+                    mapID = 1418,
+                    label = "Solid Chest",
+                    x = 0.423,
+                    offMapText = "Travel to Solid Chest in Badlands.",
+                    complete = {
+                        map = { 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.933,
+                    mapID = 1418,
+                    label = "Solid Chest",
+                    x = 0.096,
+                    offMapText = "Travel to Solid Chest in Badlands.",
+                    complete = {
+                        map = { 1434, 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.187,
+                    mapID = 1434,
+                    label = "Solid Chest",
+                    x = 0.427,
+                    offMapText = "Travel to Solid Chest in Stranglethorn Vale.",
+                    complete = {
+                        map = { 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.4,
+                    mapID = 1434,
+                    label = "Solid Chest",
+                    x = 0.473,
+                    offMapText = "Travel to Solid Chest in Stranglethorn Vale.",
+                    complete = {
+                        map = { 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.636,
+                    mapID = 1434,
+                    label = "Solid Chest",
+                    x = 0.281,
+                    offMapText = "Travel to Solid Chest in Stranglethorn Vale.",
+                    complete = {
+                        map = { 1440, 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.362,
+                    mapID = 1440,
+                    label = "Battered Chest",
+                    x = 0.224,
+                    offMapText = "Travel to Battered Chest in Ashenvale.",
+                    complete = {
+                        map = { 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.642,
+                    mapID = 1440,
+                    label = "Solid Chest",
+                    x = 0.543,
+                    offMapText = "Travel to Solid Chest in Ashenvale.",
+                    complete = {
+                        map = { 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.496,
+                    mapID = 1440,
+                    label = "Solid Chest",
+                    x = 0.794,
+                    offMapText = "Travel to Solid Chest in Ashenvale.",
+                    complete = {
+                        map = { 1444, 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.506,
+                    mapID = 1444,
+                    label = "Fel Interloper",
+                    x = 0.742,
+                    offMapText = "Travel to Fel Interloper in Feralas.",
+                    complete = {
+                        map = { 1416, 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.434,
+                    mapID = 1416,
+                    label = "Solid Chest",
+                    x = 0.599,
+                    offMapText = "Travel to Solid Chest in Alterac Mountains.",
+                    complete = {
+                        map = { 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.152,
+                    mapID = 1416,
+                    label = "Solid Chest",
+                    x = 0.395,
+                    offMapText = "Travel to Solid Chest in Alterac Mountains.",
+                    complete = {
+                        map = { 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.772,
+                    mapID = 1416,
+                    label = "Alliance Strongbox",
+                    x = 0.18,
+                    offMapText = "Travel to Alliance Strongbox in Alterac Mountains.",
+                    complete = {
+                        map = { 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.753,
+                    mapID = 1416,
+                    label = "Alliance Chest",
+                    x = 0.149,
+                    offMapText = "Travel to Alliance Chest in Alterac Mountains.",
+                    complete = {
+                        map = { 1432, 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.659,
+                    mapID = 1432,
+                    label = "Battered Chest",
+                    x = 0.68,
+                    offMapText = "Travel to Battered Chest in Loch Modan.",
+                    complete = {
+                        map = { 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.242,
+                    mapID = 1432,
+                    label = "Battered Chest",
+                    x = 0.352,
+                    offMapText = "Travel to Battered Chest in Loch Modan.",
+                    complete = {
+                        map = { 1419, 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.39,
+                    mapID = 1419,
+                    label = "Fel Interloper",
+                    x = 0.622,
+                    offMapText = "Travel to Fel Interloper in Blasted Lands.",
+                    complete = {
+                        map = { 1436, 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.789,
+                    mapID = 1436,
+                    label = "Battered Chest",
+                    x = 0.53,
+                    offMapText = "Travel to Battered Chest in Westfall.",
+                    complete = {
+                        map = { 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.688,
+                    mapID = 1436,
+                    label = "Battered Chest",
+                    x = 0.423,
+                    offMapText = "Travel to Battered Chest in Westfall.",
+                    complete = {
+                        map = { 1441, 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.389,
+                    mapID = 1441,
+                    label = "Solid Chest",
+                    x = 0.139,
+                    offMapText = "Travel to Solid Chest in Thousand Needles.",
+                    complete = {
+                        map = { 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.869,
+                    mapID = 1441,
+                    label = "Solid Chest",
+                    x = 0.653,
+                    offMapText = "Travel to Solid Chest in Thousand Needles.",
+                    complete = {
+                        map = { 1443, 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.301,
+                    mapID = 1443,
+                    label = "Solid Chest",
+                    x = 0.552,
+                    offMapText = "Travel to Solid Chest in Desolace.",
+                    complete = {
+                        map = { 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.737,
+                    mapID = 1443,
+                    label = "Solid Chest",
+                    x = 0.738,
+                    offMapText = "Travel to Solid Chest in Desolace.",
+                    complete = {
+                        map = { 1442, 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.856,
+                    mapID = 1442,
+                    label = "Battered Chest",
+                    x = 0.736,
+                    offMapText = "Travel to Battered Chest in Stonetalon Mountains.",
+                    complete = {
+                        map = { 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.62,
+                    mapID = 1442,
+                    label = "Solid Chest",
+                    x = 0.345,
+                    offMapText = "Travel to Solid Chest in Stonetalon Mountains.",
+                    complete = {
+                        map = { 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.117,
+                    mapID = 1442,
+                    label = "Alliance Chest",
+                    x = 0.255,
+                    offMapText = "Travel to Alliance Chest in Stonetalon Mountains.",
+                    complete = {
+                        map = { 1433, 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.126,
+                    mapID = 1433,
+                    label = "Corporal Keeshan",
+                    x = 0.284,
+                    offMapText = "Travel to Corporal Keeshan in Redridge Mountains.",
+                    complete = {
+                        map = { 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.844,
+                    mapID = 1433,
+                    label = "Battered Chest",
+                    x = 0.296,
+                    offMapText = "Travel to Battered Chest in Redridge Mountains.",
+                    complete = {
+                        map = { 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.106,
+                    mapID = 1433,
+                    label = "Solid Chest",
+                    x = 0.415,
+                    offMapText = "Travel to Solid Chest in Redridge Mountains.",
+                    complete = {
+                        map = { 1446, 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.391,
+                    mapID = 1446,
+                    label = "Solid Chest",
+                    x = 0.607,
+                    offMapText = "Travel to Solid Chest in Tanaris.",
+                    complete = {
+                        map = { 1425, 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.692,
+                    mapID = 1425,
+                    label = "Solid Chest",
+                    x = 0.475,
+                    offMapText = "Travel to Solid Chest in The Hinterlands.",
+                    complete = {
+                        map = { 1427, 1435 },
+                    },
+                },
+                {
+                    y = 0.339,
+                    mapID = 1427,
+                    label = "Solid Chest",
+                    x = 0.442,
+                    offMapText = "Travel to Solid Chest in Searing Gorge.",
+                    complete = {
+                        map = { 1435 },
+                    },
+                },
+                { y = 0.316, mapID = 1435, label = "Solid Chest", x = 0.049, offMapText = "Travel to Solid Chest in Swamp of Sorrows." },
+                { y = 0.785, mapID = 1435, label = "Solid Chest", x = 0.89, offMapText = "Travel to Solid Chest in Swamp of Sorrows." },
+            },
+            dependsOn = { "accept-4781-components-for-the-enchanted-gold-bloodrobe" },
+            id = "objective-4781-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Knowledge of the Orb of Orahil from Briarthorn in Ironforge. This step is for Humans and Gnomes.",
-            complete = QuestState(4965, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.5020, 0.0600, "Briarthorn",
-                    "Travel to Briarthorn in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "objective-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "turnin-4965-knowledge-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1730,
+            route = {
+                { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
+            },
+            dependsOn = {
+                "accept-4781-components-for-the-enchanted-gold-bloodrobe",
+                "objective-4781-components-for-the-enchanted-gold-bloodrobe",
+            },
+            id = "turnin-4781-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Knowledge of the Orb of Orahil to Menara Voidrender in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4965-knowledge-of-the-orb-of-orahil" },
-            complete = QuestState(4965, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4781-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "accept-4967-knowledge-of-the-orb-of-orahil",
-            kind = "accept",
             priority = 1740,
+            route = {
+                { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
+            },
+            dependsOn = { "turnin-4781-components-for-the-enchanted-gold-bloodrobe" },
+            id = "accept-4782-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Knowledge of the Orb of Orahil from Zevrost in Orgrimmar. This step is for Orcs and Undead.",
-            complete = QuestState(4967, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.4840, 0.4560, "Zevrost",
-                    "Travel to Zevrost in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "accept-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "turnin-4967-knowledge-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1750,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4782-components-for-the-enchanted-gold-bloodrobe" },
+            id = "turnin-4782-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Knowledge of the Orb of Orahil to Menara Voidrender in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-4967-knowledge-of-the-orb-of-orahil" },
-            complete = QuestState(4967, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4782-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "accept-4968-knowledge-of-the-orb-of-orahil",
-            kind = "accept",
             priority = 1760,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4782-components-for-the-enchanted-gold-bloodrobe" },
+            id = "accept-4783-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Knowledge of the Orb of Orahil from Demisette Cloyce in Stormwind City. This step is for Humans and Gnomes.",
-            complete = QuestState(4968, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
-                    "Travel to Demisette Cloyce in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "accept-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "turnin-4968-knowledge-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1770,
+            id = "objective-4783-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 9 },
-                    { race = { 1, 7 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Knowledge of the Orb of Orahil to Menara Voidrender in The Barrens. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-4968-knowledge-of-the-orb-of-orahil" },
-            complete = QuestState(4968, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-4783-components-for-the-enchanted-gold-bloodrobe" },
+            classAction = "objective-4783-quest-work",
         },
         {
-            id = "accept-4969-knowledge-of-the-orb-of-orahil",
-            kind = "accept",
             priority = 1780,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4783-components-for-the-enchanted-gold-bloodrobe", "objective-4783-quest-work" },
+            id = "turnin-4783-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Knowledge of the Orb of Orahil from Kaal Soulreaper in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(4969, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8600, 0.1560, "Kaal Soulreaper",
-                    "Travel to Kaal Soulreaper in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4783-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "turnin-4969-knowledge-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1790,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4783-components-for-the-enchanted-gold-bloodrobe" },
+            id = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Knowledge of the Orb of Orahil to Menara Voidrender in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-4969-knowledge-of-the-orb-of-orahil" },
-            complete = QuestState(4969, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "accept-1799-fragments-of-the-orb-of-orahil",
-            kind = "accept",
             priority = 1800,
+            id = "objective-4784-quest-work",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Fragments of the Orb of Orahil from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4969-knowledge-of-the-orb-of-orahil" },
-            complete = QuestState(1799, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe" },
+            classAction = "objective-4784-quest-work",
         },
         {
-            id = "turnin-1799-fragments-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1810,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4784-components-for-the-enchanted-gold-bloodrobe", "objective-4784-quest-work" },
+            id = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Fragments of the Orb of Orahil to Tabetha in Dustwallow Marsh.",
-            dependsOn = { "accept-1799-fragments-of-the-orb-of-orahil" },
-            complete = QuestState(1799, "completed"),
-            route = {
-                Point(MAP.DUSTWALLOWMARSH, 0.4600, 0.5700, "Tabetha",
-                    "Travel to Tabetha in Dustwallow Marsh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4784-components-for-the-enchanted-gold-bloodrobe",
         },
         {
-            id = "accept-4961-cleansing-of-the-orb-of-orahil",
-            kind = "accept",
             priority = 1820,
+            route = {
+                { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
+            },
+            id = "accept-4785-fine-gold-thread",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Cleansing of the Orb of Orahil from Tabetha in Dustwallow Marsh.",
-            dependsOn = { "turnin-1799-fragments-of-the-orb-of-orahil" },
-            complete = QuestState(4961, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUSTWALLOWMARSH, 0.4600, 0.5700, "Tabetha",
-                    "Travel to Tabetha in Dustwallow Marsh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4785-fine-gold-thread",
         },
         {
-            id = "turnin-4961-cleansing-of-the-orb-of-orahil",
-            kind = "turnin",
             priority = 1830,
+            route = {
+                { y = 0.768, mapID = 1434, label = "Xizk Goodstitch", x = 0.286, offMapText = "Travel to Xizk Goodstitch in Stranglethorn Vale." },
+            },
+            dependsOn = { "accept-4785-fine-gold-thread" },
+            id = "turnin-4785-fine-gold-thread",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Turn in Cleansing of the Orb of Orahil to Tabetha in Dustwallow Marsh.",
-            dependsOn = { "accept-4961-cleansing-of-the-orb-of-orahil" },
-            complete = QuestState(4961, "completed"),
-            route = {
-                Point(MAP.DUSTWALLOWMARSH, 0.4600, 0.5700, "Tabetha",
-                    "Travel to Tabetha in Dustwallow Marsh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4785-fine-gold-thread",
         },
         {
-            id = "accept-4976-returning-the-cleansed-orb",
-            kind = "accept",
+            priority = 1840,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4784-components-for-the-enchanted-gold-bloodrobe" },
+            id = "accept-4786-the-completed-robe",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4786-the-completed-robe",
+        },
+        {
+            priority = 1850,
+            id = "objective-4786-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-4786-the-completed-robe" },
+            classAction = "objective-4786-quest-work",
+        },
+        {
             priority = 1860,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4786-the-completed-robe", "objective-4786-quest-work" },
+            id = "turnin-4786-the-completed-robe",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 35 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 31 },
+                    },
                 },
             },
-            text = "Accept Returning the Cleansed Orb from Tabetha in Dustwallow Marsh.",
-            dependsOn = { "turnin-4961-cleansing-of-the-orb-of-orahil" },
-            complete = QuestState(4976, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUSTWALLOWMARSH, 0.4600, 0.5700, "Tabetha",
-                    "Travel to Tabetha in Dustwallow Marsh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4786-the-completed-robe",
         },
         {
-            id = "turnin-4976-returning-the-cleansed-orb",
-            kind = "turnin",
+            id = "level-before-accept-4962-shard-of-a-felhound",
+            kind = "note",
+            text = "Reach level 35 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 35 },
+            },
+            requiredLevel = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4962,
+            alternativeQuests = { 4963 },
             priority = 1870,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in Returning the Cleansed Orb to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4976-returning-the-cleansed-orb" },
-            complete = QuestState(4976, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
         },
         {
-            id = "accept-4964-the-completed-orb-of-darorahil",
-            kind = "accept",
-            priority = 1872,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Accept The Completed Orb of Dar'Orahil from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
-            complete = QuestState(4964, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-4964-the-completed-orb-of-darorahil",
-            kind = "turnin",
-            priority = 1874,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in The Completed Orb of Dar'Orahil to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4964-the-completed-orb-of-darorahil" },
-            complete = QuestState(4964, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "accept-4975-the-completed-orb-of-nohorahil",
-            kind = "accept",
-            priority = 1876,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Accept The Completed Orb of Noh'Orahil from Menara Voidrender in The Barrens.",
-            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
-            complete = QuestState(4975, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-4975-the-completed-orb-of-nohorahil",
-            kind = "turnin",
-            priority = 1878,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 35 } },
-                },
-            },
-            text = "Turn in The Completed Orb of Noh'Orahil to Menara Voidrender in The Barrens.",
-            dependsOn = { "accept-4975-the-completed-orb-of-nohorahil" },
-            complete = QuestState(4975, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6240, 0.3540, "Menara Voidrender",
-                    "Travel to Menara Voidrender in The Barrens."),
-            },
-        },
-        {
-            id = "accept-4489-summon-felsteed",
-            kind = "accept",
             priority = 1880,
+            route = {
+                { y = 0.352, mapID = 1413, label = "Acolyte Wytula", x = 0.626, offMapText = "Travel to Acolyte Wytula in The Barrens." },
+            },
+            id = "accept-4962-shard-of-a-felhound",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 40 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Accept Summon Felsteed from Kaal Soulreaper in Undercity. This step is for Orcs and Undead.",
-            complete = QuestState(4489, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8600, 0.1560, "Kaal Soulreaper",
-                    "Travel to Kaal Soulreaper in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4962-shard-of-a-felhound",
         },
         {
-            id = "turnin-4489-summon-felsteed",
-            kind = "turnin",
             priority = 1890,
+            id = "objective-4962-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 9 },
-                    { race = { 2, 5 } },
-                    { level = { min = 40 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Orcs and Undead.",
-            dependsOn = { "accept-4489-summon-felsteed" },
-            complete = QuestState(4489, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-4962-shard-of-a-felhound" },
+            classAction = "objective-4962-quest-work",
         },
         {
-            id = "accept-4490-summon-felsteed",
-            kind = "accept",
             priority = 1900,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4962-shard-of-a-felhound", "objective-4962-quest-work" },
+            id = "turnin-4962-shard-of-a-felhound",
             conditions = {
                 all = {
-                    { any = {
-                        QuestState(3631, "completed"), QuestState(4487, "completed"),
-                        QuestState(4488, "completed"), QuestState(4489, "completed"),
-                        QuestState(4490, "activeOrCompleted"),
-                    } },
                     { class = 9 },
-                    { race = { 1, 2, 5, 7 } },
-                    { level = { min = 40 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Accept Summon Felsteed from Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
-            complete = QuestState(4490, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4962-shard-of-a-felhound",
         },
         {
-            id = "turnin-4490-summon-felsteed",
-            kind = "turnin",
             priority = 1910,
+            route = {
+                { y = 0.352, mapID = 1413, label = "Acolyte Magaz", x = 0.626, offMapText = "Travel to Acolyte Magaz in The Barrens." },
+            },
+            id = "accept-4963-shard-of-an-infernal",
             conditions = {
                 all = {
-                    { any = {
-                        QuestState(3631, "completed"), QuestState(4487, "completed"),
-                        QuestState(4488, "completed"), QuestState(4489, "completed"),
-                        QuestState(4490, "activeOrCompleted"),
-                    } },
                     { class = 9 },
-                    { race = { 1, 2, 5, 7 } },
-                    { level = { min = 40 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Turn in Summon Felsteed to Strahad Farsan in The Barrens. This step is for Humans, Orcs, Undead, and Gnomes.",
-            dependsOn = { "accept-4490-summon-felsteed" },
-            complete = QuestState(4490, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6260, 0.3540, "Strahad Farsan",
-                    "Travel to Strahad Farsan in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4963-shard-of-an-infernal",
         },
         {
-            id = "accept-8419-an-imps-request",
-            kind = "accept",
             priority = 1920,
+            id = "objective-4963-quest-work",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Accept An Imp's Request from Kaal Soulreaper in Undercity.",
-            complete = QuestState(8419, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.8600, 0.1560, "Kaal Soulreaper",
-                    "Travel to Kaal Soulreaper in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR } }),
-                Point(MAP.STORMWINDCITY, 0.2540, 0.7820, "Demisette Cloyce",
-                    "Travel to Demisette Cloyce in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
-                Point(MAP.IRONFORGE, 0.5020, 0.0600, "Briarthorn",
-                    "Travel to Briarthorn in Ironforge.", { map = { MAP.ORGRIMMAR } }),
-                Point(MAP.ORGRIMMAR, 0.4840, 0.4560, "Zevrost",
-                    "Travel to Zevrost in Orgrimmar."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-4963-shard-of-an-infernal" },
+            classAction = "objective-4963-quest-work",
         },
         {
-            id = "turnin-8419-an-imps-request",
-            kind = "turnin",
             priority = 1930,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4963-shard-of-an-infernal", "objective-4963-quest-work" },
+            id = "turnin-4963-shard-of-an-infernal",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Turn in An Imp's Request to Impsy in Felwood.",
-            dependsOn = { "accept-8419-an-imps-request" },
-            complete = QuestState(8419, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4963-shard-of-an-infernal",
         },
         {
-            id = "accept-8420-hot-and-itchy",
-            kind = "accept",
+            id = "level-before-accept-4965-knowledge-of-the-orb-of-orahil",
+            kind = "note",
+            text = "Reach level 35 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 35 },
+            },
+            requiredLevel = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4965,
+            alternativeQuests = { 4967, 4968, 4969 },
             priority = 1940,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Hot and Itchy from Impsy in Felwood.",
-            dependsOn = { "turnin-8419-an-imps-request", "turnin-7601-what-niby-commands" },
-            complete = QuestState(8420, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
         },
         {
-            id = "objective-8420-hot-and-itchy",
-            kind = "objective",
             priority = 1950,
+            route = {
+                { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
+            },
+            id = "accept-4965-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Collect Felcloth from jadefire satyrs in Felwood.",
-            dependsOn = { "accept-8420-hot-and-itchy" },
-            complete = QuestState(8420, "complete"),
-            route = {
-                Point(MAP.FELWOOD, 0.3340, 0.6660, "Jadefire Rogue",
-                    "Travel to Jadefire Rogue in Felwood."),
-                Point(MAP.FELWOOD, 0.4100, 0.1900, "Jadefire Trickster",
-                    "Travel to Jadefire Trickster in Felwood."),
-                Point(MAP.FELWOOD, 0.3920, 0.2140, "Jadefire Betrayer",
-                    "Travel to Jadefire Betrayer in Felwood."),
-                Point(MAP.FELWOOD, 0.3540, 0.6680, "Jadefire Felsworn",
-                    "Travel to Jadefire Felsworn in Felwood."),
-                Point(MAP.FELWOOD, 0.3500, 0.6660, "Jadefire Shadowstalker",
-                    "Travel to Jadefire Shadowstalker in Felwood."),
-                Point(MAP.FELWOOD, 0.4220, 0.1700, "Jadefire Hellcaller",
-                    "Travel to Jadefire Hellcaller in Felwood."),
-                Point(MAP.FELWOOD, 0.3240, 0.6700, "Xavathras",
-                    "Travel to Xavathras in Felwood."),
-                Point(MAP.FELWOOD, 0.3600, 0.4460, "Lord Banehollow",
-                    "Travel to Lord Banehollow in Felwood."),
-                Point(MAP.FELWOOD, 0.3800, 0.5060, "Rakaiah",
-                    "Travel to Rakaiah in Felwood."),
-                Point(MAP.FELWOOD, 0.3880, 0.4680, "Salia",
-                    "Travel to Salia in Felwood."),
-                Point(MAP.FELWOOD, 0.3880, 0.4680, "Moora",
-                    "Travel to Moora in Felwood."),
-                Point(MAP.FELWOOD, 0.3740, 0.5320, "Jaedenar Legionnaire",
-                    "Travel to Jaedenar Legionnaire in Felwood."),
-                Point(MAP.FELWOOD, 0.3660, 0.5660, "Prince Xavalis",
-                    "Travel to Prince Xavalis in Felwood."),
-                Point(MAP.FELWOOD, 0.3900, 0.2220, "Xavaric",
-                    "Travel to Xavaric in Felwood."),
-                Point(MAP.FELWOOD, 0.4200, 0.8620, "Alshirr Banebreath",
-                    "Travel to Alshirr Banebreath in Felwood."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4965-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "turnin-8420-hot-and-itchy",
-            kind = "turnin",
             priority = 1960,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4965-knowledge-of-the-orb-of-orahil" },
+            id = "turnin-4965-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Hot and Itchy to Impsy in Felwood.",
-            dependsOn = { "objective-8420-hot-and-itchy" },
-            complete = QuestState(8420, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4965-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "accept-8421-the-wrong-stuff",
-            kind = "accept",
+            id = "level-before-accept-4967-knowledge-of-the-orb-of-orahil",
+            kind = "note",
+            text = "Reach level 35 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 35 },
+            },
+            requiredLevel = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4967,
+            alternativeQuests = { 4965, 4968, 4969 },
             priority = 1970,
-            conditions = {
-                all = {
-                    { class = 9 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept The Wrong Stuff from Impsy in Felwood.",
-            dependsOn = { "turnin-8420-hot-and-itchy", "turnin-7601-what-niby-commands" },
-            complete = QuestState(8421, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
         },
         {
-            id = "objective-8421-the-wrong-stuff",
-            kind = "objective",
             priority = 1980,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
+            },
+            id = "accept-4967-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Collect Bloodvenom Essence and Rotting Wood in Felwood.",
-            dependsOn = { "accept-8421-the-wrong-stuff" },
-            complete = QuestState(8421, "complete"),
-            route = {
-                Point(MAP.FELWOOD, 0.4000, 0.5640, "Tainted Ooze",
-                    "Travel to Tainted Ooze in Felwood."),
-                Point(MAP.FELWOOD, 0.4940, 0.1460, "Irontree Wanderer",
-                    "Travel to Irontree Wanderer in Felwood."),
-                Point(MAP.FELWOOD, 0.4860, 0.2980, "Irontree Stomper",
-                    "Travel to Irontree Stomper in Felwood."),
-                Point(MAP.FELWOOD, 0.5060, 0.1820, "Withered Protector",
-                    "Travel to Withered Protector in Felwood."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4967-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "turnin-8421-the-wrong-stuff",
-            kind = "turnin",
             priority = 1990,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4967-knowledge-of-the-orb-of-orahil" },
+            id = "turnin-4967-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in The Wrong Stuff to Impsy in Felwood.",
-            dependsOn = { "objective-8421-the-wrong-stuff" },
-            complete = QuestState(8421, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4967-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "accept-7603-kroshius-infernal-core",
-            kind = "accept",
             priority = 2000,
+            route = {
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+            },
+            id = "accept-4968-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Kroshius' Infernal Core from Impsy in Felwood.",
-            dependsOn = { "turnin-7602-flawless-fel-essence", "turnin-8421-the-wrong-stuff" },
-            complete = QuestState(7603, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Impsy",
-                    "Travel to Impsy in Felwood."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "objective-7603-kroshius-infernal-core",
-            kind = "objective",
             priority = 2010,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4968-knowledge-of-the-orb-of-orahil" },
+            id = "turnin-4968-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Kroshius' Infernal Core: Kroshius' Infernal Core. This is an elite. Bring a group.",
-            dependsOn = { "accept-7603-kroshius-infernal-core" },
-            complete = QuestState(7603, "complete"),
-            route = {
-                Point(MAP.FELWOOD, 0.4540, 0.3540, "Kroshius",
-                    "Travel to Kroshius in Felwood."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4968-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "turnin-7603-kroshius-infernal-core",
-            kind = "turnin",
             priority = 2020,
+            route = {
+                { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
+            },
+            id = "accept-4969-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Turn in Kroshius' Infernal Core to Niby the Almighty in Felwood.",
-            dependsOn = { "objective-7603-kroshius-infernal-core" },
-            complete = QuestState(7603, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4140, 0.4480, "Niby the Almighty",
-                    "Travel to Niby the Almighty in Felwood."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4969-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "accept-7582-the-prisons-casing",
-            kind = "accept",
             priority = 2030,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4969-knowledge-of-the-orb-of-orahil" },
+            id = "turnin-4969-knowledge-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
                 },
             },
-            text = "Accept The Prison's Casing from Daio the Decrepit in Blasted Lands.",
-            complete = QuestState(7582, "activeOrCompleted"),
-            route = {
-                Point(MAP.BLASTEDLANDS, 0.3400, 0.5020, "Daio the Decrepit",
-                    "Travel to Daio the Decrepit in Blasted Lands."),
-            },
+            useClientPin = false,
+            classAction = "turnin-4969-knowledge-of-the-orb-of-orahil",
         },
         {
-            id = "turnin-7582-the-prisons-casing",
-            kind = "turnin",
             priority = 2040,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4969-knowledge-of-the-orb-of-orahil" },
+            id = "accept-1799-fragments-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Turn in The Prison's Casing to Daio the Decrepit in Blasted Lands.",
-            dependsOn = { "accept-7582-the-prisons-casing" },
-            complete = QuestState(7582, "completed"),
-            route = {
-                Point(MAP.BLASTEDLANDS, 0.3400, 0.5020, "Daio the Decrepit",
-                    "Travel to Daio the Decrepit in Blasted Lands."),
-            },
+            useClientPin = false,
+            classAction = "accept-1799-fragments-of-the-orb-of-orahil",
         },
         {
-            id = "accept-7583-suppression",
-            kind = "accept",
             priority = 2050,
+            id = "objective-1799-quest-work",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Accept Suppression from Daio the Decrepit in Blasted Lands.",
-            complete = QuestState(7583, "activeOrCompleted"),
-            route = {
-                Point(MAP.BLASTEDLANDS, 0.3400, 0.5020, "Daio the Decrepit",
-                    "Travel to Daio the Decrepit in Blasted Lands."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1799-fragments-of-the-orb-of-orahil" },
+            classAction = "objective-1799-quest-work",
         },
         {
-            id = "turnin-7583-suppression",
-            kind = "turnin",
             priority = 2060,
+            route = {
+                { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
+            },
+            dependsOn = { "accept-1799-fragments-of-the-orb-of-orahil", "objective-1799-quest-work" },
+            id = "turnin-1799-fragments-of-the-orb-of-orahil",
             conditions = {
                 all = {
                     { class = 9 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
                 },
             },
-            text = "Turn in Suppression to Daio the Decrepit in Blasted Lands.",
-            dependsOn = { "accept-7583-suppression" },
-            complete = QuestState(7583, "completed"),
+            useClientPin = false,
+            classAction = "turnin-1799-fragments-of-the-orb-of-orahil",
+        },
+        {
+            priority = 2070,
             route = {
-                Point(MAP.BLASTEDLANDS, 0.3400, 0.5020, "Daio the Decrepit",
-                    "Travel to Daio the Decrepit in Blasted Lands."),
+                { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
             },
-        }
+            dependsOn = { "turnin-1799-fragments-of-the-orb-of-orahil" },
+            id = "accept-4961-cleansing-of-the-orb-of-orahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4961-cleansing-of-the-orb-of-orahil",
+        },
+        {
+            priority = 2080,
+            id = "objective-4961-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-4961-cleansing-of-the-orb-of-orahil" },
+            classAction = "objective-4961-quest-work",
+        },
+        {
+            priority = 2090,
+            route = {
+                { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
+            },
+            dependsOn = { "accept-4961-cleansing-of-the-orb-of-orahil", "objective-4961-quest-work" },
+            id = "turnin-4961-cleansing-of-the-orb-of-orahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4961-cleansing-of-the-orb-of-orahil",
+        },
+        {
+            priority = 2100,
+            route = {
+                { y = 0.57, mapID = 1445, label = "Tabetha", x = 0.46, offMapText = "Travel to Tabetha in Dustwallow Marsh." },
+            },
+            dependsOn = { "turnin-4961-cleansing-of-the-orb-of-orahil" },
+            id = "accept-4976-returning-the-cleansed-orb",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4976-returning-the-cleansed-orb",
+        },
+        {
+            priority = 2110,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4976-returning-the-cleansed-orb" },
+            id = "turnin-4976-returning-the-cleansed-orb",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4976-returning-the-cleansed-orb",
+        },
+        {
+            priority = 2120,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
+            id = "accept-4964-the-completed-orb-of-darorahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4964-the-completed-orb-of-darorahil",
+        },
+        {
+            priority = 2130,
+            id = "objective-4964-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-4964-the-completed-orb-of-darorahil" },
+            classAction = "objective-4964-quest-work",
+        },
+        {
+            priority = 2140,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4964-the-completed-orb-of-darorahil", "objective-4964-quest-work" },
+            id = "turnin-4964-the-completed-orb-of-darorahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4964-the-completed-orb-of-darorahil",
+        },
+        {
+            priority = 2150,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "turnin-4976-returning-the-cleansed-orb" },
+            id = "accept-4975-the-completed-orb-of-nohorahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-4975-the-completed-orb-of-nohorahil",
+        },
+        {
+            priority = 2160,
+            id = "objective-4975-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-4975-the-completed-orb-of-nohorahil" },
+            classAction = "objective-4975-quest-work",
+        },
+        {
+            priority = 2170,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Menara Voidrender", x = 0.624, offMapText = "Travel to Menara Voidrender in The Barrens." },
+            },
+            dependsOn = { "accept-4975-the-completed-orb-of-nohorahil", "objective-4975-quest-work" },
+            id = "turnin-4975-the-completed-orb-of-nohorahil",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 35 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4975-the-completed-orb-of-nohorahil",
+        },
+        {
+            id = "level-before-accept-4487-summon-felsteed",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4487,
+            alternativeQuests = { 3631, 4488, 4489 },
+            priority = 2180,
+        },
+        {
+            priority = 2190,
+            route = {
+                { y = 0.06, mapID = 1455, label = "Briarthorn", x = 0.502, offMapText = "Travel to Briarthorn in Ironforge." },
+            },
+            id = "accept-4487-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4487-summon-felsteed",
+        },
+        {
+            priority = 2200,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-4487-summon-felsteed" },
+            id = "turnin-4487-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4487-summon-felsteed",
+        },
+        {
+            priority = 2210,
+            route = {
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+            },
+            id = "accept-4488-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4488-summon-felsteed",
+        },
+        {
+            priority = 2220,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-4488-summon-felsteed" },
+            id = "turnin-4488-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4488-summon-felsteed",
+        },
+        {
+            id = "level-before-accept-3631-summon-felsteed",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3631,
+            alternativeQuests = { 4487, 4488, 4489 },
+            priority = 2230,
+        },
+        {
+            priority = 2240,
+            route = {
+                { y = 0.456, mapID = 1454, label = "Zevrost", x = 0.484, offMapText = "Travel to Zevrost in Orgrimmar." },
+            },
+            id = "accept-3631-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3631-summon-felsteed",
+        },
+        {
+            priority = 2250,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-3631-summon-felsteed" },
+            id = "turnin-3631-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3631-summon-felsteed",
+        },
+        {
+            priority = 2260,
+            route = {
+                { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
+            },
+            id = "accept-4489-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4489-summon-felsteed",
+        },
+        {
+            priority = 2270,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-4489-summon-felsteed" },
+            id = "turnin-4489-summon-felsteed",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4489-summon-felsteed",
+        },
+        {
+            id = "level-before-accept-4490-summon-felsteed",
+            kind = "note",
+            text = "Reach level 40 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 40 },
+            },
+            requiredLevel = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4490,
+            priority = 2280,
+        },
+        {
+            priority = 2290,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            id = "accept-4490-summon-felsteed",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-4490-summon-felsteed",
+        },
+        {
+            priority = 2300,
+            route = {
+                { y = 0.354, mapID = 1413, label = "Strahad Farsan", x = 0.626, offMapText = "Travel to Strahad Farsan in The Barrens." },
+            },
+            dependsOn = { "accept-4490-summon-felsteed" },
+            id = "turnin-4490-summon-felsteed",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {},
+                            {},
+                            {},
+                            {},
+                            {},
+                        },
+                    },
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 1, 2, 5, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-4490-summon-felsteed",
+        },
+        {
+            id = "level-before-accept-7601-what-niby-commands",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7601,
+            priority = 2310,
+        },
+        {
+            priority = 2320,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Niby the Almighty", x = 0.414, offMapText = "Travel to Niby the Almighty in Felwood." },
+            },
+            id = "accept-7601-what-niby-commands",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7601-what-niby-commands",
+        },
+        {
+            priority = 2330,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "accept-7601-what-niby-commands" },
+            id = "turnin-7601-what-niby-commands",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7601-what-niby-commands",
+        },
+        {
+            priority = 2340,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "turnin-7601-what-niby-commands" },
+            id = "accept-7602-flawless-fel-essence",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7602-flawless-fel-essence",
+        },
+        {
+            priority = 2350,
+            dependsOn = { "accept-7602-flawless-fel-essence" },
+            id = "objective-7602-flawless-fel-essence",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7602-flawless-fel-essence",
+        },
+        {
+            priority = 2360,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "accept-7602-flawless-fel-essence", "objective-7602-flawless-fel-essence" },
+            id = "turnin-7602-flawless-fel-essence",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7602-flawless-fel-essence",
+        },
+        {
+            id = "level-before-accept-8419-an-imps-request",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8419,
+            alternativeQuests = { 8420 },
+            priority = 2370,
+        },
+        {
+            priority = 2380,
+            route = {
+                { y = 0.782, mapID = 1453, label = "Demisette Cloyce", x = 0.254, offMapText = "Travel to Demisette Cloyce in Stormwind City." },
+            },
+            id = "accept-8419-an-imps-request",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8419-an-imps-request",
+        },
+        {
+            id = "level-before-accept-8419-an-imps-request-horde",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8419,
+            alternativeQuests = { 8420 },
+            priority = 2390,
+        },
+        {
+            priority = 2400,
+            route = {
+                { y = 0.156, mapID = 1458, label = "Kaal Soulreaper", x = 0.86, offMapText = "Travel to Kaal Soulreaper in Undercity." },
+            },
+            id = "accept-8419-an-imps-request-horde",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8419-an-imps-request-horde",
+        },
+        {
+            priority = 2410,
+            id = "objective-8419-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-8419-an-imps-request", "accept-8419-an-imps-request-horde" },
+            classAction = "objective-8419-quest-work",
+        },
+        {
+            priority = 2420,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "accept-8419-an-imps-request", "objective-8419-quest-work", "accept-8419-an-imps-request-horde" },
+            id = "turnin-8419-an-imps-request",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8419-an-imps-request",
+        },
+        {
+            priority = 2430,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "turnin-8419-an-imps-request", "turnin-7601-what-niby-commands" },
+            id = "accept-8420-hot-and-itchy",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8420-hot-and-itchy",
+        },
+        {
+            priority = 2440,
+            route = {
+                { y = 0.666, mapID = 1448, label = "Jadefire Rogue", x = 0.334, offMapText = "Travel to Jadefire Rogue in Felwood." },
+                { y = 0.19, mapID = 1448, label = "Jadefire Trickster", x = 0.41, offMapText = "Travel to Jadefire Trickster in Felwood." },
+                { y = 0.214, mapID = 1448, label = "Jadefire Betrayer", x = 0.392, offMapText = "Travel to Jadefire Betrayer in Felwood." },
+                { y = 0.668, mapID = 1448, label = "Jadefire Felsworn", x = 0.354, offMapText = "Travel to Jadefire Felsworn in Felwood." },
+                { y = 0.666, mapID = 1448, label = "Jadefire Shadowstalker", x = 0.35, offMapText = "Travel to Jadefire Shadowstalker in Felwood." },
+                { y = 0.17, mapID = 1448, label = "Jadefire Hellcaller", x = 0.422, offMapText = "Travel to Jadefire Hellcaller in Felwood." },
+                { y = 0.67, mapID = 1448, label = "Xavathras", x = 0.324, offMapText = "Travel to Xavathras in Felwood." },
+                { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
+                { y = 0.506, mapID = 1448, label = "Rakaiah", x = 0.38, offMapText = "Travel to Rakaiah in Felwood." },
+                { y = 0.468, mapID = 1448, label = "Salia", x = 0.388, offMapText = "Travel to Salia in Felwood." },
+                { y = 0.468, mapID = 1448, label = "Moora", x = 0.388, offMapText = "Travel to Moora in Felwood." },
+                { y = 0.532, mapID = 1448, label = "Jaedenar Legionnaire", x = 0.374, offMapText = "Travel to Jaedenar Legionnaire in Felwood." },
+                { y = 0.566, mapID = 1448, label = "Prince Xavalis", x = 0.366, offMapText = "Travel to Prince Xavalis in Felwood." },
+                { y = 0.222, mapID = 1448, label = "Xavaric", x = 0.39, offMapText = "Travel to Xavaric in Felwood." },
+                { y = 0.862, mapID = 1448, label = "Alshirr Banebreath", x = 0.42, offMapText = "Travel to Alshirr Banebreath in Felwood." },
+            },
+            dependsOn = { "accept-8420-hot-and-itchy" },
+            id = "objective-8420-hot-and-itchy",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8420-hot-and-itchy",
+        },
+        {
+            priority = 2450,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "accept-8420-hot-and-itchy", "objective-8420-hot-and-itchy" },
+            id = "turnin-8420-hot-and-itchy",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8420-hot-and-itchy",
+        },
+        {
+            priority = 2460,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "turnin-8420-hot-and-itchy", "turnin-7601-what-niby-commands" },
+            id = "accept-8421-the-wrong-stuff",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8421-the-wrong-stuff",
+        },
+        {
+            priority = 2470,
+            route = {
+                { y = 0.564, mapID = 1448, label = "Tainted Ooze", x = 0.4, offMapText = "Travel to Tainted Ooze in Felwood." },
+                { y = 0.146, mapID = 1448, label = "Irontree Wanderer", x = 0.494, offMapText = "Travel to Irontree Wanderer in Felwood." },
+                { y = 0.298, mapID = 1448, label = "Irontree Stomper", x = 0.486, offMapText = "Travel to Irontree Stomper in Felwood." },
+                { y = 0.182, mapID = 1448, label = "Withered Protector", x = 0.506, offMapText = "Travel to Withered Protector in Felwood." },
+            },
+            dependsOn = { "accept-8421-the-wrong-stuff" },
+            id = "objective-8421-the-wrong-stuff",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8421-the-wrong-stuff",
+        },
+        {
+            priority = 2480,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "accept-8421-the-wrong-stuff", "objective-8421-the-wrong-stuff" },
+            id = "turnin-8421-the-wrong-stuff",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8421-the-wrong-stuff",
+        },
+        {
+            priority = 2490,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Impsy", x = 0.414, offMapText = "Travel to Impsy in Felwood." },
+            },
+            dependsOn = { "turnin-7602-flawless-fel-essence", "turnin-8421-the-wrong-stuff" },
+            id = "accept-7603-kroshius-infernal-core",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7603-kroshius-infernal-core",
+        },
+        {
+            priority = 2500,
+            dependsOn = { "accept-7603-kroshius-infernal-core" },
+            id = "objective-7603-kroshius-infernal-core",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7603-kroshius-infernal-core",
+        },
+        {
+            priority = 2510,
+            route = {
+                { y = 0.448, mapID = 1448, label = "Niby the Almighty", x = 0.414, offMapText = "Travel to Niby the Almighty in Felwood." },
+            },
+            dependsOn = { "accept-7603-kroshius-infernal-core", "objective-7603-kroshius-infernal-core" },
+            id = "turnin-7603-kroshius-infernal-core",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7603-kroshius-infernal-core",
+        },
+        {
+            id = "level-before-accept-7562-morzul-bloodbringer",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7562,
+            priority = 2520,
+        },
+        {
+            priority = 2530,
+            route = {
+                { y = 0.776, mapID = 1453, label = "Spackle Thornberry", x = 0.258, offMapText = "Travel to Spackle Thornberry in Stormwind City." },
+            },
+            id = "accept-7562-morzul-bloodbringer",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7562-morzul-bloodbringer",
+        },
+        {
+            id = "level-before-accept-7562-morzul-bloodbringer-horde",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7562,
+            priority = 2540,
+        },
+        {
+            priority = 2550,
+            route = {
+                { y = 0.158, mapID = 1458, label = "Martha Strain", x = 0.858, offMapText = "Travel to Martha Strain in Undercity." },
+            },
+            id = "accept-7562-morzul-bloodbringer-horde",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7562-morzul-bloodbringer-horde",
+        },
+        {
+            id = "level-before-turnin-7562-morzul-bloodbringer",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7562,
+            priority = 2560,
+        },
+        {
+            priority = 2570,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            dependsOn = { "accept-7562-morzul-bloodbringer", "accept-7562-morzul-bloodbringer-horde" },
+            id = "turnin-7562-morzul-bloodbringer",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7562-morzul-bloodbringer",
+        },
+        {
+            priority = 2580,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            dependsOn = { "turnin-7562-morzul-bloodbringer" },
+            id = "accept-7563-rage-of-blood",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7563-rage-of-blood",
+        },
+        {
+            priority = 2590,
+            id = "objective-7563-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7563-rage-of-blood" },
+            classAction = "objective-7563-quest-work",
+        },
+        {
+            priority = 2600,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            dependsOn = { "accept-7563-rage-of-blood", "objective-7563-quest-work" },
+            id = "turnin-7563-rage-of-blood",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7563-rage-of-blood",
+        },
+        {
+            priority = 2610,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            dependsOn = { "turnin-7563-rage-of-blood", "turnin-7562-morzul-bloodbringer" },
+            id = "accept-7564-wildeyes",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7564-wildeyes",
+        },
+        {
+            priority = 2620,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7564-wildeyes" },
+            id = "turnin-7564-wildeyes",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7564-wildeyes",
+        },
+        {
+            priority = 2630,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "turnin-7564-wildeyes" },
+            id = "accept-7623-lord-banehollow",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7623-lord-banehollow",
+        },
+        {
+            priority = 2640,
+            dependsOn = { "accept-7623-lord-banehollow" },
+            id = "objective-7623-reviewed-mechanics",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7623-reviewed-mechanics",
+        },
+        {
+            priority = 2650,
+            route = {
+                { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
+            },
+            dependsOn = { "accept-7623-lord-banehollow", "objective-7623-reviewed-mechanics" },
+            id = "turnin-7623-lord-banehollow",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7623-lord-banehollow",
+        },
+        {
+            priority = 2660,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            id = "accept-7626-bell-of-dethmoora",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7626-bell-of-dethmoora",
+        },
+        {
+            priority = 2670,
+            dependsOn = { "accept-7626-bell-of-dethmoora" },
+            id = "objective-7626-bell-of-dethmoora",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7626-bell-of-dethmoora",
+        },
+        {
+            priority = 2680,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7626-bell-of-dethmoora", "objective-7626-bell-of-dethmoora" },
+            id = "turnin-7626-bell-of-dethmoora",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7626-bell-of-dethmoora",
+        },
+        {
+            priority = 2690,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            id = "accept-7627-wheel-of-the-black-march",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7627-wheel-of-the-black-march",
+        },
+        {
+            priority = 2700,
+            dependsOn = { "accept-7627-wheel-of-the-black-march" },
+            id = "objective-7627-wheel-of-the-black-march",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7627-wheel-of-the-black-march",
+        },
+        {
+            priority = 2710,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7627-wheel-of-the-black-march", "objective-7627-wheel-of-the-black-march" },
+            id = "turnin-7627-wheel-of-the-black-march",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7627-wheel-of-the-black-march",
+        },
+        {
+            priority = 2720,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Mor'zul Bloodbringer", x = 0.126, offMapText = "Travel to Mor'zul Bloodbringer in Burning Steppes." },
+            },
+            id = "accept-7628-doomsday-candle",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7628-doomsday-candle",
+        },
+        {
+            priority = 2730,
+            dependsOn = { "accept-7628-doomsday-candle" },
+            id = "objective-7628-doomsday-candle",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7628-doomsday-candle",
+        },
+        {
+            priority = 2740,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7628-doomsday-candle", "objective-7628-doomsday-candle" },
+            id = "turnin-7628-doomsday-candle",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7628-doomsday-candle",
+        },
+        {
+            priority = 2750,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "turnin-7626-bell-of-dethmoora", "turnin-7627-wheel-of-the-black-march", "turnin-7628-doomsday-candle" },
+            id = "accept-7630-arcanite",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7630-arcanite",
+        },
+        {
+            priority = 2760,
+            id = "objective-7630-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7630-arcanite" },
+            classAction = "objective-7630-quest-work",
+        },
+        {
+            priority = 2770,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7630-arcanite", "objective-7630-quest-work" },
+            id = "turnin-7630-arcanite",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7630-arcanite",
+        },
+        {
+            priority = 2780,
+            route = {
+                { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
+            },
+            dependsOn = { "turnin-7623-lord-banehollow" },
+            id = "accept-7624-ulathek-the-traitor",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7624-ulathek-the-traitor",
+        },
+        {
+            priority = 2790,
+            route = {
+                { y = 0.484, mapID = 1448, label = "Ulathek", x = 0.406, offMapText = "Travel to Ulathek in Felwood." },
+            },
+            dependsOn = { "accept-7624-ulathek-the-traitor" },
+            id = "objective-7624-ulathek-the-traitor",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-7624-ulathek-the-traitor",
+        },
+        {
+            priority = 2800,
+            route = {
+                { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
+            },
+            dependsOn = { "accept-7624-ulathek-the-traitor", "objective-7624-ulathek-the-traitor" },
+            id = "turnin-7624-ulathek-the-traitor",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7624-ulathek-the-traitor",
+        },
+        {
+            priority = 2810,
+            route = {
+                { y = 0.446, mapID = 1448, label = "Lord Banehollow", x = 0.36, offMapText = "Travel to Lord Banehollow in Felwood." },
+            },
+            dependsOn = { "turnin-7624-ulathek-the-traitor", "turnin-7623-lord-banehollow" },
+            id = "accept-7625-xorothian-stardust",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7625-xorothian-stardust",
+        },
+        {
+            priority = 2820,
+            id = "objective-7625-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7625-xorothian-stardust" },
+            classAction = "objective-7625-quest-work",
+        },
+        {
+            priority = 2830,
+            route = {
+                { y = 0.316, mapID = 1428, label = "Gorzeeki Wildeyes", x = 0.124, offMapText = "Travel to Gorzeeki Wildeyes in Burning Steppes." },
+            },
+            dependsOn = { "accept-7625-xorothian-stardust", "objective-7625-quest-work" },
+            id = "turnin-7625-xorothian-stardust",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7625-xorothian-stardust",
+        },
+        {
+            priority = 2840,
+            route = {
+                { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
+            },
+            id = "accept-7582-the-prisons-casing",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7582-the-prisons-casing",
+        },
+        {
+            priority = 2850,
+            id = "objective-7582-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7582-the-prisons-casing" },
+            classAction = "objective-7582-quest-work",
+        },
+        {
+            priority = 2860,
+            route = {
+                { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
+            },
+            dependsOn = { "accept-7582-the-prisons-casing", "objective-7582-quest-work" },
+            id = "turnin-7582-the-prisons-casing",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7582-the-prisons-casing",
+        },
+        {
+            id = "level-before-handoff-7581-class-dungeon",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                class = { 9 },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7581,
+            priority = 2870,
+        },
+        {
+            id = "handoff-7581-class-dungeon",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            priority = 2880,
+            classAction = "handoff-7581-class-dungeon",
+        },
+        {
+            priority = 2890,
+            route = {
+                { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
+            },
+            id = "accept-7583-suppression",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7583-suppression",
+        },
+        {
+            priority = 2900,
+            id = "objective-7583-quest-work",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7583-suppression" },
+            classAction = "objective-7583-quest-work",
+        },
+        {
+            priority = 2910,
+            route = {
+                { y = 0.502, mapID = 1419, label = "Daio the Decrepit", x = 0.34, offMapText = "Travel to Daio the Decrepit in Blasted Lands." },
+            },
+            dependsOn = { "accept-7583-suppression", "objective-7583-quest-work" },
+            id = "turnin-7583-suppression",
+            conditions = {
+                all = {
+                    { class = 9 },
+                    {
+                        class = { 9 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7583-suppression",
+        },
     },
+    routeMode = "ordered",
 })

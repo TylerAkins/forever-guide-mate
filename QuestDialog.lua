@@ -10,6 +10,9 @@ end
 function QuestDialog:Uses(questID)
     if not self:Enabled() or type(questID) ~= "number" then return false end
     local guide = ns.guides[ns.charDB.selectedGuide]
+    if guide and guide.routeMode == "ordered" then
+        return questID == self:CurrentQuestID("turnin")
+    end
     return guide and ns.GuideUsesQuest(guide, questID) or false
 end
 
@@ -89,6 +92,7 @@ function QuestDialog:SameGiverGoals(kind)
         goals[#goals + 1] = goal
     end
     Add(current)
+    if guide.routeMode == "ordered" then return goals end
     local pool = guide.goals
     local segment = engine.currentSegment
     if type(segment) == "table" and type(segment.goals) == "table"
@@ -366,10 +370,13 @@ end
 function QuestDialog:Accept(api)
     local questID = Call(api.GetQuestID)
     local selected = self.expectDetailAccept and questID == self.pendingAcceptID
+    local guide = ns.Engine and ns.Engine.currentGuide
+    if guide and guide.routeMode == "ordered" and questID ~= self:CurrentAcceptQuestID() then return end
     if not (self:Accepts(questID) or selected) or not self:ActionsAllowed() then return end
     self.expectDetailAccept = nil
     self.pendingAcceptID = nil
     Later(function()
+        if guide and guide.routeMode == "ordered" and questID ~= QuestDialog:CurrentAcceptQuestID() then return end
         if not QuestDialog:ActionsAllowed() then
             if selected then
                 QuestDialog.expectDetailAccept = true
@@ -384,6 +391,8 @@ end
 function QuestDialog:Progress(api)
     local questID = Call(api.GetQuestID)
     local wanted = self:Uses(questID) or questID == self.pendingTurnInID
+    local guide = ns.Engine and ns.Engine.currentGuide
+    if guide and guide.routeMode == "ordered" then wanted = questID == self:CurrentQuestID("turnin") end
     if not wanted or not Call(api.IsQuestCompletable) or not self:ActionsAllowed() then return end
     local questLog = type(api) == "table" and api.C_QuestLog or nil
     if type(questLog) == "table" and type(questLog.IsComplete) == "function" then
@@ -395,6 +404,7 @@ function QuestDialog:Progress(api)
     -- Completing inside the progress event is ignored. The click has to land
     -- after the list has finished opening the quest.
     Later(function()
+        if guide and guide.routeMode == "ordered" and questID ~= QuestDialog:CurrentQuestID("turnin") then return end
         if not QuestDialog:ActionsAllowed() then
             QuestDialog.pendingTurnInID = remembered
             return
@@ -407,10 +417,13 @@ function QuestDialog:Reward(api)
     local questID = Call(api.GetQuestID)
     local choices = Call(api.GetNumQuestChoices)
     local wanted = self:Uses(questID) or questID == self.pendingTurnInID
+    local guide = ns.Engine and ns.Engine.currentGuide
+    if guide and guide.routeMode == "ordered" then wanted = questID == self:CurrentQuestID("turnin") end
     if not wanted or type(choices) ~= "number" or choices > 1 or not self:ActionsAllowed() then return end
     local remembered = self.pendingTurnInID
     self.pendingTurnInID = nil
     Later(function()
+        if guide and guide.routeMode == "ordered" and questID ~= QuestDialog:CurrentQuestID("turnin") then return end
         if not QuestDialog:ActionsAllowed() then
             QuestDialog.pendingTurnInID = remembered
             return

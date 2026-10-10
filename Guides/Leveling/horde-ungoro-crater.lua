@@ -1,1047 +1,2607 @@
 local _, ns = ...
 
--- Forever Casual spine: Un'Goro Crater (53-54)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    THE_BARRENS = 1413,
-    FERALAS = 1444,
-    TANARIS = 1446,
-    UN_GORO_CRATER = 1449,
-    THUNDER_BLUFF = 1456,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-ungoro-crater",
+    revision = 3,
     title = "Un'Goro Crater",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-ungoro-crater",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 53 } },
+            {
+                level = { min = 53 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-turnin-4494-march-of-the-silithid",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4494,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
+            },
+            text = "Turn in March of the Silithid to Alchemist Pestlezugg.",
             id = "turnin-4494-march-of-the-silithid",
             kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in March of the Silithid.",
-            complete = QuestState(4494, "completed"),
-            route = {
-                Point(1446, 0.5089, 0.2696, "March of the Silithid",
-                    "Travel to March of the Silithid."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4494, state = "completed" },
+            },
+            sourceStep = 1,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 32, 7732 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-4496-bungle-in-the-jungle",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4496,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.2696, mapID = 1446, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris.", x = 0.5089 },
+            },
+            text = "Accept Bungle in the Jungle from Alchemist Pestlezugg.",
             id = "accept-4496-bungle-in-the-jungle",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Bungle in the Jungle.",
-            complete = QuestState(4496, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.5089, 0.2696, "Bungle in the Jungle",
-                    "Travel to Bungle in the Jungle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4496, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4493, 4494 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
+            },
+            text = "Accept Larion and Muigin from Larion.",
             id = "accept-4145-larion-and-muigin",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Larion and Muigin.",
-            complete = QuestState(4145, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4554, 0.0872, "Larion and Muigin",
-                    "Travel to Larion and Muigin."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4145, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
+            },
+            text = "Accept Expedition Salvation from Williden Marshal.",
             id = "accept-3881-expedition-salvation",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Expedition Salvation.",
-            complete = QuestState(3881, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4395, 0.0714, "Expedition Salvation",
-                    "Travel to Expedition Salvation."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3881, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.0724, mapID = 1449, label = "Hol'anyee Marshal", offMapText = "Travel to Hol'anyee Marshal in Un'Goro Crater.", x = 0.4389 },
+            },
+            text = "Accept Alien Ecology from Hol'anyee Marshal.",
             id = "accept-3883-alien-ecology",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Alien Ecology.",
-            complete = QuestState(3883, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4389, 0.0724, "Alien Ecology",
-                    "Travel to Alien Ecology."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3883, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.0742, mapID = 1449, label = "Spark Nilminer", offMapText = "Travel to Spark Nilminer in Un'Goro Crater.", x = 0.435 },
+            },
+            text = "Accept Roll the Bones from Spark Nilminer.",
             id = "accept-3882-roll-the-bones",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Roll the Bones.",
-            complete = QuestState(3882, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4350, 0.0742, "Roll the Bones",
-                    "Travel to Roll the Bones."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3882, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept The Western Pylon from J.D. Collie.",
             id = "accept-4288-the-western-pylon",
             kind = "accept",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Western Pylon.",
-            complete = QuestState(4288, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0679, "The Western Pylon",
-                    "Travel to The Western Pylon."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4288, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            route = {
+                { mapID = 1449, x = 0.4355, y = 0.0842, label = "Beware of Pterrordax", offMapText = "Travel to Beware of Pterrordax." },
+            },
+            text = "Accept Beware of Pterrordax.",
             id = "accept-4501-beware-of-pterrordax",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Beware of Pterrordax.",
-            complete = QuestState(4501, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0681, "Beware of Pterrordax",
-                    "Travel to Beware of Pterrordax."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4501, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.085, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
+            },
+            text = "Accept Lost! from Spraggle Frock.",
             id = "accept-4492-lost",
             kind = "accept",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Lost!.",
-            complete = QuestState(4492, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4362, 0.0850, "Lost!",
-                    "Travel to Lost!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4492, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 120,
+            route = {
+                { y = 0.1159, mapID = 1449, label = "Shizzle", offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4424 },
+            },
+            text = "Accept Shizzle's Flyer from Shizzle.",
             id = "accept-4503-shizzle-s-flyer",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Shizzle's Flyer.",
-            complete = QuestState(4503, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4424, 0.1159, "Shizzle's Flyer",
-                    "Travel to Shizzle's Flyer."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4503, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 130,
+            text = "Kill 10 Pterrordax.",
+            route = {
+                { y = 0.098, mapID = 1449, label = "Pterrordax", offMapText = "Travel to Pterrordax.", x = 0.56 },
+            },
+            dependsOn = { "accept-4501-beware-of-pterrordax" },
             id = "objective-4501-1-pterrordax",
             kind = "objective",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Pterrordax.",
-            complete = QuestObjective(4501, 1, "Pterrordax"),
-            dependsOn = { "accept-4501-beware-of-pterrordax" },
-            route = {
-                Point(1449, 0.5600, 0.0980, "Pterrordax",
-                    "Travel to Pterrordax."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4501, text = "Pterrordax", index = 1, count = 10 },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-4145-3-bloodpetal-flayer",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Bloodpetal Flayer.",
+            complete = {
+                questObjective = { id = 4145, index = 3, text = "Bloodpetal Flayer", count = 5 },
+            },
+            route = {
+                { mapID = 1449, x = 0.5579999999999999, y = 0.16, label = "Bloodpetal Flayer", offMapText = "Travel to Bloodpetal Flayer." },
+            },
+            sourceStep = 11,
+            priority = 140,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4145-larion-and-muigin" },
+        },
+        {
+            priority = 150,
+            route = {
+                { y = 0.1636, mapID = 1449, label = "Un'Goro Gorilla", offMapText = "Travel to Un'Goro Gorilla.", x = 0.6423 },
+            },
+            text = "Collect 2 Un'Goro Gorilla Pelt.",
             id = "objective-4289-1-un-goro-gorilla",
             kind = "objective",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Un'Goro Gorilla.",
-            complete = QuestObjective(4289, 1, "Un'Goro Gorilla"),
-            route = {
-                Point(1449, 0.6423, 0.1636, "Un'Goro Gorilla",
-                    "Travel to Un'Goro Gorilla."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4289, text = "Un'Goro Gorilla", index = 1, count = 2 },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "objective-4292-1-torwa-s-pouch",
+            id = "objective-4289-2-un-goro-stomper-pelt",
             kind = "objective",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Torwa's Pouch.",
-            complete = QuestObjective(4292, 1, "Torwa's Pouch"),
-            useClientPin = true,
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            text = "Collect 2 Un'Goro Stomper Pelt.",
+            complete = {
+                questObjective = { id = 4289, index = 2, text = "Un'Goro Stomper Pelt", count = 2 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6423000000000001, y = 0.1636, label = "Un'Goro Stomper Pelt", offMapText = "Travel to Un'Goro Stomper Pelt." },
+            },
+            sourceStep = 13,
+            priority = 160,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-4289-3-un-goro-thunderer-pelt",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            text = "Collect 2 Un'Goro Thunderer Pelt.",
+            complete = {
+                questObjective = { id = 4289, index = 3, text = "Un'Goro Thunderer Pelt", count = 2 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6423000000000001, y = 0.1636, label = "Un'Goro Thunderer Pelt", offMapText = "Travel to Un'Goro Thunderer Pelt." },
+            },
+            sourceStep = 14,
+            priority = 170,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "objective-3881-1-crate-of-foodstuffs",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
+            },
+            text = "Collect 1 Crate of Foodstuffs.",
+            complete = {
+                questObjective = { id = 3881, index = 1, text = "Crate of Foodstuffs", count = 1 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6851, y = 0.3654, label = "Crate of Foodstuffs", offMapText = "Travel to Crate of Foodstuffs." },
+            },
+            sourceStep = 15,
+            priority = 180,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3881-expedition-salvation" },
+        },
+        {
+            id = "objective-4145-4-bloodpetal-thresher",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Bloodpetal Thresher.",
+            complete = {
+                questObjective = { id = 4145, index = 4, text = "Bloodpetal Thresher", count = 5 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6759999999999999, y = 0.34600000000000003, label = "Bloodpetal Thresher", offMapText = "Travel to Bloodpetal Thresher." },
+            },
+            sourceStep = 16,
+            priority = 190,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4145-larion-and-muigin" },
+        },
+        {
+            id = "objective-4145-1-bloodpetal-lasher",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Bloodpetal Lasher.",
+            complete = {
+                questObjective = { id = 4145, index = 1, text = "Bloodpetal Lasher", count = 5 },
+            },
+            route = {
+                { mapID = 1449, x = 0.6759999999999999, y = 0.34600000000000003, label = "Bloodpetal Lasher", offMapText = "Travel to Bloodpetal Lasher." },
+            },
+            sourceStep = 16,
+            priority = 200,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4145-larion-and-muigin" },
+        },
+        {
+            priority = 210,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
+            },
+            text = "Open Torwa's Pouch to obtain Preserved Threshadon Meat and Preserved Pheromone Mixture. Keep both for the bait.",
+            id = "objective-4292-1-torwa-s-pouch",
+            kind = "note",
+            useClientPin = false,
+            complete = {
+                any = {
+                    {
+                        all = {
+                            {
+                                item = { name = "Preserved Threshadon Meat", minCount = 1 },
+                            },
+                            {
+                                item = { name = "Preserved Pheromone Mixture", minCount = 1 },
+                            },
+                        },
+                    },
+                    {
+                        quest = { id = 4292, state = "complete" },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1449, x = 0.7992, y = 0.499, label = "Lar'korwi's Head", offMapText = "Travel to Lar'korwi's Head." },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4291 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            dependsOn = {},
+            sourceInstructionStep = 18,
+            sourceInstructionIndex = 1,
+            checkpointQuest = 4292,
+            instructionOnly = true,
+            rememberPreparation = 4292,
+        },
+        {
+            priority = 220,
+            route = {
+                { mapID = 1449, x = 0.7992, y = 0.499, label = "Lar'korwi bait site", offMapText = "Travel to Lar'korwi bait site." },
+            },
+            text = "At the eastern hillside, place the Preserved Threshadon Meat, then apply the Preserved Pheromone Mixture. Kill Lar'korwi when he arrives and loot his head.",
             id = "objective-4292-1-preserved-threshadon-meat",
             kind = "objective",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Preserved Threshadon Meat.",
-            complete = QuestObjective(4292, 1, "Preserved Threshadon Meat"),
-            route = {
-                Point(1449, 0.7992, 0.4990, "Preserved Threshadon Meat",
-                    "Travel to Preserved Threshadon Meat."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4292, index = 1, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4291 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 230,
+            text = "Turn in The Apes of Un'Goro to Torwa Pathfinder.",
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            dependsOn = {
+                "objective-4289-1-un-goro-gorilla",
+                "objective-4289-2-un-goro-stomper-pelt",
+                "objective-4289-3-un-goro-thunderer-pelt",
+            },
             id = "turnin-4289-the-apes-of-un-goro",
             kind = "turnin",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Apes of Un'Goro.",
-            complete = QuestState(4289, "completed"),
-            dependsOn = { "objective-4289-1-un-goro-gorilla" },
-            route = {
-                Point(1449, 0.7164, 0.7597, "The Apes of Un'Goro",
-                    "Travel to The Apes of Un'Goro."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4289, state = "completed" },
+            },
+            sourceStep = 19,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 240,
+            text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            dependsOn = { "objective-4292-1-torwa-s-pouch", "objective-4292-1-preserved-threshadon-meat" },
             id = "turnin-4292-the-bait-for-lar-korwi",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Bait for Lar'korwi.",
-            complete = QuestState(4292, "completed"),
-            dependsOn = { "objective-4292-1-torwa-s-pouch", "objective-4292-1-preserved-threshadon-meat" },
-            route = {
-                Point(1449, 0.7164, 0.7597, "The Bait for Lar'korwi",
-                    "Travel to The Bait for Lar'korwi."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4292, state = "completed" },
+            },
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4291 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            route = {
+                { y = 0.7597, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7164 },
+            },
+            text = "Accept The Mighty U'cha from Torwa Pathfinder.",
             id = "accept-4301-the-mighty-u-cha",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Mighty U'cha.",
-            complete = QuestState(4301, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.7164, 0.7597, "The Mighty U'cha",
-                    "Travel to The Mighty U'cha."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4301, state = "activeOrCompleted" },
+            },
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4289 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 260,
+            text = "Kill 10 Pterrordax.",
+            route = {
+                { y = 0.864, mapID = 1449, label = "Pterrordax", offMapText = "Travel to Pterrordax.", x = 0.58 },
+            },
+            dependsOn = { "accept-4501-beware-of-pterrordax" },
             id = "objective-4501-1-pterrordax-2",
             kind = "objective",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Pterrordax.",
-            complete = QuestObjective(4501, 1, "Pterrordax"),
-            dependsOn = { "accept-4501-beware-of-pterrordax" },
-            route = {
-                Point(1449, 0.5800, 0.8640, "Pterrordax",
-                    "Travel to Pterrordax."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4501, text = "Pterrordax", index = 1, count = 10 },
+            },
+            sourceStep = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 270,
+            text = "Enter the Slithering Scar cave in southern Un'Goro Crater. Use the Unused Scraping Vial inside the hive to collect a Hive Wall Sample.",
+            route = {
+                { mapID = 1449, x = 0.4874, y = 0.8521, label = "Hive Wall Sample", offMapText = "Travel to Hive Wall Sample." },
+            },
+            dependsOn = { "accept-3883-alien-ecology" },
             id = "objective-3883-1-unused-scraping-vial",
             kind = "objective",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Unused Scraping Vial.",
-            complete = QuestObjective(3883, 1, "Unused Scraping Vial"),
-            dependsOn = { "accept-3883-alien-ecology" },
-            route = {
-                Point(1449, 0.4995, 0.8170, "Unused Scraping Vial",
-                    "Travel to Unused Scraping Vial."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 3883, text = "Unused Scraping Vial", index = 1, count = 1 },
+            },
+            sourceStep = 21,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-4496-1-gorishi-scent-gland",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            text = "Collect 1 Gorishi Scent Gland.",
+            complete = {
+                questObjective = { id = 4496, index = 1, text = "Gorishi Scent Gland", count = 1 },
+            },
+            route = {
+                { mapID = 1449, x = 0.49950000000000006, y = 0.8170000000000001, label = "Gorishi Scent Gland", offMapText = "Travel to Gorishi Scent Gland." },
+            },
+            sourceStep = 22,
+            priority = 280,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4493, 4494 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4496-bungle-in-the-jungle" },
+        },
+        {
+            id = "objective-3881-2-research-equipment",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
+            },
+            text = "Collect 1 Research Equipment.",
+            complete = {
+                questObjective = { id = 3881, index = 2, text = "Research Equipment", count = 1 },
+            },
+            route = {
+                { mapID = 1449, x = 0.3847, y = 0.6611, label = "Research Equipment", offMapText = "Travel to Research Equipment." },
+            },
+            sourceStep = 23,
+            priority = 290,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3881-expedition-salvation" },
+        },
+        {
+            id = "level-before-accept-974-finding-the-source",
+            kind = "note",
+            text = "Reach level 51 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 51 },
+            },
+            requiredLevel = 51,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 974,
+            priority = 300,
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
+            },
+            text = "Accept Finding the Source from Krakle.",
             id = "accept-974-finding-the-source",
             kind = "accept",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Finding the Source.",
-            complete = QuestState(974, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.3093, 0.5043, "Finding the Source",
-                    "Travel to Finding the Source."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 51 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 974, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 320,
+            text = "For Finding the Source: Krakle in Un'Goro Crater wants you to find the hottest area of Fire Plume Ridge. Whenever you find a hot spot, right click the thermometer to check the temperature. Keep looking until you find the hottest one.",
+            id = "objective-974-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 51 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 974, state = "complete" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-974-finding-the-source" },
+        },
+        {
+            priority = 330,
+            text = "Turn in Finding the Source to Krakle.",
+            route = {
+                { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
+            },
+            dependsOn = { "accept-974-finding-the-source", "objective-974-quest-work" },
             id = "turnin-974-finding-the-source",
             kind = "turnin",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Finding the Source.",
-            complete = QuestState(974, "completed"),
-            dependsOn = { "accept-974-finding-the-source" },
-            route = {
-                Point(1449, 0.3093, 0.5043, "Finding the Source",
-                    "Travel to Finding the Source."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 51 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 974, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 340,
+            route = {
+                { y = 0.5043, mapID = 1449, label = "Krakle", offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093 },
+            },
+            text = "Accept The New Springs from Krakle.",
             id = "accept-980-the-new-springs",
             kind = "accept",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 54 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The New Springs.",
-            complete = QuestState(980, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.3093, 0.5043, "The New Springs",
-                    "Travel to The New Springs."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 51 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 980, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 974 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-4145-2-bloodpetal-trapper",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Bloodpetal Trapper.",
+            complete = {
+                questObjective = { id = 4145, index = 2, text = "Bloodpetal Trapper", count = 5 },
+            },
+            route = {
+                { mapID = 1449, x = 0.348, y = 0.4, label = "Bloodpetal Trapper", offMapText = "Travel to Bloodpetal Trapper." },
+            },
+            sourceStep = 28,
+            priority = 350,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4145-larion-and-muigin" },
+        },
+        {
+            id = "objective-3882-1-dinosaur-bone",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
+            },
+            text = "Collect 8 Dinosaur Bone.",
+            complete = {
+                questObjective = { id = 3882, index = 1, text = "Dinosaur Bone", count = 8 },
+            },
+            route = {
+                { mapID = 1449, x = 0.348, y = 0.4, label = "Dinosaur Bone", offMapText = "Travel to Dinosaur Bone." },
+            },
+            sourceStep = 29,
+            priority = 360,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-3882-roll-the-bones" },
+        },
+        {
+            id = "objective-4503-1-webbed-diemetradon-scale",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
+            },
+            text = "Collect 8 Webbed Diemetradon Scale.",
+            complete = {
+                questObjective = { id = 4503, index = 1, text = "Webbed Diemetradon Scale", count = 8 },
+            },
+            route = {
+                { mapID = 1449, x = 0.348, y = 0.4, label = "Webbed Diemetradon Scale", offMapText = "Travel to Webbed Diemetradon Scale." },
+            },
+            sourceStep = 29,
+            priority = 370,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4503-shizzle-s-flyer" },
+        },
+        {
+            id = "objective-4503-2-webbed-pterrordax-scale",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
+            },
+            text = "Collect 8 Webbed Pterrordax Scale.",
+            complete = {
+                questObjective = { id = 4503, index = 2, text = "Webbed Pterrordax Scale", count = 8 },
+            },
+            route = {
+                { mapID = 1449, x = 0.348, y = 0.396, label = "Webbed Pterrordax Scale", offMapText = "Travel to Webbed Pterrordax Scale." },
+            },
+            sourceStep = 30,
+            priority = 380,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4503-shizzle-s-flyer" },
+        },
+        {
+            id = "objective-4501-2-frenzied-pterrordax",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
+            },
+            text = "Kill 15 Frenzied Pterrordax.",
+            complete = {
+                questObjective = { id = 4501, index = 2, text = "Frenzied Pterrordax", count = 15 },
+            },
+            route = {
+                { mapID = 1449, x = 0.348, y = 0.396, label = "Frenzied Pterrordax", offMapText = "Travel to Frenzied Pterrordax." },
+            },
+            sourceStep = 31,
+            priority = 390,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4501-beware-of-pterrordax" },
+        },
+        {
+            priority = 400,
+            text = "Turn in Lost! to Ringo.",
+            route = {
+                { y = 0.4985, mapID = 1449, label = "Ringo", offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519 },
+            },
+            dependsOn = { "accept-4492-lost" },
             id = "turnin-4492-lost",
             kind = "turnin",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Lost!.",
-            complete = QuestState(4492, "completed"),
-            dependsOn = { "accept-4492-lost" },
-            route = {
-                Point(1449, 0.5190, 0.4985, "Lost!",
-                    "Travel to Lost!."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4492, state = "completed" },
+            },
+            sourceStep = 34,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 410,
+            route = {
+                { y = 0.4985, mapID = 1449, label = "Ringo", offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519 },
+            },
+            text = "Accept A Little Help From My Friends from Ringo.",
             id = "accept-4491-a-little-help-from-my-friends",
             kind = "accept",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept A Little Help From My Friends.",
-            complete = QuestState(4491, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.5190, 0.4985, "A Little Help From My Friends",
-                    "Travel to A Little Help From My Friends."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4491, state = "activeOrCompleted" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4492 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 420,
+            route = {
+                { mapID = 1449, x = 0.4362, y = 0.0851, label = "A Little Help From My Friends", offMapText = "Travel to A Little Help From My Friends." },
+            },
+            text = "Escort Ringo north to Spraggle Frock at Marshal's Refuge. Stay close and protect him. When he faints, use Spraggle's Canteen beside him, then continue the escort.",
+            id = "objective-4491-authored-escort",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4491, state = "complete" },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4492 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4491-a-little-help-from-my-friends" },
+        },
+        {
+            priority = 430,
+            text = "Turn in A Little Help From My Friends to Spraggle Frock.",
+            route = {
+                { y = 0.0851, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
+            },
+            dependsOn = { "accept-4491-a-little-help-from-my-friends", "objective-4491-authored-escort" },
             id = "turnin-4491-a-little-help-from-my-friends",
             kind = "turnin",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in A Little Help From My Friends.",
-            complete = QuestState(4491, "completed"),
-            dependsOn = { "accept-4491-a-little-help-from-my-friends" },
-            route = {
-                Point(1449, 0.4362, 0.0851, "A Little Help From My Friends",
-                    "Travel to A Little Help From My Friends."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4491, state = "completed" },
+            },
+            sourceStep = 36,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4492 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 440,
+            text = "Turn in Beware of Pterrordax to Spraggle Frock.",
+            route = {
+                { y = 0.0851, mapID = 1449, label = "Spraggle Frock", offMapText = "Travel to Spraggle Frock in Un'Goro Crater.", x = 0.4362 },
+            },
+            dependsOn = {
+                "accept-4501-beware-of-pterrordax",
+                "objective-4501-1-pterrordax",
+                "objective-4501-1-pterrordax-2",
+                "objective-4501-2-frenzied-pterrordax",
+            },
             id = "turnin-4501-beware-of-pterrordax",
             kind = "turnin",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Beware of Pterrordax.",
-            complete = QuestState(4501, "completed"),
-            dependsOn = { "accept-4501-beware-of-pterrordax", "objective-4501-1-pterrordax", "objective-4501-1-pterrordax-2" },
-            route = {
-                Point(1449, 0.4362, 0.0851, "Beware of Pterrordax",
-                    "Travel to Beware of Pterrordax."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4501, state = "completed" },
+            },
+            sourceStep = 36,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 450,
+            text = "Turn in Roll the Bones to Spark Nilminer.",
+            route = {
+                { y = 0.0743, mapID = 1449, label = "Spark Nilminer", offMapText = "Travel to Spark Nilminer in Un'Goro Crater.", x = 0.435 },
+            },
+            dependsOn = { "accept-3882-roll-the-bones", "objective-3882-1-dinosaur-bone" },
             id = "turnin-3882-roll-the-bones",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Roll the Bones.",
-            complete = QuestState(3882, "completed"),
-            dependsOn = { "accept-3882-roll-the-bones" },
-            route = {
-                Point(1449, 0.4350, 0.0743, "Roll the Bones",
-                    "Travel to Roll the Bones."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3882, state = "completed" },
+            },
+            sourceStep = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "turnin-4288-the-western-pylon",
-            kind = "turnin",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Western Pylon.",
-            complete = QuestState(4288, "completed"),
+            priority = 460,
+            text = "Discover and examine the Western Crystal Pylon in western Un'Goro Crater.",
+            id = "objective-4288-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 4288, index = 1, count = 1 },
+            },
+            sourceStep = 39,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
             dependsOn = { "accept-4288-the-western-pylon" },
             route = {
-                Point(1449, 0.4347, 0.0679, "The Western Pylon",
-                    "Travel to The Western Pylon."),
+                { mapID = 1449, x = 0.2379, y = 0.5919, label = "The Western Pylon", offMapText = "Travel to The Western Pylon." },
             },
         },
         {
+            priority = 470,
+            text = "Turn in The Western Pylon to J.D. Collie.",
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-4288-the-western-pylon", "objective-4288-quest-work" },
+            id = "turnin-4288-the-western-pylon",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4288, state = "completed" },
+            },
+            sourceStep = 39,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 480,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept The Northern Pylon from J.D. Collie.",
             id = "accept-4285-the-northern-pylon",
             kind = "accept",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Northern Pylon.",
-            complete = QuestState(4285, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0679, "The Northern Pylon",
-                    "Travel to The Northern Pylon."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4285, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 490,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept The Eastern Pylon from J.D. Collie.",
             id = "accept-4287-the-eastern-pylon",
             kind = "accept",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Eastern Pylon.",
-            complete = QuestState(4287, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0679, "The Eastern Pylon",
-                    "Travel to The Eastern Pylon."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4287, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 500,
+            text = "Turn in Alien Ecology to Hol'anyee Marshal.",
+            route = {
+                { y = 0.0679, mapID = 1449, label = "Hol'anyee Marshal", offMapText = "Travel to Hol'anyee Marshal in Un'Goro Crater.", x = 0.4347 },
+            },
+            dependsOn = { "accept-3883-alien-ecology", "objective-3883-1-unused-scraping-vial" },
             id = "turnin-3883-alien-ecology",
             kind = "turnin",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Alien Ecology.",
-            complete = QuestState(3883, "completed"),
-            dependsOn = { "accept-3883-alien-ecology", "objective-3883-1-unused-scraping-vial" },
-            route = {
-                Point(1449, 0.4347, 0.0679, "Alien Ecology",
-                    "Travel to Alien Ecology."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3883, state = "completed" },
+            },
+            sourceStep = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 510,
+            text = "Turn in Expedition Salvation to Williden Marshal.",
+            route = {
+                { y = 0.0714, mapID = 1449, label = "Williden Marshal", offMapText = "Travel to Williden Marshal in Un'Goro Crater.", x = 0.4395 },
+            },
+            dependsOn = {
+                "accept-3881-expedition-salvation",
+                "objective-3881-1-crate-of-foodstuffs",
+                "objective-3881-2-research-equipment",
+            },
             id = "turnin-3881-expedition-salvation",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Expedition Salvation.",
-            complete = QuestState(3881, "completed"),
-            dependsOn = { "accept-3881-expedition-salvation" },
-            route = {
-                Point(1449, 0.4395, 0.0714, "Expedition Salvation",
-                    "Travel to Expedition Salvation."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3881, state = "completed" },
+            },
+            sourceStep = 41,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 520,
+            text = "Turn in Larion and Muigin to Larion.",
+            route = {
+                { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
+            },
+            dependsOn = {
+                "accept-4145-larion-and-muigin",
+                "objective-4145-3-bloodpetal-flayer",
+                "objective-4145-4-bloodpetal-thresher",
+                "objective-4145-1-bloodpetal-lasher",
+                "objective-4145-2-bloodpetal-trapper",
+            },
             id = "turnin-4145-larion-and-muigin",
             kind = "turnin",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Larion and Muigin.",
-            complete = QuestState(4145, "completed"),
-            dependsOn = { "accept-4145-larion-and-muigin" },
-            route = {
-                Point(1449, 0.4554, 0.0872, "Larion and Muigin",
-                    "Travel to Larion and Muigin."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4145, state = "completed" },
+            },
+            sourceStep = 42,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 530,
+            route = {
+                { y = 0.0872, mapID = 1449, label = "Larion", offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554 },
+            },
+            text = "Accept Marvon's Workshop from Larion.",
             id = "accept-4147-marvon-s-workshop",
             kind = "accept",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Marvon's Workshop.",
-            complete = QuestState(4147, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4554, 0.0872, "Marvon's Workshop",
-                    "Travel to Marvon's Workshop."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4147, state = "activeOrCompleted" },
+            },
+            sourceStep = 42,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4145 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 540,
+            text = "Turn in Shizzle's Flyer to Shizzle.",
+            route = {
+                { y = 0.1159, mapID = 1449, label = "Shizzle", offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4423 },
+            },
+            dependsOn = {
+                "accept-4503-shizzle-s-flyer",
+                "objective-4503-1-webbed-diemetradon-scale",
+                "objective-4503-2-webbed-pterrordax-scale",
+            },
             id = "turnin-4503-shizzle-s-flyer",
             kind = "turnin",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Shizzle's Flyer.",
-            complete = QuestState(4503, "completed"),
-            dependsOn = { "accept-4503-shizzle-s-flyer" },
-            route = {
-                Point(1449, 0.4423, 0.1159, "Shizzle's Flyer",
-                    "Travel to Shizzle's Flyer."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4503, state = "completed" },
+            },
+            sourceStep = 43,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 550,
+            route = {
+                { y = 0.1345, mapID = 1449, label = "Karna Remtravel", offMapText = "Travel to Karna Remtravel in Un'Goro Crater.", x = 0.4638 },
+            },
+            text = "Accept Chasing A-Me 01 from Karna Remtravel.",
             id = "accept-4243-chasing-a-me-01",
             kind = "accept",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Chasing A-Me 01.",
-            complete = QuestState(4243, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4638, 0.1345, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4243, state = "activeOrCompleted" },
+            },
+            sourceStep = 44,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 560,
+            text = "Collect 1 U'cha's Pelt.",
+            route = {
+                { mapID = 1449, x = 0.6815000000000001, y = 0.1258, label = "U'cha's Pelt", offMapText = "Travel to U'cha's Pelt." },
+            },
+            dependsOn = { "accept-4301-the-mighty-u-cha" },
             id = "objective-4301-1-u-cha",
             kind = "objective",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill U'cha.",
-            complete = QuestObjective(4301, 1, "U'cha"),
-            dependsOn = { "accept-4301-the-mighty-u-cha" },
-            route = {
-                Point(1449, 0.6388, 0.1644, "U'cha",
-                    "Travel to U'cha."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4301, text = "U'cha", index = 1, count = 1 },
+            },
+            sourceStep = 46,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4289 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 570,
+            text = "Turn in Chasing A-Me 01 to A-Me 01.",
+            route = {
+                { mapID = 1449, x = 0.6765000000000001, y = 0.16760000000000003, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-4243-chasing-a-me-01" },
             id = "turnin-4243-chasing-a-me-01",
             kind = "turnin",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Chasing A-Me 01.",
-            complete = QuestState(4243, "completed"),
-            dependsOn = { "accept-4243-chasing-a-me-01" },
-            route = {
-                Point(1449, 0.6587, 0.1675, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4243, state = "completed" },
+            },
+            sourceStep = 47,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 580,
+            route = {
+                { mapID = 1449, x = 0.6765000000000001, y = 0.16760000000000003, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater." },
+            },
+            text = "Accept Chasing A-Me 01 from A-Me 01.",
             id = "accept-4244-chasing-a-me-01",
             kind = "accept",
-            priority = 390,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Chasing A-Me 01.",
-            complete = QuestState(4244, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.6587, 0.1675, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4244, state = "activeOrCompleted" },
+            },
+            sourceStep = 47,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 590,
+            text = "For Chasing A-Me 01: Find a Mithril Casing and return to A-Me 01 in Un'Goro Crater.",
+            id = "objective-4244-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4244, state = "complete" },
+            },
+            sourceStep = 48,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-4244-chasing-a-me-01" },
+        },
+        {
+            priority = 600,
+            text = "Turn in Chasing A-Me 01 to A-Me 01.",
+            route = {
+                { y = 0.1676, mapID = 1449, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765 },
+            },
+            dependsOn = { "accept-4244-chasing-a-me-01", "objective-4244-quest-work" },
             id = "turnin-4244-chasing-a-me-01",
             kind = "turnin",
-            priority = 400,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Chasing A-Me 01.",
-            complete = QuestState(4244, "completed"),
-            dependsOn = { "accept-4244-chasing-a-me-01" },
-            route = {
-                Point(1449, 0.6765, 0.1676, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4244, state = "completed" },
+            },
+            sourceStep = 48,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4243 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 610,
+            route = {
+                { y = 0.1676, mapID = 1449, label = "A-Me 01", offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765 },
+            },
+            text = "Accept Chasing A-Me 01 from A-Me 01.",
             id = "accept-4245-chasing-a-me-01",
             kind = "accept",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Chasing A-Me 01.",
-            complete = QuestState(4245, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.6765, 0.1676, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4245, state = "activeOrCompleted" },
+            },
+            sourceStep = 48,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 620,
+            text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
+            route = {
+                { y = 0.1345, mapID = 1449, label = "Karna Remtravel", offMapText = "Travel to Karna Remtravel in Un'Goro Crater.", x = 0.4638 },
+            },
+            dependsOn = { "accept-4245-chasing-a-me-01" },
             id = "turnin-4245-chasing-a-me-01",
             kind = "turnin",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Chasing A-Me 01.",
-            complete = QuestState(4245, "completed"),
-            dependsOn = { "accept-4245-chasing-a-me-01" },
-            route = {
-                Point(1449, 0.4638, 0.1345, "Chasing A-Me 01",
-                    "Travel to Chasing A-Me 01."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4245, state = "completed" },
+            },
+            sourceStep = 50,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 630,
+            text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
+            route = {
+                { y = 0.7596, mapID = 1449, label = "Torwa Pathfinder", offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.", x = 0.7163 },
+            },
+            dependsOn = { "accept-4301-the-mighty-u-cha", "objective-4301-1-u-cha" },
             id = "turnin-4301-the-mighty-u-cha",
             kind = "turnin",
-            priority = 430,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Mighty U'cha.",
-            complete = QuestState(4301, "completed"),
-            dependsOn = { "accept-4301-the-mighty-u-cha", "objective-4301-1-u-cha" },
-            route = {
-                Point(1449, 0.7163, 0.7596, "The Mighty U'cha",
-                    "Travel to The Mighty U'cha."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4301, state = "completed" },
+            },
+            sourceStep = 52,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4289 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "turnin-4285-the-northern-pylon",
-            kind = "turnin",
-            priority = 440,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Northern Pylon.",
-            complete = QuestState(4285, "completed"),
+            priority = 640,
+            text = "Discover and examine the Northern Crystal Pylon in northern Un'Goro Crater.",
+            id = "objective-4285-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 4285, index = 1, count = 1 },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
             dependsOn = { "accept-4285-the-northern-pylon" },
             route = {
-                Point(1449, 0.4347, 0.0679, "The Northern Pylon",
-                    "Travel to The Northern Pylon."),
+                { mapID = 1449, x = 0.5648, y = 0.1245, label = "The Northern Pylon", offMapText = "Travel to The Northern Pylon." },
             },
         },
         {
-            id = "turnin-4287-the-eastern-pylon",
+            priority = 650,
+            text = "Turn in The Northern Pylon to J.D. Collie.",
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-4285-the-northern-pylon", "objective-4285-quest-work" },
+            id = "turnin-4285-the-northern-pylon",
             kind = "turnin",
-            priority = 450,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Eastern Pylon.",
-            complete = QuestState(4287, "completed"),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4285, state = "completed" },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 660,
+            text = "Discover and examine the Eastern Crystal Pylon in eastern Un'Goro Crater.",
+            id = "objective-4287-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 4287, index = 1, count = 1 },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
             dependsOn = { "accept-4287-the-eastern-pylon" },
             route = {
-                Point(1449, 0.4347, 0.0679, "The Eastern Pylon",
-                    "Travel to The Eastern Pylon."),
+                { mapID = 1449, x = 0.7724, y = 0.4997, label = "The Eastern Pylon", offMapText = "Travel to The Eastern Pylon." },
             },
         },
         {
+            priority = 670,
+            text = "Turn in The Eastern Pylon to J.D. Collie.",
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-4287-the-eastern-pylon", "objective-4287-quest-work" },
+            id = "turnin-4287-the-eastern-pylon",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4287, state = "completed" },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4284 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 680,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept Making Sense of It from J.D. Collie.",
             id = "accept-4321-making-sense-of-it",
             kind = "accept",
-            priority = 460,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Making Sense of It.",
-            complete = QuestState(4321, "activeOrCompleted"),
-            route = {
-                Point(1449, 0.4347, 0.0679, "Making Sense of It",
-                    "Travel to Making Sense of It."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4321, state = "activeOrCompleted" },
+            },
+            sourceStep = 53,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 4285, 4287, 4288 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 690,
+            text = "Turn in Making Sense of It to J.D. Collie.",
+            route = {
+                { y = 0.027, mapID = 1449, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192 },
+            },
+            dependsOn = { "accept-4321-making-sense-of-it" },
             id = "turnin-4321-making-sense-of-it",
             kind = "turnin",
-            priority = 470,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Making Sense of It.",
-            complete = QuestState(4321, "completed"),
-            dependsOn = { "accept-4321-making-sense-of-it" },
-            route = {
-                Point(1449, 0.4192, 0.0270, "Making Sense of It",
-                    "Travel to Making Sense of It."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4321, state = "completed" },
+            },
+            sourceStep = 54,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 4285, 4287, 4288 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 700,
+            text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
+            route = {
+                { mapID = 1446, x = 0.5089, y = 0.2696, label = "Alchemist Pestlezugg", offMapText = "Travel to Alchemist Pestlezugg in Tanaris." },
+            },
+            dependsOn = { "accept-4496-bungle-in-the-jungle", "objective-4496-1-gorishi-scent-gland" },
             id = "turnin-4496-bungle-in-the-jungle",
             kind = "turnin",
-            priority = 480,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Bungle in the Jungle.",
-            complete = QuestState(4496, "completed"),
-            dependsOn = { "accept-4496-bungle-in-the-jungle" },
-            route = {
-                Point(1449, 0.4347, 0.0679, "Bungle in the Jungle",
-                    "Travel to Bungle in the Jungle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4496, state = "completed" },
+            },
+            sourceStep = 56,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4493, 4494 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 710,
+            route = {
+                { mapID = 1448, x = 0.52, y = 0.16, label = "Angerclaw Grizzly", offMapText = "Travel to Angerclaw Grizzly." },
+            },
+            text = "For The Strength of Corruption: Talo Thornhoof at Camp Mojache in Feralas wants you to kill 12 Angerclaw Grizzlies and 12 Felpaw Ravagers in Felwood.",
+            id = "objective-4120-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4120, state = "complete" },
+            },
+            sourceStep = 57,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 720,
+            route = {
+                { y = 0.4383, mapID = 1444, label = "Talo Thornhoof", offMapText = "Travel to Talo Thornhoof in Feralas.", x = 0.7618 },
+            },
+            text = "Turn in The Strength of Corruption to Talo Thornhoof.",
             id = "turnin-4120-the-strength-of-corruption",
             kind = "turnin",
-            priority = 490,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Strength of Corruption.",
-            complete = QuestState(4120, "completed"),
-            route = {
-                Point(1444, 0.7618, 0.4383, "The Strength of Corruption",
-                    "Travel to The Strength of Corruption."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4120, state = "completed" },
+            },
+            sourceStep = 57,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-4120-quest-work" },
         },
         {
+            priority = 730,
+            route = {
+                { mapID = 1444, x = 0.4512, y = 0.2557, label = "Videre Elixir", offMapText = "Travel to Videre Elixir." },
+            },
+            text = "Collect 1 Videre Elixir.",
             id = "objective-3909-1-evoroot",
             kind = "objective",
-            priority = 500,
-            conditions = { all = {
-                { level = { min = 54 } },
-                { faction = "Horde" },
-            } },
-            text = "Click Evoroot.",
-            complete = QuestObjective(3909, 1, "Evoroot"),
-            route = {
-                Point(1444, 0.4462, 0.0981, "Evoroot",
-                    "Travel to Evoroot."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 3909, text = "Evoroot", index = 1, count = 1 },
+            },
+            sourceStep = 60,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3908 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 740,
+            route = {
+                { y = 0.6472, mapID = 1456, label = "Innkeeper Pala", offMapText = "Travel to Innkeeper Pala in Thunder Bluff.", x = 0.4582 },
+            },
+            text = "Accept Assisting Arch Druid Runetotem from Innkeeper Pala.",
             id = "accept-3762-assisting-arch-druid-runetotem",
             kind = "accept",
-            priority = 510,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Assisting Arch Druid Runetotem.",
-            complete = QuestState(3762, "activeOrCompleted"),
-            route = {
-                Point(1456, 0.4582, 0.6472, "Assisting Arch Druid Runetotem",
-                    "Travel to Assisting Arch Druid Runetotem."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3762, state = "activeOrCompleted" },
+            },
+            sourceStep = 64,
+            requiredQuests = {},
+            alternativeQuests = { 936, 3784 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1000-the-new-frontier",
+            kind = "note",
+            text = "Reach level 54 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 54 },
+            },
+            requiredLevel = 54,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1000,
+            alternativeQuests = { 1004, 1018 },
+            priority = 750,
+        },
+        {
+            priority = 760,
+            text = "Accept The New Frontier from Bluff Runner Windstrider.",
             id = "accept-1000-the-new-frontier",
             kind = "accept",
-            priority = 520,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The New Frontier from Arch Druid Hamuul Runetotem on Elder Rise in Thunder Bluff.",
-            complete = QuestState(1000, "activeOrCompleted"),
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 54 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1000, state = "activeOrCompleted" },
+            },
+            sourceStep = 70,
+            requiredQuests = {},
+            alternativeQuests = { 1004, 1018 },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = {},
         },
         {
+            priority = 770,
+            route = {
+                { y = 0.309, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6984 },
+            },
+            text = "Turn in Delivery to Magatha to Magatha Grimtotem.",
             id = "turnin-3518-delivery-to-magatha",
             kind = "turnin",
-            priority = 530,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Delivery to Magatha.",
-            complete = QuestState(3518, "completed"),
-            route = {
-                Point(1456, 0.6984, 0.3090, "Delivery to Magatha",
-                    "Travel to Delivery to Magatha."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3518, state = "completed" },
+            },
+            sourceStep = 71,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3517 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 780,
+            route = {
+                { y = 0.309, mapID = 1456, label = "Magatha Grimtotem", offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.", x = 0.6984 },
+            },
+            text = "Accept Magatha's Payment to Jediga from Magatha Grimtotem.",
             id = "accept-3562-magatha-s-payment-to-jediga",
             kind = "accept",
-            priority = 540,
-            conditions = { all = {
-                { level = { min = 54 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Magatha's Payment to Jediga.",
-            complete = QuestState(3562, "activeOrCompleted"),
-            route = {
-                Point(1456, 0.6984, 0.3090, "Magatha's Payment to Jediga",
-                    "Travel to Magatha's Payment to Jediga."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3562, state = "activeOrCompleted" },
+            },
+            sourceStep = 71,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3518 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 790,
+            text = "Turn in Assisting Arch Druid Runetotem to Arch Druid Hamuul Runetotem.",
+            route = {
+                { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
+            },
+            dependsOn = { "accept-3762-assisting-arch-druid-runetotem" },
             id = "turnin-3762-assisting-arch-druid-runetotem",
             kind = "turnin",
-            priority = 550,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Assisting Arch Druid Runetotem.",
-            complete = QuestState(3762, "completed"),
-            dependsOn = { "accept-3762-assisting-arch-druid-runetotem" },
-            route = {
-                Point(1456, 0.7859, 0.2857, "Assisting Arch Druid Runetotem",
-                    "Travel to Assisting Arch Druid Runetotem."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3762, state = "completed" },
+            },
+            sourceStep = 72,
+            requiredQuests = {},
+            alternativeQuests = { 936, 3784 },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 800,
+            route = {
+                { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
+            },
+            text = "Accept Un'Goro Soil from Arch Druid Hamuul Runetotem.",
             id = "accept-3761-un-goro-soil",
             kind = "accept",
-            priority = 560,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Un'Goro Soil.",
-            complete = QuestState(3761, "activeOrCompleted"),
-            route = {
-                Point(1456, 0.7859, 0.2857, "Un'Goro Soil",
-                    "Travel to Un'Goro Soil."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3761, state = "activeOrCompleted" },
+            },
+            sourceStep = 72,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 810,
+            text = "Turn in The New Frontier to Arch Druid Hamuul Runetotem.",
+            route = {
+                { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
+            },
+            dependsOn = { "accept-1000-the-new-frontier" },
             id = "turnin-1000-the-new-frontier",
             kind = "turnin",
-            priority = 570,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The New Frontier.",
-            complete = QuestState(1000, "completed"),
-            dependsOn = { "accept-1000-the-new-frontier" },
-            route = {
-                Point(1456, 0.7859, 0.2857, "The New Frontier",
-                    "Travel to The New Frontier."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 54 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1000, state = "completed" },
+            },
+            sourceStep = 72,
+            requiredQuests = {},
+            alternativeQuests = { 1004, 1018 },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 820,
+            route = {
+                { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
+            },
+            text = "Accept Rabine Saturna from Arch Druid Hamuul Runetotem.",
             id = "accept-1123-rabine-saturna",
             kind = "accept",
-            priority = 580,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Rabine Saturna.",
-            complete = QuestState(1123, "activeOrCompleted"),
-            route = {
-                Point(1456, 0.7859, 0.2857, "Rabine Saturna",
-                    "Travel to Rabine Saturna."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 54 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1123, state = "activeOrCompleted" },
+            },
+            sourceStep = 72,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1000, 1004, 1018 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 830,
+            text = "For Un'Goro Soil: Bring 20 Un'Goro Soil samples to Ghede on the Elder Rise of Thunder Bluff.",
+            id = "objective-3761-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 3761, state = "complete" },
+            },
+            sourceStep = 73,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-3761-un-goro-soil" },
+        },
+        {
+            priority = 840,
+            text = "Turn in Un'Goro Soil to Ghede.",
+            route = {
+                { y = 0.2198, mapID = 1456, label = "Ghede", offMapText = "Travel to Ghede in Thunder Bluff.", x = 0.7745 },
+            },
+            dependsOn = { "accept-3761-un-goro-soil", "objective-3761-quest-work" },
             id = "turnin-3761-un-goro-soil",
             kind = "turnin",
-            priority = 590,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Un'Goro Soil.",
-            complete = QuestState(3761, "completed"),
-            dependsOn = { "accept-3761-un-goro-soil" },
-            route = {
-                Point(1456, 0.7745, 0.2198, "Un'Goro Soil",
-                    "Travel to Un'Goro Soil."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3761, state = "completed" },
+            },
+            sourceStep = 73,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 850,
+            route = {
+                { y = 0.2857, mapID = 1456, label = "Arch Druid Hamuul Runetotem", offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.", x = 0.7859 },
+            },
+            text = "Accept Morrowgrain Research from Arch Druid Hamuul Runetotem.",
             id = "accept-3782-morrowgrain-research",
             kind = "accept",
-            priority = 600,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Morrowgrain Research.",
-            complete = QuestState(3782, "activeOrCompleted"),
-            route = {
-                Point(1456, 0.7859, 0.2857, "Morrowgrain Research",
-                    "Travel to Morrowgrain Research."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3782, state = "activeOrCompleted" },
+            },
+            sourceStep = 75,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3761 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 860,
+            text = "Turn in Morrowgrain Research to Bashana Runetotem.",
+            route = {
+                { y = 0.3418, mapID = 1456, label = "Bashana Runetotem", offMapText = "Travel to Bashana Runetotem in Thunder Bluff.", x = 0.7106 },
+            },
+            dependsOn = { "accept-3782-morrowgrain-research" },
             id = "turnin-3782-morrowgrain-research",
             kind = "turnin",
-            priority = 610,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Morrowgrain Research.",
-            complete = QuestState(3782, "completed"),
-            dependsOn = { "accept-3782-morrowgrain-research" },
-            route = {
-                Point(1456, 0.7106, 0.3418, "Morrowgrain Research",
-                    "Travel to Morrowgrain Research."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3782, state = "completed" },
+            },
+            sourceStep = 76,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3761 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 870,
+            text = "Turn in Marvon's Workshop to Liv Rizzlefix.",
+            route = {
+                { y = 0.3873, mapID = 1413, label = "Liv Rizzlefix", offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245 },
+            },
+            dependsOn = { "accept-4147-marvon-s-workshop" },
             id = "turnin-4147-marvon-s-workshop",
             kind = "turnin",
-            priority = 620,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Marvon's Workshop.",
-            complete = QuestState(4147, "completed"),
-            dependsOn = { "accept-4147-marvon-s-workshop" },
-            route = {
-                Point(1413, 0.6245, 0.3873, "Marvon's Workshop",
-                    "Travel to Marvon's Workshop."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 47 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4147, state = "completed" },
+            },
+            sourceStep = 78,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4145 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 880,
+            text = "For Volcanic Activity: Collect 9 samples of Un'Goro Ash from the fire elementals around the volcano in Un'Goro Crater.",
+            id = "objective-4502-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 4502, state = "complete" },
+            },
+            sourceStep = 78,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = {},
+        },
+        {
+            priority = 890,
+            route = {
+                { y = 0.3873, mapID = 1413, label = "Liv Rizzlefix", offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245 },
+            },
+            text = "Turn in Volcanic Activity to Liv Rizzlefix.",
             id = "turnin-4502-volcanic-activity",
             kind = "turnin",
-            priority = 630,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Volcanic Activity.",
-            complete = QuestState(4502, "completed"),
-            route = {
-                Point(1413, 0.6245, 0.3873, "Volcanic Activity",
-                    "Travel to Volcanic Activity."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 49 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4502, state = "completed" },
+            },
+            sourceStep = 78,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-4502-quest-work" },
         },
         {
+            priority = 900,
+            route = {
+                { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
+            },
+            text = "Turn in Seeking Spiritual Aid to Islen Waterseer.",
             id = "turnin-5158-seeking-spiritual-aid",
             kind = "turnin",
-            priority = 640,
-            conditions = { all = {
-                { level = { min = 53 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Seeking Spiritual Aid.",
-            complete = QuestState(5158, "completed"),
-            route = {
-                Point(1413, 0.6583, 0.4378, "Seeking Spiritual Aid",
-                    "Travel to Seeking Spiritual Aid."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5158, state = "completed" },
+            },
+            sourceStep = 79,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5157 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 910,
+            route = {
+                { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
+            },
+            text = "Accept Cleansed Water Returns to Felwood from Islen Waterseer.",
             id = "accept-5159-cleansed-water-returns-to-felwood",
             kind = "accept",
-            priority = 650,
-            conditions = { all = {
-                { level = { min = 54 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Cleansed Water Returns to Felwood.",
-            complete = QuestState(5159, "activeOrCompleted"),
-            route = {
-                Point(1413, 0.6583, 0.4378, "Cleansed Water Returns to Felwood",
-                    "Travel to Cleansed Water Returns to Felwood."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 48 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5159, state = "activeOrCompleted" },
+            },
+            sourceStep = 80,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 5158 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

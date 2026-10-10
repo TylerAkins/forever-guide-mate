@@ -380,8 +380,15 @@ function M.ChainViolations(guide, guideID)
             local acceptQuest = M.AcceptQuestIDFromGoal(goal)
             for _, group in ipairs(goal.questPrerequisites or {}) do
                 for index, needTurnin in ipairs(group.questIDs or {}) do
+                    local dependencyID = group.goalIDs and group.goalIDs[index]
+                    local dependency
+                    for _, action in ipairs(guide.goals or {}) do
+                        if action.id == dependencyID then dependency = action; break end
+                    end
+                    local recordedQuest = dependency and dependency.complete and dependency.complete.quest
                     if not group.goalIDs or not group.goalIDs[index]
-                        or M.TurninQuestID(group.goalIDs[index]) ~= needTurnin then
+                        or not dependency or dependency.kind ~= "turnin"
+                        or not recordedQuest or recordedQuest.id ~= needTurnin then
                         issues[#issues + 1] = {
                             guideID = guideID,
                             goalID = goal.id,
@@ -1155,7 +1162,9 @@ function M.ItemStartInversionViolations(guides)
                         local hasQuestObjective = type(complete) == "table"
                             and type(complete.questObjective) == "table"
                         if acceptQuest and sourceQuest and acceptQuest == sourceQuest
-                            and not hasQuestObjective then
+                            and not hasQuestObjective
+                            and not (guide.routeMode == "ordered" and type(complete) == "table"
+                                and type(complete.quest) == "table" and complete.quest.state == "complete") then
                             issues[#issues + 1] = {
                                 guideID = guideID,
                                 goalID = goal.id,

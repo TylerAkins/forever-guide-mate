@@ -1,1994 +1,3977 @@
 local _, ns = ...
 
--- Hunter class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- The Way of the Hunter
--- Taming the Beast
--- Taming the Beast
--- Taming the Beast
--- Taming the Beast
--- Training the Beast
--- Taming the Beast
--- Taming the Beast
--- Taming the Beast
--- Training the Beast
--- Left out (dungeon quest): The Green Drake
--- Left out (needs 6072, which is not on this route): The Hunter's Path
--- Left out (no start pin): Tracking the Trapper, One Night in Winterspring, Night Falls, Stave of the Ancients, Bug Hunt, Prowler, The Only Good Bug is a Dead Bug, The Beast Master of Moonglade, The Green Drake, A Hunter's Strength, Everyone Knows That Bugs Can't Fly, Showdown at Un'Goro Crater (+14 more)
--- Left out (raid quest): Ancient Sinew Wrapped Lamina, A Proper String
-
-local MAP = {
-    AZSHARA = 1447,
-    DARNASSUS = 1457,
-    DUNMOROGH = 1426,
-    DUROTAR = 1411,
-    ELWYNNFOREST = 1429,
-    FELWOOD = 1448,
-    IRONFORGE = 1455,
-    MULGORE = 1412,
-    ORGRIMMAR = 1454,
-    STORMWINDCITY = 1453,
-    TELDRASSIL = 1438,
-    THUNDERBLUFF = 1456,
-    ZEPHRASISLE = 2521,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-hunter",
+    revision = 3,
     title = "Hunter",
     category = "Class Quests",
-    revision = 1,
+    id = "class-hunter",
     conditions = {
         all = {
             { class = 3 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-92461-harmony-in-balance",
-            kind = "accept",
-            priority = 7,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92461, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-92461-harmony-in-balance",
-            kind = "objective",
-            priority = 8,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
-            dependsOn = { "accept-92461-harmony-in-balance" },
-            complete = QuestState(92461, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
-                    "Travel to Juvenile Vuldren in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-92461-harmony-in-balance",
-            kind = "turnin",
-            priority = 9,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
-            dependsOn = { "objective-92461-harmony-in-balance" },
-            complete = QuestState(92461, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-92482-the-way-of-the-hunter",
-            kind = "accept",
             priority = 10,
-            dependsOn = { "turnin-92461-harmony-in-balance" },
+            route = {
+                { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-179-dwarven-outfitters",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 3 },
-                    { level = { min = 2 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept The Way of the Hunter from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92482, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-179-dwarven-outfitters",
         },
         {
-            id = "turnin-92482-the-way-of-the-hunter",
-            kind = "turnin",
             priority = 20,
+            route = {
+                { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
+            },
+            id = "objective-179-1-ragged-young-wolf",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 3 },
-                    { level = { min = 2 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in The Way of the Hunter to Tai'ree Farsight in Zephras Isle.",
-            dependsOn = { "accept-92482-the-way-of-the-hunter" },
-            complete = QuestState(92482, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4240, 0.2360, "Tai'ree Farsight",
-                    "Travel to Tai'ree Farsight in Zephras Isle."),
-            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = { "accept-179-dwarven-outfitters" },
+            classAction = "objective-179-1-ragged-young-wolf",
         },
         {
-            id = "accept-6063-taming-the-beast",
-            kind = "accept",
             priority = 30,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
+            },
+            dependsOn = { "accept-179-dwarven-outfitters", "objective-179-1-ragged-young-wolf" },
+            id = "turnin-179-dwarven-outfitters",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Dazalar in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(6063, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-179-dwarven-outfitters",
         },
         {
-            id = "turnin-6063-taming-the-beast",
-            kind = "turnin",
             priority = 40,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "accept-6063-taming-the-beast" },
-            complete = QuestState(6063, "completed"),
             route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
-        },
-        {
-            id = "accept-6101-taming-the-beast",
-            kind = "accept",
-            priority = 50,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "turnin-6063-taming-the-beast" },
-            complete = QuestState(6101, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
-        },
-        {
-            id = "turnin-6101-taming-the-beast",
-            kind = "turnin",
-            priority = 60,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "accept-6101-taming-the-beast" },
-            complete = QuestState(6101, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
-        },
-        {
-            id = "accept-6102-taming-the-beast",
-            kind = "accept",
-            priority = 70,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "turnin-6101-taming-the-beast", "turnin-6063-taming-the-beast" },
-            complete = QuestState(6102, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
-        },
-        {
-            id = "turnin-6102-taming-the-beast",
-            kind = "turnin",
-            priority = 80,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "accept-6102-taming-the-beast" },
-            complete = QuestState(6102, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
-        },
-        {
-            id = "accept-6103-training-the-beast",
-            kind = "accept",
-            priority = 90,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Training the Beast from Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "turnin-6102-taming-the-beast", "turnin-6101-taming-the-beast" },
-            complete = QuestState(6103, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
-        },
-        {
-            id = "turnin-6103-training-the-beast",
-            kind = "turnin",
-            priority = 100,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Training the Beast to Jocaste in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-6103-training-the-beast" },
-            complete = QuestState(6103, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.4020, 0.0880, "Jocaste",
-                    "Travel to Jocaste in Darnassus."),
-            },
-        },
-        {
-            id = "accept-94007-taming-the-beast",
-            kind = "accept",
-            priority = 110,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Elayaa Easewind in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(94007, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4520, 0.4420, "Elayaa Easewind",
-                    "Travel to Elayaa Easewind in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94007-taming-the-beast",
-            kind = "turnin",
-            priority = 120,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94007-taming-the-beast" },
-            complete = QuestState(94007, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94978-taming-the-beast",
-            kind = "accept",
-            priority = 130,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94007-taming-the-beast" },
-            complete = QuestState(94978, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94978-taming-the-beast",
-            kind = "turnin",
-            priority = 140,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94978-taming-the-beast" },
-            complete = QuestState(94978, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94979-taming-the-beast",
-            kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94978-taming-the-beast" },
-            complete = QuestState(94979, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94979-taming-the-beast",
-            kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94979-taming-the-beast" },
-            complete = QuestState(94979, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94013-taming-the-beast",
-            kind = "accept",
-            priority = 170,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94979-taming-the-beast" },
-            complete = QuestState(94013, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94013-taming-the-beast",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94013-taming-the-beast" },
-            complete = QuestState(94013, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94050-training-the-beast",
-            kind = "accept",
-            priority = 190,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Training the Beast from Quel'ana Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "turnin-94013-taming-the-beast" },
-            complete = QuestState(94050, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'ana Quickgale",
-                    "Travel to Quel'ana Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94050-training-the-beast",
-            kind = "turnin",
-            priority = 200,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Training the Beast to Quel'dora Quickgale in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94050-training-the-beast" },
-            complete = QuestState(94050, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5960, 0.7260, "Quel'dora Quickgale",
-                    "Travel to Quel'dora Quickgale in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-94792-taming-the-beast",
-            kind = "accept",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            complete = QuestState(94792, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-94792-taming-the-beast",
-            kind = "turnin",
-            priority = 220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-94792-taming-the-beast" },
-            complete = QuestState(94792, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-94863-taming-the-beast",
-            kind = "accept",
-            priority = 230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-94792-taming-the-beast" },
-            complete = QuestState(94863, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-94863-taming-the-beast",
-            kind = "turnin",
-            priority = 240,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-94863-taming-the-beast" },
-            complete = QuestState(94863, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-94864-taming-the-beast",
-            kind = "accept",
-            priority = 250,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Taming the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-94863-taming-the-beast" },
-            complete = QuestState(94864, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-94864-taming-the-beast",
-            kind = "turnin",
-            priority = 260,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-94864-taming-the-beast" },
-            complete = QuestState(94864, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-94793-training-the-beast",
-            kind = "accept",
-            priority = 270,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Training the Beast from Josephine Carson in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "turnin-94864-taming-the-beast" },
-            complete = QuestState(94793, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4120, 0.6620, "Josephine Carson",
-                    "Travel to Josephine Carson in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-94793-training-the-beast",
-            kind = "turnin",
-            priority = 280,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = { 1, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Training the Beast to Isaac Chan in Elwynn Forest. This step is for Humans and Gnomes.",
-            dependsOn = { "accept-94793-training-the-beast" },
-            complete = QuestState(94793, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4180, 0.6640, "Isaac Chan",
-                    "Travel to Isaac Chan in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-8151-the-hunters-charm",
-            kind = "accept",
-            priority = 290,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept The Hunter's Charm from Ulfir Ironbeard in Stormwind City.",
-            complete = QuestState(8151, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.6200, 0.1500, "Ulfir Ironbeard",
-                    "Travel to Ulfir Ironbeard in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
-                Point(MAP.IRONFORGE, 0.7060, 0.8380, "Olmin Burningbeard",
-                    "Travel to Olmin Burningbeard in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
-                Point(MAP.ORGRIMMAR, 0.6620, 0.1820, "Ormak Grimshot",
-                    "Travel to Ormak Grimshot in Orgrimmar.", { map = { MAP.THUNDERBLUFF, MAP.DARNASSUS } }),
-                Point(MAP.THUNDERBLUFF, 0.5740, 0.8920, "Holt Thunderhorn",
-                    "Travel to Holt Thunderhorn in Thunder Bluff.", { map = { MAP.DARNASSUS } }),
-                Point(MAP.DARNASSUS, 0.4220, 0.0760, "Dorion",
-                    "Travel to Dorion in Darnassus."),
-            },
-        },
-        {
-            id = "turnin-8151-the-hunters-charm",
-            kind = "turnin",
-            priority = 300,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in The Hunter's Charm to Ogtinc in Azshara.",
-            dependsOn = { "accept-8151-the-hunters-charm" },
-            complete = QuestState(8151, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "accept-8153-courser-antlers",
-            kind = "accept",
-            priority = 310,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Courser Antlers from Ogtinc in Azshara.",
-            dependsOn = { "turnin-8151-the-hunters-charm" },
-            complete = QuestState(8153, "activeOrCompleted"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "objective-8153-courser-antlers",
-            kind = "objective",
-            priority = 320,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Collect 2 Perfect Courser Antler from Mosshoof Coursers in Azshara.",
-            dependsOn = { "accept-8153-courser-antlers" },
-            complete = QuestState(8153, "complete"),
-            route = {
-                Point(MAP.AZSHARA, 0.3780, 0.6920, "Mosshoof Courser",
-                    "Travel to Mosshoof Courser in Azshara."),
-            },
-        },
-        {
-            id = "turnin-8153-courser-antlers",
-            kind = "turnin",
-            priority = 330,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Courser Antlers to Ogtinc in Azshara.",
-            dependsOn = { "objective-8153-courser-antlers" },
-            complete = QuestState(8153, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "accept-8231-wavethrashing",
-            kind = "accept",
-            priority = 340,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Wavethrashing from Ogtinc in Azshara.",
-            dependsOn = { "turnin-8153-courser-antlers", "turnin-8151-the-hunters-charm" },
-            complete = QuestState(8231, "activeOrCompleted"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "objective-8231-wavethrashing",
-            kind = "objective",
-            priority = 350,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Collect 6 Wavethrasher Scale from wavethrashers in Azshara.",
-            dependsOn = { "accept-8231-wavethrashing" },
-            complete = QuestState(8231, "complete"),
-            route = {
-                Point(MAP.AZSHARA, 0.6540, 0.0860, "Young Wavethrasher",
-                    "Travel to Young Wavethrasher in Azshara."),
-                Point(MAP.AZSHARA, 0.7120, 0.3460, "Wavethrasher",
-                    "Travel to Wavethrasher in Azshara."),
-                Point(MAP.AZSHARA, 0.5580, 0.7220, "Great Wavethrasher",
-                    "Travel to Great Wavethrasher in Azshara."),
-            },
-        },
-        {
-            id = "turnin-8231-wavethrashing",
-            kind = "turnin",
-            priority = 360,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Wavethrashing to Ogtinc in Azshara.",
-            dependsOn = { "objective-8231-wavethrashing" },
-            complete = QuestState(8231, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "accept-7632-the-ancient-leaf",
-            kind = "accept",
-            priority = 370,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept The Ancient Leaf from Vartus the Ancient in Felwood.",
-            complete = QuestState(7632, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4899, 0.2444, "Vartus the Ancient",
-                    "Travel to Vartus the Ancient in Felwood."),
-                Point(MAP.FELWOOD, 0.4899, 0.2444, "Vartus the Ancient",
-                    "Travel to Vartus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7632-the-ancient-leaf",
-            kind = "turnin",
-            priority = 380,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in The Ancient Leaf to Vartrus the Ancient in Felwood.",
-            dependsOn = { "accept-7632-the-ancient-leaf" },
-            complete = QuestState(7632, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4880, 0.2420, "Vartrus the Ancient",
-                    "Travel to Vartrus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "accept-7633-an-introduction",
-            kind = "accept",
-            priority = 390,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept An Introduction from Vartrus the Ancient in Felwood.",
-            dependsOn = { "turnin-7632-the-ancient-leaf" },
-            complete = QuestState(7633, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4880, 0.2420, "Vartrus the Ancient",
-                    "Travel to Vartrus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7633-an-introduction",
-            kind = "turnin",
-            priority = 400,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in An Introduction to Vartrus the Ancient in Felwood.",
-            dependsOn = { "accept-7633-an-introduction" },
-            complete = QuestState(7633, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4880, 0.2420, "Vartrus the Ancient",
-                    "Travel to Vartrus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "accept-7636-stave-of-the-ancients",
-            kind = "accept",
-            priority = 410,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept Stave of the Ancients from Vartrus the Ancient in Felwood.",
-            dependsOn = { "turnin-7632-the-ancient-leaf" },
-            complete = QuestState(7636, "activeOrCompleted"),
-            route = {
-                Point(MAP.FELWOOD, 0.4880, 0.2420, "Vartrus the Ancient",
-                    "Travel to Vartrus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "turnin-7636-stave-of-the-ancients",
-            kind = "turnin",
-            priority = 420,
-            conditions = {
-                all = {
-                    { class = 3 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Turn in Stave of the Ancients to Vartrus the Ancient in Felwood.",
-            dependsOn = { "accept-7636-stave-of-the-ancients" },
-            complete = QuestState(7636, "completed"),
-            route = {
-                Point(MAP.FELWOOD, 0.4880, 0.2420, "Vartrus the Ancient",
-                    "Travel to Vartrus the Ancient in Felwood."),
-            },
-        },
-        {
-            id = "accept-3082-etched-tablet",
-            kind = "accept",
-            priority = 430,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 8 },
-                },
-            },
-            text = "Accept Etched Tablet from Gornek in Durotar. This step is for Trolls.",
-            complete = QuestState(3082, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-3082-etched-tablet",
-            kind = "turnin",
-            priority = 440,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 8 },
-                },
-            },
-            text = "Turn in Etched Tablet to Jen'shan in Durotar. This step is for Trolls.",
-            dependsOn = { "accept-3082-etched-tablet" },
-            complete = QuestState(3082, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4280, 0.6920, "Jen'shan",
-                    "Travel to Jen'shan in Durotar."),
-            },
-        },
-        {
-            id = "accept-3087-etched-parchment",
-            kind = "accept",
-            priority = 450,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 2 },
-                },
-            },
-            text = "Accept Etched Parchment from Gornek in Durotar. This step is for Orcs.",
-            complete = QuestState(3087, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-3087-etched-parchment",
-            kind = "turnin",
-            priority = 460,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 2 },
-                },
-            },
-            text = "Turn in Etched Parchment to Jen'shan in Durotar. This step is for Orcs.",
-            dependsOn = { "accept-3087-etched-parchment" },
-            complete = QuestState(3087, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4280, 0.6920, "Jen'shan",
-                    "Travel to Jen'shan in Durotar."),
-            },
-        },
-        {
-            id = "accept-3092-etched-note",
-            kind = "accept",
-            priority = 470,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 6 },
-                },
-            },
-            text = "Accept Etched Note from Grull Hawkwind in Mulgore. This step is for Tauren.",
-            complete = QuestState(3092, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7720, "Grull Hawkwind",
-                    "Travel to Grull Hawkwind in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-3092-etched-note",
-            kind = "turnin",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 6 },
-                },
-            },
-            text = "Turn in Etched Note to Lanka Farshot in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-3092-etched-note" },
-            complete = QuestState(3092, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4420, 0.7580, "Lanka Farshot",
-                    "Travel to Lanka Farshot in Mulgore."),
-            },
-        },
-        {
             id = "accept-3108-etched-rune",
-            kind = "accept",
-            priority = 490,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Etched Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves.",
-            complete = QuestState(3108, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3108-etched-rune",
         },
         {
-            id = "turnin-3108-etched-rune",
-            kind = "turnin",
-            priority = 500,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 3 },
-                },
+            priority = 50,
+            route = {
+                { y = 0.674, mapID = 1426, label = "Thorgas Grimson", x = 0.29, offMapText = "Travel to Thorgas Grimson in Dun Morogh." },
             },
-            text = "Turn in Etched Rune to Thorgas Grimson in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-3108-etched-rune" },
-            complete = QuestState(3108, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2900, 0.6740, "Thorgas Grimson",
-                    "Travel to Thorgas Grimson in Dun Morogh."),
+            id = "turnin-3108-etched-rune",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3108-etched-rune",
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            id = "accept-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-788-cutting-teeth",
+        },
+        {
+            priority = 70,
+            route = {
+                { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
+            },
+            dependsOn = { "accept-788-cutting-teeth" },
+            id = "objective-788-1-mottled-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "objective-788-1-mottled-boar",
+        },
+        {
+            priority = 80,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            dependsOn = { "accept-788-cutting-teeth", "objective-788-1-mottled-boar" },
+            id = "turnin-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 21,
+            useClientPin = false,
+            classAction = "turnin-788-cutting-teeth",
+        },
+        {
+            priority = 90,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-3082-etched-tablet",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3082-etched-tablet",
+        },
+        {
+            priority = 100,
+            route = {
+                { y = 0.692, mapID = 1411, label = "Jen'shan", x = 0.428, offMapText = "Travel to Jen'shan in Durotar." },
+            },
+            dependsOn = { "accept-3082-etched-tablet" },
+            id = "turnin-3082-etched-tablet",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3082-etched-tablet",
+        },
+        {
+            priority = 110,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-3087-etched-parchment",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3087-etched-parchment",
+        },
+        {
+            priority = 120,
+            route = {
+                { y = 0.692, mapID = 1411, label = "Jen'shan", x = 0.428, offMapText = "Travel to Jen'shan in Durotar." },
+            },
+            dependsOn = { "accept-3087-etched-parchment" },
+            id = "turnin-3087-etched-parchment",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3087-etched-parchment",
+        },
+        {
+            route = {
+                { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            priority = 130,
+            id = "accept-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-coming-of-age",
+        },
+        {
+            priority = 140,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
+            },
+            dependsOn = { "accept-coming-of-age" },
+            id = "turnin-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-coming-of-age",
+        },
+        {
+            priority = 150,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            id = "accept-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92461-harmony-in-balance",
+        },
+        {
+            priority = 160,
+            route = {
+                { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            id = "objective-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-92461-harmony-in-balance",
+        },
+        {
+            priority = 170,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance", "objective-92461-harmony-in-balance" },
+            id = "turnin-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92461-harmony-in-balance",
+        },
+        {
+            priority = 180,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
+            },
+            id = "accept-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 7,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-456-the-balance-of-nature",
+        },
+        {
+            priority = 190,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            id = "objective-456-1-young-nightsaber",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            classAction = "objective-456-1-young-nightsaber",
+        },
+        {
+            priority = 200,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-1-young-nightsaber-2",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-456-1-young-nightsaber-2",
+        },
+        {
+            priority = 210,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-2-young-thistle-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            classAction = "objective-456-2-young-thistle-boar",
+        },
+        {
+            priority = 220,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
+            },
+            dependsOn = {
+                "accept-456-the-balance-of-nature",
+                "objective-456-1-young-nightsaber",
+                "objective-456-1-young-nightsaber-2",
+                "objective-456-2-young-thistle-boar",
+            },
+            id = "turnin-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-456-the-balance-of-nature",
+        },
+        {
+            priority = 230,
+            route = {
+                { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
+            },
             id = "accept-3117-etched-sigil",
-            kind = "accept",
-            priority = 510,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Etched Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(3117, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
-                    "Travel to Conservator Ilthalaine in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3117-etched-sigil",
         },
         {
-            id = "turnin-3117-etched-sigil",
-            kind = "turnin",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 4 },
-                },
+            priority = 240,
+            route = {
+                { y = 0.404, mapID = 1438, label = "Ayanna Everstride", x = 0.586, offMapText = "Travel to Ayanna Everstride in Teldrassil." },
             },
-            text = "Turn in Etched Sigil to Ayanna Everstride in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-3117-etched-sigil" },
-            complete = QuestState(3117, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4040, "Ayanna Everstride",
-                    "Travel to Ayanna Everstride in Teldrassil."),
+            id = "turnin-3117-etched-sigil",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3117-etched-sigil",
         },
         {
-            id = "accept-6065-the-hunters-path",
-            kind = "accept",
+            priority = 250,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            id = "accept-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-747-the-hunt-begins",
+        },
+        {
+            id = "objective-747-1-plainstrider-meat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
+            },
+            sourceStep = 12,
+            priority = 260,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-1-plainstrider-meat",
+        },
+        {
+            id = "objective-747-2-plainstrider-feather",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
+            },
+            sourceStep = 12,
+            priority = 270,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-2-plainstrider-feather",
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
+            id = "turnin-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 3 },
+                                    {
+                                        class = { 3 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 3 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-747-the-hunt-begins",
+        },
+        {
+            priority = 290,
+            route = {
+                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+            },
+            id = "accept-3092-etched-note",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3092-etched-note",
+        },
+        {
+            priority = 300,
+            route = {
+                { y = 0.758, mapID = 1412, label = "Lanka Farshot", x = 0.442, offMapText = "Travel to Lanka Farshot in Mulgore." },
+            },
+            dependsOn = { "accept-3092-etched-note" },
+            id = "turnin-3092-etched-note",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3092-etched-note",
+        },
+        {
+            id = "level-before-accept-92482-the-way-of-the-hunter",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 2 },
+            },
+            requiredLevel = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 92482,
+            priority = 310,
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "turnin-92461-harmony-in-balance" },
+            id = "accept-92482-the-way-of-the-hunter",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-92482-the-way-of-the-hunter",
+        },
+        {
+            priority = 330,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Tai'ree Farsight", x = 0.424, offMapText = "Travel to Tai'ree Farsight in Zephras Isle." },
+            },
+            dependsOn = { "accept-92482-the-way-of-the-hunter" },
+            id = "turnin-92482-the-way-of-the-hunter",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92482-the-way-of-the-hunter",
+        },
+        {
+            id = "level-before-accept-6063-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6063,
+            priority = 340,
+        },
+        {
+            priority = 350,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            id = "accept-6063-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-6063-taming-the-beast",
+        },
+        {
+            priority = 360,
+            id = "objective-6063-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6063-taming-the-beast" },
+            classAction = "objective-6063-quest-work",
+        },
+        {
+            priority = 370,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "accept-6063-taming-the-beast", "objective-6063-quest-work" },
+            id = "turnin-6063-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6063-taming-the-beast",
+        },
+        {
+            priority = 380,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "turnin-6063-taming-the-beast" },
+            id = "accept-6101-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6101-taming-the-beast",
+        },
+        {
+            priority = 390,
+            id = "objective-6101-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6101-taming-the-beast" },
+            classAction = "objective-6101-quest-work",
+        },
+        {
+            priority = 400,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "accept-6101-taming-the-beast", "objective-6101-quest-work" },
+            id = "turnin-6101-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6101-taming-the-beast",
+        },
+        {
+            priority = 410,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "turnin-6101-taming-the-beast", "turnin-6063-taming-the-beast" },
+            id = "accept-6102-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6102-taming-the-beast",
+        },
+        {
+            priority = 420,
+            id = "objective-6102-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6102-taming-the-beast" },
+            classAction = "objective-6102-quest-work",
+        },
+        {
+            priority = 430,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "accept-6102-taming-the-beast", "objective-6102-quest-work" },
+            id = "turnin-6102-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6102-taming-the-beast",
+        },
+        {
+            priority = 440,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "turnin-6102-taming-the-beast", "turnin-6101-taming-the-beast" },
+            id = "accept-6103-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6103-training-the-beast",
+        },
+        {
+            priority = 450,
+            route = {
+                { y = 0.088, mapID = 1457, label = "Jocaste", x = 0.402, offMapText = "Travel to Jocaste in Darnassus." },
+            },
+            dependsOn = { "accept-6103-training-the-beast" },
+            id = "turnin-6103-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6103-training-the-beast",
+        },
+        {
+            id = "level-before-accept-94007-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94007,
+            priority = 460,
+        },
+        {
+            priority = 470,
+            route = {
+                { y = 0.442, mapID = 2521, label = "Elayaa Easewind", x = 0.452, offMapText = "Travel to Elayaa Easewind in Zephras Isle." },
+            },
+            id = "accept-94007-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94007-taming-the-beast",
+        },
+        {
+            priority = 480,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "accept-94007-taming-the-beast" },
+            id = "turnin-94007-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94007-taming-the-beast",
+        },
+        {
+            priority = 490,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "turnin-94007-taming-the-beast" },
+            id = "accept-94978-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94978-taming-the-beast",
+        },
+        {
+            priority = 500,
+            id = "objective-94978-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-94978-taming-the-beast" },
+            classAction = "objective-94978-quest-work",
+        },
+        {
+            priority = 510,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "accept-94978-taming-the-beast", "objective-94978-quest-work" },
+            id = "turnin-94978-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94978-taming-the-beast",
+        },
+        {
+            priority = 520,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "turnin-94978-taming-the-beast" },
+            id = "accept-94979-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94979-taming-the-beast",
+        },
+        {
             priority = 530,
+            id = "objective-94979-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Kary Thunderhorn in Thunder Bluff. This step is for Tauren.",
-            complete = QuestState(6065, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.5820, 0.8780, "Kary Thunderhorn",
-                    "Travel to Kary Thunderhorn in Thunder Bluff."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94979-taming-the-beast" },
+            classAction = "objective-94979-quest-work",
         },
         {
-            id = "turnin-6065-the-hunters-path",
-            kind = "turnin",
             priority = 540,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "accept-94979-taming-the-beast", "objective-94979-quest-work" },
+            id = "turnin-94979-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6065-the-hunters-path" },
-            complete = QuestState(6065, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94979-taming-the-beast",
         },
         {
-            id = "accept-6066-the-hunters-path",
-            kind = "accept",
             priority = 550,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "turnin-94979-taming-the-beast" },
+            id = "accept-94013-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Sian'dur in Orgrimmar. This step is for Tauren.",
-            dependsOn = { "turnin-6065-the-hunters-path" },
-            complete = QuestState(6066, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6780, 0.1780, "Sian'dur",
-                    "Travel to Sian'dur in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "accept-94013-taming-the-beast",
         },
         {
-            id = "turnin-6066-the-hunters-path",
-            kind = "turnin",
             priority = 560,
+            id = "objective-94013-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6066-the-hunters-path" },
-            complete = QuestState(6066, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94013-taming-the-beast" },
+            classAction = "objective-94013-quest-work",
         },
         {
-            id = "accept-6067-the-hunters-path",
-            kind = "accept",
             priority = 570,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "accept-94013-taming-the-beast", "objective-94013-quest-work" },
+            id = "turnin-94013-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Thotar in Durotar. This step is for Tauren.",
-            dependsOn = { "turnin-6066-the-hunters-path" },
-            complete = QuestState(6067, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94013-taming-the-beast",
         },
         {
-            id = "turnin-6067-the-hunters-path",
-            kind = "turnin",
             priority = 580,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'ana Quickgale", x = 0.596, offMapText = "Travel to Quel'ana Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "turnin-94013-taming-the-beast" },
+            id = "accept-94050-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6067-the-hunters-path" },
-            complete = QuestState(6067, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "accept-94050-training-the-beast",
         },
         {
-            id = "accept-6061-taming-the-beast",
-            kind = "accept",
             priority = 590,
+            route = {
+                { y = 0.726, mapID = 2521, label = "Quel'dora Quickgale", x = 0.596, offMapText = "Travel to Quel'dora Quickgale in Zephras Isle." },
+            },
+            dependsOn = { "accept-94050-training-the-beast" },
+            id = "turnin-94050-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-6067-the-hunters-path" },
-            complete = QuestState(6061, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94050-training-the-beast",
         },
         {
-            id = "turnin-6061-taming-the-beast",
-            kind = "turnin",
+            id = "level-before-accept-94792-taming-the-beast",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94792,
             priority = 600,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6061-taming-the-beast" },
-            complete = QuestState(6061, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
         },
         {
-            id = "accept-6087-taming-the-beast",
-            kind = "accept",
             priority = 610,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            id = "accept-94792-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-6061-taming-the-beast" },
-            complete = QuestState(6087, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94792-taming-the-beast",
         },
         {
-            id = "turnin-6087-taming-the-beast",
-            kind = "turnin",
             priority = 620,
+            dependsOn = { "accept-94792-taming-the-beast" },
+            id = "objective-94792-reviewed-mechanics",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6087-taming-the-beast" },
-            complete = QuestState(6087, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = true,
+            classAction = "objective-94792-reviewed-mechanics",
         },
         {
-            id = "accept-6088-taming-the-beast",
-            kind = "accept",
             priority = 630,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "accept-94792-taming-the-beast", "objective-94792-reviewed-mechanics" },
+            id = "turnin-94792-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-6087-taming-the-beast", "turnin-6061-taming-the-beast" },
-            complete = QuestState(6088, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94792-taming-the-beast",
         },
         {
-            id = "turnin-6088-taming-the-beast",
-            kind = "turnin",
             priority = 640,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "turnin-94792-taming-the-beast" },
+            id = "accept-94863-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-6088-taming-the-beast" },
-            complete = QuestState(6088, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "accept-94863-taming-the-beast",
         },
         {
-            id = "accept-6089-training-the-beast",
-            kind = "accept",
             priority = 650,
+            dependsOn = { "accept-94863-taming-the-beast" },
+            id = "objective-94863-reviewed-mechanics",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept Training the Beast from Yaw Sharpmane in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-6088-taming-the-beast", "turnin-6087-taming-the-beast" },
-            complete = QuestState(6089, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4780, 0.5560, "Yaw Sharpmane",
-                    "Travel to Yaw Sharpmane in Mulgore."),
-            },
+            useClientPin = true,
+            classAction = "objective-94863-reviewed-mechanics",
         },
         {
-            id = "turnin-6089-training-the-beast",
-            kind = "turnin",
             priority = 660,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "accept-94863-taming-the-beast", "objective-94863-reviewed-mechanics" },
+            id = "turnin-94863-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = 6 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in Training the Beast to Holt Thunderhorn in Thunder Bluff. This step is for Tauren.",
-            dependsOn = { "accept-6089-training-the-beast" },
-            complete = QuestState(6089, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.5740, 0.8920, "Holt Thunderhorn",
-                    "Travel to Holt Thunderhorn in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94863-taming-the-beast",
         },
         {
-            id = "accept-6068-the-hunters-path",
-            kind = "accept",
             priority = 670,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "turnin-94863-taming-the-beast" },
+            id = "accept-94864-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Sian'dur in Orgrimmar. This step is for Orcs and Trolls.",
-            complete = QuestState(6068, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6780, 0.1780, "Sian'dur",
-                    "Travel to Sian'dur in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "accept-94864-taming-the-beast",
         },
         {
-            id = "turnin-6068-the-hunters-path",
-            kind = "turnin",
             priority = 680,
+            dependsOn = { "accept-94864-taming-the-beast" },
+            id = "objective-94864-reviewed-mechanics",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6068-the-hunters-path" },
-            complete = QuestState(6068, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = true,
+            classAction = "objective-94864-reviewed-mechanics",
         },
         {
-            id = "accept-6069-the-hunters-path",
-            kind = "accept",
             priority = 690,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "accept-94864-taming-the-beast", "objective-94864-reviewed-mechanics" },
+            id = "turnin-94864-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Kali Remik in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6068-the-hunters-path" },
-            complete = QuestState(6069, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7420, "Kali Remik",
-                    "Travel to Kali Remik in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94864-taming-the-beast",
         },
         {
-            id = "turnin-6069-the-hunters-path",
-            kind = "turnin",
             priority = 700,
+            route = {
+                { y = 0.662, mapID = 1429, label = "Josephine Carson", x = 0.412, offMapText = "Travel to Josephine Carson in Elwynn Forest." },
+            },
+            dependsOn = { "turnin-94864-taming-the-beast" },
+            id = "accept-94793-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6069-the-hunters-path" },
-            complete = QuestState(6069, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-94793-training-the-beast",
         },
         {
-            id = "accept-6070-the-hunters-path",
-            kind = "accept",
             priority = 710,
+            route = {
+                { y = 0.664, mapID = 1429, label = "Isaac Chan", x = 0.418, offMapText = "Travel to Isaac Chan in Elwynn Forest." },
+            },
+            dependsOn = { "accept-94793-training-the-beast" },
+            id = "turnin-94793-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 7 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Kary Thunderhorn in Thunder Bluff. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6069-the-hunters-path" },
-            complete = QuestState(6070, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.5820, 0.8780, "Kary Thunderhorn",
-                    "Travel to Kary Thunderhorn in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94793-training-the-beast",
         },
         {
-            id = "turnin-6070-the-hunters-path",
-            kind = "turnin",
+            id = "level-before-accept-6065-the-hunters-path",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6065,
+            alternativeQuests = { 6066, 6067 },
             priority = 720,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Hunter's Path to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6070-the-hunters-path" },
-            complete = QuestState(6070, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
         },
         {
-            id = "accept-6062-taming-the-beast",
-            kind = "accept",
             priority = 730,
+            route = {
+                { y = 0.878, mapID = 1456, label = "Kary Thunderhorn", x = 0.582, offMapText = "Travel to Kary Thunderhorn in Thunder Bluff." },
+            },
+            id = "accept-6065-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6070-the-hunters-path" },
-            complete = QuestState(6062, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-6065-the-hunters-path",
         },
         {
-            id = "turnin-6062-taming-the-beast",
-            kind = "turnin",
             priority = 740,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6065-the-hunters-path" },
+            id = "turnin-6065-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6062-taming-the-beast" },
-            complete = QuestState(6062, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6065-the-hunters-path",
         },
         {
-            id = "accept-6083-taming-the-beast",
-            kind = "accept",
             priority = 750,
+            route = {
+                { y = 0.178, mapID = 1454, label = "Sian'dur", x = 0.678, offMapText = "Travel to Sian'dur in Orgrimmar." },
+            },
+            dependsOn = { "turnin-6065-the-hunters-path" },
+            id = "accept-6066-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6062-taming-the-beast" },
-            complete = QuestState(6083, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-6066-the-hunters-path",
         },
         {
-            id = "turnin-6083-taming-the-beast",
-            kind = "turnin",
             priority = 760,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6066-the-hunters-path" },
+            id = "turnin-6066-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6083-taming-the-beast" },
-            complete = QuestState(6083, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6066-the-hunters-path",
         },
         {
-            id = "accept-6082-taming-the-beast",
-            kind = "accept",
             priority = 770,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "turnin-6066-the-hunters-path" },
+            id = "accept-6067-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6083-taming-the-beast", "turnin-6062-taming-the-beast" },
-            complete = QuestState(6082, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-6067-the-hunters-path",
         },
         {
-            id = "turnin-6082-taming-the-beast",
-            kind = "turnin",
             priority = 780,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6067-the-hunters-path" },
+            id = "turnin-6067-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6082-taming-the-beast" },
-            complete = QuestState(6082, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6067-the-hunters-path",
         },
         {
-            id = "accept-6081-training-the-beast",
-            kind = "accept",
             priority = 790,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "turnin-6067-the-hunters-path" },
+            id = "accept-6061-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Training the Beast from Thotar in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-6082-taming-the-beast", "turnin-6083-taming-the-beast" },
-            complete = QuestState(6081, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5180, 0.4340, "Thotar",
-                    "Travel to Thotar in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-6061-taming-the-beast",
         },
         {
-            id = "turnin-6081-training-the-beast",
-            kind = "turnin",
             priority = 800,
+            id = "objective-6061-quest-work",
             conditions = {
                 all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
                     { faction = "Horde" },
-                    { class = 3 },
-                    { race = { 2, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in Training the Beast to Ormak Grimshot in Orgrimmar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-6081-training-the-beast" },
-            complete = QuestState(6081, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.6620, 0.1820, "Ormak Grimshot",
-                    "Travel to Ormak Grimshot in Orgrimmar."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6061-taming-the-beast" },
+            classAction = "objective-6061-quest-work",
         },
         {
-            id = "accept-6071-the-hunters-path",
-            kind = "accept",
             priority = 810,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6061-taming-the-beast", "objective-6061-quest-work" },
+            id = "turnin-6061-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Jocaste in Darnassus. This step is for Night Elves.",
-            complete = QuestState(6071, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.4020, 0.0880, "Jocaste",
-                    "Travel to Jocaste in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6061-taming-the-beast",
         },
         {
-            id = "turnin-6071-the-hunters-path",
-            kind = "turnin",
             priority = 820,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "turnin-6061-taming-the-beast" },
+            id = "accept-6087-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Dazalar in Teldrassil. This step is for Night Elves.",
-            dependsOn = { "accept-6071-the-hunters-path" },
-            complete = QuestState(6071, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5660, 0.5960, "Dazalar",
-                    "Travel to Dazalar in Teldrassil."),
-            },
+            useClientPin = false,
+            classAction = "accept-6087-taming-the-beast",
         },
         {
-            id = "accept-6074-the-hunters-path",
-            kind = "accept",
             priority = 830,
+            id = "objective-6087-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Olmin Burningbeard in Ironforge. This step is for Dwarves.",
-            complete = QuestState(6074, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7060, 0.8380, "Olmin Burningbeard",
-                    "Travel to Olmin Burningbeard in Ironforge."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6087-taming-the-beast" },
+            classAction = "objective-6087-quest-work",
         },
         {
-            id = "turnin-6074-the-hunters-path",
-            kind = "turnin",
             priority = 840,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6087-taming-the-beast", "objective-6087-quest-work" },
+            id = "turnin-6087-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6074-the-hunters-path" },
-            complete = QuestState(6074, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6087-taming-the-beast",
         },
         {
-            id = "accept-6075-the-hunters-path",
-            kind = "accept",
             priority = 850,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "turnin-6087-taming-the-beast", "turnin-6061-taming-the-beast" },
+            id = "accept-6088-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Tristane Shadowstone in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "turnin-6074-the-hunters-path" },
-            complete = QuestState(6075, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.3060, 0.4540, "Tristane Shadowstone",
-                    "Travel to Tristane Shadowstone in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "accept-6088-taming-the-beast",
         },
         {
-            id = "turnin-6075-the-hunters-path",
-            kind = "turnin",
             priority = 860,
+            id = "objective-6088-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6075-the-hunters-path" },
-            complete = QuestState(6075, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-6088-taming-the-beast" },
+            classAction = "objective-6088-quest-work",
         },
         {
-            id = "accept-6076-the-hunters-path",
-            kind = "accept",
             priority = 870,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "accept-6088-taming-the-beast", "objective-6088-quest-work" },
+            id = "turnin-6088-taming-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept The Hunter's Path from Einris Brightspear in Stormwind City. This step is for Dwarves.",
-            dependsOn = { "turnin-6075-the-hunters-path" },
-            complete = QuestState(6076, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.6160, 0.1540, "Einris Brightspear",
-                    "Travel to Einris Brightspear in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6088-taming-the-beast",
         },
         {
-            id = "turnin-6076-the-hunters-path",
-            kind = "turnin",
             priority = 880,
+            route = {
+                { y = 0.556, mapID = 1412, label = "Yaw Sharpmane", x = 0.478, offMapText = "Travel to Yaw Sharpmane in Mulgore." },
+            },
+            dependsOn = { "turnin-6088-taming-the-beast", "turnin-6087-taming-the-beast" },
+            id = "accept-6089-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Turn in The Hunter's Path to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6076-the-hunters-path" },
-            complete = QuestState(6076, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "accept-6089-training-the-beast",
         },
         {
-            id = "accept-6064-taming-the-beast",
-            kind = "accept",
             priority = 890,
+            route = {
+                { y = 0.892, mapID = 1456, label = "Holt Thunderhorn", x = 0.574, offMapText = "Travel to Holt Thunderhorn in Thunder Bluff." },
+            },
+            dependsOn = { "accept-6089-training-the-beast" },
+            id = "turnin-6089-training-the-beast",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "turnin-6076-the-hunters-path" },
-            complete = QuestState(6064, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6089-training-the-beast",
         },
         {
-            id = "turnin-6064-taming-the-beast",
-            kind = "turnin",
+            id = "level-before-accept-6068-the-hunters-path",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6068,
+            alternativeQuests = { 6069, 6070 },
             priority = 900,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Taming the Beast to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6064-taming-the-beast" },
-            complete = QuestState(6064, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
         },
         {
-            id = "accept-6084-taming-the-beast",
-            kind = "accept",
             priority = 910,
+            route = {
+                { y = 0.178, mapID = 1454, label = "Sian'dur", x = 0.678, offMapText = "Travel to Sian'dur in Orgrimmar." },
+            },
+            id = "accept-6068-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "turnin-6064-taming-the-beast" },
-            complete = QuestState(6084, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-6068-the-hunters-path",
         },
         {
-            id = "turnin-6084-taming-the-beast",
-            kind = "turnin",
             priority = 920,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6068-the-hunters-path" },
+            id = "turnin-6068-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6084-taming-the-beast" },
-            complete = QuestState(6084, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6068-the-hunters-path",
         },
         {
-            id = "accept-6085-taming-the-beast",
-            kind = "accept",
             priority = 930,
+            route = {
+                { y = 0.742, mapID = 1411, label = "Kali Remik", x = 0.562, offMapText = "Travel to Kali Remik in Durotar." },
+            },
+            dependsOn = { "turnin-6068-the-hunters-path" },
+            id = "accept-6069-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Accept Taming the Beast from Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "turnin-6084-taming-the-beast", "turnin-6064-taming-the-beast" },
-            complete = QuestState(6085, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "accept-6069-the-hunters-path",
         },
         {
-            id = "turnin-6085-taming-the-beast",
-            kind = "turnin",
             priority = 940,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6069-the-hunters-path" },
+            id = "turnin-6069-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Turn in Taming the Beast to Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "accept-6085-taming-the-beast" },
-            complete = QuestState(6085, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "turnin-6069-the-hunters-path",
         },
         {
-            id = "accept-6086-training-the-beast",
-            kind = "accept",
             priority = 950,
+            route = {
+                { y = 0.878, mapID = 1456, label = "Kary Thunderhorn", x = 0.582, offMapText = "Travel to Kary Thunderhorn in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-6069-the-hunters-path" },
+            id = "accept-6070-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Accept Training the Beast from Grif Wildheart in Dun Morogh. This step is for Dwarves.",
-            dependsOn = { "turnin-6085-taming-the-beast", "turnin-6084-taming-the-beast" },
-            complete = QuestState(6086, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4580, 0.5300, "Grif Wildheart",
-                    "Travel to Grif Wildheart in Dun Morogh."),
-            },
+            useClientPin = false,
+            classAction = "accept-6070-the-hunters-path",
         },
         {
-            id = "turnin-6086-training-the-beast",
-            kind = "turnin",
             priority = 960,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6070-the-hunters-path" },
+            id = "turnin-6070-the-hunters-path",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 3 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
                 },
             },
-            text = "Turn in Training the Beast to Belia Thundergranite in Ironforge. This step is for Dwarves.",
-            dependsOn = { "accept-6086-training-the-beast" },
-            complete = QuestState(6086, "completed"),
+            useClientPin = false,
+            classAction = "turnin-6070-the-hunters-path",
+        },
+        {
+            priority = 970,
             route = {
-                Point(MAP.IRONFORGE, 0.7080, 0.8540, "Belia Thundergranite",
-                    "Travel to Belia Thundergranite in Ironforge."),
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
             },
-        }
+            dependsOn = { "turnin-6070-the-hunters-path" },
+            id = "accept-6062-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6062-taming-the-beast",
+        },
+        {
+            priority = 980,
+            id = "objective-6062-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6062-taming-the-beast" },
+            classAction = "objective-6062-quest-work",
+        },
+        {
+            priority = 990,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6062-taming-the-beast", "objective-6062-quest-work" },
+            id = "turnin-6062-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6062-taming-the-beast",
+        },
+        {
+            priority = 1000,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "turnin-6062-taming-the-beast" },
+            id = "accept-6083-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6083-taming-the-beast",
+        },
+        {
+            priority = 1010,
+            id = "objective-6083-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6083-taming-the-beast" },
+            classAction = "objective-6083-quest-work",
+        },
+        {
+            priority = 1020,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6083-taming-the-beast", "objective-6083-quest-work" },
+            id = "turnin-6083-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6083-taming-the-beast",
+        },
+        {
+            priority = 1030,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "turnin-6083-taming-the-beast", "turnin-6062-taming-the-beast" },
+            id = "accept-6082-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6082-taming-the-beast",
+        },
+        {
+            priority = 1040,
+            id = "objective-6082-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6082-taming-the-beast" },
+            classAction = "objective-6082-quest-work",
+        },
+        {
+            priority = 1050,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "accept-6082-taming-the-beast", "objective-6082-quest-work" },
+            id = "turnin-6082-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6082-taming-the-beast",
+        },
+        {
+            priority = 1060,
+            route = {
+                { y = 0.434, mapID = 1411, label = "Thotar", x = 0.518, offMapText = "Travel to Thotar in Durotar." },
+            },
+            dependsOn = { "turnin-6082-taming-the-beast", "turnin-6083-taming-the-beast" },
+            id = "accept-6081-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6081-training-the-beast",
+        },
+        {
+            priority = 1070,
+            route = {
+                { y = 0.182, mapID = 1454, label = "Ormak Grimshot", x = 0.662, offMapText = "Travel to Ormak Grimshot in Orgrimmar." },
+            },
+            dependsOn = { "accept-6081-training-the-beast" },
+            id = "turnin-6081-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6081-training-the-beast",
+        },
+        {
+            priority = 1080,
+            route = {
+                { y = 0.088, mapID = 1457, label = "Jocaste", x = 0.402, offMapText = "Travel to Jocaste in Darnassus." },
+            },
+            id = "accept-6071-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-6071-the-hunters-path",
+        },
+        {
+            priority = 1090,
+            route = {
+                { y = 0.596, mapID = 1438, label = "Dazalar", x = 0.566, offMapText = "Travel to Dazalar in Teldrassil." },
+            },
+            dependsOn = { "accept-6071-the-hunters-path" },
+            id = "turnin-6071-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6071-the-hunters-path",
+        },
+        {
+            id = "level-before-accept-6074-the-hunters-path",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6074,
+            alternativeQuests = { 6075, 6076 },
+            priority = 1100,
+        },
+        {
+            priority = 1110,
+            route = {
+                { y = 0.838, mapID = 1455, label = "Olmin Burningbeard", x = 0.706, offMapText = "Travel to Olmin Burningbeard in Ironforge." },
+            },
+            id = "accept-6074-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-6074-the-hunters-path",
+        },
+        {
+            priority = 1120,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6074-the-hunters-path" },
+            id = "turnin-6074-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6074-the-hunters-path",
+        },
+        {
+            priority = 1130,
+            route = {
+                { y = 0.454, mapID = 1426, label = "Tristane Shadowstone", x = 0.306, offMapText = "Travel to Tristane Shadowstone in Dun Morogh." },
+            },
+            dependsOn = { "turnin-6074-the-hunters-path" },
+            id = "accept-6075-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6075-the-hunters-path",
+        },
+        {
+            priority = 1140,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6075-the-hunters-path" },
+            id = "turnin-6075-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6075-the-hunters-path",
+        },
+        {
+            priority = 1150,
+            route = {
+                { y = 0.154, mapID = 1453, label = "Einris Brightspear", x = 0.616, offMapText = "Travel to Einris Brightspear in Stormwind City." },
+            },
+            dependsOn = { "turnin-6075-the-hunters-path" },
+            id = "accept-6076-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6076-the-hunters-path",
+        },
+        {
+            priority = 1160,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6076-the-hunters-path" },
+            id = "turnin-6076-the-hunters-path",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6076-the-hunters-path",
+        },
+        {
+            priority = 1170,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "turnin-6076-the-hunters-path" },
+            id = "accept-6064-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6064-taming-the-beast",
+        },
+        {
+            priority = 1180,
+            id = "objective-6064-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6064-taming-the-beast" },
+            classAction = "objective-6064-quest-work",
+        },
+        {
+            priority = 1190,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6064-taming-the-beast", "objective-6064-quest-work" },
+            id = "turnin-6064-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6064-taming-the-beast",
+        },
+        {
+            priority = 1200,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "turnin-6064-taming-the-beast" },
+            id = "accept-6084-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6084-taming-the-beast",
+        },
+        {
+            priority = 1210,
+            id = "objective-6084-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6084-taming-the-beast" },
+            classAction = "objective-6084-quest-work",
+        },
+        {
+            priority = 1220,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6084-taming-the-beast", "objective-6084-quest-work" },
+            id = "turnin-6084-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6084-taming-the-beast",
+        },
+        {
+            priority = 1230,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "turnin-6084-taming-the-beast", "turnin-6064-taming-the-beast" },
+            id = "accept-6085-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6085-taming-the-beast",
+        },
+        {
+            priority = 1240,
+            id = "objective-6085-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-6085-taming-the-beast" },
+            classAction = "objective-6085-quest-work",
+        },
+        {
+            priority = 1250,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "accept-6085-taming-the-beast", "objective-6085-quest-work" },
+            id = "turnin-6085-taming-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6085-taming-the-beast",
+        },
+        {
+            priority = 1260,
+            route = {
+                { y = 0.53, mapID = 1426, label = "Grif Wildheart", x = 0.458, offMapText = "Travel to Grif Wildheart in Dun Morogh." },
+            },
+            dependsOn = { "turnin-6085-taming-the-beast", "turnin-6084-taming-the-beast" },
+            id = "accept-6086-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-6086-training-the-beast",
+        },
+        {
+            priority = 1270,
+            route = {
+                { y = 0.854, mapID = 1455, label = "Belia Thundergranite", x = 0.708, offMapText = "Travel to Belia Thundergranite in Ironforge." },
+            },
+            dependsOn = { "accept-6086-training-the-beast" },
+            id = "turnin-6086-training-the-beast",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-6086-training-the-beast",
+        },
+        {
+            id = "level-before-accept-8151-the-hunters-charm",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8151,
+            priority = 1280,
+        },
+        {
+            priority = 1290,
+            route = {
+                { y = 0.15, mapID = 1453, label = "Ulfir Ironbeard", x = 0.62, offMapText = "Travel to Ulfir Ironbeard in Stormwind City." },
+            },
+            id = "accept-8151-the-hunters-charm",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8151-the-hunters-charm",
+        },
+        {
+            id = "level-before-accept-8151-the-hunters-charm-horde",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8151,
+            priority = 1300,
+        },
+        {
+            priority = 1310,
+            route = {
+                { y = 0.182, mapID = 1454, label = "Ormak Grimshot", x = 0.662, offMapText = "Travel to Ormak Grimshot in Orgrimmar." },
+            },
+            id = "accept-8151-the-hunters-charm-horde",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8151-the-hunters-charm-horde",
+        },
+        {
+            id = "level-before-turnin-8151-the-hunters-charm",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8151,
+            priority = 1320,
+        },
+        {
+            priority = 1330,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8151-the-hunters-charm", "accept-8151-the-hunters-charm-horde" },
+            id = "turnin-8151-the-hunters-charm",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8151-the-hunters-charm",
+        },
+        {
+            priority = 1340,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "turnin-8151-the-hunters-charm" },
+            id = "accept-8153-courser-antlers",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8153-courser-antlers",
+        },
+        {
+            priority = 1350,
+            route = {
+                { y = 0.692, mapID = 1447, label = "Mosshoof Courser", x = 0.378, offMapText = "Travel to Mosshoof Courser in Azshara." },
+            },
+            dependsOn = { "accept-8153-courser-antlers" },
+            id = "objective-8153-courser-antlers",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8153-courser-antlers",
+        },
+        {
+            priority = 1360,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8153-courser-antlers", "objective-8153-courser-antlers" },
+            id = "turnin-8153-courser-antlers",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8153-courser-antlers",
+        },
+        {
+            priority = 1370,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "turnin-8153-courser-antlers", "turnin-8151-the-hunters-charm" },
+            id = "accept-8231-wavethrashing",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8231-wavethrashing",
+        },
+        {
+            priority = 1380,
+            route = {
+                { y = 0.086, mapID = 1447, label = "Young Wavethrasher", x = 0.654, offMapText = "Travel to Young Wavethrasher in Azshara." },
+                { y = 0.346, mapID = 1447, label = "Wavethrasher", x = 0.712, offMapText = "Travel to Wavethrasher in Azshara." },
+                { y = 0.722, mapID = 1447, label = "Great Wavethrasher", x = 0.558, offMapText = "Travel to Great Wavethrasher in Azshara." },
+            },
+            dependsOn = { "accept-8231-wavethrashing" },
+            id = "objective-8231-wavethrashing",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8231-wavethrashing",
+        },
+        {
+            priority = 1390,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8231-wavethrashing", "objective-8231-wavethrashing" },
+            id = "turnin-8231-wavethrashing",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8231-wavethrashing",
+        },
+        {
+            id = "loot-starter-before-accept-7632-the-ancient-leaf",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            priority = 1400,
+            classAction = "loot-starter-before-accept-7632-the-ancient-leaf",
+        },
+        {
+            id = "level-before-accept-7632-the-ancient-leaf",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7632,
+            priority = 1410,
+        },
+        {
+            priority = 1420,
+            id = "accept-7632-the-ancient-leaf",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7632-the-ancient-leaf",
+        },
+        {
+            priority = 1430,
+            route = {
+                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+            },
+            dependsOn = { "accept-7632-the-ancient-leaf" },
+            id = "turnin-7632-the-ancient-leaf",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7632-the-ancient-leaf",
+        },
+        {
+            priority = 1440,
+            route = {
+                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+            },
+            dependsOn = { "turnin-7632-the-ancient-leaf" },
+            id = "accept-7633-an-introduction",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7633-an-introduction",
+        },
+        {
+            priority = 1450,
+            route = {
+                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+            },
+            dependsOn = { "accept-7633-an-introduction" },
+            id = "turnin-7633-an-introduction",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7633-an-introduction",
+        },
+        {
+            priority = 1460,
+            route = {
+                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+            },
+            dependsOn = { "turnin-7632-the-ancient-leaf" },
+            id = "accept-7636-stave-of-the-ancients",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-7636-stave-of-the-ancients",
+        },
+        {
+            priority = 1470,
+            id = "objective-7636-quest-work",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-7636-stave-of-the-ancients" },
+            classAction = "objective-7636-quest-work",
+        },
+        {
+            priority = 1480,
+            route = {
+                { y = 0.242, mapID = 1448, label = "Vartrus the Ancient", x = 0.488, offMapText = "Travel to Vartrus the Ancient in Felwood." },
+            },
+            dependsOn = { "accept-7636-stave-of-the-ancients", "objective-7636-quest-work" },
+            id = "turnin-7636-stave-of-the-ancients",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7636-stave-of-the-ancients",
+        },
     },
+    routeMode = "ordered",
 })

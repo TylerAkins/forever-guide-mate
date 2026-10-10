@@ -141,7 +141,7 @@ ACTION_KILL = re.compile(
     r"^kill\s+(?:(\d+)\s+)?(.+?)##(\d+)\b", re.I
 )
 ACTION_COLLECT = re.compile(
-    r"^collect\s+(\d+)\s+(.+?)##(\d+)\b", re.I
+    r"^collect\s+(?:(\d+)\s+)?(.+?)##(\d+)\b", re.I
 )
 ACTION_CLICK = re.compile(
     r"^click\s+(.+?)##(\d+)\b", re.I
@@ -177,6 +177,7 @@ class ParsedGoal:
     faction: str | None = None
     level_min: int | None = None
     instant: bool = False
+    source_step: int = 0
 
 
 @dataclass
@@ -224,12 +225,19 @@ def zone_map_id(zone: str) -> int | None:
 
 
 def parse_only(expr: str, faction: str) -> tuple[list[int], list[int]]:
+    negative = re.fullmatch(r"\s*not\s+(\w+)\s*", expr, re.I)
+    if negative and negative.group(1).lower() in CLASS_IDS:
+        excluded = CLASS_IDS[negative.group(1).lower()]
+        return sorted(value for value in CLASS_IDS.values() if value != excluded), []
     classes: list[int] = []
     races: list[int] = []
     tokens = re.split(r"\s+or\s+|,|/|\s+and\s+", expr, flags=re.I)
     for raw in tokens:
         token = raw.strip().lower()
         token = re.sub(r"[^a-z ]", "", token).strip()
+        for race, race_id in RACE_IDS.items():
+            if token.startswith(race + " ") and race_id is not None:
+                races.append(race_id)
         if not token or token in ("not", "completedq", "haveq", "rep", "trained"):
             continue
         if token in CLASS_IDS:
@@ -278,7 +286,7 @@ def clean_name(name: str) -> str:
 
 
 def should_omit_step(body: str) -> bool:
-    lines = [ln.strip() for ln in body.splitlines() if ln.strip()]
+    lines = [ln.strip() for ln in body.splitlines() if ln.strip() and not ln.strip().lower().startswith("label ")]
     if not lines:
         return True
     joined = "\n".join(lines)
@@ -311,18 +319,22 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
     if should_omit_step(body):
         return []
     goals: list[ParsedGoal] = []
-    map_id, x, y = parse_goto(body)
+    step_map_id, step_x, step_y = parse_goto(body)
     classes: list[int] = []
     races: list[int] = []
-    for m in ONLY_RE.finditer(body):
+    for line in body.splitlines():
+        m = ONLY_RE.match(line.strip())
+        if not m:
+            continue
         c, r = parse_only(m.group(1), faction)
         classes.extend(c)
         races.extend(r)
     classes = sorted(set(classes))
     races = sorted(set(races))
+    step_classes, step_races = classes, races
 
     npc = ""
-    talk_m = ACTION_TALK.search(body)
+    talk_m = re.search(ACTION_TALK.pattern, body, re.I | re.M)
     if talk_m:
         npc = clean_name(talk_m.group(1))
 
@@ -330,6 +342,15 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
         s = line.strip()
         if not s or s.startswith("|") or s.startswith("_") or s.startswith("tip"):
             continue
+        classes, races = step_classes, step_races
+        map_id, x, y = parse_goto(s)
+        if map_id is None:
+            map_id, x, y = step_map_id, step_x, step_y
+        restriction = ONLY_RE.search(s)
+        if restriction:
+            local_classes, local_races = parse_only(restriction.group(1), faction)
+            classes = sorted(set(step_classes) & set(local_classes)) if step_classes and local_classes else (local_classes or step_classes)
+            races = sorted(set(step_races) & set(local_races)) if step_races and local_races else (local_races or step_races)
         am = ACTION_ACCEPT.match(s)
         if am:
             qid = int(am.group(2))
@@ -404,8 +425,8 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
             continue
         km = ACTION_KILL.match(s)
         if km:
-            q = Q_RE.search(s) or Q_RE.search(body)
-            if not q:
+            q = Q_RE.search(s)
+            if not q or not q.group(2):
                 continue
             qid = int(q.group(1))
             obj = int(q.group(2)) if q.group(2) else 1
@@ -432,12 +453,12 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
             continue
         cm = ACTION_COLLECT.match(s)
         if cm:
-            q = Q_RE.search(s) or Q_RE.search(body)
-            if not q:
+            q = Q_RE.search(s)
+            if not q or not q.group(2):
                 continue
             qid = int(q.group(1))
             obj = int(q.group(2)) if q.group(2) else 1
-            count = int(cm.group(1))
+            count = int(cm.group(1)) if cm.group(1) else 1
             item = clean_name(cm.group(2))
             goals.append(
                 ParsedGoal(
@@ -459,8 +480,8 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
             continue
         um = ACTION_USE.match(s)
         if um:
-            q = Q_RE.search(s) or Q_RE.search(body)
-            if not q:
+            q = Q_RE.search(s)
+            if not q or not q.group(2):
                 continue
             qid = int(q.group(1))
             obj = int(q.group(2)) if q.group(2) else 1
@@ -484,8 +505,8 @@ def parse_step(body: str, faction: str, level_min: int) -> list[ParsedGoal]:
             continue
         cl = ACTION_CLICK.match(s)
         if cl:
-            q = Q_RE.search(s) or Q_RE.search(body)
-            if not q:
+            q = Q_RE.search(s)
+            if not q or not q.group(2):
                 continue
             qid = int(q.group(1))
             obj = int(q.group(2)) if q.group(2) else 1
@@ -545,8 +566,11 @@ def extract_guides(path: Path, faction: str) -> list[ParsedGuide]:
 
         goals: list[ParsedGoal] = []
         steps = re.split(r"(?m)^step\s*$", body)
-        for step_body in steps[1:]:
-            goals.extend(parse_step(step_body, faction, level_min))
+        for source_step, step_body in enumerate(steps[1:], 1):
+            parsed = parse_step(step_body, faction, level_min)
+            for goal in parsed:
+                goal.source_step = source_step
+            goals.extend(parsed)
         # Deduplicate identical accept/turnin at same quest+kind+coords
         seen: set[tuple] = set()
         unique: list[ParsedGoal] = []
@@ -778,6 +802,8 @@ def write_guides(guides: list[ParsedGuide], out_leveling: Path, dry_run: bool) -
         if dry_run:
             print(f"DRY {path} goals={len(guide.goals)} starter={guide.starter}")
             continue
+        if path.exists() and 'routeMode = "ordered"' in path.read_text(encoding="utf-8"):
+            raise ValueError(f"{path}: ordered itineraries require an explicit reviewed conversion; legacy import is disabled")
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(emit_guide(guide, era=False), encoding="utf-8")
         print(f"Wrote {path} ({len(guide.goals)} goals)")

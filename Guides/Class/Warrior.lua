@@ -1,3217 +1,6231 @@
 local _, ns = ...
 
--- Warrior class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- A Scribbled Letter
--- The Warrior's Path
--- The Skybreaker Bulwark
--- Stalk With The Earthmother
--- Stalk With The Earthmother
--- Left out (dungeon quest): Voodoo Feathers
--- Left out (no start pin): Legacy of Valor, Beach Bot, Red Bag Blues, Voodoo Feathers, Poacher's Den, Bookin' it Back, Rift Away, Amidst the Shadowed Webs, Anyone Can Cook, A Trial of Fitness, The Old Champ, Defanged (+15 more)
-
-local MAP = {
-    ALTERACMOUNTAINS = 1416,
-    ASHENVALE = 1440,
-    AZSHARA = 1447,
-    BARRENS = 1413,
-    BLASTEDLANDS = 1419,
-    DARNASSUS = 1457,
-    DESOLACE = 1443,
-    DUNMOROGH = 1426,
-    DUROTAR = 1411,
-    ELWYNNFOREST = 1429,
-    FERALAS = 1444,
-    IRONFORGE = 1455,
-    MULGORE = 1412,
-    ORGRIMMAR = 1454,
-    REDRIDGEMOUNTAINS = 1433,
-    STORMWINDCITY = 1453,
-    SWAMPOFSORROWS = 1435,
-    TELDRASSIL = 1438,
-    THUNDERBLUFF = 1456,
-    TIRISFALGLADES = 1420,
-    UNDERCITY = 1458,
-    ZEPHRASISLE = 2521,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-warrior",
+    revision = 3,
     title = "Warrior",
     category = "Class Quests",
-    revision = 1,
+    id = "class-warrior",
     conditions = {
         all = {
             { class = 1 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-92479-a-scribbled-letter",
-            kind = "accept",
             priority = 10,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
+            },
+            id = "accept-92479-a-scribbled-letter",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept A Scribbled Letter from Marshal McBride in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(92479, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4880, 0.4160, "Marshal McBride",
-                    "Travel to Marshal McBride in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92479-a-scribbled-letter",
         },
         {
-            id = "turnin-92479-a-scribbled-letter",
-            kind = "turnin",
             priority = 20,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                },
+            route = {
+                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", x = 0.512, offMapText = "Travel to Tordrin Sternblade in Elwynn Forest." },
             },
-            text = "Turn in A Scribbled Letter to Tordrin Sternblade in Elwynn Forest. This step is for Humans.",
             dependsOn = { "accept-92479-a-scribbled-letter" },
-            complete = QuestState(92479, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.5120, 0.4080, "Tordrin Sternblade",
-                    "Travel to Tordrin Sternblade in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-92461-harmony-in-balance",
-            kind = "accept",
-            priority = 27,
+            id = "turnin-92479-a-scribbled-letter",
             conditions = {
                 all = {
                     { class = 1 },
-                    { level = { min = 2 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92461, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            useClientPin = false,
+            classAction = "turnin-92479-a-scribbled-letter",
         },
         {
-            id = "objective-92461-harmony-in-balance",
-            kind = "objective",
-            priority = 28,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
-            dependsOn = { "accept-92461-harmony-in-balance" },
-            complete = QuestState(92461, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
-                    "Travel to Juvenile Vuldren in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-92461-harmony-in-balance",
-            kind = "turnin",
-            priority = 29,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
-            dependsOn = { "objective-92461-harmony-in-balance" },
-            complete = QuestState(92461, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-92532-the-warriors-path",
-            kind = "accept",
             priority = 30,
-            dependsOn = { "turnin-92461-harmony-in-balance" },
+            route = {
+                { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-179-dwarven-outfitters",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 1 },
-                    { level = { min = 2 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept The Warrior's Path from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92532, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-179-dwarven-outfitters",
         },
         {
-            id = "turnin-92532-the-warriors-path",
-            kind = "turnin",
             priority = 40,
+            route = {
+                { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
+            },
+            id = "objective-179-1-ragged-young-wolf",
             conditions = {
                 all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 1 },
-                    { level = { min = 2 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in The Warrior's Path to Blademaster Ren in Zephras Isle.",
-            dependsOn = { "accept-92532-the-warriors-path" },
-            complete = QuestState(92532, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4360, 0.2420, "Blademaster Ren",
-                    "Travel to Blademaster Ren in Zephras Isle."),
-            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = { "accept-179-dwarven-outfitters" },
+            classAction = "objective-179-1-ragged-young-wolf",
         },
         {
-            id = "accept-76156-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 41,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76156, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76156-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 42,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
-            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
-            route = {
-                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
-                    "Travel to the Venture Co. Mine in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76156-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 43,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
-            complete = QuestState(76156, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-76160-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 44,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76160, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76160-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 45,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
-            complete = QuestObjective(76160, 1, "Pine Salve"),
-            route = {
-                Point(MAP.MULGORE, 0.3240, 0.2760, "Windfury Matriarch",
-                    "Travel to the Windfury harpies in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76160-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 46,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
-            complete = QuestState(76160, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-1638-a-warriors-training",
-            kind = "accept",
             priority = 50,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
+            },
+            dependsOn = { "accept-179-dwarven-outfitters", "objective-179-1-ragged-young-wolf" },
+            id = "turnin-179-dwarven-outfitters",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 7 },
+                                    {
+                                        race = { 7 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept A Warrior's Training from Lyria Du Lac in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(1638, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4100, 0.6580, "Lyria Du Lac",
-                    "Travel to Lyria Du Lac in Elwynn Forest.", { map = { MAP.STORMWINDCITY } }),
-                Point(MAP.STORMWINDCITY, 0.7860, 0.4560, "Ilsa Corbin",
-                    "Travel to Ilsa Corbin in Stormwind City."),
-            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-179-dwarven-outfitters",
         },
         {
-            id = "turnin-1638-a-warriors-training",
-            kind = "turnin",
             priority = 60,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in A Warrior's Training to Harry Burlguard in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-1638-a-warriors-training" },
-            complete = QuestState(1638, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7400, 0.3720, "Harry Burlguard",
-                    "Travel to Harry Burlguard in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1639-bartleby-the-drunk",
-            kind = "accept",
-            priority = 70,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Bartleby the Drunk from Harry Burlguard in Stormwind City. This step is for Humans.",
-            dependsOn = { "turnin-1638-a-warriors-training" },
-            complete = QuestState(1639, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7400, 0.3720, "Harry Burlguard",
-                    "Travel to Harry Burlguard in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1639-bartleby-the-drunk",
-            kind = "turnin",
-            priority = 80,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Bartleby the Drunk to Bartleby in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-1639-bartleby-the-drunk" },
-            complete = QuestState(1639, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7380, 0.3660, "Bartleby",
-                    "Travel to Bartleby in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1640-beat-bartleby",
-            kind = "accept",
-            priority = 90,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Beat Bartleby from Bartleby in Stormwind City. This step is for Humans.",
-            dependsOn = { "turnin-1639-bartleby-the-drunk" },
-            complete = QuestState(1640, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7380, 0.3660, "Bartleby",
-                    "Travel to Bartleby in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1640-beat-bartleby",
-            kind = "turnin",
-            priority = 100,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Beat Bartleby to Bartleby in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-1640-beat-bartleby" },
-            complete = QuestState(1640, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7380, 0.3660, "Bartleby",
-                    "Travel to Bartleby in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1665-bartlebys-mug",
-            kind = "accept",
-            priority = 110,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Bartleby's Mug from Bartleby in Stormwind City. This step is for Humans.",
-            dependsOn = { "turnin-1640-beat-bartleby", "turnin-1639-bartleby-the-drunk" },
-            complete = QuestState(1665, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7380, 0.3660, "Bartleby",
-                    "Travel to Bartleby in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-1665-bartlebys-mug",
-            kind = "turnin",
-            priority = 120,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Bartleby's Mug to Harry Burlguard in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-1665-bartlebys-mug" },
-            complete = QuestState(1665, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7400, 0.3720, "Harry Burlguard",
-                    "Travel to Harry Burlguard in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-1679-muren-stormpike",
-            kind = "accept",
-            priority = 130,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Muren Stormpike from Granis Swiftaxe in Dun Morogh. This step is for Dwarves and Gnomes.",
-            complete = QuestState(1679, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5260, "Granis Swiftaxe",
-                    "Travel to Granis Swiftaxe in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-1679-muren-stormpike",
-            kind = "turnin",
-            priority = 140,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Muren Stormpike to Muren Stormpike in Ironforge. This step is for Dwarves and Gnomes.",
-            dependsOn = { "accept-1679-muren-stormpike" },
-            complete = QuestState(1679, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7060, 0.9040, "Muren Stormpike",
-                    "Travel to Muren Stormpike in Ironforge."),
-            },
-        },
-        {
-            id = "accept-1678-vejrek",
-            kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Vejrek from Muren Stormpike in Ironforge. This step is for Dwarves and Gnomes.",
-            dependsOn = { "turnin-1679-muren-stormpike" },
-            complete = QuestState(1678, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7060, 0.9040, "Muren Stormpike",
-                    "Travel to Muren Stormpike in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-1678-vejrek",
-            kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Vejrek to Muren Stormpike in Ironforge. This step is for Dwarves and Gnomes.",
-            dependsOn = { "accept-1678-vejrek" },
-            complete = QuestState(1678, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7060, 0.9040, "Muren Stormpike",
-                    "Travel to Muren Stormpike in Ironforge."),
-            },
-        },
-        {
-            id = "accept-1684-elanaria",
-            kind = "accept",
-            priority = 170,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Elanaria from Moon Priestess Amara in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(1684, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5840, "Moon Priestess Amara",
-                    "Travel to Moon Priestess Amara in Teldrassil."),
-                Point(MAP.TELDRASSIL, 0.5620, 0.5920, "Kyra Windblade",
-                    "Travel to Kyra Windblade in Teldrassil."),
-            },
-        },
-        {
-            id = "turnin-1684-elanaria",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Elanaria to Elanaria in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-1684-elanaria" },
-            complete = QuestState(1684, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
-        },
-        {
-            id = "accept-1683-vorlus-vilehoof",
-            kind = "accept",
-            priority = 190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Vorlus Vilehoof from Elanaria in Darnassus. This step is for Night Elves.",
-            dependsOn = { "turnin-1684-elanaria" },
-            complete = QuestState(1683, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
-        },
-        {
-            id = "turnin-1683-vorlus-vilehoof",
-            kind = "turnin",
-            priority = 200,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Vorlus Vilehoof to Elanaria in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-1683-vorlus-vilehoof" },
-            complete = QuestState(1683, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
-        },
-        {
-            id = "accept-94003-the-skybreaker-bulwark",
-            kind = "accept",
-            priority = 210,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept The Skybreaker Bulwark from Seena Skybreaker in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            complete = QuestState(94003, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5980, 0.7280, "Seena Skybreaker",
-                    "Travel to Seena Skybreaker in Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-94003-the-skybreaker-bulwark",
-            kind = "objective",
-            priority = 220,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Reclaim the Skybreaker Bulwark from Zaal Stormshield at the Shrine of Akir. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "accept-94003-the-skybreaker-bulwark" },
-            complete = QuestState(94003, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5660, 0.5040, "Zaal Stormshield",
-                    "Travel to Zaal Stormshield in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-94003-the-skybreaker-bulwark",
-            kind = "turnin",
-            priority = 230,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { race = { 95, 96 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in The Skybreaker Bulwark to Seena Skybreaker in Zephras Isle. This step is for Alliance Skyborne and Horde Skyborne.",
-            dependsOn = { "objective-94003-the-skybreaker-bulwark" },
-            complete = QuestState(94003, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5980, 0.7280, "Seena Skybreaker",
-                    "Travel to Seena Skybreaker in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-1718-the-islander",
-            kind = "accept",
-            priority = 240,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept The Islander from Baltus Fowler in Undercity.",
-            complete = QuestState(1718, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4720, 0.1700, "Baltus Fowler",
-                    "Travel to Baltus Fowler in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
-                Point(MAP.STORMWINDCITY, 0.7880, 0.4560, "Wu Shen",
-                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
-                Point(MAP.IRONFORGE, 0.7000, 0.9060, "Kelv Sternhammer",
-                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
-                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
-                    "Travel to Sorek in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
-                Point(MAP.THUNDERBLUFF, 0.5760, 0.8720, "Torm Ragetotem",
-                    "Travel to Torm Ragetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "turnin-1718-the-islander",
-            kind = "turnin",
-            priority = 250,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in The Islander to Klannoc Macleod in The Barrens.",
-            dependsOn = { "accept-1718-the-islander" },
-            complete = QuestState(1718, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4900, "Klannoc Macleod",
-                    "Travel to Klannoc Macleod in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1719-the-affray",
-            kind = "accept",
-            priority = 260,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept The Affray from Klannoc Macleod in The Barrens.",
-            dependsOn = { "turnin-1718-the-islander" },
-            complete = QuestState(1719, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4900, "Klannoc Macleod",
-                    "Travel to Klannoc Macleod in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1719-the-affray",
-            kind = "turnin",
-            priority = 270,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in The Affray to Klannoc Macleod in The Barrens.",
-            dependsOn = { "accept-1719-the-affray" },
-            complete = QuestState(1719, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4900, "Klannoc Macleod",
-                    "Travel to Klannoc Macleod in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1791-the-windwatcher",
-            kind = "accept",
-            priority = 280,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept The Windwatcher from Klannoc Macleod in The Barrens.",
-            dependsOn = { "turnin-1719-the-affray" },
-            complete = QuestState(1791, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6860, 0.4900, "Klannoc Macleod",
-                    "Travel to Klannoc Macleod in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1791-the-windwatcher",
-            kind = "turnin",
-            priority = 290,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in The Windwatcher to Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "accept-1791-the-windwatcher" },
-            complete = QuestState(1791, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "accept-1712-cyclonian",
-            kind = "accept",
-            priority = 300,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Cyclonian from Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "turnin-1791-the-windwatcher" },
-            complete = QuestState(1712, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "objective-1712-cyclonian",
-            kind = "objective",
-            priority = 310,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Collect 8 Liferoot. Buy from Thanthaldis Snowgleam in Alterac Mountains or loot from chests on the route.",
-            dependsOn = { "accept-1712-cyclonian" },
-            complete = QuestState(1712, "complete"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.3940, 0.8160, "Thanthaldis Snowgleam",
-                    "Travel to Thanthaldis Snowgleam in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.5990, 0.4340, "Solid Chest",
-                    "Travel to Solid Chest in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.3950, 0.1520, "Solid Chest",
-                    "Travel to Solid Chest in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.1800, 0.7720, "Alliance Strongbox",
-                    "Travel to Alliance Strongbox in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.1490, 0.7530, "Alliance Chest",
-                    "Travel to Alliance Chest in Alterac Mountains."),
-            },
-        },
-        {
-            id = "turnin-1712-cyclonian",
-            kind = "turnin",
-            priority = 320,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Cyclonian to Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "objective-1712-cyclonian" },
-            complete = QuestState(1712, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "accept-1714-essence-of-the-exile",
-            kind = "accept",
-            priority = 330,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Essence of the Exile from Bath'rah's Cauldron in Alterac Mountains.",
-            complete = QuestState(1714, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.7930, 0.6670, "Bath'rah's Cauldron",
-                    "Travel to Bath'rah's Cauldron in Alterac Mountains."),
-            },
-        },
-        {
-            id = "objective-1714-essence-of-the-exile",
-            kind = "objective",
-            priority = 340,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Kill Ancient Fire Elementals in Alterac Mountains and collect Burning Charm.",
-            dependsOn = { "accept-1714-essence-of-the-exile" },
-            complete = QuestState(1714, "complete"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.6000, 0.4560, "Ancient Fire Elemental",
-                    "Travel to Ancient Fire Elemental in Alterac Mountains."),
-            },
-        },
-        {
-            id = "turnin-1714-essence-of-the-exile",
-            kind = "turnin",
-            priority = 350,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Essence of the Exile to Bath'rah's Cauldron in Alterac Mountains.",
-            dependsOn = { "objective-1714-essence-of-the-exile" },
-            complete = QuestState(1714, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.7930, 0.6670, "Bath'rah's Cauldron",
-                    "Travel to Bath'rah's Cauldron in Alterac Mountains."),
-            },
-        },
-        {
-            id = "accept-1713-the-summoning",
-            kind = "accept",
-            priority = 360,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept The Summoning from Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "turnin-1712-cyclonian" },
-            complete = QuestState(1713, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "objective-1713-the-summoning",
-            kind = "objective",
-            priority = 370,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "The Summoning: Whirlwind Heart. This is an elite. Bring a group.",
-            dependsOn = { "accept-1713-the-summoning" },
-            complete = QuestState(1713, "complete"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8020, 0.6200, "Cyclonian",
-                    "Travel to Cyclonian in Alterac Mountains."),
-            },
-        },
-        {
-            id = "turnin-1713-the-summoning",
-            kind = "turnin",
-            priority = 380,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in The Summoning to Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "objective-1713-the-summoning" },
-            complete = QuestState(1713, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "accept-1792-whirlwind-weapon",
-            kind = "accept",
-            priority = 390,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Whirlwind Weapon from Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "turnin-1713-the-summoning", "turnin-1712-cyclonian" },
-            complete = QuestState(1792, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "turnin-1792-whirlwind-weapon",
-            kind = "turnin",
-            priority = 400,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Whirlwind Weapon to Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "accept-1792-whirlwind-weapon" },
-            complete = QuestState(1792, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
-        },
-        {
-            id = "accept-8417-a-troubled-spirit",
-            kind = "accept",
-            priority = 410,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept A Troubled Spirit from Christoph Walker in Undercity.",
-            complete = QuestState(8417, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4720, 0.1500, "Christoph Walker",
-                    "Travel to Christoph Walker in Undercity.", { map = { MAP.STORMWINDCITY, MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
-                Point(MAP.STORMWINDCITY, 0.7880, 0.4560, "Wu Shen",
-                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR, MAP.DARNASSUS } }),
-                Point(MAP.IRONFORGE, 0.7000, 0.9060, "Kelv Sternhammer",
-                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.ORGRIMMAR, MAP.DARNASSUS } }),
-                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
-                    "Travel to Sorek in Orgrimmar.", { map = { MAP.DARNASSUS } }),
-                Point(MAP.DARNASSUS, 0.5860, 0.3540, "Darnath Bladesinger",
-                    "Travel to Darnath Bladesinger in Darnassus."),
-            },
-        },
-        {
-            id = "turnin-8417-a-troubled-spirit",
-            kind = "turnin",
-            priority = 420,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in A Troubled Spirit to Fallen Hero of the Horde in Swamp of Sorrows.",
-            dependsOn = { "accept-8417-a-troubled-spirit" },
-            complete = QuestState(8417, "completed"),
-            route = {
-                Point(MAP.SWAMPOFSORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
-                    "Travel to Fallen Hero of the Horde in Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "accept-8423-warrior-kinship",
-            kind = "accept",
-            priority = 430,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Warrior Kinship from Fallen Hero of the Horde in Swamp of Sorrows.",
-            dependsOn = { "turnin-8417-a-troubled-spirit" },
-            complete = QuestState(8423, "activeOrCompleted"),
-            route = {
-                Point(MAP.SWAMPOFSORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
-                    "Travel to Fallen Hero of the Horde in Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "turnin-8423-warrior-kinship",
-            kind = "turnin",
-            priority = 440,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Warrior Kinship to Fallen Hero of the Horde in Swamp of Sorrows.",
-            dependsOn = { "accept-8423-warrior-kinship" },
-            complete = QuestState(8423, "completed"),
-            route = {
-                Point(MAP.SWAMPOFSORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
-                    "Travel to Fallen Hero of the Horde in Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "accept-8424-war-on-the-shadowsworn",
-            kind = "accept",
-            priority = 450,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept War on the Shadowsworn from Fallen Hero of the Horde in Swamp of Sorrows.",
-            dependsOn = { "turnin-8423-warrior-kinship", "turnin-8417-a-troubled-spirit" },
-            complete = QuestState(8424, "activeOrCompleted"),
-            route = {
-                Point(MAP.SWAMPOFSORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
-                    "Travel to Fallen Hero of the Horde in Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "turnin-8424-war-on-the-shadowsworn",
-            kind = "turnin",
-            priority = 460,
-            conditions = {
-                all = {
-                    { class = 1 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in War on the Shadowsworn to Fallen Hero of the Horde in Swamp of Sorrows.",
-            dependsOn = { "accept-8424-war-on-the-shadowsworn" },
-            complete = QuestState(8424, "completed"),
-            route = {
-                Point(MAP.SWAMPOFSORROWS, 0.3420, 0.6600, "Fallen Hero of the Horde",
-                    "Travel to Fallen Hero of the Horde in Swamp of Sorrows."),
-            },
-        },
-        {
-            id = "accept-1505-veteran-uzzek",
-            kind = "accept",
-            priority = 470,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Veteran Uzzek from Tarshaw Jaggedscar in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1505, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4240, "Tarshaw Jaggedscar",
-                    "Travel to Tarshaw Jaggedscar in Durotar.", { map = { MAP.ORGRIMMAR, MAP.MULGORE } }),
-                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
-                    "Travel to Sorek in Orgrimmar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.4940, 0.6040, "Krang Stonehoof",
-                    "Travel to Krang Stonehoof in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-1505-veteran-uzzek",
-            kind = "turnin",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Veteran Uzzek to Uzzek in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1505-veteran-uzzek" },
-            complete = QuestState(1505, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6140, 0.2100, "Uzzek",
-                    "Travel to Uzzek in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1498-path-of-defense",
-            kind = "accept",
-            priority = 490,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Path of Defense from Uzzek in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1505-veteran-uzzek" },
-            complete = QuestState(1498, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6140, 0.2100, "Uzzek",
-                    "Travel to Uzzek in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1498-path-of-defense",
-            kind = "turnin",
-            priority = 500,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Path of Defense to Uzzek in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1498-path-of-defense" },
-            complete = QuestState(1498, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6140, 0.2100, "Uzzek",
-                    "Travel to Uzzek in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1502-thungrim-firegaze",
-            kind = "accept",
-            priority = 510,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Thun'grim Firegaze from Uzzek in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1498-path-of-defense", "turnin-1505-veteran-uzzek" },
-            complete = QuestState(1502, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6140, 0.2100, "Uzzek",
-                    "Travel to Uzzek in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1502-thungrim-firegaze",
-            kind = "turnin",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Thun'grim Firegaze to Thun'grim Firegaze in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1502-thungrim-firegaze" },
-            complete = QuestState(1502, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1503-forged-steel",
-            kind = "accept",
-            priority = 530,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Forged Steel from Thun'grim Firegaze in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1502-thungrim-firegaze" },
-            complete = QuestState(1503, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1503-forged-steel",
-            kind = "turnin",
-            priority = 540,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Forged Steel to Thun'grim Firegaze in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1503-forged-steel" },
-            complete = QuestState(1503, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1818-speak-with-dillinger",
-            kind = "accept",
-            priority = 550,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Speak with Dillinger from Austil de Mon in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(1818, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Austil de Mon",
-                    "Travel to Austil de Mon in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-1818-speak-with-dillinger",
-            kind = "turnin",
-            priority = 560,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Speak with Dillinger to Deathguard Dillinger in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-1818-speak-with-dillinger" },
-            complete = QuestState(1818, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.5820, 0.5140, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-1819-ulag-the-cleaver",
-            kind = "accept",
-            priority = 570,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Ulag the Cleaver from Deathguard Dillinger in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "turnin-1818-speak-with-dillinger" },
-            complete = QuestState(1819, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.5820, 0.5140, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-1819-ulag-the-cleaver",
-            kind = "turnin",
-            priority = 580,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Ulag the Cleaver to Deathguard Dillinger in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-1819-ulag-the-cleaver" },
-            complete = QuestState(1819, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.5820, 0.5140, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-1820-speak-with-coleman",
-            kind = "accept",
-            priority = 590,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Speak with Coleman from Deathguard Dillinger in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "turnin-1819-ulag-the-cleaver", "turnin-1818-speak-with-dillinger" },
-            complete = QuestState(1820, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.5820, 0.5140, "Deathguard Dillinger",
-                    "Travel to Deathguard Dillinger in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-1820-speak-with-coleman",
-            kind = "turnin",
-            priority = 600,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Speak with Coleman to Coleman Farthing in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-1820-speak-with-coleman" },
-            complete = QuestState(1820, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
-                    "Travel to Coleman Farthing in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-1821-agamand-heirlooms",
-            kind = "accept",
-            priority = 610,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Agamand Heirlooms from Coleman Farthing in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "turnin-1820-speak-with-coleman" },
-            complete = QuestState(1821, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
-                    "Travel to Coleman Farthing in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-1821-agamand-heirlooms",
-            kind = "turnin",
-            priority = 620,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Agamand Heirlooms to Coleman Farthing in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-1821-agamand-heirlooms" },
-            complete = QuestState(1821, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
-                    "Travel to Coleman Farthing in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-2383-simple-parchment",
-            kind = "accept",
-            priority = 630,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 2 },
-                },
-            },
-            text = "Accept Simple Parchment from Gornek in Durotar. This step is for Orcs.",
-            complete = QuestState(2383, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-2383-simple-parchment",
-            kind = "turnin",
-            priority = 640,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 2 },
-                },
-            },
-            text = "Turn in Simple Parchment to Frang in Durotar. This step is for Orcs.",
-            dependsOn = { "accept-2383-simple-parchment" },
-            complete = QuestState(2383, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4280, 0.6940, "Frang",
-                    "Travel to Frang in Durotar."),
-            },
-        },
-        {
-            id = "accept-3065-simple-tablet",
-            kind = "accept",
-            priority = 650,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 8 },
-                },
-            },
-            text = "Accept Simple Tablet from Gornek in Durotar. This step is for Trolls.",
-            complete = QuestState(3065, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
-        },
-        {
-            id = "turnin-3065-simple-tablet",
-            kind = "turnin",
-            priority = 660,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 8 },
-                },
-            },
-            text = "Turn in Simple Tablet to Frang in Durotar. This step is for Trolls.",
-            dependsOn = { "accept-3065-simple-tablet" },
-            complete = QuestState(3065, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4280, 0.6940, "Frang",
-                    "Travel to Frang in Durotar."),
-            },
-        },
-        {
-            id = "accept-3091-simple-note",
-            kind = "accept",
-            priority = 670,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 6 },
-                },
-            },
-            text = "Accept Simple Note from Grull Hawkwind in Mulgore. This step is for Tauren.",
-            complete = QuestState(3091, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7720, "Grull Hawkwind",
-                    "Travel to Grull Hawkwind in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-3091-simple-note",
-            kind = "turnin",
-            priority = 680,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 6 },
-                },
-            },
-            text = "Turn in Simple Note to Harutt Thunderhorn in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-3091-simple-note" },
-            complete = QuestState(3091, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4400, 0.7600, "Harutt Thunderhorn",
-                    "Travel to Harutt Thunderhorn in Mulgore."),
-            },
-        },
-        {
-            id = "accept-3095-simple-scroll",
-            kind = "accept",
-            priority = 690,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                },
-            },
-            text = "Accept Simple Scroll from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(3095, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3080, 0.6620, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-3095-simple-scroll",
-            kind = "turnin",
-            priority = 700,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { race = 5 },
-                },
-            },
-            text = "Turn in Simple Scroll to Dannal Stern in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-3095-simple-scroll" },
-            complete = QuestState(3095, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3260, 0.6560, "Dannal Stern",
-                    "Travel to Dannal Stern in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-3100-simple-letter",
-            kind = "accept",
-            priority = 710,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                },
-            },
-            text = "Accept Simple Letter from Marshal McBride in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(3100, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4880, 0.4160, "Marshal McBride",
-                    "Travel to Marshal McBride in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-3100-simple-letter",
-            kind = "turnin",
-            priority = 720,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                },
-            },
-            text = "Turn in Simple Letter to Llane Beshere in Elwynn Forest. This step is for Humans.",
-            dependsOn = { "accept-3100-simple-letter" },
-            complete = QuestState(3100, "completed"),
             route = {
-                Point(MAP.ELWYNNFOREST, 0.5020, 0.4220, "Llane Beshere",
-                    "Travel to Llane Beshere in Elwynn Forest."),
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
             },
-        },
-        {
             id = "accept-3106-simple-rune",
-            kind = "accept",
-            priority = 730,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Simple Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves.",
-            complete = QuestState(3106, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3106-simple-rune",
         },
         {
-            id = "turnin-3106-simple-rune",
-            kind = "turnin",
-            priority = 740,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 3 },
-                },
+            priority = 70,
+            route = {
+                { y = 0.672, mapID = 1426, label = "Thran Khorman", x = 0.288, offMapText = "Travel to Thran Khorman in Dun Morogh." },
             },
-            text = "Turn in Simple Rune to Thran Khorman in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-3106-simple-rune" },
-            complete = QuestState(3106, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6720, "Thran Khorman",
-                    "Travel to Thran Khorman in Dun Morogh."),
+            id = "turnin-3106-simple-rune",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3106-simple-rune",
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
             id = "accept-3112-simple-memorandum",
-            kind = "accept",
-            priority = 750,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Accept Simple Memorandum from Sten Stoutarm in Dun Morogh. This step is for Gnomes.",
-            complete = QuestState(3112, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3112-simple-memorandum",
         },
         {
-            id = "turnin-3112-simple-memorandum",
-            kind = "turnin",
-            priority = 760,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 7 },
-                },
+            priority = 90,
+            route = {
+                { y = 0.672, mapID = 1426, label = "Thran Khorman", x = 0.288, offMapText = "Travel to Thran Khorman in Dun Morogh." },
             },
-            text = "Turn in Simple Memorandum to Thran Khorman in Dun Morogh. This step is for Gnomes.",
             dependsOn = { "accept-3112-simple-memorandum" },
-            complete = QuestState(3112, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6720, "Thran Khorman",
-                    "Travel to Thran Khorman in Dun Morogh."),
+            id = "turnin-3112-simple-memorandum",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3112-simple-memorandum",
         },
         {
+            priority = 100,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            id = "accept-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-747-the-hunt-begins",
+        },
+        {
+            id = "objective-747-1-plainstrider-meat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
+            },
+            sourceStep = 12,
+            priority = 110,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-1-plainstrider-meat",
+        },
+        {
+            id = "objective-747-2-plainstrider-feather",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
+            },
+            sourceStep = 12,
+            priority = 120,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-2-plainstrider-feather",
+        },
+        {
+            priority = 130,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
+            id = "turnin-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-747-the-hunt-begins",
+        },
+        {
+            priority = 140,
+            route = {
+                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+            },
+            id = "accept-3091-simple-note",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3091-simple-note",
+        },
+        {
+            priority = 150,
+            route = {
+                { y = 0.76, mapID = 1412, label = "Harutt Thunderhorn", x = 0.44, offMapText = "Travel to Harutt Thunderhorn in Mulgore." },
+            },
+            dependsOn = { "accept-3091-simple-note" },
+            id = "turnin-3091-simple-note",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3091-simple-note",
+        },
+        {
+            priority = 160,
+            route = {
+                { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
+            },
+            id = "accept-783-a-threat-within",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 12,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-783-a-threat-within",
+        },
+        {
+            priority = 170,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-783-a-threat-within" },
+            id = "turnin-783-a-threat-within",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-783-a-threat-within",
+        },
+        {
+            priority = 180,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            id = "accept-7-kobold-camp-cleanup",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7-kobold-camp-cleanup",
+        },
+        {
+            priority = 190,
+            route = {
+                { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup" },
+            id = "objective-7-1-kobold-vermin",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 18,
+            useClientPin = false,
+            classAction = "objective-7-1-kobold-vermin",
+        },
+        {
+            priority = 200,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup", "objective-7-1-kobold-vermin" },
+            id = "turnin-7-kobold-camp-cleanup",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 20,
+            useClientPin = false,
+            classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            priority = 210,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
+            },
+            id = "accept-3100-simple-letter",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3100-simple-letter",
+        },
+        {
+            priority = 220,
+            route = {
+                { y = 0.422, mapID = 1429, label = "Llane Beshere", x = 0.502, offMapText = "Travel to Llane Beshere in Elwynn Forest." },
+            },
+            dependsOn = { "accept-3100-simple-letter" },
+            id = "turnin-3100-simple-letter",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3100-simple-letter",
+        },
+        {
+            priority = 230,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            id = "accept-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-788-cutting-teeth",
+        },
+        {
+            priority = 240,
+            route = {
+                { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
+            },
+            dependsOn = { "accept-788-cutting-teeth" },
+            id = "objective-788-1-mottled-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "objective-788-1-mottled-boar",
+        },
+        {
+            priority = 250,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            dependsOn = { "accept-788-cutting-teeth", "objective-788-1-mottled-boar" },
+            id = "turnin-788-cutting-teeth",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 21,
+            useClientPin = false,
+            classAction = "turnin-788-cutting-teeth",
+        },
+        {
+            priority = 260,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-2383-simple-parchment",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-2383-simple-parchment",
+        },
+        {
+            priority = 270,
+            route = {
+                { y = 0.694, mapID = 1411, label = "Frang", x = 0.428, offMapText = "Travel to Frang in Durotar." },
+            },
+            dependsOn = { "accept-2383-simple-parchment" },
+            id = "turnin-2383-simple-parchment",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-2383-simple-parchment",
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
+            id = "accept-3065-simple-tablet",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3065-simple-tablet",
+        },
+        {
+            priority = 290,
+            route = {
+                { y = 0.694, mapID = 1411, label = "Frang", x = 0.428, offMapText = "Travel to Frang in Durotar." },
+            },
+            dependsOn = { "accept-3065-simple-tablet" },
+            id = "turnin-3065-simple-tablet",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3065-simple-tablet",
+        },
+        {
+            route = {
+                { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            priority = 300,
+            id = "accept-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-coming-of-age",
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
+            },
+            dependsOn = { "accept-coming-of-age" },
+            id = "turnin-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-coming-of-age",
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            id = "accept-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92461-harmony-in-balance",
+        },
+        {
+            priority = 330,
+            route = {
+                { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            id = "objective-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-92461-harmony-in-balance",
+        },
+        {
+            priority = 340,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance", "objective-92461-harmony-in-balance" },
+            id = "turnin-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    {
+                                        race = { 95, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92461-harmony-in-balance",
+        },
+        {
+            priority = 350,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            id = "accept-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-364-the-mindless-ones",
+        },
+        {
+            priority = 360,
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Mindless Zombie", offMapText = "Travel to Mindless Zombie." },
+            },
+            id = "objective-364-1-duskbat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-1-duskbat",
+        },
+        {
+            id = "objective-364-2-wretched-zombie",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Wretched Zombie", offMapText = "Travel to Wretched Zombie." },
+            },
+            sourceStep = 13,
+            priority = 370,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-2-wretched-zombie",
+        },
+        {
+            priority = 380,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            dependsOn = { "accept-364-the-mindless-ones", "objective-364-1-duskbat", "objective-364-2-wretched-zombie" },
+            id = "turnin-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 14,
+            useClientPin = false,
+            classAction = "turnin-364-the-mindless-ones",
+        },
+        {
+            priority = 390,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", x = 0.308, offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades." },
+            },
+            id = "accept-3095-simple-scroll",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3095-simple-scroll",
+        },
+        {
+            priority = 400,
+            route = {
+                { y = 0.656, mapID = 1420, label = "Dannal Stern", x = 0.326, offMapText = "Travel to Dannal Stern in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-3095-simple-scroll" },
+            id = "turnin-3095-simple-scroll",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3095-simple-scroll",
+        },
+        {
+            priority = 410,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
+            },
+            id = "accept-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 7,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-456-the-balance-of-nature",
+        },
+        {
+            priority = 420,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            id = "objective-456-1-young-nightsaber",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            classAction = "objective-456-1-young-nightsaber",
+        },
+        {
+            priority = 430,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-1-young-nightsaber-2",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-456-1-young-nightsaber-2",
+        },
+        {
+            priority = 440,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-2-young-thistle-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            classAction = "objective-456-2-young-thistle-boar",
+        },
+        {
+            priority = 450,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
+            },
+            dependsOn = {
+                "accept-456-the-balance-of-nature",
+                "objective-456-1-young-nightsaber",
+                "objective-456-1-young-nightsaber-2",
+                "objective-456-2-young-thistle-boar",
+            },
+            id = "turnin-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 1 },
+                                    {
+                                        class = { 1 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 1 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-456-the-balance-of-nature",
+        },
+        {
+            priority = 460,
+            route = {
+                { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
+            },
             id = "accept-3116-simple-sigil",
-            kind = "accept",
-            priority = 770,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Simple Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(3116, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
-                    "Travel to Conservator Ilthalaine in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3116-simple-sigil",
         },
         {
-            id = "turnin-3116-simple-sigil",
-            kind = "turnin",
-            priority = 780,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                },
+            priority = 470,
+            route = {
+                { y = 0.384, mapID = 1438, label = "Alyissia", x = 0.596, offMapText = "Travel to Alyissia in Teldrassil." },
             },
-            text = "Turn in Simple Sigil to Alyissia in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-3116-simple-sigil" },
-            complete = QuestState(3116, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5960, 0.3840, "Alyissia",
-                    "Travel to Alyissia in Teldrassil."),
+            id = "turnin-3116-simple-sigil",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3116-simple-sigil",
         },
         {
-            id = "accept-1666-marshal-haggard",
-            kind = "accept",
+            id = "level-before-accept-92532-the-warriors-path",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 2 },
+            },
+            requiredLevel = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 92532,
+            priority = 480,
+        },
+        {
+            priority = 490,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "turnin-92461-harmony-in-balance" },
+            id = "accept-92532-the-warriors-path",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-92532-the-warriors-path",
+        },
+        {
+            priority = 500,
+            route = {
+                { y = 0.242, mapID = 2521, label = "Blademaster Ren", x = 0.436, offMapText = "Travel to Blademaster Ren in Zephras Isle." },
+            },
+            dependsOn = { "accept-92532-the-warriors-path" },
+            id = "turnin-92532-the-warriors-path",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 2 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92532-the-warriors-path",
+        },
+        {
+            id = "level-before-accept-76156-stalk-with-the-earthmother",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 76156,
+            priority = 510,
+        },
+        {
+            priority = 520,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            id = "accept-76156-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-76156-stalk-with-the-earthmother",
+        },
+        {
+            route = {
+                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", x = 0.644, offMapText = "Travel to the Venture Co. Mine in Mulgore." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            useClientPin = false,
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            priority = 530,
+            classAction = "objective-76156-stalk-with-the-earthmother-1",
+        },
+        {
+            priority = 540,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother", "objective-76156-stalk-with-the-earthmother-1" },
+            id = "turnin-76156-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-76156-stalk-with-the-earthmother",
+        },
+        {
+            id = "level-before-accept-1638-a-warriors-training",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1638,
+            alternativeQuests = { 1678, 1683, 1639 },
+            priority = 550,
+        },
+        {
+            priority = 560,
+            route = {
+                { y = 0.456, mapID = 1453, label = "Ilsa Corbin", x = 0.786, offMapText = "Travel to Ilsa Corbin in Stormwind City." },
+            },
+            id = "accept-1638-a-warriors-training",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1638-a-warriors-training",
+        },
+        {
+            priority = 570,
+            route = {
+                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+            },
+            dependsOn = { "accept-1638-a-warriors-training" },
+            id = "turnin-1638-a-warriors-training",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1638-a-warriors-training",
+        },
+        {
+            priority = 580,
+            route = {
+                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+            },
+            dependsOn = { "turnin-1638-a-warriors-training" },
+            id = "accept-1639-bartleby-the-drunk",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1639-bartleby-the-drunk",
+        },
+        {
+            priority = 590,
+            route = {
+                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+            },
+            dependsOn = { "accept-1639-bartleby-the-drunk" },
+            id = "turnin-1639-bartleby-the-drunk",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1639-bartleby-the-drunk",
+        },
+        {
+            id = "level-before-accept-1679-muren-stormpike",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1679,
+            alternativeQuests = { 1639, 1683 },
+            priority = 600,
+        },
+        {
+            priority = 610,
+            route = {
+                { y = 0.526, mapID = 1426, label = "Granis Swiftaxe", x = 0.472, offMapText = "Travel to Granis Swiftaxe in Dun Morogh." },
+            },
+            id = "accept-1679-muren-stormpike",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1679-muren-stormpike",
+        },
+        {
+            priority = 620,
+            route = {
+                { y = 0.904, mapID = 1455, label = "Muren Stormpike", x = 0.706, offMapText = "Travel to Muren Stormpike in Ironforge." },
+            },
+            dependsOn = { "accept-1679-muren-stormpike" },
+            id = "turnin-1679-muren-stormpike",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1679-muren-stormpike",
+        },
+        {
+            priority = 630,
+            route = {
+                { y = 0.904, mapID = 1455, label = "Muren Stormpike", x = 0.706, offMapText = "Travel to Muren Stormpike in Ironforge." },
+            },
+            dependsOn = { "turnin-1679-muren-stormpike" },
+            id = "accept-1678-vejrek",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1678-vejrek",
+        },
+        {
+            priority = 640,
+            id = "objective-1678-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1678-vejrek" },
+            classAction = "objective-1678-quest-work",
+        },
+        {
+            priority = 650,
+            route = {
+                { y = 0.904, mapID = 1455, label = "Muren Stormpike", x = 0.706, offMapText = "Travel to Muren Stormpike in Ironforge." },
+            },
+            dependsOn = { "accept-1678-vejrek", "objective-1678-quest-work" },
+            id = "turnin-1678-vejrek",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1678-vejrek",
+        },
+        {
+            id = "level-before-accept-1684-elanaria",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1684,
+            alternativeQuests = { 1639, 1678, 1683 },
+            priority = 660,
+        },
+        {
+            priority = 670,
+            route = {
+                { y = 0.584, mapID = 1438, label = "Moon Priestess Amara", x = 0.556, offMapText = "Travel to Moon Priestess Amara in Teldrassil." },
+                { y = 0.592, mapID = 1438, label = "Kyra Windblade", x = 0.562, offMapText = "Travel to Kyra Windblade in Teldrassil." },
+            },
+            id = "accept-1684-elanaria",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1684-elanaria",
+        },
+        {
+            priority = 680,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            dependsOn = { "accept-1684-elanaria" },
+            id = "turnin-1684-elanaria",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1684-elanaria",
+        },
+        {
+            priority = 690,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            dependsOn = { "turnin-1684-elanaria" },
+            id = "accept-1683-vorlus-vilehoof",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1683-vorlus-vilehoof",
+        },
+        {
+            priority = 700,
+            route = {
+                { mapID = 1438, x = 0.4725, y = 0.636, label = "Horn of Vorlus", offMapText = "Travel to Horn of Vorlus." },
+            },
+            id = "objective-1683-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1683-vorlus-vilehoof" },
+            classAction = "objective-1683-quest-work",
+        },
+        {
+            priority = 710,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            dependsOn = { "accept-1683-vorlus-vilehoof", "objective-1683-quest-work" },
+            id = "turnin-1683-vorlus-vilehoof",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1683-vorlus-vilehoof",
+        },
+        {
+            priority = 720,
+            route = {
+                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+            },
+            dependsOn = { "turnin-1639-bartleby-the-drunk" },
+            id = "accept-1640-beat-bartleby",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1640-beat-bartleby",
+        },
+        {
+            priority = 730,
+            id = "objective-1640-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1640-beat-bartleby" },
+            classAction = "objective-1640-quest-work",
+        },
+        {
+            priority = 740,
+            route = {
+                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+            },
+            dependsOn = { "accept-1640-beat-bartleby", "objective-1640-quest-work" },
+            id = "turnin-1640-beat-bartleby",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1640-beat-bartleby",
+        },
+        {
+            priority = 750,
+            route = {
+                { y = 0.366, mapID = 1453, label = "Bartleby", x = 0.738, offMapText = "Travel to Bartleby in Stormwind City." },
+            },
+            dependsOn = { "turnin-1640-beat-bartleby", "turnin-1639-bartleby-the-drunk" },
+            id = "accept-1665-bartlebys-mug",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1665-bartlebys-mug",
+        },
+        {
+            priority = 760,
+            route = {
+                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+            },
+            dependsOn = { "accept-1665-bartlebys-mug" },
+            id = "turnin-1665-bartlebys-mug",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1665-bartlebys-mug",
+        },
+        {
+            id = "level-before-accept-94003-the-skybreaker-bulwark",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94003,
+            priority = 770,
+        },
+        {
+            priority = 780,
+            route = {
+                { y = 0.728, mapID = 2521, label = "Seena Skybreaker", x = 0.598, offMapText = "Travel to Seena Skybreaker in Zephras Isle." },
+            },
+            id = "accept-94003-the-skybreaker-bulwark",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94003-the-skybreaker-bulwark",
+        },
+        {
             priority = 790,
+            route = {
+                { y = 0.504, mapID = 2521, label = "Zaal Stormshield", x = 0.566, offMapText = "Travel to Zaal Stormshield in Zephras Isle." },
+            },
+            dependsOn = { "accept-94003-the-skybreaker-bulwark" },
+            id = "objective-94003-the-skybreaker-bulwark",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Accept Marshal Haggard from Harry Burlguard in Stormwind City. This step is for Humans.",
-            complete = QuestState(1666, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7400, 0.3720, "Harry Burlguard",
-                    "Travel to Harry Burlguard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "objective-94003-the-skybreaker-bulwark",
         },
         {
-            id = "turnin-1666-marshal-haggard",
-            kind = "turnin",
             priority = 800,
+            route = {
+                { y = 0.728, mapID = 2521, label = "Seena Skybreaker", x = 0.598, offMapText = "Travel to Seena Skybreaker in Zephras Isle." },
+            },
+            dependsOn = { "accept-94003-the-skybreaker-bulwark", "objective-94003-the-skybreaker-bulwark" },
+            id = "turnin-94003-the-skybreaker-bulwark",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 95, 96 },
+                    },
                 },
             },
-            text = "Turn in Marshal Haggard to Marshal Haggard in Elwynn Forest. This step is for Humans.",
-            dependsOn = { "accept-1666-marshal-haggard" },
-            complete = QuestState(1666, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.8460, 0.6940, "Marshal Haggard",
-                    "Travel to Marshal Haggard in Elwynn Forest."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94003-the-skybreaker-bulwark",
         },
         {
-            id = "accept-1667-dead-tooth-jack",
-            kind = "accept",
+            id = "level-before-accept-1505-veteran-uzzek",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1505,
+            alternativeQuests = { 1819 },
             priority = 810,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Dead-tooth Jack from Marshal Haggard in Elwynn Forest. This step is for Humans.",
-            dependsOn = { "turnin-1666-marshal-haggard" },
-            complete = QuestState(1667, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.8460, 0.6940, "Marshal Haggard",
-                    "Travel to Marshal Haggard in Elwynn Forest."),
-            },
         },
         {
-            id = "objective-1667-dead-tooth-jack",
-            kind = "objective",
             priority = 820,
+            route = {
+                { y = 0.324, mapID = 1454, label = "Sorek", x = 0.802, offMapText = "Travel to Sorek in Orgrimmar." },
+            },
+            id = "accept-1505-veteran-uzzek",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Kill Dead-Tooth Jack and collect Dead-tooth's Key at Ridgepoint Tower. This step is for Humans.",
-            dependsOn = { "accept-1667-dead-tooth-jack" },
-            complete = QuestState(1667, "complete"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.8920, 0.7900, "Dead-Tooth Jack",
-                    "Travel to Dead-Tooth Jack in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1505-veteran-uzzek",
         },
         {
-            id = "turnin-1667-dead-tooth-jack",
-            kind = "turnin",
             priority = 830,
+            route = {
+                { y = 0.21, mapID = 1413, label = "Uzzek", x = 0.614, offMapText = "Travel to Uzzek in The Barrens." },
+            },
+            dependsOn = { "accept-1505-veteran-uzzek" },
+            id = "turnin-1505-veteran-uzzek",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Dead-tooth Jack to Marshal Haggard in Elwynn Forest. This step is for Humans.",
-            dependsOn = { "objective-1667-dead-tooth-jack" },
-            complete = QuestState(1667, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.8460, 0.6940, "Marshal Haggard",
-                    "Travel to Marshal Haggard in Elwynn Forest."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1505-veteran-uzzek",
         },
         {
-            id = "accept-1680-tormus-deepforge",
-            kind = "accept",
             priority = 840,
+            route = {
+                { y = 0.21, mapID = 1413, label = "Uzzek", x = 0.614, offMapText = "Travel to Uzzek in The Barrens." },
+            },
+            dependsOn = { "turnin-1505-veteran-uzzek" },
+            id = "accept-1498-path-of-defense",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Tormus Deepforge from Muren Stormpike in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "turnin-1678-vejrek" },
-            complete = QuestState(1680, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.7060, 0.9040, "Muren Stormpike",
-                    "Travel to Muren Stormpike in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "accept-1498-path-of-defense",
         },
         {
-            id = "turnin-1680-tormus-deepforge",
-            kind = "turnin",
             priority = 850,
+            id = "objective-1498-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Tormus Deepforge to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1680-tormus-deepforge" },
-            complete = QuestState(1680, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
-                    "Travel to Tormus Deepforge in Ironforge."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1498-path-of-defense" },
+            classAction = "objective-1498-quest-work",
         },
         {
-            id = "accept-1681-ironbands-compound",
-            kind = "accept",
             priority = 860,
+            route = {
+                { y = 0.21, mapID = 1413, label = "Uzzek", x = 0.614, offMapText = "Travel to Uzzek in The Barrens." },
+            },
+            dependsOn = { "accept-1498-path-of-defense", "objective-1498-quest-work" },
+            id = "turnin-1498-path-of-defense",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Ironband's Compound from Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "turnin-1680-tormus-deepforge" },
-            complete = QuestState(1681, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
-                    "Travel to Tormus Deepforge in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1498-path-of-defense",
         },
         {
-            id = "turnin-1681-ironbands-compound",
-            kind = "turnin",
+            id = "level-before-accept-1818-speak-with-dillinger",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1818,
+            alternativeQuests = { 1498 },
             priority = 870,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Ironband's Compound to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1681-ironbands-compound" },
-            complete = QuestState(1681, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
-                    "Travel to Tormus Deepforge in Ironforge."),
-            },
         },
         {
-            id = "accept-1682-grey-iron-weapons",
-            kind = "accept",
             priority = 880,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Austil de Mon", x = 0.618, offMapText = "Travel to Austil de Mon in Tirisfal Glades." },
+            },
+            id = "accept-1818-speak-with-dillinger",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Grey Iron Weapons from Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            complete = QuestState(1682, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
-                    "Travel to Tormus Deepforge in Ironforge."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1818-speak-with-dillinger",
         },
         {
-            id = "turnin-1682-grey-iron-weapons",
-            kind = "turnin",
             priority = 890,
+            route = {
+                { y = 0.514, mapID = 1420, label = "Deathguard Dillinger", x = 0.582, offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1818-speak-with-dillinger" },
+            id = "turnin-1818-speak-with-dillinger",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Grey Iron Weapons to Tormus Deepforge in Ironforge. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1682-grey-iron-weapons" },
-            complete = QuestState(1682, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4860, 0.4300, "Tormus Deepforge",
-                    "Travel to Tormus Deepforge in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1818-speak-with-dillinger",
         },
         {
-            id = "accept-1686-the-shade-of-elura",
-            kind = "accept",
             priority = 900,
+            route = {
+                { y = 0.514, mapID = 1420, label = "Deathguard Dillinger", x = 0.582, offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades." },
+            },
+            dependsOn = { "turnin-1818-speak-with-dillinger" },
+            id = "accept-1819-ulag-the-cleaver",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept The Shade of Elura from Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            complete = QuestState(1686, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-1819-ulag-the-cleaver",
         },
         {
-            id = "turnin-1686-the-shade-of-elura",
-            kind = "turnin",
             priority = 910,
+            route = {
+                { mapID = 1420, x = 0.5916, y = 0.4851, label = "Ulag the Cleaver", offMapText = "Travel to Ulag the Cleaver." },
+            },
+            id = "objective-1819-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in The Shade of Elura to Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1686-the-shade-of-elura" },
-            complete = QuestState(1686, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = { "accept-1819-ulag-the-cleaver" },
+            classAction = "objective-1819-quest-work",
         },
         {
-            id = "accept-1692-smith-mathiel",
-            kind = "accept",
             priority = 920,
+            route = {
+                { y = 0.514, mapID = 1420, label = "Deathguard Dillinger", x = 0.582, offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1819-ulag-the-cleaver", "objective-1819-quest-work" },
+            id = "turnin-1819-ulag-the-cleaver",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Smith Mathiel from Elanaria in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "turnin-1686-the-shade-of-elura" },
-            complete = QuestState(1692, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5740, 0.3480, "Elanaria",
-                    "Travel to Elanaria in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1819-ulag-the-cleaver",
         },
         {
-            id = "turnin-1692-smith-mathiel",
-            kind = "turnin",
             priority = 930,
+            route = {
+                { y = 0.21, mapID = 1413, label = "Uzzek", x = 0.614, offMapText = "Travel to Uzzek in The Barrens." },
+            },
+            dependsOn = { "turnin-1498-path-of-defense", "turnin-1505-veteran-uzzek" },
+            id = "accept-1502-thungrim-firegaze",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Smith Mathiel to Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1692-smith-mathiel" },
-            complete = QuestState(1692, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-1502-thungrim-firegaze",
         },
         {
-            id = "accept-1693-weapons-of-elunite",
-            kind = "accept",
             priority = 940,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "accept-1502-thungrim-firegaze" },
+            id = "turnin-1502-thungrim-firegaze",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Weapons of Elunite from Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            complete = QuestState(1693, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1502-thungrim-firegaze",
         },
         {
-            id = "turnin-1693-weapons-of-elunite",
-            kind = "turnin",
             priority = 950,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1502-thungrim-firegaze" },
+            id = "accept-1503-forged-steel",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 1, 3, 4, 7 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Weapons of Elunite to Mathiel in Darnassus. This step is for Humans, Dwarves, Night Elves, and Gnomes.",
-            dependsOn = { "accept-1693-weapons-of-elunite" },
-            complete = QuestState(1693, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-1503-forged-steel",
         },
         {
-            id = "accept-1822-heirloom-weapon",
-            kind = "accept",
             priority = 960,
+            id = "objective-1503-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Heirloom Weapon from Coleman Farthing in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(1822, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
-                    "Travel to Coleman Farthing in Tirisfal Glades."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1503-forged-steel" },
+            classAction = "objective-1503-quest-work",
         },
         {
-            id = "turnin-1822-heirloom-weapon",
-            kind = "turnin",
             priority = 970,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "accept-1503-forged-steel", "objective-1503-quest-work" },
+            id = "turnin-1503-forged-steel",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Heirloom Weapon to Coleman Farthing in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-1822-heirloom-weapon" },
-            complete = QuestState(1822, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6180, 0.5240, "Coleman Farthing",
-                    "Travel to Coleman Farthing in Tirisfal Glades."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1503-forged-steel",
         },
         {
-            id = "accept-1698-yorus-barleybrew",
-            kind = "accept",
             priority = 980,
+            route = {
+                { y = 0.514, mapID = 1420, label = "Deathguard Dillinger", x = 0.582, offMapText = "Travel to Deathguard Dillinger in Tirisfal Glades." },
+            },
+            dependsOn = { "turnin-1819-ulag-the-cleaver", "turnin-1818-speak-with-dillinger" },
+            id = "accept-1820-speak-with-coleman",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Yorus Barleybrew from Wu Shen in Stormwind City.",
-            complete = QuestState(1698, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.7880, 0.4560, "Wu Shen",
-                    "Travel to Wu Shen in Stormwind City.", { map = { MAP.IRONFORGE, MAP.DARNASSUS } }),
-                Point(MAP.IRONFORGE, 0.7000, 0.9060, "Kelv Sternhammer",
-                    "Travel to Kelv Sternhammer in Ironforge.", { map = { MAP.DARNASSUS } }),
-                Point(MAP.DARNASSUS, 0.5860, 0.3540, "Darnath Bladesinger",
-                    "Travel to Darnath Bladesinger in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-1820-speak-with-coleman",
         },
         {
-            id = "turnin-1698-yorus-barleybrew",
-            kind = "turnin",
             priority = 990,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Coleman Farthing", x = 0.618, offMapText = "Travel to Coleman Farthing in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1820-speak-with-coleman" },
+            id = "turnin-1820-speak-with-coleman",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Yorus Barleybrew to Yorus Barleybrew in Redridge Mountains.",
-            dependsOn = { "accept-1698-yorus-barleybrew" },
-            complete = QuestState(1698, "completed"),
-            route = {
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2660, 0.4480, "Yorus Barleybrew",
-                    "Travel to Yorus Barleybrew in Redridge Mountains."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1820-speak-with-coleman",
         },
         {
-            id = "accept-1699-the-rethban-gauntlet",
-            kind = "accept",
             priority = 1000,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Coleman Farthing", x = 0.618, offMapText = "Travel to Coleman Farthing in Tirisfal Glades." },
+            },
+            dependsOn = { "turnin-1820-speak-with-coleman" },
+            id = "accept-1821-agamand-heirlooms",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept The Rethban Gauntlet from Yorus Barleybrew in Redridge Mountains.",
-            dependsOn = { "turnin-1698-yorus-barleybrew" },
-            complete = QuestState(1699, "activeOrCompleted"),
-            route = {
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2660, 0.4480, "Yorus Barleybrew",
-                    "Travel to Yorus Barleybrew in Redridge Mountains."),
-            },
+            useClientPin = false,
+            classAction = "accept-1821-agamand-heirlooms",
         },
         {
-            id = "turnin-1699-the-rethban-gauntlet",
-            kind = "turnin",
             priority = 1010,
+            id = "objective-1821-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in The Rethban Gauntlet to Yorus Barleybrew in Redridge Mountains.",
-            dependsOn = { "accept-1699-the-rethban-gauntlet" },
-            complete = QuestState(1699, "completed"),
-            route = {
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2660, 0.4480, "Yorus Barleybrew",
-                    "Travel to Yorus Barleybrew in Redridge Mountains."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1821-agamand-heirlooms" },
+            classAction = "objective-1821-quest-work",
         },
         {
-            id = "accept-1700-grimand-elmore",
-            kind = "accept",
             priority = 1020,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Coleman Farthing", x = 0.618, offMapText = "Travel to Coleman Farthing in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1821-agamand-heirlooms", "objective-1821-quest-work" },
+            id = "turnin-1821-agamand-heirlooms",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Grimand Elmore from Furen Longbeard in Stormwind City. This step is for Humans.",
-            complete = QuestState(1700, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1821-agamand-heirlooms",
         },
         {
-            id = "turnin-1700-grimand-elmore",
-            kind = "turnin",
             priority = 1030,
+            route = {
+                { y = 0.372, mapID = 1453, label = "Harry Burlguard", x = 0.74, offMapText = "Travel to Harry Burlguard in Stormwind City." },
+            },
+            id = "accept-1666-marshal-haggard",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Grimand Elmore to Grimand Elmore in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-1700-grimand-elmore" },
-            complete = QuestState(1700, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5160, 0.1220, "Grimand Elmore",
-                    "Travel to Grimand Elmore in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1666-marshal-haggard",
         },
         {
-            id = "accept-1702-the-shieldsmith",
-            kind = "accept",
             priority = 1040,
+            route = {
+                { y = 0.694, mapID = 1429, label = "Marshal Haggard", x = 0.846, offMapText = "Travel to Marshal Haggard in Elwynn Forest." },
+            },
+            dependsOn = { "accept-1666-marshal-haggard" },
+            id = "turnin-1666-marshal-haggard",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept The Shieldsmith from Yorus Barleybrew in Redridge Mountains.",
-            complete = QuestState(1702, "activeOrCompleted"),
-            route = {
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2660, 0.4480, "Yorus Barleybrew",
-                    "Travel to Yorus Barleybrew in Redridge Mountains."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1666-marshal-haggard",
         },
         {
-            id = "turnin-1702-the-shieldsmith",
-            kind = "turnin",
             priority = 1050,
+            route = {
+                { y = 0.694, mapID = 1429, label = "Marshal Haggard", x = 0.846, offMapText = "Travel to Marshal Haggard in Elwynn Forest." },
+            },
+            dependsOn = { "turnin-1666-marshal-haggard" },
+            id = "accept-1667-dead-tooth-jack",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in The Shieldsmith to Furen Longbeard in Stormwind City.",
-            dependsOn = { "accept-1702-the-shieldsmith" },
-            complete = QuestState(1702, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "accept-1667-dead-tooth-jack",
         },
         {
-            id = "accept-1701-fire-hardened-mail",
-            kind = "accept",
             priority = 1060,
+            route = {
+                { y = 0.79, mapID = 1429, label = "Dead-Tooth Jack", x = 0.892, offMapText = "Travel to Dead-Tooth Jack in Elwynn Forest." },
+            },
+            dependsOn = { "accept-1667-dead-tooth-jack" },
+            id = "objective-1667-dead-tooth-jack",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Fire Hardened Mail from Furen Longbeard in Stormwind City.",
-            dependsOn = { "turnin-1702-the-shieldsmith" },
-            complete = QuestState(1701, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "objective-1667-dead-tooth-jack",
         },
         {
-            id = "turnin-1701-fire-hardened-mail",
-            kind = "turnin",
             priority = 1070,
+            route = {
+                { y = 0.694, mapID = 1429, label = "Marshal Haggard", x = 0.846, offMapText = "Travel to Marshal Haggard in Elwynn Forest." },
+            },
+            dependsOn = { "accept-1667-dead-tooth-jack", "objective-1667-dead-tooth-jack" },
+            id = "turnin-1667-dead-tooth-jack",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Fire Hardened Mail to Furen Longbeard in Stormwind City.",
-            dependsOn = { "accept-1701-fire-hardened-mail" },
-            complete = QuestState(1701, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1667-dead-tooth-jack",
         },
         {
-            id = "accept-1703-mathiel",
-            kind = "accept",
+            id = "level-before-accept-1680-tormus-deepforge",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1680,
             priority = 1080,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 1 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Mathiel from Furen Longbeard in Stormwind City. This step is for Night Elves.",
-            complete = QuestState(1703, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
         },
         {
-            id = "turnin-1703-mathiel",
-            kind = "turnin",
             priority = 1090,
+            route = {
+                { y = 0.904, mapID = 1455, label = "Muren Stormpike", x = 0.706, offMapText = "Travel to Muren Stormpike in Ironforge." },
+            },
+            dependsOn = { "turnin-1678-vejrek" },
+            id = "accept-1680-tormus-deepforge",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Mathiel to Mathiel in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-1703-mathiel" },
-            complete = QuestState(1703, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "accept-1680-tormus-deepforge",
         },
         {
-            id = "accept-1704-klockmort-spannerspan",
-            kind = "accept",
             priority = 1100,
+            route = {
+                { y = 0.43, mapID = 1455, label = "Tormus Deepforge", x = 0.486, offMapText = "Travel to Tormus Deepforge in Ironforge." },
+            },
+            dependsOn = { "accept-1680-tormus-deepforge" },
+            id = "turnin-1680-tormus-deepforge",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Klockmort Spannerspan from Furen Longbeard in Stormwind City. This step is for Dwarves and Gnomes.",
-            complete = QuestState(1704, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5800, 0.1680, "Furen Longbeard",
-                    "Travel to Furen Longbeard in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1680-tormus-deepforge",
         },
         {
-            id = "turnin-1704-klockmort-spannerspan",
-            kind = "turnin",
             priority = 1110,
+            route = {
+                { y = 0.43, mapID = 1455, label = "Tormus Deepforge", x = 0.486, offMapText = "Travel to Tormus Deepforge in Ironforge." },
+            },
+            dependsOn = { "turnin-1680-tormus-deepforge" },
+            id = "accept-1681-ironbands-compound",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { race = { 3, 7 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Klockmort Spannerspan to Klockmort Spannerspan in Ironforge. This step is for Dwarves and Gnomes.",
-            dependsOn = { "accept-1704-klockmort-spannerspan" },
-            complete = QuestState(1704, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.6820, 0.4620, "Klockmort Spannerspan",
-                    "Travel to Klockmort Spannerspan in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "accept-1681-ironbands-compound",
         },
         {
-            id = "accept-1705-burning-blood",
-            kind = "accept",
             priority = 1120,
+            id = "objective-1681-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Burning Blood from Grimand Elmore in Stormwind City.",
-            dependsOn = { "turnin-1700-grimand-elmore" },
-            complete = QuestState(1705, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5160, 0.1220, "Grimand Elmore",
-                    "Travel to Grimand Elmore in Stormwind City."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1681-ironbands-compound" },
+            classAction = "objective-1681-quest-work",
         },
         {
-            id = "turnin-1705-burning-blood",
-            kind = "turnin",
             priority = 1130,
+            route = {
+                { y = 0.43, mapID = 1455, label = "Tormus Deepforge", x = 0.486, offMapText = "Travel to Tormus Deepforge in Ironforge." },
+            },
+            dependsOn = { "accept-1681-ironbands-compound", "objective-1681-quest-work" },
+            id = "turnin-1681-ironbands-compound",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Burning Blood to Grimand Elmore in Stormwind City.",
-            dependsOn = { "accept-1705-burning-blood" },
-            complete = QuestState(1705, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5160, 0.1220, "Grimand Elmore",
-                    "Travel to Grimand Elmore in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1681-ironbands-compound",
         },
         {
-            id = "accept-1706-grimands-armor",
-            kind = "accept",
             priority = 1140,
+            route = {
+                { y = 0.43, mapID = 1455, label = "Tormus Deepforge", x = 0.486, offMapText = "Travel to Tormus Deepforge in Ironforge." },
+            },
+            id = "accept-1682-grey-iron-weapons",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Grimand's Armor from Grimand Elmore in Stormwind City.",
-            complete = QuestState(1706, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5160, 0.1220, "Grimand Elmore",
-                    "Travel to Grimand Elmore in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1682-grey-iron-weapons",
         },
         {
-            id = "turnin-1706-grimands-armor",
-            kind = "turnin",
             priority = 1150,
+            route = {
+                { y = 0.43, mapID = 1455, label = "Tormus Deepforge", x = 0.486, offMapText = "Travel to Tormus Deepforge in Ironforge." },
+            },
+            dependsOn = { "accept-1682-grey-iron-weapons" },
+            id = "turnin-1682-grey-iron-weapons",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Grimand's Armor to Grimand Elmore in Stormwind City.",
-            dependsOn = { "accept-1706-grimands-armor" },
-            complete = QuestState(1706, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.5160, 0.1220, "Grimand Elmore",
-                    "Travel to Grimand Elmore in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1682-grey-iron-weapons",
         },
         {
-            id = "accept-1708-iron-coral",
-            kind = "accept",
             priority = 1160,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            id = "accept-1686-the-shade-of-elura",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Iron Coral from Klockmort Spannerspan in Ironforge.",
-            dependsOn = { "turnin-1704-klockmort-spannerspan" },
-            complete = QuestState(1708, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.6820, 0.4620, "Klockmort Spannerspan",
-                    "Travel to Klockmort Spannerspan in Ironforge."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1686-the-shade-of-elura",
         },
         {
-            id = "turnin-1708-iron-coral",
-            kind = "turnin",
             priority = 1170,
+            id = "objective-1686-quest-work",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Iron Coral to Klockmort Spannerspan in Ironforge.",
-            dependsOn = { "accept-1708-iron-coral" },
-            complete = QuestState(1708, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.6820, 0.4620, "Klockmort Spannerspan",
-                    "Travel to Klockmort Spannerspan in Ironforge."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1686-the-shade-of-elura" },
+            classAction = "objective-1686-quest-work",
         },
         {
-            id = "accept-1709-klockmorts-creation",
-            kind = "accept",
             priority = 1180,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            dependsOn = { "accept-1686-the-shade-of-elura", "objective-1686-quest-work" },
+            id = "turnin-1686-the-shade-of-elura",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Klockmort's Creation from Klockmort Spannerspan in Ironforge.",
-            complete = QuestState(1709, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.6820, 0.4620, "Klockmort Spannerspan",
-                    "Travel to Klockmort Spannerspan in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1686-the-shade-of-elura",
         },
         {
-            id = "turnin-1709-klockmorts-creation",
-            kind = "turnin",
             priority = 1190,
+            route = {
+                { y = 0.348, mapID = 1457, label = "Elanaria", x = 0.574, offMapText = "Travel to Elanaria in Darnassus." },
+            },
+            dependsOn = { "turnin-1686-the-shade-of-elura" },
+            id = "accept-1692-smith-mathiel",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Klockmort's Creation to Klockmort Spannerspan in Ironforge.",
-            dependsOn = { "accept-1709-klockmorts-creation" },
-            complete = QuestState(1709, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.6820, 0.4620, "Klockmort Spannerspan",
-                    "Travel to Klockmort Spannerspan in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "accept-1692-smith-mathiel",
         },
         {
-            id = "accept-1710-sunscorched-shells",
-            kind = "accept",
             priority = 1200,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "accept-1692-smith-mathiel" },
+            id = "turnin-1692-smith-mathiel",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Sunscorched Shells from Mathiel in Darnassus.",
-            dependsOn = { "turnin-1703-mathiel" },
-            complete = QuestState(1710, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1692-smith-mathiel",
         },
         {
-            id = "turnin-1710-sunscorched-shells",
-            kind = "turnin",
             priority = 1210,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            id = "accept-1693-weapons-of-elunite",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Turn in Sunscorched Shells to Mathiel in Darnassus.",
-            dependsOn = { "accept-1710-sunscorched-shells" },
-            complete = QuestState(1710, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1693-weapons-of-elunite",
         },
         {
-            id = "accept-1711-mathiels-armor",
-            kind = "accept",
             priority = 1220,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "accept-1693-weapons-of-elunite" },
+            id = "turnin-1693-weapons-of-elunite",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7 },
+                    },
                 },
             },
-            text = "Accept Mathiel's Armor from Mathiel in Darnassus.",
-            complete = QuestState(1711, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1693-weapons-of-elunite",
         },
         {
-            id = "turnin-1711-mathiels-armor",
-            kind = "turnin",
             priority = 1230,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Coleman Farthing", x = 0.618, offMapText = "Travel to Coleman Farthing in Tirisfal Glades." },
+            },
+            id = "accept-1822-heirloom-weapon",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Mathiel's Armor to Mathiel in Darnassus.",
-            dependsOn = { "accept-1711-mathiels-armor" },
-            complete = QuestState(1711, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.5920, 0.4540, "Mathiel",
-                    "Travel to Mathiel in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1822-heirloom-weapon",
         },
         {
-            id = "accept-1823-speak-with-ruga",
-            kind = "accept",
             priority = 1240,
+            route = {
+                { y = 0.524, mapID = 1420, label = "Coleman Farthing", x = 0.618, offMapText = "Travel to Coleman Farthing in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-1822-heirloom-weapon" },
+            id = "turnin-1822-heirloom-weapon",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Speak with Ruga from Baltus Fowler in Undercity.",
-            complete = QuestState(1823, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4720, 0.1700, "Baltus Fowler",
-                    "Travel to Baltus Fowler in Undercity.", { map = { MAP.ORGRIMMAR, MAP.THUNDERBLUFF } }),
-                Point(MAP.ORGRIMMAR, 0.8020, 0.3240, "Sorek",
-                    "Travel to Sorek in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
-                Point(MAP.THUNDERBLUFF, 0.5760, 0.8720, "Torm Ragetotem",
-                    "Travel to Torm Ragetotem in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1822-heirloom-weapon",
         },
         {
-            id = "turnin-1823-speak-with-ruga",
-            kind = "turnin",
+            id = "level-before-accept-1698-yorus-barleybrew",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1698,
             priority = 1250,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Speak with Ruga to Ruga Ragetotem in The Barrens.",
-            dependsOn = { "accept-1823-speak-with-ruga" },
-            complete = QuestState(1823, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5940, "Ruga Ragetotem",
-                    "Travel to Ruga Ragetotem in The Barrens."),
-            },
         },
         {
-            id = "accept-1824-trial-at-the-field-of-giants",
-            kind = "accept",
             priority = 1260,
+            route = {
+                { y = 0.456, mapID = 1453, label = "Wu Shen", x = 0.788, offMapText = "Travel to Wu Shen in Stormwind City." },
+            },
+            id = "accept-1698-yorus-barleybrew",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Trial at the Field of Giants from Ruga Ragetotem in The Barrens.",
-            dependsOn = { "turnin-1823-speak-with-ruga" },
-            complete = QuestState(1824, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5940, "Ruga Ragetotem",
-                    "Travel to Ruga Ragetotem in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1698-yorus-barleybrew",
         },
         {
-            id = "objective-1824-trial-at-the-field-of-giants",
-            kind = "objective",
             priority = 1270,
+            route = {
+                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+            },
+            dependsOn = { "accept-1698-yorus-barleybrew" },
+            id = "turnin-1698-yorus-barleybrew",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Kill silithid at the Field of Giants in The Barrens and collect Twitching Antenna.",
-            dependsOn = { "accept-1824-trial-at-the-field-of-giants" },
-            complete = QuestState(1824, "complete"),
-            route = {
-                Point(MAP.BARRENS, 0.4540, 0.6940, "Silithid Creeper",
-                    "Travel to Silithid Creeper in The Barrens."),
-                Point(MAP.BARRENS, 0.4520, 0.6940, "Silithid Grub",
-                    "Travel to Silithid Grub in The Barrens."),
-                Point(MAP.BARRENS, 0.4520, 0.6880, "Silithid Swarmer",
-                    "Travel to Silithid Swarmer in The Barrens."),
-                Point(MAP.BARRENS, 0.4780, 0.7020, "Silithid Harvester",
-                    "Travel to Silithid Harvester in The Barrens."),
-                Point(MAP.BARRENS, 0.4340, 0.7040, "Silithid Protector",
-                    "Travel to Silithid Protector in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1698-yorus-barleybrew",
         },
         {
-            id = "turnin-1824-trial-at-the-field-of-giants",
-            kind = "turnin",
             priority = 1280,
+            route = {
+                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+            },
+            dependsOn = { "turnin-1698-yorus-barleybrew" },
+            id = "accept-1699-the-rethban-gauntlet",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Trial at the Field of Giants to Ruga Ragetotem in The Barrens.",
-            dependsOn = { "objective-1824-trial-at-the-field-of-giants" },
-            complete = QuestState(1824, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5940, "Ruga Ragetotem",
-                    "Travel to Ruga Ragetotem in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1699-the-rethban-gauntlet",
         },
         {
-            id = "accept-1825-speak-with-thungrim",
-            kind = "accept",
             priority = 1290,
+            dependsOn = { "accept-1699-the-rethban-gauntlet" },
+            id = "objective-1699-reviewed-mechanics",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Speak with Thun'grim from Ruga Ragetotem in The Barrens.",
-            dependsOn = { "turnin-1824-trial-at-the-field-of-giants" },
-            complete = QuestState(1825, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4460, 0.5940, "Ruga Ragetotem",
-                    "Travel to Ruga Ragetotem in The Barrens."),
-            },
+            useClientPin = true,
+            classAction = "objective-1699-reviewed-mechanics",
         },
         {
-            id = "turnin-1825-speak-with-thungrim",
-            kind = "turnin",
             priority = 1300,
+            route = {
+                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+            },
+            dependsOn = { "accept-1699-the-rethban-gauntlet", "objective-1699-reviewed-mechanics" },
+            id = "turnin-1699-the-rethban-gauntlet",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Speak with Thun'grim to Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "accept-1825-speak-with-thungrim" },
-            complete = QuestState(1825, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1699-the-rethban-gauntlet",
         },
         {
-            id = "accept-1838-brutal-armor",
-            kind = "accept",
             priority = 1310,
+            route = {
+                { y = 0.448, mapID = 1433, label = "Yorus Barleybrew", x = 0.266, offMapText = "Travel to Yorus Barleybrew in Redridge Mountains." },
+            },
+            id = "accept-1702-the-shieldsmith",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Brutal Armor from Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "turnin-1825-speak-with-thungrim" },
-            complete = QuestState(1838, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1702-the-shieldsmith",
         },
         {
-            id = "objective-1838-brutal-armor",
-            kind = "objective",
             priority = 1320,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            dependsOn = { "accept-1702-the-shieldsmith" },
+            id = "turnin-1702-the-shieldsmith",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Loot Iron Bars from Fel Interlopers in the zones marked on the route.",
-            dependsOn = { "accept-1838-brutal-armor" },
-            complete = QuestState(1838, "complete"),
-            route = {
-                Point(MAP.AZSHARA, 0.3020, 0.7980, "Fel Interloper",
-                    "Travel to Fel Interloper in Azshara.", { map = { MAP.BARRENS, MAP.ASHENVALE, MAP.FERALAS, MAP.BLASTEDLANDS, MAP.DESOLACE, MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.BARRENS, 0.5020, 0.8060, "Fel Interloper",
-                    "Travel to Fel Interloper in The Barrens.", { map = { MAP.ASHENVALE, MAP.FERALAS, MAP.BLASTEDLANDS, MAP.DESOLACE, MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.ASHENVALE, 0.7720, 0.7320, "Fel Interloper",
-                    "Travel to Fel Interloper in Ashenvale.", { map = { MAP.FERALAS, MAP.BLASTEDLANDS, MAP.DESOLACE, MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.FERALAS, 0.7420, 0.5060, "Fel Interloper",
-                    "Travel to Fel Interloper in Feralas.", { map = { MAP.BLASTEDLANDS, MAP.DESOLACE, MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.BLASTEDLANDS, 0.6220, 0.3900, "Fel Interloper",
-                    "Travel to Fel Interloper in Blasted Lands.", { map = { MAP.DESOLACE, MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.DESOLACE, 0.4880, 0.8200, "Fel Interloper",
-                    "Travel to Fel Interloper in Desolace.", { map = { MAP.REDRIDGEMOUNTAINS, MAP.SWAMPOFSORROWS } }),
-                Point(MAP.REDRIDGEMOUNTAINS, 0.2980, 0.3000, "Fel Interloper",
-                    "Travel to Fel Interloper in Redridge Mountains.", { map = { MAP.SWAMPOFSORROWS } }),
-                Point(MAP.SWAMPOFSORROWS, 0.3620, 0.5000, "Fel Interloper",
-                    "Travel to Fel Interloper in Swamp of Sorrows."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1702-the-shieldsmith",
         },
         {
-            id = "turnin-1838-brutal-armor",
-            kind = "turnin",
             priority = 1330,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            dependsOn = { "turnin-1702-the-shieldsmith" },
+            id = "accept-1701-fire-hardened-mail",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Brutal Armor to Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "objective-1838-brutal-armor" },
-            complete = QuestState(1838, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1701-fire-hardened-mail",
         },
         {
-            id = "accept-1848-brutal-hauberk",
-            kind = "accept",
-            priority = 1334,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Brutal Hauberk from Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "turnin-1838-brutal-armor" },
-            complete = QuestState(1848, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-1848-brutal-hauberk",
-            kind = "turnin",
-            priority = 1336,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Brutal Hauberk to Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "accept-1848-brutal-hauberk" },
-            complete = QuestState(1848, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
-        },
-        {
-            id = "accept-1839-ulaelek-and-the-brutal-gauntlets",
-            kind = "accept",
             priority = 1340,
+            id = "objective-1701-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Ula'elek and the Brutal Gauntlets from Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "turnin-1848-brutal-hauberk" },
-            complete = QuestState(1839, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-1701-fire-hardened-mail" },
+            classAction = "objective-1701-quest-work",
         },
         {
-            id = "turnin-1839-ulaelek-and-the-brutal-gauntlets",
-            kind = "turnin",
             priority = 1350,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            dependsOn = { "accept-1701-fire-hardened-mail", "objective-1701-quest-work" },
+            id = "turnin-1701-fire-hardened-mail",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Ula'elek and the Brutal Gauntlets to Ula'elek in Durotar.",
-            dependsOn = { "accept-1839-ulaelek-and-the-brutal-gauntlets" },
-            complete = QuestState(1839, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
-                    "Travel to Ula'elek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1701-fire-hardened-mail",
         },
         {
-            id = "accept-1840-orm-stonehoof-and-the-brutal-helm",
-            kind = "accept",
+            id = "level-before-accept-1823-speak-with-ruga",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1823,
             priority = 1360,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Orm Stonehoof and the Brutal Helm from Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "turnin-1848-brutal-hauberk" },
-            complete = QuestState(1840, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
         },
         {
-            id = "turnin-1840-orm-stonehoof-and-the-brutal-helm",
-            kind = "turnin",
             priority = 1370,
+            route = {
+                { y = 0.17, mapID = 1458, label = "Baltus Fowler", x = 0.472, offMapText = "Travel to Baltus Fowler in Undercity." },
+            },
+            id = "accept-1823-speak-with-ruga",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Orm Stonehoof and the Brutal Helm to Orm Stonehoof in Thunder Bluff.",
-            dependsOn = { "accept-1840-orm-stonehoof-and-the-brutal-helm" },
-            complete = QuestState(1840, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
-                    "Travel to Orm Stonehoof in Thunder Bluff."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1823-speak-with-ruga",
         },
         {
-            id = "accept-1841-velora-nitely-and-the-brutal-legguards",
-            kind = "accept",
             priority = 1380,
+            route = {
+                { y = 0.594, mapID = 1413, label = "Ruga Ragetotem", x = 0.446, offMapText = "Travel to Ruga Ragetotem in The Barrens." },
+            },
+            dependsOn = { "accept-1823-speak-with-ruga" },
+            id = "turnin-1823-speak-with-ruga",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Velora Nitely and the Brutal Legguards from Thun'grim Firegaze in The Barrens.",
-            dependsOn = { "turnin-1848-brutal-hauberk" },
-            complete = QuestState(1841, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5720, 0.3020, "Thun'grim Firegaze",
-                    "Travel to Thun'grim Firegaze in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1823-speak-with-ruga",
         },
         {
-            id = "turnin-1841-velora-nitely-and-the-brutal-legguards",
-            kind = "turnin",
             priority = 1390,
+            route = {
+                { y = 0.594, mapID = 1413, label = "Ruga Ragetotem", x = 0.446, offMapText = "Travel to Ruga Ragetotem in The Barrens." },
+            },
+            dependsOn = { "turnin-1823-speak-with-ruga" },
+            id = "accept-1824-trial-at-the-field-of-giants",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Velora Nitely and the Brutal Legguards to Velora Nitely in Undercity.",
-            dependsOn = { "accept-1841-velora-nitely-and-the-brutal-legguards" },
-            complete = QuestState(1841, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
-                    "Travel to Velora Nitely in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "accept-1824-trial-at-the-field-of-giants",
         },
         {
-            id = "accept-1842-satyr-hooves",
-            kind = "accept",
             priority = 1400,
+            route = {
+                { y = 0.694, mapID = 1413, label = "Silithid Creeper", x = 0.454, offMapText = "Travel to Silithid Creeper in The Barrens." },
+                { y = 0.694, mapID = 1413, label = "Silithid Grub", x = 0.452, offMapText = "Travel to Silithid Grub in The Barrens." },
+                { y = 0.688, mapID = 1413, label = "Silithid Swarmer", x = 0.452, offMapText = "Travel to Silithid Swarmer in The Barrens." },
+                { y = 0.702, mapID = 1413, label = "Silithid Harvester", x = 0.478, offMapText = "Travel to Silithid Harvester in The Barrens." },
+                { y = 0.704, mapID = 1413, label = "Silithid Protector", x = 0.434, offMapText = "Travel to Silithid Protector in The Barrens." },
+            },
+            dependsOn = { "accept-1824-trial-at-the-field-of-giants" },
+            id = "objective-1824-trial-at-the-field-of-giants",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Satyr Hooves from Ula'elek in Durotar.",
-            dependsOn = { "turnin-1839-ulaelek-and-the-brutal-gauntlets" },
-            complete = QuestState(1842, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
-                    "Travel to Ula'elek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "objective-1824-trial-at-the-field-of-giants",
         },
         {
-            id = "turnin-1842-satyr-hooves",
-            kind = "turnin",
             priority = 1410,
+            route = {
+                { y = 0.594, mapID = 1413, label = "Ruga Ragetotem", x = 0.446, offMapText = "Travel to Ruga Ragetotem in The Barrens." },
+            },
+            dependsOn = { "accept-1824-trial-at-the-field-of-giants", "objective-1824-trial-at-the-field-of-giants" },
+            id = "turnin-1824-trial-at-the-field-of-giants",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Satyr Hooves to Ula'elek in Durotar.",
-            dependsOn = { "accept-1842-satyr-hooves" },
-            complete = QuestState(1842, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
-                    "Travel to Ula'elek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1824-trial-at-the-field-of-giants",
         },
         {
-            id = "accept-1843-brutal-gauntlets",
-            kind = "accept",
             priority = 1420,
+            route = {
+                { y = 0.594, mapID = 1413, label = "Ruga Ragetotem", x = 0.446, offMapText = "Travel to Ruga Ragetotem in The Barrens." },
+            },
+            dependsOn = { "turnin-1824-trial-at-the-field-of-giants" },
+            id = "accept-1825-speak-with-thungrim",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Brutal Gauntlets from Ula'elek in Durotar.",
-            dependsOn = { "turnin-1842-satyr-hooves" },
-            complete = QuestState(1843, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
-                    "Travel to Ula'elek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-1825-speak-with-thungrim",
         },
         {
-            id = "turnin-1843-brutal-gauntlets",
-            kind = "turnin",
             priority = 1430,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "accept-1825-speak-with-thungrim" },
+            id = "turnin-1825-speak-with-thungrim",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Brutal Gauntlets to Ula'elek in Durotar.",
-            dependsOn = { "accept-1843-brutal-gauntlets" },
-            complete = QuestState(1843, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5620, 0.7440, "Ula'elek",
-                    "Travel to Ula'elek in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1825-speak-with-thungrim",
         },
         {
-            id = "accept-1844-chimaeric-horn",
-            kind = "accept",
             priority = 1440,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1825-speak-with-thungrim" },
+            id = "accept-1838-brutal-armor",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Chimaeric Horn from Orm Stonehoof in Thunder Bluff.",
-            dependsOn = { "turnin-1840-orm-stonehoof-and-the-brutal-helm" },
-            complete = QuestState(1844, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
-                    "Travel to Orm Stonehoof in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-1838-brutal-armor",
         },
         {
-            id = "turnin-1844-chimaeric-horn",
-            kind = "turnin",
             priority = 1450,
+            dependsOn = { "accept-1838-brutal-armor" },
+            id = "objective-1838-brutal-armor",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Chimaeric Horn to Orm Stonehoof in Thunder Bluff.",
-            dependsOn = { "accept-1844-chimaeric-horn" },
-            complete = QuestState(1844, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
-                    "Travel to Orm Stonehoof in Thunder Bluff."),
-            },
+            useClientPin = true,
+            classAction = "objective-1838-brutal-armor",
         },
         {
-            id = "accept-1845-brutal-helm",
-            kind = "accept",
             priority = 1460,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "accept-1838-brutal-armor", "objective-1838-brutal-armor" },
+            id = "turnin-1838-brutal-armor",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Brutal Helm from Orm Stonehoof in Thunder Bluff.",
-            dependsOn = { "turnin-1844-chimaeric-horn" },
-            complete = QuestState(1845, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
-                    "Travel to Orm Stonehoof in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1838-brutal-armor",
         },
         {
-            id = "turnin-1845-brutal-helm",
-            kind = "turnin",
             priority = 1470,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1838-brutal-armor" },
+            id = "accept-1848-brutal-hauberk",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Brutal Helm to Orm Stonehoof in Thunder Bluff.",
-            dependsOn = { "accept-1845-brutal-helm" },
-            complete = QuestState(1845, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3900, 0.5580, "Orm Stonehoof",
-                    "Travel to Orm Stonehoof in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "accept-1848-brutal-hauberk",
         },
         {
-            id = "accept-1846-dragonmaw-shinbones",
-            kind = "accept",
             priority = 1480,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "accept-1848-brutal-hauberk" },
+            id = "turnin-1848-brutal-hauberk",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Dragonmaw Shinbones from Velora Nitely in Undercity.",
-            dependsOn = { "turnin-1841-velora-nitely-and-the-brutal-legguards" },
-            complete = QuestState(1846, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
-                    "Travel to Velora Nitely in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1848-brutal-hauberk",
         },
         {
-            id = "turnin-1846-dragonmaw-shinbones",
-            kind = "turnin",
             priority = 1490,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1848-brutal-hauberk" },
+            id = "accept-1839-ulaelek-and-the-brutal-gauntlets",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Dragonmaw Shinbones to Velora Nitely in Undercity.",
-            dependsOn = { "accept-1846-dragonmaw-shinbones" },
-            complete = QuestState(1846, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
-                    "Travel to Velora Nitely in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "accept-1839-ulaelek-and-the-brutal-gauntlets",
         },
         {
-            id = "accept-1847-brutal-legguards",
-            kind = "accept",
             priority = 1500,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Ula'elek", x = 0.562, offMapText = "Travel to Ula'elek in Durotar." },
+            },
+            dependsOn = { "accept-1839-ulaelek-and-the-brutal-gauntlets" },
+            id = "turnin-1839-ulaelek-and-the-brutal-gauntlets",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Brutal Legguards from Velora Nitely in Undercity.",
-            dependsOn = { "turnin-1846-dragonmaw-shinbones" },
-            complete = QuestState(1847, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
-                    "Travel to Velora Nitely in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1839-ulaelek-and-the-brutal-gauntlets",
         },
         {
-            id = "turnin-1847-brutal-legguards",
-            kind = "turnin",
             priority = 1510,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1848-brutal-hauberk" },
+            id = "accept-1840-orm-stonehoof-and-the-brutal-helm",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Brutal Legguards to Velora Nitely in Undercity.",
-            dependsOn = { "accept-1847-brutal-legguards" },
-            complete = QuestState(1847, "completed"),
+            useClientPin = false,
+            classAction = "accept-1840-orm-stonehoof-and-the-brutal-helm",
+        },
+        {
+            priority = 1520,
             route = {
-                Point(MAP.UNDERCITY, 0.6240, 0.3920, "Velora Nitely",
-                    "Travel to Velora Nitely in Undercity."),
+                { y = 0.558, mapID = 1456, label = "Orm Stonehoof", x = 0.39, offMapText = "Travel to Orm Stonehoof in Thunder Bluff." },
             },
+            dependsOn = { "accept-1840-orm-stonehoof-and-the-brutal-helm" },
+            id = "turnin-1840-orm-stonehoof-and-the-brutal-helm",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1840-orm-stonehoof-and-the-brutal-helm",
+        },
+        {
+            priority = 1530,
+            route = {
+                { y = 0.302, mapID = 1413, label = "Thun'grim Firegaze", x = 0.572, offMapText = "Travel to Thun'grim Firegaze in The Barrens." },
+            },
+            dependsOn = { "turnin-1848-brutal-hauberk" },
+            id = "accept-1841-velora-nitely-and-the-brutal-legguards",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1841-velora-nitely-and-the-brutal-legguards",
+        },
+        {
+            priority = 1540,
+            route = {
+                { y = 0.392, mapID = 1458, label = "Velora Nitely", x = 0.624, offMapText = "Travel to Velora Nitely in Undercity." },
+            },
+            dependsOn = { "accept-1841-velora-nitely-and-the-brutal-legguards" },
+            id = "turnin-1841-velora-nitely-and-the-brutal-legguards",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1841-velora-nitely-and-the-brutal-legguards",
+        },
+        {
+            priority = 1550,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Ula'elek", x = 0.562, offMapText = "Travel to Ula'elek in Durotar." },
+            },
+            dependsOn = { "turnin-1839-ulaelek-and-the-brutal-gauntlets" },
+            id = "accept-1842-satyr-hooves",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1842-satyr-hooves",
+        },
+        {
+            priority = 1560,
+            id = "objective-1842-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1842-satyr-hooves" },
+            classAction = "objective-1842-quest-work",
+        },
+        {
+            priority = 1570,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Ula'elek", x = 0.562, offMapText = "Travel to Ula'elek in Durotar." },
+            },
+            dependsOn = { "accept-1842-satyr-hooves", "objective-1842-quest-work" },
+            id = "turnin-1842-satyr-hooves",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1842-satyr-hooves",
+        },
+        {
+            priority = 1580,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Ula'elek", x = 0.562, offMapText = "Travel to Ula'elek in Durotar." },
+            },
+            dependsOn = { "turnin-1842-satyr-hooves" },
+            id = "accept-1843-brutal-gauntlets",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1843-brutal-gauntlets",
+        },
+        {
+            priority = 1590,
+            route = {
+                { y = 0.744, mapID = 1411, label = "Ula'elek", x = 0.562, offMapText = "Travel to Ula'elek in Durotar." },
+            },
+            dependsOn = { "accept-1843-brutal-gauntlets" },
+            id = "turnin-1843-brutal-gauntlets",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1843-brutal-gauntlets",
+        },
+        {
+            priority = 1600,
+            route = {
+                { y = 0.558, mapID = 1456, label = "Orm Stonehoof", x = 0.39, offMapText = "Travel to Orm Stonehoof in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-1840-orm-stonehoof-and-the-brutal-helm" },
+            id = "accept-1844-chimaeric-horn",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1844-chimaeric-horn",
+        },
+        {
+            priority = 1610,
+            id = "objective-1844-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1844-chimaeric-horn" },
+            classAction = "objective-1844-quest-work",
+        },
+        {
+            priority = 1620,
+            route = {
+                { y = 0.558, mapID = 1456, label = "Orm Stonehoof", x = 0.39, offMapText = "Travel to Orm Stonehoof in Thunder Bluff." },
+            },
+            dependsOn = { "accept-1844-chimaeric-horn", "objective-1844-quest-work" },
+            id = "turnin-1844-chimaeric-horn",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1844-chimaeric-horn",
+        },
+        {
+            priority = 1630,
+            route = {
+                { y = 0.558, mapID = 1456, label = "Orm Stonehoof", x = 0.39, offMapText = "Travel to Orm Stonehoof in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-1844-chimaeric-horn" },
+            id = "accept-1845-brutal-helm",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1845-brutal-helm",
+        },
+        {
+            priority = 1640,
+            route = {
+                { y = 0.558, mapID = 1456, label = "Orm Stonehoof", x = 0.39, offMapText = "Travel to Orm Stonehoof in Thunder Bluff." },
+            },
+            dependsOn = { "accept-1845-brutal-helm" },
+            id = "turnin-1845-brutal-helm",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1845-brutal-helm",
+        },
+        {
+            priority = 1650,
+            route = {
+                { y = 0.392, mapID = 1458, label = "Velora Nitely", x = 0.624, offMapText = "Travel to Velora Nitely in Undercity." },
+            },
+            dependsOn = { "turnin-1841-velora-nitely-and-the-brutal-legguards" },
+            id = "accept-1846-dragonmaw-shinbones",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1846-dragonmaw-shinbones",
+        },
+        {
+            priority = 1660,
+            id = "objective-1846-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1846-dragonmaw-shinbones" },
+            classAction = "objective-1846-quest-work",
+        },
+        {
+            priority = 1670,
+            route = {
+                { y = 0.392, mapID = 1458, label = "Velora Nitely", x = 0.624, offMapText = "Travel to Velora Nitely in Undercity." },
+            },
+            dependsOn = { "accept-1846-dragonmaw-shinbones", "objective-1846-quest-work" },
+            id = "turnin-1846-dragonmaw-shinbones",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1846-dragonmaw-shinbones",
+        },
+        {
+            priority = 1680,
+            route = {
+                { y = 0.392, mapID = 1458, label = "Velora Nitely", x = 0.624, offMapText = "Travel to Velora Nitely in Undercity." },
+            },
+            dependsOn = { "turnin-1846-dragonmaw-shinbones" },
+            id = "accept-1847-brutal-legguards",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1847-brutal-legguards",
+        },
+        {
+            priority = 1690,
+            route = {
+                { y = 0.392, mapID = 1458, label = "Velora Nitely", x = 0.624, offMapText = "Travel to Velora Nitely in Undercity." },
+            },
+            dependsOn = { "accept-1847-brutal-legguards" },
+            id = "turnin-1847-brutal-legguards",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1847-brutal-legguards",
+        },
+        {
+            id = "level-before-accept-1782-authored-class-prerequisite",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1782,
+            priority = 1700,
+        },
+        {
+            id = "accept-1782-authored-class-prerequisite",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            route = {
+                { mapID = 1453, x = 0.58, y = 0.168, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
+            },
+            dependsOn = {},
+            priority = 1710,
+            classAction = "accept-1782-authored-class-prerequisite",
+        },
+        {
+            id = "turnin-1782-authored-class-prerequisite",
+            conditions = {
+                all = {
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            route = {
+                { mapID = 1453, x = 0.58, y = 0.168, label = "Furen Longbeard", offMapText = "Travel to Furen Longbeard." },
+            },
+            dependsOn = { "accept-1782-authored-class-prerequisite" },
+            priority = 1720,
+            classAction = "turnin-1782-authored-class-prerequisite",
+        },
+        {
+            id = "level-before-accept-1700-grimand-elmore",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1700,
+            priority = 1730,
+        },
+        {
+            priority = 1740,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            id = "accept-1700-grimand-elmore",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1700-grimand-elmore",
+        },
+        {
+            priority = 1750,
+            route = {
+                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+            },
+            dependsOn = { "accept-1700-grimand-elmore" },
+            id = "turnin-1700-grimand-elmore",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1700-grimand-elmore",
+        },
+        {
+            id = "level-before-accept-1703-mathiel",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1703,
+            priority = 1760,
+        },
+        {
+            priority = 1770,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            id = "accept-1703-mathiel",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1703-mathiel",
+        },
+        {
+            priority = 1780,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "accept-1703-mathiel" },
+            id = "turnin-1703-mathiel",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1703-mathiel",
+        },
+        {
+            id = "level-before-accept-1704-klockmort-spannerspan",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1704,
+            priority = 1790,
+        },
+        {
+            priority = 1800,
+            route = {
+                { y = 0.168, mapID = 1453, label = "Furen Longbeard", x = 0.58, offMapText = "Travel to Furen Longbeard in Stormwind City." },
+            },
+            id = "accept-1704-klockmort-spannerspan",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1704-klockmort-spannerspan",
+        },
+        {
+            priority = 1810,
+            route = {
+                { y = 0.462, mapID = 1455, label = "Klockmort Spannerspan", x = 0.682, offMapText = "Travel to Klockmort Spannerspan in Ironforge." },
+            },
+            dependsOn = { "accept-1704-klockmort-spannerspan" },
+            id = "turnin-1704-klockmort-spannerspan",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1704-klockmort-spannerspan",
+        },
+        {
+            priority = 1820,
+            route = {
+                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+            },
+            dependsOn = { "turnin-1700-grimand-elmore" },
+            id = "accept-1705-burning-blood",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1705-burning-blood",
+        },
+        {
+            priority = 1830,
+            id = "objective-1705-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1705-burning-blood" },
+            classAction = "objective-1705-quest-work",
+        },
+        {
+            priority = 1840,
+            route = {
+                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+            },
+            dependsOn = { "accept-1705-burning-blood", "objective-1705-quest-work" },
+            id = "turnin-1705-burning-blood",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1705-burning-blood",
+        },
+        {
+            priority = 1850,
+            route = {
+                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+            },
+            id = "accept-1706-grimands-armor",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1706-grimands-armor",
+        },
+        {
+            priority = 1860,
+            route = {
+                { y = 0.122, mapID = 1453, label = "Grimand Elmore", x = 0.516, offMapText = "Travel to Grimand Elmore in Stormwind City." },
+            },
+            dependsOn = { "accept-1706-grimands-armor" },
+            id = "turnin-1706-grimands-armor",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1706-grimands-armor",
+        },
+        {
+            priority = 1870,
+            route = {
+                { y = 0.462, mapID = 1455, label = "Klockmort Spannerspan", x = 0.682, offMapText = "Travel to Klockmort Spannerspan in Ironforge." },
+            },
+            dependsOn = { "turnin-1704-klockmort-spannerspan" },
+            id = "accept-1708-iron-coral",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1708-iron-coral",
+        },
+        {
+            priority = 1880,
+            id = "objective-1708-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1708-iron-coral" },
+            classAction = "objective-1708-quest-work",
+        },
+        {
+            priority = 1890,
+            route = {
+                { y = 0.462, mapID = 1455, label = "Klockmort Spannerspan", x = 0.682, offMapText = "Travel to Klockmort Spannerspan in Ironforge." },
+            },
+            dependsOn = { "accept-1708-iron-coral", "objective-1708-quest-work" },
+            id = "turnin-1708-iron-coral",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1708-iron-coral",
+        },
+        {
+            priority = 1900,
+            route = {
+                { y = 0.462, mapID = 1455, label = "Klockmort Spannerspan", x = 0.682, offMapText = "Travel to Klockmort Spannerspan in Ironforge." },
+            },
+            id = "accept-1709-klockmorts-creation",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1709-klockmorts-creation",
+        },
+        {
+            priority = 1910,
+            route = {
+                { y = 0.462, mapID = 1455, label = "Klockmort Spannerspan", x = 0.682, offMapText = "Travel to Klockmort Spannerspan in Ironforge." },
+            },
+            dependsOn = { "accept-1709-klockmorts-creation" },
+            id = "turnin-1709-klockmorts-creation",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1709-klockmorts-creation",
+        },
+        {
+            priority = 1920,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "turnin-1703-mathiel" },
+            id = "accept-1710-sunscorched-shells",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1710-sunscorched-shells",
+        },
+        {
+            priority = 1930,
+            id = "objective-1710-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1710-sunscorched-shells" },
+            classAction = "objective-1710-quest-work",
+        },
+        {
+            priority = 1940,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "accept-1710-sunscorched-shells", "objective-1710-quest-work" },
+            id = "turnin-1710-sunscorched-shells",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1710-sunscorched-shells",
+        },
+        {
+            priority = 1950,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            id = "accept-1711-mathiels-armor",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1711-mathiels-armor",
+        },
+        {
+            priority = 1960,
+            route = {
+                { y = 0.454, mapID = 1457, label = "Mathiel", x = 0.592, offMapText = "Travel to Mathiel in Darnassus." },
+            },
+            dependsOn = { "accept-1711-mathiels-armor" },
+            id = "turnin-1711-mathiels-armor",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1711-mathiels-armor",
+        },
+        {
+            id = "level-before-accept-1718-the-islander",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1718,
+            priority = 1970,
+        },
+        {
+            priority = 1980,
+            route = {
+                { y = 0.456, mapID = 1453, label = "Wu Shen", x = 0.788, offMapText = "Travel to Wu Shen in Stormwind City." },
+            },
+            id = "accept-1718-the-islander",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1718-the-islander",
+        },
+        {
+            id = "level-before-accept-1718-the-islander-horde",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1718,
+            priority = 1990,
+        },
+        {
+            priority = 2000,
+            route = {
+                { y = 0.17, mapID = 1458, label = "Baltus Fowler", x = 0.472, offMapText = "Travel to Baltus Fowler in Undercity." },
+            },
+            id = "accept-1718-the-islander-horde",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1718-the-islander-horde",
+        },
+        {
+            id = "level-before-turnin-1718-the-islander",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1718,
+            priority = 2010,
+        },
+        {
+            priority = 2020,
+            route = {
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.686, offMapText = "Travel to Klannoc Macleod in The Barrens." },
+            },
+            dependsOn = { "accept-1718-the-islander", "accept-1718-the-islander-horde" },
+            id = "turnin-1718-the-islander",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1718-the-islander",
+        },
+        {
+            priority = 2030,
+            route = {
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.686, offMapText = "Travel to Klannoc Macleod in The Barrens." },
+            },
+            dependsOn = { "turnin-1718-the-islander" },
+            id = "accept-1719-the-affray",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1719-the-affray",
+        },
+        {
+            priority = 2040,
+            id = "objective-1719-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-1719-the-affray" },
+            classAction = "objective-1719-quest-work",
+        },
+        {
+            priority = 2050,
+            route = {
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.686, offMapText = "Travel to Klannoc Macleod in The Barrens." },
+            },
+            dependsOn = { "accept-1719-the-affray", "objective-1719-quest-work" },
+            id = "turnin-1719-the-affray",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1719-the-affray",
+        },
+        {
+            priority = 2060,
+            route = {
+                { y = 0.49, mapID = 1413, label = "Klannoc Macleod", x = 0.686, offMapText = "Travel to Klannoc Macleod in The Barrens." },
+            },
+            dependsOn = { "turnin-1719-the-affray" },
+            id = "accept-1791-the-windwatcher",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1791-the-windwatcher",
+        },
+        {
+            priority = 2070,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1791-the-windwatcher" },
+            id = "turnin-1791-the-windwatcher",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1791-the-windwatcher",
+        },
+        {
+            priority = 2080,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "turnin-1791-the-windwatcher" },
+            id = "accept-1712-cyclonian",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1712-cyclonian",
+        },
+        {
+            priority = 2090,
+            route = {
+                { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
+            },
+            id = "accept-1714-essence-of-the-exile",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1714-essence-of-the-exile",
+        },
+        {
+            priority = 2100,
+            dependsOn = { "accept-1714-essence-of-the-exile" },
+            id = "objective-1714-essence-of-the-exile",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-1714-essence-of-the-exile",
+        },
+        {
+            priority = 2110,
+            route = {
+                { y = 0.667, mapID = 1416, label = "Bath'rah's Cauldron", x = 0.793, offMapText = "Travel to Bath'rah's Cauldron in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1714-essence-of-the-exile", "objective-1714-essence-of-the-exile" },
+            id = "turnin-1714-essence-of-the-exile",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1714-essence-of-the-exile",
+        },
+        {
+            priority = 2120,
+            dependsOn = { "accept-1712-cyclonian" },
+            id = "objective-1712-cyclonian",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-1712-cyclonian",
+        },
+        {
+            priority = 2130,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1712-cyclonian", "objective-1712-cyclonian" },
+            id = "turnin-1712-cyclonian",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1712-cyclonian",
+        },
+        {
+            priority = 2140,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "turnin-1712-cyclonian" },
+            id = "accept-1713-the-summoning",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1713-the-summoning",
+        },
+        {
+            priority = 2150,
+            route = {
+                { y = 0.62, mapID = 1416, label = "Cyclonian", x = 0.802, offMapText = "Travel to Cyclonian in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1713-the-summoning" },
+            id = "objective-1713-the-summoning",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-1713-the-summoning",
+        },
+        {
+            priority = 2160,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1713-the-summoning", "objective-1713-the-summoning" },
+            id = "turnin-1713-the-summoning",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1713-the-summoning",
+        },
+        {
+            priority = 2170,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "turnin-1713-the-summoning", "turnin-1712-cyclonian" },
+            id = "accept-1792-whirlwind-weapon",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1792-whirlwind-weapon",
+        },
+        {
+            priority = 2180,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-1792-whirlwind-weapon" },
+            id = "turnin-1792-whirlwind-weapon",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 30 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1792-whirlwind-weapon",
+        },
+        {
+            id = "level-before-accept-8417-a-troubled-spirit",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8417,
+            priority = 2190,
+        },
+        {
+            priority = 2200,
+            route = {
+                { y = 0.456, mapID = 1453, label = "Wu Shen", x = 0.788, offMapText = "Travel to Wu Shen in Stormwind City." },
+            },
+            id = "accept-8417-a-troubled-spirit",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8417-a-troubled-spirit",
+        },
+        {
+            id = "level-before-accept-8417-a-troubled-spirit-horde",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8417,
+            priority = 2210,
+        },
+        {
+            priority = 2220,
+            route = {
+                { y = 0.15, mapID = 1458, label = "Christoph Walker", x = 0.472, offMapText = "Travel to Christoph Walker in Undercity." },
+            },
+            id = "accept-8417-a-troubled-spirit-horde",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8417-a-troubled-spirit-horde",
+        },
+        {
+            id = "level-before-turnin-8417-a-troubled-spirit",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8417,
+            priority = 2230,
+        },
+        {
+            priority = 2240,
+            route = {
+                { y = 0.66, mapID = 1435, label = "Fallen Hero of the Horde", x = 0.342, offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows." },
+            },
+            dependsOn = { "accept-8417-a-troubled-spirit", "accept-8417-a-troubled-spirit-horde" },
+            id = "turnin-8417-a-troubled-spirit",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8417-a-troubled-spirit",
+        },
+        {
+            priority = 2250,
+            route = {
+                { y = 0.66, mapID = 1435, label = "Fallen Hero of the Horde", x = 0.342, offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows." },
+            },
+            dependsOn = { "turnin-8417-a-troubled-spirit" },
+            id = "accept-8423-warrior-kinship",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8423-warrior-kinship",
+        },
+        {
+            priority = 2260,
+            id = "objective-8423-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-8423-warrior-kinship" },
+            classAction = "objective-8423-quest-work",
+        },
+        {
+            priority = 2270,
+            route = {
+                { y = 0.66, mapID = 1435, label = "Fallen Hero of the Horde", x = 0.342, offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows." },
+            },
+            dependsOn = { "accept-8423-warrior-kinship", "objective-8423-quest-work" },
+            id = "turnin-8423-warrior-kinship",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8423-warrior-kinship",
+        },
+        {
+            priority = 2280,
+            route = {
+                { y = 0.66, mapID = 1435, label = "Fallen Hero of the Horde", x = 0.342, offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows." },
+            },
+            dependsOn = { "turnin-8423-warrior-kinship", "turnin-8417-a-troubled-spirit" },
+            id = "accept-8424-war-on-the-shadowsworn",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8424-war-on-the-shadowsworn",
+        },
+        {
+            priority = 2290,
+            id = "objective-8424-quest-work",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-8424-war-on-the-shadowsworn" },
+            classAction = "objective-8424-quest-work",
+        },
+        {
+            priority = 2300,
+            route = {
+                { y = 0.66, mapID = 1435, label = "Fallen Hero of the Horde", x = 0.342, offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows." },
+            },
+            dependsOn = { "accept-8424-war-on-the-shadowsworn", "objective-8424-quest-work" },
+            id = "turnin-8424-war-on-the-shadowsworn",
+            conditions = {
+                all = {
+                    { class = 1 },
+                    {
+                        class = { 1 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8424-war-on-the-shadowsworn",
         },
     },
+    routeMode = "ordered",
 })

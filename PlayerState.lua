@@ -450,8 +450,8 @@ local function ReadCachedCompletion(api, questID, departedComplete)
             return done, true
         end
         if flagAPIWorks then
-            StoreCompletion(questID, false, true)
-            return false, true
+            completionFailed[questID] = true
+            return nil, false
         end
         completionUnavailable = true
         return nil, false
@@ -824,4 +824,15 @@ function PlayerState:HasItem(itemName, state, api)
         itemPresence[itemName] = known
     end
     return known
+end
+
+function PlayerState:GetItemCount(itemName, state, api)
+    if state and type(state.items) == "table" then
+        return tonumber(state.items[itemName]) or 0
+    end
+    api = api or _G
+    local getter = api.GetItemCount or (api.C_Item and api.C_Item.GetItemCount)
+    if type(getter) ~= "function" then return nil end
+    local ok, count = pcall(getter, itemName)
+    if ok and type(count) == "number" then return count end
 end

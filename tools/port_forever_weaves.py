@@ -208,6 +208,8 @@ def append_woven(target: Path, blocks: list[tuple[str, str]]) -> int:
     if not target.exists() or not blocks:
         return 0
     text = target.read_text(encoding="utf-8")
+    if re.search(r'routeMode\s*=\s*"ordered"', text):
+        raise ValueError(f"Authored itinerary {target} requires an explicit insertion point; append weaving is retired.")
     existing_forever = set()
     for m in QUEST_ID.finditer(text):
         qid = int(m.group(1))
@@ -255,6 +257,8 @@ def append_woven(target: Path, blocks: list[tuple[str, str]]) -> int:
             "-- Forever weaves ported from prior Leveling chapters (quest id >= 90000).\n",
             1,
         )
+    if re.search(r'routeMode\s*=\s*"ordered"', text):
+        raise ValueError(f"Authored itinerary {target} requires an explicit insertion point; append weaving is retired.")
     target.write_text(text, encoding="utf-8")
     return len(added)
 

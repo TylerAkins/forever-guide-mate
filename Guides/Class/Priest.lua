@@ -1,2432 +1,4642 @@
 local _, ns = ...
 
--- Priest class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- Hallowed Memorandum
--- Divine Grace
--- Divine Grace
--- Confounding Flash
--- Confounding Flash
--- Left out (dungeon quest): Blood of Morphaz, An Earnest Proposition
--- Left out (needs 5653, which is not on this route): Hex of Weakness
--- Left out (needs 5659, which is not on this route): Touch of Weakness
--- Left out (no start pin): Desperate Prayer, Hex of Weakness, Elune's Grace, Divine Grace, Contingency Plan, Confounding Flash, The Troll Scroll
-
-local MAP = {
-    AZSHARA = 1447,
-    DARNASSUS = 1457,
-    DUNMOROGH = 1426,
-    DUROTAR = 1411,
-    EASTERNPLAGUELANDS = 1423,
-    ELWYNNFOREST = 1429,
-    IRONFORGE = 1455,
-    MULGORE = 1412,
-    ORGRIMMAR = 1454,
-    STORMWINDCITY = 1453,
-    TELDRASSIL = 1438,
-    THUNDERBLUFF = 1456,
-    TIRISFALGLADES = 1420,
-    UNDERCITY = 1458,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-priest",
+    revision = 3,
     title = "Priest",
     category = "Class Quests",
-    revision = 1,
+    id = "class-priest",
     conditions = {
         all = {
             { class = 5 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-98574-hallowed-memorandum",
-            kind = "accept",
             priority = 10,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-98574-hallowed-memorandum",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Accept Hallowed Memorandum from Sten Stoutarm in Dun Morogh. This step is for Gnomes.",
-            complete = QuestState(98574, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98574-hallowed-memorandum",
         },
         {
-            id = "turnin-98574-hallowed-memorandum",
-            kind = "turnin",
             priority = 20,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 7 },
-                },
+            route = {
+                { y = 0.664, mapID = 1426, label = "Branstock Khalder", x = 0.286, offMapText = "Travel to Branstock Khalder in Dun Morogh." },
             },
-            text = "Turn in Hallowed Memorandum to Branstock Khalder in Dun Morogh. This step is for Gnomes.",
             dependsOn = { "accept-98574-hallowed-memorandum" },
-            complete = QuestState(98574, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6640, "Branstock Khalder",
-                    "Travel to Branstock Khalder in Dun Morogh."),
+            id = "turnin-98574-hallowed-memorandum",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-98574-hallowed-memorandum",
         },
         {
-            id = "accept-5637-desperate-prayer",
-            kind = "accept",
             priority = 30,
+            route = {
+                { y = 0.4295, mapID = 1429, label = "Deputy Willem", offMapText = "Travel to Deputy Willem in Elwynn Forest.", x = 0.4817 },
+            },
+            id = "accept-783-a-threat-within",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from Maxan Anvol in Dun Morogh. This step is for Humans and Dwarves.",
-            complete = QuestState(5637, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
+            sourceStep = 12,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-783-a-threat-within",
         },
         {
-            id = "turnin-5637-desperate-prayer",
-            kind = "turnin",
             priority = 40,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-783-a-threat-within" },
+            id = "turnin-783-a-threat-within",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
-            dependsOn = { "accept-5637-desperate-prayer" },
-            complete = QuestState(5637, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-783-a-threat-within",
         },
         {
-            id = "accept-5629-returning-home",
-            kind = "accept",
             priority = 50,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            id = "accept-788-cutting-teeth",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Returning Home from Laurna Morninglight in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(5629, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
-                    "Travel to Laurna Morninglight in Teldrassil."),
-            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-788-cutting-teeth",
         },
         {
-            id = "turnin-5629-returning-home",
-            kind = "turnin",
             priority = 60,
+            route = {
+                { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
+            },
+            dependsOn = { "accept-788-cutting-teeth" },
+            id = "objective-788-1-mottled-boar",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Returning Home to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5629-returning-home" },
-            complete = QuestState(5629, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "objective-788-1-mottled-boar",
         },
         {
-            id = "accept-94774-divine-grace",
-            kind = "accept",
             priority = 70,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            dependsOn = { "accept-788-cutting-teeth", "objective-788-1-mottled-boar" },
+            id = "turnin-788-cutting-teeth",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = 1 },
-                    { level = { min = 10 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Divine Grace from Priestess Josetta in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(94774, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4340, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
+            sourceStep = 21,
+            useClientPin = false,
+            classAction = "turnin-788-cutting-teeth",
         },
         {
-            id = "turnin-94774-divine-grace",
-            kind = "turnin",
             priority = 80,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Divine Grace to High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-94774-divine-grace" },
-            complete = QuestState(94774, "completed"),
             route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
-        },
-        {
-            id = "accept-94773-divine-grace",
-            kind = "accept",
-            priority = 90,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Divine Grace from High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "turnin-94774-divine-grace" },
-            complete = QuestState(94773, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-94773-divine-grace",
-            kind = "turnin",
-            priority = 100,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Divine Grace to High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-94773-divine-grace" },
-            complete = QuestState(94773, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-94824-confounding-flash",
-            kind = "accept",
-            priority = 110,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Confounding Flash from Maxan Anvol in Dun Morogh. This step is for Gnomes.",
-            complete = QuestState(94824, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-94824-confounding-flash",
-            kind = "turnin",
-            priority = 120,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge. This step is for Gnomes.",
-            dependsOn = { "accept-94824-confounding-flash" },
-            complete = QuestState(94824, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims",
-                    "Travel to High Priestess Mims in Ironforge."),
-            },
-        },
-        {
-            id = "accept-94817-confounding-flash",
-            kind = "accept",
-            priority = 130,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Confounding Flash from High Priestess Mims in Ironforge. This step is for Gnomes.",
-            dependsOn = { "turnin-94824-confounding-flash" },
-            complete = QuestState(94817, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims",
-                    "Travel to High Priestess Mims in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-94817-confounding-flash",
-            kind = "turnin",
-            priority = 140,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Confounding Flash to High Priestess Mims in Ironforge. This step is for Gnomes.",
-            dependsOn = { "accept-94817-confounding-flash" },
-            complete = QuestState(94817, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2480, 0.1000, "High Priestess Mims",
-                    "Travel to High Priestess Mims in Ironforge."),
-            },
-        },
-        {
-            id = "accept-5641-a-lack-of-fear",
-            kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept A Lack of Fear from High Priest Rohan in Ironforge. This step is for Dwarves.",
-            complete = QuestState(5641, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-5641-a-lack-of-fear",
-            kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in A Lack of Fear to High Priest Rohan in Ironforge. This step is for Dwarves.",
-            dependsOn = { "accept-5641-a-lack-of-fear" },
-            complete = QuestState(5641, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
-        },
-        {
-            id = "accept-5676-arcane-feedback",
-            kind = "accept",
-            priority = 170,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Arcane Feedback from High Priestess Laurena in Stormwind City. This step is for Humans.",
-            complete = QuestState(5676, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
-        },
-        {
-            id = "turnin-5676-arcane-feedback",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Arcane Feedback to High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-5676-arcane-feedback" },
-            complete = QuestState(5676, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
-        },
-        {
-            id = "accept-5672-elunes-grace",
-            kind = "accept",
-            priority = 190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Elune's Grace from Priestess Alathea in Darnassus. This step is for Night Elves.",
-            complete = QuestState(5672, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
-        },
-        {
-            id = "turnin-5672-elunes-grace",
-            kind = "turnin",
-            priority = 200,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Elune's Grace to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5672-elunes-grace" },
-            complete = QuestState(5672, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
-        },
-        {
-            id = "accept-5643-shadowguard",
-            kind = "accept",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Shadowguard from Aelthalyste in Undercity. This step is for Trolls.",
-            complete = QuestState(5643, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
-        },
-        {
-            id = "turnin-5643-shadowguard",
-            kind = "turnin",
-            priority = 220,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Shadowguard to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5643-shadowguard" },
-            complete = QuestState(5643, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
-        },
-        {
-            id = "accept-5644-devouring-plague",
-            kind = "accept",
-            priority = 230,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 5 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Devouring Plague from Miles Welsh in Thunder Bluff. This step is for Undead.",
-            complete = QuestState(5644, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2540, 0.1540, "Miles Welsh",
-                    "Travel to Miles Welsh in Thunder Bluff."),
-            },
-        },
-        {
-            id = "turnin-5644-devouring-plague",
-            kind = "turnin",
-            priority = 240,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 5 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Devouring Plague to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5644-devouring-plague" },
-            complete = QuestState(5644, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
-        },
-        {
-            id = "accept-8254-cenarion-aid",
-            kind = "accept",
-            priority = 250,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Cenarion Aid from Brother Joshua in Stormwind City.",
-            complete = QuestState(8254, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2680, "Brother Joshua",
-                    "Travel to Brother Joshua in Stormwind City.", { map = { MAP.IRONFORGE, MAP.ORGRIMMAR } }),
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge.", { map = { MAP.ORGRIMMAR } }),
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-8254-cenarion-aid",
-            kind = "turnin",
-            priority = 260,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Cenarion Aid to Ogtinc in Azshara.",
-            dependsOn = { "accept-8254-cenarion-aid" },
-            complete = QuestState(8254, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "accept-8255-of-coursers-we-know",
-            kind = "accept",
-            priority = 270,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Of Coursers We Know from Ogtinc in Azshara.",
-            dependsOn = { "turnin-8254-cenarion-aid" },
-            complete = QuestState(8255, "activeOrCompleted"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "objective-8255-of-coursers-we-know",
-            kind = "objective",
-            priority = 280,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Collect 4 Healthy Courser Gland from Mosshoof Coursers in Azshara.",
-            dependsOn = { "accept-8255-of-coursers-we-know" },
-            complete = QuestState(8255, "complete"),
-            route = {
-                Point(MAP.AZSHARA, 0.3780, 0.6920, "Mosshoof Courser",
-                    "Travel to Mosshoof Courser in Azshara."),
-            },
-        },
-        {
-            id = "turnin-8255-of-coursers-we-know",
-            kind = "turnin",
-            priority = 290,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Of Coursers We Know to Ogtinc in Azshara.",
-            dependsOn = { "objective-8255-of-coursers-we-know" },
-            complete = QuestState(8255, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "accept-8256-the-ichor-of-undeath",
-            kind = "accept",
-            priority = 300,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept The Ichor of Undeath from Ogtinc in Azshara.",
-            dependsOn = { "turnin-8255-of-coursers-we-know", "turnin-8254-cenarion-aid" },
-            complete = QuestState(8256, "activeOrCompleted"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
-            id = "objective-8256-the-ichor-of-undeath",
-            kind = "objective",
-            priority = 310,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Collect Ichor of Undeath from the Highborne undead in Azshara.",
-            dependsOn = { "accept-8256-the-ichor-of-undeath" },
-            complete = QuestState(8256, "complete"),
-            route = {
-                Point(MAP.AZSHARA, 0.1340, 0.7340, "Highborne Apparition",
-                    "Travel to Highborne Apparition in Azshara."),
-                Point(MAP.AZSHARA, 0.1340, 0.7320, "Highborne Lichling",
-                    "Travel to Highborne Lichling in Azshara."),
-                Point(MAP.AZSHARA, 0.1760, 0.6920, "Varo'then's Ghost",
-                    "Travel to Varo'then's Ghost in Azshara."),
-                Point(MAP.AZSHARA, 0.3940, 0.5020, "Lingering Highborne",
-                    "Travel to Lingering Highborne in Azshara."),
-            },
-        },
-        {
-            id = "turnin-8256-the-ichor-of-undeath",
-            kind = "turnin",
-            priority = 320,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in The Ichor of Undeath to Ogtinc in Azshara.",
-            dependsOn = { "objective-8256-the-ichor-of-undeath" },
-            complete = QuestState(8256, "completed"),
-            route = {
-                Point(MAP.AZSHARA, 0.4240, 0.4260, "Ogtinc",
-                    "Travel to Ogtinc in Azshara."),
-            },
-        },
-        {
             id = "accept-3085-hallowed-tablet",
-            kind = "accept",
-            priority = 330,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Hallowed Tablet from Gornek in Durotar. This step is for Trolls.",
-            complete = QuestState(3085, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3085-hallowed-tablet",
         },
         {
-            id = "turnin-3085-hallowed-tablet",
-            kind = "turnin",
-            priority = 340,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 8 },
-                },
+            priority = 90,
+            route = {
+                { y = 0.688, mapID = 1411, label = "Ken'jai", x = 0.424, offMapText = "Travel to Ken'jai in Durotar." },
             },
-            text = "Turn in Hallowed Tablet to Ken'jai in Durotar. This step is for Trolls.",
             dependsOn = { "accept-3085-hallowed-tablet" },
-            complete = QuestState(3085, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6880, "Ken'jai",
-                    "Travel to Ken'jai in Durotar."),
-            },
-        },
-        {
-            id = "accept-3097-hallowed-scroll",
-            kind = "accept",
-            priority = 350,
+            id = "turnin-3085-hallowed-tablet",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Hallowed Scroll from Shadow Priest Sarvis in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(3097, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3080, 0.6620, "Shadow Priest Sarvis",
-                    "Travel to Shadow Priest Sarvis in Tirisfal Glades."),
-            },
+            useClientPin = false,
+            classAction = "turnin-3085-hallowed-tablet",
         },
         {
-            id = "turnin-3097-hallowed-scroll",
-            kind = "turnin",
-            priority = 360,
+            priority = 100,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            id = "accept-7-kobold-camp-cleanup",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 5 },
-                    { race = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Hallowed Scroll to Dark Cleric Duesten in Tirisfal Glades. This step is for Undead.",
-            dependsOn = { "accept-3097-hallowed-scroll" },
-            complete = QuestState(3097, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.3100, 0.6600, "Dark Cleric Duesten",
-                    "Travel to Dark Cleric Duesten in Tirisfal Glades."),
-            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7-kobold-camp-cleanup",
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.376, mapID = 1429, label = "Kobold Vermin", offMapText = "Travel to Kobold Vermin.", x = 0.48 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup" },
+            id = "objective-7-1-kobold-vermin",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 18,
+            useClientPin = false,
+            classAction = "objective-7-1-kobold-vermin",
+        },
+        {
+            priority = 120,
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-7-kobold-camp-cleanup", "objective-7-1-kobold-vermin" },
+            id = "turnin-7-kobold-camp-cleanup",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 1 },
+                                    {
+                                        race = { 1 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 20,
+            useClientPin = false,
+            classAction = "turnin-7-kobold-camp-cleanup",
+        },
+        {
+            priority = 130,
+            route = {
+                { y = 0.416, mapID = 1429, label = "Marshal McBride", x = 0.488, offMapText = "Travel to Marshal McBride in Elwynn Forest." },
+            },
             id = "accept-3103-hallowed-letter",
-            kind = "accept",
-            priority = 370,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept Hallowed Letter from Marshal McBride in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(3103, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4880, 0.4160, "Marshal McBride",
-                    "Travel to Marshal McBride in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3103-hallowed-letter",
         },
         {
-            id = "turnin-3103-hallowed-letter",
-            kind = "turnin",
-            priority = 380,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                },
+            priority = 140,
+            route = {
+                { y = 0.396, mapID = 1429, label = "Priestess Anetta", x = 0.498, offMapText = "Travel to Priestess Anetta in Elwynn Forest." },
             },
-            text = "Turn in Hallowed Letter to Priestess Anetta in Elwynn Forest. This step is for Humans.",
             dependsOn = { "accept-3103-hallowed-letter" },
-            complete = QuestState(3103, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4980, 0.3960, "Priestess Anetta",
-                    "Travel to Priestess Anetta in Elwynn Forest."),
+            id = "turnin-3103-hallowed-letter",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3103-hallowed-letter",
         },
         {
+            priority = 150,
+            route = {
+                { mapID = 1426, x = 0.2993, y = 0.7120000000000001, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-179-dwarven-outfitters",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-179-dwarven-outfitters",
+        },
+        {
+            priority = 160,
+            route = {
+                { y = 0.744, mapID = 1426, label = "Ragged Young Wolf", offMapText = "Travel to Ragged Young Wolf.", x = 0.306 },
+            },
+            id = "objective-179-1-ragged-young-wolf",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = { "accept-179-dwarven-outfitters" },
+            classAction = "objective-179-1-ragged-young-wolf",
+        },
+        {
+            priority = 170,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", offMapText = "Travel to Sten Stoutarm in Dun Morogh.", x = 0.2993 },
+            },
+            dependsOn = { "accept-179-dwarven-outfitters", "objective-179-1-ragged-young-wolf" },
+            id = "turnin-179-dwarven-outfitters",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 3 },
+                                    {
+                                        race = { 3 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-179-dwarven-outfitters",
+        },
+        {
+            priority = 180,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
             id = "accept-3110-hallowed-rune",
-            kind = "accept",
-            priority = 390,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Hallowed Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves.",
-            complete = QuestState(3110, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3110-hallowed-rune",
         },
         {
-            id = "turnin-3110-hallowed-rune",
-            kind = "turnin",
-            priority = 400,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 3 },
-                },
+            priority = 190,
+            route = {
+                { y = 0.664, mapID = 1426, label = "Branstock Khalder", x = 0.286, offMapText = "Travel to Branstock Khalder in Dun Morogh." },
             },
-            text = "Turn in Hallowed Rune to Branstock Khalder in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-3110-hallowed-rune" },
-            complete = QuestState(3110, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6640, "Branstock Khalder",
-                    "Travel to Branstock Khalder in Dun Morogh."),
+            id = "turnin-3110-hallowed-rune",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3110-hallowed-rune",
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.5869 },
+            },
+            id = "accept-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 7,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-456-the-balance-of-nature",
+        },
+        {
+            priority = 210,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            id = "objective-456-1-young-nightsaber",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            classAction = "objective-456-1-young-nightsaber",
+        },
+        {
+            priority = 220,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Nightsaber", offMapText = "Travel to Young Nightsaber.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-1-young-nightsaber-2",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-456-1-young-nightsaber-2",
+        },
+        {
+            priority = 230,
+            route = {
+                { y = 0.454, mapID = 1438, label = "Young Thistle Boar", offMapText = "Travel to Young Thistle Boar.", x = 0.582 },
+            },
+            dependsOn = { "accept-456-the-balance-of-nature" },
+            id = "objective-456-2-young-thistle-boar",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 8,
+            useClientPin = false,
+            classAction = "objective-456-2-young-thistle-boar",
+        },
+        {
+            priority = 240,
+            route = {
+                { y = 0.4427, mapID = 1438, label = "Conservator Ilthalaine", offMapText = "Travel to Conservator Ilthalaine in Teldrassil.", x = 0.587 },
+            },
+            dependsOn = {
+                "accept-456-the-balance-of-nature",
+                "objective-456-1-young-nightsaber",
+                "objective-456-1-young-nightsaber-2",
+                "objective-456-2-young-thistle-boar",
+            },
+            id = "turnin-456-the-balance-of-nature",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Alliance" },
+                                    { race = 4 },
+                                    {
+                                        race = { 4 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "turnin-456-the-balance-of-nature",
+        },
+        {
+            priority = 250,
+            route = {
+                { y = 0.442, mapID = 1438, label = "Conservator Ilthalaine", x = 0.586, offMapText = "Travel to Conservator Ilthalaine in Teldrassil." },
+            },
             id = "accept-3119-hallowed-sigil",
-            kind = "accept",
-            priority = 410,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Hallowed Sigil from Conservator Ilthalaine in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(3119, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5860, 0.4420, "Conservator Ilthalaine",
-                    "Travel to Conservator Ilthalaine in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3119-hallowed-sigil",
         },
         {
-            id = "turnin-3119-hallowed-sigil",
-            kind = "turnin",
-            priority = 420,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                },
+            priority = 260,
+            route = {
+                { y = 0.404, mapID = 1438, label = "Shanda", x = 0.592, offMapText = "Travel to Shanda in Teldrassil." },
             },
-            text = "Turn in Hallowed Sigil to Shanda in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-3119-hallowed-sigil" },
-            complete = QuestState(3119, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5920, 0.4040, "Shanda",
-                    "Travel to Shanda in Teldrassil."),
+            id = "turnin-3119-hallowed-sigil",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3119-hallowed-sigil",
         },
         {
+            priority = 270,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            id = "accept-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-364-the-mindless-ones",
+        },
+        {
+            priority = 280,
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Mindless Zombie", offMapText = "Travel to Mindless Zombie." },
+            },
+            id = "objective-364-1-duskbat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-1-duskbat",
+        },
+        {
+            id = "objective-364-2-wretched-zombie",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1420, x = 0.326, y = 0.634, label = "Wretched Zombie", offMapText = "Travel to Wretched Zombie." },
+            },
+            sourceStep = 13,
+            priority = 290,
+            useClientPin = false,
+            dependsOn = { "accept-364-the-mindless-ones" },
+            classAction = "objective-364-2-wretched-zombie",
+        },
+        {
+            priority = 300,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades.", x = 0.3084 },
+            },
+            dependsOn = { "accept-364-the-mindless-ones", "objective-364-1-duskbat", "objective-364-2-wretched-zombie" },
+            id = "turnin-364-the-mindless-ones",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 5 },
+                                    {
+                                        class = { 5 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 5 },
+                                    {
+                                        race = { 5 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 5 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 14,
+            useClientPin = false,
+            classAction = "turnin-364-the-mindless-ones",
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.662, mapID = 1420, label = "Shadow Priest Sarvis", x = 0.308, offMapText = "Travel to Shadow Priest Sarvis in Tirisfal Glades." },
+            },
+            id = "accept-3097-hallowed-scroll",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3097-hallowed-scroll",
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.66, mapID = 1420, label = "Dark Cleric Duesten", x = 0.31, offMapText = "Travel to Dark Cleric Duesten in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-3097-hallowed-scroll" },
+            id = "turnin-3097-hallowed-scroll",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-3097-hallowed-scroll",
+        },
+        {
+            id = "level-before-accept-5622-in-favor-of-elune",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5622,
+            priority = 330,
+        },
+        {
+            priority = 340,
+            route = {
+                { y = 0.404, mapID = 1438, label = "Shanda", x = 0.592, offMapText = "Travel to Shanda in Teldrassil." },
+            },
             id = "accept-5622-in-favor-of-elune",
-            kind = "accept",
-            priority = 430,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 4 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept In Favor of Elune from Shanda in Teldrassil. This step is for Night Elves.",
-            complete = QuestState(5622, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5920, 0.4040, "Shanda",
-                    "Travel to Shanda in Teldrassil."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5622-in-favor-of-elune",
         },
         {
-            id = "turnin-5622-in-favor-of-elune",
-            kind = "turnin",
-            priority = 440,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 5 } },
-                },
+            priority = 350,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", x = 0.556, offMapText = "Travel to Laurna Morninglight in Teldrassil." },
             },
-            text = "Turn in In Favor of Elune to Laurna Morninglight in Teldrassil. This step is for Night Elves.",
             dependsOn = { "accept-5622-in-favor-of-elune" },
-            complete = QuestState(5622, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
-                    "Travel to Laurna Morninglight in Teldrassil."),
-            },
-        },
-        {
-            id = "accept-5621-garments-of-the-moon",
-            kind = "accept",
-            priority = 450,
+            id = "turnin-5622-in-favor-of-elune",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 4 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Garments of the Moon from Laurna Morninglight in Teldrassil. This step is for Night Elves.",
+            useClientPin = false,
+            classAction = "turnin-5622-in-favor-of-elune",
+        },
+        {
+            priority = 360,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", x = 0.556, offMapText = "Travel to Laurna Morninglight in Teldrassil." },
+            },
             dependsOn = { "turnin-5622-in-favor-of-elune" },
-            complete = QuestState(5621, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
-                    "Travel to Laurna Morninglight in Teldrassil."),
-            },
-        },
-        {
-            id = "turnin-5621-garments-of-the-moon",
-            kind = "turnin",
-            priority = 460,
+            id = "accept-5621-garments-of-the-moon",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 4 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Garments of the Moon to Laurna Morninglight in Teldrassil. This step is for Night Elves.",
+            useClientPin = false,
+            classAction = "accept-5621-garments-of-the-moon",
+        },
+        {
+            priority = 370,
+            id = "objective-5621-quest-work",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-5621-garments-of-the-moon" },
-            complete = QuestState(5621, "completed"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
-                    "Travel to Laurna Morninglight in Teldrassil."),
-            },
+            classAction = "objective-5621-quest-work",
         },
         {
+            priority = 380,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", x = 0.556, offMapText = "Travel to Laurna Morninglight in Teldrassil." },
+            },
+            dependsOn = { "accept-5621-garments-of-the-moon", "objective-5621-quest-work" },
+            id = "turnin-5621-garments-of-the-moon",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5621-garments-of-the-moon",
+        },
+        {
+            id = "level-before-accept-5623-in-favor-of-the-light",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5623,
+            priority = 390,
+        },
+        {
+            priority = 400,
+            route = {
+                { y = 0.396, mapID = 1429, label = "Priestess Anetta", x = 0.498, offMapText = "Travel to Priestess Anetta in Elwynn Forest." },
+            },
             id = "accept-5623-in-favor-of-the-light",
-            kind = "accept",
-            priority = 470,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 1 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept In Favor of the Light from Priestess Anetta in Elwynn Forest. This step is for Humans.",
-            complete = QuestState(5623, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4980, 0.3960, "Priestess Anetta",
-                    "Travel to Priestess Anetta in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5623-in-favor-of-the-light",
         },
         {
-            id = "turnin-5623-in-favor-of-the-light",
-            kind = "turnin",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 1 },
-                    { level = { min = 5 } },
-                },
+            priority = 410,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.432, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
             },
-            text = "Turn in In Favor of the Light to Priestess Josetta in Elwynn Forest. This step is for Humans.",
             dependsOn = { "accept-5623-in-favor-of-the-light" },
-            complete = QuestState(5623, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4320, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
-        },
-        {
-            id = "accept-5624-garments-of-the-light",
-            kind = "accept",
-            priority = 490,
+            id = "turnin-5623-in-favor-of-the-light",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 1 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept Garments of the Light from Priestess Josetta in Elwynn Forest. This step is for Humans.",
+            useClientPin = false,
+            classAction = "turnin-5623-in-favor-of-the-light",
+        },
+        {
+            priority = 420,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.434, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
+            },
             dependsOn = { "turnin-5623-in-favor-of-the-light" },
-            complete = QuestState(5624, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4340, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
-        },
-        {
-            id = "turnin-5624-garments-of-the-light",
-            kind = "turnin",
-            priority = 500,
+            id = "accept-5624-garments-of-the-light",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 1 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Turn in Garments of the Light to Priestess Josetta in Elwynn Forest. This step is for Humans.",
+            useClientPin = false,
+            classAction = "accept-5624-garments-of-the-light",
+        },
+        {
+            priority = 430,
+            id = "objective-5624-quest-work",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-5624-garments-of-the-light" },
-            complete = QuestState(5624, "completed"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4340, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
+            classAction = "objective-5624-quest-work",
         },
         {
+            priority = 440,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.434, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
+            },
+            dependsOn = { "accept-5624-garments-of-the-light", "objective-5624-quest-work" },
+            id = "turnin-5624-garments-of-the-light",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5624-garments-of-the-light",
+        },
+        {
+            id = "level-before-accept-5626-in-favor-of-the-light",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 3 },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5626,
+            priority = 450,
+        },
+        {
+            priority = 460,
+            route = {
+                { y = 0.664, mapID = 1426, label = "Branstock Khalder", x = 0.286, offMapText = "Travel to Branstock Khalder in Dun Morogh." },
+            },
             id = "accept-5626-in-favor-of-the-light",
-            kind = "accept",
-            priority = 510,
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 3 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 3, 7 },
+                    },
                 },
             },
-            text = "Accept In Favor of the Light from Branstock Khalder in Dun Morogh. This step is for Dwarves.",
-            complete = QuestState(5626, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2860, 0.6640, "Branstock Khalder",
-                    "Travel to Branstock Khalder in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5626-in-favor-of-the-light",
         },
         {
-            id = "turnin-5626-in-favor-of-the-light",
-            kind = "turnin",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 3 },
-                    { level = { min = 5 } },
-                },
+            priority = 470,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
             },
-            text = "Turn in In Favor of the Light to Maxan Anvol in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-5626-in-favor-of-the-light" },
-            complete = QuestState(5626, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-5625-garments-of-the-light",
-            kind = "accept",
-            priority = 530,
+            id = "turnin-5626-in-favor-of-the-light",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 3 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 3, 7 },
+                    },
                 },
             },
-            text = "Accept Garments of the Light from Maxan Anvol in Dun Morogh. This step is for Dwarves.",
+            useClientPin = false,
+            classAction = "turnin-5626-in-favor-of-the-light",
+        },
+        {
+            priority = 480,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
+            },
             dependsOn = { "turnin-5626-in-favor-of-the-light" },
-            complete = QuestState(5625, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-5625-garments-of-the-light",
-            kind = "turnin",
-            priority = 540,
+            id = "accept-5625-garments-of-the-light",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 3 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 3, 7 },
+                    },
                 },
             },
-            text = "Turn in Garments of the Light to Maxan Anvol in Dun Morogh. This step is for Dwarves.",
+            useClientPin = false,
+            classAction = "accept-5625-garments-of-the-light",
+        },
+        {
+            priority = 490,
+            id = "objective-5625-quest-work",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-5625-garments-of-the-light" },
-            complete = QuestState(5625, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
+            classAction = "objective-5625-quest-work",
         },
         {
+            priority = 500,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
+            },
+            dependsOn = { "accept-5625-garments-of-the-light", "objective-5625-quest-work" },
+            id = "turnin-5625-garments-of-the-light",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3, 7 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5625-garments-of-the-light",
+        },
+        {
+            id = "level-before-accept-5649-in-favor-of-spirituality",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5649,
+            priority = 510,
+        },
+        {
+            priority = 520,
+            route = {
+                { y = 0.688, mapID = 1411, label = "Ken'jai", x = 0.424, offMapText = "Travel to Ken'jai in Durotar." },
+            },
             id = "accept-5649-in-favor-of-spirituality",
-            kind = "accept",
-            priority = 550,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 8 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept In Favor of Spirituality from Ken'jai in Durotar. This step is for Trolls.",
-            complete = QuestState(5649, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6880, "Ken'jai",
-                    "Travel to Ken'jai in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5649-in-favor-of-spirituality",
         },
         {
-            id = "turnin-5649-in-favor-of-spirituality",
-            kind = "turnin",
-            priority = 560,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 8 },
-                    { level = { min = 5 } },
-                },
+            priority = 530,
+            route = {
+                { y = 0.428, mapID = 1411, label = "Tai'jin", x = 0.542, offMapText = "Travel to Tai'jin in Durotar." },
             },
-            text = "Turn in In Favor of Spirituality to Tai'jin in Durotar. This step is for Trolls.",
             dependsOn = { "accept-5649-in-favor-of-spirituality" },
-            complete = QuestState(5649, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4280, "Tai'jin",
-                    "Travel to Tai'jin in Durotar."),
-            },
-        },
-        {
-            id = "accept-5648-garments-of-spirituality",
-            kind = "accept",
-            priority = 570,
+            id = "turnin-5649-in-favor-of-spirituality",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 8 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Garments of Spirituality from Tai'jin in Durotar. This step is for Trolls.",
+            useClientPin = false,
+            classAction = "turnin-5649-in-favor-of-spirituality",
+        },
+        {
+            priority = 540,
+            route = {
+                { y = 0.428, mapID = 1411, label = "Tai'jin", x = 0.542, offMapText = "Travel to Tai'jin in Durotar." },
+            },
             dependsOn = { "turnin-5649-in-favor-of-spirituality" },
-            complete = QuestState(5648, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4280, "Tai'jin",
-                    "Travel to Tai'jin in Durotar."),
-            },
-        },
-        {
-            id = "turnin-5648-garments-of-spirituality",
-            kind = "turnin",
-            priority = 580,
+            id = "accept-5648-garments-of-spirituality",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 8 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Turn in Garments of Spirituality to Tai'jin in Durotar. This step is for Trolls.",
+            useClientPin = false,
+            classAction = "accept-5648-garments-of-spirituality",
+        },
+        {
+            priority = 550,
+            id = "objective-5648-quest-work",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-5648-garments-of-spirituality" },
-            complete = QuestState(5648, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4280, "Tai'jin",
-                    "Travel to Tai'jin in Durotar."),
-            },
+            classAction = "objective-5648-quest-work",
         },
         {
+            priority = 560,
+            route = {
+                { y = 0.428, mapID = 1411, label = "Tai'jin", x = 0.542, offMapText = "Travel to Tai'jin in Durotar." },
+            },
+            dependsOn = { "accept-5648-garments-of-spirituality", "objective-5648-quest-work" },
+            id = "turnin-5648-garments-of-spirituality",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5648-garments-of-spirituality",
+        },
+        {
+            id = "level-before-accept-5651-in-favor-of-darkness",
+            kind = "note",
+            text = "Reach level 5 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 5 },
+            },
+            requiredLevel = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5651,
+            priority = 570,
+        },
+        {
+            priority = 580,
+            route = {
+                { y = 0.66, mapID = 1420, label = "Dark Cleric Duesten", x = 0.31, offMapText = "Travel to Dark Cleric Duesten in Tirisfal Glades." },
+            },
             id = "accept-5651-in-favor-of-darkness",
-            kind = "accept",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5651-in-favor-of-darkness",
+        },
+        {
             priority = 590,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 5 },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Accept In Favor of Darkness from Dark Cleric Duesten in Tirisfal Glades. This step is for Undead.",
-            complete = QuestState(5651, "activeOrCompleted"),
             route = {
-                Point(MAP.TIRISFALGLADES, 0.3100, 0.6600, "Dark Cleric Duesten",
-                    "Travel to Dark Cleric Duesten in Tirisfal Glades."),
+                { y = 0.522, mapID = 1420, label = "Dark Cleric Beryl", x = 0.616, offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades." },
             },
-        },
-        {
-            id = "turnin-5651-in-favor-of-darkness",
-            kind = "turnin",
-            priority = 600,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 5 },
-                    { level = { min = 5 } },
-                },
-            },
-            text = "Turn in In Favor of Darkness to Dark Cleric Beryl in Tirisfal Glades. This step is for Undead.",
             dependsOn = { "accept-5651-in-favor-of-darkness" },
-            complete = QuestState(5651, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6160, 0.5220, "Dark Cleric Beryl",
-                    "Travel to Dark Cleric Beryl in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "accept-5650-garments-of-darkness",
-            kind = "accept",
-            priority = 610,
+            id = "turnin-5651-in-favor-of-darkness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 5 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Accept Garments of Darkness from Dark Cleric Beryl in Tirisfal Glades. This step is for Undead.",
+            useClientPin = false,
+            classAction = "turnin-5651-in-favor-of-darkness",
+        },
+        {
+            priority = 600,
+            route = {
+                { y = 0.522, mapID = 1420, label = "Dark Cleric Beryl", x = 0.616, offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades." },
+            },
             dependsOn = { "turnin-5651-in-favor-of-darkness" },
-            complete = QuestState(5650, "activeOrCompleted"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6160, 0.5220, "Dark Cleric Beryl",
-                    "Travel to Dark Cleric Beryl in Tirisfal Glades."),
-            },
-        },
-        {
-            id = "turnin-5650-garments-of-darkness",
-            kind = "turnin",
-            priority = 620,
+            id = "accept-5650-garments-of-darkness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
                     { race = 5 },
-                    { level = { min = 5 } },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Turn in Garments of Darkness to Dark Cleric Beryl in Tirisfal Glades. This step is for Undead.",
+            useClientPin = false,
+            classAction = "accept-5650-garments-of-darkness",
+        },
+        {
+            priority = 610,
+            id = "objective-5650-quest-work",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = true,
             dependsOn = { "accept-5650-garments-of-darkness" },
-            complete = QuestState(5650, "completed"),
-            route = {
-                Point(MAP.TIRISFALGLADES, 0.6160, 0.5220, "Dark Cleric Beryl",
-                    "Travel to Dark Cleric Beryl in Tirisfal Glades."),
-            },
+            classAction = "objective-5650-quest-work",
         },
         {
-            id = "accept-5627-stars-of-elune",
-            kind = "accept",
+            priority = 620,
+            route = {
+                { y = 0.522, mapID = 1420, label = "Dark Cleric Beryl", x = 0.616, offMapText = "Travel to Dark Cleric Beryl in Tirisfal Glades." },
+            },
+            dependsOn = { "accept-5650-garments-of-darkness", "objective-5650-quest-work" },
+            id = "turnin-5650-garments-of-darkness",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 5 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5650-garments-of-darkness",
+        },
+        {
+            id = "level-before-accept-5637-desperate-prayer",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5637,
+            alternativeQuests = { 5634, 5635, 5636, 5638, 5639, 5640 },
             priority = 630,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Stars of Elune from Priestess Alathea in Darnassus. This step is for Night Elves.",
-            complete = QuestState(5627, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
         },
         {
-            id = "turnin-5627-stars-of-elune",
-            kind = "turnin",
             priority = 640,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
+            },
+            id = "accept-5637-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Turn in Stars of Elune to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5627-stars-of-elune" },
-            complete = QuestState(5627, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5637-desperate-prayer",
         },
         {
-            id = "accept-5628-returning-home",
-            kind = "accept",
             priority = 650,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5637-desperate-prayer" },
+            id = "turnin-5637-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Accept Returning Home from Priestess Josetta in Elwynn Forest. This step is for Night Elves.",
-            complete = QuestState(5628, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4320, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5637-desperate-prayer",
         },
         {
-            id = "turnin-5628-returning-home",
-            kind = "turnin",
+            id = "level-before-accept-5629-returning-home",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5629,
+            alternativeQuests = { 5627, 5628, 5630, 5631, 5632, 5633 },
             priority = 660,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Returning Home to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5628-returning-home" },
-            complete = QuestState(5628, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
         },
         {
-            id = "accept-5630-returning-home",
-            kind = "accept",
             priority = 670,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", x = 0.556, offMapText = "Travel to Laurna Morninglight in Teldrassil." },
+            },
+            id = "accept-5629-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Returning Home from Maxan Anvol in Dun Morogh. This step is for Night Elves.",
-            complete = QuestState(5630, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4720, 0.5220, "Maxan Anvol",
-                    "Travel to Maxan Anvol in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5629-returning-home",
         },
         {
-            id = "turnin-5630-returning-home",
-            kind = "turnin",
             priority = 680,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5629-returning-home" },
+            id = "turnin-5629-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Returning Home to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5630-returning-home" },
-            complete = QuestState(5630, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5629-returning-home",
         },
         {
-            id = "accept-5631-returning-home",
-            kind = "accept",
+            id = "level-before-accept-94774-divine-grace",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94774,
             priority = 690,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Returning Home from Brother Joshua in Stormwind City. This step is for Night Elves.",
-            complete = QuestState(5631, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2680, "Brother Joshua",
-                    "Travel to Brother Joshua in Stormwind City."),
-            },
         },
         {
-            id = "turnin-5631-returning-home",
-            kind = "turnin",
             priority = 700,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.434, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
+            },
+            id = "accept-94774-divine-grace",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Turn in Returning Home to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5631-returning-home" },
-            complete = QuestState(5631, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94774-divine-grace",
         },
         {
-            id = "accept-5632-returning-home",
-            kind = "accept",
             priority = 710,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-94774-divine-grace" },
+            id = "turnin-94774-divine-grace",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept Returning Home from Nara Meideros in Stormwind City. This step is for Night Elves.",
-            complete = QuestState(5632, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2080, 0.5020, "Nara Meideros",
-                    "Travel to Nara Meideros in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94774-divine-grace",
         },
         {
-            id = "turnin-5632-returning-home",
-            kind = "turnin",
             priority = 720,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "turnin-94774-divine-grace" },
+            id = "accept-94773-divine-grace",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Turn in Returning Home to Nara Meideros in Stormwind City. This step is for Night Elves.",
-            dependsOn = { "accept-5632-returning-home" },
-            complete = QuestState(5632, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2080, 0.5020, "Nara Meideros",
-                    "Travel to Nara Meideros in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "accept-94773-divine-grace",
         },
         {
-            id = "accept-5633-returning-home",
-            kind = "accept",
             priority = 730,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-94773-divine-grace" },
+            id = "turnin-94773-divine-grace",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Accept Returning Home from Braenna Flintcrag in Ironforge. This step is for Night Elves.",
-            complete = QuestState(5633, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2460, 0.0920, "Braenna Flintcrag",
-                    "Travel to Braenna Flintcrag in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94773-divine-grace",
         },
         {
-            id = "turnin-5633-returning-home",
-            kind = "turnin",
+            id = "level-before-accept-94824-confounding-flash",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94824,
             priority = 740,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Returning Home to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5633-returning-home" },
-            complete = QuestState(5633, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
         },
         {
-            id = "accept-5635-desperate-prayer",
-            kind = "accept",
             priority = 750,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
+            },
+            id = "accept-94824-confounding-flash",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from Priestess Josetta in Elwynn Forest. This step is for Humans and Dwarves.",
-            complete = QuestState(5635, "activeOrCompleted"),
-            route = {
-                Point(MAP.ELWYNNFOREST, 0.4320, 0.6560, "Priestess Josetta",
-                    "Travel to Priestess Josetta in Elwynn Forest."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94824-confounding-flash",
         },
         {
-            id = "turnin-5635-desperate-prayer",
-            kind = "turnin",
             priority = 760,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", x = 0.248, offMapText = "Travel to High Priestess Mims in Ironforge." },
+            },
+            dependsOn = { "accept-94824-confounding-flash" },
+            id = "turnin-94824-confounding-flash",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
-            dependsOn = { "accept-5635-desperate-prayer" },
-            complete = QuestState(5635, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94824-confounding-flash",
         },
         {
-            id = "accept-5636-desperate-prayer",
-            kind = "accept",
             priority = 770,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", x = 0.248, offMapText = "Travel to High Priestess Mims in Ironforge." },
+            },
+            dependsOn = { "turnin-94824-confounding-flash" },
+            id = "accept-94817-confounding-flash",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from Laurna Morninglight in Teldrassil. This step is for Dwarves.",
-            complete = QuestState(5636, "activeOrCompleted"),
-            route = {
-                Point(MAP.TELDRASSIL, 0.5560, 0.5680, "Laurna Morninglight",
-                    "Travel to Laurna Morninglight in Teldrassil."),
-            },
+            useClientPin = false,
+            classAction = "accept-94817-confounding-flash",
         },
         {
-            id = "turnin-5636-desperate-prayer",
-            kind = "turnin",
             priority = 780,
+            route = {
+                { y = 0.1, mapID = 1455, label = "High Priestess Mims", x = 0.248, offMapText = "Travel to High Priestess Mims in Ironforge." },
+            },
+            dependsOn = { "accept-94817-confounding-flash" },
+            id = "turnin-94817-confounding-flash",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 3 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 7 },
+                    {
+                        race = { 7 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Dwarves.",
-            dependsOn = { "accept-5636-desperate-prayer" },
-            complete = QuestState(5636, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94817-confounding-flash",
         },
         {
-            id = "accept-5638-desperate-prayer",
-            kind = "accept",
             priority = 790,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.432, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
+            },
+            id = "accept-5628-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from Nara Meideros in Stormwind City. This step is for Humans and Dwarves.",
-            complete = QuestState(5638, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.2080, 0.5020, "Nara Meideros",
-                    "Travel to Nara Meideros in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5628-returning-home",
         },
         {
-            id = "turnin-5638-desperate-prayer",
-            kind = "turnin",
             priority = 800,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5628-returning-home" },
+            id = "turnin-5628-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
-            dependsOn = { "accept-5638-desperate-prayer" },
-            complete = QuestState(5638, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5628-returning-home",
         },
         {
-            id = "accept-5639-desperate-prayer",
-            kind = "accept",
             priority = 810,
+            route = {
+                { y = 0.522, mapID = 1426, label = "Maxan Anvol", x = 0.472, offMapText = "Travel to Maxan Anvol in Dun Morogh." },
+            },
+            id = "accept-5630-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from High Priest Rohan in Ironforge. This step is for Humans and Dwarves.",
-            complete = QuestState(5639, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5630-returning-home",
         },
         {
-            id = "turnin-5639-desperate-prayer",
-            kind = "turnin",
             priority = 820,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5630-returning-home" },
+            id = "turnin-5630-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
-            dependsOn = { "accept-5639-desperate-prayer" },
-            complete = QuestState(5639, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5630-returning-home",
         },
         {
-            id = "accept-5640-desperate-prayer",
-            kind = "accept",
             priority = 830,
+            route = {
+                { y = 0.268, mapID = 1453, label = "Brother Joshua", x = 0.388, offMapText = "Travel to Brother Joshua in Stormwind City." },
+            },
+            id = "accept-5631-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Desperate Prayer from Priestess Alathea in Darnassus. This step is for Humans and Dwarves.",
-            complete = QuestState(5640, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5631-returning-home",
         },
         {
-            id = "turnin-5640-desperate-prayer",
-            kind = "turnin",
             priority = 840,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5631-returning-home" },
+            id = "turnin-5631-returning-home",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = { 1, 3 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Desperate Prayer to High Priestess Laurena in Stormwind City. This step is for Humans and Dwarves.",
-            dependsOn = { "accept-5640-desperate-prayer" },
-            complete = QuestState(5640, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5631-returning-home",
         },
         {
-            id = "accept-5654-hex-of-weakness",
-            kind = "accept",
             priority = 850,
+            route = {
+                { y = 0.502, mapID = 1453, label = "Nara Meideros", x = 0.208, offMapText = "Travel to Nara Meideros in Stormwind City." },
+            },
+            id = "accept-5632-returning-home",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Hex of Weakness from Tai'jin in Durotar. This step is for Trolls.",
-            complete = QuestState(5654, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4280, "Tai'jin",
-                    "Travel to Tai'jin in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5632-returning-home",
         },
         {
-            id = "turnin-5654-hex-of-weakness",
-            kind = "turnin",
             priority = 860,
+            route = {
+                { y = 0.502, mapID = 1453, label = "Nara Meideros", x = 0.208, offMapText = "Travel to Nara Meideros in Stormwind City." },
+            },
+            dependsOn = { "accept-5632-returning-home" },
+            id = "turnin-5632-returning-home",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Hex of Weakness to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5654-hex-of-weakness" },
-            complete = QuestState(5654, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5632-returning-home",
         },
         {
-            id = "accept-5655-hex-of-weakness",
-            kind = "accept",
             priority = 870,
+            route = {
+                { y = 0.092, mapID = 1455, label = "Braenna Flintcrag", x = 0.246, offMapText = "Travel to Braenna Flintcrag in Ironforge." },
+            },
+            id = "accept-5633-returning-home",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Hex of Weakness from Var'jun in Mulgore. This step is for Trolls.",
-            complete = QuestState(5655, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4700, 0.5880, "Var'jun",
-                    "Travel to Var'jun in Mulgore."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5633-returning-home",
         },
         {
-            id = "turnin-5655-hex-of-weakness",
-            kind = "turnin",
             priority = 880,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5633-returning-home" },
+            id = "turnin-5633-returning-home",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Hex of Weakness to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5655-hex-of-weakness" },
-            complete = QuestState(5655, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5633-returning-home",
         },
         {
-            id = "accept-5657-hex-of-weakness",
-            kind = "accept",
             priority = 890,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            id = "accept-5627-stars-of-elune",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Accept Hex of Weakness from Aelthalyste in Undercity. This step is for Trolls.",
-            complete = QuestState(5657, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5627-stars-of-elune",
         },
         {
-            id = "turnin-5657-hex-of-weakness",
-            kind = "turnin",
             priority = 900,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5627-stars-of-elune" },
+            id = "turnin-5627-stars-of-elune",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
                 },
             },
-            text = "Turn in Hex of Weakness to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5657-hex-of-weakness" },
-            complete = QuestState(5657, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5627-stars-of-elune",
         },
         {
-            id = "accept-5660-touch-of-weakness",
-            kind = "accept",
             priority = 910,
+            route = {
+                { y = 0.656, mapID = 1429, label = "Priestess Josetta", x = 0.432, offMapText = "Travel to Priestess Josetta in Elwynn Forest." },
+            },
+            id = "accept-5635-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Accept Touch of Weakness from Tai'jin in Durotar. This step is for Undead.",
-            complete = QuestState(5660, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5420, 0.4280, "Tai'jin",
-                    "Travel to Tai'jin in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5635-desperate-prayer",
         },
         {
-            id = "turnin-5660-touch-of-weakness",
-            kind = "turnin",
             priority = 920,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5635-desperate-prayer" },
+            id = "turnin-5635-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Turn in Touch of Weakness to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5660-touch-of-weakness" },
-            complete = QuestState(5660, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5635-desperate-prayer",
         },
         {
-            id = "accept-5661-touch-of-weakness",
-            kind = "accept",
+            id = "level-before-accept-5636-desperate-prayer",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5636,
+            alternativeQuests = { 5634, 5635, 5637, 5638, 5639, 5640 },
             priority = 930,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Touch of Weakness from Var'jun in Mulgore. This step is for Undead.",
-            complete = QuestState(5661, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4700, 0.5880, "Var'jun",
-                    "Travel to Var'jun in Mulgore."),
-            },
         },
         {
-            id = "turnin-5661-touch-of-weakness",
-            kind = "turnin",
             priority = 940,
+            route = {
+                { y = 0.568, mapID = 1438, label = "Laurna Morninglight", x = 0.556, offMapText = "Travel to Laurna Morninglight in Teldrassil." },
+            },
+            id = "accept-5636-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Turn in Touch of Weakness to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5661-touch-of-weakness" },
-            complete = QuestState(5661, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5636-desperate-prayer",
         },
         {
-            id = "accept-5662-touch-of-weakness",
-            kind = "accept",
             priority = 950,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5636-desperate-prayer" },
+            id = "turnin-5636-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Touch of Weakness from Ur'kyo in Orgrimmar. This step is for Undead.",
-            complete = QuestState(5662, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5636-desperate-prayer",
         },
         {
-            id = "turnin-5662-touch-of-weakness",
-            kind = "turnin",
             priority = 960,
+            route = {
+                { y = 0.502, mapID = 1453, label = "Nara Meideros", x = 0.208, offMapText = "Travel to Nara Meideros in Stormwind City." },
+            },
+            id = "accept-5638-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Turn in Touch of Weakness to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5662-touch-of-weakness" },
-            complete = QuestState(5662, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5638-desperate-prayer",
         },
         {
-            id = "accept-5663-touch-of-weakness",
-            kind = "accept",
             priority = 970,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5638-desperate-prayer" },
+            id = "turnin-5638-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Accept Touch of Weakness from Miles Welsh in Thunder Bluff. This step is for Undead.",
-            complete = QuestState(5663, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2540, 0.1540, "Miles Welsh",
-                    "Travel to Miles Welsh in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5638-desperate-prayer",
         },
         {
-            id = "turnin-5663-touch-of-weakness",
-            kind = "turnin",
             priority = 980,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            id = "accept-5639-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 10 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Turn in Touch of Weakness to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5663-touch-of-weakness" },
-            complete = QuestState(5663, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5639-desperate-prayer",
         },
         {
-            id = "accept-5642-shadowguard",
-            kind = "accept",
             priority = 990,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5639-desperate-prayer" },
+            id = "turnin-5639-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Accept Shadowguard from Miles Welsh in Thunder Bluff. This step is for Trolls.",
-            complete = QuestState(5642, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2540, 0.1540, "Miles Welsh",
-                    "Travel to Miles Welsh in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5639-desperate-prayer",
         },
         {
-            id = "turnin-5642-shadowguard",
-            kind = "turnin",
             priority = 1000,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            id = "accept-5640-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Turn in Shadowguard to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5642-shadowguard" },
-            complete = QuestState(5642, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5640-desperate-prayer",
         },
         {
-            id = "accept-5645-a-lack-of-fear",
-            kind = "accept",
             priority = 1010,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5640-desperate-prayer" },
+            id = "turnin-5640-desperate-prayer",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
                 },
             },
-            text = "Accept A Lack of Fear from High Priestess Laurena in Stormwind City. This step is for Dwarves.",
-            complete = QuestState(5645, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5640-desperate-prayer",
         },
         {
-            id = "turnin-5645-a-lack-of-fear",
-            kind = "turnin",
+            id = "level-before-accept-5654-hex-of-weakness",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5654,
+            alternativeQuests = { 5652, 5655, 5656, 5657 },
             priority = 1020,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in A Lack of Fear to High Priest Rohan in Ironforge. This step is for Dwarves.",
-            dependsOn = { "accept-5645-a-lack-of-fear" },
-            complete = QuestState(5645, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
         },
         {
-            id = "accept-5646-devouring-plague",
-            kind = "accept",
             priority = 1030,
+            route = {
+                { y = 0.428, mapID = 1411, label = "Tai'jin", x = 0.542, offMapText = "Travel to Tai'jin in Durotar." },
+            },
+            id = "accept-5654-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Devouring Plague from Ur'kyo in Orgrimmar. This step is for Undead.",
-            complete = QuestState(5646, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5654-hex-of-weakness",
         },
         {
-            id = "turnin-5646-devouring-plague",
-            kind = "turnin",
             priority = 1040,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5654-hex-of-weakness" },
+            id = "turnin-5654-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 5 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Turn in Devouring Plague to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5646-devouring-plague" },
-            complete = QuestState(5646, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5654-hex-of-weakness",
         },
         {
-            id = "accept-5647-a-lack-of-fear",
-            kind = "accept",
             priority = 1050,
+            route = {
+                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+            },
+            id = "accept-5655-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept A Lack of Fear from Priestess Alathea in Darnassus. This step is for Dwarves.",
-            complete = QuestState(5647, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5655-hex-of-weakness",
         },
         {
-            id = "turnin-5647-a-lack-of-fear",
-            kind = "turnin",
             priority = 1060,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5655-hex-of-weakness" },
+            id = "turnin-5655-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 3 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Turn in A Lack of Fear to High Priest Rohan in Ironforge. This step is for Dwarves.",
-            dependsOn = { "accept-5647-a-lack-of-fear" },
-            complete = QuestState(5647, "completed"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5655-hex-of-weakness",
         },
         {
-            id = "accept-5673-elunes-grace",
-            kind = "accept",
             priority = 1070,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            id = "accept-5657-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Elune's Grace from High Priestess Laurena in Stormwind City. This step is for Night Elves.",
-            complete = QuestState(5673, "activeOrCompleted"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5657-hex-of-weakness",
         },
         {
-            id = "turnin-5673-elunes-grace",
-            kind = "turnin",
             priority = 1080,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5657-hex-of-weakness" },
+            id = "turnin-5657-hex-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Turn in Elune's Grace to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5673-elunes-grace" },
-            complete = QuestState(5673, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5657-hex-of-weakness",
         },
         {
-            id = "accept-5675-elunes-grace",
-            kind = "accept",
+            id = "level-before-accept-5660-touch-of-weakness",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5660,
+            alternativeQuests = { 5658, 5661, 5662, 5663 },
             priority = 1090,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Elune's Grace from High Priest Rohan in Ironforge. This step is for Night Elves.",
-            complete = QuestState(5675, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
         },
         {
-            id = "turnin-5675-elunes-grace",
-            kind = "turnin",
             priority = 1100,
+            route = {
+                { y = 0.428, mapID = 1411, label = "Tai'jin", x = 0.542, offMapText = "Travel to Tai'jin in Durotar." },
+            },
+            id = "accept-5660-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 4 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Turn in Elune's Grace to Priestess Alathea in Darnassus. This step is for Night Elves.",
-            dependsOn = { "accept-5675-elunes-grace" },
-            complete = QuestState(5675, "completed"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5660-touch-of-weakness",
         },
         {
-            id = "accept-5677-arcane-feedback",
-            kind = "accept",
             priority = 1110,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5660-touch-of-weakness" },
+            id = "turnin-5660-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Accept Arcane Feedback from High Priest Rohan in Ironforge. This step is for Humans.",
-            complete = QuestState(5677, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.2500, 0.0840, "High Priest Rohan",
-                    "Travel to High Priest Rohan in Ironforge."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5660-touch-of-weakness",
         },
         {
-            id = "turnin-5677-arcane-feedback",
-            kind = "turnin",
             priority = 1120,
+            route = {
+                { y = 0.588, mapID = 1412, label = "Var'jun", x = 0.47, offMapText = "Travel to Var'jun in Mulgore." },
+            },
+            id = "accept-5661-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Turn in Arcane Feedback to High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-5677-arcane-feedback" },
-            complete = QuestState(5677, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5661-touch-of-weakness",
         },
         {
-            id = "accept-5678-arcane-feedback",
-            kind = "accept",
             priority = 1130,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5661-touch-of-weakness" },
+            id = "turnin-5661-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Accept Arcane Feedback from Priestess Alathea in Darnassus. This step is for Humans.",
-            complete = QuestState(5678, "activeOrCompleted"),
-            route = {
-                Point(MAP.DARNASSUS, 0.3920, 0.8100, "Priestess Alathea",
-                    "Travel to Priestess Alathea in Darnassus."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5661-touch-of-weakness",
         },
         {
-            id = "turnin-5678-arcane-feedback",
-            kind = "turnin",
             priority = 1140,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            id = "accept-5662-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 5 },
-                    { race = 1 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Turn in Arcane Feedback to High Priestess Laurena in Stormwind City. This step is for Humans.",
-            dependsOn = { "accept-5678-arcane-feedback" },
-            complete = QuestState(5678, "completed"),
-            route = {
-                Point(MAP.STORMWINDCITY, 0.3880, 0.2640, "High Priestess Laurena",
-                    "Travel to High Priestess Laurena in Stormwind City."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5662-touch-of-weakness",
         },
         {
-            id = "accept-5679-devouring-plague",
-            kind = "accept",
             priority = 1150,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5662-touch-of-weakness" },
+            id = "turnin-5662-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 5 },
-                    { level = { min = 20 } },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Accept Devouring Plague from Aelthalyste in Undercity. This step is for Undead.",
-            complete = QuestState(5679, "activeOrCompleted"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5662-touch-of-weakness",
         },
         {
-            id = "turnin-5679-devouring-plague",
-            kind = "turnin",
             priority = 1160,
+            route = {
+                { y = 0.154, mapID = 1456, label = "Miles Welsh", x = 0.254, offMapText = "Travel to Miles Welsh in Thunder Bluff." },
+            },
+            id = "accept-5663-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
                     { race = 5 },
-                    { level = { min = 20 } },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Turn in Devouring Plague to Aelthalyste in Undercity. This step is for Undead.",
-            dependsOn = { "accept-5679-devouring-plague" },
-            complete = QuestState(5679, "completed"),
-            route = {
-                Point(MAP.UNDERCITY, 0.4920, 0.1820, "Aelthalyste",
-                    "Travel to Aelthalyste in Undercity."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5663-touch-of-weakness",
         },
         {
-            id = "accept-5680-shadowguard",
-            kind = "accept",
             priority = 1170,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5663-touch-of-weakness" },
+            id = "turnin-5663-touch-of-weakness",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
                 },
             },
-            text = "Accept Shadowguard from Ur'kyo in Orgrimmar. This step is for Trolls.",
-            complete = QuestState(5680, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5663-touch-of-weakness",
         },
         {
-            id = "turnin-5680-shadowguard",
-            kind = "turnin",
+            id = "level-before-accept-5641-a-lack-of-fear",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5641,
+            alternativeQuests = { 5645, 5647 },
             priority = 1180,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 5 },
-                    { race = 8 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Shadowguard to Ur'kyo in Orgrimmar. This step is for Trolls.",
-            dependsOn = { "accept-5680-shadowguard" },
-            complete = QuestState(5680, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3560, 0.8760, "Ur'kyo",
-                    "Travel to Ur'kyo in Orgrimmar."),
-            },
         },
         {
-            id = "accept-7621-a-warning",
-            kind = "accept",
             priority = 1190,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            id = "accept-5641-a-lack-of-fear",
             conditions = {
                 all = {
                     { class = 5 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept A Warning from Eris Havenfire in Eastern Plaguelands.",
-            complete = QuestState(7621, "activeOrCompleted"),
-            route = {
-                Point(MAP.EASTERNPLAGUELANDS, 0.2080, 0.1840, "Eris Havenfire",
-                    "Travel to Eris Havenfire in Eastern Plaguelands."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5641-a-lack-of-fear",
         },
         {
-            id = "turnin-7621-a-warning",
-            kind = "turnin",
             priority = 1200,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            dependsOn = { "accept-5641-a-lack-of-fear" },
+            id = "turnin-5641-a-lack-of-fear",
             conditions = {
                 all = {
                     { class = 5 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Turn in A Warning to Eris Havenfire in Eastern Plaguelands.",
-            dependsOn = { "accept-7621-a-warning" },
-            complete = QuestState(7621, "completed"),
-            route = {
-                Point(MAP.EASTERNPLAGUELANDS, 0.2080, 0.1840, "Eris Havenfire",
-                    "Travel to Eris Havenfire in Eastern Plaguelands."),
-            },
+            useClientPin = false,
+            classAction = "turnin-5641-a-lack-of-fear",
         },
         {
-            id = "accept-7622-the-balance-of-light-and-shadow",
-            kind = "accept",
+            id = "level-before-accept-5676-arcane-feedback",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5676,
+            alternativeQuests = { 5677, 5678 },
             priority = 1210,
-            conditions = {
-                all = {
-                    { class = 5 },
-                    { level = { min = 60 } },
-                },
-            },
-            text = "Accept The Balance of Light and Shadow from Eris Havenfire in Eastern Plaguelands.",
-            complete = QuestState(7622, "activeOrCompleted"),
-            route = {
-                Point(MAP.EASTERNPLAGUELANDS, 0.2080, 0.1840, "Eris Havenfire",
-                    "Travel to Eris Havenfire in Eastern Plaguelands."),
-            },
         },
         {
-            id = "turnin-7622-the-balance-of-light-and-shadow",
-            kind = "turnin",
             priority = 1220,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            id = "accept-5676-arcane-feedback",
             conditions = {
                 all = {
                     { class = 5 },
-                    { level = { min = 60 } },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
                 },
             },
-            text = "Turn in The Balance of Light and Shadow to Eris Havenfire in Eastern Plaguelands.",
-            dependsOn = { "accept-7622-the-balance-of-light-and-shadow" },
-            complete = QuestState(7622, "completed"),
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5676-arcane-feedback",
+        },
+        {
+            priority = 1230,
             route = {
-                Point(MAP.EASTERNPLAGUELANDS, 0.2080, 0.1840, "Eris Havenfire",
-                    "Travel to Eris Havenfire in Eastern Plaguelands."),
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
             },
-        }
+            dependsOn = { "accept-5676-arcane-feedback" },
+            id = "turnin-5676-arcane-feedback",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5676-arcane-feedback",
+        },
+        {
+            id = "level-before-accept-5672-elunes-grace",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5672,
+            alternativeQuests = { 5673, 5674, 5675 },
+            priority = 1240,
+        },
+        {
+            priority = 1250,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            id = "accept-5672-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5672-elunes-grace",
+        },
+        {
+            priority = 1260,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5672-elunes-grace" },
+            id = "turnin-5672-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5672-elunes-grace",
+        },
+        {
+            id = "level-before-accept-5643-shadowguard",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5643,
+            alternativeQuests = { 5642, 5680 },
+            priority = 1270,
+        },
+        {
+            priority = 1280,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            id = "accept-5643-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5643-shadowguard",
+        },
+        {
+            priority = 1290,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5643-shadowguard" },
+            id = "turnin-5643-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5643-shadowguard",
+        },
+        {
+            id = "level-before-accept-5644-devouring-plague",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5644,
+            alternativeQuests = { 5646, 5679 },
+            priority = 1300,
+        },
+        {
+            priority = 1310,
+            route = {
+                { y = 0.154, mapID = 1456, label = "Miles Welsh", x = 0.254, offMapText = "Travel to Miles Welsh in Thunder Bluff." },
+            },
+            id = "accept-5644-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5644-devouring-plague",
+        },
+        {
+            priority = 1320,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5644-devouring-plague" },
+            id = "turnin-5644-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5644-devouring-plague",
+        },
+        {
+            priority = 1330,
+            route = {
+                { y = 0.154, mapID = 1456, label = "Miles Welsh", x = 0.254, offMapText = "Travel to Miles Welsh in Thunder Bluff." },
+            },
+            id = "accept-5642-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5642-shadowguard",
+        },
+        {
+            priority = 1340,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5642-shadowguard" },
+            id = "turnin-5642-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5642-shadowguard",
+        },
+        {
+            priority = 1350,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            id = "accept-5645-a-lack-of-fear",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5645-a-lack-of-fear",
+        },
+        {
+            priority = 1360,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            dependsOn = { "accept-5645-a-lack-of-fear" },
+            id = "turnin-5645-a-lack-of-fear",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5645-a-lack-of-fear",
+        },
+        {
+            priority = 1370,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            id = "accept-5646-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5646-devouring-plague",
+        },
+        {
+            priority = 1380,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5646-devouring-plague" },
+            id = "turnin-5646-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5646-devouring-plague",
+        },
+        {
+            priority = 1390,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            id = "accept-5647-a-lack-of-fear",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5647-a-lack-of-fear",
+        },
+        {
+            priority = 1400,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            dependsOn = { "accept-5647-a-lack-of-fear" },
+            id = "turnin-5647-a-lack-of-fear",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5647-a-lack-of-fear",
+        },
+        {
+            priority = 1410,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            id = "accept-5673-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5673-elunes-grace",
+        },
+        {
+            priority = 1420,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5673-elunes-grace" },
+            id = "turnin-5673-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5673-elunes-grace",
+        },
+        {
+            priority = 1430,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            id = "accept-5675-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5675-elunes-grace",
+        },
+        {
+            priority = 1440,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            dependsOn = { "accept-5675-elunes-grace" },
+            id = "turnin-5675-elunes-grace",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 4 },
+                    {
+                        race = { 4 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5675-elunes-grace",
+        },
+        {
+            priority = 1450,
+            route = {
+                { y = 0.084, mapID = 1455, label = "High Priest Rohan", x = 0.25, offMapText = "Travel to High Priest Rohan in Ironforge." },
+            },
+            id = "accept-5677-arcane-feedback",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5677-arcane-feedback",
+        },
+        {
+            priority = 1460,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5677-arcane-feedback" },
+            id = "turnin-5677-arcane-feedback",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5677-arcane-feedback",
+        },
+        {
+            priority = 1470,
+            route = {
+                { y = 0.81, mapID = 1457, label = "Priestess Alathea", x = 0.392, offMapText = "Travel to Priestess Alathea in Darnassus." },
+            },
+            id = "accept-5678-arcane-feedback",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5678-arcane-feedback",
+        },
+        {
+            priority = 1480,
+            route = {
+                { y = 0.264, mapID = 1453, label = "High Priestess Laurena", x = 0.388, offMapText = "Travel to High Priestess Laurena in Stormwind City." },
+            },
+            dependsOn = { "accept-5678-arcane-feedback" },
+            id = "turnin-5678-arcane-feedback",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5678-arcane-feedback",
+        },
+        {
+            priority = 1490,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            id = "accept-5679-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5679-devouring-plague",
+        },
+        {
+            priority = 1500,
+            route = {
+                { y = 0.182, mapID = 1458, label = "Aelthalyste", x = 0.492, offMapText = "Travel to Aelthalyste in Undercity." },
+            },
+            dependsOn = { "accept-5679-devouring-plague" },
+            id = "turnin-5679-devouring-plague",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 5 },
+                    {
+                        race = { 5 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5679-devouring-plague",
+        },
+        {
+            priority = 1510,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            id = "accept-5680-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-5680-shadowguard",
+        },
+        {
+            priority = 1520,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            dependsOn = { "accept-5680-shadowguard" },
+            id = "turnin-5680-shadowguard",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-5680-shadowguard",
+        },
+        {
+            id = "level-before-accept-8254-cenarion-aid",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8254,
+            priority = 1530,
+        },
+        {
+            priority = 1540,
+            route = {
+                { y = 0.268, mapID = 1453, label = "Brother Joshua", x = 0.388, offMapText = "Travel to Brother Joshua in Stormwind City." },
+            },
+            id = "accept-8254-cenarion-aid",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8254-cenarion-aid",
+        },
+        {
+            id = "level-before-accept-8254-cenarion-aid-horde",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8254,
+            priority = 1550,
+        },
+        {
+            priority = 1560,
+            route = {
+                { y = 0.876, mapID = 1454, label = "Ur'kyo", x = 0.356, offMapText = "Travel to Ur'kyo in Orgrimmar." },
+            },
+            id = "accept-8254-cenarion-aid-horde",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8254-cenarion-aid-horde",
+        },
+        {
+            id = "level-before-turnin-8254-cenarion-aid",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8254,
+            priority = 1570,
+        },
+        {
+            priority = 1580,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8254-cenarion-aid", "accept-8254-cenarion-aid-horde" },
+            id = "turnin-8254-cenarion-aid",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8254-cenarion-aid",
+        },
+        {
+            priority = 1590,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "turnin-8254-cenarion-aid" },
+            id = "accept-8255-of-coursers-we-know",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8255-of-coursers-we-know",
+        },
+        {
+            priority = 1600,
+            route = {
+                { y = 0.692, mapID = 1447, label = "Mosshoof Courser", x = 0.378, offMapText = "Travel to Mosshoof Courser in Azshara." },
+            },
+            dependsOn = { "accept-8255-of-coursers-we-know" },
+            id = "objective-8255-of-coursers-we-know",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8255-of-coursers-we-know",
+        },
+        {
+            priority = 1610,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8255-of-coursers-we-know", "objective-8255-of-coursers-we-know" },
+            id = "turnin-8255-of-coursers-we-know",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8255-of-coursers-we-know",
+        },
+        {
+            priority = 1620,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "turnin-8255-of-coursers-we-know", "turnin-8254-cenarion-aid" },
+            id = "accept-8256-the-ichor-of-undeath",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8256-the-ichor-of-undeath",
+        },
+        {
+            priority = 1630,
+            route = {
+                { y = 0.734, mapID = 1447, label = "Highborne Apparition", x = 0.134, offMapText = "Travel to Highborne Apparition in Azshara." },
+                { y = 0.732, mapID = 1447, label = "Highborne Lichling", x = 0.134, offMapText = "Travel to Highborne Lichling in Azshara." },
+                { y = 0.692, mapID = 1447, label = "Varo'then's Ghost", x = 0.176, offMapText = "Travel to Varo'then's Ghost in Azshara." },
+                { y = 0.502, mapID = 1447, label = "Lingering Highborne", x = 0.394, offMapText = "Travel to Lingering Highborne in Azshara." },
+            },
+            dependsOn = { "accept-8256-the-ichor-of-undeath" },
+            id = "objective-8256-the-ichor-of-undeath",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-8256-the-ichor-of-undeath",
+        },
+        {
+            priority = 1640,
+            route = {
+                { y = 0.426, mapID = 1447, label = "Ogtinc", x = 0.424, offMapText = "Travel to Ogtinc in Azshara." },
+            },
+            dependsOn = { "accept-8256-the-ichor-of-undeath", "objective-8256-the-ichor-of-undeath" },
+            id = "turnin-8256-the-ichor-of-undeath",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8256-the-ichor-of-undeath",
+        },
+        {
+            id = "level-before-accept-7621-a-warning",
+            kind = "note",
+            text = "Reach level 60 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 60 },
+            },
+            requiredLevel = 60,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7621,
+            priority = 1650,
+        },
+        {
+            priority = 1660,
+            route = {
+                { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
+            },
+            id = "accept-7621-a-warning",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7621-a-warning",
+        },
+        {
+            priority = 1670,
+            route = {
+                { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
+            },
+            dependsOn = { "accept-7621-a-warning" },
+            id = "turnin-7621-a-warning",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7621-a-warning",
+        },
+        {
+            priority = 1680,
+            route = {
+                { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
+            },
+            id = "accept-7622-the-balance-of-light-and-shadow",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7622-the-balance-of-light-and-shadow",
+        },
+        {
+            priority = 1690,
+            dependsOn = { "accept-7622-the-balance-of-light-and-shadow" },
+            id = "objective-7622-reviewed-mechanics",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7622-reviewed-mechanics",
+        },
+        {
+            priority = 1700,
+            route = {
+                { y = 0.184, mapID = 1423, label = "Eris Havenfire", x = 0.208, offMapText = "Travel to Eris Havenfire in Eastern Plaguelands." },
+            },
+            dependsOn = { "accept-7622-the-balance-of-light-and-shadow", "objective-7622-reviewed-mechanics" },
+            id = "turnin-7622-the-balance-of-light-and-shadow",
+            conditions = {
+                all = {
+                    { class = 5 },
+                    {
+                        class = { 5 },
+                    },
+                    {
+                        level = { min = 60 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7622-the-balance-of-light-and-shadow",
+        },
     },
+    routeMode = "ordered",
 })
