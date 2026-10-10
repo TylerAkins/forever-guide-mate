@@ -1,305 +1,820 @@
 local _, ns = ...
 
--- Forever Casual spine: Dustwallow Marsh (42-42)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    DUSTWALLOW_MARSH = 1445,
-    ORGRIMMAR = 1454,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-dustwallow-marsh-part-2",
+    revision = 3,
     title = "Dustwallow Marsh",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-dustwallow-marsh-part-2",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 42 } },
+            {
+                level = { min = 42 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-1166-overlord-mok-morokk-s-concern",
+            kind = "note",
+            text = "Reach level 38 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 38 },
+            },
+            requiredLevel = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1166,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
+            },
+            text = "Accept Overlord Mok'Morokk's Concern from Overlord Mok'Morokk.",
             id = "accept-1166-overlord-mok-morokk-s-concern",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Overlord Mok'Morokk's Concern.",
-            complete = QuestState(1166, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3630, 0.3142, "Overlord Mok'Morokk's Concern",
-                    "Travel to Overlord Mok'Morokk's Concern."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1166, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            route = {
+                { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
+            },
+            text = "Accept Identifying the Brood from Draz'Zilb.",
             id = "accept-1169-identifying-the-brood",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Identifying the Brood.",
-            complete = QuestState(1169, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3715, 0.3308, "Identifying the Brood",
-                    "Travel to Identifying the Brood."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1169, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 40,
+            route = {
+                { y = 0.3139, mapID = 1445, label = "Tharg", offMapText = "Travel to Tharg in Dustwallow Marsh.", x = 0.3737 },
+            },
+            text = "Accept Army of the Black Dragon from Tharg.",
             id = "accept-1168-army-of-the-black-dragon",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Army of the Black Dragon.",
-            complete = QuestState(1168, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3737, 0.3139, "Army of the Black Dragon",
-                    "Travel to Army of the Black Dragon."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1168, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Deadmire's Tooth.",
             id = "objective-1205-1-deadmire",
             kind = "objective",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Deadmire.",
-            complete = QuestObjective(1205, 1, "Deadmire"),
             useClientPin = true,
-            route = nil,
+            complete = {
+                questObjective = { id = 1205, text = "Deadmire", index = 1, count = 1 },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-objective-1187-1-seaforium-booster",
+            kind = "note",
+            text = "Reach level 29 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 29 },
+            },
+            requiredLevel = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1187,
+            priority = 60,
+        },
+        {
+            id = "objective-1187-1-seaforium-booster",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
+            },
+            text = "Open the Gizmorium Shipping Crate on the Dustwallow coast and collect the Seaforium Booster.",
+            complete = {
+                questObjective = { id = 1187, index = 1, count = 1 },
+            },
+            route = {
+                { mapID = 1445, x = 0.5407, y = 0.5649000000000001, label = "Razzeric's Tweaking", offMapText = "Travel to Razzeric's Tweaking." },
+            },
+            sourceStep = 5,
+            priority = 70,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1186 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 80,
+            route = {
+                { y = 0.604, mapID = 1445, label = "Muckshell Razorclaw", offMapText = "Travel to Muckshell Razorclaw.", x = 0.564 },
+            },
+            text = "Collect 1 Jeweled Pendant.",
             id = "objective-1261-1-muckshell-razorclaw",
             kind = "objective",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Muckshell Razorclaw.",
-            complete = QuestObjective(1261, 1, "Muckshell Razorclaw"),
-            route = {
-                Point(1445, 0.5640, 0.6040, "Muckshell Razorclaw",
-                    "Travel to Muckshell Razorclaw."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1261, text = "Muckshell Razorclaw", index = 1, count = 1 },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1240 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-1166-2-mok-morokk-s-grog",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Mok'Morokk's Grog.",
+            complete = {
+                questObjective = { id = 1166, index = 2, text = "Mok'Morokk's Grog", count = 1 },
+            },
+            route = {
+                { mapID = 1445, x = 0.38670000000000004, y = 0.6557999999999999, label = "Mok'Morokk's Grog", offMapText = "Travel to Mok'Morokk's Grog." },
+            },
+            sourceStep = 8,
+            priority = 90,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1166-overlord-mok-morokk-s-concern" },
+        },
+        {
+            id = "objective-1166-3-mok-morokk-s-strongbox",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Mok'Morokk's Strongbox.",
+            complete = {
+                questObjective = { id = 1166, index = 3, text = "Mok'Morokk's Strongbox", count = 1 },
+            },
+            route = {
+                { mapID = 1445, x = 0.3664, y = 0.6957, label = "Mok'Morokk's Strongbox", offMapText = "Travel to Mok'Morokk's Strongbox." },
+            },
+            sourceStep = 9,
+            priority = 100,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1166-overlord-mok-morokk-s-concern" },
+        },
+        {
+            id = "objective-1168-3-firemane-scalebane",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Firemane Scalebane.",
+            complete = {
+                questObjective = { id = 1168, index = 3, text = "Firemane Scalebane", count = 5 },
+            },
+            route = {
+                { mapID = 1445, x = 0.3846, y = 0.6596, label = "Firemane Scalebane", offMapText = "Travel to Firemane Scalebane." },
+            },
+            sourceStep = 10,
+            priority = 110,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1168-army-of-the-black-dragon" },
+        },
+        {
+            id = "objective-1168-2-firemane-ash-tail",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 10 Firemane Ash Tail.",
+            complete = {
+                questObjective = { id = 1168, index = 2, text = "Firemane Ash Tail", count = 10 },
+            },
+            route = {
+                { mapID = 1445, x = 0.42, y = 0.672, label = "Firemane Ash Tail", offMapText = "Travel to Firemane Ash Tail." },
+            },
+            sourceStep = 11,
+            priority = 120,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1168-army-of-the-black-dragon" },
+        },
+        {
+            id = "objective-1168-1-firemane-scout",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 15 Firemane Scout.",
+            complete = {
+                questObjective = { id = 1168, index = 1, text = "Firemane Scout", count = 15 },
+            },
+            route = {
+                { mapID = 1445, x = 0.42, y = 0.672, label = "Firemane Scout", offMapText = "Travel to Firemane Scout." },
+            },
+            sourceStep = 11,
+            priority = 130,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1168-army-of-the-black-dragon" },
+        },
+        {
+            id = "objective-1169-1-searing-tongue",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 15 Searing Tongue.",
+            complete = {
+                questObjective = { id = 1169, index = 1, text = "Searing Tongue", count = 15 },
+            },
+            route = {
+                { mapID = 1445, x = 0.41, y = 0.746, label = "Searing Tongue", offMapText = "Travel to Searing Tongue." },
+            },
+            sourceStep = 12,
+            priority = 140,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1169-identifying-the-brood" },
+        },
+        {
+            id = "objective-1169-2-searing-heart",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 15 Searing Heart.",
+            complete = {
+                questObjective = { id = 1169, index = 2, text = "Searing Heart", count = 15 },
+            },
+            route = {
+                { mapID = 1445, x = 0.41, y = 0.746, label = "Searing Heart", offMapText = "Travel to Searing Heart." },
+            },
+            sourceStep = 12,
+            priority = 150,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1169-identifying-the-brood" },
+        },
+        {
+            priority = 160,
+            text = "Turn in Identifying the Brood to Draz'Zilb.",
+            route = {
+                { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
+            },
+            dependsOn = { "accept-1169-identifying-the-brood", "objective-1169-1-searing-tongue", "objective-1169-2-searing-heart" },
             id = "turnin-1169-identifying-the-brood",
             kind = "turnin",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Identifying the Brood.",
-            complete = QuestState(1169, "completed"),
-            dependsOn = { "accept-1169-identifying-the-brood" },
-            route = {
-                Point(1445, 0.3715, 0.3308, "Identifying the Brood",
-                    "Travel to Identifying the Brood."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1169, state = "completed" },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
+            },
+            text = "Accept The Brood of Onyxia from Draz'Zilb.",
             id = "accept-1170-the-brood-of-onyxia",
             kind = "accept",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Brood of Onyxia.",
-            complete = QuestState(1170, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3715, 0.3308, "The Brood of Onyxia",
-                    "Travel to The Brood of Onyxia."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1170, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1169 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 180,
+            text = "Turn in Army of the Black Dragon to Tharg.",
+            route = {
+                { y = 0.3139, mapID = 1445, label = "Tharg", offMapText = "Travel to Tharg in Dustwallow Marsh.", x = 0.3737 },
+            },
+            dependsOn = {
+                "accept-1168-army-of-the-black-dragon",
+                "objective-1168-3-firemane-scalebane",
+                "objective-1168-2-firemane-ash-tail",
+                "objective-1168-1-firemane-scout",
+            },
             id = "turnin-1168-army-of-the-black-dragon",
             kind = "turnin",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Army of the Black Dragon.",
-            complete = QuestState(1168, "completed"),
-            dependsOn = { "accept-1168-army-of-the-black-dragon" },
-            route = {
-                Point(1445, 0.3737, 0.3139, "Army of the Black Dragon",
-                    "Travel to Army of the Black Dragon."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1168, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 190,
+            text = "Turn in Overlord Mok'Morokk's Concern to Overlord Mok'Morokk.",
+            route = {
+                { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
+            },
+            dependsOn = {
+                "accept-1166-overlord-mok-morokk-s-concern",
+                "objective-1166-2-mok-morokk-s-grog",
+                "objective-1166-3-mok-morokk-s-strongbox",
+            },
             id = "turnin-1166-overlord-mok-morokk-s-concern",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Overlord Mok'Morokk's Concern.",
-            complete = QuestState(1166, "completed"),
-            dependsOn = { "accept-1166-overlord-mok-morokk-s-concern" },
-            route = {
-                Point(1445, 0.3630, 0.3142, "Overlord Mok'Morokk's Concern",
-                    "Travel to Overlord Mok'Morokk's Concern."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1166, state = "completed" },
+            },
+            sourceStep = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 200,
+            text = "Turn in The Brood of Onyxia to Overlord Mok'Morokk.",
+            route = {
+                { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
+            },
+            dependsOn = { "accept-1170-the-brood-of-onyxia" },
             id = "turnin-1170-the-brood-of-onyxia",
             kind = "turnin",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Brood of Onyxia.",
-            complete = QuestState(1170, "completed"),
-            dependsOn = { "accept-1170-the-brood-of-onyxia" },
-            route = {
-                Point(1445, 0.3630, 0.3142, "The Brood of Onyxia",
-                    "Travel to The Brood of Onyxia."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1170, state = "completed" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1169 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.3142, mapID = 1445, label = "Overlord Mok'Morokk", offMapText = "Travel to Overlord Mok'Morokk in Dustwallow Marsh.", x = 0.363 },
+            },
+            text = "Accept The Brood of Onyxia from Overlord Mok'Morokk.",
             id = "accept-1171-the-brood-of-onyxia",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Brood of Onyxia.",
-            complete = QuestState(1171, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3630, 0.3142, "The Brood of Onyxia",
-                    "Travel to The Brood of Onyxia."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1171, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1170 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Turn in The Brood of Onyxia to Draz'Zilb.",
+            route = {
+                { y = 0.3308, mapID = 1445, label = "Draz'Zilb", offMapText = "Travel to Draz'Zilb in Dustwallow Marsh.", x = 0.3715 },
+            },
+            dependsOn = { "accept-1171-the-brood-of-onyxia" },
             id = "turnin-1171-the-brood-of-onyxia",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Brood of Onyxia.",
-            complete = QuestState(1171, "completed"),
-            dependsOn = { "accept-1171-the-brood-of-onyxia" },
-            route = {
-                Point(1445, 0.3715, 0.3308, "The Brood of Onyxia",
-                    "Travel to The Brood of Onyxia."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1171, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1170 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 230,
+            text = "Turn in Marg Speaks to Nazeer Bloodpike.",
+            route = {
+                { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
+            },
+            dependsOn = { "objective-1261-1-muckshell-razorclaw" },
             id = "turnin-1261-marg-speaks",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Marg Speaks.",
-            complete = QuestState(1261, "completed"),
-            dependsOn = { "objective-1261-1-muckshell-razorclaw" },
-            route = {
-                Point(1445, 0.3521, 0.3066, "Marg Speaks",
-                    "Travel to Marg Speaks."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1261, state = "completed" },
+            },
+            sourceStep = 18,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1240 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 240,
+            route = {
+                { y = 0.3066, mapID = 1445, label = "Nazeer Bloodpike", offMapText = "Travel to Nazeer Bloodpike in Dustwallow Marsh.", x = 0.3521 },
+            },
+            text = "Accept Report to Zor from Nazeer Bloodpike.",
             id = "accept-1262-report-to-zor",
             kind = "accept",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Report to Zor.",
-            complete = QuestState(1262, "activeOrCompleted"),
-            route = {
-                Point(1445, 0.3521, 0.3066, "Report to Zor",
-                    "Travel to Report to Zor."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1262, state = "activeOrCompleted" },
+            },
+            sourceStep = 18,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1261 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 250,
+            text = "Turn in Report to Zor to Zor Lonetree.",
+            route = {
+                { y = 0.3838, mapID = 1454, label = "Zor Lonetree", offMapText = "Travel to Zor Lonetree in Orgrimmar.", x = 0.3893 },
+            },
+            dependsOn = { "accept-1262-report-to-zor" },
             id = "turnin-1262-report-to-zor",
             kind = "turnin",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Report to Zor.",
-            complete = QuestState(1262, "completed"),
-            dependsOn = { "accept-1262-report-to-zor" },
-            route = {
-                Point(1454, 0.3893, 0.3838, "Report to Zor",
-                    "Travel to Report to Zor."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1262, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1261 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 260,
+            route = {
+                { y = 0.3838, mapID = 1454, label = "Zor Lonetree", offMapText = "Travel to Zor Lonetree in Orgrimmar.", x = 0.3893 },
+            },
+            text = "Accept Service to the Horde from Zor Lonetree.",
             id = "accept-7541-service-to-the-horde",
             kind = "accept",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 42 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Service to the Horde.",
-            complete = QuestState(7541, "activeOrCompleted"),
-            route = {
-                Point(1454, 0.3893, 0.3838, "Service to the Horde",
-                    "Travel to Service to the Horde."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 7541, state = "activeOrCompleted" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1262 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 270,
+            route = {
+                { y = 0.3422, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7522 },
+            },
+            text = "Accept A Threat in Feralas from Belgrom Rockmaul.",
             id = "accept-2981-a-threat-in-feralas",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 43 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept A Threat in Feralas.",
-            complete = QuestState(2981, "activeOrCompleted"),
-            route = {
-                Point(1454, 0.7522, 0.3422, "A Threat in Feralas",
-                    "Travel to A Threat in Feralas."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2981, state = "activeOrCompleted" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

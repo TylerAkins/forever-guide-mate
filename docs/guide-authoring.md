@@ -10,9 +10,25 @@ Guides in `Guides/Miscellaneous/` cover optional world collection routes that ar
 
 One guide per class lives in `Guides/Class/`. The library label is Class. Each guide is the classic class route with Forever class quests woven in. Put class, race, and faction on every step. Use the database race list. A quest offered to both factions stays open to both. When the database leaves the race blank, keep a race lock only when a single-faction classic guide names that race.
 
-Horde paladin quests are Undead only. Orc, Troll, Tauren, and Horde Skyborne have no paladin quests in the database.
+Use the pinned quest's applicability, including its prerequisites. Some Horde paladin quests apply to all Horde races; the Undead starter remains an Undead branch.
 
 Dungeon and PvP class quests stay in the dungeon guides. Raid attunements and raid quest routes use `category = "Raid Quests"`. A quest with no giver, objectives, and turn-in is named in the class guide header. Revisit it when the database records those. Do not invent a giver or a coordinate. Starter chapters still weave class quests whose givers are already on that route. The full chain stays in the class guide.
+
+## Ordered leveling and class itineraries
+
+All leveling and class guides use `routeMode = "ordered"`. Their `goals` array is the action order. Prerequisites do not choose the next action. Existing guides in other categories retain their scheduler. The new class dungeon prerequisite itinerary also uses ordered execution.
+
+Author pickups, objective outings, intermediate pickups, returns, and turn-ins separately. Keep directions in `text`; the tracker adds live counts separately. Use `questObjective.count` for a verified partial count checkpoint. Before a quest pickup, use `complete.item = { name = "Item", minCount = quantity }` for verified material collection. An item starter instruction may use `instructionOnly = true` with observed bag or quest state so skipping it passes only that instruction. Use an observed level checkpoint before gated work, with the required level in its text. Set `checkpointQuest` to the guarded quest ID and copy verified `alternativeQuests` so completed or excluded quest work does not leave an unrelated level gate. This metadata does not turn the checkpoint into a quest action. Manual confirmation belongs only on unobservable instructions without quest completion conditions.
+
+For preparation that consumes an intermediate item during an active quest, set `rememberPreparation` to that quest ID. Completion is retained only after observing the item state while the quest is active; abandoning the quest resets it. This records instruction progress and grants no quest credit. Set `instructionOnly = true` so a direct skip passes only that preparation.
+
+`requiredQuests` contains verified prerequisite groups with `mode`, `quests`, and optional `conditions`. Ordered routes have no soft prerequisite exceptions. Unknown state, unavailable pickups, missing active quests, and unmet requirements block the current action. Explicit quest skips cascade through these groups within the selected guide; they never grant observed quest completion.
+
+Define shared class actions in `ClassChains.lua` and reference them with `classAction`. Each itinerary keeps its own action ID, conditions, destination, and position. Keep dungeon prerequisites in the Dungeon library with an observed completion handoff from the class route. The Class Dungeon Prerequisites itinerary follows those actions in order; existing dungeon guides retain their scheduling behavior.
+
+Record chapter visits and insertion points in `route-manifest.json`. `route-conversion-audit.json` records the pinned facts, removed imports, and exclusions. Legacy import and append tools refuse to overwrite ordered guides. Update an itinerary through explicit reviewed action positions.
+
+Run `tests/lua/ordered.lua`, `tests/lua/catalog.lua`, and `tests/lua/journeys.lua` with Lua 5.1 in addition to the existing engine, UI, lint, and accept-chain checks. Reference fixtures come from the supplied archive, not the production itinerary. Structural simulations do not establish in-game availability or destination accuracy; record client walkthrough coverage separately.
 
 ## Quest chains
 
@@ -163,6 +179,10 @@ If a giver does not offer an accept, do not add a skip workaround. Register and 
 ```sh
 python3 -m unittest discover -s tests
 lua5.1 tests/lua/run.lua
+lua5.1 tests/lua/ordered.lua
+lua5.1 tests/lua/catalog.lua
+FGM_FULL_MATRIX=1 lua5.1 tests/lua/journeys.lua
+lua5.1 tests/lua/ui.lua
 lua5.1 tests/lua/lint.lua
 lua5.1 tests/lua/audit_accept_chains.lua
 python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
@@ -177,3 +197,5 @@ Changing a turn-in’s `dependsOn` or splitting objectives can leave **stale com
 The addon saves **active step per guide** (`activeGoalByGuide`). Reload and switching away and back should return to the same step, not the first open quest in the chapter.
 
 Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database) (`data/forever/compiled/`). A positive Questie `questLevel` is the step level. `0` and `-1` leave the Wowhead level.
+
+Ordered routes keep authored instructions and pins. Registration enables `useQuestNavigation` for ordinary quest objectives and turn-ins independently of `useClientPin`. Blizzard navigation is selected for a matching single unfinished objective or a completed quest turn-in, with the authored destination as fallback. Travel and checkpoint instructions retain their explicit destination. Set `useQuestNavigation = false` for an interaction requiring a specific authored destination.

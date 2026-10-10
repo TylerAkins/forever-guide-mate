@@ -1,511 +1,1010 @@
 local _, ns = ...
 
--- Forever Casual spine: Winterspring (58-59)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    TANARIS = 1446,
-    FELWOOD = 1448,
-    UN_GORO_CRATER = 1449,
-    MOONGLADE = 1450,
-    WINTERSPRING = 1452,
-    DARNASSUS = 1457,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-winterspring",
+    revision = 3,
     title = "Winterspring",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-winterspring",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 58 } },
+            {
+                level = { min = 58 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-turnin-4808-felnok-steelspring",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 4808,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
+            },
+            text = "Turn in Felnok Steelspring to Felnok Steelspring.",
             id = "turnin-4808-felnok-steelspring",
             kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Felnok Steelspring.",
-            complete = QuestState(4808, "completed"),
-            route = {
-                Point(1452, 0.6163, 0.3861, "Felnok Steelspring",
-                    "Travel to Felnok Steelspring."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4808, state = "completed" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4726 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            route = {
+                { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
+            },
+            text = "Accept Chillwind Horns from Felnok Steelspring.",
             id = "accept-4809-chillwind-horns",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Chillwind Horns.",
-            complete = QuestState(4809, "activeOrCompleted"),
-            route = {
-                Point(1452, 0.6163, 0.3861, "Chillwind Horns",
-                    "Travel to Chillwind Horns."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4809, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4808 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-3783-are-we-there-yeti",
+            kind = "note",
+            text = "Reach level 52 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 52 },
+            },
+            requiredLevel = 52,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3783,
+            priority = 40,
+        },
+        {
+            priority = 50,
+            route = {
+                { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
+            },
+            text = "Accept Are We There, Yeti? from Umi Rumplesnicker.",
             id = "accept-3783-are-we-there-yeti",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Are We There, Yeti?.",
-            complete = QuestState(3783, "activeOrCompleted"),
-            route = {
-                Point(1452, 0.6088, 0.3762, "Are We There, Yeti?",
-                    "Travel to Are We There, Yeti?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3783, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            text = "Collect 10 Thick Yeti Fur.",
+            route = {
+                { y = 0.4175, mapID = 1452, label = "Ice Thistle Yeti", offMapText = "Travel to Ice Thistle Yeti.", x = 0.6765 },
+            },
+            dependsOn = { "accept-3783-are-we-there-yeti" },
             id = "objective-3783-1-ice-thistle-yeti",
             kind = "objective",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Ice Thistle Yeti.",
-            complete = QuestObjective(3783, 1, "Ice Thistle Yeti"),
-            dependsOn = { "accept-3783-are-we-there-yeti" },
-            route = {
-                Point(1452, 0.6765, 0.4175, "Ice Thistle Yeti",
-                    "Travel to Ice Thistle Yeti."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 3783, text = "Ice Thistle Yeti", index = 1, count = 10 },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 70,
+            text = "Turn in Are We There, Yeti? to Umi Rumplesnicker.",
+            route = {
+                { mapID = 1452, x = 0.6088, y = 0.3762, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring." },
+            },
+            dependsOn = { "accept-3783-are-we-there-yeti", "objective-3783-1-ice-thistle-yeti" },
             id = "turnin-3783-are-we-there-yeti",
             kind = "turnin",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Are We There, Yeti?.",
-            complete = QuestState(3783, "completed"),
-            dependsOn = { "accept-3783-are-we-there-yeti", "objective-3783-1-ice-thistle-yeti" },
-            route = {
-                Point(1452, 0.6765, 0.4175, "Are We There, Yeti?",
-                    "Travel to Are We There, Yeti?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3783, state = "completed" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 80,
+            route = {
+                { mapID = 1452, x = 0.6088, y = 0.3762, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring." },
+            },
+            text = "Accept Are We There, Yeti? from Umi Rumplesnicker.",
             id = "accept-977-are-we-there-yeti",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Are We There, Yeti?.",
-            complete = QuestState(977, "activeOrCompleted"),
-            route = {
-                Point(1452, 0.6765, 0.4175, "Are We There, Yeti?",
-                    "Travel to Are We There, Yeti?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 977, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3783 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            text = "Collect 2 Pristine Yeti Horn.",
+            route = {
+                { y = 0.4175, mapID = 1452, label = "Ice Thistle Matriarch", offMapText = "Travel to Ice Thistle Matriarch.", x = 0.6765 },
+            },
+            dependsOn = { "accept-977-are-we-there-yeti" },
             id = "objective-977-1-ice-thistle-matriarch",
             kind = "objective",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Ice Thistle Matriarch.",
-            complete = QuestObjective(977, 1, "Ice Thistle Matriarch"),
-            dependsOn = { "accept-977-are-we-there-yeti" },
-            route = {
-                Point(1452, 0.6765, 0.4175, "Ice Thistle Matriarch",
-                    "Travel to Ice Thistle Matriarch."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 977, text = "Ice Thistle Matriarch", index = 1, count = 2 },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3783 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 100,
+            route = {
+                { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Shaman", offMapText = "Travel to Winterfall Shaman." },
+            },
+            text = "Kill 8 Winterfall Shaman.",
             id = "objective-8464-1-winterfall-shaman",
             kind = "objective",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 8 Winterfall Shaman.",
-            complete = QuestObjective(8464, 1, "Winterfall Shaman"),
-            route = {
-                Point(1452, 0.6765, 0.4175, "Winterfall Shaman",
-                    "Travel to Winterfall Shaman."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 8464, text = "Winterfall Shaman", index = 1, count = 8 },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            route = {
+                { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Den Watcher", offMapText = "Travel to Winterfall Den Watcher." },
+            },
+            text = "Kill 8 Winterfall Den Watcher.",
             id = "objective-8464-2-winterfall-den-watcher",
             kind = "objective",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 8 Winterfall Den Watcher.",
-            complete = QuestObjective(8464, 2, "Winterfall Den Watcher"),
-            route = {
-                Point(1452, 0.6765, 0.4175, "Winterfall Den Watcher",
-                    "Travel to Winterfall Den Watcher."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 8464, text = "Winterfall Den Watcher", index = 2, count = 8 },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 120,
+            route = {
+                { mapID = 1452, x = 0.6779999999999999, y = 0.37799999999999995, label = "Winterfall Ursa", offMapText = "Travel to Winterfall Ursa." },
+            },
+            text = "Kill 8 Winterfall Ursa.",
             id = "objective-8464-3-winterfall-ursa",
             kind = "objective",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 8 Winterfall Ursa.",
-            complete = QuestObjective(8464, 3, "Winterfall Ursa"),
-            route = {
-                Point(1452, 0.6765, 0.4175, "Winterfall Ursa",
-                    "Travel to Winterfall Ursa."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 8464, text = "Winterfall Ursa", index = 3, count = 8 },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-4809-1-uncracked-chillwind-horn",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
+            },
+            text = "Collect 8 Uncracked Chillwind Horn.",
+            complete = {
+                questObjective = { id = 4809, index = 1, text = "Uncracked Chillwind Horn", count = 8 },
+            },
+            route = {
+                { mapID = 1452, x = 0.64, y = 0.302, label = "Uncracked Chillwind Horn", offMapText = "Travel to Uncracked Chillwind Horn." },
+            },
+            sourceStep = 14,
+            priority = 130,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4808 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-4809-chillwind-horns" },
+        },
+        {
+            priority = 140,
+            text = "Turn in Are We There, Yeti? to Umi Rumplesnicker.",
+            route = {
+                { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
+            },
+            dependsOn = { "accept-977-are-we-there-yeti", "objective-977-1-ice-thistle-matriarch" },
             id = "turnin-977-are-we-there-yeti",
             kind = "turnin",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Are We There, Yeti?.",
-            complete = QuestState(977, "completed"),
-            dependsOn = { "accept-977-are-we-there-yeti", "objective-977-1-ice-thistle-matriarch" },
-            route = {
-                Point(1452, 0.6088, 0.3762, "Are We There, Yeti?",
-                    "Travel to Are We There, Yeti?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 977, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3783 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 150,
+            route = {
+                { y = 0.3762, mapID = 1452, label = "Umi Rumplesnicker", offMapText = "Travel to Umi Rumplesnicker in Winterspring.", x = 0.6088 },
+            },
+            text = "Accept Are We There, Yeti? from Umi Rumplesnicker.",
             id = "accept-5163-are-we-there-yeti",
             kind = "accept",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Are We There, Yeti?.",
-            complete = QuestState(5163, "activeOrCompleted"),
-            route = {
-                Point(1452, 0.6088, 0.3762, "Are We There, Yeti?",
-                    "Travel to Are We There, Yeti?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5163, state = "activeOrCompleted" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 977 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            text = "Use Umi's Mechanical Yeti on Legacki to scare her.",
+            route = {
+                { mapID = 1452, x = 0.6154, y = 0.3862, label = "Legacki", offMapText = "Travel to Legacki." },
+            },
+            dependsOn = { "accept-5163-are-we-there-yeti" },
             id = "objective-5163-1-umi-s-mechanical-yeti",
             kind = "objective",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Umi's Mechanical Yeti.",
-            complete = QuestObjective(5163, 1, "Umi's Mechanical Yeti"),
-            dependsOn = { "accept-5163-are-we-there-yeti" },
-            route = {
-                Point(1452, 0.6154, 0.3862, "Umi's Mechanical Yeti",
-                    "Travel to Umi's Mechanical Yeti."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5163, index = 1, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 977 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            text = "Turn in Chillwind Horns to Felnok Steelspring.",
+            route = {
+                { y = 0.3861, mapID = 1452, label = "Felnok Steelspring", offMapText = "Travel to Felnok Steelspring in Winterspring.", x = 0.6163 },
+            },
+            dependsOn = { "accept-4809-chillwind-horns", "objective-4809-1-uncracked-chillwind-horn" },
             id = "turnin-4809-chillwind-horns",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Chillwind Horns.",
-            complete = QuestState(4809, "completed"),
-            dependsOn = { "accept-4809-chillwind-horns" },
-            route = {
-                Point(1452, 0.6163, 0.3861, "Chillwind Horns",
-                    "Travel to Chillwind Horns."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 50 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4809, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4808 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 180,
+            route = {
+                { y = 0.3697, mapID = 1452, label = "Silvery Claws", offMapText = "Travel to Silvery Claws.", x = 0.6146 },
+            },
+            text = "Collect 11 Silvery Claws.",
             id = "objective-4084-1-silvery-claws",
             kind = "objective",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Collect 11 Silvery Claws.",
-            complete = QuestObjective(4084, 1, "Silvery Claws"),
-            route = {
-                Point(1452, 0.6146, 0.3697, "Silvery Claws",
-                    "Travel to Silvery Claws."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4084, text = "Silvery Claws", index = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3942 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 190,
+            text = "Turn in Winterfall Activity to Salfa.",
+            route = {
+                { y = 0.345, mapID = 1452, label = "Salfa", offMapText = "Travel to Salfa in Winterspring.", x = 0.2774 },
+            },
+            dependsOn = {
+                "objective-8464-1-winterfall-shaman",
+                "objective-8464-2-winterfall-den-watcher",
+                "objective-8464-3-winterfall-ursa",
+            },
             id = "turnin-8464-winterfall-activity",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Winterfall Activity.",
-            complete = QuestState(8464, "completed"),
-            dependsOn = { "objective-8464-1-winterfall-shaman", "objective-8464-2-winterfall-den-watcher", "objective-8464-3-winterfall-ursa" },
-            route = {
-                Point(1452, 0.2774, 0.3450, "Winterfall Activity",
-                    "Travel to Winterfall Activity."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 45 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 8464, state = "completed" },
+            },
+            sourceStep = 19,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "turnin-7066-seed-of-life",
-            kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Seed of Life.",
-            complete = QuestState(7066, "completed"),
-            route = {
-                Point(1450, 0.3618, 0.4179, "Seed of Life",
-                    "Travel to Seed of Life."),
+            id = "level-before-turnin-6762-rabine-saturna",
+            kind = "note",
+            text = "Reach level 54 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                level = { min = 54 },
+            },
+            requiredLevel = 54,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 6762,
+            priority = 200,
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
+            },
+            text = "Turn in Rabine Saturna to Rabine Saturna.",
             id = "turnin-6762-rabine-saturna",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Rabine Saturna.",
-            complete = QuestState(6762, "completed"),
-            route = {
-                Point(1450, 0.5168, 0.4509, "Rabine Saturna",
-                    "Travel to Rabine Saturna."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 54 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6762, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 6761 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1124-wasteland",
+            kind = "note",
+            text = "Reach level 54 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 54 },
+            },
+            requiredLevel = 54,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1124,
+            priority = 220,
+        },
+        {
+            priority = 230,
+            route = {
+                { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
+            },
+            text = "Accept Wasteland from Rabine Saturna.",
             id = "accept-1124-wasteland",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Wasteland.",
-            complete = QuestState(1124, "activeOrCompleted"),
-            route = {
-                Point(1450, 0.5168, 0.4509, "Wasteland",
-                    "Travel to Wasteland."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 54 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1124, state = "activeOrCompleted" },
+            },
+            sourceStep = 22,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1123, 6762 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-5527-a-reliquary-of-purity",
+            kind = "note",
+            text = "Reach level 56 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 56 },
+            },
+            requiredLevel = 56,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5527,
+            priority = 240,
+        },
+        {
+            priority = 250,
+            route = {
+                { y = 0.4509, mapID = 1450, label = "Rabine Saturna", offMapText = "Travel to Rabine Saturna in Moonglade.", x = 0.5168 },
+            },
+            text = "Accept A Reliquary of Purity from Rabine Saturna.",
             id = "accept-5527-a-reliquary-of-purity",
             kind = "accept",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A Reliquary of Purity.",
-            complete = QuestState(5527, "activeOrCompleted"),
-            route = {
-                Point(1450, 0.5168, 0.4509, "A Reliquary of Purity",
-                    "Travel to A Reliquary of Purity."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 56 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5527, state = "activeOrCompleted" },
+            },
+            sourceStep = 24,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 260,
+            text = "Turn in Silver Heart to Eridan Bluewind.",
+            route = {
+                { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
+            },
+            dependsOn = { "objective-4084-1-silvery-claws" },
             id = "turnin-4084-silver-heart",
             kind = "turnin",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Silver Heart.",
-            complete = QuestState(4084, "completed"),
-            dependsOn = { "objective-4084-1-silvery-claws" },
-            route = {
-                Point(1448, 0.5135, 0.8151, "Silver Heart",
-                    "Travel to Silver Heart."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4084, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3942 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 270,
+            route = {
+                { y = 0.8151, mapID = 1448, label = "Eridan Bluewind", offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135 },
+            },
+            text = "Accept Aquementas from Eridan Bluewind.",
             id = "accept-4005-aquementas",
             kind = "accept",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Aquementas.",
-            complete = QuestState(4005, "activeOrCompleted"),
-            route = {
-                Point(1448, 0.5135, 0.8151, "Aquementas",
-                    "Travel to Aquementas."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4005, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4084 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 280,
+            route = {
+                { y = 0.0843, mapID = 1457, label = "Mathrengyl Bearwalker", offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.", x = 0.3538 },
+            },
+            text = "Turn in Glyphed Oaken Branch to Mathrengyl Bearwalker.",
             id = "turnin-4986-glyphed-oaken-branch",
             kind = "turnin",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Glyphed Oaken Branch.",
-            complete = QuestState(4986, "completed"),
-            route = {
-                Point(1457, 0.3538, 0.0843, "Glyphed Oaken Branch",
-                    "Travel to Glyphed Oaken Branch."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 51 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4986, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4985 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 290,
+            text = "Use Umi's Mechanical Yeti on Sprinkle to scare her.",
+            route = {
+                { mapID = 1446, x = 0.5106, y = 0.2687, label = "Sprinkle", offMapText = "Travel to Sprinkle." },
+            },
+            dependsOn = { "accept-5163-are-we-there-yeti" },
             id = "objective-5163-2-umi-s-mechanical-yeti",
             kind = "objective",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Umi's Mechanical Yeti.",
-            complete = QuestObjective(5163, 2, "Umi's Mechanical Yeti"),
-            dependsOn = { "accept-5163-are-we-there-yeti" },
-            route = {
-                Point(1446, 0.5106, 0.2687, "Umi's Mechanical Yeti",
-                    "Travel to Umi's Mechanical Yeti."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5163, index = 2, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 977 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "objective-4005-1-eridan-s-supplies",
-            kind = "objective",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Eridan's Supplies.",
-            complete = QuestObjective(4005, 1, "Eridan's Supplies"),
             dependsOn = { "accept-4005-aquementas" },
-            useClientPin = true,
-            route = nil,
+            id = "objective-4005-1-eridan-s-supplies",
+            text = "Open Eridan's Supplies to obtain the Irontree Heart, 11 Silvery Claws and Book of Aquor. Keep them in your bags.",
+            useClientPin = false,
+            complete = {
+                any = {
+                    {
+                        all = {
+                            {
+                                item = { name = "Irontree Heart", minCount = 1 },
+                            },
+                            {
+                                item = { name = "Silvery Claws", minCount = 11 },
+                            },
+                            {
+                                item = { name = "Book of Aquor", minCount = 1 },
+                            },
+                        },
+                    },
+                    {
+                        quest = { id = 4005, state = "complete" },
+                    },
+                },
+            },
+            kind = "note",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
+            },
+            priority = 300,
+            route = {
+                { mapID = 1446, x = 0.7042, y = 0.499, label = "Silver Totem of Aquementas", offMapText = "Travel to Silver Totem of Aquementas." },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4084 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            sourceInstructionStep = 30,
+            sourceInstructionIndex = 1,
+            checkpointQuest = 4005,
+            instructionOnly = true,
+            rememberPreparation = 4005,
         },
         {
+            priority = 310,
+            text = "Enter Lost Rigger Cove through the tunnel at Tanaris 68.62,41.46. Use the Book of Aquor at the stone circle with Eridan's materials in your bags. Let Aquementas finish speaking, defeat him and obtain the Silver Totem of Aquementas.",
+            route = {
+                { mapID = 1446, x = 0.7042, y = 0.499, label = "Aquementas stone circle", offMapText = "Travel to Aquementas stone circle." },
+            },
+            dependsOn = { "accept-4005-aquementas" },
             id = "objective-4005-1-book-of-aquor",
             kind = "objective",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Book of Aquor.",
-            complete = QuestObjective(4005, 1, "Book of Aquor"),
-            dependsOn = { "accept-4005-aquementas" },
-            route = {
-                Point(1446, 0.6862, 0.4146, "Book of Aquor",
-                    "Travel to Book of Aquor."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 4005, index = 1, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4084 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 320,
+            text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie at Marshal's Refuge", offMapText = "Travel to J.D. Collie at Marshal's Refuge." },
+            },
+            dependsOn = { "accept-4005-aquementas", "objective-4005-1-eridan-s-supplies", "objective-4005-1-book-of-aquor" },
             id = "turnin-4005-aquementas",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Aquementas.",
-            complete = QuestState(4005, "completed"),
-            dependsOn = { "accept-4005-aquementas", "objective-4005-1-eridan-s-supplies", "objective-4005-1-book-of-aquor" },
-            route = {
-                Point(1446, 0.6963, 0.4237, "Aquementas",
-                    "Travel to Aquementas."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 4005, state = "completed" },
+            },
+            sourceStep = 31,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4084 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 330,
+            route = {
+                { mapID = 1449, x = 0.4192, y = 0.027000000000000003, label = "J.D. Collie", offMapText = "Travel to J.D. Collie in Un'Goro Crater." },
+            },
+            text = "Accept Linken's Adventure from J.D. Collie.",
             id = "accept-3961-linken-s-adventure",
             kind = "accept",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Linken's Adventure.",
-            complete = QuestState(3961, "activeOrCompleted"),
-            route = {
-                Point(1446, 0.6963, 0.4237, "Linken's Adventure",
-                    "Travel to Linken's Adventure."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3961, state = "activeOrCompleted" },
+            },
+            sourceStep = 31,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4005 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 340,
+            text = "Turn in Linken's Adventure to Linken.",
+            route = {
+                { mapID = 1449, x = 0.44659999999999994, y = 0.081, label = "Linken", offMapText = "Travel to Linken in Un'Goro Crater." },
+            },
+            dependsOn = { "accept-3961-linken-s-adventure" },
             id = "turnin-3961-linken-s-adventure",
             kind = "turnin",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 58 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Linken's Adventure.",
-            complete = QuestState(3961, "completed"),
-            dependsOn = { "accept-3961-linken-s-adventure" },
-            route = {
-                Point(1449, 0.4347, 0.0679, "Linken's Adventure",
-                    "Travel to Linken's Adventure."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 47 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3961, state = "completed" },
+            },
+            sourceStep = 33,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 4005 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 350,
+            text = "Use Umi's Mechanical Yeti on Quixxil to scare him.",
+            route = {
+                { mapID = 1449, x = 0.43670000000000003, y = 0.09380000000000001, label = "Quixxil", offMapText = "Travel to Quixxil." },
+            },
+            dependsOn = { "accept-5163-are-we-there-yeti" },
             id = "objective-5163-3-umi-s-mechanical-yeti",
             kind = "objective",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 59 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use Umi's Mechanical Yeti.",
-            complete = QuestObjective(5163, 3, "Umi's Mechanical Yeti"),
-            dependsOn = { "accept-5163-are-we-there-yeti" },
-            route = {
-                Point(1449, 0.4367, 0.0938, "Umi's Mechanical Yeti",
-                    "Travel to Umi's Mechanical Yeti."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 52 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 5163, index = 3, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 977 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

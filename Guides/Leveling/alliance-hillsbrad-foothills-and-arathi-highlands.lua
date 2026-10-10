@@ -1,813 +1,1655 @@
 local _, ns = ...
 
--- Forever Casual spine: Hillsbrad Foothills & Arathi Highlands (32-33)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves:
--- 98059 Hillsbrad's Hoard, 98071 Brewer's Trade, 98463 Talk of the Town (Southshore).
--- 98463 turns in to Nixxrax Fillamug in Booty Bay (later STV chapter).
--- Alliance Kirin Tor / Dalaran Modera chain (92432/92458/92459) stays with attunement — not woven here.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    ARATHI_HIGHLANDS = 1417,
-    HILLSBRAD_FOOTHILLS = 1424,
-    IRONFORGE = 1455,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
+    revision = 3,
     title = "Hillsbrad Foothills & Arathi Highlands",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 32 } },
+            {
+                level = { min = 32 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-565-bartolo-s-yeti-fur-cloak",
+            kind = "note",
+            text = "Reach level 29 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 29 },
+            },
+            requiredLevel = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 565,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.5553, mapID = 1424, label = "Bartolo Ginsetti", offMapText = "Travel to Bartolo Ginsetti in Hillsbrad Foothills.", x = 0.4943 },
+            },
+            text = "Accept Bartolo's Yeti Fur Cloak from Bartolo Ginsetti.",
             id = "accept-565-bartolo-s-yeti-fur-cloak",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Bartolo's Yeti Fur Cloak.",
-            complete = QuestState(565, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4943, 0.5553, "Bartolo's Yeti Fur Cloak",
-                    "Travel to Bartolo's Yeti Fur Cloak."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 565, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-564-costly-menace",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 564,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.5596, mapID = 1424, label = "Darren Malvew", offMapText = "Travel to Darren Malvew in Hillsbrad Foothills.", x = 0.5242 },
+            },
+            text = "Accept Costly Menace from Darren Malvew.",
             id = "accept-564-costly-menace",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Costly Menace.",
-            complete = QuestState(564, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5242, 0.5596, "Costly Menace",
-                    "Travel to Costly Menace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 564, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
+            },
+            text = "Turn in Southshore to Loremaster Dibbs.",
             id = "turnin-538-southshore",
             kind = "turnin",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Southshore.",
-            complete = QuestState(538, "completed"),
-            route = {
-                Point(1424, 0.5057, 0.5709, "Southshore",
-                    "Travel to Southshore."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 538, state = "completed" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 337 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            text = "Accept Down the Coast from Lieutenant Farren Orinelle.",
             id = "accept-536-down-the-coast",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Down the Coast.",
-            complete = QuestState(536, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5146, 0.5838, "Down the Coast",
-                    "Travel to Down the Coast."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 536, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.5868, mapID = 1424, label = "Chef Jessen", offMapText = "Travel to Chef Jessen in Hillsbrad Foothills.", x = 0.5189 },
+            },
+            text = "Accept Soothing Turtle Bisque from Chef Jessen.",
             id = "accept-555-soothing-turtle-bisque",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Soothing Turtle Bisque.",
-            complete = QuestState(555, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5189, 0.5868, "Soothing Turtle Bisque",
-                    "Travel to Soothing Turtle Bisque."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 555, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "woven-accept-98071-brewers-trade",
-            kind = "accept",
-            priority = 61,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Brewer's Trade from Brewmeister Bilger in Southshore.",
-            complete = QuestState(98071, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5200, 0.5860, "Brewmeister Bilger",
-                    "Travel to Brewmeister Bilger."),
+            priority = 80,
+            text = "For Soothing Turtle Bisque: Bring 10 pieces of Turtle Meat and some Soothing Spices to Chef Jessen in Southshore. Keep 10 Turtle Meat for the later quest pickup.",
+            id = "collect-before-pickup-objective-555-quest-work",
+            kind = "note",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
-        },
-        {
-            id = "woven-accept-98463-talk-of-the-town",
-            kind = "accept",
-            priority = 62,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Talk of the Town from Barkeep Kelly in Southshore.",
-            complete = QuestState(98463, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5140, 0.5860, "Barkeep Kelly",
-                    "Travel to Barkeep Kelly."),
+            complete = {
+                item = { name = "Turtle Meat", minCount = 10 },
             },
-        },
-        {
-            id = "woven-accept-98059-hillsbrads-hoard",
-            kind = "accept",
-            priority = 63,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Hillsbrad's Hoard from Captain McManus in Southshore.",
-            complete = QuestState(98059, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4640, 0.5020, "Captain McManus",
-                    "Travel to Captain McManus."),
-            },
-        },
-        {
-            id = "woven-objective-98071-brewers-trade",
-            kind = "objective",
-            priority = 64,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Brewer's Trade: deliver Fallrook Varietal to Dun Garok and collect Sack of Homebrew Hops.",
-            complete = QuestState(98071, "complete"),
-            dependsOn = { "woven-accept-98071-brewers-trade" },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
             useClientPin = true,
-            route = {
-                Point(1424, 0.5200, 0.5860, "Brewmeister Bilger",
-                    "Travel to Brewmeister Bilger."),
-            },
+            dependsOn = {},
+            referenceQuest = 555,
         },
         {
-            id = "woven-objective-98059-hillsbrads-hoard",
-            kind = "objective",
-            priority = 65,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Hillsbrad's Hoard: deliver the Sealed Company Request to the Hillsbrad council.",
-            complete = QuestState(98059, "complete"),
-            dependsOn = { "woven-accept-98059-hillsbrads-hoard" },
-            useClientPin = true,
-            route = {
-                Point(1424, 0.4640, 0.5020, "Captain McManus",
-                    "Travel to Captain McManus."),
+            id = "prepare-555-all-required-materials",
+            kind = "note",
+            text = "Collect 10 Turtle Meat from turtles near Southshore. Buy Soothing Spices from Micha Yance in Southshore. Keep both for Chef Jessen.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            requiredQuests = {},
+            complete = {
+                any = {
+                    {
+                        all = {
+                            {
+                                item = { name = "Turtle Meat", minCount = 10 },
+                            },
+                            {
+                                item = { name = "Soothing Spices", minCount = 1 },
+                            },
+                        },
+                    },
+                    {
+                        quest = { id = 555, state = "complete" },
+                    },
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1424, x = 0.4894, y = 0.5503, label = "Micha Yance", offMapText = "Travel to Micha Yance." },
+            },
+            checkpointQuest = 555,
+            instructionOnly = true,
+            rememberPreparation = 555,
+            dependsOn = {},
+            priority = 90,
         },
         {
-            id = "woven-turnin-98071-brewers-trade",
-            kind = "turnin",
-            priority = 66,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Brewer's Trade to Brewmeister Bilger in Southshore.",
-            complete = QuestState(98071, "completed"),
-            dependsOn = { "woven-accept-98071-brewers-trade", "woven-objective-98071-brewers-trade" },
+            priority = 100,
+            text = "Turn in Soothing Turtle Bisque to Chef Jessen.",
             route = {
-                Point(1424, 0.5200, 0.5860, "Brewmeister Bilger",
-                    "Travel to Brewmeister Bilger."),
+                { y = 0.5868, mapID = 1424, label = "Chef Jessen", offMapText = "Travel to Chef Jessen in Hillsbrad Foothills.", x = 0.5189 },
             },
-        },
-        {
-            id = "woven-turnin-98059-hillsbrads-hoard",
-            kind = "turnin",
-            priority = 67,
-            conditions = { all = {
-                { level = { min = 27 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Hillsbrad's Hoard to Captain McManus in Southshore.",
-            complete = QuestState(98059, "completed"),
-            dependsOn = { "woven-accept-98059-hillsbrads-hoard", "woven-objective-98059-hillsbrads-hoard" },
-            route = {
-                Point(1424, 0.4640, 0.5020, "Captain McManus",
-                    "Travel to Captain McManus."),
-            },
-        },
-        {
+            dependsOn = { "accept-555-soothing-turtle-bisque" },
             id = "turnin-555-soothing-turtle-bisque",
             kind = "turnin",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Soothing Turtle Bisque.",
-            complete = QuestState(555, "completed"),
-            dependsOn = { "accept-555-soothing-turtle-bisque" },
-            route = {
-                Point(1424, 0.5189, 0.5868, "Soothing Turtle Bisque",
-                    "Travel to Soothing Turtle Bisque."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 555, state = "completed" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 110,
+            text = "Kill 10 Torn Fin Tidehunter.",
+            route = {
+                { y = 0.646, mapID = 1424, label = "Torn Fin Tidehunter", offMapText = "Travel to Torn Fin Tidehunter.", x = 0.476 },
+            },
+            dependsOn = { "accept-536-down-the-coast" },
             id = "objective-536-1-torn-fin-tidehunter",
             kind = "objective",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Torn Fin Tidehunter.",
-            complete = QuestObjective(536, 1, "Torn Fin Tidehunter"),
-            dependsOn = { "accept-536-down-the-coast" },
-            route = {
-                Point(1424, 0.4760, 0.6460, "Torn Fin Tidehunter",
-                    "Travel to Torn Fin Tidehunter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 536, text = "Torn Fin Tidehunter", index = 1, count = 10 },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 120,
+            text = "Kill 10 Torn Fin Oracle.",
+            route = {
+                { y = 0.646, mapID = 1424, label = "Torn Fin Oracle", offMapText = "Travel to Torn Fin Oracle.", x = 0.476 },
+            },
+            dependsOn = { "accept-536-down-the-coast" },
             id = "objective-536-2-torn-fin-oracle",
             kind = "objective",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Torn Fin Oracle.",
-            complete = QuestObjective(536, 2, "Torn Fin Oracle"),
-            dependsOn = { "accept-536-down-the-coast" },
-            route = {
-                Point(1424, 0.4760, 0.6460, "Torn Fin Oracle",
-                    "Travel to Torn Fin Oracle."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 536, text = "Torn Fin Oracle", index = 2, count = 10 },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            text = "Turn in Down the Coast to Lieutenant Farren Orinelle.",
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            dependsOn = { "accept-536-down-the-coast", "objective-536-1-torn-fin-tidehunter", "objective-536-2-torn-fin-oracle" },
             id = "turnin-536-down-the-coast",
             kind = "turnin",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Down the Coast.",
-            complete = QuestState(536, "completed"),
-            dependsOn = { "accept-536-down-the-coast", "objective-536-1-torn-fin-tidehunter", "objective-536-2-torn-fin-oracle" },
-            route = {
-                Point(1424, 0.5146, 0.5838, "Down the Coast",
-                    "Travel to Down the Coast."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 536, state = "completed" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 140,
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            text = "Accept Farren's Proof from Lieutenant Farren Orinelle.",
             id = "accept-559-farren-s-proof",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Farren's Proof.",
-            complete = QuestState(559, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5146, 0.5838, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 559, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 536 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 150,
+            text = "Collect 10 Murloc Head.",
+            route = {
+                { y = 0.646, mapID = 1424, label = "Torn Fin Tidehunter", offMapText = "Travel to Torn Fin Tidehunter.", x = 0.476 },
+            },
+            dependsOn = { "accept-559-farren-s-proof" },
             id = "objective-559-1-torn-fin-tidehunter",
             kind = "objective",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Torn Fin Tidehunter.",
-            complete = QuestObjective(559, 1, "Torn Fin Tidehunter"),
-            dependsOn = { "accept-559-farren-s-proof" },
-            route = {
-                Point(1424, 0.4760, 0.6460, "Torn Fin Tidehunter",
-                    "Travel to Torn Fin Tidehunter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 559, text = "Torn Fin Tidehunter", index = 1, count = 10 },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 536 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 160,
+            text = "Turn in Farren's Proof to Lieutenant Farren Orinelle.",
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            dependsOn = { "accept-559-farren-s-proof", "objective-559-1-torn-fin-tidehunter" },
             id = "turnin-559-farren-s-proof",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Farren's Proof.",
-            complete = QuestState(559, "completed"),
-            dependsOn = { "accept-559-farren-s-proof", "objective-559-1-torn-fin-tidehunter" },
-            route = {
-                Point(1424, 0.5146, 0.5838, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 559, state = "completed" },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 536 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            text = "Accept Farren's Proof from Lieutenant Farren Orinelle.",
             id = "accept-560-farren-s-proof",
             kind = "accept",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Farren's Proof.",
-            complete = QuestState(560, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5146, 0.5838, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 560, state = "activeOrCompleted" },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 559 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 180,
+            text = "Turn in Farren's Proof to Marshal Redpath.",
+            route = {
+                { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
+            },
+            dependsOn = { "accept-560-farren-s-proof" },
             id = "turnin-560-farren-s-proof",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Farren's Proof.",
-            complete = QuestState(560, "completed"),
-            dependsOn = { "accept-560-farren-s-proof" },
-            route = {
-                Point(1424, 0.4948, 0.5873, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 560, state = "completed" },
+            },
+            sourceStep = 13,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 559 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.5873, mapID = 1424, label = "Marshal Redpath", offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.", x = 0.4948 },
+            },
+            text = "Accept Farren's Proof from Marshal Redpath.",
             id = "accept-561-farren-s-proof",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Farren's Proof.",
-            complete = QuestState(561, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4948, 0.5873, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 561, state = "activeOrCompleted" },
+            },
+            sourceStep = 13,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 560 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            text = "Turn in Farren's Proof to Lieutenant Farren Orinelle.",
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            dependsOn = { "accept-561-farren-s-proof" },
             id = "turnin-561-farren-s-proof",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Farren's Proof.",
-            complete = QuestState(561, "completed"),
-            dependsOn = { "accept-561-farren-s-proof" },
-            route = {
-                Point(1424, 0.5146, 0.5838, "Farren's Proof",
-                    "Travel to Farren's Proof."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 561, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 560 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            text = "Accept Stormwind Ho! from Lieutenant Farren Orinelle.",
             id = "accept-562-stormwind-ho",
             kind = "accept",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Stormwind Ho!.",
-            complete = QuestState(562, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5146, 0.5838, "Stormwind Ho!",
-                    "Travel to Stormwind Ho!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 562, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 561 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Kill 10 Daggerspine Shorehunter.",
+            route = {
+                { y = 0.644, mapID = 1424, label = "Daggerspine Shorehunter", offMapText = "Travel to Daggerspine Shorehunter.", x = 0.55 },
+            },
+            dependsOn = { "accept-562-stormwind-ho" },
             id = "objective-562-1-daggerspine-shorehunter",
             kind = "objective",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Daggerspine Shorehunter.",
-            complete = QuestObjective(562, 1, "Daggerspine Shorehunter"),
-            dependsOn = { "accept-562-stormwind-ho" },
-            route = {
-                Point(1424, 0.5500, 0.6440, "Daggerspine Shorehunter",
-                    "Travel to Daggerspine Shorehunter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 562, text = "Daggerspine Shorehunter", index = 1, count = 10 },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 561 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 230,
+            text = "Kill 10 Daggerspine Siren.",
+            route = {
+                { y = 0.644, mapID = 1424, label = "Daggerspine Siren", offMapText = "Travel to Daggerspine Siren.", x = 0.55 },
+            },
+            dependsOn = { "accept-562-stormwind-ho" },
             id = "objective-562-2-daggerspine-siren",
             kind = "objective",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Daggerspine Siren.",
-            complete = QuestObjective(562, 2, "Daggerspine Siren"),
-            dependsOn = { "accept-562-stormwind-ho" },
-            route = {
-                Point(1424, 0.5500, 0.6440, "Daggerspine Siren",
-                    "Travel to Daggerspine Siren."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 562, text = "Daggerspine Siren", index = 2, count = 10 },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 561 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 240,
+            text = "Turn in Stormwind Ho! to Lieutenant Farren Orinelle.",
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            dependsOn = { "accept-562-stormwind-ho", "objective-562-1-daggerspine-shorehunter", "objective-562-2-daggerspine-siren" },
             id = "turnin-562-stormwind-ho",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Stormwind Ho!.",
-            complete = QuestState(562, "completed"),
-            dependsOn = { "accept-562-stormwind-ho", "objective-562-1-daggerspine-shorehunter", "objective-562-2-daggerspine-siren" },
-            route = {
-                Point(1424, 0.5146, 0.5838, "Stormwind Ho!",
-                    "Travel to Stormwind Ho!."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 562, state = "completed" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 561 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            route = {
+                { y = 0.5905, mapID = 1424, label = "Phin Odelic", offMapText = "Travel to Phin Odelic in Hillsbrad Foothills.", x = 0.5034 },
+            },
+            text = "Accept Hints of a New Plague? from Phin Odelic.",
             id = "accept-659-hints-of-a-new-plague",
             kind = "accept",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Hints of a New Plague?.",
-            complete = QuestState(659, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5034, 0.5905, "Hints of a New Plague?",
-                    "Travel to Hints of a New Plague?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 659, state = "activeOrCompleted" },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 260,
+            route = {
+                { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
+            },
+            text = "Accept Syndicate Assassins from Magistrate Henry Maleb.",
             id = "accept-505-syndicate-assassins",
             kind = "accept",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Syndicate Assassins.",
-            complete = QuestState(505, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4814, 0.5911, "Syndicate Assassins",
-                    "Travel to Syndicate Assassins."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 505, state = "activeOrCompleted" },
+            },
+            sourceStep = 18,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 270,
+            route = {
+                { y = 0.3183, mapID = 1424, label = "Alterac Granite", offMapText = "Travel to Alterac Granite.", x = 0.4618 },
+            },
+            text = "Collect 5 Alterac Granite.",
             id = "objective-689-1-alterac-granite",
             kind = "objective",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Click Alterac Granite.",
-            complete = QuestObjective(689, 1, "Alterac Granite"),
-            route = {
-                Point(1424, 0.4618, 0.3183, "Alterac Granite",
-                    "Travel to Alterac Granite."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 689, text = "Alterac Granite", index = 1, count = 5 },
+            },
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 686 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-565-4-yeti-fur",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 10 Yeti Fur.",
+            complete = {
+                questObjective = { id = 565, index = 4, text = "Yeti Fur", count = 10 },
+            },
+            route = {
+                { mapID = 1424, x = 0.4618, y = 0.31829999999999997, label = "Yeti Fur", offMapText = "Travel to Yeti Fur." },
+            },
+            sourceStep = 20,
+            priority = 280,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
+        },
+        {
+            priority = 290,
+            route = {
+                { mapID = 1416, x = 0.47909999999999997, y = 0.8212999999999999, label = "Foreboding Plans", offMapText = "Travel to Foreboding Plans." },
+            },
+            text = "Accept Foreboding Plans.",
             id = "accept-510-foreboding-plans",
             kind = "accept",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Foreboding Plans.",
-            complete = QuestState(510, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4618, 0.3183, "Foreboding Plans",
-                    "Travel to Foreboding Plans."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 510, state = "activeOrCompleted" },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 300,
+            route = {
+                { mapID = 1416, x = 0.47909999999999997, y = 0.8212999999999999, label = "Encrypted Letter", offMapText = "Travel to Encrypted Letter." },
+            },
+            text = "Accept Encrypted Letter.",
             id = "accept-511-encrypted-letter",
             kind = "accept",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Encrypted Letter.",
-            complete = QuestState(511, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.4618, 0.3183, "Encrypted Letter",
-                    "Travel to Encrypted Letter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 511, state = "activeOrCompleted" },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-505-2-syndicate-thief",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 8 Syndicate Thief.",
+            complete = {
+                questObjective = { id = 505, index = 2, text = "Syndicate Thief", count = 8 },
+            },
+            route = {
+                { mapID = 1416, x = 0.578, y = 0.664, label = "Syndicate Thief", offMapText = "Travel to Syndicate Thief." },
+            },
+            sourceStep = 23,
+            priority = 310,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-505-syndicate-assassins" },
+        },
+        {
+            id = "objective-505-1-syndicate-footpad",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 12 Syndicate Footpad.",
+            complete = {
+                questObjective = { id = 505, index = 1, text = "Syndicate Footpad", count = 12 },
+            },
+            route = {
+                { mapID = 1416, x = 0.578, y = 0.664, label = "Syndicate Footpad", offMapText = "Travel to Syndicate Footpad." },
+            },
+            sourceStep = 23,
+            priority = 320,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-505-syndicate-assassins" },
+        },
+        {
+            id = "objective-564-1-mountain-lion",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 8 Mountain Lion.",
+            complete = {
+                questObjective = { id = 564, index = 1, text = "Mountain Lion", count = 8 },
+            },
+            route = {
+                { mapID = 1416, x = 0.446, y = 0.79, label = "Mountain Lion", offMapText = "Travel to Mountain Lion." },
+            },
+            sourceStep = 24,
+            priority = 330,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-564-costly-menace" },
+        },
+        {
+            id = "objective-564-2-hulking-mountain-lion",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 10 Hulking Mountain Lion.",
+            complete = {
+                questObjective = { id = 564, index = 2, text = "Hulking Mountain Lion", count = 10 },
+            },
+            route = {
+                { mapID = 1416, x = 0.446, y = 0.79, label = "Hulking Mountain Lion", offMapText = "Travel to Hulking Mountain Lion." },
+            },
+            sourceStep = 24,
+            priority = 340,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-564-costly-menace" },
+        },
+        {
+            priority = 350,
+            route = {
+                { y = 0.5838, mapID = 1424, label = "Lieutenant Farren Orinelle", offMapText = "Travel to Lieutenant Farren Orinelle in Hillsbrad Foothills.", x = 0.5146 },
+            },
+            text = "Accept Reassignment from Lieutenant Farren Orinelle.",
             id = "accept-563-reassignment",
             kind = "accept",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Reassignment.",
-            complete = QuestState(563, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5146, 0.5838, "Reassignment",
-                    "Travel to Reassignment."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 563, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 562 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 360,
+            text = "Turn in Foreboding Plans to Magistrate Henry Maleb.",
+            route = {
+                { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
+            },
+            dependsOn = { "accept-510-foreboding-plans" },
             id = "turnin-510-foreboding-plans",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Foreboding Plans.",
-            complete = QuestState(510, "completed"),
-            dependsOn = { "accept-510-foreboding-plans" },
-            route = {
-                Point(1424, 0.4814, 0.5911, "Foreboding Plans",
-                    "Travel to Foreboding Plans."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 510, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 370,
+            text = "Turn in Syndicate Assassins to Magistrate Henry Maleb.",
+            route = {
+                { y = 0.5911, mapID = 1424, label = "Magistrate Henry Maleb", offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.", x = 0.4814 },
+            },
+            dependsOn = { "accept-505-syndicate-assassins", "objective-505-2-syndicate-thief", "objective-505-1-syndicate-footpad" },
             id = "turnin-505-syndicate-assassins",
             kind = "turnin",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Syndicate Assassins.",
-            complete = QuestState(505, "completed"),
-            dependsOn = { "accept-505-syndicate-assassins" },
-            route = {
-                Point(1424, 0.4814, 0.5911, "Syndicate Assassins",
-                    "Travel to Syndicate Assassins."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 26 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 505, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 380,
+            text = "Turn in Encrypted Letter to Loremaster Dibbs.",
+            route = {
+                { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
+            },
+            dependsOn = { "accept-511-encrypted-letter" },
             id = "turnin-511-encrypted-letter",
             kind = "turnin",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Encrypted Letter.",
-            complete = QuestState(511, "completed"),
-            dependsOn = { "accept-511-encrypted-letter" },
-            route = {
-                Point(1424, 0.5057, 0.5709, "Encrypted Letter",
-                    "Travel to Encrypted Letter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 511, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 390,
+            route = {
+                { y = 0.5709, mapID = 1424, label = "Loremaster Dibbs", offMapText = "Travel to Loremaster Dibbs in Hillsbrad Foothills.", x = 0.5057 },
+            },
+            text = "Accept Letter to Stormpike from Loremaster Dibbs.",
             id = "accept-514-letter-to-stormpike",
             kind = "accept",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Letter to Stormpike.",
-            complete = QuestState(514, "activeOrCompleted"),
-            route = {
-                Point(1424, 0.5057, 0.5709, "Letter to Stormpike",
-                    "Travel to Letter to Stormpike."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 514, state = "activeOrCompleted" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 511 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 400,
+            text = "Turn in Costly Menace to Darren Malvew.",
+            route = {
+                { y = 0.5596, mapID = 1424, label = "Darren Malvew", offMapText = "Travel to Darren Malvew in Hillsbrad Foothills.", x = 0.5242 },
+            },
+            dependsOn = { "accept-564-costly-menace", "objective-564-1-mountain-lion", "objective-564-2-hulking-mountain-lion" },
             id = "turnin-564-costly-menace",
             kind = "turnin",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Costly Menace.",
-            complete = QuestState(564, "completed"),
-            dependsOn = { "accept-564-costly-menace" },
-            route = {
-                Point(1424, 0.5242, 0.5596, "Costly Menace",
-                    "Travel to Costly Menace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 564, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-565-reviewed-1",
+            kind = "objective",
+            text = "Buy 1 Bolt of Woolen Cloth at the Stormwind Auction House if available. Keep it for Bartolo Ginsetti in Southshore.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            requiredQuests = {},
+            complete = {
+                questObjective = { id = 565, index = 1, count = 1 },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1453, x = 0.5361, y = 0.5976, label = "Auctioneer Jaxon", offMapText = "Travel to Auctioneer Jaxon." },
+            },
+            dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
+            priority = 410,
+        },
+        {
+            id = "objective-565-reviewed-2",
+            kind = "objective",
+            text = "Buy 1 Fine Thread from Micha Yance in Southshore.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            requiredQuests = {},
+            complete = {
+                questObjective = { id = 565, index = 2, count = 1 },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1424, x = 0.4894, y = 0.5503, label = "Micha Yance", offMapText = "Travel to Micha Yance." },
+            },
+            sourceStep = 29,
+            dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
+            priority = 420,
+        },
+        {
+            id = "objective-565-reviewed-3",
+            kind = "objective",
+            text = "Buy 1 Hillman's Cloak at the Stormwind Auction House if available. Keep it for Bartolo Ginsetti in Southshore.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            requiredQuests = {},
+            complete = {
+                questObjective = { id = 565, index = 3, count = 1 },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1453, x = 0.5361, y = 0.5976, label = "Auctioneer Jaxon", offMapText = "Travel to Auctioneer Jaxon." },
+            },
+            dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
+            priority = 430,
+        },
+        {
+            priority = 440,
+            text = "Turn in Bartolo's Yeti Fur Cloak to Bartolo Ginsetti.",
+            route = {
+                { y = 0.5553, mapID = 1424, label = "Bartolo Ginsetti", offMapText = "Travel to Bartolo Ginsetti in Hillsbrad Foothills.", x = 0.4943 },
+            },
+            dependsOn = {
+                "accept-565-bartolo-s-yeti-fur-cloak",
+                "objective-565-4-yeti-fur",
+                "objective-565-reviewed-1",
+                "objective-565-reviewed-2",
+                "objective-565-reviewed-3",
+            },
             id = "turnin-565-bartolo-s-yeti-fur-cloak",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Bartolo's Yeti Fur Cloak.",
-            complete = QuestState(565, "completed"),
-            dependsOn = { "accept-565-bartolo-s-yeti-fur-cloak" },
-            route = {
-                Point(1424, 0.4943, 0.5553, "Bartolo's Yeti Fur Cloak",
-                    "Travel to Bartolo's Yeti Fur Cloak."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 565, state = "completed" },
+            },
+            sourceStep = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 450,
+            route = {
+                { y = 0.4755, mapID = 1417, label = "Captain Nials", offMapText = "Travel to Captain Nials in Arathi Highlands.", x = 0.4583 },
+            },
+            text = "Accept Northfold Manor from Captain Nials.",
             id = "accept-681-northfold-manor",
             kind = "accept",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Northfold Manor.",
-            complete = QuestState(681, "activeOrCompleted"),
-            route = {
-                Point(1417, 0.4583, 0.4755, "Northfold Manor",
-                    "Travel to Northfold Manor."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 681, state = "activeOrCompleted" },
+            },
+            sourceStep = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 460,
+            text = "Turn in Hints of a New Plague? to Quae.",
+            route = {
+                { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
+            },
+            dependsOn = { "accept-659-hints-of-a-new-plague" },
             id = "turnin-659-hints-of-a-new-plague",
             kind = "turnin",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Hints of a New Plague?.",
-            complete = QuestState(659, "completed"),
-            dependsOn = { "accept-659-hints-of-a-new-plague" },
-            route = {
-                Point(1417, 0.6019, 0.5385, "Hints of a New Plague?",
-                    "Travel to Hints of a New Plague?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 659, state = "completed" },
+            },
+            sourceStep = 32,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 470,
+            route = {
+                { y = 0.5385, mapID = 1417, label = "Quae", offMapText = "Travel to Quae in Arathi Highlands.", x = 0.6019 },
+            },
+            text = "Accept Hints of a New Plague? from Quae.",
             id = "accept-658-hints-of-a-new-plague",
             kind = "accept",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 39 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Hints of a New Plague?.",
-            complete = QuestState(658, "activeOrCompleted"),
-            route = {
-                Point(1417, 0.6019, 0.5385, "Hints of a New Plague?",
-                    "Travel to Hints of a New Plague?."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 658, state = "activeOrCompleted" },
+            },
+            sourceStep = 32,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 659 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 480,
+            text = "Kill 6 Syndicate Mercenary.",
+            route = {
+                { y = 0.3, mapID = 1417, label = "Syndicate Mercenary", offMapText = "Travel to Syndicate Mercenary.", x = 0.334 },
+            },
+            dependsOn = { "accept-681-northfold-manor" },
             id = "objective-681-2-syndicate-mercenary",
             kind = "objective",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 6 Syndicate Mercenary.",
-            complete = QuestObjective(681, 2, "Syndicate Mercenary"),
-            dependsOn = { "accept-681-northfold-manor" },
-            route = {
-                Point(1417, 0.3340, 0.3000, "Syndicate Mercenary",
-                    "Travel to Syndicate Mercenary."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 681, text = "Syndicate Mercenary", index = 2, count = 6 },
+            },
+            sourceStep = 33,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 490,
+            text = "Kill 10 Syndicate Highwayman.",
+            route = {
+                { y = 0.3, mapID = 1417, label = "Syndicate Highwayman", offMapText = "Travel to Syndicate Highwayman.", x = 0.334 },
+            },
+            dependsOn = { "accept-681-northfold-manor" },
             id = "objective-681-1-syndicate-highwayman",
             kind = "objective",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 10 Syndicate Highwayman.",
-            complete = QuestObjective(681, 1, "Syndicate Highwayman"),
-            dependsOn = { "accept-681-northfold-manor" },
-            route = {
-                Point(1417, 0.3340, 0.3000, "Syndicate Highwayman",
-                    "Travel to Syndicate Highwayman."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 681, text = "Syndicate Highwayman", index = 1, count = 10 },
+            },
+            sourceStep = 33,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 500,
+            text = "Turn in Northfold Manor to Captain Nials.",
+            route = {
+                { y = 0.4755, mapID = 1417, label = "Captain Nials", offMapText = "Travel to Captain Nials in Arathi Highlands.", x = 0.4583 },
+            },
+            dependsOn = { "accept-681-northfold-manor", "objective-681-2-syndicate-mercenary", "objective-681-1-syndicate-highwayman" },
             id = "turnin-681-northfold-manor",
             kind = "turnin",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Northfold Manor.",
-            complete = QuestState(681, "completed"),
-            dependsOn = { "accept-681-northfold-manor", "objective-681-2-syndicate-mercenary", "objective-681-1-syndicate-highwayman" },
-            route = {
-                Point(1417, 0.4583, 0.4755, "Northfold Manor",
-                    "Travel to Northfold Manor."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 681, state = "completed" },
+            },
+            sourceStep = 36,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 510,
+            text = "Turn in Letter to Stormpike to Prospector Stormpike.",
+            route = {
+                { y = 0.1173, mapID = 1455, label = "Prospector Stormpike", offMapText = "Travel to Prospector Stormpike in Ironforge.", x = 0.7464 },
+            },
+            dependsOn = { "accept-514-letter-to-stormpike" },
             id = "turnin-514-letter-to-stormpike",
             kind = "turnin",
-            priority = 390,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Letter to Stormpike.",
-            complete = QuestState(514, "completed"),
-            dependsOn = { "accept-514-letter-to-stormpike" },
-            route = {
-                Point(1455, 0.7464, 0.1173, "Letter to Stormpike",
-                    "Travel to Letter to Stormpike."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 514, state = "completed" },
+            },
+            sourceStep = 37,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 511 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 520,
+            text = "Turn in A King's Tribute to Grand Mason Marblesten.",
+            route = {
+                { y = 0.8805, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3904 },
+            },
+            dependsOn = { "objective-689-1-alterac-granite" },
             id = "turnin-689-a-king-s-tribute",
             kind = "turnin",
-            priority = 400,
-            conditions = { all = {
-                { level = { min = 32 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A King's Tribute.",
-            complete = QuestState(689, "completed"),
-            dependsOn = { "objective-689-1-alterac-granite" },
-            route = {
-                Point(1455, 0.3904, 0.8805, "A King's Tribute",
-                    "Travel to A King's Tribute."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 689, state = "completed" },
+            },
+            sourceStep = 38,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 686 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 530,
+            route = {
+                { y = 0.8805, mapID = 1455, label = "Grand Mason Marblesten", offMapText = "Travel to Grand Mason Marblesten in Ironforge.", x = 0.3904 },
+            },
+            text = "Accept A King's Tribute from Grand Mason Marblesten.",
             id = "accept-700-a-king-s-tribute",
             kind = "accept",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A King's Tribute.",
-            complete = QuestState(700, "activeOrCompleted"),
-            route = {
-                Point(1455, 0.3904, 0.8805, "A King's Tribute",
-                    "Travel to A King's Tribute."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 700, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 689 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 540,
+            text = "Turn in A King's Tribute to King Magni Bronzebeard.",
+            route = {
+                { mapID = 1455, x = 0.3909, y = 0.562, label = "King Magni Bronzebeard", offMapText = "Travel to King Magni Bronzebeard in Ironforge." },
+            },
+            dependsOn = { "accept-700-a-king-s-tribute" },
             id = "turnin-700-a-king-s-tribute",
             kind = "turnin",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 40 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A King's Tribute.",
-            complete = QuestState(700, "completed"),
-            dependsOn = { "accept-700-a-king-s-tribute" },
-            route = {
-                Point(1455, 0.4456, 0.4958, "A King's Tribute",
-                    "Travel to A King's Tribute."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 25 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 700, state = "completed" },
+            },
+            sourceStep = 41,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 689 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

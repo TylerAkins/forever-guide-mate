@@ -32,6 +32,8 @@ PlayerState.lua
 Travel.lua
 Taxi.lua
 GuideEngine.lua
+OrderedRoutes.lua
+ClassChains.lua
 SkipLineage.lua
 QuestPrerequisites.lua
 QuestAudit.lua
@@ -80,6 +82,7 @@ Guides/Dungeons/LowerBlackrockSpire.lua
 Guides/Dungeons/UpperBlackrockSpire.lua
 Guides/Dungeons/DireMaulNorthTribute.lua
 Guides/Dungeons/Tier05DungeonGearQuestline.lua
+Guides/Dungeons/ClassPrerequisites.lua
 Guides/Leveling/zephras-isle.lua
 Guides/Loremaster/Durotar.lua
 Guides/Loremaster/Mulgore.lua

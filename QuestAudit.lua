@@ -157,8 +157,9 @@ function QuestAudit:Inspect(api)
         return
     end
     local state = ns.Engine and ns.Engine.state or nil
-    if ns.Engine and ns.Engine.QuestChainBypassed
-        and ns.Engine:QuestChainBypassed(goal, state, api) then
+    local ordered = ns.Engine.currentGuide and ns.Engine.currentGuide.routeMode == "ordered"
+    if (ordered and ns.OrderedRoutes:ExcludedAction(goal, state or {}))
+        or (not ordered and ns.Engine.QuestChainBypassed and ns.Engine:QuestChainBypassed(goal, state, api)) then
         self:Clear(goal.id)
         return
     end

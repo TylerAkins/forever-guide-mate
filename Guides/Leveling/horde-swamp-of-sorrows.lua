@@ -1,449 +1,1045 @@
 local _, ns = ...
 
--- Forever Casual spine: Swamp of Sorrows (45-46)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves are applied in a separate pass.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    STRANGLETHORN_VALE = 1434,
-    SWAMP_OF_SORROWS = 1435,
-    FERALAS = 1444,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-swamp-of-sorrows",
+    revision = 3,
     title = "Swamp of Sorrows",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-swamp-of-sorrows",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 45 } },
+            {
+                level = { min = 45 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-2784-fall-from-grace",
+            kind = "note",
+            text = "Reach level 45 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 45 },
+            },
+            requiredLevel = 45,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2784,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
+            },
+            text = "Accept Fall From Grace from Fallen Hero of the Horde.",
             id = "accept-2784-fall-from-grace",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Fall From Grace.",
-            complete = QuestState(2784, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.3429, 0.6613, "Fall From Grace",
-                    "Travel to Fall From Grace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2784, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            text = "For Fall From Grace: Listen to the Fallen Hero of the Horde tell his story.",
+            id = "objective-2784-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 2784, state = "complete" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-2784-fall-from-grace" },
+        },
+        {
+            priority = 40,
+            text = "Turn in Fall From Grace to Fallen Hero of the Horde.",
+            route = {
+                { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
+            },
+            dependsOn = { "accept-2784-fall-from-grace", "objective-2784-quest-work" },
             id = "turnin-2784-fall-from-grace",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Fall From Grace.",
-            complete = QuestState(2784, "completed"),
-            dependsOn = { "accept-2784-fall-from-grace" },
-            route = {
-                Point(1435, 0.3429, 0.6613, "Fall From Grace",
-                    "Travel to Fall From Grace."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2784, state = "completed" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.6613, mapID = 1435, label = "Fallen Hero of the Horde", offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.", x = 0.3429 },
+            },
+            text = "Accept The Disgraced One from Fallen Hero of the Horde.",
             id = "accept-2621-the-disgraced-one",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Disgraced One.",
-            complete = QuestState(2621, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.3429, 0.6613, "The Disgraced One",
-                    "Travel to The Disgraced One."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2621, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2784 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            text = "Turn in The Disgraced One to Dispatch Commander Ruag.",
+            route = {
+                { y = 0.5495, mapID = 1435, label = "Dispatch Commander Ruag", offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.", x = 0.4779 },
+            },
+            dependsOn = { "accept-2621-the-disgraced-one" },
             id = "turnin-2621-the-disgraced-one",
             kind = "turnin",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Disgraced One.",
-            complete = QuestState(2621, "completed"),
-            dependsOn = { "accept-2621-the-disgraced-one" },
-            route = {
-                Point(1435, 0.4779, 0.5495, "The Disgraced One",
-                    "Travel to The Disgraced One."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2621, state = "completed" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2784 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.5495, mapID = 1435, label = "Dispatch Commander Ruag", offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.", x = 0.4779 },
+            },
+            text = "Accept The Missing Orders from Dispatch Commander Ruag.",
             id = "accept-2622-the-missing-orders",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Missing Orders.",
-            complete = QuestState(2622, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.4779, 0.5495, "The Missing Orders",
-                    "Travel to The Missing Orders."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2622, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2621 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.5479, mapID = 1435, label = "Fel'zerul", offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793 },
+            },
+            text = "Accept The Atal'ai Exile from Fel'zerul.",
             id = "accept-1429-the-atal-ai-exile",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 48 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Atal'ai Exile.",
-            complete = QuestState(1429, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.4793, 0.5479, "The Atal'ai Exile",
-                    "Travel to The Atal'ai Exile."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 38 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1429, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1424 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            text = "Turn in The Missing Orders to Bengor.",
+            route = {
+                { y = 0.5734, mapID = 1435, label = "Bengor", offMapText = "Travel to Bengor in Swamp of Sorrows.", x = 0.4498 },
+            },
+            dependsOn = { "accept-2622-the-missing-orders" },
             id = "turnin-2622-the-missing-orders",
             kind = "turnin",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Missing Orders.",
-            complete = QuestState(2622, "completed"),
-            dependsOn = { "accept-2622-the-missing-orders" },
-            route = {
-                Point(1435, 0.4498, 0.5734, "The Missing Orders",
-                    "Travel to The Missing Orders."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 45 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2622, state = "completed" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2621 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 100,
+            route = {
+                { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
+            },
+            text = "Accept Lack of Surplus from Tok'Kar.",
             id = "accept-699-lack-of-surplus",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Lack of Surplus.",
-            complete = QuestState(699, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.8132, 0.8097, "Lack of Surplus",
-                    "Travel to Lack of Surplus."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 699, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 698 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            text = "Collect 6 Sawtooth Snapper Claw.",
+            route = {
+                { y = 0.73, mapID = 1435, label = "Sawtooth Snapper", offMapText = "Travel to Sawtooth Snapper.", x = 0.82 },
+            },
+            dependsOn = { "accept-699-lack-of-surplus" },
             id = "objective-699-1-sawtooth-snapper",
             kind = "objective",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Sawtooth Snapper.",
-            complete = QuestObjective(699, 1, "Sawtooth Snapper"),
-            dependsOn = { "accept-699-lack-of-surplus" },
-            route = {
-                Point(1435, 0.8200, 0.7300, "Sawtooth Snapper",
-                    "Travel to Sawtooth Snapper."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 699, text = "Sawtooth Snapper", index = 1, count = 6 },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 698 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 120,
+            text = "Turn in Lack of Surplus to Tok'Kar.",
+            route = {
+                { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
+            },
+            dependsOn = { "accept-699-lack-of-surplus", "objective-699-1-sawtooth-snapper" },
             id = "turnin-699-lack-of-surplus",
             kind = "turnin",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Lack of Surplus.",
-            complete = QuestState(699, "completed"),
-            dependsOn = { "accept-699-lack-of-surplus", "objective-699-1-sawtooth-snapper" },
-            route = {
-                Point(1435, 0.8132, 0.8097, "Lack of Surplus",
-                    "Travel to Lack of Surplus."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 699, state = "completed" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 698 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            route = {
+                { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132 },
+            },
+            text = "Accept Threat From the Sea from Tok'Kar.",
             id = "accept-1422-threat-from-the-sea",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Threat From the Sea.",
-            complete = QuestState(1422, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.8132, 0.8097, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1422, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 699 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 140,
+            text = "Turn in Threat From the Sea to Katar.",
+            route = {
+                { y = 0.8042, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375 },
+            },
+            dependsOn = { "accept-1422-threat-from-the-sea" },
             id = "turnin-1422-threat-from-the-sea",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Threat From the Sea.",
-            complete = QuestState(1422, "completed"),
-            dependsOn = { "accept-1422-threat-from-the-sea" },
-            route = {
-                Point(1435, 0.8375, 0.8042, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1422, state = "completed" },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 699 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 150,
+            route = {
+                { y = 0.8042, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375 },
+            },
+            text = "Accept Threat From the Sea from Katar.",
             id = "accept-1426-threat-from-the-sea",
             kind = "accept",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Threat From the Sea.",
-            complete = QuestState(1426, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.8375, 0.8042, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1426, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1422 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            text = "Kill 10 Marsh Murloc.",
+            route = {
+                { y = 0.822, mapID = 1435, label = "Marsh Murloc", offMapText = "Travel to Marsh Murloc.", x = 0.852 },
+            },
+            dependsOn = { "accept-1426-threat-from-the-sea" },
             id = "objective-1426-1-marsh-murloc",
             kind = "objective",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Marsh Murloc.",
-            complete = QuestObjective(1426, 1, "Marsh Murloc"),
-            dependsOn = { "accept-1426-threat-from-the-sea" },
-            route = {
-                Point(1435, 0.8520, 0.8220, "Marsh Murloc",
-                    "Travel to Marsh Murloc."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1426, text = "Marsh Murloc", index = 1, count = 10 },
+            },
+            sourceStep = 11,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1422 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-1426-3-marsh-flesheater",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 10 Marsh Flesheater.",
+            complete = {
+                questObjective = { id = 1426, index = 3, text = "Marsh Flesheater", count = 10 },
+            },
+            route = {
+                { mapID = 1435, x = 0.86, y = 0.802, label = "Marsh Flesheater", offMapText = "Travel to Marsh Flesheater." },
+            },
+            sourceStep = 12,
+            priority = 170,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1422 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1426-threat-from-the-sea" },
+        },
+        {
+            id = "objective-1426-2-marsh-inkspewer",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 10 Marsh Inkspewer.",
+            complete = {
+                questObjective = { id = 1426, index = 2, text = "Marsh Inkspewer", count = 10 },
+            },
+            route = {
+                { mapID = 1435, x = 0.8640000000000001, y = 0.83, label = "Marsh Inkspewer", offMapText = "Travel to Marsh Inkspewer." },
+            },
+            sourceStep = 13,
+            priority = 180,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1422 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1426-threat-from-the-sea" },
+        },
+        {
+            priority = 190,
+            text = "Turn in Threat From the Sea to Katar.",
+            route = {
+                { y = 0.8043, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
+            },
+            dependsOn = {
+                "accept-1426-threat-from-the-sea",
+                "objective-1426-1-marsh-murloc",
+                "objective-1426-3-marsh-flesheater",
+                "objective-1426-2-marsh-inkspewer",
+            },
             id = "turnin-1426-threat-from-the-sea",
             kind = "turnin",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Threat From the Sea.",
-            complete = QuestState(1426, "completed"),
-            dependsOn = { "accept-1426-threat-from-the-sea", "objective-1426-1-marsh-murloc" },
-            route = {
-                Point(1435, 0.8376, 0.8043, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1426, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1422 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 200,
+            route = {
+                { y = 0.8043, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
+            },
+            text = "Accept Threat From the Sea from Katar.",
             id = "accept-1427-threat-from-the-sea",
             kind = "accept",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Threat From the Sea.",
-            complete = QuestState(1427, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.8376, 0.8043, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1427, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1426 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 210,
+            text = "Turn in Threat From the Sea to Tok'Kar.",
+            route = {
+                { y = 0.8097, mapID = 1435, label = "Tok'Kar", offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8131 },
+            },
+            dependsOn = { "accept-1427-threat-from-the-sea" },
             id = "turnin-1427-threat-from-the-sea",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Threat From the Sea.",
-            complete = QuestState(1427, "completed"),
-            dependsOn = { "accept-1427-threat-from-the-sea" },
-            route = {
-                Point(1435, 0.8131, 0.8097, "Threat From the Sea",
-                    "Travel to Threat From the Sea."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1427, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1426 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 220,
+            route = {
+                { y = 0.8041, mapID = 1435, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376 },
+            },
+            text = "Accept Continued Threat from Katar.",
             id = "accept-1428-continued-threat",
             kind = "accept",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Continued Threat.",
-            complete = QuestState(1428, "activeOrCompleted"),
-            route = {
-                Point(1435, 0.8376, 0.8041, "Continued Threat",
-                    "Travel to Continued Threat."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1428, state = "activeOrCompleted" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1427 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 230,
+            text = "Kill 10 Marsh Inkspewer.",
+            route = {
+                { y = 0.7654, mapID = 1435, label = "Marsh Inkspewer", offMapText = "Travel to Marsh Inkspewer.", x = 0.6637 },
+            },
+            dependsOn = { "accept-1428-continued-threat" },
             id = "objective-1428-1-marsh-inkspewer",
             kind = "objective",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Marsh Inkspewer.",
-            complete = QuestObjective(1428, 1, "Marsh Inkspewer"),
-            dependsOn = { "accept-1428-continued-threat" },
-            route = {
-                Point(1435, 0.6637, 0.7654, "Marsh Inkspewer",
-                    "Travel to Marsh Inkspewer."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1428, text = "Marsh Inkspewer", index = 1, count = 10 },
+            },
+            sourceStep = 18,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1427 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 240,
+            text = "Kill 10 Marsh Flesheater.",
+            route = {
+                { y = 0.7654, mapID = 1435, label = "Marsh Flesheater", offMapText = "Travel to Marsh Flesheater.", x = 0.6637 },
+            },
+            dependsOn = { "accept-1428-continued-threat" },
             id = "objective-1428-2-marsh-flesheater",
             kind = "objective",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Marsh Flesheater.",
-            complete = QuestObjective(1428, 2, "Marsh Flesheater"),
-            dependsOn = { "accept-1428-continued-threat" },
-            route = {
-                Point(1435, 0.6637, 0.7654, "Marsh Flesheater",
-                    "Travel to Marsh Flesheater."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1428, text = "Marsh Flesheater", index = 2, count = 10 },
+            },
+            sourceStep = 18,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1427 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            text = "Kill 10 Marsh Oracle.",
+            route = {
+                { y = 0.7654, mapID = 1435, label = "Marsh Oracle", offMapText = "Travel to Marsh Oracle.", x = 0.6637 },
+            },
+            dependsOn = { "accept-1428-continued-threat" },
             id = "objective-1428-3-marsh-oracle",
             kind = "objective",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 10 Marsh Oracle.",
-            complete = QuestObjective(1428, 3, "Marsh Oracle"),
-            dependsOn = { "accept-1428-continued-threat" },
-            route = {
-                Point(1435, 0.6637, 0.7654, "Marsh Oracle",
-                    "Travel to Marsh Oracle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1428, text = "Marsh Oracle", index = 3, count = 10 },
+            },
+            sourceStep = 18,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1427 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 260,
+            text = "Turn in Continued Threat to Katar.",
+            route = {
+                { mapID = 1435, x = 0.8375, y = 0.8042, label = "Katar", offMapText = "Travel to Katar in Swamp of Sorrows." },
+            },
+            dependsOn = {
+                "accept-1428-continued-threat",
+                "objective-1428-1-marsh-inkspewer",
+                "objective-1428-2-marsh-flesheater",
+                "objective-1428-3-marsh-oracle",
+            },
             id = "turnin-1428-continued-threat",
             kind = "turnin",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Continued Threat.",
-            complete = QuestState(1428, "completed"),
-            dependsOn = { "accept-1428-continued-threat", "objective-1428-1-marsh-inkspewer", "objective-1428-2-marsh-flesheater", "objective-1428-3-marsh-oracle" },
-            route = {
-                Point(1435, 0.6637, 0.7654, "Continued Threat",
-                    "Travel to Continued Threat."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1428, state = "completed" },
+            },
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1427 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-1119-zanzil-s-mixture-and-a-fool-s-stout",
+            kind = "note",
+            text = "Reach level 35 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 35 },
+            },
+            requiredLevel = 35,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1119,
+            priority = 270,
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
+            },
+            text = "Accept Zanzil's Mixture and a Fool's Stout from Crank Fizzlebub.",
             id = "accept-1119-zanzil-s-mixture-and-a-fool-s-stout",
             kind = "accept",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 46 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Zanzil's Mixture and a Fool's Stout.",
-            complete = QuestState(1119, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2712, 0.7721, "Zanzil's Mixture and a Fool's Stout",
-                    "Travel to Zanzil's Mixture and a Fool's Stout."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 35 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1119, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 621, 1118 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 290,
+            route = {
+                { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
+            },
+            text = "Turn in Return to Witch Doctor Uzer'i to Witch Doctor Uzer'i.",
             id = "turnin-3122-return-to-witch-doctor-uzer-i",
             kind = "turnin",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 45 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Return to Witch Doctor Uzer'i.",
-            complete = QuestState(3122, "completed"),
-            route = {
-                Point(1444, 0.7442, 0.4336, "Return to Witch Doctor Uzer'i",
-                    "Travel to Witch Doctor Uzer'i."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3122, state = "completed" },
+            },
+            sourceStep = 37,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3121 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 300,
+            route = {
+                { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
+            },
+            text = "Accept Testing the Vessel from Witch Doctor Uzer'i.",
             id = "accept-3123-testing-the-vessel",
             kind = "accept",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 49 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Testing the Vessel.",
-            complete = QuestState(3123, "activeOrCompleted"),
-            route = {
-                Point(1444, 0.7442, 0.4336, "Testing the Vessel",
-                    "Travel to Testing the Vessel."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 40 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3123, state = "activeOrCompleted" },
+            },
+            sourceStep = 38,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 3122 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-3380-the-sunken-temple",
+            kind = "note",
+            text = "Reach level 46 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 46 },
+            },
+            requiredLevel = 46,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3380,
+            priority = 310,
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.4336, mapID = 1444, label = "Witch Doctor Uzer'i", offMapText = "Travel to Witch Doctor Uzer'i in Feralas.", x = 0.7442 },
+            },
+            text = "Accept The Sunken Temple from Witch Doctor Uzer'i.",
             id = "accept-3380-the-sunken-temple",
             kind = "accept",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 46 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Sunken Temple.",
-            complete = QuestState(3380, "activeOrCompleted"),
-            route = {
-                Point(1444, 0.7442, 0.4336, "The Sunken Temple",
-                    "Travel to The Sunken Temple."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 46 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3380, state = "activeOrCompleted" },
+            },
+            sourceStep = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

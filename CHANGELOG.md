@@ -2,24 +2,36 @@
 
 All notable changes to this project are documented here.
 
-## 0.3.4 - 2026-10-09
+## 0.4.0 - 2026-10-10
+- Select Blizzard quest navigation for ordinary objectives and completed turn-ins, with authored pins as fallback.
+- Refresh waypoints when transport arrival changes the route destination within the same guide step.
+- Restore saved route positions and full progress on login without Sync; keep unavailable quest completion unknown until it can be read.
+- Reduce startup memory allocations by validating shared route tables once and reusing class quest facts.
+- Make Sync wait for complete guide quest data before changing position, so repeated clicks keep a stable step.
+- Fix recovery notices appearing on fresh guides and repeating after every action.
+- Fix a crash while recovering saved class-guide progress.
+- Follow authored leveling and class itineraries one action at a time, including pickups, quest outings, turn-ins, and level checkpoints.
+- Keep walkthrough instructions and destination pins while showing live quest counts separately.
+- Recover missed Skyborne hunter pickups, retain the blocked action, and constrain quest-dialog assistance to the current step.
+- Preserve per-guide cursors and explicit skips. Back reviews earlier actions, and Sync reconciles progress against the client.
+- Repair class interactions, share class instructions with leveling insertions, and remove unsupported imported objectives and quest IDs.
+- Correct multipart quest instructions and retain observed preparation after consuming its items.
+- Keep optional dungeon and PvP chains in their separate guide categories.
 
+## 0.3.4 - 2026-10-09
 - Keep saved guide map pins visible when Blizzard has no quest POI, while preferring Blizzard's POI when one is available.
 - Refresh quest progress from Blizzard's completion state when a watched objective update leaves its objective row unchanged.
 - Add the Explore Moonglade achievement route with a pin for Lake Elune'ara.
 
 ## 0.3.3 - 2026-10-09
-
 - Add achievement-driven Legacy Points guides for Durotar, Dun Morogh, Westfall, Loch Modan, The Barrens, Hillsbrad Foothills, Redridge Mountains, Wetlands, Duskwood, Ashenvale, Teldrassil, Thousand Needles, and Darkshore.
 - Keep exploration progress tied to current achievement criteria, correct zone waypoints, and clear stale Durotar checks.
 - Repair quest routing for Elixir of Suffering and An Underrated Talent, correct The Sacred Flame and Gnarlpine Hold waypoints, and note that the Silithid Harvester can take hours to respawn and may be skipped.
 
 ## 0.3.2 - 2026-10-08
-
 - Add the Legacy Points category with Explore Silverpine Forest, Explore Tirisfal Glades, Explore Elwynn Forest, and Explore Mulgore. Their 15, 16, 12, and 14 waypoints clear from Forever's achievement criteria, and each guide's final step waits for overall achievement completion. Repair same-title quest-chain prerequisites across Casual, starter, class, and dungeon guides so follow-ups wait for the preceding turn-in, including Elixir of Suffering and Elixir of Pain.
 
 ## 0.3.1 - 2026-10-08
-
 - Casual waits only for its own quests after a reload. `PlayerState:Capture` reports `questRouteKnown` once the open guide's priority quests are read, and the Casual loading gate uses it instead of `questCompletionKnown`. That flag also covers every other guide's quests, which are read 24 per refresh, so accepted quests stayed on screen for dozens of refreshes.
 - Turn-in readiness trusts each quest once the client has answered for it, instead of waiting for the whole catalog.
 - Mark complete on a quest step the quest log contradicts records a single-step skip (`SkipLineage:Pass`) so the route moves on. Reconcile was clearing the ledger credit, so the button did nothing on accepts the character is never offered (#118). Progress still does not count the step.
@@ -36,7 +48,6 @@ All notable changes to this project are documented here.
 ## 0.3.0 - 2026-10-08
 
 ### Forever Casual Route
-
 - Replace the merged `1-60 Era` guide with **Forever Casual Route** rows for Alliance and Horde (compact library entries). Starter zones stay individual guides; post-starter Leveling chapters compose into Casual (level 12+) in registration order (Silverpine before Barrens).
 - Rebuild the route from classic leveling spines (`tools/import_classic_leveling.py`), omitting hearth, ding/grind, trainer, vendor, and flight-learn steps. Port Forever quests (id 90000+) onto the spines (`tools/port_forever_weaves.py`).
 - Graduate every 30-60 chapter from `Guides/Era/` into `Guides/Leveling/` and delete `Guides/Era/` plus orphan Leveling leftovers.
@@ -46,7 +57,6 @@ All notable changes to this project are documented here.
 - Character storage schemas 7-10 migrate deferred skips, `leveling-era` progress, and old woven chapter ids (including `skippedBecause`, `manualCompleted`, and `notOffered`) onto the Casual spine, and add per-camp `taxiBoarding`.
 
 ### Skips and step readiness
-
 - Add `SkipLineage.lua`: hard skip with a dependent cascade and a confirm dialog. Skip does not raise completion percent, Loremaster guides cannot skip, and the soft "defer for later" is removed. Sync and Previous clear skip clusters; stale skips clear on refresh.
 - Add `kind = "confirm"` for boss and event steps without quest completion.
 - Objective and quest-gossip steps wait until the quest is in the log. Turn-ins wait until the quest is complete (for example Miner's Fortune at 0/1 Cats Eye Emerald).
@@ -54,7 +64,6 @@ All notable changes to this project are documented here.
 - Inside a dungeon or raid, ready steps without outdoor pins stay ahead of capital turn-ins (Ragefire Chasm, Blackfathom Deeps).
 
 ### Navigation and flights
-
 - Turn-ins and objectives with `useClientPin` follow the Blizzard quest map POI, choosing the nearest when there are several. Authored pins are the fallback; `useClientPin = false` keeps the authored pin.
 - Flight copy names the camp closest to the quest pin (Crossroads, Ratchet, or Camp Taurajo) instead of "The Barrens", and boarding copy reads `Take the flight path to ...`.
 - Remember which flight master each taxi window was opened at (`taxiBoarding`) and walk to another master on the same land mass when the nearest one cannot reach a learned destination.
@@ -63,12 +72,10 @@ All notable changes to this project are documented here.
 - Fix Lua errors from `Taxi:Capture` without an `api` argument (opening the flight map) and from `PlayerState:Capture` reversing `UnitOnTaxi` results.
 
 ### Tracker
-
 - Right-click the tracker cog to open addon settings; left-click still opens the guide library.
 - Accept steps show their step text and client-pinned turn-ins show `Turn in <quest title>.`. Pin labels are no longer shown as the NPC, because imported labels are usually the quest title.
 
 ### Quest fixes
-
 - **The Spirits of Stonetalon**: the giver is Zor Lonetree in Grommash Hold. The accept and turn-in complete on their own when Goblin Invaders is active or done (breadcrumb bypass, no Skip needed), the gossip audit clears stale "not offered" blocks at Zor Lonetree, and Goblin Invaders depends on the Spirits turn-in.
 - **The Escape**: add the Wizzlecrank escort step so the route stays at the drill site until the escort is done.
 - **Miner's Fortune**: add a Boulder Lode objective before the Wharfmaster Dizzywig turn-in in Ratchet.
@@ -78,41 +85,33 @@ All notable changes to this project are documented here.
 - Pinless Leveling accepts get Use-the-item or navigation copy, pinless objectives and turn-ins use the client pin, and set-hearth note steps are removed.
 
 ### Performance
-
 - Route refresh makes about 80% less garbage (roughly 720 KB to 150 KB per refresh on the Horde Casual route), which removes the hitch on loot and quest pickup.
 - `BAG_UPDATE` is no longer registered. `BAG_UPDATE_DELAYED` rebuilds the route only when an item the route asked about appeared or left the bags, and `PlayerState:HasItem` keeps its answers until then.
 - `PlayerState:Capture` reuses unchanged completion tables, and `Engine:UrgentGoals` returns early when no quest timer is running.
 
 ### Tooling and checks
-
 - Lint fails on accepts with no turn-in (`OrphanAcceptAllowlist` for instant and auto quests) and on bare pinless `Accept ...` steps. Tests fail if merged Casual guides reuse a goal id. The importer understands `turninany` and `|instant`.
 - Empty `{}` condition children evaluate as no-ops.
 - Scrub third-party guide product names from shipped guides, engine code, docs, skills, and tools.
 
 ## 0.2.5 - 2026-10-06
-
 - Add a Horde **City of Dalaran Attunement** dungeon guide for the Dalaran Sewer Key chain (Prison Break In, Key to the City, Dalaran Patrols, Blood in the Streets, Heart of Disruption).
 
 ## 0.2.4 - 2026-10-06
-
 - Align Forever quest prerequisites with wow-database: Deliver the Signet waits on both Havoc in the Highlands and A Last Request; Journey to the Crossroads waits on Welcome to Azeroth for Horde Skyborne.
 - Set Sergra Darkthorn, Hamuul, and Hidden Enemies catalog modes to `any` to match Questie `preQuestSingle` (Silverpine Forever replacements left unchanged).
 
 ## 0.2.3 - 2026-10-06
-
 - Remove the optional Washte Pawne rare hunt from **The Barrens (Part 3)** so the route no longer detours for quest 885.
 - Fix inverted item-start quest chains (loot/kill before “Use the … to accept”) in Thousand Needles **Assassination Plot**, Durotar, Mulgore, Silverpine, Darkshore, Westfall, and matching Era chapters. Guide lint now fails if a starter-item objective depends on its use-item accept.
 
 ## 0.2.2 - 2026-10-06
-
 - Quest audit no longer blocks an accept step after you already picked up the quest. It reads the live quest log on gossip and clears a stale “not offered” report when the quest is in your log.
 
 ## 0.2.1 - 2026-10-05
-
 - Add a **Miscellaneous** guide category and a **Library Books** collection guide with map pins for Forever library books, manual pickup steps where needed, and milestone reward quests at 10, 20, and 25 books.
 
 ## 0.2.0 - 2026-10-05
-
 - Restyle the guide tracker and library with Blizzard NineSlice panel chrome (`UITheme.lua`) instead of flat dark overlays.
 - Add guide opacity in settings (50% to 100%, default 100%) with account storage schema version 5.
 - Tracker title bar: library cog, guide title, progress percent, and close control on one baseline.
@@ -121,76 +120,61 @@ All notable changes to this project are documented here.
 - Settings sliders have clearer spacing between scale and opacity; footer nav and resync use consistent spellbook-style chrome.
 
 ## 0.1.57 - 2026-10-04
-
 - Near-pin checks use distance on the same map, so a Barrens turn-in no longer reads as already at the NPC while you are still at Ratchet.
 - The Ishamuhale turn-in in The Barrens (Part 2) names Camp Taurajo as the flight destination. The tracker and map pin stay on the flight master until you reach Jorn Skyseer.
 - The optional Silithid Harvester hunt (quest 897) is no longer a step in The Barrens (Part 2) or (Part 3).
 
 ## 0.1.56 - 2026-10-04
-
 - A step in the same zone uses a learned flight path when the pin is at another flight camp and that flight master is closer than walking. The Crossroads to Camp Taurajo is that case.
 
 ## 0.1.55 - 2026-10-03
-
 - Darkshore (Part 3) accepts Unrequited Love from Archaeologist Hollee. Wetlands turns it in to Tarrel Rockweaver on the first Menethil visit.
 - Dun Morogh accepts Grund and Gozwin in Anvilmar at level 6, before the road to Kharanos.
 - Mulgore accepts the mining-charge and fish-fillet Stalk With The Earthmother steps from Boarton Shadetotem. The cone step stays off this route because the Windfury trip is already over. Warrior, Shaman, and Druid class guides carry the trials Boarton offers them.
 - WANTED: Bruuz waits for the last Ratchet stop in The Barrens (Part 1), after The Guns of Northwatch.
 
 ## 0.1.54 - 2026-10-03
-
 - Kaya's Alive turns in to Tammra Windfield on the first Sun Rock visit in Stonetalon Mountains (Part 1). Parts 3 and 4 still turn it in if it is still in the log.
 
 ## 0.1.53 - 2026-10-03
-
 - Silverpine accepts Letter to Jin'Zil from Darsok after Serena Bloodfeather. Stonetalon (Part 1) sends you back for that letter before Jin'Zil's Forest Magic.
 - The world map guide pin is created after the map's secure refresh, so opening the map no longer calls SetPassThroughButtons from the addon.
 - Class guides wait on Harmony in Balance before the Zephras class quest. Strength and Mercy waits on The Great Ursera Spirit, and the Horde Skyborne Call of Fire steps wait on the previous turn-in. Tower Defense waits on In Service of Zephras.
 
 ## 0.1.52 - 2026-10-03
-
 - Wailing Caverns no longer tracks When Dreams Turn to Nightmares or Waking Naralex. The finale escort and Mutanus are not quest steps in Forever.
 
 ## 0.1.51 - 2026-10-03
-
 - Added the Excavation Site: Wetlands dungeon quest guide for both factions.
 
 ## 0.1.50 - 2026-10-02
-
 - Assault on Fenris Isle warns that Thule Ravenclaw is an elite target and recommends bringing a group.
 
 ## 0.1.49 - 2026-10-02
-
 - The addon list groups Forever GuideMate under Quests using Blizzard category metadata, with localized category names for non-English clients.
 
 ## 0.1.48 - 2026-10-01
-
 - Hearts of the Lovers and Love Hurts now follow Devourer of Souls, matching the Questie prerequisite. What Is Love? follows the Alliance Devourer of Souls the same way.
 - Zephras chains whose Wowhead prerequisite list matches Questie now wait on those turn-ins. Catching Wind's quest 99260 has no page, and Tower Defense has an empty Wowhead prerequisite list, so those two stay unregistered.
 - Stalk With The Earthmother (76160) is offered to warriors, shamans, and druids, matching the Wowhead class line. The later follow-up stays shaman.
 - Step levels use a positive Questie quest level when that record exists. A zero or -1 leaves the previous Wowhead level.
 
 ## 0.1.47 - 2026-10-01
-
 - Quest accept, turn-in, and map-pin calls no longer run when the client would block them. That was adding to "Interface actions failed because of this AddOn" on the addon list, including repeated tries after a blocked call and clearing a Blizzard pin from inside a dungeon.
 
 ## 0.1.46 - 2026-10-01
-
 - Dungeon and raid guides follow their authored route instead of jumping to every quest on your current map. A pickup you already started still finishes the other quests at that pin, so Wailing Caverns accepts Deviate Eradication beside Deviate Hides before it sends you to Thunder Bluff.
 - Standing in the Wailing Caverns cave with Ebru accepts Deviate Eradication. Accept, turn-in, and gossip steps no longer use the global boat graph, and the tracker shows the quest text when you are at the pin.
 - `python3 tools/compile_addon.py --install` copies the built addon into the WoW AddOns path from `install.json`.
 - Tracker Sync, Back, Skip, and Mark complete tooltips show only their own help text, not the minimap button lines.
 
 ## 0.1.45 - 2026-10-01
-
 - Map pins and quest tracking stay off inside an instance, so the guide does not call the waypoint APIs that error while you are in a dungeon or raid.
 
 ## 0.1.44 - 2026-10-01
-
 - Ragefire Chasm accepts Slaying the Beast from Neeru Fireblade as soon as the insignia dialogue ends, then turns Hidden Enemies in to Thrall for the dungeon quest before sending you in to kill troggs.
 
 ## 0.1.43 - 2026-10-01
-
 - Dungeon guides now cover each classic dungeon and wing as its own route, with quest pickup order, boss order, and the mechanics that matter in the run.
 - Raid Quests is a separate library section. Onyxia's Lair Attunement is the only raid guide loaded. The other raid guides stay in the repo until they are converted for Forever.
 - Gnomeregan is a dungeon guide only. The level 40 raid route was removed.
@@ -198,62 +182,49 @@ All notable changes to this project are documented here.
 - The guide library shows the right completion percentage right after login. Before, a finished guide could read low until you opened it and pressed Sync.
 
 ## 0.1.42 - 2026-10-01
-
 - Stop the Spread waits until the worgen Arugal's Folly is turned in. Dalar Dawnweaver does not offer it while that quest is still in the log.
 
 ## 0.1.41 - 2026-09-30
-
 - Flight instructions now activate a Blizzard Map Pin at the flight master, including flights on quest steps, and restore the quest destination after arrival.
 - Landing from a flight automatically refreshes the guide so completed travel steps and flight instructions clear without pressing Sync.
 
 ## 0.1.40 - 2026-09-30
-
 - Lost in Battle (4921) uses an authored Beaten Corpse pin at 49.33, 50.32 in the Barrens for Blizzard Map Pins and TomTom when the step opts out of client quest tracking.
 
 ## 0.1.39 - 2026-09-30
-
 - Added a draggable minimap button with a yellow quest icon, matching LFG Forever’s size, black background, and centered layout. Left-click toggles the guide, right-click opens settings, and the Show minimap button option controls visibility.
 - Settings cannot be opened during combat and close when combat starts.
 
 ## 0.1.38 - 2026-09-30
-
 - Tirisfal paladin steps pick up Making Repairs at Bandarion Keep before sending you to Rudolph Gelhardt for The Tarnished, so both quests can be done on one trip.
 
 ## 0.1.37 - 2026-09-30
-
 - Native Blizzard quest tracking works even when quest waypoint coordinates are unavailable. TomTom falls back to client quest-map pin coordinates.
 - Quest-linked travel steps, including The Forgotten Pools, use Blizzard quest destinations instead of authored route pins.
 - Blizzard quest tracking no longer draws a duplicate GuideMate map marker. Ordinary travel keeps its route destination.
-
 - Blizzard Map Pins is the default navigation provider; TomTom is optional. Quest objectives and turn-ins use client quest locations and native tracking.
 - Navigation settings expose Blizzard’s shared in-world destination marker setting. GuideMate respects manually changed destinations.
 
 ## 0.1.36 - 2026-09-30
-
 - Stolen Silver waits until Raptor Thieves is turned in. Gazrog does not offer it before that.
 
 ## 0.1.35 - 2026-09-30
-
 - Leveling lint compares every shipped leveling chapter and fails when one drops objective or turn-in steps another chapter still has, unless that handoff is listed. Silverpine Forest turns in Jorn Skyseer on the Crossroads detour.
 - Prowlers of the Barrens, Echeyakee, The Angry Scytheclaws, and Jorn Skyseer wait until the previous Sergra quest is turned in.
 - The Barrens (Part 1) finishes Raptor Thieves and The Demon Seed. Stolen Silver stays a Crossroads pickup. Other Barrens accepts that hand off to Stonetalon or a camp the route does not visit stay accept-only, named in that chapter header.
 - Hovering Forever GuideMate in the addon compartment menu no longer errors. The tooltip anchors to the compartment button.
 
 ## 0.1.34 - 2026-09-30
-
 - Silverpine Forest tracks Plainstrider Menace through turn-in at Sergra Darkthorn before offering The Zhevra. The Barrens (Part 1) gates The Zhevra the same way.
 
 ## 0.1.33 - 2026-09-30
-
 - Interface options add Hide in Combat (off by default) and a Guide scale slider from 50% to 150% (default 100%).
 - Silverpine Forest picks up Watching the Roads on the southern Sepulcher return, does the Ambermill kills on the run toward Pyrewood, then turns it in before The Weaver.
 
 ## 0.1.32 - 2026-09-29
-
 - Silverpine Forest now accepts Watching the Roads after Ambermill Investigations is turned in, and The Weaver after Watching the Roads. The tracker no longer asks for The Weaver while Shadow Priest Allister only offers Watching the Roads.
 
 ## 0.1.31 - 2026-09-29
-
 - Horde and Alliance leveling chapters through level 30 are in the guide. Alliance Ashenvale is Part 1, Part 2, and Part 3. Wetlands is its own chapter. Horde adds The Barrens (Part 3), Thousand Needles (Part 1) and (Part 2), Ashenvale, Stonetalon Mountains (Part 3), and Hillsbrad Foothills.
 - Spoils of War is collected in Menethil Harbor with the keep pickups. Pigments for Paints is accepted beside Zangen Stonehoof, the pods are collected at Mirkfallon Lake with the Gaea Seeds, and the turn-in is on the Thunder Bluff visit at the end of Stonetalon.
 - Thousand Needles and the Hillsbrad quest list have no new Forever quests. Undead paladins take An Underrated Talent from Trevan Rol and Ott's Masterwork in Tarren Mill. Stepping Stones and ... and that note you found stay out because their hand-ins are not on a chapter stop. Wetlands quests with no start pin stay named.
@@ -263,12 +234,10 @@ All notable changes to this project are documented here.
 - Three more accepts wait for the turn-in that offers them: Dalar's worgen follow-up after Pyrewood Village, Her Name Is Olgra after Lost in Battle, and Linnea's abomination report after Rear Guard Patrol. The Temple of the Moon waits until Sister Aquinne takes The Sisterhood of Elune.
 
 ## 0.1.30 - 2026-09-29
-
 - The Tirisfal Glades chapter title no longer starts with 1-12. The library and tracker use Tirisfal Glades.
 - As Above, So Below and The One That Got Away are accepted together at Bandarion Keep, finished in the same Shadowvale cellar, and turned in together.
 
 ## 0.1.29 - 2026-09-29
-
 - Leveling chapter titles now use zone names. Revisited zones use (Part 1), (Part 2), and so on.
 - Leveling guide files now use zone slugs (`durotar.lua`, `darkshore-part-2.lua`, and so on) instead of level ranges.
 - Era chapter IDs were renamed to match (`leveling-era-durotar`, `leveling-era-darkshore-part-1`, …). Saved character data migrates on load (schema 5).
@@ -277,32 +246,26 @@ All notable changes to this project are documented here.
 - Stonetalon chapter titles now number parts per faction: Alliance uses a single `Stonetalon Mountains` row; Horde uses `(Part 1)` and `(Part 2)`.
 
 ## 0.1.28 - 2026-09-29
-
 - Tirisfal Glades now includes As Above, So Below after Bandarion Keep is turned in. Hilda the Breaker sends you into the Shadowvale cellars for Faintly Glowing Bones.
 
 ## 0.1.27 - 2026-09-28
-
 - Accepting or turning in a quest no longer walks every chapter on the game thread. Only the open chapter is rebuilt, and the map pin is read after that update finishes.
 - Addon memory no longer climbs for the whole session. The quest list is reused, and review history is capped.
 - Bandarion Keep waits until The Cult of the Damned and Remnants of War are turned in. Hadric Harlson offers those two first. Bandarion Keep is the precursor to the Lumina Windsinger escort.
 
 ## 0.1.26 - 2026-09-28
-
 - Standing still or starting to walk no longer locks the WoW client. Those moments were running the addon on the game's main thread: a quest-log pulse with nothing changed is ignored, and crossing a subzone only updates the waypoint.
 - Kill credit no longer selects quest-log rows or rereads the quest map pin. Quest completion for chapters you are not on is checked a few quests at a time, so one update cannot scan the whole catalog.
 
 ## 0.1.25 - 2026-09-28
-
 - Added a Class Quests section with one guide per class. Each guide keeps the classic class route and weaves in Forever class quests from the quest database, with race and faction on every step. A quest offered to both factions stays open to both. A race lock is added only when the database names the races, or when a single-faction classic guide names them and the database left the race blank.
 - Paladin quests for Horde are Undead only. Orc, Troll, Tauren, and Horde Skyborne have no paladin quests in the database. Dungeon class quests stay in the dungeon guides.
 
 ## 0.1.24 - 2026-09-28
-
 - Quests accepted in an earlier chapter now turn in on the later visit that already stops at that NPC, including unconverted Era chapters. That covers Ziz Fizziks, Further Instructions, Letter to Jin'Zil, Trouble in the Deeps, Boulderslide Ravine, The Ruins of Stardust, Pridewings of Stonetalon, The Tower of Althalaxx, Report to Gryan Stoutmantle, Sergra Darkthorn, The Barrens Oases, Grove of the Ancients, The Elder Crone, and An Old Colleague to Lomac on the Wetlands Ironforge visit. Ishamuhale and Enraged Thunder Lizards turn in to Jorn before their follow-ups.
 - Deepmoss Spider Eggs are collected in Sishir Canyon with Blood Feeders, and turned in to Mebok on the next Ratchet visit. No new Stonetalon or Ashenvale quest sits on the 20-22, 21-22, or 22-23 passes.
 
 ## 0.1.23 - 2026-09-28
-
 - Woven objectives now finish on the same classic trip as the Forever speedrun: Brill deathguards with the first Brill visit, hides with the duskbat and murloc kills, Seeking Refuge at Solliden, Shadowvale elixir with the western crypt run, Echo Isles idols with Zalazane, Northshire books with the kobolds, and the Westfall wells with the gnoll patrol.
 - New Forever quests on leveling routes wait for Wowhead's Level line when that line is at least 5 levels above Requires level. Smaller gaps, class quests, classic quests, and dungeon pickups still use the level the NPC offers them.
 - Tomb Weed is accepted only after Doom Weed is turned in. Wowhead does not record that requirement, so the quest stays at the level Holland offers it.
@@ -310,22 +273,18 @@ All notable changes to this project are documented here.
 - Tomb Weed is still accepted after Doom Weed. The weeds are collected at Balnir Farmstead with Rear Guard Patrol, and turned in after the last A New Plague.
 
 ## 0.1.22 - 2026-09-28
-
 - Each 1-12 starter route now includes The Great Outdoors after The Adventurer turn-in.
 - Durotar and Mulgore Loremaster guides follow the updated leveling spine, including The Adventurer and The Great Outdoors.
 
 ## 0.1.21 - 2026-09-27
-
 - Tirisfal Glades now includes the Undead paladin steps A Difficult Path, Rediscovering the Light, Coming to Terms, and Continue Your Training.
 - Starter chapters now include the Forever class quests whose givers are already on the route. Class quests with no start pin stay named in the chapter header.
 - The Adventurer is on each 1-12 starter route. Zephras Isle already had its own copy.
 
 ## 0.1.20 - 2026-09-27
-
 - Ruins of Lordaeron dungeon guide: Horde enter at the Undercity portal (71.78, 11.44), and A Frightened Request from Tabitha Heartweaver in the Sepulcher is included in the pickup route.
 
 ## 0.1.19 - 2026-09-27
-
 - Accepting, turning in, looting, or killing an objective no longer stalls the client while the quest log rebuilds. The guide waits until that burst settles, then refreshes once.
 - A quest list from one NPC accepts the current step, then the next ready quest that same giver offers. Master Vornal still offers Forgotten Loa Idols after A Solvent Spirit.
 - Encroachment stays off the tracker until level 6, which is when Gar'Thok offers it.
@@ -333,50 +292,40 @@ All notable changes to this project are documented here.
 - When every remaining step needs a higher level, the tracker says to grind or run a dungeon until you can take the next one.
 
 ## 0.1.18 - 2026-09-27
-
 - Sync reopens skipped accept steps when that quest is not in your log, so warlock Vile Familiars can surface again instead of staying behind Lazy Peons or Thazz'ril's Pick.
 - Lazy Peons waits for the Vile Familiars Zureetha turn-in (warlock) or the standard cave turn-in (other classes).
 - Prerequisite inference no longer marks quest steps complete when the quest log shows they are still unfinished.
 
 ## 0.1.17 - 2026-09-27
-
 - Era Durotar, Mulgore, and Crossroads Conscription accepts now wait for the prior turn-in (or objective) that unlocks them in the client, including the warlock Vile Familiars handoff before Burning Blade Medallion.
 
 ## 0.1.16 - 2026-09-27
-
 - Loremaster now ships Durotar and Mulgore only. The other zone guides are removed until each one is rewritten from its leveling route.
 - Durotar Loremaster includes Hidden Enemies (5726 and 5727) from the 1–12 leveling route. The insignia is collected in Skull Rock, and the follow-up dialogue is with Neeru Fireblade.
 
 ## 0.1.15 - 2026-09-27
-
 - Guide completion in the library is calculated for every guide when quest state is read, so a chapter you have already started no longer stays at 0% until you open it.
 - The Skyborne starter is listed as 1-14 Zephras Isle.
 
 ## 0.1.14 - 2026-09-27
-
 - Reordered the Zephras Isle route to the 1-14 Skyborne speedrun: grove kills, the watchtower, then the southbound Shen'dar and Valanaar loops. Accepts that had no earlier step now wait for the previous open step, so the tracker stays on the route.
 - Alliance Skyborne now continue after The Magical City of Dalaran: Welcome to Azeroth, Exploring the Alliance, and the Journey to Sentinel Hill pickup. Alliance druids take Child of Nature and Moonglade on that same city trip. The Sentinel Hill turn-in stays on the Westfall chapter.
 
 ## 0.1.13 - 2026-09-26
-
 - Guide recalculation now clears saved quest-giver availability observations for the selected guide, allowing corrected routes to recover from quests that were previously checked too early.
 
 ## 0.1.12 - 2026-09-26
-
 - Zephras now completes the faction-specific Welcome to Shen'dar Village introduction before routing into The Criminal Element and the village side-quest pickups, preventing unavailable quests such as The Problem With Prideclaws from blocking the guide.
 
 ## 0.1.11 - 2026-09-26
-
 - Added a tracker Sync button that recalculates the current position from live quest and profession state while preserving completed and intentionally skipped steps.
 - A changed guide revision now performs the same resync once client state is fully available. Ordinary login, quest updates, and guide switching still preserve the saved step.
 
 ## 0.1.10 - 2026-09-26
-
 - Mid-guide recovery now follows route order, trusts known client quest state over stale saved progress, rewinds through registered quest prerequisites, and blocks with a diagnostic instead of silently skipping an unavailable quest. The Barrens leveling and Loremaster routes now both include the Altered Beings, Hamuul Runetotem, and Nara Wildmane chain.
 - The Zephras route now accepts both Aetheen breadcrumbs before leaving Thendal Grove, then completes Al'Aketh Thugs on the southbound trip into Shen'dar Village instead of backtracking.
 
 ## 0.1.9 - 2026-09-26
-
 - Every guide now prefers live quest-log pins for objectives, gossip, and turn-ins. Objective steps show the first unfinished client objective and advance through the API rows as each one completes; authored data remains the fallback.
 - Added a distinct gossip step for quest dialogue, starting with The Anchors of Zephras.
 - Turn-ins now display `Quest Name @ NPC or Object`, using the live client title and the authored destination name.
@@ -384,44 +333,35 @@ All notable changes to this project are documented here.
 - Chained Aggressive Encroachment and Al'Aketh Thugs to the point where the Zephras route reaches their quest givers.
 
 ## 0.1.8 - 2026-09-26
-
 - Converted the 20-22 Stonetalon, 21-22 Ashenvale, and 22-23 Stonetalon chapters onto the 1-60 route. Forever quests on those zone lists are past each chapter's level, start in another zone, or have no giver on the route, so the classic steps stay as they are.
 - Forever quest facts for guide work now come from the wow-database zone bundles.
 
 ## 0.1.7 - 2026-09-26
-
 - An objective with no saved spot shows the quest log objective under the quest title. The tracker no longer uses the landmark NPC name once the quest log pin moves.
 
 ## 0.1.6 - 2026-09-26
-
 - Auto navigation now walks directly to a nearby cross-zone objective when reaching the flight master would already be farther. The comparison uses the client map hierarchy, so it applies dynamically to current and future zones.
 
 ## 0.1.5 - 2026-09-26
-
 - Repeatable quests no longer stay on the route after you are done with them. Finding the Antidote drops out once Need for a Cure is turned in. The Mangletooth buffs and Mending Old Wounds are left off the Barrens Loremaster route. Bone Collector and the Blasted Lands bloodmage buffs appear only while they are in your log. Again With the Zapped Giants is not tracked, and the Witch Doctor Unbagwa turn-in clears with Stranglethorn Fever.
 
 ## 0.1.4 - 2026-09-26
-
 - A flight path is suggested only when you know a flight point in that zone on the same land mass. A shared word such as "Mountains" no longer counts, so knowing an Alterac or Redridge flight point no longer sends you to fly to Stonetalon.
 
 ## 0.1.3 - 2026-09-26
-
 - Logging in purges flight routes saved by older releases that were never learned, so an undiscovered trip such as the Barrens run to Stonetalon no longer suggests its flight path.
 
 ## 0.1.2 - 2026-09-26
-
 - Flight memory is stored per land mass: opening any flight master refreshes only that land mass (Kalimdor, Eastern Kingdoms, and so on). A distant listing no longer counts as a learned flight, so an unlearned trip such as the Barrens run to Stonetalon keeps the road instead of sending you to a flight master.
 - Added the addon-list icon, so the addon no longer shows a red question mark in the addon list.
 
 ## 0.1.1 - 2026-09-25
-
 - Logging in with a started guide no longer opens the guide library; it opens only when no guide has been chosen yet.
 - Added stable release automation: numbered GitHub Releases from `v*` tags, preview builds for `main` merges, and `RELEASE_NOTES.md` as the CurseForge changelog.
 - Added the Wednesday Forever interface compatibility updater and its release tooling.
 - Documented the release process in `docs/DEVELOPMENT.md` and the README.
 
 ## 0.1.0 - 2026-09-23
-
 - Created the initial repository and addon scaffold.
 - Added the guide engine, objective-style tracker, guide library, persistent completion progress, navigation arrow, active-route map pin, and the initial Ragefire Chasm quest guide.
 - Added the Wailing Caverns dungeon quest guide for level 15.

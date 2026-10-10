@@ -54,6 +54,8 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("OrderedRoutes.lua")
+Load("ClassChains.lua")
 Load("SkipLineage.lua")
 Load("QuestPrerequisites.lua")
 Load("QuestAudit.lua")
@@ -1013,7 +1015,7 @@ function TestElixirOfSufferingFollowup()
     local objective = ns.Engine:GetGoal(guide, "objective-496-elixir-of-suffering")
     local turnin = ns.Engine:GetGoal(guide, "turnin-496-elixir-of-suffering")
     local followup = ns.Engine:GetGoal(guide, "accept-499-elixir-of-suffering")
-    local state = { faction = "Horde", level = 26, quests = { [496] = { complete = false } },
+    local state = { faction = "Horde", raceID = 2, classID = 1, level = 26, quests = { [496] = { complete = false } },
         completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
     Equal(ns.Engine:IsGoalDone(firstAccept, state, guide), true,
         "the active gathering quest clears its own Elixir of Suffering accept")
@@ -1036,26 +1038,18 @@ function TestElixirOfSufferingFollowup()
 end
 TestElixirOfSufferingFollowup()
 
-function TestUnderratedTalentWaitsForMoonKissedBlade()
+function TestUnderratedTalentUsesVerifiedPrerequisites()
     local guide = ns.guides["leveling-era-horde-hillsbrad-foothills"]
     local accept = ns.Engine:GetGoal(guide, "woven-accept-95111-an-underrated-talent")
     local state = {
         faction = "Horde", raceID = 5, classID = 2, level = 22,
         quests = {}, completedQuests = {}, questLogKnown = true, questCompletionKnown = true,
     }
-    local ready, reason = ns.Engine:IsReady(guide, accept, state)
-    Equal(ready, false, "the woven 95111 accept waits for A Moon-Kissed Blade")
-    Equal(reason, "Quest has not been turned in.", "the unmet 95111 prerequisite is identified")
-    local tracked = false
-    for _, questID in ipairs(ns.GetTrackedQuestIDs()) do
-        if questID == 95036 then tracked = true end
-    end
-    Check(tracked, "A Moon-Kissed Blade completion is included in the quest-state query")
-    state.completedQuests[95036] = true
+    Equal(#accept.requiredQuests, 0, "the pinned Forever facts do not require quest 95036 for 95111")
     Equal(ns.Engine:IsReady(guide, accept, state), true,
-        "the woven 95111 accept opens after A Moon-Kissed Blade is turned in")
+        "the pickup does not inherit a prerequisite from its itinerary position")
 end
-TestUnderratedTalentWaitsForMoonKissedBlade()
+TestUnderratedTalentUsesVerifiedPrerequisites()
 
 local badCoordinateOK = pcall(function()
     ns:RegisterGuide({ id = "bad-coordinate", title = "Bad", category = "Test", revision = 1,
@@ -1087,7 +1081,7 @@ ForeverGuideMateCharDB = {
 }
 ns.InitializeStorage()
 Equal(ns.db.schemaVersion, 5, "account schema migrated")
-Equal(ns.charDB.schemaVersion, 10, "character schema migrated")
+Equal(ns.charDB.schemaVersion, 11, "character schema migrated")
 Equal(ns.db.tracker.point, "LEFT", "schema migration places the tracker on the left")
 Equal(ns.db.tracker.relativePoint, "LEFT", "schema migration anchors the tracker to the left edge")
 Equal(ns.db.tracker.x, 0, "schema migration starts the tracker at the left edge")
@@ -1631,8 +1625,8 @@ function TestSpiritsOfStonetalonTravelCopy()
         completedQuests = {},
         questLogKnown = true, questCompletionKnown = true,
     }
-    Check(ns.Engine:IsGoalDone(accept, withGoblin, guide),
-        "Spirits accept is satisfied when Goblin Invaders is already in the log")
+    Check(not ns.Engine:IsGoalDone(accept, withGoblin, guide),
+        "A later active quest does not prove the Spirits pickup was completed")
     local goblinAccept = ns.Engine:GetGoal(guide, chapterID .. ":accept-1062-goblin-invaders")
     local spiritsTurnin = chapterID .. ":turnin-1061-the-spirits-of-stonetalon"
     if goblinAccept and type(goblinAccept.dependsOn) == "table" then
@@ -1656,8 +1650,8 @@ function TestSpiritsOfStonetalonTravelCopy()
     }
     Check(ns.Engine:QuestChainBypassed(accept, onlyGoblinDone, apiGoblinDone),
         "Spirits accept bypasses when the client flags Goblin Invaders complete")
-    Check(ns.Engine:IsGoalDone(accept, onlyGoblinDone, guide),
-        "Spirits accept is done without Skip when Goblin Invaders is finished")
+    Check(not ns.Engine:IsGoalDone(accept, onlyGoblinDone, guide),
+        "A later completed quest does not grant Spirits completion")
 end
 TestSpiritsOfStonetalonTravelCopy()
 
@@ -1785,8 +1779,8 @@ function TestItemStartWaitsForBagItem()
         if goal.id == hoofNote.id then hoofNoteIdx = index end
         if goal.id == harvesterNote.id then harvesterNoteIdx = index end
     end
-    Check(hoofNoteIdx ~= nil, "Lakota'mani loot note is a route candidate without the item")
-    Check(harvesterNoteIdx ~= nil, "Harvester loot note is a route candidate without the item")
+    Equal(#candidates, 1, "ordered routes expose one authored action")
+    Check(harvesterNoteIdx == nil, "later loot outings do not bypass earlier work")
     Equal(hoofIdx, nil, "Use the Hoof is not a candidate without the item")
     Equal(harvesterIdx, nil, "Use the Harvester's Head is not a candidate without the item")
     local stateWithItem = {
@@ -2908,6 +2902,7 @@ function TestActiveGoalReload()
     ns.Engine:SelectGuide(casualID)
     ns.charDB.activeGoal = pinnedID
     ns.charDB.activeGoalByGuide = { [casualID] = pinnedID }
+    ns.charDB.orderedRoutes = { [casualID] = { revision = guide.revision, cursor = pinnedID, confirmed = {}, skipped = {}, skippedBecause = {}, history = {} } }
     ns.Engine:Refresh(base)
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, pinnedID,
         "a saved Barrens accept stays pinned on Casual")
@@ -3007,7 +3002,7 @@ function TestNaraWildmaneChain()
     if not era then return end
     local accept = ns.Engine:GetGoal(era, "leveling-era-horde-the-barrens-and-stonetalon-mountain:accept-1490-nara-wildmane")
     if not accept or type(accept.dependsOn) ~= "table" then return end
-    Check(accept.dependsOn[1] == "leveling-era-horde-the-barrens-and-stonetalon-mountain:turnin-1489-hamuul-runetotem",
+    Check(accept.requiredQuests[1] and accept.requiredQuests[1].quests[1] == 1489,
         "Nara Wildmane waits until Hamuul Runetotem is turned in at Elder Rise")
     local turnin = ns.Engine:GetGoal(era, "leveling-era-horde-the-barrens-and-stonetalon-mountain:turnin-1490-nara-wildmane")
     Check(turnin and turnin.route[#turnin.route].label == "Nara Wildmane",
@@ -3285,6 +3280,7 @@ local starter = {}
 for key, value in pairs(baseState) do starter[key] = value end
 starter.level = 1
 starter.classID = 1
+starter.raceID = 96
 starter.faction = "Horde"
 starter.quests = {}
 starter.completedQuests = {}
@@ -3292,7 +3288,8 @@ ns.charDB.activeGoal = nil
 ns.charDB.history = {}
 ns.charDB.deferred = {}
 ns.charDB.completionLedger = {}
-ns.Engine:SelectGuide("leveling-zephras-isle")
+ns.charDB.orderedRoutes = {}
+ns.charDB.selectedGuide = "leveling-zephras-isle"
 ns.Engine:Refresh(starter)
 Equal(ns.Engine.currentGoal.id, "accept-coming-of-age", "zephras starts with Coming of Age")
 local grove = {}
@@ -3375,10 +3372,10 @@ local zephrasObjective = ns.Engine:GetGoal(zephras, "objective-harmony-in-balanc
 local zephrasTurnin = ns.Engine:GetGoal(zephras, "turnin-92461-harmony-in-balance")
 local zephrasAccept = ns.Engine:GetGoal(zephras, "accept-harmony-in-balance")
 local zephrasGossip = ns.Engine:GetGoal(zephras, "gossip-the-anchors-of-zephras")
-Equal(zephrasObjective.useClientPin, true, "Zephras objectives prefer client pins")
-Equal(zephrasObjective.useClientText, true, "Zephras objectives prefer client text")
-Equal(zephrasTurnin.useClientPin, true, "Zephras turn-ins prefer client pins")
-Equal(zephrasAccept.useClientPin, nil, "Zephras accepts keep authored pins")
+Equal(zephrasObjective.useClientPin, false, "Zephras objectives keep authored pins")
+Equal(zephrasObjective.useClientText, false, "Zephras objectives keep authored text")
+Equal(zephrasTurnin.useClientPin, false, "Zephras turn-ins keep authored pins")
+Equal(zephrasAccept.useClientPin, false, "Zephras accepts keep authored pins")
 Equal(zephrasGossip.kind, "gossip", "The Anchors of Zephras identifies its dialogue interaction")
 Equal(zephrasGossip.useClientPin, true, "gossip steps prefer client pins")
 local elementalAccept = ns.Engine:GetGoal(zephras, "accept-elemental-unrest")
@@ -3437,7 +3434,9 @@ local thendalDeparture = {
         adventurerAccept,
         nextStepAccept,
         alakethAccept,
-        ns.Engine:GetGoal(zephras, "objective-alaketh-thugs"),
+        ns.Engine:GetGoal(zephras, "objective-92544-authored-alaketh-brute"),
+        ns.Engine:GetGoal(zephras, "objective-92544-authored-alaketh-neophyte"),
+        ns.Engine:GetGoal(zephras, "objective-92544-authored-malduko-cloudcrush"),
         ns.Engine:GetGoal(zephras, "turnin-alaketh-thugs"),
         adventurerTurnin,
         nextStepTurnin,
@@ -3461,7 +3460,7 @@ departureState.quests[96638] = { complete = false, objectives = {} }
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "accept-alaketh-thugs",
     "the southbound route stops at Hanaa before entering Shen'dar")
 departureState.quests[92544] = { complete = false, objectives = {} }
-Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "objective-alaketh-thugs",
+Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "objective-92544-authored-alaketh-brute",
     "Al'Aketh Thugs is completed before continuing south")
 departureState.quests[92544].complete = true
 Equal(ns.Engine:CandidateGoals(thendalDeparture, departureState)[1].id, "turnin-alaketh-thugs",
@@ -3597,7 +3596,10 @@ hordeSkyborne.level = 4
 Equal(ns.EvaluateCondition(leyLines.conditions, hordeSkyborne), false, "horde skyborne do not read the ley lines")
 Equal(ns.EvaluateCondition(skysight.conditions, hordeSkyborne), true, "horde skyborne can take Skysight")
 Equal(ns.EvaluateCondition(falling.conditions, hordeSkyborne), true, "horde skyborne can take Falling With Style")
-Equal(ns.EvaluateCondition(falling.conditions, starter), false, "other races do not take Falling With Style")
+nonSkyborne = {}
+for key, value in pairs(starter) do nonSkyborne[key] = value end
+nonSkyborne.raceID = 6
+Equal(ns.EvaluateCondition(falling.conditions, nonSkyborne), false, "other races do not take Falling With Style")
 local hordeShaman = {}
 for key, value in pairs(hordeSkyborne) do hordeShaman[key] = value end
 hordeShaman.classID = 7
@@ -3606,13 +3608,14 @@ Equal(ns.EvaluateCondition(callOfFire.conditions, hordeShaman), true, "horde sky
 local otherShaman = {}
 for key, value in pairs(shaman) do otherShaman[key] = value end
 otherShaman.level = 10
+otherShaman.raceID = 6
 Equal(ns.EvaluateCondition(callOfFire.conditions, otherShaman), false, "other horde shamans do not take Call of Fire")
 local skyborneWarrior = {}
 for key, value in pairs(hordeSkyborne) do skyborneWarrior[key] = value end
 skyborneWarrior.classID = 1
 skyborneWarrior.level = 10
 Equal(ns.EvaluateCondition(skybreaker.conditions, skyborneWarrior), true, "skyborne warriors can take The Skybreaker Bulwark")
-Equal(ns.EvaluateCondition(skybreaker.conditions, starter), false, "other warriors do not take The Skybreaker Bulwark")
+Equal(ns.EvaluateCondition(skybreaker.conditions, nonSkyborne), false, "other warriors do not take The Skybreaker Bulwark")
 local foulMatriarch = ns.Engine:GetGoal(zephras, "accept-foul-matriarch")
 local beforeAetheen = {}
 for key, value in pairs(starter) do beforeAetheen[key] = value end
@@ -3939,7 +3942,8 @@ end
 ns.charDB.activeGoal = nil
 ns.charDB.history = {}
 ns.Engine.reviewingGoal = nil
-ns.Engine:Refresh(arrived)
+ns.charDB.selectedGuide = zephras.id
+ns.Engine:ResyncCurrent(arrived)
 Equal(ns.Engine.currentGoal.id, "accept-welcome-to-azeroth",
     "landing in Mulgore continues with Welcome to Azeroth")
 arrived.quests[95350] = { complete = true, objectives = {} }
@@ -4953,9 +4957,9 @@ function TestEncroachmentWaitsUntilGarThokOffersIt()
     if not (levelGate and levelGate.level and levelGate.level.min == 6) then
         return
     end
-    Equal(ns.EvaluateCondition(goal.conditions, { level = 5, faction = "Horde", classID = 9 }), false,
+    Equal(ns.EvaluateCondition(goal.conditions, { level = 5, faction = "Horde", raceID = 2, classID = 9 }), false,
         "a level 5 warlock is not sent to accept Encroachment")
-    Equal(ns.EvaluateCondition(goal.conditions, { level = 6, faction = "Horde", classID = 9 }), true,
+    Equal(ns.EvaluateCondition(goal.conditions, { level = 6, faction = "Horde", raceID = 2, classID = 9 }), true,
         "Encroachment is offered from level 6")
 end
 TestEncroachmentWaitsUntilGarThokOffersIt()
@@ -4974,7 +4978,7 @@ function TestStaleFlightRoutesPurged()
         taxiNodes = { ["thunder bluff, mulgore"] = "Thunder Bluff, Mulgore" },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 10, "stale flight storage migrates forward")
+    Equal(ns.charDB.schemaVersion, 11, "stale flight storage migrates forward")
     local survivors = ns.charDB.taxiRoutes[1413] and ns.charDB.taxiRoutes[1413].destinations or {}
     Check(survivors["thunder bluff, mulgore"] ~= nil, "a learned flight survives the route purge")
     Equal(survivors["sun rock retreat, stonetalon mountains"], nil,
@@ -5002,7 +5006,7 @@ function TestEraChapterIdMigration()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 10, "era chapter rename bumps character schema")
+    Equal(ns.charDB.schemaVersion, 11, "era chapter rename bumps character schema")
     Equal(ns.charDB.selectedGuide, "leveling-era-durotar", "selectedGuide migrates to the new chapter id")
     Equal(ns.charDB.eraChapterPick, "leveling-era-horde-the-barrens-and-stonetalon-mountain", "eraChapterPick migrates")
     Equal(ns.charDB.activeGoal, "leveling-era-durotar:accept-4641-your-place-in-the-world",
@@ -5038,7 +5042,7 @@ function TestSkippedBecauseRemapsWithSchema9()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 10, "schema 9 remaps skip cascade tables")
+    Equal(ns.charDB.schemaVersion, 11, "schema 9 remaps skip cascade tables")
     local root = "leveling-era-horde-the-barrens-and-stonetalon-mountain:accept-844-plainstrider-menace"
     local child = "leveling-era-horde-the-barrens-and-stonetalon-mountain:accept-845-the-zhevra"
     Check(ns.charDB.skipped[root], "skipped root remaps onto Casual Barrens id")
@@ -5065,7 +5069,7 @@ function TestAshenvalePartIdMigration()
         },
     }
     ns.InitializeStorage()
-    Equal(ns.charDB.schemaVersion, 10, "ashenvale part rename bumps character schema")
+    Equal(ns.charDB.schemaVersion, 11, "ashenvale part rename bumps character schema")
     Equal(ns.charDB.selectedGuide, "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
         "the first Alliance Ashenvale chapter migrates to part 1")
     Equal(ns.charDB.activeGoal, "leveling-era-alliance-ashenvale-and-stonetalon-mountains:turnin-967-the-tower-of-althalaxx",
@@ -5336,7 +5340,7 @@ function TestLibraryProgressReadsEveryGuide()
         if questID == 783 then westfallQuest = true end
     end
     Check(durotarQuest, "login reads Durotar quest completion")
-    Check(westfallQuest, "login reads quest completion for guides that are not open")
+    Check(not westfallQuest, "login prioritizes the complete selected guide instead of unrelated guides")
 end
 TestLibraryProgressReadsEveryGuide()
 
@@ -5529,26 +5533,15 @@ local function TestClassQuestGuides()
             if string.find(text, "A Difficult Path", 1, true) and goal.kind == "accept" then
                 undeadPaladin = goal
             end
-            local function Walk(condition)
-                if type(condition) ~= "table" then return end
-                local race = condition.race
-                if race == 2 or race == 6 or race == 8 or race == 96 then
-                    orcPaladin = goal.id
-                elseif type(race) == "table" then
-                    for _, value in ipairs(race) do
-                        if value == 2 or value == 6 or value == 8 or value == 96 then
-                            orcPaladin = goal.id
-                        end
-                    end
-                end
-                if condition.all then for _, child in ipairs(condition.all) do Walk(child) end end
-                if condition.any then for _, child in ipairs(condition.any) do Walk(child) end end
+            for _, race in ipairs({ 2, 6, 8, 96 }) do
+                if goal.id:find("a-difficult-path", 1, true) and ns.EvaluateCondition(goal.conditions, { faction = "Horde", raceID = race, classID = 2, level = 60,
+                    professionsKnown = true, professions = {}, quests = {}, completedQuests = {},
+                    questLogKnown = true, questCompletionKnown = true }) == true then orcPaladin = goal.id end
             end
-            Walk(goal.conditions)
         end
     end
     Check(undeadPaladin ~= nil, "the paladin guide includes the Undead quest A Difficult Path")
-    Check(orcPaladin == nil, "the paladin guide has no Orc, Troll, Tauren, or Horde Skyborne steps")
+    Check(orcPaladin == nil, "the Undead paladin opening excludes other Horde races")
     if undeadPaladin then
         local undead = { faction = "Horde", raceID = 5, classID = 2, level = 2 }
         local orc = { faction = "Horde", raceID = 2, classID = 2, level = 2 }
@@ -5580,9 +5573,9 @@ local function TestClassQuestGuides()
         local tauren = { faction = "Horde", raceID = 6, classID = 11, level = 50 }
         Equal(ns.EvaluateCondition(torwa.conditions, nightElf), true,
             "a Night Elf druid can accept Torwa Pathfinder")
-        Equal(ns.EvaluateCondition(torwa.conditions, tauren), true,
+        Equal(ns.EvaluateCondition(Goal(druid, "accept-9063-torwa-pathfinder-horde").conditions, tauren), true,
             "a Tauren druid can accept Torwa Pathfinder")
-        Check(HasLabel(torwa, "Turak Runetotem"),
+        Check(HasLabel(Goal(druid, "accept-9063-torwa-pathfinder-horde"), "Turak Runetotem"),
             "Torwa Pathfinder keeps the Thunder Bluff giver")
     end
 
@@ -5612,12 +5605,14 @@ local function TestClassQuestGuides()
     if islander then
         local orc = { faction = "Horde", raceID = 2, classID = 1, level = 30 }
         local human = { faction = "Alliance", raceID = 1, classID = 1, level = 30 }
-        Equal(ns.EvaluateCondition(islander.conditions, orc), true,
+        Equal(ns.EvaluateCondition(Goal(warrior, "accept-1718-the-islander-horde").conditions, orc), true,
             "a Horde warrior can accept The Islander")
         Equal(ns.EvaluateCondition(islander.conditions, human), true,
             "an Alliance warrior can accept The Islander")
-        Check(HasLabel(islander, "Sorek"), "The Islander keeps the Orgrimmar giver")
-        Check(HasLabel(islander, "Baltus Fowler"), "The Islander keeps the Undercity giver")
+        Check(HasLabel(Goal(warrior, "accept-1718-the-islander-horde"), "Baltus Fowler"),
+            "The Islander selects the Undercity trainer for its Horde itinerary")
+        Check(#Goal(warrior, "accept-1718-the-islander-horde").route == 1,
+            "The Islander selects one authored trainer destination")
     end
 
     local shaman = ns.guides["class-shaman"]
@@ -5664,11 +5659,8 @@ local function TestClassQuestGuides()
         { "class-mage", "accept-1941-manaweave-robe", "Alliance", 8, { [7] = true, [3] = false } },
         { "class-paladin", "accept-1649-the-tome-of-valor", "Alliance", 2, { [3] = true, [95] = false } },
         { "class-shaman", "accept-1520-call-of-earth", "Horde", 7, { [6] = true, [8] = false } },
-        { "class-shaman", "accept-1462-earth-sapta", "Horde", 7, { [6] = true, [8] = false } },
-        { "class-shaman", "accept-972-water-sapta", "Horde", 7, { [2] = true, [5] = false } },
         { "class-shaman", "accept-1516-call-of-earth", "Horde", 7, { [2] = true, [8] = true, [6] = false } },
         { "class-shaman", "accept-1519-call-of-earth", "Horde", 7, { [6] = true, [2] = false } },
-        { "class-shaman", "accept-1463-earth-sapta", "Horde", 7, { [8] = true, [6] = false } },
     }
     for _, case in ipairs(raceGates) do
         local step = Goal(ns.guides[case[1]], case[2])
@@ -5707,6 +5699,13 @@ local function TestClassQuestGuides()
         end
     end
 
+    for _, questID in ipairs({1462,1463,1464,972,1103,7669}) do
+        for _, goal in ipairs(shaman.goals) do
+            Check(ns.Engine:GetGoalQuestID(goal) ~= questID,
+                "optional replacement Sapta services are absent from the normal class itinerary")
+        end
+    end
+
     local unlocks = {
         { "class-hunter", "accept-94978-taming-the-beast", "turnin-94007-taming-the-beast" },
         { "class-hunter", "accept-94013-taming-the-beast", "turnin-94979-taming-the-beast" },
@@ -5716,8 +5715,6 @@ local function TestClassQuestGuides()
         { "class-warrior", "accept-1843-brutal-gauntlets", "turnin-1842-satyr-hooves" },
         { "class-warlock", "accept-4964-the-completed-orb-of-darorahil", "turnin-4976-returning-the-cleansed-orb" },
         { "class-warlock", "accept-4975-the-completed-orb-of-nohorahil", "turnin-4976-returning-the-cleansed-orb" },
-        { "class-shaman", "accept-1464-fire-sapta", "turnin-1525-call-of-fire" },
-        { "class-shaman", "accept-1103-call-of-water", "turnin-63-call-of-water" },
     }
     for _, case in ipairs(unlocks) do
         local guide = ns.guides[case[1]]
@@ -5739,20 +5736,20 @@ local function TestClassQuestGuides()
     for _, goalID in ipairs({ "accept-5927-heeding-the-call", "turnin-5927-heeding-the-call",
         "accept-5928-heeding-the-call", "turnin-5928-heeding-the-call" }) do
         local step = Goal(druid, goalID)
-        Check(step ~= nil and ns.Engine:IsGoalDone(step, tauren, druid),
+        Check(step ~= nil and ns.OrderedRoutes:ExcludedAction(step, tauren) and not ns.Engine:IsGoalDone(step, tauren, druid),
             goalID .. " is skipped once Heeding the Call is turned in at another trainer")
     end
     local orc = { faction = "Horde", raceID = 2, classID = 7, level = 4, quests = { [1519] = { objectives = {} } },
         completedQuests = {}, questLogKnown = true, questCompletionKnown = true }
     local durotarObjective = Goal(shaman, "objective-1516-call-of-earth")
-    Check(durotarObjective ~= nil and ns.Engine:IsGoalDone(durotarObjective, orc, shaman),
+    Check(durotarObjective ~= nil and ns.OrderedRoutes:ExcludedAction(durotarObjective, orc) and not ns.Engine:IsGoalDone(durotarObjective, orc, shaman),
         "the Durotar Call of Earth objective is skipped while the Mulgore version is in the log")
     Check(not ns.Engine:IsGoalDone(Goal(shaman, "objective-1519-call-of-earth"), orc, shaman),
         "the Mulgore Call of Earth objective stays open while that quest is in the log")
     local mulgoreDone = { faction = "Horde", raceID = 2, classID = 7, level = 4, quests = {},
         completedQuests = { [1519] = true, [1520] = true, [1521] = true }, questLogKnown = true, questCompletionKnown = true }
     for _, goalID in ipairs({ "accept-1517-call-of-earth", "accept-1518-call-of-earth" }) do
-        Check(ns.Engine:IsGoalDone(Goal(shaman, goalID), mulgoreDone, shaman),
+        Check(ns.OrderedRoutes:ExcludedAction(Goal(shaman, goalID), mulgoreDone) and not ns.Engine:IsGoalDone(Goal(shaman, goalID), mulgoreDone, shaman),
             goalID .. " is skipped after the Mulgore Call of Earth rite")
     end
 end
@@ -5866,7 +5863,7 @@ function TestCasualRouteWaitsOnlyForItsQuests()
     end
     ns.Engine.casualAwaitingQuestState = nil
     ns.Engine:Refresh(Accepted(false))
-    Equal(ns.Engine.status, "Loading quest progress…", "Casual waits while its own quests are unread")
+    Equal(ns.Engine.status, "Loading quest progress.", "Casual waits while its own quests are unread")
     Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, vrangID, "the saved Casual step holds while loading")
     ns.Engine:Refresh(Accepted(true))
     Check(ns.Engine.status ~= "Loading quest progress…",
@@ -5925,6 +5922,42 @@ function TestMarkCompleteOnUnofferedQuest()
     ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = nil, nil, nil
 end
 TestMarkCompleteOnUnofferedQuest()
+
+function TestHunterMissingQuestRecovery()
+    local previousCharDB, savedCapture = ns.charDB, ns.PlayerState.Capture
+    local guide = ns.guides["class-hunter"]
+    ns.charDB = {
+        selectedGuide = guide.id, activeGoalByGuide = {}, guideRevisions = {},
+        manualCompleted = {}, completionLedger = {}, deferred = {}, history = {}, notOffered = {},
+    }
+    local state = {
+        faction = "Alliance", raceID = 95, classID = 3, level = 27,
+        professions = {}, professionsKnown = true, quests = {}, questLogKnown = true,
+        completedQuests = {}, watchedQuests = {}, questCompletionKnown = true,
+    }
+    for _, goal in ipairs(guide.goals) do
+        local questID = ns.Engine:GetGoalQuestID(goal)
+        if questID then state.watchedQuests[questID] = true end
+        if questID and questID ~= 92461 and questID ~= 92482 then
+            state.completedQuests[questID] = true
+        end
+    end
+    ns.PlayerState.Capture = function() return state end
+    ns.Engine:Refresh(state)
+    local pickup = ns.Engine.currentGoal
+    Equal(pickup and pickup.id, "accept-92461-harmony-in-balance", "Skyborne hunter starts at the missed pickup")
+    ns.Engine:CompleteCurrent()
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, pickup.id, "manual completion cannot pass an unaccepted quest")
+    Equal(ns.Engine:CompleteCurrent(), false, "the missing pickup requires client observation")
+    Equal(ns.Engine.currentGoal and ns.Engine.currentGoal.id, pickup.id, "Back recovers the first passed pickup")
+    ns.Engine:SkipCurrent(true)
+    Check(ns.Engine.status ~= "Quest is not in the quest log.", "skipping the recovered chain clears the dead end")
+    Equal(ns.charDB.orderedRoutes[guide.id].skipped["objective-92461-harmony-in-balance"], true, "Skip includes the missing objective")
+    ns.PlayerState.Capture, ns.charDB = savedCapture, previousCharDB
+    ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = nil, nil, nil
+    ns.Engine.reviewingGoal = nil
+end
+TestHunterMissingQuestRecovery()
 
 function TestChapterUpdateStaysSmall()
     ns:FinalizeGuides()
@@ -6276,7 +6309,12 @@ function TestSameTitleQuestChainGates()
         end
     end
     for questID in pairs(chains) do
-        Check(seen[questID], "audited same-title chain " .. questID .. " is covered by a shipped guide")
+        if questID == 166 then
+            Check(actual.guides["dungeons-the-deadmines"] ~= nil,
+                "the optional Defias dungeon finale stays in the Dungeon library")
+        else
+            Check(seen[questID], "audited same-title chain " .. questID .. " is covered by a shipped guide")
+        end
     end
     local samples = { [502] = 501, [528] = 527, [900] = 894, [368] = 367, [192] = 191 }
     local sampleCount = 0
@@ -6286,10 +6324,10 @@ function TestSameTitleQuestChainGates()
                 and goal.complete.quest.id
             local previousQuest = questID and samples[questID]
             if previousQuest then
-                local state = { faction = "Horde", level = 60, quests = {}, completedQuests = {},
+                local state = { faction = "Horde", raceID = 2, classID = 1, level = 60, quests = {}, completedQuests = {},
                     questLogKnown = true, questCompletionKnown = true }
                 if actual.EvaluateCondition(goal.conditions, state) == false then
-                    state.faction = "Alliance"
+                    state.faction, state.raceID = "Alliance", 1
                 end
                 for _, other in ipairs(guide.goals) do
                     if other.complete and other.complete.quest then
@@ -6363,6 +6401,132 @@ function TestSameTitleQuestChainGates()
 end
 TestSameTitleQuestChainGates()
 TestDurotarPartialProgress()
+
+local function TestTransportArrivalRebindsWaypoint()
+    local savedMap, savedTracking, savedPoint = C_Map, C_SuperTrack, UiMapPoint
+    local savedLeg, savedDB = ns.Navigation.GetActiveLeg, ns.db
+    local pin, tracking, writes = nil, false, 0
+    C_Map = {
+        GetUserWaypoint = function() return pin end,
+        SetUserWaypoint = function(point) pin = point; writes = writes + 1 end,
+        ClearUserWaypoint = function() pin = nil end,
+        CanSetUserWaypointOnMap = function() return true end,
+    }
+    C_SuperTrack = {
+        GetSuperTrackedQuestID = function() return 0 end,
+        SetSuperTrackedQuestID = function() end,
+        IsSuperTrackingUserWaypoint = function() return tracking end,
+        SetSuperTrackedUserWaypoint = function(value) tracking = value end,
+    }
+    UiMapPoint = { CreateFromCoordinates = function(mapID, x, y)
+        return { uiMapID = mapID, position = { x = x, y = y } }
+    end }
+    ns.db = { uiOpen = true, waypointProvider = 'blizzard' }
+    ns.Navigation.GetActiveLeg = function(_, _, snapshot)
+        if snapshot.mapID == 1420 then return { mapID = 1420, x = 0.6, y = 0.6, transport = true } end
+        return { mapID = 1411, x = 0.4, y = 0.4 }
+    end
+    local waypoint = ns.TomTomWaypoints
+    waypoint:Clear()
+    waypoint.selection, waypoint.suspended = nil, false
+    local goal = { kind = 'accept', text = 'Accept the quest', route = { { mapID = 1411, x = 0.4, y = 0.4 } } }
+    waypoint:Sync(goal, { mapID = 1420 })
+    Equal(writes, 1, 'the transport boarding destination creates a waypoint')
+    pin, tracking = nil, false
+    waypoint:Sync(goal, { mapID = 1411 })
+    Equal(writes, 2, 'arrival rebinds the new authored destination after transport tracking is lost')
+    Equal(pin and pin.uiMapID, 1411, 'arrival waypoint targets the new destination map')
+    Equal(tracking, true, 'arrival restores tracking for the new route leg without reload')
+    waypoint:Sync(goal, { mapID = 1411 })
+    Equal(writes, 2, 'repeated arrival updates do not recreate the waypoint')
+    pin = { uiMapID = 1411, position = { x = 0.9, y = 0.9 } }
+    waypoint:Sync(goal, { mapID = 1411 })
+    Equal(writes, 2, 'a manual pin change on the same leg remains respected')
+    waypoint:Clear()
+    C_Map, C_SuperTrack, UiMapPoint = savedMap, savedTracking, savedPoint
+    ns.Navigation.GetActiveLeg, ns.db = savedLeg, savedDB
+end
+TestTransportArrivalRebindsWaypoint()
+
+local function TestOrderedNativeQuestNavigation()
+    local savedMap, savedTracking, savedPoint, savedLog = C_Map, C_SuperTrack, UiMapPoint, C_QuestLog
+    local savedDB = ns.db
+    local pin, tracked, writes = nil, 0, 0
+    C_Map = { GetUserWaypoint = function() return pin end,
+        SetUserWaypoint = function(point) pin = point; writes = writes + 1 end,
+        ClearUserWaypoint = function() pin = nil end, CanSetUserWaypointOnMap = function() return true end }
+    C_SuperTrack = { GetSuperTrackedQuestID = function() return tracked end,
+        SetSuperTrackedQuestID = function(id) tracked = id end,
+        SetSuperTrackedUserWaypoint = function() end, IsSuperTrackingUserWaypoint = function() return true end }
+    UiMapPoint = { CreateFromCoordinates = function(mapID, x, y)
+        return { uiMapID = mapID, position = { x = x, y = y } } end }
+    C_QuestLog = { GetNextWaypoint = function() return 1413, 0.6, 0.1 end }
+    ns.db = { uiOpen = true, waypointProvider = 'blizzard' }
+    local guide = { id = 'ordered-native-navigation-test', title = 'Native navigation', category = 'Class Quests',
+        routeMode = 'ordered', revision = 1, goals = {
+            { id = 'native-objective', kind = 'objective', text = 'Collect 15 Nugget Slug.', useClientPin = false,
+                complete = { questObjective = { id = 3922, index = 1, text = 'Nugget Slug', count = 15 } },
+                route = { { mapID = 1413, x = 0.555, y = 0.08 } } },
+            { id = 'native-turnin', kind = 'turnin', text = 'Turn in Nugget Slugs.', useClientPin = false,
+                complete = { quest = { id = 3922, state = 'completed' } },
+                route = { { mapID = 1413, x = 0.49, y = 0.05 } } },
+        } }
+    ns:RegisterGuide(guide)
+    local state = { mapID = 1413, quests = { [3922] = { complete = false,
+        objectives = { { text = '12/15 Nugget Slug', numFulfilled = 12, numRequired = 15 } } } } }
+    local waypoints = ns.TomTomWaypoints
+    waypoints:Clear(); waypoints.selection, waypoints.suspended = nil, false
+    waypoints:Sync(guide.goals[1], state)
+    Equal(tracked, 3922, 'ordered single-objective work selects Blizzard native quest navigation')
+    Equal(writes, 0, 'available native objective destination does not create a user waypoint')
+    Equal(guide.goals[1].text, 'Collect 15 Nugget Slug.', 'native selection preserves the authored walkthrough')
+    state.quests[3922].complete = true
+    waypoints:Sync(guide.goals[2], state)
+    Equal(tracked, 3922, 'ordered completed quest selects native turn-in navigation')
+    Equal(writes, 0, 'available native turn-in destination does not create a user waypoint')
+    waypoints:Clear(); waypoints.selection, waypoints.suspended = nil, false
+    C_QuestLog.GetNextWaypoint = function() return nil end
+    waypoints:Sync(guide.goals[2], state)
+    Equal(pin and pin.position.x, 0.49, 'missing native turn-in destination falls back to the authored giver pin')
+    C_QuestLog.GetNextWaypoint = function() return 1413, 0.6, 0.1 end
+    waypoints:Sync(guide.goals[2], state)
+    Equal(tracked, 3922, 'a late native destination replaces the authored fallback automatically')
+    Equal(pin, nil, 'late native tracking removes only the owned fallback waypoint')
+    local savedEngineGuide, savedEngineGoal, savedEngineState = ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state
+    local placements = 0
+    ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = guide, guide.goals[2], state
+    local savedPlace = ns.MapPins.Place
+    ns.MapPins.Place = function() placements = placements + 1 end
+    local canvas = { GetMapID = function() return 1413 end }
+    ns.MapPins:Refresh(canvas)
+    Equal(placements, 0, 'available native destination suppresses the authored world-map fallback pin')
+    C_QuestLog.GetNextWaypoint = function() return nil end
+    ns.MapPins:Refresh(canvas)
+    Equal(placements, 1, 'missing native destination still draws the authored world-map fallback pin')
+    local savedActiveLeg = ns.Navigation.GetActiveLeg
+    ns.Navigation.GetActiveLeg = function() return { mapID = 1413, x = 0.6, y = 0.5, transport = true } end
+    C_QuestLog.GetNextWaypoint = function() return 1413, 0.6, 0.1 end
+    ns.MapPins:Refresh(canvas)
+    Equal(placements, 2, 'native quest destination does not hide the authored transport boarding pin')
+    waypoints:Sync(guide.goals[2], state)
+    Equal(tracked, 0, 'native quest tracking does not replace the transport destination')
+    Equal(pin and pin.position.y, 0.5, 'transport keeps its authored boarding waypoint')
+    ns.Navigation.GetActiveLeg = savedActiveLeg
+    ns.MapPins.Place = savedPlace
+    ns.Engine.currentGuide, ns.Engine.currentGoal, ns.Engine.state = savedEngineGuide, savedEngineGoal, savedEngineState
+    state.quests[3922].complete = false
+    state.quests[3922].objectives[2] = { text = '0/1 Other objective', numFulfilled = 0, numRequired = 1 }
+    Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), nil,
+        'split objective work retains its authored destination when another objective is unfinished')
+    guide.goals[1].useQuestNavigation = false
+    state.quests[3922].objectives[2] = nil
+    Equal(ns.Navigation:QuestDestinationID(guide.goals[1], state), nil,
+        'explicit native navigation opt-out preserves special authored interactions')
+    waypoints:Clear()
+    C_Map, C_SuperTrack, UiMapPoint, C_QuestLog = savedMap, savedTracking, savedPoint, savedLog
+    ns.db = savedDB
+end
+TestOrderedNativeQuestNavigation()
 
 if failures > 0 then
     io.stderr:write(("%d of %d assertions failed\n"):format(failures, assertions))

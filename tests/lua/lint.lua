@@ -35,6 +35,8 @@ for _, path in ipairs({
     "Travel.lua",
     "Taxi.lua",
     "GuideEngine.lua",
+    "OrderedRoutes.lua",
+    "ClassChains.lua",
     "QuestPrerequisites.lua",
     "QuestAudit.lua",
     "QuestDialog.lua",
@@ -205,6 +207,50 @@ local function Serialize(value)
     return "{" .. table.concat(parts, ",") .. "}"
 end
 
+local function WithoutFaction(condition)
+    if type(condition) ~= "table" then return condition end
+    local result = {}
+    for key, value in pairs(condition) do
+        if key ~= "faction" then
+            if key == "all" then
+                local children = {}
+                for _, child in ipairs(value) do
+                    local clean = WithoutFaction(child)
+                    if next(clean) then children[#children + 1] = clean end
+                end
+                if #children == 1 then return children[1] end
+                if #children > 0 then result.all = children end
+            else result[key] = value end
+        end
+    end
+    return result
+end
+
+local function FactionOf(condition)
+    if type(condition) ~= "table" then return nil end
+    if condition.faction then return condition.faction end
+    for _, child in ipairs(condition.all or {}) do
+        local faction = FactionOf(child)
+        if faction then return faction end
+    end
+end
+
+local function ExplicitPickupBranches(goals)
+    local signature, factions, accepts = nil, {}, 0
+    for _, goal in ipairs(goals) do
+        local faction = FactionOf(goal.conditions)
+        if goal.kind == "accept" then
+            if faction ~= "Alliance" and faction ~= "Horde" then return false end
+            if factions[faction] then return false end
+            factions[faction], accepts = true, accepts + 1
+        elseif faction then return false end
+        local clean = Serialize(WithoutFaction(goal.conditions or {}))
+        if signature and signature ~= clean then return false end
+        signature = clean
+    end
+    return accepts == 2 and factions.Alliance and factions.Horde
+end
+
 local function GoalQuestID(goal)
     local complete = goal.complete
     if type(complete) ~= "table" then return nil end
@@ -257,7 +303,8 @@ for _, guideID in ipairs(ns.guideOrder) do
                     mismatchID = goal.id
                 end
             end
-            Check(mismatchID == nil, ("%s quest %d: %s and %s do not share conditions")
+            Check(mismatchID == nil or (guide.routeMode == "ordered"
+                and ExplicitPickupBranches(byQuest[questID])), ("%s quest %d: %s and %s do not share conditions")
                 :format(guideID, questID, tostring(firstID), tostring(mismatchID)))
         end
     end
