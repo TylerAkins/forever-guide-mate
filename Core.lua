@@ -33,7 +33,8 @@ local ACCOUNT_DEFAULTS = {
 }
 
 local CHARACTER_DEFAULTS = {
-    schemaVersion = 10,
+    schemaVersion = 11,
+    orderedRoutes = {},
     activeGoal = nil,
     manualCompleted = {},
     deferred = {},
@@ -319,6 +320,10 @@ local function MigrateStorage(account, character)
             end
         end
         character.schemaVersion = 10
+    end
+    if (tonumber(character.schemaVersion) or 1) < 11 then
+        character.orderedRoutes = type(character.orderedRoutes) == "table" and character.orderedRoutes or {}
+        character.schemaVersion = 11
     end
 end
 

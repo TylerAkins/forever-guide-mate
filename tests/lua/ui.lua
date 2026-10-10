@@ -140,6 +140,7 @@ Load("PlayerState.lua")
 Load("Travel.lua")
 Load("Taxi.lua")
 Load("GuideEngine.lua")
+Load("OrderedRoutes.lua")
 Load("SkipLineage.lua")
 Load("Navigation.lua")
 Load("TomTomWaypoints.lua")
@@ -709,6 +710,41 @@ do
     Equal(ns.UI:GoalInstruction(ns.Engine),
         "0/1 Thule's Head. This is an elite. Bring a group.",
         "client quest objective text preserves the authored elite warning")
+end
+
+do
+    local guide = {
+        id = "prepared-ui", title = "Preparation", category = "Test", routeMode = "ordered", revision = 1,
+        goals = { {
+            id = "fill-bowl", kind = "note", text = "Fill the bowl at the moonwell.",
+            instructionOnly = true, rememberPreparation = 4763,
+            complete = { any = {
+                { all = { { item = { name = "Filled Cleansing Bowl", minCount = 1 } } } },
+                { quest = { id = 4763, state = "complete" } },
+            } },
+        } },
+    }
+    ns:RegisterGuide(guide)
+    ns.db.autoAdvance = false
+    ns.charDB.selectedGuide = guide.id
+    local state = {
+        questLogKnown = true, questCompletionKnown = true,
+        quests = { [4763] = { complete = false, objectives = {} } },
+        completedQuests = {}, items = { ["Filled Cleansing Bowl"] = 1 },
+    }
+    ns.OrderedRoutes:Storage(guide).cursor = "fill-bowl"
+    ns.Engine:Refresh(state)
+    state.items = {}
+    ns.Engine:Refresh(state)
+    local enabled
+    ns.UI.tracker.complete.SetEnabled = function(_, value) enabled = value end
+    ns.UI:Update(ns.Engine)
+    Check(enabled, "remembered preparation can be advanced after its item is consumed")
+    Check(not state.quests[4763].complete, "preparation does not grant quest completion")
+    state.quests = {}
+    ns.Engine:Refresh(state)
+    ns.UI:Update(ns.Engine)
+    Check(not enabled, "abandonment disables remembered preparation completion")
 end
 
 if failures > 0 then

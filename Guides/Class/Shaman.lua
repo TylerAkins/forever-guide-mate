@@ -1,3141 +1,5158 @@
 local _, ns = ...
 
--- Shaman class quests.
--- Forever quests are woven in after the quest that unlocks them, or by the level the NPC offers them.
--- Dungeon, raid, and PvP quests stay in their own guides.
--- A quest with no start pin is named below and is not given a coordinate.
--- Revisit every quest left out below when the database records a giver, objectives, and a turn-in.
--- Coordinates have not been validated in the Forever client.
--- Forever quests woven into this route:
--- Archaic Rune
--- Embracing the Elements
--- Call of Earth
--- Call of Earth
--- Call of Earth
--- Earth Sapta
--- Call of Fire
--- Call of Fire
--- Call of Fire
--- Call of Fire
--- Call of Fire
--- Fire Sapta
--- Call of Fire
--- Call of Fire
--- Call of Fire
--- Call of Fire
--- Call of Water
--- Call of Water
--- Call of Water
--- Call of Water
--- Call of Water
--- Call of Water
--- Water Sapta
--- Call of Water
--- Stalk With The Earthmother
--- Stalk With The Earthmother
--- Stalk With The Earthmother
--- Left out (dungeon quest): The Darkreaver Menace, Da Voodoo
--- Left out (needs 94503, which is not on this route): Call of Water
--- Left out (no start pin): Call of Earth (96243), Call of Fire (98517), Call of Water (94503 and 94505), Clarifying Air, Answering Air's Call, Heavy Metal, A Particular Set of Skills, Efficiency Is Priority One, Commit to Quality, Purifying Fire, Purging Earth, Cleansing Water, Answering Fire's Call, Answering Earth's Call, Answering Water's Call (+8 more)
-
-local MAP = {
-    ALTERACMOUNTAINS = 1416,
-    AZSHARA = 1447,
-    BARRENS = 1413,
-    BLASTEDLANDS = 1419,
-    BURNINGSTEPPES = 1428,
-    DUNMOROGH = 1426,
-    DUROTAR = 1411,
-    EASTERNPLAGUELANDS = 1423,
-    HINTERLANDS = 1425,
-    IRONFORGE = 1455,
-    LOCHMODAN = 1432,
-    MULGORE = 1412,
-    ORGRIMMAR = 1454,
-    SILVERPINEFOREST = 1421,
-    TANARIS = 1446,
-    THOUSANDNEEDLES = 1441,
-    THUNDERBLUFF = 1456,
-    WESTERNPLAGUELANDS = 1422,
-    WETLANDS = 1437,
-    WINTERSPRING = 1452,
-    ZEPHRASISLE = 2521,
-}
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText, complete)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-        complete = complete,
-    }
-end
-
 ns:RegisterGuide({
-    id = "class-shaman",
+    revision = 3,
     title = "Shaman",
     category = "Class Quests",
-    revision = 1,
+    id = "class-shaman",
     conditions = {
         all = {
             { class = 7 },
-            { level = { min = 1 } },
+            {
+                level = { min = 1 },
+            },
         },
     },
     goals = {
         {
-            id = "accept-98581-archaic-rune",
-            kind = "accept",
             priority = 10,
+            route = {
+                { y = 0.712, mapID = 1426, label = "Sten Stoutarm", x = 0.298, offMapText = "Travel to Sten Stoutarm in Dun Morogh." },
+            },
+            id = "accept-98581-archaic-rune",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Archaic Rune from Sten Stoutarm in Dun Morogh. This step is for Dwarves.",
-            complete = QuestState(98581, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2980, 0.7120, "Sten Stoutarm",
-                    "Travel to Sten Stoutarm in Dun Morogh."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-98581-archaic-rune",
         },
         {
-            id = "turnin-98581-archaic-rune",
-            kind = "turnin",
             priority = 20,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { race = 3 },
-                },
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
             },
-            text = "Turn in Archaic Rune to Teo Hammerstorm in Dun Morogh. This step is for Dwarves.",
             dependsOn = { "accept-98581-archaic-rune" },
-            complete = QuestState(98581, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-92461-harmony-in-balance",
-            kind = "accept",
-            priority = 27,
+            id = "turnin-98581-archaic-rune",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 2 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 3 },
+                    {
+                        race = { 3 },
+                    },
                 },
             },
-            text = "Accept Harmony in Balance from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92461, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            useClientPin = false,
+            classAction = "turnin-98581-archaic-rune",
         },
         {
-            id = "objective-92461-harmony-in-balance",
-            kind = "objective",
-            priority = 28,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Slay 8 Vuldren Juveniles in Thendal Grove.",
-            dependsOn = { "accept-92461-harmony-in-balance" },
-            complete = QuestState(92461, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4320, 0.2560, "Juvenile Vuldren",
-                    "Travel to Juvenile Vuldren in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-92461-harmony-in-balance",
-            kind = "turnin",
-            priority = 29,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 2 } },
-                },
-            },
-            text = "Turn in Harmony in Balance to Rorian the Dayseeker in Zephras Isle.",
-            dependsOn = { "objective-92461-harmony-in-balance" },
-            complete = QuestState(92461, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-92484-embracing-the-elements",
-            kind = "accept",
             priority = 30,
-            dependsOn = { "turnin-92461-harmony-in-balance" },
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            id = "accept-788-cutting-teeth",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 7 },
-                    { level = { min = 2 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Embracing the Elements from Rorian the Dayseeker in Zephras Isle.",
-            complete = QuestState(92484, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4200, 0.2340, "Rorian the Dayseeker",
-                    "Travel to Rorian the Dayseeker in Zephras Isle."),
-            },
+            sourceStep = 9,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-788-cutting-teeth",
         },
         {
-            id = "turnin-92484-embracing-the-elements",
-            kind = "turnin",
             priority = 40,
+            route = {
+                { y = 0.662, mapID = 1411, label = "Mottled Boar", offMapText = "Travel to Mottled Boar.", x = 0.438 },
+            },
+            dependsOn = { "accept-788-cutting-teeth" },
+            id = "objective-788-1-mottled-boar",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 7 },
-                    { level = { min = 2 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in Embracing the Elements to Windshaper Boro in Zephras Isle.",
-            dependsOn = { "accept-92484-embracing-the-elements" },
-            complete = QuestState(92484, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4280, 0.2360, "Windshaper Boro",
-                    "Travel to Windshaper Boro in Zephras Isle."),
-            },
+            sourceStep = 11,
+            useClientPin = false,
+            classAction = "objective-788-1-mottled-boar",
         },
         {
-            id = "accept-1519-call-of-earth",
-            kind = "accept",
             priority = 50,
+            route = {
+                { y = 0.6833, mapID = 1411, label = "Gornek", offMapText = "Travel to Gornek in Durotar.", x = 0.4206 },
+            },
+            dependsOn = { "accept-788-cutting-teeth", "objective-788-1-mottled-boar" },
+            id = "turnin-788-cutting-teeth",
             conditions = {
                 all = {
-                    { faction = "Horde" },
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 2 },
+                                    {
+                                        race = { 2 },
+                                    },
+                                },
+                            },
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 8 },
+                                    {
+                                        race = { 8 },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            complete = QuestState(1519, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
+            sourceStep = 21,
+            useClientPin = false,
+            classAction = "turnin-788-cutting-teeth",
         },
         {
-            id = "objective-1519-call-of-earth",
-            kind = "objective",
             priority = 60,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Kill Bristleback Shaman in Brambleblade Ravine and collect 2 Ritual Salve. This step is for Tauren.",
-            dependsOn = { "accept-1519-call-of-earth" },
-            complete = QuestState(1519, "complete"),
-            route = {
-                Point(MAP.MULGORE, 0.6460, 0.7780, "Bristleback Shaman",
-                    "Travel to Bristleback Shaman in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-1519-call-of-earth",
-            kind = "turnin",
-            priority = 70,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            dependsOn = { "objective-1519-call-of-earth" },
-            complete = QuestState(1519, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
-        },
-        {
-            id = "accept-1520-call-of-earth",
-            kind = "accept",
-            priority = 80,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            dependsOn = { "turnin-1519-call-of-earth" },
-            complete = QuestState(1520, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-1520-call-of-earth",
-            kind = "turnin",
-            priority = 90,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Tauren.",
-            dependsOn = { "accept-1520-call-of-earth" },
-            complete = QuestState(1520, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "accept-1521-call-of-earth",
-            kind = "accept",
-            priority = 100,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Tauren.",
-            dependsOn = { "turnin-1520-call-of-earth" },
-            complete = QuestState(1521, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-1521-call-of-earth",
-            kind = "turnin",
-            priority = 110,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-1521-call-of-earth" },
-            complete = QuestState(1521, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
-        },
-        {
-            id = "accept-1516-call-of-earth",
-            kind = "accept",
-            priority = 120,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            complete = QuestState(1516, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
-        },
-        {
-            id = "objective-1516-call-of-earth",
-            kind = "objective",
-            priority = 130,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Kill Felstalker in Burning Blade Coven and collect 2 Felstalker Hoof. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-1516-call-of-earth" },
-            complete = QuestState(1516, "complete"),
-            route = {
-                Point(MAP.DUROTAR, 0.4520, 0.5500, "Felstalker",
-                    "Travel to Felstalker in Durotar."),
-            },
-        },
-        {
-            id = "turnin-1516-call-of-earth",
-            kind = "turnin",
-            priority = 140,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "objective-1516-call-of-earth" },
-            complete = QuestState(1516, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
-        },
-        {
-            id = "accept-1517-call-of-earth",
-            kind = "accept",
-            priority = 150,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-1516-call-of-earth" },
-            complete = QuestState(1517, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
-        },
-        {
-            id = "turnin-1517-call-of-earth",
-            kind = "turnin",
-            priority = 160,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-1517-call-of-earth" },
-            complete = QuestState(1517, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "accept-1518-call-of-earth",
-            kind = "accept",
-            priority = 170,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "turnin-1517-call-of-earth" },
-            complete = QuestState(1518, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-1518-call-of-earth",
-            kind = "turnin",
-            priority = 180,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-1518-call-of-earth" },
-            complete = QuestState(1518, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
-        },
-        {
-            id = "accept-94373-call-of-earth",
-            kind = "accept",
-            priority = 190,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Teo Hammerstorm in Dun Morogh.",
-            complete = QuestState(94373, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "objective-94373-call-of-earth",
-            kind = "objective",
-            priority = 200,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Kill Frostmane trolls in Dun Morogh for Teo Hammerstorm's Call of Earth.",
-            dependsOn = { "accept-94373-call-of-earth" },
-            complete = QuestState(94373, "complete"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2740, 0.8080, "Frostmane Troll Whelp",
-                    "Travel to Frostmane Troll Whelp in Dun Morogh."),
-                Point(MAP.DUNMOROGH, 0.3040, 0.7940, "Frostmane Novice",
-                    "Travel to Frostmane Novice in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-94373-call-of-earth",
-            kind = "turnin",
-            priority = 210,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Teo Hammerstorm in Dun Morogh.",
-            dependsOn = { "objective-94373-call-of-earth" },
-            complete = QuestState(94373, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-94374-call-of-earth",
-            kind = "accept",
-            priority = 220,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Teo Hammerstorm in Dun Morogh.",
-            dependsOn = { "turnin-94373-call-of-earth" },
-            complete = QuestState(94374, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-94374-call-of-earth",
-            kind = "turnin",
-            priority = 230,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Minor Manifestation of Earth in Durotar.",
-            dependsOn = { "accept-94374-call-of-earth" },
-            complete = QuestState(94374, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "accept-94375-call-of-earth",
-            kind = "accept",
-            priority = 240,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Call of Earth from Minor Manifestation of Earth in Durotar.",
-            dependsOn = { "turnin-94374-call-of-earth" },
-            complete = QuestState(94375, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4400, 0.7600, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Durotar.", { map = { MAP.MULGORE } }),
-                Point(MAP.MULGORE, 0.5380, 0.8040, "Minor Manifestation of Earth",
-                    "Travel to Minor Manifestation of Earth in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-94375-call-of-earth",
-            kind = "turnin",
-            priority = 250,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Call of Earth to Teo Hammerstorm in Dun Morogh.",
-            dependsOn = { "accept-94375-call-of-earth" },
-            complete = QuestState(94375, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-94472-earth-sapta",
-            kind = "accept",
-            priority = 260,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Earth Sapta from Teo Hammerstorm in Dun Morogh.",
-            complete = QuestState(94472, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-94472-earth-sapta",
-            kind = "turnin",
-            priority = 270,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Earth Sapta to Teo Hammerstorm in Dun Morogh.",
-            dependsOn = { "accept-94472-earth-sapta" },
-            complete = QuestState(94472, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.2880, 0.6620, "Teo Hammerstorm",
-                    "Travel to Teo Hammerstorm in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-76156-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 271,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76156, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76156-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 272,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Seaforium Mining Charge. The blasting carts are in the mine southeast of Thunder Bluff. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
-            complete = QuestObjective(76156, 1, "Seaforium Mining Charge"),
-            route = {
-                Point(MAP.MULGORE, 0.6440, 0.4360, "Venture Co. Mine",
-                    "Travel to the Venture Co. Mine in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76156-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 273,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76156-stalk-with-the-earthmother-1" },
-            complete = QuestState(76156, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-76160-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 274,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76160, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76160-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 275,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            useClientPin = true,
-            text = "Stalk With The Earthmother: Pine Salve. Gather Windfury Cones in the harpy area and use the Mortar and Pestle. No saved spot for this, so the guide follows the pin in your quest log.",
-            dependsOn = { "accept-76160-stalk-with-the-earthmother" },
-            complete = QuestObjective(76160, 1, "Pine Salve"),
-            route = {
-                Point(MAP.MULGORE, 0.3240, 0.2760, "Windfury Matriarch",
-                    "Travel to the Windfury harpies in Mulgore."),
-            },
-        },
-        {
-            id = "turnin-76160-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 276,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = { 1, 7, 11 } },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76160-stalk-with-the-earthmother-1" },
-            complete = QuestState(76160, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-76240-stalk-with-the-earthmother",
-            kind = "accept",
-            priority = 277,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Accept Stalk With The Earthmother from Boarton Shadetotem in Thunder Bluff.",
-            complete = QuestState(76240, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "objective-76240-stalk-with-the-earthmother-1",
-            kind = "objective",
-            priority = 278,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Stalk With The Earthmother: Fish Chunks. Buy or catch a Raw Brilliant Smallfish and fillet it in front of Boarton Shadetotem.",
-            dependsOn = { "accept-76240-stalk-with-the-earthmother" },
-            complete = QuestObjective(76240, 1, "Fish Chunks"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "turnin-76240-stalk-with-the-earthmother",
-            kind = "turnin",
-            priority = 279,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { level = { min = 4 } },
-                },
-            },
-            text = "Turn in Stalk With The Earthmother to Boarton Shadetotem in Thunder Bluff.",
-            dependsOn = { "objective-76240-stalk-with-the-earthmother-1" },
-            complete = QuestState(76240, "completed"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.3960, 0.6560, "Boarton Shadetotem",
-                    "Travel to Boarton Shadetotem in Thunder Bluff."),
-            },
-        },
-        {
-            id = "accept-94449-call-of-fire",
-            kind = "accept",
-            priority = 280,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Ingrid Dunwald in Dun Morogh.",
-            complete = QuestState(94449, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.4740, 0.5200, "Ingrid Dunwald",
-                    "Travel to Ingrid Dunwald in Dun Morogh.", { map = { MAP.IRONFORGE } }),
-                Point(MAP.IRONFORGE, 0.4740, 0.1360, "Eldrun Stormbreaker",
-                    "Travel to Eldrun Stormbreaker in Ironforge."),
-            },
-        },
-        {
-            id = "turnin-94449-call-of-fire",
-            kind = "turnin",
-            priority = 290,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Bruegs Kindleborn in Dun Morogh.",
-            dependsOn = { "accept-94449-call-of-fire" },
-            complete = QuestState(94449, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.8760, 0.4360, "Bruegs Kindleborn",
-                    "Travel to Bruegs Kindleborn in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-94465-call-of-fire",
-            kind = "accept",
-            priority = 300,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Bruegs Kindleborn in Dun Morogh.",
-            dependsOn = { "turnin-94449-call-of-fire" },
-            complete = QuestState(94465, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.8760, 0.4360, "Bruegs Kindleborn",
-                    "Travel to Bruegs Kindleborn in Dun Morogh."),
-            },
-        },
-        {
-            id = "turnin-94465-call-of-fire",
-            kind = "turnin",
-            priority = 310,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Braldir Ashmantle in Loch Modan.",
-            dependsOn = { "accept-94465-call-of-fire" },
-            complete = QuestState(94465, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-94466-call-of-fire",
-            kind = "accept",
-            priority = 320,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Braldir Ashmantle in Loch Modan.",
-            dependsOn = { "turnin-94465-call-of-fire" },
-            complete = QuestState(94466, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "objective-94466-call-of-fire",
-            kind = "objective",
-            priority = 330,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Kill Stonesplinter casters in Loch Modan and collect a Reagent Pouch.",
-            dependsOn = { "accept-94466-call-of-fire" },
-            complete = QuestState(94466, "complete"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3480, 0.8440, "Stonesplinter Seer",
-                    "Travel to Stonesplinter Seer in Loch Modan."),
-                Point(MAP.LOCHMODAN, 0.3560, 0.2000, "Tunnel Rat Geomancer",
-                    "Travel to Tunnel Rat Geomancer in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94466-call-of-fire",
-            kind = "turnin",
-            priority = 340,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Braldir Ashmantle in Loch Modan.",
-            dependsOn = { "objective-94466-call-of-fire" },
-            complete = QuestState(94466, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-94467-call-of-fire",
-            kind = "accept",
-            priority = 350,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Braldir Ashmantle in Loch Modan.",
-            dependsOn = { "turnin-94466-call-of-fire" },
-            complete = QuestState(94467, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94467-call-of-fire",
-            kind = "turnin",
-            priority = 360,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Brazier of the Dormant Flame in Durotar.",
-            dependsOn = { "accept-94467-call-of-fire" },
-            complete = QuestState(94467, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3890, 0.5820, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Durotar.", { map = { MAP.LOCHMODAN } }),
-                Point(MAP.LOCHMODAN, 0.3190, 0.6450, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-94468-call-of-fire",
-            kind = "accept",
-            priority = 370,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Brazier of the Dormant Flame in Durotar.",
-            dependsOn = { "turnin-94467-call-of-fire" },
-            complete = QuestState(94468, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.3890, 0.5820, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Durotar.", { map = { MAP.LOCHMODAN } }),
-                Point(MAP.LOCHMODAN, 0.3190, 0.6450, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94468-call-of-fire",
-            kind = "turnin",
-            priority = 380,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Bruegs Kindleborn in Dun Morogh.",
-            dependsOn = { "accept-94468-call-of-fire" },
-            complete = QuestState(94468, "completed"),
-            route = {
-                Point(MAP.DUNMOROGH, 0.8760, 0.4360, "Bruegs Kindleborn",
-                    "Travel to Bruegs Kindleborn in Dun Morogh."),
-            },
-        },
-        {
-            id = "accept-94473-fire-sapta",
-            kind = "accept",
-            priority = 390,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Fire Sapta from Braldir Ashmantle in Loch Modan.",
-            complete = QuestState(94473, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94473-fire-sapta",
-            kind = "turnin",
-            priority = 400,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Fire Sapta to Braldir Ashmantle in Loch Modan.",
-            dependsOn = { "accept-94473-fire-sapta" },
-            complete = QuestState(94473, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.3200, 0.6600, "Braldir Ashmantle",
-                    "Travel to Braldir Ashmantle in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-97243-call-of-fire",
-            kind = "accept",
-            priority = 410,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Sessaria Skystride in Zephras Isle. This step is for Horde Skyborne.",
-            complete = QuestState(97243, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5820, 0.7840, "Sessaria Skystride",
-                    "Travel to Sessaria Skystride in Zephras Isle."),
-                Point(MAP.ZEPHRASISLE, 0.4340, 0.4480, "Aarnor Galestrike",
-                    "Travel to Aarnor Galestrike in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-97243-call-of-fire",
-            kind = "turnin",
-            priority = 420,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "accept-97243-call-of-fire" },
-            complete = QuestState(97243, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-97244-call-of-fire",
-            kind = "accept",
-            priority = 430,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "turnin-97243-call-of-fire" },
-            complete = QuestState(97244, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-97244-call-of-fire",
-            kind = "objective",
-            priority = 440,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Slay Skypriest Faladiel in the Gustberry Lowlands and collect Faladiel's Heart. This step is for Horde Skyborne.",
-            dependsOn = { "accept-97244-call-of-fire" },
-            complete = QuestState(97244, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.6440, 0.6380, "Skypriest Faladiel",
-                    "Travel to Skypriest Faladiel in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-97244-call-of-fire",
-            kind = "turnin",
-            priority = 450,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "objective-97244-call-of-fire" },
-            complete = QuestState(97244, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-97245-call-of-fire",
-            kind = "accept",
-            priority = 460,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "turnin-97244-call-of-fire" },
-            complete = QuestState(97245, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "objective-97245-call-of-fire",
-            kind = "objective",
-            priority = 470,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Defeat Kuramaa in the Shen'dar Highlands and collect Kuramaa's Mask. This step is for Horde Skyborne.",
-            dependsOn = { "accept-97245-call-of-fire" },
-            complete = QuestState(97245, "complete"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.4240, 0.6900, "Kuramaa",
-                    "Travel to Kuramaa in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-97245-call-of-fire",
-            kind = "turnin",
-            priority = 480,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "objective-97245-call-of-fire" },
-            complete = QuestState(97245, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-97257-call-of-fire",
-            kind = "accept",
-            priority = 490,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Olariaan Swiftburn in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "turnin-97245-call-of-fire" },
-            complete = QuestState(97257, "activeOrCompleted"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5120, 0.8600, "Olariaan Swiftburn",
-                    "Travel to Olariaan Swiftburn in Zephras Isle."),
-            },
-        },
-        {
-            id = "turnin-97257-call-of-fire",
-            kind = "turnin",
-            priority = 500,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 96 },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Sessaria Skystride in Zephras Isle. This step is for Horde Skyborne.",
-            dependsOn = { "accept-97257-call-of-fire" },
-            complete = QuestState(97257, "completed"),
-            route = {
-                Point(MAP.ZEPHRASISLE, 0.5820, 0.7840, "Sessaria Skystride",
-                    "Travel to Sessaria Skystride in Zephras Isle."),
-            },
-        },
-        {
-            id = "accept-1528-call-of-water",
-            kind = "accept",
-            priority = 510,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Searn Firewarder in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1528, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3780, 0.3740, "Searn Firewarder",
-                    "Travel to Searn Firewarder in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1528-call-of-water",
-            kind = "turnin",
-            priority = 520,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1528-call-of-water" },
-            complete = QuestState(1528, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
-        },
-        {
-            id = "accept-94495-call-of-water",
-            kind = "accept",
-            priority = 530,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Norric Lochthane in Loch Modan.",
-            complete = QuestState(94495, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94495-call-of-water",
-            kind = "turnin",
-            priority = 540,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Hervdana Saegrund in Wetlands.",
-            dependsOn = { "accept-94495-call-of-water" },
-            complete = QuestState(94495, "completed"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "accept-94497-call-of-water",
-            kind = "accept",
-            priority = 550,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Hervdana Saegrund in Wetlands.",
-            dependsOn = { "turnin-94495-call-of-water" },
-            complete = QuestState(94497, "activeOrCompleted"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "turnin-94497-call-of-water",
-            kind = "turnin",
-            priority = 560,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Hervdana Saegrund in Wetlands.",
-            dependsOn = { "accept-94497-call-of-water" },
-            complete = QuestState(94497, "completed"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "accept-94499-call-of-water",
-            kind = "accept",
-            priority = 570,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Hervdana Saegrund in Wetlands.",
-            dependsOn = { "turnin-94497-call-of-water" },
-            complete = QuestState(94499, "activeOrCompleted"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "turnin-94499-call-of-water",
-            kind = "turnin",
-            priority = 580,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Hervdana Saegrund in Wetlands.",
-            dependsOn = { "accept-94499-call-of-water" },
-            complete = QuestState(94499, "completed"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "accept-94500-call-of-water",
-            kind = "accept",
-            priority = 590,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Hervdana Saegrund in Wetlands.",
-            dependsOn = { "turnin-94499-call-of-water" },
-            complete = QuestState(94500, "activeOrCompleted"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "turnin-94500-call-of-water",
-            kind = "turnin",
-            priority = 600,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Hervdana Saegrund in Wetlands.",
-            dependsOn = { "accept-94500-call-of-water" },
-            complete = QuestState(94500, "completed"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "accept-94501-call-of-water",
-            kind = "accept",
-            priority = 610,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Hervdana Saegrund in Wetlands.",
-            dependsOn = { "turnin-94500-call-of-water" },
-            complete = QuestState(94501, "activeOrCompleted"),
-            route = {
-                Point(MAP.WETLANDS, 0.6560, 0.7640, "Hervdana Saegrund",
-                    "Travel to Hervdana Saegrund in Wetlands."),
-            },
-        },
-        {
-            id = "turnin-94501-call-of-water",
-            kind = "turnin",
-            priority = 620,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Norric Lochthane in Loch Modan.",
-            dependsOn = { "accept-94501-call-of-water" },
-            complete = QuestState(94501, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-94502-call-of-water",
-            kind = "accept",
-            priority = 630,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Norric Lochthane in Loch Modan.",
-            dependsOn = { "turnin-94501-call-of-water" },
-            complete = QuestState(94502, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94502-call-of-water",
-            kind = "turnin",
-            priority = 640,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Norric Lochthane in Loch Modan.",
-            dependsOn = { "accept-94502-call-of-water" },
-            complete = QuestState(94502, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-94616-water-sapta",
-            kind = "accept",
-            priority = 650,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Water Sapta from Norric Lochthane in Loch Modan.",
-            complete = QuestState(94616, "activeOrCompleted"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "turnin-94616-water-sapta",
-            kind = "turnin",
-            priority = 660,
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { class = 7 },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Water Sapta to Norric Lochthane in Loch Modan.",
-            dependsOn = { "accept-94616-water-sapta" },
-            complete = QuestState(94616, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
-        },
-        {
-            id = "accept-1531-call-of-air",
-            kind = "accept",
-            priority = 670,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Accept Call of Air from Searn Firewarder in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1531, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3780, 0.3740, "Searn Firewarder",
-                    "Travel to Searn Firewarder in Orgrimmar."),
-            },
-        },
-        {
-            id = "turnin-1531-call-of-air",
-            kind = "turnin",
-            priority = 680,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 30 } },
-                },
-            },
-            text = "Turn in Call of Air to Prate Cloudseer in Thousand Needles. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1531-call-of-air" },
-            complete = QuestState(1531, "completed"),
-            route = {
-                Point(MAP.THOUSANDNEEDLES, 0.5360, 0.4280, "Prate Cloudseer",
-                    "Travel to Prate Cloudseer in Thousand Needles."),
-            },
-        },
-        {
-            id = "accept-8410-elemental-mastery",
-            kind = "accept",
-            priority = 690,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Accept Elemental Mastery from Sagorne Creststrider in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(8410, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar.", { map = { MAP.THUNDERBLUFF } }),
-                Point(MAP.THUNDERBLUFF, 0.2220, 0.1900, "Beram Skychaser",
-                    "Travel to Beram Skychaser in Thunder Bluff."),
-            },
-        },
-        {
-            id = "turnin-8410-elemental-mastery",
-            kind = "turnin",
-            priority = 700,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 50 } },
-                },
-            },
-            text = "Turn in Elemental Mastery to Bath'rah the Windwatcher in Alterac Mountains. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-8410-elemental-mastery" },
-            complete = QuestState(8410, "completed"),
             route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
             },
-        },
-        {
             id = "accept-3084-rune-inscribed-tablet",
-            kind = "accept",
-            priority = 710,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 8 },
+                    {
+                        race = { 8 },
+                    },
                 },
             },
-            text = "Accept Rune-Inscribed Tablet from Gornek in Durotar. This step is for Trolls.",
-            complete = QuestState(3084, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3084-rune-inscribed-tablet",
         },
         {
-            id = "turnin-3084-rune-inscribed-tablet",
-            kind = "turnin",
-            priority = 720,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 8 },
-                },
+            priority = 70,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Shikrik", x = 0.424, offMapText = "Travel to Shikrik in Durotar." },
             },
-            text = "Turn in Rune-Inscribed Tablet to Shikrik in Durotar. This step is for Trolls.",
             dependsOn = { "accept-3084-rune-inscribed-tablet" },
-            complete = QuestState(3084, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Shikrik",
-                    "Travel to Shikrik in Durotar."),
+            id = "turnin-3084-rune-inscribed-tablet",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 8 },
+                    {
+                        race = { 8 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3084-rune-inscribed-tablet",
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.684, mapID = 1411, label = "Gornek", x = 0.42, offMapText = "Travel to Gornek in Durotar." },
+            },
             id = "accept-3089-rune-inscribed-parchment",
-            kind = "accept",
-            priority = 730,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 2 },
+                    {
+                        race = { 2 },
+                    },
                 },
             },
-            text = "Accept Rune-Inscribed Parchment from Gornek in Durotar. This step is for Orcs.",
-            complete = QuestState(3089, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4200, 0.6840, "Gornek",
-                    "Travel to Gornek in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3089-rune-inscribed-parchment",
         },
         {
-            id = "turnin-3089-rune-inscribed-parchment",
-            kind = "turnin",
-            priority = 740,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 2 },
-                },
+            priority = 90,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Shikrik", x = 0.424, offMapText = "Travel to Shikrik in Durotar." },
             },
-            text = "Turn in Rune-Inscribed Parchment to Shikrik in Durotar. This step is for Orcs.",
             dependsOn = { "accept-3089-rune-inscribed-parchment" },
-            complete = QuestState(3089, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Shikrik",
-                    "Travel to Shikrik in Durotar."),
+            id = "turnin-3089-rune-inscribed-parchment",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 2 },
+                    {
+                        race = { 2 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3089-rune-inscribed-parchment",
         },
         {
+            route = {
+                { y = 0.234, mapID = 2521, label = "Ailee Farheart", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            priority = 100,
+            id = "accept-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 96 },
+                                    {
+                                        race = { 2, 5, 6, 8, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-coming-of-age",
+        },
+        {
+            priority = 110,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", offMapText = "Travel to Zephras Isle.", x = 0.42 },
+            },
+            dependsOn = { "accept-coming-of-age" },
+            id = "turnin-coming-of-age",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 96 },
+                                    {
+                                        race = { 2, 5, 6, 8, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-coming-of-age",
+        },
+        {
+            priority = 120,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            id = "accept-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 96 },
+                                    {
+                                        race = { 2, 5, 6, 8, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-92461-harmony-in-balance",
+        },
+        {
+            priority = 130,
+            route = {
+                { y = 0.256, mapID = 2521, label = "Juvenile Vuldren", x = 0.432, offMapText = "Travel to Juvenile Vuldren in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance" },
+            id = "objective-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 96 },
+                                    {
+                                        race = { 2, 5, 6, 8, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-92461-harmony-in-balance",
+        },
+        {
+            priority = 140,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "accept-92461-harmony-in-balance", "objective-92461-harmony-in-balance" },
+            id = "turnin-92461-harmony-in-balance",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 96 },
+                                    {
+                                        race = { 2, 5, 6, 8, 96 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    {
+                        level = { min = 1 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92461-harmony-in-balance",
+        },
+        {
+            priority = 150,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            id = "accept-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 6,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-747-the-hunt-begins",
+        },
+        {
+            id = "objective-747-1-plainstrider-meat",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Meat", offMapText = "Travel to Plainstrider Meat." },
+            },
+            sourceStep = 12,
+            priority = 160,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-1-plainstrider-meat",
+        },
+        {
+            id = "objective-747-2-plainstrider-feather",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            route = {
+                { mapID = 1412, x = 0.49, y = 0.7979999999999999, label = "Plainstrider Feather", offMapText = "Travel to Plainstrider Feather." },
+            },
+            sourceStep = 12,
+            priority = 170,
+            useClientPin = false,
+            dependsOn = { "accept-747-the-hunt-begins" },
+            classAction = "objective-747-2-plainstrider-feather",
+        },
+        {
+            priority = 180,
+            route = {
+                { y = 0.7707, mapID = 1412, label = "Grull Hawkwind", offMapText = "Travel to Grull Hawkwind in Mulgore.", x = 0.4488 },
+            },
+            dependsOn = { "accept-747-the-hunt-begins", "objective-747-1-plainstrider-meat", "objective-747-2-plainstrider-feather" },
+            id = "turnin-747-the-hunt-begins",
+            conditions = {
+                all = {
+                    {
+                        any = {
+                            {
+                                all = {
+                                    { class = 7 },
+                                    {
+                                        class = { 7 },
+                                    },
+                                    { faction = "Horde" },
+                                    { race = 6 },
+                                    {
+                                        race = { 6 },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    { class = 7 },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            sourceStep = 13,
+            useClientPin = false,
+            classAction = "turnin-747-the-hunt-begins",
+        },
+        {
+            priority = 190,
+            route = {
+                { y = 0.772, mapID = 1412, label = "Grull Hawkwind", x = 0.448, offMapText = "Travel to Grull Hawkwind in Mulgore." },
+            },
             id = "accept-3093-rune-inscribed-note",
-            kind = "accept",
-            priority = 750,
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
                     { race = 6 },
+                    {
+                        race = { 6 },
+                    },
                 },
             },
-            text = "Accept Rune-Inscribed Note from Grull Hawkwind in Mulgore. This step is for Tauren.",
-            complete = QuestState(3093, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7720, "Grull Hawkwind",
-                    "Travel to Grull Hawkwind in Mulgore."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-3093-rune-inscribed-note",
         },
         {
-            id = "turnin-3093-rune-inscribed-note",
-            kind = "turnin",
-            priority = 760,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = 6 },
-                },
+            priority = 200,
+            route = {
+                { y = 0.76, mapID = 1412, label = "Meela Dawnstrider", x = 0.45, offMapText = "Travel to Meela Dawnstrider in Mulgore." },
             },
-            text = "Turn in Rune-Inscribed Note to Meela Dawnstrider in Mulgore. This step is for Tauren.",
             dependsOn = { "accept-3093-rune-inscribed-note" },
-            complete = QuestState(3093, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4500, 0.7600, "Meela Dawnstrider",
-                    "Travel to Meela Dawnstrider in Mulgore."),
+            id = "turnin-3093-rune-inscribed-note",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 6 },
+                    },
+                },
             },
+            useClientPin = false,
+            classAction = "turnin-3093-rune-inscribed-note",
         },
         {
-            id = "accept-1462-earth-sapta",
-            kind = "accept",
+            id = "level-before-accept-92484-embracing-the-elements",
+            kind = "note",
+            text = "Reach level 2 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 2 },
+            },
+            requiredLevel = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 92484,
+            priority = 210,
+        },
+        {
+            priority = 220,
+            route = {
+                { y = 0.234, mapID = 2521, label = "Rorian the Dayseeker", x = 0.42, offMapText = "Travel to Rorian the Dayseeker in Zephras Isle." },
+            },
+            dependsOn = { "turnin-92461-harmony-in-balance" },
+            id = "accept-92484-embracing-the-elements",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 2 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-92484-embracing-the-elements",
+        },
+        {
+            priority = 230,
+            dependsOn = { "accept-92484-embracing-the-elements" },
+            id = "objective-92484-reviewed-mechanics",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 2 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-92484-reviewed-mechanics",
+        },
+        {
+            priority = 240,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Windshaper Boro", x = 0.428, offMapText = "Travel to Windshaper Boro in Zephras Isle." },
+            },
+            dependsOn = { "accept-92484-embracing-the-elements", "objective-92484-reviewed-mechanics" },
+            id = "turnin-92484-embracing-the-elements",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 2 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-92484-embracing-the-elements",
+        },
+        {
+            id = "level-before-accept-call-of-earth",
+            kind = "note",
+            text = "Reach level 3 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 3 },
+            },
+            requiredLevel = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 92466,
+            alternativeQuests = { 1516, 1519 },
+            priority = 250,
+        },
+        {
+            priority = 260,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            dependsOn = {},
+            id = "accept-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-call-of-earth",
+        },
+        {
+            priority = 270,
+            route = {
+                { y = 0.18, mapID = 2521, label = "Al'Aketh Converts at the standing stones", offMapText = "Travel to Zephras Isle.", x = 0.464 },
+            },
+            dependsOn = { "accept-call-of-earth" },
+            id = "objective-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-call-of-earth",
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            dependsOn = { "accept-call-of-earth", "objective-call-of-earth" },
+            id = "turnin-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-call-of-earth",
+        },
+        {
+            id = "level-before-accept-1519-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1519,
+            alternativeQuests = { 1516, 92466 },
+            priority = 290,
+        },
+        {
+            priority = 300,
+            route = {
+                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+            },
+            id = "accept-1519-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1519-call-of-earth",
+        },
+        {
+            priority = 310,
+            route = {
+                { y = 0.778, mapID = 1412, label = "Bristleback Shaman", x = 0.646, offMapText = "Travel to Bristleback Shaman in Mulgore." },
+            },
+            dependsOn = { "accept-1519-call-of-earth" },
+            id = "objective-1519-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-1519-call-of-earth",
+        },
+        {
+            priority = 320,
+            route = {
+                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+            },
+            dependsOn = { "accept-1519-call-of-earth", "objective-1519-call-of-earth" },
+            id = "turnin-1519-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1519-call-of-earth",
+        },
+        {
+            id = "level-before-accept-1516-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1516,
+            alternativeQuests = { 1519, 92466 },
+            priority = 330,
+        },
+        {
+            priority = 340,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Canaga Earthcaller", x = 0.424, offMapText = "Travel to Canaga Earthcaller in Durotar." },
+            },
+            id = "accept-1516-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1516-call-of-earth",
+        },
+        {
+            priority = 350,
+            route = {
+                { y = 0.55, mapID = 1411, label = "Felstalker", x = 0.452, offMapText = "Travel to Felstalker in Durotar." },
+            },
+            dependsOn = { "accept-1516-call-of-earth" },
+            id = "objective-1516-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-1516-call-of-earth",
+        },
+        {
+            priority = 360,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Canaga Earthcaller", x = 0.424, offMapText = "Travel to Canaga Earthcaller in Durotar." },
+            },
+            dependsOn = { "accept-1516-call-of-earth", "objective-1516-call-of-earth" },
+            id = "turnin-1516-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1516-call-of-earth",
+        },
+        {
+            priority = 370,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            dependsOn = { "turnin-call-of-earth" },
+            id = "accept-call-of-earth-92467",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-call-of-earth-92467",
+        },
+        {
+            priority = 380,
+            route = {
+                { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
+            },
+            id = "objective-92467-earth-sapta",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-call-of-earth-92467" },
+            classAction = "objective-92467-earth-sapta",
+        },
+        {
+            priority = 390,
+            route = {
+                { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
+            },
+            dependsOn = { "accept-call-of-earth-92467", "objective-92467-earth-sapta" },
+            id = "turnin-call-of-earth-92467",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-call-of-earth-92467",
+        },
+        {
+            priority = 400,
+            route = {
+                { y = 0.24, mapID = 2521, label = "Minor Manifestation of Earth", offMapText = "Travel to Zephras Isle.", x = 0.496 },
+            },
+            dependsOn = { "turnin-call-of-earth-92467" },
+            id = "accept-call-of-earth-92468",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-call-of-earth-92468",
+        },
+        {
+            priority = 410,
+            route = {
+                { y = 0.236, mapID = 2521, label = "Windshaper Boro", offMapText = "Travel to Zephras Isle.", x = 0.428 },
+            },
+            dependsOn = { "accept-call-of-earth-92468" },
+            id = "turnin-call-of-earth-92468",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 3 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-call-of-earth-92468",
+        },
+        {
+            priority = 420,
+            route = {
+                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+            },
+            dependsOn = { "turnin-1519-call-of-earth" },
+            id = "accept-1520-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1520-call-of-earth",
+        },
+        {
+            priority = 430,
+            route = {
+                {
+                    y = 0.76,
+                    mapID = 1411,
+                    label = "Minor Manifestation of Earth",
+                    x = 0.44,
+                    offMapText = "Travel to Minor Manifestation of Earth in Durotar.",
+                    complete = {
+                        map = { 1412 },
+                    },
+                },
+                { y = 0.804, mapID = 1412, label = "Minor Manifestation of Earth", x = 0.538, offMapText = "Travel to Minor Manifestation of Earth in Mulgore." },
+            },
+            id = "objective-1520-earth-sapta",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1520-call-of-earth" },
+            classAction = "objective-1520-earth-sapta",
+        },
+        {
+            priority = 440,
+            route = {
+                { mapID = 1412, x = 0.5383, y = 0.8058, label = "Minor Manifestation of Earth at Kodo Rock", offMapText = "Travel to Kodo Rock southeast of Camp Narache in Mulgore." },
+            },
+            dependsOn = { "accept-1520-call-of-earth", "objective-1520-earth-sapta" },
+            id = "turnin-1520-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1520-call-of-earth",
+        },
+        {
+            priority = 450,
+            route = {
+                { mapID = 1412, x = 0.5383, y = 0.8058, label = "Minor Manifestation of Earth at Kodo Rock", offMapText = "Travel to Kodo Rock southeast of Camp Narache in Mulgore." },
+            },
+            dependsOn = { "turnin-1520-call-of-earth" },
+            id = "accept-1521-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1521-call-of-earth",
+        },
+        {
+            priority = 460,
+            route = {
+                { y = 0.762, mapID = 1412, label = "Seer Ravenfeather", x = 0.448, offMapText = "Travel to Seer Ravenfeather in Mulgore." },
+            },
+            dependsOn = { "accept-1521-call-of-earth" },
+            id = "turnin-1521-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    { race = 6 },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1521-call-of-earth",
+        },
+        {
+            priority = 470,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Canaga Earthcaller", x = 0.424, offMapText = "Travel to Canaga Earthcaller in Durotar." },
+            },
+            dependsOn = { "turnin-1516-call-of-earth" },
+            id = "accept-1517-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1517-call-of-earth",
+        },
+        {
+            priority = 480,
+            route = {
+                {
+                    y = 0.76,
+                    mapID = 1411,
+                    label = "Minor Manifestation of Earth",
+                    x = 0.44,
+                    offMapText = "Travel to Minor Manifestation of Earth in Durotar.",
+                    complete = {
+                        map = { 1412 },
+                    },
+                },
+                { y = 0.804, mapID = 1412, label = "Minor Manifestation of Earth", x = 0.538, offMapText = "Travel to Minor Manifestation of Earth in Mulgore." },
+            },
+            id = "objective-1517-earth-sapta",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1517-call-of-earth" },
+            classAction = "objective-1517-earth-sapta",
+        },
+        {
+            priority = 490,
+            route = {
+                { y = 0.76, mapID = 1411, label = "Minor Manifestation of Earth", x = 0.44, offMapText = "Travel to Minor Manifestation of Earth in Durotar." },
+            },
+            dependsOn = { "accept-1517-call-of-earth", "objective-1517-earth-sapta" },
+            id = "turnin-1517-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1517-call-of-earth",
+        },
+        {
+            priority = 500,
+            route = {
+                { y = 0.76, mapID = 1411, label = "Minor Manifestation of Earth", x = 0.44, offMapText = "Travel to Minor Manifestation of Earth in Durotar." },
+            },
+            dependsOn = { "turnin-1517-call-of-earth" },
+            id = "accept-1518-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1518-call-of-earth",
+        },
+        {
+            priority = 510,
+            route = {
+                { y = 0.69, mapID = 1411, label = "Canaga Earthcaller", x = 0.424, offMapText = "Travel to Canaga Earthcaller in Durotar." },
+            },
+            dependsOn = { "accept-1518-call-of-earth" },
+            id = "turnin-1518-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1518-call-of-earth",
+        },
+        {
+            id = "level-before-accept-94373-call-of-earth",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94373,
+            priority = 520,
+        },
+        {
+            priority = 530,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            id = "accept-94373-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94373-call-of-earth",
+        },
+        {
+            priority = 540,
+            dependsOn = { "accept-94373-call-of-earth" },
+            id = "objective-94373-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-94373-call-of-earth",
+        },
+        {
+            priority = 550,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            dependsOn = { "accept-94373-call-of-earth", "objective-94373-call-of-earth" },
+            id = "turnin-94373-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94373-call-of-earth",
+        },
+        {
+            priority = 560,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            dependsOn = { "turnin-94373-call-of-earth" },
+            id = "accept-94374-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94374-call-of-earth",
+        },
+        {
+            priority = 570,
+            dependsOn = { "accept-94374-call-of-earth" },
+            id = "objective-94374-reviewed-mechanics",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-94374-reviewed-mechanics",
+        },
+        {
+            priority = 580,
+            dependsOn = { "accept-94374-call-of-earth", "objective-94374-reviewed-mechanics" },
+            id = "turnin-94374-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "turnin-94374-call-of-earth",
+        },
+        {
+            priority = 590,
+            dependsOn = { "turnin-94374-call-of-earth" },
+            id = "accept-94375-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "accept-94375-call-of-earth",
+        },
+        {
+            priority = 600,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            dependsOn = { "accept-94375-call-of-earth" },
+            id = "turnin-94375-call-of-earth",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94375-call-of-earth",
+        },
+        {
+            priority = 610,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            id = "accept-94472-earth-sapta",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94472-earth-sapta",
+        },
+        {
+            priority = 620,
+            route = {
+                { y = 0.662, mapID = 1426, label = "Teo Hammerstorm", x = 0.288, offMapText = "Travel to Teo Hammerstorm in Dun Morogh." },
+            },
+            dependsOn = { "accept-94472-earth-sapta" },
+            id = "turnin-94472-earth-sapta",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94472-earth-sapta",
+        },
+        {
+            id = "level-before-accept-76156-stalk-with-the-earthmother",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 76156,
+            priority = 630,
+        },
+        {
+            priority = 640,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            id = "accept-76156-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-76156-stalk-with-the-earthmother",
+        },
+        {
+            route = {
+                { y = 0.436, mapID = 1412, label = "Venture Co. Mine", x = 0.644, offMapText = "Travel to the Venture Co. Mine in Mulgore." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother" },
+            id = "objective-76156-stalk-with-the-earthmother-1",
+            useClientPin = false,
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            priority = 650,
+            classAction = "objective-76156-stalk-with-the-earthmother-1",
+        },
+        {
+            priority = 660,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-76156-stalk-with-the-earthmother", "objective-76156-stalk-with-the-earthmother-1" },
+            id = "turnin-76156-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    {
+                        class = { 1, 7, 11 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-76156-stalk-with-the-earthmother",
+        },
+        {
+            id = "level-before-accept-76240-stalk-with-the-earthmother",
+            kind = "note",
+            text = "Reach level 4 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 4 },
+            },
+            requiredLevel = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 76240,
+            priority = 670,
+        },
+        {
+            priority = 680,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            id = "accept-76240-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-76240-stalk-with-the-earthmother",
+        },
+        {
+            priority = 690,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-76240-stalk-with-the-earthmother" },
+            id = "objective-76240-stalk-with-the-earthmother-1",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "objective-76240-stalk-with-the-earthmother-1",
+        },
+        {
+            priority = 700,
+            route = {
+                { y = 0.656, mapID = 1456, label = "Boarton Shadetotem", x = 0.396, offMapText = "Travel to Boarton Shadetotem in Thunder Bluff." },
+            },
+            dependsOn = { "accept-76240-stalk-with-the-earthmother", "objective-76240-stalk-with-the-earthmother-1" },
+            id = "turnin-76240-stalk-with-the-earthmother",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 4 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-76240-stalk-with-the-earthmother",
+        },
+        {
+            id = "level-before-accept-94449-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94449,
+            priority = 710,
+        },
+        {
+            priority = 720,
+            route = {
+                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", x = 0.474, offMapText = "Travel to Eldrun Stormbreaker in Ironforge." },
+            },
+            id = "accept-94449-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94449-call-of-fire",
+        },
+        {
+            priority = 730,
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
+            },
+            dependsOn = { "accept-94449-call-of-fire" },
+            id = "turnin-94449-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94449-call-of-fire",
+        },
+        {
+            priority = 740,
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
+            },
+            dependsOn = { "turnin-94449-call-of-fire" },
+            id = "accept-94465-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94465-call-of-fire",
+        },
+        {
+            priority = 750,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "accept-94465-call-of-fire" },
+            id = "turnin-94465-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94465-call-of-fire",
+        },
+        {
+            priority = 760,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "turnin-94465-call-of-fire" },
+            id = "accept-94466-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94466-call-of-fire",
+        },
+        {
             priority = 770,
+            dependsOn = { "accept-94466-call-of-fire" },
+            id = "objective-94466-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Earth Sapta from Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            complete = QuestState(1462, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
+            useClientPin = true,
+            classAction = "objective-94466-call-of-fire",
         },
         {
-            id = "turnin-1462-earth-sapta",
-            kind = "turnin",
             priority = 780,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "accept-94466-call-of-fire", "objective-94466-call-of-fire" },
+            id = "turnin-94466-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = 6 },
-                    { level = { min = 4 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Earth Sapta to Seer Ravenfeather in Mulgore. This step is for Tauren.",
-            dependsOn = { "accept-1462-earth-sapta" },
-            complete = QuestState(1462, "completed"),
-            route = {
-                Point(MAP.MULGORE, 0.4480, 0.7620, "Seer Ravenfeather",
-                    "Travel to Seer Ravenfeather in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94466-call-of-fire",
         },
         {
-            id = "accept-1463-earth-sapta",
-            kind = "accept",
             priority = 790,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "turnin-94466-call-of-fire" },
+            id = "accept-94467-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Earth Sapta from Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            complete = QuestState(1463, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-94467-call-of-fire",
         },
         {
-            id = "turnin-1463-earth-sapta",
-            kind = "turnin",
             priority = 800,
+            id = "objective-94467-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 8 } },
-                    { level = { min = 4 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Earth Sapta to Canaga Earthcaller in Durotar. This step is for Orcs and Trolls.",
-            dependsOn = { "accept-1463-earth-sapta" },
-            complete = QuestState(1463, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.4240, 0.6900, "Canaga Earthcaller",
-                    "Travel to Canaga Earthcaller in Durotar."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94467-call-of-fire" },
+            classAction = "objective-94467-quest-work",
         },
         {
-            id = "accept-1522-call-of-fire",
-            kind = "accept",
+            priority = 810,
+            route = {
+                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
+            },
+            dependsOn = { "accept-94467-call-of-fire", "objective-94467-quest-work" },
+            id = "turnin-94467-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94467-call-of-fire",
+        },
+        {
+            priority = 820,
+            route = {
+                { y = 0.645, mapID = 1432, label = "Brazier of the Dormant Flame", x = 0.319, offMapText = "Travel to Brazier of the Dormant Flame in Loch Modan." },
+            },
+            dependsOn = { "turnin-94467-call-of-fire" },
+            id = "accept-94468-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94468-call-of-fire",
+        },
+        {
             priority = 830,
+            route = {
+                { y = 0.436, mapID = 1426, label = "Bruegs Kindleborn", x = 0.876, offMapText = "Travel to Bruegs Kindleborn in Dun Morogh." },
+            },
+            dependsOn = { "accept-94468-call-of-fire" },
+            id = "turnin-94468-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Searn Firewarder in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1522, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3780, 0.3740, "Searn Firewarder",
-                    "Travel to Searn Firewarder in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94468-call-of-fire",
         },
         {
-            id = "turnin-1522-call-of-fire",
-            kind = "turnin",
             priority = 840,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            id = "accept-94473-fire-sapta",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1522-call-of-fire" },
-            complete = QuestState(1522, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94473-fire-sapta",
         },
         {
-            id = "accept-1523-call-of-fire",
-            kind = "accept",
             priority = 850,
+            route = {
+                { y = 0.66, mapID = 1432, label = "Braldir Ashmantle", x = 0.32, offMapText = "Travel to Braldir Ashmantle in Loch Modan." },
+            },
+            dependsOn = { "accept-94473-fire-sapta" },
+            id = "turnin-94473-fire-sapta",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Xanis Flameweaver in Thunder Bluff. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1522-call-of-fire" },
-            complete = QuestState(1523, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2520, 0.2100, "Xanis Flameweaver",
-                    "Travel to Xanis Flameweaver in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94473-fire-sapta",
         },
         {
-            id = "turnin-1523-call-of-fire",
-            kind = "turnin",
+            id = "level-before-accept-97243-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97243,
             priority = 860,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Call of Fire to Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1523-call-of-fire" },
-            complete = QuestState(1523, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
         },
         {
-            id = "accept-2983-call-of-fire",
-            kind = "accept",
             priority = 870,
+            route = {
+                { y = 0.784, mapID = 2521, label = "Sessaria Skystride", x = 0.582, offMapText = "Travel to Sessaria Skystride in Zephras Isle." },
+                { y = 0.448, mapID = 2521, label = "Aarnor Galestrike", x = 0.434, offMapText = "Travel to Aarnor Galestrike in Zephras Isle." },
+            },
+            id = "accept-97243-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Swart in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1523-call-of-fire" },
-            complete = QuestState(2983, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5440, 0.4260, "Swart",
-                    "Travel to Swart in Durotar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-97243-call-of-fire",
         },
         {
-            id = "turnin-2983-call-of-fire",
-            kind = "turnin",
             priority = 880,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "accept-97243-call-of-fire" },
+            id = "turnin-97243-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-2983-call-of-fire" },
-            complete = QuestState(2983, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-97243-call-of-fire",
         },
         {
-            id = "accept-2984-call-of-fire",
-            kind = "accept",
             priority = 890,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "turnin-97243-call-of-fire" },
+            id = "accept-97244-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Narm Skychaser in Mulgore. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-2983-call-of-fire" },
-            complete = QuestState(2984, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4840, 0.5920, "Narm Skychaser",
-                    "Travel to Narm Skychaser in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "accept-97244-call-of-fire",
         },
         {
-            id = "turnin-2984-call-of-fire",
-            kind = "turnin",
             priority = 900,
+            route = {
+                { y = 0.638, mapID = 2521, label = "Skypriest Faladiel", x = 0.644, offMapText = "Travel to Skypriest Faladiel in Zephras Isle." },
+            },
+            dependsOn = { "accept-97244-call-of-fire" },
+            id = "objective-97244-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-2984-call-of-fire" },
-            complete = QuestState(2984, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "objective-97244-call-of-fire",
         },
         {
-            id = "accept-1524-call-of-fire",
-            kind = "accept",
             priority = 910,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "accept-97244-call-of-fire", "objective-97244-call-of-fire" },
+            id = "turnin-97244-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-2984-call-of-fire", "turnin-2983-call-of-fire" },
-            complete = QuestState(1524, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-97244-call-of-fire",
         },
         {
-            id = "turnin-1524-call-of-fire",
-            kind = "turnin",
             priority = 920,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "turnin-97244-call-of-fire" },
+            id = "accept-97245-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1524-call-of-fire" },
-            complete = QuestState(1524, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-97245-call-of-fire",
         },
         {
-            id = "accept-1525-call-of-fire",
-            kind = "accept",
             priority = 930,
+            route = {
+                { y = 0.69, mapID = 2521, label = "Kuramaa", x = 0.424, offMapText = "Travel to Kuramaa in Zephras Isle." },
+            },
+            dependsOn = { "accept-97245-call-of-fire" },
+            id = "objective-97245-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1524-call-of-fire" },
-            complete = QuestState(1525, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "objective-97245-call-of-fire",
         },
         {
-            id = "objective-1525-call-of-fire",
-            kind = "objective",
             priority = 940,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "accept-97245-call-of-fire", "objective-97245-call-of-fire" },
+            id = "turnin-97245-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Kill Stonesplinter casters in Loch Modan and collect a Reagent Pouch. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1525-call-of-fire" },
-            complete = QuestState(1525, "complete"),
-            route = {
-                Point(MAP.DUROTAR, 0.5260, 0.2660, "Burning Blade Cultist",
-                    "Travel to Burning Blade Cultist in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-97245-call-of-fire",
         },
         {
-            id = "turnin-1525-call-of-fire",
-            kind = "turnin",
             priority = 950,
+            route = {
+                { y = 0.86, mapID = 2521, label = "Olariaan Swiftburn", x = 0.512, offMapText = "Travel to Olariaan Swiftburn in Zephras Isle." },
+            },
+            dependsOn = { "turnin-97245-call-of-fire" },
+            id = "accept-97257-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "objective-1525-call-of-fire" },
-            complete = QuestState(1525, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "accept-97257-call-of-fire",
         },
         {
-            id = "accept-1464-fire-sapta",
-            kind = "accept",
-            priority = 952,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Fire Sapta from Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1525-call-of-fire" },
-            complete = QuestState(1464, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
-        },
-        {
-            id = "turnin-1464-fire-sapta",
-            kind = "turnin",
-            priority = 954,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Turn in Fire Sapta to Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1464-fire-sapta" },
-            complete = QuestState(1464, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
-            },
-        },
-        {
-            id = "accept-1526-call-of-fire",
-            kind = "accept",
             priority = 960,
+            id = "objective-97257-quest-work-ritual",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Accept Call of Fire from Telf Joolam in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1525-call-of-fire", "turnin-1524-call-of-fire" },
-            complete = QuestState(1526, "activeOrCompleted"),
+            useClientPin = false,
+            dependsOn = { "accept-97257-call-of-fire" },
             route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5880, "Telf Joolam",
-                    "Travel to Telf Joolam in Durotar."),
+                { mapID = 2521, x = 0.512, y = 0.859, label = "Brazier of Offering", offMapText = "Travel to Brazier of Offering on Zephras Isle." },
             },
+            classAction = "objective-97257-quest-work-ritual",
         },
         {
-            id = "objective-1526-call-of-fire",
-            kind = "objective",
             priority = 970,
+            id = "objective-97257-quest-work-deliver-flame",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Kill Minor Manifestation of Fire in Durotar and collect Glowing Ember. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1526-call-of-fire" },
-            complete = QuestState(1526, "complete"),
+            useClientPin = false,
+            dependsOn = { "accept-97257-call-of-fire" },
             route = {
-                Point(MAP.DUROTAR, 0.3860, 0.5820, "Minor Manifestation of Fire",
-                    "Travel to Minor Manifestation of Fire in Durotar."),
+                { mapID = 2521, x = 0.5835, y = 0.7884, label = "Brazier of Eternal Flame", offMapText = "Travel to Brazier of Eternal Flame on Zephras Isle." },
             },
+            classAction = "objective-97257-quest-work-deliver-flame",
         },
         {
-            id = "turnin-1526-call-of-fire",
-            kind = "turnin",
             priority = 980,
+            route = {
+                { y = 0.784, mapID = 2521, label = "Sessaria Skystride", x = 0.582, offMapText = "Travel to Sessaria Skystride in Zephras Isle." },
+            },
+            dependsOn = { "accept-97257-call-of-fire", "objective-97257-quest-work-ritual", "objective-97257-quest-work-deliver-flame" },
+            id = "turnin-97257-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    { race = 96 },
+                    {
+                        race = { 96 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Brazier of the Dormant Flame in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "objective-1526-call-of-fire" },
-            complete = QuestState(1526, "completed"),
-            route = {
-                Point(MAP.DUROTAR, 0.3890, 0.5820, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Durotar.", { map = { MAP.LOCHMODAN } }),
-                Point(MAP.LOCHMODAN, 0.3190, 0.6450, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Loch Modan."),
-            },
+            useClientPin = false,
+            classAction = "turnin-97257-call-of-fire",
         },
         {
-            id = "accept-1527-call-of-fire",
-            kind = "accept",
+            id = "level-before-accept-1522-call-of-fire",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1522,
+            alternativeQuests = { 1523, 2983, 2984 },
             priority = 990,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
-                },
-            },
-            text = "Accept Call of Fire from Brazier of the Dormant Flame in Durotar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1526-call-of-fire" },
-            complete = QuestState(1527, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.3890, 0.5820, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Durotar.", { map = { MAP.LOCHMODAN } }),
-                Point(MAP.LOCHMODAN, 0.3190, 0.6450, "Brazier of the Dormant Flame",
-                    "Travel to Brazier of the Dormant Flame in Loch Modan."),
-            },
         },
         {
-            id = "turnin-1527-call-of-fire",
-            kind = "turnin",
             priority = 1000,
+            route = {
+                { y = 0.374, mapID = 1454, label = "Searn Firewarder", x = 0.378, offMapText = "Travel to Searn Firewarder in Orgrimmar." },
+            },
+            id = "accept-1522-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 10 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Fire to Kranal Fiss in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1527-call-of-fire" },
-            complete = QuestState(1527, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.5580, 0.2000, "Kranal Fiss",
-                    "Travel to Kranal Fiss in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1522-call-of-fire",
         },
         {
-            id = "accept-1529-call-of-water",
-            kind = "accept",
+            priority = 1010,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "accept-1522-call-of-fire" },
+            id = "turnin-1522-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1522-call-of-fire",
+        },
+        {
+            priority = 1020,
+            route = {
+                { y = 0.21, mapID = 1456, label = "Xanis Flameweaver", x = 0.252, offMapText = "Travel to Xanis Flameweaver in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-1522-call-of-fire" },
+            id = "accept-1523-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1523-call-of-fire",
+        },
+        {
+            priority = 1030,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "accept-1523-call-of-fire" },
+            id = "turnin-1523-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1523-call-of-fire",
+        },
+        {
+            priority = 1040,
+            route = {
+                { y = 0.426, mapID = 1411, label = "Swart", x = 0.544, offMapText = "Travel to Swart in Durotar." },
+            },
+            dependsOn = { "turnin-1523-call-of-fire" },
+            id = "accept-2983-call-of-fire",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-2983-call-of-fire",
+        },
+        {
             priority = 1050,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "accept-2983-call-of-fire" },
+            id = "turnin-2983-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Xanis Flameweaver in Thunder Bluff. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1528-call-of-water" },
-            complete = QuestState(1529, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2520, 0.2100, "Xanis Flameweaver",
-                    "Travel to Xanis Flameweaver in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-2983-call-of-fire",
         },
         {
-            id = "turnin-1529-call-of-water",
-            kind = "turnin",
             priority = 1060,
+            route = {
+                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+            },
+            dependsOn = { "turnin-2983-call-of-fire" },
+            id = "accept-2984-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1529-call-of-water" },
-            complete = QuestState(1529, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-2984-call-of-fire",
         },
         {
-            id = "accept-2985-call-of-water",
-            kind = "accept",
             priority = 1070,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "accept-2984-call-of-fire" },
+            id = "turnin-2984-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Swart in Durotar.",
-            dependsOn = { "turnin-1529-call-of-water" },
-            complete = QuestState(2985, "activeOrCompleted"),
-            route = {
-                Point(MAP.DUROTAR, 0.5440, 0.4260, "Swart",
-                    "Travel to Swart in Durotar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-2984-call-of-fire",
         },
         {
-            id = "turnin-2985-call-of-water",
-            kind = "turnin",
             priority = 1080,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "turnin-2984-call-of-fire", "turnin-2983-call-of-fire" },
+            id = "accept-1524-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens.",
-            dependsOn = { "accept-2985-call-of-water" },
-            complete = QuestState(2985, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1524-call-of-fire",
         },
         {
-            id = "accept-2986-call-of-water",
-            kind = "accept",
             priority = 1090,
+            route = {
+                { y = 0.588, mapID = 1411, label = "Telf Joolam", x = 0.386, offMapText = "Travel to Telf Joolam in Durotar." },
+            },
+            dependsOn = { "accept-1524-call-of-fire" },
+            id = "turnin-1524-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Narm Skychaser in Mulgore.",
-            dependsOn = { "turnin-2985-call-of-water" },
-            complete = QuestState(2986, "activeOrCompleted"),
-            route = {
-                Point(MAP.MULGORE, 0.4840, 0.5920, "Narm Skychaser",
-                    "Travel to Narm Skychaser in Mulgore."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1524-call-of-fire",
         },
         {
-            id = "turnin-2986-call-of-water",
-            kind = "turnin",
             priority = 1100,
+            route = {
+                { y = 0.588, mapID = 1411, label = "Telf Joolam", x = 0.386, offMapText = "Travel to Telf Joolam in Durotar." },
+            },
+            dependsOn = { "turnin-1524-call-of-fire" },
+            id = "accept-1525-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens.",
-            dependsOn = { "accept-2986-call-of-water" },
-            complete = QuestState(2986, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1525-call-of-fire",
         },
         {
-            id = "accept-94494-call-of-water",
-            kind = "accept",
             priority = 1110,
+            dependsOn = { "accept-1525-call-of-fire" },
+            id = "objective-1525-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Eldrun Stormbreaker in Ironforge.",
-            dependsOn = { "turnin-2986-call-of-water" },
-            complete = QuestState(94494, "activeOrCompleted"),
-            route = {
-                Point(MAP.IRONFORGE, 0.4740, 0.1360, "Eldrun Stormbreaker",
-                    "Travel to Eldrun Stormbreaker in Ironforge."),
-            },
+            useClientPin = true,
+            classAction = "objective-1525-call-of-fire",
         },
         {
-            id = "turnin-94494-call-of-water",
-            kind = "turnin",
             priority = 1120,
+            route = {
+                { y = 0.588, mapID = 1411, label = "Telf Joolam", x = 0.386, offMapText = "Travel to Telf Joolam in Durotar." },
+            },
+            dependsOn = { "accept-1525-call-of-fire", "objective-1525-call-of-fire" },
+            id = "turnin-1525-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Alliance" },
                     { class = 7 },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Norric Lochthane in Loch Modan.",
-            dependsOn = { "accept-94494-call-of-water" },
-            complete = QuestState(94494, "completed"),
-            route = {
-                Point(MAP.LOCHMODAN, 0.4180, 0.1900, "Norric Lochthane",
-                    "Travel to Norric Lochthane in Loch Modan."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1525-call-of-fire",
         },
         {
-            id = "accept-1530-call-of-water",
-            kind = "accept",
             priority = 1130,
+            route = {
+                { y = 0.588, mapID = 1411, label = "Telf Joolam", x = 0.386, offMapText = "Travel to Telf Joolam in Durotar." },
+            },
+            dependsOn = { "turnin-1525-call-of-fire", "turnin-1524-call-of-fire" },
+            id = "accept-1526-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-94494-call-of-water", "turnin-1528-call-of-water" },
-            complete = QuestState(1530, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1526-call-of-fire",
         },
         {
-            id = "turnin-1530-call-of-water",
-            kind = "turnin",
             priority = 1140,
+            route = {
+                { mapID = 1411, x = 0.3872, y = 0.5829, label = "Minor Manifestation of Fire", offMapText = "Travel to Minor Manifestation of Fire." },
+            },
+            dependsOn = { "accept-1526-call-of-fire" },
+            id = "objective-1526-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1530-call-of-water" },
-            complete = QuestState(1530, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "objective-1526-call-of-fire",
         },
         {
-            id = "accept-1535-call-of-water",
-            kind = "accept",
             priority = 1150,
+            route = {
+                { y = 0.582, mapID = 1411, label = "Brazier of the Dormant Flame", x = 0.389, offMapText = "Travel to Brazier of the Dormant Flame in Durotar." },
+            },
+            dependsOn = { "accept-1526-call-of-fire", "objective-1526-call-of-fire" },
+            id = "turnin-1526-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1530-call-of-water" },
-            complete = QuestState(1535, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1526-call-of-fire",
         },
         {
-            id = "turnin-1535-call-of-water",
-            kind = "turnin",
             priority = 1160,
+            route = {
+                { y = 0.582, mapID = 1411, label = "Brazier of the Dormant Flame", x = 0.389, offMapText = "Travel to Brazier of the Dormant Flame in Durotar." },
+            },
+            dependsOn = { "turnin-1526-call-of-fire" },
+            id = "accept-1527-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1535-call-of-water" },
-            complete = QuestState(1535, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "accept-1527-call-of-fire",
         },
         {
-            id = "accept-1536-call-of-water",
-            kind = "accept",
             priority = 1170,
+            route = {
+                { y = 0.2, mapID = 1413, label = "Kranal Fiss", x = 0.558, offMapText = "Travel to Kranal Fiss in The Barrens." },
+            },
+            dependsOn = { "accept-1527-call-of-fire" },
+            id = "turnin-1527-call-of-fire",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1535-call-of-water", "turnin-1530-call-of-water" },
-            complete = QuestState(1536, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1527-call-of-fire",
         },
         {
-            id = "turnin-1536-call-of-water",
-            kind = "turnin",
+            id = "level-before-accept-1528-call-of-water",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1528,
+            alternativeQuests = { 1529, 2985, 2986 },
             priority = 1180,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1536-call-of-water" },
-            complete = QuestState(1536, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
         },
         {
-            id = "accept-1534-call-of-water",
-            kind = "accept",
             priority = 1190,
+            route = {
+                { y = 0.374, mapID = 1454, label = "Searn Firewarder", x = 0.378, offMapText = "Travel to Searn Firewarder in Orgrimmar." },
+            },
+            id = "accept-1528-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1536-call-of-water" },
-            complete = QuestState(1534, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1528-call-of-water",
         },
         {
-            id = "turnin-1534-call-of-water",
-            kind = "turnin",
             priority = 1200,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-1528-call-of-water" },
+            id = "turnin-1528-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1534-call-of-water" },
-            complete = QuestState(1534, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1528-call-of-water",
         },
         {
-            id = "accept-220-call-of-water",
-            kind = "accept",
+            id = "level-before-accept-94495-call-of-water",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94495,
             priority = 1210,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Brine in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-1534-call-of-water", "turnin-1536-call-of-water" },
-            complete = QuestState(220, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.4340, 0.7740, "Brine",
-                    "Travel to Brine in The Barrens."),
-            },
         },
         {
-            id = "turnin-220-call-of-water",
-            kind = "turnin",
             priority = 1220,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            id = "accept-94495-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-220-call-of-water" },
-            complete = QuestState(220, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94495-call-of-water",
         },
         {
-            id = "accept-972-water-sapta",
-            kind = "accept",
-            priority = 1222,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Water Sapta from Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-220-call-of-water" },
-            complete = QuestState(972, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
-        },
-        {
-            id = "turnin-972-water-sapta",
-            kind = "turnin",
-            priority = 1224,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Water Sapta to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-972-water-sapta" },
-            complete = QuestState(972, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
-        },
-        {
-            id = "accept-63-call-of-water",
-            kind = "accept",
             priority = 1230,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "accept-94495-call-of-water" },
+            id = "turnin-94495-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-220-call-of-water" },
-            complete = QuestState(63, "activeOrCompleted"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94495-call-of-water",
         },
         {
-            id = "turnin-63-call-of-water",
-            kind = "turnin",
             priority = 1240,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "turnin-94495-call-of-water" },
+            id = "accept-94497-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Brazier of Everfount in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-63-call-of-water" },
-            complete = QuestState(63, "completed"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3820, 0.4450, "Brazier of Everfount",
-                    "Travel to Brazier of Everfount in Silverpine Forest."),
-            },
+            useClientPin = false,
+            classAction = "accept-94497-call-of-water",
         },
         {
-            id = "accept-1103-call-of-water",
-            kind = "accept",
-            priority = 1242,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Accept Call of Water from Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-63-call-of-water" },
-            complete = QuestState(1103, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
-                    "Travel to Tiev Mordune in Silverpine Forest."),
-            },
-        },
-        {
-            id = "turnin-1103-call-of-water",
-            kind = "turnin",
-            priority = 1244,
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
-                },
-            },
-            text = "Turn in Call of Water to Tiev Mordune in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1103-call-of-water" },
-            complete = QuestState(1103, "completed"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3740, 0.4400, "Tiev Mordune",
-                    "Travel to Tiev Mordune in Silverpine Forest."),
-            },
-        },
-        {
-            id = "accept-100-call-of-water",
-            kind = "accept",
             priority = 1250,
+            id = "objective-94497-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Brazier of Everfount in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-63-call-of-water" },
-            complete = QuestState(100, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3820, 0.4450, "Brazier of Everfount",
-                    "Travel to Brazier of Everfount in Silverpine Forest."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94497-call-of-water" },
+            classAction = "objective-94497-quest-work",
         },
         {
-            id = "turnin-100-call-of-water",
-            kind = "turnin",
             priority = 1260,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "accept-94497-call-of-water", "objective-94497-quest-work" },
+            id = "turnin-94497-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Minor Manifestation of Water in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-100-call-of-water" },
-            complete = QuestState(100, "completed"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3860, 0.4460, "Minor Manifestation of Water",
-                    "Travel to Minor Manifestation of Water in Silverpine Forest."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94497-call-of-water",
         },
         {
-            id = "accept-96-call-of-water",
-            kind = "accept",
             priority = 1270,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "turnin-94497-call-of-water" },
+            id = "accept-94499-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Water from Minor Manifestation of Water in Silverpine Forest. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-100-call-of-water" },
-            complete = QuestState(96, "activeOrCompleted"),
-            route = {
-                Point(MAP.SILVERPINEFOREST, 0.3860, 0.4460, "Minor Manifestation of Water",
-                    "Travel to Minor Manifestation of Water in Silverpine Forest."),
-            },
+            useClientPin = false,
+            classAction = "accept-94499-call-of-water",
         },
         {
-            id = "turnin-96-call-of-water",
-            kind = "turnin",
             priority = 1280,
+            id = "objective-94499-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 20 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Water to Islen Waterseer in The Barrens. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-96-call-of-water" },
-            complete = QuestState(96, "completed"),
-            route = {
-                Point(MAP.BARRENS, 0.6580, 0.4380, "Islen Waterseer",
-                    "Travel to Islen Waterseer in The Barrens."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94499-call-of-water" },
+            classAction = "objective-94499-quest-work",
         },
         {
-            id = "accept-1532-call-of-air",
-            kind = "accept",
             priority = 1290,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "accept-94499-call-of-water", "objective-94499-quest-work" },
+            id = "turnin-94499-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 30 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Call of Air from Xanis Flameweaver in Thunder Bluff. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(1532, "activeOrCompleted"),
-            route = {
-                Point(MAP.THUNDERBLUFF, 0.2520, 0.2100, "Xanis Flameweaver",
-                    "Travel to Xanis Flameweaver in Thunder Bluff."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94499-call-of-water",
         },
         {
-            id = "turnin-1532-call-of-air",
-            kind = "turnin",
             priority = 1300,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "turnin-94499-call-of-water" },
+            id = "accept-94500-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 30 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Call of Air to Prate Cloudseer in Thousand Needles. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-1532-call-of-air" },
-            complete = QuestState(1532, "completed"),
-            route = {
-                Point(MAP.THOUSANDNEEDLES, 0.5360, 0.4280, "Prate Cloudseer",
-                    "Travel to Prate Cloudseer in Thousand Needles."),
-            },
+            useClientPin = false,
+            classAction = "accept-94500-call-of-water",
         },
         {
-            id = "accept-8411-mastering-the-elements",
-            kind = "accept",
             priority = 1310,
+            id = "objective-94500-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Mastering the Elements from Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "turnin-8410-elemental-mastery" },
-            complete = QuestState(8411, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94500-call-of-water" },
+            classAction = "objective-94500-quest-work",
         },
         {
-            id = "objective-8411-mastering-the-elements",
-            kind = "objective",
             priority = 1320,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "accept-94500-call-of-water", "objective-94500-quest-work" },
+            id = "turnin-94500-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Kill Stone Fury in Alterac Mountains and collect Elemental Earth.",
-            dependsOn = { "accept-8411-mastering-the-elements" },
-            complete = QuestState(8411, "complete"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.7960, 0.4640, "Stone Fury",
-                    "Travel to Stone Fury in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.8020, 0.6200, "Cyclonian",
-                    "Travel to Cyclonian in Alterac Mountains."),
-                Point(MAP.ALTERACMOUNTAINS, 0.6000, 0.4560, "Ancient Fire Elemental",
-                    "Travel to Ancient Fire Elemental in Alterac Mountains."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94500-call-of-water",
         },
         {
-            id = "turnin-8411-mastering-the-elements",
-            kind = "turnin",
             priority = 1330,
+            route = {
+                { y = 0.764, mapID = 1437, label = "Hervdana Saegrund", x = 0.656, offMapText = "Travel to Hervdana Saegrund in Wetlands." },
+            },
+            dependsOn = { "turnin-94500-call-of-water" },
+            id = "accept-94501-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 50 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Mastering the Elements to Bath'rah the Windwatcher in Alterac Mountains.",
-            dependsOn = { "objective-8411-mastering-the-elements" },
-            complete = QuestState(8411, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
+            useClientPin = false,
+            classAction = "accept-94501-call-of-water",
         },
         {
-            id = "accept-8412-spirit-totem",
-            kind = "accept",
             priority = 1340,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            dependsOn = { "accept-94501-call-of-water" },
+            id = "turnin-94501-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 50 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Spirit Totem from Bath'rah the Windwatcher in Alterac Mountains. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "turnin-8411-mastering-the-elements", "turnin-8410-elemental-mastery" },
-            complete = QuestState(8412, "activeOrCompleted"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94501-call-of-water",
         },
         {
-            id = "turnin-8412-spirit-totem",
-            kind = "turnin",
             priority = 1350,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            dependsOn = { "turnin-94501-call-of-water" },
+            id = "accept-94502-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 50 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Spirit Totem to Bath'rah the Windwatcher in Alterac Mountains. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-8412-spirit-totem" },
-            complete = QuestState(8412, "completed"),
-            route = {
-                Point(MAP.ALTERACMOUNTAINS, 0.8040, 0.6680, "Bath'rah the Windwatcher",
-                    "Travel to Bath'rah the Windwatcher in Alterac Mountains."),
-            },
+            useClientPin = false,
+            classAction = "accept-94502-call-of-water",
         },
         {
-            id = "accept-7667-material-assistance",
-            kind = "accept",
             priority = 1360,
+            id = "objective-94502-quest-work",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Material Assistance from Sagorne Creststrider in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            complete = QuestState(7667, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
-            },
+            useClientPin = true,
+            dependsOn = { "accept-94502-call-of-water" },
+            classAction = "objective-94502-quest-work",
         },
         {
-            id = "objective-7667-material-assistance",
-            kind = "objective",
             priority = 1370,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            dependsOn = { "accept-94502-call-of-water", "objective-94502-quest-work" },
+            id = "turnin-94502-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Collect an Azerothian Diamond from solid chests on the route or buy one from the auction house. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "accept-7667-material-assistance" },
-            complete = QuestState(7667, "complete"),
-            route = {
-                Point(MAP.EASTERNPLAGUELANDS, 0.3960, 0.7560, "Solid Chest",
-                    "Travel to Solid Chest in Eastern Plaguelands.", { map = { MAP.AZSHARA, MAP.WESTERNPLAGUELANDS, MAP.BLASTEDLANDS, MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.EASTERNPLAGUELANDS, 0.8690, 0.3950, "Solid Chest",
-                    "Travel to Solid Chest in Eastern Plaguelands.", { map = { MAP.AZSHARA, MAP.WESTERNPLAGUELANDS, MAP.BLASTEDLANDS, MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.AZSHARA, 0.3550, 0.3590, "Solid Chest",
-                    "Travel to Solid Chest in Azshara.", { map = { MAP.WESTERNPLAGUELANDS, MAP.BLASTEDLANDS, MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.AZSHARA, 0.4150, 0.2030, "Solid Chest",
-                    "Travel to Solid Chest in Azshara.", { map = { MAP.WESTERNPLAGUELANDS, MAP.BLASTEDLANDS, MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.WESTERNPLAGUELANDS, 0.3940, 0.6680, "Solid Chest",
-                    "Travel to Solid Chest in Western Plaguelands.", { map = { MAP.BLASTEDLANDS, MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.BLASTEDLANDS, 0.4430, 0.1210, "Solid Chest",
-                    "Travel to Solid Chest in Blasted Lands.", { map = { MAP.TANARIS, MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.TANARIS, 0.7380, 0.4820, "Solid Chest",
-                    "Travel to Solid Chest in Tanaris.", { map = { MAP.BURNINGSTEPPES, MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.BURNINGSTEPPES, 0.2680, 0.4280, "Firesworn",
-                    "Travel to Firesworn in Burning Steppes.", { map = { MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.BURNINGSTEPPES, 0.2180, 0.4760, "Solid Chest",
-                    "Travel to Solid Chest in Burning Steppes.", { map = { MAP.HINTERLANDS, MAP.WINTERSPRING } }),
-                Point(MAP.HINTERLANDS, 0.7110, 0.4870, "Solid Chest",
-                    "Travel to Solid Chest in The Hinterlands.", { map = { MAP.WINTERSPRING } }),
-                Point(MAP.WINTERSPRING, 0.6640, 0.3590, "Solid Chest",
-                    "Travel to Solid Chest in Winterspring."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94502-call-of-water",
         },
         {
-            id = "turnin-7667-material-assistance",
-            kind = "turnin",
             priority = 1380,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            id = "accept-94616-water-sapta",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { race = { 2, 6, 8 } },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Turn in Material Assistance to Sagorne Creststrider in Orgrimmar. This step is for Orcs, Tauren, and Trolls.",
-            dependsOn = { "objective-7667-material-assistance" },
-            complete = QuestState(7667, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
-            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-94616-water-sapta",
         },
         {
-            id = "accept-7669-again-into-the-great-ossuary",
-            kind = "accept",
             priority = 1390,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            dependsOn = { "accept-94616-water-sapta" },
+            id = "turnin-94616-water-sapta",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
                 },
             },
-            text = "Accept Again Into the Great Ossuary from Sagorne Creststrider in Orgrimmar.",
-            complete = QuestState(7669, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-94616-water-sapta",
         },
         {
-            id = "turnin-7669-again-into-the-great-ossuary",
-            kind = "turnin",
             priority = 1400,
+            route = {
+                { y = 0.21, mapID = 1456, label = "Xanis Flameweaver", x = 0.252, offMapText = "Travel to Xanis Flameweaver in Thunder Bluff." },
+            },
+            dependsOn = { "turnin-1528-call-of-water" },
+            id = "accept-1529-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Turn in Again Into the Great Ossuary to Sagorne Creststrider in Orgrimmar.",
-            dependsOn = { "accept-7669-again-into-the-great-ossuary" },
-            complete = QuestState(7669, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "accept-1529-call-of-water",
         },
         {
-            id = "accept-8259-a-more-fitting-reward",
-            kind = "accept",
             priority = 1410,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-1529-call-of-water" },
+            id = "turnin-1529-call-of-water",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
                 },
             },
-            text = "Accept A More Fitting Reward from Sagorne Creststrider in Orgrimmar.",
-            complete = QuestState(8259, "activeOrCompleted"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
-            },
+            useClientPin = false,
+            classAction = "turnin-1529-call-of-water",
         },
         {
-            id = "turnin-8259-a-more-fitting-reward",
-            kind = "turnin",
-            priority = 1420,
+            id = "level-before-accept-2985-call-of-water",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
             conditions = {
                 all = {
-                    { faction = "Horde" },
                     { class = 7 },
-                    { level = { min = 58 } },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
                 },
             },
-            text = "Turn in A More Fitting Reward to Sagorne Creststrider in Orgrimmar.",
-            dependsOn = { "accept-8259-a-more-fitting-reward" },
-            complete = QuestState(8259, "completed"),
-            route = {
-                Point(MAP.ORGRIMMAR, 0.3860, 0.3620, "Sagorne Creststrider",
-                    "Travel to Sagorne Creststrider in Orgrimmar."),
+            complete = {
+                level = { min = 20 },
             },
-        }
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2985,
+            alternativeQuests = { 1528, 1529, 2986 },
+            priority = 1420,
+        },
+        {
+            priority = 1430,
+            route = {
+                { y = 0.426, mapID = 1411, label = "Swart", x = 0.544, offMapText = "Travel to Swart in Durotar." },
+            },
+            dependsOn = { "turnin-1529-call-of-water" },
+            id = "accept-2985-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-2985-call-of-water",
+        },
+        {
+            priority = 1440,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-2985-call-of-water" },
+            id = "turnin-2985-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-2985-call-of-water",
+        },
+        {
+            priority = 1450,
+            route = {
+                { y = 0.592, mapID = 1412, label = "Narm Skychaser", x = 0.484, offMapText = "Travel to Narm Skychaser in Mulgore." },
+            },
+            dependsOn = { "turnin-2985-call-of-water" },
+            id = "accept-2986-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-2986-call-of-water",
+        },
+        {
+            priority = 1460,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-2986-call-of-water" },
+            id = "turnin-2986-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-2986-call-of-water",
+        },
+        {
+            priority = 1470,
+            route = {
+                { y = 0.136, mapID = 1455, label = "Eldrun Stormbreaker", x = 0.474, offMapText = "Travel to Eldrun Stormbreaker in Ironforge." },
+            },
+            dependsOn = { "turnin-2986-call-of-water" },
+            id = "accept-94494-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-94494-call-of-water",
+        },
+        {
+            priority = 1480,
+            route = {
+                { y = 0.19, mapID = 1432, label = "Norric Lochthane", x = 0.418, offMapText = "Travel to Norric Lochthane in Loch Modan." },
+            },
+            dependsOn = { "accept-94494-call-of-water" },
+            id = "turnin-94494-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-94494-call-of-water",
+        },
+        {
+            priority = 1490,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "turnin-94494-call-of-water", "turnin-1528-call-of-water" },
+            id = "accept-1530-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1530-call-of-water",
+        },
+        {
+            priority = 1500,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "accept-1530-call-of-water" },
+            id = "turnin-1530-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1530-call-of-water",
+        },
+        {
+            priority = 1510,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "turnin-1530-call-of-water" },
+            id = "accept-1535-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1535-call-of-water",
+        },
+        {
+            priority = 1520,
+            route = {
+                { mapID = 1413, x = 0.4435, y = 0.7696999999999999, label = "Filled Brown Waterskin", offMapText = "Travel to Filled Brown Waterskin." },
+            },
+            id = "objective-1535-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1535-call-of-water" },
+            classAction = "objective-1535-quest-work",
+        },
+        {
+            priority = 1530,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "accept-1535-call-of-water", "objective-1535-quest-work" },
+            id = "turnin-1535-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1535-call-of-water",
+        },
+        {
+            priority = 1540,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "turnin-1535-call-of-water", "turnin-1530-call-of-water" },
+            id = "accept-1536-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1536-call-of-water",
+        },
+        {
+            priority = 1550,
+            route = {
+                { mapID = 1424, x = 0.6214999999999999, y = 0.2075, label = "Filled Red Waterskin", offMapText = "Travel to Filled Red Waterskin." },
+            },
+            id = "objective-1536-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1536-call-of-water" },
+            classAction = "objective-1536-quest-work",
+        },
+        {
+            priority = 1560,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "accept-1536-call-of-water", "objective-1536-quest-work" },
+            id = "turnin-1536-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1536-call-of-water",
+        },
+        {
+            priority = 1570,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "turnin-1536-call-of-water" },
+            id = "accept-1534-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-1534-call-of-water",
+        },
+        {
+            priority = 1580,
+            route = {
+                { mapID = 1440, x = 0.33549999999999996, y = 0.6744, label = "Filled Blue Waterskin", offMapText = "Travel to Filled Blue Waterskin." },
+            },
+            id = "objective-1534-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-1534-call-of-water" },
+            classAction = "objective-1534-quest-work",
+        },
+        {
+            priority = 1590,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "accept-1534-call-of-water", "objective-1534-quest-work" },
+            id = "turnin-1534-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1534-call-of-water",
+        },
+        {
+            priority = 1600,
+            route = {
+                { y = 0.774, mapID = 1413, label = "Brine", x = 0.434, offMapText = "Travel to Brine in The Barrens." },
+            },
+            dependsOn = { "turnin-1534-call-of-water", "turnin-1536-call-of-water" },
+            id = "accept-220-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-220-call-of-water",
+        },
+        {
+            priority = 1610,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-220-call-of-water" },
+            id = "turnin-220-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-220-call-of-water",
+        },
+        {
+            priority = 1620,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "turnin-220-call-of-water" },
+            id = "accept-63-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-63-call-of-water",
+        },
+        {
+            priority = 1630,
+            route = {
+                { mapID = 1421, x = 0.38280000000000003, y = 0.4456, label = "Corrupt Manifestation's Bracers", offMapText = "Travel to Corrupt Manifestation's Bracers." },
+            },
+            id = "objective-63-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = { "accept-63-call-of-water" },
+            classAction = "objective-63-quest-work",
+        },
+        {
+            priority = 1640,
+            route = {
+                { y = 0.445, mapID = 1421, label = "Brazier of Everfount", x = 0.382, offMapText = "Travel to Brazier of Everfount in Silverpine Forest." },
+            },
+            dependsOn = { "accept-63-call-of-water", "objective-63-quest-work" },
+            id = "turnin-63-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-63-call-of-water",
+        },
+        {
+            priority = 1650,
+            route = {
+                { y = 0.445, mapID = 1421, label = "Brazier of Everfount", x = 0.382, offMapText = "Travel to Brazier of Everfount in Silverpine Forest." },
+            },
+            dependsOn = { "turnin-63-call-of-water" },
+            id = "accept-100-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-100-call-of-water",
+        },
+        {
+            priority = 1660,
+            route = {
+                { y = 0.446, mapID = 1421, label = "Minor Manifestation of Water", x = 0.386, offMapText = "Travel to Minor Manifestation of Water in Silverpine Forest." },
+            },
+            dependsOn = { "accept-100-call-of-water" },
+            id = "turnin-100-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-100-call-of-water",
+        },
+        {
+            priority = 1670,
+            route = {
+                { y = 0.446, mapID = 1421, label = "Minor Manifestation of Water", x = 0.386, offMapText = "Travel to Minor Manifestation of Water in Silverpine Forest." },
+            },
+            dependsOn = { "turnin-100-call-of-water" },
+            id = "accept-96-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-96-call-of-water",
+        },
+        {
+            priority = 1680,
+            route = {
+                { y = 0.438, mapID = 1413, label = "Islen Waterseer", x = 0.658, offMapText = "Travel to Islen Waterseer in The Barrens." },
+            },
+            dependsOn = { "accept-96-call-of-water" },
+            id = "turnin-96-call-of-water",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-96-call-of-water",
+        },
+        {
+            id = "level-before-accept-1531-call-of-air",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1531,
+            alternativeQuests = { 1532 },
+            priority = 1690,
+        },
+        {
+            priority = 1700,
+            route = {
+                { y = 0.374, mapID = 1454, label = "Searn Firewarder", x = 0.378, offMapText = "Travel to Searn Firewarder in Orgrimmar." },
+            },
+            id = "accept-1531-call-of-air",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1531-call-of-air",
+        },
+        {
+            priority = 1710,
+            route = {
+                { y = 0.428, mapID = 1441, label = "Prate Cloudseer", x = 0.536, offMapText = "Travel to Prate Cloudseer in Thousand Needles." },
+            },
+            dependsOn = { "accept-1531-call-of-air" },
+            id = "turnin-1531-call-of-air",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1531-call-of-air",
+        },
+        {
+            priority = 1720,
+            route = {
+                { y = 0.21, mapID = 1456, label = "Xanis Flameweaver", x = 0.252, offMapText = "Travel to Xanis Flameweaver in Thunder Bluff." },
+            },
+            id = "accept-1532-call-of-air",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1532-call-of-air",
+        },
+        {
+            priority = 1730,
+            route = {
+                { y = 0.428, mapID = 1441, label = "Prate Cloudseer", x = 0.536, offMapText = "Travel to Prate Cloudseer in Thousand Needles." },
+            },
+            dependsOn = { "accept-1532-call-of-air" },
+            id = "turnin-1532-call-of-air",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-1532-call-of-air",
+        },
+        {
+            id = "level-before-accept-8410-elemental-mastery",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8410,
+            alternativeQuests = { 8411 },
+            priority = 1740,
+        },
+        {
+            priority = 1750,
+            route = {
+                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+            },
+            id = "accept-8410-elemental-mastery",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-8410-elemental-mastery",
+        },
+        {
+            priority = 1760,
+            id = "objective-8410-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-8410-elemental-mastery" },
+            classAction = "objective-8410-quest-work",
+        },
+        {
+            priority = 1770,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-8410-elemental-mastery", "objective-8410-quest-work" },
+            id = "turnin-8410-elemental-mastery",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8410-elemental-mastery",
+        },
+        {
+            id = "level-before-accept-8411-mastering-the-elements",
+            kind = "note",
+            text = "Reach level 50 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 50 },
+            },
+            requiredLevel = 50,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 8411,
+            alternativeQuests = { 8410 },
+            priority = 1780,
+        },
+        {
+            priority = 1790,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "turnin-8410-elemental-mastery" },
+            id = "accept-8411-mastering-the-elements",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8411-mastering-the-elements",
+        },
+        {
+            priority = 1800,
+            dependsOn = { "accept-8411-mastering-the-elements" },
+            id = "objective-8411-mastering-the-elements",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-8411-mastering-the-elements",
+        },
+        {
+            priority = 1810,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-8411-mastering-the-elements", "objective-8411-mastering-the-elements" },
+            id = "turnin-8411-mastering-the-elements",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8411-mastering-the-elements",
+        },
+        {
+            priority = 1820,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "turnin-8411-mastering-the-elements", "turnin-8410-elemental-mastery" },
+            id = "accept-8412-spirit-totem",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "accept-8412-spirit-totem",
+        },
+        {
+            priority = 1830,
+            id = "objective-8412-quest-work",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            dependsOn = { "accept-8412-spirit-totem" },
+            classAction = "objective-8412-quest-work",
+        },
+        {
+            priority = 1840,
+            route = {
+                { y = 0.668, mapID = 1416, label = "Bath'rah the Windwatcher", x = 0.804, offMapText = "Travel to Bath'rah the Windwatcher in Alterac Mountains." },
+            },
+            dependsOn = { "accept-8412-spirit-totem", "objective-8412-quest-work" },
+            id = "turnin-8412-spirit-totem",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 50 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-8412-spirit-totem",
+        },
+        {
+            id = "level-before-accept-7667-material-assistance",
+            kind = "note",
+            text = "Reach level 58 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 58 },
+            },
+            requiredLevel = 58,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 7667,
+            priority = 1850,
+        },
+        {
+            priority = 1860,
+            route = {
+                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+            },
+            id = "accept-7667-material-assistance",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 58 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-7667-material-assistance",
+        },
+        {
+            priority = 1870,
+            dependsOn = { "accept-7667-material-assistance" },
+            id = "objective-7667-material-assistance",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 58 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = true,
+            classAction = "objective-7667-material-assistance",
+        },
+        {
+            priority = 1880,
+            route = {
+                { y = 0.362, mapID = 1454, label = "Sagorne Creststrider", x = 0.386, offMapText = "Travel to Sagorne Creststrider in Orgrimmar." },
+            },
+            dependsOn = { "accept-7667-material-assistance", "objective-7667-material-assistance" },
+            id = "turnin-7667-material-assistance",
+            conditions = {
+                all = {
+                    { class = 7 },
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 58 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                    {
+                        race = { 2, 6, 8 },
+                    },
+                },
+            },
+            useClientPin = false,
+            classAction = "turnin-7667-material-assistance",
+        },
     },
+    routeMode = "ordered",
 })

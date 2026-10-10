@@ -1,1023 +1,1678 @@
 local _, ns = ...
 
--- Forever Casual spine: Thousand Needles (33-34)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves:
--- 98069 Stolen Freewind Supplies and 98070 Stop the Screeching from Jandia at Freewind Post.
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    THE_BARRENS = 1413,
-    STRANGLETHORN_VALE = 1434,
-    THOUSAND_NEEDLES = 1441,
-    ORGRIMMAR = 1454,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-thousand-needles-part-2",
+    revision = 3,
     title = "Thousand Needles",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-thousand-needles-part-2",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 33 } },
+            {
+                level = { min = 33 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-turnin-1531-call-of-air",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1531,
+            alternativeQuests = { 1532 },
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { mapID = 1441, x = 0.5354, y = 0.4265, label = "Prate Cloudseer", offMapText = "Travel to Prate Cloudseer in Thousand Needles." },
+            },
+            text = "Turn in Call of Air to Prate Cloudseer.",
             id = "turnin-1531-call-of-air",
             kind = "turnin",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-                { class = 7 },
-            } },
-            text = "Turn in Call of Air.",
-            complete = QuestState(1531, "completed"),
-            route = {
-                Point(1441, 0.5467, 0.4477, "Call of Air",
-                    "Travel to Call of Air."),
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1531, state = "completed" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            alternativeQuests = { 1532 },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-turnin-1146-the-swarm-grows",
+            kind = "note",
+            text = "Reach level 29 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 29 },
+            },
+            requiredLevel = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1146,
+            priority = 30,
+        },
+        {
+            priority = 40,
+            route = {
+                { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
+            },
+            text = "Turn in The Swarm Grows to Moktar Krin.",
             id = "turnin-1146-the-swarm-grows",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Swarm Grows.",
-            complete = QuestState(1146, "completed"),
-            route = {
-                Point(1441, 0.6758, 0.6394, "The Swarm Grows",
-                    "Travel to The Swarm Grows."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1146, state = "completed" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1145 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 50,
+            route = {
+                { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
+            },
+            text = "Accept The Swarm Grows from Moktar Krin.",
             id = "accept-1147-the-swarm-grows",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Swarm Grows.",
-            complete = QuestState(1147, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.6758, 0.6394, "The Swarm Grows",
-                    "Travel to The Swarm Grows."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1147, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-turnin-1112-parts-for-kravel",
+            kind = "note",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 30 },
+            },
+            requiredLevel = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1112,
+            priority = 60,
+        },
+        {
+            priority = 70,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Turn in Parts for Kravel to Kravel Koalbeard.",
             id = "turnin-1112-parts-for-kravel",
             kind = "turnin",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Parts for Kravel.",
-            complete = QuestState(1112, "completed"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Parts for Kravel",
-                    "Travel to Parts for Kravel."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1112, state = "completed" },
+            },
+            sourceStep = 4,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1111 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept Rocket Car Parts from Kravel Koalbeard.",
             id = "accept-1110-rocket-car-parts",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Rocket Car Parts.",
-            complete = QuestState(1110, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Rocket Car Parts",
-                    "Travel to Rocket Car Parts."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1110, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept Delivery to the Gnomes from Kravel Koalbeard.",
             id = "accept-1114-delivery-to-the-gnomes",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Delivery to the Gnomes.",
-            complete = QuestState(1114, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Delivery to the Gnomes",
-                    "Travel to Delivery to the Gnomes."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1114, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1112 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            text = "Turn in Delivery to the Gnomes to Fizzle Brassbolts.",
+            route = {
+                { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            dependsOn = { "accept-1114-delivery-to-the-gnomes" },
             id = "turnin-1114-delivery-to-the-gnomes",
             kind = "turnin",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Delivery to the Gnomes.",
-            complete = QuestState(1114, "completed"),
-            dependsOn = { "accept-1114-delivery-to-the-gnomes" },
-            route = {
-                Point(1441, 0.7806, 0.7713, "Delivery to the Gnomes",
-                    "Travel to Delivery to the Gnomes."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1114, state = "completed" },
+            },
+            sourceStep = 6,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1112 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            text = "Accept Salt Flat Venom from Fizzle Brassbolts.",
             id = "accept-1104-salt-flat-venom",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Salt Flat Venom.",
-            complete = QuestState(1104, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7806, 0.7713, "Salt Flat Venom",
-                    "Travel to Salt Flat Venom."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1104, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 120,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept The Rumormonger from Kravel Koalbeard.",
             id = "accept-1115-the-rumormonger",
             kind = "accept",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 37 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Rumormonger.",
-            complete = QuestState(1115, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "The Rumormonger",
-                    "Travel to The Rumormonger."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1115, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1114 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 130,
+            route = {
+                { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
+            },
+            text = "Accept Hardened Shells from Wizzle Brassbolts.",
             id = "accept-1105-hardened-shells",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Hardened Shells.",
-            complete = QuestState(1105, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7814, 0.7712, "Hardened Shells",
-                    "Travel to Hardened Shells."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1105, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 140,
+            route = {
+                { y = 0.7589, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            text = "Accept Load Lightening from Pozzik.",
             id = "accept-1176-load-lightening",
             kind = "accept",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Load Lightening.",
-            complete = QuestState(1176, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8018, 0.7589, "Load Lightening",
-                    "Travel to Load Lightening."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1176, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 150,
+            route = {
+                { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8164 },
+            },
+            text = "Accept A Bump in the Road from Trackmaster Zherin.",
             id = "accept-1175-a-bump-in-the-road",
             kind = "accept",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept A Bump in the Road.",
-            complete = QuestState(1175, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8164, 0.7795, "A Bump in the Road",
-                    "Travel to A Bump in the Road."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1175, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 160,
+            text = "Kill 5 Silithid Invader.",
+            route = {
+                { y = 0.8618, mapID = 1441, label = "Silithid Invader", offMapText = "Travel to Silithid Invader.", x = 0.6632 },
+            },
+            dependsOn = { "accept-1147-the-swarm-grows" },
             id = "objective-1147-3-silithid-invader",
             kind = "objective",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 5 Silithid Invader.",
-            complete = QuestObjective(1147, 3, "Silithid Invader"),
-            dependsOn = { "accept-1147-the-swarm-grows" },
-            route = {
-                Point(1441, 0.6632, 0.8618, "Silithid Invader",
-                    "Travel to Silithid Invader."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1147, text = "Silithid Invader", index = 3, count = 5 },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-1147-1-silithid-searcher",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Silithid Searcher.",
+            complete = {
+                questObjective = { id = 1147, index = 1, text = "Silithid Searcher", count = 5 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Searcher", offMapText = "Travel to Silithid Searcher." },
+            },
+            sourceStep = 13,
+            priority = 170,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1147-the-swarm-grows" },
+        },
+        {
+            id = "loot-starter-before-accept-1148-parts-of-the-swarm",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Loot Cracked Silithid Carapace from Silithid Searcher, Silithid Invader, Silithid Hive Drone. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "Cracked Silithid Carapace", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 1148, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 180,
+        },
+        {
+            priority = 190,
+            text = "Use the Cracked Silithid Carapace to accept Parts of the Swarm.",
             id = "accept-1148-parts-of-the-swarm",
             kind = "accept",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Parts of the Swarm.",
-            complete = QuestState(1148, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7020, 0.8260, "Parts of the Swarm",
-                    "Travel to Parts of the Swarm."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1148, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-1147-2-silithid-hive-drone",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 5 Silithid Hive Drone.",
+            complete = {
+                questObjective = { id = 1147, index = 2, text = "Silithid Hive Drone", count = 5 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7, y = 0.846, label = "Silithid Hive Drone", offMapText = "Travel to Silithid Hive Drone." },
+            },
+            sourceStep = 15,
+            priority = 200,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1147-the-swarm-grows" },
+        },
+        {
+            id = "objective-1148-1-silithid-heart",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Silithid Heart.",
+            complete = {
+                questObjective = { id = 1148, index = 1, text = "Silithid Heart", count = 1 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Heart", offMapText = "Travel to Silithid Heart." },
+            },
+            sourceStep = 16,
+            priority = 210,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1148-parts-of-the-swarm" },
+        },
+        {
+            id = "objective-1148-3-intact-silithid-carapace",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 3 Intact Silithid Carapace.",
+            complete = {
+                questObjective = { id = 1148, index = 3, text = "Intact Silithid Carapace", count = 3 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Intact Silithid Carapace", offMapText = "Travel to Intact Silithid Carapace." },
+            },
+            sourceStep = 16,
+            priority = 220,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1148-parts-of-the-swarm" },
+        },
+        {
+            id = "objective-1148-2-silithid-talon",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 5 Silithid Talon.",
+            complete = {
+                questObjective = { id = 1148, index = 2, text = "Silithid Talon", count = 5 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7020000000000001, y = 0.826, label = "Silithid Talon", offMapText = "Travel to Silithid Talon." },
+            },
+            sourceStep = 16,
+            priority = 230,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1148-parts-of-the-swarm" },
+        },
+        {
+            priority = 240,
+            text = "Kill 6 Saltstone Gazer.",
+            route = {
+                { mapID = 1441, x = 0.774, y = 0.88, label = "Saltstone Gazer", offMapText = "Travel to Saltstone Gazer." },
+            },
+            dependsOn = { "accept-1175-a-bump-in-the-road" },
             id = "objective-1175-3-saltstone-gazer",
             kind = "objective",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill 6 Saltstone Gazer.",
-            complete = QuestObjective(1175, 3, "Saltstone Gazer"),
-            dependsOn = { "accept-1175-a-bump-in-the-road" },
-            route = {
-                Point(1441, 0.6632, 0.8618, "Saltstone Gazer",
-                    "Travel to Saltstone Gazer."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1175, text = "Saltstone Gazer", index = 3, count = 6 },
+            },
+            sourceStep = 17,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 250,
+            text = "Collect 10 Hollow Vulture Bone.",
+            route = {
+                { y = 0.66, mapID = 1441, label = "Salt Flats Scavenger", offMapText = "Travel to Salt Flats Scavenger.", x = 0.88 },
+            },
+            dependsOn = { "accept-1176-load-lightening" },
             id = "objective-1176-1-salt-flats-scavenger",
             kind = "objective",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Salt Flats Scavenger.",
-            complete = QuestObjective(1176, 1, "Salt Flats Scavenger"),
-            dependsOn = { "accept-1176-load-lightening" },
-            route = {
-                Point(1441, 0.8800, 0.6600, "Salt Flats Scavenger",
-                    "Travel to Salt Flats Scavenger."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1176, text = "Salt Flats Scavenger", index = 1, count = 10 },
+            },
+            sourceStep = 18,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-1105-1-hardened-tortoise-shell",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Collect 9 Hardened Tortoise Shell.",
+            complete = {
+                questObjective = { id = 1105, index = 1, text = "Hardened Tortoise Shell", count = 9 },
+            },
+            route = {
+                { mapID = 1441, x = 0.828, y = 0.552, label = "Hardened Tortoise Shell", offMapText = "Travel to Hardened Tortoise Shell." },
+            },
+            sourceStep = 19,
+            priority = 260,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1105-hardened-shells" },
+        },
+        {
+            id = "objective-1104-1-salty-scorpid-venom",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Collect 6 Salty Scorpid Venom.",
+            complete = {
+                questObjective = { id = 1104, index = 1, text = "Salty Scorpid Venom", count = 6 },
+            },
+            route = {
+                { mapID = 1441, x = 0.8240000000000001, y = 0.6, label = "Salty Scorpid Venom", offMapText = "Travel to Salty Scorpid Venom." },
+            },
+            sourceStep = 20,
+            priority = 270,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1104-salt-flat-venom" },
+        },
+        {
+            id = "objective-1175-1-saltstone-basilisk",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Kill 10 Saltstone Basilisk.",
+            complete = {
+                questObjective = { id = 1175, index = 1, text = "Saltstone Basilisk", count = 10 },
+            },
+            route = {
+                { mapID = 1441, x = 0.784, y = 0.59, label = "Saltstone Basilisk", offMapText = "Travel to Saltstone Basilisk." },
+            },
+            sourceStep = 21,
+            priority = 280,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1175-a-bump-in-the-road" },
+        },
+        {
+            id = "objective-1175-2-saltstone-crystalhide",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Kill 10 Saltstone Crystalhide.",
+            complete = {
+                questObjective = { id = 1175, index = 2, text = "Saltstone Crystalhide", count = 10 },
+            },
+            route = {
+                { mapID = 1441, x = 0.7879999999999999, y = 0.868, label = "Saltstone Crystalhide", offMapText = "Travel to Saltstone Crystalhide." },
+            },
+            sourceStep = 22,
+            priority = 290,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1175-a-bump-in-the-road" },
+        },
+        {
+            id = "objective-1110-1-rocket-car-parts",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
+            },
+            text = "Collect 30 Rocket Car Parts.",
+            complete = {
+                questObjective = { id = 1110, index = 1, text = "Rocket Car Parts", count = 30 },
+            },
+            route = {
+                { mapID = 1441, x = 0.83, y = 0.6459999999999999, label = "Rocket Car Parts", offMapText = "Travel to Rocket Car Parts." },
+            },
+            sourceStep = 23,
+            priority = 300,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1110-rocket-car-parts" },
+        },
+        {
+            priority = 310,
+            text = "Turn in The Swarm Grows to Moktar Krin.",
+            route = {
+                { y = 0.6394, mapID = 1441, label = "Moktar Krin", offMapText = "Travel to Moktar Krin in Thousand Needles.", x = 0.6758 },
+            },
+            dependsOn = {
+                "accept-1147-the-swarm-grows",
+                "objective-1147-3-silithid-invader",
+                "objective-1147-1-silithid-searcher",
+                "objective-1147-2-silithid-hive-drone",
+            },
             id = "turnin-1147-the-swarm-grows",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Swarm Grows.",
-            complete = QuestState(1147, "completed"),
-            dependsOn = { "accept-1147-the-swarm-grows", "objective-1147-3-silithid-invader" },
-            route = {
-                Point(1441, 0.6758, 0.6394, "The Swarm Grows",
-                    "Travel to The Swarm Grows."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1147, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 320,
+            text = "Turn in Rocket Car Parts to Kravel Koalbeard.",
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            dependsOn = { "accept-1110-rocket-car-parts", "objective-1110-1-rocket-car-parts" },
             id = "turnin-1110-rocket-car-parts",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Rocket Car Parts.",
-            complete = QuestState(1110, "completed"),
-            dependsOn = { "accept-1110-rocket-car-parts" },
-            route = {
-                Point(1441, 0.7779, 0.7727, "Rocket Car Parts",
-                    "Travel to Rocket Car Parts."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1110, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 330,
+            route = {
+                { y = 0.7727, mapID = 1441, label = "Kravel Koalbeard", offMapText = "Travel to Kravel Koalbeard in Thousand Needles.", x = 0.7779 },
+            },
+            text = "Accept Hemet Nesingwary Jr. from Kravel Koalbeard.",
             id = "accept-5762-hemet-nesingwary-jr",
             kind = "accept",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Hemet Nesingwary Jr.",
-            complete = QuestState(5762, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7779, 0.7727, "Hemet Nesingwary Jr",
-                    "Travel to Hemet Nesingwary Jr.."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5762, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 340,
+            text = "Turn in Salt Flat Venom to Fizzle Brassbolts.",
+            route = {
+                { y = 0.7713, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            dependsOn = { "accept-1104-salt-flat-venom", "objective-1104-1-salty-scorpid-venom" },
             id = "turnin-1104-salt-flat-venom",
             kind = "turnin",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Salt Flat Venom.",
-            complete = QuestState(1104, "completed"),
-            dependsOn = { "accept-1104-salt-flat-venom" },
-            route = {
-                Point(1441, 0.7806, 0.7713, "Salt Flat Venom",
-                    "Travel to Salt Flat Venom."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1104, state = "completed" },
+            },
+            sourceStep = 26,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 350,
+            text = "Turn in Hardened Shells to Wizzle Brassbolts.",
+            route = {
+                { y = 0.7712, mapID = 1441, label = "Wizzle Brassbolts", offMapText = "Travel to Wizzle Brassbolts in Thousand Needles.", x = 0.7814 },
+            },
+            dependsOn = { "accept-1105-hardened-shells", "objective-1105-1-hardened-tortoise-shell" },
             id = "turnin-1105-hardened-shells",
             kind = "turnin",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Hardened Shells.",
-            complete = QuestState(1105, "completed"),
-            dependsOn = { "accept-1105-hardened-shells" },
-            route = {
-                Point(1441, 0.7814, 0.7712, "Hardened Shells",
-                    "Travel to Hardened Shells."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1105, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 360,
+            route = {
+                { y = 0.7712, mapID = 1441, label = "Fizzle Brassbolts", offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.", x = 0.7806 },
+            },
+            text = "Accept Martek the Exiled from Fizzle Brassbolts.",
             id = "accept-1106-martek-the-exiled",
             kind = "accept",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 41 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Martek the Exiled.",
-            complete = QuestState(1106, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.7806, 0.7712, "Martek the Exiled",
-                    "Travel to Martek the Exiled."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 26 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1106, state = "activeOrCompleted" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "all",
+                    quests = { 1104, 1105 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 370,
+            text = "Turn in Load Lightening to Pozzik.",
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            dependsOn = { "accept-1176-load-lightening", "objective-1176-1-salt-flats-scavenger" },
             id = "turnin-1176-load-lightening",
             kind = "turnin",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Load Lightening.",
-            complete = QuestState(1176, "completed"),
-            dependsOn = { "accept-1176-load-lightening", "objective-1176-1-salt-flats-scavenger" },
-            route = {
-                Point(1441, 0.8018, 0.7588, "Load Lightening",
-                    "Travel to Load Lightening."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1176, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 380,
+            route = {
+                { y = 0.7588, mapID = 1441, label = "Pozzik", offMapText = "Travel to Pozzik in Thousand Needles.", x = 0.8018 },
+            },
+            text = "Accept Goblin Sponsorship from Pozzik.",
             id = "accept-1178-goblin-sponsorship",
             kind = "accept",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Goblin Sponsorship.",
-            complete = QuestState(1178, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.8018, 0.7588, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1178, state = "activeOrCompleted" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1176 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 390,
+            text = "Turn in A Bump in the Road to Trackmaster Zherin.",
+            route = {
+                { y = 0.7795, mapID = 1441, label = "Trackmaster Zherin", offMapText = "Travel to Trackmaster Zherin in Thousand Needles.", x = 0.8163 },
+            },
+            dependsOn = {
+                "accept-1175-a-bump-in-the-road",
+                "objective-1175-3-saltstone-gazer",
+                "objective-1175-1-saltstone-basilisk",
+                "objective-1175-2-saltstone-crystalhide",
+            },
             id = "turnin-1175-a-bump-in-the-road",
             kind = "turnin",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in A Bump in the Road.",
-            complete = QuestState(1175, "completed"),
-            dependsOn = { "accept-1175-a-bump-in-the-road", "objective-1175-3-saltstone-gazer" },
-            route = {
-                Point(1441, 0.8163, 0.7795, "A Bump in the Road",
-                    "Travel to A Bump in the Road."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1175, state = "completed" },
+            },
+            sourceStep = 30,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-5361-family-tree",
+            kind = "note",
+            text = "Reach level 32 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 32 },
+            },
+            requiredLevel = 32,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5361,
+            priority = 400,
+        },
+        {
+            priority = 410,
+            route = {
+                { y = 0.508, mapID = 1441, label = "Cliffwatcher Longhorn", offMapText = "Travel to Cliffwatcher Longhorn in Thousand Needles.", x = 0.4565 },
+            },
+            text = "Accept Family Tree from Cliffwatcher Longhorn.",
             id = "accept-5361-family-tree",
             kind = "accept",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Family Tree.",
-            complete = QuestState(5361, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.4565, 0.5080, "Family Tree",
-                    "Travel to Family Tree."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 32 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5361, state = "activeOrCompleted" },
+            },
+            sourceStep = 33,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "woven-accept-98069-stolen-freewind-supplies",
-            kind = "accept",
-            priority = 261,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Stolen Freewind Supplies from Jandia at Freewind Post.",
-            complete = QuestState(98069, "activeOrCompleted"),
+            priority = 420,
+            text = "Turn in Parts of the Swarm to Korran.",
             route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
+                { y = 0.2963, mapID = 1413, label = "Korran", offMapText = "Travel to Korran in The Barrens.", x = 0.5107 },
             },
-        },
-        {
-            id = "woven-accept-98070-stop-the-screeching",
-            kind = "accept",
-            priority = 262,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Stop the Screeching from Jandia at Freewind Post.",
-            complete = QuestState(98070, "activeOrCompleted"),
-            route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
+            dependsOn = {
+                "accept-1148-parts-of-the-swarm",
+                "objective-1148-1-silithid-heart",
+                "objective-1148-3-intact-silithid-carapace",
+                "objective-1148-2-silithid-talon",
             },
-        },
-        {
-            id = "woven-objective-98069-stolen-freewind-supplies",
-            kind = "objective",
-            priority = 263,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Stolen Freewind Supplies: recover the Stolen Freewind Supplies.",
-            complete = QuestObjective(98069, 1, "Stolen Freewind Supplies"),
-            dependsOn = { "woven-accept-98069-stolen-freewind-supplies" },
-            useClientPin = true,
-            route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
-            },
-        },
-        {
-            id = "woven-objective-98070-stop-the-screeching",
-            kind = "objective",
-            priority = 264,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Stop the Screeching: slay Screeching Harpies, Roguefeathers, and Windcallers.",
-            complete = QuestState(98070, "complete"),
-            dependsOn = { "woven-accept-98070-stop-the-screeching" },
-            useClientPin = true,
-            route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
-            },
-        },
-        {
-            id = "woven-turnin-98069-stolen-freewind-supplies",
-            kind = "turnin",
-            priority = 265,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Stolen Freewind Supplies to Jandia at Freewind Post.",
-            complete = QuestState(98069, "completed"),
-            dependsOn = { "woven-accept-98069-stolen-freewind-supplies", "woven-objective-98069-stolen-freewind-supplies" },
-            route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
-            },
-        },
-        {
-            id = "woven-turnin-98070-stop-the-screeching",
-            kind = "turnin",
-            priority = 266,
-            conditions = { all = {
-                { level = { min = 31 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Stop the Screeching to Jandia at Freewind Post.",
-            complete = QuestState(98070, "completed"),
-            dependsOn = { "woven-accept-98070-stop-the-screeching", "woven-objective-98070-stop-the-screeching" },
-            route = {
-                Point(1441, 0.4600, 0.5140, "Jandia",
-                    "Travel to Jandia."),
-            },
-        },
-        {
             id = "turnin-1148-parts-of-the-swarm",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Parts of the Swarm.",
-            complete = QuestState(1148, "completed"),
-            dependsOn = { "accept-1148-parts-of-the-swarm" },
-            route = {
-                Point(1413, 0.5107, 0.2963, "Parts of the Swarm",
-                    "Travel to Parts of the Swarm."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1148, state = "completed" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1146 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 430,
+            route = {
+                { y = 0.2963, mapID = 1413, label = "Korran", offMapText = "Travel to Korran in The Barrens.", x = 0.5107 },
+            },
+            text = "Accept Parts of the Swarm from Korran.",
             id = "accept-1184-parts-of-the-swarm",
             kind = "accept",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Parts of the Swarm.",
-            complete = QuestState(1184, "activeOrCompleted"),
-            route = {
-                Point(1413, 0.5107, 0.2963, "Parts of the Swarm",
-                    "Travel to Parts of the Swarm."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1184, state = "activeOrCompleted" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1148 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 440,
+            text = "Turn in Goblin Sponsorship to Gazlowe.",
+            route = {
+                { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
+            },
+            dependsOn = { "accept-1178-goblin-sponsorship" },
             id = "turnin-1178-goblin-sponsorship",
             kind = "turnin",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Goblin Sponsorship.",
-            complete = QuestState(1178, "completed"),
-            dependsOn = { "accept-1178-goblin-sponsorship" },
-            route = {
-                Point(1413, 0.6268, 0.3623, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1178, state = "completed" },
+            },
+            sourceStep = 36,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1176 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 450,
+            route = {
+                { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
+            },
+            text = "Accept Goblin Sponsorship from Gazlowe.",
             id = "accept-1180-goblin-sponsorship",
             kind = "accept",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Goblin Sponsorship.",
-            complete = QuestState(1180, "activeOrCompleted"),
-            route = {
-                Point(1413, 0.6268, 0.3623, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1180, state = "activeOrCompleted" },
+            },
+            sourceStep = 36,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1178 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 460,
+            route = {
+                { y = 0.4378, mapID = 1413, label = "Islen Waterseer", offMapText = "Travel to Islen Waterseer in The Barrens.", x = 0.6583 },
+            },
+            text = "Turn in Call of Water to Islen Waterseer.",
             id = "turnin-96-call-of-water",
             kind = "turnin",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-                { class = 7 },
-            } },
-            text = "Turn in Call of Water.",
-            complete = QuestState(96, "completed"),
-            route = {
-                Point(1413, 0.6583, 0.4378, "Call of Water",
-                    "Travel to Call of Water."),
+            conditions = {
+                all = {
+                    {
+                        class = { 7 },
+                    },
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 96, state = "completed" },
+            },
+            sourceStep = 37,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 100 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 470,
+            text = "Turn in Goblin Sponsorship to Wharfmaster Lozgil.",
+            route = {
+                { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2634 },
+            },
+            dependsOn = { "accept-1180-goblin-sponsorship" },
             id = "turnin-1180-goblin-sponsorship",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Goblin Sponsorship.",
-            complete = QuestState(1180, "completed"),
-            dependsOn = { "accept-1180-goblin-sponsorship" },
-            route = {
-                Point(1434, 0.2634, 0.7356, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1180, state = "completed" },
+            },
+            sourceStep = 38,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1178 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 480,
+            route = {
+                { y = 0.7356, mapID = 1434, label = "Wharfmaster Lozgil", offMapText = "Travel to Wharfmaster Lozgil in Stranglethorn Vale.", x = 0.2634 },
+            },
+            text = "Accept Goblin Sponsorship from Wharfmaster Lozgil.",
             id = "accept-1181-goblin-sponsorship",
             kind = "accept",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Goblin Sponsorship.",
-            complete = QuestState(1181, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2634, 0.7356, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1181, state = "activeOrCompleted" },
+            },
+            sourceStep = 38,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1180 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 490,
+            route = {
+                { y = 0.7759, mapID = 1434, label = "Drizzlik", offMapText = "Travel to Drizzlik in Stranglethorn Vale.", x = 0.2829 },
+            },
+            text = "Accept Supply and Demand from Drizzlik.",
             id = "accept-575-supply-and-demand",
             kind = "accept",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Supply and Demand.",
-            complete = QuestState(575, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2829, 0.7759, "Supply and Demand",
-                    "Travel to Supply and Demand."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 26 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 575, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 500,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Crank Fizzlebub", offMapText = "Travel to Crank Fizzlebub in Stranglethorn Vale.", x = 0.2712 },
+            },
+            text = "Accept Singing Blue Shards from Crank Fizzlebub.",
             id = "accept-605-singing-blue-shards",
             kind = "accept",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Singing Blue Shards.",
-            complete = QuestState(605, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2712, 0.7721, "Singing Blue Shards",
-                    "Travel to Singing Blue Shards."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 605, state = "activeOrCompleted" },
+            },
+            sourceStep = 40,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 510,
+            text = "Turn in The Rumormonger to Krazek.",
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
+            },
+            dependsOn = { "accept-1115-the-rumormonger" },
             id = "turnin-1115-the-rumormonger",
             kind = "turnin",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 37 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in The Rumormonger.",
-            complete = QuestState(1115, "completed"),
-            dependsOn = { "accept-1115-the-rumormonger" },
-            route = {
-                Point(1434, 0.2694, 0.7721, "The Rumormonger",
-                    "Travel to The Rumormonger."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1115, state = "completed" },
+            },
+            sourceStep = 41,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1114 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 520,
+            route = {
+                { y = 0.7721, mapID = 1434, label = "Krazek", offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694 },
+            },
+            text = "Accept Investigate the Camp from Krazek.",
             id = "accept-201-investigate-the-camp",
             kind = "accept",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Investigate the Camp.",
-            complete = QuestState(201, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2694, 0.7721, "Investigate the Camp",
-                    "Travel to Investigate the Camp."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 201, state = "activeOrCompleted" },
+            },
+            sourceStep = 41,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 530,
+            route = {
+                { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
+            },
+            text = "Accept Bloodscalp Ears from Kebok.",
             id = "accept-189-bloodscalp-ears",
             kind = "accept",
-            priority = 380,
-            conditions = { all = {
-                { level = { min = 37 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Bloodscalp Ears.",
-            complete = QuestState(189, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2700, 0.7712, "Bloodscalp Ears",
-                    "Travel to Bloodscalp Ears."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 30 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 189, state = "activeOrCompleted" },
+            },
+            sourceStep = 42,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-213-hostile-takeover",
+            kind = "note",
+            text = "Reach level 31 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 31 },
+            },
+            requiredLevel = 31,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 213,
+            priority = 540,
+        },
+        {
+            priority = 550,
+            route = {
+                { y = 0.7712, mapID = 1434, label = "Kebok", offMapText = "Travel to Kebok in Stranglethorn Vale.", x = 0.27 },
+            },
+            text = "Accept Hostile Takeover from Kebok.",
             id = "accept-213-hostile-takeover",
             kind = "accept",
-            priority = 390,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Hostile Takeover.",
-            complete = QuestState(213, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2700, 0.7712, "Hostile Takeover",
-                    "Travel to Hostile Takeover."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 31 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 213, state = "activeOrCompleted" },
+            },
+            sourceStep = 42,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 560,
+            text = "Turn in Goblin Sponsorship to Baron Revilgaz.",
+            route = {
+                { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
+            },
+            dependsOn = { "accept-1181-goblin-sponsorship" },
             id = "turnin-1181-goblin-sponsorship",
             kind = "turnin",
-            priority = 400,
-            conditions = { all = {
-                { level = { min = 34 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Goblin Sponsorship.",
-            complete = QuestState(1181, "completed"),
-            dependsOn = { "accept-1181-goblin-sponsorship" },
-            route = {
-                Point(1434, 0.2723, 0.7687, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1181, state = "completed" },
+            },
+            sourceStep = 43,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1180 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 570,
+            route = {
+                { y = 0.7687, mapID = 1434, label = "Baron Revilgaz", offMapText = "Travel to Baron Revilgaz in Stranglethorn Vale.", x = 0.2723 },
+            },
+            text = "Accept Goblin Sponsorship from Baron Revilgaz.",
             id = "accept-1182-goblin-sponsorship",
             kind = "accept",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 36 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Goblin Sponsorship.",
-            complete = QuestState(1182, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2723, 0.7687, "Goblin Sponsorship",
-                    "Travel to Goblin Sponsorship."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 29 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1182, state = "activeOrCompleted" },
+            },
+            sourceStep = 43,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1181 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 580,
+            text = "Turn in Parts of the Swarm to Belgrom Rockmaul.",
+            route = {
+                { y = 0.3424, mapID = 1454, label = "Belgrom Rockmaul", offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.", x = 0.7523 },
+            },
+            dependsOn = { "accept-1184-parts-of-the-swarm" },
             id = "turnin-1184-parts-of-the-swarm",
             kind = "turnin",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Parts of the Swarm.",
-            complete = QuestState(1184, "completed"),
-            dependsOn = { "accept-1184-parts-of-the-swarm" },
-            route = {
-                Point(1454, 0.7523, 0.3424, "Parts of the Swarm",
-                    "Travel to Parts of the Swarm."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 28 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
-        },
-        {
-            id = "objective-6161-1-elixir-of-water-breathing",
-            kind = "objective",
-            priority = 430,
-            conditions = { all = {
-                { level = { min = 35 } },
-                { faction = "Horde" },
-                { any = { { class = 9 }, { class = 11 } } },
-            } },
-            text = "Collect 2 Elixir of Water Breathing.",
-            complete = QuestObjective(6161, 1, "Elixir of Water Breathing"),
-            route = {
-                Point(1454, 0.5569, 0.6286, "Elixir of Water Breathing",
-                    "Travel to Elixir of Water Breathing."),
+            complete = {
+                quest = { id = 1184, state = "completed" },
             },
-        },
-        {
-            id = "accept-2841-rig-wars",
-            kind = "accept",
-            priority = 440,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Rig Wars.",
-            complete = QuestState(2841, "activeOrCompleted"),
-            route = {
-                Point(1454, 0.7599, 0.2541, "Rig Wars",
-                    "Travel to Rig Wars."),
+            sourceStep = 51,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1148 },
+                    conditions = {},
+                },
             },
-        },
-        {
-            id = "accept-2842-chief-engineer-scooty",
-            kind = "accept",
-            priority = 450,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Chief Engineer Scooty.",
-            complete = QuestState(2842, "activeOrCompleted"),
-            route = {
-                Point(1454, 0.7549, 0.2536, "Chief Engineer Scooty",
-                    "Travel to Chief Engineer Scooty."),
-            },
-        },
-        {
-            id = "turnin-2842-chief-engineer-scooty",
-            kind = "turnin",
-            priority = 460,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Chief Engineer Scooty.",
-            complete = QuestState(2842, "completed"),
-            dependsOn = { "accept-2842-chief-engineer-scooty" },
-            route = {
-                Point(1434, 0.2760, 0.7748, "Chief Engineer Scooty",
-                    "Travel to Chief Engineer Scooty."),
-            },
-        },
-        {
-            id = "accept-2843-gnomer-gooooone",
-            kind = "accept",
-            priority = 470,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Gnomer-gooooone!.",
-            complete = QuestState(2843, "activeOrCompleted"),
-            route = {
-                Point(1434, 0.2760, 0.7748, "Gnomer-gooooone!",
-                    "Travel to Gnomer-gooooone!."),
-            },
-        },
-        {
-            id = "turnin-2843-gnomer-gooooone",
-            kind = "turnin",
-            priority = 480,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Gnomer-gooooone!.",
-            complete = QuestState(2843, "completed"),
-            dependsOn = { "accept-2843-gnomer-gooooone" },
-            route = {
-                Point(1434, 0.2760, 0.7748, "Gnomer-gooooone!",
-                    "Travel to Gnomer-gooooone!."),
-            },
-        },
-        {
-            id = "accept-2904-a-fine-mess",
-            kind = "accept",
-            priority = 490,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Inside Gnomeregan, accept A Fine Mess from Kernobee.",
-            complete = QuestState(2904, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "objective-2841-2-mekgineer-thermaplugg",
-            kind = "objective",
-            priority = 500,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Mekgineer Thermaplugg.",
-            complete = QuestObjective(2841, 2, "Mekgineer Thermaplugg"),
-            dependsOn = { "accept-2841-rig-wars" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "objective-2841-1-thermaplugg-s-safe",
-            kind = "objective",
-            priority = 510,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Click Thermaplugg's Safe.",
-            complete = QuestObjective(2841, 1, "Thermaplugg's Safe"),
-            dependsOn = { "accept-2841-rig-wars" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "accept-2945-grime-encrusted-ring",
-            kind = "accept",
-            priority = 520,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Use the Grime-Encrusted Ring to accept Grime-Encrusted Ring.",
-            complete = QuestState(2945, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "turnin-2945-grime-encrusted-ring",
-            kind = "turnin",
-            priority = 530,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Grime-Encrusted Ring.",
-            complete = QuestState(2945, "completed"),
-            dependsOn = { "accept-2945-grime-encrusted-ring" },
-            useClientPin = true,
-            route = nil,
-        },
-        {
-            id = "accept-2949-return-of-the-ring",
-            kind = "accept",
-            priority = 540,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Return of the Ring from the cleaned ring after the Sparklematic 5200 in Gnomeregan (turn in to Nogg in Orgrimmar).",
-            complete = QuestState(2949, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "accept-2952-the-sparklematic-5200",
-            kind = "accept",
-            priority = 550,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept The Sparklematic 5200! from the Sparklematic 5200 machine inside Gnomeregan.",
-            complete = QuestState(2952, "activeOrCompleted"),
-            route = nil,
-        },
-        {
-            id = "turnin-2904-a-fine-mess",
-            kind = "turnin",
-            priority = 560,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in A Fine Mess.",
-            complete = QuestState(2904, "completed"),
-            dependsOn = { "accept-2904-a-fine-mess" },
-            route = {
-                Point(1434, 0.2760, 0.7748, "A Fine Mess",
-                    "Travel to A Fine Mess."),
-            },
-        },
-        {
-            id = "turnin-2841-rig-wars",
-            kind = "turnin",
-            priority = 570,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Rig Wars.",
-            complete = QuestState(2841, "completed"),
-            dependsOn = { "accept-2841-rig-wars", "objective-2841-2-mekgineer-thermaplugg", "objective-2841-1-thermaplugg-s-safe" },
-            route = {
-                Point(1454, 0.7599, 0.2541, "Rig Wars",
-                    "Travel to Rig Wars."),
-            },
-        },
-        {
-            id = "turnin-2949-return-of-the-ring",
-            kind = "turnin",
-            priority = 580,
-            conditions = { all = {
-                { level = { min = 33 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Return of the Ring.",
-            complete = QuestState(2949, "completed"),
-            dependsOn = { "accept-2949-return-of-the-ring" },
-            route = {
-                Point(1454, 0.7599, 0.2541, "Return of the Ring",
-                    "Travel to Return of the Ring."),
-            },
+            useClientText = false,
+            useClientPin = false,
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

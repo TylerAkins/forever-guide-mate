@@ -304,6 +304,13 @@ function ns.EvaluateCondition(condition, state)
         if type(name) ~= "string" or name == "" then
             return false, "Invalid item condition."
         end
+        if type(condition.item) == "table" and condition.item.minCount then
+            local count = ns.PlayerState and ns.PlayerState.GetItemCount
+                and ns.PlayerState:GetItemCount(name, state)
+            if count == nil then return Unknown("Item count is unavailable.") end
+            local enough = count >= condition.item.minCount
+            return enough, enough and nil or ("Requires %d %s in your bags."):format(condition.item.minCount, name)
+        end
         local has = ns.PlayerState and ns.PlayerState.HasItem
             and ns.PlayerState:HasItem(name, state)
         return has and true or false, has and nil or "Item is not in your bags."
@@ -409,6 +416,12 @@ function ns.EvaluateCondition(condition, state)
         if objective == nil then
             return Unknown("Quest objective is unavailable.")
         end
+        if type(spec.count) == "number" then
+            if type(objective.numFulfilled) ~= "number" then
+                return Unknown("Quest objective count is unavailable.")
+            end
+            return objective.numFulfilled >= spec.count, "Quest objective count is incomplete."
+        end
         local finished = ObjectiveFinished(objective)
         if finished == nil then
             return Unknown("Quest objective is unavailable.")
@@ -418,17 +431,23 @@ function ns.EvaluateCondition(condition, state)
     return false, "Unknown condition type."
 end
 
-local function ValidateDeclarative(value, path)
+local function ValidateDeclarative(value, path, seen)
     if type(value) == "function" then
         return false, path .. " cannot contain functions"
     end
     if type(value) == "table" then
+        seen = seen or {}
+        if seen[value] == "visiting" then return false, path .. " cannot contain cyclic tables" end
+        if seen[value] then return true end
+        seen[value] = "visiting"
         for key, child in pairs(value) do
-            local valid, reason = ValidateDeclarative(child, path .. "." .. tostring(key))
-            if not valid then
-                return false, reason
+            local kind = type(child)
+            if kind == "table" or kind == "function" then
+                local valid, reason = ValidateDeclarative(child, "", seen)
+                if not valid then return false, path .. "." .. tostring(key) .. reason end
             end
         end
+        seen[value] = true
     end
     return true
 end
@@ -522,6 +541,30 @@ local function ApplyClientQuestData(guide)
 end
 
 local function ApplyQuestPrerequisites(guide)
+    if guide.routeMode == "ordered" then
+        local turnins = {}
+        for _, goal in ipairs(guide.goals) do
+            if goal.kind == "turnin" then
+                local questID = GoalQuestID(goal)
+                if questID then turnins[questID] = goal.id end
+            end
+        end
+        for _, goal in ipairs(guide.goals) do
+            goal.questPrerequisites = {}
+            for _, requirement in ipairs(goal.requiredQuests or {}) do
+                local group = { mode = requirement.mode, questIDs = {},
+                    conditions = requirement.conditions, goalIDs = {} }
+                for _, questID in ipairs(requirement.quests) do
+                    if turnins[questID] then
+                        group.questIDs[#group.questIDs + 1] = questID
+                        group.goalIDs[#group.goalIDs + 1] = turnins[questID]
+                    end
+                end
+                if goal.kind == "accept" then goal.questPrerequisites[#goal.questPrerequisites + 1] = group end
+            end
+        end
+        return
+    end
     local turnins, objectives = {}, {}
     for index, goal in ipairs(guide.goals) do
         if goal.kind == "turnin" then
@@ -671,7 +714,16 @@ local function ValidateGuide(guide)
 end
 
 function ns:RegisterGuide(guide)
+    if self.ExpandClassActions then self:ExpandClassActions(guide) end
     ApplyClientQuestData(guide)
+    if guide.routeMode == "ordered" then
+        for _, goal in ipairs(guide.goals) do
+            if goal.useQuestNavigation == nil and not goal.instructionOnly and not goal.checkpointQuest
+                and (goal.kind == "turnin" or (goal.kind == "objective" and goal.complete and goal.complete.questObjective)) then
+                goal.useQuestNavigation = true
+            end
+        end
+    end
     ApplyQuestPrerequisites(guide)
     local valid, reason = ValidateGuide(guide)
     if not valid then
@@ -697,8 +749,8 @@ local ERA_STARTER_BY_RACE = {
     [6] = "leveling-era-mulgore",
     [7] = "leveling-era-dun-morogh",
     [8] = "leveling-era-durotar",
-    [95] = "leveling-era-elwynn-forest",
-    [96] = "leveling-era-durotar",
+    [95] = "leveling-zephras-isle",
+    [96] = "leveling-zephras-isle",
 }
 
 local function IsEraGuide(guide)
@@ -761,7 +813,7 @@ local function CopyEraGoal(goal, segment, gate)
             copy.questPrerequisites[groupIndex] = groupCopy
         end
     end
-    copy.conditions = AndCondition(goal.conditions, gate)
+    copy.conditions = AndCondition(goal.conditions, segment.routeMode == "ordered" and { faction = segment.faction } or gate)
     return copy
 end
 
@@ -785,6 +837,7 @@ local function BuildCasualGuide(faction, sources)
         local _, levelMin = GuideFactionAndLevel(source)
         local segment = {
             id = source.id,
+            routeMode = source.routeMode,
             title = source.title,
             faction = faction,
             levelMin = levelMin,
@@ -820,9 +873,10 @@ local function BuildCasualGuide(faction, sources)
     if #segments == 0 then return nil end
     return {
         id = "leveling-casual-" .. string.lower(faction),
+        routeMode = sources[1] and sources[1].routeMode,
         title = "Forever Casual Route",
         category = "Leveling Quest Guides",
-        revision = 1,
+        revision = sources[1] and sources[1].revision or 1,
         series = "casual",
         compactLibrary = true,
         -- Built from leveling spines; Forever weave prerequisites may still be mid-port.
@@ -886,6 +940,9 @@ local function CollectQuestIDs(value, found)
     end
     if type(value.questID) == "number" then
         found[value.questID] = true
+    end
+    for _, group in ipairs(value.requiredQuests or {}) do
+        for _, questID in ipairs(group.quests or {}) do found[questID] = true end
     end
     for _, child in pairs(value) do
         if type(child) == "table" then
@@ -993,7 +1050,17 @@ function ns.QuestQuery()
             segmentID = segment.id
         end
     end
+    local current
+    if guide and guide.routeMode == "ordered" then
+        if ns.Engine.currentGuide == guide then current = ns.Engine.currentGoal end
+        if not current then
+            local storage = ns.charDB.orderedRoutes and ns.charDB.orderedRoutes[guide.id]
+            current = ns.Engine:GetGoal(guide, storage and storage.cursor)
+        end
+        segmentID = ""
+    end
     local key = (type(guide) == "table" and guide.id or "") .. "\0" .. segmentID
+        .. "\0" .. (current and current.id or "")
     if ns.questQueryKey == key and ns.questQueryTracked == all and ns.questQueryIDs then
         return ns.questQueryIDs, ns.questQueryPriority
     end
@@ -1003,7 +1070,13 @@ function ns.QuestQuery()
         return all, 0
     end
     local priority
-    if segmentID ~= "" and guide.segmentByID[segmentID] then
+    if current then
+        priority = ns.QuestIDsForGoals({ current })
+        for _, questID in ipairs(current.alternativeQuests or {}) do priority[#priority + 1] = questID end
+        if current.checkpointQuest then priority[#priority + 1] = current.checkpointQuest end
+        local questID = ns.Engine:GetGoalQuestID(current) or current.checkpointQuest
+        if questID then table.insert(priority, 1, questID) end
+    elseif segmentID ~= "" and guide.segmentByID[segmentID] then
         priority = ns.QuestIDsForGoals(guide.segmentByID[segmentID].goals)
     end
     if not priority then
@@ -1867,7 +1940,7 @@ function Engine:ActiveTimers(guide, state)
         local questID = TimerQuestID(goal)
         local seconds = type(goal.timer) == "number" and goal.timer
             or type(goal.timer) == "table" and goal.timer.seconds
-        if type(questID) == "number" and type(seconds) == "number" and seconds > 0
+        if guide.routeMode ~= "ordered" and type(questID) == "number" and type(seconds) == "number" and seconds > 0
             and not completed[questID] and self:IsGoalDone(goal, state, guide) then
             ConsiderTimer(timers, questID, seconds)
         end
@@ -1875,7 +1948,7 @@ function Engine:ActiveTimers(guide, state)
     for questID, info in pairs(state.quests or {}) do
         if type(info) == "table" and not completed[questID] then
             ConsiderTimer(timers, questID, info.timeLeft)
-            if type(info.timeLeft) ~= "number" then
+            if guide.routeMode ~= "ordered" and type(info.timeLeft) ~= "number" then
                 ConsiderTimer(timers, questID, info.timeAllowed)
             end
         end
@@ -2561,7 +2634,9 @@ function Engine:Refresh(state)
                         break
                     end
                 end
-                if blocked then
+                if blocked == "Quest is not in the quest log." then
+                    self.status = "No quest step is available. A required quest is missing from your log. Use Back to revisit the pickup, then Skip to skip its chain, or choose another guide."
+                elseif blocked then
                     self.status = blocked
                 elseif HasSkippedRemainder(guide, progressGoals, state) then
                     self.status = "No active step. Remaining steps were skipped — Reset Skips in options, or Complete them."
@@ -2699,6 +2774,9 @@ function Engine:Previous()
         or not self:GetGoal(self.currentGuide, previousID)
     ) do
         previousID = table.remove(history)
+    end
+    if not previousID and self.currentGuide and not self.currentGoal then
+        previousID = ns.charDB.activeGoal
     end
     if not previousID and self.currentGuide and self.currentGoal then
         if self.currentGuide.segments then

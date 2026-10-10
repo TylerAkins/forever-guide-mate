@@ -367,12 +367,32 @@ local function QuestID(goal)
     end
 end
 
-function Navigation:QuestDestinationID(goal)
-    if type(goal) ~= "table" or goal.useClientPin == false then
+function Navigation:QuestDestinationID(goal, state)
+    if type(goal) ~= "table" or (goal.useClientPin == false and goal.useQuestNavigation ~= true) then
         return nil
     end
     local questID = QuestID(goal)
     if not questID then return nil end
+    if goal.useQuestNavigation == true and goal.useClientPin ~= true then
+        local quest = state and state.quests and state.quests[questID]
+        if not quest then return nil end
+        if goal.kind == "turnin" then return quest.complete == true and questID or nil end
+        local spec = goal.complete and goal.complete.questObjective
+        local unfinished, target = 0, false
+        for index, objective in ipairs(quest.objectives or {}) do
+            local finished = objective.finished == true or (type(objective.finished) == "number" and objective.finished > 0)
+                or (type(objective.numRequired) == "number" and objective.numRequired > 0
+                    and type(objective.numFulfilled) == "number" and objective.numFulfilled >= objective.numRequired)
+            if not finished then
+                unfinished = unfinished + 1
+                if spec and ((type(spec.text) == "string" and type(objective.text) == "string"
+                    and string.find(string.lower(objective.text), string.lower(spec.text), 1, true))
+                    or (not spec.text and index == spec.index))
+                    and (not spec.count or not objective.numRequired or spec.count == objective.numRequired) then target = true end
+            end
+        end
+        return unfinished == 1 and target and questID or nil
+    end
     if goal.kind == "objective" or goal.kind == "turnin" or goal.kind == "gossip" then
         if goal.useClientPin ~= true then
             return nil

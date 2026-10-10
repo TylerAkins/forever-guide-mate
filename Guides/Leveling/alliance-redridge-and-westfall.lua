@@ -1,1191 +1,2684 @@
 local _, ns = ...
 
--- Forever Casual spine: Redridge & Westfall (19-20)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Dungeon quests (Deadmines) belong in Guides/Dungeons/Deadmines.lua.
--- Forever weaves ported from prior Leveling chapters (quest id >= 90000).
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    ELWYNN_FOREST = 1429,
-    REDRIDGE_MOUNTAINS = 1433,
-    WESTFALL = 1436,
-    STORMWIND_CITY = 1453,
-    IRONFORGE = 1455,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-alliance-redridge-and-westfall",
+    revision = 3,
     title = "Redridge & Westfall",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-alliance-redridge-and-westfall",
     conditions = {
         all = {
             { faction = "Alliance" },
-            { level = { min = 19 } },
+            {
+                level = { min = 19 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-244-encroaching-gnolls",
+            kind = "note",
+            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 11 },
+            },
+            requiredLevel = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 244,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+            },
+            text = "Accept Encroaching Gnolls from Guard Parker.",
             id = "accept-244-encroaching-gnolls",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { race = 4 },
-            } },
-            text = "Accept Encroaching Gnolls.",
-            complete = QuestState(244, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.1527, 0.7145, "Encroaching Gnolls",
-                    "Travel to Encroaching Gnolls."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 244, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            text = "Turn in Encroaching Gnolls to Deputy Feldon.",
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
+            },
+            dependsOn = { "accept-244-encroaching-gnolls" },
             id = "turnin-244-encroaching-gnolls",
             kind = "turnin",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { race = 4 },
-            } },
-            text = "Turn in Encroaching Gnolls.",
-            complete = QuestState(244, "completed"),
-            dependsOn = { "accept-244-encroaching-gnolls" },
-            route = {
-                Point(1433, 0.3074, 0.6000, "Encroaching Gnolls",
-                    "Travel to Encroaching Gnolls."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 244, state = "completed" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-125-the-lost-tools",
+            kind = "note",
+            text = "Reach level 15 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 15 },
+            },
+            requiredLevel = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 125,
+            priority = 40,
+        },
+        {
+            priority = 50,
+            route = {
+                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+            },
+            text = "Accept The Lost Tools from Foreman Oslow.",
             id = "accept-125-the-lost-tools",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Lost Tools.",
-            complete = QuestState(125, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3214, 0.4864, "The Lost Tools",
-                    "Travel to The Lost Tools."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 125, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.4728, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3098 },
+            },
+            text = "Accept The Price of Shoes from Verner Osgood.",
             id = "accept-118-the-price-of-shoes",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Price of Shoes.",
-            complete = QuestState(118, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3098, 0.4728, "The Price of Shoes",
-                    "Travel to The Price of Shoes."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 118, state = "activeOrCompleted" },
+            },
+            sourceStep = 6,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            route = {
+                { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
+            },
+            text = "Accept Messenger to Stormwind from Magistrate Solomon.",
             id = "accept-120-messenger-to-stormwind",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Messenger to Stormwind.",
-            complete = QuestState(120, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2999, 0.4445, "Messenger to Stormwind",
-                    "Travel to Messenger to Stormwind."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 120, state = "activeOrCompleted" },
+            },
+            sourceStep = 7,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 80,
+            route = {
+                { y = 0.4435, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.2675 },
+            },
+            text = "Accept A Free Lunch from Darcy.",
             id = "accept-129-a-free-lunch",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A Free Lunch.",
-            complete = QuestState(129, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2675, 0.4435, "A Free Lunch",
-                    "Travel to A Free Lunch."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 129, state = "activeOrCompleted" },
+            },
+            sourceStep = 8,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 90,
+            route = {
+                { y = 0.4535, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.2648 },
+            },
+            text = "Turn in The Defias Brotherhood to Wiley the Black.",
             id = "turnin-65-the-defias-brotherhood",
             kind = "turnin",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(65, "completed"),
-            route = {
-                Point(1433, 0.2648, 0.4535, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 65, state = "completed" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            route = {
+                { y = 0.4535, mapID = 1433, label = "Wiley the Black", offMapText = "Travel to Wiley the Black in Redridge Mountains.", x = 0.2648 },
+            },
+            text = "Accept The Defias Brotherhood from Wiley the Black.",
             id = "accept-132-the-defias-brotherhood",
             kind = "accept",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(132, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2648, 0.4535, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 132, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 65 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            route = {
+                { y = 0.4384, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.2268 },
+            },
+            text = "Accept Redridge Goulash from Chef Breanna.",
             id = "accept-92-redridge-goulash",
             kind = "accept",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Redridge Goulash.",
-            complete = QuestState(92, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2268, 0.4384, "Redridge Goulash",
-                    "Travel to Redridge Goulash."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 92, state = "activeOrCompleted" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-3741-hilary-s-necklace",
+            kind = "note",
+            text = "Reach level 12 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 12 },
+            },
+            requiredLevel = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3741,
+            priority = 120,
+        },
+        {
+            priority = 130,
+            route = {
+                { y = 0.5363, mapID = 1433, label = "Shawn", offMapText = "Travel to Shawn in Redridge Mountains.", x = 0.2932 },
+            },
+            text = "Accept Hilary's Necklace from Shawn.",
             id = "accept-3741-hilary-s-necklace",
             kind = "accept",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Hilary's Necklace.",
-            complete = QuestState(3741, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2932, 0.5363, "Hilary's Necklace",
-                    "Travel to Hilary's Necklace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3741, state = "activeOrCompleted" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 140,
+            text = "Collect 1 Hilary's Necklace.",
+            route = {
+                { y = 0.541, mapID = 1433, label = "Glinting Mud", offMapText = "Travel to Glinting Mud.", x = 0.259 },
+            },
+            dependsOn = { "accept-3741-hilary-s-necklace" },
             id = "objective-3741-1-glinting-mud",
             kind = "objective",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Click Glinting Mud.",
-            complete = QuestObjective(3741, 1, "Glinting Mud"),
-            dependsOn = { "accept-3741-hilary-s-necklace" },
-            route = {
-                Point(1433, 0.2590, 0.5410, "Glinting Mud",
-                    "Travel to Glinting Mud."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 3741, text = "Glinting Mud", index = 1, count = 1 },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 150,
+            text = "Turn in Hilary's Necklace to Hilary.",
+            route = {
+                { y = 0.5363, mapID = 1433, label = "Hilary", offMapText = "Travel to Hilary in Redridge Mountains.", x = 0.2924 },
+            },
+            dependsOn = { "accept-3741-hilary-s-necklace", "objective-3741-1-glinting-mud" },
             id = "turnin-3741-hilary-s-necklace",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Hilary's Necklace.",
-            complete = QuestState(3741, "completed"),
-            dependsOn = { "accept-3741-hilary-s-necklace", "objective-3741-1-glinting-mud" },
-            route = {
-                Point(1433, 0.2924, 0.5363, "Hilary's Necklace",
-                    "Travel to Hilary's Necklace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3741, state = "completed" },
+            },
+            sourceStep = 13,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 160,
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "accept-132-the-defias-brotherhood" },
             id = "turnin-132-the-defias-brotherhood",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(132, "completed"),
-            dependsOn = { "accept-132-the-defias-brotherhood" },
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 132, state = "completed" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 65 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 170,
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            text = "Accept The Defias Brotherhood from Gryan Stoutmantle.",
             id = "accept-135-the-defias-brotherhood",
             kind = "accept",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(135, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 135, state = "activeOrCompleted" },
+            },
+            sourceStep = 14,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 132 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 180,
+            text = "Turn in Messenger to Stormwind to General Marcus Jonathan.",
+            route = {
+                { y = 0.7532, mapID = 1453, label = "General Marcus Jonathan", offMapText = "Travel to General Marcus Jonathan in Stormwind City.", x = 0.6397 },
+            },
+            dependsOn = { "accept-120-messenger-to-stormwind" },
             id = "turnin-120-messenger-to-stormwind",
             kind = "turnin",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Messenger to Stormwind.",
-            complete = QuestState(120, "completed"),
-            dependsOn = { "accept-120-messenger-to-stormwind" },
-            route = {
-                Point(1453, 0.6397, 0.7532, "Messenger to Stormwind",
-                    "Travel to Messenger to Stormwind."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 120, state = "completed" },
+            },
+            sourceStep = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 190,
+            route = {
+                { y = 0.7532, mapID = 1453, label = "General Marcus Jonathan", offMapText = "Travel to General Marcus Jonathan in Stormwind City.", x = 0.6397 },
+            },
+            text = "Accept Messenger to Stormwind from General Marcus Jonathan.",
             id = "accept-121-messenger-to-stormwind",
             kind = "accept",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Messenger to Stormwind.",
-            complete = QuestState(121, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.6397, 0.7532, "Messenger to Stormwind",
-                    "Travel to Messenger to Stormwind."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 121, state = "activeOrCompleted" },
+            },
+            sourceStep = 15,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 120 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 200,
+            text = "Turn in The Defias Brotherhood to Master Mathias Shaw.",
+            route = {
+                { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+            },
+            dependsOn = { "accept-135-the-defias-brotherhood" },
             id = "turnin-135-the-defias-brotherhood",
             kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(135, "completed"),
-            dependsOn = { "accept-135-the-defias-brotherhood" },
-            route = {
-                Point(1453, 0.7578, 0.5984, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 135, state = "completed" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 132 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 210,
+            route = {
+                { y = 0.5984, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+            },
+            text = "Accept The Defias Brotherhood from Master Mathias Shaw.",
             id = "accept-141-the-defias-brotherhood",
             kind = "accept",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(141, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.7578, 0.5984, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 141, state = "activeOrCompleted" },
+            },
+            sourceStep = 16,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 135 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 220,
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "accept-141-the-defias-brotherhood" },
             id = "turnin-141-the-defias-brotherhood",
             kind = "turnin",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(141, "completed"),
-            dependsOn = { "accept-141-the-defias-brotherhood" },
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 141, state = "completed" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 135 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 230,
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            text = "Accept The Defias Brotherhood from Gryan Stoutmantle.",
             id = "accept-142-the-defias-brotherhood",
             kind = "accept",
-            priority = 200,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(142, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 142, state = "activeOrCompleted" },
+            },
+            sourceStep = 17,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 240,
+            route = {
+                { y = 0.346, mapID = 1436, label = "Harvest Watcher", offMapText = "Travel to Harvest Watcher.", x = 0.534 },
+            },
+            text = "Kill Harvest Watcher. Keep the required materials for the quest.",
             id = "objective-103-1-harvest-watcher",
-            kind = "objective",
-            priority = 210,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Harvest Watcher.",
-            complete = QuestObjective(103, 1, "Harvest Watcher"),
-            route = {
-                Point(1436, 0.5340, 0.3460, "Harvest Watcher",
-                    "Travel to Harvest Watcher."),
+            kind = "note",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 103, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
-            id = "objective-142-1-defias-messenger",
-            kind = "objective",
-            priority = 220,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Defias Messenger.",
-            complete = QuestObjective(142, 1, "Defias Messenger"),
             dependsOn = { "accept-142-the-defias-brotherhood" },
+            id = "objective-142-1-defias-messenger",
+            text = "Collect 1 A Mysterious Message.",
             useClientPin = true,
-            route = nil,
+            complete = {
+                questObjective = { id = 142, text = "Defias Messenger", index = 1, count = 1 },
+            },
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            priority = 250,
+            sourceStep = 19,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
         },
         {
+            priority = 260,
+            route = {
+                { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
+            },
+            text = "Accept Keeper of the Flame from Captain Grayson.",
             id = "accept-103-keeper-of-the-flame",
             kind = "accept",
-            priority = 230,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Keeper of the Flame.",
-            complete = QuestState(103, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.3001, 0.8602, "Keeper of the Flame",
-                    "Travel to Keeper of the Flame."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 103, state = "activeOrCompleted" },
+            },
+            sourceStep = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-104-the-coastal-menace",
+            kind = "note",
+            text = "Reach level 15 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Alliance" },
+            complete = {
+                level = { min = 15 },
+            },
+            requiredLevel = 15,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 104,
+            priority = 270,
+        },
+        {
+            priority = 280,
+            route = {
+                { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
+            },
+            text = "Accept The Coastal Menace from Captain Grayson.",
             id = "accept-104-the-coastal-menace",
             kind = "accept",
-            priority = 240,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Coastal Menace.",
-            complete = QuestState(104, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.3001, 0.8602, "The Coastal Menace",
-                    "Travel to The Coastal Menace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 104, state = "activeOrCompleted" },
+            },
+            sourceStep = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 290,
+            text = "Turn in Keeper of the Flame to Captain Grayson.",
+            route = {
+                { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
+            },
+            dependsOn = { "accept-103-keeper-of-the-flame" },
             id = "turnin-103-keeper-of-the-flame",
             kind = "turnin",
-            priority = 250,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Keeper of the Flame.",
-            complete = QuestState(103, "completed"),
-            dependsOn = { "accept-103-keeper-of-the-flame", "objective-103-1-harvest-watcher" },
-            route = {
-                Point(1436, 0.3001, 0.8602, "Keeper of the Flame",
-                    "Travel to Keeper of the Flame."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 103, state = "completed" },
+            },
+            sourceStep = 21,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 300,
+            text = "Collect 1 Scale of Old Murk-Eye.",
+            route = {
+                { y = 0.826, mapID = 1436, label = "Old Murk-Eye", offMapText = "Travel to Old Murk-Eye.", x = 0.324 },
+            },
+            dependsOn = { "accept-104-the-coastal-menace" },
             id = "objective-104-1-old-murk-eye",
             kind = "objective",
-            priority = 260,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Old Murk-Eye.",
-            complete = QuestObjective(104, 1, "Old Murk-Eye"),
-            dependsOn = { "accept-104-the-coastal-menace" },
-            route = {
-                Point(1436, 0.3240, 0.8260, "Old Murk-Eye",
-                    "Travel to Old Murk-Eye."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 104, text = "Old Murk-Eye", index = 1, count = 1 },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 310,
+            text = "Turn in The Coastal Menace to Captain Grayson.",
+            route = {
+                { y = 0.8602, mapID = 1436, label = "Captain Grayson", offMapText = "Travel to Captain Grayson in Westfall.", x = 0.3001 },
+            },
+            dependsOn = { "accept-104-the-coastal-menace", "objective-104-1-old-murk-eye" },
             id = "turnin-104-the-coastal-menace",
             kind = "turnin",
-            priority = 270,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Coastal Menace.",
-            complete = QuestState(104, "completed"),
-            dependsOn = { "accept-104-the-coastal-menace", "objective-104-1-old-murk-eye" },
-            route = {
-                Point(1436, 0.3001, 0.8602, "The Coastal Menace",
-                    "Travel to The Coastal Menace."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 104, state = "completed" },
+            },
+            sourceStep = 23,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 320,
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "accept-142-the-defias-brotherhood", "objective-142-1-defias-messenger" },
             id = "turnin-142-the-defias-brotherhood",
             kind = "turnin",
-            priority = 280,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(142, "completed"),
-            dependsOn = { "accept-142-the-defias-brotherhood", "objective-142-1-defias-messenger" },
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 142, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 141 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 330,
+            route = {
+                { y = 0.475, mapID = 1436, label = "The Defias Traitor", offMapText = "Travel to The Defias Traitor in Westfall.", x = 0.5568 },
+            },
+            text = "Accept The Defias Brotherhood from The Defias Traitor.",
             id = "accept-155-the-defias-brotherhood",
             kind = "accept",
-            priority = 290,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(155, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.5568, 0.4750, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 155, state = "activeOrCompleted" },
+            },
+            sourceStep = 25,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-155-reviewed-escort",
+            kind = "objective",
+            text = "Follow and protect the Defias Traitor until he reveals the entrance to the Deadmines.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            complete = {
+                quest = { id = 155, state = "complete" },
+            },
+            useClientText = false,
+            useClientPin = false,
+            route = {
+                { mapID = 1436, x = 0.4255, y = 0.7156999999999999, label = "Escort destination", offMapText = "Travel to Escort destination." },
+            },
+            sourceStep = 26,
+            dependsOn = { "accept-155-the-defias-brotherhood" },
+            priority = 340,
+        },
+        {
+            priority = 350,
+            text = "Turn in The Defias Brotherhood to Gryan Stoutmantle.",
+            route = {
+                { y = 0.4752, mapID = 1436, label = "Gryan Stoutmantle", offMapText = "Travel to Gryan Stoutmantle in Westfall.", x = 0.5633 },
+            },
+            dependsOn = { "accept-155-the-defias-brotherhood", "objective-155-reviewed-escort" },
             id = "turnin-155-the-defias-brotherhood",
             kind = "turnin",
-            priority = 300,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(155, "completed"),
-            dependsOn = { "accept-155-the-defias-brotherhood" },
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 155, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 142 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 360,
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
+            },
+            text = "Accept Assessing the Threat from Deputy Feldon.",
             id = "accept-246-assessing-the-threat",
             kind = "accept",
-            priority = 310,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Assessing the Threat.",
-            complete = QuestState(246, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3074, 0.6000, "Assessing the Threat",
-                    "Travel to Assessing the Threat."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 246, state = "activeOrCompleted" },
+            },
+            sourceStep = 28,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 370,
+            text = "Turn in A Free Lunch to Guard Parker.",
+            route = {
+                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+            },
+            dependsOn = { "accept-129-a-free-lunch" },
             id = "turnin-129-a-free-lunch",
             kind = "turnin",
-            priority = 320,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A Free Lunch.",
-            complete = QuestState(129, "completed"),
-            dependsOn = { "accept-129-a-free-lunch" },
-            route = {
-                Point(1433, 0.1527, 0.7145, "A Free Lunch",
-                    "Travel to A Free Lunch."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 129, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 380,
+            route = {
+                { y = 0.7145, mapID = 1433, label = "Guard Parker", offMapText = "Travel to Guard Parker in Redridge Mountains.", x = 0.1527 },
+            },
+            text = "Accept Visit the Herbalist from Guard Parker.",
             id = "accept-130-visit-the-herbalist",
             kind = "accept",
-            priority = 330,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Visit the Herbalist.",
-            complete = QuestState(130, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.1527, 0.7145, "Visit the Herbalist",
-                    "Travel to Visit the Herbalist."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 130, state = "activeOrCompleted" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 129 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 390,
+            text = "Kill 6 Redridge Poacher.",
+            route = {
+                { y = 0.784, mapID = 1433, label = "Redridge Poacher", offMapText = "Travel to Redridge Poacher.", x = 0.294 },
+            },
+            dependsOn = { "accept-246-assessing-the-threat" },
             id = "objective-246-2-redridge-poacher",
             kind = "objective",
-            priority = 340,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill 6 Redridge Poacher.",
-            complete = QuestObjective(246, 2, "Redridge Poacher"),
-            dependsOn = { "accept-246-assessing-the-threat" },
-            route = {
-                Point(1433, 0.2940, 0.7840, "Redridge Poacher",
-                    "Travel to Redridge Poacher."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 246, text = "Redridge Poacher", index = 2, count = 6 },
+            },
+            sourceStep = 30,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-246-1-redridge-mongrel",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 10 Redridge Mongrel.",
+            complete = {
+                questObjective = { id = 246, index = 1, text = "Redridge Mongrel", count = 10 },
+            },
+            route = {
+                { mapID = 1433, x = 0.294, y = 0.784, label = "Redridge Mongrel", offMapText = "Travel to Redridge Mongrel." },
+            },
+            sourceStep = 31,
+            priority = 400,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-246-assessing-the-threat" },
+        },
+        {
+            id = "objective-92-3-crisp-spider-meat",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 5 Crisp Spider Meat.",
+            complete = {
+                questObjective = { id = 92, index = 3, text = "Crisp Spider Meat", count = 5 },
+            },
+            route = {
+                { mapID = 1433, x = 0.22, y = 0.74, label = "Crisp Spider Meat", offMapText = "Travel to Crisp Spider Meat." },
+            },
+            sourceStep = 32,
+            priority = 410,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-92-redridge-goulash" },
+        },
+        {
+            priority = 420,
+            text = "Turn in Assessing the Threat to Deputy Feldon.",
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon in Redridge Mountains.", x = 0.3074 },
+            },
+            dependsOn = { "accept-246-assessing-the-threat", "objective-246-2-redridge-poacher", "objective-246-1-redridge-mongrel" },
             id = "turnin-246-assessing-the-threat",
             kind = "turnin",
-            priority = 350,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Assessing the Threat.",
-            complete = QuestState(246, "completed"),
-            dependsOn = { "accept-246-assessing-the-threat", "objective-246-2-redridge-poacher" },
-            route = {
-                Point(1433, 0.3074, 0.6000, "Assessing the Threat",
-                    "Travel to Assessing the Threat."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 246, state = "completed" },
+            },
+            sourceStep = 34,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 244 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-2360-mathias-and-the-defias",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 2360,
+            priority = 430,
+        },
+        {
+            priority = 440,
+            route = {
+                { y = 0.5985, mapID = 1453, label = "Master Mathias Shaw", offMapText = "Travel to Master Mathias Shaw in Stormwind City.", x = 0.7578 },
+            },
+            text = "Accept Mathias and the Defias from Master Mathias Shaw.",
             id = "accept-2360-mathias-and-the-defias",
             kind = "accept",
-            priority = 360,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Alliance" },
-                { class = 4 },
-            } },
-            text = "Accept Mathias and the Defias.",
-            complete = QuestState(2360, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.7578, 0.5985, "Mathias and the Defias",
-                    "Travel to Mathias and the Defias."),
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2360, state = "activeOrCompleted" },
+            },
+            sourceStep = 38,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 450,
+            route = {
+                { y = 0.6036, mapID = 1453, label = "Renzik \"The Shiv\"", offMapText = "Travel to Renzik \"The Shiv\" in Stormwind City.", x = 0.7576 },
+            },
+            text = "Accept Redridge Rendezvous from Renzik \"The Shiv\".",
             id = "accept-2281-redridge-rendezvous",
             kind = "accept",
-            priority = 370,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 4 },
-            } },
-            text = "Accept Redridge Rendezvous.",
-            complete = QuestState(2281, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.7576, 0.6036, "Redridge Rendezvous",
-                    "Travel to Redridge Rendezvous."),
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2281, state = "activeOrCompleted" },
+            },
+            sourceStep = 39,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1793-the-tome-of-valor",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1793,
+            priority = 460,
+        },
+        {
+            priority = 470,
+            route = {
+                { mapID = 1453, x = 0.3981, y = 0.298, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City." },
+            },
+            text = "Accept The Tome of Valor from Duthorian Rall.",
             id = "accept-1793-the-tome-of-valor",
             kind = "accept",
-            priority = 410,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 2 },
-            } },
-            text = "Accept The Tome of Valor.",
-            complete = QuestState(1793, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.4305, 0.3448, "The Tome of Valor",
-                    "Travel to The Tome of Valor."),
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1793, state = "activeOrCompleted" },
+            },
+            sourceStep = 43,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "loot-starter-before-accept-1649-the-tome-of-valor",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
+            },
+            useClientPin = false,
+            dependsOn = {},
+            priority = 480,
+            classAction = "loot-starter-before-accept-1649-the-tome-of-valor",
+        },
+        {
+            priority = 490,
             id = "accept-1649-the-tome-of-valor",
-            kind = "accept",
-            priority = 420,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 2 },
-            } },
-            text = "Accept The Tome of Valor from Daphne Stilwell in Westfall, or from Duthorian Rall if you already carry the tome.",
-            complete = QuestState(1649, "activeOrCompleted"),
-            route = nil,
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
+            },
+            sourceStep = 44,
+            useClientPin = false,
+            dependsOn = {},
+            classAction = "accept-1649-the-tome-of-valor",
         },
         {
+            priority = 500,
+            text = "Turn in The Tome of Valor to Duthorian Rall.",
+            route = {
+                { y = 0.298, mapID = 1453, label = "Duthorian Rall", offMapText = "Travel to Duthorian Rall in Stormwind City.", x = 0.3981 },
+            },
+            dependsOn = { "accept-1649-the-tome-of-valor" },
             id = "turnin-1649-the-tome-of-valor",
             kind = "turnin",
-            priority = 430,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 2 },
-            } },
-            text = "Turn in The Tome of Valor.",
-            complete = QuestState(1649, "completed"),
-            dependsOn = { "accept-1649-the-tome-of-valor" },
-            route = {
-                Point(1453, 0.3981, 0.2980, "The Tome of Valor",
-                    "Travel to The Tome of Valor."),
+            conditions = {
+                all = {
+                    {
+                        class = { 2 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1649, state = "completed" },
+            },
+            sourceStep = 45,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "level-before-accept-1716-devourer-of-souls",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1716,
+            priority = 510,
+        },
+        {
+            priority = 520,
+            route = {
+                { mapID = 1453, x = 0.2526, y = 0.7856000000000001, label = "Gakin the Darkbinder", offMapText = "Travel to Gakin the Darkbinder in Stormwind City." },
+            },
+            text = "Accept Devourer of Souls from Gakin the Darkbinder.",
             id = "accept-1716-devourer-of-souls",
             kind = "accept",
-            priority = 440,
-            conditions = { all = {
-                { level = { min = 21 } },
-                { faction = "Alliance" },
-                { class = 9 },
-            } },
-            text = "Accept Devourer of Souls.",
-            complete = QuestState(1716, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.2916, 0.7415, "Devourer of Souls",
-                    "Travel to Devourer of Souls."),
+            conditions = {
+                all = {
+                    {
+                        class = { 9 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1716, state = "activeOrCompleted" },
+            },
+            sourceStep = 48,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-3765-the-corruption-abroad",
+            kind = "note",
+            text = "Reach level 18 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 18 },
+            },
+            requiredLevel = 18,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 3765,
+            priority = 530,
+        },
+        {
+            priority = 540,
+            route = {
+                { y = 0.558, mapID = 1453, label = "Argos Nightwhisper", offMapText = "Travel to Argos Nightwhisper in Stormwind City.", x = 0.214 },
+            },
+            text = "Accept The Corruption Abroad from Argos Nightwhisper.",
             id = "accept-3765-the-corruption-abroad",
             kind = "accept",
-            priority = 450,
-            conditions = { all = {
-                { level = { min = 20 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Corruption Abroad.",
-            complete = QuestState(3765, "activeOrCompleted"),
-            route = {
-                Point(1453, 0.2140, 0.5580, "The Corruption Abroad",
-                    "Travel to The Corruption Abroad."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 3765, state = "activeOrCompleted" },
+            },
+            sourceStep = 54,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 550,
+            text = "Turn in The Price of Shoes to Smith Argus.",
+            route = {
+                { y = 0.6555, mapID = 1429, label = "Smith Argus", offMapText = "Travel to Smith Argus in Elwynn Forest.", x = 0.4171 },
+            },
+            dependsOn = { "accept-118-the-price-of-shoes" },
             id = "turnin-118-the-price-of-shoes",
             kind = "turnin",
-            priority = 460,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Price of Shoes.",
-            complete = QuestState(118, "completed"),
-            dependsOn = { "accept-118-the-price-of-shoes" },
-            route = {
-                Point(1429, 0.4171, 0.6555, "The Price of Shoes",
-                    "Travel to The Price of Shoes."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 118, state = "completed" },
+            },
+            sourceStep = 55,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 560,
+            route = {
+                { y = 0.6555, mapID = 1429, label = "Smith Argus", offMapText = "Travel to Smith Argus in Elwynn Forest.", x = 0.4171 },
+            },
+            text = "Accept Return to Verner from Smith Argus.",
             id = "accept-119-return-to-verner",
             kind = "accept",
-            priority = 470,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Return to Verner.",
-            complete = QuestState(119, "activeOrCompleted"),
-            route = {
-                Point(1429, 0.4171, 0.6555, "Return to Verner",
-                    "Travel to Verner."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 119, state = "activeOrCompleted" },
+            },
+            sourceStep = 55,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 118 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-94-a-watchful-eye",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 94,
+            priority = 570,
+        },
+        {
+            priority = 580,
+            route = {
+                { y = 0.6971, mapID = 1429, label = "Theocritus", offMapText = "Travel to Theocritus in Elwynn Forest.", x = 0.6522 },
+            },
+            text = "Accept A Watchful Eye from Theocritus.",
             id = "accept-94-a-watchful-eye",
             kind = "accept",
-            priority = 480,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A Watchful Eye.",
-            complete = QuestState(94, "activeOrCompleted"),
-            route = {
-                Point(1429, 0.6522, 0.6971, "A Watchful Eye",
-                    "Travel to A Watchful Eye."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 94, state = "activeOrCompleted" },
+            },
+            sourceStep = 56,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 590,
+            text = "Collect 1 Oslow's Toolbox.",
+            route = {
+                { y = 0.5467, mapID = 1433, label = "Sunken Chest", offMapText = "Travel to Sunken Chest.", x = 0.4153 },
+            },
+            dependsOn = { "accept-125-the-lost-tools" },
             id = "objective-125-1-sunken-chest",
             kind = "objective",
-            priority = 490,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Click Sunken Chest.",
-            complete = QuestObjective(125, 1, "Sunken Chest"),
-            dependsOn = { "accept-125-the-lost-tools" },
-            route = {
-                Point(1433, 0.4153, 0.5467, "Sunken Chest",
-                    "Travel to Sunken Chest."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 125, text = "Sunken Chest", index = 1, count = 1 },
+            },
+            sourceStep = 57,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 600,
+            text = "Turn in The Lost Tools to Foreman Oslow.",
+            route = {
+                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+            },
+            dependsOn = { "accept-125-the-lost-tools", "objective-125-1-sunken-chest" },
             id = "turnin-125-the-lost-tools",
             kind = "turnin",
-            priority = 500,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Lost Tools.",
-            complete = QuestState(125, "completed"),
-            dependsOn = { "accept-125-the-lost-tools", "objective-125-1-sunken-chest" },
-            route = {
-                Point(1433, 0.3214, 0.4864, "The Lost Tools",
-                    "Travel to The Lost Tools."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 125, state = "completed" },
+            },
+            sourceStep = 58,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 610,
+            route = {
+                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+            },
+            text = "Accept The Everstill Bridge from Foreman Oslow.",
             id = "accept-89-the-everstill-bridge",
             kind = "accept",
-            priority = 510,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Everstill Bridge.",
-            complete = QuestState(89, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3214, 0.4864, "The Everstill Bridge",
-                    "Travel to The Everstill Bridge."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 89, state = "activeOrCompleted" },
+            },
+            sourceStep = 58,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 125 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 620,
+            text = "Turn in Return to Verner to Verner Osgood.",
+            route = {
+                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+            },
+            dependsOn = { "accept-119-return-to-verner" },
             id = "turnin-119-return-to-verner",
             kind = "turnin",
-            priority = 520,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Return to Verner.",
-            complete = QuestState(119, "completed"),
-            dependsOn = { "accept-119-return-to-verner" },
-            route = {
-                Point(1433, 0.3097, 0.4727, "Return to Verner",
-                    "Travel to Verner."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 119, state = "completed" },
+            },
+            sourceStep = 59,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 118 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 630,
+            route = {
+                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+            },
+            text = "Accept Underbelly Scales from Verner Osgood.",
             id = "accept-122-underbelly-scales",
             kind = "accept",
-            priority = 530,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Underbelly Scales.",
-            complete = QuestState(122, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3097, 0.4727, "Underbelly Scales",
-                    "Travel to Underbelly Scales."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 122, state = "activeOrCompleted" },
+            },
+            sourceStep = 59,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 640,
+            route = {
+                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+            },
+            text = "Accept A Baying of Gnolls from Verner Osgood.",
             id = "accept-124-a-baying-of-gnolls",
             kind = "accept",
-            priority = 540,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept A Baying of Gnolls.",
-            complete = QuestState(124, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3097, 0.4727, "A Baying of Gnolls",
-                    "Travel to A Baying of Gnolls."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 124, state = "activeOrCompleted" },
+            },
+            sourceStep = 59,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-92-2-tough-condor-meat",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 5 Tough Condor Meat.",
+            complete = {
+                questObjective = { id = 92, index = 2, text = "Tough Condor Meat", count = 5 },
+            },
+            route = {
+                { mapID = 1433, x = 0.452, y = 0.7759999999999999, label = "Tough Condor Meat", offMapText = "Travel to Tough Condor Meat." },
+            },
+            sourceStep = 60,
+            priority = 650,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-92-redridge-goulash" },
+        },
+        {
+            id = "objective-122-1-underbelly-whelp-scale",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 6 Underbelly Whelp Scale.",
+            complete = {
+                questObjective = { id = 122, index = 1, text = "Underbelly Whelp Scale", count = 6 },
+            },
+            route = {
+                { mapID = 1433, x = 0.364, y = 0.746, label = "Underbelly Whelp Scale", offMapText = "Travel to Underbelly Whelp Scale." },
+            },
+            sourceStep = 61,
+            priority = 660,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-122-underbelly-scales" },
+        },
+        {
+            id = "objective-92-1-great-goretusk-snout",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 5 Great Goretusk Snout.",
+            complete = {
+                questObjective = { id = 92, index = 1, text = "Great Goretusk Snout", count = 5 },
+            },
+            route = {
+                { mapID = 1433, x = 0.304, y = 0.7040000000000001, label = "Great Goretusk Snout", offMapText = "Travel to Great Goretusk Snout." },
+            },
+            sourceStep = 62,
+            priority = 670,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-92-redridge-goulash" },
+        },
+        {
+            priority = 680,
+            text = "Turn in Underbelly Scales to Verner Osgood.",
+            route = {
+                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+            },
+            dependsOn = { "accept-122-underbelly-scales", "objective-122-1-underbelly-whelp-scale" },
             id = "turnin-122-underbelly-scales",
             kind = "turnin",
-            priority = 550,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Underbelly Scales.",
-            complete = QuestState(122, "completed"),
-            dependsOn = { "accept-122-underbelly-scales" },
-            route = {
-                Point(1433, 0.3097, 0.4727, "Underbelly Scales",
-                    "Travel to Underbelly Scales."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 122, state = "completed" },
+            },
+            sourceStep = 64,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 690,
+            text = "Turn in Messenger to Stormwind to Magistrate Solomon.",
+            route = {
+                { y = 0.4445, mapID = 1433, label = "Magistrate Solomon", offMapText = "Travel to Magistrate Solomon in Redridge Mountains.", x = 0.2999 },
+            },
+            dependsOn = { "accept-121-messenger-to-stormwind" },
             id = "turnin-121-messenger-to-stormwind",
             kind = "turnin",
-            priority = 560,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Messenger to Stormwind.",
-            complete = QuestState(121, "completed"),
-            dependsOn = { "accept-121-messenger-to-stormwind" },
-            route = {
-                Point(1433, 0.2999, 0.4445, "Messenger to Stormwind",
-                    "Travel to Messenger to Stormwind."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 14 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 121, state = "completed" },
+            },
+            sourceStep = 65,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 120 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 700,
+            text = "Turn in Redridge Goulash to Chef Breanna.",
+            route = {
+                { y = 0.4384, mapID = 1433, label = "Chef Breanna", offMapText = "Travel to Chef Breanna in Redridge Mountains.", x = 0.2268 },
+            },
+            dependsOn = {
+                "accept-92-redridge-goulash",
+                "objective-92-3-crisp-spider-meat",
+                "objective-92-2-tough-condor-meat",
+                "objective-92-1-great-goretusk-snout",
+            },
             id = "turnin-92-redridge-goulash",
             kind = "turnin",
-            priority = 570,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Redridge Goulash.",
-            complete = QuestState(92, "completed"),
-            dependsOn = { "accept-92-redridge-goulash" },
-            route = {
-                Point(1433, 0.2268, 0.4384, "Redridge Goulash",
-                    "Travel to Redridge Goulash."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 92, state = "completed" },
+            },
+            sourceStep = 66,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 710,
+            text = "Turn in Visit the Herbalist to Martie Jainrose.",
+            route = {
+                { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
+            },
+            dependsOn = { "accept-130-visit-the-herbalist" },
             id = "turnin-130-visit-the-herbalist",
             kind = "turnin",
-            priority = 580,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Visit the Herbalist.",
-            complete = QuestState(130, "completed"),
-            dependsOn = { "accept-130-visit-the-herbalist" },
-            route = {
-                Point(1433, 0.2186, 0.4633, "Visit the Herbalist",
-                    "Travel to Visit the Herbalist."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 130, state = "completed" },
+            },
+            sourceStep = 67,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 129 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 720,
+            route = {
+                { y = 0.4633, mapID = 1433, label = "Martie Jainrose", offMapText = "Travel to Martie Jainrose in Redridge Mountains.", x = 0.2186 },
+            },
+            text = "Accept Delivering Daffodils from Martie Jainrose.",
             id = "accept-131-delivering-daffodils",
             kind = "accept",
-            priority = 590,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Delivering Daffodils.",
-            complete = QuestState(131, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2186, 0.4633, "Delivering Daffodils",
-                    "Travel to Delivering Daffodils."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 131, state = "activeOrCompleted" },
+            },
+            sourceStep = 67,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 130 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 730,
+            text = "Turn in Delivering Daffodils to Darcy.",
+            route = {
+                { y = 0.4434, mapID = 1433, label = "Darcy", offMapText = "Travel to Darcy in Redridge Mountains.", x = 0.2675 },
+            },
+            dependsOn = { "accept-131-delivering-daffodils" },
             id = "turnin-131-delivering-daffodils",
             kind = "turnin",
-            priority = 600,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Delivering Daffodils.",
-            complete = QuestState(131, "completed"),
-            dependsOn = { "accept-131-delivering-daffodils" },
-            route = {
-                Point(1433, 0.2675, 0.4434, "Delivering Daffodils",
-                    "Travel to Delivering Daffodils."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 12 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 131, state = "completed" },
+            },
+            sourceStep = 68,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 130 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 740,
+            text = "Collect 5 Iron Pike.",
+            route = {
+                { y = 0.384, mapID = 1433, label = "Redridge Mystic", offMapText = "Travel to Redridge Mystic.", x = 0.212 },
+            },
+            dependsOn = { "accept-89-the-everstill-bridge" },
             id = "objective-89-1-redridge-mystic",
             kind = "objective",
-            priority = 610,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Kill Redridge Mystic.",
-            complete = QuestObjective(89, 1, "Redridge Mystic"),
-            dependsOn = { "accept-89-the-everstill-bridge" },
-            route = {
-                Point(1433, 0.2120, 0.3840, "Redridge Mystic",
-                    "Travel to Redridge Mystic."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 89, text = "Redridge Mystic", index = 1, count = 5 },
+            },
+            sourceStep = 69,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 125 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 750,
+            text = "Collect 5 Iron Rivet.",
+            route = {
+                { y = 0.384, mapID = 1433, label = "Iron Rivet", offMapText = "Travel to Iron Rivet.", x = 0.212 },
+            },
+            dependsOn = { "accept-89-the-everstill-bridge" },
             id = "objective-89-2-iron-rivet",
             kind = "objective",
-            priority = 620,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Collect 5 Iron Rivet.",
-            complete = QuestObjective(89, 2, "Iron Rivet"),
-            dependsOn = { "accept-89-the-everstill-bridge" },
-            route = {
-                Point(1433, 0.2120, 0.3840, "Iron Rivet",
-                    "Travel to Iron Rivet."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 89, text = "Iron Rivet", index = 2, count = 5 },
+            },
+            sourceStep = 69,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 125 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-124-2-redridge-mystic",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 8 Redridge Mystic.",
+            complete = {
+                questObjective = { id = 124, index = 2, text = "Redridge Mystic", count = 8 },
+            },
+            route = {
+                { mapID = 1433, x = 0.212, y = 0.384, label = "Redridge Mystic", offMapText = "Travel to Redridge Mystic." },
+            },
+            sourceStep = 70,
+            priority = 760,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-124-a-baying-of-gnolls" },
+        },
+        {
+            id = "objective-124-1-redridge-brute",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Kill 10 Redridge Brute.",
+            complete = {
+                questObjective = { id = 124, index = 1, text = "Redridge Brute", count = 10 },
+            },
+            route = {
+                { mapID = 1433, x = 0.212, y = 0.384, label = "Redridge Brute", offMapText = "Travel to Redridge Brute." },
+            },
+            sourceStep = 70,
+            priority = 770,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-124-a-baying-of-gnolls" },
+        },
+        {
+            priority = 780,
+            text = "Turn in Redridge Rendezvous to Lucius.",
+            route = {
+                { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
+            },
+            dependsOn = { "accept-2281-redridge-rendezvous" },
             id = "turnin-2281-redridge-rendezvous",
             kind = "turnin",
-            priority = 630,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 4 },
-            } },
-            text = "Turn in Redridge Rendezvous.",
-            complete = QuestState(2281, "completed"),
-            dependsOn = { "accept-2281-redridge-rendezvous" },
-            route = {
-                Point(1433, 0.2806, 0.5204, "Redridge Rendezvous",
-                    "Travel to Redridge Rendezvous."),
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2281, state = "completed" },
+            },
+            sourceStep = 71,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 790,
+            route = {
+                { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
+            },
+            text = "Accept Alther's Mill from Lucius.",
             id = "accept-2282-alther-s-mill",
             kind = "accept",
-            priority = 640,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 4 },
-            } },
-            text = "Accept Alther's Mill.",
-            complete = QuestState(2282, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.2806, 0.5204, "Alther's Mill",
-                    "Travel to Alther's Mill."),
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2282, state = "activeOrCompleted" },
+            },
+            sourceStep = 71,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2281 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-2282-1-token-of-thievery",
+            kind = "objective",
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            text = "Collect 1 Token of Thievery.",
+            complete = {
+                questObjective = { id = 2282, index = 1, text = "Token of Thievery", count = 1 },
+            },
+            route = {
+                { mapID = 1433, x = 0.5204, y = 0.44689999999999996, label = "Token of Thievery", offMapText = "Travel to Token of Thievery." },
+            },
+            sourceStep = 73,
+            priority = 800,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2281 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-2282-alther-s-mill" },
+        },
+        {
+            priority = 810,
+            text = "Turn in A Baying of Gnolls to Verner Osgood.",
+            route = {
+                { y = 0.4727, mapID = 1433, label = "Verner Osgood", offMapText = "Travel to Verner Osgood in Redridge Mountains.", x = 0.3097 },
+            },
+            dependsOn = { "accept-124-a-baying-of-gnolls", "objective-124-2-redridge-mystic", "objective-124-1-redridge-brute" },
             id = "turnin-124-a-baying-of-gnolls",
             kind = "turnin",
-            priority = 650,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in A Baying of Gnolls.",
-            complete = QuestState(124, "completed"),
-            dependsOn = { "accept-124-a-baying-of-gnolls" },
-            route = {
-                Point(1433, 0.3097, 0.4727, "A Baying of Gnolls",
-                    "Travel to A Baying of Gnolls."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 124, state = "completed" },
+            },
+            sourceStep = 74,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 119 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 820,
+            text = "Turn in The Everstill Bridge to Foreman Oslow.",
+            route = {
+                { y = 0.4864, mapID = 1433, label = "Foreman Oslow", offMapText = "Travel to Foreman Oslow in Redridge Mountains.", x = 0.3214 },
+            },
+            dependsOn = { "accept-89-the-everstill-bridge", "objective-89-1-redridge-mystic", "objective-89-2-iron-rivet" },
             id = "turnin-89-the-everstill-bridge",
             kind = "turnin",
-            priority = 660,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Everstill Bridge.",
-            complete = QuestState(89, "completed"),
-            dependsOn = { "accept-89-the-everstill-bridge", "objective-89-1-redridge-mystic", "objective-89-2-iron-rivet" },
-            route = {
-                Point(1433, 0.3214, 0.4864, "The Everstill Bridge",
-                    "Travel to The Everstill Bridge."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 15 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 89, state = "completed" },
+            },
+            sourceStep = 75,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 125 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 830,
+            text = "Turn in Alther's Mill to Lucius.",
+            route = {
+                { y = 0.5204, mapID = 1433, label = "Lucius", offMapText = "Travel to Lucius in Redridge Mountains.", x = 0.2806 },
+            },
+            dependsOn = { "accept-2282-alther-s-mill", "objective-2282-1-token-of-thievery" },
             id = "turnin-2282-alther-s-mill",
             kind = "turnin",
-            priority = 670,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-                { class = 4 },
-            } },
-            text = "Turn in Alther's Mill.",
-            complete = QuestState(2282, "completed"),
-            dependsOn = { "accept-2282-alther-s-mill" },
-            route = {
-                Point(1433, 0.2806, 0.5204, "Alther's Mill",
-                    "Travel to Alther's Mill."),
+            conditions = {
+                all = {
+                    {
+                        class = { 4 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 2282, state = "completed" },
+            },
+            sourceStep = 76,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 2281 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "accept-166-the-defias-brotherhood",
-            kind = "accept",
-            priority = 680,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept The Defias Brotherhood.",
-            complete = QuestState(166, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
+            id = "loot-starter-before-accept-373-the-unsent-letter",
+            kind = "note",
+            instructionOnly = true,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            text = "Loot An Unsent Letter from Edwin Vancleef. Keep it for the next pickup.",
+            complete = {
+                any = {
+                    {
+                        item = { name = "An Unsent Letter", minCount = 1 },
+                    },
+                    {
+                        quest = { id = 373, state = "activeOrCompleted" },
+                    },
+                },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+            priority = 840,
         },
         {
-            id = "accept-214-red-silk-bandanas",
-            kind = "accept",
-            priority = 690,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Red Silk Bandanas.",
-            complete = QuestState(214, "activeOrCompleted"),
-            route = {
-                Point(1436, 0.5667, 0.4735, "Red Silk Bandanas",
-                    "Travel to Red Silk Bandanas."),
-            },
-        },
-        {
-            id = "turnin-166-the-defias-brotherhood",
-            kind = "turnin",
-            priority = 730,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Defias Brotherhood.",
-            complete = QuestState(166, "completed"),
-            dependsOn = { "accept-166-the-defias-brotherhood" },
-            route = {
-                Point(1436, 0.5633, 0.4752, "The Defias Brotherhood",
-                    "Travel to The Defias Brotherhood."),
-            },
-        },
-        {
-            id = "turnin-214-red-silk-bandanas",
-            kind = "turnin",
-            priority = 740,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in Red Silk Bandanas.",
-            complete = QuestState(214, "completed"),
-            dependsOn = { "accept-214-red-silk-bandanas" },
-            route = {
-                Point(1436, 0.5667, 0.4735, "Red Silk Bandanas",
-                    "Travel to Red Silk Bandanas."),
-            },
-        },
-        {
+            priority = 850,
+            text = "Use the An Unsent Letter to accept The Unsent Letter.",
             id = "accept-373-the-unsent-letter",
             kind = "accept",
-            priority = 750,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Use the A Waterlogged Envelope to accept The Unsent Letter.",
-            complete = QuestState(373, "activeOrCompleted"),
-            route = nil,
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 373, state = "activeOrCompleted" },
+            },
+            sourceStep = 90,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 860,
+            text = "Turn in The Unsent Letter to Baros Alexston.",
+            route = {
+                { y = 0.3028, mapID = 1453, label = "Baros Alexston", offMapText = "Travel to Baros Alexston in Stormwind City.", x = 0.4919 },
+            },
+            dependsOn = { "accept-373-the-unsent-letter" },
             id = "turnin-373-the-unsent-letter",
             kind = "turnin",
-            priority = 760,
-            conditions = { all = {
-                { level = { min = 19 } },
-                { faction = "Alliance" },
-            } },
-            text = "Turn in The Unsent Letter.",
-            complete = QuestState(373, "completed"),
-            dependsOn = { "accept-373-the-unsent-letter" },
-            route = {
-                Point(1453, 0.4919, 0.3028, "The Unsent Letter",
-                    "Travel to The Unsent Letter."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 16 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 373, state = "completed" },
+            },
+            sourceStep = 91,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "accept-971-knowledge-in-the-deeps",
-            kind = "accept",
-            priority = 800,
-            conditions = { all = {
-                { level = { min = 24 } },
-                { faction = "Alliance" },
-            } },
-            text = "Accept Knowledge in the Deeps.",
-            complete = QuestState(971, "activeOrCompleted"),
-            route = {
-                Point(1455, 0.5083, 0.0562, "Knowledge in the Deeps",
-                    "Travel to Knowledge in the Deeps."),
+            id = "level-before-woven-accept-98407-show-of-force",
+            kind = "note",
+            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                level = { min = 11 },
+            },
+            requiredLevel = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98407,
+            priority = 870,
         },
         {
+            priority = 880,
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
+            },
+            text = "Accept Show of Force from Deputy Feldon.",
             id = "woven-accept-98407-show-of-force",
             kind = "accept",
-            priority = 810,
-            conditions = { all = {
-                { level = { min = 17 } },
-                { quest = { id = 98407, state = "notCompleted" } },
-            } },
-            text = "Accept Show of Force from Deputy Feldon.",
-            complete = QuestState(98407, "activeOrCompleted"),
-            route = {
-                Point(1433, 0.3080, 0.6000, "Deputy Feldon",
-                    "Travel to Deputy Feldon."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 98407, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 890,
+            route = {
+                { y = 0.812, mapID = 1433, label = "Redridge Thrasher", offMapText = "Travel to Redridge Thrasher.", x = 0.3 },
+            },
+            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
             id = "woven-objective-98407-show-of-force",
             kind = "objective",
-            priority = 820,
-            conditions = { level = { min = 17 } },
-            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
-            complete = QuestState(98407, "complete"),
-            route = {
-                Point(1433, 0.3000, 0.8120, "Redridge Thrasher",
-                    "Travel to Redridge Thrasher."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 98407, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98407-show-of-force" },
         },
         {
+            priority = 900,
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
+            },
+            text = "Turn in Show of Force to Deputy Feldon.",
             id = "woven-turnin-98407-show-of-force",
             kind = "turnin",
-            priority = 830,
-            conditions = { level = { min = 17 } },
-            text = "Turn in Show of Force to Deputy Feldon.",
-            complete = QuestState(98407, "completed"),
-            route = {
-                Point(1433, 0.3080, 0.6000, "Deputy Feldon",
-                    "Travel to Deputy Feldon."),
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 98407, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98407-show-of-force", "woven-objective-98407-show-of-force" },
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })

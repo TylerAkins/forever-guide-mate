@@ -1,373 +1,1167 @@
 local _, ns = ...
 
--- Forever Casual spine: Stonetalon Mountains (25-26)
--- Hearth, grind/ding, trainer, vendor, and flight-learn steps omitted.
--- Forever weaves ported from prior Leveling chapters (quest id >= 90000).
--- Coordinates not yet validated in Forever.
-
-local function QuestState(questID, state)
-    return { quest = { id = questID, state = state } }
-end
-
-local function QuestObjective(questID, index, text)
-    return { questObjective = { id = questID, index = index, text = text } }
-end
-
-local function Point(mapID, x, y, label, offMapText)
-    return {
-        mapID = mapID,
-        x = x,
-        y = y,
-        label = label,
-        offMapText = offMapText,
-    }
-end
-
-local MAP = {
-    STONETALON_MOUNTAINS = 1442,
-}
-
 ns:RegisterGuide({
-    id = "leveling-era-horde-stonetalon-mountains",
+    revision = 3,
     title = "Stonetalon Mountains",
     category = "Leveling Quest Guides",
-    revision = 1,
-    casualSpine = true,
+    id = "leveling-era-horde-stonetalon-mountains",
     conditions = {
         all = {
             { faction = "Horde" },
-            { level = { min = 25 } },
+            {
+                level = { min = 25 },
+            },
         },
     },
     goals = {
         {
+            id = "level-before-accept-1087-cenarius-legacy",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1087,
+            priority = 10,
+        },
+        {
+            priority = 20,
+            route = {
+                { y = 0.6042, mapID = 1442, label = "Braelyn Firehand", offMapText = "Travel to Braelyn Firehand in Stonetalon Mountains.", x = 0.4594 },
+            },
+            text = "Accept Cenarius' Legacy from Braelyn Firehand.",
             id = "accept-1087-cenarius-legacy",
             kind = "accept",
-            priority = 10,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Cenarius' Legacy.",
-            complete = QuestState(1087, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4594, 0.6042, "Cenarius' Legacy",
-                    "Travel to Cenarius' Legacy."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1087, state = "activeOrCompleted" },
+            },
+            sourceStep = 1,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 30,
+            route = {
+                { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
+            },
+            text = "Accept Cycle of Rebirth from Tammra Windfield.",
             id = "accept-6301-cycle-of-rebirth",
             kind = "accept",
-            priority = 20,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Cycle of Rebirth.",
-            complete = QuestState(6301, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4746, 0.5838, "Cycle of Rebirth",
-                    "Travel to Cycle of Rebirth."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6301, state = "activeOrCompleted" },
+            },
+            sourceStep = 2,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-5881-calling-in-the-reserves",
+            kind = "note",
+            text = "Reach level 23 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 23 },
+            },
+            requiredLevel = 23,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 5881,
+            priority = 40,
+        },
+        {
+            priority = 50,
+            route = {
+                { y = 0.6115, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.472 },
+            },
+            text = "Accept Calling in the Reserves from Maggran Earthbinder.",
             id = "accept-5881-calling-in-the-reserves",
             kind = "accept",
-            priority = 30,
-            conditions = { all = {
-                { level = { min = 28 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Calling in the Reserves.",
-            complete = QuestState(5881, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4720, 0.6115, "Calling in the Reserves",
-                    "Travel to Calling in the Reserves."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 23 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 5881, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 60,
+            route = {
+                { y = 0.6115, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.472 },
+            },
+            text = "Accept Harpies Threaten from Maggran Earthbinder.",
             id = "accept-6282-harpies-threaten",
             kind = "accept",
-            priority = 40,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Harpies Threaten.",
-            complete = QuestState(6282, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4720, 0.6115, "Harpies Threaten",
-                    "Travel to Harpies Threaten."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6282, state = "activeOrCompleted" },
+            },
+            sourceStep = 3,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 70,
+            route = {
+                { mapID = 1442, x = 0.47369999999999995, y = 0.6429, label = "Tsunaman", offMapText = "Travel to Tsunaman in Stonetalon Mountains." },
+            },
+            text = "Accept Elemental War from Tsunaman.",
             id = "accept-6393-elemental-war",
             kind = "accept",
-            priority = 50,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Elemental War.",
-            complete = QuestState(6393, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4920, 0.6191, "Elemental War",
-                    "Travel to Elemental War."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 19 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6393, state = "activeOrCompleted" },
+            },
+            sourceStep = 4,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "level-before-accept-1096-gerenzo-wrenchwhistle",
+            kind = "note",
+            text = "Reach level 16 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = { faction = "Horde" },
+            complete = {
+                level = { min = 16 },
+            },
+            requiredLevel = 16,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 1096,
+            priority = 80,
+        },
+        {
+            priority = 90,
+            route = {
+                { y = 0.626, mapID = 1442, label = "Ziz Fizziks", offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.", x = 0.5899 },
+            },
+            text = "Accept Gerenzo Wrenchwhistle from Ziz Fizziks.",
             id = "accept-1096-gerenzo-wrenchwhistle",
             kind = "accept",
-            priority = 60,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept Gerenzo Wrenchwhistle.",
-            complete = QuestState(1096, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.5899, 0.6260, "Gerenzo Wrenchwhistle",
-                    "Travel to Gerenzo Wrenchwhistle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1096, state = "activeOrCompleted" },
+            },
+            sourceStep = 5,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1095 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 100,
+            route = {
+                { y = 0.4548, mapID = 1442, label = "Toxic Fogger", offMapText = "Travel to Toxic Fogger.", x = 0.6652 },
+            },
+            text = "Use Toxic Fogger.",
             id = "objective-1086-1-toxic-fogger",
             kind = "objective",
-            priority = 70,
-            conditions = { all = {
-                { level = { min = 26 } },
-                { faction = "Horde" },
-            } },
-            text = "Use Toxic Fogger.",
-            complete = QuestObjective(1086, 1, "Toxic Fogger"),
-            route = {
-                Point(1442, 0.6652, 0.4548, "Toxic Fogger",
-                    "Travel to Toxic Fogger."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1086, text = "Toxic Fogger", index = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1067 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 110,
+            text = "For Gerenzo Wrenchwhistle: Bring Gerenzo Wrenchwhistle's Mechanical Arm to Ziz Fizziks in the Stonetalon Mountains.",
+            id = "objective-1096-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 1096, state = "complete" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1095 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "accept-1096-gerenzo-wrenchwhistle" },
+        },
+        {
+            priority = 120,
+            text = "Turn in Gerenzo Wrenchwhistle to Ziz Fizziks.",
+            route = {
+                { y = 0.626, mapID = 1442, label = "Ziz Fizziks", offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.", x = 0.5899 },
+            },
+            dependsOn = { "accept-1096-gerenzo-wrenchwhistle", "objective-1096-quest-work" },
             id = "turnin-1096-gerenzo-wrenchwhistle",
             kind = "turnin",
-            priority = 80,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Gerenzo Wrenchwhistle.",
-            complete = QuestState(1096, "completed"),
-            dependsOn = { "accept-1096-gerenzo-wrenchwhistle" },
-            route = {
-                Point(1442, 0.5899, 0.6260, "Gerenzo Wrenchwhistle",
-                    "Travel to Gerenzo Wrenchwhistle."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 16 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1096, state = "completed" },
+            },
+            sourceStep = 8,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1095 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 130,
+            text = "Collect 10 Incendrites.",
+            route = {
+                { mapID = 1442, x = 0.44799999999999995, y = 0.434, label = "Incendrites", offMapText = "Travel to Incendrites." },
+            },
+            dependsOn = { "accept-6393-elemental-war" },
             id = "objective-6393-1-burning-ravager",
             kind = "objective",
-            priority = 90,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Burning Ravager.",
-            complete = QuestObjective(6393, 1, "Burning Ravager"),
-            dependsOn = { "accept-6393-elemental-war" },
-            route = {
-                Point(1442, 0.6047, 0.7013, "Burning Ravager",
-                    "Travel to Burning Ravager."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 19 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 6393, text = "Burning Ravager", index = 1, count = 10 },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 140,
+            route = {
+                { y = 0.382, mapID = 1442, label = "Antlered Courser", offMapText = "Travel to Antlered Courser.", x = 0.464 },
+            },
+            text = "Collect 30 Courser Eye.",
             id = "objective-1058-3-antlered-courser",
             kind = "objective",
-            priority = 100,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Antlered Courser.",
-            complete = QuestObjective(1058, 3, "Antlered Courser"),
-            route = {
-                Point(1442, 0.4640, 0.3820, "Antlered Courser",
-                    "Travel to Antlered Courser."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 1058, text = "Antlered Courser", index = 3, count = 30 },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            id = "objective-1058-4-fey-dragon-scale",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 1 Fey Dragon Scale.",
+            complete = {
+                questObjective = { id = 1058, index = 4, text = "Fey Dragon Scale", count = 1 },
+            },
+            route = {
+                { mapID = 1442, x = 0.41, y = 0.122, label = "Fey Dragon Scale", offMapText = "Travel to Fey Dragon Scale." },
+            },
+            sourceStep = 11,
+            priority = 150,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 160,
+            text = "Kill Burning Ravager.",
+            route = {
+                { y = 0.434, mapID = 1442, label = "Burning Ravager", offMapText = "Travel to Burning Ravager.", x = 0.448 },
+            },
+            dependsOn = { "accept-6393-elemental-war" },
             id = "objective-6393-1-burning-ravager-2",
             kind = "objective",
-            priority = 110,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Kill Burning Ravager.",
-            complete = QuestObjective(6393, 1, "Burning Ravager"),
-            dependsOn = { "accept-6393-elemental-war" },
-            route = {
-                Point(1442, 0.4480, 0.4340, "Burning Ravager",
-                    "Travel to Burning Ravager."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 19 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                questObjective = { id = 6393, text = "Burning Ravager", index = 1 },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            id = "objective-1058-1-stonetalon-sap",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 5 Stonetalon Sap.",
+            complete = {
+                questObjective = { id = 1058, index = 1, text = "Stonetalon Sap", count = 5 },
+            },
+            route = {
+                { mapID = 1442, x = 0.354, y = 0.17800000000000002, label = "Stonetalon Sap", offMapText = "Travel to Stonetalon Sap." },
+            },
+            sourceStep = 12,
+            priority = 170,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "objective-1058-2-twilight-whisker",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 5 Twilight Whisker.",
+            complete = {
+                questObjective = { id = 1058, index = 2, text = "Twilight Whisker", count = 5 },
+            },
+            route = {
+                { mapID = 1442, x = 0.314, y = 0.13, label = "Twilight Whisker", offMapText = "Travel to Twilight Whisker." },
+            },
+            sourceStep = 13,
+            priority = 180,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            id = "objective-1087-1-son-of-cenarius",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 4 Son of Cenarius.",
+            complete = {
+                questObjective = { id = 1087, index = 1, text = "Son of Cenarius", count = 4 },
+            },
+            route = {
+                { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Son of Cenarius", offMapText = "Travel to Son of Cenarius." },
+            },
+            sourceStep = 14,
+            priority = 190,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1087-cenarius-legacy" },
+        },
+        {
+            id = "objective-1087-2-daughter-of-cenarius",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 4 Daughter of Cenarius.",
+            complete = {
+                questObjective = { id = 1087, index = 2, text = "Daughter of Cenarius", count = 4 },
+            },
+            route = {
+                { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Daughter of Cenarius", offMapText = "Travel to Daughter of Cenarius." },
+            },
+            sourceStep = 14,
+            priority = 200,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1087-cenarius-legacy" },
+        },
+        {
+            id = "objective-1087-3-cenarion-botanist",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 4 Cenarion Botanist.",
+            complete = {
+                questObjective = { id = 1087, index = 3, text = "Cenarion Botanist", count = 4 },
+            },
+            route = {
+                { mapID = 1442, x = 0.35200000000000004, y = 0.136, label = "Cenarion Botanist", offMapText = "Travel to Cenarion Botanist." },
+            },
+            sourceStep = 14,
+            priority = 210,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-1087-cenarius-legacy" },
+        },
+        {
+            id = "objective-6301-1-gaea-seed",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Collect 10 Gaea Seed.",
+            complete = {
+                questObjective = { id = 6301, index = 1, text = "Gaea Seed", count = 10 },
+            },
+            route = {
+                { mapID = 1442, x = 0.467, y = 0.374, label = "Gaea Seed", offMapText = "Travel to Gaea Seed." },
+            },
+            sourceStep = 15,
+            priority = 220,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-6301-cycle-of-rebirth" },
+        },
+        {
+            id = "objective-6282-1-bloodfury-harpy",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 7 Bloodfury Harpy.",
+            complete = {
+                questObjective = { id = 6282, index = 1, text = "Bloodfury Harpy", count = 7 },
+            },
+            route = {
+                { mapID = 1442, x = 0.326, y = 0.616, label = "Bloodfury Harpy", offMapText = "Travel to Bloodfury Harpy." },
+            },
+            sourceStep = 17,
+            priority = 230,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-6282-harpies-threaten" },
+        },
+        {
+            id = "objective-6282-2-bloodfury-ambusher",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 7 Bloodfury Ambusher.",
+            complete = {
+                questObjective = { id = 6282, index = 2, text = "Bloodfury Ambusher", count = 7 },
+            },
+            route = {
+                { mapID = 1442, x = 0.322, y = 0.638, label = "Bloodfury Ambusher", offMapText = "Travel to Bloodfury Ambusher." },
+            },
+            sourceStep = 18,
+            priority = 240,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-6282-harpies-threaten" },
+        },
+        {
+            id = "objective-6282-3-bloodfury-slayer",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 7 Bloodfury Slayer.",
+            complete = {
+                questObjective = { id = 6282, index = 3, text = "Bloodfury Slayer", count = 7 },
+            },
+            route = {
+                { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Slayer", offMapText = "Travel to Bloodfury Slayer." },
+            },
+            sourceStep = 19,
+            priority = 250,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-6282-harpies-threaten" },
+        },
+        {
+            id = "objective-6282-4-bloodfury-roguefeather",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            text = "Kill 7 Bloodfury Roguefeather.",
+            complete = {
+                questObjective = { id = 6282, index = 4, text = "Bloodfury Roguefeather", count = 7 },
+            },
+            route = {
+                { mapID = 1442, x = 0.344, y = 0.674, label = "Bloodfury Roguefeather", offMapText = "Travel to Bloodfury Roguefeather." },
+            },
+            sourceStep = 20,
+            priority = 260,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-6282-harpies-threaten" },
+        },
+        {
+            priority = 270,
+            text = "Turn in Elemental War to Tsunaman.",
+            route = {
+                { mapID = 1442, x = 0.47369999999999995, y = 0.6429, label = "Tsunaman", offMapText = "Travel to Tsunaman in Stonetalon Mountains." },
+            },
+            dependsOn = { "accept-6393-elemental-war", "objective-6393-1-burning-ravager", "objective-6393-1-burning-ravager-2" },
             id = "turnin-6393-elemental-war",
             kind = "turnin",
-            priority = 120,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Elemental War.",
-            complete = QuestState(6393, "completed"),
-            dependsOn = { "accept-6393-elemental-war", "objective-6393-1-burning-ravager", "objective-6393-1-burning-ravager-2" },
-            route = {
-                Point(1442, 0.3793, 0.6796, "Elemental War",
-                    "Travel to Elemental War."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 19 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6393, state = "completed" },
+            },
+            sourceStep = 22,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 280,
+            text = "Turn in Harpies Threaten to Maggran Earthbinder.",
+            route = {
+                { y = 0.6114, mapID = 1442, label = "Maggran Earthbinder", offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.", x = 0.4719 },
+            },
+            dependsOn = {
+                "accept-6282-harpies-threaten",
+                "objective-6282-1-bloodfury-harpy",
+                "objective-6282-2-bloodfury-ambusher",
+                "objective-6282-3-bloodfury-slayer",
+                "objective-6282-4-bloodfury-roguefeather",
+            },
             id = "turnin-6282-harpies-threaten",
             kind = "turnin",
-            priority = 130,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Harpies Threaten.",
-            complete = QuestState(6282, "completed"),
-            dependsOn = { "accept-6282-harpies-threaten" },
-            route = {
-                Point(1442, 0.4719, 0.6114, "Harpies Threaten",
-                    "Travel to Harpies Threaten."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 18 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6282, state = "completed" },
+            },
+            sourceStep = 23,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 290,
+            text = "Turn in Cycle of Rebirth to Tammra Windfield.",
+            route = {
+                { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
+            },
+            dependsOn = { "accept-6301-cycle-of-rebirth", "objective-6301-1-gaea-seed" },
             id = "turnin-6301-cycle-of-rebirth",
             kind = "turnin",
-            priority = 140,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Cycle of Rebirth.",
-            complete = QuestState(6301, "completed"),
-            dependsOn = { "accept-6301-cycle-of-rebirth" },
-            route = {
-                Point(1442, 0.4746, 0.5838, "Cycle of Rebirth",
-                    "Travel to Cycle of Rebirth."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6301, state = "completed" },
+            },
+            sourceStep = 24,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 300,
+            route = {
+                { y = 0.5838, mapID = 1442, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.", x = 0.4746 },
+            },
+            text = "Accept New Life from Tammra Windfield.",
             id = "accept-6381-new-life",
             kind = "accept",
-            priority = 150,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Accept New Life.",
-            complete = QuestState(6381, "activeOrCompleted"),
-            route = {
-                Point(1442, 0.4746, 0.5838, "New Life",
-                    "Travel to New Life."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 6381, state = "activeOrCompleted" },
+            },
+            sourceStep = 24,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 6301 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
         },
         {
+            priority = 310,
+            text = "Turn in Cenarius' Legacy to Braelyn Firehand.",
+            route = {
+                { y = 0.6042, mapID = 1442, label = "Braelyn Firehand", offMapText = "Travel to Braelyn Firehand in Stonetalon Mountains.", x = 0.4594 },
+            },
+            dependsOn = {
+                "accept-1087-cenarius-legacy",
+                "objective-1087-1-son-of-cenarius",
+                "objective-1087-2-daughter-of-cenarius",
+                "objective-1087-3-cenarion-botanist",
+            },
             id = "turnin-1087-cenarius-legacy",
             kind = "turnin",
-            priority = 160,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Cenarius' Legacy.",
-            complete = QuestState(1087, "completed"),
-            dependsOn = { "accept-1087-cenarius-legacy" },
-            route = {
-                Point(1442, 0.4594, 0.6042, "Cenarius' Legacy",
-                    "Travel to Cenarius' Legacy."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1087, state = "completed" },
+            },
+            sourceStep = 25,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
-            id = "turnin-6381-new-life",
-            kind = "turnin",
-            priority = 170,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in New Life.",
-            complete = QuestState(6381, "completed"),
+            priority = 320,
+            text = "Follow the path into the Charred Vale. Plant Gaea Seeds in 10 Gaea Dirt Mounds scattered around the vale.",
+            id = "objective-6381-quest-work",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 6381, index = 1, count = 10 },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 6301 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
             dependsOn = { "accept-6381-new-life" },
             route = {
-                Point(1442, 0.3793, 0.6796, "New Life",
-                    "Travel to New Life."),
+                { mapID = 1442, x = 0.3225, y = 0.6816, label = "New Life", offMapText = "Travel to New Life." },
             },
         },
         {
+            priority = 330,
+            text = "Turn in New Life to Tammra Windfield.",
+            route = {
+                { mapID = 1442, x = 0.4746, y = 0.5838, label = "Tammra Windfield", offMapText = "Travel to Tammra Windfield in Stonetalon Mountains." },
+            },
+            dependsOn = { "accept-6381-new-life", "objective-6381-quest-work" },
+            id = "turnin-6381-new-life",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 17 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 6381, state = "completed" },
+            },
+            sourceStep = 27,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 6301 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            priority = 340,
+            text = "Turn in Jin'Zil's Forest Magic to Witch Doctor Jin'Zil.",
+            route = {
+                { y = 0.9794, mapID = 1442, label = "Witch Doctor Jin'Zil", offMapText = "Travel to Witch Doctor Jin'Zil in Stonetalon Mountains.", x = 0.7454 },
+            },
+            dependsOn = {
+                "objective-1058-3-antlered-courser",
+                "objective-1058-4-fey-dragon-scale",
+                "objective-1058-1-stonetalon-sap",
+                "objective-1058-2-twilight-whisker",
+            },
             id = "turnin-1058-jin-zil-s-forest-magic",
             kind = "turnin",
-            priority = 180,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Jin'Zil's Forest Magic.",
-            complete = QuestState(1058, "completed"),
-            dependsOn = { "objective-1058-3-antlered-courser" },
-            route = {
-                Point(1442, 0.7454, 0.9794, "Jin'Zil's Forest Magic",
-                    "Travel to Jin'Zil's Forest Magic."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1058, state = "completed" },
+            },
+            sourceStep = 28,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
         },
         {
+            priority = 350,
+            route = {
+                { mapID = 1442, x = 0.7066, y = 0.5611999999999999, label = "XT-9", offMapText = "Travel to XT-9." },
+            },
+            text = "Kill the shredder XT:9 near the southern side of Windshear Crag.",
+            id = "objective-1068-2-authored-XT-9",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 1068, index = 2, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1062 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 360,
+            route = {
+                { mapID = 1442, x = 0.6731999999999999, y = 0.4658, label = "XT-4", offMapText = "Travel to XT-4." },
+            },
+            text = "Kill the shredder XT:4 near the northern side of Windshear Crag.",
+            id = "objective-1068-1-authored-XT-4",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 1068, index = 1, count = 1 },
+            },
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1062 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            priority = 370,
+            route = {
+                { mapID = 1413, x = 0.35259999999999997, y = 0.2788, label = "Seereth Stonebreak", offMapText = "Travel to Seereth Stonebreak in The Barrens." },
+            },
+            text = "Turn in Shredding Machines to Seereth Stonebreak.",
             id = "turnin-1068-shredding-machines",
             kind = "turnin",
-            priority = 190,
-            conditions = { all = {
-                { level = { min = 25 } },
-                { faction = "Horde" },
-            } },
-            text = "Turn in Shredding Machines.",
-            complete = QuestState(1068, "completed"),
-            route = {
-                Point(1442, 0.7292, 0.9372, "Shredding Machines",
-                    "Travel to Shredding Machines."),
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 13 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 1068, state = "completed" },
+            },
+            sourceStep = 29,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 1062 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "objective-1068-2-authored-XT-9", "objective-1068-1-authored-XT-4" },
         },
         {
+            id = "level-before-woven-objective-97538-pigments-for-paints",
+            kind = "note",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 20 },
+            },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97538,
+            priority = 380,
+        },
+        {
+            text = "Collect 30 Mirkweed Pods in Mirkfallon Lake. No saved spot for the pods, so the guide follows the pin in your quest log.",
+            priority = 390,
+            route = {
+                { y = 0.41, mapID = 1442, label = "Mirkfallon Lake", offMapText = "Travel to Mirkfallon Lake.", x = 0.48 },
+            },
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
             id = "woven-objective-97538-pigments-for-paints",
             kind = "objective",
-            priority = 200,
-            conditions = {
-                all = {
-                    { level = { min = 26 } },
-                    { quest = { id = 97538, state = "active" } },
-                },
+            useClientPin = false,
+            complete = {
+                quest = { id = 97538, state = "complete" },
             },
-            useClientPin = true,
-            text = "Collect 30 Mirkweed Pods in Mirkfallon Lake. No saved spot for the pods, so the guide follows the pin in your quest log.",
-            complete = QuestState(97538, "complete"),
-            route = {
-                Point(1442, 0.4800, 0.4100, "Mirkfallon Lake",
-                    "Travel to Mirkfallon Lake."),
-            },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = {},
         },
         {
-            id = "woven-turnin-97538-pigments-for-paints",
-            kind = "turnin",
-            priority = 210,
-            conditions = {
-                all = {
-                    { level = { min = 26 } },
-                    { quest = { id = 97538, state = "active" } },
-                },
+            priority = 400,
+            route = {
+                { y = 0.474, mapID = 1456, label = "Tah Winterhoof", offMapText = "Travel to Tah Winterhoof.", x = 0.54 },
             },
             text = "Turn in Pigments for Paints to Tah Winterhoof in Thunder Bluff.",
-            complete = QuestState(97538, "completed"),
-            route = {
-                Point(1456, 0.5400, 0.4740, "Tah Winterhoof",
-                    "Travel to Tah Winterhoof."),
+            id = "woven-turnin-97538-pigments-for-paints",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 20 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
             },
+            complete = {
+                quest = { id = 97538, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-objective-97538-pigments-for-paints" },
         },
     },
+    casualSpine = true,
+    routeMode = "ordered",
 })
