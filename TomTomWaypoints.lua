@@ -134,6 +134,12 @@ function Waypoints:Clear(api)
     ClearTomTom(self, self.owner or api)
     self.applying = applying
     self.owner = nil
+    -- Super-tracking changes refresh Blizzard map pins on this call stack,
+    -- which the client blocks in combat and blames on this addon.
+    if ns.AddOnActionsRestricted() then
+        self.deferred = true
+        return
+    end
     if not self.blizzardPinsBlocked and self.questID and C_SuperTrack
         and type(C_SuperTrack.GetSuperTrackedQuestID) == "function"
         and type(C_SuperTrack.SetSuperTrackedQuestID) == "function" then
@@ -167,6 +173,11 @@ function Waypoints:Sync(goal, state, api)
         return
     end
     self.heldForInstance = nil
+    if ns.AddOnActionsRestricted() then
+        self.deferred = true
+        return
+    end
+    self.deferred = nil
     local provider = api and "tomtom" or (ns.db and ns.db.waypointProvider or "blizzard")
     local routeLeg = goal and ns.Navigation:GetActiveLeg(goal, state)
     local flightLeg = routeLeg and routeLeg.flight and routeLeg

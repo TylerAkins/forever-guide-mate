@@ -45,6 +45,7 @@ end
 
 function Ordered:ExcludedAction(goal, state)
     if self:Excluded(goal.conditions, state) then return true end
+    if goal.excludeWhen and ns.EvaluateCondition(goal.excludeWhen, state) == true then return true end
     local questID = AssociatedQuest(goal)
     if goal.checkpointQuest and KnownQuestCompleted(questID, state) then return true end
     if not questID or (state.quests and state.quests[questID]) then return false end

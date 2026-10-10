@@ -1,15 +1,3 @@
-## 0.4.0 - 2026-10-10
-- Select Blizzard quest navigation for ordinary objectives and completed turn-ins, with authored pins as fallback.
-- Refresh waypoints when transport arrival changes the route destination within the same guide step.
-- Restore saved route positions and full progress on login without Sync; keep unavailable quest completion unknown until it can be read.
-- Reduce startup memory allocations by validating shared route tables once and reusing class quest facts.
-- Make Sync wait for complete guide quest data before changing position, so repeated clicks keep a stable step.
-- Fix recovery notices appearing on fresh guides and repeating after every action.
-- Fix a crash while recovering saved class-guide progress.
-- Follow authored leveling and class itineraries one action at a time, including pickups, quest outings, turn-ins, and level checkpoints.
-- Keep walkthrough instructions and destination pins while showing live quest counts separately.
-- Recover missed Skyborne hunter pickups, retain the blocked action, and constrain quest-dialog assistance to the current step.
-- Preserve per-guide cursors and explicit skips. Back reviews earlier actions, and Sync reconciles progress against the client.
-- Repair class interactions, share class instructions with leveling insertions, and remove unsupported imported objectives and quest IDs.
-- Correct multipart quest instructions and retain observed preparation after consuming its items.
-- Keep optional dungeon and PvP chains in their separate guide categories.
+## 0.4.1 - 2026-10-10
+- Stop sending paladins back for Seeking the Kor Gem once they carry a Purified Kor Gem or have turned in A Moon-Kissed Blade. The quest is repeatable, so the client does not remember finishing it.
+- Fix an ADDON_ACTION_BLOCKED error blamed on Forever GuideMate when the guide changed Blizzard quest tracking during combat. Blizzard map pin and quest tracking updates now wait until combat ends.
