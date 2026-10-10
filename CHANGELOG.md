@@ -3,6 +3,7 @@
 All notable changes to this project are documented here.
 
 ## 0.4.2 - 2026-10-10
+- Keep the player-selected map when refreshing guide pins instead of forcing a quest destination map.
 - Reorder the Wetlands dungeon guide’s final Horde turn-ins: Open the Maw, Changing Tastes, then Elder Knowledge.
 
 ## 0.4.1 - 2026-10-10
